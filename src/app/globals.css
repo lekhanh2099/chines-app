@@ -1,26 +1,203 @@
 @import "tailwindcss";
+@plugin "@tailwindcss/typography";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* =============================================
+   THEME SYSTEM — CSS Custom Property Tokens
+   ============================================= */
+
+:root,
+[data-theme="light"] {
+  /* Background */
+  --bg-primary: #f8f9fe;       /* Pale indigo background */
+  --bg-card: #ffffff;
+  --bg-card-hover: #fcfcfd;
+  --bg-elevated: #ffffff;
+  --bg-input: #ffffff;
+  --bg-subtle: #f0f0ff;        /* Light purple for tracks */
+
+  /* Text */
+  --text-primary: #121217;
+  --text-secondary: #525266;
+  --text-muted: #8e8ea6;
+  --text-inverse: #ffffff;
+
+  /* Accent — Primary Purple */
+  --accent: #5452f6;           /* Main solid purple */
+  --accent-hover: #4846de;
+  --accent-subtle: #eeeffe;    /* Light purple bg */
+  --accent-muted: #c3c2fa;
+  --accent-text: #5452f6;      /* Purple text */
+
+  /* Warning / Attention */
+  --warning: #fbbf24;
+  --warning-subtle: #fffbeb;
+  --warning-text: #b45309;
+
+  /* Success */
+  --success: #22c55e;
+  --success-subtle: #f0fdf4;
+  --success-text: #15803d;
+
+  /* Danger */
+  --danger: #ef4444;
+  --danger-subtle: #fef2f2;
+  --danger-text: #b91c1c;
+
+  /* Info (for grammar) */
+  --info: #3b82f6;
+  --info-subtle: #eff6ff;
+  --info-text: #1d4ed8;
+
+  /* Purple (for syntax) */
+  --purple: #a855f7;
+  --purple-subtle: #faf5ff;
+  --purple-text: #7e22ce;
+
+  /* Border & Ring */
+  --border: #f1f2f8;           /* Very subtle border */
+  --border-hover: #e2e4f0;
+  --ring: #5452f6;
+
+  /* Shadow */
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.03);
+  --shadow-md: 0 4px 12px -2px rgb(0 0 0 / 0.05), 0 2px 6px -2px rgb(0 0 0 / 0.03);
+  --shadow-lg: 0 12px 24px -4px rgb(0 0 0 / 0.08), 0 8px 12px -6px rgb(0 0 0 / 0.04);
+
+  /* Misc */
+  --overlay: rgb(0 0 0 / 0.3);
+  --sidebar-width: 260px;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
+[data-theme="dark"] {
+  /* Background */
+  --bg-primary: #0a0a0f;       /* Very dark indigo/black */
+  --bg-card: #14141d;          /* Dark card */
+  --bg-card-hover: #1c1c28;
+  --bg-elevated: #1a1a24;
+  --bg-input: #1a1a24;
+  --bg-subtle: #252538;        /* Darker purple-gray track */
+
+  /* Text */
+  --text-primary: #f8f9fe;
+  --text-secondary: #a1a1bc;
+  --text-muted: #6b6b85;
+  --text-inverse: #ffffff;
+
+  /* Accent — Primary Purple (brighter for dark mode) */
+  --accent: #6b69fa;
+  --accent-hover: #8382fc;
+  --accent-subtle: rgba(84, 82, 246, 0.15);
+  --accent-muted: rgba(84, 82, 246, 0.3);
+  --accent-text: #a8a7fd;
+
+  /* Warning / Attention */
+  --warning: #fbbf24;
+  --warning-subtle: rgba(251, 191, 36, 0.12);
+  --warning-text: #fde68a;
+
+  /* Success */
+  --success: #4ade80;
+  --success-subtle: rgba(74, 222, 128, 0.12);
+  --success-text: #86efac;
+
+  /* Danger */
+  --danger: #f87171;
+  --danger-subtle: rgba(248, 113, 113, 0.12);
+  --danger-text: #fca5a5;
+
+  /* Info */
+  --info: #60a5fa;
+  --info-subtle: rgba(96, 165, 250, 0.12);
+  --info-text: #bfdbfe;
+
+  /* Purple */
+  --purple: #c084fc;
+  --purple-subtle: rgba(192, 132, 252, 0.12);
+  --purple-text: #e9d5ff;
+
+  /* Border & Ring */
+  --border: #2a2a3d;
+  --border-hover: #3d3d54;
+  --ring: #6b69fa;
+
+  /* Shadow */
+  --shadow-sm: 0 1px 3px 0 rgb(0 0 0 / 0.4);
+  --shadow-md: 0 4px 12px -2px rgb(0 0 0 / 0.5);
+  --shadow-lg: 0 12px 24px -4px rgb(0 0 0 / 0.6);
+
+  /* Misc */
+  --overlay: rgb(0 0 0 / 0.7);
+}
+
+/* Tailwind v4 Token Registration */
+@theme {
+  --color-bg-primary: var(--bg-primary);
+  --color-bg-card: var(--bg-card);
+  --color-bg-card-hover: var(--bg-card-hover);
+  --color-bg-elevated: var(--bg-elevated);
+  --color-bg-input: var(--bg-input);
+  --color-bg-subtle: var(--bg-subtle);
+
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-muted: var(--text-muted);
+  --color-text-inverse: var(--text-inverse);
+
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+  --color-accent-subtle: var(--accent-subtle);
+  --color-accent-muted: var(--accent-muted);
+  --color-accent-text: var(--accent-text);
+
+  --color-warning: var(--warning);
+  --color-warning-subtle: var(--warning-subtle);
+  --color-warning-text: var(--warning-text);
+
+  --color-success: var(--success);
+  --color-success-subtle: var(--success-subtle);
+  --color-success-text: var(--success-text);
+
+  --color-danger: var(--danger);
+  --color-danger-subtle: var(--danger-subtle);
+  --color-danger-text: var(--danger-text);
+
+  --color-info: var(--info);
+  --color-info-subtle: var(--info-subtle);
+  --color-info-text: var(--info-text);
+
+  --color-purple: var(--purple);
+  --color-purple-subtle: var(--purple-subtle);
+  --color-purple-text: var(--purple-text);
+
+  --color-border-default: var(--border);
+  --color-border-hover: var(--border-hover);
+  --color-ring: var(--ring);
+
+  --shadow-theme-sm: var(--shadow-sm);
+  --shadow-theme-md: var(--shadow-md);
+  --shadow-theme-lg: var(--shadow-lg);
+
+  --color-overlay: var(--overlay);
+
+  --font-sans: var(--font-lexend);
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+body {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-sans), system-ui, sans-serif;
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* Smooth transitions for themed elements */
+* {
+  transition-property: background-color, border-color, color, fill, stroke, box-shadow;
+  transition-timing-function: ease;
+  transition-duration: 0ms;
+}
+
+/* Only animate theme-related transitions when theme changes */
+[data-theme-transitioning] * {
+  transition-duration: 200ms !important;
 }
