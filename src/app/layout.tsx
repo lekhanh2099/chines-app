@@ -5,6 +5,7 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/layout/ThemeProvider";
 import { Toaster } from "sonner";
 import { VocabInspectorProvider } from "@/components/vocabulary/VocabInspectorProvider";
+import { QueryProvider } from "@/components/providers/QueryProvider";
 
 const lexend = Lexend({
  variable: "--font-lexend",
@@ -31,7 +32,9 @@ export default function RootLayout({
   <html lang="en" data-theme="light" suppressHydrationWarning>
    <body className={`${lexend.variable} ${geistMono.variable} antialiased`}>
     <ThemeProvider>
-     <VocabInspectorProvider>{children}</VocabInspectorProvider>
+     <QueryProvider>
+      <VocabInspectorProvider>{children}</VocabInspectorProvider>
+     </QueryProvider>
      <Toaster position="top-right" richColors />
     </ThemeProvider>
    </body>

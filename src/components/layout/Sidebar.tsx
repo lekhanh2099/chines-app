@@ -13,6 +13,7 @@ import {
  StickyNote,
  Settings,
  LogOut,
+ GraduationCap,
 } from "lucide-react";
 import { appConfig, type FeatureKey } from "@/config/app-config";
 
@@ -36,6 +37,12 @@ const allMenuItems: {
   feature: "vocabulary",
  },
  { name: "Luyện tập", icon: Dumbbell, href: "/practice", feature: "practice" },
+ {
+  name: "Ngữ pháp",
+  icon: GraduationCap,
+  href: "/grammar",
+  feature: "grammar",
+ },
  { name: "Ghi chú", icon: StickyNote, href: "/notes", feature: "notes" },
 ];
 

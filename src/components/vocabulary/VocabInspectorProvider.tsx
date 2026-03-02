@@ -3,8 +3,10 @@
 import { useEffect, useRef, useState, forwardRef } from "react";
 import { createPortal } from "react-dom";
 import { containsChinese } from "@/lib/chinese-utils";
-import { useInspectorStore, type VocabData } from "@/stores/inspector-store";
+import { useInspectorStore } from "@/stores/inspector-store";
 import { createClient } from "@/lib/supabase/client";
+import { saveVocabToSrs } from "@/services/vocab.service";
+import type { VocabData } from "@/types/database";
 import {
  X,
  Volume2,
@@ -152,31 +154,8 @@ const InspectorDrawer = forwardRef<HTMLDivElement, DrawerProps>(
     } = await supabase.auth.getUser();
     if (!user) return;
 
-    const { data: vocab, error: vocabError } = await supabase
-     .from("vocabularies")
-     .upsert(
-      {
-       hanzi: vocabData.hanzi,
-       pinyin: vocabData.pinyin,
-       meaning: vocabData.meaning || "",
-      },
-      { onConflict: "hanzi" },
-     )
-     .select("id")
-     .single();
-
-    if (vocabError) throw vocabError;
-
-    if (vocab?.id) {
-     await supabase.from("user_vocab_progress").upsert(
-      {
-       user_id: user.id,
-       vocab_id: vocab.id,
-       is_favorited: true,
-      },
-      { onConflict: "user_id,vocab_id" },
-     );
-    }
+    const result = await saveVocabToSrs(supabase, user.id, vocabData);
+    if (!result) throw new Error("Save failed");
 
     setIsSaved(true);
     toast.success(`Đã thêm "${vocabData.hanzi}" vào kho ôn tập SRS!`);
@@ -408,7 +387,9 @@ function DeepDiveSection({
         </h4>
         <div className="bg-bg-primary rounded-xl p-4 border border-border-default">
          <p className="text-sm text-text-secondary leading-relaxed">
-          {vocabData.ai_analysis.etymology}
+          {typeof vocabData.ai_analysis.etymology === "object"
+           ? vocabData.ai_analysis.etymology.explanation
+           : vocabData.ai_analysis.etymology}
          </p>
         </div>
        </section>

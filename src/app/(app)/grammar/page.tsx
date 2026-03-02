@@ -7,11 +7,10 @@ import {
  Loader2,
  Search,
  Plus,
- FileText,
+ GraduationCap,
  CheckCircle2,
  Clock,
 } from "lucide-react";
-import { Tabs } from "@base-ui/react";
 import { Input } from "@/components/ui/input";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
@@ -27,19 +26,20 @@ import {
 } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { useForm } from "@tanstack/react-form";
-import { QuickNoteButton } from "@/components/notes/QuickNoteButton";
 import { useNotesList } from "@/features/notes/hooks/useNotesList";
 import { useCreateNote } from "@/features/notes/hooks/useCreateNote";
-import type { NoteCategory } from "@/types/database";
 
-export default function NotesListPage() {
+const statusConfig: Record<string, { label: string; color: string }> = {
+ draft: { label: "Bản nháp", color: "text-text-muted bg-bg-subtle" },
+ reviewed: { label: "Đã ôn", color: "text-info-text bg-info-subtle" },
+ mastered: { label: "Thuần thục", color: "text-success bg-success/10" },
+};
+
+export default function GrammarPage() {
  const [searchQuery, setSearchQuery] = useState("");
- const [activeTab, setActiveTab] = useState<string>("all");
 
- // Use TanStack Query via hook — no useState/useEffect for fetching
- const categoryFilter: NoteCategory | undefined =
-  activeTab === "all" ? undefined : (activeTab as NoteCategory);
- const { data: notes = [], isLoading } = useNotesList(categoryFilter);
+ // TanStack Query: filtered by "grammar" category
+ const { data: notes = [], isLoading } = useNotesList("grammar");
 
  const filteredNotes = notes.filter((note) =>
   note.title.toLowerCase().includes(searchQuery.toLowerCase()),
@@ -49,64 +49,40 @@ export default function NotesListPage() {
   <div className="flex flex-col h-full bg-bg-primary overflow-hidden">
    <div className="px-8 py-6 border-b border-border-default shrink-0">
     <div className="flex items-center justify-between mb-6">
-     <div className="flex items-center gap-4 text-sm text-text-muted font-medium">
-      <span>Ghi chú</span>
-      <span className="text-text-primary">/</span>
-      <span className="text-text-primary">Tất cả ghi chú</span>
+     <div className="flex items-center gap-3">
+      <div className="w-10 h-10 rounded-xl bg-accent/10 border border-accent/20 flex items-center justify-center">
+       <GraduationCap className="w-5 h-5 text-accent" />
+      </div>
+      <div>
+       <h1 className="text-lg font-bold text-text-primary">Ngữ Pháp</h1>
+       <p className="text-sm text-text-muted">
+        Tất cả ghi chú ngữ pháp của bạn
+       </p>
+      </div>
      </div>
 
      <div className="flex items-center gap-4">
       <div className="relative w-64">
        <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-text-muted" />
        <Input
-        placeholder="Tìm kiếm ghi chú..."
+        placeholder="Tìm kiếm ghi chú ngữ pháp..."
         className="pl-9 bg-bg-card border-none ring-1 ring-border-default focus-visible:ring-accent"
         value={searchQuery}
         onChange={(e) => setSearchQuery(e.target.value)}
        />
       </div>
 
-      <QuickNoteButton variant="outline" />
-      <CreateNoteDialog />
+      <CreateGrammarNoteDialog />
      </div>
     </div>
 
-    <Tabs.Root
-     defaultValue="all"
-     value={activeTab}
-     onValueChange={(val) => setActiveTab(val)}
-     className="flex items-center gap-2"
-    >
-     <Tabs.List className="flex items-center gap-2">
-      <Tabs.Tab
-       value="all"
-       className="px-4 py-1.5 rounded-full text-sm font-semibold bg-bg-inverse text-text-inverse data-[selected]:bg-bg-inverse data-[selected]:text-text-inverse border border-transparent"
-      >
-       Tất cả
-      </Tabs.Tab>
-      <Tabs.Tab
-       value="grammar"
-       className="px-4 py-1.5 rounded-full text-sm font-medium text-text-secondary bg-bg-primary border border-border-default hover:bg-bg-card transition-colors data-[selected]:bg-bg-inverse data-[selected]:text-text-inverse data-[selected]:border-transparent"
-      >
-       Ngữ pháp
-      </Tabs.Tab>
-      <Tabs.Tab
-       value="vocabulary"
-       className="px-4 py-1.5 rounded-full text-sm font-medium text-text-secondary bg-bg-primary border border-border-default hover:bg-bg-card transition-colors data-[selected]:bg-bg-inverse data-[selected]:text-text-inverse data-[selected]:border-transparent"
-      >
-       Từ vựng
-      </Tabs.Tab>
-     </Tabs.List>
-
-     <div className="ml-auto flex items-center gap-2 text-sm text-text-muted">
-      <span>Sắp xếp:</span>
-      <select className="bg-transparent font-medium text-text-primary focus:outline-none cursor-pointer">
-       <option>Mới nhất</option>
-       <option>Cũ nhất</option>
-       <option>Tên A-Z</option>
-      </select>
-     </div>
-    </Tabs.Root>
+    <div className="flex items-center gap-3 text-sm text-text-muted">
+     <span className="font-medium">{notes.length} ghi chú ngữ pháp</span>
+     <span className="text-border-default">•</span>
+     <span>
+      {notes.filter((n) => n.status === "mastered").length} đã thuần thục
+     </span>
+    </div>
    </div>
 
    <div className="flex-1 overflow-y-auto p-8">
@@ -117,17 +93,15 @@ export default function NotesListPage() {
       </div>
      ) : filteredNotes.length === 0 ? (
       <div className="text-center py-24 border-2 border-dashed border-border-default rounded-3xl">
-       <FileText className="w-12 h-12 text-text-muted mx-auto mb-4 opacity-50" />
+       <GraduationCap className="w-12 h-12 text-text-muted mx-auto mb-4 opacity-50" />
        <h3 className="text-xl font-bold text-text-primary mb-2">
-        Chưa có ghi chú nào
+        Chưa có ghi chú ngữ pháp nào
        </h3>
        <p className="text-text-secondary mb-6">
-        Hãy tạo ghi chú đầu tiên của bạn để bắt đầu lưu trữ kiến thức.
+        Hãy tạo ghi chú ngữ pháp đầu tiên để lưu trữ các cấu trúc câu quan
+        trọng.
        </p>
-       <div className="flex items-center justify-center gap-3">
-        <QuickNoteButton size="lg" />
-        <CreateNoteDialog />
-       </div>
+       <CreateGrammarNoteDialog />
       </div>
      ) : (
       filteredNotes.map((note) => (
@@ -152,9 +126,17 @@ export default function NotesListPage() {
            )}
           </div>
 
-          <div className="flex items-center text-xs font-medium text-success bg-success/10 px-2.5 py-1 rounded-full gap-1">
+          <div
+           className={`flex items-center text-xs font-medium px-2.5 py-1 rounded-full gap-1 ${
+            statusConfig[note.status || "draft"]?.color ||
+            statusConfig.draft.color
+           }`}
+          >
            <CheckCircle2 className="w-3 h-3" />
-           <span>Đã lưu</span>
+           <span>
+            {statusConfig[note.status || "draft"]?.label ||
+             statusConfig.draft.label}
+           </span>
           </div>
          </div>
 
@@ -176,7 +158,7 @@ export default function NotesListPage() {
  );
 }
 
-function CreateNoteDialog() {
+function CreateGrammarNoteDialog() {
  const [isOpen, setIsOpen] = useState(false);
  const router = useRouter();
  const createNoteMutation = useCreateNote();
@@ -185,7 +167,6 @@ function CreateNoteDialog() {
   defaultValues: {
    title: "",
    tags: "Ngữ pháp",
-   category: "general",
   },
   onSubmit: async ({ value }) => {
    const tagsArray = value.tags
@@ -197,7 +178,7 @@ function CreateNoteDialog() {
     {
      title: value.title,
      tags: tagsArray,
-     category: value.category as NoteCategory,
+     category: "grammar",
      content: {
       type: "doc",
       content: [{ type: "paragraph" }],
@@ -209,7 +190,7 @@ function CreateNoteDialog() {
       router.push(`/notes/${note.id}`);
      },
      onError: (error) => {
-      console.error("Error creating note:", error);
+      console.error("Error creating grammar note:", error);
      },
     },
    );
@@ -221,15 +202,15 @@ function CreateNoteDialog() {
    <DialogTrigger asChild>
     <Button className="bg-accent hover:bg-accent-hover text-white px-5 rounded-full h-10 shadow-sm font-semibold gap-2">
      <Plus className="w-4 h-4" />
-     Tạo Ghi Chú Mới
+     Tạo Ghi Chú Ngữ Pháp
     </Button>
    </DialogTrigger>
 
    <DialogContent className="max-w-md">
     <DialogHeader>
-     <DialogTitle>Tạo ghi chú mới</DialogTitle>
+     <DialogTitle>Tạo ghi chú ngữ pháp</DialogTitle>
      <DialogDescription>
-      Nhập tiêu đề và phân loại cho ghi chú của bạn
+      Nhập tiêu đề cho ghi chú ngữ pháp mới
      </DialogDescription>
     </DialogHeader>
 
@@ -247,7 +228,8 @@ function CreateNoteDialog() {
         onChange: ({ value }) =>
          !value ? "Tiêu đề không được để trống" : undefined,
        }}
-       children={(field) => (
+      >
+       {(field) => (
         <div className="space-y-2">
          <label className="text-sm font-bold text-text-primary">
           Tiêu đề ghi chú
@@ -257,7 +239,7 @@ function CreateNoteDialog() {
           value={field.state.value}
           onBlur={field.handleBlur}
           onChange={(e) => field.handleChange(e.target.value)}
-          placeholder="VD: Bài 6 - Chọn lọc ngữ pháp"
+          placeholder="VD: Cấu trúc 把 (bǎ) - Câu bị động"
           className="border-border-default focus-visible:ring-accent"
          />
          {field.state.meta.errors ? (
@@ -267,14 +249,13 @@ function CreateNoteDialog() {
          ) : null}
         </div>
        )}
-      />
+      </form.Field>
 
-      <form.Field
-       name="tags"
-       children={(field) => (
+      <form.Field name="tags">
+       {(field) => (
         <div className="space-y-2 mt-4">
          <label className="text-sm font-bold text-text-primary">
-          Phân loại (Cách nhau bằng dấu phẩy)
+          Tags (Cách nhau bằng dấu phẩy)
          </label>
          <Input
           name={field.name}
@@ -286,28 +267,7 @@ function CreateNoteDialog() {
          />
         </div>
        )}
-      />
-
-      <form.Field
-       name="category"
-       children={(field) => (
-        <div className="space-y-2 mt-4">
-         <label className="text-sm font-bold text-text-primary">Danh mục</label>
-         <select
-          name={field.name}
-          value={field.state.value}
-          onBlur={field.handleBlur}
-          onChange={(e) => field.handleChange(e.target.value)}
-          className="w-full h-10 bg-bg-card border border-border-default rounded-lg px-3 text-sm text-text-primary cursor-pointer focus:outline-none focus:ring-2 focus:ring-ring transition-colors"
-         >
-          <option value="grammar">🟦 Ngữ Pháp</option>
-          <option value="vocabulary">🟩 Từ Vựng</option>
-          <option value="culture">🟪 Văn Hóa / Mẹo</option>
-          <option value="general">⬜ Chung</option>
-         </select>
-        </div>
-       )}
-      />
+      </form.Field>
      </DialogBody>
 
      <DialogFooter>
@@ -321,7 +281,8 @@ function CreateNoteDialog() {
       </Button>
       <form.Subscribe
        selector={(state) => [state.canSubmit, state.isSubmitting]}
-       children={([canSubmit, isSubmitting]) => (
+      >
+       {([canSubmit, isSubmitting]) => (
         <Button
          type="submit"
          disabled={!canSubmit}
@@ -333,7 +294,7 @@ function CreateNoteDialog() {
          Tạo Ghi Chú
         </Button>
        )}
-      />
+      </form.Subscribe>
      </DialogFooter>
     </form>
    </DialogContent>

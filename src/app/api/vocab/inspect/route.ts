@@ -1,4 +1,5 @@
 import { createClient } from "@/lib/supabase/server";
+import { getVocabByHanzi, saveVocabToSrs } from "@/services/vocab.service";
 import { NextRequest, NextResponse } from "next/server";
 
 export async function GET(request: NextRequest) {
@@ -13,13 +14,9 @@ export async function GET(request: NextRequest) {
 
  const supabase = await createClient();
 
- const { data: vocab, error } = await supabase
-  .from("vocabularies")
-  .select("*")
-  .eq("hanzi", hanzi)
-  .single();
+ const vocab = await getVocabByHanzi(supabase, hanzi);
 
- if (error || !vocab) {
+ if (!vocab) {
   return NextResponse.json({ found: false, hanzi }, { status: 200 });
  }
 
@@ -46,8 +43,12 @@ export async function POST(request: NextRequest) {
   return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
  }
 
- const body = await request.json();
- const { hanzi, pinyin, meaning } = body;
+ const body: unknown = await request.json();
+ const { hanzi, pinyin, meaning } = body as {
+  hanzi?: string;
+  pinyin?: string;
+  meaning?: string;
+ };
 
  if (!hanzi) {
   return NextResponse.json(
@@ -56,29 +57,18 @@ export async function POST(request: NextRequest) {
   );
  }
 
- const { data: vocab, error: vocabError } = await supabase
-  .from("vocabularies")
-  .upsert(
-   { hanzi, pinyin: pinyin || "", meaning: meaning || "" },
-   { onConflict: "hanzi" },
-  )
-  .select("id")
-  .single();
+ const result = await saveVocabToSrs(supabase, user.id, {
+  hanzi,
+  pinyin: pinyin || "",
+  meaning: meaning || "",
+ });
 
- if (vocabError) {
-  return NextResponse.json({ error: vocabError.message }, { status: 500 });
- }
-
- if (vocab?.id) {
-  await supabase.from("user_vocab_progress").upsert(
-   {
-    user_id: user.id,
-    vocab_id: vocab.id,
-    is_favorited: true,
-   },
-   { onConflict: "user_id,vocab_id" },
+ if (!result) {
+  return NextResponse.json(
+   { error: "Failed to save vocabulary" },
+   { status: 500 },
   );
  }
 
- return NextResponse.json({ success: true, vocab_id: vocab?.id });
+ return NextResponse.json({ success: true, vocab_id: result.vocabId });
 }

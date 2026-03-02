@@ -1,12 +1,19 @@
 "use client";
 
-import { useEffect, useState, use, useRef } from "react";
+import { useState, use, useRef, useCallback, useEffect } from "react";
 import { Editor } from "@/components/editor/Editor";
-import { createClient } from "@/lib/supabase/client";
 import { toast } from "sonner";
-import { Loader2, MoreHorizontal, X, Volume2 } from "lucide-react";
+import {
+ Loader2,
+ ChevronDown,
+ Trash2,
+ Check,
+ Cloud,
+ CloudOff,
+ Calendar,
+ Clock,
+} from "lucide-react";
 import { format } from "date-fns";
-import { Button } from "@/components/ui/button";
 import {
  Breadcrumb,
  BreadcrumbItem,
@@ -16,6 +23,42 @@ import {
  BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
 import { useRouter } from "next/navigation";
+import { useNoteDetail } from "@/features/notes/hooks/useNoteDetail";
+import type { NoteCategory } from "@/types/database";
+
+const categoryConfig: Record<
+ string,
+ { label: string; emoji: string; bg: string; border: string; text: string }
+> = {
+ grammar: {
+  label: "Ngữ Pháp",
+  emoji: "🟦",
+  bg: "bg-blue-50 dark:bg-blue-950/30",
+  border: "border-blue-200 dark:border-blue-800/50",
+  text: "text-blue-700 dark:text-blue-300",
+ },
+ vocabulary: {
+  label: "Từ Vựng",
+  emoji: "🟩",
+  bg: "bg-emerald-50 dark:bg-emerald-950/30",
+  border: "border-emerald-200 dark:border-emerald-800/50",
+  text: "text-emerald-700 dark:text-emerald-300",
+ },
+ culture: {
+  label: "Văn Hóa / Mẹo",
+  emoji: "🟪",
+  bg: "bg-purple-50 dark:bg-purple-950/30",
+  border: "border-purple-200 dark:border-purple-800/50",
+  text: "text-purple-700 dark:text-purple-300",
+ },
+ general: {
+  label: "Chung",
+  emoji: "⬜",
+  bg: "bg-bg-primary",
+  border: "border-border-default",
+  text: "text-text-secondary",
+ },
+};
 
 export default function NoteEditorPage({
  params,
@@ -24,90 +67,84 @@ export default function NoteEditorPage({
 }) {
  const { id } = use(params);
  const router = useRouter();
- const [initialContent, setInitialContent] = useState<Record<
-  string,
-  unknown
- > | null>(null);
- const [isLoading, setIsLoading] = useState(true);
- const [noteId, setNoteId] = useState<string | null>(null);
- const [noteTitle, setNoteTitle] = useState("Loading...");
- const [lastEdited, setLastEdited] = useState<string | null>(null);
- const supabaseRef = useRef(createClient());
- const supabase = supabaseRef.current;
 
+ // All data fetching & mutations via TanStack Query hook
+ const {
+  note,
+  isLoading,
+  saveContent,
+  isSaving,
+  saveStatus,
+  updateTitle,
+  updateCategory,
+  deleteNote: deleteNoteMutation,
+  isDeleting,
+ } = useNoteDetail(id);
+
+ const [showDeleteConfirm, setShowDeleteConfirm] = useState(false);
+ const saveTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+ const pendingContentRef = useRef<Record<string, unknown> | null>(null);
+
+ // Debounced auto-save handler
+ const handleChange = useCallback(
+  (json: Record<string, unknown>) => {
+   pendingContentRef.current = json;
+   if (saveTimerRef.current) clearTimeout(saveTimerRef.current);
+   saveTimerRef.current = setTimeout(() => {
+    if (pendingContentRef.current) {
+     saveContent(pendingContentRef.current);
+     pendingContentRef.current = null;
+    }
+   }, 3000);
+  },
+  [saveContent],
+ );
+
+ // Flush pending save on unmount
  useEffect(() => {
-  const fetchNote = async () => {
-   try {
-    const {
-     data: { user },
-    } = await supabase.auth.getUser();
-
-    if (!user) {
-     router.push("/login");
-     return;
-    }
-
-    if (id === "new") {
-     router.push("/notes");
-     return;
-    }
-
-    const { data: note, error } = await supabase
-     .from("notes")
-     .select("*")
-     .eq("id", id)
-     .eq("user_id", user.id)
-     .single();
-
-    if (error) throw error;
-
-    if (note) {
-     setNoteId(note.id);
-     setNoteTitle(note.title || "Untitled Note");
-     setLastEdited(note.updated_at || note.created_at);
-     if (note.content) {
-      setInitialContent(note.content as Record<string, unknown>);
-     }
-    } else {
-     toast.error("Không tìm thấy ghi chú.");
-     router.push("/notes");
-    }
-   } catch (error: unknown) {
-    console.error(
-     "Error fetching note:",
-     error instanceof Error ? error.message : "Unknown error",
-    );
-    toast.error("Không thể tải ghi chú.");
-   } finally {
-    setIsLoading(false);
+  return () => {
+   if (saveTimerRef.current) clearTimeout(saveTimerRef.current);
+   if (pendingContentRef.current) {
+    saveContent(pendingContentRef.current);
    }
   };
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+ }, []);
 
-  fetchNote();
- }, [id]);
+ const handleTitleChange = useCallback(
+  (newTitle: string) => {
+   if (!newTitle.trim()) return;
+   updateTitle(newTitle);
+  },
+  [updateTitle],
+ );
 
- const handleSave = async (json: Record<string, unknown>) => {
-  if (!noteId) return;
+ const handleCategoryChange = useCallback(
+  (newCategory: string) => {
+   updateCategory(newCategory as NoteCategory);
+  },
+  [updateCategory],
+ );
 
-  try {
-   const { error } = await supabase
-    .from("notes")
-    .update({ content: json, updated_at: new Date().toISOString() })
-    .eq("id", noteId);
+ const handleDelete = useCallback(() => {
+  deleteNoteMutation();
+  toast.success("Đã xoá ghi chú.");
+  router.push("/notes");
+ }, [deleteNoteMutation, router]);
 
-   if (error) throw error;
-   setLastEdited(new Date().toISOString());
-  } catch (error: unknown) {
-   console.error(
-    "Error saving note:",
-    error instanceof Error ? error.message : "Unknown error",
-   );
-  }
- };
+ // Derive display state
+ const displaySaveStatus: "idle" | "saving" | "saved" | "error" = isSaving
+  ? "saving"
+  : saveStatus === "success"
+    ? "saved"
+    : saveStatus === "error"
+      ? "error"
+      : "idle";
 
- const handleManualSave = () => {
-  toast.success("Ghi chú đã được lưu.");
- };
+ const noteTitle = note?.title || "Loading...";
+ const category = note?.category || "general";
+ const lastEdited = note?.updated_at || note?.created_at || null;
+ const catConf = categoryConfig[category] || categoryConfig.general;
 
  if (isLoading) {
   return (
@@ -117,182 +154,162 @@ export default function NoteEditorPage({
   );
  }
 
+ if (!note) {
+  return (
+   <div className="flex h-full items-center justify-center bg-bg-primary">
+    <p className="text-text-muted">Không tìm thấy ghi chú.</p>
+   </div>
+  );
+ }
+
  return (
   <div className="flex h-full w-full overflow-hidden bg-bg-primary">
-   <div className="flex-1 flex flex-col min-w-0 border-r border-border-default bg-bg-primary">
-    <div className="h-16 border-b border-border-default flex items-center justify-between px-6 shrink-0 bg-bg-primary">
+   <div className="flex-1 flex flex-col min-w-0 bg-bg-primary">
+    {/* Top bar */}
+    <div className="h-14 border-b border-border-default flex items-center justify-between px-6 shrink-0 bg-bg-primary">
      <Breadcrumb>
       <BreadcrumbList>
        <BreadcrumbItem>
-        <BreadcrumbLink href="/notes">Tất cả ghi chú</BreadcrumbLink>
+        <BreadcrumbLink href="/notes">Ghi chú</BreadcrumbLink>
        </BreadcrumbItem>
        <BreadcrumbSeparator />
        <BreadcrumbItem>
-        <BreadcrumbPage>{noteTitle}</BreadcrumbPage>
+        <BreadcrumbPage className="max-w-60 truncate">
+         {noteTitle}
+        </BreadcrumbPage>
        </BreadcrumbItem>
       </BreadcrumbList>
      </Breadcrumb>
 
-     <div className="flex items-center space-x-4">
-      <Button
-       onClick={handleManualSave}
-       className="bg-accent hover:bg-accent-hover text-white px-4 h-9 shadow-sm"
-      >
-       Save Note
-      </Button>
-      <button className="p-2 text-text-muted hover:text-text-primary rounded-full hover:bg-bg-card-hover transition-colors">
-       <MoreHorizontal className="w-5 h-5" />
-      </button>
+     <div className="flex items-center gap-3">
+      {/* Save status indicator */}
+      <SaveStatusBadge status={displaySaveStatus} />
+
+      {/* Delete */}
+      {showDeleteConfirm ? (
+       <div className="flex items-center gap-2 bg-danger-subtle rounded-lg px-3 py-1.5 animate-in fade-in">
+        <span className="text-xs font-medium text-danger-text">Xoá?</span>
+        <button
+         onClick={handleDelete}
+         disabled={isDeleting}
+         className="text-xs font-bold text-danger hover:underline disabled:opacity-50"
+        >
+         {isDeleting ? "Đang xoá..." : "Xác nhận"}
+        </button>
+        <button
+         onClick={() => setShowDeleteConfirm(false)}
+         className="text-xs text-text-muted hover:text-text-primary"
+        >
+         Huỷ
+        </button>
+       </div>
+      ) : (
+       <button
+        onClick={() => setShowDeleteConfirm(true)}
+        className="p-2 text-text-muted hover:text-danger hover:bg-danger-subtle rounded-lg transition-colors"
+        title="Xoá ghi chú"
+       >
+        <Trash2 className="w-4 h-4" />
+       </button>
+      )}
      </div>
     </div>
 
-    <div className="flex-1 overflow-y-auto w-full flex justify-center py-12 px-8">
+    {/* Editor area */}
+    <div className="flex-1 overflow-y-auto w-full flex justify-center py-10 px-8">
      <div className="w-full max-w-3xl">
-      <div className="mb-10">
+      {/* Title card with category color */}
+      <div
+       className={`rounded-2xl border p-6 mb-8 transition-colors ${catConf.bg} ${catConf.border}`}
+      >
+       <div className="flex items-center gap-2 mb-3">
+        <div className="relative">
+         <select
+          value={category}
+          onChange={(e) => handleCategoryChange(e.target.value)}
+          className={`appearance-none ${catConf.bg} border ${catConf.border} rounded-lg pl-3 pr-7 py-1 text-xs font-bold cursor-pointer hover:opacity-80 focus:outline-none focus:ring-2 focus:ring-ring transition-colors ${catConf.text}`}
+         >
+          <option value="grammar">🟦 Ngữ Pháp</option>
+          <option value="vocabulary">🟩 Từ Vựng</option>
+          <option value="culture">🟪 Văn Hóa / Mẹo</option>
+          <option value="general">⬜ Chung</option>
+         </select>
+         <ChevronDown
+          className={`absolute right-1.5 top-1/2 -translate-y-1/2 w-3.5 h-3.5 pointer-events-none ${catConf.text}`}
+         />
+        </div>
+       </div>
+
        <h1
-        className="text-4xl font-extrabold tracking-tight text-text-primary mb-4 focus:outline-none"
+        className="text-3xl font-extrabold tracking-tight text-text-primary focus:outline-none leading-snug"
         contentEditable
         suppressContentEditableWarning
+        onBlur={(e) => handleTitleChange(e.currentTarget.textContent || "")}
        >
         {noteTitle}
        </h1>
-       <div className="flex items-center text-sm text-text-muted space-x-6 font-medium">
-        <div className="flex items-center space-x-2">
-         <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="16"
-          height="16"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          className="lucide lucide-calendar"
-         >
-          <path d="M8 2v4" />
-          <path d="M16 2v4" />
-          <rect width="18" height="18" x="3" y="4" rx="2" />
-          <path d="M3 10h18" />
-         </svg>
+
+       <div className="flex items-center gap-4 text-xs text-text-muted font-medium mt-3">
+        <div className="flex items-center gap-1.5">
+         <Calendar className="w-3.5 h-3.5" />
          <span>
           {lastEdited ? format(new Date(lastEdited), "MMM d, yyyy") : "Today"}
          </span>
         </div>
-        <div className="flex items-center space-x-2">
-         <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="16"
-          height="16"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          className="lucide lucide-clock"
-         >
-          <circle cx="12" cy="12" r="10" />
-          <polyline points="12 6 12 12 16 14" />
-         </svg>
+        <div className="flex items-center gap-1.5">
+         <Clock className="w-3.5 h-3.5" />
          <span>
-          Last edited{" "}
           {lastEdited ? format(new Date(lastEdited), "h:mm a") : "just now"}
          </span>
         </div>
        </div>
       </div>
 
-      <div className="min-h-[500px]">
+      {/* Editor */}
+      <div className="min-h-125">
        <Editor
-        initialContent={initialContent}
-        onChange={(json) => {
-         handleSave(json);
-        }}
+        initialContent={note.content as Record<string, unknown> | null}
+        onChange={handleChange}
        />
       </div>
      </div>
     </div>
    </div>
+  </div>
+ );
+}
 
-   <div className="w-[320px] shrink-0 flex flex-col bg-bg-card border-l border-border-default">
-    <div className="h-16 flex items-center justify-between px-6 border-b border-border-default shrink-0">
-     <h3 className="text-xs font-bold tracking-wider text-text-muted uppercase">
-      Inspector
-     </h3>
-     <button className="text-text-muted hover:text-text-primary transition-colors">
-      <X className="w-4 h-4" />
-     </button>
-    </div>
+type SaveStatus = "idle" | "saving" | "saved" | "error";
 
-    <div className="flex-1 overflow-y-auto p-6 flex flex-col gap-8">
-     <section>
-      <h4 className="text-[10px] font-bold tracking-wider text-accent uppercase mb-4">
-       Linked Vocabulary
-      </h4>
-      <div className="flex flex-col gap-3">
-       <div className="p-4 rounded-xl border border-border-default bg-bg-primary hover:border-accent/30 transition-colors group cursor-pointer shadow-sm">
-        <div className="flex justify-between items-start mb-1">
-         <span className="text-2xl font-bold text-text-primary group-hover:text-accent transition-colors">
-          作业
-         </span>
-         <button className="text-text-muted hover:text-accent transition-colors">
-          <Volume2 className="w-4 h-4" />
-         </button>
-        </div>
-        <div className="text-sm font-medium text-accent mb-2">zuòyè</div>
-        <div className="text-sm text-text-secondary leading-snug">
-         homework; task; school assignment
-        </div>
-       </div>
+function SaveStatusBadge({ status }: { status: SaveStatus }) {
+ if (status === "idle") return null;
 
-       <div className="p-4 rounded-xl border border-border-default bg-bg-primary hover:border-accent/30 transition-colors group cursor-pointer shadow-sm">
-        <div className="flex justify-between items-start mb-1">
-         <span className="text-2xl font-bold text-text-primary group-hover:text-accent transition-colors">
-          咖啡
-         </span>
-         <button className="text-text-muted hover:text-accent transition-colors">
-          <Volume2 className="w-4 h-4" />
-         </button>
-        </div>
-        <div className="text-sm font-medium text-accent mb-2">kāfēi</div>
-        <div className="text-sm text-text-secondary leading-snug">coffee</div>
-       </div>
+ const config = {
+  saving: {
+   icon: <Cloud className="w-3.5 h-3.5 animate-pulse" />,
+   label: "Đang lưu...",
+   className: "text-text-muted",
+  },
+  saved: {
+   icon: <Check className="w-3.5 h-3.5" />,
+   label: "Đã lưu",
+   className: "text-success",
+  },
+  error: {
+   icon: <CloudOff className="w-3.5 h-3.5" />,
+   label: "Lỗi lưu",
+   className: "text-danger",
+  },
+ };
 
-       <div className="p-4 rounded-xl border border-border-default bg-bg-primary hover:border-accent/30 transition-colors group cursor-pointer shadow-sm">
-        <div className="flex justify-between items-start mb-1">
-         <span className="text-2xl font-bold text-text-primary group-hover:text-accent transition-colors">
-          懂
-         </span>
-         <button className="text-text-muted hover:text-accent transition-colors">
-          <Volume2 className="w-4 h-4" />
-         </button>
-        </div>
-        <div className="text-sm font-medium text-accent mb-2">dǒng</div>
-        <div className="text-sm text-text-secondary leading-snug">
-         to understand; to know
-        </div>
-       </div>
-      </div>
-     </section>
+ const c = config[status];
 
-     <section>
-      <h4 className="text-[10px] font-bold tracking-wider text-text-muted uppercase mb-4">
-       Quick Actions
-      </h4>
-      <button className="w-full py-4 border-2 border-dashed border-border-default rounded-xl text-text-muted hover:text-text-primary hover:border-text-muted transition-colors flex items-center justify-center gap-2 text-sm font-medium">
-       <span>+</span> Add Quick Note
-      </button>
-     </section>
-    </div>
-
-    <div className="p-4 border-t border-border-default bg-bg-primary">
-     <p className="text-xs text-text-muted flex items-start gap-2">
-      <span className="mt-0.5">ℹ️</span>
-      Cards sync across your KMS profile automatically.
-     </p>
-    </div>
-   </div>
+ return (
+  <div
+   className={`flex items-center gap-1.5 text-xs font-medium ${c.className} animate-in fade-in`}
+  >
+   {c.icon}
+   <span>{c.label}</span>
   </div>
  );
 }

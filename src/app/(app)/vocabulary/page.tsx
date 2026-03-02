@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useMemo, useEffect, useCallback, useRef } from "react";
+import { useState, useMemo } from "react";
 import {
  createColumnHelper,
  flexRender,
@@ -10,20 +10,21 @@ import {
  getSortedRowModel,
  type SortingState,
 } from "@tanstack/react-table";
-import { Search, Eye, Trash2, ArrowUpDown, Loader2 } from "lucide-react";
+import {
+ Search,
+ Eye,
+ ExternalLink,
+ Trash2,
+ ArrowUpDown,
+ Loader2,
+} from "lucide-react";
 import { useVocabInspector } from "@/components/vocabulary/VocabInspectorProvider";
-import { createClient } from "@/lib/supabase/client";
+import { useVocabList } from "@/features/vocabulary/hooks/useVocabList";
+import { useDeleteVocab } from "@/features/vocabulary/hooks/useDeleteVocab";
 import { toast } from "sonner";
 import Link from "next/link";
-
-type VocabRow = {
- id: string;
- hanzi: string;
- pinyin: string;
- meaning: string;
- status: "new" | "learning" | "mastered";
- created_at: string;
-};
+import { useRouter } from "next/navigation";
+import type { VocabWithProgress } from "@/types/database";
 
 const statusConfig = {
  mastered: {
@@ -43,96 +44,26 @@ const statusConfig = {
  },
 };
 
-const columnHelper = createColumnHelper<VocabRow>();
+const columnHelper = createColumnHelper<VocabWithProgress>();
 
 export default function VocabularyPage() {
  const [globalFilter, setGlobalFilter] = useState("");
  const [sorting, setSorting] = useState<SortingState>([]);
- const [data, setData] = useState<VocabRow[]>([]);
- const [isLoading, setIsLoading] = useState(true);
  const { openInspector } = useVocabInspector();
- const supabaseRef = useRef(createClient());
- const supabase = supabaseRef.current;
+ const router = useRouter();
 
- const fetchVocab = useCallback(async () => {
-  setIsLoading(true);
-  const {
-   data: { user },
-  } = await supabase.auth.getUser();
+ // TanStack Query hooks — no more useEffect/fetch/useState for data
+ const { data: vocabList = [], isLoading } = useVocabList();
+ const deleteVocab = useDeleteVocab();
 
-  if (!user) {
-   setIsLoading(false);
-   return;
-  }
-
-  const { data: progress } = await supabase
-   .from("user_vocab_progress")
-   .select(
-    `
-    vocab_id,
-    proficiency_level,
-    is_favorited,
-    vocabularies (
-     id,
-     hanzi,
-     pinyin,
-     meaning,
-     created_at
-    )
-   `,
-   )
-   .eq("user_id", user.id);
-
-  if (progress) {
-   const rows: VocabRow[] = progress
-    .filter((p) => p.vocabularies)
-    .map((p) => {
-     const v = p.vocabularies as unknown as {
-      id: string;
-      hanzi: string;
-      pinyin: string;
-      meaning: string;
-      created_at: string;
-     };
-     let status: VocabRow["status"] = "new";
-     if (p.proficiency_level >= 4) status = "mastered";
-     else if (p.proficiency_level >= 2) status = "learning";
-
-     return {
-      id: v.id,
-      hanzi: v.hanzi,
-      pinyin: v.pinyin || "",
-      meaning: v.meaning || "",
-      status,
-      created_at: v.created_at,
-     };
-    });
-   setData(rows);
-  }
-
-  setIsLoading(false);
- }, []);
-
- useEffect(() => {
-  fetchVocab();
- }, [fetchVocab]);
-
- const handleDelete = async (id: string, hanzi: string) => {
+ const handleDelete = (id: string, hanzi: string) => {
   const confirmed = window.confirm(`Xóa "${hanzi}" khỏi kho từ vựng?`);
   if (!confirmed) return;
 
-  const { error } = await supabase
-   .from("user_vocab_progress")
-   .delete()
-   .eq("vocab_id", id);
-
-  if (error) {
-   toast.error("Không thể xóa từ vựng");
-   return;
-  }
-
-  setData((prev) => prev.filter((row) => row.id !== id));
-  toast.success(`Đã xóa "${hanzi}"`);
+  deleteVocab.mutate(id, {
+   onSuccess: () => toast.success(`Đã xóa "${hanzi}"`),
+   onError: () => toast.error("Không thể xóa từ vựng"),
+  });
  };
 
  const columns = useMemo(
@@ -148,9 +79,13 @@ export default function VocabularyPage() {
      </button>
     ),
     cell: (info) => (
-     <span className="font-bold text-xl text-text-primary">
+     <Link
+      href={`/dictionary/${encodeURIComponent(info.getValue())}`}
+      onClick={(e) => e.stopPropagation()}
+      className="font-bold text-xl text-text-primary hover:text-accent transition-colors"
+     >
       {info.getValue()}
-     </span>
+     </Link>
     ),
    }),
    columnHelper.accessor("pinyin", {
@@ -191,7 +126,7 @@ export default function VocabularyPage() {
         openInspector(row.original.hanzi);
        }}
        className="p-2 rounded-lg text-text-muted hover:text-accent hover:bg-accent/10 transition-colors"
-       title="Tra nhanh (Slide-over)"
+       title="Tra nhanh"
       >
        <Eye className="w-4 h-4" />
       </button>
@@ -199,9 +134,9 @@ export default function VocabularyPage() {
        href={`/dictionary/${encodeURIComponent(row.original.hanzi)}`}
        onClick={(e) => e.stopPropagation()}
        className="p-2 rounded-lg text-text-muted hover:text-accent hover:bg-accent/10 transition-colors"
-       title="Xem chi tiết toàn trang"
+       title="Xem chi tiết"
       >
-       <Eye className="w-4 h-4" />
+       <ExternalLink className="w-4 h-4" />
       </Link>
       <button
        onClick={(e) => {
@@ -217,11 +152,11 @@ export default function VocabularyPage() {
     ),
    }),
   ],
-  [openInspector, handleDelete],
+  [openInspector],
  );
 
  const table = useReactTable({
-  data,
+  data: vocabList,
   columns,
   state: { globalFilter, sorting },
   onGlobalFilterChange: setGlobalFilter,
@@ -237,7 +172,7 @@ export default function VocabularyPage() {
     <div>
      <h1 className="text-2xl font-bold text-text-primary">Kho Từ Vựng</h1>
      <p className="text-sm text-text-muted mt-1">
-      Quản lý toàn bộ {data.length} từ vựng đã lưu
+      Quản lý toàn bộ {vocabList.length} từ vựng đã lưu
      </p>
     </div>
 
@@ -259,7 +194,7 @@ export default function VocabularyPage() {
       <Loader2 className="w-6 h-6 animate-spin text-accent" />
       <span className="text-sm text-text-muted">Đang tải từ vựng...</span>
      </div>
-    ) : data.length === 0 ? (
+    ) : vocabList.length === 0 ? (
      <div className="flex-1 flex flex-col items-center justify-center gap-3 p-12">
       <div className="w-16 h-16 rounded-2xl bg-bg-elevated border border-border-default flex items-center justify-center">
        <Search className="w-7 h-7 text-text-muted" />
@@ -295,7 +230,9 @@ export default function VocabularyPage() {
         {table.getRowModel().rows.map((row) => (
          <tr
           key={row.id}
-          onClick={() => openInspector(row.original.hanzi)}
+          onClick={() =>
+           router.push(`/dictionary/${encodeURIComponent(row.original.hanzi)}`)
+          }
           className="cursor-pointer hover:bg-bg-card-hover transition-colors"
          >
           {row.getVisibleCells().map((cell) => (

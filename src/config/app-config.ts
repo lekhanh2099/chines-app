@@ -7,6 +7,7 @@ export const appConfig = {
   settings: true,
   notes: true,
   dictionary: true,
+  grammar: true,
  },
 } as const;
 

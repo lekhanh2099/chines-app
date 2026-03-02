@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import {
  Search,
@@ -11,12 +11,10 @@ import {
  ArrowRight,
  AlertTriangle,
  Calendar,
- ClipboardList,
- Zap,
+ History,
 } from "lucide-react";
-import { QuickNoteButton } from "@/components/notes/QuickNoteButton";
-import { useQuickNote } from "@/hooks/useQuickNote";
 import { useVocabInspector } from "@/components/vocabulary/VocabInspectorProvider";
+import { useInspectorStore } from "@/stores/inspector-store";
 import { containsChinese } from "@/lib/chinese-utils";
 
 function ProgressRing({
@@ -60,12 +58,6 @@ function ProgressRing({
 
 const heroActions = [
  {
-  icon: Zap,
-  title: "Ghi Chú Nhanh",
-  desc: "Bắt đầu viết ngay, không cần chọn loại",
-  href: "__quick_note__",
- },
- {
   icon: StickyNote,
   title: "Tạo Ghi Chú Ngữ Pháp Mới",
   desc: "Viết và lưu lại các cấu trúc khó nhớ",
@@ -85,36 +77,15 @@ const heroActions = [
  },
 ];
 
-const recentNotes = [
- {
-  icon: ClipboardList,
-  title: "Phân biệt 知道 và 认识",
-  tag: "GRAMMAR",
-  tagColor: "info",
-  desc: "Cách dùng từ vựng trong ngữ cảnh cụ thể",
-  time: "2 phút trước",
- },
- {
-  icon: ClipboardList,
-  title: "Cấu trúc chữ 把 (Bǎ)",
-  tag: "SYNTAX",
-  tagColor: "purple",
-  desc: "Câu bị động và cách chuyển đổi",
-  time: "Hôm qua",
- },
- {
-  icon: ClipboardList,
-  title: "Tổng hợp từ vựng Bài 4",
-  tag: "VOCAB",
-  tagColor: "success",
-  desc: "Từ vựng về mua sắm và hỏi giá",
-  time: "Hôm qua",
- },
-];
-
 export default function DashboardPage() {
  const { openInspector } = useVocabInspector();
+ const recentLookups = useInspectorStore((s) => s.recentLookups);
+ const loadRecentLookups = useInspectorStore((s) => s.loadRecentLookups);
  const [heroSearch, setHeroSearch] = useState("");
+
+ useEffect(() => {
+  loadRecentLookups();
+ }, [loadRecentLookups]);
 
  const handleHeroSearch = (e: React.FormEvent) => {
   e.preventDefault();
@@ -128,8 +99,8 @@ export default function DashboardPage() {
 
  return (
   <div className="w-full h-full">
-   <div className="grid grid-cols-12 gap-6 max-w-[1400px]">
-    <div className="col-span-12 lg:col-span-8 bg-bg-card rounded-[32px] p-8 shadow-theme-sm border border-border-default">
+   <div className="grid grid-cols-12 gap-6 max-w-350">
+    <div className="col-span-12 lg:col-span-8 bg-bg-card rounded-4xl p-8 shadow-theme-sm border border-border-default">
      <div className="mb-1">
       <h2 className="text-lg font-bold text-text-primary">Trung Tâm Chỉ Huy</h2>
       <p className="text-sm text-text-muted">
@@ -152,32 +123,28 @@ export default function DashboardPage() {
      </form>
 
      <div className="flex flex-col">
-      {heroActions.map((action, i) =>
-       action.href === "__quick_note__" ? (
-        <QuickNoteActionItem key={i} action={action} />
-       ) : (
-        <Link
-         key={i}
-         href={action.href}
-         className="group flex items-center gap-4 px-4 py-4 -mx-2 rounded-xl hover:bg-bg-card-hover transition-colors"
-        >
-         <div className="w-10 h-10 rounded-xl bg-bg-elevated border border-border-default flex items-center justify-center shrink-0 group-hover:border-border-hover transition-colors">
-          <action.icon className="w-[18px] h-[18px] text-text-secondary" />
-         </div>
-         <div className="flex-1 min-w-0">
-          <p className="text-sm font-semibold text-text-primary group-hover:text-accent-text transition-colors">
-           {action.title}
-          </p>
-          <p className="text-xs text-text-muted">{action.desc}</p>
-         </div>
-         <ChevronRight className="w-4 h-4 text-text-muted group-hover:text-accent-text transition-colors shrink-0" />
-        </Link>
-       ),
-      )}
+      {heroActions.map((action, i) => (
+       <Link
+        key={i}
+        href={action.href}
+        className="group flex items-center gap-4 px-4 py-4 -mx-2 rounded-xl hover:bg-bg-card-hover transition-colors"
+       >
+        <div className="w-10 h-10 rounded-xl bg-bg-elevated border border-border-default flex items-center justify-center shrink-0 group-hover:border-border-hover transition-colors">
+         <action.icon className="w-4.5 h-4.5 text-text-secondary" />
+        </div>
+        <div className="flex-1 min-w-0">
+         <p className="text-sm font-semibold text-text-primary group-hover:text-accent-text transition-colors">
+          {action.title}
+         </p>
+         <p className="text-xs text-text-muted">{action.desc}</p>
+        </div>
+        <ChevronRight className="w-4 h-4 text-text-muted group-hover:text-accent-text transition-colors shrink-0" />
+       </Link>
+      ))}
      </div>
     </div>
 
-    <div className="col-span-12 lg:col-span-4 bg-bg-card rounded-[32px] p-6 shadow-theme-sm border border-border-default flex flex-col">
+    <div className="col-span-12 lg:col-span-4 bg-bg-card rounded-4xl p-6 shadow-theme-sm border border-border-default flex flex-col">
      <span className="text-[11px] font-bold uppercase tracking-widest text-accent-text mb-4 flex items-center gap-1.5">
       <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
       Đang học dở
@@ -214,7 +181,7 @@ export default function DashboardPage() {
      </Link>
     </div>
 
-    <div className="col-span-12 lg:col-span-4 bg-bg-card rounded-[32px] p-6 shadow-theme-sm border border-border-default flex flex-col">
+    <div className="col-span-12 lg:col-span-4 bg-bg-card rounded-4xl p-6 shadow-theme-sm border border-border-default flex flex-col">
      <div className="flex items-center justify-between mb-4">
       <h3 className="font-bold text-text-primary">Cần Ôn Hôm Nay</h3>
       <Calendar className="w-5 h-5 text-text-muted" />
@@ -244,80 +211,54 @@ export default function DashboardPage() {
      </div>
     </div>
 
-    <div className="col-span-12 lg:col-span-8 bg-bg-card rounded-[32px] p-6 shadow-theme-sm border border-border-default">
+    <div className="col-span-12 lg:col-span-8 bg-bg-card rounded-4xl p-6 shadow-theme-sm border border-border-default">
      <div className="flex items-center justify-between mb-5">
-      <h3 className="font-bold text-text-primary">Ghi chú Gần đây</h3>
+      <div className="flex items-center gap-2">
+       <History className="w-5 h-5 text-accent" />
+       <h3 className="font-bold text-text-primary">Lịch sử tra cứu</h3>
+      </div>
       <Link
-       href="/notes"
+       href="/vocabulary"
        className="text-sm font-medium text-accent-text hover:underline"
       >
-       Xem tất cả
+       Kho từ vựng
       </Link>
      </div>
 
-     <div className="flex flex-col divide-y divide-border-default">
-      {recentNotes.map((note, i) => (
-       <div
-        key={i}
-        className="group flex items-start gap-4 py-4 first:pt-0 last:pb-0 cursor-pointer"
-       >
-        <div className="w-10 h-10 rounded-xl bg-bg-elevated border border-border-default flex items-center justify-center shrink-0 mt-0.5">
-         <note.icon className="w-[18px] h-[18px] text-text-secondary" />
-        </div>
-        <div className="flex-1 min-w-0">
-         <p className="text-sm font-semibold text-text-primary group-hover:text-accent-text transition-colors">
-          {note.title}
-         </p>
-         <div className="flex items-center gap-2 mt-1">
-          <span
-           className={`text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-md ${
-            note.tagColor === "info"
-             ? "bg-info-subtle text-info-text"
-             : note.tagColor === "purple"
-               ? "bg-purple-subtle text-purple-text"
-               : "bg-success-subtle text-success-text"
-           }`}
-          >
-           {note.tag}
-          </span>
-          <span className="text-xs text-text-muted">{note.desc}</span>
-         </div>
-        </div>
-        <span className="text-xs text-text-muted whitespace-nowrap shrink-0">
-         {note.time}
-        </span>
-       </div>
-      ))}
-     </div>
+     {recentLookups.length === 0 ? (
+      <div className="text-center py-12 border-2 border-dashed border-border-default rounded-2xl">
+       <Search className="w-10 h-10 text-text-muted mx-auto mb-3 opacity-50" />
+       <p className="text-sm text-text-muted font-medium">
+        Chưa có từ nào được tra cứu
+       </p>
+       <p className="text-xs text-text-muted mt-1">
+        Nhập từ tiếng Trung vào ô tìm kiếm phía trên hoặc bôi đen bất kỳ đoạn
+        văn nào
+       </p>
+      </div>
+     ) : (
+      <div className="flex gap-3 overflow-x-auto pb-2 -mx-1 px-1 scrollbar-thin">
+       {recentLookups.map((vocab, i) => (
+        <button
+         key={`${vocab.hanzi}-${i}`}
+         onClick={() => openInspector(vocab.hanzi)}
+         className="group shrink-0 w-35 p-4 rounded-2xl border border-border-default bg-bg-primary hover:border-accent/40 hover:shadow-theme-sm transition-all duration-200 text-left cursor-pointer"
+        >
+         <span className="block text-2xl font-bold text-text-primary group-hover:text-accent transition-colors mb-1">
+          {vocab.hanzi}
+         </span>
+         <span className="block text-xs font-medium text-accent mb-1.5">
+          {vocab.pinyin}
+         </span>
+         <span className="block text-xs text-text-muted leading-snug line-clamp-2">
+          {vocab.meaning || vocab.ai_analysis?.han_viet || "—"}
+         </span>
+        </button>
+       ))}
+      </div>
+     )}
     </div>
    </div>
   </div>
- );
-}
-
-function QuickNoteActionItem({
- action,
-}: {
- action: (typeof heroActions)[number];
-}) {
- const { handleCreate, isCreating } = useQuickNote();
-
- return (
-  <button
-   onClick={handleCreate}
-   disabled={isCreating}
-   className="group flex items-center gap-4 px-4 py-4 -mx-2 rounded-xl hover:bg-bg-card-hover transition-colors w-full text-left disabled:opacity-60"
-  >
-   <div className="w-10 h-10 rounded-xl bg-accent/10 border border-accent/20 flex items-center justify-center shrink-0 group-hover:border-accent/40 transition-colors">
-    <action.icon className="w-[18px] h-[18px] text-accent" />
-   </div>
-   <div className="flex-1 min-w-0">
-    <p className="text-sm font-semibold text-text-primary group-hover:text-accent-text transition-colors">
-     {action.title}
-    </p>
-    <p className="text-xs text-text-muted">{action.desc}</p>
-   </div>
-   <ChevronRight className="w-4 h-4 text-text-muted group-hover:text-accent-text transition-colors shrink-0" />
-  </button>
  );
 }
