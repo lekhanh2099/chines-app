@@ -163,8 +163,8 @@ export default function NoteEditorPage({
  }
 
  return (
-  <div className="flex h-full w-full overflow-hidden bg-bg-primary">
-   <div className="flex-1 flex flex-col min-w-0 bg-bg-primary">
+  <div className="flex h-full w-full bg-bg-primary">
+   <div className="flex-1 flex flex-col min-w-0 bg-bg-primary overflow-y-auto">
     {/* Top bar */}
     <div className="h-14 border-b border-border-default flex items-center justify-between px-6 shrink-0 bg-bg-primary">
      <Breadcrumb>
@@ -215,64 +215,60 @@ export default function NoteEditorPage({
      </div>
     </div>
 
-    {/* Editor area */}
-    <div className="flex-1 overflow-y-auto w-full flex justify-center py-10 px-8">
-     <div className="w-full max-w-3xl">
-      {/* Title card with category color */}
-      <div
-       className={`rounded-2xl border p-6 mb-8 transition-colors ${catConf.bg} ${catConf.border}`}
-      >
-       <div className="flex items-center gap-2 mb-3">
-        <div className="relative">
-         <select
-          value={category}
-          onChange={(e) => handleCategoryChange(e.target.value)}
-          className={`appearance-none ${catConf.bg} border ${catConf.border} rounded-lg pl-3 pr-7 py-1 text-xs font-bold cursor-pointer hover:opacity-80 focus:outline-none focus:ring-2 focus:ring-ring transition-colors ${catConf.text}`}
-         >
-          <option value="grammar">🟦 Ngữ Pháp</option>
-          <option value="vocabulary">🟩 Từ Vựng</option>
-          <option value="culture">🟪 Văn Hóa / Mẹo</option>
-          <option value="general">⬜ Chung</option>
-         </select>
-         <ChevronDown
-          className={`absolute right-1.5 top-1/2 -translate-y-1/2 w-3.5 h-3.5 pointer-events-none ${catConf.text}`}
-         />
-        </div>
-       </div>
+    {/* Editor area — gray canvas with white paper */}
 
-       <h1
-        className="text-3xl font-extrabold tracking-tight text-text-primary focus:outline-none leading-snug"
-        contentEditable
-        suppressContentEditableWarning
-        onBlur={(e) => handleTitleChange(e.currentTarget.textContent || "")}
+    <div
+     className={`rounded-2xl border p-6 mb-3 transition-colors ${catConf.bg} ${catConf.border}`}
+    >
+     <div className="flex items-center gap-2 mb-3">
+      <div className="relative">
+       <select
+        value={category}
+        onChange={(e) => handleCategoryChange(e.target.value)}
+        className={`appearance-none ${catConf.bg} border ${catConf.border} rounded-lg pl-3 pr-7 py-1 text-xs font-bold cursor-pointer hover:opacity-80 focus:outline-none focus:ring-2 focus:ring-ring transition-colors ${catConf.text}`}
        >
-        {noteTitle}
-       </h1>
-
-       <div className="flex items-center gap-4 text-xs text-text-muted font-medium mt-3">
-        <div className="flex items-center gap-1.5">
-         <Calendar className="w-3.5 h-3.5" />
-         <span>
-          {lastEdited ? format(new Date(lastEdited), "MMM d, yyyy") : "Today"}
-         </span>
-        </div>
-        <div className="flex items-center gap-1.5">
-         <Clock className="w-3.5 h-3.5" />
-         <span>
-          {lastEdited ? format(new Date(lastEdited), "h:mm a") : "just now"}
-         </span>
-        </div>
-       </div>
-      </div>
-
-      {/* Editor */}
-      <div className="min-h-125">
-       <Editor
-        initialContent={note.content as Record<string, unknown> | null}
-        onChange={handleChange}
+        <option value="grammar">🟦 Ngữ Pháp</option>
+        <option value="vocabulary">🟩 Từ Vựng</option>
+        <option value="culture">🟪 Văn Hóa / Mẹo</option>
+        <option value="general">⬜ Chung</option>
+       </select>
+       <ChevronDown
+        className={`absolute right-1.5 top-1/2 -translate-y-1/2 w-3.5 h-3.5 pointer-events-none ${catConf.text}`}
        />
       </div>
      </div>
+
+     <h1
+      className="text-3xl font-extrabold tracking-tight text-text-primary focus:outline-none leading-snug"
+      contentEditable
+      suppressContentEditableWarning
+      onBlur={(e) => handleTitleChange(e.currentTarget.textContent || "")}
+     >
+      {noteTitle}
+     </h1>
+
+     <div className="flex items-center gap-4 text-xs text-text-muted font-medium mt-3">
+      <div className="flex items-center gap-1.5">
+       <Calendar className="w-3.5 h-3.5" />
+       <span>
+        {lastEdited ? format(new Date(lastEdited), "MMM d, yyyy") : "Today"}
+       </span>
+      </div>
+      <div className="flex items-center gap-1.5">
+       <Clock className="w-3.5 h-3.5" />
+       <span>
+        {lastEdited ? format(new Date(lastEdited), "h:mm a") : "just now"}
+       </span>
+      </div>
+     </div>
+    </div>
+
+    {/* Editor */}
+    <div className="min-h-[60vh]">
+     <Editor
+      initialContent={note.content as Record<string, unknown> | null}
+      onChange={handleChange}
+     />
     </div>
    </div>
   </div>

@@ -1,198 +1,159 @@
-import { EditorContent, useEditor } from "@tiptap/react";
-import { BubbleMenu } from "@tiptap/react/menus";
-import StarterKit from "@tiptap/starter-kit";
-import Placeholder from "@tiptap/extension-placeholder";
-import { Ruby } from "./extensions/ruby";
-import { SlashCommand } from "./extensions/slash-command";
-import { suggestion } from "./extensions/suggestion";
-import { pinyin } from "pinyin-pro";
-import { toast } from "sonner";
-import {
- Bot,
- Languages,
- Save,
- Bold,
- Italic,
- Strikethrough,
- Code,
-} from "lucide-react";
-import { useState } from "react";
-import { createClient } from "@/lib/supabase/client";
+/**
+ * Lexical Editor — Playground-style editor with top toolbar.
+ *
+ * Features:
+ *  - Rich text editing (headings, lists, quotes, code, checklists)
+ *  - Playground-style toolbar (undo/redo, blocks, font, formatting, colors, alignment)
+ *  - Draggable block reordering (+ button and grip handle)
+ *  - PinyinNode for inline <ruby>/<rt> rendering
+ *  - Auto-save via onChange callback
+ */
+"use client";
 
+import { useEffect, useMemo, useRef } from "react";
+import { LexicalComposer } from "@lexical/react/LexicalComposer";
+import { RichTextPlugin } from "@lexical/react/LexicalRichTextPlugin";
+import { ContentEditable } from "@lexical/react/LexicalContentEditable";
+import { HistoryPlugin } from "@lexical/react/LexicalHistoryPlugin";
+import { ListPlugin } from "@lexical/react/LexicalListPlugin";
+import { CheckListPlugin } from "@lexical/react/LexicalCheckListPlugin";
+import { TabIndentationPlugin } from "@lexical/react/LexicalTabIndentationPlugin";
+import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext";
+import { HeadingNode, QuoteNode } from "@lexical/rich-text";
+import { ListNode, ListItemNode } from "@lexical/list";
+import { CodeNode } from "@lexical/code";
+import { LinkNode } from "@lexical/link";
+import { TableNode, TableCellNode, TableRowNode } from "@lexical/table";
+import { HorizontalRuleNode } from "@lexical/react/LexicalHorizontalRuleNode";
+import { LexicalErrorBoundary } from "@lexical/react/LexicalErrorBoundary";
+
+import { PinyinNode } from "./nodes/PinyinNode";
+import theme from "./theme";
+import ToolbarPlugin from "./plugins/ToolbarPlugin";
+import FloatingToolbarPlugin from "./plugins/FloatingToolbarPlugin";
+import DraggableBlockPlugin from "./plugins/DraggableBlockPlugin";
+import AutoSavePlugin from "./plugins/AutoSavePlugin";
+import TableActionPlugin from "./plugins/TableActionPlugin";
+import { HorizontalRulePlugin } from "@lexical/react/LexicalHorizontalRulePlugin";
+
+/* ── Types ── */
 interface EditorProps {
- initialContent?: any;
- onChange?: (json: any) => void;
+ initialContent?: Record<string, unknown> | null;
+ onChange?: (json: Record<string, unknown>) => void;
  readOnly?: boolean;
 }
 
+/* ── Placeholder ── */
+function Placeholder() {
+ return <div className="editor-placeholder">Bắt đầu nhập nội dung...</div>;
+}
+
+/* ── Restore initial editor state from JSON ── */
+function RestoreStatePlugin({
+ initialState,
+}: {
+ initialState?: Record<string, unknown> | null;
+}) {
+ const [editor] = useLexicalComposerContext();
+ const hasRestored = useRef(false);
+
+ useEffect(() => {
+  if (!initialState || hasRestored.current) return;
+  try {
+   const editorState = editor.parseEditorState(JSON.stringify(initialState));
+   editor.setEditorState(editorState);
+   hasRestored.current = true;
+  } catch (err) {
+   console.warn("[Editor] Could not restore state:", err);
+  }
+ }, [editor, initialState]);
+
+ return null;
+}
+
+/* ── Read-only toggle ── */
+function EditablePlugin({ readOnly }: { readOnly: boolean }) {
+ const [editor] = useLexicalComposerContext();
+ useEffect(() => {
+  editor.setEditable(!readOnly);
+ }, [editor, readOnly]);
+ return null;
+}
+
+/* ── Main Editor ── */
 export function Editor({
  initialContent,
  onChange,
  readOnly = false,
 }: EditorProps) {
- const [isProcessing, setIsProcessing] = useState(false);
- const supabase = createClient();
-
- const editor = useEditor({
-  immediatelyRender: false,
-  extensions: [
-   StarterKit,
-   Placeholder.configure({
-    placeholder: "Nhấn '/' để mở menu công cụ, hoặc bắt đầu nhập nội dung...",
-   }),
-   Ruby,
-   SlashCommand.configure({
-    suggestion,
-   }),
-  ],
-  content: initialContent || "",
-  editable: !readOnly,
-  onUpdate: ({ editor }) => {
-   onChange?.(editor.getJSON());
-  },
-  editorProps: {
-   attributes: {
-    class:
-     "prose prose-sm sm:prose-base dark:prose-invert max-w-none focus:outline-none min-h-[500px] leading-relaxed",
+ const initialConfig = useMemo(
+  () => ({
+   namespace: "ChineseAppEditor",
+   theme,
+   nodes: [
+    HeadingNode,
+    QuoteNode,
+    ListNode,
+    ListItemNode,
+    CodeNode,
+    LinkNode,
+    TableNode,
+    TableCellNode,
+    TableRowNode,
+    HorizontalRuleNode,
+    PinyinNode,
+   ],
+   editable: !readOnly,
+   onError: (error: Error) => {
+    console.error("[LexicalEditor]", error);
    },
-  },
- });
-
- if (!editor) {
-  return null;
- }
-
- const handleAddPinyin = () => {
-  if (editor.state.selection.empty) return;
-
-  const selectedText = editor.state.doc.textBetween(
-   editor.state.selection.from,
-   editor.state.selection.to,
-   " ",
-  );
-
-  if (!selectedText.trim()) return;
-
-  // Get pinyin
-  const pinyinText = pinyin(selectedText); // Adjust toneType as needed
-
-  // Replace selection with Ruby node
-  editor
-   .chain()
-   .focus()
-   .deleteSelection()
-   .setRuby({ char: selectedText, pinyin: pinyinText })
-   .run();
- };
-
- const handleSaveToVocab = async () => {
-  if (editor.state.selection.empty) return;
-
-  const selectedText = editor.state.doc
-   .textBetween(editor.state.selection.from, editor.state.selection.to, " ")
-   .trim();
-
-  if (!selectedText) return;
-
-  setIsProcessing(true);
-
-  try {
-   const {
-    data: { user },
-   } = await supabase.auth.getUser();
-   if (!user) throw new Error("Chưa đăng nhập");
-
-   // 1. Upsert into global vocabularies (if missing)
-   const pinyinText = pinyin(selectedText);
-   const { data: vocab, error: vocabError } = await supabase
-    .from("vocabularies")
-    .upsert(
-     { hanzi: selectedText, pinyin: pinyinText, meaning: "" },
-     { onConflict: "hanzi" },
-    )
-    .select("id")
-    .single();
-
-   if (vocabError) throw vocabError;
-
-   if (vocab?.id) {
-    // 2. Add to user progress
-    const { error: userVocabError } = await supabase
-     .from("user_vocab_progress")
-     .upsert(
-      { user_id: user.id, vocab_id: vocab.id, is_favorited: true },
-      { onConflict: "user_id,vocab_id" },
-     );
-
-    if (userVocabError) throw userVocabError;
-
-    toast.success(`Đã lưu "${selectedText}" vào Kho từ vựng!`, {
-     icon: <Bot className="w-4 h-4 text-emerald-500" />,
-    });
-   }
-  } catch (error: any) {
-   console.error("Save to vocab failed:", error);
-   toast.error(`Lỗi: ${error.message || "Không thể lưu từ vựng"}`);
-  } finally {
-   setIsProcessing(false);
-  }
- };
+  }),
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  [],
+ );
 
  return (
-  <div className="relative w-full h-full">
-   {editor && (
-    <BubbleMenu
-     editor={editor}
-     className="flex items-center gap-1 bg-bg-card z-50 border border-border-default shadow-theme-lg rounded-xl p-1"
-    >
-     <button
-      onClick={() => editor.chain().focus().toggleBold().run()}
-      className={`p-1.5 rounded-md hover:bg-bg-card-hover transition-colors ${editor.isActive("bold") ? "text-text-primary bg-bg-card-hover" : "text-text-muted"}`}
-     >
-      <Bold className="w-4 h-4" />
-     </button>
-     <button
-      onClick={() => editor.chain().focus().toggleItalic().run()}
-      className={`p-1.5 rounded-md hover:bg-bg-card-hover transition-colors ${editor.isActive("italic") ? "text-text-primary bg-bg-card-hover" : "text-text-muted"}`}
-     >
-      <Italic className="w-4 h-4" />
-     </button>
-     <button
-      onClick={() => editor.chain().focus().toggleStrike().run()}
-      className={`p-1.5 rounded-md hover:bg-bg-card-hover transition-colors ${editor.isActive("strike") ? "text-text-primary bg-bg-card-hover" : "text-text-muted"}`}
-     >
-      <Strikethrough className="w-4 h-4" />
-     </button>
-     <button
-      onClick={() => editor.chain().focus().toggleCode().run()}
-      className={`p-1.5 rounded-md hover:bg-bg-card-hover transition-colors ${editor.isActive("code") ? "text-text-primary bg-bg-card-hover" : "text-text-muted"}`}
-     >
-      <Code className="w-4 h-4" />
-     </button>
+  <LexicalComposer initialConfig={initialConfig}>
+   <div className="editor-shell" data-editor-wrapper data-no-inspector>
+    {/* Toolbar */}
+    {!readOnly && <ToolbarPlugin />}
 
-     <div className="w-[1px] h-4 bg-border-default mx-1" />
+    {/* Editor body */}
+    <div className="editor-container">
+     <RichTextPlugin
+      contentEditable={
+       <ContentEditable
+        className="editor-input"
+        aria-placeholder="Bắt đầu nhập..."
+        placeholder={<Placeholder />}
+       />
+      }
+      placeholder={null}
+      ErrorBoundary={LexicalErrorBoundary}
+     />
 
-     <button
-      onClick={handleAddPinyin}
-      className="flex items-center gap-1.5 px-2.5 py-1.5 text-sm font-medium text-text-primary hover:bg-accent/10 hover:text-accent rounded-md transition-colors"
-     >
-      <Languages className="w-4 h-4" />
-      Thêm Pinyin
-     </button>
-     <div className="w-[1px] h-4 bg-border-default mx-1" />
-     <button
-      onClick={handleSaveToVocab}
-      disabled={isProcessing}
-      className="flex items-center gap-1.5 px-2.5 py-1.5 text-sm font-medium text-text-primary hover:bg-emerald-500/10 hover:text-emerald-500 rounded-md transition-colors disabled:opacity-50"
-     >
-      <Save className="w-4 h-4" />
-      {isProcessing ? "Đang lưu..." : "Lưu kho từ"}
-     </button>
-    </BubbleMenu>
-   )}
+     {/* Core plugins */}
+     <HistoryPlugin />
+     <ListPlugin />
+     <CheckListPlugin />
+     <TabIndentationPlugin />
+     <HorizontalRulePlugin />
 
-   {/* Editor Content Area */}
-   <EditorContent editor={editor} className="outline-none" />
-  </div>
+     {/* State management */}
+     <RestoreStatePlugin initialState={initialContent} />
+     <EditablePlugin readOnly={readOnly} />
+     <AutoSavePlugin onChange={onChange} />
+
+     {/* Interactive plugins */}
+     {!readOnly && (
+      <>
+       <FloatingToolbarPlugin />
+       <DraggableBlockPlugin />
+       <TableActionPlugin />
+      </>
+     )}
+    </div>
+   </div>
+  </LexicalComposer>
  );
 }

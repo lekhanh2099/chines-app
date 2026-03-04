@@ -40,6 +40,9 @@ export function VocabInspectorProvider({
   const handleMouseUp = (e: MouseEvent) => {
    if (panelRef.current?.contains(e.target as Node)) return;
 
+   const target = e.target as HTMLElement;
+   if (target.closest("[data-no-inspector]")) return;
+
    setTimeout(() => {
     const selection = window.getSelection();
     if (!selection || selection.isCollapsed) return;
