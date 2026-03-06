@@ -1,16 +1,9 @@
 "use client";
 
-import { useState } from "react";
+import { useState, Suspense } from "react";
 import { format } from "date-fns";
 import { vi } from "date-fns/locale";
-import {
- Loader2,
- Search,
- Plus,
- FileText,
- CheckCircle2,
- Clock,
-} from "lucide-react";
+import { Loader2, Search, Plus, FileText, Clock } from "lucide-react";
 import { Tabs } from "@base-ui/react";
 import { Input } from "@/components/ui/input";
 import { useRouter } from "next/navigation";
@@ -30,37 +23,80 @@ import { useForm } from "@tanstack/react-form";
 import { QuickNoteButton } from "@/components/notes/QuickNoteButton";
 import { useNotesList } from "@/features/notes/hooks/useNotesList";
 import { useCreateNote } from "@/features/notes/hooks/useCreateNote";
+import { useNoteRouting } from "@/hooks/useNoteRouting";
 import type { NoteCategory } from "@/types/database";
 
-export default function NotesListPage() {
+const categoryEmoji: Record<string, string> = {
+ grammar: "🟦",
+ vocabulary: "🟩",
+ culture: "🟪",
+ general: "⬜",
+};
+
+export default function NotesPage() {
+ return (
+  <Suspense
+   fallback={
+    <div className="flex items-center justify-center h-full">
+     <Loader2 className="w-6 h-6 animate-spin text-text-muted" />
+    </div>
+   }
+  >
+   <NotesPageInner />
+  </Suspense>
+ );
+}
+
+function NotesPageInner() {
  const [searchQuery, setSearchQuery] = useState("");
  const [activeTab, setActiveTab] = useState<string>("all");
 
- // Use TanStack Query via hook — no useState/useEffect for fetching
  const categoryFilter: NoteCategory | undefined =
   activeTab === "all" ? undefined : (activeTab as NoteCategory);
- const { data: notes = [], isLoading } = useNotesList(categoryFilter);
+ const { data: notes, isLoading } = useNotesList(categoryFilter);
 
- const filteredNotes = notes.filter((note) =>
+ // Smart routing — redirects unless ?view=all or ?action=new
+ const { isRedirecting, isListView, isNewAction } = useNoteRouting(
+  notes,
+  isLoading,
+ );
+
+ const createNoteMutation = useCreateNote();
+ const router = useRouter();
+
+ // ── Loading / Redirecting skeleton ──
+ if (isLoading || isRedirecting) {
+  return (
+   <div className="flex items-center justify-center h-full">
+    <Loader2 className="w-6 h-6 animate-spin text-text-muted" />
+   </div>
+  );
+ }
+
+ // ── Case: ?action=new  →  auto-create a note ──
+ if (isNewAction) {
+  return <NewNoteView />;
+ }
+
+ // ── Case: ?view=all  →  List View ──
+ const allNotes = notes ?? [];
+ const filteredNotes = allNotes.filter((note) =>
   note.title.toLowerCase().includes(searchQuery.toLowerCase()),
  );
 
  return (
-  <div className="flex flex-col h-full bg-bg-primary overflow-hidden">
-   <div className="px-8 py-6 border-b border-border-default shrink-0">
-    <div className="flex items-center justify-between mb-6">
-     <div className="flex items-center gap-4 text-sm text-text-muted font-medium">
-      <span>Ghi chú</span>
-      <span className="text-text-primary">/</span>
-      <span className="text-text-primary">Tất cả ghi chú</span>
-     </div>
+  <div className="flex flex-col h-full overflow-hidden">
+   {/* Header */}
+   <div className="px-8 py-5 border-b border-border-default shrink-0">
+    <div className="flex items-center justify-between mb-4">
+     <h1 className="text-lg font-bold text-text-primary">Tất cả ghi chú</h1>
 
-     <div className="flex items-center gap-4">
-      <div className="relative w-64">
+     <div className="flex items-center gap-3">
+      <div className="relative w-56">
        <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-text-muted" />
        <Input
-        placeholder="Tìm kiếm ghi chú..."
-        className="pl-9 bg-bg-card border-none ring-1 ring-border-default focus-visible:ring-accent"
+        placeholder="Tìm kiếm..."
+        className="pl-9 h-9 bg-bg-input border-border-default text-[13px] rounded focus-visible:ring-ring"
         value={searchQuery}
         onChange={(e) => setSearchQuery(e.target.value)}
        />
@@ -75,102 +111,159 @@ export default function NotesListPage() {
      defaultValue="all"
      value={activeTab}
      onValueChange={(val) => setActiveTab(val)}
-     className="flex items-center gap-2"
     >
-     <Tabs.List className="flex items-center gap-2">
-      <Tabs.Tab
-       value="all"
-       className="px-4 py-1.5 rounded-full text-sm font-semibold bg-bg-inverse text-text-inverse data-[selected]:bg-bg-inverse data-[selected]:text-text-inverse border border-transparent"
-      >
-       Tất cả
-      </Tabs.Tab>
-      <Tabs.Tab
-       value="grammar"
-       className="px-4 py-1.5 rounded-full text-sm font-medium text-text-secondary bg-bg-primary border border-border-default hover:bg-bg-card transition-colors data-[selected]:bg-bg-inverse data-[selected]:text-text-inverse data-[selected]:border-transparent"
-      >
-       Ngữ pháp
-      </Tabs.Tab>
-      <Tabs.Tab
-       value="vocabulary"
-       className="px-4 py-1.5 rounded-full text-sm font-medium text-text-secondary bg-bg-primary border border-border-default hover:bg-bg-card transition-colors data-[selected]:bg-bg-inverse data-[selected]:text-text-inverse data-[selected]:border-transparent"
-      >
-       Từ vựng
-      </Tabs.Tab>
+     <Tabs.List className="flex items-center gap-1">
+      {[
+       { value: "all", label: "Tất cả" },
+       { value: "grammar", label: "Ngữ pháp" },
+       { value: "vocabulary", label: "Từ vựng" },
+      ].map((tab) => (
+       <Tabs.Tab
+        key={tab.value}
+        value={tab.value}
+        className="px-3 py-1.5 rounded text-[13px] font-medium text-text-muted hover:text-text-primary hover:bg-bg-subtle transition-colors data-[selected]:bg-accent data-[selected]:text-text-inverse"
+       >
+        {tab.label}
+       </Tabs.Tab>
+      ))}
      </Tabs.List>
-
-     <div className="ml-auto flex items-center gap-2 text-sm text-text-muted">
-      <span>Sắp xếp:</span>
-      <select className="bg-transparent font-medium text-text-primary focus:outline-none cursor-pointer">
-       <option>Mới nhất</option>
-       <option>Cũ nhất</option>
-       <option>Tên A-Z</option>
-      </select>
-     </div>
     </Tabs.Root>
    </div>
 
-   <div className="flex-1 overflow-y-auto p-8">
-    <div className="max-w-4xl mx-auto space-y-4">
-     {isLoading ? (
-      <div className="flex justify-center py-12">
-       <Loader2 className="w-8 h-8 animate-spin text-accent" />
+   {/* List */}
+   <div className="flex-1 overflow-y-auto">
+    {filteredNotes.length === 0 ? (
+     <div className="text-center py-24">
+      <FileText className="w-10 h-10 text-text-muted mx-auto mb-3" />
+      <p className="text-sm font-medium text-text-secondary mb-1">
+       Chưa có ghi chú nào
+      </p>
+      <p className="text-xs text-text-muted mb-5">
+       Tạo ghi chú đầu tiên để bắt đầu.
+      </p>
+      <div className="flex items-center justify-center gap-2">
+       <QuickNoteButton size="sm" />
+       <CreateNoteDialog />
       </div>
-     ) : filteredNotes.length === 0 ? (
-      <div className="text-center py-24 border-2 border-dashed border-border-default rounded-3xl">
-       <FileText className="w-12 h-12 text-text-muted mx-auto mb-4 opacity-50" />
-       <h3 className="text-xl font-bold text-text-primary mb-2">
-        Chưa có ghi chú nào
-       </h3>
-       <p className="text-text-secondary mb-6">
-        Hãy tạo ghi chú đầu tiên của bạn để bắt đầu lưu trữ kiến thức.
-       </p>
-       <div className="flex items-center justify-center gap-3">
-        <QuickNoteButton size="lg" />
-        <CreateNoteDialog />
-       </div>
-      </div>
-     ) : (
-      filteredNotes.map((note) => (
-       <Link href={`/notes/${note.id}`} key={note.id} className="block group">
-        <div className="p-6 rounded-2xl border border-border-default bg-bg-card hover:border-accent/40 transition-all duration-200 hover:shadow-theme-sm">
-         <div className="flex justify-between items-start mb-2">
-          <div className="flex items-center gap-3">
-           <h3 className="text-lg font-bold text-text-primary group-hover:text-accent transition-colors">
-            {note.title}
-           </h3>
-           {note.tags && note.tags.length > 0 && (
-            <div className="flex items-center gap-2">
-             {note.tags.map((tag) => (
-              <span
-               key={tag}
-               className="px-2 py-0.5 rounded-md text-[10px] font-bold tracking-wider uppercase bg-accent/10 text-accent"
-              >
-               {tag}
-              </span>
-             ))}
-            </div>
-           )}
-          </div>
+     </div>
+    ) : (
+     <div className="divide-y divide-border-default">
+      {filteredNotes.map((note) => (
+       <Link
+        href={`/notes/${note.id}`}
+        key={note.id}
+        className="flex items-center gap-4 px-8 py-3.5 hover:bg-bg-card-hover transition-colors group"
+       >
+        <span className="text-base leading-none">
+         {categoryEmoji[note.category] || "⬜"}
+        </span>
 
-          <div className="flex items-center text-xs font-medium text-success bg-success/10 px-2.5 py-1 rounded-full gap-1">
-           <CheckCircle2 className="w-3 h-3" />
-           <span>Đã lưu</span>
-          </div>
-         </div>
+        <span className="flex-1 min-w-0 text-[13px] font-medium text-text-primary truncate group-hover:text-accent-text transition-colors">
+         {note.title}
+        </span>
 
-         <div className="flex items-center gap-4 text-sm text-text-muted font-medium mt-4">
-          <div className="flex items-center gap-1.5">
-           <Clock className="w-4 h-4" />
-           <span>
-            {format(new Date(note.updated_at), "dd MMM yyyy", { locale: vi })}
+        {note.tags && note.tags.length > 0 && (
+         <div className="flex items-center gap-1.5 shrink-0">
+          {note.tags.slice(0, 2).map((tag) => (
+           <span
+            key={tag}
+            className="px-2 py-0.5 rounded text-[10px] font-semibold uppercase tracking-wide bg-bg-subtle text-text-muted"
+           >
+            {tag}
            </span>
-          </div>
+          ))}
          </div>
-        </div>
+        )}
+
+        <span className="flex items-center gap-1 text-xs text-text-muted shrink-0 tabular-nums">
+         <Clock className="w-3 h-3" />
+         {format(new Date(note.updated_at), "dd/MM/yy", { locale: vi })}
+        </span>
        </Link>
-      ))
-     )}
+      ))}
+     </div>
+    )}
+   </div>
+  </div>
+ );
+}
+
+/* ─── New Note View (auto-create onboarding) ─── */
+function NewNoteView() {
+ const router = useRouter();
+ const createNoteMutation = useCreateNote();
+
+ const handleCreate = () => {
+  createNoteMutation.mutate(
+   {
+    title: "Ghi chú đầu tiên của tôi",
+    tags: [],
+    category: "general",
+    content: {
+     root: {
+      children: [
+       {
+        children: [
+         {
+          detail: 0,
+          format: 0,
+          mode: "normal",
+          style: "",
+          text: "Bắt đầu viết ở đây...",
+          type: "text",
+          version: 1,
+         },
+        ],
+        direction: "ltr",
+        format: "",
+        indent: 0,
+        type: "paragraph",
+        version: 1,
+        textFormat: 0,
+        textStyle: "",
+       },
+      ],
+      direction: "ltr",
+      format: "",
+      indent: 0,
+      type: "root",
+      version: 1,
+     },
+    },
+   },
+   {
+    onSuccess: (note) => {
+     router.replace(`/notes/${note.id}`);
+    },
+   },
+  );
+ };
+
+ return (
+  <div className="flex items-center justify-center h-full">
+   <div className="text-center max-w-md">
+    <div className="w-16 h-16 rounded bg-bg-subtle flex items-center justify-center mx-auto mb-6">
+     <FileText className="w-8 h-8 text-text-muted" />
     </div>
+    <h2 className="text-2xl font-bold text-text-primary mb-2">
+     Chào mừng bạn! 👋
+    </h2>
+    <p className="text-text-secondary mb-8 leading-relaxed">
+     Đây là không gian ghi chú của bạn. Tạo ghi chú đầu tiên để bắt đầu lưu trữ
+     kiến thức tiếng Trung.
+    </p>
+    <button
+     onClick={handleCreate}
+     disabled={createNoteMutation.isPending}
+     className="inline-flex items-center gap-2 bg-accent hover:bg-accent-hover text-white px-6 py-3 rounded text-sm font-semibold transition-colors shadow-sm disabled:opacity-60"
+    >
+     {createNoteMutation.isPending ? (
+      <Loader2 className="w-4 h-4 animate-spin" />
+     ) : (
+      <Plus className="w-4 h-4" />
+     )}
+     Tạo ghi chú đầu tiên
+    </button>
    </div>
   </div>
  );
@@ -219,7 +312,7 @@ function CreateNoteDialog() {
  return (
   <Dialog open={isOpen} onOpenChange={setIsOpen}>
    <DialogTrigger asChild>
-    <Button className="bg-accent hover:bg-accent-hover text-white px-5 rounded-full h-10 shadow-sm font-semibold gap-2">
+    <Button className="bg-accent hover:bg-accent-hover text-white px-5 rounded h-10 shadow-sm font-semibold gap-2">
      <Plus className="w-4 h-4" />
      Tạo Ghi Chú Mới
     </Button>
@@ -298,7 +391,7 @@ function CreateNoteDialog() {
           value={field.state.value}
           onBlur={field.handleBlur}
           onChange={(e) => field.handleChange(e.target.value)}
-          className="w-full h-10 bg-bg-card border border-border-default rounded-lg px-3 text-sm text-text-primary cursor-pointer focus:outline-none focus:ring-2 focus:ring-ring transition-colors"
+          className="w-full h-10 bg-bg-card border border-border-default rounded px-3 text-sm text-text-primary cursor-pointer focus:outline-none focus:ring-2 focus:ring-ring transition-colors"
          >
           <option value="grammar">🟦 Ngữ Pháp</option>
           <option value="vocabulary">🟩 Từ Vựng</option>

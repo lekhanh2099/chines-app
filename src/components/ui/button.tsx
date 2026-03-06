@@ -31,7 +31,7 @@ const buttonVariantsConfig = {
 } as const;
 
 const buttonVariants = cva(
- "inline-flex min-w-20 items-center justify-center gap-2 whitespace-nowrap rounded-xl text-sm font-bold transition-all disabled:cursor-not-allowed [&_svg]:pointer-events-none shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive",
+ "inline-flex min-w-20 items-center justify-center gap-2 whitespace-nowrap rounded text-sm font-bold transition-all disabled:cursor-not-allowed [&_svg]:pointer-events-none shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive",
  buttonVariantsConfig,
 );
 

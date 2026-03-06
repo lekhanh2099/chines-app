@@ -57,9 +57,9 @@ export function Header({ user }: { user?: User | null }) {
      value={searchValue}
      onChange={(e) => setSearchValue(e.target.value)}
      placeholder="Gõ chữ Hán hoặc Pinyin để tra nhanh..."
-     className="w-full h-10 bg-bg-elevated border border-border-default rounded-xl pl-10 pr-14 text-sm text-text-primary placeholder-text-muted outline-none focus:ring-2 focus:ring-ring focus:border-ring transition-all"
+     className="w-full h-10 bg-bg-elevated border border-border-default rounded pl-10 pr-14 text-sm text-text-primary placeholder-text-muted outline-none focus:ring-2 focus:ring-ring focus:border-ring transition-all"
     />
-    <kbd className="absolute right-3 top-1/2 -translate-y-1/2 bg-bg-subtle text-text-muted text-[10px] font-bold px-2 py-0.5 rounded-md border border-border-default">
+    <kbd className="absolute right-3 top-1/2 -translate-y-1/2 bg-bg-subtle text-text-muted text-[10px] font-bold px-2 py-0.5 rounded border border-border-default">
      ⌘K
     </kbd>
    </form>
@@ -67,7 +67,7 @@ export function Header({ user }: { user?: User | null }) {
    <div className="flex items-center gap-2">
     <button
      onClick={toggleTheme}
-     className="w-10 h-10 rounded-xl bg-bg-elevated border border-border-default flex items-center justify-center hover:bg-bg-card-hover transition-colors"
+     className="w-10 h-10 rounded bg-bg-elevated border border-border-default flex items-center justify-center hover:bg-bg-card-hover transition-colors"
      aria-label="Toggle theme"
     >
      {theme === "light" ? (
@@ -77,12 +77,12 @@ export function Header({ user }: { user?: User | null }) {
      )}
     </button>
 
-    <button className="w-10 h-10 rounded-xl bg-bg-elevated border border-border-default flex items-center justify-center hover:bg-bg-card-hover transition-colors relative">
+    <button className="w-10 h-10 rounded bg-bg-elevated border border-border-default flex items-center justify-center hover:bg-bg-card-hover transition-colors relative">
      <Bell className="w-[18px] h-[18px] text-text-secondary" />
      <span className="absolute -top-0.5 -right-0.5 w-2.5 h-2.5 bg-warning rounded-full border-2 border-bg-card" />
     </button>
 
-    <button className="w-10 h-10 rounded-full overflow-hidden bg-accent flex items-center justify-center ml-1 hover:opacity-90 transition-opacity">
+    <button className="w-10 h-10 rounded overflow-hidden bg-accent flex items-center justify-center ml-1 hover:opacity-90 transition-opacity">
      <UserIcon className="w-5 h-5 text-text-inverse" />
     </button>
    </div>

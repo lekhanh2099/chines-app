@@ -216,7 +216,7 @@ const InspectorDrawer = forwardRef<HTMLDivElement, DrawerProps>(
         Vocabulary Inspector
        </span>
        {vocabData?.ai_analysis?.word_type && (
-        <span className="text-[10px] font-medium text-text-secondary border border-border-default rounded-full px-2.5 py-0.5">
+        <span className="text-[10px] font-medium text-text-secondary border border-border-default rounded px-2.5 py-0.5">
          {vocabData.ai_analysis.word_type}
         </span>
        )}
@@ -224,7 +224,7 @@ const InspectorDrawer = forwardRef<HTMLDivElement, DrawerProps>(
       <div className="flex items-center gap-1">
        <button
         onClick={handleReplayAnimation}
-        className="p-2 text-text-muted hover:text-accent hover:bg-accent/10 rounded-lg transition-colors"
+        className="p-2 text-text-muted hover:text-accent hover:bg-accent/10 rounded transition-colors"
        >
         <Pen className="w-4 h-4" />
        </button>
@@ -232,7 +232,7 @@ const InspectorDrawer = forwardRef<HTMLDivElement, DrawerProps>(
         <Link
          href={`/dictionary/${encodeURIComponent(vocabData.hanzi)}`}
          onClick={onClose}
-         className="p-2 text-text-muted hover:text-accent hover:bg-accent/10 rounded-lg transition-colors"
+         className="p-2 text-text-muted hover:text-accent hover:bg-accent/10 rounded transition-colors"
          title="Xem chi tiết toàn trang"
         >
          <ExternalLink className="w-4 h-4" />
@@ -240,7 +240,7 @@ const InspectorDrawer = forwardRef<HTMLDivElement, DrawerProps>(
        )}
        <button
         onClick={onClose}
-        className="p-2 text-text-muted hover:text-text-primary hover:bg-bg-card-hover rounded-lg transition-colors"
+        className="p-2 text-text-muted hover:text-text-primary hover:bg-bg-card-hover rounded transition-colors"
        >
         <X className="w-4 h-4" />
        </button>
@@ -267,7 +267,7 @@ const InspectorDrawer = forwardRef<HTMLDivElement, DrawerProps>(
           </h2>
           <button
            onClick={handleSpeak}
-           className="p-2 text-text-muted hover:text-accent hover:bg-accent/10 rounded-full transition-colors"
+           className="p-2 text-text-muted hover:text-accent hover:bg-accent/10 rounded transition-colors"
           >
            <Volume2 className="w-5 h-5" />
           </button>
@@ -279,7 +279,7 @@ const InspectorDrawer = forwardRef<HTMLDivElement, DrawerProps>(
 
          <div className="grid grid-cols-2 gap-3 w-full max-w-sm">
           {vocabData.meaning && (
-           <div className="bg-bg-primary rounded-xl p-3.5 text-center border border-border-default">
+           <div className="bg-bg-primary rounded p-3.5 text-center border border-border-default">
             <span className="text-[10px] font-bold text-text-muted uppercase tracking-wider block mb-1">
              Nghĩa
             </span>
@@ -289,7 +289,7 @@ const InspectorDrawer = forwardRef<HTMLDivElement, DrawerProps>(
            </div>
           )}
           {vocabData.ai_analysis?.han_viet && (
-           <div className="bg-bg-primary rounded-xl p-3.5 text-center border border-border-default">
+           <div className="bg-bg-primary rounded p-3.5 text-center border border-border-default">
             <span className="text-[10px] font-bold text-text-muted uppercase tracking-wider block mb-1">
              Hán-Việt
             </span>
@@ -323,7 +323,7 @@ const InspectorDrawer = forwardRef<HTMLDivElement, DrawerProps>(
         <button
          onClick={handleSaveToVocab}
          disabled={isSaving || isSaved}
-         className="flex-1 inline-flex items-center justify-center gap-2 py-3 px-4 rounded-xl border-2 border-border-default text-sm font-bold text-text-primary hover:border-accent hover:bg-accent/5 transition-all disabled:opacity-60"
+         className="flex-1 inline-flex items-center justify-center gap-2 py-3 px-4 rounded border-2 border-border-default text-sm font-bold text-text-primary hover:border-accent hover:bg-accent/5 transition-all disabled:opacity-60"
         >
          {isSaved ? (
           <>
@@ -388,7 +388,7 @@ function DeepDiveSection({
         <h4 className="text-xs font-bold text-text-primary mb-2 flex items-center gap-1.5">
          📖 Chiết tự & Nguồn gốc
         </h4>
-        <div className="bg-bg-primary rounded-xl p-4 border border-border-default">
+        <div className="bg-bg-primary rounded p-4 border border-border-default">
          <p className="text-sm text-text-secondary leading-relaxed">
           {typeof vocabData.ai_analysis.etymology === "object"
            ? vocabData.ai_analysis.etymology.explanation
@@ -408,7 +408,7 @@ function DeepDiveSection({
           {vocabData.ai_analysis.usage_logic.map((item, i) => (
            <li
             key={i}
-            className="text-sm text-text-secondary flex items-start gap-2.5 bg-bg-primary rounded-xl p-3 border border-border-default"
+            className="text-sm text-text-secondary flex items-start gap-2.5 bg-bg-primary rounded p-3 border border-border-default"
            >
             <span className="text-accent mt-1 text-[8px]">●</span>
             <span className="flex-1">{item}</span>
@@ -423,7 +423,7 @@ function DeepDiveSection({
         <h4 className="text-xs font-bold text-danger mb-2 flex items-center gap-1.5">
          ⚠️ Bẫy tiếng Việt
         </h4>
-        <div className="bg-danger-subtle rounded-xl p-4 border border-danger/20">
+        <div className="bg-danger-subtle rounded p-4 border border-danger/20">
          <p className="text-sm text-danger-text leading-relaxed">
           {vocabData.ai_analysis.vn_trap}
          </p>
@@ -441,7 +441,7 @@ function DeepDiveSection({
           {vocabData.ai_analysis.examples.map((ex, i) => (
            <div
             key={i}
-            className="bg-bg-primary rounded-xl p-4 border border-border-default"
+            className="bg-bg-primary rounded p-4 border border-border-default"
            >
             <p className="text-sm font-medium text-text-primary mb-1">
              {ex.zh}
@@ -464,7 +464,7 @@ function DeepDiveSection({
           {vocabData.ai_analysis.collocations.map((col, i) => (
            <span
             key={i}
-            className="text-sm font-medium text-accent bg-accent/10 px-3 py-1.5 rounded-lg"
+            className="text-sm font-medium text-accent bg-accent/10 px-3 py-1.5 rounded"
            >
             {col}
            </span>
@@ -480,7 +480,7 @@ function DeepDiveSection({
 
  return (
   <div className="px-6 py-4">
-   <div className="bg-bg-primary rounded-xl p-4 border border-border-default text-center">
+   <div className="bg-bg-primary rounded p-4 border border-border-default text-center">
     <p className="text-sm text-text-muted mb-2">
      Chưa có dữ liệu phân tích chi tiết
     </p>

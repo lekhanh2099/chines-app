@@ -25,7 +25,7 @@ export function TextField({
     value={field.state.value as string}
     onChange={(e) => field.handleChange(e.target.value)}
     onBlur={field.handleBlur}
-    className="w-full h-12 bg-bg-input border border-border-default text-text-primary placeholder:text-text-muted rounded-xl px-4 text-base outline-none focus:ring-2 focus:ring-ring/50 focus:border-ring transition-all"
+    className="w-full h-12 bg-bg-input border border-border-default text-text-primary placeholder:text-text-muted rounded px-4 text-base outline-none focus:ring-2 focus:ring-ring/50 focus:border-ring transition-all"
     {...inputProps}
    />
   </FieldItem>

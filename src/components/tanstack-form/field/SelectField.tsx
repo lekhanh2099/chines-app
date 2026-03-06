@@ -30,7 +30,7 @@ export function SelectField({
     value={field.state.value}
     onChange={(e) => field.handleChange(e.target.value)}
     onBlur={field.handleBlur}
-    className="w-full h-12 bg-slate-50 border border-slate-200 rounded-xl px-4 text-sm outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-all appearance-none"
+    className="w-full h-12 bg-slate-50 border border-slate-200 rounded px-4 text-sm outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-all appearance-none"
     {...rest}
    >
     <option value="" disabled>

@@ -22,7 +22,7 @@ import type { AiAnalysis } from "@/types/database";
 
 /* ──────── Tab styling ──────── */
 const tabClass =
- "px-3.5 py-1.5 rounded-lg text-xs font-bold text-text-muted transition-colors hover:bg-bg-card-hover data-selected:bg-accent data-selected:text-white data-selected:shadow-sm cursor-pointer outline-none";
+ "px-3.5 py-1.5 rounded text-xs font-bold text-text-muted transition-colors hover:bg-bg-card-hover data-selected:bg-accent data-selected:text-white data-selected:shadow-sm cursor-pointer outline-none";
 
 export default function DictionaryPage() {
  const params = useParams();
@@ -244,18 +244,18 @@ export default function DictionaryPage() {
      {/* LEFT COL (8) */}
      <div className="col-span-12 lg:col-span-8 flex flex-col gap-4">
       {/* HANZI HEADER */}
-      <div className="bg-bg-card rounded-xl border border-border-default shadow-theme-sm p-5">
+      <div className="bg-bg-card rounded border border-border-default shadow-theme-sm p-5">
        <div className="flex gap-5">
         <div className="shrink-0 flex flex-col items-center gap-2">
          <div
           ref={hanziContainerRef}
-          className="rounded-lg border border-border-default bg-white dark:bg-slate-900"
+          className="rounded border border-border-default bg-white dark:bg-slate-900"
           style={{ width: 120, height: 120, position: "relative" }}
          />
          <div className="flex items-center gap-1">
           <button
            onClick={handlePlayAnimation}
-           className="flex items-center gap-1 px-2 py-1 rounded-md text-[10px] font-bold text-text-muted hover:text-accent hover:bg-accent/10 transition-colors"
+           className="flex items-center gap-1 px-2 py-1 rounded text-[10px] font-bold text-text-muted hover:text-accent hover:bg-accent/10 transition-colors"
            title="Xem nét viết"
           >
            <Play className="w-3 h-3" />
@@ -264,7 +264,7 @@ export default function DictionaryPage() {
           <button
            onClick={handleQuizMode}
            disabled={quizMode}
-           className="flex items-center gap-1 px-2 py-1 rounded-md text-[10px] font-bold text-text-muted hover:text-indigo-600 hover:bg-indigo-50 dark:hover:bg-indigo-950/30 transition-colors disabled:opacity-40"
+           className="flex items-center gap-1 px-2 py-1 rounded text-[10px] font-bold text-text-muted hover:text-indigo-600 hover:bg-indigo-50 dark:hover:bg-indigo-950/30 transition-colors disabled:opacity-40"
            title="Tập viết"
           >
            <PenTool className="w-3 h-3" />
@@ -279,7 +279,7 @@ export default function DictionaryPage() {
            {vocabData.hanzi}
           </h1>
           {isSaved === true ? (
-           <span className="inline-flex items-center gap-1 text-[10px] font-bold text-success bg-success/10 px-2 py-0.5 rounded-full">
+           <span className="inline-flex items-center gap-1 text-[10px] font-bold text-success bg-success/10 px-2 py-0.5 rounded">
             <CheckCircle className="w-3 h-3" />
             Đã lưu
            </span>
@@ -287,7 +287,7 @@ export default function DictionaryPage() {
            <button
             onClick={handleSave}
             disabled={isSaving}
-            className="inline-flex items-center gap-1 text-[10px] font-bold text-accent bg-accent/10 hover:bg-accent/20 px-2 py-0.5 rounded-full transition-colors disabled:opacity-50"
+            className="inline-flex items-center gap-1 text-[10px] font-bold text-accent bg-accent/10 hover:bg-accent/20 px-2 py-0.5 rounded transition-colors disabled:opacity-50"
            >
             {isSaving ? (
              <Loader2 className="w-3 h-3 animate-spin" />
@@ -360,7 +360,7 @@ export default function DictionaryPage() {
        <AiLoadingSkeleton />
       ) : hasContent ? (
        <Tabs.Root defaultValue="meaning" className="flex flex-col gap-0">
-        <Tabs.List className="flex items-center gap-1 bg-bg-card rounded-lg border border-border-default p-1 shadow-theme-sm">
+        <Tabs.List className="flex items-center gap-1 bg-bg-card rounded border border-border-default p-1 shadow-theme-sm">
          <Tabs.Tab value="meaning" className={tabClass}>
           📖 Ngữ nghĩa & Ví dụ
          </Tabs.Tab>
@@ -375,14 +375,14 @@ export default function DictionaryPage() {
         {/* Tab 1: Meanings */}
         <Tabs.Panel
          value="meaning"
-         className="mt-3 bg-bg-card rounded-xl border border-border-default shadow-theme-sm p-4"
+         className="mt-3 bg-bg-card rounded border border-border-default shadow-theme-sm p-4"
         >
          {meanings.length > 0 ? (
           <div className="flex flex-col gap-3">
            {meanings.map((m, i) => (
             <div
              key={i}
-             className="bg-bg-primary rounded-lg border border-border-default p-3"
+             className="bg-bg-primary rounded border border-border-default p-3"
             >
              <div className="flex items-center gap-2 mb-1.5">
               <span className="text-[10px] font-bold text-white bg-accent rounded px-1.5 py-0.5">
@@ -410,7 +410,7 @@ export default function DictionaryPage() {
            ))}
           </div>
          ) : vocabData.meaning ? (
-          <div className="bg-bg-primary rounded-lg border border-border-default p-3">
+          <div className="bg-bg-primary rounded border border-border-default p-3">
            <p className="text-sm font-semibold text-text-primary">
             {vocabData.meaning}
            </p>
@@ -427,7 +427,7 @@ export default function DictionaryPage() {
            {examples.map((ex, i) => (
             <div
              key={i}
-             className="bg-bg-primary rounded-lg border border-border-default p-3"
+             className="bg-bg-primary rounded border border-border-default p-3"
             >
              <p className="text-sm font-medium text-text-primary">{ex.zh}</p>
              <p className="text-xs text-accent font-medium">{ex.pinyin}</p>
@@ -441,14 +441,14 @@ export default function DictionaryPage() {
         {/* Tab 2: Deep Dive */}
         <Tabs.Panel
          value="deep"
-         className="mt-3 bg-bg-card rounded-xl border border-border-default shadow-theme-sm p-4"
+         className="mt-3 bg-bg-card rounded border border-border-default shadow-theme-sm p-4"
         >
          {etymologyText ? (
           <div className="mb-4">
            <h4 className="text-[10px] font-bold text-text-muted uppercase tracking-wider mb-2">
             Chiết tự & Nguồn gốc
            </h4>
-           <div className="bg-bg-primary rounded-lg border border-border-default p-3">
+           <div className="bg-bg-primary rounded border border-border-default p-3">
             {etymologyType && (
              <span className="text-[10px] font-bold text-purple-600 dark:text-purple-400 bg-purple-50 dark:bg-purple-950/30 rounded px-1.5 py-0.5 inline-block mb-2">
               {etymologyType}
@@ -470,7 +470,7 @@ export default function DictionaryPage() {
             {ai.usage_logic.map((item, i) => (
              <li
               key={i}
-              className="text-sm text-text-secondary flex items-start gap-2 bg-bg-primary rounded-lg p-2.5 border border-border-default"
+              className="text-sm text-text-secondary flex items-start gap-2 bg-bg-primary rounded p-2.5 border border-border-default"
              >
               <span className="text-accent text-xs mt-0.5">●</span>
               <span className="flex-1 leading-relaxed">{item}</span>
@@ -481,7 +481,7 @@ export default function DictionaryPage() {
          )}
 
          {(ai?.vn_trap || ai?.common_mistakes) && (
-          <div className="mt-4 bg-amber-50 dark:bg-amber-950/20 rounded-lg border border-amber-200 dark:border-amber-800/40 p-3">
+          <div className="mt-4 bg-amber-50 dark:bg-amber-950/20 rounded border border-amber-200 dark:border-amber-800/40 p-3">
            <h4 className="text-[10px] font-bold text-amber-700 dark:text-amber-400 uppercase tracking-wider mb-1.5">
             ⚠️ Lưu ý cho người Việt
            </h4>
@@ -502,7 +502,7 @@ export default function DictionaryPage() {
         {/* Tab 3: Collocations */}
         <Tabs.Panel
          value="collocations"
-         className="mt-3 bg-bg-card rounded-xl border border-border-default shadow-theme-sm p-4"
+         className="mt-3 bg-bg-card rounded border border-border-default shadow-theme-sm p-4"
         >
          {relatedWords.length > 0 ? (
           <div className="flex flex-wrap gap-2">
@@ -510,7 +510,7 @@ export default function DictionaryPage() {
             <Link
              key={i}
              href={`/dictionary/${encodeURIComponent(word)}`}
-             className="inline-flex items-center gap-1.5 text-sm font-semibold text-accent bg-accent/8 hover:bg-accent/15 px-3 py-1.5 rounded-lg border border-accent/20 transition-colors"
+             className="inline-flex items-center gap-1.5 text-sm font-semibold text-accent bg-accent/8 hover:bg-accent/15 px-3 py-1.5 rounded border border-accent/20 transition-colors"
             >
              {word}
              <span className="text-[10px] text-accent/60">→</span>
@@ -538,7 +538,7 @@ export default function DictionaryPage() {
 
      {/* RIGHT COL (4) — Compact sidebar */}
      <div className="col-span-12 lg:col-span-4 flex flex-col gap-4">
-      <div className="bg-bg-card rounded-xl border border-border-default shadow-theme-sm p-4">
+      <div className="bg-bg-card rounded border border-border-default shadow-theme-sm p-4">
        <h3 className="text-[10px] font-bold text-text-muted uppercase tracking-wider mb-2 flex items-center gap-1.5">
         <StickyNote className="w-3 h-3" />
         Ghi chú
@@ -547,11 +547,11 @@ export default function DictionaryPage() {
         value={personalNote}
         onChange={(e) => setPersonalNote(e.target.value)}
         placeholder="Mẹo nhớ, ngữ cảnh..."
-        className="w-full min-h-24 max-h-40 bg-bg-primary border border-border-default rounded-lg p-2.5 text-xs text-text-primary placeholder-text-muted outline-none focus:ring-2 focus:ring-ring transition-all resize-y leading-relaxed"
+        className="w-full min-h-24 max-h-40 bg-bg-primary border border-border-default rounded p-2.5 text-xs text-text-primary placeholder-text-muted outline-none focus:ring-2 focus:ring-ring transition-all resize-y leading-relaxed"
        />
       </div>
 
-      <div className="bg-bg-card rounded-xl border border-border-default shadow-theme-sm p-4">
+      <div className="bg-bg-card rounded border border-border-default shadow-theme-sm p-4">
        <h3 className="text-[10px] font-bold text-text-muted uppercase tracking-wider mb-2 flex items-center gap-1.5">
         <BarChart3 className="w-3 h-3" />
         SRS
@@ -594,7 +594,7 @@ export default function DictionaryPage() {
       </div>
 
       {relatedWords.length > 0 && (
-       <div className="bg-bg-card rounded-xl border border-border-default shadow-theme-sm p-4">
+       <div className="bg-bg-card rounded border border-border-default shadow-theme-sm p-4">
         <h3 className="text-[10px] font-bold text-text-muted uppercase tracking-wider mb-2">
          Từ liên quan
         </h3>
@@ -603,7 +603,7 @@ export default function DictionaryPage() {
           <Link
            key={i}
            href={`/dictionary/${encodeURIComponent(w)}`}
-           className="flex items-center justify-between px-2 py-1.5 rounded-md text-xs font-semibold text-text-primary hover:bg-bg-card-hover hover:text-accent transition-colors"
+           className="flex items-center justify-between px-2 py-1.5 rounded text-xs font-semibold text-text-primary hover:bg-bg-card-hover hover:text-accent transition-colors"
           >
            <span>{w}</span>
            <span className="text-[10px] text-text-muted">→</span>
@@ -648,7 +648,7 @@ function EmptyTabContent({ label }: { label: string }) {
 
 function AiLoadingSkeleton() {
  return (
-  <div className="bg-bg-card rounded-xl border border-border-default shadow-theme-sm p-5">
+  <div className="bg-bg-card rounded border border-border-default shadow-theme-sm p-5">
    <div className="flex items-center gap-2 mb-4">
     <Sparkles className="w-4 h-4 text-accent animate-pulse" />
     <span className="text-xs font-bold text-accent animate-pulse">
@@ -676,7 +676,7 @@ function NoDataPlaceholder({
  loading: boolean;
 }) {
  return (
-  <div className="bg-bg-card rounded-xl border border-border-default shadow-theme-sm p-6 text-center">
+  <div className="bg-bg-card rounded border border-border-default shadow-theme-sm p-6 text-center">
    <div className="space-y-2 mb-5 max-w-sm mx-auto">
     <div className="h-3 bg-bg-subtle rounded animate-pulse w-3/4 mx-auto" />
     <div className="h-2.5 bg-bg-subtle rounded animate-pulse w-full" />

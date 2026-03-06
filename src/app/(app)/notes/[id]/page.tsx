@@ -33,23 +33,23 @@ const categoryConfig: Record<
  grammar: {
   label: "Ngữ Pháp",
   emoji: "🟦",
-  bg: "bg-blue-50 dark:bg-blue-950/30",
-  border: "border-blue-200 dark:border-blue-800/50",
-  text: "text-blue-700 dark:text-blue-300",
+  bg: "bg-info-subtle",
+  border: "border-info/20",
+  text: "text-info-text",
  },
  vocabulary: {
   label: "Từ Vựng",
   emoji: "🟩",
-  bg: "bg-emerald-50 dark:bg-emerald-950/30",
-  border: "border-emerald-200 dark:border-emerald-800/50",
-  text: "text-emerald-700 dark:text-emerald-300",
+  bg: "bg-success-subtle",
+  border: "border-success/20",
+  text: "text-success-text",
  },
  culture: {
   label: "Văn Hóa / Mẹo",
   emoji: "🟪",
-  bg: "bg-purple-50 dark:bg-purple-950/30",
-  border: "border-purple-200 dark:border-purple-800/50",
-  text: "text-purple-700 dark:text-purple-300",
+  bg: "bg-purple-subtle",
+  border: "border-purple/20",
+  text: "text-purple-text",
  },
  general: {
   label: "Chung",
@@ -68,7 +68,6 @@ export default function NoteEditorPage({
  const { id } = use(params);
  const router = useRouter();
 
- // All data fetching & mutations via TanStack Query hook
  const {
   note,
   isLoading,
@@ -85,7 +84,6 @@ export default function NoteEditorPage({
  const saveTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
  const pendingContentRef = useRef<Record<string, unknown> | null>(null);
 
- // Debounced auto-save handler
  const handleChange = useCallback(
   (json: Record<string, unknown>) => {
    pendingContentRef.current = json;
@@ -95,12 +93,11 @@ export default function NoteEditorPage({
      saveContent(pendingContentRef.current);
      pendingContentRef.current = null;
     }
-   }, 3000);
+   }, 1000);
   },
   [saveContent],
  );
 
- // Flush pending save on unmount
  useEffect(() => {
   return () => {
    if (saveTimerRef.current) clearTimeout(saveTimerRef.current);
@@ -132,7 +129,6 @@ export default function NoteEditorPage({
   router.push("/notes");
  }, [deleteNoteMutation, router]);
 
- // Derive display state
  const displaySaveStatus: "idle" | "saving" | "saved" | "error" = isSaving
   ? "saving"
   : saveStatus === "success"
@@ -165,8 +161,7 @@ export default function NoteEditorPage({
  return (
   <div className="flex h-full w-full bg-bg-primary">
    <div className="flex-1 flex flex-col min-w-0 bg-bg-primary overflow-y-auto">
-    {/* Top bar */}
-    <div className="h-14 border-b border-border-default flex items-center justify-between px-6 shrink-0 bg-bg-primary">
+    <div className="h-12 border-b border-border-default flex items-center justify-between px-6 shrink-0">
      <Breadcrumb>
       <BreadcrumbList>
        <BreadcrumbItem>
@@ -181,13 +176,11 @@ export default function NoteEditorPage({
       </BreadcrumbList>
      </Breadcrumb>
 
-     <div className="flex items-center gap-3">
-      {/* Save status indicator */}
+     <div className="flex items-center gap-2">
       <SaveStatusBadge status={displaySaveStatus} />
 
-      {/* Delete */}
       {showDeleteConfirm ? (
-       <div className="flex items-center gap-2 bg-danger-subtle rounded-lg px-3 py-1.5 animate-in fade-in">
+       <div className="flex items-center gap-2 bg-danger-subtle rounded px-3 py-1.5 animate-in fade-in">
         <span className="text-xs font-medium text-danger-text">Xoá?</span>
         <button
          onClick={handleDelete}
@@ -206,7 +199,7 @@ export default function NoteEditorPage({
       ) : (
        <button
         onClick={() => setShowDeleteConfirm(true)}
-        className="p-2 text-text-muted hover:text-danger hover:bg-danger-subtle rounded-lg transition-colors"
+        className="p-2 text-text-muted hover:text-danger hover:bg-danger-subtle rounded transition-colors"
         title="Xoá ghi chú"
        >
         <Trash2 className="w-4 h-4" />
@@ -215,60 +208,59 @@ export default function NoteEditorPage({
      </div>
     </div>
 
-    {/* Editor area — gray canvas with white paper */}
+    <div className="flex-1 p-6">
+     <div className="max-w-4xl mx-auto bg-bg-card border border-border-default rounded shadow-theme-sm">
+      <div className="px-10 pt-8 pb-4 border-b border-border-default">
+       <div className="flex items-center gap-3 mb-5">
+        <div className="relative">
+         <select
+          value={category}
+          onChange={(e) => handleCategoryChange(e.target.value)}
+          className={`appearance-none ${catConf.bg} border ${catConf.border} rounded pl-3 pr-7 py-1 text-xs font-bold cursor-pointer hover:opacity-80 focus:outline-none focus:ring-2 focus:ring-ring transition-colors ${catConf.text}`}
+         >
+          <option value="grammar">🟦 Ngữ Pháp</option>
+          <option value="vocabulary">🟩 Từ Vựng</option>
+          <option value="culture">🟪 Văn Hóa / Mẹo</option>
+          <option value="general">⬜ Chung</option>
+         </select>
+         <ChevronDown
+          className={`absolute right-1.5 top-1/2 -translate-y-1/2 w-3.5 h-3.5 pointer-events-none ${catConf.text}`}
+         />
+        </div>
 
-    <div
-     className={`rounded-2xl border p-6 mb-3 transition-colors ${catConf.bg} ${catConf.border}`}
-    >
-     <div className="flex items-center gap-2 mb-3">
-      <div className="relative">
-       <select
-        value={category}
-        onChange={(e) => handleCategoryChange(e.target.value)}
-        className={`appearance-none ${catConf.bg} border ${catConf.border} rounded-lg pl-3 pr-7 py-1 text-xs font-bold cursor-pointer hover:opacity-80 focus:outline-none focus:ring-2 focus:ring-ring transition-colors ${catConf.text}`}
+        <span className="w-px h-4 bg-border-default" />
+
+        <div className="flex items-center gap-1.5 text-xs text-text-muted">
+         <Calendar className="w-3.5 h-3.5" />
+         <span>
+          {lastEdited ? format(new Date(lastEdited), "MMM d, yyyy") : "Today"}
+         </span>
+        </div>
+        <div className="flex items-center gap-1.5 text-xs text-text-muted">
+         <Clock className="w-3.5 h-3.5" />
+         <span>
+          {lastEdited ? format(new Date(lastEdited), "h:mm a") : "just now"}
+         </span>
+        </div>
+       </div>
+
+       <h1
+        className="text-3xl font-bold tracking-tight text-text-primary bg-transparent focus:outline-none leading-snug"
+        contentEditable
+        suppressContentEditableWarning
+        onBlur={(e) => handleTitleChange(e.currentTarget.textContent || "")}
        >
-        <option value="grammar">🟦 Ngữ Pháp</option>
-        <option value="vocabulary">🟩 Từ Vựng</option>
-        <option value="culture">🟪 Văn Hóa / Mẹo</option>
-        <option value="general">⬜ Chung</option>
-       </select>
-       <ChevronDown
-        className={`absolute right-1.5 top-1/2 -translate-y-1/2 w-3.5 h-3.5 pointer-events-none ${catConf.text}`}
+        {noteTitle}
+       </h1>
+      </div>
+
+      <div className="min-h-[60vh]">
+       <Editor
+        initialContent={note.content as Record<string, unknown> | null}
+        onChange={handleChange}
        />
       </div>
      </div>
-
-     <h1
-      className="text-3xl font-extrabold tracking-tight text-text-primary focus:outline-none leading-snug"
-      contentEditable
-      suppressContentEditableWarning
-      onBlur={(e) => handleTitleChange(e.currentTarget.textContent || "")}
-     >
-      {noteTitle}
-     </h1>
-
-     <div className="flex items-center gap-4 text-xs text-text-muted font-medium mt-3">
-      <div className="flex items-center gap-1.5">
-       <Calendar className="w-3.5 h-3.5" />
-       <span>
-        {lastEdited ? format(new Date(lastEdited), "MMM d, yyyy") : "Today"}
-       </span>
-      </div>
-      <div className="flex items-center gap-1.5">
-       <Clock className="w-3.5 h-3.5" />
-       <span>
-        {lastEdited ? format(new Date(lastEdited), "h:mm a") : "just now"}
-       </span>
-      </div>
-     </div>
-    </div>
-
-    {/* Editor */}
-    <div className="min-h-[60vh]">
-     <Editor
-      initialContent={note.content as Record<string, unknown> | null}
-      onChange={handleChange}
-     />
     </div>
    </div>
   </div>

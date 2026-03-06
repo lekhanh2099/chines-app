@@ -78,13 +78,13 @@ export function DialogContent({
    />
    <div
     className={cn(
-     "relative z-50 w-full max-w-lg rounded-3xl bg-white p-6 shadow-xl border border-slate-100 animate-in fade-in zoom-in-95 duration-200",
+     "relative z-50 w-full max-w-lg rounded bg-white p-6 shadow-xl border border-slate-100 animate-in fade-in zoom-in-95 duration-200",
      className,
     )}
    >
     <button
      onClick={() => context.onOpenChange(false)}
-     className="absolute right-6 top-6 rounded-full p-2 text-slate-400 hover:bg-slate-100 hover:text-slate-600 transition-colors"
+     className="absolute right-6 top-6 rounded p-2 text-slate-400 hover:bg-slate-100 hover:text-slate-600 transition-colors"
     >
      <X className="w-5 h-5" />
      <span className="sr-only">Close</span>

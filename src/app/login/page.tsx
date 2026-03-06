@@ -81,7 +81,7 @@ export default function LoginPage() {
  return (
   <div className="min-h-screen bg-bg-primary flex flex-col justify-center py-12 sm:px-6 lg:px-8">
    <div className="sm:mx-auto sm:w-full sm:max-w-md flex flex-col items-center">
-    <div className="w-12 h-12 bg-accent rounded-xl flex items-center justify-center mb-6 shadow-theme-md">
+    <div className="w-12 h-12 bg-accent rounded flex items-center justify-center mb-6 shadow-theme-md">
      <BookOpen className="w-6 h-6 text-white" />
     </div>
     <h2 className="text-center text-2xl font-bold tracking-tight text-text-primary">
@@ -95,7 +95,7 @@ export default function LoginPage() {
    </div>
 
    <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
-    <div className="bg-bg-card py-8 px-4 shadow-theme-sm border border-border-default sm:rounded-[24px] sm:px-10">
+    <div className="bg-bg-card py-8 px-4 shadow-theme-sm border border-border-default sm:rounded sm:px-10">
      <form
       className="space-y-6"
       onSubmit={(e) => {

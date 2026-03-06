@@ -41,9 +41,9 @@ interface EditorProps {
  initialContent?: Record<string, unknown> | null;
  onChange?: (json: Record<string, unknown>) => void;
  readOnly?: boolean;
+ seamless?: boolean;
 }
 
-/* ── Placeholder ── */
 function Placeholder() {
  return <div className="editor-placeholder">Bắt đầu nhập nội dung...</div>;
 }
@@ -85,6 +85,7 @@ export function Editor({
  initialContent,
  onChange,
  readOnly = false,
+ seamless = false,
 }: EditorProps) {
  const initialConfig = useMemo(
   () => ({
@@ -114,7 +115,12 @@ export function Editor({
 
  return (
   <LexicalComposer initialConfig={initialConfig}>
-   <div className="editor-shell" data-editor-wrapper data-no-inspector>
+   <div
+    className="editor-shell"
+    data-editor-wrapper
+    data-no-inspector
+    {...(seamless ? { "data-seamless": "" } : {})}
+   >
     {/* Toolbar */}
     {!readOnly && <ToolbarPlugin />}
 

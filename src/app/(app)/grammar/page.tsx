@@ -50,7 +50,7 @@ export default function GrammarPage() {
    <div className="px-8 py-6 border-b border-border-default shrink-0">
     <div className="flex items-center justify-between mb-6">
      <div className="flex items-center gap-3">
-      <div className="w-10 h-10 rounded-xl bg-accent/10 border border-accent/20 flex items-center justify-center">
+      <div className="w-10 h-10 rounded bg-accent/10 border border-accent/20 flex items-center justify-center">
        <GraduationCap className="w-5 h-5 text-accent" />
       </div>
       <div>
@@ -92,7 +92,7 @@ export default function GrammarPage() {
        <Loader2 className="w-8 h-8 animate-spin text-accent" />
       </div>
      ) : filteredNotes.length === 0 ? (
-      <div className="text-center py-24 border-2 border-dashed border-border-default rounded-3xl">
+      <div className="text-center py-24 border-2 border-dashed border-border-default rounded">
        <GraduationCap className="w-12 h-12 text-text-muted mx-auto mb-4 opacity-50" />
        <h3 className="text-xl font-bold text-text-primary mb-2">
         Chưa có ghi chú ngữ pháp nào
@@ -106,7 +106,7 @@ export default function GrammarPage() {
      ) : (
       filteredNotes.map((note) => (
        <Link href={`/notes/${note.id}`} key={note.id} className="block group">
-        <div className="p-6 rounded-2xl border border-border-default bg-bg-card hover:border-accent/40 transition-all duration-200 hover:shadow-theme-sm">
+        <div className="p-6 rounded border border-border-default bg-bg-card hover:border-accent/40 transition-all duration-200 hover:shadow-theme-sm">
          <div className="flex justify-between items-start mb-2">
           <div className="flex items-center gap-3">
            <h3 className="text-lg font-bold text-text-primary group-hover:text-accent transition-colors">
@@ -117,7 +117,7 @@ export default function GrammarPage() {
              {note.tags.map((tag) => (
               <span
                key={tag}
-               className="px-2 py-0.5 rounded-md text-[10px] font-bold tracking-wider uppercase bg-accent/10 text-accent"
+               className="px-2 py-0.5 rounded text-[10px] font-bold tracking-wider uppercase bg-accent/10 text-accent"
               >
                {tag}
               </span>
@@ -127,7 +127,7 @@ export default function GrammarPage() {
           </div>
 
           <div
-           className={`flex items-center text-xs font-medium px-2.5 py-1 rounded-full gap-1 ${
+           className={`flex items-center text-xs font-medium px-2.5 py-1 rounded gap-1 ${
             statusConfig[note.status || "draft"]?.color ||
             statusConfig.draft.color
            }`}
@@ -200,7 +200,7 @@ function CreateGrammarNoteDialog() {
  return (
   <Dialog open={isOpen} onOpenChange={setIsOpen}>
    <DialogTrigger asChild>
-    <Button className="bg-accent hover:bg-accent-hover text-white px-5 rounded-full h-10 shadow-sm font-semibold gap-2">
+    <Button className="bg-accent hover:bg-accent-hover text-white px-5 rounded h-10 shadow-sm font-semibold gap-2">
      <Plus className="w-4 h-4" />
      Tạo Ghi Chú Ngữ Pháp
     </Button>

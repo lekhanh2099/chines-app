@@ -108,7 +108,7 @@ export default function VocabularyPage() {
      const s = statusConfig[info.getValue()];
      return (
       <span
-       className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-bold ${s.className}`}
+       className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded text-xs font-bold ${s.className}`}
       >
        {s.emoji} {s.label}
       </span>
@@ -125,7 +125,7 @@ export default function VocabularyPage() {
         e.stopPropagation();
         openInspector(row.original.hanzi);
        }}
-       className="p-2 rounded-lg text-text-muted hover:text-accent hover:bg-accent/10 transition-colors"
+       className="p-2 rounded text-text-muted hover:text-accent hover:bg-accent/10 transition-colors"
        title="Tra nhanh"
       >
        <Eye className="w-4 h-4" />
@@ -133,7 +133,7 @@ export default function VocabularyPage() {
       <Link
        href={`/dictionary/${encodeURIComponent(row.original.hanzi)}`}
        onClick={(e) => e.stopPropagation()}
-       className="p-2 rounded-lg text-text-muted hover:text-accent hover:bg-accent/10 transition-colors"
+       className="p-2 rounded text-text-muted hover:text-accent hover:bg-accent/10 transition-colors"
        title="Xem chi tiết"
       >
        <ExternalLink className="w-4 h-4" />
@@ -143,7 +143,7 @@ export default function VocabularyPage() {
         e.stopPropagation();
         handleDelete(row.original.id, row.original.hanzi);
        }}
-       className="p-2 rounded-lg text-text-muted hover:text-danger hover:bg-danger-subtle transition-colors"
+       className="p-2 rounded text-text-muted hover:text-danger hover:bg-danger-subtle transition-colors"
        title="Xóa"
       >
        <Trash2 className="w-4 h-4" />
@@ -183,12 +183,12 @@ export default function VocabularyPage() {
       value={globalFilter ?? ""}
       onChange={(e) => setGlobalFilter(e.target.value)}
       placeholder="Tìm theo Hán tự, Pinyin, nghĩa..."
-      className="w-full h-10 bg-bg-elevated border border-border-default rounded-xl pl-10 pr-4 text-sm text-text-primary placeholder-text-muted outline-none focus:ring-2 focus:ring-ring focus:border-ring transition-all"
+      className="w-full h-10 bg-bg-elevated border border-border-default rounded pl-10 pr-4 text-sm text-text-primary placeholder-text-muted outline-none focus:ring-2 focus:ring-ring focus:border-ring transition-all"
      />
     </div>
    </div>
 
-   <div className="flex-1 bg-bg-card rounded-2xl border border-border-default shadow-theme-sm overflow-hidden flex flex-col">
+   <div className="flex-1 bg-bg-card rounded border border-border-default shadow-theme-sm overflow-hidden flex flex-col">
     {isLoading ? (
      <div className="flex-1 flex items-center justify-center gap-3">
       <Loader2 className="w-6 h-6 animate-spin text-accent" />
@@ -196,7 +196,7 @@ export default function VocabularyPage() {
      </div>
     ) : vocabList.length === 0 ? (
      <div className="flex-1 flex flex-col items-center justify-center gap-3 p-12">
-      <div className="w-16 h-16 rounded-2xl bg-bg-elevated border border-border-default flex items-center justify-center">
+      <div className="w-16 h-16 rounded bg-bg-elevated border border-border-default flex items-center justify-center">
        <Search className="w-7 h-7 text-text-muted" />
       </div>
       <h3 className="text-lg font-bold text-text-primary">

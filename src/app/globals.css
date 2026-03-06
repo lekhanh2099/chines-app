@@ -66,6 +66,7 @@
   /* Misc */
   --overlay: rgb(0 0 0 / 0.3);
   --sidebar-width: 260px;
+  --bg-inverse: #121217;
 }
 
 [data-theme="dark"] {
@@ -127,6 +128,7 @@
 
   /* Misc */
   --overlay: rgb(0 0 0 / 0.7);
+  --bg-inverse: #f8f9fe;
 }
 
 /* Tailwind v4 Token Registration */
@@ -179,6 +181,8 @@
 
   --color-overlay: var(--overlay);
 
+  --color-bg-inverse: var(--bg-inverse);
+
   --font-sans: var(--font-lexend);
   --font-mono: var(--font-geist-mono);
 }
@@ -212,12 +216,18 @@ body {
 .editor-shell {
   margin: 0 auto;
   width: 100%;
-  max-width: 1100px;
-  border: 1px solid var(--border);
-  border-radius: 0.75rem;
-  box-shadow: var(--shadow-sm);
   display: flex;
   flex-direction: column;
+  background: transparent;
+}
+
+.editor-shell[data-seamless] {
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.editor-shell:not([data-seamless]) {
   background: var(--bg-card);
 }
 
@@ -226,9 +236,13 @@ body {
   position: relative;
   flex: 1;
   padding: 2rem 3rem 2rem 4rem;
-  background: var(--bg-card);
+  background: transparent;
   border-radius: 0 0 0.75rem 0.75rem;
   overflow-y: auto;
+}
+
+.editor-shell[data-seamless] .editor-container {
+  padding: 0.5rem 1rem 1rem 3.5rem;
 }
 
 /* ── ContentEditable ── */
@@ -253,6 +267,11 @@ body {
   opacity: 0.6;
   user-select: none;
   font-size: 15px;
+}
+
+.editor-shell[data-seamless] .editor-placeholder {
+  top: 0.5rem;
+  left: 3.5rem;
 }
 
 /* ── Theme Classes ── */
@@ -1021,40 +1040,183 @@ hr.editor-hr.selected {
 }
 
 /* =============================================
-   FLOATING TOOLBAR STYLES
+   SMART PILL — Unified Floating Toolbar
    ============================================= */
 
-.floating-toolbar {
+.ft-pill {
   position: absolute;
   display: flex;
-  align-items: center;
-  gap: 2px;
-  padding: 4px 6px;
+  flex-direction: column;
   background: var(--bg-elevated);
   border: 1px solid var(--border);
-  border-radius: 0.5rem;
-  box-shadow: var(--shadow-lg);
+  border-radius: 0.625rem;
+  box-shadow:
+    0 4px 24px rgba(0, 0, 0, 0.12),
+    0 1px 4px rgba(0, 0, 0, 0.08);
   z-index: 100;
-  animation: floatingToolbarIn 0.12s ease-out;
+  overflow: hidden;
+  animation: ftPillIn 0.15s ease-out;
 }
 
-@keyframes floatingToolbarIn {
+@keyframes ftPillIn {
   from {
     opacity: 0;
-    transform: translateY(4px);
+    transform: translateY(4px) scale(0.97);
   }
   to {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateY(0) scale(1);
   }
 }
 
-.floating-toolbar-btn {
+/* ── Tier 1: Vocab lookup row ── */
+
+.ft-vocab-tier {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 6px 5px 10px;
+  background: color-mix(in srgb, var(--accent) 7%, var(--bg-elevated));
+  border-bottom: 1px solid color-mix(in srgb, var(--accent) 15%, transparent);
+  min-height: 32px;
+}
+
+.ft-vocab-loading {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--text-tertiary);
+  font-size: 0.75rem;
+  padding: 0 2px;
+}
+
+.ft-spinner {
+  width: 13px;
+  height: 13px;
+  animation: ftSpin 0.7s linear infinite;
+  flex-shrink: 0;
+}
+
+@keyframes ftSpin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Clickable info area (pinyin + meaning) */
+.ft-vocab-info {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex: 1;
+  min-width: 0;
+  padding: 2px 4px;
+}
+
+.ft-pinyin {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--accent-text);
+  white-space: nowrap;
+  font-family: inherit;
+}
+
+.ft-meaning {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 120px;
+}
+
+.ft-meaning--empty {
+  color: var(--text-tertiary);
+  font-style: italic;
+}
+
+/* Action buttons group (Lưu / Tra) */
+.ft-vocab-actions {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-shrink: 0;
+}
+
+.ft-action-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  padding: 3px 8px;
+  border: none;
+  border-radius: 0.25rem;
+  font-size: 0.7rem;
+  font-weight: 600;
+  cursor: pointer;
+  outline: none;
+  white-space: nowrap;
+  transition: all 0.1s ease;
+  line-height: 1;
+}
+
+.ft-action-btn:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+/* Save = accent solid */
+.ft-action-save {
+  background: var(--accent);
+  color: white;
+}
+
+.ft-action-save:hover:not(:disabled) {
+  filter: brightness(1.1);
+}
+
+/* Detail = subtle outline */
+.ft-action-detail {
+  background: transparent;
+  color: var(--text-secondary);
+  border: 1px solid var(--border);
+}
+
+.ft-action-detail:hover {
+  background: var(--bg-subtle);
+  color: var(--text-primary);
+}
+
+/* TTS speak = icon-only circle */
+.ft-action-speak {
+  padding: 4px;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--text-tertiary);
+}
+
+.ft-action-speak:hover {
+  background: color-mix(in srgb, var(--accent) 12%, transparent);
+  color: var(--accent-text);
+}
+
+/* ── Tier 2: Format buttons row ── */
+
+.ft-format-tier {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  padding: 3px 5px;
+}
+
+.ft-btn {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 30px;
-  height: 30px;
+  width: 28px;
+  height: 28px;
   border: none;
   border-radius: 0.25rem;
   background: transparent;
@@ -1065,19 +1227,21 @@ hr.editor-hr.selected {
     background-color 0.1s,
     color 0.1s;
 }
-.floating-toolbar-btn:hover {
+
+.ft-btn:hover {
   background: var(--bg-subtle);
   color: var(--text-primary);
 }
-.floating-toolbar-btn.active {
+
+.ft-btn.active {
   background: var(--accent-subtle);
   color: var(--accent-text);
 }
 
-.floating-toolbar-divider {
+.ft-divider {
   width: 1px;
-  height: 18px;
-  margin: 0 2px;
+  height: 16px;
+  margin: 0 1px;
   background: var(--border);
   flex-shrink: 0;
 }

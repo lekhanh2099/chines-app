@@ -1,62 +1,121 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { createClient } from "@/lib/supabase/client";
 import { toast } from "sonner";
-import { useRouter } from "next/navigation";
 import {
- LayoutDashboard,
- BookOpen,
+ FileText,
+ Star,
+ FolderOpen,
  BookText,
- Dumbbell,
- StickyNote,
+ GraduationCap,
  Settings,
  LogOut,
- GraduationCap,
+ Plus,
+ ChevronRight,
+ Loader2,
+ Clock,
 } from "lucide-react";
-import { appConfig, type FeatureKey } from "@/config/app-config";
+import { type ReactNode, useState } from "react";
+import { useNotesList } from "@/features/notes/hooks/useNotesList";
+import { useCreateNote } from "@/features/notes/hooks/useCreateNote";
 
-const allMenuItems: {
+/* ── Types ── */
+type SidebarItem = {
  name: string;
- icon: typeof LayoutDashboard;
+ icon: typeof FileText;
  href: string;
- feature: FeatureKey;
-}[] = [
+ trailing?: ReactNode;
+};
+
+/* ── Quick Access (Note-centric) ── */
+const quickAccess: SidebarItem[] = [
+ { name: "Tất cả ghi chú", icon: FileText, href: "/notes?view=all" },
+ { name: "Yêu thích", icon: Star, href: "/notes?filter=favorites" },
  {
-  name: "Bảng điều khiển",
-  icon: LayoutDashboard,
-  href: "/",
-  feature: "dashboard",
+  name: "Thư mục",
+  icon: FolderOpen,
+  href: "/notes?filter=folders",
+  trailing: (
+   <ChevronRight className="w-3.5 h-3.5 ml-auto text-text-muted opacity-0 group-hover:opacity-100 transition-opacity" />
+  ),
  },
- { name: "Khóa học", icon: BookOpen, href: "/courses", feature: "courses" },
- {
-  name: "Kho từ vựng",
-  icon: BookText,
-  href: "/vocabulary",
-  feature: "vocabulary",
- },
- { name: "Luyện tập", icon: Dumbbell, href: "/practice", feature: "practice" },
- {
-  name: "Ngữ pháp",
-  icon: GraduationCap,
-  href: "/grammar",
-  feature: "grammar",
- },
- { name: "Ghi chú", icon: StickyNote, href: "/notes", feature: "notes" },
 ];
 
-const mainMenuItems = allMenuItems.filter(
- (item) => appConfig.features[item.feature],
-);
+/* ── Learning Tools ── */
+const learningTools: SidebarItem[] = [
+ { name: "Kho từ vựng", icon: BookText, href: "/vocabulary" },
+ { name: "Ngữ pháp", icon: GraduationCap, href: "/grammar" },
+];
+
+/* ── TreeItem — reusable sidebar row ── */
+function TreeItem({
+ href,
+ icon: Icon,
+ label,
+ active,
+ trailing,
+ onClick,
+}: {
+ href?: string;
+ icon: typeof FileText;
+ label: string;
+ active?: boolean;
+ trailing?: ReactNode;
+ onClick?: () => void;
+}) {
+ const cls = `group flex items-center gap-3 px-3 h-9 rounded text-[13px] font-medium transition-all ${
+  active
+   ? "bg-bg-card shadow-theme-sm border border-border-default text-accent-text"
+   : "text-text-secondary hover:bg-bg-card hover:text-text-primary"
+ }`;
+
+ const content = (
+  <>
+   <Icon className="w-4 h-4 shrink-0" />
+   <span className="truncate">{label}</span>
+   {trailing}
+  </>
+ );
+
+ if (onClick) {
+  return (
+   <button onClick={onClick} className={`${cls} w-full text-left`}>
+    {content}
+   </button>
+  );
+ }
+
+ return (
+  <Link href={href ?? "#"} className={cls}>
+   {content}
+  </Link>
+ );
+}
 
 export function Sidebar() {
  const pathname = usePathname();
  const router = useRouter();
+ const [isCreating, setIsCreating] = useState(false);
+ const { data: notes } = useNotesList();
+ const createNoteMutation = useCreateNote();
+
+ const recentNotes = (notes ?? []).slice(0, 5);
 
  function isActive(href: string) {
-  if (href === "/") return pathname === "/";
+  const base = href.split("?")[0];
+  if (base === "/notes") {
+   return (
+    pathname === "/notes" || pathname === "/" || pathname.startsWith("/notes")
+   );
+  }
+  if (href.includes("?")) return false;
   return pathname.startsWith(href);
+ }
+
+ function isNoteActive(noteId: string) {
+  return pathname === `/notes/${noteId}`;
  }
 
  const handleLogout = async () => {
@@ -70,84 +129,134 @@ export function Sidebar() {
   }
  };
 
+ const handleNewNote = () => {
+  if (isCreating) return;
+  setIsCreating(true);
+
+  const now = new Date();
+  const title = `Ghi chú nhanh — ${now.toLocaleTimeString("vi-VN", {
+   hour: "2-digit",
+   minute: "2-digit",
+  })} ${now.toLocaleDateString("vi-VN", {
+   day: "2-digit",
+   month: "2-digit",
+   year: "numeric",
+  })}`;
+
+  createNoteMutation.mutate(
+   { title, tags: ["quick-note"] },
+   {
+    onSuccess: (note) => {
+     router.push(`/notes/${note.id}`);
+     setIsCreating(false);
+    },
+    onError: () => {
+     toast.error("Không thể tạo ghi chú");
+     setIsCreating(false);
+    },
+   },
+  );
+ };
+
  return (
-  <aside className="w-[280px] bg-bg-card border-r border-border-default flex flex-col h-full shrink-0">
+  <aside className="w-65 bg-bg-primary border-r border-border-default flex flex-col h-full shrink-0">
    {/* Brand */}
-   <div className="flex items-center gap-3 px-6 py-5">
-    <div className="w-10 h-10 rounded-2xl bg-accent flex items-center justify-center shadow-theme-sm">
-     <span className="text-text-inverse font-bold text-xl">H</span>
+   <div className="flex items-center gap-3 px-5 py-4">
+    <div className="w-8 h-8 rounded bg-accent flex items-center justify-center">
+     <span className="text-text-inverse font-bold text-sm">H</span>
     </div>
     <div>
      <h1 className="font-bold text-sm text-text-primary leading-tight">
       Học Tiếng Trung
      </h1>
-     <p className="text-xs text-text-muted">Phiên bản Cá nhân</p>
+     <p className="text-[11px] text-text-muted">Phiên bản Cá nhân</p>
     </div>
    </div>
 
-   {/* Main Navigation */}
-   <nav className="flex flex-col gap-1 px-4 mt-2 flex-1">
-    {mainMenuItems.map((item) => {
-     const active = isActive(item.href);
-     return (
-      <Link
-       key={item.href}
-       href={item.href}
-       className={`flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium transition-colors ${
-        active
-         ? "bg-accent-subtle text-accent-text"
-         : "text-text-secondary hover:bg-bg-card-hover hover:text-text-primary"
-       }`}
-      >
-       <item.icon className="w-[18px] h-[18px]" />
-       <span>{item.name}</span>
-      </Link>
-     );
-    })}
+   {/* New Note Button */}
+   <div className="px-3 mt-1 mb-3">
+    <button
+     onClick={handleNewNote}
+     disabled={isCreating}
+     className="w-full flex items-center justify-center gap-2 px-3 h-9 rounded bg-accent text-white text-sm font-medium hover:bg-accent-hover transition-colors disabled:opacity-70"
+    >
+     {isCreating ? (
+      <Loader2 className="w-4 h-4 animate-spin" />
+     ) : (
+      <Plus className="w-4 h-4" />
+     )}
+     <span>{isCreating ? "Đang tạo..." : "Ghi chú mới"}</span>
+    </button>
+   </div>
+
+   {/* Quick Access */}
+   <nav className="flex flex-col gap-0.5 px-3">
+    <span className="px-3 py-1.5 text-[10px] font-bold uppercase tracking-wider text-text-muted">
+     Truy cập nhanh
+    </span>
+    {quickAccess.map((item) => (
+     <TreeItem
+      key={item.href}
+      href={item.href}
+      icon={item.icon}
+      label={item.name}
+      active={isActive(item.href)}
+      trailing={item.trailing}
+     />
+    ))}
    </nav>
 
+   {/* Latest Opened */}
+   {recentNotes.length > 0 && (
+    <nav className="flex flex-col gap-0.5 px-3 mt-5">
+     <span className="px-3 py-1.5 text-[10px] font-bold uppercase tracking-wider text-text-muted">
+      Mở gần đây
+     </span>
+     {recentNotes.map((note) => (
+      <Link
+       key={note.id}
+       href={`/notes/${note.id}`}
+       className={`group flex items-center gap-3 px-3 h-8 rounded text-[13px] transition-all ${
+        isNoteActive(note.id)
+         ? "bg-bg-card shadow-theme-sm border border-border-default text-accent-text font-medium"
+         : "text-text-muted hover:bg-bg-card hover:text-text-primary"
+       }`}
+      >
+       <Clock className="w-3.5 h-3.5 shrink-0 opacity-50" />
+       <span className="truncate">{note.title}</span>
+      </Link>
+     ))}
+    </nav>
+   )}
+
+   {/* Learning Tools */}
+   <nav className="flex flex-col gap-0.5 px-3 mt-5">
+    <span className="px-3 py-1.5 text-[10px] font-bold uppercase tracking-wider text-text-muted">
+     Công cụ học
+    </span>
+    {learningTools.map((item) => (
+     <TreeItem
+      key={item.href}
+      href={item.href}
+      icon={item.icon}
+      label={item.name}
+      active={isActive(item.href)}
+     />
+    ))}
+   </nav>
+
+   {/* Spacer */}
+   <div className="flex-1" />
+
    {/* Bottom Section */}
-   <div className="px-4 pb-4 flex flex-col gap-3">
-    {/* Pro Plan Card */}
-    <div className="bg-bg-elevated rounded-2xl p-4 border border-border-default">
-     <div className="flex items-center justify-between mb-3">
-      <span className="text-sm font-bold text-text-primary">Gói Pro</span>
-      <span className="text-[10px] font-bold uppercase tracking-wider bg-success-subtle text-success-text px-2 py-0.5 rounded-full">
-       Active
-      </span>
-     </div>
-     <div className="w-full bg-bg-subtle rounded-full h-1.5 overflow-hidden mb-2">
-      <div
-       className="bg-accent rounded-full h-1.5 transition-all"
-       style={{ width: "75%" }}
-      />
-     </div>
-     <p className="text-[11px] text-text-muted">
-      Đã dùng 75% giới hạn AI tháng này.
-     </p>
-    </div>
-
-    {/* Settings */}
-    <Link
+   <div className="px-3 pb-4 flex flex-col gap-0.5">
+    <TreeItem
      href="/settings"
-     className={`flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium transition-colors ${
-      isActive("/settings")
-       ? "bg-accent-subtle text-accent-text"
-       : "text-text-secondary hover:bg-bg-card-hover hover:text-text-primary"
-     }`}
-    >
-     <Settings className="w-[18px] h-[18px]" />
-     <span>Cài đặt</span>
-    </Link>
-
-    {/* Logout */}
-    <button
-     onClick={handleLogout}
-     className="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium text-text-muted hover:bg-danger-subtle hover:text-danger-text transition-colors w-full text-left"
-    >
-     <LogOut className="w-[18px] h-[18px]" />
-     <span>Đăng xuất</span>
-    </button>
+     icon={Settings}
+     label="Cài đặt"
+     active={isActive("/settings")}
+    />
+    <TreeItem icon={LogOut} label="Đăng xuất" onClick={handleLogout} />
    </div>
   </aside>
  );

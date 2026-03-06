@@ -1,9 +1,11 @@
 /**
- * FloatingToolbarPlugin — Playground-style floating toolbar on text selection.
+ * FloatingToolbarPlugin — Unified "Smart Pill" floating toolbar.
  *
- * Appears above selected text with inline formatting options:
- * Bold, Italic, Underline, Strikethrough, Subscript, Superscript,
- * Highlight (bg-color), Inline Code, Clear Formatting.
+ * Single toolbar above selection with two tiers:
+ *  - Tier 1 (Chinese only): Vocab lookup — pinyin + meaning + Save/Detail
+ *  - Tier 2 (always): Formatting — B/I/U/S/Sub/Sup | Highlight/Code | Clear
+ *
+ * Inspired by Notion / iPhone Dynamic Island — one compact pill, no extra popups.
  */
 "use client";
 
@@ -31,10 +33,30 @@ import {
  Highlighter,
  Code,
  RemoveFormatting,
+ Plus,
+ Check,
+ Loader2,
+ BookOpen,
+ Volume2,
 } from "lucide-react";
+import { containsChinese, extractChinese } from "@/lib/chinese-utils";
+import { useQuickLookup } from "@/hooks/useQuickLookup";
+import { useInspectorStore } from "@/stores/inspector-store";
 
 const pf = (e: React.MouseEvent) => e.preventDefault();
 
+/* ── Save helper ── */
+async function saveVocab(hanzi: string, pinyin: string, meaning: string) {
+ const res = await fetch("/api/vocab/inspect", {
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify({ hanzi, pinyin, meaning }),
+ });
+ if (!res.ok) throw new Error("Save failed");
+ return res.json();
+}
+
+/* ── Unified Toolbar ── */
 function FloatingToolbar({
  editor,
 }: {
@@ -43,6 +65,7 @@ function FloatingToolbar({
  const toolbarRef = useRef<HTMLDivElement>(null);
  const [isVisible, setIsVisible] = useState(false);
  const [pos, setPos] = useState({ top: 0, left: 0 });
+ const [selectedText, setSelectedText] = useState("");
 
  // Format states
  const [isBold, setIsBold] = useState(false);
@@ -53,6 +76,25 @@ function FloatingToolbar({
  const [isSuperscript, setIsSuperscript] = useState(false);
  const [isCode, setIsCode] = useState(false);
  const [isHighlight, setIsHighlight] = useState(false);
+
+ // Vocab states
+ const isChinese = containsChinese(selectedText);
+ const chinese = isChinese ? extractChinese(selectedText) : "";
+ const { data: lookupData, isLoading: lookupLoading } = useQuickLookup(chinese);
+ const [saveState, setSaveState] = useState<"idle" | "saving" | "saved">(
+  "idle",
+ );
+ const openInspector = useInspectorStore((s) => s.openInspector);
+
+ // Reset save state on selection change
+ useEffect(() => {
+  setSaveState("idle");
+ }, [chinese]);
+
+ // Auto-mark saved if already in DB
+ useEffect(() => {
+  if (lookupData?.isSaved) setSaveState("saved");
+ }, [lookupData?.isSaved]);
 
  const updatePosition = useCallback(() => {
   const selection = window.getSelection();
@@ -70,16 +112,17 @@ function FloatingToolbar({
   }
 
   const toolbar = toolbarRef.current;
-  const toolbarWidth = toolbar?.offsetWidth || 340;
-  const toolbarHeight = toolbar?.offsetHeight || 40;
+  const toolbarWidth = toolbar?.offsetWidth || 380;
+  const toolbarHeight = toolbar?.offsetHeight || 80;
+  const gap = 10;
 
-  let top = rect.top - toolbarHeight - 8 + window.scrollY;
+  let top = rect.top - toolbarHeight - gap + window.scrollY;
   let left = rect.left + rect.width / 2 - toolbarWidth / 2 + window.scrollX;
 
   // Keep within viewport
   left = Math.max(8, Math.min(left, window.innerWidth - toolbarWidth - 8));
   if (top < window.scrollY + 8) {
-   top = rect.bottom + 8 + window.scrollY;
+   top = rect.bottom + gap + window.scrollY;
   }
 
   setPos({ top, left });
@@ -90,15 +133,18 @@ function FloatingToolbar({
   const selection = $getSelection();
   if (!$isRangeSelection(selection) || selection.isCollapsed()) {
    setIsVisible(false);
+   setSelectedText("");
    return;
   }
 
-  // Check if selection has actual text
   const text = selection.getTextContent();
   if (!text.trim()) {
    setIsVisible(false);
+   setSelectedText("");
    return;
   }
+
+  setSelectedText(text.trim());
 
   setIsBold(selection.hasFormat("bold"));
   setIsItalic(selection.hasFormat("italic"));
@@ -108,7 +154,6 @@ function FloatingToolbar({
   setIsSuperscript(selection.hasFormat("superscript"));
   setIsCode(selection.hasFormat("code"));
 
-  // Check highlight via style
   const anchor = selection.anchor.getNode();
   if ($isTextNode(anchor)) {
    const style = anchor.getStyle();
@@ -117,8 +162,11 @@ function FloatingToolbar({
    setIsHighlight(false);
   }
 
-  // Defer position update to after DOM paint
-  requestAnimationFrame(updatePosition);
+  requestAnimationFrame(() => {
+   updatePosition();
+   // Re-position after render so actual height is measured
+   requestAnimationFrame(updatePosition);
+  });
  }, [updatePosition]);
 
  useEffect(() => {
@@ -171,89 +219,178 @@ function FloatingToolbar({
   editor.update(() => {
    const selection = $getSelection();
    if (!$isRangeSelection(selection)) return;
-
    const nodes = selection.getNodes();
    for (const node of nodes) {
     if ($isTextNode(node)) {
-     // Reset all formats
-     const format = node.getFormat();
-     if (format !== 0) node.setFormat(0);
-     // Reset all styles
-     const style = node.getStyle();
-     if (style) node.setStyle("");
+     if (node.getFormat() !== 0) node.setFormat(0);
+     if (node.getStyle()) node.setStyle("");
     }
    }
   });
  }, [editor]);
+
+ const handleSave = async () => {
+  if (!lookupData?.data || saveState === "saving" || saveState === "saved")
+   return;
+  setSaveState("saving");
+  try {
+   await saveVocab(
+    lookupData.data.hanzi,
+    lookupData.data.pinyin,
+    lookupData.data.meaning,
+   );
+   setSaveState("saved");
+  } catch {
+   setSaveState("idle");
+  }
+ };
+
+ const handleDetail = () => {
+  if (chinese) openInspector(chinese);
+ };
+
+ const handleSpeak = () => {
+  if (!chinese) return;
+  const utterance = new SpeechSynthesisUtterance(chinese);
+  utterance.lang = "zh-CN";
+  utterance.rate = 0.85;
+  window.speechSynthesis.cancel();
+  window.speechSynthesis.speak(utterance);
+ };
 
  if (!isVisible) return null;
 
  return createPortal(
   <div
    ref={toolbarRef}
-   className="floating-toolbar"
+   className="ft-pill"
    data-no-inspector
    style={{ top: pos.top, left: pos.left }}
    onMouseDown={pf}
   >
-   <FTButton active={isBold} onClick={() => formatText("bold")} title="Bold">
-    <Bold className="w-4 h-4" />
-   </FTButton>
-   <FTButton
-    active={isItalic}
-    onClick={() => formatText("italic")}
-    title="Italic"
-   >
-    <Italic className="w-4 h-4" />
-   </FTButton>
-   <FTButton
-    active={isUnderline}
-    onClick={() => formatText("underline")}
-    title="Underline"
-   >
-    <Underline className="w-4 h-4" />
-   </FTButton>
-   <FTButton
-    active={isStrikethrough}
-    onClick={() => formatText("strikethrough")}
-    title="Strikethrough"
-   >
-    <Strikethrough className="w-4 h-4" />
-   </FTButton>
-   <FTButton
-    active={isSubscript}
-    onClick={() => formatText("subscript")}
-    title="Subscript"
-   >
-    <Subscript className="w-4 h-4" />
-   </FTButton>
-   <FTButton
-    active={isSuperscript}
-    onClick={() => formatText("superscript")}
-    title="Superscript"
-   >
-    <Superscript className="w-4 h-4" />
-   </FTButton>
-   <div className="floating-toolbar-divider" />
-   <FTButton active={isHighlight} onClick={toggleHighlight} title="Highlight">
-    <Highlighter className="w-4 h-4" />
-   </FTButton>
-   <FTButton
-    active={isCode}
-    onClick={() => formatText("code")}
-    title="Inline Code"
-   >
-    <Code className="w-4 h-4" />
-   </FTButton>
-   <div className="floating-toolbar-divider" />
-   <FTButton onClick={clearFormatting} title="Clear Formatting">
-    <RemoveFormatting className="w-4 h-4" />
-   </FTButton>
+   {/* ── TIER 1: Vocab lookup (Chinese only) ── */}
+   {isChinese && (
+    <div className="ft-vocab-tier" onMouseDown={pf}>
+     {lookupLoading ? (
+      <div className="ft-vocab-loading">
+       <Loader2 className="ft-spinner" />
+       <span>Looking up…</span>
+      </div>
+     ) : lookupData ? (
+      <>
+       {/* Pinyin + Meaning (text info) */}
+       <div className="ft-vocab-info">
+        <span className="ft-pinyin">{lookupData.data.pinyin}</span>
+        {lookupData.data.meaning ? (
+         <span className="ft-meaning">{lookupData.data.meaning}</span>
+        ) : (
+         <span className="ft-meaning ft-meaning--empty">No meaning</span>
+        )}
+       </div>
+
+       {/* Action buttons: Lưu + Tra + TTS */}
+       <div className="ft-vocab-actions">
+        {saveState !== "saved" && (
+         <button
+          type="button"
+          className="ft-action-btn ft-action-save"
+          onClick={handleSave}
+          disabled={saveState === "saving"}
+          title="Lưu từ vựng"
+         >
+          {saveState === "saving" ? (
+           <Loader2 className="w-3.5 h-3.5 ft-spinner" />
+          ) : (
+           <Plus className="w-3.5 h-3.5" />
+          )}
+          <span>{saveState === "saving" ? "…" : "Lưu"}</span>
+         </button>
+        )}
+        <button
+         type="button"
+         className="ft-action-btn ft-action-detail"
+         onClick={handleDetail}
+         title="Tra chi tiết"
+        >
+         <BookOpen className="w-3.5 h-3.5" />
+         <span>Tra</span>
+        </button>
+        <button
+         type="button"
+         className="ft-action-btn ft-action-speak"
+         onClick={handleSpeak}
+         title="Phát âm"
+        >
+         <Volume2 className="w-3.5 h-3.5" />
+        </button>
+       </div>
+      </>
+     ) : null}
+    </div>
+   )}
+
+   {/* ── TIER 2: Format tools (always) ── */}
+   <div className="ft-format-tier">
+    <FTButton active={isBold} onClick={() => formatText("bold")} title="Bold">
+     <Bold className="w-4 h-4" />
+    </FTButton>
+    <FTButton
+     active={isItalic}
+     onClick={() => formatText("italic")}
+     title="Italic"
+    >
+     <Italic className="w-4 h-4" />
+    </FTButton>
+    <FTButton
+     active={isUnderline}
+     onClick={() => formatText("underline")}
+     title="Underline"
+    >
+     <Underline className="w-4 h-4" />
+    </FTButton>
+    <FTButton
+     active={isStrikethrough}
+     onClick={() => formatText("strikethrough")}
+     title="Strikethrough"
+    >
+     <Strikethrough className="w-4 h-4" />
+    </FTButton>
+    <FTButton
+     active={isSubscript}
+     onClick={() => formatText("subscript")}
+     title="Subscript"
+    >
+     <Subscript className="w-4 h-4" />
+    </FTButton>
+    <FTButton
+     active={isSuperscript}
+     onClick={() => formatText("superscript")}
+     title="Superscript"
+    >
+     <Superscript className="w-4 h-4" />
+    </FTButton>
+    <div className="ft-divider" />
+    <FTButton active={isHighlight} onClick={toggleHighlight} title="Highlight">
+     <Highlighter className="w-4 h-4" />
+    </FTButton>
+    <FTButton
+     active={isCode}
+     onClick={() => formatText("code")}
+     title="Inline Code"
+    >
+     <Code className="w-4 h-4" />
+    </FTButton>
+    <div className="ft-divider" />
+    <FTButton onClick={clearFormatting} title="Clear Formatting">
+     <RemoveFormatting className="w-4 h-4" />
+    </FTButton>
+   </div>
   </div>,
   document.body,
  );
 }
 
+/* ── Format button ── */
 function FTButton({
  active,
  onClick,
@@ -272,19 +409,17 @@ function FTButton({
    onClick={onClick}
    title={title}
    aria-label={title}
-   className={`floating-toolbar-btn ${active ? "active" : ""}`}
+   className={`ft-btn ${active ? "active" : ""}`}
   >
    {children}
   </button>
  );
 }
 
+/* ── Plugin export ── */
 export default function FloatingToolbarPlugin() {
  const [editor] = useLexicalComposerContext();
- const [mounted, setMounted] = useState(() => {
-  // SSR-safe: only mount on client
-  return typeof window !== "undefined";
- });
+ const [mounted] = useState(() => typeof window !== "undefined");
 
  if (!mounted) return null;
 
