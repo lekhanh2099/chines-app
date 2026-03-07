@@ -20,11 +20,14 @@ import {
 } from "@/lib/gemini-models";
 import { toast } from "sonner";
 import { Bot, RefreshCcw, Save } from "lucide-react";
+import ByokDeepSeekSection from "@/components/settings/ByokDeepSeekSection";
 
 type AiPromptSettingsResponse = {
  wordLookupPrompt: string;
  sentenceLookupPrompt: string;
  geminiModel: GeminiModelId;
+ deepseekEnabled: boolean;
+ deepseekApiKeySet: boolean;
 };
 
 export default function SettingsPage() {
@@ -64,6 +67,9 @@ export default function SettingsPage() {
      sentenceLookupPrompt:
       data.sentenceLookupPrompt || localSettings.sentenceLookupPrompt,
      geminiModel: data.geminiModel || localSettings.geminiModel,
+     deepseekEnabled: data.deepseekEnabled ?? localSettings.deepseekEnabled,
+     deepseekApiKeySet:
+      data.deepseekApiKeySet ?? localSettings.deepseekApiKeySet,
     });
 
     setWordLookupPrompt(merged.wordLookupPrompt || DEFAULT_WORD_LOOKUP_PROMPT);
@@ -101,6 +107,8 @@ export default function SettingsPage() {
     wordLookupPrompt,
     sentenceLookupPrompt,
     geminiModel,
+    deepseekEnabled: false,
+    deepseekApiKeySet: false,
    });
 
    const response = await fetch("/api/settings/ai-prompts", {
@@ -121,7 +129,11 @@ export default function SettingsPage() {
    }
 
    const data = (await response.json()) as AiPromptSettingsResponse;
-   const synced = saveClientAiPromptSettings(data);
+   const synced = saveClientAiPromptSettings({
+    ...data,
+    deepseekEnabled: data.deepseekEnabled ?? false,
+    deepseekApiKeySet: data.deepseekApiKeySet ?? false,
+   });
    setWordLookupPrompt(synced.wordLookupPrompt);
    setSentenceLookupPrompt(synced.sentenceLookupPrompt);
    setGeminiModel(synced.geminiModel);
@@ -229,6 +241,9 @@ export default function SettingsPage() {
      </div>
     </div>
    </section>
+
+   {/* BYOK DeepSeek Section */}
+   <ByokDeepSeekSection />
 
    <section className="grid gap-6 xl:grid-cols-2">
     <PromptPanel

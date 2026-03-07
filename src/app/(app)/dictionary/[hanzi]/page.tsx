@@ -443,10 +443,40 @@ export default function DictionaryPage() {
          value="deep"
          className="mt-3 bg-bg-card rounded border border-border-default shadow-theme-sm p-4"
         >
+         {/* Components (Chiết tự) */}
+         {ai?.components && ai.components.length > 0 && (
+          <div className="mb-4">
+           <h4 className="text-[10px] font-bold text-text-muted uppercase tracking-wider mb-2">
+            🔍 Cấu tạo (Chiết tự)
+           </h4>
+           <div className="flex flex-col gap-2">
+            {ai.components.map((c, i) => (
+             <div
+              key={i}
+              className="flex items-center gap-3 bg-bg-primary rounded border border-border-default p-2.5"
+             >
+              <span className="text-xl font-bold text-text-primary w-8 text-center shrink-0">
+               {c.part}
+              </span>
+              <div className="flex-1 min-w-0">
+               <span className="text-[10px] font-bold text-accent uppercase">
+                {c.name}
+               </span>
+               <span className="text-[10px] text-text-muted ml-1.5">
+                {c.meaning}
+               </span>
+              </div>
+             </div>
+            ))}
+           </div>
+          </div>
+         )}
+
+         {/* Etymology */}
          {etymologyText ? (
           <div className="mb-4">
            <h4 className="text-[10px] font-bold text-text-muted uppercase tracking-wider mb-2">
-            Chiết tự & Nguồn gốc
+            📖 Gốc của chữ
            </h4>
            <div className="bg-bg-primary rounded border border-border-default p-3">
             {etymologyType && (
@@ -454,12 +484,26 @@ export default function DictionaryPage() {
               {etymologyType}
              </span>
             )}
-            <p className="text-sm text-text-secondary leading-relaxed">
+            <p className="text-sm text-text-secondary leading-relaxed italic">
              {etymologyText}
             </p>
            </div>
           </div>
          ) : null}
+
+         {/* Mnemonic Story */}
+         {ai?.mnemonic_story && (
+          <div className="mb-4">
+           <h4 className="text-[10px] font-bold text-text-muted uppercase tracking-wider mb-2">
+            💡 Câu chuyện gợi nhớ
+           </h4>
+           <div className="rounded border border-amber-300/50 bg-amber-50/50 dark:bg-amber-950/20 dark:border-amber-700/30 p-3">
+            <p className="text-sm text-text-primary leading-relaxed">
+             {ai.mnemonic_story}
+            </p>
+           </div>
+          </div>
+         )}
 
          {ai?.usage_logic && ai.usage_logic.length > 0 && (
           <div>
@@ -492,6 +536,8 @@ export default function DictionaryPage() {
          )}
 
          {!etymologyText &&
+          !ai?.components?.length &&
+          !ai?.mnemonic_story &&
           !ai?.usage_logic?.length &&
           !ai?.vn_trap &&
           !ai?.common_mistakes && (

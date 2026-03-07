@@ -2,7 +2,10 @@ import { NextRequest, NextResponse } from "next/server";
 import { pinyin as getPinyin } from "pinyin-pro";
 import { createClient } from "@/lib/supabase/server";
 import { extractChinese } from "@/lib/chinese-utils";
-import { getUserAiPromptSettings } from "@/services/ai-prompt-settings.service";
+import {
+ getDecryptedDeepSeekKey,
+ getUserAiPromptSettings,
+} from "@/services/ai-prompt-settings.service";
 import {
  analyzeHanziDetailed,
  analyzeSentenceDetailed,
@@ -93,6 +96,12 @@ export async function POST(request: NextRequest) {
   ? await getUserAiPromptSettings(supabase, user.id)
   : null;
 
+ // BYOK: get user's personal DeepSeek key if enabled
+ const userDeepSeekKey =
+  user?.id && promptSettings?.deepseekEnabled
+   ? await getDecryptedDeepSeekKey(supabase, user.id)
+   : null;
+
  const resolvedMode = mode || resolveMode(rawSelection);
  const normalizedChinese = extractChinese(rawSelection);
 
@@ -130,6 +139,7 @@ export async function POST(request: NextRequest) {
     geminiModel: geminiModel || promptSettings?.geminiModel,
     promptTemplate:
      wordPromptTemplate || promptSettings?.wordLookupPrompt || undefined,
+    userDeepSeekKey,
    });
 
    if (!aiLookup.data) {
@@ -170,13 +180,24 @@ export async function POST(request: NextRequest) {
   const definitions = getNormalizedDefinitions(analysis, vocab.meaning);
   const progress = await getProgressState(user?.id || null, vocab.id, supabase);
 
+  // Extract deep analysis fields (etymology may be string or object)
+  const etymologyRaw = analysis.etymology;
+  const etymologyText =
+   typeof etymologyRaw === "string"
+    ? etymologyRaw
+    : etymologyRaw?.explanation || "";
+
   const result: SmartSelectionResult = {
    mode: "word",
    selection: lookupText,
    context_sentence: contextSentence?.trim() || rawSelection,
    entry: vocab,
    radicals: getNormalizedRadicals(analysis),
+   components: analysis.components || [],
    definitions,
+   meaning_summary: analysis.meaning_summary || vocab.meaning || "",
+   etymology: etymologyText,
+   mnemonic_story: analysis.mnemonic_story || "",
    translation: "",
    grammar_points: [],
    isSaved: progress.isSaved,
@@ -204,6 +225,7 @@ export async function POST(request: NextRequest) {
    geminiModel: geminiModel || promptSettings?.geminiModel,
    promptTemplate:
     sentencePromptTemplate || promptSettings?.sentenceLookupPrompt || undefined,
+   userDeepSeekKey,
   });
   if (!sentenceLookup.data) {
    return NextResponse.json(

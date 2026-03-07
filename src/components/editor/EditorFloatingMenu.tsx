@@ -475,31 +475,28 @@ export default function EditorFloatingMenu() {
           <div className="space-y-2">
            <div className="text-center">
             <p className="text-3xl font-bold text-slate-900">
-             {smartData.entry.hanzi}
+             {smartData.entry.hanzi}{" "}
+             <span className="text-sm text-gray-500">
+              /{smartData.entry.pinyin}/{" "}
+              {(smartData.entry.sino_vietnamese ||
+               smartData.entry.ai_analysis?.sino_vietnamese ||
+               smartData.entry.ai_analysis?.han_viet) && (
+               <>
+                <span className="font-semibold text-slate-500">Hán Việt: </span>
+                <span className="font-medium text-slate-800">
+                 {smartData.entry.sino_vietnamese ||
+                  smartData.entry.ai_analysis?.sino_vietnamese ||
+                  smartData.entry.ai_analysis?.han_viet}
+                </span>
+               </>
+              )}
+             </span>
             </p>
-            <p className="text-sm text-gray-500">{smartData.entry.pinyin}</p>
-            {(smartData.entry.sino_vietnamese ||
-             smartData.entry.ai_analysis?.sino_vietnamese ||
-             smartData.entry.ai_analysis?.han_viet) && (
-             <div className="mt-2 inline-flex items-center gap-2 rounded-full border border-slate-200 bg-slate-50 px-3 py-1 text-xs text-slate-600">
-              <span className="font-semibold uppercase tracking-wide text-slate-500">
-               Hán Việt
-              </span>
-              <span className="font-medium text-slate-800">
-               {smartData.entry.sino_vietnamese ||
-                smartData.entry.ai_analysis?.sino_vietnamese ||
-                smartData.entry.ai_analysis?.han_viet}
-              </span>
-             </div>
-            )}
            </div>
-
-           {smartData.radicals.length > 0 && (
-            <div className="space-y-1.5 pt-1">
-             <p className="text-center text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-400">
-              Bộ thủ
-             </p>
-             <div className="flex flex-wrap items-center justify-center gap-1.5">
+           <div className="flex flex-col gap-3">
+            {smartData.radicals.length > 0 && (
+             <div className="">
+              <p>Bộ thủ</p>
               {smartData.radicals.map((radical, index) => (
                <button
                 key={`${radical.char || radical.meaning || "radical"}-${index}`}
@@ -518,31 +515,24 @@ export default function EditorFloatingMenu() {
                </button>
               ))}
              </div>
-            </div>
-           )}
+            )}
 
-           <div className="space-y-1.5 pt-1">
-            <p className="text-center text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-400">
-             Nghĩa
-            </p>
-            <div className="flex flex-wrap justify-center gap-1.5">
+            <div className="">
+             <p>Nghĩa</p>
              {smartData.definitions.length > 0 ? (
               smartData.definitions.map((definition, index) => (
                <div
                 key={`${definition.text || definition.pos || "def"}-${index}`}
-                className={cn(
-                 "rounded-full border px-2.5 py-1 text-xs font-medium",
-                 getDefinitionTone(definition),
-                )}
+                className={cn(getDefinitionTone(definition))}
                >
                 {definition.pos && (
-                 <span className="mr-1 opacity-80">({definition.pos})</span>
+                 <span className=" ">[{definition.pos}] </span>
                 )}
                 <span>{definition.text || smartData.entry.meaning}</span>
                </div>
               ))
              ) : (
-              <div className="rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs font-medium text-slate-600">
+              <div className=" ">
                {smartData.entry.meaning || "Chưa có nghĩa cho selection này"}
               </div>
              )}

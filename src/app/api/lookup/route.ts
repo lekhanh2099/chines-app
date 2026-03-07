@@ -6,7 +6,10 @@ import {
  analyzeHanziDetailed,
  analyzeSentenceDetailed,
 } from "@/services/ai.service";
-import { getUserAiPromptSettings } from "@/services/ai-prompt-settings.service";
+import {
+ getDecryptedDeepSeekKey,
+ getUserAiPromptSettings,
+} from "@/services/ai-prompt-settings.service";
 import {
  getPrimaryMeaning,
  getVocabByHanzi,
@@ -43,6 +46,12 @@ export async function POST(request: NextRequest) {
   ? await getUserAiPromptSettings(supabase, user.id)
   : null;
 
+ // BYOK: get user's personal DeepSeek key if enabled
+ const userDeepSeekKey =
+  user?.id && promptSettings?.deepseekEnabled
+   ? await getDecryptedDeepSeekKey(supabase, user.id)
+   : null;
+
  if (parsed.data.type === "sentence") {
   const sentenceLookup = await analyzeSentenceDetailed(parsed.data.text, {
    geminiModel: parsed.data.geminiModel || promptSettings?.geminiModel,
@@ -50,6 +59,7 @@ export async function POST(request: NextRequest) {
     parsed.data.sentencePromptTemplate ||
     promptSettings?.sentenceLookupPrompt ||
     undefined,
+   userDeepSeekKey,
   });
 
   if (!sentenceLookup.data) {
@@ -94,6 +104,7 @@ export async function POST(request: NextRequest) {
    parsed.data.wordPromptTemplate ||
    promptSettings?.wordLookupPrompt ||
    undefined,
+  userDeepSeekKey,
  });
 
  if (!aiLookup.data) {

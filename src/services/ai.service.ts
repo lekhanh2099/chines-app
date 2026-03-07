@@ -47,6 +47,8 @@ const providerOutages: Record<string, ProviderOutageState> = {};
 type AiRequestOptions = {
  promptTemplate?: string | null;
  geminiModel?: string | null;
+ /** BYOK: user's own decrypted DeepSeek key */
+ userDeepSeekKey?: string | null;
 };
 
 /* ══════════════════════════════════════════
@@ -141,17 +143,23 @@ function getProviderCooldownMs(
 async function callDeepSeekRaw(
  systemPrompt: string,
  prompt: string,
+ userApiKey?: string | null,
 ): Promise<RawProviderResult> {
- const skippedReason = getProviderSkipReason("DeepSeek");
- if (skippedReason) {
-  console.warn("[AI:DeepSeek] Skipped due to recent provider outage");
-  return {
-   content: null,
-   error: skippedReason,
-  };
+ const isUserKey = !!userApiKey;
+ const apiKey = userApiKey || process.env.DEEPSEEK_API_KEY;
+
+ // Only check outage for system key; user key gets a fresh attempt
+ if (!isUserKey) {
+  const skippedReason = getProviderSkipReason("DeepSeek");
+  if (skippedReason) {
+   console.warn("[AI:DeepSeek] Skipped due to recent provider outage");
+   return {
+    content: null,
+    error: skippedReason,
+   };
+  }
  }
 
- const apiKey = process.env.DEEPSEEK_API_KEY;
  if (!apiKey) {
   console.warn("[AI:DeepSeek] No API key configured");
   return {
@@ -183,6 +191,13 @@ async function callDeepSeekRaw(
   if (!res.ok) {
    const errBody = await res.text().catch(() => "");
    console.error(`[AI:DeepSeek] HTTP ${res.status}:`, errBody);
+
+   if (isUserKey) {
+    // BYOK: return user-specific error, do NOT mark system provider outage
+    const userError = formatByokError(res.status, errBody);
+    return { content: null, error: userError };
+   }
+
    const errorMessage = formatProviderError("DeepSeek", res.status, errBody);
    const cooldownMs = getProviderCooldownMs("DeepSeek", res.status, errBody);
    if (cooldownMs > 0) {
@@ -337,6 +352,38 @@ function formatProviderError(
  return `${provider} lỗi HTTP ${status}.`;
 }
 
+/**
+ * BYOK-specific error messages — always shown to user, never triggers
+ * system-level provider cooldown.
+ */
+function formatByokError(status: number, errorBody: string): string {
+ const body = errorBody.toLowerCase();
+
+ if (status === 401 || status === 403) {
+  return "Lỗi API cá nhân: Key không hợp lệ hoặc đã bị thu hồi. Vui lòng kiểm tra lại key trên platform.deepseek.com.";
+ }
+
+ if (
+  status === 402 ||
+  body.includes("insufficient balance") ||
+  body.includes("insufficient_quota")
+ ) {
+  return "Lỗi API cá nhân: Tài khoản DeepSeek của bạn đã hết tín dụng. Vui lòng nạp thêm hoặc tắt chế độ Key cá nhân để dùng mặc định.";
+ }
+
+ if (status === 429) {
+  return "Lỗi API cá nhân: Vượt quá giới hạn request. Vui lòng đợi một lát rồi thử lại.";
+ }
+
+ return `Lỗi API cá nhân: DeepSeek trả về HTTP ${status}. Vui lòng kiểm tra số dư hoặc tắt chế độ Key cá nhân để dùng mặc định.`;
+}
+
+/* ══════════════════════════════════════════
+   BYOK System Prompt (hidden, always prepended)
+   ══════════════════════════════════════════ */
+
+const BYOK_HIDDEN_SYSTEM_PROMPT = `You are a helpful Chinese language tutor specializing in teaching Chinese to Vietnamese speakers. Always provide accurate pinyin, clear Vietnamese translations, and grammar explanations. Stay focused on Chinese language learning topics.`;
+
 /* ══════════════════════════════════════════
    JSON Parser + Zod Validation
    ══════════════════════════════════════════ */
@@ -455,8 +502,33 @@ async function requestStructuredJson<T>(
  geminiModel: GeminiModelId,
  schema: z.ZodType<T>,
  fallback: (parsed: unknown) => boolean,
+ userDeepSeekKey?: string | null,
 ): Promise<StructuredRequestResult<T>> {
  const providerErrors: string[] = [];
+
+ // If user has BYOK key, try user's DeepSeek FIRST (they're paying for it)
+ if (userDeepSeekKey) {
+  const byokSystemPrompt = `${BYOK_HIDDEN_SYSTEM_PROMPT}\n\n${systemPrompt}`;
+  const deepSeekRaw = await callDeepSeekRaw(
+   byokSystemPrompt,
+   prompt,
+   userDeepSeekKey,
+  );
+  if (deepSeekRaw.content) {
+   const deepSeekResult = parseAndValidate(
+    deepSeekRaw.content,
+    schema,
+    fallback,
+   );
+   if (deepSeekResult) {
+    return { data: deepSeekResult, error: null };
+   }
+   providerErrors.push("DeepSeek (BYOK) trả JSON không đúng schema.");
+  } else if (deepSeekRaw.error) {
+   // BYOK errors are returned immediately — no fallback to system key
+   return { data: null, error: deepSeekRaw.error };
+  }
+ }
 
  const geminiRaw = await callGeminiRaw(systemPrompt, prompt, geminiModel);
  if (geminiRaw.content) {
@@ -469,21 +541,24 @@ async function requestStructuredJson<T>(
   providerErrors.push(geminiRaw.error);
  }
 
- console.log("[AI] Gemini failed, trying DeepSeek...");
+ // Only fallback to system DeepSeek if no BYOK key
+ if (!userDeepSeekKey) {
+  console.log("[AI] Gemini failed, trying DeepSeek...");
 
- const deepSeekRaw = await callDeepSeekRaw(systemPrompt, prompt);
- if (deepSeekRaw.content) {
-  const deepSeekResult = parseAndValidate(
-   deepSeekRaw.content,
-   schema,
-   fallback,
-  );
-  if (deepSeekResult) {
-   return { data: deepSeekResult, error: null };
+  const deepSeekRaw = await callDeepSeekRaw(systemPrompt, prompt);
+  if (deepSeekRaw.content) {
+   const deepSeekResult = parseAndValidate(
+    deepSeekRaw.content,
+    schema,
+    fallback,
+   );
+   if (deepSeekResult) {
+    return { data: deepSeekResult, error: null };
+   }
+   providerErrors.push("DeepSeek trả JSON không đúng schema.");
+  } else if (deepSeekRaw.error) {
+   providerErrors.push(deepSeekRaw.error);
   }
-  providerErrors.push("DeepSeek trả JSON không đúng schema.");
- } else if (deepSeekRaw.error) {
-  providerErrors.push(deepSeekRaw.error);
  }
 
  return {
@@ -520,6 +595,7 @@ export async function analyzeHanziDetailed(
   geminiModel,
   aiAnalysisSchema,
   (parsed) => typeof parsed === "object" && parsed !== null,
+  options?.userDeepSeekKey,
  );
 
  if (result.data) {
@@ -562,6 +638,7 @@ export async function analyzeSentenceDetailed(
   geminiModel,
   sentenceInsightSchema,
   (parsed) => typeof parsed === "object" && parsed !== null,
+  options?.userDeepSeekKey,
  );
 
  if (result.data) {

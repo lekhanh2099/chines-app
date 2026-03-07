@@ -58,6 +58,8 @@ export type DbUserAiPromptSettings = {
  word_lookup_prompt: string;
  sentence_lookup_prompt: string;
  gemini_model: string;
+ deepseek_api_key_encrypted: string | null;
+ deepseek_enabled: boolean;
  created_at: string;
  updated_at: string;
 };
@@ -164,17 +166,26 @@ export type AiEtymology = {
  explanation?: string;
 };
 
+export type AiComponent = {
+ part?: string;
+ name?: string;
+ meaning?: string;
+};
+
 export type AiAnalysis = {
  hanzi?: string;
  pinyin?: string;
  han_viet?: string;
  sino_vietnamese?: string;
+ meaning_summary?: string;
  stroke_count?: number | null;
  radical?: string | null;
  radicals?: AiRadical[];
+ components?: AiComponent[];
  word_type?: string;
  definitions?: AiDefinition[];
  etymology?: string | AiEtymology;
+ mnemonic_story?: string;
  meanings?: AiMeaning[];
  examples?: { zh: string; pinyin: string; vi: string }[];
  usage_logic?: string[];
@@ -243,17 +254,26 @@ export const aiEtymologySchema = z.object({
  explanation: z.string().optional(),
 });
 
+export const aiComponentSchema = z.object({
+ part: z.string().optional(),
+ name: z.string().optional(),
+ meaning: z.string().optional(),
+});
+
 export const aiAnalysisSchema = z.object({
  hanzi: z.string().optional(),
  pinyin: z.string().optional(),
  han_viet: z.string().optional(),
  sino_vietnamese: z.string().optional(),
+ meaning_summary: z.string().optional(),
  stroke_count: z.number().optional().nullable(),
  radical: z.string().optional().nullable(),
  radicals: z.array(aiRadicalSchema).optional(),
+ components: z.array(aiComponentSchema).optional(),
  word_type: z.string().optional(),
  definitions: z.array(aiDefinitionSchema).optional(),
  etymology: z.union([z.string(), aiEtymologySchema]).optional(),
+ mnemonic_story: z.string().optional(),
  meanings: z.array(aiMeaningSchema).optional(),
  examples: z
   .array(
@@ -319,7 +339,11 @@ export type SmartSelectionResult = {
  context_sentence: string;
  entry: VocabData;
  radicals: AiRadical[];
+ components: AiComponent[];
  definitions: AiDefinition[];
+ meaning_summary: string;
+ etymology: string;
+ mnemonic_story: string;
  translation: string;
  grammar_points: AiGrammarPoint[];
  isSaved: boolean;
