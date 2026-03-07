@@ -1,8 +1,13 @@
 import { createClient } from "@/lib/supabase/server";
-import { analyzeHanzi } from "@/services/ai.service";
-import { getVocabByHanzi, upsertVocab } from "@/services/vocab.service";
+import { getUserAiPromptSettings } from "@/services/ai-prompt-settings.service";
+import { analyzeHanziDetailed } from "@/services/ai.service";
+import {
+ getPrimaryMeaning,
+ getVocabByHanzi,
+ getVocabularyAnalysis,
+ upsertVocab,
+} from "@/services/vocab.service";
 import { NextRequest, NextResponse } from "next/server";
-import type { AiAnalysis } from "@/types/database";
 
 export async function POST(request: NextRequest) {
  const supabase = await createClient();
@@ -28,31 +33,39 @@ export async function POST(request: NextRequest) {
 
  // Check if we already have AI data in DB via service
  const existing = await getVocabByHanzi(supabase, hanzi);
- const existingAi = existing?.ai_analysis as AiAnalysis | null;
+ const existingAi = getVocabularyAnalysis(existing);
 
  if (existingAi && Object.keys(existingAi).length > 3) {
   return NextResponse.json({ data: existingAi, cached: true });
  }
 
  // Call AI service
- const aiResult = await analyzeHanzi(hanzi);
+ const promptSettings = await getUserAiPromptSettings(supabase, user.id);
+ const aiLookup = await analyzeHanziDetailed(hanzi, {
+  geminiModel: promptSettings.geminiModel,
+  promptTemplate: promptSettings.wordLookupPrompt,
+ });
 
- if (!aiResult) {
+ if (!aiLookup.data) {
   return NextResponse.json(
    {
     error:
-     "AI generation failed — check server logs. Common causes: DeepSeek insufficient balance, missing API keys.",
+     aiLookup.error ||
+     "Không thể generate nghĩa tiếng Việt lúc này vì AI provider đang unavailable.",
    },
-   { status: 502 },
+   { status: 503 },
   );
  }
 
+ const aiResult = aiLookup.data;
+
  // Upsert via service
  const upsertResult = await upsertVocab(supabase, {
-  hanzi: aiResult.hanzi,
+  hanzi: aiResult.hanzi || hanzi,
   pinyin: aiResult.pinyin,
-  meaning: aiResult.meanings?.[0]?.definition || "",
-  ai_analysis: aiResult as AiAnalysis,
+  sinoVietnamese: aiResult.sino_vietnamese || aiResult.han_viet,
+  meaning: getPrimaryMeaning(aiResult, ""),
+  ai_analysis: aiResult,
  });
 
  if (!upsertResult) {

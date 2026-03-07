@@ -1,6 +1,11 @@
 import { createClient } from "@/lib/supabase/server";
-import { getVocabByHanzi, saveVocabToSrs } from "@/services/vocab.service";
+import {
+ getVocabularyAnalysis,
+ getVocabByHanzi,
+ saveVocabToSrs,
+} from "@/services/vocab.service";
 import { NextRequest, NextResponse } from "next/server";
+import type { AiAnalysis } from "@/types/database";
 
 export async function GET(request: NextRequest) {
  const hanzi = request.nextUrl.searchParams.get("hanzi");
@@ -26,8 +31,9 @@ export async function GET(request: NextRequest) {
    id: vocab.id,
    hanzi: vocab.hanzi,
    pinyin: vocab.pinyin,
+   sino_vietnamese: vocab.sino_vietnamese,
    meaning: vocab.meaning,
-   ai_analysis: vocab.ai_analysis,
+   ai_analysis: getVocabularyAnalysis(vocab),
   },
  });
 }
@@ -44,10 +50,28 @@ export async function POST(request: NextRequest) {
  }
 
  const body: unknown = await request.json();
- const { hanzi, pinyin, meaning } = body as {
+ const {
+  hanzi,
+  pinyin,
+  sino_vietnamese,
+  meaning,
+  analysis,
+  ai_analysis,
+  context_sentence,
+  context_translation,
+  personal_note,
+  personal_note_mode,
+ } = body as {
   hanzi?: string;
   pinyin?: string;
+  sino_vietnamese?: string;
   meaning?: string;
+  analysis?: AiAnalysis;
+  ai_analysis?: AiAnalysis;
+  context_sentence?: string;
+  context_translation?: string;
+  personal_note?: string;
+  personal_note_mode?: "normal" | "important";
  };
 
  if (!hanzi) {
@@ -57,11 +81,23 @@ export async function POST(request: NextRequest) {
   );
  }
 
- const result = await saveVocabToSrs(supabase, user.id, {
-  hanzi,
-  pinyin: pinyin || "",
-  meaning: meaning || "",
- });
+ const result = await saveVocabToSrs(
+  supabase,
+  user.id,
+  {
+   hanzi,
+   pinyin: pinyin || "",
+   sino_vietnamese,
+   meaning: meaning || "",
+   ...(analysis || ai_analysis ? { ai_analysis: analysis || ai_analysis } : {}),
+  },
+  {
+   contextSentence: context_sentence,
+   contextTranslation: context_translation,
+   personalNote: personal_note,
+   personalNoteMode: personal_note_mode,
+  },
+ );
 
  if (!result) {
   return NextResponse.json(

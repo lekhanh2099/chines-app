@@ -1,76 +1,163 @@
 /**
- * AI Service — Vocab Generator
+ * AI Service — structured Chinese word/sentence analysis.
  *
  * Strategy:
- *   1. Gemini Flash 2.0 (primary) — free tier
- *   2. DeepSeek-V3 (fallback) — cheap, excellent Chinese linguistics
+ *   1. Gemini Flash 2.0 (primary)
+ *   2. DeepSeek-V3 (fallback)
  *
- * Both use the same "Linguist" system prompt.
  * This is a pure service layer — no Next.js, no DB, no auth.
  */
 
-import { aiAnalysisSchema, type AiVocabResponse } from "@/types/database";
+import { z } from "zod";
+import {
+ renderSentenceLookupPrompt,
+ renderWordLookupPrompt,
+} from "@/lib/ai-prompts";
+import {
+ DEFAULT_GEMINI_MODEL,
+ normalizeGeminiModel,
+ type GeminiModelId,
+} from "@/lib/gemini-models";
+import {
+ aiAnalysisSchema,
+ sentenceInsightSchema,
+ type AiVocabResponse,
+ type SentenceInsightResponse,
+} from "@/types/database";
+
+type RawProviderResult = {
+ content: string | null;
+ error: string | null;
+};
+
+type StructuredRequestResult<T> = {
+ data: T | null;
+ error: string | null;
+};
+
+type ProviderName = "Gemini" | "DeepSeek";
+
+type ProviderOutageState = {
+ unavailableUntil: number;
+ reason: string;
+};
+
+const providerOutages: Record<string, ProviderOutageState> = {};
+
+type AiRequestOptions = {
+ promptTemplate?: string | null;
+ geminiModel?: string | null;
+};
 
 /* ══════════════════════════════════════════
    System Prompt
    ══════════════════════════════════════════ */
 
-const SYSTEM_PROMPT = `You are a specialized Chinese Etymology and Grammar expert acting as a backend engine for a learning app.
+const WORD_SYSTEM_PROMPT = `You are a Chinese-Vietnamese lexicography engine.
 
-Your task: Analyze the provided Chinese word/character strictly according to the output schema. Use Vietnamese for ALL explanations and definitions.
+Follow the user prompt exactly.
+Return valid JSON only.
+Do not include markdown fences or commentary.`;
 
-Requirements:
-- Explain "Etymology" (Chiết tự) simply, using clear visual logic (e.g., "Hình ảnh người phụ nữ dưới mái nhà = Bình an").
-- Examples must be HSK-appropriate (Modern, daily life context).
-- Highlight subtle nuances or "Traps" for Vietnamese learners (common_mistakes).
-- If the input is a single character, include radical and stroke_count info.
-- If the input is a multi-character word, focus on word-level analysis.
-- Always provide at least 2 meanings with examples.
-- related_words should contain 4-8 commonly paired words/collocations.
+const wordPrompt = (hanzi: string, promptTemplate?: string | null) =>
+ renderWordLookupPrompt(hanzi, promptTemplate);
 
-RESPOND WITH JSON ONLY. No markdown, no explanation outside JSON.`;
+const SENTENCE_SYSTEM_PROMPT = `You are a Chinese-Vietnamese translation and grammar engine.
 
-const userPrompt = (hanzi: string) =>
- `Analyze this Chinese word: "${hanzi}"
+Follow the user prompt exactly.
+Return valid JSON only.
+Do not include markdown fences or commentary.`;
 
-Return JSON matching this exact schema:
-{
-  "hanzi": "${hanzi}",
-  "pinyin": "string",
-  "han_viet": "string (Hán-Việt reading, UPPERCASE)",
-  "stroke_count": number | null,
-  "radical": "string (VD: Bộ Nữ 女) | null",
-  "word_type": "string (Động từ/Danh từ/Tính từ/...)",
-  "etymology": {
-    "type": "string (Hội ý/Hình thanh/Chỉ sự/Tượng hình/...)",
-    "explanation": "string (Giải thích ngắn gọn nguồn gốc chữ bằng tiếng Việt)"
-  },
-  "meanings": [
-    {
-      "part_of_speech": "string (Động từ/Danh từ/...)",
-      "definition": "string (Nghĩa bằng tiếng Việt)",
-      "example": {
-        "cn": "string (Câu ví dụ tiếng Trung)",
-        "pinyin": "string",
-        "vi": "string (Dịch tiếng Việt)"
-      }
-    }
-  ],
-  "related_words": ["string", "string", ...],
-  "usage_logic": ["string (Tư duy cốt lõi khi dùng từ này)"],
-  "common_mistakes": "string | null (Lưu ý cho người Việt khi dùng từ này)",
-  "vn_trap": "string | null (Bẫy tiếng Việt - từ Hán Việt nhưng nghĩa khác)"
-}`;
+const sentencePrompt = (text: string, promptTemplate?: string | null) =>
+ renderSentenceLookupPrompt(text, promptTemplate);
+
+function getProviderOutageKey(
+ provider: ProviderName,
+ geminiModel?: GeminiModelId,
+): string {
+ return provider === "Gemini"
+  ? `${provider}:${geminiModel || DEFAULT_GEMINI_MODEL}`
+  : provider;
+}
+
+function getProviderSkipReason(
+ provider: ProviderName,
+ geminiModel?: GeminiModelId,
+): string | null {
+ const outage = providerOutages[getProviderOutageKey(provider, geminiModel)];
+ if (!outage) return null;
+
+ if (Date.now() >= outage.unavailableUntil) {
+  delete providerOutages[getProviderOutageKey(provider, geminiModel)];
+  return null;
+ }
+
+ return outage.reason;
+}
+
+function markProviderUnavailable(
+ provider: ProviderName,
+ cooldownMs: number,
+ reason: string,
+ geminiModel?: GeminiModelId,
+) {
+ providerOutages[getProviderOutageKey(provider, geminiModel)] = {
+  unavailableUntil: Date.now() + cooldownMs,
+  reason,
+ };
+}
+
+function getProviderCooldownMs(
+ provider: ProviderName,
+ status: number,
+ errorBody: string,
+): number {
+ const retryMatch = errorBody.match(/"retryDelay"\s*:\s*"([\d.]+)s"/i);
+ const retrySeconds = retryMatch ? Number(retryMatch[1]) : NaN;
+
+ if (provider === "Gemini" && status === 429) {
+  if (Number.isFinite(retrySeconds) && retrySeconds > 0) {
+   return Math.ceil(retrySeconds * 1000);
+  }
+
+  return 60_000;
+ }
+
+ if (provider === "DeepSeek" && status === 402) {
+  return 10 * 60_000;
+ }
+
+ if (status === 401 || status === 403) {
+  return 10 * 60_000;
+ }
+
+ return 0;
+}
 
 /* ══════════════════════════════════════════
    Provider: DeepSeek
    ══════════════════════════════════════════ */
 
-async function callDeepSeek(hanzi: string): Promise<AiVocabResponse | null> {
+async function callDeepSeekRaw(
+ systemPrompt: string,
+ prompt: string,
+): Promise<RawProviderResult> {
+ const skippedReason = getProviderSkipReason("DeepSeek");
+ if (skippedReason) {
+  console.warn("[AI:DeepSeek] Skipped due to recent provider outage");
+  return {
+   content: null,
+   error: skippedReason,
+  };
+ }
+
  const apiKey = process.env.DEEPSEEK_API_KEY;
  if (!apiKey) {
   console.warn("[AI:DeepSeek] No API key configured");
-  return null;
+  return {
+   content: null,
+   error: "DeepSeek chưa được cấu hình API key.",
+  };
  }
 
  try {
@@ -83,8 +170,8 @@ async function callDeepSeek(hanzi: string): Promise<AiVocabResponse | null> {
    body: JSON.stringify({
     model: "deepseek-chat",
     messages: [
-     { role: "system", content: SYSTEM_PROMPT },
-     { role: "user", content: userPrompt(hanzi) },
+     { role: "system", content: systemPrompt },
+     { role: "user", content: prompt },
     ],
     temperature: 0.3,
     max_tokens: 2000,
@@ -96,19 +183,38 @@ async function callDeepSeek(hanzi: string): Promise<AiVocabResponse | null> {
   if (!res.ok) {
    const errBody = await res.text().catch(() => "");
    console.error(`[AI:DeepSeek] HTTP ${res.status}:`, errBody);
-   return null;
+   const errorMessage = formatProviderError("DeepSeek", res.status, errBody);
+   const cooldownMs = getProviderCooldownMs("DeepSeek", res.status, errBody);
+   if (cooldownMs > 0) {
+    markProviderUnavailable("DeepSeek", cooldownMs, errorMessage);
+   }
+   return {
+    content: null,
+    error: errorMessage,
+   };
   }
 
   const json: unknown = await res.json();
   const content = (json as Record<string, unknown[]>)?.choices?.[0] as
    | Record<string, Record<string, string>>
    | undefined;
-  if (!content?.message?.content) return null;
+  if (!content?.message?.content) {
+   return {
+    content: null,
+    error: "DeepSeek trả về response rỗng.",
+   };
+  }
 
-  return parseAndValidate(content.message.content);
+  return {
+   content: content.message.content,
+   error: null,
+  };
  } catch (err) {
   console.error("[AI:DeepSeek] Error:", err);
-  return null;
+  return {
+   content: null,
+   error: `DeepSeek lỗi kết nối: ${err instanceof Error ? err.message : "unknown error"}.`,
+  };
  }
 }
 
@@ -116,23 +222,39 @@ async function callDeepSeek(hanzi: string): Promise<AiVocabResponse | null> {
    Provider: Gemini Flash 2.0
    ══════════════════════════════════════════ */
 
-async function callGemini(hanzi: string): Promise<AiVocabResponse | null> {
+async function callGeminiRaw(
+ systemPrompt: string,
+ prompt: string,
+ model: GeminiModelId,
+): Promise<RawProviderResult> {
+ const skippedReason = getProviderSkipReason("Gemini", model);
+ if (skippedReason) {
+  console.warn("[AI:Gemini] Skipped due to recent provider outage");
+  return {
+   content: null,
+   error: skippedReason,
+  };
+ }
+
  const apiKey = process.env.GEMINI_API_KEY;
  if (!apiKey) {
   console.warn("[AI:Gemini] No API key configured");
-  return null;
+  return {
+   content: null,
+   error: "Gemini chưa được cấu hình API key.",
+  };
  }
 
  try {
   const res = await fetch(
-   `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`,
+   `https://generativelanguage.googleapis.com/v1beta/${model}:generateContent?key=${apiKey}`,
    {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
      contents: [
       {
-       parts: [{ text: `${SYSTEM_PROMPT}\n\n${userPrompt(hanzi)}` }],
+       parts: [{ text: `${systemPrompt}\n\n${prompt}` }],
       },
      ],
      generationConfig: {
@@ -148,7 +270,15 @@ async function callGemini(hanzi: string): Promise<AiVocabResponse | null> {
   if (!res.ok) {
    const errBody = await res.text().catch(() => "");
    console.error(`[AI:Gemini] HTTP ${res.status}:`, errBody);
-   return null;
+   const errorMessage = formatProviderError("Gemini", res.status, errBody);
+   const cooldownMs = getProviderCooldownMs("Gemini", res.status, errBody);
+   if (cooldownMs > 0) {
+    markProviderUnavailable("Gemini", cooldownMs, errorMessage, model);
+   }
+   return {
+    content: null,
+    error: errorMessage,
+   };
   }
 
   const json: unknown = await res.json();
@@ -157,41 +287,78 @@ async function callGemini(hanzi: string): Promise<AiVocabResponse | null> {
     candidates?: { content?: { parts?: { text?: string }[] } }[];
    }
   )?.candidates?.[0]?.content?.parts?.[0]?.text;
-  if (!content) return null;
+  if (!content) {
+   return {
+    content: null,
+    error: "Gemini trả về response rỗng.",
+   };
+  }
 
-  return parseAndValidate(content);
+  return {
+   content,
+   error: null,
+  };
  } catch (err) {
   console.error("[AI:Gemini] Error:", err);
-  return null;
+  return {
+   content: null,
+   error: `Gemini lỗi kết nối: ${err instanceof Error ? err.message : "unknown error"}.`,
+  };
  }
+}
+
+function formatProviderError(
+ provider: "Gemini" | "DeepSeek",
+ status: number,
+ errorBody: string,
+): string {
+ const body = errorBody.toLowerCase();
+
+ if (provider === "Gemini") {
+  if (status === 429 && body.includes("quota")) {
+   return "Gemini đã hết quota hoặc đang bị rate limit.";
+  }
+
+  if (status === 401 || status === 403) {
+   return "Gemini API key không hợp lệ hoặc bị từ chối.";
+  }
+ }
+
+ if (provider === "DeepSeek") {
+  if (status === 402 || body.includes("insufficient balance")) {
+   return "DeepSeek đã hết số dư.";
+  }
+
+  if (status === 401 || status === 403) {
+   return "DeepSeek API key không hợp lệ hoặc bị từ chối.";
+  }
+ }
+
+ return `${provider} lỗi HTTP ${status}.`;
 }
 
 /* ══════════════════════════════════════════
    JSON Parser + Zod Validation
    ══════════════════════════════════════════ */
 
-function parseAndValidate(raw: string): AiVocabResponse | null {
+function parseAndValidate<T>(
+ raw: string,
+ schema: z.ZodType<T>,
+ fallback: (parsed: unknown) => boolean,
+): T | null {
  try {
   let cleaned = raw.trim();
-  // Strip markdown code fences if present
   if (cleaned.startsWith("```")) {
    cleaned = cleaned.replace(/^```(?:json)?\n?/, "").replace(/\n?```$/, "");
   }
   const parsed: unknown = JSON.parse(cleaned);
 
-  // Validate with Zod
-  const result = aiAnalysisSchema.safeParse(parsed);
+  const result = schema.safeParse(parsed);
   if (!result.success) {
    console.error("[AI] Zod validation failed:", result.error.issues);
-   // Attempt lenient fallback — if `hanzi` exists, use the raw parsed data
-   if (
-    typeof parsed === "object" &&
-    parsed !== null &&
-    "hanzi" in parsed &&
-    typeof (parsed as Record<string, unknown>).hanzi === "string"
-   ) {
+   if (fallback(parsed)) {
     console.warn("[AI] Using unvalidated data as fallback");
-    return parsed as AiVocabResponse;
+    return parsed as T;
    }
    return null;
   }
@@ -203,29 +370,212 @@ function parseAndValidate(raw: string): AiVocabResponse | null {
  }
 }
 
+function normalizeWordAnalysis(
+ hanzi: string,
+ parsed: AiVocabResponse,
+): AiVocabResponse {
+ const definitions = parsed.definitions?.map((definition) => ({
+  ...definition,
+  text: definition.text || definition.meaning,
+  meaning: definition.meaning || definition.text,
+  examples: definition.examples?.map((example) => ({
+   ...example,
+   py: example.py || example.pinyin,
+   pinyin: example.pinyin || example.py,
+  })),
+ }));
+
+ const flattenedExamples = [
+  ...(parsed.examples || []),
+  ...((definitions || []).flatMap((definition) =>
+   (definition.examples || []).map((example) => ({
+    zh: example.cn || "",
+    pinyin: example.pinyin || example.py || "",
+    vi: example.vi || "",
+   })),
+  ) || []),
+  ...((parsed.meanings || []).flatMap((meaning) =>
+   meaning.example
+    ? [
+       {
+        zh: meaning.example.cn || "",
+        pinyin: meaning.example.pinyin || "",
+        vi: meaning.example.vi || "",
+       },
+      ]
+    : [],
+  ) || []),
+ ].filter((example) => example.zh || example.pinyin || example.vi);
+
+ const resolvedSinoVietnamese =
+  parsed.sino_vietnamese || parsed.han_viet || undefined;
+
+ return {
+  ...parsed,
+  hanzi,
+  ...(resolvedSinoVietnamese
+   ? {
+      sino_vietnamese: resolvedSinoVietnamese,
+      han_viet: parsed.han_viet || resolvedSinoVietnamese,
+     }
+   : {}),
+  ...(definitions ? { definitions } : {}),
+  ...(flattenedExamples.length ? { examples: flattenedExamples } : {}),
+  ...(parsed.common_mistakes || parsed.confusion || parsed.confusion_warning
+   ? {
+      common_mistakes:
+       parsed.common_mistakes || parsed.confusion || parsed.confusion_warning,
+      confusion:
+       parsed.confusion || parsed.confusion_warning || parsed.common_mistakes,
+      confusion_warning:
+       parsed.confusion_warning || parsed.confusion || parsed.common_mistakes,
+     }
+   : {}),
+ };
+}
+
+function normalizeSentenceInsight(
+ text: string,
+ parsed: SentenceInsightResponse,
+): SentenceInsightResponse {
+ return {
+  ...parsed,
+  text,
+  grammar_points: parsed.grammar_points?.map((point) => ({
+   ...point,
+   pattern: point.pattern || point.structure,
+   structure: point.structure || point.pattern,
+  })),
+ };
+}
+
+async function requestStructuredJson<T>(
+ systemPrompt: string,
+ prompt: string,
+ geminiModel: GeminiModelId,
+ schema: z.ZodType<T>,
+ fallback: (parsed: unknown) => boolean,
+): Promise<StructuredRequestResult<T>> {
+ const providerErrors: string[] = [];
+
+ const geminiRaw = await callGeminiRaw(systemPrompt, prompt, geminiModel);
+ if (geminiRaw.content) {
+  const geminiResult = parseAndValidate(geminiRaw.content, schema, fallback);
+  if (geminiResult) {
+   return { data: geminiResult, error: null };
+  }
+  providerErrors.push("Gemini trả JSON không đúng schema.");
+ } else if (geminiRaw.error) {
+  providerErrors.push(geminiRaw.error);
+ }
+
+ console.log("[AI] Gemini failed, trying DeepSeek...");
+
+ const deepSeekRaw = await callDeepSeekRaw(systemPrompt, prompt);
+ if (deepSeekRaw.content) {
+  const deepSeekResult = parseAndValidate(
+   deepSeekRaw.content,
+   schema,
+   fallback,
+  );
+  if (deepSeekResult) {
+   return { data: deepSeekResult, error: null };
+  }
+  providerErrors.push("DeepSeek trả JSON không đúng schema.");
+ } else if (deepSeekRaw.error) {
+  providerErrors.push(deepSeekRaw.error);
+ }
+
+ return {
+  data: null,
+  error: providerErrors.join(" "),
+ };
+}
+
 /* ══════════════════════════════════════════
    Public API
    ══════════════════════════════════════════ */
 
-/**
- * Analyze a Chinese word using AI providers.
- * Tries Gemini first (free tier), then DeepSeek as fallback.
- * Returns null if all providers fail.
- */
 export async function analyzeHanzi(
  hanzi: string,
+ options?: AiRequestOptions,
 ): Promise<AiVocabResponse | null> {
+ const result = await analyzeHanziDetailed(hanzi, options);
+ return result.data;
+}
+
+export async function analyzeHanziDetailed(
+ hanzi: string,
+ options?: AiRequestOptions,
+): Promise<StructuredRequestResult<AiVocabResponse>> {
  console.log("[AI] Analyzing:", hanzi);
 
- // Try Gemini first (free tier available)
- const geminiResult = await callGemini(hanzi);
- if (geminiResult) return geminiResult;
+ const geminiModel = normalizeGeminiModel(
+  options?.geminiModel || DEFAULT_GEMINI_MODEL,
+ );
 
- // Fallback to DeepSeek
- console.log("[AI] Gemini failed, trying DeepSeek...");
- const deepseekResult = await callDeepSeek(hanzi);
- if (deepseekResult) return deepseekResult;
+ const result = await requestStructuredJson(
+  WORD_SYSTEM_PROMPT,
+  wordPrompt(hanzi, options?.promptTemplate),
+  geminiModel,
+  aiAnalysisSchema,
+  (parsed) => typeof parsed === "object" && parsed !== null,
+ );
+
+ if (result.data) {
+  return {
+   data: normalizeWordAnalysis(hanzi, result.data),
+   error: null,
+  };
+ }
 
  console.error("[AI] All providers failed for:", hanzi);
- return null;
+ return {
+  data: null,
+  error:
+   result.error ||
+   "Không thể generate nghĩa tiếng Việt lúc này vì tất cả AI provider đều thất bại.",
+ };
+}
+
+export async function analyzeSentence(
+ text: string,
+ options?: AiRequestOptions,
+): Promise<SentenceInsightResponse | null> {
+ const result = await analyzeSentenceDetailed(text, options);
+ return result.data;
+}
+
+export async function analyzeSentenceDetailed(
+ text: string,
+ options?: AiRequestOptions,
+): Promise<StructuredRequestResult<SentenceInsightResponse>> {
+ console.log("[AI] Analyzing sentence:", text);
+
+ const geminiModel = normalizeGeminiModel(
+  options?.geminiModel || DEFAULT_GEMINI_MODEL,
+ );
+
+ const result = await requestStructuredJson(
+  SENTENCE_SYSTEM_PROMPT,
+  sentencePrompt(text, options?.promptTemplate),
+  geminiModel,
+  sentenceInsightSchema,
+  (parsed) => typeof parsed === "object" && parsed !== null,
+ );
+
+ if (result.data) {
+  return {
+   data: normalizeSentenceInsight(text, result.data),
+   error: null,
+  };
+ }
+
+ console.error("[AI] All providers failed for sentence:", text);
+ return {
+  data: null,
+  error:
+   result.error ||
+   "Không thể generate bản dịch tiếng Việt lúc này vì tất cả AI provider đều thất bại.",
+ };
 }

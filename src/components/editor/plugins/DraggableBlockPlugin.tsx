@@ -281,12 +281,17 @@ function DragBlockMenu({ editor }: { editor: LexicalEditor }) {
    e.dataTransfer.setData(DRAG_DATA_FORMAT, "true");
    e.dataTransfer.effectAllowed = "move";
 
-   // Invisible drag image
+   // Invisible drag image — must stay in DOM until drag ends
    const ghost = document.createElement("div");
-   ghost.style.cssText = "position:absolute;top:-9999px;opacity:0";
+   ghost.style.cssText =
+    "position:fixed;top:-9999px;left:-9999px;width:1px;height:1px;opacity:0.01;pointer-events:none";
    document.body.appendChild(ghost);
    e.dataTransfer.setDragImage(ghost, 0, 0);
-   requestAnimationFrame(() => ghost.remove());
+   const cleanup = () => {
+    ghost.remove();
+    document.removeEventListener("dragend", cleanup);
+   };
+   document.addEventListener("dragend", cleanup);
   },
   [editor],
  );
