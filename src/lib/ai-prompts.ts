@@ -42,6 +42,35 @@ Nếu không xác định được:
 
 Chỉ trả về JSON hợp lệ.`;
 
+export const DEFAULT_WORD_LOOKUP_BASIC_PROMPT = `Bạn là engine tra từ tiếng Trung siêu nhanh cho người học tiếng Việt.
+
+Hãy tra nhanh từ/cụm từ sau: "{WORD}"
+
+Mục tiêu:
+- Chỉ trả về thông tin đủ để đọc hiểu sơ bộ trong lần tải đầu.
+- Ưu tiên tốc độ, ngắn gọn, chính xác.
+
+Yêu cầu:
+- Chỉ trả về duy nhất 1 JSON object hợp lệ.
+- Không markdown, không code block, không giải thích ngoài JSON.
+- Chỉ điền các field sau: "pinyin", "sino_vietnamese", "meaning_summary".
+- "pinyin" phải là pinyin chuẩn có dấu.
+- "sino_vietnamese" phải viết HOA toàn bộ.
+- "meaning_summary" phải rất ngắn, tự nhiên, dễ hiểu với người học tiếng Việt.
+
+Schema JSON:
+{
+  "pinyin": "string (phiên âm chuẩn có dấu)",
+  "sino_vietnamese": "string (Âm Hán Việt viết HOA)",
+  "meaning_summary": "string (nghĩa chính ngắn gọn bằng tiếng Việt)"
+}
+
+Nếu không chắc:
+- Vẫn phải trả về JSON hợp lệ.
+- Dùng chuỗi rỗng cho field không chắc chắn.
+
+Chỉ trả về JSON hợp lệ.`;
+
 export const DEFAULT_SENTENCE_LOOKUP_PROMPT = `Dịch và phân tích câu tiếng Trung sau sang tiếng Việt tự nhiên: "{SENTENCE}"
 
 Yêu cầu:
@@ -195,6 +224,10 @@ export function renderWordLookupPrompt(
   WORD_PLACEHOLDER,
   word,
  );
+}
+
+export function renderWordLookupBasicPrompt(word: string): string {
+ return DEFAULT_WORD_LOOKUP_BASIC_PROMPT.replaceAll(WORD_PLACEHOLDER, word);
 }
 
 export function renderSentenceLookupPrompt(

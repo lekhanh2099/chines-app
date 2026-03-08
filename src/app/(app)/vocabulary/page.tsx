@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useMemo } from "react";
+import { useState, useMemo, useCallback } from "react";
 import {
  createColumnHelper,
  flexRender,
@@ -56,15 +56,21 @@ export default function VocabularyPage() {
  const { data: vocabList = [], isLoading } = useVocabList();
  const deleteVocab = useDeleteVocab();
 
- const handleDelete = (id: string, hanzi: string) => {
-  const confirmed = window.confirm(`Xóa "${hanzi}" khỏi kho từ vựng?`);
-  if (!confirmed) return;
+ const handleDelete = useCallback(
+  (id: string, hanzi: string) => {
+   const confirmed = window.confirm(`Xóa "${hanzi}" khỏi kho từ vựng?`);
+   if (!confirmed) return;
 
-  deleteVocab.mutate(id, {
-   onSuccess: () => toast.success(`Đã xóa "${hanzi}"`),
-   onError: () => toast.error("Không thể xóa từ vựng"),
-  });
- };
+   deleteVocab.mutate(
+    { vocabId: id, hanzi },
+    {
+     onSuccess: () => toast.success(`Đã xóa "${hanzi}"`),
+     onError: () => toast.error("Không thể xóa từ vựng"),
+    },
+   );
+  },
+  [deleteVocab],
+ );
 
  const columns = useMemo(
   () => [
@@ -152,7 +158,7 @@ export default function VocabularyPage() {
     ),
    }),
   ],
-  [openInspector],
+  [handleDelete, openInspector],
  );
 
  const table = useReactTable({

@@ -17,10 +17,12 @@ export function useVocabList() {
   queryKey: ["vocab-list"],
   queryFn: async () => {
    const {
-    data: { user },
-   } = await supabase.auth.getUser();
+    data: { session },
+   } = await supabase.auth.getSession();
+   const user = session?.user;
    if (!user) return [];
    return getUserVocabList(supabase, user.id);
   },
+  staleTime: 1000 * 60,
  });
 }

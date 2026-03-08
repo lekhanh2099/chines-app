@@ -1,7 +1,9 @@
 "use client";
 
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { useRef } from "react";
+import { useState } from "react";
+
+let browserQueryClient: QueryClient | null = null;
 
 function makeQueryClient() {
  return new QueryClient({
@@ -14,15 +16,16 @@ function makeQueryClient() {
  });
 }
 
-export function QueryProvider({ children }: { children: React.ReactNode }) {
- const clientRef = useRef<QueryClient>(undefined);
- if (!clientRef.current) {
-  clientRef.current = makeQueryClient();
+export function getQueryClient(): QueryClient {
+ if (!browserQueryClient) {
+  browserQueryClient = makeQueryClient();
  }
 
- return (
-  <QueryClientProvider client={clientRef.current}>
-   {children}
-  </QueryClientProvider>
- );
+ return browserQueryClient;
+}
+
+export function QueryProvider({ children }: { children: React.ReactNode }) {
+ const [client] = useState(() => getQueryClient());
+
+ return <QueryClientProvider client={client}>{children}</QueryClientProvider>;
 }

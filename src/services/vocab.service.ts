@@ -242,8 +242,11 @@ export async function upsertDictionaryEntry(
  );
  const existingAnalysis = getDictionaryCoreAnalysis(existing);
  const incomingAnalysis = normalizeAnalysis(input.ai_analysis);
- const resolvedAnalysis = hasDetailedVocabAnalysis(incomingAnalysis)
-  ? incomingAnalysis
+ const resolvedAnalysis = Object.keys(incomingAnalysis).length
+  ? normalizeAnalysis({
+     ...existingAnalysis,
+     ...incomingAnalysis,
+    })
   : existingAnalysis;
  const resolvedMeaning =
   input.meaning ||
@@ -346,6 +349,82 @@ export function getPrimaryMeaning(
   normalized.definitions?.find((item) => item.text)?.text ||
   normalized.meanings?.find((item) => item.definition)?.definition ||
   fallbackMeaning
+ );
+}
+
+export function getBasicVocabularyAnalysis(
+ analysis?: AiAnalysis | null,
+ fallbackMeaning = "",
+): AiAnalysis {
+ const normalized = normalizeAnalysis(analysis);
+ const primaryDefinition = normalized.definitions?.find(
+  (item) => item.meaning || item.text,
+ );
+ const meaningSummary =
+  normalized.meaning_summary || getPrimaryMeaning(normalized, fallbackMeaning);
+
+ return normalizeAnalysis({
+  pinyin: normalized.pinyin,
+  sino_vietnamese: normalized.sino_vietnamese,
+  han_viet: normalized.han_viet,
+  meaning_summary: meaningSummary,
+  ...(primaryDefinition
+   ? {
+      definitions: [
+       {
+        pos: primaryDefinition.pos,
+        meaning:
+         primaryDefinition.meaning ||
+         primaryDefinition.text ||
+         meaningSummary ||
+         fallbackMeaning,
+        text:
+         primaryDefinition.text ||
+         primaryDefinition.meaning ||
+         meaningSummary ||
+         fallbackMeaning,
+       },
+      ],
+     }
+   : {}),
+ });
+}
+
+export function getBasicVocabData(vocab: VocabData): VocabData {
+ const basicAnalysis = getBasicVocabularyAnalysis(
+  vocab.ai_analysis,
+  vocab.meaning || "",
+ );
+
+ return {
+  ...vocab,
+  pinyin: vocab.pinyin || basicAnalysis.pinyin || "",
+  sino_vietnamese:
+   vocab.sino_vietnamese ||
+   basicAnalysis.sino_vietnamese ||
+   basicAnalysis.han_viet,
+  meaning: getPrimaryMeaning(basicAnalysis, vocab.meaning || ""),
+  ai_analysis: basicAnalysis,
+ };
+}
+
+export function hasInspectorDeepDiveData(
+ analysis?: AiAnalysis | null,
+): boolean {
+ const normalized = normalizeAnalysis(analysis);
+
+ return !!(
+  normalized.components?.length ||
+  normalized.etymology ||
+  normalized.mnemonic_story ||
+  normalized.usage_logic?.length ||
+  normalized.examples?.length ||
+  normalized.collocations?.length ||
+  normalized.related_words?.length ||
+  normalized.vn_trap ||
+  normalized.common_mistakes ||
+  normalized.confusion ||
+  normalized.confusion_warning
  );
 }
 
@@ -550,9 +629,12 @@ export async function getVocabWithProgress(
  srsLevel: number | null;
  isSaved: boolean;
 }> {
- const vocab = await getVocabByHanzi(supabase, hanzi);
+ const [vocab, dictionaryEntry] = await Promise.all([
+  getVocabByHanzi(supabase, hanzi),
+  getDictionaryEntryByHeadword(supabase, hanzi),
+ ]);
 
- if (!vocab) {
+ if (!vocab && !dictionaryEntry) {
   return {
    vocab: { hanzi, pinyin: "", meaning: "", ai_analysis: {} },
    srsLevel: null,
@@ -560,23 +642,53 @@ export async function getVocabWithProgress(
   };
  }
 
+ const legacyAnalysis = getVocabularyAnalysis(vocab);
+ const dictionaryAnalysis = getDictionaryCoreAnalysis(dictionaryEntry);
+ const resolvedAnalysis = normalizeAnalysis({
+  ...legacyAnalysis,
+  ...dictionaryAnalysis,
+ });
+ const resolvedMeaning = getPrimaryMeaning(
+  resolvedAnalysis,
+  vocab?.meaning || "",
+ );
+
  const vocabData: VocabData = {
-  id: vocab.id,
-  hanzi: vocab.hanzi,
-  pinyin: vocab.pinyin || "",
-  sino_vietnamese: vocab.sino_vietnamese || undefined,
-  meaning: getPrimaryMeaning(getVocabularyAnalysis(vocab), vocab.meaning || ""),
-  ai_analysis: getVocabularyAnalysis(vocab),
+  id: vocab?.id,
+  dictionary_id: dictionaryEntry?.id,
+  hanzi: dictionaryEntry?.headword || vocab?.hanzi || hanzi,
+  pinyin:
+   dictionaryEntry?.pinyin || vocab?.pinyin || resolvedAnalysis.pinyin || "",
+  sino_vietnamese:
+   dictionaryEntry?.sino_vietnamese ||
+   vocab?.sino_vietnamese ||
+   resolvedAnalysis.sino_vietnamese ||
+   resolvedAnalysis.han_viet ||
+   undefined,
+  meaning: resolvedMeaning,
+  ai_analysis: resolvedAnalysis,
  };
 
- let { data: progress, error: progressError } = await supabase
-  .from("user_vocab_progress")
-  .select("proficiency_level, is_favorited, dictionary_id")
-  .eq("user_id", userId)
-  .eq("vocab_id", vocab.id)
-  .single();
+ let progress: {
+  proficiency_level: number;
+  is_favorited: boolean;
+  dictionary_id?: string | null;
+ } | null = null;
+ let progressError: unknown = null;
 
- if (progressError && isMissingColumnError(progressError)) {
+ if (vocab?.id) {
+  const progressResult = await supabase
+   .from("user_vocab_progress")
+   .select("proficiency_level, is_favorited, dictionary_id")
+   .eq("user_id", userId)
+   .eq("vocab_id", vocab.id)
+   .single();
+
+  progress = progressResult.data;
+  progressError = progressResult.error;
+ }
+
+ if (progressError && isMissingColumnError(progressError) && vocab?.id) {
   const legacyProgressResult = await supabase
    .from("user_vocab_progress")
    .select("proficiency_level, is_favorited")
@@ -594,6 +706,17 @@ export async function getVocabWithProgress(
  }
 
  void progressError;
+
+ if (!progress && dictionaryEntry?.id) {
+  const dictionaryProgressResult = await supabase
+   .from("user_vocab_progress")
+   .select("proficiency_level, is_favorited, dictionary_id")
+   .eq("user_id", userId)
+   .eq("dictionary_id", dictionaryEntry.id)
+   .maybeSingle();
+
+  progress = dictionaryProgressResult.data;
+ }
 
  if (progress?.dictionary_id) {
   vocabData.dictionary_id = progress.dictionary_id;
@@ -780,36 +903,121 @@ export async function saveVocabToSrs(
  };
 }
 
+/** Track a looked-up vocabulary in the user's personal list without forcing favorite/SRS state. */
+export async function trackVocabLookup(
+ supabase: SupabaseClient,
+ userId: string,
+ vocabData: VocabData,
+): Promise<{ vocabId: string; dictionaryId?: string } | null> {
+ const dictionaryEntry = await upsertDictionaryEntry(supabase, {
+  headword: vocabData.hanzi,
+  pinyin: vocabData.pinyin,
+  sinoVietnamese: vocabData.sino_vietnamese,
+  meaning: vocabData.meaning || "",
+  ai_analysis: vocabData.ai_analysis,
+ });
+
+ if (dictionaryEntry) {
+  vocabData.dictionary_id = dictionaryEntry.id;
+ }
+
+ const vocab = dictionaryEntry
+  ? await syncDictionaryEntryToLegacyVocab(supabase, dictionaryEntry)
+  : await upsertVocab(supabase, {
+     hanzi: vocabData.hanzi,
+     pinyin: vocabData.pinyin,
+     sinoVietnamese: vocabData.sino_vietnamese,
+     meaning: vocabData.meaning || "",
+     ai_analysis: vocabData.ai_analysis,
+    });
+
+ if (!vocab) return null;
+
+ if (dictionaryEntry) {
+  await saveUserDictionaryRelationship(supabase, userId, dictionaryEntry.id);
+ }
+
+ let { error } = await supabase.from("user_vocab_progress").upsert(
+  {
+   user_id: userId,
+   vocab_id: vocab.id,
+   dictionary_id: dictionaryEntry?.id || vocabData.dictionary_id || null,
+   is_favorited: false,
+  },
+  { onConflict: "user_id,vocab_id", ignoreDuplicates: true },
+ );
+
+ if (error && isMissingColumnError(error)) {
+  console.warn(
+   "[VocabService] Falling back to legacy lookup tracking schema; migration may be missing.",
+  );
+
+  const legacyResult = await supabase.from("user_vocab_progress").upsert(
+   {
+    user_id: userId,
+    vocab_id: vocab.id,
+    is_favorited: false,
+   },
+   { onConflict: "user_id,vocab_id", ignoreDuplicates: true },
+  );
+
+  error = legacyResult.error;
+ }
+
+ if (error) {
+  console.error("[VocabService] track lookup error:", error);
+  return null;
+ }
+
+ return {
+  vocabId: vocab.id,
+  dictionaryId: dictionaryEntry?.id || vocabData.dictionary_id,
+ };
+}
+
 /** Delete a vocabulary from user's SRS tracking */
 export async function removeVocabFromSrs(
  supabase: SupabaseClient,
  userId: string,
  vocabId: string,
 ): Promise<boolean> {
- const { data: progress } = await supabase
-  .from("user_vocab_progress")
-  .select("dictionary_id")
-  .eq("user_id", userId)
-  .eq("vocab_id", vocabId)
-  .maybeSingle();
+ let deletedProgress: {
+  dictionary_id?: string | null;
+ } | null = null;
 
- const { error } = await supabase
+ const { data, error: initialError } = await supabase
   .from("user_vocab_progress")
   .delete()
   .eq("user_id", userId)
-  .eq("vocab_id", vocabId);
+  .eq("vocab_id", vocabId)
+  .select("dictionary_id")
+  .maybeSingle();
+
+ deletedProgress = (data as { dictionary_id?: string | null } | null) || null;
+ let error = initialError;
+
+ if (error && isMissingColumnError(error)) {
+  const legacyDeleteResult = await supabase
+   .from("user_vocab_progress")
+   .delete()
+   .eq("user_id", userId)
+   .eq("vocab_id", vocabId);
+
+  error = legacyDeleteResult.error;
+  deletedProgress = null;
+ }
 
  if (error) {
   console.error("[VocabService] remove from SRS error:", error);
   return false;
  }
 
- if (progress?.dictionary_id) {
+ if (deletedProgress?.dictionary_id) {
   const relationResult = await supabase
    .from("user_vocabularies")
    .delete()
    .eq("user_id", userId)
-   .eq("dictionary_id", progress.dictionary_id);
+   .eq("dictionary_id", deletedProgress.dictionary_id);
 
   if (
    relationResult.error &&

@@ -7,6 +7,9 @@ import { pinyin as getPinyin } from "pinyin-pro";
 import { extractChinese } from "@/lib/chinese-utils";
 import {
  getVocabWithProgress,
+ getPrimaryMeaning,
+ getNormalizedDefinitions,
+ hasInspectorDeepDiveData,
  upsertVocab,
  saveVocabToSrs,
 } from "@/services/vocab.service";
@@ -16,15 +19,17 @@ import type { VocabData, AiAnalysis } from "@/types/database";
  * Hook: Fetch vocab detail + progress for the dictionary page.
  * Also provides save and AI generation mutations.
  */
-export function useVocabDetail(hanzi: string) {
+export function useVocabDetail(hanzi: string, options?: { enabled?: boolean }) {
  const supabaseRef = useRef(createClient());
  const supabase = supabaseRef.current;
  const queryClient = useQueryClient();
  const chineseText = extractChinese(hanzi) || hanzi;
+ const enabled = options?.enabled ?? true;
 
  // ── Main query: vocab data + SRS progress ──
  const query = useQuery({
   queryKey: ["vocab-detail", chineseText],
+  enabled,
   queryFn: async () => {
    const pinyinText = getPinyin(chineseText);
 
@@ -80,9 +85,7 @@ export function useVocabDetail(hanzi: string) {
        ...old.vocab,
        pinyin:
         (aiData as AiAnalysis & { pinyin?: string }).pinyin || old.vocab.pinyin,
-       meaning:
-        (aiData as AiAnalysis & { meanings?: { definition?: string }[] })
-         .meanings?.[0]?.definition || old.vocab.meaning,
+       meaning: getPrimaryMeaning(aiData, old.vocab.meaning),
        ai_analysis: {
         ...old.vocab.ai_analysis,
         ...aiData,
@@ -130,14 +133,21 @@ export function useVocabDetail(hanzi: string) {
   const ai = query.data?.vocab?.ai_analysis;
   if (!ai) return false;
   return !!(
-   ai.meanings?.length ||
+   getNormalizedDefinitions(ai, query.data?.vocab?.meaning || "").length ||
    ai.examples?.length ||
+   ai.components?.length ||
    ai.etymology ||
+   ai.mnemonic_story ||
    ai.related_words?.length ||
    ai.collocations?.length ||
    ai.vn_trap ||
+   ai.common_mistakes ||
    ai.radical
   );
+ }, [query.data]);
+
+ const hasDeepAiData = useCallback(() => {
+  return hasInspectorDeepDiveData(query.data?.vocab?.ai_analysis);
  }, [query.data]);
 
  return {
@@ -158,6 +168,7 @@ export function useVocabDetail(hanzi: string) {
 
   // Utils
   hasAiData,
+  hasDeepAiData,
   upsertMutation,
  };
 }

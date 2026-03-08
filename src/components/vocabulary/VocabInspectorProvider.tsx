@@ -2,19 +2,18 @@
 
 import { useEffect, useRef, useState } from "react";
 import { Popover } from "@base-ui/react";
-import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import { VocabDetailDrawer } from "@/components/vocabulary/VocabDetailDrawer";
 import { containsChinese } from "@/lib/chinese-utils";
 import { createClient } from "@/lib/supabase/client";
-import { saveVocabToSrs } from "@/services/vocab.service";
+import { getPrimaryMeaning, saveVocabToSrs } from "@/services/vocab.service";
+import { useVocabDetailDrawerStore } from "@/stores/vocab-detail-drawer-store";
 import { useInspectorStore } from "@/stores/inspector-store";
 import type { AiDefinition, VocabData } from "@/types/database";
 import {
  BookmarkPlus,
+ ChevronRight,
  CheckCircle,
- ChevronDown,
- ChevronUp,
- ExternalLink,
  Loader2,
  Volume2,
  X,
@@ -52,7 +51,10 @@ export const useVocabInspector = () => {
  const openInspector = useInspectorStore((state) => state.openInspector);
  const closeInspector = useInspectorStore((state) => state.closeInspector);
  const isOpen = useInspectorStore((state) => state.isOpen);
- return { openInspector, closeInspector, isOpen };
+ const openDetailDrawer = useVocabDetailDrawerStore(
+  (state) => state.openDetailDrawer,
+ );
+ return { openInspector, closeInspector, isOpen, openDetailDrawer };
 };
 
 export function VocabInspectorProvider({
@@ -139,6 +141,8 @@ export function VocabInspectorProvider({
      </Popover.Positioner>
     </Popover.Portal>
    </Popover.Root>
+
+   <VocabDetailDrawer />
   </>
  );
 }
@@ -146,17 +150,20 @@ export function VocabInspectorProvider({
 function InspectorCard({ onClose }: InspectorCardProps) {
  const vocabData = useInspectorStore((state) => state.vocabData);
  const isLoading = useInspectorStore((state) => state.isLoading);
+ const deepError = useInspectorStore((state) => state.deepError);
+ const selectedText = useInspectorStore((state) => state.selectedText);
  const supabaseRef = useRef(createClient());
  const supabase = supabaseRef.current;
 
  const [isSaving, setIsSaving] = useState(false);
  const [isSaved, setIsSaved] = useState(false);
- const [showDeepDive, setShowDeepDive] = useState(false);
+ const openDetailDrawer = useVocabDetailDrawerStore(
+  (state) => state.openDetailDrawer,
+ );
 
  useEffect(() => {
-  setShowDeepDive(false);
   setIsSaved(false);
- }, [vocabData?.hanzi]);
+ }, [selectedText]);
 
  const handleSaveToVocab = async () => {
   if (!vocabData || isSaving) return;
@@ -196,23 +203,14 @@ function InspectorCard({ onClose }: InspectorCardProps) {
   window.speechSynthesis.speak(utterance);
  };
 
- const hasDeepData =
-  !!vocabData?.ai_analysis &&
-  !!(
-   vocabData.ai_analysis.components?.length ||
-   vocabData.ai_analysis.etymology ||
-   vocabData.ai_analysis.mnemonic_story ||
-   vocabData.ai_analysis.usage_logic?.length ||
-   vocabData.ai_analysis.examples?.length ||
-   vocabData.ai_analysis.collocations?.length ||
-   vocabData.ai_analysis.related_words?.length ||
-   vocabData.ai_analysis.vn_trap ||
-   vocabData.ai_analysis.common_mistakes ||
-   vocabData.ai_analysis.confusion ||
-   vocabData.ai_analysis.confusion_warning
-  );
-
  const sinoVietnamese = getSinoVietnamese(vocabData);
+ const primaryMeaning =
+  (vocabData && getPrimaryMeaning(vocabData.ai_analysis, vocabData.meaning)) ||
+  vocabData?.meaning ||
+  "Chưa có nghĩa phù hợp";
+ const secondaryMeaning = vocabData?.ai_analysis?.definitions?.[1]
+  ? getDefinitionText(vocabData.ai_analysis.definitions[1])
+  : "";
 
  return (
   <div className="flex max-h-[min(80vh,42rem)] flex-col bg-bg-card text-text-primary">
@@ -220,7 +218,7 @@ function InspectorCard({ onClose }: InspectorCardProps) {
     <div className="flex items-center justify-between gap-3 px-4 py-3">
      <div className="min-w-0">
       <p className="truncate text-5xl font-bold leading-none tracking-tight text-text-primary">
-       {vocabData?.hanzi || "词"}
+       {vocabData?.hanzi || selectedText || "词"}
       </p>
      </div>
 
@@ -275,17 +273,14 @@ function InspectorCard({ onClose }: InspectorCardProps) {
 
    <div className="flex-1 overflow-y-auto px-4 pb-4 pt-3">
     {isLoading ? (
-     <div className="flex h-40 flex-col items-center justify-center gap-3 text-text-muted">
-      <Loader2 className="h-7 w-7 animate-spin text-accent" />
-      <span className="text-sm font-medium">Đang tra cứu...</span>
-     </div>
+     <InspectorLoadingSkeleton />
     ) : !vocabData ? (
      <div className="flex h-32 items-center justify-center text-center text-sm text-text-muted">
       Không tìm thấy dữ liệu từ vựng
      </div>
     ) : (
-     <div className="space-y-5">
-      <section className="space-y-3 text-center">
+     <div className="space-y-4">
+      <section className="space-y-3 rounded-3xl border border-border-default bg-bg-primary px-4 py-4 text-center shadow-theme-sm">
        <p className="text-2xl font-semibold tracking-tight text-accent">
         {vocabData.pinyin}
        </p>
@@ -300,40 +295,56 @@ function InspectorCard({ onClose }: InspectorCardProps) {
        )}
       </section>
 
-      <MeaningChips vocabData={vocabData} />
-      <DefinitionExamples vocabData={vocabData} />
-
-      <div className="border-t border-border-default pt-3">
-       <button
-        type="button"
-        onMouseDown={preserveSelection}
-        onClick={() => setShowDeepDive((value) => !value)}
-        className="flex w-full items-center justify-between rounded-2xl px-1 py-2 text-sm font-semibold text-accent transition-colors hover:text-accent-hover"
-       >
-        <span>{showDeepDive ? "Thu gọn" : "Deep Dive"}</span>
-        {showDeepDive ? (
-         <ChevronUp className="h-4 w-4" />
-        ) : (
-         <ChevronDown className="h-4 w-4" />
-        )}
-       </button>
-
-       {showDeepDive && (
-        <DeepDiveSection vocabData={vocabData} hasDeepData={hasDeepData} />
+      <section className="rounded-3xl border border-border-default bg-bg-primary px-4 py-4 shadow-theme-sm">
+       <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-text-muted">
+        Nghĩa chính
+       </p>
+       <p className="mt-2 text-base font-semibold leading-relaxed text-text-primary">
+        {primaryMeaning}
+       </p>
+       {secondaryMeaning && secondaryMeaning !== primaryMeaning && (
+        <p className="mt-2 text-sm leading-relaxed text-text-secondary">
+         {secondaryMeaning}
+        </p>
        )}
-      </div>
+       {deepError && <p className="mt-3 text-xs text-amber-700">{deepError}</p>}
+      </section>
 
-      <div className="flex items-center justify-between rounded-2xl border border-border-default bg-bg-primary px-3 py-2 text-xs text-text-muted">
-       <span>Mở rộng sang trang từ điển đầy đủ</span>
-       <Link
-        href={`/dictionary/${encodeURIComponent(vocabData.hanzi)}`}
+      <div className="flex items-center gap-2 rounded-full border border-border-default bg-bg-primary p-1 shadow-theme-sm">
+       <Button
+        variant="ghost"
+        size="sm"
+        className="h-10 flex-1 rounded-full"
         onMouseDown={preserveSelection}
-        onClick={onClose}
-        className="inline-flex items-center gap-1 font-semibold text-accent transition-colors hover:text-accent-hover"
+        onClick={handleSaveToVocab}
+        disabled={!vocabData || isSaving || isSaved}
        >
-        Chi tiết
-        <ExternalLink className="h-3.5 w-3.5" />
-       </Link>
+        {isSaving ? (
+         <Loader2 className="h-4 w-4 animate-spin" />
+        ) : isSaved ? (
+         <CheckCircle className="h-4 w-4 text-success" />
+        ) : (
+         <BookmarkPlus className="h-4 w-4" />
+        )}
+        <span>{isSaved ? "Đã lưu" : isSaving ? "Đang lưu" : "Lưu (+)"}</span>
+       </Button>
+       <Button
+        variant="ghost"
+        size="sm"
+        className="h-10 flex-1 rounded-full"
+        onMouseDown={preserveSelection}
+        onClick={() => {
+         openDetailDrawer({
+          text: vocabData.hanzi,
+          contextSentence: selectedText,
+          mode: "word",
+         });
+         onClose();
+        }}
+       >
+        <span>Chi tiết</span>
+        <ChevronRight className="h-4 w-4" />
+       </Button>
       </div>
      </div>
     )}
@@ -342,361 +353,47 @@ function InspectorCard({ onClose }: InspectorCardProps) {
  );
 }
 
-function MeaningChips({ vocabData }: { vocabData: VocabData }) {
- const definitions = vocabData.ai_analysis?.definitions || [];
- const summary =
-  vocabData.ai_analysis?.meaning_summary || vocabData.meaning || undefined;
- const components = vocabData.ai_analysis?.components || [];
- const radicals = vocabData.ai_analysis?.radicals || [];
-
- const structureItems =
-  components.length > 0
-   ? components.map((component, index) => ({
-      id: `${component.part || component.name || "component"}-${index}`,
-      label: component.part || component.name || "?",
-      detail: component.name || component.meaning || "",
-     }))
-   : radicals.map((radical, index) => ({
-      id: `${radical.char || radical.meaning || "radical"}-${index}`,
-      label: radical.char || radical.pinyin || "?",
-      detail: radical.pinyin || radical.meaning || "",
-     }));
-
+function InspectorLoadingSkeleton() {
  return (
-  <section className="overflow-hidden rounded-3xl border border-border-default bg-bg-primary shadow-theme-sm">
-   <div className="grid grid-cols-2 divide-x divide-border-default">
-    <div className="px-3 py-4 text-center">
-     <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-text-muted">
-      Bộ thủ
-     </p>
+  <div className="space-y-5 animate-pulse">
+   <section className="space-y-3 text-center">
+    <div className="mx-auto h-8 w-36 rounded-full bg-accent/12" />
+    <div className="mx-auto h-10 w-32 rounded-2xl border border-border-default bg-bg-primary" />
+   </section>
 
-     {structureItems.length > 0 ? (
-      <div className="mt-3 flex flex-wrap justify-center gap-2">
-       {structureItems.map((item) => (
-        <div
-         key={item.id}
-         className="inline-flex min-h-10 max-w-full items-center gap-1.5 rounded-2xl border border-border-default bg-bg-card px-2.5 py-2 text-xs text-text-secondary"
-        >
-         <span className="font-semibold text-text-primary">{item.label}</span>
-         {item.detail && <span className="truncate">{item.detail}</span>}
-        </div>
-       ))}
+   <section className="overflow-hidden rounded-3xl border border-border-default bg-bg-primary shadow-theme-sm">
+    <div className="grid grid-cols-2 divide-x divide-border-default">
+     <div className="space-y-3 px-3 py-4">
+      <div className="mx-auto h-3 w-14 rounded-full bg-text-muted/20" />
+      <div className="flex flex-wrap justify-center gap-2">
+       <div className="h-10 w-20 rounded-2xl bg-bg-card" />
+       <div className="h-10 w-16 rounded-2xl bg-bg-card" />
       </div>
-     ) : (
-      <p className="mt-3 text-xs leading-5 text-text-muted">
-       Chưa có dữ liệu bộ thủ
-      </p>
-     )}
+     </div>
+
+     <div className="space-y-3 px-3 py-4">
+      <div className="mx-auto h-3 w-14 rounded-full bg-text-muted/20" />
+      <div className="flex flex-col items-center gap-2">
+       <div className="h-8 w-28 rounded-full bg-accent/10" />
+       <div className="h-8 w-24 rounded-full bg-accent/8" />
+       <div className="h-8 w-32 rounded-full bg-accent/10" />
+      </div>
+     </div>
     </div>
+   </section>
 
-    <div className="px-3 py-4 text-center">
-     <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-text-muted">
-      Nghĩa
-     </p>
-
-     {definitions.length > 0 ? (
-      <div className="mt-3 flex flex-col items-center gap-2">
-       {definitions.map((definition, index) => {
-        const text = getDefinitionText(definition);
-        if (!text) return null;
-
-        return (
-         <div
-          key={`${text}-${index}`}
-          className="inline-flex max-w-full flex-wrap items-center justify-center gap-1 rounded-full border border-accent/20 bg-accent/8 px-3 py-1.5 text-center text-xs font-medium text-text-primary"
-         >
-          {definition.pos && (
-           <span className="text-[10px] font-bold uppercase tracking-wide text-accent/80">
-            ({definition.pos})
-           </span>
-          )}
-          <span className="wrap-break-word">{text}</span>
-         </div>
-        );
-       })}
-      </div>
-     ) : summary ? (
-      <div className="mt-3 rounded-2xl border border-border-default bg-bg-card px-3 py-3 text-center text-sm leading-6 text-text-secondary">
-       {summary}
-      </div>
-     ) : (
-      <p className="mt-3 text-xs leading-5 text-text-muted">
-       Chưa có nghĩa chính
-      </p>
-     )}
+   <section className="space-y-3">
+    <div className="mx-auto h-3 w-28 rounded-full bg-text-muted/20" />
+    <div className="rounded-3xl border border-border-default bg-bg-primary p-4 shadow-theme-sm">
+     <div className="h-4 w-16 rounded-full bg-accent/12" />
+     <div className="mt-3 h-5 w-40 rounded-full bg-text-primary/10" />
+     <div className="mt-4 space-y-2">
+      <div className="h-4 w-full rounded-full bg-text-muted/15" />
+      <div className="h-4 w-5/6 rounded-full bg-text-muted/15" />
+      <div className="h-4 w-2/3 rounded-full bg-text-muted/15" />
+     </div>
     </div>
-   </div>
-  </section>
- );
-}
-
-function DefinitionExamples({ vocabData }: { vocabData: VocabData }) {
- const definitionsWithExamples = (
-  vocabData.ai_analysis?.definitions || []
- ).filter(
-  (definition) => definition.examples && definition.examples.length > 0,
- );
- const examples = vocabData.ai_analysis?.examples || [];
-
- if (definitionsWithExamples.length === 0 && examples.length === 0) {
-  return null;
- }
-
- return (
-  <section className="space-y-3">
-   <p className="text-center text-sm font-semibold uppercase tracking-[0.22em] text-text-muted">
-    Ý nghĩa & ví dụ
-   </p>
-
-   {definitionsWithExamples.length > 0
-    ? definitionsWithExamples.map((definition, index) => {
-       const meaning = getDefinitionText(definition);
-       const example = definition.examples?.[0];
-       if (!example) return null;
-
-       return (
-        <article
-         key={`${meaning || "definition"}-${index}`}
-         className="rounded-3xl border border-border-default bg-bg-primary p-4 shadow-theme-sm"
-        >
-         <div className="flex flex-wrap items-center gap-2">
-          {definition.pos && (
-           <span className="rounded-md border border-accent/25 bg-accent/10 px-2 py-1 text-[10px] font-bold uppercase tracking-wide text-accent">
-            {definition.pos}
-           </span>
-          )}
-          {meaning && (
-           <h3 className="text-base font-bold text-text-primary">{meaning}</h3>
-          )}
-         </div>
-
-         {example.vi && (
-          <p className="mt-3 text-sm italic leading-6 text-text-secondary">
-           “{example.vi}”
-          </p>
-         )}
-
-         {(example.cn || example.pinyin || example.py) && (
-          <div className="mt-3 text-sm leading-6 text-text-muted">
-           {example.cn && (
-            <p className="font-medium text-text-primary">{example.cn}</p>
-           )}
-           {(example.pinyin || example.py) && (
-            <p>{example.pinyin || example.py}</p>
-           )}
-          </div>
-         )}
-        </article>
-       );
-      })
-    : examples.map((example, index) => (
-       <article
-        key={`${example.zh}-${index}`}
-        className="rounded-3xl border border-border-default bg-bg-primary p-4 shadow-theme-sm"
-       >
-        <p className="text-base font-bold text-text-primary">{example.zh}</p>
-        <p className="mt-1 text-sm text-accent">{example.pinyin}</p>
-        <p className="mt-2 text-sm italic leading-6 text-text-secondary">
-         {example.vi}
-        </p>
-       </article>
-      ))}
-  </section>
- );
-}
-
-function DeepDiveSection({
- vocabData,
- hasDeepData,
-}: {
- vocabData: VocabData;
- hasDeepData: boolean;
-}) {
- if (!hasDeepData) {
-  return (
-   <div className="mt-3 rounded-3xl border border-border-default bg-bg-primary p-4 text-center text-sm text-text-muted">
-    Chưa có dữ liệu phân tích sâu cho mục này.
-   </div>
-  );
- }
-
- const etymologyText =
-  typeof vocabData.ai_analysis?.etymology === "object"
-   ? vocabData.ai_analysis.etymology.explanation
-   : vocabData.ai_analysis?.etymology;
-
- return (
-  <div className="mt-3 space-y-3 rounded-3xl border border-border-default bg-bg-primary p-3">
-   {vocabData.ai_analysis?.components &&
-    vocabData.ai_analysis.components.length > 0 && (
-     <section className="space-y-2">
-      <h4 className="text-[11px] font-semibold uppercase tracking-[0.18em] text-text-muted">
-       Chiết tự
-      </h4>
-      <div className="flex flex-wrap gap-2">
-       {vocabData.ai_analysis.components.map((component, index) => (
-        <div
-         key={`${component.part || component.name || "component"}-${index}`}
-         className="inline-flex max-w-full items-center gap-2 rounded-full border border-border-default bg-bg-card px-3 py-1.5 text-xs text-text-secondary"
-        >
-         {component.part && (
-          <span className="font-bold text-text-primary">{component.part}</span>
-         )}
-         {component.name && (
-          <span className="font-semibold uppercase tracking-wide text-accent">
-           {component.name}
-          </span>
-         )}
-         {component.meaning && <span>{component.meaning}</span>}
-        </div>
-       ))}
-      </div>
-     </section>
-    )}
-
-   {etymologyText && (
-    <section className="space-y-2">
-     <h4 className="text-[11px] font-semibold uppercase tracking-[0.18em] text-text-muted">
-      Nguồn gốc
-     </h4>
-     <div className="rounded-[20px] border border-border-default bg-bg-card px-4 py-3 text-sm italic leading-6 text-text-secondary">
-      {etymologyText}
-     </div>
-    </section>
-   )}
-
-   {vocabData.ai_analysis?.mnemonic_story && (
-    <section className="space-y-2">
-     <h4 className="text-[11px] font-semibold uppercase tracking-[0.18em] text-text-muted">
-      Câu chuyện gợi nhớ
-     </h4>
-     <div className="rounded-[20px] border border-amber-300/50 bg-amber-50/70 px-4 py-3 text-sm leading-6 text-amber-950 dark:border-amber-700/30 dark:bg-amber-950/20 dark:text-amber-100">
-      {vocabData.ai_analysis.mnemonic_story}
-     </div>
-    </section>
-   )}
-
-   {vocabData.ai_analysis?.usage_logic &&
-    vocabData.ai_analysis.usage_logic.length > 0 && (
-     <section className="space-y-2">
-      <h4 className="text-[11px] font-semibold uppercase tracking-[0.18em] text-text-muted">
-       Tư duy dùng từ
-      </h4>
-      <div className="space-y-2">
-       {vocabData.ai_analysis.usage_logic.map((item, index) => (
-        <div
-         key={`${item}-${index}`}
-         className="rounded-[20px] border border-border-default bg-bg-card px-4 py-3 text-sm leading-6 text-text-secondary"
-        >
-         {item}
-        </div>
-       ))}
-      </div>
-     </section>
-    )}
-
-   {vocabData.ai_analysis?.vn_trap && (
-    <section className="space-y-2">
-     <h4 className="text-[11px] font-semibold uppercase tracking-[0.18em] text-danger">
-      Bẫy tiếng Việt
-     </h4>
-     <div className="rounded-[20px] border border-danger/20 bg-danger-subtle px-4 py-3 text-sm leading-6 text-danger-text">
-      {vocabData.ai_analysis.vn_trap}
-     </div>
-    </section>
-   )}
-
-   {vocabData.ai_analysis?.confusion_warning && (
-    <section className="space-y-2">
-     <h4 className="text-[11px] font-semibold uppercase tracking-[0.18em] text-danger">
-      Cảnh báo nhầm lẫn
-     </h4>
-     <div className="rounded-[20px] border border-danger/20 bg-danger-subtle px-4 py-3 text-sm leading-6 text-danger-text">
-      {vocabData.ai_analysis.confusion_warning}
-     </div>
-    </section>
-   )}
-
-   {vocabData.ai_analysis?.confusion && (
-    <section className="space-y-2">
-     <h4 className="text-[11px] font-semibold uppercase tracking-[0.18em] text-text-muted">
-      Từ dễ nhầm
-     </h4>
-     <div className="rounded-[20px] border border-border-default bg-bg-card px-4 py-3 text-sm leading-6 text-text-secondary">
-      {vocabData.ai_analysis.confusion}
-     </div>
-    </section>
-   )}
-
-   {vocabData.ai_analysis?.common_mistakes && (
-    <section className="space-y-2">
-     <h4 className="text-[11px] font-semibold uppercase tracking-[0.18em] text-text-muted">
-      Lỗi thường gặp
-     </h4>
-     <div className="rounded-[20px] border border-border-default bg-bg-card px-4 py-3 text-sm leading-6 text-text-secondary">
-      {vocabData.ai_analysis.common_mistakes}
-     </div>
-    </section>
-   )}
-
-   {vocabData.ai_analysis?.collocations &&
-    vocabData.ai_analysis.collocations.length > 0 && (
-     <section className="space-y-2">
-      <h4 className="text-[11px] font-semibold uppercase tracking-[0.18em] text-text-muted">
-       Từ ghép thường gặp
-      </h4>
-      <div className="flex flex-wrap gap-2">
-       {vocabData.ai_analysis.collocations.map((item, index) => (
-        <span
-         key={`${item}-${index}`}
-         className="rounded-full bg-accent/10 px-3 py-1.5 text-xs font-medium text-accent"
-        >
-         {item}
-        </span>
-       ))}
-      </div>
-     </section>
-    )}
-
-   {vocabData.ai_analysis?.related_words &&
-    vocabData.ai_analysis.related_words.length > 0 && (
-     <section className="space-y-2">
-      <h4 className="text-[11px] font-semibold uppercase tracking-[0.18em] text-text-muted">
-       Từ liên quan
-      </h4>
-      <div className="flex flex-wrap gap-2">
-       {vocabData.ai_analysis.related_words.map((item, index) => (
-        <span
-         key={`${item}-${index}`}
-         className="rounded-full border border-border-default bg-bg-card px-3 py-1.5 text-xs font-medium text-text-secondary"
-        >
-         {item}
-        </span>
-       ))}
-      </div>
-     </section>
-    )}
-
-   {vocabData.ai_analysis?.examples &&
-    vocabData.ai_analysis.examples.length > 0 && (
-     <section className="space-y-2">
-      <h4 className="text-[11px] font-semibold uppercase tracking-[0.18em] text-text-muted">
-       Ví dụ thêm
-      </h4>
-      <div className="space-y-2">
-       {vocabData.ai_analysis.examples.map((example, index) => (
-        <div
-         key={`${example.zh}-${index}`}
-         className="rounded-[20px] border border-border-default bg-bg-card px-4 py-3"
-        >
-         <p className="text-sm font-medium text-text-primary">{example.zh}</p>
-         <p className="mt-1 text-xs text-accent">{example.pinyin}</p>
-         <p className="mt-1 text-xs italic text-text-muted">{example.vi}</p>
-        </div>
-       ))}
-      </div>
-     </section>
-    )}
+   </section>
   </div>
  );
 }

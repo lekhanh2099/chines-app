@@ -43,17 +43,17 @@ export async function POST(request: NextRequest) {
   );
  }
 
- const {
-  data: { user },
- } = await supabase.auth.getUser();
- const promptSettings = user?.id
-  ? await getUserAiPromptSettings(supabase, user.id)
-  : null;
- const userApiKeys = user?.id
-  ? await getActiveUserApiKeyCredentials(supabase, user.id)
-  : [];
-
  if (parsed.data.type === "sentence") {
+  const {
+   data: { user },
+  } = await supabase.auth.getUser();
+  const promptSettings = user?.id
+   ? await getUserAiPromptSettings(supabase, user.id)
+   : null;
+  const userApiKeys = user?.id
+   ? await getActiveUserApiKeyCredentials(supabase, user.id)
+   : [];
+
   const sentenceLookup = await analyzeSentenceDetailed(parsed.data.text, {
    geminiModel: parsed.data.geminiModel || promptSettings?.geminiModel,
    promptTemplate:
@@ -126,6 +126,16 @@ export async function POST(request: NextRequest) {
    },
   });
  }
+
+ const {
+  data: { user },
+ } = await supabase.auth.getUser();
+ const promptSettings = user?.id
+  ? await getUserAiPromptSettings(supabase, user.id)
+  : null;
+ const userApiKeys = user?.id
+  ? await getActiveUserApiKeyCredentials(supabase, user.id)
+  : [];
 
  const aiLookup = await analyzeHanziDetailed(lookupText, {
   geminiModel: parsed.data.geminiModel || promptSettings?.geminiModel,

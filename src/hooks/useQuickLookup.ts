@@ -1,8 +1,8 @@
 /**
  * useQuickLookup — TanStack Query hook for instant Chinese vocab lookup.
  *
- * Uses the existing /api/vocab/inspect endpoint.
- * Falls back to local pinyin-pro for pinyin when DB doesn't have the word.
+ * Uses the lightweight /api/lookup/basic endpoint.
+ * Falls back to local pinyin-pro when lookup data is unavailable.
  * Cache: Infinity staleTime (dictionary data doesn't change).
  */
 "use client";
@@ -29,12 +29,11 @@ async function lookupVocab(hanzi: string): Promise<LookupResult> {
  }
 
  try {
-  const res = await fetch("/api/lookup", {
+  const res = await fetch("/api/lookup/basic", {
    method: "POST",
    headers: { "Content-Type": "application/json" },
    body: JSON.stringify({
     text: chinese,
-    type: "word",
    }),
   });
   const json = await res.json();

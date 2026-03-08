@@ -18,6 +18,7 @@ import {
  BookmarkPlus,
  Bold,
  Check,
+ ChevronRight,
  Code,
  Highlighter,
  Italic,
@@ -37,9 +38,7 @@ import { useDebounce } from "@/hooks/useDebounce";
 import { useSmartSelectionInsights } from "@/hooks/useSmartSelectionInsights";
 import { extractChinese } from "@/lib/chinese-utils";
 import { cn } from "@/lib/utils";
-import { useInspectorStore } from "@/stores/inspector-store";
-import type { AiDefinition } from "@/types/database";
-
+import { useVocabDetailDrawerStore } from "@/stores/vocab-detail-drawer-store";
 type SelectionAnchor = {
  getBoundingClientRect: () => DOMRect;
  contextElement?: Element | null;
@@ -52,40 +51,9 @@ type DraftSelection = {
 
 const DEBOUNCE_DELAY = 500;
 
-const definitionToneMap = [
- {
-  tokens: ["v", "verb", "động", "green"],
-  className: "border-emerald-200 bg-emerald-50 text-emerald-700",
- },
- {
-  tokens: ["n", "noun", "danh", "orange"],
-  className: "border-orange-200 bg-orange-50 text-orange-700",
- },
- {
-  tokens: ["adj", "adjective", "tính", "blue"],
-  className: "border-sky-200 bg-sky-50 text-sky-700",
- },
- {
-  tokens: ["adv", "trạng", "purple"],
-  className: "border-fuchsia-200 bg-fuchsia-50 text-fuchsia-700",
- },
-];
-
 function preserveEditorSelection(event: React.SyntheticEvent) {
  event.preventDefault();
  event.stopPropagation();
-}
-
-function getDefinitionTone(definition: AiDefinition) {
- const key = `${definition.color || ""} ${definition.pos || ""}`.toLowerCase();
-
- for (const tone of definitionToneMap) {
-  if (tone.tokens.some((token) => key.includes(token))) {
-   return tone.className;
-  }
- }
-
- return "border-slate-200 bg-slate-50 text-slate-600";
 }
 
 function FormatButton({
@@ -145,7 +113,9 @@ export default function EditorFloatingMenu() {
   text: "",
   contextSentence: "",
  });
- const openInspector = useInspectorStore((state) => state.openInspector);
+ const openDetailDrawer = useVocabDetailDrawerStore(
+  (state) => state.openDetailDrawer,
+ );
 
  const debouncedSelection = useDebounce(draftSelection, DEBOUNCE_DELAY);
  const selectedText = debouncedSelection.text;
@@ -380,15 +350,6 @@ export default function EditorFloatingMenu() {
   window.speechSynthesis.speak(utterance);
  };
 
- const handleRadicalClick = (
-  event: React.MouseEvent<HTMLButtonElement>,
-  radicalChar?: string,
- ) => {
-  preserveEditorSelection(event);
-  if (!radicalChar) return;
-  openInspector(radicalChar);
- };
-
  const handleToggleNote = (event: React.MouseEvent<HTMLButtonElement>) => {
   preserveEditorSelection(event);
 
@@ -472,75 +433,35 @@ export default function EditorFloatingMenu() {
          </div>
         ) : smartData ? (
          smartMode === "word" ? (
-          <div className="space-y-2">
+          <div className="space-y-3 rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3">
            <div className="text-center">
-            <p className="text-3xl font-bold text-slate-900">
-             {smartData.entry.hanzi}{" "}
-             <span className="text-sm text-gray-500">
-              /{smartData.entry.pinyin}/{" "}
-              {(smartData.entry.sino_vietnamese ||
-               smartData.entry.ai_analysis?.sino_vietnamese ||
-               smartData.entry.ai_analysis?.han_viet) && (
-               <>
-                <span className="font-semibold text-slate-500">Hán Việt: </span>
-                <span className="font-medium text-slate-800">
-                 {smartData.entry.sino_vietnamese ||
-                  smartData.entry.ai_analysis?.sino_vietnamese ||
-                  smartData.entry.ai_analysis?.han_viet}
-                </span>
-               </>
-              )}
-             </span>
+            <p className="text-xl font-bold text-slate-900">
+             {smartData.entry.hanzi}
             </p>
-           </div>
-           <div className="flex flex-col gap-3">
-            {smartData.radicals.length > 0 && (
-             <div className="">
-              <p>Bộ thủ</p>
-              {smartData.radicals.map((radical, index) => (
-               <button
-                key={`${radical.char || radical.meaning || "radical"}-${index}`}
-                type="button"
-                className="inline-flex items-center gap-1 rounded-full border border-slate-200 bg-slate-50 px-2 py-1 text-xs font-medium text-slate-700 hover:border-slate-300 hover:bg-slate-100"
-                onMouseDown={preserveEditorSelection}
-                onClick={(event) => handleRadicalClick(event, radical.char)}
-               >
-                <span>{radical.char || "?"}</span>
-                {radical.pinyin && (
-                 <span className="text-slate-400">{radical.pinyin}</span>
-                )}
-                {radical.meaning && (
-                 <span className="text-slate-500">{radical.meaning}</span>
-                )}
-               </button>
-              ))}
-             </div>
+            {smartData.entry.pinyin && (
+             <p className="mt-1 text-sm font-semibold text-indigo-600">
+              {smartData.entry.pinyin}
+             </p>
             )}
-
-            <div className="">
-             <p>Nghĩa</p>
-             {smartData.definitions.length > 0 ? (
-              smartData.definitions.map((definition, index) => (
-               <div
-                key={`${definition.text || definition.pos || "def"}-${index}`}
-                className={cn(getDefinitionTone(definition))}
-               >
-                {definition.pos && (
-                 <span className=" ">[{definition.pos}] </span>
-                )}
-                <span>{definition.text || smartData.entry.meaning}</span>
-               </div>
-              ))
-             ) : (
-              <div className=" ">
-               {smartData.entry.meaning || "Chưa có nghĩa cho selection này"}
-              </div>
-             )}
-            </div>
+           </div>
+           <div className="rounded-xl border border-white/80 bg-white px-3 py-3 text-center shadow-sm">
+            <p className="text-sm font-medium leading-6 text-slate-800">
+             {smartData.meaning_summary ||
+              smartData.definitions[0]?.meaning ||
+              smartData.definitions[0]?.text ||
+              smartData.entry.meaning ||
+              "Chưa có nghĩa cho selection này"}
+            </p>
+            {smartData.definitions[1] && (
+             <p className="mt-1 text-xs leading-5 text-slate-500">
+              {smartData.definitions[1].meaning ||
+               smartData.definitions[1].text}
+             </p>
+            )}
            </div>
           </div>
          ) : (
-          <div className="space-y-2">
+          <div className="space-y-2 rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3">
            <div className="rounded-md bg-slate-50 px-3 py-2 text-center">
             <p className="text-sm font-semibold leading-6 text-slate-900">
              {smartData.selection}
@@ -561,26 +482,9 @@ export default function EditorFloatingMenu() {
             </div>
            </div>
 
-           {smartData.grammar_points.length > 0 && (
-            <div className="space-y-1.5">
-             <p className="text-center text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-400">
-              Ngữ pháp
-             </p>
-             {smartData.grammar_points.map((point, index) => (
-              <div
-               key={`${point.pattern || "grammar"}-${index}`}
-               className="rounded-md border border-slate-200 bg-slate-50 px-3 py-2"
-              >
-               <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">
-                {point.pattern || `Điểm ${index + 1}`}
-               </p>
-               {point.explanation && (
-                <p className="mt-1 text-sm leading-6 text-slate-700">
-                 {point.explanation}
-                </p>
-               )}
-              </div>
-             ))}
+           {smartData.grammar_points[0]?.explanation && (
+            <div className="rounded-md border border-slate-200 bg-white px-3 py-2 text-sm leading-6 text-slate-700 shadow-sm">
+             {smartData.grammar_points[0].explanation}
             </div>
            )}
           </div>
@@ -634,6 +538,27 @@ export default function EditorFloatingMenu() {
             title="Ghi chú important"
            >
             <NotebookPen className="h-4 w-4" />
+           </Button>
+           <Button
+            variant="ghost"
+            size="sm"
+            className="h-8 rounded-full px-3 text-slate-500 hover:bg-slate-100 hover:text-slate-900"
+            onMouseDown={preserveEditorSelection}
+            onClick={(event) => {
+             preserveEditorSelection(event);
+             if (!detailTarget) return;
+             openDetailDrawer({
+              text: detailTarget,
+              contextSentence,
+              mode: smartMode,
+             });
+             setIsViewportHidden(true);
+            }}
+            disabled={!detailTarget && !selectedText}
+            title="Mở chi tiết"
+           >
+            Chi tiết
+            <ChevronRight className="h-4 w-4" />
            </Button>
           </>
          )}

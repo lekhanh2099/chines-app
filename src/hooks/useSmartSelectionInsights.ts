@@ -19,13 +19,18 @@ function resolveMode(selection: string): SmartSelectionMode {
 export function useSmartSelectionInsights(
  selectedText: string,
  contextSentence: string,
+ options?: {
+  enabled?: boolean;
+  mode?: SmartSelectionMode;
+ },
 ) {
  const queryClient = useQueryClient();
  const trimmedSelection = selectedText.trim();
  const chineseSelection = extractChinese(trimmedSelection);
  const lookupKey = chineseSelection || trimmedSelection;
  const isChineseSelection = containsChinese(trimmedSelection);
- const mode = resolveMode(lookupKey);
+ const mode = options?.mode || resolveMode(lookupKey);
+ const enabled = options?.enabled ?? true;
  const promptSettings = loadClientAiPromptSettings();
  const settingsFingerprint =
   getClientAiPromptSettingsFingerprint(promptSettings);
@@ -40,7 +45,7 @@ export function useSmartSelectionInsights(
    mode,
    settingsFingerprint,
   ],
-  enabled: isChineseSelection && !!lookupKey,
+  enabled: enabled && isChineseSelection && !!lookupKey,
   staleTime: 1000 * 60 * 8,
   gcTime: 1000 * 60 * 30,
   queryFn: async () => {

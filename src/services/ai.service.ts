@@ -10,6 +10,7 @@
 
 import { z } from "zod";
 import {
+ renderWordLookupBasicPrompt,
  renderSentenceLookupPrompt,
  renderWordLookupPrompt,
 } from "@/lib/ai-prompts";
@@ -18,6 +19,7 @@ import {
  normalizeGeminiModel,
  type GeminiModelId,
 } from "@/lib/gemini-models";
+import { createRequestSignal, throwIfAborted } from "@/lib/request-utils";
 import type { UserApiKeyCredential } from "@/services/user-api-keys.service";
 import {
  aiAnalysisSchema,
@@ -49,6 +51,7 @@ type AiRequestOptions = {
  promptTemplate?: string | null;
  geminiModel?: string | null;
  userApiKeys?: UserApiKeyCredential[];
+ abortSignal?: AbortSignal | null;
 };
 
 /* ══════════════════════════════════════════
@@ -147,6 +150,7 @@ async function callDeepSeekRaw(
   apiKey?: string | null;
   model?: string | null;
   useOutageTracking?: boolean;
+  abortSignal?: AbortSignal | null;
  },
 ): Promise<RawProviderResult> {
  const isUserKey = !!options?.apiKey;
@@ -175,6 +179,8 @@ async function callDeepSeekRaw(
  }
 
  try {
+  throwIfAborted(options?.abortSignal);
+
   const res = await fetch("https://api.deepseek.com/chat/completions", {
    method: "POST",
    headers: {
@@ -191,7 +197,7 @@ async function callDeepSeekRaw(
     max_tokens: 2000,
     response_format: { type: "json_object" },
    }),
-   signal: AbortSignal.timeout(30_000),
+   signal: createRequestSignal(30_000, options?.abortSignal),
   });
 
   if (!res.ok) {
@@ -247,6 +253,7 @@ async function callGeminiRaw(
  prompt: string,
  model: GeminiModelId,
  apiKey?: string | null,
+ abortSignal?: AbortSignal | null,
 ): Promise<RawProviderResult> {
  const isUserKey = !!apiKey;
 
@@ -271,6 +278,8 @@ async function callGeminiRaw(
  }
 
  try {
+  throwIfAborted(abortSignal);
+
   const res = await fetch(
    `https://generativelanguage.googleapis.com/v1beta/${model}:generateContent?key=${resolvedApiKey}`,
    {
@@ -288,7 +297,7 @@ async function callGeminiRaw(
       responseMimeType: "application/json",
      },
     }),
-    signal: AbortSignal.timeout(30_000),
+    signal: createRequestSignal(30_000, abortSignal),
    },
   );
 
@@ -345,10 +354,13 @@ async function callOpenAiRaw(
  prompt: string,
  apiKey: string,
  model?: string | null,
+ abortSignal?: AbortSignal | null,
 ): Promise<RawProviderResult> {
  const resolvedModel = model || "gpt-4.1-mini";
 
  try {
+  throwIfAborted(abortSignal);
+
   const res = await fetch("https://api.openai.com/v1/chat/completions", {
    method: "POST",
    headers: {
@@ -365,7 +377,7 @@ async function callOpenAiRaw(
     max_tokens: 2000,
     response_format: { type: "json_object" },
    }),
-   signal: AbortSignal.timeout(30_000),
+   signal: createRequestSignal(30_000, abortSignal),
   });
 
   if (!res.ok) {
@@ -600,6 +612,43 @@ function normalizeWordAnalysis(
  };
 }
 
+function normalizeBasicWordAnalysis(
+ hanzi: string,
+ parsed: AiVocabResponse,
+): AiVocabResponse {
+ const normalized = normalizeWordAnalysis(hanzi, parsed);
+ const firstDefinition = normalized.definitions?.find(
+  (definition) => definition.meaning || definition.text,
+ );
+ const meaningSummary =
+  normalized.meaning_summary ||
+  firstDefinition?.meaning ||
+  firstDefinition?.text ||
+  normalized.meanings?.find((item) => item.definition)?.definition ||
+  "";
+
+ return {
+  hanzi,
+  pinyin: normalized.pinyin || "",
+  sino_vietnamese:
+   normalized.sino_vietnamese || normalized.han_viet || undefined,
+  han_viet: normalized.han_viet || normalized.sino_vietnamese || undefined,
+  meaning_summary: meaningSummary,
+  ...(firstDefinition
+   ? {
+      definitions: [
+       {
+        pos: firstDefinition.pos,
+        meaning:
+         firstDefinition.meaning || firstDefinition.text || meaningSummary,
+        text: firstDefinition.text || firstDefinition.meaning || meaningSummary,
+       },
+      ],
+     }
+   : {}),
+ };
+}
+
 function normalizeSentenceInsight(
  text: string,
  parsed: SentenceInsightResponse,
@@ -622,12 +671,17 @@ async function requestStructuredJson<T>(
  schema: z.ZodType<T>,
  fallback: (parsed: unknown) => boolean,
  userApiKeys?: UserApiKeyCredential[],
+ abortSignal?: AbortSignal | null,
 ): Promise<StructuredRequestResult<T>> {
  const providerErrors: string[] = [];
 
  const managedSystemPrompt = `${BYOK_HIDDEN_SYSTEM_PROMPT}\n\n${systemPrompt}`;
 
+ throwIfAborted(abortSignal);
+
  for (const userApiKey of userApiKeys || []) {
+  throwIfAborted(abortSignal);
+
   let rawResult: RawProviderResult | null = null;
 
   if (userApiKey.provider === "deepseek") {
@@ -635,6 +689,7 @@ async function requestStructuredJson<T>(
     apiKey: userApiKey.apiKey,
     model: userApiKey.defaultModel,
     useOutageTracking: false,
+    abortSignal,
    });
   } else if (userApiKey.provider === "gemini") {
    rawResult = await callGeminiRaw(
@@ -642,6 +697,7 @@ async function requestStructuredJson<T>(
     prompt,
     geminiModel,
     userApiKey.apiKey,
+    abortSignal,
    );
   } else if (userApiKey.provider === "openai") {
    rawResult = await callOpenAiRaw(
@@ -649,6 +705,7 @@ async function requestStructuredJson<T>(
     prompt,
     userApiKey.apiKey,
     userApiKey.defaultModel,
+    abortSignal,
    );
   }
 
@@ -675,7 +732,15 @@ async function requestStructuredJson<T>(
   }
  }
 
- const geminiRaw = await callGeminiRaw(systemPrompt, prompt, geminiModel);
+ throwIfAborted(abortSignal);
+
+ const geminiRaw = await callGeminiRaw(
+  systemPrompt,
+  prompt,
+  geminiModel,
+  undefined,
+  abortSignal,
+ );
  if (geminiRaw.content) {
   const geminiResult = parseAndValidate(geminiRaw.content, schema, fallback);
   if (geminiResult) {
@@ -688,8 +753,11 @@ async function requestStructuredJson<T>(
 
  console.log("[AI] Gemini failed, trying DeepSeek...");
 
+ throwIfAborted(abortSignal);
+
  const deepSeekRaw = await callDeepSeekRaw(systemPrompt, prompt, {
   useOutageTracking: true,
+  abortSignal,
  });
  if (deepSeekRaw.content) {
   const deepSeekResult = parseAndValidate(
@@ -740,6 +808,7 @@ export async function analyzeHanziDetailed(
   aiAnalysisSchema,
   (parsed) => typeof parsed === "object" && parsed !== null,
   options?.userApiKeys,
+  options?.abortSignal,
  );
 
  if (result.data) {
@@ -755,6 +824,42 @@ export async function analyzeHanziDetailed(
   error:
    result.error ||
    "Không thể generate nghĩa tiếng Việt lúc này vì tất cả AI provider đều thất bại.",
+ };
+}
+
+export async function analyzeHanziBasicDetailed(
+ hanzi: string,
+ options?: AiRequestOptions,
+): Promise<StructuredRequestResult<AiVocabResponse>> {
+ console.log("[AI] Analyzing basic word:", hanzi);
+
+ const geminiModel = normalizeGeminiModel(
+  options?.geminiModel || DEFAULT_GEMINI_MODEL,
+ );
+
+ const result = await requestStructuredJson(
+  WORD_SYSTEM_PROMPT,
+  renderWordLookupBasicPrompt(hanzi),
+  geminiModel,
+  aiAnalysisSchema,
+  (parsed) => typeof parsed === "object" && parsed !== null,
+  options?.userApiKeys,
+  options?.abortSignal,
+ );
+
+ if (result.data) {
+  return {
+   data: normalizeBasicWordAnalysis(hanzi, result.data),
+   error: null,
+  };
+ }
+
+ console.error("[AI] All providers failed for basic word:", hanzi);
+ return {
+  data: null,
+  error:
+   result.error ||
+   "Không thể generate nghĩa cơ bản lúc này vì tất cả AI provider đều thất bại.",
  };
 }
 
@@ -783,6 +888,7 @@ export async function analyzeSentenceDetailed(
   sentenceInsightSchema,
   (parsed) => typeof parsed === "object" && parsed !== null,
   options?.userApiKeys,
+  options?.abortSignal,
  );
 
  if (result.data) {
