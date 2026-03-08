@@ -9,11 +9,17 @@ import {
 import { getUserAiPromptSettings } from "@/services/ai-prompt-settings.service";
 import { getActiveUserApiKeyCredentials } from "@/services/user-api-keys.service";
 import {
+ getDictionaryEntryByHeadword,
+ incrementDictionaryLookupCount,
+ mapDictionaryEntryToVocabData,
+ normalizeDictionaryHeadword,
  getPrimaryMeaning,
  getVocabByHanzi,
  getVocabularyAnalysis,
  hasDetailedVocabAnalysis,
  isGenericEnglishFallbackAnalysis,
+ syncDictionaryEntryToLegacyVocab,
+ upsertDictionaryEntry,
  upsertVocab,
 } from "@/services/vocab.service";
 
@@ -71,7 +77,35 @@ export async function POST(request: NextRequest) {
   return NextResponse.json({ cached: false, data: sentenceLookup.data });
  }
 
- const cachedWord = await getVocabByHanzi(supabase, parsed.data.text);
+ const lookupText = normalizeDictionaryHeadword(parsed.data.text);
+ const cachedDictionary = await getDictionaryEntryByHeadword(
+  supabase,
+  lookupText,
+ );
+
+ if (cachedDictionary) {
+  void incrementDictionaryLookupCount(supabase, {
+   id: cachedDictionary.id,
+   lookup_count: cachedDictionary.lookup_count,
+  });
+
+  const cachedData = mapDictionaryEntryToVocabData(cachedDictionary);
+
+  return NextResponse.json({
+   cached: true,
+   data: {
+    id: cachedData.id,
+    dictionary_id: cachedData.dictionary_id,
+    hanzi: cachedData.hanzi,
+    pinyin: cachedData.pinyin || getPinyin(lookupText),
+    sino_vietnamese: cachedData.sino_vietnamese || null,
+    meaning: cachedData.meaning,
+    analysis: cachedData.ai_analysis || {},
+   },
+  });
+ }
+
+ const cachedWord = await getVocabByHanzi(supabase, lookupText);
  const cachedAnalysis = getVocabularyAnalysis(cachedWord);
 
  if (cachedWord && hasDetailedVocabAnalysis(cachedAnalysis)) {
@@ -79,9 +113,9 @@ export async function POST(request: NextRequest) {
    cached: true,
    data: {
     id: cachedWord.id,
+    dictionary_id: undefined,
     hanzi: cachedWord.hanzi,
-    pinyin:
-     cachedWord.pinyin || cachedAnalysis.pinyin || getPinyin(parsed.data.text),
+    pinyin: cachedWord.pinyin || cachedAnalysis.pinyin || getPinyin(lookupText),
     sino_vietnamese:
      cachedWord.sino_vietnamese ||
      cachedAnalysis.sino_vietnamese ||
@@ -93,7 +127,7 @@ export async function POST(request: NextRequest) {
   });
  }
 
- const aiLookup = await analyzeHanziDetailed(parsed.data.text, {
+ const aiLookup = await analyzeHanziDetailed(lookupText, {
   geminiModel: parsed.data.geminiModel || promptSettings?.geminiModel,
   promptTemplate:
    parsed.data.wordPromptTemplate ||
@@ -112,9 +146,10 @@ export async function POST(request: NextRequest) {
     cached: true,
     data: {
      id: cachedWord.id,
+     dictionary_id: undefined,
      hanzi: cachedWord.hanzi,
      pinyin:
-      cachedWord.pinyin || cachedAnalysis.pinyin || getPinyin(parsed.data.text),
+      cachedWord.pinyin || cachedAnalysis.pinyin || getPinyin(lookupText),
      sino_vietnamese:
       cachedWord.sino_vietnamese ||
       cachedAnalysis.sino_vietnamese ||
@@ -138,19 +173,40 @@ export async function POST(request: NextRequest) {
 
  const aiResult = aiLookup.data;
 
- await upsertVocab(supabase, {
-  hanzi: parsed.data.text,
-  pinyin: aiResult.pinyin || getPinyin(parsed.data.text),
+ const dictionaryEntry = await upsertDictionaryEntry(supabase, {
+  headword: lookupText,
+  pinyin: aiResult.pinyin || getPinyin(lookupText),
   sinoVietnamese: aiResult.sino_vietnamese || aiResult.han_viet,
   meaning: getPrimaryMeaning(aiResult, ""),
   ai_analysis: aiResult,
  });
 
+ let legacyVocabId: string | undefined;
+
+ if (dictionaryEntry) {
+  const mirrored = await syncDictionaryEntryToLegacyVocab(
+   supabase,
+   dictionaryEntry,
+  );
+  legacyVocabId = mirrored?.id;
+ } else {
+  const mirrored = await upsertVocab(supabase, {
+   hanzi: lookupText,
+   pinyin: aiResult.pinyin || getPinyin(lookupText),
+   sinoVietnamese: aiResult.sino_vietnamese || aiResult.han_viet,
+   meaning: getPrimaryMeaning(aiResult, ""),
+   ai_analysis: aiResult,
+  });
+  legacyVocabId = mirrored?.id;
+ }
+
  return NextResponse.json({
   cached: false,
   data: {
-   hanzi: parsed.data.text,
-   pinyin: aiResult.pinyin || getPinyin(parsed.data.text),
+   id: legacyVocabId,
+   dictionary_id: dictionaryEntry?.id,
+   hanzi: lookupText,
+   pinyin: aiResult.pinyin || getPinyin(lookupText),
    sino_vietnamese: aiResult.sino_vietnamese || aiResult.han_viet || null,
    meaning: getPrimaryMeaning(aiResult, ""),
    analysis: aiResult,

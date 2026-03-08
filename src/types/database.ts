@@ -79,6 +79,23 @@ export type DbUserApiKey = {
  updated_at: string;
 };
 
+export type DbDictionaryCore = {
+ id: string;
+ headword: string;
+ lookup_key: string;
+ pinyin: string | null;
+ sino_vietnamese: string | null;
+ data: Record<string, unknown>;
+ lookup_count: number;
+ created_at: string;
+};
+
+export type DbUserVocabulary = {
+ user_id: string;
+ dictionary_id: string;
+ created_at: string;
+};
+
 export type DbNote = {
  id: string;
  user_id: string;
@@ -160,6 +177,13 @@ export type AiDefinition = {
  examples?: AiDefinitionExample[];
 };
 
+export type DictionaryCoreDefinition = {
+ part_of_speech?: string;
+ meaning?: string;
+ example?: string;
+ examples?: AiDefinitionExample[];
+};
+
 export type AiGrammarPoint = {
  pattern?: string;
  structure?: string;
@@ -212,6 +236,11 @@ export type AiAnalysis = {
  confusion_warning?: string | null;
  sentence_translation?: string;
  grammar_breakdown?: AiGrammarPoint[];
+};
+
+export type DictionaryCoreData = {
+ definitions?: DictionaryCoreDefinition[];
+ ai_analysis?: AiAnalysis;
 };
 
 export type SentenceInsight = {
@@ -339,6 +368,7 @@ export type VocabWithProgress = {
 /** Vocab data used by inspector & dictionary */
 export type VocabData = {
  id?: string;
+ dictionary_id?: string;
  hanzi: string;
  pinyin: string;
  sino_vietnamese?: string;

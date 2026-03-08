@@ -9,6 +9,8 @@ import {
 } from "@/services/ai.service";
 import { getActiveUserApiKeyCredentials } from "@/services/user-api-keys.service";
 import {
+ getDictionaryEntryByHeadword,
+ incrementDictionaryLookupCount,
  getPrimaryMeaning,
  getNormalizedDefinitions,
  getNormalizedRadicals,
@@ -16,6 +18,10 @@ import {
  getVocabularyAnalysis,
  hasDetailedVocabAnalysis,
  isGenericEnglishFallbackAnalysis,
+ mapDictionaryEntryToVocabData,
+ normalizeDictionaryHeadword,
+ syncDictionaryEntryToLegacyVocab,
+ upsertDictionaryEntry,
  upsertVocab,
 } from "@/services/vocab.service";
 import type {
@@ -35,15 +41,37 @@ function resolveMode(selection: string): SmartSelectionMode {
 async function getProgressState(
  userId: string | null,
  vocabId: string | undefined,
+ dictionaryId: string | undefined,
  supabase: Awaited<ReturnType<typeof createClient>>,
 ): Promise<{
  isSaved: boolean;
  personalNote: string;
  personalNoteMode: PersonalNoteMode;
 }> {
- if (!userId || !vocabId) {
+ if (!userId || (!vocabId && !dictionaryId)) {
   return {
    isSaved: false,
+   personalNote: "",
+   personalNoteMode: "important",
+  };
+ }
+
+ let isSaved = false;
+
+ if (dictionaryId) {
+  const { data: relationData } = await supabase
+   .from("user_vocabularies")
+   .select("dictionary_id")
+   .eq("user_id", userId)
+   .eq("dictionary_id", dictionaryId)
+   .maybeSingle();
+
+  isSaved = !!relationData;
+ }
+
+ if (!vocabId) {
+  return {
+   isSaved,
    personalNote: "",
    personalNoteMode: "important",
   };
@@ -57,7 +85,7 @@ async function getProgressState(
   .maybeSingle();
 
  return {
-  isSaved: !!data,
+  isSaved: isSaved || !!data,
   personalNote: data?.personal_note || "",
   personalNoteMode: data?.personal_note_mode || "important",
  };
@@ -101,9 +129,30 @@ export async function POST(request: NextRequest) {
  const normalizedChinese = extractChinese(rawSelection);
 
  if (resolvedMode === "word") {
-  const lookupText = normalizedChinese || rawSelection;
-  const existing = await getVocabByHanzi(supabase, lookupText);
-  const existingAnalysis = getVocabularyAnalysis(existing);
+  const lookupText = normalizeDictionaryHeadword(
+   normalizedChinese || rawSelection,
+  );
+  const cachedDictionary = await getDictionaryEntryByHeadword(
+   supabase,
+   lookupText,
+  );
+
+  if (cachedDictionary) {
+   void incrementDictionaryLookupCount(supabase, {
+    id: cachedDictionary.id,
+    lookup_count: cachedDictionary.lookup_count,
+   });
+  }
+
+  const existing = cachedDictionary
+   ? null
+   : await getVocabByHanzi(supabase, lookupText);
+  const cachedDictionaryVocab = cachedDictionary
+   ? mapDictionaryEntryToVocabData(cachedDictionary)
+   : null;
+  const existingAnalysis = cachedDictionaryVocab
+   ? cachedDictionaryVocab.ai_analysis || {}
+   : getVocabularyAnalysis(existing);
   const existingIsEnglishFallback =
    isGenericEnglishFallbackAnalysis(existingAnalysis);
   const existingMeaning = getPrimaryMeaning(
@@ -112,9 +161,15 @@ export async function POST(request: NextRequest) {
   );
   let vocab: VocabData = {
    id: existing?.id,
+   dictionary_id: cachedDictionaryVocab?.dictionary_id,
    hanzi: lookupText,
-   pinyin: existing?.pinyin || existingAnalysis.pinyin || getPinyin(lookupText),
+   pinyin:
+    cachedDictionaryVocab?.pinyin ||
+    existing?.pinyin ||
+    existingAnalysis.pinyin ||
+    getPinyin(lookupText),
    sino_vietnamese:
+    cachedDictionaryVocab?.sino_vietnamese ||
     existing?.sino_vietnamese ||
     existingAnalysis.sino_vietnamese ||
     existingAnalysis.han_viet ||
@@ -124,8 +179,8 @@ export async function POST(request: NextRequest) {
   };
 
   const needsEnrichment =
-   !existing ||
-   !existing.pinyin ||
+   (!cachedDictionaryVocab && !existing) ||
+   !vocab.pinyin ||
    !existingMeaning ||
    !hasDetailedVocabAnalysis(existingAnalysis);
 
@@ -152,16 +207,27 @@ export async function POST(request: NextRequest) {
    if (aiResult) {
     const meaning = getPrimaryMeaning(aiResult, existingMeaning);
 
-    const upsertResult = await upsertVocab(supabase, {
-     hanzi: lookupText,
+    const dictionaryEntry = await upsertDictionaryEntry(supabase, {
+     headword: lookupText,
      pinyin: aiResult.pinyin || vocab.pinyin,
      sinoVietnamese: aiResult.sino_vietnamese || aiResult.han_viet,
      meaning,
      ai_analysis: aiResult,
     });
 
+    const upsertResult = dictionaryEntry
+     ? await syncDictionaryEntryToLegacyVocab(supabase, dictionaryEntry)
+     : await upsertVocab(supabase, {
+        hanzi: lookupText,
+        pinyin: aiResult.pinyin || vocab.pinyin,
+        sinoVietnamese: aiResult.sino_vietnamese || aiResult.han_viet,
+        meaning,
+        ai_analysis: aiResult,
+       });
+
     vocab = {
      id: upsertResult?.id || existing?.id,
+     dictionary_id: dictionaryEntry?.id || vocab.dictionary_id,
      hanzi: lookupText,
      pinyin: aiResult.pinyin || vocab.pinyin,
      sino_vietnamese: aiResult.sino_vietnamese || aiResult.han_viet,
@@ -173,7 +239,12 @@ export async function POST(request: NextRequest) {
 
   const analysis = vocab.ai_analysis || {};
   const definitions = getNormalizedDefinitions(analysis, vocab.meaning);
-  const progress = await getProgressState(user?.id || null, vocab.id, supabase);
+  const progress = await getProgressState(
+   user?.id || null,
+   vocab.id,
+   vocab.dictionary_id,
+   supabase,
+  );
 
   // Extract deep analysis fields (etymology may be string or object)
   const etymologyRaw = analysis.etymology;
@@ -250,7 +321,12 @@ export async function POST(request: NextRequest) {
    ...(grammarPoints.length ? { grammar_breakdown: grammarPoints } : {}),
   },
  };
- const progress = await getProgressState(user?.id || null, entry.id, supabase);
+ const progress = await getProgressState(
+  user?.id || null,
+  entry.id,
+  entry.dictionary_id,
+  supabase,
+ );
 
  const result: SmartSelectionResult = {
   mode: "sentence",

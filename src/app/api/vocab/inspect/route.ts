@@ -1,7 +1,9 @@
 import { createClient } from "@/lib/supabase/server";
 import {
+ getDictionaryEntryByHeadword,
  getVocabularyAnalysis,
  getVocabByHanzi,
+ mapDictionaryEntryToVocabData,
  saveVocabToSrs,
 } from "@/services/vocab.service";
 import { NextRequest, NextResponse } from "next/server";
@@ -18,6 +20,25 @@ export async function GET(request: NextRequest) {
  }
 
  const supabase = await createClient();
+
+ const cachedDictionary = await getDictionaryEntryByHeadword(supabase, hanzi);
+
+ if (cachedDictionary) {
+  const vocab = mapDictionaryEntryToVocabData(cachedDictionary);
+
+  return NextResponse.json({
+   found: true,
+   data: {
+    id: vocab.id,
+    dictionary_id: vocab.dictionary_id,
+    hanzi: vocab.hanzi,
+    pinyin: vocab.pinyin,
+    sino_vietnamese: vocab.sino_vietnamese,
+    meaning: vocab.meaning,
+    ai_analysis: vocab.ai_analysis,
+   },
+  });
+ }
 
  const vocab = await getVocabByHanzi(supabase, hanzi);
 
@@ -106,5 +127,9 @@ export async function POST(request: NextRequest) {
   );
  }
 
- return NextResponse.json({ success: true, vocab_id: result.vocabId });
+ return NextResponse.json({
+  success: true,
+  vocab_id: result.vocabId,
+  dictionary_id: result.dictionaryId,
+ });
 }

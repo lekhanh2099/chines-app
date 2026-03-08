@@ -3,9 +3,14 @@ import { getUserAiPromptSettings } from "@/services/ai-prompt-settings.service";
 import { analyzeHanziDetailed } from "@/services/ai.service";
 import { getActiveUserApiKeyCredentials } from "@/services/user-api-keys.service";
 import {
+ getDictionaryEntryByHeadword,
  getPrimaryMeaning,
  getVocabByHanzi,
  getVocabularyAnalysis,
+ mapDictionaryEntryToVocabData,
+ normalizeDictionaryHeadword,
+ syncDictionaryEntryToLegacyVocab,
+ upsertDictionaryEntry,
  upsertVocab,
 } from "@/services/vocab.service";
 import { NextRequest, NextResponse } from "next/server";
@@ -32,8 +37,22 @@ export async function POST(request: NextRequest) {
   );
  }
 
+ const lookupText = normalizeDictionaryHeadword(hanzi);
+ const cachedDictionary = await getDictionaryEntryByHeadword(
+  supabase,
+  lookupText,
+ );
+
+ if (cachedDictionary) {
+  const cachedData = mapDictionaryEntryToVocabData(cachedDictionary);
+  return NextResponse.json({
+   data: cachedData.ai_analysis || {},
+   cached: true,
+  });
+ }
+
  // Check if we already have AI data in DB via service
- const existing = await getVocabByHanzi(supabase, hanzi);
+ const existing = await getVocabByHanzi(supabase, lookupText);
  const existingAi = getVocabularyAnalysis(existing);
 
  if (existingAi && Object.keys(existingAi).length > 3) {
@@ -43,7 +62,7 @@ export async function POST(request: NextRequest) {
  // Call AI service
  const promptSettings = await getUserAiPromptSettings(supabase, user.id);
  const userApiKeys = await getActiveUserApiKeyCredentials(supabase, user.id);
- const aiLookup = await analyzeHanziDetailed(hanzi, {
+ const aiLookup = await analyzeHanziDetailed(lookupText, {
   geminiModel: promptSettings.geminiModel,
   promptTemplate: promptSettings.wordLookupPrompt,
   userApiKeys,
@@ -62,14 +81,23 @@ export async function POST(request: NextRequest) {
 
  const aiResult = aiLookup.data;
 
- // Upsert via service
- const upsertResult = await upsertVocab(supabase, {
-  hanzi: aiResult.hanzi || hanzi,
+ const dictionaryEntry = await upsertDictionaryEntry(supabase, {
+  headword: aiResult.hanzi || lookupText,
   pinyin: aiResult.pinyin,
   sinoVietnamese: aiResult.sino_vietnamese || aiResult.han_viet,
   meaning: getPrimaryMeaning(aiResult, ""),
   ai_analysis: aiResult,
  });
+
+ const upsertResult = dictionaryEntry
+  ? await syncDictionaryEntryToLegacyVocab(supabase, dictionaryEntry)
+  : await upsertVocab(supabase, {
+     hanzi: aiResult.hanzi || lookupText,
+     pinyin: aiResult.pinyin,
+     sinoVietnamese: aiResult.sino_vietnamese || aiResult.han_viet,
+     meaning: getPrimaryMeaning(aiResult, ""),
+     ai_analysis: aiResult,
+    });
 
  if (!upsertResult) {
   console.error("[generate-vocab] DB upsert failed");

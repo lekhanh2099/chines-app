@@ -29,22 +29,30 @@ async function lookupVocab(hanzi: string): Promise<LookupResult> {
  }
 
  try {
-  const res = await fetch(
-   `/api/vocab/inspect?hanzi=${encodeURIComponent(chinese)}`,
-  );
+  const res = await fetch("/api/lookup", {
+   method: "POST",
+   headers: { "Content-Type": "application/json" },
+   body: JSON.stringify({
+    text: chinese,
+    type: "word",
+   }),
+  });
   const json = await res.json();
 
-  if (json.found && json.data) {
+  if (json.data) {
    return {
     found: true,
     data: {
      id: json.data.id,
+     dictionary_id: json.data.dictionary_id,
      hanzi: json.data.hanzi,
      pinyin: json.data.pinyin || getPinyin(chinese),
      meaning: json.data.meaning || "",
-     ai_analysis: (json.data.ai_analysis || {}) as AiAnalysis,
+     ai_analysis: (json.data.analysis ||
+      json.data.ai_analysis ||
+      {}) as AiAnalysis,
     },
-    isSaved: true,
+    isSaved: !!json.cached,
    };
   }
  } catch {

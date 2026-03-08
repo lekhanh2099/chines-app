@@ -73,23 +73,59 @@ export const useInspectorStore = create<InspectorStore>((set, get) => ({
   let resolvedVocab: VocabData;
 
   try {
-   const vocab = await getVocabByHanzi(supabase, chineseText);
+   const lookupResponse = await fetch("/api/lookup", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+     text: chineseText,
+     type: "word",
+    }),
+   });
 
-   if (vocab) {
+   const lookupJson = (await lookupResponse.json()) as {
+    data?: {
+     id?: string;
+     dictionary_id?: string;
+     hanzi?: string;
+     pinyin?: string;
+     sino_vietnamese?: string | null;
+     meaning?: string;
+     analysis?: AiAnalysis;
+     ai_analysis?: AiAnalysis;
+    };
+   };
+
+   if (lookupResponse.ok && lookupJson.data?.hanzi) {
     resolvedVocab = {
-     id: vocab.id,
-     hanzi: vocab.hanzi,
-     pinyin: vocab.pinyin || pinyinText,
-     meaning: vocab.meaning || "",
-     ai_analysis: (vocab.ai_analysis || {}) as AiAnalysis,
+     id: lookupJson.data.id,
+     dictionary_id: lookupJson.data.dictionary_id,
+     hanzi: lookupJson.data.hanzi,
+     pinyin: lookupJson.data.pinyin || pinyinText,
+     sino_vietnamese: lookupJson.data.sino_vietnamese || undefined,
+     meaning: lookupJson.data.meaning || "",
+     ai_analysis: (lookupJson.data.analysis ||
+      lookupJson.data.ai_analysis ||
+      {}) as AiAnalysis,
     };
    } else {
-    resolvedVocab = {
-     hanzi: chineseText,
-     pinyin: pinyinText,
-     meaning: "",
-     ai_analysis: {},
-    };
+    const vocab = await getVocabByHanzi(supabase, chineseText);
+
+    if (vocab) {
+     resolvedVocab = {
+      id: vocab.id,
+      hanzi: vocab.hanzi,
+      pinyin: vocab.pinyin || pinyinText,
+      meaning: vocab.meaning || "",
+      ai_analysis: (vocab.ai_analysis || {}) as AiAnalysis,
+     };
+    } else {
+     resolvedVocab = {
+      hanzi: chineseText,
+      pinyin: pinyinText,
+      meaning: "",
+      ai_analysis: {},
+     };
+    }
    }
   } catch {
    resolvedVocab = {
