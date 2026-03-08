@@ -20,14 +20,12 @@ import {
 } from "@/lib/gemini-models";
 import { toast } from "sonner";
 import { Bot, RefreshCcw, Save } from "lucide-react";
-import ByokDeepSeekSection from "@/components/settings/ByokDeepSeekSection";
+import ApiKeyManagerSection from "@/components/settings/ApiKeyManagerSection";
 
 type AiPromptSettingsResponse = {
  wordLookupPrompt: string;
  sentenceLookupPrompt: string;
  geminiModel: GeminiModelId;
- deepseekEnabled: boolean;
- deepseekApiKeySet: boolean;
 };
 
 export default function SettingsPage() {
@@ -39,6 +37,11 @@ export default function SettingsPage() {
  );
  const [geminiModel, setGeminiModel] =
   useState<GeminiModelId>(DEFAULT_GEMINI_MODEL);
+ const [savedSettings, setSavedSettings] = useState<{
+  wordLookupPrompt: string;
+  sentenceLookupPrompt: string;
+  geminiModel: GeminiModelId;
+ } | null>(null);
  const [isLoading, setIsLoading] = useState(true);
  const [isSaving, setIsSaving] = useState(false);
  const [hasLoaded, setHasLoaded] = useState(false);
@@ -67,9 +70,6 @@ export default function SettingsPage() {
      sentenceLookupPrompt:
       data.sentenceLookupPrompt || localSettings.sentenceLookupPrompt,
      geminiModel: data.geminiModel || localSettings.geminiModel,
-     deepseekEnabled: data.deepseekEnabled ?? localSettings.deepseekEnabled,
-     deepseekApiKeySet:
-      data.deepseekApiKeySet ?? localSettings.deepseekApiKeySet,
     });
 
     setWordLookupPrompt(merged.wordLookupPrompt || DEFAULT_WORD_LOOKUP_PROMPT);
@@ -77,12 +77,23 @@ export default function SettingsPage() {
      merged.sentenceLookupPrompt || DEFAULT_SENTENCE_LOOKUP_PROMPT,
     );
     setGeminiModel(merged.geminiModel || DEFAULT_GEMINI_MODEL);
+    setSavedSettings({
+     wordLookupPrompt: merged.wordLookupPrompt || DEFAULT_WORD_LOOKUP_PROMPT,
+     sentenceLookupPrompt:
+      merged.sentenceLookupPrompt || DEFAULT_SENTENCE_LOOKUP_PROMPT,
+     geminiModel: merged.geminiModel || DEFAULT_GEMINI_MODEL,
+    });
     setHasLoaded(true);
    } catch {
     if (!isMounted) return;
     setWordLookupPrompt(localSettings.wordLookupPrompt);
     setSentenceLookupPrompt(localSettings.sentenceLookupPrompt);
     setGeminiModel(localSettings.geminiModel);
+    setSavedSettings({
+     wordLookupPrompt: localSettings.wordLookupPrompt,
+     sentenceLookupPrompt: localSettings.sentenceLookupPrompt,
+     geminiModel: localSettings.geminiModel,
+    });
     setHasLoaded(true);
     toast.info("Đang dùng AI prompt settings lưu cục bộ trên trình duyệt");
    } finally {
@@ -107,8 +118,6 @@ export default function SettingsPage() {
     wordLookupPrompt,
     sentenceLookupPrompt,
     geminiModel,
-    deepseekEnabled: false,
-    deepseekApiKeySet: false,
    });
 
    const response = await fetch("/api/settings/ai-prompts", {
@@ -129,25 +138,42 @@ export default function SettingsPage() {
    }
 
    const data = (await response.json()) as AiPromptSettingsResponse;
-   const synced = saveClientAiPromptSettings({
-    ...data,
-    deepseekEnabled: data.deepseekEnabled ?? false,
-    deepseekApiKeySet: data.deepseekApiKeySet ?? false,
-   });
+   const synced = saveClientAiPromptSettings(data);
    setWordLookupPrompt(synced.wordLookupPrompt);
    setSentenceLookupPrompt(synced.sentenceLookupPrompt);
    setGeminiModel(synced.geminiModel);
+   setSavedSettings({
+    wordLookupPrompt: synced.wordLookupPrompt,
+    sentenceLookupPrompt: synced.sentenceLookupPrompt,
+    geminiModel: synced.geminiModel,
+   });
    toast.success("Đã lưu AI prompt settings");
   } catch {
    const fallback = loadClientAiPromptSettings();
    setWordLookupPrompt(fallback.wordLookupPrompt);
    setSentenceLookupPrompt(fallback.sentenceLookupPrompt);
    setGeminiModel(fallback.geminiModel);
+   setSavedSettings({
+    wordLookupPrompt: fallback.wordLookupPrompt,
+    sentenceLookupPrompt: fallback.sentenceLookupPrompt,
+    geminiModel: fallback.geminiModel,
+   });
    toast.success("Đã lưu AI prompt settings trên trình duyệt này");
   } finally {
    setIsSaving(false);
   }
  }
+
+ const hasUnsavedWordPrompt =
+  !!savedSettings && wordLookupPrompt !== savedSettings.wordLookupPrompt;
+ const hasUnsavedSentencePrompt =
+  !!savedSettings &&
+  sentenceLookupPrompt !== savedSettings.sentenceLookupPrompt;
+ const hasUnsavedPromptChanges =
+  hasUnsavedWordPrompt || hasUnsavedSentencePrompt;
+ const hasUnsavedModelChange =
+  !!savedSettings && geminiModel !== savedSettings.geminiModel;
+ const hasUnsavedChanges = hasUnsavedPromptChanges || hasUnsavedModelChange;
 
  return (
   <div className="mx-auto flex w-full max-w-5xl flex-col gap-6 px-6 py-8">
@@ -173,6 +199,11 @@ export default function SettingsPage() {
      </div>
 
      <div className="flex items-center gap-3">
+      <span
+       className={`hidden rounded-full px-3 py-1 text-xs font-semibold md:inline-flex ${hasUnsavedChanges ? "bg-amber-100 text-amber-900" : "bg-success/10 text-success"}`}
+      >
+       {hasUnsavedChanges ? "Có thay đổi chưa lưu" : "Mọi thay đổi đã được lưu"}
+      </span>
       <Button
        variant="outline"
        onClick={() => {
@@ -187,12 +218,12 @@ export default function SettingsPage() {
       </Button>
       <Button
        onClick={handleSave}
-       disabled={isLoading || isSaving || !hasLoaded}
+       disabled={isLoading || isSaving || !hasLoaded || !hasUnsavedChanges}
        isLoading={isSaving}
        loadingText="Đang lưu..."
       >
        <Save className="h-4 w-4" />
-       Lưu settings
+       Lưu thay đổi
       </Button>
      </div>
     </div>
@@ -242,29 +273,63 @@ export default function SettingsPage() {
     </div>
    </section>
 
-   {/* BYOK DeepSeek Section */}
-   <ByokDeepSeekSection />
+   <ApiKeyManagerSection />
 
-   <section className="grid gap-6 xl:grid-cols-2">
-    <PromptPanel
-     title="Word Lookup Prompt"
-     description="Dùng cho tra từ/cụm từ ngắn. Phải giữ placeholder {WORD} để backend thay từ cần tra vào prompt."
-     placeholderToken={WORD_PLACEHOLDER}
-     value={wordLookupPrompt}
-     onChange={setWordLookupPrompt}
-     defaultValue={DEFAULT_WORD_LOOKUP_PROMPT}
-     disabled={isLoading || isSaving}
-    />
+   <section className="space-y-4 rounded-2xl border border-border-default bg-bg-card p-6 shadow-theme-sm">
+    <div className="flex flex-col gap-3 lg:flex-row lg:items-start lg:justify-between">
+     <div className="space-y-2">
+      <h2 className="text-xl font-bold text-text-primary">Lookup Prompts</h2>
+      <p className="max-w-3xl text-sm leading-6 text-text-secondary">
+       Chỉnh prompt xong bạn có thể lưu ngay tại đây, không cần kéo lên đầu
+       trang. Hai block này ảnh hưởng trực tiếp tới tra từ và phân tích câu.
+      </p>
+     </div>
 
-    <PromptPanel
-     title="Sentence Lookup Prompt"
-     description="Dùng cho câu/đoạn văn. Phải giữ placeholder {SENTENCE} để backend thay nội dung thật vào prompt."
-     placeholderToken={SENTENCE_PLACEHOLDER}
-     value={sentenceLookupPrompt}
-     onChange={setSentenceLookupPrompt}
-     defaultValue={DEFAULT_SENTENCE_LOOKUP_PROMPT}
-     disabled={isLoading || isSaving}
-    />
+     <div className="flex flex-wrap items-center gap-3">
+      <span
+       className={`rounded-full px-3 py-1 text-xs font-semibold ${hasUnsavedPromptChanges ? "bg-amber-100 text-amber-900" : "bg-success/10 text-success"}`}
+      >
+       {hasUnsavedPromptChanges
+        ? "Prompt có thay đổi chưa lưu"
+        : "Prompt đã đồng bộ"}
+      </span>
+      <Button
+       onClick={handleSave}
+       disabled={
+        isLoading || isSaving || !hasLoaded || !hasUnsavedPromptChanges
+       }
+       isLoading={isSaving}
+       loadingText="Đang lưu prompt..."
+      >
+       <Save className="h-4 w-4" />
+       Lưu prompt mới
+      </Button>
+     </div>
+    </div>
+
+    <div className="grid gap-6 xl:grid-cols-2">
+     <PromptPanel
+      title="Word Lookup Prompt"
+      description="Dùng cho tra từ/cụm từ ngắn. Phải giữ placeholder {WORD} để backend thay từ cần tra vào prompt."
+      placeholderToken={WORD_PLACEHOLDER}
+      value={wordLookupPrompt}
+      onChange={setWordLookupPrompt}
+      defaultValue={DEFAULT_WORD_LOOKUP_PROMPT}
+      disabled={isLoading || isSaving}
+      isDirty={hasUnsavedWordPrompt}
+     />
+
+     <PromptPanel
+      title="Sentence Lookup Prompt"
+      description="Dùng cho câu/đoạn văn. Phải giữ placeholder {SENTENCE} để backend thay nội dung thật vào prompt."
+      placeholderToken={SENTENCE_PLACEHOLDER}
+      value={sentenceLookupPrompt}
+      onChange={setSentenceLookupPrompt}
+      defaultValue={DEFAULT_SENTENCE_LOOKUP_PROMPT}
+      disabled={isLoading || isSaving}
+      isDirty={hasUnsavedSentencePrompt}
+     />
+    </div>
    </section>
   </div>
  );
@@ -278,6 +343,7 @@ function PromptPanel({
  onChange,
  defaultValue,
  disabled,
+ isDirty,
 }: {
  title: string;
  description: string;
@@ -286,25 +352,33 @@ function PromptPanel({
  onChange: (value: string) => void;
  defaultValue: string;
  disabled: boolean;
+ isDirty: boolean;
 }) {
  const hasPlaceholder = value.includes(placeholderToken);
 
  return (
-  <div className="rounded-2xl border border-border-default bg-bg-card p-6 shadow-theme-sm">
+  <div className="rounded-2xl border border-border-default bg-bg-primary p-6 shadow-theme-sm">
    <div className="mb-4 flex items-start justify-between gap-4">
     <div className="space-y-2">
      <h2 className="text-xl font-bold text-text-primary">{title}</h2>
      <p className="text-sm leading-6 text-text-secondary">{description}</p>
     </div>
 
-    <Button
-     size="sm"
-     variant="ghost"
-     onClick={() => onChange(defaultValue)}
-     disabled={disabled}
-    >
-     Reset block
-    </Button>
+    <div className="flex items-center gap-2">
+     <span
+      className={`rounded-full px-2.5 py-1 text-xs font-semibold ${isDirty ? "bg-amber-100 text-amber-900" : "bg-bg-subtle text-text-muted"}`}
+     >
+      {isDirty ? "Chưa lưu" : "Đã lưu"}
+     </span>
+     <Button
+      size="sm"
+      variant="ghost"
+      onClick={() => onChange(defaultValue)}
+      disabled={disabled}
+     >
+      Khôi phục block
+     </Button>
+    </div>
    </div>
 
    <div className="mb-3 flex items-center justify-between text-xs">

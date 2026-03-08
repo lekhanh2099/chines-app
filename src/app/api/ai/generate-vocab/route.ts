@@ -1,9 +1,7 @@
 import { createClient } from "@/lib/supabase/server";
-import {
- getDecryptedDeepSeekKey,
- getUserAiPromptSettings,
-} from "@/services/ai-prompt-settings.service";
+import { getUserAiPromptSettings } from "@/services/ai-prompt-settings.service";
 import { analyzeHanziDetailed } from "@/services/ai.service";
+import { getActiveUserApiKeyCredentials } from "@/services/user-api-keys.service";
 import {
  getPrimaryMeaning,
  getVocabByHanzi,
@@ -44,13 +42,11 @@ export async function POST(request: NextRequest) {
 
  // Call AI service
  const promptSettings = await getUserAiPromptSettings(supabase, user.id);
- const userDeepSeekKey = promptSettings.deepseekEnabled
-  ? await getDecryptedDeepSeekKey(supabase, user.id)
-  : null;
+ const userApiKeys = await getActiveUserApiKeyCredentials(supabase, user.id);
  const aiLookup = await analyzeHanziDetailed(hanzi, {
   geminiModel: promptSettings.geminiModel,
   promptTemplate: promptSettings.wordLookupPrompt,
-  userDeepSeekKey,
+  userApiKeys,
  });
 
  if (!aiLookup.data) {

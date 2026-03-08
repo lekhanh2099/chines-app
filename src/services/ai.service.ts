@@ -18,6 +18,7 @@ import {
  normalizeGeminiModel,
  type GeminiModelId,
 } from "@/lib/gemini-models";
+import type { UserApiKeyCredential } from "@/services/user-api-keys.service";
 import {
  aiAnalysisSchema,
  sentenceInsightSchema,
@@ -35,7 +36,7 @@ type StructuredRequestResult<T> = {
  error: string | null;
 };
 
-type ProviderName = "Gemini" | "DeepSeek";
+type ProviderName = "Gemini" | "DeepSeek" | "OpenAI";
 
 type ProviderOutageState = {
  unavailableUntil: number;
@@ -47,8 +48,7 @@ const providerOutages: Record<string, ProviderOutageState> = {};
 type AiRequestOptions = {
  promptTemplate?: string | null;
  geminiModel?: string | null;
- /** BYOK: user's own decrypted DeepSeek key */
- userDeepSeekKey?: string | null;
+ userApiKeys?: UserApiKeyCredential[];
 };
 
 /* ══════════════════════════════════════════
@@ -143,13 +143,19 @@ function getProviderCooldownMs(
 async function callDeepSeekRaw(
  systemPrompt: string,
  prompt: string,
- userApiKey?: string | null,
+ options?: {
+  apiKey?: string | null;
+  model?: string | null;
+  useOutageTracking?: boolean;
+ },
 ): Promise<RawProviderResult> {
- const isUserKey = !!userApiKey;
- const apiKey = userApiKey || process.env.DEEPSEEK_API_KEY;
+ const isUserKey = !!options?.apiKey;
+ const apiKey = options?.apiKey || process.env.DEEPSEEK_API_KEY;
+ const model = options?.model || "deepseek-chat";
+ const useOutageTracking = options?.useOutageTracking ?? !isUserKey;
 
  // Only check outage for system key; user key gets a fresh attempt
- if (!isUserKey) {
+ if (useOutageTracking) {
   const skippedReason = getProviderSkipReason("DeepSeek");
   if (skippedReason) {
    console.warn("[AI:DeepSeek] Skipped due to recent provider outage");
@@ -176,7 +182,7 @@ async function callDeepSeekRaw(
     Authorization: `Bearer ${apiKey}`,
    },
    body: JSON.stringify({
-    model: "deepseek-chat",
+    model,
     messages: [
      { role: "system", content: systemPrompt },
      { role: "user", content: prompt },
@@ -193,8 +199,7 @@ async function callDeepSeekRaw(
    console.error(`[AI:DeepSeek] HTTP ${res.status}:`, errBody);
 
    if (isUserKey) {
-    // BYOK: return user-specific error, do NOT mark system provider outage
-    const userError = formatByokError(res.status, errBody);
+    const userError = formatManagedKeyError("DeepSeek", res.status, errBody);
     return { content: null, error: userError };
    }
 
@@ -241,18 +246,23 @@ async function callGeminiRaw(
  systemPrompt: string,
  prompt: string,
  model: GeminiModelId,
+ apiKey?: string | null,
 ): Promise<RawProviderResult> {
- const skippedReason = getProviderSkipReason("Gemini", model);
- if (skippedReason) {
-  console.warn("[AI:Gemini] Skipped due to recent provider outage");
-  return {
-   content: null,
-   error: skippedReason,
-  };
+ const isUserKey = !!apiKey;
+
+ if (!isUserKey) {
+  const skippedReason = getProviderSkipReason("Gemini", model);
+  if (skippedReason) {
+   console.warn("[AI:Gemini] Skipped due to recent provider outage");
+   return {
+    content: null,
+    error: skippedReason,
+   };
+  }
  }
 
- const apiKey = process.env.GEMINI_API_KEY;
- if (!apiKey) {
+ const resolvedApiKey = apiKey || process.env.GEMINI_API_KEY;
+ if (!resolvedApiKey) {
   console.warn("[AI:Gemini] No API key configured");
   return {
    content: null,
@@ -262,7 +272,7 @@ async function callGeminiRaw(
 
  try {
   const res = await fetch(
-   `https://generativelanguage.googleapis.com/v1beta/${model}:generateContent?key=${apiKey}`,
+   `https://generativelanguage.googleapis.com/v1beta/${model}:generateContent?key=${resolvedApiKey}`,
    {
     method: "POST",
     headers: { "Content-Type": "application/json" },
@@ -285,6 +295,14 @@ async function callGeminiRaw(
   if (!res.ok) {
    const errBody = await res.text().catch(() => "");
    console.error(`[AI:Gemini] HTTP ${res.status}:`, errBody);
+
+   if (isUserKey) {
+    return {
+     content: null,
+     error: formatManagedKeyError("Gemini", res.status, errBody),
+    };
+   }
+
    const errorMessage = formatProviderError("Gemini", res.status, errBody);
    const cooldownMs = getProviderCooldownMs("Gemini", res.status, errBody);
    if (cooldownMs > 0) {
@@ -322,8 +340,67 @@ async function callGeminiRaw(
  }
 }
 
+async function callOpenAiRaw(
+ systemPrompt: string,
+ prompt: string,
+ apiKey: string,
+ model?: string | null,
+): Promise<RawProviderResult> {
+ const resolvedModel = model || "gpt-4.1-mini";
+
+ try {
+  const res = await fetch("https://api.openai.com/v1/chat/completions", {
+   method: "POST",
+   headers: {
+    "Content-Type": "application/json",
+    Authorization: `Bearer ${apiKey}`,
+   },
+   body: JSON.stringify({
+    model: resolvedModel,
+    messages: [
+     { role: "system", content: systemPrompt },
+     { role: "user", content: prompt },
+    ],
+    temperature: 0.3,
+    max_tokens: 2000,
+    response_format: { type: "json_object" },
+   }),
+   signal: AbortSignal.timeout(30_000),
+  });
+
+  if (!res.ok) {
+   const errBody = await res.text().catch(() => "");
+   console.error(`[AI:OpenAI] HTTP ${res.status}:`, errBody);
+   return {
+    content: null,
+    error: formatManagedKeyError("OpenAI", res.status, errBody),
+   };
+  }
+
+  const json = (await res.json()) as {
+   choices?: { message?: { content?: string } }[];
+  };
+  const content = json.choices?.[0]?.message?.content;
+
+  if (!content) {
+   return {
+    content: null,
+    error: "OpenAI trả về response rỗng.",
+   };
+  }
+
+  return { content, error: null };
+ } catch (err) {
+  console.error("[AI:OpenAI] Error:", err);
+  return {
+   content: null,
+   error: `OpenAI lỗi kết nối: ${err instanceof Error ? err.message : "unknown error"}.`,
+  };
+ }
+}
+
 function formatProviderError(
- provider: "Gemini" | "DeepSeek",
+ provider: "Gemini" | "DeepSeek" | "OpenAI",
  status: number,
  errorBody: string,
 ): string {
@@ -349,33 +426,75 @@ function formatProviderError(
   }
  }
 
+ if (provider === "OpenAI") {
+  if (
+   status === 429 ||
+   body.includes("insufficient_quota") ||
+   body.includes("rate limit")
+  ) {
+   return "OpenAI đã hết quota hoặc đang bị rate limit.";
+  }
+
+  if (status === 401 || status === 403) {
+   return "OpenAI API key không hợp lệ hoặc bị từ chối.";
+  }
+ }
+
  return `${provider} lỗi HTTP ${status}.`;
 }
 
-/**
- * BYOK-specific error messages — always shown to user, never triggers
- * system-level provider cooldown.
- */
-function formatByokError(status: number, errorBody: string): string {
+function formatManagedKeyError(
+ provider: "Gemini" | "DeepSeek" | "OpenAI",
+ status: number,
+ errorBody: string,
+): string {
  const body = errorBody.toLowerCase();
 
+ if (provider === "DeepSeek") {
+  if (status === 401 || status === 403) {
+   return "DeepSeek key không hợp lệ hoặc đã bị thu hồi.";
+  }
+
+  if (
+   status === 402 ||
+   body.includes("insufficient balance") ||
+   body.includes("insufficient_quota")
+  ) {
+   return "DeepSeek key đã hết tín dụng.";
+  }
+
+  if (status === 429) {
+   return "DeepSeek key đang bị rate limit.";
+  }
+
+  return `DeepSeek key trả về HTTP ${status}.`;
+ }
+
+ if (provider === "Gemini") {
+  if (status === 400 || status === 401 || status === 403) {
+   return "Gemini key không hợp lệ hoặc không có quyền truy cập model hiện tại.";
+  }
+
+  if (status === 429 || body.includes("quota")) {
+   return "Gemini key đã hết quota hoặc đang bị rate limit.";
+  }
+
+  return `Gemini key trả về HTTP ${status}.`;
+ }
+
  if (status === 401 || status === 403) {
-  return "Lỗi API cá nhân: Key không hợp lệ hoặc đã bị thu hồi. Vui lòng kiểm tra lại key trên platform.deepseek.com.";
+  return "OpenAI key không hợp lệ hoặc đã bị thu hồi.";
  }
 
  if (
-  status === 402 ||
-  body.includes("insufficient balance") ||
-  body.includes("insufficient_quota")
+  status === 429 ||
+  body.includes("insufficient_quota") ||
+  body.includes("rate limit")
  ) {
-  return "Lỗi API cá nhân: Tài khoản DeepSeek của bạn đã hết tín dụng. Vui lòng nạp thêm hoặc tắt chế độ Key cá nhân để dùng mặc định.";
+  return "OpenAI key đã hết quota hoặc đang bị rate limit.";
  }
 
- if (status === 429) {
-  return "Lỗi API cá nhân: Vượt quá giới hạn request. Vui lòng đợi một lát rồi thử lại.";
- }
-
- return `Lỗi API cá nhân: DeepSeek trả về HTTP ${status}. Vui lòng kiểm tra số dư hoặc tắt chế độ Key cá nhân để dùng mặc định.`;
+ return `OpenAI key trả về HTTP ${status}.`;
 }
 
 /* ══════════════════════════════════════════
@@ -502,31 +621,57 @@ async function requestStructuredJson<T>(
  geminiModel: GeminiModelId,
  schema: z.ZodType<T>,
  fallback: (parsed: unknown) => boolean,
- userDeepSeekKey?: string | null,
+ userApiKeys?: UserApiKeyCredential[],
 ): Promise<StructuredRequestResult<T>> {
  const providerErrors: string[] = [];
 
- // If user has BYOK key, try user's DeepSeek FIRST (they're paying for it)
- if (userDeepSeekKey) {
-  const byokSystemPrompt = `${BYOK_HIDDEN_SYSTEM_PROMPT}\n\n${systemPrompt}`;
-  const deepSeekRaw = await callDeepSeekRaw(
-   byokSystemPrompt,
-   prompt,
-   userDeepSeekKey,
-  );
-  if (deepSeekRaw.content) {
-   const deepSeekResult = parseAndValidate(
-    deepSeekRaw.content,
+ const managedSystemPrompt = `${BYOK_HIDDEN_SYSTEM_PROMPT}\n\n${systemPrompt}`;
+
+ for (const userApiKey of userApiKeys || []) {
+  let rawResult: RawProviderResult | null = null;
+
+  if (userApiKey.provider === "deepseek") {
+   rawResult = await callDeepSeekRaw(managedSystemPrompt, prompt, {
+    apiKey: userApiKey.apiKey,
+    model: userApiKey.defaultModel,
+    useOutageTracking: false,
+   });
+  } else if (userApiKey.provider === "gemini") {
+   rawResult = await callGeminiRaw(
+    managedSystemPrompt,
+    prompt,
+    geminiModel,
+    userApiKey.apiKey,
+   );
+  } else if (userApiKey.provider === "openai") {
+   rawResult = await callOpenAiRaw(
+    managedSystemPrompt,
+    prompt,
+    userApiKey.apiKey,
+    userApiKey.defaultModel,
+   );
+  }
+
+  if (!rawResult) {
+   continue;
+  }
+
+  if (rawResult.content) {
+   const managedKeyResult = parseAndValidate(
+    rawResult.content,
     schema,
     fallback,
    );
-   if (deepSeekResult) {
-    return { data: deepSeekResult, error: null };
+   if (managedKeyResult) {
+    return { data: managedKeyResult, error: null };
    }
-   providerErrors.push("DeepSeek (BYOK) trả JSON không đúng schema.");
-  } else if (deepSeekRaw.error) {
-   // BYOK errors are returned immediately — no fallback to system key
-   return { data: null, error: deepSeekRaw.error };
+
+   providerErrors.push(`${userApiKey.label} trả JSON không đúng schema.`);
+   continue;
+  }
+
+  if (rawResult.error) {
+   providerErrors.push(`${userApiKey.label}: ${rawResult.error}`);
   }
  }
 
@@ -541,24 +686,23 @@ async function requestStructuredJson<T>(
   providerErrors.push(geminiRaw.error);
  }
 
- // Only fallback to system DeepSeek if no BYOK key
- if (!userDeepSeekKey) {
-  console.log("[AI] Gemini failed, trying DeepSeek...");
+ console.log("[AI] Gemini failed, trying DeepSeek...");
 
-  const deepSeekRaw = await callDeepSeekRaw(systemPrompt, prompt);
-  if (deepSeekRaw.content) {
-   const deepSeekResult = parseAndValidate(
-    deepSeekRaw.content,
-    schema,
-    fallback,
-   );
-   if (deepSeekResult) {
-    return { data: deepSeekResult, error: null };
-   }
-   providerErrors.push("DeepSeek trả JSON không đúng schema.");
-  } else if (deepSeekRaw.error) {
-   providerErrors.push(deepSeekRaw.error);
+ const deepSeekRaw = await callDeepSeekRaw(systemPrompt, prompt, {
+  useOutageTracking: true,
+ });
+ if (deepSeekRaw.content) {
+  const deepSeekResult = parseAndValidate(
+   deepSeekRaw.content,
+   schema,
+   fallback,
+  );
+  if (deepSeekResult) {
+   return { data: deepSeekResult, error: null };
   }
+  providerErrors.push("DeepSeek trả JSON không đúng schema.");
+ } else if (deepSeekRaw.error) {
+  providerErrors.push(deepSeekRaw.error);
  }
 
  return {
@@ -595,7 +739,7 @@ export async function analyzeHanziDetailed(
   geminiModel,
   aiAnalysisSchema,
   (parsed) => typeof parsed === "object" && parsed !== null,
-  options?.userDeepSeekKey,
+  options?.userApiKeys,
  );
 
  if (result.data) {
@@ -638,7 +782,7 @@ export async function analyzeSentenceDetailed(
   geminiModel,
   sentenceInsightSchema,
   (parsed) => typeof parsed === "object" && parsed !== null,
-  options?.userDeepSeekKey,
+  options?.userApiKeys,
  );
 
  if (result.data) {

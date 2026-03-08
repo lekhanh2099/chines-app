@@ -2,14 +2,12 @@ import { NextRequest, NextResponse } from "next/server";
 import { pinyin as getPinyin } from "pinyin-pro";
 import { createClient } from "@/lib/supabase/server";
 import { extractChinese } from "@/lib/chinese-utils";
-import {
- getDecryptedDeepSeekKey,
- getUserAiPromptSettings,
-} from "@/services/ai-prompt-settings.service";
+import { getUserAiPromptSettings } from "@/services/ai-prompt-settings.service";
 import {
  analyzeHanziDetailed,
  analyzeSentenceDetailed,
 } from "@/services/ai.service";
+import { getActiveUserApiKeyCredentials } from "@/services/user-api-keys.service";
 import {
  getPrimaryMeaning,
  getNormalizedDefinitions,
@@ -95,12 +93,9 @@ export async function POST(request: NextRequest) {
  const promptSettings = user?.id
   ? await getUserAiPromptSettings(supabase, user.id)
   : null;
-
- // BYOK: get user's personal DeepSeek key if enabled
- const userDeepSeekKey =
-  user?.id && promptSettings?.deepseekEnabled
-   ? await getDecryptedDeepSeekKey(supabase, user.id)
-   : null;
+ const userApiKeys = user?.id
+  ? await getActiveUserApiKeyCredentials(supabase, user.id)
+  : [];
 
  const resolvedMode = mode || resolveMode(rawSelection);
  const normalizedChinese = extractChinese(rawSelection);
@@ -139,7 +134,7 @@ export async function POST(request: NextRequest) {
     geminiModel: geminiModel || promptSettings?.geminiModel,
     promptTemplate:
      wordPromptTemplate || promptSettings?.wordLookupPrompt || undefined,
-    userDeepSeekKey,
+    userApiKeys,
    });
 
    if (!aiLookup.data) {
@@ -225,7 +220,7 @@ export async function POST(request: NextRequest) {
    geminiModel: geminiModel || promptSettings?.geminiModel,
    promptTemplate:
     sentencePromptTemplate || promptSettings?.sentenceLookupPrompt || undefined,
-   userDeepSeekKey,
+   userApiKeys,
   });
   if (!sentenceLookup.data) {
    return NextResponse.json(

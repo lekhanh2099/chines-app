@@ -64,6 +64,21 @@ export type DbUserAiPromptSettings = {
  updated_at: string;
 };
 
+export type DbUserApiKey = {
+ id: string;
+ user_id: string;
+ provider: "deepseek" | "gemini" | "openai";
+ label: string;
+ masked_key: string;
+ encrypted_key: string;
+ is_active: boolean;
+ priority: number;
+ default_model: string | null;
+ last_validated_at: string | null;
+ created_at: string;
+ updated_at: string;
+};
+
 export type DbNote = {
  id: string;
  user_id: string;

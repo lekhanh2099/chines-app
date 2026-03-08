@@ -16,16 +16,12 @@ export type ClientAiPromptSettings = {
  wordLookupPrompt: string;
  sentenceLookupPrompt: string;
  geminiModel: GeminiModelId;
- deepseekEnabled: boolean;
- deepseekApiKeySet: boolean;
 };
 
 export const defaultClientAiPromptSettings: ClientAiPromptSettings = {
  wordLookupPrompt: DEFAULT_WORD_LOOKUP_PROMPT,
  sentenceLookupPrompt: DEFAULT_SENTENCE_LOOKUP_PROMPT,
  geminiModel: DEFAULT_GEMINI_MODEL,
- deepseekEnabled: false,
- deepseekApiKeySet: false,
 };
 
 function normalizeSettings(
@@ -37,8 +33,6 @@ function normalizeSettings(
    settings?.sentenceLookupPrompt,
   ),
   geminiModel: normalizeGeminiModel(settings?.geminiModel),
-  deepseekEnabled: settings?.deepseekEnabled ?? false,
-  deepseekApiKeySet: settings?.deepseekApiKeySet ?? false,
  };
 }
 
