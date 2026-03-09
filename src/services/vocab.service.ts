@@ -13,8 +13,11 @@ import type {
  DbVocabulary,
  AiAnalysis,
  AiDefinition,
+ AiDefinitionExample,
+ AiDefinitionMeaning,
  AiRadical,
  AiRelatedCompound,
+ AiWordRelation,
  DictionaryCoreData,
  DictionaryCoreDefinition,
  VocabData,
@@ -98,16 +101,10 @@ export function normalizeDictionaryHeadword(text: string): string {
 function normalizeRelatedCompounds(
  source: AiAnalysis,
 ): AiRelatedCompound[] | undefined {
- const normalizedCompounds = source.related_compounds
-  ?.map((compound) => ({
-   word: compound.word?.trim(),
-   pinyin: compound.pinyin?.trim(),
-   meaning: compound.meaning?.trim(),
-  }))
-  .filter((compound) => compound.word || compound.pinyin || compound.meaning);
+ const normalizedCompounds = normalizeWordRelations(source.related_compounds);
 
- if (normalizedCompounds?.length) {
-  return normalizedCompounds;
+ if (Array.isArray(source.related_compounds)) {
+  return normalizedCompounds || [];
  }
 
  const legacyWords = Array.from(
@@ -125,20 +122,89 @@ function normalizeRelatedCompounds(
  return legacyWords.map((word) => ({ word }));
 }
 
+function normalizeDefinitionExamples(
+ examples?: AiDefinitionExample[],
+): AiDefinitionExample[] | undefined {
+ return examples
+  ?.map((example) => ({
+   ...example,
+   py: example.py || example.pinyin,
+   pinyin: example.pinyin || example.py,
+  }))
+  .filter(
+   (example) => example.cn || example.vi || example.py || example.pinyin,
+  );
+}
+
+function normalizeDefinitionMeanings(
+ meanings?: AiDefinitionMeaning[],
+): AiDefinitionMeaning[] | undefined {
+ return meanings
+  ?.map((item) => ({
+   meaning: item.meaning?.trim(),
+   examples: normalizeDefinitionExamples(item.examples),
+  }))
+  .filter((item) => item.meaning || item.examples?.length);
+}
+
+function normalizeWordRelations(
+ relations?: AiWordRelation[] | AiRelatedCompound[],
+): AiWordRelation[] | undefined {
+ return relations
+  ?.map((relation) => ({
+   word: relation.word?.trim(),
+   pinyin: relation.pinyin?.trim(),
+   meaning: relation.meaning?.trim(),
+  }))
+  .filter((relation) => relation.word || relation.pinyin || relation.meaning);
+}
+
 function normalizeAnalysis(
  analysis?: AiAnalysis | null,
  sinoVietnamese?: string | null,
 ): AiAnalysis {
  const source = analysis || {};
+ const normalizedEtymology =
+  typeof source.etymology === "string"
+   ? {
+      type: "Không xác định",
+      origin: source.etymology.trim(),
+      mnemonic: source.mnemonic_story?.trim() || "",
+      explanation: source.etymology.trim(),
+     }
+   : source.etymology
+     ? {
+        type: source.etymology.type?.trim() || "Không xác định",
+        origin:
+         source.etymology.origin?.trim() ||
+         source.etymology.explanation?.trim() ||
+         "",
+        mnemonic:
+         source.etymology.mnemonic?.trim() ||
+         source.mnemonic_story?.trim() ||
+         "",
+        explanation:
+         source.etymology.explanation?.trim() ||
+         source.etymology.origin?.trim() ||
+         "",
+       }
+     : undefined;
  const normalizedDefinitions = source.definitions?.map((definition) => ({
   ...definition,
-  text: definition.text || definition.meaning,
-  meaning: definition.meaning || definition.text,
-  examples: definition.examples?.map((example) => ({
-   ...example,
-   py: example.py || example.pinyin,
-   pinyin: example.pinyin || example.py,
-  })),
+  meanings: normalizeDefinitionMeanings(definition.meanings),
+  text:
+   definition.text ||
+   definition.meaning ||
+   definition.meanings?.find((item) => item.meaning)?.meaning,
+  meaning:
+   definition.meaning ||
+   definition.text ||
+   definition.meanings?.find((item) => item.meaning)?.meaning,
+  examples:
+   normalizeDefinitionExamples(definition.examples) ||
+   normalizeDefinitionMeanings(definition.meanings)?.find(
+    (item) => item.examples?.length,
+   )?.examples,
  }));
 
  const normalizedGrammar = source.grammar_breakdown?.map((point) => ({
@@ -150,6 +216,8 @@ function normalizeAnalysis(
  const resolvedSinoVietnamese =
   sinoVietnamese || source.sino_vietnamese || source.han_viet || undefined;
  const normalizedRelatedCompounds = normalizeRelatedCompounds(source);
+ const normalizedSynonyms = normalizeWordRelations(source.synonyms);
+ const normalizedAntonyms = normalizeWordRelations(source.antonyms);
 
  return {
   ...source,
@@ -160,10 +228,26 @@ function normalizeAnalysis(
      }
    : {}),
   ...(normalizedDefinitions ? { definitions: normalizedDefinitions } : {}),
+  ...(normalizedEtymology ? { etymology: normalizedEtymology } : {}),
   ...(normalizedGrammar ? { grammar_breakdown: normalizedGrammar } : {}),
   ...(normalizedRelatedCompounds
    ? { related_compounds: normalizedRelatedCompounds }
    : {}),
+  ...(normalizedSynonyms ? { synonyms: normalizedSynonyms } : {}),
+  ...(normalizedAntonyms ? { antonyms: normalizedAntonyms } : {}),
+  ...(normalizedEtymology?.mnemonic || source.mnemonic_story
+   ? {
+      mnemonic_story:
+       source.mnemonic_story || normalizedEtymology?.mnemonic || "",
+     }
+   : {}),
+  ...(typeof source.hsk_level === "string"
+   ? { hsk_level: source.hsk_level.trim() }
+   : {}),
+  ...(typeof source.tocfl_level === "string"
+   ? { tocfl_level: source.tocfl_level.trim() }
+   : {}),
+  ...(typeof source.notes === "string" ? { notes: source.notes.trim() } : {}),
   ...(source.common_mistakes || source.confusion || source.confusion_warning
    ? {
       common_mistakes:
@@ -474,17 +558,28 @@ export function getBasicVocabData(vocab: VocabData): VocabData {
 }
 
 function hasStructuredEtymology(analysis?: AiAnalysis | null): boolean {
- const etymology = analysis?.etymology;
+ const normalized = normalizeAnalysis(analysis);
+ const etymology = normalized.etymology;
 
  return (
   typeof etymology === "object" &&
   etymology !== null &&
-  (!!etymology.type || !!etymology.explanation)
+  (!!etymology.type || !!etymology.origin || !!etymology.explanation)
  );
 }
 
 function hasStructuredRelatedCompounds(analysis?: AiAnalysis | null): boolean {
  return Array.isArray(analysis?.related_compounds);
+}
+
+function hasExtendedLexicalFields(analysis?: AiAnalysis | null): boolean {
+ return (
+  Array.isArray(analysis?.synonyms) &&
+  Array.isArray(analysis?.antonyms) &&
+  typeof analysis?.notes === "string" &&
+  typeof analysis?.hsk_level === "string" &&
+  typeof analysis?.tocfl_level === "string"
+ );
 }
 
 export function hasInspectorDeepDiveData(
@@ -500,6 +595,10 @@ export function hasInspectorDeepDiveData(
   return false;
  }
 
+ if (!hasExtendedLexicalFields(analysis)) {
+  return false;
+ }
+
  return !!(
   normalized.components?.length ||
   normalized.etymology ||
@@ -508,7 +607,12 @@ export function hasInspectorDeepDiveData(
   normalized.examples?.length ||
   normalized.collocations?.length ||
   normalized.related_compounds?.length ||
+  normalized.synonyms?.length ||
+  normalized.antonyms?.length ||
   normalized.related_words?.length ||
+  normalized.notes ||
+  normalized.hsk_level ||
+  normalized.tocfl_level ||
   normalized.vn_trap ||
   normalized.common_mistakes ||
   normalized.confusion ||
@@ -571,8 +675,13 @@ export function hasDetailedVocabAnalysis(
   normalized.etymology ||
   normalized.examples?.length ||
   normalized.related_compounds?.length ||
+  normalized.synonyms?.length ||
+  normalized.antonyms?.length ||
   normalized.related_words?.length ||
   normalized.usage_logic?.length ||
+  normalized.notes ||
+  normalized.hsk_level ||
+  normalized.tocfl_level ||
   normalized.common_mistakes ||
   normalized.sentence_translation ||
   normalized.grammar_breakdown?.length
@@ -606,11 +715,29 @@ export function getNormalizedDefinitions(
 
  if (normalized.definitions?.length) {
   return normalized.definitions
-   .map((item) => ({
-    ...item,
-    text: item.text || item.meaning,
-    meaning: item.meaning || item.text,
-   }))
+   .flatMap((item) => {
+    const normalizedMeanings = normalizeDefinitionMeanings(item.meanings);
+
+    if (normalizedMeanings?.length) {
+     return normalizedMeanings.map((meaning) => ({
+      ...item,
+      text: meaning.meaning || item.text || item.meaning,
+      meaning: meaning.meaning || item.meaning || item.text,
+      examples: meaning.examples || item.examples,
+      meanings: normalizedMeanings,
+     }));
+    }
+
+    return [
+     {
+      ...item,
+      text: item.text || item.meaning,
+      meaning: item.meaning || item.text,
+      examples: normalizeDefinitionExamples(item.examples),
+      meanings: normalizedMeanings,
+     },
+    ];
+   })
    .filter((item) => item.text || item.meaning || item.pos);
  }
 
@@ -649,6 +776,30 @@ export function getNormalizedRelatedCompounds(
  return (
   normalized.related_compounds?.filter(
    (compound) => compound.word || compound.pinyin || compound.meaning,
+  ) || []
+ );
+}
+
+export function getNormalizedSynonyms(
+ analysis?: AiAnalysis | null,
+): AiWordRelation[] {
+ const normalized = normalizeAnalysis(analysis);
+
+ return (
+  normalized.synonyms?.filter(
+   (relation) => relation.word || relation.pinyin || relation.meaning,
+  ) || []
+ );
+}
+
+export function getNormalizedAntonyms(
+ analysis?: AiAnalysis | null,
+): AiWordRelation[] {
+ const normalized = normalizeAnalysis(analysis);
+
+ return (
+  normalized.antonyms?.filter(
+   (relation) => relation.word || relation.pinyin || relation.meaning,
   ) || []
  );
 }

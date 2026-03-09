@@ -169,12 +169,18 @@ export type AiDefinitionExample = {
  vi?: string;
 };
 
+export type AiDefinitionMeaning = {
+ meaning?: string;
+ examples?: AiDefinitionExample[];
+};
+
 export type AiDefinition = {
  pos?: string;
  text?: string;
  meaning?: string;
  color?: string;
  examples?: AiDefinitionExample[];
+ meanings?: AiDefinitionMeaning[];
 };
 
 export type DictionaryCoreDefinition = {
@@ -202,14 +208,18 @@ export type AiMeaning = {
 
 export type AiEtymology = {
  type?: string;
+ origin?: string;
+ mnemonic?: string;
  explanation?: string;
 };
 
-export type AiRelatedCompound = {
+export type AiWordRelation = {
  word?: string;
  pinyin?: string;
  meaning?: string;
 };
+
+export type AiRelatedCompound = AiWordRelation;
 
 export type AiComponent = {
  part?: string;
@@ -231,12 +241,17 @@ export type AiAnalysis = {
  definitions?: AiDefinition[];
  etymology?: string | AiEtymology;
  related_compounds?: AiRelatedCompound[];
+ synonyms?: AiWordRelation[];
+ antonyms?: AiWordRelation[];
  mnemonic_story?: string;
  meanings?: AiMeaning[];
  examples?: { zh: string; pinyin: string; vi: string }[];
  usage_logic?: string[];
  collocations?: string[];
  related_words?: string[];
+ hsk_level?: string;
+ tocfl_level?: string;
+ notes?: string;
  vn_trap?: string | null;
  common_mistakes?: string | null;
  confusion?: string | null;
@@ -274,12 +289,18 @@ export const aiDefinitionExampleSchema = z.object({
  vi: z.string().optional(),
 });
 
+export const aiDefinitionMeaningSchema = z.object({
+ meaning: z.string().optional(),
+ examples: z.array(aiDefinitionExampleSchema).optional(),
+});
+
 export const aiDefinitionSchema = z.object({
  pos: z.string().optional(),
  text: z.string().optional(),
  meaning: z.string().optional(),
  color: z.string().optional(),
  examples: z.array(aiDefinitionExampleSchema).optional(),
+ meanings: z.array(aiDefinitionMeaningSchema).optional(),
 });
 
 export const aiGrammarPointSchema = z.object({
@@ -302,14 +323,18 @@ export const aiMeaningSchema = z.object({
 
 export const aiEtymologySchema = z.object({
  type: z.string().optional(),
+ origin: z.string().optional(),
+ mnemonic: z.string().optional(),
  explanation: z.string().optional(),
 });
 
-export const aiRelatedCompoundSchema = z.object({
+export const aiWordRelationSchema = z.object({
  word: z.string().optional(),
  pinyin: z.string().optional(),
  meaning: z.string().optional(),
 });
+
+export const aiRelatedCompoundSchema = aiWordRelationSchema;
 
 export const aiComponentSchema = z.object({
  part: z.string().optional(),
@@ -331,6 +356,8 @@ export const aiAnalysisSchema = z.object({
  definitions: z.array(aiDefinitionSchema).optional(),
  etymology: z.union([z.string(), aiEtymologySchema]).optional(),
  related_compounds: z.array(aiRelatedCompoundSchema).optional(),
+ synonyms: z.array(aiWordRelationSchema).optional(),
+ antonyms: z.array(aiWordRelationSchema).optional(),
  mnemonic_story: z.string().optional(),
  meanings: z.array(aiMeaningSchema).optional(),
  examples: z
@@ -345,6 +372,9 @@ export const aiAnalysisSchema = z.object({
  usage_logic: z.array(z.string()).optional(),
  collocations: z.array(z.string()).optional(),
  related_words: z.array(z.string()).optional(),
+ hsk_level: z.string().optional(),
+ tocfl_level: z.string().optional(),
+ notes: z.string().optional(),
  vn_trap: z.string().optional().nullable(),
  common_mistakes: z.string().optional().nullable(),
  confusion: z.string().optional().nullable(),

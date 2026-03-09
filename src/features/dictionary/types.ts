@@ -1,6 +1,7 @@
 import type {
  AiAnalysis,
  AiRelatedCompound,
+ AiWordRelation,
  PersonalNoteMode,
  VocabData,
 } from "@/types/database";
@@ -63,6 +64,8 @@ export type DictionaryWordReadyViewModel = {
  meaningItems: MeaningItem[];
  extraExamples: ExampleItem[];
  relatedCompounds: AiRelatedCompound[];
+ synonyms: AiWordRelation[];
+ antonyms: AiWordRelation[];
  hasLearningInsights: boolean;
  canRenderDashboard: boolean;
  isAiLoading: boolean;

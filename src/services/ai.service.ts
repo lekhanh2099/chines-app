@@ -24,7 +24,9 @@ import type { UserApiKeyCredential } from "@/services/user-api-keys.service";
 import {
  aiAnalysisSchema,
  sentenceInsightSchema,
+ type AiDefinitionExample,
  type AiVocabResponse,
+ type AiWordRelation,
  type SentenceInsightResponse,
 } from "@/types/database";
 
@@ -194,10 +196,10 @@ async function callDeepSeekRaw(
      { role: "user", content: prompt },
     ],
     temperature: 0.3,
-    max_tokens: 2000,
+    max_tokens: 4096,
     response_format: { type: "json_object" },
    }),
-   signal: createRequestSignal(30_000, options?.abortSignal),
+   signal: createRequestSignal(60_000, options?.abortSignal),
   });
 
   if (!res.ok) {
@@ -237,6 +239,16 @@ async function callDeepSeekRaw(
   };
  } catch (err) {
   console.error("[AI:DeepSeek] Error:", err);
+
+  // Timeout → short cooldown so fallback chain doesn't waste time retrying
+  if (
+   useOutageTracking &&
+   err instanceof Error &&
+   err.message?.includes("timeout")
+  ) {
+   markProviderUnavailable("DeepSeek", 30_000, "DeepSeek timeout");
+  }
+
   return {
    content: null,
    error: `DeepSeek lỗi kết nối: ${err instanceof Error ? err.message : "unknown error"}.`,
@@ -293,11 +305,11 @@ async function callGeminiRaw(
      ],
      generationConfig: {
       temperature: 0.3,
-      maxOutputTokens: 2000,
+      maxOutputTokens: 4096,
       responseMimeType: "application/json",
      },
     }),
-    signal: createRequestSignal(30_000, abortSignal),
+    signal: createRequestSignal(60_000, abortSignal),
    },
   );
 
@@ -374,10 +386,10 @@ async function callOpenAiRaw(
      { role: "user", content: prompt },
     ],
     temperature: 0.3,
-    max_tokens: 2000,
+    max_tokens: 4096,
     response_format: { type: "json_object" },
    }),
-   signal: createRequestSignal(30_000, abortSignal),
+   signal: createRequestSignal(60_000, abortSignal),
   });
 
   if (!res.ok) {
@@ -552,23 +564,52 @@ function normalizeWordAnalysis(
  hanzi: string,
  parsed: AiVocabResponse,
 ): AiVocabResponse {
+ const normalizeExamples = (examples?: AiDefinitionExample[]) =>
+  examples
+   ?.map((example) => ({
+    ...example,
+    py: example.py || example.pinyin,
+    pinyin: example.pinyin || example.py,
+   }))
+   .filter(
+    (example) => example.cn || example.vi || example.py || example.pinyin,
+   );
+
+ const normalizeRelations = (relations?: AiWordRelation[]) =>
+  relations
+   ?.map((relation) => ({
+    word: relation.word?.trim(),
+    pinyin: relation.pinyin?.trim(),
+    meaning: relation.meaning?.trim(),
+   }))
+   .filter((relation) => relation.word || relation.pinyin || relation.meaning);
+
  const etymology =
   typeof parsed.etymology === "string"
    ? {
       type: "Không xác định",
+      origin: parsed.etymology.trim(),
+      mnemonic: parsed.mnemonic_story?.trim() || "",
       explanation: parsed.etymology.trim(),
      }
    : {
       type: parsed.etymology?.type?.trim() || "Không xác định",
-      explanation: parsed.etymology?.explanation?.trim() || "",
+      origin:
+       parsed.etymology?.origin?.trim() ||
+       parsed.etymology?.explanation?.trim() ||
+       "",
+      mnemonic:
+       parsed.etymology?.mnemonic?.trim() ||
+       parsed.mnemonic_story?.trim() ||
+       "",
+      explanation:
+       parsed.etymology?.explanation?.trim() ||
+       parsed.etymology?.origin?.trim() ||
+       "",
      };
- const relatedCompounds = parsed.related_compounds
-  ?.map((compound) => ({
-   word: compound.word?.trim(),
-   pinyin: compound.pinyin?.trim(),
-   meaning: compound.meaning?.trim(),
-  }))
-  .filter((compound) => compound.word || compound.pinyin || compound.meaning);
+ const relatedCompounds = normalizeRelations(parsed.related_compounds);
+ const synonyms = normalizeRelations(parsed.synonyms);
+ const antonyms = normalizeRelations(parsed.antonyms);
  const legacyRelatedCompounds = Array.from(
   new Set(
    [...(parsed.related_words || []), ...(parsed.collocations || [])]
@@ -578,13 +619,26 @@ function normalizeWordAnalysis(
  ).map((word) => ({ word }));
  const definitions = parsed.definitions?.map((definition) => ({
   ...definition,
+  meanings: definition.meanings
+   ?.map((item) => ({
+    meaning: item.meaning?.trim(),
+    examples: normalizeExamples(item.examples),
+   }))
+   .filter((item) => item.meaning || item.examples?.length),
   text: definition.text || definition.meaning,
-  meaning: definition.meaning || definition.text,
-  examples: definition.examples?.map((example) => ({
-   ...example,
-   py: example.py || example.pinyin,
-   pinyin: example.pinyin || example.py,
-  })),
+  meaning:
+   definition.meaning ||
+   definition.text ||
+   definition.meanings?.find((item) => item.meaning)?.meaning,
+  examples:
+   normalizeExamples(definition.examples) ||
+   definition.meanings
+    ?.find((item) => item.examples?.length)
+    ?.examples?.map((example) => ({
+     ...example,
+     py: example.py || example.pinyin,
+     pinyin: example.pinyin || example.py,
+    })),
  }));
 
  const flattenedExamples = [
@@ -626,6 +680,12 @@ function normalizeWordAnalysis(
   related_compounds: relatedCompounds?.length
    ? relatedCompounds
    : legacyRelatedCompounds,
+  synonyms: synonyms || [],
+  antonyms: antonyms || [],
+  hsk_level: parsed.hsk_level?.trim() || "",
+  tocfl_level: parsed.tocfl_level?.trim() || "",
+  notes: parsed.notes?.trim() || "",
+  mnemonic_story: parsed.mnemonic_story?.trim() || etymology.mnemonic || "",
   ...(flattenedExamples.length ? { examples: flattenedExamples } : {}),
   ...(parsed.common_mistakes || parsed.confusion || parsed.confusion_warning
    ? {

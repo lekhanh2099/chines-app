@@ -30,10 +30,20 @@ function DictionaryCharacterSidebar({
   useVocabDetail(selectedCharacter);
 
  useEffect(() => {
+  // Skip if same as parent word — useDictionaryPageViewModel already handles it
+  if (selectedCharacter === parentText) return;
   if (!isLoading && !isAiLoading && vocabData && !hasDeepAiData()) {
    triggerAi();
   }
- }, [hasDeepAiData, isAiLoading, isLoading, triggerAi, vocabData]);
+ }, [
+  hasDeepAiData,
+  isAiLoading,
+  isLoading,
+  triggerAi,
+  vocabData,
+  selectedCharacter,
+  parentText,
+ ]);
 
  if (isLoading || !vocabData) {
   return (
@@ -52,6 +62,7 @@ function DictionaryCharacterSidebar({
   typeof ai?.etymology === "object" ? ai.etymology.type : undefined;
  const etymologyText =
   typeof ai?.etymology === "object" ? ai.etymology.explanation : ai?.etymology;
+ const mnemonic_story = ai?.mnemonic_story;
 
  return (
   <div className="flex flex-col gap-4">
@@ -96,49 +107,32 @@ function DictionaryCharacterSidebar({
      radicals={radicals}
      components={ai?.components || []}
     />
-    <SectionWrapper>
-     <SectionHeader
-      title="Nguồn gốc"
-      description="Giải thích lịch sử hoặc logic hình thành của chữ."
-     />
-     <Card variant="subtle" padding="sm">
+    <Card variant="subtle" padding="sm">
+     <div className="flex flex-col gap-2">
+      {etymologyType && (
+       <Badge variant="purple" size="sm" className="w-fit">
+        {etymologyType}
+       </Badge>
+      )}
+      <p className="text-sm leading-relaxed text-text-secondary">
+       {etymologyText || "Chưa có phân tích nguồn gốc."}
+      </p>
+     </div>
+    </Card>
+    {mnemonic_story && (
+     <Card
+      variant="subtle"
+      padding="sm"
+      className="border-warning/30 bg-warning-subtle"
+     >
       <div className="flex flex-col gap-2">
-       {etymologyType && (
-        <Badge variant="purple" size="sm">
-         {etymologyType}
-        </Badge>
-       )}
-       <p className="text-sm leading-relaxed text-text-secondary">
-        {etymologyText || "Chưa có phân tích nguồn gốc."}
-       </p>
-      </div>
-     </Card>
-    </SectionWrapper>
-
-    {(etymologyType || etymologyText) && (
-     <Card variant="subtle" padding="sm">
-      <div className="flex flex-col gap-2">
-       <SectionHeader title="Chiết tự" />
-       {etymologyType && (
-        <Badge variant="purple" size="sm">
-         {etymologyType}
-        </Badge>
-       )}
-       <p className="text-sm leading-relaxed text-text-secondary">
-        {etymologyText}
+       <SectionHeader title="Mẹo nhớ/Chiết tự" />
+       <p className="text-sm leading-relaxed text-warning-text">
+        {mnemonic_story}
        </p>
       </div>
      </Card>
     )}
-
-    {/* <div className="grid grid-cols-2 gap-2">
-     <MetricCard label="Pinyin" value={vocabData.pinyin || "Chưa rõ"} wide />
-     <MetricCard
-      label="Số nét"
-      value={ai?.stroke_count ? String(ai.stroke_count) : "?"}
-     />
-     <MetricCard label="Thanh điệu" value={getToneLabel(vocabData.pinyin)} />
-    </div> */}
    </SectionWrapper>
   </div>
  );

@@ -6,9 +6,11 @@ import { toast } from "sonner";
 import { useSmartSelectionInsights } from "@/hooks/useSmartSelectionInsights";
 import { extractChinese } from "@/lib/chinese-utils";
 import {
+ getNormalizedAntonyms,
  getNormalizedDefinitions,
  getNormalizedRelatedCompounds,
  getNormalizedRadicals,
+ getNormalizedSynonyms,
 } from "@/services/vocab.service";
 import { useVocabDetailDrawerStore } from "@/stores/vocab-detail-drawer-store";
 import type { AiAnalysis, SmartSelectionMode } from "@/types/database";
@@ -237,6 +239,8 @@ function WordDetailPanel({
     vi: example.vi || "",
    }));
  const relatedCompounds = getNormalizedRelatedCompounds(ai);
+ const synonyms = getNormalizedSynonyms(ai);
+ const antonyms = getNormalizedAntonyms(ai);
  const characters = getUniqueCharacters(smartData.entry.hanzi);
  const [activeCharacter, setActiveCharacter] = useState(characters[0] || "");
  const visualCharacter =
@@ -317,6 +321,7 @@ function WordDetailPanel({
 
     <div className="grid gap-4 lg:grid-cols-[180px_minmax(0,1fr)]">
      <CharacterWriterCard character={visualCharacter} />
+
      <div className="grid gap-3 md:grid-cols-2">
       <div className="rounded-2xl border border-border-default bg-bg-primary p-3">
        <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-text-muted mb-2">
@@ -358,6 +363,16 @@ function WordDetailPanel({
      </div>
     </div>
    </section>
+   {ai?.mnemonic_story && (
+    <div className="mt-3 rounded-2xl border border-amber-200 bg-amber-50/70 p-3">
+     <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-amber-700 mb-1.5">
+      AI gợi ý mẹo nhớ
+     </p>
+     <p className="text-sm leading-relaxed text-amber-900">
+      {ai.mnemonic_story}
+     </p>
+    </div>
+   )}
 
    <section className="rounded-3xl border border-border-default bg-bg-card p-4">
     <p className="mb-3 text-[10px] font-bold uppercase tracking-[0.18em] text-text-muted">
@@ -429,43 +444,26 @@ function WordDetailPanel({
       <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-text-muted">
        Từ ghép liên quan
       </p>
-      {relatedCompounds.length > 0 ? (
-       <div className="space-y-2">
-        {relatedCompounds.map((compound, index) => {
-         const word = compound.word?.trim();
-         if (!word) return null;
-
-         return (
-          <button
-           key={`${word}-${index}`}
-           type="button"
-           onClick={() => onDrillCharacter(word)}
-           className="flex w-full items-start justify-between gap-3 rounded-2xl border border-accent/20 bg-accent/8 px-3 py-2.5 text-left transition-colors hover:bg-accent/15"
-          >
-           <div className="min-w-0">
-            <div className="flex flex-wrap items-center gap-2">
-             <span className="text-base font-bold text-text-primary">
-              {word}
-             </span>
-             {compound.pinyin && (
-              <span className="text-xs font-semibold text-accent">
-               {compound.pinyin}
-              </span>
-             )}
-            </div>
-            <p className="mt-1 text-sm leading-relaxed text-text-secondary">
-             {compound.meaning || "Chưa có nghĩa."}
-            </p>
-           </div>
-          </button>
-         );
-        })}
-       </div>
-      ) : (
-       <div className="rounded-2xl border border-border-default bg-bg-primary p-3 text-sm text-text-muted">
-        Chưa có từ ghép liên quan.
-       </div>
-      )}
+      <div className="space-y-3">
+       <RelationList
+        title="Từ ghép"
+        items={relatedCompounds}
+        emptyText="Chưa có từ ghép liên quan."
+        onSelect={onDrillCharacter}
+       />
+       <RelationList
+        title="Đồng nghĩa"
+        items={synonyms}
+        emptyText="Chưa có từ đồng nghĩa cơ bản."
+        onSelect={onDrillCharacter}
+       />
+       <RelationList
+        title="Trái nghĩa"
+        items={antonyms}
+        emptyText="Chưa có từ trái nghĩa cơ bản."
+        onSelect={onDrillCharacter}
+       />
+      </div>
      </div>
     </div>
    </section>
@@ -495,16 +493,6 @@ function WordDetailPanel({
      placeholder="Tự ghi cách nhớ, ngữ cảnh dùng, điểm dễ nhầm..."
      className="min-h-32 w-full resize-y rounded-2xl border border-border-default bg-bg-primary px-4 py-3 text-sm text-text-primary outline-none placeholder:text-text-muted focus:ring-2 focus:ring-ring"
     />
-    {ai?.mnemonic_story && (
-     <div className="mt-3 rounded-2xl border border-amber-200 bg-amber-50/70 p-3">
-      <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-amber-700 mb-1.5">
-       AI gợi ý mẹo nhớ
-      </p>
-      <p className="text-sm leading-relaxed text-amber-900">
-       {ai.mnemonic_story}
-      </p>
-     </div>
-    )}
    </section>
   </div>
  );
@@ -631,6 +619,61 @@ function ExampleCard({
    )}
    {example.vi && (
     <p className="text-xs text-text-secondary italic">{example.vi}</p>
+   )}
+  </div>
+ );
+}
+
+function RelationList({
+ title,
+ items,
+ emptyText,
+ onSelect,
+}: {
+ title: string;
+ items: Array<{ word?: string; pinyin?: string; meaning?: string }>;
+ emptyText: string;
+ onSelect: (word: string) => void;
+}) {
+ return (
+  <div className="space-y-2">
+   <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-text-muted">
+    {title}
+   </p>
+   {items.length > 0 ? (
+    <div className="space-y-2">
+     {items.map((item, index) => {
+      const word = item.word?.trim();
+      if (!word) return null;
+
+      return (
+       <button
+        key={`${title}-${word}-${index}`}
+        type="button"
+        onClick={() => onSelect(word)}
+        className="flex w-full items-start justify-between gap-3 rounded-2xl border border-accent/20 bg-accent/8 px-3 py-2.5 text-left transition-colors hover:bg-accent/15"
+       >
+        <div className="min-w-0">
+         <div className="flex flex-wrap items-center gap-2">
+          <span className="text-base font-bold text-text-primary">{word}</span>
+          {item.pinyin && (
+           <span className="text-xs font-semibold text-accent">
+            {item.pinyin}
+           </span>
+          )}
+         </div>
+         <p className="mt-1 text-sm leading-relaxed text-text-secondary">
+          {item.meaning || "Chưa có nghĩa."}
+         </p>
+        </div>
+       </button>
+      );
+     })}
+    </div>
+   ) : (
+    <div className="rounded-2xl border border-border-default bg-bg-primary p-3 text-sm text-text-muted">
+     {emptyText}
+    </div>
    )}
   </div>
  );

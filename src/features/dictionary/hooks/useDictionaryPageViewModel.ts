@@ -6,9 +6,11 @@ import { toast } from "sonner";
 import { useVocabDetail } from "@/features/vocabulary/hooks/useVocabDetail";
 import { useSmartSelectionInsights } from "@/hooks/useSmartSelectionInsights";
 import {
+ getNormalizedAntonyms,
  getNormalizedDefinitions,
  getNormalizedRelatedCompounds,
  getNormalizedRadicals,
+ getNormalizedSynonyms,
 } from "@/services/vocab.service";
 import type {
  DictionaryPageViewModel,
@@ -102,7 +104,9 @@ export function useDictionaryPageViewModel(): DictionaryPageViewModel {
 
  const ai = vocabData.ai_analysis;
  const etymologyText =
-  typeof ai?.etymology === "object" ? ai.etymology.explanation : ai?.etymology;
+  typeof ai?.etymology === "object"
+   ? ai.etymology.origin || ai.etymology.explanation
+   : ai?.etymology;
  const definitions = getNormalizedDefinitions(ai, vocabData.meaning || "");
  const radicals = getNormalizedRadicals(ai);
  const meaningSummary =
@@ -114,6 +118,8 @@ export function useDictionaryPageViewModel(): DictionaryPageViewModel {
    .filter((example) => example.cn || example.vi)
  ).map((example) => normalizeExample(example));
  const relatedCompounds = getNormalizedRelatedCompounds(ai).slice(0, 8);
+ const synonyms = getNormalizedSynonyms(ai).slice(0, 8);
+ const antonyms = getNormalizedAntonyms(ai).slice(0, 8);
  const selectedCharacter =
   activeCharacter && chineseCharacters.includes(activeCharacter)
    ? activeCharacter
@@ -151,6 +157,7 @@ export function useDictionaryPageViewModel(): DictionaryPageViewModel {
  const hasLearningInsights = Boolean(
   ai?.mnemonic_story ||
   ai?.usage_logic?.length ||
+  ai?.notes ||
   ai?.vn_trap ||
   ai?.common_mistakes ||
   ai?.confusion,
@@ -165,6 +172,11 @@ export function useDictionaryPageViewModel(): DictionaryPageViewModel {
   ai?.mnemonic_story ||
   ai?.usage_logic?.length ||
   relatedCompounds.length ||
+  synonyms.length ||
+  antonyms.length ||
+  ai?.notes ||
+  ai?.hsk_level ||
+  ai?.tocfl_level ||
   ai?.vn_trap ||
   ai?.common_mistakes,
  );
@@ -235,6 +247,8 @@ export function useDictionaryPageViewModel(): DictionaryPageViewModel {
   meaningItems,
   extraExamples,
   relatedCompounds,
+  synonyms,
+  antonyms,
   hasLearningInsights,
   canRenderDashboard,
   isAiLoading,

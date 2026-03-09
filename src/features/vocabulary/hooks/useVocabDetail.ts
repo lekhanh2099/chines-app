@@ -17,6 +17,11 @@ import {
 } from "@/services/vocab.service";
 import type { VocabData, AiAnalysis, PersonalNoteMode } from "@/types/database";
 
+// Dedup concurrent AI generation requests for the same hanzi.
+// Multiple hook instances may fire triggerAi() in the same render cycle;
+// this ensures only ONE network request is made per hanzi at a time.
+const pendingAiGenerations = new Map<string, Promise<AiAnalysis>>();
+
 /**
  * Hook: Fetch vocab detail + progress for the dictionary page.
  * Also provides save and AI generation mutations.
@@ -66,14 +71,27 @@ export function useVocabDetail(hanzi: string, options?: { enabled?: boolean }) {
  // ── Mutation: trigger AI analysis ──
  const aiMutation = useMutation({
   mutationFn: async () => {
-   const res = await fetch("/api/ai/generate-vocab", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ hanzi: chineseText }),
-   });
-   if (!res.ok) throw new Error("AI generation failed");
-   const result = await res.json();
-   return result.data as AiAnalysis;
+   // Reuse in-flight request for the same hanzi
+   const existing = pendingAiGenerations.get(chineseText);
+   if (existing) return existing;
+
+   const promise = (async () => {
+    const res = await fetch("/api/ai/generate-vocab", {
+     method: "POST",
+     headers: { "Content-Type": "application/json" },
+     body: JSON.stringify({ hanzi: chineseText }),
+    });
+    if (!res.ok) throw new Error("AI generation failed");
+    const result = await res.json();
+    return result.data as AiAnalysis;
+   })();
+
+   pendingAiGenerations.set(chineseText, promise);
+   try {
+    return await promise;
+   } finally {
+    pendingAiGenerations.delete(chineseText);
+   }
   },
   onSuccess: (aiData) => {
    // Update the cached query data optimistically

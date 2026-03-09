@@ -57,6 +57,16 @@ function DictionaryHeroSection({ viewModel }: DictionarySectionProps) {
         {viewModel.vocabData.pinyin}
        </p>
       )}
+      {viewModel.ai?.hsk_level && (
+       <Badge size="sm" variant="info">
+        {viewModel.ai.hsk_level}
+       </Badge>
+      )}
+      {viewModel.ai?.tocfl_level && (
+       <Badge size="sm" variant="purple">
+        {viewModel.ai.tocfl_level}
+       </Badge>
+      )}
       ]
      </div>
      <div>
@@ -197,58 +207,49 @@ function DictionaryMeaningSection({ viewModel }: DictionarySectionProps) {
 }
 
 function DictionaryRelatedSection({ viewModel }: DictionarySectionProps) {
+ const hasAnyRelation =
+  viewModel.relatedCompounds.length > 0 ||
+  viewModel.synonyms.length > 0 ||
+  viewModel.antonyms.length > 0;
+
  return (
   <SectionWrapper>
    <SectionHeader
-    title="Từ ghép liên quan"
-    description="Mở rộng vốn từ ngay sau khi nắm nghĩa chính."
+    title="Liên hệ từ vựng"
+    description="Mở rộng vốn từ qua từ ghép, đồng nghĩa và trái nghĩa cơ bản."
     trailing={
-     viewModel.relatedCompounds.length > 0 ? (
-      <Badge size="sm">{viewModel.relatedCompounds.length} từ</Badge>
+     hasAnyRelation ? (
+      <Badge size="sm">
+       {viewModel.relatedCompounds.length +
+        viewModel.synonyms.length +
+        viewModel.antonyms.length}{" "}
+       mục
+      </Badge>
      ) : null
     }
    />
 
-   {viewModel.relatedCompounds.length > 0 ? (
-    <div className="grid gap-3 md:grid-cols-2">
-     {viewModel.relatedCompounds.map((compound, index) => {
-      const word = compound.word?.trim();
-
-      if (!word) {
-       return null;
-      }
-
-      return (
-       <Link
-        key={`${word}-${index}`}
-        href={`/dictionary/${encodeURIComponent(word)}`}
-       >
-        <Card
-         variant="subtle"
-         padding="sm"
-         className="h-full rounded-2xl transition-colors hover:border-accent/30 hover:bg-bg-card-hover"
-        >
-         <div className="flex flex-col gap-1">
-          <div className="flex flex-wrap items-center gap-2">
-           <p className="text-base font-bold text-text-primary">{word}</p>
-           {compound.pinyin && (
-            <p className="text-xs font-semibold text-accent">
-             {compound.pinyin}
-            </p>
-           )}
-          </div>
-          <p className="text-sm leading-relaxed text-text-secondary">
-           {compound.meaning || "Chưa có nghĩa."}
-          </p>
-         </div>
-        </Card>
-       </Link>
-      );
-     })}
+   {hasAnyRelation ? (
+    <div className="flex flex-col gap-4">
+     <WordRelationGrid
+      title="Từ ghép thông dụng"
+      items={viewModel.relatedCompounds}
+      emptyText="Chưa có từ ghép liên quan."
+     />
+     <WordRelationGrid
+      title="Đồng nghĩa"
+      items={viewModel.synonyms}
+      emptyText="Chưa có từ đồng nghĩa cơ bản."
+     />
+     <WordRelationGrid
+      title="Trái nghĩa"
+      items={viewModel.antonyms}
+      emptyText="Chưa có từ trái nghĩa cơ bản."
+     />
     </div>
    ) : (
     <Card variant="subtle" padding="sm">
-     <p className="text-sm text-text-muted">Chưa có từ ghép liên quan.</p>
+     <p className="text-sm text-text-muted">Chưa có dữ liệu từ liên quan.</p>
     </Card>
    )}
   </SectionWrapper>
@@ -270,35 +271,12 @@ function DictionaryLearningInsightsSection({
    />
 
    <div className="">
-    {viewModel.ai?.mnemonic_story && (
-     <Card
-      variant="subtle"
-      padding="sm"
-      className="border-warning/30 bg-warning-subtle"
-     >
+    {viewModel.ai?.notes && (
+     <Card variant="subtle" padding="sm" className="rounded-2xl">
       <div className="flex flex-col gap-2">
-       <SectionHeader title="Mẹo nhớ" />
-       <p className="text-sm leading-relaxed text-warning-text">
-        {viewModel.ai.mnemonic_story}
-       </p>
-      </div>
-     </Card>
-    )}
-
-    {(viewModel.ai?.vn_trap ||
-     viewModel.ai?.common_mistakes ||
-     viewModel.ai?.confusion) && (
-     <Card
-      variant="subtle"
-      padding="sm"
-      className="border-danger/30 bg-danger-subtle"
-     >
-      <div className="flex flex-col gap-2">
-       <SectionHeader title="Dễ nhầm" />
-       <p className="text-sm leading-relaxed text-danger-text">
-        {viewModel.ai?.confusion ||
-         viewModel.ai?.vn_trap ||
-         viewModel.ai?.common_mistakes}
+       <SectionHeader title="Ghi chú dùng từ" />
+       <p className="text-sm leading-relaxed text-text-secondary">
+        {viewModel.ai.notes}
        </p>
       </div>
      </Card>
@@ -383,6 +361,66 @@ function ExampleCard({ example }: { example: ExampleItem }) {
   <Card variant="subtle" padding="sm" className="rounded-2xl">
    <ExampleRow example={example} />
   </Card>
+ );
+}
+
+function WordRelationGrid({
+ title,
+ items,
+ emptyText,
+}: {
+ title: string;
+ items: Array<{ word?: string; pinyin?: string; meaning?: string }>;
+ emptyText: string;
+}) {
+ return (
+  <div className="flex flex-col gap-2">
+   <SectionHeader
+    title={title}
+    trailing={items.length > 0 ? <Badge size="sm">{items.length}</Badge> : null}
+   />
+
+   {items.length > 0 ? (
+    <div className="grid gap-3 md:grid-cols-2">
+     {items.map((item, index) => {
+      const word = item.word?.trim();
+
+      if (!word) {
+       return null;
+      }
+
+      return (
+       <Link
+        key={`${title}-${word}-${index}`}
+        href={`/dictionary/${encodeURIComponent(word)}`}
+       >
+        <Card
+         variant="subtle"
+         padding="sm"
+         className="h-full rounded-2xl transition-colors hover:border-accent/30 hover:bg-bg-card-hover"
+        >
+         <div className="flex flex-col gap-1">
+          <div className="flex flex-wrap items-center gap-2">
+           <p className="text-base font-bold text-text-primary">{word}</p>
+           {item.pinyin && (
+            <p className="text-xs font-semibold text-accent">{item.pinyin}</p>
+           )}
+          </div>
+          <p className="text-sm leading-relaxed text-text-secondary">
+           {item.meaning || "Chưa có nghĩa."}
+          </p>
+         </div>
+        </Card>
+       </Link>
+      );
+     })}
+    </div>
+   ) : (
+    <Card variant="subtle" padding="sm">
+     <p className="text-sm text-text-muted">{emptyText}</p>
+    </Card>
+   )}
+  </div>
  );
 }
 

@@ -12,6 +12,8 @@ import {
  DictionaryRelatedSection,
 } from "@/features/dictionary/components/DictionaryWordSections";
 import type { DictionaryWordViewModel } from "@/features/dictionary/types";
+import { Card } from "@/components/ui/card";
+import { SectionHeader } from "@/components/layout/section-header";
 
 type DictionaryWordViewProps = {
  viewModel: DictionaryWordViewModel;
@@ -57,18 +59,36 @@ function DictionaryWordView({ viewModel }: DictionaryWordViewProps) {
     </Link>
 
     <div className="grid grid-cols-12 gap-5">
-     <div className="col-span-4 self-start lg:sticky lg:col-span-3">
+     <div className="col-span-4 self-start flex flex-col gap-3 lg:sticky lg:col-span-3">
       <DictionaryHeroSection viewModel={viewModel} />
-      <DictionaryPersonalNoteSection viewModel={viewModel} />
       <DictionaryLearningInsightsSection viewModel={viewModel} />
+      {(viewModel.ai?.vn_trap ||
+       viewModel.ai?.common_mistakes ||
+       viewModel.ai?.confusion) && (
+       <Card
+        variant="subtle"
+        padding="sm"
+        className="border-danger/30 bg-danger-subtle"
+       >
+        <div className="flex flex-col gap-2">
+         <SectionHeader title="Dễ nhầm" />
+         <p className="text-sm leading-relaxed text-danger-text">
+          {viewModel.ai?.confusion ||
+           viewModel.ai?.vn_trap ||
+           viewModel.ai?.common_mistakes}
+         </p>
+        </div>
+       </Card>
+      )}
+      <DictionaryPersonalNoteSection viewModel={viewModel} />
      </div>
 
-     <div className="col-span-4 flex flex-col gap-5 lg:col-span-5">
+     <div className="col-span-4 flex flex-col gap-3 lg:col-span-5">
       <DictionaryMeaningSection viewModel={viewModel} />
       <DictionaryRelatedSection viewModel={viewModel} />
      </div>
 
-     <div className="col-span-4 self-start lg:sticky lg:col-span-4">
+     <div className="col-span-4 self-start gap-3 lg:sticky lg:col-span-4">
       <DictionaryCharacterSidebar
        characters={viewModel.chineseCharacters}
        selectedCharacter={viewModel.selectedCharacter}
