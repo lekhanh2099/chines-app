@@ -205,6 +205,12 @@ export type AiEtymology = {
  explanation?: string;
 };
 
+export type AiRelatedCompound = {
+ word?: string;
+ pinyin?: string;
+ meaning?: string;
+};
+
 export type AiComponent = {
  part?: string;
  name?: string;
@@ -224,6 +230,7 @@ export type AiAnalysis = {
  word_type?: string;
  definitions?: AiDefinition[];
  etymology?: string | AiEtymology;
+ related_compounds?: AiRelatedCompound[];
  mnemonic_story?: string;
  meanings?: AiMeaning[];
  examples?: { zh: string; pinyin: string; vi: string }[];
@@ -298,6 +305,12 @@ export const aiEtymologySchema = z.object({
  explanation: z.string().optional(),
 });
 
+export const aiRelatedCompoundSchema = z.object({
+ word: z.string().optional(),
+ pinyin: z.string().optional(),
+ meaning: z.string().optional(),
+});
+
 export const aiComponentSchema = z.object({
  part: z.string().optional(),
  name: z.string().optional(),
@@ -317,6 +330,7 @@ export const aiAnalysisSchema = z.object({
  word_type: z.string().optional(),
  definitions: z.array(aiDefinitionSchema).optional(),
  etymology: z.union([z.string(), aiEtymologySchema]).optional(),
+ related_compounds: z.array(aiRelatedCompoundSchema).optional(),
  mnemonic_story: z.string().optional(),
  meanings: z.array(aiMeaningSchema).optional(),
  examples: z

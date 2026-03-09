@@ -6,6 +6,7 @@ import {
  getDictionaryEntryByHeadword,
  getPrimaryMeaning,
  getVocabByHanzi,
+ hasInspectorDeepDiveData,
  getVocabularyAnalysis,
  mapDictionaryEntryToVocabData,
  normalizeDictionaryHeadword,
@@ -45,17 +46,19 @@ export async function POST(request: NextRequest) {
 
  if (cachedDictionary) {
   const cachedData = mapDictionaryEntryToVocabData(cachedDictionary);
-  return NextResponse.json({
-   data: cachedData.ai_analysis || {},
-   cached: true,
-  });
+  if (hasInspectorDeepDiveData(cachedData.ai_analysis)) {
+   return NextResponse.json({
+    data: cachedData.ai_analysis || {},
+    cached: true,
+   });
+  }
  }
 
  // Check if we already have AI data in DB via service
  const existing = await getVocabByHanzi(supabase, lookupText);
  const existingAi = getVocabularyAnalysis(existing);
 
- if (existingAi && Object.keys(existingAi).length > 3) {
+ if (hasInspectorDeepDiveData(existingAi)) {
   return NextResponse.json({ data: existingAi, cached: true });
  }
 

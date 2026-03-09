@@ -10,6 +10,7 @@ import {
  Loader2,
  PenTool,
  Play,
+ Save,
  Sparkles,
  StickyNote,
  Volume2,
@@ -20,9 +21,10 @@ import { useSmartSelectionInsights } from "@/hooks/useSmartSelectionInsights";
 import { extractChinese } from "@/lib/chinese-utils";
 import {
  getNormalizedDefinitions,
+ getNormalizedRelatedCompounds,
  getNormalizedRadicals,
 } from "@/services/vocab.service";
-import type { AiAnalysis } from "@/types/database";
+import type { AiAnalysis, AiRelatedCompound } from "@/types/database";
 
 const HANZI_CHAR_REGEX = /[\u4e00-\u9fff]/;
 
@@ -146,6 +148,8 @@ export default function DictionaryPage() {
   saveToSrs,
   isSaving,
   hasDeepAiData,
+  personalNote: savedPersonalNote,
+  personalNoteMode,
  } = useVocabDetail(rawText, { enabled: !isSentenceView });
 
  const sentenceQuery = useSmartSelectionInsights(rawText, rawText, {
@@ -153,7 +157,6 @@ export default function DictionaryPage() {
   mode: "sentence",
  });
 
- const [personalNote, setPersonalNote] = useState("");
  const [activeCharacter, setActiveCharacter] = useState(
   chineseCharacters[0] || rawText[0] || "",
  );
@@ -236,9 +239,7 @@ export default function DictionaryPage() {
    .flatMap((definition) => definition.examples || [])
    .filter((example) => example.cn || example.vi)
  ).map((example) => normalizeExample(example));
-
- const relatedWords = ai?.related_words ?? ai?.collocations ?? [];
- const relatedCompoundWords = Array.from(new Set(relatedWords)).slice(0, 8);
+ const relatedCompounds = getNormalizedRelatedCompounds(ai).slice(0, 8);
  const selectedCharacter = chineseCharacters.includes(activeCharacter)
   ? activeCharacter
   : chineseCharacters[0] || vocabData.hanzi;
@@ -285,7 +286,7 @@ export default function DictionaryPage() {
   !!etymologyText ||
   !!ai?.mnemonic_story ||
   !!ai?.usage_logic?.length ||
-  relatedWords.length > 0 ||
+  relatedCompounds.length > 0 ||
   !!ai?.vn_trap ||
   !!ai?.common_mistakes;
  const canRenderDashboard = hasContent || chineseCharacters.length > 0;
@@ -313,6 +314,27 @@ export default function DictionaryPage() {
    onSuccess: () => toast.success(`Đã lưu "${vocabData.hanzi}" vào SRS!`),
    onError: () => toast.error("Không thể lưu từ vựng"),
   });
+ };
+
+ const handleSavePersonalNote = (note: string) => {
+  if (isSaving) return;
+
+  saveToSrs(
+   {
+    vocabData,
+    options: {
+     personalNote: note,
+     personalNoteMode: personalNoteMode || "normal",
+    },
+   },
+   {
+    onSuccess: () => toast.success("Đã lưu ghi chú cá nhân"),
+    onError: (error) =>
+     toast.error(
+      error instanceof Error ? error.message : "Không thể lưu ghi chú cá nhân",
+     ),
+   },
+  );
  };
 
  return (
@@ -486,17 +508,20 @@ export default function DictionaryPage() {
           Mở rộng vốn từ ngay sau khi nắm nghĩa chính.
          </p>
         </div>
-        {relatedCompoundWords.length > 0 && (
+        {relatedCompounds.length > 0 && (
          <span className="inline-flex items-center rounded-full border border-border-default bg-bg-primary px-2.5 py-1 text-[10px] font-bold uppercase tracking-[0.18em] text-text-muted">
-          {relatedCompoundWords.length} từ
+          {relatedCompounds.length} từ
          </span>
         )}
        </div>
 
-       {relatedCompoundWords.length > 0 ? (
+       {relatedCompounds.length > 0 ? (
         <div className="mt-4 grid gap-3 md:grid-cols-2">
-         {relatedCompoundWords.map((word) => (
-          <CompoundPreviewCard key={word} word={word} />
+         {relatedCompounds.map((compound, index) => (
+          <CompoundPreviewCard
+           key={`${compound.word || "compound"}-${index}`}
+           compound={compound}
+          />
          ))}
         </div>
        ) : (
@@ -556,6 +581,13 @@ export default function DictionaryPage() {
         )}
        </section>
       )}
+
+      <PersonalNoteSection
+       key={`${vocabData.hanzi}:${savedPersonalNote}`}
+       initialValue={savedPersonalNote}
+       isSaving={isSaving}
+       onSave={handleSavePersonalNote}
+      />
      </div>
 
      <div className="col-span-12 self-start space-y-5 lg:sticky lg:top-5 lg:col-span-4">
@@ -565,23 +597,6 @@ export default function DictionaryPage() {
        onSelectCharacter={setActiveCharacter}
        parentText={vocabData.hanzi}
       />
-
-      <section className="rounded-3xl border border-border-default bg-bg-card p-4 shadow-theme-sm">
-       <p className="inline-flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-[0.18em] text-text-muted">
-        <StickyNote className="h-3.5 w-3.5" />
-        Ghi chú cá nhân
-       </p>
-       <p className="mt-1 text-xs text-text-muted">
-        Ghi nhanh mẹo nhớ hoặc ngữ cảnh riêng của anh.
-       </p>
-       <div className="mt-3">
-        <AutoSizeNoteField
-         value={personalNote}
-         onChange={setPersonalNote}
-         placeholder="Thêm ghi chú..."
-        />
-       </div>
-      </section>
      </div>
     </div>
    </div>
@@ -774,6 +789,22 @@ function CharacterAnatomySidebar({
     <div className="mt-4 flex justify-center">
      <CharacterWriterCard character={selectedCharacter} />
     </div>
+
+    {(etymologyType || etymologyText) && (
+     <div className="mt-4 rounded-2xl border border-border-default bg-bg-primary p-4">
+      <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-text-muted">
+       Chiết tự
+      </p>
+      {etymologyType && (
+       <span className="mt-2 inline-flex rounded-full bg-purple-50 px-2 py-1 text-[10px] font-bold uppercase tracking-[0.18em] text-purple-700">
+        {etymologyType}
+       </span>
+      )}
+      <p className="mt-2 text-sm leading-relaxed text-text-secondary">
+       {etymologyText}
+      </p>
+     </div>
+    )}
 
     <div className="mt-4 grid grid-cols-2 gap-2">
      <MetricCard label="Pinyin" value={vocabData.pinyin || "Chưa rõ"} wide />
@@ -1111,21 +1142,76 @@ function ExampleCard({ example }: { example: ExampleItem }) {
  );
 }
 
-function CompoundPreviewCard({ word }: { word: string }) {
- const { vocabData, isLoading } = useVocabDetail(word);
- const previewMeaning =
-  vocabData?.ai_analysis?.meaning_summary ||
-  vocabData?.meaning ||
-  (isLoading ? "Đang tải nghĩa..." : "Chưa có nghĩa nhanh");
+function PersonalNoteSection({
+ initialValue,
+ isSaving,
+ onSave,
+}: {
+ initialValue: string;
+ isSaving: boolean;
+ onSave: (note: string) => void;
+}) {
+ const [note, setNote] = useState(initialValue);
+
+ return (
+  <section className="rounded-3xl border border-border-default bg-bg-card p-4 shadow-theme-sm sm:p-5">
+   <div className="flex flex-wrap items-start justify-between gap-3">
+    <div>
+     <p className="inline-flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-[0.18em] text-text-muted">
+      <StickyNote className="h-3.5 w-3.5" />
+      Ghi chú cá nhân
+     </p>
+     <p className="mt-1 text-sm text-text-muted">
+      Tự ghi cách nhớ, ngữ cảnh dùng, điểm dễ nhầm riêng của anh.
+     </p>
+    </div>
+    <button
+     type="button"
+     onClick={() => onSave(note)}
+     disabled={isSaving}
+     className="inline-flex items-center gap-2 rounded-full border border-border-default bg-bg-primary px-4 py-2 text-sm font-semibold text-text-primary transition-colors hover:border-accent hover:text-accent disabled:opacity-60"
+    >
+     {isSaving ? (
+      <Loader2 className="h-4 w-4 animate-spin" />
+     ) : (
+      <Save className="h-4 w-4" />
+     )}
+     Lưu note
+    </button>
+   </div>
+
+   <div className="mt-4">
+    <textarea
+     value={note}
+     onChange={(event) => setNote(event.target.value)}
+     placeholder="Tự ghi cách nhớ, ngữ cảnh dùng, điểm dễ nhầm..."
+     className="min-h-40 w-full resize-y rounded-3xl border border-border-default bg-bg-primary px-6 py-5 text-sm leading-relaxed text-text-primary outline-none transition-all placeholder:text-text-muted focus:ring-2 focus:ring-ring"
+    />
+   </div>
+  </section>
+ );
+}
+
+function CompoundPreviewCard({ compound }: { compound: AiRelatedCompound }) {
+ const word = compound.word?.trim();
+
+ if (!word) {
+  return null;
+ }
 
  return (
   <Link
    href={`/dictionary/${encodeURIComponent(word)}`}
    className="rounded-2xl border border-border-default bg-bg-primary px-4 py-3 transition-colors hover:border-accent/30 hover:bg-bg-card-hover"
   >
-   <p className="text-base font-bold text-text-primary">{word}</p>
+   <div className="flex flex-wrap items-center gap-2">
+    <p className="text-base font-bold text-text-primary">{word}</p>
+    {compound.pinyin && (
+     <p className="text-xs font-semibold text-accent">{compound.pinyin}</p>
+    )}
+   </div>
    <p className="mt-1 text-sm leading-relaxed text-text-secondary">
-    {previewMeaning}
+    {compound.meaning || "Chưa có nghĩa."}
    </p>
   </Link>
  );
@@ -1186,36 +1272,6 @@ function RadicalsGrid({
     </div>
    ))}
   </div>
- );
-}
-
-function AutoSizeNoteField({
- value,
- onChange,
- placeholder,
-}: {
- value: string;
- onChange: (value: string) => void;
- placeholder: string;
-}) {
- const textareaRef = useRef<HTMLTextAreaElement>(null);
-
- useEffect(() => {
-  const textarea = textareaRef.current;
-  if (!textarea) return;
-  textarea.style.height = "0px";
-  textarea.style.height = `${Math.min(textarea.scrollHeight, 220)}px`;
- }, [value]);
-
- return (
-  <textarea
-   ref={textareaRef}
-   rows={1}
-   value={value}
-   onChange={(event) => onChange(event.target.value)}
-   placeholder={placeholder}
-   className="w-full resize-none overflow-hidden rounded-2xl border border-border-default bg-bg-primary px-4 py-3 text-sm leading-relaxed text-text-primary outline-none transition-all placeholder:text-text-muted focus:ring-2 focus:ring-ring"
-  />
  );
 }
 

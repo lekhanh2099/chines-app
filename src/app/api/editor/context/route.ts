@@ -10,6 +10,7 @@ import {
 import { getActiveUserApiKeyCredentials } from "@/services/user-api-keys.service";
 import {
  getDictionaryEntryByHeadword,
+ getUserVocabProgressRecord,
  incrementDictionaryLookupCount,
  getPrimaryMeaning,
  getNormalizedDefinitions,
@@ -77,12 +78,9 @@ async function getProgressState(
   };
  }
 
- const { data } = await supabase
-  .from("user_vocab_progress")
-  .select("vocab_id, personal_note, personal_note_mode")
-  .eq("user_id", userId)
-  .eq("vocab_id", vocabId)
-  .maybeSingle();
+ const data = await getUserVocabProgressRecord(supabase, userId, {
+  vocabId,
+ });
 
  return {
   isSaved: isSaved || !!data,

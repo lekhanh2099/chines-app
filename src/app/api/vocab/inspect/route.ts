@@ -127,9 +127,34 @@ export async function POST(request: NextRequest) {
   );
  }
 
+ if (
+  (context_sentence?.trim() || context_translation?.trim()) &&
+  !result.contextSchemaAvailable
+ ) {
+  return NextResponse.json(
+   {
+    error:
+     "Da luu tu vung nhung chua luu duoc ngu canh. Chay migration 20260307000003_user_vocab_context.sql truoc.",
+   },
+   { status: 409 },
+  );
+ }
+
+ if (personal_note?.trim() && !result.noteSchemaAvailable) {
+  return NextResponse.json(
+   {
+    error:
+     "Da luu tu vung nhung chua luu duoc ghi chu ca nhan. Chay migration 20260307000004_user_vocab_personal_note.sql truoc.",
+   },
+   { status: 409 },
+  );
+ }
+
  return NextResponse.json({
   success: true,
   vocab_id: result.vocabId,
   dictionary_id: result.dictionaryId,
+  context_schema_available: result.contextSchemaAvailable,
+  note_schema_available: result.noteSchemaAvailable,
  });
 }

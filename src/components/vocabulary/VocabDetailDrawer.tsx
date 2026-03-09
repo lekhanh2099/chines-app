@@ -7,6 +7,7 @@ import { useSmartSelectionInsights } from "@/hooks/useSmartSelectionInsights";
 import { extractChinese } from "@/lib/chinese-utils";
 import {
  getNormalizedDefinitions,
+ getNormalizedRelatedCompounds,
  getNormalizedRadicals,
 } from "@/services/vocab.service";
 import { useVocabDetailDrawerStore } from "@/stores/vocab-detail-drawer-store";
@@ -235,7 +236,7 @@ function WordDetailPanel({
     pinyin: example.pinyin || example.py || "",
     vi: example.vi || "",
    }));
- const relatedWords = ai?.related_words || ai?.collocations || [];
+ const relatedCompounds = getNormalizedRelatedCompounds(ai);
  const characters = getUniqueCharacters(smartData.entry.hanzi);
  const [activeCharacter, setActiveCharacter] = useState(characters[0] || "");
  const visualCharacter =
@@ -428,18 +429,37 @@ function WordDetailPanel({
       <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-text-muted">
        Từ ghép liên quan
       </p>
-      {relatedWords.length > 0 ? (
-       <div className="flex flex-wrap gap-2">
-        {relatedWords.map((word, index) => (
-         <button
-          key={`${word}-${index}`}
-          type="button"
-          onClick={() => onDrillCharacter(word)}
-          className="inline-flex items-center rounded-full border border-accent/20 bg-accent/8 px-3 py-1.5 text-sm font-semibold text-accent transition-colors hover:bg-accent/15"
-         >
-          {word}
-         </button>
-        ))}
+      {relatedCompounds.length > 0 ? (
+       <div className="space-y-2">
+        {relatedCompounds.map((compound, index) => {
+         const word = compound.word?.trim();
+         if (!word) return null;
+
+         return (
+          <button
+           key={`${word}-${index}`}
+           type="button"
+           onClick={() => onDrillCharacter(word)}
+           className="flex w-full items-start justify-between gap-3 rounded-2xl border border-accent/20 bg-accent/8 px-3 py-2.5 text-left transition-colors hover:bg-accent/15"
+          >
+           <div className="min-w-0">
+            <div className="flex flex-wrap items-center gap-2">
+             <span className="text-base font-bold text-text-primary">
+              {word}
+             </span>
+             {compound.pinyin && (
+              <span className="text-xs font-semibold text-accent">
+               {compound.pinyin}
+              </span>
+             )}
+            </div>
+            <p className="mt-1 text-sm leading-relaxed text-text-secondary">
+             {compound.meaning || "Chưa có nghĩa."}
+            </p>
+           </div>
+          </button>
+         );
+        })}
        </div>
       ) : (
        <div className="rounded-2xl border border-border-default bg-bg-primary p-3 text-sm text-text-muted">

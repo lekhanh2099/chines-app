@@ -3,6 +3,7 @@
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import { useRef, useCallback } from "react";
 import { createClient } from "@/lib/supabase/client";
+import { getClientSessionUser } from "@/lib/supabase/client-session";
 import {
  getNoteById,
  updateNoteContent,
@@ -24,9 +25,7 @@ export function useNoteDetail(noteId: string) {
  const query = useQuery({
   queryKey: ["note-detail", noteId],
   queryFn: async () => {
-   const {
-    data: { user },
-   } = await supabase.auth.getUser();
+   const user = await getClientSessionUser(supabase);
    if (!user) return null;
    return getNoteById(supabase, noteId, user.id);
   },

@@ -3,17 +3,19 @@
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import { useRef, useCallback } from "react";
 import { createClient } from "@/lib/supabase/client";
+import { getClientSessionUser } from "@/lib/supabase/client-session";
 import { pinyin as getPinyin } from "pinyin-pro";
 import { extractChinese } from "@/lib/chinese-utils";
 import {
  getVocabWithProgress,
  getPrimaryMeaning,
  getNormalizedDefinitions,
+ getNormalizedRelatedCompounds,
  hasInspectorDeepDiveData,
  upsertVocab,
  saveVocabToSrs,
 } from "@/services/vocab.service";
-import type { VocabData, AiAnalysis } from "@/types/database";
+import type { VocabData, AiAnalysis, PersonalNoteMode } from "@/types/database";
 
 /**
  * Hook: Fetch vocab detail + progress for the dictionary page.
@@ -33,9 +35,7 @@ export function useVocabDetail(hanzi: string, options?: { enabled?: boolean }) {
   queryFn: async () => {
    const pinyinText = getPinyin(chineseText);
 
-   const {
-    data: { user },
-   } = await supabase.auth.getUser();
+   const user = await getClientSessionUser(supabase);
 
    if (!user) {
     return {
@@ -47,6 +47,8 @@ export function useVocabDetail(hanzi: string, options?: { enabled?: boolean }) {
      } as VocabData,
      srsLevel: null,
      isSaved: false,
+     personalNote: "",
+     personalNoteMode: "important" as PersonalNoteMode,
     };
    }
 
@@ -99,17 +101,63 @@ export function useVocabDetail(hanzi: string, options?: { enabled?: boolean }) {
 
  // ── Mutation: save to SRS ──
  const saveMutation = useMutation({
-  mutationFn: async (vocabData: VocabData) => {
-   const {
-    data: { user },
-   } = await supabase.auth.getUser();
+  mutationFn: async (
+   vocabInput:
+    | VocabData
+    | {
+       vocabData: VocabData;
+       options?: {
+        contextSentence?: string;
+        contextTranslation?: string;
+        personalNote?: string;
+        personalNoteMode?: PersonalNoteMode;
+       };
+      },
+  ) => {
+   const payload =
+    "vocabData" in vocabInput ? vocabInput : { vocabData: vocabInput };
+   const user = await getClientSessionUser(supabase);
    if (!user) throw new Error("Not authenticated");
 
-   const result = await saveVocabToSrs(supabase, user.id, vocabData);
+   const result = await saveVocabToSrs(
+    supabase,
+    user.id,
+    payload.vocabData,
+    payload.options,
+   );
    if (!result) throw new Error("Save failed");
+
+   if (payload.options?.personalNote?.trim() && !result.noteSchemaAvailable) {
+    throw new Error(
+     "Database chua co cot personal_note. Chay migration 20260307000004_user_vocab_personal_note.sql truoc.",
+    );
+   }
+
    return result;
   },
-  onSuccess: () => {
+  onSuccess: (_result, variables) => {
+   const payload =
+    typeof variables === "object" &&
+    variables !== null &&
+    "vocabData" in variables
+     ? variables
+     : { vocabData: variables };
+
+   queryClient.setQueryData(
+    ["vocab-detail", chineseText],
+    (old: typeof query.data) => {
+     if (!old) return old;
+
+     return {
+      ...old,
+      isSaved: true,
+      personalNote: payload.options?.personalNote ?? old.personalNote,
+      personalNoteMode:
+       payload.options?.personalNoteMode ?? old.personalNoteMode,
+     };
+    },
+   );
+
    // Refetch to update isSaved status
    queryClient.invalidateQueries({ queryKey: ["vocab-detail", chineseText] });
    queryClient.invalidateQueries({ queryKey: ["vocab-list"] });
@@ -138,6 +186,7 @@ export function useVocabDetail(hanzi: string, options?: { enabled?: boolean }) {
    ai.components?.length ||
    ai.etymology ||
    ai.mnemonic_story ||
+   getNormalizedRelatedCompounds(ai).length ||
    ai.related_words?.length ||
    ai.collocations?.length ||
    ai.vn_trap ||
@@ -155,6 +204,8 @@ export function useVocabDetail(hanzi: string, options?: { enabled?: boolean }) {
   vocabData: query.data?.vocab ?? null,
   srsLevel: query.data?.srsLevel ?? null,
   isSaved: query.data?.isSaved ?? null,
+  personalNote: query.data?.personalNote ?? "",
+  personalNoteMode: query.data?.personalNoteMode ?? "important",
   isLoading: query.isLoading,
 
   // AI

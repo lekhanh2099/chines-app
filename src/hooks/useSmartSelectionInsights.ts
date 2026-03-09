@@ -5,7 +5,7 @@ import {
  getClientAiPromptSettingsFingerprint,
  loadClientAiPromptSettings,
 } from "@/lib/ai-prompt-settings-client";
-import { containsChinese, extractChinese } from "@/lib/chinese-utils";
+import { extractChinese, isChineseOnlyText } from "@/lib/chinese-utils";
 import type {
  PersonalNoteMode,
  SmartSelectionMode,
@@ -28,7 +28,7 @@ export function useSmartSelectionInsights(
  const trimmedSelection = selectedText.trim();
  const chineseSelection = extractChinese(trimmedSelection);
  const lookupKey = chineseSelection || trimmedSelection;
- const isChineseSelection = containsChinese(trimmedSelection);
+ const isChineseSelection = isChineseOnlyText(trimmedSelection);
  const mode = options?.mode || resolveMode(lookupKey);
  const enabled = options?.enabled ?? true;
  const promptSettings = loadClientAiPromptSettings();

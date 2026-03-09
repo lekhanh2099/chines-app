@@ -269,6 +269,7 @@ export default function EditorFloatingMenu() {
   hasAnchor &&
   !isViewportHidden &&
   !!selectedText &&
+  isChineseSelection &&
   draftSelection.text === selectedText &&
   draftSelection.contextSentence === contextSentence;
 
@@ -443,6 +444,38 @@ export default function EditorFloatingMenu() {
               {smartData.entry.pinyin}
              </p>
             )}
+           </div>
+           <div className="grid gap-2 sm:grid-cols-3">
+            <div className="rounded-xl border border-white/80 bg-white px-3 py-2 shadow-sm">
+             <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-slate-400">
+              Từ loại
+             </p>
+             <p className="mt-1 text-sm font-semibold text-slate-800">
+              {smartData.definitions[0]?.pos ||
+               smartData.entry.ai_analysis?.word_type ||
+               "Chưa rõ"}
+             </p>
+            </div>
+            <div className="rounded-xl border border-white/80 bg-white px-3 py-2 shadow-sm">
+             <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-slate-400">
+              Pinyin
+             </p>
+             <p className="mt-1 text-sm font-semibold text-indigo-600">
+              {smartData.entry.pinyin || "Chưa rõ"}
+             </p>
+            </div>
+            <div className="rounded-xl border border-white/80 bg-white px-3 py-2 shadow-sm">
+             <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-slate-400">
+              Nghĩa
+             </p>
+             <p className="mt-1 line-clamp-2 text-sm font-semibold text-slate-800">
+              {smartData.meaning_summary ||
+               smartData.definitions[0]?.meaning ||
+               smartData.definitions[0]?.text ||
+               smartData.entry.meaning ||
+               "Chưa có nghĩa"}
+             </p>
+            </div>
            </div>
            <div className="rounded-xl border border-white/80 bg-white px-3 py-3 text-center shadow-sm">
             <p className="text-sm font-medium leading-6 text-slate-800">

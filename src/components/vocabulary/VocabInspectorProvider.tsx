@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { VocabDetailDrawer } from "@/components/vocabulary/VocabDetailDrawer";
 import { containsChinese } from "@/lib/chinese-utils";
 import { createClient } from "@/lib/supabase/client";
+import { getClientSessionUser } from "@/lib/supabase/client-session";
 import { getPrimaryMeaning, saveVocabToSrs } from "@/services/vocab.service";
 import { useVocabDetailDrawerStore } from "@/stores/vocab-detail-drawer-store";
 import { useInspectorStore } from "@/stores/inspector-store";
@@ -171,9 +172,7 @@ function InspectorCard({ onClose }: InspectorCardProps) {
   setIsSaving(true);
 
   try {
-   const {
-    data: { user },
-   } = await supabase.auth.getUser();
+   const user = await getClientSessionUser(supabase);
    if (!user) return;
 
    const result = await saveVocabToSrs(supabase, user.id, vocabData);

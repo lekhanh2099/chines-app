@@ -1,11 +1,11 @@
 "use client";
 
 import { createClient } from "@/lib/supabase/client";
+import { getClientSessionUser } from "@/lib/supabase/client-session";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { toast } from "sonner";
 import { Loader2, Zap } from "lucide-react";
-import { Button } from "@/components/ui/button";
 
 interface QuickNoteButtonProps {
  className?: string;
@@ -27,9 +27,7 @@ export function QuickNoteButton({
   setIsCreating(true);
 
   try {
-   const {
-    data: { user },
-   } = await supabase.auth.getUser();
+   const user = await getClientSessionUser(supabase);
    if (!user) {
     router.push("/login");
     return;

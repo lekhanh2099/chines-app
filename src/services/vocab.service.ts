@@ -14,11 +14,20 @@ import type {
  AiAnalysis,
  AiDefinition,
  AiRadical,
+ AiRelatedCompound,
  DictionaryCoreData,
  DictionaryCoreDefinition,
  VocabData,
  VocabWithProgress,
 } from "@/types/database";
+
+type UserVocabProgressRecord = {
+ proficiency_level: number;
+ is_favorited: boolean;
+ dictionary_id?: string | null;
+ personal_note?: string | null;
+ personal_note_mode?: "normal" | "important" | null;
+};
 
 function isMissingColumnError(error: unknown): boolean {
  const code =
@@ -58,10 +67,62 @@ function isMissingDictionaryCacheSchemaError(error: unknown): boolean {
  );
 }
 
+function isRlsPolicyError(error: unknown): boolean {
+ const code =
+  typeof error === "object" && error !== null && "code" in error
+   ? String((error as { code?: unknown }).code || "")
+   : "";
+ const message =
+  typeof error === "object" && error !== null && "message" in error
+   ? String((error as { message?: unknown }).message || "").toLowerCase()
+   : "";
+
+ return code === "42501" || message.includes("row-level security policy");
+}
+
+function errorMentionsColumn(error: unknown, columnName: string): boolean {
+ const message =
+  typeof error === "object" && error !== null && "message" in error
+   ? String((error as { message?: unknown }).message || "").toLowerCase()
+   : "";
+
+ return message.includes(columnName.toLowerCase());
+}
+
 export function normalizeDictionaryHeadword(text: string): string {
  const trimmed = text.trim();
  const chineseOnly = extractChinese(trimmed);
  return (chineseOnly || trimmed).trim();
+}
+
+function normalizeRelatedCompounds(
+ source: AiAnalysis,
+): AiRelatedCompound[] | undefined {
+ const normalizedCompounds = source.related_compounds
+  ?.map((compound) => ({
+   word: compound.word?.trim(),
+   pinyin: compound.pinyin?.trim(),
+   meaning: compound.meaning?.trim(),
+  }))
+  .filter((compound) => compound.word || compound.pinyin || compound.meaning);
+
+ if (normalizedCompounds?.length) {
+  return normalizedCompounds;
+ }
+
+ const legacyWords = Array.from(
+  new Set(
+   [...(source.related_words || []), ...(source.collocations || [])]
+    .map((word) => word.trim())
+    .filter(Boolean),
+  ),
+ );
+
+ if (!legacyWords.length) {
+  return undefined;
+ }
+
+ return legacyWords.map((word) => ({ word }));
 }
 
 function normalizeAnalysis(
@@ -88,6 +149,7 @@ function normalizeAnalysis(
 
  const resolvedSinoVietnamese =
   sinoVietnamese || source.sino_vietnamese || source.han_viet || undefined;
+ const normalizedRelatedCompounds = normalizeRelatedCompounds(source);
 
  return {
   ...source,
@@ -99,6 +161,9 @@ function normalizeAnalysis(
    : {}),
   ...(normalizedDefinitions ? { definitions: normalizedDefinitions } : {}),
   ...(normalizedGrammar ? { grammar_breakdown: normalizedGrammar } : {}),
+  ...(normalizedRelatedCompounds
+   ? { related_compounds: normalizedRelatedCompounds }
+   : {}),
   ...(source.common_mistakes || source.confusion || source.confusion_warning
    ? {
       common_mistakes:
@@ -313,11 +378,11 @@ export async function saveUserDictionaryRelationship(
    user_id: userId,
    dictionary_id: dictionaryId,
   },
-  { onConflict: "user_id,dictionary_id" },
+  { onConflict: "user_id,dictionary_id", ignoreDuplicates: true },
  );
 
  if (error) {
-  if (!isMissingDictionaryCacheSchemaError(error)) {
+  if (!isMissingDictionaryCacheSchemaError(error) && !isRlsPolicyError(error)) {
    console.error("[VocabService] user_vocabularies upsert error:", error);
   }
   return false;
@@ -408,10 +473,32 @@ export function getBasicVocabData(vocab: VocabData): VocabData {
  };
 }
 
+function hasStructuredEtymology(analysis?: AiAnalysis | null): boolean {
+ const etymology = analysis?.etymology;
+
+ return (
+  typeof etymology === "object" &&
+  etymology !== null &&
+  (!!etymology.type || !!etymology.explanation)
+ );
+}
+
+function hasStructuredRelatedCompounds(analysis?: AiAnalysis | null): boolean {
+ return Array.isArray(analysis?.related_compounds);
+}
+
 export function hasInspectorDeepDiveData(
  analysis?: AiAnalysis | null,
 ): boolean {
  const normalized = normalizeAnalysis(analysis);
+
+ if (!hasStructuredEtymology(analysis)) {
+  return false;
+ }
+
+ if (!hasStructuredRelatedCompounds(analysis)) {
+  return false;
+ }
 
  return !!(
   normalized.components?.length ||
@@ -420,6 +507,7 @@ export function hasInspectorDeepDiveData(
   normalized.usage_logic?.length ||
   normalized.examples?.length ||
   normalized.collocations?.length ||
+  normalized.related_compounds?.length ||
   normalized.related_words?.length ||
   normalized.vn_trap ||
   normalized.common_mistakes ||
@@ -482,6 +570,7 @@ export function hasDetailedVocabAnalysis(
   normalized.meanings?.length ||
   normalized.etymology ||
   normalized.examples?.length ||
+  normalized.related_compounds?.length ||
   normalized.related_words?.length ||
   normalized.usage_logic?.length ||
   normalized.common_mistakes ||
@@ -552,6 +641,18 @@ export function getNormalizedDefinitions(
  return [];
 }
 
+export function getNormalizedRelatedCompounds(
+ analysis?: AiAnalysis | null,
+): AiRelatedCompound[] {
+ const normalized = normalizeAnalysis(analysis);
+
+ return (
+  normalized.related_compounds?.filter(
+   (compound) => compound.word || compound.pinyin || compound.meaning,
+  ) || []
+ );
+}
+
 /* ══════════════════════════════════════════
    Read Operations
    ══════════════════════════════════════════ */
@@ -619,6 +720,89 @@ export async function getUserVocabList(
   });
 }
 
+export async function getUserVocabProgressRecord(
+ supabase: SupabaseClient,
+ userId: string,
+ lookup: {
+  vocabId?: string;
+  dictionaryId?: string;
+ },
+): Promise<UserVocabProgressRecord | null> {
+ const runQuery = async <T extends Record<string, unknown>>(
+  columns: string,
+ ) => {
+  let query = supabase
+   .from("user_vocab_progress")
+   .select(columns)
+   .eq("user_id", userId);
+
+  if (lookup.vocabId) {
+   query = query.eq("vocab_id", lookup.vocabId);
+  }
+
+  if (lookup.dictionaryId) {
+   query = query.eq("dictionary_id", lookup.dictionaryId);
+  }
+
+  const result = await query.maybeSingle();
+
+  return {
+   data: (result.data as T | null) ?? null,
+   error: result.error,
+  };
+ };
+
+ const fullResult = await runQuery<UserVocabProgressRecord>(
+  "proficiency_level, is_favorited, dictionary_id, personal_note, personal_note_mode",
+ );
+
+ if (!fullResult.error) {
+  return fullResult.data;
+ }
+
+ if (!isMissingColumnError(fullResult.error)) {
+  return null;
+ }
+
+ const legacyDictionaryResult = await runQuery<
+  Pick<
+   UserVocabProgressRecord,
+   "proficiency_level" | "is_favorited" | "dictionary_id"
+  >
+ >("proficiency_level, is_favorited, dictionary_id");
+
+ if (!legacyDictionaryResult.error) {
+  return legacyDictionaryResult.data
+   ? {
+      ...legacyDictionaryResult.data,
+      personal_note: null,
+      personal_note_mode: null,
+     }
+   : null;
+ }
+
+ if (!isMissingColumnError(legacyDictionaryResult.error)) {
+  return null;
+ }
+
+ const legacyResult = await runQuery<
+  Pick<UserVocabProgressRecord, "proficiency_level" | "is_favorited">
+ >("proficiency_level, is_favorited");
+
+ if (!legacyResult.error) {
+  return legacyResult.data
+   ? {
+      ...legacyResult.data,
+      dictionary_id: null,
+      personal_note: null,
+      personal_note_mode: null,
+     }
+   : null;
+ }
+
+ return null;
+}
+
 /** Fetch vocab + user SRS progress for a specific word */
 export async function getVocabWithProgress(
  supabase: SupabaseClient,
@@ -628,6 +812,8 @@ export async function getVocabWithProgress(
  vocab: VocabData;
  srsLevel: number | null;
  isSaved: boolean;
+ personalNote: string;
+ personalNoteMode: "normal" | "important";
 }> {
  const [vocab, dictionaryEntry] = await Promise.all([
   getVocabByHanzi(supabase, hanzi),
@@ -639,6 +825,8 @@ export async function getVocabWithProgress(
    vocab: { hanzi, pinyin: "", meaning: "", ai_analysis: {} },
    srsLevel: null,
    isSaved: false,
+   personalNote: "",
+   personalNoteMode: "important",
   };
  }
 
@@ -669,53 +857,18 @@ export async function getVocabWithProgress(
   ai_analysis: resolvedAnalysis,
  };
 
- let progress: {
-  proficiency_level: number;
-  is_favorited: boolean;
-  dictionary_id?: string | null;
- } | null = null;
- let progressError: unknown = null;
+ let progress: UserVocabProgressRecord | null = null;
 
  if (vocab?.id) {
-  const progressResult = await supabase
-   .from("user_vocab_progress")
-   .select("proficiency_level, is_favorited, dictionary_id")
-   .eq("user_id", userId)
-   .eq("vocab_id", vocab.id)
-   .single();
-
-  progress = progressResult.data;
-  progressError = progressResult.error;
+  progress = await getUserVocabProgressRecord(supabase, userId, {
+   vocabId: vocab.id,
+  });
  }
-
- if (progressError && isMissingColumnError(progressError) && vocab?.id) {
-  const legacyProgressResult = await supabase
-   .from("user_vocab_progress")
-   .select("proficiency_level, is_favorited")
-   .eq("user_id", userId)
-   .eq("vocab_id", vocab.id)
-   .single();
-
-  progress = legacyProgressResult.data
-   ? {
-      ...legacyProgressResult.data,
-      dictionary_id: null,
-     }
-   : null;
-  progressError = legacyProgressResult.error;
- }
-
- void progressError;
 
  if (!progress && dictionaryEntry?.id) {
-  const dictionaryProgressResult = await supabase
-   .from("user_vocab_progress")
-   .select("proficiency_level, is_favorited, dictionary_id")
-   .eq("user_id", userId)
-   .eq("dictionary_id", dictionaryEntry.id)
-   .maybeSingle();
-
-  progress = dictionaryProgressResult.data;
+  progress = await getUserVocabProgressRecord(supabase, userId, {
+   dictionaryId: dictionaryEntry.id,
+  });
  }
 
  if (progress?.dictionary_id) {
@@ -726,6 +879,8 @@ export async function getVocabWithProgress(
   vocab: vocabData,
   srsLevel: progress?.proficiency_level ?? null,
   isSaved: !!progress,
+  personalNote: progress?.personal_note || "",
+  personalNoteMode: progress?.personal_note_mode || "important",
  };
 }
 
@@ -831,7 +986,12 @@ export async function saveVocabToSrs(
   personalNote?: string;
   personalNoteMode?: "normal" | "important";
  },
-): Promise<{ vocabId: string; dictionaryId?: string } | null> {
+): Promise<{
+ vocabId: string;
+ dictionaryId?: string;
+ contextSchemaAvailable: boolean;
+ noteSchemaAvailable: boolean;
+} | null> {
  const dictionaryEntry = await upsertDictionaryEntry(supabase, {
   headword: vocabData.hanzi,
   pinyin: vocabData.pinyin,
@@ -861,6 +1021,8 @@ export async function saveVocabToSrs(
  }
 
  // Upsert user progress
+ let contextSchemaAvailable = true;
+ let noteSchemaAvailable = true;
  let { error } = await supabase.from("user_vocab_progress").upsert(
   {
    user_id: userId,
@@ -876,20 +1038,82 @@ export async function saveVocabToSrs(
  );
 
  if (error && isMissingColumnError(error)) {
+  contextSchemaAvailable =
+   !errorMentionsColumn(error, "context_sentence") &&
+   !errorMentionsColumn(error, "context_translation");
+  noteSchemaAvailable =
+   !errorMentionsColumn(error, "personal_note") &&
+   !errorMentionsColumn(error, "personal_note_mode");
+
+  const allowContextFields = contextSchemaAvailable;
+  const allowNoteFields = noteSchemaAvailable;
+
   console.warn(
    "[VocabService] Falling back to legacy user_vocab_progress schema; migration may be missing.",
   );
 
-  const legacyResult = await supabase.from("user_vocab_progress").upsert(
-   {
-    user_id: userId,
-    vocab_id: vocab.id,
-    is_favorited: true,
-   },
-   { onConflict: "user_id,vocab_id" },
-  );
+  const fallbackPayload: Record<string, string | boolean | null> = {
+   user_id: userId,
+   vocab_id: vocab.id,
+   dictionary_id: dictionaryEntry?.id || vocabData.dictionary_id || null,
+   is_favorited: true,
+  };
 
-  error = legacyResult.error;
+  if (allowContextFields) {
+   fallbackPayload.context_sentence = options?.contextSentence ?? null;
+   fallbackPayload.context_translation = options?.contextTranslation ?? null;
+  }
+
+  if (allowNoteFields) {
+   fallbackPayload.personal_note = options?.personalNote?.trim() || null;
+   fallbackPayload.personal_note_mode = options?.personalNoteMode ?? null;
+  }
+
+  const contextFallbackResult = await supabase
+   .from("user_vocab_progress")
+   .upsert(fallbackPayload, { onConflict: "user_id,vocab_id" });
+
+  if (!contextFallbackResult.error) {
+   error = null;
+  } else if (isMissingColumnError(contextFallbackResult.error)) {
+   contextSchemaAvailable =
+    contextSchemaAvailable &&
+    !errorMentionsColumn(contextFallbackResult.error, "context_sentence") &&
+    !errorMentionsColumn(contextFallbackResult.error, "context_translation");
+   noteSchemaAvailable =
+    noteSchemaAvailable &&
+    !errorMentionsColumn(contextFallbackResult.error, "personal_note") &&
+    !errorMentionsColumn(contextFallbackResult.error, "personal_note_mode");
+
+   const noteFallbackResult = await supabase.from("user_vocab_progress").upsert(
+    {
+     user_id: userId,
+     vocab_id: vocab.id,
+     is_favorited: true,
+    },
+    { onConflict: "user_id,vocab_id" },
+   );
+
+   if (!noteFallbackResult.error) {
+    error = null;
+   } else if (isMissingColumnError(noteFallbackResult.error)) {
+    const legacyResult = await supabase.from("user_vocab_progress").upsert(
+     {
+      user_id: userId,
+      vocab_id: vocab.id,
+      is_favorited: true,
+     },
+     { onConflict: "user_id,vocab_id" },
+    );
+
+    error = legacyResult.error;
+   } else {
+    error = noteFallbackResult.error;
+   }
+  } else {
+   noteSchemaAvailable = false;
+   error = contextFallbackResult.error;
+  }
  }
 
  if (error) {
@@ -900,6 +1124,8 @@ export async function saveVocabToSrs(
  return {
   vocabId: vocab.id,
   dictionaryId: dictionaryEntry?.id || vocabData.dictionary_id,
+  contextSchemaAvailable,
+  noteSchemaAvailable,
  };
 }
 

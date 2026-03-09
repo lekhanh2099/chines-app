@@ -552,6 +552,30 @@ function normalizeWordAnalysis(
  hanzi: string,
  parsed: AiVocabResponse,
 ): AiVocabResponse {
+ const etymology =
+  typeof parsed.etymology === "string"
+   ? {
+      type: "Không xác định",
+      explanation: parsed.etymology.trim(),
+     }
+   : {
+      type: parsed.etymology?.type?.trim() || "Không xác định",
+      explanation: parsed.etymology?.explanation?.trim() || "",
+     };
+ const relatedCompounds = parsed.related_compounds
+  ?.map((compound) => ({
+   word: compound.word?.trim(),
+   pinyin: compound.pinyin?.trim(),
+   meaning: compound.meaning?.trim(),
+  }))
+  .filter((compound) => compound.word || compound.pinyin || compound.meaning);
+ const legacyRelatedCompounds = Array.from(
+  new Set(
+   [...(parsed.related_words || []), ...(parsed.collocations || [])]
+    .map((word) => word.trim())
+    .filter(Boolean),
+  ),
+ ).map((word) => ({ word }));
  const definitions = parsed.definitions?.map((definition) => ({
   ...definition,
   text: definition.text || definition.meaning,
@@ -597,7 +621,11 @@ function normalizeWordAnalysis(
       han_viet: parsed.han_viet || resolvedSinoVietnamese,
      }
    : {}),
+  etymology,
   ...(definitions ? { definitions } : {}),
+  related_compounds: relatedCompounds?.length
+   ? relatedCompounds
+   : legacyRelatedCompounds,
   ...(flattenedExamples.length ? { examples: flattenedExamples } : {}),
   ...(parsed.common_mistakes || parsed.confusion || parsed.confusion_warning
    ? {

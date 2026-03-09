@@ -3,6 +3,7 @@
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { useRef } from "react";
 import { createClient } from "@/lib/supabase/client";
+import { getClientSessionUser } from "@/lib/supabase/client-session";
 import { createNote, type CreateNoteInput } from "@/services/notes.service";
 
 /**
@@ -15,9 +16,7 @@ export function useCreateNote() {
 
  return useMutation({
   mutationFn: async (input: CreateNoteInput) => {
-   const {
-    data: { user },
-   } = await supabase.auth.getUser();
+   const user = await getClientSessionUser(supabase);
    if (!user) throw new Error("Not authenticated");
 
    const note = await createNote(supabase, user.id, input);

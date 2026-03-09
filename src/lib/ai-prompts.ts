@@ -1,44 +1,47 @@
 export const WORD_PLACEHOLDER = "{WORD}";
 export const SENTENCE_PLACEHOLDER = "{SENTENCE}";
 
-export const DEFAULT_WORD_LOOKUP_PROMPT = `Bạn là engine tra từ tiếng Trung cho người học tiếng Việt.
+export const DEFAULT_WORD_LOOKUP_PROMPT = `Bạn là chuyên gia ngôn ngữ và từ điển tiếng Trung.
+Hãy phân tích sâu từ/cụm từ sau: "{WORD}"
 
-Hãy phân tích từ/cụm từ sau: "{WORD}"
+YÊU CẦU OUTPUT:
+1. Trả về duy nhất 1 JSON object hợp lệ.
+2. Không markdown, không giải thích ngoài JSON.
+3. "etymology": Cực kỳ quan trọng. Hãy giải thích cấu tạo chữ cái (lục thư) hoặc kể một câu chuyện gợi nhớ (mnemonic) dựa trên các bộ thủ thành phần để người học dễ nhớ mặt chữ. Ngắn gọn, súc tích.
+4. "related_compounds": Liệt kê 3 từ ghép thông dụng nhất chứa từ này (HSK 1-4).
+5. "radicals": Liệt kê các bộ thủ cấu thành.
+6. "sino_vietnamese": Viết HOA.
 
-Yêu cầu:
-- Chỉ trả về duy nhất 1 JSON object hợp lệ.
-- Không markdown, không code block, không giải thích ngoài JSON.
-- Nội dung giải thích phải bằng tiếng Việt tự nhiên, ngắn gọn, rõ nghĩa.
-- "pinyin" phải là pinyin chuẩn có dấu.
-- "sino_vietnamese" phải viết HOA toàn bộ.
-- "radicals" chỉ liệt kê bộ thủ/thành phần thật sự hữu ích; nếu không chắc thì trả mảng rỗng.
-- "definitions" chỉ chứa nghĩa phổ biến, tự nhiên, đúng ngữ cảnh học tập.
-- "examples" ưu tiên ví dụ ngắn, dễ hiểu, dịch tiếng Việt mượt mà.
-- "confusion" chỉ điền khi có lưu ý dễ nhầm lẫn thật sự; nếu không có thì để chuỗi rỗng.
-
-Schema JSON:
+JSON SCHEMA STRICT MODE:
 {
-  "pinyin": "string (phiên âm chuẩn có dấu)",
-  "sino_vietnamese": "string (Âm Hán Việt viết hoa)",
+  "hanzi": "string",
+  "pinyin": "string (có dấu chuẩn)",
+  "sino_vietnamese": "string (UPPERCASE)",
   "radicals": [
     { "char": "string", "pinyin": "string", "meaning": "string" }
   ],
+  "etymology": {
+    "type": "string (Ví dụ: Hình thanh, Hội ý, Tượng hình... hoặc 'Không xác định')",
+    "explanation": "string (Giải thích logic cấu tạo hoặc câu chuyện gợi nhớ ngắn gọn)"
+  },
   "definitions": [
     {
       "pos": "string (từ loại)",
-      "meaning": "string (nghĩa tiếng Việt ngắn gọn, tự nhiên)",
+      "meaning": "string (nghĩa tiếng Việt)",
       "examples": [
         { "cn": "string", "py": "string", "vi": "string" }
       ]
     }
   ],
-  "confusion": "string (tùy chọn, nếu có lưu ý về từ dễ nhầm lẫn)"
+  "related_compounds": [
+    { "word": "string (Hanzi)", "pinyin": "string", "meaning": "string (Việt)" }
+  ],
+  "confusion": "string (Lưu ý các lỗi sai thường gặp, nếu không có để trống)"
 }
 
 Nếu không xác định được:
 - Vẫn phải trả về JSON hợp lệ.
 - Dùng chuỗi rỗng hoặc mảng rỗng cho trường không chắc chắn.
-- Có thể thêm field "error" với thông báo ngắn gọn, phù hợp.
 
 Chỉ trả về JSON hợp lệ.`;
 
@@ -100,6 +103,46 @@ Nếu không xác định được:
 Chỉ trả về JSON hợp lệ.`;
 
 const LEGACY_WORD_LOOKUP_PROMPTS = [
+ `Bạn là engine tra từ tiếng Trung cho người học tiếng Việt.
+
+Hãy phân tích từ/cụm từ sau: "{WORD}"
+
+Yêu cầu:
+- Chỉ trả về duy nhất 1 JSON object hợp lệ.
+- Không markdown, không code block, không giải thích ngoài JSON.
+- Nội dung giải thích phải bằng tiếng Việt tự nhiên, ngắn gọn, rõ nghĩa.
+- "pinyin" phải là pinyin chuẩn có dấu.
+- "sino_vietnamese" phải viết HOA toàn bộ.
+- "radicals" chỉ liệt kê bộ thủ/thành phần thật sự hữu ích; nếu không chắc thì trả mảng rỗng.
+- "definitions" chỉ chứa nghĩa phổ biến, tự nhiên, đúng ngữ cảnh học tập.
+- "examples" ưu tiên ví dụ ngắn, dễ hiểu, dịch tiếng Việt mượt mà.
+- "confusion" chỉ điền khi có lưu ý dễ nhầm lẫn thật sự; nếu không có thì để chuỗi rỗng.
+
+Schema JSON:
+{
+  "pinyin": "string (phiên âm chuẩn có dấu)",
+  "sino_vietnamese": "string (Âm Hán Việt viết hoa)",
+  "radicals": [
+    { "char": "string", "pinyin": "string", "meaning": "string" }
+  ],
+  "definitions": [
+    {
+      "pos": "string (từ loại)",
+      "meaning": "string (nghĩa tiếng Việt ngắn gọn, tự nhiên)",
+      "examples": [
+        { "cn": "string", "py": "string", "vi": "string" }
+      ]
+    }
+  ],
+  "confusion": "string (tùy chọn, nếu có lưu ý về từ dễ nhầm lẫn)"
+}
+
+Nếu không xác định được:
+- Vẫn phải trả về JSON hợp lệ.
+- Dùng chuỗi rỗng hoặc mảng rỗng cho trường không chắc chắn.
+- Có thể thêm field "error" với thông báo ngắn gọn, phù hợp.
+
+Chỉ trả về JSON hợp lệ.`,
  `Bạn là chuyên gia ngôn ngữ học và chiết tự Hán Nôm hàng đầu (PhD Level).
 Nhiệm vụ: Phân tích sâu chữ Hán/Từ vựng sau đây theo phong cách "Học 1 hiểu 10": "{WORD}".
 

@@ -3,6 +3,7 @@
 import { useQuery } from "@tanstack/react-query";
 import { useRef } from "react";
 import { createClient } from "@/lib/supabase/client";
+import { getClientSessionUser } from "@/lib/supabase/client-session";
 import { getUserNotes, getNotesByCategory } from "@/services/notes.service";
 import type { NoteCategory } from "@/types/database";
 
@@ -17,9 +18,7 @@ export function useNotesList(category?: NoteCategory) {
  return useQuery({
   queryKey: ["notes-list", category ?? "all"],
   queryFn: async () => {
-   const {
-    data: { user },
-   } = await supabase.auth.getUser();
+   const user = await getClientSessionUser(supabase);
    if (!user) return [];
 
    if (category) {
