@@ -22,7 +22,7 @@ export default async function AppLayout({
    <Sidebar />
    <div className="flex flex-col flex-1 w-full min-w-0">
     <Header user={user} />
-    <main className="flex-1 overflow-y-auto p-6 relative">{children}</main>
+    <main className="flex-1 overflow-y-auto relative">{children}</main>
    </div>
   </div>
  );
