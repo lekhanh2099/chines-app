@@ -87,6 +87,7 @@ export type DbDictionaryCore = {
  sino_vietnamese: string | null;
  data: Record<string, unknown>;
  lookup_count: number;
+ type: VocabType;
  created_at: string;
 };
 
@@ -151,6 +152,7 @@ export type NoteCategory = "grammar" | "vocabulary" | "culture" | "general";
 export type NoteStatus = "draft" | "reviewed" | "mastered";
 export type VocabProficiency = 0 | 1 | 2 | 3 | 4 | 5;
 export type PersonalNoteMode = "normal" | "important";
+export type VocabType = "word" | "sentence";
 
 /* ══════════════════════════════════════════
    AI Analysis (JSONB shape)
@@ -407,6 +409,7 @@ export type VocabWithProgress = {
  proficiency_level: number;
  is_favorited: boolean;
  status: "new" | "learning" | "mastered";
+ type: VocabType;
 };
 
 /** Vocab data used by inspector & dictionary */

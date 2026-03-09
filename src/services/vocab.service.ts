@@ -21,6 +21,7 @@ import type {
  DictionaryCoreData,
  DictionaryCoreDefinition,
  VocabData,
+ VocabType,
  VocabWithProgress,
 } from "@/types/database";
 
@@ -96,6 +97,16 @@ export function normalizeDictionaryHeadword(text: string): string {
  const trimmed = text.trim();
  const chineseOnly = extractChinese(trimmed);
  return (chineseOnly || trimmed).trim();
+}
+
+/** Classify a vocab entry as word or sentence based on hanzi length and pinyin spaces */
+export function classifyVocabType(
+ hanzi: string,
+ pinyin?: string | null,
+): VocabType {
+ if (hanzi.length > 4) return "sentence";
+ if (pinyin && pinyin.split(" ").length > 3) return "sentence";
+ return "word";
 }
 
 function normalizeRelatedCompounds(
@@ -867,6 +878,7 @@ export async function getUserVocabList(
     proficiency_level: p.proficiency_level,
     is_favorited: p.is_favorited,
     status,
+    type: classifyVocabType(v.hanzi, v.pinyin),
    };
   });
 }

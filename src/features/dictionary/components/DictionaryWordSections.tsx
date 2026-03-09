@@ -9,6 +9,7 @@ import {
  Save,
  Sparkles,
  Volume2,
+ VolumeOff,
 } from "lucide-react";
 import { SectionHeader } from "@/components/layout/section-header";
 import { SectionWrapper } from "@/components/layout/section-wrapper";
@@ -22,6 +23,7 @@ import type {
  ExampleItem,
 } from "@/features/dictionary/types";
 import { useVocabDetail } from "@/features/vocabulary/hooks/useVocabDetail";
+import { useTTS } from "@/hooks/useTTS";
 import { getNormalizedRadicals } from "@/services/vocab.service";
 
 type DictionarySectionProps = {
@@ -32,6 +34,16 @@ function DictionaryHeroSection({ viewModel }: DictionarySectionProps) {
  const { vocabData } = useVocabDetail(viewModel.selectedCharacter);
  const ai = vocabData?.ai_analysis;
  const radicals = getNormalizedRadicals(ai);
+ const { speak, stop, isSpeaking, isLoading: isTTSLoading } = useTTS();
+
+ const handleSpeak = () => {
+  if (isSpeaking) {
+   stop();
+   return;
+  }
+  void speak(viewModel.vocabData.hanzi);
+ };
+
  return (
   <SectionWrapper>
    <div className="flex flex-col gap-4">
@@ -40,8 +52,18 @@ function DictionaryHeroSection({ viewModel }: DictionarySectionProps) {
       <h1 className="text-4xl font-black tracking-tight text-text-primary sm:text-5xl">
        {viewModel.vocabData.hanzi}
       </h1>
-      <IconButton onClick={viewModel.handleSpeak} title="Đọc từ">
-       <Volume2 />
+      <IconButton
+       onClick={handleSpeak}
+       disabled={isTTSLoading}
+       title={isSpeaking ? "Dừng phát âm" : "Đọc từ"}
+      >
+       {isTTSLoading ? (
+        <Loader2 className="h-4 w-4 animate-spin text-accent" />
+       ) : isSpeaking ? (
+        <VolumeOff className="text-accent" />
+       ) : (
+        <Volume2 />
+       )}
       </IconButton>
       {(viewModel.ai?.han_viet || viewModel.vocabData.sino_vietnamese) && (
        <Badge size="md">

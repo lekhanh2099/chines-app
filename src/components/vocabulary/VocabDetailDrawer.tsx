@@ -1,9 +1,18 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { BookmarkPlus, Check, Loader2, Save, Volume2, X } from "lucide-react";
+import {
+ BookmarkPlus,
+ Check,
+ Loader2,
+ Save,
+ Volume2,
+ VolumeOff,
+ X,
+} from "lucide-react";
 import { toast } from "sonner";
 import { useSmartSelectionInsights } from "@/hooks/useSmartSelectionInsights";
+import { useTTS } from "@/hooks/useTTS";
 import { extractChinese } from "@/lib/chinese-utils";
 import {
  getNormalizedAntonyms,
@@ -65,16 +74,17 @@ export function VocabDetailDrawer() {
  });
  const smartData = detailQuery.data;
  const displayMeaning = getDisplayMeaning(mode, smartData);
+ const { speak, stop, isSpeaking, isLoading: isTTSLoading } = useTTS();
 
  const handleSpeak = () => {
   const speechText =
    mode === "sentence" ? text : smartData?.entry.hanzi || text;
   if (!speechText) return;
-  const utterance = new SpeechSynthesisUtterance(speechText);
-  utterance.lang = "zh-CN";
-  utterance.rate = 0.88;
-  window.speechSynthesis.cancel();
-  window.speechSynthesis.speak(utterance);
+  if (isSpeaking) {
+   stop();
+   return;
+  }
+  void speak(speechText);
  };
 
  const handleSave = async (noteDraft: string) => {
@@ -121,10 +131,17 @@ export function VocabDetailDrawer() {
          <button
           type="button"
           onClick={handleSpeak}
-          className="rounded-full p-1.5 text-text-muted transition-colors hover:bg-bg-primary hover:text-accent"
-          title="Nghe phát âm"
+          disabled={isTTSLoading}
+          className="rounded-full p-1.5 text-text-muted transition-colors hover:bg-bg-primary hover:text-accent disabled:opacity-50"
+          title={isSpeaking ? "Dừng phát âm" : "Nghe phát âm"}
          >
-          <Volume2 className="h-4 w-4" />
+          {isTTSLoading ? (
+           <Loader2 className="h-4 w-4 animate-spin text-accent" />
+          ) : isSpeaking ? (
+           <VolumeOff className="h-4 w-4 text-accent" />
+          ) : (
+           <Volume2 className="h-4 w-4" />
+          )}
          </button>
         </div>
         {smartData?.entry.pinyin && (

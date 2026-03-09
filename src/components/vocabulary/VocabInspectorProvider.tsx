@@ -10,6 +10,7 @@ import { getClientSessionUser } from "@/lib/supabase/client-session";
 import { getPrimaryMeaning, saveVocabToSrs } from "@/services/vocab.service";
 import { useVocabDetailDrawerStore } from "@/stores/vocab-detail-drawer-store";
 import { useInspectorStore } from "@/stores/inspector-store";
+import { useTTS } from "@/hooks/useTTS";
 import type { AiDefinition, VocabData } from "@/types/database";
 import {
  BookmarkPlus,
@@ -17,6 +18,7 @@ import {
  CheckCircle,
  Loader2,
  Volume2,
+ VolumeOff,
  X,
 } from "lucide-react";
 import { toast } from "sonner";
@@ -161,6 +163,7 @@ function InspectorCard({ onClose }: InspectorCardProps) {
  const openDetailDrawer = useVocabDetailDrawerStore(
   (state) => state.openDetailDrawer,
  );
+ const { speak, stop, isSpeaking, isLoading: isTTSLoading } = useTTS();
 
  useEffect(() => {
   setIsSaved(false);
@@ -193,13 +196,11 @@ function InspectorCard({ onClose }: InspectorCardProps) {
 
  const handleSpeak = () => {
   if (!vocabData) return;
-
-  window.speechSynthesis.cancel();
-
-  const utterance = new SpeechSynthesisUtterance(vocabData.hanzi);
-  utterance.lang = "zh-CN";
-  utterance.rate = 0.85;
-  window.speechSynthesis.speak(utterance);
+  if (isSpeaking) {
+   stop();
+   return;
+  }
+  void speak(vocabData.hanzi);
  };
 
  const sinoVietnamese = getSinoVietnamese(vocabData);
@@ -228,11 +229,17 @@ function InspectorCard({ onClose }: InspectorCardProps) {
        className="rounded-full"
        onMouseDown={preserveSelection}
        onClick={handleSpeak}
-       disabled={!vocabData}
-       aria-label="Nghe phát âm"
-       title="Nghe phát âm"
+       disabled={!vocabData || isTTSLoading}
+       aria-label={isSpeaking ? "Dừng phát âm" : "Nghe phát âm"}
+       title={isSpeaking ? "Dừng phát âm" : "Nghe phát âm"}
       >
-       <Volume2 className="h-4 w-4" />
+       {isTTSLoading ? (
+        <Loader2 className="h-4 w-4 animate-spin text-accent" />
+       ) : isSpeaking ? (
+        <VolumeOff className="h-4 w-4 text-accent" />
+       ) : (
+        <Volume2 className="h-4 w-4" />
+       )}
       </Button>
       <Button
        variant="ghost"
