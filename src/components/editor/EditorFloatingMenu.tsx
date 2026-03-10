@@ -10,7 +10,9 @@ import {
  $isRangeSelection,
  $isTextNode,
  COMMAND_PRIORITY_LOW,
+ COMMAND_PRIORITY_CRITICAL,
  FORMAT_TEXT_COMMAND,
+ KEY_DOWN_COMMAND,
  SELECTION_CHANGE_COMMAND,
  type TextFormatType,
 } from "lexical";
@@ -22,10 +24,13 @@ import {
  Code,
  Highlighter,
  Italic,
+ Link2,
  Loader2,
  NotebookPen,
  RemoveFormatting,
  Save,
+ Search,
+ StickyNote,
  Strikethrough,
  Subscript,
  Superscript,
@@ -38,7 +43,12 @@ import { useDebounce } from "@/hooks/useDebounce";
 import { useSmartSelectionInsights } from "@/hooks/useSmartSelectionInsights";
 import { extractChinese } from "@/lib/chinese-utils";
 import { cn } from "@/lib/utils";
+import { useDictionaryLookupStore } from "@/stores/dictionary-lookup-store";
 import { useVocabDetailDrawerStore } from "@/stores/vocab-detail-drawer-store";
+import { usePathname } from "next/navigation";
+import { $createInternalLinkNode } from "./nodes/InternalLinkNode";
+import { $createInlineNoteNode } from "./nodes/InlineNoteNode";
+import type { NoteListItem } from "@/services/notes.service";
 type SelectionAnchor = {
  getBoundingClientRect: () => DOMRect;
  contextElement?: Element | null;
@@ -95,6 +105,12 @@ export default function EditorFloatingMenu() {
  const [showNote, setShowNote] = useState(false);
  const [noteDraft, setNoteDraft] = useState("");
  const [noteSelectionKey, setNoteSelectionKey] = useState("");
+ const [showLinkSearch, setShowLinkSearch] = useState(false);
+ const [linkSearchQuery, setLinkSearchQuery] = useState("");
+ const [linkSearchResults, setLinkSearchResults] = useState<NoteListItem[]>([]);
+ const [isSearching, setIsSearching] = useState(false);
+ const [showInlineNote, setShowInlineNote] = useState(false);
+ const [inlineNoteDraft, setInlineNoteDraft] = useState("");
  const [draftSelection, setDraftSelection] = useState<DraftSelection>({
   text: "",
   contextSentence: "",
@@ -109,10 +125,14 @@ export default function EditorFloatingMenu() {
  const [isHighlight, setIsHighlight] = useState(false);
  const selectionAnchorRef = useRef<SelectionAnchor | null>(null);
  const noteTextareaRef = useRef<HTMLTextAreaElement | null>(null);
+ const linkSearchInputRef = useRef<HTMLInputElement | null>(null);
+ const inlineNoteTextareaRef = useRef<HTMLTextAreaElement | null>(null);
  const latestDraftRef = useRef<DraftSelection>({
   text: "",
   contextSentence: "",
  });
+ const pathname = usePathname();
+ const lookupEnabled = useDictionaryLookupStore((s) => s.isEnabled(pathname));
  const openDetailDrawer = useVocabDetailDrawerStore(
   (state) => state.openDetailDrawer,
  );
@@ -131,7 +151,9 @@ export default function EditorFloatingMenu() {
   isChineseSelection,
   saveSelection,
   isSaving,
- } = useSmartSelectionInsights(selectedText, contextSentence);
+ } = useSmartSelectionInsights(selectedText, contextSentence, {
+  enabled: lookupEnabled,
+ });
 
  const smartMode = smartData?.mode || mode;
  const detailTarget =
@@ -177,6 +199,11 @@ export default function EditorFloatingMenu() {
   setShowNote(false);
   setNoteDraft("");
   setNoteSelectionKey("");
+  setShowLinkSearch(false);
+  setLinkSearchQuery("");
+  setLinkSearchResults([]);
+  setShowInlineNote(false);
+  setInlineNoteDraft("");
   selectionAnchorRef.current = null;
  }, []);
 
@@ -190,7 +217,10 @@ export default function EditorFloatingMenu() {
    !nativeSelection ||
    nativeSelection.isCollapsed
   ) {
-   if (showNote && latestDraftRef.current.text) {
+   if (
+    (showNote || showLinkSearch || showInlineNote) &&
+    latestDraftRef.current.text
+   ) {
     return;
    }
    clearSelectionState();
@@ -246,8 +276,19 @@ export default function EditorFloatingMenu() {
    setShowNote(false);
    setNoteDraft("");
    setNoteSelectionKey("");
+   setShowLinkSearch(false);
+   setLinkSearchQuery("");
+   setLinkSearchResults([]);
+   setShowInlineNote(false);
+   setInlineNoteDraft("");
   }
- }, [clearSelectionState, showNote, updateAnchorFromNativeSelection]);
+ }, [
+  clearSelectionState,
+  showNote,
+  showLinkSearch,
+  showInlineNote,
+  updateAnchorFromNativeSelection,
+ ]);
 
  useEffect(() => {
   return mergeRegister(
@@ -262,19 +303,42 @@ export default function EditorFloatingMenu() {
    editor.registerUpdateListener(({ editorState }) => {
     editorState.read(() => updateSelectionState());
    }),
+   // Ctrl+K / Cmd+K shortcut for "Link to note"
+   editor.registerCommand(
+    KEY_DOWN_COMMAND,
+    (event: KeyboardEvent) => {
+     if ((event.metaKey || event.ctrlKey) && event.key === "k") {
+      const selection = $getSelection();
+      if ($isRangeSelection(selection) && !selection.isCollapsed()) {
+       event.preventDefault();
+       setShowLinkSearch(true);
+       setShowNote(false);
+       setShowInlineNote(false);
+       requestAnimationFrame(() => {
+        linkSearchInputRef.current?.focus();
+       });
+       return true;
+      }
+     }
+     return false;
+    },
+    COMMAND_PRIORITY_CRITICAL,
+   ),
   );
  }, [editor, updateSelectionState]);
 
- const popupOpen =
+ // Show the popup for ANY text selection (not only Chinese)
+ const finalPopupOpen =
   hasAnchor &&
   !isViewportHidden &&
   !!selectedText &&
-  isChineseSelection &&
   draftSelection.text === selectedText &&
   draftSelection.contextSentence === contextSentence;
 
+ const showChineseLookup = isChineseSelection && lookupEnabled;
+
  useEffect(() => {
-  if (!popupOpen) return;
+  if (!finalPopupOpen) return;
 
   const hide = () => setIsViewportHidden(true);
   window.addEventListener("scroll", hide, { capture: true, passive: true });
@@ -284,7 +348,7 @@ export default function EditorFloatingMenu() {
    window.removeEventListener("scroll", hide, { capture: true });
    window.removeEventListener("resize", hide);
   };
- }, [popupOpen]);
+ }, [finalPopupOpen]);
 
  const formatText = useCallback(
   (format: TextFormatType) => {
@@ -388,17 +452,115 @@ export default function EditorFloatingMenu() {
   }
  };
 
- if (typeof window === "undefined" || !popupOpen) {
+ /* ── Link to note ── */
+ const handleLinkSearch = useCallback(async (query: string) => {
+  setLinkSearchQuery(query);
+  if (!query.trim()) {
+   setLinkSearchResults([]);
+   return;
+  }
+  setIsSearching(true);
+  try {
+   const res = await fetch(`/api/notes/search?q=${encodeURIComponent(query)}`);
+   if (res.ok) {
+    const data = await res.json();
+    setLinkSearchResults(data.notes || []);
+   }
+  } catch {
+   // silent fail
+  } finally {
+   setIsSearching(false);
+  }
+ }, []);
+
+ const handleInsertNoteLink = useCallback(
+  (noteItem: NoteListItem) => {
+   editor.update(() => {
+    const selection = $getSelection();
+    if (!$isRangeSelection(selection)) return;
+
+    const linkText = selection.getTextContent() || noteItem.title;
+    selection.removeText();
+    const linkNode = $createInternalLinkNode(
+     noteItem.id,
+     noteItem.title,
+     linkText,
+    );
+    selection.insertNodes([linkNode]);
+   });
+   toast.success(`Đã liên kết đến "${noteItem.title}"`);
+   setShowLinkSearch(false);
+   setLinkSearchQuery("");
+   setLinkSearchResults([]);
+  },
+  [editor],
+ );
+
+ const handleToggleLinkSearch = (
+  event: React.MouseEvent<HTMLButtonElement>,
+ ) => {
+  preserveEditorSelection(event);
+  const next = !showLinkSearch;
+  setShowLinkSearch(next);
+  setShowNote(false);
+  setShowInlineNote(false);
+  if (next) {
+   requestAnimationFrame(() => {
+    linkSearchInputRef.current?.focus();
+   });
+  }
+ };
+
+ /* ── Inline quick note ── */
+ const handleToggleInlineNote = (
+  event: React.MouseEvent<HTMLButtonElement>,
+ ) => {
+  preserveEditorSelection(event);
+  const next = !showInlineNote;
+  setShowInlineNote(next);
+  setShowNote(false);
+  setShowLinkSearch(false);
+  if (next) {
+   setInlineNoteDraft("");
+   requestAnimationFrame(() => {
+    inlineNoteTextareaRef.current?.focus();
+   });
+  }
+ };
+
+ const handleSaveInlineNote = (event: React.MouseEvent<HTMLButtonElement>) => {
+  preserveEditorSelection(event);
+  if (!inlineNoteDraft.trim()) return;
+
+  // Replace selected text with an InlineNoteNode (persists in document JSON)
+  editor.update(() => {
+   const selection = $getSelection();
+   if (!$isRangeSelection(selection)) return;
+
+   const text = selection.getTextContent();
+   selection.removeText();
+   const noteNode = $createInlineNoteNode(text, inlineNoteDraft.trim());
+   selection.insertNodes([noteNode]);
+  });
+
+  toast.success("Đã lưu ghi chú nhanh");
+  setShowInlineNote(false);
+  setInlineNoteDraft("");
+ };
+
+ if (typeof window === "undefined" || !finalPopupOpen) {
   return null;
  }
 
  return (
   <Popover.Root
-   open={popupOpen}
+   open={finalPopupOpen}
    onOpenChange={(open) => {
     if (!open) {
      setIsViewportHidden(true);
      setShowNote(false);
+     setShowLinkSearch(false);
+     setShowInlineNote(false);
     }
    }}
    modal={false}
@@ -421,7 +583,7 @@ export default function EditorFloatingMenu() {
       style={{ maxWidth: "calc(100vw - 1rem)" }}
       className="relative w-auto min-w-75 max-w-md rounded-lg border border-gray-200 bg-white shadow-xl"
      >
-      {isChineseSelection && (
+      {showChineseLookup && (
        <div className="p-2 pb-1">
         {smartLoading ? (
          <div className="flex items-center justify-center gap-2 rounded-md px-3 py-4 text-sm text-slate-500">
@@ -529,7 +691,7 @@ export default function EditorFloatingMenu() {
       <div className="border-t border-slate-200 bg-slate-50 p-2">
        <div className="flex flex-wrap items-center justify-between gap-2">
         <div className="flex flex-wrap items-center gap-1">
-         {isChineseSelection && (
+         {showChineseLookup && (
           <>
            <Button
             variant="ghost"
@@ -598,6 +760,35 @@ export default function EditorFloatingMenu() {
         </div>
 
         <div className="flex flex-wrap items-center justify-end gap-1">
+         {/* ── Link to note + Quick note (always visible) ── */}
+         <Button
+          variant="ghost"
+          size="icon-sm"
+          className={cn(
+           "h-8 w-8 min-w-0 rounded-md border border-transparent px-0 text-slate-500 hover:bg-slate-100 hover:text-slate-900",
+           showLinkSearch && "border-indigo-200 bg-indigo-50 text-indigo-600",
+          )}
+          onMouseDown={preserveEditorSelection}
+          onClick={handleToggleLinkSearch}
+          title="Liên kết ghi chú (Ctrl+K)"
+         >
+          <Link2 className="h-4 w-4" />
+         </Button>
+         <Button
+          variant="ghost"
+          size="icon-sm"
+          className={cn(
+           "h-8 w-8 min-w-0 rounded-md border border-transparent px-0 text-slate-500 hover:bg-amber-50 hover:text-amber-700",
+           showInlineNote && "border-amber-200 bg-amber-50 text-amber-700",
+          )}
+          onMouseDown={preserveEditorSelection}
+          onClick={handleToggleInlineNote}
+          title="Ghi chú nhanh"
+         >
+          <StickyNote className="h-4 w-4" />
+         </Button>
+         <div className="mx-1 h-5 w-px bg-slate-200" />
+
          <FormatButton
           active={isBold}
           onClick={() => formatText("bold")}
@@ -694,6 +885,106 @@ export default function EditorFloatingMenu() {
           onChange={(event) => setNoteDraft(event.target.value)}
           className="min-h-23 w-full resize-y rounded-md border border-yellow-200 bg-transparent px-3 py-2 text-sm text-slate-700 outline-none placeholder:text-slate-400 focus:border-amber-300"
           placeholder="Ghi chú nhanh..."
+         />
+        </div>
+       )}
+
+       {/* ── Link to Note search ── */}
+       {showLinkSearch && (
+        <div className="mt-2 overflow-hidden rounded-md border border-indigo-100 bg-indigo-50/50 p-3 animate-in slide-in-from-top-1 duration-200">
+         <div className="mb-2 flex items-center gap-2">
+          <Search className="h-4 w-4 text-indigo-500" />
+          <span className="text-xs font-semibold text-indigo-700">
+           Liên kết ghi chú
+          </span>
+         </div>
+         <input
+          ref={linkSearchInputRef}
+          type="text"
+          value={linkSearchQuery}
+          onMouseDown={(event) => {
+           event.preventDefault();
+           event.stopPropagation();
+           requestAnimationFrame(() => {
+            linkSearchInputRef.current?.focus();
+           });
+          }}
+          onClick={(event) => event.stopPropagation()}
+          onChange={(event) => handleLinkSearch(event.target.value)}
+          onKeyDown={(event) => {
+           if (event.key === "Escape") {
+            setShowLinkSearch(false);
+           }
+           if (event.key === "Enter" && linkSearchResults.length > 0) {
+            event.preventDefault();
+            handleInsertNoteLink(linkSearchResults[0]);
+           }
+          }}
+          placeholder="Tìm theo tiêu đề ghi chú..."
+          className="w-full rounded-md border border-indigo-200 bg-white px-3 py-1.5 text-sm text-slate-700 outline-none placeholder:text-slate-400 focus:border-indigo-400"
+         />
+         {isSearching && (
+          <div className="mt-2 flex items-center gap-2 text-xs text-indigo-500">
+           <Loader2 className="h-3.5 w-3.5 animate-spin" /> Đang tìm...
+          </div>
+         )}
+         {!isSearching && linkSearchResults.length > 0 && (
+          <div className="mt-2 max-h-36 overflow-y-auto space-y-0.5">
+           {linkSearchResults.map((note) => (
+            <button
+             key={note.id}
+             onMouseDown={preserveEditorSelection}
+             onClick={(event) => {
+              preserveEditorSelection(event);
+              handleInsertNoteLink(note);
+             }}
+             className="w-full text-left rounded px-3 py-1.5 text-sm hover:bg-indigo-100 transition-colors text-slate-700"
+            >
+             {note.title}
+            </button>
+           ))}
+          </div>
+         )}
+         {!isSearching && linkSearchQuery && linkSearchResults.length === 0 && (
+          <p className="mt-2 text-xs text-slate-400">
+           Không tìm thấy ghi chú nào
+          </p>
+         )}
+        </div>
+       )}
+
+       {/* ── Inline Quick Note ── */}
+       {showInlineNote && (
+        <div className="mt-2 overflow-hidden rounded-md border border-sky-100 bg-sky-50/50 p-3 animate-in slide-in-from-top-1 duration-200">
+         <div className="mb-2 flex items-center justify-between gap-2">
+          <span className="rounded-full bg-sky-100 px-2 py-0.5 text-[11px] font-semibold uppercase tracking-wide text-sky-700">
+           Ghi chú nhanh
+          </span>
+          <Button
+           variant="ghost"
+           size="sm"
+           className="h-7 min-w-0 rounded-md px-2 text-xs text-sky-700 hover:bg-sky-100"
+           onMouseDown={preserveEditorSelection}
+           onClick={handleSaveInlineNote}
+          >
+           <Save className="h-3.5 w-3.5" />
+           Lưu
+          </Button>
+         </div>
+         <textarea
+          ref={inlineNoteTextareaRef}
+          value={inlineNoteDraft}
+          onMouseDown={(event) => {
+           event.preventDefault();
+           event.stopPropagation();
+           requestAnimationFrame(() => {
+            inlineNoteTextareaRef.current?.focus();
+           });
+          }}
+          onClick={(event) => event.stopPropagation()}
+          onChange={(event) => setInlineNoteDraft(event.target.value)}
+          className="min-h-16 w-full resize-y rounded-md border border-sky-200 bg-transparent px-3 py-2 text-sm text-slate-700 outline-none placeholder:text-slate-400 focus:border-sky-300"
+          placeholder="Ghim ghi chú lại... (vd: tra thêm ví dụ, phát âm đặc biệt)"
          />
         </div>
        )}

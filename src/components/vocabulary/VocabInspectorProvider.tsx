@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { usePathname } from "next/navigation";
 import { Popover } from "@base-ui/react";
 import { Button } from "@/components/ui/button";
 import { VocabDetailDrawer } from "@/components/vocabulary/VocabDetailDrawer";
@@ -10,6 +11,7 @@ import { getClientSessionUser } from "@/lib/supabase/client-session";
 import { getPrimaryMeaning, saveVocabToSrs } from "@/services/vocab.service";
 import { useVocabDetailDrawerStore } from "@/stores/vocab-detail-drawer-store";
 import { useInspectorStore } from "@/stores/inspector-store";
+import { useDictionaryLookupStore } from "@/stores/dictionary-lookup-store";
 import { useTTS } from "@/hooks/useTTS";
 import type { AiDefinition, VocabData } from "@/types/database";
 import {
@@ -68,6 +70,8 @@ export function VocabInspectorProvider({
  const { isOpen, openInspector, closeInspector } = useInspectorStore();
  const selectionAnchorRef = useRef<SelectionAnchor | null>(null);
  const [anchorRect, setAnchorRect] = useState<DOMRect | null>(null);
+ const pathname = usePathname();
+ const lookupEnabled = useDictionaryLookupStore((s) => s.isEnabled(pathname));
 
  const handleClose = () => {
   selectionAnchorRef.current = null;
@@ -77,6 +81,7 @@ export function VocabInspectorProvider({
 
  useEffect(() => {
   const handleMouseUp = (event: MouseEvent) => {
+   if (!lookupEnabled) return;
    const target = event.target as HTMLElement | null;
    if (target?.closest("[data-no-inspector]")) return;
 
@@ -103,7 +108,7 @@ export function VocabInspectorProvider({
 
   document.addEventListener("mouseup", handleMouseUp);
   return () => document.removeEventListener("mouseup", handleMouseUp);
- }, [openInspector]);
+ }, [openInspector, lookupEnabled]);
 
  const getAnchor = () =>
   selectionAnchorRef.current as unknown as Element | null;

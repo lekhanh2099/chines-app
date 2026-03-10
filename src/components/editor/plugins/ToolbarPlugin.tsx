@@ -88,6 +88,7 @@ import {
  SeparatorHorizontal,
  X,
 } from "lucide-react";
+import { VocabImportButton } from "../VocabImportButton";
 
 /* ── Constants ── */
 
@@ -1013,7 +1014,7 @@ export default function ToolbarPlugin() {
    <Divider />
 
    {/* ── Pinyin Toggle ── */}
-   <ToolbarButton
+   {/* <ToolbarButton
     active={pinyinVisible}
     onClick={toggleGlobalPinyin}
     title={pinyinVisible ? "Ẩn tất cả Pinyin" : "Hiện tất cả Pinyin"}
@@ -1025,7 +1026,11 @@ export default function ToolbarPlugin() {
      <EyeOff className="w-3.5 h-3.5" />
     )}
     <span className="toolbar-pinyin-label">Pinyin</span>
-   </ToolbarButton>
+   </ToolbarButton> */}
+   <Divider />
+
+   {/* ── Vocab Import ── */}
+   <VocabImportButton />
   </div>
  );
 }

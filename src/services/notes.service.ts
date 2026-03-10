@@ -13,7 +13,7 @@ import type { DbNote, NoteCategory } from "@/types/database";
 
 export type NoteListItem = Pick<
  DbNote,
- "id" | "title" | "tags" | "status" | "category" | "updated_at"
+ "id" | "title" | "tags" | "status" | "category" | "short_id" | "updated_at"
 >;
 
 export type CreateNoteInput = {
@@ -34,7 +34,7 @@ export async function getUserNotes(
 ): Promise<NoteListItem[]> {
  const { data, error } = await supabase
   .from("notes")
-  .select("id, title, tags, status, category, updated_at")
+  .select("id, title, tags, status, category, short_id, updated_at")
   .eq("user_id", userId)
   .order("updated_at", { ascending: false });
 
@@ -54,7 +54,7 @@ export async function getNotesByCategory(
 ): Promise<NoteListItem[]> {
  const { data, error } = await supabase
   .from("notes")
-  .select("id, title, tags, status, category, updated_at")
+  .select("id, title, tags, status, category, short_id, updated_at")
   .eq("user_id", userId)
   .eq("category", category)
   .order("updated_at", { ascending: false });
@@ -187,4 +187,46 @@ export async function deleteNote(
   return false;
  }
  return true;
+}
+
+/** Resolve a short_id to the full note (for URL redirects) */
+export async function getNoteByShortId(
+ supabase: SupabaseClient,
+ shortId: string,
+ userId: string,
+): Promise<Pick<DbNote, "id" | "short_id"> | null> {
+ const { data, error } = await supabase
+  .from("notes")
+  .select("id, short_id")
+  .eq("short_id", shortId)
+  .eq("user_id", userId)
+  .single();
+
+ if (error) {
+  console.error("[NotesService] fetch by short_id error:", error);
+  return null;
+ }
+ return data as Pick<DbNote, "id" | "short_id">;
+}
+
+/** Search notes by title (for link-to-note feature) */
+export async function searchNotesByTitle(
+ supabase: SupabaseClient,
+ userId: string,
+ query: string,
+ limit = 10,
+): Promise<NoteListItem[]> {
+ const { data, error } = await supabase
+  .from("notes")
+  .select("id, title, tags, status, category, short_id, updated_at")
+  .eq("user_id", userId)
+  .ilike("title", `%${query}%`)
+  .order("updated_at", { ascending: false })
+  .limit(limit);
+
+ if (error) {
+  console.error("[NotesService] search error:", error);
+  return [];
+ }
+ return (data || []) as NoteListItem[];
 }

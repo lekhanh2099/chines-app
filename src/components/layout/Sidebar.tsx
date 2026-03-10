@@ -16,10 +16,14 @@ import {
  ChevronRight,
  Loader2,
  Clock,
+ PanelLeftClose,
+ PanelLeftOpen,
 } from "lucide-react";
 import { type ReactNode, useState } from "react";
 import { useNotesList } from "@/features/notes/hooks/useNotesList";
 import { useCreateNote } from "@/features/notes/hooks/useCreateNote";
+import { useSidebarStore } from "@/stores/sidebar-store";
+import { cn } from "@/lib/utils";
 
 /* ── Types ── */
 type SidebarItem = {
@@ -57,6 +61,7 @@ function TreeItem({
  active,
  trailing,
  onClick,
+ collapsed,
 }: {
  href?: string;
  icon: typeof FileText;
@@ -64,31 +69,42 @@ function TreeItem({
  active?: boolean;
  trailing?: ReactNode;
  onClick?: () => void;
+ collapsed?: boolean;
 }) {
- const cls = `group flex items-center gap-3 px-3 h-9 rounded text-[13px] font-medium transition-all ${
+ const cls = cn(
+  "group flex items-center gap-3 h-9 rounded text-[13px] font-medium transition-all",
+  collapsed ? "justify-center px-0 mx-auto w-9" : "px-3",
   active
    ? "bg-bg-card shadow-theme-sm border border-border-default text-accent-text"
-   : "text-text-secondary hover:bg-bg-card hover:text-text-primary"
- }`;
+   : "text-text-secondary hover:bg-bg-card hover:text-text-primary",
+ );
 
  const content = (
   <>
    <Icon className="w-4 h-4 shrink-0" />
-   <span className="truncate">{label}</span>
-   {trailing}
+   {!collapsed && <span className="truncate">{label}</span>}
+   {!collapsed && trailing}
   </>
  );
 
  if (onClick) {
   return (
-   <button onClick={onClick} className={`${cls} w-full text-left`}>
+   <button
+    onClick={onClick}
+    className={cn(cls, !collapsed && "w-full text-left")}
+    title={collapsed ? label : undefined}
+   >
     {content}
    </button>
   );
  }
 
  return (
-  <Link href={href ?? "#"} className={cls}>
+  <Link
+   href={href ?? "#"}
+   className={cls}
+   title={collapsed ? label : undefined}
+  >
    {content}
   </Link>
  );
@@ -100,6 +116,8 @@ export function Sidebar() {
  const [isCreating, setIsCreating] = useState(false);
  const { data: notes } = useNotesList();
  const createNoteMutation = useCreateNote();
+ const isCollapsed = useSidebarStore((s) => s.isCollapsed);
+ const toggleSidebar = useSidebarStore((s) => s.toggle);
 
  const recentNotes = (notes ?? []).slice(0, 5);
 
@@ -159,41 +177,79 @@ export function Sidebar() {
  };
 
  return (
-  <aside className="w-65 bg-bg-primary border-r border-border-default flex flex-col h-full shrink-0">
+  <aside
+   className={cn(
+    "bg-bg-primary border-r border-border-default flex flex-col h-full shrink-0 transition-all duration-200",
+    isCollapsed ? "w-16" : "w-65",
+   )}
+  >
    {/* Brand */}
-   <div className="flex items-center gap-3 px-5 py-4">
-    <div className="w-8 h-8 rounded bg-accent flex items-center justify-center">
+   <div
+    className={cn(
+     "flex items-center gap-3 py-4",
+     isCollapsed ? "justify-center px-2" : "px-5",
+    )}
+   >
+    <div className="w-8 h-8 rounded bg-accent flex items-center justify-center shrink-0">
      <span className="text-text-inverse font-bold text-sm">H</span>
     </div>
-    <div>
-     <h1 className="font-bold text-sm text-text-primary leading-tight">
-      Học Tiếng Trung
-     </h1>
-     <p className="text-[11px] text-text-muted">Phiên bản Cá nhân</p>
-    </div>
+    {!isCollapsed && (
+     <div>
+      <h1 className="font-bold text-sm text-text-primary leading-tight">
+       Học Tiếng Trung
+      </h1>
+      <p className="text-[11px] text-text-muted">Phiên bản Cá nhân</p>
+     </div>
+    )}
+   </div>
+
+   {/* Collapse toggle */}
+   <div
+    className={cn(
+     "mb-1",
+     isCollapsed ? "px-2 flex justify-center" : "px-3 flex justify-end",
+    )}
+   >
+    <button
+     onClick={toggleSidebar}
+     className="w-8 h-8 rounded flex items-center justify-center text-text-muted hover:bg-bg-card hover:text-text-primary transition-colors"
+     title={isCollapsed ? "Mở rộng sidebar" : "Thu gọn sidebar"}
+    >
+     {isCollapsed ? (
+      <PanelLeftOpen className="w-4 h-4" />
+     ) : (
+      <PanelLeftClose className="w-4 h-4" />
+     )}
+    </button>
    </div>
 
    {/* New Note Button */}
-   <div className="px-3 mt-1 mb-3">
+   <div className={cn(isCollapsed ? "px-2" : "px-3", "mt-1 mb-3")}>
     <button
      onClick={handleNewNote}
      disabled={isCreating}
-     className="w-full flex items-center justify-center gap-2 px-3 h-9 rounded bg-accent text-white text-sm font-medium hover:bg-accent-hover transition-colors disabled:opacity-70"
+     className={cn(
+      "flex items-center justify-center gap-2 h-9 rounded bg-accent text-white text-sm font-medium hover:bg-accent-hover transition-colors disabled:opacity-70",
+      isCollapsed ? "w-9 mx-auto px-0" : "w-full px-3",
+     )}
+     title={isCollapsed ? "Ghi chú mới" : undefined}
     >
      {isCreating ? (
       <Loader2 className="w-4 h-4 animate-spin" />
      ) : (
       <Plus className="w-4 h-4" />
      )}
-     <span>{isCreating ? "Đang tạo..." : "Ghi chú mới"}</span>
+     {!isCollapsed && <span>{isCreating ? "Đang tạo..." : "Ghi chú mới"}</span>}
     </button>
    </div>
 
    {/* Quick Access */}
-   <nav className="flex flex-col gap-0.5 px-3">
-    <span className="px-3 py-1.5 text-[10px] font-bold uppercase tracking-wider text-text-muted">
-     Truy cập nhanh
-    </span>
+   <nav className={cn("flex flex-col gap-0.5", isCollapsed ? "px-2" : "px-3")}>
+    {!isCollapsed && (
+     <span className="px-3 py-1.5 text-[10px] font-bold uppercase tracking-wider text-text-muted">
+      Truy cập nhanh
+     </span>
+    )}
     {quickAccess.map((item) => (
      <TreeItem
       key={item.href}
@@ -202,12 +258,13 @@ export function Sidebar() {
       label={item.name}
       active={isActive(item.href)}
       trailing={item.trailing}
+      collapsed={isCollapsed}
      />
     ))}
    </nav>
 
    {/* Latest Opened */}
-   {recentNotes.length > 0 && (
+   {recentNotes.length > 0 && !isCollapsed && (
     <nav className="flex flex-col gap-0.5 px-3 mt-5">
      <span className="px-3 py-1.5 text-[10px] font-bold uppercase tracking-wider text-text-muted">
       Mở gần đây
@@ -229,11 +286,27 @@ export function Sidebar() {
     </nav>
    )}
 
+   {/* Recent notes - collapsed: just show icon */}
+   {recentNotes.length > 0 && isCollapsed && (
+    <nav className="flex flex-col gap-0.5 px-2 mt-5">
+     <TreeItem
+      href="/notes?view=all"
+      icon={Clock}
+      label="Mở gần đây"
+      collapsed={isCollapsed}
+     />
+    </nav>
+   )}
+
    {/* Learning Tools */}
-   <nav className="flex flex-col gap-0.5 px-3 mt-5">
-    <span className="px-3 py-1.5 text-[10px] font-bold uppercase tracking-wider text-text-muted">
-     Công cụ học
-    </span>
+   <nav
+    className={cn("flex flex-col gap-0.5 mt-5", isCollapsed ? "px-2" : "px-3")}
+   >
+    {!isCollapsed && (
+     <span className="px-3 py-1.5 text-[10px] font-bold uppercase tracking-wider text-text-muted">
+      Công cụ học
+     </span>
+    )}
     {learningTools.map((item) => (
      <TreeItem
       key={item.href}
@@ -241,6 +314,7 @@ export function Sidebar() {
       icon={item.icon}
       label={item.name}
       active={isActive(item.href)}
+      collapsed={isCollapsed}
      />
     ))}
    </nav>
@@ -249,14 +323,22 @@ export function Sidebar() {
    <div className="flex-1" />
 
    {/* Bottom Section */}
-   <div className="px-3 pb-4 flex flex-col gap-0.5">
+   <div
+    className={cn("pb-4 flex flex-col gap-0.5", isCollapsed ? "px-2" : "px-3")}
+   >
     <TreeItem
      href="/settings"
      icon={Settings}
      label="Cài đặt"
      active={isActive("/settings")}
+     collapsed={isCollapsed}
     />
-    <TreeItem icon={LogOut} label="Đăng xuất" onClick={handleLogout} />
+    <TreeItem
+     icon={LogOut}
+     label="Đăng xuất"
+     onClick={handleLogout}
+     collapsed={isCollapsed}
+    />
    </div>
   </aside>
  );

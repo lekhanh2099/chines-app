@@ -107,6 +107,7 @@ export type DbNote = {
  is_published: boolean;
  category: NoteCategory;
  status: NoteStatus;
+ short_id: string | null;
  created_at: string;
  updated_at: string;
 };

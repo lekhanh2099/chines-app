@@ -6,6 +6,7 @@ import {
  loadClientAiPromptSettings,
 } from "@/lib/ai-prompt-settings-client";
 import { extractChinese, isChineseOnlyText } from "@/lib/chinese-utils";
+import { enqueueSelectionLookup } from "@/lib/selection-lookup-queue";
 import type {
  PersonalNoteMode,
  SmartSelectionMode,
@@ -48,24 +49,27 @@ export function useSmartSelectionInsights(
   enabled: enabled && isChineseSelection && !!lookupKey,
   staleTime: 1000 * 60 * 8,
   gcTime: 1000 * 60 * 30,
-  queryFn: async () => {
-   const res = await fetch("/api/editor/context", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({
-     selection: trimmedSelection,
-     contextSentence,
-     mode,
-    }),
-   });
+  queryFn: () =>
+   enqueueSelectionLookup(async () => {
+    const res = await fetch("/api/editor/context", {
+     method: "POST",
+     headers: { "Content-Type": "application/json" },
+     body: JSON.stringify({
+      selection: trimmedSelection,
+      contextSentence,
+      mode,
+     }),
+    });
 
-   const json = (await res.json()) as SmartSelectionResult & { error?: string };
-   if (!res.ok) {
-    throw new Error(json.error || "Không thể lấy dữ liệu selection");
-   }
+    const json = (await res.json()) as SmartSelectionResult & {
+     error?: string;
+    };
+    if (!res.ok) {
+     throw new Error(json.error || "Không thể lấy dữ liệu selection");
+    }
 
-   return json;
-  },
+    return json;
+   }),
  });
 
  const saveMutation = useMutation({

@@ -20,10 +20,12 @@ import type {
 const RECENT_LOOKUPS_KEY = "recent-lookups";
 const MAX_RECENT_LOOKUPS = 10;
 const MAX_INSPECTOR_CACHE_ITEMS = 80;
+const CACHE_TTL_MS = 5 * 60 * 1000; // 5 minutes
 
 type InspectorCacheEntry = {
  vocab: VocabData;
  hasDeepData: boolean;
+ cachedAt: number;
 };
 
 const inspectorVocabCache = new Map<string, InspectorCacheEntry>();
@@ -44,6 +46,7 @@ function setCachedVocab(text: string, vocab: VocabData) {
  inspectorVocabCache.set(key, {
   vocab,
   hasDeepData: hasInspectorDeepDiveData(vocab.ai_analysis),
+  cachedAt: Date.now(),
  });
 
  if (inspectorVocabCache.size <= MAX_INSPECTOR_CACHE_ITEMS) {
@@ -62,8 +65,13 @@ function getCachedVocab(text: string): InspectorCacheEntry | null {
 
  const inMemory = inspectorVocabCache.get(key);
  if (inMemory) {
-  setCachedVocab(key, inMemory.vocab);
-  return inMemory;
+  // Evict if expired
+  if (Date.now() - inMemory.cachedAt > CACHE_TTL_MS) {
+   inspectorVocabCache.delete(key);
+  } else {
+   setCachedVocab(key, inMemory.vocab);
+   return inMemory;
+  }
  }
 
  const recentMatch = loadRecentLookups().find((item) => item.hanzi === key);

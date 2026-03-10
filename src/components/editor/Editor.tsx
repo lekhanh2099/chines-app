@@ -28,12 +28,15 @@ import { HorizontalRuleNode } from "@lexical/react/LexicalHorizontalRuleNode";
 import { LexicalErrorBoundary } from "@lexical/react/LexicalErrorBoundary";
 
 import { PinyinNode } from "./nodes/PinyinNode";
+import { InternalLinkNode } from "./nodes/InternalLinkNode";
+import { InlineNoteNode } from "./nodes/InlineNoteNode";
 import theme from "./theme";
 import ToolbarPlugin from "./plugins/ToolbarPlugin";
 import FloatingToolbarPlugin from "./plugins/FloatingToolbarPlugin";
 import DraggableBlockPlugin from "./plugins/DraggableBlockPlugin";
 import AutoSavePlugin from "./plugins/AutoSavePlugin";
 import TableActionPlugin from "./plugins/TableActionPlugin";
+import NodeHoverPlugin from "./plugins/NodeHoverPlugin";
 import { HorizontalRulePlugin } from "@lexical/react/LexicalHorizontalRulePlugin";
 
 /* ── Types ── */
@@ -103,6 +106,8 @@ export function Editor({
     TableRowNode,
     HorizontalRuleNode,
     PinyinNode,
+    InternalLinkNode,
+    InlineNoteNode,
    ],
    editable: !readOnly,
    onError: (error: Error) => {
@@ -156,6 +161,7 @@ export function Editor({
        <FloatingToolbarPlugin />
        <DraggableBlockPlugin />
        <TableActionPlugin />
+       <NodeHoverPlugin />
       </>
      )}
     </div>

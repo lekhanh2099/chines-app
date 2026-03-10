@@ -1,17 +1,29 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
-import { Bell, Moon, Sun, User as UserIcon, Search } from "lucide-react";
+import {
+ Bell,
+ Moon,
+ Sun,
+ User as UserIcon,
+ Search,
+ BookOpenCheck,
+} from "lucide-react";
 import { type User } from "@supabase/supabase-js";
+import { usePathname } from "next/navigation";
 import { useTheme } from "./ThemeProvider";
 import { useVocabInspector } from "@/components/vocabulary/VocabInspectorProvider";
 import { containsChinese } from "@/lib/chinese-utils";
+import { useDictionaryLookupStore } from "@/stores/dictionary-lookup-store";
 
 export function Header({ user }: { user?: User | null }) {
  const { theme, toggleTheme } = useTheme();
  const { openInspector } = useVocabInspector();
  const [searchValue, setSearchValue] = useState("");
  const inputRef = useRef<HTMLInputElement>(null);
+ const pathname = usePathname();
+ const lookupEnabled = useDictionaryLookupStore((s) => s.isEnabled(pathname));
+ const toggleLookup = useDictionaryLookupStore((s) => s.toggle);
 
  useEffect(() => {
   const handleKeyDown = (e: KeyboardEvent) => {
@@ -65,6 +77,22 @@ export function Header({ user }: { user?: User | null }) {
    </form>
 
    <div className="flex items-center gap-2">
+    <button
+     onClick={() => toggleLookup(pathname)}
+     className={`h-10 rounded border flex items-center gap-2 px-3 transition-colors text-sm font-medium ${
+      lookupEnabled
+       ? "bg-accent/10 border-accent/30 text-accent hover:bg-accent/20"
+       : "bg-bg-elevated border-border-default text-text-muted hover:bg-bg-card-hover"
+     }`}
+     aria-label="Bật/Tắt tra từ tự động"
+     title="Bật/Tắt tra từ tự động"
+    >
+     <BookOpenCheck className="w-[18px] h-[18px]" />
+     <span className="hidden xl:inline">
+      {lookupEnabled ? "Tra từ: Bật" : "Tra từ: Tắt"}
+     </span>
+    </button>
+
     <button
      onClick={toggleTheme}
      className="w-10 h-10 rounded bg-bg-elevated border border-border-default flex items-center justify-center hover:bg-bg-card-hover transition-colors"
