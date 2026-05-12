@@ -389,6 +389,7 @@ export async function upsertDictionaryEntry(
   sinoVietnamese?: string;
   meaning?: string;
   ai_analysis?: AiAnalysis;
+  mergeMode?: "preserve-existing" | "prefer-incoming";
  },
 ): Promise<DbDictionaryCore | null> {
  const normalizedHeadword = normalizeDictionaryHeadword(input.headword);
@@ -402,11 +403,13 @@ export async function upsertDictionaryEntry(
  );
  const existingAnalysis = getDictionaryCoreAnalysis(existing);
  const incomingAnalysis = normalizeAnalysis(input.ai_analysis);
+ const mergeMode = input.mergeMode || "preserve-existing";
  const resolvedAnalysis = Object.keys(incomingAnalysis).length
-  ? normalizeAnalysis({
-     ...existingAnalysis,
-     ...incomingAnalysis,
-    })
+  ? normalizeAnalysis(
+     mergeMode === "prefer-incoming"
+      ? mergeAnalysisPreferIncoming(existingAnalysis, incomingAnalysis)
+      : mergeAnalysisPreserveExisting(existingAnalysis, incomingAnalysis),
+    )
   : existingAnalysis;
  const resolvedMeaning =
   input.meaning ||
@@ -445,6 +448,78 @@ export async function upsertDictionaryEntry(
  }
 
  return data as DbDictionaryCore;
+}
+
+function isMeaningfulValue(value: unknown): boolean {
+ if (value == null) return false;
+ if (typeof value === "string") return value.trim().length > 0;
+ if (Array.isArray(value)) return value.length > 0;
+ if (typeof value === "object") return Object.keys(value).length > 0;
+ return true;
+}
+
+function mergeAnalysisPreserveExisting<T extends Record<string, unknown>>(
+ existing: T,
+ incoming: T,
+): T {
+ const merged: Record<string, unknown> = { ...existing };
+
+ for (const [key, incomingValue] of Object.entries(incoming)) {
+  if (!isMeaningfulValue(incomingValue)) continue;
+
+  const existingValue = merged[key];
+  if (!isMeaningfulValue(existingValue)) {
+   merged[key] = incomingValue;
+   continue;
+  }
+
+  if (
+   existingValue &&
+   incomingValue &&
+   !Array.isArray(existingValue) &&
+   !Array.isArray(incomingValue) &&
+   typeof existingValue === "object" &&
+   typeof incomingValue === "object"
+  ) {
+   merged[key] = mergeAnalysisPreserveExisting(
+    existingValue as Record<string, unknown>,
+    incomingValue as Record<string, unknown>,
+   );
+  }
+ }
+
+ return merged as T;
+}
+
+function mergeAnalysisPreferIncoming<T extends Record<string, unknown>>(
+ existing: T,
+ incoming: T,
+): T {
+ const merged: Record<string, unknown> = { ...existing };
+
+ for (const [key, incomingValue] of Object.entries(incoming)) {
+  if (!isMeaningfulValue(incomingValue)) continue;
+
+  const existingValue = merged[key];
+  if (
+   existingValue &&
+   incomingValue &&
+   !Array.isArray(existingValue) &&
+   !Array.isArray(incomingValue) &&
+   typeof existingValue === "object" &&
+   typeof incomingValue === "object"
+  ) {
+   merged[key] = mergeAnalysisPreferIncoming(
+    existingValue as Record<string, unknown>,
+    incomingValue as Record<string, unknown>,
+   );
+   continue;
+  }
+
+  merged[key] = incomingValue;
+ }
+
+ return merged as T;
 }
 
 export function mapDictionaryEntryToVocabData(
@@ -850,6 +925,7 @@ export async function getUserVocabList(
     id,
     hanzi,
     pinyin,
+    sino_vietnamese,
     meaning,
     ai_analysis,
     created_at
@@ -876,7 +952,7 @@ export async function getUserVocabList(
     sino_vietnamese: v.sino_vietnamese || undefined,
     meaning: getPrimaryMeaning(analysis, v.meaning || ""),
     ai_analysis: analysis,
-    source: parseVocabSource(analysis.notes),
+    source: getVocabSource(analysis),
     proficiency_level: p.proficiency_level,
     is_favorited: p.is_favorited,
     status,
@@ -885,10 +961,29 @@ export async function getUserVocabList(
   });
 }
 
+function getVocabSource(analysis: AiAnalysis): VocabWithProgress["source"] {
+ const metadata = analysis.source_metadata;
+ if (metadata?.lesson_key) {
+  return {
+   courseKey: metadata.course_key,
+   lessonKey: metadata.lesson_key,
+   lessonNumber: metadata.lesson_number ?? null,
+   lessonTitle: metadata.lesson_title,
+   rowNumber: metadata.row_number ?? null,
+   category: metadata.category,
+   sourceFile: metadata.source_file,
+  };
+ }
+
+ return parseVocabSource(analysis.notes);
+}
+
 function parseVocabSource(notes?: string): VocabWithProgress["source"] {
  if (!notes) return undefined;
 
- const match = notes.match(/Source:\s*(L(\d{1,2}))\s*#\d+(?:,\s*([^\n]+))?/i);
+ const match = notes.match(
+  /Source:\s*(L(\d{1,2})(?:-\d{1,2})?)\s*#\d+(?:,\s*([^\n]+))?/i,
+ );
  if (!match) return undefined;
 
  const lessonNumber = Number.parseInt(match[2] || "", 10);
@@ -1165,6 +1260,7 @@ export async function saveVocabToSrs(
   contextTranslation?: string;
   personalNote?: string;
   personalNoteMode?: "normal" | "important";
+  dictionaryMergeMode?: "preserve-existing" | "prefer-incoming";
  },
 ): Promise<{
  vocabId: string;
@@ -1178,6 +1274,7 @@ export async function saveVocabToSrs(
   sinoVietnamese: vocabData.sino_vietnamese,
   meaning: vocabData.meaning || "",
   ai_analysis: vocabData.ai_analysis,
+  mergeMode: options?.dictionaryMergeMode,
  });
 
  if (dictionaryEntry) {

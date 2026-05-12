@@ -14,6 +14,19 @@ const importItemSchema = z.object({
  han_viet: z.string().optional(),
  sino_vietnamese: z.string().optional(),
  meaning_summary: z.string().optional(),
+ meaning_detail: z.string().optional(),
+ han_viet_note: z.string().optional(),
+ source_metadata: z
+  .object({
+   course_key: z.string().optional(),
+   lesson_key: z.string().optional(),
+   lesson_number: z.number().nullable().optional(),
+   lesson_title: z.string().optional(),
+   row_number: z.number().nullable().optional(),
+   category: z.string().optional(),
+   source_file: z.string().optional(),
+  })
+  .optional(),
  definitions: z
   .array(
    z.object({
@@ -39,6 +52,22 @@ const importItemSchema = z.object({
    }),
   )
   .optional(),
+ word_type: z.string().optional(),
+ decomposition: z.string().optional(),
+ comparisons: z.array(z.string()).optional(),
+ collocations: z.array(z.string()).optional(),
+ examples: z
+  .array(
+   z.object({
+    zh: z.string(),
+    pinyin: z.string(),
+    vi: z.string(),
+    note: z.string().optional(),
+   }),
+  )
+  .optional(),
+ cultural_note: z.string().optional(),
+ usage_note: z.string().optional(),
  etymology: z
   .union([
    z.string(),
@@ -151,7 +180,17 @@ export async function POST(request: NextRequest) {
    han_viet: item.han_viet || item.sino_vietnamese,
    sino_vietnamese: item.sino_vietnamese || item.han_viet,
    meaning_summary: meaningSummary,
+   meaning_detail: item.meaning_detail,
+   han_viet_note: item.han_viet_note,
+   source_metadata: item.source_metadata,
    definitions: item.definitions,
+   word_type: item.word_type,
+   decomposition: item.decomposition,
+   comparisons: item.comparisons,
+   collocations: item.collocations,
+   examples: item.examples,
+   cultural_note: item.cultural_note,
+   usage_note: item.usage_note,
    etymology: item.etymology,
    related_compounds: item.related_compounds,
    radicals: item.radicals,
@@ -174,7 +213,7 @@ export async function POST(request: NextRequest) {
     sino_vietnamese: item.sino_vietnamese || item.han_viet,
     meaning: meaningSummary,
     ai_analysis: aiAnalysis,
-   });
+   }, { dictionaryMergeMode: "prefer-incoming" });
 
    if (saved) {
     // Update type in dictionary_core if the table supports it

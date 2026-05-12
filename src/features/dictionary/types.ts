@@ -10,6 +10,7 @@ export type ExampleItem = {
  zh: string;
  pinyin: string;
  vi: string;
+ note?: string;
 };
 
 export type MeaningItem = {

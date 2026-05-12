@@ -2,13 +2,13 @@ import type * as React from "react";
 import { cn } from "@/lib/utils";
 import { cva, type VariantProps } from "class-variance-authority";
 
-const cardVariants = cva("rounded-3xl border", {
+const cardVariants = cva("rounded-[28px] border-2", {
  variants: {
   variant: {
    default: "border-border-default bg-bg-card",
-   elevated: "border-border-default bg-bg-card shadow-theme-sm",
-   section: "border-border-default bg-bg-card shadow-theme-sm",
-   subtle: "border-border-default bg-bg-primary",
+   elevated: "border-border-default bg-bg-card shadow-theme-md",
+   section: "border-border-default bg-bg-card shadow-theme-md",
+   subtle: "border-border-default bg-stone-50",
   },
   padding: {
    none: "",

@@ -5,9 +5,8 @@ import { ArrowLeft, Loader2, Sparkles } from "lucide-react";
 import { PageContainer } from "@/components/layout/page-container";
 import { DictionaryCharacterSidebar } from "@/features/dictionary/components/DictionaryCharacterSidebar";
 import {
+ DictionaryDocStructureSection,
  DictionaryHeroSection,
- DictionaryLearningInsightsSection,
- DictionaryMeaningSection,
  DictionaryPersonalNoteSection,
  DictionaryRelatedSection,
 } from "@/features/dictionary/components/DictionaryWordSections";
@@ -49,12 +48,12 @@ function DictionaryWordView({ viewModel }: DictionaryWordViewProps) {
  }
 
  return (
-  <PageContainer className="bg-bg-primary">
+  <PageContainer className="bg-white">
    <div className="mx-auto flex w-full max-w-6xl flex-col gap-5">
     <div className="flex flex-wrap items-center justify-between gap-3">
      <Link
       href="/vocabulary"
-      className="inline-flex items-center gap-1.5 text-sm font-bold text-text-muted transition-colors hover:text-text-primary"
+      className="inline-flex h-12 items-center gap-2 rounded-2xl border-2 border-stone-200 bg-white px-4 text-sm font-black text-stone-700 shadow-theme-sm transition-colors hover:bg-stone-50"
      >
       <ArrowLeft className="h-4 w-4" />
       Kho từ vựng
@@ -63,14 +62,15 @@ function DictionaryWordView({ viewModel }: DictionaryWordViewProps) {
      <Button
       variant="outline"
       size="sm"
-      className="rounded"
+      className="h-12 rounded-2xl border-2 border-stone-200 font-black shadow-theme-sm"
       onClick={viewModel.requestAiAnalysis}
       disabled={viewModel.isAiLoading}
       isLoading={viewModel.isAiLoading}
       loadingText="Đang phân tích..."
+      title="Chỉ bổ sung phần còn thiếu, không ghi đè dữ liệu đã import"
      >
       <Sparkles className="h-4 w-4" />
-      Bổ sung AI
+      Bổ sung phần thiếu
      </Button>
     </div>
 
@@ -78,8 +78,7 @@ function DictionaryWordView({ viewModel }: DictionaryWordViewProps) {
 
     <div className="grid gap-5 lg:grid-cols-[minmax(0,1fr)_340px] xl:grid-cols-[minmax(0,1fr)_380px]">
      <main className="flex min-w-0 flex-col gap-5">
-      <DictionaryMeaningSection viewModel={viewModel} />
-      <DictionaryLearningInsightsSection viewModel={viewModel} />
+      <DictionaryDocStructureSection viewModel={viewModel} />
       {(viewModel.ai?.vn_trap ||
        viewModel.ai?.common_mistakes ||
        viewModel.ai?.confusion) && (

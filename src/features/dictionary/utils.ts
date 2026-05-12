@@ -27,11 +27,13 @@ export function normalizeExample(example: {
  pinyin?: string;
  py?: string;
  vi?: string;
+ note?: string;
 }): ExampleItem {
  return {
   zh: example.zh || example.cn || "",
   pinyin: example.pinyin || example.py || "",
   vi: example.vi || "",
+  note: example.note || undefined,
  };
 }
 

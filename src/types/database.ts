@@ -232,28 +232,52 @@ export type AiComponent = {
  meaning?: string;
 };
 
+export type AiSourceMetadata = {
+ course_key?: string;
+ lesson_key?: string;
+ lesson_number?: number | null;
+ lesson_title?: string;
+ row_number?: number | null;
+ category?: string;
+ source_file?: string;
+};
+
+export type AiExample = {
+ zh: string;
+ pinyin: string;
+ vi: string;
+ note?: string;
+};
+
 export type AiAnalysis = {
  hanzi?: string;
  pinyin?: string;
  han_viet?: string;
  sino_vietnamese?: string;
  meaning_summary?: string;
+ meaning_detail?: string;
+ han_viet_note?: string;
+ source_metadata?: AiSourceMetadata;
  stroke_count?: number | null;
  radical?: string | null;
  radicals?: AiRadical[];
  components?: AiComponent[];
  word_type?: string;
  definitions?: AiDefinition[];
+ decomposition?: string;
+ comparisons?: string[];
  etymology?: string | AiEtymology;
  related_compounds?: AiRelatedCompound[];
  synonyms?: AiWordRelation[];
  antonyms?: AiWordRelation[];
  mnemonic_story?: string;
  meanings?: AiMeaning[];
- examples?: { zh: string; pinyin: string; vi: string }[];
+ examples?: AiExample[];
  usage_logic?: string[];
  collocations?: string[];
  related_words?: string[];
+ usage_note?: string;
+ cultural_note?: string;
  hsk_level?: string;
  tocfl_level?: string;
  notes?: string;
@@ -347,18 +371,33 @@ export const aiComponentSchema = z.object({
  meaning: z.string().optional(),
 });
 
+export const aiSourceMetadataSchema = z.object({
+ course_key: z.string().optional(),
+ lesson_key: z.string().optional(),
+ lesson_number: z.number().optional().nullable(),
+ lesson_title: z.string().optional(),
+ row_number: z.number().optional().nullable(),
+ category: z.string().optional(),
+ source_file: z.string().optional(),
+});
+
 export const aiAnalysisSchema = z.object({
  hanzi: z.string().optional(),
  pinyin: z.string().optional(),
  han_viet: z.string().optional(),
  sino_vietnamese: z.string().optional(),
  meaning_summary: z.string().optional(),
+ meaning_detail: z.string().optional(),
+ han_viet_note: z.string().optional(),
+ source_metadata: aiSourceMetadataSchema.optional(),
  stroke_count: z.number().optional().nullable(),
  radical: z.string().optional().nullable(),
  radicals: z.array(aiRadicalSchema).optional(),
  components: z.array(aiComponentSchema).optional(),
  word_type: z.string().optional(),
  definitions: z.array(aiDefinitionSchema).optional(),
+ decomposition: z.string().optional(),
+ comparisons: z.array(z.string()).optional(),
  etymology: z.union([z.string(), aiEtymologySchema]).optional(),
  related_compounds: z.array(aiRelatedCompoundSchema).optional(),
  synonyms: z.array(aiWordRelationSchema).optional(),
@@ -371,12 +410,15 @@ export const aiAnalysisSchema = z.object({
     zh: z.string(),
     pinyin: z.string(),
     vi: z.string(),
+    note: z.string().optional(),
    }),
   )
   .optional(),
  usage_logic: z.array(z.string()).optional(),
  collocations: z.array(z.string()).optional(),
  related_words: z.array(z.string()).optional(),
+ usage_note: z.string().optional(),
+ cultural_note: z.string().optional(),
  hsk_level: z.string().optional(),
  tocfl_level: z.string().optional(),
  notes: z.string().optional(),
@@ -407,13 +449,17 @@ export type VocabWithProgress = {
  id: string;
  hanzi: string;
  pinyin: string;
+ sino_vietnamese?: string;
  meaning: string;
  ai_analysis: AiAnalysis;
  source?: {
+  courseKey?: string;
   lessonKey: string;
   lessonNumber: number | null;
   lessonTitle?: string;
+  rowNumber?: number | null;
   category?: string;
+  sourceFile?: string;
  };
  proficiency_level: number;
  is_favorited: boolean;

@@ -1,10 +1,13 @@
 "use client";
 
-import { useState } from "react";
+import { useState, type ReactNode } from "react";
 import Link from "next/link";
 import {
  BookmarkPlus,
  CheckCircle,
+ Globe2,
+ Layers3,
+ ListChecks,
  Loader2,
  Save,
  Sparkles,
@@ -70,6 +73,7 @@ function DictionaryHeroSection({ viewModel }: DictionarySectionProps) {
         {viewModel.ai?.han_viet || viewModel.vocabData.sino_vietnamese}
        </Badge>
       )}
+      {viewModel.ai?.word_type && <Badge size="md">{viewModel.ai.word_type}</Badge>}
      </div>
 
      <div className="flex flex-wrap items-center gap-2.5">
@@ -124,6 +128,12 @@ function DictionaryHeroSection({ viewModel }: DictionarySectionProps) {
        [{viewModel.meaningSummary}]
       </p>
      )}
+     {viewModel.ai?.source_metadata && (
+      <p className="mt-3 text-xs font-bold uppercase tracking-wide text-text-muted">
+       {viewModel.ai.source_metadata.lesson_title || viewModel.ai.source_metadata.lesson_key}
+       {viewModel.ai.source_metadata.category ? ` · ${viewModel.ai.source_metadata.category}` : ""}
+      </p>
+     )}
     </div>
 
     <Button
@@ -142,6 +152,139 @@ function DictionaryHeroSection({ viewModel }: DictionarySectionProps) {
    </div>
   </SectionWrapper>
  );
+}
+
+function DictionaryDocStructureSection({ viewModel }: DictionarySectionProps) {
+ const ai = viewModel.ai || {};
+ const hanViet =
+  ai.han_viet ||
+  ai.sino_vietnamese ||
+  viewModel.vocabData.sino_vietnamese ||
+  "";
+ const meaningDetail =
+  ai.meaning_detail ||
+  viewModel.meaningItems[0]?.meaning ||
+  viewModel.meaningSummary ||
+  viewModel.vocabData.meaning;
+
+ return (
+  <SectionWrapper>
+   <SectionHeader
+    title="Bản học theo file docs"
+    description="Giữ đúng 7 phần để học sâu, ôn ví dụ và tránh nhầm."
+   />
+
+   <div className="grid gap-4">
+    <DocSection index={1} title="Hán Việt & Liên hệ Tiếng Việt">
+     <div className="space-y-2">
+      {hanViet && (
+       <p className="text-sm leading-relaxed text-text-secondary">
+        <span className="font-bold text-text-primary">Âm Hán Việt:</span>{" "}
+        {hanViet}
+       </p>
+      )}
+      {ai.han_viet_note && (
+       <p className="text-sm leading-relaxed text-text-secondary">
+        {ai.han_viet_note}
+       </p>
+      )}
+      <p className="text-sm leading-relaxed text-text-secondary">
+       <span className="font-bold text-text-primary">Nghĩa:</span>{" "}
+       {meaningDetail || "Chưa có nghĩa chi tiết."}
+      </p>
+     </div>
+    </DocSection>
+
+    <DocSection index={2} title="Chiết tự">
+     <p className="whitespace-pre-line text-sm leading-relaxed text-text-secondary">
+      {ai.decomposition || "Chưa có chiết tự."}
+     </p>
+    </DocSection>
+
+    <DocSection index={3} title="So sánh từ gần nghĩa">
+     {ai.comparisons?.length ? (
+      <BulletList items={ai.comparisons} />
+     ) : (
+      <EmptyDocText />
+     )}
+    </DocSection>
+
+    <DocSection index={4} title="Cụm từ cố định">
+     {ai.collocations?.length ? (
+      <div className="grid gap-2 md:grid-cols-2">
+       {ai.collocations.map((item, index) => (
+        <div
+         key={`${item}-${index}`}
+         className="rounded-2xl border border-border-default bg-bg-card px-3 py-2 text-sm font-semibold text-text-secondary"
+        >
+         {item}
+        </div>
+       ))}
+      </div>
+     ) : (
+      <EmptyDocText />
+     )}
+    </DocSection>
+
+    <DocSection index={5} title="Ví dụ">
+     {viewModel.extraExamples.length ? (
+      <div className="grid gap-3">
+       {viewModel.extraExamples.map((example, index) => (
+        <ExampleCard
+         key={`${example.zh}-${example.pinyin}-doc-${index}`}
+         example={example}
+        />
+       ))}
+      </div>
+     ) : (
+      <EmptyDocText />
+     )}
+    </DocSection>
+
+    <DocSection index={6} title="Trung Việt / văn hóa">
+     <p className="whitespace-pre-line text-sm leading-relaxed text-text-secondary">
+      {ai.cultural_note || "Chưa có ghi chú văn hóa."}
+     </p>
+    </DocSection>
+
+    <DocSection index={7} title="Lưu ý">
+     <p className="whitespace-pre-line text-sm leading-relaxed text-text-secondary">
+      {ai.usage_note || "Chưa có lưu ý riêng."}
+     </p>
+    </DocSection>
+   </div>
+  </SectionWrapper>
+ );
+}
+
+function DocSection({
+ index,
+ title,
+ children,
+}: {
+ index: number;
+ title: string;
+ children: ReactNode;
+}) {
+ return (
+  <Card variant="subtle" padding="sm" className="rounded-2xl">
+   <div className="flex flex-col gap-3">
+    <div className="flex flex-wrap items-center gap-2">
+     <Badge variant="accent" size="sm">
+      {index}
+     </Badge>
+     <p className="text-sm font-black uppercase tracking-wide text-text-primary">
+      {title}
+     </p>
+    </div>
+    {children}
+   </div>
+  </Card>
+ );
+}
+
+function EmptyDocText() {
+ return <p className="text-sm text-text-muted">Chưa có dữ liệu cho phần này.</p>;
 }
 
 function DictionaryMeaningSection({ viewModel }: DictionarySectionProps) {
@@ -207,8 +350,8 @@ function DictionaryMeaningSection({ viewModel }: DictionarySectionProps) {
      {viewModel.extraExamples.length > 0 && (
       <div className="flex flex-col gap-2">
        <SectionHeader title="Ví dụ mở rộng" />
-       <div className="grid gap-2 md:grid-cols-2">
-        {viewModel.extraExamples.slice(0, 6).map((example, index) => (
+       <div className="grid gap-3">
+        {viewModel.extraExamples.slice(0, 8).map((example, index) => (
          <ExampleCard
           key={`${example.zh}-${example.pinyin}-extra-${index}`}
           example={example}
@@ -293,6 +436,75 @@ function DictionaryLearningInsightsSection({
    />
 
    <div className="">
+    {viewModel.ai?.decomposition && (
+     <Card variant="subtle" padding="sm" className="mb-3 rounded-2xl">
+      <div className="flex flex-col gap-2">
+       <SectionHeader
+        title="Chiết tự"
+        trailing={<Layers3 className="h-4 w-4 text-accent" />}
+       />
+       <p className="whitespace-pre-line text-sm leading-relaxed text-text-secondary">
+        {viewModel.ai.decomposition}
+       </p>
+      </div>
+     </Card>
+    )}
+
+    {viewModel.ai?.comparisons && viewModel.ai.comparisons.length > 0 && (
+     <Card variant="subtle" padding="sm" className="mb-3 rounded-2xl">
+      <div className="flex flex-col gap-2">
+       <SectionHeader
+        title="So sánh từ gần nghĩa"
+        trailing={<ListChecks className="h-4 w-4 text-accent" />}
+       />
+       <BulletList items={viewModel.ai.comparisons} />
+      </div>
+     </Card>
+    )}
+
+    {viewModel.ai?.collocations && viewModel.ai.collocations.length > 0 && (
+     <Card variant="subtle" padding="sm" className="mb-3 rounded-2xl">
+      <div className="flex flex-col gap-2">
+       <SectionHeader title="Cụm từ cố định" />
+       <div className="grid gap-2 md:grid-cols-2">
+        {viewModel.ai.collocations.map((item, index) => (
+         <div
+          key={`${item}-${index}`}
+          className="rounded-2xl border border-border-default bg-bg-card px-3 py-2 text-sm font-semibold text-text-secondary"
+         >
+          {item}
+         </div>
+        ))}
+       </div>
+      </div>
+     </Card>
+    )}
+
+    {viewModel.ai?.cultural_note && (
+     <Card variant="subtle" padding="sm" className="mb-3 rounded-2xl">
+      <div className="flex flex-col gap-2">
+       <SectionHeader
+        title="Trung Việt"
+        trailing={<Globe2 className="h-4 w-4 text-accent" />}
+       />
+       <p className="whitespace-pre-line text-sm leading-relaxed text-text-secondary">
+        {viewModel.ai.cultural_note}
+       </p>
+      </div>
+     </Card>
+    )}
+
+    {viewModel.ai?.usage_note && (
+     <Card variant="subtle" padding="sm" className="mb-3 rounded-2xl">
+      <div className="flex flex-col gap-2">
+       <SectionHeader title="Lưu ý" />
+       <p className="whitespace-pre-line text-sm leading-relaxed text-text-secondary">
+        {viewModel.ai.usage_note}
+       </p>
+      </div>
+     </Card>
+    )}
+
     {viewModel.ai?.notes && (
      <Card variant="subtle" padding="sm" className="rounded-2xl">
       <div className="flex flex-col gap-2">
@@ -374,6 +586,11 @@ function ExampleRow({ example }: { example: ExampleItem }) {
    {example.vi && (
     <p className="text-xs italic text-text-muted">{example.vi}</p>
    )}
+   {example.note && (
+    <p className="text-xs leading-relaxed text-text-secondary">
+     → {example.note}
+    </p>
+   )}
   </div>
  );
 }
@@ -383,6 +600,19 @@ function ExampleCard({ example }: { example: ExampleItem }) {
   <Card variant="subtle" padding="sm" className="rounded-2xl">
    <ExampleRow example={example} />
   </Card>
+ );
+}
+
+function BulletList({ items }: { items: string[] }) {
+ return (
+  <div className="flex flex-col gap-2">
+   {items.map((item, index) => (
+    <div key={`${item}-${index}`} className="flex items-start gap-2">
+     <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
+     <span className="text-sm leading-relaxed text-text-secondary">{item}</span>
+    </div>
+   ))}
+  </div>
  );
 }
 
@@ -502,6 +732,7 @@ function NoDataPlaceholder({
 
 export {
  DictionaryHeroSection,
+ DictionaryDocStructureSection,
  DictionaryMeaningSection,
  DictionaryRelatedSection,
  DictionaryLearningInsightsSection,
