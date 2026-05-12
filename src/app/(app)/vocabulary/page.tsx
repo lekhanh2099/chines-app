@@ -1,88 +1,129 @@
 "use client";
 
-import { useState, useMemo, useCallback } from "react";
-import {
- createColumnHelper,
- flexRender,
- getCoreRowModel,
- useReactTable,
- getFilteredRowModel,
- getSortedRowModel,
- type SortingState,
-} from "@tanstack/react-table";
-import {
- Search,
- Eye,
- ExternalLink,
- Trash2,
- ArrowUpDown,
- Loader2,
- Upload,
- BookOpen,
- MessageSquareText,
-} from "lucide-react";
-import { useVocabInspector } from "@/components/vocabulary/VocabInspectorProvider";
-import { useVocabList } from "@/features/vocabulary/hooks/useVocabList";
-import { useDeleteVocab } from "@/features/vocabulary/hooks/useDeleteVocab";
-import { VocabImportModal } from "@/components/vocabulary/VocabImportModal";
-import { SentenceCard } from "@/components/vocabulary/SentenceCard";
-import { toast } from "sonner";
+import { useCallback, useMemo, useState } from "react";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
+import {
+ BookOpen,
+ Brain,
+ CalendarDays,
+ Check,
+ Eye,
+ FileText,
+ Keyboard,
+ Loader2,
+ RotateCcw,
+ Search,
+ Settings,
+ Sparkles,
+ Trash2,
+ Upload,
+ WalletCards,
+} from "lucide-react";
+import { toast } from "sonner";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { useVocabInspector } from "@/components/vocabulary/VocabInspectorProvider";
+import { VocabImportModal } from "@/components/vocabulary/VocabImportModal";
+import { useDeleteVocab } from "@/features/vocabulary/hooks/useDeleteVocab";
+import { useVocabList } from "@/features/vocabulary/hooks/useVocabList";
+import { cn } from "@/lib/utils";
 import type { VocabWithProgress } from "@/types/database";
 
-type TabKey = "words" | "sentences";
+type StudyMode = "guess" | "flashcard" | "write" | "quiz" | "reverse";
 
-const statusConfig = {
- mastered: {
-  label: "Mastered",
-  emoji: "🟢",
-  className: "bg-success-subtle text-success-text",
- },
- learning: {
-  label: "Learning",
-  emoji: "🟡",
-  className: "bg-warning-subtle text-warning-text",
- },
- new: {
-  label: "New",
-  emoji: "🔴",
-  className: "bg-danger-subtle text-danger-text",
- },
+type UnitGroup = {
+ key: string;
+ title: string;
+ subtitle: string;
+ items: VocabWithProgress[];
+ lessonNumber: number;
+ mastered: number;
+ learning: number;
+ fresh: number;
+ progress: number;
 };
 
-const columnHelper = createColumnHelper<VocabWithProgress>();
+const studyModes: {
+ key: StudyMode;
+ label: string;
+ icon: typeof Brain;
+ ready: boolean;
+}[] = [
+ { key: "guess", label: "Đoán từ", icon: Brain, ready: false },
+ { key: "flashcard", label: "Flashcard", icon: Eye, ready: true },
+ { key: "write", label: "Luyện viết", icon: Keyboard, ready: false },
+ { key: "quiz", label: "Trắc nghiệm", icon: FileText, ready: false },
+ { key: "reverse", label: "Trắc nghiệm ngược", icon: RotateCcw, ready: false },
+];
+
+function matchesQuery(item: VocabWithProgress, query: string) {
+ if (!query.trim()) return true;
+ const normalized = query.trim().toLowerCase();
+ return (
+  item.hanzi.toLowerCase().includes(normalized) ||
+  item.pinyin.toLowerCase().includes(normalized) ||
+  item.meaning.toLowerCase().includes(normalized) ||
+  item.source?.category?.toLowerCase().includes(normalized)
+ );
+}
+
+function buildUnitGroups(items: VocabWithProgress[]): UnitGroup[] {
+ const grouped = new Map<string, VocabWithProgress[]>();
+
+ for (const item of items) {
+  const key = item.source?.lessonKey || "saved";
+  const current = grouped.get(key) || [];
+  current.push(item);
+  grouped.set(key, current);
+ }
+
+ return Array.from(grouped.entries())
+  .map(([key, groupItems]) => {
+   const first = groupItems[0];
+   const lessonNumber = first.source?.lessonNumber ?? 999;
+   const mastered = groupItems.filter((item) => item.status === "mastered").length;
+   const learning = groupItems.filter((item) => item.status === "learning").length;
+   const fresh = groupItems.filter((item) => item.status === "new").length;
+   const progress = groupItems.length ? Math.round((mastered / groupItems.length) * 100) : 0;
+
+   return {
+    key,
+    title: key === "saved" ? "Từ đã lưu" : `Bài ${lessonNumber}`,
+    subtitle: key === "saved" ? "Không có source lesson" : first.source?.category || first.source?.lessonKey || key,
+    items: groupItems,
+    lessonNumber,
+    mastered,
+    learning,
+    fresh,
+    progress,
+   };
+  })
+  .sort((a, b) => a.lessonNumber - b.lessonNumber || a.title.localeCompare(b.title));
+}
 
 export default function VocabularyPage() {
- const [activeTab, setActiveTab] = useState<TabKey>("words");
- const [globalFilter, setGlobalFilter] = useState("");
- const [sorting, setSorting] = useState<SortingState>([]);
+ const [activeUnitKey, setActiveUnitKey] = useState<string | null>(null);
+ const [mode, setMode] = useState<StudyMode>("flashcard");
+ const [searchQuery, setSearchQuery] = useState("");
+ const [showWords, setShowWords] = useState(true);
  const [importOpen, setImportOpen] = useState(false);
  const { openInspector } = useVocabInspector();
- const router = useRouter();
-
- const { data: vocabList = [], isLoading } = useVocabList();
  const deleteVocab = useDeleteVocab();
+ const { data: vocabList = [], isLoading } = useVocabList();
 
- const words = useMemo(
-  () => vocabList.filter((v) => v.type === "word"),
-  [vocabList],
+ const words = useMemo(() => vocabList.filter((item) => item.type === "word"), [vocabList]);
+ const groups = useMemo(() => buildUnitGroups(words), [words]);
+ const activeGroup = groups.find((group) => group.key === activeUnitKey) || groups[0];
+ const filteredItems = useMemo(
+  () => (activeGroup?.items || []).filter((item) => matchesQuery(item, searchQuery)),
+  [activeGroup?.items, searchQuery],
  );
- const sentences = useMemo(
-  () => vocabList.filter((v) => v.type === "sentence"),
-  [vocabList],
- );
-
- const filteredSentences = useMemo(() => {
-  if (!globalFilter) return sentences;
-  const q = globalFilter.toLowerCase();
-  return sentences.filter(
-   (s) =>
-    s.hanzi.toLowerCase().includes(q) ||
-    s.pinyin.toLowerCase().includes(q) ||
-    s.meaning.toLowerCase().includes(q),
-  );
- }, [sentences, globalFilter]);
+ const totals = useMemo(() => {
+  const mastered = words.filter((item) => item.status === "mastered").length;
+  const learning = words.filter((item) => item.status === "learning").length;
+  const fresh = words.filter((item) => item.status === "new").length;
+  return { mastered, learning, fresh, total: words.length };
+ }, [words]);
 
  const handleDelete = useCallback(
   (id: string, hanzi: string) => {
@@ -100,277 +141,316 @@ export default function VocabularyPage() {
   [deleteVocab],
  );
 
- const columns = useMemo(
-  () => [
-   columnHelper.accessor("hanzi", {
-    header: ({ column }) => (
-     <button
-      onClick={() => column.toggleSorting()}
-      className="flex items-center gap-1.5 text-text-muted hover:text-text-primary transition-colors"
-     >
-      Hán tự
-      <ArrowUpDown className="w-3.5 h-3.5" />
-     </button>
-    ),
-    cell: (info) => (
-     <Link
-      href={`/dictionary/${encodeURIComponent(info.getValue())}`}
-      onClick={(e) => e.stopPropagation()}
-      className="font-bold text-xl text-text-primary hover:text-accent transition-colors"
-     >
-      {info.getValue()}
-     </Link>
-    ),
-   }),
-   columnHelper.accessor("pinyin", {
-    header: "Pinyin",
-    cell: (info) => (
-     <span className="text-text-muted font-medium">{info.getValue()}</span>
-    ),
-   }),
-   columnHelper.accessor("meaning", {
-    header: "Nghĩa Việt",
-    cell: (info) => (
-     <span className="text-text-secondary font-medium text-sm">
-      {info.getValue()}
-     </span>
-    ),
-   }),
-   columnHelper.accessor("status", {
-    header: "Trạng thái",
-    cell: (info) => {
-     const s = statusConfig[info.getValue()];
-     return (
-      <span
-       className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded text-xs font-bold ${s.className}`}
-      >
-       {s.emoji} {s.label}
-      </span>
-     );
-    },
-   }),
-   columnHelper.display({
-    id: "actions",
-    header: "Hành động",
-    cell: ({ row }) => (
-     <div className="flex items-center gap-1">
-      <button
-       onClick={(e) => {
-        e.stopPropagation();
-        openInspector(row.original.hanzi);
-       }}
-       className="p-2 rounded text-text-muted hover:text-accent hover:bg-accent/10 transition-colors"
-       title="Tra nhanh"
-      >
-       <Eye className="w-4 h-4" />
-      </button>
-      <Link
-       href={`/dictionary/${encodeURIComponent(row.original.hanzi)}`}
-       onClick={(e) => e.stopPropagation()}
-       className="p-2 rounded text-text-muted hover:text-accent hover:bg-accent/10 transition-colors"
-       title="Xem chi tiết"
-      >
-       <ExternalLink className="w-4 h-4" />
-      </Link>
-      <button
-       onClick={(e) => {
-        e.stopPropagation();
-        handleDelete(row.original.id, row.original.hanzi);
-       }}
-       className="p-2 rounded text-text-muted hover:text-danger hover:bg-danger-subtle transition-colors"
-       title="Xóa"
-      >
-       <Trash2 className="w-4 h-4" />
-      </button>
-     </div>
-    ),
-   }),
-  ],
-  [handleDelete, openInspector],
- );
-
- const table = useReactTable({
-  data: words,
-  columns,
-  state: { globalFilter, sorting },
-  onGlobalFilterChange: setGlobalFilter,
-  onSortingChange: setSorting,
-  getCoreRowModel: getCoreRowModel(),
-  getFilteredRowModel: getFilteredRowModel(),
-  getSortedRowModel: getSortedRowModel(),
- });
-
- const tabs = [
-  {
-   key: "words" as const,
-   label: "Từ đơn",
-   icon: BookOpen,
-   count: words.length,
-  },
-  {
-   key: "sentences" as const,
-   label: "Mẫu câu",
-   icon: MessageSquareText,
-   count: sentences.length,
-  },
- ];
-
  return (
-  <div className="w-full h-full flex flex-col">
-   {/* Header */}
-   <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-4 mb-6">
+  <div className="mx-auto flex w-full max-w-[1500px] flex-col gap-6 px-5 py-7 lg:px-8">
+   <div className="flex flex-col gap-4 xl:flex-row xl:items-end xl:justify-between">
     <div>
-     <h1 className="text-2xl font-bold text-text-primary">Kho Từ Vựng</h1>
-     <p className="text-sm text-text-muted mt-1">
-      Quản lý toàn bộ {vocabList.length} từ vựng đã lưu
+     <Link href="/" className="inline-flex h-12 items-center gap-2 rounded-2xl border-2 border-stone-200 bg-white px-4 text-sm font-black text-stone-700 shadow-theme-sm hover:bg-stone-50">
+      ← Quay lại
+     </Link>
+     <h1 className="mt-5 text-4xl font-black tracking-normal text-stone-900">
+      Từ vựng Hán ngữ
+     </h1>
+     <p className="mt-2 text-base font-bold text-stone-500">
+      Học theo bài, ôn bằng flashcard và mở chi tiết khi cần hiểu sâu.
      </p>
     </div>
 
-    <div className="flex items-center gap-3 w-full md:w-auto">
-     <button
-      onClick={() => setImportOpen(true)}
-      className="flex items-center gap-2 px-3.5 py-2 text-sm font-medium rounded bg-bg-elevated border border-border-default text-text-secondary hover:bg-bg-card-hover hover:text-text-primary transition-colors shrink-0"
-     >
-      <Upload className="w-4 h-4" />
-      Import JSON
-     </button>
-     <div className="relative flex-1 md:w-80">
-      <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-text-muted" />
-      <input
-       type="text"
-       value={globalFilter ?? ""}
-       onChange={(e) => setGlobalFilter(e.target.value)}
-       placeholder="Tìm theo Hán tự, Pinyin, nghĩa..."
-       className="w-full h-10 bg-bg-elevated border border-border-default rounded pl-10 pr-4 text-sm text-text-primary placeholder-text-muted outline-none focus:ring-2 focus:ring-ring focus:border-ring transition-all"
-      />
+    <div className="flex flex-wrap items-center gap-2">
+     <div className="flex rounded-2xl bg-stone-100 p-1">
+      {studyModes.map((item) => {
+       const Icon = item.icon;
+       const active = mode === item.key;
+       return (
+        <button
+         key={item.key}
+         type="button"
+         onClick={() => setMode(item.key)}
+         className={cn(
+          "flex h-10 items-center gap-2 rounded-xl px-3 text-sm font-black transition",
+          active ? "bg-red-500 text-white shadow-theme-sm" : "text-stone-600 hover:bg-white",
+         )}
+        >
+         <Icon className="h-4 w-4" />
+         <span className="hidden md:inline">{item.label}</span>
+        </button>
+       );
+      })}
      </div>
+     <button className="flex h-11 w-11 items-center justify-center rounded-2xl border-2 border-stone-200 bg-white text-stone-600 shadow-theme-sm">
+      <CalendarDays className="h-5 w-5" />
+     </button>
+     <button className="flex h-11 w-11 items-center justify-center rounded-2xl border-2 border-stone-200 bg-white text-stone-600 shadow-theme-sm">
+      <Settings className="h-5 w-5" />
+     </button>
+     <Button className="h-11 rounded-2xl bg-red-500 hover:bg-red-600" onClick={() => setImportOpen(true)}>
+      <Upload className="h-4 w-4" />
+      Import
+     </Button>
     </div>
    </div>
 
-   {/* Tabs */}
-   <div className="flex items-center gap-1 mb-4 border-b border-border-default">
-    {tabs.map((tab) => (
-     <button
-      key={tab.key}
-      onClick={() => setActiveTab(tab.key)}
-      className={`flex items-center gap-2 px-4 py-2.5 text-sm font-medium border-b-2 transition-colors ${
-       activeTab === tab.key
-        ? "border-accent text-accent"
-        : "border-transparent text-text-muted hover:text-text-secondary hover:border-border-default"
-      }`}
-     >
-      <tab.icon className="w-4 h-4" />
-      {tab.label}
-      <span
-       className={`text-[10px] font-bold px-1.5 py-0.5 rounded-full ${
-        activeTab === tab.key
-         ? "bg-accent/10 text-accent"
-         : "bg-bg-elevated text-text-muted"
-       }`}
-      >
-       {tab.count}
+   <div className="grid gap-6 xl:grid-cols-[330px_1fr]">
+    <aside className="rounded-[28px] border-2 border-stone-200 bg-white p-5 shadow-theme-md xl:max-h-[calc(100vh-180px)] xl:overflow-y-auto">
+     <div className="mb-4 flex items-center justify-between">
+      <p className="text-lg font-black uppercase tracking-wide text-stone-900">Danh sách bài</p>
+      <span className="rounded-full bg-stone-100 px-3 py-1 text-xs font-black text-stone-600">
+       {groups.length}
       </span>
-     </button>
-    ))}
-   </div>
-
-   {/* Content */}
-   <div className="flex-1 bg-bg-card rounded border border-border-default shadow-theme-sm overflow-hidden flex flex-col">
-    {isLoading ? (
-     <div className="flex-1 flex items-center justify-center gap-3">
-      <Loader2 className="w-6 h-6 animate-spin text-accent" />
-      <span className="text-sm text-text-muted">Đang tải từ vựng...</span>
      </div>
-    ) : vocabList.length === 0 ? (
-     <div className="flex-1 flex flex-col items-center justify-center gap-3 p-12">
-      <div className="w-16 h-16 rounded bg-bg-elevated border border-border-default flex items-center justify-center">
-       <Search className="w-7 h-7 text-text-muted" />
+
+     {isLoading ? (
+      <div className="flex min-h-48 items-center justify-center gap-2 text-sm font-bold text-stone-500">
+       <Loader2 className="h-5 w-5 animate-spin" />
+       Đang tải...
       </div>
-      <h3 className="text-lg font-bold text-text-primary">
-       Chưa có từ vựng nào
-      </h3>
-      <p className="text-sm text-text-muted text-center max-w-sm">
-       Bắt đầu tra cứu và lưu từ vựng bằng thanh Search ở Header hoặc bôi đen
-       chữ Hán ở bất kỳ đâu.
-      </p>
-     </div>
-    ) : activeTab === "words" ? (
-     <div className="flex-1 overflow-auto">
-      <table className="w-full text-left">
-       <thead className="sticky top-0 bg-bg-elevated/90 backdrop-blur-sm z-10 border-b border-border-default">
-        {table.getHeaderGroups().map((headerGroup) => (
-         <tr key={headerGroup.id}>
-          {headerGroup.headers.map((header) => (
-           <th
-            key={header.id}
-            className="px-5 py-3.5 text-xs font-bold text-text-muted uppercase tracking-wider"
-           >
-            {header.isPlaceholder
-             ? null
-             : flexRender(header.column.columnDef.header, header.getContext())}
-           </th>
-          ))}
-         </tr>
-        ))}
-       </thead>
-       <tbody className="divide-y divide-border-default">
-        {table.getRowModel().rows.map((row) => (
-         <tr
-          key={row.id}
-          onClick={() =>
-           router.push(`/dictionary/${encodeURIComponent(row.original.hanzi)}`)
-          }
-          className="cursor-pointer hover:bg-bg-card-hover transition-colors"
-         >
-          {row.getVisibleCells().map((cell) => (
-           <td key={cell.id} className="px-5 py-4">
-            {flexRender(cell.column.columnDef.cell, cell.getContext())}
-           </td>
-          ))}
-         </tr>
-        ))}
-       </tbody>
-      </table>
+     ) : groups.length === 0 ? (
+      <EmptyUnitList onImport={() => setImportOpen(true)} />
+     ) : (
+      <div className="flex flex-col gap-3">
+       {groups.map((group) => (
+        <UnitButton
+         key={group.key}
+         group={group}
+         active={activeGroup?.key === group.key}
+         onClick={() => setActiveUnitKey(group.key)}
+        />
+       ))}
+      </div>
+     )}
+    </aside>
 
-      {table.getRowModel().rows.length === 0 && globalFilter && (
-       <div className="p-8 text-center text-text-muted text-sm">
-        Không tìm thấy từ đơn nào khớp &ldquo;{globalFilter}&rdquo;
+    <main className="min-h-[620px] rounded-[28px] border-2 border-stone-200 bg-white p-5 shadow-theme-md md:p-8">
+     {!activeGroup ? (
+      <EmptyLearningPanel onImport={() => setImportOpen(true)} />
+     ) : (
+      <div className="flex min-h-[560px] flex-col">
+       <div className="flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between">
+        <div>
+         <p className="text-sm font-black uppercase tracking-wide text-red-500">
+          {activeGroup.subtitle}
+         </p>
+         <h2 className="mt-1 text-3xl font-black text-stone-900">{activeGroup.title}</h2>
+         <p className="mt-2 text-base font-bold text-stone-500">
+          {activeGroup.items.length} từ trong nhóm này
+         </p>
+        </div>
+        <div className="grid grid-cols-3 gap-3">
+         <Metric value={activeGroup.fresh} label="Đang học" tone="yellow" />
+         <Metric value={activeGroup.learning} label="Đang ôn" tone="blue" />
+         <Metric value={activeGroup.mastered} label="Thành thạo" tone="green" />
+        </div>
        </div>
-      )}
 
-      {words.length === 0 && !globalFilter && (
-       <div className="p-8 text-center text-text-muted text-sm">
-        Chưa có từ đơn nào. Hãy tra cứu và lưu từ vựng!
+       <div className="mt-8 flex flex-1 flex-col items-center justify-center rounded-[24px] bg-stone-50 p-6 text-center">
+        <ModePanel mode={mode} group={activeGroup} firstItem={filteredItems[0]} />
        </div>
-      )}
-     </div>
-    ) : (
-     <div className="flex-1 overflow-auto p-4">
-      {filteredSentences.length > 0 ? (
-       <div className="grid gap-3">
-        {filteredSentences.map((item) => (
-         <SentenceCard
-          key={item.id}
-          item={item}
-          onInspect={openInspector}
-          onDelete={handleDelete}
-         />
-        ))}
+
+       <div className="mt-6 grid gap-3 lg:grid-cols-[1fr_1fr]">
+        <button
+         type="button"
+         onClick={() => setShowWords((value) => !value)}
+         className="h-14 rounded-2xl border-2 border-stone-200 bg-white text-base font-black uppercase tracking-wide text-stone-800 shadow-theme-sm hover:bg-stone-50"
+        >
+         {showWords ? "Ẩn từ vựng" : "Xem từ vựng"}
+        </button>
+        <button
+         type="button"
+         className="h-14 rounded-2xl bg-red-500 text-base font-black uppercase tracking-wide text-white shadow-theme-md hover:bg-red-600"
+        >
+         Học nhóm tiếp theo
+        </button>
        </div>
-      ) : globalFilter ? (
-       <div className="p-8 text-center text-text-muted text-sm">
-        Không tìm thấy mẫu câu nào khớp &ldquo;{globalFilter}&rdquo;
-       </div>
-      ) : (
-       <div className="p-8 text-center text-text-muted text-sm">
-        Chưa có mẫu câu nào. Hãy tra cứu câu tiếng Trung để bắt đầu!
-       </div>
-      )}
-     </div>
-    )}
+
+       {showWords && (
+        <section className="mt-6">
+         <div className="relative mb-4">
+          <Search className="absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 text-stone-400" />
+          <Input
+           value={searchQuery}
+           onChange={(event) => setSearchQuery(event.target.value)}
+           placeholder="Tìm Hán tự, pinyin, nghĩa..."
+           className="h-12 rounded-2xl border-2 border-stone-200 bg-white pl-12 text-base font-bold"
+          />
+         </div>
+         <div className="grid gap-3 md:grid-cols-2 2xl:grid-cols-3">
+          {filteredItems.map((item) => (
+           <WordCard
+            key={item.id}
+            item={item}
+            onInspect={openInspector}
+            onDelete={handleDelete}
+           />
+          ))}
+         </div>
+        </section>
+       )}
+      </div>
+     )}
+    </main>
    </div>
 
    <VocabImportModal open={importOpen} onOpenChange={setImportOpen} />
+  </div>
+ );
+}
+
+function UnitButton({ group, active, onClick }: { group: UnitGroup; active: boolean; onClick: () => void }) {
+ const complete = group.progress >= 100;
+ return (
+  <button
+   type="button"
+   onClick={onClick}
+   className={cn(
+    "flex min-h-20 items-center gap-3 rounded-3xl border-2 p-4 text-left shadow-theme-sm transition",
+    active
+     ? "border-red-700 bg-red-500 text-white"
+     : group.progress > 0
+       ? "border-yellow-300 bg-yellow-50 text-orange-700"
+       : "border-stone-200 bg-white text-stone-700 hover:bg-stone-50",
+   )}
+  >
+   <div className={cn("flex h-10 w-10 shrink-0 items-center justify-center rounded-full border-2", active ? "border-white/50 bg-white/20" : "border-stone-200 bg-white")}>
+    {complete ? <Check className="h-5 w-5" /> : <span className="text-sm font-black">{group.progress}%</span>}
+   </div>
+   <div className="min-w-0 flex-1">
+    <p className="truncate text-lg font-black">{group.title}</p>
+    <p className={cn("mt-1 truncate text-sm font-bold", active ? "text-white/90" : "text-stone-500")}>
+     {group.mastered}/{group.items.length} thẻ
+    </p>
+   </div>
+  </button>
+ );
+}
+
+function ModePanel({ mode, group, firstItem }: { mode: StudyMode; group: UnitGroup; firstItem?: VocabWithProgress }) {
+ const modeConfig = studyModes.find((item) => item.key === mode)!;
+ const Icon = modeConfig.icon;
+
+ if (!modeConfig.ready) {
+  return (
+   <div className="mx-auto max-w-lg">
+    <div className="mx-auto flex h-24 w-24 items-center justify-center rounded-3xl bg-white shadow-theme-sm">
+     <Icon className="h-12 w-12 text-red-500" />
+    </div>
+    <h3 className="mt-6 text-3xl font-black text-stone-900">{modeConfig.label}</h3>
+    <p className="mt-3 text-base font-bold leading-7 text-stone-500">
+     Mode này đã có vị trí trong UI. Engine học chi tiết sẽ gắn vào sau, còn hiện tại ông vẫn xem được danh sách từ và mở flashcard.
+    </p>
+   </div>
+  );
+ }
+
+ if (!firstItem) {
+  return (
+   <div className="mx-auto max-w-md">
+    <Sparkles className="mx-auto h-16 w-16 text-stone-300" />
+    <h3 className="mt-4 text-2xl font-black text-stone-900">Không có từ phù hợp</h3>
+    <p className="mt-2 text-base font-bold text-stone-500">Đổi tìm kiếm hoặc chọn bài khác.</p>
+   </div>
+  );
+ }
+
+ return (
+  <div className="w-full max-w-2xl">
+   <div className="mx-auto mb-5 flex h-20 w-20 items-center justify-center rounded-3xl bg-yellow-100 text-4xl shadow-theme-sm">
+    🧠
+   </div>
+   <p className="text-sm font-black uppercase tracking-wide text-red-500">{group.title}</p>
+   <h3 className="mt-2 text-6xl font-black text-stone-900">{firstItem.hanzi}</h3>
+   <p className="mt-3 text-2xl font-black text-red-500">{firstItem.pinyin}</p>
+   <p className="mx-auto mt-4 max-w-xl text-xl font-bold leading-8 text-stone-600">{firstItem.meaning}</p>
+  </div>
+ );
+}
+
+function Metric({ value, label, tone }: { value: number; label: string; tone: "yellow" | "blue" | "green" }) {
+ const toneClass = {
+  yellow: "border-yellow-300 bg-yellow-50 text-orange-600",
+  blue: "border-blue-300 bg-blue-50 text-blue-600",
+  green: "border-emerald-300 bg-emerald-50 text-emerald-600",
+ }[tone];
+ return (
+  <div className={cn("min-w-24 rounded-2xl border-2 px-4 py-3 text-center shadow-theme-sm", toneClass)}>
+   <p className="text-2xl font-black">{value}</p>
+   <p className="text-xs font-black">{label}</p>
+  </div>
+ );
+}
+
+function WordCard({ item, onInspect, onDelete }: { item: VocabWithProgress; onInspect: (text: string) => void; onDelete: (id: string, hanzi: string) => void }) {
+ return (
+  <article className="rounded-3xl border-2 border-stone-200 bg-white p-4 shadow-theme-sm">
+   <div className="flex items-start justify-between gap-3">
+    <Link href={`/dictionary/${encodeURIComponent(item.hanzi)}`} className="min-w-0">
+     <h3 className="truncate text-3xl font-black text-stone-900">{item.hanzi}</h3>
+     <p className="mt-1 truncate text-sm font-black text-red-500">{item.pinyin || "Không có pinyin"}</p>
+    </Link>
+    <StatusPill status={item.status} />
+   </div>
+   <p className="mt-3 line-clamp-2 min-h-11 text-sm font-bold leading-6 text-stone-600">
+    {item.meaning || "Chưa có nghĩa tiếng Việt"}
+   </p>
+   <div className="mt-4 flex items-center justify-between border-t-2 border-stone-100 pt-3">
+    <span className="truncate text-xs font-black uppercase tracking-wide text-stone-400">
+     {item.source?.category || item.source?.lessonKey || "Đã lưu"}
+    </span>
+    <div className="flex gap-1">
+     <IconButton label="Tra nhanh" onClick={() => onInspect(item.hanzi)} icon={Eye} />
+     <IconButton label="Xóa" onClick={() => onDelete(item.id, item.hanzi)} icon={Trash2} danger />
+    </div>
+   </div>
+  </article>
+ );
+}
+
+function StatusPill({ status }: { status: VocabWithProgress["status"] }) {
+ const config = {
+  new: "bg-yellow-50 text-orange-600 border-yellow-300",
+  learning: "bg-blue-50 text-blue-600 border-blue-300",
+  mastered: "bg-emerald-50 text-emerald-600 border-emerald-300",
+ }[status];
+ const label = { new: "Mới", learning: "Đang ôn", mastered: "Thuộc" }[status];
+ return <span className={cn("rounded-full border-2 px-2.5 py-1 text-xs font-black", config)}>{label}</span>;
+}
+
+function IconButton({ label, onClick, icon: Icon, danger }: { label: string; onClick: () => void; icon: typeof Eye; danger?: boolean }) {
+ return (
+  <button
+   type="button"
+   onClick={onClick}
+   title={label}
+   className={cn("flex h-9 w-9 items-center justify-center rounded-xl transition", danger ? "text-red-500 hover:bg-red-50" : "text-stone-500 hover:bg-stone-100")}
+  >
+   <Icon className="h-4 w-4" />
+  </button>
+ );
+}
+
+function EmptyUnitList({ onImport }: { onImport: () => void }) {
+ return (
+  <div className="rounded-3xl border-2 border-dashed border-stone-200 p-5 text-center">
+   <WalletCards className="mx-auto h-10 w-10 text-stone-300" />
+   <p className="mt-3 text-sm font-black text-stone-700">Chưa có bài từ vựng</p>
+   <button type="button" onClick={onImport} className="mt-4 text-sm font-black text-red-500">
+    Import ngay
+   </button>
+  </div>
+ );
+}
+
+function EmptyLearningPanel({ onImport }: { onImport: () => void }) {
+ return (
+  <div className="flex min-h-[540px] flex-col items-center justify-center text-center">
+   <WalletCards className="h-16 w-16 text-stone-300" />
+   <h2 className="mt-5 text-3xl font-black text-stone-900">Chưa có từ vựng</h2>
+   <p className="mt-3 max-w-md text-base font-bold leading-7 text-stone-500">
+    Import danh sách đã soạn để bắt đầu học theo bài.
+   </p>
+   <Button className="mt-6 rounded-2xl bg-red-500 hover:bg-red-600" onClick={onImport}>
+    <Upload className="h-4 w-4" />
+    Import từ vựng
+   </Button>
   </div>
  );
 }

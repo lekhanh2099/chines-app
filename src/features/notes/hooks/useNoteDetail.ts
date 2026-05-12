@@ -10,6 +10,8 @@ import {
  updateNoteTitle,
  updateNoteCategory,
  deleteNote,
+ updateReadingContent,
+ updateSplitViewEnabled,
 } from "@/services/notes.service";
 import type { NoteCategory } from "@/types/database";
 
@@ -74,12 +76,42 @@ export function useNoteDetail(noteId: string) {
   },
  });
 
+ // ── Mutation: save reading content (split view left pane) ──
+ const saveReadingContentMutation = useMutation({
+  mutationFn: async (readingContent: Record<string, unknown>) => {
+   const success = await updateReadingContent(supabase, noteId, readingContent);
+   if (!success) throw new Error("Failed to save reading content");
+   return readingContent;
+  },
+  onSuccess: () => {
+   queryClient.invalidateQueries({
+    queryKey: ["note-detail", noteId],
+    exact: true,
+   });
+  },
+ });
+
+ // ── Mutation: toggle split view ──
+ const updateSplitViewMutation = useMutation({
+  mutationFn: async (enabled: boolean) => {
+   const success = await updateSplitViewEnabled(supabase, noteId, enabled);
+   if (!success) throw new Error("Failed to update split view state");
+  },
+ });
+
  // Helper for debounced save
  const saveContent = useCallback(
   (content: Record<string, unknown>) => {
    saveContentMutation.mutate(content);
   },
   [saveContentMutation],
+ );
+
+ const saveReadingContent = useCallback(
+  (readingContent: Record<string, unknown>) => {
+   saveReadingContentMutation.mutate(readingContent);
+  },
+  [saveReadingContentMutation],
  );
 
  return {
@@ -89,6 +121,12 @@ export function useNoteDetail(noteId: string) {
   saveContent,
   isSaving: saveContentMutation.isPending,
   saveStatus: saveContentMutation.status,
+
+  saveReadingContent,
+  isReadingSaving: saveReadingContentMutation.isPending,
+
+  updateSplitView: (enabled: boolean) =>
+   updateSplitViewMutation.mutate(enabled),
 
   updateTitle: (title: string) => updateTitleMutation.mutate(title),
   updateCategory: (cat: NoteCategory) => updateCategoryMutation.mutate(cat),

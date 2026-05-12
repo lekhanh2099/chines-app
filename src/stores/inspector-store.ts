@@ -10,6 +10,7 @@ import {
  trackVocabLookup,
  getVocabByHanzi,
  hasInspectorDeepDiveData,
+ classifyVocabType,
 } from "@/services/vocab.service";
 import type {
  VocabData,
@@ -196,6 +197,7 @@ function buildTrackedVocabListItem(
   proficiency_level: 0,
   is_favorited: false,
   status: "new",
+  type: classifyVocabType(vocabData.hanzi, vocabData.pinyin),
  };
 }
 

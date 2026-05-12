@@ -217,12 +217,13 @@ export default function ApiKeyManagerSection() {
     return;
    }
 
+   const updatedKey = data.key;
    setKeys((current) =>
-    current.map((item) => (item.id === data.key?.id ? data.key : item)),
+    current.map((item) => (item.id === updatedKey.id ? updatedKey : item)),
    );
    setSummary((current) => ({
     ...current,
-    active: current.active + (data.key.isActive ? 1 : -1),
+    active: current.active + (updatedKey.isActive ? 1 : -1),
    }));
   } catch {
    toast.error("Lỗi kết nối khi cập nhật key.");

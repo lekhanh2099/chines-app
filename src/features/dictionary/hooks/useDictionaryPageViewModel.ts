@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useState } from "react";
 import { useParams } from "next/navigation";
 import { toast } from "sonner";
 import { useVocabDetail } from "@/features/vocabulary/hooks/useVocabDetail";
@@ -60,25 +60,6 @@ export function useDictionaryPageViewModel(): DictionaryPageViewModel {
    onError: () => toast.error("Không thể phân tích từ này. Thử lại sau."),
   });
  }, [triggerAi]);
-
- useEffect(() => {
-  if (
-   !isSentenceView &&
-   !isLoading &&
-   !isAiLoading &&
-   vocabData &&
-   !hasDeepAiData()
-  ) {
-   requestAiAnalysis();
-  }
- }, [
-  hasDeepAiData,
-  isAiLoading,
-  isLoading,
-  isSentenceView,
-  requestAiAnalysis,
-  vocabData,
- ]);
 
  if (isSentenceView) {
   return {

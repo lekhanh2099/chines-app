@@ -864,6 +864,7 @@ export async function getUserVocabList(
   .filter((p) => p.vocabularies)
   .map((p) => {
    const v = p.vocabularies as unknown as DbVocabulary;
+   const analysis = getVocabularyAnalysis(v);
    let status: VocabWithProgress["status"] = "new";
    if (p.proficiency_level >= 4) status = "mastered";
    else if (p.proficiency_level >= 2) status = "learning";
@@ -873,14 +874,30 @@ export async function getUserVocabList(
     hanzi: v.hanzi,
     pinyin: v.pinyin || "",
     sino_vietnamese: v.sino_vietnamese || undefined,
-    meaning: getPrimaryMeaning(getVocabularyAnalysis(v), v.meaning || ""),
-    ai_analysis: getVocabularyAnalysis(v),
+    meaning: getPrimaryMeaning(analysis, v.meaning || ""),
+    ai_analysis: analysis,
+    source: parseVocabSource(analysis.notes),
     proficiency_level: p.proficiency_level,
     is_favorited: p.is_favorited,
     status,
     type: classifyVocabType(v.hanzi, v.pinyin),
    };
   });
+}
+
+function parseVocabSource(notes?: string): VocabWithProgress["source"] {
+ if (!notes) return undefined;
+
+ const match = notes.match(/Source:\s*(L(\d{1,2}))\s*#\d+(?:,\s*([^\n]+))?/i);
+ if (!match) return undefined;
+
+ const lessonNumber = Number.parseInt(match[2] || "", 10);
+
+ return {
+  lessonKey: match[1].toUpperCase(),
+  lessonNumber: Number.isFinite(lessonNumber) ? lessonNumber : null,
+  category: match[3]?.trim(),
+ };
 }
 
 export async function getUserVocabProgressRecord(

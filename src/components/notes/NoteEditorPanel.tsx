@@ -2,53 +2,21 @@
 
 import { useState, useRef, useCallback, useEffect } from "react";
 import { Editor } from "@/components/editor/Editor";
+import { SplitViewEditor } from "@/components/editor/SplitViewEditor";
 import { toast } from "sonner";
 import {
  Loader2,
- ChevronDown,
  Trash2,
  Check,
  Cloud,
  CloudOff,
+ PanelLeftClose,
+ PanelLeft,
 } from "lucide-react";
 import { format } from "date-fns";
 import { useNoteDetail } from "@/features/notes/hooks/useNoteDetail";
 import { useNoteTabsStore } from "@/stores/note-tabs-store";
-import type { NoteCategory } from "@/types/database";
-
-const categoryConfig: Record<
- string,
- { label: string; emoji: string; bg: string; border: string; text: string }
-> = {
- grammar: {
-  label: "Ngữ Pháp",
-  emoji: "🟦",
-  bg: "bg-info-subtle",
-  border: "border-info/20",
-  text: "text-info-text",
- },
- vocabulary: {
-  label: "Từ Vựng",
-  emoji: "🟩",
-  bg: "bg-success-subtle",
-  border: "border-success/20",
-  text: "text-success-text",
- },
- culture: {
-  label: "Văn Hóa / Mẹo",
-  emoji: "🟪",
-  bg: "bg-purple-subtle",
-  border: "border-purple/20",
-  text: "text-purple-text",
- },
- general: {
-  label: "Chung",
-  emoji: "⬜",
-  bg: "bg-bg-primary",
-  border: "border-border-default",
-  text: "text-text-secondary",
- },
-};
+import { useSplitViewStore } from "@/stores/split-view-store";
 
 interface NoteEditorPanelProps {
  noteId: string;
@@ -62,18 +30,23 @@ export function NoteEditorPanel({ noteId, isVisible }: NoteEditorPanelProps) {
   saveContent,
   isSaving,
   saveStatus,
-  updateTitle,
-  updateCategory,
+  saveReadingContent,
+  updateSplitView,
   deleteNote: deleteNoteMutation,
   isDeleting,
  } = useNoteDetail(noteId);
 
  const closeTab = useNoteTabsStore((s) => s.closeTab);
  const updateTabTitle = useNoteTabsStore((s) => s.updateTabTitle);
+ const isSplitView = useSplitViewStore((s) => s.isSplitView(noteId));
+ const toggleSplitView = useSplitViewStore((s) => s.toggleSplitView);
 
  const [showDeleteConfirm, setShowDeleteConfirm] = useState(false);
  const saveTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
  const pendingContentRef = useRef<Record<string, unknown> | null>(null);
+ const readingSaveTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+ const pendingReadingRef = useRef<Record<string, unknown> | null>(null);
+ const splitViewSynced = useRef(false);
 
  // Sync tab title with note title
  useEffect(() => {
@@ -81,6 +54,17 @@ export function NoteEditorPanel({ noteId, isVisible }: NoteEditorPanelProps) {
    updateTabTitle(noteId, note.title);
   }
  }, [note?.title, noteId, updateTabTitle]);
+
+ // Sync split view state from DB on initial load
+ const setSplitView = useSplitViewStore((s) => s.setSplitView);
+ useEffect(() => {
+  if (note && !splitViewSynced.current) {
+   if (note.split_view_enabled) {
+    setSplitView(noteId, true);
+   }
+   splitViewSynced.current = true;
+  }
+ }, [note, noteId, setSplitView]);
 
  const handleChange = useCallback(
   (json: Record<string, unknown>) => {
@@ -96,6 +80,39 @@ export function NoteEditorPanel({ noteId, isVisible }: NoteEditorPanelProps) {
   [saveContent],
  );
 
+ const handleReadingChange = useCallback(
+  (json: Record<string, unknown>) => {
+   pendingReadingRef.current = json;
+   if (readingSaveTimerRef.current) clearTimeout(readingSaveTimerRef.current);
+   readingSaveTimerRef.current = setTimeout(() => {
+    if (pendingReadingRef.current) {
+     saveReadingContent(pendingReadingRef.current);
+     pendingReadingRef.current = null;
+    }
+   }, 1000);
+  },
+  [saveReadingContent],
+ );
+
+ const handleToggleSplitView = useCallback(() => {
+  toggleSplitView(noteId);
+  const newState = !isSplitView;
+  updateSplitView(newState);
+  toast.success(newState ? "Đã bật chế độ Split View" : "Đã tắt Split View");
+ }, [noteId, isSplitView, toggleSplitView, updateSplitView]);
+
+ // Keyboard shortcut: Ctrl+Shift+S to toggle split view
+ useEffect(() => {
+  const handler = (e: KeyboardEvent) => {
+   if (e.ctrlKey && e.shiftKey && e.key === "S" && isVisible) {
+    e.preventDefault();
+    handleToggleSplitView();
+   }
+  };
+  document.addEventListener("keydown", handler);
+  return () => document.removeEventListener("keydown", handler);
+ }, [handleToggleSplitView, isVisible]);
+
  // Flush on unmount
  useEffect(() => {
   return () => {
@@ -103,25 +120,13 @@ export function NoteEditorPanel({ noteId, isVisible }: NoteEditorPanelProps) {
    if (pendingContentRef.current) {
     saveContent(pendingContentRef.current);
    }
+   if (readingSaveTimerRef.current) clearTimeout(readingSaveTimerRef.current);
+   if (pendingReadingRef.current) {
+    saveReadingContent(pendingReadingRef.current);
+   }
   };
   // eslint-disable-next-line react-hooks/exhaustive-deps
  }, []);
-
- const handleTitleChange = useCallback(
-  (newTitle: string) => {
-   if (!newTitle.trim()) return;
-   updateTitle(newTitle);
-   updateTabTitle(noteId, newTitle);
-  },
-  [updateTitle, updateTabTitle, noteId],
- );
-
- const handleCategoryChange = useCallback(
-  (newCategory: string) => {
-   updateCategory(newCategory as NoteCategory);
-  },
-  [updateCategory],
- );
 
  const handleDelete = useCallback(() => {
   deleteNoteMutation();
@@ -137,10 +142,10 @@ export function NoteEditorPanel({ noteId, isVisible }: NoteEditorPanelProps) {
       ? "error"
       : "idle";
 
- const noteTitle = note?.title || "Loading...";
- const category = note?.category || "general";
  const lastEdited = note?.updated_at || note?.created_at || null;
- const catConf = categoryConfig[category] || categoryConfig.general;
+ const hasReadingContent = !!(
+  note?.reading_content && Object.keys(note.reading_content).length > 0
+ );
 
  return (
   <div
@@ -160,29 +165,44 @@ export function NoteEditorPanel({ noteId, isVisible }: NoteEditorPanelProps) {
      {/* Toolbar */}
      <div className="h-9 border-b border-border-default flex items-center justify-between px-4 shrink-0 bg-bg-card/50">
       <div className="flex items-center gap-2 text-xs text-text-muted">
-       <div className="relative">
-        <select
-         value={category}
-         onChange={(e) => handleCategoryChange(e.target.value)}
-         className={`appearance-none ${catConf.bg} border ${catConf.border} rounded-sm pl-2 pr-6 py-0.5 text-[11px] font-semibold cursor-pointer hover:opacity-80 focus:outline-none focus:ring-1 focus:ring-ring transition-colors ${catConf.text}`}
-        >
-         <option value="grammar">🟦 Ngữ Pháp</option>
-         <option value="vocabulary">🟩 Từ Vựng</option>
-         <option value="culture">🟪 Văn Hóa / Mẹo</option>
-         <option value="general">⬜ Chung</option>
-        </select>
-        <ChevronDown className={`absolute right-1 top-1/2 -translate-y-1/2 w-3 h-3 pointer-events-none ${catConf.text}`} />
-       </div>
-       {lastEdited && (
-        <span className="text-[11px] text-text-muted/70 ml-1">
-         {format(new Date(lastEdited), "MMM d, yyyy · h:mm a")}
+       {" "}
+       <button
+        onClick={handleToggleSplitView}
+        className={`flex items-center gap-1.5 px-2.5 py-1 rounded text-[11px] font-semibold transition-all ${
+         isSplitView
+          ? "bg-accent-subtle text-accent-text border border-accent/20 shadow-sm"
+          : hasReadingContent
+            ? "bg-info-subtle text-info-text border border-info/20 hover:bg-info-subtle/80"
+            : "text-text-muted hover:text-text-primary hover:bg-bg-subtle border border-transparent"
+        }`}
+        title={`${isSplitView ? "Tắt" : "Bật"} Split View (Ctrl+Shift+S)`}
+       >
+        {isSplitView ? (
+         <PanelLeftClose className="w-3.5 h-3.5" />
+        ) : (
+         <PanelLeft className="w-3.5 h-3.5" />
+        )}
+        <span className="hidden sm:inline">
+         {isSplitView
+          ? "Đóng Split"
+          : hasReadingContent
+            ? "Mở Bài đọc"
+            : "Split View"}
         </span>
-       )}
+        {!isSplitView && hasReadingContent && (
+         <span className="w-1.5 h-1.5 rounded-full bg-info animate-pulse" />
+        )}
+       </button>
       </div>
 
       <div className="flex items-center gap-2">
        <SaveStatusBadge status={displaySaveStatus} />
 
+       {lastEdited && (
+        <span className="text-[11px] text-text-muted/70 ml-1">
+         {format(new Date(lastEdited), "MMM d, yyyy · h:mm a")}
+        </span>
+       )}
        {showDeleteConfirm ? (
         <div className="flex items-center gap-2 bg-danger-subtle rounded-sm px-2.5 py-0.5 animate-in fade-in">
          <span className="text-[11px] font-medium text-danger-text">Xoá?</span>
@@ -212,30 +232,22 @@ export function NoteEditorPanel({ noteId, isVisible }: NoteEditorPanelProps) {
       </div>
      </div>
 
-     {/* Editor content */}
-     <div className="flex-1 overflow-y-auto p-6">
-      <div className="max-w-4xl mx-auto bg-bg-card border border-border-default rounded shadow-theme-sm">
-       <div className="px-10 pt-8 pb-4 border-b border-border-default">
-        <h1
-         className="text-3xl font-bold tracking-tight text-text-primary bg-transparent focus:outline-none leading-snug"
-         contentEditable
-         suppressContentEditableWarning
-         onBlur={(e) =>
-          handleTitleChange(e.currentTarget.textContent || "")
-         }
-        >
-         {noteTitle}
-        </h1>
-       </div>
-
-       <div className="min-h-[60vh]">
-        <Editor
-         initialContent={note.content as Record<string, unknown> | null}
-         onChange={handleChange}
-        />
-       </div>
+     {isSplitView ? (
+      <div className="h-full bg-bg-card border border-border-default rounded shadow-theme-sm">
+       <SplitViewEditor
+        noteId={noteId}
+        noteContent={note.content as Record<string, unknown> | null}
+        readingContent={note.reading_content as Record<string, unknown> | null}
+        onNoteChange={handleChange}
+        onReadingChange={handleReadingChange}
+       />
       </div>
-     </div>
+     ) : (
+      <Editor
+       initialContent={note.content as Record<string, unknown> | null}
+       onChange={handleChange}
+      />
+     )}
     </>
    )}
   </div>

@@ -1,0 +1,1304 @@
+{
+  "items": [
+    {
+      "hanzi": "出国",
+      "pinyin": "chū guó",
+      "sino_vietnamese": "",
+      "meaning_summary": "ra nước ngoài",
+      "definitions": [
+        {
+          "pos": "Danh từ",
+          "meaning": "ra nước ngoài"
+        }
+      ],
+      "notes": "Source: L01 #1, Du lịch/Học tập"
+    },
+    {
+      "hanzi": "打电话",
+      "pinyin": "dǎ diàn huà",
+      "sino_vietnamese": "",
+      "meaning_summary": "gọi điện",
+      "definitions": [
+        {
+          "pos": "Động từ",
+          "meaning": "gọi điện"
+        }
+      ],
+      "notes": "Source: L01 #2, Giao tiếp/Điện thoại"
+    },
+    {
+      "hanzi": "找(人)",
+      "pinyin": "zhǎo ( rén )",
+      "sino_vietnamese": "",
+      "meaning_summary": "tìm (ai)",
+      "definitions": [
+        {
+          "pos": "Từ/cụm",
+          "meaning": "tìm (ai)"
+        }
+      ],
+      "notes": "Source: L01 #3, Giao tiếp/Điện thoại"
+    },
+    {
+      "hanzi": "接电话",
+      "pinyin": "jiē diàn huà",
+      "sino_vietnamese": "",
+      "meaning_summary": "nhấc máy/nhận cuộc gọi",
+      "definitions": [
+        {
+          "pos": "Từ/cụm",
+          "meaning": "nhấc máy/nhận cuộc gọi"
+        }
+      ],
+      "notes": "Source: L01 #4, Giao tiếp/Điện thoại"
+    },
+    {
+      "hanzi": "回来",
+      "pinyin": "huí lái",
+      "sino_vietnamese": "",
+      "meaning_summary": "về lại",
+      "definitions": [
+        {
+          "pos": "Động từ",
+          "meaning": "về lại"
+        }
+      ],
+      "notes": "Source: L01 #5, Hành động"
+    },
+    {
+      "hanzi": "看看",
+      "pinyin": "kàn kàn",
+      "sino_vietnamese": "",
+      "meaning_summary": "đến thăm/ghé xem",
+      "definitions": [
+        {
+          "pos": "Động từ",
+          "meaning": "đến thăm/ghé xem"
+        }
+      ],
+      "notes": "去看看她\nSource: L01 #6, Hành động"
+    },
+    {
+      "hanzi": "托福班",
+      "pinyin": "tuō fú bān",
+      "sino_vietnamese": "",
+      "meaning_summary": "lớp TOEFL",
+      "definitions": [
+        {
+          "pos": "Danh từ",
+          "meaning": "lớp TOEFL"
+        }
+      ],
+      "notes": "Source: L01 #7, Học tập"
+    },
+    {
+      "hanzi": "托福",
+      "pinyin": "tuō fú",
+      "sino_vietnamese": "",
+      "meaning_summary": "TOEFL",
+      "definitions": [
+        {
+          "pos": "Từ/cụm",
+          "meaning": "TOEFL"
+        }
+      ],
+      "notes": "Source: L01 #8, Học tập/Thi"
+    },
+    {
+      "hanzi": "想问问",
+      "pinyin": "xiǎng wèn wèn",
+      "sino_vietnamese": "",
+      "meaning_summary": "muốn hỏi thử",
+      "definitions": [
+        {
+          "pos": "Từ/cụm",
+          "meaning": "muốn hỏi thử"
+        }
+      ],
+      "notes": "Source: L01 #9, Hỏi nhẹ"
+    },
+    {
+      "hanzi": "有什么事儿",
+      "pinyin": "yǒu shén me shì ér",
+      "sino_vietnamese": "",
+      "meaning_summary": "có việc gì",
+      "definitions": [
+        {
+          "pos": "Từ/cụm",
+          "meaning": "có việc gì"
+        }
+      ],
+      "notes": "Source: L01 #10, Hỏi việc"
+    },
+    {
+      "hanzi": "好吗",
+      "pinyin": "hǎo ma",
+      "sino_vietnamese": "",
+      "meaning_summary": "được không",
+      "definitions": [
+        {
+          "pos": "Tính từ",
+          "meaning": "được không"
+        }
+      ],
+      "notes": "Source: L01 #11, Hỏi ý"
+    },
+    {
+      "hanzi": "去哪儿了",
+      "pinyin": "qù nǎ ér le",
+      "sino_vietnamese": "",
+      "meaning_summary": "đi đâu rồi",
+      "definitions": [
+        {
+          "pos": "Động từ",
+          "meaning": "đi đâu rồi"
+        }
+      ],
+      "notes": "Source: L01 #12, Hỏi đường/đi đâu"
+    },
+    {
+      "hanzi": "赢了",
+      "pinyin": "yíng le",
+      "sino_vietnamese": "",
+      "meaning_summary": "thắng rồi",
+      "definitions": [
+        {
+          "pos": "Từ/cụm",
+          "meaning": "thắng rồi"
+        }
+      ],
+      "notes": "Source: L01 #13, Kết quả"
+    },
+    {
+      "hanzi": "输了",
+      "pinyin": "shū le",
+      "sino_vietnamese": "",
+      "meaning_summary": "thua rồi",
+      "definitions": [
+        {
+          "pos": "Từ/cụm",
+          "meaning": "thua rồi"
+        }
+      ],
+      "notes": "Source: L01 #14, Kết quả"
+    },
+    {
+      "hanzi": "吧",
+      "pinyin": "ba",
+      "sino_vietnamese": "",
+      "meaning_summary": "nhé/chắc",
+      "definitions": [
+        {
+          "pos": "Hư từ",
+          "meaning": "nhé/chắc"
+        }
+      ],
+      "notes": "gợi ý/đoán\nSource: L01 #15, Ngữ khí"
+    },
+    {
+      "hanzi": "…了没有",
+      "pinyin": "… le méi yǒu",
+      "sino_vietnamese": "",
+      "meaning_summary": "đã…chưa",
+      "definitions": [
+        {
+          "pos": "Phó từ",
+          "meaning": "đã…chưa"
+        }
+      ],
+      "notes": "Source: L01 #16, Ngữ pháp chunk"
+    },
+    {
+      "hanzi": "你打…了，可是…",
+      "pinyin": "nǐ dǎ … le ， kě shì …",
+      "sino_vietnamese": "",
+      "meaning_summary": "tôi đã… nhưng…",
+      "definitions": [
+        {
+          "pos": "Từ/cụm",
+          "meaning": "tôi đã… nhưng…"
+        }
+      ],
+      "notes": "Source: L01 #17, Ngữ pháp chunk"
+    },
+    {
+      "hanzi": "你是不是…",
+      "pinyin": "nǐ shì bú shì …",
+      "sino_vietnamese": "",
+      "meaning_summary": "bạn có phải…không",
+      "definitions": [
+        {
+          "pos": "Tính từ",
+          "meaning": "bạn có phải…không"
+        }
+      ],
+      "notes": "Source: L01 #18, Ngữ pháp chunk"
+    },
+    {
+      "hanzi": "还没有呢",
+      "pinyin": "hái méi yǒu ne",
+      "sino_vietnamese": "",
+      "meaning_summary": "vẫn chưa",
+      "definitions": [
+        {
+          "pos": "Phó từ",
+          "meaning": "vẫn chưa"
+        }
+      ],
+      "notes": "Source: L01 #19, Ngữ pháp chunk"
+    },
+    {
+      "hanzi": "中学同学",
+      "pinyin": "zhōng xué tóng xué",
+      "sino_vietnamese": "",
+      "meaning_summary": "bạn cấp 2/3",
+      "definitions": [
+        {
+          "pos": "Từ/cụm",
+          "meaning": "bạn cấp 2/3"
+        }
+      ],
+      "notes": "Source: L01 #20, Quan hệ"
+    },
+    {
+      "hanzi": "同学",
+      "pinyin": "tóng xué",
+      "sino_vietnamese": "",
+      "meaning_summary": "bạn học",
+      "definitions": [
+        {
+          "pos": "Từ/cụm",
+          "meaning": "bạn học"
+        }
+      ],
+      "notes": "Source: L01 #21, Quan hệ"
+    },
+    {
+      "hanzi": "代表队",
+      "pinyin": "dài biǎo duì",
+      "sino_vietnamese": "",
+      "meaning_summary": "đội đại diện",
+      "definitions": [
+        {
+          "pos": "Từ/cụm",
+          "meaning": "đội đại diện"
+        }
+      ],
+      "notes": "Source: L01 #22, Thể thao"
+    },
+    {
+      "hanzi": "比赛",
+      "pinyin": "bǐ sài",
+      "sino_vietnamese": "",
+      "meaning_summary": "thi đấu/thi trận",
+      "definitions": [
+        {
+          "pos": "Danh từ",
+          "meaning": "thi đấu/thi trận"
+        }
+      ],
+      "notes": "Source: L01 #23, Thể thao"
+    },
+    {
+      "hanzi": "踢足球",
+      "pinyin": "tī zú qiú",
+      "sino_vietnamese": "",
+      "meaning_summary": "đá bóng",
+      "definitions": [
+        {
+          "pos": "Từ/cụm",
+          "meaning": "đá bóng"
+        }
+      ],
+      "notes": "Source: L01 #24, Thể thao"
+    },
+    {
+      "hanzi": "什么时候",
+      "pinyin": "shén me shí hòu",
+      "sino_vietnamese": "",
+      "meaning_summary": "khi nào",
+      "definitions": [
+        {
+          "pos": "Từ/cụm",
+          "meaning": "khi nào"
+        }
+      ],
+      "notes": "Source: L01 #25, Thời gian"
+    },
+    {
+      "hanzi": "四点多",
+      "pinyin": "sì diǎn duō",
+      "sino_vietnamese": "",
+      "meaning_summary": "hơn 4 giờ",
+      "definitions": [
+        {
+          "pos": "Cụm thời lượng",
+          "meaning": "hơn 4 giờ"
+        }
+      ],
+      "notes": "Source: L01 #26, Thời gian"
+    },
+    {
+      "hanzi": "过一会儿",
+      "pinyin": "guò yī huì er",
+      "sino_vietnamese": "",
+      "meaning_summary": "một lát nữa",
+      "definitions": [
+        {
+          "pos": "Từ/cụm",
+          "meaning": "một lát nữa"
+        }
+      ],
+      "notes": "Source: L01 #27, Thời gian"
+    },
+    {
+      "hanzi": "报名",
+      "pinyin": "bào míng",
+      "sino_vietnamese": "",
+      "meaning_summary": "đăng ký",
+      "definitions": [
+        {
+          "pos": "Danh từ",
+          "meaning": "đăng ký"
+        }
+      ],
+      "notes": "Source: L01 #28, Thủ tục"
+    },
+    {
+      "hanzi": "留学生",
+      "pinyin": "liú xué shēng",
+      "sino_vietnamese": "",
+      "meaning_summary": "du học sinh",
+      "definitions": [
+        {
+          "pos": "Từ/cụm",
+          "meaning": "du học sinh"
+        }
+      ],
+      "notes": "Source: L01 #29, Trường học"
+    },
+    {
+      "hanzi": "不在",
+      "pinyin": "bù zài",
+      "sino_vietnamese": "",
+      "meaning_summary": "không có mặt",
+      "definitions": [
+        {
+          "pos": "Tính từ",
+          "meaning": "không có mặt"
+        }
+      ],
+      "notes": "Source: L01 #30, Trạng thái"
+    },
+    {
+      "hanzi": "二比一",
+      "pinyin": "èr bǐ yī",
+      "sino_vietnamese": "",
+      "meaning_summary": "2–1",
+      "definitions": [
+        {
+          "pos": "Từ/cụm",
+          "meaning": "2–1"
+        }
+      ],
+      "notes": "Source: L01 #31, Tỉ số"
+    },
+    {
+      "hanzi": "几比几",
+      "pinyin": "jǐ bǐ jǐ",
+      "sino_vietnamese": "",
+      "meaning_summary": "mấy–mấy",
+      "definitions": [
+        {
+          "pos": "Từ/cụm",
+          "meaning": "mấy–mấy"
+        }
+      ],
+      "notes": "Source: L01 #32, Tỉ số"
+    },
+    {
+      "hanzi": "您好",
+      "pinyin": "nín hǎo",
+      "sino_vietnamese": "",
+      "meaning_summary": "chào (lịch sự)",
+      "definitions": [
+        {
+          "pos": "Từ/cụm",
+          "meaning": "chào (lịch sự)"
+        }
+      ],
+      "notes": "Source: L01 #33, Xã giao"
+    },
+    {
+      "hanzi": "祝贺",
+      "pinyin": "zhù hè",
+      "sino_vietnamese": "",
+      "meaning_summary": "chúc mừng",
+      "definitions": [
+        {
+          "pos": "Động từ",
+          "meaning": "chúc mừng"
+        }
+      ],
+      "notes": "Source: L01 #34, Xã giao"
+    },
+    {
+      "hanzi": "阿姨",
+      "pinyin": "ā yí",
+      "sino_vietnamese": "",
+      "meaning_summary": "cô/dì (gọi mẹ bạn)",
+      "definitions": [
+        {
+          "pos": "Từ/cụm",
+          "meaning": "cô/dì (gọi mẹ bạn)"
+        }
+      ],
+      "notes": "Source: L01 #35, Xưng hô"
+    },
+    {
+      "hanzi": "一起去",
+      "pinyin": "yì qǐ qù",
+      "sino_vietnamese": "",
+      "meaning_summary": "đi cùng nhau",
+      "definitions": [
+        {
+          "pos": "Động từ",
+          "meaning": "đi cùng nhau"
+        }
+      ],
+      "notes": "Source: L01 #36, Đi cùng"
+    },
+    {
+      "hanzi": "陪",
+      "pinyin": "péi",
+      "sino_vietnamese": "",
+      "meaning_summary": "đi cùng/đi với",
+      "definitions": [
+        {
+          "pos": "Động từ",
+          "meaning": "đi cùng/đi với"
+        }
+      ],
+      "notes": "Source: L01 #37, Đi cùng"
+    },
+    {
+      "hanzi": "关机",
+      "pinyin": "guān jī",
+      "sino_vietnamese": "",
+      "meaning_summary": "tắt máy",
+      "definitions": [
+        {
+          "pos": "Từ/cụm",
+          "meaning": "tắt máy"
+        }
+      ],
+      "notes": "Source: L01 #38, Điện thoại"
+    },
+    {
+      "hanzi": "开机",
+      "pinyin": "kāi jī",
+      "sino_vietnamese": "",
+      "meaning_summary": "mở máy",
+      "definitions": [
+        {
+          "pos": "Động từ",
+          "meaning": "mở máy"
+        }
+      ],
+      "notes": "Source: L01 #39, Điện thoại"
+    },
+    {
+      "hanzi": "手机",
+      "pinyin": "shǒu jī",
+      "sino_vietnamese": "",
+      "meaning_summary": "điện thoại",
+      "definitions": [
+        {
+          "pos": "Động từ",
+          "meaning": "điện thoại"
+        }
+      ],
+      "notes": "Source: L01 #40, Điện thoại"
+    },
+    {
+      "hanzi": "别难过了",
+      "pinyin": "bié nán guò le",
+      "sino_vietnamese": "",
+      "meaning_summary": "đừng buồn nữa",
+      "definitions": [
+        {
+          "pos": "Tính từ",
+          "meaning": "đừng buồn nữa"
+        }
+      ],
+      "notes": "Source: L02 #1, An ủi"
+    },
+    {
+      "hanzi": "肠炎",
+      "pinyin": "cháng yán",
+      "sino_vietnamese": "",
+      "meaning_summary": "viêm ruột",
+      "definitions": [
+        {
+          "pos": "Danh từ",
+          "meaning": "viêm ruột"
+        }
+      ],
+      "notes": "Source: L02 #2, Bệnh"
+    },
+    {
+      "hanzi": "消化不好",
+      "pinyin": "xiāo huà bù hǎo",
+      "sino_vietnamese": "",
+      "meaning_summary": "tiêu hoá kém",
+      "definitions": [
+        {
+          "pos": "Danh từ",
+          "meaning": "tiêu hoá kém"
+        }
+      ],
+      "notes": "Source: L02 #3, Chẩn đoán"
+    },
+    {
+      "hanzi": "哭",
+      "pinyin": "kū",
+      "sino_vietnamese": "",
+      "meaning_summary": "khóc",
+      "definitions": [
+        {
+          "pos": "Động từ",
+          "meaning": "khóc"
+        }
+      ],
+      "notes": "Source: L02 #4, Cảm xúc"
+    },
+    {
+      "hanzi": "寂寞",
+      "pinyin": "jì mò",
+      "sino_vietnamese": "",
+      "meaning_summary": "cô đơn",
+      "definitions": [
+        {
+          "pos": "Từ/cụm",
+          "meaning": "cô đơn"
+        }
+      ],
+      "notes": "Source: L02 #5, Cảm xúc"
+    },
+    {
+      "hanzi": "心情",
+      "pinyin": "xīn qíng",
+      "sino_vietnamese": "",
+      "meaning_summary": "tâm trạng",
+      "definitions": [
+        {
+          "pos": "Từ/cụm",
+          "meaning": "tâm trạng"
+        }
+      ],
+      "notes": "Source: L02 #6, Cảm xúc"
+    },
+    {
+      "hanzi": "想家",
+      "pinyin": "xiǎng jiā",
+      "sino_vietnamese": "",
+      "meaning_summary": "nhớ nhà",
+      "definitions": [
+        {
+          "pos": "Động từ",
+          "meaning": "nhớ nhà"
+        }
+      ],
+      "notes": "Source: L02 #7, Cảm xúc"
+    },
+    {
+      "hanzi": "感到",
+      "pinyin": "gǎn dào",
+      "sino_vietnamese": "",
+      "meaning_summary": "cảm thấy",
+      "definitions": [
+        {
+          "pos": "Danh từ",
+          "meaning": "cảm thấy"
+        }
+      ],
+      "notes": "Source: L02 #8, Cảm xúc"
+    },
+    {
+      "hanzi": "难过",
+      "pinyin": "nán guò",
+      "sino_vietnamese": "",
+      "meaning_summary": "buồn/khó chịu",
+      "definitions": [
+        {
+          "pos": "Tính từ",
+          "meaning": "buồn/khó chịu"
+        }
+      ],
+      "notes": "Source: L02 #9, Cảm xúc"
+    },
+    {
+      "hanzi": "姐姐",
+      "pinyin": "jiě jiě",
+      "sino_vietnamese": "",
+      "meaning_summary": "chị gái",
+      "definitions": [
+        {
+          "pos": "Từ/cụm",
+          "meaning": "chị gái"
+        }
+      ],
+      "notes": "Source: L02 #10, Gia đình"
+    },
+    {
+      "hanzi": "弟弟",
+      "pinyin": "dì di",
+      "sino_vietnamese": "",
+      "meaning_summary": "em trai",
+      "definitions": [
+        {
+          "pos": "Từ/cụm",
+          "meaning": "em trai"
+        }
+      ],
+      "notes": "Source: L02 #11, Gia đình"
+    },
+    {
+      "hanzi": "礼堂",
+      "pinyin": "lǐ táng",
+      "sino_vietnamese": "",
+      "meaning_summary": "hội trường",
+      "definitions": [
+        {
+          "pos": "Danh từ",
+          "meaning": "hội trường"
+        }
+      ],
+      "notes": "Source: L02 #12, Hoạt động"
+    },
+    {
+      "hanzi": "舞会",
+      "pinyin": "wǔ huì",
+      "sino_vietnamese": "",
+      "meaning_summary": "dạ hội",
+      "definitions": [
+        {
+          "pos": "Từ/cụm",
+          "meaning": "dạ hội"
+        }
+      ],
+      "notes": "Source: L02 #13, Hoạt động"
+    },
+    {
+      "hanzi": "跳舞",
+      "pinyin": "tiào wǔ",
+      "sino_vietnamese": "",
+      "meaning_summary": "nhảy",
+      "definitions": [
+        {
+          "pos": "Từ/cụm",
+          "meaning": "nhảy"
+        }
+      ],
+      "notes": "Source: L02 #14, Hoạt động"
+    },
+    {
+      "hanzi": "吃药",
+      "pinyin": "chī yào",
+      "sino_vietnamese": "",
+      "meaning_summary": "uống thuốc",
+      "definitions": [
+        {
+          "pos": "Động từ",
+          "meaning": "uống thuốc"
+        }
+      ],
+      "notes": "Source: L02 #15, Hành động"
+    },
+    {
+      "hanzi": "怎么了",
+      "pinyin": "zěn me le",
+      "sino_vietnamese": "",
+      "meaning_summary": "bị sao vậy",
+      "definitions": [
+        {
+          "pos": "Từ/cụm",
+          "meaning": "bị sao vậy"
+        }
+      ],
+      "notes": "Source: L02 #16, Hỏi tình trạng"
+    },
+    {
+      "hanzi": "大夫",
+      "pinyin": "dà fū",
+      "sino_vietnamese": "",
+      "meaning_summary": "bác sĩ",
+      "definitions": [
+        {
+          "pos": "Từ/cụm",
+          "meaning": "bác sĩ"
+        }
+      ],
+      "notes": "Source: L02 #17, Khám bệnh"
+    },
+    {
+      "hanzi": "病人",
+      "pinyin": "bìng rén",
+      "sino_vietnamese": "",
+      "meaning_summary": "bệnh nhân",
+      "definitions": [
+        {
+          "pos": "Danh từ",
+          "meaning": "bệnh nhân"
+        }
+      ],
+      "notes": "Source: L02 #18, Khám bệnh"
+    },
+    {
+      "hanzi": "结果出来了",
+      "pinyin": "jié guǒ chū lái le",
+      "sino_vietnamese": "",
+      "meaning_summary": "có kết quả rồi",
+      "definitions": [
+        {
+          "pos": "Từ/cụm",
+          "meaning": "có kết quả rồi"
+        }
+      ],
+      "notes": "Source: L02 #19, Kết quả"
+    },
+    {
+      "hanzi": "一天三次",
+      "pinyin": "yī tiān sān cì",
+      "sino_vietnamese": "",
+      "meaning_summary": "mỗi ngày 3 lần",
+      "definitions": [
+        {
+          "pos": "Từ/cụm",
+          "meaning": "mỗi ngày 3 lần"
+        }
+      ],
+      "notes": "Source: L02 #20, Liều dùng"
+    },
+    {
+      "hanzi": "一次两片",
+      "pinyin": "yī cì liǎng piàn",
+      "sino_vietnamese": "",
+      "meaning_summary": "mỗi lần 2 viên",
+      "definitions": [
+        {
+          "pos": "Từ/cụm",
+          "meaning": "mỗi lần 2 viên"
+        }
+      ],
+      "notes": "Source: L02 #21, Liều dùng"
+    },
+    {
+      "hanzi": "饭后吃",
+      "pinyin": "fàn hòu chī",
+      "sino_vietnamese": "",
+      "meaning_summary": "uống sau ăn",
+      "definitions": [
+        {
+          "pos": "Động từ",
+          "meaning": "uống sau ăn"
+        }
+      ],
+      "notes": "Source: L02 #22, Liều dùng"
+    },
+    {
+      "hanzi": "两片药",
+      "pinyin": "liǎng piàn yào",
+      "sino_vietnamese": "",
+      "meaning_summary": "2 viên thuốc",
+      "definitions": [
+        {
+          "pos": "Danh từ",
+          "meaning": "2 viên thuốc"
+        }
+      ],
+      "notes": "Source: L02 #23, Lượng"
+    },
+    {
+      "hanzi": "疼得厉害",
+      "pinyin": "téng dé lì hài",
+      "sino_vietnamese": "",
+      "meaning_summary": "đau dữ dội",
+      "definitions": [
+        {
+          "pos": "Danh từ",
+          "meaning": "đau dữ dội"
+        }
+      ],
+      "notes": "Source: L02 #24, Mức độ"
+    },
+    {
+      "hanzi": "…所以…",
+      "pinyin": "… suǒ yǐ …",
+      "sino_vietnamese": "",
+      "meaning_summary": "vì…nên…",
+      "definitions": [
+        {
+          "pos": "Từ/cụm",
+          "meaning": "vì…nên…"
+        }
+      ],
+      "notes": "Source: L02 #25, Ngữ pháp chunk"
+    },
+    {
+      "hanzi": "…还不行",
+      "pinyin": "… hái bù xíng",
+      "sino_vietnamese": "",
+      "meaning_summary": "vẫn không được",
+      "definitions": [
+        {
+          "pos": "Phó từ",
+          "meaning": "vẫn không được"
+        }
+      ],
+      "notes": "Source: L02 #26, Ngữ pháp chunk"
+    },
+    {
+      "hanzi": "宿舍",
+      "pinyin": "sù shè",
+      "sino_vietnamese": "",
+      "meaning_summary": "ký túc xá",
+      "definitions": [
+        {
+          "pos": "Danh từ",
+          "meaning": "ký túc xá"
+        }
+      ],
+      "notes": "Source: L02 #27, Nơi chốn"
+    },
+    {
+      "hanzi": "吃了晚饭就去",
+      "pinyin": "chī le wǎn fàn jiù qù",
+      "sino_vietnamese": "",
+      "meaning_summary": "ăn tối xong là đi",
+      "definitions": [
+        {
+          "pos": "Động từ",
+          "meaning": "ăn tối xong là đi"
+        }
+      ],
+      "notes": "Source: L02 #28, Thời gian"
+    },
+    {
+      "hanzi": "发烧",
+      "pinyin": "fā shāo",
+      "sino_vietnamese": "",
+      "meaning_summary": "sốt",
+      "definitions": [
+        {
+          "pos": "Danh từ",
+          "meaning": "sốt"
+        }
+      ],
+      "notes": "Source: L02 #29, Triệu chứng"
+    },
+    {
+      "hanzi": "拉肚子",
+      "pinyin": "lā dù zi",
+      "sino_vietnamese": "",
+      "meaning_summary": "tiêu chảy",
+      "definitions": [
+        {
+          "pos": "Từ/cụm",
+          "meaning": "tiêu chảy"
+        }
+      ],
+      "notes": "Source: L02 #30, Triệu chứng"
+    },
+    {
+      "hanzi": "肚子疼",
+      "pinyin": "dǔ zi téng",
+      "sino_vietnamese": "",
+      "meaning_summary": "đau bụng",
+      "definitions": [
+        {
+          "pos": "Danh từ",
+          "meaning": "đau bụng"
+        }
+      ],
+      "notes": "Source: L02 #31, Triệu chứng"
+    },
+    {
+      "hanzi": "化验",
+      "pinyin": "huà yàn",
+      "sino_vietnamese": "",
+      "meaning_summary": "xét nghiệm",
+      "definitions": [
+        {
+          "pos": "Từ/cụm",
+          "meaning": "xét nghiệm"
+        }
+      ],
+      "notes": "Source: L02 #32, Y tế"
+    },
+    {
+      "hanzi": "大便",
+      "pinyin": "dà biàn",
+      "sino_vietnamese": "",
+      "meaning_summary": "phân",
+      "definitions": [
+        {
+          "pos": "Từ/cụm",
+          "meaning": "phân"
+        }
+      ],
+      "notes": "Source: L02 #33, Y tế"
+    },
+    {
+      "hanzi": "开药",
+      "pinyin": "kāi yào",
+      "sino_vietnamese": "",
+      "meaning_summary": "kê thuốc",
+      "definitions": [
+        {
+          "pos": "Danh từ",
+          "meaning": "kê thuốc"
+        }
+      ],
+      "notes": "Source: L02 #34, Y tế"
+    },
+    {
+      "hanzi": "打针",
+      "pinyin": "dǎ zhēn",
+      "sino_vietnamese": "",
+      "meaning_summary": "tiêm",
+      "definitions": [
+        {
+          "pos": "Từ/cụm",
+          "meaning": "tiêm"
+        }
+      ],
+      "notes": "Source: L02 #35, Y tế"
+    },
+    {
+      "hanzi": "护士",
+      "pinyin": "hù shì",
+      "sino_vietnamese": "",
+      "meaning_summary": "y tá",
+      "definitions": [
+        {
+          "pos": "Từ/cụm",
+          "meaning": "y tá"
+        }
+      ],
+      "notes": "Source: L02 #36, Y tế"
+    },
+    {
+      "hanzi": "检查",
+      "pinyin": "jiǎn chá",
+      "sino_vietnamese": "",
+      "meaning_summary": "khám/kiểm tra",
+      "definitions": [
+        {
+          "pos": "Danh từ",
+          "meaning": "khám/kiểm tra"
+        }
+      ],
+      "notes": "Source: L02 #37, Y tế"
+    },
+    {
+      "hanzi": "啤酒",
+      "pinyin": "pí jiǔ",
+      "sino_vietnamese": "",
+      "meaning_summary": "bia",
+      "definitions": [
+        {
+          "pos": "Từ/cụm",
+          "meaning": "bia"
+        }
+      ],
+      "notes": "Source: L02 #38, Đồ uống"
+    },
+    {
+      "hanzi": "牛肉",
+      "pinyin": "niú ròu",
+      "sino_vietnamese": "",
+      "meaning_summary": "thịt bò",
+      "definitions": [
+        {
+          "pos": "Từ/cụm",
+          "meaning": "thịt bò"
+        }
+      ],
+      "notes": "Source: L02 #39, Đồ ăn/uống"
+    },
+    {
+      "hanzi": "鱼",
+      "pinyin": "yú",
+      "sino_vietnamese": "",
+      "meaning_summary": "cá",
+      "definitions": [
+        {
+          "pos": "Từ/cụm",
+          "meaning": "cá"
+        }
+      ],
+      "notes": "Source: L02 #40, Đồ ăn/uống"
+    },
+    {
+      "hanzi": "业务员",
+      "pinyin": "yè wù yuán",
+      "sino_vietnamese": "",
+      "meaning_summary": "nhân viên kinh doanh",
+      "definitions": [
+        {
+          "pos": "Từ/cụm",
+          "meaning": "nhân viên kinh doanh"
+        }
+      ],
+      "notes": "Source: L03 #1, Bất động sản"
+    },
+    {
+      "hanzi": "卧室",
+      "pinyin": "wò shì",
+      "sino_vietnamese": "",
+      "meaning_summary": "phòng ngủ",
+      "definitions": [
+        {
+          "pos": "Từ/cụm",
+          "meaning": "phòng ngủ"
+        }
+      ],
+      "notes": "Source: L03 #2, Bất động sản"
+    },
+    {
+      "hanzi": "厨房",
+      "pinyin": "chú fáng",
+      "sino_vietnamese": "",
+      "meaning_summary": "bếp",
+      "definitions": [
+        {
+          "pos": "Từ/cụm",
+          "meaning": "bếp"
+        }
+      ],
+      "notes": "Source: L03 #3, Bất động sản"
+    },
+    {
+      "hanzi": "客厅",
+      "pinyin": "kè tīng",
+      "sino_vietnamese": "",
+      "meaning_summary": "phòng khách",
+      "definitions": [
+        {
+          "pos": "Danh từ",
+          "meaning": "phòng khách"
+        }
+      ],
+      "notes": "Source: L03 #4, Bất động sản"
+    },
+    {
+      "hanzi": "房租",
+      "pinyin": "fáng zū",
+      "sino_vietnamese": "",
+      "meaning_summary": "tiền thuê nhà",
+      "definitions": [
+        {
+          "pos": "Từ/cụm",
+          "meaning": "tiền thuê nhà"
+        }
+      ],
+      "notes": "Source: L03 #5, Bất động sản"
+    },
+    {
+      "hanzi": "看房子",
+      "pinyin": "kàn fáng zi",
+      "sino_vietnamese": "",
+      "meaning_summary": "xem nhà",
+      "definitions": [
+        {
+          "pos": "Động từ",
+          "meaning": "xem nhà"
+        }
+      ],
+      "notes": "Source: L03 #6, Bất động sản"
+    },
+    {
+      "hanzi": "租",
+      "pinyin": "zū",
+      "sino_vietnamese": "",
+      "meaning_summary": "thuê",
+      "definitions": [
+        {
+          "pos": "Từ/cụm",
+          "meaning": "thuê"
+        }
+      ],
+      "notes": "Source: L03 #7, Bất động sản"
+    },
+    {
+      "hanzi": "面积",
+      "pinyin": "miàn jī",
+      "sino_vietnamese": "",
+      "meaning_summary": "diện tích",
+      "definitions": [
+        {
+          "pos": "Từ/cụm",
+          "meaning": "diện tích"
+        }
+      ],
+      "notes": "Source: L03 #8, Bất động sản"
+    },
+    {
+      "hanzi": "下班",
+      "pinyin": "xià bān",
+      "sino_vietnamese": "",
+      "meaning_summary": "tan làm",
+      "definitions": [
+        {
+          "pos": "Từ/cụm",
+          "meaning": "tan làm"
+        }
+      ],
+      "notes": "Source: L03 #9, Công việc"
+    },
+    {
+      "hanzi": "公共汽车站",
+      "pinyin": "gōng gòng qì chē zhàn",
+      "sino_vietnamese": "",
+      "meaning_summary": "trạm xe buýt",
+      "definitions": [
+        {
+          "pos": "Danh từ",
+          "meaning": "trạm xe buýt"
+        }
+      ],
+      "notes": "Source: L03 #10, Giao thông"
+    },
+    {
+      "hanzi": "地铁站",
+      "pinyin": "dì tiě zhàn",
+      "sino_vietnamese": "",
+      "meaning_summary": "ga tàu điện ngầm",
+      "definitions": [
+        {
+          "pos": "Danh từ",
+          "meaning": "ga tàu điện ngầm"
+        }
+      ],
+      "notes": "Source: L03 #11, Giao thông"
+    },
+    {
+      "hanzi": "堵车",
+      "pinyin": "dǔ chē",
+      "sino_vietnamese": "",
+      "meaning_summary": "kẹt xe",
+      "definitions": [
+        {
+          "pos": "Từ/cụm",
+          "meaning": "kẹt xe"
+        }
+      ],
+      "notes": "Source: L03 #12, Giao thông"
+    },
+    {
+      "hanzi": "贵",
+      "pinyin": "guì",
+      "sino_vietnamese": "",
+      "meaning_summary": "đắt",
+      "definitions": [
+        {
+          "pos": "Tính từ",
+          "meaning": "đắt"
+        }
+      ],
+      "notes": "Source: L03 #13, Giá"
+    },
+    {
+      "hanzi": "往回赶",
+      "pinyin": "wǎng huí gǎn",
+      "sino_vietnamese": "",
+      "meaning_summary": "vội về nhà",
+      "definitions": [
+        {
+          "pos": "Từ/cụm",
+          "meaning": "vội về nhà"
+        }
+      ],
+      "notes": "Source: L03 #14, Hành động"
+    },
+    {
+      "hanzi": "有的…有的…",
+      "pinyin": "yǒu de … yǒu de …",
+      "sino_vietnamese": "",
+      "meaning_summary": "cái thì…cái thì…",
+      "definitions": [
+        {
+          "pos": "Từ/cụm",
+          "meaning": "cái thì…cái thì…"
+        }
+      ],
+      "notes": "Source: L03 #16, Liệt kê"
+    },
+    {
+      "hanzi": "几套房子",
+      "pinyin": "jǐ tào fáng zi",
+      "sino_vietnamese": "",
+      "meaning_summary": "mấy căn nhà",
+      "definitions": [
+        {
+          "pos": "Danh từ",
+          "meaning": "mấy căn nhà"
+        }
+      ],
+      "notes": "Source: L03 #17, Lượng"
+    },
+    {
+      "hanzi": "还是",
+      "pinyin": "hái shì",
+      "sino_vietnamese": "",
+      "meaning_summary": "vẫn/đành (chọn)",
+      "definitions": [
+        {
+          "pos": "Phó từ",
+          "meaning": "vẫn/đành (chọn)"
+        }
+      ],
+      "notes": "Source: L03 #18, Lựa chọn"
+    },
+    {
+      "hanzi": "周围环境",
+      "pinyin": "zhōu wéi huán jìng",
+      "sino_vietnamese": "",
+      "meaning_summary": "môi trường xung quanh",
+      "definitions": [
+        {
+          "pos": "Từ/cụm",
+          "meaning": "môi trường xung quanh"
+        }
+      ],
+      "notes": "Source: L03 #19, Môi trường"
+    },
+    {
+      "hanzi": "堵得厉害",
+      "pinyin": "dǔ dé lì hài",
+      "sino_vietnamese": "",
+      "meaning_summary": "kẹt nặng",
+      "definitions": [
+        {
+          "pos": "Từ/cụm",
+          "meaning": "kẹt nặng"
+        }
+      ],
+      "notes": "Source: L03 #20, Mức độ"
+    },
+    {
+      "hanzi": "小了点儿",
+      "pinyin": "xiǎo le diǎn ér",
+      "sino_vietnamese": "",
+      "meaning_summary": "hơi nhỏ",
+      "definitions": [
+        {
+          "pos": "Phó từ",
+          "meaning": "hơi nhỏ"
+        }
+      ],
+      "notes": "Source: L03 #21, Mức độ"
+    }
+  ]
+}

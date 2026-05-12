@@ -189,6 +189,45 @@ export async function deleteNote(
  return true;
 }
 
+/** Update reading content (split view left pane) */
+export async function updateReadingContent(
+ supabase: SupabaseClient,
+ noteId: string,
+ readingContent: Record<string, unknown>,
+): Promise<boolean> {
+ const { error } = await supabase
+  .from("notes")
+  .update({
+   reading_content: readingContent,
+   updated_at: new Date().toISOString(),
+  })
+  .eq("id", noteId);
+
+ if (error) {
+  console.error("[NotesService] update reading content error:", error);
+  return false;
+ }
+ return true;
+}
+
+/** Update split view enabled state */
+export async function updateSplitViewEnabled(
+ supabase: SupabaseClient,
+ noteId: string,
+ enabled: boolean,
+): Promise<boolean> {
+ const { error } = await supabase
+  .from("notes")
+  .update({ split_view_enabled: enabled, updated_at: new Date().toISOString() })
+  .eq("id", noteId);
+
+ if (error) {
+  console.error("[NotesService] update split view state error:", error);
+  return false;
+ }
+ return true;
+}
+
 /** Resolve a short_id to the full note (for URL redirects) */
 export async function getNoteByShortId(
  supabase: SupabaseClient,

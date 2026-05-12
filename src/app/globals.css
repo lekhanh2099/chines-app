@@ -8,25 +8,25 @@
 :root,
 [data-theme="light"] {
   /* Background */
-  --bg-primary: #f8f9fe; /* Pale indigo background */
+  --bg-primary: #ffffff;
   --bg-card: #ffffff;
-  --bg-card-hover: #fcfcfd;
+  --bg-card-hover: #fff8f0;
   --bg-elevated: #ffffff;
   --bg-input: #ffffff;
-  --bg-subtle: #f0f0ff; /* Light purple for tracks */
+  --bg-subtle: #f8f8f8;
 
   /* Text */
-  --text-primary: #121217;
-  --text-secondary: #525266;
-  --text-muted: #8e8ea6;
+  --text-primary: #2b2b2f;
+  --text-secondary: #5e5a55;
+  --text-muted: #8b8580;
   --text-inverse: #ffffff;
 
   /* Accent — Primary Purple */
-  --accent: #5452f6; /* Main solid purple */
-  --accent-hover: #4846de;
-  --accent-subtle: #eeeffe; /* Light purple bg */
-  --accent-muted: #c3c2fa;
-  --accent-text: #5452f6; /* Purple text */
+  --accent: #d23b3b;
+  --accent-hover: #b92f2f;
+  --accent-subtle: #fff1e6;
+  --accent-muted: #f4b383;
+  --accent-text: #d97706;
 
   /* Warning / Attention */
   --warning: #fbbf24;
@@ -54,14 +54,14 @@
   --purple-text: #7e22ce;
 
   /* Border & Ring */
-  --border: #f1f2f8; /* Very subtle border */
-  --border-hover: #e2e4f0;
-  --ring: #5452f6;
+  --border: #e8e3dc;
+  --border-hover: #d9cfc4;
+  --ring: #f59e0b;
 
   /* Shadow */
-  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.03);
-  --shadow-md: 0 4px 12px -2px rgb(0 0 0 / 0.05), 0 2px 6px -2px rgb(0 0 0 / 0.03);
-  --shadow-lg: 0 12px 24px -4px rgb(0 0 0 / 0.08), 0 8px 12px -6px rgb(0 0 0 / 0.04);
+  --shadow-sm: 0 3px 0 rgb(0 0 0 / 0.12);
+  --shadow-md: 0 4px 0 rgb(0 0 0 / 0.12);
+  --shadow-lg: 0 6px 0 rgb(0 0 0 / 0.12);
 
   /* Misc */
   --overlay: rgb(0 0 0 / 0.3);
@@ -183,14 +183,14 @@
 
   --color-bg-inverse: var(--bg-inverse);
 
-  --font-sans: var(--font-lexend);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Consolas, "Liberation Mono", monospace;
 }
 
 body {
   background: var(--bg-primary);
   color: var(--text-primary);
-  font-family: var(--font-sans), system-ui, sans-serif;
+  font-family: var(--font-sans);
   transition:
     background-color 0.2s ease,
     color 0.2s ease;
@@ -211,6 +211,16 @@ body {
 /* =============================================
    LEXICAL EDITOR STYLES
    ============================================= */
+
+/* Fix: Prevent browser default contentEditable red/blue outlines */
+[contenteditable] {
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+[contenteditable]:focus {
+  outline: none;
+}
 
 /* ── Editor Shell (outer wrapper) ── */
 .editor-shell {
@@ -682,6 +692,12 @@ hr.editor-hr.selected {
   top: 0;
   z-index: 10;
   border-radius: 0.75rem 0.75rem 0 0;
+  /* Prevent content from bleeding through on scroll */
+  isolation: isolate;
+}
+
+.editor-shell[data-seamless] .toolbar {
+  border-radius: 0;
 }
 
 .toolbar-item {
@@ -1353,4 +1369,142 @@ hr.editor-hr.selected {
 [data-lexical-editor] ul[__lexicallisttype="check"] li[role="checkbox"][aria-checked="true"] span {
   text-decoration: line-through;
   opacity: 0.6;
+}
+
+/* =============================================
+   SPLIT VIEW (Dual-Pane Editor)
+   ============================================= */
+
+.split-view-container {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.split-view-pane {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  min-width: 0;
+}
+
+.split-view-pane-left {
+  border-right: 1px solid var(--border);
+}
+
+.split-view-pane-right {
+  border-left: none;
+}
+
+.split-view-pane-header {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-bottom: 1px solid var(--border);
+  background: var(--bg-card);
+  flex-shrink: 0;
+  user-select: none;
+}
+
+.split-view-pane-left .split-view-pane-header {
+  color: var(--info-text);
+  background: var(--info-subtle);
+  border-bottom-color: color-mix(in srgb, var(--info) 15%, transparent);
+}
+
+.split-view-pane-right .split-view-pane-header {
+  color: var(--accent-text);
+  background: var(--accent-subtle);
+  border-bottom-color: color-mix(in srgb, var(--accent) 15%, transparent);
+}
+
+.split-view-pane-content {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  background: var(--bg-card);
+}
+
+/* Inside split-view panes, editor-container doesn't need extra padding */
+.split-view-pane-content .editor-container {
+  padding: 1rem 1.5rem 1rem 3.5rem;
+}
+
+/* ── Resizable Divider ── */
+.split-view-divider {
+  width: 5px;
+  flex-shrink: 0;
+  cursor: col-resize;
+  background: transparent;
+  position: relative;
+  z-index: 5;
+  transition: background-color 0.15s ease;
+}
+
+.split-view-divider:hover {
+  background: color-mix(in srgb, var(--accent) 15%, transparent);
+}
+
+.split-view-divider:active {
+  background: color-mix(in srgb, var(--accent) 25%, transparent);
+}
+
+.split-view-divider-handle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 3px;
+  height: 32px;
+  border-radius: 2px;
+  background: var(--border);
+  transition: background-color 0.15s ease;
+}
+
+.split-view-divider:hover .split-view-divider-handle {
+  background: var(--accent-muted);
+}
+
+.split-view-divider:active .split-view-divider-handle {
+  background: var(--accent);
+}
+
+/* ── Reading highlight styles ── */
+.reading-highlight {
+  background-color: rgba(147, 197, 253, 0.4);
+  border-radius: 2px;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.reading-highlight:hover {
+  background-color: rgba(147, 197, 253, 0.6);
+}
+
+/* ── Mobile: Stack panes vertically ── */
+@media (max-width: 768px) {
+  .split-view-container {
+    flex-direction: column;
+  }
+
+  .split-view-pane {
+    width: 100% !important;
+    height: 50%;
+  }
+
+  .split-view-pane-left {
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .split-view-divider {
+    display: none;
+  }
 }

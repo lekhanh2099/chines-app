@@ -1,6 +1,5 @@
 "use client";
 
-import { useEffect } from "react";
 import Link from "next/link";
 import { Loader2 } from "lucide-react";
 import { useVocabDetail } from "@/features/vocabulary/hooks/useVocabDetail";
@@ -26,28 +25,11 @@ function DictionaryCharacterSidebar({
  onSelectCharacter,
  parentText,
 }: DictionaryCharacterSidebarProps) {
- const { vocabData, isLoading, isAiLoading, triggerAi, hasDeepAiData } =
-  useVocabDetail(selectedCharacter);
-
- useEffect(() => {
-  // Skip if same as parent word — useDictionaryPageViewModel already handles it
-  if (selectedCharacter === parentText) return;
-  if (!isLoading && !isAiLoading && vocabData && !hasDeepAiData()) {
-   triggerAi();
-  }
- }, [
-  hasDeepAiData,
-  isAiLoading,
-  isLoading,
-  triggerAi,
-  vocabData,
-  selectedCharacter,
-  parentText,
- ]);
+ const { vocabData, isLoading } = useVocabDetail(selectedCharacter);
 
  if (isLoading || !vocabData) {
   return (
-   <Card variant="elevated" padding="md" className="text-sm text-text-muted">
+   <Card variant="subtle" padding="md" className="rounded text-sm text-text-muted">
     <div className="flex items-center gap-2">
      <Loader2 className="h-4 w-4 animate-spin text-accent" />
      Đang tải cấu tạo chữ...
@@ -66,10 +48,10 @@ function DictionaryCharacterSidebar({
 
  return (
   <div className="flex flex-col gap-4">
-   <SectionWrapper>
+   <SectionWrapper className="rounded">
     <SectionHeader
-     title="Chữ và nét viết"
-     description="Theo dõi cách viết, phiên âm và các thông số cốt lõi của chữ."
+     title="Tập viết chữ"
+     description="Xem thứ tự nét, chọn từng chữ trong cụm để luyện riêng."
      trailing={
       parentText !== selectedCharacter ? (
        <Link
@@ -102,33 +84,27 @@ function DictionaryCharacterSidebar({
      <CharacterWriterCard character={selectedCharacter} />
     </div>
 
-    <AnatomyOverview
-     character={selectedCharacter}
-     radicals={radicals}
-     components={ai?.components || []}
-    />
-    <Card variant="subtle" padding="sm">
-     <div className="flex flex-col gap-2">
-      {etymologyType && (
-       <Badge variant="purple" size="sm" className="w-fit">
-        {etymologyType}
-       </Badge>
-      )}
-      <p className="text-sm leading-relaxed text-text-secondary">
-       {etymologyText || "Chưa có phân tích nguồn gốc."}
-      </p>
-     </div>
-    </Card>
-    {mnemonic_story && (
-     <Card
-      variant="subtle"
-      padding="sm"
-      className="border-warning/30 bg-warning-subtle"
-     >
+    {(radicals.length > 0 || ai?.components?.length || etymologyText) && (
+     <AnatomyOverview
+      character={selectedCharacter}
+      radicals={radicals}
+      components={ai?.components || []}
+     />
+    )}
+
+    {(etymologyText || mnemonic_story) && (
+     <Card variant="subtle" padding="sm" className="rounded">
       <div className="flex flex-col gap-2">
-       <SectionHeader title="Mẹo nhớ/Chiết tự" />
-       <p className="text-sm leading-relaxed text-warning-text">
-        {mnemonic_story}
+       <div className="flex items-center gap-2">
+        <SectionHeader title={mnemonic_story ? "Mẹo nhớ" : "Nguồn gốc"} />
+        {etymologyType && (
+         <Badge variant="purple" size="sm" className="w-fit">
+          {etymologyType}
+         </Badge>
+        )}
+       </div>
+       <p className="text-sm leading-relaxed text-text-secondary">
+        {mnemonic_story || etymologyText}
        </p>
       </div>
      </Card>
@@ -161,7 +137,7 @@ function AnatomyOverview({
 
  return (
   <div className="flex flex-col gap-4">
-   <Card variant="subtle" padding="sm">
+   <Card variant="subtle" padding="sm" className="rounded">
     <div className="flex flex-col gap-3">
      <SectionHeader title="Sơ đồ cấu tạo" />
      {structureItems.length > 0 ? (
@@ -171,7 +147,7 @@ function AnatomyOverview({
          key={`${item.symbol}-${item.label}-${index}`}
          className="flex items-center gap-2"
         >
-         <Card variant="default" padding="sm" className="rounded-xl">
+         <Card variant="default" padding="sm" className="rounded">
           <div className="text-center">
            <p className="text-lg font-black text-text-primary">{item.symbol}</p>
            {item.label && (
@@ -190,7 +166,7 @@ function AnatomyOverview({
        <Card
         variant="subtle"
         padding="sm"
-        className="border-accent/20 bg-accent/10 text-center"
+        className="rounded border-accent/20 bg-accent/10 text-center"
        >
         <p className="text-lg font-black text-accent">{character}</p>
         <p className="text-xs leading-tight text-accent/80">kết quả</p>
@@ -205,7 +181,7 @@ function AnatomyOverview({
    </Card>
 
    {components.length > 0 && (
-    <Card variant="subtle" padding="sm">
+    <Card variant="subtle" padding="sm" className="rounded">
      <div className="flex flex-col gap-2">
       <SectionHeader title="Thành phần" />
       {components.map((component, index) => (
@@ -213,7 +189,7 @@ function AnatomyOverview({
         key={`${component.part || "component"}-${index}`}
         variant="default"
         padding="sm"
-        className="rounded-2xl"
+        className="rounded"
        >
         <div className="flex items-start gap-3">
          <span className="min-w-6 text-lg font-black text-text-primary">
@@ -234,31 +210,6 @@ function AnatomyOverview({
     </Card>
    )}
   </div>
- );
-}
-
-function MetricCard({
- label,
- value,
- wide = false,
-}: {
- label: string;
- value: string;
- wide?: boolean;
-}) {
- return (
-  <Card
-   variant="subtle"
-   padding="sm"
-   className={wide ? "col-span-2" : undefined}
-  >
-   <div className="flex flex-col gap-1">
-    <SectionHeader title={label} />
-    <p className="text-sm font-semibold leading-relaxed text-text-primary">
-     {value}
-    </p>
-   </div>
-  </Card>
  );
 }
 

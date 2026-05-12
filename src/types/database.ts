@@ -102,6 +102,8 @@ export type DbNote = {
  user_id: string;
  title: string;
  content: Record<string, unknown>;
+ reading_content: Record<string, unknown> | null;
+ split_view_enabled: boolean;
  tags: string[];
  linked_lesson_id: string | null;
  is_published: boolean;
@@ -407,6 +409,12 @@ export type VocabWithProgress = {
  pinyin: string;
  meaning: string;
  ai_analysis: AiAnalysis;
+ source?: {
+  lessonKey: string;
+  lessonNumber: number | null;
+  lessonTitle?: string;
+  category?: string;
+ };
  proficiency_level: number;
  is_favorited: boolean;
  status: "new" | "learning" | "mastered";

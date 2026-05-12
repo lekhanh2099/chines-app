@@ -1,0 +1,95 @@
+{
+  "items": [
+    {
+      "hanzi": "先…然后…",
+      "pinyin": "xiān … rán hòu …",
+      "sino_vietnamese": "",
+      "meaning_summary": "trước…sau đó…",
+      "definitions": [
+        {
+          "pos": "Từ/cụm",
+          "meaning": "trước…sau đó…"
+        }
+      ],
+      "notes": "Source: L12 #35, Trình tự"
+    },
+    {
+      "hanzi": "吃完饭以后",
+      "pinyin": "chī wán fàn yǐ hòu",
+      "sino_vietnamese": "",
+      "meaning_summary": "ăn xong rồi…",
+      "definitions": [
+        {
+          "pos": "Động từ",
+          "meaning": "ăn xong rồi…"
+        }
+      ],
+      "notes": "Source: L12 #36, Trình tự"
+    },
+    {
+      "hanzi": "心意",
+      "pinyin": "xīn yì",
+      "sino_vietnamese": "",
+      "meaning_summary": "tấm lòng",
+      "definitions": [
+        {
+          "pos": "Từ/cụm",
+          "meaning": "tấm lòng"
+        }
+      ],
+      "notes": "Source: L12 #37, Tình cảm"
+    },
+    {
+      "hanzi": "没关系",
+      "pinyin": "méi guān xì",
+      "sino_vietnamese": "",
+      "meaning_summary": "không sao",
+      "definitions": [
+        {
+          "pos": "Tính từ",
+          "meaning": "không sao"
+        }
+      ],
+      "notes": "Source: L12 #38, Xã giao"
+    },
+    {
+      "hanzi": "一定会",
+      "pinyin": "yí dìng huì",
+      "sino_vietnamese": "",
+      "meaning_summary": "chắc chắn sẽ",
+      "definitions": [
+        {
+          "pos": "Phó từ",
+          "meaning": "chắc chắn sẽ"
+        }
+      ],
+      "notes": "Source: L12 #40, Đoán chắc"
+    },
+    {
+      "hanzi": "喝茶",
+      "pinyin": "hē chá",
+      "sino_vietnamese": "",
+      "meaning_summary": "uống trà",
+      "definitions": [
+        {
+          "pos": "Động từ",
+          "meaning": "uống trà"
+        }
+      ],
+      "notes": "Source: L12 #41, Đồ uống"
+    },
+    {
+      "hanzi": "准备",
+      "pinyin": "zhǔn bèi",
+      "sino_vietnamese": "",
+      "meaning_summary": "chuẩn bị",
+      "definitions": [
+        {
+          "pos": "Động từ",
+          "meaning": "chuẩn bị"
+        }
+      ],
+      "notes": "Source: L12 #42, Động tác"
+    }
+  ]
+}

@@ -2,110 +2,87 @@
 
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
-import { createClient } from "@/lib/supabase/client";
-import { toast } from "sonner";
 import {
- FileText,
- Star,
- FolderOpen,
- BookText,
- GraduationCap,
- Settings,
- LogOut,
- Plus,
+ BookOpen,
+ Brain,
+ ChevronLeft,
  ChevronRight,
- Loader2,
- Clock,
- PanelLeftClose,
- PanelLeftOpen,
+ Flame,
+ GraduationCap,
+ Home,
+ LogOut,
+ NotebookPen,
+ Trophy,
+ WalletCards,
 } from "lucide-react";
-import { type ReactNode, useState } from "react";
-import { useNotesList } from "@/features/notes/hooks/useNotesList";
-import { useCreateNote } from "@/features/notes/hooks/useCreateNote";
+import { toast } from "sonner";
+import { createClient } from "@/lib/supabase/client";
 import { useSidebarStore } from "@/stores/sidebar-store";
 import { cn } from "@/lib/utils";
 
-/* ── Types ── */
-type SidebarItem = {
+type NavItem = {
  name: string;
- icon: typeof FileText;
+ icon: typeof Home;
  href: string;
- trailing?: ReactNode;
+ badge?: string;
+ tone?: "red" | "orange";
 };
 
-/* ── Quick Access (Note-centric) ── */
-const quickAccess: SidebarItem[] = [
- { name: "Tất cả ghi chú", icon: FileText, href: "/notes?view=all" },
- { name: "Yêu thích", icon: Star, href: "/notes?filter=favorites" },
- {
-  name: "Thư mục",
-  icon: FolderOpen,
-  href: "/notes?filter=folders",
-  trailing: (
-   <ChevronRight className="w-3.5 h-3.5 ml-auto text-text-muted opacity-0 group-hover:opacity-100 transition-opacity" />
-  ),
- },
+const mainItems: NavItem[] = [
+ { name: "Trang chủ", icon: Home, href: "/" },
+ { name: "Luyện tập", icon: BookOpen, href: "/vocabulary", badge: "Sớm" },
+ { name: "Từ vựng", icon: WalletCards, href: "/vocabulary" },
+ { name: "Ngữ pháp", icon: GraduationCap, href: "/grammar", badge: "Mới", tone: "orange" },
+ { name: "Ôn tập", icon: Brain, href: "/vocabulary?filter=review", badge: "2", tone: "red" },
 ];
 
-/* ── Learning Tools ── */
-const learningTools: SidebarItem[] = [
- { name: "Kho từ vựng", icon: BookText, href: "/vocabulary" },
- { name: "Ngữ pháp", icon: GraduationCap, href: "/grammar" },
+const secondaryItems: NavItem[] = [
+ { name: "Bảng xếp hạng", icon: Trophy, href: "/" },
+ { name: "Ghi chú của tôi", icon: NotebookPen, href: "/notes" },
+ { name: "Từ vựng của tôi", icon: WalletCards, href: "/vocabulary" },
 ];
 
-/* ── TreeItem — reusable sidebar row ── */
-function TreeItem({
- href,
- icon: Icon,
- label,
+function isActive(pathname: string, href: string) {
+ const base = href.split("?")[0];
+ if (base === "/") return pathname === "/";
+ return pathname.startsWith(base);
+}
+
+function NavRow({
+ item,
  active,
- trailing,
- onClick,
  collapsed,
 }: {
- href?: string;
- icon: typeof FileText;
- label: string;
- active?: boolean;
- trailing?: ReactNode;
- onClick?: () => void;
- collapsed?: boolean;
+ item: NavItem;
+ active: boolean;
+ collapsed: boolean;
 }) {
- const cls = cn(
-  "group flex items-center gap-3 h-9 rounded text-[13px] font-medium transition-all",
-  collapsed ? "justify-center px-0 mx-auto w-9" : "px-3",
-  active
-   ? "bg-bg-card shadow-theme-sm border border-border-default text-accent-text"
-   : "text-text-secondary hover:bg-bg-card hover:text-text-primary",
- );
-
- const content = (
-  <>
-   <Icon className="w-4 h-4 shrink-0" />
-   {!collapsed && <span className="truncate">{label}</span>}
-   {!collapsed && trailing}
-  </>
- );
-
- if (onClick) {
-  return (
-   <button
-    onClick={onClick}
-    className={cn(cls, !collapsed && "w-full text-left")}
-    title={collapsed ? label : undefined}
-   >
-    {content}
-   </button>
-  );
- }
+ const Icon = item.icon;
 
  return (
   <Link
-   href={href ?? "#"}
-   className={cls}
-   title={collapsed ? label : undefined}
+   href={item.href}
+   title={collapsed ? item.name : undefined}
+   className={cn(
+    "group flex h-12 items-center gap-3 rounded-2xl border-2 text-[15px] font-black transition-all",
+    collapsed ? "w-12 justify-center px-0" : "px-4",
+    active
+     ? "border-orange-300 bg-orange-50 text-orange-700 shadow-theme-sm"
+     : "border-transparent text-stone-600 hover:border-stone-200 hover:bg-stone-50 hover:text-stone-900",
+   )}
   >
-   {content}
+   <Icon className="h-5 w-5 shrink-0" />
+   {!collapsed && <span className="min-w-0 flex-1 truncate">{item.name}</span>}
+   {!collapsed && item.badge && (
+    <span
+     className={cn(
+      "rounded-full px-2 py-0.5 text-[11px] font-black text-white",
+      item.tone === "red" ? "bg-red-500" : "bg-orange-500",
+     )}
+    >
+     {item.badge}
+    </span>
+   )}
   </Link>
  );
 }
@@ -113,232 +90,108 @@ function TreeItem({
 export function Sidebar() {
  const pathname = usePathname();
  const router = useRouter();
- const [isCreating, setIsCreating] = useState(false);
- const { data: notes } = useNotesList();
- const createNoteMutation = useCreateNote();
  const isCollapsed = useSidebarStore((s) => s.isCollapsed);
  const toggleSidebar = useSidebarStore((s) => s.toggle);
-
- const recentNotes = (notes ?? []).slice(0, 5);
-
- function isActive(href: string) {
-  const base = href.split("?")[0];
-  if (base === "/notes") {
-   return (
-    pathname === "/notes" || pathname === "/" || pathname.startsWith("/notes")
-   );
-  }
-  if (href.includes("?")) return false;
-  return pathname.startsWith(href);
- }
-
- function isNoteActive(noteId: string) {
-  return pathname === `/notes/${noteId}`;
- }
 
  const handleLogout = async () => {
   const supabase = createClient();
   const { error } = await supabase.auth.signOut();
   if (error) {
    toast.error("Đăng xuất thất bại!");
-  } else {
-   toast.success("Đã đăng xuất");
-   router.push("/login");
+   return;
   }
- };
-
- const handleNewNote = () => {
-  if (isCreating) return;
-  setIsCreating(true);
-
-  const now = new Date();
-  const title = `Ghi chú nhanh — ${now.toLocaleTimeString("vi-VN", {
-   hour: "2-digit",
-   minute: "2-digit",
-  })} ${now.toLocaleDateString("vi-VN", {
-   day: "2-digit",
-   month: "2-digit",
-   year: "numeric",
-  })}`;
-
-  createNoteMutation.mutate(
-   { title, tags: ["quick-note"] },
-   {
-    onSuccess: (note) => {
-     router.push(`/notes/${note.id}`);
-     setIsCreating(false);
-    },
-    onError: () => {
-     toast.error("Không thể tạo ghi chú");
-     setIsCreating(false);
-    },
-   },
-  );
+  toast.success("Đã đăng xuất");
+  router.push("/login");
  };
 
  return (
   <aside
    className={cn(
-    "bg-bg-primary border-r border-border-default flex flex-col h-full shrink-0 transition-all duration-200",
-    isCollapsed ? "w-16" : "w-65",
+    "flex h-full shrink-0 flex-col border-r-2 border-stone-200 bg-white transition-all duration-200",
+    isCollapsed ? "w-[84px]" : "w-[292px]",
    )}
   >
-   {/* Brand */}
-   <div
-    className={cn(
-     "flex items-center gap-3 py-4",
-     isCollapsed ? "justify-center px-2" : "px-5",
-    )}
-   >
-    <div className="w-8 h-8 rounded bg-accent flex items-center justify-center shrink-0">
-     <span className="text-text-inverse font-bold text-sm">H</span>
-    </div>
-    {!isCollapsed && (
-     <div>
-      <h1 className="font-bold text-sm text-text-primary leading-tight">
-       Học Tiếng Trung
-      </h1>
-      <p className="text-[11px] text-text-muted">Phiên bản Cá nhân</p>
+   <div className={cn("flex h-[76px] items-center border-b-2 border-stone-100", isCollapsed ? "justify-center px-3" : "px-5")}>
+    <Link href="/" className="flex min-w-0 items-center gap-3">
+     <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl border-2 border-yellow-300 bg-yellow-100 shadow-theme-sm">
+      <span className="text-2xl">汉</span>
      </div>
-    )}
+     {!isCollapsed && (
+      <div className="min-w-0">
+       <p className="truncate text-2xl font-black tracking-normal text-red-500">
+        HanziHome
+       </p>
+       <p className="truncate text-xs font-bold text-stone-500">
+        Học tiếng Trung cá nhân
+       </p>
+      </div>
+     )}
+    </Link>
    </div>
 
-   {/* Collapse toggle */}
-   <div
-    className={cn(
-     "mb-1",
-     isCollapsed ? "px-2 flex justify-center" : "px-3 flex justify-end",
-    )}
-   >
-    <button
-     onClick={toggleSidebar}
-     className="w-8 h-8 rounded flex items-center justify-center text-text-muted hover:bg-bg-card hover:text-text-primary transition-colors"
-     title={isCollapsed ? "Mở rộng sidebar" : "Thu gọn sidebar"}
-    >
-     {isCollapsed ? (
-      <PanelLeftOpen className="w-4 h-4" />
-     ) : (
-      <PanelLeftClose className="w-4 h-4" />
-     )}
-    </button>
-   </div>
-
-   {/* New Note Button */}
-   <div className={cn(isCollapsed ? "px-2" : "px-3", "mt-1 mb-3")}>
-    <button
-     onClick={handleNewNote}
-     disabled={isCreating}
-     className={cn(
-      "flex items-center justify-center gap-2 h-9 rounded bg-accent text-white text-sm font-medium hover:bg-accent-hover transition-colors disabled:opacity-70",
-      isCollapsed ? "w-9 mx-auto px-0" : "w-full px-3",
-     )}
-     title={isCollapsed ? "Ghi chú mới" : undefined}
-    >
-     {isCreating ? (
-      <Loader2 className="w-4 h-4 animate-spin" />
-     ) : (
-      <Plus className="w-4 h-4" />
-     )}
-     {!isCollapsed && <span>{isCreating ? "Đang tạo..." : "Ghi chú mới"}</span>}
-    </button>
-   </div>
-
-   {/* Quick Access */}
-   <nav className={cn("flex flex-col gap-0.5", isCollapsed ? "px-2" : "px-3")}>
-    {!isCollapsed && (
-     <span className="px-3 py-1.5 text-[10px] font-bold uppercase tracking-wider text-text-muted">
-      Truy cập nhanh
-     </span>
-    )}
-    {quickAccess.map((item) => (
-     <TreeItem
-      key={item.href}
-      href={item.href}
-      icon={item.icon}
-      label={item.name}
-      active={isActive(item.href)}
-      trailing={item.trailing}
+   <nav className={cn("flex flex-col gap-2 py-4", isCollapsed ? "items-center px-3" : "px-4")}>
+    {mainItems.map((item) => (
+     <NavRow
+      key={item.name}
+      item={item}
+      active={isActive(pathname, item.href)}
       collapsed={isCollapsed}
      />
     ))}
    </nav>
 
-   {/* Latest Opened */}
-   {recentNotes.length > 0 && !isCollapsed && (
-    <nav className="flex flex-col gap-0.5 px-3 mt-5">
-     <span className="px-3 py-1.5 text-[10px] font-bold uppercase tracking-wider text-text-muted">
-      Mở gần đây
-     </span>
-     {recentNotes.map((note) => (
-      <Link
-       key={note.id}
-       href={`/notes/${note.id}`}
-       className={`group flex items-center gap-3 px-3 h-8 rounded text-[13px] transition-all ${
-        isNoteActive(note.id)
-         ? "bg-bg-card shadow-theme-sm border border-border-default text-accent-text font-medium"
-         : "text-text-muted hover:bg-bg-card hover:text-text-primary"
-       }`}
-      >
-       <Clock className="w-3.5 h-3.5 shrink-0 opacity-50" />
-       <span className="truncate">{note.title}</span>
-      </Link>
-     ))}
-    </nav>
-   )}
+   <div className="mx-4 border-t-2 border-stone-100" />
 
-   {/* Recent notes - collapsed: just show icon */}
-   {recentNotes.length > 0 && isCollapsed && (
-    <nav className="flex flex-col gap-0.5 px-2 mt-5">
-     <TreeItem
-      href="/notes?view=all"
-      icon={Clock}
-      label="Mở gần đây"
-      collapsed={isCollapsed}
-     />
-    </nav>
-   )}
-
-   {/* Learning Tools */}
-   <nav
-    className={cn("flex flex-col gap-0.5 mt-5", isCollapsed ? "px-2" : "px-3")}
-   >
-    {!isCollapsed && (
-     <span className="px-3 py-1.5 text-[10px] font-bold uppercase tracking-wider text-text-muted">
-      Công cụ học
-     </span>
-    )}
-    {learningTools.map((item) => (
-     <TreeItem
-      key={item.href}
-      href={item.href}
-      icon={item.icon}
-      label={item.name}
-      active={isActive(item.href)}
+   <nav className={cn("flex flex-col gap-2 py-4", isCollapsed ? "items-center px-3" : "px-4")}>
+    {secondaryItems.map((item) => (
+     <NavRow
+      key={item.name}
+      item={item}
+      active={isActive(pathname, item.href) && item.href !== "/"}
       collapsed={isCollapsed}
      />
     ))}
    </nav>
 
-   {/* Spacer */}
    <div className="flex-1" />
 
-   {/* Bottom Section */}
-   <div
-    className={cn("pb-4 flex flex-col gap-0.5", isCollapsed ? "px-2" : "px-3")}
-   >
-    <TreeItem
-     href="/settings"
-     icon={Settings}
-     label="Cài đặt"
-     active={isActive("/settings")}
-     collapsed={isCollapsed}
-    />
-    <TreeItem
-     icon={LogOut}
-     label="Đăng xuất"
+   <div className={cn("border-t-2 border-stone-100 py-4", isCollapsed ? "px-3" : "px-4")}>
+    {!isCollapsed && (
+     <div className="mb-3 rounded-2xl border-2 border-red-100 bg-red-50 p-3">
+      <div className="flex items-center gap-2 text-sm font-black text-red-600">
+       <Flame className="h-4 w-4" />
+       3 ngày streak
+      </div>
+      <p className="mt-1 text-xs font-bold text-stone-500">
+       Giữ nhịp học mỗi ngày để mở khóa bài mới.
+      </p>
+     </div>
+    )}
+
+    <button
+     type="button"
      onClick={handleLogout}
-     collapsed={isCollapsed}
-    />
+     className={cn(
+      "mb-3 flex h-11 items-center gap-3 rounded-2xl px-4 text-[15px] font-black text-red-500 transition-colors hover:bg-red-50",
+      isCollapsed ? "w-12 justify-center px-0" : "w-full",
+     )}
+     title={isCollapsed ? "Đăng xuất" : undefined}
+    >
+     <LogOut className="h-5 w-5" />
+     {!isCollapsed && "Đăng xuất"}
+    </button>
+
+    <button
+     type="button"
+     onClick={toggleSidebar}
+     className={cn(
+      "flex h-10 items-center justify-center gap-2 rounded-2xl text-sm font-bold text-stone-500 transition-colors hover:bg-stone-100",
+      isCollapsed ? "w-12" : "w-full",
+     )}
+    >
+     {isCollapsed ? <ChevronRight className="h-4 w-4" /> : <ChevronLeft className="h-4 w-4" />}
+     {!isCollapsed && "Thu gọn"}
+    </button>
    </div>
   </aside>
  );
