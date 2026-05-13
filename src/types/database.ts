@@ -532,6 +532,7 @@ export type VocabEntryWithProgress = {
  ai_analysis: AiAnalysis;
  proficiency_level: number;
  is_favorited: boolean;
+ last_answered_at: string | null;
  status: "new" | "learning" | "mastered";
  type: VocabType;
  source: {
@@ -554,6 +555,7 @@ export type VocabLessonWithStats = {
  lesson_order: number;
  item_count: number;
  entries: VocabEntryWithProgress[];
+ studied: number;
  mastered: number;
  learning: number;
  fresh: number;
@@ -571,6 +573,133 @@ export type VocabCourseWithLessons = {
  imported_at?: string;
  lessons: VocabLessonWithStats[];
  entries: VocabEntryWithProgress[];
+};
+
+export type GrammarExerciseType =
+ | "fill_blank"
+ | "multiple_choice"
+ | "reorder_sentence"
+ | "translate_zh"
+ | "identify_error";
+
+export type GrammarPointContent = {
+ quick_example?: {
+  zh?: string;
+  pinyin?: string;
+  vi?: string;
+ };
+ explanation?: string;
+ structures?: string[];
+ usage_notes?: string[];
+ common_mistakes?: string[];
+ comparisons?: string[];
+ examples?: AiExample[];
+ source_metadata?: {
+  course_key?: string;
+  lesson_key?: string;
+  lesson_number?: number | null;
+  lesson_title?: string;
+  row_number?: number | null;
+  source?: string;
+ };
+};
+
+export type GrammarExerciseContent = {
+ choices?: { id: string; text: string; note?: string }[];
+ tokens?: string[];
+ segments?: { id: string; text: string }[];
+ accepted_answers?: string[];
+ sample_answer?: string;
+ blank?: string;
+};
+
+export type DbGrammarCourse = {
+ id: string;
+ owner_id: string;
+ course_key: string;
+ title: string;
+ source_type: string;
+ source_file?: string | null;
+ created_at?: string;
+ updated_at?: string;
+};
+
+export type DbGrammarLesson = {
+ id: string;
+ course_id: string;
+ lesson_key: string;
+ lesson_number: number | null;
+ title: string;
+ lesson_order: number;
+ description?: string | null;
+ created_at?: string;
+ updated_at?: string;
+};
+
+export type DbGrammarPoint = {
+ id: string;
+ course_id: string;
+ lesson_id?: string | null;
+ title: string;
+ hanzi?: string | null;
+ pinyin?: string | null;
+ vietnamese_title?: string | null;
+ level?: string | null;
+ category?: string | null;
+ tags?: string[] | null;
+ row_number: number;
+ content?: GrammarPointContent | null;
+ created_at?: string;
+ updated_at?: string;
+};
+
+export type DbGrammarExercise = {
+ id: string;
+ course_id: string;
+ lesson_id?: string | null;
+ point_id?: string | null;
+ exercise_type: GrammarExerciseType;
+ prompt: string;
+ content?: GrammarExerciseContent | null;
+ answer?: Record<string, unknown> | null;
+ explanation?: string | null;
+ exercise_order: number;
+ created_at?: string;
+ updated_at?: string;
+};
+
+export type DbUserGrammarPointProgress = {
+ user_id: string;
+ point_id: string;
+ proficiency_level: number;
+ last_studied_at?: string | null;
+ next_review_at?: string | null;
+ created_at?: string;
+ updated_at?: string;
+};
+
+export type GrammarPointWithProgress = Omit<DbGrammarPoint, "content" | "tags"> & {
+ content: GrammarPointContent;
+ tags: string[];
+ proficiency_level: number;
+ status: "new" | "learning" | "mastered";
+ exercises: DbGrammarExercise[];
+};
+
+export type GrammarLessonWithStats = DbGrammarLesson & {
+ points: GrammarPointWithProgress[];
+ exercises: DbGrammarExercise[];
+ fresh: number;
+ learning: number;
+ mastered: number;
+ progress: number;
+ categories: { name: string; count: number }[];
+};
+
+export type GrammarCourseWithLessons = DbGrammarCourse & {
+ lessons: GrammarLessonWithStats[];
+ points: GrammarPointWithProgress[];
+ exercises: DbGrammarExercise[];
 };
 
 /** Vocab data used by inspector & dictionary */

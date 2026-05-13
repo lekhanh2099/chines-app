@@ -58,6 +58,7 @@ function buildEntry(
   ai_analysis: analysis,
   proficiency_level: level,
   is_favorited: progress?.is_favorited ?? true,
+  last_answered_at: progress?.last_answered_at ?? null,
   status: statusFromLevel(level),
   type: classifyVocabType(entry.hanzi, entry.pinyin),
   source: {
@@ -159,8 +160,9 @@ const progressByEntry = new Map<string, DbUserVocabEntryProgress>(
  const lessonPayload: VocabLessonWithStats[] = (lessons || []).map((lesson) => {
   const lessonEntries = entriesByLesson.get(lesson.id) || [];
   const mastered = lessonEntries.filter((entry) => entry.status === "mastered").length;
-  const learning = lessonEntries.filter((entry) => entry.status === "learning").length;
-  const fresh = lessonEntries.filter((entry) => entry.status === "new").length;
+  const studied = lessonEntries.filter((entry) => entry.last_answered_at || entry.proficiency_level > 0).length;
+  const learning = lessonEntries.filter((entry) => (entry.last_answered_at || entry.proficiency_level > 0) && entry.status !== "mastered").length;
+  const fresh = Math.max(lessonEntries.length - studied, 0);
   const categories = Array.from(
    lessonEntries.reduce((map, entry) => {
     const name = entry.category || "Bổ sung";
@@ -180,10 +182,11 @@ const progressByEntry = new Map<string, DbUserVocabEntryProgress>(
    lesson_order: lesson.lesson_order,
    item_count: lessonEntries.length,
    entries: lessonEntries,
+   studied,
    mastered,
    learning,
    fresh,
-   progress: lessonEntries.length ? Math.round((mastered / lessonEntries.length) * 100) : 0,
+   progress: lessonEntries.length ? Math.round((studied / lessonEntries.length) * 100) : 0,
    categories,
   };
  });

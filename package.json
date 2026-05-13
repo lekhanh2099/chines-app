@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "db:grammar": "node scripts/apply-grammar-learning-migration.js",
     "start": "next start",
     "lint": "eslint"
   },

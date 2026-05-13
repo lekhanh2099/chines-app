@@ -24,6 +24,9 @@ import type { UserApiKeyCredential } from "@/services/user-api-keys.service";
 import {
  aiAnalysisSchema,
  sentenceInsightSchema,
+ type GrammarExerciseContent,
+ type GrammarExerciseType,
+ type GrammarPointContent,
  type AiDefinitionExample,
  type AiVocabResponse,
  type AiWordRelation,
@@ -77,6 +80,60 @@ Do not include markdown fences or commentary.`;
 
 const sentencePrompt = (text: string, promptTemplate?: string | null) =>
  renderSentenceLookupPrompt(text, promptTemplate);
+
+const GRAMMAR_SYSTEM_PROMPT = `You are a Chinese grammar curriculum designer for Vietnamese learners.
+
+Return valid JSON only.
+Do not include markdown fences or commentary.
+Keep explanations practical, concise, and suitable for self-study.`;
+
+function grammarFillPrompt(input: {
+ title: string;
+ pinyin?: string | null;
+ vietnameseTitle?: string | null;
+ level?: string | null;
+ category?: string | null;
+ existing?: GrammarPointContent | null;
+}) {
+ return `Fill missing study content for this Chinese grammar point.
+
+Grammar point:
+- title: ${input.title}
+- pinyin: ${input.pinyin || ""}
+- Vietnamese title: ${input.vietnameseTitle || ""}
+- level: ${input.level || ""}
+- category: ${input.category || ""}
+
+Existing content, if any:
+${JSON.stringify(input.existing || {}, null, 2)}
+
+Return JSON with this shape:
+{
+  "quick_example": { "zh": "...", "pinyin": "...", "vi": "..." },
+  "explanation": "...",
+  "structures": ["..."],
+  "usage_notes": ["..."],
+  "common_mistakes": ["..."],
+  "comparisons": ["..."],
+  "examples": [{ "zh": "...", "pinyin": "...", "vi": "...", "note": "..." }],
+  "exercises": [
+    {
+      "exercise_type": "fill_blank",
+      "prompt": "...",
+      "content": { "accepted_answers": ["..."] },
+      "answer": { "text": "..." },
+      "explanation": "..."
+    }
+  ]
+}
+
+Rules:
+- Prefer Vietnamese explanations.
+- Include Chinese examples with pinyin and Vietnamese translation.
+- Generate 2-4 exercises using fill_blank and multiple_choice first.
+- Do not mention that fields were missing.
+- Do not wrap the response in markdown.`;
+}
 
 function getProviderOutageKey(
  provider: ProviderName,
@@ -991,6 +1048,95 @@ export async function analyzeSentenceDetailed(
   data: null,
   error:
    result.error ||
-   "Không thể generate bản dịch tiếng Việt lúc này vì tất cả AI provider đều thất bại.",
+  "Không thể generate bản dịch tiếng Việt lúc này vì tất cả AI provider đều thất bại.",
+ };
+}
+
+const grammarQuickExampleSchema = z.object({
+ zh: z.string().optional(),
+ pinyin: z.string().optional(),
+ vi: z.string().optional(),
+});
+
+const grammarExerciseSchema = z.object({
+ exercise_type: z
+  .enum(["fill_blank", "multiple_choice", "reorder_sentence", "translate_zh", "identify_error"])
+  .optional(),
+ prompt: z.string().optional(),
+ content: z.record(z.unknown()).optional(),
+ answer: z.record(z.unknown()).optional(),
+ explanation: z.string().optional(),
+});
+
+const grammarFillSchema = z.object({
+ quick_example: grammarQuickExampleSchema.optional(),
+ explanation: z.string().optional(),
+ structures: z.array(z.string()).optional(),
+ usage_notes: z.array(z.string()).optional(),
+ common_mistakes: z.array(z.string()).optional(),
+ comparisons: z.array(z.string()).optional(),
+ examples: z
+  .array(
+   z.object({
+    zh: z.string(),
+    pinyin: z.string(),
+    vi: z.string(),
+    note: z.string().optional(),
+   }),
+  )
+  .optional(),
+ exercises: z.array(grammarExerciseSchema).optional(),
+});
+
+export type GrammarFillMissingResult = GrammarPointContent & {
+ exercises?: {
+  exercise_type?: GrammarExerciseType;
+  prompt?: string;
+  content?: GrammarExerciseContent;
+  answer?: Record<string, unknown>;
+  explanation?: string;
+ }[];
+};
+
+export async function generateGrammarFillMissingDetailed(
+ input: {
+  title: string;
+  pinyin?: string | null;
+  vietnameseTitle?: string | null;
+  level?: string | null;
+  category?: string | null;
+  existing?: GrammarPointContent | null;
+ },
+ options?: AiRequestOptions,
+): Promise<StructuredRequestResult<GrammarFillMissingResult>> {
+ console.log("[AI] Filling grammar:", input.title);
+
+ const geminiModel = normalizeGeminiModel(
+  options?.geminiModel || DEFAULT_GEMINI_MODEL,
+ );
+
+ const result = await requestStructuredJson(
+  GRAMMAR_SYSTEM_PROMPT,
+  grammarFillPrompt(input),
+  geminiModel,
+  grammarFillSchema,
+  (parsed) => typeof parsed === "object" && parsed !== null,
+  options?.userApiKeys,
+  options?.abortSignal,
+ );
+
+ if (result.data) {
+  return {
+   data: result.data as GrammarFillMissingResult,
+   error: null,
+  };
+ }
+
+ console.error("[AI] All providers failed for grammar:", input.title);
+ return {
+  data: null,
+  error:
+   result.error ||
+   "Không thể bổ sung ngữ pháp lúc này vì tất cả AI provider đều thất bại.",
  };
 }
