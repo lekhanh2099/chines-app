@@ -147,6 +147,57 @@ export type DbLessonVocabulary = {
  is_target_word: boolean;
 };
 
+export type DbVocabCourse = {
+ id: string;
+ owner_id: string;
+ course_key: string;
+ title: string;
+ source_file: string;
+ source_path: string | null;
+ generated_at: string | null;
+ imported_at: string;
+ created_at: string;
+};
+
+export type DbVocabLesson = {
+ id: string;
+ course_id: string;
+ lesson_key: string;
+ lesson_number: number | null;
+ title: string;
+ lesson_order: number;
+ item_count: number;
+ created_at: string;
+ updated_at: string;
+};
+
+export type DbVocabEntry = {
+ id: string;
+ course_id: string;
+ lesson_id: string;
+ hanzi: string;
+ pinyin: string | null;
+ sino_vietnamese: string | null;
+ meaning: string | null;
+ word_type: string | null;
+ category: string | null;
+ row_number: number;
+ ai_analysis: AiAnalysis | null;
+ created_at: string;
+ updated_at: string;
+};
+
+export type DbUserVocabEntryProgress = {
+ user_id: string;
+ entry_id: string;
+ proficiency_level: number;
+ next_review_at: string | null;
+ is_favorited: boolean;
+ last_answered_at: string | null;
+ created_at: string;
+ updated_at: string;
+};
+
 /* ══════════════════════════════════════════
    Enums & Constrained Types
    ══════════════════════════════════════════ */
@@ -465,6 +516,61 @@ export type VocabWithProgress = {
  is_favorited: boolean;
  status: "new" | "learning" | "mastered";
  type: VocabType;
+};
+
+export type VocabEntryWithProgress = {
+ id: string;
+ course_id: string;
+ lesson_id: string;
+ hanzi: string;
+ pinyin: string;
+ sino_vietnamese?: string;
+ meaning: string;
+ word_type?: string;
+ category?: string;
+ row_number: number;
+ ai_analysis: AiAnalysis;
+ proficiency_level: number;
+ is_favorited: boolean;
+ status: "new" | "learning" | "mastered";
+ type: VocabType;
+ source: {
+  courseKey: string;
+  lessonKey: string;
+  lessonNumber: number | null;
+  lessonTitle: string;
+  rowNumber: number;
+  category?: string;
+  sourceFile?: string;
+ };
+};
+
+export type VocabLessonWithStats = {
+ id: string;
+ course_id: string;
+ lesson_key: string;
+ lesson_number: number | null;
+ title: string;
+ lesson_order: number;
+ item_count: number;
+ entries: VocabEntryWithProgress[];
+ mastered: number;
+ learning: number;
+ fresh: number;
+ progress: number;
+ categories: { name: string; count: number }[];
+};
+
+export type VocabCourseWithLessons = {
+ id: string;
+ course_key: string;
+ title: string;
+ source_file: string;
+ source_path?: string | null;
+ generated_at?: string | null;
+ imported_at?: string;
+ lessons: VocabLessonWithStats[];
+ entries: VocabEntryWithProgress[];
 };
 
 /** Vocab data used by inspector & dictionary */

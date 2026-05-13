@@ -22,10 +22,11 @@ type SidebarState = {
  isCollapsed: boolean;
  toggle: () => void;
  setCollapsed: (collapsed: boolean) => void;
+ hydrate: () => void;
 };
 
 export const useSidebarStore = create<SidebarState>((set, get) => ({
- isCollapsed: loadCollapsed(),
+ isCollapsed: false,
 
  toggle: () => {
   const next = !get().isCollapsed;
@@ -44,5 +45,9 @@ export const useSidebarStore = create<SidebarState>((set, get) => ({
    // storage unavailable
   }
   set({ isCollapsed: collapsed });
+ },
+
+ hydrate: () => {
+  set({ isCollapsed: loadCollapsed() });
  },
 }));

@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect } from "react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import {
@@ -92,6 +93,11 @@ export function Sidebar() {
  const router = useRouter();
  const isCollapsed = useSidebarStore((s) => s.isCollapsed);
  const toggleSidebar = useSidebarStore((s) => s.toggle);
+ const hydrateSidebar = useSidebarStore((s) => s.hydrate);
+
+ useEffect(() => {
+  hydrateSidebar();
+ }, [hydrateSidebar]);
 
  const handleLogout = async () => {
   const supabase = createClient();
