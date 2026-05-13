@@ -7,6 +7,7 @@ import {
  BookOpen,
  Brain,
  Check,
+ ChevronDown,
  ChevronRight,
  Edit3,
  Eye,
@@ -16,7 +17,6 @@ import {
  Keyboard,
  Layers3,
  Loader2,
- Menu,
  PenLine,
  Play,
  Plus,
@@ -388,7 +388,6 @@ export default function VocabularyPage() {
   missed: 0,
  });
  const [showShortcuts, setShowShortcuts] = useState(false);
- const [lessonSheetOpen, setLessonSheetOpen] = useState(false);
  const [editingEntry, setEditingEntry] =
   useState<VocabEntryWithProgress | null>(null);
  const [editingLesson, setEditingLesson] =
@@ -985,8 +984,10 @@ export default function VocabularyPage() {
     }}
     onResetImport={resetImport}
     resetting={resetting}
-    onShowLessons={() => setLessonSheetOpen(true)}
     onShowShortcuts={() => setShowShortcuts((value) => !value)}
+    lessons={lessons}
+    activeLesson={activeLesson}
+    onLessonChange={setActiveLessonId}
    />
 
    {isLoading ? (
@@ -1008,18 +1009,7 @@ export default function VocabularyPage() {
     />
    ) : (
     <>
-     <div className="grid gap-6 lg:grid-cols-[340px_minmax(0,1fr)]">
-      <LessonList
-       lessons={lessons}
-       activeLessonId={activeLesson?.id}
-       onSelect={(lesson) => {
-        setActiveLessonId(lesson.id);
-        setLessonSheetOpen(false);
-       }}
-       onEdit={(lesson) => setEditingLesson(lesson)}
-      />
-
-      <main className="min-w-0">
+     <div className="min-w-0">
        {activeTab === "study" && activeLesson && (
         <StudyWorkspace
          lesson={activeLesson}
@@ -1076,19 +1066,7 @@ export default function VocabularyPage() {
          onImportLesson={setImportingLesson}
         />
        )}
-      </main>
      </div>
-
-     <MobileLessonSheet
-      open={lessonSheetOpen}
-      lessons={lessons}
-      activeLessonId={activeLesson?.id}
-      onClose={() => setLessonSheetOpen(false)}
-      onSelect={(lesson) => {
-       setActiveLessonId(lesson.id);
-       setLessonSheetOpen(false);
-      }}
-     />
     </>
    )}
 
@@ -1124,7 +1102,7 @@ export default function VocabularyPage() {
 function LearningShell({ children }: { children: React.ReactNode }) {
  return (
   <div className="min-h-screen bg-stone-50">
-   <div className="mx-auto flex w-full max-w-[1500px] flex-col gap-6 px-4 py-6 sm:px-5 lg:px-8">
+   <div className="mx-auto flex w-full max-w-[1500px] flex-col gap-4 px-4 py-4 sm:px-5 lg:px-8">
     {children}
    </div>
   </div>
@@ -1140,8 +1118,10 @@ function LearningHeader({
  onRandomToggle,
  onResetImport,
  resetting,
- onShowLessons,
  onShowShortcuts,
+ lessons,
+ activeLesson,
+ onLessonChange,
 }: {
  activeTab: MainTab;
  onTabChange: (tab: MainTab) => void;
@@ -1151,21 +1131,23 @@ function LearningHeader({
  onRandomToggle: () => void;
  onResetImport: () => void;
  resetting: boolean;
- onShowLessons: () => void;
  onShowShortcuts: () => void;
+ lessons: VocabLessonWithStats[];
+ activeLesson: VocabLessonWithStats | null;
+ onLessonChange: (lessonId: string) => void;
 }) {
  return (
-  <header className="rounded-[28px] border-2 border-stone-200 bg-white p-4 shadow-theme-sm md:p-5">
-   <div className="flex flex-col gap-4 xl:flex-row xl:items-end xl:justify-between">
-    <div>
-     <h1 className="mt-4 text-4xl font-black tracking-normal text-stone-900">
+  <header className="rounded-[24px] border-2 border-stone-200 bg-white p-3 shadow-theme-sm md:p-4">
+   <div className="grid gap-3 xl:grid-cols-[minmax(0,1fr)_minmax(320px,42%)] xl:items-start">
+    <div className="min-w-0">
+     <h1 className="text-3xl font-black tracking-normal text-stone-900 md:text-4xl">
       Từ vựng Hán ngữ
      </h1>
-     <p className="mt-2   text-base font-bold leading-7 text-stone-500">
+     <p className="mt-1 max-w-2xl text-sm font-bold leading-6 text-stone-500 md:text-base">
       Học theo bài, ôn bằng flashcard, trắc nghiệm và chỉnh dữ liệu ngay khi
       cần.
      </p>
-     <div className="flex flex-wrap items-center gap-2">
+     <div className="mt-2 flex flex-wrap items-center gap-2">
       <LearningSegmentedControl
        value={activeTab}
        items={[
@@ -1175,14 +1157,6 @@ function LearningHeader({
        ]}
        onChange={(key) => onTabChange(key as MainTab)}
       />
-      <button
-       type="button"
-       onClick={onShowLessons}
-       className="inline-flex h-11 items-center gap-2 rounded-2xl border-2 border-stone-200 bg-white px-4 text-sm font-black text-stone-700 shadow-theme-sm hover:bg-stone-50 lg:hidden"
-      >
-       <Menu className="h-4 w-4" />
-       Bài học
-      </button>
       <ActionButton
        onClick={onResetImport}
        loading={resetting}
@@ -1201,10 +1175,18 @@ function LearningHeader({
       </ActionButton>
      </div>
     </div>
+
+    {activeTab === "study" && lessons.length > 0 ? (
+     <LessonSelectPanel
+      lessons={lessons}
+      activeLessonId={activeLesson?.id || lessons[0]?.id || ""}
+      onLessonChange={onLessonChange}
+     />
+    ) : null}
    </div>
 
    {activeTab === "study" && (
-    <div className="mt-5 flex flex-wrap items-center gap-2">
+    <div className="mt-3 flex flex-wrap items-center gap-2">
      <LearningSegmentedControl
       value={mode}
       items={studyModes.map((item) => ({
@@ -1222,6 +1204,67 @@ function LearningHeader({
     </div>
    )}
   </header>
+ );
+}
+
+function LessonSelectPanel({
+ lessons,
+ activeLessonId,
+ onLessonChange,
+}: {
+ lessons: VocabLessonWithStats[];
+ activeLessonId: string;
+ onLessonChange: (lessonId: string) => void;
+}) {
+ const activeLesson =
+  lessons.find((lesson) => lesson.id === activeLessonId) || lessons[0] || null;
+
+ return (
+  <section className="rounded-[20px] border-2 border-blue-300 bg-blue-50/40 p-3 shadow-theme-sm">
+   <div className="flex items-center justify-between gap-3">
+    <div className="min-w-0">
+     <p className="text-xs font-black uppercase tracking-[0.18em] text-blue-700">
+      Bài đang học
+     </p>
+     <p className="mt-1 truncate text-sm font-bold text-stone-500">
+      Chuyển bài nhanh, giữ màn học rộng.
+     </p>
+    </div>
+    <span className="rounded-full bg-white px-3 py-1 text-xs font-black text-stone-600 shadow-theme-sm">
+     {lessons.length} bài
+    </span>
+   </div>
+
+   <div className="relative mt-3">
+    <select
+     value={activeLessonId}
+     onChange={(event) => onLessonChange(event.target.value)}
+     className="h-12 w-full appearance-none rounded-2xl border-2 border-stone-200 bg-white px-4 pr-12 text-sm font-black text-stone-900 shadow-theme-sm outline-none transition focus:border-blue-400 md:text-base"
+    >
+     {lessons.map((lesson) => (
+      <option key={lesson.id} value={lesson.id}>
+       {lesson.title.replace(/^Tổng quan & Phân nhóm từ vựng\s*/i, "")} · Đã học {lesson.studied}/{lesson.entries.length}
+      </option>
+     ))}
+    </select>
+    <ChevronDown className="pointer-events-none absolute right-4 top-1/2 h-5 w-5 -translate-y-1/2 text-stone-500" />
+   </div>
+
+   {activeLesson ? (
+    <div className="mt-3 flex flex-wrap items-center gap-2 text-xs font-black text-stone-600">
+     <span className="rounded-full bg-white px-3 py-1.5 shadow-theme-sm">
+      Tiến độ {activeLesson.progress}%
+     </span>
+     <span className="rounded-full bg-white px-3 py-1.5 shadow-theme-sm">
+      Đã học {activeLesson.studied}/{activeLesson.entries.length}
+     </span>
+     <span className="min-w-0 max-w-full truncate rounded-full bg-white px-3 py-1.5 shadow-theme-sm">
+      {activeLesson.categories.slice(0, 2).map((item) => item.name).join(", ") ||
+       "Bổ sung"}
+     </span>
+    </div>
+   ) : null}
+  </section>
  );
 }
 
@@ -1321,121 +1364,6 @@ function IconToolButton({
  );
 }
 
-function LessonList({
- lessons,
- activeLessonId,
- onSelect,
- onEdit,
-}: {
- lessons: VocabLessonWithStats[];
- activeLessonId?: string;
- onSelect: (lesson: VocabLessonWithStats) => void;
- onEdit: (lesson: VocabLessonWithStats) => void;
-}) {
- return (
-  <aside className="hidden rounded-[28px] border-2 border-stone-200 bg-white p-4 shadow-theme-md lg:sticky lg:top-6 lg:block lg:max-h-[calc(100vh-48px)] lg:overflow-y-auto">
-   <div className="mb-3 flex items-center justify-between px-1">
-    <p className="text-base font-black uppercase tracking-wide text-stone-900">
-     Chọn bài học
-    </p>
-    <span className="rounded-full bg-stone-100 px-3 py-1 text-xs font-black text-stone-600">
-     {lessons.length}
-    </span>
-   </div>
-   <div className="flex flex-col gap-2">
-    {lessons.map((lesson) => (
-     <LessonCard
-      key={lesson.id}
-      lesson={lesson}
-      active={lesson.id === activeLessonId}
-      onClick={() => onSelect(lesson)}
-      onEdit={() => onEdit(lesson)}
-     />
-    ))}
-   </div>
-  </aside>
- );
-}
-
-function LessonCard({
- lesson,
- active,
- onClick,
- onEdit,
-}: {
- lesson: VocabLessonWithStats;
- active: boolean;
- onClick: () => void;
- onEdit?: () => void;
-}) {
- return (
-  <button
-   type="button"
-   aria-pressed={active}
-   onClick={onClick}
-   className={cn(
-    "group flex w-full items-center gap-3 rounded-[22px] border-2 p-3 text-left shadow-theme-sm transition",
-    active
-     ? "border-red-500 bg-red-50 text-stone-900"
-     : "border-stone-200 bg-white text-stone-700 hover:bg-stone-50",
-   )}
-  >
-   <span
-    className={cn(
-     "flex h-12 w-12 shrink-0 items-center justify-center rounded-full border-2 text-sm font-black",
-     active
-      ? "border-red-300 bg-white text-red-500"
-      : "border-stone-200 bg-white text-stone-600",
-    )}
-   >
-    {lesson.progress}%
-   </span>
-   <span className="min-w-0 flex-1">
-    <span className="flex items-center justify-between gap-2">
-     <span className="truncate text-lg font-black">
-      {lesson.title.replace(/^Tổng quan & Phân nhóm từ vựng\s*/i, "")}
-     </span>
-     {onEdit && (
-      <span
-       role="button"
-       tabIndex={0}
-       onClick={(event) => {
-        event.stopPropagation();
-        onEdit();
-       }}
-       className="rounded-xl p-2 opacity-0 transition hover:bg-white group-hover:opacity-100"
-      >
-       <PenLine className="h-4 w-4" />
-      </span>
-     )}
-    </span>
-    <span className="mt-0.5 block text-sm font-bold text-stone-500">
-     Đã học {lesson.studied}/{lesson.entries.length} thẻ
-    </span>
-    <span className="mt-2 flex flex-wrap gap-1">
-     {lesson.categories.slice(0, 2).map((category) => (
-      <span
-       key={category.name}
-       className={cn(
-        "rounded-full px-2 py-0.5 text-[10px] font-black",
-        active ? "bg-red-100 text-red-600" : "bg-stone-100 text-stone-500",
-       )}
-      >
-       {category.name} · {category.count}
-      </span>
-     ))}
-    </span>
-    <span className="mt-2 block h-1.5 overflow-hidden rounded-full bg-stone-100">
-     <span
-      className="block h-full rounded-full bg-red-500"
-      style={{ width: `${lesson.progress}%` }}
-     />
-    </span>
-   </span>
-  </button>
- );
-}
-
 function StudyWorkspace(props: {
  lesson: VocabLessonWithStats;
  mode: StudyMode;
@@ -1468,13 +1396,13 @@ function StudyWorkspace(props: {
 }) {
  const { lesson, activeEntry } = props;
  return (
-  <section className="rounded-[28px] border-2 border-stone-200 bg-white p-5 shadow-theme-md md:p-7">
-   <div className="flex flex-col gap-4 xl:flex-row xl:items-start xl:justify-between">
+  <section className="rounded-[24px] border-2 border-stone-200 bg-white p-4 shadow-theme-md md:p-5">
+   <div className="flex flex-col gap-3 xl:flex-row xl:items-start xl:justify-between">
     <div>
      <p className="text-sm font-black uppercase tracking-wide text-red-500">
       {lesson.title}
      </p>
-     <h2 className="mt-1 text-3xl font-black text-stone-900">
+     <h2 className="mt-1 text-2xl font-black text-stone-900 md:text-3xl">
       {lesson.title.replace(/^Tổng quan & Phân nhóm từ vựng\s*/i, "")}
      </h2>
      <p className="mt-2 text-base font-bold text-stone-500">
@@ -1485,7 +1413,7 @@ function StudyWorkspace(props: {
        .join(", ")}
      </p>
     </div>
-    <div className="grid grid-cols-3 gap-3">
+    <div className="grid grid-cols-3 gap-2">
      <StatBox value={lesson.fresh} label="Chưa học" tone="yellow" />
      <StatBox value={lesson.learning} label="Đang ôn" tone="blue" />
      <StatBox value={lesson.mastered} label="Thành thạo" tone="green" />
@@ -1541,10 +1469,10 @@ function StudyProgress({
   ? Math.min(100, Math.round((studied / total) * 100))
   : 0;
  return (
-  <section className="mt-7">
+  <section className="mt-5">
    <div className="flex flex-wrap items-end justify-between gap-3">
     <div>
-     <p className="text-lg font-black uppercase tracking-wide text-stone-600">
+     <p className="text-base font-black uppercase tracking-wide text-stone-600">
       Tiến độ - {title}
      </p>
      <p className="mt-1 text-sm font-bold text-stone-500">
@@ -1553,11 +1481,11 @@ function StudyProgress({
       {randomMode ? " · Đang xáo bài" : ""}
      </p>
     </div>
-    <p className="text-xl font-black uppercase tracking-wide text-stone-700">
+    <p className="text-lg font-black uppercase tracking-wide text-stone-700">
      {current} / {total} thẻ
     </p>
    </div>
-   <div className="mt-3 h-3 rounded-full border-2 border-stone-200 bg-red-100">
+   <div className="mt-2 h-2.5 rounded-full border-2 border-stone-200 bg-red-100">
     <div
      className="h-full rounded-full bg-red-500 transition-all"
      style={{ width: `${progress}%` }}
@@ -1569,7 +1497,7 @@ function StudyProgress({
 
 function StudyCard({ children }: { children: React.ReactNode }) {
  return (
-  <div className="mt-5 min-h-[480px] rounded-[28px] border-2 border-stone-100 bg-stone-50 p-4 text-center md:p-7">
+  <div className="mt-4 overflow-hidden rounded-[24px] border-2 border-stone-100 bg-stone-50 p-3 text-center md:p-5">
    {children}
   </div>
  );
@@ -1628,13 +1556,13 @@ function FlashcardMode({
 }) {
  return (
   <div className="mx-auto flex w-full max-w-4xl flex-col items-center">
-   <div className="rounded-full bg-white px-5 py-2 text-xl font-black text-stone-800 shadow-theme-sm">
+   <div className="rounded-full bg-white px-4 py-1.5 text-lg font-black text-stone-800 shadow-theme-sm">
     {Math.min(cardIndex + 1, total)} / {total}
    </div>
-   <div className="relative mt-6 w-full max-w-3xl">
+   <div className="relative mt-4 w-full max-w-3xl">
     <div className="absolute inset-0 rotate-[-4deg] rounded-[36px] border-2 border-stone-100 bg-white/70" />
     <div className="absolute inset-0 rotate-3 rounded-[36px] border-2 border-stone-100 bg-white/80" />
-    <div className="relative flex min-h-[520px] flex-col rounded-[36px] border-2 border-stone-100 bg-white p-7 shadow-theme-md">
+    <div className="relative flex h-[clamp(430px,52vh,560px)] min-h-0 flex-col rounded-[32px] border-2 border-stone-100 bg-white p-5 shadow-theme-md md:p-6">
      <div className="flex items-center justify-between text-stone-800">
       <button
        type="button"
@@ -1659,12 +1587,12 @@ function FlashcardMode({
       <button
        type="button"
        onClick={onReveal}
-       className="flex flex-1 flex-col items-center justify-center rounded-[28px] py-10 transition hover:bg-stone-50/70"
+       className="flex min-h-0 flex-1 flex-col items-center justify-center rounded-[24px] py-8 transition hover:bg-stone-50/70"
       >
-       <h3 className="text-center text-7xl font-black leading-tight text-red-500 md:text-8xl">
+       <h3 className="text-center text-[clamp(3.5rem,7vw,6rem)] font-black leading-tight text-red-500">
         {activeEntry.hanzi}
        </h3>
-       <p className="mt-8 text-center text-xl font-black text-stone-500">
+       <p className="mt-7 text-center text-lg font-black text-stone-500 md:text-xl">
         Tự đoán pinyin và nghĩa trước khi lật thẻ.
        </p>
        <p className="mt-3 text-sm font-black uppercase tracking-wide text-stone-400">
@@ -1682,7 +1610,7 @@ function FlashcardMode({
      )}
     </div>
    </div>
-   <div className="mt-7 flex flex-wrap justify-center gap-4">
+   <div className="mt-5 flex flex-wrap justify-center gap-3 md:gap-4">
     <RoundStudyButton icon={Search} label="Chi tiết" onClick={onEdit} />
     <RoundStudyButton icon={RotateCcw} label="Lùi" onClick={onPrevious} />
     <RoundStudyButton
@@ -1737,7 +1665,7 @@ function RoundStudyButton({
    title={label}
    onClick={onClick}
    className={cn(
-    "flex h-16 w-16 items-center justify-center rounded-full bg-white shadow-theme-md transition hover:-translate-y-0.5",
+    "flex h-14 w-14 items-center justify-center rounded-full bg-white shadow-theme-md transition hover:-translate-y-0.5 md:h-16 md:w-16",
     primary && "text-blue-900",
     danger && "text-red-400",
     warning && "text-yellow-500",
@@ -1745,7 +1673,7 @@ function RoundStudyButton({
     !primary && !danger && !warning && !success && "text-stone-900",
    )}
   >
-   <Icon className="h-8 w-8" fill={primary ? "currentColor" : "none"} />
+   <Icon className="h-7 w-7 md:h-8 md:w-8" fill={primary ? "currentColor" : "none"} />
   </button>
  );
 }
@@ -1768,27 +1696,27 @@ function FlashcardBack({
  if (compact) {
   return (
    <div
-    className="flex flex-1 flex-col overflow-y-auto px-2 py-5 text-center"
+    className="flex min-h-0 flex-1 flex-col overflow-y-auto px-2 py-4 text-center"
     onClick={onReveal}
    >
-    <h3 className="text-6xl font-black text-red-500">{entry.hanzi}</h3>
-    <p className="mt-5 text-3xl font-bold text-stone-900">
+    <h3 className="text-[clamp(2.5rem,5vw,4.5rem)] font-black leading-tight text-red-500">{entry.hanzi}</h3>
+    <p className="mt-4 text-2xl font-bold text-stone-900 md:text-3xl">
      {entry.pinyin}
      {entry.sino_vietnamese || analysis.han_viet
       ? ` - ${(entry.sino_vietnamese || analysis.han_viet || "").toUpperCase()}`
       : ""}
     </p>
-    <p className="mx-auto mt-6 max-w-2xl text-2xl font-bold leading-10 text-stone-800">
+    <p className="mx-auto mt-5 max-w-2xl text-xl font-bold leading-9 text-stone-800 md:text-2xl">
      {getMeaning(entry)}
     </p>
     {example && (
-     <div className="mt-7 border-t-2 border-stone-100 pt-6 text-left">
-      <p className="text-xl font-black leading-9 text-stone-900">
+     <div className="mt-6 border-t-2 border-stone-100 pt-5 text-left">
+      <p className="text-lg font-black leading-8 text-stone-900 md:text-xl">
        <Volume2 className="mr-2 inline h-6 w-6" />
        {example.zh}
       </p>
-      <p className="mt-2 text-lg font-bold text-stone-500">{example.pinyin}</p>
-      <p className="mt-3 text-xl font-bold leading-8 text-stone-800">
+      <p className="mt-2 text-base font-bold text-stone-500 md:text-lg">{example.pinyin}</p>
+      <p className="mt-2 text-lg font-bold leading-8 text-stone-800 md:text-xl">
        {example.vi}
       </p>
      </div>
@@ -3113,43 +3041,6 @@ function Textarea({
    onChange={(event) => onChange(event.target.value)}
    className="w-full rounded-2xl border-2 border-stone-200 bg-white px-4 py-3 text-sm font-bold leading-6 text-stone-800 outline-none focus:border-red-300"
   />
- );
-}
-
-function MobileLessonSheet({
- open,
- lessons,
- activeLessonId,
- onClose,
- onSelect,
-}: {
- open: boolean;
- lessons: VocabLessonWithStats[];
- activeLessonId?: string;
- onClose: () => void;
- onSelect: (lesson: VocabLessonWithStats) => void;
-}) {
- if (!open) return null;
- return (
-  <div className="fixed inset-0 z-50 lg:hidden">
-   <div className="absolute inset-0 bg-stone-900/30" onClick={onClose} />
-   <div className="absolute inset-x-0 bottom-0 max-h-[82vh] overflow-y-auto rounded-t-[28px] border-2 border-stone-200 bg-white p-4 shadow-2xl">
-    <div className="mb-4 flex items-center justify-between">
-     <h2 className="text-xl font-black text-stone-900">Chọn bài học</h2>
-     <IconToolButton icon={X} label="Đóng" onClick={onClose} />
-    </div>
-    <div className="grid gap-3">
-     {lessons.map((lesson) => (
-      <LessonCard
-       key={lesson.id}
-       lesson={lesson}
-       active={lesson.id === activeLessonId}
-       onClick={() => onSelect(lesson)}
-      />
-     ))}
-    </div>
-   </div>
-  </div>
  );
 }
 
