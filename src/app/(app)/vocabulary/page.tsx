@@ -82,9 +82,9 @@ type ImportedEntryDraft = {
 const studyModes: { key: StudyMode; label: string; icon: LucideIcon }[] = [
  { key: "guess", label: "Đoán từ", icon: Brain },
  { key: "flashcard", label: "Flashcard", icon: Eye },
- { key: "write", label: "Luyện viết", icon: Keyboard },
- { key: "quiz", label: "Trắc nghiệm", icon: FileText },
- { key: "reverse", label: "Trắc nghiệm ngược", icon: RotateCcw },
+ { key: "write", label: "Viết", icon: Keyboard },
+ { key: "quiz", label: "Quiz", icon: FileText },
+ { key: "reverse", label: "Ngược", icon: RotateCcw },
 ];
 
 const answerLabels = ["A", "B", "C", "D"];
@@ -1457,7 +1457,7 @@ function LearningHeader({
      <h1
       className={cn(
        "font-black tracking-normal text-stone-900",
-       isFlashcardFocus ? "text-2xl md:text-3xl" : "text-3xl md:text-4xl",
+       isFlashcardFocus ? "text-xl sm:text-2xl md:text-3xl" : "text-3xl md:text-4xl",
       )}
      >
       Từ vựng Hán ngữ
@@ -1476,27 +1476,29 @@ function LearningHeader({
        value={activeTab}
        items={[
         { key: "study", label: "Học", icon: BookOpen },
-        { key: "all", label: "Tất cả từ", icon: Layers3 },
-        { key: "edit", label: "Chỉnh sửa bài", icon: Edit3 },
+        { key: "all", label: "Từ", icon: Layers3 },
+        { key: "edit", label: "Sửa", icon: Edit3 },
        ]}
        onChange={(key) => onTabChange(key as MainTab)}
       />
-      <ActionButton
-       onClick={onResetImport}
-       loading={resetting}
-       icon={Upload}
-       tone="neutral"
-      >
-       Reset docs
-      </ActionButton>
+      <div className="hidden gap-2 md:flex">
+       <ActionButton
+        onClick={onResetImport}
+        loading={resetting}
+        icon={Upload}
+        tone="neutral"
+       >
+        Reset docs
+       </ActionButton>
 
-      <ActionButton
-       onClick={onRandomToggle}
-       icon={RotateCcw}
-       tone={randomMode ? "purple" : "neutral"}
-      >
-       {randomMode ? "Đang random" : "Ngẫu nhiên"}
-      </ActionButton>
+       <ActionButton
+        onClick={onRandomToggle}
+        icon={RotateCcw}
+        tone={randomMode ? "purple" : "neutral"}
+       >
+        {randomMode ? "Đang random" : "Ngẫu nhiên"}
+       </ActionButton>
+      </div>
      </div>
     </div>
 
@@ -1585,7 +1587,7 @@ function CompactLessonSelect({
  const activeLesson =
   lessons.find((lesson) => lesson.id === activeLessonId) || lessons[0] || null;
  return (
-  <div className="rounded-[20px] border-2 border-blue-200 bg-blue-50/60 p-3 shadow-theme-sm">
+  <div className="rounded-[18px] border-2 border-blue-200 bg-blue-50/60 p-3 shadow-theme-sm md:rounded-[20px]">
    <div className="flex items-center justify-between gap-2">
     <p className="text-[11px] font-black uppercase tracking-[0.18em] text-blue-700">
      Bài đang học
@@ -1597,7 +1599,7 @@ function CompactLessonSelect({
    <Select
     value={activeLessonId}
     onChange={(event) => onLessonChange(event.target.value)}
-    className="mt-2 h-11"
+    className="mt-2 h-10 text-xs sm:h-11 sm:text-sm"
    >
     {lessons.map((lesson) => (
      <option key={lesson.id} value={lesson.id}>
@@ -1928,32 +1930,32 @@ function FlashcardFocusWorkspace(
     </button>
    </div>
 
-   <div className="mt-2 flex max-w-full items-center gap-2 overflow-x-auto pb-1">
+   <div className="mt-2 grid grid-cols-3 gap-2 md:flex md:max-w-full md:items-center md:overflow-x-auto md:pb-1">
     <Select
      value={props.frontMode}
      onChange={(event) =>
       props.onFrontModeChange(event.target.value as FlashFrontMode)
      }
-     wrapperClassName="w-full sm:w-44"
-     className="h-11"
+     wrapperClassName="min-w-0"
+     className="h-10 px-2 pr-8 text-xs sm:h-11 sm:px-4 sm:pr-12 sm:text-sm"
     >
-     <option value="hanzi">Mặt trước: Hán tự</option>
+     <option value="hanzi">Mặt trước: Hán</option>
      <option value="meaning">Mặt trước: Nghĩa</option>
      <option value="pinyin">Mặt trước: Pinyin</option>
     </Select>
     <button
      type="button"
      onClick={() => setListOpen(true)}
-     className="inline-flex h-11 items-center gap-2 rounded-2xl border-2 border-stone-200 bg-white px-4 text-sm font-black text-stone-700 shadow-theme-sm hover:bg-stone-50"
+     className="inline-flex h-10 min-w-0 items-center justify-center gap-1 rounded-2xl border-2 border-stone-200 bg-white px-2 text-xs font-black text-stone-700 shadow-theme-sm hover:bg-stone-50 sm:h-11 sm:gap-2 sm:px-4 sm:text-sm"
     >
      <Layers3 className="h-4 w-4" />
-     Danh sách từ
+     <span className="truncate">List từ</span>
     </button>
     <button
      type="button"
      onClick={() => props.onAutoplayEnabledChange(!props.autoplayEnabled)}
      className={cn(
-      "inline-flex h-11 items-center gap-2 rounded-2xl border-2 px-4 text-sm font-black shadow-theme-sm",
+      "inline-flex h-10 min-w-0 items-center justify-center gap-1 rounded-2xl border-2 px-2 text-xs font-black shadow-theme-sm sm:h-11 sm:gap-2 sm:px-4 sm:text-sm",
       props.autoplayEnabled
        ? "border-red-500 bg-red-500 text-white"
        : "border-stone-200 bg-white text-stone-700 hover:bg-stone-50",
@@ -1964,7 +1966,7 @@ function FlashcardFocusWorkspace(
      ) : (
       <Play className="h-4 w-4" />
      )}
-     {props.autoplayEnabled ? "Dừng tự phát" : "Tự phát"}
+     <span className="truncate">{props.autoplayEnabled ? "Dừng" : "Tự phát"}</span>
     </button>
    </div>
 
@@ -2545,18 +2547,25 @@ function FlashcardFocusMode({
  const nextDisabled = total <= 1;
 
  return (
-  <div className="mx-auto flex w-full max-w-7xl flex-col justify-center rounded-[24px] border-2 border-stone-100 bg-stone-50 px-2.5 py-3 md:rounded-[28px] md:px-6 md:py-4">
+  <div className="mx-auto flex w-full max-w-7xl flex-col justify-center rounded-[24px] border-2 border-stone-100 bg-stone-50 px-2 py-2.5 md:rounded-[28px] md:px-6 md:py-4">
    <div className="relative mx-auto w-full max-w-6xl">
-    <div className="absolute inset-4 rotate-[-4deg] rounded-[36px] border-2 border-stone-100 bg-white/70" />
-    <div className="absolute inset-4 rotate-3 rounded-[36px] border-2 border-stone-100 bg-white/80" />
-    <div className="relative flex h-[calc(100dvh-270px)] min-h-[390px] max-h-[820px] flex-col rounded-[28px] border-2 border-stone-100 bg-white p-3 shadow-theme-md sm:min-h-[460px] md:h-[calc(100dvh-245px)] md:rounded-[36px] md:p-7">
+    <div className="absolute inset-4 hidden rotate-[-4deg] rounded-[36px] border-2 border-stone-100 bg-white/70 sm:block" />
+    <div className="absolute inset-4 hidden rotate-3 rounded-[36px] border-2 border-stone-100 bg-white/80 sm:block" />
+    <div
+     className={cn(
+      "relative flex flex-col rounded-[26px] border-2 border-stone-100 bg-white p-3 shadow-theme-md md:rounded-[36px] md:p-7",
+      revealed
+       ? "min-h-[520px] md:h-[calc(100dvh-245px)] md:max-h-[820px]"
+       : "h-[calc(100dvh-315px)] min-h-[360px] max-h-[620px] sm:min-h-[460px] md:h-[calc(100dvh-245px)] md:max-h-[820px]",
+     )}
+    >
      {!revealed ? (
       <button
        type="button"
        onClick={onReveal}
-       className="flex min-h-0 flex-1 flex-col items-center justify-center rounded-[28px] bg-stone-50/70 px-4 py-8 transition hover:bg-stone-50"
-      >
-       <h3 className="max-w-full text-center text-[clamp(4.5rem,10vw,8rem)] font-black leading-tight text-red-500">
+       className="flex min-h-0 flex-1 flex-col items-center justify-center rounded-[22px] bg-stone-50/70 px-3 py-6 transition hover:bg-stone-50 md:rounded-[28px] md:px-4 md:py-8"
+     >
+       <h3 className="max-w-full text-center text-[clamp(4.2rem,22vw,8rem)] font-black leading-tight text-red-500 md:text-[clamp(4.5rem,10vw,8rem)]">
         {getFrontText(activeEntry, frontMode)}
        </h3>
       </button>
@@ -2689,17 +2698,17 @@ function FlashcardBack({
  if (compact) {
   return (
    <div
-    className="flex min-h-0 flex-1 flex-col gap-3 overflow-hidden px-1 py-3"
+    className="flex min-h-0 flex-1 flex-col gap-3 overflow-visible px-1 py-2 md:overflow-hidden md:py-3"
     onClick={onReveal}
    >
-    <div className="grid min-h-0 flex-1 gap-3 overflow-hidden text-left lg:grid-cols-[0.9fr_1.1fr]">
-     <section className="flex min-h-0 flex-col gap-3 overflow-y-auto rounded-[26px] bg-stone-50/70 p-4 [scrollbar-width:thin] [scrollbar-color:#d6d3d1_transparent] md:p-5">
+    <div className="grid min-h-0 flex-1 gap-3 overflow-visible text-left md:overflow-hidden lg:grid-cols-[0.9fr_1.1fr]">
+     <section className="flex min-h-0 flex-col gap-3 overflow-visible rounded-[22px] bg-stone-50/70 p-3 [scrollbar-width:thin] [scrollbar-color:#d6d3d1_transparent] md:overflow-y-auto md:rounded-[26px] md:p-5">
       <div className="text-center lg:text-left">
-       <div className="flex items-center gap-2">
-        <h3 className="text-[clamp(3rem,7vw,5.6rem)] font-black leading-none text-red-500">
+       <div className="flex flex-col items-center gap-2 lg:flex-row lg:items-center">
+        <h3 className="whitespace-nowrap text-[clamp(4rem,20vw,5.6rem)] font-black leading-none text-red-500 md:text-[clamp(3rem,7vw,5.6rem)]">
          {entry.hanzi}
         </h3>
-        <p className="mt-3 text-xl font-black text-stone-900 md:text-2xl">
+        <p className="text-center text-xl font-black leading-tight text-stone-900 md:text-2xl lg:mt-3 lg:text-left">
          {entry.pinyin}
          {entry.sino_vietnamese || analysis.han_viet
           ? ` - ${(entry.sino_vietnamese || analysis.han_viet || "").toUpperCase()}`
@@ -2722,7 +2731,7 @@ function FlashcardBack({
       </div>
 
       {analysis.decomposition && (
-       <section className="rounded-[22px] bg-yellow-50 p-4 text-sm font-bold leading-6 text-stone-700">
+       <section className="rounded-[20px] bg-yellow-50 p-3 text-sm font-bold leading-6 text-stone-700 md:rounded-[22px] md:p-4">
         <p className="mb-1 text-xs font-black uppercase tracking-wide text-orange-600">
          Chiết tự
         </p>
@@ -2731,7 +2740,7 @@ function FlashcardBack({
       )}
 
       {!!analysis.collocations?.length && (
-       <section className="rounded-[22px] bg-white p-4 shadow-theme-sm">
+       <section className="rounded-[20px] bg-white p-3 shadow-theme-sm md:rounded-[22px] md:p-4">
         <p className="text-xs font-black uppercase tracking-wide text-stone-400">
          Cụm hay gặp
         </p>
@@ -2757,10 +2766,13 @@ function FlashcardBack({
       )}
      </section>
 
-     <section className="flex min-h-0 flex-col gap-3 overflow-y-auto pr-1 [scrollbar-width:thin] [scrollbar-color:#d6d3d1_transparent]">
+     <section className="flex min-h-0 flex-col gap-3 overflow-visible pr-0 [scrollbar-width:thin] [scrollbar-color:#d6d3d1_transparent] md:overflow-y-auto md:pr-1">
       {showExamples && examples.length ? (
-       <section className="rounded-[24px] bg-stone-50 p-4 md:p-5">
-        <div className="mt-3 space-y-3">
+       <section className="rounded-[22px] bg-stone-50 p-3 md:rounded-[24px] md:p-5">
+        <p className="text-xs font-black uppercase tracking-wide text-stone-400">
+         Ví dụ chính
+        </p>
+        <div className="mt-2 space-y-3">
          {examples.map((item, index) => (
           <div
            key={`${item.zh}-${index}`}
@@ -2772,7 +2784,7 @@ function FlashcardBack({
            <p
             className={cn(
              "font-black leading-7 text-stone-900",
-             index === 0 ? "text-lg md:text-xl" : "text-base",
+             index === 0 ? "text-base md:text-xl" : "text-sm md:text-base",
             )}
            >
             {index === 0 && <Volume2 className="mr-2 inline h-5 w-5" />}
@@ -2781,7 +2793,7 @@ function FlashcardBack({
            <p className="mt-1 text-sm font-bold leading-6 text-stone-500">
             {item.pinyin}
            </p>
-           <p className="mt-1 text-base font-bold leading-7 text-stone-800">
+           <p className="mt-1 text-sm font-bold leading-6 text-stone-800 md:text-base md:leading-7">
             {item.vi}
            </p>
            {item.note && (
