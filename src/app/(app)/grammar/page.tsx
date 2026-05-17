@@ -980,25 +980,53 @@ function GrammarCoachWorkspace({
  const lessonNumbers = lessons.map((lesson) => lesson.lesson_number).filter((value): value is number => typeof value === "number").sort((a, b) => a - b);
  const contrasts = points.flatMap((item) => item.content.coach_contrasts || []).filter((item, index, arr) => arr.findIndex((candidate) => candidate.title === item.title) === index);
  return (
-  <div className="grid gap-6 xl:grid-cols-[360px_minmax(0,1fr)]">
-   <aside className="rounded-[28px] border-2 border-stone-200 bg-white p-5 shadow-theme-md xl:sticky xl:top-6 xl:max-h-[calc(100vh-48px)] xl:overflow-y-auto">
-    <div className="flex items-center justify-between">
-     <p className="text-lg font-black uppercase tracking-wide text-stone-900">Bộ lọc học</p>
-     <span className="rounded-full bg-stone-100 px-3 py-1 text-xs font-black text-stone-600">{points.length} điểm</span>
+  <div className="space-y-5">
+   <section className="rounded-[28px] border-2 border-stone-200 bg-white p-4 shadow-theme-md md:p-5">
+    <div className="grid gap-4 xl:grid-cols-[1fr_1.25fr] xl:items-end">
+     <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
+      <Field label="Từ bài">
+       <Select value={String(fromLesson)} onChange={(event) => onFromLessonChange(Number(event.target.value))}>
+        {lessonNumbers.map((lessonNumber) => <option key={lessonNumber} value={lessonNumber}>Bài {lessonNumber}</option>)}
+       </Select>
+      </Field>
+      <Field label="Đến bài">
+       <Select value={String(toLesson)} onChange={(event) => onToLessonChange(Number(event.target.value))}>
+        {lessonNumbers.map((lessonNumber) => <option key={lessonNumber} value={lessonNumber}>Bài {lessonNumber}</option>)}
+       </Select>
+      </Field>
+      <Field label="Trạng thái">
+       <Select value={status} onChange={(event) => onStatusChange(event.target.value as CoachStatusFilter)}>
+        <option value="all">Tất cả</option>
+        <option value="new">Chưa học</option>
+        <option value="weak">Còn yếu</option>
+        <option value="ok">Đã nắm</option>
+       </Select>
+      </Field>
+      <Field label="Thứ tự">
+       <Select value={order} onChange={(event) => onOrderChange(event.target.value as CoachOrder)}>
+        <option value="lesson">Theo bài</option>
+        <option value="hard">Ưu tiên yếu</option>
+        <option value="random">Random ổn định</option>
+       </Select>
+      </Field>
+     </div>
+     <div className="grid gap-3 md:grid-cols-[minmax(0,1fr)_220px]">
+      <div>
+       <label className="text-xs font-black uppercase tracking-wide text-stone-500">Tìm ngữ pháp</label>
+       <div className="relative mt-2">
+        <Search className="absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 text-stone-400" />
+        <Input value={searchQuery} onChange={(event) => onSearchChange(event.target.value)} placeholder="是...的, bị động, bổ ngữ..." className="pl-12" />
+       </div>
+      </div>
+      <Field label="Tag">
+       <Select value={tag} onChange={(event) => onTagChange(event.target.value)}>
+        <option value="all">Tất cả tag</option>
+        {tags.map((item) => <option key={item} value={item}>{item}</option>)}
+       </Select>
+      </Field>
+     </div>
     </div>
-    <div className="mt-5 grid grid-cols-2 gap-3">
-     <Field label="Từ bài">
-      <Select value={String(fromLesson)} onChange={(event) => onFromLessonChange(Number(event.target.value))}>
-       {lessonNumbers.map((lessonNumber) => <option key={lessonNumber} value={lessonNumber}>Bài {lessonNumber}</option>)}
-      </Select>
-     </Field>
-     <Field label="Đến bài">
-      <Select value={String(toLesson)} onChange={(event) => onToLessonChange(Number(event.target.value))}>
-       {lessonNumbers.map((lessonNumber) => <option key={lessonNumber} value={lessonNumber}>Bài {lessonNumber}</option>)}
-      </Select>
-     </Field>
-    </div>
-    <div className="mt-4 flex flex-wrap gap-2">
+    <div className="mt-4 flex gap-2 overflow-x-auto pb-1">
      {lessonNumbers.map((lessonNumber) => (
       <button
        key={lessonNumber}
@@ -1007,46 +1035,13 @@ function GrammarCoachWorkspace({
         onFromLessonChange(lessonNumber);
         onToLessonChange(lessonNumber);
        }}
-       className={cn("rounded-2xl border-2 px-3 py-2 text-xs font-black shadow-theme-sm", lessonNumber >= fromLesson && lessonNumber <= toLesson ? "border-red-500 bg-red-50 text-red-600" : "border-stone-200 bg-white text-stone-600 hover:bg-stone-50")}
+       className={cn("shrink-0 rounded-2xl border-2 px-3 py-2 text-xs font-black shadow-theme-sm", lessonNumber >= fromLesson && lessonNumber <= toLesson ? "border-red-500 bg-red-50 text-red-600" : "border-stone-200 bg-white text-stone-600 hover:bg-stone-50")}
       >
        B{lessonNumber}
       </button>
      ))}
     </div>
-    <div className="mt-5">
-     <label className="text-xs font-black uppercase tracking-wide text-stone-500">Tìm ngữ pháp</label>
-     <div className="relative mt-2">
-      <Search className="absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 text-stone-400" />
-      <Input value={searchQuery} onChange={(event) => onSearchChange(event.target.value)} placeholder="是...的, bị động, bổ ngữ..." className="pl-12" />
-     </div>
-    </div>
-    <div className="mt-4 grid gap-3">
-     <Field label="Tag">
-      <Select value={tag} onChange={(event) => onTagChange(event.target.value)}>
-       <option value="all">Tất cả tag</option>
-       {tags.map((item) => <option key={item} value={item}>{item}</option>)}
-      </Select>
-     </Field>
-     <Field label="Trạng thái">
-      <Select value={status} onChange={(event) => onStatusChange(event.target.value as CoachStatusFilter)}>
-       <option value="all">Tất cả</option>
-       <option value="new">Chưa học</option>
-       <option value="weak">Còn yếu</option>
-       <option value="ok">Đã nắm</option>
-      </Select>
-     </Field>
-     <Field label="Thứ tự">
-      <Select value={order} onChange={(event) => onOrderChange(event.target.value as CoachOrder)}>
-       <option value="lesson">Theo bài</option>
-       <option value="hard">Ưu tiên yếu</option>
-       <option value="random">Random ổn định</option>
-      </Select>
-     </Field>
-    </div>
-    <div className="mt-5 rounded-[22px] border-2 border-dashed border-stone-200 bg-stone-50 p-4 text-sm font-bold leading-6 text-stone-500">
-     Dùng range bài + tag để gom session nhỏ. Shortcut: 1-5 đổi tab, K/W đánh dấu tiến độ.
-    </div>
-   </aside>
+   </section>
 
    <main className="min-w-0 space-y-5">
     <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-5">
@@ -1082,15 +1077,15 @@ function GrammarCoachWorkspace({
      />
     )}
 
-    <section className="rounded-[28px] border-2 border-stone-200 bg-white p-5 shadow-theme-md">
+    <section className="rounded-[28px] border-2 border-stone-200 bg-white p-4 shadow-theme-md md:p-5">
      <div className="flex flex-wrap items-center justify-between gap-3">
       <div>
-       <p className="text-lg font-black uppercase tracking-wide text-stone-900">Quick list</p>
+       <p className="text-base font-black uppercase tracking-wide text-stone-900">Quick list</p>
        <p className="text-sm font-bold text-stone-500">Nhảy nhanh trong bộ lọc hiện tại.</p>
       </div>
       <span className="rounded-full bg-stone-100 px-3 py-1 text-xs font-black text-stone-600">{points.length} cards</span>
      </div>
-     <div className="mt-4 flex max-h-40 flex-wrap gap-2 overflow-y-auto">
+     <div className="mt-4 flex max-h-28 flex-wrap gap-2 overflow-y-auto">
       {points.map((item, index) => (
        <button key={item.id} type="button" onClick={() => onSelectPoint(item)} className={cn("rounded-2xl border-2 px-3 py-2 text-left text-sm font-black shadow-theme-sm", item.id === point?.id ? "border-red-500 bg-red-50 text-red-600" : "border-stone-200 bg-white text-stone-700 hover:bg-stone-50")}>
         {index + 1}. {item.title}
@@ -1160,12 +1155,12 @@ function GrammarCoachCard({
  const quiz = getCoachQuiz(point);
  const examples = point.content.examples || [];
  return (
-  <section className="rounded-[28px] border-2 border-stone-200 bg-white p-5 shadow-theme-md md:p-7">
+  <section className="rounded-[32px] border-2 border-stone-200 bg-white p-4 shadow-theme-md md:p-6">
    <div className="flex flex-wrap items-start justify-between gap-4">
     <div>
      <p className="text-xs font-black uppercase tracking-[0.22em] text-red-500">{lesson ? `Bài ${lesson.lesson_number}` : "Grammar card"} · {index + 1}/{total}</p>
-     <h2 className="mt-3 text-4xl font-black leading-tight text-stone-900 md:text-5xl">{point.title}</h2>
-     <p className="mt-3 max-w-4xl text-lg font-bold leading-8 text-stone-600">{getCoachCore(point)}</p>
+     <h2 className="mt-3 text-[clamp(2.5rem,5vw,5.25rem)] font-black leading-[0.98] text-stone-900">{point.title}</h2>
+     <p className="mt-3 max-w-5xl text-lg font-bold leading-8 text-stone-600 md:text-xl">{getCoachCore(point)}</p>
      <div className="mt-4 flex flex-wrap gap-2">
       {point.tags.slice(0, 6).map((tag) => <span key={tag} className="rounded-full bg-emerald-100 px-3 py-1 text-xs font-black text-emerald-700">{tag}</span>)}
       <StatusPill status={point.status} />
@@ -1190,27 +1185,40 @@ function GrammarCoachCard({
     onChange={onTabChange}
    />
 
-   <div className="mt-6 min-h-[360px] rounded-[28px] border-2 border-stone-200 bg-stone-50 p-5 md:p-7">
+   <div className="mt-6 min-h-[460px] rounded-[28px] border-2 border-stone-200 bg-stone-50 p-4 md:p-6">
     {activeTab === "logic" && (
-     <div className="space-y-5">
-      <Section title="Logic cốt lõi">
-       <p className="text-lg font-bold leading-8 text-stone-700">{point.content.explanation || point.content.core || "Chưa có giải thích."}</p>
-      </Section>
+     <div className="grid gap-4 xl:grid-cols-[1.05fr_0.95fr]">
+      <section className="rounded-[24px] bg-white p-5 shadow-theme-sm">
+       <p className="text-sm font-black uppercase tracking-wide text-stone-500">Logic cốt lõi</p>
+       <p className="mt-3 text-lg font-bold leading-9 text-stone-700">{point.content.explanation || point.content.core || "Chưa có giải thích."}</p>
+      </section>
       {point.content.quick_example?.zh && (
-       <div className="rounded-[24px] border-2 border-red-200 bg-red-50 p-5">
+       <section className="rounded-[24px] border-2 border-red-200 bg-red-50 p-5">
         <p className="text-sm font-black uppercase tracking-wide text-red-500">Ví dụ nhanh</p>
         <p className="mt-3 text-3xl font-black text-stone-900">{point.content.quick_example.zh}</p>
         {point.content.quick_example.pinyin ? <p className="mt-2 text-base font-bold italic text-stone-500">{point.content.quick_example.pinyin}</p> : null}
         {point.content.quick_example.vi ? <p className="mt-2 text-lg font-bold text-stone-700">{point.content.quick_example.vi}</p> : null}
-       </div>
+       </section>
+      )}
+      {!!point.content.usage_notes?.length && (
+       <section className="rounded-[24px] bg-blue-50 p-5 xl:col-span-2">
+        <p className="text-sm font-black uppercase tracking-wide text-blue-600">Cách dùng / Lưu ý</p>
+        <div className="mt-3 grid gap-2 md:grid-cols-2">
+         {point.content.usage_notes.map((item) => <p key={item} className="rounded-2xl bg-white p-3 text-sm font-bold leading-6 text-blue-800 shadow-theme-sm">{item}</p>)}
+        </div>
+       </section>
       )}
      </div>
     )}
     {activeTab === "formula" && (
-     <ListSection title="Công thức dùng được ngay" items={point.content.formulas?.length ? point.content.formulas : point.content.structures} />
+     <div className="grid gap-3 md:grid-cols-2">
+      {(point.content.formulas?.length ? point.content.formulas : point.content.structures)?.map((item) => (
+       <p key={item} className="rounded-[22px] bg-white p-4 text-lg font-black leading-8 text-stone-800 shadow-theme-sm">{item}</p>
+      )) || <p className="font-bold text-stone-500">Chưa có công thức.</p>}
+     </div>
     )}
     {activeTab === "examples" && (
-     <div className="space-y-4">
+     <div className="grid gap-4 xl:grid-cols-2">
       {examples.length ? examples.map((example, exampleIndex) => (
        <div key={`${example.zh}-${exampleIndex}`} className="rounded-[24px] border-2 border-stone-200 bg-white p-5">
         <p className="text-2xl font-black text-stone-900">{example.zh}</p>
@@ -1222,7 +1230,11 @@ function GrammarCoachCard({
      </div>
     )}
     {activeTab === "traps" && (
-     <ListSection title="Bẫy sai cần né" items={point.content.traps?.length ? point.content.traps : point.content.common_mistakes} />
+     <div className="grid gap-3 md:grid-cols-2">
+      {(point.content.traps?.length ? point.content.traps : point.content.common_mistakes)?.map((item) => (
+       <p key={item} className="rounded-[22px] bg-white p-4 text-base font-bold leading-7 text-stone-700 shadow-theme-sm">{item}</p>
+      )) || <p className="font-bold text-stone-500">Chưa có bẫy sai.</p>}
+     </div>
     )}
     {activeTab === "practice" && (
      <div className="space-y-5">
