@@ -1408,7 +1408,7 @@ export default function VocabularyPage() {
 function LearningShell({ children }: { children: React.ReactNode }) {
  return (
   <div className="min-h-screen bg-stone-50">
-   <div className="mx-auto flex w-full max-w-[1500px] flex-col gap-4 px-4 py-4 sm:px-5 lg:px-8">
+   <div className="mx-auto flex w-full max-w-[1500px] flex-col gap-3 px-3 py-3 sm:gap-4 sm:px-5 sm:py-4 lg:px-8">
     {children}
    </div>
   </div>
@@ -1444,7 +1444,7 @@ function LearningHeader({
 }) {
  const isFlashcardFocus = activeTab === "study" && mode === "flashcard";
  return (
-  <header className="rounded-[24px] border-2 border-stone-200 bg-white p-3 shadow-theme-sm">
+  <header className="rounded-[22px] border-2 border-stone-200 bg-white p-3 shadow-theme-sm md:rounded-[24px]">
    <div
     className={cn(
      "grid gap-3 xl:items-start",
@@ -1471,7 +1471,7 @@ function LearningHeader({
       Học theo bài, ôn bằng flashcard, trắc nghiệm và chỉnh dữ liệu ngay khi
       cần.
      </p>
-     <div className="mt-2 flex flex-wrap items-center gap-2">
+     <div className="mt-2 flex max-w-full items-center gap-2 overflow-x-auto pb-1">
       <SegmentedControl
        value={activeTab}
        items={[
@@ -1518,7 +1518,7 @@ function LearningHeader({
    </div>
 
    {activeTab === "study" && (
-    <div className="mt-3 flex flex-wrap items-center gap-2">
+    <div className="mt-3 flex max-w-full items-center gap-2 overflow-x-auto pb-1">
      <SegmentedControl
       value={mode}
       items={studyModes.map((item) => ({
@@ -1901,7 +1901,7 @@ function FlashcardFocusWorkspace(
  const activeEntry = props.activeEntry;
 
  return (
-  <section className="rounded-[24px] border-2 border-stone-200 bg-white p-3 shadow-theme-md md:p-4">
+  <section className="rounded-[22px] border-2 border-stone-200 bg-white p-2.5 shadow-theme-md sm:p-3 md:rounded-[24px] md:p-4">
    <div className="flex flex-wrap items-center justify-between gap-2 rounded-[20px] border-2 border-stone-100 bg-stone-50 px-3 py-2">
     <div className="flex min-w-0 flex-wrap items-center gap-2">
      <p className="rounded-full bg-red-50 px-3 py-1 text-xs font-black uppercase tracking-wide text-red-500">
@@ -1928,7 +1928,7 @@ function FlashcardFocusWorkspace(
     </button>
    </div>
 
-   <div className="mt-2 flex flex-wrap items-center gap-2">
+   <div className="mt-2 flex max-w-full items-center gap-2 overflow-x-auto pb-1">
     <Select
      value={props.frontMode}
      onChange={(event) =>
@@ -2545,11 +2545,11 @@ function FlashcardFocusMode({
  const nextDisabled = total <= 1;
 
  return (
-  <div className="mx-auto flex w-full max-w-7xl flex-col justify-center rounded-[28px] border-2 border-stone-100 bg-stone-50 px-3 py-4 md:px-6">
+  <div className="mx-auto flex w-full max-w-7xl flex-col justify-center rounded-[24px] border-2 border-stone-100 bg-stone-50 px-2.5 py-3 md:rounded-[28px] md:px-6 md:py-4">
    <div className="relative mx-auto w-full max-w-6xl">
     <div className="absolute inset-4 rotate-[-4deg] rounded-[36px] border-2 border-stone-100 bg-white/70" />
     <div className="absolute inset-4 rotate-3 rounded-[36px] border-2 border-stone-100 bg-white/80" />
-    <div className="relative flex h-[calc(100dvh-300px)] min-h-[500px] max-h-[820px] flex-col rounded-[36px] border-2 border-stone-100 bg-white p-5 shadow-theme-md md:h-[calc(100dvh-245px)] md:p-7">
+    <div className="relative flex h-[calc(100dvh-270px)] min-h-[390px] max-h-[820px] flex-col rounded-[28px] border-2 border-stone-100 bg-white p-3 shadow-theme-md sm:min-h-[460px] md:h-[calc(100dvh-245px)] md:rounded-[36px] md:p-7">
      {!revealed ? (
       <button
        type="button"
@@ -2572,7 +2572,7 @@ function FlashcardFocusMode({
     </div>
    </div>
 
-   <div className="mx-auto mt-4 grid w-full max-w-6xl grid-cols-2 gap-2 md:grid-cols-[1fr_1fr_1.1fr_1.1fr_1.1fr] md:gap-3">
+   <div className="mx-auto mt-3 grid w-full max-w-6xl grid-cols-2 gap-2 md:mt-4 md:grid-cols-[1fr_1fr_1.1fr_1.1fr_1.1fr] md:gap-3">
     <button
      type="button"
      onClick={onPrevious}

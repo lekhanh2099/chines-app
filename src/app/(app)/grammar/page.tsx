@@ -685,7 +685,7 @@ export default function GrammarPage() {
     <EmptyState title="Chưa có kho ngữ pháp" description="Tạo bài hoặc paste nội dung ngữ pháp để bắt đầu." action={<ActionButton onClick={createLessonDraft} icon={Plus}>Tạo bài đầu tiên</ActionButton>} />
    ) : (
     <>
-     <div className={cn("grid gap-6", activeTab === "study" ? "grid-cols-1" : "lg:grid-cols-[340px_minmax(0,1fr)]")}>
+     <div className={cn("grid gap-4 sm:gap-6", activeTab === "study" ? "grid-cols-1" : "lg:grid-cols-[340px_minmax(0,1fr)]")}>
       {activeTab !== "study" && (
        <LessonList
         lessons={lessons}
@@ -798,7 +798,7 @@ export default function GrammarPage() {
 function LearningShell({ children }: { children: React.ReactNode }) {
  return (
   <div className="min-h-screen bg-stone-50">
-   <div className="mx-auto flex w-full max-w-[1500px] flex-col gap-6 px-4 py-6 sm:px-5 lg:px-8">
+   <div className="mx-auto flex w-full max-w-[1500px] flex-col gap-3 px-3 py-3 sm:gap-5 sm:px-5 sm:py-5 lg:px-8">
     {children}
    </div>
   </div>
@@ -828,16 +828,16 @@ function LearningHeader({
 }) {
  const pointCount = lessons.reduce((sum, lesson) => sum + lesson.points.length, 0);
  return (
-  <header className="rounded-[28px] border-2 border-stone-200 bg-white p-4 shadow-theme-sm md:p-6">
-   <div className="grid gap-5 xl:grid-cols-[minmax(0,1fr)_460px] xl:items-start">
+  <header className="rounded-[22px] border-2 border-stone-200 bg-white p-3 shadow-theme-sm md:rounded-[28px] md:p-6">
+   <div className="grid gap-4 xl:grid-cols-[minmax(0,1fr)_420px] xl:items-start">
     <div>
-     <Link href="/" className="inline-flex h-11 items-center gap-2 rounded-2xl border-2 border-stone-200 bg-white px-4 text-sm font-black text-stone-700 shadow-theme-sm hover:bg-stone-50">
+     <Link href="/" className="inline-flex h-10 items-center gap-2 rounded-2xl border-2 border-stone-200 bg-white px-3 text-sm font-black text-stone-700 shadow-theme-sm hover:bg-stone-50 md:h-11 md:px-4">
       ← Quay lại
      </Link>
-     <p className="mt-5 text-xs font-black uppercase tracking-[0.22em] text-red-500">Grammar Coach · Giáo trình Hán ngữ</p>
-     <h1 className="mt-2 text-4xl font-black tracking-normal text-stone-900 md:text-5xl">Ngữ pháp Bài 11-25</h1>
-     <p className="mt-2 max-w-2xl text-base font-bold leading-7 text-stone-500">Card-first, filter-first: xem logic, công thức, ví dụ và làm practice trong cùng một flow.</p>
-     <div className="mt-4 flex flex-wrap items-center gap-2">
+     <p className="mt-3 text-[11px] font-black uppercase tracking-[0.18em] text-red-500 md:mt-5 md:text-xs md:tracking-[0.22em]">Grammar Coach · Giáo trình Hán ngữ</p>
+     <h1 className="mt-1 text-3xl font-black tracking-normal text-stone-900 md:mt-2 md:text-5xl">Ngữ pháp Bài 11-25</h1>
+     <p className="mt-2 max-w-2xl text-sm font-bold leading-6 text-stone-500 md:text-base md:leading-7">Card-first, filter-first: xem logic, công thức, ví dụ và làm practice trong cùng một flow.</p>
+     <div className="mt-3 flex max-w-full items-center gap-2 overflow-x-auto pb-1 md:mt-4">
       <SegmentedControl
        value={activeTab}
        items={[
@@ -854,7 +854,7 @@ function LearningHeader({
      </div>
     </div>
 
-    <div className="rounded-[24px] border-2 border-blue-300 bg-blue-50/40 p-5 shadow-theme-sm">
+    <div className="hidden rounded-[24px] border-2 border-blue-300 bg-blue-50/40 p-5 shadow-theme-sm md:block">
      <div className="flex items-center justify-between gap-3">
       <p className="text-xs font-black uppercase tracking-[0.28em] text-blue-600">Shortcut</p>
       <span className="rounded-full bg-white px-3 py-1 text-xs font-black text-stone-600 shadow-theme-sm">{lessons.length} bài · {pointCount} điểm</span>
@@ -981,8 +981,8 @@ function GrammarCoachWorkspace({
  const contrasts = points.flatMap((item) => item.content.coach_contrasts || []).filter((item, index, arr) => arr.findIndex((candidate) => candidate.title === item.title) === index);
  return (
   <div className="space-y-5">
-   <section className="rounded-[28px] border-2 border-stone-200 bg-white p-4 shadow-theme-md md:p-5">
-    <div className="grid gap-4 xl:grid-cols-[1fr_1.25fr] xl:items-end">
+   <section className="rounded-[22px] border-2 border-stone-200 bg-white p-3 shadow-theme-md md:rounded-[28px] md:p-5">
+    <div className="grid gap-3 xl:grid-cols-[1fr_1.25fr] xl:items-end">
      <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
       <Field label="Từ bài">
        <Select value={String(fromLesson)} onChange={(event) => onFromLessonChange(Number(event.target.value))}>
@@ -1026,7 +1026,7 @@ function GrammarCoachWorkspace({
       </Field>
      </div>
     </div>
-    <div className="mt-4 flex gap-2 overflow-x-auto pb-1">
+    <div className="mt-3 flex gap-2 overflow-x-auto pb-1 md:mt-4">
      {lessonNumbers.map((lessonNumber) => (
       <button
        key={lessonNumber}
@@ -1044,7 +1044,7 @@ function GrammarCoachWorkspace({
    </section>
 
    <main className="min-w-0 space-y-5">
-    <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-5">
+    <div className="grid grid-cols-2 gap-2 sm:grid-cols-3 xl:grid-cols-5">
      <StatTile label="Trong khoảng bài" value={stats.range} />
      <StatTile label="Đang hiển thị" value={stats.filtered} />
      <StatTile label="Đã nắm" value={stats.mastered} tone="green" />
@@ -1077,7 +1077,7 @@ function GrammarCoachWorkspace({
      />
     )}
 
-    <section className="rounded-[28px] border-2 border-stone-200 bg-white p-4 shadow-theme-md md:p-5">
+    <section className="rounded-[22px] border-2 border-stone-200 bg-white p-3 shadow-theme-md md:rounded-[28px] md:p-5">
      <div className="flex flex-wrap items-center justify-between gap-3">
       <div>
        <p className="text-base font-black uppercase tracking-wide text-stone-900">Quick list</p>
@@ -1155,11 +1155,11 @@ function GrammarCoachCard({
  const quiz = getCoachQuiz(point);
  const examples = point.content.examples || [];
  return (
-  <section className="rounded-[32px] border-2 border-stone-200 bg-white p-4 shadow-theme-md md:p-6">
+  <section className="rounded-[24px] border-2 border-stone-200 bg-white p-3 shadow-theme-md md:rounded-[32px] md:p-6">
    <div className="flex flex-wrap items-start justify-between gap-4">
     <div>
      <p className="text-xs font-black uppercase tracking-[0.22em] text-red-500">{lesson ? `Bài ${lesson.lesson_number}` : "Grammar card"} · {index + 1}/{total}</p>
-     <h2 className="mt-3 text-[clamp(2.5rem,5vw,5.25rem)] font-black leading-[0.98] text-stone-900">{point.title}</h2>
+     <h2 className="mt-2 text-[clamp(2.1rem,10vw,5.25rem)] font-black leading-[0.98] text-stone-900 md:mt-3">{point.title}</h2>
      <p className="mt-3 max-w-5xl text-lg font-bold leading-8 text-stone-600 md:text-xl">{getCoachCore(point)}</p>
      <div className="mt-4 flex flex-wrap gap-2">
       {point.tags.slice(0, 6).map((tag) => <span key={tag} className="rounded-full bg-emerald-100 px-3 py-1 text-xs font-black text-emerald-700">{tag}</span>)}
@@ -1185,7 +1185,7 @@ function GrammarCoachCard({
     onChange={onTabChange}
    />
 
-   <div className="mt-6 min-h-[460px] rounded-[28px] border-2 border-stone-200 bg-stone-50 p-4 md:p-6">
+   <div className="mt-4 min-h-[360px] rounded-[22px] border-2 border-stone-200 bg-stone-50 p-3 md:mt-6 md:min-h-[460px] md:rounded-[28px] md:p-6">
     {activeTab === "logic" && (
      <div className="grid gap-4 xl:grid-cols-[1.05fr_0.95fr]">
       <section className="rounded-[24px] bg-white p-5 shadow-theme-sm">

@@ -42,19 +42,19 @@ export function Header({ user }: { user?: User | null }) {
  };
 
  return (
-  <header className="z-10 flex h-[76px] shrink-0 items-center justify-between gap-5 border-b-2 border-stone-200 bg-white px-5 lg:px-8">
-   <form onSubmit={handleSearch} className="relative min-w-[220px] flex-1 max-w-md">
+  <header className="z-10 flex h-16 shrink-0 items-center justify-between gap-2 border-b-2 border-stone-200 bg-white px-3 sm:gap-4 sm:px-5 md:h-[76px] lg:px-8">
+   <form onSubmit={handleSearch} className="relative min-w-0 flex-1 max-w-md">
     <Search className="absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 text-stone-400" />
     <input
      ref={inputRef}
      value={searchValue}
      onChange={(event) => setSearchValue(event.target.value)}
      placeholder="Từ điển"
-     className="h-12 w-full rounded-2xl border-2 border-stone-200 bg-white pl-12 pr-4 text-base font-bold text-stone-800 outline-none transition focus:border-orange-300 focus:ring-4 focus:ring-orange-100"
+     className="h-11 w-full rounded-2xl border-2 border-stone-200 bg-white pl-11 pr-3 text-sm font-bold text-stone-800 outline-none transition focus:border-orange-300 focus:ring-4 focus:ring-orange-100 sm:h-12 sm:pl-12 sm:pr-4 sm:text-base"
     />
    </form>
 
-   <div className="flex items-center gap-2 lg:gap-3">
+   <div className="flex shrink-0 items-center gap-1.5 sm:gap-2 lg:gap-3">
     <button
      type="button"
      onClick={() => toggleLookup(pathname)}
@@ -73,7 +73,7 @@ export function Header({ user }: { user?: User | null }) {
     <button
      type="button"
      onClick={toggleTheme}
-     className="flex h-11 w-11 items-center justify-center rounded-2xl border-2 border-stone-200 bg-white text-stone-700 shadow-theme-sm transition-colors hover:bg-stone-50"
+     className="flex h-10 w-10 items-center justify-center rounded-2xl border-2 border-stone-200 bg-white text-stone-700 shadow-theme-sm transition-colors hover:bg-stone-50 sm:h-11 sm:w-11"
      aria-label="Toggle theme"
     >
      {theme === "light" ? <Moon className="h-5 w-5" /> : <Sun className="h-5 w-5" />}
@@ -84,7 +84,7 @@ export function Header({ user }: { user?: User | null }) {
      Tiếng Việt
     </div>
 
-    <button className="relative flex h-11 w-11 items-center justify-center rounded-2xl text-stone-700 transition-colors hover:bg-stone-50">
+    <button className="relative hidden h-11 w-11 items-center justify-center rounded-2xl text-stone-700 transition-colors hover:bg-stone-50 sm:flex">
      <Bell className="h-5 w-5" />
      <span className="absolute right-2 top-2 h-2.5 w-2.5 rounded-full bg-yellow-400" />
     </button>

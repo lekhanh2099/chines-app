@@ -111,9 +111,10 @@ export function Sidebar() {
  };
 
  return (
+  <>
   <aside
    className={cn(
-    "flex h-full shrink-0 flex-col border-r-2 border-stone-200 bg-white transition-all duration-200",
+    "hidden h-full shrink-0 flex-col border-r-2 border-stone-200 bg-white transition-all duration-200 md:flex",
     isCollapsed ? "w-[84px]" : "w-[292px]",
    )}
   >
@@ -200,5 +201,27 @@ export function Sidebar() {
     </button>
    </div>
   </aside>
+  <nav className="fixed inset-x-0 bottom-0 z-40 border-t-2 border-stone-200 bg-white/95 px-2 py-2 shadow-[0_-3px_0_rgb(0_0_0/0.08)] backdrop-blur md:hidden">
+   <div className="mx-auto grid max-w-md grid-cols-5 gap-1">
+    {mainItems.map((item) => {
+     const Icon = item.icon;
+     const active = isActive(pathname, item.href);
+     return (
+      <Link
+       key={item.name}
+       href={item.href}
+       className={cn(
+        "flex min-w-0 flex-col items-center justify-center gap-1 rounded-2xl px-1 py-2 text-[10px] font-black transition",
+        active ? "bg-orange-50 text-orange-700" : "text-stone-500 hover:bg-stone-50",
+       )}
+      >
+       <Icon className="h-5 w-5 shrink-0" />
+       <span className="max-w-full truncate">{item.name.replace("Trang chủ", "Home")}</span>
+      </Link>
+     );
+    })}
+   </div>
+  </nav>
+  </>
  );
 }
