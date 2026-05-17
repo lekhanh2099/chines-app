@@ -26,6 +26,7 @@ import {
  sentenceInsightSchema,
  type GrammarExerciseContent,
  type GrammarExerciseType,
+ type GrammarPointWithProgress,
  type GrammarPointContent,
  type AiDefinitionExample,
  type AiVocabResponse,
@@ -1088,6 +1089,18 @@ const grammarFillSchema = z.object({
  exercises: z.array(grammarExerciseSchema).optional(),
 });
 
+const grammarGeneratedExerciseSchema = z.object({
+ exercise_type: z.enum(["fill_blank", "multiple_choice", "reorder_sentence", "translate_zh", "identify_error"]),
+ prompt: z.string(),
+ content: z.record(z.unknown()).optional(),
+ answer: z.record(z.unknown()),
+ explanation: z.string().optional(),
+});
+
+const grammarExerciseSetSchema = z.object({
+ exercises: z.array(grammarGeneratedExerciseSchema),
+});
+
 export type GrammarFillMissingResult = GrammarPointContent & {
  exercises?: {
   exercise_type?: GrammarExerciseType;
@@ -1097,6 +1110,111 @@ export type GrammarFillMissingResult = GrammarPointContent & {
   explanation?: string;
  }[];
 };
+
+export type GrammarGeneratedExercise = {
+ exercise_type: GrammarExerciseType;
+ prompt: string;
+ content?: GrammarExerciseContent;
+ answer: Record<string, unknown>;
+ explanation?: string;
+};
+
+function grammarExerciseSetPrompt(input: {
+ points: GrammarPointWithProgress[];
+ exerciseType: GrammarExerciseType | "mixed";
+ countPerType: number;
+ lessonTitle?: string | null;
+ vocabulary?: { hanzi: string; pinyin?: string; meaning?: string }[];
+}) {
+ const compactPoints = input.points.map((point) => ({
+  id: point.id,
+  title: point.title,
+  pinyin: point.pinyin,
+  vietnamese_title: point.vietnamese_title,
+  category: point.category,
+  explanation: point.content.explanation,
+  structures: point.content.structures,
+  quick_example: point.content.quick_example,
+  examples: point.content.examples?.slice(0, 4),
+  notes: point.content.usage_notes?.slice(0, 4),
+ }));
+ const types = input.exerciseType === "mixed"
+  ? ["fill_blank", "multiple_choice", "reorder_sentence", "translate_zh", "identify_error"]
+  : [input.exerciseType];
+ return `Generate a fresh Chinese grammar exercise set for Vietnamese learners.
+
+Lesson: ${input.lessonTitle || ""}
+Exercise types: ${types.join(", ")}
+Count per type: ${input.countPerType}
+
+Grammar points:
+${JSON.stringify(compactPoints, null, 2)}
+
+Useful vocabulary from the same lesson:
+${JSON.stringify(input.vocabulary || [], null, 2)}
+
+Return JSON only:
+{
+  "exercises": [
+    {
+      "exercise_type": "fill_blank | multiple_choice | reorder_sentence | translate_zh | identify_error",
+      "prompt": "...",
+      "content": {
+        "choices": [{ "id": "A", "text": "..." }],
+        "accepted_answers": ["..."],
+        "tokens": ["..."],
+        "required_terms": ["..."],
+        "sample_answer": "..."
+      },
+      "answer": { "text": "..." } or { "choice": "A", "text": "..." },
+      "explanation": "Vietnamese explanation after checking"
+    }
+  ]
+}
+
+Rules:
+- Generate at least countPerType exercises for every requested type.
+- Every exercise must be meaningfully different. Do not repeat the same prompt with only numbering changed.
+- Use the grammar points and lesson vocabulary naturally.
+- Do not reveal the answer in multiple_choice option explanations before checking.
+- For translate_zh, include content.required_terms as the core Chinese phrases required for deterministic checking.
+- For reorder_sentence, include content.tokens shuffled and answer.text as the correct full sentence.
+- Vietnamese explanations should be concise and practical.`;
+}
+
+export async function generateGrammarExerciseSetDetailed(
+ input: {
+  points: GrammarPointWithProgress[];
+  exerciseType: GrammarExerciseType | "mixed";
+  countPerType: number;
+  lessonTitle?: string | null;
+  vocabulary?: { hanzi: string; pinyin?: string; meaning?: string }[];
+ },
+ options?: AiRequestOptions,
+): Promise<StructuredRequestResult<{ exercises: GrammarGeneratedExercise[] }>> {
+ const geminiModel = normalizeGeminiModel(options?.geminiModel || DEFAULT_GEMINI_MODEL);
+ const result = await requestStructuredJson(
+  GRAMMAR_SYSTEM_PROMPT,
+  grammarExerciseSetPrompt(input),
+  geminiModel,
+  grammarExerciseSetSchema,
+  (parsed) => typeof parsed === "object" && parsed !== null,
+  options?.userApiKeys,
+  options?.abortSignal,
+ );
+
+ if (result.data) {
+  return {
+   data: result.data as { exercises: GrammarGeneratedExercise[] },
+   error: null,
+  };
+ }
+
+ return {
+  data: null,
+  error: result.error || "Không thể tạo bài tập ngữ pháp lúc này.",
+ };
+}
 
 export async function generateGrammarFillMissingDetailed(
  input: {

@@ -42,6 +42,7 @@
   "pinyin-pro": "^3.28.0",
   "react": "19.2.3",
   "react-dom": "19.2.3",
+  "react-resizable-panels": "^4.11.1",
   "sonner": "^2.0.7",
   "tailwind-merge": "^3.5.0",
   "zod": "^3.25.76",

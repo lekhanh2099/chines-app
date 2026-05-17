@@ -17,6 +17,7 @@ export async function PATCH(
  const body = (await request.json()) as {
   proficiency_level?: number;
   is_favorited?: boolean;
+  reset?: boolean;
  };
 
  const level =
@@ -30,6 +31,10 @@ export async function PATCH(
   updated_at: new Date().toISOString(),
   last_answered_at: new Date().toISOString(),
  };
+ if (body.reset) {
+  payload.proficiency_level = 0;
+  payload.last_answered_at = null;
+ }
  if (level !== undefined) payload.proficiency_level = level;
  if (body.is_favorited !== undefined) payload.is_favorited = body.is_favorited;
 

@@ -25,7 +25,16 @@ import {
 } from "lucide-react";
 import { toast } from "sonner";
 import { Input } from "@/components/ui/input";
+import { Select } from "@/components/ui/select";
+import { SegmentedControl } from "@/components/ui/segmented-control";
 import { GrammarSchemaMissingError, useGrammarPoints } from "@/features/grammar/hooks/useGrammarPoints";
+import {
+ LearningDrawer,
+ LessonSelectCard,
+ StudySplitLayout,
+ type LessonSelectOption,
+} from "@/features/learning/components";
+import { useVocabEntries, VocabularyMiniList } from "@/features/vocabulary";
 import { cn } from "@/lib/utils";
 import type {
  DbGrammarExercise,
@@ -35,11 +44,16 @@ import type {
  GrammarLessonWithStats,
  GrammarPointContent,
  GrammarPointWithProgress,
+ VocabEntryWithProgress,
 } from "@/types/database";
 
 type MainTab = "study" | "all" | "edit";
 type SplitMode = "theory" | "practice" | "split";
 type PointFilter = "all" | "new" | "learning" | "mastered" | "missing";
+type ExerciseMode = "mixed" | GrammarExerciseType;
+type CoachTab = "logic" | "formula" | "examples" | "traps" | "practice";
+type CoachStatusFilter = "all" | "new" | "ok" | "weak";
+type CoachOrder = "lesson" | "hard" | "random";
 
 const exerciseLabels: Record<GrammarExerciseType, string> = {
  fill_blank: "Điền từ",
@@ -80,6 +94,26 @@ function matchesPoint(point: GrammarPointWithProgress, query: string) {
  );
 }
 
+function lessonNumberForPoint(point: GrammarPointWithProgress, lessonById: Map<string, GrammarLessonWithStats>) {
+ return point.lesson_id ? lessonById.get(point.lesson_id)?.lesson_number || point.content.source_metadata?.lesson_number || 0 : point.content.source_metadata?.lesson_number || 0;
+}
+
+function pointCoachScore(point: GrammarPointWithProgress) {
+ if (point.status === "mastered") return 2;
+ if (point.status === "learning") return 1;
+ return 0;
+}
+
+function stablePointHash(value: string) {
+ let hash = 0;
+ for (let index = 0; index < value.length; index += 1) hash = (hash * 31 + value.charCodeAt(index)) % 9973;
+ return hash;
+}
+
+function getCoachCore(point: GrammarPointWithProgress) {
+ return point.content.core || point.content.explanation || point.vietnamese_title || getPointSubtitle(point);
+}
+
 function applyProgress(course: GrammarCourseWithLessons, pointId: string, level: number): GrammarCourseWithLessons {
  const updatePoint = (point: GrammarPointWithProgress): GrammarPointWithProgress =>
   point.id === pointId ? { ...point, proficiency_level: level, status: statusFromLevel(level) } : point;
@@ -103,6 +137,7 @@ function applyProgress(course: GrammarCourseWithLessons, pointId: string, level:
 export default function GrammarPage() {
  const queryClient = useQueryClient();
  const { data, isLoading, error } = useGrammarPoints();
+ const { data: vocabData } = useVocabEntries();
  const course = isCoursePayload(data) ? data : null;
 
  const [activeTab, setActiveTab] = useState<MainTab>("study");
@@ -116,10 +151,22 @@ export default function GrammarPage() {
  const [editingPoint, setEditingPoint] = useState<GrammarPointWithProgress | null>(null);
  const [importingLesson, setImportingLesson] = useState<GrammarLessonWithStats | null>(null);
  const [exerciseIndex, setExerciseIndex] = useState(0);
+ const [exerciseMode, setExerciseMode] = useState<ExerciseMode>("mixed");
  const [exerciseAnswer, setExerciseAnswer] = useState("");
  const [selectedChoice, setSelectedChoice] = useState<string | null>(null);
  const [exerciseChecked, setExerciseChecked] = useState(false);
  const [exerciseCorrect, setExerciseCorrect] = useState<boolean | null>(null);
+ const [isImportingHanyu, setIsImportingHanyu] = useState(false);
+ const [isImportingCoachJson, setIsImportingCoachJson] = useState(false);
+ const [isGeneratingExercises, setIsGeneratingExercises] = useState(false);
+ const [sessionStats, setSessionStats] = useState({ answered: 0, correct: 0, wrong: 0 });
+ const [coachFromLesson, setCoachFromLesson] = useState(11);
+ const [coachToLesson, setCoachToLesson] = useState(25);
+ const [coachTag, setCoachTag] = useState("all");
+ const [coachStatus, setCoachStatus] = useState<CoachStatusFilter>("all");
+ const [coachOrder, setCoachOrder] = useState<CoachOrder>("lesson");
+ const [coachTab, setCoachTab] = useState<CoachTab>("logic");
+ const [coachIndex, setCoachIndex] = useState(0);
 
  const lessons = useMemo(() => course?.lessons || [], [course?.lessons]);
  const activeLesson = useMemo(() => lessons.find((lesson) => lesson.id === activeLessonId) || lessons[0] || null, [activeLessonId, lessons]);
@@ -127,7 +174,59 @@ export default function GrammarPage() {
   () => activeLesson?.points.find((point) => point.id === activePointId) || activeLesson?.points[0] || course?.points[0] || null,
   [activeLesson?.points, activePointId, course?.points],
  );
- const activeExercise = activePoint?.exercises[exerciseIndex] || activePoint?.exercises[0] || null;
+ const activeExercises = useMemo(() => {
+  const exercises = activePoint?.exercises || [];
+  return exerciseMode === "mixed" ? exercises : exercises.filter((exercise) => exercise.exercise_type === exerciseMode);
+ }, [activePoint?.exercises, exerciseMode]);
+ const activeExercise = activeExercises[exerciseIndex] || activeExercises[0] || null;
+ const lessonVocabulary = useMemo(() => {
+  if (!activeLesson || !vocabData || !("entries" in vocabData)) return [];
+  return (vocabData.entries || []).filter((entry) => entry.source.lessonNumber === activeLesson.lesson_number).slice(0, 36);
+ }, [activeLesson, vocabData]);
+ const lessonById = useMemo(() => new Map(lessons.map((lesson) => [lesson.id, lesson])), [lessons]);
+ const lessonNumbers = useMemo(
+  () => lessons.map((lesson) => lesson.lesson_number).filter((value): value is number => typeof value === "number").sort((a, b) => a - b),
+  [lessons],
+ );
+ const coachTags = useMemo(() => {
+  const tags = new Set<string>();
+  course?.points.forEach((point) => point.tags.forEach((tag) => {
+   if (!/^Bài\s+\d+/i.test(tag) && tag !== "Hán ngữ 2") tags.add(tag);
+  }));
+  return Array.from(tags).sort((a, b) => a.localeCompare(b));
+ }, [course?.points]);
+ const coachPoints = useMemo(() => {
+  const points = [...(course?.points || [])].filter((point) => {
+   const lessonNumber = lessonNumberForPoint(point, lessonById);
+   if (lessonNumber < coachFromLesson || lessonNumber > coachToLesson) return false;
+   if (!matchesPoint(point, searchQuery)) return false;
+   if (coachTag !== "all" && !point.tags.includes(coachTag)) return false;
+   if (coachStatus === "ok" && point.status !== "mastered") return false;
+   if (coachStatus === "weak" && point.status !== "learning") return false;
+   if (coachStatus === "new" && point.status !== "new") return false;
+   return true;
+  });
+  if (coachOrder === "hard") {
+   return points.sort((a, b) => pointCoachScore(a) - pointCoachScore(b) || lessonNumberForPoint(a, lessonById) - lessonNumberForPoint(b, lessonById) || a.row_number - b.row_number);
+  }
+  if (coachOrder === "random") {
+   return points.sort((a, b) => stablePointHash(a.id) - stablePointHash(b.id));
+  }
+  return points.sort((a, b) => lessonNumberForPoint(a, lessonById) - lessonNumberForPoint(b, lessonById) || a.row_number - b.row_number);
+ }, [coachFromLesson, coachOrder, coachStatus, coachTag, coachToLesson, course?.points, lessonById, searchQuery]);
+ const coachPoint = coachPoints[coachIndex] || coachPoints[0] || null;
+ const coachLesson = coachPoint?.lesson_id ? lessonById.get(coachPoint.lesson_id) || activeLesson : activeLesson;
+ const coachVocabulary = useMemo(() => {
+  if (!coachLesson || !vocabData || !("entries" in vocabData)) return [];
+  return (vocabData.entries || []).filter((entry) => entry.source.lessonNumber === coachLesson.lesson_number).slice(0, 28);
+ }, [coachLesson, vocabData]);
+ const coachStats = useMemo(() => ({
+  range: `${coachFromLesson}-${coachToLesson}`,
+  filtered: coachPoints.length,
+  mastered: coachPoints.filter((point) => point.status === "mastered").length,
+  weak: coachPoints.filter((point) => point.status === "learning").length,
+  practice: sessionStats.correct,
+ }), [coachFromLesson, coachPoints, coachToLesson, sessionStats.correct]);
 
  useEffect(() => {
   if (!activeLessonId && lessons[0]) setActiveLessonId(lessons[0].id);
@@ -137,6 +236,20 @@ export default function GrammarPage() {
   setActivePointId(activeLesson?.points[0]?.id || null);
   setExerciseIndex(0);
  }, [activeLesson?.id]); // eslint-disable-line react-hooks/exhaustive-deps
+
+ useEffect(() => {
+  if (!lessonNumbers.length) return;
+  setCoachFromLesson((current) => (lessonNumbers.includes(current) ? current : lessonNumbers[0]));
+  setCoachToLesson((current) => (lessonNumbers.includes(current) ? current : lessonNumbers[lessonNumbers.length - 1]));
+ }, [lessonNumbers]);
+
+ useEffect(() => {
+  setCoachIndex(0);
+ }, [coachFromLesson, coachOrder, coachStatus, coachTag, coachToLesson, searchQuery]);
+
+ useEffect(() => {
+  if (coachIndex >= coachPoints.length) setCoachIndex(Math.max(0, coachPoints.length - 1));
+ }, [coachIndex, coachPoints.length]);
 
  const visiblePoints = useMemo(() => {
   const base = activeTab === "all" ? course?.points || [] : activeLesson?.points || [];
@@ -181,6 +294,11 @@ export default function GrammarPage() {
   const correct = evaluateExercise(activeExercise, exerciseAnswer, selectedChoice);
   setExerciseChecked(true);
   setExerciseCorrect(correct);
+  setSessionStats((current) => ({
+   answered: current.answered + 1,
+   correct: current.correct + (correct ? 1 : 0),
+   wrong: current.wrong + (correct ? 0 : 1),
+  }));
   await fetch(`/api/grammar/exercises/${activeExercise.id}/attempt`, {
    method: "POST",
    headers: { "Content-Type": "application/json" },
@@ -190,14 +308,180 @@ export default function GrammarPage() {
     is_correct: correct,
    }),
   }).catch(() => null);
-  if (activePoint && correct) void updateProgress(activePoint, Math.min(activePoint.proficiency_level + 1, 5));
+  if (activePoint) {
+   const nextLevel = correct ? Math.min(activePoint.proficiency_level + 1, 5) : Math.max(activePoint.proficiency_level - 1, 0);
+   void updateProgress(activePoint, nextLevel);
+  }
  }, [activeExercise, activePoint, exerciseAnswer, selectedChoice, updateProgress]);
 
  const nextExercise = useCallback(() => {
-  if (!activePoint?.exercises.length) return;
-  setExerciseIndex((index) => (index + 1) % activePoint.exercises.length);
+  if (!activeExercises.length) return;
+  setExerciseIndex((index) => (index + 1) % activeExercises.length);
   resetExerciseState();
- }, [activePoint?.exercises.length, resetExerciseState]);
+ }, [activeExercises.length, resetExerciseState]);
+
+ const goCoach = useCallback((direction: 1 | -1) => {
+  if (!coachPoints.length) return;
+  setCoachIndex((index) => (index + direction + coachPoints.length) % coachPoints.length);
+  setCoachTab("logic");
+  resetExerciseState();
+ }, [coachPoints.length, resetExerciseState]);
+
+ const markCoachPoint = useCallback(async (level: number, shouldAdvance = true) => {
+  if (!coachPoint) return;
+  await updateProgress(coachPoint, level);
+  if (shouldAdvance) goCoach(1);
+ }, [coachPoint, goCoach, updateProgress]);
+
+ const checkCoachPractice = useCallback(async () => {
+  if (!coachPoint) return;
+  const quiz = getCoachQuiz(coachPoint);
+  if (!quiz) return;
+  const correct = selectedChoice === String(quiz.answerIndex);
+  setExerciseChecked(true);
+  setExerciseCorrect(correct);
+  setSessionStats((current) => ({
+   answered: current.answered + 1,
+   correct: current.correct + (correct ? 1 : 0),
+   wrong: current.wrong + (correct ? 0 : 1),
+  }));
+  if (quiz.exerciseId) {
+   await fetch(`/api/grammar/exercises/${quiz.exerciseId}/attempt`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+     point_id: coachPoint.id,
+     submitted_answer: { choice: selectedChoice, text: quiz.choices[Number(selectedChoice)] || "" },
+     is_correct: correct,
+    }),
+   }).catch(() => null);
+  }
+  await updateProgress(coachPoint, correct ? Math.min(coachPoint.proficiency_level + 1, 5) : Math.max(coachPoint.proficiency_level - 1, 0));
+ }, [coachPoint, selectedChoice, updateProgress]);
+
+ useEffect(() => {
+  if (activeTab !== "study") return;
+  const handleKeyDown = (event: KeyboardEvent) => {
+   const target = event.target as HTMLElement | null;
+   if (target?.closest("input, textarea, select, [contenteditable=true]")) return;
+   if (event.key === "ArrowRight") {
+    event.preventDefault();
+    goCoach(1);
+   } else if (event.key === "ArrowLeft") {
+    event.preventDefault();
+    goCoach(-1);
+   } else if (["1", "2", "3", "4", "5"].includes(event.key)) {
+    event.preventDefault();
+    setCoachTab((["logic", "formula", "examples", "traps", "practice"] as CoachTab[])[Number(event.key) - 1]);
+   } else if (event.key.toLowerCase() === "k") {
+    event.preventDefault();
+    void markCoachPoint(5);
+   } else if (event.key.toLowerCase() === "w") {
+    event.preventDefault();
+    void markCoachPoint(2);
+   }
+  };
+  window.addEventListener("keydown", handleKeyDown);
+  return () => window.removeEventListener("keydown", handleKeyDown);
+ }, [activeTab, goCoach, markCoachPoint]);
+
+ const importHanyuGrammar = useCallback(async () => {
+  setIsImportingHanyu(true);
+  try {
+   const response = await fetch("/api/grammar/import/np-md", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ reset: true }),
+   });
+   const result = (await response.json().catch(() => null)) as { error?: string; importedLessons?: number; importedPoints?: number } | null;
+   if (!response.ok) throw new Error(result?.error || "Import Np.md thất bại");
+   toast.success(`Đã import ${result?.importedLessons || 0} bài, ${result?.importedPoints || 0} điểm ngữ pháp`);
+   setActiveLessonId(null);
+   setActivePointId(null);
+   await queryClient.invalidateQueries({ queryKey: ["grammar-points"] });
+  } catch (error) {
+   toast.error(error instanceof Error ? error.message : "Import Np.md thất bại");
+  } finally {
+   setIsImportingHanyu(false);
+  }
+ }, [queryClient]);
+
+ const importCoachJson = useCallback(async () => {
+  setIsImportingCoachJson(true);
+  try {
+   const response = await fetch("/api/grammar/import/coach-json", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ reset: true }),
+   });
+   const result = (await response.json().catch(() => null)) as { error?: string; importedLessons?: number; importedPoints?: number; importedExercises?: number } | null;
+   if (!response.ok) throw new Error(result?.error || "Import grammar coach JSON thất bại");
+   toast.success(`Đã import ${result?.importedLessons || 0} bài, ${result?.importedPoints || 0} điểm, ${result?.importedExercises || 0} quiz`);
+   setActiveLessonId(null);
+   setActivePointId(null);
+   setCoachIndex(0);
+   await queryClient.invalidateQueries({ queryKey: ["grammar-points"] });
+  } catch (error) {
+   toast.error(error instanceof Error ? error.message : "Import grammar coach JSON thất bại");
+  } finally {
+   setIsImportingCoachJson(false);
+  }
+ }, [queryClient]);
+
+ const generateExerciseSet = useCallback(async () => {
+  if (!activePoint && !activeLesson) return;
+  setIsGeneratingExercises(true);
+  try {
+   const response = await fetch("/api/grammar/exercises/generate", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+     lesson_id: activePoint ? null : activeLesson?.id,
+     point_id: activePoint?.id || null,
+     exercise_type: exerciseMode,
+     count_per_type: 10,
+     replace_old: true,
+    }),
+   });
+   const result = (await response.json().catch(() => null)) as { error?: string; inserted?: number } | null;
+   if (!response.ok) throw new Error(result?.error || "Không tạo được bài tập");
+   toast.success(`Đã tạo ${result?.inserted || 0} câu luyện tập`);
+   setExerciseIndex(0);
+   resetExerciseState();
+   setSessionStats({ answered: 0, correct: 0, wrong: 0 });
+   await queryClient.invalidateQueries({ queryKey: ["grammar-points"] });
+  } catch (error) {
+   toast.error(error instanceof Error ? error.message : "Không tạo được bài tập");
+  } finally {
+   setIsGeneratingExercises(false);
+  }
+ }, [activeLesson, activePoint, exerciseMode, queryClient, resetExerciseState]);
+
+ const generateCoachExerciseSet = useCallback(async () => {
+  if (!coachPoint) return;
+  setIsGeneratingExercises(true);
+  try {
+   const response = await fetch("/api/grammar/exercises/generate", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+     point_id: coachPoint.id,
+     exercise_type: "mixed",
+     count_per_type: 10,
+     replace_old: true,
+    }),
+   });
+   const result = (await response.json().catch(() => null)) as { error?: string; inserted?: number } | null;
+   if (!response.ok) throw new Error(result?.error || "Không tạo được bài tập");
+   toast.success(`Đã tạo ${result?.inserted || 0} câu luyện tập`);
+   resetExerciseState();
+   await queryClient.invalidateQueries({ queryKey: ["grammar-points"] });
+  } catch (error) {
+   toast.error(error instanceof Error ? error.message : "Không tạo được bài tập");
+  } finally {
+   setIsGeneratingExercises(false);
+  }
+ }, [coachPoint, queryClient, resetExerciseState]);
 
  const saveLesson = useCallback(
   async (lesson: GrammarLessonWithStats) => {
@@ -381,14 +665,16 @@ export default function GrammarPage() {
  return (
   <LearningShell>
    <LearningHeader
-    activeTab={activeTab}
-    onTabChange={setActiveTab}
-    splitMode={splitMode}
-    onSplitModeChange={setSplitMode}
-    onShowLessons={() => setLessonSheetOpen(true)}
-    onCreateLesson={createLessonDraft}
+   activeTab={activeTab}
+   onTabChange={setActiveTab}
+   onCreateLesson={createLessonDraft}
     onCreatePoint={() => createPointDraft()}
-   />
+   onImportHanyu={importHanyuGrammar}
+   onImportCoachJson={importCoachJson}
+   isImportingHanyu={isImportingHanyu}
+   isImportingCoachJson={isImportingCoachJson}
+   lessons={lessons}
+  />
 
    {isLoading ? (
     <div className="flex min-h-[520px] items-center justify-center rounded-[28px] border-2 border-stone-200 bg-white shadow-theme-md">
@@ -399,41 +685,67 @@ export default function GrammarPage() {
     <EmptyState title="Chưa có kho ngữ pháp" description="Tạo bài hoặc paste nội dung ngữ pháp để bắt đầu." action={<ActionButton onClick={createLessonDraft} icon={Plus}>Tạo bài đầu tiên</ActionButton>} />
    ) : (
     <>
-     <div className="grid gap-6 lg:grid-cols-[340px_minmax(0,1fr)]">
-      <LessonList
-       lessons={lessons}
-       activeLessonId={activeLesson?.id}
-       onSelect={(lesson) => {
-        setActiveLessonId(lesson.id);
-        setLessonSheetOpen(false);
-       }}
-       onEdit={setEditingLesson}
-       onImport={setImportingLesson}
-      />
+     <div className={cn("grid gap-6", activeTab === "study" ? "grid-cols-1" : "lg:grid-cols-[340px_minmax(0,1fr)]")}>
+      {activeTab !== "study" && (
+       <LessonList
+        lessons={lessons}
+        activeLessonId={activeLesson?.id}
+        onSelect={(lesson) => {
+         setActiveLessonId(lesson.id);
+         setLessonSheetOpen(false);
+        }}
+        onEdit={setEditingLesson}
+        onImport={setImportingLesson}
+       />
+      )}
 
       <main className="min-w-0">
-       {activeTab === "study" && activeLesson && (
-        <StudyWorkspace
-         lesson={activeLesson}
-         point={activePoint}
-         exercise={activeExercise}
-         exerciseIndex={exerciseIndex}
-         splitMode={splitMode}
-         answer={exerciseAnswer}
+       {activeTab === "study" && (
+        <GrammarCoachWorkspace
+         lessons={lessons}
+         points={coachPoints}
+         point={coachPoint}
+         activeIndex={coachIndex}
+         stats={coachStats}
+         lessonById={lessonById}
+         tags={coachTags}
+         fromLesson={coachFromLesson}
+         toLesson={coachToLesson}
+         status={coachStatus}
+         order={coachOrder}
+         tag={coachTag}
+         searchQuery={searchQuery}
+         activeTab={coachTab}
+         vocabulary={coachVocabulary}
          selectedChoice={selectedChoice}
          checked={exerciseChecked}
          correct={exerciseCorrect}
-         onSelectPoint={(point) => {
-          setActivePointId(point.id);
-          setExerciseIndex(0);
+         isGeneratingExercises={isGeneratingExercises}
+         onFromLessonChange={setCoachFromLesson}
+         onToLessonChange={setCoachToLesson}
+         onStatusChange={setCoachStatus}
+         onOrderChange={setCoachOrder}
+         onTagChange={setCoachTag}
+         onSearchChange={setSearchQuery}
+         onTabChange={(tab) => {
+          setCoachTab(tab);
+          resetExerciseState();
          }}
-         onEditPoint={setEditingPoint}
-         onAnswerChange={setExerciseAnswer}
-         onChoiceChange={setSelectedChoice}
-         onCheck={checkExercise}
-         onNext={nextExercise}
-         onAgain={() => activePoint && updateProgress(activePoint, Math.max(activePoint.proficiency_level - 1, 0))}
-         onRemember={() => activePoint && updateProgress(activePoint, Math.min(activePoint.proficiency_level + 1, 5))}
+         onSelectPoint={(point) => {
+          const nextIndex = coachPoints.findIndex((candidate) => candidate.id === point.id);
+          if (nextIndex >= 0) setCoachIndex(nextIndex);
+          setActiveLessonId(point.lesson_id || null);
+          setActivePointId(point.id);
+          resetExerciseState();
+         }}
+         onSelectChoice={setSelectedChoice}
+         onCheckPractice={checkCoachPractice}
+         onPrev={() => goCoach(-1)}
+         onNext={() => goCoach(1)}
+         onMarkWeak={() => markCoachPoint(2)}
+         onMarkKnown={() => markCoachPoint(5)}
+         onEditPoint={(point) => setEditingPoint(point)}
+         onGenerateExercises={generateCoachExerciseSet}
         />
        )}
 
@@ -496,83 +808,66 @@ function LearningShell({ children }: { children: React.ReactNode }) {
 function LearningHeader({
  activeTab,
  onTabChange,
- splitMode,
- onSplitModeChange,
- onShowLessons,
  onCreateLesson,
  onCreatePoint,
+ onImportHanyu,
+ onImportCoachJson,
+ isImportingHanyu,
+ isImportingCoachJson,
+ lessons,
 }: {
  activeTab: MainTab;
  onTabChange: (tab: MainTab) => void;
- splitMode: SplitMode;
- onSplitModeChange: (mode: SplitMode) => void;
- onShowLessons: () => void;
  onCreateLesson: () => void;
  onCreatePoint: () => void;
+ onImportHanyu: () => void;
+ onImportCoachJson: () => void;
+ isImportingHanyu: boolean;
+ isImportingCoachJson: boolean;
+ lessons: GrammarLessonWithStats[];
 }) {
+ const pointCount = lessons.reduce((sum, lesson) => sum + lesson.points.length, 0);
  return (
-  <header className="rounded-[28px] border-2 border-stone-200 bg-white p-4 shadow-theme-sm md:p-5">
-   <div className="flex flex-col gap-4 xl:flex-row xl:items-end xl:justify-between">
+  <header className="rounded-[28px] border-2 border-stone-200 bg-white p-4 shadow-theme-sm md:p-6">
+   <div className="grid gap-5 xl:grid-cols-[minmax(0,1fr)_460px] xl:items-start">
     <div>
      <Link href="/" className="inline-flex h-11 items-center gap-2 rounded-2xl border-2 border-stone-200 bg-white px-4 text-sm font-black text-stone-700 shadow-theme-sm hover:bg-stone-50">
       ← Quay lại
      </Link>
-     <h1 className="mt-4 text-4xl font-black tracking-normal text-stone-900">Ngữ pháp tiếng Trung</h1>
-     <p className="mt-2 max-w-2xl text-base font-bold leading-7 text-stone-500">
-      Tự gom ngữ pháp theo Hán ngữ, HSK hoặc nhóm chủ đề; vừa xem lý thuyết vừa luyện bài tập.
-     </p>
+     <p className="mt-5 text-xs font-black uppercase tracking-[0.22em] text-red-500">Grammar Coach · Giáo trình Hán ngữ</p>
+     <h1 className="mt-2 text-4xl font-black tracking-normal text-stone-900 md:text-5xl">Ngữ pháp Bài 11-25</h1>
+     <p className="mt-2 max-w-2xl text-base font-bold leading-7 text-stone-500">Card-first, filter-first: xem logic, công thức, ví dụ và làm practice trong cùng một flow.</p>
+     <div className="mt-4 flex flex-wrap items-center gap-2">
+      <SegmentedControl
+       value={activeTab}
+       items={[
+        { key: "study", label: "Học", icon: BookOpen },
+        { key: "all", label: "Tất cả ngữ pháp", icon: Layers3 },
+        { key: "edit", label: "Chỉnh sửa", icon: Edit3 },
+       ]}
+       onChange={(key) => onTabChange(key as MainTab)}
+      />
+      <ActionButton onClick={onImportCoachJson} icon={Upload} tone="neutral" loading={isImportingCoachJson}>Import JSON mẫu</ActionButton>
+      <ActionButton onClick={onImportHanyu} icon={Upload} tone="neutral" loading={isImportingHanyu}>Import Np.md</ActionButton>
+      <ActionButton onClick={onCreatePoint} icon={Plus}>Thêm ngữ pháp</ActionButton>
+      <ActionButton onClick={onCreateLesson} icon={Plus} tone="neutral">Thêm bài</ActionButton>
+     </div>
     </div>
 
-    <div className="flex flex-wrap items-center gap-2">
-     <Segmented
-      value={activeTab}
-      items={[
-       { key: "study", label: "Học", icon: BookOpen },
-       { key: "all", label: "Tất cả ngữ pháp", icon: Layers3 },
-       { key: "edit", label: "Chỉnh sửa", icon: Edit3 },
-      ]}
-      onChange={(key) => onTabChange(key as MainTab)}
-     />
-     <button type="button" onClick={onShowLessons} className="inline-flex h-11 items-center gap-2 rounded-2xl border-2 border-stone-200 bg-white px-4 text-sm font-black text-stone-700 shadow-theme-sm hover:bg-stone-50 lg:hidden">
-      <Menu className="h-4 w-4" />
-      Bài học
-     </button>
-     <ActionButton onClick={onCreatePoint} icon={Plus}>Thêm ngữ pháp</ActionButton>
-     <ActionButton onClick={onCreateLesson} icon={Plus} tone="neutral">Thêm bài</ActionButton>
+    <div className="rounded-[24px] border-2 border-blue-300 bg-blue-50/40 p-5 shadow-theme-sm">
+     <div className="flex items-center justify-between gap-3">
+      <p className="text-xs font-black uppercase tracking-[0.28em] text-blue-600">Shortcut</p>
+      <span className="rounded-full bg-white px-3 py-1 text-xs font-black text-stone-600 shadow-theme-sm">{lessons.length} bài · {pointCount} điểm</span>
+     </div>
+     <div className="mt-4 grid grid-cols-2 gap-3 text-sm font-black text-stone-700">
+      <span className="rounded-2xl border-2 border-stone-200 bg-white px-4 py-3">←/→ chuyển card</span>
+      <span className="rounded-2xl border-2 border-stone-200 bg-white px-4 py-3">1-5 đổi tab</span>
+      <span className="rounded-2xl border-2 border-stone-200 bg-white px-4 py-3">K nắm rồi</span>
+      <span className="rounded-2xl border-2 border-stone-200 bg-white px-4 py-3">W còn yếu</span>
+     </div>
     </div>
    </div>
-
-   {activeTab === "study" && (
-    <div className="mt-5 flex flex-wrap items-center gap-2">
-     <Segmented
-      value={splitMode}
-      items={[
-       { key: "theory", label: "Lý thuyết", icon: FileText },
-       { key: "practice", label: "Bài tập", icon: CheckCircle2 },
-       { key: "split", label: "Chia đôi", icon: SplitSquareHorizontal },
-      ]}
-      onChange={(key) => onSplitModeChange(key as SplitMode)}
-     />
-    </div>
-   )}
   </header>
- );
-}
-
-function Segmented({ value, items, onChange }: { value: string; items: { key: string; label: string; icon: LucideIcon }[]; onChange: (key: string) => void }) {
- return (
-  <div className="flex max-w-full overflow-x-auto rounded-2xl bg-stone-100 p-1">
-   {items.map((item) => {
-    const Icon = item.icon;
-    const active = value === item.key;
-    return (
-     <button key={item.key} type="button" onClick={() => onChange(item.key)} className={cn("flex h-10 shrink-0 items-center gap-2 rounded-xl px-3 text-sm font-black transition", active ? "bg-red-500 text-white shadow-theme-sm" : "text-stone-600 hover:bg-white")}>
-      <Icon className="h-4 w-4" />
-      {item.label}
-     </button>
-    );
-   })}
-  </div>
  );
 }
 
@@ -605,7 +900,400 @@ function LessonList({ lessons, activeLessonId, onSelect, onEdit, onImport }: { l
      </button>
     ))}
    </div>
-  </aside>
+ </aside>
+);
+}
+
+function GrammarCoachWorkspace({
+ lessons,
+ points,
+ point,
+ activeIndex,
+ stats,
+ lessonById,
+ tags,
+ fromLesson,
+ toLesson,
+ status,
+ order,
+ tag,
+ searchQuery,
+ activeTab,
+ vocabulary,
+ selectedChoice,
+ checked,
+ correct,
+ isGeneratingExercises,
+ onFromLessonChange,
+ onToLessonChange,
+ onStatusChange,
+ onOrderChange,
+ onTagChange,
+ onSearchChange,
+ onTabChange,
+ onSelectPoint,
+ onSelectChoice,
+ onCheckPractice,
+ onPrev,
+ onNext,
+ onMarkWeak,
+ onMarkKnown,
+ onEditPoint,
+ onGenerateExercises,
+}: {
+ lessons: GrammarLessonWithStats[];
+ points: GrammarPointWithProgress[];
+ point: GrammarPointWithProgress | null;
+ activeIndex: number;
+ stats: { range: string; filtered: number; mastered: number; weak: number; practice: number };
+ lessonById: Map<string, GrammarLessonWithStats>;
+ tags: string[];
+ fromLesson: number;
+ toLesson: number;
+ status: CoachStatusFilter;
+ order: CoachOrder;
+ tag: string;
+ searchQuery: string;
+ activeTab: CoachTab;
+ vocabulary: VocabEntryWithProgress[];
+ selectedChoice: string | null;
+ checked: boolean;
+ correct: boolean | null;
+ isGeneratingExercises: boolean;
+ onFromLessonChange: (value: number) => void;
+ onToLessonChange: (value: number) => void;
+ onStatusChange: (value: CoachStatusFilter) => void;
+ onOrderChange: (value: CoachOrder) => void;
+ onTagChange: (value: string) => void;
+ onSearchChange: (value: string) => void;
+ onTabChange: (value: CoachTab) => void;
+ onSelectPoint: (point: GrammarPointWithProgress) => void;
+ onSelectChoice: (value: string) => void;
+ onCheckPractice: () => void;
+ onPrev: () => void;
+ onNext: () => void;
+ onMarkWeak: () => void;
+ onMarkKnown: () => void;
+ onEditPoint: (point: GrammarPointWithProgress) => void;
+ onGenerateExercises: () => void;
+}) {
+ const lessonNumbers = lessons.map((lesson) => lesson.lesson_number).filter((value): value is number => typeof value === "number").sort((a, b) => a - b);
+ const contrasts = points.flatMap((item) => item.content.coach_contrasts || []).filter((item, index, arr) => arr.findIndex((candidate) => candidate.title === item.title) === index);
+ return (
+  <div className="grid gap-6 xl:grid-cols-[360px_minmax(0,1fr)]">
+   <aside className="rounded-[28px] border-2 border-stone-200 bg-white p-5 shadow-theme-md xl:sticky xl:top-6 xl:max-h-[calc(100vh-48px)] xl:overflow-y-auto">
+    <div className="flex items-center justify-between">
+     <p className="text-lg font-black uppercase tracking-wide text-stone-900">Bộ lọc học</p>
+     <span className="rounded-full bg-stone-100 px-3 py-1 text-xs font-black text-stone-600">{points.length} điểm</span>
+    </div>
+    <div className="mt-5 grid grid-cols-2 gap-3">
+     <Field label="Từ bài">
+      <Select value={String(fromLesson)} onChange={(event) => onFromLessonChange(Number(event.target.value))}>
+       {lessonNumbers.map((lessonNumber) => <option key={lessonNumber} value={lessonNumber}>Bài {lessonNumber}</option>)}
+      </Select>
+     </Field>
+     <Field label="Đến bài">
+      <Select value={String(toLesson)} onChange={(event) => onToLessonChange(Number(event.target.value))}>
+       {lessonNumbers.map((lessonNumber) => <option key={lessonNumber} value={lessonNumber}>Bài {lessonNumber}</option>)}
+      </Select>
+     </Field>
+    </div>
+    <div className="mt-4 flex flex-wrap gap-2">
+     {lessonNumbers.map((lessonNumber) => (
+      <button
+       key={lessonNumber}
+       type="button"
+       onClick={() => {
+        onFromLessonChange(lessonNumber);
+        onToLessonChange(lessonNumber);
+       }}
+       className={cn("rounded-2xl border-2 px-3 py-2 text-xs font-black shadow-theme-sm", lessonNumber >= fromLesson && lessonNumber <= toLesson ? "border-red-500 bg-red-50 text-red-600" : "border-stone-200 bg-white text-stone-600 hover:bg-stone-50")}
+      >
+       B{lessonNumber}
+      </button>
+     ))}
+    </div>
+    <div className="mt-5">
+     <label className="text-xs font-black uppercase tracking-wide text-stone-500">Tìm ngữ pháp</label>
+     <div className="relative mt-2">
+      <Search className="absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 text-stone-400" />
+      <Input value={searchQuery} onChange={(event) => onSearchChange(event.target.value)} placeholder="是...的, bị động, bổ ngữ..." className="pl-12" />
+     </div>
+    </div>
+    <div className="mt-4 grid gap-3">
+     <Field label="Tag">
+      <Select value={tag} onChange={(event) => onTagChange(event.target.value)}>
+       <option value="all">Tất cả tag</option>
+       {tags.map((item) => <option key={item} value={item}>{item}</option>)}
+      </Select>
+     </Field>
+     <Field label="Trạng thái">
+      <Select value={status} onChange={(event) => onStatusChange(event.target.value as CoachStatusFilter)}>
+       <option value="all">Tất cả</option>
+       <option value="new">Chưa học</option>
+       <option value="weak">Còn yếu</option>
+       <option value="ok">Đã nắm</option>
+      </Select>
+     </Field>
+     <Field label="Thứ tự">
+      <Select value={order} onChange={(event) => onOrderChange(event.target.value as CoachOrder)}>
+       <option value="lesson">Theo bài</option>
+       <option value="hard">Ưu tiên yếu</option>
+       <option value="random">Random ổn định</option>
+      </Select>
+     </Field>
+    </div>
+    <div className="mt-5 rounded-[22px] border-2 border-dashed border-stone-200 bg-stone-50 p-4 text-sm font-bold leading-6 text-stone-500">
+     Dùng range bài + tag để gom session nhỏ. Shortcut: 1-5 đổi tab, K/W đánh dấu tiến độ.
+    </div>
+   </aside>
+
+   <main className="min-w-0 space-y-5">
+    <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-5">
+     <StatTile label="Trong khoảng bài" value={stats.range} />
+     <StatTile label="Đang hiển thị" value={stats.filtered} />
+     <StatTile label="Đã nắm" value={stats.mastered} tone="green" />
+     <StatTile label="Còn yếu" value={stats.weak} tone="yellow" />
+     <StatTile label="Practice đúng" value={stats.practice} tone="blue" />
+    </div>
+
+    {!point ? (
+     <EmptyState title="Không có ngữ pháp trong bộ lọc" description="Nới range bài hoặc bỏ tag/search để thấy lại danh sách." compact />
+    ) : (
+     <GrammarCoachCard
+      point={point}
+      lesson={point.lesson_id ? lessonById.get(point.lesson_id) || null : null}
+      index={activeIndex}
+      total={points.length}
+      activeTab={activeTab}
+      selectedChoice={selectedChoice}
+      checked={checked}
+      correct={correct}
+      isGeneratingExercises={isGeneratingExercises}
+      onTabChange={onTabChange}
+      onSelectChoice={onSelectChoice}
+      onCheckPractice={onCheckPractice}
+      onPrev={onPrev}
+      onNext={onNext}
+      onMarkWeak={onMarkWeak}
+      onMarkKnown={onMarkKnown}
+      onEdit={() => onEditPoint(point)}
+      onGenerateExercises={onGenerateExercises}
+     />
+    )}
+
+    <section className="rounded-[28px] border-2 border-stone-200 bg-white p-5 shadow-theme-md">
+     <div className="flex flex-wrap items-center justify-between gap-3">
+      <div>
+       <p className="text-lg font-black uppercase tracking-wide text-stone-900">Quick list</p>
+       <p className="text-sm font-bold text-stone-500">Nhảy nhanh trong bộ lọc hiện tại.</p>
+      </div>
+      <span className="rounded-full bg-stone-100 px-3 py-1 text-xs font-black text-stone-600">{points.length} cards</span>
+     </div>
+     <div className="mt-4 flex max-h-40 flex-wrap gap-2 overflow-y-auto">
+      {points.map((item, index) => (
+       <button key={item.id} type="button" onClick={() => onSelectPoint(item)} className={cn("rounded-2xl border-2 px-3 py-2 text-left text-sm font-black shadow-theme-sm", item.id === point?.id ? "border-red-500 bg-red-50 text-red-600" : "border-stone-200 bg-white text-stone-700 hover:bg-stone-50")}>
+        {index + 1}. {item.title}
+       </button>
+      ))}
+     </div>
+    </section>
+
+    <div className="grid gap-5 xl:grid-cols-[minmax(0,1fr)_360px]">
+     <section className="rounded-[28px] border-2 border-stone-200 bg-white p-5 shadow-theme-md">
+      <p className="text-lg font-black uppercase tracking-wide text-stone-900">So sánh dễ nhầm</p>
+      <div className="mt-4 grid gap-3 md:grid-cols-2">
+       {contrasts.length ? contrasts.map((contrast) => (
+        <div key={contrast.title} className="rounded-[22px] border-2 border-stone-200 bg-stone-50 p-4">
+         <p className="text-base font-black text-stone-900">{contrast.title}</p>
+         <p className="mt-2 text-sm font-bold leading-6 text-stone-600">{contrast.body}</p>
+        </div>
+       )) : <p className="text-sm font-bold text-stone-500">Chưa có panel so sánh trong dữ liệu.</p>}
+      </div>
+     </section>
+     <LessonVocabularyPanel vocabulary={vocabulary} />
+    </div>
+   </main>
+  </div>
+ );
+}
+
+function GrammarCoachCard({
+ point,
+ lesson,
+ index,
+ total,
+ activeTab,
+ selectedChoice,
+ checked,
+ correct,
+ isGeneratingExercises,
+ onTabChange,
+ onSelectChoice,
+ onCheckPractice,
+ onPrev,
+ onNext,
+ onMarkWeak,
+ onMarkKnown,
+ onEdit,
+ onGenerateExercises,
+}: {
+ point: GrammarPointWithProgress;
+ lesson: GrammarLessonWithStats | null;
+ index: number;
+ total: number;
+ activeTab: CoachTab;
+ selectedChoice: string | null;
+ checked: boolean;
+ correct: boolean | null;
+ isGeneratingExercises: boolean;
+ onTabChange: (value: CoachTab) => void;
+ onSelectChoice: (value: string) => void;
+ onCheckPractice: () => void;
+ onPrev: () => void;
+ onNext: () => void;
+ onMarkWeak: () => void;
+ onMarkKnown: () => void;
+ onEdit: () => void;
+ onGenerateExercises: () => void;
+}) {
+ const quiz = getCoachQuiz(point);
+ const examples = point.content.examples || [];
+ return (
+  <section className="rounded-[28px] border-2 border-stone-200 bg-white p-5 shadow-theme-md md:p-7">
+   <div className="flex flex-wrap items-start justify-between gap-4">
+    <div>
+     <p className="text-xs font-black uppercase tracking-[0.22em] text-red-500">{lesson ? `Bài ${lesson.lesson_number}` : "Grammar card"} · {index + 1}/{total}</p>
+     <h2 className="mt-3 text-4xl font-black leading-tight text-stone-900 md:text-5xl">{point.title}</h2>
+     <p className="mt-3 max-w-4xl text-lg font-bold leading-8 text-stone-600">{getCoachCore(point)}</p>
+     <div className="mt-4 flex flex-wrap gap-2">
+      {point.tags.slice(0, 6).map((tag) => <span key={tag} className="rounded-full bg-emerald-100 px-3 py-1 text-xs font-black text-emerald-700">{tag}</span>)}
+      <StatusPill status={point.status} />
+     </div>
+    </div>
+    <div className="flex flex-wrap gap-2">
+     <IconToolButton icon={PenLine} label="Sửa" onClick={onEdit} />
+     <ActionButton onClick={onGenerateExercises} icon={Sparkles} loading={isGeneratingExercises}>Tạo 10+ câu</ActionButton>
+    </div>
+   </div>
+
+   <SegmentedControl
+    className="mt-6"
+    value={activeTab}
+    items={[
+     { key: "logic", label: "Logic", icon: FileText },
+     { key: "formula", label: "Công thức", icon: Layers3 },
+     { key: "examples", label: "Ví dụ", icon: BookOpen },
+     { key: "traps", label: "Bẫy sai", icon: XCircle },
+     { key: "practice", label: "Practice", icon: CheckCircle2 },
+    ]}
+    onChange={onTabChange}
+   />
+
+   <div className="mt-6 min-h-[360px] rounded-[28px] border-2 border-stone-200 bg-stone-50 p-5 md:p-7">
+    {activeTab === "logic" && (
+     <div className="space-y-5">
+      <Section title="Logic cốt lõi">
+       <p className="text-lg font-bold leading-8 text-stone-700">{point.content.explanation || point.content.core || "Chưa có giải thích."}</p>
+      </Section>
+      {point.content.quick_example?.zh && (
+       <div className="rounded-[24px] border-2 border-red-200 bg-red-50 p-5">
+        <p className="text-sm font-black uppercase tracking-wide text-red-500">Ví dụ nhanh</p>
+        <p className="mt-3 text-3xl font-black text-stone-900">{point.content.quick_example.zh}</p>
+        {point.content.quick_example.pinyin ? <p className="mt-2 text-base font-bold italic text-stone-500">{point.content.quick_example.pinyin}</p> : null}
+        {point.content.quick_example.vi ? <p className="mt-2 text-lg font-bold text-stone-700">{point.content.quick_example.vi}</p> : null}
+       </div>
+      )}
+     </div>
+    )}
+    {activeTab === "formula" && (
+     <ListSection title="Công thức dùng được ngay" items={point.content.formulas?.length ? point.content.formulas : point.content.structures} />
+    )}
+    {activeTab === "examples" && (
+     <div className="space-y-4">
+      {examples.length ? examples.map((example, exampleIndex) => (
+       <div key={`${example.zh}-${exampleIndex}`} className="rounded-[24px] border-2 border-stone-200 bg-white p-5">
+        <p className="text-2xl font-black text-stone-900">{example.zh}</p>
+        {example.pinyin ? <p className="mt-2 text-sm font-bold italic text-stone-500">{example.pinyin}</p> : null}
+        {example.vi ? <p className="mt-2 text-base font-bold text-stone-700">{example.vi}</p> : null}
+        {example.note ? <p className="mt-3 rounded-2xl bg-blue-50 px-4 py-3 text-sm font-bold leading-6 text-blue-700">{example.note}</p> : null}
+       </div>
+      )) : <p className="font-bold text-stone-500">Chưa có ví dụ.</p>}
+     </div>
+    )}
+    {activeTab === "traps" && (
+     <ListSection title="Bẫy sai cần né" items={point.content.traps?.length ? point.content.traps : point.content.common_mistakes} />
+    )}
+    {activeTab === "practice" && (
+     <div className="space-y-5">
+      {!quiz ? (
+       <EmptyState title="Chưa có practice" description="Bấm tạo bài tập hoặc import JSON mẫu để có quiz." compact />
+      ) : (
+       <>
+        <div>
+         <p className="text-sm font-black uppercase tracking-wide text-red-500">Practice</p>
+         <p className="mt-2 text-2xl font-black leading-9 text-stone-900">{quiz.prompt}</p>
+        </div>
+        <div className="space-y-3">
+         {quiz.choices.map((choice, choiceIndex) => {
+          const isSelected = selectedChoice === String(choiceIndex);
+          const isCorrect = checked && choiceIndex === quiz.answerIndex;
+          const isWrong = checked && isSelected && !isCorrect;
+          return (
+           <button
+            key={`${choice}-${choiceIndex}`}
+            type="button"
+            onClick={() => !checked && onSelectChoice(String(choiceIndex))}
+            className={cn("flex w-full items-center gap-4 rounded-[22px] border-2 bg-white p-4 text-left text-base font-black shadow-theme-sm transition", isCorrect ? "border-emerald-400 bg-emerald-50 text-emerald-700" : isWrong ? "border-red-400 bg-red-50 text-red-600" : isSelected ? "border-red-500 bg-red-50 text-red-600" : "border-stone-200 text-stone-800 hover:bg-stone-50")}
+           >
+            <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border-2 border-stone-200 bg-white text-sm">{String.fromCharCode(65 + choiceIndex)}</span>
+            <span>{choice}</span>
+           </button>
+          );
+         })}
+        </div>
+        {checked && (
+         <div className={cn("rounded-[22px] border-2 p-4 text-sm font-black", correct ? "border-emerald-300 bg-emerald-50 text-emerald-700" : "border-red-300 bg-red-50 text-red-700")}>
+          {correct ? "Đúng rồi." : `Sai. Đáp án đúng: ${quiz.choices[quiz.answerIndex] || ""}`}
+          {point.content.explanation ? <p className="mt-2 font-bold leading-6">{point.content.explanation}</p> : null}
+         </div>
+        )}
+        <div className="flex flex-wrap gap-3">
+         <ActionButton onClick={onCheckPractice} icon={Check} disabled={!selectedChoice || checked} tone="red">Kiểm tra</ActionButton>
+         <ActionButton onClick={onNext} icon={CheckCircle2} tone="neutral">Câu tiếp</ActionButton>
+        </div>
+       </>
+      )}
+     </div>
+    )}
+   </div>
+
+   <div className="mt-6 flex flex-wrap items-center justify-between gap-3">
+    <div className="flex flex-wrap gap-2">
+     <ActionButton onClick={onPrev} tone="neutral">← Trước</ActionButton>
+     <ActionButton onClick={onNext} tone="neutral">Tiếp →</ActionButton>
+    </div>
+    <div className="flex flex-wrap gap-2">
+     <ActionButton onClick={onMarkWeak} icon={XCircle} tone="neutral">Còn yếu</ActionButton>
+     <ActionButton onClick={onMarkKnown} icon={CheckCircle2}>Nắm rồi</ActionButton>
+    </div>
+   </div>
+  </section>
+ );
+}
+
+function StatTile({ value, label, tone = "neutral" }: { value: string | number; label: string; tone?: "neutral" | "green" | "yellow" | "blue" }) {
+ const toneClass = {
+  neutral: "border-stone-200 bg-white text-stone-900",
+  green: "border-emerald-300 bg-emerald-50 text-emerald-700",
+  yellow: "border-yellow-300 bg-yellow-50 text-orange-600",
+  blue: "border-blue-300 bg-blue-50 text-blue-600",
+ }[tone];
+ return (
+  <div className={cn("rounded-[22px] border-2 p-4 shadow-theme-sm", toneClass)}>
+   <p className="text-xs font-black uppercase tracking-wide opacity-70">{label}</p>
+   <p className="mt-2 text-3xl font-black">{value}</p>
+  </div>
  );
 }
 
@@ -613,14 +1301,21 @@ function StudyWorkspace({
  lesson,
  point,
  exercise,
+ exerciseCount,
  exerciseIndex,
+ exerciseMode,
  splitMode,
+ vocabulary,
  answer,
  selectedChoice,
  checked,
  correct,
+ sessionStats,
+ isGeneratingExercises,
+ onExerciseModeChange,
  onSelectPoint,
  onEditPoint,
+ onGenerateExercises,
  onAnswerChange,
  onChoiceChange,
  onCheck,
@@ -631,14 +1326,21 @@ function StudyWorkspace({
  lesson: GrammarLessonWithStats;
  point: GrammarPointWithProgress | null;
  exercise: DbGrammarExercise | null;
+ exerciseCount: number;
  exerciseIndex: number;
+ exerciseMode: ExerciseMode;
  splitMode: SplitMode;
+ vocabulary: VocabEntryWithProgress[];
  answer: string;
  selectedChoice: string | null;
  checked: boolean;
  correct: boolean | null;
+ sessionStats: { answered: number; correct: number; wrong: number };
+ isGeneratingExercises: boolean;
+ onExerciseModeChange: (mode: ExerciseMode) => void;
  onSelectPoint: (point: GrammarPointWithProgress) => void;
  onEditPoint: (point: GrammarPointWithProgress) => void;
+ onGenerateExercises: () => void;
  onAnswerChange: (value: string) => void;
  onChoiceChange: (value: string) => void;
  onCheck: () => void;
@@ -649,7 +1351,7 @@ function StudyWorkspace({
  return (
   <section className="rounded-[28px] border-2 border-stone-200 bg-white p-5 shadow-theme-md md:p-7">
    <div className="flex flex-col gap-4 xl:flex-row xl:items-start xl:justify-between">
-    <div>
+   <div>
      <p className="text-sm font-black uppercase tracking-wide text-red-500">Tổng quan bài</p>
      <h2 className="mt-1 text-3xl font-black text-stone-900">{lesson.title}</h2>
      <p className="mt-2 text-base font-bold text-stone-500">{lesson.points.length} điểm ngữ pháp · {lesson.categories.slice(0, 2).map((item) => item.name).join(", ") || "Chưa phân nhóm"}</p>
@@ -658,6 +1360,24 @@ function StudyWorkspace({
      <StatBox value={lesson.fresh} label="Đang học" tone="yellow" />
      <StatBox value={lesson.learning} label="Đang ôn" tone="blue" />
      <StatBox value={lesson.mastered} label="Thành thạo" tone="green" />
+    </div>
+   </div>
+
+   <div className="mt-5 flex flex-col gap-3 rounded-[24px] border-2 border-stone-200 bg-stone-50 p-3 xl:flex-row xl:items-center xl:justify-between">
+    <SegmentedControl
+     value={exerciseMode}
+     items={[
+      { key: "mixed", label: "Trộn dạng", icon: Layers3 },
+      { key: "fill_blank", label: "Điền từ", icon: PenLine },
+      { key: "multiple_choice", label: "Trắc nghiệm", icon: CheckCircle2 },
+      { key: "reorder_sentence", label: "Sắp xếp", icon: SplitSquareHorizontal },
+      { key: "translate_zh", label: "Dịch Trung", icon: FileText },
+     ]}
+     onChange={(key) => onExerciseModeChange(key as ExerciseMode)}
+    />
+    <div className="flex flex-wrap items-center gap-2">
+     <span className="rounded-2xl bg-white px-3 py-2 text-xs font-black text-stone-600 shadow-theme-sm">Phiên này: {sessionStats.correct}/{sessionStats.answered || 0} đúng · {sessionStats.wrong} sai</span>
+     <ActionButton onClick={onGenerateExercises} icon={Sparkles} loading={isGeneratingExercises}>Tạo 10+ câu</ActionButton>
     </div>
    </div>
 
@@ -677,11 +1397,17 @@ function StudyWorkspace({
     {!point ? (
      <EmptyState title="Chưa có ngữ pháp trong bài" description="Thêm hoặc import ngữ pháp để bắt đầu học." compact />
     ) : (
-     <div className={cn("grid gap-5", splitMode === "split" ? "xl:grid-cols-[1fr_0.9fr]" : "grid-cols-1")}>
-      {splitMode !== "practice" && <TheoryPanel point={point} onEdit={() => onEditPoint(point)} onAgain={onAgain} onRemember={onRemember} />}
-      {splitMode !== "theory" && <PracticePanel point={point} exercise={exercise} exerciseIndex={exerciseIndex} answer={answer} selectedChoice={selectedChoice} checked={checked} correct={correct} onAnswerChange={onAnswerChange} onChoiceChange={onChoiceChange} onCheck={onCheck} onNext={onNext} />}
-     </div>
+     <StudySplitLayout
+      mode={splitMode === "theory" ? "left" : splitMode === "practice" ? "right" : "split"}
+      storageKey="grammar-study-split"
+      left={<TheoryPanel point={point} onEdit={() => onEditPoint(point)} onAgain={onAgain} onRemember={onRemember} />}
+      right={<PracticePanel point={point} exercise={exercise} exerciseIndex={exerciseIndex} exerciseCount={exerciseCount} answer={answer} selectedChoice={selectedChoice} checked={checked} correct={correct} onAnswerChange={onAnswerChange} onChoiceChange={onChoiceChange} onCheck={onCheck} onNext={onNext} />}
+     />
     )}
+   </div>
+
+   <div className="mt-5 grid gap-4 xl:grid-cols-[minmax(0,1fr)_320px]">
+    <LessonVocabularyPanel vocabulary={vocabulary} />
    </div>
   </section>
  );
@@ -726,9 +1452,9 @@ function TheoryPanel({ point, onEdit, onAgain, onRemember }: { point: GrammarPoi
  );
 }
 
-function PracticePanel({ point, exercise, exerciseIndex, answer, selectedChoice, checked, correct, onAnswerChange, onChoiceChange, onCheck, onNext }: { point: GrammarPointWithProgress; exercise: DbGrammarExercise | null; exerciseIndex: number; answer: string; selectedChoice: string | null; checked: boolean; correct: boolean | null; onAnswerChange: (value: string) => void; onChoiceChange: (value: string) => void; onCheck: () => void; onNext: () => void }) {
+function PracticePanel({ point, exercise, exerciseIndex, exerciseCount, answer, selectedChoice, checked, correct, onAnswerChange, onChoiceChange, onCheck, onNext }: { point: GrammarPointWithProgress; exercise: DbGrammarExercise | null; exerciseIndex: number; exerciseCount: number; answer: string; selectedChoice: string | null; checked: boolean; correct: boolean | null; onAnswerChange: (value: string) => void; onChoiceChange: (value: string) => void; onCheck: () => void; onNext: () => void }) {
  if (!exercise) {
-  return <EmptyState title="Chưa có bài tập" description="Thêm bài tập trong drawer sửa ngữ pháp hoặc paste block có mục Bài tập." compact />;
+  return <EmptyState title="Chưa có bài tập" description="Bấm Tạo 10+ câu để sinh bộ luyện tập cho điểm ngữ pháp này." compact />;
  }
  const content = (exercise.content || {}) as GrammarExerciseContent;
  const choices = content.choices || [];
@@ -738,7 +1464,7 @@ function PracticePanel({ point, exercise, exerciseIndex, answer, selectedChoice,
     <div>
      <p className="text-sm font-black uppercase tracking-wide text-red-500">Luyện tập</p>
      <h3 className="mt-1 text-2xl font-black text-stone-900">{exerciseLabels[exercise.exercise_type]}</h3>
-     <p className="mt-1 text-sm font-bold text-stone-500">{point.title} · {exerciseIndex + 1}/{point.exercises.length}</p>
+     <p className="mt-1 text-sm font-bold text-stone-500">{point.title} · {exerciseIndex + 1}/{exerciseCount || point.exercises.length}</p>
     </div>
     <span className="rounded-full bg-stone-100 px-3 py-1 text-xs font-black text-stone-600">{exercise.exercise_type}</span>
    </div>
@@ -782,8 +1508,12 @@ function PracticePanel({ point, exercise, exerciseIndex, answer, selectedChoice,
    <div className="mt-5 flex flex-wrap gap-3">
     {!checked ? <ActionButton onClick={onCheck} icon={Check}>Kiểm tra</ActionButton> : <ActionButton onClick={onNext} icon={CheckCircle2}>Tiếp tục</ActionButton>}
    </div>
-  </article>
- );
+ </article>
+);
+}
+
+function LessonVocabularyPanel({ vocabulary }: { vocabulary: VocabEntryWithProgress[] }) {
+ return <VocabularyMiniList entries={vocabulary} />;
 }
 
 function AllGrammarWorkspace({ points, searchQuery, filter, onSearchChange, onFilterChange, onEdit, onAddPoint }: { points: GrammarPointWithProgress[]; lessons: GrammarLessonWithStats[]; searchQuery: string; filter: PointFilter; onSearchChange: (value: string) => void; onFilterChange: (value: PointFilter) => void; onEdit: (point: GrammarPointWithProgress) => void; onAddPoint: () => void }) {
@@ -991,9 +1721,9 @@ function PointDrawer({ point, lessons, onClose, onSave, onDelete }: { point: Gra
      </div>
     </div>
     <Field label="Bài">
-     <select value={draft.lesson_id || ""} onChange={(event) => setDraft({ ...draft, lesson_id: event.target.value || null })} className="h-11 rounded-2xl border-2 border-stone-200 bg-white px-3 text-sm font-bold text-stone-800">
+     <Select value={draft.lesson_id || ""} onChange={(event) => setDraft({ ...draft, lesson_id: event.target.value || null })} className="h-11 text-sm">
       {lessons.map((lesson) => <option key={lesson.id} value={lesson.id}>{lesson.title}</option>)}
-     </select>
+     </Select>
     </Field>
     <Field label="Tên ngữ pháp / Hán tự"><Input value={draft.title} onChange={(event) => setDraft({ ...draft, title: event.target.value, hanzi: event.target.value })} className="h-11 rounded-2xl border-2 border-stone-200 font-bold" /></Field>
     <Field label="Pinyin"><Input value={draft.pinyin || ""} onChange={(event) => setDraft({ ...draft, pinyin: event.target.value })} className="h-11 rounded-2xl border-2 border-stone-200 font-bold" /></Field>
@@ -1025,9 +1755,9 @@ function PointDrawer({ point, lessons, onClose, onSave, onDelete }: { point: Gra
      <div className="grid gap-3">
       {exerciseDrafts.map((exercise, index) => (
        <div key={`${exercise.id || "new"}-${index}`} className="rounded-2xl bg-stone-50 p-3">
-        <select value={exercise.exercise_type} onChange={(event) => setExerciseDrafts((current) => current.map((item, itemIndex) => itemIndex === index ? { ...item, exercise_type: event.target.value as GrammarExerciseType } : item))} className="mb-2 h-10 rounded-xl border-2 border-stone-200 bg-white px-2 text-sm font-bold">
+        <Select value={exercise.exercise_type} onChange={(event) => setExerciseDrafts((current) => current.map((item, itemIndex) => itemIndex === index ? { ...item, exercise_type: event.target.value as GrammarExerciseType } : item))} className="mb-2 h-10 rounded-xl text-sm">
          {Object.entries(exerciseLabels).map(([key, label]) => <option key={key} value={key}>{label}</option>)}
-        </select>
+        </Select>
         <Textarea value={exercise.prompt} onChange={(value) => setExerciseDrafts((current) => current.map((item, itemIndex) => itemIndex === index ? { ...item, prompt: value } : item))} rows={2} placeholder="Prompt bài tập..." />
         <Input value={exercise.answerText} onChange={(event) => setExerciseDrafts((current) => current.map((item, itemIndex) => itemIndex === index ? { ...item, answerText: event.target.value } : item))} placeholder="Đáp án đúng / đáp án mẫu" className="mt-2 h-10 rounded-xl border-2 border-stone-200 font-bold" />
         <Input value={exercise.explanation} onChange={(event) => setExerciseDrafts((current) => current.map((item, itemIndex) => itemIndex === index ? { ...item, explanation: event.target.value } : item))} placeholder="Giải thích sau khi check" className="mt-2 h-10 rounded-xl border-2 border-stone-200 font-bold" />
@@ -1117,11 +1847,48 @@ function evaluateExercise(exercise: DbGrammarExercise, answer: string, selectedC
  if (exercise.exercise_type === "multiple_choice" || content.choices?.length) {
   return selectedChoice?.toLowerCase() === String(exercise.answer?.choice || exercise.answer?.id || "").toLowerCase();
  }
- if (exercise.exercise_type === "translate_zh") return true;
+ if (exercise.exercise_type === "translate_zh") {
+  const normalized = normalize(answer);
+  const required = content.required_terms || [];
+  if (required.length) return required.every((term) => normalized.includes(normalize(term)));
+  const sample = String(exercise.answer?.text || content.sample_answer || "");
+  return sample ? normalize(sample) === normalized : Boolean(answer.trim());
+ }
+ if (exercise.exercise_type === "reorder_sentence") {
+  const sample = String(exercise.answer?.text || content.sample_answer || "");
+  return sample ? normalize(sample) === normalize(answer) : Boolean(answer.trim());
+ }
  const accepted = content.accepted_answers || [String(exercise.answer?.text || "")].filter(Boolean);
  if (!accepted.length) return true;
  const normalized = normalize(answer);
  return accepted.some((item) => normalize(item) === normalized);
+}
+
+function getCoachQuiz(point: GrammarPointWithProgress) {
+ const contentQuiz = point.content.quiz;
+ if (contentQuiz?.q && contentQuiz.choices?.length) {
+  const exercise = point.exercises.find((item) => item.exercise_type === "multiple_choice");
+  return {
+   prompt: contentQuiz.q,
+   choices: contentQuiz.choices,
+   answerIndex: Number.isFinite(contentQuiz.a) ? Number(contentQuiz.a) : 0,
+   exerciseId: exercise?.id,
+  };
+ }
+ const exercise = point.exercises.find((item) => item.exercise_type === "multiple_choice");
+ const content = (exercise?.content || {}) as GrammarExerciseContent;
+ const choices = content.choices?.map((choice) => choice.text) || [];
+ const answerText = typeof exercise?.answer?.text === "string" ? exercise.answer.text : "";
+ const answerIndex = Math.max(0, choices.findIndex((choice) => normalize(choice) === normalize(answerText)));
+ if (exercise && choices.length) {
+  return {
+   prompt: exercise.prompt,
+   choices,
+   answerIndex,
+   exerciseId: exercise.id,
+  };
+ }
+ return null;
 }
 
 function getAnswerText(exercise: DbGrammarExercise) {
@@ -1198,18 +1965,7 @@ function EmptyState({ title, description, action, compact }: { title: string; de
 }
 
 function Drawer({ title, children, onClose }: { title: string; children: React.ReactNode; onClose: () => void }) {
- return (
-  <div className="fixed inset-0 z-50 flex justify-end">
-   <div className="absolute inset-0 bg-stone-900/30" onClick={onClose} />
-   <aside className="relative h-full w-full max-w-2xl overflow-y-auto border-l-2 border-stone-200 bg-white p-5 shadow-2xl">
-    <div className="mb-5 flex items-center justify-between gap-3">
-     <h2 className="text-2xl font-black text-stone-900">{title}</h2>
-     <button type="button" onClick={onClose} className="flex h-10 w-10 items-center justify-center rounded-2xl border-2 border-stone-200 text-stone-600 hover:bg-stone-50"><X className="h-5 w-5" /></button>
-    </div>
-    {children}
-   </aside>
-  </div>
- );
+ return <LearningDrawer title={title} onClose={onClose}>{children}</LearningDrawer>;
 }
 
 function Field({ label, children }: { label: string; children: React.ReactNode }) {

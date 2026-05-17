@@ -7,7 +7,6 @@ import {
  BookOpen,
  Brain,
  Check,
- ChevronDown,
  ChevronRight,
  Edit3,
  Eye,
@@ -17,23 +16,29 @@ import {
  Keyboard,
  Layers3,
  Loader2,
+ Pause,
  PenLine,
  Play,
  Plus,
  RotateCcw,
  Search,
- Settings,
  Sparkles,
  Trash2,
  Upload,
  Volume2,
- X,
  XCircle,
  type LucideIcon,
 } from "lucide-react";
 import { toast } from "sonner";
 import { Input } from "@/components/ui/input";
+import { Select } from "@/components/ui/select";
+import { SegmentedControl } from "@/components/ui/segmented-control";
 import { CharacterWriterCard } from "@/features/dictionary/components/CharacterWriterCard";
+import {
+ LearningDrawer,
+ LessonSelectCard,
+ type LessonSelectOption,
+} from "@/features/learning/components";
 import {
  useVocabEntries,
  VocabSchemaMissingError,
@@ -57,6 +62,11 @@ type WordFilter =
  | "examples"
  | "missing";
 type ImportMode = "paste" | "manual";
+type FlashStatus = "new" | "known" | "hard" | "again";
+type FlashStatusFilter = "all" | FlashStatus;
+type FlashOrder = "lesson" | "random" | "hardFirst";
+type FlashFrontMode = "hanzi" | "meaning" | "pinyin";
+type AutoplayBehavior = "flipNext" | "frontOnly" | "speakFlipNext";
 
 type ImportedEntryDraft = {
  hanzi: string;
@@ -95,6 +105,47 @@ function getStatusFromLevel(level: number): VocabEntryWithProgress["status"] {
  if (level >= 4) return "mastered";
  if (level >= 2) return "learning";
  return "new";
+}
+
+function getFlashStatus(entry: VocabEntryWithProgress): FlashStatus {
+ const level = entry.proficiency_level || 0;
+ if (level >= 4) return "known";
+ if (entry.last_answered_at && level < 2) return "again";
+ if (level >= 2) return "hard";
+ return "new";
+}
+
+function getFlashLevel(entry: VocabEntryWithProgress) {
+ const metadata = entry.ai_analysis.source_metadata as
+  | { level?: string; hsk_level?: string }
+  | undefined;
+ return (
+  metadata?.level || metadata?.hsk_level || entry.ai_analysis.hsk_level || "A"
+ );
+}
+
+function getLessonNumber(entry: VocabEntryWithProgress) {
+ return (
+  entry.source.lessonNumber ||
+  entry.ai_analysis.source_metadata?.lesson_number ||
+  0
+ );
+}
+
+function getCompactNote(entry: VocabEntryWithProgress) {
+ return (
+  entry.ai_analysis.usage_note ||
+  entry.ai_analysis.cultural_note ||
+  entry.ai_analysis.mnemonic_story ||
+  entry.ai_analysis.examples?.[0]?.note ||
+  ""
+ );
+}
+
+function getFrontText(entry: VocabEntryWithProgress, mode: FlashFrontMode) {
+ if (mode === "meaning") return getMeaning(entry);
+ if (mode === "pinyin") return entry.pinyin;
+ return entry.hanzi;
 }
 
 function normalizeAnswer(value: string) {
@@ -371,6 +422,18 @@ export default function VocabularyPage() {
  const [searchQuery, setSearchQuery] = useState("");
  const [randomMode, setRandomMode] = useState(false);
  const [randomSeed, setRandomSeed] = useState(1);
+ const [fromLesson, setFromLesson] = useState(11);
+ const [toLesson, setToLesson] = useState(25);
+ const [flashStatusFilter, setFlashStatusFilter] =
+  useState<FlashStatusFilter>("all");
+ const [levelFilter, setLevelFilter] = useState("all");
+ const [flashOrder, setFlashOrder] = useState<FlashOrder>("lesson");
+ const [frontMode, setFrontMode] = useState<FlashFrontMode>("hanzi");
+ const [showExamples, setShowExamples] = useState(true);
+ const [autoplayEnabled, setAutoplayEnabled] = useState(false);
+ const [autoplayInterval, setAutoplayInterval] = useState(5);
+ const [autoplayBehavior, setAutoplayBehavior] =
+  useState<AutoplayBehavior>("flipNext");
  const [cardIndex, setCardIndex] = useState(0);
  const [revealed, setRevealed] = useState(false);
  const [guessInput, setGuessInput] = useState("");
@@ -407,6 +470,10 @@ export default function VocabularyPage() {
   [activeLesson?.entries],
  );
 
+ const pauseAutoplay = useCallback(() => {
+  setAutoplayEnabled(false);
+ }, []);
+
  useEffect(() => {
   if (!activeLessonId && lessons[0]) setActiveLessonId(lessons[0].id);
  }, [activeLessonId, lessons]);
@@ -424,29 +491,96 @@ export default function VocabularyPage() {
   });
  }, [activeLessonEntries, activeTab, course?.entries, searchQuery, wordFilter]);
 
+ const rangeEntries = useMemo(() => {
+  const low = Math.min(fromLesson, toLesson);
+  const high = Math.max(fromLesson, toLesson);
+  return (course?.entries || []).filter((entry) => {
+   const lessonNumber = getLessonNumber(entry);
+   return lessonNumber >= low && lessonNumber <= high;
+  });
+ }, [course?.entries, fromLesson, toLesson]);
+
+ const flashLevels = useMemo(
+  () =>
+   Array.from(new Set(rangeEntries.map(getFlashLevel)))
+    .filter(Boolean)
+    .sort((a, b) => a.localeCompare(b, "vi")),
+  [rangeEntries],
+ );
+
+ const filteredFlashEntries = useMemo(() => {
+  const filtered = rangeEntries
+   .filter((entry) => matchesEntry(entry, searchQuery))
+   .filter((entry) =>
+    flashStatusFilter === "all"
+     ? true
+     : getFlashStatus(entry) === flashStatusFilter,
+   )
+   .filter((entry) =>
+    levelFilter === "all" ? true : getFlashLevel(entry) === levelFilter,
+   );
+
+  if (flashOrder === "random") {
+   return [...filtered].sort(
+    (a, b) =>
+     hashForStudyOrder(`${a.id}:${randomSeed}`) -
+     hashForStudyOrder(`${b.id}:${randomSeed}`),
+   );
+  }
+  if (flashOrder === "hardFirst") {
+   const rank: Record<FlashStatus, number> = {
+    again: 0,
+    hard: 1,
+    new: 2,
+    known: 3,
+   };
+   return [...filtered].sort(
+    (a, b) =>
+     rank[getFlashStatus(a)] - rank[getFlashStatus(b)] ||
+     getLessonNumber(a) - getLessonNumber(b) ||
+     a.row_number - b.row_number,
+   );
+  }
+  return [...filtered].sort(
+   (a, b) =>
+    getLessonNumber(a) - getLessonNumber(b) || a.row_number - b.row_number,
+  );
+ }, [
+  flashOrder,
+  flashStatusFilter,
+  levelFilter,
+  randomSeed,
+  rangeEntries,
+  searchQuery,
+ ]);
+
+ const flashStats = useMemo(() => {
+  const count = (status: FlashStatus) =>
+   rangeEntries.filter((entry) => getFlashStatus(entry) === status).length;
+  return {
+   range: rangeEntries.length,
+   filtered: filteredFlashEntries.length,
+   known: count("known"),
+   hard: count("hard"),
+   again: count("again"),
+  };
+ }, [filteredFlashEntries.length, rangeEntries]);
+
  const studyQueue = useMemo(() => {
   const mistakeEntries = mistakeQueue
-   .map((id) => activeLessonEntries.find((entry) => entry.id === id))
+   .map((id) => filteredFlashEntries.find((entry) => entry.id === id))
    .filter((entry): entry is VocabEntryWithProgress => Boolean(entry));
   const mistakeIds = new Set(mistakeEntries.map((entry) => entry.id));
-  const rest = activeLessonEntries.filter((entry) => !mistakeIds.has(entry.id));
-  const orderedRest = randomMode
-   ? [...rest].sort(
-      (a, b) =>
-       hashForStudyOrder(`${a.id}:${randomSeed}`) -
-       hashForStudyOrder(`${b.id}:${randomSeed}`),
-     )
-   : [...rest].sort((a, b) => {
-      const rank = { new: 0, learning: 1, mastered: 2 };
-      return rank[a.status] - rank[b.status] || a.row_number - b.row_number;
-     });
-  return [...mistakeEntries, ...orderedRest];
- }, [activeLessonEntries, mistakeQueue, randomMode, randomSeed]);
+  const rest = filteredFlashEntries.filter(
+   (entry) => !mistakeIds.has(entry.id),
+  );
+  return [...mistakeEntries, ...rest];
+ }, [filteredFlashEntries, mistakeQueue]);
 
  const activeEntry = studyQueue[cardIndex] || studyQueue[0];
  const quizOptions = useMemo(() => {
   if (!activeEntry) return [];
-  const sameCategory = activeLessonEntries.filter(
+  const sameCategory = filteredFlashEntries.filter(
    (entry) =>
     entry.id !== activeEntry.id &&
     entry.category &&
@@ -455,7 +589,7 @@ export default function VocabularyPage() {
   const fallback = (course?.entries || []).filter(
    (entry) => entry.id !== activeEntry.id,
   );
-  const unique = [...sameCategory, ...activeLessonEntries, ...fallback]
+  const unique = [...sameCategory, ...filteredFlashEntries, ...fallback]
    .filter((entry) => entry.id !== activeEntry.id)
    .filter(
     (entry, index, list) =>
@@ -472,7 +606,7 @@ export default function VocabularyPage() {
     hashForStudyOrder(`${a.id}:${activeEntry.id}:option`) -
     hashForStudyOrder(`${b.id}:${activeEntry.id}:option`),
   );
- }, [activeEntry, activeLessonEntries, course?.entries]);
+ }, [activeEntry, course?.entries, filteredFlashEntries]);
 
  const resetCardState = useCallback(() => {
   setRevealed(false);
@@ -487,11 +621,28 @@ export default function VocabularyPage() {
  useEffect(() => {
   setCardIndex(0);
   resetCardState();
- }, [activeLesson?.id, mode, randomMode, randomSeed, resetCardState]);
+ }, [
+  activeLesson?.id,
+  flashOrder,
+  flashStatusFilter,
+  frontMode,
+  levelFilter,
+  mode,
+  randomMode,
+  randomSeed,
+  resetCardState,
+  searchQuery,
+  fromLesson,
+  toLesson,
+ ]);
 
  useEffect(() => {
   resetCardState();
  }, [activeEntry?.id, resetCardState]);
+
+ useEffect(() => {
+  if (cardIndex >= studyQueue.length) setCardIndex(0);
+ }, [cardIndex, studyQueue.length]);
 
  const updateProgress = useCallback(
   async (entry: VocabEntryWithProgress, nextLevel: number) => {
@@ -551,10 +702,50 @@ export default function VocabularyPage() {
   window.speechSynthesis.speak(utterance);
  }, []);
 
+ useEffect(() => {
+  const handleVisibilityChange = () => {
+   if (document.hidden) setAutoplayEnabled(false);
+  };
+  document.addEventListener("visibilitychange", handleVisibilityChange);
+  return () =>
+   document.removeEventListener("visibilitychange", handleVisibilityChange);
+ }, []);
+
+ useEffect(() => {
+  if (!autoplayEnabled || mode !== "flashcard" || !activeEntry) return;
+  if (typeof window === "undefined" || document.hidden) return;
+  const timer = window.setInterval(() => {
+   if (document.hidden) {
+    setAutoplayEnabled(false);
+    return;
+   }
+   if (autoplayBehavior === "frontOnly") {
+    goNextCard();
+    return;
+   }
+   if (!revealed) {
+    if (autoplayBehavior === "speakFlipNext") speakEntry(activeEntry);
+    setRevealed(true);
+    return;
+   }
+   goNextCard();
+  }, autoplayInterval * 1000);
+  return () => window.clearInterval(timer);
+ }, [
+  activeEntry,
+  autoplayBehavior,
+  autoplayEnabled,
+  autoplayInterval,
+  goNextCard,
+  mode,
+  revealed,
+  speakEntry,
+ ]);
+
  const rememberEntry = useCallback(
   async (entry = activeEntry) => {
    if (!entry) return;
-   const nextLevel = Math.min((entry.proficiency_level || 0) + 1, 5);
+   const nextLevel = 5;
    setMistakeQueue((queue) => queue.filter((id) => id !== entry.id));
    setSessionStats((stats) => ({
     ...stats,
@@ -583,13 +774,35 @@ export default function VocabularyPage() {
    goNextCard();
    const currentLevel = entry.proficiency_level || 0;
    const nextLevel =
-    kind === "again"
-     ? Math.max(currentLevel - 1, 0)
-     : Math.min(Math.max(currentLevel, 2), 3);
+    kind === "again" ? 0 : Math.min(Math.max(currentLevel, 2), 3);
    await updateProgress(entry, nextLevel);
   },
   [activeEntry, goNextCard, updateProgress],
  );
+
+ const resetFilteredProgress = useCallback(async () => {
+  if (!filteredFlashEntries.length) return;
+  const confirmed = window.confirm(
+   `Reset tiến độ ${filteredFlashEntries.length} thẻ đang lọc?`,
+  );
+  if (!confirmed) return;
+  pauseAutoplay();
+  const results = await Promise.allSettled(
+   filteredFlashEntries.map((entry) =>
+    fetch(`/api/vocab/entries/${entry.id}/progress`, {
+     method: "PATCH",
+     headers: { "Content-Type": "application/json" },
+     body: JSON.stringify({ reset: true }),
+    }),
+   ),
+  );
+  const failed = results.filter(
+   (result) => result.status === "rejected",
+  ).length;
+  if (failed) toast.error(`${failed} thẻ chưa reset được`);
+  else toast.success("Đã reset tiến độ bộ lọc");
+  await queryClient.invalidateQueries({ queryKey: ["vocab-entries"] });
+ }, [filteredFlashEntries, pauseAutoplay, queryClient]);
 
  const checkGuess = useCallback(() => {
   if (!activeEntry) return;
@@ -888,7 +1101,12 @@ export default function VocabularyPage() {
  useEffect(() => {
   const handleKeyDown = (event: KeyboardEvent) => {
    const target = event.target as HTMLElement | null;
-   if (target?.tagName === "INPUT" || target?.tagName === "TEXTAREA") return;
+   if (
+    target?.tagName === "INPUT" ||
+    target?.tagName === "TEXTAREA" ||
+    target?.tagName === "SELECT"
+   )
+    return;
    if (event.key === " ") {
     event.preventDefault();
     if (mode === "flashcard") setRevealed((value) => !value);
@@ -897,7 +1115,10 @@ export default function VocabularyPage() {
     if (mode === "guess" && guessState === "idle") checkGuess();
     else if ((mode === "quiz" || mode === "reverse") && answerChecked)
      continueAfterQuiz();
-    else if (mode === "flashcard") revealed ? goNextCard : setRevealed(true);
+    else if (mode === "flashcard") {
+     if (revealed) goNextCard();
+     else setRevealed(true);
+    }
    } else if (event.key === "1") {
     event.preventDefault();
     void missEntry("again");
@@ -907,10 +1128,10 @@ export default function VocabularyPage() {
    } else if (event.key === "3") {
     event.preventDefault();
     void rememberEntry();
-   } else if (event.key === "ArrowRight" || event.key.toLowerCase() === "j") {
+   } else if (event.key === "ArrowRight") {
     event.preventDefault();
     goNextCard();
-   } else if (event.key === "ArrowLeft" || event.key.toLowerCase() === "k") {
+   } else if (event.key === "ArrowLeft") {
     event.preventDefault();
     goPreviousCard();
    } else if (
@@ -925,7 +1146,15 @@ export default function VocabularyPage() {
     speakEntry(activeEntry);
    } else if (event.key.toLowerCase() === "h") {
     event.preventDefault();
-    setHintLevel((level) => Math.min(level + 1, 4));
+    if (mode === "guess") setHintLevel((level) => Math.min(level + 1, 4));
+    else void missEntry("review");
+   } else if (event.key.toLowerCase() === "k") {
+    event.preventDefault();
+    void rememberEntry();
+   } else if (event.key.toLowerCase() === "a") {
+    if (mode === "quiz" || mode === "reverse") return;
+    event.preventDefault();
+    void missEntry("again");
    } else if (event.key === "?") {
     event.preventDefault();
     setShowShortcuts((value) => !value);
@@ -976,18 +1205,35 @@ export default function VocabularyPage() {
     activeTab={activeTab}
     onTabChange={setActiveTab}
     mode={mode}
-    onModeChange={setMode}
+    onModeChange={(value) => {
+     setMode(value);
+     pauseAutoplay();
+    }}
     randomMode={randomMode}
     onRandomToggle={() => {
-     setRandomMode((value) => !value);
+     setRandomMode((value) => {
+      const next = !value;
+      setFlashOrder(next ? "random" : "lesson");
+      return next;
+     });
      setRandomSeed(Date.now());
+     pauseAutoplay();
     }}
     onResetImport={resetImport}
     resetting={resetting}
     onShowShortcuts={() => setShowShortcuts((value) => !value)}
     lessons={lessons}
     activeLesson={activeLesson}
-    onLessonChange={setActiveLessonId}
+    onLessonChange={(lessonId) => {
+     setActiveLessonId(lessonId);
+     const nextLesson = lessons.find((lesson) => lesson.id === lessonId);
+     const lessonNumber = nextLesson?.lesson_number;
+     if (lessonNumber) {
+      setFromLesson(lessonNumber);
+      setToLesson(lessonNumber);
+     }
+     pauseAutoplay();
+    }}
    />
 
    {isLoading ? (
@@ -1010,62 +1256,122 @@ export default function VocabularyPage() {
    ) : (
     <>
      <div className="min-w-0">
-       {activeTab === "study" && activeLesson && (
-        <StudyWorkspace
-         lesson={activeLesson}
-         mode={mode}
-         activeEntry={activeEntry}
-         total={studyQueue.length}
-         cardIndex={cardIndex}
-         revealed={revealed}
-         guessInput={guessInput}
-         guessState={guessState}
-         hintLevel={hintLevel}
-         quizOptions={quizOptions}
-         selectedAnswerId={selectedAnswerId}
-         answerChecked={answerChecked}
-         writeCharIndex={writeCharIndex}
-         randomMode={randomMode}
-         sessionStats={sessionStats}
-         onReveal={() => setRevealed((value) => !value)}
-         onGuessInputChange={setGuessInput}
-         onCheckGuess={checkGuess}
-         onHint={() => setHintLevel((level) => Math.min(level + 1, 4))}
-         onChooseAnswer={chooseQuizAnswer}
-         onContinueQuiz={continueAfterQuiz}
-         onWriteCharIndexChange={setWriteCharIndex}
-         onAgain={() => void missEntry("again")}
-         onReview={() => void missEntry("review")}
-         onRemember={() => void rememberEntry()}
-         onPrevious={goPreviousCard}
-         onSpeak={() => speakEntry(activeEntry)}
-         onEdit={() => activeEntry && setEditingEntry(activeEntry)}
-        />
-       )}
+      {activeTab === "study" && activeLesson && (
+       <StudyWorkspace
+        lesson={activeLesson}
+        mode={mode}
+        activeEntry={activeEntry}
+        total={studyQueue.length}
+        cardIndex={cardIndex}
+        revealed={revealed}
+        guessInput={guessInput}
+        guessState={guessState}
+        hintLevel={hintLevel}
+        quizOptions={quizOptions}
+        selectedAnswerId={selectedAnswerId}
+        answerChecked={answerChecked}
+        writeCharIndex={writeCharIndex}
+        randomMode={randomMode}
+        sessionStats={sessionStats}
+        entries={studyQueue}
+        rangeEntries={rangeEntries}
+        filteredEntries={filteredFlashEntries}
+        flashStats={flashStats}
+        lessons={lessons}
+        fromLesson={fromLesson}
+        toLesson={toLesson}
+        flashLevels={flashLevels}
+        flashStatusFilter={flashStatusFilter}
+        levelFilter={levelFilter}
+        flashOrder={flashOrder}
+        frontMode={frontMode}
+        showExamples={showExamples}
+        autoplayEnabled={autoplayEnabled}
+        autoplayInterval={autoplayInterval}
+        autoplayBehavior={autoplayBehavior}
+        onFromLessonChange={(value) => {
+         setFromLesson(value);
+         pauseAutoplay();
+        }}
+        onToLessonChange={(value) => {
+         setToLesson(value);
+         pauseAutoplay();
+        }}
+        onSearchChange={(value) => {
+         setSearchQuery(value);
+         pauseAutoplay();
+        }}
+        searchQuery={searchQuery}
+        onFlashStatusFilterChange={(value) => {
+         setFlashStatusFilter(value);
+         pauseAutoplay();
+        }}
+        onLevelFilterChange={(value) => {
+         setLevelFilter(value);
+         pauseAutoplay();
+        }}
+        onFlashOrderChange={(value) => {
+         setFlashOrder(value);
+         setRandomMode(value === "random");
+         if (value === "random") setRandomSeed(Date.now());
+         pauseAutoplay();
+        }}
+        onFrontModeChange={(value) => {
+         setFrontMode(value);
+         pauseAutoplay();
+        }}
+        onShowExamplesChange={(value) => {
+         setShowExamples(value);
+         pauseAutoplay();
+        }}
+        onAutoplayEnabledChange={setAutoplayEnabled}
+        onAutoplayIntervalChange={setAutoplayInterval}
+        onAutoplayBehaviorChange={setAutoplayBehavior}
+        onResetFilteredProgress={resetFilteredProgress}
+        onSelectCard={(index) => {
+         setCardIndex(index);
+         resetCardState();
+         pauseAutoplay();
+        }}
+        onReveal={() => setRevealed((value) => !value)}
+        onGuessInputChange={setGuessInput}
+        onCheckGuess={checkGuess}
+        onHint={() => setHintLevel((level) => Math.min(level + 1, 4))}
+        onChooseAnswer={chooseQuizAnswer}
+        onContinueQuiz={continueAfterQuiz}
+        onWriteCharIndexChange={setWriteCharIndex}
+        onAgain={() => void missEntry("again")}
+        onReview={() => void missEntry("review")}
+        onRemember={() => void rememberEntry()}
+        onPrevious={goPreviousCard}
+        onSpeak={() => speakEntry(activeEntry)}
+        onEdit={() => activeEntry && setEditingEntry(activeEntry)}
+       />
+      )}
 
-       {activeTab === "all" && (
-        <AllWordsWorkspace
-         entries={visibleEntries}
-         lessons={lessons}
-         searchQuery={searchQuery}
-         wordFilter={wordFilter}
-         onSearchChange={setSearchQuery}
-         onFilterChange={setWordFilter}
-         onEdit={setEditingEntry}
-         onAddEntry={() => createEntryDraft()}
-        />
-       )}
+      {activeTab === "all" && (
+       <AllWordsWorkspace
+        entries={visibleEntries}
+        lessons={lessons}
+        searchQuery={searchQuery}
+        wordFilter={wordFilter}
+        onSearchChange={setSearchQuery}
+        onFilterChange={setWordFilter}
+        onEdit={setEditingEntry}
+        onAddEntry={() => createEntryDraft()}
+       />
+      )}
 
-       {activeTab === "edit" && (
-        <LessonEditWorkspace
-         lessons={lessons}
-         onEditLesson={setEditingLesson}
-         onEditEntry={setEditingEntry}
-         onAddLesson={createLessonDraft}
-         onAddEntry={createEntryDraft}
-         onImportLesson={setImportingLesson}
-        />
-       )}
+      {activeTab === "edit" && (
+       <LessonEditWorkspace
+        lessons={lessons}
+        onEditLesson={setEditingLesson}
+        onEditEntry={setEditingEntry}
+        onAddLesson={createLessonDraft}
+        onAddEntry={createEntryDraft}
+        onImportLesson={setImportingLesson}
+       />
+      )}
      </div>
     </>
    )}
@@ -1136,19 +1442,37 @@ function LearningHeader({
  activeLesson: VocabLessonWithStats | null;
  onLessonChange: (lessonId: string) => void;
 }) {
+ const isFlashcardFocus = activeTab === "study" && mode === "flashcard";
  return (
-  <header className="rounded-[24px] border-2 border-stone-200 bg-white p-3 shadow-theme-sm md:p-4">
-   <div className="grid gap-3 xl:grid-cols-[minmax(0,1fr)_minmax(320px,42%)] xl:items-start">
+  <header className="rounded-[24px] border-2 border-stone-200 bg-white p-3 shadow-theme-sm">
+   <div
+    className={cn(
+     "grid gap-3 xl:items-start",
+     isFlashcardFocus
+      ? "xl:grid-cols-[minmax(0,1fr)_minmax(280px,360px)]"
+      : "xl:grid-cols-[minmax(0,1fr)_minmax(320px,42%)]",
+    )}
+   >
     <div className="min-w-0">
-     <h1 className="text-3xl font-black tracking-normal text-stone-900 md:text-4xl">
+     <h1
+      className={cn(
+       "font-black tracking-normal text-stone-900",
+       isFlashcardFocus ? "text-2xl md:text-3xl" : "text-3xl md:text-4xl",
+      )}
+     >
       Từ vựng Hán ngữ
      </h1>
-     <p className="mt-1 max-w-2xl text-sm font-bold leading-6 text-stone-500 md:text-base">
+     <p
+      className={cn(
+       "mt-1 max-w-2xl text-sm font-bold leading-6 text-stone-500",
+       isFlashcardFocus && "hidden md:block",
+      )}
+     >
       Học theo bài, ôn bằng flashcard, trắc nghiệm và chỉnh dữ liệu ngay khi
       cần.
      </p>
      <div className="mt-2 flex flex-wrap items-center gap-2">
-      <LearningSegmentedControl
+      <SegmentedControl
        value={activeTab}
        items={[
         { key: "study", label: "Học", icon: BookOpen },
@@ -1177,17 +1501,25 @@ function LearningHeader({
     </div>
 
     {activeTab === "study" && lessons.length > 0 ? (
-     <LessonSelectPanel
-      lessons={lessons}
-      activeLessonId={activeLesson?.id || lessons[0]?.id || ""}
-      onLessonChange={onLessonChange}
-     />
+     isFlashcardFocus ? (
+      <CompactLessonSelect
+       lessons={lessons}
+       activeLessonId={activeLesson?.id || lessons[0]?.id || ""}
+       onLessonChange={onLessonChange}
+      />
+     ) : (
+      <LessonSelectPanel
+       lessons={lessons}
+       activeLessonId={activeLesson?.id || lessons[0]?.id || ""}
+       onLessonChange={onLessonChange}
+      />
+     )
     ) : null}
    </div>
 
    {activeTab === "study" && (
     <div className="mt-3 flex flex-wrap items-center gap-2">
-     <LearningSegmentedControl
+     <SegmentedControl
       value={mode}
       items={studyModes.map((item) => ({
        key: item.key,
@@ -1218,87 +1550,70 @@ function LessonSelectPanel({
 }) {
  const activeLesson =
   lessons.find((lesson) => lesson.id === activeLessonId) || lessons[0] || null;
+ const options: LessonSelectOption[] = lessons.map((lesson) => ({
+  id: lesson.id,
+  label: `${lesson.title.replace(/^Tổng quan & Phân nhóm từ vựng\s*/i, "")} · Đã học ${lesson.studied}/${lesson.entries.length}`,
+  progressLabel: `Tiến độ ${lesson.progress}%`,
+  countLabel: `Đã học ${lesson.studied}/${lesson.entries.length}`,
+  categoryLabel:
+   lesson.categories
+    .slice(0, 2)
+    .map((item) => item.name)
+    .join(", ") || "Bổ sung",
+ }));
 
  return (
-  <section className="rounded-[20px] border-2 border-blue-300 bg-blue-50/40 p-3 shadow-theme-sm">
-   <div className="flex items-center justify-between gap-3">
-    <div className="min-w-0">
-     <p className="text-xs font-black uppercase tracking-[0.18em] text-blue-700">
-      Bài đang học
-     </p>
-     <p className="mt-1 truncate text-sm font-bold text-stone-500">
-      Chuyển bài nhanh, giữ màn học rộng.
-     </p>
-    </div>
+  <LessonSelectCard
+   countLabel={`${lessons.length} bài`}
+   value={activeLessonId}
+   options={options}
+   onChange={onLessonChange}
+   footer={activeLesson ? undefined : null}
+  />
+ );
+}
+
+function CompactLessonSelect({
+ lessons,
+ activeLessonId,
+ onLessonChange,
+}: {
+ lessons: VocabLessonWithStats[];
+ activeLessonId: string;
+ onLessonChange: (lessonId: string) => void;
+}) {
+ const activeLesson =
+  lessons.find((lesson) => lesson.id === activeLessonId) || lessons[0] || null;
+ return (
+  <div className="rounded-[20px] border-2 border-blue-200 bg-blue-50/60 p-3 shadow-theme-sm">
+   <div className="flex items-center justify-between gap-2">
+    <p className="text-[11px] font-black uppercase tracking-[0.18em] text-blue-700">
+     Bài đang học
+    </p>
     <span className="rounded-full bg-white px-3 py-1 text-xs font-black text-stone-600 shadow-theme-sm">
      {lessons.length} bài
     </span>
    </div>
-
-   <div className="relative mt-3">
-    <select
-     value={activeLessonId}
-     onChange={(event) => onLessonChange(event.target.value)}
-     className="h-12 w-full appearance-none rounded-2xl border-2 border-stone-200 bg-white px-4 pr-12 text-sm font-black text-stone-900 shadow-theme-sm outline-none transition focus:border-blue-400 md:text-base"
-    >
-     {lessons.map((lesson) => (
-      <option key={lesson.id} value={lesson.id}>
-       {lesson.title.replace(/^Tổng quan & Phân nhóm từ vựng\s*/i, "")} · Đã học {lesson.studied}/{lesson.entries.length}
-      </option>
-     ))}
-    </select>
-    <ChevronDown className="pointer-events-none absolute right-4 top-1/2 h-5 w-5 -translate-y-1/2 text-stone-500" />
-   </div>
-
-   {activeLesson ? (
-    <div className="mt-3 flex flex-wrap items-center gap-2 text-xs font-black text-stone-600">
-     <span className="rounded-full bg-white px-3 py-1.5 shadow-theme-sm">
-      Tiến độ {activeLesson.progress}%
-     </span>
-     <span className="rounded-full bg-white px-3 py-1.5 shadow-theme-sm">
-      Đã học {activeLesson.studied}/{activeLesson.entries.length}
-     </span>
-     <span className="min-w-0 max-w-full truncate rounded-full bg-white px-3 py-1.5 shadow-theme-sm">
-      {activeLesson.categories.slice(0, 2).map((item) => item.name).join(", ") ||
-       "Bổ sung"}
-     </span>
-    </div>
-   ) : null}
-  </section>
- );
-}
-
-function LearningSegmentedControl({
- value,
- items,
- onChange,
-}: {
- value: string;
- items: { key: string; label: string; icon: typeof Brain }[];
- onChange: (key: string) => void;
-}) {
- return (
-  <div className="flex max-w-full overflow-x-auto rounded-2xl bg-stone-100 p-1">
-   {items.map((item) => {
-    const Icon = item.icon;
-    const active = value === item.key;
-    return (
-     <button
-      key={item.key}
-      type="button"
-      onClick={() => onChange(item.key)}
-      className={cn(
-       "flex h-10 shrink-0 items-center gap-2 rounded-xl px-3 text-sm font-black transition",
-       active
-        ? "bg-red-500 text-white shadow-theme-sm"
-        : "text-stone-600 hover:bg-white",
-      )}
-     >
-      <Icon className="h-4 w-4" />
-      {item.label}
-     </button>
-    );
-   })}
+   <Select
+    value={activeLessonId}
+    onChange={(event) => onLessonChange(event.target.value)}
+    className="mt-2 h-11"
+   >
+    {lessons.map((lesson) => (
+     <option key={lesson.id} value={lesson.id}>
+      {lesson.title.replace(/^Tổng quan & Phân nhóm từ vựng\s*/i, "")} · Đã học{" "}
+      {lesson.studied}/{lesson.entries.length}
+     </option>
+    ))}
+   </Select>
+   {activeLesson && (
+    <p className="mt-2 truncate text-xs font-bold text-stone-500">
+     {activeLesson.categories
+      .slice(0, 2)
+      .map((item) => item.name)
+      .join(", ") || "Bổ sung"}
+    </p>
+   )}
   </div>
  );
 }
@@ -1368,6 +1683,28 @@ function StudyWorkspace(props: {
  lesson: VocabLessonWithStats;
  mode: StudyMode;
  activeEntry?: VocabEntryWithProgress;
+ entries: VocabEntryWithProgress[];
+ rangeEntries: VocabEntryWithProgress[];
+ filteredEntries: VocabEntryWithProgress[];
+ flashStats: {
+  range: number;
+  filtered: number;
+  known: number;
+  hard: number;
+  again: number;
+ };
+ lessons: VocabLessonWithStats[];
+ fromLesson: number;
+ toLesson: number;
+ flashLevels: string[];
+ flashStatusFilter: FlashStatusFilter;
+ levelFilter: string;
+ flashOrder: FlashOrder;
+ frontMode: FlashFrontMode;
+ showExamples: boolean;
+ autoplayEnabled: boolean;
+ autoplayInterval: number;
+ autoplayBehavior: AutoplayBehavior;
  total: number;
  cardIndex: number;
  revealed: boolean;
@@ -1380,6 +1717,20 @@ function StudyWorkspace(props: {
  writeCharIndex: number;
  randomMode: boolean;
  sessionStats: { seen: number; remembered: number; missed: number };
+ searchQuery: string;
+ onFromLessonChange: (value: number) => void;
+ onToLessonChange: (value: number) => void;
+ onSearchChange: (value: string) => void;
+ onFlashStatusFilterChange: (value: FlashStatusFilter) => void;
+ onLevelFilterChange: (value: string) => void;
+ onFlashOrderChange: (value: FlashOrder) => void;
+ onFrontModeChange: (value: FlashFrontMode) => void;
+ onShowExamplesChange: (value: boolean) => void;
+ onAutoplayEnabledChange: (value: boolean) => void;
+ onAutoplayIntervalChange: (value: number) => void;
+ onAutoplayBehaviorChange: (value: AutoplayBehavior) => void;
+ onResetFilteredProgress: () => void;
+ onSelectCard: (index: number) => void;
  onReveal: () => void;
  onGuessInputChange: (value: string) => void;
  onCheckGuess: () => void;
@@ -1394,58 +1745,95 @@ function StudyWorkspace(props: {
  onSpeak: () => void;
  onEdit: () => void;
 }) {
- const { lesson, activeEntry } = props;
+ const { activeEntry } = props;
+ const lowLesson = Math.min(props.fromLesson, props.toLesson);
+ const highLesson = Math.max(props.fromLesson, props.toLesson);
+ const rangeTitle =
+  lowLesson === highLesson
+   ? `Bài ${lowLesson}`
+   : `Bài ${lowLesson}-${highLesson}`;
+ const rangeCategories = Array.from(
+  new Set(props.rangeEntries.map((entry) => entry.category).filter(Boolean)),
+ )
+  .slice(0, 3)
+  .join(", ");
+ const rangeFresh = props.rangeEntries.filter(
+  (entry) => getFlashStatus(entry) === "new",
+ ).length;
+ if (props.mode === "flashcard") {
+  return (
+   <FlashcardFocusWorkspace
+    {...props}
+    rangeTitle={rangeTitle}
+    rangeCategories={rangeCategories}
+    rangeFresh={rangeFresh}
+   />
+  );
+ }
  return (
-  <section className="rounded-[24px] border-2 border-stone-200 bg-white p-4 shadow-theme-md md:p-5">
+  <section className="rounded-[24px] border-2 border-stone-200 bg-white p-3 shadow-theme-md md:p-5">
    <div className="flex flex-col gap-3 xl:flex-row xl:items-start xl:justify-between">
     <div>
      <p className="text-sm font-black uppercase tracking-wide text-red-500">
-      {lesson.title}
+      {rangeTitle}
      </p>
      <h2 className="mt-1 text-2xl font-black text-stone-900 md:text-3xl">
-      {lesson.title.replace(/^Tổng quan & Phân nhóm từ vựng\s*/i, "")}
+      {rangeTitle}
      </h2>
      <p className="mt-2 text-base font-bold text-stone-500">
-      {lesson.entries.length} từ trong nhóm này ·{" "}
-      {lesson.categories
-       .slice(0, 2)
-       .map((item) => item.name)
-       .join(", ")}
+      {props.rangeEntries.length} từ trong bộ lọc bài
+      {rangeCategories ? ` · ${rangeCategories}` : ""}
      </p>
     </div>
     <div className="grid grid-cols-3 gap-2">
-     <StatBox value={lesson.fresh} label="Chưa học" tone="yellow" />
-     <StatBox value={lesson.learning} label="Đang ôn" tone="blue" />
-     <StatBox value={lesson.mastered} label="Thành thạo" tone="green" />
+     <StatBox value={rangeFresh} label="Chưa học" tone="yellow" />
+     <StatBox
+      value={props.flashStats.hard + props.flashStats.again}
+      label="Đang ôn"
+      tone="blue"
+     />
+     <StatBox value={props.flashStats.known} label="Thành thạo" tone="green" />
     </div>
    </div>
 
    <StudyProgress
-    title={lesson.title.replace(/^Tổng quan & Phân nhóm từ vựng\s*/i, "")}
+    title={rangeTitle}
     current={props.total ? props.cardIndex + 1 : 0}
     total={props.total}
     stats={props.sessionStats}
-    studied={lesson.studied}
+    studied={
+     props.rangeEntries.filter(
+      (entry) => entry.last_answered_at || entry.proficiency_level > 0,
+     ).length
+    }
     randomMode={props.randomMode}
    />
 
-   <StudyCard>
-    {!activeEntry ? (
-     <EmptyState
-      title="Không có từ trong bài"
-      description="Chọn bài khác hoặc import lại docs."
-      compact
+   <div className="mt-4 grid gap-4 xl:grid-cols-[320px_minmax(0,1fr)]">
+    <FlashFilterPanel {...props} />
+    <StudyCard>
+     {!activeEntry ? (
+      <EmptyState
+       title="Không có từ trong bộ lọc"
+       description="Đổi khoảng bài, trạng thái hoặc search để tiếp tục học."
+       compact
+      />
+     ) : props.mode === "guess" ? (
+      <GuessMode {...props} activeEntry={activeEntry} />
+     ) : props.mode === "write" ? (
+      <WriteMode {...props} activeEntry={activeEntry} />
+     ) : props.mode === "quiz" || props.mode === "reverse" ? (
+      <QuizMode {...props} activeEntry={activeEntry} mode={props.mode} />
+     ) : (
+      <FlashcardMode {...props} activeEntry={activeEntry} />
+     )}
+     <QuickWordChips
+      entries={props.entries}
+      activeEntryId={activeEntry?.id}
+      onSelect={props.onSelectCard}
      />
-    ) : props.mode === "guess" ? (
-     <GuessMode {...props} activeEntry={activeEntry} />
-    ) : props.mode === "write" ? (
-     <WriteMode {...props} activeEntry={activeEntry} />
-    ) : props.mode === "quiz" || props.mode === "reverse" ? (
-     <QuizMode {...props} activeEntry={activeEntry} mode={props.mode} />
-    ) : (
-     <FlashcardMode {...props} activeEntry={activeEntry} />
-    )}
-   </StudyCard>
+    </StudyCard>
+   </div>
   </section>
  );
 }
@@ -1495,9 +1883,455 @@ function StudyProgress({
  );
 }
 
+function FlashcardFocusWorkspace(
+ props: Parameters<typeof StudyWorkspace>[0] & {
+  rangeTitle: string;
+  rangeCategories: string;
+  rangeFresh: number;
+ },
+) {
+ const [filterOpen, setFilterOpen] = useState(false);
+ const [listOpen, setListOpen] = useState(false);
+ const studied = props.rangeEntries.filter(
+  (entry) => entry.last_answered_at || entry.proficiency_level > 0,
+ ).length;
+ const progress = props.total
+  ? Math.min(100, Math.round((studied / props.total) * 100))
+  : 0;
+ const activeEntry = props.activeEntry;
+
+ return (
+  <section className="rounded-[24px] border-2 border-stone-200 bg-white p-3 shadow-theme-md md:p-4">
+   <div className="flex flex-wrap items-center justify-between gap-2 rounded-[20px] border-2 border-stone-100 bg-stone-50 px-3 py-2">
+    <div className="flex min-w-0 flex-wrap items-center gap-2">
+     <p className="rounded-full bg-red-50 px-3 py-1 text-xs font-black uppercase tracking-wide text-red-500">
+      {props.rangeTitle}
+     </p>
+     <p className="rounded-full bg-white px-3 py-1 text-xs font-black text-stone-600 shadow-theme-sm">
+      {props.total ? props.cardIndex + 1 : 0}/{props.total} thẻ
+     </p>
+     <p className="rounded-full bg-white px-3 py-1 text-xs font-black text-stone-600 shadow-theme-sm">
+      Đã học {studied}/{props.total} · {progress}%
+     </p>
+     {props.autoplayEnabled && (
+      <span className="rounded-full bg-blue-50 px-3 py-1 text-xs font-black text-blue-700">
+       Tự phát {props.autoplayInterval}s
+      </span>
+     )}
+    </div>
+    <button
+     type="button"
+     onClick={() => setFilterOpen(true)}
+     className="rounded-2xl border-2 border-stone-200 bg-white px-3 py-2 text-sm font-black text-stone-700 shadow-theme-sm hover:bg-stone-50"
+    >
+     Bộ lọc
+    </button>
+   </div>
+
+   <div className="mt-2 flex flex-wrap items-center gap-2">
+    <Select
+     value={props.frontMode}
+     onChange={(event) =>
+      props.onFrontModeChange(event.target.value as FlashFrontMode)
+     }
+     wrapperClassName="w-full sm:w-44"
+     className="h-11"
+    >
+     <option value="hanzi">Mặt trước: Hán tự</option>
+     <option value="meaning">Mặt trước: Nghĩa</option>
+     <option value="pinyin">Mặt trước: Pinyin</option>
+    </Select>
+    <button
+     type="button"
+     onClick={() => setListOpen(true)}
+     className="inline-flex h-11 items-center gap-2 rounded-2xl border-2 border-stone-200 bg-white px-4 text-sm font-black text-stone-700 shadow-theme-sm hover:bg-stone-50"
+    >
+     <Layers3 className="h-4 w-4" />
+     Danh sách từ
+    </button>
+    <button
+     type="button"
+     onClick={() => props.onAutoplayEnabledChange(!props.autoplayEnabled)}
+     className={cn(
+      "inline-flex h-11 items-center gap-2 rounded-2xl border-2 px-4 text-sm font-black shadow-theme-sm",
+      props.autoplayEnabled
+       ? "border-red-500 bg-red-500 text-white"
+       : "border-stone-200 bg-white text-stone-700 hover:bg-stone-50",
+     )}
+    >
+     {props.autoplayEnabled ? (
+      <Pause className="h-4 w-4" />
+     ) : (
+      <Play className="h-4 w-4" />
+     )}
+     {props.autoplayEnabled ? "Dừng tự phát" : "Tự phát"}
+    </button>
+   </div>
+
+   <div className="mt-4">
+    {!activeEntry ? (
+     <div className="rounded-[28px] border-2 border-stone-100 bg-stone-50 p-8">
+      <EmptyState
+       title="Không có từ trong bộ lọc"
+       description="Đổi khoảng bài, trạng thái hoặc search để tiếp tục học."
+       compact
+      />
+     </div>
+    ) : (
+     <FlashcardFocusMode {...props} activeEntry={activeEntry} />
+    )}
+   </div>
+
+   {filterOpen && (
+    <LearningDrawer
+     title="Bộ lọc flashcard"
+     onClose={() => setFilterOpen(false)}
+    >
+     <FlashFilterPanel {...props} />
+    </LearningDrawer>
+   )}
+   {listOpen && (
+    <LearningDrawer
+     title="Danh sách từ trong bộ lọc"
+     onClose={() => setListOpen(false)}
+    >
+     <QuickWordChips
+      entries={props.entries}
+      activeEntryId={activeEntry?.id}
+      onSelect={(index) => {
+       props.onSelectCard(index);
+       setListOpen(false);
+      }}
+      expanded
+     />
+    </LearningDrawer>
+   )}
+  </section>
+ );
+}
+
+function FlashFilterPanel(props: {
+ lessons: VocabLessonWithStats[];
+ fromLesson: number;
+ toLesson: number;
+ flashLevels: string[];
+ flashStatusFilter: FlashStatusFilter;
+ levelFilter: string;
+ flashOrder: FlashOrder;
+ frontMode: FlashFrontMode;
+ showExamples: boolean;
+ autoplayEnabled: boolean;
+ autoplayInterval: number;
+ autoplayBehavior: AutoplayBehavior;
+ searchQuery: string;
+ flashStats: {
+  range: number;
+  filtered: number;
+  known: number;
+  hard: number;
+  again: number;
+ };
+ onFromLessonChange: (value: number) => void;
+ onToLessonChange: (value: number) => void;
+ onSearchChange: (value: string) => void;
+ onFlashStatusFilterChange: (value: FlashStatusFilter) => void;
+ onLevelFilterChange: (value: string) => void;
+ onFlashOrderChange: (value: FlashOrder) => void;
+ onFrontModeChange: (value: FlashFrontMode) => void;
+ onShowExamplesChange: (value: boolean) => void;
+ onAutoplayEnabledChange: (value: boolean) => void;
+ onAutoplayIntervalChange: (value: number) => void;
+ onAutoplayBehaviorChange: (value: AutoplayBehavior) => void;
+ onResetFilteredProgress: () => void;
+}) {
+ const lessonNumbers = props.lessons
+  .map((lesson) => lesson.lesson_number)
+  .filter((lessonNumber): lessonNumber is number => lessonNumber !== null);
+ const minLesson = Math.min(...lessonNumbers, 11);
+ const maxLesson = Math.max(...lessonNumbers, 25);
+ const statusItems: { key: FlashStatusFilter; label: string }[] = [
+  { key: "all", label: "Tất cả" },
+  { key: "new", label: "Mới" },
+  { key: "known", label: "Đã biết" },
+  { key: "hard", label: "Còn khó" },
+  { key: "again", label: "Học lại" },
+ ];
+
+ return (
+  <aside className="rounded-[24px] border-2 border-stone-200 bg-white p-4 text-left shadow-theme-sm">
+   <div className="grid grid-cols-2 gap-2">
+    <MiniStat label="Trong khoảng" value={props.flashStats.range} />
+    <MiniStat label="Đang hiện" value={props.flashStats.filtered} />
+    <MiniStat label="Đã biết" value={props.flashStats.known} tone="green" />
+    <MiniStat label="Còn khó" value={props.flashStats.hard} tone="yellow" />
+    <MiniStat label="Học lại" value={props.flashStats.again} tone="red" />
+   </div>
+
+   <div className="mt-4 grid grid-cols-2 gap-2">
+    <label className="text-xs font-black uppercase tracking-wide text-stone-500">
+     Từ bài
+     <Input
+      type="number"
+      min={minLesson}
+      max={maxLesson}
+      value={props.fromLesson}
+      onChange={(event) =>
+       props.onFromLessonChange(Number(event.target.value) || minLesson)
+      }
+      className="mt-1 h-11 rounded-2xl border-2 font-black"
+     />
+    </label>
+    <label className="text-xs font-black uppercase tracking-wide text-stone-500">
+     Đến bài
+     <Input
+      type="number"
+      min={minLesson}
+      max={maxLesson}
+      value={props.toLesson}
+      onChange={(event) =>
+       props.onToLessonChange(Number(event.target.value) || maxLesson)
+      }
+      className="mt-1 h-11 rounded-2xl border-2 font-black"
+     />
+    </label>
+   </div>
+
+   <div className="mt-3 flex flex-wrap gap-1.5">
+    {props.lessons.map((lesson) => {
+     const lessonNumber = lesson.lesson_number || 0;
+     const selected =
+      lessonNumber >= Math.min(props.fromLesson, props.toLesson) &&
+      lessonNumber <= Math.max(props.fromLesson, props.toLesson);
+     return (
+      <button
+       key={lesson.id}
+       type="button"
+       onClick={() => {
+        props.onFromLessonChange(lessonNumber);
+        props.onToLessonChange(lessonNumber);
+       }}
+       className={cn(
+        "rounded-full border-2 px-2.5 py-1 text-xs font-black transition",
+        selected
+         ? "border-red-500 bg-red-500 text-white"
+         : "border-stone-200 bg-white text-stone-600 hover:bg-stone-50",
+       )}
+      >
+       B{lessonNumber}
+      </button>
+     );
+    })}
+   </div>
+
+   <label className="mt-4 block text-xs font-black uppercase tracking-wide text-stone-500">
+    Tìm trong bộ lọc
+    <Input
+     value={props.searchQuery}
+     onChange={(event) => props.onSearchChange(event.target.value)}
+     placeholder="Hán tự, pinyin, nghĩa..."
+     className="mt-1 h-11 rounded-2xl border-2 font-bold"
+    />
+   </label>
+
+   <div className="mt-4">
+    <p className="text-xs font-black uppercase tracking-wide text-stone-500">
+     Trạng thái
+    </p>
+    <div className="mt-2 flex flex-wrap gap-1.5">
+     {statusItems.map((item) => (
+      <FilterChip
+       key={item.key}
+       active={props.flashStatusFilter === item.key}
+       onClick={() => props.onFlashStatusFilterChange(item.key)}
+      >
+       {item.label}
+      </FilterChip>
+     ))}
+    </div>
+   </div>
+
+   <div className="mt-4 grid gap-2">
+    <ControlLabel label="Level">
+     <Select
+      value={props.levelFilter}
+      onChange={(event) => props.onLevelFilterChange(event.target.value)}
+     >
+      <option value="all">Tất cả level</option>
+      {props.flashLevels.map((level) => (
+       <option key={level} value={level}>
+        {level}
+       </option>
+      ))}
+     </Select>
+    </ControlLabel>
+    <ControlLabel label="Thứ tự">
+     <Select
+      value={props.flashOrder}
+      onChange={(event) =>
+       props.onFlashOrderChange(event.target.value as FlashOrder)
+      }
+     >
+      <option value="lesson">Theo bài</option>
+      <option value="random">Random</option>
+      <option value="hardFirst">Ưu tiên khó</option>
+     </Select>
+    </ControlLabel>
+    <ControlLabel label="Mặt trước">
+     <Select
+      value={props.frontMode}
+      onChange={(event) =>
+       props.onFrontModeChange(event.target.value as FlashFrontMode)
+      }
+     >
+      <option value="hanzi">Hán tự</option>
+      <option value="meaning">Nghĩa Việt</option>
+      <option value="pinyin">Pinyin</option>
+     </Select>
+    </ControlLabel>
+   </div>
+
+   <label className="mt-4 flex items-center justify-between gap-3 rounded-2xl border-2 border-stone-200 bg-stone-50 px-3 py-2 text-sm font-black text-stone-700">
+    Hiện ví dụ ở mặt sau
+    <input
+     type="checkbox"
+     checked={props.showExamples}
+     onChange={(event) => props.onShowExamplesChange(event.target.checked)}
+     className="h-5 w-5 accent-red-500"
+    />
+   </label>
+
+   <div className="mt-4 rounded-2xl border-2 border-blue-100 bg-blue-50 p-3">
+    <div className="flex items-center justify-between gap-2">
+     <p className="text-xs font-black uppercase tracking-wide text-blue-700">
+      Tự phát
+     </p>
+     <button
+      type="button"
+      onClick={() => props.onAutoplayEnabledChange(!props.autoplayEnabled)}
+      className={cn(
+       "inline-flex h-9 items-center gap-2 rounded-xl px-3 text-xs font-black",
+       props.autoplayEnabled
+        ? "bg-red-500 text-white"
+        : "bg-white text-blue-700 shadow-theme-sm",
+      )}
+     >
+      {props.autoplayEnabled ? (
+       <Pause className="h-4 w-4" />
+      ) : (
+       <Play className="h-4 w-4" />
+      )}
+      {props.autoplayEnabled ? "Dừng" : "Chạy"}
+     </button>
+    </div>
+    <div className="mt-3 grid gap-2">
+     <Select
+      value={String(props.autoplayInterval)}
+      onChange={(event) =>
+       props.onAutoplayIntervalChange(Number(event.target.value))
+      }
+     >
+      <option value="3">3 giây</option>
+      <option value="5">5 giây</option>
+      <option value="8">8 giây</option>
+      <option value="12">12 giây</option>
+     </Select>
+     <Select
+      value={props.autoplayBehavior}
+      onChange={(event) =>
+       props.onAutoplayBehaviorChange(event.target.value as AutoplayBehavior)
+      }
+     >
+      <option value="flipNext">Lật rồi chuyển</option>
+      <option value="frontOnly">Chỉ chuyển mặt trước</option>
+      <option value="speakFlipNext">Đọc + lật + chuyển</option>
+     </Select>
+    </div>
+   </div>
+
+   <button
+    type="button"
+    onClick={props.onResetFilteredProgress}
+    className="mt-3 w-full rounded-2xl border-2 border-stone-200 bg-white px-4 py-3 text-sm font-black text-stone-700 shadow-theme-sm hover:bg-stone-50"
+   >
+    Reset tiến độ bộ lọc
+   </button>
+  </aside>
+ );
+}
+
+function MiniStat({
+ label,
+ value,
+ tone = "stone",
+ suffix = "",
+}: {
+ label: string;
+ value: number;
+ tone?: "stone" | "green" | "yellow" | "red";
+ suffix?: string;
+}) {
+ const className = {
+  stone: "bg-stone-50 text-stone-900",
+  green: "bg-emerald-50 text-emerald-700",
+  yellow: "bg-yellow-50 text-orange-600",
+  red: "bg-red-50 text-red-600",
+ }[tone];
+ return (
+  <div className={cn("rounded-2xl p-3 shadow-theme-sm", className)}>
+   <p className="text-[11px] font-black uppercase tracking-wide opacity-70">
+    {label}
+   </p>
+   <p className="mt-1 text-2xl font-black">
+    {value}
+    {suffix}
+   </p>
+  </div>
+ );
+}
+
+function ControlLabel({
+ label,
+ children,
+}: {
+ label: string;
+ children: React.ReactNode;
+}) {
+ return (
+  <label className="block text-xs font-black uppercase tracking-wide text-stone-500">
+   {label}
+   <div className="mt-1">{children}</div>
+  </label>
+ );
+}
+
+function FilterChip({
+ active,
+ onClick,
+ children,
+}: {
+ active: boolean;
+ onClick: () => void;
+ children: React.ReactNode;
+}) {
+ return (
+  <button
+   type="button"
+   onClick={onClick}
+   className={cn(
+    "rounded-full border-2 px-3 py-1.5 text-xs font-black transition",
+    active
+     ? "border-red-500 bg-red-500 text-white"
+     : "border-stone-200 bg-white text-stone-600 hover:bg-stone-50",
+   )}
+  >
+   {children}
+  </button>
+ );
+}
+
 function StudyCard({ children }: { children: React.ReactNode }) {
  return (
-  <div className="mt-4 overflow-hidden rounded-[24px] border-2 border-stone-100 bg-stone-50 p-3 text-center md:p-5">
+  <div className="overflow-hidden rounded-[24px] border-2 border-stone-100 bg-stone-50 p-3 text-center md:p-5">
    {children}
   </div>
  );
@@ -1534,6 +2368,8 @@ function FlashcardMode({
  cardIndex,
  total,
  revealed,
+ frontMode,
+ showExamples,
  onReveal,
  onSpeak,
  onEdit,
@@ -1546,6 +2382,8 @@ function FlashcardMode({
  cardIndex: number;
  total: number;
  revealed: boolean;
+ frontMode: FlashFrontMode;
+ showExamples: boolean;
  onReveal: () => void;
  onSpeak: () => void;
  onEdit: () => void;
@@ -1590,10 +2428,12 @@ function FlashcardMode({
        className="flex min-h-0 flex-1 flex-col items-center justify-center rounded-[24px] py-8 transition hover:bg-stone-50/70"
       >
        <h3 className="text-center text-[clamp(3.5rem,7vw,6rem)] font-black leading-tight text-red-500">
-        {activeEntry.hanzi}
+        {getFrontText(activeEntry, frontMode)}
        </h3>
        <p className="mt-7 text-center text-lg font-black text-stone-500 md:text-xl">
-        Tự đoán pinyin và nghĩa trước khi lật thẻ.
+        {frontMode === "hanzi"
+         ? "Tự đoán pinyin và nghĩa trước khi lật thẻ."
+         : "Tự đoán Hán tự trước khi lật thẻ."}
        </p>
        <p className="mt-3 text-sm font-black uppercase tracking-wide text-stone-400">
         Space · Bấm thẻ để xem đáp án
@@ -1605,6 +2445,7 @@ function FlashcardMode({
        entry={activeEntry}
        onSpeak={onSpeak}
        onEdit={onEdit}
+       showExamples={showExamples}
        compact
       />
      )}
@@ -1673,8 +2514,157 @@ function RoundStudyButton({
     !primary && !danger && !warning && !success && "text-stone-900",
    )}
   >
-   <Icon className="h-7 w-7 md:h-8 md:w-8" fill={primary ? "currentColor" : "none"} />
+   <Icon
+    className="h-7 w-7 md:h-8 md:w-8"
+    fill={primary ? "currentColor" : "none"}
+   />
   </button>
+ );
+}
+
+function FlashcardFocusMode({
+ activeEntry,
+ cardIndex,
+ total,
+ revealed,
+ frontMode,
+ showExamples,
+ onReveal,
+ onSpeak,
+ onEdit,
+ onAgain,
+ onReview,
+ onRemember,
+ onPrevious,
+ onSelectCard,
+ entries,
+}: Parameters<typeof FlashcardMode>[0] & {
+ onSelectCard: (index: number) => void;
+ entries: VocabEntryWithProgress[];
+}) {
+ const nextDisabled = total <= 1;
+
+ return (
+  <div className="mx-auto flex w-full max-w-7xl flex-col justify-center rounded-[28px] border-2 border-stone-100 bg-stone-50 px-3 py-4 md:px-6">
+   <div className="relative mx-auto w-full max-w-6xl">
+    <div className="absolute inset-4 rotate-[-4deg] rounded-[36px] border-2 border-stone-100 bg-white/70" />
+    <div className="absolute inset-4 rotate-3 rounded-[36px] border-2 border-stone-100 bg-white/80" />
+    <div className="relative flex h-[calc(100dvh-300px)] min-h-[500px] max-h-[820px] flex-col rounded-[36px] border-2 border-stone-100 bg-white p-5 shadow-theme-md md:h-[calc(100dvh-245px)] md:p-7">
+     {!revealed ? (
+      <button
+       type="button"
+       onClick={onReveal}
+       className="flex min-h-0 flex-1 flex-col items-center justify-center rounded-[28px] bg-stone-50/70 px-4 py-8 transition hover:bg-stone-50"
+      >
+       <h3 className="max-w-full text-center text-[clamp(4.5rem,10vw,8rem)] font-black leading-tight text-red-500">
+        {getFrontText(activeEntry, frontMode)}
+       </h3>
+      </button>
+     ) : (
+      <FlashcardBack
+       entry={activeEntry}
+       onSpeak={onSpeak}
+       onEdit={onEdit}
+       showExamples={showExamples}
+       compact
+      />
+     )}
+    </div>
+   </div>
+
+   <div className="mx-auto mt-4 grid w-full max-w-6xl grid-cols-2 gap-2 md:grid-cols-[1fr_1fr_1.1fr_1.1fr_1.1fr] md:gap-3">
+    <button
+     type="button"
+     onClick={onPrevious}
+     disabled={nextDisabled}
+     className="h-12 rounded-2xl border-2 border-stone-200 bg-white px-4 text-sm font-black text-stone-900 shadow-theme-sm hover:bg-stone-50 disabled:opacity-50"
+    >
+     ← Trước
+    </button>
+    <button
+     type="button"
+     onClick={() => onSelectCard((cardIndex + 1) % total)}
+     disabled={nextDisabled}
+     className="h-12 rounded-2xl border-2 border-stone-200 bg-white px-4 text-sm font-black text-stone-900 shadow-theme-sm hover:bg-stone-50 disabled:opacity-50"
+    >
+     Tiếp →
+    </button>
+    <button
+     type="button"
+     onClick={onAgain}
+     className="h-12 rounded-2xl bg-rose-600 px-4 text-sm font-black text-white shadow-theme-sm hover:bg-rose-700"
+    >
+     Học lại
+    </button>
+    <button
+     type="button"
+     onClick={onReview}
+     className="h-12 rounded-2xl bg-orange-500 px-4 text-sm font-black text-white shadow-theme-sm hover:bg-orange-600"
+    >
+     Còn khó
+    </button>
+    <button
+     type="button"
+     onClick={onRemember}
+     className="col-span-2 h-12 rounded-2xl bg-emerald-600 px-4 text-sm font-black text-white shadow-theme-sm hover:bg-emerald-700 md:col-span-1"
+    >
+     Đã biết
+    </button>
+   </div>
+  </div>
+ );
+}
+
+function QuickWordChips({
+ entries,
+ activeEntryId,
+ onSelect,
+ expanded = false,
+}: {
+ entries: VocabEntryWithProgress[];
+ activeEntryId?: string;
+ onSelect: (index: number) => void;
+ expanded?: boolean;
+}) {
+ if (!entries.length) return null;
+ return (
+  <div
+   className={cn(
+    "text-left",
+    !expanded && "mt-5 border-t-2 border-stone-100 pt-4",
+   )}
+  >
+   <div className="flex items-center justify-between gap-3">
+    <p className="text-xs font-black uppercase tracking-wide text-stone-500">
+     Nhảy nhanh
+    </p>
+    <p className="text-xs font-bold text-stone-400">
+     {entries.length} thẻ trong bộ lọc
+    </p>
+   </div>
+   <div
+    className={cn(
+     "mt-3 flex flex-wrap gap-2 overflow-y-auto pr-1",
+     expanded ? "max-h-[70vh]" : "max-h-28",
+    )}
+   >
+    {entries.map((entry, index) => (
+     <button
+      key={entry.id}
+      type="button"
+      onClick={() => onSelect(index)}
+      className={cn(
+       "rounded-full border-2 px-3 py-1.5 text-sm font-black transition",
+       entry.id === activeEntryId
+        ? "border-red-500 bg-red-500 text-white"
+        : "border-stone-200 bg-white text-stone-700 hover:bg-stone-50",
+      )}
+     >
+      {entry.hanzi}
+     </button>
+    ))}
+   </div>
+  </div>
  );
 }
 
@@ -1684,52 +2674,151 @@ function FlashcardBack({
  onEdit,
  compact,
  onReveal,
+ showExamples = true,
 }: {
  entry: VocabEntryWithProgress;
  onSpeak: () => void;
  onEdit: () => void;
  compact?: boolean;
- onReveal: () => void;
+ onReveal?: () => void;
+ showExamples?: boolean;
 }) {
  const analysis = entry.ai_analysis;
  const example = getPrimaryExample(entry);
+ const examples = (analysis.examples || []).slice(0, 3);
  if (compact) {
   return (
    <div
-    className="flex min-h-0 flex-1 flex-col overflow-y-auto px-2 py-4 text-center"
+    className="flex min-h-0 flex-1 flex-col gap-3 overflow-hidden px-1 py-3"
     onClick={onReveal}
    >
-    <h3 className="text-[clamp(2.5rem,5vw,4.5rem)] font-black leading-tight text-red-500">{entry.hanzi}</h3>
-    <p className="mt-4 text-2xl font-bold text-stone-900 md:text-3xl">
-     {entry.pinyin}
-     {entry.sino_vietnamese || analysis.han_viet
-      ? ` - ${(entry.sino_vietnamese || analysis.han_viet || "").toUpperCase()}`
-      : ""}
-    </p>
-    <p className="mx-auto mt-5 max-w-2xl text-xl font-bold leading-9 text-stone-800 md:text-2xl">
-     {getMeaning(entry)}
-    </p>
-    {example && (
-     <div className="mt-6 border-t-2 border-stone-100 pt-5 text-left">
-      <p className="text-lg font-black leading-8 text-stone-900 md:text-xl">
-       <Volume2 className="mr-2 inline h-6 w-6" />
-       {example.zh}
-      </p>
-      <p className="mt-2 text-base font-bold text-stone-500 md:text-lg">{example.pinyin}</p>
-      <p className="mt-2 text-lg font-bold leading-8 text-stone-800 md:text-xl">
-       {example.vi}
-      </p>
-     </div>
-    )}
-    <div className="mt-5 flex flex-wrap gap-2 text-left">
-     {analysis.collocations?.slice(0, 4).map((item) => (
-      <span
-       key={item}
-       className="rounded-full bg-stone-100 px-3 py-1 text-sm font-black text-stone-700"
-      >
-       {item}
-      </span>
-     ))}
+    <div className="grid min-h-0 flex-1 gap-3 overflow-hidden text-left lg:grid-cols-[0.9fr_1.1fr]">
+     <section className="flex min-h-0 flex-col gap-3 overflow-y-auto rounded-[26px] bg-stone-50/70 p-4 [scrollbar-width:thin] [scrollbar-color:#d6d3d1_transparent] md:p-5">
+      <div className="text-center lg:text-left">
+       <div className="flex items-center gap-2">
+        <h3 className="text-[clamp(3rem,7vw,5.6rem)] font-black leading-none text-red-500">
+         {entry.hanzi}
+        </h3>
+        <p className="mt-3 text-xl font-black text-stone-900 md:text-2xl">
+         {entry.pinyin}
+         {entry.sino_vietnamese || analysis.han_viet
+          ? ` - ${(entry.sino_vietnamese || analysis.han_viet || "").toUpperCase()}`
+          : ""}
+        </p>
+       </div>
+       <p className="mt-3 text-base font-black leading-7 text-stone-800 md:text-lg">
+        {getMeaning(entry)}
+       </p>
+       <div className="mt-3 flex flex-wrap justify-center gap-2 lg:justify-start">
+        {entry.word_type && (
+         <span className="rounded-full bg-white px-3 py-1 text-xs font-black text-stone-700 shadow-theme-sm">
+          {entry.word_type}
+         </span>
+        )}
+        <span className="rounded-full bg-blue-50 px-3 py-1 text-xs font-black text-blue-700 shadow-theme-sm">
+         Level {getFlashLevel(entry)}
+        </span>
+       </div>
+      </div>
+
+      {analysis.decomposition && (
+       <section className="rounded-[22px] bg-yellow-50 p-4 text-sm font-bold leading-6 text-stone-700">
+        <p className="mb-1 text-xs font-black uppercase tracking-wide text-orange-600">
+         Chiết tự
+        </p>
+        {analysis.decomposition}
+       </section>
+      )}
+
+      {!!analysis.collocations?.length && (
+       <section className="rounded-[22px] bg-white p-4 shadow-theme-sm">
+        <p className="text-xs font-black uppercase tracking-wide text-stone-400">
+         Cụm hay gặp
+        </p>
+        <div className="mt-2 flex flex-wrap gap-2">
+         {analysis.collocations.map((item) => (
+          <span
+           key={item}
+           className="rounded-full bg-stone-50 px-3 py-1 text-sm font-black text-stone-700"
+          >
+           {item}
+          </span>
+         ))}
+        </div>
+       </section>
+      )}
+      {getCompactNote(entry) && (
+       <section className="rounded-[22px] bg-blue-50 p-4 text-sm font-bold leading-6 text-blue-800">
+        <p className="mb-1 text-xs font-black uppercase tracking-wide text-blue-500">
+         Lưu ý nhanh
+        </p>
+        {getCompactNote(entry)}
+       </section>
+      )}
+     </section>
+
+     <section className="flex min-h-0 flex-col gap-3 overflow-y-auto pr-1 [scrollbar-width:thin] [scrollbar-color:#d6d3d1_transparent]">
+      {showExamples && examples.length ? (
+       <section className="rounded-[24px] bg-stone-50 p-4 md:p-5">
+        <div className="mt-3 space-y-3">
+         {examples.map((item, index) => (
+          <div
+           key={`${item.zh}-${index}`}
+           className={cn(
+            "rounded-[18px] bg-white p-3 shadow-theme-sm",
+            index === 0 && "border-2 border-stone-100",
+           )}
+          >
+           <p
+            className={cn(
+             "font-black leading-7 text-stone-900",
+             index === 0 ? "text-lg md:text-xl" : "text-base",
+            )}
+           >
+            {index === 0 && <Volume2 className="mr-2 inline h-5 w-5" />}
+            {item.zh}
+           </p>
+           <p className="mt-1 text-sm font-bold leading-6 text-stone-500">
+            {item.pinyin}
+           </p>
+           <p className="mt-1 text-base font-bold leading-7 text-stone-800">
+            {item.vi}
+           </p>
+           {item.note && (
+            <p className="mt-2 rounded-2xl bg-stone-50 p-2 text-xs font-bold leading-5 text-stone-600">
+             {item.note}
+            </p>
+           )}
+          </div>
+         ))}
+        </div>
+       </section>
+      ) : (
+       <section className="rounded-[22px] bg-stone-50 p-4 text-sm font-bold text-stone-500">
+        Bật ví dụ trong bộ lọc nếu muốn luyện câu mẫu ở mặt sau.
+       </section>
+      )}
+      {!!analysis.comparisons?.length && (
+       <section className="rounded-[22px] bg-stone-50 p-4">
+        <p className="text-xs font-black uppercase tracking-wide text-stone-400">
+         So sánh nhanh
+        </p>
+        <ul className="mt-2 space-y-2 text-sm font-bold leading-6 text-stone-700">
+         {analysis.comparisons.map((comparison) => (
+          <li key={comparison}>{comparison}</li>
+         ))}
+        </ul>
+       </section>
+      )}
+      {analysis.cultural_note && (
+       <section className="rounded-[22px] bg-emerald-50 p-4 text-sm font-bold leading-6 text-emerald-800">
+        <p className="mb-1 text-xs font-black uppercase tracking-wide text-emerald-600">
+         Trung Việt
+        </p>
+        {analysis.cultural_note}
+       </section>
+      )}
+     </section>
     </div>
    </div>
   );
@@ -1787,7 +2876,7 @@ function FlashcardBack({
       </div>
      </div>
     )}
-    {example && (
+    {showExamples && example && (
      <div className="mt-5 rounded-2xl bg-stone-50 p-4">
       <p className="text-sm font-black leading-6 text-stone-900">
        {example.zh}
@@ -2748,7 +3837,7 @@ function EntryEditDrawer({
   >
    <div className="grid gap-4">
     <Field label="Bài">
-     <select
+     <Select
       value={draft.lesson_id}
       onChange={(event) => {
        const nextLesson = lessons.find(
@@ -2772,14 +3861,14 @@ function EntryEditDrawer({
          : draft.source,
        });
       }}
-      className="h-11 rounded-2xl border-2 border-stone-200 bg-white px-3 text-sm font-bold text-stone-800"
+      className="h-11 text-sm"
      >
       {lessons.map((lesson) => (
        <option key={lesson.id} value={lesson.id}>
         {lesson.title}
        </option>
       ))}
-     </select>
+     </Select>
     </Field>
     <Field label="Row trong bài">
      <Input
@@ -2986,22 +4075,9 @@ function Drawer({
  onClose: () => void;
 }) {
  return (
-  <div className="fixed inset-0 z-50 flex justify-end">
-   <div className="absolute inset-0 bg-stone-900/30" onClick={onClose} />
-   <aside className="relative h-full w-full max-w-xl overflow-y-auto border-l-2 border-stone-200 bg-white p-5 shadow-2xl">
-    <div className="mb-5 flex items-center justify-between gap-3">
-     <h2 className="text-2xl font-black text-stone-900">{title}</h2>
-     <button
-      type="button"
-      onClick={onClose}
-      className="flex h-10 w-10 items-center justify-center rounded-2xl border-2 border-stone-200 text-stone-600 hover:bg-stone-50"
-     >
-      <X className="h-5 w-5" />
-     </button>
-    </div>
-    {children}
-   </aside>
-  </div>
+  <LearningDrawer title={title} onClose={onClose}>
+   {children}
+  </LearningDrawer>
  );
 }
 

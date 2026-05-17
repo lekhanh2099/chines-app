@@ -588,11 +588,20 @@ export type GrammarPointContent = {
   pinyin?: string;
   vi?: string;
  };
+ core?: string;
  explanation?: string;
+ formulas?: string[];
  structures?: string[];
  usage_notes?: string[];
+ traps?: string[];
  common_mistakes?: string[];
  comparisons?: string[];
+ quiz?: {
+  q?: string;
+  choices?: string[];
+  a?: number;
+ };
+ coach_contrasts?: { title: string; body: string }[];
  examples?: AiExample[];
  source_metadata?: {
   course_key?: string;
@@ -609,8 +618,13 @@ export type GrammarExerciseContent = {
  tokens?: string[];
  segments?: { id: string; text: string }[];
  accepted_answers?: string[];
+ required_terms?: string[];
  sample_answer?: string;
  blank?: string;
+ exercise_set_id?: string;
+ generated_by?: string;
+ generated_at?: string;
+ source_point_title?: string;
 };
 
 export type DbGrammarCourse = {
