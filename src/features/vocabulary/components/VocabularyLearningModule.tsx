@@ -3206,6 +3206,8 @@ function WordCard({
  entry: VocabEntryWithProgress;
  onEdit: () => void;
 }) {
+ const [activeIndex, setActiveIndex] = useState(0);
+
  return (
   <article className="rounded-[24px] border-2 border-stone-200 bg-white p-4 shadow-theme-sm">
    <div className="flex items-start justify-between gap-3">
@@ -3220,6 +3222,11 @@ function WordCard({
       {entry.pinyin}
      </p>
     </Link>
+    <InlineHskWritingPanel
+     entry={entry}
+     activeIndex={activeIndex}
+     onIndexChange={setActiveIndex}
+    />
     <StatusPill status={entry.status} />
    </div>
    <p className="mt-3 line-clamp-2 min-h-11 text-sm font-bold leading-6 text-stone-600">
