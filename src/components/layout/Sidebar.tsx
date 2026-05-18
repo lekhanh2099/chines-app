@@ -4,8 +4,6 @@ import { useEffect } from "react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import {
- BookOpen,
- Brain,
  ChevronLeft,
  ChevronRight,
  Flame,
@@ -31,16 +29,13 @@ type NavItem = {
 
 const mainItems: NavItem[] = [
  { name: "Trang chủ", icon: Home, href: "/" },
- { name: "Luyện tập", icon: BookOpen, href: "/practice", badge: "HSK" },
  { name: "Từ vựng", icon: WalletCards, href: "/vocabulary" },
  { name: "Ngữ pháp", icon: GraduationCap, href: "/grammar", badge: "Mới", tone: "orange" },
- { name: "Ôn tập", icon: Brain, href: "/vocabulary?filter=review", badge: "2", tone: "red" },
+ { name: "Ghi chú", icon: NotebookPen, href: "/notes" },
 ];
 
 const secondaryItems: NavItem[] = [
  { name: "Bảng xếp hạng", icon: Trophy, href: "/" },
- { name: "Ghi chú của tôi", icon: NotebookPen, href: "/notes" },
- { name: "Từ vựng của tôi", icon: WalletCards, href: "/vocabulary" },
 ];
 
 function isActive(pathname: string, href: string) {
@@ -147,18 +142,22 @@ export function Sidebar() {
     ))}
    </nav>
 
-   <div className="mx-4 border-t-2 border-stone-100" />
+   {secondaryItems.length > 0 && (
+    <>
+     <div className="mx-4 border-t-2 border-stone-100" />
 
-   <nav className={cn("flex flex-col gap-2 py-4", isCollapsed ? "items-center px-3" : "px-4")}>
-    {secondaryItems.map((item) => (
-     <NavRow
-      key={item.name}
-      item={item}
-      active={isActive(pathname, item.href) && item.href !== "/"}
-      collapsed={isCollapsed}
-     />
-    ))}
-   </nav>
+     <nav className={cn("flex flex-col gap-2 py-4", isCollapsed ? "items-center px-3" : "px-4")}>
+      {secondaryItems.map((item) => (
+       <NavRow
+        key={item.name}
+        item={item}
+        active={isActive(pathname, item.href) && item.href !== "/"}
+        collapsed={isCollapsed}
+       />
+      ))}
+     </nav>
+    </>
+   )}
 
    <div className="flex-1" />
 
@@ -202,7 +201,10 @@ export function Sidebar() {
    </div>
   </aside>
   <nav className="fixed inset-x-0 bottom-0 z-40 border-t-2 border-stone-200 bg-white/95 px-2 py-2 shadow-[0_-3px_0_rgb(0_0_0/0.08)] backdrop-blur md:hidden">
-   <div className="mx-auto grid max-w-md grid-cols-5 gap-1">
+   <div
+    className="mx-auto grid max-w-md gap-1"
+    style={{ gridTemplateColumns: `repeat(${mainItems.length}, minmax(0, 1fr))` }}
+   >
     {mainItems.map((item) => {
      const Icon = item.icon;
      const active = isActive(pathname, item.href);

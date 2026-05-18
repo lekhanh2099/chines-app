@@ -27,6 +27,7 @@ import { toast } from "sonner";
 import { Input } from "@/components/ui/input";
 import { Select } from "@/components/ui/select";
 import { SegmentedControl } from "@/components/ui/segmented-control";
+import { HskLessonPracticeModule } from "@/features/hsk";
 import { GrammarSchemaMissingError, useGrammarPoints } from "@/features/grammar/hooks/useGrammarPoints";
 import {
  LearningDrawer,
@@ -54,6 +55,7 @@ type ExerciseMode = "mixed" | GrammarExerciseType;
 type CoachTab = "logic" | "formula" | "examples" | "traps" | "practice";
 type CoachStatusFilter = "all" | "new" | "ok" | "weak";
 type CoachOrder = "lesson" | "hard" | "random";
+type GrammarSource = "hanyu" | "hsk";
 
 const exerciseLabels: Record<GrammarExerciseType, string> = {
  fill_blank: "Điền từ",
@@ -167,6 +169,7 @@ export default function GrammarPage() {
  const [coachOrder, setCoachOrder] = useState<CoachOrder>("lesson");
  const [coachTab, setCoachTab] = useState<CoachTab>("logic");
  const [coachIndex, setCoachIndex] = useState(0);
+ const [source, setSource] = useState<GrammarSource>("hanyu");
 
  const lessons = useMemo(() => course?.lessons || [], [course?.lessons]);
  const activeLesson = useMemo(() => lessons.find((lesson) => lesson.id === activeLessonId) || lessons[0] || null, [activeLessonId, lessons]);
@@ -647,8 +650,21 @@ export default function GrammarPage() {
    setImportingLesson(null);
    await queryClient.invalidateQueries({ queryKey: ["grammar-points"] });
   },
-  [queryClient],
+ [queryClient],
  );
+
+ if (source === "hsk") {
+  return (
+   <LearningShell>
+    <GrammarSourceSwitch value={source} onChange={setSource} />
+    <HskLessonPracticeModule
+     titlePrefix="Ngữ pháp HSK"
+     visibleTabs={["grammar", "text", "quiz"]}
+     initialTab="grammar"
+    />
+   </LearningShell>
+  );
+ }
 
  if (error) {
   const missingSchema = error instanceof GrammarSchemaMissingError;
@@ -664,6 +680,7 @@ export default function GrammarPage() {
 
  return (
   <LearningShell>
+   <GrammarSourceSwitch value={source} onChange={setSource} />
    <LearningHeader
    activeTab={activeTab}
    onTabChange={setActiveTab}
@@ -792,6 +809,46 @@ export default function GrammarPage() {
    {editingPoint && <PointDrawer point={editingPoint} lessons={lessons} onClose={() => setEditingPoint(null)} onSave={savePoint} onDelete={deletePoint} />}
    {importingLesson && <ImportDrawer lesson={importingLesson} onClose={() => setImportingLesson(null)} onImport={(text) => importPaste(importingLesson, text)} />}
   </LearningShell>
+);
+}
+
+function GrammarSourceSwitch({
+ value,
+ onChange,
+}: {
+ value: GrammarSource;
+ onChange: (value: GrammarSource) => void;
+}) {
+ return (
+  <section className="rounded-[24px] border-2 border-stone-200 bg-white p-4 shadow-theme-sm md:rounded-[28px] md:p-5">
+   <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+    <div>
+     <p className="text-xs font-black uppercase tracking-[0.22em] text-red-500">Nguồn học</p>
+     <h1 className="mt-1 text-3xl font-black text-stone-950 md:text-4xl">Ngữ pháp</h1>
+     <p className="mt-1 text-sm font-bold text-stone-500 md:text-base">
+      Chọn giáo trình Hán ngữ hoặc HSK trong cùng module ngữ pháp.
+     </p>
+    </div>
+    <div className="grid grid-cols-2 gap-2 rounded-2xl bg-stone-100 p-1">
+     {[
+      { key: "hanyu" as const, label: "Hán ngữ" },
+      { key: "hsk" as const, label: "HSK" },
+     ].map((item) => (
+      <button
+       key={item.key}
+       type="button"
+       onClick={() => onChange(item.key)}
+       className={cn(
+        "h-11 rounded-xl px-4 text-sm font-black transition",
+        value === item.key ? "bg-red-500 text-white shadow-theme-sm" : "text-stone-600 hover:bg-white",
+       )}
+      >
+       {item.label}
+      </button>
+     ))}
+    </div>
+   </div>
+  </section>
  );
 }
 

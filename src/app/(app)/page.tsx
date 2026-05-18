@@ -102,10 +102,10 @@ export default function HomePage() {
       tone="orange"
      />
      <QuickReviewCard
-      href="/practice"
+      href="/vocabulary"
       icon={BookOpen}
       title="Luyện tập"
-      subtitle="HSK4 Bài 1: từ, cụm, ngữ pháp, bài khóa"
+      subtitle="Chọn Hán ngữ hoặc HSK trong module học"
       tone="red"
      />
      <QuickReviewCard

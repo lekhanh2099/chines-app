@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import {
  BookOpen,
  Brain,
@@ -16,6 +16,7 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { CharacterWriterCard } from "@/features/dictionary/components/CharacterWriterCard";
 import { cn } from "@/lib/utils";
 import {
  hsk4Bai1Lesson,
@@ -41,12 +42,33 @@ const tabs: Array<{
  { id: "quiz", label: "Bài tập", icon: ClipboardCheck },
 ];
 
+type HskLessonPracticeModuleProps = {
+ initialTab?: PracticeTab;
+ visibleTabs?: PracticeTab[];
+ titlePrefix?: string;
+};
+
 function normalizeAnswer(value: string) {
  return value.replace(/[。？！?!，,\s]/g, "").trim();
 }
 
-export default function HskLessonPracticeModule() {
- const [activeTab, setActiveTab] = useState<PracticeTab>("vocab");
+function getHanziCharacters(text: string) {
+ return Array.from(text).filter((char) => /[\u3400-\u9fff]/.test(char));
+}
+
+export default function HskLessonPracticeModule({
+ initialTab = "vocab",
+ visibleTabs,
+ titlePrefix,
+}: HskLessonPracticeModuleProps) {
+ const availableTabs = useMemo(
+  () => tabs.filter((tab) => !visibleTabs || visibleTabs.includes(tab.id)),
+  [visibleTabs],
+ );
+ const safeInitialTab = availableTabs.some((tab) => tab.id === initialTab)
+  ? initialTab
+  : availableTabs[0]?.id || "vocab";
+ const [activeTab, setActiveTab] = useState<PracticeTab>(safeInitialTab);
  const [query, setQuery] = useState("");
  const [cardIndex, setCardIndex] = useState(0);
  const [showBack, setShowBack] = useState(false);
@@ -68,11 +90,14 @@ export default function HskLessonPracticeModule() {
   return hsk4Bai1Lesson.quiz.reduce((sum, item, index) => {
    const user = answers[index] ?? "";
    if (!user) return sum;
-   return normalizeAnswer(user) === normalizeAnswer(item.answer) ? sum + 1 : sum;
+   return normalizeAnswer(user) === normalizeAnswer(item.answer)
+    ? sum + 1
+    : sum;
   }, 0);
  }, [answers]);
 
- const currentCard = hsk4Bai1Lesson.vocab[cardIndex % hsk4Bai1Lesson.vocab.length];
+ const currentCard =
+  hsk4Bai1Lesson.vocab[cardIndex % hsk4Bai1Lesson.vocab.length];
 
  const selectTab = (tab: PracticeTab) => {
   setActiveTab(tab);
@@ -85,7 +110,10 @@ export default function HskLessonPracticeModule() {
  };
 
  const previousCard = () => {
-  setCardIndex((index) => (index - 1 + hsk4Bai1Lesson.vocab.length) % hsk4Bai1Lesson.vocab.length);
+  setCardIndex(
+   (index) =>
+    (index - 1 + hsk4Bai1Lesson.vocab.length) % hsk4Bai1Lesson.vocab.length,
+  );
   setShowBack(false);
  };
 
@@ -99,7 +127,7 @@ export default function HskLessonPracticeModule() {
  };
 
  return (
-  <div className="mx-auto flex w-full max-w-[1500px] flex-col gap-5 px-4 py-5 pb-24 sm:px-5 md:py-7 lg:px-8">
+  <div className="mx-auto flex w-full max-w-[1500px] flex-col gap-5 px-0 py-0 pb-2 sm:px-0">
    <section className="rounded-[28px] border-2 border-stone-200 bg-white p-4 shadow-theme-md sm:p-5 lg:p-7">
     <div className="grid gap-5 xl:grid-cols-[1fr_360px] xl:items-end">
      <div>
@@ -112,6 +140,7 @@ export default function HskLessonPracticeModule() {
        </span>
       </div>
       <h1 className="mt-3 text-4xl font-black tracking-normal text-stone-950 md:text-5xl">
+       {titlePrefix ? `${titlePrefix} · ` : ""}
        {hsk4Bai1Lesson.title}
       </h1>
       <p className="mt-2 max-w-3xl text-base font-bold leading-7 text-stone-500 md:text-lg">
@@ -121,13 +150,21 @@ export default function HskLessonPracticeModule() {
 
      <div className="grid grid-cols-3 gap-2 sm:gap-3">
       <LessonStat label="Từ" value={hsk4Bai1Lesson.vocab.length} tone="red" />
-      <LessonStat label="Cụm" value={hsk4Bai1Lesson.phrases.length} tone="orange" />
-      <LessonStat label="Quiz" value={hsk4Bai1Lesson.quiz.length} tone="green" />
+      <LessonStat
+       label="Cụm"
+       value={hsk4Bai1Lesson.phrases.length}
+       tone="orange"
+      />
+      <LessonStat
+       label="Quiz"
+       value={hsk4Bai1Lesson.quiz.length}
+       tone="green"
+      />
      </div>
     </div>
 
     <div className="mt-5 flex gap-2 overflow-x-auto pb-1">
-     {tabs.map(({ id, label, icon: Icon }) => (
+     {availableTabs.map(({ id, label, icon: Icon }) => (
       <button
        key={id}
        type="button"
@@ -162,7 +199,9 @@ export default function HskLessonPracticeModule() {
      onSpeak={() => speak(currentCard.hanzi)}
     />
    )}
-   {activeTab === "grammar" && <GrammarSection items={hsk4Bai1Lesson.grammar} />}
+   {activeTab === "grammar" && (
+    <GrammarSection items={hsk4Bai1Lesson.grammar} />
+   )}
    {activeTab === "text" && <TextSection items={hsk4Bai1Lesson.texts} />}
    {activeTab === "quiz" && (
     <QuizSection
@@ -170,7 +209,9 @@ export default function HskLessonPracticeModule() {
      answers={answers}
      checked={checked}
      score={score}
-     onAnswer={(index, value) => setAnswers((current) => ({ ...current, [index]: value }))}
+     onAnswer={(index, value) =>
+      setAnswers((current) => ({ ...current, [index]: value }))
+     }
      onCheck={() => setChecked(true)}
      onReset={() => {
       setAnswers({});
@@ -218,8 +259,12 @@ function VocabSection({
   <section className="rounded-[28px] border-2 border-stone-200 bg-white p-4 shadow-theme-md sm:p-5">
    <div className="mb-4 grid gap-3 lg:grid-cols-[1fr_auto] lg:items-center">
     <div>
-     <p className="text-sm font-black uppercase tracking-[0.14em] text-red-500">Từ vựng chuẩn</p>
-     <h2 className="text-3xl font-black text-stone-950">Danh sách từ HSK4 Bài 1</h2>
+     <p className="text-sm font-black uppercase tracking-[0.14em] text-red-500">
+      Từ vựng chuẩn
+     </p>
+     <h2 className="text-3xl font-black text-stone-950">
+      Danh sách từ HSK4 Bài 1
+     </h2>
     </div>
     <div className="relative">
      <Search className="pointer-events-none absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 text-stone-400" />
@@ -265,12 +310,19 @@ function PhraseSection({ items }: { items: HskPhraseItem[] }) {
  return (
   <section className="rounded-[28px] border-2 border-stone-200 bg-white p-4 shadow-theme-md sm:p-5">
    <div className="mb-4">
-    <p className="text-sm font-black uppercase tracking-[0.14em] text-orange-500">Cụm cố định</p>
-    <h2 className="text-3xl font-black text-stone-950">Cụm/câu mẫu tách riêng</h2>
+    <p className="text-sm font-black uppercase tracking-[0.14em] text-orange-500">
+     Cụm cố định
+    </p>
+    <h2 className="text-3xl font-black text-stone-950">
+     Cụm/câu mẫu tách riêng
+    </h2>
    </div>
    <div className="grid gap-3 md:grid-cols-2">
     {items.map((item) => (
-     <article key={item.hanzi} className="rounded-3xl border-2 border-stone-200 bg-white p-4 shadow-theme-sm">
+     <article
+      key={item.hanzi}
+      className="rounded-3xl border-2 border-stone-200 bg-white p-4 shadow-theme-sm"
+     >
       <div className="text-2xl font-black text-stone-950">{item.hanzi}</div>
       <div className="mt-1 text-sm font-black text-red-500">{item.pinyin}</div>
       <p className="mt-3 inline-flex rounded-full bg-orange-50 px-3 py-1 text-sm font-black text-orange-700">
@@ -305,25 +357,59 @@ function FlashcardSection({
  onPrevious: () => void;
  onSpeak: () => void;
 }) {
+ const characters = useMemo(() => getHanziCharacters(card.hanzi), [card.hanzi]);
+ const [selectedCharacter, setSelectedCharacter] = useState(
+  characters[0] || card.hanzi[0] || "",
+ );
+
  return (
   <section className="grid gap-4 xl:grid-cols-[1fr_320px]">
    <div className="rounded-[28px] border-2 border-stone-200 bg-white p-4 shadow-theme-md sm:p-5">
     <button
      type="button"
-     onClick={onFlip}
+     //  onClick={onFlip}
      className="flex min-h-[420px] w-full flex-col items-center justify-center rounded-[28px] border-2 border-stone-100 bg-stone-50 p-6 text-center transition hover:border-red-200 hover:bg-red-50/40 md:min-h-[520px]"
     >
      {!showBack ? (
       <>
-       <span className="rounded-full bg-white px-4 py-2 text-sm font-black text-stone-500 shadow-theme-sm">
-        {current} / {total}
-       </span>
-       <div className="mt-10 text-7xl font-black text-red-500 md:text-8xl">{card.hanzi}</div>
-       <p className="mt-8 text-xl font-black text-stone-500">Tự đọc pinyin và nghĩa trước khi lật.</p>
+       <div className="mt-10 text-7xl font-black text-red-500 md:text-8xl">
+        {card.hanzi}
+       </div>
+       {characters.length > 1 && (
+        <div className="mt-4 flex flex-wrap gap-2">
+         {characters.map((character) => (
+          <button
+           key={character}
+           type="button"
+           onClick={() => setSelectedCharacter(character)}
+           className={cn(
+            "flex h-10 w-10 items-center justify-center rounded-xl border-2 text-lg font-black transition",
+            selectedCharacter === character
+             ? "border-red-500 bg-red-500 text-white"
+             : "border-stone-200 bg-white text-stone-700 hover:bg-stone-50",
+           )}
+          >
+           {character}
+          </button>
+         ))}
+        </div>
+       )}
+
+       <div className="mt-4 flex justify-center">
+        {selectedCharacter ? (
+         <CharacterWriterCard character={selectedCharacter} />
+        ) : (
+         <div className="rounded-2xl bg-stone-50 p-4 text-sm font-bold text-stone-500">
+          Từ này không có Hán tự để luyện viết.
+         </div>
+        )}
+       </div>
       </>
      ) : (
       <div className="w-full max-w-3xl">
-       <div className="text-6xl font-black text-red-500 md:text-7xl">{card.hanzi}</div>
+       <div className="text-6xl font-black text-red-500 md:text-7xl">
+        {card.hanzi}
+       </div>
        <p className="mt-5 text-2xl font-black text-stone-950">
         {card.pinyin} · {card.vi}
        </p>
@@ -331,41 +417,41 @@ function FlashcardSection({
         {card.type}
        </p>
        <div className="mt-8 rounded-3xl bg-white p-5 text-left shadow-theme-sm">
-        <p className="text-sm font-black uppercase tracking-[0.14em] text-red-500">Ví dụ</p>
-        <p className="mt-3 text-2xl font-black leading-10 text-stone-950">{card.example}</p>
+        <p className="text-sm font-black uppercase tracking-[0.14em] text-red-500">
+         Ví dụ
+        </p>
+        <p className="mt-3 text-2xl font-black leading-10 text-stone-950">
+         {card.example}
+        </p>
        </div>
       </div>
      )}
     </button>
 
     <div className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-4">
-     <Button variant="outline" className="h-13 rounded-2xl border-2 border-stone-200 shadow-theme-sm" onClick={onPrevious}>
+     <Button
+      variant="outline"
+      className="h-13 rounded-2xl border-2 border-stone-200 shadow-theme-sm"
+      onClick={onPrevious}
+     >
       Trước
      </Button>
-     <Button variant="outline" className="h-13 rounded-2xl border-2 border-stone-200 shadow-theme-sm" onClick={onSpeak}>
-      <Volume2 className="h-4 w-4" />
-      Đọc
-     </Button>
-     <Button variant="outline" className="h-13 rounded-2xl border-2 border-stone-200 shadow-theme-sm" onClick={onFlip}>
+
+     <Button
+      variant="outline"
+      className="h-13 rounded-2xl border-2 border-stone-200 shadow-theme-sm"
+      onClick={onFlip}
+     >
       Lật thẻ
      </Button>
-     <Button className="h-13 rounded-2xl bg-red-500 text-white shadow-theme-md hover:bg-red-600" onClick={onNext}>
+     <Button
+      className="h-13 rounded-2xl bg-red-500 text-white shadow-theme-md hover:bg-red-600"
+      onClick={onNext}
+     >
       Tiếp
      </Button>
     </div>
    </div>
-
-   <aside className="rounded-[28px] border-2 border-stone-200 bg-white p-5 shadow-theme-md">
-    <p className="text-sm font-black uppercase tracking-[0.14em] text-red-500">Flow học</p>
-    <h3 className="mt-2 text-2xl font-black text-stone-950">Flashcard gọn</h3>
-    <p className="mt-3 text-base font-bold leading-7 text-stone-500">
-     Nhìn chữ Hán, tự đoán pinyin và nghĩa. Lật thẻ xong đọc câu ví dụ thành tiếng. Đây là flow đơn giản để ôn HSK nhanh, tách khỏi kho từ cá nhân.
-    </p>
-    <div className="mt-5 rounded-3xl bg-stone-50 p-4">
-     <div className="text-3xl font-black text-stone-950">{current}</div>
-     <div className="text-sm font-black text-stone-500">thẻ hiện tại / {total}</div>
-    </div>
-   </aside>
   </section>
  );
 }
@@ -374,17 +460,24 @@ function GrammarSection({ items }: { items: HskGrammarItem[] }) {
  return (
   <section className="rounded-[28px] border-2 border-stone-200 bg-white p-4 shadow-theme-md sm:p-5">
    <div className="mb-4">
-    <p className="text-sm font-black uppercase tracking-[0.14em] text-purple-500">Ngữ pháp trọng tâm</p>
+    <p className="text-sm font-black uppercase tracking-[0.14em] text-purple-500">
+     Ngữ pháp trọng tâm
+    </p>
     <h2 className="text-3xl font-black text-stone-950">8 điểm cần nắm</h2>
    </div>
    <div className="grid gap-3 lg:grid-cols-2">
     {items.map((item) => (
-     <article key={item.title} className="rounded-3xl border-2 border-stone-200 bg-white p-5 shadow-theme-sm">
+     <article
+      key={item.title}
+      className="rounded-3xl border-2 border-stone-200 bg-white p-5 shadow-theme-sm"
+     >
       <h3 className="text-2xl font-black text-stone-950">{item.title}</h3>
       <div className="mt-3 rounded-2xl border-2 border-red-100 bg-red-50 p-3 text-base font-black text-red-700">
        {item.formula}
       </div>
-      <p className="mt-3 text-base font-bold leading-7 text-stone-600">{item.note}</p>
+      <p className="mt-3 text-base font-bold leading-7 text-stone-600">
+       {item.note}
+      </p>
       <p className="mt-3 rounded-2xl bg-stone-50 p-3 text-lg font-black leading-8 text-stone-900">
        {item.example}
       </p>
@@ -399,9 +492,14 @@ function TextSection({ items }: { items: HskTextItem[] }) {
  return (
   <section className="space-y-4">
    {items.map((item) => (
-    <article key={item.title} className="rounded-[28px] border-2 border-stone-200 bg-white p-5 shadow-theme-md">
+    <article
+     key={item.title}
+     className="rounded-[28px] border-2 border-stone-200 bg-white p-5 shadow-theme-md"
+    >
      <h2 className="text-2xl font-black text-stone-950">{item.title}</h2>
-     <p className="mt-4 whitespace-pre-line text-lg font-bold leading-10 text-stone-700">{item.body}</p>
+     <p className="mt-4 whitespace-pre-line text-lg font-bold leading-10 text-stone-700">
+      {item.body}
+     </p>
     </article>
    ))}
   </section>
@@ -429,18 +527,29 @@ function QuizSection({
   <section className="rounded-[28px] border-2 border-stone-200 bg-white p-4 shadow-theme-md sm:p-5">
    <div className="mb-5 flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-between">
     <div>
-     <p className="text-sm font-black uppercase tracking-[0.14em] text-red-500">Bài tập</p>
-     <h2 className="text-3xl font-black text-stone-950">Ôn nhanh không lộ đáp án</h2>
+     <p className="text-sm font-black uppercase tracking-[0.14em] text-red-500">
+      Bài tập
+     </p>
+     <h2 className="text-3xl font-black text-stone-950">
+      Ôn nhanh không lộ đáp án
+     </h2>
      <p className="mt-1 text-base font-bold text-stone-500">
       Trắc nghiệm, điền từ và sắp xếp câu. Chỉ hiện đáp án sau khi kiểm tra.
      </p>
     </div>
     <div className="flex gap-2">
-     <Button variant="outline" className="h-12 rounded-2xl border-2 border-stone-200 shadow-theme-sm" onClick={onReset}>
+     <Button
+      variant="outline"
+      className="h-12 rounded-2xl border-2 border-stone-200 shadow-theme-sm"
+      onClick={onReset}
+     >
       <RotateCcw className="h-4 w-4" />
       Làm lại
      </Button>
-     <Button className="h-12 rounded-2xl bg-red-500 text-white shadow-theme-md hover:bg-red-600" onClick={onCheck}>
+     <Button
+      className="h-12 rounded-2xl bg-red-500 text-white shadow-theme-md hover:bg-red-600"
+      onClick={onCheck}
+     >
       Kiểm tra
      </Button>
     </div>
@@ -457,7 +566,10 @@ function QuizSection({
      const user = answers[index] ?? "";
      const correct = normalizeAnswer(user) === normalizeAnswer(item.answer);
      return (
-      <article key={`${item.type}-${index}`} className="rounded-3xl border-2 border-stone-200 bg-white p-4 shadow-theme-sm">
+      <article
+       key={`${item.type}-${index}`}
+       className="rounded-3xl border-2 border-stone-200 bg-white p-4 shadow-theme-sm"
+      >
        <div className="mb-3 flex items-start justify-between gap-3">
         <h3 className="text-lg font-black text-stone-950">
          {index + 1}. {item.q}
@@ -466,10 +578,16 @@ function QuizSection({
          <span
           className={cn(
            "inline-flex items-center gap-1 rounded-full px-3 py-1 text-xs font-black",
-           correct ? "bg-emerald-100 text-emerald-700" : "bg-red-100 text-red-600",
+           correct
+            ? "bg-emerald-100 text-emerald-700"
+            : "bg-red-100 text-red-600",
           )}
          >
-          {correct ? <CheckCircle2 className="h-4 w-4" /> : <XCircle className="h-4 w-4" />}
+          {correct ? (
+           <CheckCircle2 className="h-4 w-4" />
+          ) : (
+           <XCircle className="h-4 w-4" />
+          )}
           {correct ? "Đúng" : "Sai"}
          </span>
         )}
@@ -508,7 +626,10 @@ function QuizSection({
         <div>
          <div className="mb-3 flex flex-wrap gap-2">
           {item.parts.map((part) => (
-           <span key={part} className="rounded-full bg-stone-100 px-3 py-1 text-sm font-black text-stone-600">
+           <span
+            key={part}
+            className="rounded-full bg-stone-100 px-3 py-1 text-sm font-black text-stone-600"
+           >
             {part}
            </span>
           ))}
