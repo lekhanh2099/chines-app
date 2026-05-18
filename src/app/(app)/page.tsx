@@ -102,10 +102,10 @@ export default function HomePage() {
       tone="orange"
      />
      <QuickReviewCard
-      href="/vocabulary"
+      href="/practice"
       icon={BookOpen}
-      title="Câu"
-      subtitle={stats.sentences ? `${stats.sentences} mẫu câu đã lưu` : "Chưa có mẫu câu"}
+      title="Luyện tập"
+      subtitle="HSK4 Bài 1: từ, cụm, ngữ pháp, bài khóa"
       tone="red"
      />
      <QuickReviewCard

@@ -31,7 +31,7 @@ type NavItem = {
 
 const mainItems: NavItem[] = [
  { name: "Trang chủ", icon: Home, href: "/" },
- { name: "Luyện tập", icon: BookOpen, href: "/vocabulary", badge: "Sớm" },
+ { name: "Luyện tập", icon: BookOpen, href: "/practice", badge: "HSK" },
  { name: "Từ vựng", icon: WalletCards, href: "/vocabulary" },
  { name: "Ngữ pháp", icon: GraduationCap, href: "/grammar", badge: "Mới", tone: "orange" },
  { name: "Ôn tập", icon: Brain, href: "/vocabulary?filter=review", badge: "2", tone: "red" },
