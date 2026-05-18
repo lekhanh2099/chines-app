@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
 import { useQueryClient } from "@tanstack/react-query";
 import {
@@ -106,9 +106,25 @@ const studyModes: { key: StudyMode; label: string; icon: LucideIcon }[] = [
 
 const answerLabels = ["A", "B", "C", "D"];
 
-export default function VocabularyLearningModule() {
+type VocabularyLearningModuleProps = {
+ courseId?: string | null;
+ title?: string;
+ description?: string;
+ emptyTitle?: string;
+ emptyDescription?: string;
+ allowDocxReset?: boolean;
+};
+
+export default function VocabularyLearningModule({
+ courseId,
+ title = "Từ vựng Hán ngữ",
+ description = "Học theo bài, ôn bằng flashcard, trắc nghiệm và chỉnh dữ liệu ngay khi cần.",
+ emptyTitle = "Chưa có course từ vựng",
+ emptyDescription = "Import file Vocabulary Compilation.docx để bắt đầu học theo bài.",
+ allowDocxReset = true,
+}: VocabularyLearningModuleProps = {}) {
  const queryClient = useQueryClient();
- const { data, isLoading, error } = useVocabEntries();
+ const { data, isLoading, error } = useVocabEntries(courseId);
  const course = isCoursePayload(data) ? data : null;
 
  const [activeTab, setActiveTab] = useState<MainTab>("study");
@@ -173,6 +189,27 @@ export default function VocabularyLearningModule() {
  useEffect(() => {
   if (!activeLessonId && lessons[0]) setActiveLessonId(lessons[0].id);
  }, [activeLessonId, lessons]);
+
+ useEffect(() => {
+  if (!lessons.length) return;
+  const lessonNumbers = lessons
+   .map((lesson) => lesson.lesson_number)
+   .filter((lessonNumber): lessonNumber is number => lessonNumber !== null);
+  if (!lessonNumbers.length) return;
+
+  const minLesson = Math.min(...lessonNumbers);
+  const maxLesson = Math.max(...lessonNumbers);
+  const low = Math.min(fromLesson, toLesson);
+  const high = Math.max(fromLesson, toLesson);
+  const rangeOverlapsCourse = lessonNumbers.some(
+   (lessonNumber) => lessonNumber >= low && lessonNumber <= high,
+  );
+
+  if (!rangeOverlapsCourse) {
+   setFromLesson(minLesson);
+   setToLesson(maxLesson);
+  }
+ }, [fromLesson, lessons, toLesson]);
 
  const visibleEntries = useMemo(() => {
   const base = (
@@ -344,20 +381,22 @@ export default function VocabularyLearningModule() {
   async (entry: VocabEntryWithProgress, nextLevel: number) => {
    if (!course) return false;
    const answeredAt = new Date().toISOString();
-   queryClient.setQueryData(["vocab-entries"], (current: unknown) =>
-    isCoursePayload(
-     current as
-      | VocabCourseWithLessons
-      | { course: null; lessons: []; entries: [] }
-      | undefined,
-    )
-     ? applyProgress(
-        current as VocabCourseWithLessons,
-        entry.id,
-        nextLevel,
-        answeredAt,
-       )
-     : current,
+   queryClient.setQueryData(
+    ["vocab-entries", courseId ?? "current"],
+    (current: unknown) =>
+     isCoursePayload(
+      current as
+       | VocabCourseWithLessons
+       | { course: null; lessons: []; entries: [] }
+       | undefined,
+     )
+      ? applyProgress(
+         current as VocabCourseWithLessons,
+         entry.id,
+         nextLevel,
+         answeredAt,
+        )
+      : current,
    );
    const response = await fetch(`/api/vocab/entries/${entry.id}/progress`, {
     method: "PATCH",
@@ -371,7 +410,7 @@ export default function VocabularyLearningModule() {
    }
    return true;
   },
-  [course, queryClient],
+  [course, courseId, queryClient],
  );
 
  const goNextCard = useCallback(() => {
@@ -898,6 +937,8 @@ export default function VocabularyLearningModule() {
  return (
   <LearningShell>
    <LearningHeader
+    title={title}
+    description={description}
     activeTab={activeTab}
     onTabChange={setActiveTab}
     mode={mode}
@@ -917,6 +958,7 @@ export default function VocabularyLearningModule() {
     }}
     onResetImport={resetImport}
     resetting={resetting}
+    allowDocxReset={allowDocxReset}
     onShowShortcuts={() => setShowShortcuts((value) => !value)}
     lessons={lessons}
     activeLesson={activeLesson}
@@ -941,12 +983,14 @@ export default function VocabularyLearningModule() {
     </div>
    ) : !course ? (
     <EmptyState
-     title="Chưa có course từ vựng"
-     description="Import file Vocabulary Compilation.docx để bắt đầu học theo bài."
+     title={emptyTitle}
+     description={emptyDescription}
      action={
-      <ActionButton onClick={resetImport} loading={resetting} icon={Upload}>
-       Import docs
-      </ActionButton>
+      allowDocxReset ? (
+       <ActionButton onClick={resetImport} loading={resetting} icon={Upload}>
+        Import docs
+       </ActionButton>
+      ) : undefined
      }
     />
    ) : (
@@ -1113,6 +1157,8 @@ function LearningShell({ children }: { children: React.ReactNode }) {
 }
 
 function LearningHeader({
+ title,
+ description,
  activeTab,
  onTabChange,
  mode,
@@ -1121,11 +1167,14 @@ function LearningHeader({
  onRandomToggle,
  onResetImport,
  resetting,
+ allowDocxReset,
  onShowShortcuts,
  lessons,
  activeLesson,
  onLessonChange,
 }: {
+ title: string;
+ description: string;
  activeTab: MainTab;
  onTabChange: (tab: MainTab) => void;
  mode: StudyMode;
@@ -1134,6 +1183,7 @@ function LearningHeader({
  onRandomToggle: () => void;
  onResetImport: () => void;
  resetting: boolean;
+ allowDocxReset: boolean;
  onShowShortcuts: () => void;
  lessons: VocabLessonWithStats[];
  activeLesson: VocabLessonWithStats | null;
@@ -1159,7 +1209,7 @@ function LearningHeader({
         : "text-3xl md:text-4xl",
       )}
      >
-      Từ vựng Hán ngữ
+      {title}
      </h1>
      <p
       className={cn(
@@ -1167,8 +1217,7 @@ function LearningHeader({
        isFlashcardFocus && "hidden md:block",
       )}
      >
-      Học theo bài, ôn bằng flashcard, trắc nghiệm và chỉnh dữ liệu ngay khi
-      cần.
+      {description}
      </p>
      <div className="mt-2 flex max-w-full items-center gap-2 overflow-x-auto pb-1">
       <SegmentedControl
@@ -1181,14 +1230,16 @@ function LearningHeader({
        onChange={(key) => onTabChange(key as MainTab)}
       />
       <div className="hidden gap-2 md:flex">
-       <ActionButton
-        onClick={onResetImport}
-        loading={resetting}
-        icon={Upload}
-        tone="neutral"
-       >
-        Reset docs
-       </ActionButton>
+       {allowDocxReset && (
+        <ActionButton
+         onClick={onResetImport}
+         loading={resetting}
+         icon={Upload}
+         tone="neutral"
+        >
+         Reset docs
+        </ActionButton>
+       )}
 
        <ActionButton
         onClick={onRandomToggle}
@@ -1662,8 +1713,8 @@ function FlashFilterPanel(props: {
  const lessonNumbers = props.lessons
   .map((lesson) => lesson.lesson_number)
   .filter((lessonNumber): lessonNumber is number => lessonNumber !== null);
- const minLesson = Math.min(...lessonNumbers, 11);
- const maxLesson = Math.max(...lessonNumbers, 25);
+ const minLesson = lessonNumbers.length ? Math.min(...lessonNumbers) : 11;
+ const maxLesson = lessonNumbers.length ? Math.max(...lessonNumbers) : 25;
  const statusItems: { key: FlashStatusFilter; label: string }[] = [
   { key: "all", label: "Tất cả" },
   { key: "new", label: "Mới" },
@@ -2054,6 +2105,16 @@ function FlashcardFocusMode({
  entries: VocabEntryWithProgress[];
 }) {
  const nextDisabled = total <= 1;
+ const touchStartRef = useRef<{ x: number; y: number } | null>(null);
+ const [writerCharIndex, setWriterCharIndex] = useState(0);
+ const showInlineWriter = isHskEntry(activeEntry);
+ const nextCard = useCallback(() => {
+  if (!nextDisabled) onSelectCard((cardIndex + 1) % total);
+ }, [cardIndex, nextDisabled, onSelectCard, total]);
+
+ useEffect(() => {
+  setWriterCharIndex(0);
+ }, [activeEntry.id]);
 
  return (
   <div className="mx-auto flex w-full max-w-7xl flex-col justify-center rounded-[24px] border-2 border-stone-100 bg-stone-50 md:rounded-[28px] md:px-6 md:py-4">
@@ -2061,31 +2122,58 @@ function FlashcardFocusMode({
     <div className="absolute inset-4 hidden rotate-[-4deg] rounded-[36px] border-2 border-stone-100 bg-white/70 sm:block" />
     <div className="absolute inset-4 hidden rotate-3 rounded-[36px] border-2 border-stone-100 bg-white/80 sm:block" />
     <div
+     onTouchStart={(event) => {
+      const touch = event.touches[0];
+      touchStartRef.current = { x: touch.clientX, y: touch.clientY };
+     }}
+     onTouchEnd={(event) => {
+      const start = touchStartRef.current;
+      touchStartRef.current = null;
+      if (!start) return;
+      const touch = event.changedTouches[0];
+      const dx = touch.clientX - start.x;
+      const dy = touch.clientY - start.y;
+      if (Math.abs(dx) < 56 || Math.abs(dx) < Math.abs(dy) * 1.2) return;
+      if (dx < 0) nextCard();
+      else onPrevious();
+     }}
      className={cn(
-      "relative flex flex-col rounded-[26px] border-2 border-stone-100 bg-white shadow-theme-md md:rounded-[36px] md:p-7",
+      "relative flex flex-col rounded-[26px] border-2 border-stone-100 bg-white shadow-theme-md touch-pan-y md:rounded-[36px] md:p-7",
       revealed
-       ? "min-h-[520px] md:h-[calc(100dvh-245px)] md:max-h-[820px]"
-       : "h-[calc(100dvh-315px)] min-h-[360px] max-h-[620px] sm:min-h-[460px] md:h-[calc(100dvh-245px)] md:max-h-[820px]",
+       ? "min-h-[560px] md:h-[calc(100dvh-245px)] md:max-h-[860px]"
+       : "min-h-[430px] sm:min-h-[520px] md:h-[calc(100dvh-245px)] md:max-h-[860px]",
      )}
     >
      {!revealed ? (
-      <button
-       type="button"
-       onClick={onReveal}
-       className="flex min-h-0 flex-1 flex-col items-center justify-center rounded-[22px] bg-stone-50/70 px-3 py-6 transition hover:bg-stone-50 md:rounded-[28px] md:px-4 md:py-8"
-      >
-       <h3 className="max-w-full text-center text-[clamp(4.2rem,22vw,8rem)] font-black leading-tight text-red-500 md:text-[clamp(4.5rem,10vw,8rem)]">
-        {getFrontText(activeEntry, frontMode)}
-       </h3>
-      </button>
+      <>
+       <button
+        type="button"
+        className="flex min-h-[260px] flex-1 flex-col items-center justify-center rounded-[22px] bg-stone-50/70 px-3 py-6 transition hover:bg-stone-50 md:rounded-[28px] md:px-4 md:py-8"
+       >
+        <div className="flex flex-1 flex-col items-center justify-center">
+         <h3 className="max-w-full text-center text-[clamp(4.2rem,22vw,8rem)] font-black leading-tight text-red-500 md:text-[clamp(4.5rem,10vw,8rem)]">
+          {getFrontText(activeEntry, frontMode)}
+         </h3>
+         {showInlineWriter && (
+          <InlineHskWritingPanel
+           entry={activeEntry}
+           activeIndex={writerCharIndex}
+           onIndexChange={setWriterCharIndex}
+          />
+         )}
+        </div>
+       </button>
+      </>
      ) : (
-      <FlashcardBack
-       entry={activeEntry}
-       onSpeak={onSpeak}
-       onEdit={onEdit}
-       showExamples={showExamples}
-       compact
-      />
+      <>
+       <FlashcardBack
+        entry={activeEntry}
+        onSpeak={onSpeak}
+        onEdit={onEdit}
+        showExamples={showExamples}
+        compact
+       />
+      </>
      )}
     </div>
    </div>
@@ -2101,11 +2189,18 @@ function FlashcardFocusMode({
     </button>
     <button
      type="button"
-     onClick={() => onSelectCard((cardIndex + 1) % total)}
+     onClick={nextCard}
      disabled={nextDisabled}
      className="h-12 rounded-2xl border-2 border-stone-200 bg-white px-4 text-sm font-black text-stone-900 shadow-theme-sm hover:bg-stone-50 disabled:opacity-50"
     >
      Tiếp →
+    </button>
+    <button
+     type="button"
+     onClick={onReveal}
+     className="h-12 rounded-2xl bg-blue-500 px-4 text-sm font-black text-white shadow-theme-sm hover:bg-blue-600"
+    >
+     Xem đáp án
     </button>
     <button
      type="button"
@@ -2186,6 +2281,63 @@ function QuickWordChips({
  );
 }
 
+function isHskEntry(entry: VocabEntryWithProgress) {
+ return (
+  entry.source.courseKey.toLowerCase().includes("hsk") ||
+  entry.ai_analysis.source_metadata?.course_key
+   ?.toLowerCase()
+   .includes("hsk") ||
+  Boolean(entry.ai_analysis.hsk_level)
+ );
+}
+
+function InlineHskWritingPanel({
+ entry,
+ activeIndex,
+ onIndexChange,
+}: {
+ entry: VocabEntryWithProgress;
+ activeIndex: number;
+ onIndexChange: (index: number) => void;
+}) {
+ const characters = getStudyCharacters(entry);
+ const activeChar = characters[activeIndex] || characters[0];
+ if (!activeChar) return null;
+
+ return (
+  <section>
+   <div className="mb-4 flex flex-wrap justify-center gap-2">
+    {characters.map((character, index) => (
+     <button
+      key={`${character}-${index}`}
+      type="button"
+      onClick={(event) => {
+       event.stopPropagation();
+       onIndexChange(index);
+      }}
+      className={cn(
+       "flex h-10 min-w-10 items-center justify-center rounded-xl border-2 px-3 text-lg font-black shadow-theme-sm transition",
+       index === activeIndex
+        ? "border-red-500 bg-red-500 text-white"
+        : "border-stone-200 bg-white text-stone-900 hover:bg-stone-50",
+      )}
+     >
+      {character}
+     </button>
+    ))}
+   </div>
+   <div
+    className="flex justify-center md:shrink-0"
+    onClick={(event) => event.stopPropagation()}
+    onTouchStart={(event) => event.stopPropagation()}
+    onTouchEnd={(event) => event.stopPropagation()}
+   >
+    <CharacterWriterCard character={activeChar} />
+   </div>
+  </section>
+ );
+}
+
 function FlashcardBack({
  entry,
  onSpeak,
@@ -2204,6 +2356,8 @@ function FlashcardBack({
  const analysis = entry.ai_analysis;
  const example = getPrimaryExample(entry);
  const examples = (analysis.examples || []).slice(0, 3);
+ const [activeIndex, setActiveIndex] = useState(0);
+
  if (compact) {
   return (
    <div
@@ -2217,6 +2371,7 @@ function FlashcardBack({
         <h3 className="whitespace-nowrap text-[clamp(4rem,20vw,5.6rem)] font-black leading-none text-red-500 md:text-[clamp(3rem,7vw,5.6rem)]">
          {entry.hanzi}
         </h3>
+
         <p className="text-center text-xl font-black leading-tight text-stone-900 md:text-2xl lg:mt-3 lg:text-left">
          {entry.pinyin}
          {entry.sino_vietnamese || analysis.han_viet
@@ -2224,6 +2379,7 @@ function FlashcardBack({
           : ""}
         </p>
        </div>
+
        <p className="mt-3 text-base font-black leading-7 text-stone-800 md:text-lg">
         {getMeaning(entry)}
        </p>
@@ -2276,49 +2432,11 @@ function FlashcardBack({
      </section>
 
      <section className="flex min-h-0 flex-col gap-3 overflow-visible pr-0 [scrollbar-width:thin] [scrollbar-color:#d6d3d1_transparent] md:overflow-y-auto md:pr-1">
-      {showExamples && examples.length ? (
-       <section className="rounded-[22px] bg-stone-50 p-3 md:rounded-[24px] md:p-5">
-        <p className="text-xs font-black uppercase tracking-wide text-stone-400">
-         Ví dụ chính
-        </p>
-        <div className="mt-2 space-y-3">
-         {examples.map((item, index) => (
-          <div
-           key={`${item.zh}-${index}`}
-           className={cn(
-            "rounded-[18px] bg-white p-3 shadow-theme-sm",
-            index === 0 && "border-2 border-stone-100",
-           )}
-          >
-           <p
-            className={cn(
-             "font-black leading-7 text-stone-900",
-             index === 0 ? "text-base md:text-xl" : "text-sm md:text-base",
-            )}
-           >
-            {index === 0 && <Volume2 className="mr-2 inline h-5 w-5" />}
-            {item.zh}
-           </p>
-           <p className="mt-1 text-sm font-bold leading-6 text-stone-500">
-            {item.pinyin}
-           </p>
-           <p className="mt-1 text-sm font-bold leading-6 text-stone-800 md:text-base md:leading-7">
-            {item.vi}
-           </p>
-           {item.note && (
-            <p className="mt-2 rounded-2xl bg-stone-50 p-2 text-xs font-bold leading-5 text-stone-600">
-             {item.note}
-            </p>
-           )}
-          </div>
-         ))}
-        </div>
-       </section>
-      ) : (
-       <section className="rounded-[22px] bg-stone-50 p-4 text-sm font-bold text-stone-500">
-        Bật ví dụ trong bộ lọc nếu muốn luyện câu mẫu ở mặt sau.
-       </section>
-      )}
+      <InlineHskWritingPanel
+       entry={entry}
+       activeIndex={activeIndex}
+       onIndexChange={setActiveIndex}
+      />
       {!!analysis.comparisons?.length && (
        <section className="rounded-[22px] bg-stone-50 p-4">
         <p className="text-xs font-black uppercase tracking-wide text-stone-400">
@@ -2341,6 +2459,42 @@ function FlashcardBack({
       )}
      </section>
     </div>
+    <section>
+     <p className="text-xs font-black uppercase tracking-wide text-stone-400">
+      Ví dụ
+     </p>
+     <div className="mt-2 space-y-3">
+      {examples.map((item, index) => (
+       <div
+        key={`${item.zh}-${index}`}
+        className={cn(
+         "rounded-[18px] bg-white p-3 shadow-theme-sm",
+         index === 0 && "border-2 border-stone-100",
+        )}
+       >
+        <p
+         className={cn(
+          "font-black leading-7 text-stone-900",
+          index === 0 ? "text-base md:text-xl" : "text-sm md:text-base",
+         )}
+        >
+         {item.zh}
+        </p>
+        <p className="mt-1 text-sm font-bold leading-6 text-stone-500">
+         {item.pinyin}
+        </p>
+        <p className="mt-1 text-sm font-bold leading-6 text-stone-800 md:text-base md:leading-7">
+         {item.vi}
+        </p>
+        {item.note && (
+         <p className="mt-2 rounded-2xl bg-stone-50 p-2 text-xs font-bold leading-5 text-stone-600">
+          {item.note}
+         </p>
+        )}
+       </div>
+      ))}
+     </div>
+    </section>
    </div>
   );
  }

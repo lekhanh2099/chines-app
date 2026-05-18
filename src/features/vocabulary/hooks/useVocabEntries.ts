@@ -10,11 +10,14 @@ export class VocabSchemaMissingError extends Error {
  }
 }
 
-export function useVocabEntries() {
+export function useVocabEntries(courseId?: string | null) {
  return useQuery({
-  queryKey: ["vocab-entries"],
+  queryKey: ["vocab-entries", courseId ?? "current"],
   queryFn: async () => {
-   const response = await fetch("/api/vocab/entries", { method: "GET" });
+   const url = courseId
+    ? `/api/vocab/entries?courseId=${encodeURIComponent(courseId)}`
+    : "/api/vocab/entries";
+   const response = await fetch(url, { method: "GET" });
    if (!response.ok) {
     const error = (await response.json().catch(() => null)) as { error?: string; migrationRequired?: boolean } | null;
     if (error?.migrationRequired) {
