@@ -60,87 +60,33 @@ export function FlashcardFocusWorkspace(
 ) {
  const [filterOpen, setFilterOpen] = useState(false);
  const [listOpen, setListOpen] = useState(false);
- const studied = props.rangeEntries.filter(
-  (entry) => entry.last_answered_at || entry.proficiency_level > 0,
- ).length;
- const progress = props.total
-  ? Math.min(100, Math.round((studied / props.total) * 100))
-  : 0;
  const activeEntry = props.activeEntry;
 
  return (
-  <section className="rounded-[22px] border-2 border-stone-200 bg-white p-2.5 shadow-theme-md sm:p-3 md:rounded-[24px] md:p-4">
-   <div className="flex flex-wrap items-center justify-between gap-2 rounded-[20px] border-2 border-stone-100 bg-stone-50 px-3 py-2">
-    <div className="flex min-w-0 flex-wrap items-center gap-2">
-     <p className="rounded-full bg-red-50 px-3 py-1 text-xs font-black uppercase tracking-wide text-red-500">
-      {props.rangeTitle}
-     </p>
-     <p className="rounded-full bg-white px-3 py-1 text-xs font-black text-stone-600 shadow-theme-sm">
-      {props.total ? props.cardIndex + 1 : 0}/{props.total} thẻ
-     </p>
-     <p className="rounded-full bg-white px-3 py-1 text-xs font-black text-stone-600 shadow-theme-sm">
-      Đã học {studied}/{props.total} · {progress}%
-     </p>
-     {props.autoplayEnabled && (
-      <span className="rounded-full bg-blue-50 px-3 py-1 text-xs font-black text-blue-700">
-       Tự phát {props.autoplayInterval}s
-      </span>
-     )}
+  <section className="w-full max-w-full min-w-0 overflow-x-hidden bg-stone-50 px-3 pb-[calc(104px+env(safe-area-inset-bottom))] pt-3 sm:px-3 md:py-5">
+   {activeEntry && (
+    <div className="mx-auto mb-3 flex w-full max-w-5xl min-w-0 flex-wrap items-center justify-center gap-2 overflow-x-hidden text-xs font-black text-stone-500">
+     <button type="button" onClick={() => setFilterOpen(true)} className="min-w-0 rounded-full border border-stone-200 bg-white px-3 py-1.5 hover:bg-stone-50">
+      Bộ lọc
+     </button>
+     <button type="button" onClick={() => setListOpen(true)} className="min-w-0 rounded-full border border-stone-200 bg-white px-3 py-1.5 hover:bg-stone-50">
+      Danh sách từ
+     </button>
+     <button
+      type="button"
+      onClick={() => props.onAutoplayEnabledChange(!props.autoplayEnabled)}
+      className={cn(
+       "min-w-0 rounded-full border px-3 py-1.5",
+       props.autoplayEnabled ? "border-red-500 bg-red-500 text-white" : "border-stone-200 bg-white hover:bg-stone-50",
+      )}
+     >
+      {props.autoplayEnabled ? `Dừng tự phát ${props.autoplayInterval}s` : "Tự phát"}
+     </button>
     </div>
-    <button
-     type="button"
-     onClick={() => setFilterOpen(true)}
-     className="rounded-2xl border-2 border-stone-200 bg-white px-3 py-2 text-sm font-black text-stone-700 shadow-theme-sm hover:bg-stone-50"
-    >
-     Bộ lọc
-    </button>
-   </div>
-
-   <div className="mt-2 grid grid-cols-3 gap-2 md:flex md:max-w-full md:items-center md:overflow-x-auto md:pb-1">
-    <Select
-     value={props.frontMode}
-     onChange={(event) =>
-      props.onFrontModeChange(event.target.value as FlashFrontMode)
-     }
-     wrapperClassName="min-w-0"
-     className="h-10 px-2 pr-8 text-xs sm:h-11 sm:px-4 sm:pr-12 sm:text-sm"
-    >
-     <option value="hanzi">Mặt trước: Hán</option>
-     <option value="meaning">Mặt trước: Nghĩa</option>
-     <option value="pinyin">Mặt trước: Pinyin</option>
-    </Select>
-    <button
-     type="button"
-     onClick={() => setListOpen(true)}
-     className="inline-flex h-10 min-w-0 items-center justify-center gap-1 rounded-2xl border-2 border-stone-200 bg-white px-2 text-xs font-black text-stone-700 shadow-theme-sm hover:bg-stone-50 sm:h-11 sm:gap-2 sm:px-4 sm:text-sm"
-    >
-     <Layers3 className="h-4 w-4" />
-     <span className="truncate">List từ</span>
-    </button>
-    <button
-     type="button"
-     onClick={() => props.onAutoplayEnabledChange(!props.autoplayEnabled)}
-     className={cn(
-      "inline-flex h-10 min-w-0 items-center justify-center gap-1 rounded-2xl border-2 px-2 text-xs font-black shadow-theme-sm sm:h-11 sm:gap-2 sm:px-4 sm:text-sm",
-      props.autoplayEnabled
-       ? "border-red-500 bg-red-500 text-white"
-       : "border-stone-200 bg-white text-stone-700 hover:bg-stone-50",
-     )}
-    >
-     {props.autoplayEnabled ? (
-      <Pause className="h-4 w-4" />
-     ) : (
-      <Play className="h-4 w-4" />
-     )}
-     <span className="truncate">
-      {props.autoplayEnabled ? "Dừng" : "Tự phát"}
-     </span>
-    </button>
-   </div>
-
-   <div className="mt-4">
+   )}
+   <div className="w-full max-w-full min-w-0 overflow-x-hidden">
     {!activeEntry ? (
-     <div className="rounded-[28px] border-2 border-stone-100 bg-stone-50 p-8">
+     <div className="mx-auto w-full max-w-3xl min-w-0 overflow-hidden rounded-[28px] border-2 border-stone-100 bg-white p-4 sm:p-8">
       <EmptyState
        title="Không có từ trong bộ lọc"
        description="Đổi khoảng bài, trạng thái hoặc search để tiếp tục học."
@@ -151,7 +97,6 @@ export function FlashcardFocusWorkspace(
      <FlashcardFocusMode {...props} activeEntry={activeEntry} />
     )}
    </div>
-
    {filterOpen && (
     <LearningDrawer
      title="Bộ lọc flashcard"
@@ -228,7 +173,7 @@ export function FlashFilterPanel(props: {
  ];
 
  return (
-  <aside className="rounded-[24px] border-2 border-stone-200 bg-white p-4 text-left shadow-theme-sm">
+  <aside className="w-full max-w-full min-w-0 overflow-x-hidden rounded-[24px] border-2 border-stone-200 bg-white p-4 text-left shadow-theme-sm">
    <div className="grid grid-cols-2 gap-2">
     <MiniStat label="Trong khoảng" value={props.flashStats.range} />
     <MiniStat label="Đang hiện" value={props.flashStats.filtered} />
@@ -459,14 +404,14 @@ export function FlashcardMode({
  onPrevious: () => void;
 }) {
  return (
-  <div className="mx-auto flex w-full max-w-4xl flex-col items-center">
+  <div className="mx-auto flex w-full max-w-4xl min-w-0 flex-col items-center overflow-x-hidden">
    <div className="rounded-full bg-white px-4 py-1.5 text-lg font-black text-stone-800 shadow-theme-sm">
     {Math.min(cardIndex + 1, total)} / {total}
    </div>
-   <div className="relative mt-4 w-full max-w-3xl">
+   <div className="relative mt-4 w-full max-w-3xl min-w-0">
     <div className="absolute inset-0 rotate-[-4deg] rounded-[36px] border-2 border-stone-100 bg-white/70" />
     <div className="absolute inset-0 rotate-3 rounded-[36px] border-2 border-stone-100 bg-white/80" />
-    <div className="relative flex h-[clamp(430px,52vh,560px)] min-h-0 flex-col rounded-[32px] border-2 border-stone-100 bg-white p-5 shadow-theme-md md:p-6">
+    <div className="relative flex h-[clamp(430px,52vh,560px)] min-h-0 w-full max-w-full min-w-0 flex-col overflow-hidden rounded-[32px] border-2 border-stone-100 bg-white p-5 shadow-theme-md md:p-6">
      <div className="flex items-center justify-between text-stone-800">
       <button
        type="button"
@@ -493,7 +438,7 @@ export function FlashcardMode({
        onClick={onReveal}
        className="flex min-h-0 flex-1 flex-col items-center justify-center rounded-[24px] py-8 transition hover:bg-stone-50/70"
       >
-       <h3 className="text-center text-[clamp(3.5rem,7vw,6rem)] font-black leading-tight text-red-500">
+       <h3 className="max-w-full break-words text-center text-[clamp(4.5rem,22vw,7rem)] font-black leading-tight text-red-500 [overflow-wrap:anywhere] md:text-[clamp(3.5rem,7vw,6rem)]">
         {getFrontText(activeEntry, frontMode)}
        </h3>
        <p className="mt-7 text-center text-lg font-black text-stone-500 md:text-xl">
@@ -620,11 +565,80 @@ function FlashcardFocusMode({
   setWriterCharIndex(0);
  }, [activeEntry.id]);
 
+ const actionBar = (
+  <div
+   className={cn(
+    "mx-auto mb-3 grid w-full max-w-full min-w-0 gap-2 md:mb-4 md:gap-3",
+    revealed
+     ? "grid-cols-3 sm:max-w-[1180px] md:grid-cols-5"
+     : "grid-cols-3 sm:max-w-[760px]",
+   )}
+  >
+   <button
+    type="button"
+    onClick={onPrevious}
+    disabled={nextDisabled}
+    className="h-12 min-w-0 rounded-2xl border-2 border-stone-200 bg-white px-2 text-sm font-black text-stone-900 shadow-theme-sm hover:bg-stone-50 disabled:opacity-50 sm:px-4"
+   >
+    <span className="hidden sm:inline">← Trước</span>
+    <span className="sm:hidden">←</span>
+   </button>
+   {!revealed && (
+    <button
+     type="button"
+     onClick={onReveal}
+     className="h-12 min-w-0 rounded-2xl bg-red-500 px-2 text-sm font-black text-white shadow-theme-sm hover:bg-red-600 sm:px-4"
+    >
+     <span className="hidden sm:inline">Xem đáp án</span>
+     <span className="sm:hidden">Xem</span>
+    </button>
+   )}
+   <button
+    type="button"
+    onClick={nextCard}
+    disabled={nextDisabled}
+    className="h-12 min-w-0 rounded-2xl border-2 border-stone-200 bg-white px-2 text-sm font-black text-stone-900 shadow-theme-sm hover:bg-stone-50 disabled:opacity-50 sm:px-4"
+   >
+    <span className="hidden sm:inline">Tiếp →</span>
+    <span className="sm:hidden">→</span>
+   </button>
+   {revealed && (
+    <>
+     <button
+      type="button"
+      onClick={onRemember}
+      className="h-12 min-w-0 rounded-2xl bg-emerald-600 px-2 text-sm font-black text-white shadow-theme-sm hover:bg-emerald-700 sm:px-4"
+     >
+      <span className="hidden sm:inline">Đã biết</span>
+      <span className="sm:hidden">Biết</span>
+     </button>
+     <button
+      type="button"
+      onClick={onAgain}
+      className="h-12 min-w-0 rounded-2xl border-2 border-stone-200 bg-white px-2 text-sm font-black text-stone-900 shadow-theme-sm hover:bg-stone-50 sm:px-4"
+     >
+      <span className="hidden sm:inline">Học lại</span>
+      <span className="sm:hidden">Lại</span>
+     </button>
+     <button
+      type="button"
+      onClick={onReview}
+      className="h-12 min-w-0 rounded-2xl border-2 border-stone-200 bg-white px-2 text-sm font-black text-stone-900 shadow-theme-sm hover:bg-stone-50 sm:px-4"
+     >
+      <span className="hidden sm:inline">Còn khó</span>
+      <span className="sm:hidden">Khó</span>
+     </button>
+    </>
+   )}
+  </div>
+ );
+
  return (
-  <div className="mx-auto flex w-full max-w-7xl flex-col justify-center rounded-[24px] border-2 border-stone-100 bg-stone-50 md:rounded-[28px] md:px-6 md:py-4">
-   <div className="relative mx-auto w-full max-w-6xl">
-    <div className="absolute inset-4 hidden rotate-[-4deg] rounded-[36px] border-2 border-stone-100 bg-white/70 sm:block" />
-    <div className="absolute inset-4 hidden rotate-3 rounded-[36px] border-2 border-stone-100 bg-white/80 sm:block" />
+  <div className="mx-auto flex w-full max-w-full min-w-0 flex-col justify-center overflow-x-hidden">
+   {actionBar}
+   <div className={cn("relative mx-auto w-full max-w-full min-w-0", revealed ? "sm:max-w-[1180px]" : "sm:max-w-[760px]")}>
+    <div className="absolute inset-x-8 top-3 bottom-0 hidden rotate-[-3deg] rounded-[30px] border border-stone-100 bg-white/70 sm:block" />
+    <div className="absolute inset-x-8 top-3 bottom-0 hidden rotate-2 rounded-[30px] border border-stone-100 bg-white/80 sm:block" />
     <div
      onTouchStart={(event) => {
       const touch = event.touches[0];
@@ -642,20 +656,22 @@ function FlashcardFocusMode({
       else onPrevious();
      }}
      className={cn(
-      "relative flex flex-col rounded-[26px] border-2 border-stone-100 bg-white shadow-theme-md touch-pan-y md:rounded-[36px] md:p-7",
-      revealed
-       ? "min-h-[560px] md:h-[calc(100dvh-245px)] md:max-h-[860px]"
-       : "min-h-[430px] sm:min-h-[520px] md:h-[calc(100dvh-245px)] md:max-h-[860px]",
+      "relative flex w-full max-w-full min-w-0 flex-col overflow-hidden rounded-[28px] border border-stone-200 bg-white p-4 shadow-theme-md touch-pan-y sm:p-5 md:rounded-[32px]",
+      revealed ? "min-h-[420px]" : "min-h-[360px] sm:min-h-[420px]",
      )}
     >
      {!revealed ? (
       <>
-       <button
-        type="button"
-        className="flex min-h-[260px] flex-1 flex-col items-center justify-center rounded-[22px] bg-stone-50/70 px-3 py-6 transition hover:bg-stone-50 md:rounded-[28px] md:px-4 md:py-8"
-       >
+      <button
+       type="button"
+       onClick={onReveal}
+       className="flex min-h-[260px] w-full max-w-full min-w-0 flex-1 flex-col items-center justify-center overflow-x-hidden rounded-[22px] bg-stone-50/70 px-3 py-6 transition hover:bg-stone-50 md:rounded-[28px] md:px-4 md:py-8"
+      >
         <div className="flex flex-1 flex-col items-center justify-center">
-         <h3 className="max-w-full text-center text-[clamp(4.2rem,22vw,8rem)] font-black leading-tight text-red-500 md:text-[clamp(4.5rem,10vw,8rem)]">
+         <p className="mb-4 rounded-full bg-white px-3 py-1 text-xs font-black text-stone-500 shadow-theme-sm">
+          {Math.min(cardIndex + 1, total)} / {total}
+         </p>
+         <h3 className="max-w-full break-words text-center text-[clamp(4.5rem,24vw,8rem)] font-black leading-tight text-red-500 [overflow-wrap:anywhere] md:text-[clamp(4rem,8vw,6.5rem)]">
           {getFrontText(activeEntry, frontMode)}
          </h3>
          {showInlineWriter && (
@@ -681,53 +697,6 @@ function FlashcardFocusMode({
      )}
     </div>
    </div>
-
-   <div className="mx-auto mt-3 grid w-full max-w-6xl grid-cols-2 gap-2 md:mt-4 md:grid-cols-[1fr_1fr_1.1fr_1.1fr_1.1fr] md:gap-3">
-    <button
-     type="button"
-     onClick={onPrevious}
-     disabled={nextDisabled}
-     className="h-12 rounded-2xl border-2 border-stone-200 bg-white px-4 text-sm font-black text-stone-900 shadow-theme-sm hover:bg-stone-50 disabled:opacity-50"
-    >
-     ← Trước
-    </button>
-    <button
-     type="button"
-     onClick={nextCard}
-     disabled={nextDisabled}
-     className="h-12 rounded-2xl border-2 border-stone-200 bg-white px-4 text-sm font-black text-stone-900 shadow-theme-sm hover:bg-stone-50 disabled:opacity-50"
-    >
-     Tiếp →
-    </button>
-    <button
-     type="button"
-     onClick={onReveal}
-     className="h-12 rounded-2xl bg-blue-500 px-4 text-sm font-black text-white shadow-theme-sm hover:bg-blue-600"
-    >
-     Xem đáp án
-    </button>
-    <button
-     type="button"
-     onClick={onAgain}
-     className="h-12 rounded-2xl bg-rose-600 px-4 text-sm font-black text-white shadow-theme-sm hover:bg-rose-700"
-    >
-     Học lại
-    </button>
-    <button
-     type="button"
-     onClick={onReview}
-     className="h-12 rounded-2xl bg-orange-500 px-4 text-sm font-black text-white shadow-theme-sm hover:bg-orange-600"
-    >
-     Còn khó
-    </button>
-    <button
-     type="button"
-     onClick={onRemember}
-     className="col-span-2 h-12 rounded-2xl bg-emerald-600 px-4 text-sm font-black text-white shadow-theme-sm hover:bg-emerald-700 md:col-span-1"
-    >
-     Đã biết
-    </button>
-   </div>
   </div>
  );
 }
@@ -751,7 +720,7 @@ export function QuickWordChips({
     !expanded && "mt-5 border-t-2 border-stone-100 pt-4",
    )}
   >
-   <div className="flex items-center justify-between gap-3">
+   <div className="flex min-w-0 items-center justify-between gap-3">
     <p className="text-xs font-black uppercase tracking-wide text-stone-500">
      Nhảy nhanh
     </p>
@@ -761,7 +730,7 @@ export function QuickWordChips({
    </div>
    <div
     className={cn(
-     "mt-3 flex flex-wrap gap-2 overflow-y-auto pr-1",
+     "mt-3 flex max-w-full flex-wrap gap-2 overflow-y-auto overflow-x-hidden pr-1",
      expanded ? "max-h-[70vh]" : "max-h-28",
     )}
    >
@@ -771,7 +740,7 @@ export function QuickWordChips({
       type="button"
       onClick={() => onSelect(index)}
       className={cn(
-       "rounded-full border-2 px-3 py-1.5 text-sm font-black transition",
+       "max-w-full truncate rounded-full border-2 px-3 py-1.5 text-sm font-black transition",
        entry.id === activeEntryId
         ? "border-red-500 bg-red-500 text-white"
         : "border-stone-200 bg-white text-stone-700 hover:bg-stone-50",
@@ -786,12 +755,13 @@ export function QuickWordChips({
 }
 
 function isHskEntry(entry: VocabEntryWithProgress) {
+ const hskLevel = String(entry.ai_analysis.hsk_level || "").toLowerCase();
  return (
   entry.source.courseKey.toLowerCase().includes("hsk") ||
   entry.ai_analysis.source_metadata?.course_key
    ?.toLowerCase()
    .includes("hsk") ||
-  Boolean(entry.ai_analysis.hsk_level)
+  hskLevel.startsWith("hsk")
  );
 }
 
@@ -809,8 +779,8 @@ export function InlineHskWritingPanel({
  if (!activeChar) return null;
 
  return (
-  <section>
-   <div className="mb-4 flex flex-wrap justify-center gap-2">
+  <section className="w-full max-w-full min-w-0 overflow-x-hidden">
+   <div className="mb-4 flex max-w-full flex-wrap justify-center gap-2">
     {characters.map((character, index) => (
      <button
       key={`${character}-${index}`}
@@ -820,7 +790,7 @@ export function InlineHskWritingPanel({
        onIndexChange(index);
       }}
       className={cn(
-       "flex h-10 min-w-10 items-center justify-center rounded-xl border-2 px-3 text-lg font-black shadow-theme-sm transition",
+       "flex h-10 min-w-10 max-w-full items-center justify-center rounded-xl border-2 px-3 text-lg font-black shadow-theme-sm transition",
        index === activeIndex
         ? "border-red-500 bg-red-500 text-white"
         : "border-stone-200 bg-white text-stone-900 hover:bg-stone-50",
@@ -831,7 +801,7 @@ export function InlineHskWritingPanel({
     ))}
    </div>
    <div
-    className="flex justify-center md:shrink-0"
+    className="flex w-full max-w-full justify-center overflow-hidden md:shrink-0"
     onClick={(event) => event.stopPropagation()}
     onTouchStart={(event) => event.stopPropagation()}
     onTouchEnd={(event) => event.stopPropagation()}
@@ -865,42 +835,48 @@ function FlashcardBack({
  if (compact) {
   return (
    <div
-    className="flex min-h-0 flex-1 flex-col gap-3 overflow-visible px-1 py-2 md:overflow-hidden md:py-3"
+    className="flex min-h-0 w-full max-w-full min-w-0 flex-1 flex-col gap-3 overflow-y-auto overflow-x-hidden px-1 py-2 md:overflow-hidden md:py-3"
     onClick={onReveal}
    >
-    <div className="grid min-h-0 flex-1 gap-3 overflow-visible text-left md:overflow-hidden lg:grid-cols-[0.9fr_1.1fr]">
-     <section className="flex min-h-0 flex-col gap-3 overflow-visible rounded-[22px] bg-stone-50/70 p-3 [scrollbar-width:thin] [scrollbar-color:#d6d3d1_transparent] md:overflow-y-auto md:rounded-[26px] md:p-5">
-      <div className="text-center lg:text-left">
-       <div className="flex flex-col items-center gap-2 lg:flex-row lg:items-center">
-        <h3 className="whitespace-nowrap text-[clamp(4rem,20vw,5.6rem)] font-black leading-none text-red-500 md:text-[clamp(3rem,7vw,5.6rem)]">
-         {entry.hanzi}
-        </h3>
+    <div className="grid min-h-0 w-full max-w-full min-w-0 flex-1 gap-3 overflow-x-hidden text-left md:overflow-hidden lg:grid-cols-[0.9fr_1.1fr]">
+     <section className="flex min-h-0 w-full max-w-full min-w-0 flex-col gap-3 overflow-y-visible overflow-x-hidden rounded-[22px] bg-stone-50/70 p-3 [scrollbar-width:thin] [scrollbar-color:#d6d3d1_transparent] md:overflow-y-auto md:rounded-[26px] md:p-5">
+      <div className="flex min-w-0 items-start justify-between gap-3">
+       <div className="min-w-0 flex-1 text-center lg:text-left">
+        <div className="flex flex-col items-center gap-2 lg:flex-row lg:items-center">
+         <h3 className="max-w-full break-words text-[clamp(4.5rem,22vw,6rem)] font-black leading-none text-red-500 [overflow-wrap:anywhere] md:text-[clamp(3rem,7vw,5.6rem)]">
+          {entry.hanzi}
+         </h3>
 
-        <p className="text-center text-xl font-black leading-tight text-stone-900 md:text-2xl lg:mt-3 lg:text-left">
-         {entry.pinyin}
-         {entry.sino_vietnamese || analysis.han_viet
-          ? ` - ${(entry.sino_vietnamese || analysis.han_viet || "").toUpperCase()}`
-          : ""}
+         <p className="max-w-full break-words text-center text-xl font-black leading-tight text-stone-900 [overflow-wrap:anywhere] md:text-2xl lg:mt-3 lg:text-left">
+          {entry.pinyin}
+          {entry.sino_vietnamese || analysis.han_viet
+           ? ` - ${(entry.sino_vietnamese || analysis.han_viet || "").toUpperCase()}`
+           : ""}
+         </p>
+        </div>
+
+        <p className="mt-3 break-words text-base font-black leading-7 text-stone-800 [overflow-wrap:anywhere] md:text-lg">
+         {getMeaning(entry)}
         </p>
-       </div>
-
-       <p className="mt-3 text-base font-black leading-7 text-stone-800 md:text-lg">
-        {getMeaning(entry)}
-       </p>
-       <div className="mt-3 flex flex-wrap justify-center gap-2 lg:justify-start">
-        {entry.word_type && (
-         <span className="rounded-full bg-white px-3 py-1 text-xs font-black text-stone-700 shadow-theme-sm">
-          {entry.word_type}
+        <div className="mt-3 flex flex-wrap justify-center gap-2 lg:justify-start">
+         {entry.word_type && (
+          <span className="rounded-full bg-white px-3 py-1 text-xs font-black text-stone-700 shadow-theme-sm">
+           {entry.word_type}
+          </span>
+         )}
+         <span className="rounded-full bg-blue-50 px-3 py-1 text-xs font-black text-blue-700 shadow-theme-sm">
+          Level {getFlashLevel(entry)}
          </span>
-        )}
-        <span className="rounded-full bg-blue-50 px-3 py-1 text-xs font-black text-blue-700 shadow-theme-sm">
-         Level {getFlashLevel(entry)}
-        </span>
+        </div>
+       </div>
+       <div className="flex shrink-0 flex-col gap-2 sm:flex-row">
+        <IconToolButton icon={Volume2} label="Phát âm" onClick={onSpeak} />
+        <IconToolButton icon={PenLine} label="Sửa" onClick={onEdit} />
        </div>
       </div>
 
       {analysis.decomposition && (
-       <section className="rounded-[20px] bg-yellow-50 p-3 text-sm font-bold leading-6 text-stone-700 md:rounded-[22px] md:p-4">
+       <section className="break-words rounded-[20px] bg-yellow-50 p-3 text-sm font-bold leading-6 text-stone-700 [overflow-wrap:anywhere] md:rounded-[22px] md:p-4">
         <p className="mb-1 text-xs font-black uppercase tracking-wide text-orange-600">
          Chiết tự
         </p>
@@ -913,11 +889,11 @@ function FlashcardBack({
         <p className="text-xs font-black uppercase tracking-wide text-stone-400">
          Cụm hay gặp
         </p>
-        <div className="mt-2 flex flex-wrap gap-2">
+        <div className="mt-2 flex max-w-full flex-wrap gap-2">
          {analysis.collocations.map((item) => (
           <span
            key={item}
-           className="rounded-full bg-stone-50 px-3 py-1 text-sm font-black text-stone-700"
+           className="max-w-full break-words rounded-full bg-stone-50 px-3 py-1 text-sm font-black text-stone-700 [overflow-wrap:anywhere]"
           >
            {item}
           </span>
@@ -926,7 +902,7 @@ function FlashcardBack({
        </section>
       )}
       {getCompactNote(entry) && (
-       <section className="rounded-[22px] bg-blue-50 p-4 text-sm font-bold leading-6 text-blue-800">
+       <section className="break-words rounded-[22px] bg-blue-50 p-4 text-sm font-bold leading-6 text-blue-800 [overflow-wrap:anywhere]">
         <p className="mb-1 text-xs font-black uppercase tracking-wide text-blue-500">
          Lưu ý nhanh
         </p>
@@ -935,14 +911,54 @@ function FlashcardBack({
       )}
      </section>
 
-     <section className="flex min-h-0 flex-col gap-3 overflow-visible pr-0 [scrollbar-width:thin] [scrollbar-color:#d6d3d1_transparent] md:overflow-y-auto md:pr-1">
+     <section className="flex min-h-0 w-full max-w-full min-w-0 flex-col gap-3 overflow-y-visible overflow-x-hidden pr-0 [scrollbar-width:thin] [scrollbar-color:#d6d3d1_transparent] md:overflow-y-auto md:pr-1">
+      {showExamples && examples.length ? (
+       <section className="grid gap-2">
+        <p className="text-xs font-black uppercase tracking-wide text-stone-400">
+         Ví dụ
+        </p>
+        {examples.map((item, index) => (
+         <div
+          key={`${item.zh}-${index}`}
+          className={cn(
+           "max-w-full overflow-x-hidden rounded-[18px] bg-white p-3 shadow-theme-sm",
+           index === 0 && "border border-stone-100",
+          )}
+         >
+          <p
+           className={cn(
+            "break-words font-black leading-7 text-stone-900 [overflow-wrap:anywhere]",
+            index === 0 ? "text-base md:text-lg" : "text-sm md:text-base",
+           )}
+          >
+           {item.zh}
+          </p>
+          {item.pinyin ? (
+           <p className="break-words pt-1 text-sm font-bold leading-6 text-stone-500 [overflow-wrap:anywhere]">
+            {item.pinyin}
+           </p>
+          ) : null}
+          {item.vi ? (
+           <p className="break-words pt-1 text-sm font-bold leading-6 text-stone-800 [overflow-wrap:anywhere] md:text-base md:leading-7">
+            {item.vi}
+           </p>
+          ) : null}
+          {item.note ? (
+           <p className="mt-2 break-words rounded-2xl bg-stone-50 p-2 text-xs font-bold leading-5 text-stone-600 [overflow-wrap:anywhere]">
+            {item.note}
+           </p>
+          ) : null}
+         </div>
+        ))}
+       </section>
+      ) : null}
       <InlineHskWritingPanel
        entry={entry}
        activeIndex={activeIndex}
        onIndexChange={setActiveIndex}
       />
       {!!analysis.comparisons?.length && (
-       <section className="rounded-[22px] bg-stone-50 p-4">
+       <section className="max-w-full overflow-x-hidden rounded-[22px] bg-stone-50 p-4">
         <p className="text-xs font-black uppercase tracking-wide text-stone-400">
          So sánh nhanh
         </p>
@@ -954,90 +970,54 @@ function FlashcardBack({
        </section>
       )}
       {analysis.cultural_note && (
-       <section className="rounded-[22px] bg-emerald-50 p-4 text-sm font-bold leading-6 text-emerald-800">
+      <section className="break-words rounded-[22px] bg-emerald-50 p-4 text-sm font-bold leading-6 text-emerald-800 [overflow-wrap:anywhere]">
         <p className="mb-1 text-xs font-black uppercase tracking-wide text-emerald-600">
          Trung Việt
         </p>
-        {analysis.cultural_note}
-       </section>
+       {analysis.cultural_note}
+      </section>
       )}
      </section>
     </div>
-    <section>
-     <p className="text-xs font-black uppercase tracking-wide text-stone-400">
-      Ví dụ
-     </p>
-     <div className="mt-2 space-y-3">
-      {examples.map((item, index) => (
-       <div
-        key={`${item.zh}-${index}`}
-        className={cn(
-         "rounded-[18px] bg-white p-3 shadow-theme-sm",
-         index === 0 && "border-2 border-stone-100",
-        )}
-       >
-        <p
-         className={cn(
-          "font-black leading-7 text-stone-900",
-          index === 0 ? "text-base md:text-xl" : "text-sm md:text-base",
-         )}
-        >
-         {item.zh}
-        </p>
-        <p className="mt-1 text-sm font-bold leading-6 text-stone-500">
-         {item.pinyin}
-        </p>
-        <p className="mt-1 text-sm font-bold leading-6 text-stone-800 md:text-base md:leading-7">
-         {item.vi}
-        </p>
-        {item.note && (
-         <p className="mt-2 rounded-2xl bg-stone-50 p-2 text-xs font-bold leading-5 text-stone-600">
-          {item.note}
-         </p>
-        )}
-       </div>
-      ))}
-     </div>
-    </section>
    </div>
   );
  }
  return (
-  <div className="mx-auto mt-6 grid w-full gap-4 text-left xl:grid-cols-[0.9fr_1.1fr]">
-   <div className="rounded-[28px] border-2 border-stone-200 bg-white p-5 shadow-theme-sm">
-    <div className="flex items-start justify-between gap-3">
-     <div>
-      <p className="text-2xl font-black text-red-500">{entry.pinyin}</p>
+  <div className="mx-auto mt-6 grid w-full max-w-full min-w-0 gap-4 overflow-x-hidden text-left xl:grid-cols-[0.9fr_1.1fr]">
+   <div className="min-w-0 overflow-hidden rounded-[28px] border-2 border-stone-200 bg-white p-4 shadow-theme-sm sm:p-5">
+    <div className="flex min-w-0 items-start justify-between gap-3">
+     <div className="min-w-0">
+      <p className="break-words text-2xl font-black text-red-500 [overflow-wrap:anywhere]">{entry.pinyin}</p>
       {(entry.sino_vietnamese || analysis.han_viet) && (
-       <p className="mt-1 text-sm font-black text-stone-500">
+       <p className="mt-1 break-words text-sm font-black text-stone-500 [overflow-wrap:anywhere]">
         Hán Việt: {entry.sino_vietnamese || analysis.han_viet}
        </p>
       )}
      </div>
-     <div className="flex gap-2">
+     <div className="flex shrink-0 gap-2">
       <IconToolButton icon={Volume2} label="Phát âm" onClick={onSpeak} />
       <IconToolButton icon={PenLine} label="Sửa" onClick={onEdit} />
      </div>
     </div>
     {entry.word_type && (
-     <span className="mt-4 inline-flex rounded-full bg-stone-100 px-3 py-1 text-xs font-black text-stone-600">
+     <span className="mt-4 inline-flex max-w-full rounded-full bg-stone-100 px-3 py-1 text-xs font-black text-stone-600">
       {entry.word_type}
      </span>
     )}
-    <p className="mt-4 text-lg font-black leading-8 text-stone-800">
+    <p className="mt-4 break-words text-lg font-black leading-8 text-stone-800">
      {getMeaning(entry)}
     </p>
     {analysis.decomposition && (
-     <div className="mt-4 rounded-2xl bg-yellow-50 p-3">
+     <div className="mt-4 min-w-0 overflow-hidden rounded-2xl bg-yellow-50 p-3">
       <p className="text-xs font-black uppercase text-orange-600">Chiết tự</p>
-      <p className="mt-1 text-sm font-bold leading-6 text-stone-700">
+      <p className="mt-1 break-words text-sm font-bold leading-6 text-stone-700 [overflow-wrap:anywhere]">
        {analysis.decomposition}
       </p>
      </div>
     )}
    </div>
 
-   <div className="rounded-[28px] border-2 border-stone-200 bg-white p-5 shadow-theme-sm">
+   <div className="min-w-0 overflow-hidden rounded-[28px] border-2 border-stone-200 bg-white p-4 shadow-theme-sm sm:p-5">
     {!!analysis.collocations?.length && (
      <div>
       <p className="text-xs font-black uppercase tracking-wide text-stone-400">
@@ -1047,7 +1027,7 @@ function FlashcardBack({
        {analysis.collocations.slice(0, 4).map((collocation) => (
         <span
          key={collocation}
-         className="rounded-full bg-stone-100 px-3 py-1 text-sm font-black text-stone-700"
+         className="max-w-full break-words rounded-full bg-stone-100 px-3 py-1 text-sm font-black text-stone-700 [overflow-wrap:anywhere]"
         >
          {collocation}
         </span>
@@ -1056,16 +1036,16 @@ function FlashcardBack({
      </div>
     )}
     {showExamples && example && (
-     <div className="mt-5 rounded-2xl bg-stone-50 p-4">
-      <p className="text-sm font-black leading-6 text-stone-900">
+     <div className="mt-5 min-w-0 overflow-hidden rounded-2xl bg-stone-50 p-4">
+      <p className="break-words text-sm font-black leading-6 text-stone-900 [overflow-wrap:anywhere]">
        {example.zh}
       </p>
-      <p className="mt-1 text-xs font-bold text-red-500">{example.pinyin}</p>
-      <p className="mt-2 text-sm font-bold leading-6 text-stone-600">
+      <p className="mt-1 break-words text-xs font-bold text-red-500 [overflow-wrap:anywhere]">{example.pinyin}</p>
+      <p className="mt-2 break-words text-sm font-bold leading-6 text-stone-600">
        {example.vi}
       </p>
       {example.note && (
-       <p className="mt-2 text-xs font-bold leading-5 text-stone-500">
+       <p className="mt-2 break-words text-xs font-bold leading-5 text-stone-500">
         → {example.note}
        </p>
       )}
@@ -1074,12 +1054,12 @@ function FlashcardBack({
     {(analysis.usage_note || analysis.cultural_note) && (
      <div className="mt-5 grid gap-2">
       {analysis.usage_note && (
-       <p className="rounded-2xl bg-blue-50 p-3 text-sm font-bold leading-6 text-blue-700">
+       <p className="break-words rounded-2xl bg-blue-50 p-3 text-sm font-bold leading-6 text-blue-700 [overflow-wrap:anywhere]">
         Lưu ý: {analysis.usage_note}
        </p>
       )}
       {analysis.cultural_note && (
-       <p className="rounded-2xl bg-emerald-50 p-3 text-sm font-bold leading-6 text-emerald-700">
+       <p className="break-words rounded-2xl bg-emerald-50 p-3 text-sm font-bold leading-6 text-emerald-700 [overflow-wrap:anywhere]">
         Trung Việt: {analysis.cultural_note}
        </p>
       )}
@@ -1087,7 +1067,7 @@ function FlashcardBack({
     )}
     <Link
      href={`/dictionary/${encodeURIComponent(entry.hanzi)}`}
-     className="mt-5 inline-flex h-11 items-center gap-2 rounded-2xl border-2 border-stone-200 bg-white px-4 text-sm font-black text-stone-700 shadow-theme-sm hover:bg-stone-50"
+     className="mt-5 inline-flex h-11 max-w-full items-center gap-2 rounded-2xl border-2 border-stone-200 bg-white px-4 text-sm font-black text-stone-700 shadow-theme-sm hover:bg-stone-50"
     >
      Xem đủ 7 phần
      <ChevronRight className="h-4 w-4" />

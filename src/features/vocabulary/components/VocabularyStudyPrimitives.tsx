@@ -28,7 +28,7 @@ export function ActionButton({
    onClick={onClick}
    disabled={loading || disabled}
    className={cn(
-    "inline-flex h-11 items-center gap-2 rounded-2xl border-2 px-4 text-sm font-black shadow-theme-sm transition disabled:opacity-60",
+    "inline-flex h-11 min-w-0 items-center justify-center gap-2 rounded-2xl border-2 px-4 text-sm font-black shadow-theme-sm transition disabled:opacity-60",
     className,
    )}
   >
@@ -82,19 +82,19 @@ export function StudyProgress({
   ? Math.min(100, Math.round((studied / total) * 100))
   : 0;
  return (
-  <section className="mt-5">
-   <div className="flex flex-wrap items-end justify-between gap-3">
-    <div>
-     <p className="text-base font-black uppercase tracking-wide text-stone-600">
+  <section className="mt-5 w-full max-w-full min-w-0 overflow-x-hidden">
+   <div className="flex w-full max-w-full min-w-0 flex-wrap items-end justify-between gap-3">
+    <div className="min-w-0">
+     <p className="break-words text-base font-black uppercase tracking-wide text-stone-600 [overflow-wrap:anywhere]">
       Tiến độ - {title}
      </p>
-     <p className="mt-1 text-sm font-bold text-stone-500">
+     <p className="mt-1 break-words text-sm font-bold text-stone-500 [overflow-wrap:anywhere]">
       Đã học {studied}/{total} · Phiên này nhớ {stats.remembered} · Cần ôn{" "}
       {stats.missed}
       {randomMode ? " · Đang xáo bài" : ""}
      </p>
     </div>
-    <p className="text-lg font-black uppercase tracking-wide text-stone-700">
+    <p className="break-words text-lg font-black uppercase tracking-wide text-stone-700 [overflow-wrap:anywhere]">
      {current} / {total} thẻ
     </p>
    </div>
@@ -126,11 +126,11 @@ export function MiniStat({
   red: "bg-red-50 text-red-600",
  }[tone];
  return (
-  <div className={cn("rounded-2xl p-3 shadow-theme-sm", className)}>
+  <div className={cn("min-w-0 rounded-2xl p-3 shadow-theme-sm", className)}>
    <p className="text-[11px] font-black uppercase tracking-wide opacity-70">
     {label}
    </p>
-   <p className="mt-1 text-2xl font-black">
+   <p className="mt-1 break-words text-2xl font-black [overflow-wrap:anywhere]">
     {value}
     {suffix}
    </p>
@@ -167,7 +167,7 @@ export function FilterChip({
    type="button"
    onClick={onClick}
    className={cn(
-    "rounded-full border-2 px-3 py-1.5 text-xs font-black transition",
+    "max-w-full rounded-full border-2 px-3 py-1.5 text-xs font-black transition",
     active
      ? "border-red-500 bg-red-500 text-white"
      : "border-stone-200 bg-white text-stone-600 hover:bg-stone-50",
@@ -180,7 +180,7 @@ export function FilterChip({
 
 export function StudyCard({ children }: { children: React.ReactNode }) {
  return (
-  <div className="overflow-hidden rounded-[24px] border-2 border-stone-100 bg-stone-50 p-3 text-center md:p-5">
+  <div className="w-full max-w-full min-w-0 overflow-hidden rounded-[24px] border-2 border-stone-100 bg-stone-50 p-3 text-center md:p-5">
    {children}
   </div>
  );

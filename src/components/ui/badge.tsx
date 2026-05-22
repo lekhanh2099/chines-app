@@ -16,8 +16,8 @@ const badgeVariants = cva(
     purple: "border border-purple/30 bg-purple-subtle text-purple-text",
    },
    size: {
-    sm: "px-2 py-0.5 text-[10px]",
-    md: "px-2.5 py-1 text-[10px]",
+    sm: "px-2 py-0.5 text-[0.625rem]",
+    md: "px-2.5 py-1 text-[0.625rem]",
     lg: "px-3 py-1.5 text-xs",
    },
   },

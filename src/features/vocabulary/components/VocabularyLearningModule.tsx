@@ -29,6 +29,7 @@ import {
  LessonEditWorkspace,
  ShortcutHelp,
 } from "@/features/vocabulary/components/VocabularyManagementPanels";
+import { LessonHub } from "@/features/learning/components";
 import {
  ExamplesMode,
  GuessMode,
@@ -40,6 +41,10 @@ import {
  useVocabEntries,
  VocabSchemaMissingError,
 } from "@/features/vocabulary/hooks/useVocabEntries";
+import {
+ findVocabLessonFromQuery,
+ learningRoutes,
+} from "@/features/learning/lesson-workspace";
 import type {
  AutoplayBehavior,
  FlashFrontMode,
@@ -62,6 +67,7 @@ import {
  matchesEntry,
  normalizeAnswer,
 } from "@/features/vocabulary/utils/vocab-study";
+import type { LearningSource } from "@/features/learning/lesson-workspace";
 import type {
  AiAnalysis,
  VocabCourseWithLessons,
@@ -71,34 +77,59 @@ import type {
 
 type VocabularyLearningModuleProps = {
  courseId?: string | null;
+ staticCourse?: VocabCourseWithLessons | null;
+ staticProgressKey?: string;
+ readOnly?: boolean;
+ showHeader?: boolean;
+ sourceMode?: LearningSource;
+ onSourceModeChange?: (source: LearningSource) => void;
  title?: string;
  description?: string;
  emptyTitle?: string;
  emptyDescription?: string;
  allowDocxReset?: boolean;
+ initialLessonNumber?: number | null;
+ initialLessonKey?: string | null;
+ initialMode?: StudyMode | null;
 };
 
 export default function VocabularyLearningModule({
  courseId,
+ staticCourse = null,
+ staticProgressKey,
+ readOnly = false,
+ showHeader = true,
+ sourceMode = "hanyu",
+ onSourceModeChange,
  title = "Từ vựng Hán ngữ",
  description = "Học theo bài, ôn bằng flashcard, trắc nghiệm và chỉnh dữ liệu ngay khi cần.",
  emptyTitle = "Chưa có course từ vựng",
  emptyDescription = "Import file Vocabulary Compilation.docx để bắt đầu học theo bài.",
  allowDocxReset = true,
+ initialLessonNumber = null,
+ initialLessonKey = null,
+ initialMode = null,
 }: VocabularyLearningModuleProps = {}) {
  const queryClient = useQueryClient();
  const { data, isLoading, error } = useVocabEntries(courseId);
- const course = isCoursePayload(data) ? data : null;
+ const [localCourse, setLocalCourse] = useState<VocabCourseWithLessons | null>(
+  staticCourse,
+ );
+ const course = staticCourse
+  ? localCourse
+  : isCoursePayload(data)
+    ? data
+    : null;
 
  const [activeTab, setActiveTab] = useState<MainTab>("study");
  const [activeLessonId, setActiveLessonId] = useState<string | null>(null);
- const [mode, setMode] = useState<StudyMode>("flashcard");
+ const [mode, setMode] = useState<StudyMode>(initialMode || "flashcard");
  const [wordFilter, setWordFilter] = useState<WordFilter>("all");
  const [searchQuery, setSearchQuery] = useState("");
  const [randomMode, setRandomMode] = useState(false);
  const [randomSeed, setRandomSeed] = useState(1);
- const [fromLesson, setFromLesson] = useState(11);
- const [toLesson, setToLesson] = useState(25);
+ const [fromLesson, setFromLesson] = useState(initialLessonNumber || 11);
+ const [toLesson, setToLesson] = useState(initialLessonNumber || 25);
  const [flashStatusFilter, setFlashStatusFilter] =
   useState<FlashStatusFilter>("all");
  const [levelFilter, setLevelFilter] = useState("all");
@@ -135,6 +166,32 @@ export default function VocabularyLearningModule({
  const [resetting, setResetting] = useState(false);
 
  const lessons = useMemo(() => course?.lessons || [], [course?.lessons]);
+ const hasInitialLesson = Boolean(initialLessonNumber || initialLessonKey);
+ const hubLessons = useMemo(
+  () =>
+   lessons.map((lesson) => ({
+    id: lesson.id,
+    title: lesson.title,
+    subtitle:
+     lesson.categories
+      .slice(0, 2)
+      .map((item) => item.name)
+      .join(", ") || "Từ vựng trong bài",
+    href: learningRoutes.vocabulary({
+     source: sourceMode,
+     lessonNumber: lesson.lesson_number,
+     lessonKey: lesson.lesson_key,
+     mode: "flashcard",
+    }),
+    lessonNumber: lesson.lesson_number,
+    vocabularyCount: lesson.entries.length,
+    grammarCount: sourceMode === "hanyu" ? undefined : 0,
+    learnedCount: lesson.studied,
+    weakCount: lesson.learning,
+    progress: lesson.progress,
+   })),
+  [lessons, sourceMode],
+ );
  const activeLesson = useMemo(
   () =>
    lessons.find((lesson) => lesson.id === activeLessonId) || lessons[0] || null,
@@ -150,8 +207,46 @@ export default function VocabularyLearningModule({
  }, []);
 
  useEffect(() => {
-  if (!activeLessonId && lessons[0]) setActiveLessonId(lessons[0].id);
- }, [activeLessonId, lessons]);
+  if (!staticCourse) return;
+  if (typeof window === "undefined" || !staticProgressKey) {
+   setLocalCourse(staticCourse);
+   return;
+  }
+  const stored = window.localStorage.getItem(staticProgressKey);
+  let progress: Record<string, { level: number; answeredAt: string | null }> =
+   {};
+  try {
+   progress = stored
+    ? (JSON.parse(stored) as Record<
+       string,
+       { level: number; answeredAt: string | null }
+      >)
+    : {};
+  } catch {
+   progress = {};
+  }
+  setLocalCourse(
+   applyStaticProgress(staticCourse, progress),
+  );
+ }, [staticCourse, staticProgressKey]);
+
+ useEffect(() => {
+  if (!lessons.length) return;
+  const queryLesson = findVocabLessonFromQuery(
+   lessons,
+   initialLessonNumber,
+   initialLessonKey,
+  );
+  if (queryLesson && activeLessonId !== queryLesson.id) {
+   setActiveLessonId(queryLesson.id);
+   return;
+  }
+  if (!activeLessonId) setActiveLessonId(lessons[0].id);
+ }, [activeLessonId, initialLessonKey, initialLessonNumber, lessons]);
+
+ useEffect(() => {
+  if (initialMode) setMode(initialMode);
+ }, [initialMode]);
 
  useEffect(() => {
   if (!lessons.length) return;
@@ -344,6 +439,31 @@ export default function VocabularyLearningModule({
   async (entry: VocabEntryWithProgress, nextLevel: number) => {
    if (!course) return false;
    const answeredAt = new Date().toISOString();
+   if (staticCourse) {
+    setLocalCourse((current) => {
+     if (!current) return current;
+     const next = applyProgress(current, entry.id, nextLevel, answeredAt);
+     if (typeof window !== "undefined" && staticProgressKey) {
+      const stored = window.localStorage.getItem(staticProgressKey);
+      let progress: Record<string, { level: number; answeredAt: string | null }> =
+       {};
+      try {
+       progress = stored
+        ? (JSON.parse(stored) as Record<
+           string,
+           { level: number; answeredAt: string | null }
+          >)
+        : {};
+      } catch {
+       progress = {};
+      }
+      progress[entry.id] = { level: nextLevel, answeredAt };
+      window.localStorage.setItem(staticProgressKey, JSON.stringify(progress));
+     }
+     return next;
+    });
+    return true;
+   }
    queryClient.setQueryData(
     ["vocab-entries", courseId ?? "current"],
     (current: unknown) =>
@@ -373,7 +493,7 @@ export default function VocabularyLearningModule({
    }
    return true;
   },
-  [course, courseId, queryClient],
+  [course, courseId, queryClient, staticCourse, staticProgressKey],
  );
 
  const goNextCard = useCallback(() => {
@@ -485,6 +605,36 @@ export default function VocabularyLearningModule({
   );
   if (!confirmed) return;
   pauseAutoplay();
+  if (staticCourse) {
+   setLocalCourse((current) => {
+    if (!current) return current;
+    const ids = new Set(filteredFlashEntries.map((entry) => entry.id));
+    const resetEntries = current.entries.map((entry) =>
+     ids.has(entry.id)
+      ? {
+         ...entry,
+         proficiency_level: 0,
+         last_answered_at: null,
+         status: "new" as const,
+        }
+      : entry,
+    );
+    if (typeof window !== "undefined" && staticProgressKey) {
+     const stored = window.localStorage.getItem(staticProgressKey);
+     let progress: Record<string, unknown> = {};
+     try {
+      progress = stored ? (JSON.parse(stored) as Record<string, unknown>) : {};
+     } catch {
+      progress = {};
+     }
+     ids.forEach((id) => delete progress[id]);
+     window.localStorage.setItem(staticProgressKey, JSON.stringify(progress));
+    }
+    return rebuildCourseLessons(current, resetEntries);
+   });
+   toast.success("Đã reset tiến độ bộ lọc");
+   return;
+  }
   const results = await Promise.allSettled(
    filteredFlashEntries.map((entry) =>
     fetch(`/api/vocab/entries/${entry.id}/progress`, {
@@ -500,7 +650,7 @@ export default function VocabularyLearningModule({
   if (failed) toast.error(`${failed} thẻ chưa reset được`);
   else toast.success("Đã reset tiến độ bộ lọc");
   await queryClient.invalidateQueries({ queryKey: ["vocab-entries"] });
- }, [filteredFlashEntries, pauseAutoplay, queryClient]);
+ }, [filteredFlashEntries, pauseAutoplay, queryClient, staticCourse, staticProgressKey]);
 
  const checkGuess = useCallback(() => {
   if (!activeEntry) return;
@@ -534,6 +684,11 @@ export default function VocabularyLearningModule({
 
  const saveEntry = useCallback(
   async (entry: VocabEntryWithProgress, analysis: AiAnalysis) => {
+   if (readOnly || staticCourse) {
+    toast.message("Bộ HanziHome là data tĩnh. Sửa/import sẽ làm ở route quản trị riêng sau.");
+    setEditingEntry(null);
+    return;
+   }
    const isNew = entry.id.startsWith("new-");
    const response = await fetch(
     isNew ? "/api/vocab/entries" : `/api/vocab/entries/${entry.id}`,
@@ -564,11 +719,16 @@ export default function VocabularyLearningModule({
    setEditingEntry(null);
    await queryClient.invalidateQueries({ queryKey: ["vocab-entries"] });
   },
-  [queryClient],
+  [queryClient, readOnly, staticCourse],
  );
 
  const deleteEntry = useCallback(
   async (entry: VocabEntryWithProgress) => {
+   if (readOnly || staticCourse) {
+    toast.message("Bộ HanziHome là data tĩnh, không xoá trực tiếp trong mode tự học.");
+    setEditingEntry(null);
+    return;
+   }
    if (entry.id.startsWith("new-")) {
     setEditingEntry(null);
     return;
@@ -588,11 +748,16 @@ export default function VocabularyLearningModule({
    setEditingEntry(null);
    await queryClient.invalidateQueries({ queryKey: ["vocab-entries"] });
   },
-  [queryClient],
+  [queryClient, readOnly, staticCourse],
  );
 
  const saveLesson = useCallback(
   async (lesson: VocabLessonWithStats) => {
+   if (readOnly || staticCourse) {
+    toast.message("Bộ HanziHome là data tĩnh, không sửa bài trực tiếp trong mode tự học.");
+    setEditingLesson(null);
+    return;
+   }
    const isNew = lesson.id.startsWith("new-");
    const response = await fetch(
     isNew ? "/api/vocab/lessons" : `/api/vocab/lessons/${lesson.id}`,
@@ -621,11 +786,16 @@ export default function VocabularyLearningModule({
    if (isNew && result?.lesson?.id) setActiveLessonId(result.lesson.id);
    await queryClient.invalidateQueries({ queryKey: ["vocab-entries"] });
   },
-  [queryClient],
+  [queryClient, readOnly, staticCourse],
  );
 
  const deleteLesson = useCallback(
   async (lesson: VocabLessonWithStats) => {
+   if (readOnly || staticCourse) {
+    toast.message("Bộ HanziHome là data tĩnh, không xoá bài trực tiếp trong mode tự học.");
+    setEditingLesson(null);
+    return;
+   }
    if (lesson.id.startsWith("new-")) {
     setEditingLesson(null);
     return;
@@ -651,10 +821,14 @@ export default function VocabularyLearningModule({
    setActiveLessonId(null);
    await queryClient.invalidateQueries({ queryKey: ["vocab-entries"] });
   },
-  [queryClient],
+  [queryClient, readOnly, staticCourse],
  );
 
  const createLessonDraft = useCallback(() => {
+  if (readOnly || staticCourse) {
+   toast.message("Bộ HanziHome là data tĩnh, không thêm bài trong mode tự học.");
+   return;
+  }
   if (!course) return;
   const maxOrder = lessons.reduce(
    (max, lesson) => Math.max(max, lesson.lesson_order),
@@ -678,10 +852,14 @@ export default function VocabularyLearningModule({
    progress: 0,
    categories: [],
   });
- }, [course, lessons]);
+ }, [course, lessons, readOnly, staticCourse]);
 
  const createEntryDraft = useCallback(
   (lesson = activeLesson) => {
+   if (readOnly || staticCourse) {
+    toast.message("Bộ HanziHome là data tĩnh, không thêm từ trong mode tự học.");
+    return;
+   }
    if (!course || !lesson) return;
    const rowNumber = lesson.entries.length + 1;
    const category = lesson.categories[0]?.name || "Bổ sung";
@@ -728,11 +906,16 @@ export default function VocabularyLearningModule({
     },
    });
   },
-  [activeLesson, course],
+  [activeLesson, course, readOnly, staticCourse],
  );
 
  const importEntries = useCallback(
   async (lesson: VocabLessonWithStats, entries: ImportedEntryDraft[]) => {
+   if (readOnly || staticCourse) {
+    toast.message("Bộ HanziHome là data tĩnh, không import vào mode tự học.");
+    setImportingLesson(null);
+    return;
+   }
    if (!entries.length) {
     toast.error("Chưa có từ hợp lệ để import");
     return;
@@ -772,10 +955,14 @@ export default function VocabularyLearningModule({
    setImportingLesson(null);
    await queryClient.invalidateQueries({ queryKey: ["vocab-entries"] });
   },
-  [queryClient],
+  [queryClient, readOnly, staticCourse],
  );
 
  const resetImport = useCallback(async () => {
+  if (readOnly || staticCourse) {
+   toast.message("Bộ HanziHome đọc từ JSON tĩnh, không cần reset docs.");
+   return;
+  }
   setResetting(true);
   try {
    const response = await fetch("/api/vocab/import/docx-reset", {
@@ -794,7 +981,7 @@ export default function VocabularyLearningModule({
   } finally {
    setResetting(false);
   }
- }, [queryClient]);
+ }, [queryClient, readOnly, staticCourse]);
 
  useEffect(() => {
   const handleKeyDown = (event: KeyboardEvent) => {
@@ -877,7 +1064,7 @@ export default function VocabularyLearningModule({
   speakEntry,
  ]);
 
- if (error) {
+ if (!staticCourse && error) {
   const missingSchema = error instanceof VocabSchemaMissingError;
   return (
    <LearningShell>
@@ -897,48 +1084,66 @@ export default function VocabularyLearningModule({
   );
  }
 
+ if (course && !hasInitialLesson && activeTab === "study") {
+  return (
+   <LearningShell>
+    <LessonHub
+     title={title}
+     description="Chọn nguồn học rồi chọn bài để vào workspace từ vựng. Trong bài có flashcard, list từ, ví dụ và practice."
+     source={sourceMode}
+     onSourceChange={(nextSource) => onSourceModeChange?.(nextSource)}
+     lessons={hubLessons}
+    />
+   </LearningShell>
+  );
+ }
+
  return (
   <LearningShell>
-   <LearningHeader
-    title={title}
-    description={description}
-    activeTab={activeTab}
-    onTabChange={setActiveTab}
-    mode={mode}
-    onModeChange={(value) => {
-     setMode(value);
-     pauseAutoplay();
-    }}
-    randomMode={randomMode}
-    onRandomToggle={() => {
-     setRandomMode((value) => {
-      const next = !value;
-      setFlashOrder(next ? "random" : "lesson");
-      return next;
-     });
-     setRandomSeed(Date.now());
-     pauseAutoplay();
-    }}
-    onResetImport={resetImport}
-    resetting={resetting}
-    allowDocxReset={allowDocxReset}
-    onShowShortcuts={() => setShowShortcuts((value) => !value)}
-    lessons={lessons}
-    activeLesson={activeLesson}
-    onLessonChange={(lessonId) => {
-     setActiveLessonId(lessonId);
-     const nextLesson = lessons.find((lesson) => lesson.id === lessonId);
-     const lessonNumber = nextLesson?.lesson_number;
-     if (lessonNumber) {
-      setFromLesson(lessonNumber);
-      setToLesson(lessonNumber);
-     }
-     pauseAutoplay();
-    }}
-   />
+   {showHeader && (
+    <LearningHeader
+     title={title}
+     description={description}
+     activeTab={activeTab}
+     onTabChange={setActiveTab}
+     mode={mode}
+     onModeChange={(value) => {
+      setMode(value);
+      pauseAutoplay();
+     }}
+     randomMode={randomMode}
+     onRandomToggle={() => {
+      setRandomMode((value) => {
+       const next = !value;
+       setFlashOrder(next ? "random" : "lesson");
+       return next;
+      });
+      setRandomSeed(Date.now());
+      pauseAutoplay();
+     }}
+     onResetImport={resetImport}
+     resetting={resetting}
+     allowDocxReset={allowDocxReset}
+     onShowShortcuts={() => setShowShortcuts((value) => !value)}
+     lessons={lessons}
+     activeLesson={activeLesson}
+     sourceMode={sourceMode}
+     onSourceModeChange={onSourceModeChange}
+     onLessonChange={(lessonId) => {
+      setActiveLessonId(lessonId);
+      const nextLesson = lessons.find((lesson) => lesson.id === lessonId);
+      const lessonNumber = nextLesson?.lesson_number;
+      if (lessonNumber) {
+       setFromLesson(lessonNumber);
+       setToLesson(lessonNumber);
+      }
+      pauseAutoplay();
+     }}
+    />
+   )}
 
-   {isLoading ? (
-    <div className="flex min-h-[520px] items-center justify-center rounded-[28px] border-2 border-stone-200 bg-white shadow-theme-md">
+   {!staticCourse && isLoading ? (
+    <div className="flex min-h-[520px] w-full max-w-full min-w-0 items-center justify-center overflow-x-hidden rounded-[28px] border-2 border-stone-200 bg-white shadow-theme-md">
      <Loader2 className="h-6 w-6 animate-spin text-red-500" />
      <span className="ml-3 text-sm font-black text-stone-500">
       Đang tải kho từ...
@@ -958,7 +1163,7 @@ export default function VocabularyLearningModule({
     />
    ) : (
     <>
-     <div className="min-w-0">
+     <div className="w-full max-w-full min-w-0 overflow-x-hidden">
       {activeTab === "study" && activeLesson && (
        <StudyWorkspace
         lesson={activeLesson}
@@ -1203,22 +1408,101 @@ function StudyWorkspace(props: StudyWorkspaceProps) {
    />
   );
  }
+ if (props.mode === "list") {
+  return (
+   <section className="w-full max-w-full min-w-0 overflow-x-hidden rounded-[1.5rem] border-2 border-stone-200 bg-white p-3 shadow-theme-md md:p-5">
+    <div className="flex w-full max-w-full min-w-0 flex-col gap-3 xl:flex-row xl:items-start xl:justify-between">
+     <div className="min-w-0">
+      <p className="text-sm font-black uppercase tracking-wide text-red-500">
+       {rangeTitle}
+      </p>
+      <h2 className="mt-1 break-words text-2xl font-black text-stone-900 [overflow-wrap:anywhere] md:text-3xl">
+       Tổng quan từ vựng
+      </h2>
+      <p className="mt-2 break-words text-base font-bold text-stone-500 [overflow-wrap:anywhere]">
+       {props.rangeEntries.length} từ trong bộ lọc bài
+       {rangeCategories ? ` · ${rangeCategories}` : ""}
+      </p>
+     </div>
+     <div className="grid min-w-0 grid-cols-3 gap-2">
+      <StatBox value={rangeFresh} label="Chưa học" tone="yellow" />
+      <StatBox
+       value={props.flashStats.hard + props.flashStats.again}
+       label="Đang ôn"
+       tone="blue"
+      />
+      <StatBox value={props.flashStats.known} label="Thành thạo" tone="green" />
+     </div>
+    </div>
+
+    <div className="mt-4 grid w-full max-w-full min-w-0 gap-4 overflow-x-hidden xl:grid-cols-[17.5rem_minmax(0,1fr)]">
+     <FlashFilterPanel {...props} />
+     <div className="min-w-0 rounded-[1.5rem] bg-stone-50 p-3">
+      {!activeEntry ? (
+       <EmptyState
+        title="Không có từ trong bộ lọc"
+        description="Đổi khoảng bài, trạng thái hoặc search để tiếp tục học."
+        compact
+       />
+      ) : (
+       <VocabListStudyMode
+        entries={props.entries}
+        activeEntryId={activeEntry.id}
+        onSelect={props.onSelectCard}
+        onEdit={props.onEdit}
+       />
+      )}
+     </div>
+    </div>
+   </section>
+  );
+ }
+ if (props.mode === "examples") {
+  return (
+   <section className="w-full max-w-full min-w-0 overflow-x-hidden rounded-[1.5rem] border-2 border-stone-200 bg-stone-50 p-3 shadow-theme-md md:p-5">
+    {!activeEntry ? (
+     <EmptyState
+      title="Không có từ trong bộ lọc"
+      description="Đổi khoảng bài, trạng thái hoặc search để tiếp tục học."
+      compact
+     />
+    ) : (
+     <ExamplesMode
+      activeEntry={activeEntry}
+      cardIndex={props.cardIndex}
+      total={props.total}
+      onPrevious={props.onPrevious}
+      onNext={props.onNext}
+      onSpeak={props.onSpeak}
+      onEdit={props.onEdit}
+     />
+    )}
+    {activeEntry && (
+     <QuickWordChips
+      entries={props.entries}
+      activeEntryId={activeEntry.id}
+      onSelect={props.onSelectCard}
+     />
+    )}
+   </section>
+  );
+ }
  return (
-  <section className="rounded-[24px] border-2 border-stone-200 bg-white p-3 shadow-theme-md md:p-5">
-   <div className="flex flex-col gap-3 xl:flex-row xl:items-start xl:justify-between">
-    <div>
+  <section className="w-full max-w-full min-w-0 overflow-x-hidden rounded-[1.5rem] border-2 border-stone-200 bg-white p-3 shadow-theme-md md:p-5">
+   <div className="flex w-full max-w-full min-w-0 flex-col gap-3 xl:flex-row xl:items-start xl:justify-between">
+    <div className="min-w-0">
      <p className="text-sm font-black uppercase tracking-wide text-red-500">
       {rangeTitle}
      </p>
-     <h2 className="mt-1 text-2xl font-black text-stone-900 md:text-3xl">
+     <h2 className="mt-1 break-words text-2xl font-black text-stone-900 [overflow-wrap:anywhere] md:text-3xl">
       {rangeTitle}
      </h2>
-     <p className="mt-2 text-base font-bold text-stone-500">
+     <p className="mt-2 break-words text-base font-bold text-stone-500 [overflow-wrap:anywhere]">
       {props.rangeEntries.length} từ trong bộ lọc bài
       {rangeCategories ? ` · ${rangeCategories}` : ""}
      </p>
     </div>
-    <div className="grid grid-cols-3 gap-2">
+    <div className="grid min-w-0 grid-cols-3 gap-2">
      <StatBox value={rangeFresh} label="Chưa học" tone="yellow" />
      <StatBox
       value={props.flashStats.hard + props.flashStats.again}
@@ -1242,7 +1526,7 @@ function StudyWorkspace(props: StudyWorkspaceProps) {
     randomMode={props.randomMode}
    />
 
-   <div className="mt-4 grid gap-4 xl:grid-cols-[320px_minmax(0,1fr)]">
+   <div className="mt-4 grid w-full max-w-full min-w-0 gap-4 overflow-x-hidden xl:grid-cols-[20rem_minmax(0,1fr)]">
     <FlashFilterPanel {...props} />
     <StudyCard>
      {!activeEntry ? (
@@ -1251,27 +1535,10 @@ function StudyWorkspace(props: StudyWorkspaceProps) {
        description="Đổi khoảng bài, trạng thái hoặc search để tiếp tục học."
        compact
       />
-     ) : props.mode === "list" ? (
-      <VocabListStudyMode
-       entries={props.entries}
-       activeEntryId={activeEntry.id}
-       onSelect={props.onSelectCard}
-       onEdit={props.onEdit}
-      />
      ) : props.mode === "guess" ? (
       <GuessMode {...props} activeEntry={activeEntry} />
      ) : props.mode === "write" ? (
       <WriteMode {...props} activeEntry={activeEntry} />
-     ) : props.mode === "examples" ? (
-      <ExamplesMode
-       activeEntry={activeEntry}
-       cardIndex={props.cardIndex}
-       total={props.total}
-       onPrevious={props.onPrevious}
-       onNext={props.onNext}
-       onSpeak={props.onSpeak}
-       onEdit={props.onEdit}
-      />
      ) : props.mode === "quiz" || props.mode === "reverse" ? (
       <QuizMode {...props} activeEntry={activeEntry} mode={props.mode} />
      ) : (
@@ -1286,4 +1553,62 @@ function StudyWorkspace(props: StudyWorkspaceProps) {
    </div>
   </section>
  );
+}
+
+function applyStaticProgress(
+ course: VocabCourseWithLessons,
+ progress: Record<string, { level: number; answeredAt: string | null }>,
+) {
+ const entries = course.entries.map((entry) => {
+  const item = progress[entry.id];
+  if (!item) return entry;
+  const level = item.level || 0;
+  return {
+   ...entry,
+   proficiency_level: level,
+   last_answered_at: item.answeredAt,
+   status: level >= 4 ? "mastered" as const : level >= 2 ? "learning" as const : "new" as const,
+  };
+ });
+ return rebuildCourseLessons(course, entries);
+}
+
+function rebuildCourseLessons(
+ course: VocabCourseWithLessons,
+ entries: VocabEntryWithProgress[],
+): VocabCourseWithLessons {
+ const entriesByLesson = new Map<string, VocabEntryWithProgress[]>();
+ entries.forEach((entry) => {
+  const bucket = entriesByLesson.get(entry.lesson_id) || [];
+  bucket.push(entry);
+  entriesByLesson.set(entry.lesson_id, bucket);
+ });
+
+ const lessons = course.lessons.map((lesson) => {
+  const lessonEntries = entriesByLesson.get(lesson.id) || [];
+  const studied = lessonEntries.filter(
+   (entry) => entry.last_answered_at || entry.proficiency_level > 0,
+  ).length;
+  const mastered = lessonEntries.filter(
+   (entry) => entry.proficiency_level >= 4,
+  ).length;
+  const learning = lessonEntries.filter(
+   (entry) => entry.proficiency_level > 0 && entry.proficiency_level < 4,
+  ).length;
+  const fresh = Math.max(lessonEntries.length - studied, 0);
+  return {
+   ...lesson,
+   entries: lessonEntries,
+   item_count: lessonEntries.length,
+   studied,
+   mastered,
+   learning,
+   fresh,
+   progress: lessonEntries.length
+    ? Math.round((studied / lessonEntries.length) * 100)
+    : 0,
+  };
+ });
+
+ return { ...course, lessons, entries };
 }

@@ -1,7 +1,10 @@
 export { ActionButton } from "./ActionButton";
 export { EmptyState } from "./EmptyState";
 export { LearningDrawer } from "./LearningDrawer";
+export { LearningModuleSwitch } from "./LearningModuleSwitch";
 export { LearningShell } from "./LearningShell";
+export { LessonHub, type LessonHubItem } from "./LessonHub";
 export { LessonSelectCard, type LessonSelectOption } from "./LessonSelectCard";
+export { RelatedVocabularyCard } from "./RelatedVocabularyCard";
 export { StatBox } from "./StatBox";
 export { StudySplitLayout } from "./StudySplitLayout";

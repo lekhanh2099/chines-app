@@ -1,0 +1,3718 @@
+{
+  "meta": {
+    "app": "HanziHome",
+    "dataset": "Giáo trình Hán ngữ Quyển 2 + Bộ thủ",
+    "version": "2026.05.21-draft1",
+    "generatedAt": "2026-05-21T01:17:16",
+    "sourceFiles": [
+      "BÀI 1-10.docx",
+      "Bài 11-25.docx",
+      "Học kì 2 上-下.md",
+      "Bộ Thủ Dox.docx"
+    ],
+    "counts": {
+      "lessons": 25,
+      "vocab": 1146,
+      "grammarPoints": 59,
+      "radicals": 244,
+      "flashcards": 1390
+    },
+    "schemaNote": "Dynamic JSON: lessons reference vocab by lessonId; vocab entries preserve rawSections for flexible UI tabs; flashcards are a lightweight projection for review mode."
+  },
+  "lessons": [
+    {
+      "id": "hanyu2-bai-01",
+      "lessonNumber": 1,
+      "titleZh": "田芳去哪儿了",
+      "sourceFile": "BÀI 1-10.docx",
+      "vocabCategories": [
+        {
+          "nameVi": "Giao tiếp điện thoại / mở lời",
+          "words": [
+            "喂",
+            "阿姨",
+            "对了",
+            "哎",
+            "打电话",
+            "关机",
+            "开机",
+            "响",
+            "接"
+          ]
+        },
+        {
+          "nameVi": "Trường học / thi cử / học bổng",
+          "words": [
+            "中学",
+            "大学",
+            "小学",
+            "托福",
+            "报名",
+            "考",
+            "考试",
+            "满分",
+            "奖学金"
+          ]
+        },
+        {
+          "nameVi": "Hành động thường ngày / trạng thái",
+          "words": [
+            "了",
+            "出",
+            "出国",
+            "关",
+            "开",
+            "饿",
+            "忘",
+            "借",
+            "陪",
+            "哭"
+          ]
+        },
+        {
+          "nameVi": "Thể thao / thi đấu",
+          "words": [
+            "踢",
+            "比赛",
+            "比",
+            "赛",
+            "队",
+            "输",
+            "赢"
+          ]
+        },
+        {
+          "nameVi": "Quan hệ / lời chúc / tiễn biệt",
+          "words": [
+            "祝贺",
+            "送行",
+            "热情",
+            "见面",
+            "一路平安"
+          ]
+        },
+        {
+          "nameVi": "Mức độ / phó từ / sắc thái",
+          "words": [
+            "又",
+            "其实",
+            "最",
+            "上",
+            "托"
+          ]
+        }
+      ],
+      "vocabCount": 31,
+      "vocabIds": [
+        "vocab-01-df3ff3e0",
+        "vocab-01-5c16aab4",
+        "vocab-01-12a7978c",
+        "vocab-01-fbe5fba4",
+        "vocab-01-1a53e6e5",
+        "vocab-01-d5230f2a",
+        "vocab-01-e68893eb",
+        "vocab-01-1dbc5aa0",
+        "vocab-01-45881542",
+        "vocab-01-e9c225a6",
+        "vocab-01-b512c4d8",
+        "vocab-01-aa026ced",
+        "vocab-01-75bccd70",
+        "vocab-01-9c54b940",
+        "vocab-01-5e6d9563",
+        "vocab-01-8051f168",
+        "vocab-01-501ecea9",
+        "vocab-01-e2ff1e2d",
+        "vocab-01-7345e852",
+        "vocab-01-8a730975",
+        "vocab-01-1d92647f",
+        "vocab-01-3e3579c6",
+        "vocab-01-ae598e2b",
+        "vocab-01-841855db",
+        "vocab-01-300fe041",
+        "vocab-01-ac7a5eda",
+        "vocab-01-8d4592f6",
+        "vocab-01-d51a1cf9",
+        "vocab-01-78720db8",
+        "vocab-01-949a6d84",
+        "vocab-01-71144a28"
+      ],
+      "grammarPointIds": [
+        "grammar-01-cd0a5ba6",
+        "grammar-01-f1e288b0"
+      ]
+    },
+    {
+      "id": "hanyu2-bai-02",
+      "lessonNumber": 2,
+      "titleZh": "玛丽哭了",
+      "sourceFile": "BÀI 1-10.docx",
+      "vocabCategories": [
+        {
+          "nameVi": "Bệnh tật / cơ thể / triệu chứng",
+          "words": [
+            "病",
+            "病人",
+            "肚子",
+            "厉害",
+            "拉肚子",
+            "发烧",
+            "嗓子",
+            "出汗"
+          ]
+        },
+        {
+          "nameVi": "Khám bệnh / xét nghiệm / kết quả",
+          "words": [
+            "化验",
+            "检查",
+            "大便",
+            "小便",
+            "结果",
+            "出来",
+            "肠炎",
+            "消化"
+          ]
+        },
+        {
+          "nameVi": "Ăn uống / nguyên nhân bệnh",
+          "words": [
+            "鱼",
+            "牛肉",
+            "片"
+          ]
+        },
+        {
+          "nameVi": "Điều trị / thuốc men",
+          "words": [
+            "开药",
+            "打针"
+          ]
+        },
+        {
+          "nameVi": "Cảm xúc / quan hệ nguyên nhân",
+          "words": [
+            "寂寞",
+            "所以",
+            "难过",
+            "别"
+          ]
+        },
+        {
+          "nameVi": "Địa điểm / hoạt động xã hội",
+          "words": [
+            "礼堂",
+            "舞会",
+            "跳舞"
+          ]
+        },
+        {
+          "nameVi": "Từ đa nghĩa cần học kỹ",
+          "words": [
+            "害",
+            "拉",
+            "开",
+            "后",
+            "得",
+            "出来"
+          ]
+        }
+      ],
+      "vocabCount": 32,
+      "vocabIds": [
+        "vocab-02-e7e022d9",
+        "vocab-02-6439d07b",
+        "vocab-02-1d6492de",
+        "vocab-02-e42f0c2e",
+        "vocab-02-a7feff54",
+        "vocab-02-6fd43b44",
+        "vocab-02-58921aaa",
+        "vocab-02-12ab7721",
+        "vocab-02-7136f50f",
+        "vocab-02-bd45a843",
+        "vocab-02-22e4480b",
+        "vocab-02-bf015687",
+        "vocab-02-ee5cf8d5",
+        "vocab-02-f19d769c",
+        "vocab-02-b273a287",
+        "vocab-02-760791ec",
+        "vocab-02-a99785ed",
+        "vocab-02-ab466ea0",
+        "vocab-02-2d3fffd2",
+        "vocab-02-cb90807f",
+        "vocab-02-17120853",
+        "vocab-02-7d938a8b",
+        "vocab-02-51a1491b",
+        "vocab-02-1df132ed",
+        "vocab-02-64ddcdf1",
+        "vocab-02-c687685b",
+        "vocab-02-16c3b2a4",
+        "vocab-02-7364d5ad",
+        "vocab-02-689b5d23",
+        "vocab-02-b5d83f75",
+        "vocab-02-e9b32389",
+        "vocab-02-1930ae9e"
+      ],
+      "grammarPointIds": [
+        "grammar-02-03e88b2a",
+        "grammar-02-8dc6683e"
+      ]
+    },
+    {
+      "id": "hanyu2-bai-03",
+      "lessonNumber": 3,
+      "titleZh": "我吃了早饭就来了",
+      "sourceFile": "BÀI 1-10.docx",
+      "vocabCategories": [
+        {
+          "nameVi": "Nhà cửa / tầng lầu / không gian sống",
+          "words": [
+            "套",
+            "层",
+            "楼",
+            "房子",
+            "厨房",
+            "卧室",
+            "客厅",
+            "面积",
+            "平方米"
+          ]
+        },
+        {
+          "nameVi": "Môi trường xung quanh / đánh giá nhà",
+          "words": [
+            "周围",
+            "环境",
+            "乱",
+            "阳光 / 阳关",
+            "印象",
+            "还是",
+            "真"
+          ]
+        },
+        {
+          "nameVi": "Di chuyển trong nhà / lên xuống",
+          "words": [
+            "上去",
+            "下去",
+            "旁边",
+            "附近"
+          ]
+        },
+        {
+          "nameVi": "Gia đình / người liên quan",
+          "words": [
+            "妻子"
+          ]
+        },
+        {
+          "nameVi": "Giao thông / phương tiện / địa điểm",
+          "words": [
+            "堵车",
+            "赶",
+            "交通",
+            "方便",
+            "公共汽车",
+            "大巴",
+            "站",
+            "车站",
+            "地铁",
+            "体育馆"
+          ]
+        },
+        {
+          "nameVi": "Học tập / bài luyện",
+          "words": [
+            "组",
+            "会话",
+            "解答"
+          ]
+        }
+      ],
+      "vocabCount": 33,
+      "vocabIds": [
+        "vocab-03-194440cd",
+        "vocab-03-bedc4a35",
+        "vocab-03-b9ff4473",
+        "vocab-03-342cee5a",
+        "vocab-03-00d755c3",
+        "vocab-03-80f80960",
+        "vocab-03-fd570c7c",
+        "vocab-03-4bd9ed3b",
+        "vocab-03-176c0b46",
+        "vocab-03-b3b2159c",
+        "vocab-03-5449bf16",
+        "vocab-03-42d77461",
+        "vocab-03-14dc975f",
+        "vocab-03-65daba59",
+        "vocab-03-039c03fd",
+        "vocab-03-5a922e06",
+        "vocab-03-85b70ce5",
+        "vocab-03-ffba084c",
+        "vocab-03-5290b596",
+        "vocab-03-5f2c630e",
+        "vocab-03-9cad35d4",
+        "vocab-03-ae3ef130",
+        "vocab-03-00f56727",
+        "vocab-03-b093057c",
+        "vocab-03-60d87512",
+        "vocab-03-7fbee776",
+        "vocab-03-0f528a73",
+        "vocab-03-d9b08f04",
+        "vocab-03-72b1d920",
+        "vocab-03-44f85565",
+        "vocab-03-311feb29",
+        "vocab-03-ee2a51d6",
+        "vocab-03-467eff39"
+      ],
+      "grammarPointIds": [
+        "grammar-03-92d15640",
+        "grammar-03-6012354b",
+        "grammar-03-293fc656"
+      ]
+    },
+    {
+      "id": "hanyu2-bai-04",
+      "lessonNumber": 4,
+      "titleZh": "我都做对了",
+      "sourceFile": "BÀI 1-10.docx",
+      "vocabCategories": [
+        {
+          "nameVi": "Thi cử / bài làm / kết quả",
+          "words": [
+            "考试",
+            "题",
+            "道",
+            "完",
+            "成绩",
+            "答",
+            "作业"
+          ]
+        },
+        {
+          "nameVi": "Ngôn ngữ / câu chữ / đọc viết",
+          "words": [
+            "句子",
+            "词",
+            "念",
+            "页",
+            "回信",
+            "故事"
+          ]
+        },
+        {
+          "nameVi": "Đánh giá đúng sai / kết quả hành động",
+          "words": [
+            "成",
+            "合上",
+            "打开",
+            "做对",
+            "做错",
+            "答对",
+            "答错"
+          ]
+        },
+        {
+          "nameVi": "Khẩu ngữ / phản ứng cảm xúc",
+          "words": [
+            "干什么",
+            "啥",
+            "笨蛋",
+            "笨",
+            "糟糕",
+            "有意思"
+          ]
+        },
+        {
+          "nameVi": "Thời gian / tình huống",
+          "words": [
+            "夜",
+            "于是",
+            "必须"
+          ]
+        }
+      ],
+      "vocabCount": 27,
+      "vocabIds": [
+        "vocab-04-e4e1b001",
+        "vocab-04-051a4e46",
+        "vocab-04-c7156ae7",
+        "vocab-04-2039792a",
+        "vocab-04-5786ac3a",
+        "vocab-04-3ac77968",
+        "vocab-04-bb5c2c1c",
+        "vocab-04-0ccb2f30",
+        "vocab-04-98a676c5",
+        "vocab-04-513fb4cc",
+        "vocab-04-f7ac6231",
+        "vocab-04-447f4fb6",
+        "vocab-04-e77983e0",
+        "vocab-04-1dbfd150",
+        "vocab-04-6e1f27e7",
+        "vocab-04-c3157e7d",
+        "vocab-04-fc5ac30d",
+        "vocab-04-06bc67d9",
+        "vocab-04-38afaec5",
+        "vocab-04-ed7aa97e",
+        "vocab-04-9fd20d94",
+        "vocab-04-a32b7b42",
+        "vocab-04-58acab80",
+        "vocab-04-2165df14",
+        "vocab-04-f9e15ff3",
+        "vocab-04-40f95e08",
+        "vocab-04-2a5d2e28"
+      ],
+      "grammarPointIds": [
+        "grammar-04-e784c61f",
+        "grammar-04-f3fb6256",
+        "grammar-04-eb5ce565"
+      ]
+    },
+    {
+      "id": "hanyu2-bai-05",
+      "lessonNumber": 5,
+      "titleZh": "我来了两个多月了",
+      "sourceFile": "BÀI 1-10.docx",
+      "vocabCategories": [
+        {
+          "nameVi": "Đời sống / thích nghi",
+          "words": [
+            "生活",
+            "差不多",
+            "习惯",
+            "不过",
+            "父母",
+            "机会",
+            "原来",
+            "感谢"
+          ]
+        },
+        {
+          "nameVi": "Thời tiết / khí hậu / cảm giác môi trường",
+          "words": [
+            "气候",
+            "气度",
+            "温",
+            "暖和",
+            "干燥",
+            "干净"
+          ]
+        },
+        {
+          "nameVi": "Ăn uống / đồ ăn",
+          "words": [
+            "菜",
+            "油腻",
+            "牛奶",
+            "点心",
+            "块"
+          ]
+        },
+        {
+          "nameVi": "Thời gian học tập / sinh hoạt",
+          "words": [
+            "课间",
+            "午觉",
+            "钟头",
+            "功课",
+            "从来",
+            "从前",
+            "延长"
+          ]
+        },
+        {
+          "nameVi": "Động từ ly hợp / hoạt động sức khỏe",
+          "words": [
+            "游泳",
+            "散步",
+            "跑步",
+            "练",
+            "练气功",
+            "睡午觉"
+          ]
+        },
+        {
+          "nameVi": "Ghi nhớ / kết quả học",
+          "words": [
+            "记",
+            "住",
+            "好",
+            "效果",
+            "挺",
+            "一般"
+          ]
+        },
+        {
+          "nameVi": "Lợi – hại / sức khỏe",
+          "words": [
+            "好处",
+            "坏处",
+            "处",
+            "慢性病",
+            "失眠"
+          ]
+        },
+        {
+          "nameVi": "Đời sống ngoài trời / vật dụng / hành động",
+          "words": [
+            "打鱼",
+            "晒",
+            "椅子",
+            "老人",
+            "怕",
+            "生气",
+            "涂",
+            "油漆",
+            "裤子"
+          ]
+        }
+      ],
+      "vocabCount": 52,
+      "vocabIds": [
+        "vocab-05-be958339",
+        "vocab-05-b4de8faa",
+        "vocab-05-06c111f1",
+        "vocab-05-5ebf1a6e",
+        "vocab-05-629adc9a",
+        "vocab-05-15e0ef85",
+        "vocab-05-7dd691a1",
+        "vocab-05-99a1c453",
+        "vocab-05-197d2227",
+        "vocab-05-07c859db",
+        "vocab-05-302ca721",
+        "vocab-05-fdd1bcef",
+        "vocab-05-e9d4196a",
+        "vocab-05-78f4bb60",
+        "vocab-05-f75f86c5",
+        "vocab-05-3a408ce5",
+        "vocab-05-c3f88d2d",
+        "vocab-05-a109b034",
+        "vocab-05-1b639ab8",
+        "vocab-05-9c170826",
+        "vocab-05-6c3a9e65",
+        "vocab-05-762940ac",
+        "vocab-05-79aa307f",
+        "vocab-05-2756ddf4",
+        "vocab-05-94cb4fd5",
+        "vocab-05-c40267eb",
+        "vocab-05-c8f04aff",
+        "vocab-05-175b6d6a",
+        "vocab-05-33e89bb0",
+        "vocab-05-12fb158b",
+        "vocab-05-4771ee7f",
+        "vocab-05-6a5f7da3",
+        "vocab-05-62ffc451",
+        "vocab-05-f2757553",
+        "vocab-05-4b5c8247",
+        "vocab-05-4c72a1f1",
+        "vocab-05-c30932dd",
+        "vocab-05-3a027e97",
+        "vocab-05-46528d08",
+        "vocab-05-9a4d59c8",
+        "vocab-05-a884a6df",
+        "vocab-05-d39a8592",
+        "vocab-05-39f45a3a",
+        "vocab-05-8e3f993d",
+        "vocab-05-2d05ba5a",
+        "vocab-05-c69959db",
+        "vocab-05-d1cd2a47",
+        "vocab-05-f2f74387",
+        "vocab-05-0e348221",
+        "vocab-05-212750dc",
+        "vocab-05-80da22f0",
+        "vocab-05-d6eefb57"
+      ],
+      "grammarPointIds": [
+        "grammar-05-935693f2",
+        "grammar-05-c6e530d0",
+        "grammar-05-ef2f6a22"
+      ]
+    },
+    {
+      "id": "hanyu2-bai-06",
+      "lessonNumber": 6,
+      "titleZh": "我比你更喜欢音乐",
+      "sourceFile": "BÀI 1-10.docx",
+      "vocabCategories": [
+        {
+          "nameVi": "Thay đổi / thời gian / quá khứ – hiện tại",
+          "words": [
+            "变化",
+            "变",
+            "暑假",
+            "过去",
+            "现代",
+            "代"
+          ]
+        },
+        {
+          "nameVi": "So sánh / mức độ / số liệu",
+          "words": [
+            "还",
+            "比",
+            "最",
+            "更",
+            "高",
+            "低",
+            "度",
+            "人口",
+            "增加"
+          ]
+        },
+        {
+          "nameVi": "Thành phố / thời tiết / nơi ở",
+          "words": [
+            "城市",
+            "冬",
+            "可是",
+            "天气",
+            "预报",
+            "暖气",
+            "感觉",
+            "旅馆"
+          ]
+        },
+        {
+          "nameVi": "Âm nhạc / văn hóa nghe nhìn",
+          "words": [
+            "迷",
+            "交响乐",
+            "下载",
+            "首",
+            "也许",
+            "世界",
+            "名曲",
+            "民歌",
+            "流行",
+            "歌曲",
+            "歌词"
+          ]
+        },
+        {
+          "nameVi": "Con người / sở thích / trải nghiệm",
+          "words": [
+            "年轻",
+            "有些",
+            "遥远",
+            "逛",
+            "票",
+            "排队",
+            "汗"
+          ]
+        },
+        {
+          "nameVi": "Cảnh vật / hoạt động du lịch",
+          "words": [
+            "湖",
+            "桥",
+            "划船"
+          ]
+        }
+      ],
+      "vocabCount": 39,
+      "vocabIds": [
+        "vocab-06-21bb9bd5",
+        "vocab-06-8a27dc05",
+        "vocab-06-51d5e855",
+        "vocab-06-c8453491",
+        "vocab-06-78dd9434",
+        "vocab-06-74780cf2",
+        "vocab-06-333d54fe",
+        "vocab-06-ff1598fc",
+        "vocab-06-299f9cd4",
+        "vocab-06-30fe1d2c",
+        "vocab-06-af3462b8",
+        "vocab-06-bbc930a1",
+        "vocab-06-cc0545e4",
+        "vocab-06-bed6f8e9",
+        "vocab-06-0ab4aef2",
+        "vocab-06-d6cdd3fb",
+        "vocab-06-1d23f516",
+        "vocab-06-0667ff3c",
+        "vocab-06-811cbf64",
+        "vocab-06-b3565d56",
+        "vocab-06-b8821ee4",
+        "vocab-06-6391a7f1",
+        "vocab-06-8583c4f5",
+        "vocab-06-5e03e8a9",
+        "vocab-06-c716c66a",
+        "vocab-06-ef5464db",
+        "vocab-06-7a90a6ab",
+        "vocab-06-fedb2fcc",
+        "vocab-06-21c8cdb5",
+        "vocab-06-b2b51dfc",
+        "vocab-06-b6c4de97",
+        "vocab-06-0af52f53",
+        "vocab-06-4528533f",
+        "vocab-06-fee0d620",
+        "vocab-06-5c0dd447",
+        "vocab-06-7c471a4e",
+        "vocab-06-9814ab46",
+        "vocab-06-703b910d",
+        "vocab-06-e6a37572"
+      ],
+      "grammarPointIds": [
+        "grammar-06-52c56ebc",
+        "grammar-06-f3ba2bc1",
+        "grammar-06-cea68367"
+      ]
+    },
+    {
+      "id": "hanyu2-bai-07",
+      "lessonNumber": 7,
+      "titleZh": "我们那儿的冬天跟北京一样冷",
+      "sourceFile": "BÀI 1-10.docx",
+      "vocabCategories": [
+        {
+          "nameVi": "Quốc gia / vùng miền / chênh lệch thời gian",
+          "words": [
+            "国家",
+            "一样",
+            "时差"
+          ]
+        },
+        {
+          "nameVi": "Mùa / thời tiết / hiện tượng tự nhiên",
+          "words": [
+            "季节",
+            "春",
+            "夏",
+            "秋",
+            "冬",
+            "热",
+            "冷",
+            "凉",
+            "刮风",
+            "刮",
+            "风",
+            "雪",
+            "雨"
+          ]
+        },
+        {
+          "nameVi": "Thời gian / lịch sử / học thuật",
+          "words": [
+            "周末",
+            "历史",
+            "产生",
+            "画册",
+            "研究"
+          ]
+        },
+        {
+          "nameVi": "Cải cách / xã hội / chuyên ngành",
+          "words": [
+            "只是",
+            "老",
+            "改",
+            "改革",
+            "开放",
+            "一切",
+            "专业"
+          ]
+        },
+        {
+          "nameVi": "Mức độ / tốc độ / quan điểm / giá cả / chuyển động",
+          "words": [
+            "速度",
+            "想法",
+            "价格",
+            "转",
+            "等",
+            "中等",
+            "上等",
+            "下等"
+          ]
+        }
+      ],
+      "vocabCount": 34,
+      "vocabIds": [
+        "vocab-07-6ea6ae31",
+        "vocab-07-fbaf47cd",
+        "vocab-07-44977bee",
+        "vocab-07-c2d54065",
+        "vocab-07-fa1dc656",
+        "vocab-07-aa813a61",
+        "vocab-07-2a813ef8",
+        "vocab-07-cc0545e4",
+        "vocab-07-23154632",
+        "vocab-07-22ec48bc",
+        "vocab-07-72e76c18",
+        "vocab-07-9cad59dd",
+        "vocab-07-99596bda",
+        "vocab-07-ad8563e9",
+        "vocab-07-d72bdc08",
+        "vocab-07-81049ec1",
+        "vocab-07-e2ea72f5",
+        "vocab-07-5c9ec798",
+        "vocab-07-8c71f648",
+        "vocab-07-a99785ed",
+        "vocab-07-dbecd2f1",
+        "vocab-07-8054f14c",
+        "vocab-07-9c995112",
+        "vocab-07-5ff16ef8",
+        "vocab-07-2a6b11da",
+        "vocab-07-fe1bdc96",
+        "vocab-07-f4e1c944",
+        "vocab-07-e5f796c8",
+        "vocab-07-5533ab8d",
+        "vocab-07-55bb61fb",
+        "vocab-07-17d912b5",
+        "vocab-07-ef58b537",
+        "vocab-07-ae991895",
+        "vocab-07-e3084d6f"
+      ],
+      "grammarPointIds": [
+        "grammar-07-3f1e0b22",
+        "grammar-07-2e8127db"
+      ]
+    },
+    {
+      "id": "hanyu2-bai-08",
+      "lessonNumber": 8,
+      "titleZh": "冬天快要到了",
+      "sourceFile": "BÀI 1-10.docx",
+      "vocabCategories": [
+        {
+          "nameVi": "Sở thích / hoạt động / học tập",
+          "words": [
+            "爱",
+            "滑冰",
+            "化学",
+            "活动"
+          ]
+        },
+        {
+          "nameVi": "Quê hương / thiên nhiên / du lịch",
+          "words": [
+            "家乡",
+            "水",
+            "有名",
+            "风景",
+            "区",
+            "旅游",
+            "尤其",
+            "避暑",
+            "人家",
+            "靠",
+            "经营",
+            "发财"
+          ]
+        },
+        {
+          "nameVi": "Mùa đông / lá đỏ / hiện tượng thời tiết",
+          "words": [
+            "树叶",
+            "捡",
+            "红叶",
+            "冻",
+            "瑞雪兆丰年",
+            "瓜果",
+            "郊外"
+          ]
+        },
+        {
+          "nameVi": "Lo lắng / đồ vật hỏng / thay pin / đúng lúc",
+          "words": [
+            "着急",
+            "着呢",
+            "表",
+            "坏",
+            "停",
+            "该",
+            "电池",
+            "迟到",
+            "好事",
+            "坏事"
+          ]
+        },
+        {
+          "nameVi": "Gia đình / hôn nhân",
+          "words": [
+            "母亲",
+            "父亲",
+            "结婚",
+            "离婚",
+            "未婚夫",
+            "未婚妻",
+            "将来"
+          ]
+        },
+        {
+          "nameVi": "Cách thức / miêu tả / trang điểm / trang phục",
+          "words": [
+            "地",
+            "这样",
+            "那样",
+            "亮",
+            "脱",
+            "装",
+            "打扮",
+            "显得"
+          ]
+        },
+        {
+          "nameVi": "Du lịch / ăn uống / chụp ảnh / số lượng",
+          "words": [
+            "划船",
+            "照相",
+            "到处",
+            "火锅儿",
+            "节",
+            "堆"
+          ]
+        }
+      ],
+      "duplicateSourceRanges": [
+        {
+          "sourceFile": "BÀI 1-10.docx",
+          "startLine": 16945
+        }
+      ],
+      "vocabCount": 51,
+      "vocabIds": [
+        "vocab-08-dc3d0e2f",
+        "vocab-08-6a617d0f",
+        "vocab-08-9d54596f",
+        "vocab-08-ed2708c9",
+        "vocab-08-1bd6db92",
+        "vocab-08-d9e4bf69",
+        "vocab-08-55a6b36d",
+        "vocab-08-9b2b37d1",
+        "vocab-08-0359ad28",
+        "vocab-08-6fa7b31e",
+        "vocab-08-b77ff27a",
+        "vocab-08-33f470d7",
+        "vocab-08-644b96df",
+        "vocab-08-26d19c2e",
+        "vocab-08-3a413792",
+        "vocab-08-39a9599c",
+        "vocab-08-29a5de96",
+        "vocab-08-91ed38fe",
+        "vocab-08-74f57aca",
+        "vocab-08-b4023daa",
+        "vocab-08-a21dc115",
+        "vocab-08-536bd75e",
+        "vocab-08-0f4053ec",
+        "vocab-08-fe4e8432",
+        "vocab-08-7ce8646b",
+        "vocab-08-35d0e40b",
+        "vocab-08-c3fc85b1",
+        "vocab-08-fa7df36b",
+        "vocab-08-505ca04d",
+        "vocab-08-b5bda92e",
+        "vocab-08-1f6c9112",
+        "vocab-08-302dcb34",
+        "vocab-08-dbbe7a5d",
+        "vocab-08-69e1908a",
+        "vocab-08-d55b84df",
+        "vocab-08-f05e66b3",
+        "vocab-08-124ace9b",
+        "vocab-08-e6a37572",
+        "vocab-08-18f0a8ad",
+        "vocab-08-2c5e780a",
+        "vocab-08-d9fcbee2",
+        "vocab-08-bcbf01dc",
+        "vocab-08-8d40554f",
+        "vocab-08-1c2d7093",
+        "vocab-08-a058e50f",
+        "vocab-08-c2697384",
+        "vocab-08-53af7c6c",
+        "vocab-08-370ef8db",
+        "vocab-08-0fee1781",
+        "vocab-08-00215d5d",
+        "vocab-08-d5a601d2"
+      ],
+      "grammarPointIds": [
+        "grammar-08-36259ec0",
+        "grammar-08-acdf3bf0",
+        "grammar-08-5d1d5755",
+        "grammar-08-236574a2"
+      ]
+    },
+    {
+      "id": "hanyu2-bai-09",
+      "lessonNumber": 9,
+      "titleZh": "快上来吧，要开车了",
+      "sourceFile": "BÀI 1-10.docx",
+      "vocabCategories": [
+        {
+          "nameVi": "Hội họp / giảng dạy / học thuật",
+          "words": [
+            "开会",
+            "教学",
+            "研讨会",
+            "研讨",
+            "讨论"
+          ]
+        },
+        {
+          "nameVi": "Quá trình / hướng / gửi lời / mang hộ",
+          "words": [
+            "经过",
+            "向",
+            "问好",
+            "捎",
+            "送"
+          ]
+        },
+        {
+          "nameVi": "Lịch sự / nhờ vả / đi một chuyến",
+          "words": [
+            "辛苦",
+            "麻烦",
+            "趟",
+            "办事"
+          ]
+        },
+        {
+          "nameVi": "Gia đình / người thân / di chuyển gấp",
+          "words": [
+            "爱人",
+            "马上",
+            "开始",
+            "开车",
+            "座位",
+            "主意"
+          ]
+        },
+        {
+          "nameVi": "Khảo cổ / văn vật / triển lãm",
+          "words": [
+            "出土",
+            "文物",
+            "展览",
+            "大约",
+            "要求"
+          ]
+        },
+        {
+          "nameVi": "Âm thanh / rõ ràng / xưng hô / địa điểm",
+          "words": [
+            "声",
+            "清楚",
+            "师傅",
+            "大使馆"
+          ]
+        },
+        {
+          "nameVi": "Tên riêng / địa danh",
+          "words": [
+            "台湾",
+            "香港",
+            "赵"
+          ]
+        }
+      ],
+      "vocabCount": 40,
+      "vocabIds": [
+        "vocab-09-3d114921",
+        "vocab-09-3389f2b1",
+        "vocab-09-f7abfd57",
+        "vocab-09-e96516c6",
+        "vocab-09-b13aec61",
+        "vocab-09-6047f59c",
+        "vocab-09-9697ddc1",
+        "vocab-09-ae2d678e",
+        "vocab-09-46437ab1",
+        "vocab-09-108fa173",
+        "vocab-09-30fe1d2c",
+        "vocab-09-9d2a98fa",
+        "vocab-09-b4937c89",
+        "vocab-09-af69c9fb",
+        "vocab-09-67b6a4e5",
+        "vocab-09-6bccf6e2",
+        "vocab-09-7f12d99e",
+        "vocab-09-5a1e2f10",
+        "vocab-09-01172ebc",
+        "vocab-09-5a178326",
+        "vocab-09-251e29c1",
+        "vocab-09-bbf11837",
+        "vocab-09-f8c1692f",
+        "vocab-09-2a949c85",
+        "vocab-09-c4cdfa60",
+        "vocab-09-b2f3dbda",
+        "vocab-09-e301e82d",
+        "vocab-09-3d511486",
+        "vocab-09-bc17ec0c",
+        "vocab-09-90475185",
+        "vocab-09-a249bbe4",
+        "vocab-09-6123551e",
+        "vocab-09-c1cdb600",
+        "vocab-09-fb7d540d",
+        "vocab-09-c39cdbc0",
+        "vocab-09-72df76d9",
+        "vocab-09-964d6865",
+        "vocab-09-457e0029",
+        "vocab-09-5860fdcd",
+        "vocab-09-013ca4e2"
+      ],
+      "grammarPointIds": [
+        "grammar-09-a9dd144b"
+      ]
+    },
+    {
+      "id": "hanyu2-bai-10",
+      "lessonNumber": 10,
+      "titleZh": "我听过钢琴协奏曲《黄河》",
+      "sourceFile": "BÀI 1-10.docx",
+      "vocabCategories": [
+        {
+          "nameVi": "Kinh nghiệm / số lần / thứ tự",
+          "words": [
+            "过",
+            "曾经",
+            "第"
+          ]
+        },
+        {
+          "nameVi": "Y học Trung Quốc / chữa bệnh",
+          "words": [
+            "住院",
+            "中医",
+            "中成药",
+            "摸",
+            "脉",
+            "按摩",
+            "针灸",
+            "方法",
+            "治",
+            "针",
+            "扎针",
+            "细"
+          ]
+        },
+        {
+          "nameVi": "Vị giác / món ăn",
+          "words": [
+            "苦",
+            "甜",
+            "糖",
+            "中餐",
+            "烤鸭",
+            "鸭",
+            "鸡",
+            "白薯",
+            "糖葫芦",
+            "什么的"
+          ]
+        },
+        {
+          "nameVi": "Âm nhạc / biểu diễn",
+          "words": [
+            "亲耳",
+            "钢琴",
+            "家",
+            "演奏",
+            "极了",
+            "小提琴",
+            "协奏曲",
+            "曲",
+            "好听",
+            "还",
+            "嘛",
+            "《黄河》",
+            "《梁祝》"
+          ]
+        },
+        {
+          "nameVi": "Tình yêu / quan hệ",
+          "words": [
+            "谈恋爱",
+            "恋爱",
+            "说谎",
+            "谎",
+            "分手",
+            "大声"
+          ]
+        },
+        {
+          "nameVi": "Địa danh / thắng cảnh",
+          "words": [
+            "哈尔滨",
+            "海南岛",
+            "泰山",
+            "西安",
+            "敦煌",
+            "颐和园",
+            "故宫",
+            "长城"
+          ]
+        }
+      ],
+      "vocabCount": 52,
+      "vocabIds": [
+        "vocab-10-ca5355a3",
+        "vocab-10-b0e61046",
+        "vocab-10-133712ad",
+        "vocab-10-16d05906",
+        "vocab-10-b4cab39f",
+        "vocab-10-c5dfc484",
+        "vocab-10-5053cbbd",
+        "vocab-10-0b6dde5a",
+        "vocab-10-a5b9ce3f",
+        "vocab-10-710563c3",
+        "vocab-10-a7c37bb7",
+        "vocab-10-21ff8c1a",
+        "vocab-10-97b0f46c",
+        "vocab-10-9af9be11",
+        "vocab-10-99297ef2",
+        "vocab-10-a9557e89",
+        "vocab-10-a4a5d6be",
+        "vocab-10-d55efa61",
+        "vocab-10-8d1893ed",
+        "vocab-10-0e61e6b4",
+        "vocab-10-0035e634",
+        "vocab-10-77488c86",
+        "vocab-10-4ba4e25c",
+        "vocab-10-6167d2be",
+        "vocab-10-bdd8e579",
+        "vocab-10-f3a189f2",
+        "vocab-10-abe17a68",
+        "vocab-10-9a0e87f1",
+        "vocab-10-82f0c9c8",
+        "vocab-10-f47b310c",
+        "vocab-10-0c9224ba",
+        "vocab-10-6bd0f955",
+        "vocab-10-2632ee11",
+        "vocab-10-d4b789b6",
+        "vocab-10-c8453491",
+        "vocab-10-1e0f23d8",
+        "vocab-10-d231f4a5",
+        "vocab-10-fb8060bf",
+        "vocab-10-b8e244f8",
+        "vocab-10-ff61b79c",
+        "vocab-10-dd19e8af",
+        "vocab-10-dee60229",
+        "vocab-10-280e492f",
+        "vocab-10-bfbc5412",
+        "vocab-10-40de9a07",
+        "vocab-10-99ca28ba",
+        "vocab-10-f1ed25b5",
+        "vocab-10-23d69f76",
+        "vocab-10-4e9bf839",
+        "vocab-10-fe7a3bc7",
+        "vocab-10-e428e90d",
+        "vocab-10-debc936d"
+      ],
+      "grammarPointIds": [
+        "grammar-10-b6952e96",
+        "grammar-10-f06cccd4",
+        "grammar-10-569d0561"
+      ]
+    },
+    {
+      "id": "hanyu2-bai-11",
+      "lessonNumber": 11,
+      "titleZh": "我是跟旅游团一起来的",
+      "sourceFile": "Bài 11-25.docx",
+      "vocabCategories": [
+        {
+          "nameVi": "Thời gian & lịch trình",
+          "words": [
+            "前天",
+            "后天",
+            "假期",
+            "暑假",
+            "平常",
+            "平时",
+            "经常",
+            "常常",
+            "一般"
+          ]
+        },
+        {
+          "nameVi": "Du lịch & tổ chức hoạt động",
+          "words": [
+            "导游",
+            "旅行社",
+            "组织",
+            "安排",
+            "活动",
+            "高铁",
+            "风光",
+            "风景",
+            "自由"
+          ]
+        },
+        {
+          "nameVi": "Học tập & công việc",
+          "words": [
+            "研究",
+            "研究生",
+            "打工",
+            "老板",
+            "需要",
+            "利用",
+            "兼",
+            "当",
+            "与"
+          ]
+        },
+        {
+          "nameVi": "Quan hệ & hỗ trợ",
+          "words": [
+            "帮助",
+            "帮",
+            "互相",
+            "商量",
+            "自己"
+          ]
+        },
+        {
+          "nameVi": "Vật chất, kim loại & vị trí",
+          "words": [
+            "铁",
+            "金",
+            "银",
+            "外",
+            "内"
+          ]
+        },
+        {
+          "nameVi": "Cơ thể, âm thanh & cảm nhận",
+          "words": [
+            "鼻子",
+            "头发",
+            "眼睛",
+            "声调",
+            "声"
+          ]
+        },
+        {
+          "nameVi": "Tâm lý & đánh giá",
+          "words": [
+            "希望",
+            "失望",
+            "满意",
+            "惊喜",
+            "马马虎虎",
+            "平实",
+            "实"
+          ]
+        }
+      ],
+      "vocabCount": 56,
+      "vocabIds": [
+        "vocab-11-6f434ffb",
+        "vocab-11-093f0c30",
+        "vocab-11-c61f6251",
+        "vocab-11-2a6b11da",
+        "vocab-11-8681c050",
+        "vocab-11-9815186b",
+        "vocab-11-ace1d434",
+        "vocab-11-0e3a6398",
+        "vocab-11-b1272822",
+        "vocab-11-51d5e855",
+        "vocab-11-eec1b88d",
+        "vocab-11-a349bf4b",
+        "vocab-11-d25d43b7",
+        "vocab-11-0c6213d0",
+        "vocab-11-de0ce3c4",
+        "vocab-11-071471bf",
+        "vocab-11-04ec39aa",
+        "vocab-11-39238d5d",
+        "vocab-11-376064f1",
+        "vocab-11-c8f04aff",
+        "vocab-11-3619821b",
+        "vocab-11-e8ec47ff",
+        "vocab-11-f17e94bd",
+        "vocab-11-5310c345",
+        "vocab-11-b0d92a52",
+        "vocab-11-a3be0f43",
+        "vocab-11-7c3a09f8",
+        "vocab-11-8b18c610",
+        "vocab-11-49ca71f0",
+        "vocab-11-c527c05d",
+        "vocab-11-d7eb3798",
+        "vocab-11-ecb7b75a",
+        "vocab-11-4caf4634",
+        "vocab-11-72518f5b",
+        "vocab-11-615c7270",
+        "vocab-11-736b1af8",
+        "vocab-11-b476d938",
+        "vocab-11-d5a601d2",
+        "vocab-11-be958339",
+        "vocab-11-6f13bba2",
+        "vocab-11-cc57120e",
+        "vocab-11-f9aaef29",
+        "vocab-11-2914c804",
+        "vocab-11-35124919",
+        "vocab-11-919abec0",
+        "vocab-11-7388540b",
+        "vocab-11-26c08af8",
+        "vocab-11-fb7d540d",
+        "vocab-11-1f0bfa00",
+        "vocab-11-13fa4ef5",
+        "vocab-11-c79b14ad",
+        "vocab-11-31c0b203",
+        "vocab-11-46727945",
+        "vocab-11-fe0ecb21",
+        "vocab-11-b4a07a9a",
+        "vocab-11-259f8a06"
+      ],
+      "grammarPointIds": [
+        "grammar-11-820f0dd7",
+        "grammar-11-4b3ced34",
+        "grammar-11-f53635a1"
+      ]
+    },
+    {
+      "id": "hanyu2-bai-12",
+      "lessonNumber": 12,
+      "titleZh": "我的护照你找到了没有",
+      "sourceFile": "Bài 11-25.docx",
+      "vocabCategories": [
+        {
+          "nameVi": "Giấy tờ, đồ vật cá nhân & vị trí",
+          "words": [
+            "护照",
+            "签证",
+            "手提包儿",
+            "大衣",
+            "口袋",
+            "斧子"
+          ]
+        },
+        {
+          "nameVi": "Thời gian & bối cảnh",
+          "words": [
+            "半天",
+            "白天",
+            "从前",
+            "期间",
+            "最后",
+            "原来"
+          ]
+        },
+        {
+          "nameVi": "Sự kiện, địa điểm & mức độ",
+          "words": [
+            "欧洲",
+            "现场",
+            "锦标赛",
+            "程度",
+            "水平",
+            "精神",
+            "程"
+          ]
+        },
+        {
+          "nameVi": "Dáng vẻ, hành vi & lời nói",
+          "words": [
+            "样子",
+            "表情",
+            "举动",
+            "言行",
+            "一举一动",
+            "一言一行"
+          ]
+        },
+        {
+          "nameVi": "Động tác & kết quả",
+          "words": [
+            "找",
+            "放",
+            "丢",
+            "落",
+            "贴",
+            "砍柴",
+            "算",
+            "像"
+          ]
+        },
+        {
+          "nameVi": "Giao tiếp, công việc & tâm lý",
+          "words": [
+            "邻居",
+            "通知",
+            "暂停",
+            "营业",
+            "辞职",
+            "承认",
+            "怀疑",
+            "佩服",
+            "明白",
+            "发狂",
+            "生病"
+          ]
+        },
+        {
+          "nameVi": "Ý muốn, khả năng, kết quả & phó từ",
+          "words": [
+            "愿",
+            "愿意",
+            "及",
+            "成",
+            "准",
+            "可",
+            "为了"
+          ]
+        },
+        {
+          "nameVi": "Cụm cố định / trạng thái",
+          "words": [
+            "丢三落四",
+            "正常",
+            "棒",
+            "狂",
+            "好好儿",
+            "慢慢儿",
+            "亲眼",
+            "亲耳",
+            "亲手"
+          ]
+        }
+      ],
+      "vocabCount": 45,
+      "vocabIds": [
+        "vocab-12-5d6af78e",
+        "vocab-12-35dc00ff",
+        "vocab-12-dcff71d5",
+        "vocab-12-b25d2fb2",
+        "vocab-12-8b94ad28",
+        "vocab-12-7c9cd2d7",
+        "vocab-12-4eb68eb1",
+        "vocab-12-e33e264b",
+        "vocab-12-95fe8029",
+        "vocab-12-f34b8014",
+        "vocab-12-933be7a6",
+        "vocab-12-b42983da",
+        "vocab-12-dc38c229",
+        "vocab-12-5b726e39",
+        "vocab-12-2eab8bc3",
+        "vocab-12-edfbc253",
+        "vocab-12-b43c2d16",
+        "vocab-12-e99647b5",
+        "vocab-12-1aa7c709",
+        "vocab-12-c1736dee",
+        "vocab-12-41199540",
+        "vocab-12-21259c77",
+        "vocab-12-5d7bed50",
+        "vocab-12-1289d848",
+        "vocab-12-f59dfaca",
+        "vocab-12-530f9e2f",
+        "vocab-12-88c07567",
+        "vocab-12-a475186d",
+        "vocab-12-f614c048",
+        "vocab-12-e77983e0",
+        "vocab-12-11107fa0",
+        "vocab-12-b89c1cbf",
+        "vocab-12-67c877e5",
+        "vocab-12-ac54e260",
+        "vocab-12-588e3a7a",
+        "vocab-12-ff080cdf",
+        "vocab-12-af9091e3",
+        "vocab-12-4771ee7f",
+        "vocab-12-b6b12389",
+        "vocab-12-59c4fe99",
+        "vocab-12-c919131d",
+        "vocab-12-dc5327d8",
+        "vocab-12-36b34331",
+        "vocab-12-51b45b0d",
+        "vocab-12-dcf04679"
+      ],
+      "grammarPointIds": [
+        "grammar-12-6e7457c9",
+        "grammar-12-f4564e50"
+      ]
+    },
+    {
+      "id": "hanyu2-bai-13",
+      "lessonNumber": 13,
+      "titleZh": "我的眼镜儿摔坏了",
+      "sourceFile": "Bài 11-25.docx",
+      "vocabCategories": [
+        {
+          "nameVi": "Ảnh, thao tác xử lý ảnh & kích thước",
+          "words": [
+            "照",
+            "选",
+            "洗",
+            "放大",
+            "寸",
+            "油画"
+          ]
+        },
+        {
+          "nameVi": "Động tác gây kết quả / trạng thái bị ảnh hưởng",
+          "words": [
+            "碰",
+            "掉",
+            "闭",
+            "删",
+            "虚",
+            "摔坏 theo trọng tâm bài"
+          ]
+        },
+        {
+          "nameVi": "Sự cố, nguyên nhân & quy tắc",
+          "words": [
+            "事故",
+            "保证",
+            "遵守",
+            "规则",
+            "造成",
+            "原因",
+            "之一",
+            "引起"
+          ]
+        },
+        {
+          "nameVi": "Thời gian, mức độ & độ rõ",
+          "words": [
+            "整整",
+            "清楚",
+            "赶快",
+            "主要"
+          ]
+        },
+        {
+          "nameVi": "Đồ vật, vị trí & thân thể",
+          "words": [
+            "眼镜儿",
+            "地上"
+          ]
+        },
+        {
+          "nameVi": "Cảm xúc, đánh giá & khẩu ngữ",
+          "words": [
+            "别提了",
+            "倒霉",
+            "奇怪",
+            "怕",
+            "低",
+            "高"
+          ]
+        },
+        {
+          "nameVi": "Giao thông, đô thị & địa danh",
+          "words": [
+            "交通",
+            "拥挤",
+            "发展",
+            "首都",
+            "王府井"
+          ]
+        },
+        {
+          "nameVi": "Bổ ngữ kết quả rõ ràng",
+          "words": [
+            "Ví dụ: 选好",
+            "洗出来",
+            "放大成两寸",
+            "碰掉",
+            "删掉",
+            "看清楚."
+          ]
+        },
+        {
+          "nameVi": "Lượng từ lặp và mức độ tăng dần",
+          "words": [
+            "Ví dụ: 张张都很清楚",
+            "件件都不错",
+            "一天比一天拥挤",
+            "一年比一年高."
+          ]
+        }
+      ],
+      "vocabCount": 37,
+      "vocabIds": [
+        "vocab-13-ca8c731d",
+        "vocab-13-3230db11",
+        "vocab-13-ad29e114",
+        "vocab-13-4e528060",
+        "vocab-13-a69e779b",
+        "vocab-13-1198a94f",
+        "vocab-13-a924c43c",
+        "vocab-13-2d7e12fa",
+        "vocab-13-4a822212",
+        "vocab-13-c6043d55",
+        "vocab-13-96d8a354",
+        "vocab-13-54684bee",
+        "vocab-13-60c07bd3",
+        "vocab-13-c39cdbc0",
+        "vocab-13-2d22c160",
+        "vocab-13-a52f9a87",
+        "vocab-13-da30d751",
+        "vocab-13-b4052cb2",
+        "vocab-13-35874e42",
+        "vocab-13-ae39c8ed",
+        "vocab-13-1fe183fe",
+        "vocab-13-da53c7a8",
+        "vocab-13-a961d69c",
+        "vocab-13-44f85565",
+        "vocab-13-73ec3141",
+        "vocab-13-7504f09e",
+        "vocab-13-b64d6ddf",
+        "vocab-13-653f008b",
+        "vocab-13-68fd1bd8",
+        "vocab-13-5790d713",
+        "vocab-13-b641e19a",
+        "vocab-13-1e428598",
+        "vocab-13-551cf902",
+        "vocab-13-62a37b71",
+        "vocab-13-f2f74387",
+        "vocab-13-811cbf64",
+        "vocab-13-1d23f516"
+      ],
+      "grammarPointIds": [
+        "grammar-13-9d16be0d",
+        "grammar-13-c6ac7f53",
+        "grammar-13-7d68bb8a"
+      ]
+    },
+    {
+      "id": "hanyu2-bai-14",
+      "lessonNumber": 14,
+      "titleZh": "钥匙忘拔下来了",
+      "sourceFile": "Bài 11-25.docx",
+      "vocabCategories": [
+        {
+          "nameVi": "Sách, nhà sách & đồ dùng học tập",
+          "words": [
+            "图书城",
+            "图书",
+            "架",
+            "书架",
+            "纸箱",
+            "纸"
+          ]
+        },
+        {
+          "nameVi": "Phạm vi, lựa chọn & sự đa dạng",
+          "words": [
+            "另",
+            "另外",
+            "各",
+            "各种各样",
+            "挑",
+            "抽"
+          ]
+        },
+        {
+          "nameVi": "Kỳ nghỉ, mua sắm & quà tặng",
+          "words": [
+            "寒假",
+            "暑假",
+            "品",
+            "礼品",
+            "售货员",
+            "商场",
+            "商品",
+            "脸谱",
+            "饰物",
+            "丝织品"
+          ]
+        },
+        {
+          "nameVi": "Đồ vật cá nhân & thao tác cầm/rút/cắm",
+          "words": [
+            "钥匙",
+            "钥匙链",
+            "玩具",
+            "提",
+            "插",
+            "拔",
+            "串",
+            "把"
+          ]
+        },
+        {
+          "nameVi": "Trạng thái cơ thể & vận động",
+          "words": [
+            "累",
+            "困",
+            "步",
+            "散步",
+            "跑",
+            "跑步",
+            "跳"
+          ]
+        },
+        {
+          "nameVi": "Liên kết câu & chuyển ý",
+          "words": [
+            "于是",
+            "却",
+            "但是",
+            "忽然",
+            "忽然觉得",
+            "突然",
+            "只好",
+            "除了……以外"
+          ]
+        },
+        {
+          "nameVi": "Du lịch, thiên nhiên & cảnh quan",
+          "words": [
+            "泰山",
+            "登",
+            "爬",
+            "一览众山小",
+            "众",
+            "日出",
+            "太阳",
+            "月亮",
+            "一下子",
+            "美"
+          ]
+        },
+        {
+          "nameVi": "Địa điểm, tình huống & cảm xúc xã hội",
+          "words": [
+            "庙",
+            "寺",
+            "情况",
+            "热情",
+            "热闹",
+            "肯定",
+            "房管",
+            "餐",
+            "菜",
+            "电梯",
+            "楼梯",
+            "哭笑不得"
+          ]
+        },
+        {
+          "nameVi": "Tân ngữ sự vật có thể đặt sau cụm kép hoặc chen giữa",
+          "words": [
+            "Ví dụ: 拿出来一本书 / 拿出一本书来."
+          ]
+        }
+      ],
+      "vocabCount": 70,
+      "vocabIds": [
+        "vocab-14-ed7311d1",
+        "vocab-14-c29990e3",
+        "vocab-14-0536695d",
+        "vocab-14-cfe86771",
+        "vocab-14-d89101f5",
+        "vocab-14-74941883",
+        "vocab-14-894d08e8",
+        "vocab-14-4bb01668",
+        "vocab-14-a979c0eb",
+        "vocab-14-155d4c65",
+        "vocab-14-d415d623",
+        "vocab-14-e080a75d",
+        "vocab-14-bbcd89a4",
+        "vocab-14-51d5e855",
+        "vocab-14-598dbb01",
+        "vocab-14-6133a83e",
+        "vocab-14-40f95e08",
+        "vocab-14-2b9536f8",
+        "vocab-14-275d7362",
+        "vocab-14-df3ae664",
+        "vocab-14-1debce30",
+        "vocab-14-86c0d9dd",
+        "vocab-14-26268ac4",
+        "vocab-14-318f8ab3",
+        "vocab-14-218f2744",
+        "vocab-14-53f39788",
+        "vocab-14-8eb20fec",
+        "vocab-14-0b23f3d4",
+        "vocab-14-af0bf491",
+        "vocab-14-1e37d8ba",
+        "vocab-14-571f578b",
+        "vocab-14-d67507be",
+        "vocab-14-6c3a9e65",
+        "vocab-14-68c53853",
+        "vocab-14-762940ac",
+        "vocab-14-82133b80",
+        "vocab-14-db584336",
+        "vocab-14-7e7e8d1a",
+        "vocab-14-d9deb4c1",
+        "vocab-14-e7485125",
+        "vocab-14-cd40ad9d",
+        "vocab-14-4236d3e1",
+        "vocab-14-59c88014",
+        "vocab-14-8f882d09",
+        "vocab-14-22ba3134",
+        "vocab-14-6c2b4296",
+        "vocab-14-4dabd00a",
+        "vocab-14-67aa7468",
+        "vocab-14-26dd66e0",
+        "vocab-14-001585c3",
+        "vocab-14-a17e26c0",
+        "vocab-14-e9c3cc95",
+        "vocab-14-3b6def36",
+        "vocab-14-ca82ea1a",
+        "vocab-14-50b0cf1f",
+        "vocab-14-0536b63c",
+        "vocab-14-efb2a93e",
+        "vocab-14-4be3a502",
+        "vocab-14-f6828ccf",
+        "vocab-14-d51a1cf9",
+        "vocab-14-818bc6a2",
+        "vocab-14-26916b05",
+        "vocab-14-ce9aaedb",
+        "vocab-14-11e10b45",
+        "vocab-14-302ca721",
+        "vocab-14-d073efed",
+        "vocab-14-9c9fb805",
+        "vocab-14-9b9c29ff",
+        "vocab-14-6b893c17",
+        "vocab-14-edc8fd4f"
+      ],
+      "grammarPointIds": [
+        "grammar-14-e65f59d5"
+      ]
+    },
+    {
+      "id": "hanyu2-bai-15",
+      "lessonNumber": 15,
+      "titleZh": "会议厅的门开着呢",
+      "sourceFile": "Bài 11-25.docx",
+      "vocabCategories": [
+        {
+          "nameVi": "Nhân vật trong hội nghị / hôn lễ / sự kiện",
+          "words": [
+            "女士",
+            "服务员",
+            "小伙子 / 小伙儿",
+            "主持人",
+            "新娘",
+            "新郎",
+            "客人",
+            "班长"
+          ]
+        },
+        {
+          "nameVi": "Không gian & đồ vật trong hội trường",
+          "words": [
+            "会议厅",
+            "讲台",
+            "椅子",
+            "墙",
+            "灯笼",
+            "摄像机",
+            "麦克风",
+            "铃"
+          ]
+        },
+        {
+          "nameVi": "Trang phục & phụ kiện",
+          "words": [
+            "西服",
+            "裙子",
+            "领带",
+            "副",
+            "双"
+          ]
+        },
+        {
+          "nameVi": "Trang trí & không khí sự kiện",
+          "words": [
+            "喜",
+            "双喜",
+            "热评",
+            "气氛",
+            "样子",
+            "个子"
+          ]
+        },
+        {
+          "nameVi": "Nói năng / tổ chức / hoạt động tập thể",
+          "words": [
+            "主持",
+            "讲话",
+            "讲",
+            "讨论",
+            "赶",
+            "干",
+            "停",
+            "保重"
+          ]
+        },
+        {
+          "nameVi": "Miêu tả người & cảm xúc",
+          "words": [
+            "长",
+            "帅",
+            "硕",
+            "激动",
+            "大概",
+            "义"
+          ]
+        },
+        {
+          "nameVi": "Với trang phục/phụ kiện, tiếng Trung hay dùng động từ khác nhau",
+          "words": [
+            "穿衣服 / 穿裙子 / 穿西服"
+          ]
+        }
+      ],
+      "vocabCount": 50,
+      "vocabIds": [
+        "vocab-15-324afd65",
+        "vocab-15-e7f105e6",
+        "vocab-15-9ccb988c",
+        "vocab-15-3960998b",
+        "vocab-15-d1249a76",
+        "vocab-15-94f7051e",
+        "vocab-15-493d9ea9",
+        "vocab-15-2d4b6abf",
+        "vocab-15-056148f5",
+        "vocab-15-3a0ad6ef",
+        "vocab-15-16e4aea8",
+        "vocab-15-d61b4bd9",
+        "vocab-15-c69959db",
+        "vocab-15-13ff9fa9",
+        "vocab-15-6cbd0c3f",
+        "vocab-15-458681fc",
+        "vocab-15-306fb9f3",
+        "vocab-15-de7b6867",
+        "vocab-15-328ba06b",
+        "vocab-15-4aa2a705",
+        "vocab-15-e635bd88",
+        "vocab-15-c031a2c6",
+        "vocab-15-d6447ccd",
+        "vocab-15-43bca5a5",
+        "vocab-15-4159938f",
+        "vocab-15-c0ee58f6",
+        "vocab-15-466c9657",
+        "vocab-15-7d1673a2",
+        "vocab-15-9ba112b6",
+        "vocab-15-8dcf79cf",
+        "vocab-15-fc8a30bc",
+        "vocab-15-ae93a056",
+        "vocab-15-72b68d01",
+        "vocab-15-51a5db6c",
+        "vocab-15-403c855a",
+        "vocab-15-62a74f97",
+        "vocab-15-1efb6f99",
+        "vocab-15-b13aec61",
+        "vocab-15-9cad35d4",
+        "vocab-15-af813c73",
+        "vocab-15-f886ddad",
+        "vocab-15-29a5de96",
+        "vocab-15-84a65263",
+        "vocab-15-f9bf86fa",
+        "vocab-15-5bf41d57",
+        "vocab-15-bd029b4f",
+        "vocab-15-dc27b8a6",
+        "vocab-15-103ada1e",
+        "vocab-15-1d2450cf",
+        "vocab-15-b22be445"
+      ],
+      "grammarPointIds": [
+        "grammar-15-ec14f2cd"
+      ]
+    },
+    {
+      "id": "hanyu2-bai-16",
+      "lessonNumber": 16,
+      "titleZh": "前边开过来一辆空车",
+      "sourceFile": "Bài 11-25.docx",
+      "vocabCategories": [
+        {
+          "nameVi": "Biến hóa / mức độ tăng dần",
+          "words": [
+            "越来越",
+            "越……越……"
+          ]
+        },
+        {
+          "nameVi": "Đi lại / taxi / ra ngoài",
+          "words": [
+            "打的",
+            "空",
+            "开",
+            "出门",
+            "搬",
+            "离开"
+          ]
+        },
+        {
+          "nameVi": "Không gian truyền thống & nhà ở",
+          "words": [
+            "四合院",
+            "院子",
+            "住宅",
+            "小区",
+            "现代化",
+            "书房",
+            "窗户",
+            "窗帘",
+            "窗台",
+            "窗"
+          ]
+        },
+        {
+          "nameVi": "Cây cối / đồ vật trong sân",
+          "words": [
+            "种",
+            "棵",
+            "枣",
+            "结",
+            "尝",
+            "甜"
+          ]
+        },
+        {
+          "nameVi": "Xây dựng / thay đổi nơi ở",
+          "words": [
+            "盖",
+            "建",
+            "搬",
+            "遗憾",
+            "舍不得",
+            "体会"
+          ]
+        },
+        {
+          "nameVi": "Ý kiến / đề xuất / mức độ",
+          "words": [
+            "意见",
+            "建议",
+            "高",
+            "低",
+            "提"
+          ]
+        },
+        {
+          "nameVi": "Lễ tết / trang trí / giao tiếp xã hội",
+          "words": [
+            "丰富",
+            "装饰",
+            "礼物",
+            "欢乐",
+            "节日",
+            "联欢会",
+            "春节",
+            "做客"
+          ]
+        },
+        {
+          "nameVi": "Học thuật / phòng đọc / tư tưởng",
+          "words": [
+            "文学",
+            "政治",
+            "哲学"
+          ]
+        },
+        {
+          "nameVi": "Đồ vật / lượng từ / đời sống",
+          "words": [
+            "湖",
+            "沙发",
+            "幅",
+            "爷爷",
+            "包",
+            "老鼠",
+            "端",
+            "微信"
+          ]
+        },
+        {
+          "nameVi": "Ví dụ:",
+          "words": [
+            "墙上挂着一幅画。"
+          ]
+        },
+        {
+          "nameVi": "Trên tường treo một bức tranh.",
+          "words": [
+            "前边开过来一辆空车。"
+          ]
+        },
+        {
+          "nameVi": "Phía trước có một chiếc xe trống chạy tới.",
+          "words": [
+            "门口站着一个人。"
+          ]
+        },
+        {
+          "nameVi": "Trước cửa có một người đang đứng.",
+          "words": [
+            "Điểm dễ sai: địa điểm đứng đầu câu",
+            "tân ngữ phía sau thường là một người / một vật chưa xác định",
+            "có lượng từ: 一辆车",
+            "一棵树",
+            "一个人",
+            "一幅画."
+          ]
+        },
+        {
+          "nameVi": "Tiếng Trung ngày càng khó.",
+          "words": [
+            "越 A 越 B = càng A càng B."
+          ]
+        }
+      ],
+      "vocabCount": 52,
+      "vocabIds": [
+        "vocab-16-d7354323",
+        "vocab-16-44056dd7",
+        "vocab-16-cf6d3b64",
+        "vocab-16-ff6865dd",
+        "vocab-16-1c4ba62f",
+        "vocab-16-00318608",
+        "vocab-16-d72fe3cf",
+        "vocab-16-7fb1a0bf",
+        "vocab-16-b8f1e496",
+        "vocab-16-c5dfc484",
+        "vocab-16-b5cb434b",
+        "vocab-16-8080d070",
+        "vocab-16-33772c91",
+        "vocab-16-24ebedff",
+        "vocab-16-c3620a78",
+        "vocab-16-f37cd975",
+        "vocab-16-81fdddb9",
+        "vocab-16-46ca75b5",
+        "vocab-16-24932d7b",
+        "vocab-16-3ff7f6b9",
+        "vocab-16-15a56afe",
+        "vocab-16-357f964b",
+        "vocab-16-1d23f516",
+        "vocab-16-811cbf64",
+        "vocab-16-af0bf491",
+        "vocab-16-89ff1214",
+        "vocab-16-349b30d7",
+        "vocab-16-b3ea38dc",
+        "vocab-16-ae1671aa",
+        "vocab-16-b193f09e",
+        "vocab-16-111f5f7e",
+        "vocab-16-f6559f9a",
+        "vocab-16-8051f168",
+        "vocab-16-6283c5c8",
+        "vocab-16-7295c282",
+        "vocab-16-c75cc9a9",
+        "vocab-16-9814ab46",
+        "vocab-16-079d7459",
+        "vocab-16-331445c1",
+        "vocab-16-150644f9",
+        "vocab-16-236e871f",
+        "vocab-16-f0eaf46b",
+        "vocab-16-e23cc9bf",
+        "vocab-16-cf36e682",
+        "vocab-16-c7b4488a",
+        "vocab-16-d90b6af8",
+        "vocab-16-2c60b25e",
+        "vocab-16-e479c0d1",
+        "vocab-16-0d67d84c",
+        "vocab-16-51c6ad65",
+        "vocab-16-39b3ad84",
+        "vocab-16-c4ab742f"
+      ],
+      "grammarPointIds": [
+        "grammar-16-06a009fa",
+        "grammar-16-5a419151"
+      ]
+    },
+    {
+      "id": "hanyu2-bai-17",
+      "lessonNumber": 17,
+      "titleZh": "把“福”字倒着贴在门上",
+      "sourceFile": "Bài 11-25.docx",
+      "vocabCategories": [
+        {
+          "nameVi": "Ăn uống / trải nghiệm vị",
+          "words": [
+            "品尝",
+            "特色"
+          ]
+        },
+        {
+          "nameVi": "Tổ chức lớp học / hội trường / trang trí",
+          "words": [
+            "班长",
+            "布置",
+            "会场",
+            "管理员",
+            "管理",
+            "告诉",
+            "答应",
+            "打扫"
+          ]
+        },
+        {
+          "nameVi": "Đồ vật trong lớp / hội trường",
+          "words": [
+            "窗户",
+            "桌子",
+            "圆圈儿",
+            "黑板",
+            "音响",
+            "彩灯",
+            "彩带",
+            "椅子",
+            "沙发"
+          ]
+        },
+        {
+          "nameVi": "Trang trí Tết / văn hóa chữ nghĩa",
+          "words": [
+            "字",
+            "对联儿",
+            "新春",
+            "吉祥",
+            "幸福",
+            "“福”字倒着贴",
+            "水仙",
+            "幅",
+            "份",
+            "副"
+          ]
+        },
+        {
+          "nameVi": "Đồ gia dụng hiện đại",
+          "words": [
+            "冰箱",
+            "洗衣机",
+            "空调",
+            "调"
+          ]
+        },
+        {
+          "nameVi": "Động tác nhỏ / trạng thái / cách làm",
+          "words": [
+            "亲手",
+            "仔细",
+            "倒",
+            "伸",
+            "小心",
+            "悄悄",
+            "摘",
+            "吹气",
+            "一下子",
+            "仍"
+          ]
+        },
+        {
+          "nameVi": "Công thức lõi:",
+          "words": [
+            "S + 把 + tân ngữ xác định + V + kết quả/vị trí/trạng thái"
+          ]
+        },
+        {
+          "nameVi": "Ví dụ sạch:",
+          "words": [
+            "把“福”字贴在门上。"
+          ]
+        },
+        {
+          "nameVi": "Dán chữ Phúc lên cửa.",
+          "words": [
+            "把教室布置成会场。"
+          ]
+        },
+        {
+          "nameVi": "Bố trí lớp học thành hội trường.",
+          "words": [
+            "把窗户擦干净。"
+          ]
+        },
+        {
+          "nameVi": "Lau cửa sổ cho sạch.",
+          "words": [
+            "把椅子搬到旁边。"
+          ]
+        },
+        {
+          "nameVi": "Không nói:",
+          "words": [
+            "我把书看。"
+          ]
+        },
+        {
+          "nameVi": "Phải nói:",
+          "words": [
+            "我把书看完了。"
+          ]
+        },
+        {
+          "nameVi": "Tôi đọc xong quyển sách rồi.",
+          "words": [
+            "我把书放在桌子上。"
+          ]
+        }
+      ],
+      "vocabCount": 55,
+      "vocabIds": [
+        "vocab-17-5f5ed5a4",
+        "vocab-17-91bb604b",
+        "vocab-17-056148f5",
+        "vocab-17-6b893c17",
+        "vocab-17-51b45b0d",
+        "vocab-17-af9091e3",
+        "vocab-17-a1800ecd",
+        "vocab-17-f564ee4f",
+        "vocab-17-b718e2fd",
+        "vocab-17-7963af5b",
+        "vocab-17-c9e5554f",
+        "vocab-17-2e7158aa",
+        "vocab-17-5f3459cb",
+        "vocab-17-dd459552",
+        "vocab-17-c75cc9a9",
+        "vocab-17-d80d34d0",
+        "vocab-17-856ffc22",
+        "vocab-17-692cc6e6",
+        "vocab-17-a9abf188",
+        "vocab-17-c1eaec4e",
+        "vocab-17-92889bb1",
+        "vocab-17-de158291",
+        "vocab-17-726a11d4",
+        "vocab-17-5c9ec798",
+        "vocab-17-31c0b203",
+        "vocab-17-2c60b25e",
+        "vocab-17-af6d0780",
+        "vocab-17-8051f168",
+        "vocab-17-1d2450cf",
+        "vocab-17-625c8a52",
+        "vocab-17-de8346a2",
+        "vocab-17-1340bff0",
+        "vocab-17-43508f8a",
+        "vocab-17-c5b432fd",
+        "vocab-17-0880b31b",
+        "vocab-17-c8aba926",
+        "vocab-17-ed0d61ac",
+        "vocab-17-7b4b56be",
+        "vocab-17-d4d57c19",
+        "vocab-17-82e67668",
+        "vocab-17-99fa3357",
+        "vocab-17-c69959db",
+        "vocab-17-d90b6af8",
+        "vocab-17-55036dff",
+        "vocab-17-f1ec857c",
+        "vocab-17-eaeba947",
+        "vocab-17-3cb468fd",
+        "vocab-17-3ac8b145",
+        "vocab-17-d3a10cf3",
+        "vocab-17-13852b4c",
+        "vocab-17-d0c02e5e",
+        "vocab-17-c4d28d1c",
+        "vocab-17-1f153fac",
+        "vocab-17-3b6def36",
+        "vocab-17-44761dae"
+      ],
+      "grammarPointIds": [
+        "grammar-17-70146a6b"
+      ]
+    },
+    {
+      "id": "hanyu2-bai-18",
+      "lessonNumber": 18,
+      "titleZh": "请把护照和机票给我",
+      "sourceFile": "Bài 11-25.docx",
+      "vocabCategories": [
+        {
+          "nameVi": "Sân bay / đi máy bay",
+          "words": [
+            "办理",
+            "登",
+            "登机",
+            "手续",
+            "行李",
+            "托运",
+            "护照",
+            "签证",
+            "身份证",
+            "机票",
+            "登机牌儿",
+            "起飞",
+            "空姐",
+            "安全带",
+            "安全"
+          ]
+        },
+        {
+          "nameVi": "Đồ vật / giấy tờ / thẻ",
+          "words": [
+            "票",
+            "卡",
+            "牌儿",
+            "插头",
+            "开关",
+            "杯子",
+            "茶杯",
+            "硬币",
+            "纸币",
+            "零钱"
+          ]
+        },
+        {
+          "nameVi": "Động tác xử lý đồ vật",
+          "words": [
+            "装",
+            "掏",
+            "插",
+            "扳",
+            "洒",
+            "称"
+          ]
+        },
+        {
+          "nameVi": "Cơ thể / vị trí trên ghế máy bay",
+          "words": [
+            "手",
+            "腿",
+            "扶手",
+            "带"
+          ]
+        },
+        {
+          "nameVi": "Trạng thái / cảm giác",
+          "words": [
+            "暗",
+            "亮",
+            "凉",
+            "凉快",
+            "冷",
+            "轻松"
+          ]
+        },
+        {
+          "nameVi": "Mua bán / đời sống",
+          "words": [
+            "摊儿",
+            "价钱",
+            "称",
+            "零钱",
+            "赛",
+            "相信",
+            "感激"
+          ]
+        },
+        {
+          "nameVi": "Công thức đáng nhớ:",
+          "words": [
+            "把 + O + V + 给 + người nhận"
+          ]
+        },
+        {
+          "nameVi": "Xin hãy đưa hộ chiếu và vé máy bay cho tôi.",
+          "words": [
+            "把 + O + V + 在 / 到 + địa điểm"
+          ]
+        },
+        {
+          "nameVi": "Đặt điện thoại lên bàn.",
+          "words": [
+            "把 + O + V + 成 + kết quả mới"
+          ]
+        },
+        {
+          "nameVi": "Dịch tiếng Trung thành tiếng Việt.",
+          "words": [
+            "把 + O + V + 着"
+          ]
+        },
+        {
+          "nameVi": "Bật đèn và để đèn ở trạng thái bật.",
+          "words": [
+            "Điểm dễ sai nhất: 把 không thích động từ trơ. Phải có “đuôi” rõ: 给谁",
+            "放在哪儿",
+            "变成什么",
+            "开着/关着",
+            "做好/办好."
+          ]
+        }
+      ],
+      "vocabCount": 50,
+      "vocabIds": [
+        "vocab-18-1166dc9e",
+        "vocab-18-6c2b4296",
+        "vocab-18-1f7591e1",
+        "vocab-18-ba8261ff",
+        "vocab-18-61a5197a",
+        "vocab-18-037e4cbf",
+        "vocab-18-3fe27f33",
+        "vocab-18-f6b10871",
+        "vocab-18-5d6af78e",
+        "vocab-18-35dc00ff",
+        "vocab-18-e265dede",
+        "vocab-18-c4f96678",
+        "vocab-18-64e8aaaa",
+        "vocab-18-fee0d620",
+        "vocab-18-80d0bd2d",
+        "vocab-18-5ea82e80",
+        "vocab-18-af0a8c96",
+        "vocab-18-f05e66b3",
+        "vocab-18-c3998509",
+        "vocab-18-ec5fe0c4",
+        "vocab-18-a3b68031",
+        "vocab-18-ea61ba90",
+        "vocab-18-69e1908a",
+        "vocab-18-3ecf5d33",
+        "vocab-18-f1b4b5a6",
+        "vocab-18-e6989207",
+        "vocab-18-eaeba947",
+        "vocab-18-c4870eda",
+        "vocab-18-e0d0ebfa",
+        "vocab-18-341a2ff3",
+        "vocab-18-45d52a06",
+        "vocab-18-4236d3e1",
+        "vocab-18-738061b5",
+        "vocab-18-0894ba96",
+        "vocab-18-7db1c0e3",
+        "vocab-18-72e76c18",
+        "vocab-18-8c5c2abb",
+        "vocab-18-22ec48bc",
+        "vocab-18-7ff698b6",
+        "vocab-18-2055e44e",
+        "vocab-18-bde2c9bc",
+        "vocab-18-c3fa477b",
+        "vocab-18-68d61802",
+        "vocab-18-0a805258",
+        "vocab-18-cd8f792a",
+        "vocab-18-e69abf31",
+        "vocab-18-9332e56e",
+        "vocab-18-3b65f4ee",
+        "vocab-18-7ba31520",
+        "vocab-18-a3fb11bc"
+      ],
+      "grammarPointIds": [
+        "grammar-18-7c25c741"
+      ]
+    },
+    {
+      "id": "hanyu2-bai-19",
+      "lessonNumber": 19,
+      "titleZh": "我的腿被自行车撞伤了",
+      "sourceFile": "Bài 11-25.docx",
+      "vocabCategories": [
+        {
+          "nameVi": "Bị động / chịu tác động",
+          "words": [
+            "被",
+            "让",
+            "叫",
+            "受"
+          ]
+        },
+        {
+          "nameVi": "Tai nạn / bị thương / cơ thể",
+          "words": [
+            "腿",
+            "撞",
+            "倒",
+            "伤",
+            "要紧",
+            "不要紧",
+            "流",
+            "血",
+            "骨头",
+            "躺"
+          ]
+        },
+        {
+          "nameVi": "Ra đường / giao thông / người liên quan",
+          "words": [
+            "上街",
+            "街",
+            "司机",
+            "拉",
+            "自行车 trong bài mẫu"
+          ]
+        },
+        {
+          "nameVi": "Sự cố xấu / mất đồ / bị lừa",
+          "words": [
+            "钱包儿",
+            "偷",
+            "小偷",
+            "遇到",
+            "淋",
+            "落汤鸡",
+            "受骗",
+            "骗"
+          ]
+        },
+        {
+          "nameVi": "Cảm xúc / đánh giá sự việc",
+          "words": [
+            "不好意思",
+            "故意",
+            "小心",
+            "唉",
+            "可气",
+            "傻",
+            "运气"
+          ]
+        },
+        {
+          "nameVi": "Thói quen / quyết định / xử phạt",
+          "words": [
+            "抽烟",
+            "戒",
+            "罚",
+            "决定",
+            "浪费"
+          ]
+        },
+        {
+          "nameVi": "Công thức sạch:",
+          "words": [
+            "Người/vật chịu tác động + 被 + người/vật gây tác động + V + kết quả"
+          ]
+        },
+        {
+          "nameVi": "Ví dụ:",
+          "words": [
+            "我的腿被自行车撞伤了。"
+          ]
+        },
+        {
+          "nameVi": "Chân tôi bị xe đạp đâm bị thương.",
+          "words": [
+            "钱包儿被小偷偷走了。"
+          ]
+        },
+        {
+          "nameVi": "Ví bị tên trộm lấy mất.",
+          "words": [
+            "窗户让风吹开了。"
+          ]
+        },
+        {
+          "nameVi": "Điểm dễ sai nhất:",
+          "words": [
+            "Không nên để động từ trơ sau 被."
+          ]
+        },
+        {
+          "nameVi": "Không tự nhiên:",
+          "words": [
+            "我的腿被自行车撞。"
+          ]
+        },
+        {
+          "nameVi": "Tự nhiên:",
+          "words": [
+            "我的腿被自行车撞伤了。"
+          ]
+        },
+        {
+          "nameVi": "Chân tôi bị xe đạp đâm bị thương.",
+          "words": [
+            "钱包儿被偷走了。"
+          ]
+        }
+      ],
+      "vocabCount": 51,
+      "vocabIds": [
+        "vocab-19-8e2d08b6",
+        "vocab-19-40b7291c",
+        "vocab-19-5d073e5b",
+        "vocab-19-61a5197a",
+        "vocab-19-8a0695eb",
+        "vocab-19-384a6d9c",
+        "vocab-19-c04484fc",
+        "vocab-19-f886ddad",
+        "vocab-19-f3f871c4",
+        "vocab-19-b2124602",
+        "vocab-19-d7488c0c",
+        "vocab-19-d74b6cb1",
+        "vocab-19-24b9a0b7",
+        "vocab-19-2a534fc6",
+        "vocab-19-feb1ad35",
+        "vocab-19-8b462ff0",
+        "vocab-19-47785ad2",
+        "vocab-19-c76a83af",
+        "vocab-19-d3a10cf3",
+        "vocab-19-3c6a250e",
+        "vocab-19-1fcb8b71",
+        "vocab-19-ff60f301",
+        "vocab-19-547b4881",
+        "vocab-19-18f480f3",
+        "vocab-19-4205ccd4",
+        "vocab-19-d03ed5c8",
+        "vocab-19-d8c901da",
+        "vocab-19-aeb83651",
+        "vocab-19-df93d4e0",
+        "vocab-19-92db00e4",
+        "vocab-19-551cf902",
+        "vocab-19-3aba0d9c",
+        "vocab-19-d593c948",
+        "vocab-19-12ab7721",
+        "vocab-19-506be071",
+        "vocab-19-e5d208ca",
+        "vocab-19-46079c24",
+        "vocab-19-8f5ad115",
+        "vocab-19-d0466209",
+        "vocab-19-8d457d65",
+        "vocab-19-c0a0ed4f",
+        "vocab-19-5349a2a3",
+        "vocab-19-ff58fee0",
+        "vocab-19-d415d623",
+        "vocab-19-7cb1acd4",
+        "vocab-19-3348390f",
+        "vocab-19-6d95304e",
+        "vocab-19-94c67cd6",
+        "vocab-19-a4cbed79",
+        "vocab-19-b2b51dfc",
+        "vocab-19-47443def"
+      ],
+      "grammarPointIds": [
+        "grammar-19-aa2df4d2",
+        "grammar-19-0308a53e"
+      ]
+    },
+    {
+      "id": "hanyu2-bai-20",
+      "lessonNumber": 20,
+      "titleZh": "我看得懂，但是听不懂",
+      "sourceFile": "Bài 11-25.docx",
+      "vocabCategories": [
+        {
+          "nameVi": "Nghệ thuật / biểu diễn / phim kịch",
+          "words": [
+            "演出",
+            "演员",
+            "武打",
+            "动作",
+            "精彩",
+            "表现",
+            "人物",
+            "服装",
+            "艺术",
+            "节目单",
+            "开演"
+          ]
+        }
+      ],
+      "vocabCount": 62,
+      "vocabIds": [
+        "vocab-20-ab63b982",
+        "vocab-20-c3a79961",
+        "vocab-20-2f15e71e",
+        "vocab-20-3f2277e1",
+        "vocab-20-114c1521",
+        "vocab-20-547bfd59",
+        "vocab-20-ea67a016",
+        "vocab-20-9f1c2bb8",
+        "vocab-20-d0f9bfbe",
+        "vocab-20-5e65520a",
+        "vocab-20-184269a7",
+        "vocab-20-45843dc8",
+        "vocab-20-19e3355d",
+        "vocab-20-fcd6e16a",
+        "vocab-20-165895b6",
+        "vocab-20-db5ec3c4",
+        "vocab-20-307b40ba",
+        "vocab-20-64b0edc4",
+        "vocab-20-ab243ef8",
+        "vocab-20-87fed721",
+        "vocab-20-c27010a0",
+        "vocab-20-ad6a2cb1",
+        "vocab-20-e1f7a52f",
+        "vocab-20-0166d1b6",
+        "vocab-20-e7be79e2",
+        "vocab-20-b0d92a52",
+        "vocab-20-65333489",
+        "vocab-20-19df29a2",
+        "vocab-20-ef3b05ef",
+        "vocab-20-43d34f17",
+        "vocab-20-7a77d351",
+        "vocab-20-1fd7de54",
+        "vocab-20-3d1ba812",
+        "vocab-20-d86c29e5",
+        "vocab-20-9aec3d20",
+        "vocab-20-5c8997ba",
+        "vocab-20-300d92ce",
+        "vocab-20-f4692608",
+        "vocab-20-d797fe76",
+        "vocab-20-2914c804",
+        "vocab-20-93324fce",
+        "vocab-20-703b910d",
+        "vocab-20-46e83627",
+        "vocab-20-c5644a47",
+        "vocab-20-be70551f",
+        "vocab-20-cb0fe9ce",
+        "vocab-20-7e8575e7",
+        "vocab-20-c437d663",
+        "vocab-20-72d77332",
+        "vocab-20-16d05906",
+        "vocab-20-c5dfc484",
+        "vocab-20-380a9db4",
+        "vocab-20-a9b44077",
+        "vocab-20-9cad35d4",
+        "vocab-20-12f00a5e",
+        "vocab-20-46727945",
+        "vocab-20-7bc5b3c8",
+        "vocab-20-54cc4fb6",
+        "vocab-20-6e5f9522",
+        "vocab-20-5f05b2d9",
+        "vocab-20-71ccae99",
+        "vocab-20-84bd568b"
+      ],
+      "grammarPointIds": [
+        "grammar-20-02ac38f7",
+        "grammar-20-7ece3a73",
+        "grammar-20-e8e60c22"
+      ]
+    },
+    {
+      "id": "hanyu2-bai-21",
+      "lessonNumber": 21,
+      "titleZh": "山这么高，你爬得上去吗",
+      "sourceFile": "Bài 11-25.docx",
+      "vocabCategories": [
+        {
+          "nameVi": "Leo núi / vận động / thể lực",
+          "words": [
+            "缆车",
+            "喘气",
+            "动",
+            "出汗",
+            "汗",
+            "接着",
+            "危险",
+            "鞋",
+            "脚"
+          ]
+        },
+        {
+          "nameVi": "Cổ vũ / thắng lợi / thái độ tích cực",
+          "words": [
+            "胜利",
+            "加油",
+            "积极",
+            "自信",
+            "相信",
+            "争取",
+            "啦啦队"
+          ]
+        },
+        {
+          "nameVi": "Biểu diễn / sân khấu / học thuộc",
+          "words": [
+            "相声",
+            "台词",
+            "背",
+            "话剧",
+            "排练",
+            "纠正"
+          ]
+        },
+        {
+          "nameVi": "Tư duy / phán đoán / lo sợ",
+          "words": [
+            "到底",
+            "怕",
+            "恐怕",
+            "错误",
+            "外语",
+            "心"
+          ]
+        },
+        {
+          "nameVi": "Thành ngữ / truyện ngụ ngôn",
+          "words": [
+            "画蛇添足",
+            "蛇",
+            "添",
+            "壶",
+            "同一",
+            "得意"
+          ]
+        },
+        {
+          "nameVi": "Bài 21 trọng tâm là bổ ngữ khả năng với bổ ngữ xu hướng kép. Công thức lõi:",
+          "words": [
+            "V + 得/不 + 上去 / 下来 / 进去 / 出来 / 过来 / 回去..."
+          ]
+        },
+        {
+          "nameVi": "Ví dụ:",
+          "words": [
+            "爬得上去 = leo lên được"
+          ]
+        },
+        {
+          "nameVi": "Điểm dễ nhầm:",
+          "words": [
+            "爬得上去 là bổ ngữ khả năng: leo lên được không."
+          ]
+        }
+      ],
+      "vocabCount": 35,
+      "vocabIds": [
+        "vocab-21-f2311dd1",
+        "vocab-21-8a407792",
+        "vocab-21-fe0862ee",
+        "vocab-21-875f3fac",
+        "vocab-21-acea53e0",
+        "vocab-21-a78e6bc4",
+        "vocab-21-e1061a29",
+        "vocab-21-7c471a4e",
+        "vocab-21-d0d858aa",
+        "vocab-21-78dd9434",
+        "vocab-21-2a0d7776",
+        "vocab-21-3b46b5f6",
+        "vocab-21-26730c0c",
+        "vocab-21-68305737",
+        "vocab-21-f4baa5ce",
+        "vocab-21-5d5590b8",
+        "vocab-21-8fc3cc99",
+        "vocab-21-1755466e",
+        "vocab-21-c35d1982",
+        "vocab-21-cf2946e7",
+        "vocab-21-3b65f4ee",
+        "vocab-21-03cdb341",
+        "vocab-21-be70551f",
+        "vocab-21-246aa9d0",
+        "vocab-21-f2f74387",
+        "vocab-21-0226347f",
+        "vocab-21-1ca24b91",
+        "vocab-21-404160c2",
+        "vocab-21-9e54a7e7",
+        "vocab-21-b12fe0ea",
+        "vocab-21-9f9cffc7",
+        "vocab-21-0c0ab602",
+        "vocab-21-57d37608",
+        "vocab-21-18057f5e",
+        "vocab-21-c0e34872"
+      ],
+      "grammarPointIds": [
+        "grammar-21-38b921e1",
+        "grammar-21-b6404279",
+        "grammar-21-705785f1"
+      ]
+    },
+    {
+      "id": "hanyu2-bai-22",
+      "lessonNumber": 22,
+      "titleZh": "我想起来了",
+      "sourceFile": "Bài 11-25.docx",
+      "vocabCategories": [
+        {
+          "nameVi": "Giao tiếp / truyền thông / công việc",
+          "words": [
+            "国际",
+            "广播",
+            "电台",
+            "邀请",
+            "待",
+            "签",
+            "合同",
+            "中外",
+            "合资",
+            "业务",
+            "搞",
+            "交流",
+            "成立",
+            "成为",
+            "开展"
+          ]
+        },
+        {
+          "nameVi": "Đời sống / hẹn gặp / chuyển nhà",
+          "words": [
+            "做客",
+            "空儿",
+            "搬家",
+            "地址",
+            "不久",
+            "一定"
+          ]
+        },
+        {
+          "nameVi": "Kết quả / hoàn tất / số lượng",
+          "words": [
+            "光",
+            "吃光",
+            "肉",
+            "图",
+            "排",
+            "录"
+          ]
+        },
+        {
+          "nameVi": "Truyện văn hóa / ngụ ngôn – lịch sử",
+          "words": [
+            "司马光",
+            "砸",
+            "缸",
+            "救",
+            "吓",
+            "连忙",
+            "石头"
+          ]
+        },
+        {
+          "nameVi": "Bài 22 rất quan trọng vì bổ ngữ xu hướng bắt đầu “thoát khỏi nghĩa di chuyển thật”. Ví dụ:",
+          "words": [
+            "想起来 không phải “nghĩ đi lên”",
+            "mà là nhớ ra."
+          ]
+        },
+        {
+          "nameVi": "Chỉ có cố gắng thì mới thành công.",
+          "words": [
+            "Nó mạnh hơn 只要……就…… ở Bài 21."
+          ]
+        },
+        {
+          "nameVi": "Chỉ cần cố gắng là có thể thành công. → điều kiện đủ.",
+          "words": [
+            "只有努力",
+            "才能成功。"
+          ]
+        }
+      ],
+      "vocabCount": 41,
+      "vocabIds": [
+        "vocab-22-6fcfcef1",
+        "vocab-22-3b6def36",
+        "vocab-22-4ee2ef95",
+        "vocab-22-8823a888",
+        "vocab-22-7e8575e7",
+        "vocab-22-84a99d25",
+        "vocab-22-d17e9dd0",
+        "vocab-22-0503eb91",
+        "vocab-22-51cf84ae",
+        "vocab-22-4b9b75cd",
+        "vocab-22-0cdf94eb",
+        "vocab-22-bff0c27a",
+        "vocab-22-236e871f",
+        "vocab-22-77f7697b",
+        "vocab-22-1ab1f2e0",
+        "vocab-22-61d6c8bc",
+        "vocab-22-925931fe",
+        "vocab-22-5307b8a8",
+        "vocab-22-85e3614f",
+        "vocab-22-37392237",
+        "vocab-22-4ee7a0b0",
+        "vocab-22-7a5658d8",
+        "vocab-22-eb7f391f",
+        "vocab-22-e5736d03",
+        "vocab-22-0f00e824",
+        "vocab-22-5e03e8a9",
+        "vocab-22-33bf6f52",
+        "vocab-22-57d37608",
+        "vocab-22-097dbef4",
+        "vocab-22-74bab235",
+        "vocab-22-20f3859b",
+        "vocab-22-b0d92a52",
+        "vocab-22-c59e167e",
+        "vocab-22-2e0098bb",
+        "vocab-22-2a3ed149",
+        "vocab-22-07eae7c2",
+        "vocab-22-64e4a1c6",
+        "vocab-22-5f5104fb",
+        "vocab-22-bab26a4a",
+        "vocab-22-ec8f5db1",
+        "vocab-22-bdafa2e1"
+      ],
+      "grammarPointIds": [
+        "grammar-22-cf4f1823",
+        "grammar-22-2773774d"
+      ]
+    },
+    {
+      "id": "hanyu2-bai-23",
+      "lessonNumber": 23,
+      "titleZh": "寒假你打算去哪儿旅行",
+      "sourceFile": "Bài 11-25.docx",
+      "vocabCategories": [
+        {
+          "nameVi": "Ăn uống / gọi món / khẩu vị",
+          "words": [
+            "渴",
+            "点菜",
+            "好吃",
+            "辣子鸡丁",
+            "糖醋鱼",
+            "嗓子"
+          ]
+        },
+        {
+          "nameVi": "Du lịch / địa điểm / phong cảnh",
+          "words": [
+            "外地",
+            "好玩儿",
+            "冰灯",
+            "冰雕",
+            "碑林",
+            "兵马俑",
+            "船",
+            "游览",
+            "天堂",
+            "山水",
+            "甲",
+            "天下"
+          ]
+        },
+        {
+          "nameVi": "Kế hoạch / tuyến đường / cảm xúc",
+          "words": [
+            "计划",
+            "路线",
+            "开心",
+            "值得",
+            "意义"
+          ]
+        },
+        {
+          "nameVi": "Dân tộc / văn hóa / xã hội",
+          "words": [
+            "少数",
+            "民族",
+            "风俗"
+          ]
+        },
+        {
+          "nameVi": "Ngành nghề / lĩnh vực",
+          "words": [
+            "经济",
+            "法律",
+            "医学",
+            "记者",
+            "作家",
+            "工程师",
+            "方面"
+          ]
+        },
+        {
+          "nameVi": "Đời sống / phản ứng / trạng thái cơ thể",
+          "words": [
+            "减肥",
+            "连忙",
+            "厕所",
+            "脸色",
+            "难看",
+            "立刻"
+          ]
+        },
+        {
+          "nameVi": "1. Đại từ nghi vấn dùng mở rộng",
+          "words": [
+            "Không phải lúc nào 什么 / 谁 / 哪儿 / 怎么 cũng dùng để hỏi."
+          ]
+        },
+        {
+          "nameVi": "Diễn tả hai hành động cùng lúc:",
+          "words": [
+            "一边走路一边听音乐。"
+          ]
+        },
+        {
+          "nameVi": "Vừa đi đường vừa nghe nhạc.",
+          "words": [
+            "3. 先……再/又……然后……最后……"
+          ]
+        },
+        {
+          "nameVi": "Diễn tả trình tự hành động:",
+          "words": [
+            "先点菜",
+            "再吃饭",
+            "然后去游览",
+            "最后回酒店。"
+          ]
+        },
+        {
+          "nameVi": "Lưu ý chắc:",
+          "words": [
+            "再: hành động chưa xảy ra",
+            "“rồi sẽ làm tiếp”."
+          ]
+        }
+      ],
+      "vocabCount": 40,
+      "vocabIds": [
+        "vocab-23-52edf8c9",
+        "vocab-23-6304d92d",
+        "vocab-23-23a782a4",
+        "vocab-23-0c0999ee",
+        "vocab-23-56779c4e",
+        "vocab-23-3fbda37c",
+        "vocab-23-c753cfbf",
+        "vocab-23-4a07a659",
+        "vocab-23-fe0afdc2",
+        "vocab-23-861cdf89",
+        "vocab-23-f54afe3e",
+        "vocab-23-3115f022",
+        "vocab-23-2971c084",
+        "vocab-23-934dd687",
+        "vocab-23-27644f43",
+        "vocab-23-6f2e6a47",
+        "vocab-23-1e411aee",
+        "vocab-23-338b0ba9",
+        "vocab-23-ba68b34d",
+        "vocab-23-4243bcf2",
+        "vocab-23-327301ab",
+        "vocab-23-7a04faf6",
+        "vocab-23-11446328",
+        "vocab-23-8da8dafb",
+        "vocab-23-e23f4cf5",
+        "vocab-23-e8a248b9",
+        "vocab-23-11d57e98",
+        "vocab-23-466b766b",
+        "vocab-23-3a1cb539",
+        "vocab-23-19c70f4d",
+        "vocab-23-d629f232",
+        "vocab-23-8a9f8e76",
+        "vocab-23-529309e0",
+        "vocab-23-49600838",
+        "vocab-23-e9b32389",
+        "vocab-23-ec8f5db1",
+        "vocab-23-7fe077a6",
+        "vocab-23-87301a73",
+        "vocab-23-ad9ef5b4",
+        "vocab-23-20e6f3b5"
+      ],
+      "grammarPointIds": [
+        "grammar-23-f91de050",
+        "grammar-23-d13255f8",
+        "grammar-23-e04f0a70"
+      ]
+    },
+    {
+      "id": "hanyu2-bai-24",
+      "lessonNumber": 24,
+      "titleZh": "有困难找警察",
+      "sourceFile": "Bài 11-25.docx",
+      "vocabCategories": [
+        {
+          "nameVi": "Khó khăn / trợ giúp / an toàn giao thông",
+          "words": [
+            "困难",
+            "警察",
+            "十字路口儿",
+            "来往",
+            "敢",
+            "立即",
+            "扶",
+            "车闸",
+            "罚款",
+            "敬礼",
+            "礼貌"
+          ]
+        },
+        {
+          "nameVi": "Quan sát / cảm xúc / tình huống",
+          "words": [
+            "到处",
+            "看样子",
+            "情景",
+            "感动",
+            "可",
+            "发生",
+            "急忙",
+            "紧",
+            "握"
+          ]
+        },
+        {
+          "nameVi": "Cơ thể / hành động chăm sóc",
+          "words": [
+            "腿脚",
+            "滚",
+            "抱",
+            "鞋",
+            "鞋带",
+            "脚",
+            "腰",
+            "照顾"
+          ]
+        },
+        {
+          "nameVi": "Người / quan hệ xã hội",
+          "words": [
+            "夫妻",
+            "叔叔"
+          ]
+        },
+        {
+          "nameVi": "Văn hóa nghệ thuật / đồ vật",
+          "words": [
+            "梅",
+            "图",
+            "画家",
+            "松",
+            "竹",
+            "叫作",
+            "岁寒三友",
+            "字画",
+            "过奖",
+            "工具箱",
+            "钳子"
+          ]
+        }
+      ],
+      "vocabCount": 42,
+      "vocabIds": [
+        "vocab-24-d9fcbee2",
+        "vocab-24-8b76450d",
+        "vocab-24-52796102",
+        "vocab-24-ce9e154a",
+        "vocab-24-64e4905d",
+        "vocab-24-daf5653b",
+        "vocab-24-59bca2da",
+        "vocab-24-fb200804",
+        "vocab-24-c97de430",
+        "vocab-24-f9b24db0",
+        "vocab-24-f22b82f2",
+        "vocab-24-a3a3cc7e",
+        "vocab-24-94e055c3",
+        "vocab-24-b93bce70",
+        "vocab-24-c919131d",
+        "vocab-24-4252413e",
+        "vocab-24-74b9b191",
+        "vocab-24-8a5dedd8",
+        "vocab-24-aea99d9d",
+        "vocab-24-f6b2230e",
+        "vocab-24-26a69902",
+        "vocab-24-f6a48187",
+        "vocab-24-c0e34872",
+        "vocab-24-478ee818",
+        "vocab-24-d10e288b",
+        "vocab-24-908790bd",
+        "vocab-24-16c6bc30",
+        "vocab-24-005eb1f6",
+        "vocab-24-8180ccf5",
+        "vocab-24-20f3859b",
+        "vocab-24-0df917d3",
+        "vocab-24-7bc89422",
+        "vocab-24-575516ec",
+        "vocab-24-abab1532",
+        "vocab-24-7ca6d4dd",
+        "vocab-24-58e21b53",
+        "vocab-24-ac809777",
+        "vocab-24-fd98233c",
+        "vocab-24-17364cf4",
+        "vocab-24-06b4d25b",
+        "vocab-24-9febb898",
+        "vocab-24-9a8f69d1"
+      ],
+      "grammarPointIds": [
+        "grammar-24-bb5e8270",
+        "grammar-24-9a233918",
+        "grammar-24-b0c36993"
+      ]
+    },
+    {
+      "id": "hanyu2-bai-25",
+      "lessonNumber": 25,
+      "titleZh": "吉利的数字",
+      "sourceFile": "Bài 11-25.docx",
+      "vocabCategories": [
+        {
+          "nameVi": "Số, âm đọc, may mắn / kiêng kỵ",
+          "words": [
+            "数字",
+            "吉利",
+            "音",
+            "谐音",
+            "发",
+            "长久",
+            "顺",
+            "九泉",
+            "死"
+          ]
+        },
+        {
+          "nameVi": "Cấu trúc nhấn mạnh / phản bác / đánh giá",
+          "words": [
+            "连……也/都……",
+            "简单",
+            "一半",
+            "可",
+            "认为",
+            "胡说",
+            "贬义词"
+          ]
+        },
+        {
+          "nameVi": "Người / quan hệ / cảm xúc",
+          "words": [
+            "别人",
+            "中国通",
+            "伟大",
+            "友谊",
+            "爱情",
+            "感情",
+            "领导",
+            "长辈"
+          ]
+        },
+        {
+          "nameVi": "Phát minh / thủ tục / liên hệ",
+          "words": [
+            "发现",
+            "申请",
+            "专利",
+            "联系",
+            "牌照"
+          ]
+        },
+        {
+          "nameVi": "Ăn uống / tiệc tùng / lễ nghi",
+          "words": [
+            "巧克力",
+            "土豆儿",
+            "宴会",
+            "规矩",
+            "首先",
+            "重要",
+            "上座",
+            "上菜",
+            "敬酒",
+            "干杯"
+          ]
+        },
+        {
+          "nameVi": "Đời sống / tiêu cực / cứu giúp",
+          "words": [
+            "痛",
+            "活",
+            "伤疤",
+            "流氓",
+            "流浪",
+            "救济",
+            "救命",
+            "凄惨",
+            "散",
+            "二流子",
+            "二百五",
+            "低人一等",
+            "糊涂",
+            "一团糟",
+            "一场空",
+            "夭折",
+            "灵堂",
+            "灵车",
+            "牙",
+            "大巴"
+          ]
+        },
+        {
+          "nameVi": "Câu hỏi tu từ:",
+          "words": [
+            "不是……吗？"
+          ]
+        },
+        {
+          "nameVi": "Chẳng phải là... sao?",
+          "words": [
+            "难道……吗？"
+          ]
+        },
+        {
+          "nameVi": "Lẽ nào... sao?",
+          "words": [
+            "怎么……呢？"
+          ]
+        },
+        {
+          "nameVi": "Sao lại... được?",
+          "words": [
+            "哪儿……了？"
+          ]
+        },
+        {
+          "nameVi": "Cấu trúc nhấn mạnh:",
+          "words": [
+            "连……也/都……"
+          ]
+        },
+        {
+          "nameVi": "Phủ định hai lần:",
+          "words": [
+            "不得不……"
+          ]
+        },
+        {
+          "nameVi": "Không thể không...",
+          "words": [
+            "没有人不知道……"
+          ]
+        },
+        {
+          "nameVi": "Không ai là không biết...",
+          "words": [
+            "不会不……"
+          ]
+        },
+        {
+          "nameVi": "Không thể không...",
+          "words": [
+            "Bài này dễ bị lạm dụng câu hỏi tu từ",
+            "nên ví dụ sẽ dùng vừa phải. Từ nào hợp thì dùng",
+            "không phải từ nào cũng nhét 难道 / 连 / 不得不."
+          ]
+        }
+      ],
+      "vocabCount": 69,
+      "vocabIds": [
+        "vocab-25-c081b5c6",
+        "vocab-25-cefc678a",
+        "vocab-25-796a7f1b",
+        "vocab-25-74613a29",
+        "vocab-25-e74a1d6c",
+        "vocab-25-c67ae3e8",
+        "vocab-25-ac21f01f",
+        "vocab-25-c919131d",
+        "vocab-25-561a0a47",
+        "vocab-25-439d1fa4",
+        "vocab-25-8db23b0c",
+        "vocab-25-3612b573",
+        "vocab-25-78e2725f",
+        "vocab-25-d8438f84",
+        "vocab-25-ba0782d5",
+        "vocab-25-63c0acbc",
+        "vocab-25-f453039b",
+        "vocab-25-e6631063",
+        "vocab-25-04614914",
+        "vocab-25-ac3c47de",
+        "vocab-25-7de59054",
+        "vocab-25-ba4a33e4",
+        "vocab-25-8416f9d9",
+        "vocab-25-0e2bb083",
+        "vocab-25-f340f461",
+        "vocab-25-aa0a2e24",
+        "vocab-25-8e9c5054",
+        "vocab-25-a3d0b169",
+        "vocab-25-5910e6d0",
+        "vocab-25-67195832",
+        "vocab-25-f86aa5f3",
+        "vocab-25-f620c679",
+        "vocab-25-32314ec5",
+        "vocab-25-28b10a13",
+        "vocab-25-29a42ae4",
+        "vocab-25-1dd5413f",
+        "vocab-25-83d3b6ab",
+        "vocab-25-49dff6e6",
+        "vocab-25-c179d03f",
+        "vocab-25-00da8265",
+        "vocab-25-92939e1e",
+        "vocab-25-bf9f5538",
+        "vocab-25-f31ec0f1",
+        "vocab-25-790080ae",
+        "vocab-25-046c40f2",
+        "vocab-25-78041fcf",
+        "vocab-25-aa8b0f3a",
+        "vocab-25-b5377261",
+        "vocab-25-d391772d",
+        "vocab-25-a10dadaa",
+        "vocab-25-0f4aff9f",
+        "vocab-25-8d876e91",
+        "vocab-25-f3523580",
+        "vocab-25-f738e2e2",
+        "vocab-25-29f5c41c",
+        "vocab-25-f2a3b7ae",
+        "vocab-25-56a65c2f",
+        "vocab-25-2ca0cba4",
+        "vocab-25-64a850e5",
+        "vocab-25-2e212d3b",
+        "vocab-25-0863d1c2",
+        "vocab-25-f5819df0",
+        "vocab-25-0bfe2480",
+        "vocab-25-3e2aba32",
+        "vocab-25-691f72e5",
+        "vocab-25-93dbfbb4",
+        "vocab-25-b0dc0ca4",
+        "vocab-25-316674aa",
+        "vocab-25-137d9853"
+      ],
+      "grammarPointIds": [
+        "grammar-25-d10b49dc",
+        "grammar-25-95d90657",
+        "grammar-25-be65f540"
+      ]
+    }
+  ]
+}

@@ -38,7 +38,6 @@ export function Dialog({
 
 export function DialogTrigger({
  children,
- asChild = false,
 }: {
  children: React.ReactNode;
  asChild?: boolean;
@@ -46,13 +45,13 @@ export function DialogTrigger({
  const context = React.useContext(DialogContext);
  if (!context) throw new Error("DialogTrigger must be used within a Dialog");
 
- const child = React.Children.only(children) as React.ReactElement<any>;
+ const child = React.Children.only(children) as React.ReactElement<{
+  onClick?: React.MouseEventHandler<HTMLElement>;
+ }>;
 
  return React.cloneElement(child, {
-  onClick: (e: any) => {
-   if (child.props && typeof child.props.onClick === "function") {
-    child.props.onClick(e);
-   }
+  onClick: (event: React.MouseEvent<HTMLElement>) => {
+   child.props.onClick?.(event);
    context.onOpenChange(true);
   },
  });
@@ -77,16 +76,17 @@ export function DialogContent({
     onClick={() => context.onOpenChange(false)}
    />
    <div
-    className={cn(
-     "relative z-50 w-full max-w-lg rounded bg-white p-6 shadow-xl border border-slate-100 animate-in fade-in zoom-in-95 duration-200",
+     className={cn(
+     "animate-in fade-in zoom-in-95 relative z-50 w-full max-w-lg rounded border border-slate-100 bg-white p-6 shadow-xl duration-200",
      className,
     )}
-   >
-    <button
+  >
+   <button
+     type="button"
      onClick={() => context.onOpenChange(false)}
-     className="absolute right-6 top-6 rounded p-2 text-slate-400 hover:bg-slate-100 hover:text-slate-600 transition-colors"
+     className="absolute right-6 top-6 rounded p-2 text-slate-400 transition-colors hover:bg-slate-100 hover:text-slate-600"
     >
-     <X className="w-5 h-5" />
+     <X className="h-5 w-5" />
      <span className="sr-only">Close</span>
     </button>
     {children}

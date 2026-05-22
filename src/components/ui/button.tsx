@@ -1,5 +1,6 @@
 import type * as React from "react";
 import { Button as ButtonPrimitive } from "@base-ui/react/button";
+import { Slot } from "@radix-ui/react-slot";
 import { cn } from "@/lib/utils";
 import { cva, type VariantProps } from "class-variance-authority";
 import { Loader2 } from "lucide-react";
@@ -31,7 +32,7 @@ const buttonVariantsConfig = {
 } as const;
 
 const buttonVariants = cva(
- "inline-flex min-w-20 items-center justify-center gap-2 whitespace-nowrap rounded text-sm font-bold transition-all disabled:cursor-not-allowed [&_svg]:pointer-events-none shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive",
+ "inline-flex min-w-20 shrink-0 items-center justify-center gap-2 whitespace-nowrap rounded text-sm font-bold outline-none transition-colors disabled:cursor-not-allowed focus-visible:border-ring focus-visible:ring-2 focus-visible:ring-ring/50 aria-invalid:border-destructive aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 [&_svg]:pointer-events-none [&_svg]:shrink-0",
  buttonVariantsConfig,
 );
 
@@ -58,16 +59,25 @@ function Button({
  children,
  ...rest
 }: ButtonProps) {
+ const Comp = asChild && !isLoading ? Slot : ButtonPrimitive;
+ const buttonContent = isLoading ? (
+  <>
+   <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+   {loadingText}
+  </>
+ ) : (
+  children
+ );
+
  return (
-  <ButtonPrimitive
+  <Comp
    data-slot="button"
    className={cn(buttonVariants({ variant, size, className }))}
-   type="button"
+   {...(!asChild || isLoading ? { type: "button" } : {})}
    {...rest}
   >
-   {isLoading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
-   {isLoading ? loadingText : children}
-  </ButtonPrimitive>
+   {buttonContent}
+  </Comp>
  );
 }
 

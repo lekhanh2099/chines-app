@@ -18,11 +18,13 @@ export default async function AppLayout({
  const user = data.user;
 
  return (
-  <div className="flex h-dvh w-full overflow-hidden bg-white text-text-primary">
+  <div className="app-shell flex h-dvh w-full min-w-0 overflow-hidden bg-white text-text-primary">
    <Sidebar />
-   <div className="flex flex-col flex-1 w-full min-w-0">
+   <div className="flex min-w-0 flex-1 flex-col overflow-x-hidden">
     <Header user={user} />
-    <main className="relative flex-1 overflow-y-auto bg-white pb-20 md:pb-0">{children}</main>
+    <main className="page-shell relative flex-1 overflow-y-auto bg-white pb-[calc(88px+env(safe-area-inset-bottom))] md:pb-0">
+     {children}
+    </main>
    </div>
   </div>
  );

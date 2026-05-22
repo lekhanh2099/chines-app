@@ -42,8 +42,8 @@ export function Header({ user }: { user?: User | null }) {
  };
 
  return (
-  <header className="z-10 flex h-16 shrink-0 items-center justify-between gap-2 border-b-2 border-stone-200 bg-white px-3 sm:gap-4 sm:px-5 md:h-[76px] lg:px-8">
-   <form onSubmit={handleSearch} className="relative min-w-0 flex-1 max-w-md">
+  <header className="z-10 flex h-16 w-full max-w-full min-w-0 shrink-0 items-center justify-between gap-2 overflow-x-hidden border-b-2 border-stone-200 bg-white px-3 sm:gap-4 sm:px-5 md:h-[76px] lg:px-8">
+   <form onSubmit={handleSearch} className="relative min-w-0 max-w-md flex-1">
     <Search className="absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 text-stone-400" />
     <input
      ref={inputRef}
@@ -54,7 +54,7 @@ export function Header({ user }: { user?: User | null }) {
     />
    </form>
 
-   <div className="flex shrink-0 items-center gap-1.5 sm:gap-2 lg:gap-3">
+   <div className="flex min-w-0 shrink-0 items-center gap-1.5 sm:gap-2 lg:gap-3">
     <button
      type="button"
      onClick={() => toggleLookup(pathname)}

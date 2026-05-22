@@ -1,6 +1,7 @@
 "use client";
 
 import type { ReactNode } from "react";
+import Link from "next/link";
 import {
  BookOpen,
  Brain,
@@ -10,6 +11,7 @@ import {
  HelpCircle,
  Keyboard,
  Layers3,
+ MoreHorizontal,
  RotateCcw,
  Upload,
  type LucideIcon,
@@ -17,9 +19,12 @@ import {
 import { Select } from "@/components/ui/select";
 import { SegmentedControl } from "@/components/ui/segmented-control";
 import {
+ LearningModuleSwitch,
  LessonSelectCard,
  type LessonSelectOption,
 } from "@/features/learning/components";
+import { learningRoutes } from "@/features/learning/lesson-workspace";
+import type { LearningSource } from "@/features/learning/lesson-workspace";
 import {
  ActionButton,
  IconToolButton,
@@ -40,8 +45,8 @@ const studyModes: { key: StudyMode; label: string; icon: LucideIcon }[] = [
 
 function LearningShell({ children }: { children: ReactNode }) {
  return (
-  <div className="min-h-screen bg-stone-50">
-   <div className="mx-auto flex w-full max-w-[1500px] flex-col gap-3">
+  <div className="page-shell min-h-screen bg-stone-50">
+   <div className="flex w-full max-w-full min-w-0 flex-col gap-3">
     {children}
    </div>
   </div>
@@ -63,6 +68,8 @@ function LearningHeader({
  onShowShortcuts,
  lessons,
  activeLesson,
+ sourceMode,
+ onSourceModeChange,
  onLessonChange,
 }: {
  title: string;
@@ -79,107 +86,142 @@ function LearningHeader({
  onShowShortcuts: () => void;
  lessons: VocabLessonWithStats[];
  activeLesson: VocabLessonWithStats | null;
+ sourceMode: LearningSource;
+ onSourceModeChange?: (source: LearningSource) => void;
  onLessonChange: (lessonId: string) => void;
 }) {
- const isFlashcardFocus = activeTab === "study" && mode === "flashcard";
+ const lessonNumber = activeLesson?.lesson_number ?? undefined;
+ const lessonKey = activeLesson?.lesson_key ?? undefined;
+ const grammarHref = learningRoutes.grammar({ source: sourceMode, lessonNumber, lessonKey });
+ const vocabularyHref = learningRoutes.vocabulary({ source: sourceMode, lessonNumber, lessonKey, mode });
  return (
-  <header className="rounded-[22px] border-2 border-stone-200 bg-white p-3 shadow-theme-sm md:rounded-[24px]">
-   <div
-    className={cn(
-     "grid gap-3 xl:items-start",
-     isFlashcardFocus
-      ? "xl:grid-cols-[minmax(0,1fr)_minmax(280px,360px)]"
-      : "xl:grid-cols-[minmax(0,1fr)_minmax(320px,42%)]",
-    )}
-   >
-    <div className="min-w-0">
-     <h1
-      className={cn(
-       "font-black tracking-normal text-stone-900",
-       isFlashcardFocus
-        ? "text-xl sm:text-2xl md:text-3xl"
-        : "text-3xl md:text-4xl",
-      )}
-     >
-      {title}
-     </h1>
-     <p
-      className={cn(
-       "mt-1 max-w-2xl text-sm font-bold leading-6 text-stone-500",
-       isFlashcardFocus && "hidden md:block",
-      )}
-     >
-      {description}
+  <header className="sticky top-0 z-20 w-full max-w-full overflow-x-hidden border-b border-stone-200 bg-stone-50/95 px-2 py-2 backdrop-blur supports-[backdrop-filter]:bg-stone-50/85">
+   <div className="flex min-h-16 w-full max-w-full min-w-0 flex-wrap items-center gap-2">
+    <Link href="/" className="inline-flex h-10 shrink-0 items-center justify-center rounded-2xl border-2 border-stone-200 bg-white px-3 text-sm font-black text-stone-700 shadow-theme-sm hover:bg-stone-50">
+     ←
+    </Link>
+    <div className="min-w-0 flex-1">
+     <p className="truncate text-sm font-black text-stone-900">
+      {activeLesson?.title || title}
      </p>
-     <div className="mt-2 flex max-w-full items-center gap-2 overflow-x-auto pb-1">
-      <SegmentedControl
-       value={activeTab}
-       items={[
-        { key: "study", label: "Học", icon: BookOpen },
-        { key: "all", label: "Từ", icon: Layers3 },
-        { key: "edit", label: "Sửa", icon: Edit3 },
-       ]}
-       onChange={(key) => onTabChange(key as MainTab)}
-      />
-      <div className="hidden gap-2 md:flex">
-       {allowDocxReset && (
-        <ActionButton
-         onClick={onResetImport}
-         loading={resetting}
-         icon={Upload}
-         tone="neutral"
-        >
-         Reset docs
-        </ActionButton>
-       )}
-
-       <ActionButton
-        onClick={onRandomToggle}
-        icon={RotateCcw}
-        tone={randomMode ? "purple" : "neutral"}
-       >
-        {randomMode ? "Đang random" : "Ngẫu nhiên"}
-       </ActionButton>
-      </div>
-     </div>
+     <p className="truncate text-xs font-bold text-stone-500">
+      {activeLesson ? `${activeLesson.studied}/${activeLesson.entries.length} thẻ` : description}
+     </p>
     </div>
-
+    <SourceModeSwitch
+     value={sourceMode}
+     onChange={onSourceModeChange}
+     className="order-3 w-full sm:order-none sm:w-auto"
+    />
     {activeTab === "study" && lessons.length > 0 ? (
-     isFlashcardFocus ? (
+     <div className="order-3 w-full min-w-0 sm:order-none sm:w-[280px]">
       <CompactLessonSelect
        lessons={lessons}
        activeLessonId={activeLesson?.id || lessons[0]?.id || ""}
        onLessonChange={onLessonChange}
       />
-     ) : (
-      <LessonSelectPanel
-       lessons={lessons}
-       activeLessonId={activeLesson?.id || lessons[0]?.id || ""}
-       onLessonChange={onLessonChange}
-      />
-     )
+     </div>
     ) : null}
+    {sourceMode === "hanyu" ? (
+     <LearningModuleSwitch
+      activeModule="vocabulary"
+      vocabularyHref={vocabularyHref}
+      grammarHref={grammarHref}
+      className="hidden sm:flex"
+     />
+    ) : (
+     <span className="hidden rounded-2xl border-2 border-stone-200 bg-white px-3 py-2 text-xs font-black text-stone-500 shadow-theme-sm sm:inline-flex">
+      HSK từ vựng
+     </span>
+    )}
+    <details className="relative shrink-0">
+     <summary className="inline-flex h-10 cursor-pointer list-none items-center justify-center rounded-2xl border-2 border-stone-200 bg-white px-3 text-sm font-black text-stone-700 shadow-theme-sm hover:bg-stone-50">
+      <MoreHorizontal className="h-5 w-5" />
+     </summary>
+     <div className="more-menu fixed inset-x-4 bottom-[calc(72px+env(safe-area-inset-bottom)+12px)] z-30 max-h-[70dvh] overflow-y-auto rounded-[20px] border-2 border-stone-200 bg-white p-2 shadow-theme-md sm:absolute sm:inset-x-auto sm:bottom-auto sm:right-0 sm:mt-2 sm:w-[min(92vw,360px)]">
+      <div className="grid grid-cols-2 gap-1 rounded-2xl bg-stone-100 p-1 sm:hidden">
+       <Link href={vocabularyHref} className="rounded-xl bg-red-500 px-3 py-2 text-center text-sm font-black text-white">Từ vựng</Link>
+       {sourceMode === "hanyu" ? (
+        <Link href={grammarHref} className="rounded-xl px-3 py-2 text-center text-sm font-black text-stone-600 hover:bg-white">Ngữ pháp</Link>
+       ) : (
+        <span className="rounded-xl px-3 py-2 text-center text-sm font-black text-stone-400">Ngữ pháp</span>
+       )}
+      </div>
+      <div className="mt-2">
+       <SegmentedControl
+        value={activeTab}
+        items={[
+         { key: "study", label: "Học", icon: BookOpen },
+         { key: "all", label: "Từ", icon: Layers3 },
+         { key: "edit", label: "Sửa", icon: Edit3 },
+        ]}
+        onChange={(key) => onTabChange(key as MainTab)}
+       />
+      </div>
+      {activeTab === "study" && (
+       <div className="mt-2">
+        <SegmentedControl
+         value={mode}
+         items={studyModes.map((item) => ({
+          key: item.key,
+          label: item.label,
+          icon: item.icon,
+         }))}
+         onChange={(key) => onModeChange(key as StudyMode)}
+        />
+       </div>
+      )}
+      <div className="mt-2 grid gap-2">
+       {allowDocxReset && (
+        <ActionButton onClick={onResetImport} loading={resetting} icon={Upload} tone="neutral">
+         Reset docs
+        </ActionButton>
+       )}
+       <ActionButton onClick={onRandomToggle} icon={RotateCcw} tone={randomMode ? "purple" : "neutral"}>
+        {randomMode ? "Đang random" : "Ngẫu nhiên"}
+       </ActionButton>
+       <ActionButton onClick={onShowShortcuts} icon={HelpCircle} tone="neutral">
+        Shortcut
+       </ActionButton>
+      </div>
+     </div>
+    </details>
    </div>
-
-   {activeTab === "study" && (
-    <div className="mt-3 flex max-w-full items-center gap-2 overflow-x-auto pb-1">
-     <SegmentedControl
-      value={mode}
-      items={studyModes.map((item) => ({
-       key: item.key,
-       label: item.label,
-       icon: item.icon,
-      }))}
-      onChange={(key) => onModeChange(key as StudyMode)}
-     />
-     <IconToolButton
-      icon={HelpCircle}
-      label="Shortcut"
-      onClick={onShowShortcuts}
-     />
-    </div>
-   )}
   </header>
+ );
+}
+
+function SourceModeSwitch({
+ value,
+ onChange,
+ className,
+}: {
+ value: LearningSource;
+ onChange?: (value: LearningSource) => void;
+ className?: string;
+}) {
+ const items: { key: LearningSource; label: string }[] = [
+  { key: "hanyu", label: "Hán ngữ" },
+  { key: "hsk", label: "HSK" },
+ ];
+ return (
+  <div className={cn("grid min-w-0 grid-cols-2 gap-1 rounded-2xl bg-stone-100 p-1", className)}>
+   {items.map((item) => (
+    <button
+     key={item.key}
+     type="button"
+     onClick={() => onChange?.(item.key)}
+     className={cn(
+      "h-10 min-w-0 truncate rounded-xl px-3 text-sm font-black transition",
+      value === item.key
+       ? "bg-red-500 text-white shadow-theme-sm"
+       : "text-stone-600 hover:bg-white",
+     )}
+    >
+     {item.label}
+    </button>
+   ))}
+  </div>
  );
 }
 
@@ -226,22 +268,13 @@ function CompactLessonSelect({
  activeLessonId: string;
  onLessonChange: (lessonId: string) => void;
 }) {
- const activeLesson =
-  lessons.find((lesson) => lesson.id === activeLessonId) || lessons[0] || null;
  return (
-  <div className="rounded-[18px] border-2 border-blue-200 bg-blue-50/60 p-3 shadow-theme-sm md:rounded-[20px]">
-   <div className="flex items-center justify-between gap-2">
-    <p className="text-[11px] font-black uppercase tracking-[0.18em] text-blue-700">
-     Bài đang học
-    </p>
-    <span className="rounded-full bg-white px-3 py-1 text-xs font-black text-stone-600 shadow-theme-sm">
-     {lessons.length} bài
-    </span>
-   </div>
+  <div className="min-w-0">
    <Select
     value={activeLessonId}
     onChange={(event) => onLessonChange(event.target.value)}
-    className="mt-2 h-10 text-xs sm:h-11 sm:text-sm"
+    wrapperClassName="min-w-0"
+    className="h-10 rounded-2xl border-2 border-stone-200 bg-white text-xs font-black shadow-theme-sm sm:text-sm"
    >
     {lessons.map((lesson) => (
      <option key={lesson.id} value={lesson.id}>
@@ -250,14 +283,6 @@ function CompactLessonSelect({
      </option>
     ))}
    </Select>
-   {activeLesson && (
-    <p className="mt-2 truncate text-xs font-bold text-stone-500">
-     {activeLesson.categories
-      .slice(0, 2)
-      .map((item) => item.name)
-      .join(", ") || "Bổ sung"}
-    </p>
-   )}
   </div>
  );
 }

@@ -1,0 +1,108 @@
+{
+  "app": "HanziHome",
+  "dataset": "Giáo trình Hán ngữ Quyển 2 + Bộ thủ",
+  "version": "2026.05.21-draft1",
+  "generatedAt": "2026-05-21T01:17:16",
+  "packagedAt": "2026-05-21T06:35:08.902Z",
+  "sourceFiles": [
+    "BÀI 1-10.docx",
+    "Bài 11-25.docx",
+    "Học kì 2 上-下.md",
+    "Bộ Thủ Dox.docx"
+  ],
+  "counts": {
+    "lessons": 25,
+    "vocab": 1146,
+    "grammarPoints": 59,
+    "radicals": 244,
+    "flashcards": 1390
+  },
+  "lessonRange": {
+    "from": 1,
+    "to": 25
+  },
+  "vocabByLesson": {
+    "1": 31,
+    "2": 32,
+    "3": 33,
+    "4": 27,
+    "5": 52,
+    "6": 39,
+    "7": 34,
+    "8": 51,
+    "9": 40,
+    "10": 52,
+    "11": 56,
+    "12": 45,
+    "13": 37,
+    "14": 70,
+    "15": 50,
+    "16": 52,
+    "17": 55,
+    "18": 50,
+    "19": 51,
+    "20": 62,
+    "21": 35,
+    "22": 41,
+    "23": 40,
+    "24": 42,
+    "25": 69
+  },
+  "grammarByLesson": {
+    "1": 2,
+    "2": 2,
+    "3": 3,
+    "4": 3,
+    "5": 3,
+    "6": 3,
+    "7": 2,
+    "8": 4,
+    "9": 1,
+    "10": 3,
+    "11": 3,
+    "12": 2,
+    "13": 3,
+    "14": 1,
+    "15": 1,
+    "16": 2,
+    "17": 1,
+    "18": 1,
+    "19": 2,
+    "20": 3,
+    "21": 3,
+    "22": 2,
+    "23": 3,
+    "24": 3,
+    "25": 3
+  },
+  "flashcardsByType": {
+    "vocab": 1146,
+    "radical": 244
+  },
+  "files": {
+    "bundle": {
+      "fileName": "hanzihome_bundle_clean.json",
+      "sha256": "de4deca6381817fac086ec43006adfcad549af490f0d7df5e199a489da0c1226"
+    },
+    "lessons": {
+      "fileName": "hanzihome_lessons_index_clean.json",
+      "sha256": "03e31e4ab8afde4954eae17931984bcc2890e9dd5fb04386970fb7248fd75bb7"
+    },
+    "vocab": {
+      "fileName": "hanzihome_vocab_clean.json",
+      "sha256": "882f1a96dc64216f3297d417662246f629046b45cde56158c1f8ab22bda359db"
+    },
+    "grammar": {
+      "fileName": "hanzihome_grammar_clean.json",
+      "sha256": "ff82e4df768633dc1b6d667071818f4583b734089a6fa2ed5f3b08c9b1fda03e"
+    },
+    "radicals": {
+      "fileName": "hanzihome_radicals_clean.json",
+      "sha256": "701e5ad9002283951d0b96514b078c97ccbf08a38c483f25607c8651caddec37"
+    },
+    "flashcards": {
+      "fileName": "hanzihome_flashcards_clean.json",
+      "sha256": "8c98cc8458a9bbcaeb40317ae8641cda55f81b1157c7e75505f0ba8787ed7f8f"
+    }
+  }
+}

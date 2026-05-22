@@ -1,0 +1,1319 @@
+{
+  "meta": {
+    "app": "HanziHome",
+    "dataset": "Giáo trình Hán ngữ Quyển 2 + Bộ thủ",
+    "version": "2026.05.21-draft1",
+    "generatedAt": "2026-05-21T01:17:16",
+    "sourceFiles": [
+      "BÀI 1-10.docx",
+      "Bài 11-25.docx",
+      "Học kì 2 上-下.md",
+      "Bộ Thủ Dox.docx"
+    ],
+    "counts": {
+      "lessons": 25,
+      "vocab": 1146,
+      "grammarPoints": 59,
+      "radicals": 244,
+      "flashcards": 1390
+    },
+    "schemaNote": "Dynamic JSON: lessons reference vocab by lessonId; vocab entries preserve rawSections for flexible UI tabs; flashcards are a lightweight projection for review mode."
+  },
+  "lessons": [
+    {
+      "id": "hanyu2-bai-01",
+      "lessonNumber": 1,
+      "title": "田芳去哪儿了 (Điền Phương đi đâu rồi?)",
+      "grammarPointIds": [
+        "grammar-01-cd0a5ba6",
+        "grammar-01-f1e288b0"
+      ]
+    },
+    {
+      "id": "hanyu2-bai-02",
+      "lessonNumber": 2,
+      "title": "玛丽哭了 (Mary khóc rồi)",
+      "grammarPointIds": [
+        "grammar-02-03e88b2a",
+        "grammar-02-8dc6683e"
+      ]
+    },
+    {
+      "id": "hanyu2-bai-03",
+      "lessonNumber": 3,
+      "title": "我吃了早饭就来了 (Tôi ăn sáng xong thì đến)",
+      "grammarPointIds": [
+        "grammar-03-92d15640",
+        "grammar-03-6012354b",
+        "grammar-03-293fc656"
+      ]
+    },
+    {
+      "id": "hanyu2-bai-04",
+      "lessonNumber": 4,
+      "title": "我都做对了 (Tôi đều làm đúng rồi)",
+      "grammarPointIds": [
+        "grammar-04-e784c61f",
+        "grammar-04-f3fb6256",
+        "grammar-04-eb5ce565"
+      ]
+    },
+    {
+      "id": "hanyu2-bai-05",
+      "lessonNumber": 5,
+      "title": "我来了两个多月了 (Tôi đến được hơn hai tháng rồi)",
+      "grammarPointIds": [
+        "grammar-05-935693f2",
+        "grammar-05-c6e530d0",
+        "grammar-05-ef2f6a22"
+      ]
+    },
+    {
+      "id": "hanyu2-bai-06",
+      "lessonNumber": 6,
+      "title": "我比你更喜欢音乐 (Tôi thích âm nhạc hơn bạn)",
+      "grammarPointIds": [
+        "grammar-06-52c56ebc",
+        "grammar-06-f3ba2bc1",
+        "grammar-06-cea68367"
+      ]
+    },
+    {
+      "id": "hanyu2-bai-07",
+      "lessonNumber": 7,
+      "title": "我们那儿的冬天跟北京一样冷 (Mùa đông ở quê tôi lạnh như Bắc Kinh)",
+      "grammarPointIds": [
+        "grammar-07-3f1e0b22",
+        "grammar-07-2e8127db"
+      ]
+    },
+    {
+      "id": "hanyu2-bai-08",
+      "lessonNumber": 8,
+      "title": "冬天快要到了 (Mùa đông sắp đến rồi)",
+      "grammarPointIds": [
+        "grammar-08-36259ec0",
+        "grammar-08-acdf3bf0",
+        "grammar-08-5d1d5755",
+        "grammar-08-236574a2"
+      ]
+    },
+    {
+      "id": "hanyu2-bai-09",
+      "lessonNumber": 9,
+      "title": "快上来吧，要开车了 (Nhanh lên xe đi, sắp chạy rồi)",
+      "grammarPointIds": [
+        "grammar-09-a9dd144b"
+      ]
+    },
+    {
+      "id": "hanyu2-bai-10",
+      "lessonNumber": 10,
+      "title": "我听过钢琴协奏曲《黄河》 (Tôi đã từng nghe bản concerto piano \"Hoàng Hà\")",
+      "grammarPointIds": [
+        "grammar-10-b6952e96",
+        "grammar-10-f06cccd4",
+        "grammar-10-569d0561"
+      ]
+    },
+    {
+      "id": "hanyu2-bai-11",
+      "lessonNumber": 11,
+      "title": "我是跟旅游团一起来的 (Tôi đi cùng đoàn du lịch đến)",
+      "grammarPointIds": [
+        "grammar-11-820f0dd7",
+        "grammar-11-4b3ced34",
+        "grammar-11-f53635a1"
+      ]
+    },
+    {
+      "id": "hanyu2-bai-12",
+      "lessonNumber": 12,
+      "title": "我的护照你找到了没有 (Hộ chiếu của tôi bạn tìm thấy chưa?)",
+      "grammarPointIds": [
+        "grammar-12-6e7457c9",
+        "grammar-12-f4564e50"
+      ]
+    },
+    {
+      "id": "hanyu2-bai-13",
+      "lessonNumber": 13,
+      "title": "我的眼镜儿摔坏了 (Kính mắt của tôi bị rơi vỡ rồi)",
+      "grammarPointIds": [
+        "grammar-13-9d16be0d",
+        "grammar-13-c6ac7f53",
+        "grammar-13-7d68bb8a"
+      ]
+    },
+    {
+      "id": "hanyu2-bai-14",
+      "lessonNumber": 14,
+      "title": "钥匙忘拔下来了 (Chìa khóa quên rút ra rồi)",
+      "grammarPointIds": [
+        "grammar-14-e65f59d5"
+      ]
+    },
+    {
+      "id": "hanyu2-bai-15",
+      "lessonNumber": 15,
+      "title": "会议厅的门开着呢 (Cửa phòng họp đang mở)",
+      "grammarPointIds": [
+        "grammar-15-ec14f2cd"
+      ]
+    },
+    {
+      "id": "hanyu2-bai-16",
+      "lessonNumber": 16,
+      "title": "前边开过来一辆空车 (Phía trước có một chiếc xe trống đang chạy tới)",
+      "grammarPointIds": [
+        "grammar-16-06a009fa",
+        "grammar-16-5a419151"
+      ]
+    },
+    {
+      "id": "hanyu2-bai-17",
+      "lessonNumber": 17,
+      "title": "把“福”字倒着贴在门上 (Dán chữ \"Phúc\" ngược lên cửa)",
+      "grammarPointIds": [
+        "grammar-17-70146a6b"
+      ]
+    },
+    {
+      "id": "hanyu2-bai-18",
+      "lessonNumber": 18,
+      "title": "请把护照和机票给我 (Xin hãy đưa hộ chiếu và vé máy bay cho tôi)",
+      "grammarPointIds": [
+        "grammar-18-7c25c741"
+      ]
+    },
+    {
+      "id": "hanyu2-bai-19",
+      "lessonNumber": 19,
+      "title": "我的腿被自行车撞伤了 (Chân tôi bị xe đạp đâm bị thương)",
+      "grammarPointIds": [
+        "grammar-19-aa2df4d2",
+        "grammar-19-0308a53e"
+      ]
+    },
+    {
+      "id": "hanyu2-bai-20",
+      "lessonNumber": 20,
+      "title": "我看得懂，但是听不懂 (Tôi đọc hiểu nhưng nghe không hiểu)",
+      "grammarPointIds": [
+        "grammar-20-02ac38f7",
+        "grammar-20-7ece3a73",
+        "grammar-20-e8e60c22"
+      ]
+    },
+    {
+      "id": "hanyu2-bai-21",
+      "lessonNumber": 21,
+      "title": "山这么高，你爬得上去吗 (Núi cao thế này, bạn leo lên được không?)",
+      "grammarPointIds": [
+        "grammar-21-38b921e1",
+        "grammar-21-b6404279",
+        "grammar-21-705785f1"
+      ]
+    },
+    {
+      "id": "hanyu2-bai-22",
+      "lessonNumber": 22,
+      "title": "我想起来了 (Tôi nhớ ra rồi)",
+      "grammarPointIds": [
+        "grammar-22-cf4f1823",
+        "grammar-22-2773774d"
+      ]
+    },
+    {
+      "id": "hanyu2-bai-23",
+      "lessonNumber": 23,
+      "title": "寒假你打算去哪儿旅行 (Kỳ nghỉ đông bạn định đi du lịch ở đâu?)",
+      "grammarPointIds": [
+        "grammar-23-f91de050",
+        "grammar-23-d13255f8",
+        "grammar-23-e04f0a70"
+      ]
+    },
+    {
+      "id": "hanyu2-bai-24",
+      "lessonNumber": 24,
+      "title": "有困难找警察 (Có khó khăn thì tìm cảnh sát)",
+      "grammarPointIds": [
+        "grammar-24-bb5e8270",
+        "grammar-24-9a233918",
+        "grammar-24-b0c36993"
+      ]
+    },
+    {
+      "id": "hanyu2-bai-25",
+      "lessonNumber": 25,
+      "title": "吉利的数字 (Những con số may mắn)",
+      "grammarPointIds": [
+        "grammar-25-d10b49dc",
+        "grammar-25-95d90657",
+        "grammar-25-be65f540"
+      ]
+    }
+  ],
+  "grammarPoints": [
+    {
+      "id": "grammar-01-cd0a5ba6",
+      "lessonId": "hanyu2-bai-01",
+      "lessonNumber": 1,
+      "title": "1\\. Trợ từ ngữ khí \"了\" (1)",
+      "contentMd": "* Công dụng: \"了\" đặt cuối câu biểu thị sự thay đổi đã xảy ra hoặc xác nhận một sự việc đã trở thành hiện thực.\n* Cấu trúc: Câu trần thuật \\+ 了\n* Ví dụ:\n* 田芳去哪儿了？(Điền Phương đi đâu rồi?)\n* 他去图书馆了。(Anh ấy đi thư viện rồi.)\n* 我吃饭了。(Tôi ăn cơm rồi.)",
+      "structures": [
+        "Câu trần thuật \\+ 了"
+      ],
+      "examplesRaw": [
+        "Công dụng: \"了\" đặt cuối câu biểu thị sự thay đổi đã xảy ra hoặc xác nhận một sự việc đã trở thành hiện thực.",
+        "田芳去哪儿了？(Điền Phương đi đâu rồi?)",
+        "他去图书馆了。(Anh ấy đi thư viện rồi.)",
+        "我吃饭了。(Tôi ăn cơm rồi.)"
+      ]
+    },
+    {
+      "id": "grammar-01-f1e288b0",
+      "lessonId": "hanyu2-bai-01",
+      "lessonNumber": 1,
+      "title": "2\\. Phân biệt \"再\" và \"又\"",
+      "contentMd": "|  | 再 (lại \\- sẽ lại) | 又 (lại \\- đã lại) |\n| :---- | :---- | :---- |\n| Thời gian | Hành động chưa xảy ra, sẽ xảy ra trong tương lai | Hành động đã xảy ra trong quá khứ |\n| Ví dụ | 明天再来。(Ngày mai lại đến.) | 他又来电话了。(Anh ấy lại gọi điện thoại rồi.) |\n|  | 我想再看一遍。(Tôi muốn xem lại một lần nữa.) | 昨天他又迟到了。(Hôm qua anh ấy lại đến muộn.) |\n\nTừ vựng: 喂，阿姨，了，中学，大学，小学，出国，出，打 （电话），关机，开机，关，饿，对了，忘，开，又， 响 ，借，接，踢，比赛，比，赛，其实，队，输，赢，祝贺，哎，上，托福，报名，托，考，陪，最。考试，满分，奖学金，送行，热情，见面，一路平安，哭\n---",
+      "structures": [],
+      "examplesRaw": [
+        "Từ vựng: 喂，阿姨，了，中学，大学，小学，出国，出，打 （电话），关机，开机，关，饿，对了，忘，开，又， 响 ，借，接，踢，比赛，比，赛，其实，队，输，赢，祝贺，哎，上，托福，报名，托，考，陪，最。考试，满分，奖学金，送行，热情，见面，一路平安，哭"
+      ]
+    },
+    {
+      "id": "grammar-02-03e88b2a",
+      "lessonId": "hanyu2-bai-02",
+      "lessonNumber": 2,
+      "title": "1\\. Động tác hoàn thành: Động từ \\+ 了",
+      "contentMd": "* Công dụng: \"了\" đặt sau động từ biểu thị hành động đã hoàn thành.\n* Cấu trúc: Chủ ngữ \\+ Động từ \\+ 了 \\+ Tân ngữ\n* Ví dụ:\n* 玛丽哭了。(Mary khóc rồi.)\n* 我吃了一些鱼。(Tôi đã ăn một ít cá.)\n* 他买了三本书。(Anh ấy đã mua ba quyển sách.)\n* Phủ định: 没(有) \\+ Động từ (+ Tân ngữ) \\[không thêm 了\\]\n* 我没哭。(Tôi không khóc.)\n* 他没买书。(Anh ấy không mua sách.)",
+      "structures": [
+        "Chủ ngữ \\+ Động từ \\+ 了 \\+ Tân ngữ"
+      ],
+      "examplesRaw": [
+        "Công dụng: \"了\" đặt sau động từ biểu thị hành động đã hoàn thành.",
+        "玛丽哭了。(Mary khóc rồi.)",
+        "我吃了一些鱼。(Tôi đã ăn một ít cá.)",
+        "他买了三本书。(Anh ấy đã mua ba quyển sách.)",
+        "Phủ định: 没(有) \\+ Động từ (+ Tân ngữ) \\[không thêm 了\\]",
+        "我没哭。(Tôi không khóc.)",
+        "他没买书。(Anh ấy không mua sách.)"
+      ]
+    },
+    {
+      "id": "grammar-02-8dc6683e",
+      "lessonId": "hanyu2-bai-02",
+      "lessonNumber": 2,
+      "title": "2\\. Cấu trúc \"因为……所以……\" (Vì... nên...)",
+      "contentMd": "* Công dụng: Biểu thị quan hệ nguyên nhân \\- kết quả.\n* Cấu trúc: 因为 \\+ nguyên nhân \\+ 所以 \\+ kết quả\n* Ví dụ:\n* 因为下雨，所以我不去了。(Vì mưa nên tôi không đi.)\n* 因为他病了，所以没来上课。(Vì anh ấy ốm nên không đến lớp.)\n* Lưu ý: Trong khẩu ngữ có thể lược bỏ 因为 hoặc 所以.\n\nTừ vựng: 病，病人，肚子，厉害，害，片，拉肚子，拉，鱼，牛肉，化验，检查，大便，小便，结果，出来，得，肠炎，消化，开（药），打针，后，寂寞，所以，难过，别，礼堂，舞会，跳舞，发烧，嗓子，出汗\n---",
+      "structures": [
+        "因为 \\+ nguyên nhân \\+ 所以 \\+ kết quả"
+      ],
+      "examplesRaw": [
+        "因为下雨，所以我不去了。(Vì mưa nên tôi không đi.)",
+        "因为他病了，所以没来上课。(Vì anh ấy ốm nên không đến lớp.)",
+        "Lưu ý: Trong khẩu ngữ có thể lược bỏ 因为 hoặc 所以.",
+        "Từ vựng: 病，病人，肚子，厉害，害，片，拉肚子，拉，鱼，牛肉，化验，检查，大便，小便，结果，出来，得，肠炎，消化，开（药），打针，后，寂寞，所以，难过，别，礼堂，舞会，跳舞，发烧，嗓子，出汗"
+      ]
+    },
+    {
+      "id": "grammar-03-92d15640",
+      "lessonId": "hanyu2-bai-03",
+      "lessonNumber": 3,
+      "title": "1\\. Phó từ \"就\" và \"才\"",
+      "contentMd": "|  | 就 | 才 |\n| :---- | :---- | :---- |\n| Ý nghĩa | \\- Sắp xảy ra: 她就来。(Cô ấy sắp đến.) \\- Xảy ra sớm, nhanh: 我七点就到教室了。(Tôi 7h đã đến lớp.) \\- Dễ dàng: 一下就看懂了。(Xem một cái là hiểu ngay.) | \\- Vừa mới xảy ra: 我才到家。(Tôi vừa mới về nhà.) \\- Xảy ra muộn, chậm: 他八点才去上班。(8h anh ấy mới đi làm.) \\- Khó khăn: 做了三次才做对。(Làm 3 lần mới đúng.) |",
+      "structures": [],
+      "examplesRaw": []
+    },
+    {
+      "id": "grammar-03-6012354b",
+      "lessonId": "hanyu2-bai-03",
+      "lessonNumber": 3,
+      "title": "2\\. Cấu trúc \"要是……就……\" (Nếu... thì...)",
+      "contentMd": "* Công dụng: Biểu thị giả thiết và kết quả.\n* Cấu trúc: 要是 \\+ điều kiện \\+ 就 \\+ kết quả\n* Ví dụ:\n* 要是明天下雨，我们就不去公园。(Nếu mai mưa, chúng tôi sẽ không đi công viên.)\n* 要是你有空，我就来找你。(Nếu bạn rảnh, tôi sẽ đến tìm bạn.)\n* Lưu ý: Có thể thay 要是 bằng 如果.",
+      "structures": [
+        "要是 \\+ điều kiện \\+ 就 \\+ kết quả"
+      ],
+      "examplesRaw": [
+        "要是明天下雨，我们就不去公园。(Nếu mai mưa, chúng tôi sẽ không đi công viên.)",
+        "要是你有空，我就来找你。(Nếu bạn rảnh, tôi sẽ đến tìm bạn.)",
+        "Lưu ý: Có thể thay 要是 bằng 如果."
+      ]
+    },
+    {
+      "id": "grammar-03-293fc656",
+      "lessonId": "hanyu2-bai-03",
+      "lessonNumber": 3,
+      "title": "3\\. Cấu trúc \"虽然……但是……\" (Mặc dù... nhưng...)",
+      "contentMd": "* Công dụng: Biểu thị quan hệ tương phản, nhượng bộ.\n* Cấu trúc: 虽然 \\+ sự việc A \\+ 但是 \\+ sự việc B (trái ngược)\n* Ví dụ:\n* 虽然很累，但是我高兴。(Mặc dù mệt nhưng tôi vui.)\n* 虽然贵了点儿，但是质量很好。(Mặc dù đắt một chút nhưng chất lượng tốt.)\n\nTừ vựng: 套，层，楼，房子，有的，周围，环境，乱，厨房，卧室，客厅，面积，平方米，上去，下去，阳关，印象，还是，妻子，堵车，赶，才，要是，组，房租，虽然，真，条，河，交通，方便，顺便，公共汽车 (大巴），站，车站，旁边，地铁，附近，体育馆，会话，解答\n---",
+      "structures": [
+        "虽然 \\+ sự việc A \\+ 但是 \\+ sự việc B (trái ngược)"
+      ],
+      "examplesRaw": [
+        "虽然很累，但是我高兴。(Mặc dù mệt nhưng tôi vui.)",
+        "虽然贵了点儿，但是质量很好。(Mặc dù đắt một chút nhưng chất lượng tốt.)",
+        "Từ vựng: 套，层，楼，房子，有的，周围，环境，乱，厨房，卧室，客厅，面积，平方米，上去，下去，阳关，印象，还是，妻子，堵车，赶，才，要是，组，房租，虽然，真，条，河，交通，方便，顺便，公共汽车 (大巴），站，车站，旁边，地铁，附近，体育馆，会话，解答"
+      ]
+    },
+    {
+      "id": "grammar-04-e784c61f",
+      "lessonId": "hanyu2-bai-04",
+      "lessonNumber": 4,
+      "title": "1\\. Bổ ngữ kết quả (Kết quả bổ ngữ)",
+      "contentMd": "* Công dụng: Động từ \\+ bổ ngữ kết quả để biểu thị kết quả của hành động.\n* Các bổ ngữ kết quả thường gặp:\n* 完 (xong): 做完 (làm xong), 吃完 (ăn xong)\n* 见 (thấy): 看见 (nhìn thấy), 听见 (nghe thấy)\n* 懂 (hiểu): 听懂 (nghe hiểu), 看懂 (đọc hiểu)\n* 对 (đúng): 做对 (làm đúng), 答对 (trả lời đúng)\n* 错 (sai): 做错 (làm sai), 写错 (viết sai)\n* Ví dụ:\n* 我都做对了。(Tôi đều làm đúng rồi.)\n* 我看见他了。(Tôi nhìn thấy anh ấy.)\n* 你听懂了吗？(Bạn nghe hiểu chưa?)",
+      "structures": [],
+      "examplesRaw": [
+        "完 (xong): 做完 (làm xong), 吃完 (ăn xong)",
+        "见 (thấy): 看见 (nhìn thấy), 听见 (nghe thấy)",
+        "懂 (hiểu): 听懂 (nghe hiểu), 看懂 (đọc hiểu)",
+        "对 (đúng): 做对 (làm đúng), 答对 (trả lời đúng)",
+        "错 (sai): 做错 (làm sai), 写错 (viết sai)",
+        "我都做对了。(Tôi đều làm đúng rồi.)",
+        "我看见他了。(Tôi nhìn thấy anh ấy.)",
+        "你听懂了吗？(Bạn nghe hiểu chưa?)"
+      ]
+    },
+    {
+      "id": "grammar-04-f3fb6256",
+      "lessonId": "hanyu2-bai-04",
+      "lessonNumber": 4,
+      "title": "2\\. Bổ ngữ kết quả (1): 上、成、到",
+      "contentMd": "* 上:\n* Đóng, khép: 关上门 (đóng cửa)\n* Đạt được, gắn vào: 考上大学 (thi đỗ đại học), 爱上他 (yêu anh ấy)\n* 成:\n* Trở thành, biến thành: 翻译成汉语 (dịch thành tiếng Hán)\n* Hoàn thành: 建成 (xây xong)\n* 到:\n* Đạt được kết quả: 买到 (mua được), 找到 (tìm thấy), 收到 (nhận được)\n* Đến (thời gian, địa điểm): 看到 (nhìn thấy), 听到 (nghe thấy)",
+      "structures": [],
+      "examplesRaw": [
+        "上:",
+        "Đóng, khép: 关上门 (đóng cửa)",
+        "Đạt được, gắn vào: 考上大学 (thi đỗ đại học), 爱上他 (yêu anh ấy)",
+        "成:",
+        "Trở thành, biến thành: 翻译成汉语 (dịch thành tiếng Hán)",
+        "Hoàn thành: 建成 (xây xong)",
+        "到:",
+        "Đạt được kết quả: 买到 (mua được), 找到 (tìm thấy), 收到 (nhận được)",
+        "Đến (thời gian, địa điểm): 看到 (nhìn thấy), 听到 (nghe thấy)"
+      ]
+    },
+    {
+      "id": "grammar-04-eb5ce565",
+      "lessonId": "hanyu2-bai-04",
+      "lessonNumber": 4,
+      "title": "3\\. Cụm chủ vị làm định ngữ",
+      "contentMd": "* Công dụng: Một cụm chủ ngữ \\- vị ngữ có thể đứng trước danh từ để bổ nghĩa, có thêm 的.\n* Cấu trúc: (Chủ ngữ \\+ Vị ngữ) \\+ 的 \\+ Danh từ\n* Ví dụ:\n* 你送我的书 (quyển sách bạn tặng tôi)\n* 他做的菜 (món ăn anh ấy nấu)\n* 我们昨天看的电影 (bộ phim chúng tôi xem hôm qua)\n\nTừ vựng: 考试，题，道，完，成绩，句子，干什么，啥，笨蛋，笨，词，糟糕，成，回信，故事，有意思，夜，叶，页，念，答，办法。合上，打开，作业，于是，必须\nTên riêng: 安娜\n---",
+      "structures": [
+        "(Chủ ngữ \\+ Vị ngữ) \\+ 的 \\+ Danh từ"
+      ],
+      "examplesRaw": [
+        "Công dụng: Một cụm chủ ngữ \\- vị ngữ có thể đứng trước danh từ để bổ nghĩa, có thêm 的.",
+        "你送我的书 (quyển sách bạn tặng tôi)",
+        "他做的菜 (món ăn anh ấy nấu)",
+        "我们昨天看的电影 (bộ phim chúng tôi xem hôm qua)",
+        "Từ vựng: 考试，题，道，完，成绩，句子，干什么，啥，笨蛋，笨，词，糟糕，成，回信，故事，有意思，夜，叶，页，念，答，办法。合上，打开，作业，于是，必须",
+        "Tên riêng: 安娜"
+      ]
+    },
+    {
+      "id": "grammar-05-935693f2",
+      "lessonId": "hanyu2-bai-05",
+      "lessonNumber": 5,
+      "title": "1\\. Thời lượng bổ ngữ (Diễn tả thời gian kéo dài)",
+      "contentMd": "* Công dụng: Biểu thị thời gian một hành động hoặc trạng thái kéo dài.\n* Cấu trúc:\n* Động từ \\+ (了) \\+ thời gian: 他等了十分钟。(Anh ấy đợi 10 phút.)\n* Động từ \\+ thời gian \\+ 了: 他等十分钟了。(Anh ấy đợi được 10 phút rồi \\- còn đợi tiếp.)\n* Động từ \\+ 了 \\+ thời gian \\+ 了: 他等了十分钟了。(Anh ấy đã đợi 10 phút rồi \\- nhấn mạnh đến hiện tại.)\n* Ví dụ:\n* 我来了两个多月了。(Tôi đến được hơn hai tháng rồi.)\n* 我每天都练一个小时。(Mỗi ngày tôi đều luyện tập một tiếng.)\n* 已经练了好多年了。(Đã luyện tập nhiều năm rồi.)",
+      "structures": [],
+      "examplesRaw": [
+        "Động từ \\+ (了) \\+ thời gian: 他等了十分钟。(Anh ấy đợi 10 phút.)",
+        "Động từ \\+ thời gian \\+ 了: 他等十分钟了。(Anh ấy đợi được 10 phút rồi \\- còn đợi tiếp.)",
+        "Động từ \\+ 了 \\+ thời gian \\+ 了: 他等了十分钟了。(Anh ấy đã đợi 10 phút rồi \\- nhấn mạnh đến hiện tại.)",
+        "我来了两个多月了。(Tôi đến được hơn hai tháng rồi.)",
+        "我每天都练一个小时。(Mỗi ngày tôi đều luyện tập một tiếng.)",
+        "已经练了好多年了。(Đã luyện tập nhiều năm rồi.)"
+      ]
+    },
+    {
+      "id": "grammar-05-c6e530d0",
+      "lessonId": "hanyu2-bai-05",
+      "lessonNumber": 5,
+      "title": "2\\. Cách biểu đạt số ước lượng",
+      "contentMd": "* Số \\+ 多 \\+ Lượng từ: chỉ số dư (hơn)\n* 两个多月 (hơn hai tháng)\n* 二十多个学生 (hơn hai mươi học sinh)\n* Số \\+ Lượng từ \\+ 多: chỉ số lẻ (phần lẻ)\n* 两个多月 (2 tháng và hơn \\- thường dùng cho thời gian)\n* 三斤多 (hơn 3 cân)\n* Liệt kê hai số gần nhau: 三四个 (ba bốn cái), 五六天 (năm sáu ngày)",
+      "structures": [],
+      "examplesRaw": [
+        "Số \\+ 多 \\+ Lượng từ: chỉ số dư (hơn)",
+        "两个多月 (hơn hai tháng)",
+        "二十多个学生 (hơn hai mươi học sinh)",
+        "Số \\+ Lượng từ \\+ 多: chỉ số lẻ (phần lẻ)",
+        "两个多月 (2 tháng và hơn \\- thường dùng cho thời gian)",
+        "三斤多 (hơn 3 cân)",
+        "Liệt kê hai số gần nhau: 三四个 (ba bốn cái), 五六天 (năm sáu ngày)"
+      ]
+    },
+    {
+      "id": "grammar-05-ef2f6a22",
+      "lessonId": "hanyu2-bai-05",
+      "lessonNumber": 5,
+      "title": "3\\. Động từ ly hợp (离合动词)",
+      "contentMd": "* Khái niệm: Là những động từ hai âm tiết có cấu trúc \"động từ \\+ tân ngữ\", có thể tách rời.\n* Đặc điểm:\n* Có thể chèn thêm thành phần khác vào giữa: 洗澡 → 洗了一个澡 (tắm một cái)\n* Có thể lặp lại động từ: 游泳 → 游游泳 (bơi một chút)\n* Ví dụ:\n* 帮忙 → 帮个忙 (giúp một việc)\n* 见面 → 见过面 (đã gặp mặt)\n* 睡觉 → 睡了觉 (đã ngủ)\n* 考试 → 考完试 (thi xong)\n* Lưu ý: Động từ ly hợp không thể trực tiếp mang tân ngữ. Muốn có tân ngữ phải dùng giới từ.\n* 我见面朋友。❌ → 我跟朋友见面。✓ (Tôi gặp bạn.)\n\nTừ vựng: 生活，差不多，习惯，不过，气候，气度，温，暖和，干燥，干净，菜，油腻，牛奶，课间，块，点心，从来，从前，午觉，游泳，散步，跑步，功课，极，记，住，一般，感谢，父母，机会，原来，延长，练，气功，好，钟头，效果，挺，好处，坏处，处，慢性病，失眠，打鱼，晒，椅子，老人，怕，生气，涂，油漆，裤子。\n---",
+      "structures": [],
+      "examplesRaw": [
+        "Có thể chèn thêm thành phần khác vào giữa: 洗澡 → 洗了一个澡 (tắm một cái)",
+        "Có thể lặp lại động từ: 游泳 → 游游泳 (bơi một chút)",
+        "帮忙 → 帮个忙 (giúp một việc)",
+        "见面 → 见过面 (đã gặp mặt)",
+        "睡觉 → 睡了觉 (đã ngủ)",
+        "考试 → 考完试 (thi xong)",
+        "我见面朋友。❌ → 我跟朋友见面。✓ (Tôi gặp bạn.)",
+        "Từ vựng: 生活，差不多，习惯，不过，气候，气度，温，暖和，干燥，干净，菜，油腻，牛奶，课间，块，点心，从来，从前，午觉，游泳，散步，跑步，功课，极，记，住，一般，感谢，父母，机会，原来，延长，练，气功，好，钟头，效果，挺，好处，坏处，处，慢性病，失眠，打鱼，晒，椅子，老人，怕，生气，涂，油漆，裤子。"
+      ]
+    },
+    {
+      "id": "grammar-06-52c56ebc",
+      "lessonId": "hanyu2-bai-06",
+      "lessonNumber": 6,
+      "title": "1\\. Câu so sánh",
+      "contentMd": "* So sánh hơn với \"比\":\n* Cấu trúc: A \\+ 比 \\+ B \\+ Tính từ\n* Ví dụ: 北京比上海大吧？(Bắc Kinh lớn hơn Thượng Hải nhỉ?)\n* 我比你更喜欢音乐。(Tôi thích âm nhạc hơn bạn.)\n* Phủ định của \"比\":\n* Cấu trúc: A \\+ 没有 \\+ B \\+ Tính từ (A không bằng B)\n* Ví dụ: 我没有你高。(Tôi không cao bằng bạn.)\n* So sánh với \"比\" có bổ ngữ số lượng:\n* Cấu trúc: A \\+ 比 \\+ B \\+ Tính từ \\+ số lượng\n* Ví dụ: 上海的气温比北京高得多。(Nhiệt độ Thượng Hải cao hơn Bắc Kinh nhiều.)\n* 我比他大三岁。(Tôi lớn hơn anh ấy 3 tuổi.)",
+      "structures": [
+        "A \\+ 比 \\+ B \\+ Tính từ",
+        "A \\+ 没有 \\+ B \\+ Tính từ (A không bằng B)",
+        "A \\+ 比 \\+ B \\+ Tính từ \\+ số lượng"
+      ],
+      "examplesRaw": [
+        "So sánh hơn với \"比\":",
+        "我比你更喜欢音乐。(Tôi thích âm nhạc hơn bạn.)",
+        "Phủ định của \"比\":",
+        "So sánh với \"比\" có bổ ngữ số lượng:",
+        "我比他大三岁。(Tôi lớn hơn anh ấy 3 tuổi.)"
+      ]
+    },
+    {
+      "id": "grammar-06-f3ba2bc1",
+      "lessonId": "hanyu2-bai-06",
+      "lessonNumber": 6,
+      "title": "2\\. Số lượng bổ ngữ (Bổ ngữ chỉ mức độ chênh lệch)",
+      "contentMd": "* Các dạng:\n* 一点儿 (một chút): 贵一点儿 (đắt hơn một chút)\n* 一些 (một ít): 大一些 (lớn hơn một ít)\n* 得多 (nhiều): 好得多 (tốt hơn nhiều)\n* Số lượng cụ thể: 三岁 (3 tuổi), 五块 (5 tệ)",
+      "structures": [],
+      "examplesRaw": [
+        "一点儿 (một chút): 贵一点儿 (đắt hơn một chút)",
+        "一些 (một ít): 大一些 (lớn hơn một ít)",
+        "得多 (nhiều): 好得多 (tốt hơn nhiều)",
+        "Số lượng cụ thể: 三岁 (3 tuổi), 五块 (5 tệ)"
+      ]
+    },
+    {
+      "id": "grammar-06-cea68367",
+      "lessonId": "hanyu2-bai-06",
+      "lessonNumber": 6,
+      "title": "3\\. Câu cảm thán",
+      "contentMd": "* 太 \\+ Tính từ \\+ 了: 太好了！(Tuyệt vời\\!), 太贵了！(Đắt quá\\!)\n* 真 \\+ Tính từ: 真漂亮！(Đẹp thật\\!), 真有意思！(Thú vị thật\\!)\n* Đa/Tiếng \\+ Tính từ \\+ 啊: 多好啊！(Tốt quá\\!), 高啊！(Cao quá\\!)\n\nTừ vựng: 变化，变，暑假，还，比，人口，最，城市，增加，过去，更，漂亮，冬，可是，天气，预报，高，度，低，暖气，感觉，旅馆，迷，光，交响乐，下载，首，也许，现代，代，世界，名曲，民歌，流行，歌曲，年经，歌词，有些，遥远，逛，票，排队，汗，湖，桥，划船\n---",
+      "structures": [],
+      "examplesRaw": [
+        "太 \\+ Tính từ \\+ 了: 太好了！(Tuyệt vời\\!), 太贵了！(Đắt quá\\!)",
+        "真 \\+ Tính từ: 真漂亮！(Đẹp thật\\!), 真有意思！(Thú vị thật\\!)",
+        "Đa/Tiếng \\+ Tính từ \\+ 啊: 多好啊！(Tốt quá\\!), 高啊！(Cao quá\\!)",
+        "Từ vựng: 变化，变，暑假，还，比，人口，最，城市，增加，过去，更，漂亮，冬，可是，天气，预报，高，度，低，暖气，感觉，旅馆，迷，光，交响乐，下载，首，也许，现代，代，世界，名曲，民歌，流行，歌曲，年经，歌词，有些，遥远，逛，票，排队，汗，湖，桥，划船"
+      ]
+    },
+    {
+      "id": "grammar-07-3f1e0b22",
+      "lessonId": "hanyu2-bai-07",
+      "lessonNumber": 7,
+      "title": "1\\. Câu so sánh: 跟……一样 / 不一样 (Giống/không giống)",
+      "contentMd": "* Công dụng: So sánh sự giống nhau hoặc khác nhau giữa hai đối tượng về một đặc điểm, tính chất nào đó.\n* Cấu trúc cơ bản:\n* Khẳng định: A \\+ 跟 \\+ B \\+ 一样 (giống nhau)\n* Phủ định: A \\+ 跟 \\+ B \\+ 不一样 (không giống nhau)\n* Ví dụ:\n* 我们那儿的冬天跟北京一样冷。(Mùa đông ở quê tôi lạnh như Bắc Kinh.)\n* 我跟你不一样。(Tôi không giống bạn.)\n* Thêm tính từ (để chỉ mức độ cụ thể):\n* Cấu trúc: A \\+ 跟 \\+ B \\+ 一样 \\+ Tính từ\n* 他跟我一样高。(Anh ấy cao bằng tôi.)\n* 这件衣服跟那件一样贵。(Cái áo này đắt bằng cái kia.)\n* Lưu ý:\n* Tính từ trong cấu trúc này thường là tính từ chỉ mức độ trung tính (cao, thấp, đắt, rẻ...), không dùng các từ như 很, 非常.\n* Muốn nhấn mạnh sự khác biệt, có thể dùng 跟...不一样 \\+ Tính từ.",
+      "structures": [
+        "A \\+ 跟 \\+ B \\+ 一样 \\+ Tính từ"
+      ],
+      "examplesRaw": [
+        "Khẳng định: A \\+ 跟 \\+ B \\+ 一样 (giống nhau)",
+        "Phủ định: A \\+ 跟 \\+ B \\+ 不一样 (không giống nhau)",
+        "我们那儿的冬天跟北京一样冷。(Mùa đông ở quê tôi lạnh như Bắc Kinh.)",
+        "我跟你不一样。(Tôi không giống bạn.)",
+        "他跟我一样高。(Anh ấy cao bằng tôi.)",
+        "这件衣服跟那件一样贵。(Cái áo này đắt bằng cái kia.)",
+        "Tính từ trong cấu trúc này thường là tính từ chỉ mức độ trung tính (cao, thấp, đắt, rẻ...), không dùng các từ như 很, 非常.",
+        "Muốn nhấn mạnh sự khác biệt, có thể dùng 跟...不一样 \\+ Tính từ."
+      ]
+    },
+    {
+      "id": "grammar-07-2e8127db",
+      "lessonId": "hanyu2-bai-07",
+      "lessonNumber": 7,
+      "title": "2\\. Cấu trúc \"不但……而且……\" (Không những... mà còn...)",
+      "contentMd": "* Công dụng: Diễn tả ý nghĩa tăng tiến, bổ sung thêm thông tin.\n* Cấu trúc: 不但 \\+ A \\+ 而且 \\+ B\n* Ví dụ:\n* 他不但会说汉语，而且会说英语。(Anh ấy không những nói được tiếng Hán mà còn nói được tiếng Anh.)\n* 这个地方不但风景美，而且空气很新鲜。(Nơi này không những phong cảnh đẹp mà không khí còn rất trong lành.)\n* 我对中国历史不但感兴趣，而且想研究。(Tôi không những hứng thú với lịch sử Trung Quốc mà còn muốn nghiên cứu.)\n* Lưu ý:\n* Nếu hai chủ ngữ giống nhau, 不但 đặt sau chủ ngữ thứ nhất.\n* Nếu hai chủ ngữ khác nhau, 不但 đặt trước chủ ngữ thứ nhất.\n\nTừ vựng: 国家，一样，时差，季节，春，夏，秋，冬，热，冷，凉，刮风，刮，风，雪，雨，不但。。。而且，份，分，得，周末，历史，产生，画册，研究，只是，老，改，改革，开放，一切，专业，速度，想法，价格，转，等，中等，上等，下等。\n---",
+      "structures": [
+        "不但 \\+ A \\+ 而且 \\+ B"
+      ],
+      "examplesRaw": [
+        "他不但会说汉语，而且会说英语。(Anh ấy không những nói được tiếng Hán mà còn nói được tiếng Anh.)",
+        "这个地方不但风景美，而且空气很新鲜。(Nơi này không những phong cảnh đẹp mà không khí còn rất trong lành.)",
+        "我对中国历史不但感兴趣，而且想研究。(Tôi không những hứng thú với lịch sử Trung Quốc mà còn muốn nghiên cứu.)",
+        "Nếu hai chủ ngữ giống nhau, 不但 đặt sau chủ ngữ thứ nhất.",
+        "Nếu hai chủ ngữ khác nhau, 不但 đặt trước chủ ngữ thứ nhất.",
+        "Từ vựng: 国家，一样，时差，季节，春，夏，秋，冬，热，冷，凉，刮风，刮，风，雪，雨，不但。。。而且，份，分，得，周末，历史，产生，画册，研究，只是，老，改，改革，开放，一切，专业，速度，想法，价格，转，等，中等，上等，下等。"
+      ]
+    },
+    {
+      "id": "grammar-08-36259ec0",
+      "lessonId": "hanyu2-bai-08",
+      "lessonNumber": 8,
+      "title": "1\\. Biểu đạt sự biến hóa: Trợ từ ngữ khí \"了\" (2)",
+      "contentMd": "* Công dụng: \"了\" đặt cuối câu biểu thị sự thay đổi đã xảy ra hoặc tình huống mới xuất hiện.\n* Các trường hợp thường gặp:\n* Biểu thị thời gian/thời tiết thay đổi:\n* 冬天快要到了。(Mùa đông sắp đến rồi.)\n* 都七点五十了。(Đã 7h50 rồi \\- nhấn mạnh muộn.)\n* 天黑了。(Trời tối rồi.)\n* Biểu thị tình huống mới, quan điểm mới:\n* 好了，不谈考试了。(Thôi được rồi, không nói chuyện thi cử nữa.)\n* 我明白了。(Tôi hiểu rồi.)\n* 他不再生气了。(Anh ấy không giận nữa.)\n* Biểu thị sắp xảy ra (kết hợp với 快/要/快要/就要):\n* 快走吧，要上课了。(Đi nhanh đi, sắp vào học rồi.)\n* 我姐姐下个月就要结婚了。(Chị tôi tháng sau sẽ kết hôn.)\n* 汽车快开了。(Xe sắp chạy rồi.)",
+      "structures": [],
+      "examplesRaw": [
+        "Công dụng: \"了\" đặt cuối câu biểu thị sự thay đổi đã xảy ra hoặc tình huống mới xuất hiện.",
+        "冬天快要到了。(Mùa đông sắp đến rồi.)",
+        "都七点五十了。(Đã 7h50 rồi \\- nhấn mạnh muộn.)",
+        "天黑了。(Trời tối rồi.)",
+        "好了，不谈考试了。(Thôi được rồi, không nói chuyện thi cử nữa.)",
+        "我明白了。(Tôi hiểu rồi.)",
+        "他不再生气了。(Anh ấy không giận nữa.)",
+        "Biểu thị sắp xảy ra (kết hợp với 快/要/快要/就要):",
+        "快走吧，要上课了。(Đi nhanh đi, sắp vào học rồi.)",
+        "我姐姐下个月就要结婚了。(Chị tôi tháng sau sẽ kết hôn.)",
+        "汽车快开了。(Xe sắp chạy rồi.)"
+      ]
+    },
+    {
+      "id": "grammar-08-acdf3bf0",
+      "lessonId": "hanyu2-bai-08",
+      "lessonNumber": 8,
+      "title": "2\\. Biểu đạt hành động sắp xảy ra",
+      "contentMd": "* Các cấu trúc thường dùng:\n* 要 \\+ Động từ \\+ 了\n* 快 \\+ Động từ \\+ 了 (khẩu ngữ)\n* 就要 \\+ Động từ \\+ 了 (nhấn mạnh sắp xảy ra ngay)\n* 快要 \\+ Động từ \\+ 了\n* Ví dụ:\n* 要上课了。(Sắp vào học rồi.)\n* 快走吧，要开车了。(Đi nhanh đi, sắp chạy xe rồi.)\n* 我姐姐下个月就要结婚了。(Chị tôi tháng sau sẽ kết hôn.)\n* 冬天快要到了。(Mùa đông sắp đến rồi.)\n* Lưu ý:\n* 快要 và 快...了 thường không dùng với thời gian cụ thể (không nói \"我快明年毕业了\").\n* 就要 có thể dùng với thời gian cụ thể (就要 \\+ thời gian \\+ 了).",
+      "structures": [],
+      "examplesRaw": [
+        "要 \\+ Động từ \\+ 了",
+        "快 \\+ Động từ \\+ 了 (khẩu ngữ)",
+        "就要 \\+ Động từ \\+ 了 (nhấn mạnh sắp xảy ra ngay)",
+        "快要 \\+ Động từ \\+ 了",
+        "要上课了。(Sắp vào học rồi.)",
+        "快走吧，要开车了。(Đi nhanh đi, sắp chạy xe rồi.)",
+        "我姐姐下个月就要结婚了。(Chị tôi tháng sau sẽ kết hôn.)",
+        "冬天快要到了。(Mùa đông sắp đến rồi.)",
+        "快要 và 快...了 thường không dùng với thời gian cụ thể (không nói \"我快明年毕业了\").",
+        "就要 có thể dùng với thời gian cụ thể (就要 \\+ thời gian \\+ 了)."
+      ]
+    },
+    {
+      "id": "grammar-08-5d1d5755",
+      "lessonId": "hanyu2-bai-08",
+      "lessonNumber": 8,
+      "title": "3\\. Trạng ngữ và trợ từ kết cấu \"地\"",
+      "contentMd": "* Công dụng: \"地\" được dùng để nối trạng ngữ với động từ, biến tính từ hoặc cụm từ thành trạng ngữ chỉ cách thức.\n* Cấu trúc: Tính từ / Cụm từ \\+ 地 \\+ Động từ\n* Ví dụ:\n* 高兴地笑了。(Vui vẻ cười.)\n* 认真地学习。(Nghiêm túc học tập.)\n* 慢慢地走。(Đi chầm chậm.)\n* 热情地招待。(Nhiệt tình tiếp đãi.)\n* Lưu ý:\n* Tính từ đơn âm tiết thường không cần 地 (但快跑 \\- chạy nhanh).\n* Tính từ lặp lại thường có 地 (高高兴兴地过年).",
+      "structures": [
+        "Tính từ / Cụm từ \\+ 地 \\+ Động từ"
+      ],
+      "examplesRaw": [
+        "Công dụng: \"地\" được dùng để nối trạng ngữ với động từ, biến tính từ hoặc cụm từ thành trạng ngữ chỉ cách thức.",
+        "高兴地笑了。(Vui vẻ cười.)",
+        "认真地学习。(Nghiêm túc học tập.)",
+        "慢慢地走。(Đi chầm chậm.)",
+        "热情地招待。(Nhiệt tình tiếp đãi.)",
+        "Tính từ đơn âm tiết thường không cần 地 (但快跑 \\- chạy nhanh).",
+        "Tính từ lặp lại thường có 地 (高高兴兴地过年)."
+      ]
+    },
+    {
+      "id": "grammar-08-236574a2",
+      "lessonId": "hanyu2-bai-08",
+      "lessonNumber": 8,
+      "title": "4\\. Câu vô chủ ngữ (无主语句)",
+      "contentMd": "* Khái niệm: Là câu không có chủ ngữ, thường dùng để diễn tả hiện tượng tự nhiên, mệnh lệnh, khẩu hiệu, hoặc một số cố định.\n* Các trường hợp thường gặp:\n* Hiện tượng tự nhiên:\n* 下雨了。(Mưa rồi.)\n* 刮风了。(Gió nổi rồi.)\n* Mệnh lệnh, yêu cầu:\n* 快走吧！(Đi nhanh lên\\!)\n* 请坐！(Mời ngồi\\!)\n* 不许说话！(Không được nói chuyện\\!)\n* Câu cố định:\n* 该换电池了。(Đến lúc thay pin rồi.)\n* 着什么急？(Có gì mà vội?)\n* 还早着呢。(Còn sớm mà.)\n* 有什么好事啦？(Có chuyện vui gì thế?)\n* Lưu ý: Trong tiếng Trung, câu vô chủ rất phổ biến, đặc biệt trong khẩu ngữ.\n\nTừ vựng: 爱，滑冰，化学，家乡，水，有名，风景，区，旅游，尤其。避暑，人家，靠，经营，发财，树叶，捡，红叶，着急，着呢，表，坏，停，该，电池，迟到，好事，坏事，母亲，父亲，地，结婚，离婚，未婚夫，未婚妻，将来，这样，那样，亮，脱，装，打扮，划船，照相，到处，显得，火锅儿，节，堆，冻，瑞雪兆丰年，瓜果，郊外，活动\n---",
+      "structures": [],
+      "examplesRaw": [
+        "下雨了。(Mưa rồi.)",
+        "刮风了。(Gió nổi rồi.)",
+        "快走吧！(Đi nhanh lên\\!)",
+        "请坐！(Mời ngồi\\!)",
+        "不许说话！(Không được nói chuyện\\!)",
+        "该换电池了。(Đến lúc thay pin rồi.)",
+        "着什么急？(Có gì mà vội?)",
+        "还早着呢。(Còn sớm mà.)",
+        "有什么好事啦？(Có chuyện vui gì thế?)",
+        "Từ vựng: 爱，滑冰，化学，家乡，水，有名，风景，区，旅游，尤其。避暑，人家，靠，经营，发财，树叶，捡，红叶，着急，着呢，表，坏，停，该，电池，迟到，好事，坏事，母亲，父亲，地，结婚，离婚，未婚夫，未婚妻，将来，这样，那样，亮，脱，装，打扮，划船，照相，到处，显得，火锅儿，节，堆，冻，瑞雪兆丰年，瓜果，郊外，活动"
+      ]
+    },
+    {
+      "id": "grammar-09-a9dd144b",
+      "lessonId": "hanyu2-bai-09",
+      "lessonNumber": 9,
+      "title": "1\\. Động từ xu hướng đơn giản: Động từ \\+ 来/去",
+      "contentMd": "* Công dụng: Biểu thị phương hướng của hành động so với người nói.\n* 来: Hướng về phía người nói (lại)\n* 去: Hướng ra xa người nói (đi)\n* Cấu trúc: Động từ \\+ 来/去\n* Ví dụ:\n* 上来吧！(Lên xe đi \\- người nói ở trên xe)\n* 下去吧！(Xuống dưới đi \\- người nói ở trên cao)\n* 我给您捎来了一些东西。(Tôi mang cho ông một ít đồ.)\n* 快上来吧，要开车了。(Nhanh lên xe đi, sắp chạy rồi.)\n* Vị trí tân ngữ:\n* Tân ngữ chỉ địa điểm: Động từ \\+ địa điểm \\+ 来/去\n* 他回家去了。(Anh ấy về nhà rồi.)\n* 我进教室来。(Tôi vào lớp.)\n* Tân ngữ chỉ sự vật: Động từ \\+ 来/去 \\+ sự vật\n* 他带来一本书。(Anh ấy mang đến một quyển sách.)\n\nTừ vựng: 开会，教学，研讨会，研讨，讨论，经过，向，问好，捎，送，过去，过来，辛苦，麻烦，趟，进去，爱人，办事，上来，马上，开始，起来，开车，座位，主意，出土，文物，展览，大约，要求，声，清楚，师傅，大使馆，\nTên riêng: 台湾，香港，赵\n\n---",
+      "structures": [
+        "Động từ \\+ 来/去"
+      ],
+      "examplesRaw": [
+        "来: Hướng về phía người nói (lại)",
+        "去: Hướng ra xa người nói (đi)",
+        "上来吧！(Lên xe đi \\- người nói ở trên xe)",
+        "下去吧！(Xuống dưới đi \\- người nói ở trên cao)",
+        "我给您捎来了一些东西。(Tôi mang cho ông một ít đồ.)",
+        "快上来吧，要开车了。(Nhanh lên xe đi, sắp chạy rồi.)",
+        "Tân ngữ chỉ địa điểm: Động từ \\+ địa điểm \\+ 来/去",
+        "他回家去了。(Anh ấy về nhà rồi.)",
+        "我进教室来。(Tôi vào lớp.)",
+        "Tân ngữ chỉ sự vật: Động từ \\+ 来/去 \\+ sự vật",
+        "他带来一本书。(Anh ấy mang đến một quyển sách.)",
+        "Từ vựng: 开会，教学，研讨会，研讨，讨论，经过，向，问好，捎，送，过去，过来，辛苦，麻烦，趟，进去，爱人，办事，上来，马上，开始，起来，开车，座位，主意，出土，文物，展览，大约，要求，声，清楚，师傅，大使馆，",
+        "Tên riêng: 台湾，香港，赵"
+      ]
+    },
+    {
+      "id": "grammar-10-b6952e96",
+      "lessonId": "hanyu2-bai-10",
+      "lessonNumber": 10,
+      "title": "1\\. Trợ từ động thái \"过\" (đã từng)",
+      "contentMd": "* Công dụng: Biểu thị một hành động đã từng xảy ra hoặc đã có kinh nghiệm trong quá khứ.\n* Cấu trúc: Động từ \\+ 过\n* Ví dụ:\n* 我听过钢琴协奏曲《黄河》。(Tôi đã từng nghe bản concerto piano \"Hoàng Hà\".)\n* 我吃过中药。(Tôi đã từng uống thuốc Bắc.)\n* 你以前来过中国吗？(Trước đây bạn đã từng đến Trung Quốc chưa?)\n* Phủ định: 没(有) \\+ Động từ \\+ 过\n* 我没去过上海。(Tôi chưa từng đi Thượng Hải.)\n* 他没吃过烤鸭。(Anh ấy chưa từng ăn vịt quay.)\n* Câu hỏi: Động từ \\+ 过 \\+ (Tân ngữ) \\+ 吗？\n* 你看过这部电影吗？(Bạn đã xem bộ phim này chưa?)",
+      "structures": [
+        "Động từ \\+ 过"
+      ],
+      "examplesRaw": [
+        "我听过钢琴协奏曲《黄河》。(Tôi đã từng nghe bản concerto piano \"Hoàng Hà\".)",
+        "我吃过中药。(Tôi đã từng uống thuốc Bắc.)",
+        "你以前来过中国吗？(Trước đây bạn đã từng đến Trung Quốc chưa?)",
+        "Phủ định: 没(有) \\+ Động từ \\+ 过",
+        "我没去过上海。(Tôi chưa từng đi Thượng Hải.)",
+        "他没吃过烤鸭。(Anh ấy chưa từng ăn vịt quay.)",
+        "Câu hỏi: Động từ \\+ 过 \\+ (Tân ngữ) \\+ 吗？",
+        "你看过这部电影吗？(Bạn đã xem bộ phim này chưa?)"
+      ]
+    },
+    {
+      "id": "grammar-10-f06cccd4",
+      "lessonId": "hanyu2-bai-10",
+      "lessonNumber": 10,
+      "title": "2\\. Động lượng bổ ngữ (Số lần của hành động)",
+      "contentMd": "* Công dụng: Biểu thị số lần hành động xảy ra.\n* Cấu trúc: Động từ \\+ Số lượng từ (lần) \\+ (Tân ngữ)\n* Các lượng từ động từ:\n* 次 (lần \\- phổ biến nhất): 去过三次 (đã đi ba lần)\n* 遍 (lần \\- làm từ đầu đến cuối): 看了一遍 (xem một lượt)\n* 趟 (chuyến \\- cho việc đi lại): 跑了一趟 (chạy một chuyến)\n* Ví dụ:\n* 我一次病也没有得过。(Tôi chưa từng bị ốm lần nào.)\n* 我去过两次上海。(Tôi đã đi Thượng Hải hai lần.)\n* 请再说一遍。(Xin hãy nói lại một lần nữa.)",
+      "structures": [
+        "Động từ \\+ Số lượng từ (lần) \\+ (Tân ngữ)"
+      ],
+      "examplesRaw": [
+        "次 (lần \\- phổ biến nhất): 去过三次 (đã đi ba lần)",
+        "遍 (lần \\- làm từ đầu đến cuối): 看了一遍 (xem một lượt)",
+        "趟 (chuyến \\- cho việc đi lại): 跑了一趟 (chạy một chuyến)",
+        "我一次病也没有得过。(Tôi chưa từng bị ốm lần nào.)",
+        "我去过两次上海。(Tôi đã đi Thượng Hải hai lần.)",
+        "请再说一遍。(Xin hãy nói lại một lần nữa.)"
+      ]
+    },
+    {
+      "id": "grammar-10-569d0561",
+      "lessonId": "hanyu2-bai-10",
+      "lessonNumber": 10,
+      "title": "3\\. Cách biểu đạt số thứ tự",
+      "contentMd": "* Cấu trúc: 第 \\+ Số\n* Ví dụ:\n* 第一次 (lần thứ nhất)\n* 第二次 (lần thứ hai)\n* 第一课 (bài thứ nhất)\n* 第一天 (ngày đầu tiên)\n\nTừ vựng: 过 （Trợ từ），住院，中医，苦，中成药，甜，糖，摸，脉，按摩，针灸，方法，治，针，扎针，细，曾经，第，中餐，烤鸭，鸭，鸡，白薯，糖葫芦，什么的。亲耳，钢琴，家，演奏，极了，小提琴，协奏曲，曲，好听，还，嘛，谈恋爱，恋爱，说谎，谎，分手，大声\nTên riêng: 哈尔滨，海南岛，泰山，西安，敦煌，颐和园，故宫，长城，《黄河》，《梁祝》\n---",
+      "structures": [
+        "第 \\+ Số"
+      ],
+      "examplesRaw": [
+        "第一次 (lần thứ nhất)",
+        "第二次 (lần thứ hai)",
+        "第一课 (bài thứ nhất)",
+        "第一天 (ngày đầu tiên)",
+        "Từ vựng: 过 （Trợ từ），住院，中医，苦，中成药，甜，糖，摸，脉，按摩，针灸，方法，治，针，扎针，细，曾经，第，中餐，烤鸭，鸭，鸡，白薯，糖葫芦，什么的。亲耳，钢琴，家，演奏，极了，小提琴，协奏曲，曲，好听，还，嘛，谈恋爱，恋爱，说谎，谎，分手，大声",
+        "Tên riêng: 哈尔滨，海南岛，泰山，西安，敦煌，颐和园，故宫，长城，《黄河》，《梁祝》"
+      ]
+    },
+    {
+      "id": "grammar-11-820f0dd7",
+      "lessonId": "hanyu2-bai-11",
+      "lessonNumber": 11,
+      "title": "1\\. Cấu trúc nhấn mạnh \"是……的\"",
+      "contentMd": "* Công dụng: Nhấn mạnh thời gian, địa điểm, cách thức, đối tượng của một hành động đã xảy ra trong quá khứ.\n* Cấu trúc: 是 \\+ thành phần cần nhấn mạnh \\+ 的\n* Ví dụ:\n* Nhấn mạnh cách thức: 我是跟旅游团一起来的。(Tôi đi cùng đoàn du lịch đến.)\n* Nhấn mạnh địa điểm: 你的汉语是在哪儿学的？(Tiếng Hán của bạn học ở đâu?)\n* Nhấn mạnh thời gian: 他是昨天来的。(Anh ấy đến hôm qua.)\n* Nhấn mạnh đối tượng: 这本书是我买的。(Quyển sách này là tôi mua.)\n* Lưu ý:\n* Câu phủ định dùng \"不是...的\"\n* Động từ trong cấu trúc này không thể có \"了\" ở cuối.",
+      "structures": [
+        "是 \\+ thành phần cần nhấn mạnh \\+ 的"
+      ],
+      "examplesRaw": [
+        "Nhấn mạnh cách thức: 我是跟旅游团一起来的。(Tôi đi cùng đoàn du lịch đến.)",
+        "Nhấn mạnh địa điểm: 你的汉语是在哪儿学的？(Tiếng Hán của bạn học ở đâu?)",
+        "Nhấn mạnh thời gian: 他是昨天来的。(Anh ấy đến hôm qua.)",
+        "Nhấn mạnh đối tượng: 这本书是我买的。(Quyển sách này là tôi mua.)",
+        "Câu phủ định dùng \"不是...的\"",
+        "Động từ trong cấu trúc này không thể có \"了\" ở cuối."
+      ]
+    },
+    {
+      "id": "grammar-11-4b3ced34",
+      "lessonId": "hanyu2-bai-11",
+      "lessonNumber": 11,
+      "title": "2\\. Cấu trúc \"一……就……\" (Hễ... là... / Vừa... đã...)",
+      "contentMd": "* Công dụng: Biểu thị hai hành động xảy ra liên tiếp, hành động thứ nhất vừa xảy ra thì hành động thứ hai ngay lập tức xảy ra.\n* Cấu trúc: 一 \\+ Động từ 1 \\+ 就 \\+ Động từ 2\n* Ví dụ:\n* 一下课我就回家。(Vừa tan học là tôi về nhà ngay.)\n* 他一有空就看电视。(Hễ rảnh là anh ấy xem TV.)\n* 一看就懂。(Xem một cái là hiểu ngay.)",
+      "structures": [
+        "一 \\+ Động từ 1 \\+ 就 \\+ Động từ 2"
+      ],
+      "examplesRaw": [
+        "一下课我就回家。(Vừa tan học là tôi về nhà ngay.)",
+        "他一有空就看电视。(Hễ rảnh là anh ấy xem TV.)",
+        "一看就懂。(Xem một cái là hiểu ngay.)"
+      ]
+    },
+    {
+      "id": "grammar-11-f53635a1",
+      "lessonId": "hanyu2-bai-11",
+      "lessonNumber": 11,
+      "title": "3\\. Cách biểu đạt trình độ: Tính từ lặp lại",
+      "contentMd": "* Công dụng: Lặp lại tính từ để tăng tính hình tượng, miêu tả sinh động hoặc giảm nhẹ mức độ.\n* Cấu trúc: AA的 (tính từ đơn), AABB (tính từ kép)\n* Ví dụ:\n* 好好儿的 (rất tốt, ổn cả)\n* 慢慢儿走 (đi chầm chậm)\n* 高高兴兴 (vui vẻ)\n* 干干净净 (sạch sẽ)\n* Lưu ý: Tính từ lặp lại thường không dùng với 很, 非常.\n\nTừ vựng: 前天，后天，导游，研究，研究生，打工，利用，假期，暑假，旅行社，组织，老板，需要，经常，常常，平常，平时，一般，平实，实，收集，安排，排，帮助，帮，互相，高铁，铁，金，银，风光，风景，商量，自由，自己，活动，生活，马马虎虎，老外，外，内，鼻子，头发，眼睛，声调，声，希望，失望，满意，惊喜，指，兼，当，与\n\n---",
+      "structures": [
+        "AA的 (tính từ đơn), AABB (tính từ kép)"
+      ],
+      "examplesRaw": [
+        "好好儿的 (rất tốt, ổn cả)",
+        "慢慢儿走 (đi chầm chậm)",
+        "高高兴兴 (vui vẻ)",
+        "干干净净 (sạch sẽ)",
+        "Lưu ý: Tính từ lặp lại thường không dùng với 很, 非常.",
+        "Từ vựng: 前天，后天，导游，研究，研究生，打工，利用，假期，暑假，旅行社，组织，老板，需要，经常，常常，平常，平时，一般，平实，实，收集，安排，排，帮助，帮，互相，高铁，铁，金，银，风光，风景，商量，自由，自己，活动，生活，马马虎虎，老外，外，内，鼻子，头发，眼睛，声调，声，希望，失望，满意，惊喜，指，兼，当，与"
+      ]
+    },
+    {
+      "id": "grammar-12-6e7457c9",
+      "lessonId": "hanyu2-bai-12",
+      "lessonNumber": 12,
+      "title": "1\\. Câu chủ \\- vị làm vị ngữ (Câu chủ vị vị ngữ \\- 2\\)",
+      "contentMd": "* Công dụng: Trong câu có một cụm chủ \\- vị làm vị ngữ để miêu tả hoặc giải thích cho chủ ngữ lớn.\n* Cấu trúc: Chủ ngữ 1 \\+ \\[Chủ ngữ 2 \\+ Vị ngữ\\]\n* Ví dụ:\n* 我的护照你找到了没有？(Hộ chiếu của tôi bạn tìm thấy chưa? \\- Cụm \"bạn tìm thấy chưa\" làm vị ngữ cho \"hộ chiếu\")\n* 他身体很好。(Anh ấy sức khỏe rất tốt.)\n* 我今天头疼。(Hôm nay tôi đau đầu.)\n* 我是球迷，我看球迷一个个都有点儿不正常。(Tôi là fan bóng đá, tôi thấy các fan đều hơi bất thường.)",
+      "structures": [
+        "Chủ ngữ 1 \\+ \\[Chủ ngữ 2 \\+ Vị ngữ\\]"
+      ],
+      "examplesRaw": [
+        "我的护照你找到了没有？(Hộ chiếu của tôi bạn tìm thấy chưa? \\- Cụm \"bạn tìm thấy chưa\" làm vị ngữ cho \"hộ chiếu\")",
+        "他身体很好。(Anh ấy sức khỏe rất tốt.)",
+        "我今天头疼。(Hôm nay tôi đau đầu.)",
+        "我是球迷，我看球迷一个个都有点儿不正常。(Tôi là fan bóng đá, tôi thấy các fan đều hơi bất thường.)"
+      ]
+    },
+    {
+      "id": "grammar-12-f4564e50",
+      "lessonId": "hanyu2-bai-12",
+      "lessonNumber": 12,
+      "title": "2\\. Bổ ngữ kết quả (2): 在、着 (zháo)、好、成",
+      "contentMd": "* 在: Biểu thị động tác đạt được kết quả ở một địa điểm hoặc tồn tại.\n* 放在桌子上 (để trên bàn)\n* 住在北京 (sống ở Bắc Kinh)\n* 找到 (tìm thấy \\- nhưng \"到\" là chính, \"在\" dùng cho địa điểm)\n* 着 (zháo): Biểu thị động tác đạt được mục đích hoặc có kết quả.\n* 找着 (tìm thấy) \\= 找到\n* 睡着了 (ngủ được)\n* 买着了 (mua được)\n* 我找了半天也没找着。(Tôi tìm nửa ngày cũng không thấy.)\n* 好: Biểu thị động tác hoàn thành, làm xong, sẵn sàng.\n* 做好 (làm xong)\n* 准备好 (chuẩn bị xong)\n* 订好票 (đặt vé xong)\n* 成: Biểu thị trở thành, biến thành, hoàn thành.\n* 办成 (làm xong việc)\n* 改成 (sửa thành)\n* 翻译成中文 (dịch thành tiếng Trung)\n\nTừ vựng: 护照, 签证, 手提包儿, 大衣, 口袋, 斧子, 半天, 白天, 从前, 期间, 欧洲, 现场, 锦标赛, 程度, 平度, 水平, 精神, 程, 样子, 表情, 举动, 言行, 一举一动, 一言一行, 找, 放, 丢, 落, 贴, 砍柴, 算, 像, 邻居, 通知, 暂停, 营业, 辞职, 承认, 怀疑, 佩服, 明白, 发狂, 生病, 愿 (muốn), 愿意 (bằng lòng), 及 (đạt tới, kịp), 成 (hoàn thành, trở nên), 准 (cho phép, chuẩn), 丢三落四, 正常, 棒, 狂, 明白, 精神, 最后 (cuối cùng), 最好 (tốt nhất), 原来 (hóa ra, vốn), 从前 (ngày trước), 好好儿 (tốt hẳn), 慢慢儿 (chậm thôi), 半天 (cả buổi, mãi mới), 从前, 最后, 原来, 好好儿, 慢慢儿, 可 (thật là, khá), 亲眼 (tận mắt), 亲耳 (tận tai), 亲手 (tự tay), 准 (chắc chắn, ắt hẳn – có thể trùng với động từ “准” tuỳ ngữ cảnh), 为了 (để, vì), 及 (và, kịp),\n\n---",
+      "structures": [],
+      "examplesRaw": [
+        "在: Biểu thị động tác đạt được kết quả ở một địa điểm hoặc tồn tại.",
+        "放在桌子上 (để trên bàn)",
+        "住在北京 (sống ở Bắc Kinh)",
+        "找到 (tìm thấy \\- nhưng \"到\" là chính, \"在\" dùng cho địa điểm)",
+        "着 (zháo): Biểu thị động tác đạt được mục đích hoặc có kết quả.",
+        "找着 (tìm thấy) \\= 找到",
+        "睡着了 (ngủ được)",
+        "买着了 (mua được)",
+        "我找了半天也没找着。(Tôi tìm nửa ngày cũng không thấy.)",
+        "好: Biểu thị động tác hoàn thành, làm xong, sẵn sàng.",
+        "做好 (làm xong)",
+        "准备好 (chuẩn bị xong)",
+        "订好票 (đặt vé xong)",
+        "成: Biểu thị trở thành, biến thành, hoàn thành.",
+        "办成 (làm xong việc)",
+        "改成 (sửa thành)",
+        "翻译成中文 (dịch thành tiếng Trung)",
+        "Từ vựng: 护照, 签证, 手提包儿, 大衣, 口袋, 斧子, 半天, 白天, 从前, 期间, 欧洲, 现场, 锦标赛, 程度, 平度, 水平, 精神, 程, 样子, 表情, 举动, 言行, 一举一动, 一言一行, 找, 放, 丢, 落, 贴, 砍柴, 算, 像, 邻居, 通知, 暂停, 营业, 辞职, 承认, 怀疑, 佩服, 明白, 发狂, 生病, 愿 (muốn), 愿意 (bằng lòng), 及 (đạt tới, kịp), 成 (hoàn thành, trở nên), 准 (cho phép, chuẩn), 丢三落四, 正常, 棒, 狂, 明白, 精神, 最后 (cuối cùng), 最好 (tốt nhất), 原来 (hóa ra, vốn), 从前 (ngày trước), 好好儿 (tốt hẳn), 慢慢儿 (chậm thôi), 半天 (cả buổi, mãi mới), 从前, 最后, 原来, 好好儿, 慢慢儿, 可 (thật là, khá), 亲眼 (tận mắt), 亲耳 (tận tai), 亲手 (tự tay), 准 (chắc chắn, ắt hẳn – có thể trùng với động từ “准” tuỳ ngữ cảnh), 为了 (để, vì), 及 (và, kịp),"
+      ]
+    },
+    {
+      "id": "grammar-13-9d16be0d",
+      "lessonId": "hanyu2-bai-13",
+      "lessonNumber": 13,
+      "title": "1\\. Câu bị động (ý nghĩa bị động)",
+      "contentMd": "* Khái niệm: Trong tiếng Trung, câu bị động có thể được biểu đạt bằng hai cách: dùng giới từ bị động (被/叫/让) hoặc dùng câu chủ động nhưng mang ý nghĩa bị động (thường là câu miêu tả kết quả không mong muốn).\n* Cấu trúc câu bị động không dùng dấu hiệu: Chủ ngữ (người/vật chịu tác động) \\+ Động từ \\+ Bổ ngữ kết quả\n* Ví dụ:\n* 我的眼镜儿摔坏了。(Kính mắt của tôi bị rơi vỡ rồi.)\n* 要洗的照片选好了吗？(Ảnh cần rửa đã chọn xong chưa?)\n* 饭吃完了。(Cơm ăn hết rồi.)\n* 作业做完了。(Bài tập làm xong rồi.)\n* Lưu ý: Loại câu này thường dùng khi người nói không muốn hoặc không cần nhắc đến chủ thể gây ra hành động.",
+      "structures": [],
+      "examplesRaw": [
+        "Khái niệm: Trong tiếng Trung, câu bị động có thể được biểu đạt bằng hai cách: dùng giới từ bị động (被/叫/让) hoặc dùng câu chủ động nhưng mang ý nghĩa bị động (thường là câu miêu tả kết quả không mong muốn).",
+        "我的眼镜儿摔坏了。(Kính mắt của tôi bị rơi vỡ rồi.)",
+        "要洗的照片选好了吗？(Ảnh cần rửa đã chọn xong chưa?)",
+        "饭吃完了。(Cơm ăn hết rồi.)",
+        "作业做完了。(Bài tập làm xong rồi.)"
+      ]
+    },
+    {
+      "id": "grammar-13-c6ac7f53",
+      "lessonId": "hanyu2-bai-13",
+      "lessonNumber": 13,
+      "title": "2\\. Lượng từ lặp lại (量词重叠)",
+      "contentMd": "* Công dụng: Lặp lại lượng từ để biểu thị ý nghĩa \"mỗi\", \"từng\", \"hàng loạt\".\n* Cấu trúc: Lượng từ \\+ Lượng từ\n* Ví dụ:\n* 个个 (mỗi người, từng người): 他们个个都很努力。(Bọn họ ai cũng rất nỗ lực.)\n* 件件 (mỗi cái, từng cái): 这些衣服件件都漂亮。(Những cái áo này cái nào cũng đẹp.)\n* 天天 (ngày nào cũng): 我天天锻炼。(Ngày nào tôi cũng tập thể dục.)\n* 年年 (năm nào cũng): 年年都回家过年。(Năm nào cũng về nhà ăn Tết.)\n* Lưu ý: Khi lượng từ lặp lại làm chủ ngữ, thường mang ý nghĩa \"không có ngoại lệ\".",
+      "structures": [
+        "Lượng từ \\+ Lượng từ"
+      ],
+      "examplesRaw": [
+        "个个 (mỗi người, từng người): 他们个个都很努力。(Bọn họ ai cũng rất nỗ lực.)",
+        "件件 (mỗi cái, từng cái): 这些衣服件件都漂亮。(Những cái áo này cái nào cũng đẹp.)",
+        "天天 (ngày nào cũng): 我天天锻炼。(Ngày nào tôi cũng tập thể dục.)",
+        "年年 (năm nào cũng): 年年都回家过年。(Năm nào cũng về nhà ăn Tết.)"
+      ]
+    },
+    {
+      "id": "grammar-13-7d68bb8a",
+      "lessonId": "hanyu2-bai-13",
+      "lessonNumber": 13,
+      "title": "3\\. Cấu trúc \"一年比一年\" (Năm này qua năm khác)",
+      "contentMd": "* Công dụng: Diễn tả sự thay đổi tăng dần theo thời gian.\n* Cấu trúc: Thời gian \\+ 比 \\+ Thời gian \\+ Tính từ\n* Ví dụ:\n* 一年比一年好。(Năm này tốt hơn năm trước.)\n* 一天比一天冷。(Ngày càng lạnh hơn.)\n* 一次比一次难。(Lần này khó hơn lần trước.)\n* Lưu ý: Đây là biến thể của cấu trúc so sánh với 比, dùng để nhấn mạnh sự thay đổi liên tục.\n\nTừ vựng: 照，选，洗，闭，虚，删，油画，放大，寸，碰，起（量），事故，整整，清楚，眼镜儿，别提了，倒霉，掉，地上，保证，遵守，规则，造成，交通，拥挤，主要，原因，之一，引起，赶快，发展，奇怪，首都，王府井，怕，低，高, 发展\n\n---",
+      "structures": [
+        "Thời gian \\+ 比 \\+ Thời gian \\+ Tính từ"
+      ],
+      "examplesRaw": [
+        "一年比一年好。(Năm này tốt hơn năm trước.)",
+        "一天比一天冷。(Ngày càng lạnh hơn.)",
+        "一次比一次难。(Lần này khó hơn lần trước.)",
+        "Lưu ý: Đây là biến thể của cấu trúc so sánh với 比, dùng để nhấn mạnh sự thay đổi liên tục.",
+        "Từ vựng: 照，选，洗，闭，虚，删，油画，放大，寸，碰，起（量），事故，整整，清楚，眼镜儿，别提了，倒霉，掉，地上，保证，遵守，规则，造成，交通，拥挤，主要，原因，之一，引起，赶快，发展，奇怪，首都，王府井，怕，低，高, 发展"
+      ]
+    },
+    {
+      "id": "grammar-14-e65f59d5",
+      "lessonId": "hanyu2-bai-14",
+      "lessonNumber": 14,
+      "title": "1\\. Bổ ngữ xu hướng kép (复合趋向补语)",
+      "contentMd": "* Khái niệm: Là sự kết hợp giữa động từ xu hướng đơn giản (上/下/进/出/回/过/起) với 来/去, tạo thành tổ hợp chỉ phương hướng cụ thể kết hợp với điểm nhìn của người nói.\n* Các bổ ngữ xu hướng kép thường gặp:\n\n|  | 上 (lên) | 下 (xuống) | 进 (vào) | 出 (ra) | 回 (về) | 过 (qua) | 起 (lên) |\n| :---- | :---- | :---- | :---- | :---- | :---- | :---- | :---- |\n| \\+ 来 (lại) | 上来 | 下来 | 进来 | 出来 | 回来 | 过来 | 起来 |\n| \\+ 去 (đi) | 上去 | 下去 | 进去 | 出去 | 回去 | 过去 |  |\n\n*\nCấu trúc: Động từ chính \\+ Bổ ngữ xu hướng kép\n* Ví dụ:\n* 钥匙忘拔下来了。(Chìa khóa quên rút ra rồi.)\n* 他跑进来了。(Anh ấy chạy vào rồi.)\n* 小鸟飞出去了。(Con chim bay ra ngoài.)\n* 把书拿出来。(Lấy sách ra.)\n* Vị trí tân ngữ trong câu có bổ ngữ xu hướng kép:\n* Tân ngữ chỉ địa điểm: Luôn đặt giữa động từ xu hướng đơn và 来/去.\n* 他跑进教室来了。(Anh ấy chạy vào lớp học \\- hướng về phía tôi.)\n* 他走回家去了。(Anh ấy đi bộ về nhà \\- xa phía tôi.)\n* Tân ngữ chỉ sự vật: Có hai cách:\n* Cách 1: Động từ \\+ bổ ngữ kép \\+ tân ngữ: 他拿出来一本书。(Anh ấy lấy ra một quyển sách.)\n* Cách 2: Động từ \\+ động từ xu hướng đơn \\+ tân ngữ \\+ 来/去: 他拿出一本书来。(Anh ấy lấy ra một quyển sách.)\n\nTừ vựng: 图书城，图书，另，另外，各，各种各样，兴奋，香，架，书架，抽，挑，寒假，暑假，品，礼品，于是，售货员，商场，商品，脸谱，饰物，丝织品，钥匙，钥匙链，玩具，纸箱，纸，提，累，困，步，散步，跑，跑步，却，但是，忽然，忽然觉得，突然，只好，提，插，拔，串，泰山，登（=爬），一览众山小，众，日出，太阳，月亮，一下子，跳，美，庙，寺，情况，热情，热闹，肯定，房管，餐，菜，电梯，楼梯，哭笑不得，把（量），除了。。。（以外）\n\n---",
+      "structures": [
+        "Động từ chính \\+ Bổ ngữ xu hướng kép"
+      ],
+      "examplesRaw": [
+        "Khái niệm: Là sự kết hợp giữa động từ xu hướng đơn giản (上/下/进/出/回/过/起) với 来/去, tạo thành tổ hợp chỉ phương hướng cụ thể kết hợp với điểm nhìn của người nói.",
+        "钥匙忘拔下来了。(Chìa khóa quên rút ra rồi.)",
+        "他跑进来了。(Anh ấy chạy vào rồi.)",
+        "小鸟飞出去了。(Con chim bay ra ngoài.)",
+        "把书拿出来。(Lấy sách ra.)",
+        "Tân ngữ chỉ địa điểm: Luôn đặt giữa động từ xu hướng đơn và 来/去.",
+        "他跑进教室来了。(Anh ấy chạy vào lớp học \\- hướng về phía tôi.)",
+        "他走回家去了。(Anh ấy đi bộ về nhà \\- xa phía tôi.)",
+        "Cách 1: Động từ \\+ bổ ngữ kép \\+ tân ngữ: 他拿出来一本书。(Anh ấy lấy ra một quyển sách.)",
+        "Cách 2: Động từ \\+ động từ xu hướng đơn \\+ tân ngữ \\+ 来/去: 他拿出一本书来。(Anh ấy lấy ra một quyển sách.)",
+        "Từ vựng: 图书城，图书，另，另外，各，各种各样，兴奋，香，架，书架，抽，挑，寒假，暑假，品，礼品，于是，售货员，商场，商品，脸谱，饰物，丝织品，钥匙，钥匙链，玩具，纸箱，纸，提，累，困，步，散步，跑，跑步，却，但是，忽然，忽然觉得，突然，只好，提，插，拔，串，泰山，登（=爬），一览众山小，众，日出，太阳，月亮，一下子，跳，美，庙，寺，情况，热情，热闹，肯定，房管，餐，菜，电梯，楼梯，哭笑不得，把（量），除了。。。（以外）"
+      ]
+    },
+    {
+      "id": "grammar-15-ec14f2cd",
+      "lessonId": "hanyu2-bai-15",
+      "lessonNumber": 15,
+      "title": "1\\. Động từ \\+ 着 (chỉ trạng thái đang tiếp diễn)",
+      "contentMd": "* Công dụng: \"着\" đặt sau động từ biểu thị:\n* Trạng thái đang tiếp diễn của một hành động.\n* Trạng thái duy trì sau một hành động.\n* Cấu trúc: Động từ \\+ 着\n* Ví dụ:\n* 会议厅的门开着呢。(Cửa phòng họp đang mở.)\n* 墙上贴着红双喜字。(Trên tường dán chữ \"Hỷ\" màu đỏ.)\n* 他穿着一件红衣服。(Anh ấy đang mặc một cái áo màu đỏ.)\n* 他们说着话。(Họ đang nói chuyện.)\n* Cấu trúc \"Động từ 1 \\+ 着 \\+ Động từ 2\": Biểu thị hai hành động xảy ra đồng thời, hành động 1 là phương thức của hành động 2\\.\n* 坐着看 (ngồi xem)\n* 站着说 (đứng nói)\n* 笑着说 (cười nói)\n* Phủ định: 没(有) \\+ Động từ \\+ 着 (ít dùng, thường dùng cấu trúc khác)\n\nTừ vựng: 女士, 服务员, 小伙子（小伙儿）, 主持人, 新娘, 新郎, 客人, 主持， 班长, 会议厅, 婚礼, 讲台, 椅子, 墙, 灯笼, 双, 喜, 西服, 裙子, 领带, 摄像机, 麦克风, 铃, 热评, 气氛, 样子（样（子））, 个子, 义，穿, 系, 戴, 挂, 摆, 扛, 主持, 讲话, 讲, 讨论, 赶, 干, 倒, 停, 保重，长, 帅, 硕, 激动，大概， 副, 双 (cũng là danh từ nếu dùng độc lập)， 着\n\n---",
+      "structures": [
+        "Động từ \\+ 着"
+      ],
+      "examplesRaw": [
+        "Công dụng: \"着\" đặt sau động từ biểu thị:",
+        "会议厅的门开着呢。(Cửa phòng họp đang mở.)",
+        "墙上贴着红双喜字。(Trên tường dán chữ \"Hỷ\" màu đỏ.)",
+        "他穿着一件红衣服。(Anh ấy đang mặc một cái áo màu đỏ.)",
+        "他们说着话。(Họ đang nói chuyện.)",
+        "Cấu trúc \"Động từ 1 \\+ 着 \\+ Động từ 2\": Biểu thị hai hành động xảy ra đồng thời, hành động 1 là phương thức của hành động 2\\.",
+        "坐着看 (ngồi xem)",
+        "站着说 (đứng nói)",
+        "笑着说 (cười nói)",
+        "Phủ định: 没(有) \\+ Động từ \\+ 着 (ít dùng, thường dùng cấu trúc khác)",
+        "Từ vựng: 女士, 服务员, 小伙子（小伙儿）, 主持人, 新娘, 新郎, 客人, 主持， 班长, 会议厅, 婚礼, 讲台, 椅子, 墙, 灯笼, 双, 喜, 西服, 裙子, 领带, 摄像机, 麦克风, 铃, 热评, 气氛, 样子（样（子））, 个子, 义，穿, 系, 戴, 挂, 摆, 扛, 主持, 讲话, 讲, 讨论, 赶, 干, 倒, 停, 保重，长, 帅, 硕, 激动，大概， 副, 双 (cũng là danh từ nếu dùng độc lập)， 着"
+      ]
+    },
+    {
+      "id": "grammar-16-06a009fa",
+      "lessonId": "hanyu2-bai-16",
+      "lessonNumber": 16,
+      "title": "1\\. Câu tồn hiện (存现句)",
+      "contentMd": "* Khái niệm: Câu tồn hiện dùng để biểu thị sự tồn tại, xuất hiện hoặc biến mất của một người/vật ở một nơi nào đó.\n* Cấu trúc: Địa điểm \\+ Động từ \\+ (了/着) \\+ Tân ngữ (người/vật)\n* Ví dụ:\n* Biểu thị tồn tại:\n* 墙上挂着一幅画。(Trên tường treo một bức tranh.)\n* 桌子上放着一本书。(Trên bàn để một quyển sách.)\n* Biểu thị xuất hiện:\n* 前边开过来一辆空车。(Phía trước có một chiếc xe trống đang chạy tới.)\n* 门口站着一个人。(Trước cửa có một người đang đứng.)\n* Biểu thị biến mất:\n* 昨天走了一个学生。(Hôm qua mất đi một học sinh \\- chuyển đi.)\n* 家里来了一个客人。(Nhà có khách đến.)\n* Đặc điểm:\n* Chủ ngữ là địa điểm, không phải người thực hiện hành động.\n* Động từ thường đi kèm với 着, 了, hoặc bổ ngữ xu hướng.\n* Tân ngữ thường không xác định (có lượng từ đứng trước).",
+      "structures": [
+        "Địa điểm \\+ Động từ \\+ (了/着) \\+ Tân ngữ (người/vật)"
+      ],
+      "examplesRaw": [
+        "墙上挂着一幅画。(Trên tường treo một bức tranh.)",
+        "桌子上放着一本书。(Trên bàn để một quyển sách.)",
+        "前边开过来一辆空车。(Phía trước có một chiếc xe trống đang chạy tới.)",
+        "门口站着一个人。(Trước cửa có một người đang đứng.)",
+        "昨天走了一个学生。(Hôm qua mất đi một học sinh \\- chuyển đi.)",
+        "家里来了一个客人。(Nhà có khách đến.)",
+        "Động từ thường đi kèm với 着, 了, hoặc bổ ngữ xu hướng."
+      ]
+    },
+    {
+      "id": "grammar-16-5a419151",
+      "lessonId": "hanyu2-bai-16",
+      "lessonNumber": 16,
+      "title": "2\\. Cấu trúc biểu đạt sự biến hóa: \"越来越……\" và \"越……越……\"",
+      "contentMd": "* 越来越 \\+ Tính từ/Động từ tâm lý: Ngày càng...\n* 年轻人打扮得越来越漂亮了。(Người trẻ ăn mặc ngày càng đẹp.)\n* 天气越来越冷了。(Thời tiết ngày càng lạnh.)\n* 汉语越来越难。(Tiếng Hán ngày càng khó.)\n* 越 \\+ A \\+ 越 \\+ B: Càng A càng B\n* 越多越好。(Càng nhiều càng tốt.)\n* 越跑越快。(Càng chạy càng nhanh.)\n* 越看越喜欢。(Càng xem càng thích.)\n* 天气越冷，我越不想起床。(Trời càng lạnh, tôi càng không muốn dậy.)\n\nTừ vựng: 越来越，打的，空，四合院，院子，种，棵，枣，结，尝，甜，越。。。越。。。，盖，建，住宅，小区，搬，遗憾，舍不得，离开，现代化，体会，意见，建议，高，低，提，出门，人们，丰富，装饰，礼物，欢乐，节日，开，联欢会，春节，窗户，湖，窗帘，窗台，窗，做客，书房，文学，政治，哲学，沙发，幅，爷爷，包，老鼠，端，微信。\n\n---",
+      "structures": [],
+      "examplesRaw": [
+        "越来越 \\+ Tính từ/Động từ tâm lý: Ngày càng...",
+        "年轻人打扮得越来越漂亮了。(Người trẻ ăn mặc ngày càng đẹp.)",
+        "天气越来越冷了。(Thời tiết ngày càng lạnh.)",
+        "汉语越来越难。(Tiếng Hán ngày càng khó.)",
+        "越 \\+ A \\+ 越 \\+ B: Càng A càng B",
+        "越多越好。(Càng nhiều càng tốt.)",
+        "越跑越快。(Càng chạy càng nhanh.)",
+        "越看越喜欢。(Càng xem càng thích.)",
+        "天气越冷，我越不想起床。(Trời càng lạnh, tôi càng không muốn dậy.)",
+        "Từ vựng: 越来越，打的，空，四合院，院子，种，棵，枣，结，尝，甜，越。。。越。。。，盖，建，住宅，小区，搬，遗憾，舍不得，离开，现代化，体会，意见，建议，高，低，提，出门，人们，丰富，装饰，礼物，欢乐，节日，开，联欢会，春节，窗户，湖，窗帘，窗台，窗，做客，书房，文学，政治，哲学，沙发，幅，爷爷，包，老鼠，端，微信。"
+      ]
+    },
+    {
+      "id": "grammar-17-70146a6b",
+      "lessonId": "hanyu2-bai-17",
+      "lessonNumber": 17,
+      "title": "1\\. Câu chữ \"把\" (1)",
+      "contentMd": "* Khái niệm: Câu chữ \"把\" là cấu trúc đặc biệt trong tiếng Trung, dùng để nhấn mạnh sự tác động của chủ thể lên tân ngữ, làm tân ngữ thay đổi vị trí hoặc trạng thái.\n* Cấu trúc: Chủ ngữ \\+ 把 \\+ Tân ngữ \\+ Động từ \\+ Thành phần khác (bổ ngữ, 了, v.v.)\n* Ví dụ:\n* 我们把教室布置成了会场。(Chúng tôi bố trí lớp học thành hội trường.)\n* 把对联儿贴在大门两边。(Dán câu đối hai bên cửa chính.)\n* 把“福”字倒着贴在门上。(Dán chữ \"Phúc\" ngược lên cửa.)\n* Điều kiện sử dụng:\n* Tân ngữ phải xác định: Người nói và người nghe đều biết rõ đối tượng được nhắc đến.\n* Động từ phải có tính xử lý (tác động): Động từ phải là hành động có ảnh hưởng trực tiếp đến tân ngữ.\n* Động từ không thể đứng một mình: Phải có bổ ngữ, 了, hoặc thành phần khác đi kèm để chỉ kết quả, phương hướng, trạng thái.\n* Các trường hợp thường dùng câu chữ \"把\":\n* Di chuyển đồ vật: 把书放在桌子上。(Để sách lên bàn.)\n* Thay đổi trạng thái: 把门打开。(Mở cửa ra.)\n* Xử lý, giải quyết: 把作业做完。(Làm xong bài tập.)\n\nTừ vựng: 品尝，特色，班长，把，亲手，最好，布置，会场，管理员，管理，告诉，答应，打扫，窗户，擦，桌子，圆圈儿，黑板，音响，彩灯，彩带，份，惊喜，幅，水仙，开，副，字，对联儿，新春，吉祥，行业，兴旺，哦，可不是，仔细，幸福，倒，声音，椅子，沙发，冰箱，洗衣机，空调，调，伸，小心，悄悄，帽子，摘，吹气，一下子，仍，\n\n---",
+      "structures": [
+        "Chủ ngữ \\+ 把 \\+ Tân ngữ \\+ Động từ \\+ Thành phần khác (bổ ngữ, 了, v.v.)"
+      ],
+      "examplesRaw": [
+        "Khái niệm: Câu chữ \"把\" là cấu trúc đặc biệt trong tiếng Trung, dùng để nhấn mạnh sự tác động của chủ thể lên tân ngữ, làm tân ngữ thay đổi vị trí hoặc trạng thái.",
+        "我们把教室布置成了会场。(Chúng tôi bố trí lớp học thành hội trường.)",
+        "把对联儿贴在大门两边。(Dán câu đối hai bên cửa chính.)",
+        "把“福”字倒着贴在门上。(Dán chữ \"Phúc\" ngược lên cửa.)",
+        "Động từ không thể đứng một mình: Phải có bổ ngữ, 了, hoặc thành phần khác đi kèm để chỉ kết quả, phương hướng, trạng thái.",
+        "Các trường hợp thường dùng câu chữ \"把\":",
+        "Di chuyển đồ vật: 把书放在桌子上。(Để sách lên bàn.)",
+        "Thay đổi trạng thái: 把门打开。(Mở cửa ra.)",
+        "Xử lý, giải quyết: 把作业做完。(Làm xong bài tập.)",
+        "Từ vựng: 品尝，特色，班长，把，亲手，最好，布置，会场，管理员，管理，告诉，答应，打扫，窗户，擦，桌子，圆圈儿，黑板，音响，彩灯，彩带，份，惊喜，幅，水仙，开，副，字，对联儿，新春，吉祥，行业，兴旺，哦，可不是，仔细，幸福，倒，声音，椅子，沙发，冰箱，洗衣机，空调，调，伸，小心，悄悄，帽子，摘，吹气，一下子，仍，"
+      ]
+    },
+    {
+      "id": "grammar-18-7c25c741",
+      "lessonId": "hanyu2-bai-18",
+      "lessonNumber": 18,
+      "title": "1\\. Câu chữ \"把\" (2) \\- Các dạng mở rộng",
+      "contentMd": "* Câu chữ \"把\" với động từ \\+ 给:\n* Cấu trúc: 把 \\+ Tân ngữ \\+ Động từ \\+ 给 \\+ Người nhận\n* Ví dụ: 请把护照和机票给我。(Xin hãy đưa hộ chiếu và vé máy bay cho tôi.)\n* 我把书借给他了。(Tôi cho anh ấy mượn sách rồi.)\n* Câu chữ \"把\" với động từ \\+ 在/到:\n* Cấu trúc: 把 \\+ Tân ngữ \\+ Động từ \\+ 在/到 \\+ Địa điểm\n* Ví dụ: 把手机放在桌子上。(Để điện thoại lên bàn.)\n* 把行李搬到房间去。(Chuyển hành lý lên phòng.)\n* Câu chữ \"把\" với động từ \\+ 成:\n* Cấu trúc: 把 \\+ Tân ngữ \\+ Động từ \\+ 成 \\+ Kết quả\n* Ví dụ: 把中文翻译成英文。(Dịch tiếng Trung thành tiếng Anh.)\n* 把房间布置成新房。(Trang trí phòng thành tân phòng.)\n* Câu chữ \"把\" với động từ \\+ 着:\n* Cấu trúc: 把 \\+ Tân ngữ \\+ Động từ \\+ 着\n* Ví dụ: 你把灯开着。(Bạn hãy bật đèn lên \\- và giữ nguyên trạng thái.)\n* 把门关着。(Đóng cửa lại \\- và giữ nguyên.)\n\nTừ vựng: 办理，登，登机，手，腿，手续，行李，托运，护照，签证，身份证，机票，票，登机牌儿，卡，牌儿，装，掏，硬币，纸币，暗，亮，开关，扶手，空姐，空调，起飞，安全带，安全，带，插，插头，卡子，扳，凉，凉快，冷，杯子，茶杯，洒，摊儿，价钱，称，零钱，赛，相信，感激，轻松。\n\n---",
+      "structures": [
+        "把 \\+ Tân ngữ \\+ Động từ \\+ 给 \\+ Người nhận",
+        "把 \\+ Tân ngữ \\+ Động từ \\+ 在/到 \\+ Địa điểm",
+        "把 \\+ Tân ngữ \\+ Động từ \\+ 成 \\+ Kết quả",
+        "把 \\+ Tân ngữ \\+ Động từ \\+ 着"
+      ],
+      "examplesRaw": [
+        "Câu chữ \"把\" với động từ \\+ 给:",
+        "我把书借给他了。(Tôi cho anh ấy mượn sách rồi.)",
+        "Câu chữ \"把\" với động từ \\+ 在/到:",
+        "把行李搬到房间去。(Chuyển hành lý lên phòng.)",
+        "Câu chữ \"把\" với động từ \\+ 成:",
+        "把房间布置成新房。(Trang trí phòng thành tân phòng.)",
+        "Câu chữ \"把\" với động từ \\+ 着:",
+        "把门关着。(Đóng cửa lại \\- và giữ nguyên.)",
+        "Từ vựng: 办理，登，登机，手，腿，手续，行李，托运，护照，签证，身份证，机票，票，登机牌儿，卡，牌儿，装，掏，硬币，纸币，暗，亮，开关，扶手，空姐，空调，起飞，安全带，安全，带，插，插头，卡子，扳，凉，凉快，冷，杯子，茶杯，洒，摊儿，价钱，称，零钱，赛，相信，感激，轻松。"
+      ]
+    },
+    {
+      "id": "grammar-19-aa2df4d2",
+      "lessonId": "hanyu2-bai-19",
+      "lessonNumber": 19,
+      "title": "1\\. Câu bị động với \"被\" (被字句)",
+      "contentMd": "* Khái niệm: Câu bị động với \"被\" dùng để diễn tả hành động mà chủ ngữ là đối tượng chịu tác động, thường là hành động không mong muốn.\n* Cấu trúc đầy đủ: Chủ ngữ (người/vật chịu tác động) \\+ 被 \\+ (Chủ thể hành động) \\+ Động từ \\+ Thành phần khác\n* Ví dụ:\n* 我的腿被自行车撞伤了。(Chân tôi bị xe đạp đâm bị thương.)\n* 钱包儿让小偷偷走了。(Ví bị trộm lấy mất.)\n* 他被老师批评了。(Anh ấy bị thầy giáo phê bình.)\n* Các dạng rút gọn:\n* Bỏ chủ thể: Chủ ngữ \\+ 被 \\+ Động từ \\+ Thành phần khác\n* 他被打了。(Anh ấy bị đánh.)\n* 钱包被偷了。(Ví bị trộm mất.)\n* Các từ thay thế \"被\" trong khẩu ngữ:\n* 叫 (jiào): 我叫他骂了一顿。(Tôi bị nó mắng một trận.)\n* 让 (ràng): 窗户让风吹开了。(Cửa sổ bị gió thổi bật ra.)\n* Đặc điểm:\n* Động từ trong câu bị động thường không dùng động từ đơn, phải có bổ ngữ hoặc thành phần khác.\n* Câu bị động thường dùng cho sự việc không mong muốn, nhưng trong tiếng Trung hiện đại cũng có thể dùng cho sự việc trung tính hoặc tích cực.",
+      "structures": [],
+      "examplesRaw": [
+        "Khái niệm: Câu bị động với \"被\" dùng để diễn tả hành động mà chủ ngữ là đối tượng chịu tác động, thường là hành động không mong muốn.",
+        "Cấu trúc đầy đủ: Chủ ngữ (người/vật chịu tác động) \\+ 被 \\+ (Chủ thể hành động) \\+ Động từ \\+ Thành phần khác",
+        "我的腿被自行车撞伤了。(Chân tôi bị xe đạp đâm bị thương.)",
+        "钱包儿让小偷偷走了。(Ví bị trộm lấy mất.)",
+        "他被老师批评了。(Anh ấy bị thầy giáo phê bình.)",
+        "Bỏ chủ thể: Chủ ngữ \\+ 被 \\+ Động từ \\+ Thành phần khác",
+        "他被打了。(Anh ấy bị đánh.)",
+        "钱包被偷了。(Ví bị trộm mất.)",
+        "Các từ thay thế \"被\" trong khẩu ngữ:",
+        "叫 (jiào): 我叫他骂了一顿。(Tôi bị nó mắng một trận.)",
+        "让 (ràng): 窗户让风吹开了。(Cửa sổ bị gió thổi bật ra.)"
+      ]
+    },
+    {
+      "id": "grammar-19-0308a53e",
+      "lessonId": "hanyu2-bai-19",
+      "lessonNumber": 19,
+      "title": "2\\. Phó từ \"又\" (lại \\- nhấn mạnh)",
+      "contentMd": "* Công dụng: Trong bài này, \"又\" được dùng để nhấn mạnh tính chất, đặc điểm hoặc biểu thị sự phản đối nhẹ nhàng trong câu hỏi tu từ.\n* Ví dụ:\n* 你说可气不可气？(Bạn nói có đáng giận không?) \\- câu hỏi tu từ\n* 你又怎么了？(Lại làm sao nữa đây?)\n* 你又迟到了！(Lại đến muộn nữa rồi\\!)\n\nTừ vựng: 被，让，叫, 腿，上街，街，撞，倒，伤，要紧，不要紧，流，血，骨头，躺，不好意思，故意，小心，唉，钱包儿，偷，小偷，遇到，淋，落，落汤鸡，似的，湿，首都，剧场，司机，拉，可气，算命，运气，傻，花，受骗，受，骗，抽，烟，戒，罚，决定，浪费，代\n\n---",
+      "structures": [],
+      "examplesRaw": [
+        "Công dụng: Trong bài này, \"又\" được dùng để nhấn mạnh tính chất, đặc điểm hoặc biểu thị sự phản đối nhẹ nhàng trong câu hỏi tu từ.",
+        "你说可气不可气？(Bạn nói có đáng giận không?) \\- câu hỏi tu từ",
+        "你又怎么了？(Lại làm sao nữa đây?)",
+        "你又迟到了！(Lại đến muộn nữa rồi\\!)",
+        "Từ vựng: 被，让，叫, 腿，上街，街，撞，倒，伤，要紧，不要紧，流，血，骨头，躺，不好意思，故意，小心，唉，钱包儿，偷，小偷，遇到，淋，落，落汤鸡，似的，湿，首都，剧场，司机，拉，可气，算命，运气，傻，花，受骗，受，骗，抽，烟，戒，罚，决定，浪费，代"
+      ]
+    },
+    {
+      "id": "grammar-20-02ac38f7",
+      "lessonId": "hanyu2-bai-20",
+      "lessonNumber": 20,
+      "title": "1\\. Bổ ngữ khả năng (1)",
+      "contentMd": "* Khái niệm: Bổ ngữ khả năng dùng để biểu thị khả năng thực hiện hoặc không thể thực hiện một hành động nào đó.\n* Cấu trúc khẳng định: Động từ \\+ 得 \\+ Bổ ngữ (kết quả/xu hướng)\n* Cấu trúc phủ định: Động từ \\+ 不 \\+ Bổ ngữ (kết quả/xu hướng)\n* Ví dụ:\n* 我看得懂，但是听不懂。(Tôi đọc hiểu nhưng nghe không hiểu.)\n* 她有事，去不了。(Cô ấy có việc, không đi được.)\n* 这个字我写不对。(Chữ này tôi viết không đúng.)\n* 你听得见吗？(Bạn nghe thấy không?)\n* Phân biệt với bổ ngữ trình độ (得 \\+ tính từ):\n* 他写得好。(Anh ấy viết đẹp \\- bổ ngữ trình độ, chỉ kết quả thực tế.)\n* 他写得好。(Anh ấy viết được \\- bổ ngữ khả năng, chỉ có thể viết đẹp.)\n* Trong khẩu ngữ, ngữ cảnh sẽ quyết định nghĩa.",
+      "structures": [],
+      "examplesRaw": [
+        "Cấu trúc khẳng định: Động từ \\+ 得 \\+ Bổ ngữ (kết quả/xu hướng)",
+        "Cấu trúc phủ định: Động từ \\+ 不 \\+ Bổ ngữ (kết quả/xu hướng)",
+        "我看得懂，但是听不懂。(Tôi đọc hiểu nhưng nghe không hiểu.)",
+        "她有事，去不了。(Cô ấy có việc, không đi được.)",
+        "这个字我写不对。(Chữ này tôi viết không đúng.)",
+        "你听得见吗？(Bạn nghe thấy không?)",
+        "Phân biệt với bổ ngữ trình độ (得 \\+ tính từ):",
+        "他写得好。(Anh ấy viết đẹp \\- bổ ngữ trình độ, chỉ kết quả thực tế.)",
+        "他写得好。(Anh ấy viết được \\- bổ ngữ khả năng, chỉ có thể viết đẹp.)"
+      ]
+    },
+    {
+      "id": "grammar-20-7ece3a73",
+      "lessonId": "hanyu2-bai-20",
+      "lessonNumber": 20,
+      "title": "2\\. Bổ ngữ khả năng với \"了\" (liǎo) \\- biểu thị khả năng hoàn thành",
+      "contentMd": "* Công dụng: 了 (liǎo) đóng vai trò bổ ngữ kết quả, biểu thị khả năng hoàn thành hoặc xử lý một hành động.\n* Cấu trúc khẳng định: Động từ \\+ 得了 (de liǎo)\n* Cấu trúc phủ định: Động từ \\+ 不了 (bù liǎo)\n* Ví dụ:\n* 这么多菜，我一个人吃不了。(Nhiều món thế này, một mình tôi ăn không hết.)\n* 明天的会你来得了吗？(Cuộc họp mai bạn đến được không?)\n* 这事儿我办不了。(Việc này tôi làm không được.)",
+      "structures": [],
+      "examplesRaw": [
+        "Công dụng: 了 (liǎo) đóng vai trò bổ ngữ kết quả, biểu thị khả năng hoàn thành hoặc xử lý một hành động.",
+        "Cấu trúc khẳng định: Động từ \\+ 得了 (de liǎo)",
+        "Cấu trúc phủ định: Động từ \\+ 不了 (bù liǎo)",
+        "这么多菜，我一个人吃不了。(Nhiều món thế này, một mình tôi ăn không hết.)",
+        "明天的会你来得了吗？(Cuộc họp mai bạn đến được không?)",
+        "这事儿我办不了。(Việc này tôi làm không được.)"
+      ]
+    },
+    {
+      "id": "grammar-20-e8e60c22",
+      "lessonId": "hanyu2-bai-20",
+      "lessonNumber": 20,
+      "title": "3\\. Bổ ngữ khả năng với \"下\" \\- biểu thị khả năng chứa đựng",
+      "contentMd": "* Công dụng: \"下\" làm bổ ngữ kết quả, biểu thị khả năng chứa đựng, chứa được trong một không gian.\n* Cấu trúc: Động từ \\+ 得/不 \\+ 下\n* Ví dụ:\n* 这个箱子放得下这么多衣服吗？(Cái vali này để được nhiều quần áo thế không?)\n* 车里坐不下五个人。(Xe ngồi không nổi 5 người.)\n* 这个房间住得下三个人。(Phòng này ở được ba người.)\n\nTừ vựng: 演出，猜，演员，武打，动作，精彩，表现，人物，社会，地位，性格，十分，有趣，服装，影响，传统，传，艺术，了解，选择，的话，约，了(liao3)，担心，排，估计，下，开演，满，节目单，单，古代，神话，天上，羡慕，人间，偷偷儿，内容，内，篇，桥，雾，无，广播，辣，酸，苦，甜，南辕北辙，附文，赶，挑，指，车夫，身强力壮，技术，简直，道理，继续\n\n---",
+      "structures": [
+        "Động từ \\+ 得/不 \\+ 下"
+      ],
+      "examplesRaw": [
+        "Công dụng: \"下\" làm bổ ngữ kết quả, biểu thị khả năng chứa đựng, chứa được trong một không gian.",
+        "这个箱子放得下这么多衣服吗？(Cái vali này để được nhiều quần áo thế không?)",
+        "车里坐不下五个人。(Xe ngồi không nổi 5 người.)",
+        "这个房间住得下三个人。(Phòng này ở được ba người.)",
+        "Từ vựng: 演出，猜，演员，武打，动作，精彩，表现，人物，社会，地位，性格，十分，有趣，服装，影响，传统，传，艺术，了解，选择，的话，约，了(liao3)，担心，排，估计，下，开演，满，节目单，单，古代，神话，天上，羡慕，人间，偷偷儿，内容，内，篇，桥，雾，无，广播，辣，酸，苦，甜，南辕北辙，附文，赶，挑，指，车夫，身强力壮，技术，简直，道理，继续"
+      ]
+    },
+    {
+      "id": "grammar-21-38b921e1",
+      "lessonId": "hanyu2-bai-21",
+      "lessonNumber": 21,
+      "title": "1\\. Bổ ngữ khả năng (2) \\- Với bổ ngữ xu hướng kép",
+      "contentMd": "* Công dụng: Kết hợp bổ ngữ khả năng với bổ ngữ xu hướng kép để biểu thị khả năng di chuyển theo một hướng cụ thể.\n* Cấu trúc: Động từ \\+ 得/不 \\+ Bổ ngữ xu hướng kép\n* Ví dụ:\n* 山这么高，你爬得上去吗？(Núi cao thế này, bạn leo lên được không?)\n* 我担心自己演不好。(Tôi lo mình diễn không tốt.)\n* 他走得进来吗？(Anh ấy đi vào được không?)\n* 东西太多，我拿不进去。(Đồ nhiều quá, tôi cầm không vào.)",
+      "structures": [
+        "Động từ \\+ 得/不 \\+ Bổ ngữ xu hướng kép"
+      ],
+      "examplesRaw": [
+        "山这么高，你爬得上去吗？(Núi cao thế này, bạn leo lên được không?)",
+        "我担心自己演不好。(Tôi lo mình diễn không tốt.)",
+        "他走得进来吗？(Anh ấy đi vào được không?)",
+        "东西太多，我拿不进去。(Đồ nhiều quá, tôi cầm không vào.)"
+      ]
+    },
+    {
+      "id": "grammar-21-b6404279",
+      "lessonId": "hanyu2-bai-21",
+      "lessonNumber": 21,
+      "title": "2\\. Phân biệt bổ ngữ khả năng và bổ ngữ trạng thái",
+      "contentMd": "|  | Bổ ngữ khả năng (可能补语) | Bổ ngữ trạng thái (状态补语) |\n| :---- | :---- | :---- |\n| Cấu trúc | V \\+ 得/不 \\+ bổ ngữ | V \\+ 得 \\+ tính từ/cụm tính từ |\n| Ý nghĩa | Khả năng thực hiện hành động | Kết quả, mức độ thực tế của hành động |\n| Ví dụ | 爬得上去 (leo lên được) | 爬得很高 (leo rất cao) |\n|  | 听不懂 (nghe không hiểu) | 听得很清楚 (nghe rất rõ) |\n|  | 吃不完 (ăn không hết) | 吃得很饱 (ăn rất no) |",
+      "structures": [],
+      "examplesRaw": []
+    },
+    {
+      "id": "grammar-21-705785f1",
+      "lessonId": "hanyu2-bai-21",
+      "lessonNumber": 21,
+      "title": "3\\. Cấu trúc \"只要……就……\" (Chỉ cần... là...)",
+      "contentMd": "* Công dụng: Biểu thị điều kiện đủ, chỉ cần có điều kiện A thì sẽ có kết quả B.\n* Cấu trúc: 只要 \\+ Điều kiện \\+ 就 \\+ Kết quả\n* Ví dụ:\n* 只要努力，就能成功。(Chỉ cần cố gắng là sẽ thành công.)\n* 只要你有空，我就来找你。(Chỉ cần bạn rảnh, tôi sẽ đến tìm bạn.)\n* 只要天气好，我们就去公园。(Chỉ cần thời tiết tốt, chúng tôi sẽ đi công viên.)\n\nTừ vựng: 缆车，喘气，动，到底，胜利，加油，出汗，汗，接着，比，危险，积极，相声，台词，背，话剧，排练，纠正，受伤，自信\t，相信，世上，无，怕，心，争取，恐怕，啦啦队，错误，外语，鞋，画蛇添足，蛇，添，壶，同一，得意，脚。\n\n---",
+      "structures": [
+        "只要 \\+ Điều kiện \\+ 就 \\+ Kết quả"
+      ],
+      "examplesRaw": [
+        "只要努力，就能成功。(Chỉ cần cố gắng là sẽ thành công.)",
+        "只要你有空，我就来找你。(Chỉ cần bạn rảnh, tôi sẽ đến tìm bạn.)",
+        "只要天气好，我们就去公园。(Chỉ cần thời tiết tốt, chúng tôi sẽ đi công viên.)",
+        "Từ vựng: 缆车，喘气，动，到底，胜利，加油，出汗，汗，接着，比，危险，积极，相声，台词，背，话剧，排练，纠正，受伤，自信\t，相信，世上，无，怕，心，争取，恐怕，啦啦队，错误，外语，鞋，画蛇添足，蛇，添，壶，同一，得意，脚。"
+      ]
+    },
+    {
+      "id": "grammar-22-cf4f1823",
+      "lessonId": "hanyu2-bai-22",
+      "lessonNumber": 22,
+      "title": "1\\. Nghĩa mở rộng của bổ ngữ xu hướng",
+      "contentMd": "* 起来 (qǐlái) \\- Nghĩa mở rộng:\n* Nhớ ra, hồi tưởng lại: 我想起来了。(Tôi nhớ ra rồi.)\n* Bắt đầu và tiếp diễn: 天气热起来了。(Thời tiết bắt đầu nóng lên.)\n* Đánh giá khi bắt đầu làm gì: 看起来很好看。(Nhìn thì đẹp đấy.)\n* Thu lại, gom lại: 把东西收起来。(Thu dọn đồ đạc lại.)\n* 下去 (xiàqù) \\- Nghĩa mở rộng:\n* Tiếp tục duy trì: 我们还想学下去。(Chúng tôi còn muốn học tiếp.)\n* Tiếp diễn trạng thái: 坚持下去 (kiên trì tiếp tục)\n* 出来 (chūlái) \\- Nghĩa mở rộng:\n* Nhận biết, xác định: 我听出来了，这是他的声音。(Tôi nghe ra rồi, đây là giọng anh ấy.)\n* Từ không có đến có: 想出来一个好办法。(Nghĩ ra một cách hay.)\n* Hoàn thành, xong: 作业做出来了。(Bài tập làm xong rồi.)\n* 下来 (xiàlái) \\- Nghĩa mở rộng:\n* Ghi lại, cố định: 把电话号码记下来。(Ghi lại số điện thoại.)\n* Dừng lại: 车停下来了。(Xe dừng lại rồi.)\n* 过去 (guòqù) \\- Nghĩa mở rộng:\n* Trôi qua, vượt qua: 困难总会过去的。(Khó khăn rồi cũng sẽ qua.)\n* Ngất đi: 他昏过去了。(Anh ấy ngất đi.)\n* 过来 (guòlái) \\- Nghĩa mở rộng:\n* Tỉnh lại, hồi phục: 他醒过来了。(Anh ấy tỉnh lại rồi.)",
+      "structures": [],
+      "examplesRaw": [
+        "起来 (qǐlái) \\- Nghĩa mở rộng:",
+        "Nhớ ra, hồi tưởng lại: 我想起来了。(Tôi nhớ ra rồi.)",
+        "Bắt đầu và tiếp diễn: 天气热起来了。(Thời tiết bắt đầu nóng lên.)",
+        "Đánh giá khi bắt đầu làm gì: 看起来很好看。(Nhìn thì đẹp đấy.)",
+        "Thu lại, gom lại: 把东西收起来。(Thu dọn đồ đạc lại.)",
+        "下去 (xiàqù) \\- Nghĩa mở rộng:",
+        "Tiếp tục duy trì: 我们还想学下去。(Chúng tôi còn muốn học tiếp.)",
+        "Tiếp diễn trạng thái: 坚持下去 (kiên trì tiếp tục)",
+        "出来 (chūlái) \\- Nghĩa mở rộng:",
+        "Nhận biết, xác định: 我听出来了，这是他的声音。(Tôi nghe ra rồi, đây là giọng anh ấy.)",
+        "Từ không có đến có: 想出来一个好办法。(Nghĩ ra một cách hay.)",
+        "Hoàn thành, xong: 作业做出来了。(Bài tập làm xong rồi.)",
+        "下来 (xiàlái) \\- Nghĩa mở rộng:",
+        "Ghi lại, cố định: 把电话号码记下来。(Ghi lại số điện thoại.)",
+        "Dừng lại: 车停下来了。(Xe dừng lại rồi.)",
+        "过去 (guòqù) \\- Nghĩa mở rộng:",
+        "Trôi qua, vượt qua: 困难总会过去的。(Khó khăn rồi cũng sẽ qua.)",
+        "Ngất đi: 他昏过去了。(Anh ấy ngất đi.)",
+        "过来 (guòlái) \\- Nghĩa mở rộng:",
+        "Tỉnh lại, hồi phục: 他醒过来了。(Anh ấy tỉnh lại rồi.)"
+      ]
+    },
+    {
+      "id": "grammar-22-2773774d",
+      "lessonId": "hanyu2-bai-22",
+      "lessonNumber": 22,
+      "title": "2\\. Cấu trúc \"只有……才……\" (Chỉ có... mới...)",
+      "contentMd": "* Công dụng: Biểu thị điều kiện duy nhất hoặc cần thiết để đạt được kết quả.\n* Cấu trúc: 只有 \\+ Điều kiện \\+ 才 \\+ Kết quả\n* Ví dụ:\n* 只有努力，才能成功。(Chỉ có cố gắng mới thành công.)\n* 只有你来，我才高兴。(Chỉ có bạn đến tôi mới vui.)\n* 只有用功学习，才能学好汉语。(Chỉ có chăm chỉ học tập mới học tốt tiếng Hán.)\n\nTừ vựng: 熟，一下子，应，国际，广播，电台，邀请。待，签，合同，中外，合资，做客，空儿，搬家，地址，业务，搞，交流， 成立，成为，不久，开展，一定，基础，光，吃光，只有。。。才。。。，同一，终于，肉，图，排，录，成功，司马光，砸，缸，救，吓，连忙，石头。\n\n---",
+      "structures": [
+        "只有 \\+ Điều kiện \\+ 才 \\+ Kết quả"
+      ],
+      "examplesRaw": [
+        "只有努力，才能成功。(Chỉ có cố gắng mới thành công.)",
+        "只有你来，我才高兴。(Chỉ có bạn đến tôi mới vui.)",
+        "只有用功学习，才能学好汉语。(Chỉ có chăm chỉ học tập mới học tốt tiếng Hán.)",
+        "Từ vựng: 熟，一下子，应，国际，广播，电台，邀请。待，签，合同，中外，合资，做客，空儿，搬家，地址，业务，搞，交流， 成立，成为，不久，开展，一定，基础，光，吃光，只有。。。才。。。，同一，终于，肉，图，排，录，成功，司马光，砸，缸，救，吓，连忙，石头。"
+      ]
+    },
+    {
+      "id": "grammar-23-f91de050",
+      "lessonId": "hanyu2-bai-23",
+      "lessonNumber": 23,
+      "title": "1\\. Cách dùng mở rộng của đại từ nghi vấn (疑问代词的活用)",
+      "contentMd": "* Công dụng: Đại từ nghi vấn không dùng để hỏi mà dùng để biểu thị ý nghĩa khác như bất kỳ, tất cả, không xác định.\n* Các dạng thường gặp:\n* 什么 \\+ 都/也 \\+ 肯定/否定: Bất cứ... cũng...\n* 吃什么都可以。(Ăn gì cũng được.)\n* 我什么都不知道。(Tôi cái gì cũng không biết.)\n* 哪儿/哪里 \\+ 都/也: Nơi nào cũng...\n* 你是哪儿冷去哪儿啊。(Bạn là nơi nào lạnh là đi nơi đó.)\n* 我哪儿都不想去。(Tôi chỗ nào cũng không muốn đi.)\n* 谁 \\+ 都/也: Ai cũng...\n* 谁都认识他。(Ai cũng quen anh ấy.)\n* 谁也不认识我。(Chẳng ai quen tôi.)\n* 怎么 \\+ 都/也: Thế nào cũng...\n* 怎么都行。(Thế nào cũng được.)\n* 我怎么也想不起来。(Tôi thế nào cũng không nhớ ra.)",
+      "structures": [],
+      "examplesRaw": [
+        "什么 \\+ 都/也 \\+ 肯定/否定: Bất cứ... cũng...",
+        "吃什么都可以。(Ăn gì cũng được.)",
+        "我什么都不知道。(Tôi cái gì cũng không biết.)",
+        "哪儿/哪里 \\+ 都/也: Nơi nào cũng...",
+        "你是哪儿冷去哪儿啊。(Bạn là nơi nào lạnh là đi nơi đó.)",
+        "我哪儿都不想去。(Tôi chỗ nào cũng không muốn đi.)",
+        "谁 \\+ 都/也: Ai cũng...",
+        "谁都认识他。(Ai cũng quen anh ấy.)",
+        "谁也不认识我。(Chẳng ai quen tôi.)",
+        "怎么 \\+ 都/也: Thế nào cũng...",
+        "怎么都行。(Thế nào cũng được.)",
+        "我怎么也想不起来。(Tôi thế nào cũng không nhớ ra.)"
+      ]
+    },
+    {
+      "id": "grammar-23-d13255f8",
+      "lessonId": "hanyu2-bai-23",
+      "lessonNumber": 23,
+      "title": "2\\. Hai hành động đồng thời: 一边……一边……",
+      "contentMd": "* Công dụng: Diễn tả hai hành động xảy ra đồng thời.\n* Cấu trúc: 一边 \\+ Động từ 1 \\+ 一边 \\+ Động từ 2\n* Ví dụ:\n* 一边走路一边听音乐。(Vừa đi đường vừa nghe nhạc.)\n* 一边吃饭一边聊天。(Vừa ăn cơm vừa trò chuyện.)\n* 一边看电视一边做作业。(Vừa xem TV vừa làm bài tập.)",
+      "structures": [
+        "一边 \\+ Động từ 1 \\+ 一边 \\+ Động từ 2"
+      ],
+      "examplesRaw": [
+        "一边走路一边听音乐。(Vừa đi đường vừa nghe nhạc.)",
+        "一边吃饭一边聊天。(Vừa ăn cơm vừa trò chuyện.)",
+        "一边看电视一边做作业。(Vừa xem TV vừa làm bài tập.)"
+      ]
+    },
+    {
+      "id": "grammar-23-e04f0a70",
+      "lessonId": "hanyu2-bai-23",
+      "lessonNumber": 23,
+      "title": "3\\. Thứ tự động tác liên tiếp: 先……再(又)……然后……最后……",
+      "contentMd": "* Công dụng: Diễn tả trình tự các hành động xảy ra lần lượt.\n* Cấu trúc: 先 \\+ Hành động 1 \\+ 再/又 \\+ Hành động 2 \\+ 然后 \\+ Hành động 3 \\+ 最后 \\+ Hành động 4\n* Ví dụ:\n* 我们先去故宫，再去颐和园，然后去吃烤鸭。(Chúng tôi đi Tử Cấm Thành trước, rồi đi Di Hòa Viên, sau đó đi ăn vịt quay.)\n* 你先写作业，再看电视。(Bạn làm bài tập trước, rồi xem TV sau.)\n* 先洗手，再吃饭。(Rửa tay trước, rồi ăn cơm sau.)\n* Lưu ý: \"再\" dùng cho hành động chưa xảy ra, \"又\" dùng cho hành động đã xảy ra.\n\nTừ vựng: 渴，点（菜），好吃，辣子鸡丁，糖醋鱼，周，外地，好玩儿，零下，冰灯，冰雕，开玩笑，玩笑，计划，碑林，兵马俑，船，游览，天堂，山水，甲，天下，少数，民族，风俗，路线，开心，值得，意义，经济，法律，医学，记者，作家，工程师，方面。减肥，奥林匹克，嗓子，连忙，厕所，脸色，难看，立刻。\n\nTên riêng: 重庆，长江，三峡，云南，桂林，苏州，杭州\n\n---",
+      "structures": [
+        "先 \\+ Hành động 1 \\+ 再/又 \\+ Hành động 2 \\+ 然后 \\+ Hành động 3 \\+ 最后 \\+ Hành động 4"
+      ],
+      "examplesRaw": [
+        "我们先去故宫，再去颐和园，然后去吃烤鸭。(Chúng tôi đi Tử Cấm Thành trước, rồi đi Di Hòa Viên, sau đó đi ăn vịt quay.)",
+        "你先写作业，再看电视。(Bạn làm bài tập trước, rồi xem TV sau.)",
+        "先洗手，再吃饭。(Rửa tay trước, rồi ăn cơm sau.)",
+        "Lưu ý: \"再\" dùng cho hành động chưa xảy ra, \"又\" dùng cho hành động đã xảy ra.",
+        "Từ vựng: 渴，点（菜），好吃，辣子鸡丁，糖醋鱼，周，外地，好玩儿，零下，冰灯，冰雕，开玩笑，玩笑，计划，碑林，兵马俑，船，游览，天堂，山水，甲，天下，少数，民族，风俗，路线，开心，值得，意义，经济，法律，医学，记者，作家，工程师，方面。减肥，奥林匹克，嗓子，连忙，厕所，脸色，难看，立刻。",
+        "Tên riêng: 重庆，长江，三峡，云南，桂林，苏州，杭州"
+      ]
+    },
+    {
+      "id": "grammar-24-bb5e8270",
+      "lessonId": "hanyu2-bai-24",
+      "lessonNumber": 24,
+      "title": "1\\. Câu phức không dùng từ nối (无关联词语复句)",
+      "contentMd": "* Khái niệm: Là câu ghép giữa các vế câu không có từ nối nhưng vẫn thể hiện quan hệ logic (điều kiện, nguyên nhân, tương phản...).\n* Ví dụ:\n* 有困难找警察。(Có khó khăn thì tìm cảnh sát.) \\- Quan hệ điều kiện\n* 下雨我就不去了。(Mưa thì tôi không đi.) \\- Quan hệ giả thiết\n* 你请他，他就来。(Bạn mời anh ấy, anh ấy sẽ đến.) \\- Quan hệ điều kiện\n* 你不去我去。(Bạn không đi thì tôi đi.) \\- Quan hệ lựa chọn",
+      "structures": [],
+      "examplesRaw": [
+        "有困难找警察。(Có khó khăn thì tìm cảnh sát.) \\- Quan hệ điều kiện",
+        "下雨我就不去了。(Mưa thì tôi không đi.) \\- Quan hệ giả thiết",
+        "你请他，他就来。(Bạn mời anh ấy, anh ấy sẽ đến.) \\- Quan hệ điều kiện",
+        "你不去我去。(Bạn không đi thì tôi đi.) \\- Quan hệ lựa chọn"
+      ]
+    },
+    {
+      "id": "grammar-24-9a233918",
+      "lessonId": "hanyu2-bai-24",
+      "lessonNumber": 24,
+      "title": "2\\. Lượng từ lặp lại (数量词重叠)",
+      "contentMd": "* Công dụng: Lặp lại số từ \\+ lượng từ để biểu thị ý nghĩa \"từng\", \"mỗi\", \"hàng loạt\" (thường dùng để miêu tả).\n* Cấu trúc: (Số từ \\+ Lượng từ) lặp lại\n* Ví dụ:\n* 一个个 (từng người một): 孩子们一个个都很有礼貌。(Bọn trẻ đứa nào cũng rất lễ phép.)\n* 一件件 (từng cái một): 她把衣服一件件叠好。(Cô ấy gấp từng cái áo một.)\n* 一天天 (từng ngày): 天气一天天暖和起来。(Thời tiết ấm lên từng ngày.)\n* 一次次 (từng lần): 我一次次地提醒他。(Tôi nhắc anh ấy từng lần.)",
+      "structures": [
+        "(Số từ \\+ Lượng từ) lặp lại"
+      ],
+      "examplesRaw": [
+        "一个个 (từng người một): 孩子们一个个都很有礼貌。(Bọn trẻ đứa nào cũng rất lễ phép.)",
+        "一件件 (từng cái một): 她把衣服一件件叠好。(Cô ấy gấp từng cái áo một.)",
+        "一天天 (từng ngày): 天气一天天暖和起来。(Thời tiết ấm lên từng ngày.)",
+        "一次次 (từng lần): 我一次次地提醒他。(Tôi nhắc anh ấy từng lần.)"
+      ]
+    },
+    {
+      "id": "grammar-24-b0c36993",
+      "lessonId": "hanyu2-bai-24",
+      "lessonNumber": 24,
+      "title": "3\\. Bổ ngữ trạng thái (2)",
+      "contentMd": "* Công dụng: Bổ ngữ trạng thái dùng để miêu tả, đánh giá mức độ, kết quả của hành động.\n* Cấu trúc: Động từ \\+ 得 \\+ Tính từ/Cụm tính từ\n* Ví dụ mở rộng:\n* 他高兴得像孩子一样。(Anh ấy vui như trẻ con.)\n* 她唱得像专业歌手一样好。(Cô ấy hát hay như ca sĩ chuyên nghiệp.)\n* 他照顾老人就像照顾自己的孩子一样。(Anh ấy chăm sóc người già như chăm sóc con ruột của mình.)\n* Lưu ý: Bổ ngữ trạng thái có thể là cụm từ dài, so sánh, hình dung rất sinh động.\n\nTừ vựng: 到处，困难，警察，十字路口儿，对，夫妻，看样子，腿脚，来往，敢，立即，扶，情景，感动，可，发生，句，滚，抱，叔叔，鞋，鞋带，脚，神，面前，湾，腰，照顾，梅，图，画家，松，放松，竹，叫作，岁寒三友，字画，过奖，急忙，紧，握，车闸，敬礼，罚款，礼貌，工具箱，钳子\n\nTên riêng: 兰笛，谢大力\n\n---",
+      "structures": [
+        "Động từ \\+ 得 \\+ Tính từ/Cụm tính từ"
+      ],
+      "examplesRaw": [
+        "他高兴得像孩子一样。(Anh ấy vui như trẻ con.)",
+        "她唱得像专业歌手一样好。(Cô ấy hát hay như ca sĩ chuyên nghiệp.)",
+        "他照顾老人就像照顾自己的孩子一样。(Anh ấy chăm sóc người già như chăm sóc con ruột của mình.)",
+        "Từ vựng: 到处，困难，警察，十字路口儿，对，夫妻，看样子，腿脚，来往，敢，立即，扶，情景，感动，可，发生，句，滚，抱，叔叔，鞋，鞋带，脚，神，面前，湾，腰，照顾，梅，图，画家，松，放松，竹，叫作，岁寒三友，字画，过奖，急忙，紧，握，车闸，敬礼，罚款，礼貌，工具箱，钳子",
+        "Tên riêng: 兰笛，谢大力"
+      ]
+    },
+    {
+      "id": "grammar-25-d10b49dc",
+      "lessonId": "hanyu2-bai-25",
+      "lessonNumber": 25,
+      "title": "1\\. Câu hỏi tu từ (反问句)",
+      "contentMd": "* Khái niệm: Câu hỏi tu từ là câu hỏi nhưng không nhằm mục đích tìm câu trả lời mà để khẳng định hoặc phủ định mạnh mẽ hơn.\n* Các dạng thường gặp:\n* 不是...吗？ (Chẳng phải là... sao?)\n* 你不是中国人吗？怎么不会说汉语？(Chẳng phải bạn là người Trung Quốc sao? Sao lại không nói được tiếng Hán?)\n* 这不是你的书吗？(Đây chẳng phải là sách của bạn sao?)\n* 难道...吗？ (Lẽ nào... sao?)\\`\n* 难道你不知道吗？(Lẽ nào bạn không biết sao?)\n* 难道就这样放弃吗？(Lẽ nào từ bỏ như vậy sao?)\n* 怎么 \\+ Động từ \\+ 呢？ (Sao lại...?)\n* 你怎么能这样说话呢？(Sao bạn có thể nói như vậy?)\n* 我怎么会不知道呢？(Sao tôi lại không biết được?)\n* 哪儿 \\+ Động từ \\+ 了？ (Đâu có...?)\n* 我哪儿说错了？(Tôi nói sai chỗ nào đâu?)\n* 他哪儿去了？(Anh ấy đi đâu mất rồi?)",
+      "structures": [],
+      "examplesRaw": [
+        "不是...吗？ (Chẳng phải là... sao?)",
+        "你不是中国人吗？怎么不会说汉语？(Chẳng phải bạn là người Trung Quốc sao? Sao lại không nói được tiếng Hán?)",
+        "这不是你的书吗？(Đây chẳng phải là sách của bạn sao?)",
+        "难道...吗？ (Lẽ nào... sao?)\\`",
+        "难道你不知道吗？(Lẽ nào bạn không biết sao?)",
+        "难道就这样放弃吗？(Lẽ nào từ bỏ như vậy sao?)",
+        "怎么 \\+ Động từ \\+ 呢？ (Sao lại...?)",
+        "你怎么能这样说话呢？(Sao bạn có thể nói như vậy?)",
+        "我怎么会不知道呢？(Sao tôi lại không biết được?)",
+        "哪儿 \\+ Động từ \\+ 了？ (Đâu có...?)",
+        "我哪儿说错了？(Tôi nói sai chỗ nào đâu?)",
+        "他哪儿去了？(Anh ấy đi đâu mất rồi?)"
+      ]
+    },
+    {
+      "id": "grammar-25-95d90657",
+      "lessonId": "hanyu2-bai-25",
+      "lessonNumber": 25,
+      "title": "2\\. Cấu trúc nhấn mạnh: 连……也/都…… (Ngay cả... cũng...)",
+      "contentMd": "* Công dụng: Nhấn mạnh một trường hợp đặc biệt, thường là cực đoan nhất, để suy ra các trường hợp khác.\n* Cấu trúc: 连 \\+ Thành phần cần nhấn mạnh \\+ 也/都 \\+ Động từ\n* Ví dụ:\n* 连小孩儿都知道。(Ngay cả trẻ con cũng biết.)\n* 他连饭都不吃。(Anh ấy ngay cả cơm cũng không ăn.)\n* 我连一个字也没说。(Tôi ngay cả một chữ cũng không nói.)\n* 连老师都回答不了这个问题。(Ngay cả giáo viên cũng trả lời không được câu hỏi này.)",
+      "structures": [
+        "连 \\+ Thành phần cần nhấn mạnh \\+ 也/都 \\+ Động từ"
+      ],
+      "examplesRaw": [
+        "连小孩儿都知道。(Ngay cả trẻ con cũng biết.)",
+        "他连饭都不吃。(Anh ấy ngay cả cơm cũng không ăn.)",
+        "我连一个字也没说。(Tôi ngay cả một chữ cũng không nói.)",
+        "连老师都回答不了这个问题。(Ngay cả giáo viên cũng trả lời không được câu hỏi này.)"
+      ]
+    },
+    {
+      "id": "grammar-25-be65f540",
+      "lessonId": "hanyu2-bai-25",
+      "lessonNumber": 25,
+      "title": "3\\. Nhấn mạnh khẳng định: Phủ định hai lần (二次否定)",
+      "contentMd": "* Công dụng: Dùng hai từ phủ định trong một câu để tạo thành ý khẳng định mạnh mẽ.\n* Cấu trúc: 不/没 \\+ A \\+ 不/没 \\+ B\n* Ví dụ:\n* 没有人不知道这件事。(Không ai là không biết chuyện này \\= Ai cũng biết.)\n* 他不会不来。(Anh ấy không thể không đến \\= Anh ấy nhất định sẽ đến.)\n* 我不得不去。(Tôi không thể không đi \\= Tôi buộc phải đi.)\n* 没有不努力就能成功的人。(Không có người không nỗ lực mà thành công được.)\n\nTừ vựng: 数字， 连。。。也。。。，简单，一半，中国通，痛，少，可，别人，伟大，发现，申请，专利，认为，吉利，音，谐音，发，巧克力，土豆儿，胡说，长久，友谊，爱情，活，顺，宴会，规矩，首先，重要，领导，长辈，上座，上菜，如果，敬酒，上次，下次，干杯，感情，当，代替，哈，吹，联系，牌照, 伤疤，流氓，流浪，九泉，死，救济，救命，凄惨，散，二流子，二百五，低人一等，糊涂，一团糟，一场空，贬义词，夭折，灵堂，灵车，牙，大巴",
+      "structures": [
+        "不/没 \\+ A \\+ 不/没 \\+ B"
+      ],
+      "examplesRaw": [
+        "没有人不知道这件事。(Không ai là không biết chuyện này \\= Ai cũng biết.)",
+        "他不会不来。(Anh ấy không thể không đến \\= Anh ấy nhất định sẽ đến.)",
+        "我不得不去。(Tôi không thể không đi \\= Tôi buộc phải đi.)",
+        "没有不努力就能成功的人。(Không có người không nỗ lực mà thành công được.)",
+        "Từ vựng: 数字， 连。。。也。。。，简单，一半，中国通，痛，少，可，别人，伟大，发现，申请，专利，认为，吉利，音，谐音，发，巧克力，土豆儿，胡说，长久，友谊，爱情，活，顺，宴会，规矩，首先，重要，领导，长辈，上座，上菜，如果，敬酒，上次，下次，干杯，感情，当，代替，哈，吹，联系，牌照, 伤疤，流氓，流浪，九泉，死，救济，救命，凄惨，散，二流子，二百五，低人一等，糊涂，一团糟，一场空，贬义词，夭折，灵堂，灵车，牙，大巴"
+      ]
+    }
+  ]
+}

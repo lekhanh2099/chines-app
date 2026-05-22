@@ -11,6 +11,7 @@ import {
  Home,
  LogOut,
  NotebookPen,
+ Sparkles,
  Trophy,
  WalletCards,
 } from "lucide-react";
@@ -29,6 +30,7 @@ type NavItem = {
 
 const mainItems: NavItem[] = [
  { name: "Trang chủ", icon: Home, href: "/" },
+ { name: "Tự học", icon: Sparkles, href: "/hanzihome", badge: "JSON", tone: "orange" },
  { name: "Từ vựng", icon: WalletCards, href: "/vocabulary" },
  { name: "Ngữ pháp", icon: GraduationCap, href: "/grammar", badge: "Mới", tone: "orange" },
  { name: "Ghi chú", icon: NotebookPen, href: "/notes" },
@@ -200,9 +202,9 @@ export function Sidebar() {
     </button>
    </div>
   </aside>
-  <nav className="fixed inset-x-0 bottom-0 z-40 border-t-2 border-stone-200 bg-white/95 px-2 py-2 shadow-[0_-3px_0_rgb(0_0_0/0.08)] backdrop-blur md:hidden">
+  <nav className="fixed inset-x-0 bottom-0 z-40 max-w-full overflow-x-hidden border-t-2 border-stone-200 bg-white/95 px-2 pb-[calc(0.5rem+env(safe-area-inset-bottom))] pt-2 shadow-[0_-3px_0_rgb(0_0_0/0.08)] backdrop-blur md:hidden">
    <div
-    className="mx-auto grid max-w-md gap-1"
+    className="mx-auto grid w-full max-w-md min-w-0 gap-1"
     style={{ gridTemplateColumns: `repeat(${mainItems.length}, minmax(0, 1fr))` }}
    >
     {mainItems.map((item) => {

@@ -1,9 +1,9 @@
 import type { ReactNode } from "react";
 
-export function LearningShell({ children, maxWidth = "max-w-[1500px]" }: { children: ReactNode; maxWidth?: string }) {
+export function LearningShell({ children, maxWidth = "max-w-none" }: { children: ReactNode; maxWidth?: string }) {
  return (
-  <div className="min-h-screen bg-stone-50">
-   <div className={`mx-auto flex w-full ${maxWidth} flex-col gap-4 px-4 py-4 sm:px-5 lg:px-8`}>
+  <div className="page-shell min-h-screen bg-stone-50">
+   <div className={`mx-auto flex w-full max-w-full min-w-0 ${maxWidth} flex-col gap-4 overflow-x-hidden px-4 py-4 sm:px-5 lg:px-8`}>
     {children}
    </div>
   </div>
