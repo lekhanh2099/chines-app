@@ -76,17 +76,23 @@ export function Header({ user }: { user?: User | null }) {
      className="flex h-10 w-10 items-center justify-center rounded-2xl border-2 border-stone-200 bg-white text-stone-700 shadow-theme-sm transition-colors hover:bg-stone-50 sm:h-11 sm:w-11"
      aria-label="Toggle theme"
     >
-     {theme === "light" ? <Moon className="h-5 w-5" /> : <Sun className="h-5 w-5" />}
+     {theme === "light" ? (
+      <Moon className="h-5 w-5" />
+     ) : (
+      <Sun className="h-5 w-5" />
+     )}
     </button>
 
-    <div className="hidden h-11 items-center gap-2 rounded-2xl px-3 text-sm font-black text-stone-700 lg:flex">
+    <div className="hidden h-11 items-center gap-2 rounded-2xlpx-3 text-sm font-black text-stone-700 lg:flex">
      <span className="text-lg">🇻🇳</span>
      Tiếng Việt
     </div>
 
     <div className="hidden min-w-0 items-center gap-2 pl-1 xl:flex">
-     <div className="flex h-10 w-10 items-center justify-center rounded-full bg-red-100 text-sm font-black text-red-600">
-      {(user?.user_metadata?.display_name || user?.email || "B").slice(0, 1).toUpperCase()}
+     <div className="flex h-10 w-10 items-center justify-center rounded-2xl -full bg-red-100 text-sm font-black text-red-600">
+      {(user?.user_metadata?.display_name || user?.email || "B")
+       .slice(0, 1)
+       .toUpperCase()}
      </div>
     </div>
    </div>

@@ -2,6 +2,7 @@ import type bundle from "../../../data/hanzihome/hanzihome_bundle_clean.json";
 
 export type HanziHomeModule =
   | "overview"
+  | "lessonText"
   | "vocab"
   | "grammar"
   | "radicals"

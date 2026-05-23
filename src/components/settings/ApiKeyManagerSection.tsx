@@ -300,7 +300,7 @@ export default function ApiKeyManagerSection() {
   <section className="rounded-2xl border border-border-default bg-bg-card p-6 shadow-theme-sm">
    <div className="flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between">
     <div className="max-w-3xl space-y-2">
-     <div className="inline-flex items-center gap-2 rounded-full bg-accent/10 px-3 py-1 text-xs font-bold uppercase tracking-[0.18em]  ">
+     <div className="inline-flex items-center gap-2 rounded-2xl -full bg-accent/10 px-3 py-1 text-xs font-bold uppercase tracking-[0.18em]  ">
       <Workflow className="h-3.5 w-3.5" />
       API Key Manager
      </div>
@@ -321,7 +321,7 @@ export default function ApiKeyManagerSection() {
        Thêm API key
       </Button>
      </DialogTrigger>
-     <DialogContent className="max-w-xl rounded-3xl border border-border-default bg-bg-card p-6">
+     <DialogContent className="max-w-xl rounded-2xl  border border-border-default bg-bg-card p-6">
       <DialogHeader>
        <DialogTitle className="text-text-primary">Thêm API key mới</DialogTitle>
        <DialogDescription className="text-text-secondary">
@@ -340,7 +340,7 @@ export default function ApiKeyManagerSection() {
          onChange={(event) =>
           setProvider(event.target.value as ProviderSelectValue)
          }
-         className="h-11 w-full rounded-xl border border-border-default bg-bg-primary px-4 text-sm text-text-primary outline-none transition focus:border-accent focus:ring-2 focus:ring-accent/20"
+         className="h-11 w-full rounded-2xl -xl border border-border-default bg-bg-primary px-4 text-sm text-text-primary outline-none transition focus:border-accent focus:ring-2 focus:ring-accent/20"
         >
          <option value={AUTO_API_KEY_PROVIDER}>Tự nhận diện</option>
          {API_KEY_PROVIDER_OPTIONS.map((option) => (
@@ -471,8 +471,8 @@ export default function ApiKeyManagerSection() {
      Đang tải danh sách API key...
     </div>
    ) : keys.length === 0 ? (
-    <div className="mt-6 rounded-3xl border border-dashed border-border-default bg-bg-primary px-6 py-10 text-center">
-     <div className="mx-auto inline-flex h-12 w-12 items-center justify-center rounded-full bg-accent/10  ">
+    <div className="mt-6 rounded-2xl  border border-dashed border-border-default bg-bg-primary px-6 py-10 text-center">
+     <div className="mx-auto inline-flex h-12 w-12 items-center justify-center rounded-2xl -full bg-accent/10  ">
       <KeyRound className="h-5 w-5" />
      </div>
      <p className="mt-4 text-base font-semibold text-text-primary">
@@ -492,14 +492,14 @@ export default function ApiKeyManagerSection() {
       return (
        <article
         key={key.id}
-        className="rounded-3xl border border-border-default bg-bg-primary p-4 shadow-theme-sm"
+        className="rounded-2xl  border border-border-default bg-bg-primary p-4 shadow-theme-sm"
        >
         <div className="flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between">
          <div className="space-y-3">
           <div className="flex flex-wrap items-center gap-2">
            <span
             className={cn(
-             "rounded-full px-3 py-1 text-xs font-semibold",
+             "rounded-2xl -full px-3 py-1 text-xs font-semibold",
              key.provider === "deepseek"
               ? "bg-emerald-100 text-emerald-900"
               : key.provider === "gemini"
@@ -509,12 +509,12 @@ export default function ApiKeyManagerSection() {
            >
             {key.providerLabel}
            </span>
-           <span className="rounded-full bg-bg-card px-3 py-1 text-xs font-semibold text-text-muted">
+           <span className="rounded-2xl -full bg-bg-card px-3 py-1 text-xs font-semibold text-text-muted">
             Ưu tiên #{index + 1}
            </span>
            <span
             className={cn(
-             "inline-flex items-center gap-1 rounded-full px-3 py-1 text-xs font-semibold",
+             "inline-flex items-center gap-1 rounded-2xl -full px-3 py-1 text-xs font-semibold",
              key.isActive
               ? "bg-success/10 text-success"
               : "bg-bg-card text-text-muted",

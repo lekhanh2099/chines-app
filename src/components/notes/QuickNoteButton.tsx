@@ -72,7 +72,7 @@ export function QuickNoteButton({
    <button
     onClick={handleCreate}
     disabled={isCreating}
-    className={`w-full py-4 border-2 border-dashed border-border-default rounded text-text-muted hover:  hover:border-accent/40 transition-colors flex items-center justify-center gap-2 text-sm font-medium disabled:opacity-50 ${className}`}
+    className={`w-full py-4 border-2 border-dashed border-border-default rounded-2xl  text-text-muted hover:  hover:border-accent/40 transition-colors flex items-center justify-center gap-2 text-sm font-medium disabled:opacity-50 ${className}`}
    >
     {isCreating ? (
      <Loader2 className="w-4 h-4 animate-spin" />
@@ -102,7 +102,7 @@ export function QuickNoteButton({
   <button
    onClick={handleCreate}
    disabled={isCreating}
-   className={`inline-flex items-center gap-2 rounded font-semibold transition-colors disabled:opacity-50 shadow-sm ${sizeClasses[size]} ${variantClasses[variant]} ${className}`}
+   className={`inline-flex items-center gap-2 rounded-2xl  font-semibold transition-colors disabled:opacity-50 shadow-sm ${sizeClasses[size]} ${variantClasses[variant]} ${className}`}
   >
    {isCreating ? (
     <Loader2 className="w-4 h-4 animate-spin" />

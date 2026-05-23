@@ -766,7 +766,7 @@ const buttonVariants = cva(
 Bad:
 
 ```tsx
-<button className="h-10 rounded-xl bg-red-500 px-3 text-sm font-black text-white shadow-sm hover:bg-red-600">
+<button className="h-10 rounded-2xl -xl bg-red-500 px-3 text-sm font-black text-white shadow-sm hover:bg-red-600">
  Save
 </button>
 ```

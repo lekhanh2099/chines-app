@@ -57,7 +57,7 @@ export function Select({
    >
     <SelectTrigger
      className={cn(
-      "bg-bg-field-default border-stroke-default h-9 w-full rounded border px-2 text-left",
+      "bg-bg-field-default border-stroke-default h-9 w-full rounded-2xl  border px-2 text-left",
       "focus-visible:border-stroke-active-focus",
       "disabled:bg-bg-field-disable disabled:border-stroke-disabled disabled:opacity-100",
       errorMessage && "border-stroke-error",

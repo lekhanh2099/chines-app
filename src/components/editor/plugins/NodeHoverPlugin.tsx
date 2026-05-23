@@ -61,7 +61,10 @@ export default function NodeHoverPlugin() {
 
   const handleMouseOut = (e: MouseEvent) => {
    const related = e.relatedTarget as HTMLElement | null;
-   if (related?.closest("[data-internal-link]") || related?.closest("[data-link-tooltip]")) {
+   if (
+    related?.closest("[data-internal-link]") ||
+    related?.closest("[data-link-tooltip]")
+   ) {
     return;
    }
    hide();
@@ -94,16 +97,14 @@ export default function NodeHoverPlugin() {
     hide();
    }}
   >
-   <div className="rounded-lg border border-indigo-200 bg-white px-3 py-2 shadow-lg">
+   <div className="rounded-2xl -lg border border-indigo-200 bg-white px-3 py-2 shadow-lg">
     <span className="mb-0.5 block text-[10px] font-semibold uppercase tracking-widest text-indigo-400">
      Ghi chú liên kết
     </span>
     <span className="block max-w-52 truncate text-sm font-medium text-slate-700">
      {tooltip.noteTitle}
     </span>
-    <span className="mt-1 block text-[10px] text-slate-400">
-     Click để mở
-    </span>
+    <span className="mt-1 block text-[10px] text-slate-400">Click để mở</span>
    </div>
    <span className="absolute left-1/2 top-full -translate-x-1/2 border-4 border-transparent border-t-white" />
   </div>,

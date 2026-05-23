@@ -15,11 +15,26 @@ export function LearningModuleSwitch({
  className?: string;
 }) {
  const items = [
-  { key: "vocabulary" as const, label: "Từ vựng", href: vocabularyHref, icon: BookOpen },
-  { key: "grammar" as const, label: "Ngữ pháp", href: grammarHref, icon: GraduationCap },
+  {
+   key: "vocabulary" as const,
+   label: "Từ vựng",
+   href: vocabularyHref,
+   icon: BookOpen,
+  },
+  {
+   key: "grammar" as const,
+   label: "Ngữ pháp",
+   href: grammarHref,
+   icon: GraduationCap,
+  },
  ];
  return (
-  <div className={cn("inline-grid grid-cols-2 gap-1 rounded-2xl bg-stone-100 p-1", className)}>
+  <div
+   className={cn(
+    "inline-grid grid-cols-2 gap-1 rounded-2xlbg-stone-100 p-1",
+    className,
+   )}
+  >
    {items.map((item) => {
     const active = activeModule === item.key;
     const Icon = item.icon;
@@ -28,7 +43,7 @@ export function LearningModuleSwitch({
       key={item.key}
       href={item.href}
       className={cn(
-       "inline-flex h-10 items-center justify-center gap-2 rounded-xl px-3 text-sm font-black transition",
+       "inline-flex h-10 items-center justify-center gap-2 rounded-2xl -xl px-3 text-sm font-black transition",
        active
         ? "bg-red-500 text-white shadow-theme-sm"
         : "text-stone-600 hover:bg-white hover:text-stone-900",

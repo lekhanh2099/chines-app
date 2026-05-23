@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button";
 import type { HanziWriterInstance } from "@/features/dictionary/types";
 
 const writerContainerClassName =
- "relative flex aspect-square h-auto w-full max-w-40 items-center justify-center rounded border border-border-default bg-white text-8xl font-bold text-text-primary";
+ "relative flex aspect-square h-auto w-full max-w-40 items-center justify-center rounded-2xl  border border-border-default bg-white text-8xl font-bold text-text-primary";
 
 type CharacterWriterCardProps = {
  character: string;

@@ -994,9 +994,6 @@ export default function ToolbarPlugin() {
 
    {/* ── + Insert Dropdown ── */}
    <InsertDropdown editor={editor} isEditable={isEditable} />
-   <Divider />
-
-   <Divider />
   </div>
  );
 }

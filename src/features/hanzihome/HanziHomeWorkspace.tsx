@@ -4,6 +4,7 @@ import { useMemo } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import {
  BookOpen,
+ FileText,
  GraduationCap,
  Home,
  Layers3,
@@ -18,6 +19,7 @@ import { GrammarWorkspace } from "@/features/hanzihome/components/GrammarWorkspa
 import { LessonOverview } from "@/features/hanzihome/components/LessonOverview";
 import { CoursePicker } from "@/features/hanzihome/components/CoursePicker";
 import { LessonPicker } from "@/features/hanzihome/components/LessonPicker";
+import { LessonTextInlineEditor } from "@/features/hanzihome/components/LessonTextInlineEditor";
 import { RadicalWorkspace } from "@/features/hanzihome/components/RadicalWorkspace";
 import { ReviewWorkspace } from "@/features/hanzihome/components/ReviewWorkspace";
 import { VocabWorkspace } from "@/features/hanzihome/components/VocabWorkspace";
@@ -47,6 +49,7 @@ import { BookLessonSummary } from "@/features/hanzihome/components/BookLessonSum
 
 const tabs = [
  { key: "overview" as const, label: "Tổng quan", icon: Home },
+ { key: "lessonText" as const, label: "Bài khóa", icon: FileText },
  { key: "vocab" as const, label: "Từ vựng", icon: BookOpen },
  { key: "grammar" as const, label: "Ngữ pháp", icon: GraduationCap },
  { key: "review" as const, label: "Ôn tập", icon: RotateCcw },
@@ -54,6 +57,7 @@ const tabs = [
 
 const moduleValues = [
  "overview",
+ "lessonText",
  "vocab",
  "grammar",
  "review",
@@ -250,7 +254,7 @@ export function HanziHomeWorkspace() {
   return (
    <main className="hanzihome-static-page">
     <div className="mx-auto flex w-full max-w-7xl flex-col gap-4">
-     <Card padding="lg" className="rounded-2xl">
+     <Card padding="lg" className="rounded-2xl -2xl">
       <div className="grid gap-5">
        <div>
         <p className="text-xs font-black uppercase tracking-wide text-text-muted">
@@ -302,7 +306,7 @@ export function HanziHomeWorkspace() {
  return (
   <main className="hanzihome-static-page">
    <div className="mx-auto flex w-full max-w-7xl flex-col gap-4">
-    <Card padding="lg" className="overflow-hidden rounded-3xl">
+    <Card padding="lg" className="overflow-hidden rounded-2xl ">
      <div className="grid gap-5">
       <div className="flex flex-wrap items-start justify-between gap-4">
        <div className="min-w-0">
@@ -317,20 +321,20 @@ export function HanziHomeWorkspace() {
         </h1>
 
         <div className="mt-3 flex flex-wrap gap-2">
-         <span className="rounded-full bg-bg-subtle px-3 py-1 text-xs font-black text-text-muted">
+         <span className="rounded-2xl -full bg-bg-subtle px-3 py-1 text-xs font-black text-text-muted">
           {activeModule === "radicals"
            ? `${data.radicals.length} bộ thủ`
            : subtitle}
          </span>
 
          {activeModule !== "radicals" && lesson?.bookTitle && (
-          <span className="rounded-full bg-bg-subtle px-3 py-1 text-xs font-black text-text-muted">
+          <span className="rounded-2xl -full bg-bg-subtle px-3 py-1 text-xs font-black text-text-muted">
            {lesson.bookTitle}
           </span>
          )}
 
          {learning.isSaving && (
-          <span className="rounded-full bg-bg-subtle px-3 py-1 text-xs font-black text-text-muted">
+          <span className="rounded-2xl -full bg-bg-subtle px-3 py-1 text-xs font-black text-text-muted">
            Đang lưu...
           </span>
          )}
@@ -352,7 +356,11 @@ export function HanziHomeWorkspace() {
           selectedBookId={selectedBookId}
          />
 
-         <Button type="button" variant="outline" onClick={() => selectModule("radicals")}>
+         <Button
+          type="button"
+          variant="outline"
+          onClick={() => selectModule("radicals")}
+         >
           <Layers3 className="h-4 w-4" />
           Bộ thủ
          </Button>
@@ -368,7 +376,7 @@ export function HanziHomeWorkspace() {
       </div>
 
       {activeModule !== "radicals" && lesson && (
-       <div className="grid gap-3 rounded-3xl border border-border-default bg-bg-subtle p-4 md:grid-cols-[minmax(14rem,0.8fr)_minmax(18rem,1.2fr)]">
+       <div className="grid gap-3 rounded-2xl  border border-border-default bg-bg-subtle p-4 md:grid-cols-[minmax(14rem,0.8fr)_minmax(18rem,1.2fr)]">
         <CoursePicker
          courses={data.courses}
          selectedCourseId={selectedCourseId}
@@ -408,6 +416,10 @@ export function HanziHomeWorkspace() {
          learningState={learning.state}
          onOpenModule={selectModule}
         />
+       </TabsContent>
+
+       <TabsContent active={activeModule === "lessonText"}>
+        <LessonTextInlineEditor lesson={lesson} />
        </TabsContent>
 
        <TabsContent active={activeModule === "vocab"}>

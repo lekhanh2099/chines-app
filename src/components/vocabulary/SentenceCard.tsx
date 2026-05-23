@@ -34,7 +34,7 @@ export function SentenceCard({
  const s = statusConfig[item.status];
 
  return (
-  <div className="group rounded border border-border-default bg-bg-card hover:bg-bg-card-hover transition-colors p-4">
+  <div className="group rounded-2xl  border border-border-default bg-bg-card hover:bg-bg-card-hover transition-colors p-4">
    <div className="flex items-start justify-between gap-3">
     <div className="flex-1 min-w-0">
      <Link
@@ -57,28 +57,28 @@ export function SentenceCard({
 
     <div className="flex flex-col items-end gap-2 shrink-0">
      <span
-      className={`inline-flex items-center gap-1 px-2 py-0.5 rounded text-[10px] font-bold ${s.className}`}
+      className={`inline-flex items-center gap-1 px-2 py-0.5 rounded-2xl  text-[10px] font-bold ${s.className}`}
      >
       {s.emoji} {s.label}
      </span>
      <div className="flex items-center gap-0.5 opacity-0 group-hover:opacity-100 transition-opacity">
       <button
        onClick={() => onInspect(item.hanzi)}
-       className="p-1.5 rounded text-text-muted hover:  hover:bg-accent/10 transition-colors"
+       className="p-1.5 rounded-2xl  text-text-muted hover:  hover:bg-accent/10 transition-colors"
        title="Tra nhanh"
       >
        <Eye className="w-3.5 h-3.5" />
       </button>
       <Link
        href={`/dictionary/${encodeURIComponent(item.hanzi)}`}
-       className="p-1.5 rounded text-text-muted hover:  hover:bg-accent/10 transition-colors"
+       className="p-1.5 rounded-2xl  text-text-muted hover:  hover:bg-accent/10 transition-colors"
        title="Xem chi tiết"
       >
        <ExternalLink className="w-3.5 h-3.5" />
       </Link>
       <button
        onClick={() => onDelete(item.id, item.hanzi)}
-       className="p-1.5 rounded text-text-muted hover:text-danger hover:bg-danger-subtle transition-colors"
+       className="p-1.5 rounded-2xl  text-text-muted hover:text-danger hover:bg-danger-subtle transition-colors"
        title="Xóa"
       >
        <Trash2 className="w-3.5 h-3.5" />

@@ -275,7 +275,12 @@ export async function searchNotesByTitle(
    ══════════════════════════════════════════ */
 
 export type LessonNoteTargetType = "hanzihome_lesson";
-export type LessonNoteRelationType = "main" | "vocab" | "grammar" | "annotation";
+export type LessonNoteRelationType =
+ | "main"
+ | "lesson_text"
+ | "vocab"
+ | "grammar"
+ | "annotation";
 
 export async function getNoteByLessonNoteLink(
  supabase: SupabaseClient,

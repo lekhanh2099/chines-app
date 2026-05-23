@@ -34,14 +34,16 @@ export function GrammarPointReader({
 }: GrammarPointReaderProps) {
  if (!point) {
   return (
-   <Card padding="lg" className="rounded-2xl">
-    <p className="text-sm font-semibold text-text-muted">Bài này chưa có điểm ngữ pháp.</p>
+   <Card padding="lg" className="rounded-2xl -2xl">
+    <p className="text-sm font-semibold text-text-muted">
+     Bài này chưa có điểm ngữ pháp.
+    </p>
    </Card>
   );
  }
 
  return (
-  <Card padding="lg" className="rounded-2xl">
+  <Card padding="lg" className="rounded-2xl -2xl">
    <article className="flex flex-col gap-5">
     <div className="flex flex-wrap items-start justify-between gap-3">
      <div className="min-w-0">
@@ -50,7 +52,9 @@ export function GrammarPointReader({
        {point.cleanTitle}
       </h2>
       {point.core && (
-       <p className="mt-2 text-sm leading-relaxed text-text-secondary">{point.core}</p>
+       <p className="mt-2 text-sm leading-relaxed text-text-secondary">
+        {point.core}
+       </p>
       )}
      </div>
      <div className="flex flex-wrap gap-2">
@@ -70,15 +74,24 @@ export function GrammarPointReader({
     </div>
 
     <div className="flex flex-wrap gap-2">
-     <Button variant={status === "known" ? "default" : "outline"} onClick={() => onMarkStatus("known")}>
+     <Button
+      variant={status === "known" ? "default" : "outline"}
+      onClick={() => onMarkStatus("known")}
+     >
       <CheckCircle2 className="h-4 w-4" />
       Đã biết
      </Button>
-     <Button variant={status === "hard" ? "default" : "outline"} onClick={() => onMarkStatus("hard")}>
+     <Button
+      variant={status === "hard" ? "default" : "outline"}
+      onClick={() => onMarkStatus("hard")}
+     >
       <TriangleAlert className="h-4 w-4" />
       Còn khó
      </Button>
-     <Button variant={status === "new" ? "default" : "outline"} onClick={() => onMarkStatus("new")}>
+     <Button
+      variant={status === "new" ? "default" : "outline"}
+      onClick={() => onMarkStatus("new")}
+     >
       <Circle className="h-4 w-4" />
       Học mới
      </Button>
@@ -88,7 +101,10 @@ export function GrammarPointReader({
      <section className="grid gap-2">
       <h3 className="text-base font-black text-text-primary">Công thức</h3>
       {point.structuresView.map((structure) => (
-       <p key={structure} className="rounded-2xl border border-info/30 bg-info-subtle p-4 text-base font-black text-info-text">
+       <p
+        key={structure}
+        className="rounded-2xl border border-info/30 bg-info-subtle p-4 text-base font-black text-info-text"
+       >
         {structure}
        </p>
       ))}
@@ -101,9 +117,11 @@ export function GrammarPointReader({
       {point.examplesParsed.map((example) => (
        <div
         key={`${example.zh}-${example.vi}`}
-        className="rounded-2xl bg-bg-subtle p-3"
+        className="rounded-2xlbg-bg-subtle p-3"
        >
-        <p className="font-black leading-relaxed text-text-primary">{example.zh}</p>
+        <p className="font-black leading-relaxed text-text-primary">
+         {example.zh}
+        </p>
         {example.vi && (
          <p className="text-sm font-semibold leading-relaxed text-text-secondary">
           {example.vi}
@@ -116,16 +134,22 @@ export function GrammarPointReader({
 
     {point.notes.length > 0 && (
      <section className="grid gap-2">
-      <h3 className="text-base font-black text-text-primary">Lưu ý / bẫy sai</h3>
+      <h3 className="text-base font-black text-text-primary">
+       Lưu ý / bẫy sai
+      </h3>
       {point.notes.map((note) => (
-       <p key={note} className="text-sm leading-relaxed text-text-secondary">{note}</p>
-     ))}
-    </section>
-   )}
+       <p key={note} className="text-sm leading-relaxed text-text-secondary">
+        {note}
+       </p>
+      ))}
+     </section>
+    )}
 
     {relatedVocab.length > 0 && (
      <section className="grid gap-2">
-      <h3 className="text-base font-black text-text-primary">Từ vựng liên quan trong bài</h3>
+      <h3 className="text-base font-black text-text-primary">
+       Từ vựng liên quan trong bài
+      </h3>
       <div className="flex flex-wrap gap-2">
        {relatedVocab.map((word) => (
         <Badge key={word.id} variant="accent" size="lg">

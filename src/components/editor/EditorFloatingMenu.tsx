@@ -82,7 +82,7 @@ function FormatButton({
    variant="ghost"
    size="icon-sm"
    className={cn(
-    "h-8 w-8 min-w-0 rounded-md border border-transparent px-0 text-slate-500 hover:bg-slate-100 hover:text-slate-900",
+    "h-8 w-8 min-w-0 rounded-2xl -md border border-transparent px-0 text-slate-500 hover:bg-slate-100 hover:text-slate-900",
     active && "border-indigo-200 bg-indigo-50 text-indigo-600",
    )}
    onMouseDown={preserveEditorSelection}
@@ -581,17 +581,17 @@ export default function EditorFloatingMenu() {
       onMouseDown={preserveEditorSelection}
       data-no-inspector
       style={{ maxWidth: "calc(100vw - 1rem)" }}
-      className="relative w-auto min-w-75 max-w-md rounded-lg border border-gray-200 bg-white shadow-xl"
+      className="relative w-auto min-w-75 max-w-md rounded-2xl -lg border border-gray-200 bg-white shadow-xl"
      >
       {showChineseLookup && (
        <div className="p-2 pb-1">
         {smartLoading ? (
-         <div className="flex items-center justify-center gap-2 rounded-md px-3 py-4 text-sm text-slate-500">
+         <div className="flex items-center justify-center gap-2 rounded-2xl -md px-3 py-4 text-sm text-slate-500">
           <Loader2 className="h-4 w-4 animate-spin text-indigo-500" />
           <span>Đang tra...</span>
          </div>
         ) : smartError ? (
-         <div className="rounded-md border border-rose-200 bg-rose-50 px-3 py-2 text-sm text-rose-700">
+         <div className="rounded-2xl -md border border-rose-200 bg-rose-50 px-3 py-2 text-sm text-rose-700">
           {error instanceof Error ? error.message : "Không thể tải dữ liệu"}
          </div>
         ) : smartData ? (
@@ -608,7 +608,7 @@ export default function EditorFloatingMenu() {
             )}
            </div>
            <div className="grid gap-2 sm:grid-cols-3">
-            <div className="rounded-xl border border-white/80 bg-white px-3 py-2 shadow-sm">
+            <div className="rounded-2xl -xl border border-white/80 bg-white px-3 py-2 shadow-sm">
              <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-slate-400">
               Từ loại
              </p>
@@ -618,7 +618,7 @@ export default function EditorFloatingMenu() {
                "Chưa rõ"}
              </p>
             </div>
-            <div className="rounded-xl border border-white/80 bg-white px-3 py-2 shadow-sm">
+            <div className="rounded-2xl -xl border border-white/80 bg-white px-3 py-2 shadow-sm">
              <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-slate-400">
               Pinyin
              </p>
@@ -626,7 +626,7 @@ export default function EditorFloatingMenu() {
               {smartData.entry.pinyin || "Chưa rõ"}
              </p>
             </div>
-            <div className="rounded-xl border border-white/80 bg-white px-3 py-2 shadow-sm">
+            <div className="rounded-2xl -xl border border-white/80 bg-white px-3 py-2 shadow-sm">
              <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-slate-400">
               Nghĩa
              </p>
@@ -639,7 +639,7 @@ export default function EditorFloatingMenu() {
              </p>
             </div>
            </div>
-           <div className="rounded-xl border border-white/80 bg-white px-3 py-3 text-center shadow-sm">
+           <div className="rounded-2xl -xl border border-white/80 bg-white px-3 py-3 text-center shadow-sm">
             <p className="text-sm font-medium leading-6 text-slate-800">
              {smartData.meaning_summary ||
               smartData.definitions[0]?.meaning ||
@@ -657,7 +657,7 @@ export default function EditorFloatingMenu() {
           </div>
          ) : (
           <div className="space-y-2 rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3">
-           <div className="rounded-md bg-slate-50 px-3 py-2 text-center">
+           <div className="rounded-2xl -md bg-slate-50 px-3 py-2 text-center">
             <p className="text-sm font-semibold leading-6 text-slate-900">
              {smartData.selection}
             </p>
@@ -672,13 +672,13 @@ export default function EditorFloatingMenu() {
             <p className="text-center text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-400">
              Dịch nghĩa
             </p>
-            <div className="rounded-md border border-slate-200 px-3 py-2 text-sm leading-6 text-slate-700">
+            <div className="rounded-2xl -md border border-slate-200 px-3 py-2 text-sm leading-6 text-slate-700">
              {smartData.translation || "Chưa có bản dịch cho câu này"}
             </div>
            </div>
 
            {smartData.grammar_points[0]?.explanation && (
-            <div className="rounded-md border border-slate-200 bg-white px-3 py-2 text-sm leading-6 text-slate-700 shadow-sm">
+            <div className="rounded-2xl -md border border-slate-200 bg-white px-3 py-2 text-sm leading-6 text-slate-700 shadow-sm">
              {smartData.grammar_points[0].explanation}
             </div>
            )}
@@ -696,7 +696,7 @@ export default function EditorFloatingMenu() {
            <Button
             variant="ghost"
             size="icon-sm"
-            className="h-8 w-8 min-w-0 rounded-full px-0 text-slate-500 hover:bg-slate-100 hover:text-slate-900"
+            className="h-8 w-8 min-w-0 rounded-2xl -full px-0 text-slate-500 hover:bg-slate-100 hover:text-slate-900"
             onMouseDown={preserveEditorSelection}
             onClick={handleSave}
             disabled={isSaving || !smartData || smartData.isSaved}
@@ -713,7 +713,7 @@ export default function EditorFloatingMenu() {
            <Button
             variant="ghost"
             size="icon-sm"
-            className="h-8 w-8 min-w-0 rounded-full px-0 text-slate-500 hover:bg-slate-100 hover:text-slate-900"
+            className="h-8 w-8 min-w-0 rounded-2xl -full px-0 text-slate-500 hover:bg-slate-100 hover:text-slate-900"
             onMouseDown={preserveEditorSelection}
             onClick={handleSpeak}
             disabled={!detailTarget && !selectedText}
@@ -725,7 +725,7 @@ export default function EditorFloatingMenu() {
             variant="ghost"
             size="icon-sm"
             className={cn(
-             "h-8 w-8 min-w-0 rounded-full px-0 text-slate-500 hover:bg-amber-50 hover:text-amber-700",
+             "h-8 w-8 min-w-0 rounded-2xl -full px-0 text-slate-500 hover:bg-amber-50 hover:text-amber-700",
              showNote && "bg-amber-100 text-amber-700",
             )}
             onMouseDown={preserveEditorSelection}
@@ -737,7 +737,7 @@ export default function EditorFloatingMenu() {
            <Button
             variant="ghost"
             size="sm"
-            className="h-8 rounded-full px-3 text-slate-500 hover:bg-slate-100 hover:text-slate-900"
+            className="h-8 rounded-2xl -full px-3 text-slate-500 hover:bg-slate-100 hover:text-slate-900"
             onMouseDown={preserveEditorSelection}
             onClick={(event) => {
              preserveEditorSelection(event);
@@ -765,7 +765,7 @@ export default function EditorFloatingMenu() {
           variant="ghost"
           size="icon-sm"
           className={cn(
-           "h-8 w-8 min-w-0 rounded-md border border-transparent px-0 text-slate-500 hover:bg-slate-100 hover:text-slate-900",
+           "h-8 w-8 min-w-0 rounded-2xl -md border border-transparent px-0 text-slate-500 hover:bg-slate-100 hover:text-slate-900",
            showLinkSearch && "border-indigo-200 bg-indigo-50 text-indigo-600",
           )}
           onMouseDown={preserveEditorSelection}
@@ -778,7 +778,7 @@ export default function EditorFloatingMenu() {
           variant="ghost"
           size="icon-sm"
           className={cn(
-           "h-8 w-8 min-w-0 rounded-md border border-transparent px-0 text-slate-500 hover:bg-amber-50 hover:text-amber-700",
+           "h-8 w-8 min-w-0 rounded-2xl -md border border-transparent px-0 text-slate-500 hover:bg-amber-50 hover:text-amber-700",
            showInlineNote && "border-amber-200 bg-amber-50 text-amber-700",
           )}
           onMouseDown={preserveEditorSelection}
@@ -854,15 +854,15 @@ export default function EditorFloatingMenu() {
        </div>
 
        {showNote && (
-        <div className="mt-2 overflow-hidden rounded-md border border-yellow-100 bg-yellow-50 p-3 animate-in slide-in-from-top-1 duration-200">
+        <div className="mt-2 overflow-hidden rounded-2xl -md border border-yellow-100 bg-yellow-50 p-3 animate-in slide-in-from-top-1 duration-200">
          <div className="mb-2 flex items-center justify-between gap-2">
-          <span className="rounded-full bg-amber-100 px-2 py-0.5 text-[11px] font-semibold uppercase tracking-wide text-amber-700">
+          <span className="rounded-2xl -full bg-amber-100 px-2 py-0.5 text-[11px] font-semibold uppercase tracking-wide text-amber-700">
            Important
           </span>
           <Button
            variant="ghost"
            size="sm"
-           className="h-8 min-w-0 rounded-md px-2 text-amber-700 hover:bg-amber-100"
+           className="h-8 min-w-0 rounded-2xl -md px-2 text-amber-700 hover:bg-amber-100"
            onMouseDown={preserveEditorSelection}
            onClick={handleSaveNote}
            disabled={isSaving || !smartData}
@@ -883,7 +883,7 @@ export default function EditorFloatingMenu() {
           }}
           onClick={(event) => event.stopPropagation()}
           onChange={(event) => setNoteDraft(event.target.value)}
-          className="min-h-23 w-full resize-y rounded-md border border-yellow-200 bg-transparent px-3 py-2 text-sm text-slate-700 outline-none placeholder:text-slate-400 focus:border-amber-300"
+          className="min-h-23 w-full resize-y rounded-2xl -md border border-yellow-200 bg-transparent px-3 py-2 text-sm text-slate-700 outline-none placeholder:text-slate-400 focus:border-amber-300"
           placeholder="Ghi chú nhanh..."
          />
         </div>
@@ -891,7 +891,7 @@ export default function EditorFloatingMenu() {
 
        {/* ── Link to Note search ── */}
        {showLinkSearch && (
-        <div className="mt-2 overflow-hidden rounded-md border border-indigo-100 bg-indigo-50/50 p-3 animate-in slide-in-from-top-1 duration-200">
+        <div className="mt-2 overflow-hidden rounded-2xl -md border border-indigo-100 bg-indigo-50/50 p-3 animate-in slide-in-from-top-1 duration-200">
          <div className="mb-2 flex items-center gap-2">
           <Search className="h-4 w-4 text-indigo-500" />
           <span className="text-xs font-semibold text-indigo-700">
@@ -921,7 +921,7 @@ export default function EditorFloatingMenu() {
            }
           }}
           placeholder="Tìm theo tiêu đề ghi chú..."
-          className="w-full rounded-md border border-indigo-200 bg-white px-3 py-1.5 text-sm text-slate-700 outline-none placeholder:text-slate-400 focus:border-indigo-400"
+          className="w-full rounded-2xl -md border border-indigo-200 bg-white px-3 py-1.5 text-sm text-slate-700 outline-none placeholder:text-slate-400 focus:border-indigo-400"
          />
          {isSearching && (
           <div className="mt-2 flex items-center gap-2 text-xs text-indigo-500">
@@ -938,7 +938,7 @@ export default function EditorFloatingMenu() {
               preserveEditorSelection(event);
               handleInsertNoteLink(note);
              }}
-             className="w-full text-left rounded px-3 py-1.5 text-sm hover:bg-indigo-100 transition-colors text-slate-700"
+             className="w-full text-left rounded-2xl  px-3 py-1.5 text-sm hover:bg-indigo-100 transition-colors text-slate-700"
             >
              {note.title}
             </button>
@@ -955,15 +955,15 @@ export default function EditorFloatingMenu() {
 
        {/* ── Inline Quick Note ── */}
        {showInlineNote && (
-        <div className="mt-2 overflow-hidden rounded-md border border-sky-100 bg-sky-50/50 p-3 animate-in slide-in-from-top-1 duration-200">
+        <div className="mt-2 overflow-hidden rounded-2xl -md border border-sky-100 bg-sky-50/50 p-3 animate-in slide-in-from-top-1 duration-200">
          <div className="mb-2 flex items-center justify-between gap-2">
-          <span className="rounded-full bg-sky-100 px-2 py-0.5 text-[11px] font-semibold uppercase tracking-wide text-sky-700">
+          <span className="rounded-2xl -full bg-sky-100 px-2 py-0.5 text-[11px] font-semibold uppercase tracking-wide text-sky-700">
            Ghi chú nhanh
           </span>
           <Button
            variant="ghost"
            size="sm"
-           className="h-7 min-w-0 rounded-md px-2 text-xs text-sky-700 hover:bg-sky-100"
+           className="h-7 min-w-0 rounded-2xl -md px-2 text-xs text-sky-700 hover:bg-sky-100"
            onMouseDown={preserveEditorSelection}
            onClick={handleSaveInlineNote}
           >
@@ -983,7 +983,7 @@ export default function EditorFloatingMenu() {
           }}
           onClick={(event) => event.stopPropagation()}
           onChange={(event) => setInlineNoteDraft(event.target.value)}
-          className="min-h-16 w-full resize-y rounded-md border border-sky-200 bg-transparent px-3 py-2 text-sm text-slate-700 outline-none placeholder:text-slate-400 focus:border-sky-300"
+          className="min-h-16 w-full resize-y rounded-2xl -md border border-sky-200 bg-transparent px-3 py-2 text-sm text-slate-700 outline-none placeholder:text-slate-400 focus:border-sky-300"
           placeholder="Ghim ghi chú lại... (vd: tra thêm ví dụ, phát âm đặc biệt)"
          />
         </div>

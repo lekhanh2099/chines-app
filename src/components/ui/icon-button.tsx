@@ -9,7 +9,7 @@ const iconButtonVariants = cva(
   variants: {
    variant: {
     default:
-     "border-border-default bg-bg-primary text-text-muted hover:border-accent hover: ",
+     "border-border-default bg-bg-primary text-text-muted hover:border-accent hover:text-accent",
     ghost:
      "border-transparent bg-transparent text-text-muted hover:bg-bg-subtle hover:text-text-primary",
     accent: "border-accent bg-accent text-white hover:bg-accent-hover",

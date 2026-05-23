@@ -270,7 +270,7 @@ function DocSection({
  children: ReactNode;
 }) {
  return (
-  <Card variant="subtle" padding="sm" className="rounded-2xl">
+  <Card variant="subtle" padding="sm" className="rounded-2xl -2xl">
    <div className="flex flex-col gap-3">
     <div className="flex flex-wrap items-center gap-2">
      <Badge variant="accent" size="sm">
@@ -316,7 +316,7 @@ function DictionaryMeaningSection({ viewModel }: DictionarySectionProps) {
          key={`${meaning.meaning}-${index}`}
          variant="subtle"
          padding="sm"
-         className="rounded-2xl"
+         className="rounded-2xl -2xl"
         >
          <div className="flex flex-col gap-3">
           <div className="flex flex-wrap items-center gap-2">
@@ -442,7 +442,7 @@ function DictionaryLearningInsightsSection({
 
    <div className="">
     {viewModel.ai?.decomposition && (
-     <Card variant="subtle" padding="sm" className="mb-3 rounded-2xl">
+     <Card variant="subtle" padding="sm" className="mb-3 rounded-2xl -2xl">
       <div className="flex flex-col gap-2">
        <SectionHeader
         title="Chiết tự"
@@ -456,7 +456,7 @@ function DictionaryLearningInsightsSection({
     )}
 
     {viewModel.ai?.comparisons && viewModel.ai.comparisons.length > 0 && (
-     <Card variant="subtle" padding="sm" className="mb-3 rounded-2xl">
+     <Card variant="subtle" padding="sm" className="mb-3 rounded-2xl -2xl">
       <div className="flex flex-col gap-2">
        <SectionHeader
         title="So sánh từ gần nghĩa"
@@ -468,7 +468,7 @@ function DictionaryLearningInsightsSection({
     )}
 
     {viewModel.ai?.collocations && viewModel.ai.collocations.length > 0 && (
-     <Card variant="subtle" padding="sm" className="mb-3 rounded-2xl">
+     <Card variant="subtle" padding="sm" className="mb-3 rounded-2xl -2xl">
       <div className="flex flex-col gap-2">
        <SectionHeader title="Cụm từ cố định" />
        <div className="grid gap-2 md:grid-cols-2">
@@ -486,7 +486,7 @@ function DictionaryLearningInsightsSection({
     )}
 
     {viewModel.ai?.cultural_note && (
-     <Card variant="subtle" padding="sm" className="mb-3 rounded-2xl">
+     <Card variant="subtle" padding="sm" className="mb-3 rounded-2xl -2xl">
       <div className="flex flex-col gap-2">
        <SectionHeader
         title="Trung Việt"
@@ -500,7 +500,7 @@ function DictionaryLearningInsightsSection({
     )}
 
     {viewModel.ai?.usage_note && (
-     <Card variant="subtle" padding="sm" className="mb-3 rounded-2xl">
+     <Card variant="subtle" padding="sm" className="mb-3 rounded-2xl -2xl">
       <div className="flex flex-col gap-2">
        <SectionHeader title="Lưu ý" />
        <p className="whitespace-pre-line text-sm leading-relaxed text-text-secondary">
@@ -511,7 +511,7 @@ function DictionaryLearningInsightsSection({
     )}
 
     {viewModel.ai?.notes && (
-     <Card variant="subtle" padding="sm" className="rounded-2xl">
+     <Card variant="subtle" padding="sm" className="rounded-2xl -2xl">
       <div className="flex flex-col gap-2">
        <SectionHeader title="Ghi chú dùng từ" />
        <p className="text-sm leading-relaxed text-text-secondary">
@@ -531,7 +531,7 @@ function DictionaryLearningInsightsSection({
         key={`${item}-${index}`}
         variant="default"
         padding="sm"
-        className="rounded-xl"
+        className="rounded-2xl -xl"
        >
         <div className="flex items-start gap-2">
          <span className="mt-0.5 text-xs  ">●</span>
@@ -574,7 +574,7 @@ function DictionaryPersonalNoteSection({ viewModel }: DictionarySectionProps) {
     value={note}
     onChange={(event) => setNote(event.target.value)}
     placeholder="Tự ghi cách nhớ, ngữ cảnh dùng, điểm dễ nhầm..."
-    className="min-h-40 rounded-3xl px-6 py-5"
+    className="min-h-40 rounded-2xl  px-6 py-5"
    />
   </SectionWrapper>
  );
@@ -601,7 +601,7 @@ function ExampleRow({ example }: { example: ExampleItem }) {
 
 function ExampleCard({ example }: { example: ExampleItem }) {
  return (
-  <Card variant="subtle" padding="sm" className="rounded-2xl">
+  <Card variant="subtle" padding="sm" className="rounded-2xl -2xl">
    <ExampleRow example={example} />
   </Card>
  );
@@ -612,7 +612,7 @@ function BulletList({ items }: { items: string[] }) {
   <div className="flex flex-col gap-2">
    {items.map((item, index) => (
     <div key={`${item}-${index}`} className="flex items-start gap-2">
-     <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
+     <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-2xl -full bg-accent" />
      <span className="text-sm leading-relaxed text-text-secondary">{item}</span>
     </div>
    ))}
@@ -653,7 +653,7 @@ function WordRelationGrid({
         <Card
          variant="subtle"
          padding="sm"
-         className="h-full rounded-2xl transition-colors hover:border-accent/30 hover:bg-bg-card-hover"
+         className="h-full rounded-2xltransition-colors hover:border-accent/30 hover:bg-bg-card-hover"
         >
          <div className="flex flex-col gap-1">
           <div className="flex flex-wrap items-center gap-2">
@@ -689,10 +689,10 @@ function AiLoadingState() {
      Đang phân tích dữ liệu chuyên sâu...
     </div>
     <div className="space-y-2.5">
-     <div className="h-4 w-4/5 animate-pulse rounded bg-bg-subtle" />
-     <div className="h-3 w-full animate-pulse rounded bg-bg-subtle" />
-     <div className="h-3 w-3/4 animate-pulse rounded bg-bg-subtle" />
-     <div className="h-3 w-5/6 animate-pulse rounded bg-bg-subtle" />
+     <div className="h-4 w-4/5 animate-pulse rounded-2xl  bg-bg-subtle" />
+     <div className="h-3 w-full animate-pulse rounded-2xl  bg-bg-subtle" />
+     <div className="h-3 w-3/4 animate-pulse rounded-2xl  bg-bg-subtle" />
+     <div className="h-3 w-5/6 animate-pulse rounded-2xl  bg-bg-subtle" />
     </div>
    </div>
   </Card>

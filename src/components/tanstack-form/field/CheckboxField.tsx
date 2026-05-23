@@ -29,7 +29,7 @@ export function CheckboxField({
      checked={field.state.value}
      onChange={(e) => field.handleChange(e.target.checked)}
      onBlur={field.handleBlur}
-     className="w-5 h-5 text-indigo-600 bg-slate-50 border-slate-300 rounded focus:ring-indigo-500"
+     className="w-5 h-5 text-indigo-600 bg-slate-50 border-slate-300 rounded-2xl  focus:ring-indigo-500"
      {...rest}
     />
     {label && (

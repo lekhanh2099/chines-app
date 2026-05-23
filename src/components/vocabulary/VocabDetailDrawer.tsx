@@ -132,7 +132,7 @@ export function VocabDetailDrawer() {
           type="button"
           onClick={handleSpeak}
           disabled={isTTSLoading}
-          className="rounded-full p-1.5 text-text-muted transition-colors hover:bg-bg-primary hover:  disabled:opacity-50"
+          className="rounded-2xl -full p-1.5 text-text-muted transition-colors hover:bg-bg-primary hover:  disabled:opacity-50"
           title={isSpeaking ? "Dừng phát âm" : "Nghe phát âm"}
          >
           {isTTSLoading ? (
@@ -163,7 +163,7 @@ export function VocabDetailDrawer() {
         <button
          type="button"
          onClick={closeDetailDrawer}
-         className="rounded-full p-2 text-text-muted transition-colors hover:bg-bg-primary hover:text-text-primary"
+         className="rounded-2xl -full p-2 text-text-muted transition-colors hover:bg-bg-primary hover:text-text-primary"
          title="Đóng"
         >
          <X className="h-4 w-4" />
@@ -272,7 +272,7 @@ function WordDetailPanel({
 
  return (
   <div className="space-y-5">
-   <div className="rounded-3xl border border-border-default bg-bg-card p-4">
+   <div className="rounded-2xl  border border-border-default bg-bg-card p-4">
     <div className="flex flex-wrap items-center justify-between gap-3">
      <div>
       <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-text-muted">
@@ -286,7 +286,7 @@ function WordDetailPanel({
       type="button"
       onClick={() => onSave(noteDraft)}
       disabled={isSaving}
-      className="inline-flex items-center gap-2 rounded-full border border-border-default bg-bg-primary px-3 py-2 text-xs font-semibold text-text-primary transition-colors hover:border-accent hover:  disabled:opacity-50"
+      className="inline-flex items-center gap-2 rounded-2xl -full border border-border-default bg-bg-primary px-3 py-2 text-xs font-semibold text-text-primary transition-colors hover:border-accent hover:  disabled:opacity-50"
      >
       {isSaving ? (
        <Loader2 className="h-4 w-4 animate-spin" />
@@ -300,7 +300,7 @@ function WordDetailPanel({
     </div>
    </div>
 
-   <section className="rounded-3xl border border-border-default bg-bg-card p-4">
+   <section className="rounded-2xl  border border-border-default bg-bg-card p-4">
     <div className="mb-3 flex items-center justify-between gap-3">
      <div>
       <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-text-muted">
@@ -313,7 +313,7 @@ function WordDetailPanel({
           key={character}
           type="button"
           onClick={() => setActiveCharacter(character)}
-          className={`inline-flex h-8 min-w-8 items-center justify-center rounded-md border px-2 text-sm font-bold transition-colors ${
+          className={`inline-flex h-8 min-w-8 items-center justify-center rounded-2xl -md border px-2 text-sm font-bold transition-colors ${
            visualCharacter === character
             ? "border-accent bg-accent text-white"
             : "border-border-default bg-bg-primary text-text-primary hover:border-accent hover: "
@@ -349,7 +349,7 @@ function WordDetailPanel({
          {radicals.slice(0, 4).map((radical, index) => (
           <div
            key={`${radical.char || radical.meaning || "radical"}-${index}`}
-           className="rounded-xl border border-border-default bg-bg-card px-3 py-2"
+           className="rounded-2xl -xl border border-border-default bg-bg-card px-3 py-2"
           >
            <p className="text-base font-bold text-text-primary">
             {radical.char || "?"}
@@ -369,7 +369,7 @@ function WordDetailPanel({
         Lục thư
        </p>
        {etymologyType && (
-        <span className="inline-flex rounded-full bg-purple-50 px-2 py-1 text-[10px] font-bold uppercase tracking-wide text-purple-700">
+        <span className="inline-flex rounded-2xl -full bg-purple-50 px-2 py-1 text-[10px] font-bold uppercase tracking-wide text-purple-700">
          {etymologyType}
         </span>
        )}
@@ -391,7 +391,7 @@ function WordDetailPanel({
     </div>
    )}
 
-   <section className="rounded-3xl border border-border-default bg-bg-card p-4">
+   <section className="rounded-2xl  border border-border-default bg-bg-card p-4">
     <p className="mb-3 text-[10px] font-bold uppercase tracking-[0.18em] text-text-muted">
      Ngữ nghĩa & Ví dụ
     </p>
@@ -413,11 +413,11 @@ function WordDetailPanel({
          className="rounded-2xl border border-border-default bg-bg-primary p-3"
         >
          <div className="flex items-center gap-2">
-          <span className="rounded-full bg-accent px-2 py-1 text-[10px] font-bold text-white">
+          <span className="rounded-2xl -full bg-accent px-2 py-1 text-[10px] font-bold text-white">
            {index + 1}
           </span>
           {definition.pos && (
-           <span className="rounded-full bg-purple-50 px-2 py-1 text-[10px] font-bold uppercase tracking-wide text-purple-700">
+           <span className="rounded-2xl -full bg-purple-50 px-2 py-1 text-[10px] font-bold uppercase tracking-wide text-purple-700">
             {definition.pos}
            </span>
           )}
@@ -485,7 +485,7 @@ function WordDetailPanel({
     </div>
    </section>
 
-   <section className="rounded-3xl border border-border-default bg-bg-card p-4">
+   <section className="rounded-2xl  border border-border-default bg-bg-card p-4">
     <div className="mb-3 flex items-center justify-between gap-3">
      <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-text-muted">
       Ghi chú cá nhân
@@ -494,7 +494,7 @@ function WordDetailPanel({
       type="button"
       onClick={() => onSave(noteDraft)}
       disabled={isSaving}
-      className="inline-flex items-center gap-2 rounded-full border border-border-default bg-bg-primary px-3 py-2 text-xs font-semibold text-text-primary transition-colors hover:border-accent hover:  disabled:opacity-50"
+      className="inline-flex items-center gap-2 rounded-2xl -full border border-border-default bg-bg-primary px-3 py-2 text-xs font-semibold text-text-primary transition-colors hover:border-accent hover:  disabled:opacity-50"
      >
       {isSaving ? (
        <Loader2 className="h-4 w-4 animate-spin" />
@@ -532,7 +532,7 @@ function SentenceDetailPanel({
 
  return (
   <div className="space-y-5">
-   <section className="rounded-3xl border border-border-default bg-bg-card p-4">
+   <section className="rounded-2xl  border border-border-default bg-bg-card p-4">
     <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-text-muted mb-2">
      Dịch nghĩa
     </p>
@@ -542,7 +542,7 @@ function SentenceDetailPanel({
    </section>
 
    {smartData.grammar_points.length > 0 && (
-    <section className="rounded-3xl border border-border-default bg-bg-card p-4">
+    <section className="rounded-2xl  border border-border-default bg-bg-card p-4">
      <p className="mb-3 text-[10px] font-bold uppercase tracking-[0.18em] text-text-muted">
       Ghi chú ngữ pháp
      </p>
@@ -566,7 +566,7 @@ function SentenceDetailPanel({
     </section>
    )}
 
-   <section className="rounded-3xl border border-border-default bg-bg-card p-4">
+   <section className="rounded-2xl  border border-border-default bg-bg-card p-4">
     <p className="mb-3 text-[10px] font-bold uppercase tracking-[0.18em] text-text-muted">
      Bấm từng hán tự để học sâu
     </p>
@@ -577,14 +577,14 @@ function SentenceDetailPanel({
         key={`${char}-${index}`}
         type="button"
         onClick={() => onCharacterSelect(char)}
-        className="inline-flex h-10 min-w-10 items-center justify-center rounded-md border border-border-default bg-bg-primary px-2 text-base font-bold text-text-primary transition-colors hover:border-accent hover: "
+        className="inline-flex h-10 min-w-10 items-center justify-center rounded-2xl -md border border-border-default bg-bg-primary px-2 text-base font-bold text-text-primary transition-colors hover:border-accent hover: "
        >
         {char}
        </button>
       ) : (
        <span
         key={`${char}-${index}`}
-        className="inline-flex h-10 min-w-10 items-center justify-center rounded-md bg-bg-subtle px-2 text-sm text-text-muted"
+        className="inline-flex h-10 min-w-10 items-center justify-center rounded-2xl -md bg-bg-subtle px-2 text-sm text-text-muted"
        >
         {char}
        </span>
@@ -593,7 +593,7 @@ function SentenceDetailPanel({
     </div>
    </section>
 
-   <section className="rounded-3xl border border-border-default bg-bg-card p-4">
+   <section className="rounded-2xl  border border-border-default bg-bg-card p-4">
     <div className="mb-3 flex items-center justify-between gap-3">
      <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-text-muted">
       Ghi chú cá nhân
@@ -602,7 +602,7 @@ function SentenceDetailPanel({
       type="button"
       onClick={() => onSave(noteDraft)}
       disabled={isSaving}
-      className="inline-flex items-center gap-2 rounded-full border border-border-default bg-bg-primary px-3 py-2 text-xs font-semibold text-text-primary transition-colors hover:border-accent hover:  disabled:opacity-50"
+      className="inline-flex items-center gap-2 rounded-2xl -full border border-border-default bg-bg-primary px-3 py-2 text-xs font-semibold text-text-primary transition-colors hover:border-accent hover:  disabled:opacity-50"
      >
       {isSaving ? (
        <Loader2 className="h-4 w-4 animate-spin" />
@@ -793,7 +793,7 @@ function CharacterWriterCard({ character }: { character: string }) {
   <div className="rounded-2xl border border-border-default bg-bg-primary p-3">
    <div
     ref={containerRef}
-    className="mx-auto rounded-xl border border-border-default bg-white"
+    className="mx-auto rounded-2xl -xl border border-border-default bg-white"
     style={{ width: 160, height: 160, position: "relative" }}
    />
   </div>

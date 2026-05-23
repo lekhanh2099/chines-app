@@ -204,7 +204,7 @@
   --color-ring: var(--ring);
 
   --shadow-theme-sm: var(--shadow-sm);
-  --shadow-theme-md: var(--shadow-md);
+  --shadow: var(--shadow-md);
   --shadow-theme-lg: var(--shadow-lg);
 
   --color-overlay: var(--overlay);
@@ -567,7 +567,7 @@ body {
   color: var(--text-primary);
   position: relative;
   tab-size: 1;
-  caret-color: var(--accent);
+  caret-color: var(--text-primary);
 }
 
 /* ── Placeholder ── */

@@ -47,7 +47,7 @@ export function RadicalWorkspace({ radicals }: RadicalWorkspaceProps) {
 
  if (!selectedRadical) {
   return (
-   <Card padding="lg" className="rounded-2xl">
+   <Card padding="lg" className="rounded-2xl -2xl">
     <p className="text-sm font-semibold text-text-muted">
      Chưa có dữ liệu bộ thủ.
     </p>
@@ -59,7 +59,7 @@ export function RadicalWorkspace({ radicals }: RadicalWorkspaceProps) {
   <div className="grid gap-5 lg:grid-cols-[minmax(20rem,23.75rem)_minmax(0,1fr)]">
    <Card
     padding="md"
-    className="rounded-2xl lg:sticky lg:top-24 lg:max-h-[calc(100vh-8rem)] lg:overflow-y-auto"
+    className="rounded-2xllg:sticky lg:top-24 lg:max-h-[calc(100vh-8rem)] lg:overflow-y-auto"
    >
     <div className="grid gap-3">
      <div>
@@ -81,7 +81,7 @@ export function RadicalWorkspace({ radicals }: RadicalWorkspaceProps) {
        <Button
         key={radical.id}
         variant={radical.id === selectedRadical.id ? "default" : "outline"}
-        className="h-auto justify-start rounded-2xl py-3"
+        className="h-auto justify-start rounded-2xlpy-3"
         onClick={() => setSelectedId(radical.id)}
        >
         <span className="text-xl font-black">{radical.radical}</span>
@@ -93,14 +93,14 @@ export function RadicalWorkspace({ radicals }: RadicalWorkspaceProps) {
       ))}
      </div>
      {visibleRadicals.length === 0 && (
-      <p className="rounded-2xl bg-bg-subtle p-4 text-sm font-semibold text-text-muted">
+      <p className="rounded-2xlbg-bg-subtle p-4 text-sm font-semibold text-text-muted">
        Không có bộ thủ phù hợp bộ lọc.
       </p>
      )}
     </div>
    </Card>
 
-   <Card padding="lg" className="rounded-2xl">
+   <Card padding="lg" className="rounded-2xl -2xl">
     <div className="grid gap-5">
      <div className="flex flex-wrap items-center gap-4">
       <h2 className="text-7xl font-black text-text-primary">
@@ -165,7 +165,7 @@ function RadicalSection({
  children: ReactNode;
 }) {
  return (
-  <section className="grid gap-2 rounded-2xl bg-bg-subtle p-4 text-base leading-relaxed text-text-secondary">
+  <section className="grid gap-2 rounded-2xlbg-bg-subtle p-4 text-base leading-relaxed text-text-secondary">
    <h4 className="text-base font-black text-text-primary">{title}</h4>
    {children}
   </section>

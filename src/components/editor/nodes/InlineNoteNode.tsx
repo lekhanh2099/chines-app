@@ -52,7 +52,7 @@ function InlineNoteComponent({
  return (
   <span
    ref={spanRef}
-   className="relative inline cursor-default rounded-sm bg-sky-100 px-0.5 decoration-sky-300 decoration-wavy underline"
+   className="relative inline cursor-default rounded-2xl -sm bg-sky-100 px-0.5 decoration-sky-300 decoration-wavy underline"
    data-inline-note="true"
    onMouseEnter={handleMouseEnter}
    onMouseLeave={handleMouseLeave}
@@ -60,7 +60,7 @@ function InlineNoteComponent({
    {text}
    {showTooltip && (
     <span
-     className="absolute bottom-full left-1/2 z-10000 mb-2 -translate-x-1/2 whitespace-pre-wrap rounded-lg border border-sky-200 bg-white px-3 py-2 text-xs leading-relaxed text-slate-700 shadow-lg"
+     className="absolute bottom-full left-1/2 z-10000 mb-2 -translate-x-1/2 whitespace-pre-wrap rounded-2xl -lg border border-sky-200 bg-white px-3 py-2 text-xs leading-relaxed text-slate-700 shadow-lg"
      style={{ minWidth: 120, maxWidth: 280 }}
      onMouseEnter={handleMouseEnter}
      onMouseLeave={handleMouseLeave}
@@ -128,7 +128,7 @@ export class InlineNoteNode extends DecoratorNode<JSX.Element> {
   el.dataset.inlineNote = "true";
   el.dataset.noteText = this.__noteText;
   el.className =
-   "bg-sky-100 px-0.5 rounded-sm underline decoration-wavy decoration-sky-300";
+   "bg-sky-100 px-0.5 rounded-2xl -sm underline decoration-wavy decoration-sky-300";
   el.textContent = this.__text;
   return { element: el };
  }

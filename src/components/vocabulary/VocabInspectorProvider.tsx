@@ -142,7 +142,7 @@ export function VocabInspectorProvider({
        onMouseDown={preserveSelection}
        data-no-inspector
        style={{ maxWidth: "calc(100vw - 1rem)" }}
-       className="w-85 overflow-hidden rounded-[28px] border border-border-default bg-bg-card shadow-theme-lg"
+       className="w-85 overflow-hidden rounded-2xl -[28px] border border-border-default bg-bg-card shadow-theme-lg"
       >
        <InspectorCard onClose={handleClose} />
       </Popover.Popup>
@@ -231,7 +231,7 @@ function InspectorCard({ onClose }: InspectorCardProps) {
       <Button
        variant="ghost"
        size="icon-sm"
-       className="rounded-full"
+       className="rounded-2xl -full"
        onMouseDown={preserveSelection}
        onClick={handleSpeak}
        disabled={!vocabData || isTTSLoading}
@@ -249,7 +249,7 @@ function InspectorCard({ onClose }: InspectorCardProps) {
       <Button
        variant="ghost"
        size="sm"
-       className="min-w-0 rounded-full px-3"
+       className="min-w-0 rounded-2xl -full px-3"
        onMouseDown={preserveSelection}
        onClick={handleSaveToVocab}
        disabled={!vocabData || isSaving || isSaved}
@@ -270,7 +270,7 @@ function InspectorCard({ onClose }: InspectorCardProps) {
       <Button
        variant="ghost"
        size="icon-sm"
-       className="rounded-full"
+       className="rounded-2xl -full"
        onMouseDown={preserveSelection}
        onClick={onClose}
        aria-label="Đóng inspector"
@@ -291,7 +291,7 @@ function InspectorCard({ onClose }: InspectorCardProps) {
      </div>
     ) : (
      <div className="space-y-4">
-      <section className="space-y-3 rounded-3xl border border-border-default bg-bg-primary px-4 py-4 text-center shadow-theme-sm">
+      <section className="space-y-3 rounded-2xl  border border-border-default bg-bg-primary px-4 py-4 text-center shadow-theme-sm">
        <p className="text-2xl font-semibold tracking-tight  ">
         {vocabData.pinyin}
        </p>
@@ -306,7 +306,7 @@ function InspectorCard({ onClose }: InspectorCardProps) {
        )}
       </section>
 
-      <section className="rounded-3xl border border-border-default bg-bg-primary px-4 py-4 shadow-theme-sm">
+      <section className="rounded-2xl  border border-border-default bg-bg-primary px-4 py-4 shadow-theme-sm">
        <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-text-muted">
         Nghĩa chính
        </p>
@@ -321,11 +321,11 @@ function InspectorCard({ onClose }: InspectorCardProps) {
        {deepError && <p className="mt-3 text-xs text-amber-700">{deepError}</p>}
       </section>
 
-      <div className="flex items-center gap-2 rounded-full border border-border-default bg-bg-primary p-1 shadow-theme-sm">
+      <div className="flex items-center gap-2 rounded-2xl -full border border-border-default bg-bg-primary p-1 shadow-theme-sm">
        <Button
         variant="ghost"
         size="sm"
-        className="h-10 flex-1 rounded-full"
+        className="h-10 flex-1 rounded-2xl -full"
         onMouseDown={preserveSelection}
         onClick={handleSaveToVocab}
         disabled={!vocabData || isSaving || isSaved}
@@ -342,7 +342,7 @@ function InspectorCard({ onClose }: InspectorCardProps) {
        <Button
         variant="ghost"
         size="sm"
-        className="h-10 flex-1 rounded-full"
+        className="h-10 flex-1 rounded-2xl -full"
         onMouseDown={preserveSelection}
         onClick={() => {
          openDetailDrawer({
@@ -368,40 +368,40 @@ function InspectorLoadingSkeleton() {
  return (
   <div className="space-y-5 animate-pulse">
    <section className="space-y-3 text-center">
-    <div className="mx-auto h-8 w-36 rounded-full bg-accent/12" />
+    <div className="mx-auto h-8 w-36 rounded-2xl -full bg-accent/12" />
     <div className="mx-auto h-10 w-32 rounded-2xl border border-border-default bg-bg-primary" />
    </section>
 
-   <section className="overflow-hidden rounded-3xl border border-border-default bg-bg-primary shadow-theme-sm">
+   <section className="overflow-hidden rounded-2xl  border border-border-default bg-bg-primary shadow-theme-sm">
     <div className="grid grid-cols-2 divide-x divide-border-default">
      <div className="space-y-3 px-3 py-4">
-      <div className="mx-auto h-3 w-14 rounded-full bg-text-muted/20" />
+      <div className="mx-auto h-3 w-14 rounded-2xl -full bg-text-muted/20" />
       <div className="flex flex-wrap justify-center gap-2">
-       <div className="h-10 w-20 rounded-2xl bg-bg-card" />
-       <div className="h-10 w-16 rounded-2xl bg-bg-card" />
+       <div className="h-10 w-20 rounded-2xlbg-bg-card" />
+       <div className="h-10 w-16 rounded-2xlbg-bg-card" />
       </div>
      </div>
 
      <div className="space-y-3 px-3 py-4">
-      <div className="mx-auto h-3 w-14 rounded-full bg-text-muted/20" />
+      <div className="mx-auto h-3 w-14 rounded-2xl -full bg-text-muted/20" />
       <div className="flex flex-col items-center gap-2">
-       <div className="h-8 w-28 rounded-full bg-accent/10" />
-       <div className="h-8 w-24 rounded-full bg-accent/8" />
-       <div className="h-8 w-32 rounded-full bg-accent/10" />
+       <div className="h-8 w-28 rounded-2xl -full bg-accent/10" />
+       <div className="h-8 w-24 rounded-2xl -full bg-accent/8" />
+       <div className="h-8 w-32 rounded-2xl -full bg-accent/10" />
       </div>
      </div>
     </div>
    </section>
 
    <section className="space-y-3">
-    <div className="mx-auto h-3 w-28 rounded-full bg-text-muted/20" />
-    <div className="rounded-3xl border border-border-default bg-bg-primary p-4 shadow-theme-sm">
-     <div className="h-4 w-16 rounded-full bg-accent/12" />
-     <div className="mt-3 h-5 w-40 rounded-full bg-text-primary/10" />
+    <div className="mx-auto h-3 w-28 rounded-2xl -full bg-text-muted/20" />
+    <div className="rounded-2xl  border border-border-default bg-bg-primary p-4 shadow-theme-sm">
+     <div className="h-4 w-16 rounded-2xl -full bg-accent/12" />
+     <div className="mt-3 h-5 w-40 rounded-2xl -full bg-text-primary/10" />
      <div className="mt-4 space-y-2">
-      <div className="h-4 w-full rounded-full bg-text-muted/15" />
-      <div className="h-4 w-5/6 rounded-full bg-text-muted/15" />
-      <div className="h-4 w-2/3 rounded-full bg-text-muted/15" />
+      <div className="h-4 w-full rounded-2xl -full bg-text-muted/15" />
+      <div className="h-4 w-5/6 rounded-2xl -full bg-text-muted/15" />
+      <div className="h-4 w-2/3 rounded-2xl -full bg-text-muted/15" />
      </div>
     </div>
    </section>

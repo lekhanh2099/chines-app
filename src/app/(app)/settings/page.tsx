@@ -180,7 +180,7 @@ export default function SettingsPage() {
    <section className="rounded-2xl border border-border-default bg-bg-card p-6 shadow-theme-sm">
     <div className="flex flex-col gap-3 md:flex-row md:items-start md:justify-between">
      <div className="max-w-2xl space-y-2">
-      <div className="inline-flex items-center gap-2 rounded-full bg-accent/10 px-3 py-1 text-xs font-bold uppercase tracking-[0.18em]  ">
+      <div className="inline-flex items-center gap-2 rounded-2xl -full bg-accent/10 px-3 py-1 text-xs font-bold uppercase tracking-[0.18em]  ">
        <Bot className="h-3.5 w-3.5" />
        AI Prompt Settings
       </div>
@@ -192,7 +192,7 @@ export default function SettingsPage() {
        câu. Word lookup được dùng cho cache dictionary trong bảng vocabularies;
        sentence lookup dùng cho dịch nghĩa và grammar points.
       </p>
-      <div className="inline-flex items-center gap-2 rounded-full border border-border-default bg-bg-primary px-3 py-1 text-xs text-text-secondary">
+      <div className="inline-flex items-center gap-2 rounded-2xl -full border border-border-default bg-bg-primary px-3 py-1 text-xs text-text-secondary">
        <span className="font-semibold text-text-primary">Model hiện tại</span>
        <span>{getGeminiModelLabel(geminiModel)}</span>
       </div>
@@ -200,7 +200,7 @@ export default function SettingsPage() {
 
      <div className="flex items-center gap-3">
       <span
-       className={`hidden rounded-full px-3 py-1 text-xs font-semibold md:inline-flex ${hasUnsavedChanges ? "bg-amber-100 text-amber-900" : "bg-success/10 text-success"}`}
+       className={`hidden rounded-2xl -full px-3 py-1 text-xs font-semibold md:inline-flex ${hasUnsavedChanges ? "bg-amber-100 text-amber-900" : "bg-success/10 text-success"}`}
       >
        {hasUnsavedChanges ? "Có thay đổi chưa lưu" : "Mọi thay đổi đã được lưu"}
       </span>
@@ -246,7 +246,7 @@ export default function SettingsPage() {
        value={geminiModel}
        onChange={(event) => setGeminiModel(event.target.value as GeminiModelId)}
        disabled={isLoading || isSaving}
-       className="h-11 w-full rounded-xl border border-border-default bg-bg-primary px-4 text-sm text-text-primary outline-none transition focus:border-accent focus:ring-2 focus:ring-accent/20 disabled:cursor-not-allowed disabled:opacity-60"
+       className="h-11 w-full rounded-2xl -xl border border-border-default bg-bg-primary px-4 text-sm text-text-primary outline-none transition focus:border-accent focus:ring-2 focus:ring-accent/20 disabled:cursor-not-allowed disabled:opacity-60"
       >
        {GEMINI_TEXT_MODEL_OPTIONS.map((option) => (
         <option key={option.value} value={option.value}>
@@ -256,7 +256,7 @@ export default function SettingsPage() {
       </select>
      </label>
 
-     <div className="rounded-xl border border-border-default bg-bg-primary p-4">
+     <div className="rounded-2xl -xl border border-border-default bg-bg-primary p-4">
       <p className="text-sm font-semibold text-text-primary">
        {getGeminiModelLabel(geminiModel)}
       </p>
@@ -286,7 +286,7 @@ export default function SettingsPage() {
 
      <div className="flex flex-wrap items-center gap-3">
       <span
-       className={`rounded-full px-3 py-1 text-xs font-semibold ${hasUnsavedPromptChanges ? "bg-amber-100 text-amber-900" : "bg-success/10 text-success"}`}
+       className={`rounded-2xl -full px-3 py-1 text-xs font-semibold ${hasUnsavedPromptChanges ? "bg-amber-100 text-amber-900" : "bg-success/10 text-success"}`}
       >
        {hasUnsavedPromptChanges
         ? "Prompt có thay đổi chưa lưu"
@@ -364,7 +364,7 @@ function PromptPanel({
 
     <div className="flex items-center gap-2">
      <span
-      className={`rounded-full px-2.5 py-1 text-xs font-semibold ${isDirty ? "bg-amber-100 text-amber-900" : "bg-bg-subtle text-text-muted"}`}
+      className={`rounded-2xl -full px-2.5 py-1 text-xs font-semibold ${isDirty ? "bg-amber-100 text-amber-900" : "bg-bg-subtle text-text-muted"}`}
      >
       {isDirty ? "Chưa lưu" : "Đã lưu"}
      </span>
@@ -381,7 +381,7 @@ function PromptPanel({
 
    <div className="mb-3 flex items-center justify-between text-xs">
     <span
-     className={`rounded-full px-2.5 py-1 font-semibold ${hasPlaceholder ? "bg-success/10 text-success" : "bg-danger/10 text-danger-text"}`}
+     className={`rounded-2xl -full px-2.5 py-1 font-semibold ${hasPlaceholder ? "bg-success/10 text-success" : "bg-danger/10 text-danger-text"}`}
     >
      {hasPlaceholder
       ? `Có placeholder ${placeholderToken}`
@@ -395,7 +395,7 @@ function PromptPanel({
     onChange={(event) => onChange(event.target.value)}
     disabled={disabled}
     spellCheck={false}
-    className="min-h-90 w-full rounded-xl border border-border-default bg-bg-primary px-4 py-4 font-mono text-sm leading-6 text-text-primary outline-none transition focus:border-accent focus:ring-2 focus:ring-accent/20 disabled:cursor-not-allowed disabled:opacity-60"
+    className="min-h-90 w-full rounded-2xl -xl border border-border-default bg-bg-primary px-4 py-4 font-mono text-sm leading-6 text-text-primary outline-none transition focus:border-accent focus:ring-2 focus:ring-accent/20 disabled:cursor-not-allowed disabled:opacity-60"
    />
   </div>
  );

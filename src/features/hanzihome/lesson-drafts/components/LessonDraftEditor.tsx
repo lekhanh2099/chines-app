@@ -106,7 +106,7 @@ export function LessonDraftEditor({ draftId }: LessonDraftEditorProps) {
   return (
    <main className="hanzihome-static-page">
     <div className="mx-auto w-full max-w-7xl">
-     <Card padding="lg" className="rounded-2xl">
+     <Card padding="lg" className="rounded-2xl -2xl">
       <p className="text-sm font-semibold text-text-muted">
        Đang tải bài nháp...
       </p>
@@ -120,7 +120,7 @@ export function LessonDraftEditor({ draftId }: LessonDraftEditorProps) {
   return (
    <main className="hanzihome-static-page">
     <div className="mx-auto grid w-full max-w-7xl gap-4">
-     <Card padding="lg" className="rounded-2xl">
+     <Card padding="lg" className="rounded-2xl -2xl">
       <div className="grid gap-4">
        <p className="text-sm font-semibold text-text-muted">
         Không tìm thấy bài nháp.
@@ -142,7 +142,7 @@ export function LessonDraftEditor({ draftId }: LessonDraftEditorProps) {
  return (
   <main className="hanzihome-static-page">
    <div className="mx-auto grid w-full max-w-7xl gap-4">
-    <Card padding="md" className="rounded-2xl">
+    <Card padding="md" className="rounded-2xl -2xl">
      <div className="grid gap-4 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-center">
       <div className="min-w-0">
        <Button asChild variant="ghost" size="sm" className="mb-2 w-fit">
@@ -190,7 +190,7 @@ export function LessonDraftEditor({ draftId }: LessonDraftEditorProps) {
     </Card>
 
     <div className="grid gap-3 md:grid-cols-3">
-     <Card padding="sm" className="rounded-2xl">
+     <Card padding="sm" className="rounded-2xl -2xl">
       <p className="text-xs font-black uppercase tracking-wide text-text-muted">
        Từ vựng
       </p>
@@ -199,7 +199,7 @@ export function LessonDraftEditor({ draftId }: LessonDraftEditorProps) {
       </p>
      </Card>
 
-     <Card padding="sm" className="rounded-2xl">
+     <Card padding="sm" className="rounded-2xl -2xl">
       <p className="text-xs font-black uppercase tracking-wide text-text-muted">
        Ngữ pháp
       </p>
@@ -208,7 +208,7 @@ export function LessonDraftEditor({ draftId }: LessonDraftEditorProps) {
       </p>
      </Card>
 
-     <Card padding="sm" className="rounded-2xl">
+     <Card padding="sm" className="rounded-2xl -2xl">
       <p className="text-xs font-black uppercase tracking-wide text-text-muted">
        Flashcards
       </p>
@@ -218,7 +218,7 @@ export function LessonDraftEditor({ draftId }: LessonDraftEditorProps) {
      </Card>
     </div>
 
-    <Card padding="sm" className="rounded-2xl">
+    <Card padding="sm" className="rounded-2xl -2xl">
      <div className="flex flex-wrap gap-2">
       {editorTabs.map((tab) => (
        <Button
@@ -232,33 +232,31 @@ export function LessonDraftEditor({ draftId }: LessonDraftEditorProps) {
       ))}
      </div>
     </Card>
-        {activeTab === "overview" && (
-          <div className="grid gap-4">
-            <Card padding="lg" className="rounded-2xl">
-              <div className="grid gap-5">
-                <div>
-                  <p className="text-xs font-black uppercase tracking-wide text-text-muted">
-                    Thông tin bài
-                  </p>
-                  <h2 className="mt-1 text-xl font-black text-text-primary">
-                    Metadata
-                  </h2>
-                  <p className="mt-1 text-sm font-semibold text-text-muted">
-                    Sửa thông tin cơ bản của bài. Từ vựng và ngữ pháp sẽ thêm ở tab riêng.
-                  </p>
-                </div>
+    {activeTab === "overview" && (
+     <div className="grid gap-4">
+      <Card padding="lg" className="rounded-2xl -2xl">
+       <div className="grid gap-5">
+        <div>
+         <p className="text-xs font-black uppercase tracking-wide text-text-muted">
+          Thông tin bài
+         </p>
+         <h2 className="mt-1 text-xl font-black text-text-primary">Metadata</h2>
+         <p className="mt-1 text-sm font-semibold text-text-muted">
+          Sửa thông tin cơ bản của bài. Từ vựng và ngữ pháp sẽ thêm ở tab riêng.
+         </p>
+        </div>
 
-                <LessonDraftMetadataForm draft={draft} />
-              </div>
-            </Card>
-          </div>
-        )}
+        <LessonDraftMetadataForm draft={draft} />
+       </div>
+      </Card>
+     </div>
+    )}
 
-        {activeTab === "vocab" && <VocabDraftImporter draft={draft} />}
+    {activeTab === "vocab" && <VocabDraftImporter draft={draft} />}
     {activeTab === "grammar" && <GrammarDraftImporter draft={draft} />}
 
     {activeTab === "preview" && (
-     <Card padding="lg" className="rounded-2xl">
+     <Card padding="lg" className="rounded-2xl -2xl">
       <div className="grid gap-3">
        <FileText className="h-6 w-6 text-text-muted" />
        <h2 className="text-xl font-black text-text-primary">Preview</h2>

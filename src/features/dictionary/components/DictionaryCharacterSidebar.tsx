@@ -32,7 +32,7 @@ function DictionaryCharacterSidebar({
    <Card
     variant="subtle"
     padding="md"
-    className="rounded text-sm text-text-muted"
+    className="rounded-2xl  text-sm text-text-muted"
    >
     <div className="flex items-center gap-2">
      <Loader2 className="h-4 w-4 animate-spin  " />
@@ -52,7 +52,7 @@ function DictionaryCharacterSidebar({
 
  return (
   <div className="flex flex-col gap-4">
-   <SectionWrapper className="rounded">
+   <SectionWrapper className="rounded-2xl ">
     <SectionHeader
      title="Tập viết chữ"
      description="Xem thứ tự nét, chọn từng chữ trong cụm để luyện riêng."
@@ -97,7 +97,7 @@ function DictionaryCharacterSidebar({
     )}
 
     {(etymologyText || mnemonic_story) && (
-     <Card variant="subtle" padding="sm" className="rounded">
+     <Card variant="subtle" padding="sm" className="rounded-2xl ">
       <div className="flex flex-col gap-2">
        <div className="flex items-center gap-2">
         <SectionHeader title={mnemonic_story ? "Mẹo nhớ" : "Nguồn gốc"} />
@@ -141,7 +141,7 @@ function AnatomyOverview({
 
  return (
   <div className="flex flex-col gap-4">
-   <Card variant="subtle" padding="sm" className="rounded">
+   <Card variant="subtle" padding="sm" className="rounded-2xl ">
     <div className="flex flex-col gap-3">
      <SectionHeader title="Sơ đồ cấu tạo" />
      {structureItems.length > 0 ? (
@@ -151,7 +151,7 @@ function AnatomyOverview({
          key={`${item.symbol}-${item.label}-${index}`}
          className="flex items-center gap-2"
         >
-         <Card variant="default" padding="sm" className="rounded">
+         <Card variant="default" padding="sm" className="rounded-2xl ">
           <div className="text-center">
            <p className="text-lg font-black text-text-primary">{item.symbol}</p>
            {item.label && (
@@ -170,7 +170,7 @@ function AnatomyOverview({
        <Card
         variant="subtle"
         padding="sm"
-        className="rounded border-accent/20 bg-accent/10 text-center"
+        className="rounded-2xl  border-accent/20 bg-accent/10 text-center"
        >
         <p className="text-lg font-black  ">{character}</p>
         <p className="text-xs leading-tight  /80">kết quả</p>
@@ -185,7 +185,7 @@ function AnatomyOverview({
    </Card>
 
    {components.length > 0 && (
-    <Card variant="subtle" padding="sm" className="rounded">
+    <Card variant="subtle" padding="sm" className="rounded-2xl ">
      <div className="flex flex-col gap-2">
       <SectionHeader title="Thành phần" />
       {components.map((component, index) => (
@@ -193,7 +193,7 @@ function AnatomyOverview({
         key={`${component.part || "component"}-${index}`}
         variant="default"
         padding="sm"
-        className="rounded"
+        className="rounded-2xl "
        >
         <div className="flex items-start gap-3">
          <span className="min-w-6 text-lg font-black text-text-primary">

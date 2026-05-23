@@ -92,7 +92,7 @@ function DictionarySentenceView({ viewModel }: DictionarySentenceViewProps) {
           ) : (
            <span
             key={`${character}-${index}`}
-            className="inline-flex h-9 min-w-9 items-center justify-center rounded bg-bg-subtle px-3 text-sm text-text-muted"
+            className="inline-flex h-9 min-w-9 items-center justify-center rounded-2xl  bg-bg-subtle px-3 text-sm text-text-muted"
            >
             {character}
            </span>

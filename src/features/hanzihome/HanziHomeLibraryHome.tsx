@@ -96,7 +96,7 @@ export function HanziHomeLibraryHome() {
     </div>
    </section>
 
-   <Card padding="lg" className="rounded-2xl">
+   <Card padding="lg" className="rounded-2xl -2xl">
     <div className="grid gap-4 sm:grid-cols-3">
      <HomeMetric label="Course" value={courses.length} />
      <HomeMetric label="Từ vựng" value={totalVocab} />
@@ -187,10 +187,10 @@ function CourseCard({
  const href = `/hanzihome?courseId=${course.id}`;
 
  return (
-  <Card padding="lg" className="rounded-2xl">
+  <Card padding="lg" className="rounded-2xl -2xl">
    <div className="grid gap-5 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-center">
     <div className="flex min-w-0 gap-4">
-     <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-bg-subtle">
+     <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xlbg-bg-subtle">
       <BookMarked className="h-5 w-5" />
      </span>
 
@@ -232,7 +232,7 @@ function CourseCard({
 
 function HomeMetric({ label, value }: { label: string; value: number }) {
  return (
-  <div className="rounded-2xl border-2 border-border-default bg-bg-subtle p-4">
+  <div className="rounded-2xl  border-2 border-border-default bg-bg-subtle p-4">
    <p className="text-3xl font-black text-text-primary">{value}</p>
    <p className="text-sm font-bold text-text-muted">{label}</p>
   </div>
@@ -254,10 +254,10 @@ function HomeAction({
   <Link href={href}>
    <Card
     padding="lg"
-    className="h-full rounded-2xl transition-colors hover:border-accent-muted hover:bg-accent-subtle"
+    className="h-full rounded-2xltransition-colors hover:border-accent-muted hover:bg-accent-subtle"
    >
     <div className="flex gap-4">
-     <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-bg-subtle shadow-theme-sm">
+     <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xlbg-bg-subtle shadow-theme-sm">
       <Icon className="h-5 w-5" />
      </span>
 

@@ -28,10 +28,10 @@ export function Sheet({
    />
    <div
     className={cn(
-    "absolute max-w-full overflow-y-auto overflow-x-hidden border-stone-200 bg-white shadow-2xl",
+     "absolute max-w-full overflow-y-auto overflow-x-hidden border-stone-200 bg-white shadow-2xl",
      side === "right"
       ? "right-0 top-0 h-full w-full border-l-2 sm:max-w-2xl"
-      : "inset-x-0 bottom-0 max-h-[82vh] w-full rounded-t-3xl border-t-2",
+      : "inset-x-0 bottom-0 max-h-[82vh] w-full rounded-2xl -t-3xl border-t-2",
      className,
     )}
    >
@@ -41,10 +41,18 @@ export function Sheet({
  );
 }
 
-export function SheetHeader({ title, onClose }: { title: string; onClose: () => void }) {
+export function SheetHeader({
+ title,
+ onClose,
+}: {
+ title: string;
+ onClose: () => void;
+}) {
  return (
   <div className="mb-5 flex min-w-0 items-center justify-between gap-3">
-   <h2 className="min-w-0 break-words text-2xl font-black text-stone-900">{title}</h2>
+   <h2 className="min-w-0 break-words text-2xl font-black text-stone-900">
+    {title}
+   </h2>
    <button
     type="button"
     onClick={onClose}

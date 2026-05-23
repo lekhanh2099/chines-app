@@ -36,7 +36,11 @@ export function ActionButton({
     className,
    )}
   >
-   {loading ? <Loader2 className="h-4 w-4 animate-spin" /> : Icon ? <Icon className="h-4 w-4" /> : null}
+   {loading ? (
+    <Loader2 className="h-4 w-4 animate-spin" />
+   ) : Icon ? (
+    <Icon className="h-4 w-4" />
+   ) : null}
    {children}
   </button>
  );

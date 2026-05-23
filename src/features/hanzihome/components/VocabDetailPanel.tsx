@@ -43,7 +43,7 @@ export function VocabDetailPanel({
  const [sectionView, setSectionView] = useState<SectionView>("all");
  if (!word) {
   return (
-   <Card padding="lg" className="rounded-2xl">
+   <Card padding="lg" className="rounded-2xl -2xl">
     <p className="text-sm font-semibold text-text-muted">
      Chọn một từ để xem chi tiết.
     </p>
@@ -91,7 +91,7 @@ export function VocabDetailPanel({
  });
 
  return (
-  <Card padding="lg" className="rounded-2xl">
+  <Card padding="lg" className="rounded-2xl -2xl">
    <article className="flex flex-col gap-6">
     <div className="flex flex-wrap items-start justify-between gap-3">
      <div className="min-w-0">
@@ -155,7 +155,7 @@ export function VocabDetailPanel({
        type="button"
        onClick={() => setSectionView(item.key)}
        className={[
-        "rounded-full border px-3 py-1 text-xs font-black transition-colors",
+        "rounded-2xl -full border px-3 py-1 text-xs font-black transition-colors",
         sectionView === item.key
          ? "border-accent bg-accent text-white"
          : "border-border-default bg-bg-subtle text-text-muted hover:text-text-primary",

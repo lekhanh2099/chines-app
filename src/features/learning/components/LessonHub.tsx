@@ -36,7 +36,7 @@ export function LessonHub({
  return (
   <section
    className={cn(
-    "flex w-full max-w-full min-w-0 flex-col gap-5 overflow-x-hidden rounded-[28px] border-2 border-stone-200 bg-white p-4 shadow-theme-md sm:p-6",
+    "flex w-full max-w-full min-w-0 flex-col gap-5 overflow-x-hidden rounded-2xl -[28px] border-2 border-stone-200 bg-white p-4 shadow sm:p-6",
     className,
    )}
   >
@@ -52,7 +52,7 @@ export function LessonHub({
       {description}
      </p>
     </div>
-    <div className="grid w-full min-w-0 grid-cols-2 gap-1 rounded-2xl bg-stone-100 p-1 sm:w-[260px]">
+    <div className="grid w-full min-w-0 grid-cols-2 gap-1 rounded-2xlbg-stone-100 p-1 sm:w-[260px]">
      {[
       { key: "hanyu" as const, label: "Hán ngữ" },
       { key: "hsk" as const, label: "HSK" },
@@ -62,7 +62,7 @@ export function LessonHub({
        type="button"
        onClick={() => onSourceChange(item.key)}
        className={cn(
-        "h-11 min-w-0 truncate rounded-xl px-3 text-sm font-black transition",
+        "h-11 min-w-0 truncate rounded-2xl -xl px-3 text-sm font-black transition",
         source === item.key
          ? "bg-red-500 text-white shadow-theme-sm"
          : "text-stone-600 hover:bg-white",
@@ -79,7 +79,7 @@ export function LessonHub({
      <Link
       key={lesson.id}
       href={lesson.href}
-     className="group flex min-h-44 min-w-0 flex-col justify-between overflow-hidden rounded-[22px] border-2 border-stone-200 bg-stone-50 p-4 transition hover:border-red-200 hover:bg-white hover:shadow-theme-sm"
+      className="group flex min-h-44 min-w-0 flex-col justify-between overflow-hidden rounded-2xl -[22px] border-2 border-stone-200 bg-stone-50 p-4 transition hover:border-red-200 hover:bg-white hover:shadow-theme-sm"
      >
       <div className="flex items-start justify-between gap-3">
        <div className="min-w-0">
@@ -95,13 +95,17 @@ export function LessonHub({
          </p>
         ) : null}
        </div>
-       <span className="shrink-0 rounded-full bg-white px-3 py-1 text-xs font-black text-stone-600 shadow-theme-sm">
+       <span className="shrink-0 rounded-2xl -full bg-white px-3 py-1 text-xs font-black text-stone-600 shadow-theme-sm">
         {lesson.progress ?? 0}%
        </span>
       </div>
       <div className="mt-5 grid min-w-0 grid-cols-3 gap-2 text-xs font-black">
        <Metric icon={BookOpen} label="Từ" value={lesson.vocabularyCount || 0} />
-       <Metric icon={Layers3} label="Ngữ pháp" value={lesson.grammarCount || 0} />
+       <Metric
+        icon={Layers3}
+        label="Ngữ pháp"
+        value={lesson.grammarCount || 0}
+       />
        <Metric icon={Brain} label="Yếu" value={lesson.weakCount || 0} />
       </div>
      </Link>
@@ -121,7 +125,7 @@ function Metric({
  value: number;
 }) {
  return (
-  <div className="min-w-0 overflow-hidden rounded-2xl bg-white p-3 shadow-theme-sm">
+  <div className="min-w-0 overflow-hidden rounded-2xlbg-white p-3 shadow-theme-sm">
    <Icon className="h-4 w-4 text-stone-500" />
    <p className="mt-2 text-[11px] uppercase tracking-wide text-stone-400">
     {label}

@@ -62,7 +62,7 @@ function DictionaryWordView({ viewModel }: DictionaryWordViewProps) {
      <Button
       variant="outline"
       size="sm"
-      className="h-12 rounded-2xl border-2 border-stone-200 font-black shadow-theme-sm"
+      className="h-12rounded-2xl border-2 border-stone-200 font-black shadow-theme-sm"
       onClick={viewModel.requestAiAnalysis}
       disabled={viewModel.isAiLoading}
       isLoading={viewModel.isAiLoading}
@@ -84,7 +84,7 @@ function DictionaryWordView({ viewModel }: DictionaryWordViewProps) {
        <Card
         variant="subtle"
         padding="md"
-        className="rounded border-danger/30 bg-danger-subtle"
+        className="rounded-2xl  border-danger/30 bg-danger-subtle"
        >
         <div className="flex flex-col gap-2">
          <SectionHeader title="Dễ nhầm" />

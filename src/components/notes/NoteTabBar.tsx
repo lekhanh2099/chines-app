@@ -151,7 +151,7 @@ function TabItem({
 
    <button
     className={cn(
-     "shrink-0 w-4.5 h-4.5 rounded-sm flex items-center justify-center transition-all",
+     "shrink-0 w-4.5 h-4.5 rounded-2xl -sm flex items-center justify-center transition-all",
      isActive
       ? "text-text-muted hover:text-text-primary hover:bg-bg-subtle"
       : "opacity-0 group-hover:opacity-100 text-text-muted hover:text-text-primary hover:bg-bg-subtle",

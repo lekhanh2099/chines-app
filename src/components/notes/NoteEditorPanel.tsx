@@ -168,7 +168,7 @@ export function NoteEditorPanel({ noteId, isVisible }: NoteEditorPanelProps) {
        {" "}
        <button
         onClick={handleToggleSplitView}
-        className={`flex items-center gap-1.5 px-2.5 py-1 rounded text-[11px] font-semibold transition-all ${
+        className={`flex items-center gap-1.5 px-2.5 py-1 rounded-2xl  text-[11px] font-semibold transition-all ${
          isSplitView
           ? "bg-accent-subtle  -text border border-accent/20 shadow-sm"
           : hasReadingContent
@@ -190,7 +190,7 @@ export function NoteEditorPanel({ noteId, isVisible }: NoteEditorPanelProps) {
             : "Split View"}
         </span>
         {!isSplitView && hasReadingContent && (
-         <span className="w-1.5 h-1.5 rounded-full bg-info animate-pulse" />
+         <span className="w-1.5 h-1.5 rounded-2xl -full bg-info animate-pulse" />
         )}
        </button>
       </div>
@@ -204,7 +204,7 @@ export function NoteEditorPanel({ noteId, isVisible }: NoteEditorPanelProps) {
         </span>
        )}
        {showDeleteConfirm ? (
-        <div className="flex items-center gap-2 bg-danger-subtle rounded-sm px-2.5 py-0.5 animate-in fade-in">
+        <div className="flex items-center gap-2 bg-danger-subtle rounded-2xl -sm px-2.5 py-0.5 animate-in fade-in">
          <span className="text-[11px] font-medium text-danger-text">Xoá?</span>
          <button
           onClick={handleDelete}
@@ -223,7 +223,7 @@ export function NoteEditorPanel({ noteId, isVisible }: NoteEditorPanelProps) {
        ) : (
         <button
          onClick={() => setShowDeleteConfirm(true)}
-         className="p-1 text-text-muted hover:text-danger hover:bg-danger-subtle rounded-sm transition-colors"
+         className="p-1 text-text-muted hover:text-danger hover:bg-danger-subtle rounded-2xl -sm transition-colors"
          title="Xoá ghi chú"
         >
          <Trash2 className="w-3.5 h-3.5" />
@@ -233,7 +233,7 @@ export function NoteEditorPanel({ noteId, isVisible }: NoteEditorPanelProps) {
      </div>
 
      {isSplitView ? (
-      <div className="h-full bg-bg-card border border-border-default rounded shadow-theme-sm">
+      <div className="h-full bg-bg-card border border-border-default rounded-2xl  shadow-theme-sm">
        <SplitViewEditor
         noteId={noteId}
         noteContent={note.content as Record<string, unknown> | null}

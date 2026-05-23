@@ -90,7 +90,7 @@ function NotesPageInner() {
        <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-text-muted" />
        <Input
         placeholder="Tìm kiếm..."
-        className="pl-9 h-9 bg-bg-input border-border-default text-[13px] rounded focus-visible:ring-ring"
+        className="pl-9 h-9 bg-bg-input border-border-default text-[13px] rounded-2xl  focus-visible:ring-ring"
         value={searchQuery}
         onChange={(e) => setSearchQuery(e.target.value)}
        />
@@ -115,7 +115,7 @@ function NotesPageInner() {
        <Tabs.Tab
         key={tab.value}
         value={tab.value}
-        className="px-3 py-1.5 rounded text-[13px] font-medium text-text-muted hover:text-text-primary hover:bg-bg-subtle transition-colors data-[selected]:bg-accent data-[selected]:text-text-inverse"
+        className="px-3 py-1.5 rounded-2xl  text-[13px] font-medium text-text-muted hover:text-text-primary hover:bg-bg-subtle transition-colors data-[selected]:bg-accent data-[selected]:text-text-inverse"
        >
         {tab.label}
        </Tabs.Tab>
@@ -161,7 +161,7 @@ function NotesPageInner() {
           {note.tags.slice(0, 2).map((tag) => (
            <span
             key={tag}
-            className="px-2 py-0.5 rounded text-[10px] font-semibold uppercase tracking-wide bg-bg-subtle text-text-muted"
+            className="px-2 py-0.5 rounded-2xl  text-[10px] font-semibold uppercase tracking-wide bg-bg-subtle text-text-muted"
            >
             {tag}
            </span>
@@ -236,7 +236,7 @@ function NewNoteView() {
  return (
   <div className="flex items-center justify-center h-full">
    <div className="text-center max-w-md">
-    <div className="w-16 h-16 rounded bg-bg-subtle flex items-center justify-center mx-auto mb-6">
+    <div className="w-16 h-16 rounded-2xl  bg-bg-subtle flex items-center justify-center mx-auto mb-6">
      <FileText className="w-8 h-8 text-text-muted" />
     </div>
     <h2 className="text-2xl font-bold text-text-primary mb-2">
@@ -249,7 +249,7 @@ function NewNoteView() {
     <button
      onClick={handleCreate}
      disabled={createNoteMutation.isPending}
-     className="inline-flex items-center gap-2 bg-accent hover:bg-accent-hover text-white px-6 py-3 rounded text-sm font-semibold transition-colors shadow-sm disabled:opacity-60"
+     className="inline-flex items-center gap-2 bg-accent hover:bg-accent-hover text-white px-6 py-3 rounded-2xl  text-sm font-semibold transition-colors shadow-sm disabled:opacity-60"
     >
      {createNoteMutation.isPending ? (
       <Loader2 className="w-4 h-4 animate-spin" />
@@ -306,7 +306,7 @@ function CreateNoteDialog() {
  return (
   <Dialog open={isOpen} onOpenChange={setIsOpen}>
    <DialogTrigger asChild>
-    <Button className="bg-accent hover:bg-accent-hover text-white px-5 rounded h-10 shadow-sm font-semibold gap-2">
+    <Button className="bg-accent hover:bg-accent-hover text-white px-5 rounded-2xl  h-10 shadow-sm font-semibold gap-2">
      <Plus className="w-4 h-4" />
      Tạo Ghi Chú Mới
     </Button>
@@ -384,7 +384,7 @@ function CreateNoteDialog() {
           value={field.state.value}
           onBlur={field.handleBlur}
           onChange={(e) => field.handleChange(e.target.value)}
-          className="w-full h-10 bg-bg-card border border-border-default rounded px-3 text-sm text-text-primary cursor-pointer focus:outline-none focus:ring-2 focus:ring-ring transition-colors"
+          className="w-full h-10 bg-bg-card border border-border-default rounded-2xl  px-3 text-sm text-text-primary cursor-pointer focus:outline-none focus:ring-2 focus:ring-ring transition-colors"
          >
           <option value="grammar">🟦 Ngữ Pháp</option>
           <option value="vocabulary">🟩 Từ Vựng</option>
