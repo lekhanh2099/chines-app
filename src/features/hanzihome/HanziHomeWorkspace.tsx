@@ -30,9 +30,11 @@ import {
 import { useHanziHomeData } from "@/features/hanzihome/hooks/useHanziHomeData";
 import { useHanziHomeLesson } from "@/features/hanzihome/hooks/useHanziHomeLesson";
 import { useLearningState } from "@/features/hanzihome/hooks/useLearningState";
+import { useCustomHanziHomeCourseCatalogQuery } from "@/features/hanzihome/courses/use-custom-courses";
 import {
  hanzihomeCourseBooks,
  hanzihomeCourses,
+ mergeCourseCatalogs,
  sortLessonsByCourseBookOrder,
 } from "@/features/hanzihome/courses/course-catalog";
 import type {
@@ -70,6 +72,7 @@ export function HanziHomeWorkspace() {
  const staticData = useHanziHomeData();
  const draftsQuery = useLessonDraftsQuery();
  const learning = useLearningState();
+ const customCourseCatalogQuery = useCustomHanziHomeCourseCatalogQuery();
 
  const publishedDraftLessons = useMemo(
   () =>
@@ -79,17 +82,33 @@ export function HanziHomeWorkspace() {
   [draftsQuery.data],
  );
 
+ const mergedCourseCatalog = useMemo(
+  () =>
+   mergeCourseCatalogs({
+    staticCourses: staticData.courses ?? hanzihomeCourses,
+    staticBooks: staticData.books ?? hanzihomeCourseBooks,
+    customCourses: customCourseCatalogQuery.data?.courses ?? [],
+    customBooks: customCourseCatalogQuery.data?.books ?? [],
+   }),
+  [customCourseCatalogQuery.data, staticData.books, staticData.courses],
+ );
+
  const data = useMemo<HanziHomeData>(
   () => ({
    ...staticData,
-   courses: staticData.courses ?? hanzihomeCourses,
-   books: staticData.books ?? hanzihomeCourseBooks,
+   courses: mergedCourseCatalog.courses,
+   books: mergedCourseCatalog.books,
    lessons: sortLessonsByCourseBookOrder([
     ...staticData.lessons,
     ...publishedDraftLessons,
    ]),
   }),
-  [publishedDraftLessons, staticData],
+  [
+   mergedCourseCatalog.books,
+   mergedCourseCatalog.courses,
+   publishedDraftLessons,
+   staticData,
+  ],
  );
 
  const selectedCourseId =
@@ -133,6 +152,10 @@ export function HanziHomeWorkspace() {
 
  const selectedBookId =
   lesson?.bookId || courseLessons[0]?.bookId || courseBooks[0]?.id;
+
+ const selectedCourse = data.courses.find(
+  (course) => course.id === selectedCourseId,
+ );
  const subtitle = useMemo(() => {
   if (!lesson) return "Không có dữ liệu bài học.";
   return `${lesson.vocab.length} từ · ${lesson.grammar.length} điểm ngữ pháp`;
@@ -220,17 +243,49 @@ export function HanziHomeWorkspace() {
    <main className="hanzihome-static-page">
     <div className="mx-auto flex w-full max-w-7xl flex-col gap-4">
      <Card padding="lg" className="rounded-2xl">
-      <div className="grid gap-3">
-       <p className="text-sm font-semibold text-text-muted">
-        Không tìm thấy dữ liệu bài học.
-       </p>
+      <div className="grid gap-5">
+       <div>
+        <p className="text-xs font-black uppercase tracking-wide text-text-muted">
+         {selectedCourse?.title || "HanziHome"}
+        </p>
 
-       <Button type="button" onClick={() => selectModule("radicals")}>
-        <Layers3 className="h-4 w-4" />
-        Mở thư viện bộ thủ
-       </Button>
+        <h1 className="mt-1 text-2xl font-black text-text-primary">
+         Course này chưa có bài học
+        </h1>
+
+        <p className="mt-1 text-sm font-semibold text-text-muted">
+         Tạo bài đầu tiên cho course này, hoặc chuyển sang course khác.
+        </p>
+       </div>
+
+       <div className="grid gap-3 sm:grid-cols-[minmax(14rem,1fr)_auto_auto] sm:items-end">
+        <CoursePicker
+         courses={data.courses}
+         selectedCourseId={selectedCourseId}
+         onSelectCourse={selectCourse}
+        />
+
+        <CreateLessonDraftDialog
+         suggestedLessonNumber={1}
+         courses={data.courses}
+         books={data.books}
+         selectedCourseId={selectedCourseId}
+         selectedBookId={selectedBookId}
+        />
+
+        <Button
+         type="button"
+         variant="outline"
+         onClick={() => selectModule("radicals")}
+        >
+         <Layers3 className="h-4 w-4" />
+         Bộ thủ
+        </Button>
+       </div>
       </div>
      </Card>
+
+     <BookLessonSummary books={courseBooks} lessons={courseLessons} />
     </div>
    </main>
   );
@@ -239,42 +294,44 @@ export function HanziHomeWorkspace() {
  return (
   <main className="hanzihome-static-page">
    <div className="mx-auto flex w-full max-w-7xl flex-col gap-4">
-    <Card padding="md" className="rounded-2xl">
-     <div className="grid gap-4 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-center">
-      <div className="min-w-0">
-       <p className="text-xs font-black uppercase tracking-wide">
-        {activeModule === "radicals"
-         ? "HanziHome / Bộ thủ"
-         : lesson?.courseTitle || "HanziHome / Course"}
-       </p>
+    <Card padding="lg" className="overflow-hidden rounded-3xl">
+     <div className="grid gap-5">
+      <div className="flex flex-wrap items-start justify-between gap-4">
+       <div className="min-w-0">
+        <p className="text-xs font-black uppercase tracking-[0.18em] text-text-muted">
+         {activeModule === "radicals"
+          ? "HanziHome / Bộ thủ"
+          : lesson?.courseTitle || selectedCourse?.title || "HanziHome"}
+        </p>
 
-       <h1 className="mt-1 truncate text-2xl font-black tracking-normal text-text-primary sm:text-3xl">
-        {activeModule === "radicals" ? "Thư viện bộ thủ" : lesson?.title}
-       </h1>
+        <h1 className="mt-2 truncate text-3xl font-black tracking-tight text-text-primary sm:text-4xl">
+         {activeModule === "radicals" ? "Thư viện bộ thủ" : lesson?.title}
+        </h1>
 
-       <p className="mt-1 text-sm font-bold text-text-muted">
-        {activeModule === "radicals"
-         ? `${data.radicals.length} bộ thủ từ JSON tĩnh`
-         : subtitle}
-       </p>
-      </div>
+        <div className="mt-3 flex flex-wrap gap-2">
+         <span className="rounded-full bg-bg-subtle px-3 py-1 text-xs font-black text-text-muted">
+          {activeModule === "radicals"
+           ? `${data.radicals.length} bộ thủ`
+           : subtitle}
+         </span>
 
-      <div className="grid min-w-0 gap-3 sm:grid-cols-[minmax(14rem,0.9fr)_minmax(16rem,1fr)_auto_auto_auto] sm:items-end">
+         {activeModule !== "radicals" && lesson?.bookTitle && (
+          <span className="rounded-full bg-bg-subtle px-3 py-1 text-xs font-black text-text-muted">
+           {lesson.bookTitle}
+          </span>
+         )}
+
+         {learning.isSaving && (
+          <span className="rounded-full bg-bg-subtle px-3 py-1 text-xs font-black text-text-muted">
+           Đang lưu...
+          </span>
+         )}
+        </div>
+       </div>
+
        {activeModule !== "radicals" && lesson && (
-        <>
-         <CoursePicker
-          courses={data.courses}
-          selectedCourseId={selectedCourseId}
-          onSelectCourse={selectCourse}
-         />
-
-         <LessonPicker
-          lessons={courseLessons}
-          selectedLessonId={selectedLessonId}
-          onSelectLesson={selectLesson}
-         />
-
-         <Button onClick={() => selectModule("review")}>
+        <div className="flex flex-wrap gap-2">
+         <Button type="button" onClick={() => selectModule("review")}>
           <RotateCcw className="h-4 w-4" />
           Ôn nhanh
          </Button>
@@ -286,34 +343,45 @@ export function HanziHomeWorkspace() {
           selectedCourseId={selectedCourseId}
           selectedBookId={selectedBookId}
          />
-        </>
+
+         <Button type="button" variant="outline" onClick={() => selectModule("radicals")}>
+          <Layers3 className="h-4 w-4" />
+          Bộ thủ
+         </Button>
+        </div>
        )}
 
-       {activeModule === "radicals" ? (
-        <Button onClick={() => selectModule("overview")}>
+       {activeModule === "radicals" && (
+        <Button type="button" onClick={() => selectModule("overview")}>
          <BookOpen className="h-4 w-4" />
          Học theo bài
-        </Button>
-       ) : (
-        <Button variant="outline" onClick={() => selectModule("radicals")}>
-         <Layers3 className="h-4 w-4" />
-         Bộ thủ
         </Button>
        )}
       </div>
 
-      {learning.isSaving && (
-       <span className="text-xs font-black uppercase tracking-wide text-text-muted">
-        Đang lưu...
-       </span>
+      {activeModule !== "radicals" && lesson && (
+       <div className="grid gap-3 rounded-3xl border border-border-default bg-bg-subtle p-4 md:grid-cols-[minmax(14rem,0.8fr)_minmax(18rem,1.2fr)]">
+        <CoursePicker
+         courses={data.courses}
+         selectedCourseId={selectedCourseId}
+         onSelectCourse={selectCourse}
+        />
+
+        <LessonPicker
+         lessons={courseLessons}
+         selectedLessonId={selectedLessonId}
+         onSelectLesson={selectLesson}
+        />
+       </div>
       )}
      </div>
     </Card>
 
-    {activeModule !== "radicals" && <LessonDraftsCompactList />}
-
     {activeModule !== "radicals" && (
-     <BookLessonSummary books={courseBooks} lessons={courseLessons} />
+     <div className="grid gap-4 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)]">
+      <LessonDraftsCompactList />
+      <BookLessonSummary books={courseBooks} lessons={courseLessons} />
+     </div>
     )}
 
     {activeModule === "radicals" ? (

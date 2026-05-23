@@ -28,21 +28,30 @@ export function BookLessonSummary({ books, lessons }: BookLessonSummaryProps) {
   if (groupedBooks.length === 0 && fallbackLessons.length === 0) return null;
 
   return (
-    <Card padding="md" className="rounded-2xl">
-      <div className="grid gap-3">
-        <div className="flex items-center gap-3">
-          <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl bg-bg-subtle">
-            <BookMarked className="h-5 w-5" />
-          </span>
+    <Card padding="md" className="h-full rounded-3xl">
+      <div className="grid gap-4">
+        <div className="flex items-start justify-between gap-3">
+          <div className="flex min-w-0 gap-3">
+            <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-bg-subtle">
+              <BookMarked className="h-5 w-5" />
+            </span>
 
-          <div>
-            <p className="text-xs font-black uppercase tracking-wide text-text-muted">
-              Sách / quyển
-            </p>
-            <h2 className="text-lg font-black text-text-primary">
-              Bài học trong course này
-            </h2>
+            <div className="min-w-0">
+              <p className="text-xs font-black uppercase tracking-wide text-text-muted">
+                Sách / quyển
+              </p>
+              <h2 className="mt-1 text-lg font-black text-text-primary">
+                Bố cục course
+              </h2>
+              <p className="mt-1 text-sm font-semibold text-text-muted">
+                Nhóm lesson theo sách/quyển.
+              </p>
+            </div>
           </div>
+
+          <span className="shrink-0 rounded-full bg-bg-subtle px-3 py-1 text-xs font-black text-text-muted">
+            {lessons.length} bài
+          </span>
         </div>
 
         <div className="grid gap-2">
@@ -52,12 +61,13 @@ export function BookLessonSummary({ books, lessons }: BookLessonSummaryProps) {
               className="rounded-2xl border border-border-default bg-bg-subtle p-3"
             >
               <div className="flex flex-wrap items-center justify-between gap-2">
-                <div>
-                  <p className="text-sm font-black text-text-primary">
+                <div className="min-w-0">
+                  <p className="truncate text-sm font-black text-text-primary">
                     {book.title}
                   </p>
+
                   {book.shortTitle && (
-                    <p className="text-xs font-bold text-text-muted">
+                    <p className="truncate text-xs font-bold text-text-muted">
                       {book.shortTitle}
                     </p>
                   )}

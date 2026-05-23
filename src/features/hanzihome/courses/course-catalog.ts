@@ -57,3 +57,28 @@ export function sortLessonsByCourseBookOrder(
     return (a.lessonOrder ?? a.lessonNumber) - (b.lessonOrder ?? b.lessonNumber);
   });
 }
+
+
+export function mergeCourseCatalogs({
+  staticCourses,
+  staticBooks,
+  customCourses,
+  customBooks,
+}: {
+  staticCourses: HanziHomeCourse[];
+  staticBooks: HanziHomeCourseBook[];
+  customCourses: HanziHomeCourse[];
+  customBooks: HanziHomeCourseBook[];
+}) {
+  return {
+    courses: [...staticCourses, ...customCourses].sort(
+      (a, b) => a.order - b.order || a.title.localeCompare(b.title),
+    ),
+    books: [...staticBooks, ...customBooks].sort(
+      (a, b) =>
+        a.courseId.localeCompare(b.courseId) ||
+        a.order - b.order ||
+        a.title.localeCompare(b.title),
+    ),
+  };
+}
