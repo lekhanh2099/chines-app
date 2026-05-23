@@ -37,10 +37,10 @@ function DictionaryWordView({ viewModel }: DictionaryWordViewProps) {
     <div className="flex h-full flex-col items-center justify-center gap-4">
      <p className="text-text-muted">Không tìm thấy từ vựng.</p>
      <Link
-      href="/vocabulary"
+      href="/hanzihome"
       className="text-sm font-medium text-accent transition-colors hover:text-accent-hover"
      >
-      Quay về kho từ vựng
+      Quay về HanziHome
      </Link>
     </div>
    </PageContainer>
@@ -52,11 +52,11 @@ function DictionaryWordView({ viewModel }: DictionaryWordViewProps) {
    <div className="mx-auto flex w-full max-w-6xl flex-col gap-5">
     <div className="flex flex-wrap items-center justify-between gap-3">
      <Link
-      href="/vocabulary"
+      href="/hanzihome"
       className="inline-flex h-12 items-center gap-2 rounded-2xl border-2 border-stone-200 bg-white px-4 text-sm font-black text-stone-700 shadow-theme-sm transition-colors hover:bg-stone-50"
      >
       <ArrowLeft className="h-4 w-4" />
-      Kho từ vựng
+      HanziHome
      </Link>
 
      <Button

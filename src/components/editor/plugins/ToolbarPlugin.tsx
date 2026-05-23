@@ -80,15 +80,12 @@ import {
  Baseline,
  Minus,
  Plus,
- Eye,
- EyeOff,
  Indent,
  Outdent,
  Table,
  SeparatorHorizontal,
  X,
 } from "lucide-react";
-import { VocabImportButton } from "../VocabImportButton";
 
 /* ── Constants ── */
 
@@ -653,7 +650,6 @@ export default function ToolbarPlugin() {
  const [elementFormat, setElementFormat] = useState<ElementFormatType>("left");
 
  // Pinyin toggle
- const [pinyinVisible, setPinyinVisible] = useState(true);
 
  // Editable
  const [isEditable, setIsEditable] = useState(() => editor.isEditable());
@@ -785,19 +781,6 @@ export default function ToolbarPlugin() {
   },
   [editor],
  );
-
- /* ── Global Pinyin toggle (CSS-only, no re-renders of PinyinNodes) ── */
- const toggleGlobalPinyin = useCallback(() => {
-  const root = editor.getRootElement();
-  if (!root) return;
-  const wrapper = root.closest("[data-editor-wrapper]") || root;
-  if (pinyinVisible) {
-   wrapper.classList.add("global-pinyin-hidden");
-  } else {
-   wrapper.classList.remove("global-pinyin-hidden");
-  }
-  setPinyinVisible(!pinyinVisible);
- }, [editor, pinyinVisible]);
 
  /* ════════════════════════════════════════════════════════
     Render
@@ -1013,24 +996,7 @@ export default function ToolbarPlugin() {
    <InsertDropdown editor={editor} isEditable={isEditable} />
    <Divider />
 
-   {/* ── Pinyin Toggle ── */}
-   {/* <ToolbarButton
-    active={pinyinVisible}
-    onClick={toggleGlobalPinyin}
-    title={pinyinVisible ? "Ẩn tất cả Pinyin" : "Hiện tất cả Pinyin"}
-    className="toolbar-item-pinyin"
-   >
-    {pinyinVisible ? (
-     <Eye className="w-3.5 h-3.5" />
-    ) : (
-     <EyeOff className="w-3.5 h-3.5" />
-    )}
-    <span className="toolbar-pinyin-label">Pinyin</span>
-   </ToolbarButton> */}
    <Divider />
-
-   {/* ── Vocab Import ── */}
-   <VocabImportButton />
   </div>
  );
 }

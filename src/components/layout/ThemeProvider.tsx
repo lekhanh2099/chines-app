@@ -31,19 +31,10 @@ function getInitialTheme(): Theme {
 }
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
- const [theme, setTheme] = useState<Theme>("light");
- const [mounted, setMounted] = useState(false);
-
- // Hydrate from localStorage after mount
- useEffect(() => {
-  setTheme(getInitialTheme());
-  setMounted(true);
- }, []);
+ const [theme, setTheme] = useState<Theme>(getInitialTheme);
 
  // Sync attribute to <html>
  useEffect(() => {
-  if (!mounted) return;
-
   const root = document.documentElement;
   root.setAttribute("data-theme", theme);
   root.setAttribute("data-theme-transitioning", "");
@@ -55,20 +46,11 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
   }, 250);
 
   return () => clearTimeout(timer);
- }, [theme, mounted]);
+ }, [theme]);
 
  const toggleTheme = useCallback(() => {
   setTheme((prev) => (prev === "light" ? "dark" : "light"));
  }, []);
-
- // Prevent flash of wrong theme
- if (!mounted) {
-  return (
-   <ThemeContext value={{ theme: "light", toggleTheme: () => {} }}>
-    {children}
-   </ThemeContext>
-  );
- }
 
  return <ThemeContext value={{ theme, toggleTheme }}>{children}</ThemeContext>;
 }

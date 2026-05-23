@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { Loader2 } from "lucide-react";
-import { useVocabDetail } from "@/features/vocabulary/hooks/useVocabDetail";
+import { useVocabDetail } from "@/features/dictionary/hooks/useVocabDetail";
 import { SectionHeader } from "@/components/layout/section-header";
 import { SectionWrapper } from "@/components/layout/section-wrapper";
 import { Badge } from "@/components/ui/badge";

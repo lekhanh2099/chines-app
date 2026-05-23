@@ -3,7 +3,7 @@
 import { useCallback, useState } from "react";
 import { useParams } from "next/navigation";
 import { toast } from "sonner";
-import { useVocabDetail } from "@/features/vocabulary/hooks/useVocabDetail";
+import { useVocabDetail } from "@/features/dictionary/hooks/useVocabDetail";
 import { useSmartSelectionInsights } from "@/hooks/useSmartSelectionInsights";
 import {
  getNormalizedAntonyms,

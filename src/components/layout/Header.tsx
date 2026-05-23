@@ -1,7 +1,7 @@
 "use client";
 
 import { FormEvent, useEffect, useRef, useState } from "react";
-import { Bell, BookOpenCheck, Flame, Moon, Search, Sun, Target, Trophy } from "lucide-react";
+import { BookOpenCheck, Moon, Search, Sun } from "lucide-react";
 import { type User } from "@supabase/supabase-js";
 import { usePathname } from "next/navigation";
 import { useTheme } from "./ThemeProvider";
@@ -84,15 +84,6 @@ export function Header({ user }: { user?: User | null }) {
      Tiếng Việt
     </div>
 
-    <button className="relative hidden h-11 w-11 items-center justify-center rounded-2xl text-stone-700 transition-colors hover:bg-stone-50 sm:flex">
-     <Bell className="h-5 w-5" />
-     <span className="absolute right-2 top-2 h-2.5 w-2.5 rounded-full bg-yellow-400" />
-    </button>
-
-    <HeaderPill icon={Trophy} value="324" tone="green" />
-    <HeaderPill icon={Target} value="0/3" tone="orange" />
-    <HeaderPill icon={Flame} value="3" tone="red" />
-
     <div className="hidden min-w-0 items-center gap-2 pl-1 xl:flex">
      <div className="flex h-10 w-10 items-center justify-center rounded-full bg-red-100 text-sm font-black text-red-600">
       {(user?.user_metadata?.display_name || user?.email || "B").slice(0, 1).toUpperCase()}
@@ -100,28 +91,5 @@ export function Header({ user }: { user?: User | null }) {
     </div>
    </div>
   </header>
- );
-}
-
-function HeaderPill({
- icon: Icon,
- value,
- tone,
-}: {
- icon: typeof Trophy;
- value: string;
- tone: "green" | "orange" | "red";
-}) {
- const toneClass = {
-  green: "border-stone-200 bg-white text-lime-700",
-  orange: "border-yellow-300 bg-yellow-50 text-orange-700",
-  red: "border-red-200 bg-red-50 text-red-600",
- }[tone];
-
- return (
-  <div className={cn("hidden h-11 items-center gap-2 rounded-2xl border-2 px-3 text-sm font-black shadow-theme-sm sm:flex", toneClass)}>
-   <Icon className="h-5 w-5" />
-   {value}
-  </div>
  );
 }

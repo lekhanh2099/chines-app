@@ -56,13 +56,10 @@ function NotesPageInner() {
  const { data: notes, isLoading } = useNotesList(categoryFilter);
 
  // Smart routing — redirects unless ?view=all or ?action=new
- const { isRedirecting, isListView, isNewAction } = useNoteRouting(
+ const { isRedirecting, isNewAction } = useNoteRouting(
   notes,
   isLoading,
  );
-
- const createNoteMutation = useCreateNote();
- const router = useRouter();
 
  // ── Loading / Redirecting skeleton ──
  if (isLoading || isRedirecting) {
@@ -340,7 +337,8 @@ function CreateNoteDialog() {
         onChange: ({ value }) =>
          !value ? "Tiêu đề không được để trống" : undefined,
        }}
-       children={(field) => (
+      >
+       {(field) => (
         <div className="space-y-2">
          <label className="text-sm font-bold text-text-primary">
           Tiêu đề ghi chú
@@ -360,11 +358,12 @@ function CreateNoteDialog() {
          ) : null}
         </div>
        )}
-      />
+      </form.Field>
 
       <form.Field
        name="tags"
-       children={(field) => (
+      >
+       {(field) => (
         <div className="space-y-2 mt-4">
          <label className="text-sm font-bold text-text-primary">
           Phân loại (Cách nhau bằng dấu phẩy)
@@ -379,11 +378,12 @@ function CreateNoteDialog() {
          />
         </div>
        )}
-      />
+      </form.Field>
 
       <form.Field
        name="category"
-       children={(field) => (
+      >
+       {(field) => (
         <div className="space-y-2 mt-4">
          <label className="text-sm font-bold text-text-primary">Danh mục</label>
          <select
@@ -400,7 +400,7 @@ function CreateNoteDialog() {
          </select>
         </div>
        )}
-      />
+      </form.Field>
      </DialogBody>
 
      <DialogFooter>
@@ -412,9 +412,8 @@ function CreateNoteDialog() {
       >
        Hủy
       </Button>
-      <form.Subscribe
-       selector={(state) => [state.canSubmit, state.isSubmitting]}
-       children={([canSubmit, isSubmitting]) => (
+      <form.Subscribe selector={(state) => [state.canSubmit, state.isSubmitting]}>
+       {([canSubmit, isSubmitting]) => (
         <Button
          type="submit"
          disabled={!canSubmit}
@@ -426,7 +425,7 @@ function CreateNoteDialog() {
          Tạo Ghi Chú
         </Button>
        )}
-      />
+      </form.Subscribe>
      </DialogFooter>
     </form>
    </DialogContent>

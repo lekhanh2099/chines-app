@@ -312,25 +312,53 @@ body {
   position: sticky;
   inset-block-start: 0;
   z-index: 20;
-  display: flex;
+  display: grid;
   inline-size: 100%;
   min-inline-size: 0;
-  flex-wrap: wrap;
+  grid-template-columns: auto minmax(0, 1fr);
   align-items: center;
   gap: var(--space-2);
   border-block-end: var(--border-thin) solid #e7e5e4;
   background: rgb(250 250 249 / 0.95);
-  padding-block: var(--space-2);
+  padding-block: var(--space-1);
   backdrop-filter: blur(0.5rem);
 }
 
+.hanzihome-topbar-title {
+  min-inline-size: 0;
+}
+
+.hanzihome-topbar-title h1 {
+  overflow: hidden;
+  color: #1c1917;
+  font-size: 1rem;
+  font-weight: 900;
+  line-height: 1.2;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.hanzihome-topbar-title p {
+  overflow: hidden;
+  color: #ef4444;
+  font-size: 0.75rem;
+  font-weight: 900;
+  line-height: 1.2;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
 .hanzihome-topbar-controls {
-  order: 3;
   display: grid;
+  grid-column: 1 / -1;
   inline-size: 100%;
   min-inline-size: 0;
-  grid-template-columns: minmax(0, 1fr);
+  grid-template-columns: auto minmax(0, 1fr);
   gap: var(--space-2);
+}
+
+.hanzihome-topbar-controls > :last-child {
+  grid-column: 1 / -1;
 }
 
 .hanzihome-lesson-header {
@@ -372,9 +400,13 @@ body {
   }
 
   .hanzihome-topbar-controls {
-    order: initial;
+    grid-column: 3;
     inline-size: auto;
-    grid-template-columns: 13.75rem auto;
+    grid-template-columns: auto 13.75rem auto;
+  }
+
+  .hanzihome-topbar-controls > :last-child {
+    grid-column: auto;
   }
 
   .hanzihome-lesson-header {
@@ -389,6 +421,10 @@ body {
 @media (min-width: 64rem) {
   .hanzihome-static-page {
     padding-inline: var(--space-8);
+  }
+
+  .hanzihome-static-topbar {
+    grid-template-columns: auto minmax(8rem, 1fr) auto;
   }
 
   .hanzihome-lesson-header {

@@ -77,47 +77,11 @@ export function useSmartSelectionInsights(
    personalNote?: string;
    personalNoteMode?: PersonalNoteMode;
   }) => {
-   const data = query.data;
-   if (!data) {
+   if (!query.data) {
     throw new Error("Không có dữ liệu để lưu");
    }
 
-   const res = await fetch("/api/vocab/inspect", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({
-     hanzi: data.entry.hanzi,
-     pinyin: data.entry.pinyin,
-     meaning:
-      data.mode === "sentence"
-       ? data.translation || data.entry.meaning
-       : data.entry.meaning,
-     ai_analysis: {
-      ...(data.entry.ai_analysis || {}),
-      ...(data.mode === "sentence"
-       ? {
-          sentence_translation: data.translation || data.entry.meaning,
-          grammar_breakdown: data.grammar_points,
-         }
-       : {}),
-     },
-     context_sentence:
-      contextSentence || data.context_sentence || trimmedSelection,
-     context_translation:
-      data.mode === "sentence"
-       ? data.translation || data.entry.meaning
-       : undefined,
-     personal_note: payload?.personalNote,
-     personal_note_mode: payload?.personalNoteMode,
-    }),
-   });
-
-   const json = (await res.json()) as { error?: string };
-   if (!res.ok) {
-    throw new Error(json.error || "Không thể lưu selection");
-   }
-
-   return json;
+   return payload || {};
   },
   onSuccess: (_result, payload) => {
    queryClient.setQueryData<SmartSelectionResult | undefined>(

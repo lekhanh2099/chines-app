@@ -7,13 +7,10 @@ import {
  ChevronLeft,
  ChevronRight,
  Flame,
- GraduationCap,
  Home,
  LogOut,
  NotebookPen,
  Sparkles,
- Trophy,
- WalletCards,
 } from "lucide-react";
 import { toast } from "sonner";
 import { createClient } from "@/lib/supabase/client";
@@ -30,15 +27,11 @@ type NavItem = {
 
 const mainItems: NavItem[] = [
  { name: "Trang chủ", icon: Home, href: "/" },
- { name: "Tự học", icon: Sparkles, href: "/hanzihome", badge: "JSON", tone: "orange" },
- { name: "Từ vựng", icon: WalletCards, href: "/vocabulary" },
- { name: "Ngữ pháp", icon: GraduationCap, href: "/grammar", badge: "Mới", tone: "orange" },
+ { name: "HanziHome", icon: Sparkles, href: "/hanzihome", badge: "JSON", tone: "orange" },
  { name: "Ghi chú", icon: NotebookPen, href: "/notes" },
 ];
 
-const secondaryItems: NavItem[] = [
- { name: "Bảng xếp hạng", icon: Trophy, href: "/" },
-];
+const secondaryItems: NavItem[] = [];
 
 function isActive(pathname: string, href: string) {
  const base = href.split("?")[0];
@@ -168,10 +161,10 @@ export function Sidebar() {
      <div className="mb-3 rounded-2xl border-2 border-red-100 bg-red-50 p-3">
       <div className="flex items-center gap-2 text-sm font-black text-red-600">
        <Flame className="h-4 w-4" />
-       3 ngày streak
+       Học theo bài
       </div>
       <p className="mt-1 text-xs font-bold text-stone-500">
-       Giữ nhịp học mỗi ngày để mở khóa bài mới.
+       Chọn một bài HanziHome rồi học từ vựng, ngữ pháp và bộ thủ.
       </p>
      </div>
     )}

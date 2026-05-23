@@ -25,7 +25,7 @@ import type {
  DictionaryWordReadyViewModel,
  ExampleItem,
 } from "@/features/dictionary/types";
-import { useVocabDetail } from "@/features/vocabulary/hooks/useVocabDetail";
+import { useVocabDetail } from "@/features/dictionary/hooks/useVocabDetail";
 import { useTTS } from "@/hooks/useTTS";
 import { getNormalizedRadicals } from "@/services/vocab.service";
 

@@ -50,19 +50,18 @@ function withParams(path: string, params: Record<string, string | number | null 
 
 export const learningRoutes = {
  vocabulary(params: LessonRouteParams = {}) {
-  return withParams("/vocabulary", {
-   source: params.source,
+  return withParams("/hanzihome", {
    lesson: params.lessonNumber,
    lessonKey: params.lessonKey,
-   mode: params.mode,
+   module: params.mode || "vocab",
    tab: params.tab,
   });
  },
  grammar(params: LessonRouteParams = {}) {
-  return withParams("/grammar", {
-   source: params.source,
+  return withParams("/hanzihome", {
    lesson: params.lessonNumber,
    lessonKey: params.lessonKey,
+   module: "grammar",
    pointId: params.pointId,
   });
  },

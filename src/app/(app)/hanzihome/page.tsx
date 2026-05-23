@@ -1,5 +1,5 @@
-import { HanziHomeStaticLearningPage } from "@/features/hanzihome/HanziHomeStaticLearningPage";
+import { HanziHomePage as HanziHomeFeaturePage } from "@/features/hanzihome/HanziHomePage";
 
 export default function HanziHomePage() {
- return <HanziHomeStaticLearningPage />;
+ return <HanziHomeFeaturePage />;
 }

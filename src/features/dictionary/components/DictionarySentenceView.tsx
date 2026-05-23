@@ -20,11 +20,11 @@ function DictionarySentenceView({ viewModel }: DictionarySentenceViewProps) {
   <PageContainer>
    <div className="mx-auto flex w-full max-w-4xl flex-col gap-4">
     <Link
-     href="/vocabulary"
+     href="/hanzihome"
      className="inline-flex items-center gap-1.5 text-xs font-semibold text-text-muted transition-colors hover:text-text-primary"
     >
      <ArrowLeft className="h-3.5 w-3.5" />
-     Kho từ vựng
+     HanziHome
     </Link>
 
     <SectionWrapper>
