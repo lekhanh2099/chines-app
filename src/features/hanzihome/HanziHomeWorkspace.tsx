@@ -132,11 +132,19 @@ export function HanziHomeWorkspace() {
   [data.books, selectedCourseId],
  );
 
+ const lessonIdFromUrl = searchParams.get("lessonId");
+ const lastLessonId = learning.state.settings.lastLessonId;
+ const lessonIdFromUrlInCourse = courseLessons.some(
+  (item) => item.id === lessonIdFromUrl,
+ );
+ const lastLessonIdInCourse = courseLessons.some(
+  (item) => item.id === lastLessonId,
+ );
+
  const lessonId =
-  searchParams.get("lessonId") ||
-  learning.state.settings.lastLessonId ||
+  (lessonIdFromUrlInCourse ? lessonIdFromUrl : null) ||
+  (lastLessonIdInCourse ? lastLessonId : null) ||
   courseLessons[0]?.id ||
-  data.lessons[0]?.id ||
   "";
 
  const activeModule =
@@ -183,9 +191,9 @@ export function HanziHomeWorkspace() {
  };
 
  const selectCourse = (nextCourseId: string) => {
-  const firstLessonInCourse =
-   data.lessons.find((item) => item.courseId === nextCourseId) ||
-   data.lessons[0];
+  const firstLessonInCourse = data.lessons.find(
+   (item) => item.courseId === nextCourseId,
+  );
 
   replaceWorkspaceParams({
    courseId: nextCourseId,
