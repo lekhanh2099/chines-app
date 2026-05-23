@@ -4,6 +4,7 @@ import { Bookmark, CheckCircle2, Circle, TriangleAlert } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import { InlineDraftItemEditDialog } from "@/features/hanzihome/components/InlineDraftItemEditDialog";
 import type {
  GrammarViewModel,
  LearningStatus,
@@ -15,6 +16,8 @@ type GrammarPointReaderProps = {
  status: LearningStatus;
  bookmarked: boolean;
  relatedVocab: VocabViewModel[];
+ editDraftId?: string;
+ editItemId?: string;
  onBookmark: () => void;
  onMarkStatus: (status: LearningStatus) => void;
 };
@@ -24,6 +27,8 @@ export function GrammarPointReader({
  status,
  bookmarked,
  relatedVocab,
+ editDraftId,
+ editItemId,
  onBookmark,
  onMarkStatus,
 }: GrammarPointReaderProps) {
@@ -48,10 +53,20 @@ export function GrammarPointReader({
        <p className="mt-2 text-sm leading-relaxed text-text-secondary">{point.core}</p>
       )}
      </div>
-     <Button variant={bookmarked ? "default" : "outline"} onClick={onBookmark}>
-      <Bookmark className="h-4 w-4" />
-      {bookmarked ? "Đã lưu" : "Lưu"}
-     </Button>
+     <div className="flex flex-wrap gap-2">
+      {editDraftId && editItemId && (
+       <InlineDraftItemEditDialog
+        kind="grammar"
+        draftId={editDraftId}
+        itemId={editItemId}
+       />
+      )}
+
+      <Button variant={bookmarked ? "default" : "outline"} onClick={onBookmark}>
+       <Bookmark className="h-4 w-4" />
+       {bookmarked ? "Đã lưu" : "Lưu"}
+      </Button>
+     </div>
     </div>
 
     <div className="flex flex-wrap gap-2">

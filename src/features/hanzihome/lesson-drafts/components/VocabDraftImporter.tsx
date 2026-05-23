@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo, useState, type ReactNode } from "react";
+import { useSearchParams } from "next/navigation";
 import {
   ArrowLeft,
   BookOpen,
@@ -116,6 +117,7 @@ function mergeItems(
 }
 
 export function VocabDraftImporter({ draft }: VocabDraftImporterProps) {
+  const searchParams = useSearchParams();
   const updateMutation = useUpdateLessonDraftMutation();
 
   const savedItems = useMemo(
@@ -132,7 +134,7 @@ export function VocabDraftImporter({ draft }: VocabDraftImporterProps) {
   const [sourceDirty, setSourceDirty] = useState(false);
   const [items, setItems] = useState<VocabDraftItem[]>(savedItems);
   const [selectedItemId, setSelectedItemId] = useState<string | null>(
-    savedItems[0]?.id ?? null,
+    searchParams.get("itemId") || savedItems[0]?.id || null,
   );
   const [warnings, setWarnings] = useState<string[]>([]);
 

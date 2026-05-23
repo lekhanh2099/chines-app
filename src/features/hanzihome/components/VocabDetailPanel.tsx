@@ -6,6 +6,7 @@ import { Bookmark, CheckCircle2, Circle, TriangleAlert } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import { InlineDraftItemEditDialog } from "@/features/hanzihome/components/InlineDraftItemEditDialog";
 import type {
  LearningStatus,
  VocabViewModel,
@@ -25,6 +26,8 @@ type VocabDetailPanelProps = {
  status: LearningStatus;
  bookmarked: boolean;
  onBookmark: () => void;
+ editDraftId?: string;
+ editItemId?: string;
  onMarkStatus: (status: LearningStatus) => void;
 };
 
@@ -33,6 +36,8 @@ export function VocabDetailPanel({
  status,
  bookmarked,
  onBookmark,
+ editDraftId,
+ editItemId,
  onMarkStatus,
 }: VocabDetailPanelProps) {
  const [sectionView, setSectionView] = useState<SectionView>("all");
@@ -103,10 +108,20 @@ export function VocabDetailPanel({
        {word.hanViet} · {word.meaning}
       </p>
      </div>
-     <Button variant={bookmarked ? "default" : "outline"} onClick={onBookmark}>
-      <Bookmark className="h-4 w-4" />
-      {bookmarked ? "Đã lưu" : "Lưu"}
-     </Button>
+     <div className="flex flex-wrap gap-2">
+      {editDraftId && editItemId && (
+       <InlineDraftItemEditDialog
+        kind="vocab"
+        draftId={editDraftId}
+        itemId={editItemId}
+       />
+      )}
+
+      <Button variant={bookmarked ? "default" : "outline"} onClick={onBookmark}>
+       <Bookmark className="h-4 w-4" />
+       {bookmarked ? "Đã lưu" : "Lưu"}
+      </Button>
+     </div>
     </div>
 
     <div className="flex flex-wrap gap-2">

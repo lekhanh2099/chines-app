@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo, useState, type ReactNode } from "react";
+import { useSearchParams } from "next/navigation";
 import {
   ArrowLeft,
   CheckCircle2,
@@ -225,6 +226,7 @@ function Field({
 }
 
 export function GrammarDraftImporter({ draft }: GrammarDraftImporterProps) {
+  const searchParams = useSearchParams();
   const updateMutation = useUpdateLessonDraftMutation();
 
   const savedItems = useMemo(
@@ -249,7 +251,7 @@ export function GrammarDraftImporter({ draft }: GrammarDraftImporterProps) {
   const [items, setItems] = useState<GrammarDraftItem[]>(savedItems);
   const [notes, setNotes] = useState<LessonDraftNotes>(savedNotes);
   const [selectedItemId, setSelectedItemId] = useState<string | null>(
-    savedItems[0]?.id ?? null,
+    searchParams.get("itemId") || savedItems[0]?.id || null,
   );
   const [warnings, setWarnings] = useState<string[]>([]);
 

@@ -4,7 +4,7 @@ import { useMemo, useState } from "react";
 import Link from "next/link";
 import { ArrowLeft, FileText, Trash2 } from "lucide-react";
 import { toast } from "sonner";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
@@ -33,9 +33,21 @@ const editorTabs: Array<{
   { key: "preview", label: "Preview" },
 ];
 
+function parseEditorTab(value: string | null): DraftEditorTab {
+  return value === "overview" ||
+    value === "vocab" ||
+    value === "grammar" ||
+    value === "preview"
+    ? value
+    : "overview";
+}
+
 export function LessonDraftEditor({ draftId }: LessonDraftEditorProps) {
   const router = useRouter();
-  const [activeTab, setActiveTab] = useState<DraftEditorTab>("overview");
+  const searchParams = useSearchParams();
+  const [activeTab, setActiveTab] = useState<DraftEditorTab>(
+    parseEditorTab(searchParams.get("tab")),
+  );
 
   const draftQuery = useLessonDraftQuery(draftId);
   const deleteMutation = useDeleteLessonDraftMutation();
