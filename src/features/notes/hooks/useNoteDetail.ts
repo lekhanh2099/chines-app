@@ -41,10 +41,14 @@ export function useNoteDetail(noteId: string) {
    if (!success) throw new Error("Failed to save content");
    return content;
   },
-  onSuccess: () => {
-   queryClient.invalidateQueries({
-    queryKey: ["note-detail", noteId],
-    exact: true,
+  onSuccess: (content) => {
+   queryClient.setQueryData(["note-detail", noteId], (old: unknown) => {
+    if (!old || typeof old !== "object") return old;
+
+    return {
+     ...old,
+     content,
+    };
    });
   },
  });
@@ -83,10 +87,14 @@ export function useNoteDetail(noteId: string) {
    if (!success) throw new Error("Failed to save reading content");
    return readingContent;
   },
-  onSuccess: () => {
-   queryClient.invalidateQueries({
-    queryKey: ["note-detail", noteId],
-    exact: true,
+  onSuccess: (readingContent) => {
+   queryClient.setQueryData(["note-detail", noteId], (old: unknown) => {
+    if (!old || typeof old !== "object") return old;
+
+    return {
+     ...old,
+     reading_content: readingContent,
+    };
    });
   },
  });
@@ -96,6 +104,17 @@ export function useNoteDetail(noteId: string) {
   mutationFn: async (enabled: boolean) => {
    const success = await updateSplitViewEnabled(supabase, noteId, enabled);
    if (!success) throw new Error("Failed to update split view state");
+   return enabled;
+  },
+  onMutate: (enabled) => {
+   queryClient.setQueryData(["note-detail", noteId], (old: unknown) => {
+    if (!old || typeof old !== "object") return old;
+
+    return {
+     ...old,
+     split_view_enabled: enabled,
+    };
+   });
   },
  });
 

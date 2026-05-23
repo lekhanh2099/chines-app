@@ -58,7 +58,7 @@ export function NoteTabBar() {
  if (tabs.length === 0) return null;
 
  return (
-  <div className="flex items-stretch border-b border-border-default bg-bg-subtle/50 shrink-0 h-[38px]">
+  <div className="flex items-stretch border-b border-border-default bg-bg-subtle/50 shrink-0 h-9.5">
    <div
     ref={scrollRef}
     className="flex items-stretch overflow-x-auto scrollbar-none flex-1 min-w-0"
@@ -119,7 +119,7 @@ function TabItem({
    onDrop={onDrop}
    onDragEnd={onDragEnd}
    className={cn(
-    "group relative flex items-center gap-1 pl-2.5 pr-1 cursor-pointer select-none transition-all duration-150 text-[13px] min-w-0 max-w-[200px]",
+    "group relative flex items-center gap-1 pl-2.5 pr-1 cursor-pointer select-none transition-all duration-150 text-[13px] min-w-0 max-w-50",
     // Active: elevated card look with accent bottom border
     isActive
      ? "bg-bg-card text-text-primary font-medium shadow-[0_-1px_0_0_var(--border-default),1px_0_0_0_var(--border-default),-1px_0_0_0_var(--border-default)] z-10"

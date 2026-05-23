@@ -2079,3 +2079,77 @@ hr.editor-hr.selected {
     display: none;
   }
 }
+/* =============================================
+   EDITOR FONT FIX — Vietnamese first, CJK fallback
+   ============================================= */
+
+.editor-input,
+.hanzihome-static-page .editor-input {
+  font-family: var(--font-sans);
+  line-height: 1.72;
+}
+
+.editor-input [lang="zh"],
+.editor-input [lang="zh-CN"],
+.editor-input .font-hanzi,
+.editor-input .zh-text,
+.editor-input .hanzi-text {
+  font-family: var(--font-hanzi);
+}
+
+.editor-input .font-pinyin,
+.editor-input .pinyin-text {
+  font-family: var(--font-pinyin);
+}
+
+/* =============================================
+   VIETNAMESE UI FONT OVERRIDE
+   Roboto/Noto/Arial first, Hanzi only when explicitly marked
+   ============================================= */
+
+:root {
+  --font-vietnamese: Roboto, "Noto Sans", "Helvetica Neue", Arial, system-ui, sans-serif;
+  --font-chinese: var(--font-hanzi, "Noto Sans SC", "Microsoft YaHei", "PingFang SC", sans-serif);
+}
+
+/* App text defaults: ưu tiên tiếng Việt dễ đọc */
+body,
+button,
+input,
+textarea,
+select {
+  font-family: var(--font-vietnamese);
+}
+
+/* Lexical editor/note phải dùng font tiếng Việt mặc định */
+.editor-shell,
+.editor-container,
+.editor-input,
+.editor-placeholder,
+[data-editor-wrapper],
+[data-editor-wrapper] * {
+  font-family: var(--font-vietnamese) !important;
+}
+
+/* Chỉ những chỗ đánh dấu Hán tự mới dùng font Hán */
+.font-hanzi,
+.font-hanzi-display,
+.hanzi-text,
+.zh-text,
+[lang="zh"],
+[lang="zh-CN"] {
+  font-family: var(--font-chinese) !important;
+}
+
+/* Pinyin dùng stack Latin rõ dấu */
+.font-pinyin,
+.pinyin-text {
+  font-family: var(--font-vietnamese) !important;
+  letter-spacing: 0.01em;
+}
+
+/* Trong editor: nếu có ruby/pinyin thì vẫn giữ dễ đọc */
+.editor-input rt,
+.editor-input ruby rt {
+  font-family: var(--font-vietnamese) !important;
+}

@@ -1,36 +1,17 @@
 "use client";
 
 import Link from "next/link";
-import {
- ExternalLink,
- Loader2,
- Maximize2,
- Pencil,
- Plus,
- Save,
- type LucideIcon,
-} from "lucide-react";
-import { useState } from "react";
-import { useQueryClient } from "@tanstack/react-query";
+import { ExternalLink, Loader2, Plus, type LucideIcon } from "lucide-react";
 import { toast } from "sonner";
 
-import { Editor } from "@/components/editor/Editor";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import {
- Dialog,
- DialogBody,
- DialogContent,
- DialogDescription,
- DialogFooter,
- DialogHeader,
- DialogTitle,
-} from "@/components/ui/dialog";
 import type { HanziHomeLesson } from "@/features/hanzihome/types";
 import { useCreateLessonLinkedNote } from "@/features/notes/hooks/useCreateLessonLinkedNote";
 import { useLessonLinkedNote } from "@/features/notes/hooks/useLessonLinkedNote";
-import { useNoteDetail } from "@/features/notes/hooks/useNoteDetail";
 import type { LessonNoteRelationType } from "@/services/notes.service";
+import { useNoteTabsStore } from "@/stores/note-tabs-store";
+import { NoteEditorPanel } from "@/components/notes/NoteEditorPanel";
 
 type LessonLinkedRichContentCardProps = {
  lesson: HanziHomeLesson;
@@ -108,103 +89,24 @@ function createInitialContent({
  };
 }
 
-function InlineRichContent({
- noteId,
- editTitle,
- editDescription,
- editButtonLabel,
-}: {
+function InlineRichContent({}: {
  noteId: string;
  editTitle: string;
  editDescription: string;
  editButtonLabel: string;
 }) {
- const [editOpen, setEditOpen] = useState(false);
- const queryClient = useQueryClient();
- const { note, isLoading, saveContent, isSaving } = useNoteDetail(noteId);
-
- const handleEditOpenChange = (nextOpen: boolean) => {
-  setEditOpen(nextOpen);
-
-  if (!nextOpen) {
-   void queryClient.invalidateQueries({
-    queryKey: ["note-detail", noteId],
-    exact: true,
-   });
-  }
- };
-
- if (isLoading) {
-  return (
-   <div className="rounded-2xl border border-border-default bg-bg-subtle p-4 text-sm font-semibold text-text-muted">
-    Đang tải nội dung...
-   </div>
-  );
- }
-
- if (!note) {
-  return (
-   <div className="rounded-2xl border border-border-default bg-bg-subtle p-4 text-sm font-semibold text-text-muted">
-    Không tìm thấy nội dung đã gắn với bài này.
-   </div>
-  );
- }
+ const tabs = useNoteTabsStore((s) => s.tabs);
+ const activeNoteId = useNoteTabsStore((s) => s.activeNoteId);
 
  return (
-  <div className="grid gap-3">
-   <div className="max-h-72 overflow-hidden rounded-2xl border border-border-default bg-bg-primary">
-    <Editor
-     key={`preview-${note.id}-${note.updated_at ?? ""}`}
-     initialContent={note.content as Record<string, unknown> | null}
-     readOnly
-     seamless
+  <div className="">
+   {tabs.map((tab) => (
+    <NoteEditorPanel
+     key={tab.noteId}
+     noteId={tab.noteId}
+     isVisible={tab.noteId === activeNoteId}
     />
-   </div>
-
-   <div className="flex flex-wrap justify-end gap-2">
-    <Button type="button" variant="outline" onClick={() => setEditOpen(true)}>
-     <Pencil className="h-4 w-4" />
-     {editButtonLabel}
-    </Button>
-
-    <Button asChild variant="outline">
-     <Link href={`/notes/${noteId}`}>
-      <Maximize2 className="h-4 w-4" />
-      Mở toàn màn hình
-     </Link>
-    </Button>
-   </div>
-
-   <Dialog open={editOpen} onOpenChange={handleEditOpenChange}>
-    <DialogContent className="flex h-[90vh] max-w-6xl flex-col gap-0 overflow-hidden p-0">
-     <DialogHeader className="shrink-0 border-b border-border-default px-6 py-5">
-      <DialogTitle>{editTitle}</DialogTitle>
-      <DialogDescription>{editDescription}</DialogDescription>
-     </DialogHeader>
-
-     <DialogBody className="min-h-0 flex-1 overflow-y-auto scrollbar-soft  p-0">
-      <Editor
-       key={`edit-${note.id}`}
-       initialContent={note.content as Record<string, unknown> | null}
-       onChange={saveContent}
-       seamless
-      />
-     </DialogBody>
-
-     <DialogFooter className="shrink-0 border-t border-border-default bg-bg-card px-6 py-4">
-      <div className="flex w-full items-center justify-between gap-3">
-       <span className="text-xs font-bold text-text-muted">
-        {isSaving ? "Đang lưu..." : "Autosave đang bật"}
-       </span>
-
-       <Button type="button" onClick={() => setEditOpen(false)}>
-        <Save className="h-4 w-4" />
-        Xong
-       </Button>
-      </div>
-     </DialogFooter>
-    </DialogContent>
-   </Dialog>
+   ))}
   </div>
  );
 }
