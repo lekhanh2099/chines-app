@@ -63,6 +63,7 @@ export function buildVocabViewModel(
 
  return {
   ...entry,
+  level: entry.level ?? undefined,
   category: categoryForWord(lesson, entry.word),
   examplesParsed: parseVocabExamples(raw.examplesBlock || entry.examples),
   detailSections,

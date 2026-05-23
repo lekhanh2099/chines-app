@@ -86,7 +86,7 @@ export function LessonOverview({
    <Card padding="lg" className="rounded-2xl">
     <div className="grid gap-5">
      <div className="min-w-0">
-      <Badge variant="accent">Hán ngữ 2</Badge>
+      <Badge variant="accent">{lesson.isDraft ? "Bài tự tạo" : "Hán ngữ 2"}</Badge>
       <h2 className="mt-3 text-3xl font-black tracking-normal text-text-primary">
        {lesson.title}
       </h2>

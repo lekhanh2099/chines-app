@@ -2,7 +2,7 @@
 
 import { useMemo, useState } from "react";
 import Link from "next/link";
-import { ArrowLeft, BookOpen, FileText, GraduationCap, Trash2 } from "lucide-react";
+import { ArrowLeft, FileText, GraduationCap, Trash2 } from "lucide-react";
 import { toast } from "sonner";
 import { useRouter } from "next/navigation";
 
@@ -11,8 +11,10 @@ import { Card } from "@/components/ui/card";
 import {
   useDeleteLessonDraftMutation,
   useLessonDraftQuery,
+  useUpdateLessonDraftMutation,
 } from "@/features/hanzihome/lesson-drafts";
 import { LessonDraftMetadataForm } from "@/features/hanzihome/lesson-drafts/components/LessonDraftMetadataForm";
+import { VocabDraftImporter } from "@/features/hanzihome/lesson-drafts/components/VocabDraftImporter";
 
 type LessonDraftEditorProps = {
   draftId: string;
@@ -36,6 +38,7 @@ export function LessonDraftEditor({ draftId }: LessonDraftEditorProps) {
 
   const draftQuery = useLessonDraftQuery(draftId);
   const deleteMutation = useDeleteLessonDraftMutation();
+  const updateMutation = useUpdateLessonDraftMutation();
 
   const draft = draftQuery.data;
 
@@ -54,6 +57,25 @@ export function LessonDraftEditor({ draftId }: LessonDraftEditorProps) {
       flashcards: draft.content.flashcards.length,
     };
   }, [draft]);
+
+  const handlePublishToggle = async () => {
+    if (!draft) return;
+
+    const nextStatus = draft.status === "published" ? "draft" : "published";
+
+    await updateMutation.mutateAsync({
+      draftId: draft.id,
+      input: {
+        status: nextStatus,
+      },
+    });
+
+    toast.success(
+      nextStatus === "published"
+        ? "Đã publish bài. Bài này sẽ xuất hiện trong HanziHome."
+        : "Đã chuyển bài về draft.",
+    );
+  };
 
   const handleDelete = async () => {
     if (!draft) return;
@@ -134,6 +156,15 @@ export function LessonDraftEditor({ draftId }: LessonDraftEditorProps) {
             <div className="flex flex-wrap gap-2">
               <Button
                 type="button"
+                variant={draft.status === "published" ? "outline" : "default"}
+                disabled={updateMutation.isPending}
+                onClick={() => void handlePublishToggle()}
+              >
+                {draft.status === "published" ? "Unpublish" : "Publish"}
+              </Button>
+
+              <Button
+                type="button"
                 variant="destructive"
                 disabled={deleteMutation.isPending}
                 onClick={() => void handleDelete()}
@@ -209,19 +240,7 @@ export function LessonDraftEditor({ draftId }: LessonDraftEditorProps) {
           </Card>
         )}
 
-        {activeTab === "vocab" && (
-          <Card padding="lg" className="rounded-2xl">
-            <div className="grid gap-3">
-              <BookOpen className="h-6 w-6 text-text-muted" />
-              <h2 className="text-xl font-black text-text-primary">
-                Từ vựng
-              </h2>
-              <p className="text-sm font-semibold text-text-muted">
-                Phase tiếp theo sẽ thêm form tạo từng mục từ vựng theo đúng structure hiện tại.
-              </p>
-            </div>
-          </Card>
-        )}
+        {activeTab === "vocab" && <VocabDraftImporter draft={draft} />}
 
         {activeTab === "grammar" && (
           <Card padding="lg" className="rounded-2xl">

@@ -36,3 +36,22 @@ export { CreateLessonDraftForm } from "@/features/hanzihome/lesson-drafts/compon
 export { LessonDraftEditor } from "@/features/hanzihome/lesson-drafts/components/LessonDraftEditor";
 export { LessonDraftMetadataForm } from "@/features/hanzihome/lesson-drafts/components/LessonDraftMetadataForm";
 export { LessonDraftsCompactList } from "@/features/hanzihome/lesson-drafts/components/LessonDraftsCompactList";
+
+export { VocabDraftImporter } from "@/features/hanzihome/lesson-drafts/components/VocabDraftImporter";
+export { VocabDraftManualEditor } from "@/features/hanzihome/lesson-drafts/components/VocabDraftManualEditor";
+export { parseVocabMarkdown } from "@/features/hanzihome/lesson-drafts/vocab/parse-vocab-markdown";
+export {
+  createEmptyVocabDraftItem,
+  vocabDraftCollocationSchema,
+  vocabDraftExampleSchema,
+  vocabDraftImportResultSchema,
+  vocabDraftItemSchema,
+  vocabDraftSectionsSchema,
+  type VocabDraftCollocation,
+  type VocabDraftExample,
+  type VocabDraftImportResult,
+  type VocabDraftItem,
+  type VocabDraftSections,
+} from "@/features/hanzihome/lesson-drafts/vocab/vocab-draft.schema";
+
+export { mapLessonDraftToHanziHomeLesson } from "@/features/hanzihome/lesson-drafts/map-draft-to-lesson";
