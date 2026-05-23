@@ -43,7 +43,10 @@ export type VocabViewModel = {
   }>;
 };
 
-export type GrammarViewModel = StaticGrammarData & {
+export type GrammarViewModel = {
+  id: string;
+  title?: string;
+  contentMd?: string;
   cleanTitle: string;
   core: string;
   structuresView: string[];

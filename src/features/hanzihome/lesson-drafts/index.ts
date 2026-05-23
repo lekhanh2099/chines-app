@@ -55,3 +55,16 @@ export {
 } from "@/features/hanzihome/lesson-drafts/vocab/vocab-draft.schema";
 
 export { mapLessonDraftToHanziHomeLesson } from "@/features/hanzihome/lesson-drafts/map-draft-to-lesson";
+
+export { GrammarDraftImporter } from "@/features/hanzihome/lesson-drafts/components/GrammarDraftImporter";
+export { GrammarDraftManualEditor } from "@/features/hanzihome/lesson-drafts/components/GrammarDraftManualEditor";
+export {
+  createEmptyGrammarDraftItem,
+  createEmptyLessonDraftNotes,
+  grammarDraftExampleSchema,
+  grammarDraftItemSchema,
+  lessonDraftNotesSchema,
+  type GrammarDraftExample,
+  type GrammarDraftItem,
+  type LessonDraftNotes,
+} from "@/features/hanzihome/lesson-drafts/grammar/grammar-draft.schema";

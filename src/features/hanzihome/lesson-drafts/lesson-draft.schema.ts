@@ -1,5 +1,7 @@
 import { z } from "zod";
 
+import { lessonDraftNotesSchema } from "@/features/hanzihome/lesson-drafts/grammar/grammar-draft.schema";
+
 export const lessonDraftStatusSchema = z.enum([
  "draft",
  "published",
@@ -15,6 +17,7 @@ export const lessonDraftContentSchema = z
    titleVi: z.string().optional(),
    vocabIds: z.array(z.string()).default([]),
    grammarPointIds: z.array(z.string()).default([]),
+   notes: lessonDraftNotesSchema.optional(),
   }),
   vocab: z.array(z.unknown()),
   grammarPoints: z.array(z.record(z.unknown())).default([]),

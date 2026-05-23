@@ -2,7 +2,7 @@
 
 import { useMemo, useState } from "react";
 import Link from "next/link";
-import { ArrowLeft, FileText, GraduationCap, Trash2 } from "lucide-react";
+import { ArrowLeft, FileText, Trash2 } from "lucide-react";
 import { toast } from "sonner";
 import { useRouter } from "next/navigation";
 
@@ -15,6 +15,7 @@ import {
 } from "@/features/hanzihome/lesson-drafts";
 import { LessonDraftMetadataForm } from "@/features/hanzihome/lesson-drafts/components/LessonDraftMetadataForm";
 import { VocabDraftImporter } from "@/features/hanzihome/lesson-drafts/components/VocabDraftImporter";
+import { GrammarDraftImporter } from "@/features/hanzihome/lesson-drafts/components/GrammarDraftImporter";
 
 type LessonDraftEditorProps = {
   draftId: string;
@@ -241,20 +242,7 @@ export function LessonDraftEditor({ draftId }: LessonDraftEditorProps) {
         )}
 
         {activeTab === "vocab" && <VocabDraftImporter draft={draft} />}
-
-        {activeTab === "grammar" && (
-          <Card padding="lg" className="rounded-2xl">
-            <div className="grid gap-3">
-              <GraduationCap className="h-6 w-6 text-text-muted" />
-              <h2 className="text-xl font-black text-text-primary">
-                Ngữ pháp
-              </h2>
-              <p className="text-sm font-semibold text-text-muted">
-                Phase sau sẽ thêm grammar point editor: title, formula, explanation, examples, notes.
-              </p>
-            </div>
-          </Card>
-        )}
+        {activeTab === "grammar" && <GrammarDraftImporter draft={draft} />}
 
         {activeTab === "preview" && (
           <Card padding="lg" className="rounded-2xl">

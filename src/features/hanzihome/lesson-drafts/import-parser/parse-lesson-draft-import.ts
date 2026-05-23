@@ -22,8 +22,16 @@ function chooseKind(input: {
 
 export function parseLessonDraftImport(rawText: string): ParsedImportResult {
   const normalized = normalizeImportInput(rawText);
-  const vocabResult = parseVocabDocument(normalized.text);
   const grammarResult = parseGrammarDocument(normalized.text);
+
+  const shouldParseVocab = grammarResult.grammarPoints.length === 0;
+  const vocabResult = shouldParseVocab
+    ? parseVocabDocument(normalized.text)
+    : {
+        items: [],
+        warnings: [],
+        mode: "none" as const,
+      };
 
   const kind = chooseKind({
     vocabCount: vocabResult.items.length,

@@ -1,6 +1,8 @@
 import type { LessonDraft } from "@/features/hanzihome/lesson-drafts/lesson-draft.schema";
+import { grammarDraftItemSchema } from "@/features/hanzihome/lesson-drafts/grammar/grammar-draft.schema";
 import { vocabDraftItemSchema } from "@/features/hanzihome/lesson-drafts/vocab/vocab-draft.schema";
 import type {
+  GrammarViewModel,
   HanziHomeLesson,
   VocabViewModel,
 } from "@/features/hanzihome/types";
@@ -74,6 +76,35 @@ function mapDraftVocabItem(value: unknown, lessonId: string): VocabViewModel | n
   };
 }
 
+function mapDraftGrammarItem(value: unknown): GrammarViewModel | null {
+  const parsed = grammarDraftItemSchema.safeParse(value);
+
+  if (!parsed.success) return null;
+
+  const item = parsed.data;
+
+  return {
+    id: item.id,
+    title: item.title,
+    cleanTitle: item.title,
+    core: item.coreLogic || item.shortMeaning,
+    structuresView: item.formulas,
+    examplesParsed: item.examples.map((example) => ({
+      zh: example.chinese,
+      pinyin: example.pinyin,
+      vi: example.translation,
+      note: example.note,
+    })),
+    notes: [
+      ...toLines(item.comparisons),
+      ...toLines(item.pitfalls),
+      ...toLines(item.cultureNotes),
+      ...toLines(item.practice),
+    ],
+    contentMd: item.rawMarkdown,
+  };
+}
+
 export function mapLessonDraftToHanziHomeLesson(
   draft: LessonDraft,
 ): HanziHomeLesson {
@@ -81,6 +112,10 @@ export function mapLessonDraftToHanziHomeLesson(
   const vocab = draft.content.vocab
     .map((item) => mapDraftVocabItem(item, lessonId))
     .filter((item): item is VocabViewModel => Boolean(item));
+
+  const grammar = draft.content.grammarPoints
+    .map(mapDraftGrammarItem)
+    .filter((item): item is GrammarViewModel => Boolean(item));
 
   return {
     id: lessonId,
@@ -91,9 +126,9 @@ export function mapLessonDraftToHanziHomeLesson(
     vocabCategories: [],
     vocabCount: vocab.length,
     vocabIds: vocab.map((item) => item.id),
-    grammarPointIds: draft.content.lesson.grammarPointIds,
+    grammarPointIds: grammar.map((item) => item.id),
     vocab,
-    grammar: [],
+    grammar,
     isDraft: true,
     draftId: draft.id,
     status: draft.status,
