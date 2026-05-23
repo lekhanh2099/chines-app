@@ -135,7 +135,6 @@ export default function LoginPage() {
          type="submit"
          disabled={!canSubmit || isSubmitting || loading}
          isLoading={loading || isSubmitting}
-         loadingText="Đang xử lý..."
          className="w-full mt-2"
         >
          {isLogin ? (

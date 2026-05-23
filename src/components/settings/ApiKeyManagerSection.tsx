@@ -433,7 +433,6 @@ export default function ApiKeyManagerSection() {
         onClick={handleAddKey}
         disabled={!apiKey.trim() || isSubmitting || !schemaReady}
         isLoading={isSubmitting}
-        loadingText="Đang verify..."
        >
         <ShieldCheck className="h-4 w-4" />
         Verify và lưu
@@ -568,7 +567,6 @@ export default function ApiKeyManagerSection() {
            onClick={() => handleToggleKey(key)}
            disabled={isBusy || !schemaReady}
            isLoading={isBusy}
-           loadingText="..."
           >
            {key.isActive ? (
             <Pause className="h-4 w-4" />

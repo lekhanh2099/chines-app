@@ -220,7 +220,6 @@ export default function SettingsPage() {
        onClick={handleSave}
        disabled={isLoading || isSaving || !hasLoaded || !hasUnsavedChanges}
        isLoading={isSaving}
-       loadingText="Đang lưu..."
       >
        <Save className="h-4 w-4" />
        Lưu thay đổi
@@ -299,7 +298,6 @@ export default function SettingsPage() {
         isLoading || isSaving || !hasLoaded || !hasUnsavedPromptChanges
        }
        isLoading={isSaving}
-       loadingText="Đang lưu prompt..."
       >
        <Save className="h-4 w-4" />
        Lưu prompt mới

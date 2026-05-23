@@ -66,7 +66,6 @@ function DictionaryWordView({ viewModel }: DictionaryWordViewProps) {
       onClick={viewModel.requestAiAnalysis}
       disabled={viewModel.isAiLoading}
       isLoading={viewModel.isAiLoading}
-      loadingText="Đang phân tích..."
       title="Chỉ bổ sung phần còn thiếu, không ghi đè dữ liệu đã import"
      >
       <Sparkles className="h-4 w-4" />
