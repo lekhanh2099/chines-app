@@ -99,9 +99,9 @@ export function VocabReviewPanel({
        {session.state.index + 1} / {session.items.length}
       </span>
      </div>
-     <div className="h-3 overflow-hidden rounded-2xl -full bg-bg-subtle">
+     <div className="h-3 overflow-hidden rounded-full bg-bg-subtle">
       <div
-       className="h-full rounded-2xl -full bg-accent"
+       className="h-full rounded-full bg-accent"
        style={{ inlineSize: `${progress}%` }}
       />
      </div>
@@ -150,7 +150,7 @@ function ReviewBack({
 
  if (item.type === "vocab") {
   return (
-   <div className="grid gap-2 rounded-2xlbg-bg-subtle p-5 text-center">
+   <div className="grid gap-2 rounded-2xl bg-bg-subtle p-5 text-center">
     <p className="text-lg font-black  ">{item.source.pinyin}</p>
     <p className="text-base font-bold text-text-secondary">
      {item.source.hanViet} · {item.source.meaning}
@@ -161,7 +161,7 @@ function ReviewBack({
 
  if (item.type === "grammar") {
   return (
-   <div className="grid gap-3 rounded-2xlbg-bg-subtle p-5">
+   <div className="grid gap-3 rounded-2xl bg-bg-subtle p-5">
     <p className="text-base font-semibold leading-relaxed text-text-secondary">
      {item.source.core}
     </p>

@@ -99,7 +99,7 @@ function NavRow({
    {!collapsed && item.badge && (
     <span
      className={cn(
-      "rounded-2xl -full px-2 py-0.5 text-[11px] font-black text-white",
+      "rounded-full px-2 py-0.5 text-[11px] font-black text-white",
       item.tone === "red" ? "bg-red-500" : "bg-orange-500",
      )}
     >
@@ -269,7 +269,7 @@ export function Sidebar() {
         key={item.name}
         href={item.href}
         className={cn(
-         "flex min-w-0 flex-col items-center justify-center gap-1 rounded-2xlpx-1 py-2 text-[10px] font-black transition",
+         "flex min-w-0 flex-col items-center justify-center gap-1 rounded-2xl px-1 py-2 text-[10px] font-black transition",
          active
           ? "bg-orange-50 text-orange-700"
           : "text-stone-500 hover:bg-stone-50",

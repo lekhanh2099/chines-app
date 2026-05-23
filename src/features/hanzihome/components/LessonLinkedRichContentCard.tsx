@@ -259,7 +259,7 @@ export function LessonLinkedRichContentCard({
    <div className="grid gap-4">
     <div className="flex flex-wrap items-start justify-between gap-4">
      <div className="flex min-w-0 items-start gap-3">
-      <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xlbg-bg-subtle">
+      <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-bg-subtle">
        <Icon className="h-5 w-5" />
       </span>
 

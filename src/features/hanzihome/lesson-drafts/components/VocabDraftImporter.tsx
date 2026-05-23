@@ -301,7 +301,7 @@ export function VocabDraftImporter({ draft }: VocabDraftImporterProps) {
      />
 
      {sourceDirty && (
-      <span className="ml-auto rounded-2xl -full bg-bg-subtle px-3 py-1 text-xs font-black text-text-muted">
+      <span className="ml-auto rounded-full bg-bg-subtle px-3 py-1 text-xs font-black text-text-muted">
        Có source mới chưa xử lý
       </span>
      )}
@@ -539,7 +539,7 @@ export function VocabDraftImporter({ draft }: VocabDraftImporterProps) {
              </span>
 
              {itemWarnings.length > 0 && (
-              <span className="mt-1 rounded-2xl -full bg-bg-subtle px-2 py-1 text-xs font-bold text-text-muted">
+              <span className="mt-1 rounded-full bg-bg-subtle px-2 py-1 text-xs font-bold text-text-muted">
                {itemWarnings.length} cảnh báo
               </span>
              )}
@@ -658,7 +658,7 @@ function StepButton({
    type="button"
    disabled={disabled}
    className={cn(
-    "rounded-2xl -full px-4 py-2 text-sm font-black transition-colors disabled:cursor-not-allowed disabled:opacity-50",
+    "rounded-full px-4 py-2 text-sm font-black transition-colors disabled:cursor-not-allowed disabled:opacity-50",
     active
      ? "bg-text-primary text-bg-primary"
      : "bg-bg-subtle text-text-muted hover:text-text-primary",

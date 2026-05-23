@@ -18,7 +18,7 @@ export function GrammarPracticeMini({
     <p className="text-sm text-text-secondary">
      Đọc câu ví dụ và tự nói lại bằng cùng công thức.
     </p>
-    <p className="rounded-2xlbg-bg-subtle p-3 font-black text-text-primary">
+    <p className="rounded-2xl bg-bg-subtle p-3 font-black text-text-primary">
      {example.zh}
     </p>
    </div>

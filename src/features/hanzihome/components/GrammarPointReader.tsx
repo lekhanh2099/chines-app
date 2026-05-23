@@ -117,7 +117,7 @@ export function GrammarPointReader({
       {point.examplesParsed.map((example) => (
        <div
         key={`${example.zh}-${example.vi}`}
-        className="rounded-2xlbg-bg-subtle p-3"
+        className="rounded-2xl bg-bg-subtle p-3"
        >
         <p className="font-black leading-relaxed text-text-primary">
          {example.zh}

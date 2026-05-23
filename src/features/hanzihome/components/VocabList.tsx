@@ -46,7 +46,7 @@ export function VocabList({
  return (
   <Card
    padding="md"
-   className="rounded-2xllg:sticky lg:top-24 lg:max-h-[calc(100vh-8rem)] lg:overflow-y-auto scrollbar-soft "
+   className="rounded-2xl lg:sticky lg:top-24 lg:max-h-[calc(100vh-8rem)] lg:overflow-y-auto scrollbar-soft "
   >
    <div className="grid gap-3">
     <div>
@@ -63,7 +63,7 @@ export function VocabList({
     />
 
     {groups.map(([category, items]) => (
-     <div key={category} className="grid gap-3 rounded-2xlbg-bg-subtle p-3">
+     <div key={category} className="grid gap-3 rounded-2xl bg-bg-subtle p-3">
       <div className="flex items-center justify-between gap-3">
        <h3 className="min-w-0 truncate text-sm font-black text-text-primary">
         {category}
@@ -79,7 +79,7 @@ export function VocabList({
          <Button
           key={word.id}
           variant={active ? "default" : "outline"}
-          className="h-auto min-w-0 justify-start rounded-2xlpy-3 text-left"
+          className="h-auto min-w-0 justify-start rounded-2xl py-3 text-left"
           onClick={() => onSelectWord(word.id)}
          >
           <span className="min-w-0 flex-1">
@@ -103,7 +103,7 @@ export function VocabList({
      </div>
     ))}
     {words.length === 0 && (
-     <p className="rounded-2xlbg-bg-subtle p-4 text-sm font-semibold text-text-muted">
+     <p className="rounded-2xl bg-bg-subtle p-4 text-sm font-semibold text-text-muted">
       Không có từ phù hợp bộ lọc.
      </p>
     )}

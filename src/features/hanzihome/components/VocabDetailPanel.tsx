@@ -155,7 +155,7 @@ export function VocabDetailPanel({
        type="button"
        onClick={() => setSectionView(item.key)}
        className={[
-        "rounded-2xl -full border px-3 py-1 text-xs font-black transition-colors",
+        "rounded-full border px-3 py-1 text-xs font-black transition-colors",
         sectionView === item.key
          ? "border-accent bg-accent text-white"
          : "border-border-default bg-bg-subtle text-text-muted hover:text-text-primary",

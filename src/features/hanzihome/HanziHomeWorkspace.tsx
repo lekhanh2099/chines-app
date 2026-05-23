@@ -264,7 +264,7 @@ export function HanziHomeWorkspace() {
         </h1>
 
         <div className="mt-2 flex flex-wrap gap-2">
-         <span className="rounded-2xl -full bg-bg-subtle px-3 py-1 text-xs font-black text-text-muted">
+         <span className="rounded-full bg-bg-subtle px-3 py-1 text-xs font-black text-text-muted">
           {activeModule === "radicals"
            ? `${data.radicals.length} bộ thủ`
            : subtitle}
@@ -273,13 +273,13 @@ export function HanziHomeWorkspace() {
          {activeModule !== "radicals" && lesson?.draftId && (
           <Link
            href={`/hanzihome/drafts/${lesson.draftId}`}
-           className="rounded-2xl -full bg-bg-subtle px-3 py-1 text-xs font-black text-text-muted"
+           className="rounded-full bg-bg-subtle px-3 py-1 text-xs font-black text-text-muted"
           >
            Sửa bài
           </Link>
          )}
          {learning.isSaving && (
-          <span className="rounded-2xl -full bg-bg-subtle px-3 py-1 text-xs font-black text-text-muted">
+          <span className="rounded-full bg-bg-subtle px-3 py-1 text-xs font-black text-text-muted">
            Đang lưu...
           </span>
          )}

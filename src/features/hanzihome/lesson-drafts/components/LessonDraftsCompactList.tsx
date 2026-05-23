@@ -31,7 +31,7 @@ export function LessonDraftsCompactList() {
    <div className="grid gap-4">
     <div className="flex items-start justify-between gap-3">
      <div className="flex min-w-0 gap-3">
-      <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xlbg-bg-subtle">
+      <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-bg-subtle">
        <FilePlus2 className="h-5 w-5" />
       </span>
 
@@ -48,7 +48,7 @@ export function LessonDraftsCompactList() {
       </div>
      </div>
 
-     <span className="shrink-0 rounded-2xl -full bg-bg-subtle px-3 py-1 text-xs font-black text-text-muted">
+     <span className="shrink-0 rounded-full bg-bg-subtle px-3 py-1 text-xs font-black text-text-muted">
       {drafts.length} bài
      </span>
     </div>

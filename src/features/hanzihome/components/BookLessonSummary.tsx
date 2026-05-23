@@ -33,7 +33,7 @@ export function BookLessonSummary({ books, lessons }: BookLessonSummaryProps) {
    <div className="grid gap-4">
     <div className="flex items-start justify-between gap-3">
      <div className="flex min-w-0 gap-3">
-      <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xlbg-bg-subtle">
+      <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-bg-subtle">
        <BookMarked className="h-5 w-5" />
       </span>
 
@@ -50,7 +50,7 @@ export function BookLessonSummary({ books, lessons }: BookLessonSummaryProps) {
       </div>
      </div>
 
-     <span className="shrink-0 rounded-2xl -full bg-bg-subtle px-3 py-1 text-xs font-black text-text-muted">
+     <span className="shrink-0 rounded-full bg-bg-subtle px-3 py-1 text-xs font-black text-text-muted">
       {lessons.length} bài
      </span>
     </div>
@@ -74,7 +74,7 @@ export function BookLessonSummary({ books, lessons }: BookLessonSummaryProps) {
          )}
         </div>
 
-        <span className="rounded-2xl -full bg-bg-primary px-3 py-1 text-xs font-black text-text-muted">
+        <span className="rounded-full bg-bg-primary px-3 py-1 text-xs font-black text-text-muted">
          {bookLessons.length} bài
         </span>
        </div>
@@ -86,7 +86,7 @@ export function BookLessonSummary({ books, lessons }: BookLessonSummaryProps) {
        <div className="flex flex-wrap items-center justify-between gap-2">
         <p className="text-sm font-black text-text-primary">Chưa phân quyển</p>
 
-        <span className="rounded-2xl -full bg-bg-primary px-3 py-1 text-xs font-black text-text-muted">
+        <span className="rounded-full bg-bg-primary px-3 py-1 text-xs font-black text-text-muted">
          {fallbackLessons.length} bài
         </span>
        </div>

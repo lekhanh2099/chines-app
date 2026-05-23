@@ -35,7 +35,7 @@ export function GrammarPointList({
      {allPointId && (
       <Button
        variant={selectedPointId === allPointId ? "default" : "outline"}
-       className="h-auto min-w-0 justify-start rounded-2xlpy-3 text-left"
+       className="h-auto min-w-0 justify-start rounded-2xl py-3 text-left"
        onClick={() => onSelectPoint(allPointId)}
       >
        <span className="min-w-0 flex-1">
@@ -51,7 +51,7 @@ export function GrammarPointList({
       <Button
        key={point.id}
        variant={point.id === selectedPointId ? "default" : "outline"}
-       className="h-auto min-w-0 justify-start rounded-2xlpy-3 text-left"
+       className="h-auto min-w-0 justify-start rounded-2xl py-3 text-left"
        onClick={() => onSelectPoint(point.id)}
       >
        <span className="min-w-0 flex-1">

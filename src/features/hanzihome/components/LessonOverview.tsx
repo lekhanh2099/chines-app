@@ -1,12 +1,6 @@
 "use client";
 
-import {
- BookOpen,
- CheckCircle2,
- GraduationCap,
- Layers3,
- RotateCcw,
-} from "lucide-react";
+import { BookOpen, CheckCircle2, GraduationCap, RotateCcw } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
 import { LessonNoteAccessCard } from "@/features/hanzihome/components/LessonNoteAccessCard";
@@ -147,7 +141,7 @@ export function LessonOverview({
        onClick={() => onOpenModule(action.module)}
        className="group flex min-h-40 min-w-0 flex-col justify-between rounded-2xl border-2 border-border-default bg-bg-card p-5 text-left shadow-theme-sm transition-colors hover:border-accent-muted hover:bg-accent-subtle"
       >
-       <span className="flex h-11 w-11 items-center justify-center rounded-2xlbg-bg-subtle   group-hover:bg-white">
+       <span className="flex h-11 w-11 items-center justify-center rounded-2xl bg-bg-subtle   group-hover:bg-white">
         <Icon className="h-5 w-5" />
        </span>
        <span className="grid gap-2">
@@ -168,7 +162,7 @@ export function LessonOverview({
 
 function ProgressTile({ label, value }: { label: string; value: string }) {
  return (
-  <div className="flex items-center gap-3 rounded-2xlbg-bg-subtle p-4">
+  <div className="flex items-center gap-3 rounded-2xl bg-bg-subtle p-4">
    <CheckCircle2 className="h-5 w-5 shrink-0 text-success" />
    <div>
     <p className="text-xl font-black text-text-primary">{value}</p>
