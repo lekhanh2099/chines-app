@@ -131,6 +131,8 @@ export function HanziHomeWorkspace() {
  const lesson = useHanziHomeLesson(data, lessonId);
  const selectedLessonId = lesson?.id || lessonId;
 
+ const selectedBookId =
+  lesson?.bookId || courseLessons[0]?.bookId || courseBooks[0]?.id;
  const subtitle = useMemo(() => {
   if (!lesson) return "Không có dữ liệu bài học.";
   return `${lesson.vocab.length} từ · ${lesson.grammar.length} điểm ngữ pháp`;
@@ -279,6 +281,10 @@ export function HanziHomeWorkspace() {
 
          <CreateLessonDraftDialog
           suggestedLessonNumber={suggestedDraftLessonNumber}
+          courses={data.courses}
+          books={data.books}
+          selectedCourseId={selectedCourseId}
+          selectedBookId={selectedBookId}
          />
         </>
        )}

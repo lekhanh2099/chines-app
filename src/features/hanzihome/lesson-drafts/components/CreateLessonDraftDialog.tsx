@@ -14,13 +14,25 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 import { CreateLessonDraftForm } from "@/features/hanzihome/lesson-drafts/components/CreateLessonDraftForm";
+import type {
+  HanziHomeCourse,
+  HanziHomeCourseBook,
+} from "@/features/hanzihome/types";
 
 type CreateLessonDraftDialogProps = {
   suggestedLessonNumber: number;
+  courses: HanziHomeCourse[];
+  books: HanziHomeCourseBook[];
+  selectedCourseId: string;
+  selectedBookId?: string;
 };
 
 export function CreateLessonDraftDialog({
   suggestedLessonNumber,
+  courses,
+  books,
+  selectedCourseId,
+  selectedBookId,
 }: CreateLessonDraftDialogProps) {
   const router = useRouter();
   const [open, setOpen] = useState(false);
@@ -38,12 +50,16 @@ export function CreateLessonDraftDialog({
         <DialogHeader>
           <DialogTitle>Tạo bài mới</DialogTitle>
           <DialogDescription>
-            Tạo lesson draft trong Supabase. Sau khi tạo, bạn sẽ được chuyển sang trang soạn bài.
+            Tạo lesson draft trong Supabase. Bài mới sẽ được gắn vào course/quyển đang chọn.
           </DialogDescription>
         </DialogHeader>
 
         <CreateLessonDraftForm
           suggestedLessonNumber={suggestedLessonNumber}
+          courses={courses}
+          books={books}
+          selectedCourseId={selectedCourseId}
+          selectedBookId={selectedBookId}
           onCreated={(draft) => {
             setOpen(false);
             router.push(`/hanzihome/drafts/${draft.id}`);

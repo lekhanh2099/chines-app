@@ -3,20 +3,32 @@
 import { FilePlus2, Trash2 } from "lucide-react";
 import { toast } from "sonner";
 
-import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { Card } from "@/components/ui/card";
 import { CreateLessonDraftForm } from "@/features/hanzihome/lesson-drafts/components/CreateLessonDraftForm";
 import {
   useDeleteLessonDraftMutation,
   useLessonDraftsQuery,
 } from "@/features/hanzihome/lesson-drafts";
+import type {
+  HanziHomeCourse,
+  HanziHomeCourseBook,
+} from "@/features/hanzihome/types";
 
 type LessonDraftsPanelProps = {
   suggestedLessonNumber: number;
+  courses: HanziHomeCourse[];
+  books: HanziHomeCourseBook[];
+  selectedCourseId: string;
+  selectedBookId?: string;
 };
 
 export function LessonDraftsPanel({
   suggestedLessonNumber,
+  courses,
+  books,
+  selectedCourseId,
+  selectedBookId,
 }: LessonDraftsPanelProps) {
   const draftsQuery = useLessonDraftsQuery();
   const deleteMutation = useDeleteLessonDraftMutation();
@@ -39,16 +51,24 @@ export function LessonDraftsPanel({
           <p className="text-xs font-black uppercase tracking-wide text-text-muted">
             Bài tự tạo
           </p>
+
           <h2 className="text-lg font-black text-text-primary">
             Tạo bài mới
           </h2>
+
           <p className="text-sm font-semibold text-text-muted">
-            Bài mới sẽ được lưu vào Supabase dưới dạng draft, không sửa JSON tĩnh.
+            Bài mới sẽ được lưu vào Supabase dưới dạng draft và gắn vào course/quyển đang chọn.
           </p>
         </div>
 
         <div className="rounded-2xl border border-border-default bg-bg-primary p-4">
-          <CreateLessonDraftForm suggestedLessonNumber={suggestedLessonNumber} />
+          <CreateLessonDraftForm
+            suggestedLessonNumber={suggestedLessonNumber}
+            courses={courses}
+            books={books}
+            selectedCourseId={selectedCourseId}
+            selectedBookId={selectedBookId}
+          />
         </div>
 
         <div className="grid gap-2">
@@ -56,6 +76,7 @@ export function LessonDraftsPanel({
             <h3 className="text-sm font-black text-text-primary">
               Draft đã tạo
             </h3>
+
             <span className="text-xs font-black uppercase tracking-wide text-text-muted">
               {drafts.length} bài
             </span>
@@ -94,8 +115,13 @@ export function LessonDraftsPanel({
                     {draft.lessonNumber ? `Bài ${draft.lessonNumber}: ` : ""}
                     {draft.titleZh}
                   </p>
+
                   <p className="truncate text-xs font-semibold text-text-muted">
-                    {draft.titleVi || draft.lessonKey} · {draft.status}
+                    {draft.content.lesson.bookTitle ||
+                      draft.content.lesson.courseTitle ||
+                      draft.titleVi ||
+                      draft.lessonKey}{" "}
+                    · {draft.status}
                   </p>
                 </div>
               </div>
