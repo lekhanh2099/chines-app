@@ -58,7 +58,7 @@ export function buildVocabViewModel(
    lines: lines(raw.collocationsBlock || entry.collocations),
   },
   { key: "culture", title: "Văn hóa", lines: lines(raw.cultureBlock || entry.culture) },
-  { key: "notes", title: "Ghi chú / lỗi sai", lines: lines(raw.notesBlock || entry.notes) },
+  { key: "notes", title: "Lưu ý lỗi sai", lines: lines(raw.notesBlock || entry.notes) },
  ].filter((section) => section.lines.length > 0);
 
  return {

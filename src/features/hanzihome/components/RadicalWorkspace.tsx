@@ -1,78 +1,140 @@
 "use client";
 
+import type { ReactNode } from "react";
 import { useMemo, useState } from "react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import type { HanziHomeLesson } from "@/features/hanzihome/types";
+import { Input } from "@/components/ui/input";
+import { Select } from "@/components/ui/select";
+import type { StaticRadicalData } from "@/features/hanzihome/types";
 
-export function RadicalWorkspace({ lesson }: { lesson: HanziHomeLesson }) {
- const [selectedId, setSelectedId] = useState<string | null>(
-  lesson.radicals[0]?.id || null,
- );
+type RadicalWorkspaceProps = {
+ radicals: StaticRadicalData[];
+};
+
+export function RadicalWorkspace({ radicals }: RadicalWorkspaceProps) {
+ // TODO: Later derive lesson-related radicals from vocabulary characters if needed.
+ const [selectedId, setSelectedId] = useState<string | null>(radicals[0]?.id || null);
+ const [searchValue, setSearchValue] = useState("");
+ const [strokeFilter, setStrokeFilter] = useState("all");
+ const visibleRadicals = useMemo(() => {
+  const keyword = searchValue.trim().toLowerCase();
+  return radicals.filter((radical) => {
+   const matchesStroke =
+    strokeFilter === "all" || String(radical.strokes) === strokeFilter;
+   const haystack = [
+    radical.radical,
+    radical.nameVi,
+    radical.coreMeaning.history,
+    radical.coreMeaning.modern,
+    radical.recognition,
+    radical.variants.map((variant) => `${variant.form} ${variant.note}`).join(" "),
+   ]
+    .join(" ")
+    .toLowerCase();
+
+   return matchesStroke && (!keyword || haystack.includes(keyword));
+  });
+ }, [radicals, searchValue, strokeFilter]);
  const selectedRadical = useMemo(
   () =>
-   lesson.radicals.find((radical) => radical.id === selectedId) ||
-   lesson.radicals[0] ||
+   radicals.find((radical) => radical.id === selectedId) ||
+   visibleRadicals[0] ||
+   radicals[0] ||
    null,
-  [lesson.radicals, selectedId],
+  [radicals, selectedId, visibleRadicals],
  );
+ const strokeOptions = useMemo(() => {
+  return Array.from(
+   new Set(radicals.map((radical) => radical.strokes).filter((stroke) => stroke !== null)),
+  ).sort((a, b) => a - b);
+ }, [radicals]);
 
  if (!selectedRadical) {
   return (
    <Card padding="lg" className="rounded-2xl">
-    <p className="text-sm font-semibold text-text-muted">Chưa có dữ liệu bộ thủ cho bài này.</p>
+    <p className="text-sm font-semibold text-text-muted">Chưa có dữ liệu bộ thủ.</p>
    </Card>
   );
  }
 
  return (
-  <div className="grid gap-5 lg:grid-cols-[minmax(0,22rem)_minmax(0,1fr)]">
-   <Card padding="md" className="rounded-2xl">
-    <div className="grid gap-2">
-     {lesson.radicals.map((radical) => (
-      <Button
-       key={radical.id}
-       variant={radical.id === selectedRadical.id ? "default" : "outline"}
-       className="h-auto justify-start rounded-2xl py-3"
-       onClick={() => setSelectedId(radical.id)}
-      >
-       <span className="text-xl font-black">{radical.radical}</span>
-       <span className="min-w-0 truncate">{radical.nameVi}</span>
-      </Button>
-     ))}
+  <div className="grid gap-5 lg:grid-cols-[minmax(20rem,23.75rem)_minmax(0,1fr)]">
+   <Card padding="md" className="rounded-2xl lg:sticky lg:top-24 lg:max-h-[calc(100vh-8rem)] lg:overflow-y-auto">
+    <div className="grid gap-3">
+     <div>
+      <h2 className="text-lg font-black text-text-primary">Toàn bộ bộ thủ</h2>
+      <p className="text-sm font-semibold text-text-muted">
+       {radicals.length} bộ thủ độc lập với bài học. Sau này có thể derive bộ thủ theo từ vựng bài khi cần.
+      </p>
+     </div>
+     <Input
+      value={searchValue}
+      onChange={(event) => setSearchValue(event.target.value)}
+      placeholder="Tìm bộ thủ, tên, nghĩa..."
+      aria-label="Tìm bộ thủ"
+     />
+     <Select
+      value={strokeFilter}
+      onChange={(event) => setStrokeFilter(event.target.value)}
+      aria-label="Lọc bộ thủ theo số nét"
+     >
+      <option value="all">Tất cả số nét</option>
+      {strokeOptions.map((stroke) => (
+       <option key={stroke} value={String(stroke)}>
+        {stroke} nét
+       </option>
+      ))}
+     </Select>
+     <div className="grid gap-2">
+      {visibleRadicals.map((radical) => (
+       <Button
+        key={radical.id}
+        variant={radical.id === selectedRadical.id ? "default" : "outline"}
+        className="h-auto justify-start rounded-2xl py-3"
+        onClick={() => setSelectedId(radical.id)}
+       >
+        <span className="text-xl font-black">{radical.radical}</span>
+        <span className="min-w-0 flex-1 truncate">{radical.nameVi}</span>
+        <span className="text-xs uppercase opacity-75">
+         {radical.strokes ?? "?"} nét
+        </span>
+       </Button>
+      ))}
+     </div>
+     {visibleRadicals.length === 0 && (
+      <p className="rounded-2xl bg-bg-subtle p-4 text-sm font-semibold text-text-muted">
+       Không có bộ thủ phù hợp bộ lọc.
+      </p>
+     )}
     </div>
    </Card>
 
    <Card padding="lg" className="rounded-2xl">
     <div className="grid gap-5">
-     <div>
-      <div className="flex flex-wrap items-center gap-3">
-       <h2 className="text-6xl font-black text-text-primary">
-        {selectedRadical.radical}
-       </h2>
-       <div>
-        <h3 className="text-2xl font-black text-text-primary">
-         {selectedRadical.nameVi}
-        </h3>
-        <Badge>{selectedRadical.strokes} nét</Badge>
+     <div className="flex flex-wrap items-center gap-4">
+      <h2 className="text-7xl font-black text-text-primary">
+       {selectedRadical.radical}
+      </h2>
+      <div className="min-w-0">
+       <div className="flex flex-wrap items-center gap-2">
+        <Badge>#{selectedRadical.index}</Badge>
+        <Badge variant="info">{selectedRadical.strokes ?? "?"} nét</Badge>
        </div>
+       <h3 className="mt-2 text-2xl font-black text-text-primary">
+        {selectedRadical.nameVi}
+       </h3>
       </div>
      </div>
 
-     <section className="grid gap-2">
-      <h4 className="text-base font-black text-text-primary">Ý nghĩa cốt lõi</h4>
-      <p className="text-sm leading-relaxed text-text-secondary">
-       {selectedRadical.coreMeaning.modern}
-      </p>
-      <p className="text-sm leading-relaxed text-text-muted">
-       {selectedRadical.coreMeaning.history}
-      </p>
-     </section>
+     <RadicalSection title="Ý nghĩa cốt lõi">
+      <p>{selectedRadical.coreMeaning.modern}</p>
+      <p className="text-text-muted">{selectedRadical.coreMeaning.history}</p>
+     </RadicalSection>
 
      {selectedRadical.variants.length > 0 && (
-      <section className="grid gap-2">
-       <h4 className="text-base font-black text-text-primary">Biến thể</h4>
+      <RadicalSection title="Biến thể">
        <div className="flex flex-wrap gap-2">
         {selectedRadical.variants.map((variant) => (
          <Badge key={`${variant.form}-${variant.note}`} variant="purple" size="lg">
@@ -80,17 +142,39 @@ export function RadicalWorkspace({ lesson }: { lesson: HanziHomeLesson }) {
          </Badge>
         ))}
        </div>
-      </section>
+      </RadicalSection>
      )}
 
-     <section className="grid gap-2">
-      <h4 className="text-base font-black text-text-primary">Nhận diện</h4>
-      <p className="text-sm leading-relaxed text-text-secondary">
-       {selectedRadical.recognition}
-      </p>
-     </section>
+     <RadicalSection title="Nhận diện">
+      <p>{selectedRadical.recognition}</p>
+     </RadicalSection>
+
+     {selectedRadical.distinguish.length > 0 && (
+      <RadicalSection title="Phân biệt">
+       <ul className="grid gap-2">
+        {selectedRadical.distinguish.map((item) => (
+         <li key={item}>{item}</li>
+        ))}
+       </ul>
+      </RadicalSection>
+     )}
     </div>
    </Card>
   </div>
+ );
+}
+
+function RadicalSection({
+ title,
+ children,
+}: {
+ title: string;
+ children: ReactNode;
+}) {
+ return (
+  <section className="grid gap-2 rounded-2xl bg-bg-subtle p-4 text-base leading-relaxed text-text-secondary">
+   <h4 className="text-base font-black text-text-primary">{title}</h4>
+   {children}
+  </section>
  );
 }

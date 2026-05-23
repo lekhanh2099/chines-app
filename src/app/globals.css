@@ -308,6 +308,14 @@ body {
   padding-inline: var(--space-3);
 }
 
+.hanzihome-module-tabs > :first-child {
+  position: sticky;
+  inset-block-start: 0;
+  z-index: 20;
+  background: rgb(255 255 255 / 0.95);
+  backdrop-filter: blur(0.5rem);
+}
+
 .hanzihome-static-topbar {
   position: sticky;
   inset-block-start: 0;

@@ -25,19 +25,37 @@ export function VocabWorkspace({
  const [selectedWordId, setSelectedWordId] = useState<string | null>(
   lesson.vocab[0]?.id || null,
  );
+ const [searchValue, setSearchValue] = useState("");
+ const [statusFilter, setStatusFilter] = useState<"all" | LearningStatus>("all");
+ const bookmarks = state.bookmarks.vocab || [];
+ const progress = useMemo(() => state.progress.vocab || {}, [state.progress.vocab]);
+ const visibleWords = useMemo(() => {
+  const keyword = searchValue.trim().toLowerCase();
+  return lesson.vocab.filter((word) => {
+   const status = progress[word.id]?.status || "new";
+   const matchesStatus = statusFilter === "all" || status === statusFilter;
+   const haystack = [word.word, word.pinyin, word.hanViet, word.meaning, word.category]
+    .join(" ")
+    .toLowerCase();
+   return matchesStatus && (!keyword || haystack.includes(keyword));
+  });
+ }, [lesson.vocab, progress, searchValue, statusFilter]);
  const selectedWord = useMemo(
   () => lesson.vocab.find((word) => word.id === selectedWordId) || lesson.vocab[0] || null,
   [lesson.vocab, selectedWordId],
  );
- const bookmarks = state.bookmarks.vocab || [];
- const progress = state.progress.vocab || {};
 
  return (
-  <div className="grid gap-5 lg:grid-cols-[minmax(0,22rem)_minmax(0,1fr)]">
+  <div className="grid gap-5 lg:grid-cols-[minmax(20rem,23.75rem)_minmax(0,1fr)]">
    <VocabList
-    words={lesson.vocab}
+    words={visibleWords}
     selectedWordId={selectedWord?.id || null}
     progress={progress}
+    bookmarkedIds={bookmarks}
+    searchValue={searchValue}
+    statusFilter={statusFilter}
+    onSearchChange={setSearchValue}
+    onStatusFilterChange={setStatusFilter}
     onSelectWord={setSelectedWordId}
    />
    <VocabDetailPanel

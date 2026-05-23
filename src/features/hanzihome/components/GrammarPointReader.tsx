@@ -4,12 +4,17 @@ import { Bookmark, CheckCircle2, Circle, TriangleAlert } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import type { GrammarViewModel, LearningStatus } from "@/features/hanzihome/types";
+import type {
+ GrammarViewModel,
+ LearningStatus,
+ VocabViewModel,
+} from "@/features/hanzihome/types";
 
 type GrammarPointReaderProps = {
  point: GrammarViewModel | null;
  status: LearningStatus;
  bookmarked: boolean;
+ relatedVocab: VocabViewModel[];
  onBookmark: () => void;
  onMarkStatus: (status: LearningStatus) => void;
 };
@@ -18,6 +23,7 @@ export function GrammarPointReader({
  point,
  status,
  bookmarked,
+ relatedVocab,
  onBookmark,
  onMarkStatus,
 }: GrammarPointReaderProps) {
@@ -67,7 +73,7 @@ export function GrammarPointReader({
      <section className="grid gap-2">
       <h3 className="text-base font-black text-text-primary">Công thức</h3>
       {point.structuresView.map((structure) => (
-       <p key={structure} className="rounded-2xl bg-bg-subtle p-3 text-sm font-black text-text-primary">
+       <p key={structure} className="rounded-2xl border border-info/30 bg-info-subtle p-4 text-base font-black text-info-text">
         {structure}
        </p>
       ))}
@@ -78,10 +84,17 @@ export function GrammarPointReader({
      <section className="grid gap-2">
       <h3 className="text-base font-black text-text-primary">Ví dụ nhanh</h3>
       {point.examplesParsed.map((example) => (
-       <p key={`${example.zh}-${example.vi}`} className="text-sm leading-relaxed text-text-secondary">
-        <span className="font-black text-text-primary">{example.zh}</span>
-        {example.vi ? ` — ${example.vi}` : ""}
-       </p>
+       <div
+        key={`${example.zh}-${example.vi}`}
+        className="rounded-2xl bg-bg-subtle p-3"
+       >
+        <p className="font-black leading-relaxed text-text-primary">{example.zh}</p>
+        {example.vi && (
+         <p className="text-sm font-semibold leading-relaxed text-text-secondary">
+          {example.vi}
+         </p>
+        )}
+       </div>
       ))}
      </section>
     )}
@@ -91,7 +104,20 @@ export function GrammarPointReader({
       <h3 className="text-base font-black text-text-primary">Lưu ý / bẫy sai</h3>
       {point.notes.map((note) => (
        <p key={note} className="text-sm leading-relaxed text-text-secondary">{note}</p>
-      ))}
+     ))}
+    </section>
+   )}
+
+    {relatedVocab.length > 0 && (
+     <section className="grid gap-2">
+      <h3 className="text-base font-black text-text-primary">Từ vựng liên quan trong bài</h3>
+      <div className="flex flex-wrap gap-2">
+       {relatedVocab.map((word) => (
+        <Badge key={word.id} variant="accent" size="lg">
+         {word.word} · {word.meaning}
+        </Badge>
+       ))}
+      </div>
      </section>
     )}
    </article>

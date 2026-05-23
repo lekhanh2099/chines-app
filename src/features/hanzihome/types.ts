@@ -38,7 +38,6 @@ export type HanziHomeLesson = StaticLessonData & {
  title: string;
  vocab: VocabViewModel[];
  grammar: GrammarViewModel[];
- radicals: StaticRadicalData[];
 };
 
 export type HanziHomeData = {

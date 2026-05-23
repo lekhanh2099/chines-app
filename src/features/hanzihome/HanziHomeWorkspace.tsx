@@ -5,6 +5,7 @@ import { useRouter, useSearchParams } from "next/navigation";
 import { BookOpen, GraduationCap, Home, Layers3, RotateCcw } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import type { SegmentedControlItem } from "@/components/ui/segmented-control";
 import { Tabs, TabsContent } from "@/components/ui/tabs";
 import { GrammarWorkspace } from "@/features/hanzihome/components/GrammarWorkspace";
 import { LessonOverview } from "@/features/hanzihome/components/LessonOverview";
@@ -25,12 +26,13 @@ const tabs = [
  { key: "overview" as const, label: "Tổng quan", icon: Home },
  { key: "vocab" as const, label: "Từ vựng", icon: BookOpen },
  { key: "grammar" as const, label: "Ngữ pháp", icon: GraduationCap },
- { key: "radicals" as const, label: "Bộ thủ", icon: Layers3 },
  { key: "review" as const, label: "Ôn tập", icon: RotateCcw },
-];
+] satisfies SegmentedControlItem<Exclude<HanziHomeModule, "radicals">>[];
+
+const moduleValues = ["overview", "vocab", "grammar", "review", "radicals"] as const;
 
 function parseModule(value: string | null | undefined): HanziHomeModule | null {
- return tabs.some((item) => item.key === value) ? (value as HanziHomeModule) : null;
+ return moduleValues.some((item) => item === value) ? (value as HanziHomeModule) : null;
 }
 
 export function HanziHomeWorkspace() {
@@ -47,12 +49,13 @@ export function HanziHomeWorkspace() {
   parseModule(searchParams.get("module")) ||
   learning.state.settings.lastModule ||
   "overview";
+ const activeLessonModule = activeModule === "radicals" ? "overview" : activeModule;
  const lesson = useHanziHomeLesson(data, lessonId);
 
  const selectedLessonId = lesson?.id || lessonId;
  const subtitle = useMemo(() => {
   if (!lesson) return "Không có dữ liệu bài học.";
-  return `${lesson.vocab.length} từ · ${lesson.grammar.length} điểm ngữ pháp · ${lesson.radicals.length} bộ thủ`;
+  return `${lesson.vocab.length} từ · ${lesson.grammar.length} điểm ngữ pháp`;
  }, [lesson]);
 
  if (!lesson) {
@@ -102,71 +105,97 @@ export function HanziHomeWorkspace() {
 
  return (
   <main className="hanzihome-static-page">
-   <div className="hanzihome-static-topbar">
-    <div className="hanzihome-topbar-title">
-     <p>HanziHome / Tự học</p>
-     <h1>{lesson.title}</h1>
-     <p>{subtitle}</p>
-    </div>
-    <div className="hanzihome-topbar-controls">
-     <LessonPicker
-      lessons={data.lessons}
-      selectedLessonId={selectedLessonId}
-      onSelectLesson={selectLesson}
-     />
-     {learning.isSaving && (
-      <span className="text-xs font-black uppercase tracking-wide text-text-muted">
-       Đang lưu...
-      </span>
-     )}
-    </div>
-   </div>
+   <div className="mx-auto flex w-full max-w-7xl flex-col gap-4">
+    <Card padding="md" className="rounded-2xl">
+     <div className="grid gap-4 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-center">
+      <div className="min-w-0">
+       <p className="text-xs font-black uppercase tracking-wide text-accent">
+        {activeModule === "radicals" ? "HanziHome / Bộ thủ" : "HanziHome / Tự học"}
+       </p>
+       <h1 className="mt-1 truncate text-2xl font-black tracking-normal text-text-primary sm:text-3xl">
+        {activeModule === "radicals" ? "Thư viện bộ thủ" : lesson.title}
+       </h1>
+       <p className="mt-1 text-sm font-bold text-text-muted">
+        {activeModule === "radicals"
+         ? `${data.radicals.length} bộ thủ từ JSON tĩnh`
+         : subtitle}
+       </p>
+      </div>
+      <div className="grid min-w-0 gap-3 sm:grid-cols-[minmax(16rem,1fr)_auto_auto] sm:items-end">
+       {activeModule !== "radicals" && (
+        <>
+         <LessonPicker
+          lessons={data.lessons}
+          selectedLessonId={selectedLessonId}
+          onSelectLesson={selectLesson}
+         />
+         <Button onClick={() => selectModule("review")}>
+          <RotateCcw className="h-4 w-4" />
+          Ôn nhanh
+         </Button>
+        </>
+       )}
+       {activeModule === "radicals" ? (
+        <Button onClick={() => selectModule("overview")}>
+         <BookOpen className="h-4 w-4" />
+         Học theo bài
+        </Button>
+       ) : (
+        <Button variant="outline" onClick={() => selectModule("radicals")}>
+         <Layers3 className="h-4 w-4" />
+         Bộ thủ
+        </Button>
+       )}
+      </div>
+      {learning.isSaving && (
+       <span className="text-xs font-black uppercase tracking-wide text-text-muted">
+        Đang lưu...
+       </span>
+      )}
+     </div>
+    </Card>
 
-   <Tabs
-    value={activeModule}
-    items={tabs}
-    onValueChange={selectModule}
-    className="grid gap-5"
-   >
-    <TabsContent active={activeModule === "overview"}>
-     <LessonOverview lesson={lesson} onOpenModule={selectModule} />
-    </TabsContent>
-    <TabsContent active={activeModule === "vocab"}>
-     <VocabWorkspace
-      lesson={lesson}
-      state={learning.state}
-      onBookmark={(id) => learning.toggleBookmark("vocab", id)}
-      onMarkStatus={markVocab}
-     />
-    </TabsContent>
-    <TabsContent active={activeModule === "grammar"}>
-     <GrammarWorkspace
-      lesson={lesson}
-      state={learning.state}
-      onBookmark={(id) => learning.toggleBookmark("grammar", id)}
-      onMarkStatus={markGrammar}
-     />
-    </TabsContent>
-    <TabsContent active={activeModule === "radicals"}>
-     <RadicalWorkspace lesson={lesson} />
-    </TabsContent>
-    <TabsContent active={activeModule === "review"}>
-     <ReviewWorkspace lesson={lesson} onAnswer={answerReview} />
-    </TabsContent>
-   </Tabs>
-
-   <div className="flex flex-wrap gap-2">
-    {tabs.map((item) => (
-     <Button
-      key={item.key}
-      variant={activeModule === item.key ? "default" : "outline"}
-      size="sm"
-      onClick={() => selectModule(item.key)}
+    {activeModule === "radicals" ? (
+     <RadicalWorkspace radicals={data.radicals} />
+    ) : (
+     <Tabs
+      value={activeLessonModule}
+      items={tabs}
+      onValueChange={selectModule}
+      className="hanzihome-module-tabs grid gap-4"
      >
-      <item.icon className="h-4 w-4" />
-      {item.label}
-     </Button>
-    ))}
+      <TabsContent active={activeModule === "overview"}>
+       <LessonOverview
+        lesson={lesson}
+        learningState={learning.state}
+        onOpenModule={selectModule}
+       />
+      </TabsContent>
+      <TabsContent active={activeModule === "vocab"}>
+       <VocabWorkspace
+        lesson={lesson}
+        state={learning.state}
+        onBookmark={(id) => learning.toggleBookmark("vocab", id)}
+        onMarkStatus={markVocab}
+       />
+      </TabsContent>
+      <TabsContent active={activeModule === "grammar"}>
+       <GrammarWorkspace
+        lesson={lesson}
+        state={learning.state}
+        onBookmark={(id) => learning.toggleBookmark("grammar", id)}
+        onMarkStatus={markGrammar}
+       />
+      </TabsContent>
+      <TabsContent active={activeModule === "review"}>
+       <ReviewWorkspace
+        lesson={lesson}
+        learningState={learning.state}
+        onAnswer={answerReview}
+       />
+      </TabsContent>
+     </Tabs>
+    )}
    </div>
   </main>
  );

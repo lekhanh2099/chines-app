@@ -35,9 +35,19 @@ export function GrammarWorkspace({
  );
  const progress = state.progress.grammar || {};
  const bookmarks = state.bookmarks.grammar || [];
+ const relatedVocab = useMemo(() => {
+  if (!selectedPoint) return [];
+  const text = [
+   selectedPoint.cleanTitle,
+   selectedPoint.core,
+   selectedPoint.structuresView.join(" "),
+   selectedPoint.examplesParsed.map((example) => example.zh).join(" "),
+  ].join(" ");
+  return lesson.vocab.filter((word) => text.includes(word.word)).slice(0, 8);
+ }, [lesson.vocab, selectedPoint]);
 
  return (
-  <div className="grid gap-5 lg:grid-cols-[minmax(0,22rem)_minmax(0,1fr)]">
+  <div className="grid gap-5 lg:grid-cols-[minmax(20rem,23.75rem)_minmax(0,1fr)]">
    <div className="grid content-start gap-5">
     <GrammarPointList
      points={lesson.grammar}
@@ -51,6 +61,7 @@ export function GrammarWorkspace({
     point={selectedPoint}
     status={selectedPoint ? progress[selectedPoint.id]?.status || "new" : "new"}
     bookmarked={selectedPoint ? bookmarks.includes(selectedPoint.id) : false}
+    relatedVocab={relatedVocab}
     onBookmark={() => selectedPoint && onBookmark(selectedPoint.id)}
     onMarkStatus={(status) => selectedPoint && onMarkStatus(selectedPoint.id, status)}
    />
