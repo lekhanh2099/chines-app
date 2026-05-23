@@ -19,6 +19,7 @@ TypeScript
 Tailwind CSS 4
 Supabase SSR / Supabase JS
 TanStack Query
+TanStack Form
 Zod
 Zustand
 Radix / shadcn-style primitives
@@ -146,7 +147,9 @@ No build errors.
 No unused imports.
 No unused variables.
 No console logs in committed code.
-No avoidable `any`.
+No avoidable any.
+Code must be type-safe by design, not merely typecheck-clean.
+No passing checks by type-casting around the problem: do not use as any, unsafe as unknown as, non-null !, broad Record<string, unknown>, or fake wrapper types to silence TypeScript instead of modeling the data correctly.
 No giant components.
 No duplicated state.
 No storing derived data in state.
@@ -159,9 +162,6 @@ No service role key exposed to browser.
 No trusting user_id from client input.
 No DB schema changes without migration.
 No fake XP, fake streak, fake progress, or fake reward data.
-No avoidable `any`.
-Code must be type-safe by design, not merely typecheck-clean.
-No passing checks by type-casting around the problem: do not use `as any`, unsafe `as unknown as`, non-null `!`, broad `Record<string, unknown>`, or fake wrapper types to silence TypeScript instead of modeling the data correctly.
 ```
 
 Required checks before finishing:
@@ -1262,7 +1262,9 @@ Prevent double submit.
 Preserve input on validation error.
 ```
 
-## TanStack Form Rules for CRUD
+---
+
+## 17. TanStack Form Rules for CRUD
 
 The app will have more CRUD forms later. All non-trivial CRUD forms must use TanStack Form.
 
@@ -1278,13 +1280,13 @@ No passing checks by type-casting around the problem: do not use `as any`, unsaf
 
 ---
 
-### Required form architecture
+### 17.1. Required form architecture
 
 Create one app-level form setup.
 
 Expected structure:
 
-```txt id="kudxqp"
+```txt
 src/components/form/
   form-context.ts
   use-app-form.ts
@@ -1298,9 +1300,360 @@ src/components/form/
     FormActions.tsx
 ```
 
+Rules:
+
+```txt
+useAppForm must be created once and reused.
+Form field components must be registered through the app form hook.
+Do not create one-off form inputs in CRUD feature files.
+Do not duplicate field error rendering.
+Do not duplicate submit button loading logic.
+Form components must use shared UI primitives from src/components/ui.
+```
+
 ---
 
-## 17. Error, Empty, Loading States
+### 17.2. Required form setup pattern
+
+Use `createFormHook` / `createFormHookContexts` to create one reusable `useAppForm`.
+
+Baseline pattern:
+
+```tsx
+import { createFormHook, createFormHookContexts } from "@tanstack/react-form";
+
+import { FormTextField } from "@/components/form/fields/FormTextField";
+import { FormTextarea } from "@/components/form/fields/FormTextarea";
+import { FormSelect } from "@/components/form/fields/FormSelect";
+import { FormCheckbox } from "@/components/form/fields/FormCheckbox";
+import { FormSwitch } from "@/components/form/fields/FormSwitch";
+import { FormActions } from "@/components/form/fields/FormActions";
+
+const { fieldContext, formContext } = createFormHookContexts();
+
+export const { useAppForm } = createFormHook({
+ fieldContext,
+ formContext,
+ fieldComponents: {
+  TextField: FormTextField,
+  Textarea: FormTextarea,
+  Select: FormSelect,
+  Checkbox: FormCheckbox,
+  Switch: FormSwitch,
+ },
+ formComponents: {
+  Actions: FormActions,
+ },
+});
+```
+
+Rules:
+
+```txt
+Do not call raw useForm in every CRUD form unless documented.
+Prefer useAppForm.
+Prefer form.AppField.
+Field names must be type-checked.
+Field components must read value/error/meta from TanStack Form field state.
+```
+
+---
+
+### 17.3. Schema-first CRUD forms
+
+Every CRUD form must have a Zod schema.
+
+Expected structure:
+
+```txt
+src/features/<feature>/
+  schemas/
+    <feature>.schema.ts
+
+  components/
+    <Feature>Form.tsx
+
+  actions/ or api/
+    save logic
+```
+
+Example:
+
+```ts
+import { z } from "zod";
+
+export const noteFormSchema = z.object({
+ title: z.string().min(1, "Vui lòng nhập tiêu đề"),
+ content: z.string().min(1, "Vui lòng nhập nội dung"),
+ tags: z.array(z.string()).default([]),
+});
+
+export type NoteFormValues = z.infer<typeof noteFormSchema>;
+```
+
+Rules:
+
+```txt
+Schema is the source of truth for form values.
+Infer form value types from schema.
+Do not manually duplicate form value interfaces if z.infer can be used.
+Validate at form boundary and server/API boundary.
+Server must not trust client-side validation.
+```
+
+---
+
+### 17.4. Default values rule
+
+Default values must be explicit and type-safe.
+
+Good:
+
+```ts
+const defaultValues: NoteFormValues = {
+ title: "",
+ content: "",
+ tags: [],
+};
+```
+
+Bad:
+
+```ts
+const defaultValues = {} as NoteFormValues;
+```
+
+Bad:
+
+```ts
+const defaultValues = existingData as any;
+```
+
+For edit forms, create a mapper:
+
+```ts
+function toNoteFormValues(note: NoteViewModel): NoteFormValues {
+ return {
+  title: note.title ?? "",
+  content: note.content ?? "",
+  tags: note.tags ?? [],
+ };
+}
+```
+
+Rules:
+
+```txt
+Do not feed raw DB rows directly into form default values.
+Map DB/domain/view data into form values.
+Avoid nullable values inside form state unless the field truly supports null.
+```
+
+---
+
+### 17.5. Submit pattern
+
+CRUD submit must use this flow:
+
+```txt
+form submit
+→ schema-validated value
+→ mutation/server action/API call
+→ invalidate or update query cache
+→ toast success/failure
+→ close dialog or navigate only after success
+```
+
+Example:
+
+```tsx
+const form = useAppForm({
+ defaultValues,
+ validators: {
+  onSubmit: noteFormSchema,
+ },
+ onSubmit: async ({ value }) => {
+  await saveNoteMutation.mutateAsync(value);
+ },
+});
+```
+
+Form tag:
+
+```tsx
+<form
+ onSubmit={(event) => {
+  event.preventDefault();
+  event.stopPropagation();
+  void form.handleSubmit();
+ }}
+>
+ ...
+</form>
+```
+
+Rules:
+
+```txt
+Do not submit with raw button onClick when a real form submit is appropriate.
+Do not duplicate submit state in local useState.
+Use TanStack Form state and mutation pending state.
+Disable submit while submitting.
+Prevent double submit.
+Server/API validates again.
+Mutation invalidates or updates query cache.
+```
+
+---
+
+### 17.6. Field pattern
+
+Use `form.AppField`.
+
+Good:
+
+```tsx
+<form.AppField
+ name="title"
+ children={(field) => (
+  <field.TextField label="Tiêu đề" placeholder="Nhập tiêu đề" />
+ )}
+/>
+```
+
+Bad:
+
+```tsx
+<input value={title} onChange={(event) => setTitle(event.target.value)} />
+```
+
+Bad:
+
+```tsx
+<form.AppField
+ name={"title" as any}
+ children={(field) => <field.TextField label="Tiêu đề" />}
+/>
+```
+
+Rules:
+
+```txt
+Field names must be literal and type-checked.
+Do not cast field names.
+Field components should own label, input, error, help text, disabled state, and accessibility wiring.
+Use field.handleChange, field.handleBlur, and field.state.value.
+Do not manually keep mirror state.
+```
+
+---
+
+### 17.7. Validation timing
+
+Default validation:
+
+```txt
+onSubmit for expensive or final validation
+onBlur for normal field validation
+onChange only for cheap fields where immediate feedback is useful
+onChangeAsync only with debounce
+```
+
+Rules:
+
+```txt
+Do not run expensive validation on every keystroke.
+Do not call server validation on every keystroke without debounce.
+Use async validators only when needed.
+Prefer server-side uniqueness checks during submit unless real-time feedback is required.
+```
+
+---
+
+### 17.8. Mutation ownership
+
+Use TanStack Query mutations or route handlers/server actions for CRUD saves.
+
+Rules:
+
+```txt
+Form owns draft values.
+Mutation owns server pending/error state.
+Query cache owns saved server state.
+Toast owns success/failure feedback.
+Component local state only owns temporary UI state like dialog open/closed.
+```
+
+Do not put form draft values into Zustand.
+
+Do not put form draft values into URL.
+
+Do not mirror query data into form state except as initial default values.
+
+---
+
+### 17.9. Form component requirements
+
+Each app form field component must support:
+
+```txt
+label
+placeholder
+description/help text
+disabled
+required indicator
+error display
+aria-describedby
+aria-invalid
+```
+
+Each field must render errors from TanStack Form meta.
+
+Do not render errors manually in every CRUD form.
+
+---
+
+### 17.10. Type-safety checklist for every CRUD form
+
+Before finishing any CRUD form, verify:
+
+```txt
+Schema exists.
+Form values are inferred from schema.
+Default values are explicit.
+Edit values are mapped through a mapper.
+No as any.
+No unsafe as unknown as.
+No non-null ! to silence errors.
+No fake broad type wrappers.
+Field names are typed.
+No duplicate local useState for form values.
+Submit uses form.handleSubmit().
+Server/API validates again.
+Mutation invalidates or updates cache.
+```
+
+If the code passes typecheck but violates this checklist, the task is not done.
+
+---
+
+### 17.11. Allowed exceptions
+
+One-off useForm is allowed only for tiny forms when all are true:
+
+```txt
+The form has 1–2 fields.
+It will not grow.
+It does not need reusable field components.
+It does not touch persisted CRUD data.
+The final report explains why useAppForm was not used.
+```
+
+CRUD forms should not use this exception by default.
+
+---
+
+## 18. Error, Empty, Loading States
 
 Every data-rendering surface must handle:
 
@@ -1334,7 +1687,7 @@ Do not leak raw database errors to UI.
 
 ---
 
-## 18. Import and Naming Rules
+## 19. Import and Naming Rules
 
 Imports should be grouped:
 
@@ -1396,7 +1749,7 @@ handleStuff
 
 ---
 
-## 19. No Junk Rules
+## 20. No Junk Rules
 
 Do not commit:
 
@@ -1420,7 +1773,7 @@ Allowed TODO format:
 
 ---
 
-## 20. Security Rules
+## 21. Security Rules
 
 Assume every client request is untrusted.
 
@@ -1442,7 +1795,7 @@ Normal user learning state should use RLS-safe server/client logic, not service 
 
 ---
 
-## 21. Performance Rules
+## 22. Performance Rules
 
 Avoid unnecessary rerenders.
 
@@ -1492,7 +1845,7 @@ import { BookOpen, GraduationCap } from "lucide-react";
 
 ---
 
-## 22. Dependency Rules
+## 23. Dependency Rules
 
 Before adding a dependency:
 
@@ -1514,6 +1867,7 @@ Current library roles:
 Next: app framework and routing
 React: UI rendering and local component state
 TanStack Query: async/server/cache state
+TanStack Form: complex CRUD form state
 Zod: validation
 Zustand: persisted/cross-route state if really needed
 Radix / shadcn-style primitives: accessible UI primitives
@@ -1537,7 +1891,7 @@ Do not use Lexical for plain text inputs.
 
 ---
 
-## 23. Required Agent Workflow
+## 24. Required Agent Workflow
 
 Before coding, report briefly:
 
@@ -1567,7 +1921,7 @@ Do not start by dumping more JSX into a huge existing component.
 
 ---
 
-## 24. Final Report Format
+## 25. Final Report Format
 
 Every task final report should include:
 
@@ -1582,6 +1936,7 @@ State ownership:
 - URL:
 - Local:
 - TanStack Query:
+- TanStack Form:
 - Derived selectors:
 
 Server/client boundary:
@@ -1612,7 +1967,7 @@ If an area was not touched, say so.
 
 ---
 
-## 25. Definition of Done
+## 26. Definition of Done
 
 A task is done only when:
 
@@ -1629,6 +1984,7 @@ Repeated visual states use variants.
 State ownership is correct.
 Derived data is not stored as state.
 Server/client boundary is correct.
+Form state uses TanStack Form for non-trivial CRUD.
 Auth/ownership checks exist for user mutations.
 No secrets are exposed.
 Static JSON content still renders.
@@ -1637,7 +1993,7 @@ Final report is clear.
 
 ---
 
-## 26. If Unsure
+## 27. If Unsure
 
 If a requested change would make the code dirtier, stop and propose a cleaner alternative.
 
@@ -1651,5 +2007,10 @@ adding a pure utility
 normalizing data
 reducing state
 moving shareable state to URL
+moving form state to TanStack Form
 moving persistence to useLearningState
 ```
+
+over patching a page with more one-off JSX.
+
+Never “just make it work” by adding another wrapper with hard-coded dimensions.
