@@ -212,6 +212,8 @@
   --color-bg-inverse: var(--bg-inverse);
 
   --font-sans: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-hanzi: "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Source Han Sans SC", "Microsoft YaHei", "Heiti SC", "SimSun", ui-sans-serif, system-ui, sans-serif;
+  --font-pinyin: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Consolas, "Liberation Mono", monospace;
 }
 
@@ -2003,4 +2005,44 @@ hr.editor-hr.selected {
 [data-theme="dark"] button:disabled,
 [data-theme="dark"] [aria-disabled="true"] {
   opacity: 0.45 !important;
+}
+
+
+/* =============================================
+   CHINESE TEXT FONT HELPERS
+   ============================================= */
+
+.font-hanzi,
+.zh-text,
+.hanzi-text,
+[lang="zh"],
+[lang="zh-CN"] {
+  font-family: var(--font-hanzi);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+.font-hanzi-display,
+.zh-display {
+  font-family: var(--font-hanzi);
+  letter-spacing: 0.015em;
+  line-height: 1.18;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+.font-pinyin,
+.pinyin-text {
+  font-family: var(--font-pinyin);
+  letter-spacing: 0.01em;
+}
+
+.hanzihome-static-page .editor-input {
+  font-family: var(--font-hanzi);
+}
+
+.hanzihome-static-page .editor-heading-h1,
+.hanzihome-static-page .editor-heading-h2,
+.hanzihome-static-page .editor-heading-h3 {
+  font-family: var(--font-hanzi);
 }
