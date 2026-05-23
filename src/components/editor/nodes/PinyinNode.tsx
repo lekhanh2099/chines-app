@@ -13,7 +13,6 @@ import type {
  DOMConversionMap,
  DOMConversionOutput,
  DOMExportOutput,
- EditorConfig,
  LexicalNode,
  NodeKey,
  SerializedLexicalNode,
@@ -165,7 +164,7 @@ export class PinyinNode extends DecoratorNode<JSX.Element> {
  }
 
  /* ── DOM creation for Lexical internal rendering ── */
- createDOM(_config: EditorConfig): HTMLElement {
+ createDOM(): HTMLElement {
   const span = document.createElement("span");
   span.style.display = "inline";
   return span;

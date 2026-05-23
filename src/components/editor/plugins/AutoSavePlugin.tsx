@@ -8,7 +8,6 @@
 
 import { useEffect } from "react";
 import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext";
-import type { EditorState } from "lexical";
 
 interface AutoSavePluginProps {
  onChange?: (json: Record<string, unknown>) => void;

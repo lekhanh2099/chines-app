@@ -10,8 +10,6 @@ import type {
  DOMConversionMap,
  DOMConversionOutput,
  DOMExportOutput,
- EditorConfig,
- LexicalEditor,
  LexicalNode,
  NodeKey,
  SerializedLexicalNode,
@@ -62,7 +60,7 @@ function InlineNoteComponent({
    {text}
    {showTooltip && (
     <span
-     className="absolute bottom-full left-1/2 z-[10000] mb-2 -translate-x-1/2 whitespace-pre-wrap rounded-lg border border-sky-200 bg-white px-3 py-2 text-xs leading-relaxed text-slate-700 shadow-lg"
+     className="absolute bottom-full left-1/2 z-10000 mb-2 -translate-x-1/2 whitespace-pre-wrap rounded-lg border border-sky-200 bg-white px-3 py-2 text-xs leading-relaxed text-slate-700 shadow-lg"
      style={{ minWidth: 120, maxWidth: 280 }}
      onMouseEnter={handleMouseEnter}
      onMouseLeave={handleMouseLeave}
@@ -115,7 +113,7 @@ export class InlineNoteNode extends DecoratorNode<JSX.Element> {
   return this.__noteText;
  }
 
- createDOM(_config: EditorConfig): HTMLElement {
+ createDOM(): HTMLElement {
   const span = document.createElement("span");
   span.style.display = "inline";
   return span;
@@ -170,7 +168,7 @@ export class InlineNoteNode extends DecoratorNode<JSX.Element> {
   return true;
  }
 
- decorate(_editor: LexicalEditor): JSX.Element {
+ decorate(): JSX.Element {
   return (
    <InlineNoteComponent
     text={this.__text}

@@ -42,7 +42,6 @@ export function useDictionaryPageViewModel(): DictionaryPageViewModel {
   isAiLoading,
   saveToSrs,
   isSaving,
-  hasDeepAiData,
   personalNote: savedPersonalNote,
   personalNoteMode,
  } = useVocabDetail(rawText, { enabled: !isSentenceView });
@@ -136,14 +135,14 @@ export function useDictionaryPageViewModel(): DictionaryPageViewModel {
   (example) => !usedExampleKeys.has(getExampleKey(example)),
  );
  const hasLearningInsights = Boolean(
- ai?.mnemonic_story ||
- ai?.usage_logic?.length ||
- ai?.decomposition ||
- ai?.comparisons?.length ||
- ai?.collocations?.length ||
- ai?.cultural_note ||
- ai?.usage_note ||
- ai?.notes ||
+  ai?.mnemonic_story ||
+  ai?.usage_logic?.length ||
+  ai?.decomposition ||
+  ai?.comparisons?.length ||
+  ai?.collocations?.length ||
+  ai?.cultural_note ||
+  ai?.usage_note ||
+  ai?.notes ||
   ai?.vn_trap ||
   ai?.common_mistakes ||
   ai?.confusion,
@@ -153,19 +152,19 @@ export function useDictionaryPageViewModel(): DictionaryPageViewModel {
   meaningSummary ||
   examples.length ||
   radicals.length ||
- ai?.components?.length ||
- ai?.decomposition ||
- etymologyText ||
- ai?.mnemonic_story ||
- ai?.usage_logic?.length ||
- ai?.comparisons?.length ||
- ai?.collocations?.length ||
- relatedCompounds.length ||
- synonyms.length ||
- antonyms.length ||
- ai?.cultural_note ||
- ai?.usage_note ||
- ai?.notes ||
+  ai?.components?.length ||
+  ai?.decomposition ||
+  etymologyText ||
+  ai?.mnemonic_story ||
+  ai?.usage_logic?.length ||
+  ai?.comparisons?.length ||
+  ai?.collocations?.length ||
+  relatedCompounds.length ||
+  synonyms.length ||
+  antonyms.length ||
+  ai?.cultural_note ||
+  ai?.usage_note ||
+  ai?.notes ||
   ai?.hsk_level ||
   ai?.tocfl_level ||
   ai?.vn_trap ||

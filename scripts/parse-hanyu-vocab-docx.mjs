@@ -8,7 +8,9 @@ const sourceFileName = path.basename(inputDocx || "");
 const courseKey = `docx:${sourceFileName.replace(/\.[^.]+$/, "")}`;
 
 if (!inputDocx) {
- console.error("Usage: node scripts/parse-hanyu-vocab-docx.mjs <file.docx> [outputDir]");
+ console.error(
+  "Usage: node scripts/parse-hanyu-vocab-docx.mjs <file.docx> [outputDir]",
+ );
  process.exit(1);
 }
 
@@ -83,7 +85,10 @@ function parseOverview(paragraphs, startIndex, lessonKey) {
    maybeWords.includes(",") &&
    !["Nhóm", "Từ vựng"].includes(maybeCategory)
   ) {
-   for (const word of maybeWords.split(",").map((item) => item.trim()).filter(Boolean)) {
+   for (const word of maybeWords
+    .split(",")
+    .map((item) => item.trim())
+    .filter(Boolean)) {
     categories.set(`${lessonKey}:${word}`, maybeCategory);
    }
    index += 2;
@@ -170,7 +175,11 @@ function parseEntries(paragraphs) {
     count: 0,
    };
    lessons.push(currentLesson);
-   for (const [key, value] of parseOverview(paragraphs, index, currentLesson.lesson_key)) {
+   for (const [key, value] of parseOverview(
+    paragraphs,
+    index,
+    currentLesson.lesson_key,
+   )) {
     categoryMap.set(key, value);
    }
    continue;
@@ -184,7 +193,10 @@ function parseEntries(paragraphs) {
   while (
    cursor < paragraphs.length &&
    !isEntryHeader(paragraphs[cursor]) &&
-   !(paragraphs[cursor].includes("Tổng quan") && /Bài\s+\d+/i.test(paragraphs[cursor]))
+   !(
+    paragraphs[cursor].includes("Tổng quan") &&
+    /Bài\s+\d+/i.test(paragraphs[cursor])
+   )
   ) {
    body.push(paragraphs[cursor]);
    cursor += 1;
@@ -192,7 +204,10 @@ function parseEntries(paragraphs) {
 
   const { preface, sections } = splitSections(body);
   const pos = preface[0] || "";
-  const definition = parseDefinition(cleanSectionLines(sections.get(1) || []), header.meaning_summary);
+  const definition = parseDefinition(
+   cleanSectionLines(sections.get(1) || []),
+   header.meaning_summary,
+  );
   const decomposition = cleanSectionLines(sections.get(2) || []).join("\n");
   const comparisons = cleanSectionLines(sections.get(3) || []);
   const collocations = cleanSectionLines(sections.get(4) || []);
@@ -201,7 +216,9 @@ function parseEntries(paragraphs) {
   const usageNote = cleanSectionLines(sections.get(7) || []).join("\n");
   const category =
    categoryMap.get(`${currentLesson.lesson_key}:${header.hanzi}`) ||
-   categoryMap.get(`${currentLesson.lesson_key}:${header.hanzi.replace(/[()（）]/g, "")}`) ||
+   categoryMap.get(
+    `${currentLesson.lesson_key}:${header.hanzi.replace(/[()（）]/g, "")}`,
+   ) ||
    "";
 
   currentLesson.count += 1;
@@ -259,7 +276,10 @@ const parsed = parseEntries(paragraphs);
 
 fs.mkdirSync(outputDir, { recursive: true });
 const stagingPath = path.join(outputDir, "hanyu-docx-vocab-staging.json");
-const payloadPath = path.join(outputDir, "hanyu-docx-vocab-import-payload.json");
+const payloadPath = path.join(
+ outputDir,
+ "hanyu-docx-vocab-import-payload.json",
+);
 
 fs.writeFileSync(
  stagingPath,
@@ -279,7 +299,7 @@ fs.writeFileSync(
  payloadPath,
  JSON.stringify(
   {
-   items: parsed.items.map(({ source, ...item }) => item),
+   items: parsed.items.map(({ ...item }) => item),
   },
   null,
   2,
