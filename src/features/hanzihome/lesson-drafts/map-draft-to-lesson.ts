@@ -132,5 +132,6 @@ export function mapLessonDraftToHanziHomeLesson(
     isDraft: true,
     draftId: draft.id,
     status: draft.status,
+    notes: draft.content.lesson.notes,
   };
 }

@@ -54,6 +54,15 @@ export type GrammarViewModel = {
   notes: string[];
 };
 
+export type LessonNotesViewModel = {
+  overviewMarkdown?: string;
+  grammarSummary?: string;
+  vocabularyText?: string;
+  properNounsText?: string;
+  applicationMarkdown?: string;
+  personalNote?: string;
+};
+
 export type HanziHomeLesson = {
   id: string;
   lessonNumber: number;
@@ -72,6 +81,7 @@ export type HanziHomeLesson = {
   isDraft?: boolean;
   draftId?: string;
   status?: "draft" | "published" | "archived";
+  notes?: LessonNotesViewModel;
 };
 
 export type HanziHomeData = {

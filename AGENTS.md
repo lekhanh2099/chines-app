@@ -6,6 +6,11 @@ The goal is not to “make the UI look okay”. The goal is to keep HanziHome cl
 
 If a task conflicts with this file, stop and explain the conflict before coding.
 
+Static JSON = seed/built-in content
+Supabase = user-created lessons/drafts/published custom lessons
+Course system = future direction
+Lesson notes / annotations = planned feature
+
 ---
 
 ## 0. Project Truth

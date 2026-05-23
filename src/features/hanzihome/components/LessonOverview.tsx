@@ -9,6 +9,7 @@ import {
 } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
+import { LessonNoteAccessCard } from "@/features/hanzihome/components/LessonNoteAccessCard";
 import type {
  HanziHomeLesson,
  HanziHomeModule,
@@ -135,6 +136,8 @@ export function LessonOverview({
      </div>
     </div>
    </Card>
+
+   <LessonNoteAccessCard lesson={lesson} />
 
    <div className="grid gap-3 md:grid-cols-3">
     {actions.map((action) => {

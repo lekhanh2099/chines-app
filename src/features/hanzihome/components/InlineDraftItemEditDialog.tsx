@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 import { Pencil, Save, Trash2 } from "lucide-react";
 import { toast } from "sonner";
 
@@ -78,23 +78,22 @@ export function InlineDraftItemEditDialog({
   const [vocabItem, setVocabItem] = useState<VocabDraftItem | null>(null);
   const [grammarItem, setGrammarItem] = useState<GrammarDraftItem | null>(null);
 
-  useEffect(() => {
-    if (open && sourceVocabItem && isVocabDraftItem(sourceVocabItem)) {
-      setVocabItem(sourceVocabItem);
-    }
-  }, [open, sourceVocabItem]);
+  const activeVocabItem =
+    vocabItem ?? (sourceVocabItem && isVocabDraftItem(sourceVocabItem) ? sourceVocabItem : null);
 
-  useEffect(() => {
-    if (open && sourceGrammarItem && isGrammarDraftItem(sourceGrammarItem)) {
-      setGrammarItem(sourceGrammarItem);
-    }
-  }, [open, sourceGrammarItem]);
+  const activeGrammarItem =
+    grammarItem ??
+    (sourceGrammarItem && isGrammarDraftItem(sourceGrammarItem)
+      ? sourceGrammarItem
+      : null);
 
   const handleOpenChange = (nextOpen: boolean) => {
     setOpen(nextOpen);
 
     if (!nextOpen) {
       setConfirmDelete(false);
+      setVocabItem(null);
+      setGrammarItem(null);
     }
   };
 
@@ -102,12 +101,12 @@ export function InlineDraftItemEditDialog({
     if (!draft) return;
 
     if (kind === "vocab") {
-      if (!vocabItem) {
+      if (!activeVocabItem) {
         toast.error("Không tìm thấy từ vựng để sửa.");
         return;
       }
 
-      const parsedItem = vocabDraftItemSchema.parse(vocabItem);
+      const parsedItem = vocabDraftItemSchema.parse(activeVocabItem);
       const nextVocab = draft.content.vocab.map((item) =>
         isVocabDraftItem(item) && item.id === parsedItem.id ? parsedItem : item,
       );
@@ -133,12 +132,12 @@ export function InlineDraftItemEditDialog({
       return;
     }
 
-    if (!grammarItem) {
+    if (!activeGrammarItem) {
       toast.error("Không tìm thấy điểm ngữ pháp để sửa.");
       return;
     }
 
-    const parsedItem = grammarDraftItemSchema.parse(grammarItem);
+    const parsedItem = grammarDraftItemSchema.parse(activeGrammarItem);
     const nextGrammarPoints = draft.content.grammarPoints.map((item) =>
       isGrammarDraftItem(item) && item.id === parsedItem.id ? parsedItem : item,
     );
@@ -227,8 +226,8 @@ export function InlineDraftItemEditDialog({
 
   const canOpen = Boolean(draftId && itemId);
   const hasEditableItem =
-    (kind === "vocab" && Boolean(vocabItem)) ||
-    (kind === "grammar" && Boolean(grammarItem));
+    (kind === "vocab" && Boolean(activeVocabItem)) ||
+    (kind === "grammar" && Boolean(activeGrammarItem));
 
   return (
     <Dialog open={open} onOpenChange={handleOpenChange}>
@@ -259,13 +258,16 @@ export function InlineDraftItemEditDialog({
             </p>
           )}
 
-          {!draftQuery.isLoading && kind === "vocab" && vocabItem && (
-            <VocabDraftManualEditor item={vocabItem} onChange={setVocabItem} />
+          {!draftQuery.isLoading && kind === "vocab" && activeVocabItem && (
+            <VocabDraftManualEditor
+              item={activeVocabItem}
+              onChange={setVocabItem}
+            />
           )}
 
-          {!draftQuery.isLoading && kind === "grammar" && grammarItem && (
+          {!draftQuery.isLoading && kind === "grammar" && activeGrammarItem && (
             <GrammarDraftManualEditor
-              item={grammarItem}
+              item={activeGrammarItem}
               onChange={setGrammarItem}
             />
           )}

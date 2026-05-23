@@ -269,3 +269,97 @@ export async function searchNotesByTitle(
  }
  return (data || []) as NoteListItem[];
 }
+
+/* ══════════════════════════════════════════
+   Lesson Note Links
+   ══════════════════════════════════════════ */
+
+export type LessonNoteTargetType = "hanzihome_lesson";
+export type LessonNoteRelationType = "main" | "vocab" | "grammar" | "annotation";
+
+export async function getNoteByLessonNoteLink(
+ supabase: SupabaseClient,
+ userId: string,
+ targetKey: string,
+ targetType: LessonNoteTargetType = "hanzihome_lesson",
+ relationType: LessonNoteRelationType = "main",
+): Promise<DbNote | null> {
+ const { data, error } = await supabase
+  .from("lesson_note_links")
+  .select("note_id")
+  .eq("user_id", userId)
+  .eq("target_type", targetType)
+  .eq("target_key", targetKey)
+  .eq("relation_type", relationType)
+  .maybeSingle();
+
+ if (error) {
+  console.error("[NotesService] fetch lesson note link error:", error);
+  return null;
+ }
+
+ const noteId = (data as { note_id?: string } | null)?.note_id;
+ if (!noteId) return null;
+
+ return getNoteById(supabase, noteId, userId);
+}
+
+export async function linkNoteToLessonTarget(
+ supabase: SupabaseClient,
+ input: {
+  userId: string;
+  noteId: string;
+  targetKey: string;
+  targetType?: LessonNoteTargetType;
+  relationType?: LessonNoteRelationType;
+ },
+): Promise<boolean> {
+ const targetType = input.targetType ?? "hanzihome_lesson";
+ const relationType = input.relationType ?? "main";
+
+ const { data: existingLink, error: selectError } = await supabase
+  .from("lesson_note_links")
+  .select("id")
+  .eq("user_id", input.userId)
+  .eq("target_type", targetType)
+  .eq("target_key", input.targetKey)
+  .eq("relation_type", relationType)
+  .maybeSingle();
+
+ if (selectError) {
+  console.error("[NotesService] select lesson note link error:", selectError);
+  return false;
+ }
+
+ if ((existingLink as { id?: string } | null)?.id) {
+  const { error: updateError } = await supabase
+   .from("lesson_note_links")
+   .update({
+    note_id: input.noteId,
+    updated_at: new Date().toISOString(),
+   })
+   .eq("id", (existingLink as { id: string }).id);
+
+  if (updateError) {
+   console.error("[NotesService] update lesson note link error:", updateError);
+   return false;
+  }
+
+  return true;
+ }
+
+ const { error: insertError } = await supabase.from("lesson_note_links").insert({
+  user_id: input.userId,
+  note_id: input.noteId,
+  target_type: targetType,
+  target_key: input.targetKey,
+  relation_type: relationType,
+ });
+
+ if (insertError) {
+  console.error("[NotesService] insert lesson note link error:", insertError);
+  return false;
+ }
+
+ return true;
+}
