@@ -1,5 +1,6 @@
 "use client";
 
+import { useMemo } from "react";
 import Link from "next/link";
 import {
  BookMarked,
@@ -18,6 +19,10 @@ import {
 } from "@/features/hanzihome/courses/course-catalog";
 import { CreateCourseDialog } from "@/features/hanzihome/courses/CreateCourseDialog";
 import { useCustomHanziHomeCourseCatalogQuery } from "@/features/hanzihome/courses/use-custom-courses";
+import {
+ mapLessonDraftToHanziHomeLesson,
+ useLessonDraftsQuery,
+} from "@/features/hanzihome/lesson-drafts";
 import { useHanziHomeData } from "@/features/hanzihome/hooks/useHanziHomeData";
 import type {
  HanziHomeCourse,
@@ -35,6 +40,15 @@ type CourseStats = {
 export function HanziHomeLibraryHome() {
  const staticData = useHanziHomeData();
  const customCatalogQuery = useCustomHanziHomeCourseCatalogQuery();
+ const draftsQuery = useLessonDraftsQuery();
+
+ const publishedDraftLessons = useMemo(
+  () =>
+   (draftsQuery.data ?? [])
+    .filter((draft) => draft.status === "published")
+    .map(mapLessonDraftToHanziHomeLesson),
+  [draftsQuery.data],
+ );
 
  const mergedCatalog = mergeCourseCatalogs({
   staticCourses: staticData.courses ?? hanzihomeCourses,
@@ -45,7 +59,10 @@ export function HanziHomeLibraryHome() {
 
  const courses = mergedCatalog.courses;
  const books = mergedCatalog.books;
- const lessons = staticData.lessons ?? [];
+ const lessons = useMemo(
+  () => [...(staticData.lessons ?? []), ...publishedDraftLessons],
+  [publishedDraftLessons, staticData.lessons],
+ );
 
  const totalVocab = lessons.reduce(
   (sum, lesson) => sum + lesson.vocab.length,
