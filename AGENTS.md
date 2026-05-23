@@ -8,8 +8,9 @@ If a task conflicts with this file, stop and explain the conflict before coding.
 
 Static JSON = seed/built-in content
 Supabase = user-created lessons/drafts/published custom lessons
-Course system = future direction
-Lesson notes / annotations = planned feature
+Course system = current architecture
+Lesson notes = current feature via main Notes system + lesson_note_links
+Annotations = future feature
 
 ---
 
@@ -38,53 +39,103 @@ pinyin-pro
 The current app direction is:
 
 ```txt
-Static JSON content
+Static JSON seed content
++ course-first HanziHome library
 + lesson-first HanziHome workspace
 + standalone radical library
-+ Supabase lightweight user state
++ Supabase user-created learning content
++ Supabase lightweight learning state
++ Supabase lesson-linked notes
 ```
 
-Static JSON is the source of truth for:
+Static JSON is the source of truth for built-in seed content:
 
 ```txt
-lessons
-vocabulary
-grammar
-radicals
-review source items
+built-in courses
+built-in books
+built-in lessons
+built-in vocabulary
+built-in grammar
+built-in radicals
+built-in review source items
 ```
 
-Supabase is only for lightweight user state:
+Supabase is the source of truth for user-created and user-owned content:
 
 ```txt
+custom lesson drafts
+published custom lessons
+lesson draft vocabulary
+lesson draft grammar
+lesson-linked notes
+future custom courses
+future custom books
 settings
 progress
 bookmarks
 review_history
 ```
 
-The only required learning table is:
+The current course model is:
 
 ```txt
-public.user_learning_state
+Course
+→ Book / Volume
+→ Lesson
+→ Vocab / Grammar / Notes / Review
 ```
 
-Do not store static lesson, vocabulary, grammar, or radical content in Supabase.
+Built-in static content and user-created Supabase content must be merged at the view-model layer.
 
 Do not mutate static JSON from the app.
 
 Do not create local JSON write APIs.
 
+Do not store built-in static JSON content in Supabase as a duplicate source of truth.
+
+Do store user-created drafts, published custom lessons, custom notes, and future custom courses/books in Supabase.
+
+Lesson notes must not be stored as noteId fields inside draft JSON. Use a relation table such as lesson_note_links for lesson-note relationships.
+
 ---
 
 ## 1. Current Product IA
 
-### 1.1. Lesson-based HanziHome workspace
+### 1.1. Course library home
+
+Route:
+
+```txt
+/
+```
+
+The home page is the course library entry point.
+
+Rules:
+
+```txt
+The user chooses a course before entering the learning workspace.
+Built-in courses may come from static catalog data.
+Future custom courses/books should come from Supabase.
+Course cards must show real stats derived from lessons, vocab, and grammar view models.
+Do not hard-code the home page as a single Hán ngữ 2 landing page.
+```
+
+### 1.2. Course-based HanziHome workspace
 
 Route:
 
 ```txt
 /hanzihome
+```
+
+Workspace hierarchy:
+
+```txt
+Course
+→ Book / Volume
+→ Lesson
+→ Module
 ```
 
 Lesson workspace modules:
@@ -99,14 +150,32 @@ Ngữ pháp
 Rules:
 
 ```txt
-Lesson picker only affects lesson-based modules.
+Course picker controls the active course.
+Lesson picker only shows lessons in the active course.
+Book grouping is derived from course/book metadata.
 Vocabulary is lesson-based.
 Grammar is lesson-based.
 Review is lesson-based.
 Overview is lesson-based.
+Published custom lesson drafts must map into their selected course/book.
+Draft creation must preserve courseId/bookId metadata.
 ```
 
-### 1.2. Radical library
+### 1.3. Lesson-linked notes
+
+Lesson notes use the main Notes system.
+
+Rules:
+
+```txt
+Render lesson note preview inside lesson overview.
+Edit lesson note through the existing rich text editor.
+Use lesson_note_links to relate notes to HanziHome lessons.
+Do not store noteId directly inside lesson draft JSON.
+The /notes/:id route is a full-screen editing mode, not the only way to access lesson notes.
+```
+
+### 1.4. Radical library
 
 Radicals are standalone.
 
