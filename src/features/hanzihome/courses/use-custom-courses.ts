@@ -4,9 +4,13 @@ import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 
 import {
   createCustomHanziHomeCourse,
+  createCustomHanziHomeCourseBook,
   getCustomHanziHomeCourseCatalog,
 } from "@/features/hanzihome/courses/custom-course-api";
-import type { CreateHanziHomeCourseRequest } from "@/features/hanzihome/courses/course.schema";
+import type {
+  CreateHanziHomeCourseBookRequest,
+  CreateHanziHomeCourseRequest,
+} from "@/features/hanzihome/courses/course.schema";
 
 export const hanzihomeCourseQueryKeys = {
   all: ["hanzihome", "courses"] as const,
@@ -26,6 +30,20 @@ export function useCreateCustomHanziHomeCourseMutation() {
   return useMutation({
     mutationFn: (input: CreateHanziHomeCourseRequest) =>
       createCustomHanziHomeCourse(input),
+    onSuccess: async () => {
+      await queryClient.invalidateQueries({
+        queryKey: hanzihomeCourseQueryKeys.catalog(),
+      });
+    },
+  });
+}
+
+export function useCreateCustomHanziHomeCourseBookMutation() {
+  const queryClient = useQueryClient();
+
+  return useMutation({
+    mutationFn: (input: CreateHanziHomeCourseBookRequest) =>
+      createCustomHanziHomeCourseBook(input),
     onSuccess: async () => {
       await queryClient.invalidateQueries({
         queryKey: hanzihomeCourseQueryKeys.catalog(),

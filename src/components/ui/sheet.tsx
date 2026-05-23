@@ -19,7 +19,7 @@ export function Sheet({
 }) {
  if (!open) return null;
  return (
-  <div className="fixed inset-0 z-50 overflow-x-hidden">
+  <div className="fixed inset-0 z-50 overflow-x-hidden scrollbar-soft ">
    <button
     type="button"
     aria-label="Đóng"
@@ -28,7 +28,7 @@ export function Sheet({
    />
    <div
     className={cn(
-     "absolute max-w-full overflow-y-auto overflow-x-hidden border-stone-200 bg-white shadow-2xl",
+     "absolute max-w-full overflow-y-auto scrollbar-soft  overflow-x-hidden scrollbar-soft  border-stone-200 bg-white shadow-2xl",
      side === "right"
       ? "right-0 top-0 h-full w-full border-l-2 sm:max-w-2xl"
       : "inset-x-0 bottom-0 max-h-[82vh] w-full rounded-2xl -t-3xl border-t-2",

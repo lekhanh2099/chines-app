@@ -254,7 +254,7 @@ export function InlineDraftItemEditDialog({
      </DialogDescription>
     </DialogHeader>
 
-    <DialogBody className="min-h-0 flex-1 overflow-y-auto px-6 py-5">
+    <DialogBody className="min-h-0 flex-1 overflow-y-auto scrollbar-soft  px-6 py-5">
      {draftQuery.isLoading && (
       <p className="text-sm font-semibold text-text-muted">
        Đang tải dữ liệu draft...

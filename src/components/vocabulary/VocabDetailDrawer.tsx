@@ -172,7 +172,7 @@ export function VocabDetailDrawer() {
       </div>
      </div>
 
-     <div className="flex-1 overflow-y-auto px-5 py-4">
+     <div className="flex-1 overflow-y-auto scrollbar-soft  px-5 py-4">
       {detailQuery.isLoading ? (
        <div className="flex h-40 items-center justify-center gap-2 text-sm text-text-muted">
         <Loader2 className="h-4 w-4 animate-spin  " />

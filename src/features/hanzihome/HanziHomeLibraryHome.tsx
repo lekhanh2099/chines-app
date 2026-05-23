@@ -2,273 +2,246 @@
 
 import { useMemo } from "react";
 import Link from "next/link";
-import {
- BookMarked,
- BookOpen,
- NotebookPen,
- Sparkles,
- type LucideIcon,
-} from "lucide-react";
+import { useRouter } from "next/navigation";
+import { BookMarked, Plus, Sparkles } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import {
- hanzihomeCourseBooks,
- hanzihomeCourses,
- mergeCourseCatalogs,
+  hanzihomeCourseBooks,
+  hanzihomeCourses,
+  mergeCourseCatalogs,
 } from "@/features/hanzihome/courses/course-catalog";
 import { CreateCourseDialog } from "@/features/hanzihome/courses/CreateCourseDialog";
 import { useCustomHanziHomeCourseCatalogQuery } from "@/features/hanzihome/courses/use-custom-courses";
 import {
- mapLessonDraftToHanziHomeLesson,
- useLessonDraftsQuery,
+  CreateLessonDraftDialog,
+  mapLessonDraftToHanziHomeLesson,
+  useLessonDraftsQuery,
 } from "@/features/hanzihome/lesson-drafts";
 import { useHanziHomeData } from "@/features/hanzihome/hooks/useHanziHomeData";
+import { useLearningState } from "@/features/hanzihome/hooks/useLearningState";
 import type {
- HanziHomeCourse,
- HanziHomeCourseBook,
- HanziHomeLesson,
+  HanziHomeCourse,
+  HanziHomeCourseBook,
+  HanziHomeLesson,
 } from "@/features/hanzihome/types";
 
 type CourseStats = {
- lessons: HanziHomeLesson[];
- books: HanziHomeCourseBook[];
- vocabCount: number;
- grammarCount: number;
+  lessons: HanziHomeLesson[];
+  books: HanziHomeCourseBook[];
+  vocabCount: number;
+  grammarCount: number;
 };
 
 export function HanziHomeLibraryHome() {
- const staticData = useHanziHomeData();
- const customCatalogQuery = useCustomHanziHomeCourseCatalogQuery();
- const draftsQuery = useLessonDraftsQuery();
+  const staticData = useHanziHomeData();
+  const customCatalogQuery = useCustomHanziHomeCourseCatalogQuery();
+  const draftsQuery = useLessonDraftsQuery();
 
- const publishedDraftLessons = useMemo(
-  () =>
-   (draftsQuery.data ?? [])
-    .filter((draft) => draft.status === "published")
-    .map(mapLessonDraftToHanziHomeLesson),
-  [draftsQuery.data],
- );
+  const publishedDraftLessons = useMemo(
+    () =>
+      (draftsQuery.data ?? [])
+        .filter((draft) => draft.status === "published")
+        .map(mapLessonDraftToHanziHomeLesson),
+    [draftsQuery.data],
+  );
 
- const mergedCatalog = mergeCourseCatalogs({
-  staticCourses: staticData.courses ?? hanzihomeCourses,
-  staticBooks: staticData.books ?? hanzihomeCourseBooks,
-  customCourses: customCatalogQuery.data?.courses ?? [],
-  customBooks: customCatalogQuery.data?.books ?? [],
- });
+  const mergedCatalog = useMemo(
+    () =>
+      mergeCourseCatalogs({
+        staticCourses: staticData.courses ?? hanzihomeCourses,
+        staticBooks: staticData.books ?? hanzihomeCourseBooks,
+        customCourses: customCatalogQuery.data?.courses ?? [],
+        customBooks: customCatalogQuery.data?.books ?? [],
+      }),
+    [
+      customCatalogQuery.data?.books,
+      customCatalogQuery.data?.courses,
+      staticData.books,
+      staticData.courses,
+    ],
+  );
 
- const courses = mergedCatalog.courses;
- const books = mergedCatalog.books;
- const lessons = useMemo(
-  () => [...(staticData.lessons ?? []), ...publishedDraftLessons],
-  [publishedDraftLessons, staticData.lessons],
- );
+  const lessons = useMemo(
+    () => [...(staticData.lessons ?? []), ...publishedDraftLessons],
+    [publishedDraftLessons, staticData.lessons],
+  );
 
- const totalVocab = lessons.reduce(
-  (sum, lesson) => sum + lesson.vocab.length,
-  0,
- );
- const totalGrammar = lessons.reduce(
-  (sum, lesson) => sum + lesson.grammar.length,
-  0,
- );
+  const courses = mergedCatalog.courses;
+  const books = mergedCatalog.books;
 
- return (
-  <main className="mx-auto flex w-full max-w-6xl flex-col gap-6 px-5 py-7 lg:px-8">
-   <section className="grid gap-3">
-    <p className="text-sm font-black uppercase tracking-wide text-text-muted">
-     HanziHome Library
-    </p>
+  return (
+    <main className="mx-auto flex w-full max-w-6xl flex-col gap-6 px-5 py-8 lg:px-8">
+      <section className="flex flex-wrap items-end justify-between gap-4">
+        <div className="max-w-3xl">
+          <p className="text-xs font-black uppercase tracking-[0.2em] text-text-muted">
+            HanziHome Library
+          </p>
 
-    <div className="flex flex-wrap items-end justify-between gap-3">
-     <div>
-      <h1 className="text-4xl font-black tracking-normal text-text-primary md:text-5xl">
-       Thư viện học liệu
-      </h1>
+          <h1 className="mt-2 text-4xl font-black tracking-tight text-text-primary md:text-5xl">
+            Chọn bộ học liệu
+          </h1>
 
-      <p className="mt-3 max-w-3xl text-base font-semibold leading-relaxed text-text-secondary">
-       Chọn course trước, rồi vào workspace học theo bài: từ vựng, ngữ pháp, ghi
-       chú, bộ thủ và ôn tập.
-      </p>
-     </div>
+          <p className="mt-3 text-base font-semibold leading-relaxed text-text-secondary">
+            Vào từng course để học theo bài. Tạo bài mới ở đúng course, rồi sửa
+            từ vựng, ngữ pháp và bài khóa trong workspace.
+          </p>
+        </div>
 
-     <CreateCourseDialog />
-    </div>
-   </section>
+        <CreateCourseDialog />
+      </section>
 
-   <Card padding="lg" className="rounded-2xl -2xl">
-    <div className="grid gap-4 sm:grid-cols-3">
-     <HomeMetric label="Course" value={courses.length} />
-     <HomeMetric label="Từ vựng" value={totalVocab} />
-     <HomeMetric label="Ngữ pháp" value={totalGrammar} />
-    </div>
-   </Card>
+      <section className="grid gap-4">
+        {customCatalogQuery.isLoading && (
+          <p className="text-sm font-bold text-text-muted">
+            Đang tải custom course...
+          </p>
+        )}
 
-   <section className="grid gap-4">
-    <div className="flex flex-wrap items-end justify-between gap-3">
-     <div>
-      <p className="text-xs font-black uppercase tracking-wide text-text-muted">
-       Courses
-      </p>
-      <h2 className="mt-1 text-2xl font-black text-text-primary">
-       Chọn bộ học liệu
-      </h2>
-     </div>
-
-     {customCatalogQuery.isLoading && (
-      <span className="text-xs font-black uppercase tracking-wide text-text-muted">
-       Đang tải custom course...
-      </span>
-     )}
-    </div>
-
-    <div className="grid gap-4">
-     {courses.map((course) => (
-      <CourseCard
-       key={course.id}
-       course={course}
-       stats={getCourseStats(course, lessons, books)}
-      />
-     ))}
-    </div>
-   </section>
-
-   <section className="grid gap-4 md:grid-cols-2">
-    <HomeAction
-     href="/hanzihome"
-     icon={BookOpen}
-     title="Workspace tự học"
-     description="Mở nhanh workspace nếu chỉ muốn tiếp tục bài đang học."
-    />
-
-    <HomeAction
-     href="/notes"
-     icon={NotebookPen}
-     title="Ghi chú"
-     description="Mở hệ ghi chú chính: rich editor, autosave, tab và split view."
-    />
-   </section>
-  </main>
- );
+        <div className="grid gap-4">
+          {courses.map((course) => (
+            <CourseCard
+              key={course.id}
+              course={course}
+              stats={getCourseStats(course, lessons, books)}
+            />
+          ))}
+        </div>
+      </section>
+    </main>
+  );
 }
 
 function getCourseStats(
- course: HanziHomeCourse,
- lessons: HanziHomeLesson[],
- books: HanziHomeCourseBook[],
+  course: HanziHomeCourse,
+  lessons: HanziHomeLesson[],
+  books: HanziHomeCourseBook[],
 ): CourseStats {
- const courseLessons = lessons.filter(
-  (lesson) => lesson.courseId === course.id,
- );
- const courseBooks = books.filter((book) => book.courseId === course.id);
+  const courseLessons = lessons.filter((lesson) => lesson.courseId === course.id);
+  const courseBooks = books.filter((book) => book.courseId === course.id);
 
- return {
-  lessons: courseLessons,
-  books: courseBooks,
-  vocabCount: courseLessons.reduce(
-   (sum, lesson) => sum + lesson.vocab.length,
-   0,
-  ),
-  grammarCount: courseLessons.reduce(
-   (sum, lesson) => sum + lesson.grammar.length,
-   0,
-  ),
- };
+  return {
+    lessons: courseLessons,
+    books: courseBooks,
+    vocabCount: courseLessons.reduce(
+      (sum, lesson) => sum + lesson.vocab.length,
+      0,
+    ),
+    grammarCount: courseLessons.reduce(
+      (sum, lesson) => sum + lesson.grammar.length,
+      0,
+    ),
+  };
 }
 
 function CourseCard({
- course,
- stats,
+  course,
+  stats,
 }: {
- course: HanziHomeCourse;
- stats: CourseStats;
+  course: HanziHomeCourse;
+  stats: CourseStats;
 }) {
- const primaryBook = stats.books[0];
- const href = `/hanzihome?courseId=${course.id}`;
+  const router = useRouter();
+  const primaryBook = stats.books[0];
 
- return (
-  <Card padding="lg" className="rounded-2xl -2xl">
-   <div className="grid gap-5 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-center">
-    <div className="flex min-w-0 gap-4">
-     <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xlbg-bg-subtle">
-      <BookMarked className="h-5 w-5" />
-     </span>
+  const fallbackLesson = stats.lessons.at(-1);
+  const href = fallbackLesson
+    ? `/hanzihome?courseId=${course.id}&lessonId=${fallbackLesson.id}`
+    : `/hanzihome?courseId=${course.id}`;
 
-     <div className="min-w-0">
-      <p className="text-xs font-black uppercase tracking-wide text-text-muted">
-       {primaryBook?.shortTitle || primaryBook?.title || "Course"}
-      </p>
+  const suggestedLessonNumber =
+    stats.lessons
+      .map((lesson) => lesson.lessonNumber)
+      .filter((value): value is number => typeof value === "number")
+      .reduce((max, value) => Math.max(max, value), 0) + 1;
 
-      <h3 className="mt-1 text-2xl font-black text-text-primary">
-       {course.title}
-      </h3>
+  const openCourse = () => {
+    router.push(href);
+  };
 
-      {course.subtitle && (
-       <p className="mt-1 text-sm font-semibold leading-relaxed text-text-secondary">
-        {course.subtitle}
-       </p>
-      )}
+  return (
+    <Card
+      padding="none"
+      role="button"
+      tabIndex={0}
+      onClick={openCourse}
+      onKeyDown={(event) => {
+        if (event.key === "Enter" || event.key === " ") {
+          event.preventDefault();
+          openCourse();
+        }
+      }}
+      className="group cursor-pointer rounded-3xl p-5 transition-colors hover:border-accent-muted hover:bg-accent-subtle"
+    >
+      <div className="grid gap-4 md:grid-cols-[minmax(0,1fr)_auto] md:items-center">
+        <div className="flex min-w-0 gap-4">
+          <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-bg-subtle shadow-theme-sm transition-colors group-hover:bg-bg-primary">
+            <BookMarked className="h-5 w-5" />
+          </span>
 
-      <div className="mt-4 grid gap-3 sm:grid-cols-3">
-       <HomeMetric label="Bài học" value={stats.lessons.length} />
-       <HomeMetric label="Từ vựng" value={stats.vocabCount} />
-       <HomeMetric label="Ngữ pháp" value={stats.grammarCount} />
+          <div className="min-w-0">
+            <div className="flex flex-wrap items-center gap-2">
+              <span className="text-xs font-black uppercase tracking-[0.18em] text-text-muted">
+                {primaryBook?.shortTitle || primaryBook?.title || course.type}
+              </span>
+
+              {stats.books.length > 0 && (
+                <span className="rounded-full bg-bg-subtle px-2.5 py-1 text-[0.7rem] font-black text-text-muted">
+                  {stats.books.length} quyển
+                </span>
+              )}
+            </div>
+
+            <h2 className="mt-1 truncate text-2xl font-black tracking-tight text-text-primary">
+              {course.title}
+            </h2>
+
+            {course.subtitle && (
+              <p className="mt-1 line-clamp-1 max-w-2xl text-sm font-semibold text-text-secondary">
+                {course.subtitle}
+              </p>
+            )}
+
+            <div className="mt-3 flex flex-wrap gap-2">
+              <MiniMetric label="Bài" value={stats.lessons.length} />
+              <MiniMetric label="Từ" value={stats.vocabCount} />
+              <MiniMetric label="Ngữ pháp" value={stats.grammarCount} />
+            </div>
+          </div>
+        </div>
+
+        <div
+          className="flex flex-wrap gap-2 md:justify-end"
+          onClick={(event) => event.stopPropagation()}
+          onMouseDown={(event) => event.stopPropagation()}
+        >
+          <CreateLessonDraftDialog
+            suggestedLessonNumber={suggestedLessonNumber}
+            courses={[course]}
+            books={stats.books}
+            selectedCourseId={course.id}
+            selectedBookId={primaryBook?.id}
+            triggerVariant="outline"
+          />
+
+          <Button asChild>
+            <Link href={href}>
+              <Sparkles className="h-4 w-4" />
+              Vào học
+            </Link>
+          </Button>
+        </div>
       </div>
-     </div>
-    </div>
-
-    <div className="flex flex-wrap gap-2 lg:justify-end">
-     <Button asChild size="lg">
-      <Link href={href}>
-       <Sparkles className="h-5 w-5" />
-       Vào học
-      </Link>
-     </Button>
-    </div>
-   </div>
-  </Card>
- );
+    </Card>
+  );
 }
 
-function HomeMetric({ label, value }: { label: string; value: number }) {
- return (
-  <div className="rounded-2xl  border-2 border-border-default bg-bg-subtle p-4">
-   <p className="text-3xl font-black text-text-primary">{value}</p>
-   <p className="text-sm font-bold text-text-muted">{label}</p>
-  </div>
- );
-}
-
-function HomeAction({
- href,
- icon: Icon,
- title,
- description,
-}: {
- href: string;
- icon: LucideIcon;
- title: string;
- description: string;
-}) {
- return (
-  <Link href={href}>
-   <Card
-    padding="lg"
-    className="h-full rounded-2xltransition-colors hover:border-accent-muted hover:bg-accent-subtle"
-   >
-    <div className="flex gap-4">
-     <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xlbg-bg-subtle shadow-theme-sm">
-      <Icon className="h-5 w-5" />
-     </span>
-
-     <span className="grid gap-1">
-      <span className="text-xl font-black text-text-primary">{title}</span>
-      <span className="text-sm font-semibold leading-relaxed text-text-secondary">
-       {description}
-      </span>
-     </span>
-    </div>
-   </Card>
-  </Link>
- );
+function MiniMetric({ label, value }: { label: string; value: number }) {
+  return (
+    <span className="rounded-2xl border border-border-default bg-bg-subtle px-3 py-2">
+      <span className="text-base font-black text-text-primary">{value}</span>
+      <span className="ml-1 text-xs font-black text-text-muted">{label}</span>
+    </span>
+  );
 }

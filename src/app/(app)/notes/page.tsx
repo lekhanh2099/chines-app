@@ -125,7 +125,7 @@ function NotesPageInner() {
    </div>
 
    {/* List */}
-   <div className="flex-1 overflow-y-auto">
+   <div className="flex-1 overflow-y-auto scrollbar-soft ">
     {filteredNotes.length === 0 ? (
      <div className="text-center py-24">
       <FileText className="w-10 h-10 text-text-muted mx-auto mb-3" />

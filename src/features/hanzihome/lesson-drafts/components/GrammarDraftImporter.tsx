@@ -577,7 +577,7 @@ export function GrammarDraftImporter({ draft }: GrammarDraftImporterProps) {
           Chưa có điểm ngữ pháp nào.
          </div>
         ) : (
-         <div className="grid max-h-[42rem] gap-2 overflow-y-auto pr-1">
+         <div className="grid max-h-[42rem] gap-2 overflow-y-auto scrollbar-soft  pr-1">
           {items.map((item) => {
            const itemWarnings = getItemWarnings(item);
 
@@ -619,7 +619,7 @@ export function GrammarDraftImporter({ draft }: GrammarDraftImporterProps) {
          <p className="text-xs font-black uppercase tracking-wide text-text-muted">
           Cảnh báo tổng
          </p>
-         <ul className="grid max-h-60 gap-1 overflow-y-auto text-sm font-semibold text-text-muted">
+         <ul className="grid max-h-60 gap-1 overflow-y-auto scrollbar-soft  text-sm font-semibold text-text-muted">
           {warnings.map((warning) => (
            <li key={warning}>• {warning}</li>
           ))}

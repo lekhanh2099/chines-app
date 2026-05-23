@@ -93,10 +93,6 @@ export function LessonOverview({
       <h2 className="mt-3 text-3xl font-black tracking-normal text-text-primary">
        {lesson.title}
       </h2>
-      <p className="mt-2 max-w-3xl text-base font-semibold leading-relaxed text-text-secondary">
-       Bắt đầu từ bài học, rồi đi qua từ vựng, ngữ pháp và ôn tập trong cùng một
-       workspace.
-      </p>
      </div>
 
      <div className="grid gap-3 sm:grid-cols-3">
@@ -166,24 +162,6 @@ export function LessonOverview({
      );
     })}
    </div>
-
-   <button
-    type="button"
-    onClick={() => onOpenModule("radicals")}
-    className="group flex min-w-0 items-center gap-4 rounded-2xl border-2 border-border-default bg-bg-card p-5 text-left shadow-theme-sm transition-colors hover:border-accent-muted hover:bg-accent-subtle"
-   >
-    <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xlbg-bg-subtle   group-hover:bg-white">
-     <Layers3 className="h-5 w-5" />
-    </span>
-    <span className="min-w-0">
-     <span className="block text-lg font-black text-text-primary">
-      Thư viện bộ thủ
-     </span>
-     <span className="block text-sm font-semibold leading-relaxed text-text-secondary">
-      Khu riêng trong HanziHome, không phụ thuộc bài đang chọn.
-     </span>
-    </span>
-   </button>
   </div>
  );
 }

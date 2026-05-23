@@ -282,7 +282,7 @@ function InspectorCard({ onClose }: InspectorCardProps) {
     </div>
    </div>
 
-   <div className="flex-1 overflow-y-auto px-4 pb-4 pt-3">
+   <div className="flex-1 overflow-y-auto scrollbar-soft  px-4 pb-4 pt-3">
     {isLoading ? (
      <InspectorLoadingSkeleton />
     ) : !vocabData ? (

@@ -6,6 +6,7 @@ import { toast } from "sonner";
 
 import { useAppForm } from "@/components/form";
 import Select from "@/components/ui/select/index";
+import { useCreateCustomHanziHomeCourseBookMutation } from "@/features/hanzihome/courses/use-custom-courses";
 import {
   useCreateLessonDraftMutation,
   type LessonDraft,
@@ -42,22 +43,6 @@ type CreateLessonDraftFormProps = {
   onCreated?: (draft: LessonDraft) => void;
 };
 
-function slugify(value: string) {
-  const slug = value
-    .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "")
-    .toLowerCase()
-    .trim()
-    .replace(/[^a-z0-9]+/g, "-")
-    .replace(/(^-|-$)+/g, "");
-
-  return slug || "book";
-}
-
-function createDraftBookId(courseId: string, bookTitle: string) {
-  return `${courseId}-${slugify(bookTitle)}`;
-}
-
 export function CreateLessonDraftForm({
   suggestedLessonNumber,
   courses,
@@ -67,6 +52,7 @@ export function CreateLessonDraftForm({
   onCreated,
 }: CreateLessonDraftFormProps) {
   const createMutation = useCreateLessonDraftMutation();
+  const createBookMutation = useCreateCustomHanziHomeCourseBookMutation();
 
   const fallbackCourse = courses[0];
   const initialCourseId = selectedCourseId || fallbackCourse?.id || "";
@@ -95,11 +81,15 @@ export function CreateLessonDraftForm({
           book.title.trim().toLowerCase() === normalizedBookTitle.toLowerCase(),
       );
 
-      const courseBooks = books.filter((book) => book.courseId === value.courseId);
-      const nextBookOrder =
-        courseBooks.length > 0
-          ? Math.max(...courseBooks.map((book) => book.order)) + 1
-          : 1;
+      const resolvedBook =
+        existingBook ||
+        (
+          await createBookMutation.mutateAsync({
+            courseId: value.courseId,
+            title: normalizedBookTitle,
+            shortTitle: normalizedBookTitle,
+          })
+        ).book;
 
       const draft = await createMutation.mutateAsync({
         lessonNumber: Number(value.lessonNumber),
@@ -108,10 +98,9 @@ export function CreateLessonDraftForm({
         titleVi: value.titleVi.trim() || undefined,
         courseId: course?.id,
         courseTitle: course?.title,
-        bookId:
-          existingBook?.id || createDraftBookId(value.courseId, normalizedBookTitle),
-        bookTitle: existingBook?.title || normalizedBookTitle,
-        bookOrder: existingBook?.order ?? nextBookOrder,
+        bookId: resolvedBook.id,
+        bookTitle: resolvedBook.title,
+        bookOrder: resolvedBook.order,
       });
 
       toast.success(`Đã tạo nháp: ${draft.titleZh}`);
@@ -164,7 +153,7 @@ export function CreateLessonDraftForm({
                   options={courseOptions}
                   selectValue={selectedOption}
                   triggerPlaceholder="Chọn course"
-                  disabled={createMutation.isPending}
+                  disabled={createMutation.isPending || createBookMutation.isPending}
                   onChange={(option: IOption | null) => {
                     const nextCourseId = option?.value ? String(option.value) : "";
                     const firstBook = books.find(
@@ -186,7 +175,7 @@ export function CreateLessonDraftForm({
               label="Quyển / sách"
               placeholder="Ví dụ: HSK 4 - Bài học chính"
               required
-              disabled={createMutation.isPending}
+              disabled={createMutation.isPending || createBookMutation.isPending}
               list={bookSuggestionsId}
             />
           )}
@@ -207,7 +196,7 @@ export function CreateLessonDraftForm({
               placeholder="26"
               inputMode="numeric"
               required
-              disabled={createMutation.isPending}
+              disabled={createMutation.isPending || createBookMutation.isPending}
             />
           )}
         </form.AppField>
@@ -218,7 +207,7 @@ export function CreateLessonDraftForm({
               label="Tên bài tiếng Trung"
               placeholder="例如：我想创建一个新课"
               required
-              disabled={createMutation.isPending}
+              disabled={createMutation.isPending || createBookMutation.isPending}
             />
           )}
         </form.AppField>
@@ -229,7 +218,7 @@ export function CreateLessonDraftForm({
           <field.TextField
             label="Tên bài tiếng Việt"
             placeholder="Ví dụ: Tôi muốn tạo một bài mới"
-            disabled={createMutation.isPending}
+            disabled={createMutation.isPending || createBookMutation.isPending}
           />
         )}
       </form.AppField>
@@ -243,7 +232,7 @@ export function CreateLessonDraftForm({
       <form.AppForm>
         <form.Actions
           submitLabel="Tạo bài nháp"
-          disabled={createMutation.isPending}
+          disabled={createMutation.isPending || createBookMutation.isPending}
         />
       </form.AppForm>
     </form>

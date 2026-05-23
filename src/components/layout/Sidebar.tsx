@@ -2,12 +2,13 @@
 
 import { useEffect } from "react";
 import Link from "next/link";
-import { usePathname, useRouter } from "next/navigation";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import {
  ChevronLeft,
  ChevronRight,
  Flame,
  Home,
+ Layers3,
  LogOut,
  NotebookPen,
  Sparkles,
@@ -34,14 +35,39 @@ const mainItems: NavItem[] = [
   badge: "JSON",
   tone: "orange",
  },
+ {
+  name: "Bộ thủ",
+  icon: Layers3,
+  href: "/hanzihome?module=radicals",
+ },
  { name: "Ghi chú", icon: NotebookPen, href: "/notes" },
 ];
 
 const secondaryItems: NavItem[] = [];
 
-function isActive(pathname: string, href: string) {
- const base = href.split("?")[0];
+function isActive(
+ pathname: string,
+ searchParams: URLSearchParams,
+ href: string,
+) {
+ const [base, rawQuery] = href.split("?");
+
  if (base === "/") return pathname === "/";
+
+ if (rawQuery) {
+  const targetParams = new URLSearchParams(rawQuery);
+
+  if (pathname !== base) return false;
+
+  return Array.from(targetParams.entries()).every(
+   ([key, value]) => searchParams.get(key) === value,
+  );
+ }
+
+ if (base === "/hanzihome" && searchParams.get("module") === "radicals") {
+  return false;
+ }
+
  return pathname.startsWith(base);
 }
 
@@ -86,6 +112,7 @@ function NavRow({
 
 export function Sidebar() {
  const pathname = usePathname();
+ const searchParams = useSearchParams();
  const router = useRouter();
  const isCollapsed = useSidebarStore((s) => s.isCollapsed);
  const toggleSidebar = useSidebarStore((s) => s.toggle);
@@ -147,7 +174,7 @@ export function Sidebar() {
       <NavRow
        key={item.name}
        item={item}
-       active={isActive(pathname, item.href)}
+       active={isActive(pathname, searchParams, item.href)}
        collapsed={isCollapsed}
       />
      ))}
@@ -167,7 +194,9 @@ export function Sidebar() {
         <NavRow
          key={item.name}
          item={item}
-         active={isActive(pathname, item.href) && item.href !== "/"}
+         active={
+          isActive(pathname, searchParams, item.href) && item.href !== "/"
+         }
          collapsed={isCollapsed}
         />
        ))}
@@ -184,7 +213,7 @@ export function Sidebar() {
      )}
     >
      {!isCollapsed && (
-      <div className="mb-3rounded-2xl border-2 border-red-100 bg-red-50 p-3">
+      <div className="mb-3 rounded-2xl border-2 border-red-100 bg-red-50 p-3">
        <div className="flex items-center gap-2 text-sm font-black text-red-600">
         <Flame className="h-4 w-4" />
         Học theo bài
@@ -199,7 +228,7 @@ export function Sidebar() {
       type="button"
       onClick={handleLogout}
       className={cn(
-       "mb-3 flex h-11 items-center gap-3 rounded-2xlpx-4 text-[15px] font-black text-red-500 transition-colors hover:bg-red-50",
+       "mb-3 flex h-11 items-center gap-3 rounded-2xl px-4 text-[15px] font-black text-red-500 transition-colors hover:bg-red-50",
        isCollapsed ? "w-12 justify-center px-0" : "w-full",
       )}
       title={isCollapsed ? "Đăng xuất" : undefined}
@@ -225,7 +254,7 @@ export function Sidebar() {
      </button>
     </div>
    </aside>
-   <nav className="fixed inset-x-0 bottom-0 z-40 max-w-full overflow-x-hidden border-t-2 border-stone-200 bg-white/95 px-2 pb-[calc(0.5rem+env(safe-area-inset-bottom))] pt-2 shadow-[0_-3px_0_rgb(0_0_0/0.08)] backdrop-blur md:hidden">
+   <nav className="fixed inset-x-0 bottom-0 z-40 max-w-full overflow-x-hidden scrollbar-soft  border-t-2 border-stone-200 bg-white/95 px-2 pb-[calc(0.5rem+env(safe-area-inset-bottom))] pt-2 shadow-[0_-3px_0_rgb(0_0_0/0.08)] backdrop-blur md:hidden">
     <div
      className="mx-auto grid w-full max-w-md min-w-0 gap-1"
      style={{
@@ -234,7 +263,7 @@ export function Sidebar() {
     >
      {mainItems.map((item) => {
       const Icon = item.icon;
-      const active = isActive(pathname, item.href);
+      const active = isActive(pathname, searchParams, item.href);
       return (
        <Link
         key={item.name}

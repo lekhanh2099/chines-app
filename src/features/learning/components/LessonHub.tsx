@@ -36,7 +36,7 @@ export function LessonHub({
  return (
   <section
    className={cn(
-    "flex w-full max-w-full min-w-0 flex-col gap-5 overflow-x-hidden rounded-2xl -[28px] border-2 border-stone-200 bg-white p-4 shadow sm:p-6",
+    "flex w-full max-w-full min-w-0 flex-col gap-5 overflow-x-hidden scrollbar-soft  rounded-2xl -[28px] border-2 border-stone-200 bg-white p-4 shadow sm:p-6",
     className,
    )}
   >

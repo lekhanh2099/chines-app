@@ -25,6 +25,7 @@ type CreateLessonDraftDialogProps = {
   books: HanziHomeCourseBook[];
   selectedCourseId: string;
   selectedBookId?: string;
+  triggerVariant?: "default" | "outline" | "secondary" | "ghost";
 };
 
 export function CreateLessonDraftDialog({
@@ -33,6 +34,7 @@ export function CreateLessonDraftDialog({
   books,
   selectedCourseId,
   selectedBookId,
+  triggerVariant = "default",
 }: CreateLessonDraftDialogProps) {
   const router = useRouter();
   const [open, setOpen] = useState(false);
@@ -40,7 +42,7 @@ export function CreateLessonDraftDialog({
   return (
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger asChild>
-        <Button type="button">
+        <Button type="button" variant={triggerVariant}>
           <FilePlus2 className="h-4 w-4" />
           Tạo bài mới
         </Button>

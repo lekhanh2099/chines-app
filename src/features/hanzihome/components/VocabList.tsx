@@ -46,7 +46,7 @@ export function VocabList({
  return (
   <Card
    padding="md"
-   className="rounded-2xllg:sticky lg:top-24 lg:max-h-[calc(100vh-8rem)] lg:overflow-y-auto"
+   className="rounded-2xllg:sticky lg:top-24 lg:max-h-[calc(100vh-8rem)] lg:overflow-y-auto scrollbar-soft "
   >
    <div className="grid gap-3">
     <div>

@@ -1,8 +1,10 @@
 import {
+  createHanziHomeCourseBookRequestSchema,
   createHanziHomeCourseRequestSchema,
   hanziHomeCourseBookSchema,
   hanziHomeCourseCatalogResponseSchema,
   hanziHomeCourseSchema,
+  type CreateHanziHomeCourseBookRequest,
   type CreateHanziHomeCourseRequest,
 } from "@/features/hanzihome/courses/course.schema";
 
@@ -13,6 +15,16 @@ const createHanziHomeCourseResponseSchema = {
         (json as { course?: unknown }).course,
       ),
       book: hanziHomeCourseBookSchema.parse((json as { book?: unknown }).book),
+    };
+  },
+};
+
+const createHanziHomeCourseBookResponseSchema = {
+  parse(json: unknown) {
+    return {
+      book: hanziHomeCourseBookSchema.parse(
+        (json as { book?: unknown }).book,
+      ),
     };
   },
 };
@@ -82,4 +94,26 @@ export async function createCustomHanziHomeCourse(
   const json: unknown = await response.json();
 
   return createHanziHomeCourseResponseSchema.parse(json);
+}
+
+export async function createCustomHanziHomeCourseBook(
+  input: CreateHanziHomeCourseBookRequest,
+) {
+  const payload = createHanziHomeCourseBookRequestSchema.parse(input);
+
+  const response = await fetch("/api/hanzihome/course-books", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(payload),
+  });
+
+  if (!response.ok) {
+    throw new Error(await parseApiError(response));
+  }
+
+  const json: unknown = await response.json();
+
+  return createHanziHomeCourseBookResponseSchema.parse(json);
 }

@@ -182,7 +182,7 @@ function InlineRichContent({
       <DialogDescription>{editDescription}</DialogDescription>
      </DialogHeader>
 
-     <DialogBody className="min-h-0 flex-1 overflow-y-auto p-0">
+     <DialogBody className="min-h-0 flex-1 overflow-y-auto scrollbar-soft  p-0">
       <Editor
        key={`edit-${note.id}`}
        initialContent={note.content as Record<string, unknown> | null}

@@ -929,7 +929,7 @@ export default function EditorFloatingMenu() {
           </div>
          )}
          {!isSearching && linkSearchResults.length > 0 && (
-          <div className="mt-2 max-h-36 overflow-y-auto space-y-0.5">
+          <div className="mt-2 max-h-36 overflow-y-auto scrollbar-soft  space-y-0.5">
            {linkSearchResults.map((note) => (
             <button
              key={note.id}
