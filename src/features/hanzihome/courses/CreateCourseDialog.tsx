@@ -13,14 +13,13 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
-import type { HanziHomeCourseType } from "@/features/hanzihome/types";
 import { useCreateCustomHanziHomeCourseMutation } from "@/features/hanzihome/courses/use-custom-courses";
 
 export function CreateCourseDialog() {
   const [open, setOpen] = useState(false);
   const [title, setTitle] = useState("");
   const [subtitle, setSubtitle] = useState("");
-  const [type, setType] = useState<HanziHomeCourseType>("custom");
+  const [type, setType] = useState("custom");
   const [bookTitle, setBookTitle] = useState("");
   const [bookShortTitle, setBookShortTitle] = useState("");
 
@@ -96,19 +95,24 @@ export function CreateCourseDialog() {
               <span className="text-sm font-bold text-text-primary">
                 Loại course
               </span>
-              <select
+              <input
                 className="h-10 rounded-xl border border-border-default bg-bg-primary px-3 text-sm font-semibold text-text-primary outline-none"
                 value={type}
-                onChange={(event) =>
-                  setType(event.target.value as HanziHomeCourseType)
-                }
+                onChange={(event) => setType(event.target.value)}
+                placeholder="Ví dụ: HSK, Nghe hiểu, Khẩu ngữ, TOCFL"
+                required
                 disabled={createMutation.isPending}
-              >
-                <option value="custom">Custom</option>
-                <option value="hanyu">Giáo trình Hán ngữ</option>
-                <option value="hsk">HSK</option>
-                <option value="listening">Nghe hiểu</option>
-              </select>
+                list="hanzihome-course-type-suggestions"
+              />
+              <datalist id="hanzihome-course-type-suggestions">
+                <option value="custom" />
+                <option value="hanyu" />
+                <option value="hsk" />
+                <option value="listening" />
+                <option value="speaking" />
+                <option value="translation" />
+                <option value="tocfl" />
+              </datalist>
             </label>
 
             <label className="grid gap-2">

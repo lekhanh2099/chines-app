@@ -1,10 +1,7 @@
 import { NextResponse } from "next/server";
 import { z } from "zod";
 
-import {
-  createHanziHomeCourseRequestSchema,
-  hanziHomeCourseTypeSchema,
-} from "@/features/hanzihome/courses/course.schema";
+import { createHanziHomeCourseRequestSchema } from "@/features/hanzihome/courses/course.schema";
 import { createClient } from "@/lib/supabase/server";
 
 const courseRowSchema = z.object({
@@ -38,14 +35,12 @@ function slugify(value: string) {
 
 function mapCourse(row: unknown) {
   const parsed = courseRowSchema.parse(row);
-  const courseType = hanziHomeCourseTypeSchema.safeParse(parsed.type);
-
   return {
     id: parsed.id,
     slug: parsed.slug,
     title: parsed.title,
     subtitle: parsed.subtitle ?? undefined,
-    type: courseType.success ? courseType.data : "custom",
+    type: parsed.type || "custom",
     order: parsed.course_order ?? 1000,
   };
 }

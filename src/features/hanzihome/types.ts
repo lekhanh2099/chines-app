@@ -10,7 +10,7 @@ export type HanziHomeModule =
 export type LearningStatus = "new" | "learning" | "known" | "hard";
 export type ReviewResult = "again" | "hard" | "known";
 
-export type HanziHomeCourseType = "hanyu" | "hsk" | "listening" | "custom";
+export type HanziHomeCourseType = string;
 
 export type HanziHomeCourse = {
   id: string;

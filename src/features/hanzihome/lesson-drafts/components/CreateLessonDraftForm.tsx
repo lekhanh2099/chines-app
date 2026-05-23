@@ -18,7 +18,7 @@ import type { IOption } from "@/types/option";
 
 const createLessonDraftFormSchema = z.object({
   courseId: z.string().trim().min(1, "Vui lòng chọn course"),
-  bookId: z.string().trim().min(1, "Vui lòng chọn quyển/sách"),
+  bookTitle: z.string().trim().min(1, "Vui lòng nhập quyển/sách"),
   lessonNumber: z
     .string()
     .trim()
@@ -42,6 +42,22 @@ type CreateLessonDraftFormProps = {
   onCreated?: (draft: LessonDraft) => void;
 };
 
+function slugify(value: string) {
+  const slug = value
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase()
+    .trim()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/(^-|-$)+/g, "");
+
+  return slug || "book";
+}
+
+function createDraftBookId(courseId: string, bookTitle: string) {
+  return `${courseId}-${slugify(bookTitle)}`;
+}
+
 export function CreateLessonDraftForm({
   suggestedLessonNumber,
   courses,
@@ -54,16 +70,14 @@ export function CreateLessonDraftForm({
 
   const fallbackCourse = courses[0];
   const initialCourseId = selectedCourseId || fallbackCourse?.id || "";
-  const initialBookId =
-    selectedBookId ||
-    books.find((book) => book.courseId === initialCourseId)?.id ||
-    books[0]?.id ||
-    "";
+  const initialBook =
+    books.find((book) => book.id === selectedBookId) ||
+    books.find((book) => book.courseId === initialCourseId);
 
   const form = useAppForm({
     defaultValues: {
       courseId: initialCourseId,
-      bookId: initialBookId,
+      bookTitle: initialBook?.title || "",
       lessonNumber: String(suggestedLessonNumber),
       titleZh: "",
       titleVi: "",
@@ -73,7 +87,19 @@ export function CreateLessonDraftForm({
     },
     onSubmit: async ({ value }) => {
       const course = courses.find((item) => item.id === value.courseId);
-      const book = books.find((item) => item.id === value.bookId);
+      const normalizedBookTitle = value.bookTitle.trim();
+
+      const existingBook = books.find(
+        (book) =>
+          book.courseId === value.courseId &&
+          book.title.trim().toLowerCase() === normalizedBookTitle.toLowerCase(),
+      );
+
+      const courseBooks = books.filter((book) => book.courseId === value.courseId);
+      const nextBookOrder =
+        courseBooks.length > 0
+          ? Math.max(...courseBooks.map((book) => book.order)) + 1
+          : 1;
 
       const draft = await createMutation.mutateAsync({
         lessonNumber: Number(value.lessonNumber),
@@ -82,9 +108,10 @@ export function CreateLessonDraftForm({
         titleVi: value.titleVi.trim() || undefined,
         courseId: course?.id,
         courseTitle: course?.title,
-        bookId: book?.id,
-        bookTitle: book?.title,
-        bookOrder: book?.order,
+        bookId:
+          existingBook?.id || createDraftBookId(value.courseId, normalizedBookTitle),
+        bookTitle: existingBook?.title || normalizedBookTitle,
+        bookOrder: existingBook?.order ?? nextBookOrder,
       });
 
       toast.success(`Đã tạo nháp: ${draft.titleZh}`);
@@ -104,16 +131,12 @@ export function CreateLessonDraftForm({
     [courses],
   );
 
-  const bookOptions: IOption[] = useMemo(
-    () =>
-      books
-        .filter((book) => book.courseId === currentCourseId)
-        .map((book) => ({
-          value: book.id,
-          label: book.title,
-        })),
+  const currentCourseBooks = useMemo(
+    () => books.filter((book) => book.courseId === currentCourseId),
     [books, currentCourseId],
   );
+
+  const bookSuggestionsId = `book-suggestions-${currentCourseId || "default"}`;
 
   return (
     <form
@@ -149,7 +172,7 @@ export function CreateLessonDraftForm({
                     );
 
                     field.handleChange(nextCourseId);
-                    form.setFieldValue("bookId", firstBook?.id || "");
+                    form.setFieldValue("bookTitle", firstBook?.title || "");
                   }}
                 />
               </label>
@@ -157,32 +180,24 @@ export function CreateLessonDraftForm({
           }}
         </form.AppField>
 
-        <form.AppField name="bookId">
-          {(field) => {
-            const selectedOption =
-              bookOptions.find((option) => option.value === field.state.value) ??
-              null;
-
-            return (
-              <label className="grid gap-2">
-                <span className="text-sm font-bold text-text-primary">
-                  Quyển / sách
-                </span>
-
-                <Select
-                  options={bookOptions}
-                  selectValue={selectedOption}
-                  triggerPlaceholder="Chọn quyển"
-                  disabled={createMutation.isPending || bookOptions.length === 0}
-                  onChange={(option: IOption | null) => {
-                    field.handleChange(option?.value ? String(option.value) : "");
-                  }}
-                />
-              </label>
-            );
-          }}
+        <form.AppField name="bookTitle">
+          {(field) => (
+            <field.TextField
+              label="Quyển / sách"
+              placeholder="Ví dụ: HSK 4 - Bài học chính"
+              required
+              disabled={createMutation.isPending}
+              list={bookSuggestionsId}
+            />
+          )}
         </form.AppField>
       </div>
+
+      <datalist id={bookSuggestionsId}>
+        {currentCourseBooks.map((book) => (
+          <option key={book.id} value={book.title} />
+        ))}
+      </datalist>
 
       <div className="grid gap-4 sm:grid-cols-[9rem_minmax(0,1fr)]">
         <form.AppField name="lessonNumber">

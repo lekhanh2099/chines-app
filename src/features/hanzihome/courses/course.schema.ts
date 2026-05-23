@@ -1,11 +1,10 @@
 import { z } from "zod";
 
-export const hanziHomeCourseTypeSchema = z.enum([
-  "hanyu",
-  "hsk",
-  "listening",
-  "custom",
-]);
+export const hanziHomeCourseTypeSchema = z
+  .string()
+  .trim()
+  .min(1)
+  .default("custom");
 
 export const hanziHomeCourseSchema = z.object({
   id: z.string(),
@@ -32,7 +31,7 @@ export const hanziHomeCourseCatalogResponseSchema = z.object({
 export const createHanziHomeCourseRequestSchema = z.object({
   title: z.string().trim().min(1, "Vui lòng nhập tên course"),
   subtitle: z.string().trim().optional(),
-  type: hanziHomeCourseTypeSchema.default("custom"),
+  type: z.string().trim().min(1, "Vui lòng nhập loại course"),
   initialBookTitle: z
     .string()
     .trim()
