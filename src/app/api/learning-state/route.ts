@@ -11,8 +11,11 @@ const progressItemSchema = z.object({
 const learningStateSchema = z.object({
  settings: z
   .object({
+   lastCourseId: z.string().optional(),
    lastLessonId: z.string().optional(),
-   lastModule: z.enum(["overview", "vocab", "grammar", "radicals", "review"]).optional(),
+   lastModule: z
+    .enum(["overview", "lessonText", "vocab", "grammar", "radicals", "review"])
+    .optional(),
    density: z.enum(["comfortable", "compact", "focus"]).optional(),
    vocabDetailTab: z.string().optional(),
   })

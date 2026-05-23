@@ -42,3 +42,15 @@ export const createHanziHomeCourseRequestSchema = z.object({
 export type CreateHanziHomeCourseRequest = z.infer<
   typeof createHanziHomeCourseRequestSchema
 >;
+
+
+export const createHanziHomeCourseBookRequestSchema = z.object({
+  courseId: z.string().trim().min(1, "Vui lòng chọn course"),
+  title: z.string().trim().min(1, "Vui lòng nhập tên quyển/sách"),
+  shortTitle: z.string().trim().optional(),
+  order: z.number().int().positive().optional(),
+});
+
+export type CreateHanziHomeCourseBookRequest = z.infer<
+  typeof createHanziHomeCourseBookRequestSchema
+>;
