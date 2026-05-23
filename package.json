@@ -5,7 +5,6 @@
  "scripts": {
   "dev": "next dev -p 3001",
   "build": "next build --webpack",
-  "db:grammar": "node scripts/apply-grammar-learning-migration.js",
   "data:hanzihome:validate": "node scripts/validate-hanzihome-data.mjs",
   "start": "next start",
   "lint": "eslint",
