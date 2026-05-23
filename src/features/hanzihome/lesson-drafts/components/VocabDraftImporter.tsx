@@ -32,6 +32,7 @@ type VocabDraftImporterProps = {
 
 type ImportMode = "markdown" | "json" | "manual";
 type ImportStep = "source" | "review";
+type SaveMode = "append" | "replace";
 
 function isVocabDraftItem(value: unknown): value is VocabDraftItem {
   return vocabDraftItemSchema.safeParse(value).success;
@@ -78,6 +79,42 @@ function getAllWarnings(items: VocabDraftItem[]) {
   );
 }
 
+function dedupeById(items: VocabDraftItem[]) {
+  const seen = new Set<string>();
+
+  return items.map((item, index) => {
+    if (!seen.has(item.id)) {
+      seen.add(item.id);
+      return item;
+    }
+
+    let nextId = `${item.id}-${index + 1}`;
+    let suffix = 2;
+
+    while (seen.has(nextId)) {
+      nextId = `${item.id}-${index + 1}-${suffix}`;
+      suffix += 1;
+    }
+
+    seen.add(nextId);
+
+    return {
+      ...item,
+      id: nextId,
+    };
+  });
+}
+
+function mergeItems(
+  currentItems: VocabDraftItem[],
+  incomingItems: VocabDraftItem[],
+  mode: SaveMode,
+) {
+  if (mode === "replace") return dedupeById(incomingItems);
+
+  return dedupeById([...currentItems, ...incomingItems]);
+}
+
 export function VocabDraftImporter({ draft }: VocabDraftImporterProps) {
   const updateMutation = useUpdateLessonDraftMutation();
 
@@ -90,7 +127,9 @@ export function VocabDraftImporter({ draft }: VocabDraftImporterProps) {
     savedItems.length > 0 ? "review" : "source",
   );
   const [mode, setMode] = useState<ImportMode>("markdown");
+  const [saveMode, setSaveMode] = useState<SaveMode>("append");
   const [sourceText, setSourceText] = useState("");
+  const [sourceDirty, setSourceDirty] = useState(false);
   const [items, setItems] = useState<VocabDraftItem[]>(savedItems);
   const [selectedItemId, setSelectedItemId] = useState<string | null>(
     savedItems[0]?.id ?? null,
@@ -106,9 +145,7 @@ export function VocabDraftImporter({ draft }: VocabDraftImporterProps) {
     if (mode === "manual") {
       return {
         items: [createEmptyVocabDraftItem()],
-        warnings: [
-          "Bạn đang tạo thủ công. Hãy điền các field ở bước review.",
-        ],
+        warnings: ["Bạn đang tạo thủ công. Hãy điền các field ở bước review."],
       };
     }
 
@@ -128,28 +165,15 @@ export function VocabDraftImporter({ draft }: VocabDraftImporterProps) {
     };
   };
 
-  const applyParsedItems = (nextItems: VocabDraftItem[], nextWarnings: string[]) => {
+  const applyItems = (
+    nextItems: VocabDraftItem[],
+    nextWarnings: string[],
+    nextSelectedId?: string,
+  ) => {
     setItems(nextItems);
     setWarnings(nextWarnings);
-    setSelectedItemId(nextItems[0]?.id ?? null);
-  };
-
-  const handleParse = () => {
-    try {
-      const result = parseCurrentSource();
-
-      applyParsedItems(result.items, result.warnings);
-
-      if (result.items.length === 0) {
-        toast.error("Không parse được từ nào");
-        return;
-      }
-
-      toast.success(`Đã parse ${result.items.length} từ`);
-      setStep("review");
-    } catch (error) {
-      toast.error(error instanceof Error ? error.message : "Không parse được dữ liệu");
-    }
+    setSelectedItemId(nextSelectedId ?? nextItems[0]?.id ?? null);
+    setSourceDirty(false);
   };
 
   const saveItems = async (
@@ -162,7 +186,7 @@ export function VocabDraftImporter({ draft }: VocabDraftImporterProps) {
     setWarnings(nextWarnings);
 
     if (options.strict && nextWarnings.length > 0) {
-      toast.error("Còn cảnh báo. Sửa lại hoặc dùng Lưu nhanh.");
+      toast.error("Còn cảnh báo. Sửa lại hoặc dùng lưu nhanh.");
       return;
     }
 
@@ -185,34 +209,69 @@ export function VocabDraftImporter({ draft }: VocabDraftImporterProps) {
     toast.success(`Đã lưu ${parsedItems.length} từ vào bài nháp`);
   };
 
-  const handleSave = async (options: { strict: boolean }) => {
+  const handlePreviewImport = () => {
     try {
-      if (step === "source" && (sourceText.trim() || mode === "manual")) {
-        const result = parseCurrentSource();
+      const result = parseCurrentSource();
 
-        applyParsedItems(result.items, result.warnings);
-
-        if (result.items.length === 0) {
-          toast.error("Không parse được từ nào");
-          return;
-        }
-
-        await saveItems(result.items, options);
-        setStep("review");
+      if (result.items.length === 0) {
+        toast.error("Không parse được từ nào");
         return;
       }
 
-      await saveItems(items, options);
+      const mergedItems = mergeItems(items, result.items, saveMode);
+      const firstIncomingId =
+        saveMode === "append"
+          ? mergedItems[items.length]?.id
+          : mergedItems[0]?.id;
+
+      applyItems(mergedItems, result.warnings, firstIncomingId);
+
+      toast.success(
+        saveMode === "append"
+          ? `Đã thêm tạm ${result.items.length} từ vào review`
+          : `Đã thay tạm bằng ${result.items.length} từ`,
+      );
+
+      setStep("review");
+    } catch (error) {
+      toast.error(error instanceof Error ? error.message : "Không parse được dữ liệu");
+    }
+  };
+
+  const handleImportAndSave = async (options: { strict: boolean }) => {
+    try {
+      const result = parseCurrentSource();
+
+      if (result.items.length === 0) {
+        toast.error("Không parse được từ nào");
+        return;
+      }
+
+      const mergedItems = mergeItems(savedItems, result.items, saveMode);
+      const firstIncomingId =
+        saveMode === "append"
+          ? mergedItems[savedItems.length]?.id
+          : mergedItems[0]?.id;
+
+      applyItems(mergedItems, result.warnings, firstIncomingId);
+      await saveItems(mergedItems, options);
+      setStep("review");
     } catch (error) {
       toast.error(error instanceof Error ? error.message : "Không lưu được từ vựng");
     }
   };
 
+  const handleSaveReviewItems = async (options: { strict: boolean }) => {
+    await saveItems(items, options);
+  };
+
   const handleAddManualItem = () => {
     const nextItem = createEmptyVocabDraftItem();
+    const nextItems = dedupeById([...items, nextItem]);
+    const addedItem = nextItems[nextItems.length - 1];
 
-    setItems((currentItems) => [...currentItems, nextItem]);
-    setSelectedItemId(nextItem.id);
+    setItems(nextItems);
+    setSelectedItemId(addedItem?.id ?? null);
   };
 
   const handleItemChange = (nextItem: VocabDraftItem) => {
@@ -237,26 +296,11 @@ export function VocabDraftImporter({ draft }: VocabDraftImporterProps) {
             onClick={() => setStep("review")}
           />
 
-          <div className="ml-auto flex flex-wrap gap-2">
-            <Button
-              type="button"
-              variant="outline"
-              disabled={updateMutation.isPending}
-              onClick={() => void handleSave({ strict: false })}
-            >
-              <Save className="h-4 w-4" />
-              Lưu nhanh
-            </Button>
-
-            <Button
-              type="button"
-              disabled={updateMutation.isPending}
-              onClick={() => void handleSave({ strict: true })}
-            >
-              <CheckCircle2 className="h-4 w-4" />
-              Check & lưu
-            </Button>
-          </div>
+          {sourceDirty && (
+            <span className="ml-auto rounded-full bg-bg-subtle px-3 py-1 text-xs font-black text-text-muted">
+              Có source mới chưa xử lý
+            </span>
+          )}
         </div>
       </Card>
 
@@ -269,10 +313,10 @@ export function VocabDraftImporter({ draft }: VocabDraftImporterProps) {
                   Step 1
                 </p>
                 <h2 className="mt-1 text-xl font-black text-text-primary">
-                  Chọn cách nhập từ vựng
+                  Nhập nguồn từ vựng
                 </h2>
                 <p className="mt-1 text-sm font-semibold text-text-muted">
-                  Dán markdown/json rồi bấm Lưu nhanh nếu muốn parse và lưu luôn.
+                  Mặc định là thêm từ mới vào bài, không ghi đè từ cũ.
                 </p>
               </div>
 
@@ -282,28 +326,67 @@ export function VocabDraftImporter({ draft }: VocabDraftImporterProps) {
                   icon={<FileText className="h-4 w-4" />}
                   title="Paste Markdown"
                   description="Dán batch AI generate"
-                  onClick={() => setMode("markdown")}
+                  onClick={() => {
+                    setMode("markdown");
+                    setSourceDirty(true);
+                  }}
                 />
                 <ModeButton
                   active={mode === "json"}
                   icon={<FileJson className="h-4 w-4" />}
                   title="Paste JSON"
                   description="Import data đã chuẩn"
-                  onClick={() => setMode("json")}
+                  onClick={() => {
+                    setMode("json");
+                    setSourceDirty(true);
+                  }}
                 />
                 <ModeButton
                   active={mode === "manual"}
                   icon={<Plus className="h-4 w-4" />}
                   title="Manual"
                   description="Tạo từ trắng"
-                  onClick={() => setMode("manual")}
+                  onClick={() => {
+                    setMode("manual");
+                    setSourceDirty(true);
+                  }}
                 />
+              </div>
+
+              <div className="flex flex-wrap gap-2 rounded-2xl border border-border-default bg-bg-primary p-2">
+                <button
+                  type="button"
+                  className={cn(
+                    "rounded-xl px-3 py-2 text-sm font-black",
+                    saveMode === "append"
+                      ? "bg-text-primary text-bg-primary"
+                      : "text-text-muted hover:text-text-primary",
+                  )}
+                  onClick={() => setSaveMode("append")}
+                >
+                  Thêm vào bài
+                </button>
+                <button
+                  type="button"
+                  className={cn(
+                    "rounded-xl px-3 py-2 text-sm font-black",
+                    saveMode === "replace"
+                      ? "bg-text-primary text-bg-primary"
+                      : "text-text-muted hover:text-text-primary",
+                  )}
+                  onClick={() => setSaveMode("replace")}
+                >
+                  Thay toàn bộ
+                </button>
               </div>
 
               {mode !== "manual" && (
                 <textarea
                   value={sourceText}
-                  onChange={(event) => setSourceText(event.target.value)}
+                  onChange={(event) => {
+                    setSourceText(event.target.value);
+                    setSourceDirty(true);
+                  }}
                   placeholder={
                     mode === "markdown"
                       ? "Dán markdown từ vựng ở đây..."
@@ -319,10 +402,31 @@ export function VocabDraftImporter({ draft }: VocabDraftImporterProps) {
                 </div>
               )}
 
-              <Button type="button" onClick={handleParse}>
-                <WandSparkles className="h-4 w-4" />
-                {mode === "manual" ? "Tạo vocab trắng" : "Parse & auto-fill"}
-              </Button>
+              <div className="flex flex-wrap gap-2">
+                <Button type="button" variant="outline" onClick={handlePreviewImport}>
+                  <WandSparkles className="h-4 w-4" />
+                  Xem trước
+                </Button>
+
+                <Button
+                  type="button"
+                  variant="outline"
+                  disabled={updateMutation.isPending}
+                  onClick={() => void handleImportAndSave({ strict: false })}
+                >
+                  <Save className="h-4 w-4" />
+                  Thêm & lưu nhanh
+                </Button>
+
+                <Button
+                  type="button"
+                  disabled={updateMutation.isPending}
+                  onClick={() => void handleImportAndSave({ strict: true })}
+                >
+                  <CheckCircle2 className="h-4 w-4" />
+                  Check rồi lưu
+                </Button>
+              </div>
             </div>
           </Card>
 
@@ -333,32 +437,39 @@ export function VocabDraftImporter({ draft }: VocabDraftImporterProps) {
                   Logic
                 </p>
                 <h2 className="mt-1 text-xl font-black text-text-primary">
-                  Hai kiểu lưu
+                  Không còn ghi đè ngoài ý muốn
                 </h2>
               </div>
 
               <div className="grid gap-3 text-sm font-semibold text-text-muted">
                 <p>
-                  1. <b>Parse & auto-fill</b>: chỉ parse ra màn review, chưa lưu.
+                  <b>Thêm vào bài</b>: batch mới được append sau các từ đã có.
                 </p>
                 <p>
-                  2. <b>Lưu nhanh</b>: parse source hiện tại rồi lưu luôn, bỏ qua cảnh báo thiếu pinyin/Hán Việt/ví dụ.
+                  <b>Thay toàn bộ</b>: chỉ dùng khi muốn xoá danh sách cũ và dùng batch mới.
                 </p>
                 <p>
-                  3. <b>Check & lưu</b>: parse rồi chặn nếu còn thiếu field quan trọng.
+                  <b>Xem trước</b>: parse vào màn review, chưa lưu database.
+                </p>
+                <p>
+                  <b>Thêm & lưu nhanh</b>: parse batch hiện tại rồi lưu luôn.
+                </p>
+                <p>
+                  <b>Check rồi lưu</b>: lưu có kiểm tra thiếu field quan trọng.
                 </p>
               </div>
 
-              {items.length > 0 && (
-                <div className="rounded-2xl border border-border-default bg-bg-subtle p-4">
-                  <p className="text-xs font-black uppercase tracking-wide text-text-muted">
-                    Draft hiện tại
-                  </p>
-                  <p className="mt-1 text-2xl font-black text-text-primary">
-                    {items.length} từ đang chờ review
-                  </p>
-                </div>
-              )}
+              <div className="rounded-2xl border border-border-default bg-bg-subtle p-4">
+                <p className="text-xs font-black uppercase tracking-wide text-text-muted">
+                  Trạng thái hiện tại
+                </p>
+                <p className="mt-1 text-2xl font-black text-text-primary">
+                  {items.length} từ trong review
+                </p>
+                <p className="mt-1 text-sm font-semibold text-text-muted">
+                  {savedItems.length} từ đang có trong draft database.
+                </p>
+              </div>
             </div>
           </Card>
         </div>
@@ -503,17 +614,17 @@ export function VocabDraftImporter({ draft }: VocabDraftImporterProps) {
               <Button
                 type="button"
                 variant="outline"
-                disabled={updateMutation.isPending}
-                onClick={() => void handleSave({ strict: false })}
+                disabled={updateMutation.isPending || items.length === 0}
+                onClick={() => void handleSaveReviewItems({ strict: false })}
               >
                 <Save className="h-4 w-4" />
-                Lưu nhanh
+                Lưu chỉnh sửa
               </Button>
 
               <Button
                 type="button"
-                disabled={updateMutation.isPending}
-                onClick={() => void handleSave({ strict: true })}
+                disabled={updateMutation.isPending || items.length === 0}
+                onClick={() => void handleSaveReviewItems({ strict: true })}
               >
                 <CheckCircle2 className="h-4 w-4" />
                 Check & lưu

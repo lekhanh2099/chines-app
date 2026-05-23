@@ -10,6 +10,10 @@ type MarkdownSection = {
   body: string;
 };
 
+function hasCjk(value: string) {
+  return /\p{Script=Han}/u.test(value);
+}
+
 function slugifyWord(word: string, index: number) {
   const safeWord = word
     .trim()
@@ -20,9 +24,17 @@ function slugifyWord(word: string, index: number) {
   return `draft-vocab-${safeWord || "item"}-${index + 1}`;
 }
 
+function isLikelyVocabHeading(title: string) {
+  return hasCjk(title) && /\s+[–—-]\s+/.test(title);
+}
+
 function splitEntryBlocks(markdown: string) {
   const normalized = markdown.replace(/\r\n/g, "\n");
-  const headingMatches = Array.from(normalized.matchAll(/^##\s+(.+)$/gm));
+  const allHeadingMatches = Array.from(normalized.matchAll(/^##\s+(.+)$/gm));
+
+  const headingMatches = allHeadingMatches.filter((match) =>
+    isLikelyVocabHeading(match[1]?.trim() ?? ""),
+  );
 
   return headingMatches.map((match, index) => {
     const start = match.index ?? 0;
@@ -94,13 +106,22 @@ function parseCollocations(body: string): VocabDraftCollocation[] {
   return body
     .split("\n")
     .map((line) => line.trim())
-    .filter((line) => /^\d+\.\s+/.test(line))
+    .filter(Boolean)
+    .filter((line) => /^\d+\.\s+/.test(line) || /^\*\*.+?\*\*/.test(line))
     .map((line) => line.replace(/^\d+\.\s+/, ""))
     .map((line) => {
-      const parts = line.split(/\s+[–—-]\s+/);
+      const colonParts = line.split(/[:：]\s+/);
+      if (colonParts.length >= 2) {
+        return {
+          phrase: stripMarkdownBold(colonParts[0] ?? ""),
+          meaning: colonParts.slice(1).join(": ").trim(),
+        };
+      }
+
+      const dashParts = line.split(/\s+[–—-]\s+/);
       return {
-        phrase: stripMarkdownBold(parts[0] ?? ""),
-        meaning: parts.slice(1).join(" – ").trim(),
+        phrase: stripMarkdownBold(dashParts[0] ?? ""),
+        meaning: dashParts.slice(1).join(" – ").trim(),
       };
     })
     .filter((item) => item.phrase.length > 0);
@@ -150,14 +171,92 @@ function parseExamples(body: string): VocabDraftExample[] {
   return examples;
 }
 
+function createBaseItem(input: {
+  id: string;
+  word: string;
+  pinyin?: string;
+  hanViet?: string;
+  meaning?: string;
+  partOfSpeech?: string;
+  level?: string;
+  rawMarkdown: string;
+}): VocabDraftItem {
+  return {
+    id: input.id,
+    word: input.word,
+    pinyin: input.pinyin ?? "",
+    hanViet: input.hanViet ?? "",
+    meaning: input.meaning ?? "",
+    partOfSpeech: input.partOfSpeech ?? "",
+    level: input.level ?? "",
+    category: "Chưa phân nhóm",
+    sections: {
+      meaning: input.meaning ?? "",
+      characterLogic: "",
+      comparison: "",
+      culture: "",
+      warning: "",
+    },
+    collocations: [],
+    examples: [],
+    rawMarkdown: input.rawMarkdown,
+  };
+}
+
+function parseQuickGlossaryLines(markdown: string): VocabDraftImportResult {
+  const warnings: string[] = [];
+  const items: VocabDraftItem[] = [];
+
+  markdown
+    .replace(/\r\n/g, "\n")
+    .split("\n")
+    .map((line) => line.trim())
+    .filter(Boolean)
+    .forEach((line, index) => {
+      const match = line.match(/^(?:[-*]\s*|\d+\.\s*)?\*\*([^*]+)\*\*\s*[:：]\s*(.+)$/);
+      if (!match) return;
+
+      const word = match[1]?.trim() ?? "";
+      const meaning = match[2]?.trim() ?? "";
+
+      if (!hasCjk(word)) return;
+
+      items.push(
+        createBaseItem({
+          id: slugifyWord(word, index),
+          word,
+          meaning,
+          rawMarkdown: line,
+        }),
+      );
+    });
+
+  if (items.length > 0) {
+    warnings.push(
+      "Đã dùng quick glossary parser. Format này chỉ auto-fill từ và nghĩa; pinyin/Hán Việt/ví dụ cần sửa tay.",
+    );
+  }
+
+  return {
+    items,
+    warnings,
+  };
+}
+
 export function parseVocabMarkdown(markdown: string): VocabDraftImportResult {
   const warnings: string[] = [];
   const blocks = splitEntryBlocks(markdown);
 
   if (blocks.length === 0) {
+    const quickResult = parseQuickGlossaryLines(markdown);
+
+    if (quickResult.items.length > 0) return quickResult;
+
     return {
       items: [],
-      warnings: ["Không tìm thấy mục từ nào. Mỗi từ nên bắt đầu bằng heading dạng ## Từ – pinyin – Hán Việt – nghĩa."],
+      warnings: [
+        "Không tìm thấy mục từ nào. Dùng heading dạng ## Từ – pinyin – Hán Việt – nghĩa, hoặc quick line dạng **词**: nghĩa.",
+      ],
     };
   }
 
@@ -177,7 +276,7 @@ export function parseVocabMarkdown(markdown: string): VocabDraftImportResult {
       level: extractLevel(block),
       category: "Chưa phân nhóm",
       sections: {
-        meaning: sections["1"]?.body ?? "",
+        meaning: sections["1"]?.body || title.meaning,
         characterLogic: sections["2"]?.body ?? "",
         comparison: sections["3"]?.body ?? "",
         culture: sections["6"]?.body ?? "",
