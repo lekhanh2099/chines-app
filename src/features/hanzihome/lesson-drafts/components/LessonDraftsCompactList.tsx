@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { FilePlus2, Trash2 } from "lucide-react";
 import { toast } from "sonner";
 
@@ -68,7 +69,10 @@ export function LessonDraftsCompactList() {
                 key={draft.id}
                 className="flex flex-wrap items-center justify-between gap-3 rounded-2xl border border-border-default bg-bg-primary p-3"
               >
-                <div className="flex min-w-0 items-center gap-3">
+                <Link
+                  href={`/hanzihome/drafts/${draft.id}`}
+                  className="flex min-w-0 flex-1 items-center gap-3"
+                >
                   <span className="flex size-9 shrink-0 items-center justify-center rounded-xl bg-bg-subtle">
                     <FilePlus2 className="h-4 w-4" />
                   </span>
@@ -82,7 +86,7 @@ export function LessonDraftsCompactList() {
                       {draft.titleVi || draft.lessonKey} · {draft.status}
                     </p>
                   </div>
-                </div>
+                </Link>
 
                 <Button
                   type="button"

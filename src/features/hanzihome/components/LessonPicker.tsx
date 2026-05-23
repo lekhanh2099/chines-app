@@ -2,34 +2,43 @@
 
 import Select from "@/components/ui/select/index";
 import type { HanziHomeLesson } from "@/features/hanzihome/types";
+import type { IOption } from "@/types/option";
 
 type LessonPickerProps = {
- lessons: HanziHomeLesson[];
- selectedLessonId: string;
- onSelectLesson: (lessonId: string) => void;
+  lessons: HanziHomeLesson[];
+  selectedLessonId: string;
+  onSelectLesson: (lessonId: string) => void;
 };
 
 export function LessonPicker({
- lessons,
- selectedLessonId,
- onSelectLesson,
+  lessons,
+  selectedLessonId,
+  onSelectLesson,
 }: LessonPickerProps) {
- return (
-  <label className="flex min-w-0 flex-col gap-2">
-   <span className="text-xs font-black uppercase tracking-wide text-text-muted">
-    Chọn bài học
-   </span>
-   <Select
-    selectValue={
-     lessons.find((lesson) => lesson.id === selectedLessonId) ?? null
-    }
-    onChange={(event) => onSelectLesson(event?.value as string)}
-    options={lessons.map((lesson) => ({
-     value: lesson.id,
-     label: lesson.title,
-    }))}
-    aria-label="Chọn bài HanziHome"
-   />
-  </label>
- );
+  const options: IOption[] = lessons.map((lesson) => ({
+    value: lesson.id,
+    label: lesson.title,
+  }));
+
+  const selectedOption =
+    options.find((option) => option.value === selectedLessonId) ?? null;
+
+  return (
+    <label className="flex min-w-0 flex-col gap-2">
+      <span className="text-xs font-black uppercase tracking-wide text-text-muted">
+        Chọn bài học
+      </span>
+
+      <Select
+        selectValue={selectedOption}
+        onChange={(option) => {
+          if (typeof option?.value === "string") {
+            onSelectLesson(option.value);
+          }
+        }}
+        options={options}
+        triggerPlaceholder="Chọn bài HanziHome"
+      />
+    </label>
+  );
 }

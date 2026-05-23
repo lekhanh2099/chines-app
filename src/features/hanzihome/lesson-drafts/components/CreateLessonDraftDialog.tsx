@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import { FilePlus2 } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
@@ -21,6 +22,7 @@ type CreateLessonDraftDialogProps = {
 export function CreateLessonDraftDialog({
   suggestedLessonNumber,
 }: CreateLessonDraftDialogProps) {
+  const router = useRouter();
   const [open, setOpen] = useState(false);
 
   return (
@@ -32,17 +34,20 @@ export function CreateLessonDraftDialog({
         </Button>
       </DialogTrigger>
 
-      <DialogContent>
+      <DialogContent className="max-w-2xl">
         <DialogHeader>
           <DialogTitle>Tạo bài mới</DialogTitle>
           <DialogDescription>
-            Bài mới sẽ được lưu vào Supabase dưới dạng draft, không sửa JSON tĩnh.
+            Tạo lesson draft trong Supabase. Sau khi tạo, bạn sẽ được chuyển sang trang soạn bài.
           </DialogDescription>
         </DialogHeader>
 
         <CreateLessonDraftForm
           suggestedLessonNumber={suggestedLessonNumber}
-          onCreated={() => setOpen(false)}
+          onCreated={(draft) => {
+            setOpen(false);
+            router.push(`/hanzihome/drafts/${draft.id}`);
+          }}
         />
       </DialogContent>
     </Dialog>
