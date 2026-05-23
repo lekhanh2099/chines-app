@@ -10,6 +10,25 @@ export type HanziHomeModule =
 export type LearningStatus = "new" | "learning" | "known" | "hard";
 export type ReviewResult = "again" | "hard" | "known";
 
+export type HanziHomeCourseType = "hanyu" | "hsk" | "listening" | "custom";
+
+export type HanziHomeCourse = {
+  id: string;
+  slug: string;
+  title: string;
+  subtitle?: string;
+  type: HanziHomeCourseType;
+  order: number;
+};
+
+export type HanziHomeCourseBook = {
+  id: string;
+  courseId: string;
+  title: string;
+  shortTitle?: string;
+  order: number;
+};
+
 export type StaticLessonData = (typeof bundle.lessons)[number];
 export type StaticVocabData = (typeof bundle.vocab)[number];
 export type StaticGrammarData = (typeof bundle.grammarPoints)[number];
@@ -69,6 +88,12 @@ export type HanziHomeLesson = {
   titleZh: string;
   title: string;
   sourceFile?: string;
+  courseId?: string;
+  courseTitle?: string;
+  bookId?: string;
+  bookTitle?: string;
+  bookOrder?: number;
+  lessonOrder?: number;
   vocabCategories?: Array<{
     nameVi: string;
     words: string[];
@@ -85,6 +110,8 @@ export type HanziHomeLesson = {
 };
 
 export type HanziHomeData = {
+  courses: HanziHomeCourse[];
+  books: HanziHomeCourseBook[];
   lessons: HanziHomeLesson[];
   radicals: StaticRadicalData[];
   meta: typeof bundle.meta;
@@ -98,6 +125,7 @@ export type LearningProgressItem = {
 
 export type UserLearningState = {
   settings: {
+    lastCourseId?: string;
     lastLessonId?: string;
     lastModule?: HanziHomeModule;
     density?: "comfortable" | "compact" | "focus";

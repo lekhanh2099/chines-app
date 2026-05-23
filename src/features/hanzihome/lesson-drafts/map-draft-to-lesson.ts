@@ -1,4 +1,8 @@
 import type { LessonDraft } from "@/features/hanzihome/lesson-drafts/lesson-draft.schema";
+import {
+  DEFAULT_HANYU_BOOK_ID,
+  DEFAULT_HANYU_COURSE_ID,
+} from "@/features/hanzihome/courses/course-catalog";
 import { grammarDraftItemSchema } from "@/features/hanzihome/lesson-drafts/grammar/grammar-draft.schema";
 import { vocabDraftItemSchema } from "@/features/hanzihome/lesson-drafts/vocab/vocab-draft.schema";
 import type {
@@ -123,6 +127,12 @@ export function mapLessonDraftToHanziHomeLesson(
     titleZh: draft.titleZh,
     title: `Bài ${draft.lessonNumber ?? "?"}: ${draft.titleZh}`,
     sourceFile: "Supabase draft",
+    courseId: DEFAULT_HANYU_COURSE_ID,
+    courseTitle: "Giáo trình Hán ngữ",
+    bookId: DEFAULT_HANYU_BOOK_ID,
+    bookTitle: "Giáo trình Hán ngữ 2",
+    bookOrder: 2,
+    lessonOrder: draft.lessonNumber ?? 9999,
     vocabCategories: [],
     vocabCount: vocab.length,
     vocabIds: vocab.map((item) => item.id),

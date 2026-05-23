@@ -10,6 +10,12 @@ type LessonPickerProps = {
   onSelectLesson: (lessonId: string) => void;
 };
 
+function getLessonLabel(lesson: HanziHomeLesson) {
+  const bookPrefix = lesson.bookTitle ? `${lesson.bookTitle} · ` : "";
+
+  return `${bookPrefix}${lesson.title}`;
+}
+
 export function LessonPicker({
   lessons,
   selectedLessonId,
@@ -17,7 +23,7 @@ export function LessonPicker({
 }: LessonPickerProps) {
   const options: IOption[] = lessons.map((lesson) => ({
     value: lesson.id,
-    label: lesson.title,
+    label: getLessonLabel(lesson),
   }));
 
   const selectedOption =
@@ -37,7 +43,7 @@ export function LessonPicker({
           }
         }}
         options={options}
-        triggerPlaceholder="Chọn bài HanziHome"
+        triggerPlaceholder="Chọn bài trong course"
       />
     </label>
   );
