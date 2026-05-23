@@ -1,4 +1,3 @@
-````md
 # AGENTS.md — HanziHome Coding Rules
 
 This file is the source of truth for AI coding agents and contributors working in this repository.
@@ -29,7 +28,6 @@ Sonner
 Hanzi Writer
 pinyin-pro
 ```
-````
 
 The current app direction is:
 
@@ -161,7 +159,6 @@ No service role key exposed to browser.
 No trusting user_id from client input.
 No DB schema changes without migration.
 No fake XP, fake streak, fake progress, or fake reward data.
-No passing checks by type-casting around the problem: do not use `as any`, unsafe `as unknown as`, non-null `!`, broad `Record<string, unknown>`, or fake wrapper types to silence TypeScript instead of modeling the data correctly.
 No avoidable `any`.
 Code must be type-safe by design, not merely typecheck-clean.
 No passing checks by type-casting around the problem: do not use `as any`, unsafe `as unknown as`, non-null `!`, broad `Record<string, unknown>`, or fake wrapper types to silence TypeScript instead of modeling the data correctly.
@@ -1265,6 +1262,42 @@ Prevent double submit.
 Preserve input on validation error.
 ```
 
+## TanStack Form Rules for CRUD
+
+The app will have more CRUD forms later. All non-trivial CRUD forms must use TanStack Form.
+
+Do not build CRUD forms with many `useState` calls.
+
+Do not pass form values around as loose objects.
+
+Do not silence form type errors with casts.
+
+Code must be type-safe by design, not merely typecheck-clean.
+
+No passing checks by type-casting around the problem: do not use `as any`, unsafe `as unknown as`, non-null `!`, broad `Record<string, unknown>`, or fake wrapper types to silence TypeScript instead of modeling the data correctly.
+
+---
+
+### Required form architecture
+
+Create one app-level form setup.
+
+Expected structure:
+
+```txt id="kudxqp"
+src/components/form/
+  form-context.ts
+  use-app-form.ts
+  fields/
+    FormTextField.tsx
+    FormTextarea.tsx
+    FormSelect.tsx
+    FormCheckbox.tsx
+    FormSwitch.tsx
+    FormErrorMessage.tsx
+    FormActions.tsx
+```
+
 ---
 
 ## 17. Error, Empty, Loading States
@@ -1620,7 +1653,3 @@ reducing state
 moving shareable state to URL
 moving persistence to useLearningState
 ```
-
-over patching a page with more one-off JSX.
-
-Never “just make it work” by adding another wrapper with hard-coded dimensions.
