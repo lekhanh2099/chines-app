@@ -1,16 +1,17 @@
-# AGENTS.md — HanziHome Front-end / Next.js / Supabase Coding Rules
+````md
+# AGENTS.md — HanziHome Coding Rules
 
 This file is the source of truth for AI coding agents and contributors working in this repository.
 
-The goal is not to make the UI “look okay”. The goal is to keep the app clean, reusable, responsive, accessible, warning-free, secure, and maintainable.
+The goal is not to “make the UI look okay”. The goal is to keep HanziHome clean, reusable, responsive, accessible, warning-free, secure, and maintainable.
 
 If a task conflicts with this file, stop and explain the conflict before coding.
 
 ---
 
-## 0. Project Context
+## 0. Project Truth
 
-This project is **HanziHome Hán ngữ 2**, a Chinese self-study app built with:
+HanziHome is a Chinese self-study app built with:
 
 ```txt
 Next.js 16
@@ -18,72 +19,153 @@ React 19
 TypeScript
 Tailwind CSS 4
 Supabase SSR / Supabase JS
-Postgres / pg
 TanStack Query
-TanStack Form
-TanStack Table
 Zod
 Zustand
-Lexical
-Hanzi Writer
-pinyin-pro
-Base UI / Radix Slot
+Radix / shadcn-style primitives
 CVA / clsx / tailwind-merge
 lucide-react
 Sonner
+Hanzi Writer
+pinyin-pro
 ```
+````
 
-The app supports:
-
-1. Giáo trình Hán ngữ lessons
-2. HSK-style vocabulary study
-3. saved AI-prepared lesson data
-4. vocabulary overview
-5. flashcards
-6. deep vocabulary explanation
-7. grammar formula review
-8. forms/editors
-9. Supabase-backed saved content and progress
-
-The product goal is to turn saved lesson data into a real learning flow:
+The current app direction is:
 
 ```txt
-Choose lesson
-→ Vocabulary overview
-→ Flashcard active recall
-→ Deep word study
-→ Grammar formulas
-→ Practice
+Static JSON content
++ lesson-first HanziHome workspace
++ standalone radical library
++ Supabase lightweight user state
+```
+
+Static JSON is the source of truth for:
+
+```txt
+lessons
+vocabulary
+grammar
+radicals
+review source items
+```
+
+Supabase is only for lightweight user state:
+
+```txt
+settings
+progress
+bookmarks
+review_history
+```
+
+The only required learning table is:
+
+```txt
+public.user_learning_state
+```
+
+Do not store static lesson, vocabulary, grammar, or radical content in Supabase.
+
+Do not mutate static JSON from the app.
+
+Do not create local JSON write APIs.
+
+---
+
+## 1. Current Product IA
+
+### 1.1. Lesson-based HanziHome workspace
+
+Route:
+
+```txt
+/hanzihome
+```
+
+Lesson workspace modules:
+
+```txt
+Tổng quan
+Từ vựng
+Ngữ pháp
+Ôn tập
+```
+
+Rules:
+
+```txt
+Lesson picker only affects lesson-based modules.
+Vocabulary is lesson-based.
+Grammar is lesson-based.
+Review is lesson-based.
+Overview is lesson-based.
+```
+
+### 1.2. Radical library
+
+Radicals are standalone.
+
+They are not a lesson tab.
+
+Current accepted route:
+
+```txt
+/hanzihome?module=radicals
+```
+
+Future acceptable route:
+
+```txt
+/hanzihome/radicals
+```
+
+Rules:
+
+```txt
+Bộ thủ is not inside lesson tabs.
+Do not fake lesson-related radicals.
+Radical library shows all radicals from static JSON.
+If lesson-related radicals are needed later, derive them from vocabulary characters.
+```
+
+Allowed TODO:
+
+```ts
+// TODO(hanzihome-radicals): Later derive lesson-related radicals from vocabulary characters.
 ```
 
 ---
 
-## 1. Non-negotiable Rules
+## 2. Hard Non-negotiables
 
-1. No TypeScript errors.
-2. No ESLint errors.
-3. No build warnings introduced by the change.
-4. No unused imports.
-5. No unused variables.
-6. No React hook dependency warnings.
-7. No console logs in committed code.
-8. No `any` unless absolutely unavoidable and explained.
-9. No fixed `px` layout values in new/refactored UI.
-10. No random one-off `className` soup.
-11. No duplicated Button / Select / Card / Badge / Tabs styles.
-12. No duplicated state.
-13. No derived data stored in state.
-14. No horizontal overflow.
-15. No magic margins, negative margins, zoom, or transform scaling to hide layout bugs.
-16. No giant page components.
-17. No direct mutation of React state.
-18. No unnecessary dependencies.
-19. No inaccessible custom controls.
-20. No server-only code imported into Client Components.
-21. No service role key exposed to the browser.
-22. No trusting `user_id` from client input.
-23. No DB schema changes without migration.
-24. Existing saved lesson data must continue rendering.
+Every task must respect these rules:
+
+```txt
+No TypeScript errors.
+No ESLint errors.
+No build errors.
+No unused imports.
+No unused variables.
+No console logs in committed code.
+No avoidable `any`.
+No giant components.
+No duplicated state.
+No storing derived data in state.
+No horizontal overflow.
+No random margin hacks.
+No one-off duplicated Button / Select / Card / Badge / Tabs styles.
+No inaccessible custom controls.
+No server-only code imported into Client Components.
+No service role key exposed to browser.
+No trusting user_id from client input.
+No DB schema changes without migration.
+No fake XP, fake streak, fake progress, or fake reward data.
+No passing checks by type-casting around the problem: do not use `as any`, unsafe `as unknown as`, non-null `!`, broad `Record<string, unknown>`, or fake wrapper types to silence TypeScript instead of modeling the data correctly.
+No avoidable `any`.
+Code must be type-safe by design, not merely typecheck-clean.
+No passing checks by type-casting around the problem: do not use `as any`, unsafe `as unknown as`, non-null `!`, broad `Record<string, unknown>`, or fake wrapper types to silence TypeScript instead of modeling the data correctly.
+```
 
 Required checks before finishing:
 
@@ -93,563 +175,756 @@ npm run typecheck
 npm run build
 ```
 
-If test scripts exist, also run:
-
-```bash
-npm test
-```
-
 A task is not done if any required check fails.
 
 ---
 
-## 2. Required Agent Workflow
+## 3. Required Project Structure
 
-Before coding, report briefly:
+The app must follow the current cleaned HanziHome architecture.
 
-1. What feature/page/component is affected.
-2. What repeated UI patterns should be extracted.
-3. What state belongs in URL, local state, TanStack Form, TanStack Query, Zustand, or derived selectors.
-4. What server/client boundary applies.
-5. What files will likely change.
-6. What checks will be run.
+Do not recreate the old vocabulary, grammar, HSK, DOCX import, or CRUD structure.
 
-After coding, report:
-
-1. Files changed.
-2. Components extracted/reused.
-3. State ownership changes.
-4. Form changes, if any.
-5. Server/Supabase/DB changes, if any.
-6. Styling/token changes.
-7. Performance considerations.
-8. Checks run.
-9. Remaining TODOs/risks.
-
-Do not start by dumping more JSX into a huge existing component.
-
----
-
-## 3. Architecture Rules
-
-### 3.1. Thin pages
-
-Page files should compose sections. They must not contain the whole UI.
-
-Bad:
-
-```tsx
-export function StaticLearningPage() {
-  return (
-    <main>
-      {/* 700 lines of header, filters, cards, grammar, flashcard, forms */}
-    </main>
-  );
-}
-```
-
-Good:
-
-```tsx
-export function StaticLearningPage() {
-  return (
-    <LearningShell>
-      <LessonHeader />
-      <LearningModeTabs />
-      <LearningContent />
-    </LearningShell>
-  );
-}
-```
-
-### 3.2. Suggested structure
+### 3.1. App routes
 
 ```txt
-src/
-  components/
-    ui/
-      Button.tsx
-      IconButton.tsx
-      Select.tsx
-      Card.tsx
-      Badge.tsx
-      Input.tsx
-      SearchInput.tsx
-      Tabs.tsx
-      SegmentedControl.tsx
-      BottomSheet.tsx
-      Modal.tsx
-      EmptyState.tsx
-      StatCard.tsx
-      Skeleton.tsx
+src/app/
+  (auth)/
+    login/
+      page.tsx
 
-  features/
+  (app)/
+    layout.tsx
+    page.tsx
+
     hanzihome/
-      components/
-        shell/
-          LearningShell.tsx
-          LessonHeader.tsx
-          LearningModeTabs.tsx
-        vocabulary/
-          VocabularyOverview.tsx
-          VocabularyFilterPanel.tsx
-          VocabularyGrid.tsx
-          WordCard.tsx
-          FlashcardStudy.tsx
-          WordDetail.tsx
-          QuickJump.tsx
-        grammar/
-          GrammarWorkspace.tsx
-          GrammarNav.tsx
-          GrammarPointView.tsx
-          FormulaCard.tsx
-      hooks/
-        useLessonSelection.ts
-        useVocabularyFilters.ts
-        useFlashcardStudy.ts
-        useGrammarSelection.ts
-      utils/
-        vocabularyFilters.ts
-        learningProgress.ts
-        vocabularyViewModels.ts
-      types.ts
+      page.tsx
 
-  lib/
-    env.ts
-    supabase/
-      browser.ts
-      server.ts
-      middleware.ts
-      admin.ts
+    notes/
+      page.tsx
 
-  server/
-    db/
-      database.types.ts
-      queryKeys.ts
-      savedLessons.queries.ts
-      savedLessons.mutations.ts
-      vocabulary.queries.ts
-      vocabulary.mutations.ts
-      grammar.queries.ts
-      grammar.mutations.ts
-    actions/
-      savedLessons.actions.ts
-      vocabulary.actions.ts
-      grammar.actions.ts
-    schemas/
-      savedLesson.schema.ts
-      vocabulary.schema.ts
-      grammar.schema.ts
-    auth/
-      requireUser.ts
-      assertLessonOwner.ts
+  api/
+    learning-state/
+      route.ts
 ```
 
----
-
-## 4. Styling and Design System Rules
-
-### 4.1. rem-first and token-first
-
-Use `rem`, design tokens, Tailwind scale, `clamp()`, `minmax()`, and logical properties.
-
-Do not hard-code layout with `px`.
-
-Bad:
-
-```tsx
-<div className="w-[320px] h-[240px] rounded-[20px]" />
-```
-
-Good:
-
-```tsx
-<div className="w-full max-w-card rounded-2xl" />
-```
-
-Better:
-
-```css
-.card {
-  max-inline-size: var(--card-max);
-  border-radius: var(--radius-2xl);
-}
-```
-
-Allowed exceptions:
-
-1. Hairline borders if isolated and intentional.
-2. Third-party config that requires pixel values.
-3. Canvas/image intrinsic rendering where CSS layout is not affected.
-
-Prefer tokens anyway:
-
-```css
---border-thin: 0.0625rem;
-```
-
-### 4.2. Required base tokens
-
-```css
-:root {
-  --space-1: 0.25rem;
-  --space-2: 0.5rem;
-  --space-3: 0.75rem;
-  --space-4: 1rem;
-  --space-5: 1.25rem;
-  --space-6: 1.5rem;
-  --space-8: 2rem;
-  --space-10: 2.5rem;
-  --space-12: 3rem;
-
-  --radius-sm: 0.5rem;
-  --radius-md: 0.75rem;
-  --radius-lg: 1rem;
-  --radius-xl: 1.25rem;
-  --radius-2xl: 1.5rem;
-  --radius-pill: 999rem;
-
-  --shell-max: 80rem;
-  --reading-max: 60rem;
-  --flashcard-max: 48rem;
-  --sidebar-width: 14rem;
-  --filter-width: 17.5rem;
-
-  --bottom-nav-height: 4.75rem;
-  --topbar-height: 4rem;
-  --border-thin: 0.0625rem;
-}
-```
-
-### 4.3. Breakpoints
-
-Use `rem` / `em`, not `px`.
-
-```css
-@media (max-width: 40rem) {}
-@media (min-width: 40rem) {}
-@media (min-width: 64rem) {}
-@media (min-width: 80rem) {}
-```
-
-Meaning:
+Rules:
 
 ```txt
-< 24rem       small mobile
-<= 40rem      mobile
->= 40rem      tablet
->= 64rem      desktop
->= 80rem      wide
-```
-
-### 4.4. Global overflow guard
-
-```css
-html,
-body,
-#root {
-  inline-size: 100%;
-  min-block-size: 100%;
-  overflow-x: clip;
-}
-
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
-img,
-svg,
-canvas,
-video {
-  max-inline-size: 100%;
-  block-size: auto;
-}
-
-button,
-input,
-select,
-textarea {
-  font: inherit;
-  max-inline-size: 100%;
-}
-
-[data-shell],
-[data-page],
-[data-panel],
-[data-card],
-[data-grid-item] {
-  min-inline-size: 0;
-  max-inline-size: 100%;
-}
-```
-
-### 4.5. No className soup
-
-Bad:
-
-```tsx
-<button className="h-10 rounded-xl bg-red-500 px-3 text-sm font-black text-white shadow-sm hover:bg-red-600 disabled:opacity-50">
-  Save
-</button>
+Route pages must stay thin.
+Page files compose feature-level components.
+Do not put large UI directly inside route pages.
+Do not recreate /vocabulary.
+Do not recreate /grammar.
+Do not recreate old HSK routes.
+Do not recreate old import/reset routes.
 ```
 
 Good:
 
 ```tsx
-<Button variant="primary" size="md">
-  Save
-</Button>
+import { HanziHomePage as HanziHomeFeaturePage } from "@/features/hanzihome/HanziHomePage";
+
+export default function HanziHomePage() {
+ return <HanziHomeFeaturePage />;
+}
 ```
 
-Long classes are acceptable inside shared primitives, not scattered across feature pages.
+Bad:
+
+```tsx
+export default function HanziHomePage() {
+ return (
+  <main>
+   {/* 700 lines of lesson picker, vocab, grammar, review, modals */}
+  </main>
+ );
+}
+```
 
 ---
 
-## 5. Component System Rules
+### 3.2. HanziHome feature structure
 
-### 5.1. Required shared primitives
+```txt
+src/features/hanzihome/
+  HanziHomePage.tsx
+  HanziHomeWorkspace.tsx
+  static-data.ts
+  types.ts
 
-Use or create these before styling feature UI:
+  components/
+    LessonPicker.tsx
+    LessonOverview.tsx
 
-1. `Button`
-2. `IconButton`
-3. `Select`
-4. `SegmentedControl`
-5. `Tabs`
-6. `Card`
-7. `Badge`
-8. `Input`
-9. `SearchInput`
-10. `Textarea`
-11. `EmptyState`
-12. `BottomSheet`
-13. `Modal`
-14. `DropdownMenu`
-15. `SectionHeader`
-16. `StatCard`
-17. `Skeleton`
-18. `FormTextField`
-19. `FormTextarea`
-20. `FormSelect`
-21. `FormCheckbox`
-22. `FormSwitch`
-23. `FormErrorMessage`
-24. `FormActions`
+    VocabWorkspace.tsx
+    VocabList.tsx
+    VocabDetailPanel.tsx
 
-Do not create one-off button/select/card/form styles in feature files.
+    GrammarWorkspace.tsx
+    GrammarPointList.tsx
+    GrammarPointReader.tsx
+    GrammarPracticeMini.tsx
 
+    RadicalWorkspace.tsx
+
+    ReviewWorkspace.tsx
+
+  hooks/
+    useHanziHomeData.ts
+    useHanziHomeLesson.ts
+    useLearningState.ts
+    useVocabReviewSession.ts
+
+  utils/
+    vocab-view-model.ts
+    grammar-view-model.ts
+    learning-state.ts
+```
+
+Rules:
+
+```txt
+HanziHomeWorkspace owns high-level module selection only.
+VocabWorkspace owns vocabulary tab UI state only.
+GrammarWorkspace owns grammar tab UI state only.
+RadicalWorkspace is standalone and must not depend on selected lesson.
+ReviewWorkspace owns temporary review session state.
+static-data.ts maps static JSON into domain/view models.
+utils/*view-model.ts converts raw content into UI-ready view models.
+UI components should consume view models, not raw JSON directly.
+```
+
+Do not create parallel folders like:
+
+```txt
+features/vocabulary-v2
+features/grammar-new
+features/hsk
+features/learning-old
+```
+
+unless the user explicitly asks for a new architecture.
+
+---
+
+### 3.3. Shared UI structure
+
+```txt
+src/components/
+  layout/
+    Header.tsx
+    Sidebar.tsx
+
+  providers/
+    QueryProvider.tsx
+    ThemeProvider.tsx
+
+  ui/
+    badge.tsx
+    button.tsx
+    card.tsx
+    input.tsx
+    segmented-control.tsx
+    select.tsx
+    tabs.tsx
+
+    select/
+      index.tsx
+```
+
+Rules:
+
+```txt
+Shared UI primitives contain reusable styling.
+Feature files should not create one-off Button/Select/Card styles.
 If a UI pattern appears twice, extract it.
+Long className strings belong in shared primitives, not feature pages.
+```
 
-### 5.2. Variants
+---
 
-Repeated visual states must use variants via CVA, tailwind-variants, or an equivalent project pattern.
+### 3.4. Supabase and API structure
 
-Example:
+```txt
+src/lib/
+  supabase/
+    client.ts
+    server.ts
+    middleware.ts
+
+src/app/api/
+  learning-state/
+    route.ts
+```
+
+Rules:
+
+```txt
+Only /api/learning-state is required for current learning state.
+Do not recreate old vocab APIs.
+Do not recreate old grammar APIs.
+Do not recreate old HSK APIs.
+Do not recreate DOCX import/reset APIs.
+```
+
+---
+
+### 3.5. Static data structure
+
+```txt
+data/
+  hanzihome/
+    hanzihome_bundle_clean.json
+```
+
+Rules:
+
+```txt
+Static JSON is read-only from the app.
+Do not mutate this JSON from UI.
+Do not create local JSON write APIs.
+Do not import static content into Supabase.
+Convert raw JSON to view models before rendering.
+UI components should not know raw JSON internals like rawSections.
+```
+
+---
+
+### 3.6. Migration structure
+
+```txt
+supabase/
+  migrations/
+    YYYYMMDDHHMMSS_clean_hanzihome_learning_state.sql
+```
+
+Rules:
+
+```txt
+Keep migrations minimal.
+Do not keep legacy migrations that recreate old vocab/grammar tables.
+New DB changes must be explicit and reviewable.
+Never add tables for static lesson/vocab/grammar content unless explicitly requested.
+```
+
+---
+
+## 4. Legacy Modules Must Not Return
+
+Do not import, reuse, or recreate:
+
+```txt
+VocabularyLearningModule
+old GrammarCoachWorkspace
+old GrammarCoachCard
+old HSK modules
+old vocab CRUD hooks
+old grammar CRUD hooks
+old DOCX import/reset logic
+old normalized vocab/grammar Supabase tables
+old /vocabulary route
+old /grammar route
+old /api/vocab/*
+old /api/grammar/*
+old /api/hsk/*
+```
+
+Do not recreate these tables:
+
+```txt
+vocab_courses
+vocab_lessons
+vocab_entries
+user_vocab_entry_progress
+grammar_courses
+grammar_lessons
+grammar_points
+grammar_exercises
+user_grammar_point_progress
+user_grammar_exercise_attempts
+saved_lessons
+saved_vocabulary_items
+saved_grammar_points
+lesson_imports
+study_progress
+```
+
+If a task seems to require these, stop and ask for clarification.
+
+---
+
+## 5. Database Rules
+
+The current database model is intentionally simple.
+
+Required table:
+
+```txt
+public.user_learning_state
+```
+
+Expected columns:
+
+```txt
+user_id
+settings
+progress
+bookmarks
+review_history
+updated_at
+```
+
+Expected state shape:
 
 ```ts
-import { cva, type VariantProps } from "class-variance-authority";
+type UserLearningState = {
+ settings: {
+  lastLessonId?: string;
+  lastModule?: "overview" | "vocab" | "grammar" | "review" | "radicals";
+  density?: "comfortable" | "compact" | "focus";
+  vocabDetailTab?: string;
+ };
 
-export const buttonVariants = cva(
-  "inline-flex items-center justify-center font-bold transition-colors disabled:pointer-events-none disabled:opacity-50",
-  {
-    variants: {
-      variant: {
-        primary: "bg-primary text-primary-foreground hover:bg-primary/90",
-        secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/80",
-        ghost: "hover:bg-muted",
-        outline: "border border-border bg-background hover:bg-muted",
-        danger: "bg-destructive text-destructive-foreground hover:bg-destructive/90",
-        success: "bg-success text-success-foreground hover:bg-success/90",
-      },
-      size: {
-        sm: "h-8 rounded-lg px-3 text-sm",
-        md: "h-10 rounded-xl px-4 text-sm",
-        lg: "h-12 rounded-2xl px-5 text-base",
-        icon: "size-10 rounded-xl",
-      },
-    },
-    defaultVariants: {
-      variant: "primary",
-      size: "md",
-    },
+ progress: {
+  vocab?: Record<
+   string,
+   {
+    level: number;
+    status: "new" | "learning" | "known" | "hard";
+    lastReviewedAt?: string;
+   }
+  >;
+
+  grammar?: Record<
+   string,
+   {
+    level: number;
+    status: "new" | "learning" | "known" | "hard";
+    lastReviewedAt?: string;
+   }
+  >;
+ };
+
+ bookmarks: {
+  lessons?: string[];
+  vocab?: string[];
+  grammar?: string[];
+  radicals?: string[];
+ };
+
+ reviewHistory: Array<{
+  type: "vocab" | "grammar" | "radical";
+  id: string;
+  result: "again" | "hard" | "known";
+  answeredAt: string;
+ }>;
+};
+```
+
+Rules:
+
+```txt
+Use RLS.
+User can only manage their own row.
+Never trust user_id from client input.
+Derive user_id from authenticated session.
+Do not expose service role key.
+Do not use admin client for normal user learning state.
+```
+
+---
+
+## 6. Supabase Client Rules
+
+Expected clients:
+
+```txt
+src/lib/supabase/client.ts
+src/lib/supabase/server.ts
+src/lib/supabase/middleware.ts
+```
+
+Browser client:
+
+```txt
+Only for RLS-safe operations.
+Never import service role key.
+Never use it for privileged operations.
+```
+
+Server client:
+
+```txt
+Use in Server Components, Server Actions, and Route Handlers.
+Use cookie-aware Supabase SSR client.
+Do not import server client into Client Components.
+```
+
+Middleware client:
+
+```txt
+Keep middleware minimal.
+Use it for auth/session routing only.
+Do not fetch large app data in middleware.
+```
+
+Admin client:
+
+```txt
+Only if explicitly needed.
+Must be server-only.
+Must never be imported into Client Components.
+Must manually validate authorization.
+```
+
+---
+
+## 7. UI Primitive Rules
+
+### 7.1. Required shared primitives
+
+Use or create shared primitives before styling feature UI:
+
+```txt
+Button
+IconButton
+Select
+SimpleSelect or AppSelect
+SegmentedControl
+Tabs
+Card
+Badge
+Input
+SearchInput
+Textarea
+EmptyState
+Modal
+BottomSheet
+DropdownMenu
+SectionHeader
+StatCard
+Skeleton
+```
+
+Do not create one-off button/select/card styles in feature files.
+
+---
+
+### 7.2. Select rules
+
+The core Select must be a real Radix/shadcn-style primitive.
+
+Core primitive should export:
+
+```ts
+Select;
+SelectTrigger;
+SelectValue;
+SelectContent;
+SelectItem;
+```
+
+Accepted usage:
+
+```tsx
+<Select value={value} onValueChange={setValue}>
+ <SelectTrigger>
+  <SelectValue placeholder="Chọn bài học" />
+ </SelectTrigger>
+
+ <SelectContent>
+  <SelectItem value="hanyu2-bai-01">Bài 1: 田芳去哪儿了</SelectItem>
+ </SelectContent>
+</Select>
+```
+
+If there is an option-based wrapper, name it clearly:
+
+```txt
+SimpleSelect
+AppSelect
+```
+
+Do not export a native `<select>` wrapper as the core `Select`.
+
+Bad:
+
+```tsx
+export function Select(props) {
+ return <select {...props} />;
+}
+```
+
+Good:
+
+```tsx
+export { Select, SelectTrigger, SelectValue, SelectContent, SelectItem };
+```
+
+---
+
+### 7.3. Variants
+
+Repeated visual states must use variants through CVA or the project’s existing pattern.
+
+Good:
+
+```ts
+const buttonVariants = cva(
+ "inline-flex items-center justify-center font-bold transition-colors",
+ {
+  variants: {
+   variant: {
+    default: "...",
+    outline: "...",
+    ghost: "...",
+    danger: "...",
+   },
+   size: {
+    sm: "...",
+    md: "...",
+    lg: "...",
+    icon: "...",
+   },
   },
+ },
 );
 ```
 
----
-
-## 6. Layout Rules
-
-### 6.1. Logical properties
-
-Prefer:
-
-```css
-inline-size
-block-size
-margin-inline
-padding-inline
-inset-inline
-```
-
-over hard-coded left/right width logic in CSS modules/global CSS.
-
-### 6.2. No random grid templates
-
 Bad:
 
 ```tsx
-<div className="grid lg:grid-cols-[300px_minmax(0,1fr)] xl:grid-cols-[320px_minmax(0,1fr)]" />
+<button className="h-10 rounded-xl bg-red-500 px-3 text-sm font-black text-white shadow-sm hover:bg-red-600">
+ Save
+</button>
 ```
-
-Good:
-
-```tsx
-<LearningSplitLayout sidebar={<FilterPanel />} content={<VocabularyGrid />} />
-```
-
-or:
-
-```css
-.learning-split-layout {
-  display: grid;
-  grid-template-columns: var(--filter-width) minmax(0, 1fr);
-  gap: var(--space-5);
-}
-```
-
-### 6.3. Content-safe grids
-
-```css
-.vocab-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(min(100%, 16.5rem), 1fr));
-  gap: var(--space-4);
-}
-```
-
-Do not use fixed columns like `grid-cols-3` unless the content is guaranteed to fit.
-
-### 6.4. No fixed content width/height
-
-Bad:
-
-```tsx
-<div className="w-[760px] h-[420px]" />
-```
-
-Good:
-
-```css
-.flashcard-shell {
-  inline-size: 100%;
-  max-inline-size: var(--flashcard-max);
-  margin-inline: auto;
-}
-
-.flashcard-card {
-  min-block-size: 24rem;
-}
-```
-
-### 6.5. Bottom safe area
-
-```css
-.page-content {
-  padding-block-end: calc(
-    var(--bottom-nav-height) + env(safe-area-inset-bottom) + var(--space-6)
-  );
-}
-```
-
-Floating/debug buttons must not cover bottom nav.
 
 ---
 
-## 7. HanziHome Learning UI Rules
+## 8. HanziHome UI Rules
 
-### 7.1. Vocabulary Overview
+### 8.1. Overview
 
-Purpose: scan, filter, select, jump to detail, start study.
+Overview should guide the learner into the lesson.
 
-Cards show only:
-
-1. Hanzi
-2. pinyin
-3. Hán Việt
-4. Vietnamese meaning
-5. status badge
-6. optional one example preview
-
-Do not show full chiết tự, comparisons, or cultural notes in overview cards.
-
-### 7.2. Flashcard
-
-Before reveal, show only:
-
-1. progress
-2. large Hanzi
-3. reveal button
-4. previous / next
-
-After reveal, show:
-
-1. pinyin
-2. Hán Việt
-3. meaning
-4. one short example
-5. one warning if available
-6. rating actions: `Đã biết`, `Học lại`, `Còn khó`
-
-### 7.3. Word Detail
-
-Full content belongs in detail view:
-
-1. Meaning
-2. Hán Việt & Vietnamese connection
-3. Chiết tự / logic
-4. Collocations
-5. Examples
-6. Comparison
-7. Common mistakes
-8. China-Vietnam note
-
-### 7.4. Grammar
-
-Each grammar point must use:
-
-1. Logic cốt lõi
-2. Công thức
-3. Ví dụ nhanh
-4. Bẫy sai
-5. So sánh
-6. Practice
-
-No long unstructured article-like grammar pages.
-
-### 7.5. Quick Jump
-
-Desktop:
+Show:
 
 ```txt
-Normal content section, not floating by default.
+lesson title
+vocab count
+grammar point count
+real progress summary if available
+action cards
 ```
 
-Mobile:
+Action cards:
 
 ```txt
-Button opens BottomSheet.
+Học từ vựng
+Học ngữ pháp
+Ôn tập bài này
 ```
 
-Do not let chip lists overlay content.
+Do not show fake XP, fake streak, fake heatmap, or fake rewards.
+
+Only show stats from static data or user_learning_state.
 
 ---
 
-## 8. State Ownership Rules
+### 8.2. Vocabulary
 
-Before adding `useState`, Zustand, TanStack Query, Context, or form state, answer:
+Vocabulary tab is the highest-priority study surface.
+
+Layout:
+
+```txt
+Left panel:
+  Search input
+  Category groups
+  Word list
+  Status badge
+  Bookmark indicator
+
+Right panel:
+  Word header
+  Detail sections
+```
+
+Left panel requirements:
+
+```txt
+Search by Chinese word.
+Search by pinyin.
+Search by Hán Việt.
+Search by Vietnamese meaning.
+Group words by category.
+Show selected state clearly.
+Show status: new / learning / hard / known.
+Show bookmark indicator.
+Keep list scrollable.
+```
+
+Right panel header:
+
+```txt
+Hanzi large
+pinyin
+Hán Việt
+Vietnamese meaning
+part of speech if available
+level if available
+bookmark button
+status buttons
+```
+
+Status buttons:
+
+```txt
+Học mới
+Đang học
+Còn khó
+Đã biết
+```
+
+Detail section order:
+
+```txt
+1. Nghĩa
+2. Chiết tự / logic
+3. So sánh
+4. Kết hợp thường gặp
+5. Ví dụ
+6. Văn hóa
+7. Lưu ý lỗi sai
+```
+
+Rules:
+
+```txt
+Hide empty sections.
+Do not render raw arrays as flat paragraph spam.
+Each section must have a clear title.
+Long text must wrap nicely.
+Examples must render as cards.
+```
+
+Example card structure:
+
+```txt
+Chinese sentence: bold
+Pinyin: below
+Vietnamese translation: below
+Analysis/note: smaller text below
+```
+
+---
+
+### 8.3. Grammar
+
+Grammar tab is a reader first, not a coach screen.
+
+Minimum structure:
+
+```txt
+Grammar point list
+Grammar point reader
+Optional quick practice
+```
+
+Grammar reader should show:
+
+```txt
+Title
+Core explanation
+Formula / structure
+Examples
+Notes / traps
+Bookmark
+Status actions
+```
+
+Do not bring back the old grammar coach.
+
+---
+
+### 8.4. Review
+
+Review mode should be simple and useful.
+
+Review queue:
+
+```txt
+current lesson vocab
+current lesson grammar
+hard/learning first
+new next
+known last
+```
+
+Review card should show:
+
+```txt
+item type badge: vocab / grammar
+front side
+back side
+progress count
+```
+
+Actions:
+
+```txt
+Học lại
+Còn khó
+Đã biết
+```
+
+Keyboard shortcuts are allowed:
+
+```txt
+Space: flip
+1: again
+2: hard
+3: known
+ArrowRight: next
+```
+
+Do not implement advanced SRS unless explicitly requested.
+
+---
+
+### 8.5. Radical library
+
+Radical library is standalone.
+
+It should show:
+
+```txt
+all radicals from static JSON
+search
+radical list/grid
+detail panel
+index
+stroke count
+Vietnamese name/meaning
+variants if available
+recognition note if available
+distinguish note if available
+```
+
+Rules:
+
+```txt
+Do not depend on selected lesson.
+Do not claim radicals are related to selected lesson unless derived from vocab characters.
+Do not use placeholder slicing by lesson number.
+```
+
+---
+
+## 9. State Ownership Rules
+
+Before adding state, answer:
 
 ```txt
 Who owns this state?
@@ -661,55 +936,74 @@ Is it only temporary UI state?
 Is it form state?
 ```
 
-### 8.1. Decision tree
-
-| State type | Put it where | Examples |
-|---|---|---|
-| Shareable navigation state | URL search params / route params | lessonId, system, mode, submode, selectedWordId, grammarPointId |
-| Shareable filter/sort state | URL search params | status filter, keyword, category, sort, page |
-| Async/server/cache state | TanStack Query | Supabase rows, remote user data, generated content list |
-| Local temporary UI state | Component local state | modal open, active dropdown, answer revealed, current flashcard index |
-| Form draft state | TanStack Form | input values, dirty fields, touched fields, validation errors |
-| Cross-route persisted client state | Zustand or persistence layer | study progress, known/hard/learning status, user preferences |
-| Derived data | selector / `useMemo` / pure function | filtered words, progress counts, current selected item |
-| Non-rendering mutable value | `useRef` | timers, DOM refs, previous value |
-
-### 8.2. Shareability rule
-
-Before keeping state local, ask:
+Use URL/search params for shareable navigation state:
 
 ```txt
-If the user sends this page to someone else, should the receiver see the same thing?
-If the user reloads, should this state remain?
-If the user presses Back/Forward, should this state be restored?
+selected lesson id
+main module
+selected vocab id if shareable
+selected grammar point id if shareable
+search keyword if shareable
+filter if shareable
+sort if shareable
 ```
 
-If yes, use URL state.
+Use local component state for temporary UI state:
 
-Use URL/search params for:
+```txt
+dropdown open
+modal open
+answer revealed
+current review index
+hover/focus state
+section filter inside one panel
+```
 
-1. selected learning system
-2. lesson id
-3. main mode
-4. submode
-5. selected vocabulary word id
-6. selected grammar point id
-7. search keyword
-8. category filter
-9. status filter
-10. sorting
-11. pagination
-12. view density if it materially changes the page
+Use TanStack Query for async/server/cache state:
 
-Do not use URL/search params for:
+```txt
+user_learning_state
+Supabase reads/writes
+remote user data
+```
 
-1. modal open/closed
-2. dropdown open/closed
-3. unsaved form field values
-4. flashcard answer revealed
-5. transient hover/focus state
+Use derived selectors or useMemo for:
 
-### 8.3. URL state must be typed
+```txt
+filtered words
+grouped words
+selected word object
+selected grammar object
+progress totals
+status counts
+review queue
+```
+
+Do not store derived data in state.
+
+Bad:
+
+```tsx
+const [filteredWords, setFilteredWords] = useState(words);
+const [selectedWord, setSelectedWord] = useState(words[0]);
+```
+
+Good:
+
+```tsx
+const [selectedWordId, setSelectedWordId] = useState<string | null>(null);
+
+const selectedWord = useMemo(
+ () => words.find((word) => word.id === selectedWordId) ?? words[0] ?? null,
+ [words, selectedWordId],
+);
+```
+
+---
+
+## 10. URL State Rules
+
+URL state must be typed.
 
 Bad:
 
@@ -720,816 +1014,414 @@ const mode = searchParams.get("mode") as any;
 Good:
 
 ```ts
-const mode = parseLearningMode(searchParams.get("mode"));
+const module = parseHanziHomeModule(searchParams.get("module"));
 ```
 
 Example:
 
 ```ts
-const learningModeValues = ["vocabulary", "grammar"] as const;
-type LearningMode = (typeof learningModeValues)[number];
+const moduleValues = [
+ "overview",
+ "vocab",
+ "grammar",
+ "review",
+ "radicals",
+] as const;
 
-function parseLearningMode(value: string | null): LearningMode {
-  return learningModeValues.includes(value as LearningMode)
-    ? (value as LearningMode)
-    : "vocabulary";
+type HanziHomeModule = (typeof moduleValues)[number];
+
+function parseHanziHomeModule(value: string | null): HanziHomeModule {
+ return moduleValues.includes(value as HanziHomeModule)
+  ? (value as HanziHomeModule)
+  : "overview";
 }
 ```
 
 Invalid URL params must fall back safely.
 
-### 8.4. Do not duplicate state
-
-Bad:
-
-```ts
-const [items, setItems] = useState(vocabulary);
-const [filteredItems, setFilteredItems] = useState(vocabulary);
-const [selectedItem, setSelectedItem] = useState(vocabulary[0]);
-```
-
-Good:
-
-```ts
-const [selectedId, setSelectedId] = useState<string | null>(null);
-const [filters, setFilters] = useState<VocabularyFilters>(defaultFilters);
-
-const filteredItems = useMemo(
-  () => filterVocabulary(items, filters),
-  [items, filters],
-);
-
-const selectedItem = useMemo(
-  () => items.find((item) => item.id === selectedId) ?? null,
-  [items, selectedId],
-);
-```
-
-Store IDs, not duplicated objects.
-
-### 8.5. Do not store derived data
-
-Do not store:
-
-1. filtered list
-2. sorted list
-3. selected object
-4. progress totals
-5. status counts
-6. current lesson title
-7. grouped vocabulary
-8. visible cards
-9. grammar count
-10. vocabulary count
-
-Use pure functions/selectors.
-
-### 8.6. Reducer for multi-step flows
-
-Use `useReducer` when:
-
-1. multiple state values change together,
-2. transitions matter,
-3. component has modes/states,
-4. bugs are caused by partially updated state.
-
-Example:
-
-```ts
-type FlashcardState =
-  | { status: "question"; index: number }
-  | { status: "answer"; index: number }
-  | { status: "completed" };
-```
-
 ---
 
-## 9. Zustand, Context, Query Rules
+## 11. Component Boundary Rules
 
-### 9.1. Zustand
-
-Use Zustand only for state that is cross-route, persistent, or shared across distant components.
-
-Good candidates:
-
-1. study progress by word id
-2. known / hard / learning status
-3. user learning preferences
-4. persisted settings for flashcard behavior
-
-Bad candidates:
-
-1. modal open state
-2. dropdown state
-3. current input value
-4. selected tab if it belongs in URL
-5. form field values
-6. filtered list
-7. selected object derived from id
-
-Use selectors.
+No giant component.
 
 Bad:
 
-```ts
-const store = useLearningStore();
+```txt
+One component owns:
+lesson
+vocab
+grammar
+review
+filter
+progress
+API
+keyboard shortcut
+render logic
 ```
 
 Good:
 
-```ts
-const knownWordIds = useLearningStore((state) => state.knownWordIds);
-const markKnown = useLearningStore((state) => state.markKnown);
+```txt
+HanziHomeWorkspace:
+  high-level module and URL state
+
+VocabWorkspace:
+  vocabulary tab UI state
+
+VocabDetailPanel:
+  selected word rendering
+
+GrammarWorkspace:
+  grammar tab UI state
+
+RadicalWorkspace:
+  standalone radical library UI
+
+ReviewWorkspace:
+  temporary review session
+
+useLearningState:
+  persistence and user state updates
 ```
-
-### 9.2. Context
-
-Do not put frequently changing state in broad Context.
-
-Context is okay for:
-
-1. stable configuration
-2. locale
-3. theme
-4. narrow scoped provider
-5. stable services
-
-Context is risky for:
-
-1. every flashcard change
-2. every form input change
-3. current card index
-4. large vocabulary collections
-5. rapidly changing progress counters
-
-### 9.3. TanStack Query
-
-Use TanStack Query for async/server/cache state.
-
-Use it for:
-
-1. Supabase data
-2. remote generated lesson data
-3. user account data
-4. async save/load operations
-5. server mutations from Client Components
-
-Do not mirror query data into component state unless editing a draft.
-
-Bad:
-
-```ts
-const { data } = useQuery(...);
-const [items, setItems] = useState(data);
-```
-
-Good:
-
-```ts
-const { data: items = [] } = useQuery(...);
-```
-
-Query keys must be structured and stable.
-
-Example:
-
-```ts
-const savedLessonKeys = {
-  all: ["saved-lessons"] as const,
-  list: (userId: string) => [...savedLessonKeys.all, "list", userId] as const,
-  detail: (lessonId: string) => [...savedLessonKeys.all, "detail", lessonId] as const,
-};
-```
-
----
-
-## 10. Form Rules
-
-### 10.1. Use TanStack Form for non-trivial forms
-
-Use TanStack Form for:
-
-1. saved lesson editor
-2. vocabulary editor
-3. grammar editor
-4. settings forms
-5. profile forms
-6. forms with validation
-7. forms with async submit
-8. forms with dirty/touched/error state
-9. forms that may grow later
-
-Do not recreate complex form state with many `useState` calls.
-
-Bad:
-
-```ts
-const [title, setTitle] = useState("");
-const [pinyin, setPinyin] = useState("");
-const [meaning, setMeaning] = useState("");
-const [errors, setErrors] = useState({});
-const [isDirty, setIsDirty] = useState(false);
-const [isSubmitting, setIsSubmitting] = useState(false);
-```
-
-Good:
-
-```ts
-const form = useAppForm({
-  defaultValues,
-  validators: {
-    onSubmit: lessonSchema,
-  },
-  onSubmit: async ({ value }) => {
-    await saveLesson(value);
-  },
-});
-```
-
-### 10.2. Form ownership
-
-| Concern | Owner |
-|---|---|
-| Field value | TanStack Form |
-| Field touched/dirty | TanStack Form |
-| Field validation errors | TanStack Form |
-| Form submission pending | TanStack Form / mutation state |
-| Server save result | TanStack Query mutation or Server Action result |
-| Current form route | URL if shareable |
-| Modal open state | Local state |
-| Saved entity after submit | Query cache / database |
-| Toast after submit | UI side effect |
-
-Do not mirror form values into Zustand or local React state.
-
-### 10.3. Schema-first validation
-
-Use Zod or the project’s chosen schema system consistently.
 
 Rules:
 
-1. Define schemas outside components.
-2. Infer TypeScript types from schemas when possible.
-3. Validate at form/server boundaries.
-4. Show field errors near fields.
-5. Show form-level errors for cross-field/server issues.
-6. Do not scatter random validation `if` statements through JSX.
-
-Example:
-
-```ts
-const vocabularySchema = z.object({
-  hanzi: z.string().min(1, "Hán tự là bắt buộc"),
-  pinyin: z.string().min(1, "Pinyin là bắt buộc"),
-  hanViet: z.string().min(1, "Hán Việt là bắt buộc"),
-  meaning: z.string().min(1, "Nghĩa tiếng Việt là bắt buộc"),
-});
-
-type VocabularyFormValues = z.infer<typeof vocabularySchema>;
+```txt
+Components should have one clear job.
+Hooks should own reusable logic.
+Utils should own pure transformations.
+View models should prepare data for UI.
+Feature UI should not parse raw JSON deeply.
 ```
-
-### 10.4. Form UX
-
-1. Show required fields clearly.
-2. Show validation errors near fields.
-3. Disable submit while submitting.
-4. Prevent double submit.
-5. Preserve input on validation error.
-6. Confirm destructive actions.
-7. Use toast for save success/failure.
-8. Use form-level alert for server errors.
-9. Do not clear form after failed submit.
 
 ---
 
-## 11. Next.js Server/Client Boundary Rules
+## 12. Server / Client Boundary Rules
 
-### 11.1. Before adding `"use client"`
-
-Ask:
-
-```txt
-Does this component really need browser interactivity?
-Does it use browser APIs?
-Does it use hooks?
-Does it need local state?
-Does it need event handlers?
-```
-
-Default to Server Components for:
-
-1. static/read-heavy content
-2. lesson pages
-3. vocabulary detail pages
-4. grammar reading pages
-5. data loading from database
-6. SEO/shareable pages
-7. content that does not need browser state
+Default to Server Components for static/read-heavy content.
 
 Use Client Components only for:
 
-1. flashcard interaction
-2. filters with live UI
-3. forms
-4. modals
-5. dropdowns
-6. audio/player controls
-7. Hanzi Writer interaction
-8. Lexical editor
-9. resizable panels
-10. browser APIs
+```txt
+interactive lesson selection
+tabs
+filters
+dropdowns
+review cards
+bookmark/status buttons
+forms
+modals
+audio/player controls
+Hanzi Writer
+browser APIs
+```
 
 Do not mark an entire page as `"use client"` because one child needs interactivity.
 
+Thin route pages should generally stay server-side unless necessary.
+
+Do not import server-only code into Client Components.
+
+---
+
+## 13. Styling Rules
+
+Use:
+
+```txt
+Tailwind scale
+design tokens
+rem-based sizes
+grid/flex/gap
+minmax()
+clamp()
+logical properties where useful
+```
+
+Avoid:
+
+```txt
+random fixed px values
+negative margins
+transform scaling to hide layout bugs
+magic widths
+horizontal overflow
+className soup in feature files
+```
+
+Shared primitives may contain longer className strings.
+
+Feature files should stay readable.
+
+Good layout:
+
+```tsx
+<div className="mx-auto flex w-full max-w-7xl flex-col gap-4">...</div>
+```
+
+Bad layout:
+
+```tsx
+<div className="ml-[-20px] w-[1390px] scale-[0.96]">...</div>
+```
+
+---
+
+## 14. Accessibility Rules
+
+Controls must be accessible.
+
+Rules:
+
+```txt
+Use real buttons for actions.
+Use real links for navigation.
+Icon buttons need aria-label.
+Dropdowns must be keyboard accessible.
+Dialogs and sheets must handle focus.
+Do not remove focus outlines unless replacing with visible focus style.
+Color cannot be the only status indicator.
+Inputs need labels or accessible names.
+Text contrast must be readable.
+```
+
 Bad:
 
 ```tsx
-"use client";
-
-export default function LessonPage() {
-  return (
-    <>
-      <StaticLessonContent />
-      <FlashcardStudy />
-    </>
-  );
-}
+<div onClick={handleNext}>Next</div>
 ```
 
 Good:
 
 ```tsx
-export default async function LessonPage() {
-  const lesson = await getLessonById(...);
-
-  return (
-    <>
-      <StaticLessonContent lesson={lesson} />
-      <FlashcardStudy initialItems={lesson.vocabulary} />
-    </>
-  );
-}
+<button type="button" onClick={handleNext}>
+ Next
+</button>
 ```
-
-Only `FlashcardStudy` should be client-side.
-
-### 11.2. Current Next/React rule
-
-This project uses Next 16 and React 19.
-
-Before using older patterns, check current official docs and compatibility.
-
-Rules:
-
-1. Do not copy old Next tutorials blindly.
-2. Prefer Server Components for static/read-heavy content.
-3. Keep Client Component boundaries small.
-4. Do not put heavy static content into client state.
-5. Do not fetch the same data server/client without reason.
-6. React 19 form/action APIs may be considered where appropriate, but complex app forms should remain TanStack Form for consistency.
 
 ---
 
-## 12. Supabase Rules
+## 15. Data and View Model Rules
 
-### 12.1. Separate clients
-
-Never use one Supabase client everywhere.
-
-Expected files:
+Static data flow:
 
 ```txt
-src/lib/supabase/
-  browser.ts
-  server.ts
-  middleware.ts
-  admin.ts
+raw JSON
+→ normalization / parsing
+→ domain model
+→ view model
+→ UI
 ```
 
-### 12.2. Browser client
+Do not scatter defensive raw JSON checks across UI components.
 
-Use only for RLS-safe client operations.
-
-Rules:
-
-1. Only use public anon/publishable key.
-2. Never import service role key.
-3. Never expose privileged tables.
-4. RLS must protect all browser-accessed data.
-
-### 12.3. Server client
-
-Use in Server Components, Server Actions, and Route Handlers.
-
-Rules:
-
-1. Use cookie-aware Supabase SSR client.
-2. Do not use browser client on the server.
-3. Do not use server client in Client Components.
-4. Keep auth/session handling centralized.
-
-### 12.4. Middleware client
-
-Rules:
-
-1. Keep middleware minimal.
-2. Middleware is for auth/session routing, not page data.
-3. Do not fetch large app data in middleware.
-4. Do not put business logic in middleware.
-
-### 12.5. Admin client
-
-Admin/service role client is server-only and dangerous.
-
-Rules:
-
-1. Must import `"server-only"`.
-2. Never import this file into Client Components.
-3. Never expose service role key.
-4. Use only for trusted server-side jobs.
-5. Prefer RLS-aware server client whenever possible.
-6. Every admin action must validate authorization manually.
-
----
-
-## 13. Environment Variables
-
-Public browser-safe env vars must use:
+Good:
 
 ```txt
-NEXT_PUBLIC_*
+buildVocabViewModel()
+buildGrammarViewModel()
 ```
 
-Secret env vars must not use `NEXT_PUBLIC_`.
-
-Expected:
-
-```txt
-NEXT_PUBLIC_SUPABASE_URL
-NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY
-SUPABASE_SERVICE_ROLE_KEY
-DATABASE_URL
-DIRECT_URL
-```
-
-Rules:
-
-1. Never log secrets.
-2. Never commit `.env`.
-3. Never expose service role key.
-4. Validate required env vars at the boundary.
-5. Do not scatter `process.env.*` across feature files.
-
-Recommended helper:
+UI should receive clean fields like:
 
 ```ts
-export const env = {
-  supabaseUrl: requireEnv("NEXT_PUBLIC_SUPABASE_URL"),
-  supabasePublishableKey: requireEnv("NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY"),
-  supabaseServiceRoleKey: process.env.SUPABASE_SERVICE_ROLE_KEY,
-  databaseUrl: process.env.DATABASE_URL,
+type VocabViewModel = {
+ id: string;
+ word: string;
+ pinyin: string;
+ hanViet: string;
+ meaning: string;
+ category: string;
+ examplesParsed: VocabExample[];
+ detailSections: Array<{
+  key: string;
+  title: string;
+  lines: string[];
+ }>;
 };
-
-function requireEnv(name: string): string {
-  const value = process.env[name];
-
-  if (!value) {
-    throw new Error(`Missing environment variable: ${name}`);
-  }
-
-  return value;
-}
 ```
+
+UI should not need to know raw `rawSections` internals.
 
 ---
 
-## 14. Data Access Layer Rules
+## 16. Forms
 
-Do not call Supabase directly from random components.
+Use TanStack Form only for non-trivial forms.
 
-Create a data access layer.
+Current HanziHome core does not require lesson/vocab/grammar CRUD forms.
 
-Suggested:
+Do not add forms for editing static JSON content unless explicitly requested.
+
+If forms are added later:
 
 ```txt
-src/server/db/
-  lessons.queries.ts
-  lessons.mutations.ts
-  vocabulary.queries.ts
-  vocabulary.mutations.ts
-  grammar.queries.ts
-  grammar.mutations.ts
-
-src/server/actions/
-  lessons.actions.ts
-  vocabulary.actions.ts
-  grammar.actions.ts
-```
-
-Rules:
-
-1. Queries go in `*.queries.ts`.
-2. Mutations go in `*.mutations.ts` or Server Actions.
-3. UI components call hooks/actions, not raw database code.
-4. All server DB files import `"server-only"`.
-5. Validate inputs before mutation.
-6. Return typed results.
-
-Bad:
-
-```tsx
-const supabase = createClient(...);
-const { data } = await supabase.from("lessons").select("*");
-```
-
-inside a random component.
-
-Good:
-
-```ts
-const lesson = await getLessonById(lessonId);
+Use schema validation.
+Define schemas outside components.
+Show field errors near fields.
+Disable submit while submitting.
+Prevent double submit.
+Preserve input on validation error.
 ```
 
 ---
 
-## 15. Server Actions and Route Handlers
+## 17. Error, Empty, Loading States
 
-### 15.1. Server Actions
+Every data-rendering surface must handle:
 
-Use Server Actions for mutations:
-
-1. create lesson
-2. update lesson
-3. delete lesson
-4. save vocabulary item
-5. update grammar point
-6. save progress to server
-7. import saved AI lesson data
-
-Server Actions must:
-
-1. be async,
-2. validate input with Zod,
-3. check auth,
-4. check authorization/ownership,
-5. perform mutation,
-6. revalidate affected routes/tags if needed,
-7. return typed success/error result,
-8. not leak raw database errors to UI.
-
-Example:
-
-```ts
-type ActionResult<T> =
-  | { ok: true; data: T }
-  | { ok: false; error: string; fieldErrors?: Record<string, string[]> };
+```txt
+loading
+empty
+error
+no results after filtering
 ```
 
-### 15.2. Route Handlers
+Examples:
 
-Use Route Handlers when:
+```txt
+Không có từ nào khớp bộ lọc.
+Thử đổi từ khóa hoặc reset bộ lọc.
+```
 
-1. Client Components need a conventional API endpoint.
-2. Webhooks are needed.
-3. External services call the app.
-4. File upload/download endpoints are needed.
-5. Streaming/custom response behavior is needed.
+```txt
+Bài này chưa có điểm ngữ pháp.
+```
 
-Route Handlers must:
+```txt
+Không có bộ thủ phù hợp bộ lọc.
+```
 
-1. validate params/body,
-2. check auth when needed,
-3. return proper HTTP status,
-4. avoid leaking secrets,
-5. not contain UI logic.
+Do not leave blank white panels.
+
+Server errors should return user-safe messages.
+
+Do not leak raw database errors to UI.
 
 ---
 
-## 16. Auth, RLS, and Security
+## 18. Import and Naming Rules
+
+Imports should be grouped:
+
+```txt
+React / framework
+external libraries
+shared UI
+feature components
+hooks / utils
+types
+```
+
+Use `import type` for type-only imports.
+
+Good component names:
+
+```txt
+HanziHomeWorkspace
+LessonOverview
+VocabWorkspace
+VocabList
+VocabDetailPanel
+GrammarWorkspace
+GrammarPointReader
+RadicalWorkspace
+ReviewWorkspace
+```
+
+Avoid:
+
+```txt
+Box
+Thing
+Content
+Card2
+NewUI
+Temp
+```
+
+Good function names:
+
+```txt
+buildVocabViewModel
+buildGrammarViewModel
+filterVocabulary
+getReviewQueue
+normalizeLearningState
+```
+
+Avoid:
+
+```txt
+flag
+check
+open2
+showThing
+handleStuff
+```
+
+---
+
+## 19. No Junk Rules
+
+Do not commit:
+
+```txt
+commented-out code
+vague TODOs
+console logs
+debug panels
+unused files
+dead CSS
+duplicated constants
+temporary names
+fake data
+```
+
+Allowed TODO format:
+
+```ts
+// TODO(hanzihome-review): Add spaced repetition after the basic review flow is stable.
+```
+
+---
+
+## 20. Security Rules
 
 Assume every client request is untrusted.
 
-Database rules:
+Rules:
 
-1. Enable RLS on user-owned tables.
-2. Policies must restrict rows by `auth.uid()` or equivalent ownership.
-3. Never rely only on UI hiding.
-4. Browser client must be safe under RLS.
-5. Admin client bypasses RLS, so every admin call needs manual authorization.
-6. Never use service role for normal user CRUD if RLS client can do it safely.
-
-App rules:
-
-1. Check authenticated user on server before user-specific reads/writes.
-2. Check ownership before update/delete.
-3. Do not accept `user_id` from the client as trusted.
-4. Derive `user_id` from authenticated session.
-5. Do not expose private data in public routes.
-
-Bad:
-
-```ts
-await supabase
-  .from("saved_lessons")
-  .update(input)
-  .eq("id", input.id);
+```txt
+Enable RLS on user-owned tables.
+Restrict rows by auth.uid().
+Never trust client user_id.
+Derive user_id from authenticated session.
+Never expose service role key.
+Never disable RLS to fix access.
+Never log secrets.
+Never commit .env.
+Never render unsanitized HTML from user or AI content.
 ```
 
-Good:
-
-```ts
-const user = await requireUser();
-
-await supabase
-  .from("saved_lessons")
-  .update(safeInput)
-  .eq("id", lessonId)
-  .eq("user_id", user.id);
-```
-
-Never:
-
-1. expose service role key,
-2. disable RLS to “fix” access,
-3. trust client user ID,
-4. commit `.env`,
-5. log tokens/cookies/secrets,
-6. put secrets in client bundles,
-7. render unsanitized HTML from user/AI content,
-8. use admin client for normal user operations,
-9. skip auth checks in mutations,
-10. leak raw database errors to users.
+Normal user learning state should use RLS-safe server/client logic, not service role bypass.
 
 ---
 
-## 17. Postgres / Database Rules
+## 21. Performance Rules
 
-Database changes must be explicit and reviewable.
-
-Rules:
-
-1. Do not change DB schema from UI code.
-2. Use migrations for schema changes.
-3. Keep migration files small and named clearly.
-4. Never edit an already-applied production migration.
-5. Add indexes for frequent filters/searches.
-6. Add constraints for required integrity.
-7. Use foreign keys for relations.
-8. Prefer DB constraints over UI-only validation.
-9. Keep enum-like values consistent between DB and TypeScript.
-10. Avoid storing large derived blobs if they can be computed.
-
-Suggested user-owned tables:
-
-```txt
-saved_lessons
-saved_vocabulary_items
-saved_grammar_points
-study_progress
-lesson_imports
-```
-
-Every user-owned table should usually include:
-
-```txt
-id
-user_id
-created_at
-updated_at
-```
-
-Common constraints:
-
-```txt
-NOT NULL
-UNIQUE where appropriate
-CHECK for enum-like status
-FOREIGN KEY
-```
-
-### 17.1. Database types
-
-Generate or maintain database types.
-
-Expected:
-
-```txt
-src/server/db/database.types.ts
-```
-
-Use typed aliases:
-
-```ts
-type SavedLessonRow = Database["public"]["Tables"]["saved_lessons"]["Row"];
-type SavedLessonInsert = Database["public"]["Tables"]["saved_lessons"]["Insert"];
-type SavedLessonUpdate = Database["public"]["Tables"]["saved_lessons"]["Update"];
-```
-
-UI should not consume raw database rows directly.
+Avoid unnecessary rerenders.
 
 Use:
 
 ```txt
-Database row → domain model → view model → UI
+stable IDs
+derived selectors
+useMemo for expensive transformations
+component boundaries
+pagination/grouping for large lists
 ```
-
-### 17.2. `pg` rule
-
-Use direct Postgres only when:
-
-1. Supabase client is insufficient,
-2. migration scripts need direct DB,
-3. batch scripts need SQL,
-4. server-only analytics/maintenance needs it.
-
-Rules:
-
-1. `pg` must never be imported into Client Components.
-2. `pg` modules must import `"server-only"` in app code.
-3. Use parameterized queries.
-4. Never concatenate user input into SQL.
-5. Close/reuse pools correctly.
-6. Prefer Supabase client for normal CRUD unless there is a clear reason.
-
-Bad:
-
-```ts
-await client.query(`select * from lessons where id = '${id}'`);
-```
-
-Good:
-
-```ts
-await client.query("select * from lessons where id = $1", [id]);
-```
-
----
-
-## 18. Import Saved Lesson Data
-
-AI-prepared lesson data is untrusted input.
-
-Before saving imported data:
-
-1. validate schema,
-2. normalize strings,
-3. generate stable IDs/slugs,
-4. check duplicates,
-5. limit payload size,
-6. reject malformed examples,
-7. preserve raw input only if needed,
-8. store normalized version for UI.
-
-Do not let imported content crash the app.
-
-Do not render imported HTML unsafely.
-
----
-
-## 19. Caching and Revalidation
-
-Before adding caching, decide:
-
-```txt
-Is this user-specific?
-Can it be public?
-How stale can it be?
-What mutation invalidates it?
-```
-
-Rules:
-
-1. User-specific data must not be cached publicly.
-2. Public/static lesson data may be cached.
-3. After mutations, revalidate affected paths/tags or invalidate TanStack Query cache.
-4. Do not serve another user’s data from cache.
-5. Avoid duplicate fetches across server/client.
-
----
-
-## 20. Performance Rules
-
-### 20.1. Rendering
-
-Avoid rerendering a full grid when one item changes.
-
-Use:
-
-1. stable item IDs,
-2. memoized selectors,
-3. component boundaries,
-4. `React.memo` only where it helps,
-5. stable callbacks when they prevent real rerenders.
-
-Do not add `useMemo` and `useCallback` everywhere. Use them when they prevent real work or stabilize props for memoized children.
-
-### 20.2. Large lists
-
-If a list grows beyond roughly 200 visible items or card rendering becomes heavy, use pagination, grouping, or virtualization.
-
-Do not render huge hidden lists just because CSS hides them.
-
-### 20.3. Expensive work
 
 Do not filter/sort/parse directly inside JSX.
 
@@ -1544,25 +1436,12 @@ Bad:
 
 Good:
 
-```ts
+```tsx
 const visibleItems = useMemo(
-  () => getVisibleVocabulary(items, filters, sort),
-  [items, filters, sort],
+ () => getVisibleItems(items, filters),
+ [items, filters],
 );
 ```
-
-### 20.4. Dependencies and bundle
-
-Before adding a dependency:
-
-1. Check if the project already has an equivalent.
-2. Check official docs/changelog.
-3. Check compatibility with Next 16 and React 19.
-4. Check bundle impact.
-5. Check if maintained.
-6. Explain why needed.
-
-Do not add a dependency for one small helper.
 
 Do not import whole icon packs.
 
@@ -1578,361 +1457,86 @@ Good:
 import { BookOpen, GraduationCap } from "lucide-react";
 ```
 
-### 20.5. CSS performance
-
-Avoid:
-
-```css
-transition: all;
-```
-
-Prefer:
-
-```css
-transition-property: color, background-color, border-color, box-shadow, transform;
-```
-
-Avoid animating layout-heavy properties:
-
-1. width,
-2. height,
-3. top,
-4. left,
-5. margin.
-
 ---
 
-## 21. Library Update Policy
+## 22. Dependency Rules
 
-Before installing, updating, or replacing a library:
+Before adding a dependency:
 
-1. Inspect `package.json`.
-2. Check official docs/changelog.
-3. Check compatibility with Next 16 and React 19.
-4. Check whether the project already has a library for the same job.
-5. Check bundle impact.
-6. Check if the change creates migration work.
-7. Explain why the dependency is needed.
+```txt
+Check package.json.
+Check whether the project already has an equivalent.
+Check compatibility with Next 16 and React 19.
+Check bundle impact.
+Explain why it is needed.
+```
 
-Suggested update groups:
+Do not add a dependency for one small helper.
 
-1. Next + eslint-config-next together.
-2. React + React DOM + @types/react together.
-3. TanStack packages together only after checking compatibility.
-4. Lexical packages together.
-5. Tailwind packages together.
-6. Supabase packages together.
-
-Do not update everything blindly in one commit unless explicitly requested.
+Do not update everything blindly in one commit.
 
 Current library roles:
 
-| Library | Role |
-|---|---|
-| Next | App framework, routing, server/client boundary |
-| React | UI rendering and local component state |
-| TanStack Query | async/server/cache state |
-| TanStack Form | complex form state and validation |
-| TanStack Table | real data tables, not layout grids |
-| Zustand | persisted/cross-route client state with selectors |
-| Zod | schemas and validation |
-| Base UI / Radix Slot | accessible primitives/composition |
-| Lexical | rich text editor |
-| Hanzi Writer | stroke animation / character writing |
-| pinyin-pro | pinyin processing |
-| date-fns | date formatting/manipulation |
-| lucide-react | icons, direct imports only |
-| CVA / clsx / tailwind-merge | component variants and class merging |
-| Sonner | toast notifications |
-| react-resizable-panels | resizable split panels only when needed |
-| pg | server-only direct Postgres, scripts, special SQL tasks |
+```txt
+Next: app framework and routing
+React: UI rendering and local component state
+TanStack Query: async/server/cache state
+Zod: validation
+Zustand: persisted/cross-route state if really needed
+Radix / shadcn-style primitives: accessible UI primitives
+CVA / clsx / tailwind-merge: component variants and class merging
+Lucide: icons
+Sonner: toast
+Hanzi Writer: character writing/stroke animation
+pinyin-pro: pinyin processing
+Supabase: auth and user_learning_state
+```
 
 Do not misuse libraries:
 
-1. Do not use TanStack Table for layout cards.
-2. Do not use Zustand for form field state.
-3. Do not use Context as a global dumping ground.
-4. Do not use Query for local UI state.
-5. Do not use Lexical for plain text inputs.
-6. Do not use resizable panels on mobile unless there is a clear UX reason.
-
----
-
-## 22. Accessibility Rules
-
-1. Use real buttons for actions.
-2. Use real links for navigation.
-3. Icon buttons need `aria-label`.
-4. Dialogs and bottom sheets must trap focus.
-5. Dropdowns must be keyboard accessible.
-6. Do not remove focus outlines unless replacing them with visible focus styles.
-7. Color cannot be the only status indicator.
-8. Form inputs need labels or accessible names.
-9. Text contrast must be readable.
-10. Components must support keyboard operation.
-
-Bad:
-
-```tsx
-<div onClick={handleNext}>Next</div>
-```
-
-Good:
-
-```tsx
-<button type="button" onClick={handleNext}>
-  Next
-</button>
+```txt
+Do not use TanStack Query for local UI state.
+Do not use Zustand for form field state.
+Do not use Context as global dumping ground.
+Do not use TanStack Table for layout cards.
+Do not use Lexical for plain text inputs.
 ```
 
 ---
 
-## 23. Data, View Model, and Rendering Rules
+## 23. Required Agent Workflow
 
-### 23.1. Validate at the boundary
-
-For static JSON / saved lesson data:
+Before coding, report briefly:
 
 ```txt
-raw JSON → schema validation / normalization → typed domain model → view model → UI
+1. Affected feature/page/component.
+2. Existing patterns to reuse.
+3. State ownership plan.
+4. Server/client boundary.
+5. Files likely to change.
+6. Checks to run.
 ```
 
-Do not scatter defensive checks everywhere in UI.
+After coding, report:
 
-### 23.2. View models
-
-Create display-ready view models.
-
-Example:
-
-```ts
-type VocabularyCardViewModel = {
-  id: string;
-  hanzi: string;
-  pinyin: string;
-  hanViet: string;
-  meaning: string;
-  status: StudyStatus;
-  examplePreview?: string;
-};
+```txt
+1. Files changed.
+2. Components extracted/reused.
+3. State ownership changes.
+4. Server/Supabase/DB changes, if any.
+5. Styling/token changes.
+6. Performance considerations.
+7. Checks run.
+8. Remaining TODOs/risks.
 ```
 
-UI components should not know the raw JSON or raw DB row shape.
+Do not start by dumping more JSX into a huge existing component.
 
 ---
 
-## 24. Error, Empty, Loading States
+## 24. Final Report Format
 
-Every data-rendering page must handle:
-
-1. loading,
-2. empty,
-3. error,
-4. no results after filtering.
-
-Examples:
-
-```txt
-Không có thẻ nào khớp bộ lọc.
-Thử đổi trạng thái hoặc reset bộ lọc.
-[Reset bộ lọc]
-```
-
-```txt
-Bài này chưa có nội dung đã soạn.
-Bạn có thể thêm dữ liệu JSON cho bài này.
-```
-
-Do not leave blank white panels.
-
-Server errors should be logged safely and returned as user-safe messages.
-
-Bad:
-
-```ts
-return { error: error.message };
-```
-
-Good:
-
-```ts
-console.error("updateLesson failed", {
-  lessonId,
-  userId: user.id,
-  cause: error,
-});
-
-return {
-  ok: false,
-  error: "Không thể lưu bài học. Vui lòng thử lại.",
-};
-```
-
-Do not log secrets or sensitive payloads.
-
----
-
-## 25. Import, Naming, Junk Rules
-
-### 25.1. Imports
-
-1. Remove unused imports.
-2. Use `import type` for type-only imports.
-3. Keep imports grouped:
-   - React / framework
-   - external libraries
-   - shared UI
-   - feature components
-   - hooks/utils
-   - types
-
-Example:
-
-```ts
-import { useMemo, useState } from "react";
-import type { ReactNode } from "react";
-
-import { Button } from "@/components/ui/Button";
-
-import type { VocabularyItem } from "../types";
-```
-
-### 25.2. Names
-
-Good component names:
-
-```txt
-LearningShell
-LessonHeader
-VocabularyOverview
-VocabularyFilterPanel
-WordCard
-FlashcardStudy
-GrammarWorkspace
-FormulaCard
-```
-
-Avoid:
-
-```txt
-Box
-Thing
-Content
-StaticPart
-Card2
-NewUI
-Temp
-```
-
-Good function names:
-
-```txt
-filterVocabulary
-sortVocabulary
-getStudyProgress
-normalizeLessonData
-buildVocabularyViewModel
-```
-
-Good boolean names:
-
-```txt
-isAnswerRevealed
-hasExamples
-canGoNext
-shouldShowFilterSheet
-```
-
-Avoid:
-
-```txt
-flag
-check
-open2
-showThing
-```
-
-### 25.3. No junk
-
-Do not commit:
-
-1. commented-out code,
-2. vague TODOs,
-3. console logs,
-4. debug panels in production,
-5. unused files,
-6. dead CSS,
-7. duplicated constants,
-8. temporary names.
-
-Allowed TODO format:
-
-```ts
-// TODO(hanzihome-ui): Replace this fallback after saved lesson schema v2 is finalized.
-```
-
----
-
-## 26. Testing and QA
-
-If testing tools exist, add tests for:
-
-1. pure utilities,
-2. filtering/sorting logic,
-3. learning progress calculation,
-4. flashcard reducer,
-5. data normalization,
-6. server validation schemas.
-
-At minimum, pure functions must be easy to test.
-
-Manual QA checklist:
-
-1. Desktop wide.
-2. Desktop normal.
-3. Tablet.
-4. Mobile.
-5. No horizontal overflow.
-6. Flashcard before reveal.
-7. Flashcard after reveal.
-8. Empty filter.
-9. No lesson selected.
-10. Long Chinese title.
-11. Long Vietnamese meaning.
-12. Long pinyin.
-13. Bottom nav.
-14. Modal/bottom sheet.
-15. Keyboard navigation.
-16. Server mutation success.
-17. Server mutation error.
-18. Auth/ownership path if relevant.
-
----
-
-## 27. State Review Checklist
-
-Before adding state, answer:
-
-```txt
-1. Is this state shareable?
-2. Should it be in the URL?
-3. Can it be derived?
-4. Is it server/cache state?
-5. Is it form state?
-6. Is it cross-route persisted state?
-7. Can it stay local?
-8. Does it need a reducer?
-9. Will it cause broad rerenders?
-10. What resets it?
-```
-
-If these questions are not answered, do not add the state yet.
-
----
-
-## 28. Final Report Requirements
-
-For every task, final report must include:
+Every task final report should include:
 
 ```txt
 Changed files:
@@ -1944,27 +1548,15 @@ Components extracted/reused:
 State ownership:
 - URL:
 - Local:
-- TanStack Form:
 - TanStack Query:
-- Zustand:
 - Derived selectors:
-
-Forms:
-- Schema:
-- Validation:
-- Submit owner:
-- Error handling:
 
 Server/client boundary:
 - Server Components:
 - Client Components:
-- Server Actions:
 - Route Handlers:
 
 Supabase/DB:
-- Browser client:
-- Server client:
-- Admin client:
 - Tables touched:
 - Migrations:
 - RLS impact:
@@ -1983,48 +1575,51 @@ Remaining TODOs/risks:
 - ...
 ```
 
-If an area was not touched, explicitly say so.
+If an area was not touched, say so.
 
 ---
 
-## 29. Definition of Done
+## 25. Definition of Done
 
 A task is done only when:
 
-1. UI works on mobile, tablet, desktop.
-2. No horizontal overflow exists.
-3. TypeScript passes.
-4. ESLint passes.
-5. Build passes.
-6. No new warnings are introduced.
-7. No unused imports/variables remain.
-8. Reusable UI patterns are extracted.
-9. Repeated visual states use variants.
-10. State ownership is correct.
-11. Derived data is not stored as state.
-12. Forms use TanStack Form + schema validation when non-trivial.
-13. Server/client boundary is correct.
-14. Auth/ownership checks exist for mutations.
-15. No secrets are exposed.
-16. Existing saved lesson data still renders.
-17. Final report is clear.
+```txt
+UI works on mobile, tablet, desktop.
+No horizontal overflow exists.
+TypeScript passes.
+ESLint passes.
+Build passes.
+No new warnings are introduced.
+No unused imports/variables remain.
+Reusable UI patterns are extracted.
+Repeated visual states use variants.
+State ownership is correct.
+Derived data is not stored as state.
+Server/client boundary is correct.
+Auth/ownership checks exist for user mutations.
+No secrets are exposed.
+Static JSON content still renders.
+Final report is clear.
+```
 
 ---
 
-## 30. If Unsure
+## 26. If Unsure
 
 If a requested change would make the code dirtier, stop and propose a cleaner alternative.
 
 Prefer:
 
-1. extracting a component,
-2. adding a variant,
-3. creating a hook,
-4. adding a utility,
-5. normalizing data,
-6. reducing state,
-7. moving shareable state to URL,
-8. moving server logic to server layer,
+```txt
+extracting a component
+adding a variant
+creating a hook
+adding a pure utility
+normalizing data
+reducing state
+moving shareable state to URL
+moving persistence to useLearningState
+```
 
 over patching a page with more one-off JSX.
 
