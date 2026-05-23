@@ -1,6 +1,7 @@
 "use client";
 
-import { Plus, Trash2 } from "lucide-react";
+import { useState } from "react";
+import { ChevronDown, Plus, Trash2 } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -47,6 +48,50 @@ function Field({
   );
 }
 
+function Section({
+  title,
+  summary,
+  defaultOpen = false,
+  children,
+}: {
+  title: string;
+  summary?: string;
+  defaultOpen?: boolean;
+  children: React.ReactNode;
+}) {
+  const [open, setOpen] = useState(defaultOpen);
+
+  return (
+    <section className="rounded-2xl border border-border-default bg-bg-primary">
+      <button
+        type="button"
+        className="flex w-full items-center justify-between gap-3 px-4 py-3 text-left"
+        onClick={() => setOpen((current) => !current)}
+      >
+        <span className="min-w-0">
+          <span className="block text-sm font-black uppercase tracking-wide text-text-primary">
+            {title}
+          </span>
+          {summary && (
+            <span className="mt-1 block truncate text-xs font-semibold text-text-muted">
+              {summary}
+            </span>
+          )}
+        </span>
+
+        <ChevronDown
+          className={cn(
+            "h-4 w-4 shrink-0 text-text-muted transition-transform",
+            open && "rotate-180",
+          )}
+        />
+      </button>
+
+      {open && <div className="grid gap-4 border-t border-border-default p-4">{children}</div>}
+    </section>
+  );
+}
+
 function createEmptyExample(): GrammarDraftExample {
   return {
     chinese: "",
@@ -86,51 +131,60 @@ export function GrammarDraftManualEditor({
 
   const deleteExample = (index: number) => {
     updateItem({
-      examples: item.examples.filter((_example, currentIndex) => currentIndex !== index),
+      examples: item.examples.filter(
+        (_example, currentIndex) => currentIndex !== index,
+      ),
     });
   };
 
   return (
-    <div className="grid gap-5">
-      <div className="grid gap-4 md:grid-cols-2">
-        <Field label="Tên điểm ngữ pháp">
-          <Input
-            value={item.title}
-            onChange={(event) => updateItem({ title: event.target.value })}
-            placeholder="Cách dùng mở rộng của đại từ nghi vấn"
+    <div className="grid gap-4">
+      <Section
+        title="Thông tin chính"
+        summary={`${item.title || "Chưa có tiêu đề"} · ${item.pattern || "Chưa có pattern"}`}
+        defaultOpen
+      >
+        <div className="grid gap-4 md:grid-cols-2">
+          <Field label="Tên điểm ngữ pháp">
+            <Input
+              value={item.title}
+              onChange={(event) => updateItem({ title: event.target.value })}
+              placeholder="Cách dùng mở rộng của đại từ nghi vấn"
+            />
+          </Field>
+
+          <Field label="Pattern / cấu trúc chính">
+            <Input
+              value={item.pattern}
+              onChange={(event) => updateItem({ pattern: event.target.value })}
+              placeholder="什么 + 都/也..."
+            />
+          </Field>
+        </div>
+
+        <Field label="Công dụng ngắn">
+          <Textarea
+            value={item.shortMeaning}
+            onChange={(event) => updateItem({ shortMeaning: event.target.value })}
+            placeholder="Dùng để..."
           />
         </Field>
 
-        <Field label="Pattern / cấu trúc chính">
-          <Input
-            value={item.pattern}
-            onChange={(event) => updateItem({ pattern: event.target.value })}
-            placeholder="什么 + 都/也..."
+        <Field label="Logic cốt lõi">
+          <Textarea
+            value={item.coreLogic}
+            onChange={(event) => updateItem({ coreLogic: event.target.value })}
+            placeholder="Bản chất của cấu trúc này là..."
           />
         </Field>
-      </div>
+      </Section>
 
-      <Field label="Công dụng ngắn">
-        <Textarea
-          value={item.shortMeaning}
-          onChange={(event) => updateItem({ shortMeaning: event.target.value })}
-          placeholder="Dùng để..."
-        />
-      </Field>
-
-      <Field label="Logic cốt lõi">
-        <Textarea
-          value={item.coreLogic}
-          onChange={(event) => updateItem({ coreLogic: event.target.value })}
-          placeholder="Bản chất của cấu trúc này là..."
-        />
-      </Field>
-
-      <div className="grid gap-3">
-        <div className="flex items-center justify-between gap-3">
-          <p className="text-xs font-black uppercase tracking-wide text-text-muted">
-            Công thức
-          </p>
+      <Section
+        title="Công thức"
+        summary={`${item.formulas.length} công thức`}
+        defaultOpen
+      >
+        <div className="flex items-center justify-end">
           <Button
             type="button"
             variant="outline"
@@ -176,13 +230,10 @@ export function GrammarDraftManualEditor({
             </Button>
           </div>
         ))}
-      </div>
+      </Section>
 
-      <div className="grid gap-3">
-        <div className="flex items-center justify-between gap-3">
-          <p className="text-xs font-black uppercase tracking-wide text-text-muted">
-            Ví dụ
-          </p>
+      <Section title="Ví dụ" summary={`${item.examples.length} ví dụ`}>
+        <div className="flex items-center justify-end">
           <Button
             type="button"
             variant="outline"
@@ -201,7 +252,7 @@ export function GrammarDraftManualEditor({
         {item.examples.map((example, index) => (
           <div
             key={`${item.id}-example-${index}`}
-            className="grid gap-3 rounded-2xl border border-border-default bg-bg-primary p-3"
+            className="grid gap-3 rounded-2xl border border-border-default bg-bg-subtle p-3"
           >
             <div className="flex items-center justify-between gap-3">
               <p className="text-sm font-black text-text-primary">
@@ -252,39 +303,43 @@ export function GrammarDraftManualEditor({
             />
           </div>
         ))}
-      </div>
+      </Section>
 
-      <Field label="So sánh / phân biệt">
-        <Textarea
-          value={item.comparisons}
-          onChange={(event) => updateItem({ comparisons: event.target.value })}
-          placeholder="Phân biệt với..."
-        />
-      </Field>
+      <Section title="So sánh / bẫy sai / ứng dụng" summary="Các phần đọc sâu">
+        <Field label="So sánh / phân biệt">
+          <Textarea
+            value={item.comparisons}
+            onChange={(event) => updateItem({ comparisons: event.target.value })}
+            placeholder="Phân biệt với..."
+          />
+        </Field>
 
-      <Field label="Bẫy sai / lưu ý">
-        <Textarea
-          value={item.pitfalls}
-          onChange={(event) => updateItem({ pitfalls: event.target.value })}
-          placeholder="Người Việt dễ sai ở..."
-        />
-      </Field>
+        <Field label="Bẫy sai / lưu ý">
+          <Textarea
+            value={item.pitfalls}
+            onChange={(event) => updateItem({ pitfalls: event.target.value })}
+            placeholder="Người Việt dễ sai ở..."
+          />
+        </Field>
 
-      <Field label="Ứng dụng / văn hóa">
-        <Textarea
-          value={item.cultureNotes}
-          onChange={(event) => updateItem({ cultureNotes: event.target.value })}
-          placeholder="Tình huống đời sống, ví dụ ứng dụng..."
-        />
-      </Field>
+        <Field label="Ứng dụng / văn hóa">
+          <Textarea
+            value={item.cultureNotes}
+            onChange={(event) => updateItem({ cultureNotes: event.target.value })}
+            placeholder="Tình huống đời sống, ví dụ ứng dụng..."
+          />
+        </Field>
+      </Section>
 
-      <Field label="Raw markdown">
-        <Textarea
-          value={item.rawMarkdown}
-          onChange={(event) => updateItem({ rawMarkdown: event.target.value })}
-          className="min-h-40"
-        />
-      </Field>
+      <Section title="Raw markdown" summary="Nguồn gốc sau parser">
+        <Field label="Raw markdown">
+          <Textarea
+            value={item.rawMarkdown}
+            onChange={(event) => updateItem({ rawMarkdown: event.target.value })}
+            className="min-h-60 font-mono text-xs"
+          />
+        </Field>
+      </Section>
     </div>
   );
 }
