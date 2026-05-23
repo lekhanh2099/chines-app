@@ -8,7 +8,7 @@ const cardVariants = cva("rounded-3xl border-2", {
    default: "border-border-default bg-bg-card",
    elevated: "border-border-default bg-bg-card shadow-theme-md",
    section: "border-border-default bg-bg-card shadow-theme-md",
-   subtle: "border-border-default bg-stone-50",
+   subtle: "border-border-default bg-bg-subtle",
   },
   padding: {
    none: "",

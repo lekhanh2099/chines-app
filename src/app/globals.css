@@ -316,7 +316,7 @@ body {
   position: sticky;
   inset-block-start: 0;
   z-index: 20;
-  background: rgb(255 255 255 / 0.95);
+  background: color-mix(in srgb, var(--bg-card) 95%, transparent);
   backdrop-filter: blur(0.5rem);
 }
 
@@ -330,8 +330,8 @@ body {
   grid-template-columns: auto minmax(0, 1fr);
   align-items: center;
   gap: var(--space-2);
-  border-block-end: var(--border-thin) solid #e7e5e4;
-  background: rgb(250 250 249 / 0.95);
+  border-block-end: var(--border-thin) solid var(--border);
+  background: color-mix(in srgb, var(--bg-card) 95%, transparent);
   padding-block: var(--space-1);
   backdrop-filter: blur(0.5rem);
 }
@@ -342,7 +342,7 @@ body {
 
 .hanzihome-topbar-title h1 {
   overflow: hidden;
-  color: #1c1917;
+  color: var(--text-primary);
   font-size: 1rem;
   font-weight: 900;
   line-height: 1.2;
@@ -352,7 +352,7 @@ body {
 
 .hanzihome-topbar-title p {
   overflow: hidden;
-  color: #ef4444;
+  color: var(--accent);
   font-size: 0.75rem;
   font-weight: 900;
   line-height: 1.2;
@@ -377,9 +377,9 @@ body {
   display: grid;
   min-inline-size: 0;
   gap: var(--space-4);
-  border: var(--border-thin) solid #e7e5e4;
+  border: var(--border-thin) solid var(--border);
   border-radius: var(--radius-2xl);
-  background: #ffffff;
+  background: var(--bg-card);
   padding: var(--space-4);
   box-shadow: var(--shadow-sm);
 }
@@ -1934,4 +1934,73 @@ hr.editor-hr.selected {
   html {
     @apply font-sans;
   }
+}
+/* =============================================
+   DARK MODE HARD-CODED TAILWIND SAFETY OVERRIDES
+   Temporary bridge while old components still use bg-white/bg-stone tokens.
+   ============================================= */
+
+[data-theme="dark"] [class~="bg-white"],
+[data-theme="dark"] [class~="bg-white/95"],
+[data-theme="dark"] [class~="bg-stone-50"],
+[data-theme="dark"] [class~="bg-stone-100"],
+[data-theme="dark"] [class~="bg-background"],
+[data-theme="dark"] [class~="bg-muted"] {
+  background-color: var(--bg-card) !important;
+}
+
+[data-theme="dark"] [class~="hover:bg-white"]:hover,
+[data-theme="dark"] [class~="hover:bg-stone-50"]:hover,
+[data-theme="dark"] [class~="hover:bg-stone-100"]:hover,
+[data-theme="dark"] [class~="hover:bg-muted"]:hover {
+  background-color: var(--bg-card-hover) !important;
+}
+
+[data-theme="dark"] [class~="border-stone-200"],
+[data-theme="dark"] [class~="border-gray-200"],
+[data-theme="dark"] [class~="border-slate-200"],
+[data-theme="dark"] [class~="border-input"] {
+  border-color: var(--border) !important;
+}
+
+[data-theme="dark"] [class~="text-stone-950"],
+[data-theme="dark"] [class~="text-stone-900"],
+[data-theme="dark"] [class~="text-stone-800"],
+[data-theme="dark"] [class~="text-slate-900"],
+[data-theme="dark"] [class~="text-foreground"] {
+  color: var(--text-primary) !important;
+}
+
+[data-theme="dark"] [class~="text-stone-700"],
+[data-theme="dark"] [class~="text-stone-600"],
+[data-theme="dark"] [class~="text-slate-700"] {
+  color: var(--text-secondary) !important;
+}
+
+[data-theme="dark"] [class~="text-stone-500"],
+[data-theme="dark"] [class~="text-stone-400"],
+[data-theme="dark"] [class~="text-slate-500"],
+[data-theme="dark"] [class~="text-slate-400"],
+[data-theme="dark"] [class~="text-muted-foreground"] {
+  color: var(--text-muted) !important;
+}
+
+/* shadcn button/select bridge */
+[data-theme="dark"] [data-slot="button"][data-variant="outline"],
+[data-theme="dark"] [data-slot="select-trigger"] {
+  background-color: var(--bg-card) !important;
+  border-color: var(--border) !important;
+  color: var(--text-primary) !important;
+}
+
+[data-theme="dark"] [data-slot="button"][data-variant="outline"]:hover,
+[data-theme="dark"] [data-slot="select-trigger"]:hover {
+  background-color: var(--bg-card-hover) !important;
+  color: var(--text-primary) !important;
+}
+
+/* Disabled in dark mode should be readable, not white ghost blocks */
+[data-theme="dark"] button:disabled,
+[data-theme="dark"] [aria-disabled="true"] {
+  opacity: 0.45 !important;
 }
