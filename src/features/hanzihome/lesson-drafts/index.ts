@@ -30,3 +30,7 @@ export {
   useLessonDraftsQuery,
   useUpdateLessonDraftMutation,
 } from "@/features/hanzihome/lesson-drafts/use-lesson-drafts";
+
+export { CreateLessonDraftDialog } from "@/features/hanzihome/lesson-drafts/components/CreateLessonDraftDialog";
+export { CreateLessonDraftForm } from "@/features/hanzihome/lesson-drafts/components/CreateLessonDraftForm";
+export { LessonDraftsCompactList } from "@/features/hanzihome/lesson-drafts/components/LessonDraftsCompactList";
