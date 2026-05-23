@@ -4,8 +4,10 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
-import { Select } from "@/components/ui/select";
-import type { LearningStatus, VocabViewModel } from "@/features/hanzihome/types";
+import type {
+ LearningStatus,
+ VocabViewModel,
+} from "@/features/hanzihome/types";
 
 type VocabListProps = {
  words: VocabViewModel[];
@@ -25,23 +27,27 @@ export function VocabList({
  progress,
  bookmarkedIds,
  searchValue,
- statusFilter,
  onSearchChange,
- onStatusFilterChange,
  onSelectWord,
 }: VocabListProps) {
- const groups = words.reduce<Array<[string, VocabViewModel[]]>>((result, word) => {
-  const group = result.find(([category]) => category === word.category);
-  if (group) {
-   group[1].push(word);
-  } else {
-   result.push([word.category, [word]]);
-  }
-  return result;
- }, []);
+ const groups = words.reduce<Array<[string, VocabViewModel[]]>>(
+  (result, word) => {
+   const group = result.find(([category]) => category === word.category);
+   if (group) {
+    group[1].push(word);
+   } else {
+    result.push([word.category, [word]]);
+   }
+   return result;
+  },
+  [],
+ );
 
  return (
-  <Card padding="md" className="rounded-2xl lg:sticky lg:top-24 lg:max-h-[calc(100vh-8rem)] lg:overflow-y-auto">
+  <Card
+   padding="md"
+   className="rounded-2xl lg:sticky lg:top-24 lg:max-h-[calc(100vh-8rem)] lg:overflow-y-auto"
+  >
    <div className="grid gap-3">
     <div>
      <h2 className="text-lg font-black text-text-primary">Từ vựng trong bài</h2>
@@ -55,22 +61,9 @@ export function VocabList({
      placeholder="Tìm Hán tự, pinyin, nghĩa..."
      aria-label="Tìm từ vựng"
     />
-    <Select
-     value={statusFilter}
-     onChange={(event) =>
-      onStatusFilterChange(event.target.value as "all" | LearningStatus)
-     }
-     aria-label="Lọc trạng thái từ vựng"
-    >
-     <option value="all">Tất cả trạng thái</option>
-     <option value="new">Mới</option>
-     <option value="learning">Đang học</option>
-     <option value="hard">Còn khó</option>
-     <option value="known">Đã biết</option>
-    </Select>
 
-   {groups.map(([category, items]) => (
-    <div key={category} className="grid gap-3 rounded-2xl bg-bg-subtle p-3">
+    {groups.map(([category, items]) => (
+     <div key={category} className="grid gap-3 rounded-2xl bg-bg-subtle p-3">
       <div className="flex items-center justify-between gap-3">
        <h3 className="min-w-0 truncate text-sm font-black text-text-primary">
         {category}
@@ -90,7 +83,9 @@ export function VocabList({
           onClick={() => onSelectWord(word.id)}
          >
           <span className="min-w-0 flex-1">
-           <span className="block truncate text-lg font-black">{word.word}</span>
+           <span className="block truncate text-lg font-black">
+            {word.word}
+           </span>
            <span className="block truncate text-xs font-semibold opacity-80">
             {word.pinyin} · {word.meaning}
            </span>
@@ -102,11 +97,11 @@ export function VocabList({
            </Badge>
           )}
          </Button>
-       );
-      })}
+        );
+       })}
       </div>
-    </div>
-   ))}
+     </div>
+    ))}
     {words.length === 0 && (
      <p className="rounded-2xl bg-bg-subtle p-4 text-sm font-semibold text-text-muted">
       Không có từ phù hợp bộ lọc.

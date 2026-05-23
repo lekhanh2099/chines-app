@@ -2,7 +2,13 @@
 
 import { useMemo } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
-import { BookOpen, GraduationCap, Home, Layers3, RotateCcw } from "lucide-react";
+import {
+ BookOpen,
+ GraduationCap,
+ Home,
+ Layers3,
+ RotateCcw,
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import type { SegmentedControlItem } from "@/components/ui/segmented-control";
@@ -29,10 +35,18 @@ const tabs = [
  { key: "review" as const, label: "Ôn tập", icon: RotateCcw },
 ] satisfies SegmentedControlItem<Exclude<HanziHomeModule, "radicals">>[];
 
-const moduleValues = ["overview", "vocab", "grammar", "review", "radicals"] as const;
+const moduleValues = [
+ "overview",
+ "vocab",
+ "grammar",
+ "review",
+ "radicals",
+] as const;
 
 function parseModule(value: string | null | undefined): HanziHomeModule | null {
- return moduleValues.some((item) => item === value) ? (value as HanziHomeModule) : null;
+ return moduleValues.some((item) => item === value)
+  ? (value as HanziHomeModule)
+  : null;
 }
 
 export function HanziHomeWorkspace() {
@@ -49,7 +63,8 @@ export function HanziHomeWorkspace() {
   parseModule(searchParams.get("module")) ||
   learning.state.settings.lastModule ||
   "overview";
- const activeLessonModule = activeModule === "radicals" ? "overview" : activeModule;
+ const activeLessonModule =
+  activeModule === "radicals" ? "overview" : activeModule;
  const lesson = useHanziHomeLesson(data, lessonId);
 
  const selectedLessonId = lesson?.id || lessonId;
@@ -62,13 +77,17 @@ export function HanziHomeWorkspace() {
   return (
    <main className="hanzihome-static-page">
     <Card padding="lg" className="rounded-2xl">
-     <p className="text-sm font-semibold text-text-muted">Không tìm thấy dữ liệu HanziHome.</p>
+     <p className="text-sm font-semibold text-text-muted">
+      Không tìm thấy dữ liệu HanziHome.
+     </p>
     </Card>
    </main>
   );
  }
 
- const replaceWorkspaceParams = (updates: Partial<Record<"lessonId" | "module", string>>) => {
+ const replaceWorkspaceParams = (
+  updates: Partial<Record<"lessonId" | "module", string>>,
+ ) => {
   const nextParams = new URLSearchParams(searchParams.toString());
   Object.entries(updates).forEach(([key, value]) => {
    if (value) nextParams.set(key, value);
@@ -96,10 +115,16 @@ export function HanziHomeWorkspace() {
  ) => {
   learning.appendReviewHistory(item, result);
   if (item.type === "vocab") {
-   markVocab(item.id, result === "known" ? "known" : result === "hard" ? "hard" : "learning");
+   markVocab(
+    item.id,
+    result === "known" ? "known" : result === "hard" ? "hard" : "learning",
+   );
   }
   if (item.type === "grammar") {
-   markGrammar(item.id, result === "known" ? "known" : result === "hard" ? "hard" : "learning");
+   markGrammar(
+    item.id,
+    result === "known" ? "known" : result === "hard" ? "hard" : "learning",
+   );
   }
  };
 
@@ -109,8 +134,10 @@ export function HanziHomeWorkspace() {
     <Card padding="md" className="rounded-2xl">
      <div className="grid gap-4 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-center">
       <div className="min-w-0">
-       <p className="text-xs font-black uppercase tracking-wide text-accent">
-        {activeModule === "radicals" ? "HanziHome / Bộ thủ" : "HanziHome / Tự học"}
+       <p className="text-xs font-black uppercase tracking-wide  ">
+        {activeModule === "radicals"
+         ? "HanziHome / Bộ thủ"
+         : "HanziHome / Tự học"}
        </p>
        <h1 className="mt-1 truncate text-2xl font-black tracking-normal text-text-primary sm:text-3xl">
         {activeModule === "radicals" ? "Thư viện bộ thủ" : lesson.title}

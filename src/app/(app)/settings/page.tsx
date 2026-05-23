@@ -180,7 +180,7 @@ export default function SettingsPage() {
    <section className="rounded-2xl border border-border-default bg-bg-card p-6 shadow-theme-sm">
     <div className="flex flex-col gap-3 md:flex-row md:items-start md:justify-between">
      <div className="max-w-2xl space-y-2">
-      <div className="inline-flex items-center gap-2 rounded-full bg-accent/10 px-3 py-1 text-xs font-bold uppercase tracking-[0.18em] text-accent">
+      <div className="inline-flex items-center gap-2 rounded-full bg-accent/10 px-3 py-1 text-xs font-bold uppercase tracking-[0.18em]  ">
        <Bot className="h-3.5 w-3.5" />
        AI Prompt Settings
       </div>

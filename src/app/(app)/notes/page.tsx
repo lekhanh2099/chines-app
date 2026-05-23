@@ -56,10 +56,7 @@ function NotesPageInner() {
  const { data: notes, isLoading } = useNotesList(categoryFilter);
 
  // Smart routing — redirects unless ?view=all or ?action=new
- const { isRedirecting, isNewAction } = useNoteRouting(
-  notes,
-  isLoading,
- );
+ const { isRedirecting, isNewAction } = useNoteRouting(notes, isLoading);
 
  // ── Loading / Redirecting skeleton ──
  if (isLoading || isRedirecting) {
@@ -155,7 +152,7 @@ function NotesPageInner() {
          {categoryEmoji[note.category] || "⬜"}
         </span>
 
-        <span className="flex-1 min-w-0 text-[13px] font-medium text-text-primary truncate group-hover:text-accent-text transition-colors">
+        <span className="flex-1 min-w-0 text-[13px] font-medium text-text-primary truncate group-hover: -text transition-colors">
          {note.title}
         </span>
 
@@ -360,9 +357,7 @@ function CreateNoteDialog() {
        )}
       </form.Field>
 
-      <form.Field
-       name="tags"
-      >
+      <form.Field name="tags">
        {(field) => (
         <div className="space-y-2 mt-4">
          <label className="text-sm font-bold text-text-primary">
@@ -380,9 +375,7 @@ function CreateNoteDialog() {
        )}
       </form.Field>
 
-      <form.Field
-       name="category"
-      >
+      <form.Field name="category">
        {(field) => (
         <div className="space-y-2 mt-4">
          <label className="text-sm font-bold text-text-primary">Danh mục</label>
@@ -412,7 +405,9 @@ function CreateNoteDialog() {
       >
        Hủy
       </Button>
-      <form.Subscribe selector={(state) => [state.canSubmit, state.isSubmitting]}>
+      <form.Subscribe
+       selector={(state) => [state.canSubmit, state.isSubmitting]}
+      >
        {([canSubmit, isSubmitting]) => (
         <Button
          type="submit"

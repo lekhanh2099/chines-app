@@ -154,7 +154,7 @@ export function NoteEditorPanel({ noteId, isVisible }: NoteEditorPanelProps) {
   >
    {isLoading ? (
     <div className="flex h-full items-center justify-center">
-     <Loader2 className="w-8 h-8 animate-spin text-accent" />
+     <Loader2 className="w-8 h-8 animate-spin  " />
     </div>
    ) : !note ? (
     <div className="flex h-full items-center justify-center">
@@ -170,7 +170,7 @@ export function NoteEditorPanel({ noteId, isVisible }: NoteEditorPanelProps) {
         onClick={handleToggleSplitView}
         className={`flex items-center gap-1.5 px-2.5 py-1 rounded text-[11px] font-semibold transition-all ${
          isSplitView
-          ? "bg-accent-subtle text-accent-text border border-accent/20 shadow-sm"
+          ? "bg-accent-subtle  -text border border-accent/20 shadow-sm"
           : hasReadingContent
             ? "bg-info-subtle text-info-text border border-info/20 hover:bg-info-subtle/80"
             : "text-text-muted hover:text-text-primary hover:bg-bg-subtle border border-transparent"

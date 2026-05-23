@@ -41,7 +41,7 @@ function DictionarySentenceView({ viewModel }: DictionarySentenceViewProps) {
       <Card variant="subtle" padding="sm">
        <div className="flex flex-col gap-1">
         <SectionHeader title="Pinyin" />
-        <p className="break-words text-sm font-semibold text-accent">
+        <p className="break-words text-sm font-semibold  ">
          {viewModel.pinyin}
         </p>
        </div>
@@ -53,7 +53,7 @@ function DictionarySentenceView({ viewModel }: DictionarySentenceViewProps) {
        <SectionHeader title="Bản dịch" />
        {viewModel.isLoading ? (
         <div className="flex items-center gap-2 text-sm text-text-muted">
-         <Loader2 className="h-4 w-4 animate-spin text-accent" />
+         <Loader2 className="h-4 w-4 animate-spin  " />
          Đang dịch câu...
         </div>
        ) : viewModel.translation ? (

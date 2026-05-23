@@ -24,7 +24,7 @@ function DictionaryWordView({ viewModel }: DictionaryWordViewProps) {
   return (
    <PageContainer>
     <div className="flex h-full flex-col items-center justify-center gap-4">
-     <Loader2 className="h-8 w-8 animate-spin text-accent" />
+     <Loader2 className="h-8 w-8 animate-spin  " />
      <p className="text-sm text-text-muted">Đang tải dữ liệu từ điển...</p>
     </div>
    </PageContainer>
@@ -38,7 +38,7 @@ function DictionaryWordView({ viewModel }: DictionaryWordViewProps) {
      <p className="text-text-muted">Không tìm thấy từ vựng.</p>
      <Link
       href="/hanzihome"
-      className="text-sm font-medium text-accent transition-colors hover:text-accent-hover"
+      className="text-sm font-medium   transition-colors hover: -hover"
      >
       Quay về HanziHome
      </Link>

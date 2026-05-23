@@ -1,6 +1,6 @@
 "use client";
 
-import { Select } from "@/components/ui/select";
+import Select from "@/components/ui/select/index";
 import type { HanziHomeLesson } from "@/features/hanzihome/types";
 
 type LessonPickerProps = {
@@ -20,16 +20,16 @@ export function LessonPicker({
     Chọn bài học
    </span>
    <Select
-    value={selectedLessonId}
-    onChange={(event) => onSelectLesson(event.target.value)}
+    selectValue={
+     lessons.find((lesson) => lesson.id === selectedLessonId) ?? null
+    }
+    onChange={(event) => onSelectLesson(event?.value as string)}
+    options={lessons.map((lesson) => ({
+     value: lesson.id,
+     label: lesson.title,
+    }))}
     aria-label="Chọn bài HanziHome"
-   >
-    {lessons.map((lesson) => (
-     <option key={lesson.id} value={lesson.id}>
-      {lesson.title}
-     </option>
-    ))}
-   </Select>
+   />
   </label>
  );
 }

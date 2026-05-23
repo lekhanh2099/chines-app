@@ -132,20 +132,20 @@ export function VocabDetailDrawer() {
           type="button"
           onClick={handleSpeak}
           disabled={isTTSLoading}
-          className="rounded-full p-1.5 text-text-muted transition-colors hover:bg-bg-primary hover:text-accent disabled:opacity-50"
+          className="rounded-full p-1.5 text-text-muted transition-colors hover:bg-bg-primary hover:  disabled:opacity-50"
           title={isSpeaking ? "Dừng phát âm" : "Nghe phát âm"}
          >
           {isTTSLoading ? (
-           <Loader2 className="h-4 w-4 animate-spin text-accent" />
+           <Loader2 className="h-4 w-4 animate-spin  " />
           ) : isSpeaking ? (
-           <VolumeOff className="h-4 w-4 text-accent" />
+           <VolumeOff className="h-4 w-4  " />
           ) : (
            <Volume2 className="h-4 w-4" />
           )}
          </button>
         </div>
         {smartData?.entry.pinyin && (
-         <p className="mt-1 text-sm font-semibold text-accent">
+         <p className="mt-1 text-sm font-semibold  ">
           {smartData.entry.pinyin}
          </p>
         )}
@@ -175,7 +175,7 @@ export function VocabDetailDrawer() {
      <div className="flex-1 overflow-y-auto px-5 py-4">
       {detailQuery.isLoading ? (
        <div className="flex h-40 items-center justify-center gap-2 text-sm text-text-muted">
-        <Loader2 className="h-4 w-4 animate-spin text-accent" />
+        <Loader2 className="h-4 w-4 animate-spin  " />
         Đang tải chi tiết từ vựng...
        </div>
       ) : detailQuery.isError ? (
@@ -286,7 +286,7 @@ function WordDetailPanel({
       type="button"
       onClick={() => onSave(noteDraft)}
       disabled={isSaving}
-      className="inline-flex items-center gap-2 rounded-full border border-border-default bg-bg-primary px-3 py-2 text-xs font-semibold text-text-primary transition-colors hover:border-accent hover:text-accent disabled:opacity-50"
+      className="inline-flex items-center gap-2 rounded-full border border-border-default bg-bg-primary px-3 py-2 text-xs font-semibold text-text-primary transition-colors hover:border-accent hover:  disabled:opacity-50"
      >
       {isSaving ? (
        <Loader2 className="h-4 w-4 animate-spin" />
@@ -316,7 +316,7 @@ function WordDetailPanel({
           className={`inline-flex h-8 min-w-8 items-center justify-center rounded-md border px-2 text-sm font-bold transition-colors ${
            visualCharacter === character
             ? "border-accent bg-accent text-white"
-            : "border-border-default bg-bg-primary text-text-primary hover:border-accent hover:text-accent"
+            : "border-border-default bg-bg-primary text-text-primary hover:border-accent hover: "
           }`}
          >
           {character}
@@ -329,7 +329,7 @@ function WordDetailPanel({
       <button
        type="button"
        onClick={() => onDrillCharacter(visualCharacter)}
-       className="text-xs font-semibold text-accent hover:text-accent-hover"
+       className="text-xs font-semibold   hover: -hover"
       >
        Tra riêng chữ này
       </button>
@@ -354,7 +354,7 @@ function WordDetailPanel({
            <p className="text-base font-bold text-text-primary">
             {radical.char || "?"}
            </p>
-           <p className="text-xs font-semibold text-accent">{radical.pinyin}</p>
+           <p className="text-xs font-semibold  ">{radical.pinyin}</p>
            <p className="text-xs text-text-secondary">{radical.meaning}</p>
           </div>
          ))}
@@ -494,7 +494,7 @@ function WordDetailPanel({
       type="button"
       onClick={() => onSave(noteDraft)}
       disabled={isSaving}
-      className="inline-flex items-center gap-2 rounded-full border border-border-default bg-bg-primary px-3 py-2 text-xs font-semibold text-text-primary transition-colors hover:border-accent hover:text-accent disabled:opacity-50"
+      className="inline-flex items-center gap-2 rounded-full border border-border-default bg-bg-primary px-3 py-2 text-xs font-semibold text-text-primary transition-colors hover:border-accent hover:  disabled:opacity-50"
      >
       {isSaving ? (
        <Loader2 className="h-4 w-4 animate-spin" />
@@ -552,7 +552,7 @@ function SentenceDetailPanel({
         key={`${point.pattern || "grammar"}-${index}`}
         className="rounded-2xl border border-border-default bg-bg-primary p-3"
        >
-        <p className="text-xs font-semibold uppercase tracking-wide text-accent">
+        <p className="text-xs font-semibold uppercase tracking-wide  ">
          {point.pattern || `Điểm ${index + 1}`}
         </p>
         {point.explanation && (
@@ -577,7 +577,7 @@ function SentenceDetailPanel({
         key={`${char}-${index}`}
         type="button"
         onClick={() => onCharacterSelect(char)}
-        className="inline-flex h-10 min-w-10 items-center justify-center rounded-md border border-border-default bg-bg-primary px-2 text-base font-bold text-text-primary transition-colors hover:border-accent hover:text-accent"
+        className="inline-flex h-10 min-w-10 items-center justify-center rounded-md border border-border-default bg-bg-primary px-2 text-base font-bold text-text-primary transition-colors hover:border-accent hover: "
        >
         {char}
        </button>
@@ -602,7 +602,7 @@ function SentenceDetailPanel({
       type="button"
       onClick={() => onSave(noteDraft)}
       disabled={isSaving}
-      className="inline-flex items-center gap-2 rounded-full border border-border-default bg-bg-primary px-3 py-2 text-xs font-semibold text-text-primary transition-colors hover:border-accent hover:text-accent disabled:opacity-50"
+      className="inline-flex items-center gap-2 rounded-full border border-border-default bg-bg-primary px-3 py-2 text-xs font-semibold text-text-primary transition-colors hover:border-accent hover:  disabled:opacity-50"
      >
       {isSaving ? (
        <Loader2 className="h-4 w-4 animate-spin" />
@@ -632,7 +632,7 @@ function ExampleCard({
   <div className="rounded-2xl border border-border-default bg-bg-primary p-3">
    <p className="text-sm font-medium text-text-primary">{example.zh}</p>
    {example.pinyin && (
-    <p className="text-xs font-semibold text-accent">{example.pinyin}</p>
+    <p className="text-xs font-semibold  ">{example.pinyin}</p>
    )}
    {example.vi && (
     <p className="text-xs text-text-secondary italic">{example.vi}</p>
@@ -674,9 +674,7 @@ function RelationList({
          <div className="flex flex-wrap items-center gap-2">
           <span className="text-base font-bold text-text-primary">{word}</span>
           {item.pinyin && (
-           <span className="text-xs font-semibold text-accent">
-            {item.pinyin}
-           </span>
+           <span className="text-xs font-semibold  ">{item.pinyin}</span>
           )}
          </div>
          <p className="mt-1 text-sm leading-relaxed text-text-secondary">

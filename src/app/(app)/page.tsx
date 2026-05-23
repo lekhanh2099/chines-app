@@ -6,8 +6,14 @@ import { getHanziHomeData } from "@/features/hanzihome/static-data";
 
 export default function HomePage() {
  const data = getHanziHomeData();
- const totalVocab = data.lessons.reduce((sum, lesson) => sum + lesson.vocab.length, 0);
- const totalGrammar = data.lessons.reduce((sum, lesson) => sum + lesson.grammar.length, 0);
+ const totalVocab = data.lessons.reduce(
+  (sum, lesson) => sum + lesson.vocab.length,
+  0,
+ );
+ const totalGrammar = data.lessons.reduce(
+  (sum, lesson) => sum + lesson.grammar.length,
+  0,
+ );
 
  return (
   <main className="mx-auto flex w-full max-w-6xl flex-col gap-6 px-5 py-7 lg:px-8">
@@ -19,7 +25,8 @@ export default function HomePage() {
      Tự học theo từng bài
     </h1>
     <p className="max-w-3xl text-base font-semibold leading-relaxed text-text-secondary">
-     Chọn bài trước, rồi học từ vựng, ngữ pháp, bộ thủ và ôn tập từ cùng một nguồn JSON tĩnh.
+     Chọn bài trước, rồi học từ vựng, ngữ pháp, bộ thủ và ôn tập từ cùng một
+     nguồn JSON tĩnh.
     </p>
    </section>
 
@@ -84,7 +91,7 @@ function HomeAction({
     className="h-full rounded-2xl transition-colors hover:border-accent-muted hover:bg-accent-subtle"
    >
     <div className="flex gap-4">
-     <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-white text-accent shadow-theme-sm">
+     <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-white   shadow-theme-sm">
       <Icon className="h-5 w-5" />
      </span>
      <span className="grid gap-1">

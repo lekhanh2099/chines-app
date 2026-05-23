@@ -24,25 +24,19 @@ export function NoteTabBar() {
   }
  }, []);
 
- const handleDragStart = useCallback(
-  (e: React.DragEvent, index: number) => {
-   setDragIndex(index);
-   e.dataTransfer.effectAllowed = "move";
-   // Minimal drag image — use the tab element itself
-   const el = e.currentTarget as HTMLElement;
-   e.dataTransfer.setDragImage(el, el.offsetWidth / 2, el.offsetHeight / 2);
-  },
-  [],
- );
+ const handleDragStart = useCallback((e: React.DragEvent, index: number) => {
+  setDragIndex(index);
+  e.dataTransfer.effectAllowed = "move";
+  // Minimal drag image — use the tab element itself
+  const el = e.currentTarget as HTMLElement;
+  e.dataTransfer.setDragImage(el, el.offsetWidth / 2, el.offsetHeight / 2);
+ }, []);
 
- const handleDragOver = useCallback(
-  (e: React.DragEvent, index: number) => {
-   e.preventDefault();
-   e.dataTransfer.dropEffect = "move";
-   setDropIndex(index);
-  },
-  [],
- );
+ const handleDragOver = useCallback((e: React.DragEvent, index: number) => {
+  e.preventDefault();
+  e.dataTransfer.dropEffect = "move";
+  setDropIndex(index);
+ }, []);
 
  const handleDrop = useCallback(
   (e: React.DragEvent, index: number) => {
@@ -147,10 +141,12 @@ function TabItem({
    }}
    title={tab.title}
   >
-   <FileText className={cn(
-    "w-3.5 h-3.5 shrink-0 transition-colors",
-    isActive ? "text-accent" : "text-text-muted/60",
-   )} />
+   <FileText
+    className={cn(
+     "w-3.5 h-3.5 shrink-0 transition-colors",
+     isActive ? " " : "text-text-muted/60",
+    )}
+   />
 
    <span className="truncate flex-1 min-w-0 px-1">{tab.title}</span>
 

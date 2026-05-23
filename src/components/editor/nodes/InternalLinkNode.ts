@@ -44,12 +44,7 @@ export class InternalLinkNode extends TextNode {
   );
  }
 
- constructor(
-  noteId: string,
-  noteTitle: string,
-  text: string,
-  key?: NodeKey,
- ) {
+ constructor(noteId: string, noteTitle: string, text: string, key?: NodeKey) {
   super(text, key);
   this.__noteId = noteId;
   this.__noteTitle = noteTitle;
@@ -71,7 +66,7 @@ export class InternalLinkNode extends TextNode {
   a.dataset.noteId = this.__noteId;
   a.title = this.__noteTitle;
   a.className =
-   "text-accent underline decoration-accent/40 hover:decoration-accent cursor-pointer font-medium";
+   "  underline decoration-accent/40 hover:decoration-accent cursor-pointer font-medium";
   a.textContent = dom.textContent;
 
   // Navigate via custom event — picked up by NoteTabContainer

@@ -15,7 +15,10 @@ import type {
 type VocabReviewPanelProps = {
  lesson: HanziHomeLesson;
  learningState: UserLearningState;
- onAnswer: (item: { type: "vocab" | "grammar" | "radical"; id: string }, result: ReviewResult) => void;
+ onAnswer: (
+  item: { type: "vocab" | "grammar" | "radical"; id: string },
+  result: ReviewResult,
+ ) => void;
 };
 
 export function VocabReviewPanel({
@@ -43,7 +46,10 @@ export function VocabReviewPanel({
 
  useEffect(() => {
   const handleKeyDown = (event: KeyboardEvent) => {
-   if (event.target instanceof HTMLInputElement || event.target instanceof HTMLTextAreaElement) {
+   if (
+    event.target instanceof HTMLInputElement ||
+    event.target instanceof HTMLTextAreaElement
+   ) {
     return;
    }
    if (event.code === "Space") {
@@ -65,7 +71,8 @@ export function VocabReviewPanel({
     <div className="grid gap-4">
      <h2 className="text-2xl font-black text-text-primary">Đã hết lượt ôn</h2>
      <p className="text-sm font-semibold text-text-muted">
-      Bạn đã đi qua toàn bộ từ vựng và ngữ pháp của bài này trong phiên hiện tại.
+      Bạn đã đi qua toàn bộ từ vựng và ngữ pháp của bài này trong phiên hiện
+      tại.
      </p>
      <Button onClick={session.reset} className="mx-auto">
       <RotateCcw className="h-4 w-4" />
@@ -76,7 +83,9 @@ export function VocabReviewPanel({
   );
  }
 
- const progress = Math.round(((session.state.index + 1) / session.items.length) * 100);
+ const progress = Math.round(
+  ((session.state.index + 1) / session.items.length) * 100,
+ );
 
  return (
   <Card padding="lg" className="mx-auto w-full max-w-3xl rounded-2xl">
@@ -91,16 +100,27 @@ export function VocabReviewPanel({
       </span>
      </div>
      <div className="h-3 overflow-hidden rounded-full bg-bg-subtle">
-      <div className="h-full rounded-full bg-accent" style={{ inlineSize: `${progress}%` }} />
+      <div
+       className="h-full rounded-full bg-accent"
+       style={{ inlineSize: `${progress}%` }}
+      />
      </div>
     </div>
     <h2 className="text-center text-5xl font-black tracking-normal text-text-primary">
      {item.prompt}
     </h2>
-    <ReviewBack item={item} revealed={session.state.revealed} onReveal={session.reveal} />
+    <ReviewBack
+     item={item}
+     revealed={session.state.revealed}
+     onReveal={session.reveal}
+    />
     <div className="flex flex-wrap justify-center gap-2">
-     <Button variant="outline" onClick={() => handleAnswer("again")}>Học lại</Button>
-     <Button variant="outline" onClick={() => handleAnswer("hard")}>Còn khó</Button>
+     <Button variant="outline" onClick={() => handleAnswer("again")}>
+      Học lại
+     </Button>
+     <Button variant="outline" onClick={() => handleAnswer("hard")}>
+      Còn khó
+     </Button>
      <Button onClick={() => handleAnswer("known")}>Đã biết</Button>
     </div>
     <p className="text-center text-xs font-bold text-text-muted">
@@ -121,13 +141,17 @@ function ReviewBack({
  onReveal: () => void;
 }) {
  if (!revealed) {
-  return <Button onClick={onReveal} className="mx-auto">Lật đáp án</Button>;
+  return (
+   <Button onClick={onReveal} className="mx-auto">
+    Lật đáp án
+   </Button>
+  );
  }
 
  if (item.type === "vocab") {
   return (
    <div className="grid gap-2 rounded-2xl bg-bg-subtle p-5 text-center">
-    <p className="text-lg font-black text-accent">{item.source.pinyin}</p>
+    <p className="text-lg font-black  ">{item.source.pinyin}</p>
     <p className="text-base font-bold text-text-secondary">
      {item.source.hanViet} · {item.source.meaning}
     </p>

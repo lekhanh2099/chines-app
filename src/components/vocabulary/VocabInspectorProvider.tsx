@@ -239,9 +239,9 @@ function InspectorCard({ onClose }: InspectorCardProps) {
        title={isSpeaking ? "Dừng phát âm" : "Nghe phát âm"}
       >
        {isTTSLoading ? (
-        <Loader2 className="h-4 w-4 animate-spin text-accent" />
+        <Loader2 className="h-4 w-4 animate-spin  " />
        ) : isSpeaking ? (
-        <VolumeOff className="h-4 w-4 text-accent" />
+        <VolumeOff className="h-4 w-4  " />
        ) : (
         <Volume2 className="h-4 w-4" />
        )}
@@ -292,7 +292,7 @@ function InspectorCard({ onClose }: InspectorCardProps) {
     ) : (
      <div className="space-y-4">
       <section className="space-y-3 rounded-3xl border border-border-default bg-bg-primary px-4 py-4 text-center shadow-theme-sm">
-       <p className="text-2xl font-semibold tracking-tight text-accent">
+       <p className="text-2xl font-semibold tracking-tight  ">
         {vocabData.pinyin}
        </p>
 

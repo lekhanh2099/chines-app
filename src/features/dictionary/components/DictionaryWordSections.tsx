@@ -61,9 +61,9 @@ function DictionaryHeroSection({ viewModel }: DictionarySectionProps) {
        title={isSpeaking ? "Dừng phát âm" : "Đọc từ"}
       >
        {isTTSLoading ? (
-        <Loader2 className="h-4 w-4 animate-spin text-accent" />
+        <Loader2 className="h-4 w-4 animate-spin  " />
        ) : isSpeaking ? (
-        <VolumeOff className="text-accent" />
+        <VolumeOff className=" " />
        ) : (
         <Volume2 />
        )}
@@ -73,13 +73,15 @@ function DictionaryHeroSection({ viewModel }: DictionarySectionProps) {
         {viewModel.ai?.han_viet || viewModel.vocabData.sino_vietnamese}
        </Badge>
       )}
-      {viewModel.ai?.word_type && <Badge size="md">{viewModel.ai.word_type}</Badge>}
+      {viewModel.ai?.word_type && (
+       <Badge size="md">{viewModel.ai.word_type}</Badge>
+      )}
      </div>
 
      <div className="flex flex-wrap items-center gap-2.5">
       [
       {viewModel.vocabData.pinyin && (
-       <p className="text-lg font-semibold text-accent sm:text-xl">
+       <p className="text-lg font-semibold   sm:text-xl">
         {viewModel.vocabData.pinyin}
        </p>
       )}
@@ -106,9 +108,7 @@ function DictionaryHeroSection({ viewModel }: DictionarySectionProps) {
            </span>
            <div className="min-w-0 flex gap-1">
             {radical.pinyin && (
-             <p className="text-xs font-semibold text-accent">
-              {radical.pinyin}
-             </p>
+             <p className="text-xs font-semibold  ">{radical.pinyin}</p>
             )}
             {radical.meaning && (
              <p className="text-sm leading-relaxed text-text-primary">
@@ -130,8 +130,11 @@ function DictionaryHeroSection({ viewModel }: DictionarySectionProps) {
      )}
      {viewModel.ai?.source_metadata && (
       <p className="mt-3 text-xs font-bold uppercase tracking-wide text-text-muted">
-       {viewModel.ai.source_metadata.lesson_title || viewModel.ai.source_metadata.lesson_key}
-       {viewModel.ai.source_metadata.category ? ` · ${viewModel.ai.source_metadata.category}` : ""}
+       {viewModel.ai.source_metadata.lesson_title ||
+        viewModel.ai.source_metadata.lesson_key}
+       {viewModel.ai.source_metadata.category
+        ? ` · ${viewModel.ai.source_metadata.category}`
+        : ""}
       </p>
      )}
     </div>
@@ -284,7 +287,9 @@ function DocSection({
 }
 
 function EmptyDocText() {
- return <p className="text-sm text-text-muted">Chưa có dữ liệu cho phần này.</p>;
+ return (
+  <p className="text-sm text-text-muted">Chưa có dữ liệu cho phần này.</p>
+ );
 }
 
 function DictionaryMeaningSection({ viewModel }: DictionarySectionProps) {
@@ -441,7 +446,7 @@ function DictionaryLearningInsightsSection({
       <div className="flex flex-col gap-2">
        <SectionHeader
         title="Chiết tự"
-        trailing={<Layers3 className="h-4 w-4 text-accent" />}
+        trailing={<Layers3 className="h-4 w-4  " />}
        />
        <p className="whitespace-pre-line text-sm leading-relaxed text-text-secondary">
         {viewModel.ai.decomposition}
@@ -455,7 +460,7 @@ function DictionaryLearningInsightsSection({
       <div className="flex flex-col gap-2">
        <SectionHeader
         title="So sánh từ gần nghĩa"
-        trailing={<ListChecks className="h-4 w-4 text-accent" />}
+        trailing={<ListChecks className="h-4 w-4  " />}
        />
        <BulletList items={viewModel.ai.comparisons} />
       </div>
@@ -485,7 +490,7 @@ function DictionaryLearningInsightsSection({
       <div className="flex flex-col gap-2">
        <SectionHeader
         title="Trung Việt"
-        trailing={<Globe2 className="h-4 w-4 text-accent" />}
+        trailing={<Globe2 className="h-4 w-4  " />}
        />
        <p className="whitespace-pre-line text-sm leading-relaxed text-text-secondary">
         {viewModel.ai.cultural_note}
@@ -529,7 +534,7 @@ function DictionaryLearningInsightsSection({
         className="rounded-xl"
        >
         <div className="flex items-start gap-2">
-         <span className="mt-0.5 text-xs text-accent">●</span>
+         <span className="mt-0.5 text-xs  ">●</span>
          <span className="text-sm leading-relaxed text-text-secondary">
           {item}
          </span>
@@ -558,7 +563,6 @@ function DictionaryPersonalNoteSection({ viewModel }: DictionarySectionProps) {
       onClick={() => viewModel.handleSavePersonalNote(note)}
       disabled={viewModel.isSaving}
       isLoading={viewModel.isSaving}
-      loadingText="Đang lưu..."
      >
       <Save className="h-4 w-4" />
       Lưu note
@@ -581,7 +585,7 @@ function ExampleRow({ example }: { example: ExampleItem }) {
   <div className="flex flex-col gap-1">
    <p className="text-sm font-medium text-text-primary">{example.zh}</p>
    {example.pinyin && (
-    <p className="text-xs font-semibold text-accent">{example.pinyin}</p>
+    <p className="text-xs font-semibold  ">{example.pinyin}</p>
    )}
    {example.vi && (
     <p className="text-xs italic text-text-muted">{example.vi}</p>
@@ -655,7 +659,7 @@ function WordRelationGrid({
           <div className="flex flex-wrap items-center gap-2">
            <p className="text-base font-bold text-text-primary">{word}</p>
            {item.pinyin && (
-            <p className="text-xs font-semibold text-accent">{item.pinyin}</p>
+            <p className="text-xs font-semibold  ">{item.pinyin}</p>
            )}
           </div>
           <p className="text-sm leading-relaxed text-text-secondary">
@@ -680,7 +684,7 @@ function AiLoadingState() {
  return (
   <Card variant="subtle" padding="sm">
    <div className="flex flex-col gap-3">
-    <div className="flex items-center gap-2 text-xs font-bold text-accent">
+    <div className="flex items-center gap-2 text-xs font-bold  ">
      <Sparkles className="h-4 w-4 animate-pulse" />
      Đang phân tích dữ liệu chuyên sâu...
     </div>
@@ -720,7 +724,6 @@ function NoDataPlaceholder({
      onClick={onRequest}
      disabled={loading}
      isLoading={loading}
-     loadingText="Đang phân tích..."
     >
      <Sparkles className="h-4 w-4" />
      Phân tích bằng AI

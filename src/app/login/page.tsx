@@ -157,7 +157,7 @@ export default function LoginPage() {
           setIsLogin(!isLogin);
           form.reset();
          }}
-         className="text-accent hover:underline font-medium focus:outline-none"
+         className="  hover:underline font-medium focus:outline-none"
         >
          {isLogin ? "Đăng ký ngay" : "Đăng nhập"}
         </button>

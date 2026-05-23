@@ -29,9 +29,13 @@ function DictionaryCharacterSidebar({
 
  if (isLoading || !vocabData) {
   return (
-   <Card variant="subtle" padding="md" className="rounded text-sm text-text-muted">
+   <Card
+    variant="subtle"
+    padding="md"
+    className="rounded text-sm text-text-muted"
+   >
     <div className="flex items-center gap-2">
-     <Loader2 className="h-4 w-4 animate-spin text-accent" />
+     <Loader2 className="h-4 w-4 animate-spin  " />
      Đang tải cấu tạo chữ...
     </div>
    </Card>
@@ -56,7 +60,7 @@ function DictionaryCharacterSidebar({
       parentText !== selectedCharacter ? (
        <Link
         href={`/dictionary/${encodeURIComponent(selectedCharacter)}`}
-        className="text-sm font-semibold text-accent transition-colors hover:text-accent-hover"
+        className="text-sm font-semibold   transition-colors hover: -hover"
        >
         Tra riêng
        </Link>
@@ -168,8 +172,8 @@ function AnatomyOverview({
         padding="sm"
         className="rounded border-accent/20 bg-accent/10 text-center"
        >
-        <p className="text-lg font-black text-accent">{character}</p>
-        <p className="text-xs leading-tight text-accent/80">kết quả</p>
+        <p className="text-lg font-black  ">{character}</p>
+        <p className="text-xs leading-tight  /80">kết quả</p>
        </Card>
       </div>
      ) : (

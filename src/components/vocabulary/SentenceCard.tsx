@@ -41,7 +41,7 @@ export function SentenceCard({
       href={`/dictionary/${encodeURIComponent(item.hanzi)}`}
       className="block"
      >
-      <p className="text-lg font-bold text-text-primary leading-relaxed hover:text-accent transition-colors">
+      <p className="text-lg font-bold text-text-primary leading-relaxed hover:  transition-colors">
        {item.hanzi}
       </p>
      </Link>
@@ -64,14 +64,14 @@ export function SentenceCard({
      <div className="flex items-center gap-0.5 opacity-0 group-hover:opacity-100 transition-opacity">
       <button
        onClick={() => onInspect(item.hanzi)}
-       className="p-1.5 rounded text-text-muted hover:text-accent hover:bg-accent/10 transition-colors"
+       className="p-1.5 rounded text-text-muted hover:  hover:bg-accent/10 transition-colors"
        title="Tra nhanh"
       >
        <Eye className="w-3.5 h-3.5" />
       </button>
       <Link
        href={`/dictionary/${encodeURIComponent(item.hanzi)}`}
-       className="p-1.5 rounded text-text-muted hover:text-accent hover:bg-accent/10 transition-colors"
+       className="p-1.5 rounded text-text-muted hover:  hover:bg-accent/10 transition-colors"
        title="Xem chi tiết"
       >
        <ExternalLink className="w-3.5 h-3.5" />

@@ -6,7 +6,6 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
-import { Select } from "@/components/ui/select";
 import type { StaticRadicalData } from "@/features/hanzihome/types";
 
 type RadicalWorkspaceProps = {
@@ -14,29 +13,29 @@ type RadicalWorkspaceProps = {
 };
 
 export function RadicalWorkspace({ radicals }: RadicalWorkspaceProps) {
- // TODO: Later derive lesson-related radicals from vocabulary characters if needed.
- const [selectedId, setSelectedId] = useState<string | null>(radicals[0]?.id || null);
+ const [selectedId, setSelectedId] = useState<string | null>(
+  radicals[0]?.id || null,
+ );
  const [searchValue, setSearchValue] = useState("");
- const [strokeFilter, setStrokeFilter] = useState("all");
  const visibleRadicals = useMemo(() => {
   const keyword = searchValue.trim().toLowerCase();
   return radicals.filter((radical) => {
-   const matchesStroke =
-    strokeFilter === "all" || String(radical.strokes) === strokeFilter;
    const haystack = [
     radical.radical,
     radical.nameVi,
     radical.coreMeaning.history,
     radical.coreMeaning.modern,
     radical.recognition,
-    radical.variants.map((variant) => `${variant.form} ${variant.note}`).join(" "),
+    radical.variants
+     .map((variant) => `${variant.form} ${variant.note}`)
+     .join(" "),
    ]
     .join(" ")
     .toLowerCase();
 
-   return matchesStroke && (!keyword || haystack.includes(keyword));
+   return !keyword || haystack.includes(keyword);
   });
- }, [radicals, searchValue, strokeFilter]);
+ }, [radicals, searchValue]);
  const selectedRadical = useMemo(
   () =>
    radicals.find((radical) => radical.id === selectedId) ||
@@ -45,28 +44,29 @@ export function RadicalWorkspace({ radicals }: RadicalWorkspaceProps) {
    null,
   [radicals, selectedId, visibleRadicals],
  );
- const strokeOptions = useMemo(() => {
-  return Array.from(
-   new Set(radicals.map((radical) => radical.strokes).filter((stroke) => stroke !== null)),
-  ).sort((a, b) => a - b);
- }, [radicals]);
 
  if (!selectedRadical) {
   return (
    <Card padding="lg" className="rounded-2xl">
-    <p className="text-sm font-semibold text-text-muted">Chưa có dữ liệu bộ thủ.</p>
+    <p className="text-sm font-semibold text-text-muted">
+     Chưa có dữ liệu bộ thủ.
+    </p>
    </Card>
   );
  }
 
  return (
   <div className="grid gap-5 lg:grid-cols-[minmax(20rem,23.75rem)_minmax(0,1fr)]">
-   <Card padding="md" className="rounded-2xl lg:sticky lg:top-24 lg:max-h-[calc(100vh-8rem)] lg:overflow-y-auto">
+   <Card
+    padding="md"
+    className="rounded-2xl lg:sticky lg:top-24 lg:max-h-[calc(100vh-8rem)] lg:overflow-y-auto"
+   >
     <div className="grid gap-3">
      <div>
       <h2 className="text-lg font-black text-text-primary">Toàn bộ bộ thủ</h2>
       <p className="text-sm font-semibold text-text-muted">
-       {radicals.length} bộ thủ độc lập với bài học. Sau này có thể derive bộ thủ theo từ vựng bài khi cần.
+       {radicals.length} bộ thủ độc lập với bài học. Sau này có thể derive bộ
+       thủ theo từ vựng bài khi cần.
       </p>
      </div>
      <Input
@@ -75,18 +75,7 @@ export function RadicalWorkspace({ radicals }: RadicalWorkspaceProps) {
       placeholder="Tìm bộ thủ, tên, nghĩa..."
       aria-label="Tìm bộ thủ"
      />
-     <Select
-      value={strokeFilter}
-      onChange={(event) => setStrokeFilter(event.target.value)}
-      aria-label="Lọc bộ thủ theo số nét"
-     >
-      <option value="all">Tất cả số nét</option>
-      {strokeOptions.map((stroke) => (
-       <option key={stroke} value={String(stroke)}>
-        {stroke} nét
-       </option>
-      ))}
-     </Select>
+
      <div className="grid gap-2">
       {visibleRadicals.map((radical) => (
        <Button
@@ -137,7 +126,11 @@ export function RadicalWorkspace({ radicals }: RadicalWorkspaceProps) {
       <RadicalSection title="Biến thể">
        <div className="flex flex-wrap gap-2">
         {selectedRadical.variants.map((variant) => (
-         <Badge key={`${variant.form}-${variant.note}`} variant="purple" size="lg">
+         <Badge
+          key={`${variant.form}-${variant.note}`}
+          variant="purple"
+          size="lg"
+         >
           {variant.form} · {variant.note}
          </Badge>
         ))}

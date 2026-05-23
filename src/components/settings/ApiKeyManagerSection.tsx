@@ -300,7 +300,7 @@ export default function ApiKeyManagerSection() {
   <section className="rounded-2xl border border-border-default bg-bg-card p-6 shadow-theme-sm">
    <div className="flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between">
     <div className="max-w-3xl space-y-2">
-     <div className="inline-flex items-center gap-2 rounded-full bg-accent/10 px-3 py-1 text-xs font-bold uppercase tracking-[0.18em] text-accent">
+     <div className="inline-flex items-center gap-2 rounded-full bg-accent/10 px-3 py-1 text-xs font-bold uppercase tracking-[0.18em]  ">
       <Workflow className="h-3.5 w-3.5" />
       API Key Manager
      </div>
@@ -361,7 +361,7 @@ export default function ApiKeyManagerSection() {
           href={getApiKeyProviderDocsUrl(selectedProviderOption.value)}
           target="_blank"
           rel="noreferrer"
-          className="mt-2 inline-flex items-center gap-1 font-medium text-accent transition hover:text-accent-hover"
+          className="mt-2 inline-flex items-center gap-1 font-medium   transition hover: -hover"
          >
           Mở trang lấy key
           <ExternalLink className="h-3.5 w-3.5" />
@@ -473,7 +473,7 @@ export default function ApiKeyManagerSection() {
     </div>
    ) : keys.length === 0 ? (
     <div className="mt-6 rounded-3xl border border-dashed border-border-default bg-bg-primary px-6 py-10 text-center">
-     <div className="mx-auto inline-flex h-12 w-12 items-center justify-center rounded-full bg-accent/10 text-accent">
+     <div className="mx-auto inline-flex h-12 w-12 items-center justify-center rounded-full bg-accent/10  ">
       <KeyRound className="h-5 w-5" />
      </div>
      <p className="mt-4 text-base font-semibold text-text-primary">

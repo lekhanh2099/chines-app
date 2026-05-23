@@ -4,6 +4,10 @@ import { ThemeProvider } from "@/components/layout/ThemeProvider";
 import { Toaster } from "sonner";
 import { VocabInspectorProvider } from "@/components/vocabulary/VocabInspectorProvider";
 import { QueryProvider } from "@/components/providers/QueryProvider";
+import { Geist } from "next/font/google";
+import { cn } from "@/lib/utils";
+
+const geist = Geist({subsets:['latin'],variable:'--font-sans'});
 
 export const metadata: Metadata = {
  title: "KMS — Chinese Learning Portal",
@@ -16,7 +20,7 @@ export default function RootLayout({
  children: React.ReactNode;
 }>) {
  return (
-  <html lang="en" data-theme="light" suppressHydrationWarning>
+  <html lang="en" data-theme="light" suppressHydrationWarning className={cn("font-sans", geist.variable)}>
    <body className="antialiased">
     <ThemeProvider>
      <QueryProvider>
