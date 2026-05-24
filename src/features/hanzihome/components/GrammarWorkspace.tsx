@@ -85,6 +85,8 @@ export function GrammarWorkspace({
      }
      bookmarked={selectedPoint ? bookmarks.includes(selectedPoint.id) : false}
      relatedVocab={relatedVocab}
+     lessonId={lesson.id}
+     canEditDbContent={Boolean(lesson.isDbBacked && !lesson.draftId)}
      editDraftId={lesson.draftId}
      editItemId={selectedPoint?.id}
      onBookmark={() => selectedPoint && onBookmark(selectedPoint.id)}

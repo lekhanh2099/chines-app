@@ -72,6 +72,11 @@ export type GrammarViewModel = {
   structuresView: string[];
   examplesParsed: VocabExample[];
   notes: string[];
+  detailSections?: Array<{
+    key: string;
+    title: string;
+    lines: string[];
+  }>;
 };
 
 export type LessonNotesViewModel = {
@@ -105,6 +110,7 @@ export type HanziHomeLesson = {
   vocab: VocabViewModel[];
   grammar: GrammarViewModel[];
   isDraft?: boolean;
+  isDbBacked?: boolean;
   draftId?: string;
   status?: "draft" | "published" | "archived";
   notes?: LessonNotesViewModel;

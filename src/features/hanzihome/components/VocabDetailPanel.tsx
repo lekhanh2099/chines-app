@@ -7,6 +7,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { InlineDraftItemEditDialog } from "@/features/hanzihome/components/InlineDraftItemEditDialog";
+import { VocabEditDialog } from "@/features/hanzihome/components/VocabEditDialog";
 import type {
  LearningStatus,
  VocabViewModel,
@@ -26,6 +27,8 @@ type VocabDetailPanelProps = {
  status: LearningStatus;
  bookmarked: boolean;
  onBookmark: () => void;
+ lessonId?: string;
+ canEditDbContent?: boolean;
  editDraftId?: string;
  editItemId?: string;
  onMarkStatus: (status: LearningStatus) => void;
@@ -35,6 +38,8 @@ export function VocabDetailPanel({
  word,
  bookmarked,
  onBookmark,
+ lessonId,
+ canEditDbContent = false,
  editDraftId,
  editItemId,
 }: VocabDetailPanelProps) {
@@ -109,6 +114,21 @@ export function VocabDetailPanel({
       </p>
      </div>
      <div className="flex flex-wrap gap-2">
+      {canEditDbContent && lessonId ? (
+       <VocabEditDialog lessonId={lessonId} word={word} />
+      ) : null}
+
+      {!canEditDbContent && !editDraftId && (
+       <Button
+        type="button"
+        variant="outline"
+        disabled
+        title="Bài fallback tĩnh không thể sửa trực tiếp."
+       >
+        Sửa
+       </Button>
+      )}
+
       {editDraftId && editItemId && (
        <InlineDraftItemEditDialog
         kind="vocab"

@@ -77,6 +77,8 @@ export function VocabWorkspace({
         word={selectedWord}
         status={selectedWord ? progress[selectedWord.id]?.status || "new" : "new"}
         bookmarked={selectedWord ? bookmarks.includes(selectedWord.id) : false}
+        lessonId={lesson.id}
+        canEditDbContent={Boolean(lesson.isDbBacked && !lesson.draftId)}
         editDraftId={lesson.draftId}
         editItemId={selectedWord?.id}
         onBookmark={() => selectedWord && onBookmark(selectedWord.id)}

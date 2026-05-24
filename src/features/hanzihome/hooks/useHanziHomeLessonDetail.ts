@@ -13,6 +13,9 @@ const lessonDetailResponseSchema = z.object({
   lesson: lessonSchema.nullable(),
 });
 
+export const hanzihomeLessonDetailQueryKey = (lessonId: string | null) =>
+  ["hanzihome", "lesson-detail", lessonId] as const;
+
 async function fetchLessonDetail(
   lessonId: string,
 ): Promise<HanziHomeLesson | null> {
@@ -40,7 +43,7 @@ async function fetchLessonDetail(
 export function useHanziHomeLessonDetail(lessonId: string | null) {
   const fallback = useMemo(() => getHanziHomeLessonDetail(lessonId), [lessonId]);
   const query = useQuery({
-    queryKey: ["hanzihome", "lesson-detail", lessonId],
+    queryKey: hanzihomeLessonDetailQueryKey(lessonId),
     queryFn: () => {
       if (!lessonId) {
         throw new Error("Missing HanziHome lesson id");

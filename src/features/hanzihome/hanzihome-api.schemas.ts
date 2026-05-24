@@ -1,16 +1,16 @@
 import { z } from "zod";
 
 export const vocabExampleSchema = z.object({
-  zh: z.string(),
+  zh: z.string().trim().min(1, "Thiếu câu tiếng Trung"),
   pinyin: z.string().optional(),
   vi: z.string().optional(),
   note: z.string().optional(),
 });
 
 export const vocabDetailSectionSchema = z.object({
-  key: z.string(),
-  title: z.string(),
-  lines: z.array(z.string()),
+  key: z.string().trim().min(1, "Thiếu key"),
+  title: z.string().trim().min(1, "Thiếu tiêu đề"),
+  lines: z.array(z.string().trim().min(1)).default([]),
 });
 
 export const vocabViewModelSchema = z.object({
@@ -41,6 +41,7 @@ export const grammarViewModelSchema = z.object({
   structuresView: z.array(z.string()),
   examplesParsed: z.array(vocabExampleSchema),
   notes: z.array(z.string()),
+  detailSections: z.array(vocabDetailSectionSchema).optional(),
 });
 
 export const lessonNotesSchema = z.object({
@@ -106,7 +107,45 @@ export const lessonSchema = z.object({
   vocab: z.array(vocabViewModelSchema),
   grammar: z.array(grammarViewModelSchema),
   isDraft: z.boolean().optional(),
+  isDbBacked: z.boolean().optional(),
   draftId: z.string().optional(),
   status: z.enum(["draft", "published", "archived"]).optional(),
   notes: lessonNotesSchema.optional(),
 });
+
+export const updateHanziHomeVocabPayloadSchema = z.object({
+  lessonId: z.string().trim().min(1),
+  word: z.string().trim().min(1, "Thiếu từ"),
+  pinyin: z.string().trim().min(1, "Thiếu pinyin"),
+  hanViet: z.string().trim().min(1, "Thiếu Hán Việt"),
+  meaning: z.string().trim().min(1, "Thiếu nghĩa"),
+  category: z.string().trim().min(1, "Thiếu nhóm từ"),
+  level: z.string().trim().optional(),
+  pos: z
+    .object({
+      vi: z.string().trim().optional(),
+      zh: z.string().trim().optional(),
+    })
+    .optional(),
+  examplesParsed: z.array(vocabExampleSchema),
+  detailSections: z.array(vocabDetailSectionSchema),
+});
+
+export const updateHanziHomeGrammarPayloadSchema = z.object({
+  lessonId: z.string().trim().min(1),
+  title: z.string().trim().min(1, "Thiếu tiêu đề"),
+  cleanTitle: z.string().trim().min(1, "Thiếu tiêu đề sạch"),
+  core: z.string().trim(),
+  contentMd: z.string().optional(),
+  structuresView: z.array(z.string().trim().min(1)),
+  notes: z.array(z.string().trim().min(1)),
+  examplesParsed: z.array(vocabExampleSchema),
+  detailSections: z.array(vocabDetailSectionSchema),
+});
+
+export type UpdateHanziHomeVocabPayload = z.infer<
+  typeof updateHanziHomeVocabPayloadSchema
+>;
+export type UpdateHanziHomeGrammarPayload = z.infer<
+  typeof updateHanziHomeGrammarPayloadSchema
+>;

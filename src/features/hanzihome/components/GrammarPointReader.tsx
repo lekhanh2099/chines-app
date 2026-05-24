@@ -4,6 +4,7 @@ import { Bookmark } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import { GrammarEditDialog } from "@/features/hanzihome/components/GrammarEditDialog";
 import { InlineDraftItemEditDialog } from "@/features/hanzihome/components/InlineDraftItemEditDialog";
 import type {
  GrammarViewModel,
@@ -16,6 +17,8 @@ type GrammarPointReaderProps = {
  status: LearningStatus;
  bookmarked: boolean;
  relatedVocab: VocabViewModel[];
+ lessonId?: string;
+ canEditDbContent?: boolean;
  editDraftId?: string;
  editItemId?: string;
  onBookmark: () => void;
@@ -27,6 +30,8 @@ export function GrammarPointReader({
  status,
  bookmarked,
  relatedVocab,
+ lessonId,
+ canEditDbContent = false,
  editDraftId,
  editItemId,
  onBookmark,
@@ -57,6 +62,21 @@ export function GrammarPointReader({
       )}
      </div>
      <div className="flex flex-wrap gap-2">
+      {canEditDbContent && lessonId ? (
+       <GrammarEditDialog lessonId={lessonId} point={point} />
+      ) : null}
+
+      {!canEditDbContent && !editDraftId && (
+       <Button
+        type="button"
+        variant="outline"
+        disabled
+        title="Bài fallback tĩnh không thể sửa trực tiếp."
+       >
+        Sửa
+       </Button>
+      )}
+
       {editDraftId && editItemId && (
        <InlineDraftItemEditDialog
         kind="grammar"
@@ -102,6 +122,27 @@ export function GrammarPointReader({
           {example.vi}
          </p>
         )}
+       </div>
+      ))}
+     </section>
+    )}
+
+    {point.detailSections && point.detailSections.length > 0 && (
+     <section className="grid gap-2">
+      <h3 className="text-base font-black text-text-primary">Chi tiết</h3>
+      {point.detailSections.map((section) => (
+       <div
+        key={section.key}
+        className="grid gap-2 rounded-xl border border-border-default bg-bg-subtle p-3"
+       >
+        <h4 className="text-sm font-black text-text-primary">
+         {section.title}
+        </h4>
+        {section.lines.map((line) => (
+         <p key={line} className="text-sm leading-relaxed text-text-secondary">
+          {line}
+         </p>
+        ))}
        </div>
       ))}
      </section>

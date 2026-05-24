@@ -289,10 +289,10 @@ function mapGrammarPoint({
   examples: GrammarExampleRow[];
   detailSections: GrammarDetailSectionRow[];
 }): GrammarViewModel {
-  const detailNotes = sortByOrder(
+  const sortedDetailSections = sortByOrder(
     detailSections,
     (section) => section.section_order,
-  ).flatMap((section) => section.lines);
+  );
 
   return {
     id: row.id,
@@ -304,7 +304,12 @@ function mapGrammarPoint({
     examplesParsed: sortByOrder(examples, (example) => example.example_order).map(
       mapExample,
     ),
-    notes: [...row.notes, ...detailNotes],
+    notes: row.notes,
+    detailSections: sortedDetailSections.map((section) => ({
+      key: section.section_key,
+      title: section.title,
+      lines: section.lines,
+    })),
   };
 }
 
@@ -350,6 +355,7 @@ function mapLesson({
     grammarPointIds: grammar.map((item) => item.id),
     vocab,
     grammar,
+    isDbBacked: true,
     notes: mainText?.content
       ? {
           overviewMarkdown: mainText.content,
@@ -372,6 +378,7 @@ function mapLessonSummary(row: LessonRow): HanziHomeLesson {
     grammarPointIds: [],
     vocab: [],
     grammar: [],
+    isDbBacked: true,
   };
 }
 
