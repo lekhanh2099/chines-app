@@ -89,7 +89,7 @@ function createInitialContent({
  };
 }
 
-function InlineRichContent({}: {
+function InlineRichContent({ }: {
  noteId: string;
  editTitle: string;
  editDescription: string;
@@ -99,7 +99,7 @@ function InlineRichContent({}: {
  const activeNoteId = useNoteTabsStore((s) => s.activeNoteId);
 
  return (
-  <div className="">
+  <div >
    {tabs.map((tab) => (
     <NoteEditorPanel
      key={tab.noteId}
@@ -157,11 +157,11 @@ export function LessonLinkedRichContentCard({
  };
 
  return (
-  <Card padding="lg" className="rounded-2xl -2xl">
+  <Card padding="lg" className="rounded-xl">
    <div className="grid gap-4">
     <div className="flex flex-wrap items-start justify-between gap-4">
      <div className="flex min-w-0 items-start gap-3">
-      <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-bg-subtle">
+      <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-bg-subtle">
        <Icon className="h-5 w-5" />
       </span>
 
@@ -169,7 +169,7 @@ export function LessonLinkedRichContentCard({
        <p className="text-xs font-black uppercase tracking-wide text-text-muted">
         {eyebrow}
        </p>
-       <h2 className="mt-1 text-xl font-black text-text-primary">{title}</h2>
+       <h2 className="text-xl font-black text-text-primary">{title}</h2>
       </div>
      </div>
 
@@ -197,7 +197,7 @@ export function LessonLinkedRichContentCard({
     </div>
 
     {linkedNoteQuery.isLoading ? (
-     <div className="rounded-2xl border border-border-default bg-bg-subtle p-4 text-sm font-semibold text-text-muted">
+     <div className="rounded-xl border border-border-default bg-bg-subtle p-4 text-sm font-semibold text-text-muted">
       Đang kiểm tra nội dung...
      </div>
     ) : note ? (
@@ -208,7 +208,7 @@ export function LessonLinkedRichContentCard({
       editButtonLabel={editButtonLabel}
      />
     ) : (
-     <div className="rounded-2xl border border-dashed border-border-default bg-bg-subtle p-4 text-sm font-semibold text-text-muted">
+     <div className="rounded-xl border border-dashed border-border-default bg-bg-subtle p-4 text-sm font-semibold text-text-muted">
       {emptyText}
      </div>
     )}

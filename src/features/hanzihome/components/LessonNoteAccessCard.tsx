@@ -103,11 +103,11 @@ function createPersonalNoteContent(
    children: [
     heading(`Ghi chú: ${lesson.title}`, "h2"),
     paragraph(""),
-    paragraph("Những điểm dễ quên:"),
+    paragraph("Những điểm dễ quên: "),
     paragraph(""),
-    paragraph("Câu mẫu tự đặt:"),
+    paragraph("Câu mẫu tự đặt: "),
     paragraph(""),
-    paragraph("Lỗi sai của mình:"),
+    paragraph("Lỗi sai của mình: "),
    ],
    direction: "ltr",
    format: "",
@@ -126,7 +126,7 @@ function PaneToggle({
  onChange: (pane: MobilePane) => void;
 }) {
  return (
-  <div className="grid grid-cols-2 gap-2 rounded-2xl bg-bg-subtle p-1 lg:hidden">
+  <div className="grid grid-cols-2 gap-2 rounded-xl bg-bg-subtle p-1 lg:hidden">
    <button
     type="button"
     onClick={() => onChange("reading")}
@@ -231,7 +231,7 @@ function LessonSplitNoteEditor({
 
  if (isLoading) {
   return (
-   <div className="rounded-2xl border border-border-default bg-bg-subtle p-4 text-sm font-semibold text-text-muted">
+   <div className="rounded-xl border border-border-default bg-bg-subtle p-4 text-sm font-semibold text-text-muted">
     Đang tải note của bài...
    </div>
   );
@@ -239,7 +239,7 @@ function LessonSplitNoteEditor({
 
  if (!note) {
   return (
-   <div className="rounded-2xl border border-border-default bg-bg-subtle p-4 text-sm font-semibold text-text-muted">
+   <div className="rounded-xl border border-border-default bg-bg-subtle p-4 text-sm font-semibold text-text-muted">
     Không tìm thấy note đã gắn với bài này.
    </div>
   );
@@ -290,7 +290,7 @@ function LessonSplitNoteEditor({
 
    {splitEnabled ? (
     <>
-     <div className="hidden min-h-136 overflow-hidden rounded-2xl border border-border-default bg-bg-primary lg:grid lg:grid-cols-2">
+     <div className="hidden min-h-136 overflow-hidden rounded-xl border border-border-default bg-bg-primary lg:grid lg:grid-cols-2">
       <ReadingPane
        noteId={note.id}
        readingContent={readingContent as Record<string, unknown>}
@@ -306,7 +306,7 @@ function LessonSplitNoteEditor({
       />
      </div>
 
-     <div className="min-h-112 overflow-hidden rounded-2xl border border-border-default bg-bg-primary lg:hidden">
+     <div className="min-h-112 overflow-hidden rounded-xl border border-border-default bg-bg-primary lg:hidden">
       {mobilePane === "reading" ? (
        <ReadingPane
         noteId={note.id}
@@ -325,7 +325,7 @@ function LessonSplitNoteEditor({
      </div>
     </>
    ) : (
-    <div className="min-h-112 overflow-hidden rounded-2xl border border-border-default bg-bg-primary sm:min-h-136">
+    <div className="min-h-112 overflow-hidden rounded-xl border border-border-default bg-bg-primary sm:min-h-136">
      <NotePane
       noteId={note.id}
       content={note.content as Record<string, unknown> | null}
@@ -367,11 +367,11 @@ export function LessonNoteAccessCard({ lesson }: LessonNoteAccessCardProps) {
  };
 
  return (
-  <Card padding="lg" className="rounded-2xl">
+  <Card padding="lg" className="rounded-xl">
    <div className="grid gap-4">
     <div className="flex flex-wrap items-start justify-between gap-4">
      <div className="flex min-w-0 items-start gap-3">
-      <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-bg-subtle">
+      <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-bg-subtle">
        <FileText className="h-5 w-5" />
       </span>
 
@@ -379,10 +379,10 @@ export function LessonNoteAccessCard({ lesson }: LessonNoteAccessCardProps) {
        <p className="text-xs font-black uppercase tracking-wide text-text-muted">
         Lesson note
        </p>
-       <h2 className="mt-1 text-xl font-black text-text-primary">
+       <h2 className="text-xl font-black text-text-primary">
         Ghi chú riêng của bài
        </h2>
-       <p className="mt-1 text-sm font-semibold text-text-muted">
+       <p className="text-sm font-semibold text-text-muted">
         Desktop có split view. Mobile dùng nút chuyển Bài đọc / Ghi chú để đỡ
         rối.
        </p>
@@ -406,7 +406,7 @@ export function LessonNoteAccessCard({ lesson }: LessonNoteAccessCardProps) {
     </div>
 
     {linkedNoteQuery.isLoading ? (
-     <div className="rounded-2xl border border-border-default bg-bg-subtle p-4 text-sm font-semibold text-text-muted">
+     <div className="rounded-xl border border-border-default bg-bg-subtle p-4 text-sm font-semibold text-text-muted">
       Đang kiểm tra note...
      </div>
     ) : note ? (
@@ -416,7 +416,7 @@ export function LessonNoteAccessCard({ lesson }: LessonNoteAccessCardProps) {
       type="button"
       onClick={handleCreate}
       disabled={isCreating}
-      className="rounded-2xl border border-dashed border-border-default bg-bg-subtle p-5 text-left text-sm font-semibold text-text-muted transition-colors hover:border-accent-muted hover:bg-accent-subtle disabled:cursor-not-allowed disabled:opacity-60"
+      className="rounded-xl border border-dashed border-border-default bg-bg-subtle p-4 text-left text-sm font-semibold text-text-muted transition-colors hover:border-accent-muted hover:bg-accent-subtle disabled:cursor-not-allowed disabled:opacity-60"
      >
       Chưa có note cho bài này. Bấm để tạo split note.
      </button>

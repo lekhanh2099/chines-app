@@ -42,7 +42,7 @@ export function HanziHomeLibraryHome() {
    (draftsQuery.data ?? [])
     .filter((draft) => draft.status === "published")
     .map(mapLessonDraftToHanziHomeLesson),
- [draftsQuery.data],
+  [draftsQuery.data],
  );
  const unpublishedDrafts = useMemo(
   () => (draftsQuery.data ?? []).filter((draft) => draft.status !== "published"),
@@ -265,15 +265,15 @@ function getCourseStats(
   vocabCount:
    course.stats.vocabCount +
    courseDraftLessons.reduce(
-   (sum, lesson) => sum + lesson.vocab.length,
-   0,
-  ),
+    (sum, lesson) => sum + lesson.vocab.length,
+    0,
+   ),
   grammarCount:
    course.stats.grammarCount +
    courseDraftLessons.reduce(
-   (sum, lesson) => sum + lesson.grammar.length,
-   0,
-  ),
+    (sum, lesson) => sum + lesson.grammar.length,
+    0,
+   ),
   fallbackLessonId:
    courseDraftLessons.at(-1)?.id || course.fallbackLessonId || course.lastLessonId,
   suggestedLessonNumber:
@@ -316,15 +316,15 @@ function CourseCard({
      openCourse();
     }
    }}
-   className="group cursor-pointer rounded-3xl p-5 transition-colors hover:border-accent-muted hover:bg-accent-subtle"
+   className="group cursor-pointer rounded-xl p-4 transition-colors hover:border-accent-muted hover:bg-accent-subtle"
   >
    <div className="grid gap-4 md:grid-cols-[minmax(0,1fr)_auto] md:items-center">
     <div className="flex min-w-0 gap-4">
-     <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-bg-subtle shadow-theme-sm transition-colors group-hover:bg-bg-primary">
+     <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-bg-subtle shadow-theme-sm transition-colors group-hover:bg-bg-primary">
       <BookMarked className="h-5 w-5" />
      </span>
 
-     <div className="min-w-0">
+     <div className="grid min-w-0 gap-1">
       <div className="flex flex-wrap items-center gap-2">
        <span className="text-xs font-black uppercase tracking-[0.18em] text-text-muted">
         {primaryBook?.shortTitle || primaryBook?.title || course.type}
@@ -337,17 +337,17 @@ function CourseCard({
        )}
       </div>
 
-      <h2 className="mt-1 truncate text-2xl font-black tracking-tight text-text-primary">
+      <h2 className="truncate text-2xl font-black tracking-tight text-text-primary">
        {course.title}
       </h2>
 
       {course.subtitle && (
-       <p className="mt-1 line-clamp-1 max-w-2xl text-sm font-semibold text-text-secondary">
+       <p className="line-clamp-1 max-w-2xl text-sm font-semibold text-text-secondary">
         {course.subtitle}
-      </p>
+       </p>
       )}
 
-      <div className="mt-3 flex flex-wrap gap-2">
+      <div className="flex flex-wrap gap-2 pt-2">
        <MiniMetric label="Bài" value={stats.lessonCount} />
        <MiniMetric label="Từ" value={stats.vocabCount} />
        <MiniMetric label="Ngữ pháp" value={stats.grammarCount} />
@@ -383,9 +383,9 @@ function CourseCard({
 
 function MiniMetric({ label, value }: { label: string; value: number }) {
  return (
-  <span className="rounded-2xl border border-border-default bg-bg-subtle px-3 py-2">
+  <span className="inline-flex items-baseline gap-1 rounded-xl border border-border-default bg-bg-subtle px-3 py-2">
    <span className="text-base font-black text-text-primary">{value}</span>
-   <span className="ml-1 text-xs font-black text-text-muted">{label}</span>
+   <span className="text-xs font-black text-text-muted">{label}</span>
   </span>
  );
 }

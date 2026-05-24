@@ -66,7 +66,7 @@ export function CreateCourseDialog() {
      <label className="grid gap-2">
       <span className="text-sm font-bold text-text-primary">Tên course</span>
       <input
-       className="h-10 rounded-2xl -xl border border-border-default bg-bg-primary px-3 text-sm font-semibold text-text-primary outline-none"
+       className="h-10 rounded-xl border border-border-default bg-bg-primary px-3 text-sm font-semibold text-text-primary outline-none"
        value={title}
        onChange={(event) => setTitle(event.target.value)}
        placeholder="Ví dụ: HSK 4"
@@ -78,7 +78,7 @@ export function CreateCourseDialog() {
      <label className="grid gap-2">
       <span className="text-sm font-bold text-text-primary">Mô tả ngắn</span>
       <input
-       className="h-10 rounded-2xl -xl border border-border-default bg-bg-primary px-3 text-sm font-semibold text-text-primary outline-none"
+       className="h-10 rounded-xl border border-border-default bg-bg-primary px-3 text-sm font-semibold text-text-primary outline-none"
        value={subtitle}
        onChange={(event) => setSubtitle(event.target.value)}
        placeholder="Ví dụ: Từ vựng và ngữ pháp HSK 4"
@@ -90,7 +90,7 @@ export function CreateCourseDialog() {
       <label className="grid gap-2">
        <span className="text-sm font-bold text-text-primary">Loại course</span>
        <input
-        className="h-10 rounded-2xl -xl border border-border-default bg-bg-primary px-3 text-sm font-semibold text-text-primary outline-none"
+        className="h-10 rounded-xl border border-border-default bg-bg-primary px-3 text-sm font-semibold text-text-primary outline-none"
         value={type}
         onChange={(event) => setType(event.target.value)}
         placeholder="Ví dụ: HSK, Nghe hiểu, Khẩu ngữ, TOCFL"
@@ -114,7 +114,7 @@ export function CreateCourseDialog() {
         Tên quyển/sách đầu tiên
        </span>
        <input
-        className="h-10 rounded-2xl -xl border border-border-default bg-bg-primary px-3 text-sm font-semibold text-text-primary outline-none"
+        className="h-10 rounded-xl border border-border-default bg-bg-primary px-3 text-sm font-semibold text-text-primary outline-none"
         value={bookTitle}
         onChange={(event) => setBookTitle(event.target.value)}
         placeholder="Ví dụ: HSK 4 - Bài học chính"
@@ -129,7 +129,7 @@ export function CreateCourseDialog() {
        Tên ngắn của quyển
       </span>
       <input
-       className="h-10 rounded-2xl -xl border border-border-default bg-bg-primary px-3 text-sm font-semibold text-text-primary outline-none"
+       className="h-10 rounded-xl border border-border-default bg-bg-primary px-3 text-sm font-semibold text-text-primary outline-none"
        value={bookShortTitle}
        onChange={(event) => setBookShortTitle(event.target.value)}
        placeholder="Ví dụ: HSK 4"

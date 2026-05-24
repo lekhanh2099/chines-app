@@ -18,7 +18,7 @@ export function LessonDraftsCompactList() {
  const drafts = draftsQuery.data ?? [];
 
  const handleDelete = async (draftId: string, title: string) => {
-  const confirmed = window.confirm(`Xóa bài nháp "${title}"?`);
+  const confirmed = window.confirm(`Xóa bài nháp"${title}"?`);
 
   if (!confirmed) return;
 
@@ -27,11 +27,11 @@ export function LessonDraftsCompactList() {
  };
 
  return (
-  <Card padding="md" className="h-full rounded-2xl ">
+  <Card padding="md" className="h-full rounded-xl">
    <div className="grid gap-4">
     <div className="flex items-start justify-between gap-3">
      <div className="flex min-w-0 gap-3">
-      <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-bg-subtle">
+      <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-bg-subtle">
        <FilePlus2 className="h-5 w-5" />
       </span>
 
@@ -39,10 +39,10 @@ export function LessonDraftsCompactList() {
        <p className="text-xs font-black uppercase tracking-wide text-text-muted">
         Bài tự tạo
        </p>
-       <h2 className="mt-1 text-lg font-black text-text-primary">
+       <h2 className="text-lg font-black text-text-primary">
         Draft Supabase
        </h2>
-       <p className="mt-1 text-sm font-semibold text-text-muted">
+       <p className="text-sm font-semibold text-text-muted">
         Bài custom, không sửa JSON tĩnh.
        </p>
       </div>
@@ -66,7 +66,7 @@ export function LessonDraftsCompactList() {
     )}
 
     {!draftsQuery.isLoading && !draftsQuery.error && drafts.length === 0 && (
-     <div className="rounded-2xl border border-dashed border-border-default bg-bg-subtle p-4 text-sm font-semibold text-text-muted">
+     <div className="rounded-xl border border-dashed border-border-default bg-bg-subtle p-4 text-sm font-semibold text-text-muted">
       Chưa có bài tự tạo.
      </div>
     )}
@@ -76,7 +76,7 @@ export function LessonDraftsCompactList() {
       {drafts.slice(0, 3).map((draft) => (
        <div
         key={draft.id}
-        className="flex items-center justify-between gap-3 rounded-2xl border border-border-default bg-bg-subtle p-3"
+        className="flex items-center justify-between gap-3 rounded-xl border border-border-default bg-bg-subtle p-3"
        >
         <Link href={`/hanzihome/drafts/${draft.id}`} className="min-w-0 flex-1">
          <p className="truncate text-sm font-black text-text-primary">

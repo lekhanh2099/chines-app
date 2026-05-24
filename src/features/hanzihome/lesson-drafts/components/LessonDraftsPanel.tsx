@@ -36,7 +36,7 @@ export function LessonDraftsPanel({
  const drafts = draftsQuery.data ?? [];
 
  const handleDelete = async (draftId: string, title: string) => {
-  const confirmed = window.confirm(`Xóa bài nháp "${title}"?`);
+  const confirmed = window.confirm(`Xóa bài nháp"${title}"?`);
 
   if (!confirmed) return;
 
@@ -45,8 +45,8 @@ export function LessonDraftsPanel({
  };
 
  return (
-  <Card padding="md" className="rounded-2xl -2xl">
-   <div className="grid gap-5">
+  <Card padding="md" className="rounded-xl">
+   <div className="grid gap-3">
     <div className="grid gap-1">
      <p className="text-xs font-black uppercase tracking-wide text-text-muted">
       Bài tự tạo
@@ -60,7 +60,7 @@ export function LessonDraftsPanel({
      </p>
     </div>
 
-    <div className="rounded-2xl border border-border-default bg-bg-primary p-4">
+    <div className="rounded-xl border border-border-default bg-bg-primary p-4">
      <CreateLessonDraftForm
       suggestedLessonNumber={suggestedLessonNumber}
       courses={courses}
@@ -92,7 +92,7 @@ export function LessonDraftsPanel({
      )}
 
      {!draftsQuery.isLoading && !draftsQuery.error && drafts.length === 0 && (
-      <div className="rounded-2xl border border-dashed border-border-default p-4 text-sm font-semibold text-text-muted">
+      <div className="rounded-xl border border-dashed border-border-default p-4 text-sm font-semibold text-text-muted">
        Chưa có bài tự tạo. Điền form phía trên để tạo lesson draft đầu tiên.
       </div>
      )}
@@ -100,10 +100,10 @@ export function LessonDraftsPanel({
      {drafts.map((draft) => (
       <div
        key={draft.id}
-       className="flex flex-wrap items-center justify-between gap-3 rounded-2xl border border-border-default bg-bg-primary p-3"
+       className="flex flex-wrap items-center justify-between gap-3 rounded-xl border border-border-default bg-bg-primary p-3"
       >
        <div className="flex min-w-0 items-center gap-3">
-        <span className="flex size-10 shrink-0 items-center justify-center rounded-2xl -xl bg-bg-subtle">
+        <span className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-bg-subtle">
          <FilePlus2 className="h-5 w-5" />
         </span>
 

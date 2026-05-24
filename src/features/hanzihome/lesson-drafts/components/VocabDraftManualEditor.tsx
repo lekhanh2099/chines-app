@@ -22,7 +22,7 @@ function Textarea({
  return (
   <textarea
    className={cn(
-    "min-h-24 w-full rounded-2xl border border-border-default bg-bg-primary px-3 py-2 text-sm font-semibold text-text-primary placeholder:text-text-muted focus-visible:outline-none disabled:cursor-not-allowed disabled:opacity-50",
+    "min-h-24 w-full rounded-xl border border-border-default bg-bg-primary px-3 py-2 text-sm font-semibold text-text-primary placeholder:text-text-muted focus-visible:outline-none disabled:cursor-not-allowed disabled:opacity-50",
     className,
    )}
    {...props}
@@ -86,9 +86,9 @@ export function VocabDraftManualEditor({
    examples: item.examples.map((example, currentIndex) =>
     currentIndex === index
      ? {
-        ...example,
-        ...patch,
-       }
+      ...example,
+      ...patch,
+     }
      : example,
    ),
   });
@@ -104,7 +104,7 @@ export function VocabDraftManualEditor({
  };
 
  return (
-  <div className="grid gap-5">
+  <div className="grid gap-3">
    <div className="grid gap-4 md:grid-cols-2">
     <Field label="Từ">
      <Input
@@ -216,9 +216,9 @@ export function VocabDraftManualEditor({
          collocations: item.collocations.map((current, currentIndex) =>
           currentIndex === index
            ? {
-              ...current,
-              phrase: event.target.value,
-             }
+            ...current,
+            phrase: event.target.value,
+           }
            : current,
          ),
         })
@@ -232,9 +232,9 @@ export function VocabDraftManualEditor({
          collocations: item.collocations.map((current, currentIndex) =>
           currentIndex === index
            ? {
-              ...current,
-              meaning: event.target.value,
-             }
+            ...current,
+            meaning: event.target.value,
+           }
            : current,
          ),
         })
@@ -282,7 +282,7 @@ export function VocabDraftManualEditor({
     {item.examples.map((example, index) => (
      <div
       key={`${item.id}-example-${index}`}
-      className="grid gap-3 rounded-2xl border border-border-default bg-bg-primary p-3"
+      className="grid gap-3 rounded-xl border border-border-default bg-bg-primary p-3"
      >
       <div className="flex items-center justify-between gap-3">
        <p className="text-sm font-black text-text-primary">Ví dụ {index + 1}</p>

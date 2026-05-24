@@ -82,8 +82,8 @@ export function VocabWritingCue({
    onMouseDown={(event) => event.stopPropagation()}
    onTouchStart={(event) => event.stopPropagation()}
   >
-   <div className="mb-3 flex flex-wrap items-center justify-between gap-2">
-    <div className="flex flex-wrap gap-1.5 ">
+   <div className="flex flex-wrap items-center justify-between gap-2">
+    <div className="flex flex-wrap gap-1.5">
      {chars.map((char, index) => {
       const active = index === safeSelectedIndex;
 
@@ -108,7 +108,7 @@ export function VocabWritingCue({
    </div>
 
    <div className="grid gap-4 md:grid-cols-[auto_minmax(0,1fr)] md:items-start relative">
-    <div className="mx-auto md:mx-0">
+    <div >
      <HanziStrokeWriter
       key={`${activeCharacter}-${writerKey}`}
       character={activeCharacter}
@@ -136,13 +136,13 @@ export function VocabWritingCue({
      </p>
 
      {info.lines.length > 0 ? (
-      <div className="mt-1 grid gap-1 border-t border-border-default pt-2">
+      <div className="grid gap-1 border-t border-border-default pt-2">
        {info.lines.map((line) => (
         <p key={line}>{line}</p>
        ))}
       </div>
      ) : (
-      <p className="mt-1 border-t border-border-default pt-2 text-text-muted">
+      <p className="border-t border-border-default pt-2 text-text-muted">
        Chưa có ghi chú cấu tạo chữ cho mục này.
       </p>
      )}

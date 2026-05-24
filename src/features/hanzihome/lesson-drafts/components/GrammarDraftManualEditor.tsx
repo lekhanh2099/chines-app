@@ -23,7 +23,7 @@ function Textarea({
  return (
   <textarea
    className={cn(
-    "min-h-24 w-full rounded-2xl border border-border-default bg-bg-primary px-3 py-2 text-sm font-semibold text-text-primary placeholder:text-text-muted focus-visible:outline-none disabled:cursor-not-allowed disabled:opacity-50",
+    "min-h-24 w-full rounded-xl border border-border-default bg-bg-primary px-3 py-2 text-sm font-semibold text-text-primary placeholder:text-text-muted focus-visible:outline-none disabled:cursor-not-allowed disabled:opacity-50",
     className,
    )}
    {...props}
@@ -62,7 +62,7 @@ function Section({
  const [open, setOpen] = useState(defaultOpen);
 
  return (
-  <section className="rounded-2xl border border-border-default bg-bg-primary">
+  <section className="rounded-xl border border-border-default bg-bg-primary">
    <button
     type="button"
     className="flex w-full items-center justify-between gap-3 px-4 py-3 text-left"
@@ -73,7 +73,7 @@ function Section({
       {title}
      </span>
      {summary && (
-      <span className="mt-1 block truncate text-xs font-semibold text-text-muted">
+      <span className="block truncate text-xs font-semibold text-text-muted">
        {summary}
       </span>
      )}
@@ -122,9 +122,9 @@ export function GrammarDraftManualEditor({
    examples: item.examples.map((example, currentIndex) =>
     currentIndex === index
      ? {
-        ...example,
-        ...patch,
-       }
+      ...example,
+      ...patch,
+     }
      : example,
    ),
   });
@@ -253,7 +253,7 @@ export function GrammarDraftManualEditor({
     {item.examples.map((example, index) => (
      <div
       key={`${item.id}-example-${index}`}
-      className="grid gap-3 rounded-2xl border border-border-default bg-bg-subtle p-3"
+      className="grid gap-3 rounded-xl border border-border-default bg-bg-subtle p-3"
      >
       <div className="flex items-center justify-between gap-3">
        <p className="text-sm font-black text-text-primary">Ví dụ {index + 1}</p>

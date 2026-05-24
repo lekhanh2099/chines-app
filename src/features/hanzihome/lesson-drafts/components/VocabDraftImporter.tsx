@@ -286,7 +286,7 @@ export function VocabDraftImporter({ draft }: VocabDraftImporterProps) {
 
  return (
   <div className="grid gap-4">
-   <Card padding="sm" className="rounded-2xl -2xl">
+   <Card padding="sm" className="rounded-xl">
     <div className="flex flex-wrap items-center gap-2">
      <StepButton
       active={step === "source"}
@@ -301,7 +301,7 @@ export function VocabDraftImporter({ draft }: VocabDraftImporterProps) {
      />
 
      {sourceDirty && (
-      <span className="ml-auto rounded-full bg-bg-subtle px-3 py-1 text-xs font-black text-text-muted">
+      <span className="justify-self-end rounded-full bg-bg-subtle px-3 py-1 text-xs font-black text-text-muted">
        Có source mới chưa xử lý
       </span>
      )}
@@ -310,16 +310,16 @@ export function VocabDraftImporter({ draft }: VocabDraftImporterProps) {
 
    {step === "source" && (
     <div className="grid gap-4 xl:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)]">
-     <Card padding="lg" className="rounded-2xl -2xl">
-      <div className="grid gap-5">
+     <Card padding="lg" className="rounded-xl">
+      <div className="grid gap-3">
        <div>
         <p className="text-xs font-black uppercase tracking-wide text-text-muted">
          Step 1
         </p>
-        <h2 className="mt-1 text-xl font-black text-text-primary">
+        <h2 className="text-xl font-black text-text-primary">
          Nhập nguồn từ vựng
         </h2>
-        <p className="mt-1 text-sm font-semibold text-text-muted">
+        <p className="text-sm font-semibold text-text-muted">
          Mặc định là thêm từ mới vào bài, không ghi đè từ cũ.
         </p>
        </div>
@@ -357,11 +357,11 @@ export function VocabDraftImporter({ draft }: VocabDraftImporterProps) {
         />
        </div>
 
-       <div className="flex flex-wrap gap-2 rounded-2xl border border-border-default bg-bg-primary p-2">
+       <div className="flex flex-wrap gap-2 rounded-xl border border-border-default bg-bg-primary p-2">
         <button
          type="button"
          className={cn(
-          "rounded-2xl -xl px-3 py-2 text-sm font-black",
+          "rounded-xl px-3 py-2 text-sm font-black",
           saveMode === "append"
            ? "bg-text-primary text-bg-primary"
            : "text-text-muted hover:text-text-primary",
@@ -373,7 +373,7 @@ export function VocabDraftImporter({ draft }: VocabDraftImporterProps) {
         <button
          type="button"
          className={cn(
-          "rounded-2xl -xl px-3 py-2 text-sm font-black",
+          "rounded-xl px-3 py-2 text-sm font-black",
           saveMode === "replace"
            ? "bg-text-primary text-bg-primary"
            : "text-text-muted hover:text-text-primary",
@@ -396,12 +396,12 @@ export function VocabDraftImporter({ draft }: VocabDraftImporterProps) {
            ? "Dán markdown từ vựng ở đây..."
            : "Dán JSON array hoặc { items: [...] } ở đây..."
          }
-         className="min-h-96 w-full rounded-2xl border border-border-default bg-bg-primary px-3 py-3 text-sm font-semibold text-text-primary placeholder:text-text-muted focus-visible:outline-none"
+         className="min-h-96 w-full rounded-xl border border-border-default bg-bg-primary px-3 py-3 text-sm font-semibold text-text-primary placeholder:text-text-muted focus-visible:outline-none"
         />
        )}
 
        {mode === "manual" && (
-        <div className="rounded-2xl border border-dashed border-border-default bg-bg-primary p-5 text-sm font-semibold text-text-muted">
+        <div className="rounded-xl border border-dashed border-border-default bg-bg-primary p-4 text-sm font-semibold text-text-muted">
          Manual mode sẽ tạo một vocab card trắng để bạn tự điền từ đầu.
         </div>
        )}
@@ -434,13 +434,13 @@ export function VocabDraftImporter({ draft }: VocabDraftImporterProps) {
       </div>
      </Card>
 
-     <Card padding="lg" className="rounded-2xl -2xl">
+     <Card padding="lg" className="rounded-xl">
       <div className="grid gap-4">
        <div>
         <p className="text-xs font-black uppercase tracking-wide text-text-muted">
          Logic
         </p>
-        <h2 className="mt-1 text-xl font-black text-text-primary">
+        <h2 className="text-xl font-black text-text-primary">
          Không còn ghi đè ngoài ý muốn
         </h2>
        </div>
@@ -464,14 +464,14 @@ export function VocabDraftImporter({ draft }: VocabDraftImporterProps) {
         </p>
        </div>
 
-       <div className="rounded-2xl border border-border-default bg-bg-subtle p-4">
+       <div className="rounded-xl border border-border-default bg-bg-subtle p-4">
         <p className="text-xs font-black uppercase tracking-wide text-text-muted">
          Trạng thái hiện tại
         </p>
-        <p className="mt-1 text-2xl font-black text-text-primary">
+        <p className="text-2xl font-black text-text-primary">
          {items.length} từ trong review
         </p>
-        <p className="mt-1 text-sm font-semibold text-text-muted">
+        <p className="text-sm font-semibold text-text-muted">
          {savedItems.length} từ đang có trong draft database.
         </p>
        </div>
@@ -483,14 +483,14 @@ export function VocabDraftImporter({ draft }: VocabDraftImporterProps) {
    {step === "review" && (
     <div className="grid gap-4 xl:grid-cols-[minmax(20rem,0.8fr)_minmax(0,1.5fr)]">
      <div className="grid gap-4">
-      <Card padding="md" className="rounded-2xl -2xl">
+      <Card padding="md" className="rounded-xl">
        <div className="grid gap-3">
         <div className="flex items-start justify-between gap-3">
          <div>
           <p className="text-xs font-black uppercase tracking-wide text-text-muted">
            Parsed vocab
           </p>
-          <h3 className="mt-1 text-lg font-black text-text-primary">
+          <h3 className="text-lg font-black text-text-primary">
            {items.length} từ
           </h3>
          </div>
@@ -507,11 +507,11 @@ export function VocabDraftImporter({ draft }: VocabDraftImporterProps) {
         </div>
 
         {items.length === 0 ? (
-         <div className="rounded-2xl border border-dashed border-border-default p-4 text-sm font-semibold text-text-muted">
+         <div className="rounded-xl border border-dashed border-border-default p-4 text-sm font-semibold text-text-muted">
           Chưa có từ nào. Quay lại bước nhập nguồn.
          </div>
         ) : (
-         <div className="grid max-h-[42rem] gap-2 overflow-y-auto scrollbar-soft  pr-1">
+         <div className="grid max-h-[42rem] gap-2 overflow-y-auto scrollbar-soft pr-1">
           {items.map((item) => {
            const itemWarnings = getItemWarnings(item);
 
@@ -520,7 +520,7 @@ export function VocabDraftImporter({ draft }: VocabDraftImporterProps) {
              key={item.id}
              type="button"
              className={cn(
-              "grid gap-1 rounded-2xl border p-3 text-left transition-colors",
+              "grid gap-1 rounded-xl border p-3 text-left transition-colors",
               selectedItem?.id === item.id
                ? "border-primary bg-bg-subtle"
                : "border-border-default bg-bg-primary hover:bg-bg-card-hover",
@@ -539,7 +539,7 @@ export function VocabDraftImporter({ draft }: VocabDraftImporterProps) {
              </span>
 
              {itemWarnings.length > 0 && (
-              <span className="mt-1 rounded-full bg-bg-subtle px-2 py-1 text-xs font-bold text-text-muted">
+              <span className="rounded-full bg-bg-subtle px-2 py-1 text-xs font-bold text-text-muted">
                {itemWarnings.length} cảnh báo
               </span>
              )}
@@ -552,12 +552,12 @@ export function VocabDraftImporter({ draft }: VocabDraftImporterProps) {
       </Card>
 
       {warnings.length > 0 && (
-       <Card padding="md" className="rounded-2xl -2xl">
+       <Card padding="md" className="rounded-xl">
         <div className="grid gap-2">
          <p className="text-xs font-black uppercase tracking-wide text-text-muted">
           Cảnh báo tổng
          </p>
-         <ul className="grid max-h-60 gap-1 overflow-y-auto scrollbar-soft  text-sm font-semibold text-text-muted">
+         <ul className="grid max-h-60 gap-1 overflow-y-auto scrollbar-soft text-sm font-semibold text-text-muted">
           {warnings.map((warning) => (
            <li key={warning}>• {warning}</li>
           ))}
@@ -567,12 +567,12 @@ export function VocabDraftImporter({ draft }: VocabDraftImporterProps) {
       )}
      </div>
 
-     <Card padding="lg" className="rounded-2xl -2xl">
+     <Card padding="lg" className="rounded-xl">
       {selectedItem ? (
-       <div className="grid gap-5">
+       <div className="grid gap-3">
         <div className="flex flex-wrap items-start justify-between gap-3">
          <div className="flex items-start gap-3">
-          <span className="flex size-10 shrink-0 items-center justify-center rounded-2xl -xl bg-bg-subtle">
+          <span className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-bg-subtle">
            <BookOpen className="h-5 w-5" />
           </span>
 
@@ -580,15 +580,15 @@ export function VocabDraftImporter({ draft }: VocabDraftImporterProps) {
            <p className="text-xs font-black uppercase tracking-wide text-text-muted">
             Manual editor
            </p>
-           <h2 className="mt-1 text-xl font-black text-text-primary">
+           <h2 className="text-xl font-black text-text-primary">
             Sửa tay trước khi lưu
            </h2>
           </div>
          </div>
 
          {selectedWarnings.length > 0 && (
-          <div className="rounded-2xl border border-border-default bg-bg-subtle px-3 py-2 text-xs font-bold text-text-muted">
-           {selectedWarnings.join(", ")}
+          <div className="rounded-xl border border-border-default bg-bg-subtle px-3 py-2 text-xs font-bold text-text-muted">
+           {selectedWarnings.join(",")}
           </div>
          )}
         </div>
@@ -599,7 +599,7 @@ export function VocabDraftImporter({ draft }: VocabDraftImporterProps) {
         />
        </div>
       ) : (
-       <div className="rounded-2xl border border-dashed border-border-default p-6 text-sm font-semibold text-text-muted">
+       <div className="rounded-xl border border-dashed border-border-default p-4 text-sm font-semibold text-text-muted">
         Chọn một từ ở danh sách bên trái để sửa tay.
        </div>
       )}
@@ -608,7 +608,7 @@ export function VocabDraftImporter({ draft }: VocabDraftImporterProps) {
    )}
 
    {step === "review" && (
-    <Card padding="sm" className="rounded-2xl -2xl">
+    <Card padding="sm" className="rounded-xl">
      <div className="flex flex-wrap justify-between gap-2">
       <Button type="button" variant="ghost" onClick={() => setStep("source")}>
        <ArrowLeft className="h-4 w-4" />
@@ -687,14 +687,14 @@ function ModeButton({
   <button
    type="button"
    className={cn(
-    "grid gap-2 rounded-2xl border p-4 text-left transition-colors",
+    "grid gap-2 rounded-xl border p-4 text-left transition-colors",
     active
      ? "border-primary bg-bg-subtle"
      : "border-border-default bg-bg-primary hover:bg-bg-card-hover",
    )}
    onClick={onClick}
   >
-   <span className="flex size-9 items-center justify-center rounded-2xl -xl bg-bg-subtle">
+   <span className="flex size-9 items-center justify-center rounded-xl bg-bg-subtle">
     {icon}
    </span>
    <span className="font-black text-text-primary">{title}</span>

@@ -46,7 +46,10 @@ export function VocabDetailPanel({
  const [sectionView, setSectionView] = useState<SectionView>("all");
  if (!word) {
   return (
-   <Card padding="lg" className="rounded-2xl -2xl">
+   <Card
+    padding="lg"
+    className="rounded-xl border border-border-default bg-bg-primary shadow-theme-sm"
+   >
     <p className="text-sm font-semibold text-text-muted">
      Chọn một từ để xem chi tiết.
     </p>
@@ -94,14 +97,17 @@ export function VocabDetailPanel({
  });
 
  return (
-  <Card padding="lg" className="rounded-2xl -2xl">
-   <article className="flex flex-col gap-6">
+  <Card
+   padding="lg"
+   className="rounded-xl border border-border-default bg-bg-primary shadow-theme-sm"
+  >
+   <article className="flex flex-col gap-3">
     <div className="flex flex-wrap items-start justify-between gap-3">
      <div className="min-w-0">
       <div className="flex flex-wrap items-center gap-2">
        <h2 className="text-5xl font-black tracking-normal text-text-primary">
         {word.word}
-        <p className=" text-lg font-black ">{word.pinyin}</p>
+        <p className="text-lg font-black">{word.pinyin}</p>
        </h2>
 
        <div className="flex flex-col gap-2">
@@ -153,7 +159,7 @@ export function VocabDetailPanel({
        className={[
         "rounded-full border px-3 py-1 text-xs font-black transition-colors",
         sectionView === item.key
-         ? "border-accent bg-accent  "
+         ? "border-accent bg-accent"
          : "border-border-default bg-bg-subtle text-text-muted hover:text-text-primary",
        ].join(" ")}
       >
@@ -166,23 +172,23 @@ export function VocabDetailPanel({
       {word.examplesParsed.map((example) => (
        <div
         key={`${example.zh}-${example.vi}`}
-        className="rounded-2xl border border-border-default bg-bg-card p-4"
+        className="grid gap-1 rounded-xl border border-border-default bg-bg-primary p-4 shadow-theme-sm"
        >
         <p className="text-base font-black leading-relaxed text-text-primary">
          {example.zh}
         </p>
         {example.pinyin && (
-         <p className="mt-1 text-sm font-bold leading-relaxed  ">
+         <p className="text-sm font-bold leading-relaxed">
           {example.pinyin}
          </p>
         )}
         {example.vi && (
-         <p className="mt-1 text-sm font-semibold leading-relaxed text-text-secondary">
+         <p className="text-sm font-semibold leading-relaxed text-text-secondary">
           {example.vi}
          </p>
         )}
         {example.note && (
-         <p className="mt-2 border-t border-border-default pt-2 text-sm leading-relaxed text-text-muted">
+         <p className="border-t border-border-default pt-2 text-sm leading-relaxed text-text-muted">
           {example.note}
          </p>
         )}
@@ -232,12 +238,12 @@ function ReadingSection({
   <details
    id={id}
    open
-   className="group rounded-2xl border border-border-default bg-bg-subtle p-4"
+   className="group rounded-xl border border-border-default bg-bg-subtle p-4"
   >
    <summary className="cursor-pointer text-base font-black text-text-primary">
     {title}
    </summary>
-   <div className="mt-3 grid gap-3 text-base leading-relaxed text-text-secondary">
+   <div className="grid gap-3 text-base leading-relaxed text-text-secondary">
     {children}
    </div>
   </details>

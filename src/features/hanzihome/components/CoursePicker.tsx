@@ -29,7 +29,7 @@ export function CoursePicker({
      Course hiện tại
     </p>
 
-    <div className="flex h-9 min-w-0 items-center gap-2 rounded-2xl  border border-border-default bg-bg-subtle px-3 text-sm font-bold text-text-primary">
+    <div className="flex h-9 min-w-0 items-center gap-2 rounded-xl border border-border-default bg-bg-subtle px-3 text-sm font-bold text-text-primary">
      <BookMarked className="h-4 w-4 shrink-0 text-text-muted" />
      <span className="truncate">{selectedCourse.title}</span>
     </div>

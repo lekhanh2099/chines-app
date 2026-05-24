@@ -39,7 +39,7 @@ export function GrammarPointReader({
 }: GrammarPointReaderProps) {
  if (!point) {
   return (
-   <Card padding="lg" className="rounded-2xl -2xl">
+   <Card padding="lg" className="rounded-xl">
     <p className="text-sm font-semibold text-text-muted">
      Bài này chưa có điểm ngữ pháp.
     </p>
@@ -50,16 +50,16 @@ export function GrammarPointReader({
  const contentMd = point.contentMd?.trim();
 
  return (
-  <Card padding="lg" className="rounded-2xl -2xl">
-   <article className="flex flex-col gap-5">
+  <Card padding="lg" className="rounded-xl">
+   <article className="flex flex-col gap-3">
     <div className="flex flex-wrap items-start justify-between gap-3">
      <div className="min-w-0">
       <Badge variant="info">{status}</Badge>
-      <h2 className="mt-3 text-2xl font-black tracking-normal text-text-primary">
+      <h2 className="text-2xl font-black tracking-normal text-text-primary">
        {point.cleanTitle}
       </h2>
       {point.core && (
-       <p className="mt-2 text-sm leading-relaxed text-text-secondary">
+       <p className="text-sm leading-relaxed text-text-secondary">
         {point.core}
        </p>
       )}
@@ -116,7 +116,7 @@ export function GrammarPointReader({
      </section>
     )}
    </article>
- </Card>
+  </Card>
  );
 }
 
@@ -129,7 +129,7 @@ function StructuredGrammarContent({ point }: { point: GrammarViewModel }) {
      {point.structuresView.map((structure) => (
       <p
        key={structure}
-       className="rounded-2xl border border-info/30 bg-info-subtle p-4 text-base font-black text-info-text"
+       className="rounded-xl border border-info/30 bg-info-subtle p-4 text-base font-black text-info-text"
       >
        {structure}
       </p>
@@ -143,7 +143,7 @@ function StructuredGrammarContent({ point }: { point: GrammarViewModel }) {
      {point.examplesParsed.map((example) => (
       <div
        key={`${example.zh}-${example.vi}`}
-       className="rounded-2xl bg-bg-subtle p-3"
+       className="rounded-xl bg-bg-subtle p-3"
       >
        <p className="font-black leading-relaxed text-text-primary">
         {example.zh}

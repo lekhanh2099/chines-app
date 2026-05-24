@@ -75,7 +75,7 @@ function LessonTextEditorBody({ noteId }: { noteId: string }) {
 
  if (isLoading) {
   return (
-   <div className="rounded-2xl border border-border-default bg-bg-subtle p-4 text-sm font-semibold text-text-muted">
+   <div className="rounded-xl border border-border-default bg-bg-subtle p-4 text-sm font-semibold text-text-muted">
     Đang tải bài khóa...
    </div>
   );
@@ -83,7 +83,7 @@ function LessonTextEditorBody({ noteId }: { noteId: string }) {
 
  if (!note) {
   return (
-   <div className="rounded-2xl border border-border-default bg-bg-subtle p-4 text-sm font-semibold text-text-muted">
+   <div className="rounded-xl border border-border-default bg-bg-subtle p-4 text-sm font-semibold text-text-muted">
     Không tìm thấy bài khóa đã gắn với lesson này.
    </div>
   );
@@ -91,7 +91,7 @@ function LessonTextEditorBody({ noteId }: { noteId: string }) {
 
  return (
   <div className="grid gap-2">
-   <div className="min-h-56 rounded-2xl border border-border-default bg-bg-primary">
+   <div className="min-h-56 rounded-xl border border-border-default bg-bg-primary">
     <Editor
      key={`lesson-text-${note.id}`}
      initialContent={note.content as Record<string, unknown> | null}
@@ -138,11 +138,14 @@ export function LessonTextInlineEditor({
  };
 
  return (
-  <Card padding="lg" className="rounded-2xl ">
+  <Card
+   padding="lg"
+   className="rounded-xl border border-border-default bg-bg-primary shadow-theme-sm"
+  >
    <div className="grid gap-4">
     <div className="flex flex-wrap items-start justify-between gap-4">
      <div className="flex min-w-0 items-start gap-3">
-      <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-bg-subtle">
+      <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-bg-subtle">
        <FileText className="h-5 w-5" />
       </span>
 
@@ -150,7 +153,7 @@ export function LessonTextInlineEditor({
        <p className="text-xs font-black uppercase tracking-wide text-text-muted">
         Lesson text
        </p>
-       <h2 className="mt-1 text-xl font-black text-text-primary">Bài khóa</h2>
+       <h2 className="text-xl font-black text-text-primary">Bài khóa</h2>
       </div>
      </div>
 
@@ -171,7 +174,7 @@ export function LessonTextInlineEditor({
     </div>
 
     {linkedTextQuery.isLoading ? (
-     <div className="rounded-2xl border border-border-default bg-bg-subtle p-4 text-sm font-semibold text-text-muted">
+     <div className="rounded-xl border border-border-default bg-bg-subtle p-4 text-sm font-semibold text-text-muted">
       Đang kiểm tra bài khóa...
      </div>
     ) : note ? (
@@ -181,7 +184,7 @@ export function LessonTextInlineEditor({
       type="button"
       onClick={handleCreate}
       disabled={createTextMutation.isPending}
-      className="rounded-2xl border border-dashed border-border-default bg-bg-subtle p-5 text-left text-sm font-semibold text-text-muted transition-colors hover:border-accent-muted hover:bg-accent-subtle disabled:cursor-not-allowed disabled:opacity-60"
+      className="rounded-xl border border-dashed border-border-default bg-bg-subtle p-4 text-left text-sm font-semibold text-text-muted transition-colors hover:border-accent-muted hover:bg-accent-subtle disabled:cursor-not-allowed disabled:opacity-60"
      >
       Chưa có bài khóa cho lesson này. Bấm vào đây để tạo vùng soạn bài khóa.
      </button>

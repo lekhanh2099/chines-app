@@ -42,7 +42,7 @@ export function Header({ user }: { user?: User | null }) {
  };
 
  return (
-  <header className="z-10 flex h-16 w-full max-w-full min-w-0 shrink-0 items-center justify-between gap-2 overflow-x-hidden scrollbar-soft  border-b-2 border-stone-200 bg-white px-3 sm:gap-4 sm:px-5 md:h-[76px] lg:px-8">
+  <header className="z-10 flex h-16 w-full max-w-full min-w-0 shrink-0 items-center justify-between gap-2 overflow-x-hidden scrollbar-soft border-b-2 border-stone-200 bg-white px-3 sm:gap-4 sm:px-5 md:h-[76px] lg:px-8">
    <form onSubmit={handleSearch} className="relative min-w-0 max-w-md flex-1">
     <Search className="absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 text-stone-400" />
     <input
@@ -50,7 +50,7 @@ export function Header({ user }: { user?: User | null }) {
      value={searchValue}
      onChange={(event) => setSearchValue(event.target.value)}
      placeholder="Từ điển"
-     className="h-11 w-full rounded-2xl border-2 border-stone-200 bg-white pl-11 pr-3 text-sm font-bold text-stone-800 outline-none transition focus:border-orange-300 focus:ring-4 focus:ring-orange-100 sm:h-12 sm:pl-12 sm:pr-4 sm:text-base"
+     className="h-11 w-full rounded-xl border-2 border-stone-200 bg-white pl-11 pr-3 text-sm font-bold text-stone-800 outline-none transition focus:border-orange-300 focus:ring-4 focus:ring-orange-100 sm:h-12 sm:pl-12 sm:pr-4 sm:text-base"
     />
    </form>
 
@@ -59,7 +59,7 @@ export function Header({ user }: { user?: User | null }) {
      type="button"
      onClick={() => toggleLookup(pathname)}
      className={cn(
-      "hidden h-11 items-center gap-2 rounded-2xl border-2 px-3 text-sm font-black transition-colors md:flex",
+      "hidden h-11 items-center gap-2 rounded-xl border-2 px-3 text-sm font-black transition-colors md:flex",
       lookupEnabled
        ? "border-blue-200 bg-blue-50 text-blue-600"
        : "border-stone-200 bg-white text-stone-500 hover:bg-stone-50",
@@ -73,7 +73,7 @@ export function Header({ user }: { user?: User | null }) {
     <button
      type="button"
      onClick={toggleTheme}
-     className="flex h-10 w-10 items-center justify-center rounded-2xl border-2 border-stone-200 bg-white text-stone-700 shadow-theme-sm transition-colors hover:bg-stone-50 sm:h-11 sm:w-11"
+     className="flex h-10 w-10 items-center justify-center rounded-xl border-2 border-stone-200 bg-white text-stone-700 shadow-theme-sm transition-colors hover:bg-stone-50 sm:h-11 sm:w-11"
      aria-label="Toggle theme"
     >
      {theme === "light" ? (
@@ -83,7 +83,7 @@ export function Header({ user }: { user?: User | null }) {
      )}
     </button>
 
-    <div className="hidden h-11 items-center gap-2 rounded-2xl px-3 text-sm font-black text-stone-700 lg:flex">
+    <div className="hidden h-11 items-center gap-2 rounded-xl px-3 text-sm font-black text-stone-700 lg:flex">
      <span className="text-lg">🇻🇳</span>
      Tiếng Việt
     </div>

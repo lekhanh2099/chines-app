@@ -24,7 +24,10 @@ export function GrammarPointList({
  allPointId,
 }: GrammarPointListProps) {
  return (
-  <Card padding="md" className="rounded-2xl -2xl">
+  <Card
+   padding="md"
+   className="rounded-xl border border-border-default bg-bg-primary shadow-theme-sm"
+  >
    <div className="flex flex-col gap-3">
     <div className="flex items-center justify-between gap-3">
      <h2 className="text-lg font-black text-text-primary">Điểm ngữ pháp</h2>
@@ -35,7 +38,11 @@ export function GrammarPointList({
      {allPointId && (
       <Button
        variant={selectedPointId === allPointId ? "default" : "outline"}
-       className="h-auto min-w-0 justify-start rounded-2xl py-3 text-left"
+       className={
+        selectedPointId === allPointId
+         ? "h-auto min-w-0 justify-start rounded-xl py-3 text-left shadow-theme-sm"
+         : "h-auto min-w-0 justify-start rounded-xl bg-bg-primary py-3 text-left"
+       }
        onClick={() => onSelectPoint(allPointId)}
       >
        <span className="min-w-0 flex-1">
@@ -51,7 +58,11 @@ export function GrammarPointList({
       <Button
        key={point.id}
        variant={point.id === selectedPointId ? "default" : "outline"}
-       className="h-auto min-w-0 justify-start rounded-2xl py-3 text-left"
+       className={
+        point.id === selectedPointId
+         ? "h-auto min-w-0 justify-start rounded-xl py-3 text-left shadow-theme-sm"
+         : "h-auto min-w-0 justify-start rounded-xl bg-bg-primary py-3 text-left"
+       }
        onClick={() => onSelectPoint(point.id)}
       >
        <span className="min-w-0 flex-1">

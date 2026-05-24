@@ -24,8 +24,11 @@ export function VocabList({
  onSelectWord,
 }: VocabListProps) {
  return (
- <Card padding="sm" className="rounded-xl">
- <div className="grid gap-1.5.5">
+ <Card
+  padding="sm"
+  className="rounded-xl border border-border-default bg-bg-primary shadow-theme-sm"
+ >
+ <div className="grid gap-1.5">
  {words.length > 0 ? (
   <div className="flex max-h-40 flex-wrap gap-1.5 overflow-y-auto rounded-xl border border-border-default bg-bg-subtle p-2 scrollbar-soft sm:max-h-48">
   {words.map((word) => {

@@ -87,7 +87,7 @@ function NavRow({
    href={item.href}
    title={collapsed ? item.name : undefined}
    className={cn(
-    "group flex h-12 items-center gap-3 rounded-2xl border-2 text-[15px] font-black transition-all",
+    "group flex h-12 items-center gap-3 rounded-xl border-2 text-[15px] font-black transition-all",
     collapsed ? "w-12 justify-center px-0" : "px-4",
     active
      ? "border-orange-300 bg-orange-50 text-orange-700 shadow-theme-sm"
@@ -99,8 +99,8 @@ function NavRow({
    {!collapsed && item.badge && (
     <span
      className={cn(
-      "rounded-full px-2 py-0.5 text-[11px] font-black  ",
-      item.tone === "red" ? " " : "bg-orange-500",
+      "rounded-full px-2 py-0.5 text-[11px] font-black",
+      item.tone === "red" ? "" : "bg-orange-500",
      )}
     >
      {item.badge}
@@ -148,7 +148,7 @@ export function Sidebar() {
      )}
     >
      <Link href="/" className="flex min-w-0 items-center gap-3">
-      <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl border-2 border-yellow-300 bg-yellow-100 shadow-theme-sm">
+      <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border-2 border-yellow-300 bg-yellow-100 shadow-theme-sm">
        <span className="text-2xl">汉</span>
       </div>
       {!isCollapsed && (
@@ -182,7 +182,7 @@ export function Sidebar() {
 
     {secondaryItems.length > 0 && (
      <>
-      <div className="mx-4 border-t-2 border-stone-100" />
+      <div className="border-t-2 border-stone-100" />
 
       <nav
        className={cn(
@@ -208,17 +208,17 @@ export function Sidebar() {
 
     <div
      className={cn(
-      "border-t-2 border-stone-100 py-4",
+      "grid gap-3 border-t-2 border-stone-100 py-4",
       isCollapsed ? "px-3" : "px-4",
      )}
     >
      {!isCollapsed && (
-      <div className="mb-3 rounded-2xl border-2 border-red-100 bg-red-50 p-3">
+      <div className="rounded-xl border-2 border-red-100 bg-red-50 p-3">
        <div className="flex items-center gap-2 text-sm font-black text-red-600">
         <Flame className="h-4 w-4" />
         Học theo bài
        </div>
-       <p className="mt-1 text-xs font-bold text-stone-500">
+       <p className="text-xs font-bold text-stone-500">
         Chọn một bài HanziHome rồi học từ vựng, ngữ pháp và bộ thủ.
        </p>
       </div>
@@ -228,7 +228,7 @@ export function Sidebar() {
       type="button"
       onClick={handleLogout}
       className={cn(
-       "mb-3 flex h-11 items-center gap-3 rounded-2xl px-4 text-[15px] font-black text-red-500 transition-colors hover:bg-red-50",
+       "flex h-11 items-center gap-3 rounded-xl px-4 text-[15px] font-black text-red-500 transition-colors hover:bg-red-50",
        isCollapsed ? "w-12 justify-center px-0" : "w-full",
       )}
       title={isCollapsed ? "Đăng xuất" : undefined}
@@ -241,7 +241,7 @@ export function Sidebar() {
       type="button"
       onClick={toggleSidebar}
       className={cn(
-       "flex h-10 items-center justify-center gap-2 rounded-2xltext-sm font-bold text-stone-500 transition-colors hover:bg-stone-100",
+       "flex h-10 items-center justify-center gap-2 rounded-xl text-sm font-bold text-stone-500 transition-colors hover:bg-stone-100",
        isCollapsed ? "w-12" : "w-full",
       )}
      >
@@ -254,9 +254,9 @@ export function Sidebar() {
      </button>
     </div>
    </aside>
-   <nav className="fixed inset-x-0 bottom-0 z-40 max-w-full overflow-x-hidden scrollbar-soft  border-t-2 border-stone-200 bg-white/95 px-2 pb-[calc(0.5rem+env(safe-area-inset-bottom))] pt-2 shadow-[0_-3px_0_rgb(0_0_0/0.08)] backdrop-blur md:hidden">
+   <nav className="fixed inset-x-0 bottom-0 z-40 grid max-w-full place-items-center overflow-x-hidden scrollbar-soft border-t-2 border-stone-200 bg-white/95 px-2 pb-[calc(0.5rem+env(safe-area-inset-bottom))] pt-2 shadow-[0_-3px_0_rgb(0_0_0/0.08)] backdrop-blur md:hidden">
     <div
-     className="mx-auto grid w-full max-w-md min-w-0 gap-1"
+     className="grid w-full max-w-md min-w-0 gap-1"
      style={{
       gridTemplateColumns: `repeat(${mainItems.length}, minmax(0, 1fr))`,
      }}
@@ -269,7 +269,7 @@ export function Sidebar() {
         key={item.name}
         href={item.href}
         className={cn(
-         "flex min-w-0 flex-col items-center justify-center gap-1 rounded-2xl px-1 py-2 text-[10px] font-black transition",
+         "flex min-w-0 flex-col items-center justify-center gap-1 rounded-xl px-1 py-2 text-[10px] font-black transition",
          active
           ? "bg-orange-50 text-orange-700"
           : "text-stone-500 hover:bg-stone-50",
