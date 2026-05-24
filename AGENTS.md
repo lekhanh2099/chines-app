@@ -14,6 +14,61 @@ Annotations = future feature
 
 ---
 
+---
+
+## Data Loading Contract
+
+Before implementing any HanziHome screen or feature, define the data-loading contract first.
+
+Every feature must answer:
+
+- What data does this screen need to render above-the-fold?
+- What data is only needed after user interaction?
+- What data must never be loaded on this screen?
+- Which endpoint/hook owns the data?
+- What is the fallback behavior?
+- What is the cache/query key?
+- What is the expected payload size?
+
+Rules:
+
+- Dashboard/library screens must load summary data only.
+- Course cards must not load full lesson detail.
+- Lesson workspace may load only the selected lesson detail.
+- Vocab/grammar examples and detail sections must be fetched only for the selected lesson or an explicit aggregate page.
+- Aggregate vocab/grammar pages are the only normal place to load all vocab/grammar across a book/course/all.
+- Global review pages may load scoped review queues, not unrelated full content.
+- Do not use one giant `/data` endpoint for every screen.
+- Do not fetch all records just to calculate counts.
+- Counts must come from summary queries, database counts, or lightweight grouped views.
+- Static fallback must follow the same contract: summary fallback for dashboard, detail fallback for lesson.
+- Any endpoint returning full vocab examples/detail sections must be named clearly and must not be used by dashboard.
+
+Preferred endpoint split:
+
+- `/api/hanzihome/catalog`
+  - course/book/lesson summary only
+  - counts only
+  - no vocab examples
+  - no detail sections
+
+- `/api/hanzihome/lessons/[lessonId]`
+  - one lesson detail only
+  - vocab/grammar/examples/detail sections for that lesson only
+
+- `/api/hanzihome/aggregate/vocab`
+  - scoped vocab lookup/review data
+  - only used by aggregate/global pages
+
+- `/api/hanzihome/aggregate/grammar`
+  - scoped grammar lookup/review data
+  - only used by aggregate/global pages
+
+Bad:
+
+````txt
+Dashboard -> fetch all lessons -> all vocab -> all examples -> all detail sections -> reduce counts
+
 ## 0. Project Truth
 
 HanziHome is a Chinese self-study app built with:
@@ -34,7 +89,7 @@ lucide-react
 Sonner
 Hanzi Writer
 pinyin-pro
-```
+````
 
 The current app direction is:
 
@@ -2087,8 +2142,7 @@ moving persistence to useLearningState
 
 over patching a page with more one-off JSX.
 
-Never “just make it work” by adding another wrapper with hard-coded dimensions.
----
+## Never “just make it work” by adding another wrapper with hard-coded dimensions.
 
 ## HanziHome Current Direction Override
 
@@ -2099,6 +2153,7 @@ This section overrides older HanziHome rules above when they conflict.
 Static JSON is now legacy seed/import source, not the long-term source of truth.
 
 Next major phase:
+
 - Import all 25 MVP lessons into Supabase as real editable data.
 - Supabase becomes the source of truth for courses, books, lessons, lesson text, vocab, grammar, progress, bookmarks, and review history.
 - Use explicit migrations plus idempotent import scripts.
@@ -2107,6 +2162,7 @@ Next major phase:
 ### Product direction
 
 HanziHome must support:
+
 - Lesson workspace: Tổng quan, Bài khóa, Từ vựng, Ngữ pháp, Ôn tập.
 - Aggregate library: all vocab/grammar by lesson, book, course, and globally.
 - Global review / lookup: review vocab or grammar without entering a lesson.
@@ -2118,6 +2174,7 @@ HanziHome must support:
 Study UI must stay compact.
 
 Prefer:
+
 - gap-2 / gap-3.
 - p-2 / p-3 / p-4.
 - rounded-lg / rounded-xl.
@@ -2126,6 +2183,7 @@ Prefer:
 - responsive mobile pane switching.
 
 Avoid:
+
 - gap-5 / gap-6 everywhere.
 - large padding that shrinks study space.
 - overusing rounded-2xl / rounded-3xl.
@@ -2133,6 +2191,7 @@ Avoid:
 - window.confirm.
 
 Vocabulary should prefer:
+
 - Top compact Hanzi selector.
 - Selected word detail below.
 - Search/filter only when useful.
@@ -2154,6 +2213,7 @@ Do not use 1/2/3 for grading anymore.
 Follow Vercel-style React/Next performance rules, filtered for this app.
 
 Apply strongly:
+
 - Avoid async waterfalls.
 - Start independent Supabase/TanStack Query work in parallel when possible.
 - Keep route pages thin.
@@ -2171,6 +2231,7 @@ Apply strongly:
 - Keep derived lists such as filtered vocab, grouped grammar, aggregate libraries, and review queues derived with useMemo/selectors, not duplicated state.
 
 Do not apply blindly:
+
 - Do not replace TanStack Query with SWR.
 - Do not memoize every simple expression.
 - Do not add dynamic import everywhere without bundle/runtime reason.
