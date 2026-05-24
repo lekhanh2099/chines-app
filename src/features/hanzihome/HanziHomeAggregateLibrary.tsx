@@ -24,12 +24,13 @@ const aggregateVocabItemSchema = z.object({
  hanViet: z.string(),
  meaning: z.string(),
  category: z.string(),
- level: z.string().optional(),
+ level: z.string().nullable().optional(),
  pos: z
   .object({
-   vi: z.string().optional(),
-   zh: z.string().optional(),
+   vi: z.string().nullable().optional(),
+   zh: z.string().nullable().optional(),
   })
+  .nullable()
   .optional(),
 });
 
