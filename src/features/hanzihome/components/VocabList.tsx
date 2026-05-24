@@ -1,9 +1,6 @@
 "use client";
 
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
 import type {
  LearningStatus,
  VocabViewModel,
@@ -24,85 +21,39 @@ type VocabListProps = {
 export function VocabList({
  words,
  selectedWordId,
- progress,
- bookmarkedIds,
- searchValue,
- onSearchChange,
  onSelectWord,
 }: VocabListProps) {
- const groups = words.reduce<Array<[string, VocabViewModel[]]>>(
-  (result, word) => {
-   const group = result.find(([category]) => category === word.category);
-   if (group) {
-    group[1].push(word);
-   } else {
-    result.push([word.category, [word]]);
-   }
-   return result;
-  },
-  [],
- );
-
  return (
-  <Card
-   padding="md"
-   className="rounded-2xl lg:sticky lg:top-24 lg:max-h-[calc(100vh-8rem)] lg:overflow-y-auto scrollbar-soft "
-  >
-   <div className="grid gap-3">
-    <div>
-     <h2 className="text-lg font-black text-text-primary">Từ vựng trong bài</h2>
-     <p className="text-sm font-semibold text-text-muted">
-      Chọn từ để đọc nghĩa sâu, ví dụ và lỗi sai.
-     </p>
-    </div>
-    <Input
-     value={searchValue}
-     onChange={(event) => onSearchChange(event.target.value)}
-     placeholder="Tìm Hán tự, pinyin, nghĩa..."
-     aria-label="Tìm từ vựng"
-    />
+  <Card padding="md" className="rounded-2xl">
+   <div className="grid gap-4">
+    {words.length > 0 ? (
+     <div className="flex max-h-56 flex-wrap gap-2 overflow-y-auto rounded-2xl border border-border-default bg-bg-subtle p-3 scrollbar-soft sm:max-h-72">
+      {words.map((word) => {
+       const active = word.id === selectedWordId;
 
-    {groups.map(([category, items]) => (
-     <div key={category} className="grid gap-3 rounded-2xl bg-bg-subtle p-3">
-      <div className="flex items-center justify-between gap-3">
-       <h3 className="min-w-0 truncate text-sm font-black text-text-primary">
-        {category}
-       </h3>
-       <Badge>{items.length} từ</Badge>
-      </div>
-      <div className="grid gap-2">
-       {items.map((word) => {
-        const active = word.id === selectedWordId;
-        const status = progress[word.id]?.status || "new";
-        const bookmarked = bookmarkedIds.includes(word.id);
-        return (
-         <Button
-          key={word.id}
-          variant={active ? "default" : "outline"}
-          className="h-auto min-w-0 justify-start rounded-2xl py-3 text-left"
-          onClick={() => onSelectWord(word.id)}
+       return (
+        <button
+         key={word.id}
+         type="button"
+         onClick={() => onSelectWord(word.id)}
+         className={[
+          "group  rounded-2xl border px-3 py-2 text-left transition-colors",
+          active
+           ? "border-bg-inverse bg-bg-inverse text-text-inverse shadow-theme-sm"
+           : "border-border-default bg-bg-primary text-text-primary hover:border-accent-muted hover:bg-accent-subtle",
+         ].join(" ")}
+        >
+         <span
+          className="font-hanzi-display block   font-black leading-tight"
+          lang="zh-CN"
          >
-          <span className="min-w-0 flex-1">
-           <span className="block truncate text-lg font-black">
-            {word.word}
-           </span>
-           <span className="block truncate text-xs font-semibold opacity-80">
-            {word.pinyin} · {word.meaning}
-           </span>
-          </span>
-          <span className="text-xs uppercase">{status}</span>
-          {bookmarked && (
-           <Badge variant="warning" size="sm" className="shrink-0">
-            Lưu
-           </Badge>
-          )}
-         </Button>
-        );
-       })}
-      </div>
+          {word.word}
+         </span>
+        </button>
+       );
+      })}
      </div>
-    ))}
-    {words.length === 0 && (
+    ) : (
      <p className="rounded-2xl bg-bg-subtle p-4 text-sm font-semibold text-text-muted">
       Không có từ phù hợp bộ lọc.
      </p>

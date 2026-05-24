@@ -53,14 +53,14 @@ export function VocabWorkspace({
 
   const selectedWord = useMemo(
     () =>
-      lesson.vocab.find((word) => word.id === selectedWordId) ||
-      lesson.vocab[0] ||
+      visibleWords.find((word) => word.id === selectedWordId) ||
+      visibleWords[0] ||
       null,
-    [lesson.vocab, selectedWordId],
+    [selectedWordId, visibleWords],
   );
 
   return (
-    <div className="grid gap-5 lg:grid-cols-[minmax(20rem,23.75rem)_minmax(0,1fr)]">
+    <div className="grid gap-5">
       <VocabList
         words={visibleWords}
         selectedWordId={selectedWord?.id || null}

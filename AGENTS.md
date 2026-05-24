@@ -766,7 +766,7 @@ const buttonVariants = cva(
 Bad:
 
 ```tsx
-<button className="h-10 rounded-2xl -xl bg-red-500 px-3 text-sm font-black text-white shadow-sm hover:bg-red-600">
+<button className="h-10 rounded-2xl -xl  px-3 text-sm font-black   shadow-sm hover:bg-red-600">
  Save
 </button>
 ```
@@ -1228,7 +1228,7 @@ Feature files should stay readable.
 Good layout:
 
 ```tsx
-<div className="mx-auto flex w-full max-w-7xl flex-col gap-4">...</div>
+<div className="mx-auto flex w-full max-w-full flex-col gap-4">...</div>
 ```
 
 Bad layout:

@@ -216,7 +216,7 @@ export function HanziHomeWorkspace() {
  if (!lesson && activeModule !== "radicals") {
   return (
    <main className="hanzihome-static-page">
-    <div className="mx-auto flex w-full max-w-7xl flex-col gap-4">
+    <div className="mx-auto flex w-full max-w-full flex-col gap-4">
      <Card padding="lg" className="rounded-2xl">
       <div className="grid gap-4">
        <div>
@@ -248,56 +248,48 @@ export function HanziHomeWorkspace() {
 
  return (
   <main className="hanzihome-static-page">
-   <div className="mx-auto flex w-full max-w-7xl flex-col gap-4">
-    <Card padding="lg" className="overflow-hidden rounded-2xl ">
-     <div className="grid gap-5">
-      <div className="flex flex-wrap items-start justify-between gap-4">
-       <div className="min-w-0">
-        <p className="text-xs font-black uppercase tracking-[0.18em] text-text-muted">
+   <div className="mx-auto flex w-full max-w-full flex-col gap-4">
+    <div className="overflow-hidden">
+     <div className="flex flex-wrap items-start justify-between gap-4 border-b pb-2">
+      <div className="min-w-0">
+       <h1 className="truncate font-black tracking-tight text-text-primary sm:text-3xl">
+        {activeModule === "radicals" ? "Thư viện bộ thủ" : lesson?.title}
+       </h1>
+
+       <div className="flex flex-wrap gap-2">
+        <span className="rounded-full bg-bg-subtle px-3 py-1 text-xs font-black text-text-muted">
          {activeModule === "radicals"
-          ? "HanziHome / Bộ thủ"
-          : lesson?.courseTitle || selectedCourse?.title || "HanziHome"}
-        </p>
+          ? `${data.radicals.length} bộ thủ`
+          : subtitle}
+        </span>
 
-        <h1 className="mt-1 truncate text-2xl font-black tracking-tight text-text-primary sm:text-3xl">
-         {activeModule === "radicals" ? "Thư viện bộ thủ" : lesson?.title}
-        </h1>
-
-        <div className="mt-2 flex flex-wrap gap-2">
+        {activeModule !== "radicals" && lesson?.draftId && (
+         <Link
+          href={`/hanzihome/drafts/${lesson.draftId}`}
+          className="rounded-full bg-bg-subtle px-3 py-1 text-xs font-black text-text-muted"
+         >
+          Sửa bài
+         </Link>
+        )}
+        {learning.isSaving && (
          <span className="rounded-full bg-bg-subtle px-3 py-1 text-xs font-black text-text-muted">
-          {activeModule === "radicals"
-           ? `${data.radicals.length} bộ thủ`
-           : subtitle}
+          Đang lưu...
          </span>
-
-         {activeModule !== "radicals" && lesson?.draftId && (
-          <Link
-           href={`/hanzihome/drafts/${lesson.draftId}`}
-           className="rounded-full bg-bg-subtle px-3 py-1 text-xs font-black text-text-muted"
-          >
-           Sửa bài
-          </Link>
-         )}
-         {learning.isSaving && (
-          <span className="rounded-full bg-bg-subtle px-3 py-1 text-xs font-black text-text-muted">
-           Đang lưu...
-          </span>
-         )}
-        </div>
+        )}
        </div>
-
-       {activeModule !== "radicals" && lesson && (
-        <div className="max-w-lg rounded-2xl border border-border-default bg-bg-subtle p-3">
-         <LessonPicker
-          lessons={courseLessons}
-          selectedLessonId={selectedLessonId}
-          onSelectLesson={selectLesson}
-         />
-        </div>
-       )}
       </div>
+
+      {activeModule !== "radicals" && lesson && (
+       <div className="max-w-lg rounded-2xl border border-border-default bg-bg-subtle p-3">
+        <LessonPicker
+         lessons={courseLessons}
+         selectedLessonId={selectedLessonId}
+         onSelectLesson={selectLesson}
+        />
+       </div>
+      )}
      </div>
-    </Card>
+    </div>
 
     {activeModule === "radicals" ? (
      <RadicalWorkspace radicals={data.radicals} />

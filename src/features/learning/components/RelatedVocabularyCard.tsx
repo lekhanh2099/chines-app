@@ -54,7 +54,7 @@ export function RelatedVocabularyCard({
    <div className="mt-4 grid gap-2 sm:grid-cols-2 xl:grid-cols-1">
     <Link
      href={workspace.vocabularyHref}
-     className="inline-flex h-11 min-w-0 items-center justify-center gap-2 rounded-2xlbg-red-500 px-4 text-sm font-black text-white shadow-theme-sm hover:bg-red-600"
+     className="inline-flex h-11 min-w-0 items-center justify-center gap-2 rounded-2xlbg-red-500 px-4 text-sm font-black   shadow-theme-sm hover:bg-red-600"
     >
      <Eye className="h-4 w-4" />
      Ôn flashcard

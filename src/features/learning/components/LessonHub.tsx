@@ -64,7 +64,7 @@ export function LessonHub({
        className={cn(
         "h-11 min-w-0 truncate rounded-2xl -xl px-3 text-sm font-black transition",
         source === item.key
-         ? "bg-red-500 text-white shadow-theme-sm"
+         ? "    shadow-theme-sm"
          : "text-stone-600 hover:bg-white",
        )}
       >

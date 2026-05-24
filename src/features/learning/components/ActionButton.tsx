@@ -21,7 +21,7 @@ export function ActionButton({
  className?: string;
 }) {
  const toneClassName = {
-  red: "border-red-500 bg-red-500 text-white hover:bg-red-600",
+  red: "border-red-500    hover:bg-red-600",
   neutral: "border-stone-200 bg-white text-stone-700 hover:bg-stone-50",
   purple: "border-purple-300 bg-purple-50 text-purple-700 hover:bg-purple-100",
  }[tone];

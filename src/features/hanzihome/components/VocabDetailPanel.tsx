@@ -2,7 +2,7 @@
 
 import type { ReactNode } from "react";
 import { useState } from "react";
-import { Bookmark, CheckCircle2, Circle, TriangleAlert } from "lucide-react";
+import { Bookmark } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
@@ -33,12 +33,10 @@ type VocabDetailPanelProps = {
 
 export function VocabDetailPanel({
  word,
- status,
  bookmarked,
  onBookmark,
  editDraftId,
  editItemId,
- onMarkStatus,
 }: VocabDetailPanelProps) {
  const [sectionView, setSectionView] = useState<SectionView>("all");
  if (!word) {
@@ -98,12 +96,14 @@ export function VocabDetailPanel({
       <div className="flex flex-wrap items-center gap-2">
        <h2 className="text-5xl font-black tracking-normal text-text-primary">
         {word.word}
+        <p className=" text-lg font-black ">{word.pinyin}</p>
        </h2>
-       <Badge variant="accent">{status}</Badge>
-       {word.level && <Badge>{word.level}</Badge>}
-       {word.pos?.vi && <Badge variant="info">{word.pos.vi}</Badge>}
+
+       <div className="flex flex-col gap-2">
+        {word.pos?.vi && <Badge variant="info">{word.pos.vi}</Badge>}
+        {word.level && <Badge>{word.level}</Badge>}
+       </div>
       </div>
-      <p className="mt-2 text-lg font-black ">{word.pinyin}</p>
       <p className="text-sm font-bold text-text-secondary">
        {word.hanViet} · {word.meaning}
       </p>
@@ -124,30 +124,6 @@ export function VocabDetailPanel({
      </div>
     </div>
 
-    <div className="flex flex-wrap gap-2">
-     <Button
-      variant={status === "known" ? "default" : "outline"}
-      onClick={() => onMarkStatus("known")}
-     >
-      <CheckCircle2 className="h-4 w-4" />
-      Đã biết
-     </Button>
-     <Button
-      variant={status === "hard" ? "default" : "outline"}
-      onClick={() => onMarkStatus("hard")}
-     >
-      <TriangleAlert className="h-4 w-4" />
-      Còn khó
-     </Button>
-     <Button
-      variant={status === "new" ? "default" : "outline"}
-      onClick={() => onMarkStatus("new")}
-     >
-      <Circle className="h-4 w-4" />
-      Học mới
-     </Button>
-    </div>
-
     <nav className="flex flex-wrap gap-2" aria-label="Điều hướng phần từ vựng">
      {sectionTabs.map((item) => (
       <button
@@ -157,7 +133,7 @@ export function VocabDetailPanel({
        className={[
         "rounded-full border px-3 py-1 text-xs font-black transition-colors",
         sectionView === item.key
-         ? "border-accent bg-accent text-white"
+         ? "border-accent bg-accent  "
          : "border-border-default bg-bg-subtle text-text-muted hover:text-text-primary",
        ].join(" ")}
       >
@@ -165,19 +141,6 @@ export function VocabDetailPanel({
       </button>
      ))}
     </nav>
-
-    {visibleOrderedSections.map((section) => (
-     <ReadingSection
-      key={section.key}
-      id={`vocab-${section.key}`}
-      title={section.title}
-     >
-      {section.lines.map((line) => (
-       <p key={line}>{line}</p>
-      ))}
-     </ReadingSection>
-    ))}
-
     {showExamples && word.examplesParsed.length > 0 && (
      <ReadingSection id="vocab-examples" title="Ví dụ">
       {word.examplesParsed.map((example) => (
@@ -207,6 +170,18 @@ export function VocabDetailPanel({
       ))}
      </ReadingSection>
     )}
+
+    {visibleOrderedSections.map((section) => (
+     <ReadingSection
+      key={section.key}
+      id={`vocab-${section.key}`}
+      title={section.title}
+     >
+      {section.lines.map((line) => (
+       <p key={line}>{line}</p>
+      ))}
+     </ReadingSection>
+    ))}
 
     {visibleTrailingSections.map((section) => (
      <ReadingSection

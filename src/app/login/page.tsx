@@ -82,7 +82,7 @@ export default function LoginPage() {
   <div className="min-h-screen bg-bg-primary flex flex-col justify-center py-12 sm:px-6 lg:px-8">
    <div className="sm:mx-auto sm:w-full sm:max-w-md flex flex-col items-center">
     <div className="w-12 h-12 bg-accent rounded-2xl  flex items-center justify-center mb-6 shadow">
-     <BookOpen className="w-6 h-6 text-white" />
+     <BookOpen className="w-6 h-6  " />
     </div>
     <h2 className="text-center text-2xl font-bold tracking-tight text-text-primary">
      {isLogin ? "Đăng nhập vào Hệ thống" : "Tạo tài khoản mới"}

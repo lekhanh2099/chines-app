@@ -49,7 +49,7 @@ function DictionaryWordView({ viewModel }: DictionaryWordViewProps) {
 
  return (
   <PageContainer className="bg-white">
-   <div className="mx-auto flex w-full max-w-6xl flex-col gap-5">
+   <div className="mx-auto flex w-full max-w-full  flex-col gap-5">
     <div className="flex flex-wrap items-center justify-between gap-3">
      <Link
       href="/hanzihome"

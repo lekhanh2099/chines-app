@@ -141,16 +141,6 @@ export function VocabReviewPanel({
        <Badge variant={item.type === "vocab" ? "accent" : "info"}>
         {item.type === "vocab" ? "Từ vựng" : "Ngữ pháp"}
        </Badge>
-
-       <Badge>
-        {item.status === "hard"
-         ? "Khó"
-         : item.status === "learning"
-           ? "Đang học"
-           : item.status === "known"
-             ? "Đã biết"
-             : "Mới"}
-       </Badge>
       </div>
 
       <span className="text-sm font-black uppercase tracking-wide text-text-muted">
@@ -288,160 +278,156 @@ function FlashCard({
 }
 
 function getWritingLines(item: ReviewItem) {
-  if (item.type !== "vocab") return [];
+ if (item.type !== "vocab") return [];
 
-  const writingSection =
-    item.source.detailSections.find((section) =>
-      ["writing", "strokes", "stroke", "etymology"].includes(section.key),
-    ) ||
-    item.source.detailSections.find((section) =>
-      /nét|viết|chiết tự|cấu tạo|logic/i.test(section.title),
-    );
+ const writingSection =
+  item.source.detailSections.find((section) =>
+   ["writing", "strokes", "stroke", "etymology"].includes(section.key),
+  ) ||
+  item.source.detailSections.find((section) =>
+   /nét|viết|chiết tự|cấu tạo|logic/i.test(section.title),
+  );
 
-  return writingSection?.lines.slice(0, 3) ?? [];
+ return writingSection?.lines.slice(0, 3) ?? [];
 }
 
 function WritingCue({ item }: { item: ReviewItem }) {
-  if (item.type !== "vocab") return null;
+ if (item.type !== "vocab") return null;
 
-  const chars = Array.from(item.source.word).filter((char) =>
-    /\p{Script=Han}/u.test(char),
-  );
-  const writingLines = getWritingLines(item);
+ const chars = Array.from(item.source.word).filter((char) =>
+  /\p{Script=Han}/u.test(char),
+ );
+ const writingLines = getWritingLines(item);
 
-  if (chars.length === 0) return null;
+ if (chars.length === 0) return null;
 
-  return (
-    <div className="grid gap-3 rounded-2xl bg-bg-primary p-4">
-      <div className="flex flex-wrap items-center justify-between gap-2">
-        <p className="text-xs font-black uppercase tracking-[0.18em] text-text-muted">
-          Nét viết / tập viết
-        </p>
+ return (
+  <div className="grid gap-3 rounded-2xl bg-bg-primary p-4">
+   <div className="flex flex-wrap items-center justify-between gap-2">
+    <p className="text-xs font-black uppercase tracking-[0.18em] text-text-muted">
+     Nét viết / tập viết
+    </p>
 
-        <span className="rounded-full bg-bg-subtle px-2.5 py-1 text-[0.7rem] font-black text-text-muted">
-          {chars.length} chữ
-        </span>
-      </div>
+    <span className="rounded-full bg-bg-subtle px-2.5 py-1 text-[0.7rem] font-black text-text-muted">
+     {chars.length} chữ
+    </span>
+   </div>
 
-      <div className="flex flex-wrap gap-3">
-        {chars.map((char, index) => (
-          <HanziStrokeWriter
-            key={`${char}-${index}`}
-            character={char}
-            size={96}
-          />
-        ))}
-      </div>
+   <div className="flex flex-wrap gap-3">
+    {chars.map((char, index) => (
+     <HanziStrokeWriter key={`${char}-${index}`} character={char} size={96} />
+    ))}
+   </div>
 
-      {writingLines.length > 0 && (
-        <div className="grid gap-1 text-sm font-semibold leading-relaxed text-text-secondary">
-          {writingLines.map((line) => (
-            <p key={line}>{line}</p>
-          ))}
-        </div>
-      )}
+   {writingLines.length > 0 && (
+    <div className="grid gap-1 text-sm font-semibold leading-relaxed text-text-secondary">
+     {writingLines.map((line) => (
+      <p key={line}>{line}</p>
+     ))}
     </div>
-  );
+   )}
+  </div>
+ );
 }
 
 function FlashCardBack({
-  item,
-  onOpenDetail,
+ item,
+ onOpenDetail,
 }: {
-  item: ReviewItem;
-  onOpenDetail: () => void;
+ item: ReviewItem;
+ onOpenDetail: () => void;
 }) {
-  if (item.type === "vocab") {
-    const example = item.source.examplesParsed[0];
-
-    return (
-      <div className="grid gap-4 rounded-3xl bg-bg-subtle p-5 text-left">
-        <div className="flex flex-wrap items-start justify-between gap-3">
-          <div>
-            <p className="font-pinyin text-xl font-black text-text-primary">
-              {item.source.pinyin}
-            </p>
-
-            <p className="mt-1 text-base font-bold text-text-secondary">
-              {item.source.hanViet} · {item.source.meaning}
-            </p>
-          </div>
-
-          <Button
-            type="button"
-            variant="outline"
-            className="shrink-0"
-            onMouseDown={(event) => event.stopPropagation()}
-            onTouchStart={(event) => event.stopPropagation()}
-            onClick={(event) => {
-              event.stopPropagation();
-              onOpenDetail();
-            }}
-          >
-            Xem chi tiết
-          </Button>
-        </div>
-
-        <WritingCue item={item} />
-
-        {example && (
-          <div className="rounded-2xl bg-bg-primary p-4">
-            <p
-              className="font-hanzi text-base font-black text-text-primary"
-              lang="zh-CN"
-            >
-              {example.zh}
-            </p>
-
-            {example.pinyin && (
-              <p className="font-pinyin mt-1 text-sm font-bold text-text-muted">
-                {example.pinyin}
-              </p>
-            )}
-
-            {example.vi && (
-              <p className="mt-1 text-sm font-semibold text-text-secondary">
-                {example.vi}
-              </p>
-            )}
-          </div>
-        )}
-      </div>
-    );
-  }
-
+ if (item.type === "vocab") {
   const example = item.source.examplesParsed[0];
 
   return (
-    <div className="grid gap-3 rounded-3xl bg-bg-subtle p-5 text-left">
-      <p className="text-base font-semibold leading-relaxed text-text-secondary">
-        {item.source.core}
+   <div className="grid gap-4 rounded-3xl bg-bg-subtle p-5 text-left">
+    <div className="flex flex-wrap items-start justify-between gap-3">
+     <div>
+      <p className="font-pinyin text-xl font-black text-text-primary">
+       {item.source.pinyin}
       </p>
 
-      {item.source.structuresView[0] && (
-        <p className="rounded-2xl border border-info/30 bg-info-subtle p-3 text-base font-black text-info-text">
-          {item.source.structuresView[0]}
-        </p>
-      )}
+      <p className="mt-1 text-base font-bold text-text-secondary">
+       {item.source.hanViet} · {item.source.meaning}
+      </p>
+     </div>
 
-      {example && (
-        <div className="rounded-2xl bg-bg-primary p-4">
-          <p
-            className="font-hanzi text-base font-black text-text-primary"
-            lang="zh-CN"
-          >
-            {example.zh}
-          </p>
-
-          {example.vi && (
-            <p className="mt-1 text-sm font-semibold text-text-secondary">
-              {example.vi}
-            </p>
-          )}
-        </div>
-      )}
+     <Button
+      type="button"
+      variant="outline"
+      className="shrink-0"
+      onMouseDown={(event) => event.stopPropagation()}
+      onTouchStart={(event) => event.stopPropagation()}
+      onClick={(event) => {
+       event.stopPropagation();
+       onOpenDetail();
+      }}
+     >
+      Xem chi tiết
+     </Button>
     </div>
+
+    <WritingCue item={item} />
+
+    {example && (
+     <div className="rounded-2xl bg-bg-primary p-4">
+      <p
+       className="font-hanzi text-base font-black text-text-primary"
+       lang="zh-CN"
+      >
+       {example.zh}
+      </p>
+
+      {example.pinyin && (
+       <p className="font-pinyin mt-1 text-sm font-bold text-text-muted">
+        {example.pinyin}
+       </p>
+      )}
+
+      {example.vi && (
+       <p className="mt-1 text-sm font-semibold text-text-secondary">
+        {example.vi}
+       </p>
+      )}
+     </div>
+    )}
+   </div>
   );
+ }
+
+ const example = item.source.examplesParsed[0];
+
+ return (
+  <div className="grid gap-3 rounded-3xl bg-bg-subtle p-5 text-left">
+   <p className="text-base font-semibold leading-relaxed text-text-secondary">
+    {item.source.core}
+   </p>
+
+   {item.source.structuresView[0] && (
+    <p className="rounded-2xl border border-info/30 bg-info-subtle p-3 text-base font-black text-info-text">
+     {item.source.structuresView[0]}
+    </p>
+   )}
+
+   {example && (
+    <div className="rounded-2xl bg-bg-primary p-4">
+     <p
+      className="font-hanzi text-base font-black text-text-primary"
+      lang="zh-CN"
+     >
+      {example.zh}
+     </p>
+
+     {example.vi && (
+      <p className="mt-1 text-sm font-semibold text-text-secondary">
+       {example.vi}
+      </p>
+     )}
+    </div>
+   )}
+  </div>
+ );
 }
 
 function FlashcardDetailDialog({

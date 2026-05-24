@@ -244,7 +244,7 @@ export function InlineDraftItemEditDialog({
     Sửa
    </Button>
 
-   <DialogContent className="flex h-[92vh] max-w-6xl grid-rows-none flex-col gap-0 overflow-hidden p-0">
+   <DialogContent className="flex h-[92vh] max-w-full  grid-rows-none flex-col gap-0 overflow-hidden p-0">
     <DialogHeader className="shrink-0 border-b border-border-default px-6 py-5">
      <DialogTitle>
       {kind === "vocab" ? "Sửa từ vựng" : "Sửa điểm ngữ pháp"}

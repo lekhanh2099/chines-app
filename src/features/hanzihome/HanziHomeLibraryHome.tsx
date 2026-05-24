@@ -72,7 +72,7 @@ export function HanziHomeLibraryHome() {
  const books = mergedCatalog.books;
 
  return (
-  <main className="mx-auto flex w-full max-w-6xl flex-col gap-6 px-5 py-8 lg:px-8">
+  <main className="mx-auto flex w-full max-w-full  flex-col gap-6 px-5 py-8 lg:px-8">
    <section className="flex flex-wrap items-end justify-between gap-4">
     <div className="max-w-3xl">
      <p className="text-xs font-black uppercase tracking-[0.2em] text-text-muted">

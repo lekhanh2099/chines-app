@@ -315,7 +315,7 @@ function WordDetailPanel({
           onClick={() => setActiveCharacter(character)}
           className={`inline-flex h-8 min-w-8 items-center justify-center rounded-2xl -md border px-2 text-sm font-bold transition-colors ${
            visualCharacter === character
-            ? "border-accent bg-accent text-white"
+            ? "border-accent bg-accent  "
             : "border-border-default bg-bg-primary text-text-primary hover:border-accent hover: "
           }`}
          >
@@ -413,7 +413,7 @@ function WordDetailPanel({
          className="rounded-2xl border border-border-default bg-bg-primary p-3"
         >
          <div className="flex items-center gap-2">
-          <span className="rounded-2xl -full bg-accent px-2 py-1 text-[10px] font-bold text-white">
+          <span className="rounded-2xl -full bg-accent px-2 py-1 text-[10px] font-bold  ">
            {index + 1}
           </span>
           {definition.pos && (

@@ -9,6 +9,14 @@ import { useRouter, useSearchParams } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import {
+ Dialog,
+ DialogContent,
+ DialogDescription,
+ DialogFooter,
+ DialogHeader,
+ DialogTitle,
+} from "@/components/ui/dialog";
+import {
  useDeleteLessonDraftMutation,
  useLessonDraftQuery,
  useUpdateLessonDraftMutation,
@@ -48,6 +56,7 @@ export function LessonDraftEditor({ draftId }: LessonDraftEditorProps) {
  const [activeTab, setActiveTab] = useState<DraftEditorTab>(
   parseEditorTab(searchParams.get("tab")),
  );
+ const [deleteDialogOpen, setDeleteDialogOpen] = useState(false);
 
  const draftQuery = useLessonDraftQuery(draftId);
  const deleteMutation = useDeleteLessonDraftMutation();
@@ -93,12 +102,9 @@ export function LessonDraftEditor({ draftId }: LessonDraftEditorProps) {
  const handleDelete = async () => {
   if (!draft) return;
 
-  const confirmed = window.confirm(`Xóa bài nháp "${draft.titleZh}"?`);
-
-  if (!confirmed) return;
-
   await deleteMutation.mutateAsync(draft.id);
   toast.success("Đã xóa bài nháp");
+  setDeleteDialogOpen(false);
   router.push("/hanzihome");
  };
 
@@ -180,7 +186,7 @@ export function LessonDraftEditor({ draftId }: LessonDraftEditorProps) {
         type="button"
         variant="destructive"
         disabled={deleteMutation.isPending}
-        onClick={() => void handleDelete()}
+        onClick={() => setDeleteDialogOpen(true)}
        >
         <Trash2 className="h-4 w-4" />
         Xóa draft
@@ -268,6 +274,38 @@ export function LessonDraftEditor({ draftId }: LessonDraftEditorProps) {
      </Card>
     )}
    </div>
+
+   <Dialog open={deleteDialogOpen} onOpenChange={setDeleteDialogOpen}>
+    <DialogContent className="max-w-md">
+     <DialogHeader>
+      <DialogTitle>Xác nhận xóa bài nháp</DialogTitle>
+      <DialogDescription>
+       Bài nháp “{draft.titleZh}” sẽ bị xóa khỏi danh sách draft. Hành động này không thể hoàn tác.
+      </DialogDescription>
+     </DialogHeader>
+
+     <DialogFooter>
+      <Button
+       type="button"
+       variant="outline"
+       disabled={deleteMutation.isPending}
+       onClick={() => setDeleteDialogOpen(false)}
+      >
+       Hủy
+      </Button>
+
+      <Button
+       type="button"
+       variant="destructive"
+       disabled={deleteMutation.isPending}
+       onClick={() => void handleDelete()}
+      >
+       <Trash2 className="h-4 w-4" />
+       {deleteMutation.isPending ? "Đang xóa..." : "Xóa bài nháp"}
+      </Button>
+     </DialogFooter>
+    </DialogContent>
+   </Dialog>
   </main>
  );
 }

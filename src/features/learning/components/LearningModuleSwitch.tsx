@@ -45,7 +45,7 @@ export function LearningModuleSwitch({
       className={cn(
        "inline-flex h-10 items-center justify-center gap-2 rounded-2xl -xl px-3 text-sm font-black transition",
        active
-        ? "bg-red-500 text-white shadow-theme-sm"
+        ? "    shadow-theme-sm"
         : "text-stone-600 hover:bg-white hover:text-stone-900",
       )}
      >

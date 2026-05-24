@@ -99,8 +99,8 @@ function NavRow({
    {!collapsed && item.badge && (
     <span
      className={cn(
-      "rounded-full px-2 py-0.5 text-[11px] font-black text-white",
-      item.tone === "red" ? "bg-red-500" : "bg-orange-500",
+      "rounded-full px-2 py-0.5 text-[11px] font-black  ",
+      item.tone === "red" ? " " : "bg-orange-500",
      )}
     >
      {item.badge}

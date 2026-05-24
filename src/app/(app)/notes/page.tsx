@@ -249,7 +249,7 @@ function NewNoteView() {
     <button
      onClick={handleCreate}
      disabled={createNoteMutation.isPending}
-     className="inline-flex items-center gap-2 bg-accent hover:bg-accent-hover text-white px-6 py-3 rounded-2xl  text-sm font-semibold transition-colors shadow-sm disabled:opacity-60"
+     className="inline-flex items-center gap-2 bg-accent hover:bg-accent-hover   px-6 py-3 rounded-2xl  text-sm font-semibold transition-colors shadow-sm disabled:opacity-60"
     >
      {createNoteMutation.isPending ? (
       <Loader2 className="w-4 h-4 animate-spin" />
@@ -306,7 +306,7 @@ function CreateNoteDialog() {
  return (
   <Dialog open={isOpen} onOpenChange={setIsOpen}>
    <DialogTrigger asChild>
-    <Button className="bg-accent hover:bg-accent-hover text-white px-5 rounded-2xl  h-10 shadow-sm font-semibold gap-2">
+    <Button className="bg-accent hover:bg-accent-hover   px-5 rounded-2xl  h-10 shadow-sm font-semibold gap-2">
      <Plus className="w-4 h-4" />
      Tạo Ghi Chú Mới
     </Button>
@@ -412,7 +412,7 @@ function CreateNoteDialog() {
         <Button
          type="submit"
          disabled={!canSubmit}
-         className="bg-accent hover:bg-accent-hover text-white"
+         className="bg-accent hover:bg-accent-hover  "
         >
          {isSubmitting ? (
           <Loader2 className="w-4 h-4 animate-spin mr-2" />

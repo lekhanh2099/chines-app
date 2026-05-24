@@ -73,30 +73,6 @@ export function GrammarPointReader({
      </div>
     </div>
 
-    <div className="flex flex-wrap gap-2">
-     <Button
-      variant={status === "known" ? "default" : "outline"}
-      onClick={() => onMarkStatus("known")}
-     >
-      <CheckCircle2 className="h-4 w-4" />
-      Đã biết
-     </Button>
-     <Button
-      variant={status === "hard" ? "default" : "outline"}
-      onClick={() => onMarkStatus("hard")}
-     >
-      <TriangleAlert className="h-4 w-4" />
-      Còn khó
-     </Button>
-     <Button
-      variant={status === "new" ? "default" : "outline"}
-      onClick={() => onMarkStatus("new")}
-     >
-      <Circle className="h-4 w-4" />
-      Học mới
-     </Button>
-    </div>
-
     {point.structuresView.length > 0 && (
      <section className="grid gap-2">
       <h3 className="text-base font-black text-text-primary">Công thức</h3>
