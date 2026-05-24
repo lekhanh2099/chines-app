@@ -2088,3 +2088,93 @@ moving persistence to useLearningState
 over patching a page with more one-off JSX.
 
 Never “just make it work” by adding another wrapper with hard-coded dimensions.
+---
+
+## HanziHome Current Direction Override
+
+This section overrides older HanziHome rules above when they conflict.
+
+### Data direction after MVP
+
+Static JSON is now legacy seed/import source, not the long-term source of truth.
+
+Next major phase:
+
+- Import all 25 MVP lessons into Supabase as real editable data.
+- Supabase becomes the source of truth for courses, books, lessons, lesson text, vocab, grammar, progress, bookmarks, and review history.
+- Use explicit migrations plus idempotent import scripts.
+- Do not keep building major new HanziHome features against static JSON as source of truth.
+
+### Product direction
+
+HanziHome must support:
+
+- Lesson workspace: Tổng quan, Bài khóa, Từ vựng, Ngữ pháp, Ôn tập.
+- Aggregate library: all vocab/grammar by lesson, book, course, and globally.
+- Global review / lookup: review vocab or grammar without entering a lesson.
+- Lookup/search should not change progress unless the user answers a review card.
+- Edit everything: course, book, lesson metadata, lesson text, lesson note, vocab, vocab examples/detail sections, grammar, grammar examples/structures/notes.
+
+### UI direction
+
+Study UI must stay compact.
+
+Prefer:
+
+- gap-2 / gap-3.
+- p-2 / p-3 / p-4.
+- rounded-lg / rounded-xl.
+- top selectors over heavy sidebars.
+- inline detail panels.
+- responsive mobile pane switching.
+
+Avoid:
+
+- gap-5 / gap-6 everywhere.
+- large padding that shrinks study space.
+- overusing rounded-2xl / rounded-3xl.
+- random margin hacks.
+- window.confirm.
+
+Vocabulary should prefer:
+
+- Top compact Hanzi selector.
+- Selected word detail below.
+- Search/filter only when useful.
+
+### Flashcard shortcuts
+
+- Space / Enter = flip.
+- D = open detail on vocab back card.
+- 1 / 2 / 3 = select Hanzi character on vocab back card.
+- ArrowLeft = again.
+- ArrowDown = hard.
+- ArrowRight = known.
+- Mobile swipe left/up/right = again/hard/known.
+
+Do not use 1/2/3 for grading anymore.
+
+### React / Next.js coding rules
+
+Follow Vercel-style React/Next performance principles when writing or refactoring code:
+
+- Avoid async waterfalls.
+- Use Promise.all for independent async work.
+- Avoid broad barrel imports when they bloat bundles.
+- Use dynamic import for heavy client-only features.
+- Keep server/client boundaries explicit.
+- Do not pass large duplicated props into Client Components.
+- Do not use module-level mutable request state.
+- Avoid setState-in-effect when state can be derived.
+- Use primitive dependencies where possible.
+- Split hooks/components by real dependency boundaries.
+- Do not define components inside components.
+- Use Set/Map for repeated lookups.
+- Keep global event listeners deduplicated.
+
+For HanziHome specifically:
+
+- Hanzi Writer must stay client-only and dynamically isolated when useful.
+- Large study panels should not re-render because unrelated filters changed.
+- Derived lists such as filtered vocab, grouped grammar, and review queues must be derived with useMemo/selectors, not stored as duplicated state.
+
