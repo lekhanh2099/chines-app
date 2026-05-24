@@ -24,41 +24,41 @@ export function VocabList({
  onSelectWord,
 }: VocabListProps) {
  return (
-  <Card padding="md" className="rounded-2xl">
-   <div className="grid gap-4">
-    {words.length > 0 ? (
-     <div className="flex max-h-56 flex-wrap gap-2 overflow-y-auto rounded-2xl border border-border-default bg-bg-subtle p-3 scrollbar-soft sm:max-h-72">
-      {words.map((word) => {
-       const active = word.id === selectedWordId;
+ <Card padding="sm" className="rounded-xl">
+ <div className="grid gap-1.5.5">
+ {words.length > 0 ? (
+  <div className="flex max-h-40 flex-wrap gap-1.5 overflow-y-auto rounded-xl border border-border-default bg-bg-subtle p-2 scrollbar-soft sm:max-h-48">
+  {words.map((word) => {
+  const active = word.id === selectedWordId;
 
-       return (
-        <button
-         key={word.id}
-         type="button"
-         onClick={() => onSelectWord(word.id)}
-         className={[
-          "group  rounded-2xl border px-3 py-2 text-left transition-colors",
-          active
-           ? "border-bg-inverse bg-bg-inverse text-text-inverse shadow-theme-sm"
-           : "border-border-default bg-bg-primary text-text-primary hover:border-accent-muted hover:bg-accent-subtle",
-         ].join(" ")}
-        >
-         <span
-          className="font-hanzi-display block   font-black leading-tight"
-          lang="zh-CN"
-         >
-          {word.word}
-         </span>
-        </button>
-       );
-      })}
-     </div>
-    ) : (
-     <p className="rounded-2xl bg-bg-subtle p-4 text-sm font-semibold text-text-muted">
-      Không có từ phù hợp bộ lọc.
-     </p>
-    )}
-   </div>
-  </Card>
+  return (
+  <button
+   key={word.id}
+   type="button"
+   onClick={() => onSelectWord(word.id)}
+   className={[
+   "group rounded-lg border px-2.5 py-1.5 text-left transition-colors",
+   active
+   ? "border-bg-inverse bg-bg-inverse text-text-inverse shadow-theme-sm"
+   : "border-border-default bg-bg-primary text-text-primary hover:border-accent-muted hover:bg-accent-subtle",
+   ].join(" ")}
+  >
+   <span
+   className="font-hanzi-display block font-black leading-tight"
+   lang="zh-CN"
+   >
+   {word.word}
+   </span>
+  </button>
+  );
+  })}
+  </div>
+ ) : (
+  <p className="rounded-xl bg-bg-subtle p-3 text-sm font-semibold text-text-muted">
+  Không có từ phù hợp bộ lọc.
+  </p>
+ )}
+ </div>
+ </Card>
  );
 }

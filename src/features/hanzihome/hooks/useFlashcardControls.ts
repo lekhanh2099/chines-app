@@ -6,8 +6,12 @@ import type { ReviewResult } from "@/features/hanzihome/types";
 
 type UseFlashcardControlsInput = {
   disabled?: boolean;
+  canOpenDetail?: boolean;
+  writingCharacterCount?: number;
   onReveal: () => void;
   onAnswer: (result: ReviewResult) => void;
+  onOpenDetail?: () => void;
+  onSelectWritingCharacter?: (index: number) => void;
 };
 
 type SwipeHandlers = {
@@ -28,8 +32,12 @@ function shouldIgnoreKeyboardTarget(target: EventTarget | null) {
 
 export function useFlashcardControls({
   disabled,
+  canOpenDetail,
+  writingCharacterCount = 0,
   onReveal,
   onAnswer,
+  onOpenDetail,
+  onSelectWritingCharacter,
 }: UseFlashcardControlsInput): SwipeHandlers {
   const touchStartRef = useRef<{ x: number; y: number } | null>(null);
 
@@ -45,19 +53,38 @@ export function useFlashcardControls({
         return;
       }
 
-      if (event.key === "1" || event.key === "ArrowLeft") {
+      if (event.key.toLowerCase() === "d" && canOpenDetail && onOpenDetail) {
+        event.preventDefault();
+        onOpenDetail();
+        return;
+      }
+
+      const numericIndex = Number(event.key) - 1;
+
+      if (
+        Number.isInteger(numericIndex) &&
+        numericIndex >= 0 &&
+        numericIndex < writingCharacterCount &&
+        onSelectWritingCharacter
+      ) {
+        event.preventDefault();
+        onSelectWritingCharacter(numericIndex);
+        return;
+      }
+
+      if (event.key === "ArrowLeft") {
         event.preventDefault();
         onAnswer("again");
         return;
       }
 
-      if (event.key === "2" || event.key === "ArrowDown") {
+      if (event.key === "ArrowDown") {
         event.preventDefault();
         onAnswer("hard");
         return;
       }
 
-      if (event.key === "3" || event.key === "ArrowRight") {
+      if (event.key === "ArrowRight") {
         event.preventDefault();
         onAnswer("known");
       }
@@ -66,7 +93,15 @@ export function useFlashcardControls({
     window.addEventListener("keydown", handleKeyDown);
 
     return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [disabled, onAnswer, onReveal]);
+  }, [
+    canOpenDetail,
+    disabled,
+    onAnswer,
+    onOpenDetail,
+    onReveal,
+    onSelectWritingCharacter,
+    writingCharacterCount,
+  ]);
 
   return {
     onTouchStart(event) {
@@ -93,9 +128,7 @@ export function useFlashcardControls({
       const absX = Math.abs(deltaX);
       const absY = Math.abs(deltaY);
 
-      if (absX < SWIPE_DISTANCE && absY < SWIPE_DISTANCE) {
-        return;
-      }
+      if (absX < SWIPE_DISTANCE && absY < SWIPE_DISTANCE) return;
 
       if (absX > absY) {
         if (deltaX > 0) onAnswer("known");

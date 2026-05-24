@@ -15,8 +15,8 @@ type LessonOverviewProps = {
 
 export function LessonOverview({ lesson }: LessonOverviewProps) {
  return (
-  <div className="grid gap-4">
-   <LessonNoteAccessCard lesson={lesson} />
-  </div>
+ <div className="grid gap-3">
+ <LessonNoteAccessCard lesson={lesson} />
+ </div>
  );
 }

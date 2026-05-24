@@ -1,6 +1,6 @@
 "use client";
 
-import { Bookmark, CheckCircle2, Circle, TriangleAlert } from "lucide-react";
+import { Bookmark } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
@@ -30,7 +30,6 @@ export function GrammarPointReader({
  editDraftId,
  editItemId,
  onBookmark,
- onMarkStatus,
 }: GrammarPointReaderProps) {
  if (!point) {
   return (
