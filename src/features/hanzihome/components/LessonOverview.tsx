@@ -3,6 +3,7 @@
 import { BookOpen, FileText, GraduationCap, RotateCcw } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import { LessonNoteAccessCard } from "@/features/hanzihome/components/LessonNoteAccessCard";
 import type {
  HanziHomeLesson,
  HanziHomeModule,
@@ -84,6 +85,8 @@ export function LessonOverview({
      </div>
     </div>
    </Card>
+
+   <LessonNoteAccessCard lesson={lesson} />
 
    <div className="grid gap-2 sm:grid-cols-2">
     {overviewActions.map((action) => {
