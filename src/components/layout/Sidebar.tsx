@@ -8,6 +8,8 @@ import {
  ChevronRight,
  Flame,
  Home,
+ BookOpen,
+ GraduationCap,
  Layers3,
  LogOut,
  NotebookPen,
@@ -34,6 +36,16 @@ const mainItems: NavItem[] = [
   href: "/hanzihome",
   badge: "JSON",
   tone: "orange",
+ },
+ {
+  name: "Tổng hợp từ",
+  icon: BookOpen,
+  href: "/hanzihome/vocab",
+ },
+ {
+  name: "Tổng hợp ngữ pháp",
+  icon: GraduationCap,
+  href: "/hanzihome/grammar",
  },
  {
   name: "Bộ thủ",
