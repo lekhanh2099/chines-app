@@ -2099,7 +2099,6 @@ This section overrides older HanziHome rules above when they conflict.
 Static JSON is now legacy seed/import source, not the long-term source of truth.
 
 Next major phase:
-
 - Import all 25 MVP lessons into Supabase as real editable data.
 - Supabase becomes the source of truth for courses, books, lessons, lesson text, vocab, grammar, progress, bookmarks, and review history.
 - Use explicit migrations plus idempotent import scripts.
@@ -2108,7 +2107,6 @@ Next major phase:
 ### Product direction
 
 HanziHome must support:
-
 - Lesson workspace: Tổng quan, Bài khóa, Từ vựng, Ngữ pháp, Ôn tập.
 - Aggregate library: all vocab/grammar by lesson, book, course, and globally.
 - Global review / lookup: review vocab or grammar without entering a lesson.
@@ -2120,7 +2118,6 @@ HanziHome must support:
 Study UI must stay compact.
 
 Prefer:
-
 - gap-2 / gap-3.
 - p-2 / p-3 / p-4.
 - rounded-lg / rounded-xl.
@@ -2129,7 +2126,6 @@ Prefer:
 - responsive mobile pane switching.
 
 Avoid:
-
 - gap-5 / gap-6 everywhere.
 - large padding that shrinks study space.
 - overusing rounded-2xl / rounded-3xl.
@@ -2137,7 +2133,6 @@ Avoid:
 - window.confirm.
 
 Vocabulary should prefer:
-
 - Top compact Hanzi selector.
 - Selected word detail below.
 - Search/filter only when useful.
@@ -2154,27 +2149,29 @@ Vocabulary should prefer:
 
 Do not use 1/2/3 for grading anymore.
 
-### React / Next.js coding rules
+### React / Next.js performance skill
 
-Follow Vercel-style React/Next performance principles when writing or refactoring code:
+Follow Vercel-style React/Next performance rules, filtered for this app.
 
+Apply strongly:
 - Avoid async waterfalls.
-- Use Promise.all for independent async work.
-- Avoid broad barrel imports when they bloat bundles.
-- Use dynamic import for heavy client-only features.
+- Start independent Supabase/TanStack Query work in parallel when possible.
+- Keep route pages thin.
 - Keep server/client boundaries explicit.
 - Do not pass large duplicated props into Client Components.
-- Do not use module-level mutable request state.
-- Avoid setState-in-effect when state can be derived.
-- Use primitive dependencies where possible.
+- Avoid broad barrel imports if they bloat client bundles.
+- Dynamically isolate heavy client-only features such as Hanzi Writer, rich editor, and large dialogs when useful.
+- Avoid setState-in-effect when state can be derived during render.
+- Use primitive dependencies in effects/memos where possible.
 - Split hooks/components by real dependency boundaries.
 - Do not define components inside components.
-- Use Set/Map for repeated lookups.
-- Keep global event listeners deduplicated.
+- Use Set/Map for repeated lookups over large vocab/grammar lists.
+- Deduplicate global keyboard/touch listeners.
+- Use startTransition or deferred values for expensive search/filter UI when needed.
+- Keep derived lists such as filtered vocab, grouped grammar, aggregate libraries, and review queues derived with useMemo/selectors, not duplicated state.
 
-For HanziHome specifically:
-
-- Hanzi Writer must stay client-only and dynamically isolated when useful.
-- Large study panels should not re-render because unrelated filters changed.
-- Derived lists such as filtered vocab, grouped grammar, and review queues must be derived with useMemo/selectors, not stored as duplicated state.
-
+Do not apply blindly:
+- Do not replace TanStack Query with SWR.
+- Do not memoize every simple expression.
+- Do not add dynamic import everywhere without bundle/runtime reason.
+- Do not optimize in a way that makes study UI harder to maintain.
