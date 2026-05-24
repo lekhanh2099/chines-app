@@ -4,6 +4,8 @@ import { z } from "zod";
 
 import bundle from "../../../data/hanzihome/hanzihome_bundle_clean.json";
 import type {
+  HanziHomeCatalogCourse,
+  HanziHomeCatalogData,
   GrammarViewModel,
   HanziHomeCourse,
   HanziHomeCourseBook,
@@ -123,6 +125,22 @@ const grammarDetailSectionRowSchema = z.object({
   section_order: z.number(),
 });
 
+const contentCountRowSchema = z.object({
+  course_id: z.string(),
+  lesson_id: z.string(),
+});
+
+const lessonDetailRowSchema = z.object({
+  id: z.string(),
+  course_id: z.string(),
+  book_id: z.string(),
+  lesson_number: z.number(),
+  lesson_order: z.number(),
+  title_zh: z.string(),
+  title_vi: z.string().nullable(),
+  source_file: z.string().nullable(),
+});
+
 type CourseRow = z.infer<typeof courseRowSchema>;
 type BookRow = z.infer<typeof bookRowSchema>;
 type LessonRow = z.infer<typeof lessonRowSchema>;
@@ -133,6 +151,7 @@ type VocabDetailSectionRow = z.infer<typeof vocabDetailSectionRowSchema>;
 type GrammarRow = z.infer<typeof grammarRowSchema>;
 type GrammarExampleRow = z.infer<typeof grammarExampleRowSchema>;
 type GrammarDetailSectionRow = z.infer<typeof grammarDetailSectionRowSchema>;
+type ContentCountRow = z.infer<typeof contentCountRowSchema>;
 
 type PageResult = {
   data: unknown[] | null;
@@ -339,6 +358,72 @@ function mapLesson({
   };
 }
 
+function mapLessonSummary(row: LessonRow): HanziHomeLesson {
+  return {
+    id: row.id,
+    lessonNumber: row.lesson_number,
+    titleZh: row.title_zh,
+    title: row.title_vi || `Bài ${row.lesson_number}: ${row.title_zh}`,
+    sourceFile: row.source_file ?? undefined,
+    courseId: row.course_id,
+    bookId: row.book_id,
+    lessonOrder: row.lesson_order,
+    vocabIds: [],
+    grammarPointIds: [],
+    vocab: [],
+    grammar: [],
+  };
+}
+
+function countByCourse(rows: ContentCountRow[]) {
+  const counts = new Map<string, number>();
+
+  for (const row of rows) {
+    counts.set(row.course_id, (counts.get(row.course_id) ?? 0) + 1);
+  }
+
+  return counts;
+}
+
+function buildCatalogCourses({
+  courses,
+  books,
+  lessons,
+  vocabRows,
+  grammarRows,
+}: {
+  courses: CourseRow[];
+  books: BookRow[];
+  lessons: LessonRow[];
+  vocabRows: ContentCountRow[];
+  grammarRows: ContentCountRow[];
+}): HanziHomeCatalogCourse[] {
+  const booksByCourse = groupByKey(books, (book) => book.course_id);
+  const lessonsByCourse = groupByKey(lessons, (lesson) => lesson.course_id);
+  const vocabCounts = countByCourse(vocabRows);
+  const grammarCounts = countByCourse(grammarRows);
+
+  return courses.map((row) => {
+    const course = mapCourse(row);
+    const courseLessons = sortByOrder(
+      lessonsByCourse.get(row.id) ?? [],
+      (lesson) => lesson.lesson_order,
+    );
+    const fallbackLesson = courseLessons.at(-1);
+
+    return {
+      ...course,
+      stats: {
+        bookCount: booksByCourse.get(row.id)?.length ?? 0,
+        lessonCount: courseLessons.length,
+        vocabCount: vocabCounts.get(row.id) ?? 0,
+        grammarCount: grammarCounts.get(row.id) ?? 0,
+      },
+      fallbackLessonId: fallbackLesson?.id,
+    };
+  });
+}
+
 export async function getDbHanziHomeCatalog() {
   const supabase = await createClient();
 
@@ -404,6 +489,267 @@ export async function getDbHanziHomeLessonContent(lessonId: string) {
   };
 }
 
+export async function getDbHanziHomeCatalogSummary({
+  includeLessons = false,
+}: {
+  includeLessons?: boolean;
+} = {}): Promise<HanziHomeCatalogData> {
+  const supabase = await createClient();
+
+  const [courses, books, lessons, vocabRows, grammarRows] = await Promise.all([
+    fetchPagedRows(
+      courseRowSchema,
+      async (from, to) =>
+        supabase
+          .from("hanzihome_courses")
+          .select("id, slug, title, subtitle, type, course_order")
+          .order("course_order", { ascending: true })
+          .order("title", { ascending: true })
+          .range(from, to),
+      "Could not load DB-backed HanziHome catalog courses",
+    ),
+    fetchPagedRows(
+      bookRowSchema,
+      async (from, to) =>
+        supabase
+          .from("hanzihome_course_books")
+          .select("id, course_id, title, short_title, book_order")
+          .order("course_id", { ascending: true })
+          .order("book_order", { ascending: true })
+          .order("title", { ascending: true })
+          .range(from, to),
+      "Could not load DB-backed HanziHome catalog books",
+    ),
+    fetchPagedRows(
+      lessonRowSchema,
+      async (from, to) =>
+        supabase
+          .from("hanzihome_lessons")
+          .select(
+            "id, course_id, book_id, lesson_number, lesson_order, title_zh, title_vi, source_file",
+          )
+          .order("course_id", { ascending: true })
+          .order("book_id", { ascending: true })
+          .order("lesson_order", { ascending: true })
+          .range(from, to),
+      "Could not load DB-backed HanziHome catalog lessons",
+    ),
+    fetchPagedRows(
+      contentCountRowSchema,
+      async (from, to) =>
+        supabase
+          .from("hanzihome_vocab_items")
+          .select("course_id, lesson_id")
+          .order("course_id", { ascending: true })
+          .range(from, to),
+      "Could not count DB-backed HanziHome vocabulary",
+    ),
+    fetchPagedRows(
+      contentCountRowSchema,
+      async (from, to) =>
+        supabase
+          .from("hanzihome_grammar_points")
+          .select("course_id, lesson_id")
+          .order("course_id", { ascending: true })
+          .range(from, to),
+      "Could not count DB-backed HanziHome grammar",
+    ),
+  ]);
+
+  return {
+    source: courses.length > 0 || lessons.length > 0 ? "db" : "empty",
+    courses: buildCatalogCourses({
+      courses,
+      books,
+      lessons,
+      vocabRows,
+      grammarRows,
+    }),
+    books: books.map(mapBook),
+    lessons: includeLessons ? lessons.map(mapLessonSummary) : [],
+    radicals: [...bundle.radicals].sort((a, b) => a.index - b.index),
+    meta: bundle.meta,
+  };
+}
+
+export async function getDbHanziHomeLessonDetail(
+  lessonId: string,
+): Promise<HanziHomeLesson | null> {
+  const supabase = await createClient();
+
+  const lessonResult = await supabase
+    .from("hanzihome_lessons")
+    .select(
+      "id, course_id, book_id, lesson_number, lesson_order, title_zh, title_vi, source_file",
+    )
+    .eq("id", lessonId)
+    .maybeSingle();
+
+  if (lessonResult.error) {
+    throw new Error(
+      `Could not load DB-backed HanziHome lesson: ${lessonResult.error.message}`,
+    );
+  }
+
+  const lesson = lessonDetailRowSchema.nullable().parse(lessonResult.data);
+
+  if (!lesson) {
+    return null;
+  }
+
+  const [
+    courseResult,
+    bookResult,
+    lessonTextResult,
+    vocabResult,
+    vocabExamplesResult,
+    vocabDetailSectionsResult,
+    grammarResult,
+    grammarExamplesResult,
+    grammarDetailSectionsResult,
+  ] = await Promise.all([
+    supabase
+      .from("hanzihome_courses")
+      .select("id, slug, title, subtitle, type, course_order")
+      .eq("id", lesson.course_id)
+      .maybeSingle(),
+    supabase
+      .from("hanzihome_course_books")
+      .select("id, course_id, title, short_title, book_order")
+      .eq("id", lesson.book_id)
+      .maybeSingle(),
+    supabase
+      .from("hanzihome_lesson_texts")
+      .select("id, lesson_id, text_key, title, content, content_format")
+      .eq("lesson_id", lesson.id)
+      .order("text_key", { ascending: true }),
+    supabase
+      .from("hanzihome_vocab_items")
+      .select(
+        "id, lesson_id, course_id, book_id, word, pinyin, han_viet, meaning, category, level, pos_vi, pos_zh",
+      )
+      .eq("lesson_id", lesson.id)
+      .order("item_order", { ascending: true }),
+    supabase
+      .from("hanzihome_vocab_examples")
+      .select("id, vocab_item_id, lesson_id, example_order, zh, pinyin, vi, note")
+      .eq("lesson_id", lesson.id)
+      .order("vocab_item_id", { ascending: true })
+      .order("example_order", { ascending: true }),
+    supabase
+      .from("hanzihome_vocab_detail_sections")
+      .select(
+        "id, vocab_item_id, lesson_id, section_key, title, lines, section_order",
+      )
+      .eq("lesson_id", lesson.id)
+      .order("vocab_item_id", { ascending: true })
+      .order("section_order", { ascending: true }),
+    supabase
+      .from("hanzihome_grammar_points")
+      .select(
+        "id, lesson_id, course_id, book_id, title, clean_title, core, content_md, structures_view, notes",
+      )
+      .eq("lesson_id", lesson.id)
+      .order("point_order", { ascending: true }),
+    supabase
+      .from("hanzihome_grammar_examples")
+      .select(
+        "id, grammar_point_id, lesson_id, example_order, zh, pinyin, vi, note",
+      )
+      .eq("lesson_id", lesson.id)
+      .order("grammar_point_id", { ascending: true })
+      .order("example_order", { ascending: true }),
+    supabase
+      .from("hanzihome_grammar_detail_sections")
+      .select(
+        "id, grammar_point_id, lesson_id, section_key, title, lines, section_order",
+      )
+      .eq("lesson_id", lesson.id)
+      .order("grammar_point_id", { ascending: true })
+      .order("section_order", { ascending: true }),
+  ]);
+
+  const results = [
+    courseResult,
+    bookResult,
+    lessonTextResult,
+    vocabResult,
+    vocabExamplesResult,
+    vocabDetailSectionsResult,
+    grammarResult,
+    grammarExamplesResult,
+    grammarDetailSectionsResult,
+  ];
+  const failedResult = results.find((result) => result.error);
+
+  if (failedResult?.error) {
+    throw new Error(
+      `Could not load DB-backed HanziHome lesson detail: ${failedResult.error.message}`,
+    );
+  }
+
+  const course = courseRowSchema.nullable().parse(courseResult.data);
+  const book = bookRowSchema.nullable().parse(bookResult.data);
+  const lessonTexts = parseRows(lessonTextRowSchema, lessonTextResult.data);
+  const vocabRows = parseRows(vocabRowSchema, vocabResult.data);
+  const vocabExamples = parseRows(
+    vocabExampleRowSchema,
+    vocabExamplesResult.data,
+  );
+  const vocabDetailSections = parseRows(
+    vocabDetailSectionRowSchema,
+    vocabDetailSectionsResult.data,
+  );
+  const grammarRows = parseRows(grammarRowSchema, grammarResult.data);
+  const grammarExamples = parseRows(
+    grammarExampleRowSchema,
+    grammarExamplesResult.data,
+  );
+  const grammarDetailSections = parseRows(
+    grammarDetailSectionRowSchema,
+    grammarDetailSectionsResult.data,
+  );
+  const vocabExamplesByItem = groupByKey(
+    vocabExamples,
+    (row) => row.vocab_item_id,
+  );
+  const vocabDetailSectionsByItem = groupByKey(
+    vocabDetailSections,
+    (row) => row.vocab_item_id,
+  );
+  const grammarExamplesByPoint = groupByKey(
+    grammarExamples,
+    (row) => row.grammar_point_id,
+  );
+  const grammarDetailSectionsByPoint = groupByKey(
+    grammarDetailSections,
+    (row) => row.grammar_point_id,
+  );
+
+  return mapLesson({
+    row: lesson,
+    course: course ? mapCourse(course) : undefined,
+    book: book ? mapBook(book) : undefined,
+    lessonTexts,
+    vocab: vocabRows.map((row) =>
+      mapVocabItem({
+        row,
+        examples: vocabExamplesByItem.get(row.id) ?? [],
+        detailSections: vocabDetailSectionsByItem.get(row.id) ?? [],
+      }),
+    ),
+    grammar: grammarRows.map((row) =>
+      mapGrammarPoint({
+        row,
+        examples: grammarExamplesByPoint.get(row.id) ?? [],
+        detailSections: grammarDetailSectionsByPoint.get(row.id) ?? [],
+      }),
+    ),
+  });
+}
+
+// Legacy/full-load compatibility path. Do not use this for dashboard or normal
+// lesson workspace reads; use catalog summary and lesson detail queries instead.
 export async function getDbHanziHomeData(): Promise<HanziHomeData> {
   const supabase = await createClient();
 

@@ -3,6 +3,8 @@ import { NextResponse } from "next/server";
 import { getDbHanziHomeData } from "@/features/hanzihome/db-data";
 import type { HanziHomeData } from "@/features/hanzihome/types";
 
+// Legacy/full-load compatibility endpoint. Normal HanziHome UI should use
+// /api/hanzihome/catalog and /api/hanzihome/lessons/[lessonId] instead.
 function jsonNoStore(body: {
   source: "db" | "empty";
   hasSeededLessons: boolean;

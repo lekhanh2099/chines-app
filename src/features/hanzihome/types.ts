@@ -118,6 +118,30 @@ export type HanziHomeData = {
   meta: typeof bundle.meta;
 };
 
+export type HanziHomeCatalogSource = "db" | "static" | "empty";
+
+export type HanziHomeCourseStats = {
+  bookCount: number;
+  lessonCount: number;
+  vocabCount: number;
+  grammarCount: number;
+};
+
+export type HanziHomeCatalogCourse = HanziHomeCourse & {
+  stats: HanziHomeCourseStats;
+  lastLessonId?: string;
+  fallbackLessonId?: string;
+};
+
+export type HanziHomeCatalogData = {
+  source: HanziHomeCatalogSource;
+  courses: HanziHomeCatalogCourse[];
+  books: HanziHomeCourseBook[];
+  lessons: HanziHomeLesson[];
+  radicals: StaticRadicalData[];
+  meta: typeof bundle.meta;
+};
+
 export type LearningProgressItem = {
   level: number;
   status: LearningStatus;

@@ -25,8 +25,8 @@ import {
  mapLessonDraftToHanziHomeLesson,
  useLessonDraftsQuery,
 } from "@/features/hanzihome/lesson-drafts";
-import { useHanziHomeData } from "@/features/hanzihome/hooks/useHanziHomeData";
-import { useHanziHomeLesson } from "@/features/hanzihome/hooks/useHanziHomeLesson";
+import { useHanziHomeCatalogData } from "@/features/hanzihome/hooks/useHanziHomeCatalogData";
+import { useHanziHomeLessonDetail } from "@/features/hanzihome/hooks/useHanziHomeLessonDetail";
 import { useLearningState } from "@/features/hanzihome/hooks/useLearningState";
 import { useCustomHanziHomeCourseCatalogQuery } from "@/features/hanzihome/courses/use-custom-courses";
 import {
@@ -36,7 +36,6 @@ import {
  sortLessonsByCourseBookOrder,
 } from "@/features/hanzihome/courses/course-catalog";
 import type {
- HanziHomeData,
  HanziHomeModule,
  LearningStatus,
  ReviewResult,
@@ -68,7 +67,7 @@ function parseModule(value: string | null | undefined): HanziHomeModule | null {
 export function HanziHomeWorkspace() {
  const router = useRouter();
  const searchParams = useSearchParams();
- const staticData = useHanziHomeData();
+ const catalogData = useHanziHomeCatalogData({ includeLessons: true });
  const draftsQuery = useLessonDraftsQuery();
  const learning = useLearningState();
  const customCourseCatalogQuery = useCustomHanziHomeCourseCatalogQuery();
@@ -84,46 +83,38 @@ export function HanziHomeWorkspace() {
  const mergedCourseCatalog = useMemo(
  () =>
  mergeCourseCatalogs({
- staticCourses: staticData.courses ?? hanzihomeCourses,
- staticBooks: staticData.books ?? hanzihomeCourseBooks,
+ staticCourses: catalogData.courses ?? hanzihomeCourses,
+ staticBooks: catalogData.books ?? hanzihomeCourseBooks,
  customCourses: customCourseCatalogQuery.data?.courses ?? [],
  customBooks: customCourseCatalogQuery.data?.books ?? [],
  }),
- [customCourseCatalogQuery.data, staticData.books, staticData.courses],
+ [catalogData.books, catalogData.courses, customCourseCatalogQuery.data],
  );
 
- const data = useMemo<HanziHomeData>(
- () => ({
- ...staticData,
- courses: mergedCourseCatalog.courses,
- books: mergedCourseCatalog.books,
- lessons: sortLessonsByCourseBookOrder([
- ...staticData.lessons,
+ const lessons = useMemo(
+ () =>
+ sortLessonsByCourseBookOrder([
+ ...catalogData.lessons,
  ...publishedDraftLessons,
  ]),
- }),
- [
- mergedCourseCatalog.books,
- mergedCourseCatalog.courses,
- publishedDraftLessons,
- staticData,
- ],
+ [catalogData.lessons, publishedDraftLessons],
  );
 
  const selectedCourseId =
  searchParams.get("courseId") ||
  learning.state.settings.lastCourseId ||
- (data.courses?.[0]?.id ?? hanzihomeCourses[0]?.id) ||
+ (mergedCourseCatalog.courses?.[0]?.id ?? hanzihomeCourses[0]?.id) ||
  "";
 
  const courseLessons = useMemo(
  () =>
- data.lessons.filter(
+ lessons.filter(
  (item) =>
-  (item.courseId || (data.courses?.[0]?.id ?? hanzihomeCourses[0]?.id)) ===
+  (item.courseId ||
+   (mergedCourseCatalog.courses?.[0]?.id ?? hanzihomeCourses[0]?.id)) ===
   selectedCourseId,
  ),
- [data.courses, data.lessons, selectedCourseId],
+ [lessons, mergedCourseCatalog.courses, selectedCourseId],
  );
 
  const lessonIdFromUrl = searchParams.get("lessonId");
@@ -150,10 +141,16 @@ export function HanziHomeWorkspace() {
  const activeLessonModule =
  activeModule === "radicals" ? "overview" : activeModule;
 
- const lesson = useHanziHomeLesson(data, lessonId);
+ const selectedDraftLesson = publishedDraftLessons.find(
+ (item) => item.id === lessonId,
+ );
+ const dbLesson = useHanziHomeLessonDetail(
+ selectedDraftLesson ? null : lessonId,
+ );
+ const lesson = selectedDraftLesson || dbLesson;
  const selectedLessonId = lesson?.id || lessonId;
 
- const selectedCourse = data.courses.find(
+ const selectedCourse = mergedCourseCatalog.courses.find(
  (course) => course.id === selectedCourseId,
  );
  const subtitle = useMemo(() => {
@@ -259,7 +256,7 @@ export function HanziHomeWorkspace() {
   <div className="flex flex-wrap gap-2">
   <span className="rounded-full bg-bg-subtle px-2.5 py-0.5 text-xs font-black text-text-muted">
    {activeModule === "radicals"
-   ? `${data.radicals.length} bộ thủ`
+   ? `${catalogData.radicals.length} bộ thủ`
    : subtitle}
   </span>
 
@@ -292,7 +289,7 @@ export function HanziHomeWorkspace() {
  </div>
 
  {activeModule === "radicals" ? (
-  <RadicalWorkspace radicals={data.radicals} />
+  <RadicalWorkspace radicals={catalogData.radicals} />
  ) : (
   lesson && (
   <Tabs

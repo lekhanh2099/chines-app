@@ -7,11 +7,6 @@ import { BookMarked, Sparkles } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import {
- hanzihomeCourseBooks,
- hanzihomeCourses,
- mergeCourseCatalogs,
-} from "@/features/hanzihome/courses/course-catalog";
 import { CreateCourseDialog } from "@/features/hanzihome/courses/CreateCourseDialog";
 import { useCustomHanziHomeCourseCatalogQuery } from "@/features/hanzihome/courses/use-custom-courses";
 import {
@@ -19,23 +14,25 @@ import {
  mapLessonDraftToHanziHomeLesson,
  useLessonDraftsQuery,
 } from "@/features/hanzihome/lesson-drafts";
-import { useHanziHomeData } from "@/features/hanzihome/hooks/useHanziHomeData";
+import { useHanziHomeCatalogData } from "@/features/hanzihome/hooks/useHanziHomeCatalogData";
 import type {
- HanziHomeCourse,
+ HanziHomeCatalogCourse,
  HanziHomeCourseBook,
  HanziHomeLesson,
 } from "@/features/hanzihome/types";
 import { useLearningState } from "@/features/hanzihome/hooks/useLearningState";
 
 type CourseStats = {
- lessons: HanziHomeLesson[];
  books: HanziHomeCourseBook[];
+ lessonCount: number;
  vocabCount: number;
  grammarCount: number;
+ fallbackLessonId?: string;
+ suggestedLessonNumber: number;
 };
 
 export function HanziHomeLibraryHome() {
- const staticData = useHanziHomeData();
+ const catalogData = useHanziHomeCatalogData();
  const customCatalogQuery = useCustomHanziHomeCourseCatalogQuery();
  const draftsQuery = useLessonDraftsQuery();
 
@@ -44,32 +41,22 @@ export function HanziHomeLibraryHome() {
    (draftsQuery.data ?? [])
     .filter((draft) => draft.status === "published")
     .map(mapLessonDraftToHanziHomeLesson),
-  [draftsQuery.data],
+ [draftsQuery.data],
  );
 
- const mergedCatalog = useMemo(
+ const courses = useMemo(
   () =>
-   mergeCourseCatalogs({
-    staticCourses: staticData.courses ?? hanzihomeCourses,
-    staticBooks: staticData.books ?? hanzihomeCourseBooks,
-    customCourses: customCatalogQuery.data?.courses ?? [],
-    customBooks: customCatalogQuery.data?.books ?? [],
-   }),
-  [
-   customCatalogQuery.data?.books,
-   customCatalogQuery.data?.courses,
-   staticData.books,
-   staticData.courses,
-  ],
+   mergeCatalogCourses(
+    catalogData.courses,
+    customCatalogQuery.data?.courses ?? [],
+   ),
+  [catalogData.courses, customCatalogQuery.data?.courses],
  );
-
- const lessons = useMemo(
-  () => [...(staticData.lessons ?? []), ...publishedDraftLessons],
-  [publishedDraftLessons, staticData.lessons],
+ const books = useMemo(
+  () =>
+   mergeBooks(catalogData.books, customCatalogQuery.data?.books ?? []),
+  [catalogData.books, customCatalogQuery.data?.books],
  );
-
- const courses = mergedCatalog.courses;
- const books = mergedCatalog.books;
 
  return (
   <main className="flex w-full max-w-full flex-col gap-3 px-4 py-4 lg:px-8">
@@ -104,7 +91,7 @@ export function HanziHomeLibraryHome() {
       <CourseCard
        key={course.id}
        course={course}
-       stats={getCourseStats(course, lessons, books)}
+       stats={getCourseStats(course, publishedDraftLessons, books)}
       />
      ))}
     </div>
@@ -113,27 +100,92 @@ export function HanziHomeLibraryHome() {
  );
 }
 
+function mergeCatalogCourses(
+ catalogCourses: HanziHomeCatalogCourse[],
+ customCourses: Array<Omit<HanziHomeCatalogCourse, "stats">>,
+) {
+ const byId = new Map<string, HanziHomeCatalogCourse>();
+
+ for (const course of catalogCourses) {
+  byId.set(course.id, course);
+ }
+
+ for (const course of customCourses) {
+  if (!byId.has(course.id)) {
+   byId.set(course.id, {
+    ...course,
+    stats: {
+     bookCount: 0,
+     lessonCount: 0,
+     vocabCount: 0,
+     grammarCount: 0,
+    },
+   });
+  }
+ }
+
+ return Array.from(byId.values()).sort(
+  (a, b) => a.order - b.order || a.title.localeCompare(b.title),
+ );
+}
+
+function mergeBooks(
+ catalogBooks: HanziHomeCourseBook[],
+ customBooks: HanziHomeCourseBook[],
+) {
+ const byId = new Map<string, HanziHomeCourseBook>();
+
+ for (const book of catalogBooks) {
+  byId.set(book.id, book);
+ }
+
+ for (const book of customBooks) {
+  if (!byId.has(book.id)) {
+   byId.set(book.id, book);
+  }
+ }
+
+ return Array.from(byId.values()).sort(
+  (a, b) =>
+   a.courseId.localeCompare(b.courseId) ||
+   a.order - b.order ||
+   a.title.localeCompare(b.title),
+ );
+}
+
 function getCourseStats(
- course: HanziHomeCourse,
- lessons: HanziHomeLesson[],
+ course: HanziHomeCatalogCourse,
+ publishedDraftLessons: HanziHomeLesson[],
  books: HanziHomeCourseBook[],
 ): CourseStats {
- const courseLessons = lessons.filter(
+ const courseDraftLessons = publishedDraftLessons.filter(
   (lesson) => lesson.courseId === course.id,
  );
  const courseBooks = books.filter((book) => book.courseId === course.id);
+ const maxDraftLessonNumber = courseDraftLessons
+  .map((lesson) => lesson.lessonNumber)
+  .filter((value): value is number => typeof value === "number")
+  .reduce((max, value) => Math.max(max, value), 0);
 
  return {
-  lessons: courseLessons,
   books: courseBooks,
-  vocabCount: courseLessons.reduce(
+  lessonCount: course.stats.lessonCount + courseDraftLessons.length,
+  vocabCount:
+   course.stats.vocabCount +
+   courseDraftLessons.reduce(
    (sum, lesson) => sum + lesson.vocab.length,
    0,
   ),
-  grammarCount: courseLessons.reduce(
+  grammarCount:
+   course.stats.grammarCount +
+   courseDraftLessons.reduce(
    (sum, lesson) => sum + lesson.grammar.length,
    0,
   ),
+  fallbackLessonId:
+   courseDraftLessons.at(-1)?.id || course.fallbackLessonId || course.lastLessonId,
+  suggestedLessonNumber:
+   Math.max(course.stats.lessonCount, maxDraftLessonNumber) + 1,
  };
 }
 
@@ -141,27 +193,20 @@ function CourseCard({
  course,
  stats,
 }: {
- course: HanziHomeCourse;
+ course: HanziHomeCatalogCourse;
  stats: CourseStats;
 }) {
  const router = useRouter();
  const primaryBook = stats.books[0];
 
  const learning = useLearningState();
- const lastLessonInCourse = stats.lessons.find(
-  (lesson) => lesson.id === learning.state.settings.lastLessonId,
- );
- const fallbackLesson = stats.lessons.at(-1);
- const targetLesson = lastLessonInCourse || fallbackLesson;
- const href = targetLesson
-  ? `/hanzihome?courseId=${course.id}&lessonId=${targetLesson.id}`
+ const targetLessonId =
+  learning.state.settings.lastCourseId === course.id
+   ? learning.state.settings.lastLessonId || stats.fallbackLessonId
+   : stats.fallbackLessonId;
+ const href = targetLessonId
+  ? `/hanzihome?courseId=${course.id}&lessonId=${targetLessonId}`
   : `/hanzihome?courseId=${course.id}`;
-
- const suggestedLessonNumber =
-  stats.lessons
-   .map((lesson) => lesson.lessonNumber)
-   .filter((value): value is number => typeof value === "number")
-   .reduce((max, value) => Math.max(max, value), 0) + 1;
 
  const openCourse = () => {
   router.push(href);
@@ -207,11 +252,11 @@ function CourseCard({
       {course.subtitle && (
        <p className="mt-1 line-clamp-1 max-w-2xl text-sm font-semibold text-text-secondary">
         {course.subtitle}
-       </p>
+      </p>
       )}
 
       <div className="mt-3 flex flex-wrap gap-2">
-       <MiniMetric label="Bài" value={stats.lessons.length} />
+       <MiniMetric label="Bài" value={stats.lessonCount} />
        <MiniMetric label="Từ" value={stats.vocabCount} />
        <MiniMetric label="Ngữ pháp" value={stats.grammarCount} />
       </div>
@@ -224,7 +269,7 @@ function CourseCard({
      onMouseDown={(event) => event.stopPropagation()}
     >
      <CreateLessonDraftDialog
-      suggestedLessonNumber={suggestedLessonNumber}
+      suggestedLessonNumber={stats.suggestedLessonNumber}
       courses={[course]}
       books={stats.books}
       selectedCourseId={course.id}
