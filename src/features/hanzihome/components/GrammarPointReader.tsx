@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { GrammarEditDialog } from "@/features/hanzihome/components/GrammarEditDialog";
 import { InlineDraftItemEditDialog } from "@/features/hanzihome/components/InlineDraftItemEditDialog";
+import { MarkdownContent } from "@/features/hanzihome/components/MarkdownContent";
 import type {
  GrammarViewModel,
  LearningStatus,
@@ -45,6 +46,8 @@ export function GrammarPointReader({
    </Card>
   );
  }
+
+ const contentMd = point.contentMd?.trim();
 
  return (
   <Card padding="lg" className="rounded-2xl -2xl">
@@ -92,73 +95,10 @@ export function GrammarPointReader({
      </div>
     </div>
 
-    {point.structuresView.length > 0 && (
-     <section className="grid gap-2">
-      <h3 className="text-base font-black text-text-primary">Công thức</h3>
-      {point.structuresView.map((structure) => (
-       <p
-        key={structure}
-        className="rounded-2xl border border-info/30 bg-info-subtle p-4 text-base font-black text-info-text"
-       >
-        {structure}
-       </p>
-      ))}
-     </section>
-    )}
-
-    {point.examplesParsed.length > 0 && (
-     <section className="grid gap-2">
-      <h3 className="text-base font-black text-text-primary">Ví dụ nhanh</h3>
-      {point.examplesParsed.map((example) => (
-       <div
-        key={`${example.zh}-${example.vi}`}
-        className="rounded-2xl bg-bg-subtle p-3"
-       >
-        <p className="font-black leading-relaxed text-text-primary">
-         {example.zh}
-        </p>
-        {example.vi && (
-         <p className="text-sm font-semibold leading-relaxed text-text-secondary">
-          {example.vi}
-         </p>
-        )}
-       </div>
-      ))}
-     </section>
-    )}
-
-    {point.detailSections && point.detailSections.length > 0 && (
-     <section className="grid gap-2">
-      <h3 className="text-base font-black text-text-primary">Chi tiết</h3>
-      {point.detailSections.map((section) => (
-       <div
-        key={section.key}
-        className="grid gap-2 rounded-xl border border-border-default bg-bg-subtle p-3"
-       >
-        <h4 className="text-sm font-black text-text-primary">
-         {section.title}
-        </h4>
-        {section.lines.map((line) => (
-         <p key={line} className="text-sm leading-relaxed text-text-secondary">
-          {line}
-         </p>
-        ))}
-       </div>
-      ))}
-     </section>
-    )}
-
-    {point.notes.length > 0 && (
-     <section className="grid gap-2">
-      <h3 className="text-base font-black text-text-primary">
-       Lưu ý / bẫy sai
-      </h3>
-      {point.notes.map((note) => (
-       <p key={note} className="text-sm leading-relaxed text-text-secondary">
-        {note}
-       </p>
-      ))}
-     </section>
+    {contentMd ? (
+     <MarkdownContent content={contentMd} />
+    ) : (
+     <StructuredGrammarContent point={point} />
     )}
 
     {relatedVocab.length > 0 && (
@@ -176,6 +116,81 @@ export function GrammarPointReader({
      </section>
     )}
    </article>
-  </Card>
+ </Card>
+ );
+}
+
+function StructuredGrammarContent({ point }: { point: GrammarViewModel }) {
+ return (
+  <>
+   {point.structuresView.length > 0 && (
+    <section className="grid gap-2">
+     <h3 className="text-base font-black text-text-primary">Công thức</h3>
+     {point.structuresView.map((structure) => (
+      <p
+       key={structure}
+       className="rounded-2xl border border-info/30 bg-info-subtle p-4 text-base font-black text-info-text"
+      >
+       {structure}
+      </p>
+     ))}
+    </section>
+   )}
+
+   {point.examplesParsed.length > 0 && (
+    <section className="grid gap-2">
+     <h3 className="text-base font-black text-text-primary">Ví dụ nhanh</h3>
+     {point.examplesParsed.map((example) => (
+      <div
+       key={`${example.zh}-${example.vi}`}
+       className="rounded-2xl bg-bg-subtle p-3"
+      >
+       <p className="font-black leading-relaxed text-text-primary">
+        {example.zh}
+       </p>
+       {example.vi && (
+        <p className="text-sm font-semibold leading-relaxed text-text-secondary">
+         {example.vi}
+        </p>
+       )}
+      </div>
+     ))}
+    </section>
+   )}
+
+   {point.detailSections && point.detailSections.length > 0 && (
+    <section className="grid gap-2">
+     <h3 className="text-base font-black text-text-primary">Chi tiết</h3>
+     {point.detailSections.map((section) => (
+      <div
+       key={section.key}
+       className="grid gap-2 rounded-xl border border-border-default bg-bg-subtle p-3"
+      >
+       <h4 className="text-sm font-black text-text-primary">
+        {section.title}
+       </h4>
+       {section.lines.map((line) => (
+        <p key={line} className="text-sm leading-relaxed text-text-secondary">
+         {line}
+        </p>
+       ))}
+      </div>
+     ))}
+    </section>
+   )}
+
+   {point.notes.length > 0 && (
+    <section className="grid gap-2">
+     <h3 className="text-base font-black text-text-primary">
+      Lưu ý / bẫy sai
+     </h3>
+     {point.notes.map((note) => (
+      <p key={note} className="text-sm leading-relaxed text-text-secondary">
+       {note}
+      </p>
+     ))}
+    </section>
+   )}
+  </>
  );
 }

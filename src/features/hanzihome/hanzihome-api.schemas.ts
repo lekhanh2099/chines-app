@@ -1,5 +1,10 @@
 import { z } from "zod";
 
+const nullableOptionalStringSchema = z.preprocess(
+  (value) => (value === null ? undefined : value),
+  z.string().optional(),
+);
+
 export const vocabExampleSchema = z.object({
   zh: z.string().trim().min(1, "Thiếu câu tiếng Trung"),
   pinyin: z.string().optional(),
@@ -136,11 +141,11 @@ export const updateHanziHomeGrammarPayloadSchema = z.object({
   title: z.string().trim().min(1, "Thiếu tiêu đề"),
   cleanTitle: z.string().trim().min(1, "Thiếu tiêu đề sạch"),
   core: z.string().trim(),
-  contentMd: z.string().optional(),
-  structuresView: z.array(z.string().trim().min(1)),
-  notes: z.array(z.string().trim().min(1)),
-  examplesParsed: z.array(vocabExampleSchema),
-  detailSections: z.array(vocabDetailSectionSchema),
+  contentMd: nullableOptionalStringSchema,
+  structuresView: z.array(z.string().trim().min(1)).default([]),
+  notes: z.array(z.string().trim().min(1)).default([]),
+  examplesParsed: z.array(vocabExampleSchema).default([]),
+  detailSections: z.array(vocabDetailSectionSchema).default([]),
 });
 
 export type UpdateHanziHomeVocabPayload = z.infer<

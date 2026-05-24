@@ -24,7 +24,7 @@ function jsonError(message: string, status: number) {
   return NextResponse.json({ error: message }, { status });
 }
 
-function nullableText(value: string | undefined) {
+function nullableText(value: string | null | undefined) {
   const trimmed = value?.trim() ?? "";
   return trimmed || null;
 }

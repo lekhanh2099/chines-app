@@ -179,7 +179,7 @@ export function GrammarEditDialog({ lessonId, point }: GrammarEditDialogProps) {
             </Field>
           </div>
 
-          <Field label="Core">
+          <Field label="Core preview">
             <Textarea
               value={formValue.core}
               className="min-h-24 rounded-xl"
@@ -187,10 +187,13 @@ export function GrammarEditDialog({ lessonId, point }: GrammarEditDialogProps) {
             />
           </Field>
 
-          <Field label="Content markdown">
+          <Field
+            label="Nội dung Markdown"
+            description="Dùng cho bài ngữ pháp dài/dynamic. Nếu để trống, app dùng cấu trúc cũ."
+          >
             <Textarea
               value={formValue.contentMd ?? ""}
-              className="min-h-28 rounded-xl"
+              className="min-h-48 rounded-xl"
               onChange={(event) => updateField("contentMd", event.target.value)}
             />
           </Field>
@@ -387,11 +390,24 @@ export function GrammarEditDialog({ lessonId, point }: GrammarEditDialogProps) {
   );
 }
 
-function Field({ label, children }: { label: string; children: ReactNode }) {
+function Field({
+  label,
+  description,
+  children,
+}: {
+  label: string;
+  description?: string;
+  children: ReactNode;
+}) {
   return (
     <label className="grid gap-1 text-sm font-black text-text-primary">
-      {label}
+      <span>{label}</span>
       {children}
+      {description && (
+        <span className="text-xs font-semibold leading-relaxed text-text-muted">
+          {description}
+        </span>
+      )}
     </label>
   );
 }
