@@ -72,18 +72,18 @@ export function HanziHomeLibraryHome() {
  const books = mergedCatalog.books;
 
  return (
-  <main className="mx-auto flex w-full max-w-full  flex-col gap-6 px-5 py-8 lg:px-8">
+  <main className="flex w-full max-w-full flex-col gap-3 px-4 py-4 lg:px-8">
    <section className="flex flex-wrap items-end justify-between gap-4">
-    <div className="max-w-3xl">
+    <div className="grid max-w-3xl gap-3">
      <p className="text-xs font-black uppercase tracking-[0.2em] text-text-muted">
       HanziHome Library
      </p>
 
-     <h1 className="mt-2 text-4xl font-black tracking-tight text-text-primary md:text-5xl">
+     <h1 className="text-4xl font-black tracking-tight text-text-primary md:text-5xl">
       Chọn bộ học liệu
      </h1>
 
-     <p className="mt-3 text-base font-semibold leading-relaxed text-text-secondary">
+     <p className="text-base font-semibold leading-relaxed text-text-secondary">
       Vào từng course để học theo bài. Tạo bài mới ở đúng course, rồi sửa từ
       vựng, ngữ pháp và bài khóa trong workspace.
      </p>

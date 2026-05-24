@@ -262,10 +262,10 @@ function FlashCard({
    onClick={onReveal}
    onTouchStart={touchHandlers.onTouchStart}
    onTouchEnd={touchHandlers.onTouchEnd}
-   className="grid min-h-80 w-full touch-pan-y select-none place-items-center rounded-xl border border-border-default bg-bg-primary p-3 text-center shadow-theme-sm transition-colors hover:border-accent-muted sm:p-5"
+   className="grid min-h-80 w-full touch-pan-y select-none place-items-center rounded-xl border border-border-default bg-bg-primary p-3 text-center shadow-theme-sm transition-colors hover:border-accent-muted sm:p-4"
   >
    <div className="grid w-full max-w-3xl gap-3">
-    <div>
+    <div className="grid gap-3">
      <p className="text-xs font-black uppercase tracking-[0.18em] text-text-muted">
       Mặt trước
      </p>
@@ -273,8 +273,8 @@ function FlashCard({
      <h3
       className={
        item.type === "vocab"
-        ? "font-hanzi-display mt-3 text-6xl font-black tracking-normal text-text-primary"
-        : "mt-3 text-3xl font-black tracking-tight text-text-primary"
+        ? "font-hanzi-display text-6xl font-black tracking-normal text-text-primary"
+        : "text-3xl font-black tracking-tight text-text-primary"
       }
       lang={item.type === "vocab" ? "zh-CN" : "vi"}
      >
@@ -316,12 +316,12 @@ function FlashCardBack({
   return (
    <div className="grid gap-3 rounded-xl bg-bg-subtle p-3 text-left sm:p-4">
     <div className="flex flex-wrap items-start justify-between gap-3">
-     <div className="min-w-0">
+     <div className="grid min-w-0 gap-1">
       <p className="font-pinyin text-xl font-black text-text-primary">
        {item.source.pinyin}
       </p>
 
-      <p className="mt-1 text-base font-bold text-text-secondary">
+      <p className="text-base font-bold text-text-secondary">
        {item.source.hanViet} · {item.source.meaning}
       </p>
      </div>
@@ -350,7 +350,7 @@ function FlashCardBack({
     />
 
     {example && (
-     <div className="rounded-xl bg-bg-primary p-3 sm:p-4">
+     <div className="grid gap-1 rounded-xl bg-bg-primary p-3 sm:p-4">
       <p
        className="font-hanzi text-base font-black text-text-primary"
        lang="zh-CN"
@@ -359,13 +359,13 @@ function FlashCardBack({
       </p>
 
       {example.pinyin && (
-       <p className="font-pinyin mt-1 text-sm font-bold text-text-muted">
+       <p className="font-pinyin text-sm font-bold text-text-muted">
         {example.pinyin}
        </p>
       )}
 
       {example.vi && (
-       <p className="mt-1 text-sm font-semibold text-text-secondary">
+       <p className="text-sm font-semibold text-text-secondary">
         {example.vi}
        </p>
       )}

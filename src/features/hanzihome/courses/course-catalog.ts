@@ -58,6 +58,15 @@ export function sortLessonsByCourseBookOrder(
   });
 }
 
+function dedupeById<T extends { id: string }>(items: T[]) {
+  const byId = new Map<string, T>();
+
+  for (const item of items) {
+    byId.set(item.id, item);
+  }
+
+  return Array.from(byId.values());
+}
 
 export function mergeCourseCatalogs({
   staticCourses,
@@ -71,10 +80,10 @@ export function mergeCourseCatalogs({
   customBooks: HanziHomeCourseBook[];
 }) {
   return {
-    courses: [...staticCourses, ...customCourses].sort(
+    courses: dedupeById([...staticCourses, ...customCourses]).sort(
       (a, b) => a.order - b.order || a.title.localeCompare(b.title),
     ),
-    books: [...staticBooks, ...customBooks].sort(
+    books: dedupeById([...staticBooks, ...customBooks]).sort(
       (a, b) =>
         a.courseId.localeCompare(b.courseId) ||
         a.order - b.order ||

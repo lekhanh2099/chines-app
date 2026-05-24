@@ -49,7 +49,7 @@ export function Select({
  };
 
  return (
-  <div className="w-full">
+  <div className="grid w-full gap-1">
    <SelectRoot
     value={selectedValue}
     onValueChange={handleValueChange}
@@ -57,7 +57,7 @@ export function Select({
    >
     <SelectTrigger
      className={cn(
-      "bg-bg-field-default border-stroke-default h-9 w-full rounded-2xl  border px-2 text-left",
+      "bg-bg-field-default border-stroke-default h-9 w-full rounded-xl border px-2 text-left",
       "focus-visible:border-stroke-active-focus",
       "disabled:bg-bg-field-disable disabled:border-stroke-disabled disabled:opacity-100",
       errorMessage && "border-stroke-error",
@@ -92,9 +92,7 @@ export function Select({
     </SelectContent>
    </SelectRoot>
 
-   {errorMessage && (
-    <p className="text-burnt-siena mt-1 text-sm">{errorMessage}</p>
-   )}
+   {errorMessage && <p className="text-burnt-siena text-sm">{errorMessage}</p>}
   </div>
  );
 }
