@@ -12,6 +12,7 @@ import { useCustomHanziHomeCourseCatalogQuery } from "@/features/hanzihome/cours
 import {
  CreateLessonDraftDialog,
  mapLessonDraftToHanziHomeLesson,
+ type LessonDraft,
  useLessonDraftsQuery,
 } from "@/features/hanzihome/lesson-drafts";
 import { useHanziHomeCatalogData } from "@/features/hanzihome/hooks/useHanziHomeCatalogData";
@@ -42,6 +43,10 @@ export function HanziHomeLibraryHome() {
     .filter((draft) => draft.status === "published")
     .map(mapLessonDraftToHanziHomeLesson),
  [draftsQuery.data],
+ );
+ const unpublishedDrafts = useMemo(
+  () => (draftsQuery.data ?? []).filter((draft) => draft.status !== "published"),
+  [draftsQuery.data],
  );
 
  const courses = useMemo(
@@ -79,6 +84,12 @@ export function HanziHomeLibraryHome() {
     <CreateCourseDialog />
    </section>
 
+   <DraftRecoveryPanel
+    drafts={unpublishedDrafts}
+    error={draftsQuery.error}
+    isLoading={draftsQuery.isLoading}
+   />
+
    <section className="grid gap-4">
     {customCatalogQuery.isLoading && (
      <p className="text-sm font-bold text-text-muted">
@@ -97,6 +108,87 @@ export function HanziHomeLibraryHome() {
     </div>
    </section>
   </main>
+ );
+}
+
+function DraftRecoveryPanel({
+ drafts,
+ error,
+ isLoading,
+}: {
+ drafts: LessonDraft[];
+ error: Error | null;
+ isLoading: boolean;
+}) {
+ if (!isLoading && !error && drafts.length === 0) return null;
+
+ const visibleDrafts = [...drafts]
+  .sort((a, b) => Date.parse(b.updatedAt) - Date.parse(a.updatedAt))
+  .slice(0, 6);
+
+ return (
+  <Card padding="md" className="rounded-xl">
+   <div className="grid gap-3">
+    <div className="flex flex-wrap items-start justify-between gap-3">
+     <div className="grid gap-1">
+      <p className="text-xs font-black uppercase tracking-wide text-text-muted">
+       Bài nháp chưa publish
+      </p>
+      <h2 className="text-lg font-black text-text-primary">
+       Tiếp tục soạn bài đang làm dở
+      </h2>
+      <p className="text-sm font-semibold text-text-muted">
+       Draft chưa publish không hiện trong danh sách bài học, nên gom lại ở đây
+       để mở lại nhanh.
+      </p>
+     </div>
+
+     <span className="rounded-full bg-bg-subtle px-3 py-1 text-xs font-black text-text-muted">
+      {drafts.length} draft
+     </span>
+    </div>
+
+    {isLoading && (
+     <p className="text-sm font-bold text-text-muted">Đang tải bài nháp...</p>
+    )}
+
+    {error && (
+     <p role="alert" className="text-sm font-bold text-destructive">
+      {error.message}
+     </p>
+    )}
+
+    {visibleDrafts.length > 0 && (
+     <div className="grid gap-2 md:grid-cols-2 xl:grid-cols-3">
+      {visibleDrafts.map((draft) => (
+       <Link
+        key={draft.id}
+        href={`/hanzihome/drafts/${draft.id}`}
+        className="grid gap-1 rounded-xl border border-border-default bg-bg-subtle p-3 transition-colors hover:border-accent-muted hover:bg-accent-subtle"
+       >
+        <p className="truncate text-sm font-black text-text-primary">
+         {draft.lessonNumber ? `Bài ${draft.lessonNumber}: ` : ""}
+         {draft.titleZh}
+        </p>
+        <p className="truncate text-xs font-semibold text-text-muted">
+         {draft.content.lesson.bookTitle ||
+          draft.content.lesson.courseTitle ||
+          draft.lessonKey}{" "}
+         · {draft.status}
+        </p>
+       </Link>
+      ))}
+     </div>
+    )}
+
+    {drafts.length > visibleDrafts.length && (
+     <p className="text-xs font-black uppercase tracking-wide text-text-muted">
+      Còn {drafts.length - visibleDrafts.length} draft khác. Mở draft gần đây
+      nhất trước, hoặc dùng tìm kiếm sau khi build trang quản lý draft đầy đủ.
+     </p>
+    )}
+   </div>
+  </Card>
  );
 }
 
