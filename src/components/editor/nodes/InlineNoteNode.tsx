@@ -60,7 +60,7 @@ function InlineNoteComponent({
    {text}
    {showTooltip && (
     <span
-     className="absolute bottom-full left-1/2 z-10000 mb-2 -translate-x-1/2 whitespace-pre-wrap rounded-2xl -lg border border-sky-200 bg-white px-3 py-2 text-xs leading-relaxed text-slate-700 shadow-lg"
+     className="absolute bottom-full left-1/2 z-10000 mb-2 -translate-x-1/2 whitespace-pre-wrap rounded-xl border border-border-default bg-bg-elevated px-3 py-2 text-xs leading-relaxed text-text-secondary shadow-theme-lg"
      style={{ minWidth: 120, maxWidth: 280 }}
      onMouseEnter={handleMouseEnter}
      onMouseLeave={handleMouseLeave}

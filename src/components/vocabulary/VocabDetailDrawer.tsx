@@ -793,7 +793,7 @@ function CharacterWriterCard({ character }: { character: string }) {
   <div className="rounded-2xl border border-border-default bg-bg-primary p-3">
    <div
     ref={containerRef}
-    className="mx-auto rounded-2xl -xl border border-border-default bg-white"
+    className="mx-auto rounded-xl border border-border-default bg-bg-card"
     style={{ width: 160, height: 160, position: "relative" }}
    />
   </div>

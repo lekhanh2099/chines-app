@@ -99,18 +99,18 @@
 
 [data-theme="dark"] {
   /* Background */
-  --bg-primary: #0a0a0f; /* Very dark indigo/black */
-  --bg-card: #14141d; /* Dark card */
-  --bg-card-hover: #1c1c28;
-  --bg-elevated: #1a1a24;
-  --bg-input: #1a1a24;
-  --bg-subtle: #252538; /* Darker purple-gray track */
+  --bg-primary: #101014;
+  --bg-card: #17171d;
+  --bg-card-hover: #20202a;
+  --bg-elevated: #1d1d26;
+  --bg-input: #1d1d26;
+  --bg-subtle: #22222b;
 
   /* Text */
   --text-primary: #f8f9fe;
   --text-secondary: #a1a1bc;
-  --text-muted: #6b6b85;
-  --text-inverse: #ffffff;
+  --text-muted: #8f90a6;
+  --text-inverse: #101014;
 
   /* Accent — Primary Purple (brighter for dark mode) */
   --accent: #6b69fa;
@@ -145,14 +145,14 @@
   --purple-text: #e9d5ff;
 
   /* Border & Ring */
-  --border: #2a2a3d;
-  --border-hover: #3d3d54;
+  --border: rgb(255 255 255 / 0.018);
+  --border-hover: rgb(255 255 255 / 0.052);
   --ring: #6b69fa;
 
   /* Shadow */
-  --shadow-sm: 0 1px 3px 0 rgb(0 0 0 / 0.4);
-  --shadow-md: 0 4px 12px -2px rgb(0 0 0 / 0.5);
-  --shadow-lg: 0 12px 24px -4px rgb(0 0 0 / 0.6);
+  --shadow-sm: 0 12px 28px -22px rgb(0 0 0 / 0.98);
+  --shadow-md: 0 18px 44px -28px rgb(0 0 0 / 0.98);
+  --shadow-lg: 0 28px 68px -38px rgb(0 0 0 / 0.98);
 
   /* Misc */
   --overlay: rgb(0 0 0 / 0.7);

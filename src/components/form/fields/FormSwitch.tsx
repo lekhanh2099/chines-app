@@ -63,7 +63,7 @@ export function FormSwitch({
      )}
      disabled={disabled}
      className={cn(
-      "relative h-6 w-11 shrink-0 rounded-2xl -full border border-border-default transition-colors disabled:cursor-not-allowed disabled:opacity-50",
+      "relative h-6 w-11 shrink-0 rounded-full border border-border-default transition-colors disabled:cursor-not-allowed disabled:opacity-50",
       checked ? "bg-primary" : "bg-bg-subtle",
      )}
      onBlur={field.handleBlur}
@@ -71,7 +71,7 @@ export function FormSwitch({
     >
      <span
       className={cn(
-       "absolute top-1/2 size-5 -translate-y-1/2 rounded-2xl -full bg-white shadow-sm transition-transform",
+       "absolute top-1/2 size-5 -translate-y-1/2 rounded-full bg-bg-primary shadow-theme-sm transition-transform",
        checked ? "translate-x-5" : "translate-x-0.5",
       )}
      />

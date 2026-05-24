@@ -43,7 +43,7 @@ export function VocabList({
    "group rounded-lg border px-2.5 py-1.5 text-left transition-colors",
    active
    ? "border-bg-inverse bg-bg-inverse text-text-inverse shadow-theme-sm"
-   : "border-border-default bg-bg-primary text-text-primary hover:border-accent-muted hover:bg-accent-subtle",
+   : "border-transparent bg-bg-subtle text-text-secondary hover:border-border-hover hover:bg-bg-elevated hover:text-text-primary",
    ].join(" ")}
   >
    <span

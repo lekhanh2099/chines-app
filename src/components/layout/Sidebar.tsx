@@ -91,7 +91,7 @@ function NavRow({
     collapsed ? "w-12 justify-center px-0" : "px-4",
     active
      ? "border-orange-300 bg-orange-50 text-orange-700 shadow-theme-sm"
-     : "border-transparent text-stone-600 hover:border-stone-200 hover:bg-stone-50 hover:text-stone-900",
+     : "border-transparent text-text-muted hover:border-border-hover hover:bg-bg-subtle hover:text-text-primary",
    )}
   >
    <Icon className="h-5 w-5 shrink-0" />
@@ -137,13 +137,13 @@ export function Sidebar() {
   <>
    <aside
     className={cn(
-     "hidden h-full shrink-0 flex-col border-r-2 border-stone-200 bg-white transition-all duration-200 md:flex",
+     "hidden h-full shrink-0 flex-col border-r border-border-default bg-bg-card shadow-theme-sm transition-all duration-200 md:flex",
      isCollapsed ? "w-[84px]" : "w-[292px]",
     )}
    >
     <div
      className={cn(
-      "flex h-[76px] items-center border-b-2 border-stone-100",
+      "flex h-[76px] items-center border-b border-border-default",
       isCollapsed ? "justify-center px-3" : "px-5",
      )}
     >
@@ -156,7 +156,7 @@ export function Sidebar() {
         <p className="truncate text-2xl font-black tracking-normal text-red-500">
          HanziHome
         </p>
-        <p className="truncate text-xs font-bold text-stone-500">
+        <p className="truncate text-xs font-bold text-text-muted">
          Học tiếng Trung cá nhân
         </p>
        </div>
@@ -182,7 +182,7 @@ export function Sidebar() {
 
     {secondaryItems.length > 0 && (
      <>
-      <div className="border-t-2 border-stone-100" />
+      <div className="border-t border-border-default" />
 
       <nav
        className={cn(
@@ -208,13 +208,13 @@ export function Sidebar() {
 
     <div
      className={cn(
-      "grid gap-3 border-t-2 border-stone-100 py-4",
+      "grid gap-3 border-t border-border-default py-4",
       isCollapsed ? "px-3" : "px-4",
      )}
     >
      {!isCollapsed && (
-      <div className="rounded-xl border-2 border-red-100 bg-red-50 p-3">
-       <div className="flex items-center gap-2 text-sm font-black text-red-600">
+      <div className="rounded-xl border border-danger/20 bg-danger-subtle p-3 shadow-theme-sm">
+       <div className="flex items-center gap-2 text-sm font-black text-danger-text">
         <Flame className="h-4 w-4" />
         Học theo bài
        </div>
@@ -228,7 +228,7 @@ export function Sidebar() {
       type="button"
       onClick={handleLogout}
       className={cn(
-       "flex h-11 items-center gap-3 rounded-xl px-4 text-[15px] font-black text-red-500 transition-colors hover:bg-red-50",
+       "flex h-11 items-center gap-3 rounded-xl px-4 text-[15px] font-black text-danger transition-colors hover:bg-danger-subtle",
        isCollapsed ? "w-12 justify-center px-0" : "w-full",
       )}
       title={isCollapsed ? "Đăng xuất" : undefined}
@@ -241,7 +241,7 @@ export function Sidebar() {
       type="button"
       onClick={toggleSidebar}
       className={cn(
-       "flex h-10 items-center justify-center gap-2 rounded-xl text-sm font-bold text-stone-500 transition-colors hover:bg-stone-100",
+       "flex h-10 items-center justify-center gap-2 rounded-xl text-sm font-bold text-text-muted transition-colors hover:bg-bg-subtle",
        isCollapsed ? "w-12" : "w-full",
       )}
      >
@@ -254,7 +254,7 @@ export function Sidebar() {
      </button>
     </div>
    </aside>
-   <nav className="fixed inset-x-0 bottom-0 z-40 grid max-w-full place-items-center overflow-x-hidden scrollbar-soft border-t-2 border-stone-200 bg-white/95 px-2 pb-[calc(0.5rem+env(safe-area-inset-bottom))] pt-2 shadow-[0_-3px_0_rgb(0_0_0/0.08)] backdrop-blur md:hidden">
+   <nav className="fixed inset-x-0 bottom-0 z-40 grid max-w-full place-items-center overflow-x-hidden scrollbar-soft border-t border-border-default bg-bg-card/95 px-2 pb-[calc(0.5rem+env(safe-area-inset-bottom))] pt-2 shadow-theme-sm backdrop-blur md:hidden">
     <div
      className="grid w-full max-w-md min-w-0 gap-1"
      style={{
@@ -271,8 +271,8 @@ export function Sidebar() {
         className={cn(
          "flex min-w-0 flex-col items-center justify-center gap-1 rounded-xl px-1 py-2 text-[10px] font-black transition",
          active
-          ? "bg-orange-50 text-orange-700"
-          : "text-stone-500 hover:bg-stone-50",
+          ? "bg-accent-subtle text-accent-text"
+          : "text-text-muted hover:bg-bg-subtle",
         )}
        >
         <Icon className="h-5 w-5 shrink-0" />

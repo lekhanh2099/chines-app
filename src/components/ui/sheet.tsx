@@ -28,7 +28,7 @@ export function Sheet({
    />
    <div
     className={cn(
-     "absolute max-w-full overflow-y-auto scrollbar-soft  overflow-x-hidden scrollbar-soft  border-stone-200 bg-white shadow-2xl",
+     "absolute max-w-full overflow-y-auto scrollbar-soft  overflow-x-hidden scrollbar-soft  border-border-default bg-bg-card shadow-theme-lg",
      side === "right"
       ? "right-0 top-0 h-full w-full border-l-2 sm:max-w-2xl"
       : "inset-x-0 bottom-0 max-h-[82vh] w-full rounded-2xl -t-3xl border-t-2",
@@ -56,7 +56,7 @@ export function SheetHeader({
    <button
     type="button"
     onClick={onClose}
-    className="flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl border-2 border-stone-200 text-stone-600 hover:bg-stone-50"
+    className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-border-default text-text-muted hover:bg-bg-subtle"
    >
     <X className="h-5 w-5" />
    </button>

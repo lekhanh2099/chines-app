@@ -97,7 +97,7 @@ export default function NodeHoverPlugin() {
     hide();
    }}
   >
-   <div className="rounded-2xl -lg border border-indigo-200 bg-white px-3 py-2 shadow-lg">
+   <div className="rounded-xl border border-border-default bg-bg-elevated px-3 py-2 shadow-theme-lg">
     <span className="mb-0.5 block text-[10px] font-semibold uppercase tracking-widest text-indigo-400">
      Ghi chú liên kết
     </span>

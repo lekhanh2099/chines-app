@@ -3,22 +3,13 @@
 import { useMemo } from "react";
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
-import {
- BookOpen,
- FileText,
- GraduationCap,
- Home,
- RotateCcw,
-} from "lucide-react";
 
 import { Card } from "@/components/ui/card";
-import type { SegmentedControlItem } from "@/components/ui/segmented-control";
-import { Tabs } from "@/components/ui/tabs";
 import { GrammarWorkspace } from "@/features/hanzihome/components/GrammarWorkspace";
 import { LessonOverview } from "@/features/hanzihome/components/LessonOverview";
 import { LessonPicker } from "@/features/hanzihome/components/LessonPicker";
-import { LessonModuleSplitLayout } from "@/features/hanzihome/components/LessonModuleSplitLayout";
 import { LessonTextInlineEditor } from "@/features/hanzihome/components/LessonTextInlineEditor";
+import { ModuleSplitWorkspace } from "@/features/hanzihome/components/ModuleSplitWorkspace";
 import { RadicalWorkspace } from "@/features/hanzihome/components/RadicalWorkspace";
 import { ReviewWorkspace } from "@/features/hanzihome/components/ReviewWorkspace";
 import { VocabWorkspace } from "@/features/hanzihome/components/VocabWorkspace";
@@ -42,13 +33,7 @@ import type {
  ReviewResult,
 } from "@/features/hanzihome/types";
 
-const tabs = [
- { key: "overview" as const, label: "Tổng quan", icon: Home },
- { key: "lessonText" as const, label: "Bài khóa", icon: FileText },
- { key: "vocab" as const, label: "Từ vựng", icon: BookOpen },
- { key: "grammar" as const, label: "Ngữ pháp", icon: GraduationCap },
- { key: "review" as const, label: "Ôn tập", icon: RotateCcw },
-] satisfies SegmentedControlItem<Exclude<HanziHomeModule, "radicals">>[];
+type StudyModule = Exclude<HanziHomeModule, "radicals">;
 
 const moduleValues = [
  "overview",
@@ -139,7 +124,7 @@ export function HanziHomeWorkspace() {
   learning.state.settings.lastModule ||
   "overview";
 
- const activeLessonModule =
+ const activeLessonModule: StudyModule =
   activeModule === "radicals" ? "overview" : activeModule;
 
  const selectedDraftLesson = publishedDraftLessons.find(
@@ -217,39 +202,39 @@ export function HanziHomeWorkspace() {
   switch (activeLessonModule) {
    case "overview":
     return (
-    <LessonOverview
-     lesson={lesson}
-     learningState={learning.state}
-     onOpenModule={selectModule}
-    />
+     <LessonOverview
+      lesson={lesson}
+      learningState={learning.state}
+      onOpenModule={selectModule}
+     />
     );
    case "lessonText":
     return <LessonTextInlineEditor lesson={lesson} />;
    case "vocab":
     return (
-      <VocabWorkspace
-       lesson={lesson}
-       state={learning.state}
-       onBookmark={(id) => learning.toggleBookmark("vocab", id)}
-       onMarkStatus={markVocab}
-      />
+     <VocabWorkspace
+      lesson={lesson}
+      state={learning.state}
+      onBookmark={(id) => learning.toggleBookmark("vocab", id)}
+      onMarkStatus={markVocab}
+     />
     );
    case "grammar":
     return (
-       <GrammarWorkspace
-        lesson={lesson}
-        state={learning.state}
-        onBookmark={(id) => learning.toggleBookmark("grammar", id)}
-        onMarkStatus={markGrammar}
-       />
+     <GrammarWorkspace
+      lesson={lesson}
+      state={learning.state}
+      onBookmark={(id) => learning.toggleBookmark("grammar", id)}
+      onMarkStatus={markGrammar}
+     />
     );
    case "review":
     return (
-       <ReviewWorkspace
-        lesson={lesson}
-        learningState={learning.state}
-        onAnswer={answerReview}
-       />
+     <ReviewWorkspace
+      lesson={lesson}
+      learningState={learning.state}
+      onAnswer={answerReview}
+     />
     );
   }
  })();
@@ -315,6 +300,7 @@ export function HanziHomeWorkspace() {
           Sửa bài
          </Link>
         )}
+
         {learning.isSaving && (
          <span className="rounded-full bg-bg-subtle px-2.5 py-0.5 text-xs font-black text-text-muted">
           Đang lưu...
@@ -339,16 +325,18 @@ export function HanziHomeWorkspace() {
      <RadicalWorkspace radicals={catalogData.radicals} />
     ) : (
      lesson && (
-      <Tabs
-       value={activeLessonModule}
-       items={tabs}
-       onValueChange={selectModule}
-       className="hanzihome-module-tabs grid gap-2.5"
-      >
-       <LessonModuleSplitLayout lesson={lesson} module={activeLessonModule}>
-        {activeLessonContent}
-       </LessonModuleSplitLayout>
-      </Tabs>
+      <ModuleSplitWorkspace
+       lesson={lesson}
+       learningState={learning.state}
+       activeModule={activeLessonModule}
+       singleContent={activeLessonContent}
+       onSelectModule={selectModule}
+       onBookmarkVocab={(id) => learning.toggleBookmark("vocab", id)}
+       onMarkVocab={markVocab}
+       onBookmarkGrammar={(id) => learning.toggleBookmark("grammar", id)}
+       onMarkGrammar={markGrammar}
+       onAnswerReview={answerReview}
+      />
      )
     )}
    </div>
