@@ -1,25 +1,9 @@
 import { NextResponse } from "next/server";
-import { z } from "zod";
 
-import { createClient } from "@/lib/supabase/server";
+import { getStaticAggregateVocabFallback } from "@/features/hanzihome/aggregate-static";
 
-const aggregateVocabRowSchema = z.object({
- id: z.string(),
- course_id: z.string(),
- book_id: z.string(),
- lesson_id: z.string(),
- lesson_number: z.number(),
- lesson_order: z.number(),
- lesson_title: z.string(),
- word: z.string(),
- pinyin: z.string(),
- han_viet: z.string(),
- meaning: z.string(),
- category: z.string(),
- level: z.string().nullable(),
- pos_vi: z.string().nullable(),
- pos_zh: z.string().nullable(),
-});
+export const dynamic = "force-dynamic";
+export const revalidate = 0;
 
 function parseLimit(value: string | null) {
  const parsed = Number(value);
@@ -37,54 +21,26 @@ export async function GET(request: Request) {
  const q = url.searchParams.get("q")?.trim() || null;
  const limit = parseLimit(url.searchParams.get("limit"));
 
- try {
-  const supabase = await createClient();
+ const items = getStaticAggregateVocabFallback({
+  courseId,
+  bookId,
+  lessonId,
+  q,
+  limit,
+ });
 
-  const result = await supabase.rpc("get_hanzihome_aggregate_vocab", {
-   p_course_id: courseId || null,
-   p_book_id: bookId || null,
-   p_lesson_id: lessonId || null,
-   p_q: q,
-   p_limit: limit,
-  });
-
-  if (result.error) {
-   return NextResponse.json(
-    { items: [], error: result.error.message },
-    { status: 500 },
-   );
-  }
-
-  const rows = z.array(aggregateVocabRowSchema).parse(result.data ?? []);
-  const items = rows.map((row) => ({
-   id: row.id,
-   courseId: row.course_id,
-   bookId: row.book_id,
-   lessonId: row.lesson_id,
-   lessonNumber: row.lesson_number,
-   lessonOrder: row.lesson_order,
-   lessonTitle: row.lesson_title,
-   word: row.word,
-   pinyin: row.pinyin,
-   hanViet: row.han_viet,
-   meaning: row.meaning,
-   category: row.category,
-   level: row.level ?? undefined,
-   pos: {
-    vi: row.pos_vi ?? undefined,
-    zh: row.pos_zh ?? undefined,
+ return NextResponse.json(
+  {
+   items,
+   debug: {
+    source: "static-bundle-vocab",
+    count: items.length,
    },
-  }));
-
-  return NextResponse.json(
-   { items },
-   {
-    headers: {
-     "Cache-Control": "no-store",
-    },
+  },
+  {
+   headers: {
+    "Cache-Control": "no-store",
    },
-  );
- } catch {
-  return NextResponse.json({ items: [] }, { status: 500 });
- }
+  },
+ );
 }
