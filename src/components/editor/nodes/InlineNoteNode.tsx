@@ -5,7 +5,8 @@
  * with a tooltip that shows the note on hover.
  * Persisted in the document JSON → auto-saved to DB.
  */
-import { useCallback, useRef, useState } from "react";
+import { useCallback, useLayoutEffect, useRef, useState } from "react";
+import { createPortal } from "react-dom";
 import type {
  DOMConversionMap,
  DOMConversionOutput,
@@ -16,7 +17,7 @@ import type {
  Spread,
 } from "lexical";
 import { DecoratorNode, $applyNodeReplacement } from "lexical";
-import type { JSX } from "react";
+import type { JSX, ReactNode } from "react";
 
 export type SerializedInlineNoteNode = Spread<
  {
@@ -25,6 +26,57 @@ export type SerializedInlineNoteNode = Spread<
  },
  SerializedLexicalNode
 >;
+
+const urlPattern = /https?:\/\/[^\s<>"'）)\]}]+/gi;
+
+function renderLinkifiedText(value: string): ReactNode[] {
+ const parts: ReactNode[] = [];
+ let lastIndex = 0;
+ let index = 0;
+
+ for (const match of value.matchAll(urlPattern)) {
+  const rawUrl = match[0];
+  const start = match.index ?? 0;
+
+  if (start > lastIndex) {
+   parts.push(value.slice(lastIndex, start));
+  }
+
+  let url = rawUrl;
+  let trailing = "";
+
+  while (/[.,!?;:，。！？；：]+$/.test(url)) {
+   trailing = url.slice(-1) + trailing;
+   url = url.slice(0, -1);
+  }
+
+  parts.push(
+   <a
+    key={`inline-note-url-${index}`}
+    href={url}
+    target="_blank"
+    rel="noreferrer"
+    className="break-all font-bold text-sky-600 underline underline-offset-2 hover:text-sky-700"
+    onClick={(event) => event.stopPropagation()}
+   >
+    {url}
+   </a>,
+  );
+
+  if (trailing) {
+   parts.push(trailing);
+  }
+
+  lastIndex = start + rawUrl.length;
+  index += 1;
+ }
+
+ if (lastIndex < value.length) {
+  parts.push(value.slice(lastIndex));
+ }
+
+ return parts;
+}
 
 /* ── React component ── */
 function InlineNoteComponent({
@@ -36,6 +88,11 @@ function InlineNoteComponent({
  nodeKey: NodeKey;
 }) {
  const [showTooltip, setShowTooltip] = useState(false);
+ const [tooltipPosition, setTooltipPosition] = useState<{
+  top: number;
+  left: number;
+  placement: "top" | "bottom";
+ } | null>(null);
  const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
  const spanRef = useRef<HTMLSpanElement | null>(null);
 
@@ -44,10 +101,39 @@ function InlineNoteComponent({
   timeoutRef.current = setTimeout(() => setShowTooltip(true), 200);
  }, []);
 
+ const updateTooltipPosition = useCallback(() => {
+  const rect = spanRef.current?.getBoundingClientRect();
+
+  if (!rect) return;
+
+  const hasEnoughTopSpace = rect.top > 140;
+  const placement = hasEnoughTopSpace ? "top" : "bottom";
+
+  setTooltipPosition({
+   left: rect.left + rect.width / 2,
+   top: placement === "top" ? rect.top - 10 : rect.bottom + 10,
+   placement,
+  });
+ }, []);
+
  const handleMouseLeave = useCallback(() => {
   if (timeoutRef.current) clearTimeout(timeoutRef.current);
   timeoutRef.current = setTimeout(() => setShowTooltip(false), 150);
  }, []);
+
+ useLayoutEffect(() => {
+  if (!showTooltip) return;
+
+  updateTooltipPosition();
+
+  window.addEventListener("scroll", updateTooltipPosition, true);
+  window.addEventListener("resize", updateTooltipPosition);
+
+  return () => {
+   window.removeEventListener("scroll", updateTooltipPosition, true);
+   window.removeEventListener("resize", updateTooltipPosition);
+  };
+ }, [showTooltip, updateTooltipPosition]);
 
  return (
   <span
@@ -58,20 +144,40 @@ function InlineNoteComponent({
    onMouseLeave={handleMouseLeave}
   >
    {text}
-   {showTooltip && (
-    <span
-     className="absolute bottom-full left-1/2 z-10000 mb-2 -translate-x-1/2 whitespace-pre-wrap rounded-xl border border-border-default bg-bg-elevated px-3 py-2 text-xs leading-relaxed text-text-secondary shadow-theme-lg"
-     style={{ minWidth: 120, maxWidth: 280 }}
-     onMouseEnter={handleMouseEnter}
-     onMouseLeave={handleMouseLeave}
-    >
-     <span className="mb-1 block text-[10px] font-semibold uppercase tracking-widest text-sky-500">
-      Ghi chú
-     </span>
-     {noteText}
-     <span className="absolute left-1/2 top-full -translate-x-1/2 border-4 border-transparent border-t-white" />
-    </span>
-   )}
+   {showTooltip &&
+    tooltipPosition &&
+    typeof document !== "undefined" &&
+    createPortal(
+     <span
+      className="fixed z-[100000] whitespace-pre-wrap rounded-xl border border-border-default bg-bg-elevated px-3 py-2 text-xs leading-relaxed text-text-secondary shadow-theme-lg"
+      style={{
+       left: tooltipPosition.left,
+       top: tooltipPosition.top,
+       minWidth: 120,
+       maxWidth: 280,
+       transform:
+        tooltipPosition.placement === "top"
+         ? "translate(-50%, -100%)"
+         : "translate(-50%, 0)",
+      }}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+     >
+      <span className="mb-1 block text-[10px] font-semibold uppercase tracking-widest text-sky-500">
+       Ghi chú
+      </span>
+      {renderLinkifiedText(noteText)}
+      <span
+       className={[
+        "absolute left-1/2 -translate-x-1/2 border-4 border-transparent",
+        tooltipPosition.placement === "top"
+         ? "top-full border-t-bg-elevated"
+         : "bottom-full border-b-bg-elevated",
+       ].join(" ")}
+      />
+     </span>,
+     document.body,
+    )}
   </span>
  );
 }

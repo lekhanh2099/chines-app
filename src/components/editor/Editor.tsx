@@ -18,11 +18,13 @@ import { HistoryPlugin } from "@lexical/react/LexicalHistoryPlugin";
 import { ListPlugin } from "@lexical/react/LexicalListPlugin";
 import { CheckListPlugin } from "@lexical/react/LexicalCheckListPlugin";
 import { TabIndentationPlugin } from "@lexical/react/LexicalTabIndentationPlugin";
+import { AutoLinkPlugin } from "@lexical/react/LexicalAutoLinkPlugin";
+import { LinkPlugin } from "@lexical/react/LexicalLinkPlugin";
 import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext";
 import { HeadingNode, QuoteNode } from "@lexical/rich-text";
 import { ListNode, ListItemNode } from "@lexical/list";
 import { CodeNode } from "@lexical/code";
-import { LinkNode } from "@lexical/link";
+import { AutoLinkNode, LinkNode } from "@lexical/link";
 import { TableNode, TableCellNode, TableRowNode } from "@lexical/table";
 import { HorizontalRuleNode } from "@lexical/react/LexicalHorizontalRuleNode";
 import { LexicalErrorBoundary } from "@lexical/react/LexicalErrorBoundary";
@@ -38,6 +40,25 @@ import AutoSavePlugin from "./plugins/AutoSavePlugin";
 import TableActionPlugin from "./plugins/TableActionPlugin";
 import NodeHoverPlugin from "./plugins/NodeHoverPlugin";
 import { HorizontalRulePlugin } from "@lexical/react/LexicalHorizontalRulePlugin";
+
+const URL_MATCHER = /https?:\/\/[^\s<>"'）)\]}]+/i;
+
+const AUTO_LINK_MATCHERS = [
+ (text: string) => {
+  const match = URL_MATCHER.exec(text);
+
+  if (match === null) return null;
+
+  const url = match[0];
+
+  return {
+   index: match.index,
+   length: url.length,
+   text: url,
+   url,
+  };
+ },
+];
 
 /* ── Types ── */
 interface EditorProps {
@@ -101,6 +122,7 @@ export function Editor({
     ListItemNode,
     CodeNode,
     LinkNode,
+    AutoLinkNode,
     TableNode,
     TableCellNode,
     TableRowNode,
@@ -149,6 +171,8 @@ export function Editor({
      <CheckListPlugin />
      <TabIndentationPlugin />
      <HorizontalRulePlugin />
+     <LinkPlugin />
+     <AutoLinkPlugin matchers={AUTO_LINK_MATCHERS} />
 
      {/* State management */}
      <RestoreStatePlugin initialState={initialContent} />

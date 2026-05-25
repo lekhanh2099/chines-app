@@ -36,11 +36,11 @@ const editorTabs: Array<{
  key: DraftEditorTab;
  label: string;
 }> = [
-  { key: "overview", label: "Tổng quan" },
-  { key: "vocab", label: "Từ vựng" },
-  { key: "grammar", label: "Ngữ pháp" },
-  { key: "preview", label: "Preview" },
- ];
+ { key: "overview", label: "Tổng quan" },
+ { key: "vocab", label: "Từ vựng" },
+ { key: "grammar", label: "Ngữ pháp" },
+ { key: "preview", label: "Preview" },
+];
 
 function parseEditorTab(value: string | null): DraftEditorTab {
  return value === "overview" ||
@@ -113,7 +113,7 @@ export function LessonDraftEditor({ draftId }: LessonDraftEditorProps) {
  if (draftQuery.isLoading) {
   return (
    <main className="hanzihome-static-page">
-    <div className="w-full max-w-7xl">
+    <div className="w-full max-w-full">
      <Card padding="lg" className="rounded-xl">
       <p className="text-sm font-semibold text-text-muted">
        Đang tải bài nháp...
@@ -127,7 +127,7 @@ export function LessonDraftEditor({ draftId }: LessonDraftEditorProps) {
  if (draftQuery.error || !draft) {
   return (
    <main className="hanzihome-static-page">
-    <div className="grid w-full max-w-7xl gap-4">
+    <div className="grid w-full max-w-full gap-4">
      <Card padding="lg" className="rounded-xl">
       <div className="grid gap-4">
        <p className="text-sm font-semibold text-text-muted">
@@ -149,7 +149,7 @@ export function LessonDraftEditor({ draftId }: LessonDraftEditorProps) {
 
  return (
   <main className="hanzihome-static-page">
-   <div className="grid w-full max-w-7xl gap-4">
+   <div className="grid w-full max-w-full gap-4">
     <Card padding="md" className="rounded-xl">
      <div className="grid gap-4 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-center">
       <div className="min-w-0">
@@ -293,7 +293,8 @@ export function LessonDraftEditor({ draftId }: LessonDraftEditorProps) {
      <DialogHeader>
       <DialogTitle>Xác nhận xóa bài nháp</DialogTitle>
       <DialogDescription>
-       Bài nháp “{draft.titleZh}” sẽ bị xóa khỏi danh sách draft. Hành động này không thể hoàn tác.
+       Bài nháp “{draft.titleZh}” sẽ bị xóa khỏi danh sách draft. Hành động này
+       không thể hoàn tác.
       </DialogDescription>
      </DialogHeader>
 
