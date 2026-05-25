@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useMemo, useRef, useState } from "react";
 import {
  AlertTriangle,
  ChevronDown,
@@ -138,6 +138,20 @@ function countSections(sections: LearningSection[]): number {
  );
 }
 
+function findSectionById(
+ sections: LearningSection[],
+ sectionId: string,
+): LearningSection | null {
+ for (const section of sections) {
+  if (section.id === sectionId) return section;
+
+  const child = findSectionById(section.children, sectionId);
+  if (child) return child;
+ }
+
+ return null;
+}
+
 function parseHeadingLevelValue(value: string): Array<1 | 2 | 3 | 4 | 5 | 6> {
  const parsed = Number(value);
 
@@ -210,7 +224,11 @@ function CollapsibleSection({
     />
    </button>
 
-   {open && <div className="grid gap-3 border-t border-border-default p-3">{children}</div>}
+   {open && (
+    <div className="grid gap-3 border-t border-border-default p-3">
+     {children}
+    </div>
+   )}
   </section>
  );
 }
@@ -288,11 +306,7 @@ function MappedItemPreview({ item }: { item: MappedImportItem }) {
  );
 }
 
-function SpecialSectionPreview({
- section,
-}: {
- section: MappedSpecialSection;
-}) {
+function SpecialSectionPreview({ section }: { section: MappedSpecialSection }) {
  return (
   <div className="grid gap-2 rounded-xl border border-border-default bg-bg-primary p-4">
    <div>
@@ -311,9 +325,11 @@ function SpecialSectionPreview({
 function ResultSummary({
  result,
  profile,
+ onEditSection,
 }: {
  result: AppliedParseResult | null;
  profile: ParseProfile;
+ onEditSection?: (sectionTitle: string) => void;
 }) {
  if (!result) {
   return (
@@ -331,7 +347,7 @@ function ResultSummary({
 
  return (
   <div className="grid gap-4">
-   <div className="grid gap-3 sm:grid-cols-4">
+   <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-6">
     <Card padding="sm" className="rounded-xl">
      <p className="text-xs font-black uppercase tracking-wide text-text-muted">
       Sections
@@ -361,6 +377,24 @@ function ResultSummary({
 
     <Card padding="sm" className="rounded-xl">
      <p className="text-xs font-black uppercase tracking-wide text-text-muted">
+      Unmapped
+     </p>
+     <p className="text-2xl font-black text-text-primary">
+      {result.unmappedSections.length}
+     </p>
+    </Card>
+
+    <Card padding="sm" className="rounded-xl">
+     <p className="text-xs font-black uppercase tracking-wide text-text-muted">
+      Warnings
+     </p>
+     <p className="text-2xl font-black text-text-primary">
+      {result.warnings.length}
+     </p>
+    </Card>
+
+    <Card padding="sm" className="rounded-xl">
+     <p className="text-xs font-black uppercase tracking-wide text-text-muted">
       Profile
      </p>
      <p className="truncate text-lg font-black text-text-primary">
@@ -369,11 +403,18 @@ function ResultSummary({
     </Card>
    </div>
 
+   <QuickJumpButtons result={result} />
+
    <Card padding="lg" className="rounded-xl">
     <div className="grid gap-3">
      <div className="flex items-center gap-2">
       <GitBranch className="h-5 w-5 text-text-muted" />
-      <h2 id="import-outline" className="scroll-mt-24 text-lg font-black text-text-primary">Outline</h2>
+      <h2
+       id="import-outline"
+       className="scroll-mt-24 text-lg font-black text-text-primary"
+      >
+       Outline
+      </h2>
      </div>
 
      {result.documentTitle && (
@@ -398,7 +439,12 @@ function ResultSummary({
 
    <Card padding="lg" className="rounded-xl">
     <div className="grid gap-3">
-     <h2 id="import-mapped" className="scroll-mt-24 text-lg font-black text-text-primary">Mapped result</h2>
+     <h2
+      id="import-mapped"
+      className="scroll-mt-24 text-lg font-black text-text-primary"
+     >
+      Mapped result
+     </h2>
      {result.items.length === 0 ? (
       <p className="rounded-xl border border-dashed border-border-default p-4 text-sm font-semibold text-text-muted">
        Không có item nào khớp item root rules của profile.
@@ -415,7 +461,12 @@ function ResultSummary({
 
    <Card padding="lg" className="rounded-xl">
     <div className="grid gap-3">
-     <h2 id="import-special" className="scroll-mt-24 text-lg font-black text-text-primary">Special sections</h2>
+     <h2
+      id="import-special"
+      className="scroll-mt-24 text-lg font-black text-text-primary"
+     >
+      Special sections
+     </h2>
      {result.specialSections.length === 0 ? (
       <p className="text-sm font-semibold text-text-muted">
        Không có reading/summary section.
@@ -432,7 +483,10 @@ function ResultSummary({
 
    <Card padding="lg" className="rounded-xl">
     <div className="grid gap-3">
-     <h2 id="import-unmapped" className="scroll-mt-24 text-lg font-black text-text-primary">
+     <h2
+      id="import-unmapped"
+      className="scroll-mt-24 text-lg font-black text-text-primary"
+     >
       Unmapped sections
      </h2>
      {result.unmappedSections.length === 0 ? (
@@ -444,11 +498,25 @@ function ResultSummary({
        {result.unmappedSections.map((section) => (
         <div
          key={section.id}
-         className="grid gap-1 rounded-lg border border-border-default bg-bg-primary p-3"
+         className="grid gap-2 rounded-lg border border-border-default bg-bg-primary p-3"
         >
-         <p className="text-sm font-black text-text-primary">
-          {section.title}
-         </p>
+         <div className="flex flex-wrap items-start justify-between gap-2">
+          <p className="text-sm font-black text-text-primary">
+           {section.title}
+          </p>
+
+          {onEditSection && (
+           <Button
+            type="button"
+            size="sm"
+            variant="outline"
+            onClick={() => onEditSection(section.title)}
+           >
+            Sửa section này
+           </Button>
+          )}
+         </div>
+
          <pre className="whitespace-pre-wrap break-words text-xs font-semibold text-text-muted">
           {sectionBlocksToPreview(section) || "Không có block text."}
          </pre>
@@ -464,18 +532,47 @@ function ResultSummary({
      <div className="grid gap-3">
       <div className="flex items-center gap-2">
        <AlertTriangle className="h-5 w-5 text-text-muted" />
-       <h2 id="import-warnings" className="scroll-mt-24 text-lg font-black text-text-primary">Warnings</h2>
+       <h2
+        id="import-warnings"
+        className="scroll-mt-24 text-lg font-black text-text-primary"
+       >
+        Warnings
+       </h2>
       </div>
       <ul className="grid gap-2">
-       {result.warnings.map((warning, index) => (
-        <li
-         key={`${warning.message}-${index}`}
-         className="rounded-lg bg-bg-subtle px-3 py-2 text-sm font-semibold text-text-muted"
-        >
-         {warning.sectionId ? `${warning.sectionId}: ` : ""}
-         {warning.message}
-        </li>
-       ))}
+       {result.warnings.map((warning, index) => {
+        const warningSection = warning.sectionId
+         ? findSectionById(result.doc.sections, warning.sectionId)
+         : null;
+
+        return (
+         <li
+          key={`${warning.message}-${index}`}
+          className="grid gap-2 rounded-lg bg-bg-subtle px-3 py-2 text-sm font-semibold text-text-muted"
+         >
+          <div>
+           {warningSection
+            ? `${warningSection.title}: `
+            : warning.sectionId
+              ? `${warning.sectionId}: `
+              : ""}
+           {warning.message}
+          </div>
+
+          {warningSection && onEditSection && (
+           <Button
+            type="button"
+            size="sm"
+            variant="outline"
+            className="w-fit"
+            onClick={() => onEditSection(warningSection.title)}
+           >
+            Sửa section này
+           </Button>
+          )}
+         </li>
+        );
+       })}
       </ul>
      </div>
     </Card>
@@ -561,7 +658,11 @@ function ProfileSettingsPanel({
 
    <CollapsibleSection
     title="Root item"
-    summary={rootRule ? `H${firstHeadingLevel(rootRule)} ${rootRule.match.headingRegex ?? ""}` : "No root rule"}
+    summary={
+     rootRule
+      ? `H${firstHeadingLevel(rootRule)} ${rootRule.match.headingRegex ?? ""}`
+      : "No root rule"
+    }
    >
     {rootRule ? (
      <div className="grid gap-3">
@@ -743,7 +844,6 @@ function ProfileSettingsPanel({
  );
 }
 
-
 type ImportStep = "input" | "review" | "apply";
 
 function getImportHealth(result: AppliedParseResult | null) {
@@ -860,9 +960,13 @@ function ImportStepper({
 function ImportWarningPanel({
  result,
  applyMode,
+ onJumpToUnmapped,
+ onJumpToWarnings,
 }: {
  result: AppliedParseResult | null;
  applyMode: ApplyImportMode;
+ onJumpToUnmapped?: () => void;
+ onJumpToWarnings?: () => void;
 }) {
  const health = getImportHealth(result);
  const hasAnyWarning =
@@ -905,68 +1009,44 @@ function ImportWarningPanel({
      </p>
     ))}
 
-    {health.softWarnings.map((warning) => (
-     <p
-      key={warning}
-      className="rounded-lg bg-white/70 px-3 py-2 text-sm font-bold text-amber-900"
+    {result && result.unmappedSections.length > 0 && (
+     <button
+      type="button"
+      className="rounded-lg bg-white/70 px-3 py-2 text-left text-sm font-bold text-amber-900 transition-colors hover:bg-white"
+      onClick={onJumpToUnmapped}
      >
-      {warning}
-     </p>
-    ))}
+      {result.unmappedSections.length} section chưa map. Bấm để xem danh sách.
+     </button>
+    )}
+
+    {result && result.warnings.length > 0 && (
+     <button
+      type="button"
+      className="rounded-lg bg-white/70 px-3 py-2 text-left text-sm font-bold text-amber-900 transition-colors hover:bg-white"
+      onClick={onJumpToWarnings}
+     >
+      {result.warnings.length} warning từ parser. Bấm để xem chi tiết.
+     </button>
+    )}
+
+    {health.softWarnings
+     .filter(
+      (warning) =>
+       !warning.includes("section chưa map") &&
+       !warning.includes("warning từ parser"),
+     )
+     .map((warning) => (
+      <p
+       key={warning}
+       className="rounded-lg bg-white/70 px-3 py-2 text-sm font-bold text-amber-900"
+      >
+       {warning}
+      </p>
+     ))}
    </div>
   </Card>
  );
 }
-
-function ImportStatGrid({
- result,
- profile,
-}: {
- result: AppliedParseResult;
- profile: ParseProfile;
-}) {
- return (
-  <div className="grid gap-3 sm:grid-cols-4">
-   <Card padding="sm" className="rounded-xl">
-    <p className="text-xs font-black uppercase tracking-wide text-text-muted">
-     Items
-    </p>
-    <p className="text-2xl font-black text-text-primary">
-     {result.items.length}
-    </p>
-   </Card>
-
-   <Card padding="sm" className="rounded-xl">
-    <p className="text-xs font-black uppercase tracking-wide text-text-muted">
-     Special
-    </p>
-    <p className="text-2xl font-black text-text-primary">
-     {result.specialSections.length}
-    </p>
-   </Card>
-
-   <Card padding="sm" className="rounded-xl">
-    <p className="text-xs font-black uppercase tracking-wide text-text-muted">
-     Unmapped
-    </p>
-    <p className="text-2xl font-black text-text-primary">
-     {result.unmappedSections.length}
-    </p>
-   </Card>
-
-   <Card padding="sm" className="rounded-xl">
-    <p className="text-xs font-black uppercase tracking-wide text-text-muted">
-     Profile
-    </p>
-    <p className="truncate text-lg font-black text-text-primary">
-     {profile.name}
-    </p>
-   </Card>
-  </div>
- );
-}
-
-
 
 function jumpToImportSection(id: string) {
  document.getElementById(id)?.scrollIntoView({
@@ -1031,13 +1111,13 @@ function QuickJumpButtons({ result }: { result: AppliedParseResult | null }) {
  );
 }
 
-
 type MarkdownImportPreviewProps = {
  draft: LessonDraft;
 };
 
 export function MarkdownImportPreview({ draft }: MarkdownImportPreviewProps) {
  const updateDraftMutation = useUpdateLessonDraftMutation();
+ const markdownTextareaRef = useRef<HTMLTextAreaElement | null>(null);
  const initialProfileState = useMemo(() => getAvailableImportProfiles(), []);
  const [profiles, setProfiles] = useState(initialProfileState.profiles);
  const storageWarnings = initialProfileState.warnings;
@@ -1101,7 +1181,9 @@ export function MarkdownImportPreview({ draft }: MarkdownImportPreviewProps) {
   const savedProfile: ParseProfile = {
    ...activeProfile,
    id: customId,
-   name: isCustomProfile ? activeProfile.name : `${activeProfile.name} (custom)`,
+   name: isCustomProfile
+    ? activeProfile.name
+    : `${activeProfile.name} (custom)`,
   };
 
   const existingCustomProfiles = loadCustomImportProfiles().profiles.filter(
@@ -1140,6 +1222,30 @@ export function MarkdownImportPreview({ draft }: MarkdownImportPreviewProps) {
   toast.success(`Parsed ${nextResult.items.length} item.`);
  };
 
+ const focusMarkdownSection = (sectionTitle: string) => {
+  setStep("input");
+
+  window.setTimeout(() => {
+   const textarea = markdownTextareaRef.current;
+   if (!textarea) return;
+
+   textarea.focus();
+
+   const index = markdown.indexOf(sectionTitle);
+   if (index >= 0) {
+    textarea.setSelectionRange(index, index + sectionTitle.length);
+   }
+  }, 80);
+ };
+
+ const goToReviewSection = (sectionId: string) => {
+  setStep("review");
+
+  window.setTimeout(() => {
+   jumpToImportSection(sectionId);
+  }, 80);
+ };
+
  const handleApply = async () => {
   if (!result) {
    toast.error("Parse markdown trước khi apply.");
@@ -1170,13 +1276,19 @@ export function MarkdownImportPreview({ draft }: MarkdownImportPreviewProps) {
 
  return (
   <div className="grid gap-4">
-   <Card padding="md" className="sticky top-0 z-20 rounded-xl bg-bg-card/95 backdrop-blur">
+   <Card
+    padding="md"
+    className="sticky top-0 z-20 rounded-xl bg-bg-card/95 backdrop-blur"
+   >
     <div className="grid gap-3 xl:grid-cols-[minmax(15rem,1.2fr)_minmax(10rem,0.7fr)_minmax(10rem,0.7fr)] xl:items-end">
      <label className="grid gap-1.5">
       <span className="text-xs font-black uppercase tracking-wide text-text-muted">
        Profile
       </span>
-      <Select value={activeProfile?.id ?? ""} onValueChange={handleProfileChange}>
+      <Select
+       value={activeProfile?.id ?? ""}
+       onValueChange={handleProfileChange}
+      >
        <SelectTrigger className="w-full">
         <SelectValue placeholder="Chọn parse profile" />
        </SelectTrigger>
@@ -1277,9 +1389,7 @@ export function MarkdownImportPreview({ draft }: MarkdownImportPreviewProps) {
         <p className="text-xs font-black uppercase tracking-wide text-text-muted">
          Bước 1
         </p>
-        <h2 className="text-xl font-black text-text-primary">
-         Dán Markdown
-        </h2>
+        <h2 className="text-xl font-black text-text-primary">Dán Markdown</h2>
         <p className="text-sm font-semibold text-text-muted">
          Dán markdown rồi parse để xem trước. Bước này chưa lưu vào draft.
         </p>
@@ -1290,6 +1400,7 @@ export function MarkdownImportPreview({ draft }: MarkdownImportPreviewProps) {
          Markdown
         </span>
         <Textarea
+         ref={markdownTextareaRef}
          value={markdown}
          onChange={(event) => handleMarkdownChange(event.target.value)}
          className="min-h-96 font-mono text-xs"
@@ -1349,9 +1460,7 @@ export function MarkdownImportPreview({ draft }: MarkdownImportPreviewProps) {
 
       <Card padding="lg" className="rounded-xl">
        <div className="grid gap-2">
-        <h3 className="text-lg font-black text-text-primary">
-         Cảnh báo mode
-        </h3>
+        <h3 className="text-lg font-black text-text-primary">Cảnh báo mode</h3>
         <p className="text-sm font-semibold text-text-muted">
          Replace target sẽ thay thế phần đang chọn. Append sẽ thêm vào cuối.
          Merge by title sẽ cố ghép theo tiêu đề.
@@ -1379,7 +1488,11 @@ export function MarkdownImportPreview({ draft }: MarkdownImportPreviewProps) {
        </div>
 
        <div className="flex flex-wrap gap-2">
-        <Button type="button" variant="outline" onClick={() => setStep("input")}>
+        <Button
+         type="button"
+         variant="outline"
+         onClick={() => setStep("input")}
+        >
          Sửa markdown/profile
         </Button>
         <Button
@@ -1395,10 +1508,17 @@ export function MarkdownImportPreview({ draft }: MarkdownImportPreviewProps) {
 
      {result && activeProfile ? (
       <>
-       <ImportStatGrid result={result} profile={activeProfile} />
-       <ImportWarningPanel result={result} applyMode={applyMode} />
-       <QuickJumpButtons result={result} />
-       <ResultSummary result={result} profile={activeProfile} />
+       <ImportWarningPanel
+        result={result}
+        applyMode={applyMode}
+        onJumpToUnmapped={() => goToReviewSection("import-unmapped")}
+        onJumpToWarnings={() => goToReviewSection("import-warnings")}
+       />
+       <ResultSummary
+        result={result}
+        profile={activeProfile}
+        onEditSection={focusMarkdownSection}
+       />
       </>
      ) : (
       <Card padding="lg" className="rounded-xl">
@@ -1448,7 +1568,12 @@ export function MarkdownImportPreview({ draft }: MarkdownImportPreviewProps) {
       </div>
      </Card>
 
-     <ImportWarningPanel result={result} applyMode={applyMode} />
+     <ImportWarningPanel
+      result={result}
+      applyMode={applyMode}
+      onJumpToUnmapped={() => goToReviewSection("import-unmapped")}
+      onJumpToWarnings={() => goToReviewSection("import-warnings")}
+     />
 
      <div className="grid gap-4 lg:grid-cols-2">
       <Card padding="lg" className="rounded-xl">
@@ -1494,4 +1619,3 @@ export function MarkdownImportPreview({ draft }: MarkdownImportPreviewProps) {
   </div>
  );
 }
-

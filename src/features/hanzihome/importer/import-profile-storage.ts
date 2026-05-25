@@ -56,7 +56,9 @@ export function loadCustomImportProfiles(): ImportProfileStorageResult {
 }
 
 export function saveCustomImportProfiles(profiles: ParseProfile[]) {
- const parsedProfiles = profiles.map((profile) => parseProfileSchema.parse(profile));
+ const parsedProfiles = profiles.map((profile) =>
+  parseProfileSchema.parse(profile),
+ );
 
  if (!canUseLocalStorage()) return;
 
