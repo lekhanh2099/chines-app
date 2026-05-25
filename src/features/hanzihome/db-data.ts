@@ -336,6 +336,27 @@ function mapLesson({
     }),
   );
   const mainText = lessonTexts.find((item) => item.text_key === "main");
+  const applicationText = lessonTexts.find((item) =>
+    ["application", "reading", "reading-application", "grammar-application"].includes(
+      item.text_key,
+    ),
+  );
+  const grammarSummaryText = lessonTexts.find((item) =>
+    ["grammar-summary", "summary"].includes(item.text_key),
+  );
+  const vocabularyText = lessonTexts.find((item) =>
+    ["vocabulary", "vocab"].includes(item.text_key),
+  );
+  const properNounsText = lessonTexts.find((item) =>
+    ["proper-nouns", "names"].includes(item.text_key),
+  );
+  const hasNotes = Boolean(
+    mainText?.content ||
+      applicationText?.content ||
+      grammarSummaryText?.content ||
+      vocabularyText?.content ||
+      properNounsText?.content,
+  );
 
   return {
     id: row.id,
@@ -356,9 +377,13 @@ function mapLesson({
     vocab,
     grammar,
     isDbBacked: true,
-    notes: mainText?.content
+    notes: hasNotes
       ? {
-          overviewMarkdown: mainText.content,
+          overviewMarkdown: mainText?.content,
+          applicationMarkdown: applicationText?.content,
+          grammarSummary: grammarSummaryText?.content,
+          vocabularyText: vocabularyText?.content,
+          properNounsText: properNounsText?.content,
         }
       : undefined,
   };

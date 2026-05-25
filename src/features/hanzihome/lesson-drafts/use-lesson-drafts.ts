@@ -87,9 +87,17 @@ export function useUpdateLessonDraftMutation() {
     onSuccess: async (draft) => {
       queryClient.setQueryData(lessonDraftQueryKeys.detail(draft.id), draft);
 
-      await queryClient.invalidateQueries({
-        queryKey: lessonDraftQueryKeys.lists(),
-      });
+      await Promise.all([
+        queryClient.invalidateQueries({
+          queryKey: lessonDraftQueryKeys.lists(),
+        }),
+        queryClient.invalidateQueries({
+          queryKey: ["hanzihome", "lesson-detail"],
+        }),
+        queryClient.invalidateQueries({
+          queryKey: ["hanzihome", "lesson-detail", draft.lessonKey],
+        }),
+      ]);
     },
   });
 }

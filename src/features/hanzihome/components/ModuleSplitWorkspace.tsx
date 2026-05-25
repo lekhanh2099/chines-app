@@ -454,7 +454,7 @@ function ModulePane({
   <section
    onDragOver={handleDragOver}
    onDrop={handleDrop}
-   className="grid min-h-[28rem] min-w-0 grid-rows-[auto_auto_minmax(0,1fr)] gap-3 rounded-xl border border-border-default bg-bg-card p-3 shadow-theme-sm xl:min-h-0"
+   className="grid min-h-112 min-w-0 grid-rows-[auto_auto_minmax(0,1fr)] gap-3 rounded-xl border border-border-default bg-bg-card p-3 shadow-theme-sm xl:min-h-0"
   >
    <div className="flex flex-wrap items-center justify-between gap-2">
     <h2 className="text-sm font-black uppercase tracking-wide text-text-primary">
@@ -480,7 +480,9 @@ function ModulePane({
     ))}
    </div>
 
-   <div className="min-h-0 min-w-0 overflow-y-auto rounded-xl bg-bg-subtle/60 p-2 pr-1">{children}</div>
+   <div className="min-h-0 min-w-0 overflow-y-auto rounded-xl bg-bg-subtle/60 p-2 pr-1">
+    {children}
+   </div>
   </section>
  );
 }

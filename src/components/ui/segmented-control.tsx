@@ -74,6 +74,7 @@ export function SegmentedControl<T extends string>({
          key={item.key}
          type="button"
          disabled={item.disabled}
+         data-active={active ? "true" : "false"}
          onClick={() => onChange(item.key)}
          className={cn(
           "flex h-10 shrink-0 items-center gap-2 whitespace-nowrap rounded-lg px-3 text-sm font-black transition-colors disabled:cursor-not-allowed disabled:opacity-50",

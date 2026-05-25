@@ -34,7 +34,11 @@ import {
  type ApplyImportMode,
  type ApplyImportTarget,
 } from "@/features/hanzihome/importer/applyParsedResultToDraft";
-import { getAvailableImportProfiles } from "@/features/hanzihome/importer/import-profile-storage";
+import {
+ getAvailableImportProfiles,
+ loadCustomImportProfiles,
+ saveCustomImportProfiles,
+} from "@/features/hanzihome/importer/import-profile-storage";
 import type {
  AppliedParseResult,
  FieldRule,
@@ -745,10 +749,9 @@ type MarkdownImportPreviewProps = {
 
 export function MarkdownImportPreview({ draft }: MarkdownImportPreviewProps) {
  const updateDraftMutation = useUpdateLessonDraftMutation();
- const { profiles, warnings: storageWarnings } = useMemo(
-  () => getAvailableImportProfiles(),
-  [],
- );
+ const initialProfileState = useMemo(() => getAvailableImportProfiles(), []);
+ const [profiles, setProfiles] = useState(initialProfileState.profiles);
+ const storageWarnings = initialProfileState.warnings;
  const [markdown, setMarkdown] = useState("");
  const [profileId, setProfileId] = useState(profiles[0]?.id ?? "");
  const selectedProfile = useMemo(
@@ -775,6 +778,40 @@ export function MarkdownImportPreview({ draft }: MarkdownImportPreviewProps) {
   setEditableProfile(nextProfile ? cloneProfile(nextProfile) : null);
   setApplyTarget(nextProfile ? getDefaultApplyTarget(nextProfile) : "mixed");
   setResult(null);
+ };
+
+ const handleSaveCustomProfile = () => {
+  if (!activeProfile) {
+   toast.error("Không có profile để lưu.");
+   return;
+  }
+
+  const isCustomProfile = activeProfile.id.startsWith("custom-");
+  const customId = isCustomProfile
+   ? activeProfile.id
+   : `custom-${activeProfile.id}-${Date.now()}`;
+
+  const savedProfile: ParseProfile = {
+   ...activeProfile,
+   id: customId,
+   name: isCustomProfile ? activeProfile.name : `${activeProfile.name} (custom)`,
+  };
+
+  const existingCustomProfiles = loadCustomImportProfiles().profiles.filter(
+   (profile) => profile.id !== customId,
+  );
+
+  saveCustomImportProfiles([...existingCustomProfiles, savedProfile]);
+
+  setProfiles((currentProfiles) => [
+   ...currentProfiles.filter((profile) => profile.id !== customId),
+   savedProfile,
+  ]);
+  setProfileId(customId);
+  setEditableProfile(cloneProfile(savedProfile));
+  setResult(null);
+
+  toast.success("Đã lưu custom import profile.");
  };
 
  const handleParse = () => {
@@ -854,10 +891,20 @@ export function MarkdownImportPreview({ draft }: MarkdownImportPreviewProps) {
       </label>
 
       {activeProfile && (
-       <ProfileSettingsPanel
-        profile={activeProfile}
-        onChange={setEditableProfile}
-       />
+       <div className="grid gap-3">
+        <ProfileSettingsPanel
+         profile={activeProfile}
+         onChange={setEditableProfile}
+        />
+        <Button
+         type="button"
+         variant="outline"
+         onClick={handleSaveCustomProfile}
+        >
+         <Save className="h-4 w-4" />
+         Lưu profile custom
+        </Button>
+       </div>
       )}
 
       <CollapsibleSection

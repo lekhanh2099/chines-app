@@ -31,7 +31,8 @@ type GrammarReading = {
  preview?: string;
 };
 
-const readingHeadingPattern = /^##\s*(BÀI ĐỌC(?:\s+THÊM) ?(?:\s+ÁP DỤNG) ?|BÀI ĐỌC THÊM ÁP DỤNG NGỮ PHÁP)\b/i;
+const readingHeadingPattern =
+ /^##\s*(BÀI ĐỌC(?:\s+THÊM) ?(?:\s+ÁP DỤNG) ?|BÀI ĐỌC THÊM ÁP DỤNG NGỮ PHÁP)\b/i;
 const topLevelHeadingPattern = /^##\s+/;
 
 function normalizeNewlines(value: string) {
@@ -50,11 +51,17 @@ function cleanMarkdownInline(value: string) {
 function getReadingPreview(contentMd: string) {
  return normalizeNewlines(contentMd)
   .split("\n")
-  .map((line) => cleanMarkdownInline(line).replace(/^[-*+]\s+/, "").trim())
+  .map((line) =>
+   cleanMarkdownInline(line)
+    .replace(/^[-*+]\s+/, "")
+    .trim(),
+  )
   .find(Boolean);
 }
 
-function extractGrammarReading(points: GrammarViewModel[]): GrammarReading | null {
+function extractGrammarReading(
+ points: GrammarViewModel[],
+): GrammarReading | null {
  for (const point of points) {
   const contentMd = point.contentMd?.trim();
   if (!contentMd) continue;
@@ -107,15 +114,14 @@ function extractReadingFromMarkdown(contentMd?: string): GrammarReading | null {
  }
 
  const heading = lines[headingIndex] ?? "";
- const endIndex = lines.findIndex((line, index) => {
-  if (index <= headingIndex) return false;
-  return topLevelHeadingPattern.test(line.trim());
- });
- const bodyLines =
-  endIndex === -1
-   ? lines.slice(headingIndex + 1)
-   : lines.slice(headingIndex + 1, endIndex);
- const readingContentMd = bodyLines.join("\n").trim();
+
+ // applicationMarkdown is already a dedicated reading document.
+ // Do not stop at the next H2, because the reading itself may contain
+ // an inner title like "## 谢大力的一天".
+ const readingContentMd = lines
+  .slice(headingIndex + 1)
+  .join("\n")
+  .trim();
 
  if (!readingContentMd) return null;
 
@@ -152,7 +158,10 @@ export function GrammarWorkspace({
   if (selectedPointId === READING_VIEW_ID) {
    return reading ? READING_VIEW_ID : lesson.grammar[0]?.id || null;
   }
-  if (selectedPointId && lesson.grammar.some((point) => point.id === selectedPointId)) {
+  if (
+   selectedPointId &&
+   lesson.grammar.some((point) => point.id === selectedPointId)
+  ) {
    return selectedPointId;
   }
 
@@ -166,8 +175,8 @@ export function GrammarWorkspace({
    isAllView || isReadingView
     ? null
     : lesson.grammar.find((point) => point.id === effectiveSelectedPointId) ||
-    lesson.grammar[0] ||
-    null,
+      lesson.grammar[0] ||
+      null,
   [effectiveSelectedPointId, isAllView, isReadingView, lesson.grammar],
  );
 
@@ -202,7 +211,9 @@ export function GrammarWorkspace({
      allPointId={ALL_GRAMMAR_POINTS_ID}
     />
 
-    {!isAllView && !isReadingView && <GrammarPracticeMini point={selectedPoint} />}
+    {!isAllView && !isReadingView && (
+     <GrammarPracticeMini point={selectedPoint} />
+    )}
     {reading && (
      <GrammarReadingSidebarCard
       reading={reading}

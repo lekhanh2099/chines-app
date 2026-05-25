@@ -167,10 +167,6 @@ export function HanziHomeWorkspace() {
  const selectedCourse = mergedCourseCatalog.courses.find(
   (course) => course.id === selectedCourseId,
  );
- const subtitle = useMemo(() => {
-  if (!lesson) return "Không có dữ liệu bài học.";
-  return `${lesson.vocab.length} từ · ${lesson.grammar.length} điểm ngữ pháp`;
- }, [lesson]);
 
  const replaceWorkspaceParams = (
   updates: Partial<Record<"courseId" | "lessonId" | "module", string>>,
@@ -309,7 +305,7 @@ export function HanziHomeWorkspace() {
      className="rounded-xl border border-border-default bg-bg-primary shadow-theme-sm"
     >
      <div className="flex flex-wrap items-start justify-between gap-2.5">
-      <div className="min-w-0 flex flex-2 items-center-safe gap-2.5">
+      <div className="min-w-0 flex flex-2 items-center gap-2.5">
        <div className="max-w-lg">
         {activeModule !== "radicals" && lesson && (
          <LessonPicker
@@ -321,12 +317,6 @@ export function HanziHomeWorkspace() {
        </div>
 
        <div className="flex flex-wrap gap-2">
-        <span className="rounded-full bg-bg-subtle px-2.5 py-0.5 text-xs font-black text-text-muted">
-         {activeModule === "radicals"
-          ? `${catalogData.radicals.length} bộ thủ`
-          : subtitle}
-        </span>
-
         {learning.isSaving && (
          <span className="rounded-full bg-bg-subtle px-2.5 py-0.5 text-xs font-black text-text-muted">
           Đang lưu...
