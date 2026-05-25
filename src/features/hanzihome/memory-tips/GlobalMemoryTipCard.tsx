@@ -1,5 +1,6 @@
 "use client";
 
+import { useMemo } from "react";
 import Link from "next/link";
 import {
  Lightbulb,
@@ -31,12 +32,14 @@ export function GlobalMemoryTipCard({
  compact = false,
 }: GlobalMemoryTipCardProps) {
  const tipsQuery = useMemoryTipsQuery();
- const tips = (tipsQuery.data ?? []).filter(
-  (tip) => tip.scope === "user" && tip.sourceType !== "system",
+ const tips = useMemo(
+  () => (tipsQuery.data ?? []).filter((tip) => !tip.isArchived),
+  [tipsQuery.data],
  );
  const { selectedTip, pickNextTip } = useRouteMemoryTip(tips);
  const updateMutation = useUpdateMemoryTipMutation();
  const isMutating = updateMutation.isPending;
+ const canEditSelectedTip = selectedTip?.scope === "user";
 
  const togglePin = async () => {
   if (!selectedTip) return;
@@ -96,16 +99,18 @@ export function GlobalMemoryTipCard({
        Đổi câu
       </Button>
 
-      <MemoryTipDialog
-       key={selectedTip.id}
-       tip={selectedTip}
-       trigger={
-        <Button type="button" variant="outline" size="sm">
-         <Pencil className="h-4 w-4" />
-         Sửa
-        </Button>
-       }
-      />
+      {canEditSelectedTip && (
+       <MemoryTipDialog
+        key={selectedTip.id}
+        tip={selectedTip}
+        trigger={
+         <Button type="button" variant="outline" size="sm">
+          <Pencil className="h-4 w-4" />
+          Sửa
+         </Button>
+        }
+       />
+      )}
 
       <MemoryTipDialog
        trigger={
@@ -123,20 +128,22 @@ export function GlobalMemoryTipCard({
        </Link>
       </Button>
 
-      <Button
-       type="button"
-       variant={selectedTip.isPinned ? "default" : "outline"}
-       size="sm"
-       isLoading={isMutating}
-       onClick={togglePin}
-      >
-       {selectedTip.isPinned ? (
-        <PinOff className="h-4 w-4" />
-       ) : (
-        <Pin className="h-4 w-4" />
-       )}
-       {selectedTip.isPinned ? "Bỏ ghim" : "Ghim"}
-      </Button>
+      {canEditSelectedTip && (
+       <Button
+        type="button"
+        variant={selectedTip.isPinned ? "default" : "outline"}
+        size="sm"
+        isLoading={isMutating}
+        onClick={togglePin}
+       >
+        {selectedTip.isPinned ? (
+         <PinOff className="h-4 w-4" />
+        ) : (
+         <Pin className="h-4 w-4" />
+        )}
+        {selectedTip.isPinned ? "Bỏ ghim" : "Ghim"}
+       </Button>
+      )}
      </div>
     </div>
 

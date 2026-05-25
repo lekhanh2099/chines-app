@@ -66,8 +66,8 @@ export function HanziHomeLibraryHome() {
 
  return (
   <main className="flex w-full max-w-full flex-col gap-3 px-4 py-4 lg:px-8">
-   <section className="flex gap-4 ">
-    <div className="grid gap-3">
+   <section className="flex gap-4 w-full">
+    <div className="grid gap-3 w-full">
      <GlobalMemoryTipCard compact />
      <div className="flex justify-start xl:justify-end">
       <CreateCourseDialog />

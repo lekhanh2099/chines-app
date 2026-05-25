@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { usePathname, useSearchParams } from "next/navigation";
 
 import type { MemoryTip } from "./memory-tip.schema";
@@ -56,10 +56,18 @@ function getTipWeight(tip: MemoryTip) {
   return Math.max(1, Math.trunc(tip.weight)) * pinBoost;
 }
 
-function pickWeightedTip(tips: MemoryTip[], recentIds: string[]) {
+function pickWeightedTip(
+  tips: MemoryTip[],
+  recentIds: string[],
+  currentTipId?: string | null,
+) {
   const activeTips = tips.filter((tip) => !tip.isArchived);
-  const candidates = activeTips.filter((tip) => !recentIds.includes(tip.id));
-  const pool = candidates.length > 0 ? candidates : activeTips;
+  const nonCurrentTips =
+    activeTips.length > 1
+      ? activeTips.filter((tip) => tip.id !== currentTipId)
+      : activeTips;
+  const candidates = nonCurrentTips.filter((tip) => !recentIds.includes(tip.id));
+  const pool = candidates.length > 0 ? candidates : nonCurrentTips;
 
   if (pool.length === 0) return null;
 
@@ -78,7 +86,13 @@ export function useRouteMemoryTip(tips: MemoryTip[]) {
   const pathname = usePathname();
   const searchParams = useSearchParams();
   const routeKey = `${pathname}?${searchParams.toString()}`;
+  const tipsKey = useMemo(() => tips.map((tip) => tip.id).join("|"), [tips]);
   const [selectedTipId, setSelectedTipId] = useState<string | null>(null);
+  const selectedTipIdRef = useRef<string | null>(null);
+
+  useEffect(() => {
+    selectedTipIdRef.current = selectedTipId;
+  }, [selectedTipId]);
 
   const selectedTip = useMemo(
     () => tips.find((tip) => tip.id === selectedTipId) ?? null,
@@ -91,7 +105,11 @@ export function useRouteMemoryTip(tips: MemoryTip[]) {
     }
 
     const recentIds = readRecentIds();
-    const pickedTip = pickWeightedTip(tips, recentIds);
+    const pickedTip = pickWeightedTip(
+      tips,
+      recentIds,
+      selectedTipIdRef.current,
+    );
 
     if (!pickedTip) {
       setSelectedTipId(null);
@@ -108,7 +126,7 @@ export function useRouteMemoryTip(tips: MemoryTip[]) {
     }, 0);
 
     return () => window.clearTimeout(timeoutId);
-  }, [pickNextTip, routeKey]);
+  }, [pickNextTip, routeKey, tipsKey]);
 
   return {
     selectedTip,
