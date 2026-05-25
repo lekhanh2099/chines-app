@@ -35,6 +35,7 @@ import type {
  LearningStatus,
  ReviewResult,
 } from "@/features/hanzihome/types";
+import { useHanziHomeCourseLessons } from "@/features/hanzihome/hooks/useHanziHomeCourseLessons";
 
 type StudyModule = Exclude<HanziHomeModule, "radicals">;
 const seedCopyLessonKeyPrefix = "seed-copy-";
@@ -57,7 +58,7 @@ function parseModule(value: string | null | undefined): HanziHomeModule | null {
 export function HanziHomeWorkspace() {
  const router = useRouter();
  const searchParams = useSearchParams();
- const catalogData = useHanziHomeCatalogData({ includeLessons: true });
+ const catalogData = useHanziHomeCatalogData({ includeLessons: false });
  const draftsQuery = useLessonDraftsQuery();
  const learning = useLearningState();
  const customCourseCatalogQuery = useCustomHanziHomeCourseCatalogQuery();
@@ -95,20 +96,22 @@ export function HanziHomeWorkspace() {
   [catalogData.books, catalogData.courses, customCourseCatalogQuery.data],
  );
 
- const lessons = useMemo(
-  () =>
-   sortLessonsByCourseBookOrder([
-    ...catalogData.lessons,
-    ...publishedDraftLessons,
-   ]),
-  [catalogData.lessons, publishedDraftLessons],
- );
-
  const selectedCourseId =
   searchParams.get("courseId") ||
   learning.state.settings.lastCourseId ||
   (mergedCourseCatalog.courses?.[0]?.id ?? hanzihomeCourses[0]?.id) ||
   "";
+
+ const seedCourseLessons = useHanziHomeCourseLessons(selectedCourseId);
+
+ const lessons = useMemo(
+  () =>
+   sortLessonsByCourseBookOrder([
+    ...seedCourseLessons,
+    ...publishedDraftLessons,
+   ]),
+  [seedCourseLessons, publishedDraftLessons],
+ );
 
  const courseLessons = useMemo(
   () =>
