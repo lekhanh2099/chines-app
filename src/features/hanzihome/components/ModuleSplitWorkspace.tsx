@@ -347,7 +347,12 @@ export function ModuleSplitWorkspace({
      </Button>
     </div>
 
-    <Tabs value={activeModule} items={flatTabs} onValueChange={onSelectModule}>
+    <Tabs
+     value={activeModule}
+     items={flatTabs}
+     onValueChange={onSelectModule}
+     listClassName="sticky top-0 z-30 rounded-xl bg-bg-primary/95 py-1 backdrop-blur"
+    >
      {singleContent}
     </Tabs>
    </div>
@@ -461,7 +466,7 @@ function ModulePane({
     </span>
    </div>
 
-   <div className="no-scrollbar flex min-w-0 gap-1 overflow-x-auto rounded-xl bg-bg-subtle p-1">
+   <div className="no-scrollbar sticky top-0 z-20 flex min-w-0 gap-1 overflow-x-auto rounded-xl bg-bg-subtle p-1">
     {items.map((item) => (
      <ModuleTabButton
       key={item}

@@ -15,6 +15,7 @@ export function Tabs<T extends string>({
  onValueChange,
  children,
  className,
+ listClassName,
 }: {
  value: T;
  items?: SegmentedControlItem<T>[];
@@ -22,15 +23,18 @@ export function Tabs<T extends string>({
  onValueChange: (value: T) => void;
  children?: React.ReactNode;
  className?: string;
+ listClassName?: string;
 }) {
  return (
   <div className={className}>
-   <SegmentedControl
-    value={value}
-    items={items}
-    groups={groups}
-    onChange={onValueChange}
-   />
+   <div className={listClassName}>
+    <SegmentedControl
+     value={value}
+     items={items}
+     groups={groups}
+     onChange={onValueChange}
+    />
+   </div>
    {children}
   </div>
  );

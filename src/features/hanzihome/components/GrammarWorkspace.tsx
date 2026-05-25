@@ -1,8 +1,10 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import { PanelLeftClose, PanelLeftOpen } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import { Sheet, SheetHeader } from "@/components/ui/sheet";
 import { InlineDraftItemEditDialog } from "@/features/hanzihome/components/InlineDraftItemEditDialog";
 import { GrammarPointList } from "@/features/hanzihome/components/GrammarPointList";
 import { GrammarPointReader } from "@/features/hanzihome/components/GrammarPointReader";
@@ -141,6 +143,9 @@ export function GrammarWorkspace({
  const [selectedPointId, setSelectedPointId] = useState<string | null>(
   lesson.grammar[0]?.id || null,
  );
+ const [isGrammarSidebarOpen, setIsGrammarSidebarOpen] = useState(true);
+ const [isGrammarSidebarSheetOpen, setIsGrammarSidebarSheetOpen] =
+  useState(false);
 
  const reading = useMemo(
   () =>
@@ -196,55 +201,131 @@ export function GrammarWorkspace({
   return lesson.vocab.filter((word) => text.includes(word.word)).slice(0, 8);
  }, [lesson.vocab, selectedPoint]);
 
- return (
-  <div className="grid gap-3 lg:grid-cols-[minmax(20rem,23.75rem)_minmax(0,1fr)]">
-   <div className="grid content-start gap-3">
-    <GrammarPointList
-     points={lesson.grammar}
-     selectedPointId={
-      isAllView || isReadingView
-       ? effectiveSelectedPointId
-       : selectedPoint?.id || null
-     }
-     progress={progress}
-     onSelectPoint={setSelectedPointId}
-     allPointId={ALL_GRAMMAR_POINTS_ID}
-    />
+ const renderGrammarSidebar = () => (
+  <div className="grid content-start gap-3">
+   <GrammarPointList
+    points={lesson.grammar}
+    selectedPointId={
+     isAllView || isReadingView
+      ? effectiveSelectedPointId
+      : selectedPoint?.id || null
+    }
+    progress={progress}
+    onSelectPoint={(pointId) => {
+     setSelectedPointId(pointId);
+     setIsGrammarSidebarSheetOpen(false);
+    }}
+    allPointId={ALL_GRAMMAR_POINTS_ID}
+   />
 
-    {!isAllView && !isReadingView && (
-     <GrammarPracticeMini point={selectedPoint} />
-    )}
-    {reading && (
-     <GrammarReadingSidebarCard
-      reading={reading}
-      selected={isReadingView}
-      onSelect={() => setSelectedPointId(READING_VIEW_ID)}
-     />
-    )}
-   </div>
+   {!isAllView && !isReadingView && (
+    <GrammarPracticeMini point={selectedPoint} />
+   )}
 
-   {isAllView ? (
-    <AllGrammarPointReader points={lesson.grammar} draftId={lesson.draftId} />
-   ) : isReadingView && reading ? (
-    <GrammarReadingReader reading={reading} />
-   ) : (
-    <GrammarPointReader
-     point={selectedPoint}
-     status={
-      selectedPoint ? progress[selectedPoint.id]?.status || "new" : "new"
-     }
-     bookmarked={selectedPoint ? bookmarks.includes(selectedPoint.id) : false}
-     relatedVocab={relatedVocab}
-     lessonId={lesson.id}
-     canEditDbContent={Boolean(lesson.isDbBacked && !lesson.draftId)}
-     editDraftId={lesson.draftId}
-     editItemId={selectedPoint?.id}
-     onBookmark={() => selectedPoint && onBookmark(selectedPoint.id)}
-     onMarkStatus={(status) =>
-      selectedPoint && onMarkStatus(selectedPoint.id, status)
-     }
+   {reading && (
+    <GrammarReadingSidebarCard
+     reading={reading}
+     selected={isReadingView}
+     onSelect={() => {
+      setSelectedPointId(READING_VIEW_ID);
+      setIsGrammarSidebarSheetOpen(false);
+     }}
     />
    )}
+  </div>
+ );
+
+ const readerContent = isAllView ? (
+  <AllGrammarPointReader points={lesson.grammar} draftId={lesson.draftId} />
+ ) : isReadingView && reading ? (
+  <GrammarReadingReader reading={reading} />
+ ) : (
+  <GrammarPointReader
+   point={selectedPoint}
+   status={selectedPoint ? progress[selectedPoint.id]?.status || "new" : "new"}
+   bookmarked={selectedPoint ? bookmarks.includes(selectedPoint.id) : false}
+   relatedVocab={relatedVocab}
+   lessonId={lesson.id}
+   canEditDbContent={Boolean(lesson.isDbBacked && !lesson.draftId)}
+   editDraftId={lesson.draftId}
+   editItemId={selectedPoint?.id}
+   onBookmark={() => selectedPoint && onBookmark(selectedPoint.id)}
+   onMarkStatus={(status) =>
+    selectedPoint && onMarkStatus(selectedPoint.id, status)
+   }
+  />
+ );
+
+ return (
+  <div className="grid gap-3">
+   <div className="sticky top-0 z-20 flex flex-wrap items-center justify-between gap-2 rounded-xl border border-border-default bg-bg-primary/95 p-2 shadow-theme-sm backdrop-blur">
+    <div className="min-w-0">
+     <p className="text-xs font-black uppercase tracking-wide text-text-muted">
+      Ngữ pháp bài này
+     </p>
+     <p className="truncate text-sm font-bold text-text-secondary">
+      {lesson.grammar.length} điểm · {isAllView ? "Xem toàn bộ" : isReadingView ? "Bài đọc áp dụng" : selectedPoint?.cleanTitle || "Chọn điểm ngữ pháp"}
+     </p>
+    </div>
+
+    <div className="flex flex-wrap items-center gap-2">
+     <Button
+      type="button"
+      variant="outline"
+      size="sm"
+      className="lg:hidden"
+      onClick={() => setIsGrammarSidebarSheetOpen(true)}
+     >
+      <PanelLeftOpen className="h-4 w-4" />
+      Điểm ngữ pháp
+     </Button>
+
+     <Button
+      type="button"
+      variant="outline"
+      size="sm"
+      className="hidden lg:inline-flex"
+      onClick={() => setIsGrammarSidebarOpen((current) => !current)}
+     >
+      {isGrammarSidebarOpen ? (
+       <PanelLeftClose className="h-4 w-4" />
+      ) : (
+       <PanelLeftOpen className="h-4 w-4" />
+      )}
+      {isGrammarSidebarOpen ? "Ẩn danh sách" : "Điểm ngữ pháp"}
+     </Button>
+    </div>
+   </div>
+
+   <div
+    className={[
+     "grid min-w-0 gap-3",
+     isGrammarSidebarOpen
+      ? "lg:grid-cols-[minmax(20rem,23.75rem)_minmax(0,1fr)]"
+      : "lg:grid-cols-1",
+    ].join(" ")}
+   >
+    {isGrammarSidebarOpen && (
+     <aside className="hidden min-w-0 lg:block lg:sticky lg:top-20 lg:self-start">
+      {renderGrammarSidebar()}
+     </aside>
+    )}
+
+    <div className="min-w-0">{readerContent}</div>
+   </div>
+
+   <Sheet
+    open={isGrammarSidebarSheetOpen}
+    onOpenChange={setIsGrammarSidebarSheetOpen}
+    side="right"
+    className="p-4 sm:max-w-md"
+   >
+    <SheetHeader
+     title="Điểm ngữ pháp"
+     onClose={() => setIsGrammarSidebarSheetOpen(false)}
+    />
+    {renderGrammarSidebar()}
+   </Sheet>
   </div>
  );
 }
