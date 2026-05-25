@@ -29,6 +29,7 @@ import { cn } from "@/lib/utils";
 
 type VocabDraftImporterProps = {
  draft: LessonDraft;
+ reviewOnly?: boolean;
 };
 
 type ImportMode = "markdown" | "json" | "manual";
@@ -116,7 +117,10 @@ function mergeItems(
  return dedupeById([...currentItems, ...incomingItems]);
 }
 
-export function VocabDraftImporter({ draft }: VocabDraftImporterProps) {
+export function VocabDraftImporter({
+ draft,
+ reviewOnly = false,
+}: VocabDraftImporterProps) {
  const searchParams = useSearchParams();
  const updateMutation = useUpdateLessonDraftMutation();
 
@@ -126,7 +130,7 @@ export function VocabDraftImporter({ draft }: VocabDraftImporterProps) {
  );
 
  const [step, setStep] = useState<ImportStep>(
-  savedItems.length > 0 ? "review" : "source",
+  reviewOnly || savedItems.length > 0 ? "review" : "source",
  );
  const [mode, setMode] = useState<ImportMode>("markdown");
  const [saveMode, setSaveMode] = useState<SaveMode>("append");
@@ -286,6 +290,7 @@ export function VocabDraftImporter({ draft }: VocabDraftImporterProps) {
 
  return (
   <div className="grid gap-4">
+   {!reviewOnly && (
    <Card padding="sm" className="rounded-xl">
     <div className="flex flex-wrap items-center gap-2">
      <StepButton
@@ -307,8 +312,9 @@ export function VocabDraftImporter({ draft }: VocabDraftImporterProps) {
      )}
     </div>
    </Card>
+   )}
 
-   {step === "source" && (
+   {!reviewOnly && step === "source" && (
     <div className="grid gap-4 xl:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)]">
      <Card padding="lg" className="rounded-xl">
       <div className="grid gap-3">
@@ -610,10 +616,16 @@ export function VocabDraftImporter({ draft }: VocabDraftImporterProps) {
    {step === "review" && (
     <Card padding="sm" className="rounded-xl">
      <div className="flex flex-wrap justify-between gap-2">
-      <Button type="button" variant="ghost" onClick={() => setStep("source")}>
-       <ArrowLeft className="h-4 w-4" />
-       Quay lại nhập nguồn
-      </Button>
+      {reviewOnly ? (
+       <div className="text-sm font-semibold text-text-muted">
+        Dùng nút Import Markdown phía trên để nhập nguồn mới.
+       </div>
+      ) : (
+       <Button type="button" variant="ghost" onClick={() => setStep("source")}>
+        <ArrowLeft className="h-4 w-4" />
+        Quay lại nhập nguồn
+       </Button>
+      )}
 
       <div className="flex flex-wrap gap-2">
        <Button

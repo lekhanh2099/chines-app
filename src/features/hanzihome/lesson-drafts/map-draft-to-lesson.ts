@@ -86,6 +86,9 @@ function mapDraftGrammarItem(value: unknown): GrammarViewModel | null {
   if (!parsed.success) return null;
 
   const item = parsed.data;
+  const contentMd = item.rawMarkdown.includes("### grammar.")
+    ? ""
+    : item.rawMarkdown;
 
   return {
     id: item.id,
@@ -105,8 +108,18 @@ function mapDraftGrammarItem(value: unknown): GrammarViewModel | null {
       ...toLines(item.cultureNotes),
       ...toLines(item.practice),
     ],
-    contentMd: item.rawMarkdown,
+    contentMd,
   };
+}
+
+function dedupeGrammarByTitle(items: GrammarViewModel[]) {
+  const byTitle = new Map<string, GrammarViewModel>();
+
+  items.forEach((item) => {
+    byTitle.set(item.cleanTitle.trim().toLocaleLowerCase("vi-VN"), item);
+  });
+
+  return Array.from(byTitle.values());
 }
 
 export function mapLessonDraftToHanziHomeLesson(
@@ -117,9 +130,9 @@ export function mapLessonDraftToHanziHomeLesson(
     .map((item) => mapDraftVocabItem(item, lessonId))
     .filter((item): item is VocabViewModel => Boolean(item));
 
-  const grammar = draft.content.grammarPoints
+  const grammar = dedupeGrammarByTitle(draft.content.grammarPoints
     .map(mapDraftGrammarItem)
-    .filter((item): item is GrammarViewModel => Boolean(item));
+    .filter((item): item is GrammarViewModel => Boolean(item)));
 
   return {
     id: lessonId,

@@ -24,21 +24,15 @@ export function LessonPicker({
   options.find((option) => option.value === selectedLessonId) ?? null;
 
  return (
-  <label className="flex min-w-0 flex-col gap-2 max-w-50">
-   <span className="text-xs font-black uppercase tracking-wide text-text-muted">
-    Chọn bài học
-   </span>
-
-   <Select
-    selectValue={selectedOption}
-    onChange={(option) => {
-     if (typeof option?.value === "string") {
-      onSelectLesson(option.value);
-     }
-    }}
-    options={options}
-    triggerPlaceholder="Chọn bài trong course"
-   />
-  </label>
+  <Select
+   selectValue={selectedOption}
+   onChange={(option) => {
+    if (typeof option?.value === "string") {
+     onSelectLesson(option.value);
+    }
+   }}
+   options={options}
+   triggerPlaceholder="Chọn bài trong course"
+  />
  );
 }

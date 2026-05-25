@@ -309,10 +309,16 @@ export function HanziHomeWorkspace() {
      className="rounded-xl border border-border-default bg-bg-primary shadow-theme-sm"
     >
      <div className="flex flex-wrap items-start justify-between gap-2.5">
-      <div className="min-w-0">
-       <h1 className="truncate font-black tracking-tight text-text-primary sm:text-3xl">
-        {activeModule === "radicals" ? "Thư viện bộ thủ" : lesson?.title}
-       </h1>
+      <div className="min-w-0 flex flex-2 items-center-safe gap-2.5">
+       <div className="max-w-lg">
+        {activeModule !== "radicals" && lesson && (
+         <LessonPicker
+          lessons={courseLessons}
+          selectedLessonId={selectedLessonId}
+          onSelectLesson={selectLesson}
+         />
+        )}
+       </div>
 
        <div className="flex flex-wrap gap-2">
         <span className="rounded-full bg-bg-subtle px-2.5 py-0.5 text-xs font-black text-text-muted">
@@ -326,12 +332,7 @@ export function HanziHomeWorkspace() {
           Đang lưu...
          </span>
         )}
-       </div>
-      </div>
-
-      {activeModule !== "radicals" && lesson && (
-       <div className="flex max-w-lg flex-wrap items-center justify-end gap-2 rounded-xl border border-border-default bg-bg-subtle p-2.5">
-        {lesson.draftId ? (
+        {lesson && lesson.draftId ? (
          <Button asChild variant="outline" size="sm">
           <Link href={`/hanzihome/drafts/${lesson.draftId}`}>
            <Pencil className="h-4 w-4" />
@@ -339,18 +340,12 @@ export function HanziHomeWorkspace() {
           </Link>
          </Button>
         ) : (
-         <EditSeedLessonAsDraftButton lessonId={lesson.id} size="sm" />
+         lesson && (
+          <EditSeedLessonAsDraftButton lessonId={lesson.id} size="sm" />
+         )
         )}
-
-        <div className="min-w-64 flex-1">
-         <LessonPicker
-          lessons={courseLessons}
-          selectedLessonId={selectedLessonId}
-          onSelectLesson={selectLesson}
-         />
-        </div>
        </div>
-      )}
+      </div>
      </div>
     </Card>
 

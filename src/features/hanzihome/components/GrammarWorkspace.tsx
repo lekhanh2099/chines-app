@@ -89,6 +89,43 @@ function extractGrammarReading(points: GrammarViewModel[]): GrammarReading | nul
  return null;
 }
 
+function extractReadingFromMarkdown(contentMd?: string): GrammarReading | null {
+ const normalizedContent = contentMd?.trim();
+ if (!normalizedContent) return null;
+
+ const lines = normalizeNewlines(normalizedContent).split("\n");
+ const headingIndex = lines.findIndex((line) =>
+  readingHeadingPattern.test(line.trim()),
+ );
+
+ if (headingIndex === -1) {
+  return {
+   title: "Bài đọc áp dụng",
+   contentMd: normalizedContent,
+   preview: getReadingPreview(normalizedContent),
+  };
+ }
+
+ const heading = lines[headingIndex] ?? "";
+ const endIndex = lines.findIndex((line, index) => {
+  if (index <= headingIndex) return false;
+  return topLevelHeadingPattern.test(line.trim());
+ });
+ const bodyLines =
+  endIndex === -1
+   ? lines.slice(headingIndex + 1)
+   : lines.slice(headingIndex + 1, endIndex);
+ const readingContentMd = bodyLines.join("\n").trim();
+
+ if (!readingContentMd) return null;
+
+ return {
+  title: cleanMarkdownInline(heading) || "Bài đọc áp dụng",
+  contentMd: readingContentMd,
+  preview: getReadingPreview(readingContentMd),
+ };
+}
+
 export function GrammarWorkspace({
  lesson,
  state,
@@ -100,8 +137,10 @@ export function GrammarWorkspace({
  );
 
  const reading = useMemo(
-  () => extractGrammarReading(lesson.grammar),
-  [lesson.grammar],
+  () =>
+   extractReadingFromMarkdown(lesson.notes?.overviewMarkdown) ??
+   extractGrammarReading(lesson.grammar),
+  [lesson.grammar, lesson.notes?.overviewMarkdown],
  );
  const effectiveSelectedPointId = useMemo(() => {
   if (selectedPointId === ALL_GRAMMAR_POINTS_ID) return ALL_GRAMMAR_POINTS_ID;

@@ -31,6 +31,7 @@ import { cn } from "@/lib/utils";
 
 type GrammarDraftImporterProps = {
  draft: LessonDraft;
+ reviewOnly?: boolean;
 };
 
 type ImportStep = "source" | "review";
@@ -222,7 +223,10 @@ function Field({ label, children }: { label: string; children: ReactNode }) {
  );
 }
 
-export function GrammarDraftImporter({ draft }: GrammarDraftImporterProps) {
+export function GrammarDraftImporter({
+ draft,
+ reviewOnly = false,
+}: GrammarDraftImporterProps) {
  const searchParams = useSearchParams();
  const updateMutation = useUpdateLessonDraftMutation();
 
@@ -240,7 +244,7 @@ export function GrammarDraftImporter({ draft }: GrammarDraftImporterProps) {
  );
 
  const [step, setStep] = useState<ImportStep>(
-  savedItems.length > 0 ? "review" : "source",
+  reviewOnly || savedItems.length > 0 ? "review" : "source",
  );
  const [saveMode, setSaveMode] = useState<SaveMode>("append");
  const [sourceText, setSourceText] = useState("");
@@ -399,6 +403,7 @@ export function GrammarDraftImporter({ draft }: GrammarDraftImporterProps) {
 
  return (
   <div className="grid gap-4">
+   {!reviewOnly && (
    <Card padding="sm" className="rounded-xl">
     <div className="flex flex-wrap items-center gap-2">
      <StepButton
@@ -420,8 +425,9 @@ export function GrammarDraftImporter({ draft }: GrammarDraftImporterProps) {
      )}
     </div>
    </Card>
+   )}
 
-   {step === "source" && (
+   {!reviewOnly && step === "source" && (
     <div className="grid gap-4 xl:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)]">
      <Card padding="lg" className="rounded-xl">
       <div className="grid gap-3">
@@ -695,10 +701,16 @@ export function GrammarDraftImporter({ draft }: GrammarDraftImporterProps) {
    {step === "review" && (
     <Card padding="sm" className="rounded-xl">
      <div className="flex flex-wrap justify-between gap-2">
-      <Button type="button" variant="ghost" onClick={() => setStep("source")}>
-       <ArrowLeft className="h-4 w-4" />
-       Quay lại nhập nguồn
-      </Button>
+      {reviewOnly ? (
+       <div className="text-sm font-semibold text-text-muted">
+        Dùng nút Import Markdown phía trên để nhập nguồn mới.
+       </div>
+      ) : (
+       <Button type="button" variant="ghost" onClick={() => setStep("source")}>
+        <ArrowLeft className="h-4 w-4" />
+        Quay lại nhập nguồn
+       </Button>
+      )}
 
       <div className="flex flex-wrap gap-2">
        <Button

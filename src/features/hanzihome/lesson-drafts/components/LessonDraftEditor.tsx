@@ -2,7 +2,7 @@
 
 import { useMemo, useState } from "react";
 import Link from "next/link";
-import { ArrowLeft, FileText, Trash2 } from "lucide-react";
+import { ArrowLeft, FileText, Trash2, Upload } from "lucide-react";
 import { toast } from "sonner";
 import { useRouter, useSearchParams } from "next/navigation";
 
@@ -24,6 +24,7 @@ import {
 import { LessonDraftMetadataForm } from "@/features/hanzihome/lesson-drafts/components/LessonDraftMetadataForm";
 import { VocabDraftImporter } from "@/features/hanzihome/lesson-drafts/components/VocabDraftImporter";
 import { GrammarDraftImporter } from "@/features/hanzihome/lesson-drafts/components/GrammarDraftImporter";
+import { MarkdownImportPreview } from "@/features/hanzihome/importer/MarkdownImportPreview";
 
 type LessonDraftEditorProps = {
  draftId: string;
@@ -57,6 +58,7 @@ export function LessonDraftEditor({ draftId }: LessonDraftEditorProps) {
   parseEditorTab(searchParams.get("tab")),
  );
  const [deleteDialogOpen, setDeleteDialogOpen] = useState(false);
+ const [markdownImportOpen, setMarkdownImportOpen] = useState(false);
 
  const draftQuery = useLessonDraftQuery(draftId);
  const deleteMutation = useDeleteLessonDraftMutation();
@@ -175,6 +177,15 @@ export function LessonDraftEditor({ draftId }: LessonDraftEditorProps) {
       <div className="flex flex-wrap gap-2">
        <Button
         type="button"
+        variant="outline"
+        onClick={() => setMarkdownImportOpen(true)}
+       >
+        <Upload className="h-4 w-4" />
+        Import Markdown
+       </Button>
+
+       <Button
+        type="button"
         variant={draft.status === "published" ? "outline" : "default"}
         disabled={updateMutation.isPending}
         onClick={() => void handlePublishToggle()}
@@ -258,8 +269,10 @@ export function LessonDraftEditor({ draftId }: LessonDraftEditorProps) {
      </div>
     )}
 
-    {activeTab === "vocab" && <VocabDraftImporter draft={draft} />}
-    {activeTab === "grammar" && <GrammarDraftImporter draft={draft} />}
+    {activeTab === "vocab" && <VocabDraftImporter draft={draft} reviewOnly />}
+    {activeTab === "grammar" && (
+     <GrammarDraftImporter draft={draft} reviewOnly />
+    )}
 
     {activeTab === "preview" && (
      <Card padding="lg" className="rounded-xl">
@@ -304,6 +317,20 @@ export function LessonDraftEditor({ draftId }: LessonDraftEditorProps) {
        {deleteMutation.isPending ? "Đang xóa..." : "Xóa bài nháp"}
       </Button>
      </DialogFooter>
+    </DialogContent>
+   </Dialog>
+
+   <Dialog open={markdownImportOpen} onOpenChange={setMarkdownImportOpen}>
+    <DialogContent className="max-h-[94vh] max-w-6xl overflow-hidden">
+     <DialogHeader>
+      <DialogTitle>Import Markdown</DialogTitle>
+      <DialogDescription>
+       Dán markdown AI-generated để parse cấu trúc và xem mapping theo profile.
+       Chỉ ghi vào draft khi bấm Apply.
+      </DialogDescription>
+     </DialogHeader>
+
+     <MarkdownImportPreview draft={draft} />
     </DialogContent>
    </Dialog>
   </main>

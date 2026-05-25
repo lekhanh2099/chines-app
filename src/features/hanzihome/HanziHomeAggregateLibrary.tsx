@@ -113,7 +113,9 @@ async function fetchAggregateData({
  );
 
  if (!response.ok) {
-  throw new Error(kind === "vocab" ? "Không tải được từ vựng" : "Không tải được ngữ pháp");
+  throw new Error(
+   kind === "vocab" ? "Không tải được từ vựng" : "Không tải được ngữ pháp",
+  );
  }
 
  const json: unknown = await response.json();
@@ -273,101 +275,101 @@ export function HanziHomeAggregateLibrary({ kind }: { kind: AggregateKind }) {
       isReviewingVocab
        ? "lg:grid-cols-1"
        : filtersCollapsed
-       ? "lg:grid-cols-[3.5rem_minmax(0,1fr)]"
-       : "lg:grid-cols-[18rem_minmax(0,1fr)]",
+         ? "lg:grid-cols-[3.5rem_minmax(0,1fr)]"
+         : "lg:grid-cols-[18rem_minmax(0,1fr)]",
      ].join(" ")}
     >
      {!isReviewingVocab && (
-     <Card className="rounded-xl border border-border-default bg-bg-card shadow-theme-sm">
-      <div className="grid gap-3">
-      <Button
-       type="button"
-       variant="outline"
-       size="icon"
-       onClick={() => setFiltersCollapsed((current) => !current)}
-       className="h-9 w-full rounded-xl bg-bg-subtle text-text-muted hover:bg-bg-elevated hover:text-text-primary"
-       aria-label={filtersCollapsed ? "Mở bộ lọc" : "Ẩn bộ lọc"}
-       title={filtersCollapsed ? "Mở bộ lọc" : "Ẩn bộ lọc"}
-      >
-       {filtersCollapsed ? (
-         <ChevronRight className="h-4 w-4" />
+      <Card className="rounded-xl border border-border-default bg-bg-card shadow-theme-sm">
+       <div className="grid gap-3">
+        <Button
+         type="button"
+         variant="outline"
+         size="icon"
+         onClick={() => setFiltersCollapsed((current) => !current)}
+         className="h-9 w-full rounded-xl bg-bg-subtle text-text-muted hover:bg-bg-elevated hover:text-text-primary"
+         aria-label={filtersCollapsed ? "Mở bộ lọc" : "Ẩn bộ lọc"}
+         title={filtersCollapsed ? "Mở bộ lọc" : "Ẩn bộ lọc"}
+        >
+         {filtersCollapsed ? (
+          <ChevronRight className="h-4 w-4" />
+         ) : (
+          <ChevronLeft className="h-4 w-4" />
+         )}
+        </Button>
+
+        {filtersCollapsed ? (
+         <div className="grid place-items-center gap-2 py-2">
+          <Search className="h-4 w-4 text-text-muted" />
+          <span className="[writing-mode:vertical-rl] text-xs font-black uppercase tracking-wide text-text-muted">
+           Bộ lọc
+          </span>
+         </div>
         ) : (
-         <ChevronLeft className="h-4 w-4" />
+         <>
+          <div className="grid gap-1">
+           <p className="text-xs font-black uppercase tracking-wide text-text-muted">
+            Bộ lọc
+           </p>
+           <h2 className="text-lg font-black text-text-primary">Tìm nhanh</h2>
+          </div>
+
+          <label className="grid gap-1.5">
+           <span className="text-xs font-black uppercase tracking-wide text-text-muted">
+            Từ khóa
+           </span>
+           <div className="flex items-center gap-2 rounded-xl border border-border-default bg-bg-input px-3 py-2">
+            <Search className="h-4 w-4 text-text-muted" />
+            <input
+             value={filters.q}
+             onChange={(event) => updateFilter("q", event.target.value)}
+             placeholder={
+              kind === "vocab"
+               ? "Hán tự, pinyin, nghĩa..."
+               : "Tiêu đề, cấu trúc..."
+             }
+             className="min-w-0 flex-1 bg-transparent text-sm font-semibold text-text-primary outline-none placeholder:text-text-muted"
+            />
+           </div>
+          </label>
+
+          <FilterSelect
+           label="Course"
+           value={filters.courseId}
+           onChange={(value) => updateFilter("courseId", value)}
+           options={catalog.courses.map((course) => ({
+            value: course.id,
+            label: course.title,
+           }))}
+          />
+
+          <FilterSelect
+           label="Quyển"
+           value={filters.bookId}
+           onChange={(value) => updateFilter("bookId", value)}
+           options={filteredBooks.map((book) => ({
+            value: book.id,
+            label: book.shortTitle || book.title,
+           }))}
+          />
+
+          <FilterSelect
+           label="Bài"
+           value={filters.lessonId}
+           onChange={(value) => updateFilter("lessonId", value)}
+           options={filteredLessons.map((lesson) => ({
+            value: lesson.id,
+            label: `Bài ${lesson.lessonNumber}: ${lesson.titleZh}`,
+           }))}
+          />
+
+          <Button type="button" variant="outline" onClick={clearFilters}>
+           Xóa bộ lọc
+          </Button>
+         </>
         )}
-      </Button>
-
-       {filtersCollapsed ? (
-        <div className="grid place-items-center gap-2 py-2">
-         <Search className="h-4 w-4 text-text-muted" />
-         <span className="[writing-mode:vertical-rl] text-xs font-black uppercase tracking-wide text-text-muted">
-          Bộ lọc
-         </span>
-        </div>
-       ) : (
-        <>
-       <div className="grid gap-1">
-        <p className="text-xs font-black uppercase tracking-wide text-text-muted">
-         Bộ lọc
-        </p>
-        <h2 className="text-lg font-black text-text-primary">Tìm nhanh</h2>
        </div>
-
-       <label className="grid gap-1.5">
-        <span className="text-xs font-black uppercase tracking-wide text-text-muted">
-         Từ khóa
-        </span>
-        <div className="flex items-center gap-2 rounded-xl border border-border-default bg-bg-input px-3 py-2">
-         <Search className="h-4 w-4 text-text-muted" />
-         <input
-          value={filters.q}
-          onChange={(event) => updateFilter("q", event.target.value)}
-          placeholder={kind === "vocab" ? "Hán tự, pinyin, nghĩa..." : "Tiêu đề, cấu trúc..."}
-          className="min-w-0 flex-1 bg-transparent text-sm font-semibold text-text-primary outline-none placeholder:text-text-muted"
-         />
-        </div>
-       </label>
-
-       <FilterSelect
-        label="Course"
-        value={filters.courseId}
-        onChange={(value) => updateFilter("courseId", value)}
-        options={catalog.courses.map((course) => ({
-         value: course.id,
-         label: course.title,
-        }))}
-       />
-
-       <FilterSelect
-        label="Quyển"
-        value={filters.bookId}
-        onChange={(value) => updateFilter("bookId", value)}
-        options={filteredBooks.map((book) => ({
-         value: book.id,
-         label: book.shortTitle || book.title,
-        }))}
-       />
-
-       <FilterSelect
-        label="Bài"
-        value={filters.lessonId}
-        onChange={(value) => updateFilter("lessonId", value)}
-        options={filteredLessons.map((lesson) => ({
-         value: lesson.id,
-         label: `Bài ${lesson.lessonNumber}: ${lesson.titleZh}`,
-        }))}
-       />
-
-       <Button
-        type="button"
-        variant="outline"
-        onClick={clearFilters}
-       >
-        Xóa bộ lọc
-       </Button>
-       </>
-       )}
-      </div>
-     </Card>
+      </Card>
      )}
 
      <Card className="rounded-xl border border-border-default bg-bg-card shadow-theme-sm">
@@ -379,7 +381,10 @@ export function HanziHomeAggregateLibrary({ kind }: { kind: AggregateKind }) {
        )}
 
        {query.isError && (
-        <p role="alert" className="rounded-xl bg-danger-subtle p-4 text-sm font-bold text-danger-text">
+        <p
+         role="alert"
+         className="rounded-xl bg-danger-subtle p-4 text-sm font-bold text-danger-text"
+        >
          {(query.error as Error).message}
         </p>
        )}
@@ -391,15 +396,12 @@ export function HanziHomeAggregateLibrary({ kind }: { kind: AggregateKind }) {
        )}
 
        {isReviewingVocab && (
-        <section className="grid gap-2 rounded-xl border border-border-default bg-bg-card p-3 shadow-theme-sm">
+        <section>
          <div className="flex flex-wrap items-center justify-between gap-2">
           <div>
            <h2 className="text-sm font-black text-text-primary">
             Flashcard từ vựng
            </h2>
-           <p className="text-xs font-bold text-text-muted">
-            Deck đang dùng đúng kết quả lọc hiện tại.
-           </p>
           </div>
 
           <Button
@@ -417,43 +419,46 @@ export function HanziHomeAggregateLibrary({ kind }: { kind: AggregateKind }) {
           learningState={learning.state}
           onAnswer={answerAggregateReview}
          />
-       </section>
+        </section>
        )}
 
-       {!isReviewingVocab && groupedItems.map((group) => (
-        <section key={group.lessonId} className="grid gap-2">
-         <div className="flex flex-wrap items-center justify-between gap-2">
-          <div>
-           <h2 className="text-sm font-black text-text-primary">
-            {formatLessonTitle(group)}
-           </h2>
-           <p className="text-xs font-bold text-text-muted">{group.items.length} mục</p>
+       {!isReviewingVocab &&
+        groupedItems.map((group) => (
+         <section key={group.lessonId} className="grid gap-2">
+          <div className="flex flex-wrap items-center justify-between gap-2">
+           <div>
+            <h2 className="text-sm font-black text-text-primary">
+             {formatLessonTitle(group)}
+            </h2>
+            <p className="text-xs font-bold text-text-muted">
+             {group.items.length} mục
+            </p>
+           </div>
+
+           <div className="flex flex-wrap gap-1.5">
+            <EditSeedLessonAsDraftButton lessonId={group.lessonId} size="xs" />
+
+            <Button asChild variant="outline" size="xs">
+             <Link
+              href={`/hanzihome?courseId=${group.courseId}&lessonId=${group.lessonId}&module=${kind === "vocab" ? "vocab" : "grammar"}`}
+             >
+              Mở bài
+             </Link>
+            </Button>
+           </div>
           </div>
 
-          <div className="flex flex-wrap gap-1.5">
-           <EditSeedLessonAsDraftButton lessonId={group.lessonId} size="xs" />
-
-           <Button asChild variant="outline" size="xs">
-            <Link
-             href={`/hanzihome?courseId=${group.courseId}&lessonId=${group.lessonId}&module=${kind === "vocab" ? "vocab" : "grammar"}`}
-            >
-             Mở bài
-            </Link>
-           </Button>
-          </div>
-         </div>
-
-         {kind === "vocab" ? (
-          <VocabAggregateBoard items={group.items.filter(isVocabItem)} />
-         ) : (
-          <div className="grid gap-2">
-           {group.items.filter(isGrammarItem).map((item) => (
-            <GrammarAggregateRow key={item.id} item={item} />
-           ))}
-          </div>
-         )}
-        </section>
-       ))}
+          {kind === "vocab" ? (
+           <VocabAggregateBoard items={group.items.filter(isVocabItem)} />
+          ) : (
+           <div className="grid gap-2">
+            {group.items.filter(isGrammarItem).map((item) => (
+             <GrammarAggregateRow key={item.id} item={item} />
+            ))}
+           </div>
+          )}
+         </section>
+        ))}
       </div>
      </Card>
     </div>
@@ -521,10 +526,7 @@ function VocabAggregateBoard({ items }: { items: AggregateVocabItem[] }) {
   <div className="rounded-xl border border-border bg-card p-3 shadow-theme-sm">
    <div className="flex flex-wrap items-center gap-x-7 gap-y-3 rounded-lg bg-muted/50 px-4 py-3 ring-1 ring-border/80">
     {groups.map((group) => (
-     <div
-      key={group.category}
-      className="contents"
-     >
+     <div key={group.category} className="contents">
       {group.headingItem ? (
        <Link
         href={`/hanzihome?courseId=${group.headingItem.courseId}&lessonId=${group.headingItem.lessonId}&module=vocab`}
@@ -538,7 +540,7 @@ function VocabAggregateBoard({ items }: { items: AggregateVocabItem[] }) {
          .join(" · ")}
         lang="zh-CN"
        >
-       {group.headingItem.word}
+        {group.headingItem.word}
        </Link>
       ) : (
        <span className="inline-flex min-h-9 items-center rounded-lg bg-primary px-3 text-sm font-black text-primary-foreground shadow-theme-sm">
@@ -588,12 +590,16 @@ function GrammarAggregateRow({ item }: { item: AggregateGrammarItem }) {
    <h3 className="line-clamp-1 text-sm font-black text-text-primary sm:text-base">
     {item.cleanTitle || item.title}
    </h3>
-   <p className="line-clamp-2 text-sm font-bold text-text-secondary">{item.core}</p>
+   <p className="line-clamp-2 text-sm font-bold text-text-secondary">
+    {item.core}
+   </p>
   </Link>
  );
 }
 
-function groupByLesson(items: Array<AggregateVocabItem | AggregateGrammarItem>) {
+function groupByLesson(
+ items: Array<AggregateVocabItem | AggregateGrammarItem>,
+) {
  const groups = new Map<
   string,
   {
@@ -659,9 +665,10 @@ function buildAggregateVocabReviewLesson(
 ): HanziHomeLesson {
  const firstItem = items[0];
  const lessonId = filters.lessonId || "aggregate-vocab";
- const title = filters.lessonId && firstItem
-  ? `Bài ${firstItem.lessonNumber}: ${firstItem.lessonTitle}`
-  : "Tổng hợp từ vựng";
+ const title =
+  filters.lessonId && firstItem
+   ? `Bài ${firstItem.lessonNumber}: ${firstItem.lessonTitle}`
+   : "Tổng hợp từ vựng";
 
  return {
   id: lessonId,
