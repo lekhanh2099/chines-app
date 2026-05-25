@@ -73,7 +73,9 @@ export function useHanziHomeCatalogData({
     queryKey: ["hanzihome", "catalog", { includeLessons }],
     queryFn: () => fetchCatalogData({ includeLessons, fallback }),
     placeholderData: fallback,
-    staleTime: 0,
+    staleTime: 5 * 60 * 1000,
+    gcTime: 30 * 60 * 1000,
+    refetchOnWindowFocus: false,
   });
 
   return query.data && query.data.courses.length > 0 ? query.data : fallback;

@@ -4,6 +4,7 @@ export {
   deleteLessonDraft,
   getLessonDraft,
   getLessonDrafts,
+  getLessonDraftSummaries,
   lessonDraftQueryKeys,
   updateLessonDraft,
 } from "@/features/hanzihome/lesson-drafts/lesson-draft-api";
@@ -16,10 +17,12 @@ export {
   lessonDraftRowSchema,
   lessonDraftStatusSchema,
   toLessonDraft,
+  toLessonDraftSummary,
   updateLessonDraftRequestSchema,
   type CreateLessonDraftRequest,
   type LessonDraft,
   type LessonDraftContent,
+  type LessonDraftSummary,
   type LessonDraftStatus,
   type UpdateLessonDraftRequest,
 } from "@/features/hanzihome/lesson-drafts/lesson-draft.schema";
@@ -30,6 +33,7 @@ export {
   useDeleteLessonDraftMutation,
   useLessonDraftQuery,
   useLessonDraftsQuery,
+  useLessonDraftSummariesQuery,
   useUpdateLessonDraftMutation,
 } from "@/features/hanzihome/lesson-drafts/use-lesson-drafts";
 

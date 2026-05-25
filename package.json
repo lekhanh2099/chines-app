@@ -12,7 +12,8 @@
     "start": "next start",
     "lint": "eslint",
     "typecheck": "tsc --noEmit",
-    "test:parser": "vitest run src/features/hanzihome/lesson-drafts/import-parser"
+    "test:parser": "vitest run src/features/hanzihome/lesson-drafts/import-parser",
+    "check:hanzihome:perf": "node scripts/check-hanzihome-performance.mjs"
   },
   "dependencies": {
     "@base-ui/react": "^1.2.0",

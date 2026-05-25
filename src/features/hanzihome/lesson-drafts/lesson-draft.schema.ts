@@ -94,6 +94,25 @@ export type LessonDraft = {
  updatedAt: string;
 };
 
+export type LessonDraftSummary = {
+ id: string;
+ userId: string;
+ lessonKey: string;
+ status: LessonDraftStatus;
+ titleZh: string;
+ titleVi?: string;
+ lessonNumber?: number;
+ courseId?: string;
+ courseTitle?: string;
+ bookId?: string;
+ bookTitle?: string;
+ vocabCount: number;
+ grammarCount: number;
+ flashcardCount: number;
+ createdAt: string;
+ updatedAt: string;
+};
+
 export function createLessonKey(lessonNumber: number) {
  return `custom-bai-${lessonNumber}`;
 }
@@ -134,6 +153,30 @@ export function toLessonDraft(row: unknown): LessonDraft {
   titleVi: parsed.title_vi ?? undefined,
   lessonNumber: parsed.lesson_number ?? undefined,
   content: parsed.content,
+  createdAt: parsed.created_at,
+  updatedAt: parsed.updated_at,
+ };
+}
+
+export function toLessonDraftSummary(row: unknown): LessonDraftSummary {
+ const parsed = lessonDraftRowSchema.parse(row);
+ const lesson = parsed.content.lesson;
+
+ return {
+  id: parsed.id,
+  userId: parsed.user_id,
+  lessonKey: parsed.lesson_key,
+  status: parsed.status,
+  titleZh: parsed.title_zh,
+  titleVi: parsed.title_vi ?? undefined,
+  lessonNumber: parsed.lesson_number ?? undefined,
+  courseId: lesson.courseId,
+  courseTitle: lesson.courseTitle,
+  bookId: lesson.bookId,
+  bookTitle: lesson.bookTitle,
+  vocabCount: parsed.content.vocab.length,
+  grammarCount: parsed.content.grammarPoints.length,
+  flashcardCount: parsed.content.flashcards.length,
   createdAt: parsed.created_at,
   updatedAt: parsed.updated_at,
  };

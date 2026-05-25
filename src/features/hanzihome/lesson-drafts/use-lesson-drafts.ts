@@ -12,6 +12,7 @@ import {
   deleteLessonDraft,
   getLessonDraft,
   getLessonDrafts,
+  getLessonDraftSummaries,
   lessonDraftQueryKeys,
   updateLessonDraft,
 } from "@/features/hanzihome/lesson-drafts/lesson-draft-api";
@@ -24,6 +25,19 @@ export function useLessonDraftsQuery() {
   return useQuery({
     queryKey: lessonDraftQueryKeys.lists(),
     queryFn: getLessonDrafts,
+    staleTime: 60_000,
+    gcTime: 10 * 60_000,
+    refetchOnWindowFocus: false,
+  });
+}
+
+export function useLessonDraftSummariesQuery() {
+  return useQuery({
+    queryKey: lessonDraftQueryKeys.summaries(),
+    queryFn: getLessonDraftSummaries,
+    staleTime: 60_000,
+    gcTime: 10 * 60_000,
+    refetchOnWindowFocus: false,
   });
 }
 

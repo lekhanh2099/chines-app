@@ -7,6 +7,7 @@ import {
   updateLessonDraftRequestSchema,
   type CreateLessonDraftRequest,
   type LessonDraft,
+  type LessonDraftSummary,
   type UpdateLessonDraftRequest,
 } from "@/features/hanzihome/lesson-drafts/lesson-draft.schema";
 
@@ -23,8 +24,31 @@ const lessonDraftSchema = z.object({
   updatedAt: z.string(),
 });
 
+const lessonDraftSummarySchema = z.object({
+  id: z.string(),
+  userId: z.string(),
+  lessonKey: z.string(),
+  status: lessonDraftStatusSchema,
+  titleZh: z.string(),
+  titleVi: z.string().optional(),
+  lessonNumber: z.number().optional(),
+  courseId: z.string().optional(),
+  courseTitle: z.string().optional(),
+  bookId: z.string().optional(),
+  bookTitle: z.string().optional(),
+  vocabCount: z.number(),
+  grammarCount: z.number(),
+  flashcardCount: z.number(),
+  createdAt: z.string(),
+  updatedAt: z.string(),
+});
+
 const lessonDraftListResponseSchema = z.object({
   drafts: z.array(lessonDraftSchema),
+});
+
+const lessonDraftSummaryListResponseSchema = z.object({
+  drafts: z.array(lessonDraftSummarySchema),
 });
 
 const lessonDraftResponseSchema = z.object({
@@ -79,6 +103,7 @@ async function requestJson<T>(
 export const lessonDraftQueryKeys = {
   all: ["hanzihome", "lesson-drafts"] as const,
   lists: () => [...lessonDraftQueryKeys.all, "list"] as const,
+  summaries: () => [...lessonDraftQueryKeys.all, "summaries"] as const,
   detail: (draftId: string) =>
     [...lessonDraftQueryKeys.all, "detail", draftId] as const,
 };
@@ -88,6 +113,14 @@ export async function getLessonDrafts(): Promise<LessonDraft[]> {
     "/api/hanzihome/lesson-drafts",
     { method: "GET" },
     (json) => lessonDraftListResponseSchema.parse(json).drafts,
+  );
+}
+
+export async function getLessonDraftSummaries(): Promise<LessonDraftSummary[]> {
+  return requestJson(
+    "/api/hanzihome/lesson-drafts/summaries",
+    { method: "GET" },
+    (json) => lessonDraftSummaryListResponseSchema.parse(json).drafts,
   );
 }
 

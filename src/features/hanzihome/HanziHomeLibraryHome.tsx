@@ -11,16 +11,14 @@ import { CreateCourseDialog } from "@/features/hanzihome/courses/CreateCourseDia
 import { useCustomHanziHomeCourseCatalogQuery } from "@/features/hanzihome/courses/use-custom-courses";
 import {
  CreateLessonDraftDialog,
- mapLessonDraftToHanziHomeLesson,
- type LessonDraft,
- useLessonDraftsQuery,
+ type LessonDraftSummary,
+ useLessonDraftSummariesQuery,
 } from "@/features/hanzihome/lesson-drafts";
 import { useHanziHomeCatalogData } from "@/features/hanzihome/hooks/useHanziHomeCatalogData";
 import { GlobalMemoryTipCard } from "@/features/hanzihome/memory-tips/GlobalMemoryTipCard";
 import type {
  HanziHomeCatalogCourse,
  HanziHomeCourseBook,
- HanziHomeLesson,
 } from "@/features/hanzihome/types";
 import { useLearningState } from "@/features/hanzihome/hooks/useLearningState";
 
@@ -36,13 +34,11 @@ type CourseStats = {
 export function HanziHomeLibraryHome() {
  const catalogData = useHanziHomeCatalogData();
  const customCatalogQuery = useCustomHanziHomeCourseCatalogQuery();
- const draftsQuery = useLessonDraftsQuery();
+ const draftsQuery = useLessonDraftSummariesQuery();
+ const learning = useLearningState();
 
- const publishedDraftLessons = useMemo(
-  () =>
-   (draftsQuery.data ?? [])
-    .filter((draft) => draft.status === "published")
-    .map(mapLessonDraftToHanziHomeLesson),
+ const publishedDraftSummaries = useMemo(
+  () => (draftsQuery.data ?? []).filter((draft) => draft.status === "published"),
   [draftsQuery.data],
  );
  const unpublishedDrafts = useMemo(
@@ -93,7 +89,9 @@ export function HanziHomeLibraryHome() {
       <CourseCard
        key={course.id}
        course={course}
-       stats={getCourseStats(course, publishedDraftLessons, books)}
+       stats={getCourseStats(course, publishedDraftSummaries, books)}
+       lastCourseId={learning.state.settings.lastCourseId}
+       lastLessonId={learning.state.settings.lastLessonId}
       />
      ))}
     </div>
@@ -107,7 +105,7 @@ function DraftRecoveryPanel({
  error,
  isLoading,
 }: {
- drafts: LessonDraft[];
+ drafts: LessonDraftSummary[];
  error: Error | null;
  isLoading: boolean;
 }) {
@@ -162,9 +160,7 @@ function DraftRecoveryPanel({
          {draft.titleZh}
         </p>
         <p className="truncate text-xs font-semibold text-text-muted">
-         {draft.content.lesson.bookTitle ||
-          draft.content.lesson.courseTitle ||
-          draft.lessonKey}{" "}
+         {draft.bookTitle || draft.courseTitle || draft.lessonKey}{" "}
          · {draft.status}
         </p>
        </Link>
@@ -238,10 +234,10 @@ function mergeBooks(
 
 function getCourseStats(
  course: HanziHomeCatalogCourse,
- publishedDraftLessons: HanziHomeLesson[],
+ publishedDraftSummaries: LessonDraftSummary[],
  books: HanziHomeCourseBook[],
 ): CourseStats {
- const courseDraftLessons = publishedDraftLessons.filter(
+ const courseDraftLessons = publishedDraftSummaries.filter(
   (lesson) => lesson.courseId === course.id,
  );
  const courseBooks = books.filter((book) => book.courseId === course.id);
@@ -255,10 +251,10 @@ function getCourseStats(
   lessonCount: course.stats.lessonCount + courseDraftLessons.length,
   vocabCount:
    course.stats.vocabCount +
-   courseDraftLessons.reduce((sum, lesson) => sum + lesson.vocab.length, 0),
+   courseDraftLessons.reduce((sum, lesson) => sum + lesson.vocabCount, 0),
   grammarCount:
    course.stats.grammarCount +
-   courseDraftLessons.reduce((sum, lesson) => sum + lesson.grammar.length, 0),
+   courseDraftLessons.reduce((sum, lesson) => sum + lesson.grammarCount, 0),
   fallbackLessonId:
    courseDraftLessons.at(-1)?.id ||
    course.fallbackLessonId ||
@@ -271,17 +267,20 @@ function getCourseStats(
 function CourseCard({
  course,
  stats,
+ lastCourseId,
+ lastLessonId,
 }: {
  course: HanziHomeCatalogCourse;
  stats: CourseStats;
+ lastCourseId?: string;
+ lastLessonId?: string;
 }) {
  const router = useRouter();
  const primaryBook = stats.books[0];
 
- const learning = useLearningState();
  const targetLessonId =
-  learning.state.settings.lastCourseId === course.id
-   ? learning.state.settings.lastLessonId || stats.fallbackLessonId
+  lastCourseId === course.id
+   ? lastLessonId || stats.fallbackLessonId
    : stats.fallbackLessonId;
  const href = targetLessonId
   ? `/hanzihome?courseId=${course.id}&lessonId=${targetLessonId}`
