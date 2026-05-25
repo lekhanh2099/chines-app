@@ -23,7 +23,7 @@ export function Sheet({
    <button
     type="button"
     aria-label="Đóng"
-    className="absolute inset-0 bg-stone-900/30"
+    className="absolute inset-0 bg-overlay"
     onClick={() => onOpenChange(false)}
    />
    <div
@@ -50,7 +50,7 @@ export function SheetHeader({
 }) {
  return (
   <div className="mb-5 flex min-w-0 items-center justify-between gap-3">
-   <h2 className="min-w-0 break-words text-2xl font-black text-stone-900">
+   <h2 className="min-w-0 break-words text-2xl font-black text-text-primary">
     {title}
    </h2>
    <button

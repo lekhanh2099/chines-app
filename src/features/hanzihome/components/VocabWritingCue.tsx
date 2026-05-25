@@ -4,6 +4,7 @@ import { useState } from "react";
 
 import { HanziStrokeWriter } from "@/features/hanzihome/components/HanziStrokeWriter";
 import type { VocabViewModel } from "@/features/hanzihome/types";
+import { Button } from "@/components/ui/button";
 
 type VocabWritingCueProps = {
  word: VocabViewModel;
@@ -88,27 +89,22 @@ export function VocabWritingCue({
       const active = index === safeSelectedIndex;
 
       return (
-       <button
+       <Button
         key={`${char}-${index}`}
         type="button"
         onClick={() => selectCharacter(index)}
-        className={[
-         "font-hanzi-display grid h-8 min-w-9 place-items-center rounded-lg px-3 text-lg font-black transition-colors",
-         active
-          ? "bg-bg-inverse text-text-inverse"
-          : "bg-bg-subtle text-text-primary hover:bg-accent-subtle",
-        ].join(" ")}
+        variant={active ? "default" : "outline"}
         lang="zh-CN"
        >
         {char}
-       </button>
+       </Button>
       );
      })}
     </div>
    </div>
 
    <div className="grid gap-4 md:grid-cols-[auto_minmax(0,1fr)] md:items-start relative">
-    <div >
+    <div>
      <HanziStrokeWriter
       key={`${activeCharacter}-${writerKey}`}
       character={activeCharacter}

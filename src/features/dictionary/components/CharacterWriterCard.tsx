@@ -7,7 +7,11 @@ import { Button } from "@/components/ui/button";
 import type { HanziWriterInstance } from "@/features/dictionary/types";
 
 const writerContainerClassName =
- "relative flex aspect-square h-auto w-full max-w-40 items-center justify-center rounded-2xl  border border-border-default bg-white text-8xl font-bold text-text-primary";
+ "relative flex aspect-square h-auto w-full max-w-40 items-center justify-center rounded-2xl border border-border-default bg-bg-card text-8xl font-bold text-text-primary";
+
+function getThemeColor(name: string) {
+ return getComputedStyle(document.documentElement).getPropertyValue(name).trim();
+}
 
 type CharacterWriterCardProps = {
  character: string;
@@ -47,12 +51,13 @@ function CharacterWriterCard({ character }: CharacterWriterCardProps) {
    svg.style.zIndex = "0";
    svg.style.pointerEvents = "none";
    svg.style.opacity = "0.15";
+   svg.style.color = getThemeColor("--border");
    svg.innerHTML = `
-    <rect width="160" height="160" fill="none" stroke="#94a3b8" stroke-width="1.5"/>
-    <line x1="80" y1="0" x2="80" y2="160" stroke="#94a3b8" stroke-width="0.8" stroke-dasharray="4,3"/>
-    <line x1="0" y1="80" x2="160" y2="80" stroke="#94a3b8" stroke-width="0.8" stroke-dasharray="4,3"/>
-    <line x1="0" y1="0" x2="160" y2="160" stroke="#94a3b8" stroke-width="0.5" stroke-dasharray="4,3"/>
-    <line x1="160" y1="0" x2="0" y2="160" stroke="#94a3b8" stroke-width="0.5" stroke-dasharray="4,3"/>
+    <rect width="160" height="160" fill="none" stroke="currentColor" stroke-width="1.5"/>
+    <line x1="80" y1="0" x2="80" y2="160" stroke="currentColor" stroke-width="0.8" stroke-dasharray="4,3"/>
+    <line x1="0" y1="80" x2="160" y2="80" stroke="currentColor" stroke-width="0.8" stroke-dasharray="4,3"/>
+    <line x1="0" y1="0" x2="160" y2="160" stroke="currentColor" stroke-width="0.5" stroke-dasharray="4,3"/>
+    <line x1="160" y1="0" x2="0" y2="160" stroke="currentColor" stroke-width="0.5" stroke-dasharray="4,3"/>
    `;
    container.insertBefore(svg, container.firstChild);
   };
@@ -70,6 +75,10 @@ function CharacterWriterCard({ character }: CharacterWriterCardProps) {
     }
 
     const HanziWriter = HanziWriterModule.default;
+    const strokeColor = getThemeColor("--foreground");
+    const radicalColor = getThemeColor("--primary");
+    const outlineColor = getThemeColor("--border");
+    const drawingColor = getThemeColor("--destructive");
 
     try {
      const charData = await HanziWriter.loadCharacterData(character);
@@ -85,10 +94,10 @@ function CharacterWriterCard({ character }: CharacterWriterCardProps) {
       padding: 10,
       strokeAnimationSpeed: 1,
       delayBetweenStrokes: 200,
-      strokeColor: "#1e293b",
-      radicalColor: "#2563eb",
-      outlineColor: "#cbd5e1",
-      drawingColor: "#dc2626",
+      strokeColor,
+      radicalColor,
+      outlineColor,
+      drawingColor,
       showOutline: true,
       showCharacter: true,
       charDataLoader: () => charData,

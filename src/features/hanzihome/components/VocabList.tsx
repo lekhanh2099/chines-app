@@ -1,5 +1,6 @@
 "use client";
 
+import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import type {
  LearningStatus,
@@ -24,44 +25,39 @@ export function VocabList({
  onSelectWord,
 }: VocabListProps) {
  return (
- <Card
-  padding="sm"
-  className="rounded-xl border border-border-default bg-bg-primary shadow-theme-sm"
- >
- <div className="grid gap-1.5">
- {words.length > 0 ? (
-  <div className="flex max-h-40 flex-wrap gap-1.5 overflow-y-auto rounded-xl border border-border-default bg-bg-subtle p-2 scrollbar-soft sm:max-h-48">
-  {words.map((word) => {
-  const active = word.id === selectedWordId;
-
-  return (
-  <button
-   key={word.id}
-   type="button"
-   onClick={() => onSelectWord(word.id)}
-   className={[
-   "group rounded-lg border px-2.5 py-1.5 text-left transition-colors",
-   active
-   ? "border-bg-inverse bg-bg-inverse text-text-inverse shadow-theme-sm"
-   : "border-transparent bg-bg-subtle text-text-secondary hover:border-border-hover hover:bg-bg-elevated hover:text-text-primary",
-   ].join(" ")}
+  <Card
+   padding="sm"
+   className="rounded-xl border border-border-default bg-bg-primary shadow-theme-sm"
   >
-   <span
-   className="font-hanzi-display block font-black leading-tight"
-   lang="zh-CN"
-   >
-   {word.word}
-   </span>
-  </button>
-  );
-  })}
-  </div>
- ) : (
-  <p className="rounded-xl bg-bg-subtle p-3 text-sm font-semibold text-text-muted">
-  Không có từ phù hợp bộ lọc.
-  </p>
- )}
- </div>
- </Card>
+   <div className="grid gap-1.5">
+    {words.length > 0 ? (
+     <div className="flex max-h-40 flex-wrap gap-1.5 overflow-y-auto rounded-xl border border-border-default bg-bg-subtle p-2 scrollbar-soft sm:max-h-48">
+      {words.map((word) => {
+       const active = word.id === selectedWordId;
+
+       return (
+        <Button
+         key={word.id}
+         type="button"
+         onClick={() => onSelectWord(word.id)}
+         variant={active ? "default" : "outline"}
+        >
+         <span
+          className="font-hanzi-display block font-black leading-tight"
+          lang="zh-CN"
+         >
+          {word.word}
+         </span>
+        </Button>
+       );
+      })}
+     </div>
+    ) : (
+     <p className="rounded-xl bg-bg-subtle p-3 text-sm font-semibold text-text-muted">
+      Không có từ phù hợp bộ lọc.
+     </p>
+    )}
+   </div>
+  </Card>
  );
 }

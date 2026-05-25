@@ -347,12 +347,7 @@ export function ModuleSplitWorkspace({
      </Button>
     </div>
 
-    <Tabs
-     value={activeModule}
-     items={flatTabs}
-     onValueChange={onSelectModule}
-     className="hanzihome-module-tabs grid gap-2.5"
-    >
+    <Tabs value={activeModule} items={flatTabs} onValueChange={onSelectModule}>
      {singleContent}
     </Tabs>
    </div>

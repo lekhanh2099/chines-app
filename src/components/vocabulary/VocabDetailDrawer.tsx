@@ -31,6 +31,10 @@ type HanziWriterInstance = {
  hideCharacter?: (options?: { duration?: number }) => Promise<unknown>;
 };
 
+function getThemeColor(name: string) {
+ return getComputedStyle(document.documentElement).getPropertyValue(name).trim();
+}
+
 function getDisplayMeaning(
  mode: SmartSelectionMode,
  data: ReturnType<typeof useSmartSelectionInsights>["data"],
@@ -716,7 +720,7 @@ function CharacterWriterCard({ character }: { character: string }) {
    container.textContent = character;
    container.style.fontSize = "88px";
    container.style.fontWeight = "700";
-   container.style.color = "#0f172a";
+   container.style.color = getThemeColor("--foreground");
   };
 
   const drawGrid = () => {
@@ -732,12 +736,13 @@ function CharacterWriterCard({ character }: { character: string }) {
    svg.style.zIndex = "0";
    svg.style.pointerEvents = "none";
    svg.style.opacity = "0.15";
+   svg.style.color = getThemeColor("--border");
    svg.innerHTML = `
-    <rect width="160" height="160" fill="none" stroke="#94a3b8" stroke-width="1.5"/>
-    <line x1="80" y1="0" x2="80" y2="160" stroke="#94a3b8" stroke-width="0.8" stroke-dasharray="4,3"/>
-    <line x1="0" y1="80" x2="160" y2="80" stroke="#94a3b8" stroke-width="0.8" stroke-dasharray="4,3"/>
-    <line x1="0" y1="0" x2="160" y2="160" stroke="#94a3b8" stroke-width="0.5" stroke-dasharray="4,3"/>
-    <line x1="160" y1="0" x2="0" y2="160" stroke="#94a3b8" stroke-width="0.5" stroke-dasharray="4,3"/>
+    <rect width="160" height="160" fill="none" stroke="currentColor" stroke-width="1.5"/>
+    <line x1="80" y1="0" x2="80" y2="160" stroke="currentColor" stroke-width="0.8" stroke-dasharray="4,3"/>
+    <line x1="0" y1="80" x2="160" y2="80" stroke="currentColor" stroke-width="0.8" stroke-dasharray="4,3"/>
+    <line x1="0" y1="0" x2="160" y2="160" stroke="currentColor" stroke-width="0.5" stroke-dasharray="4,3"/>
+    <line x1="160" y1="0" x2="0" y2="160" stroke="currentColor" stroke-width="0.5" stroke-dasharray="4,3"/>
    `;
    container.insertBefore(svg, container.firstChild);
   };
@@ -746,6 +751,10 @@ function CharacterWriterCard({ character }: { character: string }) {
    .then(async (module) => {
     if (!isActive) return;
     const HanziWriter = module.default;
+    const strokeColor = getThemeColor("--foreground");
+    const radicalColor = getThemeColor("--primary");
+    const outlineColor = getThemeColor("--border");
+    const drawingColor = getThemeColor("--destructive");
 
     try {
      const charData = await HanziWriter.loadCharacterData(character);
@@ -757,10 +766,10 @@ function CharacterWriterCard({ character }: { character: string }) {
       padding: 10,
       strokeAnimationSpeed: 1,
       delayBetweenStrokes: 200,
-      strokeColor: "#1e293b",
-      radicalColor: "#2563eb",
-      outlineColor: "#cbd5e1",
-      drawingColor: "#dc2626",
+      strokeColor,
+      radicalColor,
+      outlineColor,
+      drawingColor,
       showOutline: true,
       showCharacter: true,
       charDataLoader: () => charData,

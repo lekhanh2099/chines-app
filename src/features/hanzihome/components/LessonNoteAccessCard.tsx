@@ -169,7 +169,7 @@ function ReadingPane({
 }) {
  return (
   <section className={className}>
-   <div className="border-b border-blue-100 bg-blue-50 px-4 py-2 text-xs font-black uppercase tracking-wide text-blue-700">
+   <div className="border-b border-info/20 bg-info-subtle px-4 py-2 text-xs font-black uppercase tracking-wide text-info-text">
     Bài đọc
    </div>
 
@@ -196,7 +196,7 @@ function NotePane({
 }) {
  return (
   <section className={className}>
-   <div className="border-b border-orange-100 bg-orange-50 px-4 py-2 text-xs font-black uppercase tracking-wide text-orange-700">
+   <div className="border-b border-warning/20 bg-warning-subtle px-4 py-2 text-xs font-black uppercase tracking-wide text-warning-text">
     Ghi chú
    </div>
 
@@ -257,10 +257,10 @@ function LessonSplitNoteEditor({
   <div className="grid gap-3">
    <div className="flex flex-wrap items-center justify-between gap-3">
     <div className="flex flex-wrap gap-2">
-     <span className="rounded-full bg-blue-50 px-3 py-1 text-xs font-black uppercase tracking-wide text-blue-700">
+     <span className="rounded-full bg-info-subtle px-3 py-1 text-xs font-black uppercase tracking-wide text-info-text">
       Bài đọc
      </span>
-     <span className="rounded-full bg-orange-50 px-3 py-1 text-xs font-black uppercase tracking-wide text-orange-700">
+     <span className="rounded-full bg-warning-subtle px-3 py-1 text-xs font-black uppercase tracking-wide text-warning-text">
       Ghi chú
      </span>
     </div>
@@ -382,10 +382,6 @@ export function LessonNoteAccessCard({ lesson }: LessonNoteAccessCardProps) {
        <h2 className="text-xl font-black text-text-primary">
         Ghi chú riêng của bài
        </h2>
-       <p className="text-sm font-semibold text-text-muted">
-        Desktop có split view. Mobile dùng nút chuyển Bài đọc / Ghi chú để đỡ
-        rối.
-       </p>
       </div>
      </div>
 

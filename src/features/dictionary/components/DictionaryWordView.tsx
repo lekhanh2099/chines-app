@@ -48,12 +48,12 @@ function DictionaryWordView({ viewModel }: DictionaryWordViewProps) {
  }
 
  return (
-  <PageContainer className="bg-white">
+  <PageContainer className="bg-bg-primary">
    <div className="mx-auto flex w-full max-w-full  flex-col gap-5">
     <div className="flex flex-wrap items-center justify-between gap-3">
      <Link
       href="/hanzihome"
-      className="inline-flex h-12 items-center gap-2 rounded-2xl border-2 border-stone-200 bg-white px-4 text-sm font-black text-stone-700 shadow-theme-sm transition-colors hover:bg-stone-50"
+      className="inline-flex h-12 items-center gap-2 rounded-xl border border-border-default bg-bg-card px-4 text-sm font-black text-text-secondary shadow-theme-sm transition-colors hover:bg-bg-subtle"
      >
       <ArrowLeft className="h-4 w-4" />
       HanziHome
@@ -62,7 +62,7 @@ function DictionaryWordView({ viewModel }: DictionaryWordViewProps) {
      <Button
       variant="outline"
       size="sm"
-      className="h-12rounded-2xl border-2 border-stone-200 font-black shadow-theme-sm"
+      className="h-12 rounded-xl font-black shadow-theme-sm"
       onClick={viewModel.requestAiAnalysis}
       disabled={viewModel.isAiLoading}
       isLoading={viewModel.isAiLoading}

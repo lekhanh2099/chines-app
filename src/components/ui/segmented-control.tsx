@@ -51,7 +51,7 @@ export function SegmentedControl<T extends string>({
  return (
   <div
    className={cn(
-    "no-scrollbar flex w-full max-w-full min-w-0 items-center gap-1 overflow-x-auto overscroll-x-contain rounded-xl bg-bg-subtle p-1",
+    "no-scrollbar flex w-full max-w-full min-w-0 items-center gap-1 overflow-x-auto overscroll-x-contain rounded-xl bg-bg-subtle p-1 mb-2",
     className,
    )}
   >

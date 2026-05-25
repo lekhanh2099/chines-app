@@ -57,7 +57,7 @@ export function HanziStrokeWriter({
     strokeHighlightSpeed: 1,
     delayBetweenStrokes: 90,
     delayBetweenLoops: 700,
-    strokeColor: "#1f2937",
+    strokeColor: "#d44616",
     radicalColor: "#2563eb",
     outlineColor: "#e5e7eb",
     highlightColor: "#ef4444",

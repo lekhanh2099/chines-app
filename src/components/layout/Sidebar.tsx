@@ -25,7 +25,6 @@ type NavItem = {
  icon: typeof Home;
  href: string;
  badge?: string;
- tone?: "red" | "orange";
 };
 
 const mainItems: NavItem[] = [
@@ -35,7 +34,6 @@ const mainItems: NavItem[] = [
   icon: Sparkles,
   href: "/hanzihome",
   badge: "JSON",
-  tone: "orange",
  },
  {
   name: "Tổng hợp từ",
@@ -102,19 +100,14 @@ function NavRow({
     "group flex h-12 items-center gap-3 rounded-xl border-2 text-[15px] font-black transition-all",
     collapsed ? "w-12 justify-center px-0" : "px-4",
     active
-     ? "border-orange-300 bg-orange-50 text-orange-700 shadow-theme-sm"
+     ? "border-primary/30 bg-accent-subtle text-accent-text shadow-theme-sm"
      : "border-transparent text-text-muted hover:border-border-hover hover:bg-bg-subtle hover:text-text-primary",
    )}
   >
    <Icon className="h-5 w-5 shrink-0" />
    {!collapsed && <span className="min-w-0 flex-1 truncate">{item.name}</span>}
    {!collapsed && item.badge && (
-    <span
-     className={cn(
-      "rounded-full px-2 py-0.5 text-[11px] font-black",
-      item.tone === "red" ? "" : "bg-orange-500",
-     )}
-    >
+    <span className="rounded-full bg-primary px-2 py-0.5 text-[11px] font-black text-primary-foreground">
      {item.badge}
     </span>
    )}
@@ -160,19 +153,9 @@ export function Sidebar() {
      )}
     >
      <Link href="/" className="flex min-w-0 items-center gap-3">
-      <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border-2 border-yellow-300 bg-yellow-100 shadow-theme-sm">
+      <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border-2 border-primary/30 bg-accent-subtle text-accent-text shadow-theme-sm">
        <span className="text-2xl">汉</span>
       </div>
-      {!isCollapsed && (
-       <div className="min-w-0">
-        <p className="truncate text-2xl font-black tracking-normal text-red-500">
-         HanziHome
-        </p>
-        <p className="truncate text-xs font-bold text-text-muted">
-         Học tiếng Trung cá nhân
-        </p>
-       </div>
-      )}
      </Link>
     </div>
 
@@ -230,7 +213,7 @@ export function Sidebar() {
         <Flame className="h-4 w-4" />
         Học theo bài
        </div>
-       <p className="text-xs font-bold text-stone-500">
+       <p className="text-xs font-bold text-text-muted">
         Chọn một bài HanziHome rồi học từ vựng, ngữ pháp và bộ thủ.
        </p>
       </div>
