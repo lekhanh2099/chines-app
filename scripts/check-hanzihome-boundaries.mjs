@@ -84,7 +84,7 @@ const checks = [
   },
   {
     name: "Course lessons hook tồn tại",
-    test(file, content) {
+    test() {
       return [];
     },
   },

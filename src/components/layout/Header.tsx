@@ -8,7 +8,7 @@ import { useTheme } from "./ThemeProvider";
 import { useVocabInspector } from "@/components/vocabulary/VocabInspectorProvider";
 import { containsChinese } from "@/lib/chinese-utils";
 import { useDictionaryLookupStore } from "@/stores/dictionary-lookup-store";
-import { cn } from "@/lib/utils";
+import { Button } from "@/components/ui/button";
 
 export function Header({ user }: { user?: User | null }) {
  const { theme, toggleTheme } = useTheme();
@@ -55,33 +55,23 @@ export function Header({ user }: { user?: User | null }) {
    </form>
 
    <div className="flex min-w-0 shrink-0 items-center gap-1.5 sm:gap-2 lg:gap-3">
-    <button
+    <Button
      type="button"
      onClick={() => toggleLookup(pathname)}
-     className={cn(
-      "hidden h-11 items-center gap-2 rounded-xl border-2 px-3 text-sm font-black transition-colors md:flex",
-      lookupEnabled
-       ? "border-primary/30 bg-accent-subtle text-accent-text"
-       : "border-border-default bg-bg-card text-text-muted hover:bg-bg-subtle",
-     )}
+     variant={lookupEnabled ? "default" : "outline"}
      title="Bật/Tắt tra từ tự động"
     >
      <BookOpenCheck className="h-5 w-5" />
      {lookupEnabled ? "Tra từ bật" : "Tra từ tắt"}
-    </button>
+    </Button>
 
-    <button
-     type="button"
-     onClick={toggleTheme}
-     className="flex h-10 w-10 items-center justify-center rounded-xl border border-border-default bg-bg-card text-text-primary shadow-theme-sm transition-colors hover:bg-bg-subtle sm:h-11 sm:w-11"
-     aria-label="Toggle theme"
-    >
+    <Button type="button" onClick={toggleTheme} aria-label="Toggle theme">
      {theme === "light" ? (
       <Moon className="h-5 w-5" />
      ) : (
       <Sun className="h-5 w-5" />
      )}
-    </button>
+    </Button>
 
     <div className="hidden h-11 items-center gap-2 rounded-xl px-3 text-sm font-black text-text-secondary lg:flex">
      <span className="text-lg">🇻🇳</span>

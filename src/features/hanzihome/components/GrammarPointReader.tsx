@@ -7,6 +7,7 @@ import { Card } from "@/components/ui/card";
 import { GrammarEditDialog } from "@/features/hanzihome/components/GrammarEditDialog";
 import { InlineDraftItemEditDialog } from "@/features/hanzihome/components/InlineDraftItemEditDialog";
 import { MarkdownContent } from "@/features/hanzihome/components/MarkdownContent";
+import { SaveMemoryTipButton } from "@/features/hanzihome/memory-tips/SaveMemoryTipButton";
 import type {
  GrammarViewModel,
  LearningStatus,
@@ -90,8 +91,30 @@ export function GrammarPointReader({
         kind="grammar"
         draftId={editDraftId}
         itemId={editItemId}
-       />
+        />
       )}
+
+      <SaveMemoryTipButton
+       payload={{
+        tipType: "grammar",
+        title: point.cleanTitle || point.title || "Nhắc nhanh ngữ pháp",
+        body:
+         point.core ||
+         point.detailSections?.[0]?.lines[0] ||
+         point.contentMd ||
+         point.cleanTitle,
+        formula: point.structuresView[0],
+        exampleZh: point.examplesParsed[0]?.zh,
+        examplePinyin: point.examplesParsed[0]?.pinyin,
+        exampleVi: point.examplesParsed[0]?.vi,
+        sourceType: "grammar",
+        sourceLessonId: lessonId,
+        sourceItemId: point.id,
+        sourceLabel: point.cleanTitle || point.title,
+        tags: ["grammar"],
+        weight: 3,
+       }}
+      />
 
       <Button variant={bookmarked ? "default" : "outline"} onClick={onBookmark}>
        <Bookmark className="h-4 w-4" />

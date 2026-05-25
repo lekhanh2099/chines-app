@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { InlineDraftItemEditDialog } from "@/features/hanzihome/components/InlineDraftItemEditDialog";
 import { VocabEditDialog } from "@/features/hanzihome/components/VocabEditDialog";
+import { SaveMemoryTipButton } from "@/features/hanzihome/memory-tips/SaveMemoryTipButton";
 import type {
  LearningStatus,
  VocabViewModel,
@@ -140,8 +141,25 @@ export function VocabDetailPanel({
         kind="vocab"
         draftId={editDraftId}
         itemId={editItemId}
-       />
+        />
       )}
+
+      <SaveMemoryTipButton
+       payload={{
+        tipType: "vocab",
+        title: `${word.word} · ${word.pinyin}`,
+        body: `${word.hanViet} · ${word.meaning}`,
+        exampleZh: word.examplesParsed[0]?.zh,
+        examplePinyin: word.examplesParsed[0]?.pinyin,
+        exampleVi: word.examplesParsed[0]?.vi,
+        sourceType: "vocab",
+        sourceLessonId: lessonId,
+        sourceItemId: word.id,
+        sourceLabel: word.word,
+        tags: ["vocab", word.category].filter(Boolean),
+        weight: 2,
+       }}
+      />
 
       <Button variant={bookmarked ? "default" : "outline"} onClick={onBookmark}>
        <Bookmark className="h-4 w-4" />

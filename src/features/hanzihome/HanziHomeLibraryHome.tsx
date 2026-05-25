@@ -16,6 +16,7 @@ import {
  useLessonDraftsQuery,
 } from "@/features/hanzihome/lesson-drafts";
 import { useHanziHomeCatalogData } from "@/features/hanzihome/hooks/useHanziHomeCatalogData";
+import { GlobalMemoryTipCard } from "@/features/hanzihome/memory-tips/GlobalMemoryTipCard";
 import type {
  HanziHomeCatalogCourse,
  HanziHomeCourseBook,
@@ -45,7 +46,8 @@ export function HanziHomeLibraryHome() {
   [draftsQuery.data],
  );
  const unpublishedDrafts = useMemo(
-  () => (draftsQuery.data ?? []).filter((draft) => draft.status !== "published"),
+  () =>
+   (draftsQuery.data ?? []).filter((draft) => draft.status !== "published"),
   [draftsQuery.data],
  );
 
@@ -58,30 +60,19 @@ export function HanziHomeLibraryHome() {
   [catalogData.courses, customCatalogQuery.data?.courses],
  );
  const books = useMemo(
-  () =>
-   mergeBooks(catalogData.books, customCatalogQuery.data?.books ?? []),
+  () => mergeBooks(catalogData.books, customCatalogQuery.data?.books ?? []),
   [catalogData.books, customCatalogQuery.data?.books],
  );
 
  return (
   <main className="flex w-full max-w-full flex-col gap-3 px-4 py-4 lg:px-8">
-   <section className="flex flex-wrap items-end justify-between gap-4">
-    <div className="grid max-w-3xl gap-3">
-     <p className="text-xs font-black uppercase tracking-[0.2em] text-text-muted">
-      HanziHome Library
-     </p>
-
-     <h1 className="text-4xl font-black tracking-tight text-text-primary md:text-5xl">
-      Chọn bộ học liệu
-     </h1>
-
-     <p className="text-base font-semibold leading-relaxed text-text-secondary">
-      Vào từng course để học theo bài. Tạo bài mới ở đúng course, rồi sửa từ
-      vựng, ngữ pháp và bài khóa trong workspace.
-     </p>
+   <section className="flex gap-4 ">
+    <div className="grid gap-3">
+     <GlobalMemoryTipCard compact />
+     <div className="flex justify-start xl:justify-end">
+      <CreateCourseDialog />
+     </div>
     </div>
-
-    <CreateCourseDialog />
    </section>
 
    <DraftRecoveryPanel
@@ -264,18 +255,14 @@ function getCourseStats(
   lessonCount: course.stats.lessonCount + courseDraftLessons.length,
   vocabCount:
    course.stats.vocabCount +
-   courseDraftLessons.reduce(
-    (sum, lesson) => sum + lesson.vocab.length,
-    0,
-   ),
+   courseDraftLessons.reduce((sum, lesson) => sum + lesson.vocab.length, 0),
   grammarCount:
    course.stats.grammarCount +
-   courseDraftLessons.reduce(
-    (sum, lesson) => sum + lesson.grammar.length,
-    0,
-   ),
+   courseDraftLessons.reduce((sum, lesson) => sum + lesson.grammar.length, 0),
   fallbackLessonId:
-   courseDraftLessons.at(-1)?.id || course.fallbackLessonId || course.lastLessonId,
+   courseDraftLessons.at(-1)?.id ||
+   course.fallbackLessonId ||
+   course.lastLessonId,
   suggestedLessonNumber:
    Math.max(course.stats.lessonCount, maxDraftLessonNumber) + 1,
  };

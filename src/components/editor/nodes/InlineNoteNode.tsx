@@ -124,12 +124,15 @@ function InlineNoteComponent({
  useLayoutEffect(() => {
   if (!showTooltip) return;
 
-  updateTooltipPosition();
+  const positionTimeoutId = window.setTimeout(() => {
+   updateTooltipPosition();
+  }, 0);
 
   window.addEventListener("scroll", updateTooltipPosition, true);
   window.addEventListener("resize", updateTooltipPosition);
 
   return () => {
+   window.clearTimeout(positionTimeoutId);
    window.removeEventListener("scroll", updateTooltipPosition, true);
    window.removeEventListener("resize", updateTooltipPosition);
   };

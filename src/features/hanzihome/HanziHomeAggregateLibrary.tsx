@@ -143,7 +143,7 @@ export function HanziHomeAggregateLibrary({ kind }: { kind: AggregateKind }) {
   staleTime: 0,
  });
 
- const items = query.data ?? [];
+ const items = useMemo(() => query.data ?? [], [query.data]);
  const groupedItems = useMemo(() => groupByLesson(items), [items]);
 
  const hasActiveFilters = Boolean(

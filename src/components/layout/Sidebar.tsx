@@ -11,6 +11,7 @@ import {
  BookOpen,
  GraduationCap,
  Layers3,
+ Lightbulb,
  LogOut,
  NotebookPen,
  Sparkles,
@@ -44,6 +45,11 @@ const mainItems: NavItem[] = [
   name: "Tổng hợp ngữ pháp",
   icon: GraduationCap,
   href: "/hanzihome/grammar",
+ },
+ {
+  name: "Nhắc nhanh",
+  icon: Lightbulb,
+  href: "/hanzihome/memory-tips",
  },
  {
   name: "Bộ thủ",
@@ -143,12 +149,12 @@ export function Sidebar() {
    <aside
     className={cn(
      "hidden h-full shrink-0 flex-col border-r border-border-default bg-bg-card shadow-theme-sm transition-all duration-200 md:flex",
-     isCollapsed ? "w-[84px]" : "w-[292px]",
+     isCollapsed ? "w-21" : "w-73",
     )}
    >
     <div
      className={cn(
-      "flex h-[76px] items-center border-b border-border-default",
+      "flex h-19 items-center border-b border-border-default",
       isCollapsed ? "justify-center px-3" : "px-5",
      )}
     >
