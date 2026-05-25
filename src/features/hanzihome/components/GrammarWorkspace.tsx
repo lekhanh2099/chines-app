@@ -138,9 +138,14 @@ export function GrammarWorkspace({
 
  const reading = useMemo(
   () =>
+   extractReadingFromMarkdown(lesson.notes?.applicationMarkdown) ??
    extractReadingFromMarkdown(lesson.notes?.overviewMarkdown) ??
    extractGrammarReading(lesson.grammar),
-  [lesson.grammar, lesson.notes?.overviewMarkdown],
+  [
+   lesson.grammar,
+   lesson.notes?.applicationMarkdown,
+   lesson.notes?.overviewMarkdown,
+  ],
  );
  const effectiveSelectedPointId = useMemo(() => {
   if (selectedPointId === ALL_GRAMMAR_POINTS_ID) return ALL_GRAMMAR_POINTS_ID;
@@ -290,6 +295,14 @@ function GrammarReadingReader({ reading }: { reading: GrammarReading }) {
  );
 }
 
+function hasExampleDetailSection(point: GrammarViewModel) {
+ return Boolean(
+  point.detailSections?.some((section) =>
+   section.title.toLocaleLowerCase("vi-VN").includes("ví dụ"),
+  ),
+ );
+}
+
 function AllGrammarPointReader({
  points,
  draftId,
@@ -345,7 +358,33 @@ function AllGrammarPointReader({
        </section>
       )}
 
-      {point.examplesParsed.length > 0 && (
+      {point.detailSections && point.detailSections.length > 0 && (
+       <section className="grid gap-2">
+        <h3 className="text-sm font-black text-text-primary">
+         Chi tiết nhập từ markdown
+        </h3>
+        {point.detailSections.map((section) => (
+         <div
+          key={section.key}
+          className="grid gap-2 rounded-xl border border-border-default bg-bg-subtle p-3"
+         >
+          <h4 className="text-sm font-black text-text-primary">
+           {section.title}
+          </h4>
+          {section.lines.map((line, lineIndex) => (
+           <p
+            key={`${section.key}-${lineIndex}`}
+            className="text-sm leading-relaxed text-text-secondary"
+           >
+            {line}
+           </p>
+          ))}
+         </div>
+        ))}
+       </section>
+      )}
+
+      {!hasExampleDetailSection(point) && point.examplesParsed.length > 0 && (
        <section className="grid gap-2">
         <h3 className="text-sm font-black text-text-primary">Ví dụ</h3>
         {point.examplesParsed.slice(0, 5).map((example) => (

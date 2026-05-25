@@ -126,6 +126,12 @@ export function GrammarPointReader({
 }
 
 function StructuredGrammarContent({ point }: { point: GrammarViewModel }) {
+ const hasExampleDetailSection = Boolean(
+  point.detailSections?.some((section) =>
+   section.title.toLocaleLowerCase("vi-VN").includes("ví dụ"),
+  ),
+ );
+
  return (
   <>
    {point.structuresView.length > 0 && (
@@ -142,7 +148,31 @@ function StructuredGrammarContent({ point }: { point: GrammarViewModel }) {
     </section>
    )}
 
-   {point.examplesParsed.length > 0 && (
+   {point.detailSections && point.detailSections.length > 0 && (
+    <section className="grid gap-2">
+     <h3 className="text-base font-black text-text-primary">Chi tiết</h3>
+     {point.detailSections.map((section) => (
+      <div
+       key={section.key}
+       className="grid gap-2 rounded-xl border border-border-default bg-bg-subtle p-3"
+      >
+       <h4 className="text-sm font-black text-text-primary">
+        {section.title}
+       </h4>
+       {section.lines.map((line, index) => (
+        <p
+         key={`${section.key}-${index}`}
+         className="text-sm leading-relaxed text-text-secondary"
+        >
+         {line}
+        </p>
+       ))}
+      </div>
+     ))}
+    </section>
+   )}
+
+   {!hasExampleDetailSection && point.examplesParsed.length > 0 && (
     <section className="grid gap-2">
      <h3 className="text-base font-black text-text-primary">Ví dụ nhanh</h3>
      {point.examplesParsed.map((example) => (
@@ -158,27 +188,6 @@ function StructuredGrammarContent({ point }: { point: GrammarViewModel }) {
          {example.vi}
         </p>
        )}
-      </div>
-     ))}
-    </section>
-   )}
-
-   {point.detailSections && point.detailSections.length > 0 && (
-    <section className="grid gap-2">
-     <h3 className="text-base font-black text-text-primary">Chi tiết</h3>
-     {point.detailSections.map((section) => (
-      <div
-       key={section.key}
-       className="grid gap-2 rounded-xl border border-border-default bg-bg-subtle p-3"
-      >
-       <h4 className="text-sm font-black text-text-primary">
-        {section.title}
-       </h4>
-       {section.lines.map((line) => (
-        <p key={line} className="text-sm leading-relaxed text-text-secondary">
-         {line}
-        </p>
-       ))}
       </div>
      ))}
     </section>
