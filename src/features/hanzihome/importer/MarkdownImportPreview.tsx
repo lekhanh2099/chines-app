@@ -373,7 +373,7 @@ function ResultSummary({
     <div className="grid gap-3">
      <div className="flex items-center gap-2">
       <GitBranch className="h-5 w-5 text-text-muted" />
-      <h2 className="text-lg font-black text-text-primary">Outline</h2>
+      <h2 id="import-outline" className="scroll-mt-24 text-lg font-black text-text-primary">Outline</h2>
      </div>
 
      {result.documentTitle && (
@@ -398,7 +398,7 @@ function ResultSummary({
 
    <Card padding="lg" className="rounded-xl">
     <div className="grid gap-3">
-     <h2 className="text-lg font-black text-text-primary">Mapped result</h2>
+     <h2 id="import-mapped" className="scroll-mt-24 text-lg font-black text-text-primary">Mapped result</h2>
      {result.items.length === 0 ? (
       <p className="rounded-xl border border-dashed border-border-default p-4 text-sm font-semibold text-text-muted">
        Không có item nào khớp item root rules của profile.
@@ -415,7 +415,7 @@ function ResultSummary({
 
    <Card padding="lg" className="rounded-xl">
     <div className="grid gap-3">
-     <h2 className="text-lg font-black text-text-primary">Special sections</h2>
+     <h2 id="import-special" className="scroll-mt-24 text-lg font-black text-text-primary">Special sections</h2>
      {result.specialSections.length === 0 ? (
       <p className="text-sm font-semibold text-text-muted">
        Không có reading/summary section.
@@ -432,7 +432,7 @@ function ResultSummary({
 
    <Card padding="lg" className="rounded-xl">
     <div className="grid gap-3">
-     <h2 className="text-lg font-black text-text-primary">
+     <h2 id="import-unmapped" className="scroll-mt-24 text-lg font-black text-text-primary">
       Unmapped sections
      </h2>
      {result.unmappedSections.length === 0 ? (
@@ -464,7 +464,7 @@ function ResultSummary({
      <div className="grid gap-3">
       <div className="flex items-center gap-2">
        <AlertTriangle className="h-5 w-5 text-text-muted" />
-       <h2 className="text-lg font-black text-text-primary">Warnings</h2>
+       <h2 id="import-warnings" className="scroll-mt-24 text-lg font-black text-text-primary">Warnings</h2>
       </div>
       <ul className="grid gap-2">
        {result.warnings.map((warning, index) => (
@@ -743,6 +743,295 @@ function ProfileSettingsPanel({
  );
 }
 
+
+type ImportStep = "input" | "review" | "apply";
+
+function getImportHealth(result: AppliedParseResult | null) {
+ if (!result) {
+  return {
+   canApply: false,
+   blockingWarnings: ["Chưa parse markdown."],
+   softWarnings: [],
+  };
+ }
+
+ const blockingWarnings: string[] = [];
+ const softWarnings: string[] = [];
+
+ if (result.items.length === 0 && result.specialSections.length === 0) {
+  blockingWarnings.push(
+   "Không map được item nào. Đừng Apply nếu chưa chỉnh markdown hoặc profile.",
+  );
+ }
+
+ if (result.unmappedSections.length > 0) {
+  softWarnings.push(`${result.unmappedSections.length} section chưa map.`);
+ }
+
+ if (result.warnings.length > 0) {
+  softWarnings.push(`${result.warnings.length} warning từ parser.`);
+ }
+
+ return {
+  canApply: blockingWarnings.length === 0,
+  blockingWarnings,
+  softWarnings,
+ };
+}
+
+function getDraftCounts(draft: LessonDraft) {
+ return {
+  vocabCount: draft.content.vocab.length,
+  grammarCount: draft.content.grammarPoints.length,
+  flashcardCount: draft.content.flashcards.length,
+ };
+}
+
+function ImportStepper({
+ step,
+ canOpenReview,
+ canOpenApply,
+ onStepChange,
+}: {
+ step: ImportStep;
+ canOpenReview: boolean;
+ canOpenApply: boolean;
+ onStepChange: (step: ImportStep) => void;
+}) {
+ const steps: Array<{
+  key: ImportStep;
+  label: string;
+  description: string;
+  enabled: boolean;
+ }> = [
+  {
+   key: "input",
+   label: "1. Dán markdown",
+   description: "Chọn target, mode, profile rồi parse.",
+   enabled: true,
+  },
+  {
+   key: "review",
+   label: "2. Kiểm tra",
+   description: "Xem mapped result, warning và unmapped section.",
+   enabled: canOpenReview,
+  },
+  {
+   key: "apply",
+   label: "3. Apply",
+   description: "Xác nhận trước khi ghi vào draft.",
+   enabled: canOpenApply,
+  },
+ ];
+
+ const activeIndex = steps.findIndex((item) => item.key === step);
+
+ return (
+  <div className="grid gap-2 rounded-xl border border-border-default bg-bg-card p-3 shadow-theme-sm md:grid-cols-3">
+   {steps.map((item, index) => {
+    const active = item.key === step;
+    const done = index < activeIndex;
+
+    return (
+     <button
+      key={item.key}
+      type="button"
+      disabled={!item.enabled}
+      onClick={() => onStepChange(item.key)}
+      className={cn(
+       "rounded-xl border px-3 py-2 text-left transition-colors",
+       active
+        ? "border-accent-muted bg-accent-subtle text-text-primary"
+        : done
+          ? "border-border-default bg-bg-subtle text-text-secondary hover:bg-bg-elevated"
+          : "border-border-default bg-bg-primary text-text-muted hover:bg-bg-subtle",
+       !item.enabled && "cursor-not-allowed opacity-50 hover:bg-bg-primary",
+      )}
+     >
+      <p className="text-sm font-black">{item.label}</p>
+      <p className="mt-1 text-xs font-semibold">{item.description}</p>
+     </button>
+    );
+   })}
+  </div>
+ );
+}
+
+function ImportWarningPanel({
+ result,
+ applyMode,
+}: {
+ result: AppliedParseResult | null;
+ applyMode: ApplyImportMode;
+}) {
+ const health = getImportHealth(result);
+ const hasAnyWarning =
+  health.blockingWarnings.length > 0 ||
+  health.softWarnings.length > 0 ||
+  applyMode === "replace";
+
+ if (!hasAnyWarning) {
+  return (
+   <Card padding="md" className="rounded-xl border-emerald-200 bg-emerald-50">
+    <p className="text-sm font-black text-emerald-800">
+     Không thấy warning lớn. Vẫn nên lướt preview trước khi Apply.
+    </p>
+   </Card>
+  );
+ }
+
+ return (
+  <Card padding="md" className="rounded-xl border-amber-200 bg-amber-50">
+   <div className="grid gap-2">
+    <div className="flex items-center gap-2">
+     <AlertTriangle className="h-5 w-5 text-amber-700" />
+     <h3 className="text-sm font-black text-amber-900">
+      Cần kiểm tra trước khi Apply
+     </h3>
+    </div>
+
+    {applyMode === "replace" && (
+     <p className="rounded-lg bg-white/70 px-3 py-2 text-sm font-bold text-amber-900">
+      Replace target sẽ thay thế dữ liệu hiện tại của tab đang chọn.
+     </p>
+    )}
+
+    {health.blockingWarnings.map((warning) => (
+     <p
+      key={warning}
+      className="rounded-lg bg-red-50 px-3 py-2 text-sm font-bold text-red-700"
+     >
+      {warning}
+     </p>
+    ))}
+
+    {health.softWarnings.map((warning) => (
+     <p
+      key={warning}
+      className="rounded-lg bg-white/70 px-3 py-2 text-sm font-bold text-amber-900"
+     >
+      {warning}
+     </p>
+    ))}
+   </div>
+  </Card>
+ );
+}
+
+function ImportStatGrid({
+ result,
+ profile,
+}: {
+ result: AppliedParseResult;
+ profile: ParseProfile;
+}) {
+ return (
+  <div className="grid gap-3 sm:grid-cols-4">
+   <Card padding="sm" className="rounded-xl">
+    <p className="text-xs font-black uppercase tracking-wide text-text-muted">
+     Items
+    </p>
+    <p className="text-2xl font-black text-text-primary">
+     {result.items.length}
+    </p>
+   </Card>
+
+   <Card padding="sm" className="rounded-xl">
+    <p className="text-xs font-black uppercase tracking-wide text-text-muted">
+     Special
+    </p>
+    <p className="text-2xl font-black text-text-primary">
+     {result.specialSections.length}
+    </p>
+   </Card>
+
+   <Card padding="sm" className="rounded-xl">
+    <p className="text-xs font-black uppercase tracking-wide text-text-muted">
+     Unmapped
+    </p>
+    <p className="text-2xl font-black text-text-primary">
+     {result.unmappedSections.length}
+    </p>
+   </Card>
+
+   <Card padding="sm" className="rounded-xl">
+    <p className="text-xs font-black uppercase tracking-wide text-text-muted">
+     Profile
+    </p>
+    <p className="truncate text-lg font-black text-text-primary">
+     {profile.name}
+    </p>
+   </Card>
+  </div>
+ );
+}
+
+
+
+function jumpToImportSection(id: string) {
+ document.getElementById(id)?.scrollIntoView({
+  behavior: "smooth",
+  block: "start",
+ });
+}
+
+function QuickJumpButtons({ result }: { result: AppliedParseResult | null }) {
+ if (!result) return null;
+
+ const jumps = [
+  {
+   id: "import-outline",
+   label: `Outline (${countSections(result.doc.sections)})`,
+   show: result.doc.sections.length > 0,
+  },
+  {
+   id: "import-mapped",
+   label: `Items (${result.items.length})`,
+   show: true,
+  },
+  {
+   id: "import-special",
+   label: `Special (${result.specialSections.length})`,
+   show: result.specialSections.length > 0,
+  },
+  {
+   id: "import-unmapped",
+   label: `Unmapped (${result.unmappedSections.length})`,
+   show: result.unmappedSections.length > 0,
+  },
+  {
+   id: "import-warnings",
+   label: `Warnings (${result.warnings.length})`,
+   show: result.warnings.length > 0,
+  },
+ ].filter((item) => item.show);
+
+ if (jumps.length === 0) return null;
+
+ return (
+  <Card padding="sm" className="rounded-xl">
+   <div className="flex flex-wrap items-center gap-2">
+    <span className="text-xs font-black uppercase tracking-wide text-text-muted">
+     Nhảy nhanh
+    </span>
+
+    {jumps.map((item) => (
+     <Button
+      key={item.id}
+      type="button"
+      size="sm"
+      variant="outline"
+      onClick={() => jumpToImportSection(item.id)}
+     >
+      {item.label}
+     </Button>
+    ))}
+   </div>
+  </Card>
+ );
+}
+
+
 type MarkdownImportPreviewProps = {
  draft: LessonDraft;
 };
@@ -752,6 +1041,7 @@ export function MarkdownImportPreview({ draft }: MarkdownImportPreviewProps) {
  const initialProfileState = useMemo(() => getAvailableImportProfiles(), []);
  const [profiles, setProfiles] = useState(initialProfileState.profiles);
  const storageWarnings = initialProfileState.warnings;
+ const [step, setStep] = useState<ImportStep>("input");
  const [markdown, setMarkdown] = useState("");
  const [profileId, setProfileId] = useState(profiles[0]?.id ?? "");
  const selectedProfile = useMemo(
@@ -769,6 +1059,18 @@ export function MarkdownImportPreview({ draft }: MarkdownImportPreviewProps) {
 
  const activeProfile = editableProfile ?? selectedProfile ?? null;
  const applyPreview = result ? getApplyPreviewText(result) : null;
+ const health = getImportHealth(result);
+ const draftCounts = getDraftCounts(draft);
+
+ const resetParsedResult = () => {
+  setResult(null);
+  setStep("input");
+ };
+
+ const handleMarkdownChange = (value: string) => {
+  setMarkdown(value);
+  if (result) resetParsedResult();
+ };
 
  const handleProfileChange = (nextProfileId: string) => {
   const nextProfile =
@@ -777,7 +1079,12 @@ export function MarkdownImportPreview({ draft }: MarkdownImportPreviewProps) {
   setProfileId(nextProfileId);
   setEditableProfile(nextProfile ? cloneProfile(nextProfile) : null);
   setApplyTarget(nextProfile ? getDefaultApplyTarget(nextProfile) : "mixed");
-  setResult(null);
+  resetParsedResult();
+ };
+
+ const handleProfileEdit = (nextProfile: ParseProfile) => {
+  setEditableProfile(nextProfile);
+  if (result) resetParsedResult();
  };
 
  const handleSaveCustomProfile = () => {
@@ -810,6 +1117,7 @@ export function MarkdownImportPreview({ draft }: MarkdownImportPreviewProps) {
   setProfileId(customId);
   setEditableProfile(cloneProfile(savedProfile));
   setResult(null);
+  setStep("input");
 
   toast.success("Đã lưu custom import profile.");
  };
@@ -828,12 +1136,18 @@ export function MarkdownImportPreview({ draft }: MarkdownImportPreviewProps) {
   const doc = markdownToLearningDoc(markdown);
   const nextResult = applyParseProfile(doc, activeProfile);
   setResult(nextResult);
+  setStep("review");
   toast.success(`Parsed ${nextResult.items.length} item.`);
  };
 
  const handleApply = async () => {
   if (!result) {
    toast.error("Parse markdown trước khi apply.");
+   return;
+  }
+
+  if (!health.canApply) {
+   toast.error("Kết quả parse chưa an toàn để apply.");
    return;
   }
 
@@ -855,175 +1169,329 @@ export function MarkdownImportPreview({ draft }: MarkdownImportPreviewProps) {
  };
 
  return (
-  <div className="grid h-[calc(100dvh-11rem)] min-h-[34rem] gap-4 overflow-hidden xl:grid-cols-[minmax(22rem,0.9fr)_minmax(0,1.4fr)]">
-   <aside className="h-full overflow-y-auto pr-1">
-    <Card padding="lg" className="rounded-xl">
-     <div className="grid gap-4">
-      <div>
-       <p className="text-xs font-black uppercase tracking-wide text-text-muted">
-        Markdown import
-       </p>
-       <h2 className="text-xl font-black text-text-primary">
-        Parse bằng profile
-       </h2>
-       <p className="text-sm font-semibold text-text-muted">
-        Parser đọc markdown AST trước rồi mới áp profile. Không dùng AI và chưa
-        tự lưu vào draft.
-       </p>
-      </div>
+  <div className="grid gap-4">
+   <Card padding="md" className="sticky top-0 z-20 rounded-xl bg-bg-card/95 backdrop-blur">
+    <div className="grid gap-3 xl:grid-cols-[minmax(15rem,1.2fr)_minmax(10rem,0.7fr)_minmax(10rem,0.7fr)] xl:items-end">
+     <label className="grid gap-1.5">
+      <span className="text-xs font-black uppercase tracking-wide text-text-muted">
+       Profile
+      </span>
+      <Select value={activeProfile?.id ?? ""} onValueChange={handleProfileChange}>
+       <SelectTrigger className="w-full">
+        <SelectValue placeholder="Chọn parse profile" />
+       </SelectTrigger>
+       <SelectContent>
+        {profiles.map((profile) => (
+         <SelectItem key={profile.id} value={profile.id}>
+          {profile.name}
+         </SelectItem>
+        ))}
+       </SelectContent>
+      </Select>
+     </label>
 
-      <label className="grid gap-2">
-       <span className="text-xs font-black uppercase tracking-wide text-text-muted">
-        Profile
-       </span>
-       <Select value={activeProfile?.id ?? ""} onValueChange={handleProfileChange}>
-        <SelectTrigger className="w-full">
-         <SelectValue placeholder="Chọn parse profile" />
-        </SelectTrigger>
-        <SelectContent>
-         {profiles.map((profile) => (
-          <SelectItem key={profile.id} value={profile.id}>
-           {profile.name}
-          </SelectItem>
-         ))}
-        </SelectContent>
-       </Select>
-      </label>
+     <label className="grid gap-1.5">
+      <span className="text-xs font-black uppercase tracking-wide text-text-muted">
+       Apply vào
+      </span>
+      <Select
+       value={applyTarget}
+       onValueChange={(value) => setApplyTarget(value as ApplyImportTarget)}
+      >
+       <SelectTrigger className="w-full">
+        <SelectValue placeholder="Chọn target" />
+       </SelectTrigger>
+       <SelectContent>
+        {applyTargetOptions.map((option) => (
+         <SelectItem key={option.value} value={option.value}>
+          {option.label}
+         </SelectItem>
+        ))}
+       </SelectContent>
+      </Select>
+     </label>
 
-      {activeProfile && (
-       <div className="grid gap-3">
-        <ProfileSettingsPanel
-         profile={activeProfile}
-         onChange={setEditableProfile}
+     <label className="grid gap-1.5">
+      <span className="text-xs font-black uppercase tracking-wide text-text-muted">
+       Chế độ
+      </span>
+      <Select
+       value={applyMode}
+       onValueChange={(value) => setApplyMode(value as ApplyImportMode)}
+      >
+       <SelectTrigger className="w-full">
+        <SelectValue placeholder="Chọn mode" />
+       </SelectTrigger>
+       <SelectContent>
+        {applyModeOptions.map((option) => (
+         <SelectItem key={option.value} value={option.value}>
+          {option.label}
+         </SelectItem>
+        ))}
+       </SelectContent>
+      </Select>
+     </label>
+
+     <div className="xl:col-span-3">
+      <CollapsibleSection
+       title="Nâng cao: chỉnh profile"
+       summary="Root rule, special sections, field mapping"
+      >
+       {activeProfile ? (
+        <div className="grid gap-3">
+         <ProfileSettingsPanel
+          profile={activeProfile}
+          onChange={handleProfileEdit}
+         />
+         <Button
+          type="button"
+          variant="outline"
+          onClick={handleSaveCustomProfile}
+         >
+          <Save className="h-4 w-4" />
+          Lưu profile custom
+         </Button>
+        </div>
+       ) : (
+        <p className="text-sm font-semibold text-text-muted">
+         Không có profile khả dụng.
+        </p>
+       )}
+      </CollapsibleSection>
+     </div>
+    </div>
+   </Card>
+
+   <ImportStepper
+    step={step}
+    canOpenReview={Boolean(result)}
+    canOpenApply={Boolean(result && health.canApply)}
+    onStepChange={setStep}
+   />
+
+   {step === "input" && (
+    <div className="grid gap-4 xl:grid-cols-[minmax(22rem,0.9fr)_minmax(0,1.1fr)]">
+     <Card padding="lg" className="rounded-xl">
+      <div className="grid gap-4">
+       <div>
+        <p className="text-xs font-black uppercase tracking-wide text-text-muted">
+         Bước 1
+        </p>
+        <h2 className="text-xl font-black text-text-primary">
+         Dán Markdown
+        </h2>
+        <p className="text-sm font-semibold text-text-muted">
+         Dán markdown rồi parse để xem trước. Bước này chưa lưu vào draft.
+        </p>
+       </div>
+
+       <label className="grid gap-2">
+        <span className="text-xs font-black uppercase tracking-wide text-text-muted">
+         Markdown
+        </span>
+        <Textarea
+         value={markdown}
+         onChange={(event) => handleMarkdownChange(event.target.value)}
+         className="min-h-96 font-mono text-xs"
+         placeholder={sampleMarkdown}
         />
+       </label>
+
+       <div className="flex flex-wrap gap-2">
+        <Button type="button" onClick={handleParse}>
+         <WandSparkles className="h-4 w-4" />
+         Parse & xem trước
+        </Button>
         <Button
          type="button"
          variant="outline"
-         onClick={handleSaveCustomProfile}
+         onClick={() => handleMarkdownChange(sampleMarkdown)}
         >
-         <Save className="h-4 w-4" />
-         Lưu profile custom
+         Dùng mẫu
         </Button>
        </div>
-      )}
 
-      <CollapsibleSection
-       title="Apply adapter"
-       summary={`${applyTarget} · ${applyMode}`}
-       defaultOpen
-      >
+       {storageWarnings.length > 0 && (
+        <div className="grid gap-2 rounded-xl border border-border-default bg-bg-subtle p-3">
+         {storageWarnings.map((warning) => (
+          <p key={warning} className="text-sm font-semibold text-text-muted">
+           {warning}
+          </p>
+         ))}
+        </div>
+       )}
+      </div>
+     </Card>
+
+     <section className="grid content-start gap-4">
+      <Card padding="lg" className="rounded-xl">
        <div className="grid gap-3">
-        <div className="grid gap-3 sm:grid-cols-2">
-         <label className="grid gap-2">
-          <span className="text-xs font-bold text-text-muted">Apply vào</span>
-          <Select
-           value={applyTarget}
-           onValueChange={(value) => setApplyTarget(value as ApplyImportTarget)}
-          >
-           <SelectTrigger className="h-9 w-full bg-bg-primary text-sm">
-            <SelectValue placeholder="Chọn target" />
-           </SelectTrigger>
-           <SelectContent>
-            {applyTargetOptions.map((option) => (
-             <SelectItem key={option.value} value={option.value}>
-              {option.label}
-             </SelectItem>
-            ))}
-           </SelectContent>
-          </Select>
-         </label>
-
-         <label className="grid gap-2">
-          <span className="text-xs font-bold text-text-muted">Chế độ</span>
-          <Select
-           value={applyMode}
-           onValueChange={(value) => setApplyMode(value as ApplyImportMode)}
-          >
-           <SelectTrigger className="h-9 w-full bg-bg-primary text-sm">
-            <SelectValue placeholder="Chọn mode" />
-           </SelectTrigger>
-           <SelectContent>
-            {applyModeOptions.map((option) => (
-             <SelectItem key={option.value} value={option.value}>
-              {option.label}
-             </SelectItem>
-            ))}
-           </SelectContent>
-          </Select>
-         </label>
+        <FileText className="h-6 w-6 text-text-muted" />
+        <div>
+         <h3 className="text-lg font-black text-text-primary">
+          Flow import an toàn
+         </h3>
+         <p className="text-sm font-semibold text-text-muted">
+          Import không tự lưu. Parse chỉ tạo preview. Apply ở bước cuối mới ghi
+          vào draft.
+         </p>
         </div>
 
-        {applyPreview && (
-         <div className="grid gap-1 rounded-lg bg-bg-primary p-3 text-xs font-semibold text-text-muted">
-          <p>{applyPreview.grammarCount} grammar item</p>
-          <p>{applyPreview.vocabCount} vocab item</p>
-          <p>{applyPreview.readingCount} reading section</p>
-          <p>{applyPreview.summaryCount} summary section</p>
-          <p>{applyPreview.exerciseCount} exercise set</p>
-         </div>
+        <div className="grid gap-2 text-sm font-semibold text-text-secondary">
+         <p>1. Chọn profile, target, mode ở thanh trên.</p>
+         <p>2. Dán markdown theo format bài.</p>
+         <p>3. Parse để app đọc outline và map field.</p>
+         <p>4. Kiểm tra warning/unmapped section.</p>
+         <p>5. Xác nhận Apply vào đúng tab.</p>
+        </div>
+       </div>
+      </Card>
+
+      <Card padding="lg" className="rounded-xl">
+       <div className="grid gap-2">
+        <h3 className="text-lg font-black text-text-primary">
+         Cảnh báo mode
+        </h3>
+        <p className="text-sm font-semibold text-text-muted">
+         Replace target sẽ thay thế phần đang chọn. Append sẽ thêm vào cuối.
+         Merge by title sẽ cố ghép theo tiêu đề.
+        </p>
+       </div>
+      </Card>
+     </section>
+    </div>
+   )}
+
+   {step === "review" && (
+    <div className="grid gap-4">
+     <Card padding="lg" className="rounded-xl">
+      <div className="flex flex-wrap items-start justify-between gap-3">
+       <div>
+        <p className="text-xs font-black uppercase tracking-wide text-text-muted">
+         Bước 2
+        </p>
+        <h2 className="text-xl font-black text-text-primary">
+         Kiểm tra kết quả parse
+        </h2>
+        <p className="text-sm font-semibold text-text-muted">
+         Xem app đã nhận diện được gì trước khi ghi vào draft.
+        </p>
+       </div>
+
+       <div className="flex flex-wrap gap-2">
+        <Button type="button" variant="outline" onClick={() => setStep("input")}>
+         Sửa markdown/profile
+        </Button>
+        <Button
+         type="button"
+         disabled={!result || !health.canApply}
+         onClick={() => setStep("apply")}
+        >
+         Tiếp tục Apply
+        </Button>
+       </div>
+      </div>
+     </Card>
+
+     {result && activeProfile ? (
+      <>
+       <ImportStatGrid result={result} profile={activeProfile} />
+       <ImportWarningPanel result={result} applyMode={applyMode} />
+       <QuickJumpButtons result={result} />
+       <ResultSummary result={result} profile={activeProfile} />
+      </>
+     ) : (
+      <Card padding="lg" className="rounded-xl">
+       <p className="text-sm font-semibold text-text-muted">
+        Chưa có kết quả parse. Quay lại bước 1 để parse markdown.
+       </p>
+      </Card>
+     )}
+    </div>
+   )}
+
+   {step === "apply" && (
+    <div className="grid gap-4">
+     <Card padding="lg" className="rounded-xl">
+      <div className="flex flex-wrap items-start justify-between gap-3">
+       <div>
+        <p className="text-xs font-black uppercase tracking-wide text-text-muted">
+         Bước 3
+        </p>
+        <h2 className="text-xl font-black text-text-primary">
+         Xác nhận Apply vào draft
+        </h2>
+        <p className="text-sm font-semibold text-text-muted">
+         Apply mới ghi dữ liệu vào draft. Kiểm tra kỹ target và mode trước khi
+         bấm.
+        </p>
+       </div>
+
+       <div className="flex flex-wrap gap-2">
+        <Button
+         type="button"
+         variant="outline"
+         onClick={() => setStep("review")}
+        >
+         Quay lại kiểm tra
+        </Button>
+        <Button
+         type="button"
+         disabled={!result || !health.canApply || updateDraftMutation.isPending}
+         isLoading={updateDraftMutation.isPending}
+         onClick={() => void handleApply()}
+        >
+         <Save className="h-4 w-4" />
+         {updateDraftMutation.isPending ? "Đang apply..." : "Apply vào draft"}
+        </Button>
+       </div>
+      </div>
+     </Card>
+
+     <ImportWarningPanel result={result} applyMode={applyMode} />
+
+     <div className="grid gap-4 lg:grid-cols-2">
+      <Card padding="lg" className="rounded-xl">
+       <div className="grid gap-3">
+        <h3 className="text-lg font-black text-text-primary">
+         Sẽ ghi vào draft
+        </h3>
+
+        <div className="grid gap-2 text-sm font-bold text-text-secondary">
+         <p>Apply vào: {applyTarget}</p>
+         <p>Chế độ: {applyMode}</p>
+         <p>Grammar item: {applyPreview?.grammarCount ?? 0}</p>
+         <p>Vocab item: {applyPreview?.vocabCount ?? 0}</p>
+         <p>Reading section: {applyPreview?.readingCount ?? 0}</p>
+         <p>Summary section: {applyPreview?.summaryCount ?? 0}</p>
+         <p>Exercise set: {applyPreview?.exerciseCount ?? 0}</p>
+        </div>
+       </div>
+      </Card>
+
+      <Card padding="lg" className="rounded-xl">
+       <div className="grid gap-3">
+        <h3 className="text-lg font-black text-text-primary">
+         Dữ liệu hiện tại
+        </h3>
+
+        <div className="grid gap-2 text-sm font-bold text-text-secondary">
+         <p>Từ vựng hiện tại: {draftCounts.vocabCount}</p>
+         <p>Ngữ pháp hiện tại: {draftCounts.grammarCount}</p>
+         <p>Flashcards hiện tại: {draftCounts.flashcardCount}</p>
+        </div>
+
+        {applyMode === "replace" && (
+         <p className="rounded-xl border border-amber-200 bg-amber-50 p-3 text-sm font-bold text-amber-900">
+          Replace target có thể ghi đè phần hiện tại của target đã chọn.
+         </p>
         )}
        </div>
-      </CollapsibleSection>
-
-      <label className="grid gap-2">
-       <span className="text-xs font-black uppercase tracking-wide text-text-muted">
-        Markdown
-       </span>
-       <Textarea
-        value={markdown}
-        onChange={(event) => setMarkdown(event.target.value)}
-        className="min-h-72 font-mono text-xs"
-        placeholder={sampleMarkdown}
-       />
-      </label>
-
-      <div className="flex flex-wrap gap-2">
-       <Button type="button" onClick={handleParse}>
-        <WandSparkles className="h-4 w-4" />
-        Parse
-       </Button>
-       <Button
-        type="button"
-        variant="outline"
-        onClick={() => setMarkdown(sampleMarkdown)}
-       >
-        Dùng mẫu
-       </Button>
-       <Button
-        type="button"
-        variant="outline"
-        disabled={!result || updateDraftMutation.isPending}
-        onClick={() => void handleApply()}
-       >
-        <Save className="h-4 w-4" />
-        {updateDraftMutation.isPending ? "Đang apply..." : "Apply vào draft"}
-       </Button>
-      </div>
-
-      {storageWarnings.length > 0 && (
-       <div className="grid gap-2 rounded-xl border border-border-default bg-bg-subtle p-3">
-        {storageWarnings.map((warning) => (
-         <p key={warning} className="text-sm font-semibold text-text-muted">
-          {warning}
-         </p>
-        ))}
-       </div>
-      )}
+      </Card>
      </div>
-    </Card>
-   </aside>
-
-   <section className="h-full overflow-y-auto pr-1">
-    {activeProfile ? (
-     <ResultSummary result={result} profile={activeProfile} />
-    ) : (
-     <Card padding="lg" className="rounded-xl">
-      <p className="text-sm font-semibold text-text-muted">
-       Không có profile khả dụng.
-      </p>
-     </Card>
-    )}
-   </section>
+    </div>
+   )}
   </div>
  );
 }
+

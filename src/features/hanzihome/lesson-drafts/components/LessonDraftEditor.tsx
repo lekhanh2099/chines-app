@@ -267,31 +267,7 @@ export function LessonDraftEditor({ draftId }: LessonDraftEditorProps) {
      <GrammarDraftImporter draft={draft} reviewOnly />
     )}
 
-    {activeTab === "import" && (
-     <div className="grid gap-4">
-      <Card padding="lg" className="rounded-xl border border-border-default bg-bg-card shadow-theme-sm">
-       <div className="flex flex-wrap items-start justify-between gap-3">
-        <div className="min-w-0">
-         <p className="text-xs font-black uppercase tracking-wide text-text-muted">
-          Import Markdown
-         </p>
-         <h2 className="text-xl font-black text-text-primary">
-          Nhập nội dung vào draft
-         </h2>
-         <p className="text-sm font-semibold text-text-muted">
-          Dán markdown AI-generated, parse bằng profile, xem preview mapping rồi mới Apply vào draft.
-         </p>
-        </div>
-
-        <span className="rounded-full bg-bg-subtle px-3 py-1 text-xs font-black text-text-muted">
-         Không tự lưu nếu chưa Apply
-        </span>
-       </div>
-      </Card>
-
-      <MarkdownImportPreview draft={draft} />
-     </div>
-    )}
+    {activeTab === "import" && <MarkdownImportPreview draft={draft} />}
 
     {activeTab === "preview" && (
      <Card padding="lg" className="rounded-xl">
