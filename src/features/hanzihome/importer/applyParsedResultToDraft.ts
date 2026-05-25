@@ -108,12 +108,48 @@ function textToCollocations(text: string): VocabDraftCollocation[] {
   });
 }
 
+const grammarFieldTitleMap: Partial<Record<LearningFieldName, string>> = {
+ "grammar.opening": "Câu mở khóa",
+ "grammar.core": "Bản chất cốt lõi & Công thức",
+ "grammar.structures": "Công thức",
+ "grammar.blindSpots": "Điểm mù & quy tắc ẩn",
+ "grammar.comparisons": "So sánh dễ nhầm",
+ "grammar.traps": "Bẫy tư duy",
+ "grammar.examples": "Ví dụ thực chiến",
+ "grammar.summary": "Chốt bản chất",
+ "grammar.notes": "Lưu ý",
+ "grammar.exercises": "Bài tập",
+};
+
+function fieldTitle(field: string) {
+ return grammarFieldTitleMap[field as LearningFieldName] ?? field;
+}
+
 function itemRawMarkdown(item: MappedImportItem) {
  return Object.entries(item.fields)
   .flatMap(([field, values]) =>
-   values.map((value) => `### ${field}\n\n${learningFieldValueToPreview(value)}`),
+   values.map((value) => {
+    const content = learningFieldValueToPreview(value).trim();
+
+    if (!content) return "";
+
+    return `### ${fieldTitle(field)}\n\n${content}`;
+   }),
   )
+  .filter(Boolean)
   .join("\n\n");
+}
+
+function firstUsefulLine(value: string) {
+ return value
+  .split("\n")
+  .map((line) =>
+   line
+    .replace(/^[-*>\s]+/, "")
+    .replace(/^\*\*([^*]+)\*\*:?\s*/, "$1: ")
+    .trim(),
+  )
+  .find(Boolean) ?? "";
 }
 
 function mapGrammarItem(item: MappedImportItem, index: number): GrammarDraftItem {
@@ -128,20 +164,23 @@ function mapGrammarItem(item: MappedImportItem, index: number): GrammarDraftItem
  const notes = valueToText(item, "grammar.notes");
  const exercises = valueToText(item, "grammar.exercises");
  const title = cleanGrammarTitle(item.title);
+ const rawMarkdown = itemRawMarkdown(item);
+ const coreLogic = core || firstUsefulLine(opening) || summary || firstUsefulLine(rawMarkdown);
+ const shortMeaning = summary || firstUsefulLine(core) || firstUsefulLine(opening);
 
  return {
   id: createStableId("grammar", title, index),
   title,
   pattern: structures[0] ?? "",
-  shortMeaning: summary || opening,
-  coreLogic: [opening, core, blindSpots].filter(Boolean).join("\n\n"),
+  shortMeaning,
+  coreLogic,
   formulas: structures,
   examples: textToGrammarExamples(examplesText),
   comparisons,
-  pitfalls: [traps, notes].filter(Boolean).join("\n\n"),
+  pitfalls: [blindSpots, traps, notes].filter(Boolean).join("\n\n"),
   practice: exercises,
   cultureNotes: "",
-  rawMarkdown: itemRawMarkdown(item),
+  rawMarkdown,
   confidence: 0.8,
  };
 }

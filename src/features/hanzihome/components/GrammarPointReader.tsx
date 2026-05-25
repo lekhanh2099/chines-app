@@ -48,6 +48,11 @@ export function GrammarPointReader({
  }
 
  const contentMd = point.contentMd?.trim();
+ const hasStructuredContent =
+  point.structuresView.length > 0 ||
+  point.examplesParsed.length > 0 ||
+  Boolean(point.detailSections?.length) ||
+  point.notes.length > 0;
 
  return (
   <Card padding="lg" className="rounded-xl">
@@ -95,11 +100,11 @@ export function GrammarPointReader({
      </div>
     </div>
 
-    {contentMd ? (
-     <MarkdownContent content={contentMd} />
-    ) : (
+    {hasStructuredContent ? (
      <StructuredGrammarContent point={point} />
-    )}
+    ) : contentMd ? (
+     <MarkdownContent content={contentMd} />
+    ) : null}
 
     {relatedVocab.length > 0 && (
      <section className="grid gap-2">

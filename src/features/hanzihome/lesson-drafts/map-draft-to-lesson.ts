@@ -18,6 +18,57 @@ function toLines(value: string) {
     .filter(Boolean);
 }
 
+function cleanHeading(value: string) {
+  return value
+    .replace(/^#+\s*/, "")
+    .replace(/^\d+[.)]\s*/, "")
+    .replace(/\*\*([^*\n]+)\*\*/g, "$1")
+    .replace(/__([^_\n]+)__/g, "$1")
+    .trim();
+}
+
+function markdownToDetailSections(rawMarkdown: string) {
+  const lines = rawMarkdown.replace(/\r\n/g, "\n").split("\n");
+  const sections: Array<{ key: string; title: string; lines: string[] }> = [];
+  let current: { key: string; title: string; lines: string[] } | null = null;
+
+  for (const line of lines) {
+    const headingMatch = line.match(/^###\s+(.+)$/);
+
+    if (headingMatch) {
+      if (current && current.lines.length > 0) {
+        sections.push(current);
+      }
+
+      const title = cleanHeading(headingMatch[1] || "Chi tiết");
+      current = {
+        key: title
+          .toLocaleLowerCase("vi-VN")
+          .normalize("NFD")
+          .replace(/[\u0300-\u036f]/g, "")
+          .replace(/[^a-z0-9]+/g, "-")
+          .replace(/^-+|-+$/g, "") || "detail",
+        title,
+        lines: [],
+      };
+      continue;
+    }
+
+    if (current) {
+      const cleaned = line.trim();
+      if (cleaned && cleaned !== "---") {
+        current.lines.push(cleaned);
+      }
+    }
+  }
+
+  if (current && current.lines.length > 0) {
+    sections.push(current);
+  }
+
+  return sections;
+}
+
 function mapDraftVocabItem(value: unknown, lessonId: string): VocabViewModel | null {
   const parsed = vocabDraftItemSchema.safeParse(value);
 
@@ -86,7 +137,9 @@ function mapDraftGrammarItem(value: unknown): GrammarViewModel | null {
   if (!parsed.success) return null;
 
   const item = parsed.data;
-  const contentMd = item.rawMarkdown.includes("### grammar.")
+  const detailSections = markdownToDetailSections(item.rawMarkdown);
+  const hasStructuredSections = detailSections.length > 0;
+  const contentMd = hasStructuredSections || item.rawMarkdown.includes("### grammar.")
     ? ""
     : item.rawMarkdown;
 
@@ -108,6 +161,7 @@ function mapDraftGrammarItem(value: unknown): GrammarViewModel | null {
       ...toLines(item.cultureNotes),
       ...toLines(item.practice),
     ],
+    detailSections,
     contentMd,
   };
 }
