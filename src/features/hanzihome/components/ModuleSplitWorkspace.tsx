@@ -310,6 +310,7 @@ export function ModuleSplitWorkspace({
       state={learningState}
       onBookmark={onBookmarkVocab}
       onMarkStatus={onMarkVocab}
+      onOpenReview={() => handleSelectModule("review")}
      />
     );
    case "grammar":

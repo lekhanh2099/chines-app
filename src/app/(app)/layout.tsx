@@ -18,11 +18,11 @@ export default async function AppLayout({
  const user = data.user;
 
  return (
-  <div className="app-shell flex h-dvh w-full min-w-0 overflow-hidden bg-white text-text-primary">
+  <div className="app-shell flex h-dvh w-full min-w-0 overflow-hidden bg-background text-foreground">
    <Sidebar />
    <div className="flex min-w-0 flex-1 flex-col overflow-x-hidden scrollbar-soft ">
     <Header user={user} />
-    <main className="page-shell relative flex-1 overflow-y-auto scrollbar-soft  bg-white pb-[calc(88px+env(safe-area-inset-bottom))] md:pb-0 scrollbar-soft">
+    <main className="page-shell relative flex-1 overflow-y-auto bg-background pb-[calc(88px+env(safe-area-inset-bottom))] scrollbar-soft md:pb-0">
      {children}
     </main>
    </div>

@@ -31,6 +31,11 @@ const lessonDraftResponseSchema = z.object({
   draft: lessonDraftSchema,
 });
 
+const seedLessonDraftResponseSchema = z.object({
+  draft: lessonDraftSchema,
+  reused: z.boolean(),
+});
+
 const deleteLessonDraftResponseSchema = z.object({
   ok: z.literal(true),
 });
@@ -106,6 +111,23 @@ export async function createLessonDraft(
       body: JSON.stringify(payload),
     },
     (json) => lessonDraftResponseSchema.parse(json).draft,
+  );
+}
+
+export async function createLessonDraftFromSeed(
+  lessonId: string,
+): Promise<{ draft: LessonDraft; reused: boolean }> {
+  const payload = z.object({ lessonId: z.string().trim().min(1) }).parse({
+    lessonId,
+  });
+
+  return requestJson(
+    "/api/hanzihome/lesson-drafts/from-seed",
+    {
+      method: "POST",
+      body: JSON.stringify(payload),
+    },
+    (json) => seedLessonDraftResponseSchema.parse(json),
   );
 }
 

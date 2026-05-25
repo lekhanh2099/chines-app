@@ -29,6 +29,12 @@ function safeLimit(value: number | undefined, fallback: number) {
  return Math.min(Math.max(Math.trunc(value ?? fallback), 1), fallback);
 }
 
+function getVocabCategory(item: (typeof bundle.vocab)[number]) {
+ return "category" in item && typeof item.category === "string"
+  ? item.category
+  : "Khác";
+}
+
 const lessonsById = new Map(
  bundle.lessons.map((lesson) => [
   lesson.id,
@@ -83,7 +89,7 @@ export function getStaticAggregateVocabFallback(filters: AggregateFilters) {
     pinyin: item.pinyin,
     hanViet: item.hanViet,
     meaning: item.meaning,
-    category: item.category || "Khác",
+    category: getVocabCategory(item),
     level: item.level ?? undefined,
     pos: item.pos ?? undefined,
    };

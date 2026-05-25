@@ -76,11 +76,11 @@ function isActive(
   );
  }
 
- if (base === "/hanzihome" && searchParams.get("module") === "radicals") {
-  return false;
+ if (base === "/hanzihome") {
+  return pathname === "/hanzihome" && searchParams.get("module") !== "radicals";
  }
 
- return pathname.startsWith(base);
+ return pathname === base || pathname.startsWith(`${base}/`);
 }
 
 function NavRow({

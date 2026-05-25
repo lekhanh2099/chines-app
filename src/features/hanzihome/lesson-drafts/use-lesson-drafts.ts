@@ -8,6 +8,7 @@ import {
 
 import {
   createLessonDraft,
+  createLessonDraftFromSeed,
   deleteLessonDraft,
   getLessonDraft,
   getLessonDrafts,
@@ -48,6 +49,21 @@ export function useCreateLessonDraftMutation() {
   return useMutation({
     mutationFn: (input: CreateLessonDraftRequest) => createLessonDraft(input),
     onSuccess: async (draft) => {
+      await queryClient.invalidateQueries({
+        queryKey: lessonDraftQueryKeys.lists(),
+      });
+
+      queryClient.setQueryData(lessonDraftQueryKeys.detail(draft.id), draft);
+    },
+  });
+}
+
+export function useCreateLessonDraftFromSeedMutation() {
+  const queryClient = useQueryClient();
+
+  return useMutation({
+    mutationFn: (lessonId: string) => createLessonDraftFromSeed(lessonId),
+    onSuccess: async ({ draft }) => {
       await queryClient.invalidateQueries({
         queryKey: lessonDraftQueryKeys.lists(),
       });

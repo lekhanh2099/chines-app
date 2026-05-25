@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import { Button } from "@/components/ui/button";
 import { VocabDetailPanel } from "@/features/hanzihome/components/VocabDetailPanel";
 import { VocabList } from "@/features/hanzihome/components/VocabList";
 import type {
@@ -14,6 +15,7 @@ type VocabWorkspaceProps = {
  state: UserLearningState;
  onBookmark: (id: string) => void;
  onMarkStatus: (id: string, status: LearningStatus) => void;
+ onOpenReview?: () => void;
 };
 
 export function VocabWorkspace({
@@ -21,6 +23,7 @@ export function VocabWorkspace({
  state,
  onBookmark,
  onMarkStatus,
+ onOpenReview,
 }: VocabWorkspaceProps) {
  const [selectedWordId, setSelectedWordId] = useState<string | null>(
   lesson.vocab[0]?.id || null,
@@ -61,6 +64,27 @@ export function VocabWorkspace({
 
  return (
   <div className="grid gap-3">
+   {onOpenReview && lesson.vocab.length > 0 && (
+    <div className="flex flex-wrap items-center justify-between gap-2 rounded-xl border border-border-default bg-bg-card p-3 shadow-theme-sm">
+     <div className="min-w-0">
+      <p className="text-xs font-black uppercase tracking-wide text-text-muted">
+       Flashcard bài này
+      </p>
+      <p className="text-sm font-bold text-text-secondary">
+       Ôn nhanh {lesson.vocab.length} từ vựng theo trạng thái học hiện tại.
+      </p>
+     </div>
+
+     <Button
+      type="button"
+      onClick={onOpenReview}
+      variant="outline"
+     >
+      Vào ôn tập
+     </Button>
+    </div>
+   )}
+
    <VocabList
     words={visibleWords}
     selectedWordId={selectedWord?.id || null}
