@@ -131,7 +131,7 @@ export function useLearningState() {
 
  return useMemo(
   () => ({
-   state: normalizeLearningState(query.data),
+   state: normalizeLearningState(query.data ?? emptyLearningState),
    isLoading: query.isLoading,
    isSaving: mutation.isPending,
 
