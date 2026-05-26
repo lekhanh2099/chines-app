@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo } from "react";
+import { useMemo, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { BookMarked, Sparkles } from "lucide-react";
@@ -15,6 +15,7 @@ import {
  useLessonDraftSummariesQuery,
 } from "@/features/hanzihome/lesson-drafts";
 import { useHanziHomeCatalogData } from "@/features/hanzihome/hooks/useHanziHomeCatalogData";
+import { useHanziHomeCourseLessons } from "@/features/hanzihome/hooks/useHanziHomeCourseLessons";
 import { GlobalMemoryTipCard } from "@/features/hanzihome/memory-tips/GlobalMemoryTipCard";
 import type {
  HanziHomeCatalogCourse,
@@ -277,13 +278,23 @@ function CourseCard({
 }) {
  const router = useRouter();
  const primaryBook = stats.books[0];
+ const courseLessons = useHanziHomeCourseLessons(course.id);
 
  const targetLessonId =
   lastCourseId === course.id
    ? lastLessonId || stats.fallbackLessonId
    : stats.fallbackLessonId;
- const href = targetLessonId
-  ? `/hanzihome?courseId=${course.id}&lessonId=${targetLessonId}`
+ const [selectedLessonId, setSelectedLessonId] = useState(targetLessonId ?? "");
+ const selectedLessonIsAvailable = courseLessons.some(
+  (lesson) => lesson.id === selectedLessonId,
+ );
+ const effectiveLessonId =
+  (selectedLessonIsAvailable ? selectedLessonId : null) ||
+  targetLessonId ||
+  courseLessons.at(-1)?.id ||
+  "";
+ const href = effectiveLessonId
+  ? `/hanzihome?courseId=${course.id}&lessonId=${effectiveLessonId}`
   : `/hanzihome?courseId=${course.id}`;
 
  const openCourse = () => {
@@ -338,6 +349,30 @@ function CourseCard({
        <MiniMetric label="Từ" value={stats.vocabCount} />
        <MiniMetric label="Ngữ pháp" value={stats.grammarCount} />
       </div>
+
+      {courseLessons.length > 0 && (
+       <label
+        className="mt-2 grid max-w-lg gap-1.5"
+        onClick={(event) => event.stopPropagation()}
+        onMouseDown={(event) => event.stopPropagation()}
+       >
+        <span className="text-xs font-black uppercase tracking-wide text-text-muted">
+         Bài sẽ mở
+        </span>
+        <select
+         value={effectiveLessonId}
+         onChange={(event) => setSelectedLessonId(event.target.value)}
+         className="h-10 rounded-xl border border-border-default bg-bg-input px-3 text-sm font-bold text-text-primary outline-none"
+        >
+         {courseLessons.map((lesson) => (
+          <option key={lesson.id} value={lesson.id}>
+           {lesson.id === targetLessonId ? "Đang học · " : ""}
+           Bài {lesson.lessonNumber}: {lesson.titleZh || lesson.title}
+          </option>
+         ))}
+        </select>
+       </label>
+      )}
      </div>
     </div>
 

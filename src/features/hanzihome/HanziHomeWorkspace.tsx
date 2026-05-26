@@ -262,6 +262,7 @@ export function HanziHomeWorkspace() {
       lesson={lesson}
       learningState={learning.state}
       onAnswer={answerReview}
+      onToggleBookmark={(scope, id) => learning.toggleBookmark(scope, id)}
      />
     );
   }

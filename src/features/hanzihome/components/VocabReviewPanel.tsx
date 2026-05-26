@@ -16,6 +16,7 @@ import {
  DialogTitle,
 } from "@/components/ui/dialog";
 import { useFlashcardControls } from "@/features/hanzihome/hooks/useFlashcardControls";
+import { GrammarPointReader } from "@/features/hanzihome/components/GrammarPointReader";
 import { VocabDetailPanel } from "@/features/hanzihome/components/VocabDetailPanel";
 import {
  useVocabReviewSession,
@@ -31,13 +32,19 @@ import type {
 type VocabReviewPanelProps = {
  lesson: HanziHomeLesson;
  learningState: UserLearningState;
+ initialMode?: ReviewDeckMode;
+ availableModes?: ReviewDeckMode[];
+ title?: string;
+ description?: string;
  onAnswer: (
   item: { type: "vocab" | "grammar" | "radical"; id: string },
   result: ReviewResult,
  ) => void;
+ onToggleBookmark?: (scope: "vocab" | "grammar", id: string) => void;
+ getItemLesson?: (item: ReviewItem) => HanziHomeLesson | null;
 };
 
-const deckModes: Array<{ value: ReviewDeckMode; label: string }> = [
+const deckModeOptions: Array<{ value: ReviewDeckMode; label: string }> = [
  { value: "all", label: "Tất cả" },
  { value: "vocab", label: "Từ vựng" },
  { value: "grammar", label: "Ngữ pháp" },
@@ -47,9 +54,23 @@ const deckModes: Array<{ value: ReviewDeckMode; label: string }> = [
 export function VocabReviewPanel({
  lesson,
  learningState,
+ initialMode = "all",
+ availableModes,
+ title = "Ôn tập chủ động",
+ description,
  onAnswer,
+ onToggleBookmark,
+ getItemLesson,
 }: VocabReviewPanelProps) {
- const [mode, setMode] = useState<ReviewDeckMode>("all");
+ const modes = deckModeOptions.filter(
+  (item) => !availableModes || availableModes.includes(item.value),
+ );
+ const fallbackMode = modes[0]?.value ?? "all";
+ const [mode, setMode] = useState<ReviewDeckMode>(
+  availableModes?.includes(initialMode) || !availableModes
+   ? initialMode
+   : fallbackMode,
+ );
  const [detailOpen, setDetailOpen] = useState(false);
  const [selectedWritingIndex, setSelectedWritingIndex] = useState(0);
 
@@ -83,7 +104,7 @@ export function VocabReviewPanel({
 
  const flashcardControls = useFlashcardControls({
   disabled: !item || session.state.completed || detailOpen,
-  canOpenDetail: Boolean(item && item.type === "vocab" && session.state.revealed),
+  canOpenDetail: Boolean(item && session.state.revealed),
   writingCharacterCount,
   onReveal: reveal,
   onAnswer: handleAnswer,
@@ -103,7 +124,13 @@ export function VocabReviewPanel({
     className="w-full max-w-3xl justify-self-center rounded-xl border border-border-default bg-bg-primary shadow-theme-sm"
    >
     <div className="grid gap-3 text-center">
-     <ReviewHeader mode={mode} onModeChange={resetWithMode} />
+     <ReviewHeader
+      mode={mode}
+      modes={modes}
+      title={title}
+      description={description}
+      onModeChange={resetWithMode}
+     />
 
      <div className="grid gap-2 rounded-xl border border-dashed border-border-default bg-bg-subtle p-4">
       <h2 className="text-2xl font-black text-text-primary">
@@ -126,7 +153,13 @@ export function VocabReviewPanel({
     className="w-full max-w-3xl justify-self-center rounded-xl border border-border-default bg-bg-primary text-center shadow-theme-sm"
    >
     <div className="grid gap-3">
-     <ReviewHeader mode={mode} onModeChange={resetWithMode} />
+     <ReviewHeader
+      mode={mode}
+      modes={modes}
+      title={title}
+      description={description}
+      onModeChange={resetWithMode}
+     />
 
      <div className="grid gap-2 rounded-xl bg-bg-subtle p-4">
       <h2 className="text-2xl font-black text-text-primary">Đã hết lượt ôn</h2>
@@ -154,7 +187,13 @@ export function VocabReviewPanel({
    className="w-full max-w-4xl justify-self-center rounded-xl border border-border-default bg-bg-primary shadow-theme-sm"
   >
    <div className="grid gap-3">
-    <ReviewHeader mode={mode} onModeChange={resetWithMode} />
+    <ReviewHeader
+     mode={mode}
+     modes={modes}
+     title={title}
+     description={description}
+     onModeChange={resetWithMode}
+    />
 
     <div className="grid gap-2">
      <div className="flex flex-wrap items-center justify-between gap-3">
@@ -192,7 +231,10 @@ export function VocabReviewPanel({
      open={detailOpen}
      onOpenChange={setDetailOpen}
      learningState={learningState}
+     lesson={lesson}
      onAnswer={onAnswer}
+     onToggleBookmark={onToggleBookmark}
+     itemLesson={getItemLesson?.(item) ?? lesson}
     />
 
     <div className="flex flex-wrap justify-center gap-2">
@@ -215,9 +257,15 @@ export function VocabReviewPanel({
 
 function ReviewHeader({
  mode,
+ modes = deckModeOptions,
+ title = "Ôn tập chủ động",
+ description,
  onModeChange,
 }: {
  mode: ReviewDeckMode;
+ modes?: Array<{ value: ReviewDeckMode; label: string }>;
+ title?: string;
+ description?: string;
  onModeChange: (mode: ReviewDeckMode) => void;
 }) {
  return (
@@ -226,23 +274,26 @@ function ReviewHeader({
     <p className="text-xs font-black uppercase tracking-[0.18em] text-text-muted">
      Flashcards
     </p>
-    <h2 className="text-2xl font-black text-text-primary">
-     Ôn tập chủ động
-    </h2>
+    <h2 className="text-2xl font-black text-text-primary">{title}</h2>
+    {description && (
+     <p className="text-sm font-semibold text-text-muted">{description}</p>
+    )}
    </div>
 
-   <div className="flex flex-wrap gap-2">
-    {deckModes.map((item) => (
-     <Button
-      key={item.value}
-      type="button"
-      variant={mode === item.value ? "default" : "outline"}
-      onClick={() => onModeChange(item.value)}
-     >
-      {item.label}
-     </Button>
-    ))}
-   </div>
+   {modes.length > 1 && (
+    <div className="flex flex-wrap gap-2">
+     {modes.map((item) => (
+      <Button
+       key={item.value}
+       type="button"
+       variant={mode === item.value ? "default" : "outline"}
+       onClick={() => onModeChange(item.value)}
+      >
+       {item.label}
+      </Button>
+     ))}
+    </div>
+   )}
   </div>
  );
 }
@@ -388,9 +439,25 @@ function FlashCardBack({
 
  return (
   <div className="grid gap-3 rounded-xl border border-border-default bg-bg-subtle p-3 text-left sm:p-4">
-   <p className="text-base font-semibold leading-relaxed text-text-secondary">
-    {item.source.core}
-   </p>
+   <div className="flex flex-wrap items-start justify-between gap-3">
+    <p className="min-w-0 flex-1 text-base font-semibold leading-relaxed text-text-secondary">
+     {item.source.core}
+    </p>
+
+    <Button
+     type="button"
+     variant="outline"
+     className="shrink-0 rounded-lg"
+     onMouseDown={(event) => event.stopPropagation()}
+     onTouchStart={(event) => event.stopPropagation()}
+     onClick={(event) => {
+      event.stopPropagation();
+      onOpenDetail();
+     }}
+    >
+     Xem chi tiết
+    </Button>
+   </div>
 
    {item.source.structuresView[0] && (
     <p className="rounded-xl border border-info/30 bg-info-subtle p-3 text-base font-black text-info-text">
@@ -423,51 +490,85 @@ function FlashcardDetailDialog({
  open,
  onOpenChange,
  learningState,
+ lesson,
  onAnswer,
+ onToggleBookmark,
+ itemLesson,
 }: {
  item: ReviewItem;
  open: boolean;
  onOpenChange: (open: boolean) => void;
  learningState: UserLearningState;
+ lesson: HanziHomeLesson;
  onAnswer: (
   item: { type: "vocab" | "grammar" | "radical"; id: string },
   result: ReviewResult,
  ) => void;
+ onToggleBookmark?: (scope: "vocab" | "grammar", id: string) => void;
+ itemLesson: HanziHomeLesson;
 }) {
- if (item.type !== "vocab") {
-  return null;
- }
-
- const status = learningState.progress.vocab?.[item.id]?.status || "new";
- const bookmarked = Boolean(learningState.bookmarks.vocab?.includes(item.id));
+ const status =
+  item.type === "vocab"
+   ? learningState.progress.vocab?.[item.id]?.status || "new"
+   : learningState.progress.grammar?.[item.id]?.status || "new";
+ const bookmarked =
+  item.type === "vocab"
+   ? Boolean(learningState.bookmarks.vocab?.includes(item.id))
+   : Boolean(learningState.bookmarks.grammar?.includes(item.id));
+ const canEditDbContent = Boolean(itemLesson.isDbBacked && !itemLesson.draftId);
 
  return (
   <Dialog open={open} onOpenChange={onOpenChange}>
    <DialogContent className="flex h-[90vh] max-w-5xl flex-col gap-0 overflow-hidden p-0">
     <DialogHeader className="shrink-0 border-b border-border-default px-6 py-5">
-     <DialogTitle>Chi tiết từ vựng</DialogTitle>
+     <DialogTitle>
+      {item.type === "vocab" ? "Chi tiết từ vựng" : "Chi tiết ngữ pháp"}
+     </DialogTitle>
      <DialogDescription>
-      Xem lại nghĩa, logic, ví dụ và lưu ý của từ đang ôn.
+      Xem lại nội dung đang ôn, chỉnh nhanh nếu đây là bài có thể sửa.
      </DialogDescription>
     </DialogHeader>
     <DialogBody className="min-h-0 flex-1 overflow-y-auto scrollbar-soft py-2">
-     <VocabDetailPanel
-      word={item.source}
-      status={status}
-      bookmarked={bookmarked}
-      onBookmark={() => {
-       // TODO: hiện review panel chưa nhận toggleBookmark.
-       // Sẽ wire sau nếu cần bookmark trực tiếp trong dialog.
-      }}
-      onMarkStatus={(nextStatus) => {
-       if (nextStatus === "hard")
-        onAnswer({ type: "vocab", id: item.id }, "hard");
-       if (nextStatus === "known")
-        onAnswer({ type: "vocab", id: item.id }, "known");
-       if (nextStatus === "new")
-        onAnswer({ type: "vocab", id: item.id }, "again");
-      }}
-     />
+     {item.type === "vocab" ? (
+      <VocabDetailPanel
+       word={item.source}
+       status={status}
+       bookmarked={bookmarked}
+       lessonId={itemLesson.id}
+       canEditDbContent={canEditDbContent}
+       editDraftId={itemLesson.draftId}
+       editItemId={item.id}
+       onBookmark={() => onToggleBookmark?.("vocab", item.id)}
+       onMarkStatus={(nextStatus) => {
+        if (nextStatus === "hard")
+         onAnswer({ type: "vocab", id: item.id }, "hard");
+        if (nextStatus === "known")
+         onAnswer({ type: "vocab", id: item.id }, "known");
+        if (nextStatus === "new")
+         onAnswer({ type: "vocab", id: item.id }, "again");
+       }}
+      />
+     ) : (
+      <GrammarPointReader
+       point={item.source}
+       status={status}
+       bookmarked={bookmarked}
+       relatedVocab={lesson.vocab}
+       lessonId={itemLesson.id}
+       canEditDbContent={canEditDbContent}
+       editDraftId={itemLesson.draftId}
+       editItemId={item.id}
+       onBookmark={() => onToggleBookmark?.("grammar", item.id)}
+       onMarkStatus={(nextStatus) => {
+        if (nextStatus === "hard")
+         onAnswer({ type: "grammar", id: item.id }, "hard");
+        if (nextStatus === "known")
+         onAnswer({ type: "grammar", id: item.id }, "known");
+        if (nextStatus === "new")
+         onAnswer({ type: "grammar", id: item.id }, "again");
+       }}
+      />
+     )}
     </DialogBody>
    </DialogContent>
   </Dialog>

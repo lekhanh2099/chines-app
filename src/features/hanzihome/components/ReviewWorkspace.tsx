@@ -10,19 +10,25 @@ import type {
 type ReviewWorkspaceProps = {
  lesson: HanziHomeLesson;
  learningState: UserLearningState;
- onAnswer: (item: { type: "vocab" | "grammar" | "radical"; id: string }, result: ReviewResult) => void;
+ onAnswer: (
+  item: { type: "vocab" | "grammar" | "radical"; id: string },
+  result: ReviewResult,
+ ) => void;
+ onToggleBookmark?: (scope: "vocab" | "grammar", id: string) => void;
 };
 
 export function ReviewWorkspace({
  lesson,
  learningState,
  onAnswer,
+ onToggleBookmark,
 }: ReviewWorkspaceProps) {
  return (
   <VocabReviewPanel
    lesson={lesson}
    learningState={learningState}
    onAnswer={onAnswer}
+   onToggleBookmark={onToggleBookmark}
   />
  );
 }

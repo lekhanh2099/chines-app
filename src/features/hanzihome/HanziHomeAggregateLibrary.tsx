@@ -2,12 +2,24 @@
 
 import { useMemo, useState } from "react";
 import Link from "next/link";
-import { useQuery } from "@tanstack/react-query";
-import { BookOpen, GraduationCap, Search } from "lucide-react";
+import { useQueries, useQuery } from "@tanstack/react-query";
+import { BookOpen, GraduationCap, RotateCcw, Search } from "lucide-react";
 import { z } from "zod";
 
+import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import {
+ Tooltip,
+ TooltipContent,
+ TooltipProvider,
+ TooltipTrigger,
+} from "@/components/ui/tooltip";
+import { lessonSchema } from "@/features/hanzihome/hanzihome-api.schemas";
 import { useHanziHomeCatalogData } from "@/features/hanzihome/hooks/useHanziHomeCatalogData";
+import { getHanziHomeLessonDetail } from "@/features/hanzihome/static-data";
+import { useLearningState } from "@/features/hanzihome/hooks/useLearningState";
+import { VocabReviewPanel } from "@/features/hanzihome/components/VocabReviewPanel";
+import type { HanziHomeLesson, ReviewResult } from "@/features/hanzihome/types";
 
 type AggregateKind = "vocab" | "grammar";
 
@@ -58,6 +70,11 @@ const grammarResponseSchema = z.object({
  items: z.array(aggregateGrammarItemSchema),
 });
 
+const lessonDetailResponseSchema = z.object({
+ source: z.enum(["db", "empty"]),
+ lesson: lessonSchema.nullable(),
+});
+
 type AggregateFilters = {
  courseId: string;
  bookId: string;
@@ -103,14 +120,63 @@ async function fetchAggregateData({
   : grammarResponseSchema.parse(json).items;
 }
 
+async function fetchLessonDetail(
+ lessonId: string,
+): Promise<HanziHomeLesson | null> {
+ const response = await fetch(
+  `/api/hanzihome/lessons/${encodeURIComponent(lessonId)}`,
+  {
+   method: "GET",
+   cache: "no-store",
+   headers: {
+    Accept: "application/json",
+   },
+  },
+ );
+
+ if (!response.ok) {
+  throw new Error("Could not load HanziHome lesson detail");
+ }
+
+ const json: unknown = await response.json();
+
+ return lessonDetailResponseSchema.parse(json).lesson;
+}
+
+function useReviewLessons(lessonIds: string[]) {
+ const queries = useQueries({
+  queries: lessonIds.map((lessonId) => ({
+   queryKey: ["hanzihome", "lesson-detail", lessonId] as const,
+   queryFn: () => fetchLessonDetail(lessonId),
+   enabled: Boolean(lessonId),
+   placeholderData: getHanziHomeLessonDetail(lessonId),
+   staleTime: 0,
+  })),
+ });
+
+ return queries
+  .map(
+   (query, index) => query.data ?? getHanziHomeLessonDetail(lessonIds[index]),
+  )
+  .filter((lesson): lesson is HanziHomeLesson => Boolean(lesson));
+}
+
 export function HanziHomeAggregateLibrary({ kind }: { kind: AggregateKind }) {
  const catalog = useHanziHomeCatalogData({ includeLessons: true });
+ const learning = useLearningState();
  const [filters, setFilters] = useState<AggregateFilters>({
   courseId: "",
   bookId: "",
   lessonId: "",
   q: "",
  });
+ const [selectedReviewLessonIds, setSelectedReviewLessonIds] = useState<
+  string[]
+ >([]);
+ const [activeReviewLessonIds, setActiveReviewLessonIds] = useState<string[]>(
+  [],
+ );
+ const reviewLessons = useReviewLessons(activeReviewLessonIds);
 
  const title = kind === "vocab" ? "Tổng hợp từ vựng" : "Tổng hợp ngữ pháp";
  const description =
@@ -145,7 +211,55 @@ export function HanziHomeAggregateLibrary({ kind }: { kind: AggregateKind }) {
 
  const items = useMemo(() => query.data ?? [], [query.data]);
  const groupedItems = useMemo(() => groupByLesson(items), [items]);
+ const reviewLessonOptions = filteredLessons;
+ const availableReviewLessonIds = new Set(
+  reviewLessonOptions.map((lesson) => lesson.id),
+ );
+ const selectedAvailableReviewLessonIds = selectedReviewLessonIds.filter((id) =>
+  availableReviewLessonIds.has(id),
+ );
+ const lessonFilterIsAvailable = reviewLessonOptions.some(
+  (lesson) => lesson.id === filters.lessonId,
+ );
+ const lastLessonIsAvailable = reviewLessonOptions.some(
+  (lesson) => lesson.id === learning.state.settings.lastLessonId,
+ );
+ const fallbackReviewLessonId =
+  (lessonFilterIsAvailable ? filters.lessonId : null) ||
+  (lastLessonIsAvailable ? learning.state.settings.lastLessonId : null) ||
+  reviewLessonOptions.at(-1)?.id ||
+  "";
+ const effectiveReviewLessonIds =
+  selectedAvailableReviewLessonIds.length > 0
+   ? selectedAvailableReviewLessonIds
+   : fallbackReviewLessonId
+     ? [fallbackReviewLessonId]
+     : [];
+ const activeReviewLessonSummaries = activeReviewLessonIds
+  .map((lessonId) => catalog.lessons.find((lesson) => lesson.id === lessonId))
+  .filter((lesson): lesson is (typeof catalog.lessons)[number] =>
+   Boolean(lesson),
+  );
+ const combinedReviewLesson = useMemo(
+  () =>
+   reviewLessons.length > 0 ? combineReviewLessons(reviewLessons, kind) : null,
+  [kind, reviewLessons],
+ );
+ const lessonByReviewItemId = useMemo(() => {
+  const byId = new Map<string, HanziHomeLesson>();
 
+  for (const lesson of reviewLessons) {
+   for (const word of lesson.vocab) byId.set(`vocab:${word.id}`, lesson);
+   for (const point of lesson.grammar) byId.set(`grammar:${point.id}`, lesson);
+  }
+
+  return byId;
+ }, [reviewLessons]);
+ const isReviewActive = activeReviewLessonIds.length > 0;
+ const activeReviewTitle = formatSelectedLessonsLabel(
+  activeReviewLessonSummaries,
+ );
+ const shouldShowAggregateList = !isReviewActive;
  const hasActiveFilters = Boolean(
   filters.courseId || filters.bookId || filters.lessonId || filters.q.trim(),
  );
@@ -179,30 +293,91 @@ export function HanziHomeAggregateLibrary({ kind }: { kind: AggregateKind }) {
   });
  };
 
+ const answerReview = (
+  item: { type: "vocab" | "grammar" | "radical"; id: string },
+  result: ReviewResult,
+ ) => {
+  learning.appendReviewHistory(item, result);
+
+  if (item.type === "vocab") {
+   learning.updateVocabProgress(
+    item.id,
+    result === "known" ? "known" : result === "hard" ? "hard" : "learning",
+   );
+  }
+
+  if (item.type === "grammar") {
+   learning.updateGrammarProgress(
+    item.id,
+    result === "known" ? "known" : result === "hard" ? "hard" : "learning",
+   );
+  }
+ };
+
+ const toggleReviewLesson = (lessonId: string) => {
+  setSelectedReviewLessonIds((current) => {
+   const availableCurrent = current.filter((id) =>
+    availableReviewLessonIds.has(id),
+   );
+   const source =
+    availableCurrent.length > 0 ? availableCurrent : effectiveReviewLessonIds;
+
+   if (source.includes(lessonId)) {
+    return source.length === 1
+     ? source
+     : source.filter((id) => id !== lessonId);
+   }
+
+   return [...source, lessonId];
+  });
+ };
+
+ const startReview = (lessonIds: string[]) => {
+  if (lessonIds.length === 0) return;
+
+  setActiveReviewLessonIds(lessonIds);
+  setSelectedReviewLessonIds(lessonIds);
+  learning.updateSettings({ lastLessonId: lessonIds[lessonIds.length - 1] });
+ };
+
  return (
   <main className="hanzihome-static-page">
    <div className="grid gap-3">
     <Card className="rounded-xl border border-border-default bg-bg-card shadow-theme-sm">
-     <div className="flex flex-wrap items-start justify-between gap-3">
-      <div className="flex min-w-0 items-start gap-3">
-       <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-bg-subtle">
-        <Icon className="h-6 w-6" />
-       </span>
+     <div className="grid gap-3">
+      <div className="flex flex-wrap items-start justify-between gap-3">
+       <div className="flex min-w-0 items-start gap-3">
+        <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-bg-subtle">
+         <Icon className="h-6 w-6" />
+        </span>
 
-       <div className="grid min-w-0 gap-1">
-        <p className="text-xs font-black uppercase tracking-wide text-text-muted">
-         HanziHome Library
-        </p>
-        <h1 className="text-2xl font-black tracking-tight text-text-primary sm:text-3xl">
-         {title}
-        </h1>
-        <p className="text-sm font-semibold text-text-muted">{description}</p>
+        <div className="grid min-w-0 gap-1">
+         <p className="text-xs font-black uppercase tracking-wide text-text-muted">
+          HanziHome Library
+         </p>
+         <h1 className="text-2xl font-black tracking-tight text-text-primary sm:text-3xl">
+          {title}
+         </h1>
+         <p className="text-sm font-semibold text-text-muted">{description}</p>
+        </div>
        </div>
+
+       <span className="rounded-full bg-bg-subtle px-3 py-1 text-xs font-black text-text-muted">
+        {items.length} mục
+       </span>
       </div>
 
-      <span className="rounded-full bg-bg-subtle px-3 py-1 text-xs font-black text-text-muted">
-       {items.length} mục
-      </span>
+      <div className="rounded-xl border border-border-default bg-bg-primary p-2">
+       <ReviewLessonMultiSelect
+        kind={kind}
+        selectedLessonIds={effectiveReviewLessonIds}
+        lessons={reviewLessonOptions}
+        activeLessonTitle={activeReviewTitle}
+        onToggleLesson={toggleReviewLesson}
+        onStartReview={() => startReview(effectiveReviewLessonIds)}
+        onCloseReview={() => setActiveReviewLessonIds([])}
+       />
+      </div>
      </div>
     </Card>
 
@@ -268,13 +443,39 @@ export function HanziHomeAggregateLibrary({ kind }: { kind: AggregateKind }) {
 
     <Card className="rounded-xl border border-border-default bg-bg-card shadow-theme-sm">
      <div className="grid gap-4">
-      {query.isLoading && (
+      {isReviewActive && (
+       <div className="rounded-xl border border-border-default bg-bg-primary p-3">
+        {combinedReviewLesson ? (
+         <VocabReviewPanel
+          lesson={combinedReviewLesson}
+          learningState={learning.state}
+          initialMode={kind}
+          availableModes={[kind]}
+          title={
+           kind === "vocab" ? "Ôn flashcard từ vựng" : "Ôn flashcard ngữ pháp"
+          }
+          description={activeReviewTitle || "Bài đang chọn"}
+          onAnswer={answerReview}
+          onToggleBookmark={(scope, id) => learning.toggleBookmark(scope, id)}
+          getItemLesson={(item) =>
+           lessonByReviewItemId.get(`${item.type}:${item.id}`) ?? null
+          }
+         />
+        ) : (
+         <p className="rounded-xl bg-bg-subtle p-4 text-sm font-bold text-text-muted">
+          Đang tải bài để ôn...
+         </p>
+        )}
+       </div>
+      )}
+
+      {shouldShowAggregateList && query.isLoading && (
        <p className="rounded-xl bg-bg-subtle p-4 text-sm font-bold text-text-muted">
         Đang tải dữ liệu tổng hợp...
        </p>
       )}
 
-      {query.isError && (
+      {shouldShowAggregateList && query.isError && (
        <p
         role="alert"
         className="rounded-xl bg-danger-subtle p-4 text-sm font-bold text-danger-text"
@@ -283,54 +484,65 @@ export function HanziHomeAggregateLibrary({ kind }: { kind: AggregateKind }) {
        </p>
       )}
 
-      {!query.isLoading && !query.isError && groupedItems.length === 0 && (
-       <p className="rounded-xl bg-bg-subtle p-4 text-sm font-bold text-text-muted">
-        Không tìm thấy mục phù hợp.
-       </p>
-      )}
+      {shouldShowAggregateList &&
+       !query.isLoading &&
+       !query.isError &&
+       groupedItems.length === 0 && (
+        <p className="rounded-xl bg-bg-subtle p-4 text-sm font-bold text-text-muted">
+         Không tìm thấy mục phù hợp.
+        </p>
+       )}
 
-      {groupedItems.map((group) => (
-       <section key={group.lessonId} className="grid gap-2">
-        <div className="flex flex-wrap items-center justify-between gap-2">
-         <div>
-          <h2 className="text-base font-black text-text-primary">
-           {formatLessonHeading(group.lessonNumber, group.lessonTitle)}
-          </h2>
-          <p className="text-xs font-bold text-text-muted">
-           {group.items.length} mục
-          </p>
+      {shouldShowAggregateList &&
+       groupedItems.map((group) => (
+        <section key={group.lessonId} className="grid gap-2">
+         <div className="flex flex-wrap items-center justify-between gap-2">
+          <div>
+           <h2 className="text-base font-black text-text-primary">
+            {formatLessonHeading(group.lessonNumber, group.lessonTitle)}
+           </h2>
+           <p className="text-xs font-bold text-text-muted">
+            {group.items.length} mục
+           </p>
+          </div>
+
+          <div className="flex flex-wrap gap-1.5">
+           <Link
+            href={`/hanzihome?courseId=${group.courseId}&lessonId=${group.lessonId}&module=${kind === "vocab" ? "vocab" : "grammar"}`}
+            className="rounded-xl border border-border-default bg-bg-subtle px-3 py-1.5 text-xs font-black text-text-secondary transition-colors hover:bg-bg-elevated hover:text-text-primary"
+           >
+            Mở bài
+           </Link>
+           <Link
+            href={`/hanzihome?courseId=${group.courseId}&lessonId=${group.lessonId}&module=review`}
+            className="rounded-xl border border-border-default bg-bg-subtle px-3 py-1.5 text-xs font-black text-text-secondary transition-colors hover:bg-bg-elevated hover:text-text-primary"
+            onClick={(event) => {
+             event.preventDefault();
+             startReview([group.lessonId]);
+            }}
+           >
+            Ôn bài
+           </Link>
+          </div>
          </div>
 
-         <div className="flex flex-wrap gap-1.5">
-          <Link
-           href={`/hanzihome?courseId=${group.courseId}&lessonId=${group.lessonId}&module=${kind === "vocab" ? "vocab" : "grammar"}`}
-           className="rounded-xl border border-border-default bg-bg-subtle px-3 py-1.5 text-xs font-black text-text-secondary transition-colors hover:bg-bg-elevated hover:text-text-primary"
-          >
-           Mở bài
-          </Link>
-          <Link
-           href={`/hanzihome?courseId=${group.courseId}&lessonId=${group.lessonId}&module=review`}
-           className="rounded-xl border border-border-default bg-bg-subtle px-3 py-1.5 text-xs font-black text-text-secondary transition-colors hover:bg-bg-elevated hover:text-text-primary"
-          >
-           Ôn bài
-          </Link>
+         <div className="grid gap-2">
+          {group.items.map((item) =>
+           kind === "vocab" ? (
+            <VocabAggregateRow
+             key={item.id}
+             item={item as AggregateVocabItem}
+            />
+           ) : (
+            <GrammarAggregateRow
+             key={item.id}
+             item={item as AggregateGrammarItem}
+            />
+           ),
+          )}
          </div>
-        </div>
-
-        <div className="grid gap-2">
-         {group.items.map((item) =>
-          kind === "vocab" ? (
-           <VocabAggregateRow key={item.id} item={item as AggregateVocabItem} />
-          ) : (
-           <GrammarAggregateRow
-            key={item.id}
-            item={item as AggregateGrammarItem}
-           />
-          ),
-         )}
-        </div>
-       </section>
-      ))}
+        </section>
+       ))}
      </div>
     </Card>
    </div>
@@ -367,6 +579,89 @@ function FilterSelect({
     ))}
    </select>
   </label>
+ );
+}
+
+function ReviewLessonMultiSelect({
+ kind,
+ selectedLessonIds,
+ lessons,
+ activeLessonTitle,
+ onToggleLesson,
+ onStartReview,
+ onCloseReview,
+}: {
+ kind: AggregateKind;
+ selectedLessonIds: string[];
+ lessons: Array<{
+  id: string;
+  lessonNumber: number;
+  title: string;
+  titleZh: string;
+ }>;
+ activeLessonTitle: string;
+ onToggleLesson: (lessonId: string) => void;
+ onStartReview: () => void;
+ onCloseReview: () => void;
+}) {
+ return (
+  <TooltipProvider>
+   <div className="grid gap-2 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-end">
+    <div className="flex flex-wrap items-center gap-1.5">
+     <span className="rounded-full bg-bg-subtle px-2 py-0.5 text-xs font-black text-text-muted">
+      {selectedLessonIds.length}
+     </span>
+     {lessons.map((lesson) => {
+      const selected = selectedLessonIds.includes(lesson.id);
+      const fullTitle = formatLessonHeading(
+       lesson.lessonNumber,
+       lesson.titleZh || lesson.title,
+      );
+
+      return (
+       <Tooltip key={lesson.id}>
+        <TooltipTrigger asChild>
+         <Button
+          type="button"
+          size="xs"
+          variant={selected ? "default" : "outline"}
+          title={fullTitle}
+          aria-pressed={selected}
+          onClick={() => onToggleLesson(lesson.id)}
+          className="h-7 rounded-lg px-2.5 font-black"
+         >
+          Bài {lesson.lessonNumber}
+         </Button>
+        </TooltipTrigger>
+        <TooltipContent>{fullTitle}</TooltipContent>
+       </Tooltip>
+      );
+     })}
+    </div>
+
+    <div className="flex flex-wrap justify-end gap-2">
+     {activeLessonTitle && (
+      <Button
+       type="button"
+       size="sm"
+       variant="outline"
+       onClick={onCloseReview}
+      >
+       Đóng ôn
+      </Button>
+     )}
+     <Button
+      type="button"
+      size="sm"
+      disabled={selectedLessonIds.length === 0}
+      onClick={onStartReview}
+     >
+      <RotateCcw className="h-4 w-4" />
+      {kind === "vocab" ? "Ôn từ vựng" : "Ôn ngữ pháp"}
+     </Button>
+    </div>
+   </div>
+  </TooltipProvider>
  );
 }
 
@@ -422,7 +717,54 @@ function formatLessonHeading(lessonNumber: number, lessonTitle: string) {
  return `Bài ${lessonNumber}: ${trimmedTitle}`;
 }
 
-function groupByLesson(items: Array<AggregateVocabItem | AggregateGrammarItem>) {
+function formatSelectedLessonsLabel(
+ lessons: Array<{
+  lessonNumber: number;
+  title: string;
+  titleZh: string;
+ }>,
+) {
+ if (lessons.length === 0) return "";
+ if (lessons.length === 1) {
+  return formatLessonHeading(
+   lessons[0].lessonNumber,
+   lessons[0].titleZh || lessons[0].title,
+  );
+ }
+
+ return `${lessons.length} bài đang ôn`;
+}
+
+function combineReviewLessons(
+ lessons: HanziHomeLesson[],
+ kind: AggregateKind,
+): HanziHomeLesson {
+ const firstLesson = lessons[0];
+
+ return {
+  ...firstLesson,
+  id: lessons.map((lesson) => lesson.id).join("__"),
+  title:
+   lessons.length === 1 ? firstLesson.title : `${lessons.length} bài đã chọn`,
+  titleZh:
+   lessons.length === 1 ? firstLesson.titleZh : `${lessons.length} bài đã chọn`,
+  vocab: kind === "vocab" ? lessons.flatMap((lesson) => lesson.vocab) : [],
+  grammar:
+   kind === "grammar" ? lessons.flatMap((lesson) => lesson.grammar) : [],
+  vocabIds:
+   kind === "vocab" ? lessons.flatMap((lesson) => lesson.vocabIds) : [],
+  grammarPointIds:
+   kind === "grammar"
+    ? lessons.flatMap((lesson) => lesson.grammarPointIds)
+    : [],
+  isDbBacked: false,
+  draftId: undefined,
+ };
+}
+
+function groupByLesson(
+ items: Array<AggregateVocabItem | AggregateGrammarItem>,
+) {
  const groups = new Map<
   string,
   {
