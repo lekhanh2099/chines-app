@@ -1,6 +1,7 @@
 "use client";
 
-import { useMemo, useRef, useState } from "react";
+import { useMemo, useState } from "react";
+import { useForm } from "@tanstack/react-form";
 import {
  AlertTriangle,
  ChevronDown,
@@ -11,6 +12,7 @@ import {
  WandSparkles,
 } from "lucide-react";
 import { toast } from "sonner";
+import { z } from "zod";
 
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
@@ -39,15 +41,18 @@ import {
  loadCustomImportProfiles,
  saveCustomImportProfiles,
 } from "@/features/hanzihome/importer/import-profile-storage";
-import type {
- AppliedParseResult,
- FieldRule,
- LearningSection,
- MappedImportItem,
- MappedSpecialSection,
- ParseProfile,
- SectionRoleRule,
- UnknownSectionBehavior,
+import {
+ learningFieldNameSchema,
+ type AppliedParseResult,
+ type FieldRule,
+ type LearningFieldName,
+ type LearningFieldValue,
+ type LearningSection,
+ type MappedImportItem,
+ type MappedSpecialSection,
+ type ParseProfile,
+ type SectionRoleRule,
+ type UnknownSectionBehavior,
 } from "@/features/hanzihome/importer/importer.types";
 import { markdownToLearningDoc } from "@/features/hanzihome/importer/markdown-to-learning-doc";
 import type { LessonDraft } from "@/features/hanzihome/lesson-drafts/lesson-draft.schema";
@@ -127,6 +132,41 @@ const applyModeOptions: Array<{
  { value: "mergeByTitle", label: "Merge by title" },
 ];
 
+const importMappedResultFieldFormSchema = z.object({
+ field: learningFieldNameSchema,
+ values: z.array(z.string()),
+});
+
+const importMappedResultItemFormSchema = z.object({
+ id: z.string(),
+ title: z.string(),
+ fields: z.array(importMappedResultFieldFormSchema),
+});
+
+const importMappedResultSpecialSectionFormSchema = z.object({
+ id: z.string(),
+ title: z.string(),
+ content: z.string(),
+});
+
+const importMappedResultFormSchema = z.object({
+ items: z.array(importMappedResultItemFormSchema),
+ specialSections: z.array(importMappedResultSpecialSectionFormSchema),
+});
+
+type ImportMappedResultFormValues = z.infer<
+ typeof importMappedResultFormSchema
+>;
+
+function useImportMappedResultForm() {
+ return useForm({
+  defaultValues: buildImportMappedResultFormValues(null),
+  onSubmit: () => undefined,
+ });
+}
+
+type ImportMappedResultFormApi = ReturnType<typeof useImportMappedResultForm>;
+
 function cloneProfile(profile: ParseProfile): ParseProfile {
  return structuredClone(profile);
 }
@@ -175,6 +215,114 @@ function firstHeadingLevel(rule: SectionRoleRule | FieldRule) {
 
 function firstHeadingRegex(rule: FieldRule) {
  return rule.match.headingRegex?.[0] ?? "";
+}
+
+function editableTextToLearningFieldValue(
+ original: LearningFieldValue,
+ value: string,
+): LearningFieldValue {
+ if (original.kind === "list") {
+  return {
+   kind: "list",
+   value: value
+    .split(/\n+/)
+    .map((line) => line.replace(/^\s*[-*]\s*/, "").trim())
+    .filter(Boolean),
+  };
+ }
+
+ if (original.kind === "table") {
+  return original;
+ }
+
+ return {
+  kind: "text",
+  value,
+ };
+}
+
+function buildImportMappedResultFormValues(
+ result: AppliedParseResult | null,
+): ImportMappedResultFormValues {
+ const values = !result
+  ? {
+     items: [],
+     specialSections: [],
+    }
+  : {
+     items: result.items.map((item) => ({
+      id: item.id,
+      title: item.title,
+      fields: Object.entries(item.fields).flatMap(([field, values]) =>
+       values
+        ? [
+           {
+            field: field as LearningFieldName,
+            values: values.map(learningFieldValueToPreview),
+           },
+          ]
+        : [],
+      ),
+     })),
+     specialSections: result.specialSections.map((section) => ({
+      id: section.id,
+      title: section.title,
+      content: section.content,
+     })),
+    };
+
+ return importMappedResultFormSchema.parse(values);
+}
+
+function applyImportFormValuesToResult(
+ result: AppliedParseResult,
+ rawValues: unknown,
+): AppliedParseResult {
+ const values = importMappedResultFormSchema.parse(rawValues);
+
+ return {
+  ...result,
+  items: result.items.map((item) => {
+   const formItem = values.items.find((value) => value.id === item.id);
+
+   if (!formItem) return item;
+
+   const fields = Object.fromEntries(
+    Object.entries(item.fields).map(([field, originalValues]) => {
+     const formField = formItem.fields.find((value) => value.field === field);
+
+     return [
+      field,
+      originalValues?.map((originalValue, index) =>
+       editableTextToLearningFieldValue(
+        originalValue,
+        formField?.values[index] ?? learningFieldValueToPreview(originalValue),
+       ),
+      ),
+     ];
+    }),
+   ) as MappedImportItem["fields"];
+
+   return {
+    ...item,
+    title: formItem.title,
+    fields,
+   };
+  }),
+  specialSections: result.specialSections.map((section) => {
+   const formSection = values.specialSections.find(
+    (value) => value.id === section.id,
+   );
+
+   return formSection
+    ? {
+       ...section,
+       title: formSection.title,
+       content: formSection.content,
+      }
+    : section;
+  }),
+ };
 }
 
 function getDefaultApplyTarget(profile: ParseProfile): ApplyImportTarget {
@@ -265,16 +413,36 @@ function OutlineSection({ section }: { section: LearningSection }) {
  );
 }
 
-function MappedItemPreview({ item }: { item: MappedImportItem }) {
- const entries = Object.entries(item.fields);
+function MappedItemPreview({
+ item,
+ itemIndex,
+ form,
+}: {
+ item: MappedImportItem;
+ itemIndex: number;
+ form: ImportMappedResultFormApi;
+}) {
+ const entries = Object.entries(item.fields).flatMap(([field, values]) =>
+  values ? [[field as LearningFieldName, values] as const] : [],
+ );
 
  return (
   <div className="grid gap-3 rounded-xl border border-border-default bg-bg-primary p-4">
-   <div>
+   <div className="grid gap-2">
     <p className="text-xs font-black uppercase tracking-wide text-text-muted">
      {item.role}
     </p>
-    <h3 className="text-lg font-black text-text-primary">{item.title}</h3>
+
+    <form.Field name={`items[${itemIndex}].title`}>
+     {(field) => (
+      <Input
+       value={field.state.value}
+       onChange={(event) => field.handleChange(event.target.value)}
+       className="h-11 text-lg font-black"
+       placeholder="Tên item"
+      />
+     )}
+    </form.Field>
    </div>
 
    {entries.length === 0 ? (
@@ -283,19 +451,29 @@ function MappedItemPreview({ item }: { item: MappedImportItem }) {
     </p>
    ) : (
     <div className="grid gap-2">
-     {entries.map(([field, values]) => (
-      <div key={field} className="grid gap-1 rounded-lg bg-bg-subtle p-3">
+     {entries.map(([fieldName, values], fieldIndex) => (
+      <div
+       key={fieldName}
+       className="grid gap-2 rounded-lg bg-bg-subtle p-3"
+      >
        <p className="text-xs font-black uppercase tracking-wide text-text-muted">
-        {field}
+        {fieldName}
        </p>
+
        <div className="grid gap-2">
-        {values.map((value, index) => (
-         <pre
-          key={`${field}-${index}`}
-          className="whitespace-pre-wrap break-words text-sm font-semibold leading-relaxed text-text-primary"
+        {values.map((_value, valueIndex) => (
+         <form.Field
+          key={`${fieldName}-${valueIndex}`}
+          name={`items[${itemIndex}].fields[${fieldIndex}].values[${valueIndex}]`}
          >
-          {learningFieldValueToPreview(value)}
-         </pre>
+          {(field) => (
+           <Textarea
+            value={field.state.value}
+            onChange={(event) => field.handleChange(event.target.value)}
+            className="min-h-24 font-mono text-xs leading-relaxed"
+           />
+          )}
+         </form.Field>
         ))}
        </div>
       </div>
@@ -306,18 +484,44 @@ function MappedItemPreview({ item }: { item: MappedImportItem }) {
  );
 }
 
-function SpecialSectionPreview({ section }: { section: MappedSpecialSection }) {
+function SpecialSectionPreview({
+ section,
+ sectionIndex,
+ form,
+}: {
+ section: MappedSpecialSection;
+ sectionIndex: number;
+ form: ImportMappedResultFormApi;
+}) {
  return (
-  <div className="grid gap-2 rounded-xl border border-border-default bg-bg-primary p-4">
-   <div>
+  <div className="grid gap-3 rounded-xl border border-border-default bg-bg-primary p-4">
+   <div className="grid gap-2">
     <p className="text-xs font-black uppercase tracking-wide text-text-muted">
      {section.role}
     </p>
-    <h3 className="text-base font-black text-text-primary">{section.title}</h3>
+
+    <form.Field name={`specialSections[${sectionIndex}].title`}>
+     {(field) => (
+      <Input
+       value={field.state.value}
+       onChange={(event) => field.handleChange(event.target.value)}
+       className="h-10 font-black"
+       placeholder="Tên section"
+      />
+     )}
+    </form.Field>
    </div>
-   <pre className="whitespace-pre-wrap break-words text-sm font-semibold text-text-muted">
-    {section.content || "Không có nội dung text."}
-   </pre>
+
+   <form.Field name={`specialSections[${sectionIndex}].content`}>
+    {(field) => (
+     <Textarea
+      value={field.state.value}
+      onChange={(event) => field.handleChange(event.target.value)}
+      className="min-h-32 font-mono text-xs leading-relaxed"
+      placeholder="Nội dung section"
+     />
+    )}
+   </form.Field>
   </div>
  );
 }
@@ -325,11 +529,11 @@ function SpecialSectionPreview({ section }: { section: MappedSpecialSection }) {
 function ResultSummary({
  result,
  profile,
- onEditSection,
+ form,
 }: {
  result: AppliedParseResult | null;
  profile: ParseProfile;
- onEditSection?: (sectionTitle: string) => void;
+ form: ImportMappedResultFormApi;
 }) {
  if (!result) {
   return (
@@ -451,8 +655,13 @@ function ResultSummary({
       </p>
      ) : (
       <div className="grid gap-3">
-       {result.items.map((item) => (
-        <MappedItemPreview key={item.id} item={item} />
+       {result.items.map((item, itemIndex) => (
+        <MappedItemPreview
+         key={item.id}
+         item={item}
+         itemIndex={itemIndex}
+         form={form}
+        />
        ))}
       </div>
      )}
@@ -473,8 +682,13 @@ function ResultSummary({
       </p>
      ) : (
       <div className="grid gap-3">
-       {result.specialSections.map((section) => (
-        <SpecialSectionPreview key={section.id} section={section} />
+       {result.specialSections.map((section, sectionIndex) => (
+        <SpecialSectionPreview
+         key={section.id}
+         section={section}
+         sectionIndex={sectionIndex}
+         form={form}
+        />
        ))}
       </div>
      )}
@@ -500,22 +714,9 @@ function ResultSummary({
          key={section.id}
          className="grid gap-2 rounded-lg border border-border-default bg-bg-primary p-3"
         >
-         <div className="flex flex-wrap items-start justify-between gap-2">
-          <p className="text-sm font-black text-text-primary">
-           {section.title}
-          </p>
-
-          {onEditSection && (
-           <Button
-            type="button"
-            size="sm"
-            variant="outline"
-            onClick={() => onEditSection(section.title)}
-           >
-            Sửa section này
-           </Button>
-          )}
-         </div>
+         <p className="text-sm font-black text-text-primary">
+          {section.title}
+         </p>
 
          <pre className="whitespace-pre-wrap break-words text-xs font-semibold text-text-muted">
           {sectionBlocksToPreview(section) || "Không có block text."}
@@ -558,18 +759,6 @@ function ResultSummary({
               : ""}
            {warning.message}
           </div>
-
-          {warningSection && onEditSection && (
-           <Button
-            type="button"
-            size="sm"
-            variant="outline"
-            className="w-fit"
-            onClick={() => onEditSection(warningSection.title)}
-           >
-            Sửa section này
-           </Button>
-          )}
          </li>
         );
        })}
@@ -1117,7 +1306,6 @@ type MarkdownImportPreviewProps = {
 
 export function MarkdownImportPreview({ draft }: MarkdownImportPreviewProps) {
  const updateDraftMutation = useUpdateLessonDraftMutation();
- const markdownTextareaRef = useRef<HTMLTextAreaElement | null>(null);
  const initialProfileState = useMemo(() => getAvailableImportProfiles(), []);
  const [profiles, setProfiles] = useState(initialProfileState.profiles);
  const storageWarnings = initialProfileState.warnings;
@@ -1136,6 +1324,7 @@ export function MarkdownImportPreview({ draft }: MarkdownImportPreviewProps) {
   selectedProfile ? getDefaultApplyTarget(selectedProfile) : "mixed",
  );
  const [applyMode, setApplyMode] = useState<ApplyImportMode>("replace");
+ const importResultForm = useImportMappedResultForm();
 
  const activeProfile = editableProfile ?? selectedProfile ?? null;
  const applyPreview = result ? getApplyPreviewText(result) : null;
@@ -1143,6 +1332,7 @@ export function MarkdownImportPreview({ draft }: MarkdownImportPreviewProps) {
  const draftCounts = getDraftCounts(draft);
 
  const resetParsedResult = () => {
+  importResultForm.reset(buildImportMappedResultFormValues(null));
   setResult(null);
   setStep("input");
  };
@@ -1198,6 +1388,7 @@ export function MarkdownImportPreview({ draft }: MarkdownImportPreviewProps) {
   ]);
   setProfileId(customId);
   setEditableProfile(cloneProfile(savedProfile));
+  importResultForm.reset(buildImportMappedResultFormValues(null));
   setResult(null);
   setStep("input");
 
@@ -1217,25 +1408,10 @@ export function MarkdownImportPreview({ draft }: MarkdownImportPreviewProps) {
 
   const doc = markdownToLearningDoc(markdown);
   const nextResult = applyParseProfile(doc, activeProfile);
+  importResultForm.reset(buildImportMappedResultFormValues(nextResult));
   setResult(nextResult);
   setStep("review");
   toast.success(`Parsed ${nextResult.items.length} item.`);
- };
-
- const focusMarkdownSection = (sectionTitle: string) => {
-  setStep("input");
-
-  window.setTimeout(() => {
-   const textarea = markdownTextareaRef.current;
-   if (!textarea) return;
-
-   textarea.focus();
-
-   const index = markdown.indexOf(sectionTitle);
-   if (index >= 0) {
-    textarea.setSelectionRange(index, index + sectionTitle.length);
-   }
-  }, 80);
  };
 
  const goToReviewSection = (sectionId: string) => {
@@ -1257,9 +1433,23 @@ export function MarkdownImportPreview({ draft }: MarkdownImportPreviewProps) {
    return;
   }
 
+  const parsedFormValues = importMappedResultFormSchema.safeParse(
+   importResultForm.state.values,
+  );
+
+  if (!parsedFormValues.success) {
+   toast.error("Form mapped result không hợp lệ. Kiểm tra lại dữ liệu đã sửa.");
+   return;
+  }
+
+  const resultForApply = applyImportFormValuesToResult(
+   result,
+   parsedFormValues.data,
+  );
+
   const nextContent = applyParsedResultToDraft({
    draftContent: draft.content,
-   parsedResult: result,
+   parsedResult: resultForApply,
    target: applyTarget,
    mode: applyMode,
   });
@@ -1400,7 +1590,6 @@ export function MarkdownImportPreview({ draft }: MarkdownImportPreviewProps) {
          Markdown
         </span>
         <Textarea
-         ref={markdownTextareaRef}
          value={markdown}
          onChange={(event) => handleMarkdownChange(event.target.value)}
          className="min-h-96 font-mono text-xs"
@@ -1509,15 +1698,15 @@ export function MarkdownImportPreview({ draft }: MarkdownImportPreviewProps) {
      {result && activeProfile ? (
       <>
        <ImportWarningPanel
-        result={result}
-        applyMode={applyMode}
-        onJumpToUnmapped={() => goToReviewSection("import-unmapped")}
+       result={result}
+       applyMode={applyMode}
+       onJumpToUnmapped={() => goToReviewSection("import-unmapped")}
         onJumpToWarnings={() => goToReviewSection("import-warnings")}
        />
        <ResultSummary
         result={result}
         profile={activeProfile}
-        onEditSection={focusMarkdownSection}
+        form={importResultForm}
        />
       </>
      ) : (
