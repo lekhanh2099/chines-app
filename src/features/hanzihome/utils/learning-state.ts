@@ -19,7 +19,9 @@ export const emptyLearningState: UserLearningState = {
  reviewHistory: [],
 };
 
-export function normalizeLearningState(value: Partial<UserLearningState> | null): UserLearningState {
+export function normalizeLearningState(
+ value: Partial<UserLearningState> | null | undefined,
+): UserLearningState {
  return {
   settings: value?.settings || {},
   progress: {
