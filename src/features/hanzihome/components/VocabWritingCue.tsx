@@ -11,6 +11,7 @@ type VocabWritingCueProps = {
  size?: number;
  autoPlay?: boolean;
  className?: string;
+ compact?: boolean;
  selectedIndex?: number;
  onSelectedIndexChange?: (index: number) => void;
 };
@@ -41,6 +42,7 @@ export function VocabWritingCue({
  size = 180,
  autoPlay = false,
  className = "",
+ compact = false,
  selectedIndex,
  onSelectedIndexChange,
 }: VocabWritingCueProps) {
@@ -76,7 +78,9 @@ export function VocabWritingCue({
  return (
   <section
    className={[
-    "rounded-xl bg-bg-primary p-3 shadow-theme-sm sm:p-4",
+    compact
+     ? "rounded-2xl border border-border-default bg-bg-primary p-4 shadow-theme-sm"
+     : "rounded-xl bg-bg-primary p-3 shadow-theme-sm sm:p-4",
     className,
    ].join(" ")}
    onClick={(event) => event.stopPropagation()}
@@ -87,13 +91,13 @@ export function VocabWritingCue({
     <div className="flex flex-wrap gap-1.5">
      {chars.map((char, index) => {
       const active = index === safeSelectedIndex;
-
       return (
        <Button
         key={`${char}-${index}`}
         type="button"
         onClick={() => selectCharacter(index)}
         variant={active ? "default" : "outline"}
+        size={compact ? "xs" : "default"}
         lang="zh-CN"
        >
         {char}
@@ -103,7 +107,12 @@ export function VocabWritingCue({
     </div>
    </div>
 
-   <div className="grid gap-4 md:grid-cols-[auto_minmax(0,1fr)] md:items-start relative">
+   <div
+    className={[
+     "relative grid gap-4 md:items-start mt-2",
+     compact ? "justify-items-center" : "md:grid-cols-[auto_minmax(0,1fr)]",
+    ].join(" ")}
+   >
     <div>
      <HanziStrokeWriter
       key={`${activeCharacter}-${writerKey}`}
@@ -116,33 +125,36 @@ export function VocabWritingCue({
      />
     </div>
 
-    <div className="grid content-start gap-2 text-sm leading-relaxed text-text-secondary">
-     <p>
-      <span className="font-bold text-text-primary">Bính âm:</span>{" "}
-      <span className="font-pinyin font-black">{info.pinyin}</span>
-     </p>
-
-     <p>
-      <span className="font-bold text-text-primary">Hán Việt:</span>{" "}
-      {info.hanViet}
-     </p>
-
-     <p>
-      <span className="font-bold text-text-primary">Nghĩa:</span> {info.meaning}
-     </p>
-
-     {info.lines.length > 0 ? (
-      <div className="grid gap-1 border-t border-border-default pt-2">
-       {info.lines.map((line) => (
-        <p key={line}>{line}</p>
-       ))}
-      </div>
-     ) : (
-      <p className="border-t border-border-default pt-2 text-text-muted">
-       Chưa có ghi chú cấu tạo chữ cho mục này.
+    {!compact && (
+     <div className="grid content-start gap-2 text-sm leading-relaxed text-text-secondary">
+      <p>
+       <span className="font-bold text-text-primary">Bính âm:</span>{" "}
+       <span className="font-pinyin font-black">{info.pinyin}</span>
       </p>
-     )}
-    </div>
+
+      <p>
+       <span className="font-bold text-text-primary">Hán Việt:</span>{" "}
+       {info.hanViet}
+      </p>
+
+      <p>
+       <span className="font-bold text-text-primary">Nghĩa:</span>{" "}
+       {info.meaning}
+      </p>
+
+      {info.lines.length > 0 ? (
+       <div className="grid gap-1 border-t border-border-default pt-2">
+        {info.lines.map((line) => (
+         <p key={line}>{line}</p>
+        ))}
+       </div>
+      ) : (
+       <p className="border-t border-border-default pt-2 text-text-muted">
+        Chưa có ghi chú cấu tạo chữ cho mục này.
+       </p>
+      )}
+     </div>
+    )}
    </div>
   </section>
  );
