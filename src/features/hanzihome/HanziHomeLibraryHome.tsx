@@ -23,6 +23,15 @@ import type {
 } from "@/features/hanzihome/types";
 import { useLearningState } from "@/features/hanzihome/hooks/useLearningState";
 
+function isCanonicalLessonWorkingCopy(draft: LessonDraftSummary) {
+ return (
+  draft.lessonKey.startsWith("seed-copy-") ||
+  draft.lessonKey.startsWith("hanyu2-bai-") ||
+  draft.lessonKey.startsWith("hanyu-") ||
+  draft.lessonKey.startsWith("hsk-")
+ );
+}
+
 type CourseStats = {
  books: HanziHomeCourseBook[];
  lessonCount: number;
@@ -38,13 +47,12 @@ export function HanziHomeLibraryHome() {
  const draftsQuery = useLessonDraftSummariesQuery();
  const learning = useLearningState();
 
- const publishedDraftSummaries = useMemo(
-  () => (draftsQuery.data ?? []).filter((draft) => draft.status === "published"),
-  [draftsQuery.data],
- );
- const unpublishedDrafts = useMemo(
+ const activeDrafts = useMemo(
   () =>
-   (draftsQuery.data ?? []).filter((draft) => draft.status !== "published"),
+   (draftsQuery.data ?? []).filter(
+    (draft) =>
+     draft.status !== "archived" && !isCanonicalLessonWorkingCopy(draft),
+   ),
   [draftsQuery.data],
  );
 
@@ -73,7 +81,7 @@ export function HanziHomeLibraryHome() {
    </section>
 
    <DraftRecoveryPanel
-    drafts={unpublishedDrafts}
+    drafts={activeDrafts}
     error={draftsQuery.error}
     isLoading={draftsQuery.isLoading}
    />
@@ -90,7 +98,7 @@ export function HanziHomeLibraryHome() {
       <CourseCard
        key={course.id}
        course={course}
-       stats={getCourseStats(course, publishedDraftSummaries, books)}
+       stats={getCourseStats(course, books)}
        lastCourseId={learning.state.settings.lastCourseId}
        lastLessonId={learning.state.settings.lastLessonId}
       />
@@ -122,14 +130,14 @@ function DraftRecoveryPanel({
     <div className="flex flex-wrap items-start justify-between gap-3">
      <div className="grid gap-1">
       <p className="text-xs font-black uppercase tracking-wide text-text-muted">
-       Bài nháp chưa publish
+       Bài nháp / cần publish
       </p>
       <h2 className="text-lg font-black text-text-primary">
        Tiếp tục soạn bài đang làm dở
       </h2>
       <p className="text-sm font-semibold text-text-muted">
-       Draft chưa publish không hiện trong danh sách bài học, nên gom lại ở đây
-       để mở lại nhanh.
+       Draft không phải lesson học. Mở lại ở đây để soạn tiếp hoặc publish vào
+       lesson DB.
       </p>
      </div>
 
@@ -235,33 +243,17 @@ function mergeBooks(
 
 function getCourseStats(
  course: HanziHomeCatalogCourse,
- publishedDraftSummaries: LessonDraftSummary[],
  books: HanziHomeCourseBook[],
 ): CourseStats {
- const courseDraftLessons = publishedDraftSummaries.filter(
-  (lesson) => lesson.courseId === course.id,
- );
  const courseBooks = books.filter((book) => book.courseId === course.id);
- const maxDraftLessonNumber = courseDraftLessons
-  .map((lesson) => lesson.lessonNumber)
-  .filter((value): value is number => typeof value === "number")
-  .reduce((max, value) => Math.max(max, value), 0);
 
  return {
   books: courseBooks,
-  lessonCount: course.stats.lessonCount + courseDraftLessons.length,
-  vocabCount:
-   course.stats.vocabCount +
-   courseDraftLessons.reduce((sum, lesson) => sum + lesson.vocabCount, 0),
-  grammarCount:
-   course.stats.grammarCount +
-   courseDraftLessons.reduce((sum, lesson) => sum + lesson.grammarCount, 0),
-  fallbackLessonId:
-   courseDraftLessons.at(-1)?.id ||
-   course.fallbackLessonId ||
-   course.lastLessonId,
-  suggestedLessonNumber:
-   Math.max(course.stats.lessonCount, maxDraftLessonNumber) + 1,
+  lessonCount: course.stats.lessonCount,
+  vocabCount: course.stats.vocabCount,
+  grammarCount: course.stats.grammarCount,
+  fallbackLessonId: course.fallbackLessonId || course.lastLessonId,
+  suggestedLessonNumber: course.stats.lessonCount + 1,
  };
 }
 

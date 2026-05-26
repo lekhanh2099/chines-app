@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import { z } from "zod";
 
 import { getHanziHomeLessonDetail } from "@/features/hanzihome/static-data";
+import { getDbHanziHomeLessonDetail } from "@/features/hanzihome/db-data";
 import {
   isPostgresUniqueViolation,
   toLessonDraft,
@@ -57,13 +58,40 @@ export async function POST(request: Request) {
   }
 
   if (existingDraftResult.data) {
+    if (existingDraftResult.data.status === "archived") {
+      const { data, error } = await supabase
+        .from("hanzihome_lesson_drafts")
+        .update({
+          status: "draft",
+          updated_at: new Date().toISOString(),
+        })
+        .eq("id", existingDraftResult.data.id)
+        .eq("user_id", user.id)
+        .select(draftSelect)
+        .single();
+
+      if (error) {
+        return NextResponse.json(
+          { error: "Could not reopen existing lesson draft" },
+          { status: 500 },
+        );
+      }
+
+      return NextResponse.json({
+        draft: toLessonDraft(data),
+        reused: true,
+      });
+    }
+
     return NextResponse.json({
       draft: toLessonDraft(existingDraftResult.data),
       reused: true,
     });
   }
 
-  const lesson = getHanziHomeLessonDetail(lessonId);
+  const lesson =
+    (await getDbHanziHomeLessonDetail(lessonId)) ||
+    getHanziHomeLessonDetail(lessonId);
 
   if (!lesson) {
     return NextResponse.json(

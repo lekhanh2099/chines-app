@@ -3,9 +3,7 @@
 import { useMemo } from "react";
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
-import { Pencil } from "lucide-react";
 
-import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { GrammarWorkspace } from "@/features/hanzihome/components/GrammarWorkspace";
 import { LessonOverview } from "@/features/hanzihome/components/LessonOverview";
@@ -15,11 +13,7 @@ import { ModuleSplitWorkspace } from "@/features/hanzihome/components/ModuleSpli
 import { RadicalWorkspace } from "@/features/hanzihome/components/RadicalWorkspace";
 import { ReviewWorkspace } from "@/features/hanzihome/components/ReviewWorkspace";
 import { VocabWorkspace } from "@/features/hanzihome/components/VocabWorkspace";
-import {
- EditSeedLessonAsDraftButton,
- mapLessonDraftToHanziHomeLesson,
- useLessonDraftsQuery,
-} from "@/features/hanzihome/lesson-drafts";
+import { EditSeedLessonAsDraftButton } from "@/features/hanzihome/lesson-drafts";
 import { useHanziHomeCatalogData } from "@/features/hanzihome/hooks/useHanziHomeCatalogData";
 import { useHanziHomeLessonDetail } from "@/features/hanzihome/hooks/useHanziHomeLessonDetail";
 import { useLearningState } from "@/features/hanzihome/hooks/useLearningState";
@@ -38,7 +32,6 @@ import type {
 import { useHanziHomeCourseLessons } from "@/features/hanzihome/hooks/useHanziHomeCourseLessons";
 
 type StudyModule = Exclude<HanziHomeModule, "radicals">;
-const seedCopyLessonKeyPrefix = "seed-copy-";
 
 const moduleValues = [
  "overview",
@@ -59,31 +52,8 @@ export function HanziHomeWorkspace() {
  const router = useRouter();
  const searchParams = useSearchParams();
  const catalogData = useHanziHomeCatalogData({ includeLessons: false });
- const draftsQuery = useLessonDraftsQuery();
  const learning = useLearningState();
  const customCourseCatalogQuery = useCustomHanziHomeCourseCatalogQuery();
-
- const publishedDraftLessons = useMemo(
-  () =>
-   (draftsQuery.data ?? [])
-    .filter(
-     (draft) =>
-      draft.status === "published" &&
-      !draft.lessonKey.startsWith(seedCopyLessonKeyPrefix),
-    )
-    .map(mapLessonDraftToHanziHomeLesson),
-  [draftsQuery.data],
- );
-
- const seedLessonOverrides = useMemo(
-  () =>
-   (draftsQuery.data ?? []).filter(
-    (draft) =>
-     draft.status !== "archived" &&
-     draft.lessonKey.startsWith(seedCopyLessonKeyPrefix),
-   ),
-  [draftsQuery.data],
- );
 
  const mergedCourseCatalog = useMemo(
   () =>
@@ -105,12 +75,8 @@ export function HanziHomeWorkspace() {
  const seedCourseLessons = useHanziHomeCourseLessons(selectedCourseId);
 
  const lessons = useMemo(
-  () =>
-   sortLessonsByCourseBookOrder([
-    ...seedCourseLessons,
-    ...publishedDraftLessons,
-   ]),
-  [seedCourseLessons, publishedDraftLessons],
+  () => sortLessonsByCourseBookOrder(seedCourseLessons),
+  [seedCourseLessons],
  );
 
  const courseLessons = useMemo(
@@ -148,23 +114,7 @@ export function HanziHomeWorkspace() {
  const activeLessonModule: StudyModule =
   activeModule === "radicals" ? "overview" : activeModule;
 
- const selectedDraftLesson = publishedDraftLessons.find(
-  (item) => item.id === lessonId,
- );
- const selectedSeedOverrideDraft = seedLessonOverrides.find(
-  (draft) => draft.lessonKey === `${seedCopyLessonKeyPrefix}${lessonId}`,
- );
- const selectedSeedOverrideLesson = selectedSeedOverrideDraft
-  ? {
-     ...mapLessonDraftToHanziHomeLesson(selectedSeedOverrideDraft),
-     id: lessonId,
-     sourceFile: "Bản chỉnh sửa cá nhân",
-    }
-  : null;
- const dbLesson = useHanziHomeLessonDetail(
-  selectedDraftLesson || selectedSeedOverrideLesson ? null : lessonId,
- );
- const lesson = selectedDraftLesson || selectedSeedOverrideLesson || dbLesson;
+ const lesson = useHanziHomeLessonDetail(lessonId);
  const selectedLessonId = lesson?.id || lessonId;
 
  const selectedCourse = mergedCourseCatalog.courses.find(
@@ -326,18 +276,9 @@ export function HanziHomeWorkspace() {
           Đang lưu...
          </span>
         )}
-        {lesson && lesson.draftId ? (
-         <Button asChild variant="outline" size="sm">
-          <Link href={`/hanzihome/drafts/${lesson.draftId}`}>
-           <Pencil className="h-4 w-4" />
-           Chỉnh sửa
-          </Link>
-         </Button>
-        ) : (
-         lesson && (
-          <EditSeedLessonAsDraftButton lessonId={lesson.id} size="sm" />
-         )
-        )}
+        {activeModule !== "radicals" && lesson ? (
+         <EditSeedLessonAsDraftButton lessonId={lesson.id} size="sm" />
+        ) : null}
        </div>
       </div>
      </div>

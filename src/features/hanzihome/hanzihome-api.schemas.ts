@@ -90,6 +90,7 @@ export const lessonSchema = z.object({
   id: z.string(),
   lessonNumber: z.number(),
   titleZh: z.string(),
+  titleVi: z.string().optional(),
   title: z.string(),
   sourceFile: z.string().optional(),
   courseId: z.string().optional(),
@@ -136,6 +137,9 @@ export const updateHanziHomeVocabPayloadSchema = z.object({
   detailSections: z.array(vocabDetailSectionSchema),
 });
 
+export const createHanziHomeVocabPayloadSchema =
+  updateHanziHomeVocabPayloadSchema;
+
 export const updateHanziHomeGrammarPayloadSchema = z.object({
   lessonId: z.string().trim().min(1),
   title: z.string().trim().min(1, "Thiếu tiêu đề"),
@@ -148,9 +152,28 @@ export const updateHanziHomeGrammarPayloadSchema = z.object({
   detailSections: z.array(vocabDetailSectionSchema).default([]),
 });
 
+export const createHanziHomeGrammarPayloadSchema =
+  updateHanziHomeGrammarPayloadSchema;
+
+export const updateHanziHomeLessonPayloadSchema = z.object({
+  lessonNumber: z.number().int().positive(),
+  lessonOrder: z.number().int().positive(),
+  titleZh: z.string().trim().min(1, "Thiếu tên bài tiếng Trung"),
+  titleVi: z.string().trim().optional(),
+});
+
 export type UpdateHanziHomeVocabPayload = z.infer<
   typeof updateHanziHomeVocabPayloadSchema
 >;
+export type CreateHanziHomeVocabPayload = z.infer<
+  typeof createHanziHomeVocabPayloadSchema
+>;
 export type UpdateHanziHomeGrammarPayload = z.infer<
   typeof updateHanziHomeGrammarPayloadSchema
+>;
+export type CreateHanziHomeGrammarPayload = z.infer<
+  typeof createHanziHomeGrammarPayloadSchema
+>;
+export type UpdateHanziHomeLessonPayload = z.infer<
+  typeof updateHanziHomeLessonPayloadSchema
 >;

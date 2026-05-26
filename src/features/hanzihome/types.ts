@@ -92,6 +92,7 @@ export type HanziHomeLesson = {
  id: string;
  lessonNumber: number;
  titleZh: string;
+ titleVi?: string;
  title: string;
  sourceFile?: string;
  courseId?: string;

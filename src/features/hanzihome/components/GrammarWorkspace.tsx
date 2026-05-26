@@ -5,6 +5,7 @@ import { PanelLeftClose, PanelLeftOpen } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Sheet, SheetHeader } from "@/components/ui/sheet";
+import { GrammarCreateDialog } from "@/features/hanzihome/components/GrammarCreateDialog";
 import { InlineDraftItemEditDialog } from "@/features/hanzihome/components/InlineDraftItemEditDialog";
 import { GrammarPointList } from "@/features/hanzihome/components/GrammarPointList";
 import { GrammarPointReader } from "@/features/hanzihome/components/GrammarPointReader";
@@ -198,8 +199,10 @@ export function GrammarWorkspace({
    selectedPoint.examplesParsed.map((example) => example.zh).join(" "),
   ].join(" ");
 
-  return lesson.vocab.filter((word) => text.includes(word.word)).slice(0, 8);
+ return lesson.vocab.filter((word) => text.includes(word.word)).slice(0, 8);
  }, [lesson.vocab, selectedPoint]);
+ const canEditDbContent = Boolean(lesson.isDbBacked);
+ const editDraftId = canEditDbContent ? undefined : lesson.draftId;
 
  const renderGrammarSidebar = () => (
   <div className="grid content-start gap-3">
@@ -236,7 +239,7 @@ export function GrammarWorkspace({
  );
 
  const readerContent = isAllView ? (
-  <AllGrammarPointReader points={lesson.grammar} draftId={lesson.draftId} />
+  <AllGrammarPointReader points={lesson.grammar} draftId={editDraftId} />
  ) : isReadingView && reading ? (
   <GrammarReadingReader reading={reading} />
  ) : (
@@ -246,8 +249,8 @@ export function GrammarWorkspace({
    bookmarked={selectedPoint ? bookmarks.includes(selectedPoint.id) : false}
    relatedVocab={relatedVocab}
    lessonId={lesson.id}
-   canEditDbContent={Boolean(lesson.isDbBacked && !lesson.draftId)}
-   editDraftId={lesson.draftId}
+   canEditDbContent={canEditDbContent}
+   editDraftId={editDraftId}
    editItemId={selectedPoint?.id}
    onBookmark={() => selectedPoint && onBookmark(selectedPoint.id)}
    onMarkStatus={(status) =>
@@ -269,6 +272,8 @@ export function GrammarWorkspace({
     </div>
 
     <div className="flex flex-wrap items-center gap-2">
+     {canEditDbContent && <GrammarCreateDialog lessonId={lesson.id} />}
+
      <Button
       type="button"
       variant="outline"

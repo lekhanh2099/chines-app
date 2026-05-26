@@ -9,13 +9,25 @@ import { Card } from "@/components/ui/card";
 import {
  useDeleteLessonDraftMutation,
  useLessonDraftsQuery,
+ type LessonDraft,
 } from "@/features/hanzihome/lesson-drafts";
+
+function isCanonicalLessonWorkingCopy(draft: LessonDraft) {
+ return (
+  draft.lessonKey.startsWith("seed-copy-") ||
+  draft.lessonKey.startsWith("hanyu2-bai-") ||
+  draft.lessonKey.startsWith("hanyu-") ||
+  draft.lessonKey.startsWith("hsk-")
+ );
+}
 
 export function LessonDraftsCompactList() {
  const draftsQuery = useLessonDraftsQuery();
  const deleteMutation = useDeleteLessonDraftMutation();
 
- const drafts = draftsQuery.data ?? [];
+ const drafts = (draftsQuery.data ?? []).filter(
+  (draft) => !isCanonicalLessonWorkingCopy(draft),
+ );
 
  const handleDelete = async (draftId: string, title: string) => {
   const confirmed = window.confirm(`Xóa bài nháp"${title}"?`);

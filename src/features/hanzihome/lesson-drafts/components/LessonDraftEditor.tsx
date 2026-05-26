@@ -17,9 +17,9 @@ import {
  DialogTitle,
 } from "@/components/ui/dialog";
 import {
- useDeleteLessonDraftMutation,
- useLessonDraftQuery,
- useUpdateLessonDraftMutation,
+  useDeleteLessonDraftMutation,
+  useLessonDraftQuery,
+  usePublishLessonDraftMutation,
 } from "@/features/hanzihome/lesson-drafts";
 import { LessonDraftMetadataForm } from "@/features/hanzihome/lesson-drafts/components/LessonDraftMetadataForm";
 import { VocabDraftImporter } from "@/features/hanzihome/lesson-drafts/components/VocabDraftImporter";
@@ -63,7 +63,7 @@ export function LessonDraftEditor({ draftId }: LessonDraftEditorProps) {
 
  const draftQuery = useLessonDraftQuery(draftId);
  const deleteMutation = useDeleteLessonDraftMutation();
- const updateMutation = useUpdateLessonDraftMutation();
+ const publishMutation = usePublishLessonDraftMutation();
 
  const draft = draftQuery.data;
 
@@ -83,23 +83,13 @@ export function LessonDraftEditor({ draftId }: LessonDraftEditorProps) {
   };
  }, [draft]);
 
- const handlePublishToggle = async () => {
+ const handlePublish = async () => {
   if (!draft) return;
 
-  const nextStatus = draft.status === "published" ? "draft" : "published";
+  const { lessonId } = await publishMutation.mutateAsync(draft.id);
 
-  await updateMutation.mutateAsync({
-   draftId: draft.id,
-   input: {
-    status: nextStatus,
-   },
-  });
-
-  toast.success(
-   nextStatus === "published"
-    ? "Đã publish bài. Bài này sẽ xuất hiện trong HanziHome."
-    : "Đã chuyển bài về draft.",
-  );
+  toast.success("Đã publish bài vào lesson DB.");
+  router.push(`/hanzihome?lessonId=${encodeURIComponent(lessonId)}`);
  };
 
  const handleDelete = async () => {
@@ -178,11 +168,11 @@ export function LessonDraftEditor({ draftId }: LessonDraftEditorProps) {
       <div className="flex flex-wrap gap-2">
        <Button
         type="button"
-        variant={draft.status === "published" ? "outline" : "default"}
-        disabled={updateMutation.isPending}
-        onClick={() => void handlePublishToggle()}
+        variant="default"
+        disabled={draft.status === "archived" || publishMutation.isPending}
+        onClick={() => void handlePublish()}
        >
-        {draft.status === "published" ? "Unpublish" : "Publish"}
+        {publishMutation.isPending ? "Đang publish..." : "Publish"}
        </Button>
 
        <Button

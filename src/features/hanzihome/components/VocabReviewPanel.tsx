@@ -515,7 +515,8 @@ function FlashcardDetailDialog({
   item.type === "vocab"
    ? Boolean(learningState.bookmarks.vocab?.includes(item.id))
    : Boolean(learningState.bookmarks.grammar?.includes(item.id));
- const canEditDbContent = Boolean(itemLesson.isDbBacked && !itemLesson.draftId);
+ const canEditDbContent = Boolean(itemLesson.isDbBacked);
+ const editDraftId = canEditDbContent ? undefined : itemLesson.draftId;
 
  return (
   <Dialog open={open} onOpenChange={onOpenChange}>
@@ -536,7 +537,7 @@ function FlashcardDetailDialog({
        bookmarked={bookmarked}
        lessonId={itemLesson.id}
        canEditDbContent={canEditDbContent}
-       editDraftId={itemLesson.draftId}
+       editDraftId={editDraftId}
        editItemId={item.id}
        onBookmark={() => onToggleBookmark?.("vocab", item.id)}
        onMarkStatus={(nextStatus) => {
@@ -556,7 +557,7 @@ function FlashcardDetailDialog({
        relatedVocab={lesson.vocab}
        lessonId={itemLesson.id}
        canEditDbContent={canEditDbContent}
-       editDraftId={itemLesson.draftId}
+       editDraftId={editDraftId}
        editItemId={item.id}
        onBookmark={() => onToggleBookmark?.("grammar", item.id)}
        onMarkStatus={(nextStatus) => {

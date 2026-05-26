@@ -1,6 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useMemo, useState } from "react";
+import { VocabCreateDialog } from "@/features/hanzihome/components/VocabCreateDialog";
 import { VocabDetailPanel } from "@/features/hanzihome/components/VocabDetailPanel";
 import { VocabList } from "@/features/hanzihome/components/VocabList";
 import type {
@@ -36,6 +37,8 @@ export function VocabWorkspace({
   () => state.progress.vocab || {},
   [state.progress.vocab],
  );
+ const canEditDbContent = Boolean(lesson.isDbBacked);
+ const editDraftId = canEditDbContent ? undefined : lesson.draftId;
 
  const visibleWords = useMemo(() => {
   const keyword = searchValue.trim().toLowerCase();
@@ -113,6 +116,12 @@ export function VocabWorkspace({
 
  return (
   <div className="grid gap-3">
+   {canEditDbContent && (
+    <div className="flex justify-end">
+     <VocabCreateDialog lessonId={lesson.id} />
+    </div>
+   )}
+
    <VocabList
     words={visibleWords}
     selectedWordId={selectedWord?.id || null}
@@ -130,8 +139,8 @@ export function VocabWorkspace({
     status={selectedWord ? progress[selectedWord.id]?.status || "new" : "new"}
     bookmarked={selectedWord ? bookmarks.includes(selectedWord.id) : false}
     lessonId={lesson.id}
-    canEditDbContent={Boolean(lesson.isDbBacked && !lesson.draftId)}
-    editDraftId={lesson.draftId}
+    canEditDbContent={canEditDbContent}
+    editDraftId={editDraftId}
     editItemId={selectedWord?.id}
     onBookmark={() => selectedWord && onBookmark(selectedWord.id)}
     onMarkStatus={(status) =>

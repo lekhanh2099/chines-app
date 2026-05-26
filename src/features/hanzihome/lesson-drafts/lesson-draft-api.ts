@@ -64,6 +64,10 @@ const deleteLessonDraftResponseSchema = z.object({
   ok: z.literal(true),
 });
 
+const publishLessonDraftResponseSchema = z.object({
+  lessonId: z.string(),
+});
+
 const apiErrorResponseSchema = z.object({
   error: z.string(),
 });
@@ -187,5 +191,17 @@ export async function deleteLessonDraft(draftId: string): Promise<void> {
       method: "DELETE",
     },
     (json) => deleteLessonDraftResponseSchema.parse(json),
+  );
+}
+
+export async function publishLessonDraft(
+  draftId: string,
+): Promise<{ lessonId: string }> {
+  return requestJson(
+    `/api/hanzihome/lesson-drafts/${draftId}/publish`,
+    {
+      method: "POST",
+    },
+    (json) => publishLessonDraftResponseSchema.parse(json),
   );
 }

@@ -6,6 +6,7 @@ export {
   getLessonDrafts,
   getLessonDraftSummaries,
   lessonDraftQueryKeys,
+  publishLessonDraft,
   updateLessonDraft,
 } from "@/features/hanzihome/lesson-drafts/lesson-draft-api";
 
@@ -34,6 +35,7 @@ export {
   useLessonDraftQuery,
   useLessonDraftsQuery,
   useLessonDraftSummariesQuery,
+  usePublishLessonDraftMutation,
   useUpdateLessonDraftMutation,
 } from "@/features/hanzihome/lesson-drafts/use-lesson-drafts";
 
