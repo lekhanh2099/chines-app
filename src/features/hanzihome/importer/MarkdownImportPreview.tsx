@@ -127,9 +127,9 @@ const applyModeOptions: Array<{
  value: ApplyImportMode;
  label: string;
 }> = [
- { value: "replace", label: "Replace target" },
- { value: "append", label: "Append" },
- { value: "mergeByTitle", label: "Merge by title" },
+ { value: "replace", label: "Ghi đè phần này" },
+ { value: "append", label: "Thêm vào cuối" },
+ { value: "mergeByTitle", label: "Ghép theo tiêu đề" },
 ];
 
 const importMappedResultFieldFormSchema = z.object({
@@ -1185,7 +1185,7 @@ function ImportWarningPanel({
 
     {applyMode === "replace" && (
      <p className="rounded-lg bg-white/70 px-3 py-2 text-sm font-bold text-amber-900">
-      Replace target sẽ thay thế dữ liệu hiện tại của tab đang chọn.
+      Ghi đè sẽ thay thế dữ liệu hiện tại của tab đang chọn.
      </p>
     )}
 
@@ -1422,13 +1422,13 @@ export function MarkdownImportPreview({ draft }: MarkdownImportPreviewProps) {
   }, 80);
  };
 
- const handleApply = async () => {
+ const handleApply = async ({ force = false }: { force?: boolean } = {}) => {
   if (!result) {
    toast.error("Parse markdown trước khi apply.");
    return;
   }
 
-  if (!health.canApply) {
+  if (!health.canApply && !force) {
    toast.error("Kết quả parse chưa an toàn để apply.");
    return;
   }
@@ -1567,7 +1567,7 @@ export function MarkdownImportPreview({ draft }: MarkdownImportPreviewProps) {
    <ImportStepper
     step={step}
     canOpenReview={Boolean(result)}
-    canOpenApply={Boolean(result && health.canApply)}
+    canOpenApply={Boolean(result)}
     onStepChange={setStep}
    />
 
@@ -1575,14 +1575,30 @@ export function MarkdownImportPreview({ draft }: MarkdownImportPreviewProps) {
     <div className="grid gap-4 xl:grid-cols-[minmax(22rem,0.9fr)_minmax(0,1.1fr)]">
      <Card padding="lg" className="rounded-xl">
       <div className="grid gap-4">
-       <div>
-        <p className="text-xs font-black uppercase tracking-wide text-text-muted">
-         Bước 1
-        </p>
-        <h2 className="text-xl font-black text-text-primary">Dán Markdown</h2>
-        <p className="text-sm font-semibold text-text-muted">
-         Dán markdown rồi parse để xem trước. Bước này chưa lưu vào draft.
-        </p>
+       <div className="flex flex-wrap items-start justify-between gap-3">
+        <div>
+         <p className="text-xs font-black uppercase tracking-wide text-text-muted">
+          Bước 1
+         </p>
+         <h2 className="text-xl font-black text-text-primary">Dán Markdown</h2>
+         <p className="text-sm font-semibold text-text-muted">
+          Dán markdown rồi parse để xem trước. Bước này chưa lưu vào draft.
+         </p>
+        </div>
+
+        <div className="flex flex-wrap gap-2">
+         <Button type="button" onClick={handleParse}>
+          <WandSparkles className="h-4 w-4" />
+          Parse & xem trước
+         </Button>
+         <Button
+          type="button"
+          variant="outline"
+          onClick={() => handleMarkdownChange(sampleMarkdown)}
+         >
+          Dùng mẫu
+         </Button>
+        </div>
        </div>
 
        <label className="grid gap-2">
@@ -1596,20 +1612,6 @@ export function MarkdownImportPreview({ draft }: MarkdownImportPreviewProps) {
          placeholder={sampleMarkdown}
         />
        </label>
-
-       <div className="flex flex-wrap gap-2">
-        <Button type="button" onClick={handleParse}>
-         <WandSparkles className="h-4 w-4" />
-         Parse & xem trước
-        </Button>
-        <Button
-         type="button"
-         variant="outline"
-         onClick={() => handleMarkdownChange(sampleMarkdown)}
-        >
-         Dùng mẫu
-        </Button>
-       </div>
 
        {storageWarnings.length > 0 && (
         <div className="grid gap-2 rounded-xl border border-border-default bg-bg-subtle p-3">
@@ -1651,8 +1653,8 @@ export function MarkdownImportPreview({ draft }: MarkdownImportPreviewProps) {
        <div className="grid gap-2">
         <h3 className="text-lg font-black text-text-primary">Cảnh báo mode</h3>
         <p className="text-sm font-semibold text-text-muted">
-         Replace target sẽ thay thế phần đang chọn. Append sẽ thêm vào cuối.
-         Merge by title sẽ cố ghép theo tiêu đề.
+         Ghi đè sẽ thay thế phần đang chọn. Thêm vào cuối sẽ nối dữ liệu mới.
+         Ghép theo tiêu đề sẽ cố cập nhật item trùng tên.
         </p>
        </div>
       </Card>
@@ -1686,10 +1688,20 @@ export function MarkdownImportPreview({ draft }: MarkdownImportPreviewProps) {
         </Button>
         <Button
          type="button"
-         disabled={!result || !health.canApply}
+         variant="outline"
+         disabled={!result}
          onClick={() => setStep("apply")}
         >
-         Tiếp tục Apply
+         Xem xác nhận
+        </Button>
+        <Button
+         type="button"
+         disabled={!result || updateDraftMutation.isPending}
+         isLoading={updateDraftMutation.isPending}
+         onClick={() => void handleApply({ force: true })}
+        >
+         <Save className="h-4 w-4" />
+         {updateDraftMutation.isPending ? "Đang apply..." : "Apply luôn"}
         </Button>
        </div>
       </div>
@@ -1698,9 +1710,9 @@ export function MarkdownImportPreview({ draft }: MarkdownImportPreviewProps) {
      {result && activeProfile ? (
       <>
        <ImportWarningPanel
-       result={result}
-       applyMode={applyMode}
-       onJumpToUnmapped={() => goToReviewSection("import-unmapped")}
+        result={result}
+        applyMode={applyMode}
+        onJumpToUnmapped={() => goToReviewSection("import-unmapped")}
         onJumpToWarnings={() => goToReviewSection("import-warnings")}
        />
        <ResultSummary
@@ -1797,7 +1809,7 @@ export function MarkdownImportPreview({ draft }: MarkdownImportPreviewProps) {
 
         {applyMode === "replace" && (
          <p className="rounded-xl border border-amber-200 bg-amber-50 p-3 text-sm font-bold text-amber-900">
-          Replace target có thể ghi đè phần hiện tại của target đã chọn.
+          Ghi đè có thể thay thế phần hiện tại của target đã chọn.
          </p>
         )}
        </div>

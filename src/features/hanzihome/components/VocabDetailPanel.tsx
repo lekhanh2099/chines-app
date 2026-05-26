@@ -1,7 +1,7 @@
 "use client";
 
 import type { ReactNode } from "react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Bookmark } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -22,6 +22,29 @@ type SectionView =
  | "comparisons"
  | "examples"
  | "notes";
+
+const sectionShortcutTabs: Array<{
+ key: SectionView;
+ label: string;
+ shortcut: string;
+}> = [
+ { key: "all", label: "Tất cả", shortcut: "1" },
+ { key: "meaning", label: "Nghĩa", shortcut: "2" },
+ { key: "etymology", label: "Logic", shortcut: "3" },
+ { key: "comparisons", label: "So sánh", shortcut: "4" },
+ { key: "examples", label: "Ví dụ", shortcut: "5" },
+ { key: "notes", label: "Lưu ý", shortcut: "6" },
+];
+
+function isTypingTarget(element: Element | null) {
+ return (
+  element instanceof HTMLInputElement ||
+  element instanceof HTMLTextAreaElement ||
+  element instanceof HTMLSelectElement ||
+  element?.getAttribute("role") === "textbox" ||
+  Boolean(element?.closest("[contenteditable='true'], [data-editor-root]"))
+ );
+}
 
 type VocabDetailPanelProps = {
  word: VocabViewModel | null;
@@ -45,6 +68,42 @@ export function VocabDetailPanel({
  editItemId,
 }: VocabDetailPanelProps) {
  const [sectionView, setSectionView] = useState<SectionView>("all");
+
+ useEffect(() => {
+  if (!word) return;
+
+  const availableSectionKeys = new Set(
+   word.detailSections.map((section) => section.key),
+  );
+  const availableTabs = sectionShortcutTabs.filter((item) => {
+   if (item.key === "all") return true;
+   if (item.key === "examples") return word.examplesParsed.length > 0;
+   if (item.key === "notes") return availableSectionKeys.has("notes");
+   return availableSectionKeys.has(item.key);
+  });
+
+  const handleKeyDown = (event: KeyboardEvent) => {
+   if (event.altKey || event.ctrlKey || event.metaKey || event.shiftKey) {
+    return;
+   }
+
+   if (isTypingTarget(document.activeElement)) return;
+
+   const nextTab = availableTabs.find((item) => item.shortcut === event.key);
+
+   if (!nextTab) return;
+
+   event.preventDefault();
+   setSectionView(nextTab.key);
+  };
+
+  window.addEventListener("keydown", handleKeyDown);
+
+  return () => {
+   window.removeEventListener("keydown", handleKeyDown);
+  };
+ }, [word]);
+
  if (!word) {
   return (
    <Card
@@ -74,27 +133,27 @@ export function VocabDetailPanel({
   sectionByKey.get("culture"),
   sectionByKey.get("notes"),
  ].filter(isSection);
- const visibleOrderedSections = orderedSections.filter(
-  (section) => sectionView === "all" || section.key === sectionView,
- );
- const showExamples = sectionView === "all" || sectionView === "examples";
- const visibleTrailingSections = trailingSections.filter((section) => {
-  if (sectionView === "all") return true;
-  if (sectionView === "notes") return section.key === "notes";
-  return section.key === sectionView;
- });
  const sectionTabs = [
-  { key: "all" as const, label: "Tất cả" },
-  { key: "meaning" as const, label: "Nghĩa" },
-  { key: "etymology" as const, label: "Logic" },
-  { key: "comparisons" as const, label: "So sánh" },
-  { key: "examples" as const, label: "Ví dụ" },
-  { key: "notes" as const, label: "Lưu ý" },
+  ...sectionShortcutTabs,
  ].filter((item) => {
   if (item.key === "all") return true;
   if (item.key === "examples") return word.examplesParsed.length > 0;
   if (item.key === "notes") return sectionByKey.has("notes");
   return sectionByKey.has(item.key);
+ });
+ const effectiveSectionView = sectionTabs.some((item) => item.key === sectionView)
+  ? sectionView
+  : "all";
+ const visibleOrderedSections = orderedSections.filter(
+  (section) =>
+   effectiveSectionView === "all" || section.key === effectiveSectionView,
+ );
+ const showExamples =
+  effectiveSectionView === "all" || effectiveSectionView === "examples";
+ const visibleTrailingSections = trailingSections.filter((section) => {
+  if (effectiveSectionView === "all") return true;
+  if (effectiveSectionView === "notes") return section.key === "notes";
+  return section.key === effectiveSectionView;
  });
 
  return (
@@ -176,12 +235,15 @@ export function VocabDetailPanel({
        onClick={() => setSectionView(item.key)}
        className={[
         "rounded-full border px-3 py-1 text-xs font-black transition-colors",
-        sectionView === item.key
+        effectiveSectionView === item.key
          ? "border-accent bg-accent"
          : "border-border-default bg-bg-subtle text-text-muted hover:text-text-primary",
        ].join(" ")}
       >
-       {item.label}
+       <span>{item.label}</span>
+       <kbd className="ml-2 rounded bg-bg-primary px-1.5 py-0.5 text-[0.65rem] font-black text-text-muted">
+        {item.shortcut}
+       </kbd>
       </button>
      ))}
     </nav>
