@@ -34,7 +34,6 @@ const mainItems: NavItem[] = [
   name: "HanziHome",
   icon: Sparkles,
   href: "/hanzihome",
-  badge: "JSON",
  },
  {
   name: "Tổng hợp từ",
