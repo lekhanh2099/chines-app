@@ -36,6 +36,11 @@ const mainItems: NavItem[] = [
   href: "/hanzihome",
  },
  {
+  name: "Bộ mặc định",
+  icon: BookOpen,
+  href: "/hanzihome/seed",
+ },
+ {
   name: "Tổng hợp từ",
   icon: BookOpen,
   href: "/hanzihome/vocab",

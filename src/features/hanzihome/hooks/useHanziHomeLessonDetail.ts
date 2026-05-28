@@ -38,8 +38,8 @@ async function fetchLessonDetail(
  return parsed.lesson;
 }
 
-export function useHanziHomeLessonDetail(lessonId: string | null) {
- const query = useQuery({
+export function useHanziHomeLessonDetailQuery(lessonId: string | null) {
+ return useQuery({
   queryKey: hanzihomeLessonDetailQueryKey(lessonId),
   queryFn: () => {
    if (!lessonId) {
@@ -50,7 +50,12 @@ export function useHanziHomeLessonDetail(lessonId: string | null) {
   },
   enabled: Boolean(lessonId),
   staleTime: 0,
+  placeholderData: (previousData) => previousData,
  });
+}
+
+export function useHanziHomeLessonDetail(lessonId: string | null) {
+ const query = useHanziHomeLessonDetailQuery(lessonId);
 
  return query.data ?? null;
 }

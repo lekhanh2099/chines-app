@@ -5,6 +5,7 @@ import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import {
   createCustomHanziHomeCourse,
   createCustomHanziHomeCourseBook,
+  forkSeedHanziHomeCourse,
   getCustomHanziHomeCourseCatalog,
 } from "@/features/hanzihome/courses/custom-course-api";
 import type {
@@ -50,4 +51,22 @@ export function useCreateCustomHanziHomeCourseBookMutation() {
       });
     },
   });
+}
+
+export function useForkSeedHanziHomeCourseMutation() {
+ const queryClient = useQueryClient();
+
+ return useMutation({
+  mutationFn: (courseId: string) => forkSeedHanziHomeCourse(courseId),
+  onSuccess: async () => {
+   await Promise.all([
+    queryClient.invalidateQueries({
+     queryKey: hanzihomeCourseQueryKeys.catalog(),
+    }),
+    queryClient.invalidateQueries({
+     queryKey: ["hanzihome"],
+    }),
+   ]);
+  },
+ });
 }

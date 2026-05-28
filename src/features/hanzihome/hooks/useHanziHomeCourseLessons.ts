@@ -37,15 +37,20 @@ async function fetchCourseLessons(courseId: string): Promise<HanziHomeLesson[]> 
  return parsed.lessons;
 }
 
-export function useHanziHomeCourseLessons(courseId: string) {
- const query = useQuery({
+export function useHanziHomeCourseLessonsQuery(courseId: string) {
+ return useQuery({
   queryKey: ["hanzihome", "course-lessons", courseId],
   queryFn: () => fetchCourseLessons(courseId),
   enabled: Boolean(courseId),
   staleTime: 5 * 60 * 1000,
   gcTime: 30 * 60 * 1000,
   refetchOnWindowFocus: false,
+  placeholderData: (previousData) => previousData,
  });
+}
+
+export function useHanziHomeCourseLessons(courseId: string) {
+ const query = useHanziHomeCourseLessonsQuery(courseId);
 
  return query.data ?? [];
 }

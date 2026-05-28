@@ -8,6 +8,7 @@ import { BookMarked, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { CreateCourseDialog } from "@/features/hanzihome/courses/CreateCourseDialog";
+import { ForkSeedCourseButton } from "@/features/hanzihome/courses/ForkSeedCourseButton";
 import { useCustomHanziHomeCourseCatalogQuery } from "@/features/hanzihome/courses/use-custom-courses";
 import {
  CreateLessonDraftDialog,
@@ -32,6 +33,12 @@ type CourseStats = {
  suggestedLessonNumber: number;
 };
 
+const SEED_COURSE_IDS = new Set(["hanyu-jiaocheng"]);
+
+function isSeedCourse(course: Pick<HanziHomeCatalogCourse, "id">) {
+ return SEED_COURSE_IDS.has(course.id);
+}
+
 export function HanziHomeLibraryHome() {
  const catalogData = useHanziHomeCatalogData();
  const customCatalogQuery = useCustomHanziHomeCourseCatalogQuery();
@@ -39,7 +46,8 @@ export function HanziHomeLibraryHome() {
  const learning = useLearningState();
 
  const publishedDraftSummaries = useMemo(
-  () => (draftsQuery.data ?? []).filter((draft) => draft.status === "published"),
+  () =>
+   (draftsQuery.data ?? []).filter((draft) => draft.status === "published"),
   [draftsQuery.data],
  );
  const unpublishedDrafts = useMemo(
@@ -161,8 +169,8 @@ function DraftRecoveryPanel({
          {draft.titleZh}
         </p>
         <p className="truncate text-xs font-semibold text-text-muted">
-         {draft.bookTitle || draft.courseTitle || draft.lessonKey}{" "}
-         · {draft.status}
+         {draft.bookTitle || draft.courseTitle || draft.lessonKey} ·{" "}
+         {draft.status}
         </p>
        </Link>
       ))}
@@ -279,6 +287,7 @@ function CourseCard({
  const router = useRouter();
  const primaryBook = stats.books[0];
  const courseLessons = useHanziHomeCourseLessons(course.id);
+ const isSeedCourse = course.id === "hanyu-jiaocheng";
 
  const targetLessonId =
   lastCourseId === course.id
@@ -301,6 +310,7 @@ function CourseCard({
   router.push(href);
  };
 
+ if (isSeedCourse) return null;
  return (
   <Card
    padding="none"
@@ -381,14 +391,18 @@ function CourseCard({
      onClick={(event) => event.stopPropagation()}
      onMouseDown={(event) => event.stopPropagation()}
     >
-     <CreateLessonDraftDialog
-      suggestedLessonNumber={stats.suggestedLessonNumber}
-      courses={[course]}
-      books={stats.books}
-      selectedCourseId={course.id}
-      selectedBookId={primaryBook?.id}
-      triggerVariant="outline"
-     />
+     {isSeedCourse ? (
+      <ForkSeedCourseButton courseId={course.id} />
+     ) : (
+      <CreateLessonDraftDialog
+       suggestedLessonNumber={stats.suggestedLessonNumber}
+       courses={[course]}
+       books={stats.books}
+       selectedCourseId={course.id}
+       selectedBookId={primaryBook?.id}
+       triggerVariant="outline"
+      />
+     )}
 
      <Button asChild>
       <Link href={href}>

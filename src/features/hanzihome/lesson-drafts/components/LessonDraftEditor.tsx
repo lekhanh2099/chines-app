@@ -66,6 +66,7 @@ export function LessonDraftEditor({ draftId }: LessonDraftEditorProps) {
  const updateMutation = useUpdateLessonDraftMutation();
 
  const draft = draftQuery.data;
+ const isDbLessonEdit = draftId.includes("__");
 
  const draftStats = useMemo(() => {
   if (!draft) {

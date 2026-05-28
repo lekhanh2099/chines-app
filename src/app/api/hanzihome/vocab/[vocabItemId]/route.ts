@@ -79,6 +79,14 @@ export async function PATCH(request: Request, context: RouteContext) {
     return jsonError("Vocab item does not belong to this lesson", 400);
   }
 
+  if (item.source === "seed") {
+    return jsonError("Seed vocab is read-only. Fork the course before editing.", 403);
+  }
+
+  if (item.owner_id !== user.id) {
+    return jsonError("Vocab item is not editable by this user", 403);
+  }
+
   const { data: updatedItem, error: updateError } = await supabase
     .from("hanzihome_vocab_items")
     .update({

@@ -117,3 +117,25 @@ export async function createCustomHanziHomeCourseBook(
 
   return createHanziHomeCourseBookResponseSchema.parse(json);
 }
+
+export async function forkSeedHanziHomeCourse(courseId: string) {
+ const response = await fetch(`/api/hanzihome/seed/courses/${courseId}/fork`, {
+  method: "POST",
+ });
+
+ if (!response.ok) {
+  throw new Error(await parseApiError(response));
+ }
+
+ const json: unknown = await response.json();
+
+ if (!json || typeof json !== "object") {
+  throw new Error("Invalid fork seed course response");
+ }
+
+ return json as {
+  courseId: string;
+  lessonId: string | null;
+  reused: boolean;
+ };
+}
