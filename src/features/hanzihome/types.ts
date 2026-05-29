@@ -105,6 +105,7 @@ export type HanziHomeLesson = {
   words: string[];
  }>;
  vocabCount?: number;
+ grammarCount?: number;
  vocabIds: string[];
  grammarPointIds: string[];
  vocab: VocabViewModel[];

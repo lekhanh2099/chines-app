@@ -79,6 +79,17 @@ export async function PATCH(request: Request, context: RouteContext) {
     return jsonError("Grammar point does not belong to this lesson", 400);
   }
 
+  if (point.source === "seed") {
+    return jsonError(
+      "Seed grammar is read-only. Fork the course before editing.",
+      403,
+    );
+  }
+
+  if (point.owner_id !== user.id) {
+    return jsonError("Grammar point is not editable by this user", 403);
+  }
+
   const { data: updatedPoint, error: updateError } = await supabase
     .from("hanzihome_grammar_points")
     .update({
@@ -180,6 +191,73 @@ export async function PATCH(request: Request, context: RouteContext) {
     if (error) {
       return jsonError("Could not save grammar detail sections", 403);
     }
+  }
+
+  return NextResponse.json({ ok: true, lessonId: point.lesson_id });
+}
+
+export async function DELETE(_request: Request, context: RouteContext) {
+  const { grammarPointId } = await context.params;
+  const supabase = await createClient();
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+
+  if (!user) {
+    return jsonError("Unauthorized", 401);
+  }
+
+  const { data: pointRow, error: pointError } = await supabase
+    .from("hanzihome_grammar_points")
+    .select("id, lesson_id, course_id, book_id, source, owner_id")
+    .eq("id", grammarPointId)
+    .maybeSingle();
+
+  if (pointError) {
+    return jsonError("Could not load grammar point", 500);
+  }
+
+  const point = grammarPointRowSchema.nullable().parse(pointRow);
+
+  if (!point) {
+    return jsonError("Grammar point not found", 404);
+  }
+
+  if (point.source === "seed") {
+    return jsonError(
+      "Seed grammar is read-only. Fork the course before deleting.",
+      403,
+    );
+  }
+
+  if (point.owner_id !== user.id) {
+    return jsonError("Grammar point is not editable by this user", 403);
+  }
+
+  const [deleteExamples, deleteSections] = await Promise.all([
+    supabase
+      .from("hanzihome_grammar_examples")
+      .delete()
+      .eq("grammar_point_id", point.id),
+    supabase
+      .from("hanzihome_grammar_detail_sections")
+      .delete()
+      .eq("grammar_point_id", point.id),
+  ]);
+
+  if (deleteExamples.error || deleteSections.error) {
+    return jsonError("Could not delete grammar child rows", 403);
+  }
+
+  const { error: deletePointError } = await supabase
+    .from("hanzihome_grammar_points")
+    .delete()
+    .eq("id", point.id)
+    .eq("owner_id", user.id)
+    .eq("source", "custom");
+
+  if (deletePointError) {
+    return jsonError("Could not delete grammar point", 403);
   }
 
   return NextResponse.json({ ok: true, lessonId: point.lesson_id });

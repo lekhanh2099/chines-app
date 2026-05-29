@@ -64,6 +64,12 @@ const deleteLessonDraftResponseSchema = z.object({
   ok: z.literal(true),
 });
 
+const publishLessonDraftResponseSchema = z.object({
+  ok: z.literal(true),
+  lessonId: z.string(),
+  courseId: z.string(),
+});
+
 const apiErrorResponseSchema = z.object({
   error: z.string(),
 });
@@ -177,6 +183,16 @@ export async function updateLessonDraft(
       body: JSON.stringify(payload),
     },
     (json) => lessonDraftResponseSchema.parse(json).draft,
+  );
+}
+
+export async function publishLessonDraft(draftId: string) {
+  return requestJson(
+    `/api/hanzihome/lesson-drafts/${draftId}/publish`,
+    {
+      method: "POST",
+    },
+    (json) => publishLessonDraftResponseSchema.parse(json),
   );
 }
 

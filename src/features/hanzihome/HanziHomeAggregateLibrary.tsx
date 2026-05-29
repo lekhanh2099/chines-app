@@ -16,7 +16,6 @@ import {
 } from "@/components/ui/tooltip";
 import { lessonSchema } from "@/features/hanzihome/hanzihome-api.schemas";
 import { useHanziHomeCatalogData } from "@/features/hanzihome/hooks/useHanziHomeCatalogData";
-import { getHanziHomeLessonDetail } from "@/features/hanzihome/static-data";
 import { useLearningState } from "@/features/hanzihome/hooks/useLearningState";
 import { VocabReviewPanel } from "@/features/hanzihome/components/VocabReviewPanel";
 import type { HanziHomeLesson, ReviewResult } from "@/features/hanzihome/types";
@@ -81,6 +80,8 @@ type AggregateFilters = {
  lessonId: string;
  q: string;
 };
+
+const seedCourseIds = new Set(["hanyu-jiaocheng"]);
 
 async function fetchAggregateData({
  kind,
@@ -149,15 +150,12 @@ function useReviewLessons(lessonIds: string[]) {
    queryKey: ["hanzihome", "lesson-detail", lessonId] as const,
    queryFn: () => fetchLessonDetail(lessonId),
    enabled: Boolean(lessonId),
-   placeholderData: getHanziHomeLessonDetail(lessonId),
    staleTime: 0,
   })),
  });
 
  return queries
-  .map(
-   (query, index) => query.data ?? getHanziHomeLessonDetail(lessonIds[index]),
-  )
+  .map((query) => query.data)
   .filter((lesson): lesson is HanziHomeLesson => Boolean(lesson));
 }
 
@@ -177,6 +175,25 @@ export function HanziHomeAggregateLibrary({ kind }: { kind: AggregateKind }) {
   [],
  );
  const reviewLessons = useReviewLessons(activeReviewLessonIds);
+ const aggregateCourses = useMemo(
+  () => catalog.courses.filter((course) => !seedCourseIds.has(course.id)),
+  [catalog.courses],
+ );
+ const aggregateCourseIds = useMemo(
+  () => new Set(aggregateCourses.map((course) => course.id)),
+  [aggregateCourses],
+ );
+ const aggregateBooks = useMemo(
+  () => catalog.books.filter((book) => aggregateCourseIds.has(book.courseId)),
+  [aggregateCourseIds, catalog.books],
+ );
+ const aggregateLessons = useMemo(
+  () =>
+   catalog.lessons.filter(
+    (lesson) => lesson.courseId && aggregateCourseIds.has(lesson.courseId),
+   ),
+  [aggregateCourseIds, catalog.lessons],
+ );
 
  const title = kind === "vocab" ? "Tổng hợp từ vựng" : "Tổng hợp ngữ pháp";
  const description =
@@ -186,21 +203,21 @@ export function HanziHomeAggregateLibrary({ kind }: { kind: AggregateKind }) {
  const Icon = kind === "vocab" ? BookOpen : GraduationCap;
 
  const filteredBooks = useMemo(
-  () =>
+ () =>
    filters.courseId
-    ? catalog.books.filter((book) => book.courseId === filters.courseId)
-    : catalog.books,
-  [catalog.books, filters.courseId],
+    ? aggregateBooks.filter((book) => book.courseId === filters.courseId)
+    : aggregateBooks,
+  [aggregateBooks, filters.courseId],
  );
 
  const filteredLessons = useMemo(
   () =>
-   catalog.lessons.filter((lesson) => {
+   aggregateLessons.filter((lesson) => {
     if (filters.courseId && lesson.courseId !== filters.courseId) return false;
     if (filters.bookId && lesson.bookId !== filters.bookId) return false;
     return true;
    }),
-  [catalog.lessons, filters.bookId, filters.courseId],
+  [aggregateLessons, filters.bookId, filters.courseId],
  );
 
  const query = useQuery({
@@ -236,8 +253,8 @@ export function HanziHomeAggregateLibrary({ kind }: { kind: AggregateKind }) {
      ? [fallbackReviewLessonId]
      : [];
  const activeReviewLessonSummaries = activeReviewLessonIds
-  .map((lessonId) => catalog.lessons.find((lesson) => lesson.id === lessonId))
-  .filter((lesson): lesson is (typeof catalog.lessons)[number] =>
+  .map((lessonId) => aggregateLessons.find((lesson) => lesson.id === lessonId))
+  .filter((lesson): lesson is (typeof aggregateLessons)[number] =>
    Boolean(lesson),
   );
  const combinedReviewLesson = useMemo(
@@ -404,7 +421,7 @@ export function HanziHomeAggregateLibrary({ kind }: { kind: AggregateKind }) {
        label="Course"
        value={filters.courseId}
        onChange={(value) => updateFilter("courseId", value)}
-       options={catalog.courses.map((course) => ({
+       options={aggregateCourses.map((course) => ({
         value: course.id,
         label: course.title,
        }))}

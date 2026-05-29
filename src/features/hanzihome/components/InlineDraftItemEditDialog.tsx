@@ -250,7 +250,7 @@ export function InlineDraftItemEditDialog({
       {kind === "vocab" ? "Sửa từ vựng" : "Sửa điểm ngữ pháp"}
      </DialogTitle>
      <DialogDescription>
-      Sửa hoặc xoá trực tiếp item trong draft Supabase.
+      Sửa hoặc xoá trực tiếp item trong bài nháp.
      </DialogDescription>
     </DialogHeader>
 

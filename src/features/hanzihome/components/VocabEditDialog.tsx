@@ -22,7 +22,10 @@ import {
   updateHanziHomeVocabPayloadSchema,
   type UpdateHanziHomeVocabPayload,
 } from "@/features/hanzihome/hanzihome-api.schemas";
-import { useUpdateHanziHomeVocab } from "@/features/hanzihome/hooks/useUpdateHanziHomeVocab";
+import {
+  useDeleteHanziHomeVocab,
+  useUpdateHanziHomeVocab,
+} from "@/features/hanzihome/hooks/useUpdateHanziHomeVocab";
 import type { VocabExample, VocabViewModel } from "@/features/hanzihome/types";
 
 type EditableSection = VocabViewModel["detailSections"][number];
@@ -70,7 +73,9 @@ export function VocabEditDialog({ lessonId, word }: VocabEditDialogProps) {
     toInitialPayload(lessonId, word),
   );
   const [error, setError] = useState<string | null>(null);
+  const [confirmDelete, setConfirmDelete] = useState(false);
   const updateMutation = useUpdateHanziHomeVocab();
+  const deleteMutation = useDeleteHanziHomeVocab();
 
   const updateField = (
     field: keyof Pick<
@@ -149,6 +154,22 @@ export function VocabEditDialog({ lessonId, word }: VocabEditDialogProps) {
     }
   };
 
+  const handleDelete = async () => {
+    setError(null);
+
+    try {
+      await deleteMutation.mutateAsync(word.id);
+      toast.success("Đã xóa từ vựng");
+      setOpen(false);
+    } catch (mutationError) {
+      setError(
+        mutationError instanceof Error
+          ? mutationError.message
+          : "Không xóa được từ vựng",
+      );
+    }
+  };
+
   return (
     <Dialog
       open={open}
@@ -157,6 +178,7 @@ export function VocabEditDialog({ lessonId, word }: VocabEditDialogProps) {
         if (nextOpen) {
           setFormValue(toInitialPayload(lessonId, word));
           setError(null);
+          setConfirmDelete(false);
         }
       }}
     >
@@ -171,7 +193,7 @@ export function VocabEditDialog({ lessonId, word }: VocabEditDialogProps) {
         <DialogHeader>
           <DialogTitle>Sửa từ vựng</DialogTitle>
           <DialogDescription>
-            Lưu thay đổi vào dữ liệu Supabase của bài hiện tại.
+            Lưu thay đổi vào bản cá nhân của bài học này.
           </DialogDescription>
         </DialogHeader>
 
@@ -375,13 +397,56 @@ export function VocabEditDialog({ lessonId, word }: VocabEditDialogProps) {
               {error}
             </p>
           )}
+
+          {confirmDelete && (
+            <div className="grid gap-2 rounded-xl border border-destructive/30 bg-destructive/10 p-3 text-sm">
+              <p className="font-black text-destructive">
+                Xóa từ “{word.word}” khỏi bài học này?
+              </p>
+              <p className="font-semibold text-text-secondary">
+                Thao tác này sẽ xóa cả ví dụ và phần chi tiết của từ này.
+              </p>
+            </div>
+          )}
         </DialogBody>
 
         <DialogFooter>
+          {confirmDelete ? (
+            <>
+              <Button
+                type="button"
+                variant="outline"
+                disabled={updateMutation.isPending || deleteMutation.isPending}
+                onClick={() => setConfirmDelete(false)}
+              >
+                Hủy xóa
+              </Button>
+              <Button
+                type="button"
+                variant="destructive"
+                disabled={updateMutation.isPending || deleteMutation.isPending}
+                isLoading={deleteMutation.isPending}
+                onClick={() => void handleDelete()}
+              >
+                <Trash2 className="h-4 w-4" />
+                Xác nhận xóa
+              </Button>
+            </>
+          ) : (
+            <Button
+              type="button"
+              variant="destructive"
+              disabled={updateMutation.isPending || deleteMutation.isPending}
+              onClick={() => setConfirmDelete(true)}
+            >
+              <Trash2 className="h-4 w-4" />
+              Xóa từ
+            </Button>
+          )}
           <Button
             type="button"
             variant="outline"
-            disabled={updateMutation.isPending}
+            disabled={updateMutation.isPending || deleteMutation.isPending}
             onClick={() => setOpen(false)}
           >
             Hủy
@@ -389,7 +454,7 @@ export function VocabEditDialog({ lessonId, word }: VocabEditDialogProps) {
           <Button
             type="button"
             isLoading={updateMutation.isPending}
-            disabled={updateMutation.isPending}
+            disabled={updateMutation.isPending || deleteMutation.isPending}
             onClick={() => void handleSubmit()}
           >
             Lưu

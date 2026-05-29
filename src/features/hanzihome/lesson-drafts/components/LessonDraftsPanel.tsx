@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import { FilePlus2, Trash2 } from "lucide-react";
 import { toast } from "sonner";
 
@@ -32,15 +33,13 @@ export function LessonDraftsPanel({
 }: LessonDraftsPanelProps) {
  const draftsQuery = useLessonDraftsQuery();
  const deleteMutation = useDeleteLessonDraftMutation();
+ const [confirmDeleteId, setConfirmDeleteId] = useState<string | null>(null);
 
  const drafts = draftsQuery.data ?? [];
 
- const handleDelete = async (draftId: string, title: string) => {
-  const confirmed = window.confirm(`Xóa bài nháp"${title}"?`);
-
-  if (!confirmed) return;
-
+ const handleDelete = async (draftId: string) => {
   await deleteMutation.mutateAsync(draftId);
+  setConfirmDeleteId(null);
   toast.success("Đã xóa bài nháp");
  };
 
@@ -55,7 +54,7 @@ export function LessonDraftsPanel({
      <h2 className="text-lg font-black text-text-primary">Tạo bài mới</h2>
 
      <p className="text-sm font-semibold text-text-muted">
-      Bài mới sẽ được lưu vào Supabase dưới dạng draft và gắn vào course/quyển
+      Bài mới sẽ được lưu dưới dạng draft và gắn vào course/quyển
       đang chọn.
      </p>
     </div>
@@ -123,16 +122,41 @@ export function LessonDraftsPanel({
         </div>
        </div>
 
-       <Button
-        type="button"
-        variant="destructive"
-        size="sm"
-        disabled={deleteMutation.isPending}
-        onClick={() => void handleDelete(draft.id, draft.titleZh)}
-       >
-        <Trash2 className="h-4 w-4" />
-        Xóa
-       </Button>
+       {confirmDeleteId === draft.id ? (
+        <div className="flex flex-wrap gap-2">
+         <Button
+          type="button"
+          variant="outline"
+          size="sm"
+          disabled={deleteMutation.isPending}
+          onClick={() => setConfirmDeleteId(null)}
+         >
+          Hủy
+         </Button>
+         <Button
+          type="button"
+          variant="destructive"
+          size="sm"
+          disabled={deleteMutation.isPending}
+          isLoading={deleteMutation.isPending}
+          onClick={() => void handleDelete(draft.id)}
+         >
+          <Trash2 className="h-4 w-4" />
+          Xác nhận
+         </Button>
+        </div>
+       ) : (
+        <Button
+         type="button"
+         variant="destructive"
+         size="sm"
+         disabled={deleteMutation.isPending}
+         onClick={() => setConfirmDeleteId(draft.id)}
+        >
+         <Trash2 className="h-4 w-4" />
+         Xóa
+        </Button>
+       )}
       </div>
      ))}
     </div>

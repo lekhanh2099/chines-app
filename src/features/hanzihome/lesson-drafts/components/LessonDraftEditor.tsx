@@ -19,18 +19,25 @@ import {
 import {
  useDeleteLessonDraftMutation,
  useLessonDraftQuery,
- useUpdateLessonDraftMutation,
+ usePublishLessonDraftMutation,
 } from "@/features/hanzihome/lesson-drafts";
 import { LessonDraftMetadataForm } from "@/features/hanzihome/lesson-drafts/components/LessonDraftMetadataForm";
 import { VocabDraftImporter } from "@/features/hanzihome/lesson-drafts/components/VocabDraftImporter";
 import { GrammarDraftImporter } from "@/features/hanzihome/lesson-drafts/components/GrammarDraftImporter";
 import { MarkdownImportPreview } from "@/features/hanzihome/importer/MarkdownImportPreview";
+import { SmartMarkdownImport } from "@/features/hanzihome/importer/SmartMarkdownImport";
 
 type LessonDraftEditorProps = {
  draftId: string;
 };
 
-type DraftEditorTab = "overview" | "vocab" | "grammar" | "import" | "preview";
+type DraftEditorTab =
+ | "overview"
+ | "vocab"
+ | "grammar"
+ | "smartImport"
+ | "import"
+ | "preview";
 
 const editorTabs: Array<{
  key: DraftEditorTab;
@@ -39,6 +46,7 @@ const editorTabs: Array<{
  { key: "overview", label: "Tổng quan" },
  { key: "vocab", label: "Từ vựng" },
  { key: "grammar", label: "Ngữ pháp" },
+ { key: "smartImport", label: "Smart import" },
  { key: "import", label: "Import" },
  { key: "preview", label: "Preview" },
 ];
@@ -47,6 +55,7 @@ function parseEditorTab(value: string | null): DraftEditorTab {
  return value === "overview" ||
   value === "vocab" ||
   value === "grammar" ||
+  value === "smartImport" ||
   value === "import" ||
   value === "preview"
   ? value
@@ -63,10 +72,9 @@ export function LessonDraftEditor({ draftId }: LessonDraftEditorProps) {
 
  const draftQuery = useLessonDraftQuery(draftId);
  const deleteMutation = useDeleteLessonDraftMutation();
- const updateMutation = useUpdateLessonDraftMutation();
+ const publishMutation = usePublishLessonDraftMutation();
 
  const draft = draftQuery.data;
- const isDbLessonEdit = draftId.includes("__");
 
  const draftStats = useMemo(() => {
   if (!draft) {
@@ -84,22 +92,16 @@ export function LessonDraftEditor({ draftId }: LessonDraftEditorProps) {
   };
  }, [draft]);
 
- const handlePublishToggle = async () => {
+ const handlePublish = async () => {
   if (!draft) return;
 
-  const nextStatus = draft.status === "published" ? "draft" : "published";
+  const result = await publishMutation.mutateAsync(draft.id);
 
-  await updateMutation.mutateAsync({
-   draftId: draft.id,
-   input: {
-    status: nextStatus,
-   },
-  });
-
-  toast.success(
-   nextStatus === "published"
-    ? "Đã publish bài. Bài này sẽ xuất hiện trong HanziHome."
-    : "Đã chuyển bài về draft.",
+  toast.success("Đã publish bài học");
+  router.push(
+   `/hanzihome?courseId=${encodeURIComponent(
+    result.courseId,
+   )}&lessonId=${encodeURIComponent(result.lessonId)}`,
   );
  };
 
@@ -180,10 +182,11 @@ export function LessonDraftEditor({ draftId }: LessonDraftEditorProps) {
        <Button
         type="button"
         variant={draft.status === "published" ? "outline" : "default"}
-        disabled={updateMutation.isPending}
-        onClick={() => void handlePublishToggle()}
+        disabled={publishMutation.isPending}
+        isLoading={publishMutation.isPending}
+        onClick={() => void handlePublish()}
        >
-        {draft.status === "published" ? "Unpublish" : "Publish"}
+        {draft.status === "published" ? "Publish lại" : "Publish"}
        </Button>
 
        <Button
@@ -237,7 +240,9 @@ export function LessonDraftEditor({ draftId }: LessonDraftEditorProps) {
         variant={activeTab === tab.key ? "default" : "ghost"}
         onClick={() => setActiveTab(tab.key)}
        >
-        {tab.key === "import" && <Upload className="h-4 w-4" />}
+        {(tab.key === "import" || tab.key === "smartImport") && (
+         <Upload className="h-4 w-4" />
+        )}
         {tab.label}
        </Button>
       ))}
@@ -267,6 +272,8 @@ export function LessonDraftEditor({ draftId }: LessonDraftEditorProps) {
     {activeTab === "grammar" && (
      <GrammarDraftImporter draft={draft} reviewOnly />
     )}
+
+    {activeTab === "smartImport" && <SmartMarkdownImport draft={draft} />}
 
     {activeTab === "import" && <MarkdownImportPreview draft={draft} />}
 

@@ -12,6 +12,11 @@ type HanziWriterInstance = {
  showOutline: () => Promise<unknown> | void;
 };
 
+type HanziWriterModule = typeof import("hanzi-writer")["default"];
+type HanziCharacterData = Awaited<
+ ReturnType<HanziWriterModule["loadCharacterData"]>
+>;
+
 type HanziStrokeWriterProps = {
  character: string;
  size?: number;
@@ -20,6 +25,22 @@ type HanziStrokeWriterProps = {
  showActions?: boolean;
  className?: string;
 };
+
+const characterDataCache = new Map<string, Promise<HanziCharacterData>>();
+
+function loadCharacterData(
+ HanziWriter: HanziWriterModule,
+ character: string,
+) {
+ const cached = characterDataCache.get(character);
+
+ if (cached) return cached;
+
+ const next = HanziWriter.loadCharacterData(character);
+ characterDataCache.set(character, next);
+
+ return next;
+}
 
 export function HanziStrokeWriter({
  character,
@@ -46,6 +67,8 @@ export function HanziStrokeWriter({
    if (!mounted) return;
 
    const HanziWriter = hanziWriterModule.default;
+   const charData = await loadCharacterData(HanziWriter, character);
+   if (!mounted) return;
 
    const writer = HanziWriter.create(targetId, character, {
     width: size,
@@ -64,6 +87,7 @@ export function HanziStrokeWriter({
     drawingColor: "#ef4444",
     showHintAfterMisses: 1,
     highlightOnComplete: true,
+    charDataLoader: () => charData,
    }) as HanziWriterInstance;
 
    writerRef.current = writer;

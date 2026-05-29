@@ -191,3 +191,64 @@ export async function PATCH(request: Request, context: RouteContext) {
 
   return NextResponse.json({ ok: true, lessonId: item.lesson_id });
 }
+
+export async function DELETE(_request: Request, context: RouteContext) {
+  const { vocabItemId } = await context.params;
+  const supabase = await createClient();
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+
+  if (!user) {
+    return jsonError("Unauthorized", 401);
+  }
+
+  const { data: itemRow, error: itemError } = await supabase
+    .from("hanzihome_vocab_items")
+    .select("id, lesson_id, course_id, book_id, source, owner_id")
+    .eq("id", vocabItemId)
+    .maybeSingle();
+
+  if (itemError) {
+    return jsonError("Could not load vocab item", 500);
+  }
+
+  const item = vocabItemRowSchema.nullable().parse(itemRow);
+
+  if (!item) {
+    return jsonError("Vocab item not found", 404);
+  }
+
+  if (item.source === "seed") {
+    return jsonError("Seed vocab is read-only. Fork the course before deleting.", 403);
+  }
+
+  if (item.owner_id !== user.id) {
+    return jsonError("Vocab item is not editable by this user", 403);
+  }
+
+  const [deleteExamples, deleteSections] = await Promise.all([
+    supabase.from("hanzihome_vocab_examples").delete().eq("vocab_item_id", item.id),
+    supabase
+      .from("hanzihome_vocab_detail_sections")
+      .delete()
+      .eq("vocab_item_id", item.id),
+  ]);
+
+  if (deleteExamples.error || deleteSections.error) {
+    return jsonError("Could not delete vocab child rows", 403);
+  }
+
+  const { error: deleteItemError } = await supabase
+    .from("hanzihome_vocab_items")
+    .delete()
+    .eq("id", item.id)
+    .eq("owner_id", user.id)
+    .eq("source", "custom");
+
+  if (deleteItemError) {
+    return jsonError("Could not delete vocab item", 403);
+  }
+
+  return NextResponse.json({ ok: true, lessonId: item.lesson_id });
+}

@@ -37,11 +37,21 @@ function isTableSeparator(line: string) {
   return /^\|?\s*:?-{3,}:?\s*(\|\s*:?-{3,}:?\s*)+\|?$/.test(line.trim());
 }
 
+function isTableLikeLine(line: string) {
+  return (
+    line
+      .split("|")
+      .map((cell) => cell.trim())
+      .filter(Boolean).length >= 2
+  );
+}
+
 function isTableStart(lines: string[], index: number) {
   return (
-    lines[index]?.includes("|") === true &&
+    isTableLikeLine(lines[index] ?? "") &&
     lines[index + 1] !== undefined &&
-    isTableSeparator(lines[index + 1] ?? "")
+    (isTableSeparator(lines[index + 1] ?? "") ||
+      isTableLikeLine(lines[index + 1] ?? ""))
   );
 }
 
@@ -89,11 +99,11 @@ function parseMarkdownBlocks(content: string): MarkdownBlock[] {
 
     if (isTableStart(lines, index)) {
       const rows: string[][] = [parseTableRow(line)];
-      index += 2;
+      index += isTableSeparator(lines[index + 1] ?? "") ? 2 : 1;
 
       while (index < lines.length) {
         const tableLine = lines[index] ?? "";
-        if (!tableLine.includes("|") || !tableLine.trim()) break;
+        if (!isTableLikeLine(tableLine)) break;
         rows.push(parseTableRow(tableLine));
         index += 1;
       }

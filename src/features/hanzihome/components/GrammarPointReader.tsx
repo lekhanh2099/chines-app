@@ -182,14 +182,7 @@ function StructuredGrammarContent({ point }: { point: GrammarViewModel }) {
        <h4 className="text-sm font-black text-text-primary">
         {section.title}
        </h4>
-       {section.lines.map((line, index) => (
-        <p
-         key={`${section.key}-${index}`}
-         className="text-sm leading-relaxed text-text-secondary"
-        >
-         {line}
-        </p>
-       ))}
+       <MarkdownContent content={section.lines.join("\n")} />
       </div>
      ))}
     </section>

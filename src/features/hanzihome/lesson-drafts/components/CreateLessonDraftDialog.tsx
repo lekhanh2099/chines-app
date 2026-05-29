@@ -52,7 +52,7 @@ export function CreateLessonDraftDialog({
         <DialogHeader>
           <DialogTitle>Tạo bài mới</DialogTitle>
           <DialogDescription>
-            Tạo lesson draft trong Supabase. Bài mới sẽ được gắn vào course/quyển đang chọn.
+            Tạo bài nháp mới và gắn vào course/quyển đang chọn.
           </DialogDescription>
         </DialogHeader>
 

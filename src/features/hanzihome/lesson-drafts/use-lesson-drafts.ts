@@ -14,8 +14,10 @@ import {
   getLessonDrafts,
   getLessonDraftSummaries,
   lessonDraftQueryKeys,
+  publishLessonDraft,
   updateLessonDraft,
 } from "@/features/hanzihome/lesson-drafts/lesson-draft-api";
+import { hanzihomeCourseQueryKeys } from "@/features/hanzihome/courses/use-custom-courses";
 import type {
   CreateLessonDraftRequest,
   UpdateLessonDraftRequest,
@@ -110,6 +112,42 @@ export function useUpdateLessonDraftMutation() {
         }),
         queryClient.invalidateQueries({
           queryKey: ["hanzihome", "lesson-detail", draft.lessonKey],
+        }),
+      ]);
+    },
+  });
+}
+
+export function usePublishLessonDraftMutation() {
+  const queryClient = useQueryClient();
+
+  return useMutation({
+    mutationFn: (draftId: string) => publishLessonDraft(draftId),
+    onSuccess: async (result, draftId) => {
+      await Promise.all([
+        queryClient.invalidateQueries({
+          queryKey: lessonDraftQueryKeys.lists(),
+        }),
+        queryClient.invalidateQueries({
+          queryKey: lessonDraftQueryKeys.summaries(),
+        }),
+        queryClient.invalidateQueries({
+          queryKey: lessonDraftQueryKeys.detail(draftId),
+        }),
+        queryClient.invalidateQueries({
+          queryKey: hanzihomeCourseQueryKeys.catalog(),
+        }),
+        queryClient.invalidateQueries({
+          queryKey: ["hanzihome", "course-lessons", result.courseId],
+        }),
+        queryClient.invalidateQueries({
+          queryKey: ["hanzihome", "lesson-detail", result.lessonId],
+        }),
+        queryClient.invalidateQueries({
+          queryKey: ["hanzihome", "aggregate-vocab"],
+        }),
+        queryClient.invalidateQueries({
+          queryKey: ["hanzihome", "aggregate-grammar"],
         }),
       ]);
     },

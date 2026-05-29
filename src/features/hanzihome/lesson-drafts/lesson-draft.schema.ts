@@ -113,8 +113,25 @@ export type LessonDraftSummary = {
  updatedAt: string;
 };
 
-export function createLessonKey(lessonNumber: number) {
- return `custom-bai-${lessonNumber}`;
+function slugKeyPart(value: string | undefined) {
+ return (value ?? "")
+  .trim()
+  .replace(/[^a-zA-Z0-9_-]+/g, "-")
+  .replace(/(^-|-$)+/g, "");
+}
+
+export function createLessonKey(
+ lessonNumber: number,
+ scope?: {
+  courseId?: string;
+  bookId?: string;
+ },
+) {
+ const baseKey = `custom-bai-${lessonNumber}`;
+ const courseKey = slugKeyPart(scope?.courseId);
+ const bookKey = slugKeyPart(scope?.bookId);
+
+ return courseKey && bookKey ? `${courseKey}__${bookKey}__${baseKey}` : baseKey;
 }
 
 export function buildEmptyLessonDraftContent(

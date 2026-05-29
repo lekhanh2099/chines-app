@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 
 import { getHanziHomeData } from "@/features/hanzihome/static-data";
-import type { HanziHomeLesson, VocabExample } from "@/features/hanzihome/types";
+import type { VocabExample } from "@/features/hanzihome/types";
 import { createClient } from "@/lib/supabase/server";
 
 type InsertRow = Record<string, unknown>;

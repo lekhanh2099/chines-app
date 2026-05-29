@@ -46,6 +46,33 @@ async function updateHanziHomeGrammar({
   }
 
   const json: unknown = await response.json();
+ return updateGrammarResponseSchema.parse(json);
+}
+
+async function deleteHanziHomeGrammar(grammarPointId: string) {
+  const response = await fetch(
+    `/api/hanzihome/grammar/${encodeURIComponent(grammarPointId)}`,
+    {
+      method: "DELETE",
+      headers: {
+        Accept: "application/json",
+      },
+    },
+  );
+
+  if (!response.ok) {
+    const json: unknown = await response.json().catch(() => null);
+    const message =
+      typeof json === "object" &&
+      json !== null &&
+      "error" in json &&
+      typeof json.error === "string"
+        ? json.error
+        : "Không xóa được ngữ pháp";
+    throw new Error(message);
+  }
+
+  const json: unknown = await response.json();
   return updateGrammarResponseSchema.parse(json);
 }
 
@@ -55,9 +82,32 @@ export function useUpdateHanziHomeGrammar() {
   return useMutation({
     mutationFn: updateHanziHomeGrammar,
     onSuccess: async (result) => {
-      await queryClient.invalidateQueries({
-        queryKey: hanzihomeLessonDetailQueryKey(result.lessonId),
-      });
+      await Promise.all([
+        queryClient.invalidateQueries({
+          queryKey: hanzihomeLessonDetailQueryKey(result.lessonId),
+        }),
+        queryClient.invalidateQueries({
+          queryKey: ["hanzihome", "aggregate-grammar"],
+        }),
+      ]);
+    },
+  });
+}
+
+export function useDeleteHanziHomeGrammar() {
+  const queryClient = useQueryClient();
+
+  return useMutation({
+    mutationFn: deleteHanziHomeGrammar,
+    onSuccess: async (result) => {
+      await Promise.all([
+        queryClient.invalidateQueries({
+          queryKey: hanzihomeLessonDetailQueryKey(result.lessonId),
+        }),
+        queryClient.invalidateQueries({
+          queryKey: ["hanzihome", "aggregate-grammar"],
+        }),
+      ]);
     },
   });
 }

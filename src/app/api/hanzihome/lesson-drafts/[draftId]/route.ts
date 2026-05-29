@@ -5,7 +5,6 @@ import { getDbHanziHomeLessonDetail } from "@/features/hanzihome/db-data";
 import { createEmptyLessonDraftNotes } from "@/features/hanzihome/lesson-drafts/grammar/grammar-draft.schema";
 import { grammarDraftItemSchema } from "@/features/hanzihome/lesson-drafts/grammar/grammar-draft.schema";
 import {
- createLessonKey,
  isPostgresUniqueViolation,
  toLessonDraft,
  updateLessonDraftRequestSchema,
@@ -749,8 +748,6 @@ export async function PUT(request: Request, context: RouteContext) {
 
  if (parsed.data.lessonKey !== undefined) {
   patch.lesson_key = parsed.data.lessonKey;
- } else if (parsed.data.lessonNumber !== undefined) {
-  patch.lesson_key = createLessonKey(parsed.data.lessonNumber);
  }
 
  if (parsed.data.content !== undefined) {

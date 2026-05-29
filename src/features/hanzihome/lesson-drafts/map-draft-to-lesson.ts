@@ -193,7 +193,7 @@ export function mapLessonDraftToHanziHomeLesson(
     lessonNumber: draft.lessonNumber ?? 9999,
     titleZh: draft.titleZh,
     title: `Bài ${draft.lessonNumber ?? "?"}: ${draft.titleZh}`,
-    sourceFile: "Supabase draft",
+    sourceFile: "Bài nháp",
     courseId: draft.content.lesson.courseId || DEFAULT_HANYU_COURSE_ID,
     courseTitle: draft.content.lesson.courseTitle || "Giáo trình Hán ngữ",
     bookId: draft.content.lesson.bookId || DEFAULT_HANYU_BOOK_ID,

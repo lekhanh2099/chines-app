@@ -74,7 +74,10 @@ export function HanziHomeWorkspace() {
   "";
 
  const courseLessonsQuery = useHanziHomeCourseLessonsQuery(selectedCourseId);
- const courseLessonSummaries = courseLessonsQuery.data ?? [];
+ const courseLessonSummaries = useMemo(
+  () => courseLessonsQuery.data ?? [],
+  [courseLessonsQuery.data],
+ );
 
  const lessons = useMemo(
   () => sortLessonsByCourseBookOrder(courseLessonSummaries),
@@ -121,6 +124,9 @@ export function HanziHomeWorkspace() {
  );
  const dbLesson = lessonDetailQuery.data ?? null;
  const lesson = dbLesson;
+ const isCourseLessonsLoading = Boolean(
+  selectedCourseId && courseLessonsQuery.fetchStatus === "fetching",
+ );
  const isLessonDetailLoading = Boolean(
   lessonId &&
    activeModule !== "radicals" &&
@@ -234,6 +240,32 @@ export function HanziHomeWorkspace() {
   }
  })();
 
+ if (
+  !lesson &&
+  activeModule !== "radicals" &&
+  (isCourseLessonsLoading || isLessonDetailLoading)
+ ) {
+  return (
+   <main className="hanzihome-static-page">
+    <div className="flex w-full max-w-full flex-col gap-2.5">
+     <Card padding="lg" className="rounded-xl">
+      <div className="grid gap-2.5">
+       <p className="text-xs font-black uppercase tracking-wide text-text-muted">
+        {selectedCourse?.title || "HanziHome"}
+       </p>
+       <h1 className="text-2xl font-black text-text-primary">
+        Đang tải bài học...
+       </h1>
+       <p className="text-sm font-semibold text-text-muted">
+        Đang lấy dữ liệu bài học hiện tại.
+       </p>
+      </div>
+     </Card>
+    </div>
+   </main>
+  );
+ }
+
  if (!lesson && activeModule !== "radicals") {
   return (
    <main className="hanzihome-static-page">
@@ -294,11 +326,11 @@ export function HanziHomeWorkspace() {
         )}
 
         {canEditCurrentLesson && lesson && (
-         <Button type="button" variant="outline" size="sm">
-          <Pencil className="h-4 w-4" />
+         <Button type="button" variant="outline" size="sm" asChild>
           <Link
            href={`/hanzihome/drafts/${lesson.id}?mode=lesson&courseId=${selectedCourseId}`}
           >
+           <Pencil className="h-4 w-4" />
            Chỉnh sửa
           </Link>
          </Button>

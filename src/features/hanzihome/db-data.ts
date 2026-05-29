@@ -410,6 +410,22 @@ function mapLessonSummary(row: LessonRow): HanziHomeLesson {
  };
 }
 
+function mapLessonSummaryWithCounts({
+ row,
+ vocabCount,
+ grammarCount,
+}: {
+ row: LessonRow;
+ vocabCount: number;
+ grammarCount: number;
+}): HanziHomeLesson {
+ return {
+  ...mapLessonSummary(row),
+  vocabCount,
+  grammarCount,
+ };
+}
+
 function countByCourse(rows: ContentCountRow[]) {
  const counts = new Map<string, number>();
 
@@ -999,20 +1015,55 @@ export async function getDbHanziHomeCourseLessonSummaries(
 ): Promise<HanziHomeLesson[]> {
  const supabase = await createClient();
 
- const result = await supabase
-  .from("hanzihome_lessons")
-  .select(
-   "id, course_id, book_id, lesson_number, lesson_order, title_zh, title_vi, source_file",
-  )
-  .eq("course_id", courseId)
-  .order("book_id", { ascending: true })
-  .order("lesson_order", { ascending: true });
+ const [result, vocabResult, grammarResult] = await Promise.all([
+  supabase
+   .from("hanzihome_lessons")
+   .select(
+    "id, course_id, book_id, lesson_number, lesson_order, title_zh, title_vi, source_file",
+   )
+   .eq("course_id", courseId)
+   .order("book_id", { ascending: true })
+   .order("lesson_order", { ascending: true }),
+  supabase
+   .from("hanzihome_vocab_items")
+   .select("lesson_id")
+   .eq("course_id", courseId),
+  supabase
+   .from("hanzihome_grammar_points")
+   .select("lesson_id")
+   .eq("course_id", courseId),
+ ]);
 
- if (result.error) {
+ if (result.error || vocabResult.error || grammarResult.error) {
   throw new Error(
-   `Could not load HanziHome course lessons: ${result.error.message}`,
+   `Could not load HanziHome course lessons: ${
+    result.error?.message ??
+    vocabResult.error?.message ??
+    grammarResult.error?.message
+   }`,
   );
  }
 
- return parseRows(lessonRowSchema, result.data).map(mapLessonSummary);
+ const vocabCounts = new Map<string, number>();
+ const grammarCounts = new Map<string, number>();
+
+ for (const row of z
+  .array(z.object({ lesson_id: z.string() }))
+  .parse(vocabResult.data ?? [])) {
+  vocabCounts.set(row.lesson_id, (vocabCounts.get(row.lesson_id) ?? 0) + 1);
+ }
+
+ for (const row of z
+  .array(z.object({ lesson_id: z.string() }))
+  .parse(grammarResult.data ?? [])) {
+  grammarCounts.set(row.lesson_id, (grammarCounts.get(row.lesson_id) ?? 0) + 1);
+ }
+
+ return parseRows(lessonRowSchema, result.data).map((row) =>
+  mapLessonSummaryWithCounts({
+   row,
+   vocabCount: vocabCounts.get(row.id) ?? 0,
+   grammarCount: grammarCounts.get(row.id) ?? 0,
+  }),
+ );
 }

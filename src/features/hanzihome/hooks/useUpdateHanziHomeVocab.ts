@@ -46,6 +46,33 @@ async function updateHanziHomeVocab({
   }
 
   const json: unknown = await response.json();
+ return updateVocabResponseSchema.parse(json);
+}
+
+async function deleteHanziHomeVocab(vocabItemId: string) {
+  const response = await fetch(
+    `/api/hanzihome/vocab/${encodeURIComponent(vocabItemId)}`,
+    {
+      method: "DELETE",
+      headers: {
+        Accept: "application/json",
+      },
+    },
+  );
+
+  if (!response.ok) {
+    const json: unknown = await response.json().catch(() => null);
+    const message =
+      typeof json === "object" &&
+      json !== null &&
+      "error" in json &&
+      typeof json.error === "string"
+        ? json.error
+        : "Không xóa được từ vựng";
+    throw new Error(message);
+  }
+
+  const json: unknown = await response.json();
   return updateVocabResponseSchema.parse(json);
 }
 
@@ -55,9 +82,32 @@ export function useUpdateHanziHomeVocab() {
   return useMutation({
     mutationFn: updateHanziHomeVocab,
     onSuccess: async (result) => {
-      await queryClient.invalidateQueries({
-        queryKey: hanzihomeLessonDetailQueryKey(result.lessonId),
-      });
+      await Promise.all([
+        queryClient.invalidateQueries({
+          queryKey: hanzihomeLessonDetailQueryKey(result.lessonId),
+        }),
+        queryClient.invalidateQueries({
+          queryKey: ["hanzihome", "aggregate-vocab"],
+        }),
+      ]);
+    },
+  });
+}
+
+export function useDeleteHanziHomeVocab() {
+  const queryClient = useQueryClient();
+
+  return useMutation({
+    mutationFn: deleteHanziHomeVocab,
+    onSuccess: async (result) => {
+      await Promise.all([
+        queryClient.invalidateQueries({
+          queryKey: hanzihomeLessonDetailQueryKey(result.lessonId),
+        }),
+        queryClient.invalidateQueries({
+          queryKey: ["hanzihome", "aggregate-vocab"],
+        }),
+      ]);
     },
   });
 }

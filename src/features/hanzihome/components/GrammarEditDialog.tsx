@@ -22,7 +22,10 @@ import {
   updateHanziHomeGrammarPayloadSchema,
   type UpdateHanziHomeGrammarPayload,
 } from "@/features/hanzihome/hanzihome-api.schemas";
-import { useUpdateHanziHomeGrammar } from "@/features/hanzihome/hooks/useUpdateHanziHomeGrammar";
+import {
+  useDeleteHanziHomeGrammar,
+  useUpdateHanziHomeGrammar,
+} from "@/features/hanzihome/hooks/useUpdateHanziHomeGrammar";
 import type { GrammarViewModel, VocabExample } from "@/features/hanzihome/types";
 
 type EditableSection = NonNullable<GrammarViewModel["detailSections"]>[number];
@@ -66,7 +69,9 @@ export function GrammarEditDialog({ lessonId, point }: GrammarEditDialogProps) {
     toInitialPayload(lessonId, point),
   );
   const [error, setError] = useState<string | null>(null);
+  const [confirmDelete, setConfirmDelete] = useState(false);
   const updateMutation = useUpdateHanziHomeGrammar();
+  const deleteMutation = useDeleteHanziHomeGrammar();
 
   const updateField = (
     field: keyof Pick<
@@ -135,6 +140,22 @@ export function GrammarEditDialog({ lessonId, point }: GrammarEditDialogProps) {
     }
   };
 
+  const handleDelete = async () => {
+    setError(null);
+
+    try {
+      await deleteMutation.mutateAsync(point.id);
+      toast.success("Đã xóa ngữ pháp");
+      setOpen(false);
+    } catch (mutationError) {
+      setError(
+        mutationError instanceof Error
+          ? mutationError.message
+          : "Không xóa được ngữ pháp",
+      );
+    }
+  };
+
   return (
     <Dialog
       open={open}
@@ -143,6 +164,7 @@ export function GrammarEditDialog({ lessonId, point }: GrammarEditDialogProps) {
         if (nextOpen) {
           setFormValue(toInitialPayload(lessonId, point));
           setError(null);
+          setConfirmDelete(false);
         }
       }}
     >
@@ -157,7 +179,7 @@ export function GrammarEditDialog({ lessonId, point }: GrammarEditDialogProps) {
         <DialogHeader>
           <DialogTitle>Sửa ngữ pháp</DialogTitle>
           <DialogDescription>
-            Lưu thay đổi vào dữ liệu Supabase của bài hiện tại.
+            Lưu thay đổi vào bản cá nhân của bài học này.
           </DialogDescription>
         </DialogHeader>
 
@@ -365,13 +387,56 @@ export function GrammarEditDialog({ lessonId, point }: GrammarEditDialogProps) {
               {error}
             </p>
           )}
+
+          {confirmDelete && (
+            <div className="grid gap-2 rounded-xl border border-destructive/30 bg-destructive/10 p-3 text-sm">
+              <p className="font-black text-destructive">
+                Xóa ngữ pháp “{point.cleanTitle}” khỏi bài học này?
+              </p>
+              <p className="font-semibold text-text-secondary">
+                Thao tác này sẽ xóa cả ví dụ và phần chi tiết của điểm ngữ pháp này.
+              </p>
+            </div>
+          )}
         </DialogBody>
 
         <DialogFooter>
+          {confirmDelete ? (
+            <>
+              <Button
+                type="button"
+                variant="outline"
+                disabled={updateMutation.isPending || deleteMutation.isPending}
+                onClick={() => setConfirmDelete(false)}
+              >
+                Hủy xóa
+              </Button>
+              <Button
+                type="button"
+                variant="destructive"
+                disabled={updateMutation.isPending || deleteMutation.isPending}
+                isLoading={deleteMutation.isPending}
+                onClick={() => void handleDelete()}
+              >
+                <Trash2 className="h-4 w-4" />
+                Xác nhận xóa
+              </Button>
+            </>
+          ) : (
+            <Button
+              type="button"
+              variant="destructive"
+              disabled={updateMutation.isPending || deleteMutation.isPending}
+              onClick={() => setConfirmDelete(true)}
+            >
+              <Trash2 className="h-4 w-4" />
+              Xóa ngữ pháp
+            </Button>
+          )}
           <Button
             type="button"
             variant="outline"
-            disabled={updateMutation.isPending}
+            disabled={updateMutation.isPending || deleteMutation.isPending}
             onClick={() => setOpen(false)}
           >
             Hủy
@@ -379,7 +444,7 @@ export function GrammarEditDialog({ lessonId, point }: GrammarEditDialogProps) {
           <Button
             type="button"
             isLoading={updateMutation.isPending}
-            disabled={updateMutation.isPending}
+            disabled={updateMutation.isPending || deleteMutation.isPending}
             onClick={() => void handleSubmit()}
           >
             Lưu

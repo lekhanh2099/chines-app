@@ -8,7 +8,6 @@ import { BookMarked, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { CreateCourseDialog } from "@/features/hanzihome/courses/CreateCourseDialog";
-import { ForkSeedCourseButton } from "@/features/hanzihome/courses/ForkSeedCourseButton";
 import { useCustomHanziHomeCourseCatalogQuery } from "@/features/hanzihome/courses/use-custom-courses";
 import {
  CreateLessonDraftDialog,
@@ -45,11 +44,6 @@ export function HanziHomeLibraryHome() {
  const draftsQuery = useLessonDraftSummariesQuery();
  const learning = useLearningState();
 
- const publishedDraftSummaries = useMemo(
-  () =>
-   (draftsQuery.data ?? []).filter((draft) => draft.status === "published"),
-  [draftsQuery.data],
- );
  const unpublishedDrafts = useMemo(
   () =>
    (draftsQuery.data ?? []).filter((draft) => draft.status !== "published"),
@@ -61,13 +55,15 @@ export function HanziHomeLibraryHome() {
    mergeCatalogCourses(
     catalogData.courses,
     customCatalogQuery.data?.courses ?? [],
-   ),
+   ).filter((course) => !isSeedCourse(course)),
   [catalogData.courses, customCatalogQuery.data?.courses],
  );
- const books = useMemo(
-  () => mergeBooks(catalogData.books, customCatalogQuery.data?.books ?? []),
-  [catalogData.books, customCatalogQuery.data?.books],
- );
+ const books = useMemo(() => {
+  const visibleCourseIds = new Set(courses.map((course) => course.id));
+
+  return mergeBooks(catalogData.books, customCatalogQuery.data?.books ?? [])
+   .filter((book) => visibleCourseIds.has(book.courseId));
+ }, [catalogData.books, courses, customCatalogQuery.data?.books]);
 
  return (
   <main className="flex w-full max-w-full flex-col gap-3 px-4 py-4 lg:px-8">
@@ -98,7 +94,7 @@ export function HanziHomeLibraryHome() {
       <CourseCard
        key={course.id}
        course={course}
-       stats={getCourseStats(course, publishedDraftSummaries, books)}
+       stats={getCourseStats(course, books)}
        lastCourseId={learning.state.settings.lastCourseId}
        lastLessonId={learning.state.settings.lastLessonId}
       />
@@ -243,33 +239,17 @@ function mergeBooks(
 
 function getCourseStats(
  course: HanziHomeCatalogCourse,
- publishedDraftSummaries: LessonDraftSummary[],
  books: HanziHomeCourseBook[],
 ): CourseStats {
- const courseDraftLessons = publishedDraftSummaries.filter(
-  (lesson) => lesson.courseId === course.id,
- );
  const courseBooks = books.filter((book) => book.courseId === course.id);
- const maxDraftLessonNumber = courseDraftLessons
-  .map((lesson) => lesson.lessonNumber)
-  .filter((value): value is number => typeof value === "number")
-  .reduce((max, value) => Math.max(max, value), 0);
 
  return {
   books: courseBooks,
-  lessonCount: course.stats.lessonCount + courseDraftLessons.length,
-  vocabCount:
-   course.stats.vocabCount +
-   courseDraftLessons.reduce((sum, lesson) => sum + lesson.vocabCount, 0),
-  grammarCount:
-   course.stats.grammarCount +
-   courseDraftLessons.reduce((sum, lesson) => sum + lesson.grammarCount, 0),
-  fallbackLessonId:
-   courseDraftLessons.at(-1)?.id ||
-   course.fallbackLessonId ||
-   course.lastLessonId,
-  suggestedLessonNumber:
-   Math.max(course.stats.lessonCount, maxDraftLessonNumber) + 1,
+  lessonCount: course.stats.lessonCount,
+  vocabCount: course.stats.vocabCount,
+  grammarCount: course.stats.grammarCount,
+  fallbackLessonId: course.fallbackLessonId || course.lastLessonId,
+  suggestedLessonNumber: course.stats.lessonCount + 1,
  };
 }
 
@@ -287,7 +267,6 @@ function CourseCard({
  const router = useRouter();
  const primaryBook = stats.books[0];
  const courseLessons = useHanziHomeCourseLessons(course.id);
- const isSeedCourse = course.id === "hanyu-jiaocheng";
 
  const targetLessonId =
   lastCourseId === course.id
@@ -305,12 +284,27 @@ function CourseCard({
  const href = effectiveLessonId
   ? `/hanzihome?courseId=${course.id}&lessonId=${effectiveLessonId}`
   : `/hanzihome?courseId=${course.id}`;
+ const visibleLessonCount = courseLessons.length || stats.lessonCount;
+ const visibleVocabCount =
+  courseLessons.length > 0
+   ? courseLessons.reduce(
+      (sum, lesson) => sum + (lesson.vocabCount ?? lesson.vocabIds.length),
+      0,
+     )
+   : stats.vocabCount;
+ const visibleGrammarCount =
+  courseLessons.length > 0
+   ? courseLessons.reduce(
+      (sum, lesson) =>
+       sum + (lesson.grammarCount ?? lesson.grammarPointIds.length),
+      0,
+     )
+   : stats.grammarCount;
 
  const openCourse = () => {
   router.push(href);
  };
 
- if (isSeedCourse) return null;
  return (
   <Card
    padding="none"
@@ -355,9 +349,9 @@ function CourseCard({
       )}
 
       <div className="flex flex-wrap gap-2 pt-2">
-       <MiniMetric label="Bài" value={stats.lessonCount} />
-       <MiniMetric label="Từ" value={stats.vocabCount} />
-       <MiniMetric label="Ngữ pháp" value={stats.grammarCount} />
+       <MiniMetric label="Bài" value={visibleLessonCount} />
+       <MiniMetric label="Từ" value={visibleVocabCount} />
+       <MiniMetric label="Ngữ pháp" value={visibleGrammarCount} />
       </div>
 
       {courseLessons.length > 0 && (
@@ -391,18 +385,14 @@ function CourseCard({
      onClick={(event) => event.stopPropagation()}
      onMouseDown={(event) => event.stopPropagation()}
     >
-     {isSeedCourse ? (
-      <ForkSeedCourseButton courseId={course.id} />
-     ) : (
-      <CreateLessonDraftDialog
-       suggestedLessonNumber={stats.suggestedLessonNumber}
-       courses={[course]}
-       books={stats.books}
-       selectedCourseId={course.id}
-       selectedBookId={primaryBook?.id}
-       triggerVariant="outline"
-      />
-     )}
+     <CreateLessonDraftDialog
+      suggestedLessonNumber={stats.suggestedLessonNumber}
+      courses={[course]}
+      books={stats.books}
+      selectedCourseId={course.id}
+      selectedBookId={primaryBook?.id}
+      triggerVariant="outline"
+     />
 
      <Button asChild>
       <Link href={href}>

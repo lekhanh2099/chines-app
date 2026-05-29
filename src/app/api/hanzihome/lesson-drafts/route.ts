@@ -64,7 +64,11 @@ export async function POST(request: Request) {
   }
 
   const lessonKey =
-    parsed.data.lessonKey ?? createLessonKey(parsed.data.lessonNumber);
+    parsed.data.lessonKey ??
+    createLessonKey(parsed.data.lessonNumber, {
+      courseId: parsed.data.courseId,
+      bookId: parsed.data.bookId,
+    });
 
   const content = buildEmptyLessonDraftContent({
     ...parsed.data,

@@ -107,6 +107,7 @@ export const lessonSchema = z.object({
     )
     .optional(),
   vocabCount: z.number().optional(),
+  grammarCount: z.number().optional(),
   vocabIds: z.array(z.string()),
   grammarPointIds: z.array(z.string()),
   vocab: z.array(vocabViewModelSchema),
