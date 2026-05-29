@@ -16,6 +16,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { MemoryTipDialog } from "./MemoryTipDialog";
 import { MemoryTipsApiError } from "./memory-tip-api";
+import { getUserVisibleMemoryTips } from "./memory-tip.utils";
 import type { MemoryTip } from "./memory-tip.schema";
 import {
   useArchiveMemoryTipMutation,
@@ -34,7 +35,7 @@ export function HanziHomeMemoryTipsPage() {
   const tipsQuery = useMemoryTipsQuery();
   const updateMutation = useUpdateMemoryTipMutation();
   const archiveMutation = useArchiveMemoryTipMutation();
-  const tips = (tipsQuery.data ?? []).filter((tip) => tip.sourceType !== "system");
+  const tips = getUserVisibleMemoryTips(tipsQuery.data ?? []);
   const isMutating = updateMutation.isPending || archiveMutation.isPending;
 
   const togglePin = async (tip: MemoryTip) => {

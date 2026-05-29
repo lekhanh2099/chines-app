@@ -18,6 +18,7 @@ import { Card } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
 import { MemoryTipDialog } from "./MemoryTipDialog";
 import { MemoryTipsApiError } from "./memory-tip-api";
+import { getUserVisibleMemoryTips } from "./memory-tip.utils";
 import { useRouteMemoryTip } from "./useRouteMemoryTip";
 import {
  useMemoryTipsQuery,
@@ -33,7 +34,7 @@ export function GlobalMemoryTipCard({
 }: GlobalMemoryTipCardProps) {
  const tipsQuery = useMemoryTipsQuery();
  const tips = useMemo(
-  () => (tipsQuery.data ?? []).filter((tip) => !tip.isArchived),
+  () => getUserVisibleMemoryTips(tipsQuery.data ?? []),
   [tipsQuery.data],
  );
  const { selectedTip, pickNextTip } = useRouteMemoryTip(tips);

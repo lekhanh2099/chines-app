@@ -44,28 +44,17 @@ export async function GET(request: Request) {
   const selectColumns =
     "id, owner_id, scope, tip_type, title, body, formula, example_zh, example_pinyin, example_vi, source_type, source_lesson_id, source_item_id, source_label, tags, weight, is_pinned, is_archived, created_at, updated_at";
 
-  const [userTipsResult, systemTipsResult] = await Promise.all([
-    supabase
-      .from("hanzihome_memory_tips")
-      .select(selectColumns)
-      .eq("owner_id", user.id)
-      .eq("scope", "user")
-      .eq("is_archived", false)
-      .order("is_pinned", { ascending: false })
-      .order("weight", { ascending: false })
-      .order("updated_at", { ascending: false })
-      .limit(limit),
-    supabase
-      .from("hanzihome_memory_tips")
-      .select(selectColumns)
-      .eq("scope", "system")
-      .eq("is_archived", false)
-      .order("weight", { ascending: false })
-      .order("updated_at", { ascending: false })
-      .limit(limit),
-  ]);
-
-  const error = userTipsResult.error || systemTipsResult.error;
+  const { data, error } = await supabase
+    .from("hanzihome_memory_tips")
+    .select(selectColumns)
+    .eq("owner_id", user.id)
+    .eq("scope", "user")
+    .neq("source_type", "system")
+    .eq("is_archived", false)
+    .order("is_pinned", { ascending: false })
+    .order("weight", { ascending: false })
+    .order("updated_at", { ascending: false })
+    .limit(limit);
 
   if (error) {
     if (isMissingMemoryTipsTable(error.code)) {
@@ -82,10 +71,7 @@ export async function GET(request: Request) {
     return jsonError("Could not load memory tips", 500, error.code);
   }
 
-  const items = mapMemoryTipRows([
-    ...(userTipsResult.data ?? []),
-    ...(systemTipsResult.data ?? []),
-  ])
+  const items = mapMemoryTipRows(data ?? [])
     .sort((a, b) => {
       if (a.isPinned !== b.isPinned) return a.isPinned ? -1 : 1;
       if (a.weight !== b.weight) return b.weight - a.weight;

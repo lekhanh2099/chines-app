@@ -24,6 +24,11 @@ import {
  type ApplyImportMode,
  type ApplyImportTarget,
 } from "@/features/hanzihome/importer/applyParsedResultToDraft";
+import { MarkdownContent } from "@/features/hanzihome/components/MarkdownContent";
+import {
+ normalizeLessonOverviewMarkdown,
+ parseLessonOverviewMarkdownSections,
+} from "@/features/hanzihome/importer/lesson-overview-markdown";
 import {
  loadCustomImportProfiles,
  saveCustomImportProfiles,
@@ -39,13 +44,20 @@ import type {
  SectionRoleRule,
 } from "@/features/hanzihome/importer/importer.types";
 import { markdownToLearningDoc } from "@/features/hanzihome/importer/markdown-to-learning-doc";
+import {
+ createEmptyLessonDraftNotes,
+ lessonDraftNotesSchema,
+} from "@/features/hanzihome/lesson-drafts/grammar/grammar-draft.schema";
 import type { LessonDraft } from "@/features/hanzihome/lesson-drafts/lesson-draft.schema";
 import { useUpdateLessonDraftMutation } from "@/features/hanzihome/lesson-drafts/use-lesson-drafts";
 import { cn } from "@/lib/utils";
 
 type SmartMarkdownImportProps = {
  draft: LessonDraft;
+ kind: SmartImportKind;
 };
+
+type SmartImportKind = "grammar" | "lesson";
 
 type SmartFieldValue = LearningFieldName | "ignore";
 type SmartGrammarField = Extract<
@@ -136,6 +148,11 @@ const applyModeOptions: Array<{ value: ApplyImportMode; label: string }> = [
  { value: "append", label: "Thêm vào cuối" },
 ];
 
+const lessonApplyModeOptions: Array<{ value: ApplyImportMode; label: string }> = [
+ { value: "replace", label: "Ghi đè Tổng quan" },
+ { value: "append", label: "Thêm vào cuối Tổng quan" },
+];
+
 const baseFieldAliases: Record<SmartGrammarField, string[]> = {
  "grammar.core": [
   "cốt lõi",
@@ -189,10 +206,6 @@ function flattenSections(sections: LearningSection[]): LearningSection[] {
   section,
   ...flattenSections(section.children),
  ]);
-}
-
-function normalizeLooseMarkdownHeadings(value: string) {
- return value.replace(/^(#{1,6})(?=\S)/gmu, "$1 ");
 }
 
 function sectionInScope(section: LearningSection, scope: SmartImportScope) {
@@ -795,19 +808,39 @@ function FieldValuesPreview({
  );
 }
 
-export function SmartMarkdownImport({ draft }: SmartMarkdownImportProps) {
+function getDraftNotes(draft: LessonDraft) {
+ const parsed = lessonDraftNotesSchema.safeParse(draft.content.lesson.notes);
+
+ return parsed.success ? parsed.data : createEmptyLessonDraftNotes();
+}
+
+function appendMarkdown(current: string, incoming: string) {
+ const parts = [current.trim(), incoming.trim()].filter(Boolean);
+
+ return parts.join("\n\n---\n\n");
+}
+
+export function SmartMarkdownImport({ draft, kind }: SmartMarkdownImportProps) {
  const [markdown, setMarkdown] = useState("");
  const [applyMode, setApplyMode] = useState<ApplyImportMode>("replace");
  const [mappingOverrides, setMappingOverrides] = useState<
   Record<string, SmartFieldValue>
  >({});
  const [selectedItemId, setSelectedItemId] = useState<string | null>(null);
+ const [selectedLessonSectionId, setSelectedLessonSectionId] = useState<
+  string | null
+ >(null);
  const updateDraftMutation = useUpdateLessonDraftMutation();
+ const normalizedMarkdown = useMemo(
+  () => normalizeLessonOverviewMarkdown(markdown),
+  [markdown],
+ );
+ const isGrammarImport = kind === "grammar";
 
  const doc = useMemo(() => {
   if (!markdown.trim()) return null;
-  return markdownToLearningDoc(normalizeLooseMarkdownHeadings(markdown));
- }, [markdown]);
+  return markdownToLearningDoc(normalizedMarkdown);
+ }, [markdown, normalizedMarkdown]);
 
  const scope = useMemo(() => (doc ? detectImportScope(doc) : null), [doc]);
  const root = useMemo(
@@ -856,24 +889,92 @@ export function SmartMarkdownImport({ draft }: SmartMarkdownImportProps) {
       0.98,
       root.confidence + Math.min(0.16, mappedFieldCount / 100),
      ) * 100,
-    )
+   )
   : 0;
+ const headingCount = doc ? flattenSections(doc.sections).length : 0;
+ const lessonSections = useMemo(
+  () => parseLessonOverviewMarkdownSections(normalizedMarkdown),
+  [normalizedMarkdown],
+ );
+ const selectedLessonSection =
+  lessonSections.find((section) => section.id === selectedLessonSectionId) ??
+  lessonSections[0] ??
+  null;
+ const activeApplyModeOptions = isGrammarImport
+  ? applyModeOptions
+  : lessonApplyModeOptions;
+ const canApply = isGrammarImport ? Boolean(result) : Boolean(normalizedMarkdown);
+ const labels = isGrammarImport
+  ? {
+     eyebrow: "Import ngữ pháp",
+     title: "Paste markdown ngữ pháp, kiểm tra preview, rồi apply",
+     description:
+      "App đọc cấu trúc heading, tự map field và học lại mapping sau mỗi lần apply.",
+     button: "Apply ngữ pháp",
+     placeholder:
+      "# BÀI 1: ...\n\n## 1. 说实话 – nói thật...\n\n### 1. Cốt lõi nghĩa\n...",
+     emptyApply: "Chưa có nội dung ngữ pháp hợp lệ.",
+     success: "Đã import ngữ pháp vào bài nháp.",
+    }
+  : {
+     eyebrow: "Import bài học",
+     title: "Paste markdown bài học để lưu vào Tổng quan",
+     description:
+      "Nội dung này render ở tab Tổng quan. Ghi chú riêng của bài vẫn được giữ nguyên.",
+     button: "Apply bài học",
+     placeholder:
+      "# BÀI 1: ...\n\n## 一、课文\n...\n\n## 二、生词\n...",
+     emptyApply: "Chưa có markdown bài học để import.",
+     success: "Đã import bài học vào Tổng quan.",
+    };
 
  const updateMapping = (key: string, field: SmartFieldValue) => {
   setMappingOverrides((current) => ({
    ...current,
    [key]: field,
-  }));
+ }));
  };
 
  const handleApply = async () => {
+  if (!isGrammarImport) {
+   if (!normalizedMarkdown) {
+    toast.error(labels.emptyApply);
+    return;
+   }
+
+   const currentNotes = getDraftNotes(draft);
+   const overviewMarkdown =
+    applyMode === "append"
+     ? appendMarkdown(currentNotes.overviewMarkdown, normalizedMarkdown)
+     : normalizedMarkdown;
+
+   await updateDraftMutation.mutateAsync({
+    draftId: draft.id,
+    input: {
+     content: {
+      ...draft.content,
+      lesson: {
+       ...draft.content.lesson,
+       notes: {
+        ...currentNotes,
+        overviewMarkdown,
+       },
+      },
+     },
+    },
+   });
+
+   toast.success(labels.success);
+   return;
+  }
+
   if (!result || !profile) {
-   toast.error("Chưa có nội dung import hợp lệ.");
+   toast.error(labels.emptyApply);
    return;
   }
 
   if (result.items.length === 0) {
-   toast.error("Smart import chưa nhận được điểm ngữ pháp nào.");
+   toast.error("Import ngữ pháp chưa nhận được điểm ngữ pháp nào.");
    return;
   }
 
@@ -890,7 +991,7 @@ export function SmartMarkdownImport({ draft }: SmartMarkdownImportProps) {
   });
 
   mergeSmartProfile(profile);
-  toast.success("Đã smart import vào bài nháp.");
+  toast.success(labels.success);
  };
 
  return (
@@ -901,31 +1002,31 @@ export function SmartMarkdownImport({ draft }: SmartMarkdownImportProps) {
       <div className="flex flex-wrap items-start justify-between gap-3">
        <div>
         <p className="text-xs font-black uppercase tracking-wide text-text-muted">
-         Smart import
+         {labels.eyebrow}
         </p>
         <h2 className="text-xl font-black text-text-primary">
-         Paste markdown, kiểm tra preview, rồi apply
+         {labels.title}
         </h2>
         <p className="text-sm font-semibold text-text-muted">
-         App đọc cấu trúc heading, tự map field và học lại mapping sau mỗi lần apply.
+         {labels.description}
         </p>
        </div>
 
        <Button
         type="button"
-        disabled={!result || updateDraftMutation.isPending}
+        disabled={!canApply || updateDraftMutation.isPending}
         isLoading={updateDraftMutation.isPending}
         onClick={() => void handleApply()}
        >
         <WandSparkles className="h-4 w-4" />
-        Apply smart import
+        {labels.button}
        </Button>
       </div>
 
       <Textarea
        value={markdown}
        onChange={(event) => setMarkdown(event.target.value)}
-       placeholder="# BÀI 1: ...&#10;&#10;## 1. 说实话 – nói thật...&#10;&#10;### 1. Cốt lõi nghĩa&#10;..."
+       placeholder={labels.placeholder}
        className="min-h-72 font-mono text-sm leading-relaxed"
       />
      </div>
@@ -943,7 +1044,7 @@ export function SmartMarkdownImport({ draft }: SmartMarkdownImportProps) {
          <SelectValue placeholder="Chọn chế độ" />
         </SelectTrigger>
         <SelectContent>
-         {applyModeOptions.map((option) => (
+         {activeApplyModeOptions.map((option) => (
           <SelectItem key={option.value} value={option.value}>
            {option.label}
           </SelectItem>
@@ -957,19 +1058,29 @@ export function SmartMarkdownImport({ draft }: SmartMarkdownImportProps) {
         Nhận diện
        </p>
        <p className="mt-1 text-lg font-black text-text-primary">
-        {root ? root.label : "Chưa có format"}
+        {isGrammarImport
+         ? root
+           ? root.label
+           : "Chưa có format"
+         : normalizedMarkdown
+           ? "Markdown bài học"
+           : "Chưa có nội dung"}
        </p>
        <p className="text-sm font-bold text-text-muted">
-        {result
-         ? `${result.items.length} điểm · ${mappedFieldCount} field · ${confidence}% · ${scope?.label ?? "toàn bộ"}`
-         : "Paste markdown để xem preview."}
+        {isGrammarImport
+         ? result
+           ? `${result.items.length} điểm · ${mappedFieldCount} field · ${confidence}% · ${scope?.label ?? "toàn bộ"}`
+           : "Paste markdown để xem preview."
+         : normalizedMarkdown
+           ? `${lessonSections.length || headingCount} đề mục · render ở Tổng quan`
+           : "Paste markdown để xem preview."}
        </p>
       </div>
      </div>
     </div>
    </Card>
 
-   {root && mappings.length > 0 && (
+   {isGrammarImport && root && mappings.length > 0 && (
     <Card padding="md" className="rounded-xl">
      <div className="grid gap-3">
       <div>
@@ -1018,7 +1129,70 @@ export function SmartMarkdownImport({ draft }: SmartMarkdownImportProps) {
     </Card>
    )}
 
-   {result && (
+   {!isGrammarImport && selectedLessonSection && (
+    <Card padding="lg" className="rounded-xl">
+     <div className="grid gap-4">
+      <div>
+       <div className="flex w-fit items-center gap-1 rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-xs font-black uppercase tracking-wide text-primary">
+        <CheckCircle2 className="h-3.5 w-3.5" />
+        Preview Tổng quan
+       </div>
+       <h3 className="mt-2 text-2xl font-black text-text-primary">
+        Nội dung bài học
+       </h3>
+       <p className="text-sm font-semibold text-text-muted">
+        Sau khi apply, phần này sẽ hiển thị trong tab Tổng quan phía trên card
+        ghi chú riêng.
+       </p>
+      </div>
+
+      <div className="grid gap-3 lg:grid-cols-[18rem_minmax(0,1fr)]">
+       <div className="grid max-h-[32rem] content-start gap-2 overflow-y-auto pr-1">
+        {lessonSections.map((section, index) => (
+         <button
+          key={section.id}
+          type="button"
+          onClick={() => setSelectedLessonSectionId(section.id)}
+          className={cn(
+           "rounded-xl border p-3 text-left transition-colors",
+           selectedLessonSection.id === section.id
+            ? "border-primary bg-primary text-primary-foreground"
+            : "border-border-default bg-bg-primary hover:bg-bg-subtle",
+          )}
+         >
+          <span className="line-clamp-2 text-sm font-black">
+           {index + 1}. {section.title}
+          </span>
+          <span
+           className={cn(
+            "mt-1 block text-xs font-bold",
+            selectedLessonSection.id === section.id
+             ? "text-primary-foreground/80"
+             : "text-text-muted",
+           )}
+          >
+           H{section.level}
+          </span>
+         </button>
+        ))}
+       </div>
+
+       <div className="rounded-xl border border-border-default bg-bg-subtle p-4">
+        <h4 className="mb-3 text-lg font-black text-text-primary">
+         {selectedLessonSection.title}
+        </h4>
+        <div className="max-h-[32rem] overflow-y-auto pr-2">
+         <MarkdownContent
+          content={selectedLessonSection.content || selectedLessonSection.title}
+         />
+        </div>
+       </div>
+      </div>
+     </div>
+    </Card>
+   )}
+
+   {isGrammarImport && result && (
     <div className="grid gap-4 lg:grid-cols-[22rem_minmax(0,1fr)]">
      <Card padding="md" className="rounded-xl">
       <div className="grid gap-3">
@@ -1121,4 +1295,12 @@ export function SmartMarkdownImport({ draft }: SmartMarkdownImportProps) {
    )}
   </div>
  );
+}
+
+export function SmartGrammarImport({ draft }: { draft: LessonDraft }) {
+ return <SmartMarkdownImport draft={draft} kind="grammar" />;
+}
+
+export function SmartLessonImport({ draft }: { draft: LessonDraft }) {
+ return <SmartMarkdownImport draft={draft} kind="lesson" />;
 }

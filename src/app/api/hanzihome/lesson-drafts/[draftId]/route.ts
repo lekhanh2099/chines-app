@@ -165,6 +165,20 @@ function grammarToDraftItem(point: GrammarViewModel) {
  };
 }
 
+function normalizeDraftNotes(lesson: HanziHomeLesson) {
+ const emptyNotes = createEmptyLessonDraftNotes();
+
+ return {
+  overviewMarkdown: lesson.notes?.overviewMarkdown ?? emptyNotes.overviewMarkdown,
+  grammarSummary: lesson.notes?.grammarSummary ?? emptyNotes.grammarSummary,
+  vocabularyText: lesson.notes?.vocabularyText ?? emptyNotes.vocabularyText,
+  properNounsText: lesson.notes?.properNounsText ?? emptyNotes.properNounsText,
+  applicationMarkdown:
+   lesson.notes?.applicationMarkdown ?? emptyNotes.applicationMarkdown,
+  personalNote: lesson.notes?.personalNote ?? emptyNotes.personalNote,
+ };
+}
+
 function dbLessonToVirtualDraft({
  lesson,
  userId,
@@ -172,10 +186,7 @@ function dbLessonToVirtualDraft({
  lesson: HanziHomeLesson;
  userId: string;
 }): LessonDraft {
- const notes = {
-  ...createEmptyLessonDraftNotes(),
-  ...(lesson.notes ?? {}),
- };
+ const notes = normalizeDraftNotes(lesson);
 
  return {
   id: lesson.id,
