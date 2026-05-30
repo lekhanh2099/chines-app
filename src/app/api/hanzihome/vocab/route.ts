@@ -40,22 +40,29 @@ function parseLimit(value: string | null) {
  return Math.min(Math.max(Math.trunc(parsed), 1), 1500);
 }
 
-function matchesQuery(row: z.infer<typeof vocabRowSchema>, query: string) {
- if (!query) return true;
+function normalizeIlikeSearchTerm(value: string) {
+ return value.replace(/[\\%_*,()]/g, " ").replace(/\s+/g, " ").trim();
+}
 
- const normalized = query.toLocaleLowerCase("vi");
- const source = [
-  row.word,
-  row.pinyin,
-  row.han_viet,
-  row.meaning,
-  row.category,
-  row.level ?? "",
-  row.pos_vi ?? "",
-  row.pos_zh ?? "",
- ].join("\n");
+function buildVocabSearchFilter(query: string) {
+ const searchTerm = normalizeIlikeSearchTerm(query);
 
- return source.toLocaleLowerCase("vi").includes(normalized);
+ if (!searchTerm) return null;
+
+ const pattern = `%${searchTerm}%`;
+
+ return [
+  "word",
+  "pinyin",
+  "han_viet",
+  "meaning",
+  "category",
+  "level",
+  "pos_vi",
+  "pos_zh",
+ ]
+  .map((column) => `${column}.ilike.${pattern}`)
+  .join(",");
 }
 
 export async function GET(request: Request) {
@@ -80,6 +87,8 @@ export async function GET(request: Request) {
  if (courseId) builder = builder.eq("course_id", courseId);
  if (bookId) builder = builder.eq("book_id", bookId);
  if (lessonId) builder = builder.eq("lesson_id", lessonId);
+ const searchFilter = buildVocabSearchFilter(query);
+ if (searchFilter) builder = builder.or(searchFilter);
 
  const { data: vocabData, error: vocabError } = await builder;
 
@@ -90,8 +99,7 @@ export async function GET(request: Request) {
   );
  }
 
- const vocabRows = z.array(vocabRowSchema).parse(vocabData ?? []);
- const filteredRows = vocabRows.filter((row) => matchesQuery(row, query));
+ const filteredRows = z.array(vocabRowSchema).parse(vocabData ?? []);
  const lessonIds = Array.from(
   new Set(filteredRows.map((row) => row.lesson_id)),
  );

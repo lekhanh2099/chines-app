@@ -22,6 +22,19 @@ export type LearningTable = {
  rows: string[][];
 };
 
+export type ExampleBlock = {
+ hanzi: string;
+ pinyin?: string;
+ translation?: string;
+ note?: string;
+ vocabHighlights?: Array<{
+  text: string;
+  vocabId?: string;
+  start?: number;
+  end?: number;
+ }>;
+};
+
 export type LearningBlock =
  | {
     id: string;
@@ -179,6 +192,10 @@ export type LearningFieldValue =
  | {
     kind: "table";
     value: LearningTable;
+   }
+ | {
+    kind: "examples";
+    value: ExampleBlock[];
    };
 
 export type MappedImportItem = {
@@ -188,6 +205,9 @@ export type MappedImportItem = {
  title: string;
  sourceSectionId: string;
  fields: Partial<Record<LearningFieldName, LearningFieldValue[]>>;
+ fallback?: boolean;
+ fallbackReason?: string;
+ confidence?: number;
 };
 
 export type MappedSpecialSection = {
@@ -201,7 +221,32 @@ export type MappedSpecialSection = {
 export type ParserWarning = {
  message: string;
  sectionId?: string;
- severity: "info" | "warning";
+ severity: "info" | "warning" | "error";
+ type?:
+  | "FALLBACK_USED"
+  | "LOW_CONFIDENCE"
+  | "UNKNOWN_SECTION"
+  | "DROPPED_CONTENT"
+  | "EXAMPLE_PARTIAL"
+  | "ROOT_DETECTION_UNCERTAIN";
+};
+
+export type ParseMeta = {
+ totalSections: number;
+ mappedSections: number;
+ preservedSections: number;
+ droppedSections: number;
+ totalCharacters: number;
+ mappedCharacters: number;
+ preservedCharacters: number;
+ droppedCharacters: number;
+ coverage: number;
+ mappedRatio: number;
+ preservedRatio: number;
+ droppedRatio: number;
+ confidence: number;
+ parserVersion: string;
+ warnings: ParserWarning[];
 };
 
 export type AppliedParseResult = {
@@ -213,6 +258,7 @@ export type AppliedParseResult = {
  unmappedSections: LearningSection[];
  notes: string[];
  warnings: ParserWarning[];
+ parseMeta?: ParseMeta;
 };
 
 export const learningFieldNameSchema = z.enum([

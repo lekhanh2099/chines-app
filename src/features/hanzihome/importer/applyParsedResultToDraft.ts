@@ -4,9 +4,11 @@ import {
  learningFieldValueToPreview,
  sectionToPlainText,
 } from "@/features/hanzihome/importer/apply-parse-profile";
+import { cleanDisplayTitle } from "@/features/hanzihome/importer/smart-markdown-parser-v2";
 import type {
  AppliedParseResult,
  LearningFieldName,
+ LearningFieldValue,
  MappedImportItem,
 } from "@/features/hanzihome/importer/importer.types";
 import type { LessonDraftContent } from "@/features/hanzihome/lesson-drafts/lesson-draft.schema";
@@ -41,6 +43,8 @@ type ApplyParsedResultToDraftInput = {
  mode: ApplyImportMode;
 };
 
+// ─── Field value helpers ──────────────────────────────────────────────────────
+
 function valueToText(item: MappedImportItem, field: LearningFieldName) {
  return (item.fields[field] ?? [])
   .map((value) => learningFieldValueToPreview(value))
@@ -64,7 +68,22 @@ function createStableId(prefix: string, title: string, index: number) {
 }
 
 function cleanGrammarTitle(title: string) {
- return title.replace(/^PHẦN\s+[IVX]+\s*:\s*/iu, "").trim() || title;
+ return cleanDisplayTitle(title);
+}
+
+function exampleValueToGrammarExamples(
+ value: LearningFieldValue,
+): GrammarDraftExample[] {
+ if (value.kind !== "examples") return [];
+
+ return value.value
+  .map((example) => ({
+   chinese: example.hanzi,
+   pinyin: example.pinyin ?? "",
+   translation: example.translation ?? "",
+   note: example.note ?? "",
+  }))
+  .filter((example) => example.chinese || example.translation);
 }
 
 function parseGrammarExampleBlock(block: string): GrammarDraftExample {
@@ -124,12 +143,7 @@ function parseGrammarExampleBlock(block: string): GrammarDraftExample {
       .trim()
    : "";
 
- return {
-  chinese,
-  pinyin,
-  translation,
-  note,
- };
+ return { chinese, pinyin, translation, note };
 }
 
 function textToGrammarExamples(text: string): GrammarDraftExample[] {
@@ -148,6 +162,20 @@ function textToGrammarExamples(text: string): GrammarDraftExample[] {
   .map(parseGrammarExampleBlock)
   .filter((example) => example.chinese || example.translation);
 }
+
+function valueToGrammarExamples(
+ item: MappedImportItem,
+ field: LearningFieldName,
+) {
+ const values = item.fields[field] ?? [];
+ const structuredExamples = values.flatMap(exampleValueToGrammarExamples);
+
+ if (structuredExamples.length > 0) return structuredExamples;
+
+ return textToGrammarExamples(valueToText(item, field));
+}
+
+// ─── Vocab helpers ────────────────────────────────────────────────────────────
 
 function textToVocabExamples(text: string): VocabDraftExample[] {
  return text
@@ -177,16 +205,19 @@ function textToCollocations(text: string): VocabDraftCollocation[] {
   });
 }
 
+const fieldsWithDedicatedStorage = new Set<LearningFieldName>([
+ "grammar.core", // → coreLogic + shortMeaning
+ "grammar.structures", // → formulas
+ "grammar.examples", // → examples[]
+ "grammar.comparisons", // → comparisons
+]);
+
 const grammarFieldTitleMap: Partial<Record<LearningFieldName, string>> = {
  "grammar.opening": "Câu mở khóa",
- "grammar.core": "Bản chất cốt lõi & Công thức",
- "grammar.structures": "Công thức",
  "grammar.blindSpots": "Điểm mù & quy tắc ẩn",
- "grammar.comparisons": "So sánh dễ nhầm",
  "grammar.traps": "Bẫy tư duy",
- "grammar.examples": "Ví dụ thực chiến",
- "grammar.summary": "Chốt bản chất",
  "grammar.notes": "Lưu ý",
+ "grammar.summary": "Chốt bản chất",
  "grammar.exercises": "Bài tập",
 };
 
@@ -196,12 +227,13 @@ function fieldTitle(field: string) {
 
 function itemRawMarkdown(item: MappedImportItem) {
  return Object.entries(item.fields)
+  .filter(
+   ([field]) => !fieldsWithDedicatedStorage.has(field as LearningFieldName),
+  )
   .flatMap(([field, values]) =>
    values.map((value) => {
     const content = learningFieldValueToPreview(value).trim();
-
     if (!content) return "";
-
     return `### ${fieldTitle(field)}\n\n${content}`;
    }),
   )
@@ -223,6 +255,20 @@ function firstUsefulLine(value: string) {
  );
 }
 
+// ─── Grammar item mapper ──────────────────────────────────────────────────────
+//
+// FIX: Tách riêng từng field thay vì gom vào pitfalls.
+//
+// Schema GrammarDraftItem:
+//   coreLogic   ← grammar.core
+//   formulas    ← grammar.structures
+//   examples    ← grammar.examples
+//   comparisons ← grammar.comparisons  (riêng, KHÔNG gom vào pitfalls)
+//   pitfalls    ← grammar.traps only   (trước đây gom cả blindSpots + notes)
+//   practice    ← grammar.exercises
+//   rawMarkdown ← chỉ opening + blindSpots + notes + summary
+//                 (các field không có chỗ riêng trong schema)
+
 function mapGrammarItem(
  item: MappedImportItem,
  index: number,
@@ -233,12 +279,17 @@ function mapGrammarItem(
  const blindSpots = valueToText(item, "grammar.blindSpots");
  const comparisons = valueToText(item, "grammar.comparisons");
  const traps = valueToText(item, "grammar.traps");
- const examplesText = valueToText(item, "grammar.examples");
  const summary = valueToText(item, "grammar.summary");
  const notes = valueToText(item, "grammar.notes");
  const exercises = valueToText(item, "grammar.exercises");
+
  const title = cleanGrammarTitle(item.title);
+
+ // rawMarkdown: chỉ các field không có dedicated storage
+ // blindSpots, traps, notes, opening, summary → đưa vào rawMarkdown
+ // để markdownToDetailSections có thể render thành detailSections
  const rawMarkdown = itemRawMarkdown(item);
+
  const coreLogic =
   core || firstUsefulLine(opening) || summary || firstUsefulLine(rawMarkdown);
  const shortMeaning =
@@ -251,15 +302,23 @@ function mapGrammarItem(
   shortMeaning,
   coreLogic,
   formulas: structures,
-  examples: textToGrammarExamples(examplesText),
+  examples: valueToGrammarExamples(item, "grammar.examples"),
+
+  // FIX: comparisons riêng — không gom vào pitfalls
   comparisons,
-  pitfalls: [blindSpots, traps, notes].filter(Boolean).join("\n\n"),
+
+  // FIX: pitfalls chỉ lấy grammar.traps
+  // blindSpots và notes đã có trong rawMarkdown → detailSections
+  pitfalls: traps,
+
   practice: exercises,
   cultureNotes: "",
   rawMarkdown,
   confidence: 0.8,
  };
 }
+
+// ─── Vocab item mapper ────────────────────────────────────────────────────────
 
 function mapVocabItem(item: MappedImportItem, index: number): VocabDraftItem {
  const word = item.title;
@@ -290,6 +349,8 @@ function mapVocabItem(item: MappedImportItem, index: number): VocabDraftItem {
   rawMarkdown: itemRawMarkdown(item),
  };
 }
+
+// ─── Merge helpers ────────────────────────────────────────────────────────────
 
 function mergeByTitle<T extends { title?: string; word?: string }>(
  currentItems: T[],
@@ -331,6 +392,8 @@ function mergeItems<T extends { title?: string; word?: string }>(
  return [...currentItems, ...incomingItems];
 }
 
+// ─── Parse existing items ─────────────────────────────────────────────────────
+
 function parseExistingGrammarItems(items: Array<Record<string, unknown>>) {
  return items.flatMap((item) => {
   const parsed = grammarDraftItemSchema.safeParse(item);
@@ -350,6 +413,8 @@ function getDraftNotes(content: LessonDraftContent): LessonDraftNotes {
 
  return parsed.success ? parsed.data : createEmptyLessonDraftNotes();
 }
+
+// ─── Apply functions ──────────────────────────────────────────────────────────
 
 function applyLessonText(
  content: LessonDraftContent,
@@ -372,10 +437,7 @@ function applyLessonText(
   ...content,
   lesson: {
    ...content.lesson,
-   notes: {
-    ...notes,
-    applicationMarkdown,
-   },
+   notes: { ...notes, applicationMarkdown },
   },
  };
 }
@@ -402,10 +464,7 @@ function applyLessonSummary(
   ...content,
   lesson: {
    ...content.lesson,
-   notes: {
-    ...notes,
-    grammarSummary,
-   },
+   notes: { ...notes, grammarSummary },
   },
  };
 }
@@ -490,6 +549,8 @@ function applyExercises(
   },
  };
 }
+
+// ─── Main export ──────────────────────────────────────────────────────────────
 
 export function applyParsedResultToDraft({
  draftContent,

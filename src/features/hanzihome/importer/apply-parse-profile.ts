@@ -1,4 +1,10 @@
 import {
+ buildParseMeta,
+ cleanDisplayTitle,
+ normalizeSmartHeading,
+ textToLearningFieldValue,
+} from "@/features/hanzihome/importer/smart-markdown-parser-v2";
+import {
  learningFieldNameSchema,
  type AppliedParseResult,
  type FieldRule,
@@ -25,11 +31,7 @@ type LabelMatch = {
 };
 
 function normalizeText(value: string) {
- return value
-  .normalize("NFC")
-  .trim()
-  .toLocaleLowerCase("vi-VN")
-  .replace(/\s+/g, " ");
+ return normalizeSmartHeading(value);
 }
 
 function addFieldValue(
@@ -141,7 +143,7 @@ function valueFromSection(
   return null;
  }
 
- return { kind: "text", value: text };
+ return textToLearningFieldValue(rule.field, text);
 }
 
 function valueFromLabel(labelValue: string): LearningFieldValue {
@@ -332,7 +334,7 @@ function mapRootSection(
   id: section.id,
   target: profile.target,
   role: roleRule.role,
-  title: section.title,
+  title: cleanDisplayTitle(section.title),
   sourceSectionId: section.id,
   fields: {},
  };
@@ -477,21 +479,42 @@ export function applyParseProfile(
   if (text) notes.push(`## ${section.title}\n\n${text}`);
  });
 
- return {
+ const result: AppliedParseResult = {
   doc,
   profile,
-  documentTitle: documentTitleSection?.title,
+  documentTitle: documentTitleSection
+   ? cleanDisplayTitle(documentTitleSection.title)
+   : undefined,
   items: mapped.map((result) => result.item),
   specialSections,
   unmappedSections: [...childUnmappedSections, ...topLevelUnmappedSections],
   notes,
   warnings,
  };
+
+ return {
+  ...result,
+  parseMeta: buildParseMeta(result),
+ };
 }
 
 export function learningFieldValueToPreview(value: LearningFieldValue) {
  if (value.kind === "text") return value.value;
  if (value.kind === "list") return value.value.join("\n");
+ if (value.kind === "examples") {
+  return value.value
+   .map((example) =>
+    [
+     example.hanzi,
+     example.pinyin ? `Pinyin: ${example.pinyin}` : "",
+     example.translation ? `Nghĩa: ${example.translation}` : "",
+     example.note ? `Ghi chú: ${example.note}` : "",
+    ]
+     .filter(Boolean)
+     .join("\n"),
+   )
+   .join("\n\n");
+ }
 
  const rows = [value.value.headers, ...value.value.rows].filter(
   (row) => row.length > 0,

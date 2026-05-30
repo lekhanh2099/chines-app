@@ -30,6 +30,11 @@ import {
  parseLessonOverviewMarkdownSections,
 } from "@/features/hanzihome/importer/lesson-overview-markdown";
 import {
+ buildParseMeta,
+ cleanDisplayTitle,
+ normalizeSmartHeading,
+} from "@/features/hanzihome/importer/smart-markdown-parser-v2";
+import {
  loadCustomImportProfiles,
  saveCustomImportProfiles,
 } from "@/features/hanzihome/importer/import-profile-storage";
@@ -62,10 +67,12 @@ type SmartImportKind = "grammar" | "lesson";
 type SmartFieldValue = LearningFieldName | "ignore";
 type SmartGrammarField = Extract<
  LearningFieldName,
+ | "grammar.opening"
  | "grammar.core"
  | "grammar.structures"
  | "grammar.blindSpots"
  | "grammar.comparisons"
+ | "grammar.traps"
  | "grammar.examples"
  | "grammar.notes"
  | "grammar.summary"
@@ -101,6 +108,11 @@ const fieldOptions: Array<{
  description: string;
 }> = [
  {
+  value: "grammar.opening",
+  label: "Câu mở khóa",
+  description: "Câu dẫn nhập, ví dụ mở đầu, hook của điểm ngữ pháp.",
+ },
+ {
   value: "grammar.core",
   label: "Cốt lõi / giải thích",
   description: "Nghĩa chính, công dụng, giải thích.",
@@ -119,6 +131,11 @@ const fieldOptions: Array<{
   value: "grammar.comparisons",
   label: "So sánh",
   description: "Phân biệt, dễ nhầm.",
+ },
+ {
+  value: "grammar.traps",
+  label: "Bẫy tư duy",
+  description: "Lỗi dịch máy móc, lỗi tư duy tiếng Việt, cách sửa.",
  },
  {
   value: "grammar.examples",
@@ -148,12 +165,14 @@ const applyModeOptions: Array<{ value: ApplyImportMode; label: string }> = [
  { value: "append", label: "Thêm vào cuối" },
 ];
 
-const lessonApplyModeOptions: Array<{ value: ApplyImportMode; label: string }> = [
- { value: "replace", label: "Ghi đè Tổng quan" },
- { value: "append", label: "Thêm vào cuối Tổng quan" },
-];
+const lessonApplyModeOptions: Array<{ value: ApplyImportMode; label: string }> =
+ [
+  { value: "replace", label: "Ghi đè Tổng quan" },
+  { value: "append", label: "Thêm vào cuối Tổng quan" },
+ ];
 
 const baseFieldAliases: Record<SmartGrammarField, string[]> = {
+ "grammar.opening": ["câu mở khóa", "mở khóa", "câu dẫn", "ví dụ mở đầu"],
  "grammar.core": [
   "cốt lõi",
   "cốt lõi nghĩa",
@@ -163,17 +182,59 @@ const baseFieldAliases: Record<SmartGrammarField, string[]> = {
   "công dụng",
   "giải thích",
   "ý nghĩa",
+  "cách dùng",
+  "用法",
+  "意义",
+  "含义",
+  "说明",
+  "解释",
+  "语义",
  ],
- "grammar.structures": ["công thức", "cấu trúc", "pattern", "mẫu câu"],
- "grammar.blindSpots": [
-  "vì sao",
-  "logic",
-  "tư duy",
-  "cách hiểu",
-  "quy tắc ẩn",
+ "grammar.structures": [
+  "công thức",
+  "cấu trúc",
+  "pattern",
+  "mẫu câu",
+  "结构",
+  "句型",
+  "格式",
+  "公式",
+  "搭配",
  ],
- "grammar.comparisons": ["so sánh", "phân biệt", "dễ nhầm", "khác nhau"],
- "grammar.examples": ["ví dụ", "examples", "ví dụ trong sách", "ví dụ nhanh"],
+ "grammar.blindSpots": ["vì sao", "logic", "tư duy", "cách hiểu", "quy tắc ẩn"],
+ "grammar.comparisons": [
+  "so sánh",
+  "phân biệt",
+  "dễ nhầm",
+  "khác nhau",
+  "đối chiếu",
+  "比较",
+  "辨析",
+  "区别",
+  "对比",
+ ],
+ "grammar.traps": [
+  "bẫy tư duy",
+  "điểm dễ sai",
+  "điểm mù",
+  "lỗi tư duy",
+  "lỗi sai",
+  "lỗi thường gặp",
+  "常见错误",
+  "误区",
+  "错误分析",
+ ],
+ "grammar.examples": [
+  "ví dụ",
+  "examples",
+  "example",
+  "ví dụ trong sách",
+  "ví dụ nhanh",
+  "例句",
+  "例子",
+  "示例",
+  "举例",
+ ],
  "grammar.notes": [
   "thực tế",
   "phủ định",
@@ -181,20 +242,28 @@ const baseFieldAliases: Record<SmartGrammarField, string[]> = {
   "vị trí",
   "lưu ý",
   "chú ý",
+  "ghi chú",
   "bẫy",
   "sai thường gặp",
   "dịch tự nhiên",
+  "注意",
+  "注意事项",
+  "提示",
+  "说明",
  ],
- "grammar.summary": ["chốt", "tổng kết", "kết luận"],
+ "grammar.summary": [
+  "chốt",
+  "tóm tắt",
+  "tổng kết",
+  "kết luận",
+  "小结",
+  "总结",
+  "归纳",
+ ],
 };
 
 function normalizeHeading(value: string) {
- return value
-  .normalize("NFC")
-  .trim()
-  .toLocaleLowerCase("vi-VN")
-  .replace(/^(?:[\divx]+|[a-z]|[一二三四五六七八九十]+)\s*[.)．、\\.]?\s*/iu, "")
-  .replace(/\s+/g, " ");
+ return normalizeSmartHeading(value);
 }
 
 function escapeRegExp(value: string) {
@@ -245,15 +314,22 @@ function findParentSection(
 }
 
 function sectionAndDescendantIds(section: LearningSection) {
- return new Set([section.id, ...flattenSections(section.children).map((item) => item.id)]);
+ return new Set([
+  section.id,
+  ...flattenSections(section.children).map((item) => item.id),
+ ]);
 }
 
 function isGrammarScopeHeading(title: string) {
  const normalized = normalizeHeading(title);
+ if (isScopeEndHeading(title)) return false;
+
  return (
   normalized === "语法" ||
-  normalized.includes("ngữ pháp") ||
-  normalized.includes("grammar")
+  normalized === "ngữ pháp" ||
+  normalized === "grammar" ||
+  /^(?:phần\s+)?ngữ pháp$/iu.test(normalized) ||
+  /^(?:grammar\s+)?points?$/iu.test(normalized)
  );
 }
 
@@ -275,6 +351,7 @@ function isExcludedRootHeading(title: string) {
  return (
   isGrammarScopeHeading(title) ||
   isScopeEndHeading(title) ||
+  normalized.includes("bài đọc thêm") ||
   normalized.includes("注释") ||
   normalized.includes("生词") ||
   normalized.includes("专名") ||
@@ -327,19 +404,26 @@ function detectImportScope(doc: LearningDoc): SmartImportScope {
  };
 }
 
-function detectRoot(doc: LearningDoc, scope: SmartImportScope): RootDetection | null {
+function detectRoot(
+ doc: LearningDoc,
+ scope: SmartImportScope,
+): RootDetection | null {
  const sections = flattenSections(doc.sections).filter((section) =>
   sectionInScope(section, scope),
  );
- const sectionGroups = [2, 3, 1, 4, 5, 6].map((level) => {
+ const sectionGroups = [2, 3, 4, 5, 6].map((level) => {
   const roots = sections.filter((section) => {
    if (section.level !== level) return false;
    if (isExcludedRootHeading(section.title)) return false;
 
    return section.children.length > 0 || section.blocks.length > 0;
   });
-  const numbered = roots.filter((section) => /^\s*\d+[.)．、\\.]?\s+/u.test(section.title));
-  const phan = roots.filter((section) => /^PHẦN\s+[IVX]+\s*:/iu.test(section.title));
+  const numbered = roots.filter((section) =>
+   /^\s*\d+[.)．、\\.]?\s+/u.test(section.title),
+  );
+  const phan = roots.filter((section) =>
+   /^PHẦN\s+[IVX]+\s*:/iu.test(section.title),
+  );
 
   return {
    level: level as RootDetection["level"],
@@ -349,7 +433,19 @@ function detectRoot(doc: LearningDoc, scope: SmartImportScope): RootDetection | 
   };
  });
 
- const numberedGroup = sectionGroups.find((group) => group.numbered.length >= 2);
+ const phanGroup = sectionGroups.find((group) => group.phan.length >= 1);
+ if (phanGroup) {
+  return {
+   level: phanGroup.level,
+   pattern: "phan",
+   label: `H${phanGroup.level} PHẦN`,
+   confidence: 0.88,
+  };
+ }
+
+ const numberedGroup = sectionGroups.find(
+  (group) => group.numbered.length >= 2,
+ );
  if (numberedGroup) {
   return {
    level: numberedGroup.level,
@@ -359,24 +455,33 @@ function detectRoot(doc: LearningDoc, scope: SmartImportScope): RootDetection | 
   };
  }
 
- const phanGroup = sectionGroups.find((group) => group.phan.length >= 1);
- if (phanGroup) {
+ const plainGroup = sectionGroups.find((group) => group.roots.length >= 2);
+ if (plainGroup) {
   return {
-   level: phanGroup.level,
-   pattern: "phan",
-   label: `H${phanGroup.level} PHẦN`,
-   confidence: 0.82,
+   level: plainGroup.level,
+   pattern: "plain",
+   label: `H${plainGroup.level} nhiều mục`,
+   confidence: 0.64,
   };
  }
 
- const plainGroup = sectionGroups.find((group) => group.roots.length >= 2);
- if (!plainGroup) return null;
+ const singleRootGroup = sectionGroups.find(
+  (group) => group.roots.length === 1,
+ );
+ if (!singleRootGroup) return null;
+
+ const singleRoot = singleRootGroup.roots[0];
+ if (!singleRoot) return null;
+
+ const isNumbered = /^\s*\d+[.)．、\\.]?\s+/u.test(singleRoot.title);
 
  return {
-  level: plainGroup.level,
-  pattern: "plain",
-  label: `H${plainGroup.level} nhiều mục`,
-  confidence: 0.58,
+  level: singleRootGroup.level,
+  pattern: isNumbered ? "numbered" : "plain",
+  label: isNumbered
+   ? `H${singleRootGroup.level} đánh số`
+   : `H${singleRootGroup.level} một mục`,
+  confidence: isNumbered ? 0.72 : 0.56,
  };
 }
 
@@ -402,35 +507,35 @@ function suggestFieldForHeading(title: string): SmartFieldValue {
  const normalized = normalizeHeading(title);
  const learned = learnedAliases();
 
- if (/动词\s*\+|v\s*\+/iu.test(normalized)) {
-  return "grammar.structures";
- }
+ // Special pattern
+ if (/动词\s*\+|v\s*\+/iu.test(normalized)) return "grammar.structures";
 
+ // Learned — exact only
  for (const [field, aliases] of Object.entries(learned)) {
-  if (
-   aliases?.some(
-    (alias) =>
-     normalizeHeading(alias) === normalized ||
-     normalized.includes(normalizeHeading(alias)),
-   )
-  ) {
+  if (aliases?.some((alias) => normalizeHeading(alias) === normalized)) {
    return field as LearningFieldName;
   }
  }
 
+ // Base aliases — exact match trước
  for (const [field, aliases] of Object.entries(baseFieldAliases)) {
-  if (
-   aliases.some((alias) => {
-    const normalizedAlias = normalizeHeading(alias);
-    return (
-     normalized === normalizedAlias ||
-     normalized.includes(normalizedAlias) ||
-     normalizedAlias.includes(normalized)
-    );
-   })
-  ) {
-   return field as LearningFieldName;
-  }
+  const exactMatch = aliases.some(
+   (alias) => normalizeHeading(alias) === normalized,
+  );
+  if (exactMatch) return field as LearningFieldName;
+ }
+
+ // Base aliases — includes sau (chỉ 1 chiều: normalized includes alias)
+ for (const [field, aliases] of Object.entries(baseFieldAliases)) {
+  const partialMatch = aliases.some((alias) => {
+   const normalizedAlias = normalizeHeading(alias);
+   // CHỈ normalized.includes(alias), KHÔNG làm ngược lại
+   // Vì "ví dụ nhanh".includes("ví dụ") = true ✅
+   // Nhưng "ví dụ".includes("ví dụ nhanh") = false ✅ (tránh false positive)
+   return normalized.includes(normalizedAlias) && normalizedAlias.length >= 4;
+   // min 4 ký tự để tránh match quá ngắn
+  });
+  if (partialMatch) return field as LearningFieldName;
  }
 
  return "ignore";
@@ -441,9 +546,11 @@ function buildMappingRows(
  root: RootDetection,
  scope: SmartImportScope,
 ): SmartMappingRow[] {
+ // Lấy TẤT CẢ children của root, không filter level
  const childSections = childSectionsOfRoots(doc, root, scope).filter(
-  (section) => section.level === root.level + 1,
+  (section) => section.level > root.level && section.level <= root.level + 3, // max 3 cấp sâu hơn root
  );
+
  const rowsByHeading = new Map<string, SmartMappingRow>();
 
  childSections.forEach((section) => {
@@ -451,16 +558,25 @@ function buildMappingRows(
   const existing = rowsByHeading.get(normalizedHeading);
 
   if (existing) {
-   rowsByHeading.set(normalizedHeading, {
-    ...existing,
-    count: existing.count + 1,
-   });
+   // Ưu tiên level gần root hơn (level nhỏ hơn = heading cao hơn)
+   if (section.level < existing.level) {
+    rowsByHeading.set(normalizedHeading, {
+     ...existing,
+     level: section.level,
+     count: existing.count + 1,
+    });
+   } else {
+    rowsByHeading.set(normalizedHeading, {
+     ...existing,
+     count: existing.count + 1,
+    });
+   }
    return;
   }
 
   rowsByHeading.set(normalizedHeading, {
    key: normalizedHeading,
-   heading: section.title,
+   heading: cleanDisplayTitle(section.title),
    normalizedHeading,
    level: section.level,
    count: 1,
@@ -470,20 +586,23 @@ function buildMappingRows(
 
  return Array.from(rowsByHeading.values());
 }
-
 function rootRegex(root: RootDetection) {
  if (root.pattern === "numbered") return "^\\s*\\d+[.)．、\\\\.]?\\s+";
  if (root.pattern === "phan") return "^PHẦN\\s+[IVX]+\\s*:";
 
- return undefined;
+ return "^(?!\\s*(?:ngữ pháp|grammar|注释|生词|专名|课文|练习|阅读|写汉字|bài đọc|tổng kết|tổng phần)).+";
 }
-
-function fieldRuleFromMapping(row: SmartMappingRow, index: number): FieldRule | null {
+function fieldRuleFromMapping(
+ row: SmartMappingRow,
+ index: number,
+): FieldRule | null {
  if (row.field === "ignore") return null;
 
- const exactHeading = row.heading.trim();
- const normalizedHeading = row.normalizedHeading.trim();
- const aliases = Array.from(new Set([exactHeading, normalizedHeading])).filter(Boolean);
+ // row.heading đã là cleanDisplayTitle (từ buildMappingRows)
+ // row.normalizedHeading là lowercase của cleanDisplayTitle
+ const aliases = Array.from(
+  new Set([row.heading, row.normalizedHeading]),
+ ).filter(Boolean);
 
  return {
   id: `smart-field-${index + 1}-${row.field}`,
@@ -491,7 +610,10 @@ function fieldRuleFromMapping(row: SmartMappingRow, index: number): FieldRule | 
   match: {
    headingLevel: [row.level],
    headingTexts: aliases,
-   headingRegex: [`^\\s*(?:\\d+[.)．、\\\\.]?\\s*)?${escapeRegExp(normalizedHeading)}\\s*$`],
+   // Regex dùng row.normalizedHeading (đã clean), flag `u` đủ rồi
+   headingRegex: [
+    `^\\s*(?:[\\d一二三四五六七八九十]+[.)．、]?\\s*)?${escapeRegExp(row.normalizedHeading)}\\s*$`,
+   ],
    labels: aliases,
    directive: row.field,
   },
@@ -533,17 +655,26 @@ function buildSmartProfile({
   itemRootRules: [itemRootRule],
   specialSectionRules: [
    {
+    id: "smart-reading",
+    role: "readingText",
+    match: {
+     headingLevel: [1, 2],
+     headingRegex: "^\\s*(BÀI ĐỌC|Reading)",
+    },
+    titleFrom: "headingText",
+   },
+   {
     id: "smart-summary",
     role: "lessonSummary",
     match: {
      headingLevel: [1, 2],
-     headingRegex: "^(Chốt|Tổng kết|Summary)",
+     headingRegex: "^\\s*(Chốt|Tổng kết|Summary)",
     },
     titleFrom: "headingText",
    },
   ],
   fieldRules,
-  unknownSectionBehavior: "ignore",
+  unknownSectionBehavior: "keepUnmapped",
  };
 }
 
@@ -561,7 +692,14 @@ function fieldLabel(value: SmartFieldValue) {
  return fieldOptions.find((option) => option.value === value)?.label ?? value;
 }
 
-function itemPreviewText(item: AppliedParseResult["items"][number], field: LearningFieldName) {
+function percentLabel(value: number) {
+ return `${Math.round(value * 100)}%`;
+}
+
+function itemPreviewText(
+ item: AppliedParseResult["items"][number],
+ field: LearningFieldName,
+) {
  return (item.fields[field] ?? [])
   .map((value) => learningFieldValueToPreview(value))
   .filter(Boolean)
@@ -577,7 +715,9 @@ function scopeAppliedResult(
 
  return {
   ...result,
-  items: result.items.filter((item) => scope.sectionIds.has(item.sourceSectionId)),
+  items: result.items.filter((item) =>
+   scope.sectionIds.has(item.sourceSectionId),
+  ),
   specialSections: result.specialSections.filter((section) =>
    scope.sectionIds.has(section.sourceSectionId),
   ),
@@ -608,7 +748,7 @@ function fillDirectRootContent(
 ): AppliedParseResult {
  if (!root) return result;
 
- return {
+ const nextResult: AppliedParseResult = {
   ...result,
   items: result.items.map((item) => {
    if (Object.keys(item.fields).length > 0) return item;
@@ -620,6 +760,8 @@ function fillDirectRootContent(
 
    return {
     ...item,
+    fallback: true,
+    fallbackReason: "NO_FIELD_CHILDREN_MAPPED",
     fields: {
      ...item.fields,
      "grammar.core": [{ kind: "text", value: directText }],
@@ -627,9 +769,48 @@ function fillDirectRootContent(
    };
   }),
  };
+
+ return {
+  ...nextResult,
+  parseMeta: buildParseMeta(nextResult),
+ };
 }
 
 function LearningFieldValuePreview({ value }: { value: LearningFieldValue }) {
+ if (value.kind === "examples") {
+  return (
+   <div className="grid gap-3">
+    {value.value.map((example, index) => (
+     <div
+      key={`${example.hanzi}-${index}`}
+      className="rounded-xl border border-border-default bg-bg-primary p-3"
+     >
+      {example.hanzi && (
+       <p className="text-base font-black leading-relaxed text-text-primary">
+        {example.hanzi}
+       </p>
+      )}
+      {example.pinyin && (
+       <p className="mt-1 text-sm font-bold italic text-text-muted">
+        {example.pinyin}
+       </p>
+      )}
+      {example.translation && (
+       <p className="mt-2 text-sm font-bold leading-relaxed text-text-primary">
+        {example.translation}
+       </p>
+      )}
+      {example.note && (
+       <p className="mt-2 border-t border-border-default pt-2 text-xs font-semibold leading-relaxed text-text-muted">
+        {example.note}
+       </p>
+      )}
+     </div>
+    ))}
+   </div>
+  );
+ }
+
  if (value.kind === "table") {
   const rows = value.value.rows.filter((row) => row.length > 0);
 
@@ -652,7 +833,10 @@ function LearningFieldValuePreview({ value }: { value: LearningFieldValue }) {
      )}
      <tbody>
       {rows.map((row, rowIndex) => (
-       <tr key={rowIndex} className="border-t border-border-default first:border-t-0">
+       <tr
+        key={rowIndex}
+        className="border-t border-border-default first:border-t-0"
+       >
         {row.map((cell, cellIndex) => (
          <td
           key={`${rowIndex}-${cellIndex}`}
@@ -686,10 +870,12 @@ function LearningFieldValuePreview({ value }: { value: LearningFieldValue }) {
 }
 
 function isTableLikeLine(line: string) {
- return line
-  .split("|")
-  .map((cell) => cell.trim())
-  .filter(Boolean).length >= 2;
+ return (
+  line
+   .split("|")
+   .map((cell) => cell.trim())
+   .filter(Boolean).length >= 2
+ );
 }
 
 function tableCells(line: string) {
@@ -705,7 +891,10 @@ function renderTableFromLines(lines: string[], key: string) {
  const rows = rowLines.map(tableCells).filter((row) => row.length > 0);
 
  return (
-  <div key={key} className="overflow-x-auto rounded-xl border border-border-default bg-bg-primary">
+  <div
+   key={key}
+   className="overflow-x-auto rounded-xl border border-border-default bg-bg-primary"
+  >
    <table className="min-w-full border-collapse text-sm">
     <thead className="bg-bg-subtle">
      <tr>
@@ -721,7 +910,10 @@ function renderTableFromLines(lines: string[], key: string) {
     </thead>
     <tbody>
      {rows.map((row, rowIndex) => (
-      <tr key={rowIndex} className="border-t border-border-default first:border-t-0">
+      <tr
+       key={rowIndex}
+       className="border-t border-border-default first:border-t-0"
+      >
        {row.map((cell, cellIndex) => (
         <td
          key={`${rowIndex}-${cellIndex}`}
@@ -882,14 +1074,14 @@ export function SmartMarkdownImport({ draft, kind }: SmartMarkdownImportProps) {
    null
   );
  }, [result, selectedItemId]);
- const mappedFieldCount = mappings.filter((row) => row.field !== "ignore").length;
+ const mappedFieldCount = mappings.filter(
+  (row) => row.field !== "ignore",
+ ).length;
  const confidence = root
   ? Math.round(
-     Math.min(
-      0.98,
-      root.confidence + Math.min(0.16, mappedFieldCount / 100),
-     ) * 100,
-   )
+     Math.min(0.98, root.confidence + Math.min(0.16, mappedFieldCount / 100)) *
+      100,
+    )
   : 0;
  const headingCount = doc ? flattenSections(doc.sections).length : 0;
  const lessonSections = useMemo(
@@ -903,7 +1095,9 @@ export function SmartMarkdownImport({ draft, kind }: SmartMarkdownImportProps) {
  const activeApplyModeOptions = isGrammarImport
   ? applyModeOptions
   : lessonApplyModeOptions;
- const canApply = isGrammarImport ? Boolean(result) : Boolean(normalizedMarkdown);
+ const canApply = isGrammarImport
+  ? Boolean(result)
+  : Boolean(normalizedMarkdown);
  const labels = isGrammarImport
   ? {
      eyebrow: "Import ngữ pháp",
@@ -922,8 +1116,7 @@ export function SmartMarkdownImport({ draft, kind }: SmartMarkdownImportProps) {
      description:
       "Nội dung này render ở tab Tổng quan. Ghi chú riêng của bài vẫn được giữ nguyên.",
      button: "Apply bài học",
-     placeholder:
-      "# BÀI 1: ...\n\n## 一、课文\n...\n\n## 二、生词\n...",
+     placeholder: "# BÀI 1: ...\n\n## 一、课文\n...\n\n## 二、生词\n...",
      emptyApply: "Chưa có markdown bài học để import.",
      success: "Đã import bài học vào Tổng quan.",
     };
@@ -932,7 +1125,7 @@ export function SmartMarkdownImport({ draft, kind }: SmartMarkdownImportProps) {
   setMappingOverrides((current) => ({
    ...current,
    [key]: field,
- }));
+  }));
  };
 
  const handleApply = async () => {
@@ -1004,9 +1197,7 @@ export function SmartMarkdownImport({ draft, kind }: SmartMarkdownImportProps) {
         <p className="text-xs font-black uppercase tracking-wide text-text-muted">
          {labels.eyebrow}
         </p>
-        <h2 className="text-xl font-black text-text-primary">
-         {labels.title}
-        </h2>
+        <h2 className="text-xl font-black text-text-primary">{labels.title}</h2>
         <p className="text-sm font-semibold text-text-muted">
          {labels.description}
         </p>
@@ -1075,10 +1266,54 @@ export function SmartMarkdownImport({ draft, kind }: SmartMarkdownImportProps) {
            ? `${lessonSections.length || headingCount} đề mục · render ở Tổng quan`
            : "Paste markdown để xem preview."}
        </p>
+       {isGrammarImport && result?.parseMeta && (
+        <div className="mt-3 grid gap-1 text-xs font-black text-text-muted">
+         <p>
+          Coverage:{" "}
+          <span className="text-text-primary">
+           {percentLabel(result.parseMeta.coverage)}
+          </span>
+         </p>
+         <p>
+          Mapped {percentLabel(result.parseMeta.mappedRatio)} · Preserved{" "}
+          {percentLabel(result.parseMeta.preservedRatio)} · Dropped{" "}
+          <span
+           className={cn(
+            result.parseMeta.droppedCharacters > 0
+             ? "text-danger-text"
+             : "text-text-primary",
+           )}
+          >
+           {percentLabel(result.parseMeta.droppedRatio)}
+          </span>
+         </p>
+        </div>
+       )}
       </div>
      </div>
     </div>
    </Card>
+
+   {isGrammarImport &&
+    result?.parseMeta &&
+    (result.parseMeta.warnings.length > 0 ||
+     result.parseMeta.droppedCharacters > 0) && (
+     <Card padding="md" className="rounded-xl border-warning bg-warning-subtle">
+      <div className="grid gap-2">
+       <p className="text-sm font-black text-text-primary">
+        Parser giữ lại phần chưa chắc
+       </p>
+       <div className="grid gap-1 text-sm font-semibold text-text-muted">
+        {result.parseMeta.warnings.slice(0, 5).map((warning, index) => (
+         <p key={`${warning.type ?? "warning"}-${index}`}>{warning.message}</p>
+        ))}
+        {result.parseMeta.warnings.length > 5 && (
+         <p>+{result.parseMeta.warnings.length - 5} cảnh báo khác.</p>
+        )}
+       </div>
+      </div>
+     </Card>
+    )}
 
    {isGrammarImport && root && mappings.length > 0 && (
     <Card padding="md" className="rounded-xl">
@@ -1109,7 +1344,9 @@ export function SmartMarkdownImport({ draft, kind }: SmartMarkdownImportProps) {
 
          <Select
           value={row.field}
-          onValueChange={(value) => updateMapping(row.key, value as SmartFieldValue)}
+          onValueChange={(value) =>
+           updateMapping(row.key, value as SmartFieldValue)
+          }
          >
           <SelectTrigger className="h-9">
            <SelectValue placeholder="Map vào field" />
@@ -1256,7 +1493,7 @@ export function SmartMarkdownImport({ draft, kind }: SmartMarkdownImportProps) {
 
         <div className="grid gap-3">
          {fieldOptions
-         .filter((option) => option.value !== "ignore")
+          .filter((option) => option.value !== "ignore")
           .flatMap((option) => {
            const text = itemPreviewText(
             selectedItem,
@@ -1272,7 +1509,7 @@ export function SmartMarkdownImport({ draft, kind }: SmartMarkdownImportProps) {
             >
              <div className="mb-2 flex items-center gap-2">
               <BookOpen className="h-4 w-4 text-primary" />
-             <h4 className="font-black text-text-primary">
+              <h4 className="font-black text-text-primary">
                {fieldLabel(option.value)}
               </h4>
              </div>

@@ -91,7 +91,7 @@ export function GrammarPointReader({
         kind="grammar"
         draftId={editDraftId}
         itemId={editItemId}
-        />
+       />
       )}
 
       <SaveMemoryTipButton
@@ -179,9 +179,7 @@ function StructuredGrammarContent({ point }: { point: GrammarViewModel }) {
        key={section.key}
        className="grid gap-2 rounded-xl border border-border-default bg-bg-subtle p-3"
       >
-       <h4 className="text-sm font-black text-text-primary">
-        {section.title}
-       </h4>
+       <h4 className="text-sm font-black text-text-primary">{section.title}</h4>
        <MarkdownContent content={section.lines.join("\n")} />
       </div>
      ))}
@@ -211,9 +209,7 @@ function StructuredGrammarContent({ point }: { point: GrammarViewModel }) {
 
    {point.notes.length > 0 && (
     <section className="grid gap-2">
-     <h3 className="text-base font-black text-text-primary">
-      Lưu ý / bẫy sai
-     </h3>
+     <h3 className="text-base font-black text-text-primary">Lưu ý / bẫy sai</h3>
      {point.notes.map((note) => (
       <p key={note} className="text-sm leading-relaxed text-text-secondary">
        {note}

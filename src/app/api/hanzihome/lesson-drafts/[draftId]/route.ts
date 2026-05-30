@@ -88,6 +88,18 @@ function splitPartOfSpeech(value: string | undefined) {
  };
 }
 
+function titleKey(value: string) {
+ return value.trim().toLocaleLowerCase("vi-VN");
+}
+
+function uniqueLessonTitle(title: string, seenTitles: Map<string, number>) {
+ const key = titleKey(title);
+ const count = seenTitles.get(key) ?? 0;
+ seenTitles.set(key, count + 1);
+
+ return count === 0 ? title : `${title} (${count + 1})`;
+}
+
 function vocabToDraftItem(item: VocabViewModel) {
  const partOfSpeech = [item.pos?.vi, item.pos?.zh].filter(Boolean).join(" / ");
 
@@ -409,31 +421,27 @@ async function replaceDbLessonContent({
   }
  }
 
- const oldVocabIds = lesson.vocab.map((item) => item.id);
- const oldGrammarIds = lesson.grammar.map((item) => item.id);
-
- if (oldVocabIds.length > 0) {
-  await supabase
-   .from("hanzihome_vocab_examples")
-   .delete()
-   .in("vocab_item_id", oldVocabIds);
-  await supabase
+ const clearResults = await Promise.all([
+  supabase.from("hanzihome_vocab_examples").delete().eq("lesson_id", lesson.id),
+  supabase
    .from("hanzihome_vocab_detail_sections")
    .delete()
-   .in("vocab_item_id", oldVocabIds);
-  await supabase.from("hanzihome_vocab_items").delete().in("id", oldVocabIds);
- }
-
- if (oldGrammarIds.length > 0) {
-  await supabase
+   .eq("lesson_id", lesson.id),
+  supabase.from("hanzihome_vocab_items").delete().eq("lesson_id", lesson.id),
+  supabase
    .from("hanzihome_grammar_examples")
    .delete()
-   .in("grammar_point_id", oldGrammarIds);
-  await supabase
+   .eq("lesson_id", lesson.id),
+  supabase
    .from("hanzihome_grammar_detail_sections")
    .delete()
-   .in("grammar_point_id", oldGrammarIds);
-  await supabase.from("hanzihome_grammar_points").delete().in("id", oldGrammarIds);
+   .eq("lesson_id", lesson.id),
+  supabase.from("hanzihome_grammar_points").delete().eq("lesson_id", lesson.id),
+ ]);
+ const failedClear = clearResults.find((result) => result.error);
+
+ if (failedClear?.error) {
+  throw new Error(`Could not clear old lesson content: ${failedClear.error.message}`);
  }
 
  const vocabRows: InsertRow[] = [];
@@ -497,8 +505,11 @@ async function replaceDbLessonContent({
  const grammarRows: InsertRow[] = [];
  const grammarExampleRows: InsertRow[] = [];
  const grammarSectionRows: InsertRow[] = [];
+ const seenGrammarTitles = new Map<string, number>();
 
  grammarItems.forEach((item, itemIndex) => {
+  const title = uniqueLessonTitle(item.title, seenGrammarTitles);
+
   grammarRows.push({
    id: item.id,
    lesson_id: lesson.id,
@@ -507,8 +518,8 @@ async function replaceDbLessonContent({
    owner_id: userId,
    source,
    point_order: itemIndex + 1,
-   title: item.title,
-   clean_title: item.title,
+   title,
+   clean_title: title,
    core: item.coreLogic || item.shortMeaning,
    content_md: item.rawMarkdown || null,
    structures_view: item.formulas,

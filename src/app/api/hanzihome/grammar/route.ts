@@ -35,13 +35,20 @@ function parseLimit(value: string | null) {
  return Math.min(Math.max(Math.trunc(parsed), 1), 1000);
 }
 
-function matchesQuery(row: z.infer<typeof grammarRowSchema>, query: string) {
- if (!query) return true;
+function normalizeIlikeSearchTerm(value: string) {
+ return value.replace(/[\\%_*,()]/g, " ").replace(/\s+/g, " ").trim();
+}
 
- const normalized = query.toLocaleLowerCase("vi");
- const source = [row.title, row.clean_title, row.core].join("\n");
+function buildGrammarSearchFilter(query: string) {
+ const searchTerm = normalizeIlikeSearchTerm(query);
 
- return source.toLocaleLowerCase("vi").includes(normalized);
+ if (!searchTerm) return null;
+
+ const pattern = `%${searchTerm}%`;
+
+ return ["title", "clean_title", "core"]
+  .map((column) => `${column}.ilike.${pattern}`)
+  .join(",");
 }
 
 export async function GET(request: Request) {
@@ -66,6 +73,8 @@ export async function GET(request: Request) {
  if (courseId) builder = builder.eq("course_id", courseId);
  if (bookId) builder = builder.eq("book_id", bookId);
  if (lessonId) builder = builder.eq("lesson_id", lessonId);
+ const searchFilter = buildGrammarSearchFilter(query);
+ if (searchFilter) builder = builder.or(searchFilter);
 
  const { data: grammarData, error: grammarError } = await builder;
 
@@ -76,8 +85,7 @@ export async function GET(request: Request) {
   );
  }
 
- const grammarRows = z.array(grammarRowSchema).parse(grammarData ?? []);
- const filteredRows = grammarRows.filter((row) => matchesQuery(row, query));
+ const filteredRows = z.array(grammarRowSchema).parse(grammarData ?? []);
  const lessonIds = Array.from(
   new Set(filteredRows.map((row) => row.lesson_id)),
  );

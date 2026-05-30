@@ -41,6 +41,7 @@ import {
  loadCustomImportProfiles,
  saveCustomImportProfiles,
 } from "@/features/hanzihome/importer/import-profile-storage";
+import { detectExampleBlocks } from "@/features/hanzihome/importer/smart-markdown-parser-v2";
 import {
  learningFieldNameSchema,
  type AppliedParseResult,
@@ -233,6 +234,11 @@ function editableTextToLearningFieldValue(
 
  if (original.kind === "table") {
   return original;
+ }
+
+ if (original.kind === "examples") {
+  const examples = detectExampleBlocks(value);
+  return examples.length > 0 ? { kind: "examples", value: examples } : original;
  }
 
  return {
