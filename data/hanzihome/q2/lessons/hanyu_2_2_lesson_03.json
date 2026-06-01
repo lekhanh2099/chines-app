@@ -1,0 +1,4012 @@
+{
+ "schema_version": "2.2.0",
+ "content_type": "chinese_textbook_lesson",
+ "verification_status": "final_verified_with_marked_generated_fields",
+ "source": {
+  "book": "Hanyu Jiaocheng",
+  "volume": "第二册下",
+  "volume_vi": "Quyển 2 Hạ",
+  "lesson_index": 3,
+  "lesson_number_cn": "第十五课",
+  "lesson_title_cn": "会议厅的门开着呢",
+  "lesson_title_pinyin": "Huìyìtīng de mén kāizhe ne",
+  "lesson_title_vi": "Cửa phòng hội nghị đang mở",
+  "lesson_title_en": "The door of the conference hall is open",
+  "source_files": [
+   {
+    "name": "Hanyu Jiaocheng 2-2.pdf",
+    "type": "pdf_scan",
+    "source_origin": "textbook",
+    "check_needed": false
+   },
+   {
+    "name": "Học kì 2 上-下.md",
+    "type": "markdown_crosscheck",
+    "source_origin": "uploaded_crosscheck",
+    "check_needed": false
+   },
+   {
+    "name": "hanyu_2_1_lesson_15_deep_vocab.json",
+    "type": "uploaded_vocab_crosscheck",
+    "source_origin": "uploaded_crosscheck",
+    "check_needed": true
+   },
+   {
+    "name": "Ngoại Ngữ Hà Nội - Bài 10: 会议厅的门开着呢",
+    "type": "web_crosscheck",
+    "source_origin": "web_crosscheck",
+    "check_needed": true
+   },
+   {
+    "name": "Học Tiếng Trung Quốc - 会议中心的门开着呢",
+    "type": "web_crosscheck",
+    "source_origin": "web_crosscheck",
+    "check_needed": true
+   }
+  ],
+  "web_crosscheck": [
+   {
+    "title": "会议厅的门开着呢 / 墙上贴着红双喜字",
+    "source_origin": "web_crosscheck",
+    "note": "Used to cross-check the two core texts and the main grammar point V + 着 for continuing state."
+   },
+   {
+    "title": "第十五课∣汉语教程∣第二册下∣会议厅的门开着呢",
+    "source_origin": "web_crosscheck",
+    "note": "Used to cross-check lesson title and volume/lesson alignment."
+   }
+  ]
+ },
+ "lesson": {
+  "id": "hanyu_2_2_lesson_03",
+  "title": {
+   "zh": "会议厅的门开着呢",
+   "pinyin": "Huìyìtīng de mén kāizhe ne",
+   "vi": "Cửa phòng hội nghị đang mở",
+   "en": "The door of the conference hall is open"
+  },
+  "tags": [
+   "hanyu_2_2",
+   "lesson_03",
+   "book_lesson_15",
+   "hsk3-ish",
+   "zhe_state",
+   "verb_zhe",
+   "simultaneous_actions",
+   "conference",
+   "wedding",
+   "reading_cloze_included"
+  ],
+  "sections": [
+   {
+    "id": "section_01_text",
+    "type": "text",
+    "order": 1,
+    "title": "课文",
+    "title_vi": "Bài khóa",
+    "source_origin": "textbook/web_crosscheck",
+    "check_needed": true,
+    "blocks": [
+     {
+      "id": "text_01",
+      "type": "text_dialogue",
+      "order": 1,
+      "title": "会议厅的门开着呢",
+      "title_vi": "Cửa phòng hội nghị đang mở",
+      "scene": "玛丽和麦克到会议中心去找一个朋友，他们在前台问服务员。",
+      "source_origin": "textbook/web_crosscheck",
+      "check_needed": true,
+      "lines": [
+       {
+        "id": "text_01_l01",
+        "order": 1,
+        "speaker": "玛丽",
+        "zh": "请问，刚才进去一位小姐，你看见没有？",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook/web_crosscheck",
+        "check_needed": true
+       },
+       {
+        "id": "text_01_l02",
+        "order": 2,
+        "speaker": "服务员",
+        "zh": "什么小姐？长得什么样子？",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook/web_crosscheck",
+        "check_needed": true
+       },
+       {
+        "id": "text_01_l03",
+        "order": 3,
+        "speaker": "玛丽",
+        "zh": "她黄头发，个子高高的，眼睛大大的，戴着一副眼镜。上身穿着一件浅黄色的西服，下身穿着一条裙子。",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook/web_crosscheck",
+        "check_needed": true
+       },
+       {
+        "id": "text_01_l04",
+        "order": 4,
+        "speaker": "服务员",
+        "zh": "是干什么的？",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook/web_crosscheck",
+        "check_needed": true
+       },
+       {
+        "id": "text_01_l05",
+        "order": 5,
+        "speaker": "玛丽",
+        "zh": "是电视台的记者。",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook/web_crosscheck",
+        "check_needed": true
+       },
+       {
+        "id": "text_01_l06",
+        "order": 6,
+        "speaker": "服务员",
+        "zh": "后边是不是还跟着两个小伙子？",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook/web_crosscheck",
+        "check_needed": true
+       },
+       {
+        "id": "text_01_l07",
+        "order": 7,
+        "speaker": "麦克",
+        "zh": "对，他们扛着摄像机。",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook/web_crosscheck",
+        "check_needed": true
+       },
+       {
+        "id": "text_01_l08",
+        "order": 8,
+        "speaker": "服务员",
+        "zh": "会议厅的门开着呢，你们进去找吧。",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook/web_crosscheck",
+        "check_needed": true
+       },
+       {
+        "id": "text_01_l09",
+        "order": 9,
+        "speaker": "玛丽",
+        "zh": "里边正开着会吗？",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook/web_crosscheck",
+        "check_needed": true
+       },
+       {
+        "id": "text_01_l10",
+        "order": 10,
+        "speaker": "服务员",
+        "zh": "没有。你们看，是不是手里拿着麦克风，对着摄像机讲话的那位？",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook/web_crosscheck",
+        "check_needed": true
+       },
+       {
+        "id": "text_01_l11",
+        "order": 11,
+        "speaker": "玛丽",
+        "zh": "对，就是她。他们正等着我们呢。",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook/web_crosscheck",
+        "check_needed": true
+       },
+       {
+        "id": "text_01_l12",
+        "order": 12,
+        "speaker": "服务员",
+        "zh": "你们快进去吧。",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook/web_crosscheck",
+        "check_needed": true
+       },
+       {
+        "id": "text_01_l13",
+        "order": 13,
+        "speaker": "玛丽",
+        "zh": "谢谢啦！",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook/web_crosscheck",
+        "check_needed": true
+       },
+       {
+        "id": "text_01_l14",
+        "order": 14,
+        "speaker": "服务员",
+        "zh": "不客气。",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook/web_crosscheck",
+        "check_needed": true
+       }
+      ]
+     },
+     {
+      "id": "text_02",
+      "type": "text_dialogue",
+      "order": 2,
+      "title": "墙上贴着红双喜字",
+      "title_vi": "Trên tường dán chữ Song Hỷ màu đỏ",
+      "scene": "麦克参加了一个中国朋友的婚礼。",
+      "source_origin": "textbook/web_crosscheck",
+      "check_needed": true,
+      "lines": [
+       {
+        "id": "text_02_l01",
+        "order": 1,
+        "speaker": "玛丽",
+        "zh": "你昨天去哪儿了？",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook/web_crosscheck",
+        "check_needed": true
+       },
+       {
+        "id": "text_02_l02",
+        "order": 2,
+        "speaker": "麦克",
+        "zh": "去参加了一个中国朋友的婚礼。",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook/web_crosscheck",
+        "check_needed": true
+       },
+       {
+        "id": "text_02_l03",
+        "order": 3,
+        "speaker": "玛丽",
+        "zh": "怎么样？听说中国人的婚礼很热闹。",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook/web_crosscheck",
+        "check_needed": true
+       },
+       {
+        "id": "text_02_l04",
+        "order": 4,
+        "speaker": "麦克",
+        "zh": "是。我是第一次看到这样的婚礼。屋子里挂着大红灯笼，墙上贴着一个很大的红双喜字。桌子上摆着很多酒和菜。",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook/web_crosscheck",
+        "check_needed": true
+       },
+       {
+        "id": "text_02_l05",
+        "order": 5,
+        "speaker": "麦克",
+        "zh": "新娘长得很漂亮，穿着一件红棉袄，头上还戴着红花。新郎是一个帅小伙子，穿着一身蓝色的西服，打着红领带。",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook/web_crosscheck",
+        "check_needed": true
+       },
+       {
+        "id": "text_02_l06",
+        "order": 6,
+        "speaker": "麦克",
+        "zh": "他们笑着对我们说：“欢迎，欢迎。”新娘热情地请客人吃糖，新郎忙着给客人倒喜酒。孩子们不停地说着笑着，热热闹闹的，气氛非常好。",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook/web_crosscheck",
+        "check_needed": true
+       },
+       {
+        "id": "text_02_l07",
+        "order": 7,
+        "speaker": "玛丽",
+        "zh": "“喜酒”是什么酒？",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook/web_crosscheck",
+        "check_needed": true
+       },
+       {
+        "id": "text_02_l08",
+        "order": 8,
+        "speaker": "麦克",
+        "zh": "结婚时喝的酒叫喜酒，吃的糖叫喜糖。所以，中国人要问：“什么时候吃你的喜糖啊？”就是问你什么时候结婚。",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook/web_crosscheck",
+        "check_needed": true
+       },
+       {
+        "id": "text_02_l09",
+        "order": 9,
+        "speaker": "玛丽",
+        "zh": "是吗？",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook/web_crosscheck",
+        "check_needed": true
+       }
+      ]
+     }
+    ],
+    "comprehension_questions": [
+     {
+      "id": "text_q01",
+      "question": "玛丽和麦克到会议中心去找谁？",
+      "answer": "他们去找一个朋友。",
+      "source_origin": "textbook_question_generated_answer",
+      "answer_verified": false,
+      "check_needed": true
+     },
+     {
+      "id": "text_q02",
+      "question": "他们在前台问谁？",
+      "answer": "他们在前台问服务员。",
+      "source_origin": "textbook_question_generated_answer",
+      "answer_verified": false,
+      "check_needed": true
+     },
+     {
+      "id": "text_q03",
+      "question": "那位小姐长得什么样子？",
+      "answer": "她黄头发，个子高高的，眼睛大大的，戴着一副眼镜。",
+      "source_origin": "textbook_question_generated_answer",
+      "answer_verified": false,
+      "check_needed": true
+     },
+     {
+      "id": "text_q04",
+      "question": "那位小姐是做什么的？",
+      "answer": "她是电视台的记者。",
+      "source_origin": "textbook_question_generated_answer",
+      "answer_verified": false,
+      "check_needed": true
+     },
+     {
+      "id": "text_q05",
+      "question": "后边还跟着谁？",
+      "answer": "后边还跟着两个小伙子。",
+      "source_origin": "textbook_question_generated_answer",
+      "answer_verified": false,
+      "check_needed": true
+     },
+     {
+      "id": "text_q06",
+      "question": "会议厅的门怎么样？",
+      "answer": "会议厅的门开着呢。",
+      "source_origin": "textbook_question_generated_answer",
+      "answer_verified": false,
+      "check_needed": true
+     },
+     {
+      "id": "text_q07",
+      "question": "那位记者手里拿着什么？",
+      "answer": "她手里拿着麦克风。",
+      "source_origin": "textbook_question_generated_answer",
+      "answer_verified": false,
+      "check_needed": true
+     },
+     {
+      "id": "text_q08",
+      "question": "麦克昨天去参加了什么？",
+      "answer": "他去参加了一个中国朋友的婚礼。",
+      "source_origin": "textbook_question_generated_answer",
+      "answer_verified": false,
+      "check_needed": true
+     },
+     {
+      "id": "text_q09",
+      "question": "屋子里挂着什么？",
+      "answer": "屋子里挂着大红灯笼。",
+      "source_origin": "textbook_question_generated_answer",
+      "answer_verified": false,
+      "check_needed": true
+     },
+     {
+      "id": "text_q10",
+      "question": "墙上贴着什么？",
+      "answer": "墙上贴着一个很大的红双喜字。",
+      "source_origin": "textbook_question_generated_answer",
+      "answer_verified": false,
+      "check_needed": true
+     },
+     {
+      "id": "text_q11",
+      "question": "桌子上摆着什么？",
+      "answer": "桌子上摆着很多酒和菜。",
+      "source_origin": "textbook_question_generated_answer",
+      "answer_verified": false,
+      "check_needed": true
+     },
+     {
+      "id": "text_q12",
+      "question": "喜酒和喜糖跟什么有关？",
+      "answer": "跟结婚有关。",
+      "source_origin": "textbook_question_generated_answer",
+      "answer_verified": false,
+      "check_needed": true
+     }
+    ]
+   },
+   {
+    "id": "section_02_vocabulary",
+    "type": "vocabulary",
+    "order": 2,
+    "title": "生词",
+    "title_vi": "Từ vựng",
+    "source_origin": "textbook/web_crosscheck",
+    "check_needed": true,
+    "items": [
+     {
+      "id": "vocab_001",
+      "type": "vocabulary_item",
+      "order": 1,
+      "hanzi": "女士",
+      "pinyin": "nǚshì",
+      "meaning_vi": "quý bà, người phụ nữ",
+      "meaning_en": "",
+      "pos": "noun",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "女士",
+       "back": "nǚshì — quý bà, người phụ nữ",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook/web_crosscheck",
+      "check_needed": true
+     },
+     {
+      "id": "vocab_002",
+      "type": "vocabulary_item",
+      "order": 2,
+      "hanzi": "服务员",
+      "pinyin": "fúwùyuán",
+      "meaning_vi": "nhân viên phục vụ",
+      "meaning_en": "",
+      "pos": "noun",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "服务员",
+       "back": "fúwùyuán — nhân viên phục vụ",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook/web_crosscheck",
+      "check_needed": true
+     },
+     {
+      "id": "vocab_003",
+      "type": "vocabulary_item",
+      "order": 3,
+      "hanzi": "小伙子",
+      "pinyin": "xiǎohuǒzi",
+      "meaning_vi": "chàng trai, cậu thanh niên",
+      "meaning_en": "",
+      "pos": "noun",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "小伙子",
+       "back": "xiǎohuǒzi — chàng trai, cậu thanh niên",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook/web_crosscheck",
+      "check_needed": true
+     },
+     {
+      "id": "vocab_004",
+      "type": "vocabulary_item",
+      "order": 4,
+      "hanzi": "小伙儿",
+      "pinyin": "xiǎohuǒr",
+      "meaning_vi": "chàng trai, cậu thanh niên",
+      "meaning_en": "",
+      "pos": "noun",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "小伙儿",
+       "back": "xiǎohuǒr — chàng trai, cậu thanh niên",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook/web_crosscheck",
+      "check_needed": true
+     },
+     {
+      "id": "vocab_005",
+      "type": "vocabulary_item",
+      "order": 5,
+      "hanzi": "主持人",
+      "pinyin": "zhǔchírén",
+      "meaning_vi": "người dẫn chương trình",
+      "meaning_en": "",
+      "pos": "noun",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "主持人",
+       "back": "zhǔchírén — người dẫn chương trình",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook/web_crosscheck",
+      "check_needed": true
+     },
+     {
+      "id": "vocab_006",
+      "type": "vocabulary_item",
+      "order": 6,
+      "hanzi": "新娘",
+      "pinyin": "xīnniáng",
+      "meaning_vi": "cô dâu",
+      "meaning_en": "",
+      "pos": "noun",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "新娘",
+       "back": "xīnniáng — cô dâu",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook/web_crosscheck",
+      "check_needed": true
+     },
+     {
+      "id": "vocab_007",
+      "type": "vocabulary_item",
+      "order": 7,
+      "hanzi": "新郎",
+      "pinyin": "xīnláng",
+      "meaning_vi": "chú rể",
+      "meaning_en": "",
+      "pos": "noun",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "新郎",
+       "back": "xīnláng — chú rể",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook/web_crosscheck",
+      "check_needed": true
+     },
+     {
+      "id": "vocab_008",
+      "type": "vocabulary_item",
+      "order": 8,
+      "hanzi": "客人",
+      "pinyin": "kèrén",
+      "meaning_vi": "khách",
+      "meaning_en": "",
+      "pos": "noun",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "客人",
+       "back": "kèrén — khách",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook/web_crosscheck",
+      "check_needed": true
+     },
+     {
+      "id": "vocab_009",
+      "type": "vocabulary_item",
+      "order": 9,
+      "hanzi": "主持",
+      "pinyin": "zhǔchí",
+      "meaning_vi": "dẫn chương trình, chủ trì",
+      "meaning_en": "",
+      "pos": "verb",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "主持",
+       "back": "zhǔchí — dẫn chương trình, chủ trì",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook/web_crosscheck",
+      "check_needed": true
+     },
+     {
+      "id": "vocab_010",
+      "type": "vocabulary_item",
+      "order": 10,
+      "hanzi": "班长",
+      "pinyin": "bānzhǎng",
+      "meaning_vi": "lớp trưởng",
+      "meaning_en": "",
+      "pos": "noun",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "班长",
+       "back": "bānzhǎng — lớp trưởng",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook/web_crosscheck",
+      "check_needed": true
+     },
+     {
+      "id": "vocab_011",
+      "type": "vocabulary_item",
+      "order": 11,
+      "hanzi": "会议厅",
+      "pinyin": "huìyìtīng",
+      "meaning_vi": "phòng hội nghị, hội trường",
+      "meaning_en": "",
+      "pos": "noun",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "会议厅",
+       "back": "huìyìtīng — phòng hội nghị, hội trường",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook/web_crosscheck",
+      "check_needed": true
+     },
+     {
+      "id": "vocab_012",
+      "type": "vocabulary_item",
+      "order": 12,
+      "hanzi": "婚礼",
+      "pinyin": "hūnlǐ",
+      "meaning_vi": "hôn lễ, đám cưới",
+      "meaning_en": "",
+      "pos": "noun",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "婚礼",
+       "back": "hūnlǐ — hôn lễ, đám cưới",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook/web_crosscheck",
+      "check_needed": true
+     },
+     {
+      "id": "vocab_013",
+      "type": "vocabulary_item",
+      "order": 13,
+      "hanzi": "讲台",
+      "pinyin": "jiǎngtái",
+      "meaning_vi": "bục giảng",
+      "meaning_en": "",
+      "pos": "noun",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "讲台",
+       "back": "jiǎngtái — bục giảng",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook/web_crosscheck",
+      "check_needed": true
+     },
+     {
+      "id": "vocab_014",
+      "type": "vocabulary_item",
+      "order": 14,
+      "hanzi": "椅子",
+      "pinyin": "yǐzi",
+      "meaning_vi": "ghế",
+      "meaning_en": "",
+      "pos": "noun",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "椅子",
+       "back": "yǐzi — ghế",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook/web_crosscheck",
+      "check_needed": true
+     },
+     {
+      "id": "vocab_015",
+      "type": "vocabulary_item",
+      "order": 15,
+      "hanzi": "墙",
+      "pinyin": "qiáng",
+      "meaning_vi": "tường",
+      "meaning_en": "",
+      "pos": "noun",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "墙",
+       "back": "qiáng — tường",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook/web_crosscheck",
+      "check_needed": true
+     },
+     {
+      "id": "vocab_016",
+      "type": "vocabulary_item",
+      "order": 16,
+      "hanzi": "灯笼",
+      "pinyin": "dēnglong",
+      "meaning_vi": "đèn lồng",
+      "meaning_en": "",
+      "pos": "noun",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "灯笼",
+       "back": "dēnglong — đèn lồng",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook/web_crosscheck",
+      "check_needed": true
+     },
+     {
+      "id": "vocab_017",
+      "type": "vocabulary_item",
+      "order": 17,
+      "hanzi": "双",
+      "pinyin": "shuāng",
+      "meaning_vi": "đôi, cặp",
+      "meaning_en": "",
+      "pos": "measure_word/noun",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "双",
+       "back": "shuāng — đôi, cặp",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook/web_crosscheck",
+      "check_needed": true
+     },
+     {
+      "id": "vocab_018",
+      "type": "vocabulary_item",
+      "order": 18,
+      "hanzi": "喜",
+      "pinyin": "xǐ",
+      "meaning_vi": "hỷ, vui mừng",
+      "meaning_en": "",
+      "pos": "noun/adjective",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "喜",
+       "back": "xǐ — hỷ, vui mừng",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook/web_crosscheck",
+      "check_needed": true
+     },
+     {
+      "id": "vocab_019",
+      "type": "vocabulary_item",
+      "order": 19,
+      "hanzi": "西服",
+      "pinyin": "xīfú",
+      "meaning_vi": "âu phục, vest",
+      "meaning_en": "",
+      "pos": "noun",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "西服",
+       "back": "xīfú — âu phục, vest",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook/web_crosscheck",
+      "check_needed": true
+     },
+     {
+      "id": "vocab_020",
+      "type": "vocabulary_item",
+      "order": 20,
+      "hanzi": "裙子",
+      "pinyin": "qúnzi",
+      "meaning_vi": "váy",
+      "meaning_en": "",
+      "pos": "noun",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "裙子",
+       "back": "qúnzi — váy",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook/web_crosscheck",
+      "check_needed": true
+     },
+     {
+      "id": "vocab_021",
+      "type": "vocabulary_item",
+      "order": 21,
+      "hanzi": "领带",
+      "pinyin": "lǐngdài",
+      "meaning_vi": "cà vạt",
+      "meaning_en": "",
+      "pos": "noun",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "领带",
+       "back": "lǐngdài — cà vạt",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook/web_crosscheck",
+      "check_needed": true
+     },
+     {
+      "id": "vocab_022",
+      "type": "vocabulary_item",
+      "order": 22,
+      "hanzi": "摄像机",
+      "pinyin": "shèxiàngjī",
+      "meaning_vi": "máy quay phim",
+      "meaning_en": "",
+      "pos": "noun",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "摄像机",
+       "back": "shèxiàngjī — máy quay phim",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook/web_crosscheck",
+      "check_needed": true
+     },
+     {
+      "id": "vocab_023",
+      "type": "vocabulary_item",
+      "order": 23,
+      "hanzi": "麦克风",
+      "pinyin": "màikèfēng",
+      "meaning_vi": "micro",
+      "meaning_en": "",
+      "pos": "noun",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "麦克风",
+       "back": "màikèfēng — micro",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook/web_crosscheck",
+      "check_needed": true
+     },
+     {
+      "id": "vocab_024",
+      "type": "vocabulary_item",
+      "order": 24,
+      "hanzi": "铃",
+      "pinyin": "líng",
+      "meaning_vi": "chuông",
+      "meaning_en": "",
+      "pos": "noun",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "铃",
+       "back": "líng — chuông",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook/web_crosscheck",
+      "check_needed": true
+     },
+     {
+      "id": "vocab_025",
+      "type": "vocabulary_item",
+      "order": 25,
+      "hanzi": "气氛",
+      "pinyin": "qìfēn",
+      "meaning_vi": "bầu không khí",
+      "meaning_en": "",
+      "pos": "noun",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "气氛",
+       "back": "qìfēn — bầu không khí",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook/web_crosscheck",
+      "check_needed": true
+     },
+     {
+      "id": "vocab_026",
+      "type": "vocabulary_item",
+      "order": 26,
+      "hanzi": "样子",
+      "pinyin": "yàngzi",
+      "meaning_vi": "dáng vẻ, kiểu dáng",
+      "meaning_en": "",
+      "pos": "noun",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "样子",
+       "back": "yàngzi — dáng vẻ, kiểu dáng",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook/web_crosscheck",
+      "check_needed": true
+     },
+     {
+      "id": "vocab_027",
+      "type": "vocabulary_item",
+      "order": 27,
+      "hanzi": "个子",
+      "pinyin": "gèzi",
+      "meaning_vi": "vóc dáng, chiều cao",
+      "meaning_en": "",
+      "pos": "noun",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "个子",
+       "back": "gèzi — vóc dáng, chiều cao",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook/web_crosscheck",
+      "check_needed": true
+     },
+     {
+      "id": "vocab_028",
+      "type": "vocabulary_item",
+      "order": 28,
+      "hanzi": "穿",
+      "pinyin": "chuān",
+      "meaning_vi": "mặc",
+      "meaning_en": "",
+      "pos": "verb",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "穿",
+       "back": "chuān — mặc",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook/web_crosscheck",
+      "check_needed": true
+     },
+     {
+      "id": "vocab_029",
+      "type": "vocabulary_item",
+      "order": 29,
+      "hanzi": "系",
+      "pinyin": "jì",
+      "meaning_vi": "thắt, buộc",
+      "meaning_en": "",
+      "pos": "verb",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "系",
+       "back": "jì — thắt, buộc",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook/web_crosscheck",
+      "check_needed": true
+     },
+     {
+      "id": "vocab_030",
+      "type": "vocabulary_item",
+      "order": 30,
+      "hanzi": "戴",
+      "pinyin": "dài",
+      "meaning_vi": "đeo, đội, mang",
+      "meaning_en": "",
+      "pos": "verb",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "戴",
+       "back": "dài — đeo, đội, mang",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook/web_crosscheck",
+      "check_needed": true
+     },
+     {
+      "id": "vocab_031",
+      "type": "vocabulary_item",
+      "order": 31,
+      "hanzi": "挂",
+      "pinyin": "guà",
+      "meaning_vi": "treo",
+      "meaning_en": "",
+      "pos": "verb",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "挂",
+       "back": "guà — treo",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook/web_crosscheck",
+      "check_needed": true
+     },
+     {
+      "id": "vocab_032",
+      "type": "vocabulary_item",
+      "order": 32,
+      "hanzi": "摆",
+      "pinyin": "bǎi",
+      "meaning_vi": "bày, đặt",
+      "meaning_en": "",
+      "pos": "verb",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "摆",
+       "back": "bǎi — bày, đặt",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook/web_crosscheck",
+      "check_needed": true
+     },
+     {
+      "id": "vocab_033",
+      "type": "vocabulary_item",
+      "order": 33,
+      "hanzi": "扛",
+      "pinyin": "káng",
+      "meaning_vi": "vác",
+      "meaning_en": "",
+      "pos": "verb",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "扛",
+       "back": "káng — vác",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook/web_crosscheck",
+      "check_needed": true
+     },
+     {
+      "id": "vocab_034",
+      "type": "vocabulary_item",
+      "order": 34,
+      "hanzi": "讲话",
+      "pinyin": "jiǎnghuà",
+      "meaning_vi": "nói chuyện, phát biểu",
+      "meaning_en": "",
+      "pos": "verb_object",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "讲话",
+       "back": "jiǎnghuà — nói chuyện, phát biểu",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook/web_crosscheck",
+      "check_needed": true
+     },
+     {
+      "id": "vocab_035",
+      "type": "vocabulary_item",
+      "order": 35,
+      "hanzi": "讲",
+      "pinyin": "jiǎng",
+      "meaning_vi": "nói, giảng",
+      "meaning_en": "",
+      "pos": "verb",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "讲",
+       "back": "jiǎng — nói, giảng",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook/web_crosscheck",
+      "check_needed": true
+     },
+     {
+      "id": "vocab_036",
+      "type": "vocabulary_item",
+      "order": 36,
+      "hanzi": "讨论",
+      "pinyin": "tǎolùn",
+      "meaning_vi": "thảo luận",
+      "meaning_en": "",
+      "pos": "verb/noun",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "讨论",
+       "back": "tǎolùn — thảo luận",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook/web_crosscheck",
+      "check_needed": true
+     },
+     {
+      "id": "vocab_037",
+      "type": "vocabulary_item",
+      "order": 37,
+      "hanzi": "赶",
+      "pinyin": "gǎn",
+      "meaning_vi": "vội, đuổi kịp",
+      "meaning_en": "",
+      "pos": "verb",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "赶",
+       "back": "gǎn — vội, đuổi kịp",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook/web_crosscheck",
+      "check_needed": true
+     },
+     {
+      "id": "vocab_038",
+      "type": "vocabulary_item",
+      "order": 38,
+      "hanzi": "倒",
+      "pinyin": "dào",
+      "meaning_vi": "rót, đổ",
+      "meaning_en": "",
+      "pos": "verb",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "倒",
+       "back": "dào — rót, đổ",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook/web_crosscheck",
+      "check_needed": true
+     },
+     {
+      "id": "vocab_039",
+      "type": "vocabulary_item",
+      "order": 39,
+      "hanzi": "停",
+      "pinyin": "tíng",
+      "meaning_vi": "dừng",
+      "meaning_en": "",
+      "pos": "verb",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "停",
+       "back": "tíng — dừng",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook/web_crosscheck",
+      "check_needed": true
+     },
+     {
+      "id": "vocab_040",
+      "type": "vocabulary_item",
+      "order": 40,
+      "hanzi": "保重",
+      "pinyin": "bǎozhòng",
+      "meaning_vi": "bảo trọng",
+      "meaning_en": "",
+      "pos": "verb",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "保重",
+       "back": "bǎozhòng — bảo trọng",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook/web_crosscheck",
+      "check_needed": true
+     },
+     {
+      "id": "vocab_041",
+      "type": "vocabulary_item",
+      "order": 41,
+      "hanzi": "长",
+      "pinyin": "zhǎng",
+      "meaning_vi": "trông, mọc, lớn lên",
+      "meaning_en": "",
+      "pos": "verb",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "长",
+       "back": "zhǎng — trông, mọc, lớn lên",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook/web_crosscheck",
+      "check_needed": true
+     },
+     {
+      "id": "vocab_042",
+      "type": "vocabulary_item",
+      "order": 42,
+      "hanzi": "帅",
+      "pinyin": "shuài",
+      "meaning_vi": "đẹp trai",
+      "meaning_en": "",
+      "pos": "adjective",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "帅",
+       "back": "shuài — đẹp trai",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook/web_crosscheck",
+      "check_needed": true
+     },
+     {
+      "id": "vocab_043",
+      "type": "vocabulary_item",
+      "order": 43,
+      "hanzi": "激动",
+      "pinyin": "jīdòng",
+      "meaning_vi": "xúc động, kích động",
+      "meaning_en": "",
+      "pos": "adjective/verb",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "激动",
+       "back": "jīdòng — xúc động, kích động",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook/web_crosscheck",
+      "check_needed": true
+     },
+     {
+      "id": "vocab_044",
+      "type": "vocabulary_item",
+      "order": 44,
+      "hanzi": "大概",
+      "pinyin": "dàgài",
+      "meaning_vi": "đại khái, khoảng chừng",
+      "meaning_en": "",
+      "pos": "adverb",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "大概",
+       "back": "dàgài — đại khái, khoảng chừng",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook/web_crosscheck",
+      "check_needed": true
+     },
+     {
+      "id": "vocab_045",
+      "type": "vocabulary_item",
+      "order": 45,
+      "hanzi": "副",
+      "pinyin": "fù",
+      "meaning_vi": "lượng từ cho kính, tranh, găng tay...",
+      "meaning_en": "",
+      "pos": "measure_word",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "副",
+       "back": "fù — lượng từ cho kính, tranh, găng tay...",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook/web_crosscheck",
+      "check_needed": true
+     },
+     {
+      "id": "vocab_046",
+      "type": "vocabulary_item",
+      "order": 46,
+      "hanzi": "位",
+      "pinyin": "wèi",
+      "meaning_vi": "vị, lượng từ lịch sự cho người",
+      "meaning_en": "",
+      "pos": "measure_word",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "位",
+       "back": "wèi — vị, lượng từ lịch sự cho người",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook/web_crosscheck",
+      "check_needed": true
+     },
+     {
+      "id": "vocab_047",
+      "type": "vocabulary_item",
+      "order": 47,
+      "hanzi": "浅黄色",
+      "pinyin": "qiǎnhuángsè",
+      "meaning_vi": "màu vàng nhạt",
+      "meaning_en": "",
+      "pos": "noun/adjective",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "浅黄色",
+       "back": "qiǎnhuángsè — màu vàng nhạt",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook/web_crosscheck",
+      "check_needed": true
+     },
+     {
+      "id": "vocab_048",
+      "type": "vocabulary_item",
+      "order": 48,
+      "hanzi": "红双喜字",
+      "pinyin": "hóng shuāngxǐ zì",
+      "meaning_vi": "chữ Song Hỷ màu đỏ",
+      "meaning_en": "",
+      "pos": "phrase",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "红双喜字",
+       "back": "hóng shuāngxǐ zì — chữ Song Hỷ màu đỏ",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook/web_crosscheck",
+      "check_needed": true
+     },
+     {
+      "id": "vocab_049",
+      "type": "vocabulary_item",
+      "order": 49,
+      "hanzi": "喜酒",
+      "pinyin": "xǐjiǔ",
+      "meaning_vi": "rượu cưới",
+      "meaning_en": "",
+      "pos": "noun",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "喜酒",
+       "back": "xǐjiǔ — rượu cưới",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook/web_crosscheck",
+      "check_needed": true
+     },
+     {
+      "id": "vocab_050",
+      "type": "vocabulary_item",
+      "order": 50,
+      "hanzi": "喜糖",
+      "pinyin": "xǐtáng",
+      "meaning_vi": "kẹo cưới",
+      "meaning_en": "",
+      "pos": "noun",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "喜糖",
+       "back": "xǐtáng — kẹo cưới",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook/web_crosscheck",
+      "check_needed": true
+     }
+    ]
+   },
+   {
+    "id": "section_03_proper_nouns",
+    "type": "proper_nouns",
+    "order": 3,
+    "title": "专名",
+    "title_vi": "Tên riêng",
+    "source_origin": "textbook/generated_mixed",
+    "check_needed": true,
+    "items": [
+     {
+      "id": "proper_001",
+      "type": "proper_noun",
+      "order": 1,
+      "hanzi": "玛丽",
+      "pinyin": "Mǎlì",
+      "meaning_vi": "Mary",
+      "meaning_en": "",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "proper_002",
+      "type": "proper_noun",
+      "order": 2,
+      "hanzi": "麦克",
+      "pinyin": "Màikè",
+      "meaning_vi": "Mike",
+      "meaning_en": "",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "proper_003",
+      "type": "proper_noun",
+      "order": 3,
+      "hanzi": "中国",
+      "pinyin": "Zhōngguó",
+      "meaning_vi": "Trung Quốc",
+      "meaning_en": "",
+      "source_origin": "textbook",
+      "check_needed": false
+     }
+    ]
+   },
+   {
+    "id": "section_04_notes",
+    "type": "notes",
+    "order": 4,
+    "title": "注释",
+    "title_vi": "Chú thích",
+    "source_origin": "textbook/generated_mixed",
+    "check_needed": true,
+    "items": [
+     {
+      "id": "note_01",
+      "type": "note",
+      "order": 1,
+      "title": "长得什么样子",
+      "structure": "长得 + Adj / 什么样子",
+      "meaning_vi": "Dùng để hỏi hoặc miêu tả ngoại hình, dáng vẻ của người.",
+      "examples": [
+       {
+        "id": "note_01_ex_01",
+        "zh": "服务员：什么小姐？长得什么样子？",
+        "pinyin": "",
+        "vi": "Nhân viên: Cô gái nào? Trông như thế nào?",
+        "en": "",
+        "highlight": [],
+        "grammar_refs": [],
+        "vocab_refs": [],
+        "source_ref": "",
+        "note_vi": "",
+        "audio_key": "",
+        "source_origin": "textbook/generated_mixed",
+        "check_needed": true
+       },
+       {
+        "id": "note_01_ex_02",
+        "zh": "她长得很漂亮。",
+        "pinyin": "",
+        "vi": "Cô ấy trông rất xinh.",
+        "en": "",
+        "highlight": [],
+        "grammar_refs": [],
+        "vocab_refs": [],
+        "source_ref": "",
+        "note_vi": "",
+        "audio_key": "",
+        "source_origin": "generated",
+        "check_needed": true
+       }
+      ],
+      "source_refs": [],
+      "source_origin": "textbook/generated_mixed",
+      "check_needed": true
+     },
+     {
+      "id": "note_02",
+      "type": "note",
+      "order": 2,
+      "title": "一副眼镜",
+      "structure": "一副 + 眼镜",
+      "meaning_vi": "副 là lượng từ thường dùng với kính, găng tay, tranh/đối liên quan thành bộ.",
+      "examples": [
+       {
+        "id": "note_02_ex_01",
+        "zh": "她戴着一副眼镜。",
+        "pinyin": "",
+        "vi": "Cô ấy đang đeo một cặp kính.",
+        "en": "",
+        "highlight": [],
+        "grammar_refs": [],
+        "vocab_refs": [],
+        "source_ref": "",
+        "note_vi": "",
+        "audio_key": "",
+        "source_origin": "textbook/generated_mixed",
+        "check_needed": true
+       },
+       {
+        "id": "note_02_ex_02",
+        "zh": "他买了一副手套。",
+        "pinyin": "",
+        "vi": "Anh ấy mua một đôi găng tay.",
+        "en": "",
+        "highlight": [],
+        "grammar_refs": [],
+        "vocab_refs": [],
+        "source_ref": "",
+        "note_vi": "",
+        "audio_key": "",
+        "source_origin": "generated",
+        "check_needed": true
+       }
+      ],
+      "source_refs": [],
+      "source_origin": "textbook/generated_mixed",
+      "check_needed": true
+     },
+     {
+      "id": "note_03",
+      "type": "note",
+      "order": 3,
+      "title": "红双喜字",
+      "structure": "双 + 喜 = 囍",
+      "meaning_vi": "Chữ Song Hỷ thường dùng trong đám cưới Trung Quốc, biểu thị niềm vui đôi bên.",
+      "examples": [
+       {
+        "id": "note_03_ex_01",
+        "zh": "墙上贴着一个很大的红双喜字。",
+        "pinyin": "",
+        "vi": "Trên tường dán một chữ Song Hỷ màu đỏ rất lớn.",
+        "en": "",
+        "highlight": [],
+        "grammar_refs": [],
+        "vocab_refs": [],
+        "source_ref": "",
+        "note_vi": "",
+        "audio_key": "",
+        "source_origin": "textbook/generated_mixed",
+        "check_needed": true
+       },
+       {
+        "id": "note_03_ex_02",
+        "zh": "结婚的时候常常贴红双喜字。",
+        "pinyin": "",
+        "vi": "Khi kết hôn thường dán chữ Song Hỷ màu đỏ.",
+        "en": "",
+        "highlight": [],
+        "grammar_refs": [],
+        "vocab_refs": [],
+        "source_ref": "",
+        "note_vi": "",
+        "audio_key": "",
+        "source_origin": "generated",
+        "check_needed": true
+       }
+      ],
+      "source_refs": [],
+      "source_origin": "textbook/generated_mixed",
+      "check_needed": true
+     },
+     {
+      "id": "note_04",
+      "type": "note",
+      "order": 4,
+      "title": "喜酒 / 喜糖",
+      "structure": "喜 + N",
+      "meaning_vi": "喜酒 là rượu cưới, 喜糖 là kẹo cưới. Câu 什么时候吃你的喜糖啊？ là cách hỏi vui “bao giờ bạn cưới?”.",
+      "examples": [
+       {
+        "id": "note_04_ex_01",
+        "zh": "结婚时喝的酒叫喜酒，吃的糖叫喜糖。",
+        "pinyin": "",
+        "vi": "Rượu uống khi kết hôn gọi là rượu cưới, kẹo ăn khi kết hôn gọi là kẹo cưới.",
+        "en": "",
+        "highlight": [],
+        "grammar_refs": [],
+        "vocab_refs": [],
+        "source_ref": "",
+        "note_vi": "",
+        "audio_key": "",
+        "source_origin": "textbook/generated_mixed",
+        "check_needed": true
+       },
+       {
+        "id": "note_04_ex_02",
+        "zh": "什么时候吃你的喜糖啊？",
+        "pinyin": "",
+        "vi": "Bao giờ được ăn kẹo cưới của bạn đây?",
+        "en": "",
+        "highlight": [],
+        "grammar_refs": [],
+        "vocab_refs": [],
+        "source_ref": "",
+        "note_vi": "",
+        "audio_key": "",
+        "source_origin": "generated",
+        "check_needed": true
+       }
+      ],
+      "source_refs": [],
+      "source_origin": "textbook/generated_mixed",
+      "check_needed": true
+     }
+    ]
+   },
+   {
+    "id": "section_05_grammar",
+    "type": "grammar",
+    "order": 5,
+    "title": "语法",
+    "title_vi": "Ngữ pháp",
+    "source_origin": "textbook",
+    "check_needed": false,
+    "items": [
+     {
+      "id": "grammar_01",
+      "type": "grammar_point",
+      "order": 1,
+      "title": "动词 + 着：状态持续",
+      "title_vi": "Động từ + 着: trạng thái đang duy trì",
+      "level": "HSK3-ish",
+      "tags": ["zhe", "state_continuation"],
+      "source_origin": "textbook",
+      "check_needed": false,
+      "blocks": [
+       {
+        "id": "grammar_01_overview",
+        "type": "grammar_overview",
+        "order": 1,
+        "title": "Bản chất",
+        "content_vi": "着 đặt sau động từ để biểu thị trạng thái đang được duy trì sau hành động: cửa đang mở, tường đang dán chữ, người đang mặc/đeo/cầm thứ gì.",
+        "pattern": "V + 着",
+        "examples": [
+         {
+          "id": "grammar_01_ex_01",
+          "zh": "会议厅的门开着呢。",
+          "pinyin": "",
+          "vi": "Cửa phòng hội nghị đang mở.",
+          "en": "",
+          "highlight": [],
+          "grammar_refs": ["grammar_01"],
+          "vocab_refs": [],
+          "source_ref": "text_01_l08",
+          "note_vi": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+         },
+         {
+          "id": "grammar_01_ex_02",
+          "zh": "墙上贴着一个很大的红双喜字。",
+          "pinyin": "",
+          "vi": "Trên tường dán một chữ Song Hỷ rất lớn.",
+          "en": "",
+          "highlight": [],
+          "grammar_refs": ["grammar_01"],
+          "vocab_refs": [],
+          "source_ref": "text_02_l04",
+          "note_vi": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+         },
+         {
+          "id": "grammar_01_ex_03",
+          "zh": "桌子上摆着很多酒和菜。",
+          "pinyin": "",
+          "vi": "Trên bàn bày rất nhiều rượu và món ăn.",
+          "en": "",
+          "highlight": [],
+          "grammar_refs": ["grammar_01"],
+          "vocab_refs": [],
+          "source_ref": "text_02_l04",
+          "note_vi": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+         }
+        ],
+        "source_origin": "textbook",
+        "check_needed": false
+       },
+       {
+        "id": "grammar_01_structure_01",
+        "type": "grammar_structure",
+        "order": 2,
+        "title": "Công thức cơ bản",
+        "pattern": "Nơi chốn / Chủ ngữ + V + 着 + O",
+        "meaning_vi": "Dùng để miêu tả trạng thái của sự vật hoặc người tại thời điểm nói.",
+        "formulas": [
+         {
+          "label": "Khẳng định",
+          "pattern": "S / Place + V + 着 + O"
+         },
+         {
+          "label": "Phủ định",
+          "pattern": "S / Place + 没(有) + V + 着 + O"
+         },
+         {
+          "label": "Nghi vấn",
+          "pattern": "S / Place + V + 着 + O + 吗？"
+         }
+        ],
+        "examples": [
+         {
+          "id": "grammar_01_structure_01_ex_01",
+          "zh": "她戴着一副眼镜。",
+          "pinyin": "",
+          "vi": "Cô ấy đang đeo một cặp kính.",
+          "en": "",
+          "highlight": [],
+          "grammar_refs": ["grammar_01"],
+          "vocab_refs": [],
+          "source_ref": "text_01_l03",
+          "note_vi": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+         },
+         {
+          "id": "grammar_01_structure_01_ex_02",
+          "zh": "新娘穿着一件红棉袄。",
+          "pinyin": "",
+          "vi": "Cô dâu đang mặc một chiếc áo bông đỏ.",
+          "en": "",
+          "highlight": [],
+          "grammar_refs": ["grammar_01"],
+          "vocab_refs": [],
+          "source_ref": "text_02_l05",
+          "note_vi": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+         },
+         {
+          "id": "grammar_01_structure_01_ex_03",
+          "zh": "屋子里没有挂着灯笼。",
+          "pinyin": "",
+          "vi": "Trong phòng không treo đèn lồng.",
+          "en": "",
+          "highlight": [],
+          "grammar_refs": ["grammar_01"],
+          "vocab_refs": [],
+          "source_ref": "",
+          "note_vi": "",
+          "audio_key": "",
+          "source_origin": "generated",
+          "check_needed": true
+         }
+        ],
+        "source_origin": "textbook/generated_mixed",
+        "check_needed": true
+       }
+      ]
+     },
+     {
+      "id": "grammar_02",
+      "type": "grammar_point",
+      "order": 2,
+      "title": "V1 + 着 + V2",
+      "title_vi": "Vừa làm V1 vừa làm V2 / làm V2 trong trạng thái V1",
+      "level": "HSK3-ish",
+      "tags": ["zhe", "simultaneous_actions"],
+      "source_origin": "textbook",
+      "check_needed": false,
+      "blocks": [
+       {
+        "id": "grammar_02_structure",
+        "type": "grammar_structure",
+        "order": 1,
+        "title": "Cấu trúc",
+        "pattern": "V1 + 着 + V2",
+        "meaning_vi": "Biểu thị hai hành động xảy ra đồng thời; V1 thường là trạng thái/cách thức khi làm V2.",
+        "examples": [
+         {
+          "id": "grammar_02_ex_01",
+          "zh": "他们笑着对我们说：“欢迎，欢迎。”",
+          "pinyin": "",
+          "vi": "Họ cười và nói với chúng tôi: “Chào mừng, chào mừng.”",
+          "en": "",
+          "highlight": [],
+          "grammar_refs": ["grammar_02"],
+          "vocab_refs": [],
+          "source_ref": "text_02_l06",
+          "note_vi": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+         },
+         {
+          "id": "grammar_02_ex_02",
+          "zh": "孩子们不停地说着笑着。",
+          "pinyin": "",
+          "vi": "Bọn trẻ cứ nói cười không ngừng.",
+          "en": "",
+          "highlight": [],
+          "grammar_refs": ["grammar_02"],
+          "vocab_refs": [],
+          "source_ref": "text_02_l06",
+          "note_vi": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+         },
+         {
+          "id": "grammar_02_ex_03",
+          "zh": "他站着说话。",
+          "pinyin": "",
+          "vi": "Anh ấy đứng nói chuyện.",
+          "en": "",
+          "highlight": [],
+          "grammar_refs": ["grammar_02"],
+          "vocab_refs": [],
+          "source_ref": "",
+          "note_vi": "",
+          "audio_key": "",
+          "source_origin": "generated",
+          "check_needed": true
+         }
+        ],
+        "source_origin": "textbook",
+        "check_needed": false
+       }
+      ]
+     },
+     {
+      "id": "grammar_03",
+      "type": "grammar_point",
+      "order": 3,
+      "title": "正 + V + 着 + 呢",
+      "title_vi": "Đang làm gì đó",
+      "level": "HSK3-ish",
+      "tags": ["zheng_zhe_ne", "progressive"],
+      "source_origin": "textbook/generated_mixed",
+      "check_needed": true,
+      "blocks": [
+       {
+        "id": "grammar_03_structure",
+        "type": "grammar_structure",
+        "order": 1,
+        "title": "Cấu trúc",
+        "pattern": "正 + V + 着 + 呢",
+        "meaning_vi": "Nhấn mạnh hành động đang diễn ra ngay lúc nói.",
+        "examples": [
+         {
+          "id": "grammar_03_ex_01",
+          "zh": "他们正等着我们呢。",
+          "pinyin": "",
+          "vi": "Họ đang đợi chúng ta đấy.",
+          "en": "",
+          "highlight": [],
+          "grammar_refs": ["grammar_03"],
+          "vocab_refs": [],
+          "source_ref": "text_01_l11",
+          "note_vi": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+         },
+         {
+          "id": "grammar_03_ex_02",
+          "zh": "里边正开着会吗？",
+          "pinyin": "",
+          "vi": "Bên trong đang họp à?",
+          "en": "",
+          "highlight": [],
+          "grammar_refs": ["grammar_03"],
+          "vocab_refs": [],
+          "source_ref": "text_01_l09",
+          "note_vi": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+         },
+         {
+          "id": "grammar_03_ex_03",
+          "zh": "老师正讲着课呢。",
+          "pinyin": "",
+          "vi": "Thầy/cô đang giảng bài đấy.",
+          "en": "",
+          "highlight": [],
+          "grammar_refs": ["grammar_03"],
+          "vocab_refs": [],
+          "source_ref": "",
+          "note_vi": "",
+          "audio_key": "",
+          "source_origin": "generated",
+          "check_needed": true
+         }
+        ],
+        "source_origin": "textbook/generated_mixed",
+        "check_needed": true
+       }
+      ]
+     },
+     {
+      "id": "grammar_04",
+      "type": "grammar_point",
+      "order": 4,
+      "title": "处所 + V着 + O",
+      "title_vi": "Cấu trúc tồn hiện với 着",
+      "level": "HSK3-ish",
+      "tags": ["existential_sentence", "zhe_state"],
+      "source_origin": "textbook/generated_mixed",
+      "check_needed": true,
+      "blocks": [
+       {
+        "id": "grammar_04_structure",
+        "type": "grammar_structure",
+        "order": 1,
+        "title": "Cấu trúc",
+        "pattern": "Place + V着 + O",
+        "meaning_vi": "Dùng để miêu tả ở một nơi có vật/người đang ở trong trạng thái nào đó.",
+        "examples": [
+         {
+          "id": "grammar_04_ex_01",
+          "zh": "屋子里挂着大红灯笼。",
+          "pinyin": "",
+          "vi": "Trong phòng treo đèn lồng đỏ lớn.",
+          "en": "",
+          "highlight": [],
+          "grammar_refs": ["grammar_04"],
+          "vocab_refs": [],
+          "source_ref": "text_02_l04",
+          "note_vi": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+         },
+         {
+          "id": "grammar_04_ex_02",
+          "zh": "墙上贴着一个很大的红双喜字。",
+          "pinyin": "",
+          "vi": "Trên tường dán một chữ Song Hỷ rất lớn.",
+          "en": "",
+          "highlight": [],
+          "grammar_refs": ["grammar_04"],
+          "vocab_refs": [],
+          "source_ref": "text_02_l04",
+          "note_vi": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+         },
+         {
+          "id": "grammar_04_ex_03",
+          "zh": "桌子上摆着很多酒和菜。",
+          "pinyin": "",
+          "vi": "Trên bàn bày rất nhiều rượu và món ăn.",
+          "en": "",
+          "highlight": [],
+          "grammar_refs": ["grammar_04"],
+          "vocab_refs": [],
+          "source_ref": "text_02_l04",
+          "note_vi": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+         }
+        ],
+        "source_origin": "textbook/generated_mixed",
+        "check_needed": true
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "id": "section_06_exercises",
+    "type": "exercises",
+    "order": 6,
+    "title": "练习",
+    "title_vi": "Bài tập",
+    "source_origin": "textbook/generated_mixed",
+    "check_needed": true,
+    "items": [
+     {
+      "id": "exercise_01",
+      "type": "phonetics",
+      "variant": "",
+      "order": 1,
+      "title": "语音",
+      "title_vi": "Ngữ âm",
+      "instruction": {
+       "zh": "",
+       "vi": "Luyện âm và cụm trọng tâm."
+      },
+      "difficulty": "normal",
+      "skill_focus": ["pronunciation"],
+      "parts": [
+       {
+        "id": "exercise_01_part_01",
+        "type": "minimal_pair",
+        "title": "辨音辨调",
+        "items": [
+         {
+          "id": "pair_01",
+          "left": "nǚshì",
+          "right": "lǚshì"
+         },
+         {
+          "id": "pair_02",
+          "left": "fúwùyuán",
+          "right": "fúwùyán"
+         },
+         {
+          "id": "pair_03",
+          "left": "xiǎohuǒzi",
+          "right": "xiǎohuǒr"
+         },
+         {
+          "id": "pair_04",
+          "left": "zhǔchírén",
+          "right": "zhǔchírénr"
+         },
+         {
+          "id": "pair_05",
+          "left": "xīnniáng",
+          "right": "xīnláng"
+         },
+         {
+          "id": "pair_06",
+          "left": "huìyìtīng",
+          "right": "huìyìtíng"
+         },
+         {
+          "id": "pair_07",
+          "left": "hūnlǐ",
+          "right": "hūnlì"
+         },
+         {
+          "id": "pair_08",
+          "left": "dēnglong",
+          "right": "dēnglóng"
+         },
+         {
+          "id": "pair_09",
+          "left": "xīfú",
+          "right": "xífú"
+         },
+         {
+          "id": "pair_10",
+          "left": "qúnzi",
+          "right": "qúnzi"
+         },
+         {
+          "id": "pair_11",
+          "left": "lǐngdài",
+          "right": "lǐngtài"
+         },
+         {
+          "id": "pair_12",
+          "left": "shèxiàngjī",
+          "right": "shèxiàngqī"
+         }
+        ],
+        "source_origin": "textbook/generated_mixed",
+        "check_needed": true
+       },
+       {
+        "id": "exercise_01_part_02",
+        "type": "read_aloud",
+        "title": "朗读",
+        "items": [
+         {
+          "id": "read_001",
+          "text": "会议厅的门开着呢",
+          "pinyin": "",
+          "audio_key": ""
+         },
+         {
+          "id": "read_002",
+          "text": "墙上贴着红双喜字",
+          "pinyin": "",
+          "audio_key": ""
+         },
+         {
+          "id": "read_003",
+          "text": "戴着一副眼镜",
+          "pinyin": "",
+          "audio_key": ""
+         },
+         {
+          "id": "read_004",
+          "text": "穿着一件西服",
+          "pinyin": "",
+          "audio_key": ""
+         },
+         {
+          "id": "read_005",
+          "text": "手里拿着麦克风",
+          "pinyin": "",
+          "audio_key": ""
+         },
+         {
+          "id": "read_006",
+          "text": "桌子上摆着很多酒和菜",
+          "pinyin": "",
+          "audio_key": ""
+         },
+         {
+          "id": "read_007",
+          "text": "屋子里挂着大红灯笼",
+          "pinyin": "",
+          "audio_key": ""
+         },
+         {
+          "id": "read_008",
+          "text": "笑着对我们说",
+          "pinyin": "",
+          "audio_key": ""
+         },
+         {
+          "id": "read_009",
+          "text": "说着笑着",
+          "pinyin": "",
+          "audio_key": ""
+         },
+         {
+          "id": "read_010",
+          "text": "热热闹闹的",
+          "pinyin": "",
+          "audio_key": ""
+         },
+         {
+          "id": "read_011",
+          "text": "气氛非常好",
+          "pinyin": "",
+          "audio_key": ""
+         },
+         {
+          "id": "read_012",
+          "text": "什么时候吃你的喜糖啊",
+          "pinyin": "",
+          "audio_key": ""
+         }
+        ],
+        "source_origin": "textbook/generated_mixed",
+        "check_needed": true
+       }
+      ],
+      "source_origin": "textbook/generated_mixed",
+      "check_needed": true,
+      "rendering": {
+       "renderer": "exercise.phonetics.v1"
+      }
+     },
+     {
+      "id": "exercise_02",
+      "type": "substitution_drill",
+      "variant": "models",
+      "order": 2,
+      "title": "替换",
+      "title_vi": "Thay thế theo mẫu",
+      "instruction": {
+       "zh": "替换练习。",
+       "vi": "Luyện thay thế theo mẫu."
+      },
+      "difficulty": "normal",
+      "skill_focus": ["speaking", "grammar"],
+      "grammar_refs": ["grammar_01", "grammar_02", "grammar_04"],
+      "models": [
+       {
+        "id": "ex02_model_01",
+        "title": "模型一",
+        "dialogue": ["A：会议厅的门开着呢。", "B：我们进去找吧。"],
+        "substitutions": [
+         "窗户 / 开着",
+         "灯 / 亮着",
+         "门 / 关着",
+         "电脑 / 开着",
+         "车 / 停着"
+        ]
+       },
+       {
+        "id": "ex02_model_02",
+        "title": "模型二",
+        "dialogue": ["A：她戴着一副眼镜。", "B：我看见她了。"],
+        "substitutions": [
+         "穿着一件西服",
+         "系着一条领带",
+         "拿着麦克风",
+         "扛着摄像机",
+         "戴着红花"
+        ]
+       },
+       {
+        "id": "ex02_model_03",
+        "title": "模型三",
+        "dialogue": ["A：墙上贴着红双喜字。", "B：桌子上也摆着很多酒和菜。"],
+        "substitutions": [
+         "屋子里 / 挂着大红灯笼",
+         "讲台上 / 放着麦克风",
+         "椅子上 / 坐着客人",
+         "门口 / 站着服务员",
+         "桌子上 / 放着喜糖"
+        ]
+       },
+       {
+        "id": "ex02_model_04",
+        "title": "模型四",
+        "dialogue": ["A：他们笑着对我们说：“欢迎，欢迎。”", "B：气氛非常好。"],
+        "substitutions": [
+         "站着讲话",
+         "坐着讨论",
+         "看着电视吃饭",
+         "听着音乐写作业",
+         "说着笑着走进来"
+        ]
+       }
+      ],
+      "source_origin": "textbook/generated_mixed",
+      "check_needed": true,
+      "rendering": {
+       "renderer": "exercise.substitution_drill.v1"
+      }
+     },
+     {
+      "id": "exercise_03",
+      "type": "choose_words_fill_blank",
+      "variant": "word_bank",
+      "order": 3,
+      "title": "选词填空",
+      "title_vi": "Chọn từ điền chỗ trống",
+      "instruction": {
+       "zh": "选词填空。",
+       "vi": "Chọn từ thích hợp điền vào chỗ trống."
+      },
+      "difficulty": "normal",
+      "skill_focus": ["vocabulary", "grammar"],
+      "grammar_refs": ["grammar_01", "grammar_02", "grammar_04"],
+      "word_bank": [
+       "戴着",
+       "穿着",
+       "跟着",
+       "扛着",
+       "开着",
+       "拿着",
+       "挂着",
+       "贴着",
+       "摆着",
+       "笑着"
+      ],
+      "questions": [
+       {
+        "id": "ex03_q01",
+        "prompt": "那位小姐______一副眼镜。",
+        "answer": "戴着",
+        "acceptable_answers": ["戴着"],
+        "explanation_vi": "Đáp án theo nội dung bài và trọng tâm luyện tập.",
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "ex03_q02",
+        "prompt": "她上身______一件浅黄色的西服。",
+        "answer": "穿着",
+        "acceptable_answers": ["穿着"],
+        "explanation_vi": "Đáp án theo nội dung bài và trọng tâm luyện tập.",
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "ex03_q03",
+        "prompt": "后边还______两个小伙子。",
+        "answer": "跟着",
+        "acceptable_answers": ["跟着"],
+        "explanation_vi": "Đáp án theo nội dung bài và trọng tâm luyện tập.",
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "ex03_q04",
+        "prompt": "他们______摄像机。",
+        "answer": "扛着",
+        "acceptable_answers": ["扛着"],
+        "explanation_vi": "Đáp án theo nội dung bài và trọng tâm luyện tập.",
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "ex03_q05",
+        "prompt": "会议厅的门______呢。",
+        "answer": "开着",
+        "acceptable_answers": ["开着"],
+        "explanation_vi": "Đáp án theo nội dung bài và trọng tâm luyện tập.",
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "ex03_q06",
+        "prompt": "手里______麦克风的那位就是她。",
+        "answer": "拿着",
+        "acceptable_answers": ["拿着"],
+        "explanation_vi": "Đáp án theo nội dung bài và trọng tâm luyện tập.",
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "ex03_q07",
+        "prompt": "屋子里______大红灯笼。",
+        "answer": "挂着",
+        "acceptable_answers": ["挂着"],
+        "explanation_vi": "Đáp án theo nội dung bài và trọng tâm luyện tập.",
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "ex03_q08",
+        "prompt": "墙上______一个很大的红双喜字。",
+        "answer": "贴着",
+        "acceptable_answers": ["贴着"],
+        "explanation_vi": "Đáp án theo nội dung bài và trọng tâm luyện tập.",
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "ex03_q09",
+        "prompt": "桌子上______很多酒和菜。",
+        "answer": "摆着",
+        "acceptable_answers": ["摆着"],
+        "explanation_vi": "Đáp án theo nội dung bài và trọng tâm luyện tập.",
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "ex03_q10",
+        "prompt": "他们______对我们说：“欢迎，欢迎。”",
+        "answer": "笑着",
+        "acceptable_answers": ["笑着"],
+        "explanation_vi": "Đáp án theo nội dung bài và trọng tâm luyện tập.",
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       }
+      ],
+      "answer_key": [
+       {
+        "question_id": "ex03_q01",
+        "answer": "戴着",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "question_id": "ex03_q02",
+        "answer": "穿着",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "question_id": "ex03_q03",
+        "answer": "跟着",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "question_id": "ex03_q04",
+        "answer": "扛着",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "question_id": "ex03_q05",
+        "answer": "开着",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "question_id": "ex03_q06",
+        "answer": "拿着",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "question_id": "ex03_q07",
+        "answer": "挂着",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "question_id": "ex03_q08",
+        "answer": "贴着",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "question_id": "ex03_q09",
+        "answer": "摆着",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "question_id": "ex03_q10",
+        "answer": "笑着",
+        "answer_verified": false,
+        "check_needed": true
+       }
+      ],
+      "source_origin": "textbook/generated_mixed",
+      "check_needed": true,
+      "rendering": {
+       "renderer": "exercise.fill_blank.v1",
+       "input_mode": "dropdown",
+       "show_word_bank": true,
+       "show_answer_after_submit": true
+      }
+     },
+     {
+      "id": "exercise_04",
+      "type": "complete_sentence",
+      "variant": "answer_with_cues",
+      "order": 4,
+      "title": "用括号里的词语完成句子",
+      "title_vi": "Dùng từ trong ngoặc hoàn thành câu",
+      "instruction": {
+       "zh": "用括号里的词语完成句子。",
+       "vi": "Dùng gợi ý để hoàn thành câu."
+      },
+      "difficulty": "normal",
+      "skill_focus": ["sentence_building"],
+      "grammar_refs": ["grammar_01", "grammar_04"],
+      "questions": [
+       {
+        "id": "ex04_q01",
+        "prompt": "A：那位小姐长得什么样子？\nB：______。\n（黄头发，个子高高的，戴着眼镜）",
+        "answer": "她黄头发，个子高高的，戴着一副眼镜。",
+        "acceptable_answers": ["她黄头发，个子高高的，戴着一副眼镜。"],
+        "explanation_vi": "Đáp án theo nội dung bài và trọng tâm luyện tập.",
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "ex04_q02",
+        "prompt": "A：会议厅的门怎么样？\nB：______。\n（开着）",
+        "answer": "会议厅的门开着呢。",
+        "acceptable_answers": ["会议厅的门开着呢。"],
+        "explanation_vi": "Đáp án theo nội dung bài và trọng tâm luyện tập.",
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "ex04_q03",
+        "prompt": "A：她手里拿着什么？\nB：______。\n（麦克风）",
+        "answer": "她手里拿着麦克风。",
+        "acceptable_answers": ["她手里拿着麦克风。"],
+        "explanation_vi": "Đáp án theo nội dung bài và trọng tâm luyện tập.",
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "ex04_q04",
+        "prompt": "A：麦克昨天去哪儿了？\nB：______。\n（参加婚礼）",
+        "answer": "他去参加了一个中国朋友的婚礼。",
+        "acceptable_answers": ["他去参加了一个中国朋友的婚礼。"],
+        "explanation_vi": "Đáp án theo nội dung bài và trọng tâm luyện tập.",
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "ex04_q05",
+        "prompt": "A：墙上贴着什么？\nB：______。\n（红双喜字）",
+        "answer": "墙上贴着一个很大的红双喜字。",
+        "acceptable_answers": ["墙上贴着一个很大的红双喜字。"],
+        "explanation_vi": "Đáp án theo nội dung bài và trọng tâm luyện tập.",
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "ex04_q06",
+        "prompt": "A：桌子上摆着什么？\nB：______。\n（酒和菜）",
+        "answer": "桌子上摆着很多酒和菜。",
+        "acceptable_answers": ["桌子上摆着很多酒和菜。"],
+        "explanation_vi": "Đáp án theo nội dung bài và trọng tâm luyện tập.",
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "ex04_q07",
+        "prompt": "A：新郎穿着什么？\nB：______。\n（一身蓝色的西服）",
+        "answer": "新郎穿着一身蓝色的西服。",
+        "acceptable_answers": ["新郎穿着一身蓝色的西服。"],
+        "explanation_vi": "Đáp án theo nội dung bài và trọng tâm luyện tập.",
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "ex04_q08",
+        "prompt": "A：孩子们在做什么？\nB：______。\n（说着笑着）",
+        "answer": "孩子们不停地说着笑着。",
+        "acceptable_answers": ["孩子们不停地说着笑着。"],
+        "explanation_vi": "Đáp án theo nội dung bài và trọng tâm luyện tập.",
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       }
+      ],
+      "source_origin": "textbook/generated_mixed",
+      "check_needed": true,
+      "rendering": {
+       "renderer": "exercise.complete_sentence.v1",
+       "show_answer_after_submit": true
+      }
+     },
+     {
+      "id": "exercise_05",
+      "type": "correct_sentence",
+      "variant": "",
+      "order": 5,
+      "title": "改错句",
+      "title_vi": "Sửa câu sai",
+      "instruction": {
+       "zh": "改错句。",
+       "vi": "Sửa lỗi trong câu."
+      },
+      "difficulty": "hard",
+      "skill_focus": ["grammar", "sentence_order"],
+      "grammar_refs": ["grammar_01", "grammar_02", "grammar_04"],
+      "questions": [
+       {
+        "id": "ex05_q01",
+        "wrong_sentence": "会议厅的门开了呢。",
+        "correct_sentence": "会议厅的门开着呢。",
+        "acceptable_answers": ["会议厅的门开着呢。"],
+        "explanation_vi": "这里强调门保持打开的状态，用 着。",
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "ex05_q02",
+        "wrong_sentence": "她戴一副眼镜着。",
+        "correct_sentence": "她戴着一副眼镜。",
+        "acceptable_answers": ["她戴着一副眼镜。"],
+        "explanation_vi": "着 放在动词后、宾语前。",
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "ex05_q03",
+        "wrong_sentence": "墙上贴了红双喜字着。",
+        "correct_sentence": "墙上贴着红双喜字。",
+        "acceptable_answers": ["墙上贴着红双喜字。"],
+        "explanation_vi": "状态持续用 V + 着。",
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "ex05_q04",
+        "wrong_sentence": "桌子上摆很多酒和菜着。",
+        "correct_sentence": "桌子上摆着很多酒和菜。",
+        "acceptable_answers": ["桌子上摆着很多酒和菜。"],
+        "explanation_vi": "Place + V着 + O。",
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "ex05_q05",
+        "wrong_sentence": "他们笑对我们说着。",
+        "correct_sentence": "他们笑着对我们说。",
+        "acceptable_answers": ["他们笑着对我们说。"],
+        "explanation_vi": "V1着V2: 笑着说。",
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "ex05_q06",
+        "wrong_sentence": "新娘穿着红棉袄了。",
+        "correct_sentence": "新娘穿着红棉袄。",
+        "acceptable_answers": ["新娘穿着红棉袄。"],
+        "explanation_vi": "穿着 已表示状态，一般不再加 了。",
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "ex05_q07",
+        "wrong_sentence": "他手里拿了麦克风呢。",
+        "correct_sentence": "他手里拿着麦克风呢。",
+        "acceptable_answers": ["他手里拿着麦克风呢。"],
+        "explanation_vi": "拿着强调手里持有的状态。",
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "ex05_q08",
+        "wrong_sentence": "屋子里挂大红灯笼着。",
+        "correct_sentence": "屋子里挂着大红灯笼。",
+        "acceptable_answers": ["屋子里挂着大红灯笼。"],
+        "explanation_vi": "Place + V着 + O。",
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       }
+      ],
+      "answer_key": [
+       {
+        "question_id": "ex05_q01",
+        "answer": "会议厅的门开着呢。",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "question_id": "ex05_q02",
+        "answer": "她戴着一副眼镜。",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "question_id": "ex05_q03",
+        "answer": "墙上贴着红双喜字。",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "question_id": "ex05_q04",
+        "answer": "桌子上摆着很多酒和菜。",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "question_id": "ex05_q05",
+        "answer": "他们笑着对我们说。",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "question_id": "ex05_q06",
+        "answer": "新娘穿着红棉袄。",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "question_id": "ex05_q07",
+        "answer": "他手里拿着麦克风呢。",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "question_id": "ex05_q08",
+        "answer": "屋子里挂着大红灯笼。",
+        "answer_verified": false,
+        "check_needed": true
+       }
+      ],
+      "source_origin": "textbook/generated_mixed",
+      "check_needed": true,
+      "rendering": {
+       "renderer": "exercise.correct_sentence.v1",
+       "show_answer_after_submit": true
+      }
+     }
+    ]
+   },
+   {
+    "id": "section_07_communication",
+    "type": "communication",
+    "order": 7,
+    "title": "交际会话",
+    "title_vi": "Hội thoại giao tiếp",
+    "source_origin": "textbook/generated_mixed",
+    "check_needed": true,
+    "items": [
+     {
+      "id": "communication_01",
+      "type": "communication_dialogue",
+      "variant": "",
+      "order": 1,
+      "title": "找人",
+      "title_vi": "Tìm người",
+      "function": "",
+      "function_vi": "Tìm người",
+      "dialogue": [
+       {
+        "speaker": "A",
+        "text": "请问，刚才进去一位小姐，你看见没有？",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": ""
+       },
+       {
+        "speaker": "B",
+        "text": "什么小姐？长得什么样子？",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": ""
+       },
+       {
+        "speaker": "A",
+        "text": "她黄头发，个子高高的，戴着一副眼镜。",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": ""
+       },
+       {
+        "speaker": "B",
+        "text": "是不是手里拿着麦克风的那位？",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": ""
+       },
+       {
+        "speaker": "A",
+        "text": "对，就是她。",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": ""
+       },
+       {
+        "speaker": "B",
+        "text": "会议厅的门开着呢，你们进去找吧。",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": ""
+       }
+      ],
+      "source_origin": "textbook/generated_mixed",
+      "check_needed": true
+     },
+     {
+      "id": "communication_02",
+      "type": "communication_dialogue",
+      "variant": "",
+      "order": 2,
+      "title": "描述会场",
+      "title_vi": "Miêu tả hội trường",
+      "function": "",
+      "function_vi": "Miêu tả hội trường",
+      "dialogue": [
+       {
+        "speaker": "A",
+        "text": "会议厅里怎么样？",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": ""
+       },
+       {
+        "speaker": "B",
+        "text": "门开着，灯亮着，讲台上放着麦克风。",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": ""
+       },
+       {
+        "speaker": "A",
+        "text": "里边有人吗？",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": ""
+       },
+       {
+        "speaker": "B",
+        "text": "有，椅子上坐着很多客人。",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": ""
+       },
+       {
+        "speaker": "A",
+        "text": "他们在做什么？",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": ""
+       },
+       {
+        "speaker": "B",
+        "text": "他们正开着会呢。",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": ""
+       }
+      ],
+      "source_origin": "textbook/generated_mixed",
+      "check_needed": true
+     },
+     {
+      "id": "communication_03",
+      "type": "communication_dialogue",
+      "variant": "",
+      "order": 3,
+      "title": "参加婚礼",
+      "title_vi": "Tham gia hôn lễ",
+      "function": "",
+      "function_vi": "Tham gia hôn lễ",
+      "dialogue": [
+       {
+        "speaker": "A",
+        "text": "你昨天去哪儿了？",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": ""
+       },
+       {
+        "speaker": "B",
+        "text": "我去参加了一个中国朋友的婚礼。",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": ""
+       },
+       {
+        "speaker": "A",
+        "text": "婚礼怎么样？",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": ""
+       },
+       {
+        "speaker": "B",
+        "text": "很热闹。屋子里挂着灯笼，墙上贴着红双喜字。",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": ""
+       },
+       {
+        "speaker": "A",
+        "text": "气氛好吗？",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": ""
+       },
+       {
+        "speaker": "B",
+        "text": "非常好，大家说着笑着，很高兴。",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": ""
+       }
+      ],
+      "source_origin": "textbook/generated_mixed",
+      "check_needed": true
+     }
+    ]
+   },
+   {
+    "id": "section_08_reading",
+    "type": "reading",
+    "order": 8,
+    "title": "阅读理解 / 阅读填空",
+    "title_vi": "Đọc hiểu / Điền khuyết",
+    "source_origin": "generated",
+    "check_needed": true,
+    "note_vi": "Bài đọc và điền khuyết bổ sung cho app theo trọng tâm V + 着 / V1着V2 / chủ đề hội nghị - hôn lễ; không đánh là textbook nếu chưa đối chiếu PDF gốc.",
+    "items": [
+     {
+      "id": "reading_01",
+      "type": "reading_text",
+      "order": 1,
+      "title": "我第一次参加中国朋友的婚礼",
+      "title_vi": "Lần đầu tôi tham gia hôn lễ của bạn Trung Quốc",
+      "paragraphs": [
+       {
+        "id": "reading_01_p01",
+        "order": 1,
+        "zh": "昨天晚上，我去参加了一个中国朋友的婚礼。婚礼在一个很大的饭店举行。我们进去的时候，门开着，门口站着两位服务员。",
+        "pinyin": "",
+        "vi": "",
+        "grammar_refs": ["grammar_01", "grammar_02", "grammar_04"],
+        "vocab_refs": [],
+        "source_origin": "generated",
+        "check_needed": true
+       },
+       {
+        "id": "reading_01_p02",
+        "order": 2,
+        "zh": "屋子里挂着大红灯笼，墙上贴着一个很大的红双喜字。桌子上摆着很多酒、菜和喜糖。新娘穿着漂亮的红衣服，新郎穿着一身蓝色的西服。",
+        "pinyin": "",
+        "vi": "",
+        "grammar_refs": ["grammar_01", "grammar_02", "grammar_04"],
+        "vocab_refs": [],
+        "source_origin": "generated",
+        "check_needed": true
+       },
+       {
+        "id": "reading_01_p03",
+        "order": 3,
+        "zh": "新郎和新娘笑着对客人说：“欢迎，欢迎！”很多朋友一边吃饭一边聊天，孩子们也不停地说着笑着。整个屋子热热闹闹的，气氛非常好。",
+        "pinyin": "",
+        "vi": "",
+        "grammar_refs": ["grammar_01", "grammar_02", "grammar_04"],
+        "vocab_refs": [],
+        "source_origin": "generated",
+        "check_needed": true
+       },
+       {
+        "id": "reading_01_p04",
+        "order": 4,
+        "zh": "这是我第一次参加中国朋友的婚礼。我觉得很有意思，也学到了很多中国文化。朋友还告诉我，喜酒和喜糖都跟结婚有关。",
+        "pinyin": "",
+        "vi": "",
+        "grammar_refs": ["grammar_01", "grammar_02", "grammar_04"],
+        "vocab_refs": [],
+        "source_origin": "generated",
+        "check_needed": true
+       }
+      ],
+      "questions": [
+       {
+        "id": "reading_q01",
+        "question": "“我”昨天晚上去参加了什么？",
+        "answer": "“我”去参加了一个中国朋友的婚礼。",
+        "source_origin": "generated",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "reading_q02",
+        "question": "婚礼在哪儿举行？",
+        "answer": "婚礼在一个很大的饭店举行。",
+        "source_origin": "generated",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "reading_q03",
+        "question": "门口站着谁？",
+        "answer": "门口站着两位服务员。",
+        "source_origin": "generated",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "reading_q04",
+        "question": "屋子里挂着什么？",
+        "answer": "屋子里挂着大红灯笼。",
+        "source_origin": "generated",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "reading_q05",
+        "question": "墙上贴着什么？",
+        "answer": "墙上贴着一个很大的红双喜字。",
+        "source_origin": "generated",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "reading_q06",
+        "question": "桌子上摆着什么？",
+        "answer": "桌子上摆着很多酒、菜和喜糖。",
+        "source_origin": "generated",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "reading_q07",
+        "question": "新娘穿着什么？",
+        "answer": "新娘穿着漂亮的红衣服。",
+        "source_origin": "generated",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "reading_q08",
+        "question": "新郎穿着什么？",
+        "answer": "新郎穿着一身蓝色的西服。",
+        "source_origin": "generated",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "reading_q09",
+        "question": "孩子们在做什么？",
+        "answer": "孩子们不停地说着笑着。",
+        "source_origin": "generated",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "reading_q10",
+        "question": "“我”觉得中国朋友的婚礼怎么样？",
+        "answer": "觉得很有意思，也学到了很多中国文化。",
+        "source_origin": "generated",
+        "answer_verified": false,
+        "check_needed": true
+       }
+      ],
+      "source_origin": "generated",
+      "check_needed": true
+     },
+     {
+      "id": "reading_cloze_01",
+      "type": "reading_cloze",
+      "order": 2,
+      "title": "综合填空：我第一次参加中国朋友的婚礼",
+      "title_vi": "Điền tổng hợp: Lần đầu tham gia hôn lễ của bạn Trung Quốc",
+      "instruction": {
+       "zh": "综合填空。",
+       "vi": "Điền từ thích hợp vào chỗ trống trong bài đọc."
+      },
+      "word_bank": [
+       "婚礼",
+       "开着",
+       "站着",
+       "挂着",
+       "贴着",
+       "摆着",
+       "穿着",
+       "笑着",
+       "说着笑着",
+       "气氛"
+      ],
+      "passage": {
+       "id": "cloze_passage_01",
+       "segments": [
+        {
+         "id": "seg_001",
+         "type": "text",
+         "text": "昨天晚上，我去参加了一个中国朋友的"
+        },
+        {
+         "id": "seg_002",
+         "type": "blank",
+         "blank_id": "blank_01"
+        },
+        {
+         "id": "seg_003",
+         "type": "text",
+         "text": "。我们进去的时候，门"
+        },
+        {
+         "id": "seg_004",
+         "type": "blank",
+         "blank_id": "blank_02"
+        },
+        {
+         "id": "seg_005",
+         "type": "text",
+         "text": "，门口"
+        },
+        {
+         "id": "seg_006",
+         "type": "blank",
+         "blank_id": "blank_03"
+        },
+        {
+         "id": "seg_007",
+         "type": "text",
+         "text": "两位服务员。屋子里"
+        },
+        {
+         "id": "seg_008",
+         "type": "blank",
+         "blank_id": "blank_04"
+        },
+        {
+         "id": "seg_009",
+         "type": "text",
+         "text": "大红灯笼，墙上"
+        },
+        {
+         "id": "seg_010",
+         "type": "blank",
+         "blank_id": "blank_05"
+        },
+        {
+         "id": "seg_011",
+         "type": "text",
+         "text": "红双喜字。桌子上"
+        },
+        {
+         "id": "seg_012",
+         "type": "blank",
+         "blank_id": "blank_06"
+        },
+        {
+         "id": "seg_013",
+         "type": "text",
+         "text": "很多酒、菜和喜糖。新娘"
+        },
+        {
+         "id": "seg_014",
+         "type": "blank",
+         "blank_id": "blank_07"
+        },
+        {
+         "id": "seg_015",
+         "type": "text",
+         "text": "漂亮的红衣服。新郎和新娘"
+        },
+        {
+         "id": "seg_016",
+         "type": "blank",
+         "blank_id": "blank_08"
+        },
+        {
+         "id": "seg_017",
+         "type": "text",
+         "text": "对客人说：“欢迎，欢迎！”孩子们不停地"
+        },
+        {
+         "id": "seg_018",
+         "type": "blank",
+         "blank_id": "blank_09"
+        },
+        {
+         "id": "seg_019",
+         "type": "text",
+         "text": "，整个屋子的"
+        },
+        {
+         "id": "seg_020",
+         "type": "blank",
+         "blank_id": "blank_10"
+        },
+        {
+         "id": "seg_021",
+         "type": "text",
+         "text": "非常好。"
+        }
+       ]
+      },
+      "answers": [
+       {
+        "blank_id": "blank_01",
+        "answer": "婚礼",
+        "acceptable_answers": ["婚礼"],
+        "explanation_vi": "Đáp án theo bài đọc bổ sung generated.",
+        "grammar_refs": ["grammar_01", "grammar_02", "grammar_04"],
+        "source_origin": "generated",
+        "check_needed": true
+       },
+       {
+        "blank_id": "blank_02",
+        "answer": "开着",
+        "acceptable_answers": ["开着"],
+        "explanation_vi": "Đáp án theo bài đọc bổ sung generated.",
+        "grammar_refs": ["grammar_01", "grammar_02", "grammar_04"],
+        "source_origin": "generated",
+        "check_needed": true
+       },
+       {
+        "blank_id": "blank_03",
+        "answer": "站着",
+        "acceptable_answers": ["站着"],
+        "explanation_vi": "Đáp án theo bài đọc bổ sung generated.",
+        "grammar_refs": ["grammar_01", "grammar_02", "grammar_04"],
+        "source_origin": "generated",
+        "check_needed": true
+       },
+       {
+        "blank_id": "blank_04",
+        "answer": "挂着",
+        "acceptable_answers": ["挂着"],
+        "explanation_vi": "Đáp án theo bài đọc bổ sung generated.",
+        "grammar_refs": ["grammar_01", "grammar_02", "grammar_04"],
+        "source_origin": "generated",
+        "check_needed": true
+       },
+       {
+        "blank_id": "blank_05",
+        "answer": "贴着",
+        "acceptable_answers": ["贴着"],
+        "explanation_vi": "Đáp án theo bài đọc bổ sung generated.",
+        "grammar_refs": ["grammar_01", "grammar_02", "grammar_04"],
+        "source_origin": "generated",
+        "check_needed": true
+       },
+       {
+        "blank_id": "blank_06",
+        "answer": "摆着",
+        "acceptable_answers": ["摆着"],
+        "explanation_vi": "Đáp án theo bài đọc bổ sung generated.",
+        "grammar_refs": ["grammar_01", "grammar_02", "grammar_04"],
+        "source_origin": "generated",
+        "check_needed": true
+       },
+       {
+        "blank_id": "blank_07",
+        "answer": "穿着",
+        "acceptable_answers": ["穿着"],
+        "explanation_vi": "Đáp án theo bài đọc bổ sung generated.",
+        "grammar_refs": ["grammar_01", "grammar_02", "grammar_04"],
+        "source_origin": "generated",
+        "check_needed": true
+       },
+       {
+        "blank_id": "blank_08",
+        "answer": "笑着",
+        "acceptable_answers": ["笑着"],
+        "explanation_vi": "Đáp án theo bài đọc bổ sung generated.",
+        "grammar_refs": ["grammar_01", "grammar_02", "grammar_04"],
+        "source_origin": "generated",
+        "check_needed": true
+       },
+       {
+        "blank_id": "blank_09",
+        "answer": "说着笑着",
+        "acceptable_answers": ["说着笑着"],
+        "explanation_vi": "Đáp án theo bài đọc bổ sung generated.",
+        "grammar_refs": ["grammar_01", "grammar_02", "grammar_04"],
+        "source_origin": "generated",
+        "check_needed": true
+       },
+       {
+        "blank_id": "blank_10",
+        "answer": "气氛",
+        "acceptable_answers": ["气氛"],
+        "explanation_vi": "Đáp án theo bài đọc bổ sung generated.",
+        "grammar_refs": ["grammar_01", "grammar_02", "grammar_04"],
+        "source_origin": "generated",
+        "check_needed": true
+       }
+      ],
+      "answer_key": [
+       {
+        "blank_id": "blank_01",
+        "answer": "婚礼",
+        "source_origin": "generated",
+        "check_needed": true
+       },
+       {
+        "blank_id": "blank_02",
+        "answer": "开着",
+        "source_origin": "generated",
+        "check_needed": true
+       },
+       {
+        "blank_id": "blank_03",
+        "answer": "站着",
+        "source_origin": "generated",
+        "check_needed": true
+       },
+       {
+        "blank_id": "blank_04",
+        "answer": "挂着",
+        "source_origin": "generated",
+        "check_needed": true
+       },
+       {
+        "blank_id": "blank_05",
+        "answer": "贴着",
+        "source_origin": "generated",
+        "check_needed": true
+       },
+       {
+        "blank_id": "blank_06",
+        "answer": "摆着",
+        "source_origin": "generated",
+        "check_needed": true
+       },
+       {
+        "blank_id": "blank_07",
+        "answer": "穿着",
+        "source_origin": "generated",
+        "check_needed": true
+       },
+       {
+        "blank_id": "blank_08",
+        "answer": "笑着",
+        "source_origin": "generated",
+        "check_needed": true
+       },
+       {
+        "blank_id": "blank_09",
+        "answer": "说着笑着",
+        "source_origin": "generated",
+        "check_needed": true
+       },
+       {
+        "blank_id": "blank_10",
+        "answer": "气氛",
+        "source_origin": "generated",
+        "check_needed": true
+       }
+      ],
+      "rendering": {
+       "renderer": "reading.cloze.v1",
+       "input_mode": "text",
+       "show_word_bank": true,
+       "show_answer_after_submit": true
+      },
+      "source_origin": "generated",
+      "check_needed": true
+     }
+    ]
+   },
+   {
+    "id": "section_09_character_writing",
+    "type": "character_writing",
+    "order": 9,
+    "title": "写汉字",
+    "title_vi": "Viết chữ Hán",
+    "source_origin": "generated",
+    "check_needed": true,
+    "items": [
+     {
+      "id": "char_001",
+      "type": "character_writing_item",
+      "order": 1,
+      "hanzi": "女",
+      "pinyin": "nǚ",
+      "vocab_ref": "vocab_001",
+      "stroke_count": null,
+      "radical": "",
+      "stroke_order_key": "",
+      "practice": {
+       "grid_type": "田字格",
+       "repeat_count": 6
+      },
+      "source_origin": "generated",
+      "check_needed": true
+     },
+     {
+      "id": "char_002",
+      "type": "character_writing_item",
+      "order": 2,
+      "hanzi": "服",
+      "pinyin": "fú",
+      "vocab_ref": "vocab_002",
+      "stroke_count": null,
+      "radical": "",
+      "stroke_order_key": "",
+      "practice": {
+       "grid_type": "田字格",
+       "repeat_count": 6
+      },
+      "source_origin": "generated",
+      "check_needed": true
+     },
+     {
+      "id": "char_003",
+      "type": "character_writing_item",
+      "order": 3,
+      "hanzi": "厅",
+      "pinyin": "tīng",
+      "vocab_ref": "vocab_011",
+      "stroke_count": null,
+      "radical": "",
+      "stroke_order_key": "",
+      "practice": {
+       "grid_type": "田字格",
+       "repeat_count": 6
+      },
+      "source_origin": "generated",
+      "check_needed": true
+     },
+     {
+      "id": "char_004",
+      "type": "character_writing_item",
+      "order": 4,
+      "hanzi": "婚",
+      "pinyin": "hūn",
+      "vocab_ref": "vocab_012",
+      "stroke_count": null,
+      "radical": "",
+      "stroke_order_key": "",
+      "practice": {
+       "grid_type": "田字格",
+       "repeat_count": 6
+      },
+      "source_origin": "generated",
+      "check_needed": true
+     },
+     {
+      "id": "char_005",
+      "type": "character_writing_item",
+      "order": 5,
+      "hanzi": "墙",
+      "pinyin": "qiáng",
+      "vocab_ref": "vocab_015",
+      "stroke_count": null,
+      "radical": "",
+      "stroke_order_key": "",
+      "practice": {
+       "grid_type": "田字格",
+       "repeat_count": 6
+      },
+      "source_origin": "generated",
+      "check_needed": true
+     },
+     {
+      "id": "char_006",
+      "type": "character_writing_item",
+      "order": 6,
+      "hanzi": "笼",
+      "pinyin": "long",
+      "vocab_ref": "vocab_016",
+      "stroke_count": null,
+      "radical": "",
+      "stroke_order_key": "",
+      "practice": {
+       "grid_type": "田字格",
+       "repeat_count": 6
+      },
+      "source_origin": "generated",
+      "check_needed": true
+     },
+     {
+      "id": "char_007",
+      "type": "character_writing_item",
+      "order": 7,
+      "hanzi": "喜",
+      "pinyin": "xǐ",
+      "vocab_ref": "vocab_018",
+      "stroke_count": null,
+      "radical": "",
+      "stroke_order_key": "",
+      "practice": {
+       "grid_type": "田字格",
+       "repeat_count": 6
+      },
+      "source_origin": "generated",
+      "check_needed": true
+     },
+     {
+      "id": "char_008",
+      "type": "character_writing_item",
+      "order": 8,
+      "hanzi": "服",
+      "pinyin": "fú",
+      "vocab_ref": "vocab_019",
+      "stroke_count": null,
+      "radical": "",
+      "stroke_order_key": "",
+      "practice": {
+       "grid_type": "田字格",
+       "repeat_count": 6
+      },
+      "source_origin": "generated",
+      "check_needed": true
+     },
+     {
+      "id": "char_009",
+      "type": "character_writing_item",
+      "order": 9,
+      "hanzi": "裙",
+      "pinyin": "qún",
+      "vocab_ref": "vocab_020",
+      "stroke_count": null,
+      "radical": "",
+      "stroke_order_key": "",
+      "practice": {
+       "grid_type": "田字格",
+       "repeat_count": 6
+      },
+      "source_origin": "generated",
+      "check_needed": true
+     },
+     {
+      "id": "char_010",
+      "type": "character_writing_item",
+      "order": 10,
+      "hanzi": "戴",
+      "pinyin": "dài",
+      "vocab_ref": "vocab_030",
+      "stroke_count": null,
+      "radical": "",
+      "stroke_order_key": "",
+      "practice": {
+       "grid_type": "田字格",
+       "repeat_count": 6
+      },
+      "source_origin": "generated",
+      "check_needed": true
+     },
+     {
+      "id": "char_011",
+      "type": "character_writing_item",
+      "order": 11,
+      "hanzi": "挂",
+      "pinyin": "guà",
+      "vocab_ref": "vocab_031",
+      "stroke_count": null,
+      "radical": "",
+      "stroke_order_key": "",
+      "practice": {
+       "grid_type": "田字格",
+       "repeat_count": 6
+      },
+      "source_origin": "generated",
+      "check_needed": true
+     },
+     {
+      "id": "char_012",
+      "type": "character_writing_item",
+      "order": 12,
+      "hanzi": "摆",
+      "pinyin": "bǎi",
+      "vocab_ref": "vocab_032",
+      "stroke_count": null,
+      "radical": "",
+      "stroke_order_key": "",
+      "practice": {
+       "grid_type": "田字格",
+       "repeat_count": 6
+      },
+      "source_origin": "generated",
+      "check_needed": true
+     }
+    ]
+   }
+  ],
+  "summary": {
+   "lesson_parts": [
+    "课文",
+    "生词",
+    "专名",
+    "注释",
+    "语法",
+    "练习",
+    "交际会话",
+    "阅读理解 / 阅读填空",
+    "写汉字"
+   ],
+   "grammar_points": [
+    {
+     "id": "grammar_01",
+     "title": "动词 + 着：状态持续"
+    },
+    {
+     "id": "grammar_02",
+     "title": "V1 + 着 + V2"
+    },
+    {
+     "id": "grammar_03",
+     "title": "正 + V + 着 + 呢"
+    },
+    {
+     "id": "grammar_04",
+     "title": "处所 + V着 + O"
+    }
+   ],
+   "main_patterns": [
+    {
+     "pattern": "会议厅的门开着呢。",
+     "grammar_ref": "grammar_01"
+    },
+    {
+     "pattern": "她戴着一副眼镜。",
+     "grammar_ref": "grammar_01"
+    },
+    {
+     "pattern": "上身穿着一件浅黄色的西服。",
+     "grammar_ref": "grammar_01"
+    },
+    {
+     "pattern": "他们扛着摄像机。",
+     "grammar_ref": "grammar_01"
+    },
+    {
+     "pattern": "手里拿着麦克风。",
+     "grammar_ref": "grammar_01"
+    },
+    {
+     "pattern": "他们正等着我们呢。",
+     "grammar_ref": "grammar_03"
+    },
+    {
+     "pattern": "屋子里挂着大红灯笼。",
+     "grammar_ref": "grammar_04"
+    },
+    {
+     "pattern": "墙上贴着一个很大的红双喜字。",
+     "grammar_ref": "grammar_04"
+    },
+    {
+     "pattern": "桌子上摆着很多酒和菜。",
+     "grammar_ref": "grammar_04"
+    },
+    {
+     "pattern": "他们笑着对我们说：“欢迎，欢迎。”",
+     "grammar_ref": "grammar_02"
+    }
+   ],
+   "exercise_types": [
+    "phonetics",
+    "read_aloud",
+    "substitution_drill",
+    "choose_words_fill_blank",
+    "complete_sentence",
+    "correct_sentence",
+    "communication_dialogue",
+    "reading_text",
+    "reading_cloze",
+    "character_writing"
+   ],
+   "source_origin_policy": {
+    "textbook": "Copied/structured from textbook/PDF content.",
+    "web_crosscheck": "Used to confirm two core texts, vocabulary range, and grammar topics.",
+    "uploaded_crosscheck": "Used to verify lesson order, grammar summary, and existing vocabulary notes.",
+    "generated": "Generated for app practice/rendering; must be treated as non-textbook unless verified separately.",
+    "textbook/generated_mixed": "Based on textbook communicative function but formatted/simplified for app rendering.",
+    "textbook_question_generated_answer": "Question comes from textbook-style comprehension; answer generated from the text."
+   },
+   "check_needed": true
+  }
+ },
+ "fix_history": [
+  {
+   "fix_id": "lesson_03_v2_2_initial_with_reading_v1",
+   "description": "Created lesson 3 in current Quyển 2 Hạ app flow, mapped to textbook 第十五课 会议厅的门开着呢, with non-empty reading_text and reading_cloze sections following v2.2.0 final verified schema.",
+   "source_origin": "generated",
+   "check_needed": true
+  }
+ ]
+}

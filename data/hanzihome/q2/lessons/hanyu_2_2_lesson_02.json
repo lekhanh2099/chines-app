@@ -1,0 +1,3936 @@
+{
+ "schema_version": "2.2.0",
+ "content_type": "chinese_textbook_lesson",
+ "verification_status": "final_verified_with_marked_generated_fields",
+ "source": {
+  "book": "Hanyu Jiaocheng",
+  "volume": "第二册下",
+  "volume_vi": "Quyển 2 Hạ",
+  "lesson_index": 2,
+  "lesson_number_cn": "第十四课",
+  "lesson_title_cn": "钥匙忘拔下来了",
+  "lesson_title_pinyin": "Yàoshi wàng bá xiàlái le",
+  "lesson_title_vi": "Chìa khóa quên rút ra rồi",
+  "lesson_title_en": "I forgot to pull the keys out",
+  "source_files": [
+   {
+    "name": "Hanyu Jiaocheng 2-2.pdf",
+    "type": "pdf_scan",
+    "source_origin": "textbook",
+    "check_needed": false
+   },
+   {
+    "name": "Học kì 2 上-下.md",
+    "type": "markdown_crosscheck",
+    "source_origin": "uploaded_crosscheck",
+    "check_needed": false
+   },
+   {
+    "name": "Studocu - Bài 14: 钥匙忘拔下来了",
+    "type": "web_crosscheck",
+    "source_origin": "web_crosscheck",
+    "check_needed": true
+   },
+   {
+    "name": "Scribd - 第十四课 钥匙忘拔下来了",
+    "type": "web_crosscheck",
+    "source_origin": "web_crosscheck",
+    "check_needed": true
+   },
+   {
+    "name": "Bircokcincekitappdf - 汉语教程 PDF",
+    "type": "web_crosscheck",
+    "source_origin": "web_crosscheck",
+    "check_needed": true
+   }
+  ],
+  "web_crosscheck": [
+   {
+    "title": "第十四课：钥匙忘拔下来了",
+    "source_origin": "web_crosscheck",
+    "note": "Used to cross-check lesson title and grammar focus: 动作趋向的表达：复合趋向补语."
+   },
+   {
+    "title": "汉语教程第二册下 reference",
+    "source_origin": "web_crosscheck",
+    "note": "Used to cross-check that 钥匙忘拔下来了 belongs to the lesson sequence before 会议厅的门开着呢 in one common edition mapping."
+   }
+  ]
+ },
+ "lesson": {
+  "id": "hanyu_2_2_lesson_02",
+  "title": {
+   "zh": "钥匙忘拔下来了",
+   "pinyin": "Yàoshi wàng bá xiàlái le",
+   "vi": "Chìa khóa quên rút ra rồi",
+   "en": "I forgot to pull the keys out"
+  },
+  "tags": [
+   "hanyu_2_2",
+   "lesson_02",
+   "book_lesson_14",
+   "hsk3-ish",
+   "compound_directional_complement",
+   "lai_qu",
+   "ba_sentence",
+   "wang_v",
+   "book_city",
+   "keychain",
+   "reading_cloze_included"
+  ],
+  "sections": [
+   {
+    "id": "section_01_text",
+    "type": "text",
+    "order": 1,
+    "title": "课文",
+    "title_vi": "Bài khóa",
+    "source_origin": "textbook/generated_mixed",
+    "check_needed": true,
+    "blocks": [
+     {
+      "id": "text_01",
+      "type": "text_dialogue",
+      "order": 1,
+      "title": "钥匙忘拔下来了",
+      "title_vi": "Chìa khóa quên rút ra rồi",
+      "scene": "星期天，玛丽和麦克一起骑车去图书城买书。",
+      "source_origin": "textbook/generated_mixed",
+      "check_needed": true,
+      "lines": [
+       {
+        "id": "text_01_l01",
+        "order": 1,
+        "speaker": "玛丽",
+        "zh": "麦克，今天我们去图书城吧。听说那儿的书很多，各种各样的书都有。",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook/generated_mixed",
+        "check_needed": true
+       },
+       {
+        "id": "text_01_l02",
+        "order": 2,
+        "speaker": "麦克",
+        "zh": "好啊。我也想买几本中文书。咱们骑车去吧。",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook/generated_mixed",
+        "check_needed": true
+       },
+       {
+        "id": "text_01_l03",
+        "order": 3,
+        "speaker": "玛丽",
+        "zh": "可以。图书城离这儿不太远，骑车二十多分钟就到了。",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook/generated_mixed",
+        "check_needed": true
+       },
+       {
+        "id": "text_01_l04",
+        "order": 4,
+        "speaker": "麦克",
+        "zh": "这儿真大啊！书架上放着这么多书，我不知道该选哪一本。",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook/generated_mixed",
+        "check_needed": true
+       },
+       {
+        "id": "text_01_l05",
+        "order": 5,
+        "speaker": "玛丽",
+        "zh": "你先看看汉语学习的书吧。我去那边看看礼品。",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook/generated_mixed",
+        "check_needed": true
+       },
+       {
+        "id": "text_01_l06",
+        "order": 6,
+        "speaker": "麦克",
+        "zh": "好，一会儿在门口见。",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook/generated_mixed",
+        "check_needed": true
+       },
+       {
+        "id": "text_01_l07",
+        "order": 7,
+        "speaker": "玛丽",
+        "zh": "麦克，你买好了吗？",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook/generated_mixed",
+        "check_needed": true
+       },
+       {
+        "id": "text_01_l08",
+        "order": 8,
+        "speaker": "麦克",
+        "zh": "买好了。我买了一本词典和一本会话书。你呢？",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook/generated_mixed",
+        "check_needed": true
+       },
+       {
+        "id": "text_01_l09",
+        "order": 9,
+        "speaker": "玛丽",
+        "zh": "我买了一个脸谱钥匙链，还买了一些小礼品。",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook/generated_mixed",
+        "check_needed": true
+       },
+       {
+        "id": "text_01_l10",
+        "order": 10,
+        "speaker": "麦克",
+        "zh": "这个钥匙链真漂亮，是在哪儿买的？",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook/generated_mixed",
+        "check_needed": true
+       },
+       {
+        "id": "text_01_l11",
+        "order": 11,
+        "speaker": "玛丽",
+        "zh": "在那边的商场买的。售货员还给我拿出来很多种，让我慢慢儿挑。",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook/generated_mixed",
+        "check_needed": true
+       },
+       {
+        "id": "text_01_l12",
+        "order": 12,
+        "speaker": "麦克",
+        "zh": "咱们回去吧，我有点儿累了。",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook/generated_mixed",
+        "check_needed": true
+       },
+       {
+        "id": "text_01_l13",
+        "order": 13,
+        "speaker": "玛丽",
+        "zh": "好。我的东西有点儿多，你帮我提一下儿吧。",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook/generated_mixed",
+        "check_needed": true
+       },
+       {
+        "id": "text_01_l14",
+        "order": 14,
+        "speaker": "麦克",
+        "zh": "没问题。",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook/generated_mixed",
+        "check_needed": true
+       },
+       {
+        "id": "text_01_l15",
+        "order": 15,
+        "speaker": "玛丽",
+        "zh": "糟糕！我的车钥匙忘拔下来了！",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook/generated_mixed",
+        "check_needed": true
+       },
+       {
+        "id": "text_01_l16",
+        "order": 16,
+        "speaker": "麦克",
+        "zh": "在哪儿？",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook/generated_mixed",
+        "check_needed": true
+       },
+       {
+        "id": "text_01_l17",
+        "order": 17,
+        "speaker": "玛丽",
+        "zh": "还在自行车上呢。刚才太着急了，我把车停好以后，就忘了把钥匙拔下来。",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook/generated_mixed",
+        "check_needed": true
+       },
+       {
+        "id": "text_01_l18",
+        "order": 18,
+        "speaker": "麦克",
+        "zh": "幸好没有丢。以后可得小心点儿。",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook/generated_mixed",
+        "check_needed": true
+       },
+       {
+        "id": "text_01_l19",
+        "order": 19,
+        "speaker": "玛丽",
+        "zh": "是啊。今天真是哭笑不得。",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook/generated_mixed",
+        "check_needed": true
+       }
+      ]
+     }
+    ],
+    "comprehension_questions": [
+     {
+      "id": "text_q01",
+      "question": "玛丽和麦克星期天去哪儿？",
+      "answer": "他们去图书城。",
+      "source_origin": "textbook_question_generated_answer",
+      "answer_verified": false,
+      "check_needed": true
+     },
+     {
+      "id": "text_q02",
+      "question": "他们怎么去图书城？",
+      "answer": "他们骑车去。",
+      "source_origin": "textbook_question_generated_answer",
+      "answer_verified": false,
+      "check_needed": true
+     },
+     {
+      "id": "text_q03",
+      "question": "麦克想买什么书？",
+      "answer": "他想买几本中文书。",
+      "source_origin": "textbook_question_generated_answer",
+      "answer_verified": false,
+      "check_needed": true
+     },
+     {
+      "id": "text_q04",
+      "question": "玛丽去看什么？",
+      "answer": "她去看礼品。",
+      "source_origin": "textbook_question_generated_answer",
+      "answer_verified": false,
+      "check_needed": true
+     },
+     {
+      "id": "text_q05",
+      "question": "玛丽买了什么？",
+      "answer": "她买了一个脸谱钥匙链和一些小礼品。",
+      "source_origin": "textbook_question_generated_answer",
+      "answer_verified": false,
+      "check_needed": true
+     },
+     {
+      "id": "text_q06",
+      "question": "售货员给玛丽拿出来什么？",
+      "answer": "售货员给她拿出来很多种钥匙链/商品。",
+      "source_origin": "textbook_question_generated_answer",
+      "answer_verified": false,
+      "check_needed": true
+     },
+     {
+      "id": "text_q07",
+      "question": "回去的时候，麦克觉得怎么样？",
+      "answer": "麦克觉得有点儿累了。",
+      "source_origin": "textbook_question_generated_answer",
+      "answer_verified": false,
+      "check_needed": true
+     },
+     {
+      "id": "text_q08",
+      "question": "玛丽为什么说“糟糕”？",
+      "answer": "因为她的车钥匙忘拔下来了。",
+      "source_origin": "textbook_question_generated_answer",
+      "answer_verified": false,
+      "check_needed": true
+     },
+     {
+      "id": "text_q09",
+      "question": "她把钥匙忘在哪儿了？",
+      "answer": "忘在自行车上了。",
+      "source_origin": "textbook_question_generated_answer",
+      "answer_verified": false,
+      "check_needed": true
+     },
+     {
+      "id": "text_q10",
+      "question": "麦克提醒玛丽以后要怎么样？",
+      "answer": "以后可得小心点儿。",
+      "source_origin": "textbook_question_generated_answer",
+      "answer_verified": false,
+      "check_needed": true
+     }
+    ]
+   },
+   {
+    "id": "section_02_vocabulary",
+    "type": "vocabulary",
+    "order": 2,
+    "title": "生词",
+    "title_vi": "Từ vựng",
+    "source_origin": "textbook/web_crosscheck",
+    "check_needed": true,
+    "items": [
+     {
+      "id": "vocab_001",
+      "type": "vocabulary_item",
+      "order": 1,
+      "hanzi": "图书城",
+      "pinyin": "túshūchéng",
+      "meaning_vi": "trung tâm sách / nhà sách lớn",
+      "meaning_en": "",
+      "pos": "noun",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "图书城",
+       "back": "túshūchéng — trung tâm sách / nhà sách lớn",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook/web_crosscheck",
+      "check_needed": true
+     },
+     {
+      "id": "vocab_002",
+      "type": "vocabulary_item",
+      "order": 2,
+      "hanzi": "图书",
+      "pinyin": "túshū",
+      "meaning_vi": "sách",
+      "meaning_en": "",
+      "pos": "noun",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "图书",
+       "back": "túshū — sách",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook/web_crosscheck",
+      "check_needed": true
+     },
+     {
+      "id": "vocab_003",
+      "type": "vocabulary_item",
+      "order": 3,
+      "hanzi": "进去",
+      "pinyin": "jìnqù",
+      "meaning_vi": "đi vào đó",
+      "meaning_en": "",
+      "pos": "directional_complement",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "进去",
+       "back": "jìnqù — đi vào đó",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook/web_crosscheck",
+      "check_needed": true
+     },
+     {
+      "id": "vocab_004",
+      "type": "vocabulary_item",
+      "order": 4,
+      "hanzi": "另外",
+      "pinyin": "lìngwài",
+      "meaning_vi": "ngoài ra, khác nữa",
+      "meaning_en": "",
+      "pos": "pronoun/adverb",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "另外",
+       "back": "lìngwài — ngoài ra, khác nữa",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook/web_crosscheck",
+      "check_needed": true
+     },
+     {
+      "id": "vocab_005",
+      "type": "vocabulary_item",
+      "order": 5,
+      "hanzi": "各种各样",
+      "pinyin": "gèzhǒng-gèyàng",
+      "meaning_vi": "đủ loại, đủ kiểu",
+      "meaning_en": "",
+      "pos": "phrase",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "各种各样",
+       "back": "gèzhǒng-gèyàng — đủ loại, đủ kiểu",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook/web_crosscheck",
+      "check_needed": true
+     },
+     {
+      "id": "vocab_006",
+      "type": "vocabulary_item",
+      "order": 6,
+      "hanzi": "兴奋",
+      "pinyin": "xīngfèn",
+      "meaning_vi": "hưng phấn, phấn khích",
+      "meaning_en": "",
+      "pos": "adjective",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "兴奋",
+       "back": "xīngfèn — hưng phấn, phấn khích",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook/web_crosscheck",
+      "check_needed": true
+     },
+     {
+      "id": "vocab_007",
+      "type": "vocabulary_item",
+      "order": 7,
+      "hanzi": "香",
+      "pinyin": "xiāng",
+      "meaning_vi": "thơm",
+      "meaning_en": "",
+      "pos": "adjective",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "香",
+       "back": "xiāng — thơm",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook/web_crosscheck",
+      "check_needed": true
+     },
+     {
+      "id": "vocab_008",
+      "type": "vocabulary_item",
+      "order": 8,
+      "hanzi": "书架",
+      "pinyin": "shūjià",
+      "meaning_vi": "giá sách",
+      "meaning_en": "",
+      "pos": "noun",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "书架",
+       "back": "shūjià — giá sách",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook/web_crosscheck",
+      "check_needed": true
+     },
+     {
+      "id": "vocab_009",
+      "type": "vocabulary_item",
+      "order": 9,
+      "hanzi": "抽",
+      "pinyin": "chōu",
+      "meaning_vi": "rút ra, lấy ra",
+      "meaning_en": "",
+      "pos": "verb",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "抽",
+       "back": "chōu — rút ra, lấy ra",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook/web_crosscheck",
+      "check_needed": true
+     },
+     {
+      "id": "vocab_010",
+      "type": "vocabulary_item",
+      "order": 10,
+      "hanzi": "挑",
+      "pinyin": "tiāo",
+      "meaning_vi": "chọn, lựa",
+      "meaning_en": "",
+      "pos": "verb",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "挑",
+       "back": "tiāo — chọn, lựa",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook/web_crosscheck",
+      "check_needed": true
+     },
+     {
+      "id": "vocab_011",
+      "type": "vocabulary_item",
+      "order": 11,
+      "hanzi": "寒假",
+      "pinyin": "hánjià",
+      "meaning_vi": "kỳ nghỉ đông",
+      "meaning_en": "",
+      "pos": "noun",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "寒假",
+       "back": "hánjià — kỳ nghỉ đông",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook/web_crosscheck",
+      "check_needed": true
+     },
+     {
+      "id": "vocab_012",
+      "type": "vocabulary_item",
+      "order": 12,
+      "hanzi": "暑假",
+      "pinyin": "shǔjià",
+      "meaning_vi": "kỳ nghỉ hè",
+      "meaning_en": "",
+      "pos": "noun",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "暑假",
+       "back": "shǔjià — kỳ nghỉ hè",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook/web_crosscheck",
+      "check_needed": true
+     },
+     {
+      "id": "vocab_013",
+      "type": "vocabulary_item",
+      "order": 13,
+      "hanzi": "礼品",
+      "pinyin": "lǐpǐn",
+      "meaning_vi": "quà tặng",
+      "meaning_en": "",
+      "pos": "noun",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "礼品",
+       "back": "lǐpǐn — quà tặng",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook/web_crosscheck",
+      "check_needed": true
+     },
+     {
+      "id": "vocab_014",
+      "type": "vocabulary_item",
+      "order": 14,
+      "hanzi": "于是",
+      "pinyin": "yúshì",
+      "meaning_vi": "thế là, do đó",
+      "meaning_en": "",
+      "pos": "conjunction",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "于是",
+       "back": "yúshì — thế là, do đó",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook/web_crosscheck",
+      "check_needed": true
+     },
+     {
+      "id": "vocab_015",
+      "type": "vocabulary_item",
+      "order": 15,
+      "hanzi": "售货员",
+      "pinyin": "shòuhuòyuán",
+      "meaning_vi": "nhân viên bán hàng",
+      "meaning_en": "",
+      "pos": "noun",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "售货员",
+       "back": "shòuhuòyuán — nhân viên bán hàng",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook/web_crosscheck",
+      "check_needed": true
+     },
+     {
+      "id": "vocab_016",
+      "type": "vocabulary_item",
+      "order": 16,
+      "hanzi": "商场",
+      "pinyin": "shāngchǎng",
+      "meaning_vi": "trung tâm thương mại",
+      "meaning_en": "",
+      "pos": "noun",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "商场",
+       "back": "shāngchǎng — trung tâm thương mại",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook/web_crosscheck",
+      "check_needed": true
+     },
+     {
+      "id": "vocab_017",
+      "type": "vocabulary_item",
+      "order": 17,
+      "hanzi": "商品",
+      "pinyin": "shāngpǐn",
+      "meaning_vi": "hàng hóa",
+      "meaning_en": "",
+      "pos": "noun",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "商品",
+       "back": "shāngpǐn — hàng hóa",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook/web_crosscheck",
+      "check_needed": true
+     },
+     {
+      "id": "vocab_018",
+      "type": "vocabulary_item",
+      "order": 18,
+      "hanzi": "脸谱",
+      "pinyin": "liǎnpǔ",
+      "meaning_vi": "mặt nạ / mặt hóa trang kinh kịch",
+      "meaning_en": "",
+      "pos": "noun",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "脸谱",
+       "back": "liǎnpǔ — mặt nạ / mặt hóa trang kinh kịch",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook/web_crosscheck",
+      "check_needed": true
+     },
+     {
+      "id": "vocab_019",
+      "type": "vocabulary_item",
+      "order": 19,
+      "hanzi": "饰物",
+      "pinyin": "shìwù",
+      "meaning_vi": "đồ trang sức, vật trang trí",
+      "meaning_en": "",
+      "pos": "noun",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "饰物",
+       "back": "shìwù — đồ trang sức, vật trang trí",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook/web_crosscheck",
+      "check_needed": true
+     },
+     {
+      "id": "vocab_020",
+      "type": "vocabulary_item",
+      "order": 20,
+      "hanzi": "丝织品",
+      "pinyin": "sīzhīpǐn",
+      "meaning_vi": "đồ lụa",
+      "meaning_en": "",
+      "pos": "noun",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "丝织品",
+       "back": "sīzhīpǐn — đồ lụa",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook/web_crosscheck",
+      "check_needed": true
+     },
+     {
+      "id": "vocab_021",
+      "type": "vocabulary_item",
+      "order": 21,
+      "hanzi": "钥匙",
+      "pinyin": "yàoshi",
+      "meaning_vi": "chìa khóa",
+      "meaning_en": "",
+      "pos": "noun",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "钥匙",
+       "back": "yàoshi — chìa khóa",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook/web_crosscheck",
+      "check_needed": true
+     },
+     {
+      "id": "vocab_022",
+      "type": "vocabulary_item",
+      "order": 22,
+      "hanzi": "钥匙链",
+      "pinyin": "yàoshiliàn",
+      "meaning_vi": "móc khóa",
+      "meaning_en": "",
+      "pos": "noun",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "钥匙链",
+       "back": "yàoshiliàn — móc khóa",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook/web_crosscheck",
+      "check_needed": true
+     },
+     {
+      "id": "vocab_023",
+      "type": "vocabulary_item",
+      "order": 23,
+      "hanzi": "玩具",
+      "pinyin": "wánjù",
+      "meaning_vi": "đồ chơi",
+      "meaning_en": "",
+      "pos": "noun",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "玩具",
+       "back": "wánjù — đồ chơi",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook/web_crosscheck",
+      "check_needed": true
+     },
+     {
+      "id": "vocab_024",
+      "type": "vocabulary_item",
+      "order": 24,
+      "hanzi": "纸箱",
+      "pinyin": "zhǐxiāng",
+      "meaning_vi": "thùng giấy",
+      "meaning_en": "",
+      "pos": "noun",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "纸箱",
+       "back": "zhǐxiāng — thùng giấy",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook/web_crosscheck",
+      "check_needed": true
+     },
+     {
+      "id": "vocab_025",
+      "type": "vocabulary_item",
+      "order": 25,
+      "hanzi": "纸",
+      "pinyin": "zhǐ",
+      "meaning_vi": "giấy",
+      "meaning_en": "",
+      "pos": "noun",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "纸",
+       "back": "zhǐ — giấy",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook/web_crosscheck",
+      "check_needed": true
+     },
+     {
+      "id": "vocab_026",
+      "type": "vocabulary_item",
+      "order": 26,
+      "hanzi": "提",
+      "pinyin": "tí",
+      "meaning_vi": "xách, nhắc đến",
+      "meaning_en": "",
+      "pos": "verb",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "提",
+       "back": "tí — xách, nhắc đến",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook/web_crosscheck",
+      "check_needed": true
+     },
+     {
+      "id": "vocab_027",
+      "type": "vocabulary_item",
+      "order": 27,
+      "hanzi": "累",
+      "pinyin": "lèi",
+      "meaning_vi": "mệt",
+      "meaning_en": "",
+      "pos": "adjective",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "累",
+       "back": "lèi — mệt",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook/web_crosscheck",
+      "check_needed": true
+     },
+     {
+      "id": "vocab_028",
+      "type": "vocabulary_item",
+      "order": 28,
+      "hanzi": "困",
+      "pinyin": "kùn",
+      "meaning_vi": "buồn ngủ, mệt mỏi",
+      "meaning_en": "",
+      "pos": "adjective",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "困",
+       "back": "kùn — buồn ngủ, mệt mỏi",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook/web_crosscheck",
+      "check_needed": true
+     },
+     {
+      "id": "vocab_029",
+      "type": "vocabulary_item",
+      "order": 29,
+      "hanzi": "步",
+      "pinyin": "bù",
+      "meaning_vi": "bước",
+      "meaning_en": "",
+      "pos": "noun/measure_word",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "步",
+       "back": "bù — bước",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook/web_crosscheck",
+      "check_needed": true
+     },
+     {
+      "id": "vocab_030",
+      "type": "vocabulary_item",
+      "order": 30,
+      "hanzi": "散步",
+      "pinyin": "sànbù",
+      "meaning_vi": "đi dạo",
+      "meaning_en": "",
+      "pos": "verb_object",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "散步",
+       "back": "sànbù — đi dạo",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook/web_crosscheck",
+      "check_needed": true
+     },
+     {
+      "id": "vocab_031",
+      "type": "vocabulary_item",
+      "order": 31,
+      "hanzi": "跑步",
+      "pinyin": "pǎobù",
+      "meaning_vi": "chạy bộ",
+      "meaning_en": "",
+      "pos": "verb_object",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "跑步",
+       "back": "pǎobù — chạy bộ",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook/web_crosscheck",
+      "check_needed": true
+     },
+     {
+      "id": "vocab_032",
+      "type": "vocabulary_item",
+      "order": 32,
+      "hanzi": "却",
+      "pinyin": "què",
+      "meaning_vi": "lại, nhưng mà",
+      "meaning_en": "",
+      "pos": "adverb",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "却",
+       "back": "què — lại, nhưng mà",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook/web_crosscheck",
+      "check_needed": true
+     },
+     {
+      "id": "vocab_033",
+      "type": "vocabulary_item",
+      "order": 33,
+      "hanzi": "忽然",
+      "pinyin": "hūrán",
+      "meaning_vi": "bỗng nhiên",
+      "meaning_en": "",
+      "pos": "adverb",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "忽然",
+       "back": "hūrán — bỗng nhiên",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook/web_crosscheck",
+      "check_needed": true
+     },
+     {
+      "id": "vocab_034",
+      "type": "vocabulary_item",
+      "order": 34,
+      "hanzi": "突然",
+      "pinyin": "tūrán",
+      "meaning_vi": "đột nhiên",
+      "meaning_en": "",
+      "pos": "adverb",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "突然",
+       "back": "tūrán — đột nhiên",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook/web_crosscheck",
+      "check_needed": true
+     },
+     {
+      "id": "vocab_035",
+      "type": "vocabulary_item",
+      "order": 35,
+      "hanzi": "只好",
+      "pinyin": "zhǐhǎo",
+      "meaning_vi": "đành phải",
+      "meaning_en": "",
+      "pos": "adverb",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "只好",
+       "back": "zhǐhǎo — đành phải",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook/web_crosscheck",
+      "check_needed": true
+     },
+     {
+      "id": "vocab_036",
+      "type": "vocabulary_item",
+      "order": 36,
+      "hanzi": "插",
+      "pinyin": "chā",
+      "meaning_vi": "cắm, cắm vào",
+      "meaning_en": "",
+      "pos": "verb",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "插",
+       "back": "chā — cắm, cắm vào",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook/web_crosscheck",
+      "check_needed": true
+     },
+     {
+      "id": "vocab_037",
+      "type": "vocabulary_item",
+      "order": 37,
+      "hanzi": "拔",
+      "pinyin": "bá",
+      "meaning_vi": "rút, nhổ",
+      "meaning_en": "",
+      "pos": "verb",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "拔",
+       "back": "bá — rút, nhổ",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook/web_crosscheck",
+      "check_needed": true
+     },
+     {
+      "id": "vocab_038",
+      "type": "vocabulary_item",
+      "order": 38,
+      "hanzi": "串",
+      "pinyin": "chuàn",
+      "meaning_vi": "xâu, chuỗi",
+      "meaning_en": "",
+      "pos": "measure_word/noun",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "串",
+       "back": "chuàn — xâu, chuỗi",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook/web_crosscheck",
+      "check_needed": true
+     },
+     {
+      "id": "vocab_039",
+      "type": "vocabulary_item",
+      "order": 39,
+      "hanzi": "情况",
+      "pinyin": "qíngkuàng",
+      "meaning_vi": "tình hình",
+      "meaning_en": "",
+      "pos": "noun",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "情况",
+       "back": "qíngkuàng — tình hình",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook/web_crosscheck",
+      "check_needed": true
+     },
+     {
+      "id": "vocab_040",
+      "type": "vocabulary_item",
+      "order": 40,
+      "hanzi": "肯定",
+      "pinyin": "kěndìng",
+      "meaning_vi": "chắc chắn",
+      "meaning_en": "",
+      "pos": "adverb/adjective",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "肯定",
+       "back": "kěndìng — chắc chắn",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook/web_crosscheck",
+      "check_needed": true
+     },
+     {
+      "id": "vocab_041",
+      "type": "vocabulary_item",
+      "order": 41,
+      "hanzi": "电梯",
+      "pinyin": "diàntī",
+      "meaning_vi": "thang máy",
+      "meaning_en": "",
+      "pos": "noun",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "电梯",
+       "back": "diàntī — thang máy",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook/web_crosscheck",
+      "check_needed": true
+     },
+     {
+      "id": "vocab_042",
+      "type": "vocabulary_item",
+      "order": 42,
+      "hanzi": "楼梯",
+      "pinyin": "lóutī",
+      "meaning_vi": "cầu thang",
+      "meaning_en": "",
+      "pos": "noun",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "楼梯",
+       "back": "lóutī — cầu thang",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook/web_crosscheck",
+      "check_needed": true
+     },
+     {
+      "id": "vocab_043",
+      "type": "vocabulary_item",
+      "order": 43,
+      "hanzi": "哭笑不得",
+      "pinyin": "kū xiào bù dé",
+      "meaning_vi": "dở khóc dở cười",
+      "meaning_en": "",
+      "pos": "idiom",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "哭笑不得",
+       "back": "kū xiào bù dé — dở khóc dở cười",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook/web_crosscheck",
+      "check_needed": true
+     },
+     {
+      "id": "vocab_044",
+      "type": "vocabulary_item",
+      "order": 44,
+      "hanzi": "除了……以外",
+      "pinyin": "chúle... yǐwài",
+      "meaning_vi": "ngoài… ra",
+      "meaning_en": "",
+      "pos": "pattern",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "除了……以外",
+       "back": "chúle... yǐwài — ngoài… ra",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook/web_crosscheck",
+      "check_needed": true
+     }
+    ]
+   },
+   {
+    "id": "section_03_proper_nouns",
+    "type": "proper_nouns",
+    "order": 3,
+    "title": "专名",
+    "title_vi": "Tên riêng",
+    "source_origin": "textbook/generated_mixed",
+    "check_needed": true,
+    "items": [
+     {
+      "id": "proper_001",
+      "type": "proper_noun",
+      "order": 1,
+      "hanzi": "玛丽",
+      "pinyin": "Mǎlì",
+      "meaning_vi": "Mary",
+      "meaning_en": "",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "proper_002",
+      "type": "proper_noun",
+      "order": 2,
+      "hanzi": "麦克",
+      "pinyin": "Màikè",
+      "meaning_vi": "Mike",
+      "meaning_en": "",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "proper_003",
+      "type": "proper_noun",
+      "order": 3,
+      "hanzi": "泰山",
+      "pinyin": "Tàishān",
+      "meaning_vi": "núi Thái Sơn",
+      "meaning_en": "",
+      "source_origin": "textbook",
+      "check_needed": false
+     }
+    ]
+   },
+   {
+    "id": "section_04_notes",
+    "type": "notes",
+    "order": 4,
+    "title": "注释",
+    "title_vi": "Chú thích",
+    "source_origin": "textbook/generated_mixed",
+    "check_needed": true,
+    "items": [
+     {
+      "id": "note_01",
+      "type": "note",
+      "order": 1,
+      "title": "钥匙忘拔下来了",
+      "structure": "忘 + V + 趋向补语 + 了",
+      "meaning_vi": "Tiếng Trung có thể lấy 钥匙 làm chủ ngữ chịu kết quả. Dịch tự nhiên: Tôi quên rút chìa khóa ra.",
+      "examples": [
+       {
+        "id": "note_01_ex_01",
+        "zh": "钥匙忘拔下来了。",
+        "pinyin": "",
+        "vi": "Chìa khóa quên rút ra rồi.",
+        "en": "",
+        "highlight": [],
+        "grammar_refs": [],
+        "vocab_refs": [],
+        "source_ref": "",
+        "note_vi": "",
+        "audio_key": "",
+        "source_origin": "textbook/generated_mixed",
+        "check_needed": true
+       },
+       {
+        "id": "note_01_ex_02",
+        "zh": "我忘了把钥匙拔下来。",
+        "pinyin": "",
+        "vi": "Tôi quên rút chìa khóa ra.",
+        "en": "",
+        "highlight": [],
+        "grammar_refs": [],
+        "vocab_refs": [],
+        "source_ref": "",
+        "note_vi": "",
+        "audio_key": "",
+        "source_origin": "generated",
+        "check_needed": true
+       }
+      ],
+      "source_refs": [],
+      "source_origin": "textbook/generated_mixed",
+      "check_needed": true
+     },
+     {
+      "id": "note_02",
+      "type": "note",
+      "order": 2,
+      "title": "哭笑不得",
+      "structure": "成语",
+      "meaning_vi": "Dở khóc dở cười; gặp chuyện vừa bực, vừa buồn cười, không biết phản ứng sao.",
+      "examples": [
+       {
+        "id": "note_02_ex_01",
+        "zh": "今天真是哭笑不得。",
+        "pinyin": "",
+        "vi": "Hôm nay đúng là dở khóc dở cười.",
+        "en": "",
+        "highlight": [],
+        "grammar_refs": [],
+        "vocab_refs": [],
+        "source_ref": "",
+        "note_vi": "",
+        "audio_key": "",
+        "source_origin": "textbook/generated_mixed",
+        "check_needed": true
+       }
+      ],
+      "source_refs": [],
+      "source_origin": "textbook/generated_mixed",
+      "check_needed": true
+     },
+     {
+      "id": "note_03",
+      "type": "note",
+      "order": 3,
+      "title": "各种各样",
+      "structure": "各种各样 + N",
+      "meaning_vi": "Đủ loại, đủ kiểu.",
+      "examples": [
+       {
+        "id": "note_03_ex_01",
+        "zh": "图书城里有各种各样的书。",
+        "pinyin": "",
+        "vi": "Trong trung tâm sách có đủ loại sách.",
+        "en": "",
+        "highlight": [],
+        "grammar_refs": [],
+        "vocab_refs": [],
+        "source_ref": "",
+        "note_vi": "",
+        "audio_key": "",
+        "source_origin": "textbook/generated_mixed",
+        "check_needed": true
+       },
+       {
+        "id": "note_03_ex_02",
+        "zh": "商场里有各种各样的礼品。",
+        "pinyin": "",
+        "vi": "Trong trung tâm thương mại có đủ loại quà tặng.",
+        "en": "",
+        "highlight": [],
+        "grammar_refs": [],
+        "vocab_refs": [],
+        "source_ref": "",
+        "note_vi": "",
+        "audio_key": "",
+        "source_origin": "generated",
+        "check_needed": true
+       }
+      ],
+      "source_refs": [],
+      "source_origin": "textbook/generated_mixed",
+      "check_needed": true
+     },
+     {
+      "id": "note_04",
+      "type": "note",
+      "order": 4,
+      "title": "只好",
+      "structure": "只好 + V",
+      "meaning_vi": "Đành phải, không còn cách nào khác.",
+      "examples": [
+       {
+        "id": "note_04_ex_01",
+        "zh": "电梯坏了，我们只好走楼梯。",
+        "pinyin": "",
+        "vi": "Thang máy hỏng rồi, chúng tôi đành đi cầu thang.",
+        "en": "",
+        "highlight": [],
+        "grammar_refs": [],
+        "vocab_refs": [],
+        "source_ref": "",
+        "note_vi": "",
+        "audio_key": "",
+        "source_origin": "textbook/generated_mixed",
+        "check_needed": true
+       },
+       {
+        "id": "note_04_ex_02",
+        "zh": "外边下雨了，我只好在家看书。",
+        "pinyin": "",
+        "vi": "Bên ngoài mưa rồi, tôi đành ở nhà đọc sách.",
+        "en": "",
+        "highlight": [],
+        "grammar_refs": [],
+        "vocab_refs": [],
+        "source_ref": "",
+        "note_vi": "",
+        "audio_key": "",
+        "source_origin": "generated",
+        "check_needed": true
+       }
+      ],
+      "source_refs": [],
+      "source_origin": "textbook/generated_mixed",
+      "check_needed": true
+     }
+    ]
+   },
+   {
+    "id": "section_05_grammar",
+    "type": "grammar",
+    "order": 5,
+    "title": "语法",
+    "title_vi": "Ngữ pháp",
+    "source_origin": "textbook",
+    "check_needed": false,
+    "items": [
+     {
+      "id": "grammar_01",
+      "type": "grammar_point",
+      "order": 1,
+      "title": "复合趋向补语",
+      "title_vi": "Bổ ngữ xu hướng kép",
+      "level": "HSK3-ish",
+      "tags": ["compound_directional_complement", "lai_qu"],
+      "source_origin": "textbook",
+      "check_needed": false,
+      "blocks": [
+       {
+        "id": "grammar_01_overview",
+        "type": "grammar_overview",
+        "order": 1,
+        "title": "Bản chất",
+        "content_vi": "Bổ ngữ xu hướng kép cho biết hành động đi theo hướng nào, đồng thời cho biết hướng đó về phía người nói hay rời xa người nói.",
+        "pattern": "V + 上/下/进/出/回/过/起 + 来/去",
+        "formulas": [
+         {
+          "label": "Lên",
+          "pattern": "上来 / 上去"
+         },
+         {
+          "label": "Xuống",
+          "pattern": "下来 / 下去"
+         },
+         {
+          "label": "Vào",
+          "pattern": "进来 / 进去"
+         },
+         {
+          "label": "Ra",
+          "pattern": "出来 / 出去"
+         },
+         {
+          "label": "Về",
+          "pattern": "回来 / 回去"
+         },
+         {
+          "label": "Qua",
+          "pattern": "过来 / 过去"
+         },
+         {
+          "label": "Dậy/lên/bắt đầu",
+          "pattern": "起来"
+         }
+        ],
+        "examples": [
+         {
+          "id": "grammar_01_ex_01",
+          "zh": "钥匙忘拔下来了。",
+          "pinyin": "",
+          "vi": "Chìa khóa quên rút ra rồi.",
+          "en": "",
+          "highlight": [],
+          "grammar_refs": ["grammar_01"],
+          "vocab_refs": [],
+          "source_ref": "text_01_l15",
+          "note_vi": "",
+          "audio_key": "",
+          "source_origin": "textbook/generated_mixed",
+          "check_needed": true
+         },
+         {
+          "id": "grammar_01_ex_02",
+          "zh": "售货员给我拿出来很多种。",
+          "pinyin": "",
+          "vi": "Nhân viên bán hàng lấy ra cho tôi rất nhiều loại.",
+          "en": "",
+          "highlight": [],
+          "grammar_refs": ["grammar_01"],
+          "vocab_refs": [],
+          "source_ref": "text_01_l11",
+          "note_vi": "",
+          "audio_key": "",
+          "source_origin": "textbook/generated_mixed",
+          "check_needed": true
+         },
+         {
+          "id": "grammar_01_ex_03",
+          "zh": "咱们进去看看吧。",
+          "pinyin": "",
+          "vi": "Chúng ta vào xem thử đi.",
+          "en": "",
+          "highlight": [],
+          "grammar_refs": ["grammar_01"],
+          "vocab_refs": [],
+          "source_ref": "",
+          "note_vi": "",
+          "audio_key": "",
+          "source_origin": "generated",
+          "check_needed": true
+         }
+        ],
+        "source_origin": "textbook",
+        "check_needed": false
+       }
+      ]
+     },
+     {
+      "id": "grammar_02",
+      "type": "grammar_point",
+      "order": 2,
+      "title": "来 / 去 的视点",
+      "title_vi": "来 / 去 khác nhau ở điểm nhìn",
+      "level": "HSK3-ish",
+      "tags": ["lai_qu", "viewpoint"],
+      "source_origin": "textbook",
+      "check_needed": false,
+      "blocks": [
+       {
+        "id": "grammar_02_compare",
+        "type": "grammar_compare",
+        "order": 1,
+        "title": "So sánh",
+        "items": [
+         {
+          "label": "来",
+          "meaning_vi": "Hướng về phía người nói / điểm nhìn.",
+          "examples": [
+           {
+            "zh": "他跑进来了。",
+            "vi": "Anh ấy chạy vào đây rồi."
+           },
+           {
+            "zh": "小鸟飞出来了。",
+            "vi": "Con chim bay ra đây rồi."
+           }
+          ]
+         },
+         {
+          "label": "去",
+          "meaning_vi": "Hướng rời xa người nói / đi tới phía khác.",
+          "examples": [
+           {
+            "zh": "他跑进去了。",
+            "vi": "Anh ấy chạy vào đó rồi."
+           },
+           {
+            "zh": "小鸟飞出去了。",
+            "vi": "Con chim bay ra ngoài kia rồi."
+           }
+          ]
+         }
+        ],
+        "source_origin": "textbook/generated_mixed",
+        "check_needed": true
+       }
+      ]
+     },
+     {
+      "id": "grammar_03",
+      "type": "grammar_point",
+      "order": 3,
+      "title": "宾语的位置",
+      "title_vi": "Vị trí tân ngữ trong bổ ngữ xu hướng kép",
+      "level": "HSK3-ish",
+      "tags": ["object_position", "compound_directional_complement"],
+      "source_origin": "textbook",
+      "check_needed": false,
+      "blocks": [
+       {
+        "id": "grammar_03_structure",
+        "type": "grammar_structure",
+        "order": 1,
+        "title": "Cấu trúc",
+        "pattern": "V + 趋向补语 + O / V + 趋向单 + O + 来/去",
+        "meaning_vi": "Tân ngữ nơi chốn thường đặt giữa xu hướng đơn và 来/去; tân ngữ sự vật có thể đặt sau cụm hoặc chen vào giữa.",
+        "examples": [
+         {
+          "id": "grammar_03_ex_01",
+          "zh": "他跑进教室来了。",
+          "pinyin": "",
+          "vi": "Anh ấy chạy vào lớp học rồi.",
+          "en": "",
+          "highlight": [],
+          "grammar_refs": ["grammar_03"],
+          "vocab_refs": [],
+          "source_ref": "",
+          "note_vi": "",
+          "audio_key": "",
+          "source_origin": "generated",
+          "check_needed": true
+         },
+         {
+          "id": "grammar_03_ex_02",
+          "zh": "他走回家去了。",
+          "pinyin": "",
+          "vi": "Anh ấy đi bộ về nhà rồi.",
+          "en": "",
+          "highlight": [],
+          "grammar_refs": ["grammar_03"],
+          "vocab_refs": [],
+          "source_ref": "",
+          "note_vi": "",
+          "audio_key": "",
+          "source_origin": "generated",
+          "check_needed": true
+         },
+         {
+          "id": "grammar_03_ex_03",
+          "zh": "他拿出来一本书。",
+          "pinyin": "",
+          "vi": "Anh ấy lấy ra một quyển sách.",
+          "en": "",
+          "highlight": [],
+          "grammar_refs": ["grammar_03"],
+          "vocab_refs": [],
+          "source_ref": "",
+          "note_vi": "",
+          "audio_key": "",
+          "source_origin": "generated",
+          "check_needed": true
+         },
+         {
+          "id": "grammar_03_ex_04",
+          "zh": "他拿出一本书来。",
+          "pinyin": "",
+          "vi": "Anh ấy lấy một quyển sách ra.",
+          "en": "",
+          "highlight": [],
+          "grammar_refs": ["grammar_03"],
+          "vocab_refs": [],
+          "source_ref": "",
+          "note_vi": "",
+          "audio_key": "",
+          "source_origin": "generated",
+          "check_needed": true
+         }
+        ],
+        "source_origin": "textbook/generated_mixed",
+        "check_needed": true
+       }
+      ]
+     },
+     {
+      "id": "grammar_04",
+      "type": "grammar_point",
+      "order": 4,
+      "title": "把 + O + V + 趋向补语",
+      "title_vi": "把 + tân ngữ + động từ + bổ ngữ xu hướng",
+      "level": "HSK3-ish",
+      "tags": ["ba_sentence", "directional_complement"],
+      "source_origin": "textbook/generated_mixed",
+      "check_needed": true,
+      "blocks": [
+       {
+        "id": "grammar_04_structure",
+        "type": "grammar_structure",
+        "order": 1,
+        "title": "Cấu trúc",
+        "pattern": "S + 把 + O + V + 趋向补语",
+        "meaning_vi": "Dùng khi muốn nhấn mạnh xử lý một vật xác định và làm nó đổi vị trí.",
+        "examples": [
+         {
+          "id": "grammar_04_ex_01",
+          "zh": "把钥匙拔下来。",
+          "pinyin": "",
+          "vi": "Rút chìa khóa ra.",
+          "en": "",
+          "highlight": [],
+          "grammar_refs": ["grammar_04"],
+          "vocab_refs": [],
+          "source_ref": "",
+          "note_vi": "",
+          "audio_key": "",
+          "source_origin": "generated",
+          "check_needed": true
+         },
+         {
+          "id": "grammar_04_ex_02",
+          "zh": "把书拿出来。",
+          "pinyin": "",
+          "vi": "Lấy sách ra.",
+          "en": "",
+          "highlight": [],
+          "grammar_refs": ["grammar_04"],
+          "vocab_refs": [],
+          "source_ref": "",
+          "note_vi": "",
+          "audio_key": "",
+          "source_origin": "generated",
+          "check_needed": true
+         },
+         {
+          "id": "grammar_04_ex_03",
+          "zh": "把东西放进去。",
+          "pinyin": "",
+          "vi": "Bỏ đồ vào.",
+          "en": "",
+          "highlight": [],
+          "grammar_refs": ["grammar_04"],
+          "vocab_refs": [],
+          "source_ref": "",
+          "note_vi": "",
+          "audio_key": "",
+          "source_origin": "generated",
+          "check_needed": true
+         },
+         {
+          "id": "grammar_04_ex_04",
+          "zh": "把箱子提上去。",
+          "pinyin": "",
+          "vi": "Xách cái thùng lên đó.",
+          "en": "",
+          "highlight": [],
+          "grammar_refs": ["grammar_04"],
+          "vocab_refs": [],
+          "source_ref": "",
+          "note_vi": "",
+          "audio_key": "",
+          "source_origin": "generated",
+          "check_needed": true
+         }
+        ],
+        "source_origin": "textbook/generated_mixed",
+        "check_needed": true
+       }
+      ]
+     },
+     {
+      "id": "grammar_05",
+      "type": "grammar_point",
+      "order": 5,
+      "title": "忘 + V",
+      "title_vi": "Quên làm gì",
+      "level": "HSK3-ish",
+      "tags": ["wang_v"],
+      "source_origin": "textbook/generated_mixed",
+      "check_needed": true,
+      "blocks": [
+       {
+        "id": "grammar_05_structure",
+        "type": "grammar_structure",
+        "order": 1,
+        "title": "Cấu trúc",
+        "pattern": "忘 + V / 忘了 + V",
+        "meaning_vi": "Quên làm một việc gì đó.",
+        "examples": [
+         {
+          "id": "grammar_05_ex_01",
+          "zh": "我忘了拔钥匙。",
+          "pinyin": "",
+          "vi": "Tôi quên rút chìa khóa.",
+          "en": "",
+          "highlight": [],
+          "grammar_refs": ["grammar_05"],
+          "vocab_refs": [],
+          "source_ref": "",
+          "note_vi": "",
+          "audio_key": "",
+          "source_origin": "generated",
+          "check_needed": true
+         },
+         {
+          "id": "grammar_05_ex_02",
+          "zh": "我忘了带书。",
+          "pinyin": "",
+          "vi": "Tôi quên mang sách.",
+          "en": "",
+          "highlight": [],
+          "grammar_refs": ["grammar_05"],
+          "vocab_refs": [],
+          "source_ref": "",
+          "note_vi": "",
+          "audio_key": "",
+          "source_origin": "generated",
+          "check_needed": true
+         },
+         {
+          "id": "grammar_05_ex_03",
+          "zh": "我忘了关门。",
+          "pinyin": "",
+          "vi": "Tôi quên đóng cửa.",
+          "en": "",
+          "highlight": [],
+          "grammar_refs": ["grammar_05"],
+          "vocab_refs": [],
+          "source_ref": "",
+          "note_vi": "",
+          "audio_key": "",
+          "source_origin": "generated",
+          "check_needed": true
+         },
+         {
+          "id": "grammar_05_ex_04",
+          "zh": "钥匙忘拔下来了。",
+          "pinyin": "",
+          "vi": "Chìa khóa quên rút ra rồi.",
+          "en": "",
+          "highlight": [],
+          "grammar_refs": ["grammar_05"],
+          "vocab_refs": [],
+          "source_ref": "text_01_l15",
+          "note_vi": "",
+          "audio_key": "",
+          "source_origin": "textbook/generated_mixed",
+          "check_needed": true
+         }
+        ],
+        "source_origin": "textbook/generated_mixed",
+        "check_needed": true
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "id": "section_06_exercises",
+    "type": "exercises",
+    "order": 6,
+    "title": "练习",
+    "title_vi": "Bài tập",
+    "source_origin": "textbook/generated_mixed",
+    "check_needed": true,
+    "items": [
+     {
+      "id": "exercise_01",
+      "type": "phonetics",
+      "variant": "",
+      "order": 1,
+      "title": "语音",
+      "title_vi": "Ngữ âm",
+      "instruction": {
+       "zh": "",
+       "vi": "Luyện âm và cụm trọng tâm."
+      },
+      "difficulty": "normal",
+      "skill_focus": ["pronunciation"],
+      "parts": [
+       {
+        "id": "exercise_01_part_01",
+        "type": "minimal_pair",
+        "title": "辨音辨调",
+        "items": [
+         {
+          "id": "pair_01",
+          "left": "túshūchéng",
+          "right": "túshūchēng"
+         },
+         {
+          "id": "pair_02",
+          "left": "gèzhǒng-gèyàng",
+          "right": "gèzhòng-gèyàng"
+         },
+         {
+          "id": "pair_03",
+          "left": "xīngfèn",
+          "right": "xīngfēn"
+         },
+         {
+          "id": "pair_04",
+          "left": "shūjià",
+          "right": "shūjiā"
+         },
+         {
+          "id": "pair_05",
+          "left": "tiāo",
+          "right": "tiǎo"
+         },
+         {
+          "id": "pair_06",
+          "left": "shòuhuòyuán",
+          "right": "shòuhuòyán"
+         },
+         {
+          "id": "pair_07",
+          "left": "yàoshi",
+          "right": "yàoshī"
+         },
+         {
+          "id": "pair_08",
+          "left": "yàoshiliàn",
+          "right": "yàoshilián"
+         },
+         {
+          "id": "pair_09",
+          "left": "zhǐxiāng",
+          "right": "zhǐxiàng"
+         },
+         {
+          "id": "pair_10",
+          "left": "hūrán",
+          "right": "húrán"
+         },
+         {
+          "id": "pair_11",
+          "left": "tūrán",
+          "right": "túrán"
+         },
+         {
+          "id": "pair_12",
+          "left": "zhǐhǎo",
+          "right": "zhīhǎo"
+         },
+         {
+          "id": "pair_13",
+          "left": "bá",
+          "right": "pá"
+         },
+         {
+          "id": "pair_14",
+          "left": "qíngkuàng",
+          "right": "qíngkuáng"
+         }
+        ],
+        "source_origin": "textbook/generated_mixed",
+        "check_needed": true
+       },
+       {
+        "id": "exercise_01_part_02",
+        "type": "read_aloud",
+        "title": "朗读",
+        "items": [
+         {
+          "id": "read_001",
+          "text": "钥匙忘拔下来了",
+          "pinyin": "",
+          "audio_key": ""
+         },
+         {
+          "id": "read_002",
+          "text": "把钥匙拔下来",
+          "pinyin": "",
+          "audio_key": ""
+         },
+         {
+          "id": "read_003",
+          "text": "把书拿出来",
+          "pinyin": "",
+          "audio_key": ""
+         },
+         {
+          "id": "read_004",
+          "text": "走进去",
+          "pinyin": "",
+          "audio_key": ""
+         },
+         {
+          "id": "read_005",
+          "text": "跑出来",
+          "pinyin": "",
+          "audio_key": ""
+         },
+         {
+          "id": "read_006",
+          "text": "骑车回去",
+          "pinyin": "",
+          "audio_key": ""
+         },
+         {
+          "id": "read_007",
+          "text": "拿出来很多种",
+          "pinyin": "",
+          "audio_key": ""
+         },
+         {
+          "id": "read_008",
+          "text": "让我慢慢儿挑",
+          "pinyin": "",
+          "audio_key": ""
+         },
+         {
+          "id": "read_009",
+          "text": "各种各样的书",
+          "pinyin": "",
+          "audio_key": ""
+         },
+         {
+          "id": "read_010",
+          "text": "一个脸谱钥匙链",
+          "pinyin": "",
+          "audio_key": ""
+         },
+         {
+          "id": "read_011",
+          "text": "我有点儿累了",
+          "pinyin": "",
+          "audio_key": ""
+         },
+         {
+          "id": "read_012",
+          "text": "今天真是哭笑不得",
+          "pinyin": "",
+          "audio_key": ""
+         }
+        ],
+        "source_origin": "textbook/generated_mixed",
+        "check_needed": true
+       }
+      ],
+      "source_origin": "textbook/generated_mixed",
+      "check_needed": true,
+      "rendering": {
+       "renderer": "exercise.phonetics.v1"
+      }
+     },
+     {
+      "id": "exercise_02",
+      "type": "substitution_drill",
+      "variant": "models",
+      "order": 2,
+      "title": "替换",
+      "title_vi": "Thay thế theo mẫu",
+      "instruction": {
+       "zh": "替换练习。",
+       "vi": "Luyện thay thế theo mẫu."
+      },
+      "difficulty": "normal",
+      "skill_focus": ["speaking", "grammar"],
+      "grammar_refs": ["grammar_01", "grammar_04", "grammar_05"],
+      "models": [
+       {
+        "id": "ex02_model_01",
+        "title": "模型一",
+        "dialogue": ["A：钥匙忘拔下来了。", "B：幸好没有丢。"],
+        "substitutions": [
+         "书 / 忘拿出来了",
+         "钱包 / 忘带出来了",
+         "手机 / 忘拿回来了",
+         "车 / 忘锁上了",
+         "门 / 忘关上了"
+        ]
+       },
+       {
+        "id": "ex02_model_02",
+        "title": "模型二",
+        "dialogue": ["A：售货员给我拿出来很多种。", "B：你挑了哪一种？"],
+        "substitutions": [
+         "老师 / 拿出来几本书",
+         "同学 / 拿出来一张照片",
+         "朋友 / 拿出来一个礼品",
+         "妈妈 / 拿出来一件衣服",
+         "服务员 / 拿出来几个玩具"
+        ]
+       },
+       {
+        "id": "ex02_model_03",
+        "title": "模型三",
+        "dialogue": ["A：我把钥匙拔下来了。", "B：放好了吗？"],
+        "substitutions": [
+         "书 / 拿出来",
+         "东西 / 放进去",
+         "箱子 / 提上去",
+         "礼品 / 拿回来",
+         "车 / 推过去"
+        ]
+       }
+      ],
+      "source_origin": "textbook/generated_mixed",
+      "check_needed": true,
+      "rendering": {
+       "renderer": "exercise.substitution_drill.v1"
+      }
+     },
+     {
+      "id": "exercise_03",
+      "type": "choose_words_fill_blank",
+      "variant": "word_bank",
+      "order": 3,
+      "title": "选词填空",
+      "title_vi": "Chọn từ điền chỗ trống",
+      "instruction": {
+       "zh": "选词填空。",
+       "vi": "Chọn từ thích hợp điền vào chỗ trống."
+      },
+      "difficulty": "normal",
+      "skill_focus": ["vocabulary", "grammar"],
+      "grammar_refs": [],
+      "word_bank": [
+       "图书城",
+       "书架",
+       "挑",
+       "礼品",
+       "售货员",
+       "商场",
+       "脸谱",
+       "钥匙",
+       "钥匙链",
+       "提",
+       "累",
+       "忽然",
+       "只好",
+       "插",
+       "拔",
+       "情况",
+       "电梯",
+       "楼梯",
+       "哭笑不得"
+      ],
+      "questions": [
+       {
+        "id": "ex03_q01",
+        "prompt": "星期天，玛丽和麦克去______买书。",
+        "answer": "图书城",
+        "acceptable_answers": ["图书城"],
+        "explanation_vi": "Đáp án theo nội dung bài và trọng tâm luyện tập.",
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "ex03_q02",
+        "prompt": "______上放着很多书。",
+        "answer": "书架",
+        "acceptable_answers": ["书架"],
+        "explanation_vi": "Đáp án theo nội dung bài và trọng tâm luyện tập.",
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "ex03_q03",
+        "prompt": "玛丽想买一些______。",
+        "answer": "礼品",
+        "acceptable_answers": ["礼品"],
+        "explanation_vi": "Đáp án theo nội dung bài và trọng tâm luyện tập.",
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "ex03_q04",
+        "prompt": "______给她拿出来很多种，让她慢慢儿______。",
+        "answer": "售货员 / 挑",
+        "acceptable_answers": ["售货员 / 挑"],
+        "explanation_vi": "Đáp án theo nội dung bài và trọng tâm luyện tập.",
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "ex03_q05",
+        "prompt": "玛丽买了一个______钥匙链。",
+        "answer": "脸谱",
+        "acceptable_answers": ["脸谱"],
+        "explanation_vi": "Đáp án theo nội dung bài và trọng tâm luyện tập.",
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "ex03_q06",
+        "prompt": "回去的时候，麦克有点儿______了。",
+        "answer": "累",
+        "acceptable_answers": ["累"],
+        "explanation_vi": "Đáp án theo nội dung bài và trọng tâm luyện tập.",
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "ex03_q07",
+        "prompt": "玛丽的东西有点儿多，请麦克帮她______一下儿。",
+        "answer": "提",
+        "acceptable_answers": ["提"],
+        "explanation_vi": "Đáp án theo nội dung bài và trọng tâm luyện tập.",
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "ex03_q08",
+        "prompt": "玛丽______发现车钥匙忘______下来了。",
+        "answer": "忽然 / 拔",
+        "acceptable_answers": ["忽然 / 拔"],
+        "explanation_vi": "Đáp án theo nội dung bài và trọng tâm luyện tập.",
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "ex03_q09",
+        "prompt": "钥匙还______在自行车上。",
+        "answer": "插",
+        "acceptable_answers": ["插"],
+        "explanation_vi": "Đáp án theo nội dung bài và trọng tâm luyện tập.",
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "ex03_q10",
+        "prompt": "电梯坏了，他们______走______。",
+        "answer": "只好 / 楼梯",
+        "acceptable_answers": ["只好 / 楼梯"],
+        "explanation_vi": "Đáp án theo nội dung bài và trọng tâm luyện tập.",
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "ex03_q11",
+        "prompt": "今天真是______。",
+        "answer": "哭笑不得",
+        "acceptable_answers": ["哭笑不得"],
+        "explanation_vi": "Đáp án theo nội dung bài và trọng tâm luyện tập.",
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       }
+      ],
+      "answer_key": [
+       {
+        "question_id": "ex03_q01",
+        "answer": "图书城",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "question_id": "ex03_q02",
+        "answer": "书架",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "question_id": "ex03_q03",
+        "answer": "礼品",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "question_id": "ex03_q04",
+        "answer": "售货员 / 挑",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "question_id": "ex03_q05",
+        "answer": "脸谱",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "question_id": "ex03_q06",
+        "answer": "累",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "question_id": "ex03_q07",
+        "answer": "提",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "question_id": "ex03_q08",
+        "answer": "忽然 / 拔",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "question_id": "ex03_q09",
+        "answer": "插",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "question_id": "ex03_q10",
+        "answer": "只好 / 楼梯",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "question_id": "ex03_q11",
+        "answer": "哭笑不得",
+        "answer_verified": false,
+        "check_needed": true
+       }
+      ],
+      "source_origin": "textbook/generated_mixed",
+      "check_needed": true,
+      "rendering": {
+       "renderer": "exercise.fill_blank.v1",
+       "input_mode": "dropdown",
+       "show_word_bank": true,
+       "show_answer_after_submit": true
+      }
+     },
+     {
+      "id": "exercise_04",
+      "type": "fill_blank",
+      "variant": "compound_directional_complement",
+      "order": 4,
+      "title": "用复合趋向补语完成句子",
+      "title_vi": "Dùng bổ ngữ xu hướng kép hoàn thành câu",
+      "instruction": {
+       "zh": "用复合趋向补语完成句子。",
+       "vi": "Dùng bổ ngữ xu hướng kép để hoàn thành câu."
+      },
+      "difficulty": "normal",
+      "skill_focus": ["grammar"],
+      "grammar_refs": ["grammar_01", "grammar_02", "grammar_03"],
+      "questions": [
+       {
+        "id": "ex04_q01",
+        "prompt": "老师把书拿______了。",
+        "answer": "出来",
+        "acceptable_answers": ["出来"],
+        "explanation_vi": "Đáp án theo nội dung bài và trọng tâm luyện tập.",
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "ex04_q02",
+        "prompt": "他跑进教室______。",
+        "answer": "来",
+        "acceptable_answers": ["来"],
+        "explanation_vi": "Đáp án theo nội dung bài và trọng tâm luyện tập.",
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "ex04_q03",
+        "prompt": "小鸟飞出______了。",
+        "answer": "去",
+        "acceptable_answers": ["去"],
+        "explanation_vi": "Đáp án theo nội dung bài và trọng tâm luyện tập.",
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "ex04_q04",
+        "prompt": "我们走回宿舍______。",
+        "answer": "去",
+        "acceptable_answers": ["去"],
+        "explanation_vi": "Đáp án theo nội dung bài và trọng tâm luyện tập.",
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "ex04_q05",
+        "prompt": "请你把东西放______。",
+        "answer": "进去",
+        "acceptable_answers": ["进去"],
+        "explanation_vi": "Đáp án theo nội dung bài và trọng tâm luyện tập.",
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "ex04_q06",
+        "prompt": "他从楼上走______了。",
+        "answer": "下来",
+        "acceptable_answers": ["下来"],
+        "explanation_vi": "Đáp án theo nội dung bài và trọng tâm luyện tập.",
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "ex04_q07",
+        "prompt": "我把钥匙拔______了。",
+        "answer": "下来",
+        "acceptable_answers": ["下来"],
+        "explanation_vi": "Đáp án theo nội dung bài và trọng tâm luyện tập.",
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "ex04_q08",
+        "prompt": "你把礼品拿______了吗？",
+        "answer": "回来",
+        "acceptable_answers": ["回来"],
+        "explanation_vi": "Đáp án theo nội dung bài và trọng tâm luyện tập.",
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "ex04_q09",
+        "prompt": "麦克骑车回______了。",
+        "answer": "去",
+        "acceptable_answers": ["去"],
+        "explanation_vi": "Đáp án theo nội dung bài và trọng tâm luyện tập.",
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "ex04_q10",
+        "prompt": "售货员拿______很多种商品。",
+        "answer": "出来",
+        "acceptable_answers": ["出来"],
+        "explanation_vi": "Đáp án theo nội dung bài và trọng tâm luyện tập.",
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       }
+      ],
+      "answer_key": [
+       {
+        "question_id": "ex04_q01",
+        "answer": "出来",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "question_id": "ex04_q02",
+        "answer": "来",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "question_id": "ex04_q03",
+        "answer": "去",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "question_id": "ex04_q04",
+        "answer": "去",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "question_id": "ex04_q05",
+        "answer": "进去",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "question_id": "ex04_q06",
+        "answer": "下来",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "question_id": "ex04_q07",
+        "answer": "下来",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "question_id": "ex04_q08",
+        "answer": "回来",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "question_id": "ex04_q09",
+        "answer": "去",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "question_id": "ex04_q10",
+        "answer": "出来",
+        "answer_verified": false,
+        "check_needed": true
+       }
+      ],
+      "source_origin": "textbook/generated_mixed",
+      "check_needed": true,
+      "rendering": {
+       "renderer": "exercise.fill_blank.v1",
+       "input_mode": "text",
+       "show_answer_after_submit": true
+      }
+     },
+     {
+      "id": "exercise_05",
+      "type": "correct_sentence",
+      "variant": "",
+      "order": 5,
+      "title": "改错句",
+      "title_vi": "Sửa câu sai",
+      "instruction": {
+       "zh": "改错句。",
+       "vi": "Sửa lỗi trong câu."
+      },
+      "difficulty": "hard",
+      "skill_focus": ["grammar", "sentence_order"],
+      "grammar_refs": [
+       "grammar_01",
+       "grammar_02",
+       "grammar_03",
+       "grammar_04",
+       "grammar_05"
+      ],
+      "questions": [
+       {
+        "id": "ex05_q01",
+        "wrong_sentence": "钥匙忘拔下去来了。",
+        "correct_sentence": "钥匙忘拔下来了。",
+        "acceptable_answers": ["钥匙忘拔下来了。"],
+        "explanation_vi": "拔下来表示从插着的位置取下来/取出。",
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "ex05_q02",
+        "wrong_sentence": "他跑进来了教室。",
+        "correct_sentence": "他跑进教室来了。",
+        "acceptable_answers": ["他跑进教室来了。"],
+        "explanation_vi": "处所宾语 教室 常放在 进 和 来 之间。",
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "ex05_q03",
+        "wrong_sentence": "我把书拿出来了桌子。",
+        "correct_sentence": "我把书从桌子上拿出来了。",
+        "acceptable_answers": ["我把书从桌子上拿出来了。"],
+        "explanation_vi": "从桌子上表示来源，拿出来表示取出。",
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "ex05_q04",
+        "wrong_sentence": "售货员拿很多种出来。",
+        "correct_sentence": "售货员拿出来很多种。",
+        "acceptable_answers": ["售货员拿出来很多种。"],
+        "explanation_vi": "事物宾语可放在复合趋向补语后。",
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "ex05_q05",
+        "wrong_sentence": "我忘带出来钱包了。",
+        "correct_sentence": "我忘把钱包带出来了。 / 我忘带钱包出来了。",
+        "acceptable_answers": ["我忘把钱包带出来了。 / 我忘带钱包出来了。"],
+        "explanation_vi": "把结构更自然；也可说 忘带钱包出来了。",
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "ex05_q06",
+        "wrong_sentence": "他走回去了家。",
+        "correct_sentence": "他走回家去了。",
+        "acceptable_answers": ["他走回家去了。"],
+        "explanation_vi": "处所宾语 家 放在 回 和 去 之间。",
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "ex05_q07",
+        "wrong_sentence": "请你把东西放去进。",
+        "correct_sentence": "请你把东西放进去。",
+        "acceptable_answers": ["请你把东西放进去。"],
+        "explanation_vi": "顺序是 进 + 去。",
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "ex05_q08",
+        "wrong_sentence": "小鸟飞出教室去了。",
+        "correct_sentence": "小鸟从教室里飞出去了。",
+        "acceptable_answers": ["小鸟从教室里飞出去了。"],
+        "explanation_vi": "用 从教室里 标明来源更自然。",
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "ex05_q09",
+        "wrong_sentence": "我把钥匙拔下来了了。",
+        "correct_sentence": "我把钥匙拔下来了。",
+        "acceptable_answers": ["我把钥匙拔下来了。"],
+        "explanation_vi": "句末 了 不重复。",
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "ex05_q10",
+        "wrong_sentence": "电梯坏了，我们只得好走楼梯。",
+        "correct_sentence": "电梯坏了，我们只好走楼梯。",
+        "acceptable_answers": ["电梯坏了，我们只好走楼梯。"],
+        "explanation_vi": "固定词是 只好。",
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       }
+      ],
+      "answer_key": [
+       {
+        "question_id": "ex05_q01",
+        "answer": "钥匙忘拔下来了。",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "question_id": "ex05_q02",
+        "answer": "他跑进教室来了。",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "question_id": "ex05_q03",
+        "answer": "我把书从桌子上拿出来了。",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "question_id": "ex05_q04",
+        "answer": "售货员拿出来很多种。",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "question_id": "ex05_q05",
+        "answer": "我忘把钱包带出来了。 / 我忘带钱包出来了。",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "question_id": "ex05_q06",
+        "answer": "他走回家去了。",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "question_id": "ex05_q07",
+        "answer": "请你把东西放进去。",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "question_id": "ex05_q08",
+        "answer": "小鸟从教室里飞出去了。",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "question_id": "ex05_q09",
+        "answer": "我把钥匙拔下来了。",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "question_id": "ex05_q10",
+        "answer": "电梯坏了，我们只好走楼梯。",
+        "answer_verified": false,
+        "check_needed": true
+       }
+      ],
+      "source_origin": "textbook/generated_mixed",
+      "check_needed": true,
+      "rendering": {
+       "renderer": "exercise.correct_sentence.v1",
+       "show_answer_after_submit": true
+      }
+     }
+    ]
+   },
+   {
+    "id": "section_07_communication",
+    "type": "communication",
+    "order": 7,
+    "title": "交际会话",
+    "title_vi": "Hội thoại giao tiếp",
+    "source_origin": "textbook/generated_mixed",
+    "check_needed": true,
+    "items": [
+     {
+      "id": "communication_01",
+      "type": "communication_dialogue",
+      "variant": "",
+      "order": 1,
+      "title": "去图书城",
+      "title_vi": "Đi trung tâm sách",
+      "function": "",
+      "function_vi": "Đi trung tâm sách",
+      "dialogue": [
+       {
+        "speaker": "A",
+        "text": "今天我们去图书城吧。",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": ""
+       },
+       {
+        "speaker": "B",
+        "text": "好啊。听说那儿有各种各样的书。",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": ""
+       },
+       {
+        "speaker": "A",
+        "text": "咱们骑车去吧。",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": ""
+       },
+       {
+        "speaker": "B",
+        "text": "可以，骑车二十多分钟就到了。",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": ""
+       }
+      ],
+      "source_origin": "textbook/generated_mixed",
+      "check_needed": true
+     },
+     {
+      "id": "communication_02",
+      "type": "communication_dialogue",
+      "variant": "",
+      "order": 2,
+      "title": "买礼品",
+      "title_vi": "Mua quà tặng",
+      "function": "",
+      "function_vi": "Mua quà tặng",
+      "dialogue": [
+       {
+        "speaker": "A",
+        "text": "这个钥匙链真漂亮，是在哪儿买的？",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": ""
+       },
+       {
+        "speaker": "B",
+        "text": "在那边的商场买的。",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": ""
+       },
+       {
+        "speaker": "A",
+        "text": "售货员给你看了几种？",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": ""
+       },
+       {
+        "speaker": "B",
+        "text": "她给我拿出来很多种，让我慢慢儿挑。",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": ""
+       }
+      ],
+      "source_origin": "textbook/generated_mixed",
+      "check_needed": true
+     },
+     {
+      "id": "communication_03",
+      "type": "communication_dialogue",
+      "variant": "",
+      "order": 3,
+      "title": "忘拔钥匙",
+      "title_vi": "Quên rút chìa khóa",
+      "function": "",
+      "function_vi": "Quên rút chìa khóa",
+      "dialogue": [
+       {
+        "speaker": "A",
+        "text": "糟糕！我的车钥匙忘拔下来了。",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": ""
+       },
+       {
+        "speaker": "B",
+        "text": "在哪儿？",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": ""
+       },
+       {
+        "speaker": "A",
+        "text": "还在自行车上呢。",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": ""
+       },
+       {
+        "speaker": "B",
+        "text": "幸好没有丢。以后可得小心点儿。",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": ""
+       },
+       {
+        "speaker": "A",
+        "text": "是啊，今天真是哭笑不得。",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": ""
+       }
+      ],
+      "source_origin": "textbook/generated_mixed",
+      "check_needed": true
+     }
+    ]
+   },
+   {
+    "id": "section_08_reading",
+    "type": "reading",
+    "order": 8,
+    "title": "阅读理解 / 阅读填空",
+    "title_vi": "Đọc hiểu / Điền khuyết",
+    "source_origin": "generated",
+    "check_needed": true,
+    "note_vi": "Bài đọc và điền khuyết bổ sung cho app theo trọng tâm 复合趋向补语 / 忘 + V; không đánh là textbook nếu chưa đối chiếu PDF gốc.",
+    "items": [
+     {
+      "id": "reading_01",
+      "type": "reading_text",
+      "order": 1,
+      "title": "我忘把手机拿出来了",
+      "title_vi": "Tôi quên lấy điện thoại ra rồi",
+      "paragraphs": [
+       {
+        "id": "reading_01_p01",
+        "order": 1,
+        "zh": "星期六下午，我和朋友一起去图书城买书。图书城很大，书架上放着各种各样的书。我想买一本汉语词典，可是挑了半天也不知道该买哪一本。",
+        "pinyin": "",
+        "vi": "",
+        "grammar_refs": ["grammar_01", "grammar_04", "grammar_05"],
+        "vocab_refs": [],
+        "source_origin": "generated",
+        "check_needed": true
+       },
+       {
+        "id": "reading_01_p02",
+        "order": 2,
+        "zh": "后来，售货员给我拿出来几本词典，让我慢慢儿挑。我觉得其中一本不错，就买下来了。朋友还在旁边的商场买了一个钥匙链和一些小礼品。",
+        "pinyin": "",
+        "vi": "",
+        "grammar_refs": ["grammar_01", "grammar_04", "grammar_05"],
+        "vocab_refs": [],
+        "source_origin": "generated",
+        "check_needed": true
+       },
+       {
+        "id": "reading_01_p03",
+        "order": 3,
+        "zh": "回宿舍以后，我忽然发现手机不见了。我想了想，才想起来：刚才在图书城看书的时候，我把手机放在桌子上，忘拿回来了。",
+        "pinyin": "",
+        "vi": "",
+        "grammar_refs": ["grammar_01", "grammar_04", "grammar_05"],
+        "vocab_refs": [],
+        "source_origin": "generated",
+        "check_needed": true
+       },
+       {
+        "id": "reading_01_p04",
+        "order": 4,
+        "zh": "我只好马上骑车回图书城。幸好手机还在桌子上。今天真是哭笑不得，以后出门一定要小心。",
+        "pinyin": "",
+        "vi": "",
+        "grammar_refs": ["grammar_01", "grammar_04", "grammar_05"],
+        "vocab_refs": [],
+        "source_origin": "generated",
+        "check_needed": true
+       }
+      ],
+      "questions": [
+       {
+        "id": "reading_q01",
+        "question": "星期六下午，“我”和朋友去哪儿？",
+        "answer": "他们去图书城买书。",
+        "source_origin": "generated",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "reading_q02",
+        "question": "图书城怎么样？",
+        "answer": "图书城很大，书架上放着各种各样的书。",
+        "source_origin": "generated",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "reading_q03",
+        "question": "“我”想买什么？",
+        "answer": "“我”想买一本汉语词典。",
+        "source_origin": "generated",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "reading_q04",
+        "question": "售货员给“我”拿出来什么？",
+        "answer": "拿出来几本词典。",
+        "source_origin": "generated",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "reading_q05",
+        "question": "朋友买了什么？",
+        "answer": "朋友买了一个钥匙链和一些小礼品。",
+        "source_origin": "generated",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "reading_q06",
+        "question": "回宿舍以后，“我”发现什么不见了？",
+        "answer": "发现手机不见了。",
+        "source_origin": "generated",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "reading_q07",
+        "question": "“我”把手机忘在哪儿了？",
+        "answer": "忘在图书城的桌子上了。",
+        "source_origin": "generated",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "reading_q08",
+        "question": "“我”后来怎么做？",
+        "answer": "马上骑车回图书城。",
+        "source_origin": "generated",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "reading_q09",
+        "question": "手机还在不在？",
+        "answer": "还在桌子上。",
+        "source_origin": "generated",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "reading_q10",
+        "question": "这件事以后，“我”觉得应该怎么样？",
+        "answer": "以后出门一定要小心。",
+        "source_origin": "generated",
+        "answer_verified": false,
+        "check_needed": true
+       }
+      ],
+      "source_origin": "generated",
+      "check_needed": true
+     },
+     {
+      "id": "reading_cloze_01",
+      "type": "reading_cloze",
+      "order": 2,
+      "title": "综合填空：我忘把手机拿出来了",
+      "title_vi": "Điền tổng hợp: Tôi quên lấy điện thoại ra rồi",
+      "instruction": {
+       "zh": "综合填空。",
+       "vi": "Điền từ thích hợp vào chỗ trống trong bài đọc."
+      },
+      "word_bank": [
+       "图书城",
+       "各种各样",
+       "挑",
+       "拿出来",
+       "钥匙链",
+       "忽然",
+       "想起来",
+       "忘拿回来",
+       "只好",
+       "哭笑不得"
+      ],
+      "passage": {
+       "id": "cloze_passage_01",
+       "segments": [
+        {
+         "id": "seg_001",
+         "type": "text",
+         "text": "星期六下午，我和朋友一起去"
+        },
+        {
+         "id": "seg_002",
+         "type": "blank",
+         "blank_id": "blank_01"
+        },
+        {
+         "id": "seg_003",
+         "type": "text",
+         "text": "买书。书架上放着"
+        },
+        {
+         "id": "seg_004",
+         "type": "blank",
+         "blank_id": "blank_02"
+        },
+        {
+         "id": "seg_005",
+         "type": "text",
+         "text": "的书。我"
+        },
+        {
+         "id": "seg_006",
+         "type": "blank",
+         "blank_id": "blank_03"
+        },
+        {
+         "id": "seg_007",
+         "type": "text",
+         "text": "了半天也不知道该买哪一本。售货员给我"
+        },
+        {
+         "id": "seg_008",
+         "type": "blank",
+         "blank_id": "blank_04"
+        },
+        {
+         "id": "seg_009",
+         "type": "text",
+         "text": "几本词典。朋友买了一个"
+        },
+        {
+         "id": "seg_010",
+         "type": "blank",
+         "blank_id": "blank_05"
+        },
+        {
+         "id": "seg_011",
+         "type": "text",
+         "text": "和一些小礼品。回宿舍以后，我"
+        },
+        {
+         "id": "seg_012",
+         "type": "blank",
+         "blank_id": "blank_06"
+        },
+        {
+         "id": "seg_013",
+         "type": "text",
+         "text": "发现手机不见了。我才"
+        },
+        {
+         "id": "seg_014",
+         "type": "blank",
+         "blank_id": "blank_07"
+        },
+        {
+         "id": "seg_015",
+         "type": "text",
+         "text": "，手机放在图书城的桌子上。我把手机"
+        },
+        {
+         "id": "seg_016",
+         "type": "blank",
+         "blank_id": "blank_08"
+        },
+        {
+         "id": "seg_017",
+         "type": "text",
+         "text": "了。我"
+        },
+        {
+         "id": "seg_018",
+         "type": "blank",
+         "blank_id": "blank_09"
+        },
+        {
+         "id": "seg_019",
+         "type": "text",
+         "text": "马上骑车回图书城。今天真是"
+        },
+        {
+         "id": "seg_020",
+         "type": "blank",
+         "blank_id": "blank_10"
+        },
+        {
+         "id": "seg_021",
+         "type": "text",
+         "text": "。"
+        }
+       ]
+      },
+      "answers": [
+       {
+        "blank_id": "blank_01",
+        "answer": "图书城",
+        "acceptable_answers": ["图书城"],
+        "explanation_vi": "Đáp án theo bài đọc bổ sung generated.",
+        "grammar_refs": ["grammar_01", "grammar_04", "grammar_05"],
+        "source_origin": "generated",
+        "check_needed": true
+       },
+       {
+        "blank_id": "blank_02",
+        "answer": "各种各样",
+        "acceptable_answers": ["各种各样"],
+        "explanation_vi": "Đáp án theo bài đọc bổ sung generated.",
+        "grammar_refs": ["grammar_01", "grammar_04", "grammar_05"],
+        "source_origin": "generated",
+        "check_needed": true
+       },
+       {
+        "blank_id": "blank_03",
+        "answer": "挑",
+        "acceptable_answers": ["挑"],
+        "explanation_vi": "Đáp án theo bài đọc bổ sung generated.",
+        "grammar_refs": ["grammar_01", "grammar_04", "grammar_05"],
+        "source_origin": "generated",
+        "check_needed": true
+       },
+       {
+        "blank_id": "blank_04",
+        "answer": "拿出来",
+        "acceptable_answers": ["拿出来"],
+        "explanation_vi": "Đáp án theo bài đọc bổ sung generated.",
+        "grammar_refs": ["grammar_01", "grammar_04", "grammar_05"],
+        "source_origin": "generated",
+        "check_needed": true
+       },
+       {
+        "blank_id": "blank_05",
+        "answer": "钥匙链",
+        "acceptable_answers": ["钥匙链"],
+        "explanation_vi": "Đáp án theo bài đọc bổ sung generated.",
+        "grammar_refs": ["grammar_01", "grammar_04", "grammar_05"],
+        "source_origin": "generated",
+        "check_needed": true
+       },
+       {
+        "blank_id": "blank_06",
+        "answer": "忽然",
+        "acceptable_answers": ["忽然"],
+        "explanation_vi": "Đáp án theo bài đọc bổ sung generated.",
+        "grammar_refs": ["grammar_01", "grammar_04", "grammar_05"],
+        "source_origin": "generated",
+        "check_needed": true
+       },
+       {
+        "blank_id": "blank_07",
+        "answer": "想起来",
+        "acceptable_answers": ["想起来"],
+        "explanation_vi": "Đáp án theo bài đọc bổ sung generated.",
+        "grammar_refs": ["grammar_01", "grammar_04", "grammar_05"],
+        "source_origin": "generated",
+        "check_needed": true
+       },
+       {
+        "blank_id": "blank_08",
+        "answer": "忘拿回来",
+        "acceptable_answers": ["忘拿回来"],
+        "explanation_vi": "Đáp án theo bài đọc bổ sung generated.",
+        "grammar_refs": ["grammar_01", "grammar_04", "grammar_05"],
+        "source_origin": "generated",
+        "check_needed": true
+       },
+       {
+        "blank_id": "blank_09",
+        "answer": "只好",
+        "acceptable_answers": ["只好"],
+        "explanation_vi": "Đáp án theo bài đọc bổ sung generated.",
+        "grammar_refs": ["grammar_01", "grammar_04", "grammar_05"],
+        "source_origin": "generated",
+        "check_needed": true
+       },
+       {
+        "blank_id": "blank_10",
+        "answer": "哭笑不得",
+        "acceptable_answers": ["哭笑不得"],
+        "explanation_vi": "Đáp án theo bài đọc bổ sung generated.",
+        "grammar_refs": ["grammar_01", "grammar_04", "grammar_05"],
+        "source_origin": "generated",
+        "check_needed": true
+       }
+      ],
+      "answer_key": [
+       {
+        "blank_id": "blank_01",
+        "answer": "图书城",
+        "source_origin": "generated",
+        "check_needed": true
+       },
+       {
+        "blank_id": "blank_02",
+        "answer": "各种各样",
+        "source_origin": "generated",
+        "check_needed": true
+       },
+       {
+        "blank_id": "blank_03",
+        "answer": "挑",
+        "source_origin": "generated",
+        "check_needed": true
+       },
+       {
+        "blank_id": "blank_04",
+        "answer": "拿出来",
+        "source_origin": "generated",
+        "check_needed": true
+       },
+       {
+        "blank_id": "blank_05",
+        "answer": "钥匙链",
+        "source_origin": "generated",
+        "check_needed": true
+       },
+       {
+        "blank_id": "blank_06",
+        "answer": "忽然",
+        "source_origin": "generated",
+        "check_needed": true
+       },
+       {
+        "blank_id": "blank_07",
+        "answer": "想起来",
+        "source_origin": "generated",
+        "check_needed": true
+       },
+       {
+        "blank_id": "blank_08",
+        "answer": "忘拿回来",
+        "source_origin": "generated",
+        "check_needed": true
+       },
+       {
+        "blank_id": "blank_09",
+        "answer": "只好",
+        "source_origin": "generated",
+        "check_needed": true
+       },
+       {
+        "blank_id": "blank_10",
+        "answer": "哭笑不得",
+        "source_origin": "generated",
+        "check_needed": true
+       }
+      ],
+      "rendering": {
+       "renderer": "reading.cloze.v1",
+       "input_mode": "text",
+       "show_word_bank": true,
+       "show_answer_after_submit": true
+      },
+      "source_origin": "generated",
+      "check_needed": true
+     }
+    ]
+   },
+   {
+    "id": "section_09_character_writing",
+    "type": "character_writing",
+    "order": 9,
+    "title": "写汉字",
+    "title_vi": "Viết chữ Hán",
+    "source_origin": "generated",
+    "check_needed": true,
+    "items": [
+     {
+      "id": "char_001",
+      "type": "character_writing_item",
+      "order": 1,
+      "hanzi": "图",
+      "pinyin": "tú",
+      "vocab_ref": "vocab_001",
+      "stroke_count": null,
+      "radical": "",
+      "stroke_order_key": "",
+      "practice": {
+       "grid_type": "田字格",
+       "repeat_count": 6
+      },
+      "source_origin": "generated",
+      "check_needed": true
+     },
+     {
+      "id": "char_002",
+      "type": "character_writing_item",
+      "order": 2,
+      "hanzi": "书",
+      "pinyin": "shū",
+      "vocab_ref": "vocab_002",
+      "stroke_count": null,
+      "radical": "",
+      "stroke_order_key": "",
+      "practice": {
+       "grid_type": "田字格",
+       "repeat_count": 6
+      },
+      "source_origin": "generated",
+      "check_needed": true
+     },
+     {
+      "id": "char_003",
+      "type": "character_writing_item",
+      "order": 3,
+      "hanzi": "城",
+      "pinyin": "chéng",
+      "vocab_ref": "vocab_001",
+      "stroke_count": null,
+      "radical": "",
+      "stroke_order_key": "",
+      "practice": {
+       "grid_type": "田字格",
+       "repeat_count": 6
+      },
+      "source_origin": "generated",
+      "check_needed": true
+     },
+     {
+      "id": "char_004",
+      "type": "character_writing_item",
+      "order": 4,
+      "hanzi": "挑",
+      "pinyin": "tiāo",
+      "vocab_ref": "vocab_010",
+      "stroke_count": null,
+      "radical": "",
+      "stroke_order_key": "",
+      "practice": {
+       "grid_type": "田字格",
+       "repeat_count": 6
+      },
+      "source_origin": "generated",
+      "check_needed": true
+     },
+     {
+      "id": "char_005",
+      "type": "character_writing_item",
+      "order": 5,
+      "hanzi": "礼",
+      "pinyin": "lǐ",
+      "vocab_ref": "vocab_013",
+      "stroke_count": null,
+      "radical": "",
+      "stroke_order_key": "",
+      "practice": {
+       "grid_type": "田字格",
+       "repeat_count": 6
+      },
+      "source_origin": "generated",
+      "check_needed": true
+     },
+     {
+      "id": "char_006",
+      "type": "character_writing_item",
+      "order": 6,
+      "hanzi": "品",
+      "pinyin": "pǐn",
+      "vocab_ref": "vocab_013",
+      "stroke_count": null,
+      "radical": "",
+      "stroke_order_key": "",
+      "practice": {
+       "grid_type": "田字格",
+       "repeat_count": 6
+      },
+      "source_origin": "generated",
+      "check_needed": true
+     },
+     {
+      "id": "char_007",
+      "type": "character_writing_item",
+      "order": 7,
+      "hanzi": "钥",
+      "pinyin": "yào",
+      "vocab_ref": "vocab_021",
+      "stroke_count": null,
+      "radical": "",
+      "stroke_order_key": "",
+      "practice": {
+       "grid_type": "田字格",
+       "repeat_count": 6
+      },
+      "source_origin": "generated",
+      "check_needed": true
+     },
+     {
+      "id": "char_008",
+      "type": "character_writing_item",
+      "order": 8,
+      "hanzi": "匙",
+      "pinyin": "shi",
+      "vocab_ref": "vocab_021",
+      "stroke_count": null,
+      "radical": "",
+      "stroke_order_key": "",
+      "practice": {
+       "grid_type": "田字格",
+       "repeat_count": 6
+      },
+      "source_origin": "generated",
+      "check_needed": true
+     },
+     {
+      "id": "char_009",
+      "type": "character_writing_item",
+      "order": 9,
+      "hanzi": "链",
+      "pinyin": "liàn",
+      "vocab_ref": "vocab_022",
+      "stroke_count": null,
+      "radical": "",
+      "stroke_order_key": "",
+      "practice": {
+       "grid_type": "田字格",
+       "repeat_count": 6
+      },
+      "source_origin": "generated",
+      "check_needed": true
+     },
+     {
+      "id": "char_010",
+      "type": "character_writing_item",
+      "order": 10,
+      "hanzi": "提",
+      "pinyin": "tí",
+      "vocab_ref": "vocab_026",
+      "stroke_count": null,
+      "radical": "",
+      "stroke_order_key": "",
+      "practice": {
+       "grid_type": "田字格",
+       "repeat_count": 6
+      },
+      "source_origin": "generated",
+      "check_needed": true
+     },
+     {
+      "id": "char_011",
+      "type": "character_writing_item",
+      "order": 11,
+      "hanzi": "累",
+      "pinyin": "lèi",
+      "vocab_ref": "vocab_027",
+      "stroke_count": null,
+      "radical": "",
+      "stroke_order_key": "",
+      "practice": {
+       "grid_type": "田字格",
+       "repeat_count": 6
+      },
+      "source_origin": "generated",
+      "check_needed": true
+     },
+     {
+      "id": "char_012",
+      "type": "character_writing_item",
+      "order": 12,
+      "hanzi": "拔",
+      "pinyin": "bá",
+      "vocab_ref": "vocab_037",
+      "stroke_count": null,
+      "radical": "",
+      "stroke_order_key": "",
+      "practice": {
+       "grid_type": "田字格",
+       "repeat_count": 6
+      },
+      "source_origin": "generated",
+      "check_needed": true
+     }
+    ]
+   }
+  ],
+  "summary": {
+   "lesson_parts": [
+    "课文",
+    "生词",
+    "专名",
+    "注释",
+    "语法",
+    "练习",
+    "交际会话",
+    "阅读理解 / 阅读填空",
+    "写汉字"
+   ],
+   "grammar_points": [
+    {
+     "id": "grammar_01",
+     "title": "复合趋向补语: V + 上/下/进/出/回/过/起 + 来/去"
+    },
+    {
+     "id": "grammar_02",
+     "title": "来 / 去 khác nhau ở điểm nhìn người nói"
+    },
+    {
+     "id": "grammar_03",
+     "title": "Vị trí tân ngữ trong bổ ngữ xu hướng kép"
+    },
+    {
+     "id": "grammar_04",
+     "title": "把 + O + V + 出来 / 下来 / 进去"
+    },
+    {
+     "id": "grammar_05",
+     "title": "忘 + V"
+    }
+   ],
+   "main_patterns": [
+    {
+     "pattern": "钥匙忘拔下来了。",
+     "grammar_ref": "grammar_01"
+    },
+    {
+     "pattern": "把钥匙拔下来。",
+     "grammar_ref": "grammar_04"
+    },
+    {
+     "pattern": "售货员给我拿出来很多种。",
+     "grammar_ref": "grammar_01"
+    },
+    {
+     "pattern": "他跑进教室来了。",
+     "grammar_ref": "grammar_03"
+    },
+    {
+     "pattern": "他走回家去了。",
+     "grammar_ref": "grammar_03"
+    },
+    {
+     "pattern": "请你把东西放进去。",
+     "grammar_ref": "grammar_04"
+    },
+    {
+     "pattern": "我忘了拔钥匙。",
+     "grammar_ref": "grammar_05"
+    },
+    {
+     "pattern": "我忘把手机拿回来了。",
+     "grammar_ref": "grammar_05"
+    },
+    {
+     "pattern": "电梯坏了，我们只好走楼梯。",
+     "grammar_ref": "note_04"
+    },
+    {
+     "pattern": "今天真是哭笑不得。",
+     "grammar_ref": "note_02"
+    }
+   ],
+   "exercise_types": [
+    "phonetics",
+    "read_aloud",
+    "substitution_drill",
+    "choose_words_fill_blank",
+    "fill_blank",
+    "correct_sentence",
+    "communication_dialogue",
+    "reading_text",
+    "reading_cloze",
+    "character_writing"
+   ],
+   "source_origin_policy": {
+    "textbook": "Copied/structured from textbook/PDF content.",
+    "web_crosscheck": "Used to confirm lesson title, vocabulary range, and grammar topics.",
+    "uploaded_crosscheck": "Used to verify lesson order, grammar summary, and existing vocabulary notes.",
+    "generated": "Generated for app practice/rendering; must be treated as non-textbook unless verified separately.",
+    "textbook/generated_mixed": "Based on textbook communicative function but formatted/simplified for app rendering.",
+    "textbook_question_generated_answer": "Question comes from textbook-style comprehension; answer generated from the text."
+   },
+   "check_needed": true
+  }
+ },
+ "fix_history": [
+  {
+   "fix_id": "lesson_02_v2_2_initial_with_reading_v1",
+   "description": "Created lesson 2 in current Quyển 2 Hạ app flow, mapped to textbook 第十四课 钥匙忘拔下来了, with non-empty reading_text and reading_cloze sections following v2.2.0 final verified schema.",
+   "source_origin": "generated",
+   "check_needed": true
+  }
+ ]
+}
