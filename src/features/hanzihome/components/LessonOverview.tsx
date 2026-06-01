@@ -810,21 +810,11 @@ function SourceLessonOverview({ lessonDocument }: { lessonDocument: HanyuLesson 
 
 export function LessonOverview({
  lesson,
- onOpenModule,
 }: LessonOverviewProps) {
  const fallbackMarkdown = lesson.notes?.overviewMarkdown?.trim();
 
  return (
   <div className="grid gap-3">
-   <div className="flex flex-wrap justify-end gap-2">
-    <Button type="button" variant="outline" size="sm" onClick={() => onOpenModule("lessonText")}>
-     Mở bài khóa
-    </Button>
-    <Button type="button" variant="outline" size="sm" onClick={() => onOpenModule("grammar")}>
-     Mở ngữ pháp
-    </Button>
-   </div>
-
    {lesson.sourceLesson ? (
     <SourceLessonOverview lessonDocument={lesson.sourceLesson} />
    ) : fallbackMarkdown ? (

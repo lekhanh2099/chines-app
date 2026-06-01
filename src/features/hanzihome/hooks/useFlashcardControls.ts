@@ -10,6 +10,8 @@ type UseFlashcardControlsInput = {
   writingCharacterCount?: number;
   onReveal: () => void;
   onAnswer: (result: ReviewResult) => void;
+  onPrevious?: () => void;
+  onNext?: () => void;
   onOpenDetail?: () => void;
   onSelectWritingCharacter?: (index: number) => void;
 };
@@ -36,6 +38,8 @@ export function useFlashcardControls({
   writingCharacterCount = 0,
   onReveal,
   onAnswer,
+  onPrevious,
+  onNext,
   onOpenDetail,
   onSelectWritingCharacter,
 }: UseFlashcardControlsInput): SwipeHandlers {
@@ -56,6 +60,18 @@ export function useFlashcardControls({
       if (event.key.toLowerCase() === "d" && canOpenDetail && onOpenDetail) {
         event.preventDefault();
         onOpenDetail();
+        return;
+      }
+
+      if (event.key.toLowerCase() === "p" && onPrevious) {
+        event.preventDefault();
+        onPrevious();
+        return;
+      }
+
+      if (event.key.toLowerCase() === "n" && onNext) {
+        event.preventDefault();
+        onNext();
         return;
       }
 
@@ -97,7 +113,9 @@ export function useFlashcardControls({
     canOpenDetail,
     disabled,
     onAnswer,
+    onNext,
     onOpenDetail,
+    onPrevious,
     onReveal,
     onSelectWritingCharacter,
     writingCharacterCount,

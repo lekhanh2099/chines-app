@@ -13,8 +13,10 @@ import {
 } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
-import type { SegmentedControlItem } from "@/components/ui/segmented-control";
-import { Tabs } from "@/components/ui/tabs";
+import {
+ SegmentedControl,
+ type SegmentedControlItem,
+} from "@/components/ui/segmented-control";
 import { GrammarWorkspace } from "@/features/hanzihome/components/GrammarWorkspace";
 import { LessonNoteAccessCard } from "@/features/hanzihome/components/LessonNoteAccessCard";
 import { LessonOverview } from "@/features/hanzihome/components/LessonOverview";
@@ -342,25 +344,26 @@ export function ModuleSplitWorkspace({
  if (!splitEnabled) {
   return (
    <div className="grid gap-2.5">
-    <div className="flex justify-end">
+    <div className="sticky top-0 z-30 flex min-w-0 flex-wrap items-center justify-between gap-2 rounded-xl bg-bg-primary/95 py-1 backdrop-blur">
+     <div className="min-w-0 flex-1">
+      <SegmentedControl
+       value={activeModule}
+       items={flatTabs}
+       onChange={onSelectModule}
+      />
+     </div>
      <Button
       type="button"
       variant="outline"
       size="sm"
+      className="shrink-0"
       onClick={() => updateSplitEnabled(true)}
      >
       Mở split
      </Button>
     </div>
 
-    <Tabs
-     value={activeModule}
-     items={flatTabs}
-     onValueChange={onSelectModule}
-     listClassName="sticky top-0 z-30 rounded-xl bg-bg-primary/95 py-1 backdrop-blur"
-    >
      {singleContent}
-    </Tabs>
    </div>
   );
  }

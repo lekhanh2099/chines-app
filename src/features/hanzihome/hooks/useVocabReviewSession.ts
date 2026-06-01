@@ -42,6 +42,7 @@ type ReviewState = {
 type ReviewAction =
   | { type: "reveal" }
   | { type: "answer"; itemCount: number; result: ReviewResult }
+  | { type: "previous" }
   | { type: "next"; itemCount: number }
   | { type: "reset" };
 
@@ -50,6 +51,14 @@ function reducer(state: ReviewState, action: ReviewAction): ReviewState {
     return { ...state, revealed: !state.revealed };
   }
   if (action.type === "reset") return { index: 0, revealed: false, completed: false };
+
+  if (action.type === "previous") {
+    return {
+      index: Math.max(state.index - 1, 0),
+      revealed: false,
+      completed: false,
+    };
+  }
 
   const nextIndex = state.index + 1;
 
@@ -142,6 +151,7 @@ export function useVocabReviewSession(input: {
     () => dispatch({ type: "next", itemCount: items.length }),
     [items.length],
   );
+  const previous = useCallback(() => dispatch({ type: "previous" }), []);
   const reset = useCallback(() => dispatch({ type: "reset" }), []);
 
   return {
@@ -150,6 +160,7 @@ export function useVocabReviewSession(input: {
     currentItem: items[state.index] || null,
     reveal,
     answer,
+    previous,
     next,
     reset,
   };

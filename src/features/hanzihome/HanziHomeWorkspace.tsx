@@ -8,13 +8,11 @@ import { Card } from "@/components/ui/card";
 import { GrammarWorkspace } from "@/features/hanzihome/components/GrammarWorkspace";
 import { LessonNoteAccessCard } from "@/features/hanzihome/components/LessonNoteAccessCard";
 import { LessonOverview } from "@/features/hanzihome/components/LessonOverview";
-import { LessonPicker } from "@/features/hanzihome/components/LessonPicker";
 import { LessonTextInlineEditor } from "@/features/hanzihome/components/LessonTextInlineEditor";
 import { ModuleSplitWorkspace } from "@/features/hanzihome/components/ModuleSplitWorkspace";
 import { RadicalWorkspace } from "@/features/hanzihome/components/RadicalWorkspace";
 import { ReviewWorkspace } from "@/features/hanzihome/components/ReviewWorkspace";
 import { VocabWorkspace } from "@/features/hanzihome/components/VocabWorkspace";
-import { GlobalMemoryTipCard } from "@/features/hanzihome/memory-tips/GlobalMemoryTipCard";
 import { useHanziHomeCatalogData } from "@/features/hanzihome/hooks/useHanziHomeCatalogData";
 import { useHanziHomeLessonDetailQuery } from "@/features/hanzihome/hooks/useHanziHomeLessonDetail";
 import { useLearningState } from "@/features/hanzihome/hooks/useLearningState";
@@ -127,8 +125,6 @@ export function HanziHomeWorkspace() {
    lessonDetailQuery.fetchStatus === "fetching" &&
    !dbLesson,
  );
- const selectedLessonId = lesson?.id || lessonId;
-
  const selectedCourse = courseCatalog.courses.find(
   (course) => course.id === selectedCourseId,
  );
@@ -144,11 +140,6 @@ export function HanziHomeWorkspace() {
   });
 
   router.replace(`/hanzihome?${nextParams.toString()}`);
- };
-
- const selectLesson = (nextLessonId: string) => {
-  replaceWorkspaceParams({ lessonId: nextLessonId });
-  learning.updateSettings({ lastLessonId: nextLessonId });
  };
 
  const selectModule = (nextModule: HanziHomeModule) => {
@@ -294,35 +285,13 @@ export function HanziHomeWorkspace() {
  return (
   <main className="hanzihome-static-page">
    <div className="flex w-full max-w-full flex-col gap-2.5">
-    <Card
-     padding="md"
-     className="rounded-xl border border-border-default bg-bg-primary shadow-theme-sm"
-    >
-     <div className="flex flex-wrap items-start justify-between gap-2.5">
-      <div className="min-w-0 flex flex-2 items-center gap-2.5">
-       <div className="max-w-lg">
-        {activeModule !== "radicals" && lesson && (
-         <LessonPicker
-          lessons={courseLessons}
-          selectedLessonId={selectedLessonId}
-          onSelectLesson={selectLesson}
-         />
-        )}
-       </div>
-
-       <div className="flex flex-wrap gap-2">
-        {learning.isSaving && (
-         <span className="rounded-full bg-bg-subtle px-2.5 py-0.5 text-xs font-black text-text-muted">
-          Đang lưu...
-         </span>
-        )}
-
-       </div>
-      </div>
+    {learning.isSaving && (
+     <div className="flex justify-end">
+      <span className="rounded-full bg-bg-subtle px-2.5 py-0.5 text-xs font-black text-text-muted">
+       Đang lưu...
+      </span>
      </div>
-    </Card>
-
-    <GlobalMemoryTipCard compact />
+    )}
 
     {activeModule === "radicals" ? (
      <RadicalWorkspace radicals={catalogData.radicals} />

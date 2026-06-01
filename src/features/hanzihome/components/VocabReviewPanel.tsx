@@ -109,11 +109,13 @@ export function VocabReviewPanel({
   disabled: !item || session.state.completed || detailOpen,
   canOpenDetail: Boolean(item && session.state.revealed),
   writingCharacterCount,
-  onReveal: reveal,
-  onAnswer: handleAnswer,
-  onOpenDetail: () => setDetailOpen(true),
-  onSelectWritingCharacter: setSelectedWritingIndex,
- });
+ onReveal: reveal,
+ onAnswer: handleAnswer,
+  onPrevious: session.previous,
+  onNext: session.next,
+ onOpenDetail: () => setDetailOpen(true),
+ onSelectWritingCharacter: setSelectedWritingIndex,
+});
 
  const resetWithMode = (nextMode: ReviewDeckMode) => {
   setMode(nextMode);
@@ -240,19 +242,34 @@ export function VocabReviewPanel({
      itemLesson={getItemLesson?.(item) ?? lesson}
     />
 
-    <div className="flex flex-wrap justify-center gap-2">
+    <div className="flex flex-wrap items-center justify-center gap-2">
+     <Button
+      type="button"
+      variant="outline"
+      disabled={session.state.index === 0}
+      onClick={session.previous}
+     >
+      Trước
+     </Button>
      <Button variant="outline" onClick={() => handleAnswer("again")}>
       Học lại
      </Button>
      <Button variant="outline" onClick={() => handleAnswer("hard")}>
-      Còn khó
+     Còn khó
      </Button>
      <Button onClick={() => handleAnswer("known")}>Đã biết</Button>
+     <Button type="button" variant="outline" onClick={session.next}>
+      Tiếp
+     </Button>
     </div>
 
-    <p className="text-center text-xs font-bold text-text-muted">
-     Space/Enter lật thẻ · D xem chi tiết · mặt sau vocab: 1/2/3 chọn chữ · ←/↓/→ chấm điểm · Mobile: vuốt trái/phải/lên
-    </p>
+    <div className="flex flex-wrap justify-center gap-2 text-xs font-bold text-text-muted">
+     <span>Space/Enter lật thẻ</span>
+     <span>D chi tiết</span>
+     <span>P/N trước/tiếp</span>
+     <span>←/↓/→ chấm điểm</span>
+     <span>Mobile: vuốt trái/phải/lên</span>
+    </div>
    </div>
   </Card>
  );
@@ -398,9 +415,12 @@ function FlashCardBack({
       onClick={(event) => {
        event.stopPropagation();
        onOpenDetail();
-      }}
+     }}
      >
       Xem chi tiết
+      <kbd className="ml-2 rounded bg-bg-subtle px-1.5 py-0.5 text-[0.65rem] font-black text-text-muted">
+       D
+      </kbd>
      </Button>
     </div>
 
@@ -459,6 +479,9 @@ function FlashCardBack({
      }}
     >
      Xem chi tiết
+     <kbd className="ml-2 rounded bg-bg-subtle px-1.5 py-0.5 text-[0.65rem] font-black text-text-muted">
+      D
+     </kbd>
     </Button>
    </div>
 

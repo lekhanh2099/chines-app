@@ -1,14 +1,22 @@
 "use client";
 
-import { FormEvent, useEffect, useRef, useState } from "react";
-import { BookOpenCheck, Moon, Search, Sun } from "lucide-react";
+import { FormEvent, useEffect, useMemo, useRef, useState } from "react";
+import { BookOpenCheck, ChevronRight, Moon, Search, Sun } from "lucide-react";
 import { type User } from "@supabase/supabase-js";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { useTheme } from "./ThemeProvider";
 import { useVocabInspector } from "@/components/vocabulary/VocabInspectorProvider";
 import { containsChinese } from "@/lib/chinese-utils";
 import { useDictionaryLookupStore } from "@/stores/dictionary-lookup-store";
 import { Button } from "@/components/ui/button";
+import {
+ Select,
+ SelectContent,
+ SelectItem,
+ SelectTrigger,
+ SelectValue,
+} from "@/components/ui/select";
+import { hanzihomeHeaderNavigation } from "@/features/hanzihome/static-json/header-navigation";
 
 export function Header({ user }: { user?: User | null }) {
  const { theme, toggleTheme } = useTheme();
@@ -16,8 +24,31 @@ export function Header({ user }: { user?: User | null }) {
  const [searchValue, setSearchValue] = useState("");
  const inputRef = useRef<HTMLInputElement>(null);
  const pathname = usePathname();
+ const router = useRouter();
+ const searchParams = useSearchParams();
  const lookupEnabled = useDictionaryLookupStore((s) => s.isEnabled(pathname));
  const toggleLookup = useDictionaryLookupStore((s) => s.toggle);
+ const hanzihomeBreadcrumb = useMemo(() => {
+  if (pathname !== "/hanzihome") return null;
+
+  const selectedCourseId =
+   searchParams.get("courseId") || hanzihomeHeaderNavigation[0]?.id || "";
+  const selectedCourse =
+   hanzihomeHeaderNavigation.find((course) => course.id === selectedCourseId) ??
+   hanzihomeHeaderNavigation[0];
+  const lessons = selectedCourse?.lessons ?? [];
+  const lessonIdFromUrl = searchParams.get("lessonId");
+  const selectedLesson =
+   lessons.find((lesson) => lesson.id === lessonIdFromUrl) ?? lessons[0];
+
+  if (!selectedCourse || !selectedLesson) return null;
+
+  return {
+   selectedCourse,
+   selectedLesson,
+   lessons,
+  };
+ }, [pathname, searchParams]);
 
  useEffect(() => {
   const handleKeyDown = (event: KeyboardEvent) => {
@@ -41,8 +72,75 @@ export function Header({ user }: { user?: User | null }) {
   }
  };
 
+ const navigateHanziHome = (courseId: string, lessonId: string) => {
+  const nextParams = new URLSearchParams(searchParams.toString());
+  const currentModule = nextParams.get("module");
+
+  nextParams.set("courseId", courseId);
+  nextParams.set("lessonId", lessonId);
+  if (currentModule) nextParams.set("module", currentModule);
+
+  router.push(`/hanzihome?${nextParams.toString()}`);
+ };
+
  return (
   <header className="z-10 flex h-16 w-full max-w-full min-w-0 shrink-0 items-center justify-between gap-2 overflow-x-hidden scrollbar-soft border-b border-border-default bg-bg-card px-3 sm:gap-4 sm:px-5 md:h-[76px] lg:px-8">
+   {hanzihomeBreadcrumb && (
+    <nav
+     aria-label="Chuyển nhanh bài HanziHome"
+     className="hidden min-w-0 max-w-xl shrink-0 items-center gap-1 text-sm font-bold text-text-secondary lg:flex"
+    >
+     <span className="rounded-lg px-2 py-1 text-text-primary">HanziHome</span>
+     <ChevronRight className="h-4 w-4 shrink-0 text-text-muted" />
+     <Select
+      value={hanzihomeBreadcrumb.selectedCourse.id}
+      onValueChange={(courseId) => {
+       const course = hanzihomeHeaderNavigation.find(
+        (item) => item.id === courseId,
+       );
+       const lessonId = course?.lessons[0]?.id;
+
+       if (course && lessonId) navigateHanziHome(course.id, lessonId);
+      }}
+     >
+      <SelectTrigger
+       size="sm"
+       className="max-w-52 border-border-default bg-bg-input text-text-primary"
+      >
+       <SelectValue />
+      </SelectTrigger>
+      <SelectContent align="start">
+       {hanzihomeHeaderNavigation.map((course) => (
+        <SelectItem key={course.id} value={course.id}>
+         {course.title}
+        </SelectItem>
+       ))}
+      </SelectContent>
+     </Select>
+     <ChevronRight className="h-4 w-4 shrink-0 text-text-muted" />
+     <Select
+      value={hanzihomeBreadcrumb.selectedLesson.id}
+      onValueChange={(lessonId) => {
+       navigateHanziHome(hanzihomeBreadcrumb.selectedCourse.id, lessonId);
+      }}
+     >
+      <SelectTrigger
+       size="sm"
+       className="max-w-64 border-border-default bg-bg-input text-text-primary"
+      >
+       <SelectValue />
+      </SelectTrigger>
+      <SelectContent align="start">
+       {hanzihomeBreadcrumb.lessons.map((lesson) => (
+        <SelectItem key={lesson.id} value={lesson.id}>
+         {`Bài ${lesson.lessonNumber}: ${lesson.titleZh}`}
+        </SelectItem>
+       ))}
+      </SelectContent>
+     </Select>
+    </nav>
+   )}
+
    <form onSubmit={handleSearch} className="relative min-w-0 max-w-md flex-1">
     <Search className="absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 text-text-muted" />
     <input

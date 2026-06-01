@@ -37,9 +37,10 @@ const sectionShortcutTabs: Array<{
  shortcut: string;
 }> = [
  { key: "all", label: "Tất cả", shortcut: "1" },
- { key: "examples", label: "Ví dụ", shortcut: "5" },
  { key: "meaning", label: "Nghĩa", shortcut: "2" },
+ { key: "etymology", label: "Logic", shortcut: "3" },
  { key: "comparisons", label: "So sánh", shortcut: "4" },
+ { key: "examples", label: "Ví dụ", shortcut: "5" },
 ];
 
 function isTypingTarget(element: Element | null) {
@@ -316,6 +317,9 @@ function StructuredVocabSections({
    {show("meaning") && hasMeaningContent(item.meaning) && (
     <MeaningSection meaning={item.meaning} />
    )}
+   {show("etymology") && hasWordFormationContent(item.word_formation) && (
+    <WordFormationDetailSection formation={item.word_formation} />
+   )}
    {show("comparisons") && hasComparisonContent(item.comparison) && (
     <ComparisonSection comparison={item.comparison} />
    )}
@@ -329,6 +333,24 @@ function StructuredVocabSections({
     <WarningSection warnings={item.warnings} />
    )}
   </>
+ );
+}
+
+function WordFormationDetailSection({
+ formation,
+}: {
+ formation: WordFormation;
+}) {
+ return (
+  <ReadingSection id="vocab-word-formation" title="Logic / cấu tạo">
+   <WordFormationSection formation={formation} />
+   {formation.word_logic_vi && <p>{formation.word_logic_vi}</p>}
+   {formation.memory_tip_vi && <p>Mẹo nhớ: {formation.memory_tip_vi}</p>}
+   {formation.warning_vi && <p>Lưu ý: {formation.warning_vi}</p>}
+   {formation.notes.map((note) => (
+    <p key={note.text_vi}>{note.text_vi}</p>
+   ))}
+  </ReadingSection>
  );
 }
 
@@ -358,7 +380,7 @@ function MeaningSection({ meaning }: { meaning: Meaning }) {
 
 function WordFormationSection({ formation }: { formation: WordFormation }) {
  return (
-  <div className="flex gap-3">
+  <div className="flex flex-wrap gap-3">
    {formation.characters.map((character) => (
     <CharacterAnalysisCard key={character.hanzi} character={character} />
    ))}
