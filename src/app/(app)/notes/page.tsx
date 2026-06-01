@@ -5,8 +5,9 @@ import { format } from "date-fns";
 import { vi } from "date-fns/locale";
 import { Loader2, Search, Plus, FileText, Clock } from "lucide-react";
 import { Tabs } from "@base-ui/react";
+import { toast } from "sonner";
 import { Input } from "@/components/ui/input";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import Link from "next/link";
 import {
  Dialog,
@@ -23,7 +24,6 @@ import { useForm } from "@tanstack/react-form";
 import { QuickNoteButton } from "@/components/notes/QuickNoteButton";
 import { useNotesList } from "@/features/notes/hooks/useNotesList";
 import { useCreateNote } from "@/features/notes/hooks/useCreateNote";
-import { useNoteRouting } from "@/hooks/useNoteRouting";
 import type { NoteCategory } from "@/types/database";
 
 const categoryEmoji: Record<string, string> = {
@@ -50,16 +50,14 @@ export default function NotesPage() {
 function NotesPageInner() {
  const [searchQuery, setSearchQuery] = useState("");
  const [activeTab, setActiveTab] = useState<string>("all");
+ const searchParams = useSearchParams();
 
  const categoryFilter: NoteCategory | undefined =
   activeTab === "all" ? undefined : (activeTab as NoteCategory);
  const { data: notes, isLoading } = useNotesList(categoryFilter);
+ const isNewAction = searchParams.get("action") === "new";
 
- // Smart routing — redirects unless ?view=all or ?action=new
- const { isRedirecting, isNewAction } = useNoteRouting(notes, isLoading);
-
- // ── Loading / Redirecting skeleton ──
- if (isLoading || isRedirecting) {
+ if (isLoading) {
   return (
    <div className="flex items-center justify-center h-full">
     <Loader2 className="w-6 h-6 animate-spin text-text-muted" />
@@ -67,12 +65,10 @@ function NotesPageInner() {
   );
  }
 
- // ── Case: ?action=new  →  auto-create a note ──
  if (isNewAction) {
   return <NewNoteView />;
  }
 
- // ── Case: ?view=all  →  List View ──
  const allNotes = notes ?? [];
  const filteredNotes = allNotes.filter((note) =>
   note.title.toLowerCase().includes(searchQuery.toLowerCase()),
@@ -295,8 +291,8 @@ function CreateNoteDialog() {
       setIsOpen(false);
       router.push(`/notes/${note.id}`);
      },
-     onError: (error) => {
-      console.error("Error creating note:", error);
+     onError: () => {
+      toast.error("Không thể tạo ghi chú");
      },
     },
    );

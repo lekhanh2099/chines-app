@@ -2,12 +2,11 @@
 
 import { useMemo } from "react";
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
 import { useRouter, useSearchParams } from "next/navigation";
-import { Pencil } from "lucide-react";
 
 import { Card } from "@/components/ui/card";
 import { GrammarWorkspace } from "@/features/hanzihome/components/GrammarWorkspace";
+import { LessonNoteAccessCard } from "@/features/hanzihome/components/LessonNoteAccessCard";
 import { LessonOverview } from "@/features/hanzihome/components/LessonOverview";
 import { LessonPicker } from "@/features/hanzihome/components/LessonPicker";
 import { LessonTextInlineEditor } from "@/features/hanzihome/components/LessonTextInlineEditor";
@@ -15,14 +14,13 @@ import { ModuleSplitWorkspace } from "@/features/hanzihome/components/ModuleSpli
 import { RadicalWorkspace } from "@/features/hanzihome/components/RadicalWorkspace";
 import { ReviewWorkspace } from "@/features/hanzihome/components/ReviewWorkspace";
 import { VocabWorkspace } from "@/features/hanzihome/components/VocabWorkspace";
+import { GlobalMemoryTipCard } from "@/features/hanzihome/memory-tips/GlobalMemoryTipCard";
 import { useHanziHomeCatalogData } from "@/features/hanzihome/hooks/useHanziHomeCatalogData";
 import { useHanziHomeLessonDetailQuery } from "@/features/hanzihome/hooks/useHanziHomeLessonDetail";
 import { useLearningState } from "@/features/hanzihome/hooks/useLearningState";
-import { useCustomHanziHomeCourseCatalogQuery } from "@/features/hanzihome/courses/use-custom-courses";
 import {
  hanzihomeCourseBooks,
  hanzihomeCourses,
- mergeCourseCatalogs,
  sortLessonsByCourseBookOrder,
 } from "@/features/hanzihome/courses/course-catalog";
 import type {
@@ -37,6 +35,7 @@ type StudyModule = Exclude<HanziHomeModule, "radicals">;
 const moduleValues = [
  "overview",
  "lessonText",
+ "notes",
  "vocab",
  "grammar",
  "review",
@@ -54,23 +53,18 @@ export function HanziHomeWorkspace() {
  const searchParams = useSearchParams();
  const catalogData = useHanziHomeCatalogData({ includeLessons: false });
  const learning = useLearningState();
- const customCourseCatalogQuery = useCustomHanziHomeCourseCatalogQuery();
-
- const mergedCourseCatalog = useMemo(
-  () =>
-   mergeCourseCatalogs({
-    staticCourses: catalogData.courses ?? hanzihomeCourses,
-    staticBooks: catalogData.books ?? hanzihomeCourseBooks,
-    customCourses: customCourseCatalogQuery.data?.courses ?? [],
-    customBooks: customCourseCatalogQuery.data?.books ?? [],
-   }),
-  [catalogData.books, catalogData.courses, customCourseCatalogQuery.data],
+ const courseCatalog = useMemo(
+  () => ({
+   courses: catalogData.courses.length > 0 ? catalogData.courses : hanzihomeCourses,
+   books: catalogData.books.length > 0 ? catalogData.books : hanzihomeCourseBooks,
+  }),
+  [catalogData.books, catalogData.courses],
  );
 
  const selectedCourseId =
   searchParams.get("courseId") ||
   learning.state.settings.lastCourseId ||
-  (mergedCourseCatalog.courses?.[0]?.id ?? hanzihomeCourses[0]?.id) ||
+  (courseCatalog.courses?.[0]?.id ?? hanzihomeCourses[0]?.id) ||
   "";
 
  const courseLessonsQuery = useHanziHomeCourseLessonsQuery(selectedCourseId);
@@ -89,10 +83,10 @@ export function HanziHomeWorkspace() {
    lessons.filter(
     (item) =>
      (item.courseId ||
-      (mergedCourseCatalog.courses?.[0]?.id ?? hanzihomeCourses[0]?.id)) ===
+      (courseCatalog.courses?.[0]?.id ?? hanzihomeCourses[0]?.id)) ===
      selectedCourseId,
    ),
-  [lessons, mergedCourseCatalog.courses, selectedCourseId],
+  [lessons, courseCatalog.courses, selectedCourseId],
  );
 
  const lessonIdFromUrl = searchParams.get("lessonId");
@@ -104,7 +98,7 @@ export function HanziHomeWorkspace() {
   (item) => item.id === lastLessonId,
  );
 
- const fallbackLessonId = courseLessons.at(-1)?.id || "";
+ const fallbackLessonId = courseLessons[0]?.id || "";
 
  const lessonId =
   (lessonIdFromUrlInCourse ? lessonIdFromUrl : null) ||
@@ -135,12 +129,8 @@ export function HanziHomeWorkspace() {
  );
  const selectedLessonId = lesson?.id || lessonId;
 
- const selectedCourse = mergedCourseCatalog.courses.find(
+ const selectedCourse = courseCatalog.courses.find(
   (course) => course.id === selectedCourseId,
- );
-
- const canEditCurrentLesson = Boolean(
-  lesson && !lesson.draftId && selectedCourseId !== "hanyu-jiaocheng",
  );
 
  const replaceWorkspaceParams = (
@@ -206,9 +196,11 @@ export function HanziHomeWorkspace() {
       learningState={learning.state}
       onOpenModule={selectModule}
      />
-    );
-   case "lessonText":
-    return <LessonTextInlineEditor lesson={lesson} />;
+   );
+  case "lessonText":
+   return <LessonTextInlineEditor lesson={lesson} />;
+   case "notes":
+    return <LessonNoteAccessCard lesson={lesson} />;
    case "vocab":
     return (
      <VocabWorkspace
@@ -325,20 +317,12 @@ export function HanziHomeWorkspace() {
          </span>
         )}
 
-        {canEditCurrentLesson && lesson && (
-         <Button type="button" variant="outline" size="sm" asChild>
-          <Link
-           href={`/hanzihome/drafts/${lesson.id}?mode=lesson&courseId=${selectedCourseId}`}
-          >
-           <Pencil className="h-4 w-4" />
-           Chỉnh sửa
-          </Link>
-         </Button>
-        )}
        </div>
       </div>
      </div>
     </Card>
+
+    <GlobalMemoryTipCard compact />
 
     {activeModule === "radicals" ? (
      <RadicalWorkspace radicals={catalogData.radicals} />

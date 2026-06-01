@@ -9,6 +9,7 @@ import { Editor } from "@/components/editor/Editor";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import type { HanziHomeLesson } from "@/features/hanzihome/types";
+import { getVocabDisplayMeaning } from "@/features/hanzihome/utils/vocab-item";
 import { useCreateLessonLinkedNote } from "@/features/notes/hooks/useCreateLessonLinkedNote";
 import { useLessonLinkedNote } from "@/features/notes/hooks/useLessonLinkedNote";
 import { useNoteDetail } from "@/features/notes/hooks/useNoteDetail";
@@ -68,7 +69,7 @@ function createLessonReadingContent(
  });
 
  const vocabLines = lesson.vocab.slice(0, 20).map((word, index) => {
-  return `${index + 1}. ${word.word} — ${word.pinyin} — ${word.meaning}`;
+  return `${index + 1}. ${word.hanzi} — ${word.pinyin} — ${getVocabDisplayMeaning(word)}`;
  });
 
  return {

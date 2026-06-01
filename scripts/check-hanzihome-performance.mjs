@@ -59,21 +59,6 @@ for (const file of files) {
   }
 
   if (
-    filePath.includes("lesson-drafts/route.ts") &&
-    content.includes("content, created_at") &&
-    content.includes("export async function GET")
-  ) {
-    fail(`${filePath} GET list still appears to return/read full draft content`);
-  }
-
-  if (
-    filePath.endsWith("HanziHomeLibraryHome.tsx") &&
-    content.includes("mapLessonDraftToHanziHomeLesson")
-  ) {
-    fail(`${filePath} still maps draft list into full lesson view models`);
-  }
-
-  if (
     filePath.endsWith("HanziHomeLibraryHome.tsx") &&
     content.includes("function CourseCard") &&
     content.includes("useLearningState()")
@@ -86,13 +71,6 @@ for (const file of files) {
     content.includes("staleTime: 0")
   ) {
     fail(`${filePath} catalog query staleTime is 0`);
-  }
-
-  if (
-    filePath.endsWith("use-lesson-drafts.ts") &&
-    !content.includes("staleTime")
-  ) {
-    fail(`${filePath} lesson draft list has no staleTime`);
   }
 
   if (content.includes("/api/hanzihome/data")) {

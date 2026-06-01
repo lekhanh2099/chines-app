@@ -1,9 +1,6 @@
 import { z } from "zod";
-
-const nullableOptionalStringSchema = z.preprocess(
-  (value) => (value === null ? undefined : value),
-  z.string().optional(),
-);
+import { HanyuLessonSchema } from "@/features/hanzihome/static-json/schemas/hanyuLesson.schema";
+import { DeepVocabularyItemSchema } from "@/features/hanzihome/static-json/schemas/vocab.schema";
 
 export const vocabExampleSchema = z.object({
   zh: z.string().trim().min(1, "Thiếu câu tiếng Trung"),
@@ -12,29 +9,16 @@ export const vocabExampleSchema = z.object({
   note: z.string().optional(),
 });
 
-export const vocabDetailSectionSchema = z.object({
+const vocabDetailSectionSchema = z.object({
   key: z.string().trim().min(1, "Thiếu key"),
   title: z.string().trim().min(1, "Thiếu tiêu đề"),
   lines: z.array(z.string().trim().min(1)).default([]),
 });
 
-export const vocabViewModelSchema = z.object({
-  id: z.string(),
+export const hanziHomeVocabItemSchema = DeepVocabularyItemSchema.extend({
+  runtimeId: z.string(),
   lessonId: z.string().optional(),
-  word: z.string(),
-  pinyin: z.string(),
-  hanViet: z.string(),
-  meaning: z.string(),
   category: z.string(),
-  level: z.string().optional(),
-  pos: z
-    .object({
-      vi: z.string().optional(),
-      zh: z.string().optional(),
-    })
-    .optional(),
-  examplesParsed: z.array(vocabExampleSchema),
-  detailSections: z.array(vocabDetailSectionSchema),
 });
 
 export const grammarViewModelSchema = z.object({
@@ -51,6 +35,9 @@ export const grammarViewModelSchema = z.object({
 
 export const lessonNotesSchema = z.object({
   overviewMarkdown: z.string().optional(),
+  lessonTextMarkdown: z.string().optional(),
+  exerciseMarkdown: z.string().optional(),
+  readingMarkdown: z.string().optional(),
   grammarSummary: z.string().optional(),
   vocabularyText: z.string().optional(),
   properNounsText: z.string().optional(),
@@ -110,48 +97,8 @@ export const lessonSchema = z.object({
   grammarCount: z.number().optional(),
   vocabIds: z.array(z.string()),
   grammarPointIds: z.array(z.string()),
-  vocab: z.array(vocabViewModelSchema),
+  vocab: z.array(hanziHomeVocabItemSchema),
   grammar: z.array(grammarViewModelSchema),
-  isDraft: z.boolean().optional(),
-  isDbBacked: z.boolean().optional(),
-  draftId: z.string().optional(),
-  status: z.enum(["draft", "published", "archived"]).optional(),
   notes: lessonNotesSchema.optional(),
+  sourceLesson: HanyuLessonSchema.optional(),
 });
-
-export const updateHanziHomeVocabPayloadSchema = z.object({
-  lessonId: z.string().trim().min(1),
-  word: z.string().trim().min(1, "Thiếu từ"),
-  pinyin: z.string().trim().min(1, "Thiếu pinyin"),
-  hanViet: z.string().trim().min(1, "Thiếu Hán Việt"),
-  meaning: z.string().trim().min(1, "Thiếu nghĩa"),
-  category: z.string().trim().min(1, "Thiếu nhóm từ"),
-  level: z.string().trim().optional(),
-  pos: z
-    .object({
-      vi: z.string().trim().optional(),
-      zh: z.string().trim().optional(),
-    })
-    .optional(),
-  examplesParsed: z.array(vocabExampleSchema),
-  detailSections: z.array(vocabDetailSectionSchema),
-});
-
-export const updateHanziHomeGrammarPayloadSchema = z.object({
-  lessonId: z.string().trim().min(1),
-  title: z.string().trim().min(1, "Thiếu tiêu đề"),
-  cleanTitle: z.string().trim().min(1, "Thiếu tiêu đề sạch"),
-  core: z.string().trim(),
-  contentMd: nullableOptionalStringSchema,
-  structuresView: z.array(z.string().trim().min(1)).default([]),
-  notes: z.array(z.string().trim().min(1)).default([]),
-  examplesParsed: z.array(vocabExampleSchema).default([]),
-  detailSections: z.array(vocabDetailSectionSchema).default([]),
-});
-
-export type UpdateHanziHomeVocabPayload = z.infer<
-  typeof updateHanziHomeVocabPayloadSchema
->;
-export type UpdateHanziHomeGrammarPayload = z.infer<
-  typeof updateHanziHomeGrammarPayloadSchema
->;

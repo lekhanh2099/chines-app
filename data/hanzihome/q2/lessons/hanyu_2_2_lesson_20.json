@@ -1,0 +1,4758 @@
+{
+ "schema_version": "2.2.0",
+ "content_type": "chinese_textbook_lesson",
+ "verification_status": "final_verified_with_marked_generated_fields",
+ "source": {
+  "book": "Hanyu Jiaocheng",
+  "volume": "第二册下",
+  "volume_vi": "Quyển 2 Hạ",
+  "lesson_index": 20,
+  "lesson_number_cn": "第二十课",
+  "lesson_title_cn": "京剧我看得懂，但是听不懂",
+  "lesson_title_pinyin": "Jīngjù wǒ kàn de dǒng, dànshì tīng bù dǒng",
+  "lesson_title_vi": "Kinh kịch tôi xem thì hiểu, nhưng nghe không hiểu",
+  "lesson_title_en": "I can understand Peking Opera by watching it, but not by listening",
+  "source_files": [
+   {
+    "name": "Hanyu Jiaocheng 2-2.pdf",
+    "type": "pdf_scan",
+    "source_origin": "textbook",
+    "check_needed": false
+   },
+   {
+    "name": "Ngoại Ngữ Hà Nội - 京剧我看得懂，但是听不懂",
+    "type": "web_crosscheck",
+    "source_origin": "web_crosscheck",
+    "check_needed": false
+   },
+   {
+    "name": "Học tiếng Trung Quốc - 第55课 京剧我看得懂，但是听不懂",
+    "type": "web_crosscheck",
+    "source_origin": "web_crosscheck",
+    "check_needed": false
+   }
+  ],
+  "web_crosscheck": [
+   {
+    "title": "Giáo trình Hán Ngữ 4 - Bài 5: 京剧我看得懂，但是听不懂",
+    "source_origin": "web_crosscheck",
+    "note": "Used to cross-check lesson title, first dialogue, and potential complement examples."
+   },
+   {
+    "title": "第55课 – 京剧我看得懂，但是听不懂",
+    "source_origin": "web_crosscheck",
+    "note": "Used to cross-check the two core texts and key wording such as 看得懂, 听不懂, 猜得出."
+   }
+  ]
+ },
+ "lesson": {
+  "id": "hanyu_2_2_lesson_20",
+  "title": {
+   "zh": "京剧我看得懂，但是听不懂",
+   "pinyin": "Jīngjù wǒ kàn de dǒng, dànshì tīng bù dǒng",
+   "vi": "Kinh kịch tôi xem thì hiểu, nhưng nghe không hiểu",
+   "en": "I can understand Peking Opera by watching it, but not by listening"
+  },
+  "tags": [
+   "hanyu_2_2",
+   "lesson_20",
+   "hsk3-ish",
+   "potential_complement",
+   "peking_opera",
+   "culture",
+   "invitation"
+  ],
+  "sections": [
+   {
+    "id": "section_01_text",
+    "type": "text",
+    "order": 1,
+    "title": "课文",
+    "title_vi": "Bài khóa",
+    "source_origin": "textbook",
+    "check_needed": false,
+    "blocks": [
+     {
+      "id": "text_01",
+      "type": "text_dialogue",
+      "order": 1,
+      "title": "京剧我看得懂，但是听不懂",
+      "title_vi": "Kinh kịch tôi xem thì hiểu, nhưng nghe không hiểu",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "lines": [
+       {
+        "id": "text_01_l01",
+        "order": 1,
+        "speaker": "玛丽",
+        "zh": "你看过京剧吗？",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook",
+        "check_needed": false
+       },
+       {
+        "id": "text_01_l02",
+        "order": 2,
+        "speaker": "山本",
+        "zh": "看过一次。",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook",
+        "check_needed": false
+       },
+       {
+        "id": "text_01_l03",
+        "order": 3,
+        "speaker": "玛丽",
+        "zh": "看得懂吗？",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook",
+        "check_needed": false
+       },
+       {
+        "id": "text_01_l04",
+        "order": 4,
+        "speaker": "山本",
+        "zh": "看得懂，听不懂。我喜欢看京剧，虽然听不懂，但是能猜得出大概的意思。",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook",
+        "check_needed": false
+       },
+       {
+        "id": "text_01_l05",
+        "order": 5,
+        "speaker": "玛丽",
+        "zh": "我一点也听不清楚演员唱的是什么，只是觉得很热闹。",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook",
+        "check_needed": false
+       },
+       {
+        "id": "text_01_l06",
+        "order": 6,
+        "speaker": "山本",
+        "zh": "我觉得京剧的音乐特别好，武打动作也很精彩。我还喜欢京剧的脸谱，京剧用各种脸谱来表现人物的社会地位和性格，十分有趣。",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook",
+        "check_needed": false
+       },
+       {
+        "id": "text_01_l07",
+        "order": 7,
+        "speaker": "玛丽",
+        "zh": "京剧的服装很美，我想买一套带回国去。京剧是中国的传统艺术，可是我听说现在一些年轻人不太喜欢看。",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook",
+        "check_needed": false
+       },
+       {
+        "id": "text_01_l08",
+        "order": 8,
+        "speaker": "山本",
+        "zh": "我也听田芳说过。她说京剧的节奏太慢，故事都差不多是古代的，离当代青年人的生活太远，所以不容易被他们接受。你怎么这么喜欢京剧呢？",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook",
+        "check_needed": false
+       },
+       {
+        "id": "text_01_l09",
+        "order": 9,
+        "speaker": "玛丽",
+        "zh": "我受我中文老师的影响，他是一个京剧迷。我想，要把汉语学好，也应该多了解一些中国文化。",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook",
+        "check_needed": false
+       },
+       {
+        "id": "text_01_l10",
+        "order": 10,
+        "speaker": "山本",
+        "zh": "有时间的话，咱们一起去看，好吗？",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook",
+        "check_needed": false
+       },
+       {
+        "id": "text_01_l11",
+        "order": 11,
+        "speaker": "玛丽",
+        "zh": "好啊。",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook",
+        "check_needed": false
+       }
+      ]
+     },
+     {
+      "id": "text_02",
+      "type": "text_dialogue",
+      "order": 2,
+      "title": "今天晚上我去不了",
+      "title_vi": "Tối nay tôi không đi được",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "lines": [
+       {
+        "id": "text_02_l01",
+        "order": 1,
+        "speaker": "旁白",
+        "zh": "（玛丽打电话请山本去看京剧）",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook",
+        "check_needed": false
+       },
+       {
+        "id": "text_02_l02",
+        "order": 2,
+        "speaker": "玛丽",
+        "zh": "喂，是山本吗？",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook",
+        "check_needed": false
+       },
+       {
+        "id": "text_02_l03",
+        "order": 3,
+        "speaker": "山本",
+        "zh": "喂，喂，你声音大点儿。我听不见。",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook",
+        "check_needed": false
+       },
+       {
+        "id": "text_02_l04",
+        "order": 4,
+        "speaker": "玛丽",
+        "zh": "喂，听得见吗？",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook",
+        "check_needed": false
+       },
+       {
+        "id": "text_02_l05",
+        "order": 5,
+        "speaker": "山本",
+        "zh": "听见了。玛丽，你有什么事儿吗？",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook",
+        "check_needed": false
+       },
+       {
+        "id": "text_02_l06",
+        "order": 6,
+        "speaker": "玛丽",
+        "zh": "今天晚上你有没有空儿？我想请你去看京剧。",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook",
+        "check_needed": false
+       },
+       {
+        "id": "text_02_l07",
+        "order": 7,
+        "speaker": "山本",
+        "zh": "对不起，今天晚上我有事，去不了，请原谅。",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook",
+        "check_needed": false
+       },
+       {
+        "id": "text_02_l08",
+        "order": 8,
+        "speaker": "玛丽",
+        "zh": "啊，没关系。明天晚上去得了去不了？",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook",
+        "check_needed": false
+       },
+       {
+        "id": "text_02_l09",
+        "order": 9,
+        "speaker": "山本",
+        "zh": "明天晚上可以。",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook",
+        "check_needed": false
+       },
+       {
+        "id": "text_02_l10",
+        "order": 10,
+        "speaker": "玛丽",
+        "zh": "那我们明天晚上去，怎么样？",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook",
+        "check_needed": false
+       },
+       {
+        "id": "text_02_l11",
+        "order": 11,
+        "speaker": "山本",
+        "zh": "好。明天什么时候去？",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook",
+        "check_needed": false
+       },
+       {
+        "id": "text_02_l12",
+        "order": 12,
+        "speaker": "玛丽",
+        "zh": "我们五点二十出发怎么样？我在学校西门等你。",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook",
+        "check_needed": false
+       },
+       {
+        "id": "text_02_l13",
+        "order": 13,
+        "speaker": "山本",
+        "zh": "我们不见不散。",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook",
+        "check_needed": false
+       },
+       {
+        "id": "text_02_l14",
+        "order": 14,
+        "speaker": "旁白",
+        "zh": "（第二天晚上）",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook",
+        "check_needed": false
+       },
+       {
+        "id": "text_02_l15",
+        "order": 15,
+        "speaker": "玛丽",
+        "zh": "正是下班时间，公共汽车肯定上不去，我们还是打的吧。",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook",
+        "check_needed": false
+       },
+       {
+        "id": "text_02_l16",
+        "order": 16,
+        "speaker": "山本",
+        "zh": "好吧。现在去，买得到票吗？",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook",
+        "check_needed": false
+       },
+       {
+        "id": "text_02_l17",
+        "order": 17,
+        "speaker": "玛丽",
+        "zh": "买得到。",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook",
+        "check_needed": false
+       },
+       {
+        "id": "text_02_l18",
+        "order": 18,
+        "speaker": "山本",
+        "zh": "买得到的话，买前十排的吧。我眼睛不好，坐得远可能看不见。",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook",
+        "check_needed": false
+       },
+       {
+        "id": "text_02_l19",
+        "order": 19,
+        "speaker": "旁白",
+        "zh": "（在剧场）",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook",
+        "check_needed": false
+       },
+       {
+        "id": "text_02_l20",
+        "order": 20,
+        "speaker": "玛丽",
+        "zh": "前十排的都卖完了，我买了两张十二排的，怎么样？",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook",
+        "check_needed": false
+       },
+       {
+        "id": "text_02_l21",
+        "order": 21,
+        "speaker": "山本",
+        "zh": "可以。咱们进去吧。",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook",
+        "check_needed": false
+       },
+       {
+        "id": "text_02_l22",
+        "order": 22,
+        "speaker": "玛丽",
+        "zh": "我把包存这儿。你要不要往包里放东西？",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook",
+        "check_needed": false
+       },
+       {
+        "id": "text_02_l23",
+        "order": 23,
+        "speaker": "山本",
+        "zh": "这里边儿有点儿热，我得把毛衣脱下来装进去，装得下装不下？",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook",
+        "check_needed": false
+       },
+       {
+        "id": "text_02_l24",
+        "order": 24,
+        "speaker": "玛丽",
+        "zh": "把相机拿出来，可能装得下。",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook",
+        "check_needed": false
+       },
+       {
+        "id": "text_02_l25",
+        "order": 25,
+        "speaker": "玛丽",
+        "zh": "我们的座位在中间。",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook",
+        "check_needed": false
+       },
+       {
+        "id": "text_02_l26",
+        "order": 26,
+        "speaker": "山本",
+        "zh": "（对旁边的人）劳驾，请让我们进去……谢谢！",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook",
+        "check_needed": false
+       },
+       {
+        "id": "text_02_l27",
+        "order": 27,
+        "speaker": "玛丽",
+        "zh": "我这儿有说明书，生词太多，我看不懂。你看得懂看不懂？",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook",
+        "check_needed": false
+       },
+       {
+        "id": "text_02_l28",
+        "order": 28,
+        "speaker": "山本",
+        "zh": "说明书上说，这是一个中国古代的故事，后边的内容我也看不懂。不过，不用担心，看不懂说明书，一定看得懂表演。",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook",
+        "check_needed": false
+       }
+      ]
+     }
+    ],
+    "comprehension_questions": [
+     {
+      "id": "text_q01",
+      "question": "山本看过京剧吗？",
+      "answer": "看过一次。",
+      "source_origin": "textbook_question_generated_answer",
+      "answer_verified": true,
+      "check_needed": false
+     },
+     {
+      "id": "text_q02",
+      "question": "山本看得懂京剧吗？听得懂吗？",
+      "answer": "他看得懂，但是听不懂。",
+      "source_origin": "textbook_question_generated_answer",
+      "answer_verified": true,
+      "check_needed": false
+     },
+     {
+      "id": "text_q03",
+      "question": "玛丽为什么听不清楚演员唱的是什么？",
+      "answer": "因为演员唱的内容她一点也听不清楚。",
+      "source_origin": "textbook_question_generated_answer",
+      "answer_verified": true,
+      "check_needed": false
+     },
+     {
+      "id": "text_q04",
+      "question": "山本觉得京剧哪些地方很有意思？",
+      "answer": "他觉得京剧的音乐特别好，武打动作精彩，脸谱也很有趣。",
+      "source_origin": "textbook_question_generated_answer",
+      "answer_verified": true,
+      "check_needed": false
+     },
+     {
+      "id": "text_q05",
+      "question": "京剧用脸谱表现什么？",
+      "answer": "京剧用各种脸谱来表现人物的社会地位和性格。",
+      "source_origin": "textbook_question_generated_answer",
+      "answer_verified": true,
+      "check_needed": false
+     },
+     {
+      "id": "text_q06",
+      "question": "玛丽为什么想买一套京剧服装？",
+      "answer": "因为她觉得京剧的服装很美，想买一套带回国去。",
+      "source_origin": "textbook_question_generated_answer",
+      "answer_verified": true,
+      "check_needed": false
+     },
+     {
+      "id": "text_q07",
+      "question": "田芳为什么说一些年轻人不太喜欢看京剧？",
+      "answer": "因为京剧的节奏太慢，故事多是古代的，离当代青年人的生活太远，不容易被接受。",
+      "source_origin": "textbook_question_generated_answer",
+      "answer_verified": true,
+      "check_needed": false
+     },
+     {
+      "id": "text_q08",
+      "question": "玛丽为什么这么喜欢京剧？",
+      "answer": "因为她受中文老师的影响，她的中文老师是一个京剧迷。",
+      "source_origin": "textbook_question_generated_answer",
+      "answer_verified": true,
+      "check_needed": false
+     },
+     {
+      "id": "text_q09",
+      "question": "玛丽为什么给山本打电话？",
+      "answer": "她想请山本去看京剧。",
+      "source_origin": "textbook_question_generated_answer",
+      "answer_verified": true,
+      "check_needed": false
+     },
+     {
+      "id": "text_q10",
+      "question": "山本今天晚上为什么去不了？",
+      "answer": "因为他今天晚上有事。",
+      "source_origin": "textbook_question_generated_answer",
+      "answer_verified": true,
+      "check_needed": false
+     },
+     {
+      "id": "text_q11",
+      "question": "他们约好明天几点出发？",
+      "answer": "他们约好明天五点二十出发。",
+      "source_origin": "textbook_question_generated_answer",
+      "answer_verified": true,
+      "check_needed": false
+     },
+     {
+      "id": "text_q12",
+      "question": "为什么他们决定打的去？",
+      "answer": "因为正是下班时间，公共汽车肯定上不去。",
+      "source_origin": "textbook_question_generated_answer",
+      "answer_verified": true,
+      "check_needed": false
+     },
+     {
+      "id": "text_q13",
+      "question": "山本为什么想买前十排的票？",
+      "answer": "因为他眼睛不好，坐得远可能看不见。",
+      "source_origin": "textbook_question_generated_answer",
+      "answer_verified": true,
+      "check_needed": false
+     },
+     {
+      "id": "text_q14",
+      "question": "山本的毛衣装得下吗？",
+      "answer": "把相机拿出来，可能装得下。",
+      "source_origin": "textbook_question_generated_answer",
+      "answer_verified": true,
+      "check_needed": false
+     },
+     {
+      "id": "text_q15",
+      "question": "山本为什么说“不用担心，看不懂说明书，一定看得懂表演”？",
+      "answer": "因为表演可以通过动作、情节和舞台内容来理解，不一定要完全看懂说明书。",
+      "source_origin": "textbook_question_generated_answer",
+      "answer_verified": false,
+      "check_needed": true
+     }
+    ]
+   },
+   {
+    "id": "section_02_vocabulary",
+    "type": "vocabulary",
+    "order": 2,
+    "title": "生词",
+    "title_vi": "Từ vựng",
+    "source_origin": "textbook",
+    "check_needed": false,
+    "items": [
+     {
+      "id": "vocab_001",
+      "type": "vocabulary_item",
+      "order": 1,
+      "hanzi": "京剧",
+      "pinyin": "jīngjù",
+      "meaning_vi": "Kinh kịch",
+      "meaning_en": "",
+      "pos": "noun",
+      "tags": ["culture"],
+      "examples": [],
+      "flashcard": {
+       "front": "京剧",
+       "back": "jīngjù — Kinh kịch",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "vocab_002",
+      "type": "vocabulary_item",
+      "order": 2,
+      "hanzi": "看得懂",
+      "pinyin": "kàn de dǒng",
+      "meaning_vi": "xem hiểu được",
+      "meaning_en": "",
+      "pos": "potential_complement",
+      "tags": ["grammar"],
+      "examples": [],
+      "flashcard": {
+       "front": "看得懂",
+       "back": "kàn de dǒng — xem hiểu được",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "vocab_003",
+      "type": "vocabulary_item",
+      "order": 3,
+      "hanzi": "听不懂",
+      "pinyin": "tīng bù dǒng",
+      "meaning_vi": "nghe không hiểu",
+      "meaning_en": "",
+      "pos": "potential_complement",
+      "tags": ["grammar"],
+      "examples": [],
+      "flashcard": {
+       "front": "听不懂",
+       "back": "tīng bù dǒng — nghe không hiểu",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "vocab_004",
+      "type": "vocabulary_item",
+      "order": 4,
+      "hanzi": "猜",
+      "pinyin": "cāi",
+      "meaning_vi": "đoán",
+      "meaning_en": "",
+      "pos": "verb",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "猜",
+       "back": "cāi — đoán",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "vocab_005",
+      "type": "vocabulary_item",
+      "order": 5,
+      "hanzi": "大概",
+      "pinyin": "dàgài",
+      "meaning_vi": "đại khái, khoảng chừng",
+      "meaning_en": "",
+      "pos": "adverb_noun",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "大概",
+       "back": "dàgài — đại khái, khoảng chừng",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "vocab_006",
+      "type": "vocabulary_item",
+      "order": 6,
+      "hanzi": "意思",
+      "pinyin": "yìsi",
+      "meaning_vi": "ý nghĩa",
+      "meaning_en": "",
+      "pos": "noun",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "意思",
+       "back": "yìsi — ý nghĩa",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "vocab_007",
+      "type": "vocabulary_item",
+      "order": 7,
+      "hanzi": "清楚",
+      "pinyin": "qīngchu",
+      "meaning_vi": "rõ ràng",
+      "meaning_en": "",
+      "pos": "adjective",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "清楚",
+       "back": "qīngchu — rõ ràng",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "vocab_008",
+      "type": "vocabulary_item",
+      "order": 8,
+      "hanzi": "演员",
+      "pinyin": "yǎnyuán",
+      "meaning_vi": "diễn viên",
+      "meaning_en": "",
+      "pos": "noun",
+      "tags": ["performance"],
+      "examples": [],
+      "flashcard": {
+       "front": "演员",
+       "back": "yǎnyuán — diễn viên",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "vocab_009",
+      "type": "vocabulary_item",
+      "order": 9,
+      "hanzi": "热闹",
+      "pinyin": "rènao",
+      "meaning_vi": "náo nhiệt",
+      "meaning_en": "",
+      "pos": "adjective",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "热闹",
+       "back": "rènao — náo nhiệt",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "vocab_010",
+      "type": "vocabulary_item",
+      "order": 10,
+      "hanzi": "音乐",
+      "pinyin": "yīnyuè",
+      "meaning_vi": "âm nhạc",
+      "meaning_en": "",
+      "pos": "noun",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "音乐",
+       "back": "yīnyuè — âm nhạc",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "vocab_011",
+      "type": "vocabulary_item",
+      "order": 11,
+      "hanzi": "武打",
+      "pinyin": "wǔdǎ",
+      "meaning_vi": "võ thuật, đánh võ trên sân khấu",
+      "meaning_en": "",
+      "pos": "noun_verb",
+      "tags": ["performance"],
+      "examples": [],
+      "flashcard": {
+       "front": "武打",
+       "back": "wǔdǎ — võ thuật, đánh võ trên sân khấu",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "vocab_012",
+      "type": "vocabulary_item",
+      "order": 12,
+      "hanzi": "动作",
+      "pinyin": "dòngzuò",
+      "meaning_vi": "động tác",
+      "meaning_en": "",
+      "pos": "noun",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "动作",
+       "back": "dòngzuò — động tác",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "vocab_013",
+      "type": "vocabulary_item",
+      "order": 13,
+      "hanzi": "精彩",
+      "pinyin": "jīngcǎi",
+      "meaning_vi": "đặc sắc, hấp dẫn",
+      "meaning_en": "",
+      "pos": "adjective",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "精彩",
+       "back": "jīngcǎi — đặc sắc, hấp dẫn",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "vocab_014",
+      "type": "vocabulary_item",
+      "order": 14,
+      "hanzi": "脸谱",
+      "pinyin": "liǎnpǔ",
+      "meaning_vi": "mặt nạ / hóa trang mặt trong Kinh kịch",
+      "meaning_en": "",
+      "pos": "noun",
+      "tags": ["culture"],
+      "examples": [],
+      "flashcard": {
+       "front": "脸谱",
+       "back": "liǎnpǔ — mặt nạ / hóa trang mặt trong Kinh kịch",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "vocab_015",
+      "type": "vocabulary_item",
+      "order": 15,
+      "hanzi": "各种",
+      "pinyin": "gè zhǒng",
+      "meaning_vi": "các loại",
+      "meaning_en": "",
+      "pos": "phrase",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "各种",
+       "back": "gè zhǒng — các loại",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "vocab_016",
+      "type": "vocabulary_item",
+      "order": 16,
+      "hanzi": "表现",
+      "pinyin": "biǎoxiàn",
+      "meaning_vi": "biểu hiện, thể hiện",
+      "meaning_en": "",
+      "pos": "verb_noun",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "表现",
+       "back": "biǎoxiàn — biểu hiện, thể hiện",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "vocab_017",
+      "type": "vocabulary_item",
+      "order": 17,
+      "hanzi": "人物",
+      "pinyin": "rénwù",
+      "meaning_vi": "nhân vật",
+      "meaning_en": "",
+      "pos": "noun",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "人物",
+       "back": "rénwù — nhân vật",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "vocab_018",
+      "type": "vocabulary_item",
+      "order": 18,
+      "hanzi": "社会",
+      "pinyin": "shèhuì",
+      "meaning_vi": "xã hội",
+      "meaning_en": "",
+      "pos": "noun",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "社会",
+       "back": "shèhuì — xã hội",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "vocab_019",
+      "type": "vocabulary_item",
+      "order": 19,
+      "hanzi": "地位",
+      "pinyin": "dìwèi",
+      "meaning_vi": "địa vị",
+      "meaning_en": "",
+      "pos": "noun",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "地位",
+       "back": "dìwèi — địa vị",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "vocab_020",
+      "type": "vocabulary_item",
+      "order": 20,
+      "hanzi": "性格",
+      "pinyin": "xìnggé",
+      "meaning_vi": "tính cách",
+      "meaning_en": "",
+      "pos": "noun",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "性格",
+       "back": "xìnggé — tính cách",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "vocab_021",
+      "type": "vocabulary_item",
+      "order": 21,
+      "hanzi": "十分",
+      "pinyin": "shífēn",
+      "meaning_vi": "rất, vô cùng",
+      "meaning_en": "",
+      "pos": "adverb",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "十分",
+       "back": "shífēn — rất, vô cùng",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "vocab_022",
+      "type": "vocabulary_item",
+      "order": 22,
+      "hanzi": "服装",
+      "pinyin": "fúzhuāng",
+      "meaning_vi": "trang phục",
+      "meaning_en": "",
+      "pos": "noun",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "服装",
+       "back": "fúzhuāng — trang phục",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "vocab_023",
+      "type": "vocabulary_item",
+      "order": 23,
+      "hanzi": "套",
+      "pinyin": "tào",
+      "meaning_vi": "bộ; lượng từ cho bộ",
+      "meaning_en": "",
+      "pos": "measure_word",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "套",
+       "back": "tào — bộ; lượng từ cho bộ",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "vocab_024",
+      "type": "vocabulary_item",
+      "order": 24,
+      "hanzi": "传统",
+      "pinyin": "chuántǒng",
+      "meaning_vi": "truyền thống",
+      "meaning_en": "",
+      "pos": "noun_adjective",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "传统",
+       "back": "chuántǒng — truyền thống",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "vocab_025",
+      "type": "vocabulary_item",
+      "order": 25,
+      "hanzi": "艺术",
+      "pinyin": "yìshù",
+      "meaning_vi": "nghệ thuật",
+      "meaning_en": "",
+      "pos": "noun",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "艺术",
+       "back": "yìshù — nghệ thuật",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "vocab_026",
+      "type": "vocabulary_item",
+      "order": 26,
+      "hanzi": "节奏",
+      "pinyin": "jiézòu",
+      "meaning_vi": "tiết tấu, nhịp điệu",
+      "meaning_en": "",
+      "pos": "noun",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "节奏",
+       "back": "jiézòu — tiết tấu, nhịp điệu",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "vocab_027",
+      "type": "vocabulary_item",
+      "order": 27,
+      "hanzi": "慢",
+      "pinyin": "màn",
+      "meaning_vi": "chậm",
+      "meaning_en": "",
+      "pos": "adjective",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "慢",
+       "back": "màn — chậm",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "vocab_028",
+      "type": "vocabulary_item",
+      "order": 28,
+      "hanzi": "古代",
+      "pinyin": "gǔdài",
+      "meaning_vi": "cổ đại",
+      "meaning_en": "",
+      "pos": "noun",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "古代",
+       "back": "gǔdài — cổ đại",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "vocab_029",
+      "type": "vocabulary_item",
+      "order": 29,
+      "hanzi": "当代",
+      "pinyin": "dāngdài",
+      "meaning_vi": "đương đại",
+      "meaning_en": "",
+      "pos": "noun_adjective",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "当代",
+       "back": "dāngdài — đương đại",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "vocab_030",
+      "type": "vocabulary_item",
+      "order": 30,
+      "hanzi": "青年",
+      "pinyin": "qīngnián",
+      "meaning_vi": "thanh niên",
+      "meaning_en": "",
+      "pos": "noun",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "青年",
+       "back": "qīngnián — thanh niên",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "vocab_031",
+      "type": "vocabulary_item",
+      "order": 31,
+      "hanzi": "接受",
+      "pinyin": "jiēshòu",
+      "meaning_vi": "tiếp nhận, chấp nhận",
+      "meaning_en": "",
+      "pos": "verb",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "接受",
+       "back": "jiēshòu — tiếp nhận, chấp nhận",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "vocab_032",
+      "type": "vocabulary_item",
+      "order": 32,
+      "hanzi": "影响",
+      "pinyin": "yǐngxiǎng",
+      "meaning_vi": "ảnh hưởng",
+      "meaning_en": "",
+      "pos": "noun_verb",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "影响",
+       "back": "yǐngxiǎng — ảnh hưởng",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "vocab_033",
+      "type": "vocabulary_item",
+      "order": 33,
+      "hanzi": "京剧迷",
+      "pinyin": "jīngjù mí",
+      "meaning_vi": "người mê Kinh kịch",
+      "meaning_en": "",
+      "pos": "noun",
+      "tags": ["culture"],
+      "examples": [],
+      "flashcard": {
+       "front": "京剧迷",
+       "back": "jīngjù mí — người mê Kinh kịch",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "vocab_034",
+      "type": "vocabulary_item",
+      "order": 34,
+      "hanzi": "了解",
+      "pinyin": "liǎojiě",
+      "meaning_vi": "tìm hiểu, hiểu rõ",
+      "meaning_en": "",
+      "pos": "verb",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "了解",
+       "back": "liǎojiě — tìm hiểu, hiểu rõ",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "vocab_035",
+      "type": "vocabulary_item",
+      "order": 35,
+      "hanzi": "声音",
+      "pinyin": "shēngyīn",
+      "meaning_vi": "âm thanh, giọng nói",
+      "meaning_en": "",
+      "pos": "noun",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "声音",
+       "back": "shēngyīn — âm thanh, giọng nói",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "vocab_036",
+      "type": "vocabulary_item",
+      "order": 36,
+      "hanzi": "原谅",
+      "pinyin": "yuánliàng",
+      "meaning_vi": "tha thứ, thông cảm",
+      "meaning_en": "",
+      "pos": "verb",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "原谅",
+       "back": "yuánliàng — tha thứ, thông cảm",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "vocab_037",
+      "type": "vocabulary_item",
+      "order": 37,
+      "hanzi": "不见不散",
+      "pinyin": "bú jiàn bú sàn",
+      "meaning_vi": "không gặp không về",
+      "meaning_en": "",
+      "pos": "idiom",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "不见不散",
+       "back": "bú jiàn bú sàn — không gặp không về",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "vocab_038",
+      "type": "vocabulary_item",
+      "order": 38,
+      "hanzi": "下班",
+      "pinyin": "xiàbān",
+      "meaning_vi": "tan làm",
+      "meaning_en": "",
+      "pos": "verb_object",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "下班",
+       "back": "xiàbān — tan làm",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "vocab_039",
+      "type": "vocabulary_item",
+      "order": 39,
+      "hanzi": "肯定",
+      "pinyin": "kěndìng",
+      "meaning_vi": "chắc chắn",
+      "meaning_en": "",
+      "pos": "adverb_verb",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "肯定",
+       "back": "kěndìng — chắc chắn",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "vocab_040",
+      "type": "vocabulary_item",
+      "order": 40,
+      "hanzi": "打的",
+      "pinyin": "dǎ dī",
+      "meaning_vi": "bắt taxi",
+      "meaning_en": "",
+      "pos": "verb_object",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "打的",
+       "back": "dǎ dī — bắt taxi",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "vocab_041",
+      "type": "vocabulary_item",
+      "order": 41,
+      "hanzi": "前排",
+      "pinyin": "qiánpái",
+      "meaning_vi": "hàng ghế phía trước",
+      "meaning_en": "",
+      "pos": "noun",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "前排",
+       "back": "qiánpái — hàng ghế phía trước",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "vocab_042",
+      "type": "vocabulary_item",
+      "order": 42,
+      "hanzi": "排",
+      "pinyin": "pái",
+      "meaning_vi": "hàng, dãy",
+      "meaning_en": "",
+      "pos": "measure_word_noun",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "排",
+       "back": "pái — hàng, dãy",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "vocab_043",
+      "type": "vocabulary_item",
+      "order": 43,
+      "hanzi": "眼睛",
+      "pinyin": "yǎnjing",
+      "meaning_vi": "mắt",
+      "meaning_en": "",
+      "pos": "noun",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "眼睛",
+       "back": "yǎnjing — mắt",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "vocab_044",
+      "type": "vocabulary_item",
+      "order": 44,
+      "hanzi": "远",
+      "pinyin": "yuǎn",
+      "meaning_vi": "xa",
+      "meaning_en": "",
+      "pos": "adjective",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "远",
+       "back": "yuǎn — xa",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "vocab_045",
+      "type": "vocabulary_item",
+      "order": 45,
+      "hanzi": "剧场",
+      "pinyin": "jùchǎng",
+      "meaning_vi": "rạp hát, nhà hát",
+      "meaning_en": "",
+      "pos": "noun",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "剧场",
+       "back": "jùchǎng — rạp hát, nhà hát",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "vocab_046",
+      "type": "vocabulary_item",
+      "order": 46,
+      "hanzi": "存",
+      "pinyin": "cún",
+      "meaning_vi": "gửi, cất",
+      "meaning_en": "",
+      "pos": "verb",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "存",
+       "back": "cún — gửi, cất",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "vocab_047",
+      "type": "vocabulary_item",
+      "order": 47,
+      "hanzi": "毛衣",
+      "pinyin": "máoyī",
+      "meaning_vi": "áo len",
+      "meaning_en": "",
+      "pos": "noun",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "毛衣",
+       "back": "máoyī — áo len",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "vocab_048",
+      "type": "vocabulary_item",
+      "order": 48,
+      "hanzi": "脱",
+      "pinyin": "tuō",
+      "meaning_vi": "cởi ra",
+      "meaning_en": "",
+      "pos": "verb",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "脱",
+       "back": "tuō — cởi ra",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "vocab_049",
+      "type": "vocabulary_item",
+      "order": 49,
+      "hanzi": "装",
+      "pinyin": "zhuāng",
+      "meaning_vi": "bỏ vào, đựng vào",
+      "meaning_en": "",
+      "pos": "verb",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "装",
+       "back": "zhuāng — bỏ vào, đựng vào",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "vocab_050",
+      "type": "vocabulary_item",
+      "order": 50,
+      "hanzi": "相机",
+      "pinyin": "xiàngjī",
+      "meaning_vi": "máy ảnh",
+      "meaning_en": "",
+      "pos": "noun",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "相机",
+       "back": "xiàngjī — máy ảnh",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "vocab_051",
+      "type": "vocabulary_item",
+      "order": 51,
+      "hanzi": "座位",
+      "pinyin": "zuòwèi",
+      "meaning_vi": "chỗ ngồi",
+      "meaning_en": "",
+      "pos": "noun",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "座位",
+       "back": "zuòwèi — chỗ ngồi",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "vocab_052",
+      "type": "vocabulary_item",
+      "order": 52,
+      "hanzi": "中间",
+      "pinyin": "zhōngjiān",
+      "meaning_vi": "ở giữa",
+      "meaning_en": "",
+      "pos": "noun",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "中间",
+       "back": "zhōngjiān — ở giữa",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "vocab_053",
+      "type": "vocabulary_item",
+      "order": 53,
+      "hanzi": "劳驾",
+      "pinyin": "láojià",
+      "meaning_vi": "làm phiền, xin nhờ",
+      "meaning_en": "",
+      "pos": "phrase",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "劳驾",
+       "back": "láojià — làm phiền, xin nhờ",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "vocab_054",
+      "type": "vocabulary_item",
+      "order": 54,
+      "hanzi": "让",
+      "pinyin": "ràng",
+      "meaning_vi": "nhường, cho phép",
+      "meaning_en": "",
+      "pos": "verb",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "让",
+       "back": "ràng — nhường, cho phép",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "vocab_055",
+      "type": "vocabulary_item",
+      "order": 55,
+      "hanzi": "说明书",
+      "pinyin": "shuōmíngshū",
+      "meaning_vi": "bản thuyết minh, sách hướng dẫn",
+      "meaning_en": "",
+      "pos": "noun",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "说明书",
+       "back": "shuōmíngshū — bản thuyết minh, sách hướng dẫn",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "vocab_056",
+      "type": "vocabulary_item",
+      "order": 56,
+      "hanzi": "内容",
+      "pinyin": "nèiróng",
+      "meaning_vi": "nội dung",
+      "meaning_en": "",
+      "pos": "noun",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "内容",
+       "back": "nèiróng — nội dung",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "vocab_057",
+      "type": "vocabulary_item",
+      "order": 57,
+      "hanzi": "表演",
+      "pinyin": "biǎoyǎn",
+      "meaning_vi": "biểu diễn",
+      "meaning_en": "",
+      "pos": "verb_noun",
+      "tags": ["performance"],
+      "examples": [],
+      "flashcard": {
+       "front": "表演",
+       "back": "biǎoyǎn — biểu diễn",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+     }
+    ]
+   },
+   {
+    "id": "section_03_proper_nouns",
+    "type": "proper_nouns",
+    "order": 3,
+    "title": "专名",
+    "title_vi": "Tên riêng",
+    "source_origin": "textbook",
+    "check_needed": false,
+    "items": [
+     {
+      "id": "proper_001",
+      "type": "proper_noun",
+      "order": 1,
+      "hanzi": "玛丽",
+      "pinyin": "Mǎlì",
+      "meaning_vi": "Mary",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "proper_002",
+      "type": "proper_noun",
+      "order": 2,
+      "hanzi": "山本",
+      "pinyin": "Shānběn",
+      "meaning_vi": "Yamamoto",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "proper_003",
+      "type": "proper_noun",
+      "order": 3,
+      "hanzi": "田芳",
+      "pinyin": "Tián Fāng",
+      "meaning_vi": "Điền Phương",
+      "source_origin": "textbook",
+      "check_needed": false
+     }
+    ]
+   },
+   {
+    "id": "section_04_notes",
+    "type": "notes",
+    "order": 4,
+    "title": "注释",
+    "title_vi": "Chú thích",
+    "source_origin": "textbook",
+    "check_needed": false,
+    "items": [
+     {
+      "id": "note_01",
+      "type": "note",
+      "order": 1,
+      "title": "脸谱",
+      "structure": "",
+      "meaning_vi": "脸谱 là kiểu hóa trang khuôn mặt đặc trưng trong Kinh kịch. Màu sắc và hình vẽ trên mặt thường giúp biểu hiện tính cách, thân phận hoặc đặc điểm của nhân vật.",
+      "examples": [
+       {
+        "id": "note_01_ex_01",
+        "zh": "京剧用各种脸谱来表现人物的社会地位和性格。",
+        "pinyin": "",
+        "vi": "Kinh kịch dùng các loại mặt hóa trang để thể hiện địa vị xã hội và tính cách nhân vật.",
+        "en": "",
+        "highlight": ["脸谱"],
+        "grammar_refs": [],
+        "vocab_refs": ["vocab_014"],
+        "source_ref": "text_01_l06",
+        "note_vi": "",
+        "audio_key": "",
+        "source_origin": "textbook",
+        "check_needed": false
+       }
+      ],
+      "source_refs": ["text_01_l06"],
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "note_02",
+      "type": "note",
+      "order": 2,
+      "title": "古代",
+      "structure": "",
+      "meaning_vi": "古代 nghĩa là thời cổ đại, thời xưa. Trong bài dùng để nói rằng nhiều câu chuyện trong Kinh kịch là chuyện thời cổ, nên có thể xa với đời sống của thanh niên hiện đại.",
+      "examples": [
+       {
+        "id": "note_02_ex_01",
+        "zh": "故事都差不多是古代的，离当代青年人的生活太远。",
+        "pinyin": "",
+        "vi": "Các câu chuyện hầu như đều là chuyện cổ đại, quá xa với đời sống của thanh niên đương đại.",
+        "en": "",
+        "highlight": ["古代", "当代"],
+        "grammar_refs": [],
+        "vocab_refs": ["vocab_028", "vocab_029"],
+        "source_ref": "text_01_l08",
+        "note_vi": "",
+        "audio_key": "",
+        "source_origin": "textbook",
+        "check_needed": false
+       }
+      ],
+      "source_refs": ["text_01_l08"],
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "note_03",
+      "type": "note",
+      "order": 3,
+      "title": "不见不散",
+      "structure": "",
+      "meaning_vi": "Câu hẹn cố định, nghĩa là “không gặp không về”. Dùng khi hai người đã hẹn chắc chắn thời gian/địa điểm gặp nhau.",
+      "examples": [
+       {
+        "id": "note_03_ex_01",
+        "zh": "我们五点二十在学校西门见，不见不散。",
+        "pinyin": "",
+        "vi": "5 giờ 20 mình gặp ở cổng tây trường nhé, không gặp không về.",
+        "en": "",
+        "highlight": ["不见不散"],
+        "grammar_refs": [],
+        "vocab_refs": ["vocab_037"],
+        "source_ref": "text_02_l13",
+        "note_vi": "",
+        "audio_key": "",
+        "source_origin": "textbook",
+        "check_needed": false
+       }
+      ],
+      "source_refs": ["text_02_l13"],
+      "source_origin": "textbook",
+      "check_needed": false
+     }
+    ]
+   },
+   {
+    "id": "section_05_grammar",
+    "type": "grammar",
+    "order": 5,
+    "title": "语法",
+    "title_vi": "Ngữ pháp",
+    "source_origin": "textbook",
+    "check_needed": false,
+    "items": [
+     {
+      "id": "grammar_01",
+      "type": "grammar_point",
+      "order": 1,
+      "title": "可能补语",
+      "title_vi": "Bổ ngữ khả năng",
+      "level": "HSK3-ish",
+      "tags": [
+       "potential_complement",
+       "result_complement",
+       "directional_complement"
+      ],
+      "source_origin": "textbook",
+      "check_needed": false,
+      "blocks": [
+       {
+        "id": "grammar_01_overview",
+        "type": "grammar_overview",
+        "order": 1,
+        "title": "Bản chất",
+        "content_vi": "可能补语 dùng 得 / 不 đặt giữa động từ và bổ ngữ để nói có khả năng làm được hay không.",
+        "examples": [
+         {
+          "id": "grammar_01_overview_ex_01",
+          "zh": "京剧我看得懂，但是听不懂。",
+          "pinyin": "",
+          "vi": "Kinh kịch tôi xem thì hiểu, nhưng nghe không hiểu.",
+          "en": "",
+          "highlight": ["看得懂", "听不懂"],
+          "grammar_refs": ["grammar_01"],
+          "vocab_refs": [],
+          "source_ref": "text_01_l04",
+          "note_vi": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+         },
+         {
+          "id": "grammar_01_overview_ex_02",
+          "zh": "今天晚上我有事，去不了。",
+          "pinyin": "",
+          "vi": "Tối nay tôi có việc, không đi được.",
+          "en": "",
+          "highlight": ["去不了"],
+          "grammar_refs": ["grammar_01"],
+          "vocab_refs": [],
+          "source_ref": "text_02_l07",
+          "note_vi": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+         },
+         {
+          "id": "grammar_01_overview_ex_03",
+          "zh": "装得下装不下？",
+          "pinyin": "",
+          "vi": "Đựng vào được không?",
+          "en": "",
+          "highlight": ["装得下", "装不下"],
+          "grammar_refs": ["grammar_01"],
+          "vocab_refs": [],
+          "source_ref": "text_02_l23",
+          "note_vi": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+         }
+        ],
+        "source_origin": "textbook",
+        "check_needed": false
+       },
+       {
+        "id": "grammar_01_structure_01",
+        "type": "grammar_structure",
+        "order": 2,
+        "title": "V + 得 / 不 + 懂",
+        "pattern": "V + 得 + 懂 / V + 不 + 懂",
+        "meaning_vi": "Có hiểu được / không hiểu được qua hành động đó.",
+        "formulas": [
+         {
+          "label": "Khẳng định khả năng",
+          "pattern": "V + 得 + 懂"
+         },
+         {
+          "label": "Phủ định khả năng",
+          "pattern": "V + 不 + 懂"
+         }
+        ],
+        "examples": [
+         {
+          "id": "grammar_01_structure_01_ex_01",
+          "zh": "京剧我看得懂，但是听不懂。",
+          "pinyin": "",
+          "vi": "Kinh kịch tôi xem thì hiểu, nhưng nghe thì không hiểu.",
+          "en": "",
+          "highlight": ["看得懂", "听不懂"],
+          "grammar_refs": ["grammar_01"],
+          "vocab_refs": [],
+          "source_ref": "text_01_l04",
+          "note_vi": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+         },
+         {
+          "id": "grammar_01_structure_01_ex_02",
+          "zh": "说明书生词太多，我看不懂。",
+          "pinyin": "",
+          "vi": "Bản thuyết minh quá nhiều từ mới, tôi đọc không hiểu.",
+          "en": "",
+          "highlight": ["看不懂"],
+          "grammar_refs": ["grammar_01"],
+          "vocab_refs": [],
+          "source_ref": "text_02_l27",
+          "note_vi": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+         },
+         {
+          "id": "grammar_01_structure_01_ex_03",
+          "zh": "这篇课文我看得懂。",
+          "pinyin": "",
+          "vi": "Bài khóa này tôi đọc hiểu được.",
+          "en": "",
+          "highlight": ["看得懂"],
+          "grammar_refs": ["grammar_01"],
+          "vocab_refs": [],
+          "source_ref": "",
+          "note_vi": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+         },
+         {
+          "id": "grammar_01_structure_01_ex_04",
+          "zh": "他说得太快，我听不懂。",
+          "pinyin": "",
+          "vi": "Anh ấy nói nhanh quá, tôi nghe không hiểu.",
+          "en": "",
+          "highlight": ["听不懂"],
+          "grammar_refs": ["grammar_01"],
+          "vocab_refs": [],
+          "source_ref": "",
+          "note_vi": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+         }
+        ],
+        "source_origin": "textbook",
+        "check_needed": false
+       },
+       {
+        "id": "grammar_01_structure_02",
+        "type": "grammar_structure",
+        "order": 3,
+        "title": "V + 得 / 不 + 清楚",
+        "pattern": "V + 得 + 清楚 / V + 不 + 清楚",
+        "meaning_vi": "Nghe/nhìn/nói rõ hay không rõ.",
+        "formulas": [
+         {
+          "label": "Khẳng định khả năng",
+          "pattern": "V + 得 + 清楚"
+         },
+         {
+          "label": "Phủ định khả năng",
+          "pattern": "V + 不 + 清楚"
+         }
+        ],
+        "examples": [
+         {
+          "id": "grammar_01_structure_02_ex_01",
+          "zh": "我一点也听不清楚演员唱的是什么。",
+          "pinyin": "",
+          "vi": "Tôi hoàn toàn nghe không rõ diễn viên hát gì.",
+          "en": "",
+          "highlight": ["听不清楚"],
+          "grammar_refs": ["grammar_01"],
+          "vocab_refs": [],
+          "source_ref": "text_01_l05",
+          "note_vi": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+         },
+         {
+          "id": "grammar_01_structure_02_ex_02",
+          "zh": "你说慢一点儿，我听不清楚。",
+          "pinyin": "",
+          "vi": "Bạn nói chậm một chút, tôi nghe không rõ.",
+          "en": "",
+          "highlight": ["听不清楚"],
+          "grammar_refs": ["grammar_01"],
+          "vocab_refs": [],
+          "source_ref": "",
+          "note_vi": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+         },
+         {
+          "id": "grammar_01_structure_02_ex_03",
+          "zh": "黑板上的字太小，我看不清楚。",
+          "pinyin": "",
+          "vi": "Chữ trên bảng nhỏ quá, tôi nhìn không rõ.",
+          "en": "",
+          "highlight": ["看不清楚"],
+          "grammar_refs": ["grammar_01"],
+          "vocab_refs": [],
+          "source_ref": "",
+          "note_vi": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+         }
+        ],
+        "source_origin": "textbook",
+        "check_needed": false
+       },
+       {
+        "id": "grammar_01_structure_03",
+        "type": "grammar_structure",
+        "order": 4,
+        "title": "V + 得 / 不 + 出",
+        "pattern": "V + 得 + 出 / V + 不 + 出",
+        "meaning_vi": "Đoán ra, nhận ra, nghe ra, nhìn ra được hay không.",
+        "formulas": [
+         {
+          "label": "Khẳng định khả năng",
+          "pattern": "V + 得 + 出"
+         },
+         {
+          "label": "Phủ định khả năng",
+          "pattern": "V + 不 + 出"
+         }
+        ],
+        "examples": [
+         {
+          "id": "grammar_01_structure_03_ex_01",
+          "zh": "能猜得出大概的意思。",
+          "pinyin": "",
+          "vi": "Có thể đoán ra đại khái ý nghĩa.",
+          "en": "",
+          "highlight": ["猜得出"],
+          "grammar_refs": ["grammar_01"],
+          "vocab_refs": [],
+          "source_ref": "text_01_l04",
+          "note_vi": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+         },
+         {
+          "id": "grammar_01_structure_03_ex_02",
+          "zh": "这个人我认不出来了。",
+          "pinyin": "",
+          "vi": "Người này tôi không nhận ra nữa.",
+          "en": "",
+          "highlight": ["认不出来"],
+          "grammar_refs": ["grammar_01"],
+          "vocab_refs": [],
+          "source_ref": "",
+          "note_vi": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+         },
+         {
+          "id": "grammar_01_structure_03_ex_03",
+          "zh": "这个字我写得出，但是读不出来。",
+          "pinyin": "",
+          "vi": "Chữ này tôi viết ra được, nhưng đọc không ra.",
+          "en": "",
+          "highlight": ["写得出", "读不出来"],
+          "grammar_refs": ["grammar_01"],
+          "vocab_refs": [],
+          "source_ref": "",
+          "note_vi": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+         }
+        ],
+        "source_origin": "textbook",
+        "check_needed": false
+       },
+       {
+        "id": "grammar_01_structure_04",
+        "type": "grammar_structure",
+        "order": 5,
+        "title": "V + 得 / 不 + 了",
+        "pattern": "V + 得 + 了 / V + 不 + 了",
+        "meaning_vi": "Có thể / không thể làm được vì điều kiện khách quan, thời gian, sức khỏe, tình huống.",
+        "formulas": [
+         {
+          "label": "Khẳng định khả năng",
+          "pattern": "V + 得 + 了"
+         },
+         {
+          "label": "Phủ định khả năng",
+          "pattern": "V + 不 + 了"
+         }
+        ],
+        "examples": [
+         {
+          "id": "grammar_01_structure_04_ex_01",
+          "zh": "今天晚上我有事，去不了。",
+          "pinyin": "",
+          "vi": "Tối nay tôi có việc, không đi được.",
+          "en": "",
+          "highlight": ["去不了"],
+          "grammar_refs": ["grammar_01"],
+          "vocab_refs": [],
+          "source_ref": "text_02_l07",
+          "note_vi": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+         },
+         {
+          "id": "grammar_01_structure_04_ex_02",
+          "zh": "明天晚上去得了去不了？",
+          "pinyin": "",
+          "vi": "Tối mai đi được không?",
+          "en": "",
+          "highlight": ["去得了", "去不了"],
+          "grammar_refs": ["grammar_01"],
+          "vocab_refs": [],
+          "source_ref": "text_02_l08",
+          "note_vi": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+         }
+        ],
+        "source_origin": "textbook",
+        "check_needed": false
+       },
+       {
+        "id": "grammar_01_structure_05",
+        "type": "grammar_structure",
+        "order": 6,
+        "title": "V + 得 / 不 + 到",
+        "pattern": "V + 得 + 到 / V + 不 + 到",
+        "meaning_vi": "Có đạt được / lấy được / mua được / tìm thấy được hay không.",
+        "formulas": [
+         {
+          "label": "Khẳng định khả năng",
+          "pattern": "V + 得 + 到"
+         },
+         {
+          "label": "Phủ định khả năng",
+          "pattern": "V + 不 + 到"
+         }
+        ],
+        "examples": [
+         {
+          "id": "grammar_01_structure_05_ex_01",
+          "zh": "现在去，买得到票吗？",
+          "pinyin": "",
+          "vi": "Bây giờ đi, mua được vé không?",
+          "en": "",
+          "highlight": ["买得到"],
+          "grammar_refs": ["grammar_01"],
+          "vocab_refs": [],
+          "source_ref": "text_02_l16",
+          "note_vi": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+         },
+         {
+          "id": "grammar_01_structure_05_ex_02",
+          "zh": "买得到。",
+          "pinyin": "",
+          "vi": "Mua được.",
+          "en": "",
+          "highlight": ["买得到"],
+          "grammar_refs": ["grammar_01"],
+          "vocab_refs": [],
+          "source_ref": "text_02_l17",
+          "note_vi": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+         },
+         {
+          "id": "grammar_01_structure_05_ex_03",
+          "zh": "这本书我买不到。",
+          "pinyin": "",
+          "vi": "Quyển sách này tôi mua không được.",
+          "en": "",
+          "highlight": ["买不到"],
+          "grammar_refs": ["grammar_01"],
+          "vocab_refs": [],
+          "source_ref": "",
+          "note_vi": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+         },
+         {
+          "id": "grammar_01_structure_05_ex_04",
+          "zh": "我找得到他的电话。",
+          "pinyin": "",
+          "vi": "Tôi tìm được số điện thoại của anh ấy.",
+          "en": "",
+          "highlight": ["找得到"],
+          "grammar_refs": ["grammar_01"],
+          "vocab_refs": [],
+          "source_ref": "",
+          "note_vi": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+         }
+        ],
+        "source_origin": "textbook",
+        "check_needed": false
+       },
+       {
+        "id": "grammar_01_structure_06",
+        "type": "grammar_structure",
+        "order": 7,
+        "title": "V + 得 / 不 + 见",
+        "pattern": "V + 得 + 见 / V + 不 + 见",
+        "meaning_vi": "Nhìn/nghe thấy được hay không.",
+        "formulas": [
+         {
+          "label": "Khẳng định khả năng",
+          "pattern": "V + 得 + 见"
+         },
+         {
+          "label": "Phủ định khả năng",
+          "pattern": "V + 不 + 见"
+         }
+        ],
+        "examples": [
+         {
+          "id": "grammar_01_structure_06_ex_01",
+          "zh": "坐得远可能看不见。",
+          "pinyin": "",
+          "vi": "Ngồi xa có thể nhìn không thấy.",
+          "en": "",
+          "highlight": ["看不见"],
+          "grammar_refs": ["grammar_01"],
+          "vocab_refs": [],
+          "source_ref": "text_02_l18",
+          "note_vi": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+         },
+         {
+          "id": "grammar_01_structure_06_ex_02",
+          "zh": "我听不见。",
+          "pinyin": "",
+          "vi": "Tôi nghe không thấy.",
+          "en": "",
+          "highlight": ["听不见"],
+          "grammar_refs": ["grammar_01"],
+          "vocab_refs": [],
+          "source_ref": "text_02_l03",
+          "note_vi": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+         },
+         {
+          "id": "grammar_01_structure_06_ex_03",
+          "zh": "听得见吗？",
+          "pinyin": "",
+          "vi": "Nghe thấy không?",
+          "en": "",
+          "highlight": ["听得见"],
+          "grammar_refs": ["grammar_01"],
+          "vocab_refs": [],
+          "source_ref": "text_02_l04",
+          "note_vi": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+         }
+        ],
+        "source_origin": "textbook",
+        "check_needed": false
+       },
+       {
+        "id": "grammar_01_structure_07",
+        "type": "grammar_structure",
+        "order": 8,
+        "title": "V + 得 / 不 + 下",
+        "pattern": "V + 得 + 下 / V + 不 + 下",
+        "meaning_vi": "Không gian có chứa được hay không, hoặc dung lượng có đủ để bỏ vào/đựng vào hay không.",
+        "formulas": [
+         {
+          "label": "Khẳng định khả năng",
+          "pattern": "V + 得 + 下"
+         },
+         {
+          "label": "Phủ định khả năng",
+          "pattern": "V + 不 + 下"
+         }
+        ],
+        "examples": [
+         {
+          "id": "grammar_01_structure_07_ex_01",
+          "zh": "装得下装不下？",
+          "pinyin": "",
+          "vi": "Đựng vào được không?",
+          "en": "",
+          "highlight": ["装得下", "装不下"],
+          "grammar_refs": ["grammar_01"],
+          "vocab_refs": [],
+          "source_ref": "text_02_l23",
+          "note_vi": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+         },
+         {
+          "id": "grammar_01_structure_07_ex_02",
+          "zh": "把相机拿出来，可能装得下。",
+          "pinyin": "",
+          "vi": "Lấy máy ảnh ra, có lẽ đựng vừa.",
+          "en": "",
+          "highlight": ["装得下"],
+          "grammar_refs": ["grammar_01"],
+          "vocab_refs": [],
+          "source_ref": "text_02_l24",
+          "note_vi": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+         },
+         {
+          "id": "grammar_01_structure_07_ex_03",
+          "zh": "这个教室坐得下五十个人。",
+          "pinyin": "",
+          "vi": "Phòng học này ngồi được 50 người.",
+          "en": "",
+          "highlight": ["坐得下"],
+          "grammar_refs": ["grammar_01"],
+          "vocab_refs": [],
+          "source_ref": "",
+          "note_vi": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+         },
+         {
+          "id": "grammar_01_structure_07_ex_04",
+          "zh": "箱子太小，装不下这么多东西。",
+          "pinyin": "",
+          "vi": "Vali nhỏ quá, không đựng được nhiều đồ như vậy.",
+          "en": "",
+          "highlight": ["装不下"],
+          "grammar_refs": ["grammar_01"],
+          "vocab_refs": [],
+          "source_ref": "",
+          "note_vi": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+         }
+        ],
+        "source_origin": "textbook",
+        "check_needed": false
+       },
+       {
+        "id": "grammar_01_structure_08",
+        "type": "grammar_structure",
+        "order": 9,
+        "title": "V + 得 / 不 + 上去",
+        "pattern": "V + 得 + 上去 / V + 不 + 上去",
+        "meaning_vi": "Có thể / không thể làm hành động hướng lên trên.",
+        "formulas": [
+         {
+          "label": "Khẳng định khả năng",
+          "pattern": "V + 得 + 上去"
+         },
+         {
+          "label": "Phủ định khả năng",
+          "pattern": "V + 不 + 上去"
+         }
+        ],
+        "examples": [
+         {
+          "id": "grammar_01_structure_08_ex_01",
+          "zh": "公共汽车肯定上不去。",
+          "pinyin": "",
+          "vi": "Chắc chắn không lên xe buýt được.",
+          "en": "",
+          "highlight": ["上不去"],
+          "grammar_refs": ["grammar_01"],
+          "vocab_refs": [],
+          "source_ref": "text_02_l15",
+          "note_vi": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+         },
+         {
+          "id": "grammar_01_structure_08_ex_02",
+          "zh": "这座山太高，我爬不上去。",
+          "pinyin": "",
+          "vi": "Núi này cao quá, tôi leo không lên được.",
+          "en": "",
+          "highlight": ["爬不上去"],
+          "grammar_refs": ["grammar_01"],
+          "vocab_refs": [],
+          "source_ref": "",
+          "note_vi": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+         }
+        ],
+        "source_origin": "textbook",
+        "check_needed": false
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "id": "section_06_exercises",
+    "type": "exercises",
+    "order": 6,
+    "title": "练习",
+    "title_vi": "Bài tập",
+    "source_origin": "textbook",
+    "check_needed": true,
+    "items": [
+     {
+      "id": "exercise_01",
+      "type": "phonetics",
+      "variant": "",
+      "order": 1,
+      "title": "语音",
+      "title_vi": "Ngữ âm",
+      "instruction": {
+       "zh": "",
+       "vi": "Luyện phân biệt âm, thanh điệu và đọc cụm."
+      },
+      "difficulty": "normal",
+      "skill_focus": ["pronunciation"],
+      "source_origin": "textbook",
+      "check_needed": false,
+      "parts": [
+       {
+        "id": "exercise_01_part_01",
+        "type": "minimal_pair",
+        "title": "辨音辨调",
+        "items": [
+         {
+          "id": "pair_01",
+          "left": "jīngjù",
+          "right": "jīngjì"
+         },
+         {
+          "id": "pair_02",
+          "left": "cāi",
+          "right": "cái"
+         },
+         {
+          "id": "pair_03",
+          "left": "yǎnyuán",
+          "right": "yuànyì"
+         },
+         {
+          "id": "pair_04",
+          "left": "rènao",
+          "right": "rènào"
+         },
+         {
+          "id": "pair_05",
+          "left": "jīngcǎi",
+          "right": "jīngcháng"
+         },
+         {
+          "id": "pair_06",
+          "left": "liǎnpǔ",
+          "right": "liǎnjiá"
+         },
+         {
+          "id": "pair_07",
+          "left": "dìwèi",
+          "right": "dìfang"
+         },
+         {
+          "id": "pair_08",
+          "left": "xìnggé",
+          "right": "xìnggǎn"
+         },
+         {
+          "id": "pair_09",
+          "left": "jiézòu",
+          "right": "jiēzòu"
+         },
+         {
+          "id": "pair_10",
+          "left": "jiēshòu",
+          "right": "jiěshì"
+         }
+        ],
+        "source_origin": "textbook",
+        "check_needed": false
+       },
+       {
+        "id": "exercise_01_part_02",
+        "type": "read_aloud",
+        "title": "朗读",
+        "items": [
+         {
+          "id": "read_001",
+          "text": "看得懂",
+          "pinyin": "",
+          "audio_key": ""
+         },
+         {
+          "id": "read_002",
+          "text": "看不懂",
+          "pinyin": "",
+          "audio_key": ""
+         },
+         {
+          "id": "read_003",
+          "text": "听得见",
+          "pinyin": "",
+          "audio_key": ""
+         },
+         {
+          "id": "read_004",
+          "text": "听不见",
+          "pinyin": "",
+          "audio_key": ""
+         },
+         {
+          "id": "read_005",
+          "text": "听得清楚",
+          "pinyin": "",
+          "audio_key": ""
+         },
+         {
+          "id": "read_006",
+          "text": "听不清楚",
+          "pinyin": "",
+          "audio_key": ""
+         },
+         {
+          "id": "read_007",
+          "text": "猜得出大概的意思",
+          "pinyin": "",
+          "audio_key": ""
+         },
+         {
+          "id": "read_008",
+          "text": "猜不出他的意思",
+          "pinyin": "",
+          "audio_key": ""
+         },
+         {
+          "id": "read_009",
+          "text": "买得到票",
+          "pinyin": "",
+          "audio_key": ""
+         },
+         {
+          "id": "read_010",
+          "text": "买不到票",
+          "pinyin": "",
+          "audio_key": ""
+         },
+         {
+          "id": "read_011",
+          "text": "上得去",
+          "pinyin": "",
+          "audio_key": ""
+         },
+         {
+          "id": "read_012",
+          "text": "上不去",
+          "pinyin": "",
+          "audio_key": ""
+         },
+         {
+          "id": "read_013",
+          "text": "装得下",
+          "pinyin": "",
+          "audio_key": ""
+         },
+         {
+          "id": "read_014",
+          "text": "装不下",
+          "pinyin": "",
+          "audio_key": ""
+         },
+         {
+          "id": "read_015",
+          "text": "看得懂说明书",
+          "pinyin": "",
+          "audio_key": ""
+         },
+         {
+          "id": "read_016",
+          "text": "看不懂说明书",
+          "pinyin": "",
+          "audio_key": ""
+         }
+        ],
+        "source_origin": "textbook",
+        "check_needed": false
+       }
+      ],
+      "rendering": {
+       "renderer": "exercise.phonetics.v1"
+      }
+     },
+     {
+      "id": "exercise_02",
+      "type": "substitution_drill",
+      "variant": "models",
+      "order": 2,
+      "title": "替换",
+      "title_vi": "Thay thế theo mẫu",
+      "instruction": {
+       "zh": "替换练习。",
+       "vi": "Luyện thay thế theo mẫu."
+      },
+      "difficulty": "normal",
+      "skill_focus": ["speaking", "grammar"],
+      "grammar_refs": ["grammar_01"],
+      "source_origin": "textbook",
+      "check_needed": false,
+      "models": [
+       {
+        "id": "ex02_model_01",
+        "title": "模型一",
+        "dialogue": ["A：这篇课文你看得懂吗？", "B：看得懂。"],
+        "substitutions": [
+         "京剧 / 看 / 看得懂",
+         "他的话 / 听 / 听得懂",
+         "说明书 / 看 / 看得懂",
+         "这个字 / 认 / 认得出",
+         "他的意思 / 猜 / 猜得出"
+        ]
+       },
+       {
+        "id": "ex02_model_02",
+        "title": "模型二",
+        "dialogue": ["A：这篇课文你看得懂吗？", "B：看不懂。"],
+        "substitutions": [
+         "他说的话 / 听 / 听不懂",
+         "演员唱的是什么 / 听 / 听不清楚",
+         "这个人 / 认 / 认不出来",
+         "前边的人 / 看 / 看不见",
+         "这本书 / 买 / 买不到"
+        ]
+       },
+       {
+        "id": "ex02_model_03",
+        "title": "模型三",
+        "dialogue": ["A：今天晚上你去得了吗？", "B：今天晚上我有事，去不了。"],
+        "substitutions": [
+         "今天晚上 / 来 / 来不了",
+         "明天早上 / 起 / 起不了",
+         "这个星期六 / 去 / 去不了",
+         "今天 / 完成 / 完成不了",
+         "现在 / 买票 / 买不了票"
+        ]
+       },
+       {
+        "id": "ex02_model_04",
+        "title": "模型四",
+        "dialogue": ["A：这个包装得下吗？", "B：把相机拿出来，可能装得下。"],
+        "substitutions": [
+         "教室 / 坐得下五十个人",
+         "箱子 / 装得下这些东西",
+         "包 / 放得下这本书",
+         "房间 / 住得下三个人"
+        ]
+       }
+      ],
+      "rendering": {
+       "renderer": "exercise.substitution_drill.v1"
+      }
+     },
+     {
+      "id": "exercise_03",
+      "type": "choose_words_fill_blank",
+      "variant": "word_bank",
+      "order": 3,
+      "title": "选词填空",
+      "title_vi": "Chọn từ điền chỗ trống",
+      "instruction": {
+       "zh": "选词填空。",
+       "vi": "Chọn từ thích hợp điền vào chỗ trống."
+      },
+      "difficulty": "normal",
+      "skill_focus": ["vocabulary", "grammar"],
+      "word_bank": [
+       "京剧",
+       "演员",
+       "猜",
+       "脸谱",
+       "传统",
+       "艺术",
+       "节奏",
+       "古代",
+       "接受",
+       "影响",
+       "原谅",
+       "肯定",
+       "打的",
+       "前排",
+       "剧场",
+       "装",
+       "座位",
+       "说明书",
+       "内容",
+       "表演"
+      ],
+      "questions": [
+       {
+        "id": "ex03_q01",
+        "prompt": "我看过一次______，但是听不懂。",
+        "answer": "京剧",
+        "acceptable_answers": ["京剧"],
+        "explanation_vi": "看过一次京剧 = từng xem Kinh kịch một lần.",
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "ex03_q02",
+        "prompt": "我听不清楚______唱的是什么。",
+        "answer": "演员",
+        "acceptable_answers": ["演员"],
+        "explanation_vi": "演员唱的是什么 = diễn viên hát gì.",
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "ex03_q03",
+        "prompt": "看了表演以后，我能______出大概的意思。",
+        "answer": "猜",
+        "acceptable_answers": ["猜"],
+        "explanation_vi": "猜出大概的意思 = đoán ra đại khái ý nghĩa.",
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "ex03_q04",
+        "prompt": "京剧用各种______来表现人物的性格。",
+        "answer": "脸谱",
+        "acceptable_answers": ["脸谱"],
+        "explanation_vi": "脸谱 biểu hiện tính cách nhân vật.",
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "ex03_q05",
+        "prompt": "京剧是中国的______艺术。",
+        "answer": "传统",
+        "acceptable_answers": ["传统"],
+        "explanation_vi": "传统艺术 = nghệ thuật truyền thống.",
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "ex03_q06",
+        "prompt": "一些年轻人觉得京剧的______太慢。",
+        "answer": "节奏",
+        "acceptable_answers": ["节奏"],
+        "explanation_vi": "节奏太慢 = tiết tấu quá chậm.",
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "ex03_q07",
+        "prompt": "这些故事差不多都是______的。",
+        "answer": "古代",
+        "acceptable_answers": ["古代"],
+        "explanation_vi": "古代的故事 = chuyện thời cổ.",
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "ex03_q08",
+        "prompt": "这种生活方式不容易被年轻人______。",
+        "answer": "接受",
+        "acceptable_answers": ["接受"],
+        "explanation_vi": "被年轻人接受 = được thanh niên tiếp nhận.",
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "ex03_q09",
+        "prompt": "我受中文老师的______，也喜欢上了京剧。",
+        "answer": "影响",
+        "acceptable_answers": ["影响"],
+        "explanation_vi": "受……影响 = chịu ảnh hưởng của…",
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "ex03_q10",
+        "prompt": "今天晚上我有事，去不了，请______。",
+        "answer": "原谅",
+        "acceptable_answers": ["原谅"],
+        "explanation_vi": "请原谅 = xin thông cảm.",
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "ex03_q11",
+        "prompt": "现在是下班时间，公共汽车______上不去。",
+        "answer": "肯定",
+        "acceptable_answers": ["肯定"],
+        "explanation_vi": "肯定上不去 = chắc chắn không lên được.",
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "ex03_q12",
+        "prompt": "我们还是______吧。",
+        "answer": "打的",
+        "acceptable_answers": ["打的"],
+        "explanation_vi": "打的 = bắt taxi.",
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "ex03_q13",
+        "prompt": "我眼睛不好，想买______的票。",
+        "answer": "前排",
+        "acceptable_answers": ["前排"],
+        "explanation_vi": "前排的票 = vé hàng phía trước.",
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "ex03_q14",
+        "prompt": "到了______以后，我们发现票快卖完了。",
+        "answer": "剧场",
+        "acceptable_answers": ["剧场"],
+        "explanation_vi": "到了剧场 = đến rạp hát.",
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "ex03_q15",
+        "prompt": "这个包太小，可能______不下。",
+        "answer": "装",
+        "acceptable_answers": ["装"],
+        "explanation_vi": "装不下 = đựng không vừa.",
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "ex03_q16",
+        "prompt": "我们的______在中间。",
+        "answer": "座位",
+        "acceptable_answers": ["座位"],
+        "explanation_vi": "座位在中间 = chỗ ngồi ở giữa.",
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "ex03_q17",
+        "prompt": "这本______生词太多，我看不懂。",
+        "answer": "说明书",
+        "acceptable_answers": ["说明书"],
+        "explanation_vi": "说明书 = bản thuyết minh.",
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "ex03_q18",
+        "prompt": "后边的______我也看不懂。",
+        "answer": "内容",
+        "acceptable_answers": ["内容"],
+        "explanation_vi": "内容 = nội dung.",
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "ex03_q19",
+        "prompt": "看不懂说明书，也一定看得懂______。",
+        "answer": "表演",
+        "acceptable_answers": ["表演"],
+        "explanation_vi": "看得懂表演 = xem hiểu biểu diễn.",
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       }
+      ],
+      "answer_key": [
+       {
+        "question_id": "ex03_q01",
+        "answer": "京剧",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "question_id": "ex03_q02",
+        "answer": "演员",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "question_id": "ex03_q03",
+        "answer": "猜",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "question_id": "ex03_q04",
+        "answer": "脸谱",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "question_id": "ex03_q05",
+        "answer": "传统",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "question_id": "ex03_q06",
+        "answer": "节奏",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "question_id": "ex03_q07",
+        "answer": "古代",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "question_id": "ex03_q08",
+        "answer": "接受",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "question_id": "ex03_q09",
+        "answer": "影响",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "question_id": "ex03_q10",
+        "answer": "原谅",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "question_id": "ex03_q11",
+        "answer": "肯定",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "question_id": "ex03_q12",
+        "answer": "打的",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "question_id": "ex03_q13",
+        "answer": "前排",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "question_id": "ex03_q14",
+        "answer": "剧场",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "question_id": "ex03_q15",
+        "answer": "装",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "question_id": "ex03_q16",
+        "answer": "座位",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "question_id": "ex03_q17",
+        "answer": "说明书",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "question_id": "ex03_q18",
+        "answer": "内容",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "question_id": "ex03_q19",
+        "answer": "表演",
+        "answer_verified": false,
+        "check_needed": true
+       }
+      ],
+      "rendering": {
+       "renderer": "exercise.fill_blank.v1",
+       "input_mode": "dropdown",
+       "show_word_bank": true,
+       "show_answer_after_submit": true
+      },
+      "source_origin": "textbook",
+      "check_needed": true
+     },
+     {
+      "id": "exercise_04",
+      "type": "fill_blank",
+      "variant": "complete_sentence_with_given_word",
+      "order": 4,
+      "title": "用括号里的词语完成句子",
+      "title_vi": "Dùng từ trong ngoặc hoàn thành câu",
+      "instruction": {
+       "zh": "用括号里的词语完成句子。",
+       "vi": "Dùng từ gợi ý để hoàn thành câu."
+      },
+      "difficulty": "hard",
+      "skill_focus": ["grammar", "writing"],
+      "grammar_refs": ["grammar_01"],
+      "questions": [
+       {
+        "id": "ex04_q01",
+        "prompt": "A：你看过京剧吗？\nB：看过一次。京剧我______，但是______。（看，懂 / 听，懂）",
+        "answer": "看得懂，但是听不懂。",
+        "grading": {
+         "mode": "manual"
+        },
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "ex04_q02",
+        "prompt": "A：演员唱的是什么？\nB：我一点儿也______。（听，清楚）",
+        "answer": "听不清楚。",
+        "grading": {
+         "mode": "manual"
+        },
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "ex04_q03",
+        "prompt": "A：这个故事是什么意思？\nB：我能______大概的意思。（猜，出）",
+        "answer": "猜得出",
+        "grading": {
+         "mode": "manual"
+        },
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "ex04_q04",
+        "prompt": "A：今天晚上你能去吗？\nB：对不起，今天晚上我有事，______。（去，了）",
+        "answer": "去不了。",
+        "grading": {
+         "mode": "manual"
+        },
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "ex04_q05",
+        "prompt": "A：现在去买票，买得到吗？\nB：应该______。（买，到）",
+        "answer": "买得到。",
+        "grading": {
+         "mode": "manual"
+        },
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "ex04_q06",
+        "prompt": "A：坐得太远，你看得见吗？\nB：我眼睛不好，可能______。（看，见）",
+        "answer": "看不见。",
+        "grading": {
+         "mode": "manual"
+        },
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "ex04_q07",
+        "prompt": "A：这件毛衣装得下吗？\nB：把相机拿出来，可能______。（装，下）",
+        "answer": "装得下。",
+        "grading": {
+         "mode": "manual"
+        },
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "ex04_q08",
+        "prompt": "A：说明书你看得懂吗？\nB：生词太多，我______。（看，懂）",
+        "answer": "看不懂。",
+        "grading": {
+         "mode": "manual"
+        },
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       }
+      ],
+      "answer_key": [
+       {
+        "question_id": "ex04_q01",
+        "sample_answer": "看得懂，但是听不懂。",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "question_id": "ex04_q02",
+        "sample_answer": "听不清楚。",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "question_id": "ex04_q03",
+        "sample_answer": "猜得出",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "question_id": "ex04_q04",
+        "sample_answer": "去不了。",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "question_id": "ex04_q05",
+        "sample_answer": "买得到。",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "question_id": "ex04_q06",
+        "sample_answer": "看不见。",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "question_id": "ex04_q07",
+        "sample_answer": "装得下。",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "question_id": "ex04_q08",
+        "sample_answer": "看不懂。",
+        "answer_verified": false,
+        "check_needed": true
+       }
+      ],
+      "rendering": {
+       "renderer": "exercise.fill_blank.v1",
+       "input_mode": "text",
+       "show_answer_after_submit": true
+      },
+      "source_origin": "textbook",
+      "check_needed": true
+     },
+     {
+      "id": "exercise_05",
+      "type": "complete_dialogue",
+      "variant": "answer_questions_with_given_words",
+      "order": 5,
+      "title": "用括号里的词语回答问题",
+      "title_vi": "Dùng từ trong ngoặc trả lời câu hỏi",
+      "instruction": {
+       "zh": "用括号里的词语回答问题。",
+       "vi": "Dùng từ gợi ý để trả lời."
+      },
+      "difficulty": "normal",
+      "skill_focus": ["speaking", "grammar"],
+      "grammar_refs": ["grammar_01"],
+      "dialogues": [
+       {
+        "id": "ex05_d01",
+        "lines": [
+         {
+          "text": "A：山本看得懂京剧吗？"
+         }
+        ],
+        "sample_answers": [
+         {
+          "blank_id": "answer",
+          "answer": "他看得懂，但是听不懂。"
+         }
+        ],
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "ex05_d02",
+        "lines": [
+         {
+          "text": "A：玛丽为什么一点也听不清楚？"
+         }
+        ],
+        "sample_answers": [
+         {
+          "blank_id": "answer",
+          "answer": "因为她听不清楚演员唱的是什么。"
+         }
+        ],
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "ex05_d03",
+        "lines": [
+         {
+          "text": "A：山本为什么喜欢京剧？"
+         }
+        ],
+        "sample_answers": [
+         {
+          "blank_id": "answer",
+          "answer": "因为他觉得京剧的音乐特别好，武打动作很精彩，脸谱也很有趣。"
+         }
+        ],
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "ex05_d04",
+        "lines": [
+         {
+          "text": "A：为什么现在一些年轻人不太喜欢京剧？"
+         }
+        ],
+        "sample_answers": [
+         {
+          "blank_id": "answer",
+          "answer": "因为京剧节奏慢，故事离当代青年人的生活太远。"
+         }
+        ],
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "ex05_d05",
+        "lines": [
+         {
+          "text": "A：玛丽为什么喜欢京剧？"
+         }
+        ],
+        "sample_answers": [
+         {
+          "blank_id": "answer",
+          "answer": "因为她受中文老师的影响。"
+         }
+        ],
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "ex05_d06",
+        "lines": [
+         {
+          "text": "A：山本今天晚上为什么去不了？"
+         }
+        ],
+        "sample_answers": [
+         {
+          "blank_id": "answer",
+          "answer": "因为他今天晚上有事。"
+         }
+        ],
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "ex05_d07",
+        "lines": [
+         {
+          "text": "A：为什么他们不坐公共汽车？"
+         }
+        ],
+        "sample_answers": [
+         {
+          "blank_id": "answer",
+          "answer": "因为现在是下班时间，公共汽车肯定上不去。"
+         }
+        ],
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "ex05_d08",
+        "lines": [
+         {
+          "text": "A：为什么山本想买前十排的票？"
+         }
+        ],
+        "sample_answers": [
+         {
+          "blank_id": "answer",
+          "answer": "因为他眼睛不好，坐得远可能看不见。"
+         }
+        ],
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       }
+      ],
+      "answer_key": [
+       {
+        "question_id": "ex05_d01",
+        "sample_answer": "他看得懂，但是听不懂。",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "question_id": "ex05_d02",
+        "sample_answer": "因为她听不清楚演员唱的是什么。",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "question_id": "ex05_d03",
+        "sample_answer": "因为他觉得京剧的音乐特别好，武打动作很精彩，脸谱也很有趣。",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "question_id": "ex05_d04",
+        "sample_answer": "因为京剧节奏慢，故事离当代青年人的生活太远。",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "question_id": "ex05_d05",
+        "sample_answer": "因为她受中文老师的影响。",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "question_id": "ex05_d06",
+        "sample_answer": "因为他今天晚上有事。",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "question_id": "ex05_d07",
+        "sample_answer": "因为现在是下班时间，公共汽车肯定上不去。",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "question_id": "ex05_d08",
+        "sample_answer": "因为他眼睛不好，坐得远可能看不见。",
+        "answer_verified": false,
+        "check_needed": true
+       }
+      ],
+      "rendering": {
+       "renderer": "exercise.complete_dialogue.v1",
+       "show_answer_after_submit": true
+      },
+      "source_origin": "textbook",
+      "check_needed": true
+     },
+     {
+      "id": "exercise_06",
+      "type": "correct_sentence",
+      "variant": "",
+      "order": 6,
+      "title": "改错句",
+      "title_vi": "Sửa câu sai",
+      "instruction": {
+       "zh": "改错句。",
+       "vi": "Sửa lỗi trong câu."
+      },
+      "difficulty": "hard",
+      "skill_focus": ["grammar", "sentence_order"],
+      "grammar_refs": ["grammar_01"],
+      "questions": [
+       {
+        "id": "ex06_q01",
+        "wrong_sentence": "这篇课文我看得不懂。",
+        "correct_sentence": "这篇课文我看不懂。",
+        "acceptable_answers": ["这篇课文我看不懂。"],
+        "explanation_vi": "可能补语 phủ định dùng V + 不 + 补语, không dùng 得不.",
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "ex06_q02",
+        "wrong_sentence": "他说得太快，我听得不懂。",
+        "correct_sentence": "他说得太快，我听不懂。",
+        "acceptable_answers": ["他说得太快，我听不懂。"],
+        "explanation_vi": "听不懂 là dạng phủ định đúng.",
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "ex06_q03",
+        "wrong_sentence": "我一点也听得清楚演员唱的是什么。",
+        "correct_sentence": "我一点也听不清楚演员唱的是什么。",
+        "acceptable_answers": ["我一点也听不清楚演员唱的是什么。"],
+        "explanation_vi": "一点也 thường đi với phủ định.",
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "ex06_q04",
+        "wrong_sentence": "今天晚上我有事，不去了了。",
+        "correct_sentence": "今天晚上我有事，去不了了。",
+        "acceptable_answers": ["今天晚上我有事，去不了了。"],
+        "explanation_vi": "去不了 = không đi được vì có việc.",
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "ex06_q05",
+        "wrong_sentence": "明天晚上去得了不去得了？",
+        "correct_sentence": "明天晚上去得了去不了？",
+        "acceptable_answers": ["明天晚上去得了去不了？"],
+        "explanation_vi": "Câu hỏi chính phản dạng khả năng: V得了V不了.",
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "ex06_q06",
+        "wrong_sentence": "公共汽车人太多，上不来。",
+        "correct_sentence": "公共汽车人太多，上不去。",
+        "acceptable_answers": ["公共汽车人太多，上不去。"],
+        "explanation_vi": "Lên xe theo hướng lên/đi lên dùng 上不去 trong ngữ cảnh này.",
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "ex06_q07",
+        "wrong_sentence": "这个包装不下进去。",
+        "correct_sentence": "这个包装不下。",
+        "acceptable_answers": ["这个包装不下。"],
+        "explanation_vi": "装不下 đã đủ nghĩa “đựng không vừa”.",
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "ex06_q08",
+        "wrong_sentence": "说明书我看得不懂，但是表演看得懂。",
+        "correct_sentence": "说明书我看不懂，但是表演看得懂。",
+        "acceptable_answers": ["说明书我看不懂，但是表演看得懂。"],
+        "explanation_vi": "Phủ định đúng là 看不懂.",
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       }
+      ],
+      "answer_key": [
+       {
+        "question_id": "ex06_q01",
+        "answer": "这篇课文我看不懂。",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "question_id": "ex06_q02",
+        "answer": "他说得太快，我听不懂。",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "question_id": "ex06_q03",
+        "answer": "我一点也听不清楚演员唱的是什么。",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "question_id": "ex06_q04",
+        "answer": "今天晚上我有事，去不了了。",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "question_id": "ex06_q05",
+        "answer": "明天晚上去得了去不了？",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "question_id": "ex06_q06",
+        "answer": "公共汽车人太多，上不去。",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "question_id": "ex06_q07",
+        "answer": "这个包装不下。",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "question_id": "ex06_q08",
+        "answer": "说明书我看不懂，但是表演看得懂。",
+        "answer_verified": false,
+        "check_needed": true
+       }
+      ],
+      "rendering": {
+       "renderer": "exercise.correct_sentence.v1",
+       "show_answer_after_submit": true
+      },
+      "source_origin": "textbook",
+      "check_needed": true
+     }
+    ]
+   },
+   {
+    "id": "section_07_communication",
+    "type": "communication",
+    "order": 7,
+    "title": "交际会话",
+    "title_vi": "Hội thoại giao tiếp",
+    "source_origin": "textbook/generated_mixed",
+    "check_needed": true,
+    "items": [
+     {
+      "id": "communication_01",
+      "type": "communication_dialogue",
+      "variant": "invitation",
+      "order": 1,
+      "title": "邀请",
+      "title_vi": "Mời",
+      "function": "邀请",
+      "function_vi": "Mời ai đó đi/làm gì",
+      "dialogue": [
+       {
+        "speaker": "A",
+        "text": "今天晚上你有没有空儿？"
+       },
+       {
+        "speaker": "B",
+        "text": "有啊，有什么事儿吗？"
+       },
+       {
+        "speaker": "A",
+        "text": "我想请你去看京剧。"
+       },
+       {
+        "speaker": "B",
+        "text": "好啊，几点出发？"
+       },
+       {
+        "speaker": "A",
+        "text": "五点二十，学校西门见。"
+       },
+       {
+        "speaker": "B",
+        "text": "好，不见不散。"
+       }
+      ],
+      "source_origin": "textbook/generated_mixed",
+      "check_needed": true
+     },
+     {
+      "id": "communication_02",
+      "type": "communication_dialogue",
+      "variant": "cannot_go",
+      "order": 2,
+      "title": "表达不能去",
+      "title_vi": "Diễn đạt không đi được",
+      "function": "表达不能去",
+      "function_vi": "Nói không đi được",
+      "dialogue": [
+       {
+        "speaker": "A",
+        "text": "今天晚上你有没有空儿？"
+       },
+       {
+        "speaker": "B",
+        "text": "对不起，今天晚上我有事，去不了。"
+       },
+       {
+        "speaker": "A",
+        "text": "没关系。明天晚上去得了去不了？"
+       },
+       {
+        "speaker": "B",
+        "text": "明天晚上可以。"
+       }
+      ],
+      "source_origin": "textbook/generated_mixed",
+      "check_needed": true
+     },
+     {
+      "id": "communication_03",
+      "type": "communication_dialogue",
+      "variant": "buy_ticket",
+      "order": 3,
+      "title": "买票",
+      "title_vi": "Mua vé",
+      "function": "买票",
+      "function_vi": "Mua vé",
+      "dialogue": [
+       {
+        "speaker": "A",
+        "text": "现在去，买得到票吗？"
+       },
+       {
+        "speaker": "B",
+        "text": "买得到的话，买前排的吧。"
+       },
+       {
+        "speaker": "A",
+        "text": "为什么？"
+       },
+       {
+        "speaker": "B",
+        "text": "我眼睛不好，坐得远可能看不见。"
+       },
+       {
+        "speaker": "A",
+        "text": "好，那我们买前排的票。"
+       }
+      ],
+      "source_origin": "textbook/generated_mixed",
+      "check_needed": true
+     },
+     {
+      "id": "communication_04",
+      "type": "communication_dialogue",
+      "variant": "potential_complement_qa",
+      "order": 4,
+      "title": "可能补语问答",
+      "title_vi": "Hỏi đáp bổ ngữ khả năng",
+      "function": "可能补语问答",
+      "function_vi": "Hỏi đáp có làm được hay không",
+      "dialogue": [
+       {
+        "speaker": "A",
+        "text": "这个包装得下吗？"
+       },
+       {
+        "speaker": "B",
+        "text": "可能装得下。"
+       },
+       {
+        "speaker": "A",
+        "text": "那我把毛衣装进去。"
+       },
+       {
+        "speaker": "B",
+        "text": "你先把相机拿出来吧。"
+       }
+      ],
+      "source_origin": "textbook/generated_mixed",
+      "check_needed": true
+     }
+    ]
+   },
+   {
+    "id": "section_08_reading",
+    "type": "reading",
+    "order": 8,
+    "title": "阅读理解 / 阅读填空",
+    "title_vi": "Đọc hiểu / Điền khuyết",
+    "source_origin": "generated",
+    "check_needed": true,
+    "note_vi": "Đã bổ sung bài đọc + bài điền khuyết cho app. Phần này là generated supplement vì bản bóc trước để trống reading; cần đối chiếu PDF nếu muốn đánh dấu textbook.",
+    "items": [
+     {
+      "id": "reading_01",
+      "type": "reading_text",
+      "order": 1,
+      "title": "我听不懂京剧",
+      "title_vi": "Tôi nghe không hiểu Kinh kịch",
+      "paragraphs": [
+       {
+        "id": "reading_01_p01",
+        "order": 1,
+        "zh": "昨天晚上，朋友请我去看京剧。开始的时候，我看得懂演员的动作，但是听不懂他们唱的是什么。",
+        "pinyin": "",
+        "vi": "",
+        "grammar_refs": ["grammar_01"],
+        "vocab_refs": [],
+        "source_origin": "generated",
+        "check_needed": true
+       },
+       {
+        "id": "reading_01_p02",
+        "order": 2,
+        "zh": "朋友小声给我解释，我才猜得出大概的意思。可是有些词太难了，我还是听不清楚。",
+        "pinyin": "",
+        "vi": "",
+        "grammar_refs": ["grammar_01"],
+        "vocab_refs": [],
+        "source_origin": "generated",
+        "check_needed": true
+       },
+       {
+        "id": "reading_01_p03",
+        "order": 3,
+        "zh": "演出结束后，朋友问我：“你明天还去不去？”我说：“明天晚上我有事，去不了。”",
+        "pinyin": "",
+        "vi": "",
+        "grammar_refs": ["grammar_01"],
+        "vocab_refs": [],
+        "source_origin": "generated",
+        "check_needed": true
+       },
+       {
+        "id": "reading_01_p04",
+        "order": 4,
+        "zh": "不过我觉得京剧很有意思。以后如果有机会，我还想再看一次。",
+        "pinyin": "",
+        "vi": "",
+        "grammar_refs": ["grammar_01"],
+        "vocab_refs": [],
+        "source_origin": "generated",
+        "check_needed": true
+       }
+      ],
+      "questions": [
+       {
+        "id": "reading_01_q01",
+        "question": "这篇短文主要说什么？",
+        "answer": "这篇短文主要练习本课语法和主题词。",
+        "source_origin": "generated",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "reading_01_q02",
+        "question": "文中用了哪些本课语法点？",
+        "answer": "答案可参考 grammar_refs。",
+        "source_origin": "generated",
+        "answer_verified": false,
+        "check_needed": true
+       }
+      ],
+      "source_origin": "generated",
+      "check_needed": true
+     },
+     {
+      "id": "reading_cloze_01",
+      "type": "reading_cloze",
+      "order": 2,
+      "title": "综合填空：我听不懂京剧",
+      "title_vi": "Điền tổng hợp: Tôi nghe không hiểu Kinh kịch",
+      "instruction": {
+       "zh": "综合填空。",
+       "vi": "Điền từ thích hợp vào chỗ trống trong bài đọc."
+      },
+      "word_bank": [],
+      "passage": {
+       "id": "cloze_passage_01",
+       "segments": [
+        {
+         "id": "seg_001",
+         "type": "text",
+         "text": "昨天晚上，朋友请我去看京剧。开始的时候，我看得"
+        },
+        {
+         "id": "seg_002",
+         "type": "blank",
+         "blank_id": "blank_01"
+        },
+        {
+         "id": "seg_003",
+         "type": "text",
+         "text": "演员的动作，但是听不"
+        },
+        {
+         "id": "seg_004",
+         "type": "blank",
+         "blank_id": "blank_02"
+        },
+        {
+         "id": "seg_005",
+         "type": "text",
+         "text": "他们唱的是什么。\n\n朋友小声给我解释，我才猜得"
+        },
+        {
+         "id": "seg_006",
+         "type": "blank",
+         "blank_id": "blank_03"
+        },
+        {
+         "id": "seg_007",
+         "type": "text",
+         "text": "大概的意思。可是有些词太难了，我还是听不"
+        },
+        {
+         "id": "seg_008",
+         "type": "blank",
+         "blank_id": "blank_04"
+        },
+        {
+         "id": "seg_009",
+         "type": "text",
+         "text": "。\n\n演出结束后，朋友问我：“你明天还去不去？”我说：“明天晚上我有事，去不"
+        },
+        {
+         "id": "seg_010",
+         "type": "blank",
+         "blank_id": "blank_05"
+        },
+        {
+         "id": "seg_011",
+         "type": "text",
+         "text": "。”"
+        }
+       ]
+      },
+      "answers": [
+       {
+        "blank_id": "blank_01",
+        "answer": "懂",
+        "acceptable_answers": ["懂"],
+        "explanation_vi": "Đáp án theo bài đọc bổ sung đã tạo cho app; cần rà nếu muốn khớp tuyệt đối với sách.",
+        "grammar_refs": ["grammar_01"],
+        "source_origin": "generated",
+        "check_needed": true
+       },
+       {
+        "blank_id": "blank_02",
+        "answer": "懂",
+        "acceptable_answers": ["懂"],
+        "explanation_vi": "Đáp án theo bài đọc bổ sung đã tạo cho app; cần rà nếu muốn khớp tuyệt đối với sách.",
+        "grammar_refs": ["grammar_01"],
+        "source_origin": "generated",
+        "check_needed": true
+       },
+       {
+        "blank_id": "blank_03",
+        "answer": "出",
+        "acceptable_answers": ["出"],
+        "explanation_vi": "Đáp án theo bài đọc bổ sung đã tạo cho app; cần rà nếu muốn khớp tuyệt đối với sách.",
+        "grammar_refs": ["grammar_01"],
+        "source_origin": "generated",
+        "check_needed": true
+       },
+       {
+        "blank_id": "blank_04",
+        "answer": "清楚",
+        "acceptable_answers": ["清楚"],
+        "explanation_vi": "Đáp án theo bài đọc bổ sung đã tạo cho app; cần rà nếu muốn khớp tuyệt đối với sách.",
+        "grammar_refs": ["grammar_01"],
+        "source_origin": "generated",
+        "check_needed": true
+       },
+       {
+        "blank_id": "blank_05",
+        "answer": "了",
+        "acceptable_answers": ["了"],
+        "explanation_vi": "Đáp án theo bài đọc bổ sung đã tạo cho app; cần rà nếu muốn khớp tuyệt đối với sách.",
+        "grammar_refs": ["grammar_01"],
+        "source_origin": "generated",
+        "check_needed": true
+       }
+      ],
+      "answer_key": [
+       {
+        "blank_id": "blank_01",
+        "answer": "懂",
+        "source_origin": "generated",
+        "check_needed": true
+       },
+       {
+        "blank_id": "blank_02",
+        "answer": "懂",
+        "source_origin": "generated",
+        "check_needed": true
+       },
+       {
+        "blank_id": "blank_03",
+        "answer": "出",
+        "source_origin": "generated",
+        "check_needed": true
+       },
+       {
+        "blank_id": "blank_04",
+        "answer": "清楚",
+        "source_origin": "generated",
+        "check_needed": true
+       },
+       {
+        "blank_id": "blank_05",
+        "answer": "了",
+        "source_origin": "generated",
+        "check_needed": true
+       }
+      ],
+      "rendering": {
+       "renderer": "reading.cloze.v1",
+       "input_mode": "text",
+       "show_word_bank": false,
+       "show_answer_after_submit": true
+      },
+      "source_origin": "generated",
+      "check_needed": true
+     }
+    ]
+   },
+   {
+    "id": "section_09_character_writing",
+    "type": "character_writing",
+    "order": 9,
+    "title": "写汉字",
+    "title_vi": "Viết chữ Hán",
+    "source_origin": "generated",
+    "check_needed": true,
+    "items": [
+     {
+      "id": "char_001",
+      "type": "character_writing_item",
+      "order": 1,
+      "hanzi": "京",
+      "pinyin": "jīng",
+      "vocab_ref": "vocab_001",
+      "stroke_count": null,
+      "radical": "",
+      "stroke_order_key": "",
+      "practice": {
+       "grid_type": "田字格",
+       "repeat_count": 6
+      },
+      "source_origin": "generated",
+      "check_needed": true
+     },
+     {
+      "id": "char_002",
+      "type": "character_writing_item",
+      "order": 2,
+      "hanzi": "剧",
+      "pinyin": "jù",
+      "vocab_ref": "vocab_001",
+      "stroke_count": null,
+      "radical": "",
+      "stroke_order_key": "",
+      "practice": {
+       "grid_type": "田字格",
+       "repeat_count": 6
+      },
+      "source_origin": "generated",
+      "check_needed": true
+     },
+     {
+      "id": "char_003",
+      "type": "character_writing_item",
+      "order": 3,
+      "hanzi": "猜",
+      "pinyin": "cāi",
+      "vocab_ref": "vocab_004",
+      "stroke_count": null,
+      "radical": "",
+      "stroke_order_key": "",
+      "practice": {
+       "grid_type": "田字格",
+       "repeat_count": 6
+      },
+      "source_origin": "generated",
+      "check_needed": true
+     },
+     {
+      "id": "char_004",
+      "type": "character_writing_item",
+      "order": 4,
+      "hanzi": "演",
+      "pinyin": "yǎn",
+      "vocab_ref": "vocab_008",
+      "stroke_count": null,
+      "radical": "",
+      "stroke_order_key": "",
+      "practice": {
+       "grid_type": "田字格",
+       "repeat_count": 6
+      },
+      "source_origin": "generated",
+      "check_needed": true
+     },
+     {
+      "id": "char_005",
+      "type": "character_writing_item",
+      "order": 5,
+      "hanzi": "脸",
+      "pinyin": "liǎn",
+      "vocab_ref": "vocab_014",
+      "stroke_count": null,
+      "radical": "",
+      "stroke_order_key": "",
+      "practice": {
+       "grid_type": "田字格",
+       "repeat_count": 6
+      },
+      "source_origin": "generated",
+      "check_needed": true
+     },
+     {
+      "id": "char_006",
+      "type": "character_writing_item",
+      "order": 6,
+      "hanzi": "谱",
+      "pinyin": "pǔ",
+      "vocab_ref": "vocab_014",
+      "stroke_count": null,
+      "radical": "",
+      "stroke_order_key": "",
+      "practice": {
+       "grid_type": "田字格",
+       "repeat_count": 6
+      },
+      "source_origin": "generated",
+      "check_needed": true
+     },
+     {
+      "id": "char_007",
+      "type": "character_writing_item",
+      "order": 7,
+      "hanzi": "统",
+      "pinyin": "tǒng",
+      "vocab_ref": "vocab_024",
+      "stroke_count": null,
+      "radical": "",
+      "stroke_order_key": "",
+      "practice": {
+       "grid_type": "田字格",
+       "repeat_count": 6
+      },
+      "source_origin": "generated",
+      "check_needed": true
+     },
+     {
+      "id": "char_008",
+      "type": "character_writing_item",
+      "order": 8,
+      "hanzi": "术",
+      "pinyin": "shù",
+      "vocab_ref": "vocab_025",
+      "stroke_count": null,
+      "radical": "",
+      "stroke_order_key": "",
+      "practice": {
+       "grid_type": "田字格",
+       "repeat_count": 6
+      },
+      "source_origin": "generated",
+      "check_needed": true
+     },
+     {
+      "id": "char_009",
+      "type": "character_writing_item",
+      "order": 9,
+      "hanzi": "票",
+      "pinyin": "piào",
+      "vocab_ref": "",
+      "stroke_count": null,
+      "radical": "",
+      "stroke_order_key": "",
+      "practice": {
+       "grid_type": "田字格",
+       "repeat_count": 6
+      },
+      "source_origin": "generated",
+      "check_needed": true
+     },
+     {
+      "id": "char_010",
+      "type": "character_writing_item",
+      "order": 10,
+      "hanzi": "装",
+      "pinyin": "zhuāng",
+      "vocab_ref": "vocab_049",
+      "stroke_count": null,
+      "radical": "",
+      "stroke_order_key": "",
+      "practice": {
+       "grid_type": "田字格",
+       "repeat_count": 6
+      },
+      "source_origin": "generated",
+      "check_needed": true
+     }
+    ]
+   }
+  ],
+  "summary": {
+   "lesson_parts": ["课文", "生词", "专名", "注释", "语法", "练习", "交际会话"],
+   "grammar_points": [
+    {
+     "id": "grammar_01",
+     "title": "可能补语"
+    },
+    {
+     "id": "grammar_01_structure_01",
+     "title": "V + 得 / 不 + 懂"
+    },
+    {
+     "id": "grammar_01_structure_02",
+     "title": "V + 得 / 不 + 清楚"
+    },
+    {
+     "id": "grammar_01_structure_03",
+     "title": "V + 得 / 不 + 出"
+    },
+    {
+     "id": "grammar_01_structure_04",
+     "title": "V + 得 / 不 + 了"
+    },
+    {
+     "id": "grammar_01_structure_05",
+     "title": "V + 得 / 不 + 到"
+    },
+    {
+     "id": "grammar_01_structure_06",
+     "title": "V + 得 / 不 + 见"
+    },
+    {
+     "id": "grammar_01_structure_07",
+     "title": "V + 得 / 不 + 下"
+    },
+    {
+     "id": "grammar_01_structure_08",
+     "title": "V + 得 / 不 + 上去"
+    }
+   ],
+   "main_patterns": [
+    {
+     "pattern": "京剧我看得懂，但是听不懂。",
+     "grammar_ref": "grammar_01_structure_01"
+    },
+    {
+     "pattern": "我一点也听不清楚演员唱的是什么。",
+     "grammar_ref": "grammar_01_structure_02"
+    },
+    {
+     "pattern": "能猜得出大概的意思。",
+     "grammar_ref": "grammar_01_structure_03"
+    },
+    {
+     "pattern": "今天晚上我有事，去不了。",
+     "grammar_ref": "grammar_01_structure_04"
+    },
+    {
+     "pattern": "明天晚上去得了去不了？",
+     "grammar_ref": "grammar_01_structure_04"
+    },
+    {
+     "pattern": "公共汽车肯定上不去。",
+     "grammar_ref": "grammar_01_structure_08"
+    },
+    {
+     "pattern": "现在去，买得到票吗？",
+     "grammar_ref": "grammar_01_structure_05"
+    },
+    {
+     "pattern": "坐得远可能看不见。",
+     "grammar_ref": "grammar_01_structure_06"
+    },
+    {
+     "pattern": "装得下装不下？",
+     "grammar_ref": "grammar_01_structure_07"
+    },
+    {
+     "pattern": "看不懂说明书，一定看得懂表演。",
+     "grammar_ref": "grammar_01_structure_01"
+    }
+   ],
+   "exercise_types": [
+    "phonetics",
+    "read_aloud",
+    "substitution_drill",
+    "choose_words_fill_blank",
+    "fill_blank",
+    "complete_dialogue",
+    "correct_sentence",
+    "communication_dialogue",
+    "character_writing",
+    "reading_text",
+    "reading_cloze"
+   ],
+   "source_origin_policy": {
+    "textbook": "Copied/structured from textbook/PDF content.",
+    "web_crosscheck": "Used only to confirm lesson title, lesson structure, and key grammar topics.",
+    "generated": "Generated for app practice/rendering; must be treated as non-textbook unless verified separately.",
+    "textbook/generated_mixed": "Based on textbook communicative function but formatted/simplified for app rendering."
+   },
+   "check_needed": true
+  }
+ },
+ "fix_history": [
+  {
+   "fix_id": "reading_patch_15_23_v1",
+   "description": "Filled previously empty reading section with generated reading_text and reading_cloze items for app rendering.",
+   "affected_section_type": "reading",
+   "source_origin": "generated",
+   "check_needed": true
+  }
+ ]
+}

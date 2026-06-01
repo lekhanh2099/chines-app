@@ -2,26 +2,16 @@
 
 import { useMemo, useState } from "react";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
 import { BookMarked, Sparkles } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { CreateCourseDialog } from "@/features/hanzihome/courses/CreateCourseDialog";
-import { useCustomHanziHomeCourseCatalogQuery } from "@/features/hanzihome/courses/use-custom-courses";
-import {
- CreateLessonDraftDialog,
- type LessonDraftSummary,
- useLessonDraftSummariesQuery,
-} from "@/features/hanzihome/lesson-drafts";
 import { useHanziHomeCatalogData } from "@/features/hanzihome/hooks/useHanziHomeCatalogData";
 import { useHanziHomeCourseLessons } from "@/features/hanzihome/hooks/useHanziHomeCourseLessons";
-import { GlobalMemoryTipCard } from "@/features/hanzihome/memory-tips/GlobalMemoryTipCard";
 import type {
  HanziHomeCatalogCourse,
  HanziHomeCourseBook,
 } from "@/features/hanzihome/types";
-import { useLearningState } from "@/features/hanzihome/hooks/useLearningState";
 
 type CourseStats = {
  books: HanziHomeCourseBook[];
@@ -29,211 +19,48 @@ type CourseStats = {
  vocabCount: number;
  grammarCount: number;
  fallbackLessonId?: string;
- suggestedLessonNumber: number;
 };
-
-const SEED_COURSE_IDS = new Set(["hanyu-jiaocheng"]);
-
-function isSeedCourse(course: Pick<HanziHomeCatalogCourse, "id">) {
- return SEED_COURSE_IDS.has(course.id);
-}
 
 export function HanziHomeLibraryHome() {
  const catalogData = useHanziHomeCatalogData();
- const customCatalogQuery = useCustomHanziHomeCourseCatalogQuery();
- const draftsQuery = useLessonDraftSummariesQuery();
- const learning = useLearningState();
-
- const unpublishedDrafts = useMemo(
-  () =>
-   (draftsQuery.data ?? []).filter((draft) => draft.status !== "published"),
-  [draftsQuery.data],
- );
-
- const courses = useMemo(
-  () =>
-   mergeCatalogCourses(
-    catalogData.courses,
-    customCatalogQuery.data?.courses ?? [],
-   ).filter((course) => !isSeedCourse(course)),
-  [catalogData.courses, customCatalogQuery.data?.courses],
- );
- const books = useMemo(() => {
-  const visibleCourseIds = new Set(courses.map((course) => course.id));
-
-  return mergeBooks(catalogData.books, customCatalogQuery.data?.books ?? [])
-   .filter((book) => visibleCourseIds.has(book.courseId));
- }, [catalogData.books, courses, customCatalogQuery.data?.books]);
+ const courses = catalogData.courses;
+ const books = catalogData.books;
 
  return (
   <main className="flex w-full max-w-full flex-col gap-3 px-4 py-4 lg:px-8">
-   <section className="flex gap-4 w-full">
-    <div className="grid gap-3 w-full">
-     <GlobalMemoryTipCard compact />
-     <div className="flex justify-start xl:justify-end">
-      <CreateCourseDialog />
-     </div>
-    </div>
-   </section>
-
-   <DraftRecoveryPanel
-    drafts={unpublishedDrafts}
-    error={draftsQuery.error}
-    isLoading={draftsQuery.isLoading}
-   />
-
    <section className="grid gap-4">
-    {customCatalogQuery.isLoading && (
-     <p className="text-sm font-bold text-text-muted">
-      Đang tải custom course...
+    <div className="grid gap-1">
+     <p className="text-xs font-black uppercase tracking-[0.18em] text-text-muted">
+      HanziHome
      </p>
-    )}
-
-    <div className="grid gap-4">
-     {courses.map((course) => (
-      <CourseCard
-       key={course.id}
-       course={course}
-       stats={getCourseStats(course, books)}
-       lastCourseId={learning.state.settings.lastCourseId}
-       lastLessonId={learning.state.settings.lastLessonId}
-      />
-     ))}
+     <h1 className="text-2xl font-black tracking-tight text-text-primary">
+      Thư viện ôn thi từ JSON tĩnh
+     </h1>
+     <p className="max-w-3xl text-sm font-semibold leading-relaxed text-text-muted">
+      Dữ liệu học chính đang đọc trực tiếp từ bộ JSON Quyển 2 trong source.
+      Supabase chỉ còn dùng cho ghi chú cá nhân.
+     </p>
     </div>
-   </section>
-  </main>
- );
-}
 
-function DraftRecoveryPanel({
- drafts,
- error,
- isLoading,
-}: {
- drafts: LessonDraftSummary[];
- error: Error | null;
- isLoading: boolean;
-}) {
- if (!isLoading && !error && drafts.length === 0) return null;
-
- const visibleDrafts = [...drafts]
-  .sort((a, b) => Date.parse(b.updatedAt) - Date.parse(a.updatedAt))
-  .slice(0, 6);
-
- return (
-  <Card padding="md" className="rounded-xl">
-   <div className="grid gap-3">
-    <div className="flex flex-wrap items-start justify-between gap-3">
-     <div className="grid gap-1">
-      <p className="text-xs font-black uppercase tracking-wide text-text-muted">
-       Bài nháp chưa publish
-      </p>
-      <h2 className="text-lg font-black text-text-primary">
-       Tiếp tục soạn bài đang làm dở
-      </h2>
+    {courses.length === 0 ? (
+     <Card padding="lg" className="rounded-xl">
       <p className="text-sm font-semibold text-text-muted">
-       Draft chưa publish không hiện trong danh sách bài học, nên gom lại ở đây
-       để mở lại nhanh.
+       Chưa tìm thấy course tĩnh.
       </p>
-     </div>
-
-     <span className="rounded-full bg-bg-subtle px-3 py-1 text-xs font-black text-text-muted">
-      {drafts.length} draft
-     </span>
-    </div>
-
-    {isLoading && (
-     <p className="text-sm font-bold text-text-muted">Đang tải bài nháp...</p>
-    )}
-
-    {error && (
-     <p role="alert" className="text-sm font-bold text-destructive">
-      {error.message}
-     </p>
-    )}
-
-    {visibleDrafts.length > 0 && (
-     <div className="grid gap-2 md:grid-cols-2 xl:grid-cols-3">
-      {visibleDrafts.map((draft) => (
-       <Link
-        key={draft.id}
-        href={`/hanzihome/drafts/${draft.id}`}
-        className="grid gap-1 rounded-xl border border-border-default bg-bg-subtle p-3 transition-colors hover:border-accent-muted hover:bg-accent-subtle"
-       >
-        <p className="truncate text-sm font-black text-text-primary">
-         {draft.lessonNumber ? `Bài ${draft.lessonNumber}: ` : ""}
-         {draft.titleZh}
-        </p>
-        <p className="truncate text-xs font-semibold text-text-muted">
-         {draft.bookTitle || draft.courseTitle || draft.lessonKey} ·{" "}
-         {draft.status}
-        </p>
-       </Link>
+     </Card>
+    ) : (
+     <div className="grid gap-4">
+      {courses.map((course) => (
+       <CourseCard
+        key={course.id}
+        course={course}
+        stats={getCourseStats(course, books)}
+       />
       ))}
      </div>
     )}
-
-    {drafts.length > visibleDrafts.length && (
-     <p className="text-xs font-black uppercase tracking-wide text-text-muted">
-      Còn {drafts.length - visibleDrafts.length} draft khác. Mở draft gần đây
-      nhất trước, hoặc dùng tìm kiếm sau khi build trang quản lý draft đầy đủ.
-     </p>
-    )}
-   </div>
-  </Card>
- );
-}
-
-function mergeCatalogCourses(
- catalogCourses: HanziHomeCatalogCourse[],
- customCourses: Array<Omit<HanziHomeCatalogCourse, "stats">>,
-) {
- const byId = new Map<string, HanziHomeCatalogCourse>();
-
- for (const course of catalogCourses) {
-  byId.set(course.id, course);
- }
-
- for (const course of customCourses) {
-  if (!byId.has(course.id)) {
-   byId.set(course.id, {
-    ...course,
-    stats: {
-     bookCount: 0,
-     lessonCount: 0,
-     vocabCount: 0,
-     grammarCount: 0,
-    },
-   });
-  }
- }
-
- return Array.from(byId.values()).sort(
-  (a, b) => a.order - b.order || a.title.localeCompare(b.title),
- );
-}
-
-function mergeBooks(
- catalogBooks: HanziHomeCourseBook[],
- customBooks: HanziHomeCourseBook[],
-) {
- const byId = new Map<string, HanziHomeCourseBook>();
-
- for (const book of catalogBooks) {
-  byId.set(book.id, book);
- }
-
- for (const book of customBooks) {
-  if (!byId.has(book.id)) {
-   byId.set(book.id, book);
-  }
- }
-
- return Array.from(byId.values()).sort(
-  (a, b) =>
-   a.courseId.localeCompare(b.courseId) ||
-   a.order - b.order ||
-   a.title.localeCompare(b.title),
+   </section>
+  </main>
  );
 }
 
@@ -241,46 +68,39 @@ function getCourseStats(
  course: HanziHomeCatalogCourse,
  books: HanziHomeCourseBook[],
 ): CourseStats {
- const courseBooks = books.filter((book) => book.courseId === course.id);
-
  return {
-  books: courseBooks,
+  books: books.filter((book) => book.courseId === course.id),
   lessonCount: course.stats.lessonCount,
   vocabCount: course.stats.vocabCount,
   grammarCount: course.stats.grammarCount,
   fallbackLessonId: course.fallbackLessonId || course.lastLessonId,
-  suggestedLessonNumber: course.stats.lessonCount + 1,
  };
 }
 
 function CourseCard({
  course,
  stats,
- lastCourseId,
- lastLessonId,
 }: {
  course: HanziHomeCatalogCourse;
  stats: CourseStats;
- lastCourseId?: string;
- lastLessonId?: string;
 }) {
- const router = useRouter();
  const primaryBook = stats.books[0];
  const courseLessons = useHanziHomeCourseLessons(course.id);
-
- const targetLessonId =
-  lastCourseId === course.id
-   ? lastLessonId || stats.fallbackLessonId
-   : stats.fallbackLessonId;
- const [selectedLessonId, setSelectedLessonId] = useState(targetLessonId ?? "");
- const selectedLessonIsAvailable = courseLessons.some(
-  (lesson) => lesson.id === selectedLessonId,
+ const [selectedLessonId, setSelectedLessonId] = useState(
+  stats.fallbackLessonId ?? "",
  );
- const effectiveLessonId =
-  (selectedLessonIsAvailable ? selectedLessonId : null) ||
-  targetLessonId ||
-  courseLessons.at(-1)?.id ||
-  "";
+ const effectiveLessonId = useMemo(() => {
+  const selectedExists = courseLessons.some(
+   (lesson) => lesson.id === selectedLessonId,
+  );
+
+  return (
+   (selectedExists ? selectedLessonId : null) ||
+   stats.fallbackLessonId ||
+   courseLessons[0]?.id ||
+   ""
+  );
+ }, [courseLessons, selectedLessonId, stats.fallbackLessonId]);
  const href = effectiveLessonId
   ? `/hanzihome?courseId=${course.id}&lessonId=${effectiveLessonId}`
   : `/hanzihome?courseId=${course.id}`;
@@ -301,27 +121,14 @@ function CourseCard({
      )
    : stats.grammarCount;
 
- const openCourse = () => {
-  router.push(href);
- };
-
  return (
   <Card
    padding="none"
-   role="button"
-   tabIndex={0}
-   onClick={openCourse}
-   onKeyDown={(event) => {
-    if (event.key === "Enter" || event.key === " ") {
-     event.preventDefault();
-     openCourse();
-    }
-   }}
-   className="group cursor-pointer rounded-xl p-4 transition-colors hover:border-accent-muted hover:bg-accent-subtle"
+   className="rounded-xl p-4 transition-colors hover:border-accent-muted hover:bg-accent-subtle"
   >
    <div className="grid gap-4 md:grid-cols-[minmax(0,1fr)_auto] md:items-center">
     <div className="flex min-w-0 gap-4">
-     <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-bg-subtle shadow-theme-sm transition-colors group-hover:bg-bg-primary">
+     <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-bg-subtle shadow-theme-sm">
       <BookMarked className="h-5 w-5" />
      </span>
 
@@ -355,11 +162,7 @@ function CourseCard({
       </div>
 
       {courseLessons.length > 0 && (
-       <label
-        className="mt-2 grid max-w-lg gap-1.5"
-        onClick={(event) => event.stopPropagation()}
-        onMouseDown={(event) => event.stopPropagation()}
-       >
+       <label className="mt-2 grid max-w-lg gap-1.5">
         <span className="text-xs font-black uppercase tracking-wide text-text-muted">
          Bài sẽ mở
         </span>
@@ -370,7 +173,6 @@ function CourseCard({
         >
          {courseLessons.map((lesson) => (
           <option key={lesson.id} value={lesson.id}>
-           {lesson.id === targetLessonId ? "Đang học · " : ""}
            Bài {lesson.lessonNumber}: {lesson.titleZh || lesson.title}
           </option>
          ))}
@@ -380,20 +182,7 @@ function CourseCard({
      </div>
     </div>
 
-    <div
-     className="flex flex-wrap gap-2 md:justify-end"
-     onClick={(event) => event.stopPropagation()}
-     onMouseDown={(event) => event.stopPropagation()}
-    >
-     <CreateLessonDraftDialog
-      suggestedLessonNumber={stats.suggestedLessonNumber}
-      courses={[course]}
-      books={stats.books}
-      selectedCourseId={course.id}
-      selectedBookId={primaryBook?.id}
-      triggerVariant="outline"
-     />
-
+    <div className="flex flex-wrap gap-2 md:justify-end">
      <Button asChild>
       <Link href={href}>
        <Sparkles className="h-4 w-4" />

@@ -3,12 +3,13 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import type {
+ HanziHomeVocabItem,
  LearningStatus,
- VocabViewModel,
 } from "@/features/hanzihome/types";
+import { getVocabItemKey } from "@/features/hanzihome/utils/vocab-item";
 
 type VocabListProps = {
- words: VocabViewModel[];
+ words: HanziHomeVocabItem[];
  selectedWordId: string | null;
  progress: Record<string, { status: LearningStatus }>;
  bookmarkedIds: string[];
@@ -33,20 +34,21 @@ export function VocabList({
     {words.length > 0 ? (
      <div className="flex max-h-40 flex-wrap gap-1.5 overflow-y-auto rounded-xl border border-border-default bg-bg-subtle p-2 scrollbar-soft sm:max-h-48">
       {words.map((word) => {
-       const active = word.id === selectedWordId;
+       const wordId = getVocabItemKey(word);
+       const active = wordId === selectedWordId;
 
        return (
         <Button
-         key={word.id}
+         key={wordId}
          type="button"
-         onClick={() => onSelectWord(word.id)}
+         onClick={() => onSelectWord(wordId)}
          variant={active ? "default" : "outline"}
         >
          <span
           className="font-hanzi-display block font-black leading-tight"
           lang="zh-CN"
          >
-          {word.word}
+          {word.hanzi}
          </span>
         </Button>
        );

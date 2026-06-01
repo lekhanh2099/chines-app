@@ -1,0 +1,3804 @@
+{
+ "schema_version": "2.2.0",
+ "content_type": "chinese_textbook_lesson",
+ "verification_status": "final_verified_with_marked_generated_fields",
+ "source": {
+  "book": "Hanyu Jiaocheng",
+  "volume": "第二册下",
+  "volume_vi": "Quyển 2 Hạ",
+  "lesson_index": 8,
+  "lesson_number_cn": "第八课",
+  "lesson_title_cn": "我的眼镜儿摔坏了",
+  "lesson_title_pinyin": "Wǒ de yǎnjìngr shuāihuài le",
+  "lesson_title_vi": "Kính của tôi bị rơi hỏng rồi",
+  "lesson_title_en": "My glasses got broken / I broke my glasses",
+  "source_files": [
+   {
+    "name": "Hanyu Jiaocheng 2-2.pdf",
+    "type": "pdf_scan",
+    "source_origin": "textbook",
+    "check_needed": false
+   },
+   {
+    "name": "DAV - Tiếng Trung cơ sở 2 reference doc",
+    "type": "web_crosscheck",
+    "source_origin": "web_crosscheck",
+    "check_needed": true
+   },
+   {
+    "name": "Baidu Wenku - 第8课 我的眼镜摔坏了",
+    "type": "web_crosscheck",
+    "source_origin": "web_crosscheck",
+    "check_needed": true
+   },
+   {
+    "name": "Scribd - 汉语教程 第二册下 参考答案",
+    "type": "web_crosscheck",
+    "source_origin": "web_crosscheck",
+    "check_needed": true
+   },
+   {
+    "name": "Studocu - Bài 8 我的眼镜摔坏了",
+    "type": "web_crosscheck",
+    "source_origin": "web_crosscheck",
+    "check_needed": true
+   }
+  ],
+  "web_crosscheck": [
+   {
+    "title": "第八课 我的眼镜摔坏了",
+    "source_origin": "web_crosscheck",
+    "note": "Used to cross-check the lesson title and grammar focus: 受事主语句, 结果补语, 量词重叠, 差（一）点儿."
+   },
+   {
+    "title": "汉语教程 第二册下 参考答案",
+    "source_origin": "web_crosscheck",
+    "note": "Used to cross-check exercise answer patterns such as 选词填空 and 填结果补语 where available."
+   }
+  ]
+ },
+ "lesson": {
+  "id": "hanyu_2_2_lesson_08",
+  "title": {
+   "zh": "我的眼镜儿摔坏了",
+   "pinyin": "Wǒ de yǎnjìngr shuāihuài le",
+   "vi": "Kính của tôi bị rơi hỏng rồi",
+   "en": "My glasses got broken / I broke my glasses"
+  },
+  "tags": [
+   "hanyu_2_2",
+   "lesson_08",
+   "book_lesson_08",
+   "hsk3-ish",
+   "patient_subject_sentence",
+   "result_complement",
+   "measure_word_reduplication",
+   "yinian_bi_yinian",
+   "traffic",
+   "photos",
+   "reading_cloze_included"
+  ],
+  "sections": [
+   {
+    "id": "section_01_text",
+    "type": "text",
+    "order": 1,
+    "title": "课文",
+    "title_vi": "Bài khóa",
+    "source_origin": "textbook",
+    "check_needed": false,
+    "blocks": [
+     {
+      "id": "text_01",
+      "type": "text_dialogue",
+      "order": 1,
+      "title": "我们的照片洗好了",
+      "title_vi": "Ảnh của chúng tôi rửa xong rồi",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "lines": [
+       {
+        "id": "text_01_l01",
+        "order": 1,
+        "speaker": "玛丽",
+        "zh": "我们在长城照的照片选好了吗？下午去洗吧。",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook",
+        "check_needed": false
+       },
+       {
+        "id": "text_01_l02",
+        "order": 2,
+        "speaker": "麦克",
+        "zh": "还没选呢。咱们一起选吧。",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook",
+        "check_needed": false
+       },
+       {
+        "id": "text_01_l03",
+        "order": 3,
+        "speaker": "玛丽",
+        "zh": "快放到电脑上看看，照得怎么样。",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook",
+        "check_needed": false
+       },
+       {
+        "id": "text_01_l04",
+        "order": 4,
+        "speaker": "麦克",
+        "zh": "这些照得都非常好，张张都很漂亮。",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook",
+        "check_needed": false
+       },
+       {
+        "id": "text_01_l05",
+        "order": 5,
+        "speaker": "玛丽",
+        "zh": "这张没照好，人照小了。你再看看这张，眼睛都闭上了，像睡着了一样。",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook",
+        "check_needed": false
+       },
+       {
+        "id": "text_01_l06",
+        "order": 6,
+        "speaker": "麦克",
+        "zh": "这张怎么样？",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook",
+        "check_needed": false
+       },
+       {
+        "id": "text_01_l07",
+        "order": 7,
+        "speaker": "玛丽",
+        "zh": "不怎么样。",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook",
+        "check_needed": false
+       },
+       {
+        "id": "text_01_l08",
+        "order": 8,
+        "speaker": "麦克",
+        "zh": "这张照得也不太好，照虚了，一点儿也不清楚。",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook",
+        "check_needed": false
+       },
+       {
+        "id": "text_01_l09",
+        "order": 9,
+        "speaker": "玛丽",
+        "zh": "照得不好的都删了吧。这两张照得最好，像油画一样。放大几张吧。",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook",
+        "check_needed": false
+       },
+       {
+        "id": "text_01_l10",
+        "order": 10,
+        "speaker": "麦克",
+        "zh": "你看放成多大的？",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook",
+        "check_needed": false
+       },
+       {
+        "id": "text_01_l11",
+        "order": 11,
+        "speaker": "玛丽",
+        "zh": "放成十寸的就行了。",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook",
+        "check_needed": false
+       }
+      ]
+     },
+     {
+      "id": "text_02",
+      "type": "text_dialogue",
+      "order": 2,
+      "title": "我的眼镜儿摔坏了",
+      "title_vi": "Kính của tôi bị rơi hỏng rồi",
+      "source_origin": "textbook",
+      "check_needed": true,
+      "lines": [
+       {
+        "id": "text_02_l01",
+        "order": 1,
+        "speaker": "旁白",
+        "zh": "（一个下雪天的早上，在办公室里，两个人在说城市交通问题。）",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook",
+        "check_needed": false
+       },
+       {
+        "id": "text_02_l02",
+        "order": 2,
+        "speaker": "小白",
+        "zh": "哎呀，差点儿迟到。",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook",
+        "check_needed": false
+       },
+       {
+        "id": "text_02_l03",
+        "order": 3,
+        "speaker": "小黄",
+        "zh": "是开车来的吗？",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook",
+        "check_needed": false
+       },
+       {
+        "id": "text_02_l04",
+        "order": 4,
+        "speaker": "小白",
+        "zh": "是，一下雪就堵车，又碰上一起交通事故，我的车在路上整整堵了三十分钟。",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook",
+        "check_needed": false
+       },
+       {
+        "id": "text_02_l05",
+        "order": 5,
+        "speaker": "小黄",
+        "zh": "你的眼镜儿怎么了？",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook",
+        "check_needed": false
+       },
+       {
+        "id": "text_02_l06",
+        "order": 6,
+        "speaker": "小白",
+        "zh": "别提了，今天倒霉得很。我刚出门就摔了一跤，眼镜儿也掉在地上摔坏了。",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook",
+        "check_needed": false
+       },
+       {
+        "id": "text_02_l07",
+        "order": 7,
+        "speaker": "小黄",
+        "zh": "你几点从家里出来的？",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook",
+        "check_needed": false
+       },
+       {
+        "id": "text_02_l08",
+        "order": 8,
+        "speaker": "小白",
+        "zh": "六点钟就从家里出来了，你看，快八点了才到。",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook",
+        "check_needed": false
+       },
+       {
+        "id": "text_02_l09",
+        "order": 9,
+        "speaker": "小黄",
+        "zh": "所以，我还是愿意骑车上班，骑车能保证时间，还可以锻炼身体。",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook",
+        "check_needed": false
+       },
+       {
+        "id": "text_02_l10",
+        "order": 10,
+        "speaker": "小白",
+        "zh": "可是，你别忘了，骑车的人太多，有的人又不遵守交通规则，也是造成交通拥挤的主要原因之一。今天的事故就是一辆自行车引起的。",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook",
+        "check_needed": false
+       },
+       {
+        "id": "text_02_l11",
+        "order": 11,
+        "speaker": "小黄",
+        "zh": "有汽车的人也一年比一年多，城市交通是一个大问题。我看最好还是赶快发展地铁。",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook",
+        "check_needed": false
+       }
+      ]
+     }
+    ],
+    "comprehension_questions": [
+     {
+      "id": "text_q01",
+      "question": "玛丽和麦克要选什么照片？",
+      "answer": "他们要选在长城照的照片。",
+      "source_origin": "textbook_question_generated_answer",
+      "answer_verified": true,
+      "check_needed": false
+     },
+     {
+      "id": "text_q02",
+      "question": "他们选好照片了吗？",
+      "answer": "还没选好。",
+      "source_origin": "textbook_question_generated_answer",
+      "answer_verified": true,
+      "check_needed": false
+     },
+     {
+      "id": "text_q03",
+      "question": "麦克觉得这些照片照得怎么样？",
+      "answer": "麦克觉得这些照片照得都非常好，张张都很漂亮。",
+      "source_origin": "textbook_question_generated_answer",
+      "answer_verified": true,
+      "check_needed": false
+     },
+     {
+      "id": "text_q04",
+      "question": "哪些照片玛丽觉得照得不好？",
+      "answer": "她觉得人照小了、眼睛闭上了、照虚了的照片不好。",
+      "source_origin": "textbook_question_generated_answer",
+      "answer_verified": true,
+      "check_needed": false
+     },
+     {
+      "id": "text_q05",
+      "question": "玛丽想把哪几张照片放大？",
+      "answer": "她想把照得最好的那两张放大。",
+      "source_origin": "textbook_question_generated_answer",
+      "answer_verified": true,
+      "check_needed": false
+     },
+     {
+      "id": "text_q06",
+      "question": "玛丽想把照片放成多大的？",
+      "answer": "她想放成十寸的。",
+      "source_origin": "textbook_question_generated_answer",
+      "answer_verified": true,
+      "check_needed": false
+     },
+     {
+      "id": "text_q07",
+      "question": "小白为什么差点儿迟到？",
+      "answer": "因为下雪堵车，又碰上一起交通事故，他的车在路上堵了三十分钟。",
+      "source_origin": "textbook_question_generated_answer",
+      "answer_verified": true,
+      "check_needed": false
+     },
+     {
+      "id": "text_q08",
+      "question": "小白的眼镜儿怎么了？",
+      "answer": "他刚出门摔了一跤，眼镜儿掉在地上摔坏了。",
+      "source_origin": "textbook_question_generated_answer",
+      "answer_verified": true,
+      "check_needed": false
+     },
+     {
+      "id": "text_q09",
+      "question": "小白几点从家里出来的？",
+      "answer": "他六点钟就从家里出来了。",
+      "source_origin": "textbook_question_generated_answer",
+      "answer_verified": true,
+      "check_needed": false
+     },
+     {
+      "id": "text_q10",
+      "question": "小黄为什么愿意骑车上班？",
+      "answer": "因为骑车能保证时间，还可以锻炼身体。",
+      "source_origin": "textbook_question_generated_answer",
+      "answer_verified": true,
+      "check_needed": false
+     },
+     {
+      "id": "text_q11",
+      "question": "小白认为骑车的人太多会造成什么问题？",
+      "answer": "他认为骑车的人太多，有的人不遵守交通规则，会造成交通拥挤。",
+      "source_origin": "textbook_question_generated_answer",
+      "answer_verified": true,
+      "check_needed": false
+     },
+     {
+      "id": "text_q12",
+      "question": "今天的交通事故是什么引起的？",
+      "answer": "今天的交通事故是一辆自行车引起的。",
+      "source_origin": "textbook_question_generated_answer",
+      "answer_verified": true,
+      "check_needed": false
+     },
+     {
+      "id": "text_q13",
+      "question": "小黄觉得城市交通问题应该怎么解决？",
+      "answer": "他觉得最好还是赶快发展地铁。",
+      "source_origin": "textbook_question_generated_answer",
+      "answer_verified": true,
+      "check_needed": false
+     }
+    ]
+   },
+   {
+    "id": "section_02_vocabulary",
+    "type": "vocabulary",
+    "order": 2,
+    "title": "生词",
+    "title_vi": "Từ vựng",
+    "source_origin": "textbook",
+    "check_needed": false,
+    "items": [
+     {
+      "id": "vocab_001",
+      "type": "vocabulary_item",
+      "order": 1,
+      "hanzi": "照",
+      "pinyin": "zhào",
+      "meaning_vi": "chụp ảnh",
+      "meaning_en": "",
+      "pos": "verb",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "照",
+       "back": "zhào — chụp ảnh",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "vocab_002",
+      "type": "vocabulary_item",
+      "order": 2,
+      "hanzi": "选",
+      "pinyin": "xuǎn",
+      "meaning_vi": "chọn",
+      "meaning_en": "",
+      "pos": "verb",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "选",
+       "back": "xuǎn — chọn",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "vocab_003",
+      "type": "vocabulary_item",
+      "order": 3,
+      "hanzi": "洗",
+      "pinyin": "xǐ",
+      "meaning_vi": "rửa ảnh",
+      "meaning_en": "",
+      "pos": "verb",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "洗",
+       "back": "xǐ — rửa ảnh",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "vocab_004",
+      "type": "vocabulary_item",
+      "order": 4,
+      "hanzi": "闭",
+      "pinyin": "bì",
+      "meaning_vi": "nhắm, khép",
+      "meaning_en": "",
+      "pos": "verb",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "闭",
+       "back": "bì — nhắm, khép",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "vocab_005",
+      "type": "vocabulary_item",
+      "order": 5,
+      "hanzi": "虚",
+      "pinyin": "xū",
+      "meaning_vi": "mờ, không rõ",
+      "meaning_en": "",
+      "pos": "adjective",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "虚",
+       "back": "xū — mờ, không rõ",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "vocab_006",
+      "type": "vocabulary_item",
+      "order": 6,
+      "hanzi": "删",
+      "pinyin": "shān",
+      "meaning_vi": "xóa",
+      "meaning_en": "",
+      "pos": "verb",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "删",
+       "back": "shān — xóa",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "vocab_007",
+      "type": "vocabulary_item",
+      "order": 7,
+      "hanzi": "油画",
+      "pinyin": "yóuhuà",
+      "meaning_vi": "tranh sơn dầu",
+      "meaning_en": "",
+      "pos": "noun",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "油画",
+       "back": "yóuhuà — tranh sơn dầu",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "vocab_008",
+      "type": "vocabulary_item",
+      "order": 8,
+      "hanzi": "放大",
+      "pinyin": "fàngdà",
+      "meaning_vi": "phóng to",
+      "meaning_en": "",
+      "pos": "verb",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "放大",
+       "back": "fàngdà — phóng to",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "vocab_009",
+      "type": "vocabulary_item",
+      "order": 9,
+      "hanzi": "寸",
+      "pinyin": "cùn",
+      "meaning_vi": "tấc; đơn vị kích thước ảnh",
+      "meaning_en": "",
+      "pos": "measure_word",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "寸",
+       "back": "cùn — tấc; đơn vị kích thước ảnh",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "vocab_010",
+      "type": "vocabulary_item",
+      "order": 10,
+      "hanzi": "差（一）点儿",
+      "pinyin": "chà yì diǎnr",
+      "meaning_vi": "suýt, chút nữa thì",
+      "meaning_en": "",
+      "pos": "adverb",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "差（一）点儿",
+       "back": "chà yì diǎnr — suýt, chút nữa thì",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "vocab_011",
+      "type": "vocabulary_item",
+      "order": 11,
+      "hanzi": "碰",
+      "pinyin": "pèng",
+      "meaning_vi": "gặp phải, đụng phải",
+      "meaning_en": "",
+      "pos": "verb",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "碰",
+       "back": "pèng — gặp phải, đụng phải",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "vocab_012",
+      "type": "vocabulary_item",
+      "order": 12,
+      "hanzi": "起",
+      "pinyin": "qǐ",
+      "meaning_vi": "lượng từ cho tai nạn/sự việc",
+      "meaning_en": "",
+      "pos": "measure_word",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "起",
+       "back": "qǐ — lượng từ cho tai nạn/sự việc",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "vocab_013",
+      "type": "vocabulary_item",
+      "order": 13,
+      "hanzi": "事故",
+      "pinyin": "shìgù",
+      "meaning_vi": "sự cố, tai nạn",
+      "meaning_en": "",
+      "pos": "noun",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "事故",
+       "back": "shìgù — sự cố, tai nạn",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "vocab_014",
+      "type": "vocabulary_item",
+      "order": 14,
+      "hanzi": "整整",
+      "pinyin": "zhěngzhěng",
+      "meaning_vi": "trọn vẹn, suốt",
+      "meaning_en": "",
+      "pos": "adverb",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "整整",
+       "back": "zhěngzhěng — trọn vẹn, suốt",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "vocab_015",
+      "type": "vocabulary_item",
+      "order": 15,
+      "hanzi": "眼镜儿",
+      "pinyin": "yǎnjìngr",
+      "meaning_vi": "kính mắt",
+      "meaning_en": "",
+      "pos": "noun",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "眼镜儿",
+       "back": "yǎnjìngr — kính mắt",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "vocab_016",
+      "type": "vocabulary_item",
+      "order": 16,
+      "hanzi": "别提了",
+      "pinyin": "bié tí le",
+      "meaning_vi": "đừng nhắc nữa",
+      "meaning_en": "",
+      "pos": "phrase",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "别提了",
+       "back": "bié tí le — đừng nhắc nữa",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "vocab_017",
+      "type": "vocabulary_item",
+      "order": 17,
+      "hanzi": "倒霉",
+      "pinyin": "dǎoméi",
+      "meaning_vi": "xui xẻo",
+      "meaning_en": "",
+      "pos": "adjective",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "倒霉",
+       "back": "dǎoméi — xui xẻo",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "vocab_018",
+      "type": "vocabulary_item",
+      "order": 18,
+      "hanzi": "摔跤",
+      "pinyin": "shuāijiāo",
+      "meaning_vi": "ngã, té",
+      "meaning_en": "",
+      "pos": "verb_object",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "摔跤",
+       "back": "shuāijiāo — ngã, té",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "vocab_019",
+      "type": "vocabulary_item",
+      "order": 19,
+      "hanzi": "摔",
+      "pinyin": "shuāi",
+      "meaning_vi": "ngã; làm rơi",
+      "meaning_en": "",
+      "pos": "verb",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "摔",
+       "back": "shuāi — ngã; làm rơi",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "vocab_020",
+      "type": "vocabulary_item",
+      "order": 20,
+      "hanzi": "掉",
+      "pinyin": "diào",
+      "meaning_vi": "rơi, rớt",
+      "meaning_en": "",
+      "pos": "verb_result",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "掉",
+       "back": "diào — rơi, rớt",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "vocab_021",
+      "type": "vocabulary_item",
+      "order": 21,
+      "hanzi": "地上",
+      "pinyin": "dìshang",
+      "meaning_vi": "trên mặt đất",
+      "meaning_en": "",
+      "pos": "noun",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "地上",
+       "back": "dìshang — trên mặt đất",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "vocab_022",
+      "type": "vocabulary_item",
+      "order": 22,
+      "hanzi": "上班",
+      "pinyin": "shàng bān",
+      "meaning_vi": "đi làm",
+      "meaning_en": "",
+      "pos": "verb_object",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "上班",
+       "back": "shàng bān — đi làm",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "vocab_023",
+      "type": "vocabulary_item",
+      "order": 23,
+      "hanzi": "下班",
+      "pinyin": "xià bān",
+      "meaning_vi": "tan làm",
+      "meaning_en": "",
+      "pos": "verb_object",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "下班",
+       "back": "xià bān — tan làm",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "vocab_024",
+      "type": "vocabulary_item",
+      "order": 24,
+      "hanzi": "保证",
+      "pinyin": "bǎozhèng",
+      "meaning_vi": "bảo đảm",
+      "meaning_en": "",
+      "pos": "verb_noun",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "保证",
+       "back": "bǎozhèng — bảo đảm",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "vocab_025",
+      "type": "vocabulary_item",
+      "order": 25,
+      "hanzi": "遵守",
+      "pinyin": "zūnshǒu",
+      "meaning_vi": "tuân thủ",
+      "meaning_en": "",
+      "pos": "verb",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "遵守",
+       "back": "zūnshǒu — tuân thủ",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "vocab_026",
+      "type": "vocabulary_item",
+      "order": 26,
+      "hanzi": "规则",
+      "pinyin": "guīzé",
+      "meaning_vi": "quy tắc, luật lệ",
+      "meaning_en": "",
+      "pos": "noun",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "规则",
+       "back": "guīzé — quy tắc, luật lệ",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "vocab_027",
+      "type": "vocabulary_item",
+      "order": 27,
+      "hanzi": "造成",
+      "pinyin": "zàochéng",
+      "meaning_vi": "gây ra",
+      "meaning_en": "",
+      "pos": "verb",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "造成",
+       "back": "zàochéng — gây ra",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "vocab_028",
+      "type": "vocabulary_item",
+      "order": 28,
+      "hanzi": "拥挤",
+      "pinyin": "yōngjǐ",
+      "meaning_vi": "đông đúc, ùn tắc",
+      "meaning_en": "",
+      "pos": "adjective_verb",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "拥挤",
+       "back": "yōngjǐ — đông đúc, ùn tắc",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "vocab_029",
+      "type": "vocabulary_item",
+      "order": 29,
+      "hanzi": "主要",
+      "pinyin": "zhǔyào",
+      "meaning_vi": "chủ yếu",
+      "meaning_en": "",
+      "pos": "adjective",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "主要",
+       "back": "zhǔyào — chủ yếu",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "vocab_030",
+      "type": "vocabulary_item",
+      "order": 30,
+      "hanzi": "原因",
+      "pinyin": "yuányīn",
+      "meaning_vi": "nguyên nhân",
+      "meaning_en": "",
+      "pos": "noun",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "原因",
+       "back": "yuányīn — nguyên nhân",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "vocab_031",
+      "type": "vocabulary_item",
+      "order": 31,
+      "hanzi": "之一",
+      "pinyin": "zhī yī",
+      "meaning_vi": "một trong những",
+      "meaning_en": "",
+      "pos": "phrase",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "之一",
+       "back": "zhī yī — một trong những",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "vocab_032",
+      "type": "vocabulary_item",
+      "order": 32,
+      "hanzi": "引起",
+      "pinyin": "yǐnqǐ",
+      "meaning_vi": "gây ra, dẫn đến",
+      "meaning_en": "",
+      "pos": "verb",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "引起",
+       "back": "yǐnqǐ — gây ra, dẫn đến",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "vocab_033",
+      "type": "vocabulary_item",
+      "order": 33,
+      "hanzi": "赶快",
+      "pinyin": "gǎnkuài",
+      "meaning_vi": "mau chóng, nhanh chóng",
+      "meaning_en": "",
+      "pos": "adverb",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "赶快",
+       "back": "gǎnkuài — mau chóng, nhanh chóng",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "vocab_034",
+      "type": "vocabulary_item",
+      "order": 34,
+      "hanzi": "发展",
+      "pinyin": "fāzhǎn",
+      "meaning_vi": "phát triển",
+      "meaning_en": "",
+      "pos": "verb_noun",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "发展",
+       "back": "fāzhǎn — phát triển",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+     }
+    ]
+   },
+   {
+    "id": "section_03_proper_nouns",
+    "type": "proper_nouns",
+    "order": 3,
+    "title": "专名",
+    "title_vi": "Tên riêng",
+    "source_origin": "textbook/generated_mixed",
+    "check_needed": true,
+    "items": [
+     {
+      "id": "proper_001",
+      "type": "proper_noun",
+      "order": 1,
+      "hanzi": "玛丽",
+      "pinyin": "Mǎlì",
+      "meaning_vi": "Mary",
+      "meaning_en": "",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "proper_002",
+      "type": "proper_noun",
+      "order": 2,
+      "hanzi": "麦克",
+      "pinyin": "Màikè",
+      "meaning_vi": "Mike",
+      "meaning_en": "",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "proper_003",
+      "type": "proper_noun",
+      "order": 3,
+      "hanzi": "小白",
+      "pinyin": "Xiǎo Bái",
+      "meaning_vi": "Tiểu Bạch",
+      "meaning_en": "",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "proper_004",
+      "type": "proper_noun",
+      "order": 4,
+      "hanzi": "小黄",
+      "pinyin": "Xiǎo Huáng",
+      "meaning_vi": "Tiểu Hoàng",
+      "meaning_en": "",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "proper_005",
+      "type": "proper_noun",
+      "order": 5,
+      "hanzi": "长城",
+      "pinyin": "Chángchéng",
+      "meaning_vi": "Vạn Lý Trường Thành",
+      "meaning_en": "The Great Wall",
+      "source_origin": "textbook",
+      "check_needed": false
+     }
+    ]
+   },
+   {
+    "id": "section_04_notes",
+    "type": "notes",
+    "order": 4,
+    "title": "注释",
+    "title_vi": "Chú thích",
+    "source_origin": "textbook",
+    "check_needed": false,
+    "items": [
+     {
+      "id": "note_01",
+      "type": "note",
+      "order": 1,
+      "title": "差（一）点儿",
+      "structure": "差（一）点儿 + V",
+      "meaning_vi": "差（一）点儿 nghĩa là “suýt nữa”. Với chuyện xấu, dùng khẳng định hoặc phủ định phía sau đều có thể biểu thị việc đó cuối cùng không xảy ra.",
+      "examples": [
+       {
+        "id": "note_01_ex_01",
+        "zh": "今天早上，我差点儿迟到。",
+        "pinyin": "",
+        "vi": "Sáng nay tôi suýt đến muộn.",
+        "en": "",
+        "highlight": ["差点儿"],
+        "grammar_refs": [],
+        "vocab_refs": ["vocab_010"],
+        "source_ref": "",
+        "note_vi": "",
+        "audio_key": "",
+        "source_origin": "textbook",
+        "check_needed": false
+       },
+       {
+        "id": "note_01_ex_02",
+        "zh": "今天早上，我差点儿没迟到。",
+        "pinyin": "",
+        "vi": "Sáng nay tôi suýt đến muộn.",
+        "en": "",
+        "highlight": ["差点儿没"],
+        "grammar_refs": [],
+        "vocab_refs": ["vocab_010"],
+        "source_ref": "",
+        "note_vi": "",
+        "audio_key": "",
+        "source_origin": "textbook",
+        "check_needed": false
+       },
+       {
+        "id": "note_01_ex_03",
+        "zh": "我差点儿摔倒。",
+        "pinyin": "",
+        "vi": "Tôi suýt ngã.",
+        "en": "",
+        "highlight": ["差点儿"],
+        "grammar_refs": [],
+        "vocab_refs": [],
+        "source_ref": "",
+        "note_vi": "",
+        "audio_key": "",
+        "source_origin": "textbook",
+        "check_needed": false
+       },
+       {
+        "id": "note_01_ex_04",
+        "zh": "我差点儿没摔倒。",
+        "pinyin": "",
+        "vi": "Tôi suýt ngã.",
+        "en": "",
+        "highlight": ["差点儿没"],
+        "grammar_refs": [],
+        "vocab_refs": [],
+        "source_ref": "",
+        "note_vi": "",
+        "audio_key": "",
+        "source_origin": "textbook",
+        "check_needed": false
+       },
+       {
+        "id": "note_01_ex_05",
+        "zh": "只有这一个了，我差点儿没买到。",
+        "pinyin": "",
+        "vi": "Chỉ còn một cái này, tôi suýt không mua được — may là mua được.",
+        "en": "",
+        "highlight": ["差点儿没"],
+        "grammar_refs": [],
+        "vocab_refs": [],
+        "source_ref": "",
+        "note_vi": "",
+        "audio_key": "",
+        "source_origin": "textbook",
+        "check_needed": false
+       },
+       {
+        "id": "note_01_ex_06",
+        "zh": "到我这儿正好卖完，我差点儿就买到了。",
+        "pinyin": "",
+        "vi": "Đến lượt tôi thì vừa bán hết, tôi suýt mua được — tiếc là không mua được.",
+        "en": "",
+        "highlight": ["差点儿"],
+        "grammar_refs": [],
+        "vocab_refs": [],
+        "source_ref": "",
+        "note_vi": "",
+        "audio_key": "",
+        "source_origin": "textbook",
+        "check_needed": false
+       }
+      ],
+      "source_refs": ["text_02_l02"],
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "note_02",
+      "type": "note",
+      "order": 2,
+      "title": "别提了",
+      "structure": "别提了",
+      "meaning_vi": "Nghĩa là “đừng nhắc nữa / thôi đừng nói nữa”. Dùng khi người nói thấy chuyện đó phiền, xui, bực hoặc không muốn nhắc lại.",
+      "examples": [
+       {
+        "id": "note_02_ex_01",
+        "zh": "别提了，今天倒霉得很。",
+        "pinyin": "",
+        "vi": "Đừng nhắc nữa, hôm nay xui lắm.",
+        "en": "",
+        "highlight": ["别提了"],
+        "grammar_refs": [],
+        "vocab_refs": ["vocab_016", "vocab_017"],
+        "source_ref": "text_02_l06",
+        "note_vi": "",
+        "audio_key": "",
+        "source_origin": "textbook",
+        "check_needed": false
+       }
+      ],
+      "source_refs": ["text_02_l06"],
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "note_03",
+      "type": "note",
+      "order": 3,
+      "title": "今天倒霉得很",
+      "structure": "Adj + 得很",
+      "meaning_vi": "得很 đứng sau tính từ để nhấn mạnh mức độ rất cao. 倒霉得很 = xui lắm, xui cực kỳ.",
+      "examples": [
+       {
+        "id": "note_03_ex_01",
+        "zh": "今天倒霉得很。",
+        "pinyin": "",
+        "vi": "Hôm nay xui lắm.",
+        "en": "",
+        "highlight": ["得很"],
+        "grammar_refs": [],
+        "vocab_refs": ["vocab_017"],
+        "source_ref": "text_02_l06",
+        "note_vi": "",
+        "audio_key": "",
+        "source_origin": "textbook",
+        "check_needed": false
+       },
+       {
+        "id": "note_03_ex_02",
+        "zh": "听说北京的冬天冷得很。",
+        "pinyin": "",
+        "vi": "Nghe nói mùa đông Bắc Kinh lạnh lắm.",
+        "en": "",
+        "highlight": ["得很"],
+        "grammar_refs": [],
+        "vocab_refs": [],
+        "source_ref": "",
+        "note_vi": "",
+        "audio_key": "",
+        "source_origin": "textbook",
+        "check_needed": false
+       },
+       {
+        "id": "note_03_ex_03",
+        "zh": "昨天的晚会开得好得很。",
+        "pinyin": "",
+        "vi": "Buổi tiệc tối hôm qua tổ chức tốt lắm.",
+        "en": "",
+        "highlight": ["得很"],
+        "grammar_refs": [],
+        "vocab_refs": [],
+        "source_ref": "",
+        "note_vi": "",
+        "audio_key": "",
+        "source_origin": "textbook",
+        "check_needed": false
+       }
+      ],
+      "source_refs": ["text_02_l06"],
+      "source_origin": "textbook",
+      "check_needed": false
+     }
+    ]
+   },
+   {
+    "id": "section_05_grammar",
+    "type": "grammar",
+    "order": 5,
+    "title": "语法",
+    "title_vi": "Ngữ pháp",
+    "source_origin": "textbook",
+    "check_needed": false,
+    "items": [
+     {
+      "id": "grammar_01",
+      "type": "grammar_point",
+      "order": 1,
+      "title": "被动意义的表达：受事主语句",
+      "title_vi": "Biểu đạt ý nghĩa bị động: câu chủ ngữ chịu tác động",
+      "level": "HSK3-ish",
+      "tags": ["passive_meaning", "patient_subject_sentence"],
+      "source_origin": "textbook",
+      "check_needed": false,
+      "blocks": [
+       {
+        "id": "grammar_01_overview",
+        "type": "grammar_overview",
+        "order": 1,
+        "title": "Bản chất",
+        "content_vi": "Tiếng Trung không phải lúc nào cũng cần dùng 被 mới là bị động. Khi chủ ngữ là vật/người chịu tác động, câu vẫn có nghĩa bị động hoặc kết quả đã xảy ra.",
+        "examples": [
+         {
+          "id": "grammar_01_overview_ex_01",
+          "zh": "我的眼镜儿摔坏了。",
+          "pinyin": "",
+          "vi": "Kính của tôi bị rơi hỏng rồi.",
+          "en": "",
+          "highlight": ["眼镜儿", "摔坏"],
+          "grammar_refs": ["grammar_01"],
+          "vocab_refs": ["vocab_015", "vocab_019"],
+          "source_ref": "text_02_l06",
+          "note_vi": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+         },
+         {
+          "id": "grammar_01_overview_ex_02",
+          "zh": "照片洗好了。",
+          "pinyin": "",
+          "vi": "Ảnh đã rửa xong rồi.",
+          "en": "",
+          "highlight": ["照片", "洗好"],
+          "grammar_refs": ["grammar_01"],
+          "vocab_refs": ["vocab_003"],
+          "source_ref": "",
+          "note_vi": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+         },
+         {
+          "id": "grammar_01_overview_ex_03",
+          "zh": "你的自行车找到了吗？",
+          "pinyin": "",
+          "vi": "Xe đạp của bạn tìm thấy chưa?",
+          "en": "",
+          "highlight": ["自行车", "找到"],
+          "grammar_refs": ["grammar_01"],
+          "vocab_refs": [],
+          "source_ref": "",
+          "note_vi": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+         },
+         {
+          "id": "grammar_01_overview_ex_04",
+          "zh": "饭吃完了。",
+          "pinyin": "",
+          "vi": "Cơm ăn xong rồi.",
+          "en": "",
+          "highlight": ["饭", "吃完"],
+          "grammar_refs": ["grammar_01"],
+          "vocab_refs": [],
+          "source_ref": "",
+          "note_vi": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+         }
+        ],
+        "source_origin": "textbook",
+        "check_needed": false
+       },
+       {
+        "id": "grammar_01_structure_01",
+        "type": "grammar_structure",
+        "order": 2,
+        "title": "Cấu trúc",
+        "pattern": "受事主语 + V + 结果补语 / 其他成分",
+        "meaning_vi": "Tập trung vào kết quả trên đối tượng, không cần nói rõ ai làm.",
+        "formulas": [
+         {
+          "label": "Chủ ngữ chịu tác động",
+          "pattern": "受事 + 动词 + 结果"
+         }
+        ],
+        "examples": [
+         {
+          "id": "grammar_01_structure_01_ex_01",
+          "zh": "我的眼镜儿摔坏了。",
+          "pinyin": "",
+          "vi": "Kính của tôi bị rơi hỏng rồi.",
+          "en": "",
+          "highlight": ["摔坏"],
+          "grammar_refs": ["grammar_01"],
+          "vocab_refs": [],
+          "source_ref": "text_02_l06",
+          "note_vi": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+         },
+         {
+          "id": "grammar_01_structure_01_ex_02",
+          "zh": "照片洗好了。",
+          "pinyin": "",
+          "vi": "Ảnh đã rửa xong rồi.",
+          "en": "",
+          "highlight": ["洗好"],
+          "grammar_refs": ["grammar_01"],
+          "vocab_refs": [],
+          "source_ref": "",
+          "note_vi": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+         },
+         {
+          "id": "grammar_01_structure_01_ex_03",
+          "zh": "饭吃完了。",
+          "pinyin": "",
+          "vi": "Cơm ăn xong rồi.",
+          "en": "",
+          "highlight": ["吃完"],
+          "grammar_refs": ["grammar_01"],
+          "vocab_refs": [],
+          "source_ref": "",
+          "note_vi": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+         }
+        ],
+        "source_origin": "textbook",
+        "check_needed": false
+       }
+      ]
+     },
+     {
+      "id": "grammar_02",
+      "type": "grammar_point",
+      "order": 2,
+      "title": "结果补语",
+      "title_vi": "Bổ ngữ kết quả",
+      "level": "HSK3-ish",
+      "tags": ["result_complement"],
+      "source_origin": "textbook",
+      "check_needed": false,
+      "blocks": [
+       {
+        "id": "grammar_02_overview",
+        "type": "grammar_overview",
+        "order": 1,
+        "title": "Bản chất",
+        "content_vi": "Động từ phía sau nói kết quả của hành động phía trước.",
+        "examples": [
+         {
+          "id": "grammar_02_overview_ex_01",
+          "zh": "眼镜儿也掉在地上摔坏了。",
+          "pinyin": "",
+          "vi": "Kính cũng rơi xuống đất bị rơi hỏng rồi.",
+          "en": "",
+          "highlight": ["摔坏"],
+          "grammar_refs": ["grammar_02"],
+          "vocab_refs": [],
+          "source_ref": "text_02_l06",
+          "note_vi": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+         },
+         {
+          "id": "grammar_02_overview_ex_02",
+          "zh": "这张照虚了，一点儿也不清楚。",
+          "pinyin": "",
+          "vi": "Tấm này chụp bị mờ rồi, không rõ chút nào.",
+          "en": "",
+          "highlight": ["照虚"],
+          "grammar_refs": ["grammar_02"],
+          "vocab_refs": [],
+          "source_ref": "text_01_l08",
+          "note_vi": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+         },
+         {
+          "id": "grammar_02_overview_ex_03",
+          "zh": "照得不好的都删了吧。",
+          "pinyin": "",
+          "vi": "Những tấm chụp không đẹp thì xóa đi.",
+          "en": "",
+          "highlight": ["删"],
+          "grammar_refs": ["grammar_02"],
+          "vocab_refs": [],
+          "source_ref": "text_01_l09",
+          "note_vi": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+         }
+        ],
+        "source_origin": "textbook",
+        "check_needed": false
+       },
+       {
+        "id": "grammar_02_structure_01",
+        "type": "grammar_structure",
+        "order": 2,
+        "title": "Cặp dễ nhầm",
+        "pattern": "V + 结果",
+        "meaning_vi": "Động từ + kết quả cho biết hành động dẫn đến kết quả gì.",
+        "formulas": [
+         {
+          "label": "Bổ ngữ kết quả",
+          "pattern": "动词 + 结果补语"
+         }
+        ],
+        "examples": [
+         {
+          "id": "grammar_02_structure_01_ex_01",
+          "zh": "摔了。",
+          "pinyin": "",
+          "vi": "Bị ngã/rơi rồi, chỉ hành động xảy ra.",
+          "en": "",
+          "highlight": ["摔"],
+          "grammar_refs": ["grammar_02"],
+          "vocab_refs": [],
+          "source_ref": "",
+          "note_vi": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+         },
+         {
+          "id": "grammar_02_structure_01_ex_02",
+          "zh": "摔坏了。",
+          "pinyin": "",
+          "vi": "Rơi/ngã làm hỏng rồi, nhấn kết quả hỏng.",
+          "en": "",
+          "highlight": ["摔坏"],
+          "grammar_refs": ["grammar_02"],
+          "vocab_refs": [],
+          "source_ref": "",
+          "note_vi": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+         },
+         {
+          "id": "grammar_02_structure_01_ex_03",
+          "zh": "洗好了。",
+          "pinyin": "",
+          "vi": "Rửa xong rồi, kết quả hoàn tất.",
+          "en": "",
+          "highlight": ["洗好"],
+          "grammar_refs": ["grammar_02"],
+          "vocab_refs": [],
+          "source_ref": "",
+          "note_vi": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+         },
+         {
+          "id": "grammar_02_structure_01_ex_04",
+          "zh": "照虚了。",
+          "pinyin": "",
+          "vi": "Chụp mờ rồi.",
+          "en": "",
+          "highlight": ["照虚"],
+          "grammar_refs": ["grammar_02"],
+          "vocab_refs": [],
+          "source_ref": "",
+          "note_vi": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+         }
+        ],
+        "source_origin": "textbook",
+        "check_needed": false
+       }
+      ]
+     },
+     {
+      "id": "grammar_03",
+      "type": "grammar_point",
+      "order": 3,
+      "title": "量词重叠",
+      "title_vi": "Lặp lượng từ",
+      "level": "HSK3-ish",
+      "tags": ["measure_word_reduplication"],
+      "source_origin": "textbook",
+      "check_needed": false,
+      "blocks": [
+       {
+        "id": "grammar_03_overview",
+        "type": "grammar_overview",
+        "order": 1,
+        "title": "Bản chất",
+        "content_vi": "Danh lượng từ và động lượng từ có thể lặp lại để biểu thị nghĩa “mỗi + lượng từ”.",
+        "examples": [
+         {
+          "id": "grammar_03_overview_ex_01",
+          "zh": "这些照片张张照得都很好。",
+          "pinyin": "",
+          "vi": "Những tấm ảnh này tấm nào chụp cũng đẹp.",
+          "en": "",
+          "highlight": ["张张"],
+          "grammar_refs": ["grammar_03"],
+          "vocab_refs": [],
+          "source_ref": "",
+          "note_vi": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+         },
+         {
+          "id": "grammar_03_overview_ex_02",
+          "zh": "张张都很漂亮。",
+          "pinyin": "",
+          "vi": "Tấm nào cũng rất đẹp.",
+          "en": "",
+          "highlight": ["张张"],
+          "grammar_refs": ["grammar_03"],
+          "vocab_refs": [],
+          "source_ref": "text_01_l04",
+          "note_vi": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+         },
+         {
+          "id": "grammar_03_overview_ex_03",
+          "zh": "我们班的同学个个都很努力。",
+          "pinyin": "",
+          "vi": "Bạn học lớp chúng tôi ai cũng rất cố gắng.",
+          "en": "",
+          "highlight": ["个个"],
+          "grammar_refs": ["grammar_03"],
+          "vocab_refs": [],
+          "source_ref": "",
+          "note_vi": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+         },
+         {
+          "id": "grammar_03_overview_ex_04",
+          "zh": "他们跟我们班踢足球场场输。",
+          "pinyin": "",
+          "vi": "Họ đá bóng với lớp chúng tôi trận nào cũng thua.",
+          "en": "",
+          "highlight": ["场场"],
+          "grammar_refs": ["grammar_03"],
+          "vocab_refs": [],
+          "source_ref": "",
+          "note_vi": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+         }
+        ],
+        "source_origin": "textbook",
+        "check_needed": false
+       },
+       {
+        "id": "grammar_03_structure_01",
+        "type": "grammar_structure",
+        "order": 2,
+        "title": "Cấu trúc",
+        "pattern": "量词 + 量词 + 都 / 也 / …",
+        "meaning_vi": "Cái nào cũng, người nào cũng, trận nào cũng...",
+        "formulas": [
+         {
+          "label": "Mỗi",
+          "pattern": "量词重叠 + 都 / 也"
+         }
+        ],
+        "examples": [
+         {
+          "id": "grammar_03_structure_01_ex_01",
+          "zh": "张张都很漂亮。",
+          "pinyin": "",
+          "vi": "Tấm nào cũng rất đẹp.",
+          "en": "",
+          "highlight": ["张张"],
+          "grammar_refs": ["grammar_03"],
+          "vocab_refs": [],
+          "source_ref": "text_01_l04",
+          "note_vi": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+         },
+         {
+          "id": "grammar_03_structure_01_ex_02",
+          "zh": "人人都喜欢她。",
+          "pinyin": "",
+          "vi": "Ai cũng thích cô ấy.",
+          "en": "",
+          "highlight": ["人人"],
+          "grammar_refs": ["grammar_03"],
+          "vocab_refs": [],
+          "source_ref": "",
+          "note_vi": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+         },
+         {
+          "id": "grammar_03_structure_01_ex_03",
+          "zh": "件件都很好看。",
+          "pinyin": "",
+          "vi": "Cái nào cũng đẹp.",
+          "en": "",
+          "highlight": ["件件"],
+          "grammar_refs": ["grammar_03"],
+          "vocab_refs": [],
+          "source_ref": "",
+          "note_vi": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+         }
+        ],
+        "source_origin": "textbook",
+        "check_needed": false
+       }
+      ]
+     },
+     {
+      "id": "grammar_04",
+      "type": "grammar_point",
+      "order": 4,
+      "title": "一年比一年",
+      "title_vi": "Năm sau càng... hơn năm trước",
+      "level": "HSK3-ish",
+      "tags": ["comparison", "progressive_change"],
+      "source_origin": "textbook",
+      "check_needed": false,
+      "blocks": [
+       {
+        "id": "grammar_04_overview",
+        "type": "grammar_overview",
+        "order": 1,
+        "title": "Bản chất",
+        "content_vi": "Biểu thị mức độ thay đổi tăng/giảm theo thời gian. Nghĩa là “năm sau càng… hơn năm trước”.",
+        "examples": [
+         {
+          "id": "grammar_04_overview_ex_01",
+          "zh": "有汽车的人也一年比一年多。",
+          "pinyin": "",
+          "vi": "Người có ô tô cũng năm sau nhiều hơn năm trước.",
+          "en": "",
+          "highlight": ["一年比一年"],
+          "grammar_refs": ["grammar_04"],
+          "vocab_refs": [],
+          "source_ref": "text_02_l11",
+          "note_vi": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+         },
+         {
+          "id": "grammar_04_overview_ex_02",
+          "zh": "城市交通一年比一年拥挤。",
+          "pinyin": "",
+          "vi": "Giao thông đô thị năm sau càng ùn tắc hơn năm trước.",
+          "en": "",
+          "highlight": ["一年比一年"],
+          "grammar_refs": ["grammar_04"],
+          "vocab_refs": [],
+          "source_ref": "",
+          "note_vi": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+         },
+         {
+          "id": "grammar_04_overview_ex_03",
+          "zh": "他的汉语一年比一年好。",
+          "pinyin": "",
+          "vi": "Tiếng Hán của anh ấy năm sau tốt hơn năm trước.",
+          "en": "",
+          "highlight": ["一年比一年"],
+          "grammar_refs": ["grammar_04"],
+          "vocab_refs": [],
+          "source_ref": "",
+          "note_vi": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+         },
+         {
+          "id": "grammar_04_overview_ex_04",
+          "zh": "来中国以后，我一天比一天胖。",
+          "pinyin": "",
+          "vi": "Sau khi đến Trung Quốc, tôi ngày càng béo lên.",
+          "en": "",
+          "highlight": ["一天比一天"],
+          "grammar_refs": ["grammar_04"],
+          "vocab_refs": [],
+          "source_ref": "",
+          "note_vi": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+         }
+        ],
+        "source_origin": "textbook",
+        "check_needed": false
+       },
+       {
+        "id": "grammar_04_structure_01",
+        "type": "grammar_structure",
+        "order": 2,
+        "title": "Cấu trúc",
+        "pattern": "一年比一年 + Adj / 多 / 少 / …",
+        "meaning_vi": "Năm sau càng... hơn năm trước; ngày càng... có thể dùng 一天比一天.",
+        "formulas": [
+         {
+          "label": "Thay đổi tăng/giảm",
+          "pattern": "时间量词 + 比 + 时间量词 + 形容词"
+         }
+        ],
+        "examples": [
+         {
+          "id": "grammar_04_structure_01_ex_01",
+          "zh": "有汽车的人也一年比一年多。",
+          "pinyin": "",
+          "vi": "Người có ô tô cũng năm sau nhiều hơn năm trước.",
+          "en": "",
+          "highlight": ["一年比一年多"],
+          "grammar_refs": ["grammar_04"],
+          "vocab_refs": [],
+          "source_ref": "text_02_l11",
+          "note_vi": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+         },
+         {
+          "id": "grammar_04_structure_01_ex_02",
+          "zh": "天气一天比一天冷。",
+          "pinyin": "",
+          "vi": "Thời tiết ngày càng lạnh.",
+          "en": "",
+          "highlight": ["一天比一天"],
+          "grammar_refs": ["grammar_04"],
+          "vocab_refs": [],
+          "source_ref": "",
+          "note_vi": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+         }
+        ],
+        "source_origin": "textbook",
+        "check_needed": false
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "id": "section_06_exercises",
+    "type": "exercises",
+    "order": 6,
+    "title": "练习",
+    "title_vi": "Bài tập",
+    "source_origin": "textbook",
+    "check_needed": true,
+    "items": [
+     {
+      "id": "exercise_01",
+      "type": "phonetics",
+      "variant": "",
+      "order": 1,
+      "title": "语音",
+      "title_vi": "Ngữ âm",
+      "instruction": {
+       "zh": "",
+       "vi": "Luyện phân biệt âm, thanh điệu và đọc cụm."
+      },
+      "difficulty": "normal",
+      "skill_focus": ["pronunciation"],
+      "source_origin": "textbook",
+      "check_needed": false,
+      "parts": [
+       {
+        "id": "exercise_01_part_01",
+        "type": "minimal_pair",
+        "title": "辨音辨调",
+        "items": [
+         {
+          "id": "pair_01",
+          "left": "zhǔyào",
+          "right": "zhòngyào"
+         },
+         {
+          "id": "pair_02",
+          "left": "yǎnjìngr",
+          "right": "yǎnjing"
+         },
+         {
+          "id": "pair_03",
+          "left": "chídào",
+          "right": "zhīdào"
+         },
+         {
+          "id": "pair_04",
+          "left": "shìgù",
+          "right": "shīfu"
+         },
+         {
+          "id": "pair_05",
+          "left": "bǎozhèng",
+          "right": "bǎozhēn"
+         },
+         {
+          "id": "pair_06",
+          "left": "yōngjǐ",
+          "right": "yìngjí"
+         },
+         {
+          "id": "pair_07",
+          "left": "yuányīn",
+          "right": "yuányǐng"
+         },
+         {
+          "id": "pair_08",
+          "left": "dìtiě",
+          "right": "tìtiě"
+         }
+        ],
+        "source_origin": "textbook",
+        "check_needed": false
+       },
+       {
+        "id": "exercise_01_part_02",
+        "type": "read_aloud",
+        "title": "朗读",
+        "items": [
+         {
+          "id": "read_001",
+          "text": "好得很",
+          "pinyin": "",
+          "audio_key": ""
+         },
+         {
+          "id": "read_002",
+          "text": "坏得很",
+          "pinyin": "",
+          "audio_key": ""
+         },
+         {
+          "id": "read_003",
+          "text": "忙得很",
+          "pinyin": "",
+          "audio_key": ""
+         },
+         {
+          "id": "read_004",
+          "text": "快得很",
+          "pinyin": "",
+          "audio_key": ""
+         },
+         {
+          "id": "read_005",
+          "text": "疼得很",
+          "pinyin": "",
+          "audio_key": ""
+         },
+         {
+          "id": "read_006",
+          "text": "冷得很",
+          "pinyin": "",
+          "audio_key": ""
+         },
+         {
+          "id": "read_007",
+          "text": "热得很",
+          "pinyin": "",
+          "audio_key": ""
+         },
+         {
+          "id": "read_008",
+          "text": "虚得很",
+          "pinyin": "",
+          "audio_key": ""
+         },
+         {
+          "id": "read_009",
+          "text": "碰见了",
+          "pinyin": "",
+          "audio_key": ""
+         },
+         {
+          "id": "read_010",
+          "text": "碰坏了",
+          "pinyin": "",
+          "audio_key": ""
+         },
+         {
+          "id": "read_011",
+          "text": "碰疼了",
+          "pinyin": "",
+          "audio_key": ""
+         },
+         {
+          "id": "read_012",
+          "text": "眼镜儿摔坏了",
+          "pinyin": "",
+          "audio_key": ""
+         },
+         {
+          "id": "read_013",
+          "text": "杯子摔坏了",
+          "pinyin": "",
+          "audio_key": ""
+         },
+         {
+          "id": "read_014",
+          "text": "手机摔坏了",
+          "pinyin": "",
+          "audio_key": ""
+         },
+         {
+          "id": "read_015",
+          "text": "作业做完了",
+          "pinyin": "",
+          "audio_key": ""
+         },
+         {
+          "id": "read_016",
+          "text": "生词预习好了",
+          "pinyin": "",
+          "audio_key": ""
+         },
+         {
+          "id": "read_017",
+          "text": "课文读熟了",
+          "pinyin": "",
+          "audio_key": ""
+         },
+         {
+          "id": "read_018",
+          "text": "差点儿迟到",
+          "pinyin": "",
+          "audio_key": ""
+         },
+         {
+          "id": "read_019",
+          "text": "差点儿没迟到",
+          "pinyin": "",
+          "audio_key": ""
+         },
+         {
+          "id": "read_020",
+          "text": "差点儿摔坏",
+          "pinyin": "",
+          "audio_key": ""
+         },
+         {
+          "id": "read_021",
+          "text": "张张都很漂亮",
+          "pinyin": "",
+          "audio_key": ""
+         },
+         {
+          "id": "read_022",
+          "text": "人人都很忙",
+          "pinyin": "",
+          "audio_key": ""
+         },
+         {
+          "id": "read_023",
+          "text": "个个都很努力",
+          "pinyin": "",
+          "audio_key": ""
+         }
+        ],
+        "source_origin": "textbook",
+        "check_needed": false
+       }
+      ],
+      "rendering": {
+       "renderer": "exercise.phonetics.v1"
+      }
+     },
+     {
+      "id": "exercise_02",
+      "type": "substitution_drill",
+      "variant": "models",
+      "order": 2,
+      "title": "替换",
+      "title_vi": "Thay thế theo mẫu",
+      "instruction": {
+       "zh": "替换练习。",
+       "vi": "Luyện thay thế theo mẫu."
+      },
+      "difficulty": "normal",
+      "skill_focus": ["speaking", "grammar"],
+      "grammar_refs": ["grammar_01", "grammar_02"],
+      "source_origin": "textbook",
+      "check_needed": false,
+      "models": [
+       {
+        "id": "ex02_model_01",
+        "title": "模型一",
+        "dialogue": ["A：怎么了？", "B：眼镜儿摔坏了。"],
+        "substitutions": [
+         "杯子 / 摔破",
+         "照相机 / 摔坏",
+         "碗 / 摔破",
+         "头 / 碰破",
+         "手 / 碰破"
+        ]
+       },
+       {
+        "id": "ex02_model_02",
+        "title": "模型二",
+        "dialogue": ["A：眼镜儿摔坏了没有？", "B：没有。"],
+        "substitutions": [
+         "手 / 碰破",
+         "腿 / 摔疼",
+         "杯子 / 摔破",
+         "车 / 碰坏",
+         "手机 / 摔坏"
+        ]
+       },
+       {
+        "id": "ex02_model_03",
+        "title": "模型三",
+        "dialogue": ["A：照片洗好了吗？", "B：洗好了。"],
+        "substitutions": [
+         "饭 / 做好",
+         "作文 / 写好",
+         "书 / 借到",
+         "词典 / 买着",
+         "自行车 / 找到"
+        ]
+       },
+       {
+        "id": "ex02_model_04",
+        "title": "模型四",
+        "dialogue": ["A：作业做完了吗？", "B：还没做完呢。/ 快做完了。"],
+        "substitutions": [
+         "饭 / 做好",
+         "衣服 / 洗完",
+         "钱 / 用完",
+         "作文 / 写好",
+         "照片 / 洗好"
+        ]
+       },
+       {
+        "id": "ex02_model_05",
+        "title": "模型五",
+        "dialogue": ["A：这张照片照得怎么样？", "B：不怎么样。"],
+        "substitutions": [
+         "这张画儿 / 画",
+         "你的汉字 / 写",
+         "他的歌 / 唱",
+         "你的英语 / 说",
+         "这件衣服 / 做"
+        ]
+       },
+       {
+        "id": "ex02_model_06",
+        "title": "模型六",
+        "sentence": "这张照片一点儿也不清楚。",
+        "substitutions": [
+         "这道题 / 不难",
+         "这个菜 / 不好吃",
+         "这件衣服 / 不贵",
+         "那本书 / 没有意思",
+         "这个电影 / 不好看"
+        ]
+       }
+      ],
+      "rendering": {
+       "renderer": "exercise.substitution_drill.v1"
+      }
+     },
+     {
+      "id": "exercise_03",
+      "type": "choose_words_fill_blank",
+      "variant": "word_bank",
+      "order": 3,
+      "title": "选词填空",
+      "title_vi": "Chọn từ điền chỗ trống",
+      "instruction": {
+       "zh": "选词填空。",
+       "vi": "Chọn từ thích hợp điền vào chỗ trống."
+      },
+      "difficulty": "normal",
+      "skill_focus": ["vocabulary", "grammar"],
+      "word_bank": [
+       "放大",
+       "赶快",
+       "造成",
+       "多",
+       "很",
+       "就",
+       "一样",
+       "摔",
+       "照",
+       "差点儿"
+      ],
+      "questions": [
+       {
+        "id": "ex03_q01",
+        "prompt": "这张照片______得好极了。",
+        "answer": "照",
+        "acceptable_answers": ["照"],
+        "explanation_vi": "照得好极了 = chụp rất đẹp.",
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "ex03_q02",
+        "prompt": "买汽车的人一年比一年______。",
+        "answer": "多",
+        "acceptable_answers": ["多"],
+        "explanation_vi": "一年比一年多 = ngày/năm càng nhiều.",
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "ex03_q03",
+        "prompt": "这张照片请再给我______三张。",
+        "answer": "放大",
+        "acceptable_answers": ["放大"],
+        "explanation_vi": "放大三张 = phóng to 3 tấm.",
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "ex03_q04",
+        "prompt": "我的眼镜儿都______坏了。",
+        "answer": "摔",
+        "acceptable_answers": ["摔"],
+        "explanation_vi": "摔坏了 = rơi/ngã làm hỏng.",
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "ex03_q05",
+        "prompt": "我______没摔倒。",
+        "answer": "差点儿",
+        "acceptable_answers": ["差点儿"],
+        "explanation_vi": "差点儿没摔倒 = suýt ngã.",
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "ex03_q06",
+        "prompt": "一到下班时间路上______堵车。",
+        "answer": "就",
+        "acceptable_answers": ["就"],
+        "explanation_vi": "一……就…… = hễ... là...",
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "ex03_q07",
+        "prompt": "汽车太多是______交通拥挤的主要原因。",
+        "answer": "造成",
+        "acceptable_answers": ["造成"],
+        "explanation_vi": "造成交通拥挤 = gây ùn tắc giao thông.",
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "ex03_q08",
+        "prompt": "最好的办法还是______发展地铁。",
+        "answer": "赶快",
+        "acceptable_answers": ["赶快"],
+        "explanation_vi": "赶快发展地铁 = nhanh chóng phát triển tàu điện ngầm.",
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "ex03_q09",
+        "prompt": "最近我忙得______。",
+        "answer": "很",
+        "acceptable_answers": ["很"],
+        "explanation_vi": "忙得很 = rất bận.",
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "ex03_q10",
+        "prompt": "这些照片张张都像油画______。",
+        "answer": "一样",
+        "acceptable_answers": ["一样"],
+        "explanation_vi": "像油画一样 = như tranh sơn dầu.",
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       }
+      ],
+      "answer_key": [
+       {
+        "question_id": "ex03_q01",
+        "answer": "照",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "question_id": "ex03_q02",
+        "answer": "多",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "question_id": "ex03_q03",
+        "answer": "放大",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "question_id": "ex03_q04",
+        "answer": "摔",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "question_id": "ex03_q05",
+        "answer": "差点儿",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "question_id": "ex03_q06",
+        "answer": "就",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "question_id": "ex03_q07",
+        "answer": "造成",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "question_id": "ex03_q08",
+        "answer": "赶快",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "question_id": "ex03_q09",
+        "answer": "很",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "question_id": "ex03_q10",
+        "answer": "一样",
+        "answer_verified": false,
+        "check_needed": true
+       }
+      ],
+      "rendering": {
+       "renderer": "exercise.fill_blank.v1",
+       "input_mode": "dropdown",
+       "show_word_bank": true,
+       "show_answer_after_submit": true
+      },
+      "source_origin": "textbook",
+      "check_needed": true
+     },
+     {
+      "id": "exercise_04",
+      "type": "fill_blank",
+      "variant": "fill_result_complement",
+      "order": 4,
+      "title": "填结果补语",
+      "title_vi": "Điền bổ ngữ kết quả",
+      "instruction": {
+       "zh": "填结果补语。",
+       "vi": "Điền bổ ngữ kết quả phù hợp."
+      },
+      "difficulty": "hard",
+      "skill_focus": ["grammar", "result_complement"],
+      "grammar_refs": ["grammar_02"],
+      "questions": [
+       {
+        "id": "ex04_q01",
+        "prompt": "衣服洗______了。",
+        "answer": "好",
+        "acceptable_answers": ["好"],
+        "explanation_vi": "洗好了 = giặt/rửa xong rồi.",
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "ex04_q02",
+        "prompt": "作业做______了。",
+        "answer": "完",
+        "acceptable_answers": ["完"],
+        "explanation_vi": "做完了 = làm xong rồi.",
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "ex04_q03",
+        "prompt": "钥匙找______了。",
+        "answer": "到",
+        "acceptable_answers": ["到"],
+        "explanation_vi": "找到 = tìm thấy.",
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "ex04_q04",
+        "prompt": "自行车修______了。",
+        "answer": "好",
+        "acceptable_answers": ["好"],
+        "explanation_vi": "修好了 = sửa xong rồi.",
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "ex04_q05",
+        "prompt": "这篇课文我一点儿也没看______。",
+        "answer": "懂",
+        "acceptable_answers": ["懂"],
+        "explanation_vi": "看懂 = đọc hiểu.",
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "ex04_q06",
+        "prompt": "杯子摔______了。",
+        "answer": "坏",
+        "acceptable_answers": ["坏"],
+        "explanation_vi": "摔坏 = rơi vỡ/hỏng.",
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "ex04_q07",
+        "prompt": "你要的词典买______了。",
+        "answer": "到",
+        "acceptable_answers": ["到"],
+        "explanation_vi": "买到 = mua được.",
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "ex04_q08",
+        "prompt": "对不起，你的话我没听______，我正在听录音呢。",
+        "answer": "清楚",
+        "acceptable_answers": ["清楚"],
+        "explanation_vi": "听清楚 = nghe rõ.",
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       }
+      ],
+      "answer_key": [
+       {
+        "question_id": "ex04_q01",
+        "answer": "好",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "question_id": "ex04_q02",
+        "answer": "完",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "question_id": "ex04_q03",
+        "answer": "到",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "question_id": "ex04_q04",
+        "answer": "好",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "question_id": "ex04_q05",
+        "answer": "懂",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "question_id": "ex04_q06",
+        "answer": "坏",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "question_id": "ex04_q07",
+        "answer": "到",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "question_id": "ex04_q08",
+        "answer": "清楚",
+        "answer_verified": false,
+        "check_needed": true
+       }
+      ],
+      "rendering": {
+       "renderer": "exercise.fill_blank.v1",
+       "input_mode": "text",
+       "show_answer_after_submit": true
+      },
+      "source_origin": "textbook",
+      "check_needed": true
+     },
+     {
+      "id": "exercise_05",
+      "type": "correct_sentence",
+      "variant": "",
+      "order": 5,
+      "title": "改错句",
+      "title_vi": "Sửa câu sai",
+      "instruction": {
+       "zh": "改错句。",
+       "vi": "Sửa lỗi trong câu."
+      },
+      "difficulty": "hard",
+      "skill_focus": ["grammar", "sentence_order"],
+      "grammar_refs": ["grammar_01", "grammar_02"],
+      "questions": [
+       {
+        "id": "ex05_q01",
+        "wrong_sentence": "照相机我不小心坏了。",
+        "correct_sentence": "我不小心把照相机弄坏了。",
+        "acceptable_answers": ["我不小心把照相机弄坏了。"],
+        "explanation_vi": "Cần biểu thị tác động làm hỏng: 把照相机弄坏了 / 照相机坏了.",
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "ex05_q02",
+        "wrong_sentence": "我已经完了今天的作业。",
+        "correct_sentence": "我已经做完了今天的作业。",
+        "acceptable_answers": ["我已经做完了今天的作业。"],
+        "explanation_vi": "做完作业 = làm xong bài tập.",
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "ex05_q03",
+        "wrong_sentence": "上课完了我就去商店买衣服。",
+        "correct_sentence": "下课以后我就去商店买衣服。",
+        "acceptable_answers": ["下课以后我就去商店买衣服。"],
+        "explanation_vi": "Tan học dùng 下课, không nói 上课完了 trong ngữ cảnh này.",
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "ex05_q04",
+        "wrong_sentence": "我的自行车朋友借了。",
+        "correct_sentence": "我的自行车被朋友借走了。",
+        "acceptable_answers": ["我的自行车被朋友借走了。"],
+        "explanation_vi": "Chủ ngữ chịu tác động cần 借走/被...借走.",
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "ex05_q05",
+        "wrong_sentence": "黑板上的字你看见清楚了吗？",
+        "correct_sentence": "黑板上的字你看清楚了吗？",
+        "acceptable_answers": ["黑板上的字你看清楚了吗？"],
+        "explanation_vi": "看清楚 = nhìn rõ; không dùng 看见清楚.",
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       }
+      ],
+      "answer_key": [
+       {
+        "question_id": "ex05_q01",
+        "answer": "我不小心把照相机弄坏了。",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "question_id": "ex05_q02",
+        "answer": "我已经做完了今天的作业。",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "question_id": "ex05_q03",
+        "answer": "下课以后我就去商店买衣服。",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "question_id": "ex05_q04",
+        "answer": "我的自行车被朋友借走了。",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "question_id": "ex05_q05",
+        "answer": "黑板上的字你看清楚了吗？",
+        "answer_verified": false,
+        "check_needed": true
+       }
+      ],
+      "rendering": {
+       "renderer": "exercise.correct_sentence.v1",
+       "show_answer_after_submit": true
+      },
+      "source_origin": "textbook",
+      "check_needed": true
+     }
+    ]
+   },
+   {
+    "id": "section_07_communication",
+    "type": "communication",
+    "order": 7,
+    "title": "交际会话",
+    "title_vi": "Hội thoại giao tiếp",
+    "source_origin": "textbook/generated_mixed",
+    "check_needed": true,
+    "items": [
+     {
+      "id": "communication_01",
+      "type": "communication_dialogue",
+      "variant": "choose_photos",
+      "order": 1,
+      "title": "选照片",
+      "title_vi": "Chọn ảnh",
+      "function": "选照片",
+      "function_vi": "Trao đổi về chọn ảnh",
+      "dialogue": [
+       {
+        "speaker": "A",
+        "text": "这些照片选好了吗？"
+       },
+       {
+        "speaker": "B",
+        "text": "还没选呢。咱们一起选吧。"
+       },
+       {
+        "speaker": "A",
+        "text": "这张照得怎么样？"
+       },
+       {
+        "speaker": "B",
+        "text": "照得非常好，像油画一样。"
+       },
+       {
+        "speaker": "A",
+        "text": "那就把这张放大吧。"
+       }
+      ],
+      "source_origin": "textbook/generated_mixed",
+      "check_needed": true
+     },
+     {
+      "id": "communication_02",
+      "type": "communication_dialogue",
+      "variant": "bad_luck",
+      "order": 2,
+      "title": "说倒霉事",
+      "title_vi": "Nói chuyện xui",
+      "function": "说倒霉事",
+      "function_vi": "Nói về chuyện xui xẻo",
+      "dialogue": [
+       {
+        "speaker": "A",
+        "text": "你的眼镜儿怎么了？"
+       },
+       {
+        "speaker": "B",
+        "text": "别提了，今天倒霉得很。"
+       },
+       {
+        "speaker": "A",
+        "text": "怎么了？"
+       },
+       {
+        "speaker": "B",
+        "text": "我刚出门就摔了一跤，眼镜儿也掉在地上摔坏了。"
+       }
+      ],
+      "source_origin": "textbook/generated_mixed",
+      "check_needed": true
+     },
+     {
+      "id": "communication_03",
+      "type": "communication_dialogue",
+      "variant": "traffic",
+      "order": 3,
+      "title": "谈交通",
+      "title_vi": "Nói về giao thông",
+      "function": "谈交通",
+      "function_vi": "Nói về giao thông đô thị",
+      "dialogue": [
+       {
+        "speaker": "A",
+        "text": "你怎么差点儿迟到？"
+       },
+       {
+        "speaker": "B",
+        "text": "一下雪就堵车，又碰上一起交通事故。"
+       },
+       {
+        "speaker": "A",
+        "text": "你几点从家里出来的？"
+       },
+       {
+        "speaker": "B",
+        "text": "六点钟就出来了，快八点才到。"
+       },
+       {
+        "speaker": "A",
+        "text": "城市交通真是一个大问题。"
+       },
+       {
+        "speaker": "B",
+        "text": "我看最好还是赶快发展地铁。"
+       }
+      ],
+      "source_origin": "textbook/generated_mixed",
+      "check_needed": true
+     }
+    ]
+   },
+   {
+    "id": "section_08_reading",
+    "type": "reading",
+    "order": 8,
+    "title": "阅读理解 / 阅读填空",
+    "title_vi": "Đọc hiểu / Điền khuyết",
+    "source_origin": "generated",
+    "check_needed": true,
+    "note_vi": "Bài đọc và điền khuyết bổ sung cho app theo trọng tâm 受事主语句 / 结果补语 / 量词重叠 / 一年比一年; không đánh là textbook nếu chưa đối chiếu PDF gốc.",
+    "items": [
+     {
+      "id": "reading_01",
+      "type": "reading_text",
+      "order": 1,
+      "title": "照片都洗好了",
+      "title_vi": "Ảnh đều rửa xong rồi",
+      "paragraphs": [
+       {
+        "id": "reading_01_p01",
+        "order": 1,
+        "zh": "上个星期天，玛丽和麦克去长城玩儿，照了很多照片。昨天，他们一起选照片。麦克觉得这些照片张张都很好，可是玛丽觉得有几张照得不太好。",
+        "pinyin": "",
+        "vi": "",
+        "grammar_refs": ["grammar_01", "grammar_02", "grammar_03"],
+        "vocab_refs": [],
+        "source_origin": "generated",
+        "check_needed": true
+       },
+       {
+        "id": "reading_01_p02",
+        "order": 2,
+        "zh": "有一张照片人照小了，还有一张眼睛都闭上了，像睡着了一样。最不好的是一张照虚了，一点儿也不清楚。玛丽说：“照得不好的都删了吧。”",
+        "pinyin": "",
+        "vi": "",
+        "grammar_refs": ["grammar_01", "grammar_02", "grammar_03"],
+        "vocab_refs": [],
+        "source_origin": "generated",
+        "check_needed": true
+       },
+       {
+        "id": "reading_01_p03",
+        "order": 3,
+        "zh": "最后，他们选了两张最漂亮的照片，准备放大成十寸的。麦克说：“这两张像油画一样，放大以后一定很好看。”",
+        "pinyin": "",
+        "vi": "",
+        "grammar_refs": ["grammar_01", "grammar_02", "grammar_03"],
+        "vocab_refs": [],
+        "source_origin": "generated",
+        "check_needed": true
+       },
+       {
+        "id": "reading_01_p04",
+        "order": 4,
+        "zh": "下午，他们去洗照片。照片洗好了以后，玛丽高兴得很。她说：“以后出去玩儿，还是要多照几张，慢慢选。”",
+        "pinyin": "",
+        "vi": "",
+        "grammar_refs": ["grammar_01", "grammar_02", "grammar_03"],
+        "vocab_refs": [],
+        "source_origin": "generated",
+        "check_needed": true
+       }
+      ],
+      "questions": [
+       {
+        "id": "reading_q01",
+        "question": "玛丽和麦克什么时候去长城玩儿？",
+        "answer": "他们上个星期天去长城玩儿。",
+        "source_origin": "generated",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "reading_q02",
+        "question": "他们在长城照了什么？",
+        "answer": "他们在长城照了很多照片。",
+        "source_origin": "generated",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "reading_q03",
+        "question": "麦克觉得这些照片怎么样？",
+        "answer": "麦克觉得这些照片张张都很好。",
+        "source_origin": "generated",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "reading_q04",
+        "question": "玛丽觉得哪些照片不好？",
+        "answer": "她觉得人照小了、眼睛闭上了、照虚了的照片不好。",
+        "source_origin": "generated",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "reading_q05",
+        "question": "他们最后选了几张照片？",
+        "answer": "他们最后选了两张照片。",
+        "source_origin": "generated",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "reading_q06",
+        "question": "他们准备把照片放成多大的？",
+        "answer": "他们准备放成十寸的。",
+        "source_origin": "generated",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "reading_q07",
+        "question": "照片洗好了以后，玛丽觉得怎么样？",
+        "answer": "玛丽高兴得很。",
+        "source_origin": "generated",
+        "answer_verified": false,
+        "check_needed": true
+       }
+      ],
+      "source_origin": "generated",
+      "check_needed": true
+     },
+     {
+      "id": "reading_cloze_01",
+      "type": "reading_cloze",
+      "order": 2,
+      "title": "综合填空：照片都洗好了",
+      "title_vi": "Điền tổng hợp: Ảnh đều rửa xong rồi",
+      "instruction": {
+       "zh": "综合填空。",
+       "vi": "Điền từ thích hợp vào chỗ trống trong bài đọc."
+      },
+      "word_bank": [
+       "张张",
+       "照虚",
+       "闭上",
+       "删",
+       "放大",
+       "洗好",
+       "得很",
+       "一样"
+      ],
+      "passage": {
+       "id": "cloze_passage_01",
+       "segments": [
+        {
+         "id": "seg_001",
+         "type": "text",
+         "text": "麦克觉得这些照片"
+        },
+        {
+         "id": "seg_002",
+         "type": "blank",
+         "blank_id": "blank_01"
+        },
+        {
+         "id": "seg_003",
+         "type": "text",
+         "text": "都很好。有一张照片眼睛都"
+        },
+        {
+         "id": "seg_004",
+         "type": "blank",
+         "blank_id": "blank_02"
+        },
+        {
+         "id": "seg_005",
+         "type": "text",
+         "text": "了。最不好的是一张"
+        },
+        {
+         "id": "seg_006",
+         "type": "blank",
+         "blank_id": "blank_03"
+        },
+        {
+         "id": "seg_007",
+         "type": "text",
+         "text": "了，一点儿也不清楚。玛丽说，照得不好的都"
+        },
+        {
+         "id": "seg_008",
+         "type": "blank",
+         "blank_id": "blank_04"
+        },
+        {
+         "id": "seg_009",
+         "type": "text",
+         "text": "了吧。他们准备把两张照片"
+        },
+        {
+         "id": "seg_010",
+         "type": "blank",
+         "blank_id": "blank_05"
+        },
+        {
+         "id": "seg_011",
+         "type": "text",
+         "text": "成十寸的。这两张照片像油画"
+        },
+        {
+         "id": "seg_012",
+         "type": "blank",
+         "blank_id": "blank_06"
+        },
+        {
+         "id": "seg_013",
+         "type": "text",
+         "text": "。照片"
+        },
+        {
+         "id": "seg_014",
+         "type": "blank",
+         "blank_id": "blank_07"
+        },
+        {
+         "id": "seg_015",
+         "type": "text",
+         "text": "以后，玛丽高兴"
+        },
+        {
+         "id": "seg_016",
+         "type": "blank",
+         "blank_id": "blank_08"
+        },
+        {
+         "id": "seg_017",
+         "type": "text",
+         "text": "。"
+        }
+       ]
+      },
+      "answers": [
+       {
+        "blank_id": "blank_01",
+        "answer": "张张",
+        "acceptable_answers": ["张张"],
+        "explanation_vi": "Đáp án theo bài đọc bổ sung generated.",
+        "grammar_refs": ["grammar_01", "grammar_02", "grammar_03"],
+        "source_origin": "generated",
+        "check_needed": true
+       },
+       {
+        "blank_id": "blank_02",
+        "answer": "闭上",
+        "acceptable_answers": ["闭上"],
+        "explanation_vi": "Đáp án theo bài đọc bổ sung generated.",
+        "grammar_refs": ["grammar_01", "grammar_02", "grammar_03"],
+        "source_origin": "generated",
+        "check_needed": true
+       },
+       {
+        "blank_id": "blank_03",
+        "answer": "照虚",
+        "acceptable_answers": ["照虚"],
+        "explanation_vi": "Đáp án theo bài đọc bổ sung generated.",
+        "grammar_refs": ["grammar_01", "grammar_02", "grammar_03"],
+        "source_origin": "generated",
+        "check_needed": true
+       },
+       {
+        "blank_id": "blank_04",
+        "answer": "删",
+        "acceptable_answers": ["删"],
+        "explanation_vi": "Đáp án theo bài đọc bổ sung generated.",
+        "grammar_refs": ["grammar_01", "grammar_02", "grammar_03"],
+        "source_origin": "generated",
+        "check_needed": true
+       },
+       {
+        "blank_id": "blank_05",
+        "answer": "放大",
+        "acceptable_answers": ["放大"],
+        "explanation_vi": "Đáp án theo bài đọc bổ sung generated.",
+        "grammar_refs": ["grammar_01", "grammar_02", "grammar_03"],
+        "source_origin": "generated",
+        "check_needed": true
+       },
+       {
+        "blank_id": "blank_06",
+        "answer": "一样",
+        "acceptable_answers": ["一样"],
+        "explanation_vi": "Đáp án theo bài đọc bổ sung generated.",
+        "grammar_refs": ["grammar_01", "grammar_02", "grammar_03"],
+        "source_origin": "generated",
+        "check_needed": true
+       },
+       {
+        "blank_id": "blank_07",
+        "answer": "洗好",
+        "acceptable_answers": ["洗好"],
+        "explanation_vi": "Đáp án theo bài đọc bổ sung generated.",
+        "grammar_refs": ["grammar_01", "grammar_02", "grammar_03"],
+        "source_origin": "generated",
+        "check_needed": true
+       },
+       {
+        "blank_id": "blank_08",
+        "answer": "得很",
+        "acceptable_answers": ["得很"],
+        "explanation_vi": "Đáp án theo bài đọc bổ sung generated.",
+        "grammar_refs": ["grammar_01", "grammar_02", "grammar_03"],
+        "source_origin": "generated",
+        "check_needed": true
+       }
+      ],
+      "answer_key": [
+       {
+        "blank_id": "blank_01",
+        "answer": "张张",
+        "source_origin": "generated",
+        "check_needed": true
+       },
+       {
+        "blank_id": "blank_02",
+        "answer": "闭上",
+        "source_origin": "generated",
+        "check_needed": true
+       },
+       {
+        "blank_id": "blank_03",
+        "answer": "照虚",
+        "source_origin": "generated",
+        "check_needed": true
+       },
+       {
+        "blank_id": "blank_04",
+        "answer": "删",
+        "source_origin": "generated",
+        "check_needed": true
+       },
+       {
+        "blank_id": "blank_05",
+        "answer": "放大",
+        "source_origin": "generated",
+        "check_needed": true
+       },
+       {
+        "blank_id": "blank_06",
+        "answer": "一样",
+        "source_origin": "generated",
+        "check_needed": true
+       },
+       {
+        "blank_id": "blank_07",
+        "answer": "洗好",
+        "source_origin": "generated",
+        "check_needed": true
+       },
+       {
+        "blank_id": "blank_08",
+        "answer": "得很",
+        "source_origin": "generated",
+        "check_needed": true
+       }
+      ],
+      "rendering": {
+       "renderer": "reading.cloze.v1",
+       "input_mode": "text",
+       "show_word_bank": true,
+       "show_answer_after_submit": true
+      },
+      "source_origin": "generated",
+      "check_needed": true
+     }
+    ]
+   },
+   {
+    "id": "section_09_character_writing",
+    "type": "character_writing",
+    "order": 9,
+    "title": "写汉字",
+    "title_vi": "Viết chữ Hán",
+    "source_origin": "generated",
+    "check_needed": true,
+    "items": [
+     {
+      "id": "char_001",
+      "type": "character_writing_item",
+      "order": 1,
+      "hanzi": "照",
+      "pinyin": "zhào",
+      "vocab_ref": "vocab_001",
+      "stroke_count": null,
+      "radical": "",
+      "stroke_order_key": "",
+      "practice": {
+       "grid_type": "田字格",
+       "repeat_count": 6
+      },
+      "source_origin": "generated",
+      "check_needed": true
+     },
+     {
+      "id": "char_002",
+      "type": "character_writing_item",
+      "order": 2,
+      "hanzi": "选",
+      "pinyin": "xuǎn",
+      "vocab_ref": "vocab_002",
+      "stroke_count": null,
+      "radical": "",
+      "stroke_order_key": "",
+      "practice": {
+       "grid_type": "田字格",
+       "repeat_count": 6
+      },
+      "source_origin": "generated",
+      "check_needed": true
+     },
+     {
+      "id": "char_003",
+      "type": "character_writing_item",
+      "order": 3,
+      "hanzi": "洗",
+      "pinyin": "xǐ",
+      "vocab_ref": "vocab_003",
+      "stroke_count": null,
+      "radical": "",
+      "stroke_order_key": "",
+      "practice": {
+       "grid_type": "田字格",
+       "repeat_count": 6
+      },
+      "source_origin": "generated",
+      "check_needed": true
+     },
+     {
+      "id": "char_004",
+      "type": "character_writing_item",
+      "order": 4,
+      "hanzi": "闭",
+      "pinyin": "bì",
+      "vocab_ref": "vocab_004",
+      "stroke_count": null,
+      "radical": "",
+      "stroke_order_key": "",
+      "practice": {
+       "grid_type": "田字格",
+       "repeat_count": 6
+      },
+      "source_origin": "generated",
+      "check_needed": true
+     },
+     {
+      "id": "char_005",
+      "type": "character_writing_item",
+      "order": 5,
+      "hanzi": "虚",
+      "pinyin": "xū",
+      "vocab_ref": "vocab_005",
+      "stroke_count": null,
+      "radical": "",
+      "stroke_order_key": "",
+      "practice": {
+       "grid_type": "田字格",
+       "repeat_count": 6
+      },
+      "source_origin": "generated",
+      "check_needed": true
+     },
+     {
+      "id": "char_006",
+      "type": "character_writing_item",
+      "order": 6,
+      "hanzi": "删",
+      "pinyin": "shān",
+      "vocab_ref": "vocab_006",
+      "stroke_count": null,
+      "radical": "",
+      "stroke_order_key": "",
+      "practice": {
+       "grid_type": "田字格",
+       "repeat_count": 6
+      },
+      "source_origin": "generated",
+      "check_needed": true
+     },
+     {
+      "id": "char_007",
+      "type": "character_writing_item",
+      "order": 7,
+      "hanzi": "摔",
+      "pinyin": "shuāi",
+      "vocab_ref": "vocab_019",
+      "stroke_count": null,
+      "radical": "",
+      "stroke_order_key": "",
+      "practice": {
+       "grid_type": "田字格",
+       "repeat_count": 6
+      },
+      "source_origin": "generated",
+      "check_needed": true
+     },
+     {
+      "id": "char_008",
+      "type": "character_writing_item",
+      "order": 8,
+      "hanzi": "掉",
+      "pinyin": "diào",
+      "vocab_ref": "vocab_020",
+      "stroke_count": null,
+      "radical": "",
+      "stroke_order_key": "",
+      "practice": {
+       "grid_type": "田字格",
+       "repeat_count": 6
+      },
+      "source_origin": "generated",
+      "check_needed": true
+     },
+     {
+      "id": "char_009",
+      "type": "character_writing_item",
+      "order": 9,
+      "hanzi": "保",
+      "pinyin": "bǎo",
+      "vocab_ref": "vocab_024",
+      "stroke_count": null,
+      "radical": "",
+      "stroke_order_key": "",
+      "practice": {
+       "grid_type": "田字格",
+       "repeat_count": 6
+      },
+      "source_origin": "generated",
+      "check_needed": true
+     },
+     {
+      "id": "char_010",
+      "type": "character_writing_item",
+      "order": 10,
+      "hanzi": "规",
+      "pinyin": "guī",
+      "vocab_ref": "vocab_026",
+      "stroke_count": null,
+      "radical": "",
+      "stroke_order_key": "",
+      "practice": {
+       "grid_type": "田字格",
+       "repeat_count": 6
+      },
+      "source_origin": "generated",
+      "check_needed": true
+     },
+     {
+      "id": "char_011",
+      "type": "character_writing_item",
+      "order": 11,
+      "hanzi": "拥",
+      "pinyin": "yōng",
+      "vocab_ref": "vocab_028",
+      "stroke_count": null,
+      "radical": "",
+      "stroke_order_key": "",
+      "practice": {
+       "grid_type": "田字格",
+       "repeat_count": 6
+      },
+      "source_origin": "generated",
+      "check_needed": true
+     },
+     {
+      "id": "char_012",
+      "type": "character_writing_item",
+      "order": 12,
+      "hanzi": "挤",
+      "pinyin": "jǐ",
+      "vocab_ref": "vocab_028",
+      "stroke_count": null,
+      "radical": "",
+      "stroke_order_key": "",
+      "practice": {
+       "grid_type": "田字格",
+       "repeat_count": 6
+      },
+      "source_origin": "generated",
+      "check_needed": true
+     }
+    ]
+   }
+  ],
+  "summary": {
+   "lesson_parts": [
+    "课文",
+    "生词",
+    "专名",
+    "注释",
+    "语法",
+    "练习",
+    "交际会话",
+    "阅读理解 / 阅读填空",
+    "写汉字"
+   ],
+   "grammar_points": [
+    {
+     "id": "grammar_01",
+     "title": "被动意义的表达：受事主语句"
+    },
+    {
+     "id": "grammar_02",
+     "title": "结果补语"
+    },
+    {
+     "id": "grammar_03",
+     "title": "量词重叠"
+    },
+    {
+     "id": "grammar_04",
+     "title": "一年比一年"
+    },
+    {
+     "id": "note_01",
+     "title": "差（一）点儿"
+    },
+    {
+     "id": "note_03",
+     "title": "Adj + 得很"
+    }
+   ],
+   "main_patterns": [
+    {
+     "pattern": "要洗的照片选好了吗？",
+     "grammar_ref": "grammar_01"
+    },
+    {
+     "pattern": "这些照得都非常好，张张都很漂亮。",
+     "grammar_ref": "grammar_03"
+    },
+    {
+     "pattern": "这张没照好，人照小了。",
+     "grammar_ref": "grammar_02"
+    },
+    {
+     "pattern": "眼睛都闭上了，像睡着了一样。",
+     "grammar_ref": "grammar_02"
+    },
+    {
+     "pattern": "这张照虚了，一点儿也不清楚。",
+     "grammar_ref": "grammar_02"
+    },
+    {
+     "pattern": "照得不好的都删了吧。",
+     "grammar_ref": "grammar_02"
+    },
+    {
+     "pattern": "我的眼镜儿摔坏了。",
+     "grammar_ref": "grammar_01"
+    },
+    {
+     "pattern": "差点儿迟到。",
+     "grammar_ref": "note_01"
+    },
+    {
+     "pattern": "今天倒霉得很。",
+     "grammar_ref": "note_03"
+    },
+    {
+     "pattern": "有汽车的人也一年比一年多。",
+     "grammar_ref": "grammar_04"
+    }
+   ],
+   "exercise_types": [
+    "phonetics",
+    "read_aloud",
+    "substitution_drill",
+    "choose_words_fill_blank",
+    "fill_blank",
+    "correct_sentence",
+    "communication_dialogue",
+    "reading_text",
+    "reading_cloze",
+    "character_writing"
+   ],
+   "source_origin_policy": {
+    "textbook": "Copied/structured from textbook/PDF content.",
+    "web_crosscheck": "Used to confirm lesson title, core texts, and grammar topics.",
+    "generated": "Generated for app practice/rendering; must be treated as non-textbook unless verified separately.",
+    "textbook/generated_mixed": "Based on textbook communicative function but formatted/simplified for app rendering.",
+    "textbook_question_generated_answer": "Question comes from textbook-style comprehension; answer generated from the text."
+   },
+   "check_needed": true
+  }
+ },
+ "fix_history": [
+  {
+   "fix_id": "lesson_08_v2_2_initial_with_reading_v1",
+   "description": "Created lesson 8 with non-empty generated reading_text and reading_cloze sections following v2.2.0 final verified schema.",
+   "source_origin": "generated",
+   "check_needed": true
+  }
+ ]
+}

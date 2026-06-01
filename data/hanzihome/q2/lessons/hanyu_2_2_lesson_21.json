@@ -1,0 +1,3924 @@
+{
+ "schema_version": "2.2.0",
+ "content_type": "chinese_textbook_lesson",
+ "verification_status": "final_verified_with_marked_generated_fields",
+ "source": {
+  "book": "Hanyu Jiaocheng",
+  "volume": "第二册下",
+  "volume_vi": "Quyển 2 Hạ",
+  "lesson_index": 21,
+  "lesson_number_cn": "第二十一课",
+  "lesson_title_cn": "山这么高，你爬得上去吗？",
+  "lesson_title_pinyin": "Shān zhème gāo, nǐ pá de shàngqù ma?",
+  "lesson_title_vi": "Núi cao thế này, bạn leo lên được không?",
+  "lesson_title_en": "The mountain is so high. Can you climb up?",
+  "source_files": [
+   {
+    "name": "Hanyu Jiaocheng 2-2.pdf",
+    "type": "pdf_scan",
+    "source_origin": "textbook",
+    "check_needed": false
+   },
+   {
+    "name": "Ngoại Ngữ Hà Nội - 山这么高，你能/爬得上去吗",
+    "type": "web_crosscheck",
+    "source_origin": "web_crosscheck",
+    "check_needed": false
+   },
+   {
+    "name": "Học tiếng Trung Quốc - Bài số 56 山这么高，你爬得上去吗",
+    "type": "web_crosscheck",
+    "source_origin": "web_crosscheck",
+    "check_needed": false
+   }
+  ],
+  "web_crosscheck": [
+   {
+    "title": "Giáo trình Hán Ngữ 4 - Bài 6: 山这么高，你能/爬得上去吗",
+    "source_origin": "web_crosscheck",
+    "note": "Used to cross-check lesson title, two lesson texts, and key grammar topics: 可能补语 and 只要……就……."
+   }
+  ]
+ },
+ "lesson": {
+  "id": "hanyu_2_2_lesson_21",
+  "title": {
+   "zh": "山这么高，你爬得上去吗？",
+   "pinyin": "Shān zhème gāo, nǐ pá de shàngqù ma?",
+   "vi": "Núi cao thế này, bạn leo lên được không?",
+   "en": "The mountain is so high. Can you climb up?"
+  },
+  "tags": [
+   "hanyu_2_2",
+   "lesson_21",
+   "hsk3-ish",
+   "potential_complement",
+   "climbing",
+   "performance",
+   "encouragement"
+  ],
+  "sections": [
+   {
+    "id": "section_01_text",
+    "type": "text",
+    "order": 1,
+    "title": "课文",
+    "title_vi": "Bài khóa",
+    "source_origin": "textbook",
+    "check_needed": false,
+    "blocks": [
+     {
+      "id": "text_01",
+      "type": "text_dialogue",
+      "order": 1,
+      "title": "山这么高，你爬得上去吗？",
+      "title_vi": "Núi cao thế này, bạn leo lên được không?",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "lines": [
+       {
+        "id": "text_01_l01",
+        "order": 1,
+        "speaker": "旁白",
+        "zh": "（王老师和林老师跟同学们一起去爬山。）",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook",
+        "check_needed": false
+       },
+       {
+        "id": "text_01_l02",
+        "order": 2,
+        "speaker": "林老师",
+        "zh": "王老师，咱们怎么上山？坐缆车上去还是爬上去？",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook",
+        "check_needed": false
+       },
+       {
+        "id": "text_01_l03",
+        "order": 3,
+        "speaker": "王老师",
+        "zh": "别坐缆车了。跟同学们一起爬上去吧。",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook",
+        "check_needed": false
+       },
+       {
+        "id": "text_01_l04",
+        "order": 4,
+        "speaker": "林老师",
+        "zh": "这座山这么高，你爬得上去吗？",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook",
+        "check_needed": false
+       },
+       {
+        "id": "text_01_l05",
+        "order": 5,
+        "speaker": "旁白",
+        "zh": "（老师和同学们一起爬山。）",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook",
+        "check_needed": false
+       },
+       {
+        "id": "text_01_l06",
+        "order": 6,
+        "speaker": "林老师",
+        "zh": "美英，我看你累得都喘不上气来了，还爬得动吗？",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook",
+        "check_needed": false
+       },
+       {
+        "id": "text_01_l07",
+        "order": 7,
+        "speaker": "李美英",
+        "zh": "爬得动。",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook",
+        "check_needed": false
+       },
+       {
+        "id": "text_01_l08",
+        "order": 8,
+        "speaker": "林老师",
+        "zh": "别着急，一步一步地往上爬，爬不动的时候就休息一会儿。走，咱们一起爬，要坚持到底，坚持就是胜利。",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook",
+        "check_needed": false
+       },
+       {
+        "id": "text_01_l09",
+        "order": 9,
+        "speaker": "王老师",
+        "zh": "刚爬了一会儿就出了一身汗，我休息一会儿再接着爬，比不了你们年轻人啊。",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook",
+        "check_needed": false
+       },
+       {
+        "id": "text_01_l10",
+        "order": 10,
+        "speaker": "旁白",
+        "zh": "……",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook",
+        "check_needed": false
+       },
+       {
+        "id": "text_01_l11",
+        "order": 11,
+        "speaker": "李美英",
+        "zh": "啊，看，王老师也爬上来了。",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook",
+        "check_needed": false
+       },
+       {
+        "id": "text_01_l12",
+        "order": 12,
+        "speaker": "王老师",
+        "zh": "麦克，别从那边上，太危险了，要注意安全。",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook",
+        "check_needed": false
+       },
+       {
+        "id": "text_01_l13",
+        "order": 13,
+        "speaker": "麦克",
+        "zh": "知道了。",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook",
+        "check_needed": false
+       }
+      ]
+     },
+     {
+      "id": "text_02",
+      "type": "text_dialogue",
+      "order": 2,
+      "title": "我担心自己演不好",
+      "title_vi": "Em lo mình diễn không tốt",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "lines": [
+       {
+        "id": "text_02_l01",
+        "order": 1,
+        "speaker": "旁白",
+        "zh": "（同学们都在积极准备节目，参加联欢会。）",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook",
+        "check_needed": false
+       },
+       {
+        "id": "text_02_l02",
+        "order": 2,
+        "speaker": "林老师",
+        "zh": "爱德华，咱们班参加联欢会的节目准备得怎么样了？",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook",
+        "check_needed": false
+       },
+       {
+        "id": "text_02_l03",
+        "order": 3,
+        "speaker": "爱德华",
+        "zh": "大家都在积极地准备呢。",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook",
+        "check_needed": false
+       },
+       {
+        "id": "text_02_l04",
+        "order": 4,
+        "speaker": "林老师",
+        "zh": "你表演什么节目？",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook",
+        "check_needed": false
+       },
+       {
+        "id": "text_02_l05",
+        "order": 5,
+        "speaker": "爱德华",
+        "zh": "我和麦克说个相声。可是总是记不住台词，正背台词呢。",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook",
+        "check_needed": false
+       },
+       {
+        "id": "text_02_l06",
+        "order": 6,
+        "speaker": "林老师",
+        "zh": "背会了吗？",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook",
+        "check_needed": false
+       },
+       {
+        "id": "text_02_l07",
+        "order": 7,
+        "speaker": "爱德华",
+        "zh": "快了。山本，你们的小话剧呢？",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook",
+        "check_needed": false
+       },
+       {
+        "id": "text_02_l08",
+        "order": 8,
+        "speaker": "山本",
+        "zh": "我们也正在排练呢。有的音我发不准，我请田芳一句一句地给我纠正。",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook",
+        "check_needed": false
+       },
+       {
+        "id": "text_02_l09",
+        "order": 9,
+        "speaker": "林老师",
+        "zh": "谁跟你一起表演？",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook",
+        "check_needed": false
+       },
+       {
+        "id": "text_02_l10",
+        "order": 10,
+        "speaker": "山本",
+        "zh": "原来是玛丽，可是玛丽的腿受伤了，参加不了了。我请罗兰跟我一起表演。",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook",
+        "check_needed": false
+       },
+       {
+        "id": "text_02_l11",
+        "order": 11,
+        "speaker": "罗兰",
+        "zh": "我担心自己演不好。",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook",
+        "check_needed": false
+       },
+       {
+        "id": "text_02_l12",
+        "order": 12,
+        "speaker": "林老师",
+        "zh": "要有自信，相信自己能演好。",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook",
+        "check_needed": false
+       },
+       {
+        "id": "text_02_l13",
+        "order": 13,
+        "speaker": "山本",
+        "zh": "只要我们好好儿练，就一定能演好。“世上无难事，只怕有心人”嘛！",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook",
+        "check_needed": false
+       },
+       {
+        "id": "text_02_l14",
+        "order": 14,
+        "speaker": "罗兰",
+        "zh": "我一定努力，争取演出成功。",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook",
+        "check_needed": false
+       },
+       {
+        "id": "text_02_l15",
+        "order": 15,
+        "speaker": "山本",
+        "zh": "老师，您也给我们表演一个节目吧。",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook",
+        "check_needed": false
+       },
+       {
+        "id": "text_02_l16",
+        "order": 16,
+        "speaker": "林老师",
+        "zh": "我准备了一首歌，不过，很长时间没唱了，恐怕唱不好。",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook",
+        "check_needed": false
+       },
+       {
+        "id": "text_02_l17",
+        "order": 17,
+        "speaker": "山本",
+        "zh": "这个地方这么小，坐得下二百多人吗？",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook",
+        "check_needed": false
+       },
+       {
+        "id": "text_02_l18",
+        "order": 18,
+        "speaker": "林老师",
+        "zh": "联欢会在楼下小礼堂举行，那儿能坐下三四百人呢。",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook",
+        "check_needed": false
+       }
+      ]
+     }
+    ],
+    "comprehension_questions": [
+     {
+      "id": "text_q01",
+      "question": "王老师和林老师跟同学们一起去做什么？",
+      "answer": "他们一起去爬山。",
+      "source_origin": "textbook_question_generated_answer",
+      "answer_verified": true,
+      "check_needed": false
+     },
+     {
+      "id": "text_q02",
+      "question": "林老师问王老师怎么上山？",
+      "answer": "林老师问坐缆车上去还是爬上去。",
+      "source_origin": "textbook_question_generated_answer",
+      "answer_verified": true,
+      "check_needed": false
+     },
+     {
+      "id": "text_q03",
+      "question": "王老师想坐缆车上去吗？",
+      "answer": "不想，他想跟同学们一起爬上去。",
+      "source_origin": "textbook_question_generated_answer",
+      "answer_verified": true,
+      "check_needed": false
+     },
+     {
+      "id": "text_q04",
+      "question": "林老师为什么问王老师“你爬得上去吗”？",
+      "answer": "因为这座山很高。",
+      "source_origin": "textbook_question_generated_answer",
+      "answer_verified": true,
+      "check_needed": false
+     },
+     {
+      "id": "text_q05",
+      "question": "李美英累得怎么样了？",
+      "answer": "她累得都喘不上气来了。",
+      "source_origin": "textbook_question_generated_answer",
+      "answer_verified": true,
+      "check_needed": false
+     },
+     {
+      "id": "text_q06",
+      "question": "李美英还爬得动吗？",
+      "answer": "爬得动。",
+      "source_origin": "textbook_question_generated_answer",
+      "answer_verified": true,
+      "check_needed": false
+     },
+     {
+      "id": "text_q07",
+      "question": "林老师让李美英怎么爬？",
+      "answer": "别着急，一步一步地往上爬，爬不动的时候就休息一会儿。",
+      "source_origin": "textbook_question_generated_answer",
+      "answer_verified": true,
+      "check_needed": false
+     },
+     {
+      "id": "text_q08",
+      "question": "王老师为什么要休息一会儿？",
+      "answer": "因为他刚爬了一会儿就出了一身汗，比不了年轻人。",
+      "source_origin": "textbook_question_generated_answer",
+      "answer_verified": true,
+      "check_needed": false
+     },
+     {
+      "id": "text_q09",
+      "question": "王老师为什么叫麦克别从那边上？",
+      "answer": "因为那边太危险了，要注意安全。",
+      "source_origin": "textbook_question_generated_answer",
+      "answer_verified": true,
+      "check_needed": false
+     },
+     {
+      "id": "text_q10",
+      "question": "爱德华和麦克准备表演什么节目？",
+      "answer": "他们准备说个相声。",
+      "source_origin": "textbook_question_generated_answer",
+      "answer_verified": true,
+      "check_needed": false
+     },
+     {
+      "id": "text_q11",
+      "question": "爱德华为什么正在背台词？",
+      "answer": "因为他总是记不住台词。",
+      "source_origin": "textbook_question_generated_answer",
+      "answer_verified": true,
+      "check_needed": false
+     },
+     {
+      "id": "text_q12",
+      "question": "山本他们正在准备什么节目？",
+      "answer": "他们正在排练小话剧。",
+      "source_origin": "textbook_question_generated_answer",
+      "answer_verified": true,
+      "check_needed": false
+     },
+     {
+      "id": "text_q13",
+      "question": "山本为什么请田芳一句一句地给他纠正？",
+      "answer": "因为有的音他发不准。",
+      "source_origin": "textbook_question_generated_answer",
+      "answer_verified": true,
+      "check_needed": false
+     },
+     {
+      "id": "text_q14",
+      "question": "玛丽为什么参加不了了？",
+      "answer": "因为她的腿受伤了。",
+      "source_origin": "textbook_question_generated_answer",
+      "answer_verified": true,
+      "check_needed": false
+     },
+     {
+      "id": "text_q15",
+      "question": "罗兰担心什么？",
+      "answer": "她担心自己演不好。",
+      "source_origin": "textbook_question_generated_answer",
+      "answer_verified": true,
+      "check_needed": false
+     },
+     {
+      "id": "text_q16",
+      "question": "林老师为什么恐怕自己唱不好？",
+      "answer": "因为她很长时间没唱了。",
+      "source_origin": "textbook_question_generated_answer",
+      "answer_verified": true,
+      "check_needed": false
+     },
+     {
+      "id": "text_q17",
+      "question": "联欢会的小礼堂坐得下二百多人吗？",
+      "answer": "坐得下，那儿能坐下三四百人。",
+      "source_origin": "textbook_question_generated_answer",
+      "answer_verified": true,
+      "check_needed": false
+     }
+    ]
+   },
+   {
+    "id": "section_02_vocabulary",
+    "type": "vocabulary",
+    "order": 2,
+    "title": "生词",
+    "title_vi": "Từ vựng",
+    "source_origin": "textbook",
+    "check_needed": false,
+    "items": [
+     {
+      "id": "vocab_001",
+      "type": "vocabulary_item",
+      "order": 1,
+      "hanzi": "缆车",
+      "pinyin": "lǎnchē",
+      "meaning_vi": "cáp treo",
+      "meaning_en": "",
+      "pos": "noun",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "缆车",
+       "back": "lǎnchē — cáp treo",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "vocab_002",
+      "type": "vocabulary_item",
+      "order": 2,
+      "hanzi": "喘气",
+      "pinyin": "chuǎnqì",
+      "meaning_vi": "thở dốc",
+      "meaning_en": "",
+      "pos": "verb_object",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "喘气",
+       "back": "chuǎnqì — thở dốc",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "vocab_003",
+      "type": "vocabulary_item",
+      "order": 3,
+      "hanzi": "动",
+      "pinyin": "dòng",
+      "meaning_vi": "di chuyển, lay động; nổi, chuyển động được",
+      "meaning_en": "",
+      "pos": "verb_result",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "动",
+       "back": "dòng — di chuyển, lay động; nổi, chuyển động được",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "vocab_004",
+      "type": "vocabulary_item",
+      "order": 4,
+      "hanzi": "到底",
+      "pinyin": "dàodǐ",
+      "meaning_vi": "đến cùng, rốt cuộc",
+      "meaning_en": "",
+      "pos": "adverb",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "到底",
+       "back": "dàodǐ — đến cùng, rốt cuộc",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "vocab_005",
+      "type": "vocabulary_item",
+      "order": 5,
+      "hanzi": "胜利",
+      "pinyin": "shènglì",
+      "meaning_vi": "thắng lợi",
+      "meaning_en": "",
+      "pos": "noun_verb",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "胜利",
+       "back": "shènglì — thắng lợi",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "vocab_006",
+      "type": "vocabulary_item",
+      "order": 6,
+      "hanzi": "加油",
+      "pinyin": "jiā yóu",
+      "meaning_vi": "cố lên, tiếp thêm sức",
+      "meaning_en": "",
+      "pos": "verb_object",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "加油",
+       "back": "jiā yóu — cố lên, tiếp thêm sức",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "vocab_007",
+      "type": "vocabulary_item",
+      "order": 7,
+      "hanzi": "出汗",
+      "pinyin": "chū hàn",
+      "meaning_vi": "ra mồ hôi",
+      "meaning_en": "",
+      "pos": "verb_object",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "出汗",
+       "back": "chū hàn — ra mồ hôi",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "vocab_008",
+      "type": "vocabulary_item",
+      "order": 8,
+      "hanzi": "汗",
+      "pinyin": "hàn",
+      "meaning_vi": "mồ hôi",
+      "meaning_en": "",
+      "pos": "noun",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "汗",
+       "back": "hàn — mồ hôi",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "vocab_009",
+      "type": "vocabulary_item",
+      "order": 9,
+      "hanzi": "身",
+      "pinyin": "shēn",
+      "meaning_vi": "thân, cơ thể",
+      "meaning_en": "",
+      "pos": "noun",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "身",
+       "back": "shēn — thân, cơ thể",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "vocab_010",
+      "type": "vocabulary_item",
+      "order": 10,
+      "hanzi": "接着",
+      "pinyin": "jiēzhe",
+      "meaning_vi": "tiếp tục, tiếp theo",
+      "meaning_en": "",
+      "pos": "adverb",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "接着",
+       "back": "jiēzhe — tiếp tục, tiếp theo",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "vocab_011",
+      "type": "vocabulary_item",
+      "order": 11,
+      "hanzi": "危险",
+      "pinyin": "wēixiǎn",
+      "meaning_vi": "nguy hiểm",
+      "meaning_en": "",
+      "pos": "adjective_noun",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "危险",
+       "back": "wēixiǎn — nguy hiểm",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "vocab_012",
+      "type": "vocabulary_item",
+      "order": 12,
+      "hanzi": "比",
+      "pinyin": "bǐ",
+      "meaning_vi": "so sánh, sánh với",
+      "meaning_en": "",
+      "pos": "verb_preposition",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "比",
+       "back": "bǐ — so sánh, sánh với",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "vocab_013",
+      "type": "vocabulary_item",
+      "order": 13,
+      "hanzi": "积极",
+      "pinyin": "jījí",
+      "meaning_vi": "tích cực",
+      "meaning_en": "",
+      "pos": "adjective",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "积极",
+       "back": "jījí — tích cực",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "vocab_014",
+      "type": "vocabulary_item",
+      "order": 14,
+      "hanzi": "相声",
+      "pinyin": "xiàngsheng",
+      "meaning_vi": "tấu hài, đối khẩu",
+      "meaning_en": "",
+      "pos": "noun",
+      "tags": ["performance"],
+      "examples": [],
+      "flashcard": {
+       "front": "相声",
+       "back": "xiàngsheng — tấu hài, đối khẩu",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "vocab_015",
+      "type": "vocabulary_item",
+      "order": 15,
+      "hanzi": "台词",
+      "pinyin": "táicí",
+      "meaning_vi": "lời thoại",
+      "meaning_en": "",
+      "pos": "noun",
+      "tags": ["performance"],
+      "examples": [],
+      "flashcard": {
+       "front": "台词",
+       "back": "táicí — lời thoại",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "vocab_016",
+      "type": "vocabulary_item",
+      "order": 16,
+      "hanzi": "背",
+      "pinyin": "bèi",
+      "meaning_vi": "học thuộc, đọc thuộc",
+      "meaning_en": "",
+      "pos": "verb",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "背",
+       "back": "bèi — học thuộc, đọc thuộc",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "vocab_017",
+      "type": "vocabulary_item",
+      "order": 17,
+      "hanzi": "话剧",
+      "pinyin": "huàjù",
+      "meaning_vi": "kịch nói",
+      "meaning_en": "",
+      "pos": "noun",
+      "tags": ["performance"],
+      "examples": [],
+      "flashcard": {
+       "front": "话剧",
+       "back": "huàjù — kịch nói",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "vocab_018",
+      "type": "vocabulary_item",
+      "order": 18,
+      "hanzi": "排练",
+      "pinyin": "páiliàn",
+      "meaning_vi": "tập luyện, diễn tập",
+      "meaning_en": "",
+      "pos": "verb",
+      "tags": ["performance"],
+      "examples": [],
+      "flashcard": {
+       "front": "排练",
+       "back": "páiliàn — tập luyện, diễn tập",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "vocab_019",
+      "type": "vocabulary_item",
+      "order": 19,
+      "hanzi": "受伤",
+      "pinyin": "shòu shāng",
+      "meaning_vi": "bị thương",
+      "meaning_en": "",
+      "pos": "verb_object",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "受伤",
+       "back": "shòu shāng — bị thương",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "vocab_020",
+      "type": "vocabulary_item",
+      "order": 20,
+      "hanzi": "纠正",
+      "pinyin": "jiūzhèng",
+      "meaning_vi": "sửa chữa, uốn nắn",
+      "meaning_en": "",
+      "pos": "verb",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "纠正",
+       "back": "jiūzhèng — sửa chữa, uốn nắn",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "vocab_021",
+      "type": "vocabulary_item",
+      "order": 21,
+      "hanzi": "演",
+      "pinyin": "yǎn",
+      "meaning_vi": "diễn, biểu diễn",
+      "meaning_en": "",
+      "pos": "verb",
+      "tags": ["performance"],
+      "examples": [],
+      "flashcard": {
+       "front": "演",
+       "back": "yǎn — diễn, biểu diễn",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "vocab_022",
+      "type": "vocabulary_item",
+      "order": 22,
+      "hanzi": "只要……就……",
+      "pinyin": "zhǐyào……jiù……",
+      "meaning_vi": "chỉ cần… thì…",
+      "meaning_en": "",
+      "pos": "structure",
+      "tags": ["grammar"],
+      "examples": [],
+      "flashcard": {
+       "front": "只要……就……",
+       "back": "zhǐyào……jiù…… — chỉ cần… thì…",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "vocab_023",
+      "type": "vocabulary_item",
+      "order": 23,
+      "hanzi": "世上",
+      "pinyin": "shìshàng",
+      "meaning_vi": "trên đời, trên thế gian",
+      "meaning_en": "",
+      "pos": "noun",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "世上",
+       "back": "shìshàng — trên đời, trên thế gian",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "vocab_024",
+      "type": "vocabulary_item",
+      "order": 24,
+      "hanzi": "无",
+      "pinyin": "wú",
+      "meaning_vi": "không có",
+      "meaning_en": "",
+      "pos": "verb",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "无",
+       "back": "wú — không có",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "vocab_025",
+      "type": "vocabulary_item",
+      "order": 25,
+      "hanzi": "怕",
+      "pinyin": "pà",
+      "meaning_vi": "sợ",
+      "meaning_en": "",
+      "pos": "verb",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "怕",
+       "back": "pà — sợ",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "vocab_026",
+      "type": "vocabulary_item",
+      "order": 26,
+      "hanzi": "心",
+      "pinyin": "xīn",
+      "meaning_vi": "lòng, tâm, tim",
+      "meaning_en": "",
+      "pos": "noun",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "心",
+       "back": "xīn — lòng, tâm, tim",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "vocab_027",
+      "type": "vocabulary_item",
+      "order": 27,
+      "hanzi": "自信",
+      "pinyin": "zìxìn",
+      "meaning_vi": "tự tin",
+      "meaning_en": "",
+      "pos": "noun_adjective",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "自信",
+       "back": "zìxìn — tự tin",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "vocab_028",
+      "type": "vocabulary_item",
+      "order": 28,
+      "hanzi": "相信",
+      "pinyin": "xiāngxìn",
+      "meaning_vi": "tin tưởng",
+      "meaning_en": "",
+      "pos": "verb",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "相信",
+       "back": "xiāngxìn — tin tưởng",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "vocab_029",
+      "type": "vocabulary_item",
+      "order": 29,
+      "hanzi": "争取",
+      "pinyin": "zhēngqǔ",
+      "meaning_vi": "tranh thủ, cố gắng đạt được",
+      "meaning_en": "",
+      "pos": "verb",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "争取",
+       "back": "zhēngqǔ — tranh thủ, cố gắng đạt được",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "vocab_030",
+      "type": "vocabulary_item",
+      "order": 30,
+      "hanzi": "恐怕",
+      "pinyin": "kǒngpà",
+      "meaning_vi": "e rằng, sợ rằng, có lẽ",
+      "meaning_en": "",
+      "pos": "adverb",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "恐怕",
+       "back": "kǒngpà — e rằng, sợ rằng, có lẽ",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "vocab_031",
+      "type": "vocabulary_item",
+      "order": 31,
+      "hanzi": "首",
+      "pinyin": "shǒu",
+      "meaning_vi": "lượng từ cho bài hát / bài thơ",
+      "meaning_en": "",
+      "pos": "measure_word",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "首",
+       "back": "shǒu — lượng từ cho bài hát / bài thơ",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+     }
+    ]
+   },
+   {
+    "id": "section_03_proper_nouns",
+    "type": "proper_nouns",
+    "order": 3,
+    "title": "专名",
+    "title_vi": "Tên riêng",
+    "source_origin": "textbook",
+    "check_needed": false,
+    "items": [
+     {
+      "id": "proper_001",
+      "type": "proper_noun",
+      "order": 1,
+      "hanzi": "李美英",
+      "pinyin": "Lǐ Měiyīng",
+      "meaning_vi": "Lý Mỹ Anh",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "proper_002",
+      "type": "proper_noun",
+      "order": 2,
+      "hanzi": "爱德华",
+      "pinyin": "Àidéhuá",
+      "meaning_vi": "Edward",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "proper_003",
+      "type": "proper_noun",
+      "order": 3,
+      "hanzi": "山本",
+      "pinyin": "Shānběn",
+      "meaning_vi": "Yamamoto",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "proper_004",
+      "type": "proper_noun",
+      "order": 4,
+      "hanzi": "罗兰",
+      "pinyin": "Luólán",
+      "meaning_vi": "Roland",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "proper_005",
+      "type": "proper_noun",
+      "order": 5,
+      "hanzi": "麦克",
+      "pinyin": "Màikè",
+      "meaning_vi": "Mike",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "proper_006",
+      "type": "proper_noun",
+      "order": 6,
+      "hanzi": "田芳",
+      "pinyin": "Tián Fāng",
+      "meaning_vi": "Điền Phương",
+      "source_origin": "textbook",
+      "check_needed": false
+     }
+    ]
+   },
+   {
+    "id": "section_04_notes",
+    "type": "notes",
+    "order": 4,
+    "title": "注释",
+    "title_vi": "Chú thích",
+    "source_origin": "textbook",
+    "check_needed": false,
+    "items": [
+     {
+      "id": "note_01",
+      "type": "note",
+      "order": 1,
+      "title": "坚持就是胜利",
+      "structure": "A 就是 B",
+      "meaning_vi": "“Kiên trì chính là thắng lợi.” Dùng để động viên người khác khi họ đang mệt, nản hoặc gặp khó khăn.",
+      "examples": [
+       {
+        "id": "note_01_ex_01",
+        "zh": "要坚持到底，坚持就是胜利。",
+        "pinyin": "",
+        "vi": "Phải kiên trì đến cùng, kiên trì chính là thắng lợi.",
+        "en": "",
+        "highlight": ["坚持就是胜利"],
+        "grammar_refs": [],
+        "vocab_refs": ["vocab_004", "vocab_005"],
+        "source_ref": "text_01_l08",
+        "note_vi": "",
+        "audio_key": "",
+        "source_origin": "textbook",
+        "check_needed": false
+       }
+      ],
+      "source_refs": ["text_01_l08"],
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "note_02",
+      "type": "note",
+      "order": 2,
+      "title": "世上无难事，只怕有心人",
+      "structure": "",
+      "meaning_vi": "Trên đời không có việc gì khó, chỉ sợ người không có lòng/quyết tâm.",
+      "examples": [
+       {
+        "id": "note_02_ex_01",
+        "zh": "世上无难事，只怕有心人。",
+        "pinyin": "",
+        "vi": "Trên đời không có việc gì khó, chỉ sợ người không có lòng quyết tâm.",
+        "en": "",
+        "highlight": ["世上无难事", "只怕有心人"],
+        "grammar_refs": [],
+        "vocab_refs": ["vocab_023", "vocab_024", "vocab_025", "vocab_026"],
+        "source_ref": "text_02_l13",
+        "note_vi": "",
+        "audio_key": "",
+        "source_origin": "textbook",
+        "check_needed": false
+       }
+      ],
+      "source_refs": ["text_02_l13"],
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "note_03",
+      "type": "note",
+      "order": 3,
+      "title": "坐得下三四百人",
+      "structure": "坐 + 得 + 下 + 数量",
+      "meaning_vi": "Chứa/ngồi được bao nhiêu người. Đây là dạng bổ ngữ khả năng, biểu thị không gian có đủ sức chứa hay không.",
+      "examples": [
+       {
+        "id": "note_03_ex_01",
+        "zh": "这个地方这么小，坐得下二百多人吗？",
+        "pinyin": "",
+        "vi": "Chỗ này nhỏ thế này, ngồi đủ hơn hai trăm người không?",
+        "en": "",
+        "highlight": ["坐得下"],
+        "grammar_refs": ["grammar_01"],
+        "vocab_refs": [],
+        "source_ref": "text_02_l17",
+        "note_vi": "",
+        "audio_key": "",
+        "source_origin": "textbook",
+        "check_needed": false
+       },
+       {
+        "id": "note_03_ex_02",
+        "zh": "那儿能坐下三四百人呢。",
+        "pinyin": "",
+        "vi": "Chỗ đó có thể ngồi được ba bốn trăm người.",
+        "en": "",
+        "highlight": ["坐下"],
+        "grammar_refs": ["grammar_01"],
+        "vocab_refs": [],
+        "source_ref": "text_02_l18",
+        "note_vi": "",
+        "audio_key": "",
+        "source_origin": "textbook",
+        "check_needed": false
+       }
+      ],
+      "source_refs": ["text_02_l17", "text_02_l18"],
+      "source_origin": "textbook",
+      "check_needed": false
+     }
+    ]
+   },
+   {
+    "id": "section_05_grammar",
+    "type": "grammar",
+    "order": 5,
+    "title": "语法",
+    "title_vi": "Ngữ pháp",
+    "source_origin": "textbook",
+    "check_needed": false,
+    "items": [
+     {
+      "id": "grammar_01",
+      "type": "grammar_point",
+      "order": 1,
+      "title": "可能补语",
+      "title_vi": "Bổ ngữ khả năng",
+      "level": "HSK3-ish",
+      "tags": ["potential_complement", "result_complement"],
+      "source_origin": "textbook",
+      "check_needed": false,
+      "blocks": [
+       {
+        "id": "grammar_01_overview",
+        "type": "grammar_overview",
+        "order": 1,
+        "title": "Bản chất",
+        "content_vi": "Bổ ngữ khả năng dùng 得 / 不 đặt giữa động từ và bổ ngữ để nói có làm được hay không.",
+        "examples": [
+         {
+          "id": "grammar_01_overview_ex_01",
+          "zh": "这座山这么高，你爬得上去吗？",
+          "pinyin": "",
+          "vi": "Núi cao thế này, anh leo lên được không?",
+          "en": "",
+          "highlight": ["爬得上去"],
+          "grammar_refs": ["grammar_01"],
+          "vocab_refs": [],
+          "source_ref": "text_01_l04",
+          "note_vi": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+         },
+         {
+          "id": "grammar_01_overview_ex_02",
+          "zh": "我担心自己演不好。",
+          "pinyin": "",
+          "vi": "Em lo mình diễn không tốt.",
+          "en": "",
+          "highlight": ["演不好"],
+          "grammar_refs": ["grammar_01"],
+          "vocab_refs": [],
+          "source_ref": "text_02_l11",
+          "note_vi": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+         },
+         {
+          "id": "grammar_01_overview_ex_03",
+          "zh": "可是总是记不住台词。",
+          "pinyin": "",
+          "vi": "Nhưng cứ không nhớ được lời thoại.",
+          "en": "",
+          "highlight": ["记不住"],
+          "grammar_refs": ["grammar_01"],
+          "vocab_refs": [],
+          "source_ref": "text_02_l05",
+          "note_vi": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+         }
+        ],
+        "source_origin": "textbook",
+        "check_needed": false
+       },
+       {
+        "id": "grammar_01_structure_01",
+        "type": "grammar_structure",
+        "order": 2,
+        "title": "V + 得 / 不 + 上去",
+        "pattern": "V + 得 + 上去 / V + 不 + 上去",
+        "meaning_vi": "Có thể / không thể làm hành động hướng lên trên.",
+        "formulas": [
+         {
+          "label": "Làm được",
+          "pattern": "V + 得 + 上去"
+         },
+         {
+          "label": "Không làm được",
+          "pattern": "V + 不 + 上去"
+         }
+        ],
+        "examples": [
+         {
+          "id": "grammar_01_structure_01_ex_01",
+          "zh": "这座山这么高，你爬得上去吗？",
+          "pinyin": "",
+          "vi": "Núi cao thế này, anh leo lên được không?",
+          "en": "",
+          "highlight": ["爬得上去"],
+          "grammar_refs": ["grammar_01"],
+          "vocab_refs": [],
+          "source_ref": "text_01_l04",
+          "note_vi": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+         },
+         {
+          "id": "grammar_01_structure_01_ex_02",
+          "zh": "别坐缆车了。跟同学们一起爬上去吧。",
+          "pinyin": "",
+          "vi": "Đừng ngồi cáp treo nữa. Cùng các bạn học sinh leo lên đi.",
+          "en": "",
+          "highlight": ["爬上去"],
+          "grammar_refs": ["grammar_01"],
+          "vocab_refs": [],
+          "source_ref": "text_01_l03",
+          "note_vi": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+         }
+        ],
+        "notes_vi": [
+         "爬上去 = leo lên, chỉ kết quả/hướng đi. 爬得上去 = leo lên được, nhấn khả năng. 爬不上去 = không leo lên được."
+        ],
+        "source_origin": "textbook",
+        "check_needed": false
+       },
+       {
+        "id": "grammar_01_structure_02",
+        "type": "grammar_structure",
+        "order": 3,
+        "title": "V + 得 / 不 + 动",
+        "pattern": "V + 得 + 动 / V + 不 + 动",
+        "meaning_vi": "Có đủ sức làm tiếp / làm cho vật hoặc người di chuyển được hay không.",
+        "formulas": [
+         {
+          "label": "Làm nổi",
+          "pattern": "V + 得 + 动"
+         },
+         {
+          "label": "Không làm nổi",
+          "pattern": "V + 不 + 动"
+         }
+        ],
+        "examples": [
+         {
+          "id": "grammar_01_structure_02_ex_01",
+          "zh": "还爬得动吗？",
+          "pinyin": "",
+          "vi": "Còn leo nổi không?",
+          "en": "",
+          "highlight": ["爬得动"],
+          "grammar_refs": ["grammar_01"],
+          "vocab_refs": [],
+          "source_ref": "text_01_l06",
+          "note_vi": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+         },
+         {
+          "id": "grammar_01_structure_02_ex_02",
+          "zh": "爬得动。",
+          "pinyin": "",
+          "vi": "Leo được ạ.",
+          "en": "",
+          "highlight": ["爬得动"],
+          "grammar_refs": ["grammar_01"],
+          "vocab_refs": [],
+          "source_ref": "text_01_l07",
+          "note_vi": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+         },
+         {
+          "id": "grammar_01_structure_02_ex_03",
+          "zh": "爬不动的时候就休息一会儿。",
+          "pinyin": "",
+          "vi": "Khi nào leo không nổi nữa thì nghỉ một lát.",
+          "en": "",
+          "highlight": ["爬不动"],
+          "grammar_refs": ["grammar_01"],
+          "vocab_refs": [],
+          "source_ref": "text_01_l08",
+          "note_vi": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+         },
+         {
+          "id": "grammar_01_structure_02_ex_04",
+          "zh": "这箱书太重，我搬不动。",
+          "pinyin": "",
+          "vi": "Thùng sách này nặng quá, tôi bê không nổi.",
+          "en": "",
+          "highlight": ["搬不动"],
+          "grammar_refs": ["grammar_01"],
+          "vocab_refs": [],
+          "source_ref": "",
+          "note_vi": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+         },
+         {
+          "id": "grammar_01_structure_02_ex_05",
+          "zh": "你一个人搬得动这箱书吗？",
+          "pinyin": "",
+          "vi": "Một mình bạn bê nổi thùng sách này không?",
+          "en": "",
+          "highlight": ["搬得动"],
+          "grammar_refs": ["grammar_01"],
+          "vocab_refs": [],
+          "source_ref": "",
+          "note_vi": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+         }
+        ],
+        "source_origin": "textbook",
+        "check_needed": false
+       },
+       {
+        "id": "grammar_01_structure_03",
+        "type": "grammar_structure",
+        "order": 4,
+        "title": "V + 得 / 不 + 好",
+        "pattern": "V + 得 + 好 / V + 不 + 好",
+        "meaning_vi": "Làm tốt / không làm tốt, đạt yêu cầu hay không.",
+        "formulas": [
+         {
+          "label": "Làm tốt",
+          "pattern": "V + 得 + 好"
+         },
+         {
+          "label": "Làm không tốt",
+          "pattern": "V + 不 + 好"
+         }
+        ],
+        "examples": [
+         {
+          "id": "grammar_01_structure_03_ex_01",
+          "zh": "我担心自己演不好。",
+          "pinyin": "",
+          "vi": "Em lo mình diễn không tốt.",
+          "en": "",
+          "highlight": ["演不好"],
+          "grammar_refs": ["grammar_01"],
+          "vocab_refs": [],
+          "source_ref": "text_02_l11",
+          "note_vi": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+         },
+         {
+          "id": "grammar_01_structure_03_ex_02",
+          "zh": "要有自信，相信自己能演好。",
+          "pinyin": "",
+          "vi": "Phải tự tin, tin rằng mình có thể diễn tốt.",
+          "en": "",
+          "highlight": ["演好"],
+          "grammar_refs": ["grammar_01"],
+          "vocab_refs": [],
+          "source_ref": "text_02_l12",
+          "note_vi": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+         },
+         {
+          "id": "grammar_01_structure_03_ex_03",
+          "zh": "只要我们好好儿练，就一定能演好。",
+          "pinyin": "",
+          "vi": "Chỉ cần chúng ta luyện tập chăm chỉ thì nhất định sẽ diễn tốt.",
+          "en": "",
+          "highlight": ["演好"],
+          "grammar_refs": ["grammar_01", "grammar_02"],
+          "vocab_refs": [],
+          "source_ref": "text_02_l13",
+          "note_vi": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+         },
+         {
+          "id": "grammar_01_structure_03_ex_04",
+          "zh": "恐怕唱不好。",
+          "pinyin": "",
+          "vi": "E là hát không hay.",
+          "en": "",
+          "highlight": ["唱不好"],
+          "grammar_refs": ["grammar_01"],
+          "vocab_refs": [],
+          "source_ref": "text_02_l16",
+          "note_vi": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+         }
+        ],
+        "source_origin": "textbook",
+        "check_needed": false
+       },
+       {
+        "id": "grammar_01_structure_04",
+        "type": "grammar_structure",
+        "order": 5,
+        "title": "V + 得 / 不 + 住",
+        "pattern": "V + 得 + 住 / V + 不 + 住",
+        "meaning_vi": "Có thể / không thể giữ cố định, giữ lại, nhớ được, chịu được.",
+        "formulas": [
+         {
+          "label": "Giữ/nhớ được",
+          "pattern": "V + 得 + 住"
+         },
+         {
+          "label": "Không giữ/không nhớ được",
+          "pattern": "V + 不 + 住"
+         }
+        ],
+        "examples": [
+         {
+          "id": "grammar_01_structure_04_ex_01",
+          "zh": "可是总是记不住台词。",
+          "pinyin": "",
+          "vi": "Nhưng cứ không nhớ được lời thoại.",
+          "en": "",
+          "highlight": ["记不住"],
+          "grammar_refs": ["grammar_01"],
+          "vocab_refs": [],
+          "source_ref": "text_02_l05",
+          "note_vi": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+         },
+         {
+          "id": "grammar_01_structure_04_ex_02",
+          "zh": "我记得住你说的话。",
+          "pinyin": "",
+          "vi": "Tôi nhớ được lời bạn nói.",
+          "en": "",
+          "highlight": ["记得住"],
+          "grammar_refs": ["grammar_01"],
+          "vocab_refs": [],
+          "source_ref": "",
+          "note_vi": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+         },
+         {
+          "id": "grammar_01_structure_04_ex_03",
+          "zh": "这张纸贴得住墙吗？",
+          "pinyin": "",
+          "vi": "Tờ giấy này dán lên tường được không?",
+          "en": "",
+          "highlight": ["贴得住"],
+          "grammar_refs": ["grammar_01"],
+          "vocab_refs": [],
+          "source_ref": "",
+          "note_vi": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+         }
+        ],
+        "source_origin": "textbook",
+        "check_needed": false
+       },
+       {
+        "id": "grammar_01_structure_05",
+        "type": "grammar_structure",
+        "order": 6,
+        "title": "V + 得 / 不 + 准",
+        "pattern": "V + 得 + 准 / V + 不 + 准",
+        "meaning_vi": "Làm chuẩn / không chuẩn, nhất là phát âm, bắn, đoán, tính.",
+        "formulas": [
+         {
+          "label": "Chuẩn",
+          "pattern": "V + 得 + 准"
+         },
+         {
+          "label": "Không chuẩn",
+          "pattern": "V + 不 + 准"
+         }
+        ],
+        "examples": [
+         {
+          "id": "grammar_01_structure_05_ex_01",
+          "zh": "有的音我发不准。",
+          "pinyin": "",
+          "vi": "Có vài âm em phát âm không chuẩn.",
+          "en": "",
+          "highlight": ["发不准"],
+          "grammar_refs": ["grammar_01"],
+          "vocab_refs": [],
+          "source_ref": "text_02_l08",
+          "note_vi": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+         },
+         {
+          "id": "grammar_01_structure_05_ex_02",
+          "zh": "我请田芳一句一句地给我纠正。",
+          "pinyin": "",
+          "vi": "Em nhờ Điền Phương sửa cho em từng câu một.",
+          "en": "",
+          "highlight": [],
+          "grammar_refs": [],
+          "vocab_refs": [],
+          "source_ref": "text_02_l08",
+          "note_vi": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+         }
+        ],
+        "source_origin": "textbook",
+        "check_needed": false
+       },
+       {
+        "id": "grammar_01_structure_06",
+        "type": "grammar_structure",
+        "order": 7,
+        "title": "V + 得 / 不 + 了",
+        "pattern": "V + 得 + 了 / V + 不 + 了",
+        "meaning_vi": "Có thể / không thể làm được vì điều kiện khách quan, sức khỏe, thời gian, khả năng.",
+        "formulas": [
+         {
+          "label": "Có thể",
+          "pattern": "V + 得 + 了"
+         },
+         {
+          "label": "Không thể",
+          "pattern": "V + 不 + 了"
+         }
+        ],
+        "examples": [
+         {
+          "id": "grammar_01_structure_06_ex_01",
+          "zh": "玛丽的腿受伤了，参加不了了。",
+          "pinyin": "",
+          "vi": "Chân của Mary bị thương rồi, không thể tham gia được nữa.",
+          "en": "",
+          "highlight": ["参加不了"],
+          "grammar_refs": ["grammar_01"],
+          "vocab_refs": [],
+          "source_ref": "text_02_l10",
+          "note_vi": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+         }
+        ],
+        "notes_vi": [
+         "参加不了 nhấn mạnh không có khả năng/điều kiện để tham gia, không chỉ là “không tham gia nữa”."
+        ],
+        "source_origin": "textbook",
+        "check_needed": false
+       }
+      ]
+     },
+     {
+      "id": "grammar_02",
+      "type": "grammar_point",
+      "order": 2,
+      "title": "只要……就……",
+      "title_vi": "Chỉ cần… thì…",
+      "level": "HSK3-ish",
+      "tags": ["condition", "sufficient_condition"],
+      "source_origin": "textbook",
+      "check_needed": false,
+      "blocks": [
+       {
+        "id": "grammar_02_overview",
+        "type": "grammar_overview",
+        "order": 1,
+        "title": "Bản chất",
+        "content_vi": "只要……就…… nhấn mạnh điều kiện đủ: chỉ cần điều kiện vế trước được thỏa mãn, kết quả vế sau sẽ xảy ra.",
+        "examples": [
+         {
+          "id": "grammar_02_overview_ex_01",
+          "zh": "只要我们好好儿练，就一定能演好。",
+          "pinyin": "",
+          "vi": "Chỉ cần chúng ta luyện tập chăm chỉ, thì nhất định sẽ diễn tốt.",
+          "en": "",
+          "highlight": ["只要", "就"],
+          "grammar_refs": ["grammar_02"],
+          "vocab_refs": [],
+          "source_ref": "text_02_l13",
+          "note_vi": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+         }
+        ],
+        "source_origin": "textbook",
+        "check_needed": false
+       },
+       {
+        "id": "grammar_02_structure_01",
+        "type": "grammar_structure",
+        "order": 2,
+        "title": "Cấu trúc",
+        "pattern": "只要 + điều kiện，就 + kết quả",
+        "meaning_vi": "Chỉ cần… thì…",
+        "formulas": [
+         {
+          "label": "Điều kiện đủ",
+          "pattern": "只要 + 条件，就 + 结果"
+         }
+        ],
+        "examples": [
+         {
+          "id": "grammar_02_structure_01_ex_01",
+          "zh": "只要你努力学习，就一定会成功。",
+          "pinyin": "",
+          "vi": "Chỉ cần bạn học chăm chỉ thì nhất định sẽ thành công.",
+          "en": "",
+          "highlight": ["只要", "就"],
+          "grammar_refs": ["grammar_02"],
+          "vocab_refs": [],
+          "source_ref": "",
+          "note_vi": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+         },
+         {
+          "id": "grammar_02_structure_01_ex_02",
+          "zh": "只要天气好，我们就去爬山。",
+          "pinyin": "",
+          "vi": "Chỉ cần thời tiết đẹp, chúng ta sẽ đi leo núi.",
+          "en": "",
+          "highlight": ["只要", "就"],
+          "grammar_refs": ["grammar_02"],
+          "vocab_refs": [],
+          "source_ref": "",
+          "note_vi": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+         }
+        ],
+        "notes_vi": [
+         "只要……就…… nhấn điều kiện đủ; 只有……才…… nhấn điều kiện cần."
+        ],
+        "source_origin": "textbook",
+        "check_needed": false
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "id": "section_06_exercises",
+    "type": "exercises",
+    "order": 6,
+    "title": "练习",
+    "title_vi": "Bài tập",
+    "source_origin": "textbook",
+    "check_needed": true,
+    "items": [
+     {
+      "id": "exercise_01",
+      "type": "phonetics",
+      "variant": "",
+      "order": 1,
+      "title": "语音",
+      "title_vi": "Ngữ âm",
+      "instruction": {
+       "zh": "",
+       "vi": "Luyện phân biệt âm, thanh điệu và đọc cụm."
+      },
+      "difficulty": "normal",
+      "skill_focus": ["pronunciation"],
+      "source_origin": "textbook",
+      "check_needed": false,
+      "parts": [
+       {
+        "id": "exercise_01_part_01",
+        "type": "minimal_pair",
+        "title": "辨音辨调",
+        "items": [
+         {
+          "id": "pair_01",
+          "left": "lǎnchē",
+          "right": "nánchē"
+         },
+         {
+          "id": "pair_02",
+          "left": "chuǎnqì",
+          "right": "chuánqì"
+         },
+         {
+          "id": "pair_03",
+          "left": "dàodǐ",
+          "right": "dàotǐ"
+         },
+         {
+          "id": "pair_04",
+          "left": "shènglì",
+          "right": "shēnglǐ"
+         },
+         {
+          "id": "pair_05",
+          "left": "chūhàn",
+          "right": "chūháng"
+         },
+         {
+          "id": "pair_06",
+          "left": "wēixiǎn",
+          "right": "wéixiān"
+         },
+         {
+          "id": "pair_07",
+          "left": "xiàngsheng",
+          "right": "xiǎngshēng"
+         },
+         {
+          "id": "pair_08",
+          "left": "táicí",
+          "right": "táicì"
+         },
+         {
+          "id": "pair_09",
+          "left": "páiliàn",
+          "right": "páiliè"
+         },
+         {
+          "id": "pair_10",
+          "left": "zìxìn",
+          "right": "zìxíng"
+         }
+        ],
+        "source_origin": "textbook",
+        "check_needed": false
+       },
+       {
+        "id": "exercise_01_part_02",
+        "type": "read_aloud",
+        "title": "朗读",
+        "items": [
+         {
+          "id": "read_001",
+          "text": "爬得上去",
+          "pinyin": "",
+          "audio_key": ""
+         },
+         {
+          "id": "read_002",
+          "text": "爬不上去",
+          "pinyin": "",
+          "audio_key": ""
+         },
+         {
+          "id": "read_003",
+          "text": "爬得动",
+          "pinyin": "",
+          "audio_key": ""
+         },
+         {
+          "id": "read_004",
+          "text": "爬不动",
+          "pinyin": "",
+          "audio_key": ""
+         },
+         {
+          "id": "read_005",
+          "text": "喘不上气来",
+          "pinyin": "",
+          "audio_key": ""
+         },
+         {
+          "id": "read_006",
+          "text": "坚持到底",
+          "pinyin": "",
+          "audio_key": ""
+         },
+         {
+          "id": "read_007",
+          "text": "坚持就是胜利",
+          "pinyin": "",
+          "audio_key": ""
+         },
+         {
+          "id": "read_008",
+          "text": "记不住台词",
+          "pinyin": "",
+          "audio_key": ""
+         },
+         {
+          "id": "read_009",
+          "text": "背会了吗",
+          "pinyin": "",
+          "audio_key": ""
+         },
+         {
+          "id": "read_010",
+          "text": "发不准",
+          "pinyin": "",
+          "audio_key": ""
+         },
+         {
+          "id": "read_011",
+          "text": "演不好",
+          "pinyin": "",
+          "audio_key": ""
+         },
+         {
+          "id": "read_012",
+          "text": "能演好",
+          "pinyin": "",
+          "audio_key": ""
+         },
+         {
+          "id": "read_013",
+          "text": "唱不好",
+          "pinyin": "",
+          "audio_key": ""
+         },
+         {
+          "id": "read_014",
+          "text": "坐得下二百多人",
+          "pinyin": "",
+          "audio_key": ""
+         },
+         {
+          "id": "read_015",
+          "text": "能坐下三四百人",
+          "pinyin": "",
+          "audio_key": ""
+         },
+         {
+          "id": "read_016",
+          "text": "只要好好儿练，就一定能演好",
+          "pinyin": "",
+          "audio_key": ""
+         }
+        ],
+        "source_origin": "textbook",
+        "check_needed": false
+       }
+      ],
+      "rendering": {
+       "renderer": "exercise.phonetics.v1"
+      }
+     },
+     {
+      "id": "exercise_02",
+      "type": "substitution_drill",
+      "variant": "models",
+      "order": 2,
+      "title": "替换",
+      "title_vi": "Thay thế theo mẫu",
+      "instruction": {
+       "zh": "替换练习。",
+       "vi": "Luyện thay thế theo mẫu."
+      },
+      "difficulty": "normal",
+      "skill_focus": ["speaking", "grammar"],
+      "grammar_refs": ["grammar_01", "grammar_02"],
+      "source_origin": "textbook",
+      "check_needed": false,
+      "models": [
+       {
+        "id": "ex02_model_01",
+        "title": "模型一",
+        "dialogue": ["A：这座山这么高，你爬得上去吗？", "B：爬得上去。"],
+        "substitutions": [
+         "这箱书这么重 / 搬 / 搬得动",
+         "这个字这么难 / 写 / 写得好",
+         "这些台词这么多 / 记 / 记得住",
+         "这个地方这么小 / 坐 / 坐得下",
+         "这首歌这么长 / 唱 / 唱得好"
+        ]
+       },
+       {
+        "id": "ex02_model_02",
+        "title": "模型二",
+        "dialogue": ["A：美英，你还爬得动吗？", "B：爬得动。"],
+        "substitutions": [
+         "你还走 / 走得动",
+         "你还唱 / 唱得好",
+         "你还记 / 记得住",
+         "你还听 / 听得懂",
+         "你还演 / 演得好"
+        ]
+       },
+       {
+        "id": "ex02_model_03",
+        "title": "模型三",
+        "dialogue": [
+         "A：只要我们好好儿练，就一定能演好。",
+         "B：对，只要好好儿练，就一定能演好。"
+        ],
+        "substitutions": [
+         "多听多说 / 学好汉语",
+         "认真准备 / 表演好节目",
+         "坚持到底 / 取得胜利",
+         "好好儿背台词 / 说好相声",
+         "注意安全 / 爬上山去"
+        ]
+       }
+      ],
+      "rendering": {
+       "renderer": "exercise.substitution_drill.v1"
+      }
+     },
+     {
+      "id": "exercise_03",
+      "type": "choose_words_fill_blank",
+      "variant": "word_bank",
+      "order": 3,
+      "title": "选词填空",
+      "title_vi": "Chọn từ điền chỗ trống",
+      "instruction": {
+       "zh": "选词填空。",
+       "vi": "Chọn từ thích hợp điền vào chỗ trống."
+      },
+      "difficulty": "normal",
+      "skill_focus": ["vocabulary", "grammar"],
+      "word_bank": [
+       "缆车",
+       "喘气",
+       "动",
+       "到底",
+       "胜利",
+       "加油",
+       "出汗",
+       "接着",
+       "危险",
+       "积极",
+       "相声",
+       "台词",
+       "背",
+       "话剧",
+       "排练",
+       "受伤",
+       "纠正",
+       "演",
+       "自信",
+       "相信",
+       "争取",
+       "恐怕"
+      ],
+      "questions": [
+       {
+        "id": "ex03_q01",
+        "prompt": "咱们坐______上山吧。",
+        "answer": "缆车",
+        "acceptable_answers": ["缆车"],
+        "explanation_vi": "坐缆车 = đi cáp treo.",
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "ex03_q02",
+        "prompt": "山这么高，你爬得______吗？",
+        "answer": "动",
+        "acceptable_answers": ["动"],
+        "explanation_vi": "爬得动 = leo nổi.",
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "ex03_q03",
+        "prompt": "他累得都喘不上______来了。",
+        "answer": "气",
+        "acceptable_answers": ["气"],
+        "explanation_vi": "喘不上气来 = thở không ra hơi.",
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "ex03_q04",
+        "prompt": "坚持______，坚持就是______。",
+        "answer": "到底 / 胜利",
+        "acceptable_answers": ["到底 / 胜利"],
+        "explanation_vi": "坚持到底，坚持就是胜利 = kiên trì đến cùng, kiên trì chính là thắng lợi.",
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "ex03_q05",
+        "prompt": "刚爬了一会儿就出了一身______。",
+        "answer": "汗",
+        "acceptable_answers": ["汗"],
+        "explanation_vi": "出了一身汗 = mồ hôi đầy người.",
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "ex03_q06",
+        "prompt": "我休息一会儿再______爬。",
+        "answer": "接着",
+        "acceptable_answers": ["接着"],
+        "explanation_vi": "接着爬 = leo tiếp.",
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "ex03_q07",
+        "prompt": "别从那边上，太______了。",
+        "answer": "危险",
+        "acceptable_answers": ["危险"],
+        "explanation_vi": "太危险了 = quá nguy hiểm.",
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "ex03_q08",
+        "prompt": "大家都在______地准备节目。",
+        "answer": "积极",
+        "acceptable_answers": ["积极"],
+        "explanation_vi": "积极地准备 = chuẩn bị tích cực.",
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "ex03_q09",
+        "prompt": "我和麦克说个______。",
+        "answer": "相声",
+        "acceptable_answers": ["相声"],
+        "explanation_vi": "说个相声 = diễn/tấu một tiết mục tấu hài.",
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "ex03_q10",
+        "prompt": "可是总是记不住______。",
+        "answer": "台词",
+        "acceptable_answers": ["台词"],
+        "explanation_vi": "记不住台词 = không nhớ được lời thoại.",
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "ex03_q11",
+        "prompt": "我正在______台词呢。",
+        "answer": "背",
+        "acceptable_answers": ["背"],
+        "explanation_vi": "背台词 = học thuộc lời thoại.",
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "ex03_q12",
+        "prompt": "我们的小______也正在______。",
+        "answer": "话剧 / 排练",
+        "acceptable_answers": ["话剧 / 排练"],
+        "explanation_vi": "小话剧正在排练 = vở kịch ngắn đang tập.",
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "ex03_q13",
+        "prompt": "有的音我发不准，请田芳给我______。",
+        "answer": "纠正",
+        "acceptable_answers": ["纠正"],
+        "explanation_vi": "纠正发音 = sửa phát âm.",
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "ex03_q14",
+        "prompt": "玛丽的腿______了，参加不了了。",
+        "answer": "受伤",
+        "acceptable_answers": ["受伤"],
+        "explanation_vi": "腿受伤了 = chân bị thương.",
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "ex03_q15",
+        "prompt": "我担心自己______不好。",
+        "answer": "演",
+        "acceptable_answers": ["演"],
+        "explanation_vi": "演不好 = diễn không tốt.",
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "ex03_q16",
+        "prompt": "要有______，______自己能演好。",
+        "answer": "自信 / 相信",
+        "acceptable_answers": ["自信 / 相信"],
+        "explanation_vi": "要有自信，相信自己 = phải tự tin, tin vào bản thân.",
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "ex03_q17",
+        "prompt": "我一定努力，______演出成功。",
+        "answer": "争取",
+        "acceptable_answers": ["争取"],
+        "explanation_vi": "争取成功 = cố gắng đạt thành công.",
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "ex03_q18",
+        "prompt": "很长时间没唱了，______唱不好。",
+        "answer": "恐怕",
+        "acceptable_answers": ["恐怕"],
+        "explanation_vi": "恐怕唱不好 = e là hát không tốt.",
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       }
+      ],
+      "answer_key": [
+       {
+        "question_id": "ex03_q01",
+        "answer": "缆车",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "question_id": "ex03_q02",
+        "answer": "动",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "question_id": "ex03_q03",
+        "answer": "气",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "question_id": "ex03_q04",
+        "answer": "到底 / 胜利",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "question_id": "ex03_q05",
+        "answer": "汗",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "question_id": "ex03_q06",
+        "answer": "接着",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "question_id": "ex03_q07",
+        "answer": "危险",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "question_id": "ex03_q08",
+        "answer": "积极",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "question_id": "ex03_q09",
+        "answer": "相声",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "question_id": "ex03_q10",
+        "answer": "台词",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "question_id": "ex03_q11",
+        "answer": "背",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "question_id": "ex03_q12",
+        "answer": "话剧 / 排练",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "question_id": "ex03_q13",
+        "answer": "纠正",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "question_id": "ex03_q14",
+        "answer": "受伤",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "question_id": "ex03_q15",
+        "answer": "演",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "question_id": "ex03_q16",
+        "answer": "自信 / 相信",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "question_id": "ex03_q17",
+        "answer": "争取",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "question_id": "ex03_q18",
+        "answer": "恐怕",
+        "answer_verified": false,
+        "check_needed": true
+       }
+      ],
+      "rendering": {
+       "renderer": "exercise.fill_blank.v1",
+       "input_mode": "dropdown",
+       "show_word_bank": true,
+       "show_answer_after_submit": true
+      },
+      "source_origin": "textbook",
+      "check_needed": true
+     },
+     {
+      "id": "exercise_04",
+      "type": "fill_blank",
+      "variant": "complete_sentence_with_given_word",
+      "order": 4,
+      "title": "用括号里的词语完成句子",
+      "title_vi": "Dùng từ trong ngoặc hoàn thành câu",
+      "instruction": {
+       "zh": "用括号里的词语完成句子。",
+       "vi": "Dùng từ gợi ý để hoàn thành câu."
+      },
+      "difficulty": "hard",
+      "skill_focus": ["grammar", "writing"],
+      "grammar_refs": ["grammar_01", "grammar_02"],
+      "questions": [
+       {
+        "id": "ex04_q01",
+        "prompt": "A：这座山这么高，你能爬上去吗？\nB：没问题，我______。（爬，上去）",
+        "answer": "爬得上去。",
+        "grading": {
+         "mode": "manual"
+        },
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "ex04_q02",
+        "prompt": "A：你累不累？还可以继续爬吗？\nB：我有点儿累了，恐怕______。（爬，动）",
+        "answer": "爬不动了。",
+        "grading": {
+         "mode": "manual"
+        },
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "ex04_q03",
+        "prompt": "A：这些台词你都背会了吗？\nB：太多了，我______。（记，住）",
+        "answer": "记不住。",
+        "grading": {
+         "mode": "manual"
+        },
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "ex04_q04",
+        "prompt": "A：这个音你发得准吗？\nB：不太准，我______。（发，准）",
+        "answer": "发不准。",
+        "grading": {
+         "mode": "manual"
+        },
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "ex04_q05",
+        "prompt": "A：你担心什么？\nB：我担心自己______。（演，好）",
+        "answer": "演不好。",
+        "grading": {
+         "mode": "manual"
+        },
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "ex04_q06",
+        "prompt": "A：这个小礼堂能坐多少人？\nB：能______三四百人。（坐，下）",
+        "answer": "坐下",
+        "grading": {
+         "mode": "manual"
+        },
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "ex04_q07",
+        "prompt": "A：玛丽为什么不参加了？\nB：她腿受伤了，______。（参加，了）",
+        "answer": "参加不了了。",
+        "grading": {
+         "mode": "manual"
+        },
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "ex04_q08",
+        "prompt": "A：你觉得我们能演好吗？\nB：______。（只要……就……）",
+        "answer": "只要我们好好儿练，就一定能演好。",
+        "grading": {
+         "mode": "manual"
+        },
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       }
+      ],
+      "answer_key": [
+       {
+        "question_id": "ex04_q01",
+        "sample_answer": "爬得上去。",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "question_id": "ex04_q02",
+        "sample_answer": "爬不动了。",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "question_id": "ex04_q03",
+        "sample_answer": "记不住。",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "question_id": "ex04_q04",
+        "sample_answer": "发不准。",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "question_id": "ex04_q05",
+        "sample_answer": "演不好。",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "question_id": "ex04_q06",
+        "sample_answer": "坐下",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "question_id": "ex04_q07",
+        "sample_answer": "参加不了了。",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "question_id": "ex04_q08",
+        "sample_answer": "只要我们好好儿练，就一定能演好。",
+        "answer_verified": false,
+        "check_needed": true
+       }
+      ],
+      "rendering": {
+       "renderer": "exercise.fill_blank.v1",
+       "input_mode": "text",
+       "show_answer_after_submit": true
+      },
+      "source_origin": "textbook",
+      "check_needed": true
+     },
+     {
+      "id": "exercise_05",
+      "type": "complete_dialogue",
+      "variant": "answer_questions_with_given_words",
+      "order": 5,
+      "title": "用括号里的词语回答问题",
+      "title_vi": "Dùng từ trong ngoặc trả lời câu hỏi",
+      "instruction": {
+       "zh": "用括号里的词语回答问题。",
+       "vi": "Dùng từ gợi ý để trả lời."
+      },
+      "difficulty": "normal",
+      "skill_focus": ["speaking", "grammar"],
+      "grammar_refs": ["grammar_01", "grammar_02"],
+      "dialogues": [
+       {
+        "id": "ex05_d01",
+        "lines": [
+         {
+          "text": "A：咱们怎么上山？"
+         }
+        ],
+        "sample_answers": [
+         {
+          "blank_id": "answer",
+          "answer": "坐缆车上去或者爬上去。"
+         }
+        ],
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "ex05_d02",
+        "lines": [
+         {
+          "text": "A：李美英累得怎么样了？"
+         }
+        ],
+        "sample_answers": [
+         {
+          "blank_id": "answer",
+          "answer": "她累得都喘不上气来了。"
+         }
+        ],
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "ex05_d03",
+        "lines": [
+         {
+          "text": "A：爬不动的时候怎么办？"
+         }
+        ],
+        "sample_answers": [
+         {
+          "blank_id": "answer",
+          "answer": "爬不动的时候就休息一会儿。"
+         }
+        ],
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "ex05_d04",
+        "lines": [
+         {
+          "text": "A：爱德华和麦克表演什么节目？"
+         }
+        ],
+        "sample_answers": [
+         {
+          "blank_id": "answer",
+          "answer": "他们说个相声。"
+         }
+        ],
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "ex05_d05",
+        "lines": [
+         {
+          "text": "A：爱德华为什么正在背台词？"
+         }
+        ],
+        "sample_answers": [
+         {
+          "blank_id": "answer",
+          "answer": "因为他总是记不住台词。"
+         }
+        ],
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "ex05_d06",
+        "lines": [
+         {
+          "text": "A：山本为什么请田芳给他纠正？"
+         }
+        ],
+        "sample_answers": [
+         {
+          "blank_id": "answer",
+          "answer": "因为有的音他发不准。"
+         }
+        ],
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "ex05_d07",
+        "lines": [
+         {
+          "text": "A：罗兰担心什么？"
+         }
+        ],
+        "sample_answers": [
+         {
+          "blank_id": "answer",
+          "answer": "她担心自己演不好。"
+         }
+        ],
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "ex05_d08",
+        "lines": [
+         {
+          "text": "A：山本为什么相信能演好？"
+         }
+        ],
+        "sample_answers": [
+         {
+          "blank_id": "answer",
+          "answer": "因为只要他们好好儿练，就一定能演好。"
+         }
+        ],
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       }
+      ],
+      "answer_key": [
+       {
+        "question_id": "ex05_d01",
+        "sample_answer": "坐缆车上去或者爬上去。",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "question_id": "ex05_d02",
+        "sample_answer": "她累得都喘不上气来了。",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "question_id": "ex05_d03",
+        "sample_answer": "爬不动的时候就休息一会儿。",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "question_id": "ex05_d04",
+        "sample_answer": "他们说个相声。",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "question_id": "ex05_d05",
+        "sample_answer": "因为他总是记不住台词。",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "question_id": "ex05_d06",
+        "sample_answer": "因为有的音他发不准。",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "question_id": "ex05_d07",
+        "sample_answer": "她担心自己演不好。",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "question_id": "ex05_d08",
+        "sample_answer": "因为只要他们好好儿练，就一定能演好。",
+        "answer_verified": false,
+        "check_needed": true
+       }
+      ],
+      "rendering": {
+       "renderer": "exercise.complete_dialogue.v1",
+       "show_answer_after_submit": true
+      },
+      "source_origin": "textbook",
+      "check_needed": true
+     },
+     {
+      "id": "exercise_06",
+      "type": "correct_sentence",
+      "variant": "",
+      "order": 6,
+      "title": "改错句",
+      "title_vi": "Sửa câu sai",
+      "instruction": {
+       "zh": "改错句。",
+       "vi": "Sửa lỗi trong câu."
+      },
+      "difficulty": "hard",
+      "skill_focus": ["grammar", "sentence_order"],
+      "grammar_refs": ["grammar_01", "grammar_02"],
+      "questions": [
+       {
+        "id": "ex06_q01",
+        "wrong_sentence": "这座山这么高，你爬得上吗？",
+        "correct_sentence": "这座山这么高，你爬得上去吗？",
+        "acceptable_answers": ["这座山这么高，你爬得上去吗？"],
+        "explanation_vi": "上去 là bổ ngữ xu hướng đầy đủ trong câu này.",
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "ex06_q02",
+        "wrong_sentence": "我累得都喘不上气了，还爬不动。",
+        "correct_sentence": "我累得都喘不上气来了，爬不动了。",
+        "acceptable_answers": ["我累得都喘不上气来了，爬不动了。"],
+        "explanation_vi": "喘不上气来 là cụm tự nhiên; 爬不动了 biểu thị không leo nổi nữa.",
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "ex06_q03",
+        "wrong_sentence": "我记不下来台词，所以正在背。",
+        "correct_sentence": "我记不住台词，所以正在背。",
+        "acceptable_answers": ["我记不住台词，所以正在背。"],
+        "explanation_vi": "记不住 = không nhớ được; 记下来 = ghi lại.",
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "ex06_q04",
+        "wrong_sentence": "有的音我发不好准。",
+        "correct_sentence": "有的音我发不准。",
+        "acceptable_answers": ["有的音我发不准。"],
+        "explanation_vi": "发不准 là cụm đúng: phát âm không chuẩn.",
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "ex06_q05",
+        "wrong_sentence": "玛丽受伤了，不能参加了了。",
+        "correct_sentence": "玛丽受伤了，参加不了了。",
+        "acceptable_answers": ["玛丽受伤了，参加不了了。"],
+        "explanation_vi": "V + 不了 biểu thị không thể làm được.",
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "ex06_q06",
+        "wrong_sentence": "我担心自己演不住。",
+        "correct_sentence": "我担心自己演不好。",
+        "acceptable_answers": ["我担心自己演不好。"],
+        "explanation_vi": "演不好 = diễn không tốt.",
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "ex06_q07",
+        "wrong_sentence": "只要我们好好儿练，才一定能演好。",
+        "correct_sentence": "只要我们好好儿练，就一定能演好。",
+        "acceptable_answers": ["只要我们好好儿练，就一定能演好。"],
+        "explanation_vi": "只要 phải đi với 就.",
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "ex06_q08",
+        "wrong_sentence": "这个地方这么小，坐得住二百多人吗？",
+        "correct_sentence": "这个地方这么小，坐得下二百多人吗？",
+        "acceptable_answers": ["这个地方这么小，坐得下二百多人吗？"],
+        "explanation_vi": "坐得下 = có thể ngồi/chứa đủ.",
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       }
+      ],
+      "answer_key": [
+       {
+        "question_id": "ex06_q01",
+        "answer": "这座山这么高，你爬得上去吗？",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "question_id": "ex06_q02",
+        "answer": "我累得都喘不上气来了，爬不动了。",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "question_id": "ex06_q03",
+        "answer": "我记不住台词，所以正在背。",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "question_id": "ex06_q04",
+        "answer": "有的音我发不准。",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "question_id": "ex06_q05",
+        "answer": "玛丽受伤了，参加不了了。",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "question_id": "ex06_q06",
+        "answer": "我担心自己演不好。",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "question_id": "ex06_q07",
+        "answer": "只要我们好好儿练，就一定能演好。",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "question_id": "ex06_q08",
+        "answer": "这个地方这么小，坐得下二百多人吗？",
+        "answer_verified": false,
+        "check_needed": true
+       }
+      ],
+      "rendering": {
+       "renderer": "exercise.correct_sentence.v1",
+       "show_answer_after_submit": true
+      },
+      "source_origin": "textbook",
+      "check_needed": true
+     }
+    ]
+   },
+   {
+    "id": "section_07_communication",
+    "type": "communication",
+    "order": 7,
+    "title": "交际会话",
+    "title_vi": "Hội thoại giao tiếp",
+    "source_origin": "textbook/generated_mixed",
+    "check_needed": true,
+    "items": [
+     {
+      "id": "communication_01",
+      "type": "communication_dialogue",
+      "variant": "encouragement",
+      "order": 1,
+      "title": "鼓励",
+      "title_vi": "Động viên",
+      "function": "鼓励",
+      "function_vi": "Động viên",
+      "dialogue": [
+       {
+        "speaker": "A",
+        "text": "这座山太高了，我恐怕爬不上去。"
+       },
+       {
+        "speaker": "B",
+        "text": "别着急，一步一步地往上爬。"
+       },
+       {
+        "speaker": "A",
+        "text": "我累得都喘不上气来了。"
+       },
+       {
+        "speaker": "B",
+        "text": "爬不动的时候就休息一会儿。坚持到底，坚持就是胜利。"
+       }
+      ],
+      "source_origin": "textbook/generated_mixed",
+      "check_needed": true
+     },
+     {
+      "id": "communication_02",
+      "type": "communication_dialogue",
+      "variant": "prepare_program",
+      "order": 2,
+      "title": "准备节目",
+      "title_vi": "Chuẩn bị tiết mục",
+      "function": "准备节目",
+      "function_vi": "Chuẩn bị tiết mục",
+      "dialogue": [
+       {
+        "speaker": "A",
+        "text": "你们准备表演什么节目？"
+       },
+       {
+        "speaker": "B",
+        "text": "我们准备说个相声。"
+       },
+       {
+        "speaker": "A",
+        "text": "台词背会了吗？"
+       },
+       {
+        "speaker": "B",
+        "text": "快了，不过总是记不住。"
+       },
+       {
+        "speaker": "A",
+        "text": "别担心，多练几遍就能记住。"
+       }
+      ],
+      "source_origin": "textbook/generated_mixed",
+      "check_needed": true
+     },
+     {
+      "id": "communication_03",
+      "type": "communication_dialogue",
+      "variant": "worry_and_encouragement",
+      "order": 3,
+      "title": "表达担心和鼓励",
+      "title_vi": "Diễn đạt lo lắng và động viên",
+      "function": "表达担心和鼓励",
+      "function_vi": "Diễn đạt lo lắng và động viên",
+      "dialogue": [
+       {
+        "speaker": "A",
+        "text": "我担心自己演不好。"
+       },
+       {
+        "speaker": "B",
+        "text": "要有自信，相信自己能演好。"
+       },
+       {
+        "speaker": "A",
+        "text": "可是我有点儿紧张。"
+       },
+       {
+        "speaker": "B",
+        "text": "只要好好儿练，就一定能演好。"
+       }
+      ],
+      "source_origin": "textbook/generated_mixed",
+      "check_needed": true
+     }
+    ]
+   },
+   {
+    "id": "section_08_reading",
+    "type": "reading",
+    "order": 8,
+    "title": "阅读理解 / 阅读填空",
+    "title_vi": "Đọc hiểu / Điền khuyết",
+    "source_origin": "generated",
+    "check_needed": true,
+    "note_vi": "Đã bổ sung bài đọc + bài điền khuyết cho app. Phần này là generated supplement vì bản bóc trước để trống reading; cần đối chiếu PDF nếu muốn đánh dấu textbook.",
+    "items": [
+     {
+      "id": "reading_01",
+      "type": "reading_text",
+      "order": 1,
+      "title": "爬山",
+      "title_vi": "Leo núi",
+      "paragraphs": [
+       {
+        "id": "reading_01_p01",
+        "order": 1,
+        "zh": "星期天，我们去爬山。山很高，玛丽一看就说：“这么高，我爬不上去。”",
+        "pinyin": "",
+        "vi": "",
+        "grammar_refs": ["grammar_01", "grammar_02", "grammar_03"],
+        "vocab_refs": [],
+        "source_origin": "generated",
+        "check_needed": true
+       },
+       {
+        "id": "reading_01_p02",
+        "order": 2,
+        "zh": "老师笑着说：“别怕，只要慢慢爬，就爬得上去。爬不动的时候，就休息一会儿。”",
+        "pinyin": "",
+        "vi": "",
+        "grammar_refs": ["grammar_01", "grammar_02", "grammar_03"],
+        "vocab_refs": [],
+        "source_origin": "generated",
+        "check_needed": true
+       },
+       {
+        "id": "reading_01_p03",
+        "order": 3,
+        "zh": "开始的时候，大家都很有精神。爬了半天以后，有的同学累得走不动了，可是大家互相帮助，谁也不想放弃。",
+        "pinyin": "",
+        "vi": "",
+        "grammar_refs": ["grammar_01", "grammar_02", "grammar_03"],
+        "vocab_refs": [],
+        "source_origin": "generated",
+        "check_needed": true
+       },
+       {
+        "id": "reading_01_p04",
+        "order": 4,
+        "zh": "最后，我们终于爬到山顶。往山下看，风景漂亮极了。",
+        "pinyin": "",
+        "vi": "",
+        "grammar_refs": ["grammar_01", "grammar_02", "grammar_03"],
+        "vocab_refs": [],
+        "source_origin": "generated",
+        "check_needed": true
+       }
+      ],
+      "questions": [
+       {
+        "id": "reading_01_q01",
+        "question": "这篇短文主要说什么？",
+        "answer": "这篇短文主要练习本课语法和主题词。",
+        "source_origin": "generated",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "reading_01_q02",
+        "question": "文中用了哪些本课语法点？",
+        "answer": "答案可参考 grammar_refs。",
+        "source_origin": "generated",
+        "answer_verified": false,
+        "check_needed": true
+       }
+      ],
+      "source_origin": "generated",
+      "check_needed": true
+     },
+     {
+      "id": "reading_cloze_01",
+      "type": "reading_cloze",
+      "order": 2,
+      "title": "综合填空：爬山",
+      "title_vi": "Điền tổng hợp: Leo núi",
+      "instruction": {
+       "zh": "综合填空。",
+       "vi": "Điền từ thích hợp vào chỗ trống trong bài đọc."
+      },
+      "word_bank": [],
+      "passage": {
+       "id": "cloze_passage_01",
+       "segments": [
+        {
+         "id": "seg_001",
+         "type": "text",
+         "text": "星期天，我们去爬山。山很高，玛丽一看就说：“这么高，我爬不"
+        },
+        {
+         "id": "seg_002",
+         "type": "blank",
+         "blank_id": "blank_01"
+        },
+        {
+         "id": "seg_003",
+         "type": "text",
+         "text": "。”\n\n老师笑着说：“别怕，只要慢慢爬，就爬得"
+        },
+        {
+         "id": "seg_004",
+         "type": "blank",
+         "blank_id": "blank_02"
+        },
+        {
+         "id": "seg_005",
+         "type": "text",
+         "text": "。爬不"
+        },
+        {
+         "id": "seg_006",
+         "type": "blank",
+         "blank_id": "blank_03"
+        },
+        {
+         "id": "seg_007",
+         "type": "text",
+         "text": "的时候，就休息一会儿。”\n\n爬了半天以后，有的同学累得走不"
+        },
+        {
+         "id": "seg_008",
+         "type": "blank",
+         "blank_id": "blank_04"
+        },
+        {
+         "id": "seg_009",
+         "type": "text",
+         "text": "了，可是大家互相帮助，谁也不想放弃。\n\n最后，我们终于爬"
+        },
+        {
+         "id": "seg_010",
+         "type": "blank",
+         "blank_id": "blank_05"
+        },
+        {
+         "id": "seg_011",
+         "type": "text",
+         "text": "山顶。"
+        }
+       ]
+      },
+      "answers": [
+       {
+        "blank_id": "blank_01",
+        "answer": "上去",
+        "acceptable_answers": ["上去"],
+        "explanation_vi": "Đáp án theo bài đọc bổ sung đã tạo cho app; cần rà nếu muốn khớp tuyệt đối với sách.",
+        "grammar_refs": ["grammar_01", "grammar_02", "grammar_03"],
+        "source_origin": "generated",
+        "check_needed": true
+       },
+       {
+        "blank_id": "blank_02",
+        "answer": "上去",
+        "acceptable_answers": ["上去"],
+        "explanation_vi": "Đáp án theo bài đọc bổ sung đã tạo cho app; cần rà nếu muốn khớp tuyệt đối với sách.",
+        "grammar_refs": ["grammar_01", "grammar_02", "grammar_03"],
+        "source_origin": "generated",
+        "check_needed": true
+       },
+       {
+        "blank_id": "blank_03",
+        "answer": "动",
+        "acceptable_answers": ["动"],
+        "explanation_vi": "Đáp án theo bài đọc bổ sung đã tạo cho app; cần rà nếu muốn khớp tuyệt đối với sách.",
+        "grammar_refs": ["grammar_01", "grammar_02", "grammar_03"],
+        "source_origin": "generated",
+        "check_needed": true
+       },
+       {
+        "blank_id": "blank_04",
+        "answer": "动",
+        "acceptable_answers": ["动"],
+        "explanation_vi": "Đáp án theo bài đọc bổ sung đã tạo cho app; cần rà nếu muốn khớp tuyệt đối với sách.",
+        "grammar_refs": ["grammar_01", "grammar_02", "grammar_03"],
+        "source_origin": "generated",
+        "check_needed": true
+       },
+       {
+        "blank_id": "blank_05",
+        "answer": "到",
+        "acceptable_answers": ["到"],
+        "explanation_vi": "Đáp án theo bài đọc bổ sung đã tạo cho app; cần rà nếu muốn khớp tuyệt đối với sách.",
+        "grammar_refs": ["grammar_01", "grammar_02", "grammar_03"],
+        "source_origin": "generated",
+        "check_needed": true
+       }
+      ],
+      "answer_key": [
+       {
+        "blank_id": "blank_01",
+        "answer": "上去",
+        "source_origin": "generated",
+        "check_needed": true
+       },
+       {
+        "blank_id": "blank_02",
+        "answer": "上去",
+        "source_origin": "generated",
+        "check_needed": true
+       },
+       {
+        "blank_id": "blank_03",
+        "answer": "动",
+        "source_origin": "generated",
+        "check_needed": true
+       },
+       {
+        "blank_id": "blank_04",
+        "answer": "动",
+        "source_origin": "generated",
+        "check_needed": true
+       },
+       {
+        "blank_id": "blank_05",
+        "answer": "到",
+        "source_origin": "generated",
+        "check_needed": true
+       }
+      ],
+      "rendering": {
+       "renderer": "reading.cloze.v1",
+       "input_mode": "text",
+       "show_word_bank": false,
+       "show_answer_after_submit": true
+      },
+      "source_origin": "generated",
+      "check_needed": true
+     }
+    ]
+   },
+   {
+    "id": "section_09_character_writing",
+    "type": "character_writing",
+    "order": 9,
+    "title": "写汉字",
+    "title_vi": "Viết chữ Hán",
+    "source_origin": "generated",
+    "check_needed": true,
+    "items": [
+     {
+      "id": "char_001",
+      "type": "character_writing_item",
+      "order": 1,
+      "hanzi": "缆",
+      "pinyin": "lǎn",
+      "vocab_ref": "vocab_001",
+      "stroke_count": null,
+      "radical": "",
+      "stroke_order_key": "",
+      "practice": {
+       "grid_type": "田字格",
+       "repeat_count": 6
+      },
+      "source_origin": "generated",
+      "check_needed": true
+     },
+     {
+      "id": "char_002",
+      "type": "character_writing_item",
+      "order": 2,
+      "hanzi": "喘",
+      "pinyin": "chuǎn",
+      "vocab_ref": "vocab_002",
+      "stroke_count": null,
+      "radical": "",
+      "stroke_order_key": "",
+      "practice": {
+       "grid_type": "田字格",
+       "repeat_count": 6
+      },
+      "source_origin": "generated",
+      "check_needed": true
+     },
+     {
+      "id": "char_003",
+      "type": "character_writing_item",
+      "order": 3,
+      "hanzi": "动",
+      "pinyin": "dòng",
+      "vocab_ref": "vocab_003",
+      "stroke_count": null,
+      "radical": "",
+      "stroke_order_key": "",
+      "practice": {
+       "grid_type": "田字格",
+       "repeat_count": 6
+      },
+      "source_origin": "generated",
+      "check_needed": true
+     },
+     {
+      "id": "char_004",
+      "type": "character_writing_item",
+      "order": 4,
+      "hanzi": "底",
+      "pinyin": "dǐ",
+      "vocab_ref": "vocab_004",
+      "stroke_count": null,
+      "radical": "",
+      "stroke_order_key": "",
+      "practice": {
+       "grid_type": "田字格",
+       "repeat_count": 6
+      },
+      "source_origin": "generated",
+      "check_needed": true
+     },
+     {
+      "id": "char_005",
+      "type": "character_writing_item",
+      "order": 5,
+      "hanzi": "胜",
+      "pinyin": "shèng",
+      "vocab_ref": "vocab_005",
+      "stroke_count": null,
+      "radical": "",
+      "stroke_order_key": "",
+      "practice": {
+       "grid_type": "田字格",
+       "repeat_count": 6
+      },
+      "source_origin": "generated",
+      "check_needed": true
+     },
+     {
+      "id": "char_006",
+      "type": "character_writing_item",
+      "order": 6,
+      "hanzi": "汗",
+      "pinyin": "hàn",
+      "vocab_ref": "vocab_008",
+      "stroke_count": null,
+      "radical": "",
+      "stroke_order_key": "",
+      "practice": {
+       "grid_type": "田字格",
+       "repeat_count": 6
+      },
+      "source_origin": "generated",
+      "check_needed": true
+     },
+     {
+      "id": "char_007",
+      "type": "character_writing_item",
+      "order": 7,
+      "hanzi": "险",
+      "pinyin": "xiǎn",
+      "vocab_ref": "vocab_011",
+      "stroke_count": null,
+      "radical": "",
+      "stroke_order_key": "",
+      "practice": {
+       "grid_type": "田字格",
+       "repeat_count": 6
+      },
+      "source_origin": "generated",
+      "check_needed": true
+     },
+     {
+      "id": "char_008",
+      "type": "character_writing_item",
+      "order": 8,
+      "hanzi": "词",
+      "pinyin": "cí",
+      "vocab_ref": "vocab_015",
+      "stroke_count": null,
+      "radical": "",
+      "stroke_order_key": "",
+      "practice": {
+       "grid_type": "田字格",
+       "repeat_count": 6
+      },
+      "source_origin": "generated",
+      "check_needed": true
+     },
+     {
+      "id": "char_009",
+      "type": "character_writing_item",
+      "order": 9,
+      "hanzi": "背",
+      "pinyin": "bèi",
+      "vocab_ref": "vocab_016",
+      "stroke_count": null,
+      "radical": "",
+      "stroke_order_key": "",
+      "practice": {
+       "grid_type": "田字格",
+       "repeat_count": 6
+      },
+      "source_origin": "generated",
+      "check_needed": true
+     },
+     {
+      "id": "char_010",
+      "type": "character_writing_item",
+      "order": 10,
+      "hanzi": "演",
+      "pinyin": "yǎn",
+      "vocab_ref": "vocab_021",
+      "stroke_count": null,
+      "radical": "",
+      "stroke_order_key": "",
+      "practice": {
+       "grid_type": "田字格",
+       "repeat_count": 6
+      },
+      "source_origin": "generated",
+      "check_needed": true
+     }
+    ]
+   }
+  ],
+  "summary": {
+   "lesson_parts": ["课文", "生词", "专名", "注释", "语法", "练习", "交际会话"],
+   "grammar_points": [
+    {
+     "id": "grammar_01",
+     "title": "可能补语"
+    },
+    {
+     "id": "grammar_01_structure_01",
+     "title": "V + 得 / 不 + 上去"
+    },
+    {
+     "id": "grammar_01_structure_02",
+     "title": "V + 得 / 不 + 动"
+    },
+    {
+     "id": "grammar_01_structure_03",
+     "title": "V + 得 / 不 + 好"
+    },
+    {
+     "id": "grammar_01_structure_04",
+     "title": "V + 得 / 不 + 住"
+    },
+    {
+     "id": "grammar_01_structure_05",
+     "title": "V + 得 / 不 + 准"
+    },
+    {
+     "id": "grammar_01_structure_06",
+     "title": "V + 得 / 不 + 了"
+    },
+    {
+     "id": "grammar_02",
+     "title": "只要……就……"
+    }
+   ],
+   "main_patterns": [
+    {
+     "pattern": "这座山这么高，你爬得上去吗？",
+     "grammar_ref": "grammar_01_structure_01"
+    },
+    {
+     "pattern": "我看你累得都喘不上气来了。",
+     "grammar_ref": ""
+    },
+    {
+     "pattern": "还爬得动吗？",
+     "grammar_ref": "grammar_01_structure_02"
+    },
+    {
+     "pattern": "爬不动的时候就休息一会儿。",
+     "grammar_ref": "grammar_01_structure_02"
+    },
+    {
+     "pattern": "坚持到底，坚持就是胜利。",
+     "grammar_ref": "note_01"
+    },
+    {
+     "pattern": "总是记不住台词。",
+     "grammar_ref": "grammar_01_structure_04"
+    },
+    {
+     "pattern": "有的音我发不准。",
+     "grammar_ref": "grammar_01_structure_05"
+    },
+    {
+     "pattern": "我担心自己演不好。",
+     "grammar_ref": "grammar_01_structure_03"
+    },
+    {
+     "pattern": "只要我们好好儿练，就一定能演好。",
+     "grammar_ref": "grammar_02"
+    },
+    {
+     "pattern": "这个地方这么小，坐得下二百多人吗？",
+     "grammar_ref": "note_03"
+    }
+   ],
+   "exercise_types": [
+    "phonetics",
+    "read_aloud",
+    "substitution_drill",
+    "choose_words_fill_blank",
+    "fill_blank",
+    "complete_dialogue",
+    "correct_sentence",
+    "communication_dialogue",
+    "character_writing",
+    "reading_text",
+    "reading_cloze"
+   ],
+   "source_origin_policy": {
+    "textbook": "Copied/structured from textbook/PDF content.",
+    "web_crosscheck": "Used only to confirm lesson title, lesson structure, and key grammar topics.",
+    "generated": "Generated for app practice/rendering; must be treated as non-textbook unless verified separately.",
+    "textbook/generated_mixed": "Based on textbook communicative function but formatted/simplified for app rendering."
+   },
+   "check_needed": true
+  }
+ },
+ "fix_history": [
+  {
+   "fix_id": "reading_patch_15_23_v1",
+   "description": "Filled previously empty reading section with generated reading_text and reading_cloze items for app rendering.",
+   "affected_section_type": "reading",
+   "source_origin": "generated",
+   "check_needed": true
+  }
+ ]
+}

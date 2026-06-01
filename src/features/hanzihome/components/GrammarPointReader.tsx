@@ -4,25 +4,23 @@ import { Bookmark } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { GrammarEditDialog } from "@/features/hanzihome/components/GrammarEditDialog";
-import { InlineDraftItemEditDialog } from "@/features/hanzihome/components/InlineDraftItemEditDialog";
 import { MarkdownContent } from "@/features/hanzihome/components/MarkdownContent";
-import { SaveMemoryTipButton } from "@/features/hanzihome/memory-tips/SaveMemoryTipButton";
 import type {
  GrammarViewModel,
+ HanziHomeVocabItem,
  LearningStatus,
- VocabViewModel,
 } from "@/features/hanzihome/types";
+import {
+ getVocabDisplayMeaning,
+ getVocabItemKey,
+} from "@/features/hanzihome/utils/vocab-item";
 
 type GrammarPointReaderProps = {
  point: GrammarViewModel | null;
  status: LearningStatus;
  bookmarked: boolean;
- relatedVocab: VocabViewModel[];
+ relatedVocab: HanziHomeVocabItem[];
  lessonId?: string;
- canEditDbContent?: boolean;
- editDraftId?: string;
- editItemId?: string;
  onBookmark: () => void;
  onMarkStatus: (status: LearningStatus) => void;
 };
@@ -32,10 +30,6 @@ export function GrammarPointReader({
  status,
  bookmarked,
  relatedVocab,
- lessonId,
- canEditDbContent = false,
- editDraftId,
- editItemId,
  onBookmark,
 }: GrammarPointReaderProps) {
  if (!point) {
@@ -71,51 +65,6 @@ export function GrammarPointReader({
       )}
      </div>
      <div className="flex flex-wrap gap-2">
-      {canEditDbContent && lessonId ? (
-       <GrammarEditDialog lessonId={lessonId} point={point} />
-      ) : null}
-
-      {!canEditDbContent && !editDraftId && (
-       <Button
-        type="button"
-        variant="outline"
-        disabled
-        title="Bài fallback tĩnh không thể sửa trực tiếp."
-       >
-        Sửa
-       </Button>
-      )}
-
-      {editDraftId && editItemId && (
-       <InlineDraftItemEditDialog
-        kind="grammar"
-        draftId={editDraftId}
-        itemId={editItemId}
-       />
-      )}
-
-      <SaveMemoryTipButton
-       payload={{
-        tipType: "grammar",
-        title: point.cleanTitle || point.title || "Nhắc nhanh ngữ pháp",
-        body:
-         point.core ||
-         point.detailSections?.[0]?.lines[0] ||
-         point.contentMd ||
-         point.cleanTitle,
-        formula: point.structuresView[0],
-        exampleZh: point.examplesParsed[0]?.zh,
-        examplePinyin: point.examplesParsed[0]?.pinyin,
-        exampleVi: point.examplesParsed[0]?.vi,
-        sourceType: "grammar",
-        sourceLessonId: lessonId,
-        sourceItemId: point.id,
-        sourceLabel: point.cleanTitle || point.title,
-        tags: ["grammar"],
-        weight: 3,
-       }}
-      />
-
       <Button variant={bookmarked ? "default" : "outline"} onClick={onBookmark}>
        <Bookmark className="h-4 w-4" />
        {bookmarked ? "Đã lưu" : "Lưu"}
@@ -136,8 +85,8 @@ export function GrammarPointReader({
       </h3>
       <div className="flex flex-wrap gap-2">
        {relatedVocab.map((word) => (
-        <Badge key={word.id} variant="accent" size="lg">
-         {word.word} · {word.meaning}
+        <Badge key={getVocabItemKey(word)} variant="accent" size="lg">
+         {word.hanzi} · {getVocabDisplayMeaning(word)}
         </Badge>
        ))}
       </div>

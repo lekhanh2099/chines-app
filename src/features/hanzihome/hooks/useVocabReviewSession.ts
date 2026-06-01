@@ -4,10 +4,14 @@ import { useCallback, useMemo, useReducer } from "react";
 
 import type {
   GrammarViewModel,
+  HanziHomeVocabItem,
   LearningStatus,
   ReviewResult,
-  VocabViewModel,
 } from "@/features/hanzihome/types";
+import {
+  getVocabDisplayMeaning,
+  getVocabItemKey,
+} from "@/features/hanzihome/utils/vocab-item";
 
 export type ReviewDeckMode = "all" | "vocab" | "grammar" | "hard";
 
@@ -18,7 +22,7 @@ export type ReviewItem =
       prompt: string;
       answer: string;
       status: LearningStatus;
-      source: VocabViewModel;
+      source: HanziHomeVocabItem;
     }
   | {
       type: "grammar";
@@ -68,7 +72,7 @@ function getRank(status: LearningStatus) {
 }
 
 export function useVocabReviewSession(input: {
-  vocab: VocabViewModel[];
+  vocab: HanziHomeVocabItem[];
   grammar: GrammarViewModel[];
   vocabProgress: Record<string, { status: LearningStatus }>;
   grammarProgress: Record<string, { status: LearningStatus }>;
@@ -76,13 +80,16 @@ export function useVocabReviewSession(input: {
 }) {
   const items = useMemo<ReviewItem[]>(() => {
     const vocabItems: ReviewItem[] = input.vocab.map((item) => {
-      const status = input.vocabProgress[item.id]?.status || "new";
+      const itemId = getVocabItemKey(item);
+      const status = input.vocabProgress[itemId]?.status || "new";
 
       return {
         type: "vocab",
-        id: item.id,
-        prompt: item.word,
-        answer: [item.pinyin, item.hanViet, item.meaning].filter(Boolean).join(" · "),
+        id: itemId,
+        prompt: item.hanzi,
+        answer: [item.pinyin, item.meaning.hanviet, getVocabDisplayMeaning(item)]
+          .filter(Boolean)
+          .join(" · "),
         status,
         source: item,
       };

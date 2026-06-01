@@ -4,7 +4,6 @@ import { useMemo, useState } from "react";
 import Link from "next/link";
 import { useQueries, useQuery } from "@tanstack/react-query";
 import { BookOpen, GraduationCap, RotateCcw, Search } from "lucide-react";
-import { z } from "zod";
 
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
@@ -14,65 +13,49 @@ import {
  TooltipProvider,
  TooltipTrigger,
 } from "@/components/ui/tooltip";
-import { lessonSchema } from "@/features/hanzihome/hanzihome-api.schemas";
 import { useHanziHomeCatalogData } from "@/features/hanzihome/hooks/useHanziHomeCatalogData";
 import { useLearningState } from "@/features/hanzihome/hooks/useLearningState";
 import { VocabReviewPanel } from "@/features/hanzihome/components/VocabReviewPanel";
+import {
+ getHanziHomeData,
+ getHanziHomeLessonDetail,
+} from "@/features/hanzihome/static-data";
 import type { HanziHomeLesson, ReviewResult } from "@/features/hanzihome/types";
 
 type AggregateKind = "vocab" | "grammar";
 
-const aggregateVocabItemSchema = z.object({
- id: z.string(),
- courseId: z.string(),
- bookId: z.string(),
- lessonId: z.string(),
- lessonNumber: z.number(),
- lessonOrder: z.number(),
- lessonTitle: z.string(),
- word: z.string(),
- pinyin: z.string(),
- hanViet: z.string(),
- meaning: z.string(),
- category: z.string(),
- level: z.string().nullable().optional(),
- pos: z
-  .object({
-   vi: z.string().nullable().optional(),
-   zh: z.string().nullable().optional(),
-  })
-  .nullable()
-  .optional(),
-});
+type AggregateVocabItem = {
+ id: string;
+ courseId: string;
+ bookId: string;
+ lessonId: string;
+ lessonNumber: number;
+ lessonOrder: number;
+ lessonTitle: string;
+ word: string;
+ pinyin: string;
+ hanViet: string;
+ meaning: string;
+ category: string;
+ level?: string | null;
+ pos?: {
+  vi?: string | null;
+  zh?: string | null;
+ } | null;
+};
 
-const aggregateGrammarItemSchema = z.object({
- id: z.string(),
- courseId: z.string(),
- bookId: z.string(),
- lessonId: z.string(),
- lessonNumber: z.number(),
- lessonOrder: z.number(),
- lessonTitle: z.string(),
- title: z.string(),
- cleanTitle: z.string(),
- core: z.string(),
-});
-
-type AggregateVocabItem = z.infer<typeof aggregateVocabItemSchema>;
-type AggregateGrammarItem = z.infer<typeof aggregateGrammarItemSchema>;
-
-const vocabResponseSchema = z.object({
- items: z.array(aggregateVocabItemSchema),
-});
-
-const grammarResponseSchema = z.object({
- items: z.array(aggregateGrammarItemSchema),
-});
-
-const lessonDetailResponseSchema = z.object({
- source: z.enum(["db", "empty"]),
- lesson: lessonSchema.nullable(),
-});
+type AggregateGrammarItem = {
+ id: string;
+ courseId: string;
+ bookId: string;
+ lessonId: string;
+ lessonNumber: number;
+ lessonOrder: number;
+ lessonTitle: string;
+ title: string;
+ cleanTitle: string;
+ core: string;
+};
 
 type AggregateFilters = {
  courseId: string;
@@ -81,76 +64,97 @@ type AggregateFilters = {
  q: string;
 };
 
-const seedCourseIds = new Set(["hanyu-jiaocheng"]);
+function matchesTextQuery(values: string[], query: string) {
+ const normalizedQuery = query.trim().toLocaleLowerCase("vi-VN");
+ if (!normalizedQuery) return true;
 
-async function fetchAggregateData({
+ return values.some((value) =>
+  value.toLocaleLowerCase("vi-VN").includes(normalizedQuery),
+ );
+}
+
+function getStaticAggregateData({
  kind,
  filters,
 }: {
  kind: AggregateKind;
  filters: AggregateFilters;
-}) {
- const params = new URLSearchParams();
+}): Array<AggregateVocabItem | AggregateGrammarItem> {
+ const lessons = getHanziHomeData().lessons.filter((lesson) => {
+  if (filters.courseId && lesson.courseId !== filters.courseId) return false;
+  if (filters.bookId && lesson.bookId !== filters.bookId) return false;
+  if (filters.lessonId && lesson.id !== filters.lessonId) return false;
+  return true;
+ });
 
- if (filters.courseId) params.set("courseId", filters.courseId);
- if (filters.bookId) params.set("bookId", filters.bookId);
- if (filters.lessonId) params.set("lessonId", filters.lessonId);
- if (filters.q.trim()) params.set("q", filters.q.trim());
-
- const response = await fetch(
-  `/api/hanzihome/${kind}${params.size > 0 ? `?${params.toString()}` : ""}`,
-  {
-   method: "GET",
-   cache: "no-store",
-   headers: {
-    Accept: "application/json",
-   },
-  },
- );
-
- if (!response.ok) {
-  throw new Error(
-   kind === "vocab" ? "Không tải được từ vựng" : "Không tải được ngữ pháp",
+ if (kind === "vocab") {
+  return lessons.flatMap((lesson) =>
+   lesson.vocab
+    .map((item): AggregateVocabItem => ({
+     id: item.runtimeId,
+     courseId: lesson.courseId || "",
+     bookId: lesson.bookId || "",
+     lessonId: lesson.id,
+     lessonNumber: lesson.lessonNumber,
+     lessonOrder: lesson.lessonOrder ?? lesson.lessonNumber,
+     lessonTitle: lesson.titleZh || lesson.title,
+     word: item.hanzi,
+     pinyin: item.pinyin,
+     hanViet: item.meaning.hanviet || "",
+     meaning: item.meaning.meaning_vi,
+     category: item.category,
+     level: item.level_tag,
+     pos: {
+      vi: item.pos.raw_vi || item.pos.normalized,
+      zh: item.pos.raw_cn || item.pos.normalized,
+     },
+    }))
+    .filter((item) =>
+     matchesTextQuery(
+      [
+       item.word,
+       item.pinyin,
+       item.hanViet,
+       item.meaning,
+       item.category,
+       item.lessonTitle,
+      ],
+      filters.q,
+     ),
+    ),
   );
  }
 
- const json: unknown = await response.json();
-
- return kind === "vocab"
-  ? vocabResponseSchema.parse(json).items
-  : grammarResponseSchema.parse(json).items;
-}
-
-async function fetchLessonDetail(
- lessonId: string,
-): Promise<HanziHomeLesson | null> {
- const response = await fetch(
-  `/api/hanzihome/lessons/${encodeURIComponent(lessonId)}`,
-  {
-   method: "GET",
-   cache: "no-store",
-   headers: {
-    Accept: "application/json",
-   },
-  },
+ return lessons.flatMap((lesson) =>
+  lesson.grammar
+   .map((item): AggregateGrammarItem => ({
+    id: item.id,
+    courseId: lesson.courseId || "",
+    bookId: lesson.bookId || "",
+    lessonId: lesson.id,
+    lessonNumber: lesson.lessonNumber,
+    lessonOrder: lesson.lessonOrder ?? lesson.lessonNumber,
+    lessonTitle: lesson.titleZh || lesson.title,
+    title: item.title || item.cleanTitle,
+    cleanTitle: item.cleanTitle,
+    core: item.core,
+   }))
+   .filter((item) =>
+    matchesTextQuery(
+     [item.title, item.cleanTitle, item.core, item.lessonTitle],
+     filters.q,
+    ),
+   ),
  );
-
- if (!response.ok) {
-  throw new Error("Could not load HanziHome lesson detail");
- }
-
- const json: unknown = await response.json();
-
- return lessonDetailResponseSchema.parse(json).lesson;
 }
 
 function useReviewLessons(lessonIds: string[]) {
  const queries = useQueries({
   queries: lessonIds.map((lessonId) => ({
    queryKey: ["hanzihome", "lesson-detail", lessonId] as const,
-   queryFn: () => fetchLessonDetail(lessonId),
+   queryFn: () => Promise.resolve(getHanziHomeLessonDetail(lessonId)),
    enabled: Boolean(lessonId),
-   staleTime: 0,
+   staleTime: Infinity,
   })),
  });
 
@@ -175,10 +179,7 @@ export function HanziHomeAggregateLibrary({ kind }: { kind: AggregateKind }) {
   [],
  );
  const reviewLessons = useReviewLessons(activeReviewLessonIds);
- const aggregateCourses = useMemo(
-  () => catalog.courses.filter((course) => !seedCourseIds.has(course.id)),
-  [catalog.courses],
- );
+ const aggregateCourses = catalog.courses;
  const aggregateCourseIds = useMemo(
   () => new Set(aggregateCourses.map((course) => course.id)),
   [aggregateCourses],
@@ -220,10 +221,10 @@ export function HanziHomeAggregateLibrary({ kind }: { kind: AggregateKind }) {
   [aggregateLessons, filters.bookId, filters.courseId],
  );
 
- const query = useQuery({
+const query = useQuery({
   queryKey: ["hanzihome", `aggregate-${kind}`, filters],
-  queryFn: () => fetchAggregateData({ kind, filters }),
-  staleTime: 0,
+  queryFn: () => Promise.resolve(getStaticAggregateData({ kind, filters })),
+  staleTime: Infinity,
  });
 
  const items = useMemo(() => query.data ?? [], [query.data]);
@@ -774,8 +775,6 @@ function combineReviewLessons(
    kind === "grammar"
     ? lessons.flatMap((lesson) => lesson.grammarPointIds)
     : [],
-  isDbBacked: false,
-  draftId: undefined,
  };
 }
 

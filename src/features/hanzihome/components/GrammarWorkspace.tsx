@@ -5,7 +5,6 @@ import { PanelLeftClose, PanelLeftOpen } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Sheet, SheetHeader } from "@/components/ui/sheet";
-import { InlineDraftItemEditDialog } from "@/features/hanzihome/components/InlineDraftItemEditDialog";
 import { GrammarPointList } from "@/features/hanzihome/components/GrammarPointList";
 import { GrammarPointReader } from "@/features/hanzihome/components/GrammarPointReader";
 import { GrammarPracticeMini } from "@/features/hanzihome/components/GrammarPracticeMini";
@@ -198,7 +197,7 @@ export function GrammarWorkspace({
    selectedPoint.examplesParsed.map((example) => example.zh).join(" "),
   ].join(" ");
 
-  return lesson.vocab.filter((word) => text.includes(word.word)).slice(0, 8);
+  return lesson.vocab.filter((word) => text.includes(word.hanzi)).slice(0, 8);
  }, [lesson.vocab, selectedPoint]);
 
  const renderGrammarSidebar = () => (
@@ -236,7 +235,7 @@ export function GrammarWorkspace({
  );
 
  const readerContent = isAllView ? (
-  <AllGrammarPointReader points={lesson.grammar} draftId={lesson.draftId} />
+  <AllGrammarPointReader points={lesson.grammar} />
  ) : isReadingView && reading ? (
   <GrammarReadingReader reading={reading} />
  ) : (
@@ -246,13 +245,6 @@ export function GrammarWorkspace({
    bookmarked={selectedPoint ? bookmarks.includes(selectedPoint.id) : false}
    relatedVocab={relatedVocab}
    lessonId={lesson.id}
-   canEditDbContent={Boolean(
-    lesson.isDbBacked &&
-     !lesson.draftId &&
-     lesson.courseId !== "hanyu-jiaocheng",
-   )}
-   editDraftId={lesson.draftId}
-   editItemId={selectedPoint?.id}
    onBookmark={() => selectedPoint && onBookmark(selectedPoint.id)}
    onMarkStatus={(status) =>
     selectedPoint && onMarkStatus(selectedPoint.id, status)
@@ -399,13 +391,7 @@ function hasExampleDetailSection(point: GrammarViewModel) {
  );
 }
 
-function AllGrammarPointReader({
- points,
- draftId,
-}: {
- points: GrammarViewModel[];
- draftId?: string;
-}) {
+function AllGrammarPointReader({ points }: { points: GrammarViewModel[] }) {
  return (
   <div className="grid gap-4">
    {points.map((point, index) => (
@@ -425,13 +411,6 @@ function AllGrammarPointReader({
         </h2>
        </div>
 
-       {draftId && (
-        <InlineDraftItemEditDialog
-         kind="grammar"
-         draftId={draftId}
-         itemId={point.id}
-        />
-       )}
       </div>
 
       {point.core && (

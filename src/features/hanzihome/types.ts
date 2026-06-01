@@ -1,8 +1,11 @@
-import type bundle from "../../../data/hanzihome/hanzihome_bundle_clean.json";
+import type radicalsData from "../../../data/hanzihome/hanzihome_radicals_clean.json";
+import type { HanyuLesson } from "@/features/hanzihome/static-json/schemas/hanyuLesson.schema";
+import type { DeepVocabularyItem } from "@/features/hanzihome/static-json/schemas/vocab.schema";
 
 export type HanziHomeModule =
  | "overview"
  | "lessonText"
+ | "notes"
  | "vocab"
  | "grammar"
  | "radicals"
@@ -30,10 +33,23 @@ export type HanziHomeCourseBook = {
  order: number;
 };
 
-export type StaticLessonData = (typeof bundle.lessons)[number];
-export type StaticVocabData = (typeof bundle.vocab)[number];
-export type StaticGrammarData = (typeof bundle.grammarPoints)[number];
-export type StaticRadicalData = (typeof bundle.radicals)[number];
+export type StaticRadicalData = (typeof radicalsData.radicals)[number];
+
+export type HanziHomeMeta = {
+ app: string;
+ dataset: string;
+ version: string;
+ generatedAt: string;
+ sourceFiles: string[];
+ counts: {
+  lessons: number;
+  vocab: number;
+  grammarPoints: number;
+  radicals: number;
+  flashcards: number;
+ };
+ schemaNote?: string;
+};
 
 export type VocabExample = {
  zh: string;
@@ -42,25 +58,10 @@ export type VocabExample = {
  note?: string;
 };
 
-export type VocabViewModel = {
- id: string;
+export type HanziHomeVocabItem = DeepVocabularyItem & {
+ runtimeId: string;
  lessonId?: string;
- word: string;
- pinyin: string;
- hanViet: string;
- meaning: string;
  category: string;
- level?: string;
- pos?: {
-  vi?: string;
-  zh?: string;
- };
- examplesParsed: VocabExample[];
- detailSections: Array<{
-  key: string;
-  title: string;
-  lines: string[];
- }>;
 };
 
 export type GrammarViewModel = {
@@ -81,6 +82,9 @@ export type GrammarViewModel = {
 
 export type LessonNotesViewModel = {
  overviewMarkdown?: string;
+ lessonTextMarkdown?: string;
+ exerciseMarkdown?: string;
+ readingMarkdown?: string;
  grammarSummary?: string;
  vocabularyText?: string;
  properNounsText?: string;
@@ -108,13 +112,10 @@ export type HanziHomeLesson = {
  grammarCount?: number;
  vocabIds: string[];
  grammarPointIds: string[];
- vocab: VocabViewModel[];
+ vocab: HanziHomeVocabItem[];
  grammar: GrammarViewModel[];
- isDraft?: boolean;
- isDbBacked?: boolean;
- draftId?: string;
- status?: "draft" | "published" | "archived";
  notes?: LessonNotesViewModel;
+ sourceLesson?: HanyuLesson;
 };
 
 export type HanziHomeData = {
@@ -122,7 +123,7 @@ export type HanziHomeData = {
  books: HanziHomeCourseBook[];
  lessons: HanziHomeLesson[];
  radicals: StaticRadicalData[];
- meta: typeof bundle.meta;
+ meta: HanziHomeMeta;
 };
 
 export type HanziHomeCatalogSource = "db" | "static" | "empty";
@@ -146,7 +147,7 @@ export type HanziHomeCatalogData = {
  books: HanziHomeCourseBook[];
  lessons: HanziHomeLesson[];
  radicals: StaticRadicalData[];
- meta: typeof bundle.meta;
+ meta: HanziHomeMeta;
 };
 
 export type LearningProgressItem = {

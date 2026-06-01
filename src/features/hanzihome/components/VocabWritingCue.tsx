@@ -3,11 +3,12 @@
 import { useState } from "react";
 
 import { HanziStrokeWriter } from "@/features/hanzihome/components/HanziStrokeWriter";
-import type { VocabViewModel } from "@/features/hanzihome/types";
+import type { HanziHomeVocabItem } from "@/features/hanzihome/types";
 import { Button } from "@/components/ui/button";
+import { getVocabDisplayMeaning } from "@/features/hanzihome/utils/vocab-item";
 
 type VocabWritingCueProps = {
- word: VocabViewModel;
+ word: HanziHomeVocabItem;
  size?: number;
  autoPlay?: boolean;
  className?: string;
@@ -16,23 +17,24 @@ type VocabWritingCueProps = {
  onSelectedIndexChange?: (index: number) => void;
 };
 
-function getWritingLines(word: VocabViewModel) {
- const writingSection =
-  word.detailSections.find((section) =>
-   ["writing", "strokes", "stroke", "etymology", "logic"].includes(section.key),
-  ) ||
-  word.detailSections.find((section) =>
-   /nét|viết|chiết tự|cấu tạo|logic/i.test(section.title),
-  );
-
- return writingSection?.lines.slice(0, 4) ?? [];
+function getWritingLines(word: HanziHomeVocabItem) {
+ return word.word_formation.characters
+  .flatMap((character) => [
+   character.modern_meaning_vi
+    ? `${character.hanzi}: ${character.modern_meaning_vi}`
+    : "",
+   character.modern_logic_vi,
+   character.structure_note_vi,
+  ])
+  .filter(Boolean)
+  .slice(0, 4);
 }
 
-function getCharacterInfo(word: VocabViewModel) {
+function getCharacterInfo(word: HanziHomeVocabItem) {
  return {
   pinyin: word.pinyin,
-  meaning: word.meaning,
-  hanViet: word.hanViet,
+  meaning: getVocabDisplayMeaning(word),
+  hanViet: word.meaning.hanviet,
   lines: getWritingLines(word),
  };
 }
@@ -46,7 +48,7 @@ export function VocabWritingCue({
  selectedIndex,
  onSelectedIndexChange,
 }: VocabWritingCueProps) {
- const chars = Array.from(word.word).filter((char) =>
+ const chars = Array.from(word.hanzi).filter((char) =>
   /\p{Script=Han}/u.test(char),
  );
 

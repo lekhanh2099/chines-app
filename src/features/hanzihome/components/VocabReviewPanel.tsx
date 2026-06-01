@@ -28,6 +28,9 @@ import type {
  ReviewResult,
  UserLearningState,
 } from "@/features/hanzihome/types";
+import {
+ getVocabDisplayMeaning,
+} from "@/features/hanzihome/utils/vocab-item";
 
 type VocabReviewPanelProps = {
  lesson: HanziHomeLesson;
@@ -86,8 +89,8 @@ export function VocabReviewPanel({
  const { answer, reveal } = session;
 
  const writingCharacterCount =
-  item?.type === "vocab" && session.state.revealed
-   ? Array.from(item.source.word).filter((char) =>
+ item?.type === "vocab" && session.state.revealed
+   ? Array.from(item.source.hanzi).filter((char) =>
     /\p{Script=Han}/u.test(char),
    ).length
    : 0;
@@ -371,7 +374,7 @@ function FlashCardBack({
  onSelectedWritingIndexChange: (index: number) => void;
 }) {
  if (item.type === "vocab") {
-  const example = item.source.examplesParsed[0];
+  const example = item.source.examples[0];
 
   return (
    <div className="grid gap-3 rounded-xl border border-border-default bg-bg-subtle p-3 text-left sm:p-4">
@@ -382,7 +385,7 @@ function FlashCardBack({
       </p>
 
       <p className="text-base font-bold text-text-secondary">
-       {item.source.hanViet} · {item.source.meaning}
+       {item.source.meaning.hanviet} · {getVocabDisplayMeaning(item.source)}
       </p>
      </div>
 
@@ -515,7 +518,6 @@ function FlashcardDetailDialog({
   item.type === "vocab"
    ? Boolean(learningState.bookmarks.vocab?.includes(item.id))
    : Boolean(learningState.bookmarks.grammar?.includes(item.id));
- const canEditDbContent = Boolean(itemLesson.isDbBacked && !itemLesson.draftId);
 
  return (
   <Dialog open={open} onOpenChange={onOpenChange}>
@@ -525,7 +527,7 @@ function FlashcardDetailDialog({
       {item.type === "vocab" ? "Chi tiết từ vựng" : "Chi tiết ngữ pháp"}
      </DialogTitle>
      <DialogDescription>
-      Xem lại nội dung đang ôn, chỉnh nhanh nếu đây là bài có thể sửa.
+      Xem lại nội dung đang ôn trong bài hiện tại.
      </DialogDescription>
     </DialogHeader>
     <DialogBody className="min-h-0 flex-1 overflow-y-auto scrollbar-soft py-2">
@@ -535,9 +537,6 @@ function FlashcardDetailDialog({
        status={status}
        bookmarked={bookmarked}
        lessonId={itemLesson.id}
-       canEditDbContent={canEditDbContent}
-       editDraftId={itemLesson.draftId}
-       editItemId={item.id}
        onBookmark={() => onToggleBookmark?.("vocab", item.id)}
        onMarkStatus={(nextStatus) => {
         if (nextStatus === "hard")
@@ -555,9 +554,6 @@ function FlashcardDetailDialog({
        bookmarked={bookmarked}
        relatedVocab={lesson.vocab}
        lessonId={itemLesson.id}
-       canEditDbContent={canEditDbContent}
-       editDraftId={itemLesson.draftId}
-       editItemId={item.id}
        onBookmark={() => onToggleBookmark?.("grammar", item.id)}
        onMarkStatus={(nextStatus) => {
         if (nextStatus === "hard")

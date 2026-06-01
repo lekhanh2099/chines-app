@@ -8,6 +8,10 @@ import type {
  LearningStatus,
  UserLearningState,
 } from "@/features/hanzihome/types";
+import {
+ getVocabItemKey,
+ getVocabSearchText,
+} from "@/features/hanzihome/utils/vocab-item";
 
 type VocabWorkspaceProps = {
  lesson: HanziHomeLesson;
@@ -24,11 +28,11 @@ export function VocabWorkspace({
  onMarkStatus,
 }: VocabWorkspaceProps) {
  const [selectedWordId, setSelectedWordId] = useState<string | null>(
-  lesson.vocab[0]?.id || null,
+  lesson.vocab[0] ? getVocabItemKey(lesson.vocab[0]) : null,
  );
  const [searchValue, setSearchValue] = useState("");
  const [statusFilter, setStatusFilter] = useState<"all" | LearningStatus>(
-  "all",
+ "all",
  );
 
  const bookmarks = state.bookmarks.vocab || [];
@@ -41,17 +45,10 @@ export function VocabWorkspace({
   const keyword = searchValue.trim().toLowerCase();
 
   return lesson.vocab.filter((word) => {
-   const status = progress[word.id]?.status || "new";
+   const wordId = getVocabItemKey(word);
+   const status = progress[wordId]?.status || "new";
    const matchesStatus = statusFilter === "all" || status === statusFilter;
-   const haystack = [
-    word.word,
-    word.pinyin,
-    word.hanViet,
-    word.meaning,
-    word.category,
-   ]
-    .join(" ")
-    .toLowerCase();
+   const haystack = getVocabSearchText(word);
 
    return matchesStatus && (!keyword || haystack.includes(keyword));
   });
@@ -59,7 +56,7 @@ export function VocabWorkspace({
 
  const selectedWord = useMemo(
   () =>
-   visibleWords.find((word) => word.id === selectedWordId) ||
+   visibleWords.find((word) => getVocabItemKey(word) === selectedWordId) ||
    visibleWords[0] ||
    null,
   [selectedWordId, visibleWords],
@@ -70,14 +67,17 @@ export function VocabWorkspace({
    if (visibleWords.length === 0) return;
 
    const currentIndex = selectedWord
-    ? visibleWords.findIndex((word) => word.id === selectedWord.id)
+    ? visibleWords.findIndex(
+       (word) => getVocabItemKey(word) === getVocabItemKey(selectedWord),
+      )
     : -1;
    const nextIndex =
     currentIndex >= 0
      ? (currentIndex + offset + visibleWords.length) % visibleWords.length
      : 0;
 
-   setSelectedWordId(visibleWords[nextIndex]?.id ?? null);
+   const nextWord = visibleWords[nextIndex];
+   setSelectedWordId(nextWord ? getVocabItemKey(nextWord) : null);
   },
   [selectedWord, visibleWords],
  );
@@ -115,7 +115,7 @@ export function VocabWorkspace({
   <div className="grid gap-3">
    <VocabList
     words={visibleWords}
-    selectedWordId={selectedWord?.id || null}
+    selectedWordId={selectedWord ? getVocabItemKey(selectedWord) : null}
     progress={progress}
     bookmarkedIds={bookmarks}
     searchValue={searchValue}
@@ -127,19 +127,18 @@ export function VocabWorkspace({
 
    <VocabDetailPanel
     word={selectedWord}
-    status={selectedWord ? progress[selectedWord.id]?.status || "new" : "new"}
-    bookmarked={selectedWord ? bookmarks.includes(selectedWord.id) : false}
+    status={
+     selectedWord
+      ? progress[getVocabItemKey(selectedWord)]?.status || "new"
+      : "new"
+    }
+    bookmarked={
+     selectedWord ? bookmarks.includes(getVocabItemKey(selectedWord)) : false
+    }
     lessonId={lesson.id}
-    canEditDbContent={Boolean(
-     !lesson.draftId &&
-      lesson.courseId !== "hanyu-jiaocheng" &&
-      (lesson.isDbBacked || lesson.id.includes("__")),
-    )}
-    editDraftId={lesson.draftId}
-    editItemId={selectedWord?.id}
-    onBookmark={() => selectedWord && onBookmark(selectedWord.id)}
+    onBookmark={() => selectedWord && onBookmark(getVocabItemKey(selectedWord))}
     onMarkStatus={(status) =>
-     selectedWord && onMarkStatus(selectedWord.id, status)
+     selectedWord && onMarkStatus(getVocabItemKey(selectedWord), status)
     }
    />
   </div>

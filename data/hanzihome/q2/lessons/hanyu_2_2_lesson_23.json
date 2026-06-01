@@ -1,0 +1,3904 @@
+{
+ "schema_version": "2.2.0",
+ "content_type": "chinese_textbook_lesson",
+ "verification_status": "final_verified_with_marked_generated_fields",
+ "source": {
+  "book": "Hanyu Jiaocheng",
+  "volume": "第二册下",
+  "volume_vi": "Quyển 2 Hạ",
+  "lesson_index": 23,
+  "lesson_number_cn": "第二十三课",
+  "lesson_title_cn": "寒假你打算去哪儿旅行",
+  "lesson_title_pinyin": "Hánjià nǐ dǎsuàn qù nǎr lǚxíng",
+  "lesson_title_vi": "Kỳ nghỉ đông bạn dự định đi đâu du lịch?",
+  "lesson_title_en": "Where are you planning to travel during the winter vacation?",
+  "source_files": [
+   {
+    "name": "Hanyu Jiaocheng 2-2.pdf",
+    "type": "pdf_scan",
+    "source_origin": "textbook",
+    "check_needed": false
+   },
+   {
+    "name": "Ngoại Ngữ Hà Nội - 寒假你打算去哪儿旅行",
+    "type": "web_crosscheck",
+    "source_origin": "web_crosscheck",
+    "check_needed": false
+   },
+   {
+    "name": "Hoctiengtrungtudau - Hán ngữ 4 bài 48",
+    "type": "web_crosscheck",
+    "source_origin": "web_crosscheck",
+    "check_needed": false
+   }
+  ],
+  "web_crosscheck": [
+   {
+    "title": "寒假你打算去哪儿旅行 - Kỳ nghỉ đông bạn dự định đi đâu du lịch",
+    "source_origin": "web_crosscheck",
+    "note": "Used to cross-check lesson title, core dialogues, and key grammar examples."
+   },
+   {
+    "title": "Hán ngữ 4 bài 48: Kì nghỉ đông bạn định đi đâu du lịch",
+    "source_origin": "web_crosscheck",
+    "note": "Used to cross-check the two lesson texts and examples: 什么都可以, 谁都可以报名, 怎么去都行."
+   }
+  ]
+ },
+ "lesson": {
+  "id": "hanyu_2_2_lesson_23",
+  "title": {
+   "zh": "寒假你打算去哪儿旅行",
+   "pinyin": "Hánjià nǐ dǎsuàn qù nǎr lǚxíng",
+   "vi": "Kỳ nghỉ đông bạn dự định đi đâu du lịch?",
+   "en": "Where are you planning to travel during the winter vacation?"
+  },
+  "tags": [
+   "hanyu_2_2",
+   "lesson_23",
+   "hsk3-ish",
+   "travel_plan",
+   "winter_vacation",
+   "interrogative_pronouns"
+  ],
+  "sections": [
+   {
+    "id": "section_01_text",
+    "type": "text",
+    "order": 1,
+    "title": "课文",
+    "title_vi": "Bài khóa",
+    "source_origin": "textbook",
+    "check_needed": false,
+    "blocks": [
+     {
+      "id": "text_01",
+      "type": "text_dialogue",
+      "order": 1,
+      "title": "吃什么都可以",
+      "title_vi": "Ăn gì cũng được",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "lines": [
+       {
+        "id": "text_01_l01",
+        "order": 1,
+        "speaker": "麦克",
+        "zh": "我有点儿饿了，想吃点儿什么。你呢？",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook",
+        "check_needed": false
+       },
+       {
+        "id": "text_01_l02",
+        "order": 2,
+        "speaker": "玛丽",
+        "zh": "我也又饿又渴。咱们去饭馆儿吧。",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook",
+        "check_needed": false
+       },
+       {
+        "id": "text_01_l03",
+        "order": 3,
+        "speaker": "旁白",
+        "zh": "（在饭馆儿）",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook",
+        "check_needed": false
+       },
+       {
+        "id": "text_01_l04",
+        "order": 4,
+        "speaker": "麦克",
+        "zh": "你想吃点儿什么？",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook",
+        "check_needed": false
+       },
+       {
+        "id": "text_01_l05",
+        "order": 5,
+        "speaker": "玛丽",
+        "zh": "你点吧，什么都可以。",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook",
+        "check_needed": false
+       },
+       {
+        "id": "text_01_l06",
+        "order": 6,
+        "speaker": "麦克",
+        "zh": "那就什么好吃吃什么。",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook",
+        "check_needed": false
+       },
+       {
+        "id": "text_01_l07",
+        "order": 7,
+        "speaker": "服务员",
+        "zh": "你们两位要点儿什么？",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook",
+        "check_needed": false
+       },
+       {
+        "id": "text_01_l08",
+        "order": 8,
+        "speaker": "麦克",
+        "zh": "服务员，你们这儿有什么好吃的菜？",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook",
+        "check_needed": false
+       },
+       {
+        "id": "text_01_l09",
+        "order": 9,
+        "speaker": "服务员",
+        "zh": "我们这儿什么菜都好吃啊。",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook",
+        "check_needed": false
+       },
+       {
+        "id": "text_01_l10",
+        "order": 10,
+        "speaker": "麦克",
+        "zh": "是吗？那把你们这儿最好吃的菜给我们来两个。",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook",
+        "check_needed": false
+       },
+       {
+        "id": "text_01_l11",
+        "order": 11,
+        "speaker": "服务员",
+        "zh": "这儿的辣子鸡丁和糖醋鱼都不错。",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook",
+        "check_needed": false
+       },
+       {
+        "id": "text_01_l12",
+        "order": 12,
+        "speaker": "麦克",
+        "zh": "那就一样来一个吧。我们喝点儿什么呢？",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook",
+        "check_needed": false
+       },
+       {
+        "id": "text_01_l13",
+        "order": 13,
+        "speaker": "玛丽",
+        "zh": "随便。你说喝什么就喝什么吧。",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook",
+        "check_needed": false
+       }
+      ]
+     },
+     {
+      "id": "text_02",
+      "type": "text_dialogue",
+      "order": 2,
+      "title": "你是哪儿冷去哪儿啊",
+      "title_vi": "Chỗ nào lạnh thì bạn đi chỗ đó à?",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "lines": [
+       {
+        "id": "text_02_l01",
+        "order": 1,
+        "speaker": "田中",
+        "zh": "时间过得真快，下周考完试就要放寒假了。",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook",
+        "check_needed": false
+       },
+       {
+        "id": "text_02_l02",
+        "order": 2,
+        "speaker": "麦克",
+        "zh": "是啊。寒假你有什么打算吗？",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook",
+        "check_needed": false
+       },
+       {
+        "id": "text_02_l03",
+        "order": 3,
+        "speaker": "田中",
+        "zh": "学校要组织留学生去外地旅行，谁都可以报名，你报名吗？",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook",
+        "check_needed": false
+       },
+       {
+        "id": "text_02_l04",
+        "order": 4,
+        "speaker": "麦克",
+        "zh": "我听谁说过这件事儿。不过我想自己去旅行。",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook",
+        "check_needed": false
+       },
+       {
+        "id": "text_02_l05",
+        "order": 5,
+        "speaker": "田中",
+        "zh": "去哪儿？",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook",
+        "check_needed": false
+       },
+       {
+        "id": "text_02_l06",
+        "order": 6,
+        "speaker": "麦克",
+        "zh": "哪儿好玩儿就去哪儿。我想去哈尔滨。",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook",
+        "check_needed": false
+       },
+       {
+        "id": "text_02_l07",
+        "order": 7,
+        "speaker": "田中",
+        "zh": "哈尔滨？你是哪儿冷去哪儿啊。现在那儿白天已经零下二十多度了。",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook",
+        "check_needed": false
+       },
+       {
+        "id": "text_02_l08",
+        "order": 8,
+        "speaker": "麦克",
+        "zh": "听说哈尔滨的冰灯冰雕很好看，我想去看看。",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook",
+        "check_needed": false
+       },
+       {
+        "id": "text_02_l09",
+        "order": 9,
+        "speaker": "田中",
+        "zh": "你想怎么去？",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook",
+        "check_needed": false
+       },
+       {
+        "id": "text_02_l10",
+        "order": 10,
+        "speaker": "麦克",
+        "zh": "除了骑自行车以外，怎么去都行。",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook",
+        "check_needed": false
+       },
+       {
+        "id": "text_02_l11",
+        "order": 11,
+        "speaker": "田中",
+        "zh": "你又开玩笑。",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook",
+        "check_needed": false
+       },
+       {
+        "id": "text_02_l12",
+        "order": 12,
+        "speaker": "麦克",
+        "zh": "要是买不到火车票就坐飞机去。你的计划呢？",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook",
+        "check_needed": false
+       },
+       {
+        "id": "text_02_l13",
+        "order": 13,
+        "speaker": "田中",
+        "zh": "我打算先去西安看看碑林和兵马俑，再到重庆，从重庆坐船游览长江三峡，然后去云南、桂林，最后去苏州和杭州。",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook",
+        "check_needed": false
+       },
+       {
+        "id": "text_02_l14",
+        "order": 14,
+        "speaker": "麦克",
+        "zh": "田芳说，苏州、杭州很美。",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook",
+        "check_needed": false
+       },
+       {
+        "id": "text_02_l15",
+        "order": 15,
+        "speaker": "田中",
+        "zh": "“上有天堂，下有苏杭”嘛。另外，桂林也不错，“桂林山水甲天下”，风景像画儿一样，美极了。你去过桂林吗？",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook",
+        "check_needed": false
+       },
+       {
+        "id": "text_02_l16",
+        "order": 16,
+        "speaker": "麦克",
+        "zh": "没有。我对云南少数民族的风俗很感兴趣。要是有机会一定去看看。你的旅行路线很好，不过要花多少钱啊？",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook",
+        "check_needed": false
+       },
+       {
+        "id": "text_02_l17",
+        "order": 17,
+        "speaker": "田中",
+        "zh": "我喜欢旅行，只要玩儿得开心，多花点儿钱也值得。另外最重要的是还可以一边旅行一边练习说汉语，多有意义啊！",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook",
+        "check_needed": false
+       },
+       {
+        "id": "text_02_l18",
+        "order": 18,
+        "speaker": "麦克",
+        "zh": "你说得对。",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook",
+        "check_needed": false
+       }
+      ]
+     }
+    ],
+    "comprehension_questions": [
+     {
+      "id": "text_q01",
+      "question": "麦克和玛丽为什么去饭馆儿？",
+      "answer": "因为他们又饿又渴。",
+      "source_origin": "textbook_question_generated_answer",
+      "answer_verified": true,
+      "check_needed": false
+     },
+     {
+      "id": "text_q02",
+      "question": "玛丽想吃什么？",
+      "answer": "玛丽说什么都可以。",
+      "source_origin": "textbook_question_generated_answer",
+      "answer_verified": true,
+      "check_needed": false
+     },
+     {
+      "id": "text_q03",
+      "question": "麦克让服务员给他们来什么菜？",
+      "answer": "麦克让服务员给他们来辣子鸡丁和糖醋鱼。",
+      "source_origin": "textbook_question_generated_answer",
+      "answer_verified": true,
+      "check_needed": false
+     },
+     {
+      "id": "text_q04",
+      "question": "玛丽想喝什么？",
+      "answer": "玛丽说随便，麦克说喝什么就喝什么。",
+      "source_origin": "textbook_question_generated_answer",
+      "answer_verified": true,
+      "check_needed": false
+     },
+     {
+      "id": "text_q05",
+      "question": "田中说学校要组织留学生去哪儿旅行？",
+      "answer": "学校要组织留学生去外地旅行。",
+      "source_origin": "textbook_question_generated_answer",
+      "answer_verified": true,
+      "check_needed": false
+     },
+     {
+      "id": "text_q06",
+      "question": "麦克为什么想去哈尔滨？",
+      "answer": "因为他听说哈尔滨的冰灯冰雕很好看，想去看看。",
+      "source_origin": "textbook_question_generated_answer",
+      "answer_verified": true,
+      "check_needed": false
+     },
+     {
+      "id": "text_q07",
+      "question": "田中为什么说“你是哪儿冷去哪儿啊”？",
+      "answer": "因为哈尔滨那时白天已经零下二十多度了，很冷。",
+      "source_origin": "textbook_question_generated_answer",
+      "answer_verified": true,
+      "check_needed": false
+     },
+     {
+      "id": "text_q08",
+      "question": "麦克想怎么去哈尔滨？",
+      "answer": "除了骑自行车以外，怎么去都行；要是买不到火车票就坐飞机去。",
+      "source_origin": "textbook_question_generated_answer",
+      "answer_verified": true,
+      "check_needed": false
+     },
+     {
+      "id": "text_q09",
+      "question": "田中寒假打算去哪儿旅行？",
+      "answer": "他打算先去西安，再到重庆，然后去云南、桂林，最后去苏州和杭州。",
+      "source_origin": "textbook_question_generated_answer",
+      "answer_verified": true,
+      "check_needed": false
+     },
+     {
+      "id": "text_q10",
+      "question": "麦克对什么很感兴趣？",
+      "answer": "他对云南少数民族的风俗很感兴趣。",
+      "source_origin": "textbook_question_generated_answer",
+      "answer_verified": true,
+      "check_needed": false
+     },
+     {
+      "id": "text_q11",
+      "question": "田中为什么觉得多花点儿钱也值得？",
+      "answer": "因为他喜欢旅行，只要玩儿得开心就值得，而且可以一边旅行一边练习说汉语。",
+      "source_origin": "textbook_question_generated_answer",
+      "answer_verified": true,
+      "check_needed": false
+     }
+    ]
+   },
+   {
+    "id": "section_02_vocabulary",
+    "type": "vocabulary",
+    "order": 2,
+    "title": "生词",
+    "title_vi": "Từ vựng",
+    "source_origin": "textbook",
+    "check_needed": false,
+    "items": [
+     {
+      "id": "vocab_001",
+      "type": "vocabulary_item",
+      "order": 1,
+      "hanzi": "渴",
+      "pinyin": "kě",
+      "meaning_vi": "khát",
+      "meaning_en": "",
+      "pos": "adjective",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "渴",
+       "back": "kě — khát",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "vocab_002",
+      "type": "vocabulary_item",
+      "order": 2,
+      "hanzi": "点（菜）",
+      "pinyin": "diǎn cài",
+      "meaning_vi": "gọi món",
+      "meaning_en": "",
+      "pos": "verb_object",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "点（菜）",
+       "back": "diǎn cài — gọi món",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "vocab_003",
+      "type": "vocabulary_item",
+      "order": 3,
+      "hanzi": "好吃",
+      "pinyin": "hǎochī",
+      "meaning_vi": "ngon",
+      "meaning_en": "",
+      "pos": "adjective",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "好吃",
+       "back": "hǎochī — ngon",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "vocab_004",
+      "type": "vocabulary_item",
+      "order": 4,
+      "hanzi": "辣子鸡丁",
+      "pinyin": "làzi jīdīng",
+      "meaning_vi": "gà thái hạt lựu xào ớt",
+      "meaning_en": "",
+      "pos": "noun",
+      "tags": ["food"],
+      "examples": [],
+      "flashcard": {
+       "front": "辣子鸡丁",
+       "back": "làzi jīdīng — gà thái hạt lựu xào ớt",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "vocab_005",
+      "type": "vocabulary_item",
+      "order": 5,
+      "hanzi": "糖醋鱼",
+      "pinyin": "tángcùyú",
+      "meaning_vi": "cá chua ngọt",
+      "meaning_en": "",
+      "pos": "noun",
+      "tags": ["food"],
+      "examples": [],
+      "flashcard": {
+       "front": "糖醋鱼",
+       "back": "tángcùyú — cá chua ngọt",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "vocab_006",
+      "type": "vocabulary_item",
+      "order": 6,
+      "hanzi": "周",
+      "pinyin": "zhōu",
+      "meaning_vi": "tuần",
+      "meaning_en": "",
+      "pos": "noun",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "周",
+       "back": "zhōu — tuần",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "vocab_007",
+      "type": "vocabulary_item",
+      "order": 7,
+      "hanzi": "外地",
+      "pinyin": "wàidì",
+      "meaning_vi": "nơi khác, tỉnh/thành khác",
+      "meaning_en": "",
+      "pos": "noun",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "外地",
+       "back": "wàidì — nơi khác, tỉnh/thành khác",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "vocab_008",
+      "type": "vocabulary_item",
+      "order": 8,
+      "hanzi": "好玩儿",
+      "pinyin": "hǎowánr",
+      "meaning_vi": "vui, thú vị",
+      "meaning_en": "",
+      "pos": "adjective",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "好玩儿",
+       "back": "hǎowánr — vui, thú vị",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "vocab_009",
+      "type": "vocabulary_item",
+      "order": 9,
+      "hanzi": "零下",
+      "pinyin": "língxià",
+      "meaning_vi": "dưới 0 độ",
+      "meaning_en": "",
+      "pos": "noun",
+      "tags": ["weather"],
+      "examples": [],
+      "flashcard": {
+       "front": "零下",
+       "back": "língxià — dưới 0 độ",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "vocab_010",
+      "type": "vocabulary_item",
+      "order": 10,
+      "hanzi": "冰灯",
+      "pinyin": "bīngdēng",
+      "meaning_vi": "đèn băng",
+      "meaning_en": "",
+      "pos": "noun",
+      "tags": ["culture"],
+      "examples": [],
+      "flashcard": {
+       "front": "冰灯",
+       "back": "bīngdēng — đèn băng",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "vocab_011",
+      "type": "vocabulary_item",
+      "order": 11,
+      "hanzi": "冰雕",
+      "pinyin": "bīngdiāo",
+      "meaning_vi": "điêu khắc băng",
+      "meaning_en": "",
+      "pos": "noun",
+      "tags": ["culture"],
+      "examples": [],
+      "flashcard": {
+       "front": "冰雕",
+       "back": "bīngdiāo — điêu khắc băng",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "vocab_012",
+      "type": "vocabulary_item",
+      "order": 12,
+      "hanzi": "开玩笑",
+      "pinyin": "kāi wánxiào",
+      "meaning_vi": "nói đùa",
+      "meaning_en": "",
+      "pos": "verb_object",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "开玩笑",
+       "back": "kāi wánxiào — nói đùa",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "vocab_013",
+      "type": "vocabulary_item",
+      "order": 13,
+      "hanzi": "玩笑",
+      "pinyin": "wánxiào",
+      "meaning_vi": "trò đùa",
+      "meaning_en": "",
+      "pos": "noun",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "玩笑",
+       "back": "wánxiào — trò đùa",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "vocab_014",
+      "type": "vocabulary_item",
+      "order": 14,
+      "hanzi": "计划",
+      "pinyin": "jìhuà",
+      "meaning_vi": "kế hoạch; lên kế hoạch",
+      "meaning_en": "",
+      "pos": "noun_verb",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "计划",
+       "back": "jìhuà — kế hoạch; lên kế hoạch",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "vocab_015",
+      "type": "vocabulary_item",
+      "order": 15,
+      "hanzi": "碑林",
+      "pinyin": "bēilín",
+      "meaning_vi": "rừng bia đá",
+      "meaning_en": "",
+      "pos": "proper_noun",
+      "tags": ["culture"],
+      "examples": [],
+      "flashcard": {
+       "front": "碑林",
+       "back": "bēilín — rừng bia đá",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "vocab_016",
+      "type": "vocabulary_item",
+      "order": 16,
+      "hanzi": "兵马俑",
+      "pinyin": "bīngmǎyǒng",
+      "meaning_vi": "binh mã dũng",
+      "meaning_en": "",
+      "pos": "proper_noun",
+      "tags": ["culture"],
+      "examples": [],
+      "flashcard": {
+       "front": "兵马俑",
+       "back": "bīngmǎyǒng — binh mã dũng",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "vocab_017",
+      "type": "vocabulary_item",
+      "order": 17,
+      "hanzi": "船",
+      "pinyin": "chuán",
+      "meaning_vi": "thuyền",
+      "meaning_en": "",
+      "pos": "noun",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "船",
+       "back": "chuán — thuyền",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "vocab_018",
+      "type": "vocabulary_item",
+      "order": 18,
+      "hanzi": "游览",
+      "pinyin": "yóulǎn",
+      "meaning_vi": "tham quan, du ngoạn",
+      "meaning_en": "",
+      "pos": "verb",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "游览",
+       "back": "yóulǎn — tham quan, du ngoạn",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "vocab_019",
+      "type": "vocabulary_item",
+      "order": 19,
+      "hanzi": "天堂",
+      "pinyin": "tiāntáng",
+      "meaning_vi": "thiên đường",
+      "meaning_en": "",
+      "pos": "noun",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "天堂",
+       "back": "tiāntáng — thiên đường",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "vocab_020",
+      "type": "vocabulary_item",
+      "order": 20,
+      "hanzi": "山水",
+      "pinyin": "shānshuǐ",
+      "meaning_vi": "non nước, phong cảnh núi sông",
+      "meaning_en": "",
+      "pos": "noun",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "山水",
+       "back": "shānshuǐ — non nước, phong cảnh núi sông",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "vocab_021",
+      "type": "vocabulary_item",
+      "order": 21,
+      "hanzi": "甲",
+      "pinyin": "jiǎ",
+      "meaning_vi": "đứng đầu, hạng nhất",
+      "meaning_en": "",
+      "pos": "noun",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "甲",
+       "back": "jiǎ — đứng đầu, hạng nhất",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "vocab_022",
+      "type": "vocabulary_item",
+      "order": 22,
+      "hanzi": "天下",
+      "pinyin": "tiānxià",
+      "meaning_vi": "thiên hạ, dưới trời",
+      "meaning_en": "",
+      "pos": "noun",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "天下",
+       "back": "tiānxià — thiên hạ, dưới trời",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "vocab_023",
+      "type": "vocabulary_item",
+      "order": 23,
+      "hanzi": "少数",
+      "pinyin": "shǎoshù",
+      "meaning_vi": "thiểu số",
+      "meaning_en": "",
+      "pos": "noun",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "少数",
+       "back": "shǎoshù — thiểu số",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "vocab_024",
+      "type": "vocabulary_item",
+      "order": 24,
+      "hanzi": "民族",
+      "pinyin": "mínzú",
+      "meaning_vi": "dân tộc",
+      "meaning_en": "",
+      "pos": "noun",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "民族",
+       "back": "mínzú — dân tộc",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "vocab_025",
+      "type": "vocabulary_item",
+      "order": 25,
+      "hanzi": "风俗",
+      "pinyin": "fēngsú",
+      "meaning_vi": "phong tục",
+      "meaning_en": "",
+      "pos": "noun",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "风俗",
+       "back": "fēngsú — phong tục",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "vocab_026",
+      "type": "vocabulary_item",
+      "order": 26,
+      "hanzi": "路线",
+      "pinyin": "lùxiàn",
+      "meaning_vi": "tuyến đường, lộ trình",
+      "meaning_en": "",
+      "pos": "noun",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "路线",
+       "back": "lùxiàn — tuyến đường, lộ trình",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "vocab_027",
+      "type": "vocabulary_item",
+      "order": 27,
+      "hanzi": "开心",
+      "pinyin": "kāixīn",
+      "meaning_vi": "vui vẻ",
+      "meaning_en": "",
+      "pos": "adjective",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "开心",
+       "back": "kāixīn — vui vẻ",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "vocab_028",
+      "type": "vocabulary_item",
+      "order": 28,
+      "hanzi": "值得",
+      "pinyin": "zhíde",
+      "meaning_vi": "đáng, xứng đáng",
+      "meaning_en": "",
+      "pos": "verb",
+      "tags": ["usage"],
+      "examples": [],
+      "flashcard": {
+       "front": "值得",
+       "back": "zhíde — đáng, xứng đáng",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "vocab_029",
+      "type": "vocabulary_item",
+      "order": 29,
+      "hanzi": "一边……一边……",
+      "pinyin": "yìbiān… yìbiān…",
+      "meaning_vi": "vừa… vừa…",
+      "meaning_en": "",
+      "pos": "structure",
+      "tags": ["grammar"],
+      "examples": [],
+      "flashcard": {
+       "front": "一边……一边……",
+       "back": "yìbiān… yìbiān… — vừa… vừa…",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "vocab_030",
+      "type": "vocabulary_item",
+      "order": 30,
+      "hanzi": "意义",
+      "pinyin": "yìyì",
+      "meaning_vi": "ý nghĩa",
+      "meaning_en": "",
+      "pos": "noun",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "意义",
+       "back": "yìyì — ý nghĩa",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+     }
+    ]
+   },
+   {
+    "id": "section_03_proper_nouns",
+    "type": "proper_nouns",
+    "order": 3,
+    "title": "专名",
+    "title_vi": "Tên riêng",
+    "source_origin": "textbook",
+    "check_needed": false,
+    "items": [
+     {
+      "id": "proper_001",
+      "type": "proper_noun",
+      "order": 1,
+      "hanzi": "重庆",
+      "pinyin": "Chóngqìng",
+      "meaning_vi": "Trùng Khánh",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "proper_002",
+      "type": "proper_noun",
+      "order": 2,
+      "hanzi": "长江",
+      "pinyin": "Cháng Jiāng",
+      "meaning_vi": "Trường Giang / sông Dương Tử",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "proper_003",
+      "type": "proper_noun",
+      "order": 3,
+      "hanzi": "三峡",
+      "pinyin": "Sānxiá",
+      "meaning_vi": "Tam Hiệp",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "proper_004",
+      "type": "proper_noun",
+      "order": 4,
+      "hanzi": "云南",
+      "pinyin": "Yúnnán",
+      "meaning_vi": "Vân Nam",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "proper_005",
+      "type": "proper_noun",
+      "order": 5,
+      "hanzi": "桂林",
+      "pinyin": "Guìlín",
+      "meaning_vi": "Quế Lâm",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "proper_006",
+      "type": "proper_noun",
+      "order": 6,
+      "hanzi": "苏州",
+      "pinyin": "Sūzhōu",
+      "meaning_vi": "Tô Châu",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "proper_007",
+      "type": "proper_noun",
+      "order": 7,
+      "hanzi": "杭州",
+      "pinyin": "Hángzhōu",
+      "meaning_vi": "Hàng Châu",
+      "source_origin": "textbook",
+      "check_needed": false
+     }
+    ]
+   },
+   {
+    "id": "section_04_notes",
+    "type": "notes",
+    "order": 4,
+    "title": "注释",
+    "title_vi": "Chú thích",
+    "source_origin": "textbook",
+    "check_needed": false,
+    "items": [
+     {
+      "id": "note_01",
+      "type": "note",
+      "order": 1,
+      "title": "上有天堂，下有苏杭",
+      "structure": "",
+      "meaning_vi": "Câu nói nổi tiếng ca ngợi vẻ đẹp của Tô Châu và Hàng Châu: trên trời có thiên đường, dưới đất có Tô Châu và Hàng Châu.",
+      "examples": [
+       {
+        "id": "note_01_ex_01",
+        "zh": "上有天堂，下有苏杭。",
+        "pinyin": "",
+        "vi": "Trên trời có thiên đường, dưới đất có Tô Châu và Hàng Châu.",
+        "en": "",
+        "highlight": [],
+        "grammar_refs": [],
+        "vocab_refs": [],
+        "source_ref": "text_02_l15",
+        "note_vi": "",
+        "audio_key": "",
+        "source_origin": "textbook",
+        "check_needed": false
+       }
+      ],
+      "source_refs": ["text_02_l15"],
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "note_02",
+      "type": "note",
+      "order": 2,
+      "title": "桂林山水甲天下",
+      "structure": "",
+      "meaning_vi": "Phong cảnh non nước Quế Lâm đẹp nhất thiên hạ.",
+      "examples": [
+       {
+        "id": "note_02_ex_01",
+        "zh": "桂林山水甲天下。",
+        "pinyin": "",
+        "vi": "Phong cảnh non nước Quế Lâm đẹp nhất thiên hạ.",
+        "en": "",
+        "highlight": [],
+        "grammar_refs": [],
+        "vocab_refs": [],
+        "source_ref": "text_02_l15",
+        "note_vi": "",
+        "audio_key": "",
+        "source_origin": "textbook",
+        "check_needed": false
+       }
+      ],
+      "source_refs": ["text_02_l15"],
+      "source_origin": "textbook",
+      "check_needed": false
+     }
+    ]
+   },
+   {
+    "id": "section_05_grammar",
+    "type": "grammar",
+    "order": 5,
+    "title": "语法",
+    "title_vi": "Ngữ pháp",
+    "source_origin": "textbook",
+    "check_needed": false,
+    "items": [
+     {
+      "id": "grammar_01",
+      "type": "grammar_point",
+      "order": 1,
+      "title": "疑问代词的活用",
+      "title_vi": "Cách dùng linh hoạt của đại từ nghi vấn",
+      "level": "HSK3-ish",
+      "tags": [
+       "interrogative_pronouns",
+       "generic_reference",
+       "specific_reference",
+       "indefinite_reference"
+      ],
+      "source_origin": "textbook",
+      "check_needed": false,
+      "blocks": [
+       {
+        "id": "grammar_01_overview",
+        "type": "grammar_overview",
+        "order": 1,
+        "title": "Bản chất",
+        "content_vi": "Đại từ nghi vấn như 谁、什么、哪儿、怎么、什么时候 không chỉ dùng để hỏi, mà còn có thể biểu thị bất cứ ai/cái gì/đâu, cái nào thì cái đó, hoặc một đối tượng không xác định.",
+        "examples": [
+         {
+          "id": "grammar_01_overview_ex_01",
+          "zh": "什么都可以。",
+          "pinyin": "",
+          "vi": "Cái gì cũng được.",
+          "en": "",
+          "highlight": ["什么都"],
+          "grammar_refs": ["grammar_01"],
+          "vocab_refs": [],
+          "source_ref": "text_01_l05",
+          "note_vi": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+         },
+         {
+          "id": "grammar_01_overview_ex_02",
+          "zh": "谁都可以报名。",
+          "pinyin": "",
+          "vi": "Ai cũng có thể đăng ký.",
+          "en": "",
+          "highlight": ["谁都"],
+          "grammar_refs": ["grammar_01"],
+          "vocab_refs": [],
+          "source_ref": "text_02_l03",
+          "note_vi": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+         },
+         {
+          "id": "grammar_01_overview_ex_03",
+          "zh": "哪儿好玩儿就去哪儿。",
+          "pinyin": "",
+          "vi": "Chỗ nào vui thì đi chỗ đó.",
+          "en": "",
+          "highlight": ["哪儿", "去哪儿"],
+          "grammar_refs": ["grammar_01"],
+          "vocab_refs": [],
+          "source_ref": "text_02_l06",
+          "note_vi": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+         }
+        ],
+        "source_origin": "textbook",
+        "check_needed": false
+       },
+       {
+        "id": "grammar_01_structure_01",
+        "type": "grammar_structure",
+        "order": 2,
+        "title": "任指 / 泛指: bất cứ ai, bất cứ cái gì, bất cứ đâu",
+        "pattern": "疑问代词 + 都 / 也 + VP",
+        "meaning_vi": "Chỉ tất cả trong phạm vi: ai cũng, cái gì cũng, đâu cũng, thế nào cũng.",
+        "formulas": [
+         {
+          "label": "Bất kỳ",
+          "pattern": "谁 / 什么 / 哪儿 / 怎么 / 什么时候 + 都 / 也 + 谓语"
+         }
+        ],
+        "examples": [
+         {
+          "id": "grammar_01_structure_01_ex_01",
+          "zh": "我们班的同学谁都喜欢她。",
+          "pinyin": "",
+          "vi": "Bạn học trong lớp chúng tôi ai cũng thích cô ấy.",
+          "en": "",
+          "highlight": ["谁都"],
+          "grammar_refs": ["grammar_01"],
+          "vocab_refs": [],
+          "source_ref": "",
+          "note_vi": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+         },
+         {
+          "id": "grammar_01_structure_01_ex_02",
+          "zh": "吃什么都可以。",
+          "pinyin": "",
+          "vi": "Ăn gì cũng được.",
+          "en": "",
+          "highlight": ["什么都"],
+          "grammar_refs": ["grammar_01"],
+          "vocab_refs": [],
+          "source_ref": "text_01_l05",
+          "note_vi": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+         },
+         {
+          "id": "grammar_01_structure_01_ex_03",
+          "zh": "怎么办都行，我没意见。",
+          "pinyin": "",
+          "vi": "Làm thế nào cũng được, tôi không có ý kiến.",
+          "en": "",
+          "highlight": ["怎么都"],
+          "grammar_refs": ["grammar_01"],
+          "vocab_refs": [],
+          "source_ref": "",
+          "note_vi": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+         },
+         {
+          "id": "grammar_01_structure_01_ex_04",
+          "zh": "天太冷，我哪儿也不想去。",
+          "pinyin": "",
+          "vi": "Trời lạnh quá, tôi chẳng muốn đi đâu cả.",
+          "en": "",
+          "highlight": ["哪儿也不"],
+          "grammar_refs": ["grammar_01"],
+          "vocab_refs": [],
+          "source_ref": "",
+          "note_vi": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+         },
+         {
+          "id": "grammar_01_structure_01_ex_05",
+          "zh": "你什么时候来我都欢迎。",
+          "pinyin": "",
+          "vi": "Bạn đến lúc nào tôi cũng hoan nghênh.",
+          "en": "",
+          "highlight": ["什么时候", "都"],
+          "grammar_refs": ["grammar_01"],
+          "vocab_refs": [],
+          "source_ref": "",
+          "note_vi": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+         },
+         {
+          "id": "grammar_01_structure_01_ex_06",
+          "zh": "谁都可以报名。",
+          "pinyin": "",
+          "vi": "Ai cũng có thể đăng ký.",
+          "en": "",
+          "highlight": ["谁都"],
+          "grammar_refs": ["grammar_01"],
+          "vocab_refs": [],
+          "source_ref": "text_02_l03",
+          "note_vi": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+         },
+         {
+          "id": "grammar_01_structure_01_ex_07",
+          "zh": "怎么去都行。",
+          "pinyin": "",
+          "vi": "Đi thế nào cũng được.",
+          "en": "",
+          "highlight": ["怎么", "都"],
+          "grammar_refs": ["grammar_01"],
+          "vocab_refs": [],
+          "source_ref": "text_02_l10",
+          "note_vi": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+         }
+        ],
+        "notes_vi": ["Phủ định thường dùng 也/都 + 不/没, ví dụ 哪儿也不想去."],
+        "source_origin": "textbook",
+        "check_needed": false
+       },
+       {
+        "id": "grammar_01_structure_02",
+        "type": "grammar_structure",
+        "order": 3,
+        "title": "特指: cái nào thì cái đó",
+        "pattern": "疑问代词 A + VP，就 + 疑问代词 A + VP",
+        "meaning_vi": "Hai đại từ nghi vấn giống nhau phối hợp với nhau: ai/cái nào/cách nào/lúc nào… thì chính người/cái/cách/lúc đó.",
+        "formulas": [
+         {
+          "label": "A nào thì A đó",
+          "pattern": "疑问代词 + VP，就 + 同一疑问代词 + VP"
+         }
+        ],
+        "examples": [
+         {
+          "id": "grammar_01_structure_02_ex_01",
+          "zh": "谁说得好我就跟谁学。",
+          "pinyin": "",
+          "vi": "Ai nói giỏi thì tôi học theo người đó.",
+          "en": "",
+          "highlight": ["谁", "谁"],
+          "grammar_refs": ["grammar_01"],
+          "vocab_refs": [],
+          "source_ref": "",
+          "note_vi": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+         },
+         {
+          "id": "grammar_01_structure_02_ex_02",
+          "zh": "什么好吃就吃什么。",
+          "pinyin": "",
+          "vi": "Món nào ngon thì ăn món đó.",
+          "en": "",
+          "highlight": ["什么", "什么"],
+          "grammar_refs": ["grammar_01"],
+          "vocab_refs": [],
+          "source_ref": "text_01_l06",
+          "note_vi": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+         },
+         {
+          "id": "grammar_01_structure_02_ex_03",
+          "zh": "你什么时候想来就什么时候来吧。",
+          "pinyin": "",
+          "vi": "Bạn muốn đến lúc nào thì đến lúc đó.",
+          "en": "",
+          "highlight": ["什么时候", "什么时候"],
+          "grammar_refs": ["grammar_01"],
+          "vocab_refs": [],
+          "source_ref": "",
+          "note_vi": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+         },
+         {
+          "id": "grammar_01_structure_02_ex_04",
+          "zh": "怎么好就怎么办。",
+          "pinyin": "",
+          "vi": "Cách nào tốt thì làm cách đó.",
+          "en": "",
+          "highlight": ["怎么", "怎么"],
+          "grammar_refs": ["grammar_01"],
+          "vocab_refs": [],
+          "source_ref": "",
+          "note_vi": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+         },
+         {
+          "id": "grammar_01_structure_02_ex_05",
+          "zh": "哪儿好玩儿就去哪儿。",
+          "pinyin": "",
+          "vi": "Chỗ nào vui thì đi chỗ đó.",
+          "en": "",
+          "highlight": ["哪儿", "哪儿"],
+          "grammar_refs": ["grammar_01"],
+          "vocab_refs": [],
+          "source_ref": "text_02_l06",
+          "note_vi": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+         },
+         {
+          "id": "grammar_01_structure_02_ex_06",
+          "zh": "你说喝什么就喝什么吧。",
+          "pinyin": "",
+          "vi": "Bạn nói uống gì thì uống cái đó.",
+          "en": "",
+          "highlight": ["什么", "什么"],
+          "grammar_refs": ["grammar_01"],
+          "vocab_refs": [],
+          "source_ref": "text_01_l13",
+          "note_vi": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+         }
+        ],
+        "source_origin": "textbook",
+        "check_needed": false
+       },
+       {
+        "id": "grammar_01_structure_03",
+        "type": "grammar_structure",
+        "order": 4,
+        "title": "虚指: không xác định / không cần nói rõ",
+        "pattern": "疑问代词 used as an indefinite reference",
+        "meaning_vi": "Đại từ nghi vấn không hỏi thật, mà chỉ người/vật/nơi/cách thức không xác định.",
+        "formulas": [
+         {
+          "label": "Không xác định",
+          "pattern": "谁 / 什么 / 哪儿 / 怎么 + 谓语"
+         }
+        ],
+        "examples": [
+         {
+          "id": "grammar_01_structure_03_ex_01",
+          "zh": "我听谁说过这件事儿。",
+          "pinyin": "",
+          "vi": "Tôi nghe ai đó nói qua chuyện này rồi.",
+          "en": "",
+          "highlight": ["谁"],
+          "grammar_refs": ["grammar_01"],
+          "vocab_refs": [],
+          "source_ref": "text_02_l04",
+          "note_vi": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+         },
+         {
+          "id": "grammar_01_structure_03_ex_02",
+          "zh": "朋友要回国了，我应该买点儿什么礼物送给她。",
+          "pinyin": "",
+          "vi": "Bạn sắp về nước rồi, tôi nên mua món quà gì đó tặng cô ấy.",
+          "en": "",
+          "highlight": ["什么"],
+          "grammar_refs": ["grammar_01"],
+          "vocab_refs": [],
+          "source_ref": "",
+          "note_vi": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+         },
+         {
+          "id": "grammar_01_structure_03_ex_03",
+          "zh": "我的相机不知怎么弄坏了。",
+          "pinyin": "",
+          "vi": "Máy ảnh của tôi không biết bị làm hỏng thế nào.",
+          "en": "",
+          "highlight": ["怎么"],
+          "grammar_refs": ["grammar_01"],
+          "vocab_refs": [],
+          "source_ref": "",
+          "note_vi": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+         },
+         {
+          "id": "grammar_01_structure_03_ex_04",
+          "zh": "这个人我好像在哪儿见过。",
+          "pinyin": "",
+          "vi": "Người này hình như tôi đã gặp ở đâu đó.",
+          "en": "",
+          "highlight": ["哪儿"],
+          "grammar_refs": ["grammar_01"],
+          "vocab_refs": [],
+          "source_ref": "",
+          "note_vi": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+         }
+        ],
+        "source_origin": "textbook",
+        "check_needed": false
+       }
+      ]
+     },
+     {
+      "id": "grammar_02",
+      "type": "grammar_point",
+      "order": 2,
+      "title": "一边……一边……",
+      "title_vi": "Vừa… vừa…",
+      "level": "HSK3-ish",
+      "tags": ["simultaneous_actions"],
+      "source_origin": "textbook",
+      "check_needed": false,
+      "blocks": [
+       {
+        "id": "grammar_02_overview",
+        "type": "grammar_overview",
+        "order": 1,
+        "title": "Bản chất",
+        "content_vi": "一边……一边…… biểu thị hai hành động xảy ra cùng lúc.",
+        "examples": [
+         {
+          "id": "grammar_02_overview_ex_01",
+          "zh": "一边旅行一边练习说汉语。",
+          "pinyin": "",
+          "vi": "Vừa du lịch vừa luyện nói tiếng Hán.",
+          "en": "",
+          "highlight": ["一边", "一边"],
+          "grammar_refs": ["grammar_02"],
+          "vocab_refs": [],
+          "source_ref": "text_02_l17",
+          "note_vi": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+         }
+        ],
+        "source_origin": "textbook",
+        "check_needed": false
+       },
+       {
+        "id": "grammar_02_structure_01",
+        "type": "grammar_structure",
+        "order": 2,
+        "title": "Cấu trúc",
+        "pattern": "一边 + V1，一边 + V2",
+        "meaning_vi": "Vừa làm V1 vừa làm V2.",
+        "formulas": [
+         {
+          "label": "Đồng thời",
+          "pattern": "一边 + 动词1，一边 + 动词2"
+         }
+        ],
+        "examples": [
+         {
+          "id": "grammar_02_structure_01_ex_01",
+          "zh": "她一边说一边笑。",
+          "pinyin": "",
+          "vi": "Cô ấy vừa nói vừa cười.",
+          "en": "",
+          "highlight": ["一边", "一边"],
+          "grammar_refs": ["grammar_02"],
+          "vocab_refs": [],
+          "source_ref": "",
+          "note_vi": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+         },
+         {
+          "id": "grammar_02_structure_01_ex_02",
+          "zh": "我喜欢一边听音乐，一边做练习。",
+          "pinyin": "",
+          "vi": "Tôi thích vừa nghe nhạc vừa làm bài tập.",
+          "en": "",
+          "highlight": ["一边", "一边"],
+          "grammar_refs": ["grammar_02"],
+          "vocab_refs": [],
+          "source_ref": "",
+          "note_vi": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+         },
+         {
+          "id": "grammar_02_structure_01_ex_03",
+          "zh": "边听边看。",
+          "pinyin": "",
+          "vi": "Vừa nghe vừa xem.",
+          "en": "",
+          "highlight": ["边", "边"],
+          "grammar_refs": ["grammar_02"],
+          "vocab_refs": [],
+          "source_ref": "",
+          "note_vi": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+         },
+         {
+          "id": "grammar_02_structure_01_ex_04",
+          "zh": "边想边写。",
+          "pinyin": "",
+          "vi": "Vừa nghĩ vừa viết.",
+          "en": "",
+          "highlight": ["边", "边"],
+          "grammar_refs": ["grammar_02"],
+          "vocab_refs": [],
+          "source_ref": "",
+          "note_vi": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+         },
+         {
+          "id": "grammar_02_structure_01_ex_05",
+          "zh": "边说边笑。",
+          "pinyin": "",
+          "vi": "Vừa nói vừa cười.",
+          "en": "",
+          "highlight": ["边", "边"],
+          "grammar_refs": ["grammar_02"],
+          "vocab_refs": [],
+          "source_ref": "",
+          "note_vi": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+         },
+         {
+          "id": "grammar_02_structure_01_ex_06",
+          "zh": "边喝边聊。",
+          "pinyin": "",
+          "vi": "Vừa uống vừa trò chuyện.",
+          "en": "",
+          "highlight": ["边", "边"],
+          "grammar_refs": ["grammar_02"],
+          "vocab_refs": [],
+          "source_ref": "",
+          "note_vi": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+         }
+        ],
+        "notes_vi": [
+         "一边 có thể lược thành 边. Không nên dùng với hai việc không thể diễn ra đồng thời hoặc không tạo quan hệ hành động hợp lý."
+        ],
+        "bad_examples": [
+         {
+          "zh": "我一边打篮球，一边觉得很饿。",
+          "reason_vi": "觉得饿 là trạng thái/cảm giác, không phải hành động song song tự nhiên với 打篮球."
+         },
+         {
+          "zh": "我一边听老师讲，一边不懂。",
+          "reason_vi": "不懂 là kết quả/trạng thái nhận thức, không phải hành động song song."
+         }
+        ],
+        "source_origin": "textbook",
+        "check_needed": false
+       }
+      ]
+     },
+     {
+      "id": "grammar_03",
+      "type": "grammar_point",
+      "order": 3,
+      "title": "先……再 / 然后 / 最后",
+      "title_vi": "Trình tự hành động",
+      "level": "HSK3-ish",
+      "tags": ["sequence"],
+      "source_origin": "textbook",
+      "check_needed": false,
+      "blocks": [
+       {
+        "id": "grammar_03_overview",
+        "type": "grammar_overview",
+        "order": 1,
+        "title": "Bản chất",
+        "content_vi": "Dùng để sắp xếp các hành động theo trình tự: trước tiên…, rồi…, sau đó…, cuối cùng….",
+        "examples": [
+         {
+          "id": "grammar_03_overview_ex_01",
+          "zh": "我打算先去西安看看碑林和兵马俑，再到重庆，从重庆坐船游览长江三峡，然后去云南、桂林，最后去苏州和杭州。",
+          "pinyin": "",
+          "vi": "Tôi dự định trước tiên đi Tây An, rồi đến Trùng Khánh, sau đó đi Vân Nam, Quế Lâm, cuối cùng đi Tô Châu và Hàng Châu.",
+          "en": "",
+          "highlight": ["先", "再", "然后", "最后"],
+          "grammar_refs": ["grammar_03"],
+          "vocab_refs": [],
+          "source_ref": "text_02_l13",
+          "note_vi": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+         }
+        ],
+        "source_origin": "textbook",
+        "check_needed": false
+       },
+       {
+        "id": "grammar_03_structure_01",
+        "type": "grammar_structure",
+        "order": 2,
+        "title": "Cấu trúc",
+        "pattern": "先 + V1，再 / 又 + V2，然后 + V3，最后 + V4",
+        "meaning_vi": "Trước tiên làm V1, rồi V2, sau đó V3, cuối cùng V4.",
+        "formulas": [
+         {
+          "label": "Trình tự",
+          "pattern": "先……再……然后……最后……"
+         }
+        ],
+        "examples": [
+         {
+          "id": "grammar_03_structure_01_ex_01",
+          "zh": "我先复习生词，再做练习，然后读课文，最后学习语法。",
+          "pinyin": "",
+          "vi": "Tôi ôn từ mới trước, rồi làm bài tập, sau đó đọc bài khóa, cuối cùng học ngữ pháp.",
+          "en": "",
+          "highlight": ["先", "再", "然后", "最后"],
+          "grammar_refs": ["grammar_03"],
+          "vocab_refs": [],
+          "source_ref": "",
+          "note_vi": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+         },
+         {
+          "id": "grammar_03_structure_01_ex_02",
+          "zh": "他先去西安，再去重庆，然后游览长江三峡，最后去香港。",
+          "pinyin": "",
+          "vi": "Anh ấy đi Tây An trước, rồi đến Trùng Khánh, sau đó tham quan Tam Hiệp, cuối cùng đi Hồng Kông.",
+          "en": "",
+          "highlight": ["先", "再", "然后", "最后"],
+          "grammar_refs": ["grammar_03"],
+          "vocab_refs": [],
+          "source_ref": "",
+          "note_vi": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+         },
+         {
+          "id": "grammar_03_structure_01_ex_03",
+          "zh": "你先填申请表，再去办护照，然后去大使馆办签证，最后再买机票。",
+          "pinyin": "",
+          "vi": "Bạn điền đơn trước, rồi làm hộ chiếu, sau đó đến đại sứ quán làm visa, cuối cùng mới mua vé máy bay.",
+          "en": "",
+          "highlight": ["先", "再", "然后", "最后"],
+          "grammar_refs": ["grammar_03"],
+          "vocab_refs": [],
+          "source_ref": "",
+          "note_vi": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+         }
+        ],
+        "source_origin": "textbook",
+        "check_needed": false
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "id": "section_06_exercises",
+    "type": "exercises",
+    "order": 6,
+    "title": "练习",
+    "title_vi": "Bài tập",
+    "source_origin": "textbook",
+    "check_needed": true,
+    "items": [
+     {
+      "id": "exercise_01",
+      "type": "phonetics",
+      "variant": "",
+      "order": 1,
+      "title": "语音",
+      "title_vi": "Ngữ âm",
+      "instruction": {
+       "zh": "",
+       "vi": "Luyện phân biệt âm, thanh điệu và đọc cụm."
+      },
+      "difficulty": "normal",
+      "skill_focus": ["pronunciation"],
+      "source_origin": "textbook",
+      "check_needed": false,
+      "parts": [
+       {
+        "id": "exercise_01_part_01",
+        "type": "minimal_pair",
+        "title": "辨音辨调",
+        "items": [
+         {
+          "id": "pair_01",
+          "left": "hánjià",
+          "right": "hángjia"
+         },
+         {
+          "id": "pair_02",
+          "left": "hǎochī",
+          "right": "hǎo shì"
+         },
+         {
+          "id": "pair_03",
+          "left": "wàidì",
+          "right": "dàitì"
+         },
+         {
+          "id": "pair_04",
+          "left": "shānshuǐ",
+          "right": "sān suì"
+         },
+         {
+          "id": "pair_05",
+          "left": "shǎoshù",
+          "right": "shóushū"
+         },
+         {
+          "id": "pair_06",
+          "left": "mínzú",
+          "right": "mínzhǔ"
+         },
+         {
+          "id": "pair_07",
+          "left": "fēngsú",
+          "right": "fēng sù"
+         },
+         {
+          "id": "pair_08",
+          "left": "lùxiàn",
+          "right": "lùxiàng"
+         }
+        ],
+        "source_origin": "textbook",
+        "check_needed": false
+       },
+       {
+        "id": "exercise_01_part_02",
+        "type": "read_aloud",
+        "title": "朗读",
+        "items": [
+         {
+          "id": "read_001",
+          "text": "少数民族",
+          "pinyin": "",
+          "audio_key": ""
+         },
+         {
+          "id": "read_002",
+          "text": "少数人",
+          "pinyin": "",
+          "audio_key": ""
+         },
+         {
+          "id": "read_003",
+          "text": "少数学生",
+          "pinyin": "",
+          "audio_key": ""
+         },
+         {
+          "id": "read_004",
+          "text": "少数国家",
+          "pinyin": "",
+          "audio_key": ""
+         },
+         {
+          "id": "read_005",
+          "text": "游览长城",
+          "pinyin": "",
+          "audio_key": ""
+         },
+         {
+          "id": "read_006",
+          "text": "游览颐和园",
+          "pinyin": "",
+          "audio_key": ""
+         },
+         {
+          "id": "read_007",
+          "text": "游览长江三峡",
+          "pinyin": "",
+          "audio_key": ""
+         },
+         {
+          "id": "read_008",
+          "text": "游览桂林山水",
+          "pinyin": "",
+          "audio_key": ""
+         },
+         {
+          "id": "read_009",
+          "text": "学习计划",
+          "pinyin": "",
+          "audio_key": ""
+         },
+         {
+          "id": "read_010",
+          "text": "工作计划",
+          "pinyin": "",
+          "audio_key": ""
+         },
+         {
+          "id": "read_011",
+          "text": "旅行计划",
+          "pinyin": "",
+          "audio_key": ""
+         },
+         {
+          "id": "read_012",
+          "text": "计划去旅行",
+          "pinyin": "",
+          "audio_key": ""
+         },
+         {
+          "id": "read_013",
+          "text": "谁都喜欢她",
+          "pinyin": "",
+          "audio_key": ""
+         },
+         {
+          "id": "read_014",
+          "text": "怎么去都行",
+          "pinyin": "",
+          "audio_key": ""
+         },
+         {
+          "id": "read_015",
+          "text": "哪儿都不舒服",
+          "pinyin": "",
+          "audio_key": ""
+         },
+         {
+          "id": "read_016",
+          "text": "什么地方都没去过",
+          "pinyin": "",
+          "audio_key": ""
+         },
+         {
+          "id": "read_017",
+          "text": "一边看一边写",
+          "pinyin": "",
+          "audio_key": ""
+         },
+         {
+          "id": "read_018",
+          "text": "一边旅行一边练习说汉语",
+          "pinyin": "",
+          "audio_key": ""
+         },
+         {
+          "id": "read_019",
+          "text": "一边听音乐一边做练习",
+          "pinyin": "",
+          "audio_key": ""
+         }
+        ],
+        "source_origin": "textbook",
+        "check_needed": false
+       }
+      ],
+      "rendering": {
+       "renderer": "exercise.phonetics.v1"
+      }
+     },
+     {
+      "id": "exercise_02",
+      "type": "substitution_drill",
+      "variant": "models",
+      "order": 2,
+      "title": "替换",
+      "title_vi": "Thay thế theo mẫu",
+      "instruction": {
+       "zh": "替换练习。",
+       "vi": "Luyện thay thế theo mẫu."
+      },
+      "difficulty": "normal",
+      "skill_focus": ["speaking", "grammar"],
+      "grammar_refs": ["grammar_01", "grammar_02"],
+      "source_origin": "textbook",
+      "check_needed": false,
+      "models": [
+       {
+        "id": "ex02_model_01",
+        "title": "模型一",
+        "dialogue": ["A：我们去哪儿玩儿玩儿吧。", "B：好吧。"],
+        "substitutions": [
+         "给他送点儿什么礼物",
+         "去找谁问问路",
+         "去请谁帮帮忙",
+         "什么时候去看看她",
+         "吃点儿什么"
+        ]
+       },
+       {
+        "id": "ex02_model_02",
+        "title": "模型二",
+        "dialogue": ["A：我们去哪儿呢？", "B：你想去哪儿我们就去哪儿。"],
+        "substitutions": [
+         {
+          "prompt": "送什么礼物",
+          "answer_pattern": "她喜欢什么就送什么"
+         },
+         {
+          "prompt": "怎么去",
+          "answer_pattern": "怎么去方便就怎么去"
+         },
+         {
+          "prompt": "什么时候去",
+          "answer_pattern": "什么时候有空儿就什么时候去"
+         },
+         {
+          "prompt": "派谁去",
+          "answer_pattern": "谁能办好这件事就派谁去"
+         },
+         {
+          "prompt": "借给他多少",
+          "answer_pattern": "他需要多少就借给他多少"
+         }
+        ]
+       },
+       {
+        "id": "ex02_model_03",
+        "title": "模型三",
+        "dialogue": ["A：你想吃点儿什么？", "B：什么都行 / 可以。"],
+        "substitutions": [
+         "喝点儿什么 → 什么",
+         "去哪儿 → 哪儿",
+         "怎么去 → 怎么",
+         "跟谁去 → 谁",
+         "要哪个 → 哪个",
+         "要多少 → 多少"
+        ]
+       },
+       {
+        "id": "ex02_model_04",
+        "title": "模型四",
+        "dialogue": ["A：想吃点儿什么？", "B：什么好吃我就吃什么。"],
+        "substitutions": [
+         "喝点儿什么 → 什么好喝 → 喝什么",
+         "要哪个 → 哪个好 → 要哪个",
+         "看哪个 → 哪个好看 → 看哪个",
+         "去哪儿 → 哪儿好玩儿 → 去哪儿",
+         "怎么去 → 怎么方便 → 怎么去"
+        ]
+       },
+       {
+        "id": "ex02_model_05",
+        "title": "模型五",
+        "sentence": "他一边旅行一边练习说汉语。",
+        "substitutions": [
+         "吃饭 / 看电视",
+         "听音乐 / 做练习",
+         "跳 / 唱",
+         "想 / 写",
+         "哭 / 说"
+        ]
+       }
+      ],
+      "rendering": {
+       "renderer": "exercise.substitution_drill.v1"
+      }
+     },
+     {
+      "id": "exercise_03",
+      "type": "choose_words_fill_blank",
+      "variant": "word_bank",
+      "order": 3,
+      "title": "选词填空",
+      "title_vi": "Chọn từ điền chỗ trống",
+      "instruction": {
+       "zh": "选词填空。",
+       "vi": "Chọn từ thích hợp điền vào chỗ trống."
+      },
+      "difficulty": "normal",
+      "skill_focus": ["vocabulary", "grammar"],
+      "grammar_refs": ["grammar_02"],
+      "word_bank": [
+       "了解",
+       "除了",
+       "风俗",
+       "寒假",
+       "值得",
+       "要求",
+       "开心",
+       "零下",
+       "饭馆儿",
+       "计划",
+       "一边……一边……"
+      ],
+      "questions": [
+       {
+        "id": "ex03_q01",
+        "prompt": "我想利用______去南方旅行。",
+        "answer": "寒假",
+        "acceptable_answers": ["寒假"],
+        "explanation_vi": "利用寒假 = tận dụng kỳ nghỉ đông.",
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": false
+       },
+       {
+        "id": "ex03_q02",
+        "prompt": "他______听音乐______做练习。",
+        "answer": "一边……一边……",
+        "acceptable_answers": ["一边……一边……"],
+        "explanation_vi": "一边听音乐一边做练习 = vừa nghe nhạc vừa làm bài tập.",
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": false
+       },
+       {
+        "id": "ex03_q03",
+        "prompt": "这里有不少小______，饭菜又便宜又好吃。",
+        "answer": "饭馆儿",
+        "acceptable_answers": ["饭馆儿"],
+        "explanation_vi": "小饭馆儿 = quán ăn nhỏ.",
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": false
+       },
+       {
+        "id": "ex03_q04",
+        "prompt": "我们那儿一年四季都很暖和，气温从来没有到过______一度。",
+        "answer": "零下",
+        "acceptable_answers": ["零下"],
+        "explanation_vi": "零下一度 = âm một độ.",
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": false
+       },
+       {
+        "id": "ex03_q05",
+        "prompt": "______旅行以外，我还想______一下儿中国南方的城市交通。",
+        "answer": "除了 / 了解",
+        "acceptable_answers": ["除了 / 了解"],
+        "explanation_vi": "除了……以外 = ngoài… ra; 了解 = tìm hiểu.",
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": false
+       },
+       {
+        "id": "ex03_q06",
+        "prompt": "我们公司也______在这儿开展业务。",
+        "answer": "计划",
+        "acceptable_answers": ["计划"],
+        "explanation_vi": "计划开展业务 = dự định triển khai kinh doanh.",
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "ex03_q07",
+        "prompt": "我想研究中国少数民族的______习惯。",
+        "answer": "风俗",
+        "acceptable_answers": ["风俗"],
+        "explanation_vi": "风俗习惯 = phong tục tập quán.",
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": false
+       },
+       {
+        "id": "ex03_q08",
+        "prompt": "杭州、桂林，这两个地方都______去看看。",
+        "answer": "值得",
+        "acceptable_answers": ["值得"],
+        "explanation_vi": "值得去看看 = đáng đi xem.",
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": false
+       },
+       {
+        "id": "ex03_q09",
+        "prompt": "今天我过得特别______。",
+        "answer": "开心",
+        "acceptable_answers": ["开心"],
+        "explanation_vi": "过得开心 = sống/chơi vui.",
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": false
+       },
+       {
+        "id": "ex03_q10",
+        "prompt": "请把你的______跟大家说说吧。",
+        "answer": "计划",
+        "acceptable_answers": ["计划"],
+        "explanation_vi": "把计划说说 = nói kế hoạch.",
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": false
+       }
+      ],
+      "answer_key": [
+       {
+        "question_id": "ex03_q01",
+        "answer": "寒假",
+        "answer_verified": false,
+        "check_needed": false
+       },
+       {
+        "question_id": "ex03_q02",
+        "answer": "一边……一边……",
+        "answer_verified": false,
+        "check_needed": false
+       },
+       {
+        "question_id": "ex03_q03",
+        "answer": "饭馆儿",
+        "answer_verified": false,
+        "check_needed": false
+       },
+       {
+        "question_id": "ex03_q04",
+        "answer": "零下",
+        "answer_verified": false,
+        "check_needed": false
+       },
+       {
+        "question_id": "ex03_q05",
+        "answer": "除了 / 了解",
+        "answer_verified": false,
+        "check_needed": false
+       },
+       {
+        "question_id": "ex03_q06",
+        "answer": "计划",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "question_id": "ex03_q07",
+        "answer": "风俗",
+        "answer_verified": false,
+        "check_needed": false
+       },
+       {
+        "question_id": "ex03_q08",
+        "answer": "值得",
+        "answer_verified": false,
+        "check_needed": false
+       },
+       {
+        "question_id": "ex03_q09",
+        "answer": "开心",
+        "answer_verified": false,
+        "check_needed": false
+       },
+       {
+        "question_id": "ex03_q10",
+        "answer": "计划",
+        "answer_verified": false,
+        "check_needed": false
+       }
+      ],
+      "rendering": {
+       "renderer": "exercise.fill_blank.v1",
+       "input_mode": "dropdown",
+       "show_word_bank": true,
+       "show_answer_after_submit": true
+      },
+      "source_origin": "textbook",
+      "check_needed": true
+     },
+     {
+      "id": "exercise_04",
+      "type": "fill_blank",
+      "variant": "complete_sentence_with_given_word",
+      "order": 4,
+      "title": "用括号里的词语完成句子",
+      "title_vi": "Dùng từ trong ngoặc hoàn thành câu",
+      "instruction": {
+       "zh": "用括号里的词语完成句子。",
+       "vi": "Dùng từ gợi ý để hoàn thành câu."
+      },
+      "difficulty": "hard",
+      "skill_focus": ["grammar", "writing"],
+      "grammar_refs": ["grammar_01"],
+      "questions": [
+       {
+        "id": "ex04_q01",
+        "prompt": "A：她怎么样？\nB：她又热情又漂亮，班上的同学______。（谁）",
+        "answer": "谁都喜欢她。",
+        "grading": {
+         "mode": "manual"
+        },
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "ex04_q02",
+        "prompt": "A：你今天出去吗？\nB：今天外边太冷，我______。（哪儿）",
+        "answer": "哪儿也不想去。",
+        "grading": {
+         "mode": "manual"
+        },
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "ex04_q03",
+        "prompt": "A：你看这件事儿怎么办呢？\nB：______。（怎么）",
+        "answer": "怎么办都行，我没意见。",
+        "grading": {
+         "mode": "manual"
+        },
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "ex04_q04",
+        "prompt": "A：我想去看看你，什么时候去比较合适？\nB：你______。（什么）",
+        "answer": "什么时候想来就什么时候来吧。",
+        "grading": {
+         "mode": "manual"
+        },
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "ex04_q05",
+        "prompt": "A：来中国以后，你去过什么地方？\nB：除了北京以外，我______。（哪儿）",
+        "answer": "哪儿都没去过。",
+        "grading": {
+         "mode": "manual"
+        },
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "ex04_q06",
+        "prompt": "A：我们坐火车去还是坐飞机去？\nB：______。（怎么）",
+        "answer": "怎么去都行。",
+        "grading": {
+         "mode": "manual"
+        },
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       }
+      ],
+      "answer_key": [
+       {
+        "question_id": "ex04_q01",
+        "sample_answer": "谁都喜欢她。",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "question_id": "ex04_q02",
+        "sample_answer": "哪儿也不想去。",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "question_id": "ex04_q03",
+        "sample_answer": "怎么办都行，我没意见。",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "question_id": "ex04_q04",
+        "sample_answer": "什么时候想来就什么时候来吧。",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "question_id": "ex04_q05",
+        "sample_answer": "哪儿都没去过。",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "question_id": "ex04_q06",
+        "sample_answer": "怎么去都行。",
+        "answer_verified": false,
+        "check_needed": true
+       }
+      ],
+      "rendering": {
+       "renderer": "exercise.fill_blank.v1",
+       "input_mode": "text",
+       "show_answer_after_submit": true
+      },
+      "source_origin": "textbook",
+      "check_needed": true
+     },
+     {
+      "id": "exercise_05",
+      "type": "complete_dialogue",
+      "variant": "answer_with_interrogative_pronoun_pattern",
+      "order": 5,
+      "title": "用括号里的词语回答问题",
+      "title_vi": "Dùng mẫu trong ngoặc trả lời câu hỏi",
+      "instruction": {
+       "zh": "用括号里的词语回答问题。",
+       "vi": "Dùng mẫu đại từ nghi vấn để trả lời."
+      },
+      "difficulty": "hard",
+      "skill_focus": ["grammar", "speaking"],
+      "grammar_refs": ["grammar_01"],
+      "dialogues": [
+       {
+        "id": "ex05_d01",
+        "lines": [
+         {
+          "text": "A：你想吃点儿什么？"
+         }
+        ],
+        "sample_answers": [
+         {
+          "blank_id": "answer",
+          "answer": "什么好吃就吃什么。"
+         }
+        ],
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "ex05_d02",
+        "lines": [
+         {
+          "text": "A：你想让谁跟你去？"
+         }
+        ],
+        "sample_answers": [
+         {
+          "blank_id": "answer",
+          "answer": "谁愿意去就让谁跟我去。"
+         }
+        ],
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "ex05_d03",
+        "lines": [
+         {
+          "text": "A：我们怎么去呢？"
+         }
+        ],
+        "sample_answers": [
+         {
+          "blank_id": "answer",
+          "answer": "怎么方便就怎么去。"
+         }
+        ],
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "ex05_d04",
+        "lines": [
+         {
+          "text": "A：我们什么时候出发？"
+         }
+        ],
+        "sample_answers": [
+         {
+          "blank_id": "answer",
+          "answer": "什么时候有空儿就什么时候出发。"
+         }
+        ],
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "ex05_d05",
+        "lines": [
+         {
+          "text": "A：我们去哪儿买？"
+         }
+        ],
+        "sample_answers": [
+         {
+          "blank_id": "answer",
+          "answer": "哪儿便宜就去哪儿买。"
+         }
+        ],
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "ex05_d06",
+        "lines": [
+         {
+          "text": "A：你想学哪本书？"
+         }
+        ],
+        "sample_answers": [
+         {
+          "blank_id": "answer",
+          "answer": "哪本书有意思就学哪本书。"
+         }
+        ],
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       }
+      ],
+      "answer_key": [
+       {
+        "question_id": "ex05_d01",
+        "sample_answer": "什么好吃就吃什么。",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "question_id": "ex05_d02",
+        "sample_answer": "谁愿意去就让谁跟我去。",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "question_id": "ex05_d03",
+        "sample_answer": "怎么方便就怎么去。",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "question_id": "ex05_d04",
+        "sample_answer": "什么时候有空儿就什么时候出发。",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "question_id": "ex05_d05",
+        "sample_answer": "哪儿便宜就去哪儿买。",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "question_id": "ex05_d06",
+        "sample_answer": "哪本书有意思就学哪本书。",
+        "answer_verified": false,
+        "check_needed": true
+       }
+      ],
+      "rendering": {
+       "renderer": "exercise.complete_dialogue.v1",
+       "show_answer_after_submit": true
+      },
+      "source_origin": "textbook",
+      "check_needed": true
+     },
+     {
+      "id": "exercise_06",
+      "type": "open_ended",
+      "variant": "situation_expression_with_interrogative_pronoun",
+      "order": 6,
+      "title": "下列情景怎么说（用上疑问代词）",
+      "title_vi": "Diễn đạt theo tình huống, dùng đại từ nghi vấn",
+      "instruction": {
+       "zh": "下列情景怎么说（用上疑问代词）。",
+       "vi": "Nói thế nào trong các tình huống sau, dùng đại từ nghi vấn."
+      },
+      "difficulty": "hard",
+      "skill_focus": ["grammar", "speaking"],
+      "grammar_refs": ["grammar_01"],
+      "supplementary_words": [
+       {
+        "id": "ex06_word_001",
+        "hanzi": "经济",
+        "pinyin": "jīngjì",
+        "meaning_vi": "kinh tế",
+        "source_origin": "textbook",
+        "check_needed": false
+       },
+       {
+        "id": "ex06_word_002",
+        "hanzi": "法律",
+        "pinyin": "fǎlǜ",
+        "meaning_vi": "pháp luật",
+        "source_origin": "textbook",
+        "check_needed": false
+       },
+       {
+        "id": "ex06_word_003",
+        "hanzi": "医学",
+        "pinyin": "yīxué",
+        "meaning_vi": "y học",
+        "source_origin": "textbook",
+        "check_needed": false
+       },
+       {
+        "id": "ex06_word_004",
+        "hanzi": "记者",
+        "pinyin": "jìzhě",
+        "meaning_vi": "nhà báo, phóng viên",
+        "source_origin": "textbook",
+        "check_needed": false
+       },
+       {
+        "id": "ex06_word_005",
+        "hanzi": "作家",
+        "pinyin": "zuòjiā",
+        "meaning_vi": "nhà văn",
+        "source_origin": "textbook",
+        "check_needed": false
+       },
+       {
+        "id": "ex06_word_006",
+        "hanzi": "工程师",
+        "pinyin": "gōngchéngshī",
+        "meaning_vi": "kỹ sư",
+        "source_origin": "textbook",
+        "check_needed": false
+       },
+       {
+        "id": "ex06_word_007",
+        "hanzi": "方面",
+        "pinyin": "fāngmiàn",
+        "meaning_vi": "phương diện, lĩnh vực",
+        "source_origin": "textbook",
+        "check_needed": false
+       }
+      ],
+      "questions": [
+       {
+        "id": "ex06_q01",
+        "prompt": "你们班的同学有的以后要学经济，有的要学法律，有的要学医学，有的要学历史……（什么）",
+        "sample_answer": "我们班的同学以后学什么的都有。",
+        "grading": {
+         "mode": "manual"
+        },
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "ex06_q02",
+        "prompt": "我有很多朋友，有的是老师，有的是记者，有的是作家，有的是工程师，有的是大夫，有的是律师……（什么）",
+        "sample_answer": "我的朋友做什么的都有。",
+        "grading": {
+         "mode": "manual"
+        },
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "ex06_q03",
+        "prompt": "我喜欢看书，文学、历史、医学、经济、法律等方面的书我都喜欢看。（什么）",
+        "sample_answer": "什么方面的书我都喜欢看。",
+        "grading": {
+         "mode": "manual"
+        },
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "ex06_q04",
+        "prompt": "他来中国快一年了，只去过一次北京，别的地方还没有去过。（除了……以外，哪儿）",
+        "sample_answer": "除了北京以外，他哪儿都没去过。",
+        "grading": {
+         "mode": "manual"
+        },
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       }
+      ],
+      "answer_key": [
+       {
+        "question_id": "ex06_q01",
+        "sample_answer": "我们班的同学以后学什么的都有。",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "question_id": "ex06_q02",
+        "sample_answer": "我的朋友做什么的都有。",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "question_id": "ex06_q03",
+        "sample_answer": "什么方面的书我都喜欢看。",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "question_id": "ex06_q04",
+        "sample_answer": "除了北京以外，他哪儿都没去过。",
+        "answer_verified": false,
+        "check_needed": true
+       }
+      ],
+      "rendering": {
+       "renderer": "exercise.open_ended.v1",
+       "show_answer_after_submit": true
+      },
+      "source_origin": "textbook",
+      "check_needed": true
+     },
+     {
+      "id": "exercise_07",
+      "type": "correct_sentence",
+      "variant": "",
+      "order": 7,
+      "title": "改错句",
+      "title_vi": "Sửa câu sai",
+      "instruction": {
+       "zh": "改错句。",
+       "vi": "Sửa lỗi trong câu."
+      },
+      "difficulty": "hard",
+      "skill_focus": ["grammar", "sentence_order"],
+      "grammar_refs": ["grammar_01", "grammar_02"],
+      "questions": [
+       {
+        "id": "ex07_q01",
+        "wrong_sentence": "哪个题容易，我就做什么题。",
+        "correct_sentence": "哪个题容易，我就做哪个题。",
+        "acceptable_answers": ["哪个题容易，我就做哪个题。"],
+        "explanation_vi": "前后 đại từ nghi vấn phải cùng loại: 哪个…哪个.",
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "ex07_q02",
+        "wrong_sentence": "你说怎么，我就做怎么。",
+        "correct_sentence": "你说怎么做，我就怎么做。",
+        "acceptable_answers": ["你说怎么做，我就怎么做。"],
+        "explanation_vi": "怎么 phải đi với động từ 做 để tạo cụm hoàn chỉnh.",
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "ex07_q03",
+        "wrong_sentence": "哪儿好玩儿，就我们去哪儿玩儿。",
+        "correct_sentence": "哪儿好玩儿，我们就去哪儿玩儿。",
+        "acceptable_answers": ["哪儿好玩儿，我们就去哪儿玩儿。"],
+        "explanation_vi": "就 đứng trước vị ngữ/động từ, không đứng trước chủ ngữ 我们 trong câu này.",
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "ex07_q04",
+        "wrong_sentence": "我的电脑坏了，什么也修不好。",
+        "correct_sentence": "我的电脑坏了，怎么也修不好。",
+        "acceptable_answers": ["我的电脑坏了，怎么也修不好。"],
+        "explanation_vi": "修不好 hỏi cách thức nên dùng 怎么也.",
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "ex07_q05",
+        "wrong_sentence": "我刚来中国的时候，什么汉语不会说。",
+        "correct_sentence": "我刚来中国的时候，什么汉语也不会说。",
+        "acceptable_answers": ["我刚来中国的时候，什么汉语也不会说。"],
+        "explanation_vi": "Phủ định 任指 cần 也/都 + 不/没.",
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "ex07_q06",
+        "wrong_sentence": "老师的话我一边听，一边不懂。",
+        "correct_sentence": "老师的话我听不懂。",
+        "acceptable_answers": ["老师的话我听不懂。"],
+        "explanation_vi": "不懂 là trạng thái/kết quả, không dùng như hành động song song với 一边.",
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       }
+      ],
+      "answer_key": [
+       {
+        "question_id": "ex07_q01",
+        "answer": "哪个题容易，我就做哪个题。",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "question_id": "ex07_q02",
+        "answer": "你说怎么做，我就怎么做。",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "question_id": "ex07_q03",
+        "answer": "哪儿好玩儿，我们就去哪儿玩儿。",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "question_id": "ex07_q04",
+        "answer": "我的电脑坏了，怎么也修不好。",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "question_id": "ex07_q05",
+        "answer": "我刚来中国的时候，什么汉语也不会说。",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "question_id": "ex07_q06",
+        "answer": "老师的话我听不懂。",
+        "answer_verified": false,
+        "check_needed": true
+       }
+      ],
+      "rendering": {
+       "renderer": "exercise.correct_sentence.v1",
+       "show_answer_after_submit": true
+      },
+      "source_origin": "textbook",
+      "check_needed": true
+     }
+    ]
+   },
+   {
+    "id": "section_07_communication",
+    "type": "communication",
+    "order": 7,
+    "title": "交际会话",
+    "title_vi": "Hội thoại giao tiếp",
+    "source_origin": "textbook",
+    "check_needed": false,
+    "items": [
+     {
+      "id": "communication_01",
+      "type": "communication_dialogue",
+      "variant": "plan",
+      "order": 1,
+      "title": "计划",
+      "title_vi": "Kế hoạch",
+      "function": "计划",
+      "function_vi": "Nói về kế hoạch",
+      "dialogue": [
+       {
+        "speaker": "A",
+        "text": "快放寒假了，你打算去哪儿玩儿？"
+       },
+       {
+        "speaker": "B",
+        "text": "哪儿风景漂亮我就去哪儿。"
+       },
+       {
+        "speaker": "A",
+        "text": "杭州风景很漂亮。"
+       },
+       {
+        "speaker": "B",
+        "text": "除了杭州，我还想去苏州看看。"
+       }
+      ],
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "communication_02",
+      "type": "communication_dialogue",
+      "variant": "farewell",
+      "order": 2,
+      "title": "送行",
+      "title_vi": "Tiễn đi",
+      "function": "送行",
+      "function_vi": "Tiễn người đi",
+      "dialogue": [
+       {
+        "speaker": "A",
+        "text": "车快开了，快上去吧。"
+       },
+       {
+        "speaker": "B",
+        "text": "好，我走了。再见吧。"
+       },
+       {
+        "speaker": "A",
+        "text": "再见！一路平安！"
+       },
+       {
+        "speaker": "B",
+        "text": "谢谢！"
+       }
+      ],
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "communication_03",
+      "type": "communication_dialogue",
+      "variant": "indifference",
+      "order": 3,
+      "title": "表达无所谓",
+      "title_vi": "Biểu đạt không sao/cái nào cũng được",
+      "function": "表达无所谓",
+      "function_vi": "Nói không quan trọng, thế nào cũng được",
+      "dialogue": [
+       {
+        "speaker": "张东",
+        "text": "你想吃点儿什么？"
+       },
+       {
+        "speaker": "田芳",
+        "text": "随便，吃什么都行。你点吧。"
+       },
+       {
+        "speaker": "张东",
+        "text": "你来点吧。你喜欢吃什么咱们就吃什么。"
+       },
+       {
+        "speaker": "田芳",
+        "text": "你想喝点儿什么？"
+       },
+       {
+        "speaker": "张东",
+        "text": "我无所谓，喝什么都行。"
+       }
+      ],
+      "source_origin": "textbook",
+      "check_needed": false
+     }
+    ]
+   },
+   {
+    "id": "section_08_reading",
+    "type": "reading",
+    "order": 8,
+    "title": "阅读理解 / 阅读填空",
+    "title_vi": "Đọc hiểu / Điền khuyết",
+    "source_origin": "generated",
+    "check_needed": true,
+    "note_vi": "Đã bổ sung bài đọc + bài điền khuyết cho app. Phần này là generated supplement vì bản bóc trước để trống reading; cần đối chiếu PDF nếu muốn đánh dấu textbook.",
+    "items": [
+     {
+      "id": "reading_01",
+      "type": "reading_text",
+      "order": 1,
+      "title": "寒假旅行计划",
+      "title_vi": "Kế hoạch du lịch kỳ nghỉ đông",
+      "paragraphs": [
+       {
+        "id": "reading_01_p01",
+        "order": 1,
+        "zh": "寒假快到了，我们班打算一起去旅行。去哪儿好呢？大家说：“哪儿好玩儿就去哪儿。”",
+        "pinyin": "",
+        "vi": "",
+        "grammar_refs": ["grammar_01", "grammar_02", "grammar_03"],
+        "vocab_refs": [],
+        "source_origin": "generated",
+        "check_needed": true
+       },
+       {
+        "id": "reading_01_p02",
+        "order": 2,
+        "zh": "老师让我们先查资料，再商量路线，然后买车票，最后准备行李。",
+        "pinyin": "",
+        "vi": "",
+        "grammar_refs": ["grammar_01", "grammar_02", "grammar_03"],
+        "vocab_refs": [],
+        "source_origin": "generated",
+        "check_needed": true
+       },
+       {
+        "id": "reading_01_p03",
+        "order": 3,
+        "zh": "玛丽说：“我什么都可以，只要大家高兴就行。”麦克说：“我们可以一边旅行，一边练习汉语。”",
+        "pinyin": "",
+        "vi": "",
+        "grammar_refs": ["grammar_01", "grammar_02", "grammar_03"],
+        "vocab_refs": [],
+        "source_origin": "generated",
+        "check_needed": true
+       },
+       {
+        "id": "reading_01_p04",
+        "order": 4,
+        "zh": "最后，大家决定去哈尔滨。因为那儿可以看冰灯，也可以滑冰，谁都觉得这个计划不错。",
+        "pinyin": "",
+        "vi": "",
+        "grammar_refs": ["grammar_01", "grammar_02", "grammar_03"],
+        "vocab_refs": [],
+        "source_origin": "generated",
+        "check_needed": true
+       }
+      ],
+      "questions": [
+       {
+        "id": "reading_01_q01",
+        "question": "这篇短文主要说什么？",
+        "answer": "这篇短文主要练习本课语法和主题词。",
+        "source_origin": "generated",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "reading_01_q02",
+        "question": "文中用了哪些本课语法点？",
+        "answer": "答案可参考 grammar_refs。",
+        "source_origin": "generated",
+        "answer_verified": false,
+        "check_needed": true
+       }
+      ],
+      "source_origin": "generated",
+      "check_needed": true
+     },
+     {
+      "id": "reading_cloze_01",
+      "type": "reading_cloze",
+      "order": 2,
+      "title": "综合填空：寒假旅行计划",
+      "title_vi": "Điền tổng hợp: Kế hoạch du lịch kỳ nghỉ đông",
+      "instruction": {
+       "zh": "综合填空。",
+       "vi": "Điền từ thích hợp vào chỗ trống trong bài đọc."
+      },
+      "word_bank": [],
+      "passage": {
+       "id": "cloze_passage_01",
+       "segments": [
+        {
+         "id": "seg_001",
+         "type": "text",
+         "text": "寒假快到了，我们班打算一起去旅行。去哪儿好呢？大家说：“哪儿好玩儿"
+        },
+        {
+         "id": "seg_002",
+         "type": "blank",
+         "blank_id": "blank_01"
+        },
+        {
+         "id": "seg_003",
+         "type": "text",
+         "text": "去哪儿。”\n\n老师让我们先查资料，"
+        },
+        {
+         "id": "seg_004",
+         "type": "blank",
+         "blank_id": "blank_02"
+        },
+        {
+         "id": "seg_005",
+         "type": "text",
+         "text": "商量路线，"
+        },
+        {
+         "id": "seg_006",
+         "type": "blank",
+         "blank_id": "blank_03"
+        },
+        {
+         "id": "seg_007",
+         "type": "text",
+         "text": "买车票，"
+        },
+        {
+         "id": "seg_008",
+         "type": "blank",
+         "blank_id": "blank_04"
+        },
+        {
+         "id": "seg_009",
+         "type": "text",
+         "text": "准备行李。\n\n玛丽说：“我什么"
+        },
+        {
+         "id": "seg_010",
+         "type": "blank",
+         "blank_id": "blank_05"
+        },
+        {
+         "id": "seg_011",
+         "type": "text",
+         "text": "可以，只要大家高兴就行。”麦克说：“我们可以一边旅行，"
+        },
+        {
+         "id": "seg_012",
+         "type": "blank",
+         "blank_id": "blank_06"
+        },
+        {
+         "id": "seg_013",
+         "type": "text",
+         "text": "练习汉语。”\n\n最后，大家决定去哈尔滨。因为那儿可以看冰灯，也可以滑冰，谁"
+        },
+        {
+         "id": "seg_014",
+         "type": "blank",
+         "blank_id": "blank_07"
+        },
+        {
+         "id": "seg_015",
+         "type": "text",
+         "text": "觉得这个计划不错。"
+        }
+       ]
+      },
+      "answers": [
+       {
+        "blank_id": "blank_01",
+        "answer": "就",
+        "acceptable_answers": ["就"],
+        "explanation_vi": "Đáp án theo bài đọc bổ sung đã tạo cho app; cần rà nếu muốn khớp tuyệt đối với sách.",
+        "grammar_refs": ["grammar_01", "grammar_02", "grammar_03"],
+        "source_origin": "generated",
+        "check_needed": true
+       },
+       {
+        "blank_id": "blank_02",
+        "answer": "再",
+        "acceptable_answers": ["再"],
+        "explanation_vi": "Đáp án theo bài đọc bổ sung đã tạo cho app; cần rà nếu muốn khớp tuyệt đối với sách.",
+        "grammar_refs": ["grammar_01", "grammar_02", "grammar_03"],
+        "source_origin": "generated",
+        "check_needed": true
+       },
+       {
+        "blank_id": "blank_03",
+        "answer": "然后",
+        "acceptable_answers": ["然后"],
+        "explanation_vi": "Đáp án theo bài đọc bổ sung đã tạo cho app; cần rà nếu muốn khớp tuyệt đối với sách.",
+        "grammar_refs": ["grammar_01", "grammar_02", "grammar_03"],
+        "source_origin": "generated",
+        "check_needed": true
+       },
+       {
+        "blank_id": "blank_04",
+        "answer": "最后",
+        "acceptable_answers": ["最后"],
+        "explanation_vi": "Đáp án theo bài đọc bổ sung đã tạo cho app; cần rà nếu muốn khớp tuyệt đối với sách.",
+        "grammar_refs": ["grammar_01", "grammar_02", "grammar_03"],
+        "source_origin": "generated",
+        "check_needed": true
+       },
+       {
+        "blank_id": "blank_05",
+        "answer": "都",
+        "acceptable_answers": ["都"],
+        "explanation_vi": "Đáp án theo bài đọc bổ sung đã tạo cho app; cần rà nếu muốn khớp tuyệt đối với sách.",
+        "grammar_refs": ["grammar_01", "grammar_02", "grammar_03"],
+        "source_origin": "generated",
+        "check_needed": true
+       },
+       {
+        "blank_id": "blank_06",
+        "answer": "一边",
+        "acceptable_answers": ["一边"],
+        "explanation_vi": "Đáp án theo bài đọc bổ sung đã tạo cho app; cần rà nếu muốn khớp tuyệt đối với sách.",
+        "grammar_refs": ["grammar_01", "grammar_02", "grammar_03"],
+        "source_origin": "generated",
+        "check_needed": true
+       },
+       {
+        "blank_id": "blank_07",
+        "answer": "都",
+        "acceptable_answers": ["都"],
+        "explanation_vi": "Đáp án theo bài đọc bổ sung đã tạo cho app; cần rà nếu muốn khớp tuyệt đối với sách.",
+        "grammar_refs": ["grammar_01", "grammar_02", "grammar_03"],
+        "source_origin": "generated",
+        "check_needed": true
+       }
+      ],
+      "answer_key": [
+       {
+        "blank_id": "blank_01",
+        "answer": "就",
+        "source_origin": "generated",
+        "check_needed": true
+       },
+       {
+        "blank_id": "blank_02",
+        "answer": "再",
+        "source_origin": "generated",
+        "check_needed": true
+       },
+       {
+        "blank_id": "blank_03",
+        "answer": "然后",
+        "source_origin": "generated",
+        "check_needed": true
+       },
+       {
+        "blank_id": "blank_04",
+        "answer": "最后",
+        "source_origin": "generated",
+        "check_needed": true
+       },
+       {
+        "blank_id": "blank_05",
+        "answer": "都",
+        "source_origin": "generated",
+        "check_needed": true
+       },
+       {
+        "blank_id": "blank_06",
+        "answer": "一边",
+        "source_origin": "generated",
+        "check_needed": true
+       },
+       {
+        "blank_id": "blank_07",
+        "answer": "都",
+        "source_origin": "generated",
+        "check_needed": true
+       }
+      ],
+      "rendering": {
+       "renderer": "reading.cloze.v1",
+       "input_mode": "text",
+       "show_word_bank": false,
+       "show_answer_after_submit": true
+      },
+      "source_origin": "generated",
+      "check_needed": true
+     }
+    ]
+   },
+   {
+    "id": "section_09_character_writing",
+    "type": "character_writing",
+    "order": 9,
+    "title": "写汉字",
+    "title_vi": "Viết chữ Hán",
+    "source_origin": "generated",
+    "check_needed": true,
+    "items": [
+     {
+      "id": "char_001",
+      "type": "character_writing_item",
+      "order": 1,
+      "hanzi": "渴",
+      "pinyin": "kě",
+      "vocab_ref": "vocab_001",
+      "stroke_count": null,
+      "radical": "",
+      "stroke_order_key": "",
+      "practice": {
+       "grid_type": "田字格",
+       "repeat_count": 6
+      },
+      "source_origin": "generated",
+      "check_needed": true
+     },
+     {
+      "id": "char_002",
+      "type": "character_writing_item",
+      "order": 2,
+      "hanzi": "点",
+      "pinyin": "diǎn",
+      "vocab_ref": "vocab_002",
+      "stroke_count": null,
+      "radical": "",
+      "stroke_order_key": "",
+      "practice": {
+       "grid_type": "田字格",
+       "repeat_count": 6
+      },
+      "source_origin": "generated",
+      "check_needed": true
+     },
+     {
+      "id": "char_003",
+      "type": "character_writing_item",
+      "order": 3,
+      "hanzi": "辣",
+      "pinyin": "là",
+      "vocab_ref": "vocab_004",
+      "stroke_count": null,
+      "radical": "",
+      "stroke_order_key": "",
+      "practice": {
+       "grid_type": "田字格",
+       "repeat_count": 6
+      },
+      "source_origin": "generated",
+      "check_needed": true
+     },
+     {
+      "id": "char_004",
+      "type": "character_writing_item",
+      "order": 4,
+      "hanzi": "糖",
+      "pinyin": "táng",
+      "vocab_ref": "vocab_005",
+      "stroke_count": null,
+      "radical": "",
+      "stroke_order_key": "",
+      "practice": {
+       "grid_type": "田字格",
+       "repeat_count": 6
+      },
+      "source_origin": "generated",
+      "check_needed": true
+     },
+     {
+      "id": "char_005",
+      "type": "character_writing_item",
+      "order": 5,
+      "hanzi": "周",
+      "pinyin": "zhōu",
+      "vocab_ref": "vocab_006",
+      "stroke_count": null,
+      "radical": "",
+      "stroke_order_key": "",
+      "practice": {
+       "grid_type": "田字格",
+       "repeat_count": 6
+      },
+      "source_origin": "generated",
+      "check_needed": true
+     },
+     {
+      "id": "char_006",
+      "type": "character_writing_item",
+      "order": 6,
+      "hanzi": "冰",
+      "pinyin": "bīng",
+      "vocab_ref": "vocab_010",
+      "stroke_count": null,
+      "radical": "",
+      "stroke_order_key": "",
+      "practice": {
+       "grid_type": "田字格",
+       "repeat_count": 6
+      },
+      "source_origin": "generated",
+      "check_needed": true
+     },
+     {
+      "id": "char_007",
+      "type": "character_writing_item",
+      "order": 7,
+      "hanzi": "雕",
+      "pinyin": "diāo",
+      "vocab_ref": "vocab_011",
+      "stroke_count": null,
+      "radical": "",
+      "stroke_order_key": "",
+      "practice": {
+       "grid_type": "田字格",
+       "repeat_count": 6
+      },
+      "source_origin": "generated",
+      "check_needed": true
+     },
+     {
+      "id": "char_008",
+      "type": "character_writing_item",
+      "order": 8,
+      "hanzi": "玩",
+      "pinyin": "wán",
+      "vocab_ref": "vocab_012",
+      "stroke_count": null,
+      "radical": "",
+      "stroke_order_key": "",
+      "practice": {
+       "grid_type": "田字格",
+       "repeat_count": 6
+      },
+      "source_origin": "generated",
+      "check_needed": true
+     },
+     {
+      "id": "char_009",
+      "type": "character_writing_item",
+      "order": 9,
+      "hanzi": "计",
+      "pinyin": "jì",
+      "vocab_ref": "vocab_014",
+      "stroke_count": null,
+      "radical": "",
+      "stroke_order_key": "",
+      "practice": {
+       "grid_type": "田字格",
+       "repeat_count": 6
+      },
+      "source_origin": "generated",
+      "check_needed": true
+     },
+     {
+      "id": "char_010",
+      "type": "character_writing_item",
+      "order": 10,
+      "hanzi": "族",
+      "pinyin": "zú",
+      "vocab_ref": "vocab_024",
+      "stroke_count": null,
+      "radical": "",
+      "stroke_order_key": "",
+      "practice": {
+       "grid_type": "田字格",
+       "repeat_count": 6
+      },
+      "source_origin": "generated",
+      "check_needed": true
+     }
+    ]
+   }
+  ],
+  "summary": {
+   "lesson_parts": ["课文", "生词", "专名", "注释", "语法", "练习", "交际会话"],
+   "grammar_points": [
+    {
+     "id": "grammar_01",
+     "title": "疑问代词的活用"
+    },
+    {
+     "id": "grammar_01_structure_01",
+     "title": "任指 / 泛指"
+    },
+    {
+     "id": "grammar_01_structure_02",
+     "title": "特指"
+    },
+    {
+     "id": "grammar_01_structure_03",
+     "title": "虚指"
+    },
+    {
+     "id": "grammar_02",
+     "title": "一边……一边……"
+    },
+    {
+     "id": "grammar_03",
+     "title": "先……再……然后……最后……"
+    }
+   ],
+   "main_patterns": [
+    {
+     "pattern": "什么都可以。",
+     "grammar_ref": "grammar_01_structure_01"
+    },
+    {
+     "pattern": "什么好吃吃什么。",
+     "grammar_ref": "grammar_01_structure_02"
+    },
+    {
+     "pattern": "你说喝什么就喝什么吧。",
+     "grammar_ref": "grammar_01_structure_02"
+    },
+    {
+     "pattern": "谁都可以报名。",
+     "grammar_ref": "grammar_01_structure_01"
+    },
+    {
+     "pattern": "哪儿好玩儿就去哪儿。",
+     "grammar_ref": "grammar_01_structure_02"
+    },
+    {
+     "pattern": "除了骑自行车以外，怎么去都行。",
+     "grammar_ref": "grammar_01_structure_01"
+    },
+    {
+     "pattern": "一边旅行一边练习说汉语。",
+     "grammar_ref": "grammar_02"
+    },
+    {
+     "pattern": "先去西安，再到重庆，然后去云南、桂林，最后去苏州和杭州。",
+     "grammar_ref": "grammar_03"
+    },
+    {
+     "pattern": "上有天堂，下有苏杭。",
+     "grammar_ref": "note_01"
+    },
+    {
+     "pattern": "桂林山水甲天下。",
+     "grammar_ref": "note_02"
+    }
+   ],
+   "exercise_types": [
+    "phonetics",
+    "read_aloud",
+    "substitution_drill",
+    "choose_words_fill_blank",
+    "fill_blank",
+    "complete_dialogue",
+    "open_ended",
+    "correct_sentence",
+    "communication_dialogue",
+    "character_writing",
+    "reading_text",
+    "reading_cloze"
+   ],
+   "source_origin_policy": {
+    "textbook": "Copied/structured from textbook/PDF content.",
+    "web_crosscheck": "Used only to confirm lesson title, dialogue alignment, and key examples.",
+    "generated": "Generated for app practice/rendering; must be treated as non-textbook unless verified separately."
+   },
+   "check_needed": true
+  }
+ },
+ "fix_history": [
+  {
+   "fix_id": "reading_patch_15_23_v1",
+   "description": "Filled previously empty reading section with generated reading_text and reading_cloze items for app rendering.",
+   "affected_section_type": "reading",
+   "source_origin": "generated",
+   "check_needed": true
+  }
+ ]
+}

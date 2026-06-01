@@ -7,6 +7,7 @@ import {
  GraduationCap,
  GripVertical,
  Home,
+ NotebookPen,
  RotateCcw,
  type LucideIcon,
 } from "lucide-react";
@@ -15,6 +16,7 @@ import { Button } from "@/components/ui/button";
 import type { SegmentedControlItem } from "@/components/ui/segmented-control";
 import { Tabs } from "@/components/ui/tabs";
 import { GrammarWorkspace } from "@/features/hanzihome/components/GrammarWorkspace";
+import { LessonNoteAccessCard } from "@/features/hanzihome/components/LessonNoteAccessCard";
 import { LessonOverview } from "@/features/hanzihome/components/LessonOverview";
 import { LessonTextInlineEditor } from "@/features/hanzihome/components/LessonTextInlineEditor";
 import { ReviewWorkspace } from "@/features/hanzihome/components/ReviewWorkspace";
@@ -65,13 +67,14 @@ const paneLayoutKey = "hanzihome:module-pane-layout:v1";
 const studyModules = [
  "overview",
  "lessonText",
+ "notes",
  "vocab",
  "grammar",
  "review",
 ] as const satisfies readonly StudyModule[];
 
 const defaultPaneLayout: PaneLayout = {
- left: ["overview", "lessonText"],
+ left: ["overview", "lessonText", "notes"],
  right: ["vocab", "grammar", "review"],
  activeLeft: "overview",
  activeRight: "vocab",
@@ -80,6 +83,7 @@ const defaultPaneLayout: PaneLayout = {
 const moduleMeta = {
  overview: { key: "overview", label: "Tổng quan", icon: Home },
  lessonText: { key: "lessonText", label: "Bài khóa", icon: FileText },
+ notes: { key: "notes", label: "Ghi chú", icon: NotebookPen },
  vocab: { key: "vocab", label: "Từ vựng", icon: BookOpen },
  grammar: { key: "grammar", label: "Ngữ pháp", icon: GraduationCap },
  review: { key: "review", label: "Ôn tập", icon: RotateCcw },
@@ -300,11 +304,13 @@ export function ModuleSplitWorkspace({
        }
       }}
      />
-    );
-   case "lessonText":
-    return <LessonTextInlineEditor lesson={lesson} />;
-   case "vocab":
-    return (
+   );
+  case "lessonText":
+   return <LessonTextInlineEditor lesson={lesson} />;
+   case "notes":
+    return <LessonNoteAccessCard lesson={lesson} />;
+  case "vocab":
+   return (
      <VocabWorkspace
       lesson={lesson}
       state={learningState}

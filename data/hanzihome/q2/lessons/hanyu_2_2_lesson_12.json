@@ -1,0 +1,4244 @@
+{
+ "schema_version": "2.2.0",
+ "content_type": "chinese_textbook_lesson",
+ "verification_status": "final_verified_with_marked_generated_fields",
+ "source": {
+  "book": "Hanyu Jiaocheng",
+  "volume": "第二册下",
+  "volume_vi": "Quyển 2 Hạ",
+  "lesson_index": 12,
+  "lesson_number_cn": "第十二课",
+  "lesson_title_cn": "为什么把“福”字倒着贴在门上呢？",
+  "lesson_title_pinyin": "Wèishénme bǎ “fú” zì dàozhe tiē zài mén shàng ne?",
+  "lesson_title_vi": "Tại sao lại dán ngược chữ “Phúc” lên cửa?",
+  "lesson_title_en": "Why paste the character “Fu” upside down on the door?",
+  "source_files": [
+   {
+    "name": "Hanyu Jiaocheng 2-2.pdf",
+    "type": "pdf_scan",
+    "source_origin": "textbook",
+    "check_needed": false
+   },
+   {
+    "name": "Ngoại Ngữ Hà Nội - 为什么把“福”字倒着贴在门上呢",
+    "type": "web_crosscheck",
+    "source_origin": "web_crosscheck",
+    "check_needed": false
+   },
+   {
+    "name": "Quizlet - Bài 12: 为什么把“福”字倒贴在门上",
+    "type": "web_crosscheck",
+    "source_origin": "web_crosscheck",
+    "check_needed": true
+   },
+   {
+    "name": "YouTube - Tiếng Trung Online Hán Ngữ quyển 4 Bài 12.3",
+    "type": "web_crosscheck",
+    "source_origin": "web_crosscheck",
+    "check_needed": true
+   }
+  ],
+  "web_crosscheck": [
+   {
+    "title": "Giáo trình Hán Ngữ 4 - Bài 2: 为什么把“福”字倒着贴在门上呢?",
+    "source_origin": "web_crosscheck",
+    "note": "Used to cross-check the three text blocks: 我们把教室布置成了会场, 把对联贴在大门两边, 为什么把“福”字倒着贴在门上呢, plus the central 把字句 grammar topic."
+   },
+   {
+    "title": "Bài 12: 为什么把“福”字倒贴在门上 vocabulary",
+    "source_origin": "web_crosscheck",
+    "note": "Used as secondary vocabulary cross-check only; textbook/PDF remains the main source."
+   }
+  ]
+ },
+ "lesson": {
+  "id": "hanyu_2_2_lesson_12",
+  "title": {
+   "zh": "为什么把“福”字倒着贴在门上呢？",
+   "pinyin": "Wèishénme bǎ “fú” zì dàozhe tiē zài mén shàng ne?",
+   "vi": "Tại sao lại dán ngược chữ “Phúc” lên cửa?",
+   "en": "Why paste the character “Fu” upside down on the door?"
+  },
+  "tags": [
+   "hanyu_2_2",
+   "lesson_12",
+   "book_lesson_12",
+   "hsk3-ish",
+   "ba_sentence",
+   "spring_festival",
+   "fu_character",
+   "classroom_decoration",
+   "reading_cloze_included"
+  ],
+  "sections": [
+   {
+    "id": "section_01_text",
+    "type": "text",
+    "order": 1,
+    "title": "课文",
+    "title_vi": "Bài khóa",
+    "source_origin": "textbook",
+    "check_needed": false,
+    "blocks": [
+     {
+      "id": "text_01",
+      "type": "text_narrative",
+      "order": 1,
+      "title": "我们把教室布置成了会场",
+      "title_vi": "Chúng tôi bố trí phòng học thành hội trường",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "lines": [
+       {
+        "id": "text_01_l01",
+        "order": 1,
+        "speaker": "旁白",
+        "zh": "圣诞节和新年快到了，我们准备在圣诞节前举行一个联欢晚会，请老师们也来参加。晚会上我们要唱中文歌，用汉语讲故事，表演节目，品尝各国的特色菜。班长要求我们那天把自己亲手做的菜带到晚会上来，让大家品尝。",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook",
+        "check_needed": false
+       },
+       {
+        "id": "text_01_l02",
+        "order": 2,
+        "speaker": "旁白",
+        "zh": "玛丽说：“我们最好借一个大教室，把它布置成会场。”",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook",
+        "check_needed": false
+       },
+       {
+        "id": "text_01_l03",
+        "order": 3,
+        "speaker": "旁白",
+        "zh": "前天，我们找到管理员，告诉了她借教室的事，她答应把那个教室借给我们。昨天下午服务员把教室打扫了一下儿，把门和窗户也都擦得干干净净的。",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook",
+        "check_needed": false
+       },
+       {
+        "id": "text_01_l04",
+        "order": 4,
+        "speaker": "旁白",
+        "zh": "我们把桌子摆成了一个大圆圈，爱德华把“圣诞——新年快乐”几个大字贴在了黑板上。",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook",
+        "check_needed": false
+       },
+       {
+        "id": "text_01_l05",
+        "order": 5,
+        "speaker": "旁白",
+        "zh": "李美英说，晚会上要和几个同学唱歌、跳舞，所以把音响也搬到教室里来了。爱德华昨天从商店买回来一棵圣诞树，我们把它摆在了教室的前边，用彩灯和彩带把它装饰得非常漂亮。",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook",
+        "check_needed": false
+       },
+       {
+        "id": "text_01_l06",
+        "order": 6,
+        "speaker": "旁白",
+        "zh": "安娜是我们班最小的同学，她的生日正好是十二月二十五号，所以同学们还为她准备了一份生日礼物和一个生日蛋糕，但是我们还没把这件事告诉她。我们想，到晚会上再把生日礼物拿出来送给她，给她一个惊喜，让她在中国过一个快乐的生日。",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook",
+        "check_needed": false
+       },
+       {
+        "id": "text_01_l07",
+        "order": 7,
+        "speaker": "旁白",
+        "zh": "我们把教室布置好以后，请老师来看了看，老师高兴地说：“你们把教室布置得真漂亮！”",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook",
+        "check_needed": false
+       },
+       {
+        "id": "text_01_l08",
+        "order": 8,
+        "speaker": "旁白",
+        "zh": "为了开好这个联欢会，同学们都认真地做了准备。明天晚上六点钟，我们的晚会就开始了。欢迎大家来参加。",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook",
+        "check_needed": false
+       }
+      ]
+     },
+     {
+      "id": "text_02",
+      "type": "text_dialogue",
+      "order": 2,
+      "title": "把对联贴在大门两边",
+      "title_vi": "Dán câu đối ở hai bên cửa lớn",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "lines": [
+       {
+        "id": "text_02_l01",
+        "order": 1,
+        "speaker": "旁白",
+        "zh": "（春节前，王老师和夫人高老师也在布置他们的家……）",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook",
+        "check_needed": false
+       },
+       {
+        "id": "text_02_l02",
+        "order": 2,
+        "speaker": "高老师",
+        "zh": "哎，这幅画挂在什么地方比较好？",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook",
+        "check_needed": false
+       },
+       {
+        "id": "text_02_l03",
+        "order": 3,
+        "speaker": "王老师",
+        "zh": "我想把它挂在中间。对了，小林还没把水仙花送来吧？",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook",
+        "check_needed": false
+       },
+       {
+        "id": "text_02_l04",
+        "order": 4,
+        "speaker": "高老师",
+        "zh": "已经送来了，我把它摆在卧室里了。你来看，开得可好了。",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook",
+        "check_needed": false
+       },
+       {
+        "id": "text_02_l05",
+        "order": 5,
+        "speaker": "王老师",
+        "zh": "把它摆在客厅里比较好。我把“福”字贴在门上吧。",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook",
+        "check_needed": false
+       },
+       {
+        "id": "text_02_l06",
+        "order": 6,
+        "speaker": "高老师",
+        "zh": "把你写的对联也贴上去吧。（读对联）“新年新春吉祥，百行百业……”你是不是把“兴”字也写成“旺”字了？",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook",
+        "check_needed": false
+       },
+       {
+        "id": "text_02_l07",
+        "order": 7,
+        "speaker": "王老师",
+        "zh": "哦，可不是嘛，写错了。应该是“新年新春吉祥，百行百业兴旺”。",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook",
+        "check_needed": false
+       }
+      ]
+     },
+     {
+      "id": "text_03",
+      "type": "text_dialogue",
+      "order": 3,
+      "title": "为什么把“福”字倒着贴在门上呢？",
+      "title_vi": "Tại sao lại dán ngược chữ “Phúc” lên cửa?",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "lines": [
+       {
+        "id": "text_03_l01",
+        "order": 1,
+        "speaker": "旁白",
+        "zh": "（麦克看见王老师家门贴着对联，就问田芳……）",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook",
+        "check_needed": false
+       },
+       {
+        "id": "text_03_l02",
+        "order": 2,
+        "speaker": "麦克",
+        "zh": "田芳，这就是你的对联吗？",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook",
+        "check_needed": false
+       },
+       {
+        "id": "text_03_l03",
+        "order": 3,
+        "speaker": "田芳",
+        "zh": "是啊。",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook",
+        "check_needed": false
+       },
+       {
+        "id": "text_03_l04",
+        "order": 4,
+        "speaker": "麦克",
+        "zh": "门上这个字怎么念？",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook",
+        "check_needed": false
+       },
+       {
+        "id": "text_03_l05",
+        "order": 5,
+        "speaker": "田芳",
+        "zh": "你仔细看看，认识不认识？",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook",
+        "check_needed": false
+       },
+       {
+        "id": "text_03_l06",
+        "order": 6,
+        "speaker": "麦克",
+        "zh": "没学过。",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook",
+        "check_needed": false
+       },
+       {
+        "id": "text_03_l07",
+        "order": 7,
+        "speaker": "田芳",
+        "zh": "这不是幸福的“福”字吗？过春节的时候，差不多家家都贴“福”字。",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook",
+        "check_needed": false
+       },
+       {
+        "id": "text_03_l08",
+        "order": 8,
+        "speaker": "麦克",
+        "zh": "这是幸福的“福”字？为什么把“福”字倒着贴在门上呢？",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook",
+        "check_needed": false
+       },
+       {
+        "id": "text_03_l09",
+        "order": 9,
+        "speaker": "田芳",
+        "zh": "这样，人们一看见就会说“福倒了”，听声音就是“福到了”。",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook",
+        "check_needed": false
+       },
+       {
+        "id": "text_03_l10",
+        "order": 10,
+        "speaker": "麦克",
+        "zh": "哦，那我也去买一些“福”字来，把它倒着贴在门上、床上、桌子上、椅子上、沙发上、冰箱上、洗衣机上、空调上……等着幸福来找我。",
+        "pinyin": "",
+        "vi": "",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook",
+        "check_needed": false
+       }
+      ]
+     }
+    ],
+    "comprehension_questions": [
+     {
+      "id": "text_q01",
+      "question": "同学们为什么要布置教室？",
+      "answer": "因为他们准备在圣诞节前举行一个联欢晚会。",
+      "source_origin": "textbook_question_generated_answer",
+      "answer_verified": true,
+      "check_needed": false
+     },
+     {
+      "id": "text_q02",
+      "question": "晚会上他们要做什么？",
+      "answer": "他们要唱中文歌、用汉语讲故事、表演节目、品尝各国的特色菜。",
+      "source_origin": "textbook_question_generated_answer",
+      "answer_verified": true,
+      "check_needed": false
+     },
+     {
+      "id": "text_q03",
+      "question": "班长要求同学们把什么带到晚会上来？",
+      "answer": "班长要求他们把自己亲手做的菜带到晚会上来。",
+      "source_origin": "textbook_question_generated_answer",
+      "answer_verified": true,
+      "check_needed": false
+     },
+     {
+      "id": "text_q04",
+      "question": "玛丽建议借什么地方？",
+      "answer": "玛丽建议借一个大教室，把它布置成会场。",
+      "source_origin": "textbook_question_generated_answer",
+      "answer_verified": true,
+      "check_needed": false
+     },
+     {
+      "id": "text_q05",
+      "question": "管理员答应把教室借给他们了吗？",
+      "answer": "答应了。",
+      "source_origin": "textbook_question_generated_answer",
+      "answer_verified": true,
+      "check_needed": false
+     },
+     {
+      "id": "text_q06",
+      "question": "服务员把教室打扫得怎么样？",
+      "answer": "服务员把教室打扫了一下儿，把门和窗户也都擦得干干净净的。",
+      "source_origin": "textbook_question_generated_answer",
+      "answer_verified": true,
+      "check_needed": false
+     },
+     {
+      "id": "text_q07",
+      "question": "他们把桌子摆成了什么样子？",
+      "answer": "他们把桌子摆成了一个大圆圈。",
+      "source_origin": "textbook_question_generated_answer",
+      "answer_verified": true,
+      "check_needed": false
+     },
+     {
+      "id": "text_q08",
+      "question": "爱德华把什么贴在了黑板上？",
+      "answer": "爱德华把“圣诞——新年快乐”几个大字贴在了黑板上。",
+      "source_origin": "textbook_question_generated_answer",
+      "answer_verified": true,
+      "check_needed": false
+     },
+     {
+      "id": "text_q09",
+      "question": "同学们为什么要给安娜准备生日礼物？",
+      "answer": "因为安娜的生日正好是十二月二十五号，他们想给她一个惊喜。",
+      "source_origin": "textbook_question_generated_answer",
+      "answer_verified": true,
+      "check_needed": false
+     },
+     {
+      "id": "text_q10",
+      "question": "王老师想把画挂在哪儿？",
+      "answer": "王老师想把画挂在中间。",
+      "source_origin": "textbook_question_generated_answer",
+      "answer_verified": true,
+      "check_needed": false
+     },
+     {
+      "id": "text_q11",
+      "question": "高老师把水仙花摆在哪儿了？",
+      "answer": "高老师把水仙花摆在卧室里了。",
+      "source_origin": "textbook_question_generated_answer",
+      "answer_verified": true,
+      "check_needed": false
+     },
+     {
+      "id": "text_q12",
+      "question": "王老师觉得应该把水仙花摆在哪儿？",
+      "answer": "王老师觉得把水仙花摆在客厅里比较好。",
+      "source_origin": "textbook_question_generated_answer",
+      "answer_verified": true,
+      "check_needed": false
+     },
+     {
+      "id": "text_q13",
+      "question": "高老师发现王老师把哪个字写错了？",
+      "answer": "高老师发现王老师把“兴”字写成“旺”字了。",
+      "source_origin": "textbook_question_generated_answer",
+      "answer_verified": true,
+      "check_needed": false
+     },
+     {
+      "id": "text_q14",
+      "question": "过春节的时候，很多人家会贴什么字？",
+      "answer": "很多人家会贴“福”字。",
+      "source_origin": "textbook_question_generated_answer",
+      "answer_verified": true,
+      "check_needed": false
+     },
+     {
+      "id": "text_q15",
+      "question": "为什么把“福”字倒着贴在门上？",
+      "answer": "因为人们一看见就会说“福倒了”，听声音就是“福到了”，表示幸福和好运到了。",
+      "source_origin": "textbook_question_generated_answer",
+      "answer_verified": true,
+      "check_needed": false
+     }
+    ]
+   },
+   {
+    "id": "section_02_vocabulary",
+    "type": "vocabulary",
+    "order": 2,
+    "title": "生词",
+    "title_vi": "Từ vựng",
+    "source_origin": "textbook",
+    "check_needed": false,
+    "items": [
+     {
+      "id": "vocab_001",
+      "type": "vocabulary_item",
+      "order": 1,
+      "hanzi": "品尝",
+      "pinyin": "pǐncháng",
+      "meaning_vi": "nếm, thưởng thức",
+      "meaning_en": "",
+      "pos": "verb",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "品尝",
+       "back": "pǐncháng — nếm, thưởng thức",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "vocab_002",
+      "type": "vocabulary_item",
+      "order": 2,
+      "hanzi": "特色",
+      "pinyin": "tèsè",
+      "meaning_vi": "đặc sắc, nét riêng",
+      "meaning_en": "",
+      "pos": "noun",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "特色",
+       "back": "tèsè — đặc sắc, nét riêng",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "vocab_003",
+      "type": "vocabulary_item",
+      "order": 3,
+      "hanzi": "亲手",
+      "pinyin": "qīnshǒu",
+      "meaning_vi": "tự tay, đích thân",
+      "meaning_en": "",
+      "pos": "adverb",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "亲手",
+       "back": "qīnshǒu — tự tay, đích thân",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "vocab_004",
+      "type": "vocabulary_item",
+      "order": 4,
+      "hanzi": "最好",
+      "pinyin": "zuìhǎo",
+      "meaning_vi": "tốt nhất là, nên",
+      "meaning_en": "",
+      "pos": "adverb",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "最好",
+       "back": "zuìhǎo — tốt nhất là, nên",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "vocab_005",
+      "type": "vocabulary_item",
+      "order": 5,
+      "hanzi": "布置",
+      "pinyin": "bùzhì",
+      "meaning_vi": "bố trí, sắp xếp, trang trí",
+      "meaning_en": "",
+      "pos": "verb",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "布置",
+       "back": "bùzhì — bố trí, sắp xếp, trang trí",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "vocab_006",
+      "type": "vocabulary_item",
+      "order": 6,
+      "hanzi": "会场",
+      "pinyin": "huìchǎng",
+      "meaning_vi": "hội trường, nơi tổ chức hội nghị/sự kiện",
+      "meaning_en": "",
+      "pos": "noun",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "会场",
+       "back": "huìchǎng — hội trường, nơi tổ chức hội nghị/sự kiện",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "vocab_007",
+      "type": "vocabulary_item",
+      "order": 7,
+      "hanzi": "管理员",
+      "pinyin": "guǎnlǐyuán",
+      "meaning_vi": "nhân viên quản lý",
+      "meaning_en": "",
+      "pos": "noun",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "管理员",
+       "back": "guǎnlǐyuán — nhân viên quản lý",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "vocab_008",
+      "type": "vocabulary_item",
+      "order": 8,
+      "hanzi": "管理",
+      "pinyin": "guǎnlǐ",
+      "meaning_vi": "quản lý",
+      "meaning_en": "",
+      "pos": "verb_noun",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "管理",
+       "back": "guǎnlǐ — quản lý",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "vocab_009",
+      "type": "vocabulary_item",
+      "order": 9,
+      "hanzi": "告诉",
+      "pinyin": "gàosu",
+      "meaning_vi": "nói, bảo, cho biết",
+      "meaning_en": "",
+      "pos": "verb",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "告诉",
+       "back": "gàosu — nói, bảo, cho biết",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "vocab_010",
+      "type": "vocabulary_item",
+      "order": 10,
+      "hanzi": "答应",
+      "pinyin": "dāying",
+      "meaning_vi": "đồng ý, nhận lời",
+      "meaning_en": "",
+      "pos": "verb",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "答应",
+       "back": "dāying — đồng ý, nhận lời",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "vocab_011",
+      "type": "vocabulary_item",
+      "order": 11,
+      "hanzi": "打扫",
+      "pinyin": "dǎsǎo",
+      "meaning_vi": "quét dọn",
+      "meaning_en": "",
+      "pos": "verb",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "打扫",
+       "back": "dǎsǎo — quét dọn",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "vocab_012",
+      "type": "vocabulary_item",
+      "order": 12,
+      "hanzi": "窗户",
+      "pinyin": "chuānghu",
+      "meaning_vi": "cửa sổ",
+      "meaning_en": "",
+      "pos": "noun",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "窗户",
+       "back": "chuānghu — cửa sổ",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "vocab_013",
+      "type": "vocabulary_item",
+      "order": 13,
+      "hanzi": "擦",
+      "pinyin": "cā",
+      "meaning_vi": "lau, chùi",
+      "meaning_en": "",
+      "pos": "verb",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "擦",
+       "back": "cā — lau, chùi",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "vocab_014",
+      "type": "vocabulary_item",
+      "order": 14,
+      "hanzi": "桌子",
+      "pinyin": "zhuōzi",
+      "meaning_vi": "cái bàn",
+      "meaning_en": "",
+      "pos": "noun",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "桌子",
+       "back": "zhuōzi — cái bàn",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "vocab_015",
+      "type": "vocabulary_item",
+      "order": 15,
+      "hanzi": "圆圈儿",
+      "pinyin": "yuánquānr",
+      "meaning_vi": "vòng tròn",
+      "meaning_en": "",
+      "pos": "noun",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "圆圈儿",
+       "back": "yuánquānr — vòng tròn",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "vocab_016",
+      "type": "vocabulary_item",
+      "order": 16,
+      "hanzi": "黑板",
+      "pinyin": "hēibǎn",
+      "meaning_vi": "bảng đen",
+      "meaning_en": "",
+      "pos": "noun",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "黑板",
+       "back": "hēibǎn — bảng đen",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "vocab_017",
+      "type": "vocabulary_item",
+      "order": 17,
+      "hanzi": "音响",
+      "pinyin": "yīnxiǎng",
+      "meaning_vi": "dàn âm thanh, loa",
+      "meaning_en": "",
+      "pos": "noun",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "音响",
+       "back": "yīnxiǎng — dàn âm thanh, loa",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "vocab_018",
+      "type": "vocabulary_item",
+      "order": 18,
+      "hanzi": "彩灯",
+      "pinyin": "cǎidēng",
+      "meaning_vi": "đèn màu",
+      "meaning_en": "",
+      "pos": "noun",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "彩灯",
+       "back": "cǎidēng — đèn màu",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "vocab_019",
+      "type": "vocabulary_item",
+      "order": 19,
+      "hanzi": "彩带",
+      "pinyin": "cǎidài",
+      "meaning_vi": "dây màu, ruy băng",
+      "meaning_en": "",
+      "pos": "noun",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "彩带",
+       "back": "cǎidài — dây màu, ruy băng",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "vocab_020",
+      "type": "vocabulary_item",
+      "order": 20,
+      "hanzi": "份",
+      "pinyin": "fèn",
+      "meaning_vi": "phần, suất; lượng từ cho quà/tài liệu",
+      "meaning_en": "",
+      "pos": "measure_word",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "份",
+       "back": "fèn — phần, suất; lượng từ cho quà/tài liệu",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "vocab_021",
+      "type": "vocabulary_item",
+      "order": 21,
+      "hanzi": "惊喜",
+      "pinyin": "jīngxǐ",
+      "meaning_vi": "niềm vui bất ngờ, điều bất ngờ",
+      "meaning_en": "",
+      "pos": "noun",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "惊喜",
+       "back": "jīngxǐ — niềm vui bất ngờ, điều bất ngờ",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "vocab_022",
+      "type": "vocabulary_item",
+      "order": 22,
+      "hanzi": "幅",
+      "pinyin": "fú",
+      "meaning_vi": "bức, tấm; lượng từ cho tranh",
+      "meaning_en": "",
+      "pos": "measure_word",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "幅",
+       "back": "fú — bức, tấm; lượng từ cho tranh",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "vocab_023",
+      "type": "vocabulary_item",
+      "order": 23,
+      "hanzi": "水仙",
+      "pinyin": "shuǐxiān",
+      "meaning_vi": "hoa thủy tiên",
+      "meaning_en": "",
+      "pos": "noun",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "水仙",
+       "back": "shuǐxiān — hoa thủy tiên",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "vocab_024",
+      "type": "vocabulary_item",
+      "order": 24,
+      "hanzi": "开",
+      "pinyin": "kāi",
+      "meaning_vi": "nở; mở",
+      "meaning_en": "",
+      "pos": "verb",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "开",
+       "back": "kāi — nở; mở",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "vocab_025",
+      "type": "vocabulary_item",
+      "order": 25,
+      "hanzi": "字",
+      "pinyin": "zì",
+      "meaning_vi": "chữ",
+      "meaning_en": "",
+      "pos": "noun",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "字",
+       "back": "zì — chữ",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "vocab_026",
+      "type": "vocabulary_item",
+      "order": 26,
+      "hanzi": "对联儿",
+      "pinyin": "duìliánr",
+      "meaning_vi": "câu đối",
+      "meaning_en": "",
+      "pos": "noun",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "对联儿",
+       "back": "duìliánr — câu đối",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "vocab_027",
+      "type": "vocabulary_item",
+      "order": 27,
+      "hanzi": "新春",
+      "pinyin": "xīnchūn",
+      "meaning_vi": "xuân mới, năm mới",
+      "meaning_en": "",
+      "pos": "noun",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "新春",
+       "back": "xīnchūn — xuân mới, năm mới",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "vocab_028",
+      "type": "vocabulary_item",
+      "order": 28,
+      "hanzi": "吉祥",
+      "pinyin": "jíxiáng",
+      "meaning_vi": "cát tường, may mắn",
+      "meaning_en": "",
+      "pos": "adjective",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "吉祥",
+       "back": "jíxiáng — cát tường, may mắn",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "vocab_029",
+      "type": "vocabulary_item",
+      "order": 29,
+      "hanzi": "行业",
+      "pinyin": "hángyè",
+      "meaning_vi": "ngành nghề",
+      "meaning_en": "",
+      "pos": "noun",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "行业",
+       "back": "hángyè — ngành nghề",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "vocab_030",
+      "type": "vocabulary_item",
+      "order": 30,
+      "hanzi": "兴旺",
+      "pinyin": "xīngwàng",
+      "meaning_vi": "hưng thịnh, phát đạt",
+      "meaning_en": "",
+      "pos": "adjective",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "兴旺",
+       "back": "xīngwàng — hưng thịnh, phát đạt",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "vocab_031",
+      "type": "vocabulary_item",
+      "order": 31,
+      "hanzi": "哦",
+      "pinyin": "ò",
+      "meaning_vi": "ồ, à",
+      "meaning_en": "",
+      "pos": "interjection",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "哦",
+       "back": "ò — ồ, à",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "vocab_032",
+      "type": "vocabulary_item",
+      "order": 32,
+      "hanzi": "可不是",
+      "pinyin": "kě bú shì",
+      "meaning_vi": "đúng vậy, còn gì nữa",
+      "meaning_en": "",
+      "pos": "phrase",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "可不是",
+       "back": "kě bú shì — đúng vậy, còn gì nữa",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "vocab_033",
+      "type": "vocabulary_item",
+      "order": 33,
+      "hanzi": "仔细",
+      "pinyin": "zǐxì",
+      "meaning_vi": "cẩn thận, kỹ lưỡng",
+      "meaning_en": "",
+      "pos": "adjective_adverb",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "仔细",
+       "back": "zǐxì — cẩn thận, kỹ lưỡng",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "vocab_034",
+      "type": "vocabulary_item",
+      "order": 34,
+      "hanzi": "幸福",
+      "pinyin": "xìngfú",
+      "meaning_vi": "hạnh phúc",
+      "meaning_en": "",
+      "pos": "noun_adjective",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "幸福",
+       "back": "xìngfú — hạnh phúc",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "vocab_035",
+      "type": "vocabulary_item",
+      "order": 35,
+      "hanzi": "倒",
+      "pinyin": "dào",
+      "meaning_vi": "ngược, lộn ngược",
+      "meaning_en": "",
+      "pos": "verb_adverb",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "倒",
+       "back": "dào — ngược, lộn ngược",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "vocab_036",
+      "type": "vocabulary_item",
+      "order": 36,
+      "hanzi": "声音",
+      "pinyin": "shēngyīn",
+      "meaning_vi": "âm thanh, giọng nói",
+      "meaning_en": "",
+      "pos": "noun",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "声音",
+       "back": "shēngyīn — âm thanh, giọng nói",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "vocab_037",
+      "type": "vocabulary_item",
+      "order": 37,
+      "hanzi": "椅子",
+      "pinyin": "yǐzi",
+      "meaning_vi": "ghế",
+      "meaning_en": "",
+      "pos": "noun",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "椅子",
+       "back": "yǐzi — ghế",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "vocab_038",
+      "type": "vocabulary_item",
+      "order": 38,
+      "hanzi": "沙发",
+      "pinyin": "shāfā",
+      "meaning_vi": "ghế sofa",
+      "meaning_en": "",
+      "pos": "noun",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "沙发",
+       "back": "shāfā — ghế sofa",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "vocab_039",
+      "type": "vocabulary_item",
+      "order": 39,
+      "hanzi": "冰箱",
+      "pinyin": "bīngxiāng",
+      "meaning_vi": "tủ lạnh",
+      "meaning_en": "",
+      "pos": "noun",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "冰箱",
+       "back": "bīngxiāng — tủ lạnh",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "vocab_040",
+      "type": "vocabulary_item",
+      "order": 40,
+      "hanzi": "洗衣机",
+      "pinyin": "xǐyījī",
+      "meaning_vi": "máy giặt",
+      "meaning_en": "",
+      "pos": "noun",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "洗衣机",
+       "back": "xǐyījī — máy giặt",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "vocab_041",
+      "type": "vocabulary_item",
+      "order": 41,
+      "hanzi": "空调",
+      "pinyin": "kōngtiáo",
+      "meaning_vi": "điều hòa",
+      "meaning_en": "",
+      "pos": "noun",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "空调",
+       "back": "kōngtiáo — điều hòa",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "vocab_042",
+      "type": "vocabulary_item",
+      "order": 42,
+      "hanzi": "等着",
+      "pinyin": "děngzhe",
+      "meaning_vi": "chờ, đợi",
+      "meaning_en": "",
+      "pos": "verb",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "等着",
+       "back": "děngzhe — chờ, đợi",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "vocab_043",
+      "type": "vocabulary_item",
+      "order": 43,
+      "hanzi": "找",
+      "pinyin": "zhǎo",
+      "meaning_vi": "tìm",
+      "meaning_en": "",
+      "pos": "verb",
+      "tags": [],
+      "examples": [],
+      "flashcard": {
+       "front": "找",
+       "back": "zhǎo — tìm",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false
+     }
+    ]
+   },
+   {
+    "id": "section_03_proper_nouns",
+    "type": "proper_nouns",
+    "order": 3,
+    "title": "专名",
+    "title_vi": "Tên riêng",
+    "source_origin": "textbook",
+    "check_needed": false,
+    "items": [
+     {
+      "id": "proper_001",
+      "type": "proper_noun",
+      "order": 1,
+      "hanzi": "圣诞节",
+      "pinyin": "Shèngdàn Jié",
+      "meaning_vi": "Lễ Giáng sinh",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "proper_002",
+      "type": "proper_noun",
+      "order": 2,
+      "hanzi": "新年",
+      "pinyin": "Xīnnián",
+      "meaning_vi": "năm mới",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "proper_003",
+      "type": "proper_noun",
+      "order": 3,
+      "hanzi": "安娜",
+      "pinyin": "Ānnà",
+      "meaning_vi": "Anna",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "proper_004",
+      "type": "proper_noun",
+      "order": 4,
+      "hanzi": "爱德华",
+      "pinyin": "Àidéhuá",
+      "meaning_vi": "Edward",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "proper_005",
+      "type": "proper_noun",
+      "order": 5,
+      "hanzi": "李美英",
+      "pinyin": "Lǐ Měiyīng",
+      "meaning_vi": "Lý Mỹ Anh",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "proper_006",
+      "type": "proper_noun",
+      "order": 6,
+      "hanzi": "王老师",
+      "pinyin": "Wáng lǎoshī",
+      "meaning_vi": "thầy Vương",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "proper_007",
+      "type": "proper_noun",
+      "order": 7,
+      "hanzi": "高老师",
+      "pinyin": "Gāo lǎoshī",
+      "meaning_vi": "cô Cao",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "proper_008",
+      "type": "proper_noun",
+      "order": 8,
+      "hanzi": "小林",
+      "pinyin": "Xiǎo Lín",
+      "meaning_vi": "Tiểu Lâm",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "proper_009",
+      "type": "proper_noun",
+      "order": 9,
+      "hanzi": "麦克",
+      "pinyin": "Màikè",
+      "meaning_vi": "Mike",
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "proper_010",
+      "type": "proper_noun",
+      "order": 10,
+      "hanzi": "田芳",
+      "pinyin": "Tián Fāng",
+      "meaning_vi": "Điền Phương",
+      "source_origin": "textbook",
+      "check_needed": false
+     }
+    ]
+   },
+   {
+    "id": "section_04_notes",
+    "type": "notes",
+    "order": 4,
+    "title": "注释",
+    "title_vi": "Chú thích",
+    "source_origin": "textbook",
+    "check_needed": false,
+    "items": [
+     {
+      "id": "note_01",
+      "type": "note",
+      "order": 1,
+      "title": "可不是",
+      "structure": "可不是",
+      "meaning_vi": "Dùng để đồng tình mạnh: “đúng vậy”, “còn gì nữa”, “chính thế”.",
+      "examples": [
+       {
+        "id": "note_01_ex_01",
+        "zh": "哦，可不是嘛，写错了。",
+        "pinyin": "",
+        "vi": "Ồ, đúng là vậy, viết sai rồi.",
+        "en": "",
+        "highlight": ["可不是"],
+        "grammar_refs": [],
+        "vocab_refs": ["vocab_032"],
+        "source_ref": "text_02_l07",
+        "note_vi": "",
+        "audio_key": "",
+        "source_origin": "textbook",
+        "check_needed": false
+       },
+       {
+        "id": "note_01_ex_02",
+        "zh": "A：今天真冷啊！B：可不是，我早上都不想出门。",
+        "pinyin": "",
+        "vi": "A: Hôm nay lạnh thật. B: Đúng vậy, sáng nay tôi còn chẳng muốn ra ngoài.",
+        "en": "",
+        "highlight": ["可不是"],
+        "grammar_refs": [],
+        "vocab_refs": [],
+        "source_ref": "",
+        "note_vi": "",
+        "audio_key": "",
+        "source_origin": "textbook",
+        "check_needed": false
+       }
+      ],
+      "source_refs": ["text_02_l07"],
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "note_02",
+      "type": "note",
+      "order": 2,
+      "title": "福倒了 / 福到了",
+      "structure": "福倒了 ≈ 福到了",
+      "meaning_vi": "Chơi chữ theo âm gần giống nhau: 福倒了 nghĩa là chữ Phúc bị dán ngược; 福到了 nghĩa là phúc đến rồi.",
+      "examples": [
+       {
+        "id": "note_02_ex_01",
+        "zh": "人们一看见就会说“福倒了”，听声音就是“福到了”。",
+        "pinyin": "",
+        "vi": "Người ta vừa nhìn thấy sẽ nói “Phúc bị ngược rồi”, nghe âm giống “Phúc đến rồi”.",
+        "en": "",
+        "highlight": ["福倒了", "福到了"],
+        "grammar_refs": [],
+        "vocab_refs": ["vocab_034", "vocab_035"],
+        "source_ref": "text_03_l09",
+        "note_vi": "",
+        "audio_key": "",
+        "source_origin": "textbook",
+        "check_needed": false
+       }
+      ],
+      "source_refs": ["text_03_l09"],
+      "source_origin": "textbook",
+      "check_needed": false
+     },
+     {
+      "id": "note_03",
+      "type": "note",
+      "order": 3,
+      "title": "新年新春吉祥，百行百业兴旺",
+      "structure": "",
+      "meaning_vi": "Một câu đối chúc năm mới cát tường, trăm ngành trăm nghề đều phát đạt.",
+      "examples": [
+       {
+        "id": "note_03_ex_01",
+        "zh": "新年新春吉祥，百行百业兴旺。",
+        "pinyin": "",
+        "vi": "Năm mới xuân mới cát tường, trăm ngành trăm nghề phát đạt.",
+        "en": "",
+        "highlight": ["吉祥", "兴旺"],
+        "grammar_refs": [],
+        "vocab_refs": ["vocab_028", "vocab_030"],
+        "source_ref": "text_02_l07",
+        "note_vi": "",
+        "audio_key": "",
+        "source_origin": "textbook",
+        "check_needed": false
+       }
+      ],
+      "source_refs": ["text_02_l06", "text_02_l07"],
+      "source_origin": "textbook",
+      "check_needed": false
+     }
+    ]
+   },
+   {
+    "id": "section_05_grammar",
+    "type": "grammar",
+    "order": 5,
+    "title": "语法",
+    "title_vi": "Ngữ pháp",
+    "source_origin": "textbook",
+    "check_needed": false,
+    "items": [
+     {
+      "id": "grammar_01",
+      "type": "grammar_point",
+      "order": 1,
+      "title": "把字句",
+      "title_vi": "Câu chữ 把",
+      "level": "HSK3-ish",
+      "tags": ["ba_sentence", "disposal", "result", "location"],
+      "source_origin": "textbook",
+      "check_needed": false,
+      "blocks": [
+       {
+        "id": "grammar_01_overview",
+        "type": "grammar_overview",
+        "order": 1,
+        "title": "Bản chất",
+        "content_vi": "Câu chữ 把 dùng khi người nói muốn nhấn mạnh cách xử lý một tân ngữ xác định, khiến nó đổi vị trí, trạng thái hoặc kết quả. Sau động từ thường phải có kết quả, phương hướng, vị trí hoặc mức độ.",
+        "examples": [
+         {
+          "id": "grammar_01_overview_ex_01",
+          "zh": "我们把教室布置成了会场。",
+          "pinyin": "",
+          "vi": "Chúng tôi bố trí phòng học thành hội trường.",
+          "en": "",
+          "highlight": ["把", "布置成"],
+          "grammar_refs": ["grammar_01"],
+          "vocab_refs": [],
+          "source_ref": "text_01_l02",
+          "note_vi": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+         },
+         {
+          "id": "grammar_01_overview_ex_02",
+          "zh": "我把“福”字贴在门上吧。",
+          "pinyin": "",
+          "vi": "Anh dán chữ Phúc lên cửa nhé.",
+          "en": "",
+          "highlight": ["把", "贴在"],
+          "grammar_refs": ["grammar_01"],
+          "vocab_refs": [],
+          "source_ref": "text_02_l05",
+          "note_vi": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+         },
+         {
+          "id": "grammar_01_overview_ex_03",
+          "zh": "你们把教室布置得真漂亮！",
+          "pinyin": "",
+          "vi": "Các em bố trí phòng học thật đẹp!",
+          "en": "",
+          "highlight": ["把", "布置得"],
+          "grammar_refs": ["grammar_01"],
+          "vocab_refs": [],
+          "source_ref": "text_01_l07",
+          "note_vi": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+         }
+        ],
+        "source_origin": "textbook",
+        "check_needed": false
+       },
+       {
+        "id": "grammar_01_structure_01",
+        "type": "grammar_structure",
+        "order": 2,
+        "title": "把 + O + V + 成 + kết quả",
+        "pattern": "S + 把 + O + V + 成 + kết quả",
+        "meaning_vi": "Biến hoặc làm cho O thành một trạng thái, hình dạng, tên gọi hoặc kết quả mới.",
+        "formulas": [
+         {
+          "label": "Biến thành",
+          "pattern": "主语 + 把 + 宾语 + 动词 + 成 + 结果"
+         }
+        ],
+        "examples": [
+         {
+          "id": "grammar_01_structure_01_ex_01",
+          "zh": "我们把教室布置成了会场。",
+          "pinyin": "",
+          "vi": "Chúng tôi bố trí phòng học thành hội trường.",
+          "en": "",
+          "highlight": ["把", "布置成"],
+          "grammar_refs": ["grammar_01"],
+          "vocab_refs": [],
+          "source_ref": "text_01_l02",
+          "note_vi": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+         },
+         {
+          "id": "grammar_01_structure_01_ex_02",
+          "zh": "我们把桌子摆成了一个大圆圈。",
+          "pinyin": "",
+          "vi": "Chúng tôi xếp bàn thành một vòng tròn lớn.",
+          "en": "",
+          "highlight": ["把", "摆成"],
+          "grammar_refs": ["grammar_01"],
+          "vocab_refs": [],
+          "source_ref": "text_01_l04",
+          "note_vi": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+         },
+         {
+          "id": "grammar_01_structure_01_ex_03",
+          "zh": "你是不是把“兴”字也写成“旺”字了？",
+          "pinyin": "",
+          "vi": "Có phải anh cũng viết chữ “兴” thành chữ “旺” rồi không?",
+          "en": "",
+          "highlight": ["把", "写成"],
+          "grammar_refs": ["grammar_01"],
+          "vocab_refs": [],
+          "source_ref": "text_02_l06",
+          "note_vi": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+         },
+         {
+          "id": "grammar_01_structure_01_ex_04",
+          "zh": "我把这句话翻译成越南语了。",
+          "pinyin": "",
+          "vi": "Tôi đã dịch câu này sang tiếng Việt.",
+          "en": "",
+          "highlight": ["把", "翻译成"],
+          "grammar_refs": ["grammar_01"],
+          "vocab_refs": [],
+          "source_ref": "",
+          "note_vi": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+         }
+        ],
+        "source_origin": "textbook",
+        "check_needed": false
+       },
+       {
+        "id": "grammar_01_structure_02",
+        "type": "grammar_structure",
+        "order": 3,
+        "title": "把 + O + V + 在 / 到 + nơi chốn",
+        "pattern": "S + 把 + O + V + 在 / 到 + địa điểm",
+        "meaning_vi": "Đưa, đặt, dán, treo một vật vào vị trí nào đó.",
+        "formulas": [
+         {
+          "label": "Vị trí sau hành động",
+          "pattern": "把 + O + V + 在 + 地点"
+         },
+         {
+          "label": "Chuyển dịch đến đích",
+          "pattern": "把 + O + V + 到 + 地点"
+         }
+        ],
+        "examples": [
+         {
+          "id": "grammar_01_structure_02_ex_01",
+          "zh": "爱德华把“圣诞——新年快乐”几个大字贴在了黑板上。",
+          "pinyin": "",
+          "vi": "Edward dán mấy chữ lớn “Giáng sinh — Năm mới vui vẻ” lên bảng.",
+          "en": "",
+          "highlight": ["把", "贴在"],
+          "grammar_refs": ["grammar_01"],
+          "vocab_refs": [],
+          "source_ref": "text_01_l04",
+          "note_vi": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+         },
+         {
+          "id": "grammar_01_structure_02_ex_02",
+          "zh": "我把它摆在卧室里了。",
+          "pinyin": "",
+          "vi": "Em đã đặt nó trong phòng ngủ rồi.",
+          "en": "",
+          "highlight": ["把", "摆在"],
+          "grammar_refs": ["grammar_01"],
+          "vocab_refs": [],
+          "source_ref": "text_02_l04",
+          "note_vi": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+         },
+         {
+          "id": "grammar_01_structure_02_ex_03",
+          "zh": "我想把它挂在中间。",
+          "pinyin": "",
+          "vi": "Anh muốn treo nó ở giữa.",
+          "en": "",
+          "highlight": ["把", "挂在"],
+          "grammar_refs": ["grammar_01"],
+          "vocab_refs": [],
+          "source_ref": "text_02_l03",
+          "note_vi": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+         },
+         {
+          "id": "grammar_01_structure_02_ex_04",
+          "zh": "把它摆在客厅里比较好。",
+          "pinyin": "",
+          "vi": "Đặt nó ở phòng khách thì tốt hơn.",
+          "en": "",
+          "highlight": ["把", "摆在"],
+          "grammar_refs": ["grammar_01"],
+          "vocab_refs": [],
+          "source_ref": "text_02_l05",
+          "note_vi": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+         },
+         {
+          "id": "grammar_01_structure_02_ex_05",
+          "zh": "我把“福”字贴在门上吧。",
+          "pinyin": "",
+          "vi": "Anh dán chữ Phúc lên cửa nhé.",
+          "en": "",
+          "highlight": ["把", "贴在"],
+          "grammar_refs": ["grammar_01"],
+          "vocab_refs": [],
+          "source_ref": "text_02_l05",
+          "note_vi": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+         }
+        ],
+        "notes_vi": [
+         "V + 在 nhấn vị trí sau hành động; V + 到 nhấn chuyển dịch đến đích."
+        ],
+        "source_origin": "textbook",
+        "check_needed": false
+       },
+       {
+        "id": "grammar_01_structure_03",
+        "type": "grammar_structure",
+        "order": 4,
+        "title": "把 + O + V + 上 / 上去 / 来 / 出来",
+        "pattern": "S + 把 + O + V + xu hướng",
+        "meaning_vi": "Thêm bổ ngữ xu hướng để nói vật được đưa, dán, chuyển, lấy ra theo hướng nào.",
+        "formulas": [
+         {
+          "label": "Bổ ngữ xu hướng",
+          "pattern": "把 + O + V + 趋向补语"
+         }
+        ],
+        "examples": [
+         {
+          "id": "grammar_01_structure_03_ex_01",
+          "zh": "把你写的对联也贴上去吧。",
+          "pinyin": "",
+          "vi": "Dán câu đối anh viết lên đi.",
+          "en": "",
+          "highlight": ["把", "贴上去"],
+          "grammar_refs": ["grammar_01"],
+          "vocab_refs": [],
+          "source_ref": "text_02_l06",
+          "note_vi": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+         },
+         {
+          "id": "grammar_01_structure_03_ex_02",
+          "zh": "把音响也搬到教室里来了。",
+          "pinyin": "",
+          "vi": "Cũng chuyển dàn âm thanh vào trong lớp rồi.",
+          "en": "",
+          "highlight": ["把", "搬到", "来"],
+          "grammar_refs": ["grammar_01"],
+          "vocab_refs": [],
+          "source_ref": "text_01_l05",
+          "note_vi": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+         },
+         {
+          "id": "grammar_01_structure_03_ex_03",
+          "zh": "到晚会上再把生日礼物拿出来送给她。",
+          "pinyin": "",
+          "vi": "Đến buổi tiệc rồi mới lấy quà sinh nhật ra tặng cô ấy.",
+          "en": "",
+          "highlight": ["把", "拿出来"],
+          "grammar_refs": ["grammar_01"],
+          "vocab_refs": [],
+          "source_ref": "text_01_l06",
+          "note_vi": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+         },
+         {
+          "id": "grammar_01_structure_03_ex_04",
+          "zh": "请把书拿出来。",
+          "pinyin": "",
+          "vi": "Hãy lấy sách ra.",
+          "en": "",
+          "highlight": ["把", "拿出来"],
+          "grammar_refs": ["grammar_01"],
+          "vocab_refs": [],
+          "source_ref": "",
+          "note_vi": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+         }
+        ],
+        "source_origin": "textbook",
+        "check_needed": false
+       },
+       {
+        "id": "grammar_01_structure_04",
+        "type": "grammar_structure",
+        "order": 5,
+        "title": "把 + O + V + 得 + mức độ",
+        "pattern": "S + 把 + O + V + 得 + Adj / cụm mức độ",
+        "meaning_vi": "Nói kết quả hoặc mức độ sau khi xử lý tân ngữ.",
+        "formulas": [
+         {
+          "label": "Mức độ",
+          "pattern": "把 + O + V + 得 + 程度补语"
+         }
+        ],
+        "examples": [
+         {
+          "id": "grammar_01_structure_04_ex_01",
+          "zh": "把门和窗户也都擦得干干净净的。",
+          "pinyin": "",
+          "vi": "Cửa và cửa sổ cũng được lau sạch sẽ.",
+          "en": "",
+          "highlight": ["把", "擦得"],
+          "grammar_refs": ["grammar_01"],
+          "vocab_refs": [],
+          "source_ref": "text_01_l03",
+          "note_vi": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+         },
+         {
+          "id": "grammar_01_structure_04_ex_02",
+          "zh": "用彩灯和彩带把它装饰得非常漂亮。",
+          "pinyin": "",
+          "vi": "Dùng đèn màu và dây màu trang trí nó rất đẹp.",
+          "en": "",
+          "highlight": ["把", "装饰得"],
+          "grammar_refs": ["grammar_01"],
+          "vocab_refs": [],
+          "source_ref": "text_01_l05",
+          "note_vi": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+         },
+         {
+          "id": "grammar_01_structure_04_ex_03",
+          "zh": "你们把教室布置得真漂亮！",
+          "pinyin": "",
+          "vi": "Các em bố trí phòng học thật đẹp!",
+          "en": "",
+          "highlight": ["把", "布置得"],
+          "grammar_refs": ["grammar_01"],
+          "vocab_refs": [],
+          "source_ref": "text_01_l07",
+          "note_vi": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+         },
+         {
+          "id": "grammar_01_structure_04_ex_04",
+          "zh": "他把房间打扫得很干净。",
+          "pinyin": "",
+          "vi": "Anh ấy quét dọn phòng rất sạch.",
+          "en": "",
+          "highlight": ["把", "打扫得"],
+          "grammar_refs": ["grammar_01"],
+          "vocab_refs": [],
+          "source_ref": "",
+          "note_vi": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+         }
+        ],
+        "source_origin": "textbook",
+        "check_needed": false
+       },
+       {
+        "id": "grammar_01_structure_05",
+        "type": "grammar_structure",
+        "order": 6,
+        "title": "Điều kiện dùng 把",
+        "pattern": "O xác định + động từ xử lý + thành phần sau động từ",
+        "meaning_vi": "Tân ngữ thường phải xác định; động từ phải có tính xử lý; sau động từ không nên đứng trống.",
+        "formulas": [
+         {
+          "label": "Đúng",
+          "pattern": "我把作业做完了。"
+         },
+         {
+          "label": "Sai",
+          "pattern": "我把作业做。"
+         }
+        ],
+        "examples": [
+         {
+          "id": "grammar_01_structure_05_ex_01",
+          "zh": "我把那本书放在桌子上了。",
+          "pinyin": "",
+          "vi": "Tôi đặt quyển sách đó lên bàn rồi.",
+          "en": "",
+          "highlight": ["把", "放在"],
+          "grammar_refs": ["grammar_01"],
+          "vocab_refs": [],
+          "source_ref": "",
+          "note_vi": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+         },
+         {
+          "id": "grammar_01_structure_05_ex_02",
+          "zh": "我把门打开了。",
+          "pinyin": "",
+          "vi": "Tôi mở cửa ra rồi.",
+          "en": "",
+          "highlight": ["把", "打开"],
+          "grammar_refs": ["grammar_01"],
+          "vocab_refs": [],
+          "source_ref": "",
+          "note_vi": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+         },
+         {
+          "id": "grammar_01_structure_05_ex_03",
+          "zh": "我把作业做完了。",
+          "pinyin": "",
+          "vi": "Tôi làm xong bài tập rồi.",
+          "en": "",
+          "highlight": ["把", "做完"],
+          "grammar_refs": ["grammar_01"],
+          "vocab_refs": [],
+          "source_ref": "",
+          "note_vi": "",
+          "audio_key": "",
+          "source_origin": "textbook",
+          "check_needed": false
+         }
+        ],
+        "bad_examples": [
+         {
+          "zh": "我把书看。",
+          "reason_vi": "Sau động từ 看 không có kết quả/thành phần bổ sung."
+         },
+         {
+          "zh": "我把作业做。",
+          "reason_vi": "Động từ 做 đứng trống, thiếu kết quả như 完."
+         }
+        ],
+        "source_origin": "textbook",
+        "check_needed": false
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "id": "section_06_exercises",
+    "type": "exercises",
+    "order": 6,
+    "title": "练习",
+    "title_vi": "Bài tập",
+    "source_origin": "textbook",
+    "check_needed": true,
+    "items": [
+     {
+      "id": "exercise_01",
+      "type": "phonetics",
+      "variant": "",
+      "order": 1,
+      "title": "语音",
+      "title_vi": "Ngữ âm",
+      "instruction": {
+       "zh": "",
+       "vi": "Luyện phân biệt âm, thanh điệu và đọc cụm."
+      },
+      "difficulty": "normal",
+      "skill_focus": ["pronunciation"],
+      "source_origin": "textbook",
+      "check_needed": false,
+      "parts": [
+       {
+        "id": "exercise_01_part_01",
+        "type": "minimal_pair",
+        "title": "辨音辨调",
+        "items": [
+         {
+          "id": "pair_01",
+          "left": "pǐncháng",
+          "right": "píngcháng"
+         },
+         {
+          "id": "pair_02",
+          "left": "tèsè",
+          "right": "tèshū"
+         },
+         {
+          "id": "pair_03",
+          "left": "qīnshǒu",
+          "right": "qīngshǒu"
+         },
+         {
+          "id": "pair_04",
+          "left": "bùzhì",
+          "right": "bùshì"
+         },
+         {
+          "id": "pair_05",
+          "left": "guǎnlǐ",
+          "right": "guānlǐ"
+         },
+         {
+          "id": "pair_06",
+          "left": "dāying",
+          "right": "dǎyìng"
+         },
+         {
+          "id": "pair_07",
+          "left": "chuānghu",
+          "right": "chánghù"
+         },
+         {
+          "id": "pair_08",
+          "left": "yuánquānr",
+          "right": "yuánquán"
+         },
+         {
+          "id": "pair_09",
+          "left": "jíxiáng",
+          "right": "jíxiǎng"
+         },
+         {
+          "id": "pair_10",
+          "left": "xīngwàng",
+          "right": "xīwàng"
+         }
+        ],
+        "source_origin": "textbook",
+        "check_needed": false
+       },
+       {
+        "id": "exercise_01_part_02",
+        "type": "read_aloud",
+        "title": "朗读",
+        "items": [
+         {
+          "id": "read_001",
+          "text": "品尝各国的特色菜",
+          "pinyin": "",
+          "audio_key": ""
+         },
+         {
+          "id": "read_002",
+          "text": "亲手做的菜",
+          "pinyin": "",
+          "audio_key": ""
+         },
+         {
+          "id": "read_003",
+          "text": "把教室布置成会场",
+          "pinyin": "",
+          "audio_key": ""
+         },
+         {
+          "id": "read_004",
+          "text": "把教室打扫了一下儿",
+          "pinyin": "",
+          "audio_key": ""
+         },
+         {
+          "id": "read_005",
+          "text": "把门和窗户擦得干干净净的",
+          "pinyin": "",
+          "audio_key": ""
+         },
+         {
+          "id": "read_006",
+          "text": "把桌子摆成一个大圆圈",
+          "pinyin": "",
+          "audio_key": ""
+         },
+         {
+          "id": "read_007",
+          "text": "把大字贴在黑板上",
+          "pinyin": "",
+          "audio_key": ""
+         },
+         {
+          "id": "read_008",
+          "text": "把音响搬到教室里来",
+          "pinyin": "",
+          "audio_key": ""
+         },
+         {
+          "id": "read_009",
+          "text": "把圣诞树摆在教室前边",
+          "pinyin": "",
+          "audio_key": ""
+         },
+         {
+          "id": "read_010",
+          "text": "把它装饰得非常漂亮",
+          "pinyin": "",
+          "audio_key": ""
+         },
+         {
+          "id": "read_011",
+          "text": "把生日礼物拿出来送给她",
+          "pinyin": "",
+          "audio_key": ""
+         },
+         {
+          "id": "read_012",
+          "text": "把水仙花摆在客厅里",
+          "pinyin": "",
+          "audio_key": ""
+         },
+         {
+          "id": "read_013",
+          "text": "把“福”字倒着贴在门上",
+          "pinyin": "",
+          "audio_key": ""
+         }
+        ],
+        "source_origin": "textbook",
+        "check_needed": false
+       }
+      ],
+      "rendering": {
+       "renderer": "exercise.phonetics.v1"
+      }
+     },
+     {
+      "id": "exercise_02",
+      "type": "substitution_drill",
+      "variant": "models",
+      "order": 2,
+      "title": "替换",
+      "title_vi": "Thay thế theo mẫu",
+      "instruction": {
+       "zh": "替换练习。",
+       "vi": "Luyện thay thế theo mẫu."
+      },
+      "difficulty": "normal",
+      "skill_focus": ["speaking", "grammar"],
+      "grammar_refs": ["grammar_01"],
+      "source_origin": "textbook",
+      "check_needed": false,
+      "models": [
+       {
+        "id": "ex02_model_01",
+        "title": "模型一",
+        "dialogue": ["A：我们把教室布置成了会场。", "B：布置得真漂亮！"],
+        "substitutions": [
+         "桌子 / 摆成一个大圆圈",
+         "房间 / 布置成客厅",
+         "这个字 / 写成“旺”字",
+         "这句话 / 翻译成越南语",
+         "这张纸 / 剪成一个圆圈"
+        ]
+       },
+       {
+        "id": "ex02_model_02",
+        "title": "模型二",
+        "dialogue": ["A：我把画挂在中间。", "B：挂在中间比较好。"],
+        "substitutions": [
+         "水仙花 / 摆在客厅里",
+         "对联 / 贴在大门两边",
+         "“福”字 / 贴在门上",
+         "桌子 / 放在窗户旁边",
+         "音响 / 搬到教室里"
+        ]
+       },
+       {
+        "id": "ex02_model_03",
+        "title": "模型三",
+        "dialogue": ["A：把对联也贴上去吧。", "B：好，我马上贴上去。"],
+        "substitutions": [
+         "照片 / 贴上去",
+         "书 / 拿出来",
+         "礼物 / 拿出来",
+         "音响 / 搬进去",
+         "彩灯 / 挂上去"
+        ]
+       }
+      ],
+      "rendering": {
+       "renderer": "exercise.substitution_drill.v1"
+      }
+     },
+     {
+      "id": "exercise_03",
+      "type": "choose_words_fill_blank",
+      "variant": "word_bank",
+      "order": 3,
+      "title": "选词填空",
+      "title_vi": "Chọn từ điền chỗ trống",
+      "instruction": {
+       "zh": "选词填空。",
+       "vi": "Chọn từ thích hợp điền vào chỗ trống."
+      },
+      "difficulty": "normal",
+      "skill_focus": ["vocabulary", "grammar"],
+      "word_bank": [
+       "品尝",
+       "特色",
+       "亲手",
+       "最好",
+       "布置",
+       "会场",
+       "管理员",
+       "答应",
+       "打扫",
+       "窗户",
+       "擦",
+       "圆圈儿",
+       "音响",
+       "彩灯",
+       "彩带",
+       "惊喜",
+       "对联",
+       "吉祥",
+       "兴旺",
+       "仔细",
+       "幸福",
+       "倒",
+       "声音"
+      ],
+      "questions": [
+       {
+        "id": "ex03_q01",
+        "prompt": "晚会上我们要______各国的______菜。",
+        "answer": "品尝 / 特色",
+        "acceptable_answers": ["品尝 / 特色"],
+        "explanation_vi": "品尝特色菜 = thưởng thức món đặc sắc.",
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "ex03_q02",
+        "prompt": "班长要求我们把自己______做的菜带到晚会上来。",
+        "answer": "亲手",
+        "acceptable_answers": ["亲手"],
+        "explanation_vi": "亲手做 = tự tay làm.",
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "ex03_q03",
+        "prompt": "玛丽说，我们______借一个大教室，把它______成______。",
+        "answer": "最好 / 布置 / 会场",
+        "acceptable_answers": ["最好 / 布置 / 会场"],
+        "explanation_vi": "最好...把...布置成会场.",
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "ex03_q04",
+        "prompt": "管理员______把那个教室借给我们。",
+        "answer": "答应",
+        "acceptable_answers": ["答应"],
+        "explanation_vi": "答应把教室借给我们 = đồng ý cho mượn phòng học.",
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "ex03_q05",
+        "prompt": "服务员把教室______了一下儿，把门和______也都______得干干净净的。",
+        "answer": "打扫 / 窗户 / 擦",
+        "acceptable_answers": ["打扫 / 窗户 / 擦"],
+        "explanation_vi": "打扫教室，擦门窗.",
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "ex03_q06",
+        "prompt": "我们把桌子摆成了一个大______。",
+        "answer": "圆圈儿",
+        "acceptable_answers": ["圆圈儿"],
+        "explanation_vi": "摆成一个大圆圈儿.",
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "ex03_q07",
+        "prompt": "我们把______也搬到教室里来了。",
+        "answer": "音响",
+        "acceptable_answers": ["音响"],
+        "explanation_vi": "把音响搬到教室里来.",
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "ex03_q08",
+        "prompt": "我们用______和______把圣诞树装饰得非常漂亮。",
+        "answer": "彩灯 / 彩带",
+        "acceptable_answers": ["彩灯 / 彩带"],
+        "explanation_vi": "用彩灯和彩带装饰.",
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "ex03_q09",
+        "prompt": "同学们想给安娜一个______。",
+        "answer": "惊喜",
+        "acceptable_answers": ["惊喜"],
+        "explanation_vi": "给她一个惊喜.",
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "ex03_q10",
+        "prompt": "春节的时候，很多人家都贴______。",
+        "answer": "对联",
+        "acceptable_answers": ["对联"],
+        "explanation_vi": "春节贴对联.",
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "ex03_q11",
+        "prompt": "新年新春______，百行百业______。",
+        "answer": "吉祥 / 兴旺",
+        "acceptable_answers": ["吉祥 / 兴旺"],
+        "explanation_vi": "新年新春吉祥，百行百业兴旺.",
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "ex03_q12",
+        "prompt": "你______看看，认识不认识？",
+        "answer": "仔细",
+        "acceptable_answers": ["仔细"],
+        "explanation_vi": "仔细看看 = nhìn kỹ.",
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "ex03_q13",
+        "prompt": "这不是______的“福”字吗？",
+        "answer": "幸福",
+        "acceptable_answers": ["幸福"],
+        "explanation_vi": "幸福的福字.",
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "ex03_q14",
+        "prompt": "为什么把“福”字______着贴在门上呢？",
+        "answer": "倒",
+        "acceptable_answers": ["倒"],
+        "explanation_vi": "倒着贴 = dán ngược.",
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "ex03_q15",
+        "prompt": "听______就是“福到了”。",
+        "answer": "声音",
+        "acceptable_answers": ["声音"],
+        "explanation_vi": "听声音 = nghe âm.",
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       }
+      ],
+      "answer_key": [
+       {
+        "question_id": "ex03_q01",
+        "answer": "品尝 / 特色",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "question_id": "ex03_q02",
+        "answer": "亲手",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "question_id": "ex03_q03",
+        "answer": "最好 / 布置 / 会场",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "question_id": "ex03_q04",
+        "answer": "答应",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "question_id": "ex03_q05",
+        "answer": "打扫 / 窗户 / 擦",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "question_id": "ex03_q06",
+        "answer": "圆圈儿",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "question_id": "ex03_q07",
+        "answer": "音响",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "question_id": "ex03_q08",
+        "answer": "彩灯 / 彩带",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "question_id": "ex03_q09",
+        "answer": "惊喜",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "question_id": "ex03_q10",
+        "answer": "对联",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "question_id": "ex03_q11",
+        "answer": "吉祥 / 兴旺",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "question_id": "ex03_q12",
+        "answer": "仔细",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "question_id": "ex03_q13",
+        "answer": "幸福",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "question_id": "ex03_q14",
+        "answer": "倒",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "question_id": "ex03_q15",
+        "answer": "声音",
+        "answer_verified": false,
+        "check_needed": true
+       }
+      ],
+      "rendering": {
+       "renderer": "exercise.fill_blank.v1",
+       "input_mode": "dropdown",
+       "show_word_bank": true,
+       "show_answer_after_submit": true
+      },
+      "source_origin": "textbook",
+      "check_needed": true
+     },
+     {
+      "id": "exercise_04",
+      "type": "fill_blank",
+      "variant": "complete_sentence_with_given_word",
+      "order": 4,
+      "title": "用括号里的词语完成句子",
+      "title_vi": "Dùng từ trong ngoặc hoàn thành câu",
+      "instruction": {
+       "zh": "用括号里的词语完成句子。",
+       "vi": "Dùng từ gợi ý để hoàn thành câu."
+      },
+      "difficulty": "hard",
+      "skill_focus": ["grammar", "writing"],
+      "grammar_refs": ["grammar_01"],
+      "questions": [
+       {
+        "id": "ex04_q01",
+        "prompt": "A：你们把教室布置成什么了？\nB：______。（把，布置成，会场）",
+        "answer": "我们把教室布置成了会场。",
+        "grading": {
+         "mode": "manual"
+        },
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "ex04_q02",
+        "prompt": "A：桌子怎么摆？\nB：______。（把，摆成，一个大圆圈）",
+        "answer": "我们把桌子摆成了一个大圆圈。",
+        "grading": {
+         "mode": "manual"
+        },
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "ex04_q03",
+        "prompt": "A：爱德华把字贴在哪儿了？\nB：______。（把，贴在，黑板上）",
+        "answer": "爱德华把几个大字贴在了黑板上。",
+        "grading": {
+         "mode": "manual"
+        },
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "ex04_q04",
+        "prompt": "A：音响呢？\nB：______。（把，搬到，教室里）",
+        "answer": "把音响搬到教室里来了。",
+        "grading": {
+         "mode": "manual"
+        },
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "ex04_q05",
+        "prompt": "A：圣诞树装饰得怎么样？\nB：______。（用，把，装饰得）",
+        "answer": "我们用彩灯和彩带把它装饰得非常漂亮。",
+        "grading": {
+         "mode": "manual"
+        },
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "ex04_q06",
+        "prompt": "A：你把画挂在哪儿？\nB：______。（把，挂在，中间）",
+        "answer": "我把它挂在中间。",
+        "grading": {
+         "mode": "manual"
+        },
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "ex04_q07",
+        "prompt": "A：水仙花放在哪儿比较好？\nB：______。（把，摆在，客厅里）",
+        "answer": "把水仙花摆在客厅里比较好。",
+        "grading": {
+         "mode": "manual"
+        },
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "ex04_q08",
+        "prompt": "A：为什么把“福”字倒着贴在门上？\nB：因为______。（福倒了 / 福到了）",
+        "answer": "“福倒了”听起来就是“福到了”。",
+        "grading": {
+         "mode": "manual"
+        },
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       }
+      ],
+      "answer_key": [
+       {
+        "question_id": "ex04_q01",
+        "sample_answer": "我们把教室布置成了会场。",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "question_id": "ex04_q02",
+        "sample_answer": "我们把桌子摆成了一个大圆圈。",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "question_id": "ex04_q03",
+        "sample_answer": "爱德华把几个大字贴在了黑板上。",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "question_id": "ex04_q04",
+        "sample_answer": "把音响搬到教室里来了。",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "question_id": "ex04_q05",
+        "sample_answer": "我们用彩灯和彩带把它装饰得非常漂亮。",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "question_id": "ex04_q06",
+        "sample_answer": "我把它挂在中间。",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "question_id": "ex04_q07",
+        "sample_answer": "把水仙花摆在客厅里比较好。",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "question_id": "ex04_q08",
+        "sample_answer": "“福倒了”听起来就是“福到了”。",
+        "answer_verified": false,
+        "check_needed": true
+       }
+      ],
+      "rendering": {
+       "renderer": "exercise.fill_blank.v1",
+       "input_mode": "text",
+       "show_answer_after_submit": true
+      },
+      "source_origin": "textbook",
+      "check_needed": true
+     },
+     {
+      "id": "exercise_05",
+      "type": "complete_dialogue",
+      "variant": "answer_questions_with_given_words",
+      "order": 5,
+      "title": "用括号里的词语回答问题",
+      "title_vi": "Dùng từ trong ngoặc trả lời câu hỏi",
+      "instruction": {
+       "zh": "用括号里的词语回答问题。",
+       "vi": "Dùng từ gợi ý để trả lời."
+      },
+      "difficulty": "normal",
+      "skill_focus": ["speaking", "grammar"],
+      "grammar_refs": ["grammar_01"],
+      "dialogues": [
+       {
+        "id": "ex05_d01",
+        "lines": [
+         {
+          "text": "A：班长要求同学们做什么？"
+         }
+        ],
+        "sample_answers": [
+         {
+          "blank_id": "answer",
+          "answer": "班长要求同学们把自己亲手做的菜带到晚会上来。"
+         }
+        ],
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "ex05_d02",
+        "lines": [
+         {
+          "text": "A：服务员把教室打扫得怎么样？"
+         }
+        ],
+        "sample_answers": [
+         {
+          "blank_id": "answer",
+          "answer": "服务员把教室打扫得干干净净的。"
+         }
+        ],
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "ex05_d03",
+        "lines": [
+         {
+          "text": "A：同学们什么时候把礼物送给安娜？"
+         }
+        ],
+        "sample_answers": [
+         {
+          "blank_id": "answer",
+          "answer": "他们想到晚会上再把生日礼物拿出来送给她。"
+         }
+        ],
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "ex05_d04",
+        "lines": [
+         {
+          "text": "A：高老师把水仙花摆在哪儿了？"
+         }
+        ],
+        "sample_answers": [
+         {
+          "blank_id": "answer",
+          "answer": "她把水仙花摆在卧室里了。"
+         }
+        ],
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "ex05_d05",
+        "lines": [
+         {
+          "text": "A：王老师觉得水仙花应该放在哪儿？"
+         }
+        ],
+        "sample_answers": [
+         {
+          "blank_id": "answer",
+          "answer": "他觉得把水仙花摆在客厅里比较好。"
+         }
+        ],
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "ex05_d06",
+        "lines": [
+         {
+          "text": "A：王老师把哪个字写错了？"
+         }
+        ],
+        "sample_answers": [
+         {
+          "blank_id": "answer",
+          "answer": "他把“兴”字写成“旺”字了。"
+         }
+        ],
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "ex05_d07",
+        "lines": [
+         {
+          "text": "A：春节的时候，家家都贴什么？"
+         }
+        ],
+        "sample_answers": [
+         {
+          "blank_id": "answer",
+          "answer": "家家都贴“福”字。"
+         }
+        ],
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "ex05_d08",
+        "lines": [
+         {
+          "text": "A：“福倒了”听起来像什么？"
+         }
+        ],
+        "sample_answers": [
+         {
+          "blank_id": "answer",
+          "answer": "“福倒了”听起来像“福到了”。"
+         }
+        ],
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       }
+      ],
+      "answer_key": [
+       {
+        "question_id": "ex05_d01",
+        "sample_answer": "班长要求同学们把自己亲手做的菜带到晚会上来。",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "question_id": "ex05_d02",
+        "sample_answer": "服务员把教室打扫得干干净净的。",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "question_id": "ex05_d03",
+        "sample_answer": "他们想到晚会上再把生日礼物拿出来送给她。",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "question_id": "ex05_d04",
+        "sample_answer": "她把水仙花摆在卧室里了。",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "question_id": "ex05_d05",
+        "sample_answer": "他觉得把水仙花摆在客厅里比较好。",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "question_id": "ex05_d06",
+        "sample_answer": "他把“兴”字写成“旺”字了。",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "question_id": "ex05_d07",
+        "sample_answer": "家家都贴“福”字。",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "question_id": "ex05_d08",
+        "sample_answer": "“福倒了”听起来像“福到了”。",
+        "answer_verified": false,
+        "check_needed": true
+       }
+      ],
+      "rendering": {
+       "renderer": "exercise.complete_dialogue.v1",
+       "show_answer_after_submit": true
+      },
+      "source_origin": "textbook",
+      "check_needed": true
+     },
+     {
+      "id": "exercise_06",
+      "type": "correct_sentence",
+      "variant": "",
+      "order": 6,
+      "title": "改错句",
+      "title_vi": "Sửa câu sai",
+      "instruction": {
+       "zh": "改错句。",
+       "vi": "Sửa lỗi trong câu."
+      },
+      "difficulty": "hard",
+      "skill_focus": ["grammar", "sentence_order"],
+      "grammar_refs": ["grammar_01"],
+      "questions": [
+       {
+        "id": "ex06_q01",
+        "wrong_sentence": "我把教室布置。",
+        "correct_sentence": "我把教室布置成了会场。",
+        "acceptable_answers": ["我把教室布置成了会场。"],
+        "explanation_vi": "把字句 sau động từ cần có kết quả/thành phần bổ sung.",
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "ex06_q02",
+        "wrong_sentence": "他把桌子摆一个圆圈。",
+        "correct_sentence": "他把桌子摆成了一个圆圈。",
+        "acceptable_answers": ["他把桌子摆成了一个圆圈。"],
+        "explanation_vi": "Biến thành hình dạng mới dùng V + 成.",
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "ex06_q03",
+        "wrong_sentence": "请你把照片贴黑板上。",
+        "correct_sentence": "请你把照片贴在黑板上。",
+        "acceptable_answers": ["请你把照片贴在黑板上。"],
+        "explanation_vi": "Dán ở đâu dùng 贴在 + nơi chốn.",
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "ex06_q04",
+        "wrong_sentence": "我把这句话翻译越南语了。",
+        "correct_sentence": "我把这句话翻译成越南语了。",
+        "acceptable_answers": ["我把这句话翻译成越南语了。"],
+        "explanation_vi": "Dịch thành ngôn ngữ nào dùng 翻译成.",
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "ex06_q05",
+        "wrong_sentence": "服务员把窗户擦很干净。",
+        "correct_sentence": "服务员把窗户擦得很干净。",
+        "acceptable_answers": ["服务员把窗户擦得很干净。"],
+        "explanation_vi": "Bổ ngữ mức độ dùng V + 得 + Adj.",
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "ex06_q06",
+        "wrong_sentence": "他把“兴”字写“旺”字了。",
+        "correct_sentence": "他把“兴”字写成“旺”字了。",
+        "acceptable_answers": ["他把“兴”字写成“旺”字了。"],
+        "explanation_vi": "Viết thành chữ khác dùng 写成.",
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "ex06_q07",
+        "wrong_sentence": "把水仙花摆在客厅里比较好。",
+        "correct_sentence": "把水仙花摆在客厅里比较好。",
+        "acceptable_answers": ["把水仙花摆在客厅里比较好。"],
+        "explanation_vi": "Câu này đúng trong ngữ cảnh đề nghị; không cần sửa.",
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "ex06_q08",
+        "wrong_sentence": "我把生日礼物拿出来送她。",
+        "correct_sentence": "我把生日礼物拿出来送给她。",
+        "acceptable_answers": ["我把生日礼物拿出来送给她。"],
+        "explanation_vi": "Tặng cho ai tự nhiên hơn với 送给 + người.",
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": false,
+        "check_needed": true
+       }
+      ],
+      "answer_key": [
+       {
+        "question_id": "ex06_q01",
+        "answer": "我把教室布置成了会场。",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "question_id": "ex06_q02",
+        "answer": "他把桌子摆成了一个圆圈。",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "question_id": "ex06_q03",
+        "answer": "请你把照片贴在黑板上。",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "question_id": "ex06_q04",
+        "answer": "我把这句话翻译成越南语了。",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "question_id": "ex06_q05",
+        "answer": "服务员把窗户擦得很干净。",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "question_id": "ex06_q06",
+        "answer": "他把“兴”字写成“旺”字了。",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "question_id": "ex06_q07",
+        "answer": "把水仙花摆在客厅里比较好。",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "question_id": "ex06_q08",
+        "answer": "我把生日礼物拿出来送给她。",
+        "answer_verified": false,
+        "check_needed": true
+       }
+      ],
+      "rendering": {
+       "renderer": "exercise.correct_sentence.v1",
+       "show_answer_after_submit": true
+      },
+      "source_origin": "textbook",
+      "check_needed": true
+     }
+    ]
+   },
+   {
+    "id": "section_07_communication",
+    "type": "communication",
+    "order": 7,
+    "title": "交际会话",
+    "title_vi": "Hội thoại giao tiếp",
+    "source_origin": "textbook/generated_mixed",
+    "check_needed": true,
+    "items": [
+     {
+      "id": "communication_01",
+      "type": "communication_dialogue",
+      "variant": "decorate_venue",
+      "order": 1,
+      "title": "布置会场",
+      "title_vi": "Bố trí hội trường",
+      "function": "布置会场",
+      "function_vi": "Trao đổi về bố trí hội trường",
+      "dialogue": [
+       {
+        "speaker": "A",
+        "text": "圣诞节快到了，我们要举行联欢晚会。"
+       },
+       {
+        "speaker": "B",
+        "text": "在哪儿举行？"
+       },
+       {
+        "speaker": "A",
+        "text": "我们最好借一个大教室，把它布置成会场。"
+       },
+       {
+        "speaker": "B",
+        "text": "那我们把桌子摆成一个大圆圈吧。"
+       },
+       {
+        "speaker": "A",
+        "text": "好，再把彩灯和彩带挂上去。"
+       }
+      ],
+      "source_origin": "textbook/generated_mixed",
+      "check_needed": true
+     },
+     {
+      "id": "communication_02",
+      "type": "communication_dialogue",
+      "variant": "decorate_home",
+      "order": 2,
+      "title": "布置家",
+      "title_vi": "Trang trí nhà",
+      "function": "布置家",
+      "function_vi": "Trao đổi về trang trí nhà",
+      "dialogue": [
+       {
+        "speaker": "A",
+        "text": "这幅画挂在什么地方比较好？"
+       },
+       {
+        "speaker": "B",
+        "text": "我想把它挂在中间。"
+       },
+       {
+        "speaker": "A",
+        "text": "水仙花呢？"
+       },
+       {
+        "speaker": "B",
+        "text": "把它摆在客厅里比较好。"
+       },
+       {
+        "speaker": "A",
+        "text": "那我把“福”字贴在门上吧。"
+       }
+      ],
+      "source_origin": "textbook/generated_mixed",
+      "check_needed": true
+     },
+     {
+      "id": "communication_03",
+      "type": "communication_dialogue",
+      "variant": "explain_fu_character",
+      "order": 3,
+      "title": "解释“福”字",
+      "title_vi": "Giải thích chữ Phúc",
+      "function": "解释文化",
+      "function_vi": "Giải thích phong tục / chơi chữ văn hóa",
+      "dialogue": [
+       {
+        "speaker": "A",
+        "text": "为什么把“福”字倒着贴在门上呢？"
+       },
+       {
+        "speaker": "B",
+        "text": "因为人们一看见就会说“福倒了”。"
+       },
+       {
+        "speaker": "A",
+        "text": "“福倒了”是什么意思？"
+       },
+       {
+        "speaker": "B",
+        "text": "听声音就是“福到了”，意思是幸福和好运到了。"
+       }
+      ],
+      "source_origin": "textbook/generated_mixed",
+      "check_needed": true
+     }
+    ]
+   },
+   {
+    "id": "section_08_reading",
+    "type": "reading",
+    "order": 8,
+    "title": "阅读理解 / 阅读填空",
+    "title_vi": "Đọc hiểu / Điền khuyết",
+    "source_origin": "generated",
+    "check_needed": true,
+    "note_vi": "Bài đọc và điền khuyết bổ sung cho app theo trọng tâm 把字句; không đánh là textbook nếu chưa đối chiếu PDF gốc.",
+    "items": [
+     {
+      "id": "reading_01",
+      "type": "reading_text",
+      "order": 1,
+      "title": "我们把宿舍布置好了",
+      "title_vi": "Chúng tôi đã trang trí xong ký túc xá",
+      "paragraphs": [
+       {
+        "id": "reading_01_p01",
+        "order": 1,
+        "zh": "春节快到了，我们想把宿舍布置得漂亮一点儿。上午，大家先把房间打扫干净，又把桌子摆成一个大圆圈。",
+        "pinyin": "",
+        "vi": "",
+        "grammar_refs": ["grammar_01"],
+        "vocab_refs": [],
+        "source_origin": "generated",
+        "check_needed": true
+       },
+       {
+        "id": "reading_01_p02",
+        "order": 2,
+        "zh": "李明把对联贴在门的两边，我把“福”字倒着贴在门上。安娜问我为什么这样贴，我告诉她：“福倒了”听起来像“福到了”。",
+        "pinyin": "",
+        "vi": "",
+        "grammar_refs": ["grammar_01"],
+        "vocab_refs": [],
+        "source_origin": "generated",
+        "check_needed": true
+       },
+       {
+        "id": "reading_01_p03",
+        "order": 3,
+        "zh": "下午，我们把水果和点心拿出来放在桌子上，还把彩灯挂上去。老师来看了看，说我们把宿舍布置得很有节日气氛。",
+        "pinyin": "",
+        "vi": "",
+        "grammar_refs": ["grammar_01"],
+        "vocab_refs": [],
+        "source_origin": "generated",
+        "check_needed": true
+       },
+       {
+        "id": "reading_01_p04",
+        "order": 4,
+        "zh": "晚上，大家一边吃东西，一边唱中文歌，都觉得这个春节很有意思。",
+        "pinyin": "",
+        "vi": "",
+        "grammar_refs": ["grammar_01"],
+        "vocab_refs": [],
+        "source_origin": "generated",
+        "check_needed": true
+       }
+      ],
+      "questions": [
+       {
+        "id": "reading_q01",
+        "question": "春节快到了，他们想做什么？",
+        "answer": "他们想把宿舍布置得漂亮一点儿。",
+        "source_origin": "generated",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "reading_q02",
+        "question": "上午大家先做了什么？",
+        "answer": "大家先把房间打扫干净。",
+        "source_origin": "generated",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "reading_q03",
+        "question": "他们把桌子摆成了什么？",
+        "answer": "他们把桌子摆成一个大圆圈。",
+        "source_origin": "generated",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "reading_q04",
+        "question": "李明把对联贴在哪儿？",
+        "answer": "李明把对联贴在门的两边。",
+        "source_origin": "generated",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "reading_q05",
+        "question": "“我”把“福”字怎么贴？",
+        "answer": "“我”把“福”字倒着贴在门上。",
+        "source_origin": "generated",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "reading_q06",
+        "question": "“福倒了”听起来像什么？",
+        "answer": "“福倒了”听起来像“福到了”。",
+        "source_origin": "generated",
+        "answer_verified": false,
+        "check_needed": true
+       },
+       {
+        "id": "reading_q07",
+        "question": "老师觉得宿舍布置得怎么样？",
+        "answer": "老师觉得宿舍布置得很有节日气氛。",
+        "source_origin": "generated",
+        "answer_verified": false,
+        "check_needed": true
+       }
+      ],
+      "source_origin": "generated",
+      "check_needed": true
+     },
+     {
+      "id": "reading_cloze_01",
+      "type": "reading_cloze",
+      "order": 2,
+      "title": "综合填空：我们把宿舍布置好了",
+      "title_vi": "Điền tổng hợp: Chúng tôi đã trang trí xong ký túc xá",
+      "instruction": {
+       "zh": "综合填空。",
+       "vi": "Điền từ thích hợp vào chỗ trống trong bài đọc."
+      },
+      "word_bank": [
+       "把",
+       "布置得",
+       "打扫",
+       "摆成",
+       "贴在",
+       "倒着",
+       "拿出来",
+       "挂上去",
+       "得"
+      ],
+      "passage": {
+       "id": "cloze_passage_01",
+       "segments": [
+        {
+         "id": "seg_001",
+         "type": "text",
+         "text": "我们想"
+        },
+        {
+         "id": "seg_002",
+         "type": "blank",
+         "blank_id": "blank_01"
+        },
+        {
+         "id": "seg_003",
+         "type": "text",
+         "text": "宿舍"
+        },
+        {
+         "id": "seg_004",
+         "type": "blank",
+         "blank_id": "blank_02"
+        },
+        {
+         "id": "seg_005",
+         "type": "text",
+         "text": "漂亮一点儿。大家先把房间"
+        },
+        {
+         "id": "seg_006",
+         "type": "blank",
+         "blank_id": "blank_03"
+        },
+        {
+         "id": "seg_007",
+         "type": "text",
+         "text": "干净，又把桌子"
+        },
+        {
+         "id": "seg_008",
+         "type": "blank",
+         "blank_id": "blank_04"
+        },
+        {
+         "id": "seg_009",
+         "type": "text",
+         "text": "一个大圆圈。李明把对联"
+        },
+        {
+         "id": "seg_010",
+         "type": "blank",
+         "blank_id": "blank_05"
+        },
+        {
+         "id": "seg_011",
+         "type": "text",
+         "text": "门的两边。我把“福”字"
+        },
+        {
+         "id": "seg_012",
+         "type": "blank",
+         "blank_id": "blank_06"
+        },
+        {
+         "id": "seg_013",
+         "type": "text",
+         "text": "贴在门上。下午，我们把水果和点心"
+        },
+        {
+         "id": "seg_014",
+         "type": "blank",
+         "blank_id": "blank_07"
+        },
+        {
+         "id": "seg_015",
+         "type": "text",
+         "text": "放在桌子上，还把彩灯"
+        },
+        {
+         "id": "seg_016",
+         "type": "blank",
+         "blank_id": "blank_08"
+        },
+        {
+         "id": "seg_017",
+         "type": "text",
+         "text": "。老师说我们把宿舍布置"
+        },
+        {
+         "id": "seg_018",
+         "type": "blank",
+         "blank_id": "blank_09"
+        },
+        {
+         "id": "seg_019",
+         "type": "text",
+         "text": "很有节日气氛。"
+        }
+       ]
+      },
+      "answers": [
+       {
+        "blank_id": "blank_01",
+        "answer": "把",
+        "acceptable_answers": ["把"],
+        "explanation_vi": "Đáp án theo bài đọc bổ sung generated.",
+        "grammar_refs": ["grammar_01"],
+        "source_origin": "generated",
+        "check_needed": true
+       },
+       {
+        "blank_id": "blank_02",
+        "answer": "布置得",
+        "acceptable_answers": ["布置得"],
+        "explanation_vi": "Đáp án theo bài đọc bổ sung generated.",
+        "grammar_refs": ["grammar_01"],
+        "source_origin": "generated",
+        "check_needed": true
+       },
+       {
+        "blank_id": "blank_03",
+        "answer": "打扫",
+        "acceptable_answers": ["打扫"],
+        "explanation_vi": "Đáp án theo bài đọc bổ sung generated.",
+        "grammar_refs": ["grammar_01"],
+        "source_origin": "generated",
+        "check_needed": true
+       },
+       {
+        "blank_id": "blank_04",
+        "answer": "摆成",
+        "acceptable_answers": ["摆成"],
+        "explanation_vi": "Đáp án theo bài đọc bổ sung generated.",
+        "grammar_refs": ["grammar_01"],
+        "source_origin": "generated",
+        "check_needed": true
+       },
+       {
+        "blank_id": "blank_05",
+        "answer": "贴在",
+        "acceptable_answers": ["贴在"],
+        "explanation_vi": "Đáp án theo bài đọc bổ sung generated.",
+        "grammar_refs": ["grammar_01"],
+        "source_origin": "generated",
+        "check_needed": true
+       },
+       {
+        "blank_id": "blank_06",
+        "answer": "倒着",
+        "acceptable_answers": ["倒着"],
+        "explanation_vi": "Đáp án theo bài đọc bổ sung generated.",
+        "grammar_refs": ["grammar_01"],
+        "source_origin": "generated",
+        "check_needed": true
+       },
+       {
+        "blank_id": "blank_07",
+        "answer": "拿出来",
+        "acceptable_answers": ["拿出来"],
+        "explanation_vi": "Đáp án theo bài đọc bổ sung generated.",
+        "grammar_refs": ["grammar_01"],
+        "source_origin": "generated",
+        "check_needed": true
+       },
+       {
+        "blank_id": "blank_08",
+        "answer": "挂上去",
+        "acceptable_answers": ["挂上去"],
+        "explanation_vi": "Đáp án theo bài đọc bổ sung generated.",
+        "grammar_refs": ["grammar_01"],
+        "source_origin": "generated",
+        "check_needed": true
+       },
+       {
+        "blank_id": "blank_09",
+        "answer": "得",
+        "acceptable_answers": ["得"],
+        "explanation_vi": "Đáp án theo bài đọc bổ sung generated.",
+        "grammar_refs": ["grammar_01"],
+        "source_origin": "generated",
+        "check_needed": true
+       }
+      ],
+      "answer_key": [
+       {
+        "blank_id": "blank_01",
+        "answer": "把",
+        "source_origin": "generated",
+        "check_needed": true
+       },
+       {
+        "blank_id": "blank_02",
+        "answer": "布置得",
+        "source_origin": "generated",
+        "check_needed": true
+       },
+       {
+        "blank_id": "blank_03",
+        "answer": "打扫",
+        "source_origin": "generated",
+        "check_needed": true
+       },
+       {
+        "blank_id": "blank_04",
+        "answer": "摆成",
+        "source_origin": "generated",
+        "check_needed": true
+       },
+       {
+        "blank_id": "blank_05",
+        "answer": "贴在",
+        "source_origin": "generated",
+        "check_needed": true
+       },
+       {
+        "blank_id": "blank_06",
+        "answer": "倒着",
+        "source_origin": "generated",
+        "check_needed": true
+       },
+       {
+        "blank_id": "blank_07",
+        "answer": "拿出来",
+        "source_origin": "generated",
+        "check_needed": true
+       },
+       {
+        "blank_id": "blank_08",
+        "answer": "挂上去",
+        "source_origin": "generated",
+        "check_needed": true
+       },
+       {
+        "blank_id": "blank_09",
+        "answer": "得",
+        "source_origin": "generated",
+        "check_needed": true
+       }
+      ],
+      "rendering": {
+       "renderer": "reading.cloze.v1",
+       "input_mode": "text",
+       "show_word_bank": true,
+       "show_answer_after_submit": true
+      },
+      "source_origin": "generated",
+      "check_needed": true
+     }
+    ]
+   },
+   {
+    "id": "section_09_character_writing",
+    "type": "character_writing",
+    "order": 9,
+    "title": "写汉字",
+    "title_vi": "Viết chữ Hán",
+    "source_origin": "generated",
+    "check_needed": true,
+    "items": [
+     {
+      "id": "char_001",
+      "type": "character_writing_item",
+      "order": 1,
+      "hanzi": "品",
+      "pinyin": "pǐn",
+      "vocab_ref": "vocab_001",
+      "stroke_count": null,
+      "radical": "",
+      "stroke_order_key": "",
+      "practice": {
+       "grid_type": "田字格",
+       "repeat_count": 6
+      },
+      "source_origin": "generated",
+      "check_needed": true
+     },
+     {
+      "id": "char_002",
+      "type": "character_writing_item",
+      "order": 2,
+      "hanzi": "特",
+      "pinyin": "tè",
+      "vocab_ref": "vocab_002",
+      "stroke_count": null,
+      "radical": "",
+      "stroke_order_key": "",
+      "practice": {
+       "grid_type": "田字格",
+       "repeat_count": 6
+      },
+      "source_origin": "generated",
+      "check_needed": true
+     },
+     {
+      "id": "char_003",
+      "type": "character_writing_item",
+      "order": 3,
+      "hanzi": "布",
+      "pinyin": "bù",
+      "vocab_ref": "vocab_005",
+      "stroke_count": null,
+      "radical": "",
+      "stroke_order_key": "",
+      "practice": {
+       "grid_type": "田字格",
+       "repeat_count": 6
+      },
+      "source_origin": "generated",
+      "check_needed": true
+     },
+     {
+      "id": "char_004",
+      "type": "character_writing_item",
+      "order": 4,
+      "hanzi": "管",
+      "pinyin": "guǎn",
+      "vocab_ref": "vocab_007",
+      "stroke_count": null,
+      "radical": "",
+      "stroke_order_key": "",
+      "practice": {
+       "grid_type": "田字格",
+       "repeat_count": 6
+      },
+      "source_origin": "generated",
+      "check_needed": true
+     },
+     {
+      "id": "char_005",
+      "type": "character_writing_item",
+      "order": 5,
+      "hanzi": "擦",
+      "pinyin": "cā",
+      "vocab_ref": "vocab_013",
+      "stroke_count": null,
+      "radical": "",
+      "stroke_order_key": "",
+      "practice": {
+       "grid_type": "田字格",
+       "repeat_count": 6
+      },
+      "source_origin": "generated",
+      "check_needed": true
+     },
+     {
+      "id": "char_006",
+      "type": "character_writing_item",
+      "order": 6,
+      "hanzi": "圈",
+      "pinyin": "quān",
+      "vocab_ref": "vocab_015",
+      "stroke_count": null,
+      "radical": "",
+      "stroke_order_key": "",
+      "practice": {
+       "grid_type": "田字格",
+       "repeat_count": 6
+      },
+      "source_origin": "generated",
+      "check_needed": true
+     },
+     {
+      "id": "char_007",
+      "type": "character_writing_item",
+      "order": 7,
+      "hanzi": "响",
+      "pinyin": "xiǎng",
+      "vocab_ref": "vocab_017",
+      "stroke_count": null,
+      "radical": "",
+      "stroke_order_key": "",
+      "practice": {
+       "grid_type": "田字格",
+       "repeat_count": 6
+      },
+      "source_origin": "generated",
+      "check_needed": true
+     },
+     {
+      "id": "char_008",
+      "type": "character_writing_item",
+      "order": 8,
+      "hanzi": "福",
+      "pinyin": "fú",
+      "vocab_ref": "vocab_034",
+      "stroke_count": null,
+      "radical": "",
+      "stroke_order_key": "",
+      "practice": {
+       "grid_type": "田字格",
+       "repeat_count": 6
+      },
+      "source_origin": "generated",
+      "check_needed": true
+     },
+     {
+      "id": "char_009",
+      "type": "character_writing_item",
+      "order": 9,
+      "hanzi": "倒",
+      "pinyin": "dào",
+      "vocab_ref": "vocab_035",
+      "stroke_count": null,
+      "radical": "",
+      "stroke_order_key": "",
+      "practice": {
+       "grid_type": "田字格",
+       "repeat_count": 6
+      },
+      "source_origin": "generated",
+      "check_needed": true
+     },
+     {
+      "id": "char_010",
+      "type": "character_writing_item",
+      "order": 10,
+      "hanzi": "幸",
+      "pinyin": "xìng",
+      "vocab_ref": "vocab_034",
+      "stroke_count": null,
+      "radical": "",
+      "stroke_order_key": "",
+      "practice": {
+       "grid_type": "田字格",
+       "repeat_count": 6
+      },
+      "source_origin": "generated",
+      "check_needed": true
+     },
+     {
+      "id": "char_011",
+      "type": "character_writing_item",
+      "order": 11,
+      "hanzi": "贴",
+      "pinyin": "tiē",
+      "vocab_ref": "",
+      "stroke_count": null,
+      "radical": "",
+      "stroke_order_key": "",
+      "practice": {
+       "grid_type": "田字格",
+       "repeat_count": 6
+      },
+      "source_origin": "generated",
+      "check_needed": true
+     },
+     {
+      "id": "char_012",
+      "type": "character_writing_item",
+      "order": 12,
+      "hanzi": "联",
+      "pinyin": "lián",
+      "vocab_ref": "vocab_026",
+      "stroke_count": null,
+      "radical": "",
+      "stroke_order_key": "",
+      "practice": {
+       "grid_type": "田字格",
+       "repeat_count": 6
+      },
+      "source_origin": "generated",
+      "check_needed": true
+     }
+    ]
+   }
+  ],
+  "summary": {
+   "lesson_parts": [
+    "课文",
+    "生词",
+    "专名",
+    "注释",
+    "语法",
+    "练习",
+    "交际会话",
+    "阅读理解 / 阅读填空",
+    "写汉字"
+   ],
+   "grammar_points": [
+    {
+     "id": "grammar_01",
+     "title": "把字句"
+    },
+    {
+     "id": "grammar_01_structure_01",
+     "title": "把 + O + V + 成 + kết quả"
+    },
+    {
+     "id": "grammar_01_structure_02",
+     "title": "把 + O + V + 在 / 到 + nơi chốn"
+    },
+    {
+     "id": "grammar_01_structure_03",
+     "title": "把 + O + V + 上 / 上去 / 来 / 出来"
+    },
+    {
+     "id": "grammar_01_structure_04",
+     "title": "把 + O + V + 得 + mức độ"
+    },
+    {
+     "id": "grammar_01_structure_05",
+     "title": "Điều kiện dùng 把"
+    }
+   ],
+   "main_patterns": [
+    {
+     "pattern": "我们把教室布置成了会场。",
+     "grammar_ref": "grammar_01_structure_01"
+    },
+    {
+     "pattern": "班长要求我们把自己亲手做的菜带到晚会上来。",
+     "grammar_ref": "grammar_01_structure_02"
+    },
+    {
+     "pattern": "她答应把那个教室借给我们。",
+     "grammar_ref": "grammar_01"
+    },
+    {
+     "pattern": "把门和窗户也都擦得干干净净的。",
+     "grammar_ref": "grammar_01_structure_04"
+    },
+    {
+     "pattern": "我们把桌子摆成了一个大圆圈。",
+     "grammar_ref": "grammar_01_structure_01"
+    },
+    {
+     "pattern": "爱德华把几个大字贴在了黑板上。",
+     "grammar_ref": "grammar_01_structure_02"
+    },
+    {
+     "pattern": "用彩灯和彩带把它装饰得非常漂亮。",
+     "grammar_ref": "grammar_01_structure_04"
+    },
+    {
+     "pattern": "把你写的对联也贴上去吧。",
+     "grammar_ref": "grammar_01_structure_03"
+    },
+    {
+     "pattern": "为什么把“福”字倒着贴在门上呢？",
+     "grammar_ref": "grammar_01_structure_02"
+    },
+    {
+     "pattern": "听声音就是“福到了”。",
+     "grammar_ref": "note_02"
+    }
+   ],
+   "exercise_types": [
+    "phonetics",
+    "read_aloud",
+    "substitution_drill",
+    "choose_words_fill_blank",
+    "fill_blank",
+    "complete_dialogue",
+    "correct_sentence",
+    "communication_dialogue",
+    "reading_text",
+    "reading_cloze",
+    "character_writing"
+   ],
+   "source_origin_policy": {
+    "textbook": "Copied/structured from textbook/PDF content.",
+    "web_crosscheck": "Used only to confirm lesson title, three core texts, vocabulary range, and 把字句 grammar topic.",
+    "generated": "Generated for app practice/rendering; must be treated as non-textbook unless verified separately.",
+    "textbook/generated_mixed": "Based on textbook communicative function but formatted/simplified for app rendering.",
+    "textbook_question_generated_answer": "Question comes from textbook-style comprehension; answer generated from the text."
+   },
+   "check_needed": true
+  }
+ },
+ "fix_history": [
+  {
+   "fix_id": "lesson_12_v2_2_initial_with_reading_v1",
+   "description": "Created lesson 12 with non-empty generated reading_text and reading_cloze sections following v2.2.0 final verified schema.",
+   "source_origin": "generated",
+   "check_needed": true
+  }
+ ]
+}

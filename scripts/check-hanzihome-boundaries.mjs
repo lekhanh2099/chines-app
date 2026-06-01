@@ -113,7 +113,6 @@ for (const check of checks) {
 
 const requiredFiles = [
   "src/features/hanzihome/hooks/useHanziHomeCourseLessons.ts",
-  "src/app/api/hanzihome/course-lessons/route.ts",
 ];
 
 for (const file of requiredFiles) {
