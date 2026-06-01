@@ -52,3 +52,19 @@ export const q2LessonJson = loadJsonDirectory(
   /\.json$/,
  ),
 );
+
+export const q3VocabJson = loadJsonDirectory(
+ webpackRequire.context(
+  "../../../../data/hanzihome/q3/vocab",
+  false,
+  /\.json$/,
+ ),
+);
+
+export const q3LessonJson = loadJsonDirectory(
+ webpackRequire.context(
+  "../../../../data/hanzihome/q3/lessons",
+  false,
+  /\.json$/,
+ ),
+);

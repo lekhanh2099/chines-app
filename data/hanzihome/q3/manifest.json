@@ -1,0 +1,72 @@
+{
+  "schemaVersion": "hanzihome-static-manifest-v1",
+  "course": {
+    "id": "hanyu-q3",
+    "title": "Giáo trình Hán ngữ Quyển 3",
+    "books": [
+      {
+        "id": "hanyu-q3-shang",
+        "title": "Giáo trình Hán ngữ 3 Thượng",
+        "lessonRange": [
+          1,
+          12
+        ]
+      }
+    ]
+  },
+  "counts": {
+    "lessons": 6,
+    "vocab": 340,
+    "lessonDocuments": 5
+  },
+  "lessons": [
+    {
+      "lessonNumber": 1,
+      "id": "hanyu_3_1_lesson_01_deep_vocab",
+      "titleZh": "离家的时候",
+      "titleVi": "Lúc rời khỏi nhà",
+      "vocabCount": 74,
+      "hasLessonDocument": true
+    },
+    {
+      "lessonNumber": 2,
+      "id": "hanyu_3_1_lesson_02_deep_vocab",
+      "titleZh": "一封信",
+      "titleVi": "Một bức thư",
+      "vocabCount": 66,
+      "hasLessonDocument": true
+    },
+    {
+      "lessonNumber": 3,
+      "id": "hanyu_3_1_lesson_03_deep_vocab",
+      "titleZh": "北京的四季",
+      "titleVi": "Bốn mùa ở Bắc Kinh",
+      "vocabCount": 65,
+      "hasLessonDocument": true
+    },
+    {
+      "lessonNumber": 4,
+      "id": "hanyu_3_1_lesson_04_deep_vocab",
+      "titleZh": "理想",
+      "titleVi": "Lý tưởng",
+      "vocabCount": 69,
+      "hasLessonDocument": true
+    },
+    {
+      "lessonNumber": 5,
+      "id": "hanyu_3_1_lesson_05_deep_vocab",
+      "titleZh": "回头再说",
+      "titleVi": "Quay đầu lại nói sau / Để sau nói tiếp",
+      "vocabCount": 66,
+      "hasLessonDocument": false
+    },
+    {
+      "lessonNumber": 6,
+      "id": "hanyu_3_1_lesson_06",
+      "titleZh": "吃葡萄",
+      "titleVi": "Ăn nho",
+      "vocabCount": 0,
+      "hasLessonDocument": true
+    }
+  ]
+}

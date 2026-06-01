@@ -1,0 +1,3932 @@
+{
+  "schema_version": "2.1.0",
+  "content_type": "chinese_textbook_lesson",
+  "source": {
+    "book": "Hanyu Jiaocheng",
+    "volume": "第三册上",
+    "volume_vi": "Quyển 3 Thượng",
+    "lesson_index": 3,
+    "lesson_number_cn": "第三课",
+    "lesson_title_cn": "北京的四季",
+    "lesson_title_pinyin": "Běijīng de sìjì",
+    "lesson_title_vi": "Bốn mùa ở Bắc Kinh",
+    "lesson_title_en": "Four seasons in Beijing",
+    "source_files": [
+      {
+        "name": "Hanyu Jiaocheng 3-1.pdf",
+        "type": "pdf_scan",
+        "check_needed": false
+      },
+      {
+        "name": "Chinese Course 3A Lesson 3 online text",
+        "type": "web_reference",
+        "check_needed": false
+      }
+    ]
+  },
+  "lesson": {
+    "id": "hanyu_3_1_lesson_03",
+    "title": {
+      "zh": "北京的四季",
+      "pinyin": "Běijīng de sìjì",
+      "vi": "Bốn mùa ở Bắc Kinh",
+      "en": "Four seasons in Beijing"
+    },
+    "tags": [
+      "hanyu_3_1",
+      "lesson_03",
+      "hsk4-ish",
+      "beijing",
+      "four_seasons",
+      "culture",
+      "weather"
+    ],
+    "sections": [
+      {
+        "id": "section_01_text",
+        "type": "text",
+        "order": 1,
+        "title": "课文",
+        "title_vi": "Bài khóa",
+        "blocks": [
+          {
+            "id": "text_01",
+            "type": "text_narrative",
+            "order": 1,
+            "title": "北京的四季",
+            "title_vi": "Bốn mùa ở Bắc Kinh",
+            "paragraphs": [
+              {
+                "id": "text_01_p01",
+                "order": 1,
+                "zh": "中国的大部分地区，一年都有春、夏、秋、冬四个季节。",
+                "pinyin": "",
+                "vi": "",
+                "audio_key": "",
+                "vocab_refs": [],
+                "grammar_refs": []
+              },
+              {
+                "id": "text_01_p02",
+                "order": 2,
+                "zh": "就拿首都北京来说吧，从三月到五月是春季，六月到八月是夏季，九月到十一月是秋季，十二月到第二年的二月是冬季。",
+                "pinyin": "",
+                "vi": "",
+                "audio_key": "",
+                "vocab_refs": [],
+                "grammar_refs": []
+              },
+              {
+                "id": "text_01_p03",
+                "order": 3,
+                "zh": "春天来了，树绿了，花儿开了，天气暖和了。人们脱下冬衣，换上春装。姑娘和小伙子们打扮得漂漂亮亮的，他们在湖上划船，在花儿前照相，公园里充满了年轻人的歌声和笑声。颐和园、北海、香山、长城和十三陵……到处都可以看到来自世界各地的游人。",
+                "pinyin": "",
+                "vi": "",
+                "audio_key": "",
+                "vocab_refs": [],
+                "grammar_refs": []
+              },
+              {
+                "id": "text_01_p04",
+                "order": 4,
+                "zh": "夏天来了，天气热了。人们常常去游泳。吃完晚饭，工作了一天的人们喜欢到外边散步、聊天儿。马路边、公园里都有散步的人。他们一边走一边聊，显得轻松而愉快。",
+                "pinyin": "",
+                "vi": "",
+                "audio_key": "",
+                "vocab_refs": [],
+                "grammar_refs": []
+              },
+              {
+                "id": "text_01_p05",
+                "order": 5,
+                "zh": "北京的冬天比较冷，但是暖气一开，屋子里很暖和。到了冬天，人们喜欢吃火锅儿。一家几口人或三五个朋友，高高兴兴地围坐在火锅儿旁边，边吃，边喝，边聊，这情景让人羡慕和向往。",
+                "pinyin": "",
+                "vi": "",
+                "audio_key": "",
+                "vocab_refs": [],
+                "grammar_refs": []
+              },
+              {
+                "id": "text_01_p06",
+                "order": 6,
+                "zh": "北京的冬天不常下雪，但是，要是下了雪，人们就会像过节一样高兴。冬天最美的风光就是雪景了。很多人会带上相机去外边照相。孩子们一点儿也不怕冷，在雪地上跑啊跳啊，堆雪人儿，打雪仗，小脸和小手冻得红红的，玩儿得可高兴了。北京人喜欢雪。“瑞雪兆丰年”，冬天要是下几场大雪，第二年一定会有好收成。",
+                "pinyin": "",
+                "vi": "",
+                "audio_key": "",
+                "vocab_refs": [],
+                "grammar_refs": []
+              },
+              {
+                "id": "text_01_p07",
+                "order": 7,
+                "zh": "北京一年中最好的季节要数秋天了。天气不冷也不热，不常下雨，也很少刮风。大街上到处是鲜花，到处是瓜果。每到周末，人们都喜欢到郊外去玩儿。那满山的红叶是秋天最美丽的景色。爬香山、看红叶，是北京人最喜欢的活动。",
+                "pinyin": "",
+                "vi": "",
+                "audio_key": "",
+                "vocab_refs": [],
+                "grammar_refs": []
+              },
+              {
+                "id": "text_01_p08",
+                "order": 8,
+                "zh": "国庆节放假期间，正是北京一年中风景最美的时候。每到国庆节，全国各地很多游人都会利用假期到北京来旅游。要是你能到天安门广场去看看，就会知道，这个古老的国家如今显得多么年轻，你就会感到，勤劳善良、热爱和平的中国人是多么热情。也许你会爱上这个美丽的城市，爱上这些热情友好的人们。",
+                "pinyin": "",
+                "vi": "",
+                "audio_key": "",
+                "vocab_refs": [],
+                "grammar_refs": []
+              },
+              {
+                "id": "text_01_p09",
+                "order": 9,
+                "zh": "亲爱的朋友，愿你们在北京、在中国生活得平安快乐。",
+                "pinyin": "",
+                "vi": "",
+                "audio_key": "",
+                "vocab_refs": [],
+                "grammar_refs": []
+              }
+            ],
+            "comprehension_questions": [
+              {
+                "id": "text_01_q01",
+                "question": "北京一年有几个季节？每个季节从几月到几月？",
+                "answer": "北京一年有四个季节。三月到五月是春季，六月到八月是夏季，九月到十一月是秋季，十二月到第二年的二月是冬季。"
+              },
+              {
+                "id": "text_01_q02",
+                "question": "北京的春天怎么样？",
+                "answer": "北京的春天树绿了，花儿开了，天气暖和了，到处都可以看到游人。"
+              },
+              {
+                "id": "text_01_q03",
+                "question": "北京的夏天怎么样？",
+                "answer": "北京的夏天天气热，人们常去游泳，晚上喜欢散步、聊天儿。"
+              },
+              {
+                "id": "text_01_q04",
+                "question": "北京的冬天怎么样？",
+                "answer": "北京的冬天比较冷，但是屋子里有暖气。下雪时人们像过节一样高兴，孩子们堆雪人儿、打雪仗。"
+              },
+              {
+                "id": "text_01_q05",
+                "question": "北京的秋天怎么样？",
+                "answer": "北京的秋天天气不冷也不热，不常下雨，也很少刮风，是一年中最好的季节。"
+              },
+              {
+                "id": "text_01_q06",
+                "question": "你们国家或家乡的季节怎么样？",
+                "answer": "开放题，按个人实际情况回答。",
+                "check_needed": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "section_02_vocabulary",
+        "type": "vocabulary",
+        "order": 2,
+        "title": "生词",
+        "title_vi": "Từ vựng",
+        "items": [
+          {
+            "id": "vocab_001",
+            "type": "vocabulary_item",
+            "order": 1,
+            "hanzi": "部分",
+            "pinyin": "bùfen",
+            "meaning_vi": "bộ phận, phần",
+            "meaning_en": "",
+            "pos": "noun",
+            "tags": [],
+            "examples": [],
+            "flashcard": {
+              "front": "部分",
+              "back": "bùfen — bộ phận, phần",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "check_needed": false
+          },
+          {
+            "id": "vocab_002",
+            "type": "vocabulary_item",
+            "order": 2,
+            "hanzi": "地区",
+            "pinyin": "dìqū",
+            "meaning_vi": "khu vực, vùng miền",
+            "meaning_en": "",
+            "pos": "noun",
+            "tags": [],
+            "examples": [],
+            "flashcard": {
+              "front": "地区",
+              "back": "dìqū — khu vực, vùng miền",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "check_needed": false
+          },
+          {
+            "id": "vocab_003",
+            "type": "vocabulary_item",
+            "order": 3,
+            "hanzi": "拿",
+            "pinyin": "ná",
+            "meaning_vi": "dùng để nêu đối tượng / lấy",
+            "meaning_en": "",
+            "pos": "verb",
+            "tags": [
+              "usage"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "拿",
+              "back": "ná — dùng để nêu đối tượng / lấy",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "check_needed": false
+          },
+          {
+            "id": "vocab_004",
+            "type": "vocabulary_item",
+            "order": 4,
+            "hanzi": "脱",
+            "pinyin": "tuō",
+            "meaning_vi": "cởi, tháo ra",
+            "meaning_en": "",
+            "pos": "verb",
+            "tags": [],
+            "examples": [],
+            "flashcard": {
+              "front": "脱",
+              "back": "tuō — cởi, tháo ra",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "check_needed": false
+          },
+          {
+            "id": "vocab_005",
+            "type": "vocabulary_item",
+            "order": 5,
+            "hanzi": "冬衣",
+            "pinyin": "dōngyī",
+            "meaning_vi": "quần áo mùa đông",
+            "meaning_en": "",
+            "pos": "noun",
+            "tags": [],
+            "examples": [],
+            "flashcard": {
+              "front": "冬衣",
+              "back": "dōngyī — quần áo mùa đông",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "check_needed": false
+          },
+          {
+            "id": "vocab_006",
+            "type": "vocabulary_item",
+            "order": 6,
+            "hanzi": "春装",
+            "pinyin": "chūnzhuāng",
+            "meaning_vi": "quần áo mùa xuân",
+            "meaning_en": "",
+            "pos": "noun",
+            "tags": [],
+            "examples": [],
+            "flashcard": {
+              "front": "春装",
+              "back": "chūnzhuāng — quần áo mùa xuân",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "check_needed": false
+          },
+          {
+            "id": "vocab_007",
+            "type": "vocabulary_item",
+            "order": 7,
+            "hanzi": "姑娘",
+            "pinyin": "gūniang",
+            "meaning_vi": "cô gái",
+            "meaning_en": "",
+            "pos": "noun",
+            "tags": [],
+            "examples": [],
+            "flashcard": {
+              "front": "姑娘",
+              "back": "gūniang — cô gái",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "check_needed": false
+          },
+          {
+            "id": "vocab_008",
+            "type": "vocabulary_item",
+            "order": 8,
+            "hanzi": "湖",
+            "pinyin": "hú",
+            "meaning_vi": "hồ",
+            "meaning_en": "",
+            "pos": "noun",
+            "tags": [],
+            "examples": [],
+            "flashcard": {
+              "front": "湖",
+              "back": "hú — hồ",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "check_needed": false
+          },
+          {
+            "id": "vocab_009",
+            "type": "vocabulary_item",
+            "order": 9,
+            "hanzi": "划船",
+            "pinyin": "huá chuán",
+            "meaning_vi": "chèo thuyền",
+            "meaning_en": "",
+            "pos": "verb_phrase",
+            "tags": [],
+            "examples": [],
+            "flashcard": {
+              "front": "划船",
+              "back": "huá chuán — chèo thuyền",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "check_needed": false
+          },
+          {
+            "id": "vocab_010",
+            "type": "vocabulary_item",
+            "order": 10,
+            "hanzi": "划",
+            "pinyin": "huá",
+            "meaning_vi": "chèo",
+            "meaning_en": "",
+            "pos": "verb",
+            "tags": [],
+            "examples": [],
+            "flashcard": {
+              "front": "划",
+              "back": "huá — chèo",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "check_needed": false
+          },
+          {
+            "id": "vocab_011",
+            "type": "vocabulary_item",
+            "order": 11,
+            "hanzi": "船",
+            "pinyin": "chuán",
+            "meaning_vi": "thuyền",
+            "meaning_en": "",
+            "pos": "noun",
+            "tags": [],
+            "examples": [],
+            "flashcard": {
+              "front": "船",
+              "back": "chuán — thuyền",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "check_needed": false
+          },
+          {
+            "id": "vocab_012",
+            "type": "vocabulary_item",
+            "order": 12,
+            "hanzi": "充满",
+            "pinyin": "chōngmǎn",
+            "meaning_vi": "tràn đầy, đầy ắp",
+            "meaning_en": "",
+            "pos": "verb",
+            "tags": [],
+            "examples": [],
+            "flashcard": {
+              "front": "充满",
+              "back": "chōngmǎn — tràn đầy, đầy ắp",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "check_needed": false
+          },
+          {
+            "id": "vocab_013",
+            "type": "vocabulary_item",
+            "order": 13,
+            "hanzi": "游人",
+            "pinyin": "yóurén",
+            "meaning_vi": "du khách",
+            "meaning_en": "",
+            "pos": "noun",
+            "tags": [],
+            "examples": [],
+            "flashcard": {
+              "front": "游人",
+              "back": "yóurén — du khách",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "check_needed": false
+          },
+          {
+            "id": "vocab_014",
+            "type": "vocabulary_item",
+            "order": 14,
+            "hanzi": "显得",
+            "pinyin": "xiǎnde",
+            "meaning_vi": "tỏ ra, có vẻ, hiện ra",
+            "meaning_en": "",
+            "pos": "verb",
+            "tags": [],
+            "examples": [],
+            "flashcard": {
+              "front": "显得",
+              "back": "xiǎnde — tỏ ra, có vẻ, hiện ra",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "check_needed": false
+          },
+          {
+            "id": "vocab_015",
+            "type": "vocabulary_item",
+            "order": 15,
+            "hanzi": "轻松",
+            "pinyin": "qīngsōng",
+            "meaning_vi": "nhẹ nhõm, thoải mái",
+            "meaning_en": "",
+            "pos": "adjective",
+            "tags": [],
+            "examples": [],
+            "flashcard": {
+              "front": "轻松",
+              "back": "qīngsōng — nhẹ nhõm, thoải mái",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "check_needed": false
+          },
+          {
+            "id": "vocab_016",
+            "type": "vocabulary_item",
+            "order": 16,
+            "hanzi": "火锅儿",
+            "pinyin": "huǒguōr",
+            "meaning_vi": "lẩu",
+            "meaning_en": "",
+            "pos": "noun",
+            "tags": [
+              "food",
+              "culture"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "火锅儿",
+              "back": "huǒguōr — lẩu",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "check_needed": false
+          },
+          {
+            "id": "vocab_017",
+            "type": "vocabulary_item",
+            "order": 17,
+            "hanzi": "围",
+            "pinyin": "wéi",
+            "meaning_vi": "vây quanh, bao quanh",
+            "meaning_en": "",
+            "pos": "verb",
+            "tags": [],
+            "examples": [],
+            "flashcard": {
+              "front": "围",
+              "back": "wéi — vây quanh, bao quanh",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "check_needed": false
+          },
+          {
+            "id": "vocab_018",
+            "type": "vocabulary_item",
+            "order": 18,
+            "hanzi": "向往",
+            "pinyin": "xiàngwǎng",
+            "meaning_vi": "hướng tới, khao khát, mong mỏi",
+            "meaning_en": "",
+            "pos": "verb",
+            "tags": [
+              "usage"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "向往",
+              "back": "xiàngwǎng — hướng tới, khao khát, mong mỏi",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "check_needed": false
+          },
+          {
+            "id": "vocab_019",
+            "type": "vocabulary_item",
+            "order": 19,
+            "hanzi": "堆雪人儿",
+            "pinyin": "duī xuěrénr",
+            "meaning_vi": "đắp người tuyết",
+            "meaning_en": "",
+            "pos": "verb_phrase",
+            "tags": [],
+            "examples": [],
+            "flashcard": {
+              "front": "堆雪人儿",
+              "back": "duī xuěrénr — đắp người tuyết",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "check_needed": false
+          },
+          {
+            "id": "vocab_020",
+            "type": "vocabulary_item",
+            "order": 20,
+            "hanzi": "堆",
+            "pinyin": "duī",
+            "meaning_vi": "chất, đắp, chất thành đống",
+            "meaning_en": "",
+            "pos": "verb",
+            "tags": [],
+            "examples": [],
+            "flashcard": {
+              "front": "堆",
+              "back": "duī — chất, đắp, chất thành đống",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "check_needed": false
+          },
+          {
+            "id": "vocab_021",
+            "type": "vocabulary_item",
+            "order": 21,
+            "hanzi": "打雪仗",
+            "pinyin": "dǎ xuězhàng",
+            "meaning_vi": "đánh trận tuyết, ném tuyết vào nhau",
+            "meaning_en": "",
+            "pos": "verb_phrase",
+            "tags": [],
+            "examples": [],
+            "flashcard": {
+              "front": "打雪仗",
+              "back": "dǎ xuězhàng — đánh trận tuyết, ném tuyết vào nhau",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "check_needed": false
+          },
+          {
+            "id": "vocab_022",
+            "type": "vocabulary_item",
+            "order": 22,
+            "hanzi": "打",
+            "pinyin": "dǎ",
+            "meaning_vi": "đánh",
+            "meaning_en": "",
+            "pos": "verb",
+            "tags": [],
+            "examples": [],
+            "flashcard": {
+              "front": "打",
+              "back": "dǎ — đánh",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "check_needed": false
+          },
+          {
+            "id": "vocab_023",
+            "type": "vocabulary_item",
+            "order": 23,
+            "hanzi": "冻",
+            "pinyin": "dòng",
+            "meaning_vi": "lạnh cóng, bị đóng băng",
+            "meaning_en": "",
+            "pos": "verb",
+            "tags": [],
+            "examples": [],
+            "flashcard": {
+              "front": "冻",
+              "back": "dòng — lạnh cóng, bị đóng băng",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "check_needed": false
+          },
+          {
+            "id": "vocab_024",
+            "type": "vocabulary_item",
+            "order": 24,
+            "hanzi": "瑞雪兆丰年",
+            "pinyin": "ruì xuě zhào fēngnián",
+            "meaning_vi": "tuyết lành báo năm được mùa",
+            "meaning_en": "",
+            "pos": "phrase",
+            "tags": [
+              "culture"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "瑞雪兆丰年",
+              "back": "ruì xuě zhào fēngnián — tuyết lành báo năm được mùa",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "check_needed": false
+          },
+          {
+            "id": "vocab_025",
+            "type": "vocabulary_item",
+            "order": 25,
+            "hanzi": "场",
+            "pinyin": "chǎng",
+            "meaning_vi": "trận, lượng từ cho sự việc / hiện tượng",
+            "meaning_en": "",
+            "pos": "measure_word",
+            "tags": [],
+            "examples": [],
+            "flashcard": {
+              "front": "场",
+              "back": "chǎng — trận, lượng từ cho sự việc / hiện tượng",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "check_needed": false
+          },
+          {
+            "id": "vocab_026",
+            "type": "vocabulary_item",
+            "order": 26,
+            "hanzi": "收成",
+            "pinyin": "shōucheng",
+            "meaning_vi": "mùa màng, thu hoạch",
+            "meaning_en": "",
+            "pos": "noun",
+            "tags": [],
+            "examples": [],
+            "flashcard": {
+              "front": "收成",
+              "back": "shōucheng — mùa màng, thu hoạch",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "check_needed": false
+          },
+          {
+            "id": "vocab_027",
+            "type": "vocabulary_item",
+            "order": 27,
+            "hanzi": "数",
+            "pinyin": "shǔ",
+            "meaning_vi": "được tính là, kể là",
+            "meaning_en": "",
+            "pos": "verb",
+            "tags": [
+              "usage"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "数",
+              "back": "shǔ — được tính là, kể là",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "check_needed": false
+          },
+          {
+            "id": "vocab_028",
+            "type": "vocabulary_item",
+            "order": 28,
+            "hanzi": "大街",
+            "pinyin": "dàjiē",
+            "meaning_vi": "đường lớn, phố lớn",
+            "meaning_en": "",
+            "pos": "noun",
+            "tags": [],
+            "examples": [],
+            "flashcard": {
+              "front": "大街",
+              "back": "dàjiē — đường lớn, phố lớn",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "check_needed": false
+          },
+          {
+            "id": "vocab_029",
+            "type": "vocabulary_item",
+            "order": 29,
+            "hanzi": "鲜花",
+            "pinyin": "xiānhuā",
+            "meaning_vi": "hoa tươi",
+            "meaning_en": "",
+            "pos": "noun",
+            "tags": [],
+            "examples": [],
+            "flashcard": {
+              "front": "鲜花",
+              "back": "xiānhuā — hoa tươi",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "check_needed": false
+          },
+          {
+            "id": "vocab_030",
+            "type": "vocabulary_item",
+            "order": 30,
+            "hanzi": "瓜",
+            "pinyin": "guā",
+            "meaning_vi": "dưa",
+            "meaning_en": "",
+            "pos": "noun",
+            "tags": [],
+            "examples": [],
+            "flashcard": {
+              "front": "瓜",
+              "back": "guā — dưa",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "check_needed": false
+          },
+          {
+            "id": "vocab_031",
+            "type": "vocabulary_item",
+            "order": 31,
+            "hanzi": "果",
+            "pinyin": "guǒ",
+            "meaning_vi": "quả, trái cây",
+            "meaning_en": "",
+            "pos": "noun",
+            "tags": [],
+            "examples": [],
+            "flashcard": {
+              "front": "果",
+              "back": "guǒ — quả, trái cây",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "check_needed": false
+          },
+          {
+            "id": "vocab_032",
+            "type": "vocabulary_item",
+            "order": 32,
+            "hanzi": "每",
+            "pinyin": "měi",
+            "meaning_vi": "mỗi",
+            "meaning_en": "",
+            "pos": "pronoun",
+            "tags": [],
+            "examples": [],
+            "flashcard": {
+              "front": "每",
+              "back": "měi — mỗi",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "check_needed": false
+          },
+          {
+            "id": "vocab_033",
+            "type": "vocabulary_item",
+            "order": 33,
+            "hanzi": "郊外",
+            "pinyin": "jiāowài",
+            "meaning_vi": "ngoại ô",
+            "meaning_en": "",
+            "pos": "noun",
+            "tags": [],
+            "examples": [],
+            "flashcard": {
+              "front": "郊外",
+              "back": "jiāowài — ngoại ô",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "check_needed": false
+          },
+          {
+            "id": "vocab_034",
+            "type": "vocabulary_item",
+            "order": 34,
+            "hanzi": "美丽",
+            "pinyin": "měilì",
+            "meaning_vi": "xinh đẹp",
+            "meaning_en": "",
+            "pos": "adjective",
+            "tags": [],
+            "examples": [],
+            "flashcard": {
+              "front": "美丽",
+              "back": "měilì — xinh đẹp",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "check_needed": false
+          },
+          {
+            "id": "vocab_035",
+            "type": "vocabulary_item",
+            "order": 35,
+            "hanzi": "美",
+            "pinyin": "měi",
+            "meaning_vi": "đẹp",
+            "meaning_en": "",
+            "pos": "adjective",
+            "tags": [],
+            "examples": [],
+            "flashcard": {
+              "front": "美",
+              "back": "měi — đẹp",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "check_needed": false
+          },
+          {
+            "id": "vocab_036",
+            "type": "vocabulary_item",
+            "order": 36,
+            "hanzi": "景色",
+            "pinyin": "jǐngsè",
+            "meaning_vi": "cảnh sắc, phong cảnh",
+            "meaning_en": "",
+            "pos": "noun",
+            "tags": [],
+            "examples": [],
+            "flashcard": {
+              "front": "景色",
+              "back": "jǐngsè — cảnh sắc, phong cảnh",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "check_needed": false
+          },
+          {
+            "id": "vocab_037",
+            "type": "vocabulary_item",
+            "order": 37,
+            "hanzi": "如今",
+            "pinyin": "rújīn",
+            "meaning_vi": "hiện nay, ngày nay",
+            "meaning_en": "",
+            "pos": "noun",
+            "tags": [],
+            "examples": [],
+            "flashcard": {
+              "front": "如今",
+              "back": "rújīn — hiện nay, ngày nay",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "check_needed": false
+          },
+          {
+            "id": "vocab_038",
+            "type": "vocabulary_item",
+            "order": 38,
+            "hanzi": "多么",
+            "pinyin": "duōme",
+            "meaning_vi": "biết bao, thật là; dùng trong câu cảm thán",
+            "meaning_en": "",
+            "pos": "adverb",
+            "tags": [
+              "usage"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "多么",
+              "back": "duōme — biết bao, thật là; dùng trong câu cảm thán",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "check_needed": false
+          },
+          {
+            "id": "vocab_039",
+            "type": "vocabulary_item",
+            "order": 39,
+            "hanzi": "勤劳",
+            "pinyin": "qínláo",
+            "meaning_vi": "cần cù, chăm chỉ",
+            "meaning_en": "",
+            "pos": "adjective",
+            "tags": [],
+            "examples": [],
+            "flashcard": {
+              "front": "勤劳",
+              "back": "qínláo — cần cù, chăm chỉ",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "check_needed": false
+          },
+          {
+            "id": "vocab_040",
+            "type": "vocabulary_item",
+            "order": 40,
+            "hanzi": "善良",
+            "pinyin": "shànliáng",
+            "meaning_vi": "lương thiện, tốt bụng",
+            "meaning_en": "",
+            "pos": "adjective",
+            "tags": [],
+            "examples": [],
+            "flashcard": {
+              "front": "善良",
+              "back": "shànliáng — lương thiện, tốt bụng",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "check_needed": false
+          },
+          {
+            "id": "vocab_041",
+            "type": "vocabulary_item",
+            "order": 41,
+            "hanzi": "热爱",
+            "pinyin": "rè’ài",
+            "meaning_vi": "yêu sâu sắc, yêu tha thiết",
+            "meaning_en": "",
+            "pos": "verb",
+            "tags": [],
+            "examples": [],
+            "flashcard": {
+              "front": "热爱",
+              "back": "rè’ài — yêu sâu sắc, yêu tha thiết",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "check_needed": false
+          },
+          {
+            "id": "vocab_042",
+            "type": "vocabulary_item",
+            "order": 42,
+            "hanzi": "友好",
+            "pinyin": "yǒuhǎo",
+            "meaning_vi": "thân thiện, hữu hảo",
+            "meaning_en": "",
+            "pos": "adjective",
+            "tags": [],
+            "examples": [],
+            "flashcard": {
+              "front": "友好",
+              "back": "yǒuhǎo — thân thiện, hữu hảo",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "check_needed": false
+          },
+          {
+            "id": "vocab_043",
+            "type": "vocabulary_item",
+            "order": 43,
+            "hanzi": "亲爱",
+            "pinyin": "qīn’ài",
+            "meaning_vi": "thân yêu",
+            "meaning_en": "",
+            "pos": "adjective",
+            "tags": [],
+            "examples": [],
+            "flashcard": {
+              "front": "亲爱",
+              "back": "qīn’ài — thân yêu",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "check_needed": false
+          },
+          {
+            "id": "vocab_044",
+            "type": "vocabulary_item",
+            "order": 44,
+            "hanzi": "愿",
+            "pinyin": "yuàn",
+            "meaning_vi": "mong, chúc, nguyện",
+            "meaning_en": "",
+            "pos": "verb",
+            "tags": [],
+            "examples": [],
+            "flashcard": {
+              "front": "愿",
+              "back": "yuàn — mong, chúc, nguyện",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "check_needed": false
+          },
+          {
+            "id": "vocab_045",
+            "type": "vocabulary_item",
+            "order": 45,
+            "hanzi": "平安",
+            "pinyin": "píng’ān",
+            "meaning_vi": "bình an",
+            "meaning_en": "",
+            "pos": "adjective",
+            "tags": [],
+            "examples": [],
+            "flashcard": {
+              "front": "平安",
+              "back": "píng’ān — bình an",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "check_needed": false
+          },
+          {
+            "id": "vocab_046",
+            "type": "vocabulary_item",
+            "order": 46,
+            "hanzi": "北海",
+            "pinyin": "Běihǎi",
+            "meaning_vi": "Công viên Bắc Hải",
+            "meaning_en": "",
+            "pos": "proper_noun",
+            "tags": [],
+            "examples": [],
+            "flashcard": {
+              "front": "北海",
+              "back": "Běihǎi — Công viên Bắc Hải",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "check_needed": false
+          },
+          {
+            "id": "vocab_047",
+            "type": "vocabulary_item",
+            "order": 47,
+            "hanzi": "香山",
+            "pinyin": "Xiāngshān",
+            "meaning_vi": "Hương Sơn",
+            "meaning_en": "",
+            "pos": "proper_noun",
+            "tags": [],
+            "examples": [],
+            "flashcard": {
+              "front": "香山",
+              "back": "Xiāngshān — Hương Sơn",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "check_needed": false
+          },
+          {
+            "id": "vocab_048",
+            "type": "vocabulary_item",
+            "order": 48,
+            "hanzi": "十三陵",
+            "pinyin": "Shísānlíng",
+            "meaning_vi": "Thập Tam Lăng",
+            "meaning_en": "",
+            "pos": "proper_noun",
+            "tags": [],
+            "examples": [],
+            "flashcard": {
+              "front": "十三陵",
+              "back": "Shísānlíng — Thập Tam Lăng",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "check_needed": false
+          },
+          {
+            "id": "vocab_049",
+            "type": "vocabulary_item",
+            "order": 49,
+            "hanzi": "国庆节",
+            "pinyin": "Guóqìng Jié",
+            "meaning_vi": "Quốc khánh Trung Quốc",
+            "meaning_en": "",
+            "pos": "proper_noun",
+            "tags": [
+              "culture"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "国庆节",
+              "back": "Guóqìng Jié — Quốc khánh Trung Quốc",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "check_needed": false
+          }
+        ]
+      },
+      {
+        "id": "section_03_notes",
+        "type": "notes",
+        "order": 3,
+        "title": "注释",
+        "title_vi": "Chú thích",
+        "items": [
+          {
+            "id": "note_01",
+            "type": "note",
+            "order": 1,
+            "title": "瑞雪兆丰年",
+            "structure": "瑞雪兆丰年",
+            "meaning_vi": "Thành ngữ chỉ tuyết rơi đúng lúc, đặc biệt là tuyết mùa đông, báo hiệu năm sau có mùa màng tốt.",
+            "examples": [
+              {
+                "id": "note_01_ex_01",
+                "zh": "瑞雪兆丰年，冬天要是下几场大雪，第二年一定会有好收成。",
+                "pinyin": "",
+                "vi": "Tuyết lành báo năm được mùa; mùa đông nếu có vài trận tuyết lớn, năm sau nhất định sẽ có mùa màng tốt.",
+                "en": "",
+                "highlight": [
+                  "瑞雪兆丰年"
+                ],
+                "grammar_refs": [],
+                "vocab_refs": [
+                  "vocab_024"
+                ],
+                "source_ref": "text_01_p06",
+                "note_vi": "",
+                "audio_key": ""
+              }
+            ],
+            "source_refs": [
+              "text_01_p06"
+            ],
+            "check_needed": false
+          },
+          {
+            "id": "note_02",
+            "type": "note",
+            "order": 2,
+            "title": "边吃，边喝，边聊",
+            "structure": "边 + V，边 + V",
+            "meaning_vi": "Biểu thị hai hoặc nhiều hành động xảy ra đồng thời: vừa... vừa...",
+            "examples": [
+              {
+                "id": "note_02_ex_01",
+                "zh": "一家几口人或三五个朋友，高高兴兴地围坐在火锅儿旁边，边吃，边喝，边聊。",
+                "pinyin": "",
+                "vi": "Một nhà vài người hoặc ba năm người bạn vui vẻ ngồi quanh nồi lẩu, vừa ăn, vừa uống, vừa trò chuyện.",
+                "en": "",
+                "highlight": [
+                  "边吃",
+                  "边喝",
+                  "边聊"
+                ],
+                "grammar_refs": [],
+                "vocab_refs": [],
+                "source_ref": "text_01_p05",
+                "note_vi": "",
+                "audio_key": ""
+              }
+            ],
+            "source_refs": [
+              "text_01_p05"
+            ],
+            "check_needed": false
+          }
+        ]
+      },
+      {
+        "id": "section_04_grammar",
+        "type": "grammar",
+        "order": 4,
+        "title": "词语用法",
+        "title_vi": "Từ ngữ và cách dùng",
+        "items": [
+          {
+            "id": "grammar_01",
+            "type": "grammar_point",
+            "order": 1,
+            "title": "拿",
+            "title_vi": "Lấy... ra mà nói / xét",
+            "level": "HSK4-ish",
+            "tags": [
+              "verb",
+              "topic_marker",
+              "usage"
+            ],
+            "blocks": [
+              {
+                "id": "grammar_01_overview",
+                "type": "grammar_overview",
+                "order": 1,
+                "title": "Bản chất",
+                "content_vi": "Cấu trúc 拿 + danh từ + 来 + động từ dùng để nêu một đối tượng/chủ đề ra để nói, xem, phân tích hoặc so sánh.",
+                "examples": [
+                  {
+                    "id": "grammar_01_overview_ex_01",
+                    "zh": "就拿首都北京来说吧。",
+                    "pinyin": "",
+                    "vi": "Cứ lấy thủ đô Bắc Kinh ra mà nói.",
+                    "en": "",
+                    "highlight": [
+                      "拿",
+                      "来说"
+                    ],
+                    "grammar_refs": [
+                      "grammar_01"
+                    ],
+                    "vocab_refs": [
+                      "vocab_003"
+                    ],
+                    "source_ref": "text_01_p02",
+                    "note_vi": "",
+                    "audio_key": ""
+                  }
+                ]
+              },
+              {
+                "id": "grammar_01_structure_01",
+                "type": "grammar_structure",
+                "order": 2,
+                "title": "Nêu chủ đề",
+                "pattern": "拿 + N + 来 + 说 / 看 / 讲 / 比较 / 分析",
+                "meaning_vi": "Lấy / xét riêng N ra để nói, nhìn, so sánh, phân tích.",
+                "formulas": [
+                  {
+                    "label": "Nêu đối tượng",
+                    "pattern": "拿 + N + 来 + V"
+                  }
+                ],
+                "examples": [
+                  {
+                    "id": "grammar_01_structure_01_ex_01",
+                    "zh": "汉语的一些语法对于外国学习者是比较难的，拿“了”和“把”字句的用法来说，很多人虽然学了，但是还是不知道怎么用。",
+                    "pinyin": "",
+                    "vi": "Một số ngữ pháp tiếng Hán khá khó với người học nước ngoài. Lấy cách dùng “了” và câu chữ “把” ra mà nói, nhiều người tuy đã học nhưng vẫn không biết dùng thế nào.",
+                    "en": "",
+                    "highlight": [
+                      "拿",
+                      "来说"
+                    ],
+                    "grammar_refs": [
+                      "grammar_01"
+                    ],
+                    "vocab_refs": [],
+                    "source_ref": "",
+                    "note_vi": "",
+                    "audio_key": ""
+                  },
+                  {
+                    "id": "grammar_01_structure_01_ex_02",
+                    "zh": "中国这些年发展很快，拿人们的生活水平来说，比过去有很大的提高。",
+                    "pinyin": "",
+                    "vi": "Những năm gần đây Trung Quốc phát triển rất nhanh. Lấy mức sống người dân mà nói, đã nâng cao rất nhiều so với trước đây.",
+                    "en": "",
+                    "highlight": [
+                      "拿",
+                      "来说"
+                    ],
+                    "grammar_refs": [
+                      "grammar_01"
+                    ],
+                    "vocab_refs": [],
+                    "source_ref": "",
+                    "note_vi": "",
+                    "audio_key": ""
+                  }
+                ],
+                "notes_vi": [
+                  "Động từ thường gặp sau 来 là 说、看、讲、比、比较、分析."
+                ]
+              }
+            ]
+          },
+          {
+            "id": "grammar_02",
+            "type": "grammar_point",
+            "order": 2,
+            "title": "动词 + 下",
+            "title_vi": "Bổ ngữ xu hướng/kết quả 下",
+            "level": "HSK4-ish",
+            "tags": [
+              "directional_complement",
+              "result_complement"
+            ],
+            "blocks": [
+              {
+                "id": "grammar_02_overview",
+                "type": "grammar_overview",
+                "order": 1,
+                "title": "Bản chất",
+                "content_vi": "V + 下 có thể biểu thị hành động hoàn thành kèm nghĩa tháo/cởi/rời ra, hoặc chuyển động từ cao xuống thấp.",
+                "examples": [
+                  {
+                    "id": "grammar_02_overview_ex_01",
+                    "zh": "人们脱下冬衣，换上春装。",
+                    "pinyin": "",
+                    "vi": "Mọi người cởi quần áo mùa đông, thay sang đồ mùa xuân.",
+                    "en": "",
+                    "highlight": [
+                      "脱下"
+                    ],
+                    "grammar_refs": [
+                      "grammar_02"
+                    ],
+                    "vocab_refs": [
+                      "vocab_004",
+                      "vocab_005"
+                    ],
+                    "source_ref": "text_01_p03",
+                    "note_vi": "",
+                    "audio_key": ""
+                  }
+                ]
+              },
+              {
+                "id": "grammar_02_structure_01",
+                "type": "grammar_structure",
+                "order": 2,
+                "title": "Tháo/cởi/rời ra",
+                "pattern": "V + 下",
+                "meaning_vi": "Hành động hoàn thành, vật tách/rời khỏi vị trí ban đầu.",
+                "formulas": [
+                  {
+                    "label": "Kết quả",
+                    "pattern": "V + 下"
+                  }
+                ],
+                "examples": [
+                  {
+                    "id": "grammar_02_structure_01_ex_01",
+                    "zh": "她一进屋就脱下皮鞋，换上拖鞋。",
+                    "pinyin": "",
+                    "vi": "Cô ấy vừa vào nhà liền cởi giày da, thay dép lê.",
+                    "en": "",
+                    "highlight": [
+                      "脱下"
+                    ],
+                    "grammar_refs": [
+                      "grammar_02"
+                    ],
+                    "vocab_refs": [],
+                    "source_ref": "",
+                    "note_vi": "",
+                    "audio_key": ""
+                  }
+                ],
+                "notes_vi": []
+              },
+              {
+                "id": "grammar_02_structure_02",
+                "type": "grammar_structure",
+                "order": 3,
+                "title": "Từ cao xuống thấp",
+                "pattern": "V + 下",
+                "meaning_vi": "Di chuyển xuống hoặc làm gì đó xuống dưới.",
+                "formulas": [
+                  {
+                    "label": "Xu hướng xuống",
+                    "pattern": "V + 下"
+                  }
+                ],
+                "examples": [
+                  {
+                    "id": "grammar_02_structure_02_ex_01",
+                    "zh": "请同学们快坐下，我们上课了。",
+                    "pinyin": "",
+                    "vi": "Mời các bạn nhanh ngồi xuống, chúng ta vào học rồi.",
+                    "en": "",
+                    "highlight": [
+                      "坐下"
+                    ],
+                    "grammar_refs": [
+                      "grammar_02"
+                    ],
+                    "vocab_refs": [],
+                    "source_ref": "",
+                    "note_vi": "",
+                    "audio_key": ""
+                  },
+                  {
+                    "id": "grammar_02_structure_02_ex_02",
+                    "zh": "她感动得流下了眼泪。",
+                    "pinyin": "",
+                    "vi": "Cô ấy cảm động đến mức rơi nước mắt.",
+                    "en": "",
+                    "highlight": [
+                      "流下"
+                    ],
+                    "grammar_refs": [
+                      "grammar_02"
+                    ],
+                    "vocab_refs": [],
+                    "source_ref": "",
+                    "note_vi": "",
+                    "audio_key": ""
+                  },
+                  {
+                    "id": "grammar_02_structure_02_ex_03",
+                    "zh": "我们从这里走下山去吧。",
+                    "pinyin": "",
+                    "vi": "Chúng ta từ đây đi xuống núi nhé.",
+                    "en": "",
+                    "highlight": [
+                      "走下"
+                    ],
+                    "grammar_refs": [
+                      "grammar_02"
+                    ],
+                    "vocab_refs": [],
+                    "source_ref": "",
+                    "note_vi": "",
+                    "audio_key": ""
+                  }
+                ],
+                "notes_vi": []
+              }
+            ]
+          },
+          {
+            "id": "grammar_03",
+            "type": "grammar_point",
+            "order": 3,
+            "title": "动词 + 上",
+            "title_vi": "Bổ ngữ xu hướng/kết quả 上",
+            "level": "HSK4-ish",
+            "tags": [
+              "directional_complement",
+              "result_complement"
+            ],
+            "blocks": [
+              {
+                "id": "grammar_03_overview",
+                "type": "grammar_overview",
+                "order": 1,
+                "title": "Bản chất",
+                "content_vi": "V + 上 có thể biểu thị hành động đạt kết quả như khớp/gắn/đóng lại, hoặc chuyển động từ thấp lên cao / đạt tới mục tiêu.",
+                "examples": [
+                  {
+                    "id": "grammar_03_overview_ex_01",
+                    "zh": "人们脱下冬衣，换上春装。",
+                    "pinyin": "",
+                    "vi": "Mọi người cởi đồ mùa đông, thay sang đồ mùa xuân.",
+                    "en": "",
+                    "highlight": [
+                      "换上"
+                    ],
+                    "grammar_refs": [
+                      "grammar_03"
+                    ],
+                    "vocab_refs": [
+                      "vocab_006"
+                    ],
+                    "source_ref": "text_01_p03",
+                    "note_vi": "",
+                    "audio_key": ""
+                  }
+                ]
+              },
+              {
+                "id": "grammar_03_structure_01",
+                "type": "grammar_structure",
+                "order": 2,
+                "title": "Đạt kết quả / gắn lại / đóng lại",
+                "pattern": "V + 上",
+                "meaning_vi": "Hành động đạt kết quả, hoặc làm cho vật khớp/gắn/đóng vào.",
+                "formulas": [
+                  {
+                    "label": "Kết quả",
+                    "pattern": "V + 上"
+                  }
+                ],
+                "examples": [
+                  {
+                    "id": "grammar_03_structure_01_ex_01",
+                    "zh": "刚来时不习惯，一年后她已经爱上了这个地方，不愿意离开了。",
+                    "pinyin": "",
+                    "vi": "Lúc mới đến chưa quen, một năm sau cô ấy đã yêu nơi này, không muốn rời đi.",
+                    "en": "",
+                    "highlight": [
+                      "爱上"
+                    ],
+                    "grammar_refs": [
+                      "grammar_03"
+                    ],
+                    "vocab_refs": [],
+                    "source_ref": "",
+                    "note_vi": "",
+                    "audio_key": ""
+                  },
+                  {
+                    "id": "grammar_03_structure_01_ex_02",
+                    "zh": "我把窗户关上，锁上门，咱们就走。",
+                    "pinyin": "",
+                    "vi": "Tôi đóng cửa sổ, khóa cửa lại, rồi chúng ta đi.",
+                    "en": "",
+                    "highlight": [
+                      "关上",
+                      "锁上"
+                    ],
+                    "grammar_refs": [
+                      "grammar_03"
+                    ],
+                    "vocab_refs": [],
+                    "source_ref": "",
+                    "note_vi": "",
+                    "audio_key": ""
+                  }
+                ],
+                "notes_vi": []
+              },
+              {
+                "id": "grammar_03_structure_02",
+                "type": "grammar_structure",
+                "order": 3,
+                "title": "Từ thấp lên cao / đạt mục tiêu",
+                "pattern": "V + 上",
+                "meaning_vi": "Di chuyển lên, leo/lên xe, hoặc đạt được một mục tiêu.",
+                "formulas": [
+                  {
+                    "label": "Xu hướng lên",
+                    "pattern": "V + 上"
+                  }
+                ],
+                "examples": [
+                  {
+                    "id": "grammar_03_structure_02_ex_01",
+                    "zh": "他提着书爬上了十楼。",
+                    "pinyin": "",
+                    "vi": "Anh ấy xách sách leo lên tầng mười.",
+                    "en": "",
+                    "highlight": [
+                      "爬上"
+                    ],
+                    "grammar_refs": [
+                      "grammar_03"
+                    ],
+                    "vocab_refs": [],
+                    "source_ref": "",
+                    "note_vi": "",
+                    "audio_key": ""
+                  },
+                  {
+                    "id": "grammar_03_structure_02_ex_02",
+                    "zh": "我看见他骑上自行车出去了。",
+                    "pinyin": "",
+                    "vi": "Tôi thấy anh ấy lên xe đạp đi ra ngoài.",
+                    "en": "",
+                    "highlight": [
+                      "骑上"
+                    ],
+                    "grammar_refs": [
+                      "grammar_03"
+                    ],
+                    "vocab_refs": [],
+                    "source_ref": "",
+                    "note_vi": "",
+                    "audio_key": ""
+                  },
+                  {
+                    "id": "grammar_03_structure_02_ex_03",
+                    "zh": "她今年终于考上了大学。",
+                    "pinyin": "",
+                    "vi": "Năm nay cô ấy cuối cùng đã thi đỗ đại học.",
+                    "en": "",
+                    "highlight": [
+                      "考上"
+                    ],
+                    "grammar_refs": [
+                      "grammar_03"
+                    ],
+                    "vocab_refs": [],
+                    "source_ref": "",
+                    "note_vi": "",
+                    "audio_key": ""
+                  }
+                ],
+                "notes_vi": []
+              }
+            ]
+          },
+          {
+            "id": "grammar_04",
+            "type": "grammar_point",
+            "order": 4,
+            "title": "多么",
+            "title_vi": "Biết bao, thật là",
+            "level": "HSK4-ish",
+            "tags": [
+              "adverb",
+              "exclamation"
+            ],
+            "blocks": [
+              {
+                "id": "grammar_04_overview",
+                "type": "grammar_overview",
+                "order": 1,
+                "title": "Bản chất",
+                "content_vi": "多么 thường dùng trong câu cảm thán, biểu thị mức độ rất cao, tương tự phó từ 多.",
+                "examples": [
+                  {
+                    "id": "grammar_04_overview_ex_01",
+                    "zh": "这个古老的国家如今显得多么年轻。",
+                    "pinyin": "",
+                    "vi": "Đất nước cổ xưa này ngày nay hiện ra trẻ trung biết bao.",
+                    "en": "",
+                    "highlight": [
+                      "多么"
+                    ],
+                    "grammar_refs": [
+                      "grammar_04"
+                    ],
+                    "vocab_refs": [
+                      "vocab_038"
+                    ],
+                    "source_ref": "text_01_p08",
+                    "note_vi": "",
+                    "audio_key": ""
+                  }
+                ]
+              },
+              {
+                "id": "grammar_04_structure_01",
+                "type": "grammar_structure",
+                "order": 2,
+                "title": "Cấu trúc",
+                "pattern": "多么 + Adj / VP",
+                "meaning_vi": "Thật là…, biết bao…",
+                "formulas": [
+                  {
+                    "label": "Cảm thán",
+                    "pattern": "多么 + 形容词 / 动词短语"
+                  }
+                ],
+                "examples": [
+                  {
+                    "id": "grammar_04_structure_01_ex_01",
+                    "zh": "你去了就会知道，那里的风景有多么美。",
+                    "pinyin": "",
+                    "vi": "Bạn đi rồi sẽ biết phong cảnh ở đó đẹp biết bao.",
+                    "en": "",
+                    "highlight": [
+                      "多么"
+                    ],
+                    "grammar_refs": [
+                      "grammar_04"
+                    ],
+                    "vocab_refs": [],
+                    "source_ref": "",
+                    "note_vi": "",
+                    "audio_key": ""
+                  },
+                  {
+                    "id": "grammar_04_structure_01_ex_02",
+                    "zh": "多么有意思啊！",
+                    "pinyin": "",
+                    "vi": "Thú vị biết bao!",
+                    "en": "",
+                    "highlight": [
+                      "多么"
+                    ],
+                    "grammar_refs": [
+                      "grammar_04"
+                    ],
+                    "vocab_refs": [],
+                    "source_ref": "",
+                    "note_vi": "",
+                    "audio_key": ""
+                  },
+                  {
+                    "id": "grammar_04_structure_01_ex_03",
+                    "zh": "能出国学习多么不容易啊！",
+                    "pinyin": "",
+                    "vi": "Có thể ra nước ngoài học tập thật không dễ chút nào!",
+                    "en": "",
+                    "highlight": [
+                      "多么"
+                    ],
+                    "grammar_refs": [
+                      "grammar_04"
+                    ],
+                    "vocab_refs": [],
+                    "source_ref": "",
+                    "note_vi": "",
+                    "audio_key": ""
+                  }
+                ],
+                "notes_vi": [
+                  "多么 thường có sắc thái cảm thán rõ hơn 很."
+                ]
+              }
+            ]
+          },
+          {
+            "id": "grammar_05",
+            "type": "grammar_point",
+            "order": 5,
+            "title": "也许",
+            "title_vi": "Có lẽ, có thể",
+            "level": "HSK4-ish",
+            "tags": [
+              "adverb",
+              "possibility"
+            ],
+            "blocks": [
+              {
+                "id": "grammar_05_overview",
+                "type": "grammar_overview",
+                "order": 1,
+                "title": "Bản chất",
+                "content_vi": "也许 biểu thị suy đoán hoặc không chắc chắn, nghĩa là “có lẽ”, “có thể”. Thường làm trạng ngữ.",
+                "examples": [
+                  {
+                    "id": "grammar_05_overview_ex_01",
+                    "zh": "也许你会爱上这个美丽的城市，爱上这些热情友好的人们。",
+                    "pinyin": "",
+                    "vi": "Có lẽ bạn sẽ yêu thành phố xinh đẹp này, yêu những con người nhiệt tình thân thiện này.",
+                    "en": "",
+                    "highlight": [
+                      "也许"
+                    ],
+                    "grammar_refs": [
+                      "grammar_05"
+                    ],
+                    "vocab_refs": [],
+                    "source_ref": "text_01_p08",
+                    "note_vi": "",
+                    "audio_key": ""
+                  }
+                ]
+              },
+              {
+                "id": "grammar_05_structure_01",
+                "type": "grammar_structure",
+                "order": 2,
+                "title": "Cấu trúc",
+                "pattern": "也许 + VP / Adj / Subject + VP",
+                "meaning_vi": "Có lẽ…, có thể…",
+                "formulas": [
+                  {
+                    "label": "Suy đoán",
+                    "pattern": "也许 + 谓语"
+                  }
+                ],
+                "examples": [
+                  {
+                    "id": "grammar_05_structure_01_ex_01",
+                    "zh": "别着急，再好好儿找找，也许能找到。",
+                    "pinyin": "",
+                    "vi": "Đừng vội, tìm kỹ lại, có lẽ sẽ tìm thấy.",
+                    "en": "",
+                    "highlight": [
+                      "也许"
+                    ],
+                    "grammar_refs": [
+                      "grammar_05"
+                    ],
+                    "vocab_refs": [],
+                    "source_ref": "",
+                    "note_vi": "",
+                    "audio_key": ""
+                  },
+                  {
+                    "id": "grammar_05_structure_01_ex_02",
+                    "zh": "喝了吧，把这些中药喝了，你的病也许就好了。",
+                    "pinyin": "",
+                    "vi": "Uống đi, uống thuốc Đông y này rồi, bệnh của bạn có lẽ sẽ khỏi.",
+                    "en": "",
+                    "highlight": [
+                      "也许"
+                    ],
+                    "grammar_refs": [
+                      "grammar_05"
+                    ],
+                    "vocab_refs": [],
+                    "source_ref": "",
+                    "note_vi": "",
+                    "audio_key": ""
+                  },
+                  {
+                    "id": "grammar_05_structure_01_ex_03",
+                    "zh": "到现在他还没来，也许就不来了，我们不要等他了。",
+                    "pinyin": "",
+                    "vi": "Đến giờ anh ấy vẫn chưa đến, có lẽ sẽ không đến nữa, chúng ta đừng đợi anh ấy.",
+                    "en": "",
+                    "highlight": [
+                      "也许"
+                    ],
+                    "grammar_refs": [
+                      "grammar_05"
+                    ],
+                    "vocab_refs": [],
+                    "source_ref": "",
+                    "note_vi": "",
+                    "audio_key": ""
+                  }
+                ],
+                "notes_vi": [
+                  "也许 yếu hơn 一定, biểu thị người nói không chắc chắn."
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "section_05_exercises",
+        "type": "exercises",
+        "order": 5,
+        "title": "练习",
+        "title_vi": "Bài tập",
+        "items": [
+          {
+            "id": "exercise_01",
+            "type": "phonetics",
+            "variant": "",
+            "order": 1,
+            "title": "语音",
+            "title_vi": "Ngữ âm",
+            "instruction": {
+              "zh": "",
+              "vi": "Luyện phân biệt âm, thanh điệu và đọc cụm thành ngữ."
+            },
+            "difficulty": "normal",
+            "skill_focus": [
+              "pronunciation"
+            ],
+            "grammar_refs": [],
+            "vocab_refs": [],
+            "parts": [
+              {
+                "id": "exercise_01_part_01",
+                "type": "minimal_pair",
+                "title": "辨音辨调",
+                "instruction_vi": "Phân biệt phát âm và thanh điệu.",
+                "items": [
+                  {
+                    "id": "pair_01",
+                    "left": "部分 bùfen",
+                    "right": "不分 bù fēn",
+                    "audio_keys": []
+                  },
+                  {
+                    "id": "pair_02",
+                    "left": "旅游 lǚyóu",
+                    "right": "理由 lǐyóu",
+                    "audio_keys": []
+                  },
+                  {
+                    "id": "pair_03",
+                    "left": "善良 shànliáng",
+                    "right": "商量 shāngliang",
+                    "audio_keys": []
+                  },
+                  {
+                    "id": "pair_04",
+                    "left": "鲜花 xiānhuā",
+                    "right": "闲话 xiánhuà",
+                    "audio_keys": []
+                  },
+                  {
+                    "id": "pair_05",
+                    "left": "和平 hépíng",
+                    "right": "合并 hébìng",
+                    "audio_keys": []
+                  },
+                  {
+                    "id": "pair_06",
+                    "left": "广场 guǎngchǎng",
+                    "right": "工厂 gōngchǎng",
+                    "audio_keys": []
+                  }
+                ]
+              },
+              {
+                "id": "exercise_01_part_02",
+                "type": "read_aloud",
+                "title": "朗读",
+                "instruction_vi": "Đọc các thành ngữ/cụm sau.",
+                "items": [
+                  {
+                    "id": "read_001",
+                    "text": "鸟语花香",
+                    "pinyin": "",
+                    "audio_key": ""
+                  },
+                  {
+                    "id": "read_002",
+                    "text": "烈日高照",
+                    "pinyin": "",
+                    "audio_key": ""
+                  },
+                  {
+                    "id": "read_003",
+                    "text": "秋高气爽",
+                    "pinyin": "",
+                    "audio_key": ""
+                  },
+                  {
+                    "id": "read_004",
+                    "text": "万里雪飘",
+                    "pinyin": "",
+                    "audio_key": ""
+                  }
+                ]
+              }
+            ],
+            "rendering": {
+              "renderer": "exercise.phonetics.v1"
+            },
+            "check_needed": false
+          },
+          {
+            "id": "exercise_02",
+            "type": "read_aloud",
+            "variant": "word_chunks",
+            "order": 2,
+            "title": "词语",
+            "title_vi": "Cụm từ",
+            "instruction": {
+              "zh": "读下列词语。",
+              "vi": "Đọc các cụm từ sau."
+            },
+            "difficulty": "normal",
+            "skill_focus": [
+              "vocabulary",
+              "pronunciation"
+            ],
+            "grammar_refs": [],
+            "vocab_refs": [],
+            "items": [
+              {
+                "id": "chunk_001",
+                "text": "大部分",
+                "pinyin": "",
+                "audio_key": ""
+              },
+              {
+                "id": "chunk_002",
+                "text": "一部分",
+                "pinyin": "",
+                "audio_key": ""
+              },
+              {
+                "id": "chunk_003",
+                "text": "部分地区",
+                "pinyin": "",
+                "audio_key": ""
+              },
+              {
+                "id": "chunk_004",
+                "text": "部分学校",
+                "pinyin": "",
+                "audio_key": ""
+              },
+              {
+                "id": "chunk_005",
+                "text": "充满信心",
+                "pinyin": "",
+                "audio_key": ""
+              },
+              {
+                "id": "chunk_006",
+                "text": "充满希望",
+                "pinyin": "",
+                "audio_key": ""
+              },
+              {
+                "id": "chunk_007",
+                "text": "充满欢乐",
+                "pinyin": "",
+                "audio_key": ""
+              },
+              {
+                "id": "chunk_008",
+                "text": "充满感情",
+                "pinyin": "",
+                "audio_key": ""
+              },
+              {
+                "id": "chunk_009",
+                "text": "显得很轻松",
+                "pinyin": "",
+                "audio_key": ""
+              },
+              {
+                "id": "chunk_010",
+                "text": "显得很高兴",
+                "pinyin": "",
+                "audio_key": ""
+              },
+              {
+                "id": "chunk_011",
+                "text": "显得很愉快",
+                "pinyin": "",
+                "audio_key": ""
+              },
+              {
+                "id": "chunk_012",
+                "text": "显得很失望",
+                "pinyin": "",
+                "audio_key": ""
+              },
+              {
+                "id": "chunk_013",
+                "text": "向往北京",
+                "pinyin": "",
+                "audio_key": ""
+              },
+              {
+                "id": "chunk_014",
+                "text": "向往幸福生活",
+                "pinyin": "",
+                "audio_key": ""
+              },
+              {
+                "id": "chunk_015",
+                "text": "向往美好爱情",
+                "pinyin": "",
+                "audio_key": ""
+              },
+              {
+                "id": "chunk_016",
+                "text": "向往美好未来",
+                "pinyin": "",
+                "audio_key": ""
+              },
+              {
+                "id": "chunk_017",
+                "text": "数得上",
+                "pinyin": "",
+                "audio_key": ""
+              },
+              {
+                "id": "chunk_018",
+                "text": "数不上",
+                "pinyin": "",
+                "audio_key": ""
+              },
+              {
+                "id": "chunk_019",
+                "text": "数他最高",
+                "pinyin": "",
+                "audio_key": ""
+              },
+              {
+                "id": "chunk_020",
+                "text": "数玛丽考得好",
+                "pinyin": "",
+                "audio_key": ""
+              },
+              {
+                "id": "chunk_021",
+                "text": "美丽的姑娘",
+                "pinyin": "",
+                "audio_key": ""
+              },
+              {
+                "id": "chunk_022",
+                "text": "美丽的地方",
+                "pinyin": "",
+                "audio_key": ""
+              },
+              {
+                "id": "chunk_023",
+                "text": "美丽的景色",
+                "pinyin": "",
+                "audio_key": ""
+              },
+              {
+                "id": "chunk_024",
+                "text": "美丽的故事",
+                "pinyin": "",
+                "audio_key": ""
+              },
+              {
+                "id": "chunk_025",
+                "text": "多么热情",
+                "pinyin": "",
+                "audio_key": ""
+              },
+              {
+                "id": "chunk_026",
+                "text": "多么美好",
+                "pinyin": "",
+                "audio_key": ""
+              },
+              {
+                "id": "chunk_027",
+                "text": "多么善良",
+                "pinyin": "",
+                "audio_key": ""
+              },
+              {
+                "id": "chunk_028",
+                "text": "多么勤劳",
+                "pinyin": "",
+                "audio_key": ""
+              },
+              {
+                "id": "chunk_029",
+                "text": "热爱和平",
+                "pinyin": "",
+                "audio_key": ""
+              },
+              {
+                "id": "chunk_030",
+                "text": "热爱工作",
+                "pinyin": "",
+                "audio_key": ""
+              },
+              {
+                "id": "chunk_031",
+                "text": "热爱祖国",
+                "pinyin": "",
+                "audio_key": ""
+              },
+              {
+                "id": "chunk_032",
+                "text": "热爱人民",
+                "pinyin": "",
+                "audio_key": ""
+              }
+            ],
+            "rendering": {
+              "renderer": "exercise.read_aloud.v1"
+            },
+            "check_needed": false
+          },
+          {
+            "id": "exercise_03",
+            "type": "choose_words_fill_blank",
+            "variant": "word_bank",
+            "order": 3,
+            "title": "选词填空",
+            "title_vi": "Chọn từ điền chỗ trống",
+            "instruction": {
+              "zh": "选词填空。",
+              "vi": "Chọn từ thích hợp điền vào chỗ trống."
+            },
+            "difficulty": "normal",
+            "skill_focus": [
+              "vocabulary",
+              "grammar"
+            ],
+            "grammar_refs": [
+              "grammar_04",
+              "grammar_05"
+            ],
+            "vocab_refs": [],
+            "word_bank": [
+              "热爱",
+              "向往",
+              "脱",
+              "多么",
+              "数",
+              "也许",
+              "团圆",
+              "划船",
+              "冻",
+              "充满"
+            ],
+            "questions": [
+              {
+                "id": "ex03_q01",
+                "prompt": "进屋要______鞋，觉得特麻烦。",
+                "answer": "脱",
+                "acceptable_answers": [
+                  "脱"
+                ],
+                "explanation_vi": "脱鞋 = cởi giày.",
+                "grammar_refs": [],
+                "vocab_refs": []
+              },
+              {
+                "id": "ex03_q02",
+                "prompt": "星期天我们去公园______吧。",
+                "answer": "划船",
+                "acceptable_answers": [
+                  "划船"
+                ],
+                "explanation_vi": "去公园划船 = đi công viên chèo thuyền.",
+                "grammar_refs": [],
+                "vocab_refs": []
+              },
+              {
+                "id": "ex03_q03",
+                "prompt": "她对自己的未来______信心。",
+                "answer": "充满",
+                "acceptable_answers": [
+                  "充满"
+                ],
+                "explanation_vi": "充满信心 = tràn đầy tự tin.",
+                "grammar_refs": [],
+                "vocab_refs": []
+              },
+              {
+                "id": "ex03_q04",
+                "prompt": "那是个让世界各国的人都十分______的地方。",
+                "answer": "向往",
+                "acceptable_answers": [
+                  "向往"
+                ],
+                "explanation_vi": "让人向往 = khiến người ta khao khát hướng tới.",
+                "grammar_refs": [],
+                "vocab_refs": []
+              },
+              {
+                "id": "ex03_q05",
+                "prompt": "我的手已经______得没有感觉了。",
+                "answer": "冻",
+                "acceptable_answers": [
+                  "冻"
+                ],
+                "explanation_vi": "冻得没有感觉 = lạnh cóng đến mất cảm giác.",
+                "grammar_refs": [],
+                "vocab_refs": []
+              },
+              {
+                "id": "ex03_q06",
+                "prompt": "要说个子高，张东还______不上，他只是中等个子。",
+                "answer": "数",
+                "acceptable_answers": [
+                  "数"
+                ],
+                "explanation_vi": "数不上 = không được tính là.",
+                "grammar_refs": [],
+                "vocab_refs": []
+              },
+              {
+                "id": "ex03_q07",
+                "prompt": "没有去过云南的人，就不会知道那是一个______美丽的地方。",
+                "answer": "多么",
+                "acceptable_answers": [
+                  "多么"
+                ],
+                "explanation_vi": "多么美丽 = đẹp biết bao.",
+                "grammar_refs": [],
+                "vocab_refs": []
+              },
+              {
+                "id": "ex03_q08",
+                "prompt": "我们的人民______和平，希望和世界各国人民友好相处。",
+                "answer": "热爱",
+                "acceptable_answers": [
+                  "热爱"
+                ],
+                "explanation_vi": "热爱和平 = yêu hòa bình.",
+                "grammar_refs": [],
+                "vocab_refs": []
+              },
+              {
+                "id": "ex03_q09",
+                "prompt": "刚去时当然会感到寂寞，会想家。但是，如果你语言通了，再交一些好朋友，______你就不想回来了。",
+                "answer": "也许",
+                "acceptable_answers": [
+                  "也许"
+                ],
+                "explanation_vi": "也许 biểu thị suy đoán.",
+                "grammar_refs": [],
+                "vocab_refs": []
+              },
+              {
+                "id": "ex03_q10",
+                "prompt": "中国的春节跟我们的圣诞节一样，也是一个全家______的节日。",
+                "answer": "团圆",
+                "acceptable_answers": [
+                  "团圆"
+                ],
+                "explanation_vi": "全家团圆 = cả nhà đoàn viên.",
+                "grammar_refs": [],
+                "vocab_refs": []
+              }
+            ],
+            "answer_key": [
+              {
+                "question_id": "ex03_q01",
+                "answer": "脱"
+              },
+              {
+                "question_id": "ex03_q02",
+                "answer": "划船"
+              },
+              {
+                "question_id": "ex03_q03",
+                "answer": "充满"
+              },
+              {
+                "question_id": "ex03_q04",
+                "answer": "向往"
+              },
+              {
+                "question_id": "ex03_q05",
+                "answer": "冻"
+              },
+              {
+                "question_id": "ex03_q06",
+                "answer": "数"
+              },
+              {
+                "question_id": "ex03_q07",
+                "answer": "多么"
+              },
+              {
+                "question_id": "ex03_q08",
+                "answer": "热爱"
+              },
+              {
+                "question_id": "ex03_q09",
+                "answer": "也许"
+              },
+              {
+                "question_id": "ex03_q10",
+                "answer": "团圆"
+              }
+            ],
+            "rendering": {
+              "renderer": "exercise.fill_blank.v1",
+              "input_mode": "dropdown",
+              "show_word_bank": true,
+              "show_answer_after_submit": true
+            },
+            "check_needed": false
+          },
+          {
+            "id": "exercise_04",
+            "type": "fill_blank",
+            "variant": "complete_sentence_with_given_word",
+            "order": 4,
+            "title": "用括号里的词语完成句子",
+            "title_vi": "Dùng từ trong ngoặc hoàn thành câu",
+            "instruction": {
+              "zh": "用括号里的词语完成句子。",
+              "vi": "Dùng từ gợi ý để hoàn thành câu."
+            },
+            "difficulty": "hard",
+            "skill_focus": [
+              "writing",
+              "grammar"
+            ],
+            "grammar_refs": [
+              "grammar_01",
+              "grammar_02",
+              "grammar_03",
+              "grammar_04",
+              "grammar_05"
+            ],
+            "vocab_refs": [],
+            "questions": [
+              {
+                "id": "ex04_q01",
+                "prompt": "______来说吧，刚来中国时，也特别想家。（拿）",
+                "answer": "拿我来说吧，刚来中国时，也特别想家。",
+                "acceptable_answers": [],
+                "explanation_vi": "",
+                "grading": {
+                  "mode": "manual"
+                }
+              },
+              {
+                "id": "ex04_q02",
+                "prompt": "晚会上______，同学们玩儿得非常高兴。（充满）",
+                "answer": "晚会上充满了歌声和笑声，同学们玩儿得非常高兴。",
+                "acceptable_answers": [],
+                "explanation_vi": "",
+                "grading": {
+                  "mode": "manual"
+                }
+              },
+              {
+                "id": "ex04_q03",
+                "prompt": "把大衣______吧，我给您挂在这里。（动词 + 下）",
+                "answer": "把大衣脱下来吧，我给您挂在这里。",
+                "acceptable_answers": [],
+                "explanation_vi": "",
+                "grading": {
+                  "mode": "manual"
+                }
+              },
+              {
+                "id": "ex04_q04",
+                "prompt": "你是不是______了？要不为什么常常去找她？（动词 + 上）",
+                "answer": "你是不是爱上她了？要不为什么常常去找她？",
+                "acceptable_answers": [],
+                "explanation_vi": "",
+                "grading": {
+                  "mode": "manual"
+                }
+              },
+              {
+                "id": "ex04_q05",
+                "prompt": "我弟弟今年______北京大学了。（动词 + 上）",
+                "answer": "我弟弟今年考上北京大学了。",
+                "acceptable_answers": [],
+                "explanation_vi": "",
+                "grading": {
+                  "mode": "manual"
+                }
+              },
+              {
+                "id": "ex04_q06",
+                "prompt": "你不知道，我爸爸妈妈听到这个消息是______。（多么）",
+                "answer": "你不知道，我爸爸妈妈听到这个消息是多么高兴。",
+                "acceptable_answers": [],
+                "explanation_vi": "",
+                "grading": {
+                  "mode": "manual"
+                }
+              },
+              {
+                "id": "ex04_q07",
+                "prompt": "他们个子都很高，______最高。（数）",
+                "answer": "他们个子都很高，数他最高。",
+                "acceptable_answers": [],
+                "explanation_vi": "",
+                "grading": {
+                  "mode": "manual"
+                }
+              },
+              {
+                "id": "ex04_q08",
+                "prompt": "我们再等他一会儿吧，______。（也许）",
+                "answer": "我们再等他一会儿吧，也许他马上就来了。",
+                "acceptable_answers": [],
+                "explanation_vi": "",
+                "grading": {
+                  "mode": "manual"
+                }
+              }
+            ],
+            "answer_key": [
+              {
+                "question_id": "ex04_q01",
+                "sample_answer": "拿我来说吧，刚来中国时，也特别想家。",
+                "check_needed": true
+              },
+              {
+                "question_id": "ex04_q02",
+                "sample_answer": "晚会上充满了歌声和笑声，同学们玩儿得非常高兴。",
+                "check_needed": true
+              },
+              {
+                "question_id": "ex04_q03",
+                "sample_answer": "把大衣脱下来吧，我给您挂在这里。",
+                "check_needed": true
+              },
+              {
+                "question_id": "ex04_q04",
+                "sample_answer": "你是不是爱上她了？要不为什么常常去找她？",
+                "check_needed": true
+              },
+              {
+                "question_id": "ex04_q05",
+                "sample_answer": "我弟弟今年考上北京大学了。",
+                "check_needed": true
+              },
+              {
+                "question_id": "ex04_q06",
+                "sample_answer": "你不知道，我爸爸妈妈听到这个消息是多么高兴。",
+                "check_needed": true
+              },
+              {
+                "question_id": "ex04_q07",
+                "sample_answer": "他们个子都很高，数他最高。",
+                "check_needed": true
+              },
+              {
+                "question_id": "ex04_q08",
+                "sample_answer": "我们再等他一会儿吧，也许他马上就来了。",
+                "check_needed": true
+              }
+            ],
+            "rendering": {
+              "renderer": "exercise.fill_blank.v1",
+              "input_mode": "text",
+              "show_answer_after_submit": true
+            },
+            "check_needed": true
+          },
+          {
+            "id": "exercise_05",
+            "type": "complete_dialogue",
+            "variant": "complete_with_given_word",
+            "order": 5,
+            "title": "用括号里的词语完成会话",
+            "title_vi": "Dùng từ trong ngoặc hoàn thành hội thoại",
+            "instruction": {
+              "zh": "用括号里的词语完成会话。",
+              "vi": "Dùng từ gợi ý để hoàn thành hội thoại."
+            },
+            "difficulty": "hard",
+            "skill_focus": [
+              "speaking",
+              "grammar"
+            ],
+            "grammar_refs": [
+              "grammar_02",
+              "grammar_03",
+              "grammar_05"
+            ],
+            "vocab_refs": [],
+            "dialogues": [
+              {
+                "id": "ex05_d01",
+                "lines": [
+                  {
+                    "text": "A：他学习怎么样？"
+                  },
+                  {
+                    "text": "B：______。（数）"
+                  }
+                ],
+                "sample_answers": [
+                  {
+                    "blank_id": "blank_01",
+                    "answer": "要数他学得最好。",
+                    "explanation_vi": ""
+                  }
+                ],
+                "grading": {
+                  "mode": "manual"
+                }
+              },
+              {
+                "id": "ex05_d02",
+                "lines": [
+                  {
+                    "text": "A：那是个什么样的地方？"
+                  },
+                  {
+                    "text": "B：______。（向往）"
+                  }
+                ],
+                "sample_answers": [
+                  {
+                    "blank_id": "blank_01",
+                    "answer": "那是个令人向往的地方。",
+                    "explanation_vi": ""
+                  }
+                ],
+                "grading": {
+                  "mode": "manual"
+                }
+              },
+              {
+                "id": "ex05_d03",
+                "lines": [
+                  {
+                    "text": "A：不知道为什么，他已经三天没来上课了。"
+                  },
+                  {
+                    "text": "B：______。（也许）"
+                  }
+                ],
+                "sample_answers": [
+                  {
+                    "blank_id": "blank_01",
+                    "answer": "也许他生病了。",
+                    "explanation_vi": ""
+                  }
+                ],
+                "grading": {
+                  "mode": "manual"
+                }
+              },
+              {
+                "id": "ex05_d04",
+                "lines": [
+                  {
+                    "text": "A：你们班这次考试考得怎么样？"
+                  },
+                  {
+                    "text": "B：______。（大部分）"
+                  }
+                ],
+                "sample_answers": [
+                  {
+                    "blank_id": "blank_01",
+                    "answer": "大部分同学都考得不错。",
+                    "explanation_vi": ""
+                  }
+                ],
+                "grading": {
+                  "mode": "manual"
+                }
+              },
+              {
+                "id": "ex05_d05",
+                "lines": [
+                  {
+                    "text": "A：你现在对这里的生活习惯了吗？"
+                  },
+                  {
+                    "text": "B：早习惯了，我______。（动词 + 上）"
+                  }
+                ],
+                "sample_answers": [
+                  {
+                    "blank_id": "blank_01",
+                    "answer": "已经爱上这里的生活了。",
+                    "explanation_vi": ""
+                  }
+                ],
+                "grading": {
+                  "mode": "manual"
+                }
+              },
+              {
+                "id": "ex05_d06",
+                "lines": [
+                  {
+                    "text": "A：这个电影怎么样？你看了吗？"
+                  },
+                  {
+                    "text": "B：看了，非常好。很多人感动得______。（动词 + 下）"
+                  }
+                ],
+                "sample_answers": [
+                  {
+                    "blank_id": "blank_01",
+                    "answer": "流下了眼泪。",
+                    "explanation_vi": ""
+                  }
+                ],
+                "grading": {
+                  "mode": "manual"
+                }
+              }
+            ],
+            "answer_key": [
+              {
+                "question_id": "ex05_d01",
+                "sample_answer": "要数他学得最好。",
+                "check_needed": true
+              },
+              {
+                "question_id": "ex05_d02",
+                "sample_answer": "那是个令人向往的地方。",
+                "check_needed": true
+              },
+              {
+                "question_id": "ex05_d03",
+                "sample_answer": "也许他生病了。",
+                "check_needed": true
+              },
+              {
+                "question_id": "ex05_d04",
+                "sample_answer": "大部分同学都考得不错。",
+                "check_needed": true
+              },
+              {
+                "question_id": "ex05_d05",
+                "sample_answer": "已经爱上这里的生活了。",
+                "check_needed": true
+              },
+              {
+                "question_id": "ex05_d06",
+                "sample_answer": "流下了眼泪。",
+                "check_needed": true
+              }
+            ],
+            "rendering": {
+              "renderer": "exercise.complete_dialogue.v1",
+              "show_answer_after_submit": true
+            },
+            "check_needed": true
+          },
+          {
+            "id": "exercise_06",
+            "type": "sentence_reorder",
+            "variant": "paragraph_order",
+            "order": 6,
+            "title": "连句成段",
+            "title_vi": "Sắp xếp câu thành đoạn",
+            "instruction": {
+              "zh": "连句成段。",
+              "vi": "Sắp xếp các câu thành đoạn văn hợp lý."
+            },
+            "difficulty": "hard",
+            "skill_focus": [
+              "reading",
+              "cohesion"
+            ],
+            "grammar_refs": [],
+            "vocab_refs": [],
+            "groups": [
+              {
+                "id": "reorder_group_01",
+                "title": "第一组",
+                "sentences": [
+                  {
+                    "id": "A",
+                    "text": "让你感到既新奇又有点儿担心"
+                  },
+                  {
+                    "id": "B",
+                    "text": "我们这些老外一到北京就会看到很多很多电动车"
+                  },
+                  {
+                    "id": "C",
+                    "text": "那么多的电动车在小汽车、公共汽车和行人中间穿来穿去，来来往往"
+                  },
+                  {
+                    "id": "D",
+                    "text": "特别是上下班的时候"
+                  }
+                ],
+                "answer_order": [
+                  "B",
+                  "D",
+                  "C",
+                  "A"
+                ],
+                "sample_text": "我们这些老外一到北京就会看到很多很多电动车。特别是上下班的时候，那么多的电动车在小汽车、公共汽车和行人中间穿来穿去，来来往往，让你感到既新奇又有点儿担心。"
+              },
+              {
+                "id": "reorder_group_02",
+                "title": "第二组",
+                "sentences": [
+                  {
+                    "id": "A",
+                    "text": "而是那些随处可见、满街跑的出租车"
+                  },
+                  {
+                    "id": "B",
+                    "text": "但我要说的是，最吸引我的还不是这些电动车"
+                  },
+                  {
+                    "id": "C",
+                    "text": "因为我下边要讲的这个故事跟这出租车有关系"
+                  },
+                  {
+                    "id": "D",
+                    "text": "虽然那满大街的电动车能把我吓了一跳"
+                  }
+                ],
+                "answer_order": [
+                  "D",
+                  "B",
+                  "A",
+                  "C"
+                ],
+                "sample_text": "虽然那满大街的电动车能把我吓了一跳，但我要说的是，最吸引我的还不是这些电动车，而是那些随处可见、满街跑的出租车，因为我下边要讲的这个故事跟这出租车有关系。"
+              }
+            ],
+            "answer_key": [
+              {
+                "question_id": "reorder_group_01",
+                "answer": [
+                  "B",
+                  "D",
+                  "C",
+                  "A"
+                ],
+                "sample_text": "我们这些老外一到北京就会看到很多很多电动车。特别是上下班的时候，那么多的电动车在小汽车、公共汽车和行人中间穿来穿去，来来往往，让你感到既新奇又有点儿担心。",
+                "check_needed": true
+              },
+              {
+                "question_id": "reorder_group_02",
+                "answer": [
+                  "D",
+                  "B",
+                  "A",
+                  "C"
+                ],
+                "sample_text": "虽然那满大街的电动车能把我吓了一跳，但我要说的是，最吸引我的还不是这些电动车，而是那些随处可见、满街跑的出租车，因为我下边要讲的这个故事跟这出租车有关系。",
+                "check_needed": true
+              }
+            ],
+            "rendering": {
+              "renderer": "exercise.sentence_reorder.v1",
+              "show_answer_after_submit": true
+            },
+            "check_needed": true
+          },
+          {
+            "id": "exercise_07",
+            "type": "correct_sentence",
+            "variant": "",
+            "order": 7,
+            "title": "改错句",
+            "title_vi": "Sửa câu sai",
+            "instruction": {
+              "zh": "改错句。",
+              "vi": "Sửa lỗi trong câu."
+            },
+            "difficulty": "hard",
+            "skill_focus": [
+              "grammar",
+              "sentence_order"
+            ],
+            "grammar_refs": [],
+            "vocab_refs": [],
+            "questions": [
+              {
+                "id": "ex07_q01",
+                "wrong_sentence": "我很喜欢北京，大街上有很多树，很绿色。",
+                "correct_sentence": "我很喜欢北京，大街上有很多树，很绿。",
+                "acceptable_answers": [
+                  "我很喜欢北京，大街上有很多树，很绿。"
+                ],
+                "explanation_vi": "颜色形容词作谓语时用 很绿，不说 很绿色。",
+                "grammar_refs": [],
+                "check_needed": true
+              },
+              {
+                "id": "ex07_q02",
+                "wrong_sentence": "中国的大街上到处充满了电动车。",
+                "correct_sentence": "中国的大街上到处都是电动车。",
+                "acceptable_answers": [
+                  "中国的大街上到处都是电动车。"
+                ],
+                "explanation_vi": "充满 thường dùng cho không gian tràn đầy cảm xúc/âm thanh/hy vọng; ở đây 到处都是 tự nhiên hơn.",
+                "grammar_refs": [],
+                "check_needed": true
+              },
+              {
+                "id": "ex07_q03",
+                "wrong_sentence": "我把房间干净了。",
+                "correct_sentence": "我把房间打扫干净了。",
+                "acceptable_answers": [
+                  "我把房间打扫干净了。"
+                ],
+                "explanation_vi": "把 + object + V + result complement; cần động từ 打扫.",
+                "grammar_refs": [],
+                "check_needed": true
+              },
+              {
+                "id": "ex07_q04",
+                "wrong_sentence": "她毛病了，可是她不要去医院打针。",
+                "correct_sentence": "她生病了，可是她不想去医院打针。",
+                "acceptable_answers": [
+                  "她生病了，可是她不想去医院打针。"
+                ],
+                "explanation_vi": "生病 = bị bệnh; 不想 = không muốn.",
+                "grammar_refs": [],
+                "check_needed": true
+              },
+              {
+                "id": "ex07_q05",
+                "wrong_sentence": "这个星期末你想不想去旅行？",
+                "correct_sentence": "这个周末你想不想去旅行？",
+                "acceptable_answers": [
+                  "这个周末你想不想去旅行？"
+                ],
+                "explanation_vi": "周末 tự nhiên hơn 星期末.",
+                "grammar_refs": [],
+                "check_needed": true
+              },
+              {
+                "id": "ex07_q06",
+                "wrong_sentence": "我非常热爱我的女朋友。",
+                "correct_sentence": "我非常爱我的女朋友。",
+                "acceptable_answers": [
+                  "我非常爱我的女朋友。"
+                ],
+                "explanation_vi": "热爱 thường dùng cho tổ quốc, hòa bình, công việc, nhân dân; tình yêu cá nhân dùng 爱.",
+                "grammar_refs": [],
+                "check_needed": true
+              }
+            ],
+            "answer_key": [
+              {
+                "question_id": "ex07_q01",
+                "answer": "我很喜欢北京，大街上有很多树，很绿。",
+                "check_needed": true
+              },
+              {
+                "question_id": "ex07_q02",
+                "answer": "中国的大街上到处都是电动车。",
+                "check_needed": true
+              },
+              {
+                "question_id": "ex07_q03",
+                "answer": "我把房间打扫干净了。",
+                "check_needed": true
+              },
+              {
+                "question_id": "ex07_q04",
+                "answer": "她生病了，可是她不想去医院打针。",
+                "check_needed": true
+              },
+              {
+                "question_id": "ex07_q05",
+                "answer": "这个周末你想不想去旅行？",
+                "check_needed": true
+              },
+              {
+                "question_id": "ex07_q06",
+                "answer": "我非常爱我的女朋友。",
+                "check_needed": true
+              }
+            ],
+            "rendering": {
+              "renderer": "exercise.correct_sentence.v1",
+              "show_answer_after_submit": true
+            },
+            "check_needed": true
+          },
+          {
+            "id": "exercise_08",
+            "type": "open_ended",
+            "variant": "situation_expression",
+            "order": 8,
+            "title": "情景表达",
+            "title_vi": "Biểu đạt theo tình huống",
+            "instruction": {
+              "zh": "下列句子什么情景下说？下列情景怎么说？",
+              "vi": "Nói câu này trong tình huống nào? / Nói thế nào trong tình huống sau?"
+            },
+            "difficulty": "normal",
+            "skill_focus": [
+              "speaking",
+              "communication"
+            ],
+            "grammar_refs": [
+              "grammar_03"
+            ],
+            "vocab_refs": [],
+            "questions": [
+              {
+                "id": "ex08_q01",
+                "prompt": "我们热爱和平。",
+                "sample_answer": "Khi nói về thái độ của nhân dân/quốc gia đối với hòa bình.",
+                "grading": {
+                  "mode": "manual"
+                }
+              },
+              {
+                "id": "ex08_q02",
+                "prompt": "真是“瑞雪兆丰年”啊！",
+                "sample_answer": "Khi mùa đông có tuyết lớn và người nói cho rằng năm sau sẽ được mùa.",
+                "grading": {
+                  "mode": "manual"
+                }
+              },
+              {
+                "id": "ex08_q03",
+                "prompt": "我真羡慕他。",
+                "sample_answer": "Khi thấy người khác có điều tốt mà mình mong muốn, ví dụ công việc tốt hoặc được đi du lịch.",
+                "grading": {
+                  "mode": "manual"
+                }
+              },
+              {
+                "id": "ex08_q04",
+                "prompt": "你和他 / 她在一个班学习了半年多，非常喜欢他 / 她。（爱上）",
+                "sample_answer": "我已经爱上他了。",
+                "grading": {
+                  "mode": "manual"
+                }
+              },
+              {
+                "id": "ex08_q05",
+                "prompt": "你很喜欢一个地方 / 一份工作 / 一个学校。（向往）",
+                "sample_answer": "那是一个让我十分向往的地方。",
+                "grading": {
+                  "mode": "manual"
+                }
+              }
+            ],
+            "answer_key": [
+              {
+                "question_id": "ex08_q01",
+                "sample_answer": "Khi nói về thái độ của nhân dân/quốc gia đối với hòa bình.",
+                "check_needed": true
+              },
+              {
+                "question_id": "ex08_q02",
+                "sample_answer": "Khi mùa đông có tuyết lớn và người nói cho rằng năm sau sẽ được mùa.",
+                "check_needed": true
+              },
+              {
+                "question_id": "ex08_q03",
+                "sample_answer": "Khi thấy người khác có điều tốt mà mình mong muốn, ví dụ công việc tốt hoặc được đi du lịch.",
+                "check_needed": true
+              },
+              {
+                "question_id": "ex08_q04",
+                "sample_answer": "我已经爱上他了。",
+                "check_needed": true
+              },
+              {
+                "question_id": "ex08_q05",
+                "sample_answer": "那是一个让我十分向往的地方。",
+                "check_needed": true
+              }
+            ],
+            "rendering": {
+              "renderer": "exercise.open_ended.v1",
+              "show_answer_after_submit": true
+            },
+            "check_needed": true
+          },
+          {
+            "id": "exercise_09",
+            "type": "communication_dialogue",
+            "variant": "weather",
+            "order": 9,
+            "title": "交际会话：谈论天气",
+            "title_vi": "Hội thoại giao tiếp: nói về thời tiết",
+            "instruction": {
+              "zh": "",
+              "vi": "Luyện hội thoại về thời tiết và mùa đông ở Trung Quốc."
+            },
+            "difficulty": "normal",
+            "skill_focus": [
+              "speaking",
+              "communication"
+            ],
+            "grammar_refs": [],
+            "vocab_refs": [],
+            "function": "谈论天气",
+            "function_vi": "Nói về thời tiết",
+            "dialogue": [
+              {
+                "speaker": "A",
+                "text": "啊——，好冷啊！"
+              },
+              {
+                "speaker": "B",
+                "text": "冷在三九嘛，现在才是头九，冷的时候还在后面呢。"
+              },
+              {
+                "speaker": "A",
+                "text": "什么？什么？你说的我怎么听不懂啊。什么“三九”“头九”？"
+              },
+              {
+                "speaker": "B",
+                "text": "啊，中国人把冬天最冷的时候，叫作三九天。从冬至开始，每九天算一九。今天是12月25号，算头九。"
+              },
+              {
+                "speaker": "A",
+                "text": "这样啊。这么说，以后还会更冷啊。"
+              },
+              {
+                "speaker": "B",
+                "text": "当然。"
+              },
+              {
+                "speaker": "A",
+                "text": "我最怕冷了。每天早上都不想起床，所以常常迟到。"
+              },
+              {
+                "speaker": "B",
+                "text": "我怕热，但不怕冷。我喜欢冬天，也喜欢滑冰滑雪。"
+              },
+              {
+                "speaker": "A",
+                "text": "难怪你每天一早就出去锻炼。我可起不来。"
+              }
+            ],
+            "practice_tasks": [
+              {
+                "id": "comm_task_01",
+                "type": "role_play",
+                "instruction_vi": "Đổi tình huống thành nói về mùa đông ở Hà Nội hoặc TP.HCM.",
+                "sample_answer": [
+                  "A：今天有点儿冷啊。",
+                  "B：是啊，不过没有北京那么冷。",
+                  "A：你喜欢冬天吗？",
+                  "B：喜欢，因为天气比较舒服。"
+                ]
+              }
+            ],
+            "rendering": {
+              "renderer": "exercise.communication_dialogue.v1"
+            },
+            "check_needed": false
+          }
+        ]
+      },
+      {
+        "id": "section_06_reading",
+        "type": "reading",
+        "order": 6,
+        "title": "阅读理解",
+        "title_vi": "Đọc hiểu",
+        "items": [
+          {
+            "id": "reading_01",
+            "type": "reading_text",
+            "order": 1,
+            "title": "一把雨伞",
+            "title_vi": "Một chiếc ô",
+            "supplementary_words": [
+              {
+                "id": "reading_01_word_001",
+                "hanzi": "阵",
+                "pinyin": "zhèn",
+                "meaning_vi": "một lúc, một trận",
+                "vocab_ref": ""
+              },
+              {
+                "id": "reading_01_word_002",
+                "hanzi": "抬",
+                "pinyin": "tái",
+                "meaning_vi": "ngẩng, nâng",
+                "vocab_ref": ""
+              },
+              {
+                "id": "reading_01_word_003",
+                "hanzi": "将近",
+                "pinyin": "jiāngjìn",
+                "meaning_vi": "gần, sắp tới",
+                "vocab_ref": ""
+              },
+              {
+                "id": "reading_01_word_004",
+                "hanzi": "经历",
+                "pinyin": "jīnglì",
+                "meaning_vi": "trải qua, kinh nghiệm",
+                "vocab_ref": ""
+              }
+            ],
+            "paragraphs": [
+              {
+                "id": "reading_01_p01",
+                "order": 1,
+                "zh": "去年秋天的一个星期天，我和爱人带孩子去爬山。刚刚两岁的儿子玩儿得很高兴。",
+                "pinyin": "",
+                "vi": "",
+                "grammar_refs": [],
+                "vocab_refs": []
+              },
+              {
+                "id": "reading_01_p02",
+                "order": 2,
+                "zh": "这时，一阵风刮来，抬头一看，刚才还蓝蓝的天上，不知什么时候起了乌云，很快就开始掉雨点了。",
+                "pinyin": "",
+                "vi": "",
+                "grammar_refs": [],
+                "vocab_refs": []
+              },
+              {
+                "id": "reading_01_p03",
+                "order": 3,
+                "zh": "一对儿年轻人打着一把雨伞向我们这边走来，看到我们的样子，两人一笑，马上把伞送给我们。",
+                "pinyin": "",
+                "vi": "",
+                "grammar_refs": [],
+                "vocab_refs": []
+              },
+              {
+                "id": "reading_01_p04",
+                "order": 4,
+                "zh": "雨中的经历使我常想起这两个不知姓名的年轻人。因为当时没有留下姓名和地址，所以这把雨伞现在还放在我们家里。",
+                "pinyin": "",
+                "vi": "",
+                "grammar_refs": [],
+                "vocab_refs": []
+              }
+            ],
+            "check_needed": true
+          },
+          {
+            "id": "reading_cloze_01",
+            "type": "reading_cloze",
+            "order": 2,
+            "title": "综合填空：一把雨伞",
+            "title_vi": "Điền tổng hợp: Một chiếc ô",
+            "instruction": {
+              "zh": "综合填空。",
+              "vi": "Điền từ thích hợp vào chỗ trống trong bài đọc."
+            },
+            "word_bank": [],
+            "passage": {
+              "id": "cloze_passage_01",
+              "segments": [
+                {
+                  "id": "seg_001",
+                  "type": "text",
+                  "text": "去年秋天的一个星期天，我和爱人带孩子去爬山。刚刚两岁"
+                },
+                {
+                  "id": "seg_002",
+                  "type": "blank",
+                  "blank_id": "blank_01"
+                },
+                {
+                  "id": "seg_003",
+                  "type": "text",
+                  "text": "儿子，玩儿得很高兴。这时，一阵风刮来，抬头一看，刚才还蓝蓝的天上，不知什么时候起"
+                },
+                {
+                  "id": "seg_004",
+                  "type": "blank",
+                  "blank_id": "blank_02"
+                },
+                {
+                  "id": "seg_005",
+                  "type": "text",
+                  "text": "乌云，很快就开始掉雨点了。我和爱人一下子着急了，从这儿往前，离车站还远，往回走，也要将近一个小时，我们又没带雨伞。"
+                },
+                {
+                  "id": "seg_006",
+                  "type": "blank",
+                  "blank_id": "blank_03"
+                },
+                {
+                  "id": "seg_007",
+                  "type": "text",
+                  "text": "越下越大，我抱"
+                },
+                {
+                  "id": "seg_008",
+                  "type": "blank",
+                  "blank_id": "blank_04"
+                },
+                {
+                  "id": "seg_009",
+                  "type": "text",
+                  "text": "儿子，不知怎么办好。\n\n正在这时，一对儿年轻人打着一"
+                },
+                {
+                  "id": "seg_010",
+                  "type": "blank",
+                  "blank_id": "blank_05"
+                },
+                {
+                  "id": "seg_011",
+                  "type": "text",
+                  "text": "雨伞向我们这边走来，看到我们的样子，两人一笑，马上"
+                },
+                {
+                  "id": "seg_012",
+                  "type": "blank",
+                  "blank_id": "blank_06"
+                },
+                {
+                  "id": "seg_013",
+                  "type": "text",
+                  "text": "伞送给我们，说：“孩子小，淋了雨会感冒的。”然后，"
+                },
+                {
+                  "id": "seg_014",
+                  "type": "blank",
+                  "blank_id": "blank_07"
+                },
+                {
+                  "id": "seg_015",
+                  "type": "text",
+                  "text": "俩说着笑着淋着雨跑远了。\n\n雨中的经历使我常想起这两个不知姓名的年轻人，只知道他们在北京工作，但是因为当时没有留下姓名和地址，"
+                },
+                {
+                  "id": "seg_016",
+                  "type": "blank",
+                  "blank_id": "blank_08"
+                },
+                {
+                  "id": "seg_017",
+                  "type": "text",
+                  "text": "这把雨伞现在还放在我们家里。"
+                }
+              ]
+            },
+            "answers": [
+              {
+                "blank_id": "blank_01",
+                "answer": "的",
+                "acceptable_answers": [
+                  "的"
+                ],
+                "explanation_vi": "两岁的儿子 = đứa con trai hai tuổi.",
+                "grammar_refs": []
+              },
+              {
+                "blank_id": "blank_02",
+                "answer": "了",
+                "acceptable_answers": [
+                  "了"
+                ],
+                "explanation_vi": "起了乌云 = mây đen kéo đến.",
+                "grammar_refs": []
+              },
+              {
+                "blank_id": "blank_03",
+                "answer": "雨",
+                "acceptable_answers": [
+                  "雨"
+                ],
+                "explanation_vi": "雨越下越大 = mưa càng lúc càng lớn.",
+                "grammar_refs": []
+              },
+              {
+                "blank_id": "blank_04",
+                "answer": "着",
+                "acceptable_answers": [
+                  "着"
+                ],
+                "explanation_vi": "抱着儿子 = bế con.",
+                "grammar_refs": []
+              },
+              {
+                "blank_id": "blank_05",
+                "answer": "把",
+                "acceptable_answers": [
+                  "把"
+                ],
+                "explanation_vi": "一把雨伞 = một chiếc ô.",
+                "grammar_refs": []
+              },
+              {
+                "blank_id": "blank_06",
+                "answer": "把",
+                "acceptable_answers": [
+                  "把"
+                ],
+                "explanation_vi": "把伞送给我们 = đưa ô cho chúng tôi.",
+                "grammar_refs": []
+              },
+              {
+                "blank_id": "blank_07",
+                "answer": "他们",
+                "acceptable_answers": [
+                  "他们"
+                ],
+                "explanation_vi": "他们俩 = hai người họ.",
+                "grammar_refs": []
+              },
+              {
+                "blank_id": "blank_08",
+                "answer": "所以",
+                "acceptable_answers": [
+                  "所以"
+                ],
+                "explanation_vi": "因为……所以…… = vì... nên...",
+                "grammar_refs": []
+              }
+            ],
+            "answer_key": [
+              {
+                "blank_id": "blank_01",
+                "answer": "的",
+                "check_needed": true
+              },
+              {
+                "blank_id": "blank_02",
+                "answer": "了",
+                "check_needed": true
+              },
+              {
+                "blank_id": "blank_03",
+                "answer": "雨",
+                "check_needed": true
+              },
+              {
+                "blank_id": "blank_04",
+                "answer": "着",
+                "check_needed": true
+              },
+              {
+                "blank_id": "blank_05",
+                "answer": "把",
+                "check_needed": true
+              },
+              {
+                "blank_id": "blank_06",
+                "answer": "把",
+                "check_needed": true
+              },
+              {
+                "blank_id": "blank_07",
+                "answer": "他们",
+                "check_needed": true
+              },
+              {
+                "blank_id": "blank_08",
+                "answer": "所以",
+                "check_needed": true
+              }
+            ],
+            "rendering": {
+              "renderer": "reading.cloze.v1",
+              "input_mode": "text",
+              "show_word_bank": false,
+              "show_answer_after_submit": true
+            },
+            "check_needed": true
+          }
+        ]
+      },
+      {
+        "id": "section_07_character_writing",
+        "type": "character_writing",
+        "order": 7,
+        "title": "写汉字",
+        "title_vi": "Viết chữ Hán",
+        "items": [
+          {
+            "id": "char_001",
+            "type": "character_writing_item",
+            "order": 1,
+            "hanzi": "部",
+            "pinyin": "bù",
+            "vocab_ref": "vocab_001",
+            "stroke_count": null,
+            "radical": "",
+            "stroke_order_key": "",
+            "practice": {
+              "grid_type": "田字格",
+              "repeat_count": 6
+            },
+            "check_needed": true
+          },
+          {
+            "id": "char_002",
+            "type": "character_writing_item",
+            "order": 2,
+            "hanzi": "区",
+            "pinyin": "qū",
+            "vocab_ref": "vocab_002",
+            "stroke_count": null,
+            "radical": "",
+            "stroke_order_key": "",
+            "practice": {
+              "grid_type": "田字格",
+              "repeat_count": 6
+            },
+            "check_needed": true
+          },
+          {
+            "id": "char_003",
+            "type": "character_writing_item",
+            "order": 3,
+            "hanzi": "脱",
+            "pinyin": "tuō",
+            "vocab_ref": "vocab_004",
+            "stroke_count": null,
+            "radical": "",
+            "stroke_order_key": "",
+            "practice": {
+              "grid_type": "田字格",
+              "repeat_count": 6
+            },
+            "check_needed": true
+          },
+          {
+            "id": "char_004",
+            "type": "character_writing_item",
+            "order": 4,
+            "hanzi": "湖",
+            "pinyin": "hú",
+            "vocab_ref": "vocab_008",
+            "stroke_count": null,
+            "radical": "",
+            "stroke_order_key": "",
+            "practice": {
+              "grid_type": "田字格",
+              "repeat_count": 6
+            },
+            "check_needed": true
+          },
+          {
+            "id": "char_005",
+            "type": "character_writing_item",
+            "order": 5,
+            "hanzi": "船",
+            "pinyin": "chuán",
+            "vocab_ref": "vocab_011",
+            "stroke_count": null,
+            "radical": "",
+            "stroke_order_key": "",
+            "practice": {
+              "grid_type": "田字格",
+              "repeat_count": 6
+            },
+            "check_needed": true
+          },
+          {
+            "id": "char_006",
+            "type": "character_writing_item",
+            "order": 6,
+            "hanzi": "充",
+            "pinyin": "chōng",
+            "vocab_ref": "vocab_012",
+            "stroke_count": null,
+            "radical": "",
+            "stroke_order_key": "",
+            "practice": {
+              "grid_type": "田字格",
+              "repeat_count": 6
+            },
+            "check_needed": true
+          },
+          {
+            "id": "char_007",
+            "type": "character_writing_item",
+            "order": 7,
+            "hanzi": "围",
+            "pinyin": "wéi",
+            "vocab_ref": "vocab_017",
+            "stroke_count": null,
+            "radical": "",
+            "stroke_order_key": "",
+            "practice": {
+              "grid_type": "田字格",
+              "repeat_count": 6
+            },
+            "check_needed": true
+          },
+          {
+            "id": "char_008",
+            "type": "character_writing_item",
+            "order": 8,
+            "hanzi": "堆",
+            "pinyin": "duī",
+            "vocab_ref": "vocab_020",
+            "stroke_count": null,
+            "radical": "",
+            "stroke_order_key": "",
+            "practice": {
+              "grid_type": "田字格",
+              "repeat_count": 6
+            },
+            "check_needed": true
+          },
+          {
+            "id": "char_009",
+            "type": "character_writing_item",
+            "order": 9,
+            "hanzi": "冻",
+            "pinyin": "dòng",
+            "vocab_ref": "vocab_023",
+            "stroke_count": null,
+            "radical": "",
+            "stroke_order_key": "",
+            "practice": {
+              "grid_type": "田字格",
+              "repeat_count": 6
+            },
+            "check_needed": true
+          },
+          {
+            "id": "char_010",
+            "type": "character_writing_item",
+            "order": 10,
+            "hanzi": "景",
+            "pinyin": "jǐng",
+            "vocab_ref": "vocab_036",
+            "stroke_count": null,
+            "radical": "",
+            "stroke_order_key": "",
+            "practice": {
+              "grid_type": "田字格",
+              "repeat_count": 6
+            },
+            "check_needed": true
+          }
+        ]
+      }
+    ],
+    "summary": {
+      "lesson_parts": [
+        "课文",
+        "生词",
+        "专名",
+        "注释",
+        "词语用法",
+        "练习",
+        "综合填空",
+        "交际会话"
+      ],
+      "grammar_points": [
+        {
+          "id": "grammar_01",
+          "title": "拿 + N + 来 + V"
+        },
+        {
+          "id": "grammar_02",
+          "title": "动词 + 下"
+        },
+        {
+          "id": "grammar_03",
+          "title": "动词 + 上"
+        },
+        {
+          "id": "grammar_04",
+          "title": "多么"
+        },
+        {
+          "id": "grammar_05",
+          "title": "也许"
+        }
+      ],
+      "main_patterns": [
+        {
+          "pattern": "拿 + 名词 + 来 + 说 / 看 / 讲 / 比较 / 分析",
+          "grammar_ref": "grammar_01"
+        },
+        {
+          "pattern": "脱下冬衣",
+          "grammar_ref": "grammar_02"
+        },
+        {
+          "pattern": "换上春装",
+          "grammar_ref": "grammar_03"
+        },
+        {
+          "pattern": "爱上这个地方",
+          "grammar_ref": "grammar_03"
+        },
+        {
+          "pattern": "爬上十楼",
+          "grammar_ref": "grammar_03"
+        },
+        {
+          "pattern": "多么 + Adj / VP",
+          "grammar_ref": "grammar_04"
+        },
+        {
+          "pattern": "也许 + VP / Adj / Subject",
+          "grammar_ref": "grammar_05"
+        },
+        {
+          "pattern": "边 + V，边 + V",
+          "grammar_ref": ""
+        },
+        {
+          "pattern": "一边 + V，一边 + V",
+          "grammar_ref": ""
+        },
+        {
+          "pattern": "要是……，就……",
+          "grammar_ref": ""
+        }
+      ],
+      "exercise_types": [
+        "phonetics",
+        "read_aloud",
+        "choose_words_fill_blank",
+        "fill_blank",
+        "complete_dialogue",
+        "sentence_reorder",
+        "correct_sentence",
+        "open_ended",
+        "communication_dialogue",
+        "reading_text",
+        "reading_cloze"
+      ],
+      "check_needed": true
+    }
+  }
+}

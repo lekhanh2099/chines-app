@@ -18,7 +18,8 @@
   ],
   "counts": {
     "lessons": 25,
-    "vocab": 1195
+    "vocab": 1195,
+    "lessonDocuments": 22
   },
   "lessons": [
     { "lessonNumber": 1, "id": "hanyu_2_1_lesson_01_deep_vocab", "bookId": "hanyu-q2-shang", "titleZh": "田芳去哪儿了", "titleVi": "Điền Phương đi đâu rồi?", "vocabCount": 45 },

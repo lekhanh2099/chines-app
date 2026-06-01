@@ -6,6 +6,7 @@
     "dev": "next dev -p 3001",
     "build": "next build --webpack",
     "data:hanzihome:q2:validate": "node --experimental-strip-types scripts/validate-hanzihome-q2.ts",
+    "data:hanzihome:validate": "node --experimental-strip-types scripts/validate-hanzihome-static.ts",
     "start": "next start",
     "lint": "eslint",
     "typecheck": "tsc --noEmit",
