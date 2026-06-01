@@ -42,6 +42,11 @@ type BookSection = {
  section: Section;
 };
 
+type LessonDisplayMode = {
+ showPinyin: boolean;
+ showMeaning: boolean;
+};
+
 const sectionIcons: Partial<Record<Section["type"], typeof BookOpen>> = {
  text: BookOpen,
  vocabulary: Tags,
@@ -85,16 +90,22 @@ function getBookSections(sourceLesson: HanyuLesson | undefined): BookSection[] {
   }));
 }
 
+function sectionEmptyReason(section: Section): string {
+ return stringValue(asRecord(section), "empty_reason_vi");
+}
+
 function TextLineCard({
  speaker,
  zh,
  pinyin,
  vi,
+ displayMode = { showPinyin: true, showMeaning: true },
 }: {
  speaker?: string;
  zh: string;
  pinyin?: string;
  vi?: string;
+ displayMode?: LessonDisplayMode;
 }) {
  return (
   <div className="grid gap-1 rounded-xl border border-border-default bg-bg-primary p-3">
@@ -102,13 +113,13 @@ function TextLineCard({
    <p className="text-lg font-black leading-relaxed text-text-primary" lang="zh-CN">
     {zh}
    </p>
-   {pinyin && <p className="text-sm font-bold italic text-text-muted">{pinyin}</p>}
-   {vi && <p className="text-sm font-semibold leading-relaxed text-text-secondary">{vi}</p>}
+   {displayMode.showPinyin && pinyin && <p className="text-sm font-bold italic text-text-muted">{pinyin}</p>}
+   {displayMode.showMeaning && vi && <p className="text-sm font-semibold leading-relaxed text-text-secondary">{vi}</p>}
   </div>
  );
 }
 
-function TextBlockView({ block }: { block: TextBlock }) {
+function TextBlockView({ block, displayMode }: { block: TextBlock; displayMode: LessonDisplayMode }) {
  const lines = block.lines;
 
  return (
@@ -119,9 +130,9 @@ function TextBlockView({ block }: { block: TextBlock }) {
    </div>
 
    {lines.length > 0 && (
-    <div className="grid gap-2">
+   <div className="grid gap-2">
      {lines.map((line) => (
-      <TextLineCard key={line.id} speaker={line.speaker} zh={line.zh} pinyin={line.pinyin} vi={line.vi} />
+      <TextLineCard key={line.id} speaker={line.speaker} zh={line.zh} pinyin={line.pinyin} vi={line.vi} displayMode={displayMode} />
      ))}
     </div>
    )}
@@ -131,29 +142,29 @@ function TextBlockView({ block }: { block: TextBlock }) {
      <div key={scene.id} className="grid gap-2">
       {scene.summary_vi && <p className="text-sm font-bold text-text-muted">{scene.summary_vi}</p>}
       {scene.lines.map((line) => (
-       <TextLineCard key={line.id} speaker={line.speaker} zh={line.zh} pinyin={line.pinyin} vi={line.vi} />
+       <TextLineCard key={line.id} speaker={line.speaker} zh={line.zh} pinyin={line.pinyin} vi={line.vi} displayMode={displayMode} />
       ))}
      </div>
     ))}
 
    {block.type === "text_narrative" &&
     block.paragraphs.map((paragraph) => (
-     <TextLineCard key={paragraph.id} zh={paragraph.zh} pinyin={paragraph.pinyin} vi={paragraph.vi} />
+     <TextLineCard key={paragraph.id} zh={paragraph.zh} pinyin={paragraph.pinyin} vi={paragraph.vi} displayMode={displayMode} />
     ))}
   </section>
  );
 }
 
-function VocabMiniGrid({ items }: { items: VocabularyItem[] }) {
+function VocabMiniGrid({ items, displayMode }: { items: VocabularyItem[]; displayMode: LessonDisplayMode }) {
  return (
   <div className="grid gap-2 md:grid-cols-2 xl:grid-cols-3">
    {items.map((item) => (
     <div key={item.id} className="rounded-xl border border-border-default bg-bg-primary p-3">
      <div className="flex flex-wrap items-end gap-2">
       <p className="text-2xl font-black text-text-primary" lang="zh-CN">{item.hanzi}</p>
-      {item.pinyin && <p className="font-bold text-accent-text">{item.pinyin}</p>}
+      {displayMode.showPinyin && item.pinyin && <p className="font-bold text-accent-text">{item.pinyin}</p>}
      </div>
-     <p className="text-sm font-semibold leading-relaxed text-text-secondary">{item.meaning_vi}</p>
+     {displayMode.showMeaning && <p className="text-sm font-semibold leading-relaxed text-text-secondary">{item.meaning_vi}</p>}
      {item.pos !== "unknown" && <Badge>{item.pos}</Badge>}
     </div>
    ))}
@@ -161,18 +172,18 @@ function VocabMiniGrid({ items }: { items: VocabularyItem[] }) {
  );
 }
 
-function NoteCard({ item }: { item: NoteItem }) {
+function NoteCard({ item, displayMode }: { item: NoteItem; displayMode: LessonDisplayMode }) {
  return (
   <article className="grid gap-3 rounded-xl border border-border-default bg-bg-primary p-4">
    <div>
     <h4 className="text-lg font-black text-text-primary">{item.title}</h4>
     {item.structure && <p className="mt-1 rounded-lg bg-accent-subtle px-3 py-2 font-black text-accent-text">{item.structure}</p>}
    </div>
-   <p className="text-sm font-semibold leading-relaxed text-text-secondary">{item.meaning_vi}</p>
+   {displayMode.showMeaning && <p className="text-sm font-semibold leading-relaxed text-text-secondary">{item.meaning_vi}</p>}
    {item.examples.length > 0 && (
     <div className="grid gap-2">
      {item.examples.map((example) => (
-      <TextLineCard key={example.id} zh={example.zh} pinyin={example.pinyin} vi={example.vi} />
+      <TextLineCard key={example.id} zh={example.zh} pinyin={example.pinyin} vi={example.vi} displayMode={displayMode} />
      ))}
     </div>
    )}
@@ -180,7 +191,7 @@ function NoteCard({ item }: { item: NoteItem }) {
  );
 }
 
-function GrammarBlockView({ block }: { block: GrammarBlock }) {
+function GrammarBlockView({ block, displayMode }: { block: GrammarBlock; displayMode: LessonDisplayMode }) {
  const blockRecord = asRecord(block);
  const content = stringValue(blockRecord, "content_vi");
  const pattern = stringValue(blockRecord, "pattern");
@@ -194,7 +205,7 @@ function GrammarBlockView({ block }: { block: GrammarBlock }) {
    <h5 className="font-black text-text-primary">{block.title}</h5>
    {content && <p className="text-sm font-semibold text-text-secondary">{content}</p>}
    {pattern && <p className="rounded-lg bg-accent-subtle px-3 py-2 font-black text-accent-text">{pattern}</p>}
-   {meaning && <p className="text-sm font-semibold text-text-secondary">{meaning}</p>}
+   {displayMode.showMeaning && meaning && <p className="text-sm font-semibold text-text-secondary">{meaning}</p>}
    {examples.length > 0 && (
     <div className="grid gap-2">
      {examples.map((example, index) => (
@@ -203,6 +214,7 @@ function GrammarBlockView({ block }: { block: GrammarBlock }) {
        zh={stringValue(example, "zh")}
        pinyin={stringValue(example, "pinyin")}
        vi={stringValue(example, "vi")}
+       displayMode={displayMode}
       />
      ))}
     </div>
@@ -211,19 +223,19 @@ function GrammarBlockView({ block }: { block: GrammarBlock }) {
  );
 }
 
-function GrammarCard({ item }: { item: GrammarPoint }) {
+function GrammarCard({ item, displayMode }: { item: GrammarPoint; displayMode: LessonDisplayMode }) {
  return (
   <article className="grid gap-3 rounded-xl border border-border-default bg-bg-subtle p-4">
    <div>
     <h4 className="text-lg font-black text-text-primary">{item.title_vi || item.title}</h4>
     <p className="text-xs font-bold uppercase tracking-wide text-text-muted">{item.title}</p>
    </div>
-   <div className="grid gap-2">{item.blocks.map((block) => <GrammarBlockView key={block.id} block={block} />)}</div>
+   <div className="grid gap-2">{item.blocks.map((block) => <GrammarBlockView key={block.id} block={block} displayMode={displayMode} />)}</div>
   </article>
  );
 }
 
-function GenericItemCard({ value }: { value: unknown }) {
+function GenericItemCard({ value, displayMode }: { value: unknown; displayMode: LessonDisplayMode }) {
  const item = value && typeof value === "object" && !Array.isArray(value) ? (value as Record<string, unknown>) : {};
  const title = [item.title_vi, item.title, item.hanzi, item.id].find((entry) => typeof entry === "string" && entry.trim()) as string | undefined;
  const pinyin = typeof item.pinyin === "string" ? item.pinyin : "";
@@ -235,8 +247,8 @@ function GenericItemCard({ value }: { value: unknown }) {
  return (
   <article className="grid gap-2 rounded-xl border border-border-default bg-bg-primary p-3">
    <h4 className="text-base font-black text-text-primary">{title || "Mục"}</h4>
-   {pinyin && <p className="text-sm font-bold italic text-text-muted">{pinyin}</p>}
-   {meaning && <p className="text-sm font-semibold text-text-secondary">{meaning}</p>}
+   {displayMode.showPinyin && pinyin && <p className="text-sm font-bold italic text-text-muted">{pinyin}</p>}
+   {displayMode.showMeaning && meaning && <p className="text-sm font-semibold text-text-secondary">{meaning}</p>}
    {functionVi && <p className="text-sm font-semibold text-text-secondary">{functionVi}</p>}
    {dialogue.map((lineValue, index) => {
     const line = lineValue && typeof lineValue === "object" && !Array.isArray(lineValue) ? (lineValue as Record<string, unknown>) : {};
@@ -249,6 +261,7 @@ function GenericItemCard({ value }: { value: unknown }) {
       zh={zh}
       pinyin={typeof line.pinyin === "string" ? line.pinyin : undefined}
       vi={typeof line.vi === "string" ? line.vi : undefined}
+      displayMode={displayMode}
      />
     );
    })}
@@ -292,6 +305,175 @@ function arrayValue(record: Record<string, unknown>, key: string) {
  return Array.isArray(value) ? value : [];
 }
 
+function nonEmptyStrings(value: unknown[]) {
+ return value.filter((entry): entry is string => typeof entry === "string" && Boolean(entry.trim()));
+}
+
+function answerToString(value: unknown): string {
+ if (typeof value === "string") return value.trim();
+ if (typeof value === "number" || typeof value === "boolean") return String(value);
+ if (Array.isArray(value)) return nonEmptyStrings(value).join(" / ");
+ return "";
+}
+
+function LooseItemGrid({
+ items,
+ displayMode,
+ emptyReason,
+}: {
+ items: unknown[];
+ displayMode: LessonDisplayMode;
+ emptyReason?: string;
+}) {
+ type LooseRenderedItem = {
+  id: string;
+  text: string;
+  pinyin?: string;
+  meaning?: string;
+ };
+
+ const renderedItems = items.flatMap<LooseRenderedItem>((entryValue, index) => {
+  if (typeof entryValue === "string") {
+   return [{ id: `string-${index}`, text: entryValue }];
+  }
+
+  if (Array.isArray(entryValue)) {
+   return [{ id: `array-${index}`, text: nonEmptyStrings(entryValue).join(" / ") }];
+  }
+
+  const entry = asRecord(entryValue);
+  const pairs = arrayValue(entry, "pairs");
+  if (pairs.length > 0) {
+   return pairs.map((pairValue, pairIndex) => ({
+    id: `${stringValue(entry, "id") || index}-pair-${pairIndex}`,
+    text: Array.isArray(pairValue) ? nonEmptyStrings(pairValue).join(" / ") : answerToString(pairValue),
+   }));
+  }
+
+  const lines = arrayValue(entry, "lines");
+  if (lines.length > 0) {
+   return lines.map((lineValue, lineIndex) => ({
+    id: `${stringValue(entry, "id") || index}-line-${lineIndex}`,
+    text: answerToString(lineValue) || stringValue(asRecord(lineValue), "text"),
+   }));
+  }
+
+  const content = arrayValue(entry, "content");
+  if (content.length > 0) {
+   return content.map((lineValue, lineIndex) => ({
+    id: `${stringValue(entry, "id") || index}-content-${lineIndex}`,
+    text: `${stringValue(entry, "title") ? `${stringValue(entry, "title")}: ` : ""}${answerToString(lineValue) || stringValue(asRecord(lineValue), "text")}`,
+   }));
+  }
+
+  const dialogue = arrayValue(entry, "dialogue");
+  if (dialogue.length > 0) {
+   return dialogue.map((lineValue, lineIndex) => {
+    const line = asRecord(lineValue);
+    return {
+     id: `${stringValue(entry, "id") || index}-dialogue-${lineIndex}`,
+     text: answerToString(lineValue) || stringValue(line, "text") || stringValue(line, "zh"),
+    };
+   });
+  }
+
+  const substitutions = arrayValue(entry, "substitutions");
+  if (substitutions.length > 0) {
+   return substitutions.map((lineValue, lineIndex) => ({
+    id: `${stringValue(entry, "id") || index}-substitution-${lineIndex}`,
+    text: `${stringValue(entry, "title") ? `${stringValue(entry, "title")}: ` : ""}${answerToString(lineValue)}`,
+   }));
+  }
+
+  const parts = asRecord(entry.parts);
+  const partEntries = Object.entries(parts).filter(([, value]) => typeof value === "string" && value.trim());
+  if (partEntries.length > 0) {
+   return partEntries.map(([label, value]) => ({
+    id: `${stringValue(entry, "id") || index}-part-${label}`,
+    text: `${label}. ${value}`,
+   }));
+  }
+
+  const sentences = arrayValue(entry, "sentences");
+  if (sentences.length > 0) {
+   return sentences.map((sentenceValue, sentenceIndex) => {
+    const sentence = asRecord(sentenceValue);
+    return {
+     id: `${stringValue(entry, "id") || index}-sentence-${sentenceIndex}`,
+     text: `${stringValue(sentence, "id") || sentenceIndex + 1}. ${stringValue(sentence, "text")}`,
+    };
+   });
+  }
+
+  const text =
+   stringValue(entry, "text") ||
+   stringValue(entry, "prompt") ||
+   stringValue(entry, "zh") ||
+   stringValue(entry, "title") ||
+   stringValue(entry, "substitution") ||
+   stringValue(entry, "wrong_sentence") ||
+   stringValue(entry, "correct_sentence") ||
+   stringValue(entry, "sample_text") ||
+   stringValue(entry, "answer");
+
+  return text ? [{
+   id: stringValue(entry, "id") || `object-${index}`,
+   text,
+   pinyin: stringValue(entry, "pinyin"),
+   meaning: stringValue(entry, "vi") || stringValue(entry, "meaning_vi"),
+  }] : [];
+ }).filter((entry) => entry.text);
+
+ if (renderedItems.length === 0) return <EmptySectionState reason={emptyReason} />;
+
+ return (
+  <div className="flex flex-wrap gap-2">
+   {renderedItems.map((entry) => (
+    <ExercisePill key={entry.id}>
+     {entry.text}
+     {displayMode.showPinyin && entry.pinyin && ` · ${entry.pinyin}`}
+     {displayMode.showMeaning && entry.meaning && ` · ${entry.meaning}`}
+    </ExercisePill>
+   ))}
+  </div>
+ );
+}
+
+function AnswerKeyList({ itemId, values }: { itemId: string; values: unknown[] }) {
+ const answers = values
+  .map((answerValue, index) => {
+   const answer = asRecord(answerValue);
+   const label = stringValue(answer, "blank_id") || stringValue(answer, "question_id") || stringValue(answer, "label") || `${index + 1}`;
+   const value = answerToString(answer.answer) || stringValue(answer, "sample_answer");
+   const note = stringValue(answer, "explanation_vi");
+   return value ? { id: `${itemId}-answer-${index}`, label, value, note } : null;
+  })
+  .filter((answer): answer is { id: string; label: string; value: string; note: string } => Boolean(answer));
+
+ if (answers.length === 0) return null;
+
+ return (
+  <div className="grid gap-2 rounded-xl border border-accent/30 bg-accent-subtle p-3">
+   <p className="text-xs font-black uppercase tracking-wide text-accent-text">Đáp án</p>
+   {answers.map((answer) => (
+    <p key={answer.id} className="text-sm font-bold text-accent-text">
+     {answer.label}: {answer.value}
+     {answer.note && ` — ${answer.note}`}
+    </p>
+   ))}
+  </div>
+ );
+}
+
+function EmptySectionState({ reason }: { reason?: string }) {
+ return (
+  <div className="rounded-xl border border-dashed border-border-default bg-bg-primary p-4">
+   <p className="text-sm font-black text-text-primary">Không có dữ liệu cho phần này.</p>
+   {reason && <p className="mt-1 text-sm font-semibold text-text-muted">{reason}</p>}
+  </div>
+ );
+}
+
 function ExercisePill({ children }: { children: ReactNode }) {
  return (
   <span className="rounded-lg border border-border-default bg-bg-subtle px-3 py-2 text-sm font-bold text-text-primary">
@@ -305,11 +487,13 @@ function ExerciseQuestionCard({
  title,
  answer,
  note,
+ children,
 }: {
  index: number;
  title: string;
  answer?: string;
  note?: string;
+ children?: ReactNode;
 }) {
  return (
   <div className="grid gap-2 rounded-xl border border-border-default bg-bg-subtle p-3">
@@ -321,13 +505,30 @@ function ExerciseQuestionCard({
      {answer}
     </p>
    )}
+   {children}
    {note && <p className="text-xs font-semibold leading-relaxed text-text-muted">{note}</p>}
   </div>
  );
 }
 
-function PhoneticsExerciseBody({ item }: { item: Exercise }) {
+function PhoneticsExerciseBody({ item, displayMode }: { item: Exercise; displayMode: LessonDisplayMode }) {
+ const record = asRecord(item);
  const parts = "parts" in item && Array.isArray(item.parts) ? item.parts : [];
+ const fallbackItems = [
+  ...arrayValue(record, "items"),
+  ...arrayValue(record, "chunks"),
+  ...arrayValue(record, "questions"),
+ ];
+
+ if (parts.length === 0) {
+  return (
+   <LooseItemGrid
+    items={fallbackItems}
+    displayMode={displayMode}
+    emptyReason={stringValue(record, "empty_reason_vi")}
+   />
+  );
+ }
 
  return (
   <div className="grid gap-3">
@@ -345,26 +546,16 @@ function PhoneticsExerciseBody({ item }: { item: Exercise }) {
        {instruction && <p className="text-sm font-semibold text-text-muted">{instruction}</p>}
       </div>
 
-      <div className="flex flex-wrap gap-2">
-       {items.map((entryValue, index) => {
-        const entry = asRecord(entryValue);
-        const id = stringValue(entry, "id") || `${title}-${index}`;
-        if (type === "minimal_pair") {
-         return (
-          <ExercisePill key={id}>
-           {stringValue(entry, "left")} / {stringValue(entry, "right")}
-          </ExercisePill>
-         );
-        }
-
-        return (
-         <ExercisePill key={id}>
-          {stringValue(entry, "text")}
-          {stringValue(entry, "pinyin") && ` · ${stringValue(entry, "pinyin")}`}
-         </ExercisePill>
-        );
-       })}
-      </div>
+      <LooseItemGrid items={items.map((entryValue) => {
+       const entry = asRecord(entryValue);
+       if (type.includes("pair") || stringValue(entry, "left") || stringValue(entry, "right")) {
+        return {
+         id: stringValue(entry, "id"),
+         text: `${stringValue(entry, "left")} / ${stringValue(entry, "right")}`,
+        };
+       }
+       return entryValue;
+      })} displayMode={displayMode} />
      </div>
     );
    })}
@@ -372,13 +563,19 @@ function PhoneticsExerciseBody({ item }: { item: Exercise }) {
  );
 }
 
-function SubstitutionExerciseBody({ item }: { item: Exercise }) {
+function SubstitutionExerciseBody({ item, displayMode }: { item: Exercise; displayMode: LessonDisplayMode }) {
+ const record = asRecord(item);
  const model = "model" in item && Array.isArray(item.model) ? item.model : [];
- const items = "items" in item && Array.isArray(item.items) ? item.items : [];
+ const models = arrayValue(record, "models");
+ const items = [
+  ...("items" in item && Array.isArray(item.items) ? item.items : []),
+  ...arrayValue(record, "questions"),
+ ];
+ const answerKey = arrayValue(record, "answer_key");
 
  return (
   <div className="grid gap-3">
-   {model.length > 0 && (
+   {(model.length > 0 || models.length > 0) && (
     <div className="rounded-xl border border-accent/30 bg-accent-subtle p-3">
      <p className="text-xs font-black uppercase tracking-wide text-accent-text">Mẫu</p>
      <div className="mt-1 grid gap-1">
@@ -387,34 +584,47 @@ function SubstitutionExerciseBody({ item }: { item: Exercise }) {
         {line}
        </p>
       ))}
+      <LooseItemGrid items={models} displayMode={displayMode} />
      </div>
     </div>
    )}
 
-   <div className="grid gap-2 md:grid-cols-2">
-    {items.map((entryValue, index) => {
-     const entry = asRecord(entryValue);
-     const expected = arrayValue(entry, "expected_dialogue")
-      .filter((line): line is string => typeof line === "string" && Boolean(line.trim()))
-      .join(" / ");
+   {items.length > 0 ? (
+    <div className="grid gap-2 md:grid-cols-2">
+     {items.map((entryValue, index) => {
+      const entry = asRecord(entryValue);
+      const expected = arrayValue(entry, "expected_dialogue")
+       .filter((line): line is string => typeof line === "string" && Boolean(line.trim()))
+       .join(" / ");
+      const answer = expected || stringValue(entry, "sample_answer") || answerToString(entry.answer);
 
-     return (
-      <ExerciseQuestionCard
-       key={stringValue(entry, "id") || `${item.id}-${index}`}
-       index={index + 1}
-       title={stringValue(entry, "substitution") || expected}
-       answer={expected}
-      />
-     );
-    })}
-   </div>
+      return (
+       <ExerciseQuestionCard
+        key={stringValue(entry, "id") || `${item.id}-${index}`}
+        index={index + 1}
+        title={stringValue(entry, "substitution") || stringValue(entry, "prompt") || stringValue(entry, "text") || answer || "Câu"}
+        answer={answer}
+        note={stringValue(entry, "explanation_vi")}
+       />
+      );
+     })}
+    </div>
+   ) : (
+    <EmptySectionState reason={stringValue(record, "empty_reason_vi")} />
+   )}
+   <AnswerKeyList itemId={item.id} values={answerKey} />
   </div>
  );
 }
 
-function QuestionExerciseBody({ item }: { item: Exercise }) {
+function QuestionExerciseBody({ item, displayMode }: { item: Exercise; displayMode: LessonDisplayMode }) {
  const record = asRecord(item);
  const questions = arrayValue(record, "questions");
+ const items = arrayValue(record, "items");
+ const groups = arrayValue(record, "groups");
+ const leftItems = arrayValue(record, "left_items");
+ const rightItems = arrayValue(record, "right_items");
+ const answerKey = arrayValue(record, "answer_key");
  const wordBank = arrayValue(record, "word_bank").filter(
   (word): word is string => typeof word === "string" && Boolean(word.trim()),
  );
@@ -443,12 +653,54 @@ function QuestionExerciseBody({ item }: { item: Exercise }) {
     />
    )}
 
-   <div className="grid gap-2">
+   {items.length > 0 && (
+    <LooseItemGrid items={items} displayMode={displayMode} />
+   )}
+
+   {(leftItems.length > 0 || rightItems.length > 0) && (
+    <div className="grid gap-2 md:grid-cols-2">
+     <div className="rounded-xl border border-border-default bg-bg-subtle p-3">
+      <p className="text-xs font-black uppercase tracking-wide text-text-muted">Cột A</p>
+      <LooseItemGrid items={leftItems} displayMode={displayMode} />
+     </div>
+     <div className="rounded-xl border border-border-default bg-bg-subtle p-3">
+      <p className="text-xs font-black uppercase tracking-wide text-text-muted">Cột B</p>
+      <LooseItemGrid items={rightItems} displayMode={displayMode} />
+     </div>
+    </div>
+   )}
+
+   {groups.length > 0 && (
+    <div className="grid gap-2">
+     {groups.map((groupValue, index) => {
+      const group = asRecord(groupValue);
+      const sentences = arrayValue(group, "sentences");
+      const parts = Object.entries(asRecord(group.parts)).map(([label, text]) => ({ id: label, text: `${label}. ${answerToString(text)}` }));
+      const answer = nonEmptyStrings(arrayValue(group, "answer_order")).join(" → ") || stringValue(group, "sample_text");
+
+      return (
+       <ExerciseQuestionCard
+        key={stringValue(group, "id") || `${item.id}-group-${index}`}
+        index={index + 1}
+        title={stringValue(group, "title") || "Nhóm câu"}
+        answer={answer}
+        note={stringValue(group, "explanation_vi")}
+       >
+        <LooseItemGrid items={sentences.length > 0 ? sentences : parts} displayMode={displayMode} />
+       </ExerciseQuestionCard>
+      );
+     })}
+    </div>
+   )}
+
+   {questions.length > 0 ? (
+    <div className="grid gap-2">
     {questions.map((questionValue, index) => {
      const question = asRecord(questionValue);
      const choices = arrayValue(question, "choices")
       .map((choiceValue) => stringValue(asRecord(choiceValue), "text"))
       .filter(Boolean);
+     const answerValue = question.answer;
      const title =
       stringValue(question, "prompt") ||
       stringValue(question, "wrong_sentence") ||
@@ -459,7 +711,10 @@ function QuestionExerciseBody({ item }: { item: Exercise }) {
      const answer =
       stringValue(question, "sample_answer") ||
       stringValue(question, "correct_sentence") ||
-      stringValue(question, "answer");
+      answerToString(question.answer) ||
+      stringValue(asRecord(question.answer), "zh") ||
+      stringValue(asRecord(question.answer), "vi") ||
+      (Array.isArray(answerValue) ? nonEmptyStrings(answerValue).join(" / ") : "");
      const note = stringValue(question, "explanation_vi");
 
      return (
@@ -472,15 +727,24 @@ function QuestionExerciseBody({ item }: { item: Exercise }) {
       />
      );
     })}
-   </div>
+    </div>
+   ) : items.length === 0 && groups.length === 0 && leftItems.length === 0 && rightItems.length === 0 ? (
+    <EmptySectionState reason={stringValue(record, "empty_reason_vi")} />
+   ) : null}
+   <AnswerKeyList itemId={item.id} values={answerKey} />
   </div>
  );
 }
 
-function CompleteDialogueExerciseBody({ item }: { item: Exercise }) {
+function CompleteDialogueExerciseBody({ item, displayMode }: { item: Exercise; displayMode: LessonDisplayMode }) {
+ const record = asRecord(item);
  const dialogues = "dialogues" in item && Array.isArray(item.dialogues)
   ? item.dialogues
   : [];
+ const fallbackItems = [
+  ...arrayValue(record, "items"),
+  ...arrayValue(record, "questions"),
+ ];
 
  return (
   <div className="grid gap-3">
@@ -515,12 +779,22 @@ function CompleteDialogueExerciseBody({ item }: { item: Exercise }) {
      </div>
     );
    })}
+   {dialogues.length === 0 && (
+    <LooseItemGrid
+     items={fallbackItems}
+     displayMode={displayMode}
+     emptyReason={stringValue(record, "empty_reason_vi")}
+    />
+   )}
+   <AnswerKeyList itemId={item.id} values={arrayValue(record, "answer_key")} />
   </div>
  );
 }
 
-function CommunicationExerciseBody({ item }: { item: Exercise }) {
+function CommunicationExerciseBody({ item, displayMode }: { item: Exercise; displayMode: LessonDisplayMode }) {
+ const record = asRecord(item);
  const dialogue = "dialogue" in item && Array.isArray(item.dialogue) ? item.dialogue : [];
+ const questions = arrayValue(record, "questions");
  const tasks = "practice_tasks" in item && Array.isArray(item.practice_tasks)
   ? item.practice_tasks
   : [];
@@ -532,9 +806,14 @@ function CommunicationExerciseBody({ item }: { item: Exercise }) {
      {dialogue.map((lineValue, index) => {
       const line = asRecord(lineValue);
       return (
-       <p key={`${stringValue(line, "speaker")}-${index}`} className="text-sm font-bold text-text-primary">
-        {stringValue(line, "speaker")}: {stringValue(line, "text")}
-       </p>
+       <TextLineCard
+        key={`${stringValue(line, "speaker")}-${index}`}
+        speaker={stringValue(line, "speaker")}
+        zh={stringValue(line, "text")}
+        pinyin={stringValue(line, "pinyin")}
+        vi={stringValue(line, "vi")}
+        displayMode={displayMode}
+       />
       );
      })}
     </div>
@@ -542,44 +821,48 @@ function CommunicationExerciseBody({ item }: { item: Exercise }) {
 
    {tasks.map((taskValue, index) => {
     const task = asRecord(taskValue);
-    const sample = arrayValue(task, "sample_answer")
-     .filter((line): line is string => typeof line === "string" && Boolean(line.trim()))
-     .join(" / ");
+    const sample = nonEmptyStrings(arrayValue(task, "sample_answer")).join(" / ")
+     || stringValue(task, "sample_answer_zh")
+     || stringValue(task, "sample_answer_vi");
 
     return (
      <ExerciseQuestionCard
       key={stringValue(task, "id") || `${item.id}-${index}`}
       index={index + 1}
-      title={stringValue(task, "instruction_vi")}
+      title={stringValue(task, "instruction_vi") || stringValue(task, "prompt_vi") || "Luyện tập"}
       answer={sample}
      />
     );
    })}
+   {dialogue.length === 0 && questions.length > 0 && (
+    <QuestionExerciseBody item={item} displayMode={displayMode} />
+   )}
   </div>
  );
 }
 
-function ExerciseBody({ item }: { item: Exercise }) {
- if (item.type === "phonetics") return <PhoneticsExerciseBody item={item} />;
- if (item.type === "substitution") return <SubstitutionExerciseBody item={item} />;
- if (item.type === "complete_dialogue") return <CompleteDialogueExerciseBody item={item} />;
- if (item.type === "communication_dialogue") return <CommunicationExerciseBody item={item} />;
- return <QuestionExerciseBody item={item} />;
+function ExerciseBody({ item, displayMode }: { item: Exercise; displayMode: LessonDisplayMode }) {
+ if (item.type === "phonetics") return <PhoneticsExerciseBody item={item} displayMode={displayMode} />;
+ if (item.type === "read_aloud") return <PhoneticsExerciseBody item={item} displayMode={displayMode} />;
+ if (item.type === "substitution" || item.type === "substitution_drill") return <SubstitutionExerciseBody item={item} displayMode={displayMode} />;
+ if (item.type === "complete_dialogue") return <CompleteDialogueExerciseBody item={item} displayMode={displayMode} />;
+ if (item.type === "communication_dialogue") return <CommunicationExerciseBody item={item} displayMode={displayMode} />;
+ return <QuestionExerciseBody item={item} displayMode={displayMode} />;
 }
 
-function ExerciseCard({ item }: { item: Exercise }) {
+function ExerciseCard({ item, displayMode }: { item: Exercise; displayMode: LessonDisplayMode }) {
  return (
   <article className="grid gap-3 rounded-xl border border-border-default bg-bg-primary p-4">
    <div>
     <h4 className="font-black text-text-primary">{item.title_vi || item.title}</h4>
     <p className="text-sm font-semibold text-text-secondary">{item.instruction.vi || item.instruction.zh}</p>
    </div>
-   <ExerciseBody item={item} />
+   <ExerciseBody item={item} displayMode={displayMode} />
   </article>
  );
 }
 
-function ReadingCard({ item }: { item: ReadingItem }) {
+function ReadingCard({ item, displayMode }: { item: ReadingItem; displayMode: LessonDisplayMode }) {
  const record = asRecord(item);
  const paragraphs = "paragraphs" in item && Array.isArray(item.paragraphs)
   ? item.paragraphs.filter((paragraph): paragraph is { id: string; zh: string; pinyin?: string; vi?: string } => (
@@ -591,11 +874,20 @@ function ReadingCard({ item }: { item: ReadingItem }) {
     && typeof paragraph.zh === "string"
    ))
   : [];
+ const flatText = stringValue(record, "text");
+ const flatPinyin = stringValue(record, "pinyin");
+ const flatMeaning = stringValue(record, "vi");
  const supplementaryWords = arrayValue(record, "supplementary_words");
+ const supplementaryItems = supplementaryWords.length > 0 ? supplementaryWords : arrayValue(record, "items");
  const questions = arrayValue(record, "questions");
- const answers = arrayValue(record, "answers");
+ const answers = arrayValue(record, "answers").length > 0
+  ? arrayValue(record, "answers")
+  : arrayValue(record, "answer_key");
  const passage = asRecord(record.passage);
- const segments = arrayValue(passage, "segments");
+ const segments = arrayValue(passage, "segments").length > 0
+  ? arrayValue(passage, "segments")
+  : arrayValue(record, "cloze_segments");
+ const passageText = typeof record.passage === "string" ? record.passage : "";
  const wordBank = arrayValue(record, "word_bank").filter(
   (word): word is string => typeof word === "string" && Boolean(word.trim()),
  );
@@ -612,36 +904,40 @@ function ReadingCard({ item }: { item: ReadingItem }) {
     )}
    </div>
 
-   {supplementaryWords.length > 0 && (
+   {supplementaryItems.length > 0 && (
     <div className="flex flex-wrap gap-2">
-     {supplementaryWords.map((wordValue, index) => {
+     {supplementaryItems.map((wordValue, index) => {
       const word = asRecord(wordValue);
-      const hanzi = stringValue(word, "hanzi");
+      const hanzi = stringValue(word, "hanzi") || stringValue(word, "text") || answerToString(wordValue);
       const pinyin = stringValue(word, "pinyin");
       const meaning = stringValue(word, "meaning_vi");
       return (
        <ExercisePill key={stringValue(word, "id") || `${item.id}-word-${index}`}>
         {hanzi}
-        {pinyin && ` · ${pinyin}`}
-        {meaning && ` · ${meaning}`}
+        {displayMode.showPinyin && pinyin && ` · ${pinyin}`}
+        {displayMode.showMeaning && meaning && ` · ${meaning}`}
        </ExercisePill>
       );
      })}
-    </div>
-   )}
+   </div>
+  )}
 
-   {paragraphs.length > 0 && (
-    <div className="grid gap-2">
+  {paragraphs.length === 0 && flatText && (
+   <TextLineCard zh={flatText} pinyin={flatPinyin} vi={flatMeaning} displayMode={displayMode} />
+  )}
+
+  {paragraphs.length > 0 && (
+   <div className="grid gap-2">
      {paragraphs.map((paragraph) => (
-      <TextLineCard key={paragraph.id} zh={paragraph.zh} pinyin={paragraph.pinyin} vi={paragraph.vi} />
+      <TextLineCard key={paragraph.id} zh={paragraph.zh} pinyin={paragraph.pinyin} vi={paragraph.vi} displayMode={displayMode} />
      ))}
     </div>
    )}
 
-   {segments.length > 0 && (
+   {(segments.length > 0 || passageText) && (
     <div className="rounded-xl border border-border-default bg-bg-subtle p-4">
      <p className="whitespace-pre-wrap text-base font-bold leading-8 text-text-primary" lang="zh-CN">
-      {segments.map((segmentValue, index) => {
+      {passageText || segments.map((segmentValue, index) => {
        const segment = asRecord(segmentValue);
        if (stringValue(segment, "type") === "blank") {
         return ` ____(${stringValue(segment, "blank_id") || index + 1})____ `;
@@ -669,9 +965,12 @@ function ReadingCard({ item }: { item: ReadingItem }) {
        stringValue(question, "prompt") ||
        stringValue(asRecord(question.question), "zh") ||
        stringValue(asRecord(question.statement), "zh") ||
+       stringValue(question, "text") ||
        "Câu hỏi";
       const answer =
-       stringValue(question, "answer") ||
+       answerToString(question.answer) ||
+       stringValue(asRecord(question.answer), "zh") ||
+       stringValue(asRecord(question.answer), "vi") ||
        stringValue(question, "sample_answer") ||
        (typeof question.answer === "boolean" ? (question.answer ? "Đúng" : "Sai") : "");
 
@@ -688,53 +987,105 @@ function ReadingCard({ item }: { item: ReadingItem }) {
     </div>
    )}
 
-   {answers.length > 0 && (
-    <div className="grid gap-2 rounded-xl border border-accent/30 bg-accent-subtle p-3">
-     <p className="text-xs font-black uppercase tracking-wide text-accent-text">Đáp án</p>
-     {answers.map((answerValue, index) => {
-      const answer = asRecord(answerValue);
-      return (
-       <p key={stringValue(answer, "blank_id") || `${item.id}-answer-${index}`} className="text-sm font-bold text-accent-text">
-        {stringValue(answer, "blank_id")}: {stringValue(answer, "answer")}
-        {stringValue(answer, "explanation_vi") && ` — ${stringValue(answer, "explanation_vi")}`}
-       </p>
-      );
-     })}
-    </div>
-   )}
+   <AnswerKeyList itemId={item.id} values={answers} />
   </article>
  );
 }
 
-function WritingCard({ item }: { item: CharacterWritingItem }) {
+function WritingCard({ item, displayMode }: { item: CharacterWritingItem; displayMode: LessonDisplayMode }) {
  return (
   <div className="rounded-xl border border-border-default bg-bg-primary p-3">
    <p className="text-4xl font-black text-text-primary" lang="zh-CN">{item.hanzi}</p>
-   <p className="font-bold text-accent-text">{item.pinyin}</p>
+   {displayMode.showPinyin && item.pinyin && <p className="font-bold text-accent-text">{item.pinyin}</p>}
    {item.radical && <p className="text-sm font-semibold text-text-muted">Bộ: {item.radical}</p>}
   </div>
  );
 }
 
-export function BookSectionContent({ section }: { section: Section }) {
- if (section.type === "text") return <div className="grid gap-3">{section.blocks.map((block) => <TextBlockView key={block.id} block={block} />)}</div>;
- if (section.type === "vocabulary") return <VocabMiniGrid items={section.items} />;
- if (section.type === "notes") return <div className="grid gap-3">{section.items.map((item) => <NoteCard key={item.id} item={item} />)}</div>;
- if (section.type === "grammar") return <div className="grid gap-3">{section.items.map((item) => <GrammarCard key={item.id} item={item} />)}</div>;
- if (section.type === "exercises") return <div className="grid gap-2">{section.items.map((item) => <ExerciseCard key={item.id} item={item} />)}</div>;
- if (section.type === "reading") return <div className="grid gap-2">{section.items.map((item) => <ReadingCard key={item.id} item={item} />)}</div>;
- if (section.type === "character_writing") return <div className="grid gap-2 md:grid-cols-3">{section.items.map((item) => <WritingCard key={item.id} item={item} />)}</div>;
- return <div className="grid gap-2">{section.items.map((item, index) => <GenericItemCard key={index} value={item} />)}</div>;
+export function BookSectionContent({
+ section,
+ displayMode = { showPinyin: true, showMeaning: true },
+}: {
+ section: Section;
+ displayMode?: LessonDisplayMode;
+}) {
+ if (section.type === "text") {
+  return section.blocks.length > 0
+   ? <div className="grid gap-3">{section.blocks.map((block) => <TextBlockView key={block.id} block={block} displayMode={displayMode} />)}</div>
+   : <EmptySectionState reason={sectionEmptyReason(section)} />;
+ }
+
+ if (section.type === "vocabulary") {
+  return section.items.length > 0 ? <VocabMiniGrid items={section.items} displayMode={displayMode} /> : <EmptySectionState reason={sectionEmptyReason(section)} />;
+ }
+
+ if (section.type === "notes") {
+  return section.items.length > 0
+   ? <div className="grid gap-3">{section.items.map((item) => <NoteCard key={item.id} item={item} displayMode={displayMode} />)}</div>
+   : <EmptySectionState reason={sectionEmptyReason(section)} />;
+ }
+
+ if (section.type === "grammar") {
+  return section.items.length > 0
+   ? <div className="grid gap-3">{section.items.map((item) => <GrammarCard key={item.id} item={item} displayMode={displayMode} />)}</div>
+   : <EmptySectionState reason={sectionEmptyReason(section)} />;
+ }
+
+ if (section.type === "exercises") {
+  return section.items.length > 0
+   ? <div className="grid gap-2">{section.items.map((item) => <ExerciseCard key={item.id} item={item} displayMode={displayMode} />)}</div>
+   : <EmptySectionState reason={sectionEmptyReason(section)} />;
+ }
+
+ if (section.type === "reading") {
+  return section.items.length > 0
+   ? <div className="grid gap-2">{section.items.map((item) => <ReadingCard key={item.id} item={item} displayMode={displayMode} />)}</div>
+   : <EmptySectionState reason={sectionEmptyReason(section)} />;
+ }
+
+ if (section.type === "character_writing") {
+  return section.items.length > 0
+   ? <div className="grid gap-2 md:grid-cols-3">{section.items.map((item) => <WritingCard key={item.id} item={item} displayMode={displayMode} />)}</div>
+   : <EmptySectionState reason={sectionEmptyReason(section)} />;
+ }
+
+ return section.items.length > 0
+  ? <div className="grid gap-2">{section.items.map((item, index) => <GenericItemCard key={index} value={item} displayMode={displayMode} />)}</div>
+  : <EmptySectionState reason={sectionEmptyReason(section)} />;
 }
 
 function SourceLessonOverview({ lessonDocument }: { lessonDocument: HanyuLesson }) {
  const sections = useMemo(() => getBookSections(lessonDocument), [lessonDocument]);
  const [selectedSectionId, setSelectedSectionId] = useState<string | null>(null);
  const [isSectionListVisible, setIsSectionListVisible] = useState(true);
+ const [globalDisplayMode, setGlobalDisplayMode] = useState<LessonDisplayMode>({
+  showPinyin: true,
+  showMeaning: true,
+ });
+ const [sectionDisplayOverrides, setSectionDisplayOverrides] = useState<Record<string, Partial<LessonDisplayMode>>>({});
  const selectedSection = sections.find((section) => section.id === selectedSectionId) ?? sections[0] ?? null;
+
+ function updateGlobalDisplayMode(key: keyof LessonDisplayMode) {
+  setGlobalDisplayMode((current) => ({ ...current, [key]: !current[key] }));
+  setSectionDisplayOverrides({});
+ }
 
  if (!selectedSection) return null;
  const Icon = sectionIcons[selectedSection.type] ?? BookOpen;
+ const selectedSectionDisplayMode = {
+  ...globalDisplayMode,
+  ...sectionDisplayOverrides[selectedSection.id],
+ };
+
+ function updateSectionDisplayMode(key: keyof LessonDisplayMode) {
+  setSectionDisplayOverrides((current) => ({
+   ...current,
+   [selectedSection.id]: {
+    ...current[selectedSection.id],
+    [key]: !selectedSectionDisplayMode[key],
+   },
+  }));
+ }
 
  return (
   <Card padding="lg" className="rounded-xl">
@@ -744,10 +1095,29 @@ function SourceLessonOverview({ lessonDocument }: { lessonDocument: HanyuLesson 
       <p className="text-xs font-black uppercase tracking-wide text-text-muted">Bài học</p>
       <h2 className="text-xl font-black text-text-primary">{lessonDocument.lesson.title.zh}</h2>
       <p className="text-sm font-semibold text-text-muted">
-       {lessonDocument.source.volume_vi} · {lessonDocument.lesson.title.pinyin || lessonDocument.source.lesson_title_pinyin}
+       {lessonDocument.source.volume_vi}
+       {globalDisplayMode.showPinyin && (lessonDocument.lesson.title.pinyin || lessonDocument.source.lesson_title_pinyin)
+        ? ` · ${lessonDocument.lesson.title.pinyin || lessonDocument.source.lesson_title_pinyin}`
+        : ""}
       </p>
      </div>
      <div className="flex items-center gap-2">
+      <Button
+       type="button"
+       variant="outline"
+       size="sm"
+       onClick={() => updateGlobalDisplayMode("showPinyin")}
+      >
+       Pinyin bài: {globalDisplayMode.showPinyin ? "Bật" : "Tắt"}
+      </Button>
+      <Button
+       type="button"
+       variant="outline"
+       size="sm"
+       onClick={() => updateGlobalDisplayMode("showMeaning")}
+      >
+       Nghĩa bài: {globalDisplayMode.showMeaning ? "Bật" : "Tắt"}
+      </Button>
       <Button
        type="button"
        variant="outline"
@@ -789,7 +1159,8 @@ function SourceLessonOverview({ lessonDocument }: { lessonDocument: HanyuLesson 
      )}
 
      <section className="min-w-0 rounded-xl border border-border-default bg-bg-subtle p-4">
-      <div className="mb-4 flex items-start gap-3">
+      <div className="mb-4 flex flex-wrap items-start justify-between gap-3">
+       <div className="flex items-start gap-3">
        <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-accent-subtle text-accent-text">
         <Icon className="h-5 w-5" />
        </span>
@@ -797,9 +1168,26 @@ function SourceLessonOverview({ lessonDocument }: { lessonDocument: HanyuLesson 
         <h3 className="text-lg font-black text-text-primary">{selectedSection.title}</h3>
         {selectedSection.subtitle && <p className="text-sm font-semibold text-text-muted">{selectedSection.subtitle}</p>}
        </div>
+       </div>
+       <Button
+        type="button"
+        variant="outline"
+        size="sm"
+        onClick={() => updateSectionDisplayMode("showPinyin")}
+       >
+        Pinyin phần: {selectedSectionDisplayMode.showPinyin ? "Bật" : "Tắt"}
+       </Button>
+       <Button
+        type="button"
+        variant="outline"
+        size="sm"
+        onClick={() => updateSectionDisplayMode("showMeaning")}
+       >
+        Nghĩa phần: {selectedSectionDisplayMode.showMeaning ? "Bật" : "Tắt"}
+       </Button>
       </div>
       <div className="max-h-[34rem] overflow-y-auto pr-2">
-       <BookSectionContent section={selectedSection.section} />
+       <BookSectionContent section={selectedSection.section} displayMode={selectedSectionDisplayMode} />
       </div>
      </section>
     </div>

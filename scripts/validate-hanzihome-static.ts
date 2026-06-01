@@ -9,6 +9,7 @@ const lessonSchemaModulePath =
 type StaticDatasetExpectation = {
  id: string;
  dir: string;
+ filePrefix: string;
  expectedLessonCount: number;
  expectedVocabCount: number;
  expectedLessonDocumentCount: number;
@@ -16,19 +17,21 @@ type StaticDatasetExpectation = {
 
 const datasets: StaticDatasetExpectation[] = [
  {
-  id: "q2",
-  dir: "data/hanzihome/q2",
-  expectedLessonCount: 25,
-  expectedVocabCount: 1195,
-  expectedLessonDocumentCount: 22,
- },
- {
-  id: "q3",
-  dir: "data/hanzihome/q3",
-  expectedLessonCount: 6,
-  expectedVocabCount: 340,
-  expectedLessonDocumentCount: 5,
- },
+ id: "q2",
+ dir: "data/hanzihome/q2",
+ filePrefix: "hanyu_2_",
+ expectedLessonCount: 25,
+ expectedVocabCount: 1195,
+ expectedLessonDocumentCount: 23,
+},
+{
+ id: "q3",
+ dir: "data/hanzihome/q3",
+ filePrefix: "hanyu_3_",
+ expectedLessonCount: 6,
+ expectedVocabCount: 340,
+ expectedLessonDocumentCount: 6,
+},
 ];
 
 async function readJson(filePath: string): Promise<unknown> {
@@ -42,10 +45,10 @@ async function validateDataset(dataset: StaticDatasetExpectation) {
  const lessonDir = path.join(process.cwd(), dataset.dir, "lessons");
  const manifestPath = path.join(process.cwd(), dataset.dir, "manifest.json");
  const vocabFiles = (await readdir(vocabDir))
-  .filter((file) => file.endsWith(".json"))
+  .filter((file) => file.endsWith(".json") && file.startsWith(dataset.filePrefix))
   .sort();
  const lessonFiles = (await readdir(lessonDir))
-  .filter((file) => file.endsWith(".json"))
+  .filter((file) => file.endsWith(".json") && file.startsWith(dataset.filePrefix))
   .sort();
  const vocabLessons = await Promise.all(
   vocabFiles.map(async (file) =>

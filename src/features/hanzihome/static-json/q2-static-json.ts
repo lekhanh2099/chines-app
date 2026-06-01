@@ -28,9 +28,13 @@ function unwrapJsonModule(value: unknown): unknown {
  return value;
 }
 
-function loadJsonDirectory(context: WebpackRequireContext): unknown[] {
+function loadJsonDirectory(
+ context: WebpackRequireContext,
+ shouldInclude: (key: string) => boolean = () => true,
+): unknown[] {
  return context
   .keys()
+  .filter(shouldInclude)
   .sort((a, b) => a.localeCompare(b))
   .map((key) => unwrapJsonModule(context(key)));
 }
@@ -43,6 +47,7 @@ export const q2VocabJson = loadJsonDirectory(
   false,
   /\.json$/,
  ),
+ (key) => /^\.\/hanyu_2_/.test(key),
 );
 
 export const q2LessonJson = loadJsonDirectory(
@@ -51,6 +56,7 @@ export const q2LessonJson = loadJsonDirectory(
   false,
   /\.json$/,
  ),
+ (key) => /^\.\/hanyu_2_/.test(key),
 );
 
 export const q3VocabJson = loadJsonDirectory(
@@ -59,6 +65,7 @@ export const q3VocabJson = loadJsonDirectory(
   false,
   /\.json$/,
  ),
+ (key) => /^\.\/hanyu_3_/.test(key),
 );
 
 export const q3LessonJson = loadJsonDirectory(
@@ -67,4 +74,5 @@ export const q3LessonJson = loadJsonDirectory(
   false,
   /\.json$/,
  ),
+ (key) => /^\.\/hanyu_3_/.test(key),
 );

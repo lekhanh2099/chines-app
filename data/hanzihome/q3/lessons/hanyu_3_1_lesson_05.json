@@ -1,0 +1,3695 @@
+{
+  "schema_version": "2.3.0-coverage",
+  "content_type": "chinese_textbook_lesson",
+  "verification_status": "verified",
+  "source": {
+    "book": "Hanyu Jiaocheng",
+    "volume": "第三册上",
+    "volume_vi": "Quyển 3 Thượng",
+    "lesson_index": 5,
+    "lesson_number_cn": "第五课",
+    "lesson_title_cn": "回头再说",
+    "lesson_title_pinyin": "Huítóu zàishuō",
+    "lesson_title_vi": "Quay đầu lại nói sau / Để sau rồi nói",
+    "lesson_title_en": "We will talk about it later",
+    "source_files": [
+      {
+        "name": "Hanyu Jiaocheng 3-1.pdf",
+        "type": "pdf_scan",
+        "source_origin": "textbook",
+        "check_needed": true
+      },
+      {
+        "name": "Quyển 3- tổng hợp.docx",
+        "type": "uploaded_crosscheck",
+        "source_origin": "uploaded_crosscheck",
+        "check_needed": false
+      },
+      {
+        "name": "hanyu_lesson_full_coverage_sample_v2_3_0.json",
+        "type": "coverage_structure_sample",
+        "source_origin": "uploaded_crosscheck",
+        "check_needed": false
+      },
+      {
+        "name": "MandarinAI Chinese Course 3A Lesson 5 回头再说",
+        "type": "web_crosscheck",
+        "source_origin": "web_crosscheck",
+        "check_needed": false
+      }
+    ],
+    "web_crosscheck": [
+      {
+        "title": "Chinese Course (3rd Edition) 3A Lesson 5 回头再说 We will talk about it later",
+        "source_origin": "web_crosscheck",
+        "note": "Used only to cross-check lesson title and opening/core text alignment; PDF/uploaded files remain primary."
+      }
+    ]
+  },
+  "lesson": {
+    "id": "hanyu_3_1_lesson_05_full_coverage_v2_3_0",
+    "title": {
+      "zh": "回头再说",
+      "pinyin": "Huítóu zàishuō",
+      "vi": "Để sau rồi nói",
+      "en": "We will talk about it later"
+    },
+    "tags": [
+      "hanyu_3_1",
+      "lesson_05",
+      "hsk3-ish",
+      "text_narrative",
+      "usage_focus",
+      "coverage_first",
+      "full_coverage_v2_3_0",
+      "digitize_full_book"
+    ],
+    "sections": [
+      {
+        "id": "section_01_text",
+        "type": "text",
+        "order": 1,
+        "title": "课文",
+        "title_vi": "Bài khóa",
+        "source_origin": "textbook/generated_mixed",
+        "check_needed": false,
+        "blocks": [
+          {
+            "id": "text_01",
+            "type": "text_narrative",
+            "order": 1,
+            "title": "回头再说",
+            "title_vi": "Để sau rồi nói",
+            "source_origin": "textbook/generated_mixed",
+            "check_needed": false,
+            "lines": [],
+            "paragraphs": [
+              {
+                "id": "text_01_p01",
+                "order": 1,
+                "zh": "我刚到北京时，听过一个相声，说北京人的口头语是“吃了吗”。后来我发现，其实，北京人最爱说的一句话是“回头再说”。",
+                "pinyin": "",
+                "vi": "Khi tôi vừa đến Bắc Kinh, tôi từng nghe một đoạn tướng thanh nói rằng câu cửa miệng của người Bắc Kinh là “Ăn cơm chưa?”. Sau này tôi phát hiện ra, thật ra câu người Bắc Kinh thích nói nhất là “để sau rồi nói”.",
+                "audio_key": "",
+                "vocab_refs": [],
+                "grammar_refs": [
+                  "grammar_usage_01",
+                  "grammar_usage_02"
+                ],
+                "source_origin": "textbook/generated_mixed",
+                "check_needed": false
+              },
+              {
+                "id": "text_01_p02",
+                "order": 2,
+                "zh": "我在香港坐上中国民航的飞机，邻座的一个人用地道的英语问我：“是去北京工作吗？”“不，去留学！”我回答。他是个中国人。我们就这样愉快地聊了一路。临下飞机，他还给了我一张名片，邀请我有空儿到他家去玩儿。",
+                "pinyin": "",
+                "vi": "Tôi lên máy bay của Hàng không Dân dụng Trung Quốc ở Hồng Kông. Người ngồi bên cạnh dùng tiếng Anh rất chuẩn hỏi tôi: “Anh/chị đến Bắc Kinh làm việc à?” “Không, đi du học!” tôi trả lời. Anh ấy là người Trung Quốc. Chúng tôi cứ thế vui vẻ trò chuyện suốt cả chặng đường. Lúc sắp xuống máy bay, anh ấy còn đưa tôi một tấm danh thiếp, mời tôi khi nào rảnh thì đến nhà anh ấy chơi.",
+                "audio_key": "",
+                "vocab_refs": [],
+                "grammar_refs": [
+                  "grammar_usage_01",
+                  "grammar_usage_02"
+                ],
+                "source_origin": "textbook/generated_mixed",
+                "check_needed": false
+              },
+              {
+                "id": "text_01_p03",
+                "order": 3,
+                "zh": "到北京后的第二个周末，我给飞机上认识的这位先生打电话。他在电话里热情地说：“有时间来家里玩儿吧。”我马上高兴起来，说：“太好了！我什么时候去？”他停了一会儿说：“这一段工作太忙，回头再说吧。”可是，几乎每次打电话，他都说欢迎我去他家，同时又带上一句“回头再说”。",
+                "pinyin": "",
+                "vi": "Cuối tuần thứ hai sau khi đến Bắc Kinh, tôi gọi điện cho người đàn ông quen trên máy bay. Trong điện thoại anh ấy nhiệt tình nói: “Khi nào có thời gian thì đến nhà chơi nhé.” Tôi lập tức vui lên và nói: “Hay quá! Khi nào tôi đến được?” Anh ấy ngừng một lát rồi nói: “Dạo này công việc bận quá, để sau rồi nói nhé.” Nhưng hầu như lần nào gọi điện, anh ấy cũng nói hoan nghênh tôi đến nhà, đồng thời lại kèm thêm một câu “để sau rồi nói”.",
+                "audio_key": "",
+                "vocab_refs": [],
+                "grammar_refs": [
+                  "grammar_usage_01",
+                  "grammar_usage_02"
+                ],
+                "source_origin": "textbook/generated_mixed",
+                "check_needed": false
+              },
+              {
+                "id": "text_01_p04",
+                "order": 4,
+                "zh": "我开始想，不是说有空儿就让我去吗？怎么会这样不实在？在三次“回头再说”之后，我终于去了他家。他和太太都十分热情，买菜做饭，准备了满满一桌的酒菜让我吃了个够。临了儿，他还送我好多书。我粗粗一看价钱，要五百多块钱呢，就说：“你给我这么贵的书，我一定要付钱。”他平淡地说：“这些书都是你用得着的，至于钱，回头再说吧。”之后我多次提起给他书钱的事，他都说：“回头再说吧。”",
+                "pinyin": "",
+                "vi": "Tôi bắt đầu nghĩ: chẳng phải anh ấy nói rảnh thì cho tôi đến sao? Sao lại thiếu thành thật như vậy? Sau ba lần “để sau rồi nói”, cuối cùng tôi cũng đến nhà anh ấy. Anh ấy và vợ đều rất nhiệt tình, mua thức ăn nấu cơm, chuẩn bị đầy một bàn rượu và thức ăn để tôi ăn thật no. Cuối cùng, anh ấy còn tặng tôi rất nhiều sách. Tôi nhìn sơ giá tiền, hơn năm trăm tệ, bèn nói: “Anh tặng tôi sách đắt như vậy, tôi nhất định phải trả tiền.” Anh ấy bình thản nói: “Những cuốn sách này đều là thứ anh/chị cần dùng đến; còn tiền thì để sau rồi nói nhé.” Sau đó tôi nhiều lần nhắc chuyện trả tiền sách cho anh ấy, anh ấy đều nói: “Để sau rồi nói nhé.”",
+                "audio_key": "",
+                "vocab_refs": [],
+                "grammar_refs": [
+                  "grammar_usage_01",
+                  "grammar_usage_02"
+                ],
+                "source_origin": "textbook/generated_mixed",
+                "check_needed": false
+              },
+              {
+                "id": "text_01_p05",
+                "order": 5,
+                "zh": "在北京的日子里，我经常听到“回头再说”这句话。它让我感到的不只是客气的推辞，更多的是温暖的等待。",
+                "pinyin": "",
+                "vi": "Trong những ngày ở Bắc Kinh, tôi thường nghe câu “để sau rồi nói”. Nó khiến tôi cảm nhận được không chỉ là lời từ chối lịch sự, mà nhiều hơn là sự chờ đợi ấm áp.",
+                "audio_key": "",
+                "vocab_refs": [],
+                "grammar_refs": [
+                  "grammar_usage_01",
+                  "grammar_usage_02"
+                ],
+                "source_origin": "textbook/generated_mixed",
+                "check_needed": false
+              },
+              {
+                "id": "text_01_p06",
+                "order": 6,
+                "zh": "那天，我在建国门上了地铁。这是我来中国后第一次坐地铁，以前从来没有坐过中国的地铁。车上人很多，下了地铁，上到地面时，我才发现那不是我要去的地方，因为没有找到熟悉的375路汽车站。正在我左顾右盼的时候，身后有两个小伙子主动跟我打招呼，我没有理他们。过了一会儿，他们看我还站在那里，就问我要去哪儿。我向他们打听去375路车站怎么走。他们说，375路车站在西直门那儿，而这儿是复兴门，离西直门还远着呢。当他们知道我要回学校时，就说：“上车吧，我们正好要去颐和园方向，可以带你一段。”我犹豫了一下儿才上了他们的车。一路上我没有说话，因为我不想跟不认识的人打交道。到了学校门口我下了车，掏出钱来要给他们的时候，两个小伙子笑着说：“我们又不是出租车，只是顺路送送你，怎么能要钱呢？”听了他们的话，我心里一热，忙向他们表示感谢，问他们叫什么名字，住在哪儿，可是他们已经把车发动起来，对我招招手说：“没准儿以后我们还会见面呢，回头再说吧。”说着就把车开走了。我愣在那里不知道说什么好。至今我也没有再见过这两个热情友好的小伙子。",
+                "pinyin": "",
+                "vi": "Hôm đó, tôi lên tàu điện ngầm ở Kiến Quốc Môn. Đây là lần đầu tiên tôi đi tàu điện ngầm sau khi đến Trung Quốc; trước đây tôi chưa từng đi tàu điện ngầm của Trung Quốc. Trên xe rất đông. Khi xuống tàu điện ngầm và lên mặt đất, tôi mới phát hiện đó không phải nơi tôi cần đến, vì tôi không tìm thấy trạm xe buýt 375 quen thuộc. Đúng lúc tôi đang nhìn quanh, phía sau có hai chàng trai chủ động chào hỏi tôi, nhưng tôi không để ý đến họ. Một lát sau, thấy tôi vẫn đứng đó, họ bèn hỏi tôi muốn đi đâu. Tôi hỏi họ đường đến trạm xe buýt 375. Họ nói trạm 375 ở Tây Trực Môn, còn chỗ này là Phục Hưng Môn, cách Tây Trực Môn còn xa lắm. Khi biết tôi muốn về trường, họ nói: “Lên xe đi, chúng tôi vừa hay đi hướng Di Hòa Viên, có thể chở anh/chị một đoạn.” Tôi do dự một lúc rồi mới lên xe. Suốt đường đi tôi không nói gì, vì tôi không muốn giao thiệp với người lạ. Đến cổng trường, tôi xuống xe, lấy tiền ra định đưa cho họ thì hai chàng trai cười và nói: “Chúng tôi đâu phải taxi, chỉ tiện đường đưa anh/chị thôi, sao có thể lấy tiền được?” Nghe họ nói vậy, trong lòng tôi ấm lên, vội cảm ơn họ, hỏi họ tên gì, ở đâu, nhưng họ đã khởi động xe, vẫy tay với tôi và nói: “Không chừng sau này chúng ta còn gặp lại, để sau rồi nói nhé.” Nói xong họ lái xe đi. Tôi đứng sững ở đó, không biết nói gì. Đến nay tôi vẫn chưa gặp lại hai chàng trai nhiệt tình, thân thiện ấy.",
+                "audio_key": "",
+                "vocab_refs": [],
+                "grammar_refs": [
+                  "grammar_usage_01",
+                  "grammar_usage_02"
+                ],
+                "source_origin": "textbook/generated_mixed",
+                "check_needed": false
+              },
+              {
+                "id": "text_01_p07",
+                "order": 7,
+                "zh": "我还要在北京学习和生活很久，和中国人打交道的日子还长着呢，可能还会遇到更多有意思的事，咱们也“回头再说”吧。",
+                "pinyin": "",
+                "vi": "Tôi còn phải học tập và sinh sống ở Bắc Kinh rất lâu; những ngày giao tiếp với người Trung Quốc còn dài, có lẽ tôi sẽ còn gặp nhiều chuyện thú vị hơn nữa. Chuyện đó thì chúng ta cũng “để sau rồi nói” nhé.",
+                "audio_key": "",
+                "vocab_refs": [],
+                "grammar_refs": [
+                  "grammar_usage_01",
+                  "grammar_usage_02"
+                ],
+                "source_origin": "textbook/generated_mixed",
+                "check_needed": false
+              }
+            ],
+            "comprehension_questions": [
+              {
+                "id": "q_text_01",
+                "question": "作者是怎么认识第一个北京人的？",
+                "answer": "在从香港到北京的飞机上，邻座的人主动用英语跟作者聊天，因此认识。",
+                "source_origin": "textbook_question_generated_answer",
+                "answer_verified": false,
+                "check_needed": true
+              },
+              {
+                "id": "q_text_02",
+                "question": "这个北京人的口头语是什么？",
+                "answer": "他的口头语是“回头再说”。",
+                "source_origin": "textbook_question_generated_answer",
+                "answer_verified": false,
+                "check_needed": true
+              },
+              {
+                "id": "q_text_03",
+                "question": "作者为什么打了三次电话才被邀请去这个北京人家？",
+                "answer": "因为这位先生工作很忙，每次都说“回头再说”。",
+                "source_origin": "textbook_question_generated_answer",
+                "answer_verified": false,
+                "check_needed": true
+              },
+              {
+                "id": "q_text_04",
+                "question": "这个北京人送给了作者什么东西？",
+                "answer": "他送给作者好多书。",
+                "source_origin": "textbook_question_generated_answer",
+                "answer_verified": false,
+                "check_needed": true
+              },
+              {
+                "id": "q_text_05",
+                "question": "作者第一次坐地铁的时候，他要在哪儿换车？",
+                "answer": "他要去西直门换/找375路汽车站。",
+                "source_origin": "textbook_question_generated_answer",
+                "answer_verified": false,
+                "check_needed": true
+              },
+              {
+                "id": "q_text_06",
+                "question": "作者坐车的时候为什么没说话？",
+                "answer": "因为他不想跟不认识的人打交道。",
+                "source_origin": "textbook_question_generated_answer",
+                "answer_verified": false,
+                "check_needed": true
+              },
+              {
+                "id": "q_text_07",
+                "question": "后来作者怎么到了要去的地方？",
+                "answer": "两个热情的小伙子顺路开车把他送到了学校门口。",
+                "source_origin": "textbook_question_generated_answer",
+                "answer_verified": false,
+                "check_needed": true
+              },
+              {
+                "id": "q_text_08",
+                "question": "说说你在中国遇到的愉快或不愉快的事。",
+                "answer": "开放题，答案略。",
+                "source_origin": "textbook_question_generated_answer",
+                "answer_verified": false,
+                "check_needed": true
+              }
+            ]
+          }
+        ],
+        "comprehension_questions": [
+          {
+            "id": "q_text_01",
+            "question": "作者是怎么认识第一个北京人的？",
+            "answer": "在从香港到北京的飞机上，邻座的人主动用英语跟作者聊天，因此认识。",
+            "source_origin": "textbook_question_generated_answer",
+            "answer_verified": false,
+            "check_needed": true
+          },
+          {
+            "id": "q_text_02",
+            "question": "这个北京人的口头语是什么？",
+            "answer": "他的口头语是“回头再说”。",
+            "source_origin": "textbook_question_generated_answer",
+            "answer_verified": false,
+            "check_needed": true
+          },
+          {
+            "id": "q_text_03",
+            "question": "作者为什么打了三次电话才被邀请去这个北京人家？",
+            "answer": "因为这位先生工作很忙，每次都说“回头再说”。",
+            "source_origin": "textbook_question_generated_answer",
+            "answer_verified": false,
+            "check_needed": true
+          },
+          {
+            "id": "q_text_04",
+            "question": "这个北京人送给了作者什么东西？",
+            "answer": "他送给作者好多书。",
+            "source_origin": "textbook_question_generated_answer",
+            "answer_verified": false,
+            "check_needed": true
+          },
+          {
+            "id": "q_text_05",
+            "question": "作者第一次坐地铁的时候，他要在哪儿换车？",
+            "answer": "他要去西直门换/找375路汽车站。",
+            "source_origin": "textbook_question_generated_answer",
+            "answer_verified": false,
+            "check_needed": true
+          },
+          {
+            "id": "q_text_06",
+            "question": "作者坐车的时候为什么没说话？",
+            "answer": "因为他不想跟不认识的人打交道。",
+            "source_origin": "textbook_question_generated_answer",
+            "answer_verified": false,
+            "check_needed": true
+          },
+          {
+            "id": "q_text_07",
+            "question": "后来作者怎么到了要去的地方？",
+            "answer": "两个热情的小伙子顺路开车把他送到了学校门口。",
+            "source_origin": "textbook_question_generated_answer",
+            "answer_verified": false,
+            "check_needed": true
+          },
+          {
+            "id": "q_text_08",
+            "question": "说说你在中国遇到的愉快或不愉快的事。",
+            "answer": "开放题，答案略。",
+            "source_origin": "textbook_question_generated_answer",
+            "answer_verified": false,
+            "check_needed": true
+          }
+        ]
+      },
+      {
+        "id": "section_02_vocabulary",
+        "type": "vocabulary",
+        "order": 2,
+        "title": "生词",
+        "title_vi": "Từ vựng chính",
+        "source_origin": "textbook/generated_mixed",
+        "check_needed": false,
+        "items": [
+          {
+            "id": "vocab_001",
+            "type": "vocabulary_item",
+            "order": 1,
+            "hanzi": "回头",
+            "pinyin": "huítóu",
+            "meaning_vi": "lát nữa; sau đó",
+            "meaning_en": "after a while; soon",
+            "pos": "adverb",
+            "tags": [
+              "phó từ"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "回头",
+              "back": "huítóu — lát nữa; sau đó",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook/generated_mixed",
+            "check_needed": false
+          },
+          {
+            "id": "vocab_002",
+            "type": "vocabulary_item",
+            "order": 2,
+            "hanzi": "再说",
+            "pinyin": "zàishuō",
+            "meaning_vi": "để nói/bàn sau; tính sau",
+            "meaning_en": "to talk about sth. later; not deal with sth. till later",
+            "pos": "verb",
+            "tags": [
+              "động từ"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "再说",
+              "back": "zàishuō — để nói/bàn sau; tính sau",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook/generated_mixed",
+            "check_needed": false
+          },
+          {
+            "id": "vocab_003",
+            "type": "vocabulary_item",
+            "order": 3,
+            "hanzi": "口头语",
+            "pinyin": "kǒutóuyǔ",
+            "meaning_vi": "câu cửa miệng; khẩu ngữ thường nói",
+            "meaning_en": "pet phrase",
+            "pos": "noun",
+            "tags": [
+              "danh từ"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "口头语",
+              "back": "kǒutóuyǔ — câu cửa miệng; khẩu ngữ thường nói",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook/generated_mixed",
+            "check_needed": false
+          },
+          {
+            "id": "vocab_004",
+            "type": "vocabulary_item",
+            "order": 4,
+            "hanzi": "后来",
+            "pinyin": "hòulái",
+            "meaning_vi": "sau đó; về sau",
+            "meaning_en": "later; afterwards",
+            "pos": "noun",
+            "tags": [
+              "danh từ"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "后来",
+              "back": "hòulái — sau đó; về sau",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook/generated_mixed",
+            "check_needed": false
+          },
+          {
+            "id": "vocab_005",
+            "type": "vocabulary_item",
+            "order": 5,
+            "hanzi": "其实",
+            "pinyin": "qíshí",
+            "meaning_vi": "thực ra; thật ra",
+            "meaning_en": "actually; in fact",
+            "pos": "adverb",
+            "tags": [
+              "phó từ"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "其实",
+              "back": "qíshí — thực ra; thật ra",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook/generated_mixed",
+            "check_needed": false
+          },
+          {
+            "id": "vocab_006",
+            "type": "vocabulary_item",
+            "order": 6,
+            "hanzi": "民航",
+            "pinyin": "mínháng",
+            "meaning_vi": "hàng không dân dụng",
+            "meaning_en": "civil aviation",
+            "pos": "noun",
+            "tags": [
+              "danh từ"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "民航",
+              "back": "mínháng — hàng không dân dụng",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook/generated_mixed",
+            "check_needed": false
+          },
+          {
+            "id": "vocab_007",
+            "type": "vocabulary_item",
+            "order": 7,
+            "hanzi": "邻",
+            "pinyin": "lín",
+            "meaning_vi": "liền kề; bên cạnh",
+            "meaning_en": "adjacent; neighbor",
+            "pos": "adjective",
+            "tags": [
+              "tính từ"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "邻",
+              "back": "lín — liền kề; bên cạnh",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook/generated_mixed",
+            "check_needed": false
+          },
+          {
+            "id": "vocab_008",
+            "type": "vocabulary_item",
+            "order": 8,
+            "hanzi": "地道",
+            "pinyin": "dìdao",
+            "meaning_vi": "chuẩn; thuần; đúng chất",
+            "meaning_en": "pure; real; up to standard",
+            "pos": "adjective",
+            "tags": [
+              "tính từ"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "地道",
+              "back": "dìdao — chuẩn; thuần; đúng chất",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook/generated_mixed",
+            "check_needed": false
+          },
+          {
+            "id": "vocab_009",
+            "type": "vocabulary_item",
+            "order": 9,
+            "hanzi": "回答",
+            "pinyin": "huídá",
+            "meaning_vi": "trả lời",
+            "meaning_en": "to answer; to reply",
+            "pos": "verb",
+            "tags": [
+              "động từ"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "回答",
+              "back": "huídá — trả lời",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook/generated_mixed",
+            "check_needed": false
+          },
+          {
+            "id": "vocab_010",
+            "type": "vocabulary_item",
+            "order": 10,
+            "hanzi": "名片",
+            "pinyin": "míngpiàn",
+            "meaning_vi": "danh thiếp",
+            "meaning_en": "name card",
+            "pos": "noun",
+            "tags": [
+              "danh từ"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "名片",
+              "back": "míngpiàn — danh thiếp",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook/generated_mixed",
+            "check_needed": false
+          },
+          {
+            "id": "vocab_011",
+            "type": "vocabulary_item",
+            "order": 11,
+            "hanzi": "几乎",
+            "pinyin": "jīhū",
+            "meaning_vi": "gần như; hầu như",
+            "meaning_en": "all but; almost; close to",
+            "pos": "adverb",
+            "tags": [
+              "phó từ"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "几乎",
+              "back": "jīhū — gần như; hầu như",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook/generated_mixed",
+            "check_needed": false
+          },
+          {
+            "id": "vocab_012",
+            "type": "vocabulary_item",
+            "order": 12,
+            "hanzi": "同时",
+            "pinyin": "tóngshí",
+            "meaning_vi": "đồng thời; cùng lúc",
+            "meaning_en": "at the same time; meanwhile",
+            "pos": "noun",
+            "tags": [
+              "danh từ"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "同时",
+              "back": "tóngshí — đồng thời; cùng lúc",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook/generated_mixed",
+            "check_needed": false
+          },
+          {
+            "id": "vocab_013",
+            "type": "vocabulary_item",
+            "order": 13,
+            "hanzi": "实在",
+            "pinyin": "shízài",
+            "meaning_vi": "thật thà; thực sự; quả thật",
+            "meaning_en": "sincere; really",
+            "pos": "adjective",
+            "tags": [
+              "tính từ/phó từ"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "实在",
+              "back": "shízài — thật thà; thực sự; quả thật",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook/generated_mixed",
+            "check_needed": false
+          },
+          {
+            "id": "vocab_014",
+            "type": "vocabulary_item",
+            "order": 14,
+            "hanzi": "之后",
+            "pinyin": "zhīhòu",
+            "meaning_vi": "sau đó; sau khi ấy",
+            "meaning_en": "after that; afterwards",
+            "pos": "noun",
+            "tags": [
+              "danh từ"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "之后",
+              "back": "zhīhòu — sau đó; sau khi ấy",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook/generated_mixed",
+            "check_needed": false
+          },
+          {
+            "id": "vocab_015",
+            "type": "vocabulary_item",
+            "order": 15,
+            "hanzi": "太太",
+            "pinyin": "tàitai",
+            "meaning_vi": "vợ; phu nhân",
+            "meaning_en": "wife",
+            "pos": "noun",
+            "tags": [
+              "danh từ"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "太太",
+              "back": "tàitai — vợ; phu nhân",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook/generated_mixed",
+            "check_needed": false
+          },
+          {
+            "id": "vocab_016",
+            "type": "vocabulary_item",
+            "order": 16,
+            "hanzi": "临了儿",
+            "pinyin": "línliǎor",
+            "meaning_vi": "cuối cùng; đến lúc cuối",
+            "meaning_en": "finally; in the end",
+            "pos": "adverb",
+            "tags": [
+              "phó từ"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "临了儿",
+              "back": "línliǎor — cuối cùng; đến lúc cuối",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook/generated_mixed",
+            "check_needed": false
+          },
+          {
+            "id": "vocab_017",
+            "type": "vocabulary_item",
+            "order": 17,
+            "hanzi": "粗",
+            "pinyin": "cū",
+            "meaning_vi": "qua loa; thô; sơ lược",
+            "meaning_en": "rough",
+            "pos": "adjective",
+            "tags": [
+              "tính từ"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "粗",
+              "back": "cū — qua loa; thô; sơ lược",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook/generated_mixed",
+            "check_needed": false
+          },
+          {
+            "id": "vocab_018",
+            "type": "vocabulary_item",
+            "order": 18,
+            "hanzi": "价钱",
+            "pinyin": "jiàqian",
+            "meaning_vi": "giá tiền",
+            "meaning_en": "price",
+            "pos": "noun",
+            "tags": [
+              "danh từ"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "价钱",
+              "back": "jiàqian — giá tiền",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook/generated_mixed",
+            "check_needed": false
+          },
+          {
+            "id": "vocab_019",
+            "type": "vocabulary_item",
+            "order": 19,
+            "hanzi": "付",
+            "pinyin": "fù",
+            "meaning_vi": "trả tiền",
+            "meaning_en": "to pay",
+            "pos": "verb",
+            "tags": [
+              "động từ"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "付",
+              "back": "fù — trả tiền",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook/generated_mixed",
+            "check_needed": false
+          },
+          {
+            "id": "vocab_020",
+            "type": "vocabulary_item",
+            "order": 20,
+            "hanzi": "平淡",
+            "pinyin": "píngdàn",
+            "meaning_vi": "bình thản; nhạt; bình thường",
+            "meaning_en": "flat; insipid",
+            "pos": "adjective",
+            "tags": [
+              "tính từ"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "平淡",
+              "back": "píngdàn — bình thản; nhạt; bình thường",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook/generated_mixed",
+            "check_needed": false
+          },
+          {
+            "id": "vocab_021",
+            "type": "vocabulary_item",
+            "order": 21,
+            "hanzi": "至于",
+            "pinyin": "zhìyú",
+            "meaning_vi": "về phần; còn như; đến mức",
+            "meaning_en": "as for; as to",
+            "pos": "preposition",
+            "tags": [
+              "giới từ"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "至于",
+              "back": "zhìyú — về phần; còn như; đến mức",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook/generated_mixed",
+            "check_needed": false
+          },
+          {
+            "id": "vocab_022",
+            "type": "vocabulary_item",
+            "order": 22,
+            "hanzi": "日子",
+            "pinyin": "rìzi",
+            "meaning_vi": "ngày tháng; cuộc sống",
+            "meaning_en": "day; date",
+            "pos": "noun",
+            "tags": [
+              "danh từ"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "日子",
+              "back": "rìzi — ngày tháng; cuộc sống",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook/generated_mixed",
+            "check_needed": false
+          },
+          {
+            "id": "vocab_023",
+            "type": "vocabulary_item",
+            "order": 23,
+            "hanzi": "推辞",
+            "pinyin": "tuīcí",
+            "meaning_vi": "từ chối; khước từ",
+            "meaning_en": "to refuse; to turn down; to decline",
+            "pos": "verb",
+            "tags": [
+              "động từ"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "推辞",
+              "back": "tuīcí — từ chối; khước từ",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook/generated_mixed",
+            "check_needed": false
+          },
+          {
+            "id": "vocab_024",
+            "type": "vocabulary_item",
+            "order": 24,
+            "hanzi": "温暖",
+            "pinyin": "wēnnuǎn",
+            "meaning_vi": "ấm áp",
+            "meaning_en": "warm",
+            "pos": "adjective",
+            "tags": [
+              "tính từ"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "温暖",
+              "back": "wēnnuǎn — ấm áp",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook/generated_mixed",
+            "check_needed": false
+          },
+          {
+            "id": "vocab_025",
+            "type": "vocabulary_item",
+            "order": 25,
+            "hanzi": "等待",
+            "pinyin": "děngdài",
+            "meaning_vi": "đợi; chờ; mong đợi",
+            "meaning_en": "to wait; to expect",
+            "pos": "verb",
+            "tags": [
+              "động từ"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "等待",
+              "back": "děngdài — đợi; chờ; mong đợi",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook/generated_mixed",
+            "check_needed": false
+          },
+          {
+            "id": "vocab_026",
+            "type": "vocabulary_item",
+            "order": 26,
+            "hanzi": "地面",
+            "pinyin": "dìmiàn",
+            "meaning_vi": "mặt đất",
+            "meaning_en": "ground",
+            "pos": "noun",
+            "tags": [
+              "danh từ"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "地面",
+              "back": "dìmiàn — mặt đất",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook/generated_mixed",
+            "check_needed": false
+          },
+          {
+            "id": "vocab_027",
+            "type": "vocabulary_item",
+            "order": 27,
+            "hanzi": "熟悉",
+            "pinyin": "shúxi",
+            "meaning_vi": "quen thuộc; quen biết",
+            "meaning_en": "familiar",
+            "pos": "adjective",
+            "tags": [
+              "tính từ"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "熟悉",
+              "back": "shúxi — quen thuộc; quen biết",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook/generated_mixed",
+            "check_needed": false
+          },
+          {
+            "id": "vocab_028",
+            "type": "vocabulary_item",
+            "order": 28,
+            "hanzi": "路",
+            "pinyin": "lù",
+            "meaning_vi": "đường; tuyến",
+            "meaning_en": "line; route",
+            "pos": "noun",
+            "tags": [
+              "danh từ"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "路",
+              "back": "lù — đường; tuyến",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook/generated_mixed",
+            "check_needed": false
+          },
+          {
+            "id": "vocab_029",
+            "type": "vocabulary_item",
+            "order": 29,
+            "hanzi": "左顾右盼",
+            "pinyin": "zuǒgù-yòupàn",
+            "meaning_vi": "nhìn trái ngó phải; nhìn quanh",
+            "meaning_en": "to look around; to glance right and left",
+            "pos": "phrase",
+            "tags": [
+              "thành ngữ"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "左顾右盼",
+              "back": "zuǒgù-yòupàn — nhìn trái ngó phải; nhìn quanh",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook/generated_mixed",
+            "check_needed": false
+          },
+          {
+            "id": "vocab_030",
+            "type": "vocabulary_item",
+            "order": 30,
+            "hanzi": "主动",
+            "pinyin": "zhǔdòng",
+            "meaning_vi": "chủ động; tự giác",
+            "meaning_en": "on one’s own initiative; voluntary",
+            "pos": "adjective",
+            "tags": [
+              "tính từ"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "主动",
+              "back": "zhǔdòng — chủ động; tự giác",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook/generated_mixed",
+            "check_needed": false
+          },
+          {
+            "id": "vocab_031",
+            "type": "vocabulary_item",
+            "order": 31,
+            "hanzi": "打招呼",
+            "pinyin": "dǎ zhāohu",
+            "meaning_vi": "chào hỏi; bắt chuyện",
+            "meaning_en": "to greet sb.; to say hello",
+            "pos": "verb_phrase",
+            "tags": [
+              "cụm động từ"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "打招呼",
+              "back": "dǎ zhāohu — chào hỏi; bắt chuyện",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook/generated_mixed",
+            "check_needed": false
+          },
+          {
+            "id": "vocab_032",
+            "type": "vocabulary_item",
+            "order": 32,
+            "hanzi": "理",
+            "pinyin": "lǐ",
+            "meaning_vi": "để ý; quan tâm; bắt chuyện",
+            "meaning_en": "usually negative: to pay attention to; to speak to",
+            "pos": "verb",
+            "tags": [
+              "động từ"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "理",
+              "back": "lǐ — để ý; quan tâm; bắt chuyện",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook/generated_mixed",
+            "check_needed": false
+          },
+          {
+            "id": "vocab_033",
+            "type": "vocabulary_item",
+            "order": 33,
+            "hanzi": "方向",
+            "pinyin": "fāngxiàng",
+            "meaning_vi": "phương hướng",
+            "meaning_en": "direction",
+            "pos": "noun",
+            "tags": [
+              "danh từ"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "方向",
+              "back": "fāngxiàng — phương hướng",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook/generated_mixed",
+            "check_needed": false
+          },
+          {
+            "id": "vocab_034",
+            "type": "vocabulary_item",
+            "order": 34,
+            "hanzi": "犹豫",
+            "pinyin": "yóuyù",
+            "meaning_vi": "do dự",
+            "meaning_en": "hesitant",
+            "pos": "adjective",
+            "tags": [
+              "tính từ"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "犹豫",
+              "back": "yóuyù — do dự",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook/generated_mixed",
+            "check_needed": false
+          },
+          {
+            "id": "vocab_035",
+            "type": "vocabulary_item",
+            "order": 35,
+            "hanzi": "打交道",
+            "pinyin": "dǎ jiāodao",
+            "meaning_vi": "giao thiệp; qua lại; tiếp xúc",
+            "meaning_en": "to come into contact with; to have dealings with",
+            "pos": "verb_phrase",
+            "tags": [
+              "cụm động từ"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "打交道",
+              "back": "dǎ jiāodao — giao thiệp; qua lại; tiếp xúc",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook/generated_mixed",
+            "check_needed": false
+          },
+          {
+            "id": "vocab_036",
+            "type": "vocabulary_item",
+            "order": 36,
+            "hanzi": "顺路",
+            "pinyin": "shùnlù",
+            "meaning_vi": "tiện đường; thuận đường",
+            "meaning_en": "passingly; on the way",
+            "pos": "adverb",
+            "tags": [
+              "phó/tính từ"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "顺路",
+              "back": "shùnlù — tiện đường; thuận đường",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook/generated_mixed",
+            "check_needed": false
+          },
+          {
+            "id": "vocab_037",
+            "type": "vocabulary_item",
+            "order": 37,
+            "hanzi": "发动",
+            "pinyin": "fādòng",
+            "meaning_vi": "khởi động; phát động",
+            "meaning_en": "to start; to launch",
+            "pos": "verb",
+            "tags": [
+              "động từ"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "发动",
+              "back": "fādòng — khởi động; phát động",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook/generated_mixed",
+            "check_needed": false
+          },
+          {
+            "id": "vocab_038",
+            "type": "vocabulary_item",
+            "order": 38,
+            "hanzi": "招手",
+            "pinyin": "zhāo shǒu",
+            "meaning_vi": "vẫy tay",
+            "meaning_en": "to wave one’s hand",
+            "pos": "verb",
+            "tags": [
+              "động từ"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "招手",
+              "back": "zhāo shǒu — vẫy tay",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook/generated_mixed",
+            "check_needed": false
+          },
+          {
+            "id": "vocab_039",
+            "type": "vocabulary_item",
+            "order": 39,
+            "hanzi": "没准儿",
+            "pinyin": "méi zhǔnr",
+            "meaning_vi": "không chừng; có lẽ",
+            "meaning_en": "who knows; probably",
+            "pos": "verb",
+            "tags": [
+              "động từ/khẩu ngữ"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "没准儿",
+              "back": "méi zhǔnr — không chừng; có lẽ",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook/generated_mixed",
+            "check_needed": false
+          },
+          {
+            "id": "vocab_040",
+            "type": "vocabulary_item",
+            "order": 40,
+            "hanzi": "见面",
+            "pinyin": "jiàn miàn",
+            "meaning_vi": "gặp mặt",
+            "meaning_en": "to meet; to see",
+            "pos": "verb",
+            "tags": [
+              "động từ"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "见面",
+              "back": "jiàn miàn — gặp mặt",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook/generated_mixed",
+            "check_needed": false
+          },
+          {
+            "id": "vocab_041",
+            "type": "vocabulary_item",
+            "order": 41,
+            "hanzi": "愣",
+            "pinyin": "lèng",
+            "meaning_vi": "sững sờ; đờ ra",
+            "meaning_en": "to be dumbfounded; to be stunned",
+            "pos": "verb",
+            "tags": [
+              "động từ"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "愣",
+              "back": "lèng — sững sờ; đờ ra",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook/generated_mixed",
+            "check_needed": false
+          },
+          {
+            "id": "vocab_042",
+            "type": "vocabulary_item",
+            "order": 42,
+            "hanzi": "至今",
+            "pinyin": "zhìjīn",
+            "meaning_vi": "đến nay; cho tới bây giờ",
+            "meaning_en": "up to now; to this day",
+            "pos": "adverb",
+            "tags": [
+              "phó từ"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "至今",
+              "back": "zhìjīn — đến nay; cho tới bây giờ",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook/generated_mixed",
+            "check_needed": false
+          }
+        ]
+      },
+      {
+        "id": "section_03_proper_nouns",
+        "type": "proper_nouns",
+        "order": 3,
+        "title": "专名",
+        "title_vi": "Tên riêng",
+        "source_origin": "textbook/generated_mixed",
+        "check_needed": false,
+        "items": [
+          {
+            "id": "proper_01",
+            "type": "proper_noun",
+            "order": 1,
+            "hanzi": "中国民航",
+            "pinyin": "Zhōngguó Mínháng",
+            "meaning_vi": "Cục Hàng không dân dụng Trung Quốc / CAAC",
+            "meaning_en": "CAAC (Civil Aviation Administration of China)",
+            "source_origin": "textbook/generated_mixed",
+            "check_needed": false
+          },
+          {
+            "id": "proper_02",
+            "type": "proper_noun",
+            "order": 2,
+            "hanzi": "建国门",
+            "pinyin": "Jiànguó Mén",
+            "meaning_vi": "Kiến Quốc Môn, một địa danh ở Bắc Kinh",
+            "meaning_en": "Jianguomen, a place in Beijing",
+            "source_origin": "textbook/generated_mixed",
+            "check_needed": false
+          },
+          {
+            "id": "proper_03",
+            "type": "proper_noun",
+            "order": 3,
+            "hanzi": "西直门",
+            "pinyin": "Xīzhí Mén",
+            "meaning_vi": "Tây Trực Môn, một địa danh ở Bắc Kinh",
+            "meaning_en": "Xizhimen, a place in Beijing",
+            "source_origin": "textbook/generated_mixed",
+            "check_needed": false
+          },
+          {
+            "id": "proper_04",
+            "type": "proper_noun",
+            "order": 4,
+            "hanzi": "复兴门",
+            "pinyin": "Fùxīng Mén",
+            "meaning_vi": "Phục Hưng Môn, một địa danh ở Bắc Kinh",
+            "meaning_en": "Fuxingmen, a place in Beijing",
+            "source_origin": "textbook/generated_mixed",
+            "check_needed": false
+          }
+        ]
+      },
+      {
+        "id": "section_04_notes",
+        "type": "notes",
+        "order": 4,
+        "title": "注释",
+        "title_vi": "Chú thích sau bài khóa",
+        "source_origin": "textbook/generated_mixed",
+        "check_needed": false,
+        "items": [
+          {
+            "id": "note_01",
+            "type": "note",
+            "order": 1,
+            "title": "临了儿，他还送我好多书。",
+            "structure": "临了儿",
+            "meaning_vi": "了 trong 临了儿 đọc liǎo, nghĩa là “kết thúc”. 临了儿 biểu thị lúc sắp kết thúc/cuối cùng.",
+            "examples": [
+              {
+                "id": "note_01_ex_01",
+                "zh": "临了儿，他还送我好多书。",
+                "pinyin": "",
+                "vi": "Cuối cùng, anh ấy còn tặng tôi rất nhiều sách.",
+                "en": "",
+                "highlight": [
+                  "临了儿"
+                ],
+                "grammar_refs": [],
+                "vocab_refs": [],
+                "source_ref": "",
+                "note_vi": "",
+                "audio_key": "",
+                "source_origin": "textbook",
+                "check_needed": false
+              }
+            ],
+            "source_refs": [
+              "text_01_p04"
+            ],
+            "source_origin": "textbook/generated_mixed",
+            "check_needed": false
+          },
+          {
+            "id": "note_02",
+            "type": "note",
+            "order": 2,
+            "title": "之后我多次提起给他书钱的事。",
+            "structure": "提起",
+            "meaning_vi": "提起 nghĩa là nhắc tới, nói tới một chuyện nào đó.",
+            "examples": [
+              {
+                "id": "note_02_ex_01",
+                "zh": "一提起这件事我就生气。",
+                "pinyin": "",
+                "vi": "Hễ nhắc tới chuyện này là tôi tức giận.",
+                "en": "",
+                "highlight": [
+                  "提起"
+                ],
+                "grammar_refs": [],
+                "vocab_refs": [],
+                "source_ref": "",
+                "note_vi": "",
+                "audio_key": "",
+                "source_origin": "textbook",
+                "check_needed": false
+              }
+            ],
+            "source_refs": [
+              "text_01_p04"
+            ],
+            "source_origin": "textbook/generated_mixed",
+            "check_needed": false
+          },
+          {
+            "id": "note_03",
+            "type": "note",
+            "order": 3,
+            "title": "正在我左顾右盼的时候",
+            "structure": "左顾右盼",
+            "meaning_vi": "左顾右盼 nghĩa là nhìn trái nhìn phải / nhìn quanh xung quanh.",
+            "examples": [
+              {
+                "id": "note_03_ex_01",
+                "zh": "正在我左顾右盼的时候，身后有两个小伙子主动跟我打招呼。",
+                "pinyin": "",
+                "vi": "Đúng lúc tôi đang nhìn quanh, phía sau có hai chàng trai chủ động chào tôi.",
+                "en": "",
+                "highlight": [
+                  "左顾右盼"
+                ],
+                "grammar_refs": [],
+                "vocab_refs": [],
+                "source_ref": "",
+                "note_vi": "",
+                "audio_key": "",
+                "source_origin": "textbook",
+                "check_needed": false
+              }
+            ],
+            "source_refs": [
+              "text_01_p06"
+            ],
+            "source_origin": "textbook/generated_mixed",
+            "check_needed": false
+          }
+        ]
+      },
+      {
+        "id": "section_05_grammar",
+        "type": "grammar",
+        "order": 5,
+        "title": "词语用法 / 语法",
+        "title_vi": "Từ ngữ và cách dùng / Ngữ pháp",
+        "source_origin": "textbook/generated_mixed",
+        "check_needed": false,
+        "items": [
+          {
+            "id": "grammar_usage_01",
+            "type": "grammar_point",
+            "order": 1,
+            "title": "其实",
+            "title_vi": "其实 — thực ra / thật ra",
+            "level": "HSK3-ish / Hanyu 3A",
+            "tags": [
+              "词语用法",
+              "usage"
+            ],
+            "source_origin": "textbook/generated_mixed",
+            "check_needed": false,
+            "blocks": [
+              {
+                "id": "grammar_usage_01_overview",
+                "type": "grammar_overview",
+                "order": 1,
+                "title": "Cách dùng",
+                "content_vi": "其实 biểu thị điều người nói sắp nói là tình hình thật; thường dùng để sửa lại, giải thích hoặc bổ sung cho điều đã nói/nghĩ trước đó. Hay đặt trước chủ ngữ.",
+                "source_origin": "textbook/generated_mixed",
+                "check_needed": false
+              },
+              {
+                "id": "grammar_usage_01_examples",
+                "type": "grammar_examples",
+                "order": 2,
+                "title": "Ví dụ",
+                "examples": [
+                  {
+                    "id": "grammar_usage_01_ex_01",
+                    "zh": "其实，北京人最爱说的一句话是“回头再说”。",
+                    "pinyin": "",
+                    "vi": "Thật ra, câu người Bắc Kinh thích nói nhất là “để sau rồi nói”.",
+                    "en": "",
+                    "highlight": [
+                      "其实"
+                    ],
+                    "grammar_refs": [],
+                    "vocab_refs": [],
+                    "source_ref": "",
+                    "note_vi": "",
+                    "audio_key": "",
+                    "source_origin": "textbook",
+                    "check_needed": false
+                  },
+                  {
+                    "id": "grammar_usage_01_ex_02",
+                    "zh": "你以为他回国了，其实他去云南旅行了。",
+                    "pinyin": "",
+                    "vi": "Bạn tưởng anh ấy về nước rồi, thật ra anh ấy đi Vân Nam du lịch.",
+                    "en": "",
+                    "highlight": [],
+                    "grammar_refs": [],
+                    "vocab_refs": [],
+                    "source_ref": "",
+                    "note_vi": "",
+                    "audio_key": "",
+                    "source_origin": "textbook",
+                    "check_needed": false
+                  },
+                  {
+                    "id": "grammar_usage_01_ex_03",
+                    "zh": "看她的样子只有三十多岁，其实她都四十多了。",
+                    "pinyin": "",
+                    "vi": "Nhìn cô ấy chỉ hơn ba mươi tuổi, thật ra cô ấy đã hơn bốn mươi rồi.",
+                    "en": "",
+                    "highlight": [],
+                    "grammar_refs": [],
+                    "vocab_refs": [],
+                    "source_ref": "",
+                    "note_vi": "",
+                    "audio_key": "",
+                    "source_origin": "textbook",
+                    "check_needed": false
+                  }
+                ],
+                "source_origin": "textbook/generated_mixed",
+                "check_needed": false
+              }
+            ]
+          },
+          {
+            "id": "grammar_usage_02",
+            "type": "grammar_point",
+            "order": 2,
+            "title": "再说",
+            "title_vi": "再说 — để sau rồi nói / tính sau",
+            "level": "HSK3-ish / Hanyu 3A",
+            "tags": [
+              "词语用法",
+              "usage"
+            ],
+            "source_origin": "textbook/generated_mixed",
+            "check_needed": false,
+            "blocks": [
+              {
+                "id": "grammar_usage_02_overview",
+                "type": "grammar_overview",
+                "order": 1,
+                "title": "Cách dùng",
+                "content_vi": "再说 biểu thị đợi khi có thời gian, điều kiện hoặc cơ hội thích hợp thì sẽ xét/bàn/xử lý tiếp. Trong giao tiếp, đôi khi nó là cách từ chối hoặc trì hoãn gián tiếp.",
+                "source_origin": "textbook/generated_mixed",
+                "check_needed": false
+              },
+              {
+                "id": "grammar_usage_02_structure",
+                "type": "grammar_structure",
+                "order": 2,
+                "title": "Công thức",
+                "formulas": [
+                  {
+                    "label": "nói sau / xử lý sau",
+                    "pattern": "以后 / 回头 / 有空儿 + 再说"
+                  }
+                ],
+                "source_origin": "textbook/generated_mixed",
+                "check_needed": false
+              },
+              {
+                "id": "grammar_usage_02_examples",
+                "type": "grammar_examples",
+                "order": 3,
+                "title": "Ví dụ",
+                "examples": [
+                  {
+                    "id": "grammar_usage_02_ex_01",
+                    "zh": "这件事以后再说吧。",
+                    "pinyin": "",
+                    "vi": "Việc này để sau hãy nói nhé.",
+                    "en": "",
+                    "highlight": [
+                      "再说"
+                    ],
+                    "grammar_refs": [],
+                    "vocab_refs": [],
+                    "source_ref": "",
+                    "note_vi": "",
+                    "audio_key": "",
+                    "source_origin": "textbook",
+                    "check_needed": false
+                  },
+                  {
+                    "id": "grammar_usage_02_ex_02",
+                    "zh": "我今天没有带钱，以后再说吧。",
+                    "pinyin": "",
+                    "vi": "Hôm nay tôi không mang tiền, để sau rồi tính nhé.",
+                    "en": "",
+                    "highlight": [],
+                    "grammar_refs": [],
+                    "vocab_refs": [],
+                    "source_ref": "",
+                    "note_vi": "",
+                    "audio_key": "",
+                    "source_origin": "textbook",
+                    "check_needed": false
+                  },
+                  {
+                    "id": "grammar_usage_02_ex_03",
+                    "zh": "明天我还有别的事，以后有空儿再说吧。",
+                    "pinyin": "",
+                    "vi": "Mai tôi còn việc khác, sau này rảnh rồi nói nhé.",
+                    "en": "",
+                    "highlight": [],
+                    "grammar_refs": [],
+                    "vocab_refs": [],
+                    "source_ref": "",
+                    "note_vi": "",
+                    "audio_key": "",
+                    "source_origin": "textbook",
+                    "check_needed": false
+                  }
+                ],
+                "source_origin": "textbook/generated_mixed",
+                "check_needed": false
+              }
+            ]
+          },
+          {
+            "id": "grammar_usage_03",
+            "type": "grammar_point",
+            "order": 3,
+            "title": "实在",
+            "title_vi": "实在 — thành thật / thực sự",
+            "level": "HSK3-ish / Hanyu 3A",
+            "tags": [
+              "词语用法",
+              "usage"
+            ],
+            "source_origin": "textbook/generated_mixed",
+            "check_needed": false,
+            "blocks": [
+              {
+                "id": "grammar_usage_03_overview",
+                "type": "grammar_overview",
+                "order": 1,
+                "title": "Hai loại từ",
+                "items": [
+                  {
+                    "label": "形容词",
+                    "meaning_vi": "thành thật, không giả dối"
+                  },
+                  {
+                    "label": "副词",
+                    "meaning_vi": "quả thật, thực sự, dùng để nhấn mạnh"
+                  }
+                ],
+                "source_origin": "textbook/generated_mixed",
+                "check_needed": false
+              },
+              {
+                "id": "grammar_usage_03_examples",
+                "type": "grammar_examples",
+                "order": 2,
+                "title": "Ví dụ",
+                "examples": [
+                  {
+                    "id": "grammar_usage_03_ex_01",
+                    "zh": "怎么会这样不实在？",
+                    "pinyin": "",
+                    "vi": "Sao lại không thành thật như vậy?",
+                    "en": "",
+                    "highlight": [
+                      "实在"
+                    ],
+                    "grammar_refs": [],
+                    "vocab_refs": [],
+                    "source_ref": "",
+                    "note_vi": "",
+                    "audio_key": "",
+                    "source_origin": "textbook",
+                    "check_needed": false
+                  },
+                  {
+                    "id": "grammar_usage_03_ex_02",
+                    "zh": "要把汉语说得跟中国人一样好，实在不容易。",
+                    "pinyin": "",
+                    "vi": "Muốn nói tiếng Hán tốt như người Trung Quốc thật sự không dễ.",
+                    "en": "",
+                    "highlight": [],
+                    "grammar_refs": [],
+                    "vocab_refs": [],
+                    "source_ref": "",
+                    "note_vi": "",
+                    "audio_key": "",
+                    "source_origin": "textbook",
+                    "check_needed": false
+                  },
+                  {
+                    "id": "grammar_usage_03_ex_03",
+                    "zh": "我实在爬不动了，这山太高了。",
+                    "pinyin": "",
+                    "vi": "Tôi thật sự leo không nổi nữa, ngọn núi này quá cao.",
+                    "en": "",
+                    "highlight": [],
+                    "grammar_refs": [],
+                    "vocab_refs": [],
+                    "source_ref": "",
+                    "note_vi": "",
+                    "audio_key": "",
+                    "source_origin": "textbook",
+                    "check_needed": false
+                  }
+                ],
+                "source_origin": "textbook/generated_mixed",
+                "check_needed": false
+              }
+            ]
+          },
+          {
+            "id": "grammar_usage_04",
+            "type": "grammar_point",
+            "order": 4,
+            "title": "用得着 / 用不着",
+            "title_vi": "用得着 / 用不着 — cần dùng đến / không cần",
+            "level": "HSK3-ish / Hanyu 3A",
+            "tags": [
+              "词语用法",
+              "usage"
+            ],
+            "source_origin": "textbook/generated_mixed",
+            "check_needed": false,
+            "blocks": [
+              {
+                "id": "grammar_usage_04_overview",
+                "type": "grammar_overview",
+                "order": 1,
+                "title": "Cách dùng",
+                "content_vi": "用得着 nghĩa là cần dùng đến, có ích, có liên quan. Phủ định là 用不着, nghĩa là không cần, không dùng đến.",
+                "source_origin": "textbook/generated_mixed",
+                "check_needed": false
+              },
+              {
+                "id": "grammar_usage_04_examples",
+                "type": "grammar_examples",
+                "order": 2,
+                "title": "Ví dụ",
+                "examples": [
+                  {
+                    "id": "grammar_usage_04_ex_01",
+                    "zh": "这些书都是你用得着的。",
+                    "pinyin": "",
+                    "vi": "Những cuốn sách này đều là thứ bạn cần dùng đến.",
+                    "en": "",
+                    "highlight": [
+                      "用得着"
+                    ],
+                    "grammar_refs": [],
+                    "vocab_refs": [],
+                    "source_ref": "",
+                    "note_vi": "",
+                    "audio_key": "",
+                    "source_origin": "textbook",
+                    "check_needed": false
+                  },
+                  {
+                    "id": "grammar_usage_04_ex_02",
+                    "zh": "这台电脑我已经用不着了。",
+                    "pinyin": "",
+                    "vi": "Chiếc máy tính này tôi đã không cần dùng đến nữa.",
+                    "en": "",
+                    "highlight": [
+                      "用不着"
+                    ],
+                    "grammar_refs": [],
+                    "vocab_refs": [],
+                    "source_ref": "",
+                    "note_vi": "",
+                    "audio_key": "",
+                    "source_origin": "textbook",
+                    "check_needed": false
+                  },
+                  {
+                    "id": "grammar_usage_04_ex_03",
+                    "zh": "有什么意见你就好好儿说，用不着生这么大气。",
+                    "pinyin": "",
+                    "vi": "Có ý kiến gì thì cứ nói đàng hoàng, không cần tức giận như vậy.",
+                    "en": "",
+                    "highlight": [],
+                    "grammar_refs": [],
+                    "vocab_refs": [],
+                    "source_ref": "",
+                    "note_vi": "",
+                    "audio_key": "",
+                    "source_origin": "textbook",
+                    "check_needed": false
+                  }
+                ],
+                "source_origin": "textbook/generated_mixed",
+                "check_needed": false
+              }
+            ]
+          },
+          {
+            "id": "grammar_usage_05",
+            "type": "grammar_point",
+            "order": 5,
+            "title": "至于",
+            "title_vi": "至于 — về phần / còn như",
+            "level": "HSK3-ish / Hanyu 3A",
+            "tags": [
+              "词语用法",
+              "usage"
+            ],
+            "source_origin": "textbook/generated_mixed",
+            "check_needed": false,
+            "blocks": [
+              {
+                "id": "grammar_usage_05_overview",
+                "type": "grammar_overview",
+                "order": 1,
+                "title": "Cách dùng",
+                "content_vi": "至于 thường đặt đầu câu hoặc đầu phân câu để chuyển sang một chủ đề khác. Danh từ/động từ sau 至于 là chủ đề mới được đưa vào.",
+                "source_origin": "textbook/generated_mixed",
+                "check_needed": false
+              },
+              {
+                "id": "grammar_usage_05_examples",
+                "type": "grammar_examples",
+                "order": 2,
+                "title": "Ví dụ",
+                "examples": [
+                  {
+                    "id": "grammar_usage_05_ex_01",
+                    "zh": "至于钱，回头再说吧。",
+                    "pinyin": "",
+                    "vi": "Còn tiền thì để sau rồi nói nhé.",
+                    "en": "",
+                    "highlight": [
+                      "至于"
+                    ],
+                    "grammar_refs": [],
+                    "vocab_refs": [],
+                    "source_ref": "",
+                    "note_vi": "",
+                    "audio_key": "",
+                    "source_origin": "textbook",
+                    "check_needed": false
+                  },
+                  {
+                    "id": "grammar_usage_05_ex_02",
+                    "zh": "我知道这是四川菜，至于怎么做的，我就不知道了。",
+                    "pinyin": "",
+                    "vi": "Tôi biết đây là món Tứ Xuyên, còn làm thế nào thì tôi không biết.",
+                    "en": "",
+                    "highlight": [],
+                    "grammar_refs": [],
+                    "vocab_refs": [],
+                    "source_ref": "",
+                    "note_vi": "",
+                    "audio_key": "",
+                    "source_origin": "textbook",
+                    "check_needed": false
+                  },
+                  {
+                    "id": "grammar_usage_05_ex_03",
+                    "zh": "至于你们赞成不赞成，那我就不管了。",
+                    "pinyin": "",
+                    "vi": "Còn việc các bạn tán thành hay không, tôi không quản nữa.",
+                    "en": "",
+                    "highlight": [],
+                    "grammar_refs": [],
+                    "vocab_refs": [],
+                    "source_ref": "",
+                    "note_vi": "",
+                    "audio_key": "",
+                    "source_origin": "textbook",
+                    "check_needed": false
+                  }
+                ],
+                "source_origin": "textbook/generated_mixed",
+                "check_needed": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "section_06_exercises",
+        "type": "exercises",
+        "order": 6,
+        "title": "练习",
+        "title_vi": "Bài tập",
+        "source_origin": "textbook/generated_mixed",
+        "check_needed": true,
+        "note_vi": "Bài tập được giữ theo nhóm chính trong sách; đáp án mẫu là generated nên đã đánh check_needed=true.",
+        "items": [
+          {
+            "id": "exercise_01",
+            "type": "phonetics",
+            "variant": "distinguish_pronunciation_and_tones",
+            "order": 1,
+            "title": "一、语音",
+            "title_vi": "Ngữ âm",
+            "instruction": {
+              "zh": "辨音辨调",
+              "vi": "Phân biệt âm và thanh điệu."
+            },
+            "difficulty": "normal",
+            "skill_focus": [
+              "pronunciation"
+            ],
+            "questions": [
+              {
+                "id": "exercise_01_q01",
+                "question": "其实 qíshí / 启事 qǐshì；民航 mínháng / 迷航 míháng；招手 zhāo shǒu / 招收 zhāoshōu；地道 dìdao / 地道 dìdào；熟悉 shúxi / 梳洗 shūxǐ；犹豫 yóuyù / 由于 yóuyú",
+                "answer": "朗读并辨音辨调。",
+                "source_origin": "textbook_question_generated_answer",
+                "answer_verified": false,
+                "check_needed": true
+              }
+            ],
+            "source_origin": "textbook",
+            "check_needed": false,
+            "rendering": {
+              "renderer": "exercise.phonetics.v2"
+            }
+          },
+          {
+            "id": "exercise_02",
+            "type": "read_aloud",
+            "variant": "read_phrases",
+            "order": 2,
+            "title": "二、朗读词语/句子",
+            "title_vi": "Đọc từ/cụm/câu",
+            "instruction": {
+              "zh": "朗读下列词组。",
+              "vi": "Đọc to các cụm từ sau."
+            },
+            "difficulty": "normal",
+            "skill_focus": [
+              "reading_aloud"
+            ],
+            "questions": [
+              {
+                "id": "exercise_02_q01",
+                "question": "回头再说，口头语，打招呼，打交道，不好打交道，主动帮忙，主动打招呼，招手叫车，发动汽车，付钱，价钱太贵，推辞邀请，熟悉路线，左右看看，至今没有，没准儿不来",
+                "answer": "朗读练习。",
+                "source_origin": "textbook_question_generated_answer",
+                "answer_verified": false,
+                "check_needed": true
+              }
+            ],
+            "source_origin": "textbook",
+            "check_needed": false,
+            "chunks": [
+              {
+                "id": "ex02_chunk_01",
+                "text": "",
+                "pinyin": "",
+                "vi": "",
+                "audio_key": "",
+                "source_origin": "textbook_question_generated_answer",
+                "check_needed": true
+              }
+            ],
+            "rendering": {
+              "renderer": "exercise.read_aloud.v2"
+            }
+          },
+          {
+            "id": "exercise_03",
+            "type": "choose_words_fill_blank",
+            "variant": "word_bank",
+            "order": 3,
+            "title": "三、选词填空",
+            "title_vi": "Chọn từ điền chỗ trống",
+            "instruction": {
+              "zh": "选词填空。",
+              "vi": "Chọn từ thích hợp điền vào chỗ trống."
+            },
+            "difficulty": "normal",
+            "skill_focus": [
+              "vocabulary",
+              "grammar"
+            ],
+            "grammar_refs": [
+              "grammar_usage_01",
+              "grammar_usage_02",
+              "grammar_usage_03",
+              "grammar_usage_05"
+            ],
+            "vocab_refs": [],
+            "word_bank": [
+              "打交道",
+              "地道",
+              "没准儿",
+              "实在",
+              "再说",
+              "打招呼",
+              "至于",
+              "犹豫",
+              "同时",
+              "其实"
+            ],
+            "questions": [
+              {
+                "id": "ex03_a_q01",
+                "prompt": "今天没有时间了，我们明天______吧。",
+                "answer": "再说",
+                "acceptable_answers": [
+                  "再说"
+                ],
+                "explanation_vi": "再说 = để sau nói / bàn sau.",
+                "grammar_refs": [
+                  "grammar_usage_02"
+                ],
+                "source_origin": "textbook_question_generated_answer",
+                "answer_verified": true,
+                "check_needed": false
+              },
+              {
+                "id": "ex03_a_q02",
+                "prompt": "你看他像中国人，______他是日本人。",
+                "answer": "其实",
+                "acceptable_answers": [
+                  "其实"
+                ],
+                "explanation_vi": "其实 = thật ra.",
+                "grammar_refs": [
+                  "grammar_usage_01"
+                ],
+                "source_origin": "textbook_question_generated_answer",
+                "answer_verified": true,
+                "check_needed": false
+              },
+              {
+                "id": "ex03_a_q03",
+                "prompt": "她汉语说得真______。",
+                "answer": "地道",
+                "acceptable_answers": [
+                  "地道"
+                ],
+                "explanation_vi": "地道 = chuẩn, tự nhiên như người bản xứ.",
+                "grammar_refs": [],
+                "source_origin": "textbook_question_generated_answer",
+                "answer_verified": true,
+                "check_needed": false
+              },
+              {
+                "id": "ex03_a_q04",
+                "prompt": "我______想不起来把钥匙放在什么地方了。",
+                "answer": "实在",
+                "acceptable_answers": [
+                  "实在"
+                ],
+                "explanation_vi": "实在 = thật sự, quả thật.",
+                "grammar_refs": [
+                  "grammar_usage_03"
+                ],
+                "source_origin": "textbook_question_generated_answer",
+                "answer_verified": true,
+                "check_needed": false
+              },
+              {
+                "id": "ex03_a_q05",
+                "prompt": "我只听说他要去台湾开会，______什么时候去我就不知道了。",
+                "answer": "至于",
+                "acceptable_answers": [
+                  "至于"
+                ],
+                "explanation_vi": "至于 chuyển sang nói riêng về một mặt/vấn đề khác.",
+                "grammar_refs": [
+                  "grammar_usage_05"
+                ],
+                "source_origin": "textbook_question_generated_answer",
+                "answer_verified": true,
+                "check_needed": false
+              },
+              {
+                "id": "ex03_a_q06",
+                "prompt": "我已经努力了，______能不能毕业，就看考试结果了。",
+                "answer": "至于",
+                "acceptable_answers": [
+                  "至于"
+                ],
+                "explanation_vi": "至于 + vấn đề được tách riêng để nói tiếp.",
+                "grammar_refs": [
+                  "grammar_usage_05"
+                ],
+                "source_origin": "textbook_question_generated_answer",
+                "answer_verified": true,
+                "check_needed": false
+              },
+              {
+                "id": "ex03_a_q07",
+                "prompt": "中国人______的方法很多，像“你去哪儿了？”“你吃了吗？”等都是。",
+                "answer": "打招呼",
+                "acceptable_answers": [
+                  "打招呼"
+                ],
+                "explanation_vi": "打招呼 = chào hỏi.",
+                "grammar_refs": [],
+                "source_origin": "textbook_question_generated_answer",
+                "answer_verified": true,
+                "check_needed": false
+              },
+              {
+                "id": "ex03_a_q08",
+                "prompt": "这件事你不能再______了，应该决定了。",
+                "answer": "犹豫",
+                "acceptable_answers": [
+                  "犹豫"
+                ],
+                "explanation_vi": "犹豫 = do dự.",
+                "grammar_refs": [],
+                "source_origin": "textbook_question_generated_answer",
+                "answer_verified": true,
+                "check_needed": false
+              },
+              {
+                "id": "ex03_a_q09",
+                "prompt": "你把你的地址告诉我，______我还有机会去你们国家旅行呢。",
+                "answer": "没准儿",
+                "acceptable_answers": [
+                  "没准儿"
+                ],
+                "explanation_vi": "没准儿 = biết đâu, có thể.",
+                "grammar_refs": [],
+                "source_origin": "textbook_question_generated_answer",
+                "answer_verified": true,
+                "check_needed": false
+              },
+              {
+                "id": "ex03_a_q10",
+                "prompt": "她现在不来，______今天就不来了。",
+                "answer": "没准儿",
+                "acceptable_answers": [
+                  "没准儿"
+                ],
+                "explanation_vi": "没准儿 = biết đâu/chưa biết chừng.",
+                "grammar_refs": [],
+                "source_origin": "textbook_question_generated_answer",
+                "answer_verified": true,
+                "check_needed": false
+              },
+              {
+                "id": "ex03_a_q11",
+                "prompt": "学习汉语不但要学习语言，______还要了解中国的社会和文化。",
+                "answer": "同时",
+                "acceptable_answers": [
+                  "同时"
+                ],
+                "explanation_vi": "同时 = đồng thời.",
+                "grammar_refs": [],
+                "source_origin": "textbook_question_generated_answer",
+                "answer_verified": true,
+                "check_needed": false
+              },
+              {
+                "id": "ex03_a_q12",
+                "prompt": "学了汉语，以后跟中国人______就方便多了。",
+                "answer": "打交道",
+                "acceptable_answers": [
+                  "打交道"
+                ],
+                "explanation_vi": "跟……打交道 = giao tiếp/tiếp xúc/làm việc với ai.",
+                "grammar_refs": [],
+                "source_origin": "textbook_question_generated_answer",
+                "answer_verified": true,
+                "check_needed": false
+              },
+              {
+                "id": "ex03_b_q01",
+                "prompt": "我早就______去书市买书比较便宜，所以今天我一定要去书市逛逛。（听说 / 打听）",
+                "answer": "听说",
+                "acceptable_answers": [
+                  "听说"
+                ],
+                "explanation_vi": "听说 = nghe nói.",
+                "source_origin": "textbook_question_generated_answer",
+                "answer_verified": true,
+                "check_needed": false
+              },
+              {
+                "id": "ex03_b_q02",
+                "prompt": "______他不在这个公司了，你能不能帮我______一下儿他到哪个公司去了。（听说 / 打听）",
+                "answer": "听说；打听",
+                "acceptable_answers": [
+                  "听说；打听",
+                  "听说，打听"
+                ],
+                "explanation_vi": "听说 = nghe nói; 打听 = hỏi thăm/dò hỏi thông tin.",
+                "source_origin": "textbook_question_generated_answer",
+                "answer_verified": true,
+                "check_needed": false
+              },
+              {
+                "id": "ex03_b_q03",
+                "prompt": "她从小在北京长大，汉语说得很______，开始时我还以为她是中国人呢。（地道 / 流利）",
+                "answer": "地道",
+                "acceptable_answers": [
+                  "地道"
+                ],
+                "explanation_vi": "地道 nhấn mạnh tự nhiên/chuẩn bản xứ.",
+                "source_origin": "textbook_question_generated_answer",
+                "answer_verified": true,
+                "check_needed": false
+              },
+              {
+                "id": "ex03_b_q04",
+                "prompt": "她这个人说话______，你不要听她的。（没准儿 / 不一定）",
+                "answer": "没准儿",
+                "acceptable_answers": [
+                  "没准儿"
+                ],
+                "explanation_vi": "说话没准儿 = lời nói không chắc/chẳng đáng tin lắm.",
+                "source_origin": "textbook_question_generated_answer",
+                "answer_verified": false,
+                "check_needed": true
+              },
+              {
+                "id": "ex03_b_q05",
+                "prompt": "今天的晚会，他______参加得了，我们不要等他了。（没准儿 / 不一定）",
+                "answer": "不一定",
+                "acceptable_answers": [
+                  "不一定"
+                ],
+                "explanation_vi": "不一定 = chưa chắc.",
+                "source_origin": "textbook_question_generated_answer",
+                "answer_verified": true,
+                "check_needed": false
+              },
+              {
+                "id": "ex03_b_q06",
+                "prompt": "都快九点了，又下这么大雨，今天______她不来了。（没准儿 / 不一定）",
+                "answer": "没准儿",
+                "acceptable_answers": [
+                  "没准儿"
+                ],
+                "explanation_vi": "没准儿 = biết đâu/chưa biết chừng.",
+                "source_origin": "textbook_question_generated_answer",
+                "answer_verified": true,
+                "check_needed": false
+              }
+            ],
+            "answer_key": [
+              {
+                "question_id": "ex03_a_q01",
+                "answer": "再说",
+                "answer_verified": true,
+                "check_needed": false
+              },
+              {
+                "question_id": "ex03_a_q02",
+                "answer": "其实",
+                "answer_verified": true,
+                "check_needed": false
+              },
+              {
+                "question_id": "ex03_a_q03",
+                "answer": "地道",
+                "answer_verified": true,
+                "check_needed": false
+              },
+              {
+                "question_id": "ex03_a_q04",
+                "answer": "实在",
+                "answer_verified": true,
+                "check_needed": false
+              },
+              {
+                "question_id": "ex03_a_q05",
+                "answer": "至于",
+                "answer_verified": true,
+                "check_needed": false
+              },
+              {
+                "question_id": "ex03_a_q06",
+                "answer": "至于",
+                "answer_verified": true,
+                "check_needed": false
+              },
+              {
+                "question_id": "ex03_a_q07",
+                "answer": "打招呼",
+                "answer_verified": true,
+                "check_needed": false
+              },
+              {
+                "question_id": "ex03_a_q08",
+                "answer": "犹豫",
+                "answer_verified": true,
+                "check_needed": false
+              },
+              {
+                "question_id": "ex03_a_q09",
+                "answer": "没准儿",
+                "answer_verified": true,
+                "check_needed": false
+              },
+              {
+                "question_id": "ex03_a_q10",
+                "answer": "没准儿",
+                "answer_verified": true,
+                "check_needed": false
+              },
+              {
+                "question_id": "ex03_a_q11",
+                "answer": "同时",
+                "answer_verified": true,
+                "check_needed": false
+              },
+              {
+                "question_id": "ex03_a_q12",
+                "answer": "打交道",
+                "answer_verified": true,
+                "check_needed": false
+              },
+              {
+                "question_id": "ex03_b_q01",
+                "answer": "听说",
+                "answer_verified": true,
+                "check_needed": false
+              },
+              {
+                "question_id": "ex03_b_q02",
+                "answer": "听说；打听",
+                "answer_verified": true,
+                "check_needed": false
+              },
+              {
+                "question_id": "ex03_b_q03",
+                "answer": "地道",
+                "answer_verified": true,
+                "check_needed": false
+              },
+              {
+                "question_id": "ex03_b_q04",
+                "answer": "没准儿",
+                "answer_verified": false,
+                "check_needed": true
+              },
+              {
+                "question_id": "ex03_b_q05",
+                "answer": "不一定",
+                "answer_verified": true,
+                "check_needed": false
+              },
+              {
+                "question_id": "ex03_b_q06",
+                "answer": "没准儿",
+                "answer_verified": true,
+                "check_needed": false
+              }
+            ],
+            "rendering": {
+              "renderer": "exercise.fill_blank.v1",
+              "input_mode": "dropdown",
+              "show_word_bank": true,
+              "show_answer_after_submit": true
+            },
+            "source_origin": "textbook",
+            "check_needed": true
+          },
+          {
+            "id": "exercise_04",
+            "type": "fill_blank",
+            "variant": "complete_with_given_words",
+            "order": 4,
+            "title": "四、用括号里的词语完成句子",
+            "title_vi": "Dùng từ trong ngoặc hoàn thành câu",
+            "instruction": {
+              "zh": "用括号里的词语完成句子。",
+              "vi": "Dùng từ/cụm từ trong ngoặc để hoàn thành câu."
+            },
+            "difficulty": "normal",
+            "skill_focus": [
+              "usage"
+            ],
+            "questions": [
+              {
+                "id": "exercise_04_q02",
+                "question": "____，我愿意跟她交朋友。（实在）",
+                "answer": "她很实在，我愿意跟她交朋友。",
+                "source_origin": "textbook_question_generated_answer",
+                "answer_verified": false,
+                "check_needed": true
+              },
+              {
+                "id": "exercise_04_q03",
+                "question": "她告诉我下个月要来中国，____。（至于）",
+                "answer": "至于什么时候来，她还没告诉我。",
+                "source_origin": "textbook_question_generated_answer",
+                "answer_verified": false,
+                "check_needed": true
+              },
+              {
+                "id": "exercise_04_q05",
+                "question": "我的作业还没有做完呢，晚上看不看电影，____。（犹豫）",
+                "answer": "我的作业还没有做完呢，晚上看不看电影，我还在犹豫。",
+                "source_origin": "textbook_question_generated_answer",
+                "answer_verified": false,
+                "check_needed": true
+              },
+              {
+                "id": "exercise_04_q08",
+                "question": "从那次跟他见面以后，____。（至今）",
+                "answer": "从那次跟他见面以后，至今我们还没有联系。",
+                "source_origin": "textbook_question_generated_answer",
+                "answer_verified": false,
+                "check_needed": true
+              }
+            ],
+            "source_origin": "textbook_question_generated_answer",
+            "check_needed": true,
+            "answer_verified": false,
+            "rendering": {
+              "renderer": "exercise.fill_blank.v2"
+            }
+          },
+          {
+            "id": "exercise_05",
+            "type": "complete_dialogue",
+            "variant": "dialogue_blank",
+            "order": 5,
+            "title": "五、用括号里的词语完成会话",
+            "title_vi": "Dùng từ trong ngoặc hoàn thành hội thoại",
+            "instruction": {
+              "zh": "用括号里的词语完成会话。",
+              "vi": "Dùng từ/cụm từ trong ngoặc để hoàn thành hội thoại."
+            },
+            "difficulty": "normal",
+            "skill_focus": [
+              "conversation",
+              "usage"
+            ],
+            "questions": [
+              {
+                "id": "exercise_05_q01",
+                "question": "A：好久没去爬山了，这个星期日咱们去爬山，好吗？\nB：这个星期日我实在没时间，____。（回头）",
+                "answer": "回头再说吧。",
+                "source_origin": "textbook_question_generated_answer",
+                "answer_verified": false,
+                "check_needed": true
+              },
+              {
+                "id": "exercise_05_q03",
+                "question": "A：他长得真像中国人。\nB：____。（其实）",
+                "answer": "其实他不是中国人。",
+                "source_origin": "textbook_question_generated_answer",
+                "answer_verified": false,
+                "check_needed": true
+              },
+              {
+                "id": "exercise_05_q06",
+                "question": "A：你说我去不去留学呢？\nB：这是多好的机会呀，____。（犹豫）",
+                "answer": "你还犹豫什么？",
+                "source_origin": "textbook_question_generated_answer",
+                "answer_verified": false,
+                "check_needed": true
+              }
+            ],
+            "source_origin": "textbook_question_generated_answer",
+            "check_needed": true,
+            "answer_verified": false,
+            "rendering": {
+              "renderer": "exercise.complete_dialogue.v2"
+            }
+          },
+          {
+            "id": "exercise_06",
+            "type": "reorder_sentence",
+            "variant": "rearrange_sentences_into_paragraphs",
+            "order": 6,
+            "title": "六、连句成段",
+            "title_vi": "Sắp xếp câu thành đoạn",
+            "instruction": {
+              "zh": "连句成段。",
+              "vi": "Sắp xếp các câu thành đoạn văn."
+            },
+            "difficulty": "normal",
+            "skill_focus": [
+              "discourse"
+            ],
+            "questions": [
+              {
+                "id": "exercise_06_q01",
+                "question": "A. 可能是因为那里从来没有去过外国人吧\nB. 一天我跟一个中国朋友去了他的家乡——一个小山村\nC. 所以我一到，很多人就都围着我看\nD. 走到路上，常常听到孩子们叫：“外国人！外国人！”\nE. 我想这是因为我的头发太黄，眼睛太蓝，跟他们长得不一样，所以他们感到奇怪",
+                "answer": [
+                  "B",
+                  "D",
+                  "C",
+                  "E",
+                  "A"
+                ],
+                "source_origin": "textbook_question_generated_answer",
+                "answer_verified": false,
+                "check_needed": true
+              }
+            ],
+            "source_origin": "textbook",
+            "check_needed": true,
+            "rendering": {
+              "renderer": "exercise.reorder_sentence.v2"
+            }
+          },
+          {
+            "id": "exercise_07",
+            "type": "correct_sentence",
+            "variant": "correct_the_sentences",
+            "order": 7,
+            "title": "七、改错句",
+            "title_vi": "Sửa câu sai",
+            "instruction": {
+              "zh": "改错句。",
+              "vi": "Sửa câu sai."
+            },
+            "difficulty": "normal",
+            "skill_focus": [
+              "grammar_correction"
+            ],
+            "questions": [
+              {
+                "id": "exercise_07_q01",
+                "wrong_sentence": "中国人常常打招呼我“你去哪儿了？”。",
+                "correct_sentence": "中国人常常跟我打招呼：“你去哪儿了？”",
+                "answer": "中国人常常跟我打招呼：“你去哪儿了？”",
+                "source_origin": "textbook_question_generated_answer",
+                "answer_verified": false,
+                "check_needed": true
+              },
+              {
+                "id": "exercise_07_q06",
+                "wrong_sentence": "我至今没把香港去过。",
+                "correct_sentence": "我至今没去过香港。",
+                "answer": "我至今没去过香港。",
+                "source_origin": "textbook_question_generated_answer",
+                "answer_verified": false,
+                "check_needed": true
+              }
+            ],
+            "source_origin": "textbook_question_generated_answer",
+            "check_needed": true,
+            "answer_verified": false,
+            "rendering": {
+              "renderer": "exercise.correct_sentence.v2"
+            }
+          },
+          {
+            "id": "exercise_08",
+            "type": "custom",
+            "variant": "situation_expression",
+            "order": 8,
+            "title": "八、情景表达",
+            "title_vi": "Biểu đạt theo tình huống",
+            "instruction": {
+              "zh": "下列句子什么情景下说？下列情景怎么说？",
+              "vi": "Các câu sau dùng trong tình huống nào? Với tình huống sau nên nói thế nào?"
+            },
+            "difficulty": "normal",
+            "skill_focus": [
+              "pragmatics"
+            ],
+            "questions": [
+              {
+                "id": "exercise_08_q01",
+                "question": "我们愉快地聊了一路。",
+                "answer": "用于说明一路上聊天很开心、气氛很好。",
+                "source_origin": "textbook_question_generated_answer",
+                "answer_verified": false,
+                "check_needed": true
+              },
+              {
+                "id": "exercise_08_q02",
+                "question": "朋友邀请你去他家，可是你正好有事，又不能决定什么时候去。（至于）",
+                "answer": "至于什么时候去，回头再说吧。",
+                "source_origin": "textbook_question_generated_answer",
+                "answer_verified": false,
+                "check_needed": true
+              }
+            ],
+            "source_origin": "textbook_question_generated_answer",
+            "check_needed": true,
+            "answer_verified": false,
+            "rendering": {
+              "renderer": "exercise.custom.v2"
+            }
+          }
+        ],
+        "coverage_contract": {
+          "version": "exercise_coverage_v1",
+          "rule": "Each numbered exercise visible in the textbook must have one item here, in textbook order. Generated/sample answers are allowed only when marked.",
+          "source_page_range": "Hanyu Jiaocheng 3-1.pdf, lesson 5 exercise pages / uploaded page images p-092 to p-101 where available",
+          "expected_count": 8,
+          "actual_count": 8,
+          "order_verified": true,
+          "content_verified": "partial",
+          "notes_vi": "Một số đáp án mẫu và bản dịch Việt là generated/textbook_generated_mixed nên vẫn giữ check_needed ở cấp item hoặc answer."
+        }
+      },
+      {
+        "id": "section_07_reading",
+        "type": "reading",
+        "order": 7,
+        "title": "综合填空 / 阅读",
+        "title_vi": "Điền tổng hợp / Bài đọc thêm",
+        "source_origin": "textbook/generated_mixed",
+        "check_needed": true,
+        "items": [
+          {
+            "id": "reading_01",
+            "type": "reading_text",
+            "order": 1,
+            "title": "占座位",
+            "title_vi": "Giữ chỗ",
+            "source_origin": "textbook/generated_mixed",
+            "check_needed": true,
+            "supplementary_words": [
+              {
+                "id": "reading_01_word_001",
+                "hanzi": "占",
+                "pinyin": "zhàn",
+                "meaning_vi": "chiếm, giữ chỗ",
+                "vocab_ref": "",
+                "source_origin": "textbook",
+                "check_needed": false
+              },
+              {
+                "id": "reading_01_word_002",
+                "hanzi": "白",
+                "pinyin": "bái",
+                "meaning_vi": "uổng công; miễn phí",
+                "vocab_ref": "",
+                "source_origin": "textbook",
+                "check_needed": false
+              },
+              {
+                "id": "reading_01_word_003",
+                "hanzi": "热情",
+                "pinyin": "rèqíng",
+                "meaning_vi": "nhiệt tình",
+                "vocab_ref": "",
+                "source_origin": "textbook",
+                "check_needed": false
+              },
+              {
+                "id": "reading_01_word_004",
+                "hanzi": "奇怪",
+                "pinyin": "qíguài",
+                "meaning_vi": "kỳ lạ, lạ",
+                "vocab_ref": "",
+                "source_origin": "textbook",
+                "check_needed": false
+              },
+              {
+                "id": "reading_01_word_005",
+                "hanzi": "责任",
+                "pinyin": "zérèn",
+                "meaning_vi": "trách nhiệm",
+                "vocab_ref": "",
+                "source_origin": "textbook",
+                "check_needed": false
+              },
+              {
+                "id": "reading_01_word_006",
+                "hanzi": "未来",
+                "pinyin": "wèilái",
+                "meaning_vi": "tương lai",
+                "vocab_ref": "",
+                "source_origin": "textbook",
+                "check_needed": false
+              },
+              {
+                "id": "reading_01_word_007",
+                "hanzi": "珍惜",
+                "pinyin": "zhēnxī",
+                "meaning_vi": "trân trọng, quý trọng",
+                "vocab_ref": "",
+                "source_origin": "textbook",
+                "check_needed": false
+              }
+            ],
+            "paragraphs": [
+              {
+                "id": "reading_01_p01",
+                "order": 1,
+                "zh": "我是去年九月到这个大学学习的。以前曾在另一个学校学过一年汉语。刚来中国时我只是想看看，玩儿玩儿，没想好好儿学，对自己没有什么要求，常常不上课，跟朋友一起到外边去逛。来到这个学校以后，才发现过去的一年真是白过了，学到的东西太少了，汉语水平一点儿也没有提高。而且，我从来没去过学校的图书馆。",
+                "pinyin": "",
+                "vi": "",
+                "grammar_refs": [],
+                "vocab_refs": [],
+                "source_origin": "textbook",
+                "check_needed": false
+              },
+              {
+                "id": "reading_01_p02",
+                "order": 2,
+                "zh": "这一天，因为要准备考试，宿舍楼里不太安静，我只好去图书馆复习。到阅览室一看，一个空座位也没有，所有的座位都已经有人了。这时一个中国同学让我坐他的位置，我觉得很不好意思。他还告诉我，要想在这儿看书应该早点儿来。",
+                "pinyin": "",
+                "vi": "",
+                "grammar_refs": [],
+                "vocab_refs": [],
+                "source_origin": "textbook",
+                "check_needed": false
+              },
+              {
+                "id": "reading_01_p03",
+                "order": 3,
+                "zh": "第二天上午我没有课，所以吃了早饭就又到图书馆去了，心想这次一定能找到一个好座位。进去以后，还是没有空座位，因为中国同学去得比我早得多。",
+                "pinyin": "",
+                "vi": "",
+                "grammar_refs": [],
+                "vocab_refs": [],
+                "source_origin": "textbook",
+                "check_needed": false
+              },
+              {
+                "id": "reading_01_p04",
+                "order": 4,
+                "zh": "第三天，我一吃完早饭，就急急忙忙往图书馆跑去，远远看到一群人站在图书馆门口等着开门。天啊！这么早就来了这么多人！大门一开，人们就都往里走，我也随着人流挤了进去，还好，这次我找到了一个座位。坐在座位上，我想了好久，中国同学的学习热情怎么这么高？他们为什么这么努力呢？",
+                "pinyin": "",
+                "vi": "",
+                "grammar_refs": [],
+                "vocab_refs": [],
+                "source_origin": "textbook",
+                "check_needed": false
+              },
+              {
+                "id": "reading_01_p05",
+                "order": 5,
+                "zh": "后来，我认识了一个中国同学。看到她星期天也不休息，就问她，你们为什么这么努力呢？她看了我一眼，觉得我的问题很奇怪。她告诉我，学习是自己的责任，也是为了未来，应该珍惜时间。",
+                "pinyin": "",
+                "vi": "",
+                "grammar_refs": [],
+                "vocab_refs": [],
+                "source_origin": "textbook/generated_mixed",
+                "check_needed": true
+              }
+            ],
+            "text": "我是去年九月到这个大学学习的。以前曾在另一个学校学过一年汉语。刚来中国时我只是想看看，玩儿玩儿，没想好好儿学，对自己没有什么要求，常常不上课，跟朋友一起到外边去逛。来到这个学校以后，才发现过去的一年真是白过了，学到的东西太少了，汉语水平一点儿也没有提高。而且，我从来没去过学校的图书馆。\n\n这一天，因为要准备考试，宿舍楼里不太安静，我只好去图书馆复习。到阅览室一看，一个空座位也没有，所有的座位都已经有人了。这时一个中国同学让我坐他的位置，我觉得很不好意思。他还告诉我，要想在这儿看书应该早点儿来。\n\n第二天上午我没有课，所以吃了早饭就又到图书馆去了，心想这次一定能找到一个好座位。进去以后，还是没有空座位，因为中国同学去得比我早得多。\n\n第三天，我一吃完早饭，就急急忙忙往图书馆跑去，远远看到一群人站在图书馆门口等着开门。天啊！这么早就来了这么多人！大门一开，人们就都往里走，我也随着人流挤了进去，还好，这次我找到了一个座位。坐在座位上，我想了好久，中国同学的学习热情怎么这么高？他们为什么这么努力呢？\n\n后来，我认识了一个中国同学。看到她星期天也不休息，就问她，你们为什么这么努力呢？她看了我一眼，觉得我的问题很奇怪。她告诉我，学习是自己的责任，也是为了未来，应该珍惜时间。",
+            "questions": [],
+            "answer_key": []
+          },
+          {
+            "id": "reading_cloze_01",
+            "type": "reading_fill_blank",
+            "order": 2,
+            "title": "综合填空：占座位",
+            "title_vi": "Điền tổng hợp: Giữ chỗ",
+            "instruction": {
+              "zh": "综合填空。",
+              "vi": "Điền từ thích hợp vào chỗ trống trong bài đọc."
+            },
+            "word_bank": [],
+            "passage": "我是去年九月到这个大学学习的。以前曾在另一个学校学过一年汉语。刚来中国时我只是想看看，玩儿玩儿，没想好好儿学，对自己没有什么要求，常常不上课，跟朋友一起到外边去逛。来到这个学校以后，才发现过去的一年真是白过了，学到的东西太少了，汉语水平一点儿也没有提高。而且，我从来没去过学校的图书馆。\n\n这一天，因为要准备考试，宿舍楼里不太安静，我只好去图书馆复习。到阅览室一看，一个空座位也没有，所有的座位都已经有人了。这时一个中国同学让我坐他的位置，我觉得很不好意思。他还告诉我，要想在这儿看书___应该早点儿来。\n\n第二天上午我没有课，所以吃了早饭就又到图书馆去了，心想这次一定能找到一个好座位。___进去以后，还是没有空座位，因为中国同学去得比我早得多。\n\n第三天，我一吃完早饭，就急急忙忙往图书馆跑去，远远看到一群人站在图书馆门口等着开门。天啊！这么早就来了这么多人！大门一开，人们就都往里走，___也随着人流挤了进去，还好，这次我找到了一个座位。坐在座位上，我想了好久，中国同学的学习热情怎么这么高？他们为什么这么努力呢？\n\n后来，我认识___一个中国同学。看到她星期天也不休息，就问她，你们为什么这么努力呢？___看了我一眼，觉得我的问题很奇怪。她告诉我，学习是自己的责任，也是为了未来，应该珍惜时间。",
+            "answers": [
+              {
+                "blank_id": "blank_01",
+                "answer": "就",
+                "acceptable_answers": [
+                  "就"
+                ],
+                "explanation_vi": "Đáp án suy ra theo ngữ cảnh bài đọc; cần đối chiếu lại nếu khóa đáp án chính thức khác.",
+                "grammar_refs": [],
+                "source_origin": "textbook_question_generated_answer",
+                "answer_verified": false,
+                "check_needed": true
+              },
+              {
+                "blank_id": "blank_02",
+                "answer": "一",
+                "acceptable_answers": [
+                  "一"
+                ],
+                "explanation_vi": "Đáp án suy ra theo ngữ cảnh bài đọc; cần đối chiếu lại nếu khóa đáp án chính thức khác.",
+                "grammar_refs": [],
+                "source_origin": "textbook_question_generated_answer",
+                "answer_verified": false,
+                "check_needed": true
+              },
+              {
+                "blank_id": "blank_03",
+                "answer": "我",
+                "acceptable_answers": [
+                  "我"
+                ],
+                "explanation_vi": "Đáp án suy ra theo ngữ cảnh bài đọc; cần đối chiếu lại nếu khóa đáp án chính thức khác.",
+                "grammar_refs": [],
+                "source_origin": "textbook_question_generated_answer",
+                "answer_verified": false,
+                "check_needed": true
+              },
+              {
+                "blank_id": "blank_04",
+                "answer": "了",
+                "acceptable_answers": [
+                  "了"
+                ],
+                "explanation_vi": "Đáp án suy ra theo ngữ cảnh bài đọc; cần đối chiếu lại nếu khóa đáp án chính thức khác.",
+                "grammar_refs": [],
+                "source_origin": "textbook_question_generated_answer",
+                "answer_verified": false,
+                "check_needed": true
+              },
+              {
+                "blank_id": "blank_05",
+                "answer": "她",
+                "acceptable_answers": [
+                  "她"
+                ],
+                "explanation_vi": "Đáp án suy ra theo ngữ cảnh bài đọc; cần đối chiếu lại nếu khóa đáp án chính thức khác.",
+                "grammar_refs": [],
+                "source_origin": "textbook_question_generated_answer",
+                "answer_verified": false,
+                "check_needed": true
+              }
+            ],
+            "answer_key": [
+              {
+                "answer": "就",
+                "answer_verified": false,
+                "check_needed": true,
+                "question_id": "blank_01",
+                "blank_id": "blank_01"
+              },
+              {
+                "answer": "一",
+                "answer_verified": false,
+                "check_needed": true,
+                "question_id": "blank_02",
+                "blank_id": "blank_02"
+              },
+              {
+                "answer": "我",
+                "answer_verified": false,
+                "check_needed": true,
+                "question_id": "blank_03",
+                "blank_id": "blank_03"
+              },
+              {
+                "answer": "了",
+                "answer_verified": false,
+                "check_needed": true,
+                "question_id": "blank_04",
+                "blank_id": "blank_04"
+              },
+              {
+                "answer": "她",
+                "answer_verified": false,
+                "check_needed": true,
+                "question_id": "blank_05",
+                "blank_id": "blank_05"
+              }
+            ],
+            "rendering": {
+              "renderer": "reading.cloze.v1",
+              "input_mode": "text",
+              "show_word_bank": false,
+              "show_answer_after_submit": true
+            },
+            "source_origin": "textbook/generated_mixed",
+            "check_needed": true,
+            "cloze_segments": [
+              {
+                "id": "seg_001",
+                "type": "text",
+                "text": "我是去年九月到这个大学学习的。以前曾在另一个学校学过一年汉语。刚来中国时我只是想看看，玩儿玩儿，没想好好儿学，对自己没有什么要求，常常不上课，跟朋友一起到外边去逛。来到这个学校以后，才发现过去的一年真是白过了，学到的东西太少了，汉语水平一点儿也没有提高。而且，我从来没去过学校的图书馆。\n\n这一天，因为要准备考试，宿舍楼里不太安静，我只好去图书馆复习。到阅览室一看，一个空座位也没有，所有的座位都已经有人了。这时一个中国同学让我坐他的位置，我觉得很不好意思。他还告诉我，要想在这儿看书"
+              },
+              {
+                "id": "seg_002",
+                "type": "blank",
+                "blank_id": "blank_01"
+              },
+              {
+                "id": "seg_003",
+                "type": "text",
+                "text": "应该早点儿来。\n\n第二天上午我没有课，所以吃了早饭就又到图书馆去了，心想这次一定能找到一个好座位。"
+              },
+              {
+                "id": "seg_004",
+                "type": "blank",
+                "blank_id": "blank_02"
+              },
+              {
+                "id": "seg_005",
+                "type": "text",
+                "text": "进去以后，还是没有空座位，因为中国同学去得比我早得多。\n\n第三天，我一吃完早饭，就急急忙忙往图书馆跑去，远远看到一群人站在图书馆门口等着开门。天啊！这么早就来了这么多人！大门一开，人们就都往里走，"
+              },
+              {
+                "id": "seg_006",
+                "type": "blank",
+                "blank_id": "blank_03"
+              },
+              {
+                "id": "seg_007",
+                "type": "text",
+                "text": "也随着人流挤了进去，还好，这次我找到了一个座位。坐在座位上，我想了好久，中国同学的学习热情怎么这么高？他们为什么这么努力呢？\n\n后来，我认识"
+              },
+              {
+                "id": "seg_008",
+                "type": "blank",
+                "blank_id": "blank_04"
+              },
+              {
+                "id": "seg_009",
+                "type": "text",
+                "text": "一个中国同学。看到她星期天也不休息，就问她，你们为什么这么努力呢？"
+              },
+              {
+                "id": "seg_010",
+                "type": "blank",
+                "blank_id": "blank_05"
+              },
+              {
+                "id": "seg_011",
+                "type": "text",
+                "text": "看了我一眼，觉得我的问题很奇怪。她告诉我，学习是自己的责任，也是为了未来，应该珍惜时间。"
+              }
+            ],
+            "source_text_ref": "reading_01",
+            "questions": []
+          }
+        ]
+      },
+      {
+        "id": "section_08_communication",
+        "type": "communication",
+        "order": 8,
+        "title": "交际会话",
+        "title_vi": "Hội thoại giao tiếp",
+        "source_origin": "textbook/generated_mixed",
+        "check_needed": true,
+        "items": [
+          {
+            "id": "communication_01",
+            "type": "communication_dialogue",
+            "variant": "consultation_2",
+            "order": 1,
+            "title": "请教（二）",
+            "title_vi": "Xin chỉ giáo / hỏi ý kiến (2)",
+            "function": "请教",
+            "function_vi": "Hỏi ý kiến, xin lời khuyên học tập",
+            "skill_focus": [
+              "speaking",
+              "communication"
+            ],
+            "grammar_refs": [
+              "grammar_usage_03"
+            ],
+            "vocab_refs": [],
+            "dialogue": [
+              {
+                "speaker": "A",
+                "text": "老师，我想请教一下儿，怎样才能更快地提高汉语水平呢？"
+              },
+              {
+                "speaker": "B",
+                "text": "你将来打算做什么工作？"
+              },
+              {
+                "speaker": "A",
+                "text": "我想当翻译。"
+              },
+              {
+                "speaker": "B",
+                "text": "好啊。不过要当翻译，除了汉语能力，还需要掌握很多文化知识。"
+              },
+              {
+                "speaker": "A",
+                "text": "我知道，当翻译很不容易。我感到最缺的也是文化知识。我的汉语也还不行，特别是读写，困难很大。您让我们写日记或周记，我也想写，可是，坐在电脑前，想半天也不知道该写什么。"
+              },
+              {
+                "speaker": "B",
+                "text": "我想主要是读的书少，脑子里没有多少词。"
+              },
+              {
+                "speaker": "A",
+                "text": "是！那我应该读些什么书呢？"
+              },
+              {
+                "speaker": "B",
+                "text": "真想当翻译的话，我建议你给自己做一个读书计划，并下决心去完成它。多读书，不但可以提高读和写的能力，还能掌握很多文化知识，对将来当翻译肯定有用。"
+              },
+              {
+                "speaker": "A",
+                "text": "我试试吧。谢谢老师！"
+              }
+            ],
+            "practice_tasks": [
+              {
+                "id": "comm_task_01",
+                "type": "role_play",
+                "instruction_vi": "Đổi tình huống: hỏi giáo viên cách nâng cao kỹ năng nói/viết tiếng Hán nhanh hơn.",
+                "sample_answer": [
+                  "A：老师，我想请教一下儿，怎样才能提高口语水平？",
+                  "B：你应该多听、多说，也可以每天跟同学练习。",
+                  "A：我试试吧。谢谢老师！"
+                ],
+                "source_origin": "generated",
+                "check_needed": true
+              }
+            ],
+            "rendering": {
+              "renderer": "exercise.communication_dialogue.v1"
+            },
+            "source_origin": "textbook/generated_mixed",
+            "check_needed": true
+          }
+        ]
+      },
+      {
+        "id": "section_09_character_writing",
+        "type": "character_writing",
+        "order": 9,
+        "title": "写汉字",
+        "title_vi": "Viết chữ Hán",
+        "source_origin": "generated",
+        "check_needed": true,
+        "items": [
+          {
+            "id": "char_001",
+            "type": "character_writing_item",
+            "order": 1,
+            "hanzi": "回头",
+            "pinyin": "huítóu",
+            "vocab_ref": "vocab_001",
+            "stroke_count": null,
+            "radical": "",
+            "stroke_order_key": "",
+            "practice": {
+              "grid_type": "田字格",
+              "repeat_count": 6
+            },
+            "source_origin": "generated",
+            "check_needed": true
+          },
+          {
+            "id": "char_002",
+            "type": "character_writing_item",
+            "order": 2,
+            "hanzi": "再说",
+            "pinyin": "zàishuō",
+            "vocab_ref": "vocab_002",
+            "stroke_count": null,
+            "radical": "",
+            "stroke_order_key": "",
+            "practice": {
+              "grid_type": "田字格",
+              "repeat_count": 6
+            },
+            "source_origin": "generated",
+            "check_needed": true
+          },
+          {
+            "id": "char_003",
+            "type": "character_writing_item",
+            "order": 3,
+            "hanzi": "口头语",
+            "pinyin": "kǒutóuyǔ",
+            "vocab_ref": "vocab_003",
+            "stroke_count": null,
+            "radical": "",
+            "stroke_order_key": "",
+            "practice": {
+              "grid_type": "田字格",
+              "repeat_count": 6
+            },
+            "source_origin": "generated",
+            "check_needed": true
+          },
+          {
+            "id": "char_004",
+            "type": "character_writing_item",
+            "order": 4,
+            "hanzi": "后来",
+            "pinyin": "hòulái",
+            "vocab_ref": "vocab_004",
+            "stroke_count": null,
+            "radical": "",
+            "stroke_order_key": "",
+            "practice": {
+              "grid_type": "田字格",
+              "repeat_count": 6
+            },
+            "source_origin": "generated",
+            "check_needed": true
+          },
+          {
+            "id": "char_005",
+            "type": "character_writing_item",
+            "order": 5,
+            "hanzi": "其实",
+            "pinyin": "qíshí",
+            "vocab_ref": "vocab_005",
+            "stroke_count": null,
+            "radical": "",
+            "stroke_order_key": "",
+            "practice": {
+              "grid_type": "田字格",
+              "repeat_count": 6
+            },
+            "source_origin": "generated",
+            "check_needed": true
+          },
+          {
+            "id": "char_006",
+            "type": "character_writing_item",
+            "order": 6,
+            "hanzi": "民航",
+            "pinyin": "mínháng",
+            "vocab_ref": "vocab_006",
+            "stroke_count": null,
+            "radical": "",
+            "stroke_order_key": "",
+            "practice": {
+              "grid_type": "田字格",
+              "repeat_count": 6
+            },
+            "source_origin": "generated",
+            "check_needed": true
+          },
+          {
+            "id": "char_007",
+            "type": "character_writing_item",
+            "order": 7,
+            "hanzi": "邻",
+            "pinyin": "lín",
+            "vocab_ref": "vocab_007",
+            "stroke_count": null,
+            "radical": "",
+            "stroke_order_key": "",
+            "practice": {
+              "grid_type": "田字格",
+              "repeat_count": 6
+            },
+            "source_origin": "generated",
+            "check_needed": true
+          },
+          {
+            "id": "char_008",
+            "type": "character_writing_item",
+            "order": 8,
+            "hanzi": "地道",
+            "pinyin": "dìdao",
+            "vocab_ref": "vocab_008",
+            "stroke_count": null,
+            "radical": "",
+            "stroke_order_key": "",
+            "practice": {
+              "grid_type": "田字格",
+              "repeat_count": 6
+            },
+            "source_origin": "generated",
+            "check_needed": true
+          },
+          {
+            "id": "char_009",
+            "type": "character_writing_item",
+            "order": 9,
+            "hanzi": "回答",
+            "pinyin": "huídá",
+            "vocab_ref": "vocab_009",
+            "stroke_count": null,
+            "radical": "",
+            "stroke_order_key": "",
+            "practice": {
+              "grid_type": "田字格",
+              "repeat_count": 6
+            },
+            "source_origin": "generated",
+            "check_needed": true
+          },
+          {
+            "id": "char_010",
+            "type": "character_writing_item",
+            "order": 10,
+            "hanzi": "名片",
+            "pinyin": "míngpiàn",
+            "vocab_ref": "vocab_010",
+            "stroke_count": null,
+            "radical": "",
+            "stroke_order_key": "",
+            "practice": {
+              "grid_type": "田字格",
+              "repeat_count": 6
+            },
+            "source_origin": "generated",
+            "check_needed": true
+          },
+          {
+            "id": "char_011",
+            "type": "character_writing_item",
+            "order": 11,
+            "hanzi": "几乎",
+            "pinyin": "jīhū",
+            "vocab_ref": "vocab_011",
+            "stroke_count": null,
+            "radical": "",
+            "stroke_order_key": "",
+            "practice": {
+              "grid_type": "田字格",
+              "repeat_count": 6
+            },
+            "source_origin": "generated",
+            "check_needed": true
+          },
+          {
+            "id": "char_012",
+            "type": "character_writing_item",
+            "order": 12,
+            "hanzi": "同时",
+            "pinyin": "tóngshí",
+            "vocab_ref": "vocab_012",
+            "stroke_count": null,
+            "radical": "",
+            "stroke_order_key": "",
+            "practice": {
+              "grid_type": "田字格",
+              "repeat_count": 6
+            },
+            "source_origin": "generated",
+            "check_needed": true
+          }
+        ]
+      }
+    ],
+    "summary": {
+      "lesson_parts": [
+        "课文",
+        "生词",
+        "专名",
+        "注释",
+        "词语用法/语法",
+        "练习",
+        "综合填空/阅读",
+        "交际会话",
+        "写汉字"
+      ],
+      "grammar_points": [
+        {
+          "id": "note_01",
+          "title": "临了儿"
+        },
+        {
+          "id": "note_02",
+          "title": "提起"
+        },
+        {
+          "id": "note_03",
+          "title": "左顾右盼"
+        },
+        {
+          "id": "grammar_usage_01",
+          "title": "其实"
+        },
+        {
+          "id": "grammar_usage_02",
+          "title": "再说"
+        },
+        {
+          "id": "grammar_usage_03",
+          "title": "实在"
+        },
+        {
+          "id": "grammar_usage_04",
+          "title": "用得着 / 用不着"
+        },
+        {
+          "id": "grammar_usage_05",
+          "title": "至于"
+        }
+      ],
+      "main_patterns": [
+        {
+          "pattern": "其实，北京人最爱说的一句话是“回头再说”。",
+          "grammar_ref": "grammar_usage_01"
+        },
+        {
+          "pattern": "回头再说吧。",
+          "grammar_ref": "grammar_usage_02"
+        },
+        {
+          "pattern": "怎么会这样不实在？",
+          "grammar_ref": "grammar_usage_03"
+        },
+        {
+          "pattern": "这些书都是你用得着的。",
+          "grammar_ref": "grammar_usage_04"
+        },
+        {
+          "pattern": "至于钱，回头再说吧。",
+          "grammar_ref": "grammar_usage_05"
+        },
+        {
+          "pattern": "正在我左顾右盼的时候。",
+          "grammar_ref": "note_03"
+        }
+      ],
+      "exercise_types": [
+        "phonetics",
+        "read_aloud",
+        "choose_words_fill_blank",
+        "fill_blank",
+        "complete_dialogue",
+        "reorder_sentence",
+        "correct_sentence",
+        "custom",
+        "reading_text",
+        "reading_fill_blank",
+        "communication_dialogue",
+        "character_writing"
+      ],
+      "source_origin_policy": {
+        "textbook": "Copied/structured from textbook PDF pages or uploaded page images.",
+        "uploaded_crosscheck": "Used to verify schema/structure or summarize vocabulary/word usage from uploaded files.",
+        "web_crosscheck": "Used only to confirm lesson title/core text alignment, never to replace the uploaded PDF.",
+        "generated": "Generated for app practice/rendering; treat as non-textbook unless verified separately.",
+        "textbook/generated_mixed": "Textbook-based content reformatted or completed for app rendering."
+      },
+      "check_needed": true,
+      "coverage_policy": {
+        "coverage_first": true,
+        "no_section_drop": true,
+        "preserve_empty_optional_sections": true,
+        "text_type_rule": "text_narrative uses paragraphs; text_dialogue uses lines/scenes.",
+        "final_status_rule": "Do not mark final_verified unless coverage_report.final_verification_allowed is true."
+      }
+    }
+  },
+  "fix_history": [
+    {
+      "date": "2026-06-01",
+      "note": "Tạo mới JSON bài 5 quyển 3 thượng theo Hanyu Lesson Schema v2.2.0; xác định bài khóa là text_narrative và tách nhiều paragraphs, không nhét văn xuôi vào lines."
+    },
+    {
+      "date": "2026-06-01",
+      "note": "Bổ sung source_origin/check_needed cho trường textbook/generated; bài đọc 综合填空 giữ check_needed=true vì ảnh scan cuối trang chưa đủ rõ."
+    },
+    {
+      "version": "2026-06-01-update-02",
+      "note": "Updated lesson 5 to follow the richer Lesson 6 sample structure: added missing choose-words exercise, communication section, split reading into reading_text + reading_cloze, normalized section order/titles, and refreshed summary coverage.",
+      "source_origin": "textbook/generated_mixed",
+      "check_needed": true
+    },
+    {
+      "date": "2026-06-01",
+      "action": "Rebuilt Lesson 5 according to hanyu_lesson_full_structure_sample_v2_2_0.json: normalized section ids/orders, added proper_nouns + communication + reading/character writing structure, fixed source_origin enum values, and preserved check_needed flags for generated/uncertain fields.",
+      "source_origin": "uploaded_crosscheck",
+      "check_needed": false
+    },
+    {
+      "version": "v2.3.0-coverage-remake",
+      "description_vi": "Remapped Lesson 5 to full coverage structure: canonical section order, coverage_contract, coverage_report, reading_fill_blank, communication, character_writing, and generated/check_needed markers.",
+      "source_origin": "generated",
+      "check_needed": false
+    }
+  ],
+  "coverage_report": {
+    "version": "coverage_v1",
+    "rule": "Verification status cannot be final unless coverage gates pass. Generated answers/translations must be marked with source_origin and check_needed when applicable.",
+    "coverage_gates": [
+      {
+        "id": "gate_01_section_presence",
+        "label": "All required lesson sections exist",
+        "passed": true,
+        "missing": []
+      },
+      {
+        "id": "gate_02_exercise_count",
+        "label": "Exercises count equals extracted/manual lesson count",
+        "passed": true,
+        "expected": 8,
+        "actual": 8
+      },
+      {
+        "id": "gate_03_exercise_order",
+        "label": "Exercise order matches current extracted lesson order",
+        "passed": true,
+        "note": "Ordered according to the existing verified extraction for Lesson 5."
+      },
+      {
+        "id": "gate_04_exercise_content",
+        "label": "Every exercise item contains prompts/questions or preserved content block",
+        "passed": true
+      },
+      {
+        "id": "gate_05_origin_marking",
+        "label": "Generated answers/translations are marked",
+        "passed": true
+      },
+      {
+        "id": "gate_06_no_dropped_content",
+        "label": "No known lesson section dropped after v2.3 restructuring",
+        "passed": true,
+        "note": "All sections from the prior Lesson 5 file were retained and remapped to v2.3 coverage IDs."
+      },
+      {
+        "id": "gate_07_final_ready",
+        "label": "No check_needed fields remain",
+        "passed": false,
+        "reason": "Some OCR/PDF-derived or generated answers remain marked check_needed; therefore verification_status is verified, not final_verified."
+      }
+    ],
+    "expected_sections": [
+      {
+        "id": "section_01_text",
+        "required": true
+      },
+      {
+        "id": "section_02_vocabulary",
+        "required": true
+      },
+      {
+        "id": "section_03_proper_nouns",
+        "required": false
+      },
+      {
+        "id": "section_04_notes",
+        "required": true
+      },
+      {
+        "id": "section_05_grammar",
+        "required": true
+      },
+      {
+        "id": "section_06_exercises",
+        "required": true
+      },
+      {
+        "id": "section_07_reading",
+        "required": false
+      },
+      {
+        "id": "section_08_communication",
+        "required": false
+      },
+      {
+        "id": "section_09_character_writing",
+        "required": false
+      }
+    ],
+    "expected_exercises_from_pdf": [
+      {
+        "order": 1,
+        "title_cn": "一、语音",
+        "canonical_type": "phonetics",
+        "status": "present_verified"
+      },
+      {
+        "order": 2,
+        "title_cn": "二、朗读词语/句子",
+        "canonical_type": "read_aloud",
+        "status": "present_verified"
+      },
+      {
+        "order": 3,
+        "title_cn": "三、选词填空",
+        "canonical_type": "choose_words_fill_blank",
+        "status": "present_partial_verified"
+      },
+      {
+        "order": 4,
+        "title_cn": "四、用括号里的词语完成句子",
+        "canonical_type": "fill_blank",
+        "status": "present_partial_verified"
+      },
+      {
+        "order": 5,
+        "title_cn": "五、用括号里的词语完成会话",
+        "canonical_type": "complete_dialogue",
+        "status": "present_partial_verified"
+      },
+      {
+        "order": 6,
+        "title_cn": "六、连句成段",
+        "canonical_type": "reorder_sentence",
+        "status": "present_partial_verified"
+      },
+      {
+        "order": 7,
+        "title_cn": "七、改错句",
+        "canonical_type": "correct_sentence",
+        "status": "present_partial_verified"
+      },
+      {
+        "order": 8,
+        "title_cn": "八、情景表达",
+        "canonical_type": "custom",
+        "status": "present_partial_verified"
+      }
+    ],
+    "missing_exercise_indexes": [],
+    "unknown_or_unmapped_blocks": [],
+    "final_verification_allowed": false
+  },
+  "schema_extension_notes": [
+    "This file follows the uploaded hanyu_lesson_full_coverage_sample_v2_3_0 structure: stable section IDs, exercise coverage contract, and root coverage_report.",
+    "It remains compatible with the flexible v2.2.0 lesson payload style via passthrough fields, while adding coverage metadata.",
+    "verification_status is set to verified rather than final_verified because some fields are deliberately marked check_needed."
+  ]
+}

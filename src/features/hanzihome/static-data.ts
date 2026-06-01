@@ -259,12 +259,7 @@ function renderTextBlock(block: TextBlock) {
  if (block.type === "text_narrative") {
   if (block.lines.length > 0) {
    for (const line of block.lines) {
-    lines.push(
-     "",
-     line.zh,
-     line.pinyin ? `_${line.pinyin}_` : "",
-     line.vi,
-    );
+    lines.push("", line.zh, line.pinyin ? `_${line.pinyin}_` : "", line.vi);
    }
   }
 
@@ -363,7 +358,10 @@ function buildLegacyGrammarViewModels(
        {
         key: `${lessonId}-${point.id}-content`,
         title: "Chi tiết",
-        lines: contentMd.split(/\n+/).map((line) => line.trim()).filter(Boolean),
+        lines: contentMd
+         .split(/\n+/)
+         .map((line) => line.trim())
+         .filter(Boolean),
        },
       ]
     : [];
@@ -380,7 +378,9 @@ function buildLegacyGrammarViewModels(
    cleanTitle: itemTitle,
    core: detailSections[0]?.lines[0] || contentMd,
    contentMd,
-   structuresView: Array.from(new Set((point.structures ?? []).filter(Boolean))),
+   structuresView: Array.from(
+    new Set((point.structures ?? []).filter(Boolean)),
+   ),
    examplesParsed: examples,
    notes: Array.from(new Set(notes.filter(Boolean))),
    detailSections,
@@ -448,7 +448,9 @@ function buildGrammarViewModels(entry: RuntimeLessonEntry, lessonId: string) {
 }
 
 function renderVocabularyItem(item: VocabularyItem) {
- const examples = item.examples.flatMap((example) => renderExampleLines(example));
+ const examples = item.examples.flatMap((example) =>
+  renderExampleLines(example),
+ );
 
  return joinLines([
   markdownHeading(3, `${item.hanzi} · ${item.pinyin}`),
@@ -487,26 +489,33 @@ function renderGrammarBlock(block: GrammarBlock) {
  if (meaning) lines.push(meaning);
  if (formulas.length > 0) {
   lines.push(
-   ...formulas.map((formula) => `- **${recordString(formula, "label")}:** ${recordString(formula, "pattern")}`),
+   ...formulas.map(
+    (formula) =>
+     `- **${recordString(formula, "label")}:** ${recordString(formula, "pattern")}`,
+   ),
   );
  }
  if (notes.length > 0) lines.push(...notes.map((note) => `- ${note}`));
  if (examples.length > 0) {
-  lines.push(...examples.flatMap((example) =>
-   joinLines([
-    recordString(example, "zh"),
-    recordString(example, "pinyin")
-     ? `_${recordString(example, "pinyin")}_`
-     : "",
-    recordString(example, "vi"),
-   ]),
-  ));
+  lines.push(
+   ...examples.flatMap((example) =>
+    joinLines([
+     recordString(example, "zh"),
+     recordString(example, "pinyin")
+      ? `_${recordString(example, "pinyin")}_`
+      : "",
+     recordString(example, "vi"),
+    ]),
+   ),
+  );
  }
  if (items.length > 0) {
   lines.push(...items.map((item) => `- ${JSON.stringify(item)}`));
  }
  if (questions.length > 0) {
-  lines.push(...questions.map((question) => `- ${recordString(question, "prompt")}`));
+  lines.push(
+   ...questions.map((question) => `- ${recordString(question, "prompt")}`),
+  );
  }
 
  return lines.filter(Boolean).join("\n");
@@ -568,7 +577,10 @@ function renderReadingItem(item: ReadingItem) {
     if (recordString(questionText, "vi") || recordString(questionText, "zh")) {
      return `- ${recordString(questionText, "vi") || recordString(questionText, "zh")}`;
     }
-    if (recordString(statementText, "vi") || recordString(statementText, "zh")) {
+    if (
+     recordString(statementText, "vi") ||
+     recordString(statementText, "zh")
+    ) {
      return `- ${recordString(statementText, "vi") || recordString(statementText, "zh")}`;
     }
     return `- ${recordString(promptText, "vi") || recordString(promptText, "zh")}`;
@@ -655,7 +667,9 @@ function renderLessonSection(section: Section) {
   return [header, ...section.items.map(renderReadingItem)].join("\n\n");
  }
  if (section.type === "character_writing") {
-  return [header, ...section.items.map(renderCharacterWritingItem)].join("\n\n");
+  return [header, ...section.items.map(renderCharacterWritingItem)].join(
+   "\n\n",
+  );
  }
 
  return "";
@@ -696,7 +710,8 @@ function getEntryTitleZh(entry: RuntimeLessonEntry) {
 
 function getEntrySourceFile(entry: RuntimeLessonEntry) {
  const sourceFiles =
-  entry.vocabLesson?.source.source_files || entry.lessonDocument?.source.source_files;
+  entry.vocabLesson?.source.source_files ||
+  entry.lessonDocument?.source.source_files;
 
  return sourceFiles?.map((file) => file.name).join(", ") || "";
 }
@@ -747,7 +762,8 @@ function buildLessonSummary(entry: RuntimeLessonEntry): HanziHomeLesson {
   vocabCategories: getEntryVocabCategories(entry),
   vocabCount: entry.vocabLesson?.items.length ?? 0,
   grammarCount: grammar.length,
-  vocabIds: entry.vocabLesson?.items.map((item) => `${lessonId}__${item.id}`) ?? [],
+  vocabIds:
+   entry.vocabLesson?.items.map((item) => `${lessonId}__${item.id}`) ?? [],
   grammarPointIds: grammar.map((point) => point.id),
   vocab: [],
   grammar: [],
@@ -778,7 +794,7 @@ function buildLessonDetail(entry: RuntimeLessonEntry): HanziHomeLesson {
  const vocabLesson = entry.vocabLesson;
 
  return {
- ...summary,
+  ...summary,
   vocab: vocabLesson
    ? vocabLesson.items.map((item) =>
       buildHanziHomeVocabItem(item, vocabLesson, lessonId),
@@ -789,7 +805,9 @@ function buildLessonDetail(entry: RuntimeLessonEntry): HanziHomeLesson {
  };
 }
 
-const runtimeLessonEntries = staticCourseRuntimes.flatMap(getRuntimeLessonEntries);
+const runtimeLessonEntries = staticCourseRuntimes.flatMap(
+ getRuntimeLessonEntries,
+);
 const lessonSummaries = runtimeLessonEntries.map(buildLessonSummary);
 
 export function getHanziHomeCatalogSummary(
@@ -800,8 +818,9 @@ export function getHanziHomeCatalogSummary(
   stats: {
    bookCount: hanzihomeCourseBooks.filter((book) => book.courseId === course.id)
     .length,
-   lessonCount: lessonSummaries.filter((lesson) => lesson.courseId === course.id)
-    .length,
+   lessonCount: lessonSummaries.filter(
+    (lesson) => lesson.courseId === course.id,
+   ).length,
    vocabCount: lessonSummaries
     .filter((lesson) => lesson.courseId === course.id)
     .reduce((sum, lesson) => sum + (lesson.vocabCount ?? 0), 0),
@@ -809,8 +828,9 @@ export function getHanziHomeCatalogSummary(
     .filter((lesson) => lesson.courseId === course.id)
     .reduce((sum, lesson) => sum + (lesson.grammarCount ?? 0), 0),
   },
-  fallbackLessonId: lessonSummaries.find((lesson) => lesson.courseId === course.id)
-   ?.id,
+  fallbackLessonId: lessonSummaries.find(
+   (lesson) => lesson.courseId === course.id,
+  )?.id,
  }));
  const vocabCount = lessonSummaries.reduce(
   (sum, lesson) => sum + (lesson.vocabCount ?? 0),
@@ -820,7 +840,9 @@ export function getHanziHomeCatalogSummary(
   (sum, lesson) => sum + (lesson.grammarCount ?? 0),
   0,
  );
- const sourceFiles = staticCourseRuntimes.flatMap((runtime) => runtime.sourceFiles);
+ const sourceFiles = staticCourseRuntimes.flatMap(
+  (runtime) => runtime.sourceFiles,
+ );
 
  return {
   source: "static",

@@ -17,7 +17,7 @@
   "counts": {
     "lessons": 6,
     "vocab": 340,
-    "lessonDocuments": 5
+    "lessonDocuments": 6
   },
   "lessons": [
     {
@@ -58,7 +58,7 @@
       "titleZh": "回头再说",
       "titleVi": "Quay đầu lại nói sau / Để sau nói tiếp",
       "vocabCount": 66,
-      "hasLessonDocument": false
+      "hasLessonDocument": true
     },
     {
       "lessonNumber": 6,

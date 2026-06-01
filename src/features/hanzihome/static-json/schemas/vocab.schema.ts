@@ -89,7 +89,7 @@ export const NoteSchema = z.object({
 export const SourceFileSchema = z.object({
  name: NonEmptyStringSchema,
  type: z
-  .enum(["markdown", "docx", "pdf_scan", "pdf_text", "manual", "unknown"])
+  .enum(["markdown", "docx", "pdf_scan", "pdf_text", "manual", "json", "unknown"])
   .default("markdown"),
  check_needed: z.boolean().default(false),
  notes: z.array(NoteSchema).default([]),
@@ -150,12 +150,23 @@ export const PartOfSpeechSchema = z.enum([
  "unknown",
 ]);
 
-export const PosSchema = z.object({
+export const PosSchema = z.preprocess((value) => {
+ if (typeof value === "string") {
+  return {
+   raw_vi: value,
+   raw_cn: "",
+   normalized: value,
+   notes: [],
+  };
+ }
+
+ return value;
+}, z.object({
  raw_vi: OptionalStringSchema,
  raw_cn: OptionalStringSchema,
  normalized: PartOfSpeechSchema.default("unknown"),
  notes: z.array(NoteSchema).default([]),
-});
+}));
 
 export const ImportanceLevelSchema = z.enum([
  "A+++",

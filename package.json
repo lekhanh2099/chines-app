@@ -7,6 +7,7 @@
     "build": "next build --webpack",
     "data:hanzihome:q2:validate": "node --experimental-strip-types scripts/validate-hanzihome-q2.ts",
     "data:hanzihome:validate": "node --experimental-strip-types scripts/validate-hanzihome-static.ts",
+    "data:hanzihome:ui-audit": "node --experimental-strip-types scripts/audit-hanzihome-lesson-ui.ts",
     "start": "next start",
     "lint": "eslint",
     "typecheck": "tsc --noEmit",
