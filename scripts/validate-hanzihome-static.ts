@@ -22,15 +22,15 @@ const datasets: StaticDatasetExpectation[] = [
  filePrefix: "hanyu_2_",
  expectedLessonCount: 25,
  expectedVocabCount: 1195,
- expectedLessonDocumentCount: 23,
+ expectedLessonDocumentCount: 25,
 },
 {
  id: "q3",
  dir: "data/hanzihome/q3",
  filePrefix: "hanyu_3_",
- expectedLessonCount: 6,
- expectedVocabCount: 340,
- expectedLessonDocumentCount: 6,
+ expectedLessonCount: 19,
+ expectedVocabCount: 342,
+ expectedLessonDocumentCount: 19,
 },
 ];
 

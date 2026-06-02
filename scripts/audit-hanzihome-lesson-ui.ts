@@ -71,7 +71,21 @@ function hasRenderableGrammarBlock(blockValue: unknown): boolean {
 
 function hasRenderableExercise(itemValue: unknown): boolean {
  const item = asRecord(itemValue);
- if (hasAnyText(item, ["pattern", "empty_reason_vi"])) return true;
+ if (
+  hasAnyText(item, [
+   "title",
+   "title_vi",
+   "pattern",
+   "empty_reason_vi",
+   "passage",
+   "text",
+   "sample",
+   "model_zh",
+  ])
+ ) {
+  return true;
+ }
+ if (hasText(item.instruction)) return true;
  if (hasAnyArray(item, [
   "parts",
   "items",
@@ -80,7 +94,12 @@ function hasRenderableExercise(itemValue: unknown): boolean {
   "dialogue",
   "practice_tasks",
   "chunks",
+  "drills",
   "groups",
+  "patterns",
+  "prompts",
+  "supplementary_vocab",
+  "supplementary_words",
   "word_bank",
   "left_items",
   "right_items",
@@ -94,9 +113,10 @@ function hasRenderableExercise(itemValue: unknown): boolean {
 
 function hasRenderableReading(itemValue: unknown): boolean {
  const item = asRecord(itemValue);
- if (hasAnyText(item, ["text", "vi"])) return true;
+ if (hasAnyText(item, ["title", "title_vi", "text", "vi", "passage"])) return true;
  if (hasAnyArray(item, [
   "supplementary_words",
+  "supplementary_vocab",
   "items",
   "paragraphs",
   "questions",
@@ -162,6 +182,40 @@ function auditLessonFile(
   }
 
   if (section.type === "proper_nouns") continue;
+
+  if (section.type === "summary") {
+   const embeddedSummary = asRecord(sectionRecord.summary);
+   const contentSummary = asRecord(sectionRecord.content);
+   if (
+    hasAnyText(sectionRecord, ["empty_reason_vi"]) ||
+    hasAnyArray(sectionRecord, [
+     "items",
+     "blocks",
+     "lesson_parts",
+     "grammar_points",
+     "key_patterns",
+     "key_sentences",
+     "key_sentence_patterns",
+    ]) ||
+    hasAnyArray(embeddedSummary, [
+     "lesson_parts",
+     "grammar_points",
+     "key_patterns",
+     "key_sentences",
+     "key_sentence_patterns",
+    ]) ||
+    hasAnyArray(contentSummary, [
+     "lesson_parts",
+     "grammar_points",
+     "key_patterns",
+     "key_sentences",
+     "key_sentence_patterns",
+    ])
+   ) {
+    continue;
+   }
+   continue;
+  }
 
   if (hasAnyText(sectionRecord, ["empty_reason_vi"])) continue;
 

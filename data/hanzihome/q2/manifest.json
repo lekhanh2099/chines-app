@@ -8,44 +8,225 @@
     {
       "id": "hanyu-q2-shang",
       "title": "Giáo trình Hán ngữ 2 Thượng",
-      "lessonRange": [1, 12]
+      "lessonRange": [
+        1,
+        12
+      ]
     },
     {
       "id": "hanyu-q2-xia",
       "title": "Giáo trình Hán ngữ 2 Hạ",
-      "lessonRange": [13, 25]
+      "lessonRange": [
+        13,
+        25
+      ]
     }
   ],
   "counts": {
     "lessons": 25,
     "vocab": 1195,
-    "lessonDocuments": 23
+    "lessonDocuments": 25
   },
   "lessons": [
-    { "lessonNumber": 1, "id": "hanyu_2_1_lesson_01_deep_vocab", "bookId": "hanyu-q2-shang", "titleZh": "田芳去哪儿了", "titleVi": "Điền Phương đi đâu rồi?", "vocabCount": 45 },
-    { "lessonNumber": 2, "id": "hanyu_2_1_lesson_02_deep_vocab", "bookId": "hanyu-q2-shang", "titleZh": "玛丽哭了", "titleVi": "Mary khóc rồi", "vocabCount": 32 },
-    { "lessonNumber": 3, "id": "hanyu_2_1_lesson_03_deep_vocab", "bookId": "hanyu-q2-shang", "titleZh": "我吃了早饭就来了", "titleVi": "Tôi ăn sáng xong thì đến", "vocabCount": 41 },
-    { "lessonNumber": 4, "id": "hanyu_2_1_lesson_04_deep_vocab", "bookId": "hanyu-q2-shang", "titleZh": "我都做对了", "titleVi": "Tôi làm đúng hết rồi", "vocabCount": 28 },
-    { "lessonNumber": 5, "id": "hanyu_2_1_lesson_05_deep_vocab", "bookId": "hanyu-q2-shang", "titleZh": "我来了两个多月了", "titleVi": "Tôi đến được hơn hai tháng rồi", "vocabCount": 51 },
-    { "lessonNumber": 6, "id": "hanyu_2_1_lesson_06_deep_vocab", "bookId": "hanyu-q2-shang", "titleZh": "我比你更喜欢音乐", "titleVi": "Tôi thích âm nhạc hơn bạn", "vocabCount": 46 },
-    { "lessonNumber": 7, "id": "hanyu_2_1_lesson_07_deep_vocab", "bookId": "hanyu-q2-shang", "titleZh": "我们那儿的冬天跟北京一样冷", "titleVi": "Mùa đông ở chỗ chúng tôi lạnh như Bắc Kinh", "vocabCount": 40 },
-    { "lessonNumber": 8, "id": "hanyu_2_1_lesson_08_deep_vocab", "bookId": "hanyu-q2-shang", "titleZh": "冬天快要到了", "titleVi": "Mùa đông sắp đến rồi", "vocabCount": 54 },
-    { "lessonNumber": 9, "id": "hanyu_2_1_lesson_09_deep_vocab", "bookId": "hanyu-q2-shang", "titleZh": "快上来吧，要开车了", "titleVi": "Nhanh lên xe đi, xe sắp chạy rồi", "vocabCount": 37 },
-    { "lessonNumber": 10, "id": "hanyu_2_1_lesson_10_deep_vocab", "bookId": "hanyu-q2-shang", "titleZh": "我听过钢琴协奏曲《黄河》", "titleVi": "Tôi đã từng nghe bản concerto piano “Hoàng Hà”", "vocabCount": 52 },
-    { "lessonNumber": 11, "id": "hanyu_2_1_lesson_11_deep_vocab", "bookId": "hanyu-q2-shang", "titleZh": "我是跟旅游团一起来的", "titleVi": "Tôi đi cùng đoàn du lịch đến", "vocabCount": 48 },
-    { "lessonNumber": 12, "id": "hanyu_2_1_lesson_12_deep_vocab", "bookId": "hanyu-q2-shang", "titleZh": "我的护照你找到了没有", "titleVi": "Hộ chiếu của tôi bạn tìm thấy chưa?", "vocabCount": 60 },
-    { "lessonNumber": 13, "id": "hanyu_2_2_lesson_13_deep_vocab", "bookId": "hanyu-q2-xia", "titleZh": "我的眼镜儿摔坏了", "titleVi": "Kính mắt của tôi bị rơi vỡ rồi", "vocabCount": 37 },
-    { "lessonNumber": 14, "id": "hanyu_2_2_lesson_14_deep_vocab", "bookId": "hanyu-q2-xia", "titleZh": "钥匙忘拔下来了", "titleVi": "Chìa khóa quên rút ra rồi", "vocabCount": 67 },
-    { "lessonNumber": 15, "id": "hanyu_2_1_lesson_15_deep_vocab", "bookId": "hanyu-q2-xia", "titleZh": "会议厅的门开着呢", "titleVi": "Cửa phòng hội nghị đang mở", "vocabCount": 51 },
-    { "lessonNumber": 16, "id": "hanyu_2_2_lesson_16_deep_vocab", "bookId": "hanyu-q2-xia", "titleZh": "前边开过来一辆空车", "titleVi": "Phía trước có một chiếc xe trống đang chạy tới", "vocabCount": 54 },
-    { "lessonNumber": 17, "id": "hanyu_2_2_lesson_17_deep_vocab", "bookId": "hanyu-q2-xia", "titleZh": "把“福”字倒着贴在门上", "titleVi": "Dán chữ “Phúc” ngược lên cửa", "vocabCount": 53 },
-    { "lessonNumber": 18, "id": "hanyu_2_1_lesson_18_deep_vocab", "bookId": "hanyu-q2-xia", "titleZh": "请把护照和机票给我", "titleVi": "Xin hãy đưa hộ chiếu và vé máy bay cho tôi", "vocabCount": 46 },
-    { "lessonNumber": 19, "id": "hanyu_2_1_lesson_19_deep_vocab", "bookId": "hanyu-q2-xia", "titleZh": "我的腿被自行车撞伤了", "titleVi": "Chân tôi bị xe đạp đâm bị thương", "vocabCount": 39 },
-    { "lessonNumber": 20, "id": "hanyu_2_2_lesson_20_deep_vocab", "bookId": "hanyu-q2-xia", "titleZh": "我看得懂，但是听不懂", "titleVi": "Tôi xem/đọc hiểu được, nhưng nghe không hiểu", "vocabCount": 59 },
-    { "lessonNumber": 21, "id": "hanyu_2_1_lesson_21_deep_vocab", "bookId": "hanyu-q2-xia", "titleZh": "山这么高，你爬得上去吗", "titleVi": "Núi cao thế này, bạn leo lên được không?", "vocabCount": 59 },
-    { "lessonNumber": 22, "id": "hanyu_2_1_lesson_22_deep_vocab", "bookId": "hanyu-q2-xia", "titleZh": "我想起来了", "titleVi": "Tôi nhớ ra rồi", "vocabCount": 42 },
-    { "lessonNumber": 23, "id": "hanyu_2_1_lesson_23_deep_vocab", "bookId": "hanyu-q2-xia", "titleZh": "寒假你打算去哪儿旅行", "titleVi": "Kỳ nghỉ đông bạn định đi du lịch ở đâu?", "vocabCount": 46 },
-    { "lessonNumber": 24, "id": "hanyu_2_1_lesson_24_deep_vocab", "bookId": "hanyu-q2-xia", "titleZh": "有困难找警察", "titleVi": "Có khó khăn thì tìm cảnh sát", "vocabCount": 41 },
-    { "lessonNumber": 25, "id": "hanyu_2_2_lesson_25_deep_vocab", "bookId": "hanyu-q2-xia", "titleZh": "吉利的数字", "titleVi": "Những con số may mắn", "vocabCount": 67 }
+    {
+      "lessonNumber": 1,
+      "id": "hanyu_2_1_lesson_01",
+      "bookId": "hanyu-q2-shang",
+      "titleZh": "田芳去哪儿了",
+      "titleVi": "Điền Phương đi đâu rồi?",
+      "vocabCount": 45
+    },
+    {
+      "lessonNumber": 2,
+      "id": "hanyu_2_1_lesson_02",
+      "bookId": "hanyu-q2-shang",
+      "titleZh": "玛丽哭了",
+      "titleVi": "Mary khóc rồi",
+      "vocabCount": 32
+    },
+    {
+      "lessonNumber": 3,
+      "id": "hanyu_2_1_lesson_03",
+      "bookId": "hanyu-q2-shang",
+      "titleZh": "我吃了早饭就来了",
+      "titleVi": "Tôi ăn sáng xong thì đến",
+      "vocabCount": 41
+    },
+    {
+      "lessonNumber": 4,
+      "id": "hanyu_2_1_lesson_04",
+      "bookId": "hanyu-q2-shang",
+      "titleZh": "我都做对了",
+      "titleVi": "Tôi đều làm đúng rồi",
+      "vocabCount": 28
+    },
+    {
+      "lessonNumber": 5,
+      "id": "hanyu_2_1_lesson_05",
+      "bookId": "hanyu-q2-shang",
+      "titleZh": "我来了两个多月了",
+      "titleVi": "Tôi đến được hơn hai tháng rồi",
+      "vocabCount": 51
+    },
+    {
+      "lessonNumber": 6,
+      "id": "hanyu_2_1_lesson_06",
+      "bookId": "hanyu-q2-shang",
+      "titleZh": "我比你更喜欢音乐",
+      "titleVi": "Tôi thích âm nhạc hơn bạn",
+      "vocabCount": 46
+    },
+    {
+      "lessonNumber": 7,
+      "id": "hanyu_2_1_lesson_07",
+      "bookId": "hanyu-q2-shang",
+      "titleZh": "我们那儿的冬天跟北京一样冷",
+      "titleVi": "Mùa đông ở chỗ chúng tôi lạnh như Bắc Kinh",
+      "vocabCount": 40
+    },
+    {
+      "lessonNumber": 8,
+      "id": "hanyu_2_1_lesson_08",
+      "bookId": "hanyu-q2-shang",
+      "titleZh": "冬天快要到了",
+      "titleVi": "Mùa đông sắp đến rồi",
+      "vocabCount": 54
+    },
+    {
+      "lessonNumber": 9,
+      "id": "hanyu_2_1_lesson_09",
+      "bookId": "hanyu-q2-shang",
+      "titleZh": "快上来吧，要开车了",
+      "titleVi": "Mau lên xe đi, sắp chạy rồi",
+      "vocabCount": 37
+    },
+    {
+      "lessonNumber": 10,
+      "id": "hanyu_2_1_lesson_10",
+      "bookId": "hanyu-q2-shang",
+      "titleZh": "我听过钢琴协奏曲《黄河》",
+      "titleVi": "Tôi đã từng nghe bản concerto piano 《Hoàng Hà》",
+      "vocabCount": 52
+    },
+    {
+      "lessonNumber": 11,
+      "id": "hanyu_2_1_lesson_11",
+      "bookId": "hanyu-q2-shang",
+      "titleZh": "我是跟旅游团一起来的",
+      "titleVi": "Tôi đi cùng đoàn du lịch đến",
+      "vocabCount": 48
+    },
+    {
+      "lessonNumber": 12,
+      "id": "hanyu_2_1_lesson_12",
+      "bookId": "hanyu-q2-shang",
+      "titleZh": "我的护照你找到了没有",
+      "titleVi": "Hộ chiếu của tôi bạn tìm thấy chưa?",
+      "vocabCount": 60
+    },
+    {
+      "lessonNumber": 13,
+      "id": "hanyu_2_2_lesson_13",
+      "bookId": "hanyu-q2-xia",
+      "titleZh": "我的眼镜儿摔坏了",
+      "titleVi": "Kính mắt của tôi bị rơi vỡ rồi",
+      "vocabCount": 37
+    },
+    {
+      "lessonNumber": 14,
+      "id": "hanyu_2_2_lesson_14",
+      "bookId": "hanyu-q2-xia",
+      "titleZh": "钥匙忘拔下来了",
+      "titleVi": "Chìa khóa quên rút ra rồi",
+      "vocabCount": 67
+    },
+    {
+      "lessonNumber": 15,
+      "id": "hanyu_2_2_lesson_15",
+      "bookId": "hanyu-q2-xia",
+      "titleZh": "会议厅的门开着呢",
+      "titleVi": "Cửa phòng hội nghị đang mở",
+      "vocabCount": 51
+    },
+    {
+      "lessonNumber": 16,
+      "id": "hanyu_2_2_lesson_16",
+      "bookId": "hanyu-q2-xia",
+      "titleZh": "前边开过来一辆空车",
+      "titleVi": "Phía trước có một chiếc xe trống đang chạy tới",
+      "vocabCount": 54
+    },
+    {
+      "lessonNumber": 17,
+      "id": "hanyu_2_2_lesson_17",
+      "bookId": "hanyu-q2-xia",
+      "titleZh": "把“福”字倒着贴在门上",
+      "titleVi": "Dán chữ “Phúc” ngược lên cửa",
+      "vocabCount": 53
+    },
+    {
+      "lessonNumber": 18,
+      "id": "hanyu_2_2_lesson_18",
+      "bookId": "hanyu-q2-xia",
+      "titleZh": "请把护照和机票给我",
+      "titleVi": "Xin hãy đưa hộ chiếu và vé máy bay cho tôi",
+      "vocabCount": 46
+    },
+    {
+      "lessonNumber": 19,
+      "id": "hanyu_2_2_lesson_19",
+      "bookId": "hanyu-q2-xia",
+      "titleZh": "我的腿被自行车撞伤了",
+      "titleVi": "Chân tôi bị xe đạp đâm bị thương",
+      "vocabCount": 39
+    },
+    {
+      "lessonNumber": 20,
+      "id": "hanyu_2_2_lesson_20",
+      "bookId": "hanyu-q2-xia",
+      "titleZh": "我看得懂，但是听不懂",
+      "titleVi": "Tôi xem/đọc hiểu được, nhưng nghe không hiểu",
+      "vocabCount": 59
+    },
+    {
+      "lessonNumber": 21,
+      "id": "hanyu_2_2_lesson_21",
+      "bookId": "hanyu-q2-xia",
+      "titleZh": "山这么高，你爬得上去吗",
+      "titleVi": "Núi cao thế này, bạn leo lên được không?",
+      "vocabCount": 59
+    },
+    {
+      "lessonNumber": 22,
+      "id": "hanyu_2_2_lesson_22",
+      "bookId": "hanyu-q2-xia",
+      "titleZh": "我想起来了",
+      "titleVi": "Tôi nhớ ra rồi",
+      "vocabCount": 42
+    },
+    {
+      "lessonNumber": 23,
+      "id": "hanyu_2_2_lesson_23",
+      "bookId": "hanyu-q2-xia",
+      "titleZh": "寒假你打算去哪儿旅行",
+      "titleVi": "Kỳ nghỉ đông bạn định đi đâu du lịch?",
+      "vocabCount": 46
+    },
+    {
+      "lessonNumber": 24,
+      "id": "hanyu_2_2_lesson_24",
+      "bookId": "hanyu-q2-xia",
+      "titleZh": "有困难找警察",
+      "titleVi": "Có khó khăn thì tìm cảnh sát",
+      "vocabCount": 41
+    },
+    {
+      "lessonNumber": 25,
+      "id": "hanyu_2_2_lesson_25",
+      "bookId": "hanyu-q2-xia",
+      "titleZh": "吉利的数字",
+      "titleVi": "Những con số may mắn",
+      "vocabCount": 67
+    }
   ]
 }

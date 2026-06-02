@@ -1,0 +1,3568 @@
+{
+  "schema_version": "2.3.0",
+  "content_type": "chinese_textbook_lesson",
+  "verification_status": "verified",
+  "source": {
+    "book": "Hanyu Jiaocheng",
+    "volume": "第二册上",
+    "volume_vi": "Quyển 2 Thượng",
+    "lesson_index": 3,
+    "lesson_number_cn": "第三课",
+    "lesson_title_cn": "我吃了早饭就来了",
+    "lesson_title_pinyin": "Wǒ chī le zǎofàn jiù lái le",
+    "lesson_title_vi": "Tôi ăn sáng xong thì đến",
+    "lesson_title_en": "I came right after breakfast",
+    "source_files": [
+      {
+        "name": "Hanyu Jiaocheng 2-1.pdf",
+        "type": "pdf_scan",
+        "source_origin": "textbook",
+        "check_needed": true,
+        "page_start": 35,
+        "page_end": 48
+      },
+      {
+        "name": "Tong_hop_tu_vung_Han_ngu_quyen_2_Bai_1-25.docx",
+        "type": "uploaded_crosscheck",
+        "source_origin": "uploaded_crosscheck",
+        "check_needed": false
+      },
+      {
+        "name": "Học kì 2 上-下.md",
+        "type": "uploaded_crosscheck",
+        "source_origin": "uploaded_crosscheck",
+        "check_needed": false
+      },
+      {
+        "name": "hanyu_lesson_full_coverage_sample_v2_3_0.json",
+        "type": "structure_sample",
+        "source_origin": "uploaded_crosscheck",
+        "check_needed": false
+      },
+      {
+        "name": "hanyuLesson.schema.v2.3.0.full.ts",
+        "type": "schema",
+        "source_origin": "uploaded_crosscheck",
+        "check_needed": false
+      }
+    ],
+    "web_crosscheck": [
+      {
+        "title": "LingQ - 28-1 我吃了早饭就来了",
+        "source_origin": "web_crosscheck",
+        "note": "Dùng phụ trợ để đối chiếu bài khóa; không thay thế PDF."
+      },
+      {
+        "title": "Scribd - ANSWER Hanyu Jiaocheng 2A",
+        "source_origin": "web_crosscheck",
+        "note": "Dùng phụ trợ cho đáp án reading; không thay thế PDF."
+      }
+    ]
+  },
+  "lesson": {
+    "id": "hanyu_2_1_lesson_03",
+    "title": {
+      "zh": "我吃了早饭就来了",
+      "pinyin": "Wǒ chī le zǎofàn jiù lái le",
+      "vi": "Tôi ăn sáng xong thì đến",
+      "en": "I came right after breakfast"
+    },
+    "tags": [
+      "hanyu_2_1",
+      "lesson_03",
+      "coverage_first",
+      "json_from_markdown_parts"
+    ],
+    "sections": [
+      {
+        "id": "section_01_text",
+        "type": "text",
+        "order": 1,
+        "title": "课文",
+        "title_vi": "Bài khóa",
+        "source_origin": "textbook",
+        "check_needed": false,
+        "blocks": [
+          {
+            "id": "text_01",
+            "type": "text_dialogue",
+            "order": 1,
+            "title": "我吃了早饭就来了",
+            "title_vi": "Tôi ăn sáng xong thì đến",
+            "source_origin": "textbook",
+            "check_needed": false,
+            "summary_vi": "小张 muốn thuê nhà gần công ty hơn nên đi xem nhà với nhân viên môi giới.",
+            "lines": [
+              {
+                "id": "text_01_line_01",
+                "order": 1,
+                "speaker": "",
+                "zh": "小张住的地方离公司太远，他想租一套近点儿的房子。今天他休息，又去看房子了。",
+                "pinyin": "",
+                "vi": "Tiểu Trương ở quá xa công ty, nên anh ấy muốn thuê một căn nhà gần hơn một chút. Hôm nay anh ấy nghỉ, lại đi xem nhà.",
+                "grammar_refs": [
+                  "grammar_01"
+                ],
+                "vocab_refs": [
+                  "vocab_001",
+                  "vocab_004"
+                ],
+                "source_origin": "textbook",
+                "check_needed": false,
+                "uuid": "a94357b5-460f-40bb-a8d9-ea5fc1d0d29a"
+              },
+              {
+                "id": "text_01_line_02",
+                "order": 2,
+                "speaker": "业务员",
+                "zh": "张先生，这么早！",
+                "pinyin": "",
+                "vi": "Anh Trương, sớm thế!",
+                "source_origin": "textbook",
+                "check_needed": false,
+                "uuid": "5ac62c94-0305-4f4b-9d72-599851afc409"
+              },
+              {
+                "id": "text_01_line_03",
+                "order": 3,
+                "speaker": "小张",
+                "zh": "是啊。我吃了早饭就来了。",
+                "pinyin": "",
+                "vi": "Đúng vậy. Tôi ăn sáng xong là đến ngay.",
+                "grammar_refs": [
+                  "grammar_01"
+                ],
+                "source_origin": "textbook",
+                "check_needed": false,
+                "uuid": "9957f6a9-82ca-4275-ba86-2a713fdc6a22"
+              },
+              {
+                "id": "text_01_line_04",
+                "order": 4,
+                "speaker": "业务员",
+                "zh": "我也是。接了您的电话，八点半就到这儿了。上次您看了几套房子？",
+                "pinyin": "",
+                "vi": "Tôi cũng vậy. Nhận điện thoại của anh xong, tám giờ rưỡi tôi đã đến đây rồi. Lần trước anh đã xem mấy căn nhà?",
+                "grammar_refs": [
+                  "grammar_01"
+                ],
+                "vocab_refs": [
+                  "vocab_001",
+                  "vocab_004"
+                ],
+                "source_origin": "textbook",
+                "check_needed": false,
+                "uuid": "fd85a63f-ef55-42ca-a98e-a4e32b1c4b5c"
+              },
+              {
+                "id": "text_01_line_05",
+                "order": 5,
+                "speaker": "小张",
+                "zh": "看了三套，都不太满意。有的太小，有的周围环境太乱。",
+                "pinyin": "",
+                "vi": "Tôi xem ba căn, đều không hài lòng lắm. Có căn quá nhỏ, có căn xung quanh môi trường quá lộn xộn.",
+                "vocab_refs": [
+                  "vocab_001",
+                  "vocab_005",
+                  "vocab_006",
+                  "vocab_007",
+                  "vocab_008"
+                ],
+                "source_origin": "textbook",
+                "check_needed": false,
+                "uuid": "88778aab-357d-4218-b3aa-30269c7401b7"
+              },
+              {
+                "id": "text_01_line_06",
+                "order": 6,
+                "speaker": "业务员",
+                "zh": "我再带您去看几套吧。",
+                "pinyin": "",
+                "vi": "Để tôi lại dẫn anh đi xem thêm mấy căn nhé.",
+                "vocab_refs": [
+                  "vocab_001"
+                ],
+                "source_origin": "textbook",
+                "check_needed": false,
+                "uuid": "8ed621a0-40ee-442c-be66-b2646e6fb644"
+              },
+              {
+                "id": "text_01_line_07",
+                "order": 7,
+                "speaker": "",
+                "zh": "看了房子以后。",
+                "pinyin": "",
+                "vi": "Sau khi xem nhà xong.",
+                "source_origin": "textbook",
+                "check_needed": false,
+                "uuid": "1b592fa6-0573-490d-a96f-ad13293293d9"
+              },
+              {
+                "id": "text_01_line_08",
+                "order": 8,
+                "speaker": "小张",
+                "zh": "这几套房子，厨房、卧室还可以，但是客厅面积小了点儿。有没有大一点儿的？",
+                "pinyin": "",
+                "vi": "Mấy căn nhà này, nhà bếp và phòng ngủ thì tạm được, nhưng diện tích phòng khách hơi nhỏ một chút. Có căn nào lớn hơn một chút không?",
+                "grammar_refs": [
+                  "note_01",
+                  "grammar_03"
+                ],
+                "vocab_refs": [
+                  "vocab_009",
+                  "vocab_010",
+                  "vocab_011",
+                  "vocab_012"
+                ],
+                "source_origin": "textbook",
+                "check_needed": false,
+                "uuid": "10ce60c4-eca8-4a3c-80ea-4097d365c0ea"
+              },
+              {
+                "id": "text_01_line_09",
+                "order": 9,
+                "speaker": "业务员",
+                "zh": "有，楼上18层有一套，客厅30多平（方）米。咱们上去看看吧。",
+                "pinyin": "",
+                "vi": "Có, trên tầng 18 có một căn, phòng khách hơn 30 mét vuông. Chúng ta lên xem thử nhé.",
+                "vocab_refs": [
+                  "vocab_002",
+                  "vocab_003",
+                  "vocab_001",
+                  "vocab_011",
+                  "vocab_013",
+                  "vocab_014"
+                ],
+                "source_origin": "textbook",
+                "check_needed": false,
+                "uuid": "bdbd86fa-15ca-4f85-acd9-93ecb5b6fe94"
+              },
+              {
+                "id": "text_01_line_10",
+                "order": 10,
+                "speaker": "小张",
+                "zh": "这套房子下午就没有阳光了吧？",
+                "pinyin": "",
+                "vi": "Căn nhà này buổi chiều là không có nắng nữa phải không?",
+                "grammar_refs": [
+                  "grammar_01"
+                ],
+                "vocab_refs": [
+                  "vocab_016"
+                ],
+                "source_origin": "textbook",
+                "check_needed": false,
+                "uuid": "c8eb9905-80ed-415e-a0f0-d15bae2e33db"
+              },
+              {
+                "id": "text_01_line_11",
+                "order": 11,
+                "speaker": "业务员",
+                "zh": "是的。",
+                "pinyin": "",
+                "vi": "Đúng vậy.",
+                "source_origin": "textbook",
+                "check_needed": false,
+                "uuid": "52af3272-16d3-4400-9bee-c2c8b502e547"
+              },
+              {
+                "id": "text_01_line_12",
+                "order": 12,
+                "speaker": "小张",
+                "zh": "我还是想要上下午都有阳光的。",
+                "pinyin": "",
+                "vi": "Tôi vẫn muốn căn mà sáng chiều đều có nắng.",
+                "grammar_refs": [
+                  "note_02"
+                ],
+                "vocab_refs": [
+                  "vocab_016",
+                  "vocab_018"
+                ],
+                "source_origin": "textbook",
+                "check_needed": false,
+                "uuid": "7764719d-2d46-467e-967a-261a04aeef95"
+              }
+            ],
+            "paragraphs": [],
+            "comprehension_questions": [],
+            "uuid": "2cc4efb7-d5e2-4995-9f2d-93ddf485faa3"
+          },
+          {
+            "id": "text_02",
+            "type": "text_dialogue",
+            "order": 2,
+            "title": "我早就下班了",
+            "title_vi": "Em đã tan làm từ lâu rồi",
+            "source_origin": "textbook",
+            "check_needed": false,
+            "summary_vi": "小张 nói chuyện với vợ về căn nhà vừa xem, tiền thuê, môi trường và giao thông.",
+            "lines": [
+              {
+                "id": "text_02_line_01",
+                "order": 1,
+                "speaker": "",
+                "zh": "小张的妻子回来了。",
+                "pinyin": "",
+                "vi": "Vợ của Tiểu Trương về nhà.",
+                "vocab_refs": [
+                  "vocab_019"
+                ],
+                "source_origin": "textbook",
+                "check_needed": false,
+                "uuid": "356960fe-624e-4290-abe3-c3587ea60547"
+              },
+              {
+                "id": "text_02_line_02",
+                "order": 2,
+                "speaker": "小张",
+                "zh": "怎么现在才下班？",
+                "pinyin": "",
+                "vi": "Sao bây giờ em mới tan làm?",
+                "grammar_refs": [
+                  "grammar_01"
+                ],
+                "vocab_refs": [
+                  "vocab_022"
+                ],
+                "source_origin": "textbook",
+                "check_needed": false,
+                "uuid": "609ce11c-2006-4693-b67e-def748a89aa7"
+              },
+              {
+                "id": "text_02_line_03",
+                "order": 3,
+                "speaker": "妻子",
+                "zh": "我早就下班了。路上堵车堵得厉害。我下了班就往回赶，到现在才到家。你今天看了几套房子？",
+                "pinyin": "",
+                "vi": "Em tan làm từ lâu rồi. Trên đường kẹt xe dữ quá. Em tan làm là vội về ngay, đến bây giờ mới tới nhà. Hôm nay anh xem mấy căn nhà?",
+                "grammar_refs": [
+                  "grammar_01"
+                ],
+                "vocab_refs": [
+                  "vocab_020",
+                  "vocab_021",
+                  "vocab_022"
+                ],
+                "source_origin": "textbook",
+                "check_needed": false,
+                "uuid": "9ef67466-0e65-482d-a75e-c5e9ce06aad6"
+              },
+              {
+                "id": "text_02_line_04",
+                "order": 4,
+                "speaker": "小张",
+                "zh": "看了七八套。有一套我觉得不错。等你休息的时候，再一起去看看。要是你也满意，咱们就租了。",
+                "pinyin": "",
+                "vi": "Anh xem bảy tám căn. Có một căn anh thấy khá được. Khi nào em nghỉ, mình lại cùng đi xem. Nếu em cũng hài lòng, chúng ta thuê luôn.",
+                "grammar_refs": [
+                  "grammar_02"
+                ],
+                "vocab_refs": [
+                  "vocab_001",
+                  "vocab_023"
+                ],
+                "source_origin": "textbook",
+                "check_needed": false,
+                "uuid": "301ef397-64c5-4c48-a92d-607f7b8b4915"
+              },
+              {
+                "id": "text_02_line_05",
+                "order": 5,
+                "speaker": "妻子",
+                "zh": "房租多少钱？",
+                "pinyin": "",
+                "vi": "Tiền thuê nhà bao nhiêu?",
+                "vocab_refs": [
+                  "vocab_025"
+                ],
+                "source_origin": "textbook",
+                "check_needed": false,
+                "uuid": "4dba1e7f-f212-4f64-ba3f-317ed94b5671"
+              },
+              {
+                "id": "text_02_line_06",
+                "order": 6,
+                "speaker": "小张",
+                "zh": "一个月五千块。",
+                "pinyin": "",
+                "vi": "Một tháng năm nghìn tệ.",
+                "source_origin": "textbook",
+                "check_needed": true,
+                "note_vi": "Số tiền trong các bản phụ có thể khác; cần kiểm tra lại PDF scan nếu cần tuyệt đối.",
+                "uuid": "f45d75ca-1403-405d-b7f7-76158fa57aab"
+              },
+              {
+                "id": "text_02_line_07",
+                "order": 7,
+                "speaker": "妻子",
+                "zh": "怎么这么贵？",
+                "pinyin": "",
+                "vi": "Sao đắt thế?",
+                "source_origin": "textbook",
+                "check_needed": false,
+                "uuid": "50fbd0a6-695a-4702-a318-04a340db1ab8"
+              },
+              {
+                "id": "text_02_line_08",
+                "order": 8,
+                "speaker": "小张",
+                "zh": "虽然贵了点儿，但是房子真好。",
+                "pinyin": "",
+                "vi": "Tuy hơi đắt một chút, nhưng căn nhà thật sự tốt.",
+                "grammar_refs": [
+                  "grammar_03"
+                ],
+                "vocab_refs": [
+                  "vocab_026",
+                  "vocab_027"
+                ],
+                "source_origin": "textbook",
+                "check_needed": false,
+                "uuid": "6c4218f8-86ce-4b8b-9aa1-31f2230c499e"
+              },
+              {
+                "id": "text_02_line_09",
+                "order": 9,
+                "speaker": "妻子",
+                "zh": "周围环境怎么样？",
+                "pinyin": "",
+                "vi": "Môi trường xung quanh thế nào?",
+                "vocab_refs": [
+                  "vocab_006",
+                  "vocab_007"
+                ],
+                "source_origin": "textbook",
+                "check_needed": false,
+                "uuid": "83ab94cf-9da8-43d8-8f74-adc37690942e"
+              },
+              {
+                "id": "text_02_line_10",
+                "order": 10,
+                "speaker": "小张",
+                "zh": "环境特别好。西边是山，山下边有一条小河，河边是一个很大的公园。周围非常安静。",
+                "pinyin": "",
+                "vi": "Môi trường đặc biệt tốt. Phía tây là núi, dưới chân núi có một con sông nhỏ, bên bờ sông là một công viên rất lớn. Xung quanh rất yên tĩnh.",
+                "vocab_refs": [
+                  "vocab_007",
+                  "vocab_028",
+                  "vocab_029"
+                ],
+                "source_origin": "textbook",
+                "check_needed": false,
+                "uuid": "01d639f7-a8f4-4e47-94d2-965a3eadac94"
+              },
+              {
+                "id": "text_02_line_11",
+                "order": 11,
+                "speaker": "妻子",
+                "zh": "交通方便不方便？",
+                "pinyin": "",
+                "vi": "Giao thông có tiện không?",
+                "vocab_refs": [
+                  "vocab_030",
+                  "vocab_031"
+                ],
+                "source_origin": "textbook",
+                "check_needed": false,
+                "uuid": "a0e7cfb3-ffea-46ad-869c-de888032f57d"
+              },
+              {
+                "id": "text_02_line_12",
+                "order": 12,
+                "speaker": "小张",
+                "zh": "交通很方便。楼下就有公共汽车站，坐车十分钟就到公司了。汽车站旁边就是地铁站。附近有学校、医院和体育馆……",
+                "pinyin": "",
+                "vi": "Giao thông rất thuận tiện. Ngay dưới lầu có trạm xe buýt, ngồi xe mười phút là đến công ty. Bên cạnh trạm xe chính là ga tàu điện ngầm. Gần đó có trường học, bệnh viện và nhà thi đấu…",
+                "grammar_refs": [
+                  "grammar_01"
+                ],
+                "vocab_refs": [
+                  "vocab_030",
+                  "vocab_031",
+                  "vocab_033",
+                  "vocab_034",
+                  "vocab_035",
+                  "vocab_036",
+                  "vocab_037",
+                  "vocab_038",
+                  "vocab_039"
+                ],
+                "source_origin": "textbook",
+                "check_needed": false,
+                "uuid": "de9d2903-91a9-4051-9b1e-fdd6115edcb1"
+              }
+            ],
+            "paragraphs": [],
+            "comprehension_questions": [],
+            "uuid": "a9583c50-2a03-4cf5-bfe1-8e0fc7edc1b7"
+          }
+        ],
+        "uuid": "7734e43f-607b-4605-aeef-bcc12427a049"
+      },
+      {
+        "id": "section_02_vocabulary",
+        "type": "vocabulary",
+        "order": 2,
+        "title": "生词",
+        "title_vi": "Từ vựng chính",
+        "source_origin": "uploaded_crosscheck",
+        "check_needed": false,
+        "items": [
+          {
+            "id": "vocab_001",
+            "type": "vocabulary_item",
+            "order": 1,
+            "hanzi": "套",
+            "pinyin": "tào",
+            "meaning_vi": "bộ; bộ/căn, lượng từ cho nhà, bộ đồ, bộ sách",
+            "meaning_en": "measure word for sets/suites",
+            "pos": "measure_word",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "套",
+              "back": "tào — bộ; bộ/căn, lượng từ cho nhà, bộ đồ, bộ sách",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "uploaded_crosscheck",
+            "check_needed": false,
+            "uuid": "65914f85-e054-4092-8fc7-f14d41eb78b5"
+          },
+          {
+            "id": "vocab_002",
+            "type": "vocabulary_item",
+            "order": 2,
+            "hanzi": "层",
+            "pinyin": "céng",
+            "meaning_vi": "tầng; lớp",
+            "meaning_en": "floor; layer",
+            "pos": "measure_word",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "层",
+              "back": "céng — tầng; lớp",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "uploaded_crosscheck",
+            "check_needed": false,
+            "uuid": "f7545002-fc38-459e-aeb5-388924124b1e"
+          },
+          {
+            "id": "vocab_003",
+            "type": "vocabulary_item",
+            "order": 3,
+            "hanzi": "楼",
+            "pinyin": "lóu",
+            "meaning_vi": "lầu; tòa nhà",
+            "meaning_en": "building; floor",
+            "pos": "noun",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "楼",
+              "back": "lóu — lầu; tòa nhà",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "uploaded_crosscheck",
+            "check_needed": false,
+            "uuid": "62eb1da4-477e-4858-8031-efc07aa0d6f3"
+          },
+          {
+            "id": "vocab_004",
+            "type": "vocabulary_item",
+            "order": 4,
+            "hanzi": "房子",
+            "pinyin": "fángzi",
+            "meaning_vi": "nhà; căn nhà; căn hộ",
+            "meaning_en": "house; apartment",
+            "pos": "noun",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "房子",
+              "back": "fángzi — nhà; căn nhà; căn hộ",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "uploaded_crosscheck",
+            "check_needed": false,
+            "uuid": "f8672905-5342-4424-a84c-0065ebce358c"
+          },
+          {
+            "id": "vocab_005",
+            "type": "vocabulary_item",
+            "order": 5,
+            "hanzi": "有的",
+            "pinyin": "yǒude",
+            "meaning_vi": "có cái thì; có người/có cái",
+            "meaning_en": "some; some of them",
+            "pos": "phrase",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "有的",
+              "back": "yǒude — có cái thì; có người/có cái",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "uploaded_crosscheck",
+            "check_needed": false,
+            "uuid": "a96be243-3b79-48cb-bfd8-190aa7fb5611"
+          },
+          {
+            "id": "vocab_006",
+            "type": "vocabulary_item",
+            "order": 6,
+            "hanzi": "周围",
+            "pinyin": "zhōuwéi",
+            "meaning_vi": "xung quanh",
+            "meaning_en": "surroundings",
+            "pos": "noun",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "周围",
+              "back": "zhōuwéi — xung quanh",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "uploaded_crosscheck",
+            "check_needed": false,
+            "uuid": "fec98908-ccc2-4360-a41e-5fc2b1d0b90e"
+          },
+          {
+            "id": "vocab_007",
+            "type": "vocabulary_item",
+            "order": 7,
+            "hanzi": "环境",
+            "pinyin": "huánjìng",
+            "meaning_vi": "môi trường; hoàn cảnh xung quanh",
+            "meaning_en": "environment",
+            "pos": "noun",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "环境",
+              "back": "huánjìng — môi trường; hoàn cảnh xung quanh",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "uploaded_crosscheck",
+            "check_needed": false,
+            "uuid": "83748f26-d279-4821-8558-481090f0a504"
+          },
+          {
+            "id": "vocab_008",
+            "type": "vocabulary_item",
+            "order": 8,
+            "hanzi": "乱",
+            "pinyin": "luàn",
+            "meaning_vi": "lộn xộn; rối; loạn",
+            "meaning_en": "messy; chaotic",
+            "pos": "adjective",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "乱",
+              "back": "luàn — lộn xộn; rối; loạn",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "uploaded_crosscheck",
+            "check_needed": false,
+            "uuid": "fdba11a7-16cd-4842-a189-7d356e650a37"
+          },
+          {
+            "id": "vocab_009",
+            "type": "vocabulary_item",
+            "order": 9,
+            "hanzi": "厨房",
+            "pinyin": "chúfáng",
+            "meaning_vi": "nhà bếp",
+            "meaning_en": "kitchen",
+            "pos": "noun",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "厨房",
+              "back": "chúfáng — nhà bếp",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "uploaded_crosscheck",
+            "check_needed": false,
+            "uuid": "0a44820e-9d02-47a4-a84b-7565befb1783"
+          },
+          {
+            "id": "vocab_010",
+            "type": "vocabulary_item",
+            "order": 10,
+            "hanzi": "卧室",
+            "pinyin": "wòshì",
+            "meaning_vi": "phòng ngủ",
+            "meaning_en": "bedroom",
+            "pos": "noun",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "卧室",
+              "back": "wòshì — phòng ngủ",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "uploaded_crosscheck",
+            "check_needed": false,
+            "uuid": "08a91754-095f-4073-af2d-be5cd5ceb5f5"
+          },
+          {
+            "id": "vocab_011",
+            "type": "vocabulary_item",
+            "order": 11,
+            "hanzi": "客厅",
+            "pinyin": "kètīng",
+            "meaning_vi": "phòng khách",
+            "meaning_en": "living room",
+            "pos": "noun",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "客厅",
+              "back": "kètīng — phòng khách",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "uploaded_crosscheck",
+            "check_needed": false,
+            "uuid": "0b07670d-4841-4d8f-86d4-669b6f10fab5"
+          },
+          {
+            "id": "vocab_012",
+            "type": "vocabulary_item",
+            "order": 12,
+            "hanzi": "面积",
+            "pinyin": "miànjī",
+            "meaning_vi": "diện tích",
+            "meaning_en": "area; floor space",
+            "pos": "noun",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "面积",
+              "back": "miànjī — diện tích",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "uploaded_crosscheck",
+            "check_needed": false,
+            "uuid": "b326375a-682f-43f4-8bda-2afe87dbede3"
+          },
+          {
+            "id": "vocab_013",
+            "type": "vocabulary_item",
+            "order": 13,
+            "hanzi": "平方米",
+            "pinyin": "píngfāng mǐ",
+            "meaning_vi": "mét vuông",
+            "meaning_en": "square meter",
+            "pos": "noun",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "平方米",
+              "back": "píngfāng mǐ — mét vuông",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "uploaded_crosscheck",
+            "check_needed": false,
+            "uuid": "1927cb45-706d-41f0-b0ea-2dcb5ea1ce5d"
+          },
+          {
+            "id": "vocab_014",
+            "type": "vocabulary_item",
+            "order": 14,
+            "hanzi": "上去",
+            "pinyin": "shàngqù",
+            "meaning_vi": "đi lên đó; lên trên",
+            "meaning_en": "go up",
+            "pos": "verb_phrase",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "上去",
+              "back": "shàngqù — đi lên đó; lên trên",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "uploaded_crosscheck",
+            "check_needed": false,
+            "uuid": "a73dcc15-da70-49cf-a18d-a532a4a2b606"
+          },
+          {
+            "id": "vocab_015",
+            "type": "vocabulary_item",
+            "order": 15,
+            "hanzi": "下去",
+            "pinyin": "xiàqù",
+            "meaning_vi": "đi xuống đó; xuống dưới",
+            "meaning_en": "go down",
+            "pos": "verb_phrase",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "下去",
+              "back": "xiàqù — đi xuống đó; xuống dưới",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "uploaded_crosscheck",
+            "check_needed": false,
+            "uuid": "683befb8-4375-40cd-b957-8decf5a21ecd"
+          },
+          {
+            "id": "vocab_016",
+            "type": "vocabulary_item",
+            "order": 16,
+            "hanzi": "阳光",
+            "pinyin": "yángguāng",
+            "meaning_vi": "ánh nắng; ánh mặt trời",
+            "meaning_en": "sunlight",
+            "pos": "noun",
+            "tags": [
+              "main_vocab",
+              "corrected_from_source_typo"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "阳光",
+              "back": "yángguāng — ánh nắng; ánh mặt trời",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook/generated_mixed",
+            "check_needed": true,
+            "uuid": "a4c4f8d2-0d62-4a39-966e-b808e8d8f8e0"
+          },
+          {
+            "id": "vocab_017",
+            "type": "vocabulary_item",
+            "order": 17,
+            "hanzi": "印象",
+            "pinyin": "yìnxiàng",
+            "meaning_vi": "ấn tượng",
+            "meaning_en": "impression",
+            "pos": "noun",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "印象",
+              "back": "yìnxiàng — ấn tượng",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "uploaded_crosscheck",
+            "check_needed": false,
+            "uuid": "ca89ccb4-33e7-4025-9eaf-5bc75b43a0ef"
+          },
+          {
+            "id": "vocab_018",
+            "type": "vocabulary_item",
+            "order": 18,
+            "hanzi": "还是",
+            "pinyin": "háishi",
+            "meaning_vi": "vẫn là; vẫn cứ; hay là",
+            "meaning_en": "still; had better; or",
+            "pos": "adverb",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "还是",
+              "back": "háishi — vẫn là; vẫn cứ; hay là",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "uploaded_crosscheck",
+            "check_needed": false,
+            "uuid": "749dbef3-f8ef-45ff-b1af-d96427705a05"
+          },
+          {
+            "id": "vocab_019",
+            "type": "vocabulary_item",
+            "order": 19,
+            "hanzi": "妻子",
+            "pinyin": "qīzi",
+            "meaning_vi": "vợ",
+            "meaning_en": "wife",
+            "pos": "noun",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "妻子",
+              "back": "qīzi — vợ",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "uploaded_crosscheck",
+            "check_needed": false,
+            "uuid": "8f4a5723-de0d-44ca-8789-b7c952e0a9bf"
+          },
+          {
+            "id": "vocab_020",
+            "type": "vocabulary_item",
+            "order": 20,
+            "hanzi": "堵车",
+            "pinyin": "dǔchē",
+            "meaning_vi": "kẹt xe; tắc đường",
+            "meaning_en": "traffic jam",
+            "pos": "verb_phrase",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "堵车",
+              "back": "dǔchē — kẹt xe; tắc đường",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "uploaded_crosscheck",
+            "check_needed": false,
+            "uuid": "18f5934e-c8a2-4dac-8310-2c1c9b662656"
+          },
+          {
+            "id": "vocab_021",
+            "type": "vocabulary_item",
+            "order": 21,
+            "hanzi": "赶",
+            "pinyin": "gǎn",
+            "meaning_vi": "vội; đuổi theo; chạy cho kịp",
+            "meaning_en": "hurry; catch up",
+            "pos": "verb",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "赶",
+              "back": "gǎn — vội; đuổi theo; chạy cho kịp",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "uploaded_crosscheck",
+            "check_needed": false,
+            "uuid": "0b6df69d-fbac-4785-8a0e-4947dca23c99"
+          },
+          {
+            "id": "vocab_022",
+            "type": "vocabulary_item",
+            "order": 22,
+            "hanzi": "才",
+            "pinyin": "cái",
+            "meaning_vi": "mới; mãi mới; chỉ mới",
+            "meaning_en": "only then; not until",
+            "pos": "adverb",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "才",
+              "back": "cái — mới; mãi mới; chỉ mới",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "uploaded_crosscheck",
+            "check_needed": false,
+            "uuid": "96676c52-8c7f-4ceb-8054-09e57b26b339"
+          },
+          {
+            "id": "vocab_023",
+            "type": "vocabulary_item",
+            "order": 23,
+            "hanzi": "要是",
+            "pinyin": "yàoshi",
+            "meaning_vi": "nếu; nếu như",
+            "meaning_en": "if",
+            "pos": "conjunction",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "要是",
+              "back": "yàoshi — nếu; nếu như",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "uploaded_crosscheck",
+            "check_needed": false,
+            "uuid": "a05dd84b-0b47-4887-88d9-ac9112ddfaa5"
+          },
+          {
+            "id": "vocab_024",
+            "type": "vocabulary_item",
+            "order": 24,
+            "hanzi": "组",
+            "pinyin": "zǔ",
+            "meaning_vi": "nhóm; tổ",
+            "meaning_en": "group",
+            "pos": "noun",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "组",
+              "back": "zǔ — nhóm; tổ",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "uploaded_crosscheck",
+            "check_needed": false,
+            "uuid": "cd5e2486-e967-4c36-be3d-0620c744ea0f"
+          },
+          {
+            "id": "vocab_025",
+            "type": "vocabulary_item",
+            "order": 25,
+            "hanzi": "房租",
+            "pinyin": "fángzū",
+            "meaning_vi": "tiền thuê nhà",
+            "meaning_en": "rent",
+            "pos": "noun",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "房租",
+              "back": "fángzū — tiền thuê nhà",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "uploaded_crosscheck",
+            "check_needed": false,
+            "uuid": "7e398934-8bbf-4674-9919-77eaf93586ba"
+          },
+          {
+            "id": "vocab_026",
+            "type": "vocabulary_item",
+            "order": 26,
+            "hanzi": "虽然",
+            "pinyin": "suīrán",
+            "meaning_vi": "tuy; mặc dù",
+            "meaning_en": "although",
+            "pos": "conjunction",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "虽然",
+              "back": "suīrán — tuy; mặc dù",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "uploaded_crosscheck",
+            "check_needed": false,
+            "uuid": "20410e25-fd1a-42ef-aa41-1f676a421d27"
+          },
+          {
+            "id": "vocab_027",
+            "type": "vocabulary_item",
+            "order": 27,
+            "hanzi": "真",
+            "pinyin": "zhēn",
+            "meaning_vi": "thật; thật sự",
+            "meaning_en": "really",
+            "pos": "adverb",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "真",
+              "back": "zhēn — thật; thật sự",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "uploaded_crosscheck",
+            "check_needed": false,
+            "uuid": "80fdd921-212c-4f82-acb5-8098ec05d9e2"
+          },
+          {
+            "id": "vocab_028",
+            "type": "vocabulary_item",
+            "order": 28,
+            "hanzi": "条",
+            "pinyin": "tiáo",
+            "meaning_vi": "lượng từ cho vật dài/mảnh: sông, đường, quần, cá…",
+            "meaning_en": "measure word for long thin things",
+            "pos": "measure_word",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "条",
+              "back": "tiáo — lượng từ cho vật dài/mảnh: sông, đường, quần, cá…",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "uploaded_crosscheck",
+            "check_needed": false,
+            "uuid": "57ff03cb-03cf-45f0-80e2-7f769af254bc"
+          },
+          {
+            "id": "vocab_029",
+            "type": "vocabulary_item",
+            "order": 29,
+            "hanzi": "河",
+            "pinyin": "hé",
+            "meaning_vi": "sông",
+            "meaning_en": "river",
+            "pos": "noun",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "河",
+              "back": "hé — sông",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "uploaded_crosscheck",
+            "check_needed": false,
+            "uuid": "b10e1655-f5d7-4d16-93c1-13fea6230d10"
+          },
+          {
+            "id": "vocab_030",
+            "type": "vocabulary_item",
+            "order": 30,
+            "hanzi": "交通",
+            "pinyin": "jiāotōng",
+            "meaning_vi": "giao thông",
+            "meaning_en": "traffic; transportation",
+            "pos": "noun",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "交通",
+              "back": "jiāotōng — giao thông",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "uploaded_crosscheck",
+            "check_needed": false,
+            "uuid": "1a5925fb-b66f-4afa-8941-212260be2f1e"
+          },
+          {
+            "id": "vocab_031",
+            "type": "vocabulary_item",
+            "order": 31,
+            "hanzi": "方便",
+            "pinyin": "fāngbiàn",
+            "meaning_vi": "tiện; thuận tiện",
+            "meaning_en": "convenient",
+            "pos": "adjective",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "方便",
+              "back": "fāngbiàn — tiện; thuận tiện",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "uploaded_crosscheck",
+            "check_needed": false,
+            "uuid": "a33b2706-f150-48dd-b901-412a2cc90ff0"
+          },
+          {
+            "id": "vocab_032",
+            "type": "vocabulary_item",
+            "order": 32,
+            "hanzi": "顺便",
+            "pinyin": "shùnbiàn",
+            "meaning_vi": "tiện thể; nhân tiện",
+            "meaning_en": "conveniently; in passing",
+            "pos": "adverb",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "顺便",
+              "back": "shùnbiàn — tiện thể; nhân tiện",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "uploaded_crosscheck",
+            "check_needed": false,
+            "uuid": "7ccae521-c552-4401-bd6f-a1b47b2e5e96"
+          },
+          {
+            "id": "vocab_033",
+            "type": "vocabulary_item",
+            "order": 33,
+            "hanzi": "公共汽车 / 大巴",
+            "pinyin": "gōnggòng qìchē / dàbā",
+            "meaning_vi": "xe buýt / xe bus lớn",
+            "meaning_en": "bus",
+            "pos": "noun",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "公共汽车 / 大巴",
+              "back": "gōnggòng qìchē / dàbā — xe buýt / xe bus lớn",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "uploaded_crosscheck",
+            "check_needed": false,
+            "uuid": "659c8569-b0d4-459a-85cb-3431abf30a78"
+          },
+          {
+            "id": "vocab_034",
+            "type": "vocabulary_item",
+            "order": 34,
+            "hanzi": "站",
+            "pinyin": "zhàn",
+            "meaning_vi": "trạm; bến; ga",
+            "meaning_en": "station; stop",
+            "pos": "noun",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "站",
+              "back": "zhàn — trạm; bến; ga",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "uploaded_crosscheck",
+            "check_needed": false,
+            "uuid": "2ad2fdae-d430-4bfa-8a91-042dc941810a"
+          },
+          {
+            "id": "vocab_035",
+            "type": "vocabulary_item",
+            "order": 35,
+            "hanzi": "车站",
+            "pinyin": "chēzhàn",
+            "meaning_vi": "bến xe; nhà ga; trạm xe",
+            "meaning_en": "station",
+            "pos": "noun",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "车站",
+              "back": "chēzhàn — bến xe; nhà ga; trạm xe",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "uploaded_crosscheck",
+            "check_needed": false,
+            "uuid": "f5db8adb-c7dd-4234-a8e2-79fb9daed28a"
+          },
+          {
+            "id": "vocab_036",
+            "type": "vocabulary_item",
+            "order": 36,
+            "hanzi": "旁边",
+            "pinyin": "pángbiān",
+            "meaning_vi": "bên cạnh",
+            "meaning_en": "beside; next to",
+            "pos": "noun",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "旁边",
+              "back": "pángbiān — bên cạnh",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "uploaded_crosscheck",
+            "check_needed": false,
+            "uuid": "7c64a2cd-bb87-48eb-b0f7-0f20998c24f8"
+          },
+          {
+            "id": "vocab_037",
+            "type": "vocabulary_item",
+            "order": 37,
+            "hanzi": "地铁",
+            "pinyin": "dìtiě",
+            "meaning_vi": "tàu điện ngầm; metro",
+            "meaning_en": "subway; metro",
+            "pos": "noun",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "地铁",
+              "back": "dìtiě — tàu điện ngầm; metro",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "uploaded_crosscheck",
+            "check_needed": false,
+            "uuid": "9ccf6466-9336-4b81-a32b-b9e42b53ef01"
+          },
+          {
+            "id": "vocab_038",
+            "type": "vocabulary_item",
+            "order": 38,
+            "hanzi": "附近",
+            "pinyin": "fùjìn",
+            "meaning_vi": "gần đây; khu vực lân cận",
+            "meaning_en": "nearby",
+            "pos": "noun",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "附近",
+              "back": "fùjìn — gần đây; khu vực lân cận",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "uploaded_crosscheck",
+            "check_needed": false,
+            "uuid": "5683b481-355d-4a16-869d-85825e5c787c"
+          },
+          {
+            "id": "vocab_039",
+            "type": "vocabulary_item",
+            "order": 39,
+            "hanzi": "体育馆",
+            "pinyin": "tǐyùguǎn",
+            "meaning_vi": "nhà thi đấu; sân vận động trong nhà",
+            "meaning_en": "gymnasium",
+            "pos": "noun",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "体育馆",
+              "back": "tǐyùguǎn — nhà thi đấu; sân vận động trong nhà",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "uploaded_crosscheck",
+            "check_needed": false,
+            "uuid": "333669ce-f269-4de3-b359-911c1bed4e10"
+          },
+          {
+            "id": "vocab_040",
+            "type": "vocabulary_item",
+            "order": 40,
+            "hanzi": "会话",
+            "pinyin": "huìhuà",
+            "meaning_vi": "hội thoại; đàm thoại",
+            "meaning_en": "conversation",
+            "pos": "noun",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "会话",
+              "back": "huìhuà — hội thoại; đàm thoại",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "uploaded_crosscheck",
+            "check_needed": false,
+            "uuid": "076e8399-5680-4aac-85b6-5d7a7b3eeb39"
+          },
+          {
+            "id": "vocab_041",
+            "type": "vocabulary_item",
+            "order": 41,
+            "hanzi": "解答",
+            "pinyin": "jiědá",
+            "meaning_vi": "giải đáp; trả lời, giải thích câu hỏi",
+            "meaning_en": "answer; explain",
+            "pos": "verb",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "解答",
+              "back": "jiědá — giải đáp; trả lời, giải thích câu hỏi",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "uploaded_crosscheck",
+            "check_needed": false,
+            "uuid": "7beb8e39-ead7-4a0a-a741-a76a91fe3791"
+          }
+        ],
+        "uuid": "a21d3302-a143-4228-b7c7-101478f30c58"
+      },
+      {
+        "id": "section_03_proper_nouns",
+        "type": "proper_nouns",
+        "order": 3,
+        "title": "专名",
+        "title_vi": "Tên riêng",
+        "source_origin": "textbook",
+        "check_needed": false,
+        "items": [],
+        "empty_reason_vi": "Bài này không có 专名 riêng biệt trong bảng chính.",
+        "uuid": "3623378c-80fa-405a-8814-94d10743e9ec"
+      },
+      {
+        "id": "section_04_notes",
+        "type": "notes",
+        "order": 4,
+        "title": "注释",
+        "title_vi": "Chú thích",
+        "source_origin": "textbook/generated_mixed",
+        "check_needed": false,
+        "items": [
+          {
+            "id": "note_01",
+            "type": "note",
+            "order": 1,
+            "title": "还可以 / 小了点儿",
+            "structure": "A、B 还可以，但是 C 小了点儿。",
+            "meaning_vi": "Dùng để đánh giá nhiều mặt: trước nói phần tạm được, sau nêu điểm chưa hài lòng. 了点儿 làm nhận xét mềm hơn, nghĩa là 'hơi... một chút'.",
+            "examples": [
+              {
+                "id": "note_01_ex_01",
+                "zh": "这套房子，卧室还可以，但是厨房小了点儿。",
+                "pinyin": "",
+                "vi": "Căn nhà này, phòng ngủ thì tạm được, nhưng nhà bếp hơi nhỏ một chút.",
+                "source_origin": "generated",
+                "check_needed": false,
+                "uuid": "e35c519b-027a-4ce6-b1f7-324bed0303cf"
+              }
+            ],
+            "source_refs": [
+              "text_01_line_08"
+            ],
+            "source_origin": "textbook/generated_mixed",
+            "check_needed": false,
+            "uuid": "16fb587d-bb5d-44ab-bb72-1fc30a9de3f4"
+          },
+          {
+            "id": "note_02",
+            "type": "note",
+            "order": 2,
+            "title": "还是想要……的",
+            "structure": "还是 + 想要 + ……的",
+            "meaning_vi": "Sau khi cân nhắc nhiều lựa chọn, người nói vẫn giữ yêu cầu/lựa chọn ban đầu. 的 thay cho danh từ đã biết phía trước, ở đây là 房子.",
+            "examples": [
+              {
+                "id": "note_02_ex_01",
+                "zh": "这套房子很便宜，可是我还是想要离公司近一点儿的。",
+                "pinyin": "",
+                "vi": "Căn này rất rẻ, nhưng tôi vẫn muốn căn gần công ty hơn một chút.",
+                "source_origin": "generated",
+                "check_needed": false,
+                "uuid": "34e6ac44-be01-4507-a934-e75f96a4d498"
+              }
+            ],
+            "source_refs": [
+              "text_01_line_12"
+            ],
+            "source_origin": "textbook/generated_mixed",
+            "check_needed": false,
+            "uuid": "b276115f-c4e2-4f35-a601-4401927935c8"
+          }
+        ],
+        "uuid": "88f8ca1a-8afa-4ba8-8cae-c3532726a34a"
+      },
+      {
+        "id": "section_05_grammar",
+        "type": "grammar",
+        "order": 5,
+        "title": "语法 / 词语用法",
+        "title_vi": "Ngữ pháp / Cách dùng từ",
+        "source_origin": "textbook/generated_mixed",
+        "check_needed": false,
+        "items": [
+          {
+            "id": "grammar_01",
+            "type": "grammar_point",
+            "order": 1,
+            "title": "就 / 才",
+            "title_vi": "Phân biệt 就 và 才",
+            "level": "HSK3",
+            "tags": [
+              "副词",
+              "comparison"
+            ],
+            "source_origin": "textbook/generated_mixed",
+            "check_needed": false,
+            "blocks": [
+              {
+                "id": "grammar_01_overview",
+                "type": "grammar_overview",
+                "order": 1,
+                "title": "Bản chất",
+                "content_vi": "就 nhấn mạnh sớm, nhanh, dễ đạt hoặc ít hơn dự đoán; 才 nhấn mạnh muộn, chậm, khó hoặc mãi mới đạt.",
+                "examples": [
+                  {
+                    "id": "grammar_01_ex_01",
+                    "zh": "我吃了早饭就来了。",
+                    "vi": "Tôi ăn sáng xong là đến ngay.",
+                    "highlight": [
+                      "就"
+                    ],
+                    "source_ref": "text_01_line_03",
+                    "source_origin": "textbook",
+                    "check_needed": false,
+                    "uuid": "e0162aac-518f-4fb2-8bf8-c3ef2c7a1025"
+                  },
+                  {
+                    "id": "grammar_01_ex_02",
+                    "zh": "到现在才到家。",
+                    "vi": "Đến bây giờ mới về tới nhà.",
+                    "highlight": [
+                      "才"
+                    ],
+                    "source_ref": "text_02_line_03",
+                    "source_origin": "textbook",
+                    "check_needed": false,
+                    "uuid": "a4034085-fcb5-4371-b2c8-4de58d9649a2"
+                  }
+                ],
+                "uuid": "24a9144d-ee11-46be-a2f6-f27035fcc775"
+              },
+              {
+                "id": "grammar_01_structure_jiu",
+                "type": "grammar_structure",
+                "order": 2,
+                "title": "就 — sớm / nhanh / dễ đạt",
+                "pattern": "主语 + 时间/条件 + 就 + 动词/结果",
+                "meaning_vi": "Nhấn mạnh sự việc xảy ra sớm, nhanh, hoặc đạt kết quả dễ hơn dự đoán.",
+                "examples": [
+                  {
+                    "id": "grammar_01_ex_03",
+                    "zh": "坐车十分钟就到公司了。",
+                    "vi": "Ngồi xe mười phút là tới công ty.",
+                    "highlight": [
+                      "就"
+                    ],
+                    "source_ref": "text_02_line_12",
+                    "source_origin": "textbook",
+                    "check_needed": false,
+                    "uuid": "2946a962-4ab5-401a-a1e6-36e155500534"
+                  }
+                ],
+                "uuid": "21c42387-25f1-4ff6-b8e8-2ce08c8b8466"
+              },
+              {
+                "id": "grammar_01_structure_cai",
+                "type": "grammar_structure",
+                "order": 3,
+                "title": "才 — muộn / mãi mới / chỉ mới",
+                "pattern": "主语 + 时间/条件 + 才 + 动词/结果",
+                "meaning_vi": "Nhấn mạnh sự việc xảy ra muộn, chậm, hoặc phải qua một quá trình mới đạt được.",
+                "examples": [
+                  {
+                    "id": "grammar_01_ex_04",
+                    "zh": "我等了半个小时，他才来。",
+                    "vi": "Tôi đợi nửa tiếng, anh ấy mới đến.",
+                    "highlight": [
+                      "才"
+                    ],
+                    "source_origin": "generated",
+                    "check_needed": false,
+                    "uuid": "2e21ef02-44d8-4a77-8549-9c577ac429a8"
+                  }
+                ],
+                "uuid": "8a58b751-8753-457e-a194-6d2f3ca80d62"
+              },
+              {
+                "id": "grammar_01_compare",
+                "type": "grammar_compare",
+                "order": 4,
+                "title": "So sánh nhanh",
+                "items": [
+                  {
+                    "aspect": "Cảm giác thời điểm",
+                    "left": {
+                      "label": "就",
+                      "value": "sớm / nhanh hơn dự đoán"
+                    },
+                    "right": {
+                      "label": "才",
+                      "value": "muộn / chậm hơn dự đoán"
+                    }
+                  },
+                  {
+                    "aspect": "Cảm giác kết quả",
+                    "left": {
+                      "label": "就",
+                      "value": "dễ đạt"
+                    },
+                    "right": {
+                      "label": "才",
+                      "value": "mãi mới đạt"
+                    }
+                  },
+                  {
+                    "aspect": "Ví dụ",
+                    "left": {
+                      "label": "就",
+                      "value": "八点就到公司了。"
+                    },
+                    "right": {
+                      "label": "才",
+                      "value": "八点才到公司。"
+                    }
+                  }
+                ],
+                "uuid": "17a8a688-5804-4817-91a8-4a4cbb3d3362"
+              }
+            ],
+            "uuid": "5f5a2c42-f1bc-4819-9045-b146f0e3e5f5"
+          },
+          {
+            "id": "grammar_02",
+            "type": "grammar_point",
+            "order": 2,
+            "title": "要是……就……",
+            "title_vi": "Nếu... thì...",
+            "level": "HSK3",
+            "tags": [
+              "条件句",
+              "口语"
+            ],
+            "source_origin": "textbook/generated_mixed",
+            "check_needed": false,
+            "blocks": [
+              {
+                "id": "grammar_02_overview",
+                "type": "grammar_overview",
+                "order": 1,
+                "title": "Bản chất",
+                "content_vi": "要是 đưa ra giả thiết, 就 dẫn ra kết quả. Gần nghĩa với 如果……就…… nhưng khẩu ngữ hơn.",
+                "examples": [
+                  {
+                    "id": "grammar_02_ex_01",
+                    "zh": "要是你也满意，咱们就租了。",
+                    "vi": "Nếu em cũng hài lòng, chúng ta thuê luôn.",
+                    "highlight": [
+                      "要是",
+                      "就"
+                    ],
+                    "source_ref": "text_02_line_04",
+                    "source_origin": "textbook",
+                    "check_needed": false,
+                    "uuid": "4321ae60-9e53-4b49-95f0-44adcdc5b175"
+                  }
+                ],
+                "uuid": "74efb290-ba57-4f99-9297-be7d933bed3f"
+              },
+              {
+                "id": "grammar_02_structure",
+                "type": "grammar_structure",
+                "order": 2,
+                "title": "Cấu trúc chính",
+                "pattern": "要是 + 条件，主语 + 就 + 结果",
+                "meaning_vi": "Nếu điều kiện A xảy ra thì kết quả B xảy ra.",
+                "examples": [
+                  {
+                    "id": "grammar_02_ex_02",
+                    "zh": "要是明天下雨，我们就不去公园了。",
+                    "vi": "Nếu ngày mai mưa, chúng ta sẽ không đi công viên nữa.",
+                    "source_origin": "generated",
+                    "check_needed": false,
+                    "uuid": "8e19969b-de42-4238-8c32-303375a65193"
+                  }
+                ],
+                "uuid": "e1424224-fe37-4db9-94bb-5bb74ad6596e"
+              },
+              {
+                "id": "grammar_02_negative",
+                "type": "grammar_usage_notes",
+                "order": 3,
+                "title": "Dạng phủ định / biến thể",
+                "notes_vi": [
+                  "要是 + điều kiện，不/没 + kết quả.",
+                  "Có thể thay 要是 bằng 如果 trong văn phong trung tính hơn."
+                ],
+                "examples": [
+                  {
+                    "id": "grammar_02_ex_03",
+                    "zh": "要是房租太贵，我们就不租了。",
+                    "vi": "Nếu tiền thuê quá đắt, chúng ta không thuê nữa.",
+                    "source_origin": "generated",
+                    "check_needed": false,
+                    "uuid": "97c4e120-2ea1-44c7-bccb-292f2db69bb3"
+                  }
+                ],
+                "uuid": "e0e179e7-7e2b-45a3-8959-3fd47ada2e30"
+              }
+            ],
+            "uuid": "bebd4e93-0a9a-46d2-990d-4e74a16b8a5c"
+          },
+          {
+            "id": "grammar_03",
+            "type": "grammar_point",
+            "order": 3,
+            "title": "虽然……但是……",
+            "title_vi": "Tuy... nhưng...",
+            "level": "HSK3",
+            "tags": [
+              "让步句",
+              "转折"
+            ],
+            "source_origin": "textbook/generated_mixed",
+            "check_needed": false,
+            "blocks": [
+              {
+                "id": "grammar_03_overview",
+                "type": "grammar_overview",
+                "order": 1,
+                "title": "Bản chất",
+                "content_vi": "虽然 mở phần nhượng bộ/sự thật nền, 但是 hoặc 可是 mở phần chuyển ý. Vế sau thường là ý chính.",
+                "examples": [
+                  {
+                    "id": "grammar_03_ex_01",
+                    "zh": "虽然贵了点儿，但是房子真好。",
+                    "vi": "Tuy hơi đắt một chút, nhưng căn nhà thật sự tốt.",
+                    "highlight": [
+                      "虽然",
+                      "但是"
+                    ],
+                    "source_ref": "text_02_line_08",
+                    "source_origin": "textbook",
+                    "check_needed": false,
+                    "uuid": "9005d2bb-35b8-4ae6-a0fa-f25c4bd58bc3"
+                  }
+                ],
+                "uuid": "3c0db660-ec3c-4de7-9e84-781b2cf10184"
+              },
+              {
+                "id": "grammar_03_structure",
+                "type": "grammar_structure",
+                "order": 2,
+                "title": "Cấu trúc chính",
+                "pattern": "虽然 + A，但是 + B",
+                "meaning_vi": "Tuy A, nhưng B. A là điều thừa nhận; B mới là kết luận/ý chính.",
+                "examples": [
+                  {
+                    "id": "grammar_03_ex_02",
+                    "zh": "虽然这套房子不大，但是环境很好。",
+                    "vi": "Tuy căn nhà này không lớn, nhưng môi trường xung quanh rất tốt.",
+                    "source_origin": "generated",
+                    "check_needed": false,
+                    "uuid": "e4bf7f48-1c0a-447b-a89a-22113a133926"
+                  }
+                ],
+                "uuid": "488c69ca-66ae-48d1-9546-50d39b4566c7"
+              },
+              {
+                "id": "grammar_03_usage",
+                "type": "grammar_usage_notes",
+                "order": 3,
+                "title": "Lưu ý",
+                "notes_vi": [
+                  "Có thể dùng 可是 thay 但是 trong khẩu ngữ.",
+                  "Ở trình độ này nên luyện đủ cặp 虽然……但是…… để câu rõ logic."
+                ],
+                "examples": [
+                  {
+                    "id": "grammar_03_ex_03",
+                    "zh": "虽然房租贵了点儿，可是交通很方便。",
+                    "vi": "Tuy tiền thuê hơi đắt, nhưng giao thông rất thuận tiện.",
+                    "source_origin": "generated",
+                    "check_needed": false,
+                    "uuid": "e8c62307-fb67-4d6b-90fd-fed772561488"
+                  }
+                ],
+                "uuid": "d2e1cb85-9c69-4e54-bf0d-3a1162e51c20"
+              }
+            ],
+            "uuid": "17bfef1b-c1e3-4edf-84e5-4b5c83f8cd0e"
+          }
+        ],
+        "uuid": "4ad68118-21ad-47f6-a38b-cb89c474604b"
+      },
+      {
+        "id": "section_06_exercises",
+        "type": "exercises",
+        "order": 6,
+        "title": "练习",
+        "title_vi": "Bài tập trong sách",
+        "source_origin": "textbook",
+        "check_needed": true,
+        "coverage_contract": {
+          "expected_exercise_count_from_pdf": 11,
+          "actual_exercise_count_in_json": 11,
+          "all_exercises_covered": true,
+          "coverage_status": "complete_unverified",
+          "final_verification_allowed": false
+        },
+        "items": [
+          {
+            "id": "exercise_01",
+            "type": "phonetics",
+            "variant": "pronunciation_tone_minimal_pairs",
+            "order": 1,
+            "title": "一、语音",
+            "title_vi": "Ngữ âm",
+            "instruction": {
+              "zh": "辨音辨调；朗读。",
+              "vi": "Phân biệt âm/thanh điệu; đọc thành tiếng."
+            },
+            "difficulty": "normal",
+            "skill_focus": [
+              "pronunciation",
+              "listening",
+              "speaking"
+            ],
+            "parts": [
+              {
+                "id": "exercise_01_part_01",
+                "type": "minimal_pair_group",
+                "title": "辨音辨调",
+                "items": [
+                  {
+                    "id": "ex01_pair_01",
+                    "left": "yàoshi",
+                    "right": "yàoshì",
+                    "uuid": "7e5c2117-31ba-4a92-aac4-778bc0bbaa2e"
+                  },
+                  {
+                    "id": "ex01_pair_02",
+                    "left": "zhōuwéi",
+                    "right": "shǒuwèi",
+                    "uuid": "848200ac-4524-457d-886d-d1357fcdb9d4"
+                  },
+                  {
+                    "id": "ex01_pair_03",
+                    "left": "huánjìng",
+                    "right": "gānjìng",
+                    "uuid": "20195f58-6893-47e6-a173-74211934ecc8"
+                  },
+                  {
+                    "id": "ex01_pair_04",
+                    "left": "fāngbiàn",
+                    "right": "fāngmiàn",
+                    "uuid": "5186bc7a-dd3f-4b05-a4f0-d9b96a4ba9e9"
+                  },
+                  {
+                    "id": "ex01_pair_05",
+                    "left": "fùjìn",
+                    "right": "fùqīn",
+                    "uuid": "fb607e92-698f-48ce-8977-2808173b3ccc"
+                  },
+                  {
+                    "id": "ex01_pair_06",
+                    "left": "yángguāng",
+                    "right": "yǎnguāng",
+                    "uuid": "26be82a3-c121-4946-9ac1-5113884e52c6"
+                  }
+                ],
+                "source_origin": "textbook",
+                "check_needed": true,
+                "uuid": "59e4574c-7a4c-4649-8ad0-1902468dfa16"
+              },
+              {
+                "id": "exercise_01_part_02",
+                "type": "read_aloud",
+                "title": "朗读",
+                "items": [
+                  {
+                    "id": "ex01_read_01",
+                    "text": "我六点钟就起床了，他七点钟才起床。",
+                    "vi": "Tôi sáu giờ đã dậy, anh ấy bảy giờ mới dậy.",
+                    "uuid": "166b541f-c0b5-43a4-9bb7-c0f72681ee14"
+                  },
+                  {
+                    "id": "ex01_read_02",
+                    "text": "练习她一个小时就做完了，我两个小时才做完。",
+                    "vi": "Bài tập cô ấy một tiếng là làm xong, tôi hai tiếng mới làm xong.",
+                    "uuid": "a31e4da4-6ec6-4c1e-9feb-41b726f00e43"
+                  },
+                  {
+                    "id": "ex01_read_03",
+                    "text": "坐飞机一个小时就到了，坐火车四个小时才到。",
+                    "vi": "Đi máy bay một tiếng là đến, đi tàu hỏa bốn tiếng mới đến.",
+                    "uuid": "8a23a552-0b1a-4b39-a1a9-3c0c56ab99cd"
+                  },
+                  {
+                    "id": "ex01_read_04",
+                    "text": "明天我吃了早饭就去医院。",
+                    "vi": "Ngày mai tôi ăn sáng xong là đi bệnh viện.",
+                    "uuid": "658630a2-d812-4606-a747-598314aa264f"
+                  },
+                  {
+                    "id": "ex01_read_05",
+                    "text": "昨天我吃了早饭就去医院了。",
+                    "vi": "Hôm qua tôi ăn sáng xong là đi bệnh viện.",
+                    "uuid": "66701b67-5997-4e15-b510-ce6e17e238b2"
+                  },
+                  {
+                    "id": "ex01_read_06",
+                    "text": "明天我下了课就去看她。",
+                    "vi": "Ngày mai tan học xong tôi sẽ đi thăm cô ấy.",
+                    "uuid": "0f33c70c-3bbf-43e3-a716-54a0fc446aef"
+                  },
+                  {
+                    "id": "ex01_read_07",
+                    "text": "昨天我下了课就去看她了。",
+                    "vi": "Hôm qua tan học xong tôi đã đi thăm cô ấy.",
+                    "uuid": "fe998c28-67e3-4549-b52d-c1bd344baabf"
+                  }
+                ],
+                "source_origin": "textbook",
+                "check_needed": true,
+                "uuid": "874f632a-b896-4c80-8b8c-9345d45930bc"
+              }
+            ],
+            "rendering": {
+              "renderer": "exercise.phonetics.v2"
+            },
+            "source_origin": "textbook",
+            "check_needed": true,
+            "uuid": "aeb678fb-3d07-4af0-8d18-d3a64e52db01"
+          },
+          {
+            "id": "exercise_02",
+            "type": "substitution_drill",
+            "variant": "substitution_or_transform_drill",
+            "order": 2,
+            "title": "二、替换",
+            "title_vi": "Thay thế luyện mẫu câu",
+            "instruction": {
+              "zh": "替换画线部分。",
+              "vi": "Thay thế phần gạch dưới để luyện mẫu câu."
+            },
+            "parts": [
+              {
+                "id": "exercise_02_part_01",
+                "type": "substitution_pattern",
+                "pattern": "A：你吃了早饭去哪儿了？\nB：我吃了早饭就去看房子了。",
+                "items": [
+                  {
+                    "id": "exercise_02_part_01_item_01",
+                    "text": "医院看病",
+                    "uuid": "e448e559-f75e-40f9-a839-106b20edba3d"
+                  },
+                  {
+                    "id": "exercise_02_part_01_item_02",
+                    "text": "图书馆",
+                    "uuid": "84030ba3-aa26-4a0a-b295-fcc76a855ceb"
+                  },
+                  {
+                    "id": "exercise_02_part_01_item_03",
+                    "text": "买票",
+                    "uuid": "58d13429-6a63-4227-a348-9be706229625"
+                  },
+                  {
+                    "id": "exercise_02_part_01_item_04",
+                    "text": "银行换钱",
+                    "uuid": "df672c2c-bd10-46d3-87f5-2f2cda038556"
+                  },
+                  {
+                    "id": "exercise_02_part_01_item_05",
+                    "text": "商店买东西",
+                    "uuid": "2c0e832b-a73d-4a48-8fa9-6922e9a9a618"
+                  },
+                  {
+                    "id": "exercise_02_part_01_item_06",
+                    "text": "踢足球",
+                    "uuid": "748d56b7-47bc-4394-a215-49d9ce9a8db5"
+                  }
+                ],
+                "uuid": "c4af050e-fc51-4966-983c-3ccf4a05ad47"
+              },
+              {
+                "id": "exercise_02_part_02",
+                "type": "substitution_pattern",
+                "pattern": "A：你什么时候出发？\nB：吃了早饭就出发。",
+                "items": [
+                  {
+                    "id": "exercise_02_part_02_item_01",
+                    "text": "去医院 / 下了课 / 去医院",
+                    "uuid": "d8bfd731-7133-4d50-86b9-3f36bcf3908c"
+                  },
+                  {
+                    "id": "exercise_02_part_02_item_02",
+                    "text": "去图书馆 / 吃了午饭 / 去图书馆",
+                    "uuid": "5e405e1b-4298-4037-a3bc-afb56cad6817"
+                  },
+                  {
+                    "id": "exercise_02_part_02_item_03",
+                    "text": "去锻炼 / 吃了晚饭 / 去锻炼",
+                    "uuid": "a603f6a2-c9fa-4514-833c-bb5d5f3a4ff7"
+                  },
+                  {
+                    "id": "exercise_02_part_02_item_04",
+                    "text": "回来 / 买了东西 / 回来",
+                    "uuid": "ee5a1e66-e89b-4181-8b6c-35a3e06a266a"
+                  },
+                  {
+                    "id": "exercise_02_part_02_item_05",
+                    "text": "做练习 / 看了电视 / 做练习",
+                    "uuid": "cadfa199-815e-4644-9062-64e2ba6b9695"
+                  },
+                  {
+                    "id": "exercise_02_part_02_item_06",
+                    "text": "去跳舞 / 下了课 / 去跳舞",
+                    "uuid": "b63379cd-7e0f-426e-9f92-04136e7ea81c"
+                  }
+                ],
+                "uuid": "9f4ab221-c6fb-49fb-8f97-6b91090fa9d0"
+              },
+              {
+                "id": "exercise_02_part_03",
+                "type": "substitution_pattern",
+                "pattern": "A：你今天回来得早吗？\nB：不早，我八点半才回来。",
+                "items": [
+                  {
+                    "id": "exercise_02_part_03_item_01",
+                    "text": "来",
+                    "uuid": "fdcb92a5-53bf-4e9b-b2a0-2211f69f1aed"
+                  },
+                  {
+                    "id": "exercise_02_part_03_item_02",
+                    "text": "去",
+                    "uuid": "08610965-a3f4-490a-b713-50223bc9a375"
+                  },
+                  {
+                    "id": "exercise_02_part_03_item_03",
+                    "text": "起",
+                    "uuid": "503ebb7b-1789-4e74-b10f-8225f253f868"
+                  },
+                  {
+                    "id": "exercise_02_part_03_item_04",
+                    "text": "走",
+                    "uuid": "9329ce98-3192-4185-b633-b1e5beae3155"
+                  }
+                ],
+                "uuid": "c4098361-d414-4792-809f-d9ef431632c6"
+              },
+              {
+                "id": "exercise_02_part_04",
+                "type": "substitution_pattern",
+                "pattern": "A：怎么这么贵？\nB：虽然贵了点儿，但是房子很好。",
+                "items": [
+                  {
+                    "id": "exercise_02_part_04_item_01",
+                    "text": "房子 / 小 / 很干净",
+                    "uuid": "84512bd0-3f6e-4344-bd19-ecddf7dae43f"
+                  },
+                  {
+                    "id": "exercise_02_part_04_item_02",
+                    "text": "房子 / 远 / 很便宜",
+                    "uuid": "a1eb97f8-b45f-48b6-ac59-e6d89593c6d5"
+                  },
+                  {
+                    "id": "exercise_02_part_04_item_03",
+                    "text": "汉语 / 难 / 很有意思",
+                    "uuid": "b99926ca-81e8-49a3-9176-37055d78e7fe"
+                  },
+                  {
+                    "id": "exercise_02_part_04_item_04",
+                    "text": "练习 / 多 / 不太难",
+                    "uuid": "5614553f-45d9-475a-b9b5-afbbb6078092"
+                  }
+                ],
+                "uuid": "6c85a6fb-f42a-4e70-a85a-b821c33bdb5f"
+              },
+              {
+                "id": "exercise_02_part_05",
+                "type": "substitution_pattern",
+                "pattern": "要是你也满意，咱们就租了。",
+                "items": [
+                  {
+                    "id": "exercise_02_part_05_item_01",
+                    "text": "便宜一点儿 / 买了",
+                    "uuid": "a0bad2b7-ee88-4d1b-933b-8becc94e2200"
+                  },
+                  {
+                    "id": "exercise_02_part_05_item_02",
+                    "text": "不太远 / 骑车去",
+                    "uuid": "354e2caa-9442-4c81-8d01-de6b4f156c65"
+                  },
+                  {
+                    "id": "exercise_02_part_05_item_03",
+                    "text": "他喜欢 / 给他",
+                    "uuid": "a7adcc9e-255d-46af-be84-a2510fc21220"
+                  },
+                  {
+                    "id": "exercise_02_part_05_item_04",
+                    "text": "你不喜欢 / 不买了",
+                    "uuid": "2982ba02-37b6-400c-bef9-fb222954ed24"
+                  }
+                ],
+                "uuid": "039ef6d7-ffa5-4d9e-beea-fd0def445178"
+              }
+            ],
+            "rendering": {
+              "renderer": "exercise.substitution_drill.v2"
+            },
+            "source_origin": "textbook",
+            "check_needed": true,
+            "uuid": "d601c088-74a0-4a1f-9710-c1a7c5a5c8ea"
+          },
+          {
+            "id": "exercise_03",
+            "type": "choose_words_fill_blank",
+            "variant": "word_bank_fill_blank",
+            "order": 3,
+            "title": "三、选词填空",
+            "title_vi": "Chọn từ điền chỗ trống",
+            "instruction": {
+              "zh": "选词填空。",
+              "vi": "Chọn từ thích hợp điền vào chỗ trống."
+            },
+            "word_bank": [
+              "环境",
+              "条",
+              "附近",
+              "旁边",
+              "方便",
+              "打算",
+              "就",
+              "要是",
+              "才",
+              "还",
+              "套",
+              "虽然"
+            ],
+            "questions": [
+              {
+                "id": "ex03_q01",
+                "type": "fill_blank",
+                "prompt": "他昨天晚上九点____回家。",
+                "answer": "",
+                "answer_verified": false,
+                "check_needed": true,
+                "uuid": "258e5f3d-901c-4337-9934-c707fb5a7cfa"
+              },
+              {
+                "id": "ex03_q02",
+                "type": "fill_blank",
+                "prompt": "你们这____房子真不错。",
+                "answer": "",
+                "answer_verified": false,
+                "check_needed": true,
+                "uuid": "c7fefe43-2d7c-4445-857d-8184785d5624"
+              },
+              {
+                "id": "ex03_q03",
+                "type": "fill_blank",
+                "prompt": "我下了课____去医院看病了。",
+                "answer": "",
+                "answer_verified": false,
+                "check_needed": true,
+                "uuid": "b335cb42-5e62-4cdc-9a4f-f741a6d48241"
+              },
+              {
+                "id": "ex03_q04",
+                "type": "fill_blank",
+                "prompt": "我觉得这次考得____可以。",
+                "answer": "",
+                "answer_verified": false,
+                "check_needed": true,
+                "uuid": "eb5e547e-3223-4961-af3e-77f0cee2eab4"
+              },
+              {
+                "id": "ex03_q05",
+                "type": "fill_blank",
+                "prompt": "____有什么事儿，就对我说，不要客气。",
+                "answer": "",
+                "answer_verified": false,
+                "check_needed": true,
+                "uuid": "f78f4363-4635-4bbb-b225-3b53b92fbad3"
+              },
+              {
+                "id": "ex03_q06",
+                "type": "fill_blank",
+                "prompt": "____只学了一个多月，但是她已经会说很多话了。",
+                "answer": "",
+                "answer_verified": false,
+                "check_needed": true,
+                "uuid": "d62e10e1-69e4-4507-8872-e54082d88c0c"
+              },
+              {
+                "id": "ex03_q07",
+                "type": "fill_blank",
+                "prompt": "我____毕业以后去中国留学。",
+                "answer": "",
+                "answer_verified": false,
+                "check_needed": true,
+                "uuid": "8dcc34fb-9074-4ecd-b25c-528e34edfc83"
+              },
+              {
+                "id": "ex03_q08",
+                "type": "fill_blank",
+                "prompt": "这儿周围的____很好。",
+                "answer": "",
+                "answer_verified": false,
+                "check_needed": true,
+                "uuid": "4ff1d4a5-03be-4c7f-90fe-95ea04403b74"
+              },
+              {
+                "id": "ex03_q09",
+                "type": "fill_blank",
+                "prompt": "我们住的地方有地铁站，交通很____。",
+                "answer": "",
+                "answer_verified": false,
+                "check_needed": true,
+                "uuid": "efd6cd3e-f441-4a1c-9d1a-e6b523f96b6e"
+              },
+              {
+                "id": "ex03_q10",
+                "type": "fill_blank",
+                "prompt": "公共汽车站就在我们学校____。",
+                "answer": "",
+                "answer_verified": false,
+                "check_needed": true,
+                "uuid": "f6d4fd30-ad17-472b-824e-e552f0ba6fbb"
+              },
+              {
+                "id": "ex03_q11",
+                "type": "fill_blank",
+                "prompt": "学校____有邮局、银行、商店、公园和体育馆。",
+                "answer": "",
+                "answer_verified": false,
+                "check_needed": true,
+                "uuid": "db086111-fced-4ea9-b3cf-c85be9ba472b"
+              },
+              {
+                "id": "ex03_q12",
+                "type": "fill_blank",
+                "prompt": "这____河里的水很干净。",
+                "answer": "",
+                "answer_verified": false,
+                "check_needed": true,
+                "uuid": "60782ad8-1f57-4443-90f6-b0c6926b86a7"
+              }
+            ],
+            "rendering": {
+              "renderer": "exercise.word_bank_fill_blank.v2",
+              "show_word_bank": true
+            },
+            "source_origin": "textbook",
+            "check_needed": true,
+            "uuid": "2d500b6b-f516-493b-8933-5e2aac6f576b"
+          },
+          {
+            "id": "exercise_04",
+            "type": "fill_blank",
+            "variant": "free_fill_blank",
+            "order": 4,
+            "title": "四、用“就”或“才”填空",
+            "title_vi": "Điền 就 hoặc 才",
+            "instruction": {
+              "zh": "用“就”或“才”填空。",
+              "vi": "Điền 就 hoặc 才 vào chỗ trống."
+            },
+            "word_bank": [
+              "就",
+              "才"
+            ],
+            "questions": [
+              {
+                "id": "ex04_q01",
+                "type": "fill_blank",
+                "prompt": "她每天都六点半起床，今天六点钟____起床了。",
+                "answer": "",
+                "answer_verified": false,
+                "check_needed": true,
+                "uuid": "a725d359-b189-4eeb-93ec-c181a3eb9037"
+              },
+              {
+                "id": "ex04_q02",
+                "type": "fill_blank",
+                "prompt": "八点钟上课，他八点半____来。",
+                "answer": "",
+                "answer_verified": false,
+                "check_needed": true,
+                "uuid": "1087577d-1442-45aa-8083-2e20f2235ef1"
+              },
+              {
+                "id": "ex04_q03",
+                "type": "fill_blank",
+                "prompt": "电影七点半____开演呢，你怎么现在____来了？",
+                "answer": "",
+                "answer_verified": false,
+                "check_needed": true,
+                "uuid": "1e3bd3f2-58f7-4023-a24b-b30a18046919"
+              },
+              {
+                "id": "ex04_q04",
+                "type": "fill_blank",
+                "prompt": "飞机下午两点____起飞，上午十点他们____去机场了。",
+                "answer": "",
+                "answer_verified": false,
+                "check_needed": true,
+                "uuid": "8309d4fb-bc89-4065-b631-3a14223297fe"
+              },
+              {
+                "id": "ex04_q05",
+                "type": "fill_blank",
+                "prompt": "我觉得听力很难，同学们听一遍____懂了，我听两三遍____能懂。",
+                "answer": "",
+                "answer_verified": false,
+                "check_needed": true,
+                "uuid": "885ce327-888e-44dd-b76d-1e58adfdbabc"
+              },
+              {
+                "id": "ex04_q06",
+                "type": "fill_blank",
+                "prompt": "昨天晚上我十二点____睡觉。",
+                "answer": "",
+                "answer_verified": false,
+                "check_needed": true,
+                "uuid": "9880d428-b43e-4388-a13b-deaf0bbe261b"
+              },
+              {
+                "id": "ex04_q07",
+                "type": "fill_blank",
+                "prompt": "他上午下了课____去医院了。",
+                "answer": "",
+                "answer_verified": false,
+                "check_needed": true,
+                "uuid": "e95e3958-8b94-4f92-8f38-cd992618266d"
+              },
+              {
+                "id": "ex04_q08",
+                "type": "fill_blank",
+                "prompt": "坐飞机去两个多小时____到了，坐火车十个小时____能到。",
+                "answer": "",
+                "answer_verified": false,
+                "check_needed": true,
+                "uuid": "05d9ebfe-01e5-4615-a000-485daf02af07"
+              }
+            ],
+            "rendering": {
+              "renderer": "exercise.free_fill_blank.v2"
+            },
+            "source_origin": "textbook",
+            "check_needed": true,
+            "uuid": "81c66e77-2c79-4a60-8bfd-bb7fd0e10dce"
+          },
+          {
+            "id": "exercise_05",
+            "type": "complete_sentence",
+            "variant": "complete_sentence_with_given_words",
+            "order": 5,
+            "title": "五、完成句子",
+            "title_vi": "Hoàn thành câu",
+            "instruction": {
+              "zh": "完成句子。",
+              "vi": "Hoàn thành câu."
+            },
+            "questions": [
+              {
+                "id": "ex05_q01",
+                "type": "complete_sentence",
+                "prompt": "要是你来，就____。",
+                "answer": "",
+                "grading": {
+                  "mode": "manual"
+                },
+                "answer_verified": false,
+                "check_needed": false,
+                "uuid": "ab8ca688-6b80-41bb-9502-2795473ca084"
+              },
+              {
+                "id": "ex05_q02",
+                "type": "complete_sentence",
+                "prompt": "虽然有点儿贵，但是____。",
+                "answer": "",
+                "grading": {
+                  "mode": "manual"
+                },
+                "answer_verified": false,
+                "check_needed": false,
+                "uuid": "a91c4d02-1d10-4773-979b-9121371b7340"
+              },
+              {
+                "id": "ex05_q03",
+                "type": "complete_sentence",
+                "prompt": "要是你想买，就____。",
+                "answer": "",
+                "grading": {
+                  "mode": "manual"
+                },
+                "answer_verified": false,
+                "check_needed": false,
+                "uuid": "ee3dba53-b6a1-4348-b842-e604ca5efbe2"
+              },
+              {
+                "id": "ex05_q04",
+                "type": "complete_sentence",
+                "prompt": "要是你觉得不舒服，就____。",
+                "answer": "",
+                "grading": {
+                  "mode": "manual"
+                },
+                "answer_verified": false,
+                "check_needed": false,
+                "uuid": "9685319e-e7e4-4350-96e3-37533d02658f"
+              },
+              {
+                "id": "ex05_q05",
+                "type": "complete_sentence",
+                "prompt": "屋子虽然不大，但是____。",
+                "answer": "",
+                "grading": {
+                  "mode": "manual"
+                },
+                "answer_verified": false,
+                "check_needed": false,
+                "uuid": "a7fb4452-e01c-4001-b2ae-9ff31f3fd793"
+              },
+              {
+                "id": "ex05_q06",
+                "type": "complete_sentence",
+                "prompt": "她虽然学的时间不长，但是____。",
+                "answer": "",
+                "grading": {
+                  "mode": "manual"
+                },
+                "answer_verified": false,
+                "check_needed": false,
+                "uuid": "032e4670-747f-4d1f-9dbf-0a25e2876115"
+              }
+            ],
+            "rendering": {
+              "renderer": "exercise.complete_sentence.v2",
+              "allow_manual_check": true
+            },
+            "source_origin": "textbook",
+            "check_needed": true,
+            "uuid": "6a05d83a-adc7-4283-8b36-21db62d23fb1"
+          },
+          {
+            "id": "exercise_06",
+            "type": "complete_dialogue",
+            "variant": "complete_dialogue",
+            "order": 6,
+            "title": "六、完成会话",
+            "title_vi": "Hoàn thành hội thoại",
+            "instruction": {
+              "zh": "根据提示完成会话。",
+              "vi": "Hoàn thành hội thoại theo gợi ý trong ngoặc."
+            },
+            "questions": [
+              {
+                "id": "ex06_q01",
+                "type": "complete_dialogue",
+                "prompt": "A：你觉得这套房子怎么样？\nB：虽然有点儿小，____。",
+                "hint": "但是",
+                "answer": "",
+                "grading": {
+                  "mode": "manual"
+                },
+                "answer_verified": false,
+                "check_needed": true,
+                "uuid": "b1db3c89-2b59-4e5a-9685-d6b5a60fb22d"
+              },
+              {
+                "id": "ex06_q02",
+                "type": "complete_dialogue",
+                "prompt": "A：这件衣服怎么样？\nB：虽然比较贵，____。",
+                "hint": "但是",
+                "answer": "",
+                "grading": {
+                  "mode": "manual"
+                },
+                "answer_verified": false,
+                "check_needed": true,
+                "uuid": "b1a2e521-d8dc-48bb-b74c-f52680813705"
+              },
+              {
+                "id": "ex06_q03",
+                "type": "complete_dialogue",
+                "prompt": "A：你们国家城市交通怎么样？\nB：____。",
+                "hint": "方便 / 堵车堵得厉害",
+                "answer": "",
+                "grading": {
+                  "mode": "manual"
+                },
+                "answer_verified": false,
+                "check_needed": true,
+                "uuid": "948b707f-6f2d-4be9-b4c3-03bbcb4ffea5"
+              },
+              {
+                "id": "ex06_q04",
+                "type": "complete_dialogue",
+                "prompt": "A：你今天去得早吗？\nB：我很早____。",
+                "hint": "就",
+                "answer": "",
+                "grading": {
+                  "mode": "manual"
+                },
+                "answer_verified": false,
+                "check_needed": true,
+                "uuid": "3b63050b-a166-4a91-ac3d-acf9575c6918"
+              },
+              {
+                "id": "ex06_q05",
+                "type": "complete_dialogue",
+                "prompt": "A：你怎么现在____？\nB：路上堵车堵得厉害。",
+                "hint": "才",
+                "answer": "",
+                "grading": {
+                  "mode": "manual"
+                },
+                "answer_verified": false,
+                "check_needed": true,
+                "uuid": "3dbcbf76-968c-4ee2-b2e2-243f1c5712fa"
+              },
+              {
+                "id": "ex06_q06",
+                "type": "complete_dialogue",
+                "prompt": "A：你怎么现在才来电话？\nB：今天下午我____了。",
+                "hint": "",
+                "answer": "",
+                "grading": {
+                  "mode": "manual"
+                },
+                "answer_verified": false,
+                "check_needed": true,
+                "uuid": "cf73d509-bd09-4198-bc1d-1eb93d95167a"
+              }
+            ],
+            "rendering": {
+              "renderer": "exercise.complete_dialogue.v2",
+              "allow_manual_check": true
+            },
+            "source_origin": "textbook",
+            "check_needed": true,
+            "uuid": "8a7c26a4-5184-46eb-aba0-989e292d7181"
+          },
+          {
+            "id": "exercise_07",
+            "type": "answer_questions",
+            "variant": "text_comprehension_questions",
+            "order": 7,
+            "title": "七、根据实际情况回答问题",
+            "title_vi": "Trả lời theo tình hình thực tế",
+            "instruction": {
+              "zh": "根据实际情况回答问题。",
+              "vi": "Trả lời theo tình hình thực tế."
+            },
+            "questions": [
+              {
+                "id": "ex07_q01",
+                "question": "你每天早上吃了早饭做什么？",
+                "answer": "",
+                "grading": {
+                  "mode": "manual"
+                },
+                "answer_verified": false,
+                "check_needed": false,
+                "uuid": "bab6f305-6732-4681-9251-51d96d8ada03"
+              },
+              {
+                "id": "ex07_q02",
+                "question": "星期日你吃了早饭去哪儿了？",
+                "answer": "",
+                "grading": {
+                  "mode": "manual"
+                },
+                "answer_verified": false,
+                "check_needed": false,
+                "uuid": "e8678a88-c137-4f00-ac05-8ec186b893a1"
+              },
+              {
+                "id": "ex07_q03",
+                "question": "你吃了午饭常常做什么？",
+                "answer": "",
+                "grading": {
+                  "mode": "manual"
+                },
+                "answer_verified": false,
+                "check_needed": false,
+                "uuid": "65e9c4ff-e721-4b7e-b7ad-9f08d7336122"
+              },
+              {
+                "id": "ex07_q04",
+                "question": "昨天你吃了午饭做什么了？",
+                "answer": "",
+                "grading": {
+                  "mode": "manual"
+                },
+                "answer_verified": false,
+                "check_needed": false,
+                "uuid": "d4261647-d03c-4ba1-b22d-855f6682491f"
+              },
+              {
+                "id": "ex07_q05",
+                "question": "你吃了晚饭常常做什么？",
+                "answer": "",
+                "grading": {
+                  "mode": "manual"
+                },
+                "answer_verified": false,
+                "check_needed": false,
+                "uuid": "6d2610cf-6120-464c-b19c-2fa3bf8460ca"
+              },
+              {
+                "id": "ex07_q06",
+                "question": "昨天你吃了晚饭做什么了？",
+                "answer": "",
+                "grading": {
+                  "mode": "manual"
+                },
+                "answer_verified": false,
+                "check_needed": false,
+                "uuid": "ea45f12a-a3df-4ca5-8b24-6662381ced6c"
+              }
+            ],
+            "rendering": {
+              "renderer": "exercise.answer_questions.v2",
+              "allow_manual_check": true
+            },
+            "source_origin": "textbook",
+            "check_needed": true,
+            "uuid": "73a46b45-843e-4e15-b3fb-00cf1248abad"
+          },
+          {
+            "id": "exercise_08",
+            "type": "correct_sentence",
+            "variant": "error_correction",
+            "order": 8,
+            "title": "八、改错句",
+            "title_vi": "Sửa câu sai",
+            "instruction": {
+              "zh": "改错句。",
+              "vi": "Sửa câu sai."
+            },
+            "questions": [
+              {
+                "id": "ex08_q01",
+                "type": "correct_sentence",
+                "prompt": "你想想才买吧。",
+                "answer": "",
+                "explanation_vi": "",
+                "answer_verified": false,
+                "check_needed": true,
+                "uuid": "58a12dd5-c0d3-4594-a2b9-5f16c6a4b94a"
+              },
+              {
+                "id": "ex08_q02",
+                "type": "correct_sentence",
+                "prompt": "你的病还没有好，病好了以后才上课吧。",
+                "answer": "",
+                "explanation_vi": "",
+                "answer_verified": false,
+                "check_needed": true,
+                "uuid": "fda64722-e28a-4da5-bdc0-693cd33a74d8"
+              },
+              {
+                "id": "ex08_q03",
+                "type": "correct_sentence",
+                "prompt": "昨天我很不舒服，八点才睡觉。",
+                "answer": "",
+                "explanation_vi": "",
+                "answer_verified": false,
+                "check_needed": true,
+                "uuid": "213b312f-9923-4c5b-b561-371e0e5b2cf5"
+              },
+              {
+                "id": "ex08_q04",
+                "type": "correct_sentence",
+                "prompt": "听了我的话，就玛丽很快不哭了。",
+                "answer": "",
+                "explanation_vi": "",
+                "answer_verified": false,
+                "check_needed": true,
+                "uuid": "2abdcbb2-5b1e-414d-91a4-6a97dc16813d"
+              },
+              {
+                "id": "ex08_q05",
+                "type": "correct_sentence",
+                "prompt": "到中国以后，这个电影我再看了一遍。",
+                "answer": "",
+                "explanation_vi": "",
+                "answer_verified": false,
+                "check_needed": true,
+                "uuid": "208aa89c-1b42-4e6c-986d-ea135c266b90"
+              },
+              {
+                "id": "ex08_q06",
+                "type": "correct_sentence",
+                "prompt": "今年九月，他再来中国了。",
+                "answer": "",
+                "explanation_vi": "",
+                "answer_verified": false,
+                "check_needed": true,
+                "uuid": "2321b707-679e-4f26-b89b-37af7aed25ac"
+              }
+            ],
+            "rendering": {
+              "renderer": "exercise.error_correction.v2",
+              "allow_manual_check": true
+            },
+            "source_origin": "textbook",
+            "check_needed": true,
+            "uuid": "bae95b69-a623-4309-9dac-7cef4b4a8080"
+          },
+          {
+            "id": "exercise_09",
+            "type": "communication_dialogue",
+            "variant": "role_play",
+            "order": 9,
+            "title": "九、交际会话：预订房间",
+            "title_vi": "Hội thoại giao tiếp: Đặt phòng",
+            "instruction": {
+              "zh": "预订房间。",
+              "vi": "Luyện hội thoại đặt phòng."
+            },
+            "dialogue": [
+              {
+                "speaker": "A",
+                "zh": "我想订一个房间。",
+                "vi": "Tôi muốn đặt một phòng."
+              },
+              {
+                "speaker": "B",
+                "zh": "您要单人间还是双人间？",
+                "vi": "Anh/chị muốn phòng đơn hay phòng đôi?"
+              },
+              {
+                "speaker": "A",
+                "zh": "单人间。一个晚上多少钱？",
+                "vi": "Phòng đơn. Một đêm bao nhiêu tiền?"
+              },
+              {
+                "speaker": "B",
+                "zh": "两百八十块。",
+                "vi": "280 tệ."
+              },
+              {
+                "speaker": "A",
+                "zh": "我能看看吗？",
+                "vi": "Tôi xem thử được không?"
+              },
+              {
+                "speaker": "B",
+                "zh": "可以。",
+                "vi": "Được."
+              },
+              {
+                "speaker": "A",
+                "zh": "这间是阴面的，有没有阳面的？",
+                "vi": "Phòng này ở phía không có nắng, có phòng phía có nắng không?"
+              },
+              {
+                "speaker": "B",
+                "zh": "您再看看这间。",
+                "vi": "Anh/chị xem thêm phòng này đi."
+              },
+              {
+                "speaker": "A",
+                "zh": "这间比较好，就要这间吧。",
+                "vi": "Phòng này khá tốt, lấy phòng này nhé."
+              }
+            ],
+            "rendering": {
+              "renderer": "exercise.communication_dialogue.v2"
+            },
+            "source_origin": "textbook",
+            "check_needed": true,
+            "uuid": "f97552de-6e5b-477b-976d-d1637314d009"
+          },
+          {
+            "id": "exercise_10",
+            "type": "reading_comprehension",
+            "variant": "reading_comprehension",
+            "order": 10,
+            "title": "十、阅读理解",
+            "title_vi": "Đọc hiểu",
+            "instruction": {
+              "zh": "读后判断正误。",
+              "vi": "Đọc xong, phán đoán đúng sai."
+            },
+            "reading_ref": "reading_01",
+            "question_refs": [
+              "reading_01_q01",
+              "reading_01_q02",
+              "reading_01_q03"
+            ],
+            "source_origin": "textbook",
+            "check_needed": true,
+            "uuid": "0165f015-b211-489f-880f-22b575ab59a4"
+          },
+          {
+            "id": "exercise_11",
+            "type": "character_writing",
+            "variant": "character_copying",
+            "order": 11,
+            "title": "十一、写汉字",
+            "title_vi": "Viết chữ Hán",
+            "instruction": {
+              "zh": "写汉字。",
+              "vi": "Luyện viết chữ Hán."
+            },
+            "character_refs": [
+              "char_01",
+              "char_02"
+            ],
+            "source_origin": "textbook",
+            "check_needed": true,
+            "uuid": "66a2eddd-ca39-4e1e-9bb6-1c1460dd6f3b"
+          }
+        ],
+        "uuid": "6e68f1de-01ab-43f5-bc2c-38cd06767d47"
+      },
+      {
+        "id": "section_07_reading",
+        "type": "reading",
+        "order": 7,
+        "title": "阅读理解",
+        "title_vi": "Đọc hiểu",
+        "source_origin": "textbook",
+        "check_needed": true,
+        "items": [
+          {
+            "id": "reading_01",
+            "type": "reading_passage",
+            "order": 1,
+            "title": "我在中国的家",
+            "title_vi": "Nhà của tôi ở Trung Quốc",
+            "supplementary_vocabulary": [
+              {
+                "id": "reading_vocab_01",
+                "hanzi": "会话",
+                "pinyin": "huìhuà",
+                "meaning_vi": "hội thoại; đàm thoại",
+                "linked_vocab_ref": "vocab_040",
+                "uuid": "4d9ea4fa-29ec-4ba7-aadb-de21f276cb0e"
+              },
+              {
+                "id": "reading_vocab_02",
+                "hanzi": "解答",
+                "pinyin": "jiědá",
+                "meaning_vi": "giải đáp; trả lời, giải thích câu hỏi",
+                "linked_vocab_ref": "vocab_041",
+                "uuid": "4db6fe6b-9cdf-4025-900e-a6a093dafc14"
+              }
+            ],
+            "paragraphs": [
+              {
+                "id": "reading_01_p01",
+                "order": 1,
+                "zh": "我去年来到中国。来中国以后，认识了一个中国人，她就是我的中国妈妈。她有一个十六岁的女儿，叫小丽，小丽很喜欢学英语。有一次，我去她家的时候，小丽对我说：“爱华姐姐，你来和我一起住好吗？要是你能住我家多好啊！我爸爸妈妈也欢迎姐姐住我家。”听了小丽的话我心里很高兴。我想，来北京以后，我还没有中国朋友。小丽的爸爸妈妈就像我的爸爸妈妈一样。我想学好汉语，但是练习会话的时间很少，住小丽家可以教小丽英语，他们也可以帮助我学习汉语。",
+                "vi": "Năm ngoái tôi đến Trung Quốc. Sau khi đến Trung Quốc, tôi quen một người Trung Quốc, cô ấy chính là “mẹ Trung Quốc” của tôi. Cô ấy có một cô con gái mười sáu tuổi tên là Tiểu Lệ. Tiểu Lệ rất thích học tiếng Anh. Có một lần, khi tôi đến nhà cô ấy, Tiểu Lệ nói với tôi: “Chị Ái Hoa, chị đến ở cùng em được không? Nếu chị có thể ở nhà em thì tốt biết bao! Bố mẹ em cũng rất hoan nghênh chị đến ở nhà em.” Nghe lời Tiểu Lệ nói, trong lòng tôi rất vui. Tôi nghĩ, sau khi đến Bắc Kinh, tôi vẫn chưa có bạn Trung Quốc. Bố mẹ của Tiểu Lệ giống như bố mẹ của tôi vậy. Tôi muốn học tốt tiếng Hán, nhưng thời gian luyện hội thoại rất ít. Nếu ở nhà Tiểu Lệ, tôi có thể dạy Tiểu Lệ tiếng Anh, họ cũng có thể giúp tôi học tiếng Hán.",
+                "source_origin": "textbook",
+                "check_needed": true,
+                "uuid": "3e55dd2f-6aa1-4def-932e-0e518310d21d"
+              },
+              {
+                "id": "reading_01_p02",
+                "order": 2,
+                "zh": "三天后，我就去他们家住了。开始的时候，他们对我很客气，我对他们也非常客气。时间长了，我们就像一家人了。我觉得，这儿就是我的家。晚上我回家以后，小丽给我讲一些学校里有意思的人和事，她也想知道西方国家的情况，我给他们介绍我们国家的文化。我要是有问题就问他们，他们也会认真地给我解答。每天我们都过得很愉快。",
+                "vi": "Ba ngày sau, tôi đến nhà họ ở. Lúc đầu, họ rất khách sáo với tôi, tôi cũng rất khách sáo với họ. Thời gian lâu dần, chúng tôi giống như người một nhà. Tôi cảm thấy nơi này chính là nhà của tôi. Buổi tối sau khi về nhà, Tiểu Lệ kể cho tôi nghe một số người và chuyện thú vị ở trường; cô ấy cũng muốn biết tình hình của các nước phương Tây. Tôi giới thiệu văn hóa nước tôi cho họ. Nếu tôi có vấn đề thì hỏi họ, họ cũng nghiêm túc giải đáp cho tôi. Mỗi ngày chúng tôi đều sống rất vui vẻ.",
+                "source_origin": "textbook",
+                "check_needed": true,
+                "uuid": "e1997fe4-8102-400f-88fe-a7fe84cc60d6"
+              },
+              {
+                "id": "reading_01_p03",
+                "order": 3,
+                "zh": "在我的中国家里，我能练习说汉语，也能了解中国的文化。",
+                "vi": "Ở “ngôi nhà Trung Quốc” của tôi, tôi có thể luyện nói tiếng Hán, cũng có thể tìm hiểu văn hóa Trung Quốc.",
+                "source_origin": "textbook",
+                "check_needed": true,
+                "uuid": "4c3074f5-1633-4f77-8581-166c907b172d"
+              },
+              {
+                "id": "reading_01_p04",
+                "order": 4,
+                "zh": "一天，我爸爸妈妈来电话，问我想不想家，我说不想家。我告诉他们，现在我在中国也有了一个家。他们听了很高兴，还说，他们也想来中国，看看我在中国的家。",
+                "vi": "Một hôm, bố mẹ tôi gọi điện thoại đến, hỏi tôi có nhớ nhà không. Tôi nói không nhớ. Tôi nói với họ rằng bây giờ tôi ở Trung Quốc cũng đã có một ngôi nhà. Họ nghe xong rất vui, còn nói rằng họ cũng muốn đến Trung Quốc, xem ngôi nhà của tôi ở Trung Quốc.",
+                "source_origin": "textbook",
+                "check_needed": true,
+                "uuid": "1e350921-1e98-4b63-9bc1-7e8f2e1d1b9e"
+              }
+            ],
+            "questions": [
+              {
+                "id": "reading_01_q01",
+                "type": "true_false",
+                "prompt": "爱华的中国家有一个小妹妹，她今年十九岁。",
+                "answer": "错",
+                "explanation_vi": "Bài đọc nói 小丽十六岁, không phải 十九岁.",
+                "evidence": [
+                  {
+                    "paragraph_id": "reading_01_p01",
+                    "quote": "她有一个十六岁的女儿，叫小丽"
+                  }
+                ],
+                "source_origin": "textbook_question_generated_answer",
+                "answer_verified": false,
+                "check_needed": true,
+                "uuid": "b56c3870-41b8-4ced-b941-ffae2f49e875"
+              },
+              {
+                "id": "reading_01_q02",
+                "type": "true_false",
+                "prompt": "爱华的爸爸妈妈也来中国了。",
+                "answer": "错",
+                "explanation_vi": "Bố mẹ chỉ gọi điện và nói cũng muốn đến Trung Quốc, chưa đến.",
+                "evidence": [
+                  {
+                    "paragraph_id": "reading_01_p04",
+                    "quote": "还说，他们也想来中国"
+                  }
+                ],
+                "source_origin": "textbook_question_generated_answer",
+                "answer_verified": false,
+                "check_needed": true,
+                "uuid": "28fb9ae9-0eec-4ec8-b1cc-2081e35f0dbc"
+              },
+              {
+                "id": "reading_01_q03",
+                "type": "true_false",
+                "prompt": "爱华是外国留学生。",
+                "answer": "对",
+                "explanation_vi": "Nhân vật đến Trung Quốc, học tiếng Hán và giới thiệu văn hóa nước mình.",
+                "evidence": [
+                  {
+                    "paragraph_id": "reading_01_p01",
+                    "quote": "我去年来到中国"
+                  }
+                ],
+                "source_origin": "textbook_question_generated_answer",
+                "answer_verified": false,
+                "check_needed": true,
+                "uuid": "909ec7e7-a947-4ce9-8c9e-2e3598691a97"
+              }
+            ],
+            "uuid": "d4a97a93-5e8b-47aa-a01f-0510b31e26c9"
+          }
+        ],
+        "uuid": "64279168-0b5b-43af-b3eb-fd07f0ccd32f"
+      },
+      {
+        "id": "section_08_character_writing",
+        "type": "character_writing",
+        "order": 8,
+        "title": "写汉字",
+        "title_vi": "Viết chữ Hán",
+        "source_origin": "textbook",
+        "check_needed": true,
+        "items": [
+          {
+            "id": "char_01",
+            "type": "character_writing_item",
+            "order": 1,
+            "hanzi": "光",
+            "pinyin": "guāng",
+            "meaning_vi": "ánh sáng; ánh nắng",
+            "related_vocab_refs": [
+              "vocab_016"
+            ],
+            "note_vi": "Chữ trong từ 阳光.",
+            "uuid": "36d1a460-06d9-466d-bd73-55f642534975"
+          },
+          {
+            "id": "char_02",
+            "type": "character_writing_item",
+            "order": 2,
+            "hanzi": "交",
+            "pinyin": "jiāo",
+            "meaning_vi": "giao; trao; kết giao; giao thông",
+            "related_vocab_refs": [
+              "vocab_030"
+            ],
+            "note_vi": "Chữ trong từ 交通.",
+            "uuid": "ab97c448-74b6-4392-a79e-0d3a8e93a83a"
+          }
+        ],
+        "uuid": "d1f9b24f-e9c8-4534-a785-c483fb3d1597"
+      },
+      {
+        "id": "section_09_summary",
+        "type": "summary",
+        "order": 9,
+        "title": "总结",
+        "title_vi": "Tổng kết bài",
+        "source_origin": "generated",
+        "check_needed": false,
+        "summary": {
+          "lesson_parts": [
+            "课文",
+            "生词",
+            "专名",
+            "注释",
+            "语法 / 词语用法",
+            "练习",
+            "交际会话",
+            "阅读理解",
+            "写汉字"
+          ],
+          "grammar_points": [
+            {
+              "id": "grammar_01",
+              "title": "就 / 才",
+              "uuid": "781c0f52-d684-4576-a67c-ae88c8c0d4cb"
+            },
+            {
+              "id": "grammar_02",
+              "title": "要是……就……",
+              "uuid": "06fac8ad-ad38-48d6-aae4-2ee6b55bc846"
+            },
+            {
+              "id": "grammar_03",
+              "title": "虽然……但是……",
+              "uuid": "1cf34286-ff5e-49b5-924a-240081ceaa6c"
+            }
+          ],
+          "key_patterns": [
+            "V1 了 + O + 就 + V2 了",
+            "到 + 时间 + 才 + V",
+            "要是 + 条件，就 + 结果",
+            "虽然 + A，但是 + B"
+          ],
+          "coverage_summary": {
+            "text_covered": true,
+            "vocabulary_covered": true,
+            "proper_nouns_covered": true,
+            "notes_covered": true,
+            "grammar_covered": true,
+            "exercises_covered": true,
+            "reading_covered": true,
+            "character_writing_covered": true,
+            "remaining_check_needed": [
+              "Đối chiếu lại PDF scan lần cuối trước khi set final_verified.",
+              "Một số số liệu/chi tiết nhỏ như tiền thuê nhà trong các nguồn phụ có thể khác nhau; ưu tiên PDF scan."
+            ]
+          }
+        },
+        "uuid": "db521ccc-b38b-4e4e-b3c3-296900b040ba"
+      }
+    ],
+    "summary": {
+      "lesson_parts": [
+        "课文",
+        "生词",
+        "专名",
+        "注释",
+        "语法 / 词语用法",
+        "练习",
+        "交际会话",
+        "阅读理解",
+        "写汉字"
+      ],
+      "grammar_points": [
+        {
+          "id": "grammar_01",
+          "title": "就 / 才",
+          "uuid": "1cc0aafa-124d-4ce4-8ae4-5b3cd4f491de"
+        },
+        {
+          "id": "grammar_02",
+          "title": "要是……就……",
+          "uuid": "2e8e9c83-89e6-483a-b629-3c316a185d75"
+        },
+        {
+          "id": "grammar_03",
+          "title": "虽然……但是……",
+          "uuid": "2d610eb4-b59b-4309-b7dd-22fcba355625"
+        }
+      ],
+      "main_patterns": [
+        {
+          "pattern": "V1 了 + O + 就 + V2 了"
+        },
+        {
+          "pattern": "到 + 时间 + 才 + V"
+        },
+        {
+          "pattern": "要是 + 条件，就 + 结果"
+        },
+        {
+          "pattern": "虽然 + A，但是 + B"
+        }
+      ],
+      "exercise_types": [
+        "Ngữ âm",
+        "Thay thế luyện mẫu câu",
+        "Chọn từ điền chỗ trống",
+        "Điền 就 hoặc 才",
+        "Hoàn thành câu",
+        "Hoàn thành hội thoại",
+        "Trả lời theo tình hình thực tế",
+        "Sửa câu sai",
+        "Hội thoại giao tiếp: Đặt phòng",
+        "Đọc hiểu",
+        "Viết chữ Hán"
+      ],
+      "check_needed": false
+    },
+    "uuid": "d350ce56-f941-4ab9-9532-7d2b2cbcf764"
+  },
+  "coverage_report": {
+    "version": "coverage_v1",
+    "coverage_status": "complete_unverified",
+    "expected_exercise_count_from_pdf": 11,
+    "actual_exercise_count_in_json": 11,
+    "all_exercises_covered": true,
+    "all_exercise_content_verified": false,
+    "missing_exercise_indexes": [],
+    "expected_exercises_from_pdf": [
+      {
+        "order": 1,
+        "title_cn": "一、语音",
+        "title_vi": "",
+        "canonical_type": "phonetics",
+        "json_item_id": "exercise_01",
+        "page_start": null,
+        "page_end": null,
+        "extracted": true,
+        "content_verified": false,
+        "answer_verified": false,
+        "source_origin": "textbook",
+        "check_needed": true
+      },
+      {
+        "order": 2,
+        "title_cn": "二、替换",
+        "title_vi": "",
+        "canonical_type": "substitution_drill",
+        "json_item_id": "exercise_02",
+        "page_start": null,
+        "page_end": null,
+        "extracted": true,
+        "content_verified": false,
+        "answer_verified": false,
+        "source_origin": "textbook",
+        "check_needed": true
+      },
+      {
+        "order": 3,
+        "title_cn": "三、选词填空",
+        "title_vi": "",
+        "canonical_type": "choose_words_fill_blank",
+        "json_item_id": "exercise_03",
+        "page_start": null,
+        "page_end": null,
+        "extracted": true,
+        "content_verified": false,
+        "answer_verified": false,
+        "source_origin": "textbook",
+        "check_needed": true
+      },
+      {
+        "order": 4,
+        "title_cn": "四、用“就”或“才”填空",
+        "title_vi": "",
+        "canonical_type": "fill_blank",
+        "json_item_id": "exercise_04",
+        "page_start": null,
+        "page_end": null,
+        "extracted": true,
+        "content_verified": false,
+        "answer_verified": false,
+        "source_origin": "textbook",
+        "check_needed": true
+      },
+      {
+        "order": 5,
+        "title_cn": "五、完成句子",
+        "title_vi": "",
+        "canonical_type": "complete_sentence",
+        "json_item_id": "exercise_05",
+        "page_start": null,
+        "page_end": null,
+        "extracted": true,
+        "content_verified": false,
+        "answer_verified": false,
+        "source_origin": "textbook",
+        "check_needed": true
+      },
+      {
+        "order": 6,
+        "title_cn": "六、完成会话",
+        "title_vi": "",
+        "canonical_type": "complete_dialogue",
+        "json_item_id": "exercise_06",
+        "page_start": null,
+        "page_end": null,
+        "extracted": true,
+        "content_verified": false,
+        "answer_verified": false,
+        "source_origin": "textbook",
+        "check_needed": true
+      },
+      {
+        "order": 7,
+        "title_cn": "七、根据实际情况回答问题",
+        "title_vi": "",
+        "canonical_type": "answer_questions",
+        "json_item_id": "exercise_07",
+        "page_start": null,
+        "page_end": null,
+        "extracted": true,
+        "content_verified": false,
+        "answer_verified": false,
+        "source_origin": "textbook",
+        "check_needed": true
+      },
+      {
+        "order": 8,
+        "title_cn": "八、改错句",
+        "title_vi": "",
+        "canonical_type": "correct_sentence",
+        "json_item_id": "exercise_08",
+        "page_start": null,
+        "page_end": null,
+        "extracted": true,
+        "content_verified": false,
+        "answer_verified": false,
+        "source_origin": "textbook",
+        "check_needed": true
+      },
+      {
+        "order": 9,
+        "title_cn": "九、交际会话",
+        "title_vi": "",
+        "canonical_type": "communication_dialogue",
+        "json_item_id": "exercise_09",
+        "page_start": null,
+        "page_end": null,
+        "extracted": true,
+        "content_verified": false,
+        "answer_verified": false,
+        "source_origin": "textbook",
+        "check_needed": true
+      },
+      {
+        "order": 10,
+        "title_cn": "十、阅读理解",
+        "title_vi": "",
+        "canonical_type": "reading_comprehension",
+        "json_item_id": "exercise_10",
+        "page_start": null,
+        "page_end": null,
+        "extracted": true,
+        "content_verified": false,
+        "answer_verified": false,
+        "source_origin": "textbook",
+        "check_needed": true
+      },
+      {
+        "order": 11,
+        "title_cn": "十一、写汉字",
+        "title_vi": "",
+        "canonical_type": "character_writing",
+        "json_item_id": "exercise_11",
+        "page_start": null,
+        "page_end": null,
+        "extracted": true,
+        "content_verified": false,
+        "answer_verified": false,
+        "source_origin": "textbook",
+        "check_needed": true
+      }
+    ],
+    "unknown_or_unmapped_blocks": [],
+    "coverage_gates": [
+      {
+        "id": "gate_text",
+        "label": "Text covered",
+        "passed": true,
+        "expected": 2,
+        "actual": 2,
+        "reason": "Đã bóc 2 bài khóa.",
+        "uuid": "1e1067d8-5276-4f3f-ad85-d68aa5b04eb3"
+      },
+      {
+        "id": "gate_vocab",
+        "label": "Vocabulary covered",
+        "passed": true,
+        "expected": "套 → 解答",
+        "actual": 41,
+        "reason": "Đã map từ PART 02; 阳关 trong nguồn phụ được sửa theo ngữ cảnh thành 阳光.",
+        "uuid": "a21309a4-7690-4b2d-aced-6bbaf457107e"
+      },
+      {
+        "id": "gate_exercises",
+        "label": "Exercises covered",
+        "passed": true,
+        "expected": 11,
+        "actual": 11,
+        "reason": "Bao gồm 语音, 替换, 选词填空, 就/才填空, 完成句子, 完成会话, 回答问题, 改错句, 交际会话, 阅读理解, 写汉字.",
+        "uuid": "e5436cd4-1caf-4e78-8845-1bc7f57bdaff"
+      },
+      {
+        "id": "gate_final",
+        "label": "Final verification allowed",
+        "passed": false,
+        "expected": true,
+        "actual": false,
+        "reason": "Chưa đối chiếu thủ công lại toàn bộ PDF scan lần cuối nên không set final_verified.",
+        "uuid": "dcb2cf9e-a8de-418f-9643-788a4764248a"
+      }
+    ],
+    "final_verification_allowed": false
+  }
+}

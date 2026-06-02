@@ -792,9 +792,9 @@ export const ReadingItemSchema = z
 
 export const CharacterWritingItemSchema = z.object({
  id: z.string(),
- type: z.literal("character_writing_item"),
+ type: z.string().optional().default("character_writing_item"),
  order: z.number().int().positive(),
- hanzi: z.string(),
+ hanzi: z.string().optional().default(""),
  pinyin: z.string().optional().default(""),
  vocab_ref: z.string().optional().default(""),
  stroke_count: z.number().int().positive().nullable().optional(),
@@ -898,6 +898,18 @@ export const CommunicationSectionSchema = z
  })
  .passthrough();
 
+export const SummarySectionSchema = z
+ .object({
+  id: z.string(),
+  type: z.literal("summary"),
+  order: z.number().int().positive(),
+  title: z.string(),
+  title_vi: z.string().optional().default(""),
+  items: z.array(z.unknown()).optional().default([]),
+  blocks: z.array(z.unknown()).optional().default([]),
+ })
+ .passthrough();
+
 export const SectionSchema = z.discriminatedUnion("type", [
  TextSectionSchema,
  VocabularySectionSchema,
@@ -908,6 +920,7 @@ export const SectionSchema = z.discriminatedUnion("type", [
  CommunicationSectionSchema,
  ReadingSectionSchema,
  CharacterWritingSectionSchema,
+ SummarySectionSchema,
 ]);
 
 /* -------------------------------------------------------------------------- */
@@ -926,12 +939,15 @@ export const SummaryPatternSchema = z.object({
  .passthrough();
 
 export const LessonSummarySchema = z.object({
- lesson_parts: z.array(z.string()),
+ lesson_parts: z.array(z.string()).optional().default([]),
  grammar_points: z.array(SummaryGrammarPointSchema).optional().default([]),
- main_patterns: z.array(SummaryPatternSchema).optional().default([]),
+ main_patterns: z
+  .array(z.union([SummaryPatternSchema, z.string()]))
+  .optional()
+  .default([]),
  exercise_types: z.array(z.string()).optional().default([]),
  check_needed: z.boolean().optional().default(false),
-});
+}).passthrough();
 
 /* -------------------------------------------------------------------------- */
 /* Final lesson schema                                                        */
@@ -942,8 +958,8 @@ export const LessonSchema = z.object({
  title: LocalizedTextSchema,
  tags: z.array(z.string()).optional().default([]),
  sections: z.array(SectionSchema),
- summary: LessonSummarySchema,
-});
+ summary: LessonSummarySchema.optional().default({ lesson_parts: [] }),
+}).passthrough();
 
 export const HanyuLessonSchema = z.object({
  schema_version: z.string().min(1),

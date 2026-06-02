@@ -1,6 +1,7 @@
 {
- "schema_version": "2.1.0",
+ "schema_version": "2.3.0",
  "content_type": "chinese_textbook_lesson",
+ "verification_status": "verified",
  "source": {
   "book": "Hanyu Jiaocheng",
   "volume": "第二册下",
@@ -15,17 +16,25 @@
    {
     "name": "Hanyu Jiaocheng 2-2.pdf",
     "type": "pdf_scan",
-    "check_needed": false
+    "source_origin": "textbook",
+    "check_needed": true,
+    "page_start": 200,
+    "page_end": 232,
+    "note": "PDF scan; nội dung đã bóc theo các PART trong chat."
    },
    {
     "name": "Tong_hop_tu_vung_Han_ngu_quyen_2_Bai_1-25.docx",
-    "type": "vocabulary_summary",
-    "check_needed": false
-   },
+    "type": "uploaded_crosscheck",
+    "source_origin": "uploaded_crosscheck",
+    "check_needed": false,
+    "note": "Dùng đối chiếu danh sách từ vựng quyển 2."
+   }
+  ],
+  "web_crosscheck": [
    {
-    "name": "Học kì 2 上-下.md",
-    "type": "grammar_summary",
-    "check_needed": false
+    "title": "第二十五课∣汉语教程∣第二册∣下∣第三版∣吉利的数字",
+    "source_origin": "web_crosscheck",
+    "note": "Cross-check tên bài và lesson index."
    }
   ]
  },
@@ -37,7 +46,13 @@
    "vi": "Những con số may mắn",
    "en": "Lucky numbers"
   },
-  "tags": ["hanyu_2_2", "lesson_25", "hsk3-ish", "culture", "lucky_numbers"],
+  "tags": [
+   "hanyu_2_2",
+   "lesson_25",
+   "lucky_numbers",
+   "xiangsheng",
+   "coverage_first"
+  ],
   "sections": [
    {
     "id": "section_01_text",
@@ -45,6 +60,8 @@
     "order": 1,
     "title": "课文",
     "title_vi": "Bài khóa",
+    "source_origin": "textbook",
+    "check_needed": false,
     "blocks": [
      {
       "id": "text_01",
@@ -52,708 +69,795 @@
       "order": 1,
       "title": "吉利的数字",
       "title_vi": "Những con số may mắn",
-      "scenes": [
+      "source_origin": "textbook",
+      "check_needed": false,
+      "lines": [
        {
-        "id": "text_01_scene_01",
+        "id": "text_01_line_01",
         "order": 1,
-        "summary_vi": "麦克 và 爱德华 biểu diễn 相声, nói về các con số may mắn trong văn hóa Trung Quốc.",
-        "lines": [
-         {
-          "id": "text_01_scene_01_line_001",
-          "order": 1,
-          "speaker": "麦克",
-          "zh": "你知道中国人喜欢什么数字吗？",
-          "pinyin": "",
-          "vi": "",
-          "audio_key": "",
-          "vocab_refs": ["vocab_001"],
-          "grammar_refs": [],
-          "notes": []
-         },
-         {
-          "id": "text_01_scene_01_line_002",
-          "order": 2,
-          "speaker": "爱德华",
-          "zh": "不知道。",
-          "pinyin": "",
-          "vi": "",
-          "audio_key": "",
-          "vocab_refs": [],
-          "grammar_refs": [],
-          "notes": []
-         },
-         {
-          "id": "text_01_scene_01_line_003",
-          "order": 3,
-          "speaker": "麦克",
-          "zh": "你怎么连这么简单的问题也不知道？不过，不知道也好。",
-          "pinyin": "",
-          "vi": "",
-          "audio_key": "",
-          "vocab_refs": ["vocab_002", "vocab_003"],
-          "grammar_refs": ["grammar_02"],
-          "notes": []
-         },
-         {
-          "id": "text_01_scene_01_line_004",
-          "order": 4,
-          "speaker": "爱德华",
-          "zh": "什么话！",
-          "pinyin": "",
-          "vi": "",
-          "audio_key": "",
-          "vocab_refs": [],
-          "grammar_refs": [],
-          "notes": []
-         },
-         {
-          "id": "text_01_scene_01_line_005",
-          "order": 5,
-          "speaker": "麦克",
-          "zh": "以后你什么问题不知道就来问我好了。",
-          "pinyin": "",
-          "vi": "",
-          "audio_key": "",
-          "vocab_refs": [],
-          "grammar_refs": [],
-          "notes": []
-         },
-         {
-          "id": "text_01_scene_01_line_006",
-          "order": 6,
-          "speaker": "爱德华",
-          "zh": "你知道？",
-          "pinyin": "",
-          "vi": "",
-          "audio_key": "",
-          "vocab_refs": [],
-          "grammar_refs": [],
-          "notes": []
-         },
-         {
-          "id": "text_01_scene_01_line_007",
-          "order": 7,
-          "speaker": "麦克",
-          "zh": "知道。世界上的事我知道一半儿，中国的事我没有不知道的。",
-          "pinyin": "",
-          "vi": "",
-          "audio_key": "",
-          "vocab_refs": ["vocab_004"],
-          "grammar_refs": ["grammar_03"],
-          "notes": []
-         },
-         {
-          "id": "text_01_scene_01_line_008",
-          "order": 8,
-          "speaker": "爱德华",
-          "zh": "是吗？",
-          "pinyin": "",
-          "vi": "",
-          "audio_key": "",
-          "vocab_refs": [],
-          "grammar_refs": [],
-          "notes": []
-         },
-         {
-          "id": "text_01_scene_01_line_009",
-          "order": 9,
-          "speaker": "麦克",
-          "zh": "你没听见大家都叫我什么吗？",
-          "pinyin": "",
-          "vi": "",
-          "audio_key": "",
-          "vocab_refs": [],
-          "grammar_refs": ["grammar_01"],
-          "notes": []
-         },
-         {
-          "id": "text_01_scene_01_line_010",
-          "order": 10,
-          "speaker": "爱德华",
-          "zh": "叫你什么？",
-          "pinyin": "",
-          "vi": "",
-          "audio_key": "",
-          "vocab_refs": [],
-          "grammar_refs": [],
-          "notes": []
-         },
-         {
-          "id": "text_01_scene_01_line_011",
-          "order": 11,
-          "speaker": "麦克",
-          "zh": "“中国通”。",
-          "pinyin": "",
-          "vi": "",
-          "audio_key": "",
-          "vocab_refs": ["vocab_005", "vocab_006"],
-          "grammar_refs": [],
-          "notes": []
-         },
-         {
-          "id": "text_01_scene_01_line_012",
-          "order": 12,
-          "speaker": "爱德华",
-          "zh": "你才学了三个半月的汉语，怎么就成“中国通”了？",
-          "pinyin": "",
-          "vi": "",
-          "audio_key": "",
-          "vocab_refs": ["vocab_005"],
-          "grammar_refs": ["grammar_01"],
-          "notes": []
-         },
-         {
-          "id": "text_01_scene_01_line_013",
-          "order": 13,
-          "speaker": "麦克",
-          "zh": "这不是说相声吗？你怎么连这也不懂？",
-          "pinyin": "",
-          "vi": "",
-          "audio_key": "",
-          "vocab_refs": ["vocab_002"],
-          "grammar_refs": ["grammar_01", "grammar_02"],
-          "notes": []
-         },
-         {
-          "id": "text_01_scene_01_line_014",
-          "order": 14,
-          "speaker": "爱德华",
-          "zh": "谁说我不懂？相声是笑的艺术。说相声就是要大家笑，“笑一笑，十年少”嘛。",
-          "pinyin": "",
-          "vi": "",
-          "audio_key": "",
-          "vocab_refs": ["vocab_007"],
-          "grammar_refs": ["grammar_01"],
-          "notes": []
-         },
-         {
-          "id": "text_01_scene_01_line_015",
-          "order": 15,
-          "speaker": "麦克",
-          "zh": "对呀。谁听了我们的相声，谁就会笑起来，谁就会变年轻，今年二十，明年十岁。",
-          "pinyin": "",
-          "vi": "",
-          "audio_key": "",
-          "vocab_refs": [],
-          "grammar_refs": [],
-          "notes": []
-         },
-         {
-          "id": "text_01_scene_01_line_016",
-          "order": 16,
-          "speaker": "爱德华",
-          "zh": "什么？",
-          "pinyin": "",
-          "vi": "",
-          "audio_key": "",
-          "vocab_refs": [],
-          "grammar_refs": [],
-          "notes": []
-         },
-         {
-          "id": "text_01_scene_01_line_017",
-          "order": 17,
-          "speaker": "麦克",
-          "zh": "你不是说“笑一笑，十年少”吗？",
-          "pinyin": "",
-          "vi": "",
-          "audio_key": "",
-          "vocab_refs": [],
-          "grammar_refs": ["grammar_01"],
-          "notes": []
-         },
-         {
-          "id": "text_01_scene_01_line_018",
-          "order": 18,
-          "speaker": "爱德华",
-          "zh": "别开玩笑了。你还是说说中国人喜欢什么数字吧。",
-          "pinyin": "",
-          "vi": "",
-          "audio_key": "",
-          "vocab_refs": ["vocab_008"],
-          "grammar_refs": [],
-          "notes": []
-         },
-         {
-          "id": "text_01_scene_01_line_019",
-          "order": 19,
-          "speaker": "麦克",
-          "zh": "我告诉你，你可别告诉别人。这是我的伟大发现，我正准备去申请专利呢。",
-          "pinyin": "",
-          "vi": "",
-          "audio_key": "",
-          "vocab_refs": [
-           "vocab_009",
-           "vocab_010",
-           "vocab_011",
-           "vocab_012",
-           "vocab_013"
-          ],
-          "grammar_refs": [],
-          "notes": []
-         },
-         {
-          "id": "text_01_scene_01_line_020",
-          "order": 20,
-          "speaker": "爱德华",
-          "zh": "你快说吧，我不会告诉别人的。",
-          "pinyin": "",
-          "vi": "",
-          "audio_key": "",
-          "vocab_refs": ["vocab_009"],
-          "grammar_refs": [],
-          "notes": []
-         },
-         {
-          "id": "text_01_scene_01_line_021",
-          "order": 21,
-          "speaker": "麦克",
-          "zh": "中国人最喜欢的数字是“八”。",
-          "pinyin": "",
-          "vi": "",
-          "audio_key": "",
-          "vocab_refs": ["vocab_001"],
-          "grammar_refs": [],
-          "notes": []
-         },
-         {
-          "id": "text_01_scene_01_line_022",
-          "order": 22,
-          "speaker": "爱德华",
-          "zh": "八？为什么喜欢“八”？",
-          "pinyin": "",
-          "vi": "",
-          "audio_key": "",
-          "vocab_refs": [],
-          "grammar_refs": [],
-          "notes": []
-         },
-         {
-          "id": "text_01_scene_01_line_023",
-          "order": 23,
-          "speaker": "麦克",
-          "zh": "中国人认为这个数字最吉利。",
-          "pinyin": "",
-          "vi": "",
-          "audio_key": "",
-          "vocab_refs": ["vocab_014", "vocab_015"],
-          "grammar_refs": [],
-          "notes": []
-         },
-         {
-          "id": "text_01_scene_01_line_024",
-          "order": 24,
-          "speaker": "爱德华",
-          "zh": "“八”怎么吉利呢？",
-          "pinyin": "",
-          "vi": "",
-          "audio_key": "",
-          "vocab_refs": ["vocab_015"],
-          "grammar_refs": [],
-          "notes": []
-         },
-         {
-          "id": "text_01_scene_01_line_025",
-          "order": 25,
-          "speaker": "麦克",
-          "zh": "你听！我说“八、八、八”……你能听出什么音来吗？",
-          "pinyin": "",
-          "vi": "",
-          "audio_key": "",
-          "vocab_refs": ["vocab_016"],
-          "grammar_refs": [],
-          "notes": []
-         },
-         {
-          "id": "text_01_scene_01_line_026",
-          "order": 26,
-          "speaker": "爱德华",
-          "zh": "“八、八、八”呀！",
-          "pinyin": "",
-          "vi": "",
-          "audio_key": "",
-          "vocab_refs": [],
-          "grammar_refs": [],
-          "notes": []
-         },
-         {
-          "id": "text_01_scene_01_line_027",
-          "order": 27,
-          "speaker": "麦克",
-          "zh": "你真笨啊！连这都听不出来。“八”的谐音不是“发”吗？“八、八、八”就是“发、发、发”呀。",
-          "pinyin": "",
-          "vi": "",
-          "audio_key": "",
-          "vocab_refs": ["vocab_017", "vocab_018", "vocab_019"],
-          "grammar_refs": ["grammar_01", "grammar_02"],
-          "notes": []
-         },
-         {
-          "id": "text_01_scene_01_line_028",
-          "order": 28,
-          "speaker": "爱德华",
-          "zh": "我怎么听不出来呢？",
-          "pinyin": "",
-          "vi": "",
-          "audio_key": "",
-          "vocab_refs": [],
-          "grammar_refs": ["grammar_01"],
-          "notes": []
-         },
-         {
-          "id": "text_01_scene_01_line_029",
-          "order": 29,
-          "speaker": "麦克",
-          "zh": "你的汉语水平太低。汉语的“发”是什么意思你知道不？",
-          "pinyin": "",
-          "vi": "",
-          "audio_key": "",
-          "vocab_refs": ["vocab_019"],
-          "grammar_refs": [],
-          "notes": []
-         },
-         {
-          "id": "text_01_scene_01_line_030",
-          "order": 30,
-          "speaker": "爱德华",
-          "zh": "不知道。",
-          "pinyin": "",
-          "vi": "",
-          "audio_key": "",
-          "vocab_refs": [],
-          "grammar_refs": [],
-          "notes": []
-         },
-         {
-          "id": "text_01_scene_01_line_031",
-          "order": 31,
-          "speaker": "麦克",
-          "zh": "“发”就是“发财”。现在谁不想发财呀？发了财就可以买房子，买汽车，买巧克力，买土豆儿……想买什么就买什么。",
-          "pinyin": "",
-          "vi": "",
-          "audio_key": "",
-          "vocab_refs": ["vocab_019", "vocab_020", "vocab_021"],
-          "grammar_refs": ["grammar_01"],
-          "notes": []
-         },
-         {
-          "id": "text_01_scene_01_line_032",
-          "order": 32,
-          "speaker": "爱德华",
-          "zh": "你胡说什么呀！",
-          "pinyin": "",
-          "vi": "",
-          "audio_key": "",
-          "vocab_refs": ["vocab_022"],
-          "grammar_refs": [],
-          "notes": []
-         },
-         {
-          "id": "text_01_scene_01_line_033",
-          "order": 33,
-          "speaker": "麦克",
-          "zh": "只要有钱就能买好多好东西。",
-          "pinyin": "",
-          "vi": "",
-          "audio_key": "",
-          "vocab_refs": [],
-          "grammar_refs": [],
-          "notes": []
-         },
-         {
-          "id": "text_01_scene_01_line_034",
-          "order": 34,
-          "speaker": "爱德华",
-          "zh": "我想起来了。我学过，中国人喜欢“518”这个数，也喜欢“五月十八号”这一天，因为“518”的谐音是“我要发”。",
-          "pinyin": "",
-          "vi": "",
-          "audio_key": "",
-          "vocab_refs": ["vocab_018"],
-          "grammar_refs": [],
-          "notes": []
-         },
-         {
-          "id": "text_01_scene_01_line_035",
-          "order": 35,
-          "speaker": "麦克",
-          "zh": "对！对！怎么？你也知道啊！",
-          "pinyin": "",
-          "vi": "",
-          "audio_key": "",
-          "vocab_refs": [],
-          "grammar_refs": [],
-          "notes": []
-         },
-         {
-          "id": "text_01_scene_01_line_036",
-          "order": 36,
-          "speaker": "爱德华",
-          "zh": "是啊，我还知道中国人也喜欢“六”和“九”。",
-          "pinyin": "",
-          "vi": "",
-          "audio_key": "",
-          "vocab_refs": [],
-          "grammar_refs": [],
-          "notes": []
-         },
-         {
-          "id": "text_01_scene_01_line_037",
-          "order": 37,
-          "speaker": "麦克",
-          "zh": "为什么？",
-          "pinyin": "",
-          "vi": "",
-          "audio_key": "",
-          "vocab_refs": [],
-          "grammar_refs": [],
-          "notes": []
-         },
-         {
-          "id": "text_01_scene_01_line_038",
-          "order": 38,
-          "speaker": "爱德华",
-          "zh": "因为……哎，你不是“中国通”吗？怎么又问起我来了？",
-          "pinyin": "",
-          "vi": "",
-          "audio_key": "",
-          "vocab_refs": ["vocab_005"],
-          "grammar_refs": ["grammar_01"],
-          "notes": []
-         },
-         {
-          "id": "text_01_scene_01_line_039",
-          "order": 39,
-          "speaker": "麦克",
-          "zh": "我问你，你告诉我，我懂了不就“通”了吗？",
-          "pinyin": "",
-          "vi": "",
-          "audio_key": "",
-          "vocab_refs": ["vocab_006"],
-          "grammar_refs": [],
-          "notes": []
-         },
-         {
-          "id": "text_01_scene_01_line_040",
-          "order": 40,
-          "speaker": "爱德华",
-          "zh": "“九”与“长久”的“久”谐音。谁不希望友谊长久，爱情长久，活得长久啊？中国人还常说“六六大顺”。所以我知道中国人也喜欢“六”和“九”。",
-          "pinyin": "",
-          "vi": "",
-          "audio_key": "",
-          "vocab_refs": [
-           "vocab_023",
-           "vocab_024",
-           "vocab_025",
-           "vocab_026",
-           "vocab_027"
-          ],
-          "grammar_refs": ["grammar_01"],
-          "notes": []
-         },
-         {
-          "id": "text_01_scene_01_line_041",
-          "order": 41,
-          "speaker": "麦克",
-          "zh": "你不笨啊！",
-          "pinyin": "",
-          "vi": "",
-          "audio_key": "",
-          "vocab_refs": ["vocab_017"],
-          "grammar_refs": [],
-          "notes": []
-         },
-         {
-          "id": "text_01_scene_01_line_042",
-          "order": 42,
-          "speaker": "爱德华",
-          "zh": "你才笨呢！",
-          "pinyin": "",
-          "vi": "",
-          "audio_key": "",
-          "vocab_refs": ["vocab_017"],
-          "grammar_refs": [],
-          "notes": []
-         }
-        ]
+        "speaker": "麦克",
+        "zh": "你知道中国人喜欢什么数字吗？",
+        "pinyin": "",
+        "vi": "Bạn biết người Trung Quốc thích con số nào không?",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook",
+        "check_needed": false,
+        "uuid": "e4c0b6d7-991a-4865-a27b-103ca8dbb261"
+       },
+       {
+        "id": "text_01_line_02",
+        "order": 2,
+        "speaker": "爱德华",
+        "zh": "不知道。",
+        "pinyin": "",
+        "vi": "Không biết.",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook",
+        "check_needed": false,
+        "uuid": "d432ab5b-d3c0-46a6-835a-8a06b9b92ead"
+       },
+       {
+        "id": "text_01_line_03",
+        "order": 3,
+        "speaker": "麦克",
+        "zh": "你怎么连这么简单的问题也不知道？不过，不知道也好。",
+        "pinyin": "",
+        "vi": "Sao bạn ngay cả vấn đề đơn giản thế này cũng không biết? Nhưng mà không biết cũng tốt.",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook",
+        "check_needed": false,
+        "uuid": "d50aab81-f281-424d-b6e3-93f8b527e4b6"
+       },
+       {
+        "id": "text_01_line_04",
+        "order": 4,
+        "speaker": "爱德华",
+        "zh": "什么话！",
+        "pinyin": "",
+        "vi": "Nói gì vậy!",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook",
+        "check_needed": false,
+        "uuid": "fcf8eb9d-079b-4c5c-bd8f-fb2845c5aafd"
+       },
+       {
+        "id": "text_01_line_05",
+        "order": 5,
+        "speaker": "麦克",
+        "zh": "以后你什么问题不知道就来问我好了。",
+        "pinyin": "",
+        "vi": "Sau này bạn không biết vấn đề gì thì cứ đến hỏi tôi là được.",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook",
+        "check_needed": false,
+        "uuid": "d5f60f49-6117-4712-a8cb-ae338506c721"
+       },
+       {
+        "id": "text_01_line_06",
+        "order": 6,
+        "speaker": "爱德华",
+        "zh": "你知道？",
+        "pinyin": "",
+        "vi": "Bạn biết à?",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook",
+        "check_needed": false,
+        "uuid": "242ac9fa-c656-4198-8795-3c06dd2ca892"
+       },
+       {
+        "id": "text_01_line_07",
+        "order": 7,
+        "speaker": "麦克",
+        "zh": "知道。世界上的事我知道一半儿，中国的事我没有不知道的。",
+        "pinyin": "",
+        "vi": "Biết chứ. Chuyện trên thế giới tôi biết một nửa, còn chuyện Trung Quốc thì không có gì tôi không biết.",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook",
+        "check_needed": false,
+        "uuid": "6affd58a-1c3d-4cdb-a21a-8d423635da53"
+       },
+       {
+        "id": "text_01_line_08",
+        "order": 8,
+        "speaker": "爱德华",
+        "zh": "是吗？",
+        "pinyin": "",
+        "vi": "Thật sao?",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook",
+        "check_needed": false,
+        "uuid": "26b334bc-d4ee-4491-a07f-666fa32be753"
+       },
+       {
+        "id": "text_01_line_09",
+        "order": 9,
+        "speaker": "麦克",
+        "zh": "你没听见大家都叫我什么吗？",
+        "pinyin": "",
+        "vi": "Bạn không nghe thấy mọi người gọi tôi là gì à?",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook",
+        "check_needed": false,
+        "uuid": "a7ef41cd-0c01-43e5-8ddd-3ab65c7b1d88"
+       },
+       {
+        "id": "text_01_line_10",
+        "order": 10,
+        "speaker": "爱德华",
+        "zh": "叫你什么？",
+        "pinyin": "",
+        "vi": "Gọi bạn là gì?",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook",
+        "check_needed": false,
+        "uuid": "a164c5e6-dde9-4765-b579-efe10a5345ec"
+       },
+       {
+        "id": "text_01_line_11",
+        "order": 11,
+        "speaker": "麦克",
+        "zh": "“中国通”。",
+        "pinyin": "",
+        "vi": "“Chuyên gia Trung Quốc”.",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook",
+        "check_needed": false,
+        "uuid": "05c4ecf2-9702-43c6-8348-e5faa0abee87"
+       },
+       {
+        "id": "text_01_line_12",
+        "order": 12,
+        "speaker": "爱德华",
+        "zh": "你才学了三个半月的汉语，怎么就成“中国通”了？",
+        "pinyin": "",
+        "vi": "Bạn mới học tiếng Hán ba tháng rưỡi, sao đã thành “chuyên gia Trung Quốc” rồi?",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook",
+        "check_needed": false,
+        "uuid": "99dfae6e-c83f-472f-8b03-c082cfb4d64c"
+       },
+       {
+        "id": "text_01_line_13",
+        "order": 13,
+        "speaker": "麦克",
+        "zh": "这不是说相声吗？你怎么连这也不懂？",
+        "pinyin": "",
+        "vi": "Đây chẳng phải đang diễn tấu hài sao? Sao bạn ngay cả cái này cũng không hiểu?",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook",
+        "check_needed": false,
+        "uuid": "e5c6e281-84e4-4643-ac9c-7c01522df342"
+       },
+       {
+        "id": "text_01_line_14",
+        "order": 14,
+        "speaker": "爱德华",
+        "zh": "谁说我不懂？相声是笑的艺术。说相声就是要大家笑，“笑一笑，十年少”嘛。",
+        "pinyin": "",
+        "vi": "Ai nói tôi không hiểu? Tấu hài là nghệ thuật gây cười. Diễn tấu hài là để mọi người cười mà, “cười một cái trẻ mười tuổi” đó.",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook",
+        "check_needed": false,
+        "uuid": "213d0bf5-64a0-466a-843c-97b7ccebd93c"
+       },
+       {
+        "id": "text_01_line_15",
+        "order": 15,
+        "speaker": "麦克",
+        "zh": "对呀。谁听了我们的相声，谁就会笑起来，谁就会变年轻，今年二十，明年十岁。",
+        "pinyin": "",
+        "vi": "Đúng vậy. Ai nghe tấu hài của chúng ta thì sẽ cười lên, sẽ trẻ ra; năm nay hai mươi, năm sau mười tuổi.",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook",
+        "check_needed": false,
+        "uuid": "08477976-e51f-4d15-8481-8477da1719a3"
+       },
+       {
+        "id": "text_01_line_16",
+        "order": 16,
+        "speaker": "爱德华",
+        "zh": "什么？",
+        "pinyin": "",
+        "vi": "Gì cơ?",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook",
+        "check_needed": false,
+        "uuid": "4e69df8d-b09e-42f5-ae5f-3263083e30f3"
+       },
+       {
+        "id": "text_01_line_17",
+        "order": 17,
+        "speaker": "麦克",
+        "zh": "你不是说“笑一笑，十年少”吗？",
+        "pinyin": "",
+        "vi": "Chẳng phải bạn nói “cười một cái trẻ mười tuổi” sao?",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook",
+        "check_needed": false,
+        "uuid": "b85e569d-a08f-4806-bf2c-b3d8753eb113"
+       },
+       {
+        "id": "text_01_line_18",
+        "order": 18,
+        "speaker": "爱德华",
+        "zh": "别开玩笑了。你还是说说中国人喜欢什么数字吧。",
+        "pinyin": "",
+        "vi": "Đừng đùa nữa. Bạn vẫn nên nói người Trung Quốc thích con số nào đi.",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook",
+        "check_needed": false,
+        "uuid": "2d5af266-4c38-47ec-b8f7-c00e520aad33"
+       },
+       {
+        "id": "text_01_line_19",
+        "order": 19,
+        "speaker": "麦克",
+        "zh": "我告诉你，你可别告诉别人。这是我的伟大发现，我正准备去申请专利呢。",
+        "pinyin": "",
+        "vi": "Tôi nói cho bạn biết, bạn nhất định đừng nói với người khác. Đây là phát hiện vĩ đại của tôi, tôi đang chuẩn bị đi xin bằng sáng chế đấy.",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook",
+        "check_needed": false,
+        "uuid": "3d2dd39e-1e21-4b74-a24a-998073a68898"
+       },
+       {
+        "id": "text_01_line_20",
+        "order": 20,
+        "speaker": "爱德华",
+        "zh": "你快说吧，我不会告诉别人的。",
+        "pinyin": "",
+        "vi": "Bạn nói nhanh đi, tôi sẽ không nói với người khác đâu.",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook",
+        "check_needed": false,
+        "uuid": "d21e09a9-72b4-4ab4-8d34-26f5efbb898c"
+       },
+       {
+        "id": "text_01_line_21",
+        "order": 21,
+        "speaker": "麦克",
+        "zh": "中国人最喜欢的数字是“八”。",
+        "pinyin": "",
+        "vi": "Con số người Trung Quốc thích nhất là “tám”.",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook",
+        "check_needed": false,
+        "uuid": "83c0e483-5075-47a5-b79c-7a02fda56e1d"
+       },
+       {
+        "id": "text_01_line_22",
+        "order": 22,
+        "speaker": "爱德华",
+        "zh": "八？为什么喜欢“八”？",
+        "pinyin": "",
+        "vi": "Tám? Vì sao thích “tám”?",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook",
+        "check_needed": false,
+        "uuid": "2fc11e7e-8c65-41ac-b539-66f8897e0c04"
+       },
+       {
+        "id": "text_01_line_23",
+        "order": 23,
+        "speaker": "麦克",
+        "zh": "中国人认为这个数字最吉利。",
+        "pinyin": "",
+        "vi": "Người Trung Quốc cho rằng con số này may mắn nhất.",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook",
+        "check_needed": false,
+        "uuid": "adbd6821-2606-4b9a-a75e-474e2cdce3f6"
+       },
+       {
+        "id": "text_01_line_24",
+        "order": 24,
+        "speaker": "爱德华",
+        "zh": "“八”怎么吉利呢？",
+        "pinyin": "",
+        "vi": "“Tám” may mắn thế nào?",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook",
+        "check_needed": false,
+        "uuid": "a4411dcf-bbae-4e86-a16c-45ef12ef2618"
+       },
+       {
+        "id": "text_01_line_25",
+        "order": 25,
+        "speaker": "麦克",
+        "zh": "你听！我说“八、八、八”……你能听出什么音来吗？",
+        "pinyin": "",
+        "vi": "Bạn nghe này! Tôi nói “ba, ba, ba”... bạn nghe ra âm gì không?",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook",
+        "check_needed": false,
+        "uuid": "ee1751cc-8eb3-45e6-982b-71ac7bdf0e41"
+       },
+       {
+        "id": "text_01_line_26",
+        "order": 26,
+        "speaker": "爱德华",
+        "zh": "“八、八、八”呀！",
+        "pinyin": "",
+        "vi": "Là “ba, ba, ba” chứ gì!",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook",
+        "check_needed": false,
+        "uuid": "d9789507-587d-4461-8ca5-e5e609014657"
+       },
+       {
+        "id": "text_01_line_27",
+        "order": 27,
+        "speaker": "麦克",
+        "zh": "你真笨啊！连这都听不出来。“八”的谐音不是“发”吗？“八、八、八”就是“发、发、发”呀。",
+        "pinyin": "",
+        "vi": "Bạn ngốc thật! Ngay cả cái này cũng không nghe ra. Âm gần của “八” chẳng phải là “发” sao? “八、八、八” chính là “phát, phát, phát” đó.",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook",
+        "check_needed": false,
+        "uuid": "f0775024-9dd0-46ee-85d5-550ca07c8eb2"
+       },
+       {
+        "id": "text_01_line_28",
+        "order": 28,
+        "speaker": "爱德华",
+        "zh": "我怎么听不出来呢？",
+        "pinyin": "",
+        "vi": "Sao tôi lại không nghe ra nhỉ?",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook",
+        "check_needed": false,
+        "uuid": "9d8a9925-41de-4414-9142-b424c3e4b3a7"
+       },
+       {
+        "id": "text_01_line_29",
+        "order": 29,
+        "speaker": "麦克",
+        "zh": "你的汉语水平太低。汉语的“发”是什么意思你知道不？",
+        "pinyin": "",
+        "vi": "Trình độ tiếng Hán của bạn quá thấp. Chữ “发” trong tiếng Hán nghĩa là gì bạn biết không?",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook",
+        "check_needed": false,
+        "uuid": "30f61ce6-8a0e-4caf-83c2-9cfe5f5e8abb"
+       },
+       {
+        "id": "text_01_line_30",
+        "order": 30,
+        "speaker": "爱德华",
+        "zh": "不知道。",
+        "pinyin": "",
+        "vi": "Không biết.",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook",
+        "check_needed": false,
+        "uuid": "888cfa27-2b83-4046-9ce2-2e6f13211ab3"
+       },
+       {
+        "id": "text_01_line_31",
+        "order": 31,
+        "speaker": "麦克",
+        "zh": "“发”就是“发财”。现在谁不想发财呀？发了财就可以买房子，买汽车，买巧克力，买土豆儿……想买什么就买什么。",
+        "pinyin": "",
+        "vi": "“发” là “phát tài”. Bây giờ ai mà không muốn phát tài chứ? Phát tài rồi thì có thể mua nhà, mua xe, mua sô-cô-la, mua khoai tây... muốn mua gì thì mua nấy.",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook",
+        "check_needed": false,
+        "uuid": "6d0ac10a-03d3-409c-95dd-b78ed1c126dd"
+       },
+       {
+        "id": "text_01_line_32",
+        "order": 32,
+        "speaker": "爱德华",
+        "zh": "你胡说什么呀！",
+        "pinyin": "",
+        "vi": "Bạn nói linh tinh gì vậy!",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook",
+        "check_needed": false,
+        "uuid": "86249fcd-91a5-4f99-b6b2-1d56514c2d38"
+       },
+       {
+        "id": "text_01_line_33",
+        "order": 33,
+        "speaker": "麦克",
+        "zh": "只要有钱就能买好多好东西。",
+        "pinyin": "",
+        "vi": "Chỉ cần có tiền thì có thể mua rất nhiều đồ tốt.",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook",
+        "check_needed": false,
+        "uuid": "d2bade2c-15d8-4efb-9ea4-3951f15c6df4"
+       },
+       {
+        "id": "text_01_line_34",
+        "order": 34,
+        "speaker": "爱德华",
+        "zh": "我想起来了。我学过，中国人喜欢“518”这个数，也喜欢“五月十八号”这一天，因为“518”的谐音是“我要发”。",
+        "pinyin": "",
+        "vi": "Tôi nhớ ra rồi. Tôi đã học rồi, người Trung Quốc thích số “518”, cũng thích ngày 18 tháng 5, vì âm gần của “518” là “tôi muốn phát tài”.",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook",
+        "check_needed": false,
+        "uuid": "046b94d6-1625-4787-872f-d951c5473166"
+       },
+       {
+        "id": "text_01_line_35",
+        "order": 35,
+        "speaker": "麦克",
+        "zh": "对！对！怎么？你也知道啊！",
+        "pinyin": "",
+        "vi": "Đúng! Đúng! Sao vậy? Bạn cũng biết à!",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook",
+        "check_needed": false,
+        "uuid": "4350c329-c1c1-4d32-8d6d-0cb90acd4a52"
+       },
+       {
+        "id": "text_01_line_36",
+        "order": 36,
+        "speaker": "爱德华",
+        "zh": "是啊，我还知道中国人也喜欢“六”和“九”。",
+        "pinyin": "",
+        "vi": "Đúng vậy, tôi còn biết người Trung Quốc cũng thích “sáu” và “chín”.",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook",
+        "check_needed": false,
+        "uuid": "2d864998-2f38-41c6-8447-30e7d0432840"
+       },
+       {
+        "id": "text_01_line_37",
+        "order": 37,
+        "speaker": "麦克",
+        "zh": "为什么？",
+        "pinyin": "",
+        "vi": "Vì sao?",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook",
+        "check_needed": false,
+        "uuid": "d26aa887-a19b-4360-b551-2685a8bf6f6a"
+       },
+       {
+        "id": "text_01_line_38",
+        "order": 38,
+        "speaker": "爱德华",
+        "zh": "因为……哎，你不是“中国通”吗？怎么又问起我来了？",
+        "pinyin": "",
+        "vi": "Bởi vì... ơ, chẳng phải bạn là “chuyên gia Trung Quốc” sao? Sao lại hỏi ngược tôi rồi?",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook",
+        "check_needed": false,
+        "uuid": "b3d0c02c-2380-40bf-82ff-ebf6f281cc20"
+       },
+       {
+        "id": "text_01_line_39",
+        "order": 39,
+        "speaker": "麦克",
+        "zh": "我问你，你告诉我，我懂了不就“通”了吗？",
+        "pinyin": "",
+        "vi": "Tôi hỏi bạn, bạn nói cho tôi, tôi hiểu rồi thì chẳng phải thành “thông” sao?",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook",
+        "check_needed": false,
+        "uuid": "2a9a34f5-dd33-477f-b4ae-ec6182b8c65d"
+       },
+       {
+        "id": "text_01_line_40",
+        "order": 40,
+        "speaker": "爱德华",
+        "zh": "“九”与“长久”的“久”谐音。谁不希望友谊长久，爱情长久，活得长久啊？中国人还常说“六六大顺”。所以我知道中国人也喜欢“六”和“九”。",
+        "pinyin": "",
+        "vi": "“九” đồng âm với “久” trong “长久”. Ai mà không mong tình bạn lâu dài, tình yêu lâu dài, sống lâu dài chứ? Người Trung Quốc còn thường nói “六六大顺”. Vì vậy tôi biết người Trung Quốc cũng thích “sáu” và “chín”.",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook",
+        "check_needed": false,
+        "uuid": "7e45a9b1-e161-4f42-ac30-dd3f277edd21"
+       },
+       {
+        "id": "text_01_line_41",
+        "order": 41,
+        "speaker": "麦克",
+        "zh": "你不笨啊！",
+        "pinyin": "",
+        "vi": "Bạn không ngốc nhỉ!",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook",
+        "check_needed": false,
+        "uuid": "3dbc358d-d8b0-415e-8050-368f3218718a"
+       },
+       {
+        "id": "text_01_line_42",
+        "order": 42,
+        "speaker": "爱德华",
+        "zh": "你才笨呢！",
+        "pinyin": "",
+        "vi": "Bạn mới ngốc đó!",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook",
+        "check_needed": false,
+        "uuid": "76087236-068a-4879-ab92-0eac8848add7"
        }
       ],
-      "comprehension_questions": []
+      "paragraphs": [],
+      "comprehension_questions": [],
+      "uuid": "381be170-c76e-4d66-bb42-5c34ed85c9d0"
      },
      {
       "id": "text_02",
       "type": "text_dialogue",
       "order": 2,
       "title": "宴会上的规矩",
-      "title_vi": "Quy tắc trong tiệc",
-      "scenes": [
+      "title_vi": "Quy tắc trong tiệc rượu",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "lines": [
        {
-        "id": "text_02_scene_01",
+        "id": "text_02_line_01",
         "order": 1,
-        "summary_vi": "麦克 giải thích một số quy tắc trong tiệc của người Trung Quốc.",
-        "lines": [
-         {
-          "id": "text_02_scene_01_line_001",
-          "order": 1,
-          "speaker": "麦克",
-          "zh": "中国人在宴会上的规矩可多了。",
-          "pinyin": "",
-          "vi": "",
-          "audio_key": "",
-          "vocab_refs": ["vocab_028", "vocab_029", "vocab_008"],
-          "grammar_refs": [],
-          "notes": []
-         },
-         {
-          "id": "text_02_scene_01_line_002",
-          "order": 2,
-          "speaker": "爱德华",
-          "zh": "都有什么规矩？",
-          "pinyin": "",
-          "vi": "",
-          "audio_key": "",
-          "vocab_refs": ["vocab_029"],
-          "grammar_refs": [],
-          "notes": []
-         },
-         {
-          "id": "text_02_scene_01_line_003",
-          "order": 3,
-          "speaker": "麦克",
-          "zh": "首先，要请重要的客人、老师、领导和长辈坐上座。",
-          "pinyin": "",
-          "vi": "",
-          "audio_key": "",
-          "vocab_refs": [
-           "vocab_030",
-           "vocab_031",
-           "vocab_032",
-           "vocab_033",
-           "vocab_034"
-          ],
-          "grammar_refs": [],
-          "notes": []
-         },
-         {
-          "id": "text_02_scene_01_line_004",
-          "order": 4,
-          "speaker": "爱德华",
-          "zh": "这是应该的。",
-          "pinyin": "",
-          "vi": "",
-          "audio_key": "",
-          "vocab_refs": [],
-          "grammar_refs": [],
-          "notes": []
-         },
-         {
-          "id": "text_02_scene_01_line_005",
-          "order": 5,
-          "speaker": "麦克",
-          "zh": "上菜时，如果是鱼的话，鱼头要对着上座，让重要的客人先吃第一口。喝酒的时候，大家都要先给他敬酒。",
-          "pinyin": "",
-          "vi": "",
-          "audio_key": "",
-          "vocab_refs": ["vocab_035", "vocab_036", "vocab_034", "vocab_037"],
-          "grammar_refs": [],
-          "notes": []
-         },
-         {
-          "id": "text_02_scene_01_line_006",
-          "order": 6,
-          "speaker": "爱德华",
-          "zh": "上次我参加了一个中国朋友的婚礼，大家都让我先吃。是不是也把我看成重要的客人了？",
-          "pinyin": "",
-          "vi": "",
-          "audio_key": "",
-          "vocab_refs": ["vocab_038"],
-          "grammar_refs": [],
-          "notes": []
-         },
-         {
-          "id": "text_02_scene_01_line_007",
-          "order": 7,
-          "speaker": "麦克",
-          "zh": "是。要是你到中国人家里去做客，他们就会准备好多菜，让你怎么也吃不完。给你敬酒的时候，一定要干杯，把杯子里的酒一口喝光。",
-          "pinyin": "",
-          "vi": "",
-          "audio_key": "",
-          "vocab_refs": ["vocab_037", "vocab_040"],
-          "grammar_refs": [],
-          "notes": []
-         },
-         {
-          "id": "text_02_scene_01_line_008",
-          "order": 8,
-          "speaker": "爱德华",
-          "zh": "要是不会喝酒怎么办呢？",
-          "pinyin": "",
-          "vi": "",
-          "audio_key": "",
-          "vocab_refs": [],
-          "grammar_refs": [],
-          "notes": []
-         },
-         {
-          "id": "text_02_scene_01_line_009",
-          "order": 9,
-          "speaker": "麦克",
-          "zh": "那也没关系。他们会说“感情有，茶当酒”。你用茶代替就行了。",
-          "pinyin": "",
-          "vi": "",
-          "audio_key": "",
-          "vocab_refs": ["vocab_041", "vocab_042", "vocab_043"],
-          "grammar_refs": [],
-          "notes": []
-         },
-         {
-          "id": "text_02_scene_01_line_010",
-          "order": 10,
-          "speaker": "爱德华",
-          "zh": "你怎么知道得这么多啊！",
-          "pinyin": "",
-          "vi": "",
-          "audio_key": "",
-          "vocab_refs": [],
-          "grammar_refs": ["grammar_01"],
-          "notes": []
-         },
-         {
-          "id": "text_02_scene_01_line_011",
-          "order": 11,
-          "speaker": "麦克",
-          "zh": "“中国通”嘛，当然知道得比你多了。",
-          "pinyin": "",
-          "vi": "",
-          "audio_key": "",
-          "vocab_refs": ["vocab_005"],
-          "grammar_refs": [],
-          "notes": []
-         },
-         {
-          "id": "text_02_scene_01_line_012",
-          "order": 12,
-          "speaker": "爱德华",
-          "zh": "哈哈！又吹起来了。",
-          "pinyin": "",
-          "vi": "",
-          "audio_key": "",
-          "vocab_refs": ["vocab_044", "vocab_045"],
-          "grammar_refs": [],
-          "notes": []
-         }
-        ]
+        "speaker": "麦克",
+        "zh": "中国人在宴会上的规矩可多了。",
+        "pinyin": "",
+        "vi": "Người Trung Quốc có rất nhiều quy tắc trong tiệc rượu.",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook",
+        "check_needed": false,
+        "uuid": "f304adfa-13cc-4471-aa33-5a8210a23097"
+       },
+       {
+        "id": "text_02_line_02",
+        "order": 2,
+        "speaker": "爱德华",
+        "zh": "都有什么规矩？",
+        "pinyin": "",
+        "vi": "Có những quy tắc gì?",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook",
+        "check_needed": false,
+        "uuid": "9e9a26ea-50cc-4f94-9aa4-b0e988d16feb"
+       },
+       {
+        "id": "text_02_line_03",
+        "order": 3,
+        "speaker": "麦克",
+        "zh": "首先，要请重要的客人、老师、领导和长辈坐上座。",
+        "pinyin": "",
+        "vi": "Trước hết, phải mời khách quan trọng, thầy cô, lãnh đạo và người lớn tuổi ngồi chỗ danh dự.",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook",
+        "check_needed": false,
+        "uuid": "fcd602f8-6d9a-4676-abe3-a2cac8a9b91d"
+       },
+       {
+        "id": "text_02_line_04",
+        "order": 4,
+        "speaker": "爱德华",
+        "zh": "这是应该的。",
+        "pinyin": "",
+        "vi": "Điều này là nên làm.",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook",
+        "check_needed": false,
+        "uuid": "e2a96890-5ab8-4729-a220-6f8ed79d06f2"
+       },
+       {
+        "id": "text_02_line_05",
+        "order": 5,
+        "speaker": "麦克",
+        "zh": "上菜时，如果是鱼的话，鱼头要对着上座，让重要的客人先吃第一口。喝酒的时候，大家都要先给他敬酒。",
+        "pinyin": "",
+        "vi": "Khi dọn món, nếu là cá thì đầu cá phải hướng về chỗ danh dự, để khách quan trọng ăn miếng đầu tiên. Khi uống rượu, mọi người đều phải mời rượu người ấy trước.",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook",
+        "check_needed": false,
+        "uuid": "5d39dd40-8fde-4028-b4b6-1a446e217f03"
+       },
+       {
+        "id": "text_02_line_06",
+        "order": 6,
+        "speaker": "爱德华",
+        "zh": "上次我参加了一个中国朋友的婚礼，大家都让我先吃。是不是也把我看成重要的客人了？",
+        "pinyin": "",
+        "vi": "Lần trước tôi tham gia đám cưới của một người bạn Trung Quốc, mọi người đều bảo tôi ăn trước. Có phải cũng xem tôi là khách quan trọng không?",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook",
+        "check_needed": false,
+        "uuid": "16e07b98-51cd-471c-8e80-2e1847a15199"
+       },
+       {
+        "id": "text_02_line_07",
+        "order": 7,
+        "speaker": "麦克",
+        "zh": "是。要是你到中国人家里去做客，他们就会准备好多菜，让你怎么也吃不完。给你敬酒的时候，一定要干杯，把杯子里的酒一口喝光。",
+        "pinyin": "",
+        "vi": "Đúng. Nếu bạn đến nhà người Trung Quốc làm khách, họ sẽ chuẩn bị rất nhiều món, khiến bạn ăn thế nào cũng không hết. Khi mời rượu bạn, nhất định phải cạn ly, uống hết rượu trong ly một hơi.",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook",
+        "check_needed": false,
+        "uuid": "b3f54774-3839-4103-8a98-31ebabcb83ba"
+       },
+       {
+        "id": "text_02_line_08",
+        "order": 8,
+        "speaker": "爱德华",
+        "zh": "要是不会喝酒怎么办呢？",
+        "pinyin": "",
+        "vi": "Nếu không biết uống rượu thì làm thế nào?",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook",
+        "check_needed": false,
+        "uuid": "3a05e8d8-d98e-40b5-a7c3-ab3f3b122e7e"
+       },
+       {
+        "id": "text_02_line_09",
+        "order": 9,
+        "speaker": "麦克",
+        "zh": "那也没关系。他们会说“感情有，茶当酒”。你用茶代替就行了。",
+        "pinyin": "",
+        "vi": "Vậy cũng không sao. Họ sẽ nói “có tình cảm là được, lấy trà thay rượu”. Bạn dùng trà thay thế là được.",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook",
+        "check_needed": false,
+        "uuid": "fa83e139-3e8e-4da1-b36c-fcb0bcea97f6"
+       },
+       {
+        "id": "text_02_line_10",
+        "order": 10,
+        "speaker": "爱德华",
+        "zh": "你怎么知道得这么多啊！",
+        "pinyin": "",
+        "vi": "Sao bạn biết nhiều thế!",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook",
+        "check_needed": false,
+        "uuid": "8a99d30f-6132-437f-821e-cea24f72ed2f"
+       },
+       {
+        "id": "text_02_line_11",
+        "order": 11,
+        "speaker": "麦克",
+        "zh": "“中国通”嘛，当然知道得比你多了。",
+        "pinyin": "",
+        "vi": "“Chuyên gia Trung Quốc” mà, đương nhiên biết nhiều hơn bạn rồi.",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook",
+        "check_needed": false,
+        "uuid": "8e745e31-e977-4858-b0a6-03cb31315ea9"
+       },
+       {
+        "id": "text_02_line_12",
+        "order": 12,
+        "speaker": "爱德华",
+        "zh": "哈哈！又吹起来了。",
+        "pinyin": "",
+        "vi": "Haha! Lại khoác lác rồi.",
+        "audio_key": "",
+        "vocab_refs": [],
+        "grammar_refs": [],
+        "source_origin": "textbook",
+        "check_needed": false,
+        "uuid": "fc6d5aa8-ba51-4064-a03a-a6670e6527a2"
        }
       ],
-      "comprehension_questions": []
+      "paragraphs": [],
+      "comprehension_questions": [],
+      "uuid": "08111206-e4c9-4046-b141-65edd0e982b4"
      }
-    ]
+    ],
+    "uuid": "752cd161-fa44-47f3-90d1-44888c028c30"
    },
    {
     "id": "section_02_vocabulary",
     "type": "vocabulary",
     "order": 2,
     "title": "生词",
-    "title_vi": "Từ vựng",
+    "title_vi": "Từ vựng chính",
+    "source_origin": "textbook",
+    "check_needed": false,
     "items": [
      {
       "id": "vocab_001",
@@ -761,14 +865,14 @@
       "order": 1,
       "hanzi": "数字",
       "pinyin": "shùzì",
-      "meaning_vi": "con số",
+      "meaning_vi": "con số; chữ số",
       "meaning_en": "",
       "pos": "noun",
-      "tags": ["numbers"],
+      "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
        "front": "数字",
-       "back": "shùzì — con số",
+       "back": "shùzì — con số; chữ số",
        "modes": [
         "hanzi_to_meaning",
         "meaning_to_hanzi",
@@ -777,7 +881,9 @@
        ]
       },
       "audio_key": "",
-      "check_needed": false
+      "source_origin": "textbook",
+      "check_needed": false,
+      "uuid": "b6a373b5-4d8b-4d1c-957c-83d6658faaaf"
      },
      {
       "id": "vocab_002",
@@ -785,14 +891,14 @@
       "order": 2,
       "hanzi": "连……也……",
       "pinyin": "lián... yě...",
-      "meaning_vi": "ngay cả… cũng…",
+      "meaning_vi": "ngay cả... cũng...",
       "meaning_en": "",
-      "pos": "phrase",
-      "tags": ["grammar"],
+      "pos": "grammar_word",
+      "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
        "front": "连……也……",
-       "back": "lián... yě... — ngay cả… cũng…",
+       "back": "lián... yě... — ngay cả... cũng...",
        "modes": [
         "hanzi_to_meaning",
         "meaning_to_hanzi",
@@ -801,7 +907,9 @@
        ]
       },
       "audio_key": "",
-      "check_needed": false
+      "source_origin": "textbook",
+      "check_needed": false,
+      "uuid": "3368186a-16f8-4876-a3ce-0f36a7ac6825"
      },
      {
       "id": "vocab_003",
@@ -812,7 +920,7 @@
       "meaning_vi": "đơn giản",
       "meaning_en": "",
       "pos": "adjective",
-      "tags": [],
+      "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
        "front": "简单",
@@ -825,7 +933,9 @@
        ]
       },
       "audio_key": "",
-      "check_needed": false
+      "source_origin": "textbook",
+      "check_needed": false,
+      "uuid": "3536d735-70f0-4a71-b2bd-4b4f0c304420"
      },
      {
       "id": "vocab_004",
@@ -835,8 +945,8 @@
       "pinyin": "yíbànr",
       "meaning_vi": "một nửa",
       "meaning_en": "",
-      "pos": "noun",
-      "tags": [],
+      "pos": "numeral",
+      "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
        "front": "一半儿",
@@ -849,7 +959,9 @@
        ]
       },
       "audio_key": "",
-      "check_needed": false
+      "source_origin": "textbook",
+      "check_needed": false,
+      "uuid": "3c619a17-8911-422b-9d7e-1e213c083b53"
      },
      {
       "id": "vocab_005",
@@ -857,14 +969,14 @@
       "order": 5,
       "hanzi": "中国通",
       "pinyin": "Zhōngguótōng",
-      "meaning_vi": "người am hiểu Trung Quốc",
+      "meaning_vi": "người rất am hiểu Trung Quốc; chuyên gia Trung Quốc",
       "meaning_en": "",
       "pos": "noun",
-      "tags": ["culture"],
+      "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
        "front": "中国通",
-       "back": "Zhōngguótōng — người am hiểu Trung Quốc",
+       "back": "Zhōngguótōng — người rất am hiểu Trung Quốc; chuyên gia Trung Quốc",
        "modes": [
         "hanzi_to_meaning",
         "meaning_to_hanzi",
@@ -873,7 +985,9 @@
        ]
       },
       "audio_key": "",
-      "check_needed": false
+      "source_origin": "textbook",
+      "check_needed": false,
+      "uuid": "a85a1d30-b3fe-4bf1-82c8-a34b2f117b3a"
      },
      {
       "id": "vocab_006",
@@ -881,14 +995,14 @@
       "order": 6,
       "hanzi": "通",
       "pinyin": "tōng",
-      "meaning_vi": "thông thạo, hiểu, biết rõ",
+      "meaning_vi": "thông thạo; hiểu rõ; biết rõ",
       "meaning_en": "",
-      "pos": "verb",
-      "tags": [],
+      "pos": "adjective",
+      "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
        "front": "通",
-       "back": "tōng — thông thạo, hiểu, biết rõ",
+       "back": "tōng — thông thạo; hiểu rõ; biết rõ",
        "modes": [
         "hanzi_to_meaning",
         "meaning_to_hanzi",
@@ -897,7 +1011,9 @@
        ]
       },
       "audio_key": "",
-      "check_needed": false
+      "source_origin": "textbook",
+      "check_needed": false,
+      "uuid": "566397e5-74cf-4d34-b6d1-1f2b499e3cb6"
      },
      {
       "id": "vocab_007",
@@ -905,14 +1021,14 @@
       "order": 7,
       "hanzi": "少",
       "pinyin": "shào",
-      "meaning_vi": "trẻ, trẻ hơn",
+      "meaning_vi": "trẻ; nhỏ tuổi hơn",
       "meaning_en": "",
-      "pos": "adjective",
-      "tags": [],
+      "pos": "verb",
+      "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
        "front": "少",
-       "back": "shào — trẻ, trẻ hơn",
+       "back": "shào — trẻ; nhỏ tuổi hơn",
        "modes": [
         "hanzi_to_meaning",
         "meaning_to_hanzi",
@@ -921,7 +1037,9 @@
        ]
       },
       "audio_key": "",
-      "check_needed": false
+      "source_origin": "textbook",
+      "check_needed": false,
+      "uuid": "2d98cc11-a8c6-47ed-93c0-5bcea0264293"
      },
      {
       "id": "vocab_008",
@@ -929,14 +1047,14 @@
       "order": 8,
       "hanzi": "可",
       "pinyin": "kě",
-      "meaning_vi": "nhất định, tuyệt đối, dùng để nhấn mạnh",
+      "meaning_vi": "nhất định; phải; dùng để nhấn mạnh",
       "meaning_en": "",
-      "pos": "adverb",
-      "tags": [],
+      "pos": "verb",
+      "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
        "front": "可",
-       "back": "kě — nhất định, tuyệt đối, dùng để nhấn mạnh",
+       "back": "kě — nhất định; phải; dùng để nhấn mạnh",
        "modes": [
         "hanzi_to_meaning",
         "meaning_to_hanzi",
@@ -945,7 +1063,9 @@
        ]
       },
       "audio_key": "",
-      "check_needed": false
+      "source_origin": "textbook",
+      "check_needed": false,
+      "uuid": "7bfe33d6-2345-4f70-ab1e-abd5aa7464dc"
      },
      {
       "id": "vocab_009",
@@ -956,7 +1076,7 @@
       "meaning_vi": "người khác",
       "meaning_en": "",
       "pos": "noun",
-      "tags": [],
+      "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
        "front": "别人",
@@ -969,7 +1089,9 @@
        ]
       },
       "audio_key": "",
-      "check_needed": false
+      "source_origin": "textbook",
+      "check_needed": false,
+      "uuid": "2c9da352-4a3b-4906-ac6f-14540d81efe7"
      },
      {
       "id": "vocab_010",
@@ -977,14 +1099,14 @@
       "order": 10,
       "hanzi": "伟大",
       "pinyin": "wěidà",
-      "meaning_vi": "vĩ đại",
+      "meaning_vi": "vĩ đại; to lớn",
       "meaning_en": "",
       "pos": "adjective",
-      "tags": [],
+      "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
        "front": "伟大",
-       "back": "wěidà — vĩ đại",
+       "back": "wěidà — vĩ đại; to lớn",
        "modes": [
         "hanzi_to_meaning",
         "meaning_to_hanzi",
@@ -993,7 +1115,9 @@
        ]
       },
       "audio_key": "",
-      "check_needed": false
+      "source_origin": "textbook",
+      "check_needed": false,
+      "uuid": "97c8f160-8b29-4fec-9204-5081d62d7db6"
      },
      {
       "id": "vocab_011",
@@ -1001,14 +1125,14 @@
       "order": 11,
       "hanzi": "发现",
       "pinyin": "fāxiàn",
-      "meaning_vi": "phát hiện",
+      "meaning_vi": "phát hiện; tìm ra",
       "meaning_en": "",
-      "pos": "verb_noun",
-      "tags": [],
+      "pos": "noun",
+      "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
        "front": "发现",
-       "back": "fāxiàn — phát hiện",
+       "back": "fāxiàn — phát hiện; tìm ra",
        "modes": [
         "hanzi_to_meaning",
         "meaning_to_hanzi",
@@ -1017,7 +1141,9 @@
        ]
       },
       "audio_key": "",
-      "check_needed": false
+      "source_origin": "textbook",
+      "check_needed": false,
+      "uuid": "f056485a-9533-4eab-942e-2145f62d90b5"
      },
      {
       "id": "vocab_012",
@@ -1025,14 +1151,14 @@
       "order": 12,
       "hanzi": "申请",
       "pinyin": "shēnqǐng",
-      "meaning_vi": "xin, đăng ký, nộp đơn",
+      "meaning_vi": "xin; đăng ký; nộp đơn xin",
       "meaning_en": "",
-      "pos": "verb",
-      "tags": [],
+      "pos": "noun",
+      "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
        "front": "申请",
-       "back": "shēnqǐng — xin, đăng ký, nộp đơn",
+       "back": "shēnqǐng — xin; đăng ký; nộp đơn xin",
        "modes": [
         "hanzi_to_meaning",
         "meaning_to_hanzi",
@@ -1041,7 +1167,9 @@
        ]
       },
       "audio_key": "",
-      "check_needed": false
+      "source_origin": "textbook",
+      "check_needed": false,
+      "uuid": "0d76409d-194b-4ab8-8322-e815ee283594"
      },
      {
       "id": "vocab_013",
@@ -1049,14 +1177,14 @@
       "order": 13,
       "hanzi": "专利",
       "pinyin": "zhuānlì",
-      "meaning_vi": "bằng sáng chế",
+      "meaning_vi": "bằng sáng chế; quyền sáng chế",
       "meaning_en": "",
       "pos": "noun",
-      "tags": [],
+      "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
        "front": "专利",
-       "back": "zhuānlì — bằng sáng chế",
+       "back": "zhuānlì — bằng sáng chế; quyền sáng chế",
        "modes": [
         "hanzi_to_meaning",
         "meaning_to_hanzi",
@@ -1065,7 +1193,9 @@
        ]
       },
       "audio_key": "",
-      "check_needed": false
+      "source_origin": "textbook",
+      "check_needed": false,
+      "uuid": "603259e4-177d-4081-b8c8-0305493b769e"
      },
      {
       "id": "vocab_014",
@@ -1073,14 +1203,14 @@
       "order": 14,
       "hanzi": "认为",
       "pinyin": "rènwéi",
-      "meaning_vi": "cho rằng, nhận là",
+      "meaning_vi": "cho rằng; nghĩ rằng",
       "meaning_en": "",
       "pos": "verb",
-      "tags": [],
+      "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
        "front": "认为",
-       "back": "rènwéi — cho rằng, nhận là",
+       "back": "rènwéi — cho rằng; nghĩ rằng",
        "modes": [
         "hanzi_to_meaning",
         "meaning_to_hanzi",
@@ -1089,7 +1219,9 @@
        ]
       },
       "audio_key": "",
-      "check_needed": false
+      "source_origin": "textbook",
+      "check_needed": false,
+      "uuid": "b9dc8a5c-08db-4aec-8b61-dfb5623bc323"
      },
      {
       "id": "vocab_015",
@@ -1097,14 +1229,14 @@
       "order": 15,
       "hanzi": "吉利",
       "pinyin": "jílì",
-      "meaning_vi": "may mắn, tốt lành",
+      "meaning_vi": "may mắn; tốt lành",
       "meaning_en": "",
       "pos": "adjective",
-      "tags": ["culture"],
+      "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
        "front": "吉利",
-       "back": "jílì — may mắn, tốt lành",
+       "back": "jílì — may mắn; tốt lành",
        "modes": [
         "hanzi_to_meaning",
         "meaning_to_hanzi",
@@ -1113,7 +1245,9 @@
        ]
       },
       "audio_key": "",
-      "check_needed": false
+      "source_origin": "textbook",
+      "check_needed": false,
+      "uuid": "c8669bb8-ac65-40cd-bdc9-c02397c3bafd"
      },
      {
       "id": "vocab_016",
@@ -1121,14 +1255,14 @@
       "order": 16,
       "hanzi": "音",
       "pinyin": "yīn",
-      "meaning_vi": "âm, âm thanh",
+      "meaning_vi": "âm; âm thanh",
       "meaning_en": "",
       "pos": "noun",
-      "tags": [],
+      "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
        "front": "音",
-       "back": "yīn — âm, âm thanh",
+       "back": "yīn — âm; âm thanh",
        "modes": [
         "hanzi_to_meaning",
         "meaning_to_hanzi",
@@ -1137,7 +1271,9 @@
        ]
       },
       "audio_key": "",
-      "check_needed": false
+      "source_origin": "textbook",
+      "check_needed": false,
+      "uuid": "b0c4a12f-0967-4a7a-95c1-eefe11f56ba8"
      },
      {
       "id": "vocab_017",
@@ -1145,14 +1281,14 @@
       "order": 17,
       "hanzi": "笨",
       "pinyin": "bèn",
-      "meaning_vi": "ngốc, đần",
+      "meaning_vi": "ngốc; vụng; đần",
       "meaning_en": "",
       "pos": "adjective",
-      "tags": [],
+      "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
        "front": "笨",
-       "back": "bèn — ngốc, đần",
+       "back": "bèn — ngốc; vụng; đần",
        "modes": [
         "hanzi_to_meaning",
         "meaning_to_hanzi",
@@ -1161,7 +1297,9 @@
        ]
       },
       "audio_key": "",
-      "check_needed": false
+      "source_origin": "textbook",
+      "check_needed": false,
+      "uuid": "a5783e6a-e823-4527-9513-597f929cd493"
      },
      {
       "id": "vocab_018",
@@ -1169,14 +1307,14 @@
       "order": 18,
       "hanzi": "谐音",
       "pinyin": "xiéyīn",
-      "meaning_vi": "đồng âm, âm gần giống",
+      "meaning_vi": "đồng âm; âm gần giống nhau",
       "meaning_en": "",
       "pos": "noun",
-      "tags": ["culture"],
+      "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
        "front": "谐音",
-       "back": "xiéyīn — đồng âm, âm gần giống",
+       "back": "xiéyīn — đồng âm; âm gần giống nhau",
        "modes": [
         "hanzi_to_meaning",
         "meaning_to_hanzi",
@@ -1185,7 +1323,9 @@
        ]
       },
       "audio_key": "",
-      "check_needed": false
+      "source_origin": "textbook",
+      "check_needed": false,
+      "uuid": "4a2d5592-4cec-4892-b0ec-b9b1aa2935a0"
      },
      {
       "id": "vocab_019",
@@ -1193,14 +1333,14 @@
       "order": 19,
       "hanzi": "发",
       "pinyin": "fā",
-      "meaning_vi": "phát tài, làm giàu",
+      "meaning_vi": "phát tài; giàu lên",
       "meaning_en": "",
-      "pos": "verb",
-      "tags": ["culture"],
+      "pos": "noun",
+      "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
        "front": "发",
-       "back": "fā — phát tài, làm giàu",
+       "back": "fā — phát tài; giàu lên",
        "modes": [
         "hanzi_to_meaning",
         "meaning_to_hanzi",
@@ -1209,7 +1349,9 @@
        ]
       },
       "audio_key": "",
-      "check_needed": false
+      "source_origin": "textbook",
+      "check_needed": false,
+      "uuid": "12a464ca-1e9f-4dde-9fde-240fedbfaf71"
      },
      {
       "id": "vocab_020",
@@ -1220,7 +1362,7 @@
       "meaning_vi": "sô-cô-la",
       "meaning_en": "",
       "pos": "noun",
-      "tags": ["food"],
+      "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
        "front": "巧克力",
@@ -1233,7 +1375,9 @@
        ]
       },
       "audio_key": "",
-      "check_needed": false
+      "source_origin": "textbook",
+      "check_needed": false,
+      "uuid": "d567274a-52bf-4117-8373-ad978826da03"
      },
      {
       "id": "vocab_021",
@@ -1244,7 +1388,7 @@
       "meaning_vi": "khoai tây",
       "meaning_en": "",
       "pos": "noun",
-      "tags": ["food"],
+      "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
        "front": "土豆儿",
@@ -1257,7 +1401,9 @@
        ]
       },
       "audio_key": "",
-      "check_needed": false
+      "source_origin": "textbook",
+      "check_needed": false,
+      "uuid": "e0cf2053-6477-488a-a499-529f8a28e8df"
      },
      {
       "id": "vocab_022",
@@ -1265,14 +1411,14 @@
       "order": 22,
       "hanzi": "胡说",
       "pinyin": "húshuō",
-      "meaning_vi": "nói bậy, nói linh tinh",
+      "meaning_vi": "nói bậy; nói nhảm",
       "meaning_en": "",
       "pos": "verb",
-      "tags": [],
+      "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
        "front": "胡说",
-       "back": "húshuō — nói bậy, nói linh tinh",
+       "back": "húshuō — nói bậy; nói nhảm",
        "modes": [
         "hanzi_to_meaning",
         "meaning_to_hanzi",
@@ -1281,7 +1427,9 @@
        ]
       },
       "audio_key": "",
-      "check_needed": false
+      "source_origin": "textbook",
+      "check_needed": false,
+      "uuid": "484e2463-dc18-47af-abbc-c3cc6b446a37"
      },
      {
       "id": "vocab_023",
@@ -1289,14 +1437,14 @@
       "order": 23,
       "hanzi": "长久",
       "pinyin": "chángjiǔ",
-      "meaning_vi": "lâu dài, bền lâu",
+      "meaning_vi": "lâu dài; bền lâu",
       "meaning_en": "",
-      "pos": "adjective",
-      "tags": [],
+      "pos": "noun",
+      "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
        "front": "长久",
-       "back": "chángjiǔ — lâu dài, bền lâu",
+       "back": "chángjiǔ — lâu dài; bền lâu",
        "modes": [
         "hanzi_to_meaning",
         "meaning_to_hanzi",
@@ -1305,7 +1453,9 @@
        ]
       },
       "audio_key": "",
-      "check_needed": false
+      "source_origin": "textbook",
+      "check_needed": false,
+      "uuid": "db5d68da-1d22-4a33-92e1-c2f57c722b3a"
      },
      {
       "id": "vocab_024",
@@ -1316,7 +1466,7 @@
       "meaning_vi": "tình bạn",
       "meaning_en": "",
       "pos": "noun",
-      "tags": [],
+      "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
        "front": "友谊",
@@ -1329,7 +1479,9 @@
        ]
       },
       "audio_key": "",
-      "check_needed": false
+      "source_origin": "textbook",
+      "check_needed": false,
+      "uuid": "5fd15301-b1c4-44c1-8ce4-b9022efdc970"
      },
      {
       "id": "vocab_025",
@@ -1340,7 +1492,7 @@
       "meaning_vi": "tình yêu",
       "meaning_en": "",
       "pos": "noun",
-      "tags": [],
+      "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
        "front": "爱情",
@@ -1353,7 +1505,9 @@
        ]
       },
       "audio_key": "",
-      "check_needed": false
+      "source_origin": "textbook",
+      "check_needed": false,
+      "uuid": "f0be1bcc-be76-4664-ac4d-9f7ff1eb008a"
      },
      {
       "id": "vocab_026",
@@ -1361,14 +1515,14 @@
       "order": 26,
       "hanzi": "活",
       "pinyin": "huó",
-      "meaning_vi": "sống",
+      "meaning_vi": "sống; còn sống",
       "meaning_en": "",
       "pos": "verb",
-      "tags": [],
+      "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
        "front": "活",
-       "back": "huó — sống",
+       "back": "huó — sống; còn sống",
        "modes": [
         "hanzi_to_meaning",
         "meaning_to_hanzi",
@@ -1377,7 +1531,9 @@
        ]
       },
       "audio_key": "",
-      "check_needed": false
+      "source_origin": "textbook",
+      "check_needed": false,
+      "uuid": "b45c94ff-f995-4eab-9d1e-99e7405bf4b0"
      },
      {
       "id": "vocab_027",
@@ -1385,14 +1541,14 @@
       "order": 27,
       "hanzi": "顺",
       "pinyin": "shùn",
-      "meaning_vi": "thuận lợi, suôn sẻ",
+      "meaning_vi": "thuận lợi; suôn sẻ",
       "meaning_en": "",
-      "pos": "adjective",
-      "tags": [],
+      "pos": "verb",
+      "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
        "front": "顺",
-       "back": "shùn — thuận lợi, suôn sẻ",
+       "back": "shùn — thuận lợi; suôn sẻ",
        "modes": [
         "hanzi_to_meaning",
         "meaning_to_hanzi",
@@ -1401,7 +1557,9 @@
        ]
       },
       "audio_key": "",
-      "check_needed": false
+      "source_origin": "textbook",
+      "check_needed": false,
+      "uuid": "21fc849b-2a9e-4d75-8bf3-3a6c659be1ca"
      },
      {
       "id": "vocab_028",
@@ -1409,14 +1567,14 @@
       "order": 28,
       "hanzi": "宴会",
       "pinyin": "yànhuì",
-      "meaning_vi": "tiệc, yến tiệc",
+      "meaning_vi": "tiệc; yến tiệc",
       "meaning_en": "",
       "pos": "noun",
-      "tags": ["culture"],
+      "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
        "front": "宴会",
-       "back": "yànhuì — tiệc, yến tiệc",
+       "back": "yànhuì — tiệc; yến tiệc",
        "modes": [
         "hanzi_to_meaning",
         "meaning_to_hanzi",
@@ -1425,7 +1583,9 @@
        ]
       },
       "audio_key": "",
-      "check_needed": false
+      "source_origin": "textbook",
+      "check_needed": false,
+      "uuid": "f9242c56-8491-4f8c-a97d-c1f6516966ff"
      },
      {
       "id": "vocab_029",
@@ -1433,14 +1593,14 @@
       "order": 29,
       "hanzi": "规矩",
       "pinyin": "guīju",
-      "meaning_vi": "quy tắc, phép tắc",
+      "meaning_vi": "quy tắc; phép tắc; quy củ",
       "meaning_en": "",
       "pos": "noun",
-      "tags": [],
+      "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
        "front": "规矩",
-       "back": "guīju — quy tắc, phép tắc",
+       "back": "guīju — quy tắc; phép tắc; quy củ",
        "modes": [
         "hanzi_to_meaning",
         "meaning_to_hanzi",
@@ -1449,7 +1609,9 @@
        ]
       },
       "audio_key": "",
-      "check_needed": false
+      "source_origin": "textbook",
+      "check_needed": false,
+      "uuid": "4f36cee7-f92c-49b2-a9f5-b8277c9938e1"
      },
      {
       "id": "vocab_030",
@@ -1457,14 +1619,14 @@
       "order": 30,
       "hanzi": "首先",
       "pinyin": "shǒuxiān",
-      "meaning_vi": "trước hết, đầu tiên",
+      "meaning_vi": "trước hết; đầu tiên",
       "meaning_en": "",
       "pos": "adverb",
-      "tags": [],
+      "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
        "front": "首先",
-       "back": "shǒuxiān — trước hết, đầu tiên",
+       "back": "shǒuxiān — trước hết; đầu tiên",
        "modes": [
         "hanzi_to_meaning",
         "meaning_to_hanzi",
@@ -1473,7 +1635,9 @@
        ]
       },
       "audio_key": "",
-      "check_needed": false
+      "source_origin": "textbook",
+      "check_needed": false,
+      "uuid": "ba92cbe2-f303-4e62-824f-1bc6092c9628"
      },
      {
       "id": "vocab_031",
@@ -1484,7 +1648,7 @@
       "meaning_vi": "quan trọng",
       "meaning_en": "",
       "pos": "adjective",
-      "tags": [],
+      "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
        "front": "重要",
@@ -1497,7 +1661,9 @@
        ]
       },
       "audio_key": "",
-      "check_needed": false
+      "source_origin": "textbook",
+      "check_needed": false,
+      "uuid": "1588ec12-a0a9-4fc3-ba82-87510db78f05"
      },
      {
       "id": "vocab_032",
@@ -1508,7 +1674,7 @@
       "meaning_vi": "lãnh đạo",
       "meaning_en": "",
       "pos": "noun",
-      "tags": [],
+      "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
        "front": "领导",
@@ -1521,7 +1687,9 @@
        ]
       },
       "audio_key": "",
-      "check_needed": false
+      "source_origin": "textbook",
+      "check_needed": false,
+      "uuid": "30e49b89-d8c0-481b-b5bf-a89ca07ffe75"
      },
      {
       "id": "vocab_033",
@@ -1529,14 +1697,14 @@
       "order": 33,
       "hanzi": "长辈",
       "pinyin": "zhǎngbèi",
-      "meaning_vi": "bề trên, người lớn tuổi",
+      "meaning_vi": "bậc trưởng bối; người lớn tuổi hơn",
       "meaning_en": "",
       "pos": "noun",
-      "tags": [],
+      "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
        "front": "长辈",
-       "back": "zhǎngbèi — bề trên, người lớn tuổi",
+       "back": "zhǎngbèi — bậc trưởng bối; người lớn tuổi hơn",
        "modes": [
         "hanzi_to_meaning",
         "meaning_to_hanzi",
@@ -1545,7 +1713,9 @@
        ]
       },
       "audio_key": "",
-      "check_needed": false
+      "source_origin": "textbook",
+      "check_needed": false,
+      "uuid": "c979c5a0-e0c2-47ce-a1ad-332eec6c8702"
      },
      {
       "id": "vocab_034",
@@ -1553,14 +1723,14 @@
       "order": 34,
       "hanzi": "上座",
       "pinyin": "shàngzuò",
-      "meaning_vi": "ghế danh dự, chỗ ngồi quan trọng",
+      "meaning_vi": "chỗ ngồi danh dự; vị trí trang trọng",
       "meaning_en": "",
       "pos": "noun",
-      "tags": ["culture"],
+      "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
        "front": "上座",
-       "back": "shàngzuò — ghế danh dự, chỗ ngồi quan trọng",
+       "back": "shàngzuò — chỗ ngồi danh dự; vị trí trang trọng",
        "modes": [
         "hanzi_to_meaning",
         "meaning_to_hanzi",
@@ -1569,7 +1739,9 @@
        ]
       },
       "audio_key": "",
-      "check_needed": false
+      "source_origin": "textbook",
+      "check_needed": false,
+      "uuid": "bcf78ef1-71e4-435b-9e26-6c1e14d8aa82"
      },
      {
       "id": "vocab_035",
@@ -1580,7 +1752,7 @@
       "meaning_vi": "dọn món lên",
       "meaning_en": "",
       "pos": "verb_phrase",
-      "tags": ["food"],
+      "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
        "front": "上菜",
@@ -1593,7 +1765,9 @@
        ]
       },
       "audio_key": "",
-      "check_needed": false
+      "source_origin": "textbook",
+      "check_needed": false,
+      "uuid": "c9026eed-db98-4b71-be3e-1d69d6c61b4b"
      },
      {
       "id": "vocab_036",
@@ -1601,14 +1775,14 @@
       "order": 36,
       "hanzi": "如果",
       "pinyin": "rúguǒ",
-      "meaning_vi": "nếu",
+      "meaning_vi": "nếu; nếu như",
       "meaning_en": "",
       "pos": "conjunction",
-      "tags": [],
+      "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
        "front": "如果",
-       "back": "rúguǒ — nếu",
+       "back": "rúguǒ — nếu; nếu như",
        "modes": [
         "hanzi_to_meaning",
         "meaning_to_hanzi",
@@ -1617,7 +1791,9 @@
        ]
       },
       "audio_key": "",
-      "check_needed": false
+      "source_origin": "textbook",
+      "check_needed": false,
+      "uuid": "5486d932-4c92-4058-b11b-6a4f99385f6e"
      },
      {
       "id": "vocab_037",
@@ -1625,14 +1801,14 @@
       "order": 37,
       "hanzi": "敬酒",
       "pinyin": "jìng jiǔ",
-      "meaning_vi": "mời rượu, kính rượu",
+      "meaning_vi": "mời rượu; kính rượu",
       "meaning_en": "",
       "pos": "verb_phrase",
-      "tags": ["culture"],
+      "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
        "front": "敬酒",
-       "back": "jìng jiǔ — mời rượu, kính rượu",
+       "back": "jìng jiǔ — mời rượu; kính rượu",
        "modes": [
         "hanzi_to_meaning",
         "meaning_to_hanzi",
@@ -1641,7 +1817,9 @@
        ]
       },
       "audio_key": "",
-      "check_needed": false
+      "source_origin": "textbook",
+      "check_needed": false,
+      "uuid": "2f403c3d-452b-4a0c-9ace-b2ac7516bac8"
      },
      {
       "id": "vocab_038",
@@ -1652,7 +1830,7 @@
       "meaning_vi": "lần trước",
       "meaning_en": "",
       "pos": "noun",
-      "tags": [],
+      "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
        "front": "上次",
@@ -1665,7 +1843,9 @@
        ]
       },
       "audio_key": "",
-      "check_needed": false
+      "source_origin": "textbook",
+      "check_needed": false,
+      "uuid": "3c3129bf-54ac-42aa-bee8-07820699849f"
      },
      {
       "id": "vocab_039",
@@ -1676,7 +1856,7 @@
       "meaning_vi": "lần sau",
       "meaning_en": "",
       "pos": "noun",
-      "tags": [],
+      "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
        "front": "下次",
@@ -1689,7 +1869,9 @@
        ]
       },
       "audio_key": "",
-      "check_needed": false
+      "source_origin": "textbook",
+      "check_needed": false,
+      "uuid": "c1bae7eb-9dae-4cc1-995a-6a67e075593b"
      },
      {
       "id": "vocab_040",
@@ -1699,8 +1881,8 @@
       "pinyin": "gān bēi",
       "meaning_vi": "cạn ly",
       "meaning_en": "",
-      "pos": "verb_phrase",
-      "tags": ["culture"],
+      "pos": "verb",
+      "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
        "front": "干杯",
@@ -1713,7 +1895,9 @@
        ]
       },
       "audio_key": "",
-      "check_needed": false
+      "source_origin": "textbook",
+      "check_needed": false,
+      "uuid": "6ba1b4cb-f131-4b9b-8b54-69899cdcf4f1"
      },
      {
       "id": "vocab_041",
@@ -1721,14 +1905,14 @@
       "order": 41,
       "hanzi": "感情",
       "pinyin": "gǎnqíng",
-      "meaning_vi": "tình cảm",
+      "meaning_vi": "tình cảm; cảm tình",
       "meaning_en": "",
       "pos": "noun",
-      "tags": [],
+      "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
        "front": "感情",
-       "back": "gǎnqíng — tình cảm",
+       "back": "gǎnqíng — tình cảm; cảm tình",
        "modes": [
         "hanzi_to_meaning",
         "meaning_to_hanzi",
@@ -1737,7 +1921,9 @@
        ]
       },
       "audio_key": "",
-      "check_needed": false
+      "source_origin": "textbook",
+      "check_needed": false,
+      "uuid": "1f7e21da-e12f-4402-90c5-d267cf9d17f6"
      },
      {
       "id": "vocab_042",
@@ -1745,14 +1931,14 @@
       "order": 42,
       "hanzi": "当",
       "pinyin": "dāng",
-      "meaning_vi": "coi như, xem như, làm",
+      "meaning_vi": "làm; coi như; dùng làm",
       "meaning_en": "",
       "pos": "verb",
-      "tags": [],
+      "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
        "front": "当",
-       "back": "dāng — coi như, xem như, làm",
+       "back": "dāng — làm; coi như; dùng làm",
        "modes": [
         "hanzi_to_meaning",
         "meaning_to_hanzi",
@@ -1761,7 +1947,9 @@
        ]
       },
       "audio_key": "",
-      "check_needed": false
+      "source_origin": "textbook",
+      "check_needed": false,
+      "uuid": "7cfdf937-cd52-45bc-b61d-61b084028bed"
      },
      {
       "id": "vocab_043",
@@ -1772,7 +1960,7 @@
       "meaning_vi": "thay thế",
       "meaning_en": "",
       "pos": "verb",
-      "tags": [],
+      "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
        "front": "代替",
@@ -1785,7 +1973,9 @@
        ]
       },
       "audio_key": "",
-      "check_needed": false
+      "source_origin": "textbook",
+      "check_needed": false,
+      "uuid": "80718d57-53fb-4c4f-b2c0-c591538eca36"
      },
      {
       "id": "vocab_044",
@@ -1793,14 +1983,14 @@
       "order": 44,
       "hanzi": "哈",
       "pinyin": "hā",
-      "meaning_vi": "ha, tiếng cười",
+      "meaning_vi": "ha; tiếng cười",
       "meaning_en": "",
       "pos": "interjection",
-      "tags": [],
+      "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
        "front": "哈",
-       "back": "hā — ha, tiếng cười",
+       "back": "hā — ha; tiếng cười",
        "modes": [
         "hanzi_to_meaning",
         "meaning_to_hanzi",
@@ -1809,7 +1999,9 @@
        ]
       },
       "audio_key": "",
-      "check_needed": false
+      "source_origin": "textbook",
+      "check_needed": false,
+      "uuid": "c03f8d38-a66d-4f97-a26e-5373ce2e7884"
      },
      {
       "id": "vocab_045",
@@ -1817,14 +2009,14 @@
       "order": 45,
       "hanzi": "吹",
       "pinyin": "chuī",
-      "meaning_vi": "khoác lác, nói quá, thổi phồng",
+      "meaning_vi": "khoác lác; nói phét; thổi",
       "meaning_en": "",
       "pos": "verb",
-      "tags": [],
+      "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
        "front": "吹",
-       "back": "chuī — khoác lác, nói quá, thổi phồng",
+       "back": "chuī — khoác lác; nói phét; thổi",
        "modes": [
         "hanzi_to_meaning",
         "meaning_to_hanzi",
@@ -1833,16 +2025,33 @@
        ]
       },
       "audio_key": "",
-      "check_needed": false
+      "source_origin": "textbook",
+      "check_needed": false,
+      "uuid": "d65b7e3b-c75d-4684-a829-7e1771758fd3"
      }
-    ]
+    ],
+    "uuid": "5becb5bb-6427-4cbb-b83e-31fa287ec0ad"
    },
    {
-    "id": "section_03_notes",
-    "type": "notes",
+    "id": "section_03_proper_nouns",
+    "type": "proper_nouns",
     "order": 3,
+    "title": "专名",
+    "title_vi": "Tên riêng",
+    "source_origin": "textbook",
+    "check_needed": false,
+    "items": [],
+    "empty_reason_vi": "Bài này không có 专名 riêng biệt trong bảng chính.",
+    "uuid": "8705126c-5cc3-427a-bb56-cce7d5fc9602"
+   },
+   {
+    "id": "section_04_notes",
+    "type": "notes",
+    "order": 4,
     "title": "注释",
     "title_vi": "Chú thích",
+    "source_origin": "textbook/generated_mixed",
+    "check_needed": false,
     "items": [
      {
       "id": "note_01",
@@ -1850,83 +2059,89 @@
       "order": 1,
       "title": "相声",
       "structure": "",
-      "meaning_vi": "相声 là một loại hình nghệ thuật biểu diễn truyền thống phổ biến ở Trung Quốc, thường dùng lời nói hài hước, hỏi đáp, hát, chơi chữ để làm khán giả bật cười.",
+      "meaning_vi": "Một loại hình tấu hài truyền thống Trung Quốc, thường dùng đối thoại, nói nhanh, hỏi đáp, chơi chữ, nói quá để gây cười.",
       "examples": [
        {
         "id": "note_01_ex_01",
-        "zh": "这不是说相声吗？",
+        "zh": "说相声就是要大家笑。",
         "pinyin": "",
-        "vi": "Đây chẳng phải đang nói tướng thanh sao?",
-        "highlight": ["相声"],
+        "vi": "Nói tấu hài chính là để mọi người cười.",
+        "en": "",
+        "highlight": [],
         "grammar_refs": [],
         "vocab_refs": [],
         "source_ref": "",
         "note_vi": "",
-        "audio_key": ""
+        "audio_key": "",
+        "source_origin": "textbook",
+        "check_needed": false,
+        "uuid": "a4ac1d0c-78c4-49c6-9aa4-68aece433ae1"
        }
       ],
-      "source_refs": ["text_01_scene_01_line_013"],
-      "check_needed": false
+      "source_refs": [],
+      "source_origin": "textbook/generated_mixed",
+      "check_needed": false,
+      "uuid": "d7655f96-a173-4592-8f1c-5bbda0f068f3"
      },
      {
       "id": "note_02",
       "type": "note",
       "order": 2,
       "title": "什么话！",
-      "structure": "什么话！",
-      "meaning_vi": "Dùng để trách nhẹ hoặc phản ứng lại lời người khác, gần nghĩa: “Nói gì vậy!”, “Sao lại nói thế!”",
+      "structure": "",
+      "meaning_vi": "Câu cảm thán dùng để phản ứng, trách nhẹ hoặc phản bác: “Nói gì vậy!” / “Sao lại nói vậy!”",
       "examples": [
        {
         "id": "note_02_ex_01",
         "zh": "什么话！",
         "pinyin": "",
         "vi": "Nói gì vậy!",
+        "en": "",
         "highlight": [],
         "grammar_refs": [],
         "vocab_refs": [],
         "source_ref": "",
         "note_vi": "",
-        "audio_key": ""
+        "audio_key": "",
+        "source_origin": "textbook",
+        "check_needed": false,
+        "uuid": "05b1f348-3198-4f21-8bc5-b128d3bbd5cc"
        }
       ],
-      "source_refs": ["text_01_scene_01_line_004"],
-      "check_needed": false
+      "source_refs": [],
+      "source_origin": "textbook/generated_mixed",
+      "check_needed": false,
+      "uuid": "17e25beb-d9c9-42db-a33a-43288e6735ec"
      },
      {
       "id": "note_03",
       "type": "note",
       "order": 3,
       "title": "……好了",
-      "structure": "V / câu + 好了",
-      "meaning_vi": "Biểu thị ngữ khí đồng ý, tán thành hoặc đề nghị nhẹ: “cứ… là được”.",
+      "structure": "V / cụm V + 好了",
+      "meaning_vi": "Biểu thị “cứ làm như vậy là được”, “làm thế là ổn rồi”; 好了 ở đây là ngữ khí, không phải “đã tốt rồi”.",
       "examples": [
        {
         "id": "note_03_ex_01",
         "zh": "以后你什么问题不知道就来问我好了。",
         "pinyin": "",
-        "vi": "Sau này có vấn đề gì không biết thì cứ đến hỏi tôi là được.",
+        "vi": "Sau này bạn không biết vấn đề gì thì cứ đến hỏi tôi là được.",
+        "en": "",
         "highlight": [],
         "grammar_refs": [],
         "vocab_refs": [],
         "source_ref": "",
         "note_vi": "",
-        "audio_key": ""
-       },
-       {
-        "id": "note_03_ex_02",
-        "zh": "你想来就来好了。",
-        "pinyin": "",
-        "vi": "Bạn muốn đến thì cứ đến là được.",
-        "highlight": [],
-        "grammar_refs": [],
-        "vocab_refs": [],
-        "source_ref": "",
-        "note_vi": "",
-        "audio_key": ""
+        "audio_key": "",
+        "source_origin": "textbook",
+        "check_needed": false,
+        "uuid": "d0231f14-765d-441a-bd85-4d258b9edd19"
        }
       ],
-      "source_refs": ["text_01_scene_01_line_005"],
-      "check_needed": false
+      "source_refs": [],
+      "source_origin": "textbook/generated_mixed",
+      "check_needed": false,
+      "uuid": "9d776050-1014-4b74-9385-e1a8655c5a81"
      },
      {
       "id": "note_04",
@@ -1934,80 +2149,71 @@
       "order": 4,
       "title": "笑一笑，十年少",
       "structure": "",
-      "meaning_vi": "Tục ngữ Hán ngữ, nghĩa là cười nhiều giúp con người trẻ ra.",
+      "meaning_vi": "Câu nói dân gian: cười nhiều làm con người vui vẻ, trẻ trung hơn. Trong bài dùng để gây hài bằng cách hiểu theo nghĩa đen.",
       "examples": [
        {
         "id": "note_04_ex_01",
         "zh": "笑一笑，十年少。",
         "pinyin": "",
-        "vi": "Cười một cái, trẻ mười tuổi.",
+        "vi": "Cười một cái, trẻ đi mười tuổi.",
+        "en": "",
         "highlight": [],
         "grammar_refs": [],
         "vocab_refs": [],
         "source_ref": "",
         "note_vi": "",
-        "audio_key": ""
+        "audio_key": "",
+        "source_origin": "textbook",
+        "check_needed": false,
+        "uuid": "50b00593-259d-432b-a6c6-f3440b05ec61"
        }
       ],
-      "source_refs": ["text_01_scene_01_line_014"],
-      "check_needed": false
+      "source_refs": [],
+      "source_origin": "textbook/generated_mixed",
+      "check_needed": false,
+      "uuid": "2aa577fe-327e-4832-af83-7edf85cf167a"
      },
      {
       "id": "note_05",
       "type": "note",
       "order": 5,
       "title": "“六”与“九”",
-      "structure": "六 / 九 的谐音",
-      "meaning_vi": "“六” thường gắn với 六六大顺, biểu thị mọi việc thuận lợi; “九” đồng âm với 久, biểu thị lâu dài, bền lâu.",
+      "structure": "",
+      "meaning_vi": "六 gắn với 六六大顺, biểu thị thuận lợi; 九 đồng âm với 久, biểu thị lâu dài.",
       "examples": [
        {
         "id": "note_05_ex_01",
-        "zh": "六六大顺。",
+        "zh": "“九”与“长久”的“久”谐音。",
         "pinyin": "",
-        "vi": "Mọi việc đều thuận lợi.",
+        "vi": "Số “chín” đồng âm với chữ “lâu dài”.",
+        "en": "",
         "highlight": [],
         "grammar_refs": [],
         "vocab_refs": [],
         "source_ref": "",
         "note_vi": "",
-        "audio_key": ""
-       },
-       {
-        "id": "note_05_ex_02",
-        "zh": "友谊长久。",
-        "pinyin": "",
-        "vi": "Tình bạn lâu dài.",
-        "highlight": [],
-        "grammar_refs": [],
-        "vocab_refs": [],
-        "source_ref": "",
-        "note_vi": "",
-        "audio_key": ""
-       },
-       {
-        "id": "note_05_ex_03",
-        "zh": "爱情长久。",
-        "pinyin": "",
-        "vi": "Tình yêu lâu dài.",
-        "highlight": [],
-        "grammar_refs": [],
-        "vocab_refs": [],
-        "source_ref": "",
-        "note_vi": "",
-        "audio_key": ""
+        "audio_key": "",
+        "source_origin": "textbook",
+        "check_needed": false,
+        "uuid": "18533c43-f4c7-4858-af69-35c1c4e59c9c"
        }
       ],
-      "source_refs": ["text_01_scene_01_line_040"],
-      "check_needed": false
+      "source_refs": [],
+      "source_origin": "textbook/generated_mixed",
+      "check_needed": false,
+      "uuid": "1c6a50ba-0122-484c-b794-225e74d55b73"
      }
-    ]
+    ],
+    "uuid": "86a8b456-48d6-4e35-ba5c-a9dfc0ef093a"
    },
    {
-    "id": "section_04_grammar",
+    "id": "section_05_grammar",
     "type": "grammar",
-    "order": 4,
-    "title": "语法",
-    "title_vi": "Ngữ pháp",
+    "order": 5,
+    "title": "语法 / 词语用法",
+    "title_vi": "Ngữ pháp / Cách dùng từ",
+    "source_origin": "textbook/generated_mixed",
+    "check_needed": false,
     "items": [
      {
       "id": "grammar_01",
@@ -2015,682 +2221,591 @@
       "order": 1,
       "title": "反问句",
       "title_vi": "Câu hỏi tu từ",
-      "level": "HSK3-ish",
-      "tags": ["rhetorical_question", "pragmatics"],
+      "level": "HSK3+",
+      "tags": ["语法"],
+      "source_origin": "textbook/generated_mixed",
+      "check_needed": false,
       "blocks": [
        {
         "id": "grammar_01_overview",
         "type": "grammar_overview",
         "order": 1,
         "title": "Bản chất",
-        "content_vi": "反问句 là câu hỏi tu từ. Hình thức là câu hỏi, nhưng mục đích không phải hỏi thông tin mới mà để nhấn mạnh khẳng định hoặc phủ định. Ý nghĩa thật thường ngược với hình thức bề mặt.",
+        "content_vi": "Câu có hình thức câu hỏi nhưng mục đích không phải hỏi thông tin; dùng để nhấn mạnh khẳng định, phủ định, trách nhẹ hoặc phản bác.",
         "examples": [
          {
-          "id": "grammar_01_overview_ex_01",
-          "zh": "你没听见大家都叫我什么吗？",
+          "id": "grammar_01_ex_01",
+          "zh": "你怎么能不去呢？",
           "pinyin": "",
-          "vi": "Bạn không nghe thấy mọi người gọi tôi là gì à?",
-          "highlight": ["没", "吗"],
+          "vi": "Sao bạn có thể không đi được chứ? → Bạn đương nhiên phải đi.",
+          "en": "",
+          "highlight": ["怎么能不去呢"],
           "grammar_refs": ["grammar_01"],
           "vocab_refs": [],
-          "source_ref": "text_01_scene_01_line_009",
-          "note_vi": "",
-          "audio_key": ""
+          "source_origin": "generated",
+          "check_needed": false,
+          "uuid": "62dfd77b-3f23-421f-982c-af662cbe2e4c"
          }
-        ]
+        ],
+        "uuid": "2fc818b5-98e0-4bb9-9312-375699eb62ef"
        },
        {
         "id": "grammar_01_structure_01",
         "type": "grammar_structure",
         "order": 2,
-        "title": "Dạng phủ định hỏi lại",
-        "pattern": "没 + V + 吗？",
-        "meaning_vi": "Dùng câu hỏi phủ định để nhấn mạnh rằng điều đó đáng lẽ phải xảy ra hoặc người nghe đáng lẽ phải biết.",
+        "title": "没 + V + 吗？",
+        "pattern": "没 + 动词 / 词组 + 吗？",
+        "meaning_vi": "Dùng để hỏi ngược, thường mang sắc thái “rõ vậy mà bạn không biết / không thấy sao?”",
         "formulas": [
          {
-          "label": "Phản vấn phủ định",
+          "label": "rhetorical_negative_question",
           "pattern": "没 + V + 吗？"
          }
         ],
         "examples": [
          {
-          "id": "grammar_01_structure_01_ex_01",
+          "id": "grammar_01_ex_02",
           "zh": "这件事你没听说过吗？",
           "pinyin": "",
-          "vi": "Chuyện này bạn chưa nghe qua sao?",
-          "highlight": ["没", "吗"],
+          "vi": "Việc này bạn chưa từng nghe nói sao? → Bạn đáng lẽ phải nghe nói rồi.",
+          "en": "",
+          "highlight": ["没听说过吗"],
           "grammar_refs": ["grammar_01"],
           "vocab_refs": [],
-          "source_ref": "",
-          "note_vi": "",
-          "audio_key": ""
+          "source_origin": "textbook",
+          "check_needed": false,
+          "uuid": "b76afcaa-127c-4eba-97dd-eacf37d7e35a"
          },
          {
-          "id": "grammar_01_structure_01_ex_02",
+          "id": "grammar_01_ex_03",
           "zh": "你没看见吗？他就在这儿。",
           "pinyin": "",
-          "vi": "Bạn không nhìn thấy à? Anh ấy ở ngay đây mà.",
-          "highlight": ["没", "吗"],
+          "vi": "Bạn không nhìn thấy sao? Anh ấy ở ngay đây mà.",
+          "en": "",
+          "highlight": ["没看见吗"],
           "grammar_refs": ["grammar_01"],
           "vocab_refs": [],
-          "source_ref": "",
-          "note_vi": "",
-          "audio_key": ""
+          "source_origin": "textbook",
+          "check_needed": false,
+          "uuid": "5650c972-e5ba-4e1a-a421-c49fc0d78568"
          }
         ],
         "notes_vi": [
-         "Hình thức phủ định nhưng thường mang ý nhấn mạnh: “đáng lẽ bạn phải biết/thấy/nghe rồi”."
-        ]
+         "Thường có sắc thái trách nhẹ, ngạc nhiên hoặc nhấn mạnh điều người nói cho là hiển nhiên."
+        ],
+        "uuid": "61d3dec6-ee42-46f1-a346-9bd9a7dac3fc"
        },
        {
-        "id": "grammar_01_question_01",
-        "type": "grammar_question_form",
+        "id": "grammar_01_structure_02",
+        "type": "grammar_structure",
         "order": 3,
-        "title": "Dùng đại từ nghi vấn để phản vấn",
-        "pattern": "怎么 / 谁 / 哪儿 + câu hỏi?",
-        "meaning_vi": "Dùng đại từ nghi vấn để nhấn mạnh phủ định hoặc phản bác.",
+        "title": "Dùng đại từ nghi vấn để hỏi tu từ",
+        "pattern": "怎么 / 谁 / 哪儿 + ...？",
+        "meaning_vi": "Đại từ nghi vấn không hỏi thật, mà dùng để phản bác hoặc nhấn mạnh thái độ.",
+        "formulas": [
+         {
+          "label": "rhetorical_pronoun",
+          "pattern": "疑问代词 + ...？"
+         }
+        ],
         "examples": [
          {
-          "id": "grammar_01_question_01_ex_01",
+          "id": "grammar_01_ex_04",
           "zh": "你不告诉我，我怎么知道呢？",
           "pinyin": "",
-          "vi": "Bạn không nói với tôi thì làm sao tôi biết được?",
-          "highlight": ["怎么"],
+          "vi": "Bạn không nói cho tôi, làm sao tôi biết được? → Tôi không thể biết.",
+          "en": "",
+          "highlight": ["怎么知道呢"],
           "grammar_refs": ["grammar_01"],
           "vocab_refs": [],
-          "source_ref": "",
-          "note_vi": "",
-          "audio_key": ""
+          "source_origin": "textbook",
+          "check_needed": false,
+          "uuid": "568c0e94-a252-4f6c-a6d3-80f7aef9926f"
          },
          {
-          "id": "grammar_01_question_01_ex_02",
-          "zh": "谁说我不懂？",
+          "id": "grammar_01_ex_05",
+          "zh": "谁说我不去？",
           "pinyin": "",
-          "vi": "Ai nói tôi không hiểu?",
-          "highlight": ["谁"],
+          "vi": "Ai nói tôi không đi? → Tôi đương nhiên đi.",
+          "en": "",
+          "highlight": ["谁说"],
           "grammar_refs": ["grammar_01"],
           "vocab_refs": [],
-          "source_ref": "",
-          "note_vi": "",
-          "audio_key": ""
+          "source_origin": "textbook",
+          "check_needed": false,
+          "uuid": "4c9d9546-a851-4593-a7e2-f63e0efe83be"
          },
          {
-          "id": "grammar_01_question_01_ex_03",
+          "id": "grammar_01_ex_06",
           "zh": "他哪儿去过美国？",
           "pinyin": "",
-          "vi": "Anh ấy đi Mỹ hồi nào chứ?",
+          "vi": "Anh ấy đi Mỹ bao giờ chứ? → Anh ấy chưa từng đi Mỹ.",
+          "en": "",
           "highlight": ["哪儿"],
           "grammar_refs": ["grammar_01"],
           "vocab_refs": [],
-          "source_ref": "",
-          "note_vi": "",
-          "audio_key": ""
-         },
-         {
-          "id": "grammar_01_question_01_ex_04",
-          "zh": "好朋友邀请我，我怎么能不去呢？",
-          "pinyin": "",
-          "vi": "Bạn thân mời tôi, sao tôi có thể không đi được?",
-          "highlight": ["怎么", "不"],
-          "grammar_refs": ["grammar_01", "grammar_03"],
-          "vocab_refs": [],
-          "source_ref": "",
-          "note_vi": "",
-          "audio_key": ""
+          "source_origin": "textbook",
+          "check_needed": false,
+          "uuid": "92500bc9-7cf5-43e9-b70e-bcba9822ec69"
          }
-        ]
-       },
-       {
-        "id": "grammar_01_mistakes",
-        "type": "grammar_common_mistakes",
-        "order": 4,
-        "title": "Lỗi dễ sai",
-        "items": [
-         {
-          "id": "grammar_01_mistake_01",
-          "wrong": "把反问句 hiểu như câu hỏi thật.",
-          "correct": "Phải đọc theo ngữ cảnh: thường là nhấn mạnh ý ngược lại.",
-          "explanation_vi": "Ví dụ 谁说我不懂？ không phải hỏi “ai nói”, mà là phản bác: “Tôi hiểu chứ”."
-         }
-        ]
+        ],
+        "notes_vi": [],
+        "uuid": "5a0a6cdd-8893-48e9-96e8-ea1c326094fe"
        }
-      ]
+      ],
+      "uuid": "1d6ee379-4e82-42aa-a8db-6283f9524f30"
      },
      {
       "id": "grammar_02",
       "type": "grammar_point",
       "order": 2,
       "title": "连……也 / 都……",
-      "title_vi": "Ngay cả… cũng…",
-      "level": "HSK3-ish",
-      "tags": ["emphasis", "lian_ye_dou"],
+      "title_vi": "Ngay cả... cũng...",
+      "level": "HSK3+",
+      "tags": ["语法", "emphasis"],
+      "source_origin": "textbook/generated_mixed",
+      "check_needed": false,
       "blocks": [
        {
         "id": "grammar_02_overview",
         "type": "grammar_overview",
         "order": 1,
         "title": "Bản chất",
-        "content_vi": "连……也 / 都…… dùng để nhấn mạnh. Thành phần sau 连 thường là trường hợp cực đoan, bất ngờ hoặc đáng chú ý. Sau đó dùng 也 hoặc 都 để hô ứng.",
-        "examples": [
-         {
-          "id": "grammar_02_overview_ex_01",
-          "zh": "你怎么连这么简单的问题也不知道？",
-          "pinyin": "",
-          "vi": "Sao ngay cả câu hỏi đơn giản thế này bạn cũng không biết?",
-          "highlight": ["连", "也"],
-          "grammar_refs": ["grammar_02"],
-          "vocab_refs": ["vocab_002", "vocab_003"],
-          "source_ref": "text_01_scene_01_line_003",
-          "note_vi": "",
-          "audio_key": ""
-         }
-        ]
+        "content_vi": "Đưa một trường hợp đặc biệt/cực đoan ra để nhấn mạnh. Khi trường hợp đó còn như vậy, các trường hợp khác càng khỏi nói.",
+        "examples": [],
+        "uuid": "15ec8ef3-51f7-4d36-aef2-00a2e4f65d16"
        },
        {
         "id": "grammar_02_structure_01",
         "type": "grammar_structure",
         "order": 2,
-        "title": "Cấu trúc cơ bản",
-        "pattern": "连 + thành phần được nhấn mạnh + 也 / 都 + vị ngữ",
-        "meaning_vi": "Ngay cả… cũng…",
+        "title": "Dùng trong câu phủ định",
+        "pattern": "连 + A + 也 / 都 + 不 / 没 + V",
+        "meaning_vi": "Ngay cả A còn không..., huống chi những cái khác.",
         "formulas": [
          {
-          "label": "Nhấn mạnh",
-          "pattern": "连 + X + 也 / 都 + VP"
+          "label": "negative_emphasis",
+          "pattern": "连 + A + 也/都 + 不/没 + V"
          }
         ],
         "examples": [
          {
-          "id": "grammar_02_structure_01_ex_01",
+          "id": "grammar_02_ex_01",
           "zh": "来北京快半年了，她连长城也没去过。",
           "pinyin": "",
-          "vi": "Đến Bắc Kinh gần nửa năm rồi, ngay cả Vạn Lý Trường Thành cô ấy cũng chưa đi.",
-          "highlight": ["连", "也"],
+          "vi": "Đến Bắc Kinh gần nửa năm rồi, cô ấy ngay cả Vạn Lý Trường Thành cũng chưa từng đi.",
+          "en": "",
+          "highlight": ["连长城也没去过"],
           "grammar_refs": ["grammar_02"],
           "vocab_refs": [],
-          "source_ref": "",
-          "note_vi": "",
-          "audio_key": ""
+          "source_origin": "textbook",
+          "check_needed": false,
+          "uuid": "6417457d-c58f-4cfa-970c-68b438388462"
          },
          {
-          "id": "grammar_02_structure_01_ex_02",
-          "zh": "这么简单的问题连孩子都会回答。",
+          "id": "grammar_02_ex_02",
+          "zh": "你怎么连这么简单的问题也不会回答？",
           "pinyin": "",
-          "vi": "Câu hỏi đơn giản thế này, ngay cả trẻ con cũng biết trả lời.",
-          "highlight": ["连", "都"],
+          "vi": "Sao bạn ngay cả câu hỏi đơn giản thế này cũng không biết trả lời?",
+          "en": "",
+          "highlight": ["连这么简单的问题也不会回答"],
           "grammar_refs": ["grammar_02"],
           "vocab_refs": [],
-          "source_ref": "",
-          "note_vi": "",
-          "audio_key": ""
+          "source_origin": "textbook",
+          "check_needed": false,
+          "uuid": "9319b336-f8fc-4890-9421-24431411c6f8"
+         }
+        ],
+        "notes_vi": [],
+        "uuid": "6663f86e-be55-465b-bb64-d98a151c3082"
+       },
+       {
+        "id": "grammar_02_structure_02",
+        "type": "grammar_structure",
+        "order": 3,
+        "title": "Dùng trong câu khẳng định",
+        "pattern": "连 + A + 都 + V / Adj",
+        "meaning_vi": "Ngay cả A cũng..., nhấn mạnh mức độ cao hoặc phạm vi rộng.",
+        "formulas": [
+         {
+          "label": "affirmative_emphasis",
+          "pattern": "连 + A + 都 + V/Adj"
+         }
+        ],
+        "examples": [
+         {
+          "id": "grammar_02_ex_03",
+          "zh": "连校长都参加了我们的联欢晚会。",
+          "pinyin": "",
+          "vi": "Ngay cả hiệu trưởng cũng tham gia buổi liên hoan của chúng tôi.",
+          "en": "",
+          "highlight": ["连校长都"],
+          "grammar_refs": ["grammar_02"],
+          "vocab_refs": [],
+          "source_origin": "textbook",
+          "check_needed": false,
+          "uuid": "f3d2fe16-b872-4a89-9ec1-a53be8429864"
+         },
+         {
+          "id": "grammar_02_ex_04",
+          "zh": "这么简单的问题连孩子都会回答。",
+          "pinyin": "",
+          "vi": "Câu hỏi đơn giản thế này ngay cả trẻ con cũng biết trả lời.",
+          "en": "",
+          "highlight": ["连孩子都会回答"],
+          "grammar_refs": ["grammar_02"],
+          "vocab_refs": [],
+          "source_origin": "textbook",
+          "check_needed": false,
+          "uuid": "e40930e9-0a60-4115-8d49-a3435bfa01d8"
          }
         ],
         "notes_vi": [
-         "Nếu phía sau là câu khẳng định, thường dùng 都 tự nhiên hơn 也."
-        ]
+         "Trong câu khẳng định, 连……都…… thường tự nhiên và ổn định hơn 连……也……."
+        ],
+        "uuid": "2f54579d-ff90-4875-b740-ee68236f4efa"
        }
-      ]
+      ],
+      "uuid": "ded287b3-c9d7-44bf-9d65-0a8a434c85f7"
      },
      {
       "id": "grammar_03",
       "type": "grammar_point",
       "order": 3,
-      "title": "二次否定 / 双重否定",
+      "title": "二次否定",
       "title_vi": "Phủ định hai lần để nhấn mạnh khẳng định",
-      "level": "HSK3-ish",
-      "tags": ["double_negation", "emphasis"],
+      "level": "HSK3+",
+      "tags": ["语法", "emphasis"],
+      "source_origin": "textbook/generated_mixed",
+      "check_needed": false,
       "blocks": [
        {
         "id": "grammar_03_overview",
         "type": "grammar_overview",
         "order": 1,
         "title": "Bản chất",
-        "content_vi": "二次否定 là dùng hai yếu tố phủ định trong cùng một câu để nhấn mạnh ý khẳng định. Logic: hai lần phủ định → khẳng định mạnh.",
-        "examples": [
-         {
-          "id": "grammar_03_overview_ex_01",
-          "zh": "中国的事我没有不知道的。",
-          "pinyin": "",
-          "vi": "Việc của Trung Quốc không có chuyện gì tôi không biết.",
-          "highlight": ["没有", "不"],
-          "grammar_refs": ["grammar_03"],
-          "vocab_refs": [],
-          "source_ref": "text_01_scene_01_line_007",
-          "note_vi": "",
-          "audio_key": ""
-         }
-        ]
+        "content_vi": "Dùng hai yếu tố phủ định trong cùng một câu để tạo nghĩa khẳng định mạnh hơn câu khẳng định thường.",
+        "examples": [],
+        "uuid": "5462438d-c176-4fb2-8d55-605a5703ec77"
        },
        {
         "id": "grammar_03_structure_01",
         "type": "grammar_structure",
         "order": 2,
-        "title": "没有不 / 没有不知道的",
-        "pattern": "没有 + 不 + V / 没有 + 不知道的",
-        "meaning_vi": "Không có cái nào không… → đều…",
+        "title": "没有 + 不 + V / Adj + 的",
+        "pattern": "没有 + 不 + V / Adj + 的",
+        "meaning_vi": "Không có cái nào là không... → tất cả đều...",
         "formulas": [
          {
-          "label": "Phủ định hai lần",
-          "pattern": "没有 + 不 + V"
+          "label": "double_negative_01",
+          "pattern": "没有 + 不 + V/Adj + 的"
          }
         ],
         "examples": [
          {
-          "id": "grammar_03_structure_01_ex_01",
+          "id": "grammar_03_ex_01",
           "zh": "中国的事我没有不知道的。",
           "pinyin": "",
-          "vi": "Việc của Trung Quốc tôi đều biết.",
-          "highlight": ["没有", "不"],
+          "vi": "Chuyện của Trung Quốc không có chuyện nào tôi không biết. → Chuyện gì của Trung Quốc tôi cũng biết.",
+          "en": "",
+          "highlight": ["没有不知道的"],
           "grammar_refs": ["grammar_03"],
           "vocab_refs": [],
-          "source_ref": "",
-          "note_vi": "",
-          "audio_key": ""
+          "source_origin": "textbook",
+          "check_needed": false,
+          "uuid": "9eff8b54-3961-467e-b7bf-667030095762"
          },
          {
-          "id": "grammar_03_structure_01_ex_02",
-          "zh": "你不能不去。",
+          "id": "grammar_03_ex_02",
+          "zh": "这个问题没有人不知道。",
           "pinyin": "",
-          "vi": "Bạn không thể không đi.",
-          "highlight": ["不能不"],
+          "vi": "Vấn đề này không ai là không biết. → Ai cũng biết.",
+          "en": "",
+          "highlight": ["没有人不知道"],
           "grammar_refs": ["grammar_03"],
           "vocab_refs": [],
-          "source_ref": "",
-          "note_vi": "",
-          "audio_key": ""
+          "source_origin": "generated",
+          "check_needed": false,
+          "uuid": "2319e38b-87eb-4369-9bd2-341d73a730ed"
          }
         ],
-        "notes_vi": ["Cấu trúc này mạnh hơn câu khẳng định bình thường."]
+        "notes_vi": [],
+        "uuid": "f4653f34-bf86-47f0-bd3c-5e231d264bcd"
+       },
+       {
+        "id": "grammar_03_structure_02",
+        "type": "grammar_structure",
+        "order": 3,
+        "title": "不能不 + V",
+        "pattern": "不能不 + 动词",
+        "meaning_vi": "Không thể không làm → bắt buộc phải làm / nhất định phải làm.",
+        "formulas": [
+         {
+          "label": "double_negative_02",
+          "pattern": "不能不 + V"
+         }
+        ],
+        "examples": [
+         {
+          "id": "grammar_03_ex_03",
+          "zh": "你不能不去。",
+          "pinyin": "",
+          "vi": "Bạn không thể không đi. → Bạn nhất định phải đi.",
+          "en": "",
+          "highlight": ["不能不去"],
+          "grammar_refs": ["grammar_03"],
+          "vocab_refs": [],
+          "source_origin": "textbook",
+          "check_needed": false,
+          "uuid": "a70209ae-e95d-4986-9f72-ed704961ebcd"
+         },
+         {
+          "id": "grammar_03_ex_04",
+          "zh": "这么重要的事，你不能不知道。",
+          "pinyin": "",
+          "vi": "Việc quan trọng thế này, bạn không thể không biết. → Bạn nhất định phải biết.",
+          "en": "",
+          "highlight": ["不能不知道"],
+          "grammar_refs": ["grammar_03"],
+          "vocab_refs": [],
+          "source_origin": "generated",
+          "check_needed": false,
+          "uuid": "4a4315c7-f987-4928-aca3-fb2c4e7d8ddf"
+         }
+        ],
+        "notes_vi": [],
+        "uuid": "b880c96e-9b41-4932-8d5b-05d501a42489"
        }
-      ]
+      ],
+      "uuid": "69468bd7-f2aa-4821-b421-ca29bad659c3"
      }
-    ]
+    ],
+    "uuid": "b0bee014-d468-488b-8e62-6db7d78a9927"
    },
    {
-    "id": "section_05_exercises",
+    "id": "section_06_exercises",
     "type": "exercises",
-    "order": 5,
+    "order": 6,
     "title": "练习",
     "title_vi": "Bài tập",
+    "source_origin": "textbook",
+    "check_needed": false,
+    "coverage_contract": {
+     "policy": "Coverage-first: giữ đủ mọi mục bài tập theo thứ tự sách.",
+     "expected_exercise_count_from_pdf": 11,
+     "actual_exercise_count_in_json": 11,
+     "all_exercises_covered": true,
+     "coverage_status": "complete_unverified",
+     "allowed_final_status_when_incomplete": "draft_or_verified_only",
+     "blocked_final_statuses": [
+      "final_verified",
+      "final_verified_with_marked_generated_fields"
+     ]
+    },
     "items": [
      {
       "id": "exercise_01",
       "type": "phonetics",
-      "variant": "",
+      "variant": "pronunciation_tone_minimal_pairs",
       "order": 1,
-      "title": "语音",
+      "title": "一、语音",
       "title_vi": "Ngữ âm",
       "instruction": {
-       "zh": "",
-       "vi": "Luyện phân biệt âm, thanh điệu và đọc cụm từ."
+       "zh": "辨音辨调，朗读。",
+       "vi": "Phân biệt âm/thanh điệu và đọc to.",
+       "en": ""
       },
       "difficulty": "normal",
-      "skill_focus": ["pronunciation"],
-      "grammar_refs": [],
-      "vocab_refs": [],
+      "skill_focus": [],
+      "source_origin": "textbook",
+      "check_needed": false,
       "parts": [
        {
         "id": "exercise_01_part_01",
-        "type": "minimal_pair",
+        "type": "minimal_pair_group",
         "title": "辨音辨调",
-        "instruction_vi": "Phân biệt phát âm và thanh điệu.",
         "items": [
          {
-          "id": "pair_01",
+          "id": "ex01_pair_01",
           "left": "jílì",
           "right": "jìlì",
-          "audio_keys": []
+          "uuid": "0c884303-a5fb-4856-a111-91dc6b61a2d2"
          },
          {
-          "id": "pair_02",
+          "id": "ex01_pair_02",
           "left": "guīju",
           "right": "guǐjì",
-          "audio_keys": []
+          "uuid": "3dbb28d1-cfe3-4ee0-a1bd-e3b5a320a4c3"
          },
          {
-          "id": "pair_03",
+          "id": "ex01_pair_03",
           "left": "jiǎndān",
-          "right": "jiǎnduǎn",
-          "audio_keys": []
+          "right": "jiǎnduàn",
+          "uuid": "61187dff-d3fa-452d-b71c-0962a1143dcf"
          },
          {
-          "id": "pair_04",
+          "id": "ex01_pair_04",
           "left": "shùzì",
-          "right": "shǔzi",
-          "audio_keys": []
+          "right": "shūzi",
+          "uuid": "ac535f2a-21e0-465e-a83f-777f96ce7ddd"
          },
          {
-          "id": "pair_05",
+          "id": "ex01_pair_05",
           "left": "shēnqǐng",
           "right": "shénqíng",
-          "audio_keys": []
+          "uuid": "7c43a80c-ca06-4dce-925c-086ddbaccf06"
          },
          {
-          "id": "pair_06",
+          "id": "ex01_pair_06",
           "left": "yǒuyì",
           "right": "yóuyù",
-          "audio_keys": []
+          "uuid": "082ef940-05be-44ab-b5e8-d596b19f1c52"
          },
          {
-          "id": "pair_07",
+          "id": "ex01_pair_07",
           "left": "zhǎngbèi",
           "right": "chángbèi",
-          "audio_keys": []
+          "uuid": "ad7006fa-7d85-42dd-850f-3a502e1541b7"
          },
          {
-          "id": "pair_08",
+          "id": "ex01_pair_08",
           "left": "gǎnqíng",
           "right": "kàngjīng",
-          "audio_keys": []
+          "uuid": "a4eb0cdb-59c8-4a33-a0cd-223587886e1f"
          }
-        ]
+        ],
+        "uuid": "04520306-6bc4-4c4b-bc36-940e77ee4add"
        },
        {
         "id": "exercise_01_part_02",
-        "type": "read_aloud",
+        "type": "read_aloud_chunks",
         "title": "朗读",
-        "instruction_vi": "Đọc các cụm sau.",
         "items": [
-         {
-          "id": "read_001",
-          "text": "申请留学",
-          "pinyin": "",
-          "audio_key": ""
-         },
-         {
-          "id": "read_002",
-          "text": "申请护照",
-          "pinyin": "",
-          "audio_key": ""
-         },
-         {
-          "id": "read_003",
-          "text": "申请签证",
-          "pinyin": "",
-          "audio_key": ""
-         },
-         {
-          "id": "read_004",
-          "text": "工作顺利",
-          "pinyin": "",
-          "audio_key": ""
-         },
-         {
-          "id": "read_005",
-          "text": "旅行顺利",
-          "pinyin": "",
-          "audio_key": ""
-         },
-         {
-          "id": "read_006",
-          "text": "祝你顺利",
-          "pinyin": "",
-          "audio_key": ""
-         },
-         {
-          "id": "read_007",
-          "text": "吉利的数字",
-          "pinyin": "",
-          "audio_key": ""
-         },
-         {
-          "id": "read_008",
-          "text": "吉利的话",
-          "pinyin": "",
-          "audio_key": ""
-         },
-         {
-          "id": "read_009",
-          "text": "吉利的日子",
-          "pinyin": "",
-          "audio_key": ""
-         },
-         {
-          "id": "read_010",
-          "text": "跟你开玩笑",
-          "pinyin": "",
-          "audio_key": ""
-         },
-         {
-          "id": "read_011",
-          "text": "开了一个玩笑",
-          "pinyin": "",
-          "audio_key": ""
-         },
-         {
-          "id": "read_012",
-          "text": "喜欢跟别人开玩笑",
-          "pinyin": "",
-          "audio_key": ""
-         },
-         {
-          "id": "read_013",
-          "text": "谁说我不会",
-          "pinyin": "",
-          "audio_key": ""
-         },
-         {
-          "id": "read_014",
-          "text": "谁说我没来",
-          "pinyin": "",
-          "audio_key": ""
-         },
-         {
-          "id": "read_015",
-          "text": "我怎么知道",
-          "pinyin": "",
-          "audio_key": ""
-         },
-         {
-          "id": "read_016",
-          "text": "连一个汉字也不会写",
-          "pinyin": "",
-          "audio_key": ""
-         },
-         {
-          "id": "read_017",
-          "text": "连一句汉语也不会说",
-          "pinyin": "",
-          "audio_key": ""
-         },
-         {
-          "id": "read_018",
-          "text": "只要努力就能有好成绩",
-          "pinyin": "",
-          "audio_key": ""
-         },
-         {
-          "id": "read_019",
-          "text": "只要吃了这药你的病就能好",
-          "pinyin": "",
-          "audio_key": ""
-         }
-        ]
+         "申请留学",
+         "申请护照",
+         "申请签证",
+         "工作顺利",
+         "旅行顺利",
+         "祝你顺利",
+         "吉利的数字",
+         "吉利的话",
+         "吉利的日子",
+         "跟你开玩笑",
+         "开了一个玩笑",
+         "喜欢跟别人开玩笑",
+         "谁说我不会",
+         "谁说我没来",
+         "我怎么知道",
+         "连一个汉字也不会写",
+         "连一句汉语也不会说",
+         "只要努力就能有好成绩",
+         "只要吃了这种药你的病就能好"
+        ],
+        "uuid": "671b54d9-4dbb-41dc-8b90-1ca99f86e647"
        }
       ],
-      "rendering": {
-       "renderer": "exercise.phonetics.v1"
-      },
-      "check_needed": false
+      "uuid": "a6ac7812-6d3f-4410-a693-aa9751ff0e92"
      },
      {
       "id": "exercise_02",
-      "type": "substitution",
-      "variant": "rhetorical_question_prompt",
+      "type": "substitution_drill",
+      "variant": "substitution_or_transform_drill",
       "order": 2,
-      "title": "替换练习",
-      "title_vi": "Luyện thay thế",
+      "title": "二、替换",
+      "title_vi": "Thay thế",
       "instruction": {
        "zh": "替换练习。",
-       "vi": "Thay cụm từ theo mẫu."
+       "vi": "Dựa vào mẫu câu, thay thế phần gợi ý.",
+       "en": ""
       },
       "difficulty": "normal",
-      "skill_focus": ["speaking", "grammar"],
-      "grammar_refs": ["grammar_01", "grammar_02"],
-      "vocab_refs": [],
-      "model": [
-       "A：我不知道宴会上有什么规矩。",
-       "B：你不是“中国通”吗？",
-       "（你应该知道。）"
-      ],
+      "skill_focus": [],
+      "source_origin": "textbook",
+      "check_needed": false,
       "items": [
        {
-        "id": "sub_001",
-        "substitution": "她叫什么名字 / 跟她在一个班",
-        "expected_dialogue": [
-         "A：我不知道她叫什么名字。",
-         "B：你不是跟她在一个班吗？",
+        "id": "ex02_group_01",
+        "model": [
+         "A：我不知道宴会上有什么规矩。",
+         "B：你不是“中国通”吗？",
          "（你应该知道。）"
         ],
-        "grammar_refs": ["grammar_01"],
-        "vocab_refs": []
+        "prompts": [
+         "她叫什么名字 / 跟她在一个班",
+         "这个电影好不好 / 看过这个电影",
+         "那儿的情况 / 去过那儿",
+         "这个字念什么 / 学过汉语",
+         "她结婚了 / 她的好朋友"
+        ],
+        "uuid": "7cd96072-2bd5-42b0-812e-f72eeea0b8c6"
        },
        {
-        "id": "sub_002",
-        "substitution": "这个电影好不好 / 看过这个电影",
-        "expected_dialogue": [
-         "A：我不知道这个电影好不好。",
-         "B：你不是看过这个电影吗？",
-         "（你应该知道。）"
+        "id": "ex02_group_02",
+        "model": ["A：你怎么连这个也不懂？", "B：谁说我不懂？"],
+        "prompts": [
+         "这个 / 不知道",
+         "这个故事 / 没读过",
+         "这个题 / 不会做",
+         "长城 / 没去过",
+         "这个电影 / 没看过"
         ],
-        "grammar_refs": ["grammar_01"],
-        "vocab_refs": []
+        "uuid": "99db3421-0c22-4aa9-95ce-442b443f5f7d"
        },
        {
-        "id": "sub_003",
-        "substitution": "那儿的情况 / 去过那儿",
-        "expected_dialogue": [
-         "A：我不知道那儿的情况。",
-         "B：你不是去过那儿吗？",
-         "（你应该知道。）"
+        "id": "ex02_group_03",
+        "model": ["只要有钱就能买好多好东西。"],
+        "prompts": [
+         "你努力 / 能学好汉语",
+         "我有时间 / 一定参加",
+         "你去 / 一定能找到他",
+         "用一点儿时间 / 能看完",
+         "报名 / 可以参加太极拳比赛"
         ],
-        "grammar_refs": ["grammar_01"],
-        "vocab_refs": []
+        "uuid": "101e562d-b5c9-4517-9970-be1c69f57606"
        },
        {
-        "id": "sub_004",
-        "substitution": "这个字念什么 / 学过汉语",
-        "expected_dialogue": [
-         "A：我不知道这个字念什么。",
-         "B：你不是学过汉语吗？",
-         "（你应该知道。）"
+        "id": "ex02_group_04",
+        "model": ["谁听了他的相声都会笑起来。"],
+        "prompts": [
+         "知道这件事 / 会告诉你",
+         "听到这件事 / 会很高兴",
+         "知道你来 / 会欢迎的",
+         "去过那儿 / 会喜欢那儿的风光",
+         "看了这个电影 / 会被感动"
         ],
-        "grammar_refs": ["grammar_01"],
-        "vocab_refs": []
+        "uuid": "6e95dd92-ccbc-43bc-b9f7-19127c304a2d"
        },
        {
-        "id": "sub_005",
-        "substitution": "她结婚了 / 她的好朋友",
-        "expected_dialogue": [
-         "A：我不知道她结婚了。",
-         "B：你不是她的好朋友吗？",
-         "（你应该知道。）"
+        "id": "ex02_group_05",
+        "model": ["A：你认识张东吗？", "B：我连这个名字也没听说过。"],
+        "prompts": [
+         "听得懂中文广播 / 简单的汉语 / 听不懂",
+         "会中国书法 / 汉字 / 不会写",
+         "能喝白酒 / 啤酒 / 不能喝",
+         "去过上海 / 中国 / 没去过",
+         "会修车 / 开 / 不会开"
         ],
-        "grammar_refs": ["grammar_01"],
-        "vocab_refs": []
+        "uuid": "86bc8fe9-9da7-4a7a-a0a7-bd0abdc5acca"
        }
       ],
-      "answer_mode": "generated",
-      "rendering": {
-       "renderer": "exercise.substitution.v1",
-       "show_answer_after_submit": true
-      },
-      "check_needed": true
+      "uuid": "aba7f28f-a154-4b1d-ac43-58b68f913313"
      },
      {
       "id": "exercise_03",
-      "type": "substitution",
-      "variant": "rhetorical_denial",
-      "order": 3,
-      "title": "替换练习：谁说我不懂？",
-      "title_vi": "Luyện câu phản vấn",
-      "instruction": {
-       "zh": "替换练习。",
-       "vi": "Thay cụm từ theo mẫu."
-      },
-      "difficulty": "normal",
-      "skill_focus": ["grammar", "speaking"],
-      "grammar_refs": ["grammar_01"],
-      "vocab_refs": [],
-      "model": ["A：你怎么连这个也不懂？", "B：谁说我不懂？"],
-      "items": [
-       {
-        "id": "sub2_001",
-        "substitution": "这个 / 不知道",
-        "expected_dialogue": ["A：你怎么连这个也不知道？", "B：谁说我不知道？"],
-        "grammar_refs": ["grammar_01", "grammar_02"],
-        "vocab_refs": []
-       },
-       {
-        "id": "sub2_002",
-        "substitution": "这个故事 / 没读过",
-        "expected_dialogue": [
-         "A：你怎么连这个故事也没读过？",
-         "B：谁说我没读过？"
-        ],
-        "grammar_refs": ["grammar_01", "grammar_02"],
-        "vocab_refs": []
-       },
-       {
-        "id": "sub2_003",
-        "substitution": "这个题 / 不会做",
-        "expected_dialogue": [
-         "A：你怎么连这个题也不会做？",
-         "B：谁说我不会做？"
-        ],
-        "grammar_refs": ["grammar_01", "grammar_02"],
-        "vocab_refs": []
-       },
-       {
-        "id": "sub2_004",
-        "substitution": "长城 / 没去过",
-        "expected_dialogue": ["A：你怎么连长城也没去过？", "B：谁说我没去过？"],
-        "grammar_refs": ["grammar_01", "grammar_02"],
-        "vocab_refs": []
-       },
-       {
-        "id": "sub2_005",
-        "substitution": "这个电影 / 没看过",
-        "expected_dialogue": [
-         "A：你怎么连这个电影也没看过？",
-         "B：谁说我没看过？"
-        ],
-        "grammar_refs": ["grammar_01", "grammar_02"],
-        "vocab_refs": []
-       }
-      ],
-      "answer_mode": "generated",
-      "rendering": {
-       "renderer": "exercise.substitution.v1",
-       "show_answer_after_submit": true
-      },
-      "check_needed": true
-     },
-     {
-      "id": "exercise_04",
       "type": "choose_words_fill_blank",
-      "variant": "",
-      "order": 4,
-      "title": "选词填空",
+      "variant": "word_bank_fill_blank",
+      "order": 3,
+      "title": "三、选词填空",
       "title_vi": "Chọn từ điền chỗ trống",
       "instruction": {
        "zh": "选词填空。",
-       "vi": "Chọn từ thích hợp điền vào chỗ trống."
+       "vi": "Chọn từ đúng trong khung để điền vào chỗ trống.",
+       "en": ""
       },
       "difficulty": "normal",
-      "skill_focus": ["vocabulary", "grammar"],
-      "grammar_refs": ["grammar_02"],
-      "vocab_refs": [
-       "vocab_041",
-       "vocab_017",
-       "vocab_014",
-       "vocab_032",
-       "vocab_030",
-       "vocab_002",
-       "vocab_012",
-       "vocab_023",
-       "vocab_003"
-      ],
+      "skill_focus": [],
+      "source_origin": "textbook",
+      "check_needed": false,
       "word_bank": [
        "感情",
        "笨",
@@ -2705,1422 +2820,1552 @@
       ],
       "questions": [
        {
-        "id": "ex04_q01",
-        "prompt": "我______法语的文字也不认识，更不要说看法语书了。",
+        "id": "ex03_q01",
+        "prompt": "我________法语的文字也不认识，更不要说看法语书了。",
         "answer": "连",
-        "acceptable_answers": ["连"],
-        "explanation_vi": "连……也…… nhấn mạnh “ngay cả chữ Pháp cũng không biết”.",
-        "grammar_refs": ["grammar_02"],
-        "vocab_refs": ["vocab_002"]
+        "answer_verified": false,
+        "uuid": "7243ef8e-e4b8-42d1-92a0-2354469c86c1"
        },
        {
-        "id": "ex04_q02",
-        "prompt": "这个问题很______，谁都会回答。",
+        "id": "ex03_q02",
+        "prompt": "这个问题很________，谁都会回答。",
         "answer": "简单",
-        "acceptable_answers": ["简单"],
-        "explanation_vi": "简单 = đơn giản.",
-        "grammar_refs": [],
-        "vocab_refs": ["vocab_003"]
+        "answer_verified": false,
+        "uuid": "e1fb0bab-a8ba-481f-a4c2-9d17cf3f9601"
        },
        {
-        "id": "ex04_q03",
-        "prompt": "中国人______“八”是个吉利的数字。",
+        "id": "ex03_q03",
+        "prompt": "中国人________“八”是个吉利的数字。",
         "answer": "认为",
-        "acceptable_answers": ["认为"],
-        "explanation_vi": "认为 = cho rằng.",
-        "grammar_refs": [],
-        "vocab_refs": ["vocab_014"]
+        "answer_verified": false,
+        "uuid": "e07f4f92-841c-41bd-af85-f0c6ecef2236"
        },
        {
-        "id": "ex04_q04",
-        "prompt": "他这个人就爱跟别人开______。",
+        "id": "ex03_q04",
+        "prompt": "他这个人就爱跟别人开________。",
         "answer": "玩笑",
-        "acceptable_answers": ["玩笑"],
-        "explanation_vi": "开玩笑 = đùa.",
-        "grammar_refs": [],
-        "vocab_refs": []
+        "answer_verified": false,
+        "uuid": "5a009f7c-1b86-46ae-9252-8bf00dcd2407"
        },
        {
-        "id": "ex04_q05",
-        "prompt": "我想向学校______再延长一年。",
+        "id": "ex03_q05",
+        "prompt": "我想向学校________再延长一年。",
         "answer": "申请",
-        "acceptable_answers": ["申请"],
-        "explanation_vi": "申请 = xin/đăng ký.",
-        "grammar_refs": [],
-        "vocab_refs": ["vocab_012"]
+        "answer_verified": false,
+        "uuid": "54736047-0729-4233-b72c-c67269e00d86"
        },
        {
-        "id": "ex04_q06",
-        "prompt": "希望我们两国人民______地友好下去。",
+        "id": "ex03_q06",
+        "prompt": "希望我们两国人民________地友好下去。",
         "answer": "长久",
-        "acceptable_answers": ["长久"],
-        "explanation_vi": "长久地友好下去 = tiếp tục hữu nghị lâu dài.",
-        "grammar_refs": [],
-        "vocab_refs": ["vocab_023"]
+        "answer_verified": false,
+        "uuid": "e9e7d472-df94-47e4-b4a3-ca644f2b5d21"
        },
        {
-        "id": "ex04_q07",
-        "prompt": "______让我来给大家介绍一下儿。",
+        "id": "ex03_q07",
+        "prompt": "________让我来给大家介绍一下儿。",
         "answer": "首先",
-        "acceptable_answers": ["首先"],
-        "explanation_vi": "首先 = trước hết.",
-        "grammar_refs": [],
-        "vocab_refs": ["vocab_030"]
+        "answer_verified": false,
+        "uuid": "76d2f6a5-6423-4fae-9e65-738a51232bcc"
        },
        {
-        "id": "ex04_q08",
-        "prompt": "今天的晚会，很多重要的国家______人都来了。",
+        "id": "ex03_q08",
+        "prompt": "今天的晚会，很多重要的国家________人都来了。",
         "answer": "领导",
-        "acceptable_answers": ["领导"],
-        "explanation_vi": "国家领导人 = lãnh đạo quốc gia.",
-        "grammar_refs": [],
-        "vocab_refs": ["vocab_032"]
+        "answer_verified": false,
+        "uuid": "6cadba4d-97aa-4dd3-abaa-d94853145c7e"
        },
        {
-        "id": "ex04_q09",
-        "prompt": "刚来时，我一点儿也不习惯，现在我对这儿已经有了______，又不想离开了。",
+        "id": "ex03_q09",
+        "prompt": "刚来时，我一点儿也不习惯，现在我对这儿已经有了________，又不想离开了。",
         "answer": "感情",
-        "acceptable_answers": ["感情"],
-        "explanation_vi": "有了感情 = đã có tình cảm/gắn bó.",
-        "grammar_refs": [],
-        "vocab_refs": ["vocab_041"]
+        "answer_verified": false,
+        "uuid": "10e12987-b57d-4658-9604-2b36dd114aca"
        },
        {
-        "id": "ex04_q10",
-        "prompt": "我真______，怎么连这么简单的问题也答不出来？",
+        "id": "ex03_q10",
+        "prompt": "我真________，怎么连这么简单的问题也答不出来？",
         "answer": "笨",
-        "acceptable_answers": ["笨"],
-        "explanation_vi": "笨 = ngốc, đần.",
-        "grammar_refs": ["grammar_02"],
-        "vocab_refs": ["vocab_017"]
+        "answer_verified": false,
+        "uuid": "abdb79fd-b478-4e2f-899e-4019b1d1a1ee"
        }
       ],
-      "answer_key": [
-       {
-        "question_id": "ex04_q01",
-        "answer": "连"
-       },
-       {
-        "question_id": "ex04_q02",
-        "answer": "简单"
-       },
-       {
-        "question_id": "ex04_q03",
-        "answer": "认为"
-       },
-       {
-        "question_id": "ex04_q04",
-        "answer": "玩笑"
-       },
-       {
-        "question_id": "ex04_q05",
-        "answer": "申请"
-       },
-       {
-        "question_id": "ex04_q06",
-        "answer": "长久"
-       },
-       {
-        "question_id": "ex04_q07",
-        "answer": "首先"
-       },
-       {
-        "question_id": "ex04_q08",
-        "answer": "领导"
-       },
-       {
-        "question_id": "ex04_q09",
-        "answer": "感情"
-       },
-       {
-        "question_id": "ex04_q10",
-        "answer": "笨"
-       }
-      ],
-      "rendering": {
-       "renderer": "exercise.fill_blank.v1",
-       "input_mode": "dropdown",
-       "show_word_bank": true,
-       "show_answer_after_submit": true
+      "uuid": "6ffe787e-70d2-4f19-b200-c1e5882945ca"
+     },
+     {
+      "id": "exercise_04",
+      "type": "matching",
+      "variant": "matching",
+      "order": 4,
+      "title": "四、画线组句",
+      "title_vi": "Nối thành câu",
+      "instruction": {
+       "zh": "画线组句。",
+       "vi": "Nối A và B để tạo thành câu hoàn chỉnh.",
+       "en": ""
       },
-      "check_needed": false
+      "difficulty": "normal",
+      "skill_focus": [],
+      "source_origin": "textbook",
+      "check_needed": false,
+      "left": [
+       "只要你给我打电话",
+       "只要你努力",
+       "只要汉语说得好",
+       "只要吃了这种药",
+       "只要你告诉她",
+       "只要有钱"
+      ],
+      "right": [
+       "病很快就会好。",
+       "我就一定来。",
+       "就一定能把汉语学好。",
+       "就能买到好东西。",
+       "就能找到工作。",
+       "她就会帮助你。"
+      ],
+      "answers": [
+       {
+        "left_order": 1,
+        "right_order": 2
+       },
+       {
+        "left_order": 2,
+        "right_order": 3
+       },
+       {
+        "left_order": 3,
+        "right_order": 5
+       },
+       {
+        "left_order": 4,
+        "right_order": 1
+       },
+       {
+        "left_order": 5,
+        "right_order": 6
+       },
+       {
+        "left_order": 6,
+        "right_order": 4
+       }
+      ],
+      "uuid": "3dcaf9fa-6742-4141-afdf-7ec862e78228"
      },
      {
       "id": "exercise_05",
-      "type": "matching",
-      "variant": "sentence_joining",
+      "type": "complete_sentence",
+      "variant": "complete_sentence_with_given_words",
       "order": 5,
-      "title": "画线组句",
-      "title_vi": "Nối câu",
-      "instruction": {
-       "zh": "画线组句。",
-       "vi": "Nối A và B thành câu hoàn chỉnh."
-      },
-      "difficulty": "normal",
-      "skill_focus": ["grammar", "sentence_building"],
-      "grammar_refs": [],
-      "vocab_refs": [],
-      "left_items": [
-       {
-        "id": "l01",
-        "text": "只要你给我打电话"
-       },
-       {
-        "id": "l02",
-        "text": "只要你努力"
-       },
-       {
-        "id": "l03",
-        "text": "只要汉语说得好"
-       },
-       {
-        "id": "l04",
-        "text": "只要吃了这种药"
-       },
-       {
-        "id": "l05",
-        "text": "只要你告诉她"
-       },
-       {
-        "id": "l06",
-        "text": "只要有钱"
-       }
-      ],
-      "right_items": [
-       {
-        "id": "r01",
-        "text": "我就一定来"
-       },
-       {
-        "id": "r02",
-        "text": "就一定能把汉语学好"
-       },
-       {
-        "id": "r03",
-        "text": "就能找到工作"
-       },
-       {
-        "id": "r04",
-        "text": "病很快就会好"
-       },
-       {
-        "id": "r05",
-        "text": "她就会帮助你"
-       },
-       {
-        "id": "r06",
-        "text": "就能买到好东西"
-       }
-      ],
-      "answers": [
-       {
-        "left_id": "l01",
-        "right_id": "r01"
-       },
-       {
-        "left_id": "l02",
-        "right_id": "r02"
-       },
-       {
-        "left_id": "l03",
-        "right_id": "r03"
-       },
-       {
-        "left_id": "l04",
-        "right_id": "r04"
-       },
-       {
-        "left_id": "l05",
-        "right_id": "r05"
-       },
-       {
-        "left_id": "l06",
-        "right_id": "r06"
-       }
-      ],
-      "answer_key": [
-       {
-        "question_id": "l01",
-        "answer": "r01"
-       },
-       {
-        "question_id": "l02",
-        "answer": "r02"
-       },
-       {
-        "question_id": "l03",
-        "answer": "r03"
-       },
-       {
-        "question_id": "l04",
-        "answer": "r04"
-       },
-       {
-        "question_id": "l05",
-        "answer": "r05"
-       },
-       {
-        "question_id": "l06",
-        "answer": "r06"
-       }
-      ],
-      "rendering": {
-       "renderer": "exercise.matching.v1",
-       "show_answer_after_submit": true
-      },
-      "check_needed": false
-     },
-     {
-      "id": "exercise_06",
-      "type": "complete_dialogue",
-      "variant": "rhetorical_question_completion",
-      "order": 6,
-      "title": "用反问句完成句子",
+      "title": "五、用反问句完成句子",
       "title_vi": "Dùng câu hỏi tu từ hoàn thành câu",
       "instruction": {
        "zh": "用反问句完成句子。",
-       "vi": "Dùng câu hỏi tu từ để hoàn thành câu."
+       "vi": "Dùng câu hỏi tu từ để hoàn thành câu.",
+       "en": ""
       },
-      "difficulty": "hard",
-      "skill_focus": ["grammar", "speaking"],
-      "grammar_refs": ["grammar_01"],
-      "vocab_refs": [],
-      "dialogues": [
+      "difficulty": "normal",
+      "skill_focus": [],
+      "source_origin": "textbook",
+      "check_needed": false,
+      "questions": [
        {
-        "id": "ex06_d01",
-        "lines": [
-         {
-          "speaker": "A",
-          "text": "来中国以前，她没学过汉语。"
-         },
-         {
-          "speaker": "B",
-          "blank_id": "blank_01",
-          "text": "______？（谁说……）"
-         }
-        ],
-        "sample_answers": [
-         {
-          "blank_id": "blank_01",
-          "answer": "谁说她没学过汉语？",
-          "explanation_vi": "用 谁说…… phản bác lời A."
-         }
-        ],
-        "grading": {
-         "mode": "semantic"
-        }
+        "id": "ex05_q01",
+        "context": "A：来中国以前，她没学过汉语。",
+        "prompt": "B：________________________？",
+        "hint": "谁说……",
+        "answer": "",
+        "answer_verified": false,
+        "uuid": "6f2cc6b8-da90-43dd-8d5b-525a14cf6019"
        },
        {
-        "id": "ex06_d02",
-        "lines": [
-         {
-          "speaker": "A",
-          "text": "你没看过这个电影，你怎么知道没有意思？"
-         },
-         {
-          "speaker": "B",
-          "blank_id": "blank_02",
-          "text": "______？（谁说……）"
-         }
-        ],
-        "sample_answers": [
-         {
-          "blank_id": "blank_02",
-          "answer": "谁说我没看过这个电影？",
-          "explanation_vi": "Phản bác giả định “chưa xem phim”."
-         }
-        ],
-        "grading": {
-         "mode": "semantic"
-        }
+        "id": "ex05_q02",
+        "context": "A：你没看过这个电影，你怎么知道没有意思？",
+        "prompt": "B：________________________？",
+        "hint": "谁说……",
+        "answer": "",
+        "answer_verified": false,
+        "uuid": "550d2ffa-cf52-40bd-b63c-6a62ed38557b"
        },
        {
-        "id": "ex06_d03",
-        "lines": [
-         {
-          "speaker": "A",
-          "text": "你知道这件事儿吗？"
-         },
-         {
-          "speaker": "B",
-          "blank_id": "blank_03",
-          "text": "______？（怎么……）"
-         }
-        ],
-        "sample_answers": [
-         {
-          "blank_id": "blank_03",
-          "answer": "我怎么不知道？",
-          "explanation_vi": "反问句 nhấn mạnh “tôi biết chứ”."
-         }
-        ],
-        "grading": {
-         "mode": "semantic"
-        }
+        "id": "ex05_q03",
+        "context": "A：你知道这件事儿吗？",
+        "prompt": "B：________________________？",
+        "hint": "怎么……",
+        "answer": "",
+        "answer_verified": false,
+        "uuid": "a970851d-ccb8-44f6-81e0-c9709f7698ba"
        },
        {
-        "id": "ex06_d04",
-        "lines": [
-         {
-          "speaker": "A",
-          "text": "我的钥匙怎么找不到了？"
-         },
-         {
-          "speaker": "B",
-          "blank_id": "blank_04",
-          "text": "______？（不是……吗）"
-         }
-        ],
-        "sample_answers": [
-         {
-          "blank_id": "blank_04",
-          "answer": "你的钥匙不是在桌子上吗？",
-          "explanation_vi": "Nhắc lại thông tin rõ ràng bằng 不是……吗."
-         }
-        ],
-        "grading": {
-         "mode": "semantic"
-        }
+        "id": "ex05_q04",
+        "context": "A：我的钥匙怎么找不到了？",
+        "prompt": "B：________________________？",
+        "hint": "不是……吗",
+        "answer": "",
+        "answer_verified": false,
+        "uuid": "2cda0f86-405e-4150-9b68-7211378bdce3"
        },
        {
-        "id": "ex06_d05",
-        "lines": [
-         {
-          "speaker": "A",
-          "text": "听说小张在美国留过学。"
-         },
-         {
-          "speaker": "B",
-          "blank_id": "blank_05",
-          "text": "______？（哪里……）"
-         }
-        ],
-        "sample_answers": [
-         {
-          "blank_id": "blank_05",
-          "answer": "他哪里在美国留过学？",
-          "explanation_vi": "哪里/哪儿 trong phản vấn phủ định ý A."
-         }
-        ],
-        "grading": {
-         "mode": "semantic"
-        }
+        "id": "ex05_q05",
+        "context": "A：听说小张在美国留过学。",
+        "prompt": "B：________________________？",
+        "hint": "哪里……",
+        "answer": "",
+        "answer_verified": false,
+        "uuid": "2b7b30e7-572b-4136-b1de-a76910fa543a"
        },
        {
-        "id": "ex06_d06",
-        "lines": [
-         {
-          "speaker": "A",
-          "text": "你知道玛丽去哪儿了吗？"
-         },
-         {
-          "speaker": "B",
-          "blank_id": "blank_06",
-          "text": "______？我今天一天都没看见她。（谁……）"
-         }
-        ],
-        "sample_answers": [
-         {
-          "blank_id": "blank_06",
-          "answer": "谁知道她去哪儿了？",
-          "explanation_vi": "Ai mà biết cô ấy đi đâu."
-         }
-        ],
-        "grading": {
-         "mode": "semantic"
-        }
+        "id": "ex05_q06",
+        "context": "A：你知道玛丽去哪儿了吗？",
+        "prompt": "B：________________________？我今天一天都没看见她。",
+        "hint": "谁……",
+        "answer": "",
+        "answer_verified": false,
+        "uuid": "b161b608-0213-4f3b-8d79-5b99ff6caddc"
        }
       ],
-      "rendering": {
-       "renderer": "exercise.complete_dialogue.v1",
-       "show_answer_after_submit": true
+      "uuid": "86a0565c-96a3-40ef-810f-29a0852765f0"
+     },
+     {
+      "id": "exercise_06",
+      "type": "answer_questions",
+      "variant": "custom_textbook_task",
+      "order": 6,
+      "title": "六、用“连……也 / 都……”回答问题",
+      "title_vi": "Dùng 连……也/都 trả lời",
+      "instruction": {
+       "zh": "用“连……也 / 都……”回答问题。",
+       "vi": "Dùng 连……也/都 để trả lời câu hỏi.",
+       "en": ""
       },
-      "check_needed": true
+      "difficulty": "normal",
+      "skill_focus": [],
+      "source_origin": "textbook",
+      "check_needed": false,
+      "questions": [
+       {
+        "id": "ex06_q01",
+        "prompt": "A：听力考试难吗？\nB：很难，________________________。",
+        "answer": "",
+        "answer_verified": false,
+        "uuid": "ff5be6d3-739e-4184-93cf-cc8e6580edfe"
+       },
+       {
+        "id": "ex06_q02",
+        "prompt": "A：来中国以前你学过多长时间汉语？\nB：________________________。",
+        "answer": "",
+        "answer_verified": false,
+        "uuid": "6378a9bb-789a-42fb-afb1-1686441a0841"
+       },
+       {
+        "id": "ex06_q03",
+        "prompt": "A：听说她结婚了。\nB：胡说，________________________，跟谁结婚呢？",
+        "answer": "",
+        "answer_verified": false,
+        "uuid": "a2b706af-3e6c-47c7-b04d-9d6fe1bb157c"
+       },
+       {
+        "id": "ex06_q04",
+        "prompt": "A：来中国以后你去旅行过几次？\nB：________________________。",
+        "answer": "",
+        "answer_verified": false,
+        "uuid": "987c0880-0190-45d7-9b87-e140ca4d398e"
+       },
+       {
+        "id": "ex06_q05",
+        "prompt": "A：你看过这个电影吗？\nB：________________________。",
+        "answer": "",
+        "answer_verified": false,
+        "uuid": "f65a4598-e124-4911-8edb-e37c777b0ea3"
+       },
+       {
+        "id": "ex06_q06",
+        "prompt": "A：今天上课你来得早吗？\nB：来得很早，我来时________________________。",
+        "answer": "",
+        "answer_verified": false,
+        "uuid": "7315b022-bf21-4204-8596-1dfeb97735de"
+       },
+       {
+        "id": "ex06_q07",
+        "prompt": "A：她回国以后常跟你联系吗？\nB：________________________。",
+        "answer": "",
+        "answer_verified": false,
+        "uuid": "826ada8d-e9a1-40f6-9834-1468d58fa64b"
+       }
+      ],
+      "uuid": "8fbf3521-d495-4a3d-849e-bba22968a0a5"
      },
      {
       "id": "exercise_07",
-      "type": "answer_with_pattern",
-      "variant": "lian_ye_dou",
+      "type": "custom",
+      "variant": "custom_textbook_task",
       "order": 7,
-      "title": "用“连……也 / 都……”回答问题",
-      "title_vi": "Dùng 连……也/都 trả lời câu hỏi",
+      "title": "七、下列情景怎么说（用反问句）",
+      "title_vi": "Nói theo tình huống bằng câu hỏi tu từ",
       "instruction": {
-       "zh": "用“连……也 / 都……”回答问题。",
-       "vi": "Dùng mẫu 连……也/都 để trả lời."
+       "zh": "下列情景怎么说（用反问句）。",
+       "vi": "Dựa vào tình huống, nói bằng câu hỏi tu từ.",
+       "en": ""
       },
-      "difficulty": "hard",
-      "skill_focus": ["grammar", "speaking"],
-      "grammar_refs": ["grammar_02"],
-      "vocab_refs": [],
-      "pattern": "连……也 / 都……",
-      "model": {
-       "prompt": "听力考试难吗？",
-       "answer": "很难，我连一句话也没听懂。"
-      },
-      "questions": [
+      "difficulty": "normal",
+      "skill_focus": [],
+      "source_origin": "textbook",
+      "check_needed": false,
+      "situations": [
        {
         "id": "ex07_q01",
-        "prompt": "听力考试难吗？",
-        "sample_answer": "很难，我连一句话也没听懂。",
-        "acceptable_answers": [],
-        "grading": {
-         "mode": "semantic"
-        },
-        "grammar_refs": ["grammar_02"]
+        "prompt": "朋友在找钥匙，你看他的钥匙就在桌子上，你告诉他。",
+        "answer": "",
+        "answer_verified": false,
+        "uuid": "9a54de6f-f1f9-4042-92fd-151cc483d1e3"
        },
        {
         "id": "ex07_q02",
-        "prompt": "来中国以前你学过多长时间汉语？",
-        "sample_answer": "我连一天也没学过。",
-        "acceptable_answers": [],
-        "grading": {
-         "mode": "semantic"
-        },
-        "grammar_refs": ["grammar_02"]
+        "prompt": "朋友问你的老师叫什么名字，你说不知道，你的朋友会怎么说？",
+        "answer": "",
+        "answer_verified": false,
+        "uuid": "cd5f32dd-a1c0-410b-8084-f28aded03781"
        },
        {
         "id": "ex07_q03",
-        "prompt": "听说她结婚了。",
-        "sample_answer": "胡说，她连男朋友都没有，跟谁结婚呢？",
-        "acceptable_answers": [],
-        "grading": {
-         "mode": "semantic"
-        },
-        "grammar_refs": ["grammar_01", "grammar_02"]
+        "prompt": "朋友问你桂林的风景怎么样，但是你没去过，怎么说？",
+        "answer": "",
+        "answer_verified": false,
+        "uuid": "03d89f53-c2ad-44f4-8c70-1c24077acd9f"
        },
        {
         "id": "ex07_q04",
-        "prompt": "来中国以后你去旅行过几次？",
-        "sample_answer": "我连一次也没去过。",
-        "acceptable_answers": [],
-        "grading": {
-         "mode": "semantic"
-        },
-        "grammar_refs": ["grammar_02"]
+        "prompt": "有人说你当过演员，但是你没有当过，怎么说？",
+        "answer": "",
+        "answer_verified": false,
+        "uuid": "d4a16ad1-6537-48a6-92d7-ea12546344ab"
        },
        {
         "id": "ex07_q05",
-        "prompt": "你看过这个电影吗？",
-        "sample_answer": "没有，我连这个电影的名字都没听说过。",
-        "acceptable_answers": [],
-        "grading": {
-         "mode": "semantic"
-        },
-        "grammar_refs": ["grammar_02"]
-       },
-       {
-        "id": "ex07_q06",
-        "prompt": "今天上课你来得早吗？",
-        "sample_answer": "来得很早，我来时连老师都还没来。",
-        "acceptable_answers": [],
-        "grading": {
-         "mode": "semantic"
-        },
-        "grammar_refs": ["grammar_02"]
-       },
-       {
-        "id": "ex07_q07",
-        "prompt": "她回国以后常跟你联系吗？",
-        "sample_answer": "不常，她连一个电话也没给我打过。",
-        "acceptable_answers": [],
-        "grading": {
-         "mode": "semantic"
-        },
-        "grammar_refs": ["grammar_02"]
-       },
-       {
-        "id": "ex07_q08",
-        "prompt": "这些书你看完几本了？",
-        "sample_answer": "我刚借来，连一本也没看完。",
-        "acceptable_answers": [],
-        "grading": {
-         "mode": "semantic"
-        },
-        "grammar_refs": ["grammar_02"]
+        "prompt": "有人找玛丽，但玛丽不在，她问你，但你不知道，怎么说？",
+        "answer": "",
+        "answer_verified": false,
+        "uuid": "baa82f97-de5a-4348-b145-f1959552ee7b"
        }
       ],
-      "answer_key": [
-       {
-        "question_id": "ex07_q01",
-        "sample_answer": "很难，我连一句话也没听懂。",
-        "check_needed": true
-       },
-       {
-        "question_id": "ex07_q02",
-        "sample_answer": "我连一天也没学过。",
-        "check_needed": true
-       },
-       {
-        "question_id": "ex07_q03",
-        "sample_answer": "胡说，她连男朋友都没有，跟谁结婚呢？",
-        "check_needed": true
-       },
-       {
-        "question_id": "ex07_q04",
-        "sample_answer": "我连一次也没去过。",
-        "check_needed": true
-       },
-       {
-        "question_id": "ex07_q05",
-        "sample_answer": "没有，我连这个电影的名字都没听说过。",
-        "check_needed": true
-       },
-       {
-        "question_id": "ex07_q06",
-        "sample_answer": "来得很早，我来时连老师都还没来。",
-        "check_needed": true
-       },
-       {
-        "question_id": "ex07_q07",
-        "sample_answer": "不常，她连一个电话也没给我打过。",
-        "check_needed": true
-       },
-       {
-        "question_id": "ex07_q08",
-        "sample_answer": "我刚借来，连一本也没看完。",
-        "check_needed": true
-       }
-      ],
-      "rendering": {
-       "renderer": "exercise.answer_with_pattern.v1",
-       "show_answer_after_submit": true
-      },
-      "check_needed": true
+      "uuid": "faa551a9-eae6-4602-85a7-d40f4c40ee89"
      },
      {
       "id": "exercise_08",
-      "type": "open_ended",
-      "variant": "situation_response_rhetorical_question",
-      "order": 8,
-      "title": "下列情景怎么说（用反问句）",
-      "title_vi": "Nói thế nào trong tình huống sau",
-      "instruction": {
-       "zh": "下列情景怎么说（用反问句）。",
-       "vi": "Dùng câu hỏi tu từ để phản ứng theo tình huống."
-      },
-      "difficulty": "hard",
-      "skill_focus": ["speaking", "grammar", "pragmatics"],
-      "grammar_refs": ["grammar_01"],
-      "vocab_refs": [],
-      "questions": [
-       {
-        "id": "ex08_q01",
-        "prompt": "朋友在找钥匙，你看他的钥匙就在桌子上，你告诉他。",
-        "sample_answer": "你的钥匙不是在桌子上吗？",
-        "grading": {
-         "mode": "manual"
-        }
-       },
-       {
-        "id": "ex08_q02",
-        "prompt": "朋友问你的老师叫什么名字，你说不知道，你的朋友会怎么说？",
-        "sample_answer": "你怎么连老师叫什么名字都不知道？",
-        "grading": {
-         "mode": "manual"
-        }
-       },
-       {
-        "id": "ex08_q03",
-        "prompt": "朋友问你桂林的风景怎么样，但是你没去过，怎么说？",
-        "sample_answer": "我没去过桂林，怎么知道那儿的风景怎么样呢？",
-        "grading": {
-         "mode": "manual"
-        }
-       },
-       {
-        "id": "ex08_q04",
-        "prompt": "有人说你当过演员，但是你没有当过，怎么说？",
-        "sample_answer": "谁说我当过演员？",
-        "grading": {
-         "mode": "manual"
-        }
-       },
-       {
-        "id": "ex08_q05",
-        "prompt": "有人找玛丽，但玛丽不在，她问你，但你不知道，怎么说？",
-        "sample_answer": "我怎么知道她去哪儿了？",
-        "grading": {
-         "mode": "manual"
-        }
-       }
-      ],
-      "answer_key": [
-       {
-        "question_id": "ex08_q01",
-        "sample_answer": "你的钥匙不是在桌子上吗？",
-        "check_needed": true
-       },
-       {
-        "question_id": "ex08_q02",
-        "sample_answer": "你怎么连老师叫什么名字都不知道？",
-        "check_needed": true
-       },
-       {
-        "question_id": "ex08_q03",
-        "sample_answer": "我没去过桂林，怎么知道那儿的风景怎么样呢？",
-        "check_needed": true
-       },
-       {
-        "question_id": "ex08_q04",
-        "sample_answer": "谁说我当过演员？",
-        "check_needed": true
-       },
-       {
-        "question_id": "ex08_q05",
-        "sample_answer": "我怎么知道她去哪儿了？",
-        "check_needed": true
-       }
-      ],
-      "rendering": {
-       "renderer": "exercise.open_ended.v1",
-       "show_answer_after_submit": true
-      },
-      "check_needed": true
-     },
-     {
-      "id": "exercise_09",
       "type": "correct_sentence",
-      "variant": "",
-      "order": 9,
-      "title": "改错句",
+      "variant": "error_correction",
+      "order": 8,
+      "title": "八、改错句",
       "title_vi": "Sửa câu sai",
       "instruction": {
        "zh": "改错句。",
-       "vi": "Sửa lỗi trong câu."
-      },
-      "difficulty": "hard",
-      "skill_focus": ["grammar", "sentence_order"],
-      "grammar_refs": ["grammar_01", "grammar_02", "grammar_03"],
-      "vocab_refs": [],
-      "questions": [
-       {
-        "id": "ex09_q01",
-        "wrong_sentence": "你把生词不是要预习预习吗？",
-        "correct_sentence": "你不是要把生词预习预习吗？",
-        "acceptable_answers": ["你不是要把生词预习预习吗？"],
-        "explanation_vi": "不是……吗 要 đặt đúng vị trí để tạo câu phản vấn.",
-        "grammar_refs": ["grammar_01"],
-        "check_needed": true
-       },
-       {
-        "id": "ex09_q02",
-        "wrong_sentence": "我没见过她，怎么可能不认识她呢？",
-        "correct_sentence": "我没见过她，怎么可能认识她呢？",
-        "acceptable_answers": ["我没见过她，怎么可能认识她呢？"],
-        "explanation_vi": "Chưa từng gặp thì không thể biết/quen; 不认识 làm sai logic phản vấn.",
-        "grammar_refs": ["grammar_01"],
-        "check_needed": true
-       },
-       {
-        "id": "ex09_q03",
-        "wrong_sentence": "这个演员很有名，我哪能知道呢？",
-        "correct_sentence": "这个演员很有名，我哪能不知道呢？",
-        "acceptable_answers": ["这个演员很有名，我哪能不知道呢？"],
-        "explanation_vi": "Nổi tiếng thì đáng lẽ biết; 哪能不知道 nhấn mạnh “tất nhiên biết”.",
-        "grammar_refs": ["grammar_01", "grammar_03"],
-        "check_needed": true
-       },
-       {
-        "id": "ex09_q04",
-        "wrong_sentence": "连我看得懂这本书，你一定看得懂。",
-        "correct_sentence": "连我都看得懂这本书，你一定看得懂。",
-        "acceptable_answers": [
-         "连我都看得懂这本书，你一定看得懂。",
-         "这本书连我都看得懂，你一定看得懂。"
-        ],
-        "explanation_vi": "连 cần hô ứng với 也/都.",
-        "grammar_refs": ["grammar_02"],
-        "check_needed": true
-       },
-       {
-        "id": "ex09_q05",
-        "wrong_sentence": "连她不会做这个题，我也不会。",
-        "correct_sentence": "连她都不会做这个题，我也不会。",
-        "acceptable_answers": [
-         "连她都不会做这个题，我也不会。",
-         "这个题连她都不会做，我也不会。"
-        ],
-        "explanation_vi": "连 + X + 都/也 + VP.",
-        "grammar_refs": ["grammar_02"],
-        "check_needed": true
-       },
-       {
-        "id": "ex09_q06",
-        "wrong_sentence": "我以前连一次也没有来过中国。",
-        "correct_sentence": "我以前一次也没有来过中国。",
-        "acceptable_answers": [
-         "我以前一次也没有来过中国。",
-         "我以前连一次都没有来过中国。"
-        ],
-        "explanation_vi": "连……也/都 có thể dùng, nhưng câu sách có thể yêu cầu sửa sang 一次也没有 hoặc 连一次都没有.",
-        "grammar_refs": ["grammar_02"],
-        "check_needed": true
-       }
-      ],
-      "answer_key": [
-       {
-        "question_id": "ex09_q01",
-        "answer": "你不是要把生词预习预习吗？",
-        "check_needed": true
-       },
-       {
-        "question_id": "ex09_q02",
-        "answer": "我没见过她，怎么可能认识她呢？",
-        "check_needed": true
-       },
-       {
-        "question_id": "ex09_q03",
-        "answer": "这个演员很有名，我哪能不知道呢？",
-        "check_needed": true
-       },
-       {
-        "question_id": "ex09_q04",
-        "answer": "连我都看得懂这本书，你一定看得懂。",
-        "check_needed": true
-       },
-       {
-        "question_id": "ex09_q05",
-        "answer": "连她都不会做这个题，我也不会。",
-        "check_needed": true
-       },
-       {
-        "question_id": "ex09_q06",
-        "answer": "我以前一次也没有来过中国。",
-        "check_needed": true
-       }
-      ],
-      "rendering": {
-       "renderer": "exercise.correct_sentence.v1",
-       "show_answer_after_submit": true
-      },
-      "check_needed": true
-     },
-     {
-      "id": "exercise_10",
-      "type": "communication_dialogue",
-      "variant": "",
-      "order": 10,
-      "title": "交际会话",
-      "title_vi": "Hội thoại giao tiếp",
-      "instruction": {
-       "zh": "",
-       "vi": "Luyện hội thoại theo chức năng giao tiếp."
+       "vi": "Sửa câu sai.",
+       "en": ""
       },
       "difficulty": "normal",
-      "skill_focus": ["speaking", "communication"],
-      "grammar_refs": [],
-      "vocab_refs": ["vocab_037", "vocab_040"],
-      "function": "敬酒 / 责备",
-      "function_vi": "Mời rượu / trách nhẹ",
-      "dialogue": [
+      "skill_focus": [],
+      "source_origin": "textbook",
+      "check_needed": false,
+      "questions": [
        {
-        "speaker": "A",
-        "text": "来，我敬您一杯。"
+        "id": "ex08_q01",
+        "prompt": "你把生词不是要预习预习吗？",
+        "answer": "",
+        "answer_verified": false,
+        "uuid": "e71803fa-4b06-479c-99fd-89daed748cd3"
        },
        {
-        "speaker": "B",
-        "text": "谢谢！"
+        "id": "ex08_q02",
+        "prompt": "我没见过她，怎么可能不认识她呢？",
+        "answer": "",
+        "answer_verified": false,
+        "uuid": "42b72592-cc8f-4ae6-8e3e-25b676214bbb"
        },
        {
-        "speaker": "A",
-        "text": "祝您健康快乐！干杯！"
+        "id": "ex08_q03",
+        "prompt": "这个演员很有名，我哪能知道呢？",
+        "answer": "",
+        "answer_verified": false,
+        "uuid": "0f9e69c3-312b-4cde-b81b-ed12e9257761"
        },
        {
-        "speaker": "B",
-        "text": "干杯！"
+        "id": "ex08_q04",
+        "prompt": "连我看得懂这本书，你一定看得懂。",
+        "answer": "",
+        "answer_verified": false,
+        "uuid": "5f058497-1abd-416e-9056-015d2923e8bc"
+       },
+       {
+        "id": "ex08_q05",
+        "prompt": "连她不会做这个题，我也不会。",
+        "answer": "",
+        "answer_verified": false,
+        "uuid": "7a6745fc-5a0e-4eaf-8149-ca84c03ac998"
+       },
+       {
+        "id": "ex08_q06",
+        "prompt": "我以前连一次也没有来过中国。",
+        "answer": "",
+        "answer_verified": false,
+        "uuid": "6baa552f-7cf5-457f-9fbc-e3feb39e81ff"
        }
       ],
-      "practice_tasks": [
-       {
-        "id": "comm_task_01",
-        "type": "role_play",
-        "instruction_vi": "Luyện mời rượu/chúc sức khỏe trong bữa tiệc.",
-        "sample_answer": [
-         "A：来，我敬您一杯。",
-         "B：谢谢！",
-         "A：祝您健康快乐！干杯！",
-         "B：干杯！"
-        ]
-       },
-       {
-        "id": "comm_task_02",
-        "type": "role_play",
-        "instruction_vi": "Luyện trách nhẹ khi bạn nói sai.",
-        "sample_answer": ["A：你怎么能这样说话？", "B：对不起，我说错了。"]
-       },
-       {
-        "id": "comm_task_03",
-        "type": "role_play",
-        "instruction_vi": "Luyện trách bạn không nói sự thật.",
-        "sample_answer": [
-         "A：这件事儿你为什么不告诉我？我们不是好朋友吗？",
-         "B：我不想让你知道。",
-         "A：你不相信我吗？",
-         "B：不是。"
-        ]
-       }
-      ],
-      "rendering": {
-       "renderer": "exercise.communication_dialogue.v1"
-      },
-      "check_needed": false
-     }
-    ]
-   },
-   {
-    "id": "section_06_reading",
-    "type": "reading",
-    "order": 6,
-    "title": "阅读理解",
-    "title_vi": "Đọc hiểu",
-    "items": [
+      "uuid": "8a05849b-9074-4759-a337-124850d80a29"
+     },
      {
-      "id": "reading_01",
-      "type": "reading_text",
-      "order": 1,
-      "title": "哪个数字最吉利",
-      "title_vi": "Con số nào may mắn nhất",
-      "supplementary_words": [
+      "id": "exercise_09",
+      "type": "reading_fill_blank",
+      "variant": "reading_cloze",
+      "order": 9,
+      "title": "九、综合填空",
+      "title_vi": "Điền tổng hợp",
+      "instruction": {
+       "zh": "综合填空。",
+       "vi": "Điền từ thích hợp vào chỗ trống trong bài đọc.",
+       "en": ""
+      },
+      "difficulty": "normal",
+      "skill_focus": [],
+      "source_origin": "textbook",
+      "check_needed": false,
+      "supplementary_vocabulary": [
        {
-        "id": "reading_01_word_001",
+        "id": "supp_vocab_001",
         "hanzi": "牌照",
         "pinyin": "páizhào",
-        "meaning_vi": "biển số xe",
-        "vocab_ref": ""
+        "meaning_vi": "biển số; biển xe",
+        "uuid": "05173576-4d42-4f78-9e74-403d1cd32c79"
        },
        {
-        "id": "reading_01_word_002",
+        "id": "supp_vocab_002",
         "hanzi": "伤疤",
         "pinyin": "shāngbā",
         "meaning_vi": "vết sẹo",
-        "vocab_ref": ""
+        "uuid": "d6f596c9-0288-450d-ae90-affc2a3480f8"
        },
        {
-        "id": "reading_01_word_003",
+        "id": "supp_vocab_003",
         "hanzi": "流氓",
         "pinyin": "liúmáng",
-        "meaning_vi": "lưu manh",
-        "vocab_ref": ""
+        "meaning_vi": "lưu manh; du côn",
+        "uuid": "160f75d1-c15d-4c79-a9bc-7054a237510a"
        },
        {
-        "id": "reading_01_word_004",
+        "id": "supp_vocab_004",
         "hanzi": "流浪",
         "pinyin": "liúlàng",
-        "meaning_vi": "lang thang",
-        "vocab_ref": ""
+        "meaning_vi": "lang thang; sống lang bạt",
+        "uuid": "096e9b56-d50d-490f-bea5-e9276aba012d"
        },
        {
-        "id": "reading_01_word_005",
+        "id": "supp_vocab_005",
         "hanzi": "九泉",
         "pinyin": "jiǔquán",
-        "meaning_vi": "cõi âm",
-        "vocab_ref": ""
+        "meaning_vi": "cửu tuyền; âm phủ",
+        "uuid": "8c807986-d0d2-4748-bd63-bc0a18f07017"
        },
        {
-        "id": "reading_01_word_006",
+        "id": "supp_vocab_006",
         "hanzi": "死",
         "pinyin": "sǐ",
         "meaning_vi": "chết",
-        "vocab_ref": ""
+        "uuid": "ecb52f63-49db-463b-be6e-bb4dc1214225"
        },
        {
-        "id": "reading_01_word_007",
+        "id": "supp_vocab_007",
         "hanzi": "救济",
         "pinyin": "jiùjì",
-        "meaning_vi": "cứu trợ, giúp đỡ tài chính",
-        "vocab_ref": ""
+        "meaning_vi": "cứu tế",
+        "uuid": "4d3e5dc9-9af4-444b-bbf3-b3a701da84c8"
        },
        {
-        "id": "reading_01_word_008",
+        "id": "supp_vocab_008",
         "hanzi": "救命",
-        "pinyin": "jiù mìng",
+        "pinyin": "jiùmìng",
         "meaning_vi": "cứu mạng",
-        "vocab_ref": ""
+        "uuid": "580e8008-0e06-44d9-a20c-c79c7e3fde14"
        },
        {
-        "id": "reading_01_word_009",
+        "id": "supp_vocab_009",
         "hanzi": "污染",
         "pinyin": "wūrǎn",
         "meaning_vi": "ô nhiễm",
-        "vocab_ref": ""
+        "uuid": "9ef82391-8100-4027-8771-ae7249b00d42"
        },
        {
-        "id": "reading_01_word_010",
+        "id": "supp_vocab_010",
         "hanzi": "凄惨",
         "pinyin": "qīcǎn",
         "meaning_vi": "thê thảm",
-        "vocab_ref": ""
+        "uuid": "ee12a68f-155b-4b7a-9c3b-d330aead8c7c"
        },
        {
-        "id": "reading_01_word_011",
+        "id": "supp_vocab_011",
         "hanzi": "散",
         "pinyin": "sàn",
-        "meaning_vi": "tan, tách ra",
-        "vocab_ref": ""
+        "meaning_vi": "tan; tản ra",
+        "uuid": "fe33bf57-5d5d-4aac-abd0-5fe82cfa00d8"
        },
        {
-        "id": "reading_01_word_012",
+        "id": "supp_vocab_012",
         "hanzi": "二流子",
         "pinyin": "èrliúzi",
         "meaning_vi": "kẻ lêu lổng",
-        "vocab_ref": ""
+        "uuid": "8b05fa6d-f818-4d7e-8a8d-a41bda9e094e"
        },
        {
-        "id": "reading_01_word_013",
+        "id": "supp_vocab_013",
         "hanzi": "二百五",
         "pinyin": "èrbǎiwǔ",
         "meaning_vi": "đồ ngốc",
-        "vocab_ref": ""
+        "uuid": "708ba084-d1f3-4db7-a4af-a5a7f02c63eb"
        },
        {
-        "id": "reading_01_word_014",
+        "id": "supp_vocab_014",
         "hanzi": "低人一等",
-        "pinyin": "dī rén yī děng",
+        "pinyin": "dī rén yì děng",
         "meaning_vi": "thấp kém hơn người khác",
-        "vocab_ref": ""
+        "uuid": "5f8fe9db-be54-46f6-a700-10749010a860"
        },
        {
-        "id": "reading_01_word_015",
+        "id": "supp_vocab_015",
         "hanzi": "糊涂",
         "pinyin": "hútu",
-        "meaning_vi": "hồ đồ, ngu ngơ",
-        "vocab_ref": ""
+        "meaning_vi": "hồ đồ",
+        "uuid": "c07929b8-acc8-4b29-be6a-6dd7c7842433"
        },
        {
-        "id": "reading_01_word_016",
+        "id": "supp_vocab_016",
         "hanzi": "一团糟",
         "pinyin": "yìtuánzāo",
-        "meaning_vi": "một mớ hỗn độn",
-        "vocab_ref": ""
+        "meaning_vi": "rối tung",
+        "uuid": "c5a1013d-13e5-4465-9909-5004b178df45"
        },
        {
-        "id": "reading_01_word_017",
+        "id": "supp_vocab_017",
         "hanzi": "一场空",
-        "pinyin": "yìchángkōng",
-        "meaning_vi": "công cốc, thành vô ích",
-        "vocab_ref": ""
+        "pinyin": "yìchǎngkōng",
+        "meaning_vi": "công cốc",
+        "uuid": "f990e12e-d7e5-44ba-9bd9-9b7be5bf42d5"
        },
        {
-        "id": "reading_01_word_018",
+        "id": "supp_vocab_018",
         "hanzi": "贬义词",
         "pinyin": "biǎnyìcí",
         "meaning_vi": "từ mang nghĩa xấu",
-        "vocab_ref": ""
+        "uuid": "fa1df83c-0319-4aec-9bfa-df628df0ff81"
        },
        {
-        "id": "reading_01_word_019",
+        "id": "supp_vocab_019",
         "hanzi": "夭折",
         "pinyin": "yāozhé",
         "meaning_vi": "chết yểu",
-        "vocab_ref": ""
+        "uuid": "2b64dbbf-1787-454a-b95d-13587cab3b98"
        },
        {
-        "id": "reading_01_word_020",
+        "id": "supp_vocab_020",
         "hanzi": "灵堂",
         "pinyin": "língtáng",
         "meaning_vi": "linh đường",
-        "vocab_ref": ""
+        "uuid": "edba07e1-6fdf-46a1-a80c-d5361629dead"
        },
        {
-        "id": "reading_01_word_021",
+        "id": "supp_vocab_021",
         "hanzi": "灵车",
         "pinyin": "língchē",
         "meaning_vi": "xe tang",
-        "vocab_ref": ""
+        "uuid": "26c0bdd8-9096-430f-b94d-4c5323830ab5"
        },
        {
-        "id": "reading_01_word_022",
+        "id": "supp_vocab_022",
         "hanzi": "牙",
         "pinyin": "yá",
         "meaning_vi": "răng",
-        "vocab_ref": ""
+        "uuid": "39562088-cd0e-4c51-8d38-ac07cfafad69"
        },
        {
-        "id": "reading_01_word_023",
+        "id": "supp_vocab_023",
         "hanzi": "揉",
         "pinyin": "róu",
-        "meaning_vi": "vò, xoa, nhàu lại",
-        "vocab_ref": ""
+        "meaning_vi": "vò; xoa; vo lại",
+        "uuid": "3ee0c46b-45c3-49bf-badb-d227b8056735"
        },
        {
-        "id": "reading_01_word_024",
+        "id": "supp_vocab_024",
         "hanzi": "抓",
         "pinyin": "zhuā",
-        "meaning_vi": "bắt, chộp",
-        "vocab_ref": ""
+        "meaning_vi": "bắt; chộp; bốc lấy",
+        "uuid": "2e3fc96b-9dea-41e0-9e77-47f21021c14c"
        },
        {
-        "id": "reading_01_word_025",
+        "id": "supp_vocab_025",
         "hanzi": "窗口",
         "pinyin": "chuāngkǒu",
-        "meaning_vi": "cửa sổ, quầy giao dịch",
-        "vocab_ref": ""
+        "meaning_vi": "cửa sổ; ô cửa giao dịch",
+        "uuid": "ee41dc2e-60d1-452b-bff4-f140bf42417a"
        }
       ],
-      "paragraphs": [
-       {
-        "id": "reading_01_p01",
-        "order": 1,
-        "zh": "看到很多朋友买了汽车，李四也买了一辆。去办理牌照的时候，工作人员向他说明，如果多交100块钱，车牌的最后一个号码可以随便挑。李四就多交了100块钱。",
-        "pinyin": "",
-        "vi": "",
-        "grammar_refs": [],
-        "vocab_refs": []
-       },
-       {
-        "id": "reading_01_p02",
-        "order": 2,
-        "zh": "工作人员说：“从0到3，从5到9，您选哪个数字呀？”",
-        "pinyin": "",
-        "vi": "",
-        "grammar_refs": [],
-        "vocab_refs": []
-       },
-       {
-        "id": "reading_01_p03",
-        "order": 3,
-        "zh": "李四说：“我自己决定不了，让我跟妻子商量商量，一会儿我再来告诉您。”",
-        "pinyin": "",
-        "vi": "",
-        "grammar_refs": [],
-        "vocab_refs": []
-       },
-       {
-        "id": "reading_01_p04",
-        "order": 4,
-        "zh": "妻子和李四从8、6、9、5、7、3、2、1、0一直讨论到4，每个数字都被他们解释成不吉利。最后他们决定把0到9写成纸团，随便抓一个。",
-        "pinyin": "",
-        "vi": "",
-        "grammar_refs": [],
-        "vocab_refs": []
-       },
-       {
-        "id": "reading_01_p05",
-        "order": 5,
-        "zh": "妻子打开纸团以后伤心地哭了。李四拿着纸团去办牌照，工作人员办完手续后又把100块钱还给了李四，因为他选的这个数不加钱。",
-        "pinyin": "",
-        "vi": "",
-        "grammar_refs": [],
-        "vocab_refs": []
-       }
-      ],
-      "check_needed": true
-     },
-     {
-      "id": "reading_cloze_01",
-      "type": "reading_cloze",
-      "order": 2,
-      "title": "综合填空：哪个数字最吉利",
-      "title_vi": "Điền tổng hợp: Con số nào may mắn nhất",
-      "instruction": {
-       "zh": "综合填空。",
-       "vi": "Điền từ thích hợp vào chỗ trống trong bài đọc."
-      },
-      "word_bank": [],
       "passage": {
-       "id": "cloze_passage_01",
-       "segments": [
+       "id": "reading_01",
+       "title": "哪个数字最吉利",
+       "title_vi": "Con số nào may mắn nhất",
+       "paragraphs": [
         {
-         "id": "seg_001",
-         "type": "text",
-         "text": "看到很多朋友买了汽车，李四也买了一辆。去办理牌照的时候，工作人员"
+         "id": "reading_01_p01",
+         "order": 1,
+         "zh": "看到很多朋友买了汽车，李四也买了一辆。去办理牌照的时候，工作人员①________他，说，如果多交100块钱，车牌的最后一个号码可以随便挑。李四就多交了100块钱。",
+         "pinyin": "",
+         "vi": "",
+         "source_origin": "textbook",
+         "check_needed": false,
+         "uuid": "cfa02e9c-79ff-49a1-9384-1b68e5a9aa1d"
         },
         {
-         "id": "seg_002",
-         "type": "blank",
-         "blank_id": "blank_01"
+         "id": "reading_01_p02",
+         "order": 2,
+         "zh": "工作人员说：“从0到3，从5到9，您选哪个数字呀？”",
+         "pinyin": "",
+         "vi": "",
+         "source_origin": "textbook",
+         "check_needed": false,
+         "uuid": "42ea4d1d-8778-4537-8216-514da86297c4"
         },
         {
-         "id": "seg_003",
-         "type": "text",
-         "text": "他说明，如果多交100块钱，车牌的最后一个号码可以随便挑。李四就多交了100块钱。\n\n工作人员说：“从0到3，从5到9，您选哪个数字呀？”\n\n李四说：“我自己决定不"
+         "id": "reading_01_p03",
+         "order": 3,
+         "zh": "李四说：“我自己决定不②________，让我跟妻子商量商量，一会儿我再来告诉您。”",
+         "pinyin": "",
+         "vi": "",
+         "source_origin": "textbook",
+         "check_needed": false,
+         "uuid": "b3bd372c-d556-4f51-a346-2245b9e2f925"
         },
         {
-         "id": "seg_004",
-         "type": "blank",
-         "blank_id": "blank_02"
+         "id": "reading_01_p04",
+         "order": 4,
+         "zh": "工作人员笑着说：“您快点儿啊。”",
+         "pinyin": "",
+         "vi": "",
+         "source_origin": "textbook",
+         "check_needed": false,
+         "uuid": "a40db2b2-f409-4246-a293-4ee2ff51126c"
         },
         {
-         "id": "seg_005",
-         "type": "text",
-         "text": "，让我跟妻子商量商量，一会儿我再来告诉您。”\n\n工作人员笑着说：“您快点儿啊。”\n\n李四说一会儿就来。\n\n李四回到家，对妻子讲了挑号码的事。妻子说：“就挑8嘛，还跟我商量什么？这几年只要带8的东西都卖得快，这个数字最吉利。”\n\n李四说：“8跟伤疤的‘疤’同音，不太好。我看6比较合适，六六大顺，你看行不行？”\n\n妻子说：“6和‘流’谐音，流氓、流浪，多难听。我看9这个数不错，你说呢？”\n\n李四说：“9好什么？九泉，人一死就说去了九泉。9又和‘救’谐音，救济、救命，都是不吉利的词。还是5吧，你看5怎么样？”\n\n妻子说：“5更不好了！要是倒数第二位是2、7、8的话，你念念，不就成了‘儿无、妻无、爸无’了吗？另外，5与污染的‘污’谐音，不干净。不能要5，还是7这个数合适。”\n\n李四说：“7和‘凄惨’的‘凄’同音，也不好。”\n\n妻子说：“选3行不行？”\n\n李四摇摇"
+         "id": "reading_01_p05",
+         "order": 5,
+         "zh": "李四说一会儿就来。",
+         "pinyin": "",
+         "vi": "",
+         "source_origin": "textbook",
+         "check_needed": false,
+         "uuid": "bdb6a047-ecf2-47dd-8f59-61e29a156828"
         },
         {
-         "id": "seg_006",
-         "type": "blank",
-         "blank_id": "blank_03"
+         "id": "reading_01_p06",
+         "order": 6,
+         "zh": "李四回到家，对妻子讲了挑号码的事。妻子说：“就挑8嘛，还跟我商量什么？这几年只要带8的东西都卖得快，这个数字最吉利。”",
+         "pinyin": "",
+         "vi": "",
+         "source_origin": "textbook",
+         "check_needed": false,
+         "uuid": "49997f79-7ba9-4f1b-ad29-ca27a1947bd6"
         },
         {
-         "id": "seg_007",
-         "type": "text",
-         "text": "说：“3就是散，就是离婚，多不吉利呀！你想想2可以不可以？”\n\n妻子分析说：“二流子、二百五，都和2有关。2和‘儿’谐音，当儿子有低人一等的感觉。不行，不行。”\n\n李四说：“那就选1吧。”\n\n妻子说：“你怎么糊涂了？1是什么好数字呀？一团糟，一场空，1的贬义词太多。”\n\n李四说：“没关系，在车牌号中人们不说一，说么（yāo）。”\n\n妻子说：“那就更不好了，么和夭同音，夭折不就是死了吗？这个更不行了。”\n\n李四说：“那就选0吧，0怎么看都是0，永远不会有错。”\n\n妻子说：“0和灵同音，灵堂、灵车，都和死人"
+         "id": "reading_01_p07",
+         "order": 7,
+         "zh": "李四说：“8跟伤疤的‘疤’同音，不太好。我看6比较合适，六六大顺，你看行不行？”",
+         "pinyin": "",
+         "vi": "",
+         "source_origin": "textbook",
+         "check_needed": false,
+         "uuid": "97e791f2-9d9c-4421-ab35-509cb6f0d8e2"
         },
         {
-         "id": "seg_008",
-         "type": "blank",
-         "blank_id": "blank_04"
+         "id": "reading_01_p08",
+         "order": 8,
+         "zh": "妻子说：“6和‘流’谐音，流氓、流浪，多难听。我看9这个数不错，你说呢？”",
+         "pinyin": "",
+         "vi": "",
+         "source_origin": "textbook",
+         "check_needed": false,
+         "uuid": "bb8452c6-2839-482a-bb4a-abad7eebf02e"
         },
         {
-         "id": "seg_009",
-         "type": "text",
-         "text": "关系，最不吉利了。”\n\n李四说：“那就只有4了，我认为这个数字不坏，四季发财，我李四从小到大，平安无事地长这么大，就是和‘4’有关系。”\n\n妻子说：“别说了，4就是死，谁不知道这是个倒霉的数字？我们要选这个数，人家会笑掉牙的。”\n\n李四说：“0到9我们都研究过了，都不行，你说怎么办？”\n\n妻子说：“从0到9，每张纸上各写一个数字，揉成纸团，抓到哪个是"
+         "id": "reading_01_p09",
+         "order": 9,
+         "zh": "李四说：“9好什么？九泉，人一死就说去了九泉。9又和‘救’谐音，救济、救命，都是不吉利的词。还是5吧，你看5怎么样？”",
+         "pinyin": "",
+         "vi": "",
+         "source_origin": "textbook",
+         "check_needed": false,
+         "uuid": "64f4167d-9725-4880-ae92-d26bb30700f1"
         },
         {
-         "id": "seg_010",
-         "type": "blank",
-         "blank_id": "blank_05"
+         "id": "reading_01_p10",
+         "order": 10,
+         "zh": "妻子说：“5更不好了！要是倒数第二位是2、7、8的话，你念念，不就成了‘儿无、妻无、爸无’了吗？另外，5与污染的‘污’谐音，不干净。不能要5，还是7这个数合适。”",
+         "pinyin": "",
+         "vi": "",
+         "source_origin": "textbook",
+         "check_needed": false,
+         "uuid": "648997f1-3304-4cc1-b98d-26a01dfb64ae"
         },
         {
-         "id": "seg_011",
-         "type": "text",
-         "text": "吧。”\n\n李四说：“这个办法不错。”妻子写好10个数字，"
+         "id": "reading_01_p11",
+         "order": 11,
+         "zh": "李四说：“7和‘凄惨’的‘凄’同音，也不好。”",
+         "pinyin": "",
+         "vi": "",
+         "source_origin": "textbook",
+         "check_needed": false,
+         "uuid": "8bdb2ebb-f855-4fda-aec4-691b3cb85b51"
         },
         {
-         "id": "seg_012",
-         "type": "blank",
-         "blank_id": "blank_06"
+         "id": "reading_01_p12",
+         "order": 12,
+         "zh": "妻子说：“选3行不行？”",
+         "pinyin": "",
+         "vi": "",
+         "source_origin": "textbook",
+         "check_needed": false,
+         "uuid": "1f7d870a-a08b-4422-9e7c-9879029e9724"
         },
         {
-         "id": "seg_013",
-         "type": "text",
-         "text": "纸团放在一起，随便抓了一个，打开一看……\n\n妻子伤心地哭"
+         "id": "reading_01_p13",
+         "order": 13,
+         "zh": "李四摇摇③________说：“3就是散，就是离婚，多不吉利呀！你想想2可以不可以？”",
+         "pinyin": "",
+         "vi": "",
+         "source_origin": "textbook",
+         "check_needed": false,
+         "uuid": "b1665aa6-a31e-4f44-a44e-c56d39e10b7b"
         },
         {
-         "id": "seg_014",
-         "type": "blank",
-         "blank_id": "blank_07"
+         "id": "reading_01_p14",
+         "order": 14,
+         "zh": "妻子分析说：“二流子、二百五，都和2有关。2和‘儿’谐音，当儿子有低人一等的感觉。不行，不行。”",
+         "pinyin": "",
+         "vi": "",
+         "source_origin": "textbook",
+         "check_needed": false,
+         "uuid": "85955a38-ed31-400f-a3a1-8436fe64a3cc"
         },
         {
-         "id": "seg_015",
-         "type": "text",
-         "text": "。\n\n李四又来到办牌照的窗口前，把纸上的数字给工作人员看了一下儿，说：“就要这个数。”\n\n工作人员办完手续后又把100块钱还"
+         "id": "reading_01_p15",
+         "order": 15,
+         "zh": "李四说：“那就选1吧。”",
+         "pinyin": "",
+         "vi": "",
+         "source_origin": "textbook",
+         "check_needed": false,
+         "uuid": "497d89e9-b286-4196-8153-3d798b17d612"
         },
         {
-         "id": "seg_016",
-         "type": "blank",
-         "blank_id": "blank_08"
+         "id": "reading_01_p16",
+         "order": 16,
+         "zh": "妻子说：“你怎么糊涂了？1是什么好数字呀？一团糟、一场空，1的贬义词太多。”",
+         "pinyin": "",
+         "vi": "",
+         "source_origin": "textbook",
+         "check_needed": false,
+         "uuid": "b59578cc-1011-496a-b8f1-bc3b0c6331e2"
         },
         {
-         "id": "seg_017",
-         "type": "text",
-         "text": "了李四。\n\n李四问：“这100块钱怎么又还给我了？”\n\n工作人员说：“你选的这个数不加钱。”"
+         "id": "reading_01_p17",
+         "order": 17,
+         "zh": "李四说：“没关系，在车牌号中人们不说一，说幺（yāo）。”",
+         "pinyin": "",
+         "vi": "",
+         "source_origin": "textbook",
+         "check_needed": false,
+         "uuid": "111cd6d2-d059-4307-a6da-5dd2d2144e77"
+        },
+        {
+         "id": "reading_01_p18",
+         "order": 18,
+         "zh": "妻子说：“那就更不好了，‘幺’和‘夭’同音，夭折不就是死了吗？这个更不行了。”",
+         "pinyin": "",
+         "vi": "",
+         "source_origin": "textbook",
+         "check_needed": false,
+         "uuid": "c0e42dcf-e7c2-445d-8bca-7adc1465d163"
+        },
+        {
+         "id": "reading_01_p19",
+         "order": 19,
+         "zh": "李四说：“那就选0吧，0怎么看都是0，永远不会有错。”",
+         "pinyin": "",
+         "vi": "",
+         "source_origin": "textbook",
+         "check_needed": false,
+         "uuid": "8cafac44-eb72-4581-b246-c65fc1f6c098"
+        },
+        {
+         "id": "reading_01_p20",
+         "order": 20,
+         "zh": "妻子说：“0和‘灵’同音，灵堂、灵车，都和死人④________关系，最不吉利了。”",
+         "pinyin": "",
+         "vi": "",
+         "source_origin": "textbook",
+         "check_needed": false,
+         "uuid": "b21ae109-8104-4fab-b2cc-e1c27be21038"
+        },
+        {
+         "id": "reading_01_p21",
+         "order": 21,
+         "zh": "李四说：“那就只有4了，我认为这个数字不坏，四季发财，我李四从小到大，平安无事地长这么大，就是和‘4’有关系。”",
+         "pinyin": "",
+         "vi": "",
+         "source_origin": "textbook",
+         "check_needed": false,
+         "uuid": "102f54b1-296a-42fa-8d2b-84441fb893f2"
+        },
+        {
+         "id": "reading_01_p22",
+         "order": 22,
+         "zh": "妻子说：“别说了，4就是死，谁不知道这是个倒霉的数字？我们要选这个数，人家会笑掉牙的。”",
+         "pinyin": "",
+         "vi": "",
+         "source_origin": "textbook",
+         "check_needed": false,
+         "uuid": "6fdfae9e-6dc2-42a0-88b5-3d46afc3a501"
+        },
+        {
+         "id": "reading_01_p23",
+         "order": 23,
+         "zh": "李四说：“0到9我们都研究过了，都不行，你说怎么办？”",
+         "pinyin": "",
+         "vi": "",
+         "source_origin": "textbook",
+         "check_needed": false,
+         "uuid": "e0f4a68a-c9bf-4181-9d56-e98200ce18af"
+        },
+        {
+         "id": "reading_01_p24",
+         "order": 24,
+         "zh": "妻子说：“从0到9，每张纸上各写一个数字，揉成纸团，抓到哪个是⑤________吧。”",
+         "pinyin": "",
+         "vi": "",
+         "source_origin": "textbook",
+         "check_needed": false,
+         "uuid": "21da1797-6989-4b7d-9f8b-6ff0aab18664"
+        },
+        {
+         "id": "reading_01_p25",
+         "order": 25,
+         "zh": "李四说：“这个办法不错。”妻子写好10个数字，⑥________纸团放在一起，随便抓了一个，打开一看……",
+         "pinyin": "",
+         "vi": "",
+         "source_origin": "textbook",
+         "check_needed": false,
+         "uuid": "4d805550-b9a5-4087-bc72-fba9dcd38f50"
+        },
+        {
+         "id": "reading_01_p26",
+         "order": 26,
+         "zh": "妻子伤心地哭⑦________。",
+         "pinyin": "",
+         "vi": "",
+         "source_origin": "textbook",
+         "check_needed": false,
+         "uuid": "45fcc244-1615-4a1f-a105-f3395433e13e"
+        },
+        {
+         "id": "reading_01_p27",
+         "order": 27,
+         "zh": "李四又来到办牌照的窗口，把纸上的数字给工作人员看了一下儿，说：“就要这个数。”",
+         "pinyin": "",
+         "vi": "",
+         "source_origin": "textbook",
+         "check_needed": false,
+         "uuid": "e3b8fa47-8d3f-46fc-b514-02baa61d9e79"
+        },
+        {
+         "id": "reading_01_p28",
+         "order": 28,
+         "zh": "工作人员办完手续后又把100块钱还⑧________了李四。",
+         "pinyin": "",
+         "vi": "",
+         "source_origin": "textbook",
+         "check_needed": false,
+         "uuid": "0feb9d80-92a3-48c9-a3a2-98cddaa49190"
+        },
+        {
+         "id": "reading_01_p29",
+         "order": 29,
+         "zh": "李四问：“这100块钱怎么又还给我了？”",
+         "pinyin": "",
+         "vi": "",
+         "source_origin": "textbook",
+         "check_needed": false,
+         "uuid": "64fe9962-cd10-4877-9296-e4610e2f7496"
+        },
+        {
+         "id": "reading_01_p30",
+         "order": 30,
+         "zh": "工作人员说：“你选的这个数不加钱。”",
+         "pinyin": "",
+         "vi": "",
+         "source_origin": "textbook",
+         "check_needed": false,
+         "uuid": "5442c911-f13d-4d6a-9a58-9153ea94f127"
         }
-       ]
+       ],
+       "uuid": "cf119064-757a-4f62-8ff8-bccefd48635f"
       },
-      "answers": [
+      "blanks": [
        {
-        "blank_id": "blank_01",
-        "answer": "向",
-        "acceptable_answers": ["向"],
-        "explanation_vi": "向他说明 = giải thích với anh ấy.",
-        "grammar_refs": []
+        "id": "blank_01",
+        "index": 1,
+        "answer": "对 / 跟",
+        "answer_verified": false,
+        "check_needed": true,
+        "uuid": "0ef710e4-8922-425b-bccf-f5a1d768e268"
        },
        {
-        "blank_id": "blank_02",
+        "id": "blank_02",
+        "index": 2,
         "answer": "了",
-        "acceptable_answers": ["了"],
-        "explanation_vi": "决定不了 = không quyết định được.",
-        "grammar_refs": []
+        "answer_verified": false,
+        "check_needed": true,
+        "uuid": "75a17265-b00b-4778-b518-c27b42a09069"
        },
        {
-        "blank_id": "blank_03",
+        "id": "blank_03",
+        "index": 3,
         "answer": "头",
-        "acceptable_answers": ["头"],
-        "explanation_vi": "摇摇头 = lắc đầu.",
-        "grammar_refs": []
+        "answer_verified": false,
+        "check_needed": true,
+        "uuid": "a516d42e-90eb-478e-b11b-803b88170b8f"
        },
        {
-        "blank_id": "blank_04",
+        "id": "blank_04",
+        "index": 4,
         "answer": "有",
-        "acceptable_answers": ["有"],
-        "explanation_vi": "有关系 = có liên quan.",
-        "grammar_refs": []
+        "answer_verified": false,
+        "check_needed": true,
+        "uuid": "1bf43974-457d-4f03-9f6f-412b210d135e"
        },
        {
-        "blank_id": "blank_05",
-        "answer": "算",
-        "acceptable_answers": ["算"],
-        "explanation_vi": "抓到哪个是哪个吧/算吧; đáp án này cần đối chiếu lại sách.",
-        "grammar_refs": []
+        "id": "blank_05",
+        "index": 5,
+        "answer": "哪个",
+        "answer_verified": false,
+        "check_needed": true,
+        "uuid": "178011ab-d1d0-44b5-be31-ea9943ef7328"
        },
        {
-        "blank_id": "blank_06",
+        "id": "blank_06",
+        "index": 6,
         "answer": "把",
-        "acceptable_answers": ["把"],
-        "explanation_vi": "把纸团放在一起 = đặt các cục giấy lại với nhau.",
-        "grammar_refs": []
+        "answer_verified": false,
+        "check_needed": true,
+        "uuid": "e9455a55-8679-47f6-9cef-b204f73afb89"
        },
        {
-        "blank_id": "blank_07",
+        "id": "blank_07",
+        "index": 7,
         "answer": "了",
-        "acceptable_answers": ["了"],
-        "explanation_vi": "哭了 = đã khóc.",
-        "grammar_refs": []
+        "answer_verified": false,
+        "check_needed": true,
+        "uuid": "3c28cd6a-5a40-4fba-b50d-22b37f84c7a4"
        },
        {
-        "blank_id": "blank_08",
+        "id": "blank_08",
+        "index": 8,
         "answer": "给",
-        "acceptable_answers": ["给"],
-        "explanation_vi": "还给了李四 = trả lại cho Lý Tứ.",
-        "grammar_refs": []
+        "answer_verified": false,
+        "check_needed": true,
+        "uuid": "1b4d4449-dff0-4cb0-a777-63d95f339d9b"
        }
       ],
-      "answer_key": [
-       {
-        "blank_id": "blank_01",
-        "answer": "向",
-        "check_needed": true
-       },
-       {
-        "blank_id": "blank_02",
-        "answer": "了",
-        "check_needed": true
-       },
-       {
-        "blank_id": "blank_03",
-        "answer": "头",
-        "check_needed": true
-       },
-       {
-        "blank_id": "blank_04",
-        "answer": "有",
-        "check_needed": true
-       },
-       {
-        "blank_id": "blank_05",
-        "answer": "算",
-        "check_needed": true
-       },
-       {
-        "blank_id": "blank_06",
-        "answer": "把",
-        "check_needed": true
-       },
-       {
-        "blank_id": "blank_07",
-        "answer": "了",
-        "check_needed": true
-       },
-       {
-        "blank_id": "blank_08",
-        "answer": "给",
-        "check_needed": true
-       }
-      ],
-      "rendering": {
-       "renderer": "reading.cloze.v1",
-       "input_mode": "text",
-       "show_word_bank": false,
-       "show_answer_after_submit": true
-      },
-      "check_needed": true
+      "uuid": "549d6da1-715a-43a2-8427-f995ff617dc4"
      }
-    ]
+    ],
+    "uuid": "8006e55d-0a8f-43ce-b056-33fc4660d927"
    },
    {
-    "id": "section_07_character_writing",
-    "type": "character_writing",
+    "id": "section_07_communication",
+    "type": "communication",
     "order": 7,
-    "title": "写汉字",
-    "title_vi": "Viết chữ Hán",
+    "title": "交际会话",
+    "title_vi": "Hội thoại giao tiếp",
+    "source_origin": "textbook",
+    "check_needed": false,
     "items": [
      {
-      "id": "char_001",
+      "id": "communication_01",
+      "type": "communication_dialogue",
+      "order": 1,
+      "title": "敬酒",
+      "title_vi": "Mời rượu",
+      "lines": [
+       {
+        "speaker": "A",
+        "zh": "来，我敬您一杯。",
+        "vi": "Nào, tôi xin kính anh/chị một ly."
+       },
+       {
+        "speaker": "B",
+        "zh": "谢谢！",
+        "vi": "Cảm ơn!"
+       },
+       {
+        "speaker": "A",
+        "zh": "祝您健康快乐！干杯！",
+        "vi": "Chúc anh/chị mạnh khỏe vui vẻ! Cạn ly!"
+       },
+       {
+        "speaker": "B",
+        "zh": "干杯！",
+        "vi": "Cạn ly!"
+       }
+      ],
+      "uuid": "6bf1dad2-4338-4791-bac0-364330e821a2"
+     },
+     {
+      "id": "communication_02",
+      "type": "communication_dialogue",
+      "order": 2,
+      "title": "责备",
+      "title_vi": "Trách móc / trách nhẹ",
+      "lines": [
+       {
+        "speaker": "A",
+        "zh": "你怎么能这样说话？",
+        "vi": "Sao bạn có thể nói như vậy?"
+       },
+       {
+        "speaker": "B",
+        "zh": "对不起，我说错了。",
+        "vi": "Xin lỗi, tôi nói sai rồi."
+       }
+      ],
+      "uuid": "b5a5b701-4008-499c-ac03-4e03edab548b"
+     },
+     {
+      "id": "communication_03",
+      "type": "communication_dialogue",
+      "order": 3,
+      "title": "责备",
+      "title_vi": "Trách móc / trách nhẹ",
+      "lines": [
+       {
+        "speaker": "A",
+        "zh": "这件事儿你为什么不告诉我？我们不是好朋友吗？",
+        "vi": "Chuyện này sao bạn không nói với tôi? Chúng ta không phải bạn tốt sao?"
+       },
+       {
+        "speaker": "B",
+        "zh": "我不想让你知道。",
+        "vi": "Tôi không muốn để bạn biết."
+       },
+       {
+        "speaker": "A",
+        "zh": "你不相信我吗？",
+        "vi": "Bạn không tin tôi sao?"
+       },
+       {
+        "speaker": "B",
+        "zh": "不是。",
+        "vi": "Không phải vậy."
+       }
+      ],
+      "uuid": "2576aa2a-5b93-4985-9db3-9df4a750f2d3"
+     }
+    ],
+    "uuid": "15a5d184-3bd5-4225-aa62-6cac0b5dbe9f"
+   },
+   {
+    "id": "section_08_character_writing",
+    "type": "character_writing",
+    "order": 8,
+    "title": "写汉字",
+    "title_vi": "Viết chữ Hán",
+    "source_origin": "textbook",
+    "check_needed": false,
+    "items": [
+     {
+      "id": "char_01",
       "type": "character_writing_item",
       "order": 1,
       "hanzi": "吉",
       "pinyin": "jí",
-      "vocab_ref": "vocab_015",
-      "stroke_count": null,
-      "radical": "",
-      "stroke_order_key": "",
-      "practice": {
-       "grid_type": "田字格",
-       "repeat_count": 6
-      }
+      "meaning_vi": "tốt lành; may mắn",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "uuid": "92905b94-03e1-4440-be04-f3891c5434e9"
      },
      {
-      "id": "char_002",
+      "id": "char_02",
       "type": "character_writing_item",
       "order": 2,
       "hanzi": "吹",
       "pinyin": "chuī",
-      "vocab_ref": "vocab_045",
-      "stroke_count": null,
-      "radical": "",
-      "stroke_order_key": "",
-      "practice": {
-       "grid_type": "田字格",
-       "repeat_count": 6
-      }
+      "meaning_vi": "thổi; khoác lác",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "uuid": "7a5665c8-ae3e-462e-ba4f-37a4687ddc98"
+     },
+     {
+      "id": "char_03",
+      "type": "character_writing_item",
+      "order": 3,
+      "hanzi": "申",
+      "pinyin": "shēn",
+      "meaning_vi": "trình bày; xin",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "uuid": "dd95cd94-479c-4669-a72a-044552972181"
+     },
+     {
+      "id": "char_04",
+      "type": "character_writing_item",
+      "order": 4,
+      "hanzi": "伟",
+      "pinyin": "wěi",
+      "meaning_vi": "vĩ đại",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "uuid": "6ac45fad-f688-4b80-b326-d839cedffa9b"
+     },
+     {
+      "id": "char_05",
+      "type": "character_writing_item",
+      "order": 5,
+      "hanzi": "简",
+      "pinyin": "jiǎn",
+      "meaning_vi": "đơn giản",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "uuid": "0a22cd64-4fb4-49e7-9236-7b0201fb33bf"
+     },
+     {
+      "id": "char_06",
+      "type": "character_writing_item",
+      "order": 6,
+      "hanzi": "单",
+      "pinyin": "dān",
+      "meaning_vi": "đơn; đơn lẻ",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "uuid": "35de7692-8325-4773-aead-c104307604ae"
+     },
+     {
+      "id": "char_07",
+      "type": "character_writing_item",
+      "order": 7,
+      "hanzi": "连",
+      "pinyin": "lián",
+      "meaning_vi": "ngay cả; nối liền",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "uuid": "60a85c74-de03-455d-8c6f-b62e105ebcd0"
+     },
+     {
+      "id": "char_08",
+      "type": "character_writing_item",
+      "order": 8,
+      "hanzi": "领",
+      "pinyin": "lǐng",
+      "meaning_vi": "lãnh đạo; nhận",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "uuid": "da16a77f-993d-4e10-83bd-3f24a9572d45"
+     },
+     {
+      "id": "char_09",
+      "type": "character_writing_item",
+      "order": 9,
+      "hanzi": "现",
+      "pinyin": "xiàn",
+      "meaning_vi": "hiện tại; xuất hiện",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "uuid": "386062bf-3c98-4fbc-8988-3dc800b53230"
+     },
+     {
+      "id": "char_10",
+      "type": "character_writing_item",
+      "order": 10,
+      "hanzi": "笨",
+      "pinyin": "bèn",
+      "meaning_vi": "ngốc",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "uuid": "6c31ce69-0444-4294-89f0-91fcf053abc4"
+     },
+     {
+      "id": "char_11",
+      "type": "character_writing_item",
+      "order": 11,
+      "hanzi": "胡",
+      "pinyin": "hú",
+      "meaning_vi": "lung tung; họ Hồ",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "uuid": "69399865-ecbd-450c-b8b0-0a171f2c91e5"
+     },
+     {
+      "id": "char_12",
+      "type": "character_writing_item",
+      "order": 12,
+      "hanzi": "辈",
+      "pinyin": "bèi",
+      "meaning_vi": "thế hệ; bậc người",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "uuid": "e2a2a439-666d-493d-a87f-c5232b55dd75"
+     },
+     {
+      "id": "char_13",
+      "type": "character_writing_item",
+      "order": 13,
+      "hanzi": "哈",
+      "pinyin": "hā",
+      "meaning_vi": "ha; tiếng cười",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "uuid": "df391fac-256f-4195-99ec-188762c26703"
+     },
+     {
+      "id": "char_14",
+      "type": "character_writing_item",
+      "order": 14,
+      "hanzi": "情",
+      "pinyin": "qíng",
+      "meaning_vi": "tình cảm",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "uuid": "62dba49e-c010-4dbc-a474-5ff77f867ece"
+     },
+     {
+      "id": "char_15",
+      "type": "character_writing_item",
+      "order": 15,
+      "hanzi": "谊",
+      "pinyin": "yì",
+      "meaning_vi": "tình nghĩa; tình bạn",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "uuid": "df646bc2-e4f7-4744-90d9-9ac9adb3cc84"
      }
-    ]
+    ],
+    "uuid": "7dfa0e57-f436-4fef-a247-3e94ba08364f"
+   },
+   {
+    "id": "section_09_summary",
+    "type": "summary",
+    "order": 9,
+    "title": "总结",
+    "title_vi": "Tổng kết bài",
+    "source_origin": "generated",
+    "check_needed": false,
+    "summary": {
+     "lesson_parts": [
+      "课文",
+      "生词",
+      "专名",
+      "注释",
+      "语法 / 词语用法",
+      "练习",
+      "综合填空",
+      "交际会话",
+      "写汉字"
+     ],
+     "grammar_points": [
+      {
+       "id": "grammar_01",
+       "title": "反问句",
+       "uuid": "0570f341-6ff0-41ec-9301-06349a063446"
+      },
+      {
+       "id": "grammar_02",
+       "title": "连……也 / 都……",
+       "uuid": "2f8501fb-ca1f-4b30-920e-79b3749405a6"
+      },
+      {
+       "id": "grammar_03",
+       "title": "二次否定",
+       "uuid": "5eb9446f-ef58-4e36-b8fa-124ec45fc8bb"
+      }
+     ],
+     "key_sentence_patterns": [
+      "你怎么连这么简单的问题也不知道？",
+      "中国的事我没有不知道的。",
+      "谁说我不懂？",
+      "你不告诉我，我怎么知道呢？",
+      "来北京快半年了，她连长城也没去过。",
+      "只要有钱就能买好多好东西。",
+      "“九”与“长久”的“久”谐音。",
+      "感情有，茶当酒。"
+     ],
+     "coverage_total": {
+      "text_covered": true,
+      "vocabulary_covered": true,
+      "proper_nouns_covered": true,
+      "notes_covered": true,
+      "grammar_covered": true,
+      "exercises_covered": true,
+      "reading_covered": true,
+      "communication_covered": true,
+      "character_writing_covered": true,
+      "remaining_check_needed": [
+       "Đáp án chính thức của 综合填空.",
+       "Đáp án chính thức của 改错句 / 完成句子 nếu app cần answer key tuyệt đối."
+      ]
+     }
+    },
+    "uuid": "4eca3270-3498-4ccf-98cb-59b6f953e7b8"
    }
   ],
   "summary": {
    "lesson_parts": [
     "课文",
     "生词",
+    "专名",
     "注释",
-    "语法",
+    "语法 / 词语用法",
     "练习",
-    "阅读理解",
+    "综合填空",
+    "交际会话",
     "写汉字"
    ],
    "grammar_points": [
     {
      "id": "grammar_01",
-     "title": "反问句"
+     "title": "反问句",
+     "uuid": "ef80e6c6-f3c0-4bf4-bf2a-6e82d2546b89"
     },
     {
      "id": "grammar_02",
-     "title": "连……也 / 都……"
+     "title": "连……也 / 都……",
+     "uuid": "041ac472-4465-4161-8d32-77bbee246e78"
     },
     {
      "id": "grammar_03",
-     "title": "二次否定 / 双重否定"
+     "title": "二次否定",
+     "uuid": "f68c8ebc-326d-4d60-891a-d6bd23478034"
     }
    ],
-   "main_patterns": [
-    {
-     "pattern": "没 + V + 吗？",
-     "grammar_ref": "grammar_01"
-    },
-    {
-     "pattern": "怎么 / 谁 / 哪儿 + 反问句？",
-     "grammar_ref": "grammar_01"
-    },
-    {
-     "pattern": "连 + X + 也 / 都 + VP",
-     "grammar_ref": "grammar_02"
-    },
-    {
-     "pattern": "没有 + 不 + V",
-     "grammar_ref": "grammar_03"
-    },
-    {
-     "pattern": "不能不 + V",
-     "grammar_ref": "grammar_03"
-    },
-    {
-     "pattern": "只要……就……",
-     "grammar_ref": ""
-    }
-   ],
+   "main_patterns": [],
    "exercise_types": [
-    "phonetics",
-    "substitution",
-    "choose_words_fill_blank",
-    "matching",
-    "complete_dialogue",
-    "answer_with_pattern",
-    "open_ended",
-    "correct_sentence",
-    "communication_dialogue",
-    "reading_text",
-    "reading_cloze"
+    "Ngữ âm",
+    "Thay thế",
+    "Chọn từ điền chỗ trống",
+    "Nối thành câu",
+    "Dùng câu hỏi tu từ hoàn thành câu",
+    "Dùng 连……也/都 trả lời",
+    "Nói theo tình huống bằng câu hỏi tu từ",
+    "Sửa câu sai",
+    "Điền tổng hợp"
    ],
-   "check_needed": true
-  }
+   "check_needed": false
+  },
+  "uuid": "88dd2edd-4189-4412-96dd-e5b23c3c7cfc"
+ },
+ "coverage_report": {
+  "version": "coverage_v1",
+  "coverage_status": "complete_unverified",
+  "expected_exercise_count_from_pdf": 11,
+  "actual_exercise_count_in_json": 11,
+  "all_exercises_covered": true,
+  "all_exercise_content_verified": false,
+  "missing_exercise_indexes": [],
+  "final_verification_allowed": false,
+  "coverage_gates": [
+   {
+    "id": "gate_text",
+    "label": "Text blocks covered",
+    "passed": true,
+    "expected": 2,
+    "actual": 2,
+    "reason": "",
+    "uuid": "858e4fdf-5422-4939-8207-5fa31de139df"
+   },
+   {
+    "id": "gate_vocab",
+    "label": "Main vocabulary covered",
+    "passed": true,
+    "expected": 45,
+    "actual": 45,
+    "reason": "",
+    "uuid": "e770f1ba-c931-4faf-ae3b-77b9c14b11f7"
+   },
+   {
+    "id": "gate_exercises",
+    "label": "Exercise sections covered",
+    "passed": true,
+    "expected": 11,
+    "actual": 11,
+    "reason": "",
+    "uuid": "b1e2a3e9-2b86-4fb5-b405-d76efc31ee20"
+   },
+   {
+    "id": "gate_answer_key",
+    "label": "Official answer key verified",
+    "passed": false,
+    "expected": "official answer key",
+    "actual": "answers inferred from context only for selected items",
+    "reason": "Chưa đối chiếu sách đáp án chính thức.",
+    "uuid": "baff39d6-a34f-4b98-8110-4f0450fcbc49"
+   }
+  ],
+  "expected_exercises_from_pdf": [
+   {
+    "order": 1,
+    "title_cn": "语音",
+    "title_vi": "Ngữ âm",
+    "canonical_type": "phonetics",
+    "canonical_variant": "pronunciation_tone_minimal_pairs",
+    "json_item_id": "exercise_01",
+    "page_start": 222,
+    "page_end": 222,
+    "extracted": true,
+    "content_verified": true,
+    "answer_verified": false,
+    "check_needed": false
+   },
+   {
+    "order": 2,
+    "title_cn": "替换",
+    "title_vi": "Thay thế",
+    "canonical_type": "substitution_drill",
+    "canonical_variant": "substitution_or_transform_drill",
+    "json_item_id": "exercise_02",
+    "page_start": 223,
+    "page_end": 224,
+    "extracted": true,
+    "content_verified": true,
+    "answer_verified": false,
+    "check_needed": false
+   },
+   {
+    "order": 3,
+    "title_cn": "选词填空",
+    "title_vi": "Chọn từ điền chỗ trống",
+    "canonical_type": "choose_words_fill_blank",
+    "canonical_variant": "word_bank_fill_blank",
+    "json_item_id": "exercise_03",
+    "page_start": 224,
+    "page_end": 224,
+    "extracted": true,
+    "content_verified": true,
+    "answer_verified": false,
+    "check_needed": false
+   },
+   {
+    "order": 4,
+    "title_cn": "画线组句",
+    "title_vi": "Nối thành câu",
+    "canonical_type": "matching",
+    "canonical_variant": "matching",
+    "json_item_id": "exercise_04",
+    "page_start": 224,
+    "page_end": 225,
+    "extracted": true,
+    "content_verified": true,
+    "answer_verified": false,
+    "check_needed": false
+   },
+   {
+    "order": 5,
+    "title_cn": "用反问句完成句子",
+    "title_vi": "Dùng câu hỏi tu từ hoàn thành câu",
+    "canonical_type": "complete_sentence",
+    "canonical_variant": "complete_sentence_with_given_words",
+    "json_item_id": "exercise_05",
+    "page_start": 225,
+    "page_end": 225,
+    "extracted": true,
+    "content_verified": true,
+    "answer_verified": false,
+    "check_needed": false
+   },
+   {
+    "order": 6,
+    "title_cn": "用“连……也 / 都……”回答问题",
+    "title_vi": "Dùng 连……也/都 trả lời câu hỏi",
+    "canonical_type": "answer_questions",
+    "canonical_variant": "custom_textbook_task",
+    "json_item_id": "exercise_06",
+    "page_start": 225,
+    "page_end": 226,
+    "extracted": true,
+    "content_verified": true,
+    "answer_verified": false,
+    "check_needed": false
+   },
+   {
+    "order": 7,
+    "title_cn": "下列情景怎么说（用反问句）",
+    "title_vi": "Nói theo tình huống bằng câu hỏi tu từ",
+    "canonical_type": "custom",
+    "canonical_variant": "custom_textbook_task",
+    "json_item_id": "exercise_07",
+    "page_start": 226,
+    "page_end": 226,
+    "extracted": true,
+    "content_verified": true,
+    "answer_verified": false,
+    "check_needed": false
+   },
+   {
+    "order": 8,
+    "title_cn": "改错句",
+    "title_vi": "Sửa câu sai",
+    "canonical_type": "correct_sentence",
+    "canonical_variant": "error_correction",
+    "json_item_id": "exercise_08",
+    "page_start": 226,
+    "page_end": 226,
+    "extracted": true,
+    "content_verified": true,
+    "answer_verified": false,
+    "check_needed": false
+   },
+   {
+    "order": 9,
+    "title_cn": "综合填空",
+    "title_vi": "Điền tổng hợp",
+    "canonical_type": "reading_fill_blank",
+    "canonical_variant": "reading_cloze",
+    "json_item_id": "exercise_09",
+    "page_start": 226,
+    "page_end": 227,
+    "extracted": true,
+    "content_verified": true,
+    "answer_verified": false,
+    "check_needed": true
+   },
+   {
+    "order": 10,
+    "title_cn": "交际会话",
+    "title_vi": "Hội thoại giao tiếp",
+    "canonical_type": "communication_dialogue",
+    "canonical_variant": "role_play",
+    "json_item_id": "communication_01",
+    "page_start": 227,
+    "page_end": 227,
+    "extracted": true,
+    "content_verified": true,
+    "answer_verified": false,
+    "check_needed": false
+   },
+   {
+    "order": 11,
+    "title_cn": "写汉字",
+    "title_vi": "Viết chữ Hán",
+    "canonical_type": "character_writing",
+    "canonical_variant": "character_copying",
+    "json_item_id": "character_writing_01",
+    "page_start": 232,
+    "page_end": 232,
+    "extracted": true,
+    "content_verified": true,
+    "answer_verified": false,
+    "check_needed": false
+   }
+  ]
  }
 }

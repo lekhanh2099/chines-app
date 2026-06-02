@@ -12,6 +12,8 @@ import type {
  HanziHomeCatalogCourse,
  HanziHomeCourseBook,
 } from "@/features/hanzihome/types";
+import Select from "@/components/ui/select/index";
+import { IOption } from "@/types/option";
 
 type CourseStats = {
  books: HanziHomeCourseBook[];
@@ -121,6 +123,14 @@ function CourseCard({
      )
    : stats.grammarCount;
 
+ const courseLessonOptions: IOption[] = courseLessons.map((lesson) => ({
+  value: lesson.id,
+  label: `Bài ${lesson.lessonNumber}: ${lesson.titleZh || lesson.title}`,
+ }));
+ const selectedOption =
+  courseLessonOptions.find((option) => option.value === effectiveLessonId) ||
+  null;
+
  return (
   <Card
    padding="none"
@@ -166,17 +176,15 @@ function CourseCard({
         <span className="text-xs font-black uppercase tracking-wide text-text-muted">
          Bài sẽ mở
         </span>
-        <select
-         value={effectiveLessonId}
-         onChange={(event) => setSelectedLessonId(event.target.value)}
-         className="h-10 rounded-xl border border-border-default bg-bg-input px-3 text-sm font-bold text-text-primary outline-none"
-        >
-         {courseLessons.map((lesson) => (
-          <option key={lesson.id} value={lesson.id}>
-           Bài {lesson.lessonNumber}: {lesson.titleZh || lesson.title}
-          </option>
-         ))}
-        </select>
+
+        <Select
+         options={courseLessonOptions}
+         selectValue={selectedOption}
+         triggerPlaceholder="Chọn course"
+         onChange={(option: IOption | null) => {
+          if (option?.value) setSelectedLessonId(String(option.value));
+         }}
+        />
        </label>
       )}
      </div>

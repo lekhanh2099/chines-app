@@ -19,7 +19,7 @@ export const hanzihomeCourses: HanziHomeCourse[] = [
    id: HANYU_Q3_COURSE_ID,
    slug: "giao-trinh-han-ngu-quyen-3",
    title: "Giáo trình Hán ngữ Quyển 3",
-   subtitle: "Dữ liệu tĩnh Quyển 3 Thượng",
+   subtitle: "Dữ liệu tĩnh Quyển 3 Thượng và Hạ",
    type: "hanyu",
    order: 2,
   },
@@ -46,6 +46,13 @@ export const hanzihomeCourseBooks: HanziHomeCourseBook[] = [
     title: "Giáo trình Hán ngữ 3 Thượng",
     shortTitle: "Quyển 3 Thượng",
     order: 1,
+  },
+  {
+    id: "hanyu-q3-xia",
+    courseId: HANYU_Q3_COURSE_ID,
+    title: "Giáo trình Hán ngữ 3 Hạ",
+    shortTitle: "Quyển 3 Hạ",
+    order: 2,
   },
 ];
 

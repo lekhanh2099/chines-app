@@ -11,13 +11,21 @@
           1,
           12
         ]
+      },
+      {
+        "id": "hanyu-q3-xia",
+        "title": "Giáo trình Hán ngữ 3 Hạ",
+        "lessonRange": [
+          13,
+          19
+        ]
       }
     ]
   },
   "counts": {
-    "lessons": 6,
-    "vocab": 340,
-    "lessonDocuments": 6
+    "lessons": 19,
+    "vocab": 342,
+    "lessonDocuments": 19
   },
   "lessons": [
     {
@@ -25,7 +33,7 @@
       "id": "hanyu_3_1_lesson_01_deep_vocab",
       "titleZh": "离家的时候",
       "titleVi": "Lúc rời khỏi nhà",
-      "vocabCount": 74,
+      "vocabCount": 56,
       "hasLessonDocument": true
     },
     {
@@ -33,7 +41,7 @@
       "id": "hanyu_3_1_lesson_02_deep_vocab",
       "titleZh": "一封信",
       "titleVi": "Một bức thư",
-      "vocabCount": 66,
+      "vocabCount": 52,
       "hasLessonDocument": true
     },
     {
@@ -41,7 +49,7 @@
       "id": "hanyu_3_1_lesson_03_deep_vocab",
       "titleZh": "北京的四季",
       "titleVi": "Bốn mùa ở Bắc Kinh",
-      "vocabCount": 65,
+      "vocabCount": 55,
       "hasLessonDocument": true
     },
     {
@@ -56,15 +64,119 @@
       "lessonNumber": 5,
       "id": "hanyu_3_1_lesson_05_deep_vocab",
       "titleZh": "回头再说",
-      "titleVi": "Quay đầu lại nói sau / Để sau nói tiếp",
+      "titleVi": "Để sau rồi nói / Để sau tính tiếp",
       "vocabCount": 66,
       "hasLessonDocument": true
     },
     {
       "lessonNumber": 6,
-      "id": "hanyu_3_1_lesson_06",
+      "id": "hanyu_3_1_lesson_06_deep_vocab",
       "titleZh": "吃葡萄",
       "titleVi": "Ăn nho",
+      "vocabCount": 44,
+      "hasLessonDocument": true
+    },
+    {
+      "lessonNumber": 7,
+      "id": "hanyu_3_1_lesson_07_chengyu_gushi",
+      "titleZh": "成语故事",
+      "titleVi": "Câu chuyện thành ngữ",
+      "vocabCount": 0,
+      "hasLessonDocument": true
+    },
+    {
+      "lessonNumber": 8,
+      "id": "hanyu_3_1_lesson_08_love_story",
+      "titleZh": "恋爱故事",
+      "titleVi": "Chuyện tình yêu",
+      "vocabCount": 0,
+      "hasLessonDocument": true
+    },
+    {
+      "lessonNumber": 9,
+      "id": "hanyu_3_1_lesson_09_xingfu_de_ganjue",
+      "titleZh": "幸福的感觉",
+      "titleVi": "Cảm giác hạnh phúc",
+      "vocabCount": 0,
+      "hasLessonDocument": true
+    },
+    {
+      "lessonNumber": 10,
+      "id": "hanyu_3_1_lesson_10_tigao_ziji",
+      "titleZh": "提高自己",
+      "titleVi": "Nâng cao bản thân",
+      "vocabCount": 0,
+      "hasLessonDocument": true
+    },
+    {
+      "lessonNumber": 11,
+      "id": "hanyu_3_1_lesson_11",
+      "titleZh": "我看见了飞碟",
+      "titleVi": "Tôi nhìn thấy đĩa bay",
+      "vocabCount": 0,
+      "hasLessonDocument": true
+    },
+    {
+      "lessonNumber": 12,
+      "id": "hanyu_3_1_lesson_12_haoren_nandang",
+      "titleZh": "好人难当",
+      "titleVi": "Làm người tốt khó",
+      "vocabCount": 0,
+      "hasLessonDocument": true
+    },
+    {
+      "lessonNumber": 13,
+      "id": "hanyu_3_1_lesson_13_baixing_de_hua",
+      "titleZh": "百姓的话",
+      "titleVi": "Lời của người bình thường",
+      "vocabCount": 0,
+      "hasLessonDocument": true
+    },
+    {
+      "lessonNumber": 14,
+      "id": "hanyu_3_2_lesson_14_shei_dang_jia",
+      "titleZh": "谁当家",
+      "titleVi": "Ai làm chủ gia đình?",
+      "vocabCount": 0,
+      "hasLessonDocument": true
+    },
+    {
+      "lessonNumber": 15,
+      "id": "hanyu_3_2_lesson_15_shoushang_yihou",
+      "titleZh": "受伤以后",
+      "titleVi": "Sau khi bị thương",
+      "vocabCount": 0,
+      "hasLessonDocument": true
+    },
+    {
+      "lessonNumber": 16,
+      "id": "hanyu_3_2_lesson_16_jinxingren_yudao_mafan",
+      "titleZh": "金星人遇到麻烦",
+      "titleVi": "Người sao Kim gặp rắc rối",
+      "vocabCount": 0,
+      "hasLessonDocument": true
+    },
+    {
+      "lessonNumber": 17,
+      "id": "hanyu_3_2_lesson_17_zai_shi_yi_ci",
+      "titleZh": "再试一次",
+      "titleVi": "Thử lại một lần nữa",
+      "vocabCount": 0,
+      "hasLessonDocument": true
+    },
+    {
+      "lessonNumber": 18,
+      "id": "hanyu_3b_lesson_18_yi_he_dangao",
+      "titleZh": "一盒蛋糕",
+      "titleVi": "Một hộp bánh kem",
+      "vocabCount": 0,
+      "hasLessonDocument": true
+    },
+    {
+      "lessonNumber": 19,
+      "id": "hanyu_3_2_lesson_19",
+      "titleZh": "无声的泪",
+      "titleVi": "Những giọt nước mắt không lời",
       "vocabCount": 0,
       "hasLessonDocument": true
     }

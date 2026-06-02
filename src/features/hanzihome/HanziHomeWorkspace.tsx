@@ -14,19 +14,21 @@ import { RadicalWorkspace } from "@/features/hanzihome/components/RadicalWorkspa
 import { ReviewWorkspace } from "@/features/hanzihome/components/ReviewWorkspace";
 import { VocabWorkspace } from "@/features/hanzihome/components/VocabWorkspace";
 import { useHanziHomeCatalogData } from "@/features/hanzihome/hooks/useHanziHomeCatalogData";
-import { useHanziHomeLessonDetailQuery } from "@/features/hanzihome/hooks/useHanziHomeLessonDetail";
 import { useLearningState } from "@/features/hanzihome/hooks/useLearningState";
 import {
  hanzihomeCourseBooks,
  hanzihomeCourses,
  sortLessonsByCourseBookOrder,
 } from "@/features/hanzihome/courses/course-catalog";
+import {
+ getHanziHomeCourseLessonSummaries,
+ getHanziHomeLessonDetail,
+} from "@/features/hanzihome/static-data";
 import type {
  HanziHomeModule,
  LearningStatus,
  ReviewResult,
 } from "@/features/hanzihome/types";
-import { useHanziHomeCourseLessonsQuery } from "@/features/hanzihome/hooks/useHanziHomeCourseLessons";
 
 type StudyModule = Exclude<HanziHomeModule, "radicals">;
 
@@ -65,10 +67,9 @@ export function HanziHomeWorkspace() {
   (courseCatalog.courses?.[0]?.id ?? hanzihomeCourses[0]?.id) ||
   "";
 
- const courseLessonsQuery = useHanziHomeCourseLessonsQuery(selectedCourseId);
  const courseLessonSummaries = useMemo(
-  () => courseLessonsQuery.data ?? [],
-  [courseLessonsQuery.data],
+  () => getHanziHomeCourseLessonSummaries(selectedCourseId),
+  [selectedCourseId],
  );
 
  const lessons = useMemo(
@@ -111,19 +112,9 @@ export function HanziHomeWorkspace() {
  const activeLessonModule: StudyModule =
   activeModule === "radicals" ? "overview" : activeModule;
 
- const lessonDetailQuery = useHanziHomeLessonDetailQuery(
-  activeModule === "radicals" ? null : lessonId,
- );
- const dbLesson = lessonDetailQuery.data ?? null;
- const lesson = dbLesson;
- const isCourseLessonsLoading = Boolean(
-  selectedCourseId && courseLessonsQuery.fetchStatus === "fetching",
- );
- const isLessonDetailLoading = Boolean(
-  lessonId &&
-   activeModule !== "radicals" &&
-   lessonDetailQuery.fetchStatus === "fetching" &&
-   !dbLesson,
+ const lesson = useMemo(
+  () => (activeModule === "radicals" ? null : getHanziHomeLessonDetail(lessonId)),
+  [activeModule, lessonId],
  );
  const selectedCourse = courseCatalog.courses.find(
   (course) => course.id === selectedCourseId,
@@ -222,32 +213,6 @@ export function HanziHomeWorkspace() {
     );
   }
  })();
-
- if (
-  !lesson &&
-  activeModule !== "radicals" &&
-  (isCourseLessonsLoading || isLessonDetailLoading)
- ) {
-  return (
-   <main className="hanzihome-static-page">
-    <div className="flex w-full max-w-full flex-col gap-2.5">
-     <Card padding="lg" className="rounded-xl">
-      <div className="grid gap-2.5">
-       <p className="text-xs font-black uppercase tracking-wide text-text-muted">
-        {selectedCourse?.title || "HanziHome"}
-       </p>
-       <h1 className="text-2xl font-black text-text-primary">
-        Đang tải bài học...
-       </h1>
-       <p className="text-sm font-semibold text-text-muted">
-        Đang lấy dữ liệu bài học hiện tại.
-       </p>
-      </div>
-     </Card>
-    </div>
-   </main>
-  );
- }
 
  if (!lesson && activeModule !== "radicals") {
   return (

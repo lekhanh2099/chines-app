@@ -140,6 +140,7 @@ export const PartOfSpeechSchema = z.enum([
  "phrase",
  "noun_phrase",
  "verb_phrase",
+ "verb_noun",
  "adjective_phrase",
 
  "idiom",
@@ -376,7 +377,13 @@ export const CollocationSchema = z.object({
 /* Examples                                                                   */
 /* -------------------------------------------------------------------------- */
 
-export const ExampleLevelSchema = z.enum(["basic", "expanded", "complex"]);
+export const ExampleLevelSchema = z.enum([
+ "basic",
+ "core",
+ "intermediate",
+ "expanded",
+ "complex",
+]);
 
 export const VocabularyExampleSchema = z.object({
  id: IdSchema,

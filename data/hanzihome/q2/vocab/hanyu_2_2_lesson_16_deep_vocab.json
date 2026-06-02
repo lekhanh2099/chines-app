@@ -19,12 +19,6 @@
         "notes": []
       },
       {
-        "name": "hanzihome_grammar_clean.json",
-        "type": "manual",
-        "check_needed": false,
-        "notes": []
-      },
-      {
         "name": "vocab.schema.ts",
         "type": "manual",
         "check_needed": false,

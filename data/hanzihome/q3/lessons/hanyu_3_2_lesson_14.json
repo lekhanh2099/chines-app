@@ -1,0 +1,4655 @@
+{
+  "schema_version": "2.3.0",
+  "content_type": "chinese_textbook_lesson",
+  "verification_status": "verified",
+  "source": {
+    "book": "Hanyu Jiaocheng",
+    "volume": "第三册下",
+    "volume_vi": "Quyển 3 Hạ",
+    "lesson_index": 14,
+    "lesson_number_cn": "第十四课",
+    "lesson_title_cn": "谁当家",
+    "lesson_title_pinyin": "Shéi dāng jiā",
+    "lesson_title_vi": "Ai làm chủ gia đình?",
+    "lesson_title_en": "Who is the boss",
+    "source_files": [
+      {
+        "name": "Hanyu Jiaocheng 3-2.pdf",
+        "type": "pdf_scan",
+        "source_origin": "textbook",
+        "check_needed": false,
+        "page_start": 18,
+        "page_end": 35
+      },
+      {
+        "name": "Đã dán markdown (1).md",
+        "type": "workflow_instructions",
+        "source_origin": "uploaded_crosscheck",
+        "check_needed": false
+      },
+      {
+        "name": "hanyuLesson.schema.v2.3.0.full.ts",
+        "type": "schema",
+        "source_origin": "uploaded_crosscheck",
+        "check_needed": false
+      }
+    ],
+    "web_crosscheck": [
+      {
+        "title": "Chinese Course (3rd Edition) 3B Lesson 14 谁当家 Who is the boss",
+        "source_origin": "web_crosscheck",
+        "note": "Used only to cross-check lesson identity and text alignment; PDF scan remains primary source."
+      }
+    ]
+  },
+  "lesson": {
+    "id": "hanyu_3_2_lesson_14_shei_dang_jia",
+    "title": {
+      "zh": "谁当家",
+      "pinyin": "Shéi dāng jiā",
+      "vi": "Ai làm chủ gia đình?",
+      "en": "Who is the boss"
+    },
+    "tags": [
+      "hanyu_3_2",
+      "lesson_14",
+      "coverage_first",
+      "verified_partial_pdf_scan"
+    ],
+    "sections": [
+      {
+        "id": "section_01_text",
+        "type": "text",
+        "order": 1,
+        "title": "课文",
+        "title_vi": "Bài khóa",
+        "source_origin": "textbook",
+        "check_needed": false,
+        "blocks": [
+          {
+            "id": "text_01_shei_dang_jia",
+            "type": "text_narrative",
+            "order": 1,
+            "title": "谁当家",
+            "title_vi": "Ai làm chủ gia đình?",
+            "source_origin": "textbook",
+            "check_needed": false,
+            "lines": [],
+            "paragraphs": [
+              {
+                "id": "text_01_shei_dang_jia_p01",
+                "order": 1,
+                "zh": "一次我问朋友：“你们夫妻俩谁当家？”",
+                "pinyin": "",
+                "vi": "Một lần tôi hỏi bạn: ‘Hai vợ chồng cậu ai làm chủ gia đình?’",
+                "audio_key": "",
+                "vocab_refs": [],
+                "grammar_refs": [],
+                "source_origin": "textbook",
+                "check_needed": false,
+                "uuid": "f45c308c-33e9-41fb-859b-897cc7fdd970"
+              },
+              {
+                "id": "text_01_shei_dang_jia_p02",
+                "order": 2,
+                "zh": "“当然是我当家了，”朋友骄傲地回答，“我们家有一个规定，小事由妻子决定，大事都由我做主。”",
+                "pinyin": "",
+                "vi": "‘Đương nhiên là tôi làm chủ rồi,’ bạn tôi trả lời tự hào, ‘Nhà chúng tôi có một quy định: việc nhỏ do vợ quyết định, việc lớn đều do tôi quyết.’",
+                "audio_key": "",
+                "vocab_refs": [],
+                "grammar_refs": [],
+                "source_origin": "textbook",
+                "check_needed": false,
+                "uuid": "962fc07a-88de-455e-b2d9-cd2aba5e838f"
+              },
+              {
+                "id": "text_01_shei_dang_jia_p03",
+                "order": 3,
+                "zh": "“哪些是小事，哪些算大事呢？”",
+                "pinyin": "",
+                "vi": "‘Việc nào là việc nhỏ, việc nào tính là việc lớn?’",
+                "audio_key": "",
+                "vocab_refs": [],
+                "grammar_refs": [],
+                "source_origin": "textbook",
+                "check_needed": false,
+                "uuid": "3e5234e1-bc52-4a7e-be58-4ddbbff41423"
+              },
+              {
+                "id": "text_01_shei_dang_jia_p04",
+                "order": 4,
+                "zh": "“小事就是家里的经济问题，比如该买什么，该做什么，等等。大事可就多了，比如谁当美国下届总统，中国什么时候能到月球上去，人类怎么搬到火星上去住，等等，这些大事都由我考虑。”",
+                "pinyin": "",
+                "vi": "‘Việc nhỏ là vấn đề kinh tế trong nhà, ví dụ nên mua gì, nên làm gì, vân vân. Việc lớn thì nhiều lắm, ví dụ ai làm tổng thống Mỹ nhiệm kỳ tới, Trung Quốc khi nào có thể lên mặt trăng, loài người làm sao chuyển lên sao Hỏa sống, vân vân; những việc lớn này đều do tôi suy nghĩ.’",
+                "audio_key": "",
+                "vocab_refs": [],
+                "grammar_refs": [],
+                "source_origin": "textbook",
+                "check_needed": false,
+                "uuid": "e13e4138-b9fe-4e4e-9775-0b6a09be9652"
+              }
+            ],
+            "comprehension_questions": [],
+            "uuid": "3ac269a4-b537-4e50-aa65-e492b8613916"
+          },
+          {
+            "id": "text_02_jiangjiu_weisheng",
+            "type": "text_narrative",
+            "order": 2,
+            "title": "讲究卫生",
+            "title_vi": "Chú ý vệ sinh",
+            "source_origin": "textbook",
+            "check_needed": false,
+            "lines": [],
+            "paragraphs": [
+              {
+                "id": "text_02_jiangjiu_weisheng_p01",
+                "order": 1,
+                "zh": "一家三口搬进了新房，妻子见丈夫和儿子不太讲究卫生，常常把屋子里搞得乱七八糟的，就在家里写了一条标语——“讲究卫生，人人有责”，想提醒丈夫和儿子讲究卫生。",
+                "pinyin": "",
+                "vi": "Một gia đình ba người chuyển vào nhà mới. Người vợ thấy chồng và con trai không chú ý giữ vệ sinh lắm, thường làm trong nhà bừa bộn lung tung, nên viết một khẩu hiệu: ‘Chú ý vệ sinh, mọi người đều có trách nhiệm’, để nhắc chồng và con trai chú ý vệ sinh.",
+                "audio_key": "",
+                "vocab_refs": [],
+                "grammar_refs": [],
+                "source_origin": "textbook",
+                "check_needed": false,
+                "uuid": "2449cf42-1b3a-42ec-b3e5-67c5cacd9cb6"
+              },
+              {
+                "id": "text_02_jiangjiu_weisheng_p02",
+                "order": 2,
+                "zh": "儿子放学回家，见了标语，拿起笔来，把标语改成了“讲究卫生，大人有责”。",
+                "pinyin": "",
+                "vi": "Con trai tan học về nhà, thấy khẩu hiệu, liền cầm bút sửa thành: ‘Chú ý vệ sinh, người lớn có trách nhiệm.’",
+                "audio_key": "",
+                "vocab_refs": [],
+                "grammar_refs": [],
+                "source_origin": "textbook",
+                "check_needed": false,
+                "uuid": "93272eeb-63f3-4702-91e2-db8347fed02b"
+              },
+              {
+                "id": "text_02_jiangjiu_weisheng_p03",
+                "order": 3,
+                "zh": "第二天，丈夫见了，也拿出笔来，把标语改成了“讲究卫生，夫人有责”。",
+                "pinyin": "",
+                "vi": "Ngày hôm sau, người chồng nhìn thấy, cũng lấy bút ra sửa thành: ‘Chú ý vệ sinh, phu nhân có trách nhiệm.’",
+                "audio_key": "",
+                "vocab_refs": [],
+                "grammar_refs": [],
+                "source_origin": "textbook",
+                "check_needed": false,
+                "uuid": "e9e49cde-bcec-453e-b661-018c7b1a9141"
+              }
+            ],
+            "comprehension_questions": [],
+            "uuid": "704008b0-d329-43d3-b99b-1334d9a857c7"
+          },
+          {
+            "id": "text_03_xiu_menling",
+            "type": "text_narrative",
+            "order": 3,
+            "title": "修门铃",
+            "title_vi": "Sửa chuông cửa",
+            "source_origin": "textbook",
+            "check_needed": false,
+            "lines": [],
+            "paragraphs": [
+              {
+                "id": "text_03_xiu_menling_p01",
+                "order": 1,
+                "zh": "张太太家的门铃坏了，给物业公司打电话，负责人说马上派工人去修，并问了张太太家的住址。",
+                "pinyin": "",
+                "vi": "Chuông cửa nhà bà Trương bị hỏng, bà gọi điện cho công ty quản lý nhà đất. Người phụ trách nói sẽ lập tức cử thợ đến sửa, đồng thời hỏi địa chỉ nhà bà Trương.",
+                "audio_key": "",
+                "vocab_refs": [],
+                "grammar_refs": [],
+                "source_origin": "textbook",
+                "check_needed": false,
+                "uuid": "7dd5ef2c-69fa-4631-8f3b-44105b183b1f"
+              },
+              {
+                "id": "text_03_xiu_menling_p02",
+                "order": 2,
+                "zh": "修理工按照住址，很快骑车去了，但是不一会儿就回来了。",
+                "pinyin": "",
+                "vi": "Thợ sửa chữa theo địa chỉ, nhanh chóng đạp xe đi, nhưng chưa được bao lâu thì quay lại.",
+                "audio_key": "",
+                "vocab_refs": [],
+                "grammar_refs": [],
+                "source_origin": "textbook",
+                "check_needed": false,
+                "uuid": "e040c483-eb0f-4ca5-a825-2ac3e723fa49"
+              },
+              {
+                "id": "text_03_xiu_menling_p03",
+                "order": 3,
+                "zh": "负责人看见修理工，就说：“这么快就修好了？”",
+                "pinyin": "",
+                "vi": "Người phụ trách thấy thợ sửa chữa liền nói: ‘Nhanh vậy đã sửa xong rồi à?’",
+                "audio_key": "",
+                "vocab_refs": [],
+                "grammar_refs": [],
+                "source_origin": "textbook",
+                "check_needed": false,
+                "uuid": "8a160295-20ff-4633-90e7-944bf4ab0d03"
+              },
+              {
+                "id": "text_03_xiu_menling_p04",
+                "order": 4,
+                "zh": "修理工说：“不是，我去了他们家，可是在门口按了半天门铃，也没有人出来开门，所以我只好回来了。”",
+                "pinyin": "",
+                "vi": "Thợ sửa nói: ‘Không phải, tôi đã đến nhà họ rồi, nhưng ở cửa bấm chuông cả buổi cũng không có ai ra mở cửa, nên tôi đành quay về.’",
+                "audio_key": "",
+                "vocab_refs": [],
+                "grammar_refs": [],
+                "source_origin": "textbook",
+                "check_needed": false,
+                "uuid": "9cbe9d2d-f3d5-4d0a-83ef-566ab246edee"
+              }
+            ],
+            "comprehension_questions": [],
+            "uuid": "8e7ba367-2e88-44c2-a6b5-99836235ee3c"
+          },
+          {
+            "id": "text_04_hao_wen_de_yisheng",
+            "type": "text_narrative",
+            "order": 4,
+            "title": "好问的医生",
+            "title_vi": "Bác sĩ hay hỏi",
+            "source_origin": "textbook",
+            "check_needed": false,
+            "lines": [],
+            "paragraphs": [
+              {
+                "id": "text_04_hao_wen_de_yisheng_p01",
+                "order": 1,
+                "zh": "前几天，我和同学踢球的时候受伤了，就去校医院看。没想到，碰到一个慢性子而且爱问为什么的医生。",
+                "pinyin": "",
+                "vi": "Mấy hôm trước, khi tôi đá bóng cùng bạn học thì bị thương, nên đến bệnh viện trường khám. Không ngờ lại gặp một bác sĩ chậm rãi và rất thích hỏi vì sao.",
+                "audio_key": "",
+                "vocab_refs": [],
+                "grammar_refs": [],
+                "source_origin": "textbook",
+                "check_needed": false,
+                "uuid": "2e33051c-3f51-4523-a263-06e442ec8c55"
+              },
+              {
+                "id": "text_04_hao_wen_de_yisheng_p02",
+                "order": 2,
+                "zh": "医生瞟了我一眼，问道：“怎么了？”",
+                "pinyin": "",
+                "vi": "Bác sĩ liếc tôi một cái rồi hỏi: ‘Sao vậy?’",
+                "audio_key": "",
+                "vocab_refs": [],
+                "grammar_refs": [],
+                "source_origin": "textbook",
+                "check_needed": false,
+                "uuid": "a6a29e13-1947-416b-9eaf-fb04b57b03c1"
+              },
+              {
+                "id": "text_04_hao_wen_de_yisheng_p03",
+                "order": 3,
+                "zh": "我说：“刚才踢球的时候小腿被人踢伤了，现在疼得很，麻烦大夫给我看一下儿吧。”",
+                "pinyin": "",
+                "vi": "Tôi nói: ‘Lúc nãy khi đá bóng, cẳng chân tôi bị người ta đá bị thương, bây giờ đau lắm, phiền bác sĩ xem giúp tôi một chút.’",
+                "audio_key": "",
+                "vocab_refs": [],
+                "grammar_refs": [],
+                "source_origin": "textbook",
+                "check_needed": false,
+                "uuid": "4cd58c14-fae9-4c8b-bc6f-266de322d7dc"
+              },
+              {
+                "id": "text_04_hao_wen_de_yisheng_p04",
+                "order": 4,
+                "zh": "医生似乎并不着急查看我的伤腿，而是若有所思地问我：“操场上那么多人，人家为什么只踢你呢？”",
+                "pinyin": "",
+                "vi": "Bác sĩ dường như không vội xem chân bị thương của tôi, mà trầm ngâm hỏi: ‘Trên sân có nhiều người như vậy, tại sao người ta chỉ đá cậu?’",
+                "audio_key": "",
+                "vocab_refs": [],
+                "grammar_refs": [],
+                "source_origin": "textbook",
+                "check_needed": false,
+                "uuid": "adf3cc1b-8c1a-4f11-8fe0-e93f91eb610b"
+              },
+              {
+                "id": "text_04_hao_wen_de_yisheng_p05",
+                "order": 5,
+                "zh": "“因为他想射门，我去挡他，结果就被他踢了。”我咬着牙，强忍着伤痛解释道。",
+                "pinyin": "",
+                "vi": "‘Vì cậu ấy muốn sút bóng, tôi đi chặn, kết quả là bị cậu ấy đá trúng.’ Tôi nghiến răng, cố nhịn đau mà giải thích.",
+                "audio_key": "",
+                "vocab_refs": [],
+                "grammar_refs": [],
+                "source_origin": "textbook",
+                "check_needed": false,
+                "uuid": "adaeabfc-aacd-4204-a0b7-4a8c979e635a"
+              },
+              {
+                "id": "text_04_hao_wen_de_yisheng_p06",
+                "order": 6,
+                "zh": "医生又不紧不慢地问：“那你干吗要挡他呢？”",
+                "pinyin": "",
+                "vi": "Bác sĩ lại thong thả hỏi: ‘Vậy cậu chặn cậu ấy làm gì?’",
+                "audio_key": "",
+                "vocab_refs": [],
+                "grammar_refs": [],
+                "source_origin": "textbook",
+                "check_needed": false,
+                "uuid": "9b79d827-40ab-4d00-beab-3e902e3eda0d"
+              },
+              {
+                "id": "text_04_hao_wen_de_yisheng_p07",
+                "order": 7,
+                "zh": "听他这么一问，我有些晕，只好回答说：“我们在比赛，我不挡他，他就要进球了。”",
+                "pinyin": "",
+                "vi": "Nghe ông ấy hỏi vậy, tôi hơi choáng, đành trả lời: ‘Chúng tôi đang thi đấu, nếu tôi không chặn cậu ấy thì cậu ấy sẽ ghi bàn.’",
+                "audio_key": "",
+                "vocab_refs": [],
+                "grammar_refs": [],
+                "source_origin": "textbook",
+                "check_needed": false,
+                "uuid": "6a134105-eb1d-47b6-8665-8cdf729a5426"
+              },
+              {
+                "id": "text_04_hao_wen_de_yisheng_p08",
+                "order": 8,
+                "zh": "这回医生似乎听明白了怎么回事。可谁料，他又冲我问道：“他进球就进球吧，你这样受伤值得吗？”",
+                "pinyin": "",
+                "vi": "Lần này bác sĩ dường như đã hiểu chuyện gì xảy ra. Nhưng ai ngờ, ông ấy lại hỏi: ‘Cậu ấy ghi bàn thì cứ ghi bàn đi, cậu bị thương như thế này có đáng không?’",
+                "audio_key": "",
+                "vocab_refs": [],
+                "grammar_refs": [],
+                "source_origin": "textbook",
+                "check_needed": false,
+                "uuid": "12506987-420b-4476-843c-44fe74b415cf"
+              },
+              {
+                "id": "text_04_hao_wen_de_yisheng_p09",
+                "order": 9,
+                "zh": "这下我彻底无话可说了。",
+                "pinyin": "",
+                "vi": "Lần này thì tôi hoàn toàn không còn lời nào để nói.",
+                "audio_key": "",
+                "vocab_refs": [],
+                "grammar_refs": [],
+                "source_origin": "textbook",
+                "check_needed": false,
+                "uuid": "e5478a86-f0db-41fe-9e42-d14938dbdfbd"
+              }
+            ],
+            "comprehension_questions": [],
+            "uuid": "954800bc-0dbf-4304-a220-2ae831783959"
+          },
+          {
+            "id": "text_05_jieci",
+            "type": "text_narrative",
+            "order": 5,
+            "title": "解词",
+            "title_vi": "Giải thích chữ",
+            "source_origin": "textbook",
+            "check_needed": false,
+            "lines": [],
+            "paragraphs": [
+              {
+                "id": "text_05_jieci_p01",
+                "order": 1,
+                "zh": "吕教授对汉字很有研究。一天上课时，他兴致勃勃地给学生讲：“汉字有很多象形字，比如我这个‘吕’字，在古代是接吻的意思，你们看，口对口，多形象！”",
+                "pinyin": "",
+                "vi": "Giáo sư Lữ rất nghiên cứu về chữ Hán. Một hôm khi lên lớp, ông hào hứng giảng: ‘Chữ Hán có rất nhiều chữ tượng hình, ví dụ chữ ‘吕’ này của tôi, thời cổ có nghĩa là hôn nhau. Các em xem, miệng đối miệng, thật hình tượng!’",
+                "audio_key": "",
+                "vocab_refs": [],
+                "grammar_refs": [],
+                "source_origin": "textbook",
+                "check_needed": false,
+                "uuid": "708f345b-0d05-4580-8555-3a965b9a5802"
+              },
+              {
+                "id": "text_05_jieci_p02",
+                "order": 2,
+                "zh": "一个学生站起来问：“老师，要是‘吕’字是接吻的意思，那么‘品’字又怎么解释呢？是三个人一起接吻吗？”",
+                "pinyin": "",
+                "vi": "Một sinh viên đứng dậy hỏi: ‘Thưa thầy, nếu chữ ‘吕’ có nghĩa là hôn nhau, vậy chữ ‘品’ giải thích thế nào ạ? Là ba người cùng hôn nhau sao?’",
+                "audio_key": "",
+                "vocab_refs": [],
+                "grammar_refs": [],
+                "source_origin": "textbook",
+                "check_needed": false,
+                "uuid": "c8acd232-2210-4e4e-bfac-ead00e00c38f"
+              },
+              {
+                "id": "text_05_jieci_p03",
+                "order": 3,
+                "zh": "教授正想发火，又有一个学生站起来说：“我看‘品’字还好解释，‘器’字呢？四个人和一只狗在干什么呢？”",
+                "pinyin": "",
+                "vi": "Giáo sư đang định nổi giận, lại có một sinh viên khác đứng dậy nói: ‘Em thấy chữ ‘品’ còn dễ giải thích, vậy chữ ‘器’ thì sao ạ? Bốn người và một con chó đang làm gì vậy?’",
+                "audio_key": "",
+                "vocab_refs": [],
+                "grammar_refs": [],
+                "source_origin": "textbook",
+                "check_needed": false,
+                "uuid": "a214de5e-a2b3-4907-b930-0a55a5357609"
+              },
+              {
+                "id": "text_05_jieci_p04",
+                "order": 4,
+                "zh": "全班同学顿时哈哈大笑起来。",
+                "pinyin": "",
+                "vi": "Cả lớp lập tức phá lên cười.",
+                "audio_key": "",
+                "vocab_refs": [],
+                "grammar_refs": [],
+                "source_origin": "textbook",
+                "check_needed": false,
+                "uuid": "86f32f7f-2316-45a3-8d45-5cab909ebf16"
+              },
+              {
+                "id": "text_05_jieci_p05",
+                "order": 5,
+                "zh": "吕教授把书一摔，气呼呼地提起包走了。",
+                "pinyin": "",
+                "vi": "Giáo sư Lữ quăng sách xuống, tức giận xách cặp đi mất.",
+                "audio_key": "",
+                "vocab_refs": [],
+                "grammar_refs": [],
+                "source_origin": "textbook",
+                "check_needed": false,
+                "uuid": "3ee61d63-95f4-4174-94b4-2bac0e23eaf6"
+              }
+            ],
+            "comprehension_questions": [],
+            "uuid": "91a11fc0-8551-4812-8788-2450c28adac7"
+          }
+        ],
+        "comprehension_questions": [
+          {
+            "id": "text_q01",
+            "question": "《谁当家》一文中，家里到底谁做主？",
+            "answer": "家里的小事由妻子决定，大事由丈夫考虑。但所谓小事其实是家里的实际事务，所以妻子更像真正做主的人。",
+            "source_origin": "textbook_question_generated_answer",
+            "answer_verified": false,
+            "check_needed": true,
+            "uuid": "c75a7a98-1474-46c3-8439-8a927bc19adb"
+          },
+          {
+            "id": "text_q02",
+            "question": "妻子为什么要贴出“讲究卫生，人人有责”的标语？它是怎么变成“讲究卫生，大人有责”和“讲究卫生，夫人有责”的？",
+            "answer": "因为丈夫和儿子不太讲究卫生。儿子把“人人有责”改成“大人有责”，丈夫又把它改成“夫人有责”。",
+            "source_origin": "textbook_question_generated_answer",
+            "answer_verified": false,
+            "check_needed": true,
+            "uuid": "9e222313-f545-4853-9fbe-4b9404c44b9b"
+          },
+          {
+            "id": "text_q03",
+            "question": "修理工为什么没有给张太太家修门铃？",
+            "answer": "因为他到了张太太家门口以后按了半天坏掉的门铃，没人出来开门，所以回来了。",
+            "source_origin": "textbook_question_generated_answer",
+            "answer_verified": false,
+            "check_needed": true,
+            "uuid": "d2d7ea43-6f26-42f6-80ea-c6c647da4787"
+          },
+          {
+            "id": "text_q04",
+            "question": "医生问了“我”几个问题？“我”是怎么回答的？最后“我”为什么无话可说了？",
+            "answer": "医生问了很多追问式的问题。“我”解释自己是在比赛中挡射门才受伤。最后医生问受伤是否值得，所以“我”无话可说。",
+            "source_origin": "textbook_question_generated_answer",
+            "answer_verified": false,
+            "check_needed": true,
+            "uuid": "5fecb128-af5d-4fb3-b16c-135dc4e33b5c"
+          },
+          {
+            "id": "text_q05",
+            "question": "吕教授是怎么解释“吕”字的？后来他为什么气呼呼地走了？",
+            "answer": "他把“吕”解释成口对口、接吻的意思。学生用“品”和“器”反问他，他回答不了又觉得生气，所以走了。",
+            "source_origin": "textbook_question_generated_answer",
+            "answer_verified": false,
+            "check_needed": true,
+            "uuid": "b6dc6829-00f2-44c7-ac96-8de805c393ae"
+          }
+        ],
+        "uuid": "f6e881bf-35d6-4561-9e6b-6f81f99f31a7"
+      },
+      {
+        "id": "section_02_vocabulary",
+        "type": "vocabulary",
+        "order": 2,
+        "title": "生词",
+        "title_vi": "Từ vựng chính",
+        "source_origin": "textbook",
+        "check_needed": false,
+        "items": [
+          {
+            "id": "vocab_001",
+            "type": "vocabulary_item",
+            "order": 1,
+            "hanzi": "当家",
+            "pinyin": "dāng jiā",
+            "meaning_vi": "làm chủ gia đình; quản lý việc nhà",
+            "meaning_en": "",
+            "pos": "verb_phrase",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "当家",
+              "back": "dāng jiā — làm chủ gia đình; quản lý việc nhà",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "check_needed": false,
+            "uuid": "2dc97907-b46e-404e-98c6-c3b0bc5203bf"
+          },
+          {
+            "id": "vocab_002",
+            "type": "vocabulary_item",
+            "order": 2,
+            "hanzi": "骄傲",
+            "pinyin": "jiāo’ào",
+            "meaning_vi": "kiêu ngạo; tự hào; niềm tự hào",
+            "meaning_en": "",
+            "pos": "adjective",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "骄傲",
+              "back": "jiāo’ào — kiêu ngạo; tự hào; niềm tự hào",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "check_needed": false,
+            "uuid": "c7f38b69-3054-499b-b3a9-9f93d9281976"
+          },
+          {
+            "id": "vocab_003",
+            "type": "vocabulary_item",
+            "order": 3,
+            "hanzi": "规定",
+            "pinyin": "guīdìng",
+            "meaning_vi": "quy định; quy tắc; quy định rằng",
+            "meaning_en": "",
+            "pos": "noun",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "规定",
+              "back": "guīdìng — quy định; quy tắc; quy định rằng",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "check_needed": false,
+            "uuid": "e859ff27-e2d7-481f-8465-344af4a99674"
+          },
+          {
+            "id": "vocab_004",
+            "type": "vocabulary_item",
+            "order": 4,
+            "hanzi": "由",
+            "pinyin": "yóu",
+            "meaning_vi": "do; bởi; để cho ai phụ trách",
+            "meaning_en": "",
+            "pos": "preposition",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "由",
+              "back": "yóu — do; bởi; để cho ai phụ trách",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "check_needed": false,
+            "uuid": "04d577c2-1a84-46f8-826e-af5bb37054da"
+          },
+          {
+            "id": "vocab_005",
+            "type": "vocabulary_item",
+            "order": 5,
+            "hanzi": "做主",
+            "pinyin": "zuò zhǔ",
+            "meaning_vi": "quyết định; làm chủ; có quyền quyết",
+            "meaning_en": "",
+            "pos": "verb_phrase",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "做主",
+              "back": "zuò zhǔ — quyết định; làm chủ; có quyền quyết",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "check_needed": false,
+            "uuid": "e61dd699-432b-479c-96d0-3a643ca2aca4"
+          },
+          {
+            "id": "vocab_006",
+            "type": "vocabulary_item",
+            "order": 6,
+            "hanzi": "经济",
+            "pinyin": "jīngjì",
+            "meaning_vi": "kinh tế",
+            "meaning_en": "",
+            "pos": "noun",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "经济",
+              "back": "jīngjì — kinh tế",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "check_needed": false,
+            "uuid": "e79a3a93-eac8-4a0a-b071-28093939db40"
+          },
+          {
+            "id": "vocab_007",
+            "type": "vocabulary_item",
+            "order": 7,
+            "hanzi": "比如",
+            "pinyin": "bǐrú",
+            "meaning_vi": "ví dụ như; chẳng hạn như",
+            "meaning_en": "",
+            "pos": "verb",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "比如",
+              "back": "bǐrú — ví dụ như; chẳng hạn như",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "check_needed": false,
+            "uuid": "aae6bd31-168e-497d-a2dd-25ac5cb433ca"
+          },
+          {
+            "id": "vocab_008",
+            "type": "vocabulary_item",
+            "order": 8,
+            "hanzi": "届",
+            "pinyin": "jiè",
+            "meaning_vi": "khóa; nhiệm kỳ; kỳ, lượt",
+            "meaning_en": "",
+            "pos": "measure_word",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "届",
+              "back": "jiè — khóa; nhiệm kỳ; kỳ, lượt",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "check_needed": false,
+            "uuid": "f96dae28-60be-4dc9-ad82-5b1fc6de9b7c"
+          },
+          {
+            "id": "vocab_009",
+            "type": "vocabulary_item",
+            "order": 9,
+            "hanzi": "总统",
+            "pinyin": "zǒngtǒng",
+            "meaning_vi": "tổng thống",
+            "meaning_en": "",
+            "pos": "noun",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "总统",
+              "back": "zǒngtǒng — tổng thống",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "check_needed": false,
+            "uuid": "d2031fd6-ad26-4a80-9b2a-91122ca40db1"
+          },
+          {
+            "id": "vocab_010",
+            "type": "vocabulary_item",
+            "order": 10,
+            "hanzi": "月球",
+            "pinyin": "yuèqiú",
+            "meaning_vi": "mặt trăng",
+            "meaning_en": "",
+            "pos": "noun",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "月球",
+              "back": "yuèqiú — mặt trăng",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "check_needed": false,
+            "uuid": "ad2419de-dde3-405e-805c-efde528e3c8c"
+          },
+          {
+            "id": "vocab_011",
+            "type": "vocabulary_item",
+            "order": 11,
+            "hanzi": "人类",
+            "pinyin": "rénlèi",
+            "meaning_vi": "loài người; nhân loại",
+            "meaning_en": "",
+            "pos": "noun",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "人类",
+              "back": "rénlèi — loài người; nhân loại",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "check_needed": false,
+            "uuid": "377e7567-0a33-4072-af46-5a873bcdca70"
+          },
+          {
+            "id": "vocab_012",
+            "type": "vocabulary_item",
+            "order": 12,
+            "hanzi": "火星",
+            "pinyin": "huǒxīng",
+            "meaning_vi": "sao Hỏa",
+            "meaning_en": "",
+            "pos": "noun",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "火星",
+              "back": "huǒxīng — sao Hỏa",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "check_needed": false,
+            "uuid": "9ea738a5-481e-41bb-80bf-3366755eef15"
+          },
+          {
+            "id": "vocab_013",
+            "type": "vocabulary_item",
+            "order": 13,
+            "hanzi": "讲究",
+            "pinyin": "jiǎngjiu",
+            "meaning_vi": "chú trọng; coi trọng; để ý kỹ",
+            "meaning_en": "",
+            "pos": "verb",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "讲究",
+              "back": "jiǎngjiu — chú trọng; coi trọng; để ý kỹ",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "check_needed": false,
+            "uuid": "7b420395-4500-4e8d-8eab-2eb900182b83"
+          },
+          {
+            "id": "vocab_014",
+            "type": "vocabulary_item",
+            "order": 14,
+            "hanzi": "卫生",
+            "pinyin": "wèishēng",
+            "meaning_vi": "vệ sinh",
+            "meaning_en": "",
+            "pos": "noun",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "卫生",
+              "back": "wèishēng — vệ sinh",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "check_needed": false,
+            "uuid": "dd14524c-ba29-4832-80bc-b6a1640f88f3"
+          },
+          {
+            "id": "vocab_015",
+            "type": "vocabulary_item",
+            "order": 15,
+            "hanzi": "乱七八糟",
+            "pinyin": "luànqībāzāo",
+            "meaning_vi": "lung tung; bừa bộn; rối tinh rối mù",
+            "meaning_en": "",
+            "pos": "adjective",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "乱七八糟",
+              "back": "luànqībāzāo — lung tung; bừa bộn; rối tinh rối mù",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "check_needed": false,
+            "uuid": "7c61223f-54ee-4b40-a33f-1e95a9229a0f"
+          },
+          {
+            "id": "vocab_016",
+            "type": "vocabulary_item",
+            "order": 16,
+            "hanzi": "标语",
+            "pinyin": "biāoyǔ",
+            "meaning_vi": "khẩu hiệu",
+            "meaning_en": "",
+            "pos": "noun",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "标语",
+              "back": "biāoyǔ — khẩu hiệu",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "check_needed": false,
+            "uuid": "c7a83de4-213d-432c-8a32-94fa2e806c88"
+          },
+          {
+            "id": "vocab_017",
+            "type": "vocabulary_item",
+            "order": 17,
+            "hanzi": "责（任）",
+            "pinyin": "zé/rèn",
+            "meaning_vi": "trách nhiệm",
+            "meaning_en": "",
+            "pos": "noun",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "责（任）",
+              "back": "zé/rèn — trách nhiệm",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "check_needed": false,
+            "uuid": "5d954c5d-75b5-4d5f-a7d2-87099c856b40"
+          },
+          {
+            "id": "vocab_018",
+            "type": "vocabulary_item",
+            "order": 18,
+            "hanzi": "提醒",
+            "pinyin": "tíxǐng",
+            "meaning_vi": "nhắc nhở; cảnh báo; làm cho chú ý",
+            "meaning_en": "",
+            "pos": "verb",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "提醒",
+              "back": "tíxǐng — nhắc nhở; cảnh báo; làm cho chú ý",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "check_needed": false,
+            "uuid": "586353de-5973-4478-95b5-487cd4c8f130"
+          },
+          {
+            "id": "vocab_019",
+            "type": "vocabulary_item",
+            "order": 19,
+            "hanzi": "放学",
+            "pinyin": "fàng xué",
+            "meaning_vi": "tan học",
+            "meaning_en": "",
+            "pos": "verb_phrase",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "放学",
+              "back": "fàng xué — tan học",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "check_needed": false,
+            "uuid": "07147c8b-ea83-49f6-909b-347228229d7f"
+          },
+          {
+            "id": "vocab_020",
+            "type": "vocabulary_item",
+            "order": 20,
+            "hanzi": "大人",
+            "pinyin": "dàren",
+            "meaning_vi": "người lớn",
+            "meaning_en": "",
+            "pos": "noun",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "大人",
+              "back": "dàren — người lớn",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "check_needed": false,
+            "uuid": "8d8d9943-457c-4a41-9b0f-2d3bcb13b1fe"
+          },
+          {
+            "id": "vocab_021",
+            "type": "vocabulary_item",
+            "order": 21,
+            "hanzi": "夫人",
+            "pinyin": "fūrén",
+            "meaning_vi": "phu nhân; bà; vợ",
+            "meaning_en": "",
+            "pos": "noun",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "夫人",
+              "back": "fūrén — phu nhân; bà; vợ",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "check_needed": false,
+            "uuid": "5049e35b-78fe-4014-ba1d-3d84799181f0"
+          },
+          {
+            "id": "vocab_022",
+            "type": "vocabulary_item",
+            "order": 22,
+            "hanzi": "门铃",
+            "pinyin": "ménlíng",
+            "meaning_vi": "chuông cửa",
+            "meaning_en": "",
+            "pos": "noun",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "门铃",
+              "back": "ménlíng — chuông cửa",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "check_needed": false,
+            "uuid": "2a9d74a0-2de7-4e16-abf4-500d381cf3fd"
+          },
+          {
+            "id": "vocab_023",
+            "type": "vocabulary_item",
+            "order": 23,
+            "hanzi": "物业",
+            "pinyin": "wùyè",
+            "meaning_vi": "bất động sản; quản lý nhà đất / tòa nhà",
+            "meaning_en": "",
+            "pos": "noun",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "物业",
+              "back": "wùyè — bất động sản; quản lý nhà đất / tòa nhà",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "check_needed": false,
+            "uuid": "b48ef850-1703-488c-8113-bb54b0f3f6a8"
+          },
+          {
+            "id": "vocab_024",
+            "type": "vocabulary_item",
+            "order": 24,
+            "hanzi": "负责",
+            "pinyin": "fùzé",
+            "meaning_vi": "phụ trách; chịu trách nhiệm",
+            "meaning_en": "",
+            "pos": "verb",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "负责",
+              "back": "fùzé — phụ trách; chịu trách nhiệm",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "check_needed": false,
+            "uuid": "800febf1-f335-4699-b305-e815de502afb"
+          },
+          {
+            "id": "vocab_025",
+            "type": "vocabulary_item",
+            "order": 25,
+            "hanzi": "工人",
+            "pinyin": "gōngrén",
+            "meaning_vi": "công nhân; thợ",
+            "meaning_en": "",
+            "pos": "noun",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "工人",
+              "back": "gōngrén — công nhân; thợ",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "check_needed": false,
+            "uuid": "1dceca71-c247-4d36-8b7c-03e2288e1434"
+          },
+          {
+            "id": "vocab_026",
+            "type": "vocabulary_item",
+            "order": 26,
+            "hanzi": "住址",
+            "pinyin": "zhùzhǐ",
+            "meaning_vi": "địa chỉ cư trú; địa chỉ nhà",
+            "meaning_en": "",
+            "pos": "noun",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "住址",
+              "back": "zhùzhǐ — địa chỉ cư trú; địa chỉ nhà",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "check_needed": false,
+            "uuid": "7acea6a2-5d67-4099-9933-483fafc57f7b"
+          },
+          {
+            "id": "vocab_027",
+            "type": "vocabulary_item",
+            "order": 27,
+            "hanzi": "修理工",
+            "pinyin": "xiūlǐgōng",
+            "meaning_vi": "thợ sửa chữa",
+            "meaning_en": "",
+            "pos": "noun",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "修理工",
+              "back": "xiūlǐgōng — thợ sửa chữa",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "check_needed": false,
+            "uuid": "e504cb65-f6d2-4c8e-988a-a8878b1fc5e8"
+          },
+          {
+            "id": "vocab_028",
+            "type": "vocabulary_item",
+            "order": 28,
+            "hanzi": "按照",
+            "pinyin": "ànzhào",
+            "meaning_vi": "dựa theo; căn cứ theo",
+            "meaning_en": "",
+            "pos": "preposition",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "按照",
+              "back": "ànzhào — dựa theo; căn cứ theo",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "check_needed": false,
+            "uuid": "1344dd22-9564-49b1-9e83-9c521de271ce"
+          },
+          {
+            "id": "vocab_029",
+            "type": "vocabulary_item",
+            "order": 29,
+            "hanzi": "按",
+            "pinyin": "àn",
+            "meaning_vi": "ấn; nhấn; bấm",
+            "meaning_en": "",
+            "pos": "verb",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "按",
+              "back": "àn — ấn; nhấn; bấm",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "check_needed": false,
+            "uuid": "28eb6770-bfaa-40ba-9fab-11e7fd00d558"
+          },
+          {
+            "id": "vocab_030",
+            "type": "vocabulary_item",
+            "order": 30,
+            "hanzi": "好",
+            "pinyin": "hào",
+            "meaning_vi": "thích; ham; có sở thích làm gì",
+            "meaning_en": "",
+            "pos": "verb",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "好",
+              "back": "hào — thích; ham; có sở thích làm gì",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "check_needed": false,
+            "uuid": "735d1e9e-d659-4c1d-a23e-15ca344e4a76"
+          },
+          {
+            "id": "vocab_031",
+            "type": "vocabulary_item",
+            "order": 31,
+            "hanzi": "医生",
+            "pinyin": "yīshēng",
+            "meaning_vi": "bác sĩ",
+            "meaning_en": "",
+            "pos": "noun",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "医生",
+              "back": "yīshēng — bác sĩ",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "check_needed": false,
+            "uuid": "7776a58e-e77b-431c-8df9-c470a0ce134e"
+          },
+          {
+            "id": "vocab_032",
+            "type": "vocabulary_item",
+            "order": 32,
+            "hanzi": "性子",
+            "pinyin": "xìngzi",
+            "meaning_vi": "tính nết; tính khí; tính cách",
+            "meaning_en": "",
+            "pos": "noun",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "性子",
+              "back": "xìngzi — tính nết; tính khí; tính cách",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "check_needed": false,
+            "uuid": "9c934430-2d4a-4496-a2b0-471ea6f86c29"
+          },
+          {
+            "id": "vocab_033",
+            "type": "vocabulary_item",
+            "order": 33,
+            "hanzi": "似乎",
+            "pinyin": "sìhū",
+            "meaning_vi": "dường như; có vẻ như",
+            "meaning_en": "",
+            "pos": "adverb",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "似乎",
+              "back": "sìhū — dường như; có vẻ như",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "check_needed": false,
+            "uuid": "274a92c4-e3eb-4333-a6ec-da4d48f2896a"
+          },
+          {
+            "id": "vocab_034",
+            "type": "vocabulary_item",
+            "order": 34,
+            "hanzi": "查看",
+            "pinyin": "chákàn",
+            "meaning_vi": "kiểm tra; xem xét",
+            "meaning_en": "",
+            "pos": "verb",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "查看",
+              "back": "chákàn — kiểm tra; xem xét",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "check_needed": false,
+            "uuid": "1722fedb-099c-46e2-90dc-407520a15340"
+          },
+          {
+            "id": "vocab_035",
+            "type": "vocabulary_item",
+            "order": 35,
+            "hanzi": "若有所思",
+            "pinyin": "ruòyǒusuǒsī",
+            "meaning_vi": "như đang suy nghĩ điều gì; trầm ngâm",
+            "meaning_en": "",
+            "pos": "phrase",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "若有所思",
+              "back": "ruòyǒusuǒsī — như đang suy nghĩ điều gì; trầm ngâm",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "check_needed": false,
+            "uuid": "c3476bb4-edd9-4f57-8683-1ecd9c6b70d9"
+          },
+          {
+            "id": "vocab_036",
+            "type": "vocabulary_item",
+            "order": 36,
+            "hanzi": "射门",
+            "pinyin": "shè mén",
+            "meaning_vi": "sút bóng vào khung thành",
+            "meaning_en": "",
+            "pos": "verb_phrase",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "射门",
+              "back": "shè mén — sút bóng vào khung thành",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "check_needed": false,
+            "uuid": "2a821197-8681-453b-b9f6-825df10eeccc"
+          },
+          {
+            "id": "vocab_037",
+            "type": "vocabulary_item",
+            "order": 37,
+            "hanzi": "挡",
+            "pinyin": "dǎng",
+            "meaning_vi": "chặn; cản",
+            "meaning_en": "",
+            "pos": "verb",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "挡",
+              "back": "dǎng — chặn; cản",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "check_needed": false,
+            "uuid": "24ebfac1-7e71-4739-b381-761b7cc046f7"
+          },
+          {
+            "id": "vocab_038",
+            "type": "vocabulary_item",
+            "order": 38,
+            "hanzi": "咬牙",
+            "pinyin": "yǎo yá",
+            "meaning_vi": "nghiến răng",
+            "meaning_en": "",
+            "pos": "verb_phrase",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "咬牙",
+              "back": "yǎo yá — nghiến răng",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "check_needed": false,
+            "uuid": "900dec0a-9f20-411e-b265-df9f35dd6361"
+          },
+          {
+            "id": "vocab_039",
+            "type": "vocabulary_item",
+            "order": 39,
+            "hanzi": "强",
+            "pinyin": "qiáng",
+            "meaning_vi": "cố; gượng; miễn cưỡng dùng sức",
+            "meaning_en": "",
+            "pos": "adverb",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "强",
+              "back": "qiáng — cố; gượng; miễn cưỡng dùng sức",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "check_needed": false,
+            "uuid": "8969ad68-c2ba-4c84-baf6-3b329e1f04b7"
+          },
+          {
+            "id": "vocab_040",
+            "type": "vocabulary_item",
+            "order": 40,
+            "hanzi": "忍",
+            "pinyin": "rěn",
+            "meaning_vi": "nhịn; chịu đựng",
+            "meaning_en": "",
+            "pos": "verb",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "忍",
+              "back": "rěn — nhịn; chịu đựng",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "check_needed": false,
+            "uuid": "825e08e3-0d28-40f4-8bd6-15f4b963c72a"
+          },
+          {
+            "id": "vocab_041",
+            "type": "vocabulary_item",
+            "order": 41,
+            "hanzi": "伤痛",
+            "pinyin": "shāngtòng",
+            "meaning_vi": "đau đớn do bị thương; nỗi đau thương",
+            "meaning_en": "",
+            "pos": "noun",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "伤痛",
+              "back": "shāngtòng — đau đớn do bị thương; nỗi đau thương",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "check_needed": false,
+            "uuid": "258a2de9-a88a-44b8-ba43-dd0fa9853155"
+          },
+          {
+            "id": "vocab_042",
+            "type": "vocabulary_item",
+            "order": 42,
+            "hanzi": "解释",
+            "pinyin": "jiěshì",
+            "meaning_vi": "giải thích",
+            "meaning_en": "",
+            "pos": "verb",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "解释",
+              "back": "jiěshì — giải thích",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "check_needed": false,
+            "uuid": "38e14257-ea83-4b6f-98fe-7ee48a2638c2"
+          },
+          {
+            "id": "vocab_043",
+            "type": "vocabulary_item",
+            "order": 43,
+            "hanzi": "不紧不慢",
+            "pinyin": "bùjǐn-bùmàn",
+            "meaning_vi": "thong thả; không vội không chậm",
+            "meaning_en": "",
+            "pos": "phrase",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "不紧不慢",
+              "back": "bùjǐn-bùmàn — thong thả; không vội không chậm",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "check_needed": false,
+            "uuid": "9f9fe1df-bf63-4f50-a468-4295aefb4024"
+          },
+          {
+            "id": "vocab_044",
+            "type": "vocabulary_item",
+            "order": 44,
+            "hanzi": "干吗",
+            "pinyin": "gànmá",
+            "meaning_vi": "làm gì; tại sao",
+            "meaning_en": "",
+            "pos": "pronoun",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "干吗",
+              "back": "gànmá — làm gì; tại sao",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "check_needed": false,
+            "uuid": "b0f57e0a-5b2e-4b7b-aaa1-17cc19f39add"
+          },
+          {
+            "id": "vocab_045",
+            "type": "vocabulary_item",
+            "order": 45,
+            "hanzi": "晕",
+            "pinyin": "yūn",
+            "meaning_vi": "choáng; chóng mặt",
+            "meaning_en": "",
+            "pos": "adjective",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "晕",
+              "back": "yūn — choáng; chóng mặt",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "check_needed": false,
+            "uuid": "c227d745-c163-4d46-b1af-87afafd66a80"
+          },
+          {
+            "id": "vocab_046",
+            "type": "vocabulary_item",
+            "order": 46,
+            "hanzi": "冲",
+            "pinyin": "chòng",
+            "meaning_vi": "hướng về; về phía; nhằm vào",
+            "meaning_en": "",
+            "pos": "preposition",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "冲",
+              "back": "chòng — hướng về; về phía; nhằm vào",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "check_needed": false,
+            "uuid": "4feb5c92-6cf8-411c-8f35-ca0f595472b6"
+          },
+          {
+            "id": "vocab_047",
+            "type": "vocabulary_item",
+            "order": 47,
+            "hanzi": "值得",
+            "pinyin": "zhíde",
+            "meaning_vi": "đáng; xứng đáng",
+            "meaning_en": "",
+            "pos": "verb",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "值得",
+              "back": "zhíde — đáng; xứng đáng",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "check_needed": false,
+            "uuid": "08f31ab7-08ac-477b-bf10-2254f6c8575f"
+          },
+          {
+            "id": "vocab_048",
+            "type": "vocabulary_item",
+            "order": 48,
+            "hanzi": "彻底",
+            "pinyin": "chèdǐ",
+            "meaning_vi": "triệt để; hoàn toàn",
+            "meaning_en": "",
+            "pos": "adjective",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "彻底",
+              "back": "chèdǐ — triệt để; hoàn toàn",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "check_needed": false,
+            "uuid": "18d4d64e-f92b-402c-8a94-4dd3307ae0cd"
+          },
+          {
+            "id": "vocab_049",
+            "type": "vocabulary_item",
+            "order": 49,
+            "hanzi": "兴致勃勃",
+            "pinyin": "xìngzhì bóbó",
+            "meaning_vi": "hứng thú dạt dào; rất hào hứng",
+            "meaning_en": "",
+            "pos": "phrase",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "兴致勃勃",
+              "back": "xìngzhì bóbó — hứng thú dạt dào; rất hào hứng",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "check_needed": false,
+            "uuid": "61d40810-ecd9-4600-abd2-e298b8ce5ec5"
+          },
+          {
+            "id": "vocab_050",
+            "type": "vocabulary_item",
+            "order": 50,
+            "hanzi": "讲",
+            "pinyin": "jiǎng",
+            "meaning_vi": "nói; giảng; giải thích",
+            "meaning_en": "",
+            "pos": "verb",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "讲",
+              "back": "jiǎng — nói; giảng; giải thích",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "check_needed": false,
+            "uuid": "36544f3f-89f2-4177-a2eb-9411d2330a00"
+          },
+          {
+            "id": "vocab_051",
+            "type": "vocabulary_item",
+            "order": 51,
+            "hanzi": "象形字",
+            "pinyin": "xiàngxíngzì",
+            "meaning_vi": "chữ tượng hình",
+            "meaning_en": "",
+            "pos": "noun",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "象形字",
+              "back": "xiàngxíngzì — chữ tượng hình",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "check_needed": false,
+            "uuid": "5c9091f7-f23d-4f50-bd18-a13209bcb3ae"
+          },
+          {
+            "id": "vocab_052",
+            "type": "vocabulary_item",
+            "order": 52,
+            "hanzi": "接吻",
+            "pinyin": "jiē wěn",
+            "meaning_vi": "hôn; hôn nhau",
+            "meaning_en": "",
+            "pos": "verb_phrase",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "接吻",
+              "back": "jiē wěn — hôn; hôn nhau",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "check_needed": false,
+            "uuid": "69bb2d6d-4233-495d-a1f9-54b3b804b07c"
+          },
+          {
+            "id": "vocab_053",
+            "type": "vocabulary_item",
+            "order": 53,
+            "hanzi": "多",
+            "pinyin": "duō",
+            "meaning_vi": "biết bao; thật là; dùng trong câu cảm thán",
+            "meaning_en": "",
+            "pos": "adverb",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "多",
+              "back": "duō — biết bao; thật là; dùng trong câu cảm thán",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "check_needed": false,
+            "uuid": "eff7fd5d-d6db-4ac8-9d5d-1546dc8fa487"
+          },
+          {
+            "id": "vocab_054",
+            "type": "vocabulary_item",
+            "order": 54,
+            "hanzi": "形象",
+            "pinyin": "xíngxiàng",
+            "meaning_vi": "hình tượng; sinh động; hình ảnh",
+            "meaning_en": "",
+            "pos": "adjective",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "形象",
+              "back": "xíngxiàng — hình tượng; sinh động; hình ảnh",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "check_needed": false,
+            "uuid": "35fa9c31-a5a4-4cf3-ae31-681a71fdc47c"
+          },
+          {
+            "id": "vocab_055",
+            "type": "vocabulary_item",
+            "order": 55,
+            "hanzi": "品",
+            "pinyin": "pǐn",
+            "meaning_vi": "chữ “品”",
+            "meaning_en": "",
+            "pos": "noun",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "品",
+              "back": "pǐn — chữ “品”",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "check_needed": false,
+            "uuid": "24366544-0bca-4859-9176-5b2c8634b6df"
+          },
+          {
+            "id": "vocab_056",
+            "type": "vocabulary_item",
+            "order": 56,
+            "hanzi": "发火",
+            "pinyin": "fā huǒ",
+            "meaning_vi": "nổi giận; phát cáu",
+            "meaning_en": "",
+            "pos": "verb_phrase",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "发火",
+              "back": "fā huǒ — nổi giận; phát cáu",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "check_needed": false,
+            "uuid": "dfa36848-270e-43e3-b268-7916ebccc92b"
+          },
+          {
+            "id": "vocab_057",
+            "type": "vocabulary_item",
+            "order": 57,
+            "hanzi": "犬",
+            "pinyin": "quǎn",
+            "meaning_vi": "chó",
+            "meaning_en": "",
+            "pos": "noun",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "犬",
+              "back": "quǎn — chó",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "check_needed": false,
+            "uuid": "449d410c-1a90-431c-9796-0faea20ece76"
+          },
+          {
+            "id": "vocab_058",
+            "type": "vocabulary_item",
+            "order": 58,
+            "hanzi": "好",
+            "pinyin": "hǎo",
+            "meaning_vi": "dễ; dễ dàng",
+            "meaning_en": "",
+            "pos": "adjective",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "好",
+              "back": "hǎo — dễ; dễ dàng",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "check_needed": false,
+            "uuid": "0c7e5a05-0d54-48dc-8b40-5acee9dea0c6"
+          },
+          {
+            "id": "vocab_059",
+            "type": "vocabulary_item",
+            "order": 59,
+            "hanzi": "器",
+            "pinyin": "qì",
+            "meaning_vi": "chữ “器”",
+            "meaning_en": "",
+            "pos": "noun",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "器",
+              "back": "qì — chữ “器”",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "check_needed": false,
+            "uuid": "4372d6ef-c728-4b6a-a6e3-83a95f534759"
+          },
+          {
+            "id": "vocab_060",
+            "type": "vocabulary_item",
+            "order": 60,
+            "hanzi": "只",
+            "pinyin": "zhī",
+            "meaning_vi": "con; chiếc; cái, lượng từ cho động vật hoặc một số đồ vật",
+            "meaning_en": "",
+            "pos": "measure_word",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "只",
+              "back": "zhī — con; chiếc; cái, lượng từ cho động vật hoặc một số đồ vật",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "check_needed": false,
+            "uuid": "2545db89-3d3f-44f5-806c-42af42cbaecd"
+          },
+          {
+            "id": "vocab_061",
+            "type": "vocabulary_item",
+            "order": 61,
+            "hanzi": "顿时",
+            "pinyin": "dùnshí",
+            "meaning_vi": "lập tức; ngay tức thì",
+            "meaning_en": "",
+            "pos": "adverb",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "顿时",
+              "back": "dùnshí — lập tức; ngay tức thì",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "check_needed": false,
+            "uuid": "f585ec21-8294-4992-8bfc-c6c789c43670"
+          },
+          {
+            "id": "vocab_062",
+            "type": "vocabulary_item",
+            "order": 62,
+            "hanzi": "气呼呼",
+            "pinyin": "qìhūhū",
+            "meaning_vi": "hậm hực; tức anh ách; giận phừng phừng",
+            "meaning_en": "",
+            "pos": "adjective",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "气呼呼",
+              "back": "qìhūhū — hậm hực; tức anh ách; giận phừng phừng",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "check_needed": false,
+            "uuid": "7af5eb4a-2a6c-4611-bb9d-4344be526168"
+          }
+        ],
+        "uuid": "ed7d34ae-bc5a-4422-8799-0abdd391bf4d"
+      },
+      {
+        "id": "section_03_proper_nouns",
+        "type": "proper_nouns",
+        "order": 3,
+        "title": "专名",
+        "title_vi": "Tên riêng",
+        "source_origin": "textbook",
+        "check_needed": false,
+        "items": [
+          {
+            "id": "proper_001",
+            "type": "proper_noun",
+            "order": 1,
+            "hanzi": "吕",
+            "pinyin": "Lǚ",
+            "meaning_vi": "họ Lữ, một họ của người Trung Quốc",
+            "meaning_en": "a Chinese surname",
+            "source_origin": "textbook",
+            "check_needed": false,
+            "uuid": "49a5d039-8014-4e99-aeec-6ecb81edc052"
+          }
+        ],
+        "uuid": "f1d6091f-c746-448f-99a7-fa96b7efee64"
+      },
+      {
+        "id": "section_04_notes",
+        "type": "notes",
+        "order": 4,
+        "title": "注释",
+        "title_vi": "Chú thích",
+        "source_origin": "textbook",
+        "check_needed": false,
+        "items": [],
+        "empty_reason_vi": "Bài này không thấy phần 注释 riêng trong PDF.",
+        "uuid": "70f34b3c-391d-408e-ad12-282a96f6b142"
+      },
+      {
+        "id": "section_05_grammar",
+        "type": "grammar",
+        "order": 5,
+        "title": "词语用法",
+        "title_vi": "Cách dùng từ",
+        "source_origin": "textbook",
+        "check_needed": false,
+        "items": [
+          {
+            "id": "grammar_01_you",
+            "type": "grammar_point",
+            "order": 1,
+            "title": "由",
+            "title_vi": "Giới từ 由",
+            "level": "HSK3+",
+            "tags": [
+              "词语用法"
+            ],
+            "source_origin": "textbook/generated_mixed",
+            "check_needed": false,
+            "blocks": [
+              {
+                "id": "g01_overview",
+                "type": "grammar_overview",
+                "order": 1,
+                "title": "Bản chất",
+                "content_vi": "由 dùng để nêu người, tổ chức hoặc yếu tố phụ trách, quyết định, thực hiện hoặc gây ra một việc.",
+                "examples": [
+                  {
+                    "id": "ex_01",
+                    "zh": "小事由妻子决定，大事都由我做主。",
+                    "pinyin": "",
+                    "vi": "Việc nhỏ do vợ quyết định, việc lớn đều do tôi làm chủ.",
+                    "en": "",
+                    "highlight": [
+                      "由妻子决定",
+                      "由我做主"
+                    ],
+                    "grammar_refs": [],
+                    "vocab_refs": [],
+                    "source_ref": "",
+                    "note_vi": "",
+                    "audio_key": "",
+                    "source_origin": "textbook/generated_mixed",
+                    "check_needed": false,
+                    "uuid": "d02d4c9b-3f7b-4fae-89a5-faedc253f11f"
+                  },
+                  {
+                    "id": "ex_02",
+                    "zh": "这些大事都由我考虑。",
+                    "pinyin": "",
+                    "vi": "Những việc lớn này đều do tôi suy nghĩ.",
+                    "en": "",
+                    "highlight": [
+                      "由我考虑"
+                    ],
+                    "grammar_refs": [],
+                    "vocab_refs": [],
+                    "source_ref": "",
+                    "note_vi": "",
+                    "audio_key": "",
+                    "source_origin": "textbook/generated_mixed",
+                    "check_needed": false,
+                    "uuid": "90b4d600-6c48-4ced-b02c-0094c8414f23"
+                  }
+                ],
+                "uuid": "fd46426a-44a3-47cd-bda8-854c28450c8c"
+              },
+              {
+                "id": "g01_structure",
+                "type": "grammar_structure",
+                "order": 2,
+                "title": "Cấu trúc",
+                "pattern": "由 + người / tổ chức / yếu tố + động từ",
+                "meaning_vi": "Do ai đó làm, do ai đó phụ trách, do ai đó quyết định.",
+                "formulas": [
+                  {
+                    "label": "main",
+                    "pattern": "由 + N + V"
+                  }
+                ],
+                "examples": [
+                  {
+                    "id": "ex_01",
+                    "zh": "这件事由老师决定。",
+                    "pinyin": "",
+                    "vi": "Việc này do giáo viên quyết định.",
+                    "en": "",
+                    "highlight": [
+                      "由老师决定"
+                    ],
+                    "grammar_refs": [],
+                    "vocab_refs": [],
+                    "source_ref": "",
+                    "note_vi": "",
+                    "audio_key": "",
+                    "source_origin": "textbook/generated_mixed",
+                    "check_needed": false,
+                    "uuid": "ef922a7e-5b48-439d-bbca-85d19acb1f49"
+                  },
+                  {
+                    "id": "ex_02",
+                    "zh": "这个工作由他负责。",
+                    "pinyin": "",
+                    "vi": "Công việc này do anh ấy phụ trách.",
+                    "en": "",
+                    "highlight": [
+                      "由他负责"
+                    ],
+                    "grammar_refs": [],
+                    "vocab_refs": [],
+                    "source_ref": "",
+                    "note_vi": "",
+                    "audio_key": "",
+                    "source_origin": "textbook/generated_mixed",
+                    "check_needed": false,
+                    "uuid": "835e0982-4192-4b0b-9942-09be18e228b9"
+                  }
+                ],
+                "uuid": "246cd9f2-99ad-4016-9509-77bcb3eb9723"
+              }
+            ],
+            "uuid": "6df4382f-f1c1-4b5f-a1bb-f8e9e4fd2741"
+          },
+          {
+            "id": "grammar_02_mashang",
+            "type": "grammar_point",
+            "order": 2,
+            "title": "马上",
+            "title_vi": "Phó từ 马上",
+            "level": "HSK3+",
+            "tags": [
+              "词语用法"
+            ],
+            "source_origin": "textbook/generated_mixed",
+            "check_needed": false,
+            "blocks": [
+              {
+                "id": "g02_overview",
+                "type": "grammar_overview",
+                "order": 1,
+                "title": "Bản chất",
+                "content_vi": "马上 nghĩa là ngay, lập tức, sắp ngay; dùng khi hành động xảy ra rất nhanh sau thời điểm nói hoặc sau một sự việc khác.",
+                "examples": [
+                  {
+                    "id": "ex_01",
+                    "zh": "负责人说马上派工人去修。",
+                    "pinyin": "",
+                    "vi": "Người phụ trách nói sẽ lập tức cử thợ đến sửa.",
+                    "en": "",
+                    "highlight": [
+                      "马上"
+                    ],
+                    "grammar_refs": [],
+                    "vocab_refs": [],
+                    "source_ref": "",
+                    "note_vi": "",
+                    "audio_key": "",
+                    "source_origin": "textbook/generated_mixed",
+                    "check_needed": false,
+                    "uuid": "e0195aa9-ddfb-4b46-a8c0-4fa6d562d7e2"
+                  },
+                  {
+                    "id": "ex_02",
+                    "zh": "我马上回来。",
+                    "pinyin": "",
+                    "vi": "Tôi quay lại ngay.",
+                    "en": "",
+                    "highlight": [
+                      "马上"
+                    ],
+                    "grammar_refs": [],
+                    "vocab_refs": [],
+                    "source_ref": "",
+                    "note_vi": "",
+                    "audio_key": "",
+                    "source_origin": "textbook/generated_mixed",
+                    "check_needed": false,
+                    "uuid": "09bf214e-4c04-4883-a6f9-4602a594a702"
+                  }
+                ],
+                "uuid": "434453d7-2c26-4ddd-8d14-269dc4a04603"
+              }
+            ],
+            "uuid": "777118d6-5d26-4481-9806-6287ff5d54f1"
+          },
+          {
+            "id": "grammar_03_bing",
+            "type": "grammar_point",
+            "order": 3,
+            "title": "并",
+            "title_vi": "Phó từ 并",
+            "level": "HSK3+",
+            "tags": [
+              "词语用法"
+            ],
+            "source_origin": "textbook/generated_mixed",
+            "check_needed": false,
+            "blocks": [
+              {
+                "id": "g03_overview",
+                "type": "grammar_overview",
+                "order": 1,
+                "title": "Bản chất",
+                "content_vi": "并 thường đi trước 不/没有 để nhấn mạnh phủ định: thực ra không, hoàn toàn không như tưởng.",
+                "examples": [
+                  {
+                    "id": "ex_01",
+                    "zh": "医生似乎并不着急查看我的伤腿。",
+                    "pinyin": "",
+                    "vi": "Bác sĩ dường như không hề vội xem chân bị thương của tôi.",
+                    "en": "",
+                    "highlight": [
+                      "并不"
+                    ],
+                    "grammar_refs": [],
+                    "vocab_refs": [],
+                    "source_ref": "",
+                    "note_vi": "",
+                    "audio_key": "",
+                    "source_origin": "textbook/generated_mixed",
+                    "check_needed": false,
+                    "uuid": "19368f63-2147-49cc-a953-0a5a90f2f5e2"
+                  },
+                  {
+                    "id": "ex_02",
+                    "zh": "他并没有生气。",
+                    "pinyin": "",
+                    "vi": "Anh ấy thực ra không giận.",
+                    "en": "",
+                    "highlight": [
+                      "并没有"
+                    ],
+                    "grammar_refs": [],
+                    "vocab_refs": [],
+                    "source_ref": "",
+                    "note_vi": "",
+                    "audio_key": "",
+                    "source_origin": "textbook/generated_mixed",
+                    "check_needed": false,
+                    "uuid": "626d875b-71bd-48d9-9867-c1bb93c9903a"
+                  }
+                ],
+                "uuid": "5ff83764-169d-4e52-bd5d-ad530302f2e1"
+              },
+              {
+                "id": "g03_negative",
+                "type": "grammar_common_mistakes",
+                "order": 2,
+                "title": "Dễ sai",
+                "items": [
+                  {
+                    "id": "g03_m01",
+                    "wrong": "他并高兴。",
+                    "correct": "他并不高兴。",
+                    "explanation_vi": "并 trong cách dùng này phải đi với phủ định 不/没有.",
+                    "uuid": "74c80da5-e7cb-4812-b8a8-afe9fc61a1e2"
+                  },
+                  {
+                    "id": "g03_m02",
+                    "wrong": "我并知道。",
+                    "correct": "我并不知道。",
+                    "explanation_vi": "并 dùng để nhấn mạnh phủ định, không đứng trực tiếp trước động từ khẳng định.",
+                    "uuid": "1bc38716-df5c-49c4-85da-401dce36642e"
+                  }
+                ],
+                "uuid": "982e24aa-616c-4c8c-9c64-82bd7ac69355"
+              }
+            ],
+            "uuid": "a1d10c05-5c1d-4455-aed1-045f3046f9b5"
+          },
+          {
+            "id": "grammar_04_sihu",
+            "type": "grammar_point",
+            "order": 4,
+            "title": "似乎",
+            "title_vi": "Phó từ 似乎",
+            "level": "HSK3+",
+            "tags": [
+              "词语用法"
+            ],
+            "source_origin": "textbook/generated_mixed",
+            "check_needed": false,
+            "blocks": [
+              {
+                "id": "g04_overview",
+                "type": "grammar_overview",
+                "order": 1,
+                "title": "Bản chất",
+                "content_vi": "似乎 nghĩa là dường như, có vẻ như; dùng khi người nói không khẳng định tuyệt đối mà chỉ suy đoán từ quan sát.",
+                "examples": [
+                  {
+                    "id": "ex_01",
+                    "zh": "医生似乎并不着急查看我的伤腿。",
+                    "pinyin": "",
+                    "vi": "Bác sĩ dường như không hề vội xem chân bị thương của tôi.",
+                    "en": "",
+                    "highlight": [
+                      "似乎"
+                    ],
+                    "grammar_refs": [],
+                    "vocab_refs": [],
+                    "source_ref": "",
+                    "note_vi": "",
+                    "audio_key": "",
+                    "source_origin": "textbook/generated_mixed",
+                    "check_needed": false,
+                    "uuid": "a1903b6e-67ac-4b57-a163-5793f12bc415"
+                  },
+                  {
+                    "id": "ex_02",
+                    "zh": "这回医生似乎听明白了怎么回事。",
+                    "pinyin": "",
+                    "vi": "Lần này bác sĩ dường như đã hiểu chuyện gì xảy ra.",
+                    "en": "",
+                    "highlight": [
+                      "似乎"
+                    ],
+                    "grammar_refs": [],
+                    "vocab_refs": [],
+                    "source_ref": "",
+                    "note_vi": "",
+                    "audio_key": "",
+                    "source_origin": "textbook/generated_mixed",
+                    "check_needed": false,
+                    "uuid": "a3a0a6fd-976c-42bf-a2cb-1f5d3ca707b6"
+                  }
+                ],
+                "uuid": "fdb62867-4455-4f07-bb95-08c332bec66e"
+              }
+            ],
+            "uuid": "49a8e74a-282d-46db-95b8-fa530d9db412"
+          },
+          {
+            "id": "grammar_05_dunshi",
+            "type": "grammar_point",
+            "order": 5,
+            "title": "顿时",
+            "title_vi": "Phó từ 顿时",
+            "level": "HSK3+",
+            "tags": [
+              "词语用法"
+            ],
+            "source_origin": "textbook/generated_mixed",
+            "check_needed": false,
+            "blocks": [
+              {
+                "id": "g05_overview",
+                "type": "grammar_overview",
+                "order": 1,
+                "title": "Bản chất",
+                "content_vi": "顿时 nhấn mạnh phản ứng hoặc thay đổi xảy ra đột ngột ngay sau một tình huống.",
+                "examples": [
+                  {
+                    "id": "ex_01",
+                    "zh": "全班同学顿时哈哈大笑起来。",
+                    "pinyin": "",
+                    "vi": "Cả lớp lập tức phá lên cười.",
+                    "en": "",
+                    "highlight": [
+                      "顿时"
+                    ],
+                    "grammar_refs": [],
+                    "vocab_refs": [],
+                    "source_ref": "",
+                    "note_vi": "",
+                    "audio_key": "",
+                    "source_origin": "textbook/generated_mixed",
+                    "check_needed": false,
+                    "uuid": "831f5e17-1f86-446a-b2bc-8cf8056f3380"
+                  },
+                  {
+                    "id": "ex_02",
+                    "zh": "老师一进来，教室里顿时安静了。",
+                    "pinyin": "",
+                    "vi": "Thầy giáo vừa bước vào, lớp học lập tức yên lặng.",
+                    "en": "",
+                    "highlight": [
+                      "顿时"
+                    ],
+                    "grammar_refs": [],
+                    "vocab_refs": [],
+                    "source_ref": "",
+                    "note_vi": "",
+                    "audio_key": "",
+                    "source_origin": "textbook/generated_mixed",
+                    "check_needed": false,
+                    "uuid": "ac70bd7a-8109-4437-ae59-3e6dcec6b057"
+                  }
+                ],
+                "uuid": "8b061ce3-92eb-4ee6-91ab-42f47545875d"
+              }
+            ],
+            "uuid": "9fec9a67-3950-4dc7-ba59-bf1ae80e6ac9"
+          },
+          {
+            "id": "grammar_06_dunshi_like",
+            "type": "grammar_point",
+            "order": 6,
+            "title": "顿时 / 立刻",
+            "title_vi": "So sánh 顿时 và 立刻",
+            "level": "HSK3+",
+            "tags": [
+              "词语用法"
+            ],
+            "source_origin": "textbook/generated_mixed",
+            "check_needed": false,
+            "blocks": [
+              {
+                "id": "g06_compare",
+                "type": "grammar_compare",
+                "order": 1,
+                "title": "顿时 và 立刻",
+                "items": [
+                  {
+                    "aspect": "Trọng tâm",
+                    "left": {
+                      "label": "顿时",
+                      "value": "phản ứng/trạng thái xuất hiện ngay"
+                    },
+                    "right": {
+                      "label": "立刻",
+                      "value": "hành động được làm ngay, thường có chủ ý"
+                    }
+                  },
+                  {
+                    "aspect": "Ví dụ tự nhiên",
+                    "left": {
+                      "label": "顿时",
+                      "value": "全班同学顿时哈哈大笑起来。"
+                    },
+                    "right": {
+                      "label": "立刻",
+                      "value": "我立刻给他打电话。"
+                    }
+                  },
+                  {
+                    "aspect": "Không hợp",
+                    "left": {
+                      "label": "顿时",
+                      "value": "Không nên nói: 负责人顿时派工人去修。"
+                    },
+                    "right": {
+                      "label": "立刻",
+                      "value": "Có thể nói: 负责人立刻派工人去修。"
+                    }
+                  }
+                ],
+                "uuid": "2b925418-b147-4e00-b468-a7ef3d949b53"
+              }
+            ],
+            "uuid": "db50252e-c39a-4e6a-9bfe-9f89082d7e73"
+          }
+        ],
+        "uuid": "fbd319a7-9906-4e73-8f52-9f061f11f67a"
+      },
+      {
+        "id": "section_06_exercises",
+        "type": "exercises",
+        "order": 6,
+        "title": "练习",
+        "title_vi": "Bài tập",
+        "source_origin": "textbook",
+        "check_needed": false,
+        "items": [
+          {
+            "id": "exercise_01",
+            "type": "phonetics",
+            "variant": "pronunciation_tone_minimal_pairs",
+            "order": 1,
+            "title": "一、语音",
+            "title_vi": "Ngữ âm",
+            "instruction": {
+              "zh": "",
+              "vi": "Phân biệt âm và thanh điệu; đọc tục ngữ.",
+              "en": ""
+            },
+            "difficulty": "normal",
+            "skill_focus": [
+              "pronunciation",
+              "speaking"
+            ],
+            "rendering": {
+              "renderer": "exercise.phonetics.v2"
+            },
+            "source_origin": "textbook",
+            "check_needed": false,
+            "parts": [
+              {
+                "id": "ex01_part01",
+                "type": "minimal_pair_group",
+                "title": "辨音辨调",
+                "items": [
+                  {
+                    "id": "ex01_pair_01",
+                    "left": "提醒 tíxǐng",
+                    "right": "题型 tíxíng",
+                    "audio_keys": [],
+                    "source_origin": "textbook",
+                    "check_needed": false,
+                    "uuid": "bdc93fd0-8456-4321-8a40-aa456170e5a5"
+                  },
+                  {
+                    "id": "ex01_pair_02",
+                    "left": "物业 wùyè",
+                    "right": "午夜 wǔyè",
+                    "audio_keys": [],
+                    "source_origin": "textbook",
+                    "check_needed": false,
+                    "uuid": "315c5ccf-6d56-42a7-aaf9-e52359cd8cdd"
+                  },
+                  {
+                    "id": "ex01_pair_03",
+                    "left": "负责 fùzé",
+                    "right": "覆辙 fùzhé",
+                    "audio_keys": [],
+                    "source_origin": "textbook",
+                    "check_needed": false,
+                    "uuid": "abf77498-3844-425c-9056-bef5286742d3"
+                  },
+                  {
+                    "id": "ex01_pair_04",
+                    "left": "住址 zhùzhǐ",
+                    "right": "阻止 zǔzhǐ",
+                    "audio_keys": [],
+                    "source_origin": "textbook",
+                    "check_needed": false,
+                    "uuid": "27fc15e0-0d73-482c-b5c7-3b3675c225ad"
+                  },
+                  {
+                    "id": "ex01_pair_05",
+                    "left": "解释 jiěshì",
+                    "right": "届时 jièshí",
+                    "audio_keys": [],
+                    "source_origin": "textbook",
+                    "check_needed": false,
+                    "uuid": "7f3688f2-90bb-4fd0-83fe-9ef9df8c3512"
+                  },
+                  {
+                    "id": "ex01_pair_06",
+                    "left": "形象 xíngxiàng",
+                    "right": "影响 yǐngxiǎng",
+                    "audio_keys": [],
+                    "source_origin": "textbook",
+                    "check_needed": false,
+                    "uuid": "dcfb0776-0ae7-43ea-ae2a-92d3ab956c19"
+                  }
+                ],
+                "uuid": "6f9bb2a2-0046-444b-bc66-f1f25bf9f25a"
+              },
+              {
+                "id": "ex01_part02",
+                "type": "proverb_reading",
+                "title": "朗读",
+                "items": [
+                  {
+                    "id": "ex01_read_01",
+                    "text": "在山泉水清，出山泉水浊。",
+                    "pinyin": "",
+                    "vi": "",
+                    "source_origin": "textbook",
+                    "check_needed": false,
+                    "uuid": "2de68e0b-0719-4a87-b3a8-c09af49e3c3c"
+                  },
+                  {
+                    "id": "ex01_read_02",
+                    "text": "露从今夜白，月是故乡明。",
+                    "pinyin": "",
+                    "vi": "",
+                    "source_origin": "textbook",
+                    "check_needed": false,
+                    "uuid": "1bf60d5e-fd9e-4229-a6ce-305f7fbf0186"
+                  },
+                  {
+                    "id": "ex01_read_03",
+                    "text": "玉不琢，不成器；人不学，不知道。",
+                    "pinyin": "",
+                    "vi": "",
+                    "source_origin": "textbook",
+                    "check_needed": false,
+                    "uuid": "7c316152-be42-4966-9a2c-c65769a2ecf9"
+                  }
+                ],
+                "uuid": "41c81aa0-eccf-46d0-a83e-1ac5a5a91bde"
+              }
+            ],
+            "uuid": "f0b83092-3243-4606-a0b4-a9bf5aad904b"
+          },
+          {
+            "id": "exercise_02",
+            "type": "read_aloud",
+            "variant": "word_phrase_sentence_chunks",
+            "order": 2,
+            "title": "二、词语",
+            "title_vi": "Từ ngữ",
+            "instruction": {
+              "zh": "",
+              "vi": "Đọc các cụm từ.",
+              "en": ""
+            },
+            "difficulty": "normal",
+            "skill_focus": [
+              "vocabulary",
+              "speaking"
+            ],
+            "rendering": {
+              "renderer": "exercise.read_aloud.v2"
+            },
+            "source_origin": "textbook",
+            "check_needed": false,
+            "chunks": [
+              {
+                "id": "ex02_chunk_01",
+                "text": "当家作主",
+                "pinyin": "",
+                "vi": "",
+                "audio_key": "",
+                "source_origin": "textbook",
+                "check_needed": false,
+                "uuid": "a905bd5e-6537-49c6-aa20-e23211c317de"
+              },
+              {
+                "id": "ex02_chunk_02",
+                "text": "兴致勃勃",
+                "pinyin": "",
+                "vi": "",
+                "audio_key": "",
+                "source_origin": "textbook",
+                "check_needed": false,
+                "uuid": "213a35f0-733d-469b-92af-b980ca75bc72"
+              },
+              {
+                "id": "ex02_chunk_03",
+                "text": "乱七八糟",
+                "pinyin": "",
+                "vi": "",
+                "audio_key": "",
+                "source_origin": "textbook",
+                "check_needed": false,
+                "uuid": "c63ba647-2ab8-4d88-8345-8786e3debb39"
+              },
+              {
+                "id": "ex02_chunk_04",
+                "text": "若有所思",
+                "pinyin": "",
+                "vi": "",
+                "audio_key": "",
+                "source_origin": "textbook",
+                "check_needed": false,
+                "uuid": "dedd12fc-817a-47c4-8a9c-502eb1fab006"
+              },
+              {
+                "id": "ex02_chunk_05",
+                "text": "不紧不慢",
+                "pinyin": "",
+                "vi": "",
+                "audio_key": "",
+                "source_origin": "textbook",
+                "check_needed": false,
+                "uuid": "7b6b0e75-47fa-4773-85c8-9cea6c806804"
+              },
+              {
+                "id": "ex02_chunk_06",
+                "text": "无话可说",
+                "pinyin": "",
+                "vi": "",
+                "audio_key": "",
+                "source_origin": "textbook",
+                "check_needed": false,
+                "uuid": "5ab04184-28ec-4198-a852-72c9efb4b0f6"
+              },
+              {
+                "id": "ex02_chunk_07",
+                "text": "值得学习",
+                "pinyin": "",
+                "vi": "",
+                "audio_key": "",
+                "source_origin": "textbook",
+                "check_needed": false,
+                "uuid": "2e06381f-e0ce-46f3-9f42-13384400c126"
+              },
+              {
+                "id": "ex02_chunk_08",
+                "text": "值得研究",
+                "pinyin": "",
+                "vi": "",
+                "audio_key": "",
+                "source_origin": "textbook",
+                "check_needed": false,
+                "uuid": "af0bfb1d-fc33-4565-935c-abcebab55fd2"
+              },
+              {
+                "id": "ex02_chunk_09",
+                "text": "值得表扬",
+                "pinyin": "",
+                "vi": "",
+                "audio_key": "",
+                "source_origin": "textbook",
+                "check_needed": false,
+                "uuid": "b590b86e-06b2-4698-8f0e-9c7391fb18fb"
+              },
+              {
+                "id": "ex02_chunk_10",
+                "text": "值得肯定",
+                "pinyin": "",
+                "vi": "",
+                "audio_key": "",
+                "source_origin": "textbook",
+                "check_needed": false,
+                "uuid": "c1c9a147-0c10-4bb8-aa1e-e9ad6f4ce06a"
+              },
+              {
+                "id": "ex02_chunk_11",
+                "text": "查看包裹",
+                "pinyin": "",
+                "vi": "",
+                "audio_key": "",
+                "source_origin": "textbook",
+                "check_needed": false,
+                "uuid": "1343b96d-1707-4cd0-bb3c-4416ebfddf5a"
+              },
+              {
+                "id": "ex02_chunk_12",
+                "text": "查看文件",
+                "pinyin": "",
+                "vi": "",
+                "audio_key": "",
+                "source_origin": "textbook",
+                "check_needed": false,
+                "uuid": "d44a8e4f-108a-49df-a49e-74be72c91af3"
+              },
+              {
+                "id": "ex02_chunk_13",
+                "text": "查看伤口",
+                "pinyin": "",
+                "vi": "",
+                "audio_key": "",
+                "source_origin": "textbook",
+                "check_needed": false,
+                "uuid": "72e26aa3-3f98-440a-93a9-024f37135664"
+              },
+              {
+                "id": "ex02_chunk_14",
+                "text": "查看病情",
+                "pinyin": "",
+                "vi": "",
+                "audio_key": "",
+                "source_origin": "textbook",
+                "check_needed": false,
+                "uuid": "82e3cb07-c89d-4041-8578-b0df8c695389"
+              },
+              {
+                "id": "ex02_chunk_15",
+                "text": "忍一忍",
+                "pinyin": "",
+                "vi": "",
+                "audio_key": "",
+                "source_origin": "textbook",
+                "check_needed": false,
+                "uuid": "fe7e6902-56b2-403d-97db-7daf60adf011"
+              },
+              {
+                "id": "ex02_chunk_16",
+                "text": "忍不了",
+                "pinyin": "",
+                "vi": "",
+                "audio_key": "",
+                "source_origin": "textbook",
+                "check_needed": false,
+                "uuid": "0f0febac-ea6d-4c3f-a92b-ddf89dd6e5fc"
+              },
+              {
+                "id": "ex02_chunk_17",
+                "text": "忍不住",
+                "pinyin": "",
+                "vi": "",
+                "audio_key": "",
+                "source_origin": "textbook",
+                "check_needed": false,
+                "uuid": "96c4cae8-7567-45d0-b87b-85a3ea8d8583"
+              },
+              {
+                "id": "ex02_chunk_18",
+                "text": "忍得住",
+                "pinyin": "",
+                "vi": "",
+                "audio_key": "",
+                "source_origin": "textbook",
+                "check_needed": false,
+                "uuid": "420a7499-6838-479b-9bc4-df61788ba29c"
+              },
+              {
+                "id": "ex02_chunk_19",
+                "text": "多形象",
+                "pinyin": "",
+                "vi": "",
+                "audio_key": "",
+                "source_origin": "textbook",
+                "check_needed": false,
+                "uuid": "4f5d7c95-f023-4bfa-a45c-b37521cb2b6c"
+              },
+              {
+                "id": "ex02_chunk_20",
+                "text": "多漂亮",
+                "pinyin": "",
+                "vi": "",
+                "audio_key": "",
+                "source_origin": "textbook",
+                "check_needed": false,
+                "uuid": "f378f7c2-f43d-48e8-9729-72ac1e50b708"
+              },
+              {
+                "id": "ex02_chunk_21",
+                "text": "多好看",
+                "pinyin": "",
+                "vi": "",
+                "audio_key": "",
+                "source_origin": "textbook",
+                "check_needed": false,
+                "uuid": "3487d3e4-14ac-4bba-9311-abfefcd7a28b"
+              },
+              {
+                "id": "ex02_chunk_22",
+                "text": "多便宜",
+                "pinyin": "",
+                "vi": "",
+                "audio_key": "",
+                "source_origin": "textbook",
+                "check_needed": false,
+                "uuid": "02fb8441-d07a-466f-a1a1-76a5d863f6fc"
+              }
+            ],
+            "uuid": "564618ac-59e3-4fe4-9248-ac763c53d324"
+          },
+          {
+            "id": "exercise_03",
+            "type": "choose_words_fill_blank",
+            "variant": "word_bank_fill_blank",
+            "order": 3,
+            "title": "三、选词填空",
+            "title_vi": "Chọn từ điền chỗ trống",
+            "instruction": {
+              "zh": "",
+              "vi": "Chọn từ thích hợp điền vào chỗ trống.",
+              "en": ""
+            },
+            "difficulty": "normal",
+            "skill_focus": [
+              "vocabulary",
+              "grammar"
+            ],
+            "rendering": {
+              "renderer": "exercise.choose_words_fill_blank.v2"
+            },
+            "source_origin": "textbook",
+            "check_needed": false,
+            "word_bank": [
+              "由",
+              "负责",
+              "规定",
+              "无话可说",
+              "解释",
+              "兴致勃勃",
+              "讲究",
+              "提醒",
+              "强",
+              "有责"
+            ],
+            "questions": [
+              {
+                "id": "ex03_q01",
+                "type": "fill_blank",
+                "order": 1,
+                "prompt": "同学们________地参加了种树活动。",
+                "answer": "兴致勃勃",
+                "acceptable_answers": [
+                  "兴致勃勃"
+                ],
+                "explanation_vi": "",
+                "grading": {
+                  "mode": "exact"
+                },
+                "source_origin": "textbook_question_generated_answer",
+                "answer_verified": false,
+                "check_needed": true,
+                "uuid": "ea45f624-c2ae-4660-bfce-44af1dbde4a9"
+              },
+              {
+                "id": "ex03_q02",
+                "type": "fill_blank",
+                "order": 2,
+                "prompt": "按照学校的________，三分之一的时间不来上课，就不能参加考试了。",
+                "answer": "规定",
+                "acceptable_answers": [
+                  "规定"
+                ],
+                "explanation_vi": "",
+                "grading": {
+                  "mode": "exact"
+                },
+                "source_origin": "textbook_question_generated_answer",
+                "answer_verified": false,
+                "check_needed": true,
+                "uuid": "8d7ff2f2-d916-401c-8cd2-ea92d451ae28"
+              },
+              {
+                "id": "ex03_q03",
+                "type": "fill_blank",
+                "order": 3,
+                "prompt": "比赛结束后，________爱德华代表全班去领奖。",
+                "answer": "由",
+                "acceptable_answers": [
+                  "由"
+                ],
+                "explanation_vi": "",
+                "grading": {
+                  "mode": "exact"
+                },
+                "source_origin": "textbook_question_generated_answer",
+                "answer_verified": false,
+                "check_needed": true,
+                "uuid": "1faf230a-9ebd-4cc3-b560-997c65ac3b34"
+              },
+              {
+                "id": "ex03_q04",
+                "type": "fill_blank",
+                "order": 4,
+                "prompt": "保护环境，人人________。",
+                "answer": "有责",
+                "acceptable_answers": [
+                  "有责"
+                ],
+                "explanation_vi": "",
+                "grading": {
+                  "mode": "exact"
+                },
+                "source_origin": "textbook_question_generated_answer",
+                "answer_verified": false,
+                "check_needed": true,
+                "uuid": "e0d331f2-d87f-4aaf-8b70-288aba3b2123"
+              },
+              {
+                "id": "ex03_q05",
+                "type": "fill_blank",
+                "order": 5,
+                "prompt": "他对穿什么、吃什么不太________。",
+                "answer": "讲究",
+                "acceptable_answers": [
+                  "讲究"
+                ],
+                "explanation_vi": "",
+                "grading": {
+                  "mode": "exact"
+                },
+                "source_origin": "textbook_question_generated_answer",
+                "answer_verified": false,
+                "check_needed": true,
+                "uuid": "8b2721c1-b131-419f-b302-084e2d2db719"
+              },
+              {
+                "id": "ex03_q06",
+                "type": "fill_blank",
+                "order": 6,
+                "prompt": "留学生的这些事由学校外事处________。",
+                "answer": "负责",
+                "acceptable_answers": [
+                  "负责"
+                ],
+                "explanation_vi": "",
+                "grading": {
+                  "mode": "exact"
+                },
+                "source_origin": "textbook_question_generated_answer",
+                "answer_verified": false,
+                "check_needed": true,
+                "uuid": "222086f0-f8ec-468f-8c83-f65e3a90ec1b"
+              },
+              {
+                "id": "ex03_q07",
+                "type": "fill_blank",
+                "order": 7,
+                "prompt": "到时候你________我一下儿，以免我忘了。",
+                "answer": "提醒",
+                "acceptable_answers": [
+                  "提醒"
+                ],
+                "explanation_vi": "",
+                "grading": {
+                  "mode": "exact"
+                },
+                "source_origin": "textbook_question_generated_answer",
+                "answer_verified": false,
+                "check_needed": true,
+                "uuid": "e95c0cbf-47d4-4128-b2f8-ca10400a0ad0"
+              },
+              {
+                "id": "ex03_q08",
+                "type": "fill_blank",
+                "order": 8,
+                "prompt": "你别________了，我不想听。",
+                "answer": "解释",
+                "acceptable_answers": [
+                  "解释"
+                ],
+                "explanation_vi": "",
+                "grading": {
+                  "mode": "exact"
+                },
+                "source_origin": "textbook_question_generated_answer",
+                "answer_verified": false,
+                "check_needed": true,
+                "uuid": "25236235-ffb5-49c3-9c58-30e5a77e30bb"
+              },
+              {
+                "id": "ex03_q09",
+                "type": "fill_blank",
+                "order": 9,
+                "prompt": "既然已经决定了，我也就________了。",
+                "answer": "无话可说",
+                "acceptable_answers": [
+                  "无话可说"
+                ],
+                "explanation_vi": "",
+                "grading": {
+                  "mode": "exact"
+                },
+                "source_origin": "textbook_question_generated_answer",
+                "answer_verified": false,
+                "check_needed": true,
+                "uuid": "94bfb867-8ad6-4866-9e25-deec8e151183"
+              },
+              {
+                "id": "ex03_q10",
+                "type": "fill_blank",
+                "order": 10,
+                "prompt": "她________忍着没让自己哭出来。",
+                "answer": "强",
+                "acceptable_answers": [
+                  "强"
+                ],
+                "explanation_vi": "",
+                "grading": {
+                  "mode": "exact"
+                },
+                "source_origin": "textbook_question_generated_answer",
+                "answer_verified": false,
+                "check_needed": true,
+                "uuid": "9e2bb0dc-911a-4be3-9bf0-8f5afd209364"
+              }
+            ],
+            "uuid": "6257902c-572b-4cec-81ff-5a27afecfd2d"
+          },
+          {
+            "id": "exercise_04",
+            "type": "complete_sentence",
+            "variant": "complete_sentence_with_given_words",
+            "order": 4,
+            "title": "四、用括号里的词语完成句子",
+            "title_vi": "Hoàn thành câu với từ trong ngoặc",
+            "instruction": {
+              "zh": "",
+              "vi": "Dùng từ trong ngoặc hoàn thành câu.",
+              "en": ""
+            },
+            "difficulty": "normal",
+            "skill_focus": [
+              "grammar",
+              "writing"
+            ],
+            "rendering": {
+              "renderer": "exercise.complete_sentence.v2"
+            },
+            "source_origin": "textbook",
+            "check_needed": false,
+            "questions": [
+              {
+                "id": "ex04_q01",
+                "type": "complete_sentence",
+                "order": 1,
+                "prompt": "这两个班的阅读课________________________。",
+                "given_words": [
+                  "由"
+                ],
+                "answer": "",
+                "acceptable_answers": [],
+                "explanation_vi": "Câu trả lời mở, cần giáo viên/app chấm theo ngữ nghĩa và dùng đúng từ cho sẵn.",
+                "grading": {
+                  "mode": "manual"
+                },
+                "source_origin": "textbook",
+                "answer_verified": false,
+                "check_needed": false,
+                "uuid": "a26d663f-fd60-4a06-9d3f-a5d522069f8c"
+              },
+              {
+                "id": "ex04_q02",
+                "type": "complete_sentence",
+                "order": 2,
+                "prompt": "我请他帮帮我，________________________。",
+                "given_words": [
+                  "似乎"
+                ],
+                "answer": "",
+                "acceptable_answers": [],
+                "explanation_vi": "Câu trả lời mở, cần giáo viên/app chấm theo ngữ nghĩa và dùng đúng từ cho sẵn.",
+                "grading": {
+                  "mode": "manual"
+                },
+                "source_origin": "textbook",
+                "answer_verified": false,
+                "check_needed": false,
+                "uuid": "dd33210c-3309-46f6-b41a-c20fa4e763df"
+              },
+              {
+                "id": "ex04_q03",
+                "type": "complete_sentence",
+                "order": 3,
+                "prompt": "第一次见她就觉得她很好，________________________。",
+                "given_words": [
+                  "并"
+                ],
+                "answer": "",
+                "acceptable_answers": [],
+                "explanation_vi": "Câu trả lời mở, cần giáo viên/app chấm theo ngữ nghĩa và dùng đúng từ cho sẵn.",
+                "grading": {
+                  "mode": "manual"
+                },
+                "source_origin": "textbook",
+                "answer_verified": false,
+                "check_needed": false,
+                "uuid": "5d6c7f7e-6729-407b-8d84-b0c63f2b15ac"
+              },
+              {
+                "id": "ex04_q04",
+                "type": "complete_sentence",
+                "order": 4,
+                "prompt": "他提出要跟我交朋友，我________________________。",
+                "given_words": [
+                  "顿时"
+                ],
+                "answer": "",
+                "acceptable_answers": [],
+                "explanation_vi": "Câu trả lời mở, cần giáo viên/app chấm theo ngữ nghĩa và dùng đúng từ cho sẵn.",
+                "grading": {
+                  "mode": "manual"
+                },
+                "source_origin": "textbook",
+                "answer_verified": false,
+                "check_needed": false,
+                "uuid": "baec2e9d-efc7-4c2d-8e95-ae52900ada00"
+              },
+              {
+                "id": "ex04_q05",
+                "type": "complete_sentence",
+                "order": 5,
+                "prompt": "他的话刚讲完，会场上________________________。",
+                "given_words": [
+                  "顿时"
+                ],
+                "answer": "",
+                "acceptable_answers": [],
+                "explanation_vi": "Câu trả lời mở, cần giáo viên/app chấm theo ngữ nghĩa và dùng đúng từ cho sẵn.",
+                "grading": {
+                  "mode": "manual"
+                },
+                "source_origin": "textbook",
+                "answer_verified": false,
+                "check_needed": false,
+                "uuid": "f5f274a3-f5ab-42cc-bac9-93354605f80a"
+              },
+              {
+                "id": "ex04_q06",
+                "type": "complete_sentence",
+                "order": 6,
+                "prompt": "我宿舍的暖气一点儿也不热，请你们________________________。",
+                "given_words": [
+                  "马上"
+                ],
+                "answer": "",
+                "acceptable_answers": [],
+                "explanation_vi": "Câu trả lời mở, cần giáo viên/app chấm theo ngữ nghĩa và dùng đúng từ cho sẵn.",
+                "grading": {
+                  "mode": "manual"
+                },
+                "source_origin": "textbook",
+                "answer_verified": false,
+                "check_needed": false,
+                "uuid": "6ccca205-667a-4cac-b737-cced212bfee4"
+              }
+            ],
+            "uuid": "163e60ec-49c2-4a64-99ce-6754e57e4a2d"
+          },
+          {
+            "id": "exercise_05",
+            "type": "complete_dialogue",
+            "variant": "complete_dialogue",
+            "order": 5,
+            "title": "五、用括号里的词语完成会话",
+            "title_vi": "Hoàn thành hội thoại với từ trong ngoặc",
+            "instruction": {
+              "zh": "",
+              "vi": "Dùng từ trong ngoặc hoàn thành hội thoại.",
+              "en": ""
+            },
+            "difficulty": "normal",
+            "skill_focus": [
+              "grammar",
+              "speaking",
+              "writing"
+            ],
+            "rendering": {
+              "renderer": "exercise.complete_dialogue.v2"
+            },
+            "source_origin": "textbook",
+            "check_needed": false,
+            "questions": [
+              {
+                "id": "ex05_q01",
+                "type": "complete_dialogue",
+                "order": 1,
+                "prompt": "A：你们家的事情由谁做主？\nB：________________________。",
+                "given_words": [
+                  "由"
+                ],
+                "answer": "",
+                "acceptable_answers": [],
+                "explanation_vi": "Câu trả lời mở, cần dùng đúng từ cho sẵn và phù hợp ngữ cảnh.",
+                "grading": {
+                  "mode": "manual"
+                },
+                "source_origin": "textbook",
+                "answer_verified": false,
+                "check_needed": false,
+                "uuid": "6bac6855-44b2-484f-982a-bc20aeb55e36"
+              },
+              {
+                "id": "ex05_q02",
+                "type": "complete_dialogue",
+                "order": 2,
+                "prompt": "A：她同意跟你一起去了吗？\nB：看她的表情，________________________。",
+                "given_words": [
+                  "似乎"
+                ],
+                "answer": "",
+                "acceptable_answers": [],
+                "explanation_vi": "Câu trả lời mở, cần dùng đúng từ cho sẵn và phù hợp ngữ cảnh.",
+                "grading": {
+                  "mode": "manual"
+                },
+                "source_origin": "textbook",
+                "answer_verified": false,
+                "check_needed": false,
+                "uuid": "ef1dacba-77d5-4b08-9b19-55b133d13717"
+              },
+              {
+                "id": "ex05_q03",
+                "type": "complete_dialogue",
+                "order": 3,
+                "prompt": "A：你现在能不能到我这里来一趟？\nB：________________________。",
+                "given_words": [
+                  "马上"
+                ],
+                "answer": "",
+                "acceptable_answers": [],
+                "explanation_vi": "Câu trả lời mở, cần dùng đúng từ cho sẵn và phù hợp ngữ cảnh.",
+                "grading": {
+                  "mode": "manual"
+                },
+                "source_origin": "textbook",
+                "answer_verified": false,
+                "check_needed": false,
+                "uuid": "77454b63-cd15-4091-a090-65e67bb6d657"
+              },
+              {
+                "id": "ex05_q04",
+                "type": "complete_dialogue",
+                "order": 4,
+                "prompt": "A：你们班参加这个活动的同学多吗？\nB：多。大家________________________。",
+                "given_words": [
+                  "兴致勃勃"
+                ],
+                "answer": "",
+                "acceptable_answers": [],
+                "explanation_vi": "Câu trả lời mở, cần dùng đúng từ cho sẵn và phù hợp ngữ cảnh.",
+                "grading": {
+                  "mode": "manual"
+                },
+                "source_origin": "textbook",
+                "answer_verified": false,
+                "check_needed": false,
+                "uuid": "7774686d-e6bb-40ca-a6af-5416aba716be"
+              },
+              {
+                "id": "ex05_q05",
+                "type": "complete_dialogue",
+                "order": 5,
+                "prompt": "A：你去中国打算做什么？\nB：学习汉语________________________。",
+                "given_words": [
+                  "并"
+                ],
+                "answer": "",
+                "acceptable_answers": [],
+                "explanation_vi": "Câu trả lời mở, cần dùng đúng từ cho sẵn và phù hợp ngữ cảnh.",
+                "grading": {
+                  "mode": "manual"
+                },
+                "source_origin": "textbook",
+                "answer_verified": false,
+                "check_needed": false,
+                "uuid": "408370ba-271a-4910-9837-ab053b0761c5"
+              },
+              {
+                "id": "ex05_q06",
+                "type": "complete_dialogue",
+                "order": 6,
+                "prompt": "A：你提出这个问题以后，大家有什么表示？\nB：________________________。",
+                "given_words": [
+                  "顿时"
+                ],
+                "answer": "",
+                "acceptable_answers": [],
+                "explanation_vi": "Câu trả lời mở, cần dùng đúng từ cho sẵn và phù hợp ngữ cảnh.",
+                "grading": {
+                  "mode": "manual"
+                },
+                "source_origin": "textbook",
+                "answer_verified": false,
+                "check_needed": false,
+                "uuid": "dda7605c-298d-4e95-8a2e-ed03e325deb3"
+              }
+            ],
+            "uuid": "6fe5b727-9966-4209-878e-cd7a48542593"
+          },
+          {
+            "id": "exercise_06",
+            "type": "reorder_sentence",
+            "variant": "reorder_sentences_or_paragraph",
+            "order": 6,
+            "title": "六、连句成段",
+            "title_vi": "Sắp câu thành đoạn",
+            "instruction": {
+              "zh": "",
+              "vi": "Sắp xếp các câu thành đoạn văn.",
+              "en": ""
+            },
+            "difficulty": "normal",
+            "skill_focus": [
+              "reading",
+              "logic"
+            ],
+            "rendering": {
+              "renderer": "exercise.reorder_sentence.v2"
+            },
+            "source_origin": "textbook",
+            "check_needed": false,
+            "questions": [
+              {
+                "id": "ex06_q01",
+                "type": "reorder_paragraph",
+                "order": 1,
+                "items": [
+                  {
+                    "label": "A",
+                    "text": "于是，老师决定带着孩子们举行一场为雕像穿棉衣的活动。"
+                  },
+                  {
+                    "label": "B",
+                    "text": "我想，随着时间的推移，孩子们会长大成人，自己穿过的棉衣会被淡忘。"
+                  },
+                  {
+                    "label": "C",
+                    "text": "老师只是一笑，并没有在意。过了一会儿，又有一个孩子提出了同样的建议。"
+                  },
+                  {
+                    "label": "D",
+                    "text": "但是，给雕像穿棉衣这个活动，将永远留在他们的记忆里。"
+                  },
+                  {
+                    "label": "E",
+                    "text": "下雪了，人们都穿上了棉衣，一个孩子跑到老师跟前很认真地问：“老师，天气这么冷，应该给院子里的雕像穿上棉衣。”"
+                  }
+                ],
+                "answer": [
+                  "E",
+                  "C",
+                  "A",
+                  "B",
+                  "D"
+                ],
+                "answer_verified": false,
+                "check_needed": true,
+                "uuid": "7f64b044-d015-42c6-9cfe-1f9df1190566"
+              },
+              {
+                "id": "ex06_q02",
+                "type": "reorder_paragraph",
+                "order": 2,
+                "items": [
+                  {
+                    "label": "A",
+                    "text": "听老师这么一讲，麦克和同学们都哈哈大笑起来。"
+                  },
+                  {
+                    "label": "B",
+                    "text": "麦克学习了一篇课文，很快记住了接吻的“吻”这个汉字。"
+                  },
+                  {
+                    "label": "C",
+                    "text": "老师听了笑了笑，回答说：“中国人比较含蓄，‘勿’‘口’的意思不是不用口，而是‘不要说话’。你想想，你跟女朋友接吻的时候，还说话吗？”"
+                  },
+                  {
+                    "label": "D",
+                    "text": "但是，他研究了半天觉得不太理解，就在课上问老师：“‘吻’字是由‘勿’和‘口’两个字组成的，意思是不动口。老师，不动口怎么接吻呢？”"
+                  }
+                ],
+                "answer": [
+                  "B",
+                  "D",
+                  "C",
+                  "A"
+                ],
+                "answer_verified": false,
+                "check_needed": true,
+                "uuid": "54f94cb2-34bc-47fe-84e1-fc246131d114"
+              }
+            ],
+            "uuid": "64a4ca5e-9127-410c-a571-3fcdd4a6d2af"
+          },
+          {
+            "id": "exercise_07",
+            "type": "correct_sentence",
+            "variant": "error_correction",
+            "order": 7,
+            "title": "七、改错句",
+            "title_vi": "Sửa câu sai",
+            "instruction": {
+              "zh": "",
+              "vi": "Sửa các câu sai.",
+              "en": ""
+            },
+            "difficulty": "normal",
+            "skill_focus": [
+              "grammar",
+              "writing"
+            ],
+            "rendering": {
+              "renderer": "exercise.correct_sentence.v2"
+            },
+            "source_origin": "textbook",
+            "check_needed": false,
+            "questions": [
+              {
+                "id": "ex07_q01",
+                "type": "error_correction",
+                "order": 1,
+                "prompt": "我真想接吻她，不知道她愿意不愿意。",
+                "answer": "我真想跟她接吻，不知道她愿意不愿意。",
+                "acceptable_answers": [
+                  "我真想跟她接吻，不知道她愿意不愿意。"
+                ],
+                "explanation_vi": "Đáp án gợi ý; có thể có biến thể đúng khác.",
+                "grading": {
+                  "mode": "manual"
+                },
+                "source_origin": "textbook_question_generated_answer",
+                "answer_verified": false,
+                "check_needed": true,
+                "uuid": "7a2ecec3-fa27-4d26-afa9-a2853b6b5616"
+              },
+              {
+                "id": "ex07_q02",
+                "type": "error_correction",
+                "order": 2,
+                "prompt": "老师问我问题时，我不能顿时回答她。",
+                "answer": "老师问我问题时，我不能马上/立刻回答她。",
+                "acceptable_answers": [
+                  "老师问我问题时，我不能马上/立刻回答她。"
+                ],
+                "explanation_vi": "Đáp án gợi ý; có thể có biến thể đúng khác.",
+                "grading": {
+                  "mode": "manual"
+                },
+                "source_origin": "textbook_question_generated_answer",
+                "answer_verified": false,
+                "check_needed": true,
+                "uuid": "7505ce43-8e76-4100-bb5a-fcbc9938ae48"
+              },
+              {
+                "id": "ex07_q03",
+                "type": "error_correction",
+                "order": 3,
+                "prompt": "这张照片似乎油画一样。",
+                "answer": "这张照片似乎跟油画一样。",
+                "acceptable_answers": [
+                  "这张照片似乎跟油画一样。"
+                ],
+                "explanation_vi": "Đáp án gợi ý; có thể có biến thể đúng khác.",
+                "grading": {
+                  "mode": "manual"
+                },
+                "source_origin": "textbook_question_generated_answer",
+                "answer_verified": false,
+                "check_needed": true,
+                "uuid": "3ef69380-2dd3-4b32-b148-ed356053f1bd"
+              },
+              {
+                "id": "ex07_q04",
+                "type": "error_correction",
+                "order": 4,
+                "prompt": "这不是我干的，你为什么发火我？",
+                "answer": "这不是我干的，你为什么冲我发火？",
+                "acceptable_answers": [
+                  "这不是我干的，你为什么冲我发火？"
+                ],
+                "explanation_vi": "Đáp án gợi ý; có thể có biến thể đúng khác.",
+                "grading": {
+                  "mode": "manual"
+                },
+                "source_origin": "textbook_question_generated_answer",
+                "answer_verified": false,
+                "check_needed": true,
+                "uuid": "f9b85d2a-6573-4231-bb47-28e5db1aa339"
+              },
+              {
+                "id": "ex07_q05",
+                "type": "error_correction",
+                "order": 5,
+                "prompt": "中国的街上常常很多标语。",
+                "answer": "中国的街上常常有很多标语。",
+                "acceptable_answers": [
+                  "中国的街上常常有很多标语。"
+                ],
+                "explanation_vi": "Đáp án gợi ý; có thể có biến thể đúng khác.",
+                "grading": {
+                  "mode": "manual"
+                },
+                "source_origin": "textbook_question_generated_answer",
+                "answer_verified": false,
+                "check_needed": true,
+                "uuid": "2bf951c9-faba-40f9-b828-335f4db0b633"
+              },
+              {
+                "id": "ex07_q06",
+                "type": "error_correction",
+                "order": 6,
+                "prompt": "听了我的话，他很气呼呼地走了。",
+                "answer": "听了我的话，他气呼呼地走了。",
+                "acceptable_answers": [
+                  "听了我的话，他气呼呼地走了。"
+                ],
+                "explanation_vi": "Đáp án gợi ý; có thể có biến thể đúng khác.",
+                "grading": {
+                  "mode": "manual"
+                },
+                "source_origin": "textbook_question_generated_answer",
+                "answer_verified": false,
+                "check_needed": true,
+                "uuid": "87f88e8b-a88f-427d-9463-d1c0f4f0b604"
+              }
+            ],
+            "uuid": "a83175df-ffa0-4222-95e7-7b9617e22365"
+          },
+          {
+            "id": "exercise_08",
+            "type": "custom",
+            "variant": "custom_textbook_task",
+            "order": 8,
+            "title": "八、情景表达",
+            "title_vi": "Biểu đạt theo tình huống",
+            "instruction": {
+              "zh": "",
+              "vi": "Nói các câu trong ngữ cảnh nào và mô tả tình huống.",
+              "en": ""
+            },
+            "difficulty": "normal",
+            "skill_focus": [
+              "speaking",
+              "communication"
+            ],
+            "rendering": {
+              "renderer": "exercise.custom.v2"
+            },
+            "source_origin": "textbook",
+            "check_needed": false,
+            "parts": [
+              {
+                "id": "ex08_part01",
+                "type": "context_for_sentence",
+                "title": "下列句子什么情景下说？",
+                "items": [
+                  {
+                    "id": "ex08_p1_01",
+                    "text": "我强忍着没发火。",
+                    "uuid": "0319230f-a875-4ab6-ad3b-1c68012ac4a6"
+                  },
+                  {
+                    "id": "ex08_p1_02",
+                    "text": "你听我解释。",
+                    "uuid": "7e15f3f4-a32b-4316-a69d-c751c8964e42"
+                  },
+                  {
+                    "id": "ex08_p1_03",
+                    "text": "他气呼呼地走了。",
+                    "uuid": "e107062d-c74d-414c-9f91-881e5e536097"
+                  }
+                ],
+                "uuid": "01f68476-3273-405c-b8e9-9fe2801feb43"
+              },
+              {
+                "id": "ex08_part02",
+                "type": "situation_description",
+                "title": "情景描述",
+                "items": [
+                  {
+                    "id": "ex08_p2_01",
+                    "text": "什么情况下你会“兴致勃勃”？",
+                    "uuid": "4b34cfaf-5ce0-48e6-8aca-e90b53279e37"
+                  },
+                  {
+                    "id": "ex08_p2_02",
+                    "text": "什么时候人会骄傲？",
+                    "uuid": "e91d816c-6a21-4e55-846d-fedce1ceebf8"
+                  },
+                  {
+                    "id": "ex08_p2_03",
+                    "text": "什么情况下你会哈哈大笑？",
+                    "uuid": "02b9470d-bcfa-4f8a-af19-6c7ff10dff9c"
+                  }
+                ],
+                "uuid": "77116c3d-d287-4065-8145-9ee5184c18a6"
+              }
+            ],
+            "uuid": "caa1357e-2289-431d-816d-f9321fe9f909"
+          },
+          {
+            "id": "exercise_09",
+            "type": "reading_fill_blank",
+            "variant": "reading_cloze",
+            "order": 9,
+            "title": "九、综合填空",
+            "title_vi": "Điền khuyết tổng hợp",
+            "instruction": {
+              "zh": "",
+              "vi": "Đọc đoạn văn và điền từ vào chỗ trống.",
+              "en": ""
+            },
+            "difficulty": "normal",
+            "skill_focus": [
+              "reading",
+              "vocabulary",
+              "grammar"
+            ],
+            "rendering": {
+              "renderer": "exercise.reading_cloze.v2",
+              "show_answer_after_submit": true
+            },
+            "source_origin": "textbook",
+            "check_needed": false,
+            "supplementary_vocab": [
+              {
+                "id": "supp_vocab_01",
+                "hanzi": "考卷",
+                "pinyin": "kǎojuàn",
+                "meaning_vi": "bài thi; giấy thi",
+                "uuid": "f95830f7-e8cb-4a51-9522-06d4d64326ec"
+              },
+              {
+                "id": "supp_vocab_02",
+                "hanzi": "墨汁",
+                "pinyin": "mòzhī",
+                "meaning_vi": "mực tàu; mực đen",
+                "uuid": "9035bef6-5205-4fce-88d7-4223ea3f77db"
+              },
+              {
+                "id": "supp_vocab_03",
+                "hanzi": "乳汁",
+                "pinyin": "rǔzhī",
+                "meaning_vi": "sữa; sữa mẹ",
+                "uuid": "f98dea23-2734-4a35-a2cc-78c0e70c436b"
+              },
+              {
+                "id": "supp_vocab_04",
+                "hanzi": "果汁",
+                "pinyin": "guǒzhī",
+                "meaning_vi": "nước trái cây",
+                "uuid": "6823c01e-6e41-4d52-9380-99b9183525ab"
+              },
+              {
+                "id": "supp_vocab_05",
+                "hanzi": "橘汁",
+                "pinyin": "júzhī",
+                "meaning_vi": "nước cam/quýt",
+                "uuid": "81146a20-e333-4f13-bbc6-2e046bc6df97"
+              },
+              {
+                "id": "supp_vocab_06",
+                "hanzi": "绞尽脑汁",
+                "pinyin": "jiǎojìn nǎozhī",
+                "meaning_vi": "vắt óc; nghĩ nát óc",
+                "uuid": "66b799e4-32ad-4335-b2e9-0974f43feaa9"
+              },
+              {
+                "id": "supp_vocab_07",
+                "hanzi": "讲评",
+                "pinyin": "jiǎngpíng",
+                "meaning_vi": "giảng và nhận xét; bình giảng",
+                "uuid": "4f718573-02c1-4b47-81a1-c4dcbce34a58"
+              }
+            ],
+            "passage": {
+              "id": "reading_cloze_01",
+              "title": "“脑汁”怎么绞",
+              "paragraphs": [
+                {
+                  "id": "rc_p01",
+                  "order": 1,
+                  "zh": "外国留学生的汉语考卷中，①________一道填空题：“他为解决这个问题，可真是绞尽②________汁。”",
+                  "uuid": "286e4f71-b81a-4d8d-8600-f573c97c886c"
+                },
+                {
+                  "id": "rc_p02",
+                  "order": 2,
+                  "zh": "考卷收上③________以后，老师发现，学生们的答案各种各样，④________没有一个是正确的。有填“绞尽墨汁”的，也有写“绞尽乳汁”的，有的说是“绞尽果汁”，还有人填的是“绞尽橘汁”。",
+                  "uuid": "c6272abd-7b38-4323-9203-b4cc3b7c55c8"
+                },
+                {
+                  "id": "rc_p03",
+                  "order": 3,
+                  "zh": "老师在讲评时说：“同学们为了答这道题，可⑤________是绞尽了脑汁，但是，没有一个人能写⑥________‘绞尽脑汁’的。”",
+                  "uuid": "93686c1f-c09e-4740-bbaf-6d5a05b06b2c"
+                },
+                {
+                  "id": "rc_p04",
+                  "order": 4,
+                  "zh": "学生们不满老师的讲评，问：“老师，脑汁怎么能绞呢？”",
+                  "uuid": "ea7195cf-5536-4003-af89-e3fdded03401"
+                }
+              ],
+              "uuid": "89e04e9b-0ac5-45d2-af71-196ad94c6ba0"
+            },
+            "questions": [
+              {
+                "id": "ex09_blank_01",
+                "type": "fill_blank",
+                "order": 1,
+                "prompt": "Blank 1",
+                "answer": "有",
+                "acceptable_answers": [
+                  "有"
+                ],
+                "grading": {
+                  "mode": "exact"
+                },
+                "source_origin": "textbook_question_generated_answer",
+                "answer_verified": false,
+                "check_needed": true,
+                "uuid": "284e19a9-7c20-46d8-8154-5d3d89ca9808"
+              },
+              {
+                "id": "ex09_blank_02",
+                "type": "fill_blank",
+                "order": 2,
+                "prompt": "Blank 2",
+                "answer": "脑",
+                "acceptable_answers": [
+                  "脑"
+                ],
+                "grading": {
+                  "mode": "exact"
+                },
+                "source_origin": "textbook_question_generated_answer",
+                "answer_verified": false,
+                "check_needed": true,
+                "uuid": "fd253075-1f7b-464b-8b96-97e2a4e342b4"
+              },
+              {
+                "id": "ex09_blank_03",
+                "type": "fill_blank",
+                "order": 3,
+                "prompt": "Blank 3",
+                "answer": "来",
+                "acceptable_answers": [
+                  "来"
+                ],
+                "grading": {
+                  "mode": "exact"
+                },
+                "source_origin": "textbook_question_generated_answer",
+                "answer_verified": false,
+                "check_needed": true,
+                "uuid": "96a88cf1-0285-4b79-bfef-077236d6320c"
+              },
+              {
+                "id": "ex09_blank_04",
+                "type": "fill_blank",
+                "order": 4,
+                "prompt": "Blank 4",
+                "answer": "却",
+                "acceptable_answers": [
+                  "却"
+                ],
+                "grading": {
+                  "mode": "exact"
+                },
+                "source_origin": "textbook_question_generated_answer",
+                "answer_verified": false,
+                "check_needed": true,
+                "uuid": "1161c897-ab0c-452a-8238-0a4a9e9edd43"
+              },
+              {
+                "id": "ex09_blank_05",
+                "type": "fill_blank",
+                "order": 5,
+                "prompt": "Blank 5",
+                "answer": "真",
+                "acceptable_answers": [
+                  "真"
+                ],
+                "grading": {
+                  "mode": "exact"
+                },
+                "source_origin": "textbook_question_generated_answer",
+                "answer_verified": false,
+                "check_needed": true,
+                "uuid": "f1db2506-c7b0-4854-804f-7f4ae736d4c3"
+              },
+              {
+                "id": "ex09_blank_06",
+                "type": "fill_blank",
+                "order": 6,
+                "prompt": "Blank 6",
+                "answer": "对",
+                "acceptable_answers": [
+                  "对"
+                ],
+                "grading": {
+                  "mode": "exact"
+                },
+                "source_origin": "textbook_question_generated_answer",
+                "answer_verified": false,
+                "check_needed": true,
+                "uuid": "d4fd5970-63ab-45d6-b1d0-d1749926625e"
+              }
+            ],
+            "uuid": "e9d1546f-2b24-49a4-8dff-2e5c5e9d38ed"
+          },
+          {
+            "id": "exercise_10",
+            "type": "communication_dialogue",
+            "variant": "role_play",
+            "order": 10,
+            "title": "十、交际会话",
+            "title_vi": "Hội thoại giao tiếp",
+            "instruction": {
+              "zh": "",
+              "vi": "Luyện hội thoại nhắc nhở và yêu cầu.",
+              "en": ""
+            },
+            "difficulty": "normal",
+            "skill_focus": [
+              "communication",
+              "speaking"
+            ],
+            "rendering": {
+              "renderer": "exercise.communication_dialogue.v2"
+            },
+            "source_origin": "textbook",
+            "check_needed": false,
+            "topics": [
+              {
+                "id": "ex10_topic01",
+                "title": "提醒",
+                "title_vi": "Nhắc nhở",
+                "dialogues": [
+                  {
+                    "id": "ex10_d01",
+                    "lines": [
+                      {
+                        "speaker": "A",
+                        "zh": "哎，快醒醒，该下车了。"
+                      },
+                      {
+                        "speaker": "B",
+                        "zh": "是吗？几点了。"
+                      },
+                      {
+                        "speaker": "A",
+                        "zh": "九点五十了，火车马上就到站了，快把你的行李收拾一下儿，准备下车。"
+                      }
+                    ],
+                    "uuid": "8ec7a3db-af0e-4610-abaf-2deb41025553"
+                  },
+                  {
+                    "id": "ex10_d02",
+                    "lines": [
+                      {
+                        "speaker": "A",
+                        "zh": "小王，记着下班前把这份合同按上面的地址寄出去。"
+                      },
+                      {
+                        "speaker": "B",
+                        "zh": "放心吧，张经理。我记着呢。"
+                      }
+                    ],
+                    "uuid": "733fb3d1-701b-47c9-881b-48c7d6821e59"
+                  },
+                  {
+                    "id": "ex10_d03",
+                    "lines": [
+                      {
+                        "speaker": "A",
+                        "zh": "外边下着雨呢，别忘了带伞。"
+                      },
+                      {
+                        "speaker": "B",
+                        "zh": "嗯，忘不了。"
+                      }
+                    ],
+                    "uuid": "915d9235-e1ac-4baf-a9fc-23db21ba2b30"
+                  }
+                ],
+                "uuid": "6fcf6958-dcb7-4dee-afbc-4e2d1d0e0fab"
+              },
+              {
+                "id": "ex10_topic02",
+                "title": "请求",
+                "title_vi": "Yêu cầu / nhờ vả",
+                "dialogues": [
+                  {
+                    "id": "ex10_d04",
+                    "lines": [
+                      {
+                        "speaker": "A",
+                        "zh": "你帮我看一下儿行李，我去买瓶水。"
+                      },
+                      {
+                        "speaker": "B",
+                        "zh": "好，快去快回。"
+                      }
+                    ],
+                    "uuid": "2a362d79-239b-42ba-a6f2-df6a1b04f727"
+                  },
+                  {
+                    "id": "ex10_d05",
+                    "lines": [
+                      {
+                        "speaker": "A",
+                        "zh": "能借你手机打个电话吗？我手机没电了。"
+                      },
+                      {
+                        "speaker": "B",
+                        "zh": "当然可以。"
+                      }
+                    ],
+                    "uuid": "11ddda7b-a412-4399-a293-64d60061a6d8"
+                  },
+                  {
+                    "id": "ex10_d06",
+                    "lines": [
+                      {
+                        "speaker": "A",
+                        "zh": "快递公司吗？我想发一个快递。"
+                      },
+                      {
+                        "speaker": "B",
+                        "zh": "好的。请问您的地址是？"
+                      },
+                      {
+                        "speaker": "A",
+                        "zh": "语言大学15号学生宿舍楼。"
+                      },
+                      {
+                        "speaker": "B",
+                        "zh": "好，我们马上派人过去。"
+                      }
+                    ],
+                    "uuid": "72a6c53b-fd96-46f0-ad32-f1a7a73349f6"
+                  }
+                ],
+                "uuid": "8051aa6c-93a7-4e8a-899f-b97847b99348"
+              }
+            ],
+            "uuid": "ec760c36-48df-4f91-99db-d8bb68b911e4"
+          }
+        ],
+        "coverage_contract": {
+          "policy": "Coverage-first: preserve all textbook exercise items in order.",
+          "expected_exercise_count_from_pdf": 10,
+          "actual_exercise_count_in_json": 10,
+          "all_exercises_covered": true,
+          "coverage_status": "complete_unverified",
+          "final_verification_allowed": false
+        },
+        "uuid": "2258915b-e46c-465d-9a2c-8a90ded757c9"
+      },
+      {
+        "id": "section_07_reading",
+        "type": "reading",
+        "order": 7,
+        "title": "阅读理解 / 综合填空",
+        "title_vi": "Đọc hiểu / điền khuyết",
+        "source_origin": "textbook",
+        "check_needed": false,
+        "items": [],
+        "empty_reason_vi": "Bài này không có 阅读理解 riêng; 综合填空 nằm trong 练习 mục 9.",
+        "references": [
+          {
+            "source_section_id": "section_06_exercises",
+            "source_item_id": "exercise_09",
+            "title": "“脑汁”怎么绞",
+            "type": "reading_cloze",
+            "is_duplicate_reference": true
+          }
+        ],
+        "uuid": "a8e1cfb2-58da-46ff-9b2e-30c25e118cfb"
+      },
+      {
+        "id": "section_08_character_writing",
+        "type": "character_writing",
+        "order": 8,
+        "title": "写汉字",
+        "title_vi": "Viết chữ Hán",
+        "source_origin": "textbook",
+        "check_needed": false,
+        "items": [],
+        "empty_reason_vi": "Bài này không thấy phần 写汉字 riêng trong PDF.",
+        "uuid": "62bac6c6-8c74-4248-9f52-4987b93975c4"
+      },
+      {
+        "id": "section_09_summary",
+        "type": "summary",
+        "order": 9,
+        "title": "总结",
+        "title_vi": "Tổng kết",
+        "source_origin": "textbook",
+        "check_needed": false,
+        "summary": {
+          "grammar_points": [
+            "由",
+            "马上",
+            "并",
+            "似乎",
+            "顿时",
+            "顿时 / 立刻"
+          ],
+          "key_patterns": [
+            "由 + N + V",
+            "马上 + V",
+            "并 + 不/没有 + V/Adj",
+            "似乎 + clause",
+            "顿时 + predicate"
+          ],
+          "covered_sections": [
+            "课文",
+            "生词",
+            "专名",
+            "词语用法",
+            "练习",
+            "综合填空"
+          ],
+          "empty_by_textbook": [
+            "注释",
+            "阅读理解独立部分",
+            "写汉字"
+          ]
+        },
+        "uuid": "c851e733-6715-4743-a7f5-fec212ee6d75"
+      }
+    ],
+    "summary": {
+      "lesson_parts": [
+        "Bài khóa",
+        "Từ vựng chính",
+        "Tên riêng",
+        "Chú thích",
+        "Cách dùng từ",
+        "Bài tập",
+        "Đọc hiểu / điền khuyết",
+        "Viết chữ Hán",
+        "Tổng kết"
+      ],
+      "grammar_points": [
+        {
+          "id": "summary_grammar_01",
+          "title": "由",
+          "uuid": "65161a65-449e-4aef-a77a-f5f1f6cb0e76"
+        },
+        {
+          "id": "summary_grammar_02",
+          "title": "马上",
+          "uuid": "d1cc317e-bebc-4fa8-9721-6c5931328653"
+        },
+        {
+          "id": "summary_grammar_03",
+          "title": "并",
+          "uuid": "a97c2e20-b610-429f-914e-bb65098ebd7b"
+        },
+        {
+          "id": "summary_grammar_04",
+          "title": "似乎",
+          "uuid": "53f4717a-21c3-4675-88d1-077cc8da06ca"
+        },
+        {
+          "id": "summary_grammar_05",
+          "title": "顿时",
+          "uuid": "4e9279fe-c334-4267-bb29-df8f42295600"
+        },
+        {
+          "id": "summary_grammar_06",
+          "title": "顿时 / 立刻",
+          "uuid": "72d2f24c-2045-45c6-b4da-867b09f67110"
+        }
+      ],
+      "main_patterns": [
+        {
+          "pattern": "由 + N + V"
+        },
+        {
+          "pattern": "马上 + V"
+        },
+        {
+          "pattern": "并 + 不/没有 + V/Adj"
+        },
+        {
+          "pattern": "似乎 + clause"
+        },
+        {
+          "pattern": "顿时 + predicate"
+        }
+      ],
+      "exercise_types": [
+        "Ngữ âm",
+        "Từ ngữ",
+        "Chọn từ điền chỗ trống",
+        "Hoàn thành câu với từ trong ngoặc",
+        "Hoàn thành hội thoại với từ trong ngoặc",
+        "Sắp câu thành đoạn",
+        "Sửa câu sai",
+        "Biểu đạt theo tình huống",
+        "Điền khuyết tổng hợp",
+        "Hội thoại giao tiếp"
+      ],
+      "check_needed": false
+    },
+    "uuid": "9fb8833f-559a-4fba-b174-5cfda3d1819a"
+  },
+  "coverage_report": {
+    "version": "coverage_v1",
+    "coverage_status": "complete_unverified",
+    "expected_exercise_count_from_pdf": 10,
+    "actual_exercise_count_in_json": 10,
+    "all_exercises_covered": true,
+    "all_exercise_content_verified": true,
+    "missing_exercise_indexes": [],
+    "expected_exercises_from_pdf": [
+      {
+        "order": 1,
+        "title_cn": "语音",
+        "title_vi": "Ngữ âm",
+        "canonical_type": "phonetics",
+        "canonical_variant": "pronunciation_tone_minimal_pairs",
+        "json_item_id": "exercise_01",
+        "page_start": null,
+        "page_end": null,
+        "extracted": true,
+        "content_verified": true,
+        "answer_verified": false,
+        "source_origin": "textbook",
+        "check_needed": false
+      },
+      {
+        "order": 2,
+        "title_cn": "词语",
+        "title_vi": "Từ ngữ",
+        "canonical_type": "read_aloud",
+        "canonical_variant": "word_phrase_sentence_chunks",
+        "json_item_id": "exercise_02",
+        "page_start": null,
+        "page_end": null,
+        "extracted": true,
+        "content_verified": true,
+        "answer_verified": false,
+        "source_origin": "textbook",
+        "check_needed": false
+      },
+      {
+        "order": 3,
+        "title_cn": "选词填空",
+        "title_vi": "Chọn từ điền chỗ trống",
+        "canonical_type": "choose_words_fill_blank",
+        "canonical_variant": "word_bank_fill_blank",
+        "json_item_id": "exercise_03",
+        "page_start": null,
+        "page_end": null,
+        "extracted": true,
+        "content_verified": true,
+        "answer_verified": false,
+        "source_origin": "textbook",
+        "check_needed": true
+      },
+      {
+        "order": 4,
+        "title_cn": "用括号里的词语完成句子",
+        "title_vi": "Hoàn thành câu",
+        "canonical_type": "complete_sentence",
+        "canonical_variant": "complete_sentence_with_given_words",
+        "json_item_id": "exercise_04",
+        "page_start": null,
+        "page_end": null,
+        "extracted": true,
+        "content_verified": true,
+        "answer_verified": false,
+        "source_origin": "textbook",
+        "check_needed": false
+      },
+      {
+        "order": 5,
+        "title_cn": "用括号里的词语完成会话",
+        "title_vi": "Hoàn thành hội thoại",
+        "canonical_type": "complete_dialogue",
+        "canonical_variant": "complete_dialogue",
+        "json_item_id": "exercise_05",
+        "page_start": null,
+        "page_end": null,
+        "extracted": true,
+        "content_verified": true,
+        "answer_verified": false,
+        "source_origin": "textbook",
+        "check_needed": false
+      },
+      {
+        "order": 6,
+        "title_cn": "连句成段",
+        "title_vi": "Sắp câu thành đoạn",
+        "canonical_type": "reorder_sentence",
+        "canonical_variant": "reorder_sentences_or_paragraph",
+        "json_item_id": "exercise_06",
+        "page_start": null,
+        "page_end": null,
+        "extracted": true,
+        "content_verified": true,
+        "answer_verified": false,
+        "source_origin": "textbook",
+        "check_needed": true
+      },
+      {
+        "order": 7,
+        "title_cn": "改错句",
+        "title_vi": "Sửa câu sai",
+        "canonical_type": "correct_sentence",
+        "canonical_variant": "error_correction",
+        "json_item_id": "exercise_07",
+        "page_start": null,
+        "page_end": null,
+        "extracted": true,
+        "content_verified": true,
+        "answer_verified": false,
+        "source_origin": "textbook",
+        "check_needed": true
+      },
+      {
+        "order": 8,
+        "title_cn": "情景表达",
+        "title_vi": "Biểu đạt theo tình huống",
+        "canonical_type": "custom",
+        "canonical_variant": "custom_textbook_task",
+        "json_item_id": "exercise_08",
+        "page_start": null,
+        "page_end": null,
+        "extracted": true,
+        "content_verified": true,
+        "answer_verified": false,
+        "source_origin": "textbook",
+        "check_needed": false
+      },
+      {
+        "order": 9,
+        "title_cn": "综合填空",
+        "title_vi": "Điền khuyết tổng hợp",
+        "canonical_type": "reading_fill_blank",
+        "canonical_variant": "reading_cloze",
+        "json_item_id": "exercise_09",
+        "page_start": null,
+        "page_end": null,
+        "extracted": true,
+        "content_verified": true,
+        "answer_verified": false,
+        "source_origin": "textbook_question_generated_answer",
+        "check_needed": true
+      },
+      {
+        "order": 10,
+        "title_cn": "交际会话",
+        "title_vi": "Hội thoại giao tiếp",
+        "canonical_type": "communication_dialogue",
+        "canonical_variant": "role_play",
+        "json_item_id": "exercise_10",
+        "page_start": null,
+        "page_end": null,
+        "extracted": true,
+        "content_verified": true,
+        "answer_verified": false,
+        "source_origin": "textbook",
+        "check_needed": false
+      }
+    ],
+    "unknown_or_unmapped_blocks": [],
+    "coverage_gates": [
+      {
+        "id": "gate_text",
+        "label": "Text covered",
+        "passed": true,
+        "expected": 5,
+        "actual": 5,
+        "reason": "5 text blocks extracted.",
+        "uuid": "7b8c75e3-6e8c-4cda-bee8-21c2942ed4ae"
+      },
+      {
+        "id": "gate_vocab",
+        "label": "Vocabulary covered",
+        "passed": true,
+        "expected": 62,
+        "actual": 62,
+        "reason": "62 main vocabulary items extracted.",
+        "uuid": "f6479c2f-a647-4c56-914d-a053c1323fc4"
+      },
+      {
+        "id": "gate_exercises",
+        "label": "Exercises covered",
+        "passed": true,
+        "expected": 10,
+        "actual": 10,
+        "reason": "All 10 exercise items extracted.",
+        "uuid": "90f5166b-f125-4a91-961d-07357e37db27"
+      },
+      {
+        "id": "gate_reading",
+        "label": "Reading handled",
+        "passed": true,
+        "expected": "综合填空 inside exercises",
+        "actual": "exercise_09",
+        "reason": "No separate reading section in textbook; cloze reading preserved as exercise.",
+        "uuid": "38570689-e4fd-46e3-b238-4b1918cc8037"
+      },
+      {
+        "id": "gate_character_writing",
+        "label": "Character writing handled",
+        "passed": true,
+        "expected": "empty_by_textbook",
+        "actual": "empty_by_textbook",
+        "reason": "No separate 写汉字 section found.",
+        "uuid": "923d1711-cc1c-4bf7-a828-32d6326a62b2"
+      }
+    ],
+    "final_verification_allowed": false
+  }
+}

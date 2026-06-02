@@ -1,4 +1,3 @@
-import grammarData from "../../../data/hanzihome/hanzihome_grammar_clean.json";
 import radicalsData from "../../../data/hanzihome/hanzihome_radicals_clean.json";
 import {
  DEFAULT_HANYU_COURSE_ID,
@@ -37,33 +36,33 @@ import type {
  HanziHomeCatalogData,
  HanziHomeData,
  HanziHomeLesson,
- VocabExample,
 } from "@/features/hanzihome/types";
 
-type LegacyGrammarPoint = {
- id: string;
- lessonNumber: number;
- title: string;
- contentMd?: string;
- structures?: string[];
- examplesRaw?: string[];
-};
+function parseStaticVocabLessons(lessons: unknown[]) {
+ return lessons
+  .flatMap((lesson) => {
+   const result = DeepVocabularyLessonSchema.safeParse(lesson);
 
-const q2VocabLessons = q2VocabJson
- .map((lesson) => DeepVocabularyLessonSchema.parse(lesson))
- .sort((a, b) => a.source.lesson_index - b.source.lesson_index);
+   return result.success ? [result.data] : [];
+  })
+  .sort((a, b) => a.source.lesson_index - b.source.lesson_index);
+}
 
-const q3VocabLessons = q3VocabJson
- .map((lesson) => DeepVocabularyLessonSchema.parse(lesson))
- .sort((a, b) => a.source.lesson_index - b.source.lesson_index);
+function parseStaticLessonDocuments(lessons: unknown[]) {
+ return lessons
+  .flatMap((lesson) => {
+   const result = HanyuLessonSchema.safeParse(lesson);
 
-const q2LessonDocuments = q2LessonJson
- .map((lesson) => HanyuLessonSchema.parse(lesson))
- .sort((a, b) => a.source.lesson_index - b.source.lesson_index);
+   return result.success ? [result.data] : [];
+  })
+  .sort((a, b) => a.source.lesson_index - b.source.lesson_index);
+}
 
-const q3LessonDocuments = q3LessonJson
- .map((lesson) => HanyuLessonSchema.parse(lesson))
- .sort((a, b) => a.source.lesson_index - b.source.lesson_index);
+const q2VocabLessons = parseStaticVocabLessons(q2VocabJson);
+const q3VocabLessons = parseStaticVocabLessons(q3VocabJson);
+
+const q2LessonDocuments = parseStaticLessonDocuments(q2LessonJson);
+const q3LessonDocuments = parseStaticLessonDocuments(q3LessonJson);
 
 const q2LessonDocumentsByIndex = new Map(
  q2LessonDocuments.map((lesson) => [lesson.source.lesson_index, lesson]),
@@ -80,7 +79,6 @@ type StaticCourseRuntime = {
  vocabLessons: DeepVocabularyLesson[];
  lessonDocuments: HanyuLesson[];
  lessonDocumentsByIndex: Map<number, HanyuLesson>;
- grammarSource: "legacy-q2" | "lesson-document";
  sourceFiles: string[];
 };
 
@@ -99,7 +97,6 @@ const staticCourseRuntimes: StaticCourseRuntime[] = [
   vocabLessons: q2VocabLessons,
   lessonDocuments: q2LessonDocuments,
   lessonDocumentsByIndex: q2LessonDocumentsByIndex,
-  grammarSource: "legacy-q2",
   sourceFiles: [
    "data/hanzihome/q2/vocab/*.json",
    "data/hanzihome/q2/lessons/*.json",
@@ -112,7 +109,6 @@ const staticCourseRuntimes: StaticCourseRuntime[] = [
   vocabLessons: q3VocabLessons,
   lessonDocuments: q3LessonDocuments,
   lessonDocumentsByIndex: q3LessonDocumentsByIndex,
-  grammarSource: "lesson-document",
   sourceFiles: [
    "data/hanzihome/q3/vocab/*.json",
    "data/hanzihome/q3/lessons/*.json",
@@ -122,6 +118,14 @@ const staticCourseRuntimes: StaticCourseRuntime[] = [
 
 function getBookMeta(courseId: string, lessonNumber: number) {
  if (courseId === HANYU_Q3_COURSE_ID) {
+  if (lessonNumber >= 13) {
+   return {
+    bookId: "hanyu-q3-xia",
+    bookTitle: "Giáo trình Hán ngữ 3 Hạ",
+    bookOrder: 2,
+   };
+  }
+
   return {
    bookId: "hanyu-q3-shang",
    bookTitle: "Giáo trình Hán ngữ 3 Thượng",
@@ -307,87 +311,6 @@ function recordArray(record: Record<string, unknown>, key: string) {
  return Array.isArray(value) ? value : [];
 }
 
-function cleanGrammarTitle(value: string) {
- return value
-  .replace(/^#+\s*/, "")
-  .replace(/^\\?\d+\\?\.\s*/, "")
-  .replace(/^\d+[\.)、]\s*/, "")
-  .replace(/^[一二三四五六七八九十]+、\s*/, "")
-  .replace(/^（[一二三四五六七八九十]+）\s*/, "")
-  .replace(/\\([.+*?^${}()|[\]\\])/g, "$1")
-  .trim();
-}
-
-function parseLegacyExampleLine(line: string): VocabExample | null {
- const value = line
-  .replace(/^\*\s*/, "")
-  .replace(/^[-•]\s*/, "")
-  .trim();
-
- if (!/[\u3400-\u9fff]/.test(value)) return null;
-
- const match = value.match(/^(.+?)[（(]([^()（）]+)[）)]$/);
- if (!match) {
-  return {
-   zh: value,
-  };
- }
-
- return {
-  zh: match[1]?.trim() ?? value,
-  vi: match[2]?.trim(),
- };
-}
-
-function getLegacyGrammarByLessonNumber(lessonNumber: number) {
- return (grammarData.grammarPoints as LegacyGrammarPoint[])
-  .filter((point) => point.lessonNumber === lessonNumber)
-  .sort((a, b) => a.id.localeCompare(b.id));
-}
-
-function buildLegacyGrammarViewModels(
- lessonId: string,
- lessonNumber: number,
-): GrammarViewModel[] {
- return getLegacyGrammarByLessonNumber(lessonNumber).map((point) => {
-  const itemTitle = cleanGrammarTitle(point.title);
-  const contentMd = point.contentMd?.trim() || "";
-  const detailSections: NonNullable<GrammarViewModel["detailSections"]> =
-   contentMd
-    ? [
-       {
-        key: `${lessonId}-${point.id}-content`,
-        title: "Chi tiết",
-        lines: contentMd
-         .split(/\n+/)
-         .map((line) => line.trim())
-         .filter(Boolean),
-       },
-      ]
-    : [];
-  const examples = (point.examplesRaw ?? [])
-   .map(parseLegacyExampleLine)
-   .filter((example): example is VocabExample => Boolean(example));
-  const notes = (point.examplesRaw ?? []).filter(
-   (line) => !parseLegacyExampleLine(line),
-  );
-
-  return {
-   id: `${lessonId}__${point.id}`,
-   title: itemTitle,
-   cleanTitle: itemTitle,
-   core: detailSections[0]?.lines[0] || contentMd,
-   contentMd,
-   structuresView: Array.from(
-    new Set((point.structures ?? []).filter(Boolean)),
-   ),
-   examplesParsed: examples,
-   notes: Array.from(new Set(notes.filter(Boolean))),
-   detailSections,
-  };
- });
-}
-
 function buildLessonDocumentGrammarViewModels(
  lessonId: string,
  lessonDocument: HanyuLesson | undefined,
@@ -440,10 +363,6 @@ function buildLessonDocumentGrammarViewModels(
 }
 
 function buildGrammarViewModels(entry: RuntimeLessonEntry, lessonId: string) {
- if (entry.runtime.grammarSource === "legacy-q2") {
-  return buildLegacyGrammarViewModels(lessonId, entry.lessonNumber);
- }
-
  return buildLessonDocumentGrammarViewModels(lessonId, entry.lessonDocument);
 }
 
@@ -697,29 +616,29 @@ function renderLessonOverviewMarkdown(
 }
 
 function getEntryLessonId(entry: RuntimeLessonEntry) {
- return entry.vocabLesson?.lesson.id || entry.lessonDocument?.lesson.id || "";
+ return entry.lessonDocument?.lesson.id || entry.vocabLesson?.lesson.id || "";
 }
 
 function getEntryTitleZh(entry: RuntimeLessonEntry) {
  return (
-  entry.vocabLesson?.lesson.title.zh ||
   entry.lessonDocument?.lesson.title.zh ||
+  entry.vocabLesson?.lesson.title.zh ||
   `Bài ${entry.lessonNumber}`
  );
 }
 
 function getEntrySourceFile(entry: RuntimeLessonEntry) {
  const sourceFiles =
-  entry.vocabLesson?.source.source_files ||
-  entry.lessonDocument?.source.source_files;
+  entry.lessonDocument?.source.source_files ||
+  entry.vocabLesson?.source.source_files;
 
  return sourceFiles?.map((file) => file.name).join(", ") || "";
 }
 
 function getEntryOverviewNote(entry: RuntimeLessonEntry) {
  return (
-  entry.vocabLesson?.overview.note_vi ||
   entry.lessonDocument?.source.lesson_title_vi ||
+  entry.vocabLesson?.overview.note_vi ||
   ""
  );
 }

@@ -1,0 +1,5413 @@
+{
+  "schema_version": "2.3.0",
+  "content_type": "chinese_textbook_lesson",
+  "verification_status": "verified",
+  "source": {
+    "book": "Hanyu Jiaocheng",
+    "volume": "第三册下",
+    "volume_vi": "Quyển 3 Hạ",
+    "lesson_index": 16,
+    "lesson_number_cn": "第十六课",
+    "lesson_title_cn": "金星人遇到麻烦",
+    "lesson_title_pinyin": "Jīnxīng rén yùdào máfan",
+    "lesson_title_vi": "Người sao Kim gặp rắc rối",
+    "lesson_title_en": "The Venusians are having a trouble",
+    "source_files": [
+      {
+        "name": "Hanyu Jiaocheng 3-2.pdf",
+        "type": "pdf_scan",
+        "source_origin": "textbook",
+        "check_needed": false,
+        "page_start": 33,
+        "page_end": 49
+      },
+      {
+        "name": "Đã dán markdown (1).md",
+        "type": "user_instruction",
+        "source_origin": "uploaded_crosscheck",
+        "check_needed": false
+      },
+      {
+        "name": "hanyuLesson.schema.v2.3.0.full.ts",
+        "type": "schema",
+        "source_origin": "uploaded_crosscheck",
+        "check_needed": false
+      }
+    ],
+    "web_crosscheck": [
+      {
+        "title": "Chinese Course (3rd Edition) 3B汉语教程第三册下Lesson 16 金星人遇到麻烦",
+        "source_origin": "web_crosscheck",
+        "note": "Used only as secondary cross-check for lesson identity and text; PDF scan remains primary."
+      }
+    ]
+  },
+  "lesson": {
+    "id": "hanyu_3_2_lesson_16_jinxingren_yudao_mafan",
+    "title": {
+      "zh": "金星人遇到麻烦",
+      "pinyin": "Jīnxīng rén yùdào máfan",
+      "vi": "Người sao Kim gặp rắc rối",
+      "en": "The Venusians are having a trouble"
+    },
+    "tags": [
+      "hanyu_3_2",
+      "lesson_16",
+      "coverage_first",
+      "verified_pdf_scan"
+    ],
+    "sections": [
+      {
+        "id": "section_01_text",
+        "type": "text",
+        "order": 1,
+        "title": "课文",
+        "title_vi": "Bài khóa",
+        "source_origin": "textbook",
+        "check_needed": false,
+        "blocks": [
+          {
+            "id": "text_01",
+            "type": "text_narrative",
+            "order": 1,
+            "title": "金星人遇到麻烦",
+            "title_vi": "Người sao Kim gặp rắc rối",
+            "source_origin": "textbook",
+            "check_needed": false,
+            "paragraphs": [
+              {
+                "id": "text_01_p01",
+                "order": 1,
+                "zh": "上星期，金星上一片欢腾——科学家们成功地向地球发射了一颗卫星。目前，这颗卫星停留在天壶地区的上空，正连续不断向金星发回照片和信号。",
+                "vi": "Tuần trước, trên sao Kim tràn ngập không khí vui mừng — các nhà khoa học đã phóng thành công một vệ tinh về phía Trái Đất. Hiện nay, vệ tinh này đang dừng lại trên bầu trời khu vực Thiên Hồ, liên tục gửi ảnh và tín hiệu về sao Kim.",
+                "source_origin": "textbook",
+                "check_needed": false,
+                "uuid": "22bbb863-65d3-45fd-bded-c663565e5c7a"
+              },
+              {
+                "id": "text_01_p02",
+                "order": 2,
+                "zh": "由于地球上空天气很好，科学家们便有可能获得不少珍贵资料。载人飞船登上地球究竟能否实现？对这个重大问题，他们也已经取得了某些突破。",
+                "vi": "Do thời tiết phía trên Trái Đất rất tốt, các nhà khoa học có khả năng thu được không ít tư liệu quý giá. Liệu tàu vũ trụ có người lái có thể đáp xuống Trái Đất hay không? Về vấn đề trọng đại này, họ cũng đã đạt được một số đột phá.",
+                "source_origin": "textbook",
+                "check_needed": false,
+                "uuid": "88af13d3-d87b-431b-9b27-cc53ca6254a2"
+              },
+              {
+                "id": "text_01_p03",
+                "order": 3,
+                "zh": "在金星科技大学里，一个记者招待会正在进行。",
+                "vi": "Tại Đại học Khoa học Kỹ thuật sao Kim, một buổi họp báo đang diễn ra.",
+                "source_origin": "textbook",
+                "check_needed": false,
+                "uuid": "389652c7-d7d8-4d74-8a1d-481bbeb3682e"
+              },
+              {
+                "id": "text_01_p04",
+                "order": 4,
+                "zh": "“我们已经能得出结论，”格林教授说，“地球上是没有生命存在的。”",
+                "vi": "“Chúng tôi đã có thể đưa ra kết luận,” giáo sư Green nói, “trên Trái Đất không có sự sống tồn tại.”",
+                "source_origin": "textbook",
+                "check_needed": false,
+                "uuid": "4afd1a7a-c813-4a44-995d-3c50ba43d0db"
+              },
+              {
+                "id": "text_01_p05",
+                "order": 5,
+                "zh": "“格林教授，您能不能介绍一下儿，这个结论是怎么得出的？”《金星日报》记者问道。",
+                "vi": "“Giáo sư Green, ông có thể giới thiệu một chút, kết luận này được rút ra như thế nào không?” phóng viên của Nhật báo sao Kim hỏi.",
+                "source_origin": "textbook",
+                "check_needed": false,
+                "uuid": "06bea00a-0ffb-4f76-9d1a-0a3051695f38"
+              },
+              {
+                "id": "text_01_p06",
+                "order": 6,
+                "zh": "“首先，天壶区的地面都由一种坚硬无比的混凝土覆盖着，这就是说，任何植物都不能生长。第二，地球的大气中充满一氧化碳和其他种种有害气体，在这样的环境里，人类是无法生存的。因为没有氧气，所以如果说有人能在那里生存，那真是不可思议。”",
+                "vi": "“Trước hết, mặt đất ở khu vực Thiên Hồ đều được phủ bởi một loại bê tông cực kỳ cứng, điều này có nghĩa là bất kỳ loài thực vật nào cũng không thể sinh trưởng. Thứ hai, bầu khí quyển của Trái Đất đầy khí CO và nhiều loại khí độc hại khác. Trong môi trường như vậy, loài người không thể sinh tồn. Vì không có oxy, nên nếu nói có người có thể sống ở đó thì thật là không thể tưởng tượng nổi.”",
+                "source_origin": "textbook",
+                "check_needed": false,
+                "uuid": "4a57fe00-cc44-4923-a23e-3b130e58cce4"
+              },
+              {
+                "id": "text_01_p07",
+                "order": 7,
+                "zh": "“教授，这些和我们金星人的空间计划有没有联系？”",
+                "vi": "“Thưa giáo sư, những điều này có liên quan gì đến kế hoạch không gian của người sao Kim chúng ta không?”",
+                "source_origin": "textbook",
+                "check_needed": false,
+                "uuid": "cb484475-705b-4c3a-8573-03040e6c797c"
+              },
+              {
+                "id": "text_01_p08",
+                "order": 8,
+                "zh": "“当然有。这样，我们发射的飞船还得自带氧气，飞船的重量也将不得不大大增加。”",
+                "vi": "“Đương nhiên là có. Như vậy, tàu vũ trụ mà chúng ta phóng đi còn phải tự mang theo oxy, trọng lượng của tàu cũng sẽ buộc phải tăng lên rất nhiều.”",
+                "source_origin": "textbook",
+                "check_needed": false,
+                "uuid": "de416f22-bd69-47ed-b225-27c434633465"
+              },
+              {
+                "id": "text_01_p09",
+                "order": 9,
+                "zh": "“那儿还有什么其他危险吗？”",
+                "vi": "“Nơi đó còn có nguy hiểm nào khác không?”",
+                "source_origin": "textbook",
+                "check_needed": false,
+                "uuid": "6c523491-2bf6-44ad-a13f-06f7bf153eee"
+              },
+              {
+                "id": "text_01_p10",
+                "order": 10,
+                "zh": "“请看这张照片。你看到的这些线，实际上是地球上的一条条河流，但卫星已发现，这些河水里充满了有害物质，根本不能饮用。因此，连喝的水我们都得自己带上！”",
+                "vi": "“Xin hãy xem bức ảnh này. Những đường mà anh nhìn thấy, thực ra là từng con sông trên Trái Đất. Nhưng vệ tinh đã phát hiện rằng trong nước sông này chứa đầy chất độc hại, căn bản không thể uống được. Vì vậy, ngay cả nước uống chúng ta cũng phải tự mang theo!”",
+                "source_origin": "textbook",
+                "check_needed": false,
+                "uuid": "b2549d9b-bcff-48e2-aaa6-39eda9bb2dd7"
+              },
+              {
+                "id": "text_01_p11",
+                "order": 11,
+                "zh": "“请问，照片上的这些黑色颗粒又是什么呢？”",
+                "vi": "“Xin hỏi, những hạt màu đen trên ảnh này lại là gì vậy?”",
+                "source_origin": "textbook",
+                "check_needed": false,
+                "uuid": "af05f73a-23d1-400a-b867-da555cea5154"
+              },
+              {
+                "id": "text_01_p12",
+                "order": 12,
+                "zh": "“对此，我们还不能肯定，也许是些金属颗粒——它们沿着固定轨道移动，并能喷出气体，发出噪音，还会互相碰撞。它们的数量大得惊人，毫无疑问，我们的飞船如果遇到它们，就会被撞个稀巴烂。”",
+                "vi": "“Về điều này, chúng tôi vẫn chưa thể khẳng định. Có lẽ đó là một số hạt kim loại — chúng di chuyển dọc theo quỹ đạo cố định, có thể phun khí, phát ra tiếng ồn, và còn có thể va chạm lẫn nhau. Số lượng của chúng lớn đến mức đáng kinh ngạc. Không nghi ngờ gì nữa, nếu tàu vũ trụ của chúng ta gặp phải chúng, nó sẽ bị đâm cho nát bấy.”",
+                "source_origin": "textbook",
+                "check_needed": false,
+                "uuid": "b9f41c86-8749-4520-a4e8-d119791db10a"
+              },
+              {
+                "id": "text_01_p13",
+                "order": 13,
+                "zh": "“如果您说的没错，那么这是否意味着我们将不得不推迟实施数年来的飞船计划？”",
+                "vi": "“Nếu những gì ông nói không sai, vậy điều này có phải có nghĩa là chúng ta sẽ buộc phải hoãn kế hoạch tàu vũ trụ đã triển khai trong nhiều năm không?”",
+                "source_origin": "textbook",
+                "check_needed": false,
+                "uuid": "e3b5f3d5-758f-4a13-a8c4-d5d90b4154a5"
+              },
+              {
+                "id": "text_01_p14",
+                "order": 14,
+                "zh": "“对！不过，只要能拿到补充资金，我们会马上继续开展工作的。”",
+                "vi": "“Đúng vậy! Tuy nhiên, chỉ cần có thể nhận được nguồn vốn bổ sung, chúng tôi sẽ lập tức tiếp tục triển khai công việc.”",
+                "source_origin": "textbook",
+                "check_needed": false,
+                "uuid": "385a338b-a03c-44b9-86d7-d9312ce19d3b"
+              },
+              {
+                "id": "text_01_p15",
+                "order": 15,
+                "zh": "“教授先生，请问，为什么我们金星人要耗费数十亿金元（金星货币）向地球发射载人飞船呢？”",
+                "vi": "“Thưa giáo sư, xin hỏi, vì sao người sao Kim chúng ta phải tiêu tốn mấy chục tỷ kim nguyên — tiền tệ của sao Kim — để phóng tàu vũ trụ có người lái về phía Trái Đất?”",
+                "source_origin": "textbook",
+                "check_needed": false,
+                "uuid": "21eb9327-070d-4bb7-ac92-9254918e963c"
+              },
+              {
+                "id": "text_01_p16",
+                "order": 16,
+                "zh": "“我们的目的是：当我们学会在地球上生存时，我们去宇宙的任何地方都可以平安无事了。”",
+                "vi": "“Mục đích của chúng tôi là: khi chúng ta học được cách sinh tồn trên Trái Đất, thì chúng ta đi đến bất kỳ nơi nào trong vũ trụ cũng đều có thể bình an vô sự.”",
+                "source_origin": "textbook",
+                "check_needed": false,
+                "uuid": "e2d031e1-9630-4d99-9f42-06e49c05fc75"
+              },
+              {
+                "id": "text_01_p17",
+                "order": 17,
+                "zh": "（选自微型小说选集《英雄之死》，有改动）",
+                "vi": "Trích từ tuyển tập tiểu thuyết vi hình 《Cái chết của anh hùng》, có chỉnh sửa.",
+                "source_origin": "textbook",
+                "check_needed": false,
+                "uuid": "98bf01fe-9718-4fa6-8bb3-358fc3b4072a"
+              }
+            ],
+            "lines": [],
+            "comprehension_questions": [],
+            "uuid": "2befc610-9287-464e-8316-95c343a61657"
+          }
+        ],
+        "comprehension_questions": [],
+        "uuid": "d6aad59b-d13f-4f89-9aab-7bd22e0113a3"
+      },
+      {
+        "id": "section_02_vocabulary",
+        "type": "vocabulary",
+        "order": 2,
+        "title": "生词",
+        "title_vi": "Từ vựng chính",
+        "source_origin": "textbook",
+        "check_needed": false,
+        "items": [
+          {
+            "id": "vocab_001",
+            "type": "vocabulary_item",
+            "order": 1,
+            "hanzi": "金星",
+            "pinyin": "jīnxīng",
+            "meaning_vi": "sao Kim",
+            "meaning_en": "Venus",
+            "pos": "noun",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "金星",
+              "back": "jīnxīng — sao Kim",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "check_needed": false,
+            "uuid": "875ea605-a9ad-4560-984e-9b6947024085"
+          },
+          {
+            "id": "vocab_002",
+            "type": "vocabulary_item",
+            "order": 2,
+            "hanzi": "欢腾",
+            "pinyin": "huānténg",
+            "meaning_vi": "vui mừng, phấn khởi, hân hoan",
+            "meaning_en": "to jubilate; rejoice",
+            "pos": "verb",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "欢腾",
+              "back": "huānténg — vui mừng, phấn khởi, hân hoan",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "check_needed": false,
+            "uuid": "7b01cb40-febe-41cc-8c5a-bb767b7d448f"
+          },
+          {
+            "id": "vocab_003",
+            "type": "vocabulary_item",
+            "order": 3,
+            "hanzi": "科学家",
+            "pinyin": "kēxuéjiā",
+            "meaning_vi": "nhà khoa học",
+            "meaning_en": "scientist",
+            "pos": "noun",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "科学家",
+              "back": "kēxuéjiā — nhà khoa học",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "check_needed": false,
+            "uuid": "de610ec2-5b8d-4996-a246-1d6aac26f2ab"
+          },
+          {
+            "id": "vocab_004",
+            "type": "vocabulary_item",
+            "order": 4,
+            "hanzi": "科学",
+            "pinyin": "kēxué",
+            "meaning_vi": "khoa học; có tính khoa học",
+            "meaning_en": "science; scientific",
+            "pos": "noun",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "科学",
+              "back": "kēxué — khoa học; có tính khoa học",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "check_needed": false,
+            "uuid": "e03c23a0-c290-4afc-a001-d13503772f52"
+          },
+          {
+            "id": "vocab_005",
+            "type": "vocabulary_item",
+            "order": 5,
+            "hanzi": "发射",
+            "pinyin": "fāshè",
+            "meaning_vi": "phóng, bắn, phát xạ",
+            "meaning_en": "to launch; to emit",
+            "pos": "verb",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "发射",
+              "back": "fāshè — phóng, bắn, phát xạ",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "check_needed": false,
+            "uuid": "45aa4a07-fbe2-4c8c-a61b-a70161f85f9c"
+          },
+          {
+            "id": "vocab_006",
+            "type": "vocabulary_item",
+            "order": 6,
+            "hanzi": "卫星",
+            "pinyin": "wèixīng",
+            "meaning_vi": "vệ tinh",
+            "meaning_en": "satellite",
+            "pos": "noun",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "卫星",
+              "back": "wèixīng — vệ tinh",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "check_needed": false,
+            "uuid": "59fc6ce9-5bda-48cb-9fff-69855d686e24"
+          },
+          {
+            "id": "vocab_007",
+            "type": "vocabulary_item",
+            "order": 7,
+            "hanzi": "目前",
+            "pinyin": "mùqián",
+            "meaning_vi": "hiện nay, trước mắt",
+            "meaning_en": "at present",
+            "pos": "noun",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "目前",
+              "back": "mùqián — hiện nay, trước mắt",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "check_needed": false,
+            "uuid": "c658ee4c-bbc0-48f5-bb48-30b4ba8e6dc6"
+          },
+          {
+            "id": "vocab_008",
+            "type": "vocabulary_item",
+            "order": 8,
+            "hanzi": "停留",
+            "pinyin": "tíngliú",
+            "meaning_vi": "dừng lại, lưu lại",
+            "meaning_en": "to stop over; to stay",
+            "pos": "verb",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "停留",
+              "back": "tíngliú — dừng lại, lưu lại",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "check_needed": false,
+            "uuid": "5831d06d-5cd6-4b45-80de-880499786ede"
+          },
+          {
+            "id": "vocab_009",
+            "type": "vocabulary_item",
+            "order": 9,
+            "hanzi": "上空",
+            "pinyin": "shàngkōng",
+            "meaning_vi": "bầu trời phía trên, trên không",
+            "meaning_en": "sky above",
+            "pos": "noun",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "上空",
+              "back": "shàngkōng — bầu trời phía trên, trên không",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "check_needed": false,
+            "uuid": "fd82c16e-fdd7-435e-8edb-9303ece66d60"
+          },
+          {
+            "id": "vocab_010",
+            "type": "vocabulary_item",
+            "order": 10,
+            "hanzi": "连续",
+            "pinyin": "liánxù",
+            "meaning_vi": "liên tục, nối tiếp",
+            "meaning_en": "continuous",
+            "pos": "adjective",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "连续",
+              "back": "liánxù — liên tục, nối tiếp",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "check_needed": false,
+            "uuid": "3131699f-fc3a-41f1-8d77-682bbffd94e3"
+          },
+          {
+            "id": "vocab_011",
+            "type": "vocabulary_item",
+            "order": 11,
+            "hanzi": "不断",
+            "pinyin": "búduàn",
+            "meaning_vi": "không ngừng, liên tục",
+            "meaning_en": "unceasingly",
+            "pos": "adverb",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "不断",
+              "back": "búduàn — không ngừng, liên tục",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "check_needed": false,
+            "uuid": "db9d1e02-24a6-4874-bc14-efcbe228d568"
+          },
+          {
+            "id": "vocab_012",
+            "type": "vocabulary_item",
+            "order": 12,
+            "hanzi": "信号",
+            "pinyin": "xìnhào",
+            "meaning_vi": "tín hiệu",
+            "meaning_en": "signal",
+            "pos": "noun",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "信号",
+              "back": "xìnhào — tín hiệu",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "check_needed": false,
+            "uuid": "035516ff-d381-42f2-8da7-7912f991a604"
+          },
+          {
+            "id": "vocab_013",
+            "type": "vocabulary_item",
+            "order": 13,
+            "hanzi": "获得",
+            "pinyin": "huòdé",
+            "meaning_vi": "đạt được, thu được, giành được",
+            "meaning_en": "to obtain",
+            "pos": "verb",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "获得",
+              "back": "huòdé — đạt được, thu được, giành được",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "check_needed": false,
+            "uuid": "ab9c9ccd-62ec-4026-97da-5a4df82a2b20"
+          },
+          {
+            "id": "vocab_014",
+            "type": "vocabulary_item",
+            "order": 14,
+            "hanzi": "珍贵",
+            "pinyin": "zhēnguì",
+            "meaning_vi": "quý giá",
+            "meaning_en": "precious",
+            "pos": "adjective",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "珍贵",
+              "back": "zhēnguì — quý giá",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "check_needed": false,
+            "uuid": "4ed6dbcc-e33c-4a65-ab16-74fca370f134"
+          },
+          {
+            "id": "vocab_015",
+            "type": "vocabulary_item",
+            "order": 15,
+            "hanzi": "载人",
+            "pinyin": "zàirén",
+            "meaning_vi": "có người lái, chở người",
+            "meaning_en": "manned",
+            "pos": "verb",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "载人",
+              "back": "zàirén — có người lái, chở người",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "check_needed": false,
+            "uuid": "f2521d4a-2dc1-4e11-934e-73aae2e3f7cc"
+          },
+          {
+            "id": "vocab_016",
+            "type": "vocabulary_item",
+            "order": 16,
+            "hanzi": "飞船",
+            "pinyin": "fēichuán",
+            "meaning_vi": "tàu vũ trụ",
+            "meaning_en": "spacecraft",
+            "pos": "noun",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "飞船",
+              "back": "fēichuán — tàu vũ trụ",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "check_needed": false,
+            "uuid": "edcd3661-40c0-472d-95af-94cea1b24578"
+          },
+          {
+            "id": "vocab_017",
+            "type": "vocabulary_item",
+            "order": 17,
+            "hanzi": "究竟",
+            "pinyin": "jiūjìng",
+            "meaning_vi": "rốt cuộc, thực ra, cuối cùng",
+            "meaning_en": "actually; after all",
+            "pos": "adverb",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "究竟",
+              "back": "jiūjìng — rốt cuộc, thực ra, cuối cùng",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "check_needed": false,
+            "uuid": "82e65c87-9d8e-4d15-b609-326392079c75"
+          },
+          {
+            "id": "vocab_018",
+            "type": "vocabulary_item",
+            "order": 18,
+            "hanzi": "重大",
+            "pinyin": "zhòngdà",
+            "meaning_vi": "trọng đại, quan trọng lớn",
+            "meaning_en": "important; significant",
+            "pos": "adjective",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "重大",
+              "back": "zhòngdà — trọng đại, quan trọng lớn",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "check_needed": false,
+            "uuid": "5a26b1bd-b60f-44b8-babe-bb4e8ca784c2"
+          },
+          {
+            "id": "vocab_019",
+            "type": "vocabulary_item",
+            "order": 19,
+            "hanzi": "某",
+            "pinyin": "mǒu",
+            "meaning_vi": "nào đó, một vài, một người/vật nào đó",
+            "meaning_en": "some; certain",
+            "pos": "pronoun",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "某",
+              "back": "mǒu — nào đó, một vài, một người/vật nào đó",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "check_needed": false,
+            "uuid": "db33bf85-e3cf-4562-903b-e146e7929555"
+          },
+          {
+            "id": "vocab_020",
+            "type": "vocabulary_item",
+            "order": 20,
+            "hanzi": "突破",
+            "pinyin": "tūpò",
+            "meaning_vi": "đột phá, phá vỡ, vượt qua",
+            "meaning_en": "breakthrough",
+            "pos": "verb",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "突破",
+              "back": "tūpò — đột phá, phá vỡ, vượt qua",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "check_needed": false,
+            "uuid": "c6682582-f802-4a62-8660-9e45b02614c4"
+          },
+          {
+            "id": "vocab_021",
+            "type": "vocabulary_item",
+            "order": 21,
+            "hanzi": "科技",
+            "pinyin": "kējì",
+            "meaning_vi": "khoa học kỹ thuật",
+            "meaning_en": "science and technology",
+            "pos": "noun",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "科技",
+              "back": "kējì — khoa học kỹ thuật",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "check_needed": false,
+            "uuid": "53855acb-b323-4df2-8c11-4098e905f342"
+          },
+          {
+            "id": "vocab_022",
+            "type": "vocabulary_item",
+            "order": 22,
+            "hanzi": "记者",
+            "pinyin": "jìzhě",
+            "meaning_vi": "phóng viên, nhà báo",
+            "meaning_en": "reporter",
+            "pos": "noun",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "记者",
+              "back": "jìzhě — phóng viên, nhà báo",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "check_needed": false,
+            "uuid": "71bd6daf-d721-4a6c-90d6-4be332757acf"
+          },
+          {
+            "id": "vocab_023",
+            "type": "vocabulary_item",
+            "order": 23,
+            "hanzi": "招待会",
+            "pinyin": "zhāodàihuì",
+            "meaning_vi": "buổi chiêu đãi, buổi tiếp đón, họp báo",
+            "meaning_en": "reception; press conference",
+            "pos": "noun",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "招待会",
+              "back": "zhāodàihuì — buổi chiêu đãi, buổi tiếp đón, họp báo",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "check_needed": false,
+            "uuid": "c38e75b5-f19d-4b17-aea3-4285c1f1773e"
+          },
+          {
+            "id": "vocab_024",
+            "type": "vocabulary_item",
+            "order": 24,
+            "hanzi": "招待",
+            "pinyin": "zhāodài",
+            "meaning_vi": "tiếp đãi, tiếp khách",
+            "meaning_en": "to receive; to entertain",
+            "pos": "verb",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "招待",
+              "back": "zhāodài — tiếp đãi, tiếp khách",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "check_needed": false,
+            "uuid": "e8126f74-c8b2-47fb-82b2-a0495484d410"
+          },
+          {
+            "id": "vocab_025",
+            "type": "vocabulary_item",
+            "order": 25,
+            "hanzi": "结论",
+            "pinyin": "jiélùn",
+            "meaning_vi": "kết luận",
+            "meaning_en": "conclusion",
+            "pos": "noun",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "结论",
+              "back": "jiélùn — kết luận",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "check_needed": false,
+            "uuid": "b0f34c26-0a27-4a85-a92c-d7568054f4eb"
+          },
+          {
+            "id": "vocab_026",
+            "type": "vocabulary_item",
+            "order": 26,
+            "hanzi": "生命",
+            "pinyin": "shēngmìng",
+            "meaning_vi": "sinh mệnh, sự sống",
+            "meaning_en": "life",
+            "pos": "noun",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "生命",
+              "back": "shēngmìng — sinh mệnh, sự sống",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "check_needed": false,
+            "uuid": "5747f335-5d67-4032-a2bd-93eacab2ef22"
+          },
+          {
+            "id": "vocab_027",
+            "type": "vocabulary_item",
+            "order": 27,
+            "hanzi": "坚硬",
+            "pinyin": "jiānyìng",
+            "meaning_vi": "cứng rắn, cứng chắc",
+            "meaning_en": "hard; solid",
+            "pos": "adjective",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "坚硬",
+              "back": "jiānyìng — cứng rắn, cứng chắc",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "check_needed": false,
+            "uuid": "aa25772f-df76-4181-bec3-db72fe2936e3"
+          },
+          {
+            "id": "vocab_028",
+            "type": "vocabulary_item",
+            "order": 28,
+            "hanzi": "混凝土",
+            "pinyin": "hùnníngtǔ",
+            "meaning_vi": "bê tông",
+            "meaning_en": "concrete",
+            "pos": "noun",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "混凝土",
+              "back": "hùnníngtǔ — bê tông",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "check_needed": false,
+            "uuid": "9ea3993b-ff37-4270-ab48-976d85b084d9"
+          },
+          {
+            "id": "vocab_029",
+            "type": "vocabulary_item",
+            "order": 29,
+            "hanzi": "覆盖",
+            "pinyin": "fùgài",
+            "meaning_vi": "che phủ, bao phủ",
+            "meaning_en": "to cover",
+            "pos": "verb",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "覆盖",
+              "back": "fùgài — che phủ, bao phủ",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "check_needed": false,
+            "uuid": "c66f97cd-8592-401b-a723-d1d0105ba0af"
+          },
+          {
+            "id": "vocab_030",
+            "type": "vocabulary_item",
+            "order": 30,
+            "hanzi": "植物",
+            "pinyin": "zhíwù",
+            "meaning_vi": "thực vật",
+            "meaning_en": "plant",
+            "pos": "noun",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "植物",
+              "back": "zhíwù — thực vật",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "check_needed": false,
+            "uuid": "0289c591-cbf3-4656-ad9c-8397cd31dcfa"
+          },
+          {
+            "id": "vocab_031",
+            "type": "vocabulary_item",
+            "order": 31,
+            "hanzi": "生长",
+            "pinyin": "shēngzhǎng",
+            "meaning_vi": "sinh trưởng, phát triển",
+            "meaning_en": "to grow",
+            "pos": "verb",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "生长",
+              "back": "shēngzhǎng — sinh trưởng, phát triển",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "check_needed": false,
+            "uuid": "14b96d82-81d6-426a-858d-6797c1f47eb9"
+          },
+          {
+            "id": "vocab_032",
+            "type": "vocabulary_item",
+            "order": 32,
+            "hanzi": "一氧化碳",
+            "pinyin": "yīyǎnghuàtàn",
+            "meaning_vi": "khí carbon monoxide, khí CO",
+            "meaning_en": "carbon monoxide",
+            "pos": "noun",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "一氧化碳",
+              "back": "yīyǎnghuàtàn — khí carbon monoxide, khí CO",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "check_needed": false,
+            "uuid": "c86b35a1-6d96-4569-9770-973b796b56fc"
+          },
+          {
+            "id": "vocab_033",
+            "type": "vocabulary_item",
+            "order": 33,
+            "hanzi": "有害",
+            "pinyin": "yǒuhài",
+            "meaning_vi": "có hại, độc hại",
+            "meaning_en": "harmful",
+            "pos": "adjective",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "有害",
+              "back": "yǒuhài — có hại, độc hại",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "check_needed": false,
+            "uuid": "357de51f-13b7-4657-9a36-e0f295d789c5"
+          },
+          {
+            "id": "vocab_034",
+            "type": "vocabulary_item",
+            "order": 34,
+            "hanzi": "气体",
+            "pinyin": "qìtǐ",
+            "meaning_vi": "khí thể, chất khí",
+            "meaning_en": "gas",
+            "pos": "noun",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "气体",
+              "back": "qìtǐ — khí thể, chất khí",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "check_needed": false,
+            "uuid": "f4e1e22c-a79a-454a-a714-a9b0fa53fc2b"
+          },
+          {
+            "id": "vocab_035",
+            "type": "vocabulary_item",
+            "order": 35,
+            "hanzi": "无法",
+            "pinyin": "wúfǎ",
+            "meaning_vi": "không thể, không có cách nào",
+            "meaning_en": "unable; no way",
+            "pos": "adverb",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "无法",
+              "back": "wúfǎ — không thể, không có cách nào",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "check_needed": false,
+            "uuid": "0aa5dacd-98f9-4640-af5c-5193bfca35e9"
+          },
+          {
+            "id": "vocab_036",
+            "type": "vocabulary_item",
+            "order": 36,
+            "hanzi": "生存",
+            "pinyin": "shēngcún",
+            "meaning_vi": "sinh tồn, tồn tại",
+            "meaning_en": "to survive",
+            "pos": "verb",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "生存",
+              "back": "shēngcún — sinh tồn, tồn tại",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "check_needed": false,
+            "uuid": "6d0f4288-ace4-4149-91dc-d4fd25107ef1"
+          },
+          {
+            "id": "vocab_037",
+            "type": "vocabulary_item",
+            "order": 37,
+            "hanzi": "氧气",
+            "pinyin": "yǎngqì",
+            "meaning_vi": "khí oxy",
+            "meaning_en": "oxygen",
+            "pos": "noun",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "氧气",
+              "back": "yǎngqì — khí oxy",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "check_needed": false,
+            "uuid": "05aa6e74-13c3-4d7f-8928-c908b9083726"
+          },
+          {
+            "id": "vocab_038",
+            "type": "vocabulary_item",
+            "order": 38,
+            "hanzi": "不可思议",
+            "pinyin": "bùkě-sīyì",
+            "meaning_vi": "không thể tưởng tượng nổi, khó tin",
+            "meaning_en": "inconceivable",
+            "pos": "adjective",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "不可思议",
+              "back": "bùkě-sīyì — không thể tưởng tượng nổi, khó tin",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "check_needed": false,
+            "uuid": "e72bbf9e-468d-4fa1-a85b-70e8ec1527a9"
+          },
+          {
+            "id": "vocab_039",
+            "type": "vocabulary_item",
+            "order": 39,
+            "hanzi": "空间",
+            "pinyin": "kōngjiān",
+            "meaning_vi": "không gian",
+            "meaning_en": "space",
+            "pos": "noun",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "空间",
+              "back": "kōngjiān — không gian",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "check_needed": false,
+            "uuid": "bf5f0502-07ad-459a-927d-68344fa1b8db"
+          },
+          {
+            "id": "vocab_040",
+            "type": "vocabulary_item",
+            "order": 40,
+            "hanzi": "重量",
+            "pinyin": "zhòngliàng",
+            "meaning_vi": "trọng lượng",
+            "meaning_en": "weight",
+            "pos": "noun",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "重量",
+              "back": "zhòngliàng — trọng lượng",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "check_needed": false,
+            "uuid": "ae3a4781-7bf2-4ecd-9acb-71cfd5e51144"
+          },
+          {
+            "id": "vocab_041",
+            "type": "vocabulary_item",
+            "order": 41,
+            "hanzi": "将",
+            "pinyin": "jiāng",
+            "meaning_vi": "sẽ, sắp, rồi sẽ",
+            "meaning_en": "will; shall",
+            "pos": "adverb",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "将",
+              "back": "jiāng — sẽ, sắp, rồi sẽ",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "check_needed": false,
+            "uuid": "320a26e4-9822-4924-b6d9-c2222dbee94f"
+          },
+          {
+            "id": "vocab_042",
+            "type": "vocabulary_item",
+            "order": 42,
+            "hanzi": "实际上",
+            "pinyin": "shíjìshàng",
+            "meaning_vi": "trên thực tế, thực ra",
+            "meaning_en": "actually; in fact",
+            "pos": "adverb",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "实际上",
+              "back": "shíjìshàng — trên thực tế, thực ra",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "check_needed": false,
+            "uuid": "821b65bb-8b03-42d8-b7ac-bccf254b2715"
+          },
+          {
+            "id": "vocab_043",
+            "type": "vocabulary_item",
+            "order": 43,
+            "hanzi": "物质",
+            "pinyin": "wùzhì",
+            "meaning_vi": "vật chất, chất",
+            "meaning_en": "substance; matter",
+            "pos": "noun",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "物质",
+              "back": "wùzhì — vật chất, chất",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "check_needed": false,
+            "uuid": "aa576639-63c5-49e9-9be2-f0f06f1bb4a7"
+          },
+          {
+            "id": "vocab_044",
+            "type": "vocabulary_item",
+            "order": 44,
+            "hanzi": "饮用",
+            "pinyin": "yǐnyòng",
+            "meaning_vi": "uống, dùng để uống",
+            "meaning_en": "to drink",
+            "pos": "verb",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "饮用",
+              "back": "yǐnyòng — uống, dùng để uống",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "check_needed": false,
+            "uuid": "1599838a-6837-472b-8039-a258363c025b"
+          },
+          {
+            "id": "vocab_045",
+            "type": "vocabulary_item",
+            "order": 45,
+            "hanzi": "颗粒",
+            "pinyin": "kēlì",
+            "meaning_vi": "hạt, hạt nhỏ, phần tử",
+            "meaning_en": "particle; granule",
+            "pos": "noun",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "颗粒",
+              "back": "kēlì — hạt, hạt nhỏ, phần tử",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "check_needed": false,
+            "uuid": "5b9ebec0-05f8-4921-a027-a5e3ed30c32a"
+          },
+          {
+            "id": "vocab_046",
+            "type": "vocabulary_item",
+            "order": 46,
+            "hanzi": "金属",
+            "pinyin": "jīnshǔ",
+            "meaning_vi": "kim loại",
+            "meaning_en": "metal",
+            "pos": "noun",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "金属",
+              "back": "jīnshǔ — kim loại",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "check_needed": false,
+            "uuid": "982dcabf-8041-4cfe-bdf4-3a041426a19b"
+          },
+          {
+            "id": "vocab_047",
+            "type": "vocabulary_item",
+            "order": 47,
+            "hanzi": "沿",
+            "pinyin": "yán",
+            "meaning_vi": "men theo, dọc theo",
+            "meaning_en": "along",
+            "pos": "preposition",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "沿",
+              "back": "yán — men theo, dọc theo",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "check_needed": false,
+            "uuid": "8e592fc3-d984-4354-9e8c-306299057b0c"
+          },
+          {
+            "id": "vocab_048",
+            "type": "vocabulary_item",
+            "order": 48,
+            "hanzi": "固定",
+            "pinyin": "gùdìng",
+            "meaning_vi": "cố định",
+            "meaning_en": "fixed",
+            "pos": "adjective",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "固定",
+              "back": "gùdìng — cố định",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "check_needed": false,
+            "uuid": "e3213219-88d5-40d1-8965-580f5ff6e145"
+          },
+          {
+            "id": "vocab_049",
+            "type": "vocabulary_item",
+            "order": 49,
+            "hanzi": "轨道",
+            "pinyin": "guǐdào",
+            "meaning_vi": "quỹ đạo, đường ray, đường đi",
+            "meaning_en": "orbit; track",
+            "pos": "noun",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "轨道",
+              "back": "guǐdào — quỹ đạo, đường ray, đường đi",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "check_needed": false,
+            "uuid": "cd9405fa-280c-498c-846b-ecf092046685"
+          },
+          {
+            "id": "vocab_050",
+            "type": "vocabulary_item",
+            "order": 50,
+            "hanzi": "移动",
+            "pinyin": "yídòng",
+            "meaning_vi": "di chuyển",
+            "meaning_en": "to move",
+            "pos": "verb",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "移动",
+              "back": "yídòng — di chuyển",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "check_needed": false,
+            "uuid": "aaacbda6-a141-4f93-9f28-5dce7265de7f"
+          },
+          {
+            "id": "vocab_051",
+            "type": "vocabulary_item",
+            "order": 51,
+            "hanzi": "喷",
+            "pinyin": "pēn",
+            "meaning_vi": "phun, phun ra",
+            "meaning_en": "to spray; spout",
+            "pos": "verb",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "喷",
+              "back": "pēn — phun, phun ra",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "check_needed": false,
+            "uuid": "190c2884-4b67-4aae-b6ce-0b6cab33b9e7"
+          },
+          {
+            "id": "vocab_052",
+            "type": "vocabulary_item",
+            "order": 52,
+            "hanzi": "噪音",
+            "pinyin": "zàoyīn",
+            "meaning_vi": "tiếng ồn",
+            "meaning_en": "noise",
+            "pos": "noun",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "噪音",
+              "back": "zàoyīn — tiếng ồn",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "check_needed": false,
+            "uuid": "d688456e-ba25-46a7-9c13-a21cc9854e15"
+          },
+          {
+            "id": "vocab_053",
+            "type": "vocabulary_item",
+            "order": 53,
+            "hanzi": "碰撞",
+            "pinyin": "pèngzhuàng",
+            "meaning_vi": "va chạm, đâm va",
+            "meaning_en": "to collide",
+            "pos": "verb",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "碰撞",
+              "back": "pèngzhuàng — va chạm, đâm va",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "check_needed": false,
+            "uuid": "57205971-7b29-46b7-af76-8f8dc54a50db"
+          },
+          {
+            "id": "vocab_054",
+            "type": "vocabulary_item",
+            "order": 54,
+            "hanzi": "惊人",
+            "pinyin": "jīngrén",
+            "meaning_vi": "kinh người, đáng kinh ngạc",
+            "meaning_en": "astonishing",
+            "pos": "adjective",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "惊人",
+              "back": "jīngrén — kinh người, đáng kinh ngạc",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "check_needed": false,
+            "uuid": "83e9a144-fdec-4b3a-b6db-d598f0503f8d"
+          },
+          {
+            "id": "vocab_055",
+            "type": "vocabulary_item",
+            "order": 55,
+            "hanzi": "毫无",
+            "pinyin": "háowú",
+            "meaning_vi": "hoàn toàn không, không hề",
+            "meaning_en": "not at all",
+            "pos": "adverb",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "毫无",
+              "back": "háowú — hoàn toàn không, không hề",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "check_needed": false,
+            "uuid": "987466c7-fcf0-4ae7-826c-20677b64d9f7"
+          },
+          {
+            "id": "vocab_056",
+            "type": "vocabulary_item",
+            "order": 56,
+            "hanzi": "疑问",
+            "pinyin": "yíwèn",
+            "meaning_vi": "nghi vấn, điều nghi ngờ",
+            "meaning_en": "doubt; question",
+            "pos": "noun",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "疑问",
+              "back": "yíwèn — nghi vấn, điều nghi ngờ",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "check_needed": false,
+            "uuid": "523aa601-0e25-4c5a-b5a6-61c6a8ca43e1"
+          },
+          {
+            "id": "vocab_057",
+            "type": "vocabulary_item",
+            "order": 57,
+            "hanzi": "稀巴烂",
+            "pinyin": "xībālàn",
+            "meaning_vi": "nát bét, tan tành, vỡ vụn",
+            "meaning_en": "smashed to pieces",
+            "pos": "adjective",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "稀巴烂",
+              "back": "xībālàn — nát bét, tan tành, vỡ vụn",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "check_needed": false,
+            "uuid": "b826b6a4-3d34-410d-a55b-4d5ef163345a"
+          },
+          {
+            "id": "vocab_058",
+            "type": "vocabulary_item",
+            "order": 58,
+            "hanzi": "意味着",
+            "pinyin": "yìwèizhe",
+            "meaning_vi": "có nghĩa là, hàm ý là",
+            "meaning_en": "to mean; to imply",
+            "pos": "verb",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "意味着",
+              "back": "yìwèizhe — có nghĩa là, hàm ý là",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "check_needed": false,
+            "uuid": "bb3f1ede-54aa-4bea-8a0f-3f4c479409d9"
+          },
+          {
+            "id": "vocab_059",
+            "type": "vocabulary_item",
+            "order": 59,
+            "hanzi": "推迟",
+            "pinyin": "tuīchí",
+            "meaning_vi": "trì hoãn, lùi lại",
+            "meaning_en": "to postpone",
+            "pos": "verb",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "推迟",
+              "back": "tuīchí — trì hoãn, lùi lại",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "check_needed": false,
+            "uuid": "822e1e39-bb12-4f2c-889d-db849968ad90"
+          },
+          {
+            "id": "vocab_060",
+            "type": "vocabulary_item",
+            "order": 60,
+            "hanzi": "实施",
+            "pinyin": "shíshī",
+            "meaning_vi": "thực hiện, thi hành, triển khai",
+            "meaning_en": "to implement",
+            "pos": "verb",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "实施",
+              "back": "shíshī — thực hiện, thi hành, triển khai",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "check_needed": false,
+            "uuid": "1e3584aa-2135-4212-a8a9-0a17d38eaa00"
+          },
+          {
+            "id": "vocab_061",
+            "type": "vocabulary_item",
+            "order": 61,
+            "hanzi": "数",
+            "pinyin": "shù",
+            "meaning_vi": "vài, mấy, một số",
+            "meaning_en": "several",
+            "pos": "numeral",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "数",
+              "back": "shù — vài, mấy, một số",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "check_needed": false,
+            "uuid": "3ff952c3-e2b7-4ad3-aad1-34d37a613a0c"
+          },
+          {
+            "id": "vocab_062",
+            "type": "vocabulary_item",
+            "order": 62,
+            "hanzi": "补充",
+            "pinyin": "bǔchōng",
+            "meaning_vi": "bổ sung",
+            "meaning_en": "to supplement",
+            "pos": "verb",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "补充",
+              "back": "bǔchōng — bổ sung",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "check_needed": false,
+            "uuid": "42473fc0-f8b3-4fad-ab4d-3e484da6f47e"
+          },
+          {
+            "id": "vocab_063",
+            "type": "vocabulary_item",
+            "order": 63,
+            "hanzi": "资金",
+            "pinyin": "zījīn",
+            "meaning_vi": "vốn, tiền vốn, quỹ",
+            "meaning_en": "funds; capital",
+            "pos": "noun",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "资金",
+              "back": "zījīn — vốn, tiền vốn, quỹ",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "check_needed": false,
+            "uuid": "0f3d2fe6-ba34-414e-a1da-cda032b59b57"
+          },
+          {
+            "id": "vocab_064",
+            "type": "vocabulary_item",
+            "order": 64,
+            "hanzi": "耗费",
+            "pinyin": "hàofèi",
+            "meaning_vi": "tiêu tốn, hao phí",
+            "meaning_en": "to consume; to spend",
+            "pos": "verb",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "耗费",
+              "back": "hàofèi — tiêu tốn, hao phí",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "check_needed": false,
+            "uuid": "2fa050eb-5939-4548-a094-f7da8f8bb6f7"
+          },
+          {
+            "id": "vocab_065",
+            "type": "vocabulary_item",
+            "order": 65,
+            "hanzi": "目的",
+            "pinyin": "mùdì",
+            "meaning_vi": "mục đích",
+            "meaning_en": "purpose",
+            "pos": "noun",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "目的",
+              "back": "mùdì — mục đích",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "check_needed": false,
+            "uuid": "e1ad3049-eebc-4330-8ed2-cd083de1791f"
+          }
+        ],
+        "uuid": "99cf1273-36a7-4378-b0fa-593ed3411f36"
+      },
+      {
+        "id": "section_03_proper_nouns",
+        "type": "proper_nouns",
+        "order": 3,
+        "title": "专名",
+        "title_vi": "Tên riêng",
+        "source_origin": "textbook",
+        "check_needed": false,
+        "items": [
+          {
+            "id": "proper_001",
+            "type": "proper_noun",
+            "order": 1,
+            "hanzi": "天壶",
+            "pinyin": "Tiānhú",
+            "meaning_vi": "Thiên Hồ; tên một khu vực",
+            "meaning_en": "Tianhu; a place name",
+            "source_origin": "textbook",
+            "check_needed": false,
+            "uuid": "f0fba1f3-07bd-419d-a38e-e6f52a20afb3"
+          }
+        ],
+        "uuid": "ef260e12-9908-4f4d-9676-24db5c301b46"
+      },
+      {
+        "id": "section_04_notes",
+        "type": "notes",
+        "order": 4,
+        "title": "注释",
+        "title_vi": "Chú thích",
+        "source_origin": "textbook",
+        "check_needed": false,
+        "items": [
+          {
+            "id": "note_01",
+            "type": "note",
+            "order": 1,
+            "title": "《金星人遇到麻烦》",
+            "structure": "科学幻想小说",
+            "meaning_vi": "《金星人遇到麻烦》 là một truyện khoa học viễn tưởng. Bài dùng góc nhìn giả tưởng của người sao Kim để nhìn ngược Trái Đất.",
+            "examples": [],
+            "source_refs": [
+              "text_01"
+            ],
+            "source_origin": "textbook",
+            "check_needed": false,
+            "uuid": "b686f31d-d4f6-40c1-b1d6-12f519c10b0d"
+          },
+          {
+            "id": "note_02",
+            "type": "note",
+            "order": 2,
+            "title": "被撞个稀巴烂",
+            "structure": "被 / 把 / V + 个 + 结果/状态",
+            "meaning_vi": "Trong câu ‘被撞个稀巴烂’, 个 đứng sau động từ để dẫn ra kết quả/trạng thái, gần giống tác dụng của 得 sau động từ, nhấn mạnh kết quả ‘bị đâm nát bét’. Cách dùng này có sắc thái khẩu ngữ mạnh.",
+            "examples": [
+              {
+                "id": "note_02_ex_01",
+                "zh": "我们的飞船如果遇到它们，就会被撞个稀巴烂。",
+                "vi": "Nếu tàu vũ trụ của chúng ta gặp phải chúng, nó sẽ bị đâm cho nát bét.",
+                "source_origin": "textbook",
+                "check_needed": false,
+                "uuid": "bfb7e87f-284b-429d-97e5-2704bed57148"
+              }
+            ],
+            "source_refs": [
+              "text_01_p12"
+            ],
+            "source_origin": "textbook",
+            "check_needed": false,
+            "uuid": "6d5a706b-80a3-4790-b41b-e4675792a39a"
+          }
+        ],
+        "uuid": "ab271eb3-47dd-43df-baf4-f0c62ba94ae5"
+      },
+      {
+        "id": "section_05_grammar",
+        "type": "grammar",
+        "order": 5,
+        "title": "词语用法",
+        "title_vi": "Cách dùng từ",
+        "source_origin": "textbook/generated_mixed",
+        "check_needed": false,
+        "items": [
+          {
+            "id": "grammar_01",
+            "type": "grammar_point",
+            "order": 1,
+            "title": "可能",
+            "title_vi": "可能: khả năng / có thể / có lẽ",
+            "level": "HSK3+",
+            "tags": [
+              "词语用法"
+            ],
+            "source_origin": "textbook/generated_mixed",
+            "check_needed": false,
+            "blocks": [
+              {
+                "id": "grammar_01_overview",
+                "type": "grammar_overview",
+                "order": 1,
+                "title": "Bản chất",
+                "content_vi": "可能 có thể làm danh từ, tính từ hoặc trợ động từ/phó từ hóa. Nghĩa lõi là một việc có khả năng xảy ra hoặc có khả năng làm được.",
+                "examples": [],
+                "uuid": "4178de08-0254-42e5-9e05-bc69fba56178"
+              },
+              {
+                "id": "grammar_01_structure_01",
+                "type": "grammar_structure",
+                "order": 2,
+                "title": "可能 làm danh từ",
+                "pattern": "有 / 没有 + 可能 + V / 句子",
+                "meaning_vi": "Có / không có khả năng làm việc gì hoặc xảy ra việc gì.",
+                "examples": [
+                  {
+                    "id": "g01s01_ex_01",
+                    "zh": "由于地球上空天气很好，科学家们便有可能获得不少珍贵资料。",
+                    "vi": "Vì thời tiết phía trên Trái Đất rất tốt, các nhà khoa học có khả năng thu được không ít tư liệu quý giá.",
+                    "source_origin": "textbook/generated_mixed",
+                    "check_needed": false,
+                    "uuid": "3abf7302-9c3f-4e32-8d64-0cd1109aa132"
+                  },
+                  {
+                    "id": "g01s01_ex_02",
+                    "zh": "明年他有可能出国留学。",
+                    "vi": "Năm sau anh ấy có khả năng đi du học.",
+                    "source_origin": "textbook/generated_mixed",
+                    "check_needed": false,
+                    "uuid": "67b5ef76-9da1-476b-91ce-0d6291901f8b"
+                  },
+                  {
+                    "id": "g01s01_ex_03",
+                    "zh": "公司有可能派他去广州工作。",
+                    "vi": "Công ty có khả năng cử anh ấy đi Quảng Châu làm việc.",
+                    "source_origin": "textbook/generated_mixed",
+                    "check_needed": false,
+                    "uuid": "e7953c71-60b3-416d-b948-167692f0f8f0"
+                  }
+                ],
+                "uuid": "e2d1da15-a56d-4a30-9b4f-5114919da838"
+              },
+              {
+                "id": "grammar_01_structure_02",
+                "type": "grammar_structure",
+                "order": 3,
+                "title": "可能 làm hình dung từ",
+                "pattern": "可能 + 的 + 名词 / 主语 + 可能",
+                "meaning_vi": "Có thể trở thành sự thật; có khả năng xảy ra.",
+                "examples": [
+                  {
+                    "id": "g01s02_ex_01",
+                    "zh": "我们要想到一切可能的情况。",
+                    "vi": "Chúng ta phải nghĩ đến mọi tình huống có thể xảy ra.",
+                    "source_origin": "textbook/generated_mixed",
+                    "check_needed": false,
+                    "uuid": "26877bc7-94bd-4345-92b9-1a6fe7405a3a"
+                  },
+                  {
+                    "id": "g01s02_ex_02",
+                    "zh": "我觉得不太可能。",
+                    "vi": "Tôi thấy không có khả năng lắm.",
+                    "source_origin": "textbook/generated_mixed",
+                    "check_needed": false,
+                    "uuid": "8290677a-aa6f-4a4b-8ae4-51d68b18eaee"
+                  }
+                ],
+                "uuid": "8abf998f-3376-4f5b-b769-16582b601c97"
+              },
+              {
+                "id": "grammar_01_structure_03",
+                "type": "grammar_structure",
+                "order": 4,
+                "title": "可能 làm phó từ / trợ động từ",
+                "pattern": "可能 + 动词 / 句子",
+                "meaning_vi": "Có lẽ, có thể; biểu thị phỏng đoán.",
+                "examples": [
+                  {
+                    "id": "g01s03_ex_01",
+                    "zh": "这件事她可能已经知道了。",
+                    "vi": "Việc này có lẽ cô ấy đã biết rồi.",
+                    "source_origin": "textbook/generated_mixed",
+                    "check_needed": false,
+                    "uuid": "77cfab68-b7a2-4e2d-9eea-4813110e6031"
+                  },
+                  {
+                    "id": "g01s03_ex_02",
+                    "zh": "带上雨伞吧，可能要下雨。",
+                    "vi": "Mang ô theo đi, có thể sắp mưa.",
+                    "source_origin": "textbook/generated_mixed",
+                    "check_needed": false,
+                    "uuid": "9f53ce0e-a396-4bc8-a22b-bdc91064a94d"
+                  },
+                  {
+                    "id": "g01s03_ex_03",
+                    "zh": "她没在，可能去图书馆了。",
+                    "vi": "Cô ấy không có ở đây, có lẽ đã đi thư viện rồi.",
+                    "source_origin": "textbook/generated_mixed",
+                    "check_needed": false,
+                    "uuid": "27363926-98e9-44a6-ba58-b5a96ae4b9dc"
+                  }
+                ],
+                "uuid": "7e3c8372-5e13-474a-be63-bd74f289315b"
+              }
+            ],
+            "uuid": "3d9e2a8f-5701-4cfa-bf9a-17e437932570"
+          },
+          {
+            "id": "grammar_02",
+            "type": "grammar_point",
+            "order": 2,
+            "title": "究竟",
+            "title_vi": "究竟: rốt cuộc, thực ra",
+            "level": "HSK3+",
+            "tags": [
+              "词语用法",
+              "comparison"
+            ],
+            "source_origin": "textbook/generated_mixed",
+            "check_needed": false,
+            "blocks": [
+              {
+                "id": "grammar_02_overview",
+                "type": "grammar_overview",
+                "order": 1,
+                "title": "Bản chất",
+                "content_vi": "究竟 dùng trong câu hỏi để truy hỏi sâu hơn, làm giọng hỏi mạnh hơn. Khẩu ngữ thường dùng 到底 nhiều hơn.",
+                "examples": [],
+                "uuid": "620a9b3a-08ea-4493-8390-c57179e58c81"
+              },
+              {
+                "id": "grammar_02_structure",
+                "type": "grammar_structure",
+                "order": 2,
+                "title": "究竟 trong câu hỏi",
+                "pattern": "究竟 + 能否 / 是不是 / 有没有 / 疑问词 ... ?",
+                "meaning_vi": "Rốt cuộc là...? Thực ra là...?",
+                "examples": [
+                  {
+                    "id": "g02s01_ex_01",
+                    "zh": "载人飞船登上地球究竟能否实现？",
+                    "vi": "Rốt cuộc tàu vũ trụ có người lái đáp xuống Trái Đất có thể thực hiện được không?",
+                    "source_origin": "textbook/generated_mixed",
+                    "check_needed": false,
+                    "uuid": "1572f910-3104-4151-accb-fc0ce49db647"
+                  },
+                  {
+                    "id": "g02s01_ex_02",
+                    "zh": "你究竟想干什么？",
+                    "vi": "Rốt cuộc bạn muốn làm gì?",
+                    "source_origin": "textbook/generated_mixed",
+                    "check_needed": false,
+                    "uuid": "34530d88-4055-43d2-a137-c551c40419c6"
+                  },
+                  {
+                    "id": "g02s01_ex_03",
+                    "zh": "这件事情究竟是谁的错呢？",
+                    "vi": "Rốt cuộc chuyện này là lỗi của ai?",
+                    "source_origin": "textbook/generated_mixed",
+                    "check_needed": false,
+                    "uuid": "694ae845-dc03-458e-854a-abb3c00a2c7b"
+                  }
+                ],
+                "uuid": "064ee825-38d2-41e8-934c-2edd0e235fa2"
+              },
+              {
+                "id": "grammar_02_compare",
+                "type": "grammar_compare",
+                "order": 3,
+                "title": "究竟 và 到底",
+                "content_vi": "Cả hai đều dùng để truy hỏi. Khác biệt quan trọng: 到底 còn có thể nghĩa là ‘cuối cùng đạt kết quả sau một quá trình’; 究竟 không dùng theo nghĩa này.",
+                "items": [
+                  {
+                    "aspect": "Truy hỏi",
+                    "left": {
+                      "label": "究竟",
+                      "value": "Dùng được"
+                    },
+                    "right": {
+                      "label": "到底",
+                      "value": "Dùng được"
+                    }
+                  },
+                  {
+                    "aspect": "Kết quả cuối cùng sau quá trình",
+                    "left": {
+                      "label": "究竟",
+                      "value": "Không dùng"
+                    },
+                    "right": {
+                      "label": "到底",
+                      "value": "Dùng được"
+                    }
+                  }
+                ],
+                "examples": [
+                  {
+                    "id": "g02cmp_ex_01",
+                    "zh": "明天你究竟/到底跟不跟我们一起去？",
+                    "vi": "Ngày mai rốt cuộc bạn có đi cùng chúng tôi không?",
+                    "source_origin": "textbook/generated_mixed",
+                    "check_needed": false,
+                    "uuid": "24b067a4-c99a-420e-a5f5-84bad5bc54f1"
+                  },
+                  {
+                    "id": "g02cmp_ex_02",
+                    "zh": "经过一年的努力，他到底通过了 HSK 四级考试。",
+                    "vi": "Sau một năm nỗ lực, cuối cùng anh ấy đã thi đỗ HSK cấp 4.",
+                    "source_origin": "textbook/generated_mixed",
+                    "check_needed": false,
+                    "uuid": "f152b9d4-5b82-4eda-9c2a-e5ab34762f23"
+                  }
+                ],
+                "bad_examples": [
+                  {
+                    "zh": "经过一年的努力，他究竟通过了 HSK 四级考试。",
+                    "reason_vi": "Muốn nói kết quả cuối cùng sau quá trình thì dùng 到底, không dùng 究竟."
+                  }
+                ],
+                "uuid": "79a6a01a-ec9d-4286-92a1-b5f959d5203e"
+              }
+            ],
+            "uuid": "5db4617b-9d36-48ee-aed2-c740489ee9f4"
+          },
+          {
+            "id": "grammar_03",
+            "type": "grammar_point",
+            "order": 3,
+            "title": "充满",
+            "title_vi": "充满: tràn đầy",
+            "level": "HSK3+",
+            "tags": [
+              "词语用法"
+            ],
+            "source_origin": "textbook/generated_mixed",
+            "check_needed": false,
+            "blocks": [
+              {
+                "id": "grammar_03_structure",
+                "type": "grammar_structure",
+                "order": 1,
+                "title": "A 充满 B",
+                "pattern": "A + 充满 + B",
+                "meaning_vi": "Một nơi/sự vật được lấp đầy bởi chất, khí, cảm xúc hoặc không khí trừu tượng.",
+                "examples": [
+                  {
+                    "id": "g03_ex_01",
+                    "zh": "地球的大气中充满一氧化碳和其他种种有害气体。",
+                    "vi": "Trong bầu khí quyển Trái Đất đầy khí CO và các khí độc hại khác.",
+                    "source_origin": "textbook/generated_mixed",
+                    "check_needed": false,
+                    "uuid": "5e5c8c19-2912-4b85-b377-b8c558a055c9"
+                  },
+                  {
+                    "id": "g03_ex_02",
+                    "zh": "我对这次 HSK 考试充满信心。",
+                    "vi": "Tôi đầy tự tin đối với kỳ thi HSK lần này.",
+                    "source_origin": "textbook/generated_mixed",
+                    "check_needed": false,
+                    "uuid": "cfcb692a-e80e-4997-8ce5-e94d3caa472f"
+                  },
+                  {
+                    "id": "g03_ex_03",
+                    "zh": "掌声和欢呼声充满了整个会场。",
+                    "vi": "Tiếng vỗ tay và reo hò tràn ngập cả hội trường.",
+                    "source_origin": "textbook/generated_mixed",
+                    "check_needed": false,
+                    "uuid": "15592f67-5e8f-47ed-9367-5b2ecae73bdb"
+                  }
+                ],
+                "notes_vi": [
+                  "Không thường dùng cho sự đầy vật lý quá đời thường như ‘ly đầy nước’; khi đó dùng 满 hoặc 装满."
+                ],
+                "uuid": "4cc3b62f-60c1-42a1-975a-0f76ac812ef3"
+              }
+            ],
+            "uuid": "7dfbcc3a-fd47-4863-98a5-1767325a1eee"
+          },
+          {
+            "id": "grammar_04",
+            "type": "grammar_point",
+            "order": 4,
+            "title": "其他",
+            "title_vi": "其他: khác, những cái khác",
+            "level": "HSK3+",
+            "tags": [
+              "词语用法"
+            ],
+            "source_origin": "textbook/generated_mixed",
+            "check_needed": false,
+            "blocks": [
+              {
+                "id": "grammar_04_structure",
+                "type": "grammar_structure",
+                "order": 1,
+                "title": "其他 + 名词",
+                "pattern": "其他 + 名词 / 其他的 + 名词",
+                "meaning_vi": "Chỉ người hoặc sự vật nằm ngoài phạm vi đã nói đến.",
+                "examples": [
+                  {
+                    "id": "g04_ex_01",
+                    "zh": "地球的大气中充满一氧化碳和其他种种有害气体。",
+                    "vi": "Bầu khí quyển Trái Đất đầy khí CO và các loại khí độc hại khác.",
+                    "source_origin": "textbook/generated_mixed",
+                    "check_needed": false,
+                    "uuid": "0c34effd-d1be-4c2e-9a3c-44c88c56cc09"
+                  },
+                  {
+                    "id": "g04_ex_02",
+                    "zh": "我们班除了玛丽以外，其他同学都去博物馆参观了。",
+                    "vi": "Ngoài Mary ra, các bạn khác trong lớp đều đi tham quan bảo tàng rồi.",
+                    "source_origin": "textbook/generated_mixed",
+                    "check_needed": false,
+                    "uuid": "e75d0cd2-a6b0-4bbb-ab85-46e29c4e4648"
+                  },
+                  {
+                    "id": "g04_ex_03",
+                    "zh": "我们今天先把签证的手续办了，再办其他的事。",
+                    "vi": "Hôm nay chúng ta làm thủ tục visa trước, rồi làm những việc khác.",
+                    "source_origin": "textbook/generated_mixed",
+                    "check_needed": false,
+                    "uuid": "71040e65-a03b-41fd-b6ae-6b2b1bcc0370"
+                  }
+                ],
+                "uuid": "2517b6f9-fd18-4363-8232-e67b79d59851"
+              }
+            ],
+            "uuid": "66ba0491-6126-43cd-9583-bb30f95dcdfd"
+          },
+          {
+            "id": "grammar_05",
+            "type": "grammar_point",
+            "order": 5,
+            "title": "不可思议",
+            "title_vi": "不可思议: không thể tưởng tượng nổi",
+            "level": "HSK3+",
+            "tags": [
+              "词语用法"
+            ],
+            "source_origin": "textbook/generated_mixed",
+            "check_needed": false,
+            "blocks": [
+              {
+                "id": "grammar_05_usage",
+                "type": "grammar_usage_notes",
+                "order": 1,
+                "title": "Cách dùng",
+                "content_vi": "Dùng khi một việc rất khó hiểu, khó tin, vượt ngoài tưởng tượng thông thường. Mạnh hơn 奇怪.",
+                "examples": [
+                  {
+                    "id": "g05_ex_01",
+                    "zh": "因为没有氧气，所以如果说有人能在那里生存，那真是不可思议。",
+                    "vi": "Vì không có oxy, nếu nói có người có thể sống ở đó thì thật khó tin.",
+                    "source_origin": "textbook/generated_mixed",
+                    "check_needed": false,
+                    "uuid": "e33139ef-5c95-47f8-9223-16c581708ace"
+                  },
+                  {
+                    "id": "g05_ex_02",
+                    "zh": "魔术师一转眼就把一朵花儿变成了一只小鸟，真是不可思议。",
+                    "vi": "Nhà ảo thuật trong chớp mắt biến một bông hoa thành một con chim, thật khó tin.",
+                    "source_origin": "textbook/generated_mixed",
+                    "check_needed": false,
+                    "uuid": "83cf5894-1e92-478e-8af6-c8d11c0ab5c6"
+                  }
+                ],
+                "uuid": "f72b73bf-3268-4980-bf99-632199e55b68"
+              }
+            ],
+            "uuid": "07d064e8-4f08-442d-b689-bdade5a57ee0"
+          },
+          {
+            "id": "grammar_06",
+            "type": "grammar_point",
+            "order": 6,
+            "title": "沿 / 沿着",
+            "title_vi": "沿 / 沿着: men theo, dọc theo",
+            "level": "HSK3+",
+            "tags": [
+              "词语用法"
+            ],
+            "source_origin": "textbook/generated_mixed",
+            "check_needed": false,
+            "blocks": [
+              {
+                "id": "grammar_06_structure",
+                "type": "grammar_structure",
+                "order": 1,
+                "title": "沿 / 沿着 + tuyến đường + V",
+                "pattern": "沿 / 沿着 + 路线 / 地点 + V",
+                "meaning_vi": "Biểu thị đi hoặc chuyển động men theo một tuyến đường/quỹ đạo.",
+                "examples": [
+                  {
+                    "id": "g06_ex_01",
+                    "zh": "它们沿着固定轨道移动。",
+                    "vi": "Chúng di chuyển dọc theo quỹ đạo cố định.",
+                    "source_origin": "textbook/generated_mixed",
+                    "check_needed": false,
+                    "uuid": "39cebe14-6498-4eb8-a341-102ba802d306"
+                  },
+                  {
+                    "id": "g06_ex_02",
+                    "zh": "我们沿着这条小河走一走吧。",
+                    "vi": "Chúng ta đi dọc theo con sông nhỏ này một lát đi.",
+                    "source_origin": "textbook/generated_mixed",
+                    "check_needed": false,
+                    "uuid": "d6ded0df-c78c-42c4-a6af-275b6df5b8bf"
+                  },
+                  {
+                    "id": "g06_ex_03",
+                    "zh": "你沿着这条路一直走，五分钟就到图书城了。",
+                    "vi": "Bạn cứ đi thẳng theo con đường này, năm phút là đến nhà sách.",
+                    "source_origin": "textbook/generated_mixed",
+                    "check_needed": false,
+                    "uuid": "9e83aa17-ac10-43cc-ad82-ee0a98521ce7"
+                  }
+                ],
+                "uuid": "e18e60fa-92f1-4918-a9e7-14befd923108"
+              }
+            ],
+            "uuid": "468547a9-e28d-453a-a5be-15ce3784b096"
+          },
+          {
+            "id": "grammar_07",
+            "type": "grammar_point",
+            "order": 7,
+            "title": "毫无 / 毫不",
+            "title_vi": "毫无 / 毫不: hoàn toàn không",
+            "level": "HSK3+",
+            "tags": [
+              "词语用法",
+              "comparison"
+            ],
+            "source_origin": "textbook/generated_mixed",
+            "check_needed": false,
+            "blocks": [
+              {
+                "id": "grammar_07_compare",
+                "type": "grammar_compare",
+                "order": 1,
+                "title": "毫无 và 毫不",
+                "content_vi": "毫 nghĩa là ‘một chút rất nhỏ’. 毫无 thường đi với danh từ; 毫不 thường đi với động từ hoặc tính từ.",
+                "items": [
+                  {
+                    "aspect": "Cấu trúc",
+                    "left": {
+                      "label": "毫无",
+                      "value": "毫无 + 名词"
+                    },
+                    "right": {
+                      "label": "毫不",
+                      "value": "毫不 + 动词/形容词"
+                    }
+                  },
+                  {
+                    "aspect": "Ví dụ",
+                    "left": {
+                      "label": "毫无",
+                      "value": "毫无疑问、毫无意义"
+                    },
+                    "right": {
+                      "label": "毫不",
+                      "value": "毫不客气、毫不奇怪"
+                    }
+                  }
+                ],
+                "examples": [
+                  {
+                    "id": "g07_ex_01",
+                    "zh": "毫无疑问，我们的飞船如果遇到它们，就会被撞个稀巴烂。",
+                    "vi": "Không nghi ngờ gì nữa, nếu tàu vũ trụ gặp chúng thì sẽ bị đâm nát bét.",
+                    "source_origin": "textbook/generated_mixed",
+                    "check_needed": false,
+                    "uuid": "9fe27143-7c8d-4c19-8ae9-502d1a50b446"
+                  },
+                  {
+                    "id": "g07_ex_02",
+                    "zh": "你这么做是毫无道理的。",
+                    "vi": "Bạn làm như vậy là hoàn toàn vô lý.",
+                    "source_origin": "textbook/generated_mixed",
+                    "check_needed": false,
+                    "uuid": "eca20d94-2911-4ec6-bc54-31049fba58d8"
+                  },
+                  {
+                    "id": "g07_ex_03",
+                    "zh": "她能做出这种事是毫不奇怪的。",
+                    "vi": "Cô ấy làm ra chuyện như vậy thì hoàn toàn không lạ.",
+                    "source_origin": "textbook/generated_mixed",
+                    "check_needed": false,
+                    "uuid": "9da61d49-6fc9-48de-bbdd-9875f8f192bc"
+                  }
+                ],
+                "uuid": "da4920b4-ed3b-442e-baf0-c61c5346a299"
+              }
+            ],
+            "uuid": "b3fc3f06-949d-4e46-a2cd-61b33b6f6b61"
+          },
+          {
+            "id": "grammar_08",
+            "type": "grammar_point",
+            "order": 8,
+            "title": "意味着",
+            "title_vi": "意味着: có nghĩa là, hàm ý là",
+            "level": "HSK3+",
+            "tags": [
+              "词语用法"
+            ],
+            "source_origin": "textbook/generated_mixed",
+            "check_needed": false,
+            "blocks": [
+              {
+                "id": "grammar_08_structure",
+                "type": "grammar_structure",
+                "order": 1,
+                "title": "A 意味着 B",
+                "pattern": "A + 意味着 + B",
+                "meaning_vi": "A kéo theo ý nghĩa hoặc hệ quả B. Trang trọng hơn 意思是.",
+                "examples": [
+                  {
+                    "id": "g08_ex_01",
+                    "zh": "这是否意味着我们将不得不推迟实施数年来的飞船计划？",
+                    "vi": "Điều này có nghĩa là chúng ta sẽ buộc phải trì hoãn kế hoạch tàu vũ trụ nhiều năm sao?",
+                    "source_origin": "textbook/generated_mixed",
+                    "check_needed": false,
+                    "uuid": "d7d6a967-1eda-40c4-8e6a-a9ca5174f33d"
+                  },
+                  {
+                    "id": "g08_ex_02",
+                    "zh": "听说能力强并不意味着读写的能力也强。",
+                    "vi": "Nghe nói tốt không có nghĩa là đọc viết cũng tốt.",
+                    "source_origin": "textbook/generated_mixed",
+                    "check_needed": false,
+                    "uuid": "c95f4262-6a79-4a32-a511-2d1622cb0bab"
+                  },
+                  {
+                    "id": "g08_ex_03",
+                    "zh": "这次载人航天飞船的发射成功，意味着人类在探索宇宙的道路上又前进了一大步。",
+                    "vi": "Việc phóng tàu có người lái thành công có nghĩa là loài người đã tiến thêm một bước lớn trong khám phá vũ trụ.",
+                    "source_origin": "textbook/generated_mixed",
+                    "check_needed": false,
+                    "uuid": "05ab234b-d5ca-42d9-89ff-958b1284b505"
+                  }
+                ],
+                "uuid": "393fb375-6a67-445a-b360-8a25f3a76a45"
+              }
+            ],
+            "uuid": "975e8824-4be9-4fd6-9a42-03b24b0d53d7"
+          }
+        ],
+        "uuid": "ceae57fa-2710-4e7b-9a2f-a37ddb09ff42"
+      },
+      {
+        "id": "section_06_exercises",
+        "type": "exercises",
+        "order": 6,
+        "title": "练习",
+        "title_vi": "Bài tập",
+        "source_origin": "textbook/generated_mixed",
+        "check_needed": false,
+        "coverage_contract": {
+          "policy": "Coverage-first: giữ đủ 10 mục bài tập trong PDF theo đúng thứ tự sách.",
+          "expected_count_source": "pdf_page_scan_manual_count",
+          "expected_exercise_count_from_pdf": 10,
+          "actual_exercise_count_in_json": 10,
+          "all_exercises_covered": true,
+          "coverage_status": "complete_verified",
+          "allowed_final_status_when_incomplete": "draft_or_verified_only",
+          "blocked_final_statuses": [
+            "final_verified",
+            "final_verified_with_marked_generated_fields"
+          ]
+        },
+        "items": [
+          {
+            "id": "exercise_01",
+            "type": "phonetics",
+            "variant": "pronunciation_tone_minimal_pairs",
+            "canonical_variant": "pronunciation_tone_minimal_pairs",
+            "order": 1,
+            "title": "一、语音",
+            "title_vi": "Ngữ âm",
+            "instruction": {
+              "zh": "辨音辨调；朗读。",
+              "vi": "Phân biệt âm/thanh điệu và đọc các câu tục ngữ.",
+              "en": ""
+            },
+            "difficulty": "normal",
+            "skill_focus": [
+              "pronunciation",
+              "listening",
+              "speaking"
+            ],
+            "grammar_refs": [],
+            "vocab_refs": [],
+            "word_bank": [],
+            "questions": [],
+            "answer_key": [],
+            "parts": [
+              {
+                "id": "exercise_01_part_01",
+                "type": "minimal_pair_group",
+                "title": "辨音辨调",
+                "items": [
+                  {
+                    "id": "ex01_pair_01",
+                    "left": "地球 dìqiú",
+                    "right": "踢球 tī qiú",
+                    "uuid": "18682f4a-c8dc-480e-ab3c-aa83962bbcc2"
+                  },
+                  {
+                    "id": "ex01_pair_02",
+                    "left": "卫星 wèixīng",
+                    "right": "卫生 wèishēng",
+                    "uuid": "da06514e-f65d-4bf7-86b5-fb6e5b7c8336"
+                  },
+                  {
+                    "id": "ex01_pair_03",
+                    "left": "信号 xìnhào",
+                    "right": "幸好 xìnghǎo",
+                    "uuid": "0985f8fa-0d7c-4a52-93be-753fb0619434"
+                  },
+                  {
+                    "id": "ex01_pair_04",
+                    "left": "生长 shēngzhǎng",
+                    "right": "申张 shēnzhāng",
+                    "uuid": "7cde747a-cf0f-4505-9595-5a4e3390ef4a"
+                  },
+                  {
+                    "id": "ex01_pair_05",
+                    "left": "气体 qìtǐ",
+                    "right": "集体 jítǐ",
+                    "uuid": "f2473e00-99c4-421e-9e3e-d49923726f2d"
+                  },
+                  {
+                    "id": "ex01_pair_06",
+                    "left": "资金 zījīn",
+                    "right": "至今 zhìjīn",
+                    "uuid": "15c19d03-5a1b-44ca-81e5-ce4e714640bd"
+                  }
+                ],
+                "source_origin": "textbook",
+                "check_needed": false,
+                "uuid": "a21eef9f-84d8-4944-b35b-ff83924119ea"
+              },
+              {
+                "id": "exercise_01_part_02",
+                "type": "proverb_reading",
+                "title": "朗读",
+                "items": [
+                  {
+                    "id": "ex01_read_01",
+                    "text": "一寸光阴一寸金，寸金难买寸光阴。",
+                    "vi": "Thời gian quý như vàng, vàng không mua được thời gian.",
+                    "uuid": "86952a96-0fe8-49c4-b03c-5be89c389003"
+                  },
+                  {
+                    "id": "ex01_read_02",
+                    "text": "一个篱笆三个桩，一个好汉三个帮。",
+                    "vi": "Một hàng rào cần ba cọc, một người giỏi cần ba người giúp.",
+                    "uuid": "40eaa4ef-e710-4436-9062-545130e98fbf"
+                  },
+                  {
+                    "id": "ex01_read_03",
+                    "text": "长江后浪推前浪，世上新人换旧人。",
+                    "vi": "Sóng sau Trường Giang đẩy sóng trước, người mới thay người cũ.",
+                    "uuid": "18f73fcc-7095-4964-860b-5d4ed0025b5c"
+                  }
+                ],
+                "source_origin": "textbook",
+                "check_needed": false,
+                "uuid": "3b9e54c6-0f5a-4cf2-9c97-9040364aab79"
+              }
+            ],
+            "models": [],
+            "dialogues": [],
+            "rendering": {
+              "renderer": "exercise.phonetics.v2",
+              "show_answer_after_submit": false
+            },
+            "source_origin": "textbook",
+            "check_needed": false,
+            "uuid": "9dc9f5b3-86ed-4e71-a5b8-11047913d1c2"
+          },
+          {
+            "id": "exercise_02",
+            "type": "read_aloud",
+            "variant": "word_phrase_sentence_chunks",
+            "canonical_variant": "word_phrase_sentence_chunks",
+            "order": 2,
+            "title": "二、词语",
+            "title_vi": "Từ/cụm từ",
+            "instruction": {
+              "zh": "朗读下列词语。",
+              "vi": "Đọc các cụm từ sau.",
+              "en": ""
+            },
+            "difficulty": "normal",
+            "skill_focus": [
+              "speaking",
+              "vocabulary"
+            ],
+            "grammar_refs": [],
+            "vocab_refs": [],
+            "word_bank": [],
+            "questions": [],
+            "answer_key": [],
+            "parts": [
+              {
+                "id": "exercise_02_part_01",
+                "type": "phrase_list",
+                "title": "Read out the following phrases",
+                "items": [
+                  {
+                    "id": "ex02_item_01",
+                    "text": "发射卫星",
+                    "uuid": "8b5ce01f-c4c3-418d-8437-5b29fb00609e"
+                  },
+                  {
+                    "id": "ex02_item_02",
+                    "text": "获得资料",
+                    "uuid": "0ffb989d-4062-4cb7-9740-6760448ad96c"
+                  },
+                  {
+                    "id": "ex02_item_03",
+                    "text": "珍贵资料",
+                    "uuid": "ab0a5772-5f01-4161-9761-a33ab618b50b"
+                  },
+                  {
+                    "id": "ex02_item_04",
+                    "text": "正在进行",
+                    "uuid": "f9559782-48ee-4549-9fb2-7a57f78917a1"
+                  },
+                  {
+                    "id": "ex02_item_05",
+                    "text": "增加重量",
+                    "uuid": "5f382a77-f0ce-4f24-b843-64800e5e2d38"
+                  },
+                  {
+                    "id": "ex02_item_06",
+                    "text": "毫无疑问",
+                    "uuid": "9bf4ce13-cb6f-4cfb-a9e0-833138f80a60"
+                  },
+                  {
+                    "id": "ex02_item_07",
+                    "text": "推迟计划",
+                    "uuid": "de373565-e8ac-467a-8c1b-0128ebd485ab"
+                  },
+                  {
+                    "id": "ex02_item_08",
+                    "text": "非常成功",
+                    "uuid": "26921cad-2455-42ae-be43-0204ff199304"
+                  },
+                  {
+                    "id": "ex02_item_09",
+                    "text": "获得成功",
+                    "uuid": "464362b5-350d-4465-8af2-db3215928d05"
+                  },
+                  {
+                    "id": "ex02_item_10",
+                    "text": "珍贵动物",
+                    "uuid": "a56fc438-22bb-476a-bd91-c90d74557e73"
+                  },
+                  {
+                    "id": "ex02_item_11",
+                    "text": "正在试验",
+                    "uuid": "68f89d96-2119-4652-b586-0fc13c38ec56"
+                  },
+                  {
+                    "id": "ex02_item_12",
+                    "text": "增加时间",
+                    "uuid": "bdab60f4-c87a-4957-aa80-4d1dae5a1e2a"
+                  },
+                  {
+                    "id": "ex02_item_13",
+                    "text": "毫无准备",
+                    "uuid": "21e9085a-51ec-4baf-90e0-3a4f437219c2"
+                  },
+                  {
+                    "id": "ex02_item_14",
+                    "text": "推迟几天",
+                    "uuid": "c7f28a58-0ddf-4a76-a94b-7d71bc89a560"
+                  },
+                  {
+                    "id": "ex02_item_15",
+                    "text": "一片欢腾",
+                    "uuid": "ab06ae55-b52f-402e-825f-10fa05dfd8c5"
+                  },
+                  {
+                    "id": "ex02_item_16",
+                    "text": "获得资金",
+                    "uuid": "dc735e3b-2b86-4272-8857-0aa6ef52b731"
+                  },
+                  {
+                    "id": "ex02_item_17",
+                    "text": "珍贵植物",
+                    "uuid": "109e9d49-e865-40f2-b793-48c887f13015"
+                  },
+                  {
+                    "id": "ex02_item_18",
+                    "text": "正在研究",
+                    "uuid": "1dc8497a-80a6-4bd7-b688-31456c0903e0"
+                  },
+                  {
+                    "id": "ex02_item_19",
+                    "text": "增加收入",
+                    "uuid": "1f3647e8-c897-4419-abcb-e8aeb52b659d"
+                  },
+                  {
+                    "id": "ex02_item_20",
+                    "text": "毫无信心",
+                    "uuid": "b576419c-a1bb-4d17-b92d-d3817b96bd12"
+                  },
+                  {
+                    "id": "ex02_item_21",
+                    "text": "推迟进行",
+                    "uuid": "65e96ea2-8df1-4cb3-8f28-b1d591f3176a"
+                  }
+                ],
+                "source_origin": "textbook",
+                "check_needed": false,
+                "uuid": "e70f8ae9-7693-4989-aa9a-2975b033bea7"
+              }
+            ],
+            "models": [],
+            "dialogues": [],
+            "rendering": {
+              "renderer": "exercise.read_aloud.v2"
+            },
+            "source_origin": "textbook",
+            "check_needed": false,
+            "uuid": "8798fe72-63ec-4914-9f5c-e8b0b6c49f9b"
+          },
+          {
+            "id": "exercise_03",
+            "type": "choose_words_fill_blank",
+            "variant": "word_bank",
+            "canonical_variant": "word_bank_fill_blank",
+            "order": 3,
+            "title": "三、选词填空",
+            "title_vi": "Chọn từ điền chỗ trống",
+            "instruction": {
+              "zh": "选词填空。",
+              "vi": "Chọn từ đúng điền vào chỗ trống.",
+              "en": ""
+            },
+            "difficulty": "normal",
+            "skill_focus": [
+              "vocabulary",
+              "grammar"
+            ],
+            "grammar_refs": [],
+            "vocab_refs": [],
+            "word_bank": [
+              "不可思议",
+              "补充",
+              "欢腾",
+              "生长",
+              "生存",
+              "停留",
+              "实施",
+              "惊人",
+              "充满",
+              "取得",
+              "发射",
+              "推迟"
+            ],
+            "questions": [
+              {
+                "id": "ex03_q01",
+                "prompt": "听说国家足球队得了奥运冠军，全国一片____。",
+                "source_origin": "textbook_question_generated_answer",
+                "answer_verified": true,
+                "check_needed": false,
+                "explanation_vi": "",
+                "answer": "欢腾",
+                "grading": {
+                  "mode": "exact"
+                },
+                "uuid": "9e8ac8b0-077d-44f6-9182-b918dd756f94"
+              },
+              {
+                "id": "ex03_q02",
+                "prompt": "他们国家正准备____载人飞船。",
+                "source_origin": "textbook_question_generated_answer",
+                "answer_verified": true,
+                "check_needed": false,
+                "explanation_vi": "",
+                "answer": "发射",
+                "grading": {
+                  "mode": "exact"
+                },
+                "uuid": "cb65e50e-a58a-4537-a475-03adcb7d9943"
+              },
+              {
+                "id": "ex03_q03",
+                "prompt": "这次宇宙飞船在空中____了十五天。",
+                "source_origin": "textbook_question_generated_answer",
+                "answer_verified": true,
+                "check_needed": false,
+                "explanation_vi": "",
+                "answer": "停留",
+                "grading": {
+                  "mode": "exact"
+                },
+                "uuid": "a7790be3-1d02-456b-9205-b53a7ed622c2"
+              },
+              {
+                "id": "ex03_q04",
+                "prompt": "经过一年的努力，你们都____了很好的成绩。",
+                "source_origin": "textbook_question_generated_answer",
+                "answer_verified": true,
+                "check_needed": false,
+                "explanation_vi": "",
+                "answer": "取得",
+                "grading": {
+                  "mode": "exact"
+                },
+                "uuid": "96dc5ec8-3229-429b-a26b-3f71eec033bf"
+              },
+              {
+                "id": "ex03_q05",
+                "prompt": "她从小____在海边，对大海有着很深的感情。",
+                "source_origin": "textbook_question_generated_answer",
+                "answer_verified": true,
+                "check_needed": false,
+                "explanation_vi": "",
+                "answer": "生长",
+                "grading": {
+                  "mode": "exact"
+                },
+                "uuid": "42d8a04a-d8ac-4675-8bda-3caa7c372043"
+              },
+              {
+                "id": "ex03_q06",
+                "prompt": "我们学校有中国学生，也有很多外国留学生，校园里____了中外师生团结友好的气氛。",
+                "source_origin": "textbook_question_generated_answer",
+                "answer_verified": true,
+                "check_needed": false,
+                "explanation_vi": "",
+                "answer": "充满",
+                "grading": {
+                  "mode": "exact"
+                },
+                "uuid": "81554d32-0c0a-4b23-a418-cfed46b49619"
+              },
+              {
+                "id": "ex03_q07",
+                "prompt": "我们要好好儿保护地球，因为这是我们人类唯一能够____的地方。",
+                "source_origin": "textbook_question_generated_answer",
+                "answer_verified": true,
+                "check_needed": false,
+                "explanation_vi": "",
+                "answer": "生存",
+                "grading": {
+                  "mode": "exact"
+                },
+                "uuid": "7a9006fb-f7af-4870-92a0-e092f9c12412"
+              },
+              {
+                "id": "ex03_q08",
+                "prompt": "发生这样的事情，真让人觉得____。",
+                "source_origin": "textbook_question_generated_answer",
+                "answer_verified": true,
+                "check_needed": false,
+                "explanation_vi": "",
+                "answer": "不可思议",
+                "grading": {
+                  "mode": "exact"
+                },
+                "uuid": "2eab91db-e487-41ef-ad72-d09b6ab653f0"
+              },
+              {
+                "id": "ex03_q09",
+                "prompt": "这个地方的经济这几年取得了____的发展。",
+                "source_origin": "textbook_question_generated_answer",
+                "answer_verified": true,
+                "check_needed": false,
+                "explanation_vi": "",
+                "answer": "惊人",
+                "grading": {
+                  "mode": "exact"
+                },
+                "uuid": "397242cc-eb55-4d1e-9f2f-43a53dedbb3a"
+              },
+              {
+                "id": "ex03_q10",
+                "prompt": "放假后我想去南方旅行，所以可能要____一个月回国。",
+                "source_origin": "textbook_question_generated_answer",
+                "answer_verified": true,
+                "check_needed": false,
+                "explanation_vi": "",
+                "answer": "推迟",
+                "grading": {
+                  "mode": "exact"
+                },
+                "uuid": "8c13aab0-242e-4949-9a47-4da566e9c12e"
+              },
+              {
+                "id": "ex03_q11",
+                "prompt": "中国青少年发展基金会____了希望工程，让更多贫困地区的失学儿童重回校园。",
+                "source_origin": "textbook_question_generated_answer",
+                "answer_verified": true,
+                "check_needed": false,
+                "explanation_vi": "",
+                "answer": "实施",
+                "grading": {
+                  "mode": "exact"
+                },
+                "uuid": "58e4f92d-738c-4738-a5f9-5df9dd4d4224"
+              },
+              {
+                "id": "ex03_q12",
+                "prompt": "课堂上，老师常常给我们____一些练习。",
+                "source_origin": "textbook_question_generated_answer",
+                "answer_verified": true,
+                "check_needed": false,
+                "explanation_vi": "",
+                "answer": "补充",
+                "grading": {
+                  "mode": "exact"
+                },
+                "uuid": "ba59d7ad-3d25-443d-ae88-bbe751e1dd00"
+              }
+            ],
+            "answer_key": [
+              {
+                "question_id": "ex03_q01",
+                "answer_verified": true,
+                "check_needed": false,
+                "answer": "欢腾"
+              },
+              {
+                "question_id": "ex03_q02",
+                "answer_verified": true,
+                "check_needed": false,
+                "answer": "发射"
+              },
+              {
+                "question_id": "ex03_q03",
+                "answer_verified": true,
+                "check_needed": false,
+                "answer": "停留"
+              },
+              {
+                "question_id": "ex03_q04",
+                "answer_verified": true,
+                "check_needed": false,
+                "answer": "取得"
+              },
+              {
+                "question_id": "ex03_q05",
+                "answer_verified": true,
+                "check_needed": false,
+                "answer": "生长"
+              },
+              {
+                "question_id": "ex03_q06",
+                "answer_verified": true,
+                "check_needed": false,
+                "answer": "充满"
+              },
+              {
+                "question_id": "ex03_q07",
+                "answer_verified": true,
+                "check_needed": false,
+                "answer": "生存"
+              },
+              {
+                "question_id": "ex03_q08",
+                "answer_verified": true,
+                "check_needed": false,
+                "answer": "不可思议"
+              },
+              {
+                "question_id": "ex03_q09",
+                "answer_verified": true,
+                "check_needed": false,
+                "answer": "惊人"
+              },
+              {
+                "question_id": "ex03_q10",
+                "answer_verified": true,
+                "check_needed": false,
+                "answer": "推迟"
+              },
+              {
+                "question_id": "ex03_q11",
+                "answer_verified": true,
+                "check_needed": false,
+                "answer": "实施"
+              },
+              {
+                "question_id": "ex03_q12",
+                "answer_verified": true,
+                "check_needed": false,
+                "answer": "补充"
+              }
+            ],
+            "parts": [],
+            "models": [],
+            "dialogues": [],
+            "rendering": {
+              "renderer": "exercise.fill_blank.word_bank.v2",
+              "show_word_bank": true,
+              "show_answer_after_submit": true
+            },
+            "source_origin": "textbook",
+            "check_needed": false,
+            "uuid": "5b63d8ad-5853-4760-bb7d-84cfc8e306ba"
+          },
+          {
+            "id": "exercise_04",
+            "type": "complete_sentence",
+            "variant": "complete_sentence_with_given_words",
+            "canonical_variant": "complete_sentence_with_given_words",
+            "order": 4,
+            "title": "四、用括号里的词语完成句子",
+            "title_vi": "Dùng từ trong ngoặc hoàn thành câu",
+            "instruction": {
+              "zh": "用括号里的词语完成句子。",
+              "vi": "Dùng từ/cụm trong ngoặc hoàn thành câu.",
+              "en": ""
+            },
+            "difficulty": "normal",
+            "skill_focus": [
+              "grammar",
+              "writing"
+            ],
+            "grammar_refs": [],
+            "vocab_refs": [],
+            "word_bank": [],
+            "questions": [
+              {
+                "id": "ex04_q01",
+                "prompt": "他对这次 HSK 考试____。",
+                "source_origin": "textbook_question_generated_answer",
+                "answer_verified": false,
+                "check_needed": false,
+                "explanation_vi": "",
+                "answer": "他对这次 HSK 考试充满信心。",
+                "grading": {
+                  "mode": "manual"
+                },
+                "uuid": "e0179ada-1502-4c94-b9a4-659fcf3ffe89"
+              },
+              {
+                "id": "ex04_q02",
+                "prompt": "下学期，我们班除了他不再继续学了以外，____。",
+                "source_origin": "textbook_question_generated_answer",
+                "answer_verified": false,
+                "check_needed": false,
+                "explanation_vi": "",
+                "answer": "下学期，我们班除了他不再继续学了以外，其他同学都继续学习。",
+                "grading": {
+                  "mode": "manual"
+                },
+                "uuid": "3518b886-14bc-4ad5-b788-2779a9e42afc"
+              },
+              {
+                "id": "ex04_q03",
+                "prompt": "地球上的气候不断变暖，____。",
+                "source_origin": "textbook_question_generated_answer",
+                "answer_verified": false,
+                "check_needed": false,
+                "explanation_vi": "",
+                "answer": "地球上的气候不断变暖，这意味着将来地球生物会遇到很多问题。",
+                "grading": {
+                  "mode": "manual"
+                },
+                "uuid": "0afee6ba-5c25-4a6a-b7d4-1dd959dbd55a"
+              },
+              {
+                "id": "ex04_q04",
+                "prompt": "你说他是加拿大人，可他的护照是美国的，____？",
+                "source_origin": "textbook_question_generated_answer",
+                "answer_verified": false,
+                "check_needed": false,
+                "explanation_vi": "",
+                "answer": "你说他是加拿大人，可他的护照是美国的，他究竟来自哪里？",
+                "grading": {
+                  "mode": "manual"
+                },
+                "uuid": "99874ea9-6f3f-4174-910c-c770280ebba6"
+              },
+              {
+                "id": "ex04_q05",
+                "prompt": "他的护照是美国护照，____。",
+                "source_origin": "textbook_question_generated_answer",
+                "answer_verified": false,
+                "check_needed": false,
+                "explanation_vi": "",
+                "answer": "他的护照是美国护照，实际上他是美国人。",
+                "grading": {
+                  "mode": "manual"
+                },
+                "uuid": "02a4c375-569b-4400-b8b3-c40abb0dcd5e"
+              },
+              {
+                "id": "ex04_q06",
+                "prompt": "他说在中文学校学了一年汉语，可是____。",
+                "source_origin": "textbook_question_generated_answer",
+                "answer_verified": false,
+                "check_needed": false,
+                "explanation_vi": "",
+                "answer": "他说在中文学校学了一年汉语，可是实际上他只学了三个月。",
+                "grading": {
+                  "mode": "manual"
+                },
+                "uuid": "fe68cbc9-af5d-4887-a03c-1e9660134ed4"
+              }
+            ],
+            "answer_key": [
+              {
+                "question_id": "ex04_q01",
+                "answer_verified": false,
+                "check_needed": false,
+                "sample_answer": "他对这次 HSK 考试充满信心。"
+              },
+              {
+                "question_id": "ex04_q02",
+                "answer_verified": false,
+                "check_needed": false,
+                "sample_answer": "下学期，我们班除了他不再继续学了以外，其他同学都继续学习。"
+              },
+              {
+                "question_id": "ex04_q03",
+                "answer_verified": false,
+                "check_needed": false,
+                "sample_answer": "地球上的气候不断变暖，这意味着将来地球生物会遇到很多问题。"
+              },
+              {
+                "question_id": "ex04_q04",
+                "answer_verified": false,
+                "check_needed": false,
+                "sample_answer": "你说他是加拿大人，可他的护照是美国的，他究竟来自哪里？"
+              },
+              {
+                "question_id": "ex04_q05",
+                "answer_verified": false,
+                "check_needed": false,
+                "sample_answer": "他的护照是美国护照，实际上他是美国人。"
+              },
+              {
+                "question_id": "ex04_q06",
+                "answer_verified": false,
+                "check_needed": false,
+                "sample_answer": "他说在中文学校学了一年汉语，可是实际上他只学了三个月。"
+              }
+            ],
+            "parts": [],
+            "models": [],
+            "dialogues": [],
+            "rendering": {
+              "renderer": "exercise.complete_sentence.v2",
+              "show_answer_after_submit": true,
+              "allow_manual_check": true
+            },
+            "source_origin": "textbook",
+            "check_needed": false,
+            "uuid": "0c706709-4707-4205-94be-6db07ba85493"
+          },
+          {
+            "id": "exercise_05",
+            "type": "complete_dialogue",
+            "variant": "complete_dialogue",
+            "canonical_variant": "complete_dialogue",
+            "order": 5,
+            "title": "五、用括号里的词语完成会话",
+            "title_vi": "Dùng từ trong ngoặc hoàn thành hội thoại",
+            "instruction": {
+              "zh": "用括号里的词语完成会话。",
+              "vi": "Dùng từ/cụm trong ngoặc hoàn thành hội thoại.",
+              "en": ""
+            },
+            "difficulty": "normal",
+            "skill_focus": [
+              "grammar",
+              "speaking",
+              "writing"
+            ],
+            "grammar_refs": [],
+            "vocab_refs": [],
+            "word_bank": [],
+            "questions": [
+              {
+                "id": "ex05_q01",
+                "prompt": "A：明年你有什么打算？\nB：____。\n（可能）",
+                "source_origin": "textbook_question_generated_answer",
+                "answer_verified": false,
+                "check_needed": false,
+                "explanation_vi": "",
+                "answer": "我明年可能去中国留学。",
+                "grading": {
+                  "mode": "manual"
+                },
+                "uuid": "ab21d69d-ce4f-48be-b8f1-5f159847a6af"
+              },
+              {
+                "id": "ex05_q02",
+                "prompt": "A：你认为这件事办得成吗？\nB：____。\n（可能）",
+                "source_origin": "textbook_question_generated_answer",
+                "answer_verified": false,
+                "check_needed": false,
+                "explanation_vi": "",
+                "answer": "我觉得有可能。",
+                "grading": {
+                  "mode": "manual"
+                },
+                "uuid": "1638d54c-07a9-4f93-8c79-9810f0a045f2"
+              },
+              {
+                "id": "ex05_q03",
+                "prompt": "A：____？\nB：大概有一万多留学生。\n（究竟）",
+                "source_origin": "textbook_question_generated_answer",
+                "answer_verified": false,
+                "check_needed": false,
+                "explanation_vi": "",
+                "answer": "这个学校究竟有多少留学生？",
+                "grading": {
+                  "mode": "manual"
+                },
+                "uuid": "95495642-7466-41ba-b8c1-9086510e8558"
+              },
+              {
+                "id": "ex05_q04",
+                "prompt": "A：你觉得这场足球赛____？\nB：很难说。\n（究竟）",
+                "source_origin": "textbook_question_generated_answer",
+                "answer_verified": false,
+                "check_needed": false,
+                "explanation_vi": "",
+                "answer": "你觉得这场足球赛究竟谁会赢？",
+                "grading": {
+                  "mode": "manual"
+                },
+                "uuid": "5fd128d3-8745-47a1-a40a-cafedca3ad98"
+              },
+              {
+                "id": "ex05_q05",
+                "prompt": "A：为了研究大熊猫的生活，她一个人在大山里和大熊猫一起生活了三年。\nB：是吗？____。\n（不可思议）",
+                "source_origin": "textbook_question_generated_answer",
+                "answer_verified": false,
+                "check_needed": false,
+                "explanation_vi": "",
+                "answer": "是吗？真是不可思议。",
+                "grading": {
+                  "mode": "manual"
+                },
+                "uuid": "90ccf81a-fa45-4f7a-bb01-8d0c7d9d5720"
+              },
+              {
+                "id": "ex05_q06",
+                "prompt": "A：你刚来中国一年，汉语就说得这么好，真不简单！\nB：哪里，____。\n（实际上）",
+                "source_origin": "textbook_question_generated_answer",
+                "answer_verified": false,
+                "check_needed": false,
+                "explanation_vi": "",
+                "answer": "哪里，实际上我的汉语还差得远呢。",
+                "grading": {
+                  "mode": "manual"
+                },
+                "uuid": "7bd6cdc6-b323-4ee4-9aec-f6e6c9962cfa"
+              }
+            ],
+            "answer_key": [
+              {
+                "question_id": "ex05_q01",
+                "answer_verified": false,
+                "check_needed": false,
+                "sample_answer": "我明年可能去中国留学。"
+              },
+              {
+                "question_id": "ex05_q02",
+                "answer_verified": false,
+                "check_needed": false,
+                "sample_answer": "我觉得有可能。"
+              },
+              {
+                "question_id": "ex05_q03",
+                "answer_verified": false,
+                "check_needed": false,
+                "sample_answer": "这个学校究竟有多少留学生？"
+              },
+              {
+                "question_id": "ex05_q04",
+                "answer_verified": false,
+                "check_needed": false,
+                "sample_answer": "你觉得这场足球赛究竟谁会赢？"
+              },
+              {
+                "question_id": "ex05_q05",
+                "answer_verified": false,
+                "check_needed": false,
+                "sample_answer": "是吗？真是不可思议。"
+              },
+              {
+                "question_id": "ex05_q06",
+                "answer_verified": false,
+                "check_needed": false,
+                "sample_answer": "哪里，实际上我的汉语还差得远呢。"
+              }
+            ],
+            "parts": [],
+            "models": [],
+            "dialogues": [],
+            "rendering": {
+              "renderer": "exercise.complete_dialogue.v2",
+              "show_answer_after_submit": true,
+              "allow_manual_check": true
+            },
+            "source_origin": "textbook",
+            "check_needed": false,
+            "uuid": "4f9eb127-ba33-4f89-bc40-36d2be30ba29"
+          },
+          {
+            "id": "exercise_06",
+            "type": "reorder_sentence",
+            "variant": "reorder_sentences_or_paragraph",
+            "canonical_variant": "reorder_sentences_or_paragraph",
+            "order": 6,
+            "title": "六、连句成段",
+            "title_vi": "Sắp xếp câu thành đoạn",
+            "instruction": {
+              "zh": "连句成段。",
+              "vi": "Sắp xếp các câu thành đoạn văn.",
+              "en": ""
+            },
+            "difficulty": "normal",
+            "skill_focus": [
+              "reading",
+              "writing",
+              "discourse"
+            ],
+            "grammar_refs": [],
+            "vocab_refs": [],
+            "word_bank": [],
+            "questions": [
+              {
+                "id": "ex06_q01",
+                "prompt": {
+                  "A": "他们建议人们出门最好乘坐公共汽车、地铁，尽量少开汽车。",
+                  "B": "这些物质越来越影响人们的健康。",
+                  "C": "在世界上的大部分城市，空气里的一氧化碳和其他有害气体已经多得可怕。",
+                  "D": "为了解决这个问题，一些环境保护组织提出限制使用汽车的建议。"
+                },
+                "source_origin": "textbook_question_generated_answer",
+                "answer_verified": true,
+                "check_needed": false,
+                "explanation_vi": "",
+                "answer": [
+                  "C",
+                  "B",
+                  "D",
+                  "A"
+                ],
+                "grading": {
+                  "mode": "exact"
+                },
+                "uuid": "5785770b-3e03-4ac6-aeae-c39066391d58"
+              },
+              {
+                "id": "ex06_q02",
+                "prompt": {
+                  "A": "如果大家都乘坐公共交通工具上下班，就有可能大大减少空气中的一氧化碳和其他有害气体。",
+                  "B": "只要大家都关心环境问题，就会愿意试着去做，时间长了就慢慢习惯了。",
+                  "C": "我们怎么样才能避免空气污染呢？我们为什么不可以坐公共汽车而非要自己开车呢？",
+                  "D": "当然，从方便角度来讲，坐公共汽车比不上自己开车，但是这样花钱少，对环境的污染也小。"
+                },
+                "source_origin": "textbook_question_generated_answer",
+                "answer_verified": true,
+                "check_needed": false,
+                "explanation_vi": "",
+                "answer": [
+                  "C",
+                  "D",
+                  "A",
+                  "B"
+                ],
+                "grading": {
+                  "mode": "exact"
+                },
+                "uuid": "2e35a929-db31-408c-ae5e-2b0c8d7fa3f8"
+              }
+            ],
+            "answer_key": [
+              {
+                "question_id": "ex06_q01",
+                "answer_verified": true,
+                "check_needed": false,
+                "answer": [
+                  "C",
+                  "B",
+                  "D",
+                  "A"
+                ]
+              },
+              {
+                "question_id": "ex06_q02",
+                "answer_verified": true,
+                "check_needed": false,
+                "answer": [
+                  "C",
+                  "D",
+                  "A",
+                  "B"
+                ]
+              }
+            ],
+            "parts": [],
+            "models": [],
+            "dialogues": [],
+            "rendering": {
+              "renderer": "exercise.reorder.paragraph.v2",
+              "show_answer_after_submit": true
+            },
+            "source_origin": "textbook",
+            "check_needed": false,
+            "uuid": "e9cb3768-4834-4038-9990-d13fc4f8b649"
+          },
+          {
+            "id": "exercise_07",
+            "type": "correct_sentence",
+            "variant": "error_correction",
+            "canonical_variant": "error_correction",
+            "order": 7,
+            "title": "七、改错句",
+            "title_vi": "Sửa câu sai",
+            "instruction": {
+              "zh": "改错句。",
+              "vi": "Sửa các câu sai.",
+              "en": ""
+            },
+            "difficulty": "normal",
+            "skill_focus": [
+              "grammar",
+              "editing"
+            ],
+            "grammar_refs": [],
+            "vocab_refs": [],
+            "word_bank": [],
+            "questions": [
+              {
+                "id": "ex07_q01",
+                "prompt": "我的发烧比昨天增加了。",
+                "source_origin": "textbook_question_generated_answer",
+                "answer_verified": false,
+                "check_needed": false,
+                "explanation_vi": "",
+                "answer": "我比昨天烧得更厉害了。",
+                "wrong_sentence": "我的发烧比昨天增加了。",
+                "correct_sentence": "我比昨天烧得更厉害了。",
+                "grading": {
+                  "mode": "manual"
+                },
+                "uuid": "37600481-a785-430a-a163-81f64e1e5bdc"
+              },
+              {
+                "id": "ex07_q02",
+                "prompt": "好久没看见他了，他很也许回国了。",
+                "source_origin": "textbook_question_generated_answer",
+                "answer_verified": false,
+                "check_needed": false,
+                "explanation_vi": "",
+                "answer": "好久没看见他了，他也许已经回国了。",
+                "wrong_sentence": "好久没看见他了，他很也许回国了。",
+                "correct_sentence": "好久没看见他了，他也许已经回国了。",
+                "grading": {
+                  "mode": "manual"
+                },
+                "uuid": "045aef82-62d0-4103-ad36-3e445598c569"
+              },
+              {
+                "id": "ex07_q03",
+                "prompt": "我先去香港玩儿玩儿了几天，然后就来这里学汉语了。",
+                "source_origin": "textbook_question_generated_answer",
+                "answer_verified": false,
+                "check_needed": false,
+                "explanation_vi": "",
+                "answer": "我先去香港玩儿了几天，然后就来这里学汉语了。",
+                "wrong_sentence": "我先去香港玩儿玩儿了几天，然后就来这里学汉语了。",
+                "correct_sentence": "我先去香港玩儿了几天，然后就来这里学汉语了。",
+                "grading": {
+                  "mode": "manual"
+                },
+                "uuid": "7a213a73-e489-4745-be62-4c9e8f801f88"
+              },
+              {
+                "id": "ex07_q04",
+                "prompt": "他成功他的考试，所以他能上大学了。",
+                "source_origin": "textbook_question_generated_answer",
+                "answer_verified": false,
+                "check_needed": false,
+                "explanation_vi": "",
+                "answer": "他通过了考试，所以他能上大学了。",
+                "wrong_sentence": "他成功他的考试，所以他能上大学了。",
+                "correct_sentence": "他通过了考试，所以他能上大学了。",
+                "grading": {
+                  "mode": "manual"
+                },
+                "uuid": "6581e83a-b705-4067-894d-380f82381def"
+              },
+              {
+                "id": "ex07_q05",
+                "prompt": "他想当律师，不知道他的这个愿望究竟能成功。",
+                "source_origin": "textbook_question_generated_answer",
+                "answer_verified": false,
+                "check_needed": false,
+                "explanation_vi": "",
+                "answer": "他想当律师，不知道他的这个愿望究竟能不能实现。",
+                "wrong_sentence": "他想当律师，不知道他的这个愿望究竟能成功。",
+                "correct_sentence": "他想当律师，不知道他的这个愿望究竟能不能实现。",
+                "grading": {
+                  "mode": "manual"
+                },
+                "uuid": "cd3c80a8-5c39-4ecb-b936-fdf431b525a8"
+              },
+              {
+                "id": "ex07_q06",
+                "prompt": "为了这个目的达到，我必须努力学习。",
+                "source_origin": "textbook_question_generated_answer",
+                "answer_verified": false,
+                "check_needed": false,
+                "explanation_vi": "",
+                "answer": "为了达到这个目的，我必须努力学习。",
+                "wrong_sentence": "为了这个目的达到，我必须努力学习。",
+                "correct_sentence": "为了达到这个目的，我必须努力学习。",
+                "grading": {
+                  "mode": "manual"
+                },
+                "uuid": "d25c8c7b-ebd8-41b1-849b-203b3ed1738f"
+              },
+              {
+                "id": "ex07_q07",
+                "prompt": "很多人都不可思议她跟这个人结婚。",
+                "source_origin": "textbook_question_generated_answer",
+                "answer_verified": false,
+                "check_needed": false,
+                "explanation_vi": "",
+                "answer": "很多人都觉得她跟这个人结婚不可思议。",
+                "wrong_sentence": "很多人都不可思议她跟这个人结婚。",
+                "correct_sentence": "很多人都觉得她跟这个人结婚不可思议。",
+                "grading": {
+                  "mode": "manual"
+                },
+                "uuid": "d777ea72-417c-441c-b7d9-99b55a95ee56"
+              },
+              {
+                "id": "ex07_q08",
+                "prompt": "这个问题我不但解答不了，她也同样解答不了。",
+                "source_origin": "textbook_question_generated_answer",
+                "answer_verified": false,
+                "check_needed": false,
+                "explanation_vi": "",
+                "answer": "这个问题不但我解答不了，她也同样解答不了。",
+                "wrong_sentence": "这个问题我不但解答不了，她也同样解答不了。",
+                "correct_sentence": "这个问题不但我解答不了，她也同样解答不了。",
+                "grading": {
+                  "mode": "manual"
+                },
+                "uuid": "d40e1b92-3694-4568-99f9-c582d18ddcc0"
+              }
+            ],
+            "answer_key": [
+              {
+                "question_id": "ex07_q01",
+                "answer_verified": false,
+                "check_needed": false,
+                "sample_answer": "我比昨天烧得更厉害了。"
+              },
+              {
+                "question_id": "ex07_q02",
+                "answer_verified": false,
+                "check_needed": false,
+                "sample_answer": "好久没看见他了，他也许已经回国了。"
+              },
+              {
+                "question_id": "ex07_q03",
+                "answer_verified": false,
+                "check_needed": false,
+                "sample_answer": "我先去香港玩儿了几天，然后就来这里学汉语了。"
+              },
+              {
+                "question_id": "ex07_q04",
+                "answer_verified": false,
+                "check_needed": false,
+                "sample_answer": "他通过了考试，所以他能上大学了。"
+              },
+              {
+                "question_id": "ex07_q05",
+                "answer_verified": false,
+                "check_needed": false,
+                "sample_answer": "他想当律师，不知道他的这个愿望究竟能不能实现。"
+              },
+              {
+                "question_id": "ex07_q06",
+                "answer_verified": false,
+                "check_needed": false,
+                "sample_answer": "为了达到这个目的，我必须努力学习。"
+              },
+              {
+                "question_id": "ex07_q07",
+                "answer_verified": false,
+                "check_needed": false,
+                "sample_answer": "很多人都觉得她跟这个人结婚不可思议。"
+              },
+              {
+                "question_id": "ex07_q08",
+                "answer_verified": false,
+                "check_needed": false,
+                "sample_answer": "这个问题不但我解答不了，她也同样解答不了。"
+              }
+            ],
+            "parts": [],
+            "models": [],
+            "dialogues": [],
+            "rendering": {
+              "renderer": "exercise.error_correction.v2",
+              "show_answer_after_submit": true,
+              "allow_manual_check": true
+            },
+            "source_origin": "textbook",
+            "check_needed": false,
+            "uuid": "19e26f86-a435-45ba-960d-a7567ac034cc"
+          },
+          {
+            "id": "exercise_08",
+            "type": "custom",
+            "variant": "situational_expression",
+            "canonical_variant": "custom_textbook_task",
+            "order": 8,
+            "title": "八、情景表达",
+            "title_vi": "Diễn đạt theo tình huống",
+            "instruction": {
+              "zh": "情景表达。",
+              "vi": "Diễn đạt theo tình huống.",
+              "en": ""
+            },
+            "difficulty": "normal",
+            "skill_focus": [
+              "speaking",
+              "communication",
+              "vocabulary"
+            ],
+            "grammar_refs": [],
+            "vocab_refs": [],
+            "word_bank": [],
+            "questions": [
+              {
+                "id": "ex08a_q01",
+                "prompt": "下列句子什么情景下说？全城一片欢腾。",
+                "source_origin": "textbook_question_generated_answer",
+                "answer_verified": false,
+                "check_needed": false,
+                "explanation_vi": "",
+                "grading": {
+                  "mode": "manual"
+                },
+                "uuid": "9fac67a0-1ac3-4a92-be24-254fd43fe447"
+              },
+              {
+                "id": "ex08a_q02",
+                "prompt": "下列句子什么情景下说？这件事简直不可思议。",
+                "source_origin": "textbook_question_generated_answer",
+                "answer_verified": false,
+                "check_needed": false,
+                "explanation_vi": "",
+                "grading": {
+                  "mode": "manual"
+                },
+                "uuid": "5b135073-7795-4b93-ab31-95f48c3780a9"
+              },
+              {
+                "id": "ex08a_q03",
+                "prompt": "下列句子什么情景下说？那条河里的水根本不能喝。",
+                "source_origin": "textbook_question_generated_answer",
+                "answer_verified": false,
+                "check_needed": false,
+                "explanation_vi": "",
+                "grading": {
+                  "mode": "manual"
+                },
+                "uuid": "fc7dc99d-2982-4505-8ba8-3f3bad7e3465"
+              },
+              {
+                "id": "ex08b_q01",
+                "prompt": "下列情景怎么说？科学家发明了一种治疗癌症的新药，你听到这个消息后想表达自己的想法。",
+                "source_origin": "textbook_question_generated_answer",
+                "answer_verified": false,
+                "check_needed": false,
+                "explanation_vi": "",
+                "answer": "科学家在治疗癌症方面取得了重大突破，这真是不可思议。",
+                "grading": {
+                  "mode": "manual"
+                },
+                "uuid": "e7e8723a-b97e-4ee8-b744-92529e8bdf22"
+              },
+              {
+                "id": "ex08b_q02",
+                "prompt": "下列情景怎么说？你看到一起车祸，一辆车被撞碎了。",
+                "source_origin": "textbook_question_generated_answer",
+                "answer_verified": false,
+                "check_needed": false,
+                "explanation_vi": "",
+                "answer": "那辆车被撞个稀巴烂。",
+                "grading": {
+                  "mode": "manual"
+                },
+                "uuid": "5eec4163-1a35-42a8-a1b9-2cc8590aed39"
+              },
+              {
+                "id": "ex08b_q03",
+                "prompt": "下列情景怎么说？你去外地旅行了一个月，还遇到了一起车祸，但是你一点儿事没有，安全地回来了。",
+                "source_origin": "textbook_question_generated_answer",
+                "answer_verified": false,
+                "check_needed": false,
+                "explanation_vi": "",
+                "answer": "虽然我在旅行中遇到了一起车祸，但是最后平安无事地回来了。",
+                "grading": {
+                  "mode": "manual"
+                },
+                "uuid": "d7363e41-d9fc-4fbd-9171-81529d9d8bdf"
+              }
+            ],
+            "answer_key": [
+              {
+                "question_id": "ex08b_q01",
+                "answer_verified": false,
+                "check_needed": false,
+                "sample_answer": "科学家在治疗癌症方面取得了重大突破，这真是不可思议。"
+              },
+              {
+                "question_id": "ex08b_q02",
+                "answer_verified": false,
+                "check_needed": false,
+                "sample_answer": "那辆车被撞个稀巴烂。"
+              },
+              {
+                "question_id": "ex08b_q03",
+                "answer_verified": false,
+                "check_needed": false,
+                "sample_answer": "虽然我在旅行中遇到了一起车祸，但是最后平安无事地回来了。"
+              }
+            ],
+            "parts": [
+              {
+                "id": "exercise_08_part_01",
+                "type": "situation_usage",
+                "title": "下列句子什么情景下说？",
+                "items": [
+                  {
+                    "id": "ex08a_item_01",
+                    "text": "全城一片欢腾。",
+                    "uuid": "dc53bf96-40c0-40e1-9678-96541c890d98"
+                  },
+                  {
+                    "id": "ex08a_item_02",
+                    "text": "这件事简直不可思议。",
+                    "uuid": "16efedc6-5eaf-4e78-8aad-732b46a7a54f"
+                  },
+                  {
+                    "id": "ex08a_item_03",
+                    "text": "那条河里的水根本不能喝。",
+                    "uuid": "f8e5edf0-f2db-4eb2-b951-c6b433fc0a3e"
+                  }
+                ],
+                "source_origin": "textbook",
+                "check_needed": false,
+                "uuid": "3166614b-c268-4c38-97d6-b7b43c46d95b"
+              },
+              {
+                "id": "exercise_08_part_02",
+                "type": "situation_response",
+                "title": "下列情景怎么说？",
+                "items": [
+                  {
+                    "id": "ex08b_item_01",
+                    "situation": "科学家发明了一种治疗癌症的新药，你听到这个消息后想表达自己的想法。",
+                    "sample_answer": "科学家在治疗癌症方面取得了重大突破，这真是不可思议。",
+                    "uuid": "85ea0fb7-8543-4ec2-a268-55bd0c9b77be"
+                  },
+                  {
+                    "id": "ex08b_item_02",
+                    "situation": "你看到一起车祸，一辆车被撞碎了。",
+                    "sample_answer": "那辆车被撞个稀巴烂。",
+                    "uuid": "50896a94-a792-4839-9210-728c9c323223"
+                  },
+                  {
+                    "id": "ex08b_item_03",
+                    "situation": "你去外地旅行了一个月，还遇到了一起车祸，但是你一点儿事没有，安全地回来了。",
+                    "sample_answer": "虽然我在旅行中遇到了一起车祸，但是最后平安无事地回来了。",
+                    "uuid": "51915b6c-4c76-4352-baed-9eb1428ab307"
+                  }
+                ],
+                "source_origin": "textbook_question_generated_answer",
+                "check_needed": false,
+                "uuid": "a48ab9ce-836f-41bd-a6db-151bad242eb8"
+              }
+            ],
+            "models": [],
+            "dialogues": [],
+            "rendering": {
+              "renderer": "exercise.situational_expression.v2",
+              "show_answer_after_submit": true,
+              "allow_manual_check": true
+            },
+            "source_origin": "textbook",
+            "check_needed": false,
+            "uuid": "096912c1-7dc0-4786-b876-fa9e2f7be31c"
+          },
+          {
+            "id": "exercise_09",
+            "type": "reading_fill_blank",
+            "variant": "reading_cloze",
+            "canonical_variant": "reading_cloze",
+            "order": 9,
+            "title": "九、综合填空",
+            "title_vi": "Điền khuyết tổng hợp",
+            "instruction": {
+              "zh": "综合填空。",
+              "vi": "Điền từ vào chỗ trống trong đoạn văn.",
+              "en": ""
+            },
+            "difficulty": "normal",
+            "skill_focus": [
+              "reading",
+              "grammar",
+              "vocabulary"
+            ],
+            "grammar_refs": [],
+            "vocab_refs": [],
+            "word_bank": [],
+            "questions": [
+              {
+                "id": "ex09_blank_01",
+                "prompt": "Blank 1",
+                "source_origin": "textbook_question_generated_answer",
+                "answer_verified": true,
+                "check_needed": false,
+                "explanation_vi": "",
+                "answer": "为了",
+                "grading": {
+                  "mode": "exact"
+                },
+                "uuid": "543b71b7-d9c8-4e9f-bef1-76dfa3900b8b"
+              },
+              {
+                "id": "ex09_blank_02",
+                "prompt": "Blank 2",
+                "source_origin": "textbook_question_generated_answer",
+                "answer_verified": true,
+                "check_needed": false,
+                "explanation_vi": "",
+                "answer": "的",
+                "grading": {
+                  "mode": "exact"
+                },
+                "uuid": "8c3e87cd-0452-4a1d-ba8e-8dfcc0771bb6"
+              },
+              {
+                "id": "ex09_blank_03",
+                "prompt": "Blank 3",
+                "source_origin": "textbook_question_generated_answer",
+                "answer_verified": true,
+                "check_needed": false,
+                "explanation_vi": "",
+                "answer": "连",
+                "grading": {
+                  "mode": "exact"
+                },
+                "uuid": "0149a092-319a-49d4-a683-96cd75cb223c"
+              },
+              {
+                "id": "ex09_blank_04",
+                "prompt": "Blank 4",
+                "source_origin": "textbook_question_generated_answer",
+                "answer_verified": true,
+                "check_needed": false,
+                "explanation_vi": "",
+                "answer": "把",
+                "grading": {
+                  "mode": "exact"
+                },
+                "uuid": "16ea1ab8-074a-4b6d-944f-f3dec0525a3c"
+              },
+              {
+                "id": "ex09_blank_05",
+                "prompt": "Blank 5",
+                "source_origin": "textbook_question_generated_answer",
+                "answer_verified": true,
+                "check_needed": false,
+                "explanation_vi": "",
+                "answer": "到",
+                "grading": {
+                  "mode": "exact"
+                },
+                "uuid": "cbf93067-44cc-498b-94af-ec8c72e41740"
+              },
+              {
+                "id": "ex09_blank_06",
+                "prompt": "Blank 6",
+                "source_origin": "textbook_question_generated_answer",
+                "answer_verified": true,
+                "check_needed": false,
+                "explanation_vi": "",
+                "answer": "成",
+                "grading": {
+                  "mode": "exact"
+                },
+                "uuid": "56d48af4-ae80-4982-82fc-38acc899641f"
+              },
+              {
+                "id": "ex09_blank_07",
+                "prompt": "Blank 7",
+                "source_origin": "textbook_question_generated_answer",
+                "answer_verified": true,
+                "check_needed": false,
+                "explanation_vi": "",
+                "answer": "多",
+                "grading": {
+                  "mode": "exact"
+                },
+                "uuid": "0c883d5a-ac0d-4014-9799-80df148684ca"
+              },
+              {
+                "id": "ex09_blank_08",
+                "prompt": "Blank 8",
+                "source_origin": "textbook_question_generated_answer",
+                "answer_verified": true,
+                "check_needed": false,
+                "explanation_vi": "",
+                "answer": "使",
+                "grading": {
+                  "mode": "exact"
+                },
+                "uuid": "1def31d0-89d0-4cb0-b68b-c2de46e20375"
+              },
+              {
+                "id": "ex09_blank_09",
+                "prompt": "Blank 9",
+                "source_origin": "textbook_question_generated_answer",
+                "answer_verified": true,
+                "check_needed": false,
+                "explanation_vi": "",
+                "answer": "出",
+                "grading": {
+                  "mode": "exact"
+                },
+                "uuid": "8ed517a9-b84f-42aa-86f4-836bb9840e2e"
+              },
+              {
+                "id": "ex09_blank_10",
+                "prompt": "Blank 10",
+                "source_origin": "textbook_question_generated_answer",
+                "answer_verified": true,
+                "check_needed": false,
+                "explanation_vi": "",
+                "answer": "了",
+                "grading": {
+                  "mode": "exact"
+                },
+                "uuid": "4b9fd34a-aa01-42d6-9bb0-ee2863277b95"
+              },
+              {
+                "id": "ex09_blank_11",
+                "prompt": "Blank 11",
+                "source_origin": "textbook_question_generated_answer",
+                "answer_verified": true,
+                "check_needed": false,
+                "explanation_vi": "",
+                "answer": "去",
+                "grading": {
+                  "mode": "exact"
+                },
+                "uuid": "dd20a25e-dff5-4787-97bf-c9799a19a8a1"
+              },
+              {
+                "id": "ex09_blank_12",
+                "prompt": "Blank 12",
+                "source_origin": "textbook_question_generated_answer",
+                "answer_verified": true,
+                "check_needed": false,
+                "explanation_vi": "",
+                "answer": "了",
+                "grading": {
+                  "mode": "exact"
+                },
+                "uuid": "0f57a19e-f1c0-4d60-a2c1-4c6d9e8fc05c"
+              }
+            ],
+            "answer_key": [
+              {
+                "question_id": "ex09_blank_01",
+                "answer_verified": true,
+                "check_needed": false,
+                "answer": "为了"
+              },
+              {
+                "question_id": "ex09_blank_02",
+                "answer_verified": true,
+                "check_needed": false,
+                "answer": "的"
+              },
+              {
+                "question_id": "ex09_blank_03",
+                "answer_verified": true,
+                "check_needed": false,
+                "answer": "连"
+              },
+              {
+                "question_id": "ex09_blank_04",
+                "answer_verified": true,
+                "check_needed": false,
+                "answer": "把"
+              },
+              {
+                "question_id": "ex09_blank_05",
+                "answer_verified": true,
+                "check_needed": false,
+                "answer": "到"
+              },
+              {
+                "question_id": "ex09_blank_06",
+                "answer_verified": true,
+                "check_needed": false,
+                "answer": "成"
+              },
+              {
+                "question_id": "ex09_blank_07",
+                "answer_verified": true,
+                "check_needed": false,
+                "answer": "多"
+              },
+              {
+                "question_id": "ex09_blank_08",
+                "answer_verified": true,
+                "check_needed": false,
+                "answer": "使"
+              },
+              {
+                "question_id": "ex09_blank_09",
+                "answer_verified": true,
+                "check_needed": false,
+                "answer": "出"
+              },
+              {
+                "question_id": "ex09_blank_10",
+                "answer_verified": true,
+                "check_needed": false,
+                "answer": "了"
+              },
+              {
+                "question_id": "ex09_blank_11",
+                "answer_verified": true,
+                "check_needed": false,
+                "answer": "去"
+              },
+              {
+                "question_id": "ex09_blank_12",
+                "answer_verified": true,
+                "check_needed": false,
+                "answer": "了"
+              }
+            ],
+            "parts": [
+              {
+                "id": "exercise_09_part_01",
+                "type": "supplementary_words",
+                "title": "补充生词",
+                "items": [
+                  {
+                    "id": "supp_01",
+                    "hanzi": "破坏",
+                    "pinyin": "pòhuài",
+                    "meaning_vi": "phá hoại",
+                    "uuid": "bc3b0df3-a67f-4a99-bbc7-f3d83b21b9cd"
+                  },
+                  {
+                    "id": "supp_02",
+                    "hanzi": "污染",
+                    "pinyin": "wūrǎn",
+                    "meaning_vi": "ô nhiễm; làm ô nhiễm",
+                    "uuid": "201bd9c2-bf00-48bf-9d0d-44416a50f710"
+                  },
+                  {
+                    "id": "supp_03",
+                    "hanzi": "砍伐",
+                    "pinyin": "kǎnfá",
+                    "meaning_vi": "chặt phá cây rừng",
+                    "uuid": "e362c3ee-908b-4675-9d1c-dac8f0910178"
+                  },
+                  {
+                    "id": "supp_04",
+                    "hanzi": "沙漠",
+                    "pinyin": "shāmò",
+                    "meaning_vi": "sa mạc",
+                    "uuid": "8e7a6281-9692-40f5-8108-894469a3e72d"
+                  }
+                ],
+                "source_origin": "textbook",
+                "check_needed": false,
+                "uuid": "00f86c7d-0888-4422-8a8e-cd9f31207c89"
+              },
+              {
+                "id": "exercise_09_part_02",
+                "type": "cloze_text",
+                "title": "短文",
+                "items": [
+                  {
+                    "id": "ex09_text",
+                    "text": "过去几十年，人类①____发展经济，破坏了地球的环境。地球上②____水越来越少，很多河长年断流，有的地方甚至③____人和动物喝的水也没有了。即使这样，大批工厂还④____污水排放到河里和海里。很多河水受⑤____污染，清水变⑥____了黑水。\n\n地球上的人口越来越⑦____。为了生存，人类只顾眼前利益，不顾环境受到破坏，拼命地砍伐森林，造成大量水土流失，⑧____大片绿色的土地变成了黄色的沙漠。\n\n更糟糕的是越来越严重的空气污染。工厂排放大量的一氧化碳，汽车放⑨____大量有害气体，蓝色的天空也变得很少见⑩____。地球表面的气温逐渐升高，气候不断变暖。如果不改变这种情况，这样下⑪____，地球真的会成为人类难以居住的地方⑫____。\n\n好在目前，人类已经开始关注并注意保护环境了。",
+                    "uuid": "ee78f65f-1fbe-4602-a867-39a48a410f5f"
+                  }
+                ],
+                "source_origin": "textbook",
+                "check_needed": false,
+                "uuid": "d1e77801-58eb-4ca9-ab6a-aa8f391db288"
+              }
+            ],
+            "models": [],
+            "dialogues": [],
+            "rendering": {
+              "renderer": "exercise.reading_cloze.v2",
+              "show_answer_after_submit": true,
+              "allow_manual_check": false
+            },
+            "source_origin": "textbook",
+            "check_needed": false,
+            "text": "过去几十年，人类①____发展经济，破坏了地球的环境。地球上②____水越来越少，很多河长年断流，有的地方甚至③____人和动物喝的水也没有了。即使这样，大批工厂还④____污水排放到河里和海里。很多河水受⑤____污染，清水变⑥____了黑水。\n\n地球上的人口越来越⑦____。为了生存，人类只顾眼前利益，不顾环境受到破坏，拼命地砍伐森林，造成大量水土流失，⑧____大片绿色的土地变成了黄色的沙漠。\n\n更糟糕的是越来越严重的空气污染。工厂排放大量的一氧化碳，汽车放⑨____大量有害气体，蓝色的天空也变得很少见⑩____。地球表面的气温逐渐升高，气候不断变暖。如果不改变这种情况，这样下⑪____，地球真的会成为人类难以居住的地方⑫____。\n\n好在目前，人类已经开始关注并注意保护环境了。",
+            "summary_vi": "Đoạn đọc nói về việc phát triển kinh tế làm phá hoại môi trường Trái Đất: thiếu nước, ô nhiễm nước, chặt phá rừng, sa mạc hóa, ô nhiễm không khí và biến đổi khí hậu.",
+            "uuid": "96f87f6b-ef33-4877-bbb3-315859b7cd59"
+          },
+          {
+            "id": "exercise_10",
+            "type": "communication_dialogue",
+            "variant": "role_play",
+            "canonical_variant": "role_play",
+            "order": 10,
+            "title": "十、交际会话",
+            "title_vi": "Hội thoại giao tiếp",
+            "instruction": {
+              "zh": "讨论环境问题。",
+              "vi": "Thảo luận vấn đề môi trường.",
+              "en": ""
+            },
+            "difficulty": "normal",
+            "skill_focus": [
+              "speaking",
+              "communication"
+            ],
+            "grammar_refs": [],
+            "vocab_refs": [],
+            "word_bank": [],
+            "questions": [],
+            "answer_key": [],
+            "parts": [
+              {
+                "id": "exercise_10_part_01",
+                "type": "dialogue",
+                "title": "讨论环境问题",
+                "items": [
+                  {
+                    "speaker": "A",
+                    "text": "你是不是觉得这篇课文有点儿不可思议？",
+                    "vi": "Bạn có thấy bài khóa này hơi khó tin không?"
+                  },
+                  {
+                    "speaker": "B",
+                    "text": "不觉得。看起来有点儿不可思议，但实际上提出的问题却非常重要。",
+                    "vi": "Không. Nhìn thì hơi khó tin, nhưng thực ra vấn đề được nêu ra rất quan trọng."
+                  },
+                  {
+                    "speaker": "A",
+                    "text": "是啊，我们应该爱护我们的地球。",
+                    "vi": "Đúng vậy, chúng ta nên yêu quý và bảo vệ Trái Đất."
+                  },
+                  {
+                    "speaker": "B",
+                    "text": "我觉得人类要更加注意环境问题了。长期以来，人类捕杀动物，砍伐森林，污染了河水和空气。",
+                    "vi": "Tôi nghĩ loài người càng phải chú ý hơn đến môi trường. Từ lâu, loài người săn giết động vật, chặt phá rừng, làm ô nhiễm nước sông và không khí."
+                  },
+                  {
+                    "speaker": "A",
+                    "text": "我也觉得环境问题是我们人类面临的最大的问题。要是我们再不重视，地球可真住不下去了。",
+                    "vi": "Tôi cũng nghĩ môi trường là vấn đề lớn nhất mà loài người đang đối mặt. Nếu còn không coi trọng, Trái Đất thật sự sẽ không thể sống tiếp được."
+                  },
+                  {
+                    "speaker": "B",
+                    "text": "动物和植物越来越少，土地逐渐沙漠化。这样下去，真让人为地球的命运担心。",
+                    "vi": "Động thực vật ngày càng ít, đất đai dần sa mạc hóa. Cứ như vậy thật khiến người ta lo cho vận mệnh Trái Đất."
+                  },
+                  {
+                    "speaker": "A",
+                    "text": "是，连金星人都关心起地球的环境问题来了，难道我们地球人不应该关心吗？",
+                    "vi": "Đúng, ngay cả người sao Kim cũng quan tâm đến môi trường Trái Đất rồi, chẳng lẽ người Trái Đất lại không nên quan tâm sao?"
+                  },
+                  {
+                    "speaker": "B",
+                    "text": "我觉得目前最大的危险是人类还不知道地球正面临危险。",
+                    "vi": "Tôi nghĩ nguy hiểm lớn nhất hiện nay là loài người vẫn chưa biết Trái Đất đang đối mặt với nguy hiểm."
+                  },
+                  {
+                    "speaker": "A",
+                    "text": "因此，应该让更多的人知道保护环境的重要性。从自己做起，从日常生活中的小事做起。",
+                    "vi": "Vì vậy, nên để nhiều người biết tầm quan trọng của bảo vệ môi trường. Bắt đầu từ chính mình, từ những việc nhỏ hằng ngày."
+                  }
+                ],
+                "source_origin": "textbook",
+                "check_needed": false,
+                "uuid": "7530e178-8b6c-4684-8b2a-f424a6459d58"
+              }
+            ],
+            "models": [],
+            "dialogues": [
+              {
+                "id": "ex10_dialogue_01",
+                "lines": [
+                  {
+                    "speaker": "A",
+                    "text": "你是不是觉得这篇课文有点儿不可思议？",
+                    "vi": "Bạn có thấy bài khóa này hơi khó tin không?"
+                  },
+                  {
+                    "speaker": "B",
+                    "text": "不觉得。看起来有点儿不可思议，但实际上提出的问题却非常重要。",
+                    "vi": "Không. Nhìn thì hơi khó tin, nhưng thực ra vấn đề được nêu ra rất quan trọng."
+                  },
+                  {
+                    "speaker": "A",
+                    "text": "是啊，我们应该爱护我们的地球。",
+                    "vi": "Đúng vậy, chúng ta nên yêu quý và bảo vệ Trái Đất."
+                  },
+                  {
+                    "speaker": "B",
+                    "text": "我觉得人类要更加注意环境问题了。长期以来，人类捕杀动物，砍伐森林，污染了河水和空气。",
+                    "vi": "Tôi nghĩ loài người càng phải chú ý hơn đến môi trường. Từ lâu, loài người săn giết động vật, chặt phá rừng, làm ô nhiễm nước sông và không khí."
+                  },
+                  {
+                    "speaker": "A",
+                    "text": "我也觉得环境问题是我们人类面临的最大的问题。要是我们再不重视，地球可真住不下去了。",
+                    "vi": "Tôi cũng nghĩ môi trường là vấn đề lớn nhất mà loài người đang đối mặt. Nếu còn không coi trọng, Trái Đất thật sự sẽ không thể sống tiếp được."
+                  },
+                  {
+                    "speaker": "B",
+                    "text": "动物和植物越来越少，土地逐渐沙漠化。这样下去，真让人为地球的命运担心。",
+                    "vi": "Động thực vật ngày càng ít, đất đai dần sa mạc hóa. Cứ như vậy thật khiến người ta lo cho vận mệnh Trái Đất."
+                  },
+                  {
+                    "speaker": "A",
+                    "text": "是，连金星人都关心起地球的环境问题来了，难道我们地球人不应该关心吗？",
+                    "vi": "Đúng, ngay cả người sao Kim cũng quan tâm đến môi trường Trái Đất rồi, chẳng lẽ người Trái Đất lại không nên quan tâm sao?"
+                  },
+                  {
+                    "speaker": "B",
+                    "text": "我觉得目前最大的危险是人类还不知道地球正面临危险。",
+                    "vi": "Tôi nghĩ nguy hiểm lớn nhất hiện nay là loài người vẫn chưa biết Trái Đất đang đối mặt với nguy hiểm."
+                  },
+                  {
+                    "speaker": "A",
+                    "text": "因此，应该让更多的人知道保护环境的重要性。从自己做起，从日常生活中的小事做起。",
+                    "vi": "Vì vậy, nên để nhiều người biết tầm quan trọng của bảo vệ môi trường. Bắt đầu từ chính mình, từ những việc nhỏ hằng ngày."
+                  }
+                ],
+                "source_origin": "textbook",
+                "answer_verified": true,
+                "check_needed": false,
+                "uuid": "53e46845-81c5-4b87-9d8e-e0e85dfb69f7"
+              }
+            ],
+            "rendering": {
+              "renderer": "exercise.communication_dialogue.v2",
+              "show_answer_after_submit": false
+            },
+            "source_origin": "textbook",
+            "check_needed": false,
+            "uuid": "41bd3e62-d354-4869-9f85-5a9a8d00bc40"
+          }
+        ],
+        "uuid": "23e9f551-e58a-4f4f-84b8-40457f4944e2"
+      },
+      {
+        "id": "section_07_reading",
+        "type": "reading",
+        "order": 7,
+        "title": "综合填空",
+        "title_vi": "Đọc điền khuyết tổng hợp",
+        "source_origin": "textbook",
+        "check_needed": false,
+        "items": [
+          {
+            "id": "reading_01",
+            "type": "reading_cloze",
+            "order": 1,
+            "title": "综合填空",
+            "title_vi": "Ô nhiễm môi trường Trái Đất",
+            "text": "过去几十年，人类①____发展经济，破坏了地球的环境。地球上②____水越来越少，很多河长年断流，有的地方甚至③____人和动物喝的水也没有了。即使这样，大批工厂还④____污水排放到河里和海里。很多河水受⑤____污染，清水变⑥____了黑水。\n\n地球上的人口越来越⑦____。为了生存，人类只顾眼前利益，不顾环境受到破坏，拼命地砍伐森林，造成大量水土流失，⑧____大片绿色的土地变成了黄色的沙漠。\n\n更糟糕的是越来越严重的空气污染。工厂排放大量的一氧化碳，汽车放⑨____大量有害气体，蓝色的天空也变得很少见⑩____。地球表面的气温逐渐升高，气候不断变暖。如果不改变这种情况，这样下⑪____，地球真的会成为人类难以居住的地方⑫____。\n\n好在目前，人类已经开始关注并注意保护环境了。",
+            "paragraphs": [
+              {
+                "id": "reading_01_p01",
+                "order": 1,
+                "zh": "过去几十年，人类①____发展经济，破坏了地球的环境。地球上②____水越来越少，很多河长年断流，有的地方甚至③____人和动物喝的水也没有了。即使这样，大批工厂还④____污水排放到河里和海里。很多河水受⑤____污染，清水变⑥____了黑水。",
+                "vi": "",
+                "source_origin": "textbook",
+                "check_needed": false,
+                "uuid": "7460defb-a189-46f9-86e4-8c3ede1e8cb6"
+              },
+              {
+                "id": "reading_01_p01",
+                "order": 1,
+                "zh": "地球上的人口越来越⑦____。为了生存，人类只顾眼前利益，不顾环境受到破坏，拼命地砍伐森林，造成大量水土流失，⑧____大片绿色的土地变成了黄色的沙漠。",
+                "vi": "",
+                "source_origin": "textbook",
+                "check_needed": false,
+                "uuid": "dd4179ff-4225-4967-8308-9cb09829fc27"
+              },
+              {
+                "id": "reading_01_p01",
+                "order": 1,
+                "zh": "更糟糕的是越来越严重的空气污染。工厂排放大量的一氧化碳，汽车放⑨____大量有害气体，蓝色的天空也变得很少见⑩____。地球表面的气温逐渐升高，气候不断变暖。如果不改变这种情况，这样下⑪____，地球真的会成为人类难以居住的地方⑫____。",
+                "vi": "",
+                "source_origin": "textbook",
+                "check_needed": false,
+                "uuid": "bba7f6bf-9fde-4fb9-973d-88fc729755dc"
+              },
+              {
+                "id": "reading_01_p01",
+                "order": 1,
+                "zh": "好在目前，人类已经开始关注并注意保护环境了。",
+                "vi": "",
+                "source_origin": "textbook",
+                "check_needed": false,
+                "uuid": "aa1f7b71-f375-42d0-a5b9-f35740584818"
+              }
+            ],
+            "supplementary_words": [
+              {
+                "id": "reading_vocab_01",
+                "hanzi": "破坏",
+                "pinyin": "pòhuài",
+                "meaning_vi": "phá hoại",
+                "source_origin": "textbook",
+                "check_needed": false,
+                "uuid": "9d8fe7cb-cfbb-45cc-8266-55695b6bcff9"
+              },
+              {
+                "id": "reading_vocab_02",
+                "hanzi": "污染",
+                "pinyin": "wūrǎn",
+                "meaning_vi": "ô nhiễm; làm ô nhiễm",
+                "source_origin": "textbook",
+                "check_needed": false,
+                "uuid": "f18bc810-5b9c-4a57-8ada-3f786318e984"
+              },
+              {
+                "id": "reading_vocab_03",
+                "hanzi": "砍伐",
+                "pinyin": "kǎnfá",
+                "meaning_vi": "chặt phá cây rừng",
+                "source_origin": "textbook",
+                "check_needed": false,
+                "uuid": "0791b7a5-02ab-40ac-be4c-fb8deea8bed1"
+              },
+              {
+                "id": "reading_vocab_04",
+                "hanzi": "沙漠",
+                "pinyin": "shāmò",
+                "meaning_vi": "sa mạc",
+                "source_origin": "textbook",
+                "check_needed": false,
+                "uuid": "cf1b68ae-2470-49ec-bb8c-77942d70b33f"
+              }
+            ],
+            "vi": "Đoạn đọc về môi trường Trái Đất bị phá hoại do phát triển kinh tế, ô nhiễm nước, chặt phá rừng, sa mạc hóa, ô nhiễm không khí và biến đổi khí hậu.",
+            "questions": [
+              {
+                "id": "reading_01_blank_01",
+                "prompt": "Blank 1",
+                "source_origin": "textbook_question_generated_answer",
+                "answer_verified": true,
+                "check_needed": false,
+                "explanation_vi": "",
+                "answer": "为了",
+                "uuid": "ae2e99f2-7fce-42b6-b90f-f96e2c78f637"
+              },
+              {
+                "id": "reading_01_blank_02",
+                "prompt": "Blank 2",
+                "source_origin": "textbook_question_generated_answer",
+                "answer_verified": true,
+                "check_needed": false,
+                "explanation_vi": "",
+                "answer": "的",
+                "uuid": "4bb43067-b21e-44e7-bd64-237fc4eaa80b"
+              },
+              {
+                "id": "reading_01_blank_03",
+                "prompt": "Blank 3",
+                "source_origin": "textbook_question_generated_answer",
+                "answer_verified": true,
+                "check_needed": false,
+                "explanation_vi": "",
+                "answer": "连",
+                "uuid": "3b847031-f498-4ecf-b3ec-9d76a01f598f"
+              },
+              {
+                "id": "reading_01_blank_04",
+                "prompt": "Blank 4",
+                "source_origin": "textbook_question_generated_answer",
+                "answer_verified": true,
+                "check_needed": false,
+                "explanation_vi": "",
+                "answer": "把",
+                "uuid": "413bba74-fd50-465b-813d-438a0ef60f70"
+              },
+              {
+                "id": "reading_01_blank_05",
+                "prompt": "Blank 5",
+                "source_origin": "textbook_question_generated_answer",
+                "answer_verified": true,
+                "check_needed": false,
+                "explanation_vi": "",
+                "answer": "到",
+                "uuid": "98229895-b767-43c3-bb56-665294e37fa4"
+              },
+              {
+                "id": "reading_01_blank_06",
+                "prompt": "Blank 6",
+                "source_origin": "textbook_question_generated_answer",
+                "answer_verified": true,
+                "check_needed": false,
+                "explanation_vi": "",
+                "answer": "成",
+                "uuid": "ac8bbb12-1f61-4116-b3af-062b8e1a70a9"
+              },
+              {
+                "id": "reading_01_blank_07",
+                "prompt": "Blank 7",
+                "source_origin": "textbook_question_generated_answer",
+                "answer_verified": true,
+                "check_needed": false,
+                "explanation_vi": "",
+                "answer": "多",
+                "uuid": "c2e3ca22-6dfa-4d06-98e4-e10866349c0d"
+              },
+              {
+                "id": "reading_01_blank_08",
+                "prompt": "Blank 8",
+                "source_origin": "textbook_question_generated_answer",
+                "answer_verified": true,
+                "check_needed": false,
+                "explanation_vi": "",
+                "answer": "使",
+                "uuid": "3702408c-f141-4e51-bad5-59e2318f051c"
+              },
+              {
+                "id": "reading_01_blank_09",
+                "prompt": "Blank 9",
+                "source_origin": "textbook_question_generated_answer",
+                "answer_verified": true,
+                "check_needed": false,
+                "explanation_vi": "",
+                "answer": "出",
+                "uuid": "d9c63c16-71ae-42f7-8c73-576fe402720b"
+              },
+              {
+                "id": "reading_01_blank_10",
+                "prompt": "Blank 10",
+                "source_origin": "textbook_question_generated_answer",
+                "answer_verified": true,
+                "check_needed": false,
+                "explanation_vi": "",
+                "answer": "了",
+                "uuid": "6457c6d6-958d-49dc-b419-397f9b87f49f"
+              },
+              {
+                "id": "reading_01_blank_11",
+                "prompt": "Blank 11",
+                "source_origin": "textbook_question_generated_answer",
+                "answer_verified": true,
+                "check_needed": false,
+                "explanation_vi": "",
+                "answer": "去",
+                "uuid": "d7eac796-9d73-41fa-9142-15743818de45"
+              },
+              {
+                "id": "reading_01_blank_12",
+                "prompt": "Blank 12",
+                "source_origin": "textbook_question_generated_answer",
+                "answer_verified": true,
+                "check_needed": false,
+                "explanation_vi": "",
+                "answer": "了",
+                "uuid": "5a9dae95-77c8-4bb3-a96e-c19b1e81c43e"
+              }
+            ],
+            "answer_key": [
+              {
+                "question_id": "reading_01_blank_01",
+                "answer_verified": true,
+                "check_needed": false,
+                "answer": "为了"
+              },
+              {
+                "question_id": "reading_01_blank_02",
+                "answer_verified": true,
+                "check_needed": false,
+                "answer": "的"
+              },
+              {
+                "question_id": "reading_01_blank_03",
+                "answer_verified": true,
+                "check_needed": false,
+                "answer": "连"
+              },
+              {
+                "question_id": "reading_01_blank_04",
+                "answer_verified": true,
+                "check_needed": false,
+                "answer": "把"
+              },
+              {
+                "question_id": "reading_01_blank_05",
+                "answer_verified": true,
+                "check_needed": false,
+                "answer": "到"
+              },
+              {
+                "question_id": "reading_01_blank_06",
+                "answer_verified": true,
+                "check_needed": false,
+                "answer": "成"
+              },
+              {
+                "question_id": "reading_01_blank_07",
+                "answer_verified": true,
+                "check_needed": false,
+                "answer": "多"
+              },
+              {
+                "question_id": "reading_01_blank_08",
+                "answer_verified": true,
+                "check_needed": false,
+                "answer": "使"
+              },
+              {
+                "question_id": "reading_01_blank_09",
+                "answer_verified": true,
+                "check_needed": false,
+                "answer": "出"
+              },
+              {
+                "question_id": "reading_01_blank_10",
+                "answer_verified": true,
+                "check_needed": false,
+                "answer": "了"
+              },
+              {
+                "question_id": "reading_01_blank_11",
+                "answer_verified": true,
+                "check_needed": false,
+                "answer": "去"
+              },
+              {
+                "question_id": "reading_01_blank_12",
+                "answer_verified": true,
+                "check_needed": false,
+                "answer": "了"
+              }
+            ],
+            "source_origin": "textbook",
+            "check_needed": false,
+            "answers": [
+              {
+                "question_id": "reading_01_blank_01",
+                "answer_verified": true,
+                "check_needed": false,
+                "answer": "为了"
+              },
+              {
+                "question_id": "reading_01_blank_02",
+                "answer_verified": true,
+                "check_needed": false,
+                "answer": "的"
+              },
+              {
+                "question_id": "reading_01_blank_03",
+                "answer_verified": true,
+                "check_needed": false,
+                "answer": "连"
+              },
+              {
+                "question_id": "reading_01_blank_04",
+                "answer_verified": true,
+                "check_needed": false,
+                "answer": "把"
+              },
+              {
+                "question_id": "reading_01_blank_05",
+                "answer_verified": true,
+                "check_needed": false,
+                "answer": "到"
+              },
+              {
+                "question_id": "reading_01_blank_06",
+                "answer_verified": true,
+                "check_needed": false,
+                "answer": "成"
+              },
+              {
+                "question_id": "reading_01_blank_07",
+                "answer_verified": true,
+                "check_needed": false,
+                "answer": "多"
+              },
+              {
+                "question_id": "reading_01_blank_08",
+                "answer_verified": true,
+                "check_needed": false,
+                "answer": "使"
+              },
+              {
+                "question_id": "reading_01_blank_09",
+                "answer_verified": true,
+                "check_needed": false,
+                "answer": "出"
+              },
+              {
+                "question_id": "reading_01_blank_10",
+                "answer_verified": true,
+                "check_needed": false,
+                "answer": "了"
+              },
+              {
+                "question_id": "reading_01_blank_11",
+                "answer_verified": true,
+                "check_needed": false,
+                "answer": "去"
+              },
+              {
+                "question_id": "reading_01_blank_12",
+                "answer_verified": true,
+                "check_needed": false,
+                "answer": "了"
+              }
+            ],
+            "uuid": "947a247b-e9f3-4976-8f4e-cfdab791178a"
+          }
+        ],
+        "uuid": "7b421e0a-d6fa-45db-8a43-75d1e40e2bd8"
+      },
+      {
+        "id": "section_08_communication",
+        "type": "communication",
+        "order": 8,
+        "title": "交际会话",
+        "title_vi": "Hội thoại giao tiếp",
+        "source_origin": "textbook",
+        "check_needed": false,
+        "items": [
+          {
+            "id": "communication_01",
+            "type": "communication_dialogue",
+            "variant": "discuss_environmental_problems",
+            "order": 1,
+            "title": "讨论环境问题",
+            "title_vi": "Thảo luận vấn đề môi trường",
+            "function": "Talking about environmental problems",
+            "function_vi": "Thảo luận vấn đề môi trường",
+            "dialogue": [
+              {
+                "speaker": "A",
+                "text": "你是不是觉得这篇课文有点儿不可思议？",
+                "vi": "Bạn có thấy bài khóa này hơi khó tin không?"
+              },
+              {
+                "speaker": "B",
+                "text": "不觉得。看起来有点儿不可思议，但实际上提出的问题却非常重要。",
+                "vi": "Không. Nhìn thì hơi khó tin, nhưng thực ra vấn đề được nêu ra rất quan trọng."
+              },
+              {
+                "speaker": "A",
+                "text": "是啊，我们应该爱护我们的地球。",
+                "vi": "Đúng vậy, chúng ta nên yêu quý và bảo vệ Trái Đất."
+              },
+              {
+                "speaker": "B",
+                "text": "我觉得人类要更加注意环境问题了。长期以来，人类捕杀动物，砍伐森林，污染了河水和空气。",
+                "vi": "Tôi nghĩ loài người càng phải chú ý hơn đến môi trường. Từ lâu, loài người săn giết động vật, chặt phá rừng, làm ô nhiễm nước sông và không khí."
+              },
+              {
+                "speaker": "A",
+                "text": "我也觉得环境问题是我们人类面临的最大的问题。要是我们再不重视，地球可真住不下去了。",
+                "vi": "Tôi cũng nghĩ môi trường là vấn đề lớn nhất mà loài người đang đối mặt. Nếu còn không coi trọng, Trái Đất thật sự sẽ không thể sống tiếp được."
+              },
+              {
+                "speaker": "B",
+                "text": "动物和植物越来越少，土地逐渐沙漠化。这样下去，真让人为地球的命运担心。",
+                "vi": "Động thực vật ngày càng ít, đất đai dần sa mạc hóa. Cứ như vậy thật khiến người ta lo cho vận mệnh Trái Đất."
+              },
+              {
+                "speaker": "A",
+                "text": "是，连金星人都关心起地球的环境问题来了，难道我们地球人不应该关心吗？",
+                "vi": "Đúng, ngay cả người sao Kim cũng quan tâm đến môi trường Trái Đất rồi, chẳng lẽ người Trái Đất lại không nên quan tâm sao?"
+              },
+              {
+                "speaker": "B",
+                "text": "我觉得目前最大的危险是人类还不知道地球正面临危险。",
+                "vi": "Tôi nghĩ nguy hiểm lớn nhất hiện nay là loài người vẫn chưa biết Trái Đất đang đối mặt với nguy hiểm."
+              },
+              {
+                "speaker": "A",
+                "text": "因此，应该让更多的人知道保护环境的重要性。从自己做起，从日常生活中的小事做起。",
+                "vi": "Vì vậy, nên để nhiều người biết tầm quan trọng của bảo vệ môi trường. Bắt đầu từ chính mình, từ những việc nhỏ hằng ngày."
+              }
+            ],
+            "source_origin": "textbook",
+            "check_needed": false,
+            "uuid": "4b64cb8e-012a-4b5a-a0c6-b99dd0380cee"
+          }
+        ],
+        "uuid": "439e2a58-ddc4-4cfd-82bb-3f6de43fae84"
+      },
+      {
+        "id": "section_09_character_writing",
+        "type": "character_writing",
+        "order": 9,
+        "title": "写汉字",
+        "title_vi": "Viết chữ Hán",
+        "source_origin": "textbook",
+        "check_needed": false,
+        "items": [],
+        "empty_reason_vi": "Bài này không thấy phần 写汉字 riêng trong PDF.",
+        "uuid": "80ae33cf-5069-4ac0-b773-e26829fb537c"
+      }
+    ],
+    "summary": {
+      "lesson_parts": [
+        "课文",
+        "生词",
+        "专名",
+        "注释",
+        "词语用法",
+        "练习",
+        "综合填空",
+        "交际会话",
+        "写汉字（PDF không có phần riêng）"
+      ],
+      "grammar_points": [
+        {
+          "id": "grammar_01",
+          "title": "可能",
+          "uuid": "a9cf04f1-8a0d-4e98-b59f-bfb1a2fbbc1d"
+        },
+        {
+          "id": "grammar_02",
+          "title": "究竟",
+          "uuid": "b16df5c8-9de8-4d06-871f-1f638f5bd817"
+        },
+        {
+          "id": "grammar_03",
+          "title": "充满",
+          "uuid": "1e26f48b-9a64-4a01-806a-d964cbd23685"
+        },
+        {
+          "id": "grammar_04",
+          "title": "其他",
+          "uuid": "04399cbd-04d9-46bd-8a37-6f11b1f3ca8f"
+        },
+        {
+          "id": "grammar_05",
+          "title": "不可思议",
+          "uuid": "19c99df5-b473-4739-b321-8534328c569a"
+        },
+        {
+          "id": "grammar_06",
+          "title": "沿 / 沿着",
+          "uuid": "b6dce1d1-aa99-49d2-8c82-34f7a73f3a17"
+        },
+        {
+          "id": "grammar_07",
+          "title": "毫无 / 毫不",
+          "uuid": "83d3b96a-ca36-4fb4-b5ac-fb0bc15cd742"
+        },
+        {
+          "id": "grammar_08",
+          "title": "意味着",
+          "uuid": "b21fa8ba-8ac2-419e-8bb7-4aca22757cb2"
+        }
+      ],
+      "main_patterns": [
+        {
+          "pattern": "有可能 + V / 句子",
+          "grammar_ref": "grammar_01"
+        },
+        {
+          "pattern": "究竟 + 能否 / 是不是 / 有没有...?",
+          "grammar_ref": "grammar_02"
+        },
+        {
+          "pattern": "A 中充满 B",
+          "grammar_ref": "grammar_03"
+        },
+        {
+          "pattern": "A 意味着 B",
+          "grammar_ref": "grammar_08"
+        },
+        {
+          "pattern": "只要……就……",
+          "grammar_ref": "text_01_p14"
+        }
+      ],
+      "exercise_types": [
+        "phonetics",
+        "read_aloud",
+        "choose_words_fill_blank",
+        "complete_sentence",
+        "complete_dialogue",
+        "reorder_sentence",
+        "correct_sentence",
+        "custom",
+        "reading_fill_blank",
+        "communication_dialogue"
+      ],
+      "source_origin_policy": {
+        "textbook": "Primary source from PDF scan.",
+        "web_crosscheck": "Secondary cross-check only; does not override PDF."
+      },
+      "check_needed": false
+    },
+    "uuid": "16103e41-30e9-465a-b990-31a907ca2089"
+  },
+  "coverage_report": {
+    "version": "coverage_v2.3.0",
+    "coverage_status": "complete_verified",
+    "section_coverage": [
+      {
+        "section_type": "text",
+        "expected": true,
+        "present": true,
+        "item_count_expected": 1,
+        "item_count_actual": 1,
+        "content_verified": true,
+        "check_needed": false,
+        "note": "课文 covered."
+      },
+      {
+        "section_type": "vocabulary",
+        "expected": true,
+        "present": true,
+        "item_count_expected": 65,
+        "item_count_actual": 65,
+        "content_verified": true,
+        "check_needed": false,
+        "note": "生词 table covered; includes helper subentries 科学 and 招待."
+      },
+      {
+        "section_type": "proper_nouns",
+        "expected": true,
+        "present": true,
+        "item_count_expected": 1,
+        "item_count_actual": 1,
+        "content_verified": true,
+        "check_needed": false,
+        "note": "专名 天壶."
+      },
+      {
+        "section_type": "notes",
+        "expected": true,
+        "present": true,
+        "item_count_expected": 2,
+        "item_count_actual": 2,
+        "content_verified": true,
+        "check_needed": false,
+        "note": "注释 covered."
+      },
+      {
+        "section_type": "grammar",
+        "expected": true,
+        "present": true,
+        "item_count_expected": 8,
+        "item_count_actual": 8,
+        "content_verified": true,
+        "check_needed": false,
+        "note": "词语用法 covered."
+      },
+      {
+        "section_type": "exercises",
+        "expected": true,
+        "present": true,
+        "item_count_expected": 10,
+        "item_count_actual": 10,
+        "content_verified": true,
+        "check_needed": false,
+        "note": "五、练习 10/10 covered."
+      },
+      {
+        "section_type": "reading",
+        "expected": true,
+        "present": true,
+        "item_count_expected": 1,
+        "item_count_actual": 1,
+        "content_verified": true,
+        "check_needed": false,
+        "note": "综合填空 represented as exercise_09 and reading item."
+      },
+      {
+        "section_type": "communication",
+        "expected": true,
+        "present": true,
+        "item_count_expected": 1,
+        "item_count_actual": 1,
+        "content_verified": true,
+        "check_needed": false,
+        "note": "交际会话 represented as exercise_10 and communication item."
+      },
+      {
+        "section_type": "character_writing",
+        "expected": false,
+        "present": true,
+        "item_count_expected": 0,
+        "item_count_actual": 0,
+        "content_verified": true,
+        "check_needed": false,
+        "note": "PDF lesson has no separate 写汉字 section; empty section preserved."
+      }
+    ],
+    "expected_units_from_pdf": [],
+    "expected_exercise_count_from_pdf": 10,
+    "actual_exercise_count_in_json": 10,
+    "all_exercises_covered": true,
+    "all_exercise_content_verified": true,
+    "missing_exercise_indexes": [],
+    "expected_exercises_from_pdf": [
+      {
+        "order": 1,
+        "title_cn": "一、语音",
+        "title_vi": "Ngữ âm",
+        "canonical_type": "exercise",
+        "canonical_variant": "pronunciation_tone_minimal_pairs",
+        "json_item_id": "exercise_01",
+        "page_start": 43,
+        "page_end": 47,
+        "extracted": true,
+        "content_verified": true,
+        "answer_verified": true,
+        "source_origin": "textbook",
+        "check_needed": false,
+        "missing_reason": ""
+      },
+      {
+        "order": 2,
+        "title_cn": "二、词语",
+        "title_vi": "Từ/cụm từ",
+        "canonical_type": "exercise",
+        "canonical_variant": "word_phrase_sentence_chunks",
+        "json_item_id": "exercise_02",
+        "page_start": 43,
+        "page_end": 47,
+        "extracted": true,
+        "content_verified": true,
+        "answer_verified": true,
+        "source_origin": "textbook",
+        "check_needed": false,
+        "missing_reason": ""
+      },
+      {
+        "order": 3,
+        "title_cn": "三、选词填空",
+        "title_vi": "Chọn từ điền chỗ trống",
+        "canonical_type": "exercise",
+        "canonical_variant": "word_bank_fill_blank",
+        "json_item_id": "exercise_03",
+        "page_start": 43,
+        "page_end": 47,
+        "extracted": true,
+        "content_verified": true,
+        "answer_verified": true,
+        "source_origin": "textbook",
+        "check_needed": false,
+        "missing_reason": ""
+      },
+      {
+        "order": 4,
+        "title_cn": "四、用括号里的词语完成句子",
+        "title_vi": "Hoàn thành câu",
+        "canonical_type": "exercise",
+        "canonical_variant": "complete_sentence_with_given_words",
+        "json_item_id": "exercise_04",
+        "page_start": 43,
+        "page_end": 47,
+        "extracted": true,
+        "content_verified": true,
+        "answer_verified": false,
+        "source_origin": "textbook",
+        "check_needed": false,
+        "missing_reason": ""
+      },
+      {
+        "order": 5,
+        "title_cn": "五、用括号里的词语完成会话",
+        "title_vi": "Hoàn thành hội thoại",
+        "canonical_type": "exercise",
+        "canonical_variant": "complete_dialogue",
+        "json_item_id": "exercise_05",
+        "page_start": 43,
+        "page_end": 47,
+        "extracted": true,
+        "content_verified": true,
+        "answer_verified": false,
+        "source_origin": "textbook",
+        "check_needed": false,
+        "missing_reason": ""
+      },
+      {
+        "order": 6,
+        "title_cn": "六、连句成段",
+        "title_vi": "Sắp xếp câu thành đoạn",
+        "canonical_type": "exercise",
+        "canonical_variant": "reorder_sentences_or_paragraph",
+        "json_item_id": "exercise_06",
+        "page_start": 43,
+        "page_end": 47,
+        "extracted": true,
+        "content_verified": true,
+        "answer_verified": true,
+        "source_origin": "textbook",
+        "check_needed": false,
+        "missing_reason": ""
+      },
+      {
+        "order": 7,
+        "title_cn": "七、改错句",
+        "title_vi": "Sửa câu sai",
+        "canonical_type": "exercise",
+        "canonical_variant": "error_correction",
+        "json_item_id": "exercise_07",
+        "page_start": 43,
+        "page_end": 47,
+        "extracted": true,
+        "content_verified": true,
+        "answer_verified": false,
+        "source_origin": "textbook",
+        "check_needed": false,
+        "missing_reason": ""
+      },
+      {
+        "order": 8,
+        "title_cn": "八、情景表达",
+        "title_vi": "Diễn đạt theo tình huống",
+        "canonical_type": "exercise",
+        "canonical_variant": "custom_textbook_task",
+        "json_item_id": "exercise_08",
+        "page_start": 43,
+        "page_end": 47,
+        "extracted": true,
+        "content_verified": true,
+        "answer_verified": false,
+        "source_origin": "textbook",
+        "check_needed": false,
+        "missing_reason": ""
+      },
+      {
+        "order": 9,
+        "title_cn": "九、综合填空",
+        "title_vi": "Điền khuyết tổng hợp",
+        "canonical_type": "exercise",
+        "canonical_variant": "reading_cloze",
+        "json_item_id": "exercise_09",
+        "page_start": 48,
+        "page_end": 49,
+        "extracted": true,
+        "content_verified": true,
+        "answer_verified": true,
+        "source_origin": "textbook",
+        "check_needed": false,
+        "missing_reason": ""
+      },
+      {
+        "order": 10,
+        "title_cn": "十、交际会话",
+        "title_vi": "Hội thoại giao tiếp",
+        "canonical_type": "exercise",
+        "canonical_variant": "role_play",
+        "json_item_id": "exercise_10",
+        "page_start": 48,
+        "page_end": 49,
+        "extracted": true,
+        "content_verified": true,
+        "answer_verified": true,
+        "source_origin": "textbook",
+        "check_needed": false,
+        "missing_reason": ""
+      }
+    ],
+    "unknown_or_unmapped_blocks": [],
+    "coverage_gates": [
+      {
+        "id": "gate_sections_present",
+        "label": "All expected sections represented",
+        "passed": true,
+        "expected": "课文/生词/专名/注释/词语用法/练习/综合填空/交际会话",
+        "actual": "all represented; 写汉字 preserved empty",
+        "reason": "",
+        "uuid": "a21e6424-517d-4b1f-976e-e0ba96fcb53b"
+      },
+      {
+        "id": "gate_exercise_count",
+        "label": "Exercise count matches PDF",
+        "passed": true,
+        "expected": 10,
+        "actual": 10,
+        "reason": "",
+        "uuid": "031f2224-76b4-4e4c-b1d1-a823213c20cd"
+      },
+      {
+        "id": "gate_unknown_blocks",
+        "label": "No unresolved unknown blocks",
+        "passed": true,
+        "expected": 0,
+        "actual": 0,
+        "reason": "",
+        "uuid": "bb53c2cc-3f05-4809-a822-14a099cb7017"
+      }
+    ],
+    "final_verification_allowed": true
+  },
+  "fix_history": [
+    {
+      "date": "2026-06-02",
+      "action": "Generated JSON after Markdown PART 01-06 verification.",
+      "note": "Set verification_status=verified; coverage_report complete_verified; final verification allowed but not claiming final_verified in root status."
+    }
+  ],
+  "verification_report": {
+    "validated_by_script": true,
+    "checks": [
+      "JSON syntax valid",
+      "exercise count 10/10",
+      "coverage expected exercise IDs match exercise items",
+      "required sections present",
+      "no unresolved unknown_or_unmapped_blocks"
+    ],
+    "web_crosscheck_note": "MandarinAi lesson page used only as secondary cross-check for title/text identity; PDF scan remains source of truth."
+  }
+}
