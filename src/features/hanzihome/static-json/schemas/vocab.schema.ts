@@ -267,7 +267,10 @@ export const CharacterComponentSchema = z.object({
   * - radical chứa thông tin chuẩn hóa về bộ.
   */
  is_radical: z.boolean().default(false),
- radical: RadicalInfoSchema.optional(),
+ radical: z.preprocess(
+  (value) => (value === null ? undefined : value),
+  RadicalInfoSchema.optional(),
+ ),
 
  notes: z.array(NoteSchema).default([]),
 
@@ -319,7 +322,30 @@ export const WordFormationSchema = z.object({
 /* Comparisons                                                                */
 /* -------------------------------------------------------------------------- */
 
-export const RelatedWordSchema = z.object({
+export const RelatedWordSchema = z.preprocess((value) => {
+ if (Array.isArray(value)) {
+  const [word, pinyin, meaningVi, differenceVi] = value;
+
+  return {
+   word,
+   pinyin,
+   meaning_vi: meaningVi,
+   difference_vi: differenceVi,
+  };
+ }
+
+ if (value && typeof value === "object" && "word" in value) {
+  const record = value as { word?: unknown };
+  if (Array.isArray(record.word)) {
+   return {
+    ...value,
+    word: record.word.map(String).join("、"),
+   };
+  }
+ }
+
+ return value;
+}, z.object({
  word: NonEmptyStringSchema,
  pinyin: OptionalStringSchema,
 
@@ -332,9 +358,22 @@ export const RelatedWordSchema = z.object({
 
  notes: z.array(NoteSchema).default([]),
  check_needed: z.boolean().default(false),
-});
+}));
 
-export const ContrastPairSchema = z.object({
+export const ContrastPairSchema = z.preprocess((value) => {
+ if (Array.isArray(value)) {
+  const [left, right, meaningVi, noteVi] = value;
+
+  return {
+   left,
+   right,
+   meaning_vi: meaningVi,
+   note_vi: noteVi,
+  };
+ }
+
+ return value;
+}, z.object({
  left: NonEmptyStringSchema,
  right: NonEmptyStringSchema,
 
@@ -342,7 +381,7 @@ export const ContrastPairSchema = z.object({
  note_vi: OptionalStringSchema,
 
  notes: z.array(NoteSchema).default([]),
-});
+}));
 
 export const ComparisonSchema = z.object({
  near_synonyms: z.array(RelatedWordSchema).default([]),
@@ -377,13 +416,21 @@ export const CollocationSchema = z.object({
 /* Examples                                                                   */
 /* -------------------------------------------------------------------------- */
 
-export const ExampleLevelSchema = z.enum([
+export const ExampleLevelSchema = z.preprocess((value) => {
+ if (value === "application" || value === "lesson" || value === "lesson_context") {
+  return "applied";
+ }
+
+ return value;
+}, z.enum([
  "basic",
  "core",
+ "standard",
  "intermediate",
+ "applied",
  "expanded",
  "complex",
-]);
+]));
 
 export const VocabularyExampleSchema = z.object({
  id: IdSchema,
@@ -391,7 +438,7 @@ export const VocabularyExampleSchema = z.object({
 
  zh: NonEmptyStringSchema,
  pinyin: OptionalStringSchema,
- vi: NonEmptyStringSchema,
+ vi: OptionalStringSchema,
 
  analysis_vi: OptionalStringSchema,
 

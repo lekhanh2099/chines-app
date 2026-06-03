@@ -94,6 +94,7 @@ export type LessonNotesViewModel = {
 
 export type HanziHomeLesson = {
  id: string;
+ legacyLessonId?: string;
  lessonNumber: number;
  titleZh: string;
  title: string;

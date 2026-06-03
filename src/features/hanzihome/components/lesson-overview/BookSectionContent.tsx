@@ -10,7 +10,10 @@ import { GrammarCard } from "./GrammarSection";
 import { NoteCard } from "./NotesSection";
 import { ReadingCard } from "./ReadingSection";
 import { TextBlockView } from "./TextSection";
-import type { LessonDisplayMode } from "./types";
+import {
+ DEFAULT_LESSON_DISPLAY_MODE,
+ type LessonDisplayMode,
+} from "./types";
 import { VocabMiniGrid } from "./VocabularySection";
 import { WritingCard } from "./WritingSection";
 import { arrayValue, asRecord, sectionEmptyReason, stringValue } from "./utils";
@@ -69,7 +72,7 @@ function buildSummaryItems(section: Section) {
 
 export function BookSectionContent({
  section,
- displayMode = { showPinyin: true, showMeaning: true },
+ displayMode = DEFAULT_LESSON_DISPLAY_MODE,
 }: {
  section: Section;
  displayMode?: LessonDisplayMode;

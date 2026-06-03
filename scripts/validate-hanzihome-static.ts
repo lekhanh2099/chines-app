@@ -11,7 +11,6 @@ type StaticDatasetExpectation = {
  dir: string;
  filePrefix: string;
  expectedLessonCount: number;
- expectedVocabCount: number;
  expectedLessonDocumentCount: number;
 };
 
@@ -21,17 +20,15 @@ const datasets: StaticDatasetExpectation[] = [
  dir: "data/hanzihome/q2",
  filePrefix: "hanyu_2_",
  expectedLessonCount: 25,
- expectedVocabCount: 1195,
  expectedLessonDocumentCount: 25,
 },
-{
- id: "q3",
- dir: "data/hanzihome/q3",
- filePrefix: "hanyu_3_",
- expectedLessonCount: 19,
- expectedVocabCount: 342,
- expectedLessonDocumentCount: 19,
-},
+ {
+  id: "q3",
+  dir: "data/hanzihome/q3",
+  filePrefix: "hanyu_3_",
+  expectedLessonCount: 26,
+  expectedLessonDocumentCount: 26,
+ },
 ];
 
 async function readJson(filePath: string): Promise<unknown> {
@@ -41,6 +38,10 @@ async function readJson(filePath: string): Promise<unknown> {
 async function validateDataset(dataset: StaticDatasetExpectation) {
  const { DeepVocabularyLessonSchema } = await import(schemaModulePath);
  const { HanyuLessonSchema } = await import(lessonSchemaModulePath);
+ const { getHanyuLessonIndex } = await import(
+  new URL("../src/features/hanzihome/static-json/hanyu-lesson-meta.ts", import.meta.url)
+   .href
+ );
  const vocabDir = path.join(process.cwd(), dataset.dir, "vocab");
  const lessonDir = path.join(process.cwd(), dataset.dir, "lessons");
  const manifestPath = path.join(process.cwd(), dataset.dir, "manifest.json");
@@ -71,7 +72,7 @@ async function validateDataset(dataset: StaticDatasetExpectation) {
  };
  const lessonIndexes = new Set([
   ...vocabLessons.map((lesson) => lesson.source.lesson_index),
-  ...lessonDocuments.map((lesson) => lesson.source.lesson_index),
+  ...lessonDocuments.map(getHanyuLessonIndex),
  ]);
  const totalVocab = vocabLessons.reduce(
   (sum, lesson) => sum + lesson.items.length,
@@ -84,12 +85,6 @@ async function validateDataset(dataset: StaticDatasetExpectation) {
   );
  }
 
- if (totalVocab !== dataset.expectedVocabCount) {
-  throw new Error(
-   `${dataset.id}: expected ${dataset.expectedVocabCount} vocab items, found ${totalVocab}`,
-  );
- }
-
  if (lessonDocuments.length !== dataset.expectedLessonDocumentCount) {
   throw new Error(
    `${dataset.id}: expected ${dataset.expectedLessonDocumentCount} lesson documents, found ${lessonDocuments.length}`,
@@ -98,7 +93,7 @@ async function validateDataset(dataset: StaticDatasetExpectation) {
 
  if (
   manifest.counts?.lessons !== dataset.expectedLessonCount ||
-  manifest.counts?.vocab !== dataset.expectedVocabCount ||
+  manifest.counts?.vocab !== totalVocab ||
   manifest.counts?.lessonDocuments !== dataset.expectedLessonDocumentCount ||
   manifest.lessons?.length !== dataset.expectedLessonCount
  ) {

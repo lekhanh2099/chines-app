@@ -1,60 +1,6 @@
 {
-  "schema_version": "2.3.0-coverage-first",
-  "content_type": "chinese_textbook_lesson",
-  "verification_status": "draft",
-  "source": {
-    "book": "Hanyu Jiaocheng",
-    "volume": "第二册上",
-    "volume_vi": "Quyển 2 Thượng",
-    "lesson_index": 1,
-    "lesson_number_cn": "第一课",
-    "lesson_title_cn": "田芳去哪儿了",
-    "lesson_title_pinyin": "Tián Fāng qù nǎr le",
-    "lesson_title_vi": "Điền Phương đi đâu rồi?",
-    "lesson_title_en": "Where has Tian Fang gone?",
-    "source_files": [
-      {
-        "name": "Hanyu Jiaocheng 2-1.pdf",
-        "type": "pdf_scan",
-        "source_origin": "textbook",
-        "check_needed": true,
-        "page_start": 18,
-        "page_end": 32
-      },
-      {
-        "name": "Tong_hop_tu_vung_Han_ngu_quyen_2_Bai_1-25.docx",
-        "type": "uploaded_crosscheck",
-        "source_origin": "uploaded_crosscheck",
-        "check_needed": false
-      },
-      {
-        "name": "Học kì 2 上-下.md",
-        "type": "uploaded_crosscheck",
-        "source_origin": "uploaded_crosscheck",
-        "check_needed": false
-      },
-      {
-        "name": "hanyu_lesson_full_coverage_sample_v2_3_0.json",
-        "type": "structure_sample",
-        "source_origin": "uploaded_crosscheck",
-        "check_needed": false
-      }
-    ],
-    "web_crosscheck": [
-      {
-        "title": "LingQ lesson transcript for 田芳去哪儿了",
-        "source_origin": "web_crosscheck",
-        "note": "Used only for cross-checking lesson text context, not replacing PDF."
-      },
-      {
-        "title": "Studocu notes/answers for Chinese Course 3rd Edition 2A Lesson 1",
-        "source_origin": "web_crosscheck",
-        "note": "Used to cross-check selected exercise answers."
-      }
-    ]
-  },
   "lesson": {
-    "id": "hanyu_2_1_lesson_01",
+    "id": "986fa952-0ba7-4fb5-9374-abbe1eaae2ce",
     "title": {
       "zh": "田芳去哪儿了",
       "pinyin": "Tián Fāng qù nǎr le",
@@ -69,7 +15,7 @@
     ],
     "sections": [
       {
-        "id": "section_01_text",
+        "id": "a6c0d522-99be-4f36-881c-b9b2c6beeb85",
         "type": "text",
         "order": 1,
         "title": "课文",
@@ -78,7 +24,7 @@
         "check_needed": false,
         "blocks": [
           {
-            "id": "text_01",
+            "id": "e155d5ea-f89d-45f0-ab8d-094ce9e719f0",
             "type": "text_dialogue",
             "order": 1,
             "title": "田芳去哪儿了",
@@ -87,130 +33,119 @@
             "check_needed": false,
             "lines": [
               {
-                "id": "text_01_l01",
+                "id": "f8046d8e-353e-4b63-a072-7498c8f1d9ff",
                 "order": 1,
                 "speaker": "张东",
                 "zh": "喂，是田芳吗？",
                 "vi": "Alo, Điền Phương đấy à?",
                 "grammar_refs": [
-                  "grammar_01"
+                  "f8ec59f3-898a-47b2-b536-44dfd8183393"
                 ],
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "3003b2dd-73f4-4bba-be34-dcd21d1179dd"
+                "check_needed": false
               },
               {
-                "id": "text_01_l02",
+                "id": "30929615-34c8-4e5b-b0a2-5ad3358ad755",
                 "order": 2,
                 "speaker": "田芳妈",
                 "zh": "田芳不在。是张东吧？",
                 "vi": "Điền Phương không có nhà. Là Trương Đông phải không?",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "dede1908-ed76-46e6-96cb-af2fbe6c6237"
+                "check_needed": false
               },
               {
-                "id": "text_01_l03",
+                "id": "9faf6980-effe-42f1-a01e-7f1740da2edb",
                 "order": 3,
                 "speaker": "张东",
                 "zh": "阿姨，您好！田芳去哪儿了？",
                 "vi": "Cháu chào cô ạ! Điền Phương đi đâu rồi ạ?",
                 "grammar_refs": [
-                  "grammar_01"
+                  "f8ec59f3-898a-47b2-b536-44dfd8183393"
                 ],
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "48d2181a-ffee-47f1-ab78-46a1135e4886"
+                "check_needed": false
               },
               {
-                "id": "text_01_l04",
+                "id": "146f8fa1-ae74-468d-910e-19cab53e3cf3",
                 "order": 4,
                 "speaker": "田芳妈",
                 "zh": "她四点多就去同学家了。她的一个中学同学要出国，她去看看她。",
                 "vi": "Nó hơn bốn giờ đã đến nhà bạn học rồi. Một bạn cấp hai của nó sắp ra nước ngoài, nó đến thăm bạn ấy.",
                 "grammar_refs": [
-                  "grammar_01"
+                  "f8ec59f3-898a-47b2-b536-44dfd8183393"
                 ],
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "a7f4e8d3-f4f9-4211-a6df-9102330aa601"
+                "check_needed": false
               },
               {
-                "id": "text_01_l05",
+                "id": "44d4c32e-309d-4802-b7cf-e41ee8052535",
                 "order": 5,
                 "speaker": "张东",
                 "zh": "她什么时候能回来？",
                 "vi": "Khi nào bạn ấy có thể về ạ?",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "53b33534-47ae-4ec6-9662-f1318b81a4a8"
+                "check_needed": false
               },
               {
-                "id": "text_01_l06",
+                "id": "6f4b4423-8315-40e6-88fa-2fa2038271af",
                 "order": 6,
                 "speaker": "田芳妈",
                 "zh": "她没说，你打她的手机吧。",
                 "vi": "Nó không nói. Cháu gọi di động cho nó đi.",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "70803a75-a6ee-486b-9eb8-ea080b2ceefa"
+                "check_needed": false
               },
               {
-                "id": "text_01_l07",
+                "id": "6de58c5b-164f-4b2f-8d7e-84f1c7c1a66c",
                 "order": 7,
                 "speaker": "张东",
                 "zh": "我打了，可是她关机了。",
                 "vi": "Cháu gọi rồi, nhưng bạn ấy tắt máy rồi ạ.",
                 "grammar_refs": [
-                  "grammar_01"
+                  "f8ec59f3-898a-47b2-b536-44dfd8183393"
                 ],
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "b3b33aeb-2a87-45ea-ada0-4eba52349d34"
+                "check_needed": false
               },
               {
-                "id": "text_01_l08",
+                "id": "9d76be1a-c606-44bb-a490-a9bd82982e3b",
                 "order": 8,
                 "speaker": "田芳妈",
                 "zh": "是吗？你过一会儿再打吧。",
                 "vi": "Thế à? Lát nữa cháu gọi lại nhé.",
                 "grammar_refs": [
-                  "grammar_02"
+                  "57b14753-688a-41b6-9e0d-b61dbbf574d7"
                 ],
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "2e21f2ba-eba7-46b0-a48a-67643e5dfea5"
+                "check_needed": false
               },
               {
-                "id": "text_01_l09",
+                "id": "6e148072-17aa-4ebd-88a1-c59b2fc0ba17",
                 "order": 9,
                 "speaker": "张东",
                 "zh": "阿姨，田芳回来了吗？",
                 "vi": "Cô ơi, Điền Phương về chưa ạ?",
                 "grammar_refs": [
-                  "grammar_01"
+                  "f8ec59f3-898a-47b2-b536-44dfd8183393"
                 ],
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "b9f367bc-6f94-4fc5-8de9-3e0ac5e309c8"
+                "check_needed": false
               },
               {
-                "id": "text_01_l10",
+                "id": "a8845639-9fca-4398-853d-a08fb63482a8",
                 "order": 10,
                 "speaker": "田芳妈",
                 "zh": "还没有呢。",
                 "vi": "Vẫn chưa về đâu.",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "e87ef996-6a2e-4a92-8f1e-c18c93d6fc32"
+                "check_needed": false
               }
             ],
             "paragraphs": [],
-            "comprehension_questions": [],
-            "uuid": "9ed75ac1-ef34-48d7-9415-e14c198e71a7"
+            "comprehension_questions": []
           },
           {
-            "id": "text_02",
+            "id": "0156dd39-d5b4-41f5-866d-d336dd29bbc2",
             "type": "text_dialogue",
             "order": 2,
             "title": "他又来电话了",
@@ -219,245 +154,224 @@
             "check_needed": false,
             "lines": [
               {
-                "id": "text_02_l01",
+                "id": "887014e5-f6b0-4777-9f95-85a69532ca36",
                 "order": 1,
                 "speaker": "田芳",
                 "zh": "妈，我回来了。",
                 "vi": "Mẹ, con về rồi.",
                 "grammar_refs": [
-                  "grammar_01"
+                  "f8ec59f3-898a-47b2-b536-44dfd8183393"
                 ],
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "7f78f5f6-2f06-4cc2-827a-680d99fcee08"
+                "check_needed": false
               },
               {
-                "id": "text_02_l02",
+                "id": "65232ef9-30a1-4305-b8b7-12a8ac5aeb91",
                 "order": 2,
                 "speaker": "田芳妈",
                 "zh": "饿了吧？快吃饭吧！啊，对了，张东给你打电话了。",
                 "vi": "Đói rồi phải không? Mau ăn cơm đi! À đúng rồi, Trương Đông có gọi điện cho con.",
                 "grammar_refs": [
-                  "grammar_01"
+                  "f8ec59f3-898a-47b2-b536-44dfd8183393"
                 ],
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "639c6626-a9a9-4364-a6ae-cfe029a2bb6a"
+                "check_needed": false
               },
               {
-                "id": "text_02_l03",
+                "id": "2c1213ac-f81d-414f-8b55-5abe77fe83fc",
                 "order": 3,
                 "speaker": "田芳",
                 "zh": "没有？",
                 "vi": "Có không ạ?",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "87d3d508-873c-4133-b4c5-4772fa92cc0f"
+                "check_needed": false
               },
               {
-                "id": "text_02_l04",
+                "id": "d797c234-0a16-42e3-bc45-29782e65cb1b",
                 "order": 4,
                 "speaker": "田芳妈",
                 "zh": "他来电话找你，说打你的手机，你关机了。",
                 "vi": "Cậu ấy gọi điện tìm con, nói là gọi di động cho con nhưng con tắt máy.",
                 "grammar_refs": [
-                  "grammar_01"
+                  "f8ec59f3-898a-47b2-b536-44dfd8183393"
                 ],
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "79ff2992-eb40-4640-9f10-567f4d11785b"
+                "check_needed": false
               },
               {
-                "id": "text_02_l05",
+                "id": "c99f042b-fa9a-478c-aba1-5da333a677e1",
                 "order": 5,
                 "speaker": "田芳",
                 "zh": "啊！对了，我忘开机了。",
                 "vi": "À! Đúng rồi, con quên mở máy.",
                 "grammar_refs": [
-                  "grammar_01"
+                  "f8ec59f3-898a-47b2-b536-44dfd8183393"
                 ],
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "df8444a2-3b8a-4d26-ad27-161789e48a7e"
+                "check_needed": false
               },
               {
-                "id": "text_02_l06",
+                "id": "e8680b0f-6dcc-4fc7-abbd-084aba5d3b87",
                 "order": 6,
                 "speaker": "田芳妈",
                 "zh": "快！电话又响了，你去接吧。",
                 "vi": "Nhanh lên! Điện thoại lại reo rồi, con đi nghe đi.",
                 "grammar_refs": [
-                  "grammar_01",
-                  "grammar_02"
+                  "f8ec59f3-898a-47b2-b536-44dfd8183393",
+                  "57b14753-688a-41b6-9e0d-b61dbbf574d7"
                 ],
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "4d6747a8-74b0-4f04-943c-4dfb303c50fd"
+                "check_needed": false
               },
               {
-                "id": "text_02_l07",
+                "id": "cc8da348-3e89-4f64-a680-de239f505497",
                 "order": 7,
                 "speaker": "田芳",
                 "zh": "喂，张东，下午你给我打电话了吧？",
                 "vi": "Alo, Trương Đông, chiều nay cậu gọi điện cho mình phải không?",
                 "grammar_refs": [
-                  "grammar_01"
+                  "f8ec59f3-898a-47b2-b536-44dfd8183393"
                 ],
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "e56c3892-d179-4ce5-b6ef-5fbd1d4bcfdf"
+                "check_needed": false
               },
               {
-                "id": "text_02_l08",
+                "id": "2adb7cf6-26c1-4029-809e-67342fb0227f",
                 "order": 8,
                 "speaker": "张东",
                 "zh": "打了，你怎么关机了？",
                 "vi": "Gọi rồi. Sao cậu lại tắt máy?",
                 "grammar_refs": [
-                  "grammar_01"
+                  "f8ec59f3-898a-47b2-b536-44dfd8183393"
                 ],
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "e52a5268-d059-459b-9887-c39bd351e152"
+                "check_needed": false
               },
               {
-                "id": "text_02_l09",
+                "id": "f42aa089-875d-48c4-9213-a083ec251fe7",
                 "order": 9,
                 "speaker": "田芳",
                 "zh": "对不起，我忘开机了。下午你做什么了？",
                 "vi": "Xin lỗi, mình quên mở máy. Chiều nay cậu làm gì vậy?",
                 "grammar_refs": [
-                  "grammar_01"
+                  "f8ec59f3-898a-47b2-b536-44dfd8183393"
                 ],
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "3b4779bb-953c-49ed-9f60-c383ba64ffca"
+                "check_needed": false
               },
               {
-                "id": "text_02_l10",
+                "id": "f7419a05-c714-4cff-ae26-210852d56303",
                 "order": 10,
                 "speaker": "张东",
                 "zh": "我去踢足球了。今天我们跟留学生代表队比赛了。",
                 "vi": "Mình đi đá bóng. Hôm nay bọn mình thi đấu với đội đại diện lưu học sinh.",
                 "grammar_refs": [
-                  "grammar_01"
+                  "f8ec59f3-898a-47b2-b536-44dfd8183393"
                 ],
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "e1bd5417-f021-466f-ac0a-bbb5489b7fd6"
+                "check_needed": false
               },
               {
-                "id": "text_02_l11",
+                "id": "22e52ff8-58e5-4bfd-8912-95faed7e26d1",
                 "order": 11,
                 "speaker": "田芳",
                 "zh": "你们队又输了吧？",
                 "vi": "Đội các cậu lại thua rồi hả?",
                 "grammar_refs": [
-                  "grammar_02"
+                  "57b14753-688a-41b6-9e0d-b61dbbf574d7"
                 ],
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "417edfbe-d413-46a8-a7ad-66a4e9f82aeb"
+                "check_needed": false
               },
               {
-                "id": "text_02_l12",
+                "id": "7ae9e54c-f536-4783-b05d-0d7e8ac4fb77",
                 "order": 12,
                 "speaker": "张东",
                 "zh": "没有。这次我们赢了。",
                 "vi": "Không. Lần này bọn mình thắng rồi.",
                 "grammar_refs": [
-                  "grammar_01"
+                  "f8ec59f3-898a-47b2-b536-44dfd8183393"
                 ],
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "1ef469da-2537-4f0f-b907-04a0287061c2"
+                "check_needed": false
               },
               {
-                "id": "text_02_l13",
+                "id": "491f58c7-7ead-4d8c-876d-7e3113dcff35",
                 "order": 13,
                 "speaker": "田芳",
                 "zh": "几比几？",
                 "vi": "Mấy - mấy?",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "554f5484-a055-4134-b21d-c1d85d8e9f82"
+                "check_needed": false
               },
               {
-                "id": "text_02_l14",
+                "id": "b4e15ca3-0527-433b-9b2f-a6027ebfe8e3",
                 "order": 14,
                 "speaker": "张东",
                 "zh": "二比一。",
                 "vi": "Hai - một.",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "9bf974e6-b82b-4e07-a113-c39d401fdebf"
+                "check_needed": false
               },
               {
-                "id": "text_02_l15",
+                "id": "ded8d12b-4a00-4a64-b5b2-66cab3f2d1c6",
                 "order": 15,
                 "speaker": "田芳",
                 "zh": "祝贺你们！哎，你有什么事儿吗？",
                 "vi": "Chúc mừng các cậu! À, cậu có việc gì không?",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "73cc9876-3a30-4e79-af3e-78b24e617b2f"
+                "check_needed": false
               },
               {
-                "id": "text_02_l16",
+                "id": "e3695c3e-b28b-4953-b424-71dcf1fad1b2",
                 "order": 16,
                 "speaker": "张东",
                 "zh": "我想问问你，你不是要上托福班吗？报名了没有？",
                 "vi": "Mình muốn hỏi cậu, chẳng phải cậu định học lớp TOEFL sao? Đăng ký chưa?",
                 "grammar_refs": [
-                  "grammar_01"
+                  "f8ec59f3-898a-47b2-b536-44dfd8183393"
                 ],
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "3c165645-42a4-4ed4-9fce-b40bd850f1d2"
+                "check_needed": false
               },
               {
-                "id": "text_02_l17",
+                "id": "94807735-96c4-4f7b-a7a3-0b2830d4e7c1",
                 "order": 17,
                 "speaker": "田芳",
                 "zh": "已经报了。你是不是也想考托福？",
                 "vi": "Mình đăng ký rồi. Có phải cậu cũng muốn thi TOEFL không?",
                 "grammar_refs": [
-                  "grammar_01"
+                  "f8ec59f3-898a-47b2-b536-44dfd8183393"
                 ],
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "9151adaf-db9a-4f5e-93f7-a7fc43cd189d"
+                "check_needed": false
               },
               {
-                "id": "text_02_l18",
+                "id": "d562e0f1-cf06-4951-bc59-0df0b5f6b59d",
                 "order": 18,
                 "speaker": "张东",
                 "zh": "是。我想明天去报名，你陪我一起去，好吗？",
                 "vi": "Ừ. Mình muốn ngày mai đi đăng ký, cậu đi cùng mình nhé?",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "5f9dca5c-ec33-4b1e-96d8-0263d25ad89f"
+                "check_needed": false
               },
               {
-                "id": "text_02_l19",
+                "id": "f38d479e-fda5-4afe-94ca-7829cdb7059f",
                 "order": 19,
                 "speaker": "田芳",
                 "zh": "好的。",
                 "vi": "Được.",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "10c266ae-99c2-4764-a6b0-713563b4e238"
+                "check_needed": false
               }
             ],
             "paragraphs": [],
-            "comprehension_questions": [],
-            "uuid": "213d10a4-05a4-4891-b2a4-be70a41e3c71"
+            "comprehension_questions": []
           }
-        ],
-        "uuid": "70c2c952-947d-4c3d-945a-52ba800961b5"
+        ]
       },
       {
-        "id": "section_02_vocabulary",
+        "id": "78c30bf4-c314-4c4c-86e3-4dd62382dd78",
         "type": "vocabulary",
         "order": 2,
         "title": "生词",
@@ -466,7 +380,7 @@
         "check_needed": false,
         "items": [
           {
-            "id": "vocab_001",
+            "id": "68c05a12-9d8e-45d9-a413-786bcf2f780a",
             "type": "vocabulary_item",
             "order": 1,
             "hanzi": "喂",
@@ -490,11 +404,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "6d87c04b-c268-40a3-aa00-6872e6c32005"
+            "check_needed": false
           },
           {
-            "id": "vocab_002",
+            "id": "8c18cf3c-e9dc-42e1-8faf-eb26799cabab",
             "type": "vocabulary_item",
             "order": 2,
             "hanzi": "阿姨",
@@ -518,11 +431,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "b016ca21-8007-48e4-b72b-078b99de3494"
+            "check_needed": false
           },
           {
-            "id": "vocab_003",
+            "id": "1fbd69b7-603a-44ea-8d57-10cd4def9ced",
             "type": "vocabulary_item",
             "order": 3,
             "hanzi": "了",
@@ -546,11 +458,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "97fe9226-25e1-4a86-ab84-d7f55c5b999f"
+            "check_needed": false
           },
           {
-            "id": "vocab_004",
+            "id": "3dc505f1-bc0e-4a96-b448-17fed89fdc60",
             "type": "vocabulary_item",
             "order": 4,
             "hanzi": "中学",
@@ -574,11 +485,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "79718420-3370-4dcb-9db8-f9f8478d60a1"
+            "check_needed": false
           },
           {
-            "id": "vocab_005",
+            "id": "188412d4-4c23-4d60-b7b2-21f3490199e7",
             "type": "vocabulary_item",
             "order": 5,
             "hanzi": "出国",
@@ -602,11 +512,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "63942e79-53c2-467b-a42f-22a5d190ad67"
+            "check_needed": false
           },
           {
-            "id": "vocab_006",
+            "id": "5ea44727-d97c-467b-b1b8-babd195df50d",
             "type": "vocabulary_item",
             "order": 6,
             "hanzi": "出",
@@ -630,11 +539,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "11c0b090-ef80-4360-be6c-7942c7f7ea7e"
+            "check_needed": false
           },
           {
-            "id": "vocab_007",
+            "id": "54613016-834a-4fc3-9912-2357a6d27058",
             "type": "vocabulary_item",
             "order": 7,
             "hanzi": "打电话",
@@ -658,11 +566,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "e8ce94d7-f626-4ec9-af3c-09395bc9c938"
+            "check_needed": false
           },
           {
-            "id": "vocab_008",
+            "id": "0da97406-c3ac-4fcb-a51c-398a59c3fbae",
             "type": "vocabulary_item",
             "order": 8,
             "hanzi": "关机",
@@ -686,11 +593,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "67d2840e-0cf4-42a1-929b-b58d87a779bd"
+            "check_needed": false
           },
           {
-            "id": "vocab_009",
+            "id": "54b36889-82be-485b-8342-fb8aab572065",
             "type": "vocabulary_item",
             "order": 9,
             "hanzi": "关",
@@ -714,11 +620,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "8cb50b88-5d80-4936-97d0-fd59968e45e0"
+            "check_needed": false
           },
           {
-            "id": "vocab_010",
+            "id": "1354b1a3-93cc-4505-8d7f-c5550a1d6ae9",
             "type": "vocabulary_item",
             "order": 10,
             "hanzi": "饿",
@@ -742,11 +647,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "ce371516-ae4d-49a4-9c0f-289819d146a8"
+            "check_needed": false
           },
           {
-            "id": "vocab_011",
+            "id": "f0684cb3-4577-4e6c-9f22-7d97c89692b3",
             "type": "vocabulary_item",
             "order": 11,
             "hanzi": "对了",
@@ -770,11 +674,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "ba670b99-5ef5-43e2-9441-aba91aed54d2"
+            "check_needed": false
           },
           {
-            "id": "vocab_012",
+            "id": "d5b362a7-c8f6-4f25-b2b5-0f1749c8afbb",
             "type": "vocabulary_item",
             "order": 12,
             "hanzi": "忘",
@@ -798,11 +701,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "f68e29ff-27c0-4b48-b757-f7dfa9d594af"
+            "check_needed": false
           },
           {
-            "id": "vocab_013",
+            "id": "7eccd5e8-dac0-4f36-be2e-abcc0a2bdfcd",
             "type": "vocabulary_item",
             "order": 13,
             "hanzi": "开机",
@@ -826,11 +728,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "3414c847-0f0b-4857-a27e-fc57b6989d52"
+            "check_needed": false
           },
           {
-            "id": "vocab_014",
+            "id": "91fa9f81-e5ef-4c4a-b29c-c4b6daa02196",
             "type": "vocabulary_item",
             "order": 14,
             "hanzi": "开",
@@ -854,11 +755,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "a93f24bb-02c2-4829-875e-1e7d95a0d80c"
+            "check_needed": false
           },
           {
-            "id": "vocab_015",
+            "id": "8a5b1d09-23a6-4182-96e6-9bf4d761a1e1",
             "type": "vocabulary_item",
             "order": 15,
             "hanzi": "又",
@@ -882,11 +782,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "a2340c16-c6d4-4dab-b10a-8e38180acdee"
+            "check_needed": false
           },
           {
-            "id": "vocab_016",
+            "id": "be7a835d-ff8f-4a86-9fd8-27c5f1093f0c",
             "type": "vocabulary_item",
             "order": 16,
             "hanzi": "响",
@@ -910,11 +809,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "c184b111-1590-415d-a82f-f3228f03fb33"
+            "check_needed": false
           },
           {
-            "id": "vocab_017",
+            "id": "7a89dc80-d79d-4c2f-988c-d0f54e240d19",
             "type": "vocabulary_item",
             "order": 17,
             "hanzi": "接",
@@ -938,11 +836,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "7e18479c-7e7c-434f-a7e6-ae176707b580"
+            "check_needed": false
           },
           {
-            "id": "vocab_018",
+            "id": "ff3e1818-66a9-4532-880b-02c9cacb0e5b",
             "type": "vocabulary_item",
             "order": 18,
             "hanzi": "踢",
@@ -966,11 +863,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "0582967b-b709-4bae-a7aa-2a3f06c32dcd"
+            "check_needed": false
           },
           {
-            "id": "vocab_019",
+            "id": "0125bdae-fe4e-48fb-8264-145e95c75933",
             "type": "vocabulary_item",
             "order": 19,
             "hanzi": "比赛",
@@ -994,11 +890,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "313790f5-c0b6-49db-949f-f34eba898fe9"
+            "check_needed": false
           },
           {
-            "id": "vocab_020",
+            "id": "689eb64b-5d4f-469f-9afa-74017d399614",
             "type": "vocabulary_item",
             "order": 20,
             "hanzi": "队",
@@ -1022,11 +917,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "80a1f367-c629-4a65-a139-530f041038a5"
+            "check_needed": false
           },
           {
-            "id": "vocab_021",
+            "id": "d45d5488-9293-41ae-9deb-1e5b51cee446",
             "type": "vocabulary_item",
             "order": 21,
             "hanzi": "输",
@@ -1050,11 +944,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "eb58ae36-14ce-4a2d-9072-4539d4074392"
+            "check_needed": false
           },
           {
-            "id": "vocab_022",
+            "id": "c99a633b-27a2-429b-a139-44113a84c189",
             "type": "vocabulary_item",
             "order": 22,
             "hanzi": "赢",
@@ -1078,11 +971,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "3d355b42-ad2f-4116-83f5-30b8bd6a6e89"
+            "check_needed": false
           },
           {
-            "id": "vocab_023",
+            "id": "79358c6f-3427-4c28-98f3-7ef98c7033c3",
             "type": "vocabulary_item",
             "order": 23,
             "hanzi": "比",
@@ -1106,11 +998,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "4aa3e56f-8b1e-4ff9-b47d-1b3185312633"
+            "check_needed": false
           },
           {
-            "id": "vocab_024",
+            "id": "dc0f8e06-a359-4907-a8d8-fc9b02260590",
             "type": "vocabulary_item",
             "order": 24,
             "hanzi": "祝贺",
@@ -1134,11 +1025,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "a078515d-1baf-4708-8a73-e1975e85c09f"
+            "check_needed": false
           },
           {
-            "id": "vocab_025",
+            "id": "c43cedbf-7024-4ec1-922f-e75119114baf",
             "type": "vocabulary_item",
             "order": 25,
             "hanzi": "哎",
@@ -1162,11 +1052,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "cd348c02-eeb1-4ed2-ba9b-669eaf72c203"
+            "check_needed": false
           },
           {
-            "id": "vocab_026",
+            "id": "d9991c79-3454-4247-bf18-f14f43b4a24a",
             "type": "vocabulary_item",
             "order": 26,
             "hanzi": "上",
@@ -1190,11 +1079,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "ce80ffff-c6e3-42d2-886a-0a6fad39eb0d"
+            "check_needed": false
           },
           {
-            "id": "vocab_027",
+            "id": "55cd807c-eec7-412d-99db-f4e6508b170f",
             "type": "vocabulary_item",
             "order": 27,
             "hanzi": "托福",
@@ -1218,11 +1106,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "209cac3e-7056-46ea-aabb-321aee2faf90"
+            "check_needed": false
           },
           {
-            "id": "vocab_028",
+            "id": "085e60d5-dd1c-4585-ac6b-0f1db0ded936",
             "type": "vocabulary_item",
             "order": 28,
             "hanzi": "已经",
@@ -1246,11 +1133,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "9e7c638c-1037-4930-9d59-562504f1994f"
+            "check_needed": false
           },
           {
-            "id": "vocab_029",
+            "id": "ba7ff0f9-b633-4516-ab3d-22b96046a1cf",
             "type": "vocabulary_item",
             "order": 29,
             "hanzi": "考",
@@ -1274,11 +1160,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "301d385b-f12f-4de1-ad27-09f3ae381b46"
+            "check_needed": false
           },
           {
-            "id": "vocab_030",
+            "id": "2185ee67-885d-4ffb-83e2-e97be4070796",
             "type": "vocabulary_item",
             "order": 30,
             "hanzi": "陪",
@@ -1302,14 +1187,12 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "fde2d837-b8c1-4ddb-bcba-f4e9c9ea6e38"
+            "check_needed": false
           }
-        ],
-        "uuid": "25139dfa-a6ca-4aa5-a5ea-a433076f3459"
+        ]
       },
       {
-        "id": "section_03_proper_nouns",
+        "id": "3c5ee48e-5d44-44ac-bd53-cac996a83338",
         "type": "proper_nouns",
         "order": 3,
         "title": "专名",
@@ -1317,11 +1200,10 @@
         "source_origin": "textbook",
         "check_needed": false,
         "items": [],
-        "empty_reason_vi": "Bài này không có 专名 riêng biệt trong bảng chính.",
-        "uuid": "6bdc2cf8-2aa0-4740-8bf5-fadf7ed517e9"
+        "empty_reason_vi": "Bài này không có 专名 riêng biệt trong bảng chính."
       },
       {
-        "id": "section_04_notes",
+        "id": "c18e9f54-6da1-4496-886b-c2c722605678",
         "type": "notes",
         "order": 4,
         "title": "注释",
@@ -1330,7 +1212,7 @@
         "check_needed": false,
         "items": [
           {
-            "id": "note_01",
+            "id": "63d654f5-4561-4d48-a144-bacbf9671dfc",
             "type": "note",
             "order": 1,
             "title": "下午你给我打电话了吧？",
@@ -1338,23 +1220,21 @@
             "meaning_vi": "Dùng để xác nhận một việc người nói đoán là đã xảy ra; 吧 làm câu mềm hơn, giống “phải không / đúng không”.",
             "examples": [
               {
-                "id": "note_01_ex01",
+                "id": "021014f3-ff12-43b6-9d12-352cb6dc863b",
                 "zh": "下午你给我打电话了吧？",
                 "vi": "Chiều nay cậu gọi điện cho mình phải không?",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "6b887f1e-bb0f-40e9-8724-2ec2cdad4ba2"
+                "check_needed": false
               }
             ],
             "source_refs": [
-              "text_02_l07"
+              "cc8da348-3e89-4f64-a680-de239f505497"
             ],
             "source_origin": "textbook/generated_mixed",
-            "check_needed": false,
-            "uuid": "20766580-3664-43c6-a868-9d8b2ab8f1d8"
+            "check_needed": false
           },
           {
-            "id": "note_02",
+            "id": "7e2ee128-4fbd-4a93-898c-5f5fd99b371b",
             "type": "note",
             "order": 2,
             "title": "你不是要上托福班吗？",
@@ -1362,31 +1242,28 @@
             "meaning_vi": "Dùng để nhắc lại một điều người nói đã biết hoặc tưởng là đúng: “Chẳng phải cậu định… sao?”",
             "examples": [
               {
-                "id": "note_02_ex01",
+                "id": "29279e2c-cb63-4437-bbc5-7c46c15b6f13",
                 "zh": "你不是要上托福班吗？",
                 "vi": "Chẳng phải cậu định học lớp TOEFL sao?",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "acd9c0c0-5edd-464a-b1ce-1d773c39316e"
+                "check_needed": false
               },
               {
-                "id": "note_02_ex02",
+                "id": "e8ba8406-5f51-49de-8d45-8a461bbaaba6",
                 "zh": "你不是说这个周末要去报名托福班吗？怎么还没去？",
                 "vi": "Chẳng phải cậu nói cuối tuần này sẽ đi đăng ký lớp TOEFL sao? Sao vẫn chưa đi?",
                 "source_origin": "generated",
-                "check_needed": false,
-                "uuid": "0b624900-e24a-4013-a8a9-1de3350744b1"
+                "check_needed": false
               }
             ],
             "source_refs": [
-              "text_02_l16"
+              "e3695c3e-b28b-4953-b424-71dcf1fad1b2"
             ],
             "source_origin": "textbook/generated_mixed",
-            "check_needed": false,
-            "uuid": "6a1d3775-1810-49c3-89d7-961fa1255f2c"
+            "check_needed": false
           },
           {
-            "id": "note_03",
+            "id": "bf5e90df-dc03-4600-a2d2-426ab562c9a5",
             "type": "note",
             "order": 3,
             "title": "你是不是也想考托福？",
@@ -1394,34 +1271,30 @@
             "meaning_vi": "Hỏi xác nhận: “Có phải cậu cũng muốn… không?”",
             "examples": [
               {
-                "id": "note_03_ex01",
+                "id": "3bb13249-7132-47f4-b974-8144c96f3e29",
                 "zh": "你是不是也想考托福？",
                 "vi": "Có phải cậu cũng muốn thi TOEFL không?",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "3c0b3762-9b95-42d3-9cd4-4a542990af7b"
+                "check_needed": false
               },
               {
-                "id": "note_03_ex02",
+                "id": "c1bf6315-9ce8-4f86-bfaf-562eda781518",
                 "zh": "你是不是也想明天去报名？",
                 "vi": "Có phải cậu cũng muốn ngày mai đi đăng ký không?",
                 "source_origin": "generated",
-                "check_needed": false,
-                "uuid": "2c83ddb0-d33d-46b6-abdb-de60ab702a24"
+                "check_needed": false
               }
             ],
             "source_refs": [
-              "text_02_l17"
+              "94807735-96c4-4f7b-a7a3-0b2830d4e7c1"
             ],
             "source_origin": "textbook/generated_mixed",
-            "check_needed": false,
-            "uuid": "8ea974c2-b069-4425-8c17-d827e2d9f749"
+            "check_needed": false
           }
-        ],
-        "uuid": "7f693dc8-65af-4ad7-b3ba-856cdcb64e5e"
+        ]
       },
       {
-        "id": "section_05_grammar",
+        "id": "b045e537-7383-494b-8d61-b0286977ed80",
         "type": "grammar",
         "order": 5,
         "title": "语法 / 词语用法",
@@ -1430,7 +1303,7 @@
         "check_needed": false,
         "items": [
           {
-            "id": "grammar_01",
+            "id": "f8ec59f3-898a-47b2-b536-44dfd8183393",
             "type": "grammar_point",
             "order": 1,
             "title": "语气助词“了”（1）",
@@ -1443,35 +1316,32 @@
             "check_needed": false,
             "blocks": [
               {
-                "id": "grammar_01_overview",
+                "id": "b7c5d870-2db8-4e2e-950f-f0e6e522ac16",
                 "type": "grammar_overview",
                 "order": 1,
                 "title": "Bản chất",
                 "content_vi": "了 đặt cuối câu thường báo một tình huống mới, một sự thay đổi, hoặc xác nhận rằng trạng thái hiện tại đã khác trước. Đây không phải “thì quá khứ” kiểu tiếng Anh; trọng tâm là “bây giờ đã thành như vậy rồi”.",
                 "examples": [
                   {
-                    "id": "grammar_01_ex01",
+                    "id": "c6fbeb40-156e-450c-a390-d58626cae49e",
                     "zh": "田芳去哪儿了？",
                     "vi": "Điền Phương đi đâu rồi?",
-                    "source_ref": "text_01_l03",
+                    "source_ref": "9faf6980-effe-42f1-a01e-7f1740da2edb",
                     "source_origin": "textbook",
-                    "check_needed": false,
-                    "uuid": "d4d58a1b-e55b-4471-be1c-69aa212c1d32"
+                    "check_needed": false
                   },
                   {
-                    "id": "grammar_01_ex02",
+                    "id": "d5b13929-16ec-4967-ac8a-868d80ec0b1e",
                     "zh": "我回来了。",
                     "vi": "Con về rồi.",
-                    "source_ref": "text_02_l01",
+                    "source_ref": "887014e5-f6b0-4777-9f95-85a69532ca36",
                     "source_origin": "textbook",
-                    "check_needed": false,
-                    "uuid": "cf8dfe86-304b-4c4c-ae9f-5f5684edac6f"
+                    "check_needed": false
                   }
-                ],
-                "uuid": "c76aa4ad-d835-464d-9fc6-5fae2e4c4cf3"
+                ]
               },
               {
-                "id": "grammar_01_structure",
+                "id": "b3534a40-3bab-464a-97dd-67889b8bcb7b",
                 "type": "grammar_structure",
                 "order": 2,
                 "title": "Cấu trúc chính",
@@ -1479,28 +1349,25 @@
                 "meaning_vi": "Biểu thị sự việc đã thành hiện thực, tình huống đã thay đổi, hoặc người nói vừa cập nhật thông tin mới.",
                 "examples": [
                   {
-                    "id": "grammar_01_ex03",
+                    "id": "50b5e564-92c8-4900-b66a-00f5bfca9437",
                     "zh": "她四点多就去同学家了。",
                     "vi": "Hơn bốn giờ cô ấy đã đến nhà bạn học rồi.",
-                    "source_ref": "text_01_l04",
+                    "source_ref": "146f8fa1-ae74-468d-910e-19cab53e3cf3",
                     "source_origin": "textbook",
-                    "check_needed": false,
-                    "uuid": "3f7381b6-5800-4023-b45b-8e71bd22ab6b"
+                    "check_needed": false
                   },
                   {
-                    "id": "grammar_01_ex04",
+                    "id": "32ce3ad6-8de3-45db-b360-0c00996f1eef",
                     "zh": "电话又响了。",
                     "vi": "Điện thoại lại reo rồi.",
-                    "source_ref": "text_02_l06",
+                    "source_ref": "e8680b0f-6dcc-4fc7-abbd-084aba5d3b87",
                     "source_origin": "textbook",
-                    "check_needed": false,
-                    "uuid": "012c2676-5eb5-4738-a6f5-e6d809ee491f"
+                    "check_needed": false
                   }
-                ],
-                "uuid": "bda2feee-0047-464d-96a3-56c5312a3f4b"
+                ]
               },
               {
-                "id": "grammar_01_question",
+                "id": "0ea62f46-0157-49d6-aadc-75dbed1d507b",
                 "type": "grammar_usage_notes",
                 "order": 3,
                 "title": "Dạng nghi vấn / phủ định",
@@ -1510,30 +1377,26 @@
                 ],
                 "examples": [
                   {
-                    "id": "grammar_01_ex05",
+                    "id": "65da2f6a-6a1a-4d3d-8cf6-cc56c3fb01a8",
                     "zh": "报名了没有？",
                     "vi": "Đăng ký chưa?",
-                    "source_ref": "text_02_l16",
+                    "source_ref": "e3695c3e-b28b-4953-b424-71dcf1fad1b2",
                     "source_origin": "textbook",
-                    "check_needed": false,
-                    "uuid": "93ba0a54-65d0-4c7b-a40e-bb4c5d1cff09"
+                    "check_needed": false
                   },
                   {
-                    "id": "grammar_01_ex06",
+                    "id": "aee201a5-655e-471c-b56c-819ca00b8eeb",
                     "zh": "田芳还没有回来。",
                     "vi": "Điền Phương vẫn chưa về.",
                     "source_origin": "generated",
-                    "check_needed": false,
-                    "uuid": "6d9bb5d7-cfc0-4ad4-b000-8e8c1f562b29"
+                    "check_needed": false
                   }
-                ],
-                "uuid": "95923690-1f29-4a3c-88dc-9ca01faeea87"
+                ]
               }
-            ],
-            "uuid": "0e9a3fd7-39f1-4ca3-a8b8-27e82c213994"
+            ]
           },
           {
-            "id": "grammar_02",
+            "id": "57b14753-688a-41b6-9e0d-b61dbbf574d7",
             "type": "grammar_point",
             "order": 2,
             "title": "“再”和“又”",
@@ -1546,35 +1409,32 @@
             "check_needed": false,
             "blocks": [
               {
-                "id": "grammar_02_overview",
+                "id": "470b1ca1-e0a1-449f-b55e-a8aa481a4dd4",
                 "type": "grammar_overview",
                 "order": 1,
                 "title": "Bản chất",
                 "content_vi": "再 và 又 đều có nghĩa “lại”, nhưng khác trục thời gian. 再 thường chỉ hành động sẽ lặp lại sau; 又 thường chỉ hành động đã lặp lại hoặc đã xảy ra thêm một lần nữa.",
                 "examples": [
                   {
-                    "id": "grammar_02_ex01",
+                    "id": "771ce2b4-8b49-4b48-be3a-e887eb2024df",
                     "zh": "你过一会儿再打吧。",
                     "vi": "Lát nữa cậu gọi lại nhé.",
-                    "source_ref": "text_01_l08",
+                    "source_ref": "9d76be1a-c606-44bb-a490-a9bd82982e3b",
                     "source_origin": "textbook",
-                    "check_needed": false,
-                    "uuid": "b818417f-3879-4b28-b89c-6cc1dec74ecc"
+                    "check_needed": false
                   },
                   {
-                    "id": "grammar_02_ex02",
+                    "id": "773f0eeb-9162-44a6-b2c7-d20f86c5bf5f",
                     "zh": "张东又来电话了。",
                     "vi": "Trương Đông lại gọi điện đến rồi.",
-                    "source_ref": "text_02_l06",
+                    "source_ref": "e8680b0f-6dcc-4fc7-abbd-084aba5d3b87",
                     "source_origin": "textbook",
-                    "check_needed": false,
-                    "uuid": "4f22017f-4fef-4d16-afc9-30825e38ff8d"
+                    "check_needed": false
                   }
-                ],
-                "uuid": "09d1b951-6eff-460e-b088-59d711fbd464"
+                ]
               },
               {
-                "id": "grammar_02_compare",
+                "id": "2366c7ed-c003-4f30-8320-9ae5ed41c89b",
                 "type": "grammar_compare",
                 "order": 2,
                 "title": "So sánh nhanh",
@@ -1601,40 +1461,34 @@
                       "value": "电话又响了。"
                     }
                   }
-                ],
-                "uuid": "cea979f4-ed0e-4687-b950-1170bad432f3"
+                ]
               },
               {
-                "id": "grammar_02_mistakes",
+                "id": "542fe1e6-4a42-40f9-91ed-5729e7da7d04",
                 "type": "grammar_common_mistakes",
                 "order": 3,
                 "title": "Lỗi dễ sai",
                 "items": [
                   {
-                    "id": "g02_m01",
+                    "id": "bd185d4d-4edc-454d-840f-edf0bdaa6b46",
                     "wrong": "昨天我再给他打电话了。",
                     "correct": "昨天我又给他打电话了。",
-                    "explanation_vi": "昨天 là quá khứ, hành động đã lặp lại nên dùng 又.",
-                    "uuid": "d7041d33-ab7c-447d-8b3e-ca5c057ba839"
+                    "explanation_vi": "昨天 là quá khứ, hành động đã lặp lại nên dùng 又."
                   },
                   {
-                    "id": "g02_m02",
+                    "id": "8aaf6c8a-bfe1-45ca-bdb7-979146629d02",
                     "wrong": "明天我又给你打电话。",
                     "correct": "明天我再给你打电话。",
-                    "explanation_vi": "明天 là tương lai, hành động sẽ lặp lại sau nên dùng 再.",
-                    "uuid": "e33d1a80-1781-4ab7-8bbf-8b83035b2899"
+                    "explanation_vi": "明天 là tương lai, hành động sẽ lặp lại sau nên dùng 再."
                   }
-                ],
-                "uuid": "cdd7e8e5-6dce-480d-86e4-7e81ce5d0042"
+                ]
               }
-            ],
-            "uuid": "711cdd8d-c0c8-4d6f-be7b-29f0a7198e53"
+            ]
           }
-        ],
-        "uuid": "ee59da6a-25f0-453a-9962-e0945ffbd877"
+        ]
       },
       {
-        "id": "section_06_exercises",
+        "id": "9901c597-ca97-451e-b63d-11814aaf933e",
         "type": "exercises",
         "order": 6,
         "title": "练习",
@@ -1655,7 +1509,7 @@
         },
         "items": [
           {
-            "id": "exercise_01",
+            "id": "15cb6f38-593b-48d1-bcca-dc3d2a140f9e",
             "type": "phonetics",
             "variant": "pronunciation_tone_minimal_pairs",
             "order": 1,
@@ -1674,57 +1528,50 @@
             "check_needed": true,
             "parts": [
               {
-                "id": "exercise_01_part_01",
+                "id": "0e5801e7-b89b-4cc6-8bd9-9e1fbbd30b31",
                 "type": "minimal_pair_group",
                 "title": "辨音辨调",
                 "items": [
                   {
-                    "id": "ex01_pair_01",
+                    "id": "e38d3cb2-2c33-4c4a-83fa-2934373f225d",
                     "left": "cāochǎng",
                     "right": "cǎochǎng",
-                    "check_needed": false,
-                    "uuid": "61487654-6025-4bd0-a101-8a8738e74d02"
+                    "check_needed": false
                   },
                   {
-                    "id": "ex01_pair_02",
+                    "id": "79df1daa-2fc0-43b6-b4e3-aee6478eef8a",
                     "left": "bǐsài",
                     "right": "bǐsè",
-                    "check_needed": true,
-                    "uuid": "96b40714-4e05-463e-8c9c-a3d2cc3b6956"
+                    "check_needed": true
                   },
                   {
-                    "id": "ex01_pair_03",
+                    "id": "93191d96-c6f7-4475-b285-9bfd75ad2b6c",
                     "left": "zhùhè",
                     "right": "chùsuǒ",
-                    "check_needed": true,
-                    "uuid": "a04430fc-7c1b-40e5-817f-19c2aced2203"
+                    "check_needed": true
                   },
                   {
-                    "id": "ex01_pair_04",
+                    "id": "656ce346-d1fc-4d43-8acc-abf294d2d8da",
                     "left": "yǐjīng",
                     "right": "yùjīng",
-                    "check_needed": false,
-                    "uuid": "d39f8c01-9ab8-41da-a54f-d07423e00c07"
+                    "check_needed": false
                   },
                   {
-                    "id": "ex01_pair_05",
+                    "id": "5e775bab-fb67-4293-b3f7-4b9e80f29c52",
                     "left": "tuōfú",
                     "right": "tuófù",
-                    "check_needed": false,
-                    "uuid": "61425908-9536-4b84-9edf-3d9124e99691"
+                    "check_needed": false
                   },
                   {
-                    "id": "ex01_pair_06",
+                    "id": "7e23fb6e-376b-43d9-ae33-0413e3080ef9",
                     "left": "zúqiú",
                     "right": "chūqiú",
-                    "check_needed": true,
-                    "uuid": "d71e7630-1a63-40fe-9675-ce21abcb081a"
+                    "check_needed": true
                   }
-                ],
-                "uuid": "ebc84273-964f-400c-8283-8e0a00a4a8fc"
+                ]
               },
               {
-                "id": "exercise_01_part_02",
+                "id": "e7235fa8-9e47-43aa-a37c-271a2e83d738",
                 "type": "read_aloud_chunks",
                 "title": "多音节连读",
                 "items": [
@@ -1734,11 +1581,10 @@
                   "dǎ yǔmáoqiú",
                   "dǎ diànhuà",
                   "dǎ zhāohu"
-                ],
-                "uuid": "a2a29d47-d622-4bf9-9e5a-814ab48547c5"
+                ]
               },
               {
-                "id": "exercise_01_part_03",
+                "id": "55df771b-11c3-4ae2-844a-6439fae33934",
                 "type": "read_aloud_chunks",
                 "title": "朗读",
                 "items": [
@@ -1766,17 +1612,15 @@
                   "还没去呢",
                   "还没看呢",
                   "还没买呢"
-                ],
-                "uuid": "4f700b1c-4460-4435-a9d6-96065ef19388"
+                ]
               }
             ],
             "rendering": {
               "renderer": "exercise.phonetics.v2"
-            },
-            "uuid": "a9e07579-4c60-4f39-8b3b-5fb67186ecc9"
+            }
           },
           {
-            "id": "exercise_02",
+            "id": "98e14c21-0449-4e36-b1ae-77ed46cf3aa0",
             "type": "substitution_drill",
             "variant": "substitution_or_transform_drill",
             "order": 2,
@@ -1795,7 +1639,7 @@
             "check_needed": false,
             "parts": [
               {
-                "id": "exercise_02_part_01",
+                "id": "7db043f9-0d63-45ee-8c21-295d62f2ebd3",
                 "type": "substitution_dialogue",
                 "model": "A：昨天你看比赛了吗？\nB：没有。\nA：你去哪儿了？\nB：我去同学家了。",
                 "prompts": [
@@ -1805,11 +1649,10 @@
                   "公园",
                   "商店",
                   "老师那儿"
-                ],
-                "uuid": "7128dd08-9920-43d8-8911-07856be96732"
+                ]
               },
               {
-                "id": "exercise_02_part_02",
+                "id": "4ad1e1b3-374e-4ce8-b98f-907ffc4c88f2",
                 "type": "substitution_dialogue",
                 "model": "A：你预习课文了没有？\nB：还没有呢。",
                 "prompts": [
@@ -1819,11 +1662,10 @@
                   "写汉字",
                   "复习语法",
                   "做练习"
-                ],
-                "uuid": "284a8ed1-59fe-4aec-8406-97f893167a7b"
+                ]
               },
               {
-                "id": "exercise_02_part_03",
+                "id": "28f617eb-25d6-4678-b5e3-f7fca3508dbc",
                 "type": "substitution_dialogue",
                 "model": "A：你报名了没有？\nB：已经报了。",
                 "prompts": [
@@ -1833,11 +1675,10 @@
                   "买优盘",
                   "听课文录音",
                   "复习语法"
-                ],
-                "uuid": "6cca3747-5943-409f-8f70-e12fc89cf826"
+                ]
               },
               {
-                "id": "exercise_02_part_04",
+                "id": "6227f946-2a93-462c-8702-43b4abc4a614",
                 "type": "substitution_dialogue",
                 "model": "A：下午你做什么了？\nB：我去踢足球了。",
                 "prompts": [
@@ -1847,17 +1688,15 @@
                   "去买羽绒服",
                   "去学太极拳",
                   "去看电影"
-                ],
-                "uuid": "c8afb435-435a-4427-bc15-373da23fbf56"
+                ]
               }
             ],
             "rendering": {
               "renderer": "exercise.substitution_dialogue.v2"
-            },
-            "uuid": "7d4462c7-bfbe-4b9b-a2e1-3e7764d9c60a"
+            }
           },
           {
-            "id": "exercise_03",
+            "id": "5dfca3d2-8524-4a83-92dd-b036a7259465",
             "type": "choose_words_fill_blank",
             "variant": "word_bank_fill_blank",
             "order": 3,
@@ -1886,71 +1725,62 @@
             ],
             "questions": [
               {
-                "id": "ex03_q01",
+                "id": "941d80e5-8eb2-4e21-beae-597e6677cdaf",
                 "prompt": "我下午去操场______足球了。",
                 "answer": "踢",
-                "answer_verified": true,
-                "uuid": "e7f330f2-7368-42e7-8e81-261b2ca74fd7"
+                "answer_verified": true
               },
               {
-                "id": "ex03_q02",
+                "id": "f31d95d0-500f-4cc9-97ee-57a7295062d2",
                 "prompt": "妈妈不想让我______留学。",
                 "answer": "出国",
-                "answer_verified": true,
-                "uuid": "cbd9417b-87bc-425e-9a7e-5b60b1b16acb"
+                "answer_verified": true
               },
               {
-                "id": "ex03_q03",
+                "id": "069f2cd8-233c-4227-8f46-78a1d28a4a59",
                 "prompt": "你昨天是不是______去他家了？",
                 "answer": "又",
-                "answer_verified": true,
-                "uuid": "2cefce5b-fc1c-47ec-9d0b-35ebb866aaf0"
+                "answer_verified": true
               },
               {
-                "id": "ex03_q04",
+                "id": "013e3712-30ac-4a8a-b60e-0d6f818f4cdb",
                 "prompt": "他正在______电话呢。",
                 "answer": "接",
-                "answer_verified": true,
-                "uuid": "c54afdf5-456b-4317-9486-9420a5e27a90"
+                "answer_verified": true
               },
               {
-                "id": "ex03_q05",
+                "id": "ba362929-16a5-4a79-8cad-ecfabcaa32f3",
                 "prompt": "玛丽在______打太极拳呢。",
                 "answer": "操场",
-                "answer_verified": true,
-                "uuid": "de6a06b4-e7d0-4c1f-b6a7-bff628039e50"
+                "answer_verified": true
               },
               {
-                "id": "ex03_q06",
+                "id": "542ef74e-c843-4b6c-9cd8-0011b6ee7b7a",
                 "prompt": "我们又跟外贸大学进行篮球______了。",
                 "answer": "比赛",
-                "answer_verified": true,
-                "uuid": "7f3cf3e1-14a5-4788-8c13-d210cc84b8a4"
+                "answer_verified": true
               },
               {
-                "id": "ex03_q07",
+                "id": "715f1fd6-1b2e-43e0-b3dc-cbc252152601",
                 "prompt": "我姐姐______大学毕业了。",
                 "answer": "已经",
-                "answer_verified": true,
-                "uuid": "5d9a6396-614a-4912-892c-4ad268d6b436"
+                "answer_verified": true
               },
               {
-                "id": "ex03_q08",
+                "id": "105a0775-7adb-418e-b770-133481e26360",
                 "prompt": "很多留学生都想______HSK。",
                 "answer": "考",
-                "answer_verified": true,
-                "uuid": "431c6309-9cbb-4c66-9410-9c0858a3defe"
+                "answer_verified": true
               }
             ],
             "rendering": {
               "renderer": "exercise.fill_blank.word_bank.v2",
               "show_word_bank": true,
               "show_answer_after_submit": true
-            },
-            "uuid": "f9bc344d-74bb-4fb7-8127-109a4672a00a"
+            }
           },
           {
-            "id": "exercise_04",
+            "id": "809141fb-cc55-403a-9433-35eea89c8c90",
             "type": "answer_questions",
             "variant": "complete_sentence_with_given_words",
             "order": 4,
@@ -1969,56 +1799,49 @@
             "check_needed": false,
             "questions": [
               {
-                "id": "ex04_q01",
+                "id": "668ef942-39b3-4816-be06-f347b64fa456",
                 "prompt": "田芳回家了没有？",
                 "answer": "田芳还没（有）回家呢。",
-                "answer_verified": true,
-                "uuid": "65c67b1e-0038-4a1a-80ad-1de3b674b7f6"
+                "answer_verified": true
               },
               {
-                "id": "ex04_q02",
+                "id": "6e23c236-94eb-4e83-9ea6-7353241c098d",
                 "prompt": "你吃晚饭了没有？",
                 "answer": "我还没（有）吃晚饭呢。",
-                "answer_verified": true,
-                "uuid": "5d27a6aa-b878-40da-8e2d-a498a4ea7a0c"
+                "answer_verified": true
               },
               {
-                "id": "ex04_q03",
+                "id": "ee3570f6-9872-4699-a1ed-c338e52b4e50",
                 "prompt": "你做作业了没有？",
                 "answer": "我还没（有）做作业呢。",
-                "answer_verified": true,
-                "uuid": "f81ac17a-2a30-4b6f-9f9f-476485955fa1"
+                "answer_verified": true
               },
               {
-                "id": "ex04_q04",
+                "id": "3130979d-5cc3-4cf5-999c-9ed317ea7c14",
                 "prompt": "你看这个电影了吗？",
                 "answer": "我还没（有）看这个电影呢。",
-                "answer_verified": true,
-                "uuid": "cc996bd7-7ad8-4d28-834a-2b2bea78251c"
+                "answer_verified": true
               },
               {
-                "id": "ex04_q05",
+                "id": "9dd88fe0-ccfb-47b6-a74a-d1ee53c61219",
                 "prompt": "你给妈妈打电话了吗？",
                 "answer": "我还没（有）给妈妈打电话呢，我现在就打。",
-                "answer_verified": true,
-                "uuid": "6544c544-ceb8-4be0-8a31-26820d246407"
+                "answer_verified": true
               },
               {
-                "id": "ex04_q06",
+                "id": "9002df8c-125f-489d-9396-d008958aa6b9",
                 "prompt": "你买今天的报纸了没有？",
                 "answer": "我还没（有）买今天的报纸呢，我现在就去买。",
-                "answer_verified": true,
-                "uuid": "6a1ffd1d-faf5-43da-9103-418b201441fc"
+                "answer_verified": true
               }
             ],
             "rendering": {
               "renderer": "exercise.answer_questions.v2",
               "show_answer_after_submit": true
-            },
-            "uuid": "c441a7d0-aa32-42e4-a9d1-20fc8a3ce8fc"
+            }
           },
           {
-            "id": "exercise_05",
+            "id": "e843bb6e-2e51-4fb8-b362-7506b97cf2fc",
             "type": "fill_blank",
             "variant": "free_fill_blank",
             "order": 5,
@@ -2036,7 +1859,7 @@
             "check_needed": false,
             "parts": [
               {
-                "id": "exercise_05_part_a",
+                "id": "32c03436-c1d1-422c-b0d2-b77445326328",
                 "title": "A. 不 / 没（有）",
                 "word_bank": [
                   "不",
@@ -2044,66 +1867,57 @@
                 ],
                 "questions": [
                   {
-                    "id": "ex05a_q01",
+                    "id": "6502f569-0100-45b6-b3b3-a4140a5a5e6f",
                     "prompt": "我明天______去超市，我要去书店。",
                     "answer": "不",
-                    "answer_verified": true,
-                    "uuid": "af26f415-60af-4519-8538-4fb8b4fc728e"
+                    "answer_verified": true
                   },
                   {
-                    "id": "ex05a_q02",
+                    "id": "0ec63b1c-3b69-48dd-a3d1-34f6a68c5ae3",
                     "prompt": "昨天我______去商店，我去书店了。",
                     "answer": "没有",
-                    "answer_verified": true,
-                    "uuid": "b5392fb0-9fd3-437b-8c52-f7a42870e040"
+                    "answer_verified": true
                   },
                   {
-                    "id": "ex05a_q03",
+                    "id": "0cc714ee-848f-4bd7-8ee7-a204852d265e",
                     "prompt": "A：你觉得昨天晚上的电影怎么样？\nB：我______看，______知道。",
                     "answer": "没；不",
-                    "answer_verified": true,
-                    "uuid": "d8153d08-83d9-4933-94aa-b82048b15595"
+                    "answer_verified": true
                   },
                   {
-                    "id": "ex05a_q04",
+                    "id": "c8e1acb6-d7ec-4923-a611-43408f530b11",
                     "prompt": "我______学太极拳，______会打。",
                     "answer": "没；不",
-                    "answer_verified": true,
-                    "uuid": "b8d32233-9f56-4b21-9743-ab96c657bab7"
+                    "answer_verified": true
                   },
                   {
-                    "id": "ex05a_q05",
+                    "id": "0de9da7e-56f7-4d7c-8f4d-58485da672db",
                     "prompt": "昨天你去______去大使馆？",
                     "answer": "没",
-                    "answer_verified": true,
-                    "uuid": "b62d8bc8-d7ac-43f8-bf0c-c795f1683427"
+                    "answer_verified": true
                   },
                   {
-                    "id": "ex05a_q06",
+                    "id": "b9541f39-85d6-4112-a4b2-39cf76d1d6f3",
                     "prompt": "明天你去______去看她？",
                     "answer": "不",
-                    "answer_verified": true,
-                    "uuid": "adeaf969-cc02-409c-bc0d-7d52faf30195"
+                    "answer_verified": true
                   },
                   {
-                    "id": "ex05a_q07",
+                    "id": "1072766d-3b98-43d7-8a21-65d70fa7444f",
                     "prompt": "玛丽，你想______想家？",
                     "answer": "不",
-                    "answer_verified": true,
-                    "uuid": "b9b13d30-da19-40a0-9c1f-3d7b49c59d2a"
+                    "answer_verified": true
                   },
                   {
-                    "id": "ex05a_q08",
+                    "id": "aaf8f166-fa24-466f-8338-7cbb5a20985c",
                     "prompt": "A：你常常给你妈妈打电话吗？\nB：我______常给她打电话，常给她发微信。",
                     "answer": "不",
-                    "answer_verified": true,
-                    "uuid": "b1e06a5b-e381-4060-aa72-0b0cdba142b7"
+                    "answer_verified": true
                   }
-                ],
-                "uuid": "bc3fd507-b6c1-4ae1-a661-fbf4a27617a4"
+                ]
               },
               {
-                "id": "exercise_05_part_b",
+                "id": "3a855835-2363-45e3-b361-cc15eff9974b",
                 "title": "B. 再 / 又",
                 "word_bank": [
                   "再",
@@ -2111,73 +1925,63 @@
                 ],
                 "questions": [
                   {
-                    "id": "ex05b_q01",
+                    "id": "f96f65b6-1762-4475-9ee2-67789598c9c0",
                     "prompt": "上次比赛我们赢了，这次______赢了。",
                     "answer": "又",
-                    "answer_verified": true,
-                    "uuid": "d8a01adf-d1d9-4c65-8824-207ae688d2e2"
+                    "answer_verified": true
                   },
                   {
-                    "id": "ex05b_q02",
+                    "id": "184d44dd-0b2d-4240-aacf-af89b51aaae5",
                     "prompt": "这本词典很好，我已经买了一本，想______买一本给我弟弟。",
                     "answer": "再",
-                    "answer_verified": true,
-                    "uuid": "5c464e3f-f387-432e-add0-bfe4b2f6743f"
+                    "answer_verified": true
                   },
                   {
-                    "id": "ex05b_q03",
+                    "id": "d96c7aa3-84b9-4041-b0e6-dafb6175318a",
                     "prompt": "我昨天已经去了，今天不想______去了。",
                     "answer": "再",
-                    "answer_verified": true,
-                    "uuid": "6c0d4dec-edd9-4001-a2f8-9023cd9b0d31"
+                    "answer_verified": true
                   },
                   {
-                    "id": "ex05b_q04",
+                    "id": "c4f27fc9-fce6-4972-bbc8-73c081a4934d",
                     "prompt": "张东刚才给你打电话了，你不在，他说过一会儿______打。",
                     "answer": "再",
-                    "answer_verified": true,
-                    "uuid": "bef41521-0d21-4fe8-b40c-36349fd88429"
+                    "answer_verified": true
                   },
                   {
-                    "id": "ex05b_q05",
+                    "id": "d0aa690e-b99a-4442-a310-1d61029179bf",
                     "prompt": "生词我已经预习了，还要______复习复习课文。",
                     "answer": "再",
-                    "answer_verified": true,
-                    "uuid": "2fdd367a-6afc-41d0-b7cd-1d1ddf18affd"
+                    "answer_verified": true
                   },
                   {
-                    "id": "ex05b_q06",
+                    "id": "2d75e3bb-df2b-46a8-af4a-fed88fa36669",
                     "prompt": "我______用用你的车好吗？",
                     "answer": "再",
-                    "answer_verified": true,
-                    "uuid": "432b747a-7b21-4e3d-92ef-921db0cfd5f3"
+                    "answer_verified": true
                   },
                   {
-                    "id": "ex05b_q07",
+                    "id": "12a49f53-d00e-4c30-8a93-f706b8239cde",
                     "prompt": "我______买了一个手机。",
                     "answer": "又",
-                    "answer_verified": true,
-                    "uuid": "b090a1c5-4756-4ffc-a6f6-e03a5d0cdce7"
+                    "answer_verified": true
                   },
                   {
-                    "id": "ex05b_q08",
+                    "id": "79fd118a-df1b-459f-b1d8-da93a30ed8ed",
                     "prompt": "我觉得一年时间太短了，我想______学一年。",
                     "answer": "再",
-                    "answer_verified": true,
-                    "uuid": "521314ff-96a0-4e0e-a382-cd962ec73ed8"
+                    "answer_verified": true
                   }
-                ],
-                "uuid": "0b7eb216-bae3-4b4f-9ae8-048726495373"
+                ]
               }
             ],
             "rendering": {
               "renderer": "exercise.fill_blank.v2",
               "show_answer_after_submit": true
-            },
-            "uuid": "94238e97-ebcd-4848-914e-88ea60d86961"
+            }
           },
           {
-            "id": "exercise_06",
+            "id": "60ec1197-2967-408c-a1f3-3c2112f8305a",
             "type": "complete_dialogue",
             "variant": "complete_dialogue",
             "order": 6,
@@ -2196,62 +2000,55 @@
             "check_needed": false,
             "questions": [
               {
-                "id": "ex06_q01",
+                "id": "1b0dc397-26f4-4659-a964-f9c68ceab72a",
                 "prompt": "A：昨天你去哪儿了？\nB：________。\nA：你买什么了？\nB：________。\nA：你买词典了没有？\nB：________。",
                 "answer": "",
                 "answer_verified": false,
-                "check_needed": true,
-                "uuid": "92e02309-9a8c-474e-ab36-edf4df1cda71"
+                "check_needed": true
               },
               {
-                "id": "ex06_q02",
+                "id": "ab74bab2-0cd3-4c59-b4dd-6d9a3c6197b9",
                 "prompt": "A：昨天晚上你做什么了？\nB：________。\nA：你看足球比赛了没有？\nB：________。",
                 "answer": "",
                 "answer_verified": false,
-                "check_needed": true,
-                "uuid": "03442181-4ec4-40a4-8dbf-418094211acb"
+                "check_needed": true
               },
               {
-                "id": "ex06_q03",
+                "id": "c503fed9-44e1-4df9-b284-51dbab822ee8",
                 "prompt": "A：张东下午去哪儿了？\nB：________。\nA：你去了没有？\nB：________。",
                 "answer": "",
                 "answer_verified": false,
-                "check_needed": true,
-                "uuid": "edd8be42-3759-4e68-9989-5038ac7cdf4b"
+                "check_needed": true
               },
               {
-                "id": "ex06_q04",
+                "id": "87b8a7fb-1969-49e6-b592-82a2e0147e96",
                 "prompt": "A：你预习生词了没有？\nB：________。\nA：复习课文了没有？\nB：________。",
                 "answer": "",
                 "answer_verified": false,
-                "check_needed": true,
-                "uuid": "3eb71363-3a25-43e3-8f87-b33447d5b779"
+                "check_needed": true
               },
               {
-                "id": "ex06_q05",
+                "id": "6155b63d-c263-446a-9ad7-80d775f5be6e",
                 "prompt": "A：________？\nB：我没去朋友家。",
                 "answer": "",
                 "answer_verified": false,
-                "check_needed": true,
-                "uuid": "e080b901-3b2f-4263-a3cc-31eeaa9ff79c"
+                "check_needed": true
               },
               {
-                "id": "ex06_q06",
+                "id": "8e9a9428-6659-4025-8fb4-b5bf4134d62d",
                 "prompt": "A：________？\nB：今天的作业还没做呢。",
                 "answer": "",
                 "answer_verified": false,
-                "check_needed": true,
-                "uuid": "1e83f4a7-9f9b-4c54-8971-14890f47b0a3"
+                "check_needed": true
               }
             ],
             "rendering": {
               "renderer": "exercise.complete_dialogue.v2",
               "allow_manual_check": true
-            },
-            "uuid": "739e9fe2-85a7-42b5-a26e-43d2c50dc046"
+            }
           },
           {
-            "id": "exercise_07",
+            "id": "1fd4313d-93f3-4cbe-9dd4-2ba0d5bac415",
             "type": "correct_sentence",
             "variant": "error_correction",
             "order": 7,
@@ -2270,62 +2067,55 @@
             "check_needed": false,
             "questions": [
               {
-                "id": "ex07_q01",
+                "id": "f8e911bf-9cbb-4dad-91ed-87032d2d95f2",
                 "prompt": "昨天我骑了自行车去书店。",
                 "answer": "昨天我骑自行车去书店了。",
                 "answer_note_vi": "“了” chuyển ra sau địa điểm / toàn cụm hành động.",
-                "answer_verified": true,
-                "uuid": "3e3c60bf-5ea5-416b-998f-30a04acaa46d"
+                "answer_verified": true
               },
               {
-                "id": "ex07_q02",
+                "id": "3fd78baa-272c-4e07-8ee2-5399c9977a99",
                 "prompt": "我们八点已经开始了上课。",
                 "answer": "我们八点已经开始上课了。",
                 "answer_note_vi": "“了” chuyển ra sau 上课.",
-                "answer_verified": true,
-                "uuid": "5257cfcd-accb-4adb-ae4f-96bce38f8e30"
+                "answer_verified": true
               },
               {
-                "id": "ex07_q03",
+                "id": "69f5ddfa-be8d-4292-b18f-6136daaa613f",
                 "prompt": "我今年九月来了中国学汉语。",
                 "answer": "我今年九月来中国学汉语。",
                 "answer_note_vi": "Bỏ 了.",
-                "answer_verified": true,
-                "uuid": "f0549f78-83c4-4bff-a174-339f00cdf22e"
+                "answer_verified": true
               },
               {
-                "id": "ex07_q04",
+                "id": "9c211f34-08a0-4478-b188-fe6a0e98ea41",
                 "prompt": "我在大学时常常参加足球比赛了。",
                 "answer": "我在大学时常常参加足球比赛。",
                 "answer_note_vi": "Bỏ 了 vì 常常 chỉ thói quen.",
-                "answer_verified": true,
-                "uuid": "ff10d31c-ca91-45ce-9a42-b5edc6212422"
+                "answer_verified": true
               },
               {
-                "id": "ex07_q05",
+                "id": "c8ec5644-8adf-46de-b2ff-34b3088ba324",
                 "prompt": "昨天下午我做练习了，预习生词了和复习语法了。",
                 "answer": "昨天下午我做了练习，预习了生词，复习了语法。",
                 "answer_note_vi": "Sửa trật tự V+了+O và bỏ 和 không tự nhiên trong chuỗi vị ngữ này.",
-                "answer_verified": true,
-                "uuid": "d68f9e93-d4ac-43cb-91d3-f7ea960e9132"
+                "answer_verified": true
               },
               {
-                "id": "ex07_q06",
+                "id": "6db3da52-2247-4991-a1d3-225528d56fff",
                 "prompt": "我姐姐已经毕业大学了。",
                 "answer": "我姐姐已经大学毕业了。",
                 "answer_note_vi": "大学毕业 là cách nói tự nhiên.",
-                "answer_verified": true,
-                "uuid": "3e856fa9-a904-4bef-8b6c-71c9d5226059"
+                "answer_verified": true
               }
             ],
             "rendering": {
               "renderer": "exercise.error_correction.v2",
               "show_answer_after_submit": true
-            },
-            "uuid": "053e4ae1-0189-40c7-8ae8-4b45a743df9a"
+            }
           },
           {
-            "id": "exercise_08",
+            "id": "b9e46637-94ca-4fea-90cf-29155c015046",
             "type": "multiple_choice",
             "variant": "multiple_choice",
             "order": 8,
@@ -2343,7 +2133,7 @@
             "check_needed": false,
             "questions": [
               {
-                "id": "ex08_q01",
+                "id": "51d25007-39bc-4798-8fb4-fd9aaf8168f5",
                 "prompt": "你去哪儿？",
                 "choices": [
                   "我去图书馆了。",
@@ -2351,11 +2141,10 @@
                 ],
                 "answer": "B",
                 "answer_text": "我去图书馆。",
-                "answer_verified": true,
-                "uuid": "1928bbf6-48c1-428b-921d-a7349409d7bc"
+                "answer_verified": true
               },
               {
-                "id": "ex08_q02",
+                "id": "e65bddbb-aff2-43d6-86ee-fb07381ebe3e",
                 "prompt": "你买词典了没有？",
                 "choices": [
                   "我不买词典。",
@@ -2363,11 +2152,10 @@
                 ],
                 "answer": "B",
                 "answer_text": "我没买词典。",
-                "answer_verified": true,
-                "uuid": "344821ad-44fb-4468-8020-7166ae14a5fc"
+                "answer_verified": true
               },
               {
-                "id": "ex08_q03",
+                "id": "2ac934ff-71d7-4d4a-b040-149ec5a5750e",
                 "prompt": "今天晚上谁来？",
                 "choices": [
                   "张东来。",
@@ -2375,11 +2163,10 @@
                 ],
                 "answer": "A",
                 "answer_text": "张东来。",
-                "answer_verified": true,
-                "uuid": "a94ac5af-6789-4fc0-a02f-6410a39decc1"
+                "answer_verified": true
               },
               {
-                "id": "ex08_q04",
+                "id": "c5d39e80-de1f-4a3c-9b5f-9193a14a8a33",
                 "prompt": "上午你上没上课？",
                 "choices": [
                   "不上课。",
@@ -2387,11 +2174,10 @@
                 ],
                 "answer": "B",
                 "answer_text": "没上课。",
-                "answer_verified": true,
-                "uuid": "c95fc85a-3617-48db-8cbd-700b76445139"
+                "answer_verified": true
               },
               {
-                "id": "ex08_q05",
+                "id": "758a96f8-d8f5-4075-aafa-95e515a48195",
                 "prompt": "晚上你看不看足球赛？",
                 "choices": [
                   "看了。",
@@ -2399,11 +2185,10 @@
                 ],
                 "answer": "B",
                 "answer_text": "看。",
-                "answer_verified": true,
-                "uuid": "c0ddc69b-8843-4be7-95eb-ea0a9bbbdf58"
+                "answer_verified": true
               },
               {
-                "id": "ex08_q06",
+                "id": "7969b51e-cfc5-4e03-97be-0b29b48a7fdc",
                 "prompt": "你去没去医院？",
                 "choices": [
                   "去了。",
@@ -2411,19 +2196,17 @@
                 ],
                 "answer": "A",
                 "answer_text": "去了。",
-                "answer_verified": true,
-                "uuid": "1d290161-1ee6-4694-9486-3fc2bd619f81"
+                "answer_verified": true
               }
             ],
             "rendering": {
               "renderer": "exercise.multiple_choice.v2",
               "show_answer_after_submit": true,
               "shuffle_choices": false
-            },
-            "uuid": "20fd3b90-6877-4eef-94a5-c8513bb6d47a"
+            }
           },
           {
-            "id": "exercise_09",
+            "id": "849f6690-a8ea-4b6f-937d-429f236714ad",
             "type": "communication_dialogue",
             "variant": "role_play",
             "order": 9,
@@ -2442,7 +2225,7 @@
             "check_needed": false,
             "parts": [
               {
-                "id": "ex09_part_01",
+                "id": "a092f22f-6624-455b-879b-131f6e336a45",
                 "title": "提醒",
                 "title_vi": "Nhắc nhở",
                 "model_dialogue": [
@@ -2466,18 +2249,16 @@
                     "zh": "我马上吃。",
                     "vi": "Tôi uống ngay đây."
                   }
-                ],
-                "uuid": "94ea6f14-1e4a-4bd9-8903-466570ad379b"
+                ]
               }
             ],
             "rendering": {
               "renderer": "exercise.role_play.v2",
               "allow_manual_check": true
-            },
-            "uuid": "36c31411-9c37-43e1-9352-f7b611cc3745"
+            }
           },
           {
-            "id": "exercise_10",
+            "id": "1ac62b88-14d2-473e-be1e-6a588e95e535",
             "type": "reading_comprehension",
             "variant": "reading_comprehension",
             "order": 10,
@@ -2498,14 +2279,12 @@
             "rendering": {
               "renderer": "exercise.reading_comprehension.v2",
               "show_answer_after_submit": true
-            },
-            "uuid": "f08d9eb1-d9ec-4bad-bba9-ead20c1517e5"
+            }
           }
-        ],
-        "uuid": "b404467f-92ee-4fb4-8454-216c7d1cd92a"
+        ]
       },
       {
-        "id": "section_07_reading",
+        "id": "886f621e-85ce-4e1a-91df-d8d257596034",
         "type": "reading",
         "order": 7,
         "title": "阅读理解",
@@ -2514,7 +2293,7 @@
         "check_needed": true,
         "supplementary_vocab": [
           {
-            "id": "reading_vocab_001",
+            "id": "97948db8-350f-468f-a584-08ac6ee8ea70",
             "type": "vocabulary_item",
             "order": 1,
             "hanzi": "最",
@@ -2526,11 +2305,10 @@
             ],
             "examples": [],
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "d782f690-c25a-4cae-8c8f-2d96d9b7bd83"
+            "check_needed": false
           },
           {
-            "id": "reading_vocab_002",
+            "id": "2e47d0d4-9926-4054-a4e1-cfe61d63cfac",
             "type": "vocabulary_item",
             "order": 2,
             "hanzi": "考试",
@@ -2542,11 +2320,10 @@
             ],
             "examples": [],
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "c99fe3da-86db-4c76-a65a-8d9c5a5dc916"
+            "check_needed": false
           },
           {
-            "id": "reading_vocab_003",
+            "id": "bb1aecd4-8b82-45bf-8c9d-b3e9082911a6",
             "type": "vocabulary_item",
             "order": 3,
             "hanzi": "得",
@@ -2558,11 +2335,10 @@
             ],
             "examples": [],
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "46e6f96c-5298-4c11-a841-218539b0fc62"
+            "check_needed": false
           },
           {
-            "id": "reading_vocab_004",
+            "id": "66286879-4464-4667-b96b-edb647e8e7a6",
             "type": "vocabulary_item",
             "order": 4,
             "hanzi": "满分",
@@ -2574,11 +2350,10 @@
             ],
             "examples": [],
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "323656fc-b3e3-4783-95f3-4246d6517256"
+            "check_needed": false
           },
           {
-            "id": "reading_vocab_005",
+            "id": "e6317463-2f70-47e1-94a3-4f609e48161a",
             "type": "vocabulary_item",
             "order": 5,
             "hanzi": "奖学金",
@@ -2590,11 +2365,10 @@
             ],
             "examples": [],
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "be33e248-e827-4fc3-8f28-5d1e56d60bb9"
+            "check_needed": false
           },
           {
-            "id": "reading_vocab_006",
+            "id": "7d280f35-81eb-4265-bc39-135c0a35e019",
             "type": "vocabulary_item",
             "order": 6,
             "hanzi": "送行",
@@ -2606,11 +2380,10 @@
             ],
             "examples": [],
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "72c26996-45bb-444c-b026-8e71d54b9c52"
+            "check_needed": false
           },
           {
-            "id": "reading_vocab_007",
+            "id": "1fe04b57-27fb-446a-a96c-ac48b8e36867",
             "type": "vocabulary_item",
             "order": 7,
             "hanzi": "热情",
@@ -2622,11 +2395,10 @@
             ],
             "examples": [],
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "ae185692-f57c-4b6e-ab5c-f433c761dcf4"
+            "check_needed": false
           },
           {
-            "id": "reading_vocab_008",
+            "id": "fc6f1323-fa97-4b01-93e5-607c6f16c165",
             "type": "vocabulary_item",
             "order": 8,
             "hanzi": "见面",
@@ -2638,11 +2410,10 @@
             ],
             "examples": [],
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "c501c29f-10f7-44c6-8313-a544cce3ebb1"
+            "check_needed": false
           },
           {
-            "id": "reading_vocab_009",
+            "id": "f5f5c02a-114d-4943-8a50-c6cb7ed80e9e",
             "type": "vocabulary_item",
             "order": 9,
             "hanzi": "一路平安",
@@ -2654,11 +2425,10 @@
             ],
             "examples": [],
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "87567186-c7fa-4150-b150-b3bbf755381e"
+            "check_needed": false
           },
           {
-            "id": "reading_vocab_010",
+            "id": "3a6679d3-0126-4890-9d7e-f9738c768e7f",
             "type": "vocabulary_item",
             "order": 10,
             "hanzi": "哭",
@@ -2670,13 +2440,12 @@
             ],
             "examples": [],
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "81035667-81e6-4570-b8d7-944474883c92"
+            "check_needed": false
           }
         ],
         "blocks": [
           {
-            "id": "reading_01",
+            "id": "9bd9a79e-3279-468d-9f4b-ecd1f7365e19",
             "type": "text_reading",
             "order": 1,
             "title": "阅读理解",
@@ -2685,148 +2454,137 @@
             "check_needed": true,
             "paragraphs": [
               {
-                "id": "reading_p01",
+                "id": "09774607-50d1-46ab-a769-9d723c536d13",
                 "order": 1,
                 "zh": "今天我去江苹家了。",
                 "vi": "Hôm nay tôi đến nhà Giang Bình.",
                 "grammar_refs": [
-                  "grammar_01"
+                  "f8ec59f3-898a-47b2-b536-44dfd8183393"
                 ],
                 "source_origin": "textbook",
-                "check_needed": true,
-                "uuid": "a2ec9bf2-1e4f-4efd-9915-28177c63fdd6"
+                "check_needed": true
               },
               {
-                "id": "reading_p02",
+                "id": "79df4efa-6d58-462c-b963-4f377e7c72df",
                 "order": 2,
                 "zh": "我和江苹是中学同学，她是我的好朋友，也是我们全班同学的朋友。她学习非常努力，是我们班学习最好的学生。她会学习，也会玩儿，还常常帮助别人，老师和同学都很喜欢她。她这次参加了国外一个大学的考试。这个考试非常难，但是她考得很好，得了满分。听说只有三个得满分的。这个大学给了她最高的奖学金。同学们都向她表示祝贺，为她感到高兴。",
                 "vi": "Tôi và Giang Bình là bạn học hồi trung học. Cô ấy là bạn tốt của tôi, cũng là bạn của cả lớp chúng tôi. Cô ấy học rất chăm chỉ, là học sinh học giỏi nhất lớp chúng tôi. Cô ấy biết học, cũng biết chơi, lại thường xuyên giúp đỡ người khác, nên thầy cô và bạn học đều rất thích cô ấy. Lần này cô ấy tham gia kỳ thi của một trường đại học nước ngoài. Kỳ thi này rất khó, nhưng cô ấy thi rất tốt, đạt điểm tuyệt đối. Nghe nói chỉ có ba người đạt điểm tuyệt đối. Trường đại học này đã cấp cho cô ấy học bổng cao nhất. Các bạn học đều chúc mừng cô ấy và vui thay cho cô ấy.",
                 "grammar_refs": [
-                  "grammar_01"
+                  "f8ec59f3-898a-47b2-b536-44dfd8183393"
                 ],
                 "source_origin": "textbook",
-                "check_needed": true,
-                "uuid": "d234a25e-6f56-4323-b3db-4337a6bb57d4"
+                "check_needed": true
               },
               {
-                "id": "reading_p03",
+                "id": "a9b81afc-f6f2-472b-b00e-2c4c42c16521",
                 "order": 3,
                 "zh": "下星期她就要出国留学了，我们班的同学都去看她，给她送行。江苹的家在东城，离我家比较远。我下午四点多就出发了，五点半才到。我到的时候，同学们都已经到了。",
                 "vi": "Tuần sau cô ấy sắp ra nước ngoài du học rồi, các bạn trong lớp chúng tôi đều đến thăm cô ấy, tiễn cô ấy lên đường. Nhà Giang Bình ở Đông Thành, cách nhà tôi khá xa. Tôi hơn bốn giờ chiều đã xuất phát, năm rưỡi mới đến. Khi tôi đến, các bạn học đều đã tới rồi.",
                 "grammar_refs": [
-                  "grammar_01"
+                  "f8ec59f3-898a-47b2-b536-44dfd8183393"
                 ],
                 "source_origin": "textbook",
-                "check_needed": true,
-                "uuid": "c524484c-734f-4cde-b35f-e686c78943bf"
+                "check_needed": true
               },
               {
-                "id": "reading_p04",
+                "id": "75cb35be-70a1-41bc-8290-deb942fefc38",
                 "order": 4,
                 "zh": "江苹热情地欢迎我们。同学们好久不见了，见面以后高兴得又说又笑，玩儿得很愉快。我们预祝江苹成功。祝她一路平安。我说，一定要常联系啊。江苹说，一定。跟她说“再见”的时候，她哭了，我也哭了。",
                 "vi": "Giang Bình nhiệt tình chào đón chúng tôi. Các bạn lâu rồi không gặp, sau khi gặp mặt thì vui đến mức vừa nói vừa cười, chơi rất vui vẻ. Chúng tôi chúc Giang Bình thành công, chúc cô ấy thượng lộ bình an. Tôi nói: “Nhất định phải thường xuyên liên lạc nhé.” Giang Bình nói: “Nhất định rồi.” Lúc nói “tạm biệt” với cô ấy, cô ấy khóc, tôi cũng khóc.",
                 "grammar_refs": [
-                  "grammar_01"
+                  "f8ec59f3-898a-47b2-b536-44dfd8183393"
                 ],
                 "source_origin": "textbook",
-                "check_needed": true,
-                "uuid": "4c3e60a9-3ece-4df2-88e7-5f2f1edc0779"
+                "check_needed": true
               },
               {
-                "id": "reading_p05",
+                "id": "38ce032c-c858-4aea-8c64-47ef74cc454e",
                 "order": 5,
                 "zh": "回家的路上，我想，我们常常说“再见”，但是，有时候“再见”是很难的。我和江苹什么时候能“再见”呢？",
                 "vi": "Trên đường về nhà, tôi nghĩ: chúng ta thường nói “tạm biệt / hẹn gặp lại”, nhưng có lúc “gặp lại” là một chuyện rất khó. Tôi và Giang Bình khi nào mới có thể “gặp lại” đây?",
                 "grammar_refs": [],
                 "source_origin": "textbook",
-                "check_needed": true,
-                "uuid": "fe7a86ab-8c93-4e27-bdaa-d337c5aff6eb"
+                "check_needed": true
               }
             ],
             "lines": [],
             "comprehension_questions": [
               {
-                "id": "reading_q01",
+                "id": "9e251021-f762-48f1-9981-bc0e0750dca3",
                 "question": "今天“我”去哪儿了？",
                 "answer": "今天“我”去江苹家了。",
                 "evidence": [
                   {
-                    "paragraph_id": "reading_p01",
+                    "paragraph_id": "09774607-50d1-46ab-a769-9d723c536d13",
                     "quote": ""
                   }
                 ],
                 "source_origin": "textbook_question_generated_answer",
                 "answer_verified": true,
-                "check_needed": false,
-                "uuid": "8da0a092-02f2-480a-a6c0-65d0bdc24e1a"
+                "check_needed": false
               },
               {
-                "id": "reading_q02",
+                "id": "ac4189db-8a03-4e48-a2b8-e00cd63fd634",
                 "question": "“我”为什么去那儿？",
                 "answer": "因为江苹下星期就要出国留学了，“我”和同学们去看她，给她送行。",
                 "evidence": [
                   {
-                    "paragraph_id": "reading_p03",
+                    "paragraph_id": "a9b81afc-f6f2-472b-b00e-2c4c42c16521",
                     "quote": ""
                   }
                 ],
                 "source_origin": "textbook_question_generated_answer",
                 "answer_verified": true,
-                "check_needed": false,
-                "uuid": "14ffc1e5-673b-4f02-998f-eb23f6856c1e"
+                "check_needed": false
               },
               {
-                "id": "reading_q03",
+                "id": "20854fcd-8a0d-4fa4-9f31-9500b8e1b3a4",
                 "question": "“我”怎么迟到了？",
                 "answer": "因为江苹的家在东城，离“我”家比较远。“我”下午四点多就出发了，五点半才到。",
                 "evidence": [
                   {
-                    "paragraph_id": "reading_p03",
+                    "paragraph_id": "a9b81afc-f6f2-472b-b00e-2c4c42c16521",
                     "quote": ""
                   }
                 ],
                 "source_origin": "textbook_question_generated_answer",
                 "answer_verified": true,
-                "check_needed": false,
-                "uuid": "9c8e00d2-1c8a-44a8-b8fe-8a4f0389c3cb"
+                "check_needed": false
               },
               {
-                "id": "reading_q04",
+                "id": "2b8fa222-6f39-4c83-b910-93bae3740dcb",
                 "question": "同学们聊得高兴吗？",
                 "answer": "高兴。他们好久不见了，见面以后高兴得又说又笑，玩儿得很愉快。",
                 "evidence": [
                   {
-                    "paragraph_id": "reading_p04",
+                    "paragraph_id": "75cb35be-70a1-41bc-8290-deb942fefc38",
                     "quote": ""
                   }
                 ],
                 "source_origin": "textbook_question_generated_answer",
                 "answer_verified": true,
-                "check_needed": false,
-                "uuid": "99a6e753-20a4-482c-bcef-dbd53fe1e0cf"
+                "check_needed": false
               },
               {
-                "id": "reading_q05",
+                "id": "5e69569d-fb68-4a4b-943a-6680d390f578",
                 "question": "同学们怎么向江苹表达祝福？",
                 "answer": "同学们预祝江苹成功，祝她一路平安，还说一定要常联系。",
                 "evidence": [
                   {
-                    "paragraph_id": "reading_p04",
+                    "paragraph_id": "75cb35be-70a1-41bc-8290-deb942fefc38",
                     "quote": ""
                   }
                 ],
                 "source_origin": "textbook_question_generated_answer",
                 "answer_verified": true,
-                "check_needed": false,
-                "uuid": "665fdd07-80d3-48fb-966d-323a05470a04"
+                "check_needed": false
               }
-            ],
-            "uuid": "777c4df1-f641-4050-b493-81079b9c6651"
+            ]
           }
         ],
         "items": [
           {
-            "id": "reading_01",
+            "id": "9bd9a79e-3279-468d-9f4b-ecd1f7365e19",
             "type": "text_reading",
             "order": 1,
             "title": "阅读理解",
@@ -2835,149 +2593,137 @@
             "check_needed": true,
             "paragraphs": [
               {
-                "id": "reading_p01",
+                "id": "09774607-50d1-46ab-a769-9d723c536d13",
                 "order": 1,
                 "zh": "今天我去江苹家了。",
                 "vi": "Hôm nay tôi đến nhà Giang Bình.",
                 "grammar_refs": [
-                  "grammar_01"
+                  "f8ec59f3-898a-47b2-b536-44dfd8183393"
                 ],
                 "source_origin": "textbook",
-                "check_needed": true,
-                "uuid": "01ec60dc-e202-415f-bb58-e97bdd07318f"
+                "check_needed": true
               },
               {
-                "id": "reading_p02",
+                "id": "79df4efa-6d58-462c-b963-4f377e7c72df",
                 "order": 2,
                 "zh": "我和江苹是中学同学，她是我的好朋友，也是我们全班同学的朋友。她学习非常努力，是我们班学习最好的学生。她会学习，也会玩儿，还常常帮助别人，老师和同学都很喜欢她。她这次参加了国外一个大学的考试。这个考试非常难，但是她考得很好，得了满分。听说只有三个得满分的。这个大学给了她最高的奖学金。同学们都向她表示祝贺，为她感到高兴。",
                 "vi": "Tôi và Giang Bình là bạn học hồi trung học. Cô ấy là bạn tốt của tôi, cũng là bạn của cả lớp chúng tôi. Cô ấy học rất chăm chỉ, là học sinh học giỏi nhất lớp chúng tôi. Cô ấy biết học, cũng biết chơi, lại thường xuyên giúp đỡ người khác, nên thầy cô và bạn học đều rất thích cô ấy. Lần này cô ấy tham gia kỳ thi của một trường đại học nước ngoài. Kỳ thi này rất khó, nhưng cô ấy thi rất tốt, đạt điểm tuyệt đối. Nghe nói chỉ có ba người đạt điểm tuyệt đối. Trường đại học này đã cấp cho cô ấy học bổng cao nhất. Các bạn học đều chúc mừng cô ấy và vui thay cho cô ấy.",
                 "grammar_refs": [
-                  "grammar_01"
+                  "f8ec59f3-898a-47b2-b536-44dfd8183393"
                 ],
                 "source_origin": "textbook",
-                "check_needed": true,
-                "uuid": "01688ce8-9099-4356-a889-3fbc471f5c7d"
+                "check_needed": true
               },
               {
-                "id": "reading_p03",
+                "id": "a9b81afc-f6f2-472b-b00e-2c4c42c16521",
                 "order": 3,
                 "zh": "下星期她就要出国留学了，我们班的同学都去看她，给她送行。江苹的家在东城，离我家比较远。我下午四点多就出发了，五点半才到。我到的时候，同学们都已经到了。",
                 "vi": "Tuần sau cô ấy sắp ra nước ngoài du học rồi, các bạn trong lớp chúng tôi đều đến thăm cô ấy, tiễn cô ấy lên đường. Nhà Giang Bình ở Đông Thành, cách nhà tôi khá xa. Tôi hơn bốn giờ chiều đã xuất phát, năm rưỡi mới đến. Khi tôi đến, các bạn học đều đã tới rồi.",
                 "grammar_refs": [
-                  "grammar_01"
+                  "f8ec59f3-898a-47b2-b536-44dfd8183393"
                 ],
                 "source_origin": "textbook",
-                "check_needed": true,
-                "uuid": "76212160-8df1-4b70-90c1-d94676967118"
+                "check_needed": true
               },
               {
-                "id": "reading_p04",
+                "id": "75cb35be-70a1-41bc-8290-deb942fefc38",
                 "order": 4,
                 "zh": "江苹热情地欢迎我们。同学们好久不见了，见面以后高兴得又说又笑，玩儿得很愉快。我们预祝江苹成功。祝她一路平安。我说，一定要常联系啊。江苹说，一定。跟她说“再见”的时候，她哭了，我也哭了。",
                 "vi": "Giang Bình nhiệt tình chào đón chúng tôi. Các bạn lâu rồi không gặp, sau khi gặp mặt thì vui đến mức vừa nói vừa cười, chơi rất vui vẻ. Chúng tôi chúc Giang Bình thành công, chúc cô ấy thượng lộ bình an. Tôi nói: “Nhất định phải thường xuyên liên lạc nhé.” Giang Bình nói: “Nhất định rồi.” Lúc nói “tạm biệt” với cô ấy, cô ấy khóc, tôi cũng khóc.",
                 "grammar_refs": [
-                  "grammar_01"
+                  "f8ec59f3-898a-47b2-b536-44dfd8183393"
                 ],
                 "source_origin": "textbook",
-                "check_needed": true,
-                "uuid": "09742a2c-dad8-4b89-99fe-827bfb25c211"
+                "check_needed": true
               },
               {
-                "id": "reading_p05",
+                "id": "38ce032c-c858-4aea-8c64-47ef74cc454e",
                 "order": 5,
                 "zh": "回家的路上，我想，我们常常说“再见”，但是，有时候“再见”是很难的。我和江苹什么时候能“再见”呢？",
                 "vi": "Trên đường về nhà, tôi nghĩ: chúng ta thường nói “tạm biệt / hẹn gặp lại”, nhưng có lúc “gặp lại” là một chuyện rất khó. Tôi và Giang Bình khi nào mới có thể “gặp lại” đây?",
                 "grammar_refs": [],
                 "source_origin": "textbook",
-                "check_needed": true,
-                "uuid": "61978cd3-c5b8-447c-b4d0-5d262e9b3dc8"
+                "check_needed": true
               }
             ],
             "lines": [],
             "comprehension_questions": [
               {
-                "id": "reading_q01",
+                "id": "9e251021-f762-48f1-9981-bc0e0750dca3",
                 "question": "今天“我”去哪儿了？",
                 "answer": "今天“我”去江苹家了。",
                 "evidence": [
                   {
-                    "paragraph_id": "reading_p01",
+                    "paragraph_id": "09774607-50d1-46ab-a769-9d723c536d13",
                     "quote": ""
                   }
                 ],
                 "source_origin": "textbook_question_generated_answer",
                 "answer_verified": true,
-                "check_needed": false,
-                "uuid": "d28dc4bc-7b1d-476b-9a50-6ff09b5eea12"
+                "check_needed": false
               },
               {
-                "id": "reading_q02",
+                "id": "ac4189db-8a03-4e48-a2b8-e00cd63fd634",
                 "question": "“我”为什么去那儿？",
                 "answer": "因为江苹下星期就要出国留学了，“我”和同学们去看她，给她送行。",
                 "evidence": [
                   {
-                    "paragraph_id": "reading_p03",
+                    "paragraph_id": "a9b81afc-f6f2-472b-b00e-2c4c42c16521",
                     "quote": ""
                   }
                 ],
                 "source_origin": "textbook_question_generated_answer",
                 "answer_verified": true,
-                "check_needed": false,
-                "uuid": "6e99de1e-5cef-4848-88d0-d7ec80a2779f"
+                "check_needed": false
               },
               {
-                "id": "reading_q03",
+                "id": "20854fcd-8a0d-4fa4-9f31-9500b8e1b3a4",
                 "question": "“我”怎么迟到了？",
                 "answer": "因为江苹的家在东城，离“我”家比较远。“我”下午四点多就出发了，五点半才到。",
                 "evidence": [
                   {
-                    "paragraph_id": "reading_p03",
+                    "paragraph_id": "a9b81afc-f6f2-472b-b00e-2c4c42c16521",
                     "quote": ""
                   }
                 ],
                 "source_origin": "textbook_question_generated_answer",
                 "answer_verified": true,
-                "check_needed": false,
-                "uuid": "a1edc535-fb68-4f86-be5b-15b9b3c6b2a2"
+                "check_needed": false
               },
               {
-                "id": "reading_q04",
+                "id": "2b8fa222-6f39-4c83-b910-93bae3740dcb",
                 "question": "同学们聊得高兴吗？",
                 "answer": "高兴。他们好久不见了，见面以后高兴得又说又笑，玩儿得很愉快。",
                 "evidence": [
                   {
-                    "paragraph_id": "reading_p04",
+                    "paragraph_id": "75cb35be-70a1-41bc-8290-deb942fefc38",
                     "quote": ""
                   }
                 ],
                 "source_origin": "textbook_question_generated_answer",
                 "answer_verified": true,
-                "check_needed": false,
-                "uuid": "a68548bd-1c08-48c0-b9ae-e6a9c7e51b82"
+                "check_needed": false
               },
               {
-                "id": "reading_q05",
+                "id": "5e69569d-fb68-4a4b-943a-6680d390f578",
                 "question": "同学们怎么向江苹表达祝福？",
                 "answer": "同学们预祝江苹成功，祝她一路平安，还说一定要常联系。",
                 "evidence": [
                   {
-                    "paragraph_id": "reading_p04",
+                    "paragraph_id": "75cb35be-70a1-41bc-8290-deb942fefc38",
                     "quote": ""
                   }
                 ],
                 "source_origin": "textbook_question_generated_answer",
                 "answer_verified": true,
-                "check_needed": false,
-                "uuid": "c3840d03-0d9a-4099-890c-e99755d00520"
+                "check_needed": false
               }
-            ],
-            "uuid": "092057db-c130-443c-b0e7-9997375a103e"
+            ]
           }
-        ],
-        "uuid": "d70945f0-44a7-4f9e-a82b-ad1e3c68e84d"
+        ]
       },
       {
-        "id": "section_08_character_writing",
+        "id": "2a3cfdb8-618f-43d3-9ad4-160d1dbb366a",
         "type": "character_writing",
         "order": 8,
         "title": "写汉字",
@@ -2985,11 +2731,10 @@
         "source_origin": "textbook",
         "check_needed": true,
         "items": [],
-        "empty_reason_vi": "Bài này không thấy phần 写汉字 riêng trong PDF scan; giữ section để UI/parser ổn định.",
-        "uuid": "7a7e8a74-423d-4457-9808-ee9680d9d2b1"
+        "empty_reason_vi": "Bài này không thấy phần 写汉字 riêng trong PDF scan; giữ section để UI/parser ổn định."
       },
       {
-        "id": "section_09_summary",
+        "id": "944b8c3a-d3d4-4265-a907-10cef8340ac2",
         "type": "summary",
         "order": 9,
         "title": "总结",
@@ -3008,14 +2753,12 @@
         ],
         "grammar_points": [
           {
-            "id": "grammar_01",
-            "title": "语气助词“了”（1）",
-            "uuid": "1bb50e13-e369-497f-8cc3-09a828603ee7"
+            "id": "f8ec59f3-898a-47b2-b536-44dfd8183393",
+            "title": "语气助词“了”（1）"
           },
           {
-            "id": "grammar_02",
-            "title": "“再”和“又”",
-            "uuid": "0fa5885c-22c1-4996-90be-3b5281370e32"
+            "id": "57b14753-688a-41b6-9e0d-b61dbbf574d7",
+            "title": "“再”和“又”"
           }
         ],
         "key_patterns": [
@@ -3048,10 +2791,49 @@
             "7.1.1 辨音辨调 cần kiểm tra lại một vài dòng nhỏ trong PDF scan.",
             "写汉字: không thấy phần riêng trong PDF; cần giữ trạng thái không tự tạo."
           ]
-        },
-        "uuid": "4ba6d715-744b-4d61-abea-a6cf3fe276aa"
+        }
       }
     ],
+    "metadata": {
+      "legacy_id": "hanyu_2_1_lesson_01",
+      "book": "Hanyu Jiaocheng",
+      "volume": "第二册上",
+      "volume_vi": "Quyển 2 Thượng",
+      "lesson_index": 1,
+      "lesson_number_cn": "第一课",
+      "lesson_title_cn": "田芳去哪儿了",
+      "lesson_title_pinyin": "Tián Fāng qù nǎr le",
+      "lesson_title_vi": "Điền Phương đi đâu rồi?",
+      "lesson_title_en": "Where has Tian Fang gone?",
+      "source_files": [
+        {
+          "name": "Hanyu Jiaocheng 2-1.pdf",
+          "type": "pdf_scan",
+          "source_origin": "textbook",
+          "check_needed": true,
+          "page_start": 18,
+          "page_end": 32
+        },
+        {
+          "name": "Tong_hop_tu_vung_Han_ngu_quyen_2_Bai_1-25.docx",
+          "type": "uploaded_crosscheck",
+          "source_origin": "uploaded_crosscheck",
+          "check_needed": false
+        },
+        {
+          "name": "Học kì 2 上-下.md",
+          "type": "uploaded_crosscheck",
+          "source_origin": "uploaded_crosscheck",
+          "check_needed": false
+        },
+        {
+          "name": "hanyu_lesson_full_coverage_sample_v2_3_0.json",
+          "type": "structure_sample",
+          "source_origin": "uploaded_crosscheck",
+          "check_needed": false
+        }
+      ]
+    },
     "summary": {
       "lesson_parts": [
         "Bài khóa",
@@ -3066,14 +2848,12 @@
       ],
       "grammar_points": [
         {
-          "id": "grammar_01",
-          "title": "Trợ từ ngữ khí 了",
-          "uuid": "fb3c2b8f-3607-4915-817c-a8f265da9074"
+          "id": "f8ec59f3-898a-47b2-b536-44dfd8183393",
+          "title": "Trợ từ ngữ khí 了"
         },
         {
-          "id": "grammar_02",
-          "title": "Phân biệt 再 và 又",
-          "uuid": "81d2abba-e804-4e43-9868-212b6cf5064b"
+          "id": "57b14753-688a-41b6-9e0d-b61dbbf574d7",
+          "title": "Phân biệt 再 và 又"
         }
       ],
       "main_patterns": [],
@@ -3090,209 +2870,6 @@
         "Đọc hiểu"
       ],
       "check_needed": false
-    },
-    "uuid": "51cab325-90dd-4ce5-8988-6951b0349116"
-  },
-  "coverage_report": {
-    "version": "coverage_v1",
-    "coverage_status": "complete_unverified",
-    "expected_exercise_count_from_pdf": 10,
-    "actual_exercise_count_in_json": 10,
-    "all_exercises_covered": true,
-    "all_exercise_content_verified": false,
-    "missing_exercise_indexes": [],
-    "expected_exercises_from_pdf": [
-      {
-        "order": 1,
-        "title_cn": "一、语音",
-        "title_vi": "Ngữ âm",
-        "canonical_type": "phonetics",
-        "canonical_variant": "pronunciation_tone_minimal_pairs",
-        "json_item_id": "exercise_01",
-        "page_start": null,
-        "page_end": null,
-        "extracted": true,
-        "content_verified": false,
-        "answer_verified": false,
-        "source_origin": "textbook",
-        "check_needed": true,
-        "missing_reason": ""
-      },
-      {
-        "order": 2,
-        "title_cn": "二、替换",
-        "title_vi": "Thay thế theo mẫu",
-        "canonical_type": "substitution_drill",
-        "canonical_variant": "substitution_or_transform_drill",
-        "json_item_id": "exercise_02",
-        "page_start": null,
-        "page_end": null,
-        "extracted": true,
-        "content_verified": true,
-        "answer_verified": true,
-        "source_origin": "textbook",
-        "check_needed": false,
-        "missing_reason": ""
-      },
-      {
-        "order": 3,
-        "title_cn": "三、选词填空",
-        "title_vi": "Chọn từ điền chỗ trống",
-        "canonical_type": "choose_words_fill_blank",
-        "canonical_variant": "word_bank_fill_blank",
-        "json_item_id": "exercise_03",
-        "page_start": null,
-        "page_end": null,
-        "extracted": true,
-        "content_verified": true,
-        "answer_verified": true,
-        "source_origin": "textbook_question_generated_answer",
-        "check_needed": false,
-        "missing_reason": ""
-      },
-      {
-        "order": 4,
-        "title_cn": "四、用“还没（有）……呢”回答问题",
-        "title_vi": "Dùng “还没（有）……呢” trả lời",
-        "canonical_type": "answer_questions",
-        "canonical_variant": "complete_sentence_with_given_words",
-        "json_item_id": "exercise_04",
-        "page_start": null,
-        "page_end": null,
-        "extracted": true,
-        "content_verified": true,
-        "answer_verified": true,
-        "source_origin": "textbook_question_generated_answer",
-        "check_needed": false,
-        "missing_reason": ""
-      },
-      {
-        "order": 5,
-        "title_cn": "五、选词填空",
-        "title_vi": "Chọn từ điền chỗ trống",
-        "canonical_type": "fill_blank",
-        "canonical_variant": "free_fill_blank",
-        "json_item_id": "exercise_05",
-        "page_start": null,
-        "page_end": null,
-        "extracted": true,
-        "content_verified": true,
-        "answer_verified": true,
-        "source_origin": "textbook_question_generated_answer",
-        "check_needed": false,
-        "missing_reason": ""
-      },
-      {
-        "order": 6,
-        "title_cn": "六、完成会话",
-        "title_vi": "Hoàn thành hội thoại",
-        "canonical_type": "complete_dialogue",
-        "canonical_variant": "complete_dialogue",
-        "json_item_id": "exercise_06",
-        "page_start": null,
-        "page_end": null,
-        "extracted": true,
-        "content_verified": true,
-        "answer_verified": false,
-        "source_origin": "textbook",
-        "check_needed": false,
-        "missing_reason": ""
-      },
-      {
-        "order": 7,
-        "title_cn": "七、改错句",
-        "title_vi": "Sửa câu sai",
-        "canonical_type": "correct_sentence",
-        "canonical_variant": "error_correction",
-        "json_item_id": "exercise_07",
-        "page_start": null,
-        "page_end": null,
-        "extracted": true,
-        "content_verified": true,
-        "answer_verified": true,
-        "source_origin": "textbook_question_generated_answer",
-        "check_needed": false,
-        "missing_reason": ""
-      },
-      {
-        "order": 8,
-        "title_cn": "八、选择正确答案",
-        "title_vi": "Chọn đáp án đúng",
-        "canonical_type": "multiple_choice",
-        "canonical_variant": "multiple_choice",
-        "json_item_id": "exercise_08",
-        "page_start": null,
-        "page_end": null,
-        "extracted": true,
-        "content_verified": true,
-        "answer_verified": true,
-        "source_origin": "textbook_question_generated_answer",
-        "check_needed": false,
-        "missing_reason": ""
-      },
-      {
-        "order": 9,
-        "title_cn": "九、交际会话",
-        "title_vi": "Hội thoại giao tiếp",
-        "canonical_type": "communication_dialogue",
-        "canonical_variant": "role_play",
-        "json_item_id": "exercise_09",
-        "page_start": null,
-        "page_end": null,
-        "extracted": true,
-        "content_verified": true,
-        "answer_verified": false,
-        "source_origin": "textbook",
-        "check_needed": false,
-        "missing_reason": ""
-      },
-      {
-        "order": 10,
-        "title_cn": "十、阅读理解",
-        "title_vi": "Đọc hiểu",
-        "canonical_type": "reading_comprehension",
-        "canonical_variant": "reading_comprehension",
-        "json_item_id": "exercise_10",
-        "page_start": null,
-        "page_end": null,
-        "extracted": true,
-        "content_verified": true,
-        "answer_verified": false,
-        "source_origin": "textbook",
-        "check_needed": false,
-        "missing_reason": ""
-      }
-    ],
-    "unknown_or_unmapped_blocks": [],
-    "coverage_gates": [
-      {
-        "id": "gate_text",
-        "label": "Text covered",
-        "passed": true,
-        "uuid": "3c32ec95-46ba-428d-8906-a1f747a0caee"
-      },
-      {
-        "id": "gate_vocab",
-        "label": "Vocabulary covered",
-        "passed": true,
-        "uuid": "2ad4777e-ec2b-400f-8fcd-6bb6869ae575"
-      },
-      {
-        "id": "gate_exercises",
-        "label": "Exercises covered",
-        "passed": true,
-        "expected": 10,
-        "actual": 10,
-        "uuid": "de15a64a-eeea-4197-a516-ea4bf3a58953"
-      },
-      {
-        "id": "gate_scan_clarity",
-        "label": "All scan text fully verified",
-        "passed": false,
-        "reason": "Một vài dòng ngữ âm trong 7.1.1 cần kiểm tra lại từ PDF scan.",
-        "uuid": "148e48fc-2d0f-49cc-a63b-11cfc4ff776a"
-      }
-    ],
-    "final_verification_allowed": false
+    }
   }
 }

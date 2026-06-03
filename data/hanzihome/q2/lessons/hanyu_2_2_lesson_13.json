@@ -1,60 +1,6 @@
 {
-  "schema_version": "2.3.0-full",
-  "content_type": "chinese_textbook_lesson",
-  "verification_status": "verified",
-  "source": {
-    "book": "Hanyu Jiaocheng",
-    "volume": "第二册下",
-    "volume_vi": "Quyển 2 Hạ",
-    "lesson_index": 13,
-    "lesson_number_cn": "第十三课",
-    "lesson_title_cn": "我的眼镜儿摔坏了",
-    "lesson_title_pinyin": "Wǒ de yǎnjìngr shuāi huài le",
-    "lesson_title_vi": "Kính mắt của tôi bị rơi vỡ rồi",
-    "lesson_title_en": "I've broken my glasses",
-    "source_files": [
-      {
-        "name": "Hanyu Jiaocheng 2-2.pdf",
-        "type": "pdf_scan",
-        "source_origin": "textbook",
-        "check_needed": true,
-        "page_start": 19,
-        "page_end": 23
-      },
-      {
-        "name": "Tong_hop_tu_vung_Han_ngu_quyen_2_Bai_1-25.docx",
-        "type": "uploaded_crosscheck",
-        "source_origin": "uploaded_crosscheck",
-        "check_needed": false
-      },
-      {
-        "name": "Học kì 2 上-下.md",
-        "type": "uploaded_crosscheck",
-        "source_origin": "uploaded_crosscheck",
-        "check_needed": false
-      },
-      {
-        "name": "hanyuLesson.schema.v2.3.0.full.ts",
-        "type": "schema",
-        "source_origin": "uploaded_crosscheck",
-        "check_needed": false
-      }
-    ],
-    "web_crosscheck": [
-      {
-        "title": "汉语教程－Lesson 13 我的眼镜儿摔坏了 Flashcards",
-        "source_origin": "web_crosscheck",
-        "note": "External cross-check only; not used as primary source."
-      },
-      {
-        "title": "汉语教程 第二册下 第十三课 我的眼镜儿摔坏了 video lesson",
-        "source_origin": "web_crosscheck",
-        "note": "External cross-check only; not used as primary source."
-      }
-    ]
-  },
   "lesson": {
-    "id": "hanyu_2_2_lesson_13",
+    "id": "3707b818-a5ca-489f-819c-c083912e3869",
     "title": {
       "zh": "我的眼镜儿摔坏了",
       "pinyin": "Wǒ de yǎnjìngr shuāi huài le",
@@ -69,7 +15,7 @@
     ],
     "sections": [
       {
-        "id": "section_01_text",
+        "id": "a6c0d522-99be-4f36-881c-b9b2c6beeb85",
         "type": "text",
         "order": 1,
         "title": "课文",
@@ -78,7 +24,7 @@
         "check_needed": false,
         "blocks": [
           {
-            "id": "text_01",
+            "id": "e155d5ea-f89d-45f0-ab8d-094ce9e719f0",
             "type": "text_dialogue",
             "order": 1,
             "title": "要洗的照片选好了吗",
@@ -88,7 +34,7 @@
             "summary_vi": "玛丽和麦克要选一些在长城照的照片去洗。",
             "lines": [
               {
-                "id": "text_01_l01",
+                "id": "f8046d8e-353e-4b63-a072-7498c8f1d9ff",
                 "order": 1,
                 "speaker": "玛丽",
                 "zh": "我们在长城照的照片选好了吗？下午去洗吧。",
@@ -97,14 +43,13 @@
                 "audio_key": "",
                 "vocab_refs": [],
                 "grammar_refs": [
-                  "grammar_passive_meaning"
+                  "6c610f98-2d68-4ff6-85e8-0cccbec38c7b"
                 ],
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "bc5e6294-fb48-4f9e-a113-8367a0880dee"
+                "check_needed": false
               },
               {
-                "id": "text_01_l02",
+                "id": "30929615-34c8-4e5b-b0a2-5ad3358ad755",
                 "order": 2,
                 "speaker": "麦克",
                 "zh": "还没选呢。咱们一起选吧。",
@@ -114,11 +59,10 @@
                 "vocab_refs": [],
                 "grammar_refs": [],
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "d5841fb8-5b16-4605-8724-25588e5039cb"
+                "check_needed": false
               },
               {
-                "id": "text_01_l03",
+                "id": "9faf6980-effe-42f1-a01e-7f1740da2edb",
                 "order": 3,
                 "speaker": "玛丽",
                 "zh": "快放到电脑上看看，照得怎么样。",
@@ -128,11 +72,10 @@
                 "vocab_refs": [],
                 "grammar_refs": [],
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "b30f34f3-a697-4974-859d-886f43b4b8cc"
+                "check_needed": false
               },
               {
-                "id": "text_01_l04",
+                "id": "146f8fa1-ae74-468d-910e-19cab53e3cf3",
                 "order": 4,
                 "speaker": "麦克",
                 "zh": "这些照得都非常好，张张都很漂亮。",
@@ -141,14 +84,13 @@
                 "audio_key": "",
                 "vocab_refs": [],
                 "grammar_refs": [
-                  "grammar_measure_word_reduplication"
+                  "5e0db92f-f3b4-4746-a9a7-7761bcd985ee"
                 ],
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "e627cd9d-537f-4bc0-b5d8-c7b3da742c22"
+                "check_needed": false
               },
               {
-                "id": "text_01_l05",
+                "id": "44d4c32e-309d-4802-b7cf-e41ee8052535",
                 "order": 5,
                 "speaker": "玛丽",
                 "zh": "这张没照好，人照小了。你再看看这张，眼睛都闭上了，像睡着了一样。",
@@ -158,11 +100,10 @@
                 "vocab_refs": [],
                 "grammar_refs": [],
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "3366a91e-3f8e-49db-b4ec-483e38669ca3"
+                "check_needed": false
               },
               {
-                "id": "text_01_l06",
+                "id": "6f4b4423-8315-40e6-88fa-2fa2038271af",
                 "order": 6,
                 "speaker": "麦克",
                 "zh": "这张怎么样？",
@@ -172,11 +113,10 @@
                 "vocab_refs": [],
                 "grammar_refs": [],
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "7441a7df-245d-40b5-8454-0c5c9d30d02a"
+                "check_needed": false
               },
               {
-                "id": "text_01_l07",
+                "id": "6de58c5b-164f-4b2f-8d7e-84f1c7c1a66c",
                 "order": 7,
                 "speaker": "玛丽",
                 "zh": "不怎么样。",
@@ -186,11 +126,10 @@
                 "vocab_refs": [],
                 "grammar_refs": [],
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "6477ffff-9912-4f28-967f-c56e98b69fed"
+                "check_needed": false
               },
               {
-                "id": "text_01_l08",
+                "id": "9d76be1a-c606-44bb-a490-a9bd82982e3b",
                 "order": 8,
                 "speaker": "麦克",
                 "zh": "这张照得也不太好，照虚了，一点儿也不清楚。",
@@ -200,11 +139,10 @@
                 "vocab_refs": [],
                 "grammar_refs": [],
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "58cf0270-0b5c-437a-8cfe-2e0187052dac"
+                "check_needed": false
               },
               {
-                "id": "text_01_l09",
+                "id": "6e148072-17aa-4ebd-88a1-c59b2fc0ba17",
                 "order": 9,
                 "speaker": "玛丽",
                 "zh": "照得不好的都删了吧。这两张照得最好，像油画一样。放大几张吧。",
@@ -214,11 +152,10 @@
                 "vocab_refs": [],
                 "grammar_refs": [],
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "67a15757-48ae-4c07-a874-52a441b3b575"
+                "check_needed": false
               },
               {
-                "id": "text_01_l10",
+                "id": "a8845639-9fca-4398-853d-a08fb63482a8",
                 "order": 10,
                 "speaker": "麦克",
                 "zh": "你看放成多大的？",
@@ -228,11 +165,10 @@
                 "vocab_refs": [],
                 "grammar_refs": [],
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "5a404092-024d-47ba-8d32-952a2cc07ba2"
+                "check_needed": false
               },
               {
-                "id": "text_01_l11",
+                "id": "eb3a72ec-54fc-469d-929b-b614c65e00f1",
                 "order": 11,
                 "speaker": "玛丽",
                 "zh": "放成十寸的就行了。",
@@ -242,16 +178,14 @@
                 "vocab_refs": [],
                 "grammar_refs": [],
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "b56f3512-93de-4278-b884-087bbb99db99"
+                "check_needed": false
               }
             ],
             "paragraphs": [],
-            "comprehension_questions": [],
-            "uuid": "4042a0d6-ee48-49b4-95df-32028b223a03"
+            "comprehension_questions": []
           },
           {
-            "id": "text_02",
+            "id": "0156dd39-d5b4-41f5-866d-d336dd29bbc2",
             "type": "text_dialogue",
             "order": 2,
             "title": "我的眼镜儿摔坏了",
@@ -261,7 +195,7 @@
             "summary_vi": "一个下雪天的早上，在办公室里，两个人在议论城市交通问题。",
             "lines": [
               {
-                "id": "text_02_l01",
+                "id": "887014e5-f6b0-4777-9f95-85a69532ca36",
                 "order": 1,
                 "speaker": "小白",
                 "zh": "哎呀，差点儿迟到。",
@@ -270,14 +204,13 @@
                 "audio_key": "",
                 "vocab_refs": [],
                 "grammar_refs": [
-                  "note_chadianr"
+                  "9ad7c4a1-294d-4645-b1c5-239dfdcbc123"
                 ],
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "d82ab8f4-dfd2-47e1-8c04-239205f86d36"
+                "check_needed": false
               },
               {
-                "id": "text_02_l02",
+                "id": "65232ef9-30a1-4305-b8b7-12a8ac5aeb91",
                 "order": 2,
                 "speaker": "小黄",
                 "zh": "是开车来的吗？",
@@ -287,11 +220,10 @@
                 "vocab_refs": [],
                 "grammar_refs": [],
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "591293cd-639c-4cdb-8e45-b008f146c8ec"
+                "check_needed": false
               },
               {
-                "id": "text_02_l03",
+                "id": "2c1213ac-f81d-414f-8b55-5abe77fe83fc",
                 "order": 3,
                 "speaker": "小白",
                 "zh": "是，一下雪就堵车，又碰上一起交通事故，我的车在路上整整堵了二十多分钟。",
@@ -301,11 +233,10 @@
                 "vocab_refs": [],
                 "grammar_refs": [],
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "bacbf5ba-6f90-4bc8-854a-830d02aea3b8"
+                "check_needed": false
               },
               {
-                "id": "text_02_l04",
+                "id": "d797c234-0a16-42e3-bc45-29782e65cb1b",
                 "order": 4,
                 "speaker": "小黄",
                 "zh": "你的眼镜儿怎么了？",
@@ -315,11 +246,10 @@
                 "vocab_refs": [],
                 "grammar_refs": [],
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "211b2b56-2a9d-4bb6-9d57-227bddcdf406"
+                "check_needed": false
               },
               {
-                "id": "text_02_l05",
+                "id": "c99f042b-fa9a-478c-aba1-5da333a677e1",
                 "order": 5,
                 "speaker": "小白",
                 "zh": "别提了，今天倒霉得很。我刚出门就摔了一跤，眼镜儿也摔在地上摔坏了。",
@@ -328,16 +258,15 @@
                 "audio_key": "",
                 "vocab_refs": [],
                 "grammar_refs": [
-                  "grammar_passive_meaning",
-                  "note_bietile",
-                  "note_dehen"
+                  "6c610f98-2d68-4ff6-85e8-0cccbec38c7b",
+                  "dff6e5fd-b17c-416c-9b26-c132ffa8221b",
+                  "c90c2355-b27d-4fb8-bbeb-0d15f6c70319"
                 ],
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "b5071090-2159-44eb-8beb-464226972893"
+                "check_needed": false
               },
               {
-                "id": "text_02_l06",
+                "id": "e8680b0f-6dcc-4fc7-abbd-084aba5d3b87",
                 "order": 6,
                 "speaker": "小黄",
                 "zh": "你几点从家里出来的？",
@@ -347,11 +276,10 @@
                 "vocab_refs": [],
                 "grammar_refs": [],
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "0415ef7c-935b-451f-80ea-f8afa32ac427"
+                "check_needed": false
               },
               {
-                "id": "text_02_l07",
+                "id": "cc8da348-3e89-4f64-a680-de239f505497",
                 "order": 7,
                 "speaker": "小白",
                 "zh": "六点钟就从家里出来了，你看，快八点了才到。",
@@ -361,11 +289,10 @@
                 "vocab_refs": [],
                 "grammar_refs": [],
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "5b556fde-fa57-43e6-9df3-83f06856c466"
+                "check_needed": false
               },
               {
-                "id": "text_02_l08",
+                "id": "2adb7cf6-26c1-4029-809e-67342fb0227f",
                 "order": 8,
                 "speaker": "小黄",
                 "zh": "所以，我还是愿意骑车去上班，骑车能保证时间，还可以锻炼身体。",
@@ -375,11 +302,10 @@
                 "vocab_refs": [],
                 "grammar_refs": [],
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "8dcc991b-dce8-4911-b538-f2c5a955cf17"
+                "check_needed": false
               },
               {
-                "id": "text_02_l09",
+                "id": "f42aa089-875d-48c4-9213-a083ec251fe7",
                 "order": 9,
                 "speaker": "小白",
                 "zh": "可是，你别忘了，骑车的人太多，有的人又不遵守交通规则，也是造成交通拥挤的主要原因之一。今天的事故就是一辆自行车引起的。",
@@ -389,11 +315,10 @@
                 "vocab_refs": [],
                 "grammar_refs": [],
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "81619d21-7123-4a8f-9f07-b00f9691ead4"
+                "check_needed": false
               },
               {
-                "id": "text_02_l10",
+                "id": "f7419a05-c714-4cff-ae26-210852d56303",
                 "order": 10,
                 "speaker": "小黄",
                 "zh": "有汽车的人也一年比一年多，城市交通是一个大问题。我看最好还是赶快发展地铁。",
@@ -402,22 +327,19 @@
                 "audio_key": "",
                 "vocab_refs": [],
                 "grammar_refs": [
-                  "grammar_year_by_year"
+                  "874e376a-a113-46ba-b49b-c492f5f33124"
                 ],
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "42589117-b5d1-4120-b819-3730b5fab6c2"
+                "check_needed": false
               }
             ],
             "paragraphs": [],
-            "comprehension_questions": [],
-            "uuid": "c40f52ac-112a-4ca4-8c3f-cb09fcf5f44a"
+            "comprehension_questions": []
           }
-        ],
-        "uuid": "fc27c8d2-1952-4348-92eb-4a0b9e13ef88"
+        ]
       },
       {
-        "id": "section_02_vocabulary",
+        "id": "78c30bf4-c314-4c4c-86e3-4dd62382dd78",
         "type": "vocabulary",
         "order": 2,
         "title": "生词",
@@ -426,7 +348,7 @@
         "check_needed": false,
         "items": [
           {
-            "id": "vocab_001",
+            "id": "68c05a12-9d8e-45d9-a413-786bcf2f780a",
             "type": "vocabulary_item",
             "order": 1,
             "hanzi": "照",
@@ -450,11 +372,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "fbee7033-3a11-45bf-90b1-528b2bd9b77c"
+            "check_needed": false
           },
           {
-            "id": "vocab_002",
+            "id": "8c18cf3c-e9dc-42e1-8faf-eb26799cabab",
             "type": "vocabulary_item",
             "order": 2,
             "hanzi": "选",
@@ -478,11 +399,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "310404f3-d3cb-4baa-88cd-f04dcd86a903"
+            "check_needed": false
           },
           {
-            "id": "vocab_003",
+            "id": "1fbd69b7-603a-44ea-8d57-10cd4def9ced",
             "type": "vocabulary_item",
             "order": 3,
             "hanzi": "洗",
@@ -506,11 +426,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "02ed37a4-a6ec-4620-b144-638235f82fb2"
+            "check_needed": false
           },
           {
-            "id": "vocab_004",
+            "id": "3dc505f1-bc0e-4a96-b448-17fed89fdc60",
             "type": "vocabulary_item",
             "order": 4,
             "hanzi": "闭",
@@ -534,11 +453,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "113933a7-8a84-42e9-b975-7004542cc910"
+            "check_needed": false
           },
           {
-            "id": "vocab_005",
+            "id": "188412d4-4c23-4d60-b7b2-21f3490199e7",
             "type": "vocabulary_item",
             "order": 5,
             "hanzi": "虚",
@@ -562,11 +480,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "ed8c23e4-e5ac-43dd-bb3d-369fda94ff9d"
+            "check_needed": false
           },
           {
-            "id": "vocab_006",
+            "id": "5ea44727-d97c-467b-b1b8-babd195df50d",
             "type": "vocabulary_item",
             "order": 6,
             "hanzi": "删",
@@ -590,11 +507,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "d605e305-b624-4243-a6f3-a1ac7a30a9a7"
+            "check_needed": false
           },
           {
-            "id": "vocab_007",
+            "id": "54613016-834a-4fc3-9912-2357a6d27058",
             "type": "vocabulary_item",
             "order": 7,
             "hanzi": "油画",
@@ -618,11 +534,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "ee6c5597-b6bd-4f63-8af7-9ec723428f8f"
+            "check_needed": false
           },
           {
-            "id": "vocab_008",
+            "id": "0da97406-c3ac-4fcb-a51c-398a59c3fbae",
             "type": "vocabulary_item",
             "order": 8,
             "hanzi": "放大",
@@ -646,11 +561,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "c12d9df1-6769-484a-a008-2cbd74d73c16"
+            "check_needed": false
           },
           {
-            "id": "vocab_009",
+            "id": "54b36889-82be-485b-8342-fb8aab572065",
             "type": "vocabulary_item",
             "order": 9,
             "hanzi": "寸",
@@ -674,11 +588,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "82d6f724-5a45-4856-baa9-47d813c002ba"
+            "check_needed": false
           },
           {
-            "id": "vocab_010",
+            "id": "1354b1a3-93cc-4505-8d7f-c5550a1d6ae9",
             "type": "vocabulary_item",
             "order": 10,
             "hanzi": "差（一）点儿",
@@ -702,11 +615,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "fe6236e8-53cf-4e2a-9e1b-d0e5e8a4765f"
+            "check_needed": false
           },
           {
-            "id": "vocab_011",
+            "id": "f0684cb3-4577-4e6c-9f22-7d97c89692b3",
             "type": "vocabulary_item",
             "order": 11,
             "hanzi": "碰",
@@ -730,11 +642,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "a24dce1f-12ce-4731-a123-23c903d1dc68"
+            "check_needed": false
           },
           {
-            "id": "vocab_012",
+            "id": "d5b362a7-c8f6-4f25-b2b5-0f1749c8afbb",
             "type": "vocabulary_item",
             "order": 12,
             "hanzi": "起",
@@ -758,11 +669,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "78e2201d-4ac1-4869-b1ff-22603a51035f"
+            "check_needed": false
           },
           {
-            "id": "vocab_013",
+            "id": "7eccd5e8-dac0-4f36-be2e-abcc0a2bdfcd",
             "type": "vocabulary_item",
             "order": 13,
             "hanzi": "事故",
@@ -786,11 +696,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "9773804b-c1c4-4bb2-a268-041c8854f17d"
+            "check_needed": false
           },
           {
-            "id": "vocab_014",
+            "id": "91fa9f81-e5ef-4c4a-b29c-c4b6daa02196",
             "type": "vocabulary_item",
             "order": 14,
             "hanzi": "整整",
@@ -814,11 +723,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "083bea5f-9cb8-43b0-a655-e4dd0937b45b"
+            "check_needed": false
           },
           {
-            "id": "vocab_015",
+            "id": "8a5b1d09-23a6-4182-96e6-9bf4d761a1e1",
             "type": "vocabulary_item",
             "order": 15,
             "hanzi": "眼镜（儿）",
@@ -842,11 +750,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "374dfde4-66e5-4664-98b2-a71cdb633b6f"
+            "check_needed": false
           },
           {
-            "id": "vocab_016",
+            "id": "be7a835d-ff8f-4a86-9fd8-27c5f1093f0c",
             "type": "vocabulary_item",
             "order": 16,
             "hanzi": "别提了",
@@ -870,11 +777,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "51e2940f-22be-4330-8675-4d637e76f35c"
+            "check_needed": false
           },
           {
-            "id": "vocab_017",
+            "id": "7a89dc80-d79d-4c2f-988c-d0f54e240d19",
             "type": "vocabulary_item",
             "order": 17,
             "hanzi": "倒霉",
@@ -898,11 +804,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "916cef0c-f72e-4cff-91ea-214dc1793f55"
+            "check_needed": false
           },
           {
-            "id": "vocab_018",
+            "id": "ff3e1818-66a9-4532-880b-02c9cacb0e5b",
             "type": "vocabulary_item",
             "order": 18,
             "hanzi": "摔跤",
@@ -936,11 +841,10 @@
                 "source_origin": "textbook",
                 "check_needed": false
               }
-            ],
-            "uuid": "54493052-304a-48d5-a153-e88c3a6e86dc"
+            ]
           },
           {
-            "id": "vocab_019",
+            "id": "0125bdae-fe4e-48fb-8264-145e95c75933",
             "type": "vocabulary_item",
             "order": 19,
             "hanzi": "掉",
@@ -964,11 +868,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "b60e5f4f-b802-4f83-b47c-99cc6396a536"
+            "check_needed": false
           },
           {
-            "id": "vocab_020",
+            "id": "689eb64b-5d4f-469f-9afa-74017d399614",
             "type": "vocabulary_item",
             "order": 20,
             "hanzi": "地上",
@@ -992,11 +895,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "b7bb2ba4-5c4a-4e8e-ae59-b698a284f92d"
+            "check_needed": false
           },
           {
-            "id": "vocab_021",
+            "id": "d45d5488-9293-41ae-9deb-1e5b51cee446",
             "type": "vocabulary_item",
             "order": 21,
             "hanzi": "上班",
@@ -1030,11 +932,10 @@
                 "source_origin": "textbook",
                 "check_needed": false
               }
-            ],
-            "uuid": "10431cf0-30dd-4fc2-8db7-5edb9f5f8020"
+            ]
           },
           {
-            "id": "vocab_022",
+            "id": "c99a633b-27a2-429b-a139-44113a84c189",
             "type": "vocabulary_item",
             "order": 22,
             "hanzi": "保证",
@@ -1058,11 +959,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "dcdc8141-0100-48c5-a705-542487b4c173"
+            "check_needed": false
           },
           {
-            "id": "vocab_023",
+            "id": "79358c6f-3427-4c28-98f3-7ef98c7033c3",
             "type": "vocabulary_item",
             "order": 23,
             "hanzi": "遵守",
@@ -1086,11 +986,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "4b5b299f-f002-4ea8-9416-465d7c39cfcf"
+            "check_needed": false
           },
           {
-            "id": "vocab_024",
+            "id": "dc0f8e06-a359-4907-a8d8-fc9b02260590",
             "type": "vocabulary_item",
             "order": 24,
             "hanzi": "规则",
@@ -1114,11 +1013,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "56b4f594-7784-41f7-92b5-3660b181801d"
+            "check_needed": false
           },
           {
-            "id": "vocab_025",
+            "id": "c43cedbf-7024-4ec1-922f-e75119114baf",
             "type": "vocabulary_item",
             "order": 25,
             "hanzi": "造成",
@@ -1142,11 +1040,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "45dafab5-58cb-495c-8b79-d48d633be1da"
+            "check_needed": false
           },
           {
-            "id": "vocab_026",
+            "id": "d9991c79-3454-4247-bf18-f14f43b4a24a",
             "type": "vocabulary_item",
             "order": 26,
             "hanzi": "拥挤",
@@ -1170,11 +1067,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "5d0e6cd2-203f-44d7-b14c-e0b204922a24"
+            "check_needed": false
           },
           {
-            "id": "vocab_027",
+            "id": "55cd807c-eec7-412d-99db-f4e6508b170f",
             "type": "vocabulary_item",
             "order": 27,
             "hanzi": "主要",
@@ -1198,11 +1094,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "b0ea55cd-0c17-402c-a320-212b615cca31"
+            "check_needed": false
           },
           {
-            "id": "vocab_028",
+            "id": "085e60d5-dd1c-4585-ac6b-0f1db0ded936",
             "type": "vocabulary_item",
             "order": 28,
             "hanzi": "原因",
@@ -1226,11 +1121,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "037b1bbb-d585-4c8a-9002-875c9e4ef500"
+            "check_needed": false
           },
           {
-            "id": "vocab_029",
+            "id": "ba7ff0f9-b633-4516-ab3d-22b96046a1cf",
             "type": "vocabulary_item",
             "order": 29,
             "hanzi": "之一",
@@ -1254,11 +1148,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "61dd24a8-f096-4307-b93d-5ad6586640f0"
+            "check_needed": false
           },
           {
-            "id": "vocab_030",
+            "id": "2185ee67-885d-4ffb-83e2-e97be4070796",
             "type": "vocabulary_item",
             "order": 30,
             "hanzi": "引起",
@@ -1282,11 +1175,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "121ed8ce-c716-47ff-8b1d-41724c5e234f"
+            "check_needed": false
           },
           {
-            "id": "vocab_031",
+            "id": "092a8c16-3739-4685-a4c0-39365071bd48",
             "type": "vocabulary_item",
             "order": 31,
             "hanzi": "赶快",
@@ -1310,11 +1202,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "6c454a7c-534d-420c-9b50-b2aa5073d1ba"
+            "check_needed": false
           },
           {
-            "id": "vocab_032",
+            "id": "22e66ee9-565e-4670-b2ac-4d5a9b500b38",
             "type": "vocabulary_item",
             "order": 32,
             "hanzi": "发展",
@@ -1338,14 +1229,12 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "d53f7a5f-ef37-4c82-93f7-4ed5bcd53911"
+            "check_needed": false
           }
-        ],
-        "uuid": "487eb671-2be2-4cfd-9fc0-b0c93905edff"
+        ]
       },
       {
-        "id": "section_03_proper_nouns",
+        "id": "3c5ee48e-5d44-44ac-bd53-cac996a83338",
         "type": "proper_nouns",
         "order": 3,
         "title": "专名",
@@ -1353,11 +1242,10 @@
         "source_origin": "textbook",
         "check_needed": false,
         "items": [],
-        "empty_reason_vi": "Bài này không có bảng 专名 riêng; 玛丽、麦克、小白、小黄 được giữ trong speaker của bài khóa.",
-        "uuid": "aee443f9-d0fc-4e38-8dc1-529d1581647b"
+        "empty_reason_vi": "Bài này không có bảng 专名 riêng; 玛丽、麦克、小白、小黄 được giữ trong speaker của bài khóa."
       },
       {
-        "id": "section_04_notes",
+        "id": "c18e9f54-6da1-4496-886b-c2c722605678",
         "type": "notes",
         "order": 4,
         "title": "注释",
@@ -1366,7 +1254,7 @@
         "check_needed": false,
         "items": [
           {
-            "id": "note_chadianr",
+            "id": "9ad7c4a1-294d-4645-b1c5-239dfdcbc123",
             "type": "note",
             "order": 1,
             "title": "差（一）点儿",
@@ -1374,7 +1262,7 @@
             "meaning_vi": "Suýt nữa thì…, gần như đã xảy ra một việc, thường là việc không mong muốn.",
             "examples": [
               {
-                "id": "note_chadianr_ex01",
+                "id": "ee204434-90e4-4130-98c4-9a4a5b9fae71",
                 "zh": "小白差点儿迟到。",
                 "pinyin": "",
                 "vi": "Tiểu Bạch suýt nữa thì đến muộn.",
@@ -1385,19 +1273,17 @@
                 "note_vi": "",
                 "audio_key": "",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "3983449b-41f2-45c7-b32f-3f3ec090003c"
+                "check_needed": false
               }
             ],
             "source_refs": [
-              "text_02_l01"
+              "887014e5-f6b0-4777-9f95-85a69532ca36"
             ],
             "source_origin": "textbook/generated_mixed",
-            "check_needed": false,
-            "uuid": "cd815353-f0cf-46f9-976e-dc527dda992b"
+            "check_needed": false
           },
           {
-            "id": "note_bietile",
+            "id": "dff6e5fd-b17c-416c-9b26-c132ffa8221b",
             "type": "note",
             "order": 2,
             "title": "别提了",
@@ -1405,7 +1291,7 @@
             "meaning_vi": "Đừng nhắc nữa; dùng khi người nói gặp chuyện xui, phiền hoặc không muốn kể kỹ.",
             "examples": [
               {
-                "id": "note_bietile_ex01",
+                "id": "62c2a221-c6ab-428d-a053-768897973eb9",
                 "zh": "别提了，今天倒霉得很。",
                 "pinyin": "",
                 "vi": "Đừng nhắc nữa, hôm nay xui quá.",
@@ -1416,19 +1302,17 @@
                 "note_vi": "",
                 "audio_key": "",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "af08a443-8048-4939-9a55-23b7b1c4a87f"
+                "check_needed": false
               }
             ],
             "source_refs": [
-              "text_02_l05"
+              "c99f042b-fa9a-478c-aba1-5da333a677e1"
             ],
             "source_origin": "textbook/generated_mixed",
-            "check_needed": false,
-            "uuid": "a6c046b7-b0b5-4680-bb45-66c3c7417d86"
+            "check_needed": false
           },
           {
-            "id": "note_dehen",
+            "id": "c90c2355-b27d-4fb8-bbeb-0d15f6c70319",
             "type": "note",
             "order": 3,
             "title": "今天倒霉得很",
@@ -1436,7 +1320,7 @@
             "meaning_vi": "得很 đặt sau tính từ/cụm miêu tả để nhấn mạnh mức độ: rất, cực kỳ, ... lắm.",
             "examples": [
               {
-                "id": "note_dehen_ex01",
+                "id": "ad209904-fad9-4de8-bcf4-ae65c59e33b8",
                 "zh": "今天倒霉得很。",
                 "pinyin": "",
                 "vi": "Hôm nay xui xẻo lắm.",
@@ -1447,11 +1331,10 @@
                 "note_vi": "",
                 "audio_key": "",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "6f30f804-4266-4088-8fda-c59f7b0a0c62"
+                "check_needed": false
               },
               {
-                "id": "note_dehen_ex02",
+                "id": "6b744885-8f20-4e60-8a63-e032da70ef75",
                 "zh": "这条路拥挤得很。",
                 "pinyin": "",
                 "vi": "Con đường này đông nghẹt lắm.",
@@ -1462,22 +1345,19 @@
                 "note_vi": "",
                 "audio_key": "",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "dfe01d79-40c3-4645-bb0c-3d7e6a0ca6e2"
+                "check_needed": false
               }
             ],
             "source_refs": [
-              "text_02_l05"
+              "c99f042b-fa9a-478c-aba1-5da333a677e1"
             ],
             "source_origin": "textbook/generated_mixed",
-            "check_needed": false,
-            "uuid": "360a806e-82bb-47e0-85ef-3fdda85275bb"
+            "check_needed": false
           }
-        ],
-        "uuid": "5e24f69c-7ec1-4c2b-8d6d-7b96b3467f78"
+        ]
       },
       {
-        "id": "section_05_grammar",
+        "id": "b045e537-7383-494b-8d61-b0286977ed80",
         "type": "grammar",
         "order": 5,
         "title": "语法 / 词语用法",
@@ -1486,7 +1366,7 @@
         "check_needed": false,
         "items": [
           {
-            "id": "grammar_passive_meaning",
+            "id": "6c610f98-2d68-4ff6-85e8-0cccbec38c7b",
             "type": "grammar_point",
             "order": 1,
             "title": "被动意义的表达：被动句",
@@ -1499,53 +1379,50 @@
             "check_needed": false,
             "blocks": [
               {
-                "id": "grammar_passive_meaning_overview",
+                "id": "cc6c565e-7bef-45c2-b8d7-0f1b69f3f16f",
                 "type": "grammar_overview",
                 "order": 1,
                 "title": "Bản chất",
                 "content_vi": "Khi chủ ngữ là vật/người chịu tác động, phía sau là động từ + kết quả, câu có thể mang nghĩa bị động dù không dùng 被.",
                 "examples": [
                   {
-                    "id": "g1_ex01",
+                    "id": "500747f8-a71e-4a03-8522-73dae177b1aa",
                     "zh": "我的眼镜儿摔坏了。",
                     "pinyin": "",
                     "vi": "Kính mắt của tôi bị rơi vỡ rồi.",
                     "highlight": [],
                     "grammar_refs": [
-                      "grammar_passive_meaning"
+                      "6c610f98-2d68-4ff6-85e8-0cccbec38c7b"
                     ],
                     "vocab_refs": [],
                     "source_ref": "",
                     "note_vi": "",
                     "audio_key": "",
                     "source_origin": "textbook",
-                    "check_needed": false,
-                    "uuid": "3530b327-3c43-45cb-9235-da43a483d6b4"
+                    "check_needed": false
                   },
                   {
-                    "id": "g1_ex02",
+                    "id": "034c6a7c-aec5-4ba1-ab14-f7e86c8162e0",
                     "zh": "照片选好了。",
                     "pinyin": "",
                     "vi": "Ảnh đã được chọn xong rồi.",
                     "highlight": [],
                     "grammar_refs": [
-                      "grammar_passive_meaning"
+                      "6c610f98-2d68-4ff6-85e8-0cccbec38c7b"
                     ],
                     "vocab_refs": [],
                     "source_ref": "",
                     "note_vi": "",
                     "audio_key": "",
                     "source_origin": "textbook",
-                    "check_needed": false,
-                    "uuid": "146f02a0-f3dc-4f0f-b095-73c5d718f634"
+                    "check_needed": false
                   }
                 ],
                 "source_origin": "textbook/generated_mixed",
-                "check_needed": false,
-                "uuid": "6c8faacc-3552-40e0-9d78-481827dc71c8"
+                "check_needed": false
               },
               {
-                "id": "grammar_passive_meaning_structure",
+                "id": "390a4475-90da-4707-93e9-d919d1849df5",
                 "type": "grammar_structure",
                 "order": 2,
                 "title": "Cấu trúc chính",
@@ -1553,49 +1430,46 @@
                 "meaning_vi": "Nhấn mạnh kết quả xảy ra với chủ ngữ, không cần nói rõ ai gây ra.",
                 "examples": [
                   {
-                    "id": "g1_ex03",
+                    "id": "a8acec9a-6bab-4efc-b4c8-1564291794de",
                     "zh": "我的眼镜儿也摔在地上摔坏了。",
                     "pinyin": "",
                     "vi": "Kính của tôi cũng rơi xuống đất rồi vỡ mất.",
                     "highlight": [],
                     "grammar_refs": [
-                      "grammar_passive_meaning"
+                      "6c610f98-2d68-4ff6-85e8-0cccbec38c7b"
                     ],
                     "vocab_refs": [],
                     "source_ref": "",
                     "note_vi": "",
                     "audio_key": "",
                     "source_origin": "textbook",
-                    "check_needed": false,
-                    "uuid": "34bf4803-27fc-4341-885c-8a4f265788f6"
+                    "check_needed": false
                   },
                   {
-                    "id": "g1_ex04",
+                    "id": "5b6c765c-bc40-496d-99c7-ded919695171",
                     "zh": "门关上了。",
                     "pinyin": "",
                     "vi": "Cửa đã được đóng lại rồi.",
                     "highlight": [],
                     "grammar_refs": [
-                      "grammar_passive_meaning"
+                      "6c610f98-2d68-4ff6-85e8-0cccbec38c7b"
                     ],
                     "vocab_refs": [],
                     "source_ref": "",
                     "note_vi": "",
                     "audio_key": "",
                     "source_origin": "textbook",
-                    "check_needed": false,
-                    "uuid": "f62b6408-b2e6-467d-9d83-f4ca56458320"
+                    "check_needed": false
                   }
                 ],
                 "notes_vi": [
                   "Nếu muốn nêu rõ tác nhân, có thể dùng 被, nhưng trong ngữ cảnh thường chỉ cần câu kết quả."
                 ],
                 "source_origin": "textbook/generated_mixed",
-                "check_needed": false,
-                "uuid": "541b4566-6fd3-46f6-b099-5b3bf014e407"
+                "check_needed": false
               },
               {
-                "id": "grammar_passive_meaning_negative",
+                "id": "7e4881b0-cdee-4c47-9ec6-421a63afa39f",
                 "type": "grammar_usage_notes",
                 "order": 3,
                 "title": "Dạng phủ định / nghi vấn",
@@ -1605,14 +1479,12 @@
                 ],
                 "examples": [],
                 "source_origin": "textbook/generated_mixed",
-                "check_needed": false,
-                "uuid": "7afe0128-efda-45ac-8298-14f1a18e6927"
+                "check_needed": false
               }
-            ],
-            "uuid": "27e9fe8d-2b11-4616-9395-f1782a019552"
+            ]
           },
           {
-            "id": "grammar_measure_word_reduplication",
+            "id": "5e0db92f-f3b4-4746-a9a7-7761bcd985ee",
             "type": "grammar_point",
             "order": 2,
             "title": "量词重叠",
@@ -1625,36 +1497,34 @@
             "check_needed": false,
             "blocks": [
               {
-                "id": "grammar_mw_redup_overview",
+                "id": "1e58fff6-1296-471f-b416-59fd3d00c6f3",
                 "type": "grammar_overview",
                 "order": 1,
                 "title": "Bản chất",
                 "content_vi": "Lặp lại lượng từ để nói từng cái / cái nào cũng / tất cả đều, thường đi với 都.",
                 "examples": [
                   {
-                    "id": "g2_ex01",
+                    "id": "bb310889-520e-49f6-9028-0f850b2addb8",
                     "zh": "这些照得都非常好，张张都很漂亮。",
                     "pinyin": "",
                     "vi": "Mấy tấm này chụp đều rất đẹp, tấm nào cũng đẹp.",
                     "highlight": [],
                     "grammar_refs": [
-                      "grammar_measure_word_reduplication"
+                      "5e0db92f-f3b4-4746-a9a7-7761bcd985ee"
                     ],
                     "vocab_refs": [],
                     "source_ref": "",
                     "note_vi": "",
                     "audio_key": "",
                     "source_origin": "textbook",
-                    "check_needed": false,
-                    "uuid": "8325a94d-c7ae-404c-a978-42fcb7cc607f"
+                    "check_needed": false
                   }
                 ],
                 "source_origin": "textbook/generated_mixed",
-                "check_needed": false,
-                "uuid": "b474aa9a-2bbb-4783-a3fb-d5ed8a07f904"
+                "check_needed": false
               },
               {
-                "id": "grammar_mw_redup_structure",
+                "id": "d2a6f27c-af14-45b4-b3dd-bf883c087aed",
                 "type": "grammar_structure",
                 "order": 2,
                 "title": "Cấu trúc chính",
@@ -1662,52 +1532,48 @@
                 "meaning_vi": "Nhấn mạnh không bỏ sót cá thể nào trong nhóm.",
                 "examples": [
                   {
-                    "id": "g2_ex02",
+                    "id": "898b788e-1f37-4c4f-be5d-4310180c0f05",
                     "zh": "他们个个都很努力。",
                     "pinyin": "",
                     "vi": "Ai trong số họ cũng rất cố gắng.",
                     "highlight": [],
                     "grammar_refs": [
-                      "grammar_measure_word_reduplication"
+                      "5e0db92f-f3b4-4746-a9a7-7761bcd985ee"
                     ],
                     "vocab_refs": [],
                     "source_ref": "",
                     "note_vi": "",
                     "audio_key": "",
                     "source_origin": "textbook",
-                    "check_needed": false,
-                    "uuid": "b6c2e97d-d80c-4b56-ba4e-d4a136ace828"
+                    "check_needed": false
                   },
                   {
-                    "id": "g2_ex03",
+                    "id": "20e632bb-ddb9-49a4-81a5-c6330d2d4848",
                     "zh": "我们天天练习汉语。",
                     "pinyin": "",
                     "vi": "Chúng tôi ngày nào cũng luyện tiếng Hán.",
                     "highlight": [],
                     "grammar_refs": [
-                      "grammar_measure_word_reduplication"
+                      "5e0db92f-f3b4-4746-a9a7-7761bcd985ee"
                     ],
                     "vocab_refs": [],
                     "source_ref": "",
                     "note_vi": "",
                     "audio_key": "",
                     "source_origin": "textbook",
-                    "check_needed": false,
-                    "uuid": "d59ac36e-808d-4ce6-b48d-bcf45f21eb77"
+                    "check_needed": false
                   }
                 ],
                 "notes_vi": [
                   "张张, 个个, 件件, 天天, 年年 là các dạng thường gặp."
                 ],
                 "source_origin": "textbook/generated_mixed",
-                "check_needed": false,
-                "uuid": "9937f03a-9923-4ad0-9acb-3f2efc7bd141"
+                "check_needed": false
               }
-            ],
-            "uuid": "33b68bb9-62f8-4e89-a450-7eb5a6f080ed"
+            ]
           },
           {
-            "id": "grammar_year_by_year",
+            "id": "874e376a-a113-46ba-b49b-c492f5f33124",
             "type": "grammar_point",
             "order": 3,
             "title": "一年比一年",
@@ -1720,36 +1586,34 @@
             "check_needed": false,
             "blocks": [
               {
-                "id": "grammar_year_by_year_overview",
+                "id": "5feb4851-8248-4910-b327-1d3422a3e7ad",
                 "type": "grammar_overview",
                 "order": 1,
                 "title": "Bản chất",
                 "content_vi": "Dùng để nói một trạng thái thay đổi dần theo từng mốc thời gian/lần lặp.",
                 "examples": [
                   {
-                    "id": "g3_ex01",
+                    "id": "0d469841-e676-4c25-b511-f94d18e3173a",
                     "zh": "有汽车的人也一年比一年多。",
                     "pinyin": "",
                     "vi": "Người có ô tô cũng năm này qua năm khác càng nhiều hơn.",
                     "highlight": [],
                     "grammar_refs": [
-                      "grammar_year_by_year"
+                      "874e376a-a113-46ba-b49b-c492f5f33124"
                     ],
                     "vocab_refs": [],
                     "source_ref": "",
                     "note_vi": "",
                     "audio_key": "",
                     "source_origin": "textbook",
-                    "check_needed": false,
-                    "uuid": "c1537380-71a5-43fe-bfd3-12467e9691f7"
+                    "check_needed": false
                   }
                 ],
                 "source_origin": "textbook/generated_mixed",
-                "check_needed": false,
-                "uuid": "757ac7d2-89a3-41bc-b255-ba80b46edb29"
+                "check_needed": false
               },
               {
-                "id": "grammar_year_by_year_structure",
+                "id": "f5003ea8-5e31-431e-bb02-1c82acc5b76f",
                 "type": "grammar_structure",
                 "order": 2,
                 "title": "Cấu trúc chính",
@@ -1757,55 +1621,50 @@
                 "meaning_vi": "Càng ngày càng..., theo từng mốc thời gian/lần lặp.",
                 "examples": [
                   {
-                    "id": "g3_ex02",
+                    "id": "8688d28f-525b-405e-80a1-bc786264b834",
                     "zh": "天气一天比一天冷。",
                     "pinyin": "",
                     "vi": "Thời tiết ngày càng lạnh.",
                     "highlight": [],
                     "grammar_refs": [
-                      "grammar_year_by_year"
+                      "874e376a-a113-46ba-b49b-c492f5f33124"
                     ],
                     "vocab_refs": [],
                     "source_ref": "",
                     "note_vi": "",
                     "audio_key": "",
                     "source_origin": "textbook",
-                    "check_needed": false,
-                    "uuid": "402cc837-b258-439b-bf1a-17532425ac48"
+                    "check_needed": false
                   },
                   {
-                    "id": "g3_ex03",
+                    "id": "59ee696b-e055-42e4-ae1d-3dfd3217f449",
                     "zh": "汉语课一次比一次难。",
                     "pinyin": "",
                     "vi": "Tiết tiếng Hán lần sau khó hơn lần trước.",
                     "highlight": [],
                     "grammar_refs": [
-                      "grammar_year_by_year"
+                      "874e376a-a113-46ba-b49b-c492f5f33124"
                     ],
                     "vocab_refs": [],
                     "source_ref": "",
                     "note_vi": "",
                     "audio_key": "",
                     "source_origin": "textbook",
-                    "check_needed": false,
-                    "uuid": "30e054b6-f24f-4237-8439-7a3946cd9a8c"
+                    "check_needed": false
                   }
                 ],
                 "notes_vi": [
                   "一年比一年多 nhấn từng mốc năm; 越来越多 nhấn xu hướng chung."
                 ],
                 "source_origin": "textbook/generated_mixed",
-                "check_needed": false,
-                "uuid": "51045230-43c8-4e3c-bbc5-67c7dcbf6c9e"
+                "check_needed": false
               }
-            ],
-            "uuid": "d6bbe4ad-a38e-485b-ba24-fa7c6d66ed58"
+            ]
           }
-        ],
-        "uuid": "e024e8fd-e5bc-4e39-be8e-e9260b1a0818"
+        ]
       },
       {
-        "id": "section_06_exercises",
+        "id": "9901c597-ca97-451e-b63d-11814aaf933e",
         "type": "exercises",
         "order": 6,
         "title": "练习",
@@ -1822,7 +1681,7 @@
         },
         "items": [
           {
-            "id": "exercise_01",
+            "id": "15cb6f38-593b-48d1-bcca-dc3d2a140f9e",
             "type": "phonetics",
             "variant": "pronunciation_tone_minimal_pairs",
             "order": 1,
@@ -1839,7 +1698,7 @@
             ],
             "parts": [
               {
-                "id": "exercise_01_part_01",
+                "id": "0e5801e7-b89b-4cc6-8bd9-9e1fbbd30b31",
                 "type": "minimal_pair_group",
                 "title": "辨音辨调",
                 "items": [
@@ -1853,11 +1712,10 @@
                   "dìtiě / tǐtiē"
                 ],
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "e3a34c1e-361c-4d0f-b0e3-7f84468c9b8b"
+                "check_needed": false
               },
               {
-                "id": "exercise_01_part_02",
+                "id": "e7235fa8-9e47-43aa-a37c-271a2e83d738",
                 "type": "read_aloud_group",
                 "title": "朗读",
                 "items": [
@@ -1886,19 +1744,17 @@
                   "个个都很努力"
                 ],
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "8a6fa902-6628-4584-816f-1edd51150c2a"
+                "check_needed": false
               }
             ],
             "rendering": {
               "renderer": "exercise.phonetics.v2"
             },
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "32632759-92be-45f9-9a8e-a5a98f19920b"
+            "check_needed": false
           },
           {
-            "id": "exercise_02",
+            "id": "98e14c21-0449-4e36-b1ae-77ed46cf3aa0",
             "type": "substitution_drill",
             "variant": "substitution_or_transform_drill",
             "order": 2,
@@ -1910,7 +1766,7 @@
             },
             "parts": [
               {
-                "id": "exercise_02_part_01",
+                "id": "7db043f9-0d63-45ee-8c21-295d62f2ebd3",
                 "title": "怎么了？",
                 "model": "A：怎么了？\nB：眼镜儿摔坏了。",
                 "items": [
@@ -1936,11 +1792,10 @@
                   }
                 ],
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "f1209bd1-50b6-4db7-9fb9-c80f7c7d1202"
+                "check_needed": false
               },
               {
-                "id": "exercise_02_part_02",
+                "id": "4ad1e1b3-374e-4ce8-b98f-907ffc4c88f2",
                 "title": "摔坏了没有？",
                 "model": "A：眼镜儿摔坏了没有？\nB：没有。",
                 "items": [
@@ -1966,11 +1821,10 @@
                   }
                 ],
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "3a35fcf2-f6a2-4151-b8f9-5f73c69c8b8f"
+                "check_needed": false
               },
               {
-                "id": "exercise_02_part_03",
+                "id": "28f617eb-25d6-4678-b5e3-f7fca3508dbc",
                 "title": "洗好了吗？",
                 "model": "A：照片洗好了吗？\nB：洗好了。",
                 "items": [
@@ -1996,11 +1850,10 @@
                   }
                 ],
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "07a85ef3-4974-4e32-bc39-bc7796c402d6"
+                "check_needed": false
               },
               {
-                "id": "exercise_02_part_04",
+                "id": "6227f946-2a93-462c-8702-43b4abc4a614",
                 "title": "做完了吗？",
                 "model": "A：作业做完了吗？\nB：还没做完呢。/ 快做完了。",
                 "items": [
@@ -2026,11 +1879,10 @@
                   }
                 ],
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "0421fe01-1135-42e8-95af-2139fd981636"
+                "check_needed": false
               },
               {
-                "id": "exercise_02_part_05",
+                "id": "6b6b4fa0-c8d0-45c4-b28e-0293edd71e59",
                 "title": "照得怎么样？",
                 "model": "A：这张照片照得怎么样？\nB：不怎么样。",
                 "items": [
@@ -2056,11 +1908,10 @@
                   }
                 ],
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "7d7bd778-de9c-4686-bfb6-0cb14ebb3339"
+                "check_needed": false
               },
               {
-                "id": "exercise_02_part_06",
+                "id": "eb298846-dba5-4ab4-aaae-f9f806a8bb4e",
                 "title": "一点儿也不清楚",
                 "model": "这张照片一点儿也不清楚。",
                 "items": [
@@ -2086,16 +1937,14 @@
                   }
                 ],
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "3f6a8f13-b332-4178-b196-c2fb87fb974b"
+                "check_needed": false
               }
             ],
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "ff5fcded-7b74-4efa-82c1-c57735e17ed0"
+            "check_needed": false
           },
           {
-            "id": "exercise_03",
+            "id": "5dfca3d2-8524-4a83-92dd-b036a7259465",
             "type": "choose_words_fill_blank",
             "variant": "word_bank_fill_blank",
             "order": 3,
@@ -2119,104 +1968,94 @@
             ],
             "questions": [
               {
-                "id": "exercise_03_q01",
+                "id": "89f65130-41e7-49df-a011-42de7ed146f4",
                 "order": 1,
                 "prompt_zh": "这张照片____得好极了。",
                 "answer": "照",
                 "answer_verified": false,
                 "source_origin": "textbook_question_generated_answer",
-                "check_needed": false,
-                "uuid": "75ac0065-ef6b-414b-bba4-957c86747a23"
+                "check_needed": false
               },
               {
-                "id": "exercise_03_q02",
+                "id": "7c8b2fc6-e66e-4777-85ac-0bad398dddef",
                 "order": 2,
                 "prompt_zh": "买汽车的人一年比一年____。",
                 "answer": "多",
                 "answer_verified": false,
                 "source_origin": "textbook_question_generated_answer",
-                "check_needed": false,
-                "uuid": "7d87f231-4195-4b20-8942-5193e8c4fed2"
+                "check_needed": false
               },
               {
-                "id": "exercise_03_q03",
+                "id": "84757f7c-ff84-4733-9a65-8b025eb9b97e",
                 "order": 3,
                 "prompt_zh": "这张照片请再给我____三张。",
                 "answer": "放大",
                 "answer_verified": false,
                 "source_origin": "textbook_question_generated_answer",
-                "check_needed": false,
-                "uuid": "c2c59a59-e379-4ea1-8057-19fc837aa2f8"
+                "check_needed": false
               },
               {
-                "id": "exercise_03_q04",
+                "id": "13a99c80-4ce6-4eac-bb3b-3edb51a71f9d",
                 "order": 4,
                 "prompt_zh": "我的眼镜儿都____坏了。",
                 "answer": "摔",
                 "answer_verified": false,
                 "source_origin": "textbook_question_generated_answer",
-                "check_needed": false,
-                "uuid": "8e02363e-0af7-457b-8499-8acbd8252dc2"
+                "check_needed": false
               },
               {
-                "id": "exercise_03_q05",
+                "id": "ffbfd6b2-1d0e-4bf0-87a8-9c6488808883",
                 "order": 5,
                 "prompt_zh": "我____没摔倒。",
                 "answer": "差点儿",
                 "answer_verified": false,
                 "source_origin": "textbook_question_generated_answer",
-                "check_needed": false,
-                "uuid": "9d32663e-247b-4c35-8b19-60c7acd66eba"
+                "check_needed": false
               },
               {
-                "id": "exercise_03_q06",
+                "id": "6fd4b249-82d0-4056-a345-b7520165e511",
                 "order": 6,
                 "prompt_zh": "一到下班时间路上____堵车。",
                 "answer": "就",
                 "answer_verified": false,
                 "source_origin": "textbook_question_generated_answer",
-                "check_needed": false,
-                "uuid": "46b2cf8f-f9a4-4861-8b67-c6b759320732"
+                "check_needed": false
               },
               {
-                "id": "exercise_03_q07",
+                "id": "334bc045-6210-4aee-8c31-e597345b52ed",
                 "order": 7,
                 "prompt_zh": "汽车太多是____交通拥挤的主要原因。",
                 "answer": "造成",
                 "answer_verified": false,
                 "source_origin": "textbook_question_generated_answer",
-                "check_needed": false,
-                "uuid": "5e934776-d3ba-47a6-89f4-f38ab4b5bcca"
+                "check_needed": false
               },
               {
-                "id": "exercise_03_q08",
+                "id": "2931dfdb-f4f8-4295-824f-887b980ae553",
                 "order": 8,
                 "prompt_zh": "最好的办法还是____发展地铁。",
                 "answer": "赶快",
                 "answer_verified": false,
                 "source_origin": "textbook_question_generated_answer",
-                "check_needed": false,
-                "uuid": "67bf5520-d957-4120-b599-57031e0ec000"
+                "check_needed": false
               },
               {
-                "id": "exercise_03_q09",
+                "id": "0774b4a9-af75-43a6-83e9-2849a7df89b8",
                 "order": 9,
                 "prompt_zh": "最近我忙得____。",
                 "answer": "很",
                 "answer_verified": false,
                 "source_origin": "textbook_question_generated_answer",
-                "check_needed": false,
-                "uuid": "6244efbe-2e9c-4338-8203-7aeb0c5316f4"
+                "check_needed": false
               },
               {
-                "id": "exercise_03_q10",
+                "id": "2f7841d6-531f-4df3-b5a3-65486ef62a9a",
                 "order": 10,
                 "prompt_zh": "这些照片张张都像油画____。",
                 "answer": "一样",
                 "answer_verified": false,
                 "source_origin": "textbook_question_generated_answer",
-                "check_needed": false,
-                "uuid": "104cb7c8-c3c9-44fb-b45e-e27024973c9b"
+                "check_needed": false
               }
             ],
             "rendering": {
@@ -2225,11 +2064,10 @@
               "show_answer_after_submit": true
             },
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "4e7dc785-2a83-4d8c-9f3c-95fbb5cba285"
+            "check_needed": false
           },
           {
-            "id": "exercise_04",
+            "id": "809141fb-cc55-403a-9433-35eea89c8c90",
             "type": "fill_blank",
             "variant": "free_fill_blank",
             "order": 4,
@@ -2241,92 +2079,83 @@
             },
             "questions": [
               {
-                "id": "exercise_04_q01",
+                "id": "6cce28e1-ea4d-4fe2-a264-ffa80edbd65e",
                 "order": 1,
                 "prompt_zh": "衣服洗____了。",
                 "answer": "好/完",
                 "answer_verified": false,
                 "source_origin": "textbook_question_generated_answer",
-                "check_needed": true,
-                "uuid": "c21a4caf-2b1b-4ef2-acac-9c9cd8cc3574"
+                "check_needed": true
               },
               {
-                "id": "exercise_04_q02",
+                "id": "470a2391-125a-4a86-aab5-4d44d830ded8",
                 "order": 2,
                 "prompt_zh": "作业做____了。",
                 "answer": "完",
                 "answer_verified": false,
                 "source_origin": "textbook_question_generated_answer",
-                "check_needed": true,
-                "uuid": "85fa6d70-ac3f-4ebf-bfe6-9f3e5812de21"
+                "check_needed": true
               },
               {
-                "id": "exercise_04_q03",
+                "id": "dffffd0d-4b6a-478e-a55c-2d997d8ef6d1",
                 "order": 3,
                 "prompt_zh": "钥匙找____了。",
                 "answer": "到/着",
                 "answer_verified": false,
                 "source_origin": "textbook_question_generated_answer",
-                "check_needed": true,
-                "uuid": "cf13cc9a-1395-45c3-80db-44b227b910ac"
+                "check_needed": true
               },
               {
-                "id": "exercise_04_q04",
+                "id": "e285e391-e0ab-473f-a641-5425f86c2806",
                 "order": 4,
                 "prompt_zh": "自行车修____了。",
                 "answer": "好",
                 "answer_verified": false,
                 "source_origin": "textbook_question_generated_answer",
-                "check_needed": true,
-                "uuid": "7cfb6cd5-ad39-4d14-a38d-95ca75fd0e00"
+                "check_needed": true
               },
               {
-                "id": "exercise_04_q05",
+                "id": "6d4d0990-29f0-4c51-abdd-d45ed708790a",
                 "order": 5,
                 "prompt_zh": "这篇课文我一点儿也没看____。",
                 "answer": "懂",
                 "answer_verified": false,
                 "source_origin": "textbook_question_generated_answer",
-                "check_needed": true,
-                "uuid": "1a400bec-c671-4ecc-a3b6-81d1d8da7802"
+                "check_needed": true
               },
               {
-                "id": "exercise_04_q06",
+                "id": "8d2c5287-3c65-4810-9ba0-b18e576a8e59",
                 "order": 6,
                 "prompt_zh": "杯子摔____了。",
                 "answer": "坏/破",
                 "answer_verified": false,
                 "source_origin": "textbook_question_generated_answer",
-                "check_needed": true,
-                "uuid": "3541392d-6de6-45ac-946f-dc0b9b0cea09"
+                "check_needed": true
               },
               {
-                "id": "exercise_04_q07",
+                "id": "65d5808a-8cfd-4256-9ce2-4969f69b7682",
                 "order": 7,
                 "prompt_zh": "你要的词典买____了。",
                 "answer": "到/着",
                 "answer_verified": false,
                 "source_origin": "textbook_question_generated_answer",
-                "check_needed": true,
-                "uuid": "cb827383-a990-4852-8aad-ed1da0597016"
+                "check_needed": true
               },
               {
-                "id": "exercise_04_q08",
+                "id": "4c863b77-f06f-436d-b746-6333890ed612",
                 "order": 8,
                 "prompt_zh": "对不起，你的话我没听____，我正在听录音呢。",
                 "answer": "清楚/见",
                 "answer_verified": false,
                 "source_origin": "textbook_question_generated_answer",
-                "check_needed": true,
-                "uuid": "70f6deb0-cffd-4aed-83b6-a66f476e8567"
+                "check_needed": true
               }
             ],
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "2e6d80ee-b711-4c54-801f-7c056ec31335"
+            "check_needed": false
           },
           {
-            "id": "exercise_05",
+            "id": "e843bb6e-2e51-4fb8-b362-7506b97cf2fc",
             "type": "correct_sentence",
             "variant": "error_correction",
             "order": 5,
@@ -2338,72 +2167,65 @@
             },
             "questions": [
               {
-                "id": "exercise_05_q01",
+                "id": "ec510180-32db-4556-b8ae-27b3a585713e",
                 "order": 1,
                 "prompt_zh": "照相机我不小心坏了。",
                 "answer": "我不小心把照相机弄坏了。/ 照相机被我不小心弄坏了。",
                 "answer_verified": false,
                 "source_origin": "textbook_question_generated_answer",
-                "check_needed": true,
-                "uuid": "a8b72d75-2f62-485e-8e84-4fb0a06d7375"
+                "check_needed": true
               },
               {
-                "id": "exercise_05_q02",
+                "id": "18df0561-8aef-4c56-adff-9114519e19c7",
                 "order": 2,
                 "prompt_zh": "我已经完了今天的作业。",
                 "answer": "我已经做完了今天的作业。",
                 "answer_verified": false,
                 "source_origin": "textbook_question_generated_answer",
-                "check_needed": true,
-                "uuid": "704fb63f-a033-4c9e-83d9-ded598b02c66"
+                "check_needed": true
               },
               {
-                "id": "exercise_05_q03",
+                "id": "2c8b9d36-1b23-468c-bb1d-9a6a4d15fd42",
                 "order": 3,
                 "prompt_zh": "上课完了我就去商店买衣服。",
                 "answer": "下课以后我就去商店买衣服。",
                 "answer_verified": false,
                 "source_origin": "textbook_question_generated_answer",
-                "check_needed": true,
-                "uuid": "7b541d4c-bd21-4081-82bd-27e98672bfef"
+                "check_needed": true
               },
               {
-                "id": "exercise_05_q04",
+                "id": "571c4569-4dce-4c3c-966a-90ec417215d0",
                 "order": 4,
                 "prompt_zh": "我的自行车朋友借了。",
                 "answer": "我的自行车被朋友借走了。/ 朋友借走了我的自行车。",
                 "answer_verified": false,
                 "source_origin": "textbook_question_generated_answer",
-                "check_needed": true,
-                "uuid": "e7ced21a-dca4-4965-a9b9-c3c8b8223eb0"
+                "check_needed": true
               },
               {
-                "id": "exercise_05_q05",
+                "id": "bfae7160-f3f1-4e03-91d8-eb2af7e89781",
                 "order": 5,
                 "prompt_zh": "黑板上的字你看见清楚了吗？",
                 "answer": "黑板上的字你看清楚了吗？",
                 "answer_verified": false,
                 "source_origin": "textbook_question_generated_answer",
-                "check_needed": true,
-                "uuid": "c4082ab0-768d-42ea-8640-5e31173ce682"
+                "check_needed": true
               },
               {
-                "id": "exercise_05_q06",
+                "id": "3dad4639-0423-4a72-b84f-530d2668c3b0",
                 "order": 6,
                 "prompt_zh": "那本书找了很长时间也不找到。",
                 "answer": "那本书找了很长时间也没找到。",
                 "answer_verified": false,
                 "source_origin": "textbook_question_generated_answer",
-                "check_needed": true,
-                "uuid": "f30ee83f-3cb1-484e-a5eb-2304e0a1a848"
+                "check_needed": true
               }
             ],
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "e35d34c5-9459-4c6d-b2b5-ca869085b0eb"
+            "check_needed": false
           },
           {
-            "id": "exercise_06",
+            "id": "60ec1197-2967-408c-a1f3-3c2112f8305a",
             "type": "reading_fill_blank",
             "variant": "reading_cloze",
             "order": 6,
@@ -2451,110 +2273,99 @@
               }
             ],
             "passage": {
-              "id": "exercise_06_passage",
+              "id": "6321fa69-46bc-4458-91d0-f08bc98b3bcd",
               "title": "你去哪儿",
               "zh": "我的一个朋友在首都剧场附近开①____一个小公司。那天很忙，职员们都没有吃午饭，她为了②____大家买吃的，就打的去了“麦当劳”，买好了饭就又打的③____回去。司机问她去哪儿，她说：“首都jī场。”司机奇怪地看了她一眼，但还是开车走了。走④____好长时间，我的朋友觉得不对，就⑤____司机说，错了。司机说没错，这就是去首都机场的路。朋友一听，坏了，忙说：“我不去首都机场，我去王府井的首都剧场。”司机说：“你刚才说的是去‘首都机场’。”我朋友才知道自己发音有问题，只好对司机说：“对不起，我汉语说得不好，发音不清楚。”\n\n回到公司，大家问她去哪儿⑥____，她⑦____大家讲了这件事，大家都笑了。\n\n我想不少外国留学生都会碰⑧____这种叫人哭笑不得的事吧。要学⑨____汉语，发音是非常重要的。",
-              "vi": "",
-              "uuid": "df8673ae-9aee-4797-a3d9-387f70a4949c"
+              "vi": ""
             },
             "questions": [
               {
-                "id": "exercise_06_blank_01",
+                "id": "f584c635-c963-4adb-8968-845d258f8c83",
                 "order": 1,
                 "blank_no": 1,
                 "answer": "",
                 "answer_verified": false,
                 "source_origin": "textbook_question_generated_answer",
-                "check_needed": true,
-                "uuid": "82659adc-e739-4846-8336-256683e51ea6"
+                "check_needed": true
               },
               {
-                "id": "exercise_06_blank_02",
+                "id": "ef81c2f2-deb6-4ca2-abfe-56c478940b27",
                 "order": 2,
                 "blank_no": 2,
                 "answer": "",
                 "answer_verified": false,
                 "source_origin": "textbook_question_generated_answer",
-                "check_needed": true,
-                "uuid": "0b1076b7-9a31-4fbc-b04d-87f9c2ce8ac5"
+                "check_needed": true
               },
               {
-                "id": "exercise_06_blank_03",
+                "id": "fd666d99-a68f-4a57-ad9d-2a452e22a94f",
                 "order": 3,
                 "blank_no": 3,
                 "answer": "",
                 "answer_verified": false,
                 "source_origin": "textbook_question_generated_answer",
-                "check_needed": true,
-                "uuid": "58d33cf1-1fc6-4d6c-ac2a-8cfa6d64c0c9"
+                "check_needed": true
               },
               {
-                "id": "exercise_06_blank_04",
+                "id": "ddf25b55-e307-4b88-9c30-f2197bc3f606",
                 "order": 4,
                 "blank_no": 4,
                 "answer": "",
                 "answer_verified": false,
                 "source_origin": "textbook_question_generated_answer",
-                "check_needed": true,
-                "uuid": "8cc7a09d-6e06-4c4e-9611-48f148aef37f"
+                "check_needed": true
               },
               {
-                "id": "exercise_06_blank_05",
+                "id": "626d540b-6103-4879-b69e-f96181d30318",
                 "order": 5,
                 "blank_no": 5,
                 "answer": "",
                 "answer_verified": false,
                 "source_origin": "textbook_question_generated_answer",
-                "check_needed": true,
-                "uuid": "ed5d3d5a-ba8b-4618-814f-abb19da245d6"
+                "check_needed": true
               },
               {
-                "id": "exercise_06_blank_06",
+                "id": "7311695e-9430-4482-8509-3f4e3d7d9f0d",
                 "order": 6,
                 "blank_no": 6,
                 "answer": "",
                 "answer_verified": false,
                 "source_origin": "textbook_question_generated_answer",
-                "check_needed": true,
-                "uuid": "c586eac6-741e-4a50-af87-fd10edceb504"
+                "check_needed": true
               },
               {
-                "id": "exercise_06_blank_07",
+                "id": "f969594f-962e-4ab3-891d-b33d532c7e5a",
                 "order": 7,
                 "blank_no": 7,
                 "answer": "",
                 "answer_verified": false,
                 "source_origin": "textbook_question_generated_answer",
-                "check_needed": true,
-                "uuid": "7b7c6901-d782-448e-b785-df57b2a48017"
+                "check_needed": true
               },
               {
-                "id": "exercise_06_blank_08",
+                "id": "fe0f2387-c3a3-4d27-9b49-60b869a456a0",
                 "order": 8,
                 "blank_no": 8,
                 "answer": "",
                 "answer_verified": false,
                 "source_origin": "textbook_question_generated_answer",
-                "check_needed": true,
-                "uuid": "2cb8ab7d-8cd7-42b3-8c5c-2b9290d98f49"
+                "check_needed": true
               },
               {
-                "id": "exercise_06_blank_09",
+                "id": "e04f3ae8-60d4-498c-8af5-412659cf4634",
                 "order": 9,
                 "blank_no": 9,
                 "answer": "",
                 "answer_verified": false,
                 "source_origin": "textbook_question_generated_answer",
-                "check_needed": true,
-                "uuid": "c6ab2ed6-3a08-4ef5-9239-b871f91972b7"
+                "check_needed": true
               }
             ],
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "8a05a862-544b-4c5d-b8b4-8e881d29b296"
+            "check_needed": false
           },
           {
-            "id": "exercise_07",
+            "id": "1fd4313d-93f3-4cbe-9dd4-2ba0d5bac415",
             "type": "communication_dialogue",
             "variant": "role_play",
             "order": 7,
@@ -2566,7 +2377,7 @@
             },
             "situations": [
               {
-                "id": "exercise_07_situation_01",
+                "id": "72e610fb-a963-44d7-ad13-c4631a0cba98",
                 "title": "修自行车",
                 "title_vi": "Sửa xe đạp",
                 "lines": [
@@ -2605,11 +2416,10 @@
                     "zh": "那你中午来取吧。",
                     "vi": "Vậy trưa bạn đến lấy nhé."
                   }
-                ],
-                "uuid": "57f115d8-2ab5-43de-b2be-070018144a41"
+                ]
               },
               {
-                "id": "exercise_07_situation_02",
+                "id": "3625bfe6-5b7d-4899-8ac1-c2bf8918e43b",
                 "title": "建议",
                 "title_vi": "Đưa ra đề nghị",
                 "lines": [
@@ -2633,19 +2443,16 @@
                     "zh": "好吧。",
                     "vi": "Được thôi."
                   }
-                ],
-                "uuid": "20b2d823-114a-45b9-b916-890ea7df2684"
+                ]
               }
             ],
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "8b1baf91-bc30-43c0-9ae3-957c5cd436c6"
+            "check_needed": false
           }
-        ],
-        "uuid": "2d461a0f-75dd-4abe-9ff4-b8e5c4073cc5"
+        ]
       },
       {
-        "id": "section_07_reading",
+        "id": "886f621e-85ce-4e1a-91df-d8d257596034",
         "type": "reading",
         "order": 7,
         "title": "阅读理解 / 读后复述",
@@ -2654,7 +2461,7 @@
         "check_needed": false,
         "items": [
           {
-            "id": "reading_01",
+            "id": "9bd9a79e-3279-468d-9f4b-ecd1f7365e19",
             "type": "text_reading",
             "variant": "read_and_retell",
             "order": 1,
@@ -2679,36 +2486,33 @@
             ],
             "paragraphs": [
               {
-                "id": "reading_01_p01",
+                "id": "d2a4cf8b-55cd-4904-9fed-3141da682b19",
                 "order": 1,
                 "zh": "早上起床一看，外边正在下雪，就想得早点出发。平时我一般七点才从家里走，今天怕迟到，六点钟就出来了。刚出门就摔了一跤，眼镜儿也摔在地上摔坏了。你说倒霉不倒霉。路上又碰上一起交通事故，我的车整整堵了二十分钟。快八点了才到办公室。差点儿迟到。",
                 "pinyin": "",
                 "vi": "Sáng dậy nhìn ra thì thấy bên ngoài đang có tuyết rơi, nên tôi nghĩ phải xuất phát sớm hơn một chút. Bình thường tôi thường bảy giờ mới rời nhà, hôm nay sợ đến muộn nên sáu giờ đã ra khỏi nhà rồi. Vừa ra khỏi cửa thì tôi ngã một cú, kính cũng rơi xuống đất vỡ mất. Bạn nói xem có xui không chứ. Trên đường lại gặp một vụ tai nạn giao thông, xe của tôi bị kẹt suốt hai mươi phút. Gần tám giờ mới đến văn phòng. Suýt nữa thì đến muộn.",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "34218ce5-71ec-4e74-94b4-f94d7acaf5bc"
+                "check_needed": false
               },
               {
-                "id": "reading_01_p02",
+                "id": "a6b1119e-769b-4444-9eee-c4a26d7f6af3",
                 "order": 2,
                 "zh": "城市交通是一个大问题。骑自行车的人多，有汽车的人也一年比一年多；有的人又不遵守交通规则，这是造成交通拥挤的主要原因。小黄说，最好赶快发展地铁。我想也是。",
                 "pinyin": "",
                 "vi": "Giao thông đô thị là một vấn đề lớn. Người đi xe đạp thì nhiều, người có ô tô cũng năm này qua năm khác càng nhiều hơn; có người lại không tuân thủ quy tắc giao thông, đây là nguyên nhân chính gây ùn tắc giao thông. Tiểu Hoàng nói tốt nhất là nhanh chóng phát triển tàu điện ngầm. Tôi cũng nghĩ như vậy.",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "e7c0cace-a526-40a9-a3e3-b0e540dffc44"
+                "check_needed": false
               }
             ],
             "tasks": [
               {
-                "id": "reading_01_task_01",
+                "id": "df48746e-7d35-4d12-a9d2-82bf888920e9",
                 "type": "retell_text",
                 "prompt_zh": "读后复述。",
                 "prompt_vi": "Đọc xong rồi kể lại.",
                 "grading": {
                   "mode": "manual"
-                },
-                "uuid": "25796baa-ccc8-48d7-ba24-c6ab84b13dd8"
+                }
               }
             ],
             "retell_key_points": [
@@ -2729,14 +2533,12 @@
               "check_needed": false
             },
             "source_origin": "textbook/generated_mixed",
-            "check_needed": false,
-            "uuid": "93ee41f4-7664-47e4-97d9-ef5f6e1804e5"
+            "check_needed": false
           }
-        ],
-        "uuid": "40edd0b7-2146-49e7-b1ca-58e72503761e"
+        ]
       },
       {
-        "id": "section_08_character_writing",
+        "id": "2a3cfdb8-618f-43d3-9ad4-160d1dbb366a",
         "type": "character_writing",
         "order": 8,
         "title": "写汉字",
@@ -2745,76 +2547,69 @@
         "check_needed": false,
         "items": [
           {
-            "id": "char_001",
+            "id": "9f8c867c-beba-46cf-99e0-2dc871b61547",
             "type": "character_copying",
             "order": 1,
             "hanzi": "之",
             "pinyin": "zhī",
             "note_vi": "trong 之一: một trong những…",
             "source_origin": "textbook/generated_mixed",
-            "check_needed": false,
-            "uuid": "4f4c7c16-160b-43d5-84de-41552c2cbc90"
+            "check_needed": false
           },
           {
-            "id": "char_002",
+            "id": "d64267f3-d0df-480d-ac2c-799cc72c5727",
             "type": "character_copying",
             "order": 2,
             "hanzi": "引",
             "pinyin": "yǐn",
             "note_vi": "trong 引起: gây ra, dẫn đến",
             "source_origin": "textbook/generated_mixed",
-            "check_needed": false,
-            "uuid": "dd9181dc-d286-48f6-9dd8-558004c78905"
+            "check_needed": false
           },
           {
-            "id": "char_003",
+            "id": "f18de2f5-ea9a-4c6f-8203-9ec87e6074f0",
             "type": "character_copying",
             "order": 3,
             "hanzi": "闭",
             "pinyin": "bì",
             "note_vi": "trong 闭上: nhắm lại, đóng lại",
             "source_origin": "textbook/generated_mixed",
-            "check_needed": false,
-            "uuid": "c4797dbf-2017-43aa-8471-1f34ab05dbbb"
+            "check_needed": false
           },
           {
-            "id": "char_004",
+            "id": "eeadefcb-f658-4422-878c-4642cec9caa5",
             "type": "character_copying",
             "order": 4,
             "hanzi": "油",
             "pinyin": "yóu",
             "note_vi": "trong 油画: tranh sơn dầu",
             "source_origin": "textbook/generated_mixed",
-            "check_needed": false,
-            "uuid": "f26b49d4-2ee2-449f-86d8-c7989d42183e"
+            "check_needed": false
           },
           {
-            "id": "char_005",
+            "id": "7986bf0d-0a2a-4df2-bfb5-77177a96c27a",
             "type": "character_copying",
             "order": 5,
             "hanzi": "虚",
             "pinyin": "xū",
             "note_vi": "mờ, không rõ; 照虚了",
             "source_origin": "textbook/generated_mixed",
-            "check_needed": false,
-            "uuid": "77cb09ca-49bb-4efb-a741-db4df4885d53"
+            "check_needed": false
           },
           {
-            "id": "char_006",
+            "id": "69cee776-d51f-4d4c-8865-44e5c500be8b",
             "type": "character_copying",
             "order": 6,
             "hanzi": "选",
             "pinyin": "xuǎn",
             "note_vi": "chọn; 选照片 / 选好了",
             "source_origin": "textbook/generated_mixed",
-            "check_needed": false,
-            "uuid": "265331cc-a70e-44a4-9d74-ffb6fc6e2410"
+            "check_needed": false
           }
-        ],
-        "uuid": "6257e85f-f8df-4edc-b005-607682bb70f9"
+        ]
       },
       {
-        "id": "section_09_summary",
+        "id": "944b8c3a-d3d4-4265-a907-10cef8340ac2",
         "type": "summary",
         "order": 9,
         "title": "总结",
@@ -2833,19 +2628,16 @@
         ],
         "grammar_points": [
           {
-            "id": "grammar_passive_meaning",
-            "title": "被动意义的表达：被动句",
-            "uuid": "214267e0-b359-4daa-8328-3bdb8ff4a5a1"
+            "id": "6c610f98-2d68-4ff6-85e8-0cccbec38c7b",
+            "title": "被动意义的表达：被动句"
           },
           {
-            "id": "grammar_measure_word_reduplication",
-            "title": "量词重叠",
-            "uuid": "5dd3d2ed-4152-438f-bbf8-56739825f92d"
+            "id": "5e0db92f-f3b4-4746-a9a7-7761bcd985ee",
+            "title": "量词重叠"
           },
           {
-            "id": "grammar_year_by_year",
-            "title": "一年比一年",
-            "uuid": "36c97498-b8c6-4f40-b780-d9f489199313"
+            "id": "874e376a-a113-46ba-b49b-c492f5f33124",
+            "title": "一年比一年"
           }
         ],
         "key_patterns": [
@@ -2869,10 +2661,49 @@
           "remaining_check_needed": [
             "Một số đáp án bài tập là generated/suy luận, cần giáo viên hoặc answer key chính thức xác nhận nếu muốn final_verified."
           ]
-        },
-        "uuid": "50e38f02-1044-4089-8a1e-34d57b639ea1"
+        }
       }
     ],
+    "metadata": {
+      "legacy_id": "hanyu_2_2_lesson_13",
+      "book": "Hanyu Jiaocheng",
+      "volume": "第二册下",
+      "volume_vi": "Quyển 2 Hạ",
+      "lesson_index": 13,
+      "lesson_number_cn": "第十三课",
+      "lesson_title_cn": "我的眼镜儿摔坏了",
+      "lesson_title_pinyin": "Wǒ de yǎnjìngr shuāi huài le",
+      "lesson_title_vi": "Kính mắt của tôi bị rơi vỡ rồi",
+      "lesson_title_en": "I've broken my glasses",
+      "source_files": [
+        {
+          "name": "Hanyu Jiaocheng 2-2.pdf",
+          "type": "pdf_scan",
+          "source_origin": "textbook",
+          "check_needed": true,
+          "page_start": 19,
+          "page_end": 23
+        },
+        {
+          "name": "Tong_hop_tu_vung_Han_ngu_quyen_2_Bai_1-25.docx",
+          "type": "uploaded_crosscheck",
+          "source_origin": "uploaded_crosscheck",
+          "check_needed": false
+        },
+        {
+          "name": "Học kì 2 上-下.md",
+          "type": "uploaded_crosscheck",
+          "source_origin": "uploaded_crosscheck",
+          "check_needed": false
+        },
+        {
+          "name": "hanyuLesson.schema.v2.3.0.full.ts",
+          "type": "schema",
+          "source_origin": "uploaded_crosscheck",
+          "check_needed": false
+        }
+      ]
+    },
     "summary": {
       "lesson_parts": [
         "Bài khóa",
@@ -2887,19 +2718,16 @@
       ],
       "grammar_points": [
         {
-          "id": "grammar_passive_meaning",
-          "title": "Câu bị động ý nghĩa",
-          "uuid": "b0ba910e-d7ff-4480-8ae7-dd539b2c27a1"
+          "id": "6c610f98-2d68-4ff6-85e8-0cccbec38c7b",
+          "title": "Câu bị động ý nghĩa"
         },
         {
-          "id": "grammar_measure_word_reduplication",
-          "title": "Lượng từ lặp lại",
-          "uuid": "2a52ddf5-1ed1-4243-848c-6c7973d2b5ad"
+          "id": "5e0db92f-f3b4-4746-a9a7-7761bcd985ee",
+          "title": "Lượng từ lặp lại"
         },
         {
-          "id": "grammar_year_by_year",
-          "title": "Năm sau hơn năm trước / càng ngày càng...",
-          "uuid": "18d7bdd7-147a-4cd5-8b66-c1a7f7d18928"
+          "id": "874e376a-a113-46ba-b49b-c492f5f33124",
+          "title": "Năm sau hơn năm trước / càng ngày càng..."
         }
       ],
       "main_patterns": [],
@@ -2913,194 +2741,6 @@
         "Hội thoại giao tiếp"
       ],
       "check_needed": false
-    },
-    "uuid": "b8775708-f059-408b-945c-baa0dba43a03"
-  },
-  "coverage_report": {
-    "version": "coverage_v1",
-    "coverage_status": "complete_unverified",
-    "expected_exercise_count_from_pdf": 9,
-    "actual_exercise_count_in_json": 9,
-    "all_exercises_covered": true,
-    "all_exercise_content_verified": true,
-    "all_answer_keys_verified": false,
-    "missing_exercise_indexes": [],
-    "expected_exercises_from_pdf": [
-      {
-        "order": 1,
-        "title_cn": "语音",
-        "title_vi": "Ngữ âm",
-        "canonical_type": "phonetics",
-        "canonical_variant": "pronunciation_tone_minimal_pairs",
-        "json_item_id": "exercise_01",
-        "page_start": null,
-        "page_end": null,
-        "extracted": true,
-        "content_verified": true,
-        "answer_verified": true,
-        "source_origin": "textbook",
-        "check_needed": false
-      },
-      {
-        "order": 2,
-        "title_cn": "替换",
-        "title_vi": "Thay thế",
-        "canonical_type": "substitution_drill",
-        "canonical_variant": "substitution_or_transform_drill",
-        "json_item_id": "exercise_02",
-        "page_start": null,
-        "page_end": null,
-        "extracted": true,
-        "content_verified": true,
-        "answer_verified": true,
-        "source_origin": "textbook",
-        "check_needed": false
-      },
-      {
-        "order": 3,
-        "title_cn": "选词填空",
-        "title_vi": "Chọn từ điền chỗ trống",
-        "canonical_type": "choose_words_fill_blank",
-        "canonical_variant": "word_bank_fill_blank",
-        "json_item_id": "exercise_03",
-        "page_start": null,
-        "page_end": null,
-        "extracted": true,
-        "content_verified": true,
-        "answer_verified": false,
-        "source_origin": "textbook_question_generated_answer",
-        "check_needed": false
-      },
-      {
-        "order": 4,
-        "title_cn": "填结果补语",
-        "title_vi": "Điền bổ ngữ kết quả",
-        "canonical_type": "fill_blank",
-        "canonical_variant": "free_fill_blank",
-        "json_item_id": "exercise_04",
-        "page_start": null,
-        "page_end": null,
-        "extracted": true,
-        "content_verified": true,
-        "answer_verified": false,
-        "source_origin": "textbook_question_generated_answer",
-        "check_needed": true
-      },
-      {
-        "order": 5,
-        "title_cn": "改错句",
-        "title_vi": "Sửa câu sai",
-        "canonical_type": "correct_sentence",
-        "canonical_variant": "error_correction",
-        "json_item_id": "exercise_05",
-        "page_start": null,
-        "page_end": null,
-        "extracted": true,
-        "content_verified": true,
-        "answer_verified": false,
-        "source_origin": "textbook_question_generated_answer",
-        "check_needed": true
-      },
-      {
-        "order": 6,
-        "title_cn": "综合填空",
-        "title_vi": "Điền tổng hợp",
-        "canonical_type": "reading_fill_blank",
-        "canonical_variant": "reading_cloze",
-        "json_item_id": "exercise_06",
-        "page_start": null,
-        "page_end": null,
-        "extracted": true,
-        "content_verified": true,
-        "answer_verified": false,
-        "source_origin": "textbook_question_generated_answer",
-        "check_needed": true
-      },
-      {
-        "order": 7,
-        "title_cn": "交际会话",
-        "title_vi": "Hội thoại giao tiếp",
-        "canonical_type": "communication_dialogue",
-        "canonical_variant": "role_play",
-        "json_item_id": "exercise_07",
-        "page_start": null,
-        "page_end": null,
-        "extracted": true,
-        "content_verified": true,
-        "answer_verified": true,
-        "source_origin": "textbook",
-        "check_needed": false
-      },
-      {
-        "order": 8,
-        "title_cn": "读后复述",
-        "title_vi": "Đọc rồi kể lại",
-        "canonical_type": "reading_comprehension",
-        "canonical_variant": "retell_text",
-        "json_item_id": "reading_01",
-        "page_start": null,
-        "page_end": null,
-        "extracted": true,
-        "content_verified": true,
-        "answer_verified": false,
-        "source_origin": "textbook/generated_mixed",
-        "check_needed": false
-      },
-      {
-        "order": 9,
-        "title_cn": "写汉字",
-        "title_vi": "Viết chữ Hán",
-        "canonical_type": "character_writing",
-        "canonical_variant": "character_copying",
-        "json_item_id": "section_08_character_writing",
-        "page_start": null,
-        "page_end": null,
-        "extracted": true,
-        "content_verified": true,
-        "answer_verified": true,
-        "source_origin": "textbook",
-        "check_needed": false
-      }
-    ],
-    "unknown_or_unmapped_blocks": [],
-    "coverage_gates": [
-      {
-        "id": "gate_text",
-        "label": "Text sections covered",
-        "passed": true,
-        "expected": 2,
-        "actual": 2,
-        "reason": "Đã bóc 2 bài khóa.",
-        "uuid": "405dc082-29c8-445e-8e1b-e050f7fbac55"
-      },
-      {
-        "id": "gate_vocab",
-        "label": "Vocabulary count covered",
-        "passed": true,
-        "expected": 32,
-        "actual": 32,
-        "reason": "Đã sửa PART 02 về 32 mục chính.",
-        "uuid": "a8173b35-0f82-4748-a296-79db11220f0e"
-      },
-      {
-        "id": "gate_exercises",
-        "label": "Exercises covered",
-        "passed": true,
-        "expected": 9,
-        "actual": 9,
-        "reason": "Đã cover 9 mục bài tập gồm 读后复述 và 写汉字.",
-        "uuid": "3f3ae96c-9b36-4734-a254-b7a18fb40372"
-      },
-      {
-        "id": "gate_answers",
-        "label": "Answer keys verified",
-        "passed": false,
-        "expected": "official answer key",
-        "actual": "generated/partial",
-        "reason": "Một số đáp án bài tập là generated, chưa có answer key chính thức.",
-        "uuid": "1147dfee-29ec-4ad8-b810-c4a7239c8886"
-      }
-    ],
-    "final_verification_allowed": false
+    }
   }
 }

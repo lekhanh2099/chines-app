@@ -6,6 +6,23 @@ import type {
 export type LessonDisplayMode = {
  showPinyin: boolean;
  showMeaning: boolean;
+ hanziFont: HanziReaderFont;
+ hanziSize: HanziReaderSize;
+};
+
+export type HanziReaderFont =
+ | "system"
+ | "songti"
+ | "kai"
+ | "pinyin"
+ | "mengshen";
+export type HanziReaderSize = "md" | "lg" | "xl" | "2xl" | "3xl";
+
+export const DEFAULT_LESSON_DISPLAY_MODE: LessonDisplayMode = {
+ showPinyin: true,
+ showMeaning: true,
+ hanziFont: "mengshen",
+ hanziSize: "lg",
 };
 
 export type BookSection = {

@@ -5,6 +5,31 @@
 @custom-variant dark (&:is(.dark *));
 @plugin "@tailwindcss/typography";
 
+@font-face {
+  font-family: "Mengshen Han Serif";
+  src: url("/fonts/Mengshen-HanSerif.ttf") format("truetype");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Hanzi Songti";
+  src: local("Songti SC"), local("STSong"), local("Songti TC"),
+    local("Songti");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "FZ Kai Pinyin";
+  src: url("/fonts/FZKaiPinyin.ttf") format("truetype");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Chinese Pinyin Font";
+  src: url("/fonts/Pinyinfont_V2.ttf") format("truetype");
+  font-display: swap;
+}
+
 /* =============================================
    THEME SYSTEM — CSS Custom Property Tokens
    ============================================= */
@@ -2041,7 +2066,7 @@ select {
 .zh-text,
 [lang="zh"],
 [lang="zh-CN"] {
-  font-family: var(--font-chinese) !important;
+  font-family: var(--font-chinese);
 }
 
 /* Pinyin dùng stack Latin rõ dấu */

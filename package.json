@@ -10,6 +10,8 @@
     "data:hanzihome:ui-audit": "node --experimental-strip-types scripts/audit-hanzihome-lesson-ui.ts",
     "data:hanzihome:vocab-audit": "node --experimental-strip-types scripts/audit-hanzihome-vocab-ui.ts",
     "data:hanzihome:import-lessons": "node --experimental-strip-types scripts/import-hanzihome-lessons.ts",
+    "data:hanzihome:sync-manifest": "node --experimental-strip-types scripts/sync-hanzihome-manifest.ts",
+    "data:hanzihome:normalize-vocab": "node --experimental-strip-types scripts/normalize-hanzihome-vocab.ts",
     "data:hanzihome:fill-pos": "node --experimental-strip-types scripts/fill-hanzihome-lesson-vocab-pos.ts",
     "start": "next start",
     "lint": "eslint",

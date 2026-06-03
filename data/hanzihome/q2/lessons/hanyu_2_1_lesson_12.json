@@ -1,56 +1,6 @@
 {
-  "schema_version": "2.3.0",
-  "content_type": "chinese_textbook_lesson",
-  "verification_status": "verified",
-  "source": {
-    "book": "Hanyu Jiaocheng",
-    "volume": "第二册上",
-    "volume_vi": "Quyển 2 Thượng",
-    "lesson_index": 12,
-    "lesson_number_cn": "第十二课",
-    "lesson_title_cn": "我的护照你找到了没有",
-    "lesson_title_pinyin": "Wǒ de hùzhào nǐ zhǎodào le méiyǒu",
-    "lesson_title_vi": "Hộ chiếu của tôi bạn tìm thấy chưa?",
-    "lesson_title_en": "Did you find my passport?",
-    "source_files": [
-      {
-        "name": "Hanyu Jiaocheng 2-1.pdf",
-        "type": "pdf_scan",
-        "source_origin": "textbook",
-        "check_needed": true,
-        "page_start": 196,
-        "page_end": 209,
-        "note": "Main textbook source used during Markdown extraction."
-      },
-      {
-        "name": "Tong_hop_tu_vung_Han_ngu_quyen_2_Bai_1-25.docx",
-        "type": "uploaded_crosscheck",
-        "source_origin": "uploaded_crosscheck",
-        "check_needed": false
-      },
-      {
-        "name": "Học kì 2 上-下.md",
-        "type": "uploaded_crosscheck",
-        "source_origin": "uploaded_crosscheck",
-        "check_needed": false
-      },
-      {
-        "name": "hanyuLesson.schema.v2.3.0.full.ts",
-        "type": "schema",
-        "source_origin": "uploaded_crosscheck",
-        "check_needed": false
-      }
-    ],
-    "web_crosscheck": [
-      {
-        "title": "Search result confirming lesson title and lesson text excerpts",
-        "source_origin": "web_crosscheck",
-        "note": "Used only for title/text cross-check; textbook PDF remains primary."
-      }
-    ]
-  },
   "lesson": {
-    "id": "hanyu_2_1_lesson_12",
+    "id": "f11f885d-e5e2-4d28-a7bb-d5eeaf81d179",
     "title": {
       "zh": "我的护照你找到了没有",
       "pinyin": "Wǒ de hùzhào nǐ zhǎodào le méiyǒu",
@@ -66,7 +16,7 @@
     ],
     "sections": [
       {
-        "id": "section_01_text",
+        "id": "a6c0d522-99be-4f36-881c-b9b2c6beeb85",
         "type": "text",
         "order": 1,
         "title": "课文",
@@ -75,7 +25,7 @@
         "check_needed": false,
         "blocks": [
           {
-            "id": "text_01",
+            "id": "e155d5ea-f89d-45f0-ab8d-094ce9e719f0",
             "type": "text_dialogue",
             "order": 1,
             "title": "我的护照你找到了没有",
@@ -84,7 +34,7 @@
             "check_needed": false,
             "lines": [
               {
-                "id": "text_01_l01",
+                "id": "f8046d8e-353e-4b63-a072-7498c8f1d9ff",
                 "order": 1,
                 "speaker": "关建平",
                 "zh": "我的护照你找到了没有？",
@@ -92,18 +42,17 @@
                 "vi": "Hộ chiếu của anh em tìm thấy chưa?",
                 "audio_key": "",
                 "vocab_refs": [
-                  "vocab_001"
+                  "68c05a12-9d8e-45d9-a413-786bcf2f780a"
                 ],
                 "grammar_refs": [
-                  "grammar_01",
-                  "grammar_02"
+                  "f8ec59f3-898a-47b2-b536-44dfd8183393",
+                  "57b14753-688a-41b6-9e0d-b61dbbf574d7"
                 ],
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "d4cd5ef3-8b90-4902-8233-26dcc6640931"
+                "check_needed": false
               },
               {
-                "id": "text_01_l02",
+                "id": "30929615-34c8-4e5b-b0a2-5ad3358ad755",
                 "order": 2,
                 "speaker": "夏雨",
                 "zh": "没有，我找了半天也没找着。你是不是放在办公室了？",
@@ -111,19 +60,18 @@
                 "vi": "Chưa, em tìm cả buổi cũng không tìm thấy. Có phải anh để ở văn phòng không?",
                 "audio_key": "",
                 "vocab_refs": [
-                  "vocab_007",
-                  "vocab_025",
-                  "vocab_026"
+                  "54613016-834a-4fc3-9912-2357a6d27058",
+                  "c43cedbf-7024-4ec1-922f-e75119114baf",
+                  "d9991c79-3454-4247-bf18-f14f43b4a24a"
                 ],
                 "grammar_refs": [
-                  "grammar_02"
+                  "57b14753-688a-41b6-9e0d-b61dbbf574d7"
                 ],
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "aa843d01-7383-484c-b745-f57efa5e6a67"
+                "check_needed": false
               },
               {
-                "id": "text_01_l03",
+                "id": "9faf6980-effe-42f1-a01e-7f1740da2edb",
                 "order": 3,
                 "speaker": "关建平",
                 "zh": "护照我从来不在办公室里放。",
@@ -131,20 +79,19 @@
                 "vi": "Hộ chiếu thì anh trước giờ không bao giờ để ở văn phòng.",
                 "audio_key": "",
                 "vocab_refs": [
-                  "vocab_001",
-                  "vocab_009",
-                  "vocab_026"
+                  "68c05a12-9d8e-45d9-a413-786bcf2f780a",
+                  "54b36889-82be-485b-8342-fb8aab572065",
+                  "d9991c79-3454-4247-bf18-f14f43b4a24a"
                 ],
                 "grammar_refs": [
-                  "grammar_01",
-                  "grammar_02"
+                  "f8ec59f3-898a-47b2-b536-44dfd8183393",
+                  "57b14753-688a-41b6-9e0d-b61dbbf574d7"
                 ],
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "af266fed-af56-4be8-bc7c-0ef8df7dff2a"
+                "check_needed": false
               },
               {
-                "id": "text_01_l04",
+                "id": "146f8fa1-ae74-468d-910e-19cab53e3cf3",
                 "order": 4,
                 "speaker": "夏雨",
                 "zh": "昨天你办完签证放在什么地方了？",
@@ -152,18 +99,17 @@
                 "vi": "Hôm qua sau khi làm xong visa, anh để ở đâu?",
                 "audio_key": "",
                 "vocab_refs": [
-                  "vocab_002",
-                  "vocab_026"
+                  "8c18cf3c-e9dc-42e1-8faf-eb26799cabab",
+                  "d9991c79-3454-4247-bf18-f14f43b4a24a"
                 ],
                 "grammar_refs": [
-                  "grammar_02"
+                  "57b14753-688a-41b6-9e0d-b61dbbf574d7"
                 ],
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "4bc7b290-7dd5-4c37-bd40-71723af3ccc7"
+                "check_needed": false
               },
               {
-                "id": "text_01_l05",
+                "id": "44d4c32e-309d-4802-b7cf-e41ee8052535",
                 "order": 5,
                 "speaker": "关建平",
                 "zh": "放在我的手提包儿里了。",
@@ -171,18 +117,17 @@
                 "vi": "Anh để trong túi xách của anh rồi.",
                 "audio_key": "",
                 "vocab_refs": [
-                  "vocab_003",
-                  "vocab_026"
+                  "1fbd69b7-603a-44ea-8d57-10cd4def9ced",
+                  "d9991c79-3454-4247-bf18-f14f43b4a24a"
                 ],
                 "grammar_refs": [
-                  "grammar_02"
+                  "57b14753-688a-41b6-9e0d-b61dbbf574d7"
                 ],
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "d25a568c-52a0-488e-bd42-23e2b51d28cf"
+                "check_needed": false
               },
               {
-                "id": "text_01_l06",
+                "id": "6f4b4423-8315-40e6-88fa-2fa2038271af",
                 "order": 6,
                 "speaker": "夏雨",
                 "zh": "你的包儿呢？",
@@ -190,15 +135,14 @@
                 "vi": "Túi của anh đâu?",
                 "audio_key": "",
                 "vocab_refs": [
-                  "vocab_003"
+                  "1fbd69b7-603a-44ea-8d57-10cd4def9ced"
                 ],
                 "grammar_refs": [],
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "dff8a0e0-3151-4882-9b66-682223d145f6"
+                "check_needed": false
               },
               {
-                "id": "text_01_l07",
+                "id": "6de58c5b-164f-4b2f-8d7e-84f1c7c1a66c",
                 "order": 7,
                 "speaker": "关建平",
                 "zh": "我一回到家不是就交给你了吗？",
@@ -208,11 +152,10 @@
                 "vocab_refs": [],
                 "grammar_refs": [],
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "76cf13d4-8995-490f-b5c8-86d6b0da277a"
+                "check_needed": false
               },
               {
-                "id": "text_01_l08",
+                "id": "9d76be1a-c606-44bb-a490-a9bd82982e3b",
                 "order": 8,
                 "speaker": "夏雨",
                 "zh": "对。我再好好儿找找。啊，找到了！",
@@ -220,18 +163,17 @@
                 "vi": "Đúng rồi. Để em tìm kỹ lại xem. À, tìm thấy rồi!",
                 "audio_key": "",
                 "vocab_refs": [
-                  "vocab_056",
-                  "vocab_025"
+                  "e93080a4-2857-4582-a75a-94276764a235",
+                  "c43cedbf-7024-4ec1-922f-e75119114baf"
                 ],
                 "grammar_refs": [
-                  "grammar_02"
+                  "57b14753-688a-41b6-9e0d-b61dbbf574d7"
                 ],
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "d84b5ef7-a1ce-4378-9483-526ad73c3f16"
+                "check_needed": false
               },
               {
-                "id": "text_01_l09",
+                "id": "6e148072-17aa-4ebd-88a1-c59b2fc0ba17",
                 "order": 9,
                 "speaker": "关建平",
                 "zh": "是在包儿里找到的吗？",
@@ -239,18 +181,17 @@
                 "vi": "Có phải tìm thấy trong túi không?",
                 "audio_key": "",
                 "vocab_refs": [
-                  "vocab_003",
-                  "vocab_025"
+                  "1fbd69b7-603a-44ea-8d57-10cd4def9ced",
+                  "c43cedbf-7024-4ec1-922f-e75119114baf"
                 ],
                 "grammar_refs": [
-                  "grammar_02"
+                  "57b14753-688a-41b6-9e0d-b61dbbf574d7"
                 ],
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "36422cc2-70f9-4b4a-9930-e8e21e9530e8"
+                "check_needed": false
               },
               {
-                "id": "text_01_l10",
+                "id": "a8845639-9fca-4398-853d-a08fb63482a8",
                 "order": 10,
                 "speaker": "夏雨",
                 "zh": "不是，在你的大衣口袋里找到的。",
@@ -258,19 +199,18 @@
                 "vi": "Không phải, tìm thấy trong túi áo khoác của anh.",
                 "audio_key": "",
                 "vocab_refs": [
-                  "vocab_004",
-                  "vocab_005",
-                  "vocab_025"
+                  "3dc505f1-bc0e-4a96-b448-17fed89fdc60",
+                  "188412d4-4c23-4d60-b7b2-21f3490199e7",
+                  "c43cedbf-7024-4ec1-922f-e75119114baf"
                 ],
                 "grammar_refs": [
-                  "grammar_02"
+                  "57b14753-688a-41b6-9e0d-b61dbbf574d7"
                 ],
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "3d395a29-e0c9-4a96-ad2d-89bd711d7dd5"
+                "check_needed": false
               },
               {
-                "id": "text_01_l11",
+                "id": "eb3a72ec-54fc-469d-929b-b614c65e00f1",
                 "order": 11,
                 "speaker": "关建平",
                 "zh": "啊，我忘了。是我昨天晚上放到口袋里的。",
@@ -278,18 +218,17 @@
                 "vi": "À, anh quên mất. Là tối hôm qua anh bỏ vào túi áo.",
                 "audio_key": "",
                 "vocab_refs": [
-                  "vocab_005",
-                  "vocab_026"
+                  "188412d4-4c23-4d60-b7b2-21f3490199e7",
+                  "d9991c79-3454-4247-bf18-f14f43b4a24a"
                 ],
                 "grammar_refs": [
-                  "grammar_02"
+                  "57b14753-688a-41b6-9e0d-b61dbbf574d7"
                 ],
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "d4f9522a-cfe0-4ef9-8b88-98e3a7a774a3"
+                "check_needed": false
               },
               {
-                "id": "text_01_l12",
+                "id": "5d22fae9-a022-41b5-a551-b9b68c51b516",
                 "order": 12,
                 "speaker": "夏雨",
                 "zh": "你最近总是丢三落四的。",
@@ -297,20 +236,18 @@
                 "vi": "Dạo này anh lúc nào cũng hay quên trước quên sau.",
                 "audio_key": "",
                 "vocab_refs": [
-                  "vocab_049"
+                  "358d5baa-5ba1-4cb5-984a-44770a1724d6"
                 ],
                 "grammar_refs": [],
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "1d2290ec-d883-406d-98ef-f425c91d57c5"
+                "check_needed": false
               }
             ],
             "paragraphs": [],
-            "comprehension_questions": [],
-            "uuid": "28367352-7592-4e65-9488-72bf1cdbf903"
+            "comprehension_questions": []
           },
           {
-            "id": "text_02",
+            "id": "0156dd39-d5b4-41f5-866d-d336dd29bbc2",
             "type": "text_dialogue",
             "order": 2,
             "title": "我是球迷",
@@ -319,7 +256,7 @@
             "check_needed": false,
             "lines": [
               {
-                "id": "text_02_l01",
+                "id": "887014e5-f6b0-4777-9f95-85a69532ca36",
                 "order": 1,
                 "speaker": "A",
                 "zh": "你喜欢足球吗？",
@@ -329,11 +266,10 @@
                 "vocab_refs": [],
                 "grammar_refs": [],
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "75bbe505-622c-42cd-85be-a50a80a6743d"
+                "check_needed": false
               },
               {
-                "id": "text_02_l02",
+                "id": "65232ef9-30a1-4305-b8b7-12a8ac5aeb91",
                 "order": 2,
                 "speaker": "B",
                 "zh": "一般。你呢？",
@@ -343,11 +279,10 @@
                 "vocab_refs": [],
                 "grammar_refs": [],
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "3d9b73a2-66d8-4afe-8129-89479355b934"
+                "check_needed": false
               },
               {
-                "id": "text_02_l03",
+                "id": "2c1213ac-f81d-414f-8b55-5abe77fe83fc",
                 "order": 3,
                 "speaker": "A",
                 "zh": "你还不知道啊，我可是个球迷。",
@@ -355,15 +290,14 @@
                 "vi": "Bạn còn chưa biết à, tôi là một fan bóng đá chính hiệu đấy.",
                 "audio_key": "",
                 "vocab_refs": [
-                  "vocab_058"
+                  "26999e7c-e64c-4401-9d09-bcfd351db7b5"
                 ],
                 "grammar_refs": [],
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "0e2d6b62-5b90-4cc1-9abc-0edd3380523f"
+                "check_needed": false
               },
               {
-                "id": "text_02_l04",
+                "id": "d797c234-0a16-42e3-bc45-29782e65cb1b",
                 "order": 4,
                 "speaker": "B",
                 "zh": "迷到什么程度？",
@@ -371,15 +305,14 @@
                 "vi": "Mê đến mức nào?",
                 "audio_key": "",
                 "vocab_refs": [
-                  "vocab_014"
+                  "91fa9f81-e5ef-4c4a-b29c-c4b6daa02196"
                 ],
                 "grammar_refs": [],
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "9747780b-8284-4fe3-b344-00a40487862d"
+                "check_needed": false
               },
               {
-                "id": "text_02_l05",
+                "id": "c99f042b-fa9a-478c-aba1-5da333a677e1",
                 "order": 5,
                 "speaker": "A",
                 "zh": "为了看球，饭我可以不吃，觉我可以不睡，工作我可以不干。",
@@ -387,15 +320,14 @@
                 "vi": "Để xem bóng đá, cơm tôi có thể không ăn, ngủ tôi có thể không ngủ, việc tôi cũng có thể không làm.",
                 "audio_key": "",
                 "vocab_refs": [
-                  "vocab_062"
+                  "d2a7ce6a-a83e-42aa-8d6e-9f24d1253da9"
                 ],
                 "grammar_refs": [],
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "7232978e-66d5-4b00-86db-60ab629b8973"
+                "check_needed": false
               },
               {
-                "id": "text_02_l06",
+                "id": "e8680b0f-6dcc-4fc7-abbd-084aba5d3b87",
                 "order": 6,
                 "speaker": "B",
                 "zh": "我看球迷一个个都有点儿不正常。",
@@ -403,17 +335,16 @@
                 "vi": "Tôi thấy fan bóng đá ai nấy đều hơi không bình thường.",
                 "audio_key": "",
                 "vocab_refs": [
-                  "vocab_050"
+                  "20f66e08-4820-43f5-a18a-50f61591e7cd"
                 ],
                 "grammar_refs": [
-                  "grammar_01"
+                  "f8ec59f3-898a-47b2-b536-44dfd8183393"
                 ],
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "08950e1d-f5db-4fa5-a800-17de4d1b42d6"
+                "check_needed": false
               },
               {
-                "id": "text_02_l07",
+                "id": "cc8da348-3e89-4f64-a680-de239f505497",
                 "order": 7,
                 "speaker": "A",
                 "zh": "我也承认，有时候达到了发狂的程度。欧锦赛（欧洲足球锦标赛）期间，我像生了病一样。白天想睡觉，一到晚上就特别有精神。",
@@ -421,22 +352,21 @@
                 "vi": "Tôi cũng thừa nhận, có lúc đạt đến mức phát cuồng. Trong thời gian Euro, tôi giống như bị bệnh vậy. Ban ngày thì buồn ngủ, cứ đến tối là đặc biệt có tinh thần.",
                 "audio_key": "",
                 "vocab_refs": [
-                  "vocab_010",
-                  "vocab_011",
-                  "vocab_013",
-                  "vocab_014",
-                  "vocab_017",
-                  "vocab_038",
-                  "vocab_042",
-                  "vocab_043"
+                  "1354b1a3-93cc-4505-8d7f-c5550a1d6ae9",
+                  "f0684cb3-4577-4e6c-9f22-7d97c89692b3",
+                  "7eccd5e8-dac0-4f36-be2e-abcc0a2bdfcd",
+                  "91fa9f81-e5ef-4c4a-b29c-c4b6daa02196",
+                  "7a89dc80-d79d-4c2f-988c-d0f54e240d19",
+                  "fefd5441-7b6c-47e3-b823-9e149b947bf7",
+                  "863bbf3f-83e7-4021-b98e-be632043d94c",
+                  "b14487b6-5579-4f1c-9ad7-16fd40991577"
                 ],
                 "grammar_refs": [],
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "8f8f1b71-b33e-44ba-9349-2eddb9b55def"
+                "check_needed": false
               },
               {
-                "id": "text_02_l08",
+                "id": "2adb7cf6-26c1-4029-809e-67342fb0227f",
                 "order": 8,
                 "speaker": "B",
                 "zh": "你白天不工作吗？",
@@ -444,15 +374,14 @@
                 "vi": "Ban ngày bạn không làm việc à?",
                 "audio_key": "",
                 "vocab_refs": [
-                  "vocab_008"
+                  "0da97406-c3ac-4fcb-a51c-398a59c3fbae"
                 ],
                 "grammar_refs": [],
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "77d16c31-bf26-4977-b904-49cf8abe061a"
+                "check_needed": false
               },
               {
-                "id": "text_02_l09",
+                "id": "f42aa089-875d-48c4-9213-a083ec251fe7",
                 "order": 9,
                 "speaker": "A",
                 "zh": "这个商店是我自己开的，我在门上贴了一张通知——“暂停营业”。",
@@ -460,18 +389,17 @@
                 "vi": "Cửa hàng này là tôi tự mở, tôi dán một tờ thông báo trên cửa: “Tạm ngừng kinh doanh”.",
                 "audio_key": "",
                 "vocab_refs": [
-                  "vocab_029",
-                  "vocab_034",
-                  "vocab_035",
-                  "vocab_036"
+                  "ba7ff0f9-b633-4516-ab3d-22b96046a1cf",
+                  "1190511f-5970-4304-8f84-d7201b287aeb",
+                  "d42d3d90-443d-45da-bed7-987b50034e92",
+                  "cfb712c9-c4ca-4314-b6b2-696b40ace25e"
                 ],
                 "grammar_refs": [],
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "d738d45e-8e8d-4c2b-895e-e0f9036a3d19"
+                "check_needed": false
               },
               {
-                "id": "text_02_l10",
+                "id": "f7419a05-c714-4cff-ae26-210852d56303",
                 "order": 10,
                 "speaker": "B",
                 "zh": "你还真是个球迷。",
@@ -481,11 +409,10 @@
                 "vocab_refs": [],
                 "grammar_refs": [],
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "b1b3b0b4-fa12-4d50-b348-a4c07be4f2d4"
+                "check_needed": false
               },
               {
-                "id": "text_02_l11",
+                "id": "22e52ff8-58e5-4bfd-8912-95faed7e26d1",
                 "order": 11,
                 "speaker": "A",
                 "zh": "我还不算最迷的。我有一个朋友，在一家外国公司工作，为了能去现场亲眼看世界杯，他向老板请假，老板不准，他就辞职不干了。",
@@ -493,20 +420,19 @@
                 "vi": "Tôi vẫn chưa phải là người mê nhất đâu. Tôi có một người bạn làm ở một công ty nước ngoài. Để có thể đến tận nơi xem World Cup bằng chính mắt mình, anh ấy xin nghỉ với sếp; sếp không cho, thế là anh ấy nghỉ việc luôn.",
                 "audio_key": "",
                 "vocab_refs": [
-                  "vocab_012",
-                  "vocab_031",
-                  "vocab_037",
-                  "vocab_048",
-                  "vocab_059",
-                  "vocab_062"
+                  "d5b362a7-c8f6-4f25-b2b5-0f1749c8afbb",
+                  "092a8c16-3739-4685-a4c0-39365071bd48",
+                  "6059829f-ae21-43cf-ac0c-05e19639ec43",
+                  "05e1ac20-79be-406d-9c90-4b0c847182bc",
+                  "67d5f931-79d4-4182-8e48-3c718cfcb016",
+                  "d2a7ce6a-a83e-42aa-8d6e-9f24d1253da9"
                 ],
                 "grammar_refs": [],
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "28dc0cf2-7060-47df-8a1d-e1160b9ce036"
+                "check_needed": false
               },
               {
-                "id": "text_02_l12",
+                "id": "7ae9e54c-f536-4783-b05d-0d7e8ac4fb77",
                 "order": 12,
                 "speaker": "B",
                 "zh": "最后去成了吗？",
@@ -514,18 +440,17 @@
                 "vi": "Cuối cùng có đi được không?",
                 "audio_key": "",
                 "vocab_refs": [
-                  "vocab_047",
-                  "vocab_053"
+                  "71f9308f-7b38-435e-bfa8-c7c974599035",
+                  "d36b89c4-d29e-486a-b7d9-aeb589592aa6"
                 ],
                 "grammar_refs": [
-                  "grammar_02"
+                  "57b14753-688a-41b6-9e0d-b61dbbf574d7"
                 ],
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "faa45d6c-89f8-4f99-9ef1-fd8c1e8b9a13"
+                "check_needed": false
               },
               {
-                "id": "text_02_l13",
+                "id": "491f58c7-7ead-4d8c-876d-7e3113dcff35",
                 "order": 13,
                 "speaker": "A",
                 "zh": "去成了。我真佩服他。能去现场看世界杯，太棒了！",
@@ -533,29 +458,26 @@
                 "vi": "Đi được rồi. Tôi thật sự khâm phục anh ấy. Có thể đến tận nơi xem World Cup, quá tuyệt!",
                 "audio_key": "",
                 "vocab_refs": [
-                  "vocab_012",
-                  "vocab_040",
-                  "vocab_047",
-                  "vocab_051"
+                  "d5b362a7-c8f6-4f25-b2b5-0f1749c8afbb",
+                  "861ed325-b320-4ae0-8eac-bb6bb8ebc215",
+                  "71f9308f-7b38-435e-bfa8-c7c974599035",
+                  "db0c0e40-5639-4c1e-bd66-9728a0c5006e"
                 ],
                 "grammar_refs": [
-                  "grammar_02"
+                  "57b14753-688a-41b6-9e0d-b61dbbf574d7"
                 ],
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "683238a6-8c75-41b1-887d-23a94ca64f8e"
+                "check_needed": false
               }
             ],
             "paragraphs": [],
-            "comprehension_questions": [],
-            "uuid": "23c7e0c3-52f2-4d05-ba24-c709083c4e54"
+            "comprehension_questions": []
           }
         ],
-        "comprehension_questions": [],
-        "uuid": "10c16ccb-4650-4652-9ddf-2fc6c4e5d2f7"
+        "comprehension_questions": []
       },
       {
-        "id": "section_02_vocabulary",
+        "id": "78c30bf4-c314-4c4c-86e3-4dd62382dd78",
         "type": "vocabulary",
         "order": 2,
         "title": "生词",
@@ -564,14 +486,14 @@
         "check_needed": false,
         "items": [
           {
-            "id": "vocab_001",
+            "id": "68c05a12-9d8e-45d9-a413-786bcf2f780a",
             "type": "vocabulary_item",
             "order": 1,
             "hanzi": "护照",
             "pinyin": "hùzhào",
             "meaning_vi": "hộ chiếu",
             "meaning_en": "passport",
-            "pos": "noun",
+            "pos": "unknown",
             "tags": [
               "main_vocab"
             ],
@@ -588,18 +510,17 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "5b394268-cfea-4811-abac-d3d4c3cf0382"
+            "check_needed": false
           },
           {
-            "id": "vocab_002",
+            "id": "8c18cf3c-e9dc-42e1-8faf-eb26799cabab",
             "type": "vocabulary_item",
             "order": 2,
             "hanzi": "签证",
             "pinyin": "qiānzhèng",
             "meaning_vi": "visa, thị thực",
             "meaning_en": "visa",
-            "pos": "noun",
+            "pos": "unknown",
             "tags": [
               "main_vocab"
             ],
@@ -616,18 +537,17 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "acf4ac9c-5cab-4377-b2cb-7e39c1f583a1"
+            "check_needed": false
           },
           {
-            "id": "vocab_003",
+            "id": "1fbd69b7-603a-44ea-8d57-10cd4def9ced",
             "type": "vocabulary_item",
             "order": 3,
             "hanzi": "手提包儿",
             "pinyin": "shǒutíbāor",
             "meaning_vi": "túi xách tay",
             "meaning_en": "handbag",
-            "pos": "noun",
+            "pos": "unknown",
             "tags": [
               "main_vocab"
             ],
@@ -644,18 +564,17 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "2b518649-e374-4df8-9ea2-3eefe57fd3ce"
+            "check_needed": false
           },
           {
-            "id": "vocab_004",
+            "id": "3dc505f1-bc0e-4a96-b448-17fed89fdc60",
             "type": "vocabulary_item",
             "order": 4,
             "hanzi": "大衣",
             "pinyin": "dàyī",
             "meaning_vi": "áo khoác dài, áo măng-tô",
             "meaning_en": "overcoat",
-            "pos": "noun",
+            "pos": "unknown",
             "tags": [
               "main_vocab"
             ],
@@ -672,18 +591,17 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "37b2b7ae-b1ab-4c79-b732-3c886dc668aa"
+            "check_needed": false
           },
           {
-            "id": "vocab_005",
+            "id": "188412d4-4c23-4d60-b7b2-21f3490199e7",
             "type": "vocabulary_item",
             "order": 5,
             "hanzi": "口袋",
             "pinyin": "kǒudài",
             "meaning_vi": "túi áo, túi quần",
             "meaning_en": "pocket",
-            "pos": "noun",
+            "pos": "unknown",
             "tags": [
               "main_vocab"
             ],
@@ -700,18 +618,17 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "1303c9d6-2c6f-4007-bb83-33fa7dbf8986"
+            "check_needed": false
           },
           {
-            "id": "vocab_006",
+            "id": "5ea44727-d97c-467b-b1b8-babd195df50d",
             "type": "vocabulary_item",
             "order": 6,
             "hanzi": "斧子",
             "pinyin": "fǔzi",
             "meaning_vi": "cái rìu",
             "meaning_en": "axe",
-            "pos": "noun",
+            "pos": "unknown",
             "tags": [
               "main_vocab"
             ],
@@ -728,18 +645,17 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "cc76d991-2d47-408d-97c7-bc7c4bc53733"
+            "check_needed": false
           },
           {
-            "id": "vocab_007",
+            "id": "54613016-834a-4fc3-9912-2357a6d27058",
             "type": "vocabulary_item",
             "order": 7,
             "hanzi": "半天",
             "pinyin": "bàntiān",
             "meaning_vi": "nửa ngày; cả buổi; rất lâu",
             "meaning_en": "half a day; a long while",
-            "pos": "phrase",
+            "pos": "unknown",
             "tags": [
               "main_vocab"
             ],
@@ -756,18 +672,17 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "5499bbe8-59e4-4f2d-b43b-b39ad8861888"
+            "check_needed": false
           },
           {
-            "id": "vocab_008",
+            "id": "0da97406-c3ac-4fcb-a51c-398a59c3fbae",
             "type": "vocabulary_item",
             "order": 8,
             "hanzi": "白天",
             "pinyin": "báitiān",
             "meaning_vi": "ban ngày",
             "meaning_en": "daytime",
-            "pos": "noun",
+            "pos": "unknown",
             "tags": [
               "main_vocab"
             ],
@@ -784,18 +699,17 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "6005677a-bac0-408c-bec5-cb925ac9153b"
+            "check_needed": false
           },
           {
-            "id": "vocab_009",
+            "id": "54b36889-82be-485b-8342-fb8aab572065",
             "type": "vocabulary_item",
             "order": 9,
             "hanzi": "从前",
             "pinyin": "cóngqián",
             "meaning_vi": "trước kia, ngày trước",
             "meaning_en": "formerly",
-            "pos": "noun",
+            "pos": "unknown",
             "tags": [
               "main_vocab"
             ],
@@ -812,18 +726,17 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "9a0e3650-ac7a-4423-ae72-abea8c3473ee"
+            "check_needed": false
           },
           {
-            "id": "vocab_010",
+            "id": "1354b1a3-93cc-4505-8d7f-c5550a1d6ae9",
             "type": "vocabulary_item",
             "order": 10,
             "hanzi": "期间",
             "pinyin": "qījiān",
             "meaning_vi": "trong thời gian",
             "meaning_en": "period; during",
-            "pos": "noun",
+            "pos": "unknown",
             "tags": [
               "main_vocab"
             ],
@@ -840,18 +753,17 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "c7870f61-8253-42b8-812e-4c25f0620135"
+            "check_needed": false
           },
           {
-            "id": "vocab_011",
+            "id": "f0684cb3-4577-4e6c-9f22-7d97c89692b3",
             "type": "vocabulary_item",
             "order": 11,
             "hanzi": "欧洲",
             "pinyin": "Ōuzhōu",
             "meaning_vi": "châu Âu",
             "meaning_en": "Europe",
-            "pos": "proper_noun",
+            "pos": "unknown",
             "tags": [
               "main_vocab"
             ],
@@ -868,18 +780,17 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "60b68ec3-0e5b-480f-af7b-fdfdcbb65714"
+            "check_needed": false
           },
           {
-            "id": "vocab_012",
+            "id": "d5b362a7-c8f6-4f25-b2b5-0f1749c8afbb",
             "type": "vocabulary_item",
             "order": 12,
             "hanzi": "现场",
             "pinyin": "xiànchǎng",
             "meaning_vi": "hiện trường; tại chỗ",
             "meaning_en": "scene; on-site",
-            "pos": "noun",
+            "pos": "unknown",
             "tags": [
               "main_vocab"
             ],
@@ -896,18 +807,17 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "5a471ade-b352-4470-a90b-3b2fb2d31847"
+            "check_needed": false
           },
           {
-            "id": "vocab_013",
+            "id": "7eccd5e8-dac0-4f36-be2e-abcc0a2bdfcd",
             "type": "vocabulary_item",
             "order": 13,
             "hanzi": "锦标赛",
             "pinyin": "jǐnbiāosài",
             "meaning_vi": "giải vô địch",
             "meaning_en": "championship",
-            "pos": "noun",
+            "pos": "unknown",
             "tags": [
               "main_vocab"
             ],
@@ -924,18 +834,17 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "e9ec2ca8-6e5e-4419-9634-3f74d111f359"
+            "check_needed": false
           },
           {
-            "id": "vocab_014",
+            "id": "91fa9f81-e5ef-4c4a-b29c-c4b6daa02196",
             "type": "vocabulary_item",
             "order": 14,
             "hanzi": "程度",
             "pinyin": "chéngdù",
             "meaning_vi": "mức độ, trình độ",
             "meaning_en": "degree; extent",
-            "pos": "noun",
+            "pos": "unknown",
             "tags": [
               "main_vocab"
             ],
@@ -952,11 +861,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "e6192936-c001-463c-a228-c608e078a7d3"
+            "check_needed": false
           },
           {
-            "id": "vocab_015",
+            "id": "8a5b1d09-23a6-4182-96e6-9bf4d761a1e1",
             "type": "vocabulary_item",
             "order": 15,
             "hanzi": "平度",
@@ -980,18 +888,17 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": true,
-            "uuid": "fc79b377-6361-44e4-85ee-fd94b4345123"
+            "check_needed": true
           },
           {
-            "id": "vocab_016",
+            "id": "be7a835d-ff8f-4a86-9fd8-27c5f1093f0c",
             "type": "vocabulary_item",
             "order": 16,
             "hanzi": "水平",
             "pinyin": "shuǐpíng",
             "meaning_vi": "trình độ, mức độ",
             "meaning_en": "level",
-            "pos": "noun",
+            "pos": "unknown",
             "tags": [
               "main_vocab"
             ],
@@ -1008,18 +915,17 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "7298ab26-2ba8-4db4-a4da-5fd0435955d1"
+            "check_needed": false
           },
           {
-            "id": "vocab_017",
+            "id": "7a89dc80-d79d-4c2f-988c-d0f54e240d19",
             "type": "vocabulary_item",
             "order": 17,
             "hanzi": "精神",
             "pinyin": "jīngshen",
             "meaning_vi": "tinh thần; tỉnh táo",
             "meaning_en": "spirit; vitality",
-            "pos": "noun",
+            "pos": "unknown",
             "tags": [
               "main_vocab"
             ],
@@ -1036,18 +942,17 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "307a1948-94aa-4e11-bc2b-1de4fc502deb"
+            "check_needed": false
           },
           {
-            "id": "vocab_018",
+            "id": "ff3e1818-66a9-4532-880b-02c9cacb0e5b",
             "type": "vocabulary_item",
             "order": 18,
             "hanzi": "程",
             "pinyin": "chéng",
             "meaning_vi": "chặng đường; mức độ; quá trình",
             "meaning_en": "journey; degree; process",
-            "pos": "morpheme",
+            "pos": "unknown",
             "tags": [
               "main_vocab"
             ],
@@ -1064,18 +969,17 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "ab4df1ae-568d-42a2-bea7-c499b420dca6"
+            "check_needed": false
           },
           {
-            "id": "vocab_019",
+            "id": "0125bdae-fe4e-48fb-8264-145e95c75933",
             "type": "vocabulary_item",
             "order": 19,
             "hanzi": "样子",
             "pinyin": "yàngzi",
             "meaning_vi": "dáng vẻ, bộ dạng",
             "meaning_en": "appearance; manner",
-            "pos": "noun",
+            "pos": "unknown",
             "tags": [
               "main_vocab"
             ],
@@ -1092,18 +996,17 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "c79e1525-3e31-440b-83cc-cab691a4508c"
+            "check_needed": false
           },
           {
-            "id": "vocab_020",
+            "id": "689eb64b-5d4f-469f-9afa-74017d399614",
             "type": "vocabulary_item",
             "order": 20,
             "hanzi": "表情",
             "pinyin": "biǎoqíng",
             "meaning_vi": "biểu cảm, nét mặt",
             "meaning_en": "facial expression",
-            "pos": "noun",
+            "pos": "unknown",
             "tags": [
               "main_vocab"
             ],
@@ -1120,18 +1023,17 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "c31cc250-7fd8-4911-884e-616128b06dcc"
+            "check_needed": false
           },
           {
-            "id": "vocab_021",
+            "id": "d45d5488-9293-41ae-9deb-1e5b51cee446",
             "type": "vocabulary_item",
             "order": 21,
             "hanzi": "举动",
             "pinyin": "jǔdòng",
             "meaning_vi": "hành động, cử chỉ",
             "meaning_en": "act; movement",
-            "pos": "noun",
+            "pos": "unknown",
             "tags": [
               "main_vocab"
             ],
@@ -1148,18 +1050,17 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "6739bddf-fa46-4076-80f3-4d07072c0c03"
+            "check_needed": false
           },
           {
-            "id": "vocab_022",
+            "id": "c99a633b-27a2-429b-a139-44113a84c189",
             "type": "vocabulary_item",
             "order": 22,
             "hanzi": "言行",
             "pinyin": "yánxíng",
             "meaning_vi": "lời nói và hành động",
             "meaning_en": "words and deeds",
-            "pos": "noun",
+            "pos": "unknown",
             "tags": [
               "main_vocab"
             ],
@@ -1176,18 +1077,17 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "92da0ea4-c64e-4b7d-8eb0-c78f69743e95"
+            "check_needed": false
           },
           {
-            "id": "vocab_023",
+            "id": "79358c6f-3427-4c28-98f3-7ef98c7033c3",
             "type": "vocabulary_item",
             "order": 23,
             "hanzi": "一举一动",
             "pinyin": "yì jǔ yí dòng",
             "meaning_vi": "từng cử chỉ, từng hành động",
             "meaning_en": "every move",
-            "pos": "idiom",
+            "pos": "unknown",
             "tags": [
               "main_vocab"
             ],
@@ -1204,18 +1104,17 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "4a46d0cd-7421-42ef-828a-4caacc10c754"
+            "check_needed": false
           },
           {
-            "id": "vocab_024",
+            "id": "dc0f8e06-a359-4907-a8d8-fc9b02260590",
             "type": "vocabulary_item",
             "order": 24,
             "hanzi": "一言一行",
             "pinyin": "yì yán yì xíng",
             "meaning_vi": "từng lời nói, từng hành động",
             "meaning_en": "every word and action",
-            "pos": "idiom",
+            "pos": "unknown",
             "tags": [
               "main_vocab"
             ],
@@ -1232,18 +1131,17 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "a8ec6cbc-3e6f-4f83-9e6d-30d286df1381"
+            "check_needed": false
           },
           {
-            "id": "vocab_025",
+            "id": "c43cedbf-7024-4ec1-922f-e75119114baf",
             "type": "vocabulary_item",
             "order": 25,
             "hanzi": "找",
             "pinyin": "zhǎo",
             "meaning_vi": "tìm",
             "meaning_en": "to look for",
-            "pos": "verb",
+            "pos": "unknown",
             "tags": [
               "main_vocab"
             ],
@@ -1260,18 +1158,17 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "f6482785-d882-46f1-b7cc-6cfd9e3b039e"
+            "check_needed": false
           },
           {
-            "id": "vocab_026",
+            "id": "d9991c79-3454-4247-bf18-f14f43b4a24a",
             "type": "vocabulary_item",
             "order": 26,
             "hanzi": "放",
             "pinyin": "fàng",
             "meaning_vi": "đặt, để",
             "meaning_en": "to put",
-            "pos": "verb",
+            "pos": "unknown",
             "tags": [
               "main_vocab"
             ],
@@ -1288,18 +1185,17 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "13dd408d-95ad-484a-937f-d6a77b96c031"
+            "check_needed": false
           },
           {
-            "id": "vocab_027",
+            "id": "55cd807c-eec7-412d-99db-f4e6508b170f",
             "type": "vocabulary_item",
             "order": 27,
             "hanzi": "丢",
             "pinyin": "diū",
             "meaning_vi": "mất, đánh mất; vứt",
             "meaning_en": "to lose; to throw",
-            "pos": "verb",
+            "pos": "unknown",
             "tags": [
               "main_vocab"
             ],
@@ -1316,18 +1212,17 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "55defe67-9985-4e3d-9693-fecb12d32235"
+            "check_needed": false
           },
           {
-            "id": "vocab_028",
+            "id": "085e60d5-dd1c-4585-ac6b-0f1db0ded936",
             "type": "vocabulary_item",
             "order": 28,
             "hanzi": "落",
             "pinyin": "là",
             "meaning_vi": "bỏ sót, để quên",
             "meaning_en": "to leave behind",
-            "pos": "verb",
+            "pos": "unknown",
             "tags": [
               "main_vocab"
             ],
@@ -1344,18 +1239,17 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "5f448e4c-409e-47be-a3b3-5724110c328b"
+            "check_needed": false
           },
           {
-            "id": "vocab_029",
+            "id": "ba7ff0f9-b633-4516-ab3d-22b96046a1cf",
             "type": "vocabulary_item",
             "order": 29,
             "hanzi": "贴",
             "pinyin": "tiē",
             "meaning_vi": "dán",
             "meaning_en": "to paste",
-            "pos": "verb",
+            "pos": "unknown",
             "tags": [
               "main_vocab"
             ],
@@ -1372,18 +1266,17 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "b93c8796-e0ee-4681-8b36-da78b47e9cf1"
+            "check_needed": false
           },
           {
-            "id": "vocab_030",
+            "id": "2185ee67-885d-4ffb-83e2-e97be4070796",
             "type": "vocabulary_item",
             "order": 30,
             "hanzi": "砍柴",
             "pinyin": "kǎn chái",
             "meaning_vi": "đốn củi",
             "meaning_en": "to chop firewood",
-            "pos": "verb_phrase",
+            "pos": "unknown",
             "tags": [
               "main_vocab"
             ],
@@ -1400,18 +1293,17 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "944817c7-6d64-4775-b891-a3bc555159ca"
+            "check_needed": false
           },
           {
-            "id": "vocab_031",
+            "id": "092a8c16-3739-4685-a4c0-39365071bd48",
             "type": "vocabulary_item",
             "order": 31,
             "hanzi": "算",
             "pinyin": "suàn",
             "meaning_vi": "tính; coi như",
             "meaning_en": "to count; to regard as",
-            "pos": "verb",
+            "pos": "unknown",
             "tags": [
               "main_vocab"
             ],
@@ -1428,18 +1320,17 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "837b2293-b65a-4aa1-8492-1502c2f12c0b"
+            "check_needed": false
           },
           {
-            "id": "vocab_032",
+            "id": "22e66ee9-565e-4670-b2ac-4d5a9b500b38",
             "type": "vocabulary_item",
             "order": 32,
             "hanzi": "像",
             "pinyin": "xiàng",
             "meaning_vi": "giống như",
             "meaning_en": "to resemble",
-            "pos": "verb",
+            "pos": "unknown",
             "tags": [
               "main_vocab"
             ],
@@ -1456,18 +1347,17 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "72fab4c6-12dd-4e95-b0e2-7637897f4430"
+            "check_needed": false
           },
           {
-            "id": "vocab_033",
+            "id": "275b46f4-3166-48b7-9766-58384178d1be",
             "type": "vocabulary_item",
             "order": 33,
             "hanzi": "邻居",
             "pinyin": "línjū",
             "meaning_vi": "hàng xóm",
             "meaning_en": "neighbor",
-            "pos": "noun",
+            "pos": "unknown",
             "tags": [
               "main_vocab"
             ],
@@ -1484,18 +1374,17 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "741c4d31-0c1d-4e4d-a368-4104ebd41845"
+            "check_needed": false
           },
           {
-            "id": "vocab_034",
+            "id": "1190511f-5970-4304-8f84-d7201b287aeb",
             "type": "vocabulary_item",
             "order": 34,
             "hanzi": "通知",
             "pinyin": "tōngzhī",
             "meaning_vi": "thông báo",
             "meaning_en": "notice",
-            "pos": "verb",
+            "pos": "unknown",
             "tags": [
               "main_vocab"
             ],
@@ -1512,18 +1401,17 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "7768d858-f78d-4d17-a971-4f3922daf1aa"
+            "check_needed": false
           },
           {
-            "id": "vocab_035",
+            "id": "d42d3d90-443d-45da-bed7-987b50034e92",
             "type": "vocabulary_item",
             "order": 35,
             "hanzi": "暂停",
             "pinyin": "zàntíng",
             "meaning_vi": "tạm dừng",
             "meaning_en": "to suspend",
-            "pos": "verb",
+            "pos": "unknown",
             "tags": [
               "main_vocab"
             ],
@@ -1540,18 +1428,17 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "96fa258f-db4b-48b1-bda9-f317f33f906f"
+            "check_needed": false
           },
           {
-            "id": "vocab_036",
+            "id": "cfb712c9-c4ca-4314-b6b2-696b40ace25e",
             "type": "vocabulary_item",
             "order": 36,
             "hanzi": "营业",
             "pinyin": "yíngyè",
             "meaning_vi": "kinh doanh, mở cửa buôn bán",
             "meaning_en": "to do business",
-            "pos": "verb",
+            "pos": "unknown",
             "tags": [
               "main_vocab"
             ],
@@ -1568,18 +1455,17 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "0a783dd5-1d73-44e0-9309-c4a44b190ea5"
+            "check_needed": false
           },
           {
-            "id": "vocab_037",
+            "id": "6059829f-ae21-43cf-ac0c-05e19639ec43",
             "type": "vocabulary_item",
             "order": 37,
             "hanzi": "辞职",
             "pinyin": "cízhí",
             "meaning_vi": "từ chức, nghỉ việc",
             "meaning_en": "to resign",
-            "pos": "verb",
+            "pos": "unknown",
             "tags": [
               "main_vocab"
             ],
@@ -1596,18 +1482,17 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "6e29e161-2697-470c-8fa5-10e704beaa48"
+            "check_needed": false
           },
           {
-            "id": "vocab_038",
+            "id": "fefd5441-7b6c-47e3-b823-9e149b947bf7",
             "type": "vocabulary_item",
             "order": 38,
             "hanzi": "承认",
             "pinyin": "chéngrèn",
             "meaning_vi": "thừa nhận",
             "meaning_en": "to admit",
-            "pos": "verb",
+            "pos": "unknown",
             "tags": [
               "main_vocab"
             ],
@@ -1624,18 +1509,17 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "6e089057-515d-4d01-8663-71560f5fa77c"
+            "check_needed": false
           },
           {
-            "id": "vocab_039",
+            "id": "27761bd2-433a-44ef-b79a-9e6f0a34b9c9",
             "type": "vocabulary_item",
             "order": 39,
             "hanzi": "怀疑",
             "pinyin": "huáiyí",
             "meaning_vi": "nghi ngờ",
             "meaning_en": "to suspect",
-            "pos": "verb",
+            "pos": "unknown",
             "tags": [
               "main_vocab"
             ],
@@ -1652,18 +1536,17 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "9f32efc6-b25b-488c-a909-fbf2a7b2be99"
+            "check_needed": false
           },
           {
-            "id": "vocab_040",
+            "id": "861ed325-b320-4ae0-8eac-bb6bb8ebc215",
             "type": "vocabulary_item",
             "order": 40,
             "hanzi": "佩服",
             "pinyin": "pèifu",
             "meaning_vi": "khâm phục",
             "meaning_en": "to admire",
-            "pos": "verb",
+            "pos": "unknown",
             "tags": [
               "main_vocab"
             ],
@@ -1680,18 +1563,17 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "4cb0e016-65dc-4f05-9e92-2e3556e9ada1"
+            "check_needed": false
           },
           {
-            "id": "vocab_041",
+            "id": "6fe8f20d-e712-4f0c-9cbc-021aaeb9698c",
             "type": "vocabulary_item",
             "order": 41,
             "hanzi": "明白",
             "pinyin": "míngbai",
             "meaning_vi": "hiểu, rõ",
             "meaning_en": "to understand",
-            "pos": "verb",
+            "pos": "unknown",
             "tags": [
               "main_vocab"
             ],
@@ -1708,18 +1590,17 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "9c94af0f-b0ea-4f7c-a3a1-939b16a988da"
+            "check_needed": false
           },
           {
-            "id": "vocab_042",
+            "id": "863bbf3f-83e7-4021-b98e-be632043d94c",
             "type": "vocabulary_item",
             "order": 42,
             "hanzi": "发狂",
             "pinyin": "fākuáng",
             "meaning_vi": "phát cuồng",
             "meaning_en": "to go mad",
-            "pos": "verb",
+            "pos": "unknown",
             "tags": [
               "main_vocab"
             ],
@@ -1736,18 +1617,17 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "413725eb-398e-4575-9ebf-96e7b3b89626"
+            "check_needed": false
           },
           {
-            "id": "vocab_043",
+            "id": "b14487b6-5579-4f1c-9ad7-16fd40991577",
             "type": "vocabulary_item",
             "order": 43,
             "hanzi": "生病",
             "pinyin": "shēng bìng",
             "meaning_vi": "bị bệnh, ốm",
             "meaning_en": "to fall ill",
-            "pos": "verb_phrase",
+            "pos": "unknown",
             "tags": [
               "main_vocab"
             ],
@@ -1764,18 +1644,17 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "2069ae5f-2f4e-4d3c-bf46-c8b15d31b2cf"
+            "check_needed": false
           },
           {
-            "id": "vocab_044",
+            "id": "eb7cc112-7df2-44e6-a1df-9824d8b6e45a",
             "type": "vocabulary_item",
             "order": 44,
             "hanzi": "愿",
             "pinyin": "yuàn",
             "meaning_vi": "muốn, mong muốn",
             "meaning_en": "to wish",
-            "pos": "verb",
+            "pos": "unknown",
             "tags": [
               "main_vocab"
             ],
@@ -1792,18 +1671,17 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "54be1375-df57-486e-9a24-171ecac049ed"
+            "check_needed": false
           },
           {
-            "id": "vocab_045",
+            "id": "505dae11-836a-475d-b811-339f25caaf42",
             "type": "vocabulary_item",
             "order": 45,
             "hanzi": "愿意",
             "pinyin": "yuànyì",
             "meaning_vi": "bằng lòng, sẵn lòng",
             "meaning_en": "to be willing",
-            "pos": "verb",
+            "pos": "unknown",
             "tags": [
               "main_vocab"
             ],
@@ -1820,18 +1698,17 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "46e347a6-05e0-42dd-b920-9937318ebd39"
+            "check_needed": false
           },
           {
-            "id": "vocab_046",
+            "id": "a47b82f7-2260-4763-8c97-b1631e792e1c",
             "type": "vocabulary_item",
             "order": 46,
             "hanzi": "及",
             "pinyin": "jí",
             "meaning_vi": "đạt tới, kịp; và",
             "meaning_en": "to reach; and",
-            "pos": "morpheme",
+            "pos": "unknown",
             "tags": [
               "main_vocab"
             ],
@@ -1848,18 +1725,17 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "97141b66-88ab-4d9a-8491-080d4b84c036"
+            "check_needed": false
           },
           {
-            "id": "vocab_047",
+            "id": "71f9308f-7b38-435e-bfa8-c7c974599035",
             "type": "vocabulary_item",
             "order": 47,
             "hanzi": "成",
             "pinyin": "chéng",
             "meaning_vi": "hoàn thành; trở thành; được",
             "meaning_en": "to succeed; to become",
-            "pos": "verb",
+            "pos": "unknown",
             "tags": [
               "main_vocab"
             ],
@@ -1876,18 +1752,17 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "3e2fdf3f-3502-42c1-9667-c59beb0295dd"
+            "check_needed": false
           },
           {
-            "id": "vocab_048",
+            "id": "05e1ac20-79be-406d-9c90-4b0c847182bc",
             "type": "vocabulary_item",
             "order": 48,
             "hanzi": "准",
             "pinyin": "zhǔn",
             "meaning_vi": "cho phép; chuẩn, chính xác",
             "meaning_en": "to permit; accurate",
-            "pos": "adjective",
+            "pos": "unknown",
             "tags": [
               "main_vocab"
             ],
@@ -1904,18 +1779,17 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "ee6c6de1-a989-4b9a-8b70-f25f595b351d"
+            "check_needed": false
           },
           {
-            "id": "vocab_049",
+            "id": "358d5baa-5ba1-4cb5-984a-44770a1724d6",
             "type": "vocabulary_item",
             "order": 49,
             "hanzi": "丢三落四",
             "pinyin": "diū sān là sì",
             "meaning_vi": "hay quên trước quên sau, đãng trí",
             "meaning_en": "forgetful",
-            "pos": "idiom",
+            "pos": "unknown",
             "tags": [
               "main_vocab"
             ],
@@ -1932,18 +1806,17 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "285cd329-6b1e-4db6-b9ad-5d25d8efb979"
+            "check_needed": false
           },
           {
-            "id": "vocab_050",
+            "id": "20f66e08-4820-43f5-a18a-50f61591e7cd",
             "type": "vocabulary_item",
             "order": 50,
             "hanzi": "正常",
             "pinyin": "zhèngcháng",
             "meaning_vi": "bình thường",
             "meaning_en": "normal",
-            "pos": "adjective",
+            "pos": "unknown",
             "tags": [
               "main_vocab"
             ],
@@ -1960,18 +1833,17 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "dc7540e3-98f9-4f80-a0be-8d7c3cb1b8da"
+            "check_needed": false
           },
           {
-            "id": "vocab_051",
+            "id": "db0c0e40-5639-4c1e-bd66-9728a0c5006e",
             "type": "vocabulary_item",
             "order": 51,
             "hanzi": "棒",
             "pinyin": "bàng",
             "meaning_vi": "tuyệt, giỏi",
             "meaning_en": "excellent",
-            "pos": "adjective",
+            "pos": "unknown",
             "tags": [
               "main_vocab"
             ],
@@ -1988,18 +1860,17 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "94d7a7a4-2f71-4569-93e4-eb83ce471dda"
+            "check_needed": false
           },
           {
-            "id": "vocab_052",
+            "id": "e890b44f-c76e-4dbf-92e7-201722d3274e",
             "type": "vocabulary_item",
             "order": 52,
             "hanzi": "狂",
             "pinyin": "kuáng",
             "meaning_vi": "điên cuồng, cuồng",
             "meaning_en": "mad; crazy",
-            "pos": "adjective",
+            "pos": "unknown",
             "tags": [
               "main_vocab"
             ],
@@ -2016,18 +1887,17 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "dca61ede-b122-4064-930a-3da3a8dc6027"
+            "check_needed": false
           },
           {
-            "id": "vocab_053",
+            "id": "d36b89c4-d29e-486a-b7d9-aeb589592aa6",
             "type": "vocabulary_item",
             "order": 53,
             "hanzi": "最后",
             "pinyin": "zuìhòu",
             "meaning_vi": "cuối cùng",
             "meaning_en": "finally",
-            "pos": "adverb",
+            "pos": "unknown",
             "tags": [
               "main_vocab"
             ],
@@ -2044,18 +1914,17 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "54208e34-a08c-4490-b0f8-b2bd6edad5de"
+            "check_needed": false
           },
           {
-            "id": "vocab_054",
+            "id": "addea99a-d455-4f20-bd7b-e7d7b320bc0c",
             "type": "vocabulary_item",
             "order": 54,
             "hanzi": "最好",
             "pinyin": "zuìhǎo",
             "meaning_vi": "tốt nhất; tốt hơn hết là",
             "meaning_en": "best; had better",
-            "pos": "adverb",
+            "pos": "unknown",
             "tags": [
               "main_vocab"
             ],
@@ -2072,18 +1941,17 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "9a76c837-abbf-48c2-ba4a-7388d39e2386"
+            "check_needed": false
           },
           {
-            "id": "vocab_055",
+            "id": "672023ad-14d1-47d0-a3c4-5dabd01b69e9",
             "type": "vocabulary_item",
             "order": 55,
             "hanzi": "原来",
             "pinyin": "yuánlái",
             "meaning_vi": "hóa ra; vốn là",
             "meaning_en": "as it turns out; original",
-            "pos": "adverb",
+            "pos": "unknown",
             "tags": [
               "main_vocab"
             ],
@@ -2100,18 +1968,17 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "ded5411a-bfe0-4203-a442-f5f4a17e3f75"
+            "check_needed": false
           },
           {
-            "id": "vocab_056",
+            "id": "e93080a4-2857-4582-a75a-94276764a235",
             "type": "vocabulary_item",
             "order": 56,
             "hanzi": "好好儿",
             "pinyin": "hǎohāor",
             "meaning_vi": "cẩn thận, tử tế; cho tốt",
             "meaning_en": "properly; carefully",
-            "pos": "adverb",
+            "pos": "unknown",
             "tags": [
               "main_vocab"
             ],
@@ -2128,18 +1995,17 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "285cd351-adbd-4102-885d-98aa1fffcf02"
+            "check_needed": false
           },
           {
-            "id": "vocab_057",
+            "id": "682e1087-39f5-4c67-9836-fa89206dfba5",
             "type": "vocabulary_item",
             "order": 57,
             "hanzi": "慢慢儿",
             "pinyin": "mànmānr",
             "meaning_vi": "từ từ, chậm rãi",
             "meaning_en": "slowly",
-            "pos": "adverb",
+            "pos": "unknown",
             "tags": [
               "main_vocab"
             ],
@@ -2156,18 +2022,17 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "48c894aa-55cb-4af0-9e4e-a56d3082de18"
+            "check_needed": false
           },
           {
-            "id": "vocab_058",
+            "id": "26999e7c-e64c-4401-9d09-bcfd351db7b5",
             "type": "vocabulary_item",
             "order": 58,
             "hanzi": "可",
             "pinyin": "kě",
             "meaning_vi": "thật là, quả là; khá là",
             "meaning_en": "really; quite",
-            "pos": "morpheme",
+            "pos": "unknown",
             "tags": [
               "main_vocab"
             ],
@@ -2184,18 +2049,17 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "ecf57516-aa48-429c-88cf-a95c23184433"
+            "check_needed": false
           },
           {
-            "id": "vocab_059",
+            "id": "67d5f931-79d4-4182-8e48-3c718cfcb016",
             "type": "vocabulary_item",
             "order": 59,
             "hanzi": "亲眼",
             "pinyin": "qīnyǎn",
             "meaning_vi": "tận mắt",
             "meaning_en": "with one's own eyes",
-            "pos": "adverb",
+            "pos": "unknown",
             "tags": [
               "main_vocab"
             ],
@@ -2212,18 +2076,17 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "e19f22d5-7e53-4700-9c71-c748a4e8794d"
+            "check_needed": false
           },
           {
-            "id": "vocab_060",
+            "id": "baf4d641-8698-4777-840f-6002f16a0a62",
             "type": "vocabulary_item",
             "order": 60,
             "hanzi": "亲耳",
             "pinyin": "qīněr",
             "meaning_vi": "tận tai",
             "meaning_en": "with one's own ears",
-            "pos": "adverb",
+            "pos": "unknown",
             "tags": [
               "main_vocab"
             ],
@@ -2240,18 +2103,17 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "96c5ca02-4f42-4391-971f-9536755862ac"
+            "check_needed": false
           },
           {
-            "id": "vocab_061",
+            "id": "9abc5789-0caa-4699-a5f3-b6099b75d0fa",
             "type": "vocabulary_item",
             "order": 61,
             "hanzi": "亲手",
             "pinyin": "qīnshǒu",
             "meaning_vi": "tự tay",
             "meaning_en": "with one's own hands",
-            "pos": "adverb",
+            "pos": "unknown",
             "tags": [
               "main_vocab"
             ],
@@ -2268,18 +2130,17 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "a9ecf44c-77f9-4c86-83f7-9f529b59d4fe"
+            "check_needed": false
           },
           {
-            "id": "vocab_062",
+            "id": "d2a7ce6a-a83e-42aa-8d6e-9f24d1253da9",
             "type": "vocabulary_item",
             "order": 62,
             "hanzi": "为了",
             "pinyin": "wèile",
             "meaning_vi": "để, vì mục đích",
             "meaning_en": "for; in order to",
-            "pos": "preposition",
+            "pos": "unknown",
             "tags": [
               "main_vocab"
             ],
@@ -2296,14 +2157,12 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "489a1fff-d386-425d-989c-e238a0ad4638"
+            "check_needed": false
           }
-        ],
-        "uuid": "8928a573-df13-4fc9-93d7-105a3b111bf1"
+        ]
       },
       {
-        "id": "section_03_proper_nouns",
+        "id": "3c5ee48e-5d44-44ac-bd53-cac996a83338",
         "type": "proper_nouns",
         "order": 3,
         "title": "专名",
@@ -2311,11 +2170,10 @@
         "source_origin": "textbook",
         "check_needed": false,
         "items": [],
-        "empty_reason_vi": "Bài này không có 专名 riêng biệt trong bảng chính.",
-        "uuid": "a14255fc-af40-482d-9b6d-342add942037"
+        "empty_reason_vi": "Bài này không có 专名 riêng biệt trong bảng chính."
       },
       {
-        "id": "section_04_notes",
+        "id": "c18e9f54-6da1-4496-886b-c2c722605678",
         "type": "notes",
         "order": 4,
         "title": "注释",
@@ -2324,7 +2182,7 @@
         "check_needed": true,
         "items": [
           {
-            "id": "note_01",
+            "id": "63d654f5-4561-4d48-a144-bacbf9671dfc",
             "type": "note",
             "order": 1,
             "title": "我找了半天也没找着。",
@@ -2332,51 +2190,48 @@
             "meaning_vi": "Diễn tả đã làm một việc rất lâu / cả buổi, nhưng cuối cùng vẫn không đạt được kết quả.",
             "examples": [
               {
-                "id": "note_01_ex01",
+                "id": "021014f3-ff12-43b6-9d12-352cb6dc863b",
                 "zh": "我找了半天也没找着。",
                 "pinyin": "",
                 "vi": "Tôi tìm cả buổi mà vẫn không tìm thấy.",
                 "en": "",
                 "highlight": [],
                 "grammar_refs": [
-                  "grammar_02"
+                  "57b14753-688a-41b6-9e0d-b61dbbf574d7"
                 ],
                 "vocab_refs": [],
                 "source_ref": "",
                 "note_vi": "",
                 "audio_key": "",
                 "source_origin": "textbook/generated_mixed",
-                "check_needed": false,
-                "uuid": "9fe3b9bc-1350-48a0-916b-eed71b3e69e3"
+                "check_needed": false
               },
               {
-                "id": "note_01_ex02",
+                "id": "08ef5e15-4b23-4ced-8657-3328becab052",
                 "zh": "我想了半天也没想起来。",
                 "pinyin": "",
                 "vi": "Tôi nghĩ mãi mà vẫn không nhớ ra.",
                 "en": "",
                 "highlight": [],
                 "grammar_refs": [
-                  "grammar_02"
+                  "57b14753-688a-41b6-9e0d-b61dbbf574d7"
                 ],
                 "vocab_refs": [],
                 "source_ref": "",
                 "note_vi": "",
                 "audio_key": "",
                 "source_origin": "textbook/generated_mixed",
-                "check_needed": false,
-                "uuid": "d883f5ad-9d92-4863-9d7a-b0c591d1f9e8"
+                "check_needed": false
               }
             ],
             "source_refs": [
-              "text_01_l02"
+              "30929615-34c8-4e5b-b0a2-5ad3358ad755"
             ],
             "source_origin": "textbook/generated_mixed",
-            "check_needed": true,
-            "uuid": "d0183628-1a63-47b9-a980-7361387409d4"
+            "check_needed": true
           },
           {
-            "id": "note_02",
+            "id": "7e2ee128-4fbd-4a93-898c-5f5fd99b371b",
             "type": "note",
             "order": 2,
             "title": "我看球迷一个个都有点儿不正常。",
@@ -2384,25 +2239,24 @@
             "meaning_vi": "一个个 nhấn mạnh từng người trong nhóm; 有点儿 + tính từ tiêu cực diễn tả mức độ nhẹ: hơi...",
             "examples": [
               {
-                "id": "note_02_ex01",
+                "id": "29279e2c-cb63-4437-bbc5-7c46c15b6f13",
                 "zh": "我看球迷一个个都有点儿不正常。",
                 "pinyin": "",
                 "vi": "Tôi thấy fan bóng đá ai nấy đều hơi không bình thường.",
                 "en": "",
                 "highlight": [],
                 "grammar_refs": [
-                  "grammar_01"
+                  "f8ec59f3-898a-47b2-b536-44dfd8183393"
                 ],
                 "vocab_refs": [],
                 "source_ref": "",
                 "note_vi": "",
                 "audio_key": "",
                 "source_origin": "textbook/generated_mixed",
-                "check_needed": false,
-                "uuid": "27cade48-5399-44f4-bb2d-b61a80ef5464"
+                "check_needed": false
               },
               {
-                "id": "note_02_ex02",
+                "id": "e8ba8406-5f51-49de-8d45-8a461bbaaba6",
                 "zh": "他们一个个都很高兴。",
                 "pinyin": "",
                 "vi": "Bọn họ ai nấy đều rất vui.",
@@ -2414,22 +2268,19 @@
                 "note_vi": "",
                 "audio_key": "",
                 "source_origin": "textbook/generated_mixed",
-                "check_needed": false,
-                "uuid": "9d9515b1-04b2-4e31-a230-90c95b9978f7"
+                "check_needed": false
               }
             ],
             "source_refs": [
-              "text_02_l06"
+              "e8680b0f-6dcc-4fc7-abbd-084aba5d3b87"
             ],
             "source_origin": "textbook/generated_mixed",
-            "check_needed": true,
-            "uuid": "f7ef6045-764f-4d0e-8cf5-3b61ccd89ef7"
+            "check_needed": true
           }
-        ],
-        "uuid": "9f48ab4c-2b56-4a55-93e1-eb288fc9995e"
+        ]
       },
       {
-        "id": "section_05_grammar",
+        "id": "b045e537-7383-494b-8d61-b0286977ed80",
         "type": "grammar",
         "order": 5,
         "title": "语法 / 词语用法",
@@ -2438,7 +2289,7 @@
         "check_needed": true,
         "items": [
           {
-            "id": "grammar_01",
+            "id": "f8ec59f3-898a-47b2-b536-44dfd8183393",
             "type": "grammar_point",
             "order": 1,
             "title": "主谓谓语句（二）",
@@ -2452,37 +2303,35 @@
             "check_needed": true,
             "blocks": [
               {
-                "id": "grammar_01_overview",
+                "id": "b7c5d870-2db8-4e2e-950f-f0e6e522ac16",
                 "type": "grammar_overview",
                 "order": 1,
                 "title": "Bản chất",
                 "content_vi": "Chủ ngữ lớn đứng đầu câu; phía sau là một cụm chủ-vị nhỏ nói rõ về chủ ngữ lớn đó. Dịch tự nhiên sang tiếng Việt thường đưa về trật tự S-V-O.",
                 "examples": [
                   {
-                    "id": "grammar_01_ex01",
+                    "id": "c6fbeb40-156e-450c-a390-d58626cae49e",
                     "zh": "我的护照你找到了没有？",
                     "pinyin": "",
                     "vi": "Bạn tìm thấy hộ chiếu của tôi chưa?",
                     "en": "",
                     "highlight": [],
                     "grammar_refs": [
-                      "grammar_01"
+                      "f8ec59f3-898a-47b2-b536-44dfd8183393"
                     ],
                     "vocab_refs": [],
                     "source_ref": "",
                     "note_vi": "",
                     "audio_key": "",
                     "source_origin": "textbook/generated_mixed",
-                    "check_needed": false,
-                    "uuid": "376e14f5-eebc-4f7a-a033-84f24ce086aa"
+                    "check_needed": false
                   }
                 ],
                 "source_origin": "textbook/generated_mixed",
-                "check_needed": true,
-                "uuid": "8ed16580-1970-459d-8f32-8dff73931aea"
+                "check_needed": true
               },
               {
-                "id": "grammar_01_structure",
+                "id": "b3534a40-3bab-464a-97dd-67889b8bcb7b",
                 "type": "grammar_structure",
                 "order": 2,
                 "title": "Cấu trúc chính",
@@ -2500,40 +2349,38 @@
                 ],
                 "examples": [
                   {
-                    "id": "grammar_01_ex02",
+                    "id": "d5b13929-16ec-4967-ac8a-868d80ec0b1e",
                     "zh": "这本书我看完了。",
                     "pinyin": "",
                     "vi": "Quyển sách này tôi đọc xong rồi.",
                     "en": "",
                     "highlight": [],
                     "grammar_refs": [
-                      "grammar_01"
+                      "f8ec59f3-898a-47b2-b536-44dfd8183393"
                     ],
                     "vocab_refs": [],
                     "source_ref": "",
                     "note_vi": "",
                     "audio_key": "",
                     "source_origin": "textbook/generated_mixed",
-                    "check_needed": false,
-                    "uuid": "a01daec3-269e-4121-825b-b1aabfa0b97c"
+                    "check_needed": false
                   },
                   {
-                    "id": "grammar_01_ex03",
+                    "id": "50b5e564-92c8-4900-b66a-00f5bfca9437",
                     "zh": "这件事我不知道。",
                     "pinyin": "",
                     "vi": "Việc này tôi không biết.",
                     "en": "",
                     "highlight": [],
                     "grammar_refs": [
-                      "grammar_01"
+                      "f8ec59f3-898a-47b2-b536-44dfd8183393"
                     ],
                     "vocab_refs": [],
                     "source_ref": "",
                     "note_vi": "",
                     "audio_key": "",
                     "source_origin": "textbook/generated_mixed",
-                    "check_needed": false,
-                    "uuid": "a330dd26-f071-4ce4-a730-c2a674514aae"
+                    "check_needed": false
                   }
                 ],
                 "notes_vi": [
@@ -2541,14 +2388,12 @@
                   "Trọng tâm nằm ở chủ đề được đưa lên đầu câu."
                 ],
                 "source_origin": "textbook/generated_mixed",
-                "check_needed": true,
-                "uuid": "9065177f-e72b-49fd-9ea1-b62d1a8bfa86"
+                "check_needed": true
               }
-            ],
-            "uuid": "ffbd3ca5-97e5-489e-a574-bfc97b3f8739"
+            ]
           },
           {
-            "id": "grammar_02",
+            "id": "57b14753-688a-41b6-9e0d-b61dbbf574d7",
             "type": "grammar_point",
             "order": 2,
             "title": "结果补语（二）：在、着、好、成",
@@ -2562,18 +2407,17 @@
             "check_needed": true,
             "blocks": [
               {
-                "id": "grammar_02_overview",
+                "id": "470b1ca1-e0a1-449f-b55e-a8aa481a4dd4",
                 "type": "grammar_overview",
                 "order": 1,
                 "title": "Bản chất",
                 "content_vi": "Bổ ngữ kết quả đứng sau động từ để nói rõ hành động đã tạo ra kết quả gì.",
                 "examples": [],
                 "source_origin": "textbook/generated_mixed",
-                "check_needed": true,
-                "uuid": "031ba8f5-d131-49a4-a55d-c0dfd8d592d4"
+                "check_needed": true
               },
               {
-                "id": "grammar_02_structure_zai",
+                "id": "7f3eb87b-6c32-4dd3-b61f-06408b3b67ac",
                 "type": "grammar_structure",
                 "order": 2,
                 "title": "V + 在 + địa điểm",
@@ -2587,51 +2431,48 @@
                 ],
                 "examples": [
                   {
-                    "id": "grammar_02_zai_ex01",
+                    "id": "0eb87d8f-9ff5-4c05-adb7-c659e7b7407c",
                     "zh": "放在我的手提包儿里了。",
                     "pinyin": "",
                     "vi": "Đã để trong túi xách tay của tôi rồi.",
                     "en": "",
                     "highlight": [],
                     "grammar_refs": [
-                      "grammar_02"
+                      "57b14753-688a-41b6-9e0d-b61dbbf574d7"
                     ],
                     "vocab_refs": [],
                     "source_ref": "",
                     "note_vi": "",
                     "audio_key": "",
                     "source_origin": "textbook/generated_mixed",
-                    "check_needed": false,
-                    "uuid": "63c04750-ebc5-4635-9cfd-b7f8cd90cab8"
+                    "check_needed": false
                   },
                   {
-                    "id": "grammar_02_zai_ex02",
+                    "id": "db35c6e3-1064-4e7f-9cef-f53c6ab2984f",
                     "zh": "我把书放在桌子上。",
                     "pinyin": "",
                     "vi": "Tôi để sách trên bàn.",
                     "en": "",
                     "highlight": [],
                     "grammar_refs": [
-                      "grammar_02"
+                      "57b14753-688a-41b6-9e0d-b61dbbf574d7"
                     ],
                     "vocab_refs": [],
                     "source_ref": "",
                     "note_vi": "",
                     "audio_key": "",
                     "source_origin": "textbook/generated_mixed",
-                    "check_needed": false,
-                    "uuid": "ec1efd02-9f16-4c18-a360-e81e5043b0e0"
+                    "check_needed": false
                   }
                 ],
                 "notes_vi": [
                   "Sau 在 thường cần địa điểm rõ."
                 ],
                 "source_origin": "textbook/generated_mixed",
-                "check_needed": true,
-                "uuid": "522e20aa-e31a-46f6-9005-ec60c0d47525"
+                "check_needed": true
               },
               {
-                "id": "grammar_02_structure_zhao",
+                "id": "fade584e-74db-422d-8e99-8507ee93b7cc",
                 "type": "grammar_structure",
                 "order": 3,
                 "title": "V + 着 zháo",
@@ -2645,40 +2486,38 @@
                 ],
                 "examples": [
                   {
-                    "id": "grammar_02_zhao_ex01",
+                    "id": "17dda0ef-8888-44d9-a4a5-da1e07b28abd",
                     "zh": "我找了半天也没找着。",
                     "pinyin": "",
                     "vi": "Tôi tìm cả buổi mà vẫn không tìm thấy.",
                     "en": "",
                     "highlight": [],
                     "grammar_refs": [
-                      "grammar_02"
+                      "57b14753-688a-41b6-9e0d-b61dbbf574d7"
                     ],
                     "vocab_refs": [],
                     "source_ref": "",
                     "note_vi": "",
                     "audio_key": "",
                     "source_origin": "textbook/generated_mixed",
-                    "check_needed": false,
-                    "uuid": "50b32b13-dee6-4967-8a43-4f954c590139"
+                    "check_needed": false
                   },
                   {
-                    "id": "grammar_02_zhao_ex02",
+                    "id": "451f0258-f724-45e2-a0a5-855d1b157a06",
                     "zh": "孩子睡着了。",
                     "pinyin": "",
                     "vi": "Đứa bé ngủ thiếp đi rồi.",
                     "en": "",
                     "highlight": [],
                     "grammar_refs": [
-                      "grammar_02"
+                      "57b14753-688a-41b6-9e0d-b61dbbf574d7"
                     ],
                     "vocab_refs": [],
                     "source_ref": "",
                     "note_vi": "",
                     "audio_key": "",
                     "source_origin": "textbook/generated_mixed",
-                    "check_needed": false,
-                    "uuid": "897ef923-c72e-48d8-bb80-b6aa4d9b154e"
+                    "check_needed": false
                   }
                 ],
                 "notes_vi": [
@@ -2686,11 +2525,10 @@
                   "找着 = tìm thấy; 睡着 = ngủ được / ngủ thiếp đi."
                 ],
                 "source_origin": "textbook/generated_mixed",
-                "check_needed": true,
-                "uuid": "035a17ae-b1d7-462a-b691-1aa6129a35f7"
+                "check_needed": true
               },
               {
-                "id": "grammar_02_structure_hao",
+                "id": "b0179d67-90f7-4538-a3a2-ebc58f8a9ec9",
                 "type": "grammar_structure",
                 "order": 4,
                 "title": "V + 好",
@@ -2704,51 +2542,48 @@
                 ],
                 "examples": [
                   {
-                    "id": "grammar_02_hao_ex01",
+                    "id": "2eaa12c0-d675-4f62-a02b-7bb88e5e9bf2",
                     "zh": "饭做好了。",
                     "pinyin": "",
                     "vi": "Cơm làm xong rồi.",
                     "en": "",
                     "highlight": [],
                     "grammar_refs": [
-                      "grammar_02"
+                      "57b14753-688a-41b6-9e0d-b61dbbf574d7"
                     ],
                     "vocab_refs": [],
                     "source_ref": "",
                     "note_vi": "",
                     "audio_key": "",
                     "source_origin": "textbook/generated_mixed",
-                    "check_needed": false,
-                    "uuid": "1d3a9c49-095c-4294-8d94-a0d0eed0d3d9"
+                    "check_needed": false
                   },
                   {
-                    "id": "grammar_02_hao_ex02",
+                    "id": "edb6fffc-0210-4941-8013-3e97f3f09ee4",
                     "zh": "票订好了。",
                     "pinyin": "",
                     "vi": "Vé đặt xong rồi.",
                     "en": "",
                     "highlight": [],
                     "grammar_refs": [
-                      "grammar_02"
+                      "57b14753-688a-41b6-9e0d-b61dbbf574d7"
                     ],
                     "vocab_refs": [],
                     "source_ref": "",
                     "note_vi": "",
                     "audio_key": "",
                     "source_origin": "textbook/generated_mixed",
-                    "check_needed": false,
-                    "uuid": "98f40734-73c6-4e7b-b697-ce0e8f43a465"
+                    "check_needed": false
                   }
                 ],
                 "notes_vi": [
                   "做完 nhấn kết thúc hành động; 做好 nhấn kết quả ổn/sẵn sàng."
                 ],
                 "source_origin": "textbook/generated_mixed",
-                "check_needed": true,
-                "uuid": "95f0518d-8923-471c-9439-29c824e84885"
+                "check_needed": true
               },
               {
-                "id": "grammar_02_structure_cheng",
+                "id": "ea572de8-285c-45eb-ba30-0f21fff255d5",
                 "type": "grammar_structure",
                 "order": 5,
                 "title": "V + 成",
@@ -2762,40 +2597,38 @@
                 ],
                 "examples": [
                   {
-                    "id": "grammar_02_cheng_ex01",
+                    "id": "41db2cdc-7c5f-479c-b485-f9d970c89c24",
                     "zh": "最后去成了吗？",
                     "pinyin": "",
                     "vi": "Cuối cùng có đi được không?",
                     "en": "",
                     "highlight": [],
                     "grammar_refs": [
-                      "grammar_02"
+                      "57b14753-688a-41b6-9e0d-b61dbbf574d7"
                     ],
                     "vocab_refs": [],
                     "source_ref": "",
                     "note_vi": "",
                     "audio_key": "",
                     "source_origin": "textbook/generated_mixed",
-                    "check_needed": false,
-                    "uuid": "4a00a39b-ee70-4c5d-a3b7-37659540a7de"
+                    "check_needed": false
                   },
                   {
-                    "id": "grammar_02_cheng_ex02",
+                    "id": "f15adbb7-83c4-4336-8765-630eaeeccb81",
                     "zh": "把中文翻译成越南语。",
                     "pinyin": "",
                     "vi": "Dịch tiếng Trung thành tiếng Việt.",
                     "en": "",
                     "highlight": [],
                     "grammar_refs": [
-                      "grammar_02"
+                      "57b14753-688a-41b6-9e0d-b61dbbf574d7"
                     ],
                     "vocab_refs": [],
                     "source_ref": "",
                     "note_vi": "",
                     "audio_key": "",
                     "source_origin": "textbook/generated_mixed",
-                    "check_needed": false,
-                    "uuid": "e4adc8f9-2fba-48dc-9fdb-1fb5a288462c"
+                    "check_needed": false
                   }
                 ],
                 "notes_vi": [
@@ -2803,17 +2636,14 @@
                   "办成了 = làm thành công rồi."
                 ],
                 "source_origin": "textbook/generated_mixed",
-                "check_needed": true,
-                "uuid": "77b96fc2-99a1-4c5b-9594-114b3b9d72b8"
+                "check_needed": true
               }
-            ],
-            "uuid": "aff22f47-e625-4e32-8a8e-57c7e77d1edb"
+            ]
           }
-        ],
-        "uuid": "1a40a3f4-2cfc-4e5e-9e30-18b8f319d980"
+        ]
       },
       {
-        "id": "section_06_exercises",
+        "id": "9901c597-ca97-451e-b63d-11814aaf933e",
         "type": "exercises",
         "order": 6,
         "title": "练习",
@@ -2828,7 +2658,7 @@
         },
         "items": [
           {
-            "id": "exercise_01",
+            "id": "15cb6f38-593b-48d1-bcca-dc3d2a140f9e",
             "type": "phonetics",
             "variant": "pronunciation_tone_minimal_pairs",
             "order": 1,
@@ -2840,7 +2670,7 @@
             },
             "parts": [
               {
-                "id": "exercise_01_part_01",
+                "id": "0e5801e7-b89b-4cc6-8bd9-9e1fbbd30b31",
                 "type": "minimal_pair_group",
                 "title": "辨音辨调",
                 "items": [
@@ -2849,11 +2679,10 @@
                   "zuìhòu — suíhòu — zhèngcháng — zhēn cháng"
                 ],
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "f57e34a0-c0f2-4196-8c95-b90a638cebdd"
+                "check_needed": false
               },
               {
-                "id": "exercise_01_part_02",
+                "id": "e7235fa8-9e47-43aa-a37c-271a2e83d738",
                 "type": "read_aloud_group",
                 "title": "朗读",
                 "items": [
@@ -2879,19 +2708,17 @@
                   "换成人民币"
                 ],
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "946cd7ed-d77e-4ba0-818b-7e75c2430536"
+                "check_needed": false
               }
             ],
             "rendering": {
               "renderer": "exercise.phonetics.v2"
             },
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "90b01138-af8d-42e3-8aa2-cbf572528012"
+            "check_needed": false
           },
           {
-            "id": "exercise_02",
+            "id": "98e14c21-0449-4e36-b1ae-77ed46cf3aa0",
             "type": "substitution_drill",
             "variant": "substitution_or_transform_drill",
             "order": 2,
@@ -2903,7 +2730,7 @@
             },
             "drills": [
               {
-                "id": "ex02_drill_01",
+                "id": "3f6ee485-6ddd-452a-bf50-6a5066e8e791",
                 "pattern": "A：我的护照你放在哪儿了？ B：放在大衣口袋里了。",
                 "items": [
                   [
@@ -2931,11 +2758,10 @@
                     "放",
                     "车里"
                   ]
-                ],
-                "uuid": "6ace65a9-6278-4299-9c0b-20879e039c24"
+                ]
               },
               {
-                "id": "ex02_drill_02",
+                "id": "f4b267cd-8216-40b4-acc4-4c2437ca4056",
                 "pattern": "A：我的护照你找着了没有？ B：找着了。",
                 "items": [
                   [
@@ -2962,11 +2788,10 @@
                     "飞机票",
                     "买"
                   ]
-                ],
-                "uuid": "b264cb3f-0a66-4e5f-8d21-728fe5df8c2a"
+                ]
               },
               {
-                "id": "ex02_drill_03",
+                "id": "63ed29e3-34b2-4b30-ba38-ab6d22641500",
                 "pattern": "A：作业你交给老师了没有？ B：交给老师了。",
                 "items": [
                   [
@@ -2994,11 +2819,10 @@
                     "带",
                     "麦克"
                   ]
-                ],
-                "uuid": "5e9b86a3-73d2-4074-98be-f17e42810345"
+                ]
               },
               {
-                "id": "ex02_drill_04",
+                "id": "3bab4c4c-b47b-4f67-aaa4-fd56f6e8edc3",
                 "pattern": "A：你什么时候交给我的？ B：我一回到家就交给你了。",
                 "items": [
                   [
@@ -3021,19 +2845,17 @@
                     "借给麦克",
                     "买回来"
                   ]
-                ],
-                "uuid": "82d5780c-00c3-4aca-9c97-b77d3636a393"
+                ]
               }
             ],
             "rendering": {
               "renderer": "exercise.substitution_drill.v2"
             },
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "7b564e58-0c69-42b4-83b4-0d58a9b31236"
+            "check_needed": false
           },
           {
-            "id": "exercise_03",
+            "id": "5dfca3d2-8524-4a83-92dd-b036a7259465",
             "type": "choose_words_fill_blank",
             "variant": "word_bank_fill_blank",
             "order": 3,
@@ -3045,7 +2867,7 @@
             },
             "groups": [
               {
-                "id": "ex03_group_a",
+                "id": "3c6abc78-c535-4b35-ad12-2de93d45f291",
                 "title": "A",
                 "word_bank": [
                   "丢",
@@ -3077,11 +2899,10 @@
                   "为了",
                   "丢"
                 ],
-                "answer_verified": false,
-                "uuid": "f76871ff-cea8-4a86-a601-c64655d08bea"
+                "answer_verified": false
               },
               {
-                "id": "ex03_group_b",
+                "id": "3e471981-44cf-443c-ab5b-a2e8901bc776",
                 "title": "B",
                 "word_bank": [
                   "过",
@@ -3101,11 +2922,10 @@
                   "过",
                   "过"
                 ],
-                "answer_verified": false,
-                "uuid": "5dde2a14-25b3-446d-adeb-5aaa7541ec1e"
+                "answer_verified": false
               },
               {
-                "id": "ex03_group_c",
+                "id": "c62559da-aa7d-4c52-bfe1-8f575a5e78fc",
                 "title": "C",
                 "word_bank": [
                   "次",
@@ -3125,8 +2945,7 @@
                   "次",
                   "遍"
                 ],
-                "answer_verified": false,
-                "uuid": "1fb6050f-f4fe-40da-ad87-ae93077e585f"
+                "answer_verified": false
               }
             ],
             "rendering": {
@@ -3135,11 +2954,10 @@
               "show_answer_after_submit": true
             },
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "c32e14bb-3c80-4ac0-a650-8ec427e08c06"
+            "check_needed": false
           },
           {
-            "id": "exercise_04",
+            "id": "809141fb-cc55-403a-9433-35eea89c8c90",
             "type": "fill_blank",
             "variant": "result_complement_fill_blank",
             "order": 4,
@@ -3171,11 +2989,10 @@
               "show_answer_after_submit": true
             },
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "0d25a398-30a5-49a1-9ba9-3462a3740927"
+            "check_needed": false
           },
           {
-            "id": "exercise_05",
+            "id": "e843bb6e-2e51-4fb8-b362-7506b97cf2fc",
             "type": "fill_blank",
             "variant": "verb_complement_fill_blank",
             "order": 5,
@@ -3211,11 +3028,10 @@
               "show_answer_after_submit": true
             },
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "940f36f0-0d0e-4e62-ba07-ea137b8c4b36"
+            "check_needed": false
           },
           {
-            "id": "exercise_06",
+            "id": "60ec1197-2967-408c-a1f3-3c2112f8305a",
             "type": "correct_sentence",
             "variant": "error_correction",
             "order": 6,
@@ -3227,46 +3043,40 @@
             },
             "questions": [
               {
-                "id": "ex06_q01",
+                "id": "1b0dc397-26f4-4659-a964-f9c68ceab72a",
                 "wrong": "昨天晚上，我到十点工作。",
                 "suggested_answer": "昨天晚上，我工作到十点。",
-                "answer_verified": false,
-                "uuid": "531454a1-fba6-4eec-bbf3-34d3d00dfdd0"
+                "answer_verified": false
               },
               {
-                "id": "ex06_q02",
+                "id": "ab74bab2-0cd3-4c59-b4dd-6d9a3c6197b9",
                 "wrong": "这本书我一看完就来给你还。",
                 "suggested_answer": "这本书我一看完就还给你。",
-                "answer_verified": false,
-                "uuid": "715eb3bc-e91f-4093-ac30-f31c24d2a409"
+                "answer_verified": false
               },
               {
-                "id": "ex06_q03",
+                "id": "c503fed9-44e1-4df9-b284-51dbab822ee8",
                 "wrong": "老师的电话号码我忘了，因为我没记住在本子上。",
                 "suggested_answer": "老师的电话号码我忘了，因为我没记在本子上。",
-                "answer_verified": false,
-                "uuid": "0c86912f-1c39-4128-99e0-4ffb5ae86383"
+                "answer_verified": false
               },
               {
-                "id": "ex06_q04",
+                "id": "87b8a7fb-1969-49e6-b592-82a2e0147e96",
                 "wrong": "我下了飞机就看了爸爸。",
                 "suggested_answer": "我下了飞机就看见了爸爸。",
-                "answer_verified": false,
-                "uuid": "086a50c1-8fe7-40aa-bff0-28b31e9ffd9a"
+                "answer_verified": false
               },
               {
-                "id": "ex06_q05",
+                "id": "6155b63d-c263-446a-9ad7-80d775f5be6e",
                 "wrong": "我打算在这儿到明年七月学习。",
                 "suggested_answer": "我打算在这儿学习到明年七月。",
-                "answer_verified": false,
-                "uuid": "74de71a8-3320-45e8-a3cf-d189b0d5f6e9"
+                "answer_verified": false
               },
               {
-                "id": "ex06_q06",
+                "id": "8e9a9428-6659-4025-8fb4-b5bf4134d62d",
                 "wrong": "她进步很大，现在已经能听见老师的话了。",
                 "suggested_answer": "她进步很大，现在已经能听懂老师的话了。",
-                "answer_verified": false,
-                "uuid": "31f4628a-9e26-438f-a005-4a79197d2531"
+                "answer_verified": false
               }
             ],
             "rendering": {
@@ -3274,14 +3084,12 @@
               "show_answer_after_submit": true
             },
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "292b8746-a98d-4bbb-911a-541204b9728e"
+            "check_needed": false
           }
-        ],
-        "uuid": "57d8c3dc-49cc-476a-bba8-20b67fe82aff"
+        ]
       },
       {
-        "id": "section_07_communication",
+        "id": "4b3f514b-98a2-4e74-84c5-c83ff12ee313",
         "type": "communication",
         "order": 7,
         "title": "交际会话",
@@ -3290,7 +3098,7 @@
         "check_needed": false,
         "items": [
           {
-            "id": "communication_01",
+            "id": "d47481cc-fd2a-4991-ac01-d4168b47f7e0",
             "type": "communication_dialogue",
             "variant": "role_play",
             "order": 1,
@@ -3302,7 +3110,7 @@
             },
             "lines": [
               {
-                "id": "comm_01_l01",
+                "id": "14d03f78-43df-40be-a598-3bebc0f33c34",
                 "order": 1,
                 "speaker": "张东",
                 "zh": "麻烦您给我换成零钱。",
@@ -3312,11 +3120,10 @@
                 "vocab_refs": [],
                 "grammar_refs": [],
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "bd2db4b7-7fd9-409b-b3ee-791f37105f6b"
+                "check_needed": false
               },
               {
-                "id": "comm_01_l02",
+                "id": "2b4731fc-0a8b-4d41-861b-6cccce0676c3",
                 "order": 2,
                 "speaker": "店员",
                 "zh": "换成多少一张的？",
@@ -3326,11 +3133,10 @@
                 "vocab_refs": [],
                 "grammar_refs": [],
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "f0f3699e-943c-42d9-8040-9d71f57a51f9"
+                "check_needed": false
               },
               {
-                "id": "comm_01_l03",
+                "id": "a4685bea-243d-459c-a695-7bb913c09214",
                 "order": 3,
                 "speaker": "张东",
                 "zh": "换成十块一张的就行。",
@@ -3340,11 +3146,10 @@
                 "vocab_refs": [],
                 "grammar_refs": [],
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "06e4291e-1f5b-4300-981e-e0b794caab4b"
+                "check_needed": false
               },
               {
-                "id": "comm_01_l04",
+                "id": "b0536515-f369-430c-bed0-ae2e634c9b68",
                 "order": 4,
                 "speaker": "店员",
                 "zh": "给您。请数数。",
@@ -3354,11 +3159,10 @@
                 "vocab_refs": [],
                 "grammar_refs": [],
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "6f558838-c305-41f3-80a4-5c13a7daa37e"
+                "check_needed": false
               },
               {
-                "id": "comm_01_l05",
+                "id": "dbe477b1-a934-4624-81eb-1bdecaa6d91b",
                 "order": 5,
                 "speaker": "张东",
                 "zh": "对。谢谢您了！",
@@ -3368,16 +3172,14 @@
                 "vocab_refs": [],
                 "grammar_refs": [],
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "71391fde-f375-4119-8392-4187cd884d12"
+                "check_needed": false
               }
             ],
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "27ca66c8-7ae7-4fe4-86d9-b0a9a118cae7"
+            "check_needed": false
           },
           {
-            "id": "communication_02",
+            "id": "f6a2ba94-9d60-4677-bb69-9eb1952cf3af",
             "type": "communication_dialogue",
             "variant": "role_play",
             "order": 2,
@@ -3389,7 +3191,7 @@
             },
             "lines": [
               {
-                "id": "comm_02_l01",
+                "id": "9ee95852-3023-444c-a27b-3e95bc666b64",
                 "order": 1,
                 "speaker": "山本",
                 "zh": "请问，我的印章刻好了没有？",
@@ -3399,11 +3201,10 @@
                 "vocab_refs": [],
                 "grammar_refs": [],
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "d7fa5706-6c82-4aab-9fc6-5bdb08d22027"
+                "check_needed": false
               },
               {
-                "id": "comm_02_l02",
+                "id": "07c68e22-4869-4688-b769-84f4d3426071",
                 "order": 2,
                 "speaker": "营业员",
                 "zh": "刻好了，你看看吧。",
@@ -3413,11 +3214,10 @@
                 "vocab_refs": [],
                 "grammar_refs": [],
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "7bb06b87-34ae-427a-8ac6-ec18f97f896c"
+                "check_needed": false
               },
               {
-                "id": "comm_02_l03",
+                "id": "40bf7b8e-677a-44e7-8056-da697cc5774c",
                 "order": 3,
                 "speaker": "山本",
                 "zh": "这就是篆字吗？",
@@ -3427,11 +3227,10 @@
                 "vocab_refs": [],
                 "grammar_refs": [],
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "1890b7f5-28df-4a1d-86f9-91cae3f88087"
+                "check_needed": false
               },
               {
-                "id": "comm_02_l04",
+                "id": "fbb205dc-f2ff-40db-909a-05bb91112ea2",
                 "order": 4,
                 "speaker": "营业员",
                 "zh": "对。你看，“山本幸子”。",
@@ -3441,11 +3240,10 @@
                 "vocab_refs": [],
                 "grammar_refs": [],
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "848a321d-8ea4-4972-8a3d-924907ebf60f"
+                "check_needed": false
               },
               {
-                "id": "comm_02_l05",
+                "id": "07b07dfe-11de-4c20-8ebb-a18794e794a6",
                 "order": 5,
                 "speaker": "山本",
                 "zh": "啊，太好了！",
@@ -3455,19 +3253,16 @@
                 "vocab_refs": [],
                 "grammar_refs": [],
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "52308592-0bdb-41aa-b5fe-0aaf06ff009c"
+                "check_needed": false
               }
             ],
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "9de52ec6-9879-42d8-a3d3-7d5509765a25"
+            "check_needed": false
           }
-        ],
-        "uuid": "8fa9ce44-14f4-4598-9345-42ecf66ecf83"
+        ]
       },
       {
-        "id": "section_08_reading",
+        "id": "dd46fe53-ff4b-4bc5-ae98-6d6174d0ad17",
         "type": "reading",
         "order": 8,
         "title": "阅读理解",
@@ -3476,7 +3271,7 @@
         "check_needed": false,
         "vocabulary": [
           {
-            "id": "reading_vocab_001",
+            "id": "97948db8-350f-468f-a584-08ac6ee8ea70",
             "type": "vocabulary_item",
             "order": 1,
             "hanzi": "从前",
@@ -3490,11 +3285,10 @@
             "examples": [],
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "3c3a7b45-9148-465a-a898-e16674945c28"
+            "check_needed": false
           },
           {
-            "id": "reading_vocab_002",
+            "id": "2e47d0d4-9926-4054-a4e1-cfe61d63cfac",
             "type": "vocabulary_item",
             "order": 2,
             "hanzi": "斧子",
@@ -3508,11 +3302,10 @@
             "examples": [],
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "afbeb75e-2007-4ba5-9469-efa9e24eb81d"
+            "check_needed": false
           },
           {
-            "id": "reading_vocab_003",
+            "id": "bb1aecd4-8b82-45bf-8c9d-b3e9082911a6",
             "type": "vocabulary_item",
             "order": 3,
             "hanzi": "怀疑",
@@ -3526,11 +3319,10 @@
             "examples": [],
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "d6126542-09c5-46b5-8558-2d72df01b986"
+            "check_needed": false
           },
           {
-            "id": "reading_vocab_004",
+            "id": "66286879-4464-4667-b96b-edb647e8e7a6",
             "type": "vocabulary_item",
             "order": 4,
             "hanzi": "邻居",
@@ -3544,11 +3336,10 @@
             "examples": [],
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "50804c09-7ab1-4ae9-b979-516df061870d"
+            "check_needed": false
           },
           {
-            "id": "reading_vocab_005",
+            "id": "e6317463-2f70-47e1-94a3-4f609e48161a",
             "type": "vocabulary_item",
             "order": 5,
             "hanzi": "偷",
@@ -3562,11 +3353,10 @@
             "examples": [],
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "64e7d7da-a125-44a9-9c6f-f707b6f72dfc"
+            "check_needed": false
           },
           {
-            "id": "reading_vocab_006",
+            "id": "7d280f35-81eb-4265-bc39-135c0a35e019",
             "type": "vocabulary_item",
             "order": 6,
             "hanzi": "举动",
@@ -3580,11 +3370,10 @@
             "examples": [],
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "00398233-e087-4c9c-b075-441851d16f02"
+            "check_needed": false
           },
           {
-            "id": "reading_vocab_007",
+            "id": "1fe04b57-27fb-446a-a96c-ac48b8e36867",
             "type": "vocabulary_item",
             "order": 7,
             "hanzi": "言行",
@@ -3598,11 +3387,10 @@
             "examples": [],
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "399b9246-72e7-4c46-aea0-de8e11970a6f"
+            "check_needed": false
           },
           {
-            "id": "reading_vocab_008",
+            "id": "fc6f1323-fa97-4b01-93e5-607c6f16c165",
             "type": "vocabulary_item",
             "order": 8,
             "hanzi": "样子",
@@ -3616,11 +3404,10 @@
             "examples": [],
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "cf3b0bc2-f07e-48a3-bf62-20b5d4a1a564"
+            "check_needed": false
           },
           {
-            "id": "reading_vocab_009",
+            "id": "f5f5c02a-114d-4943-8a50-c6cb7ed80e9e",
             "type": "vocabulary_item",
             "order": 9,
             "hanzi": "小偷儿",
@@ -3634,11 +3421,10 @@
             "examples": [],
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "77b8540f-8885-4bbb-a8b9-2d92c278856d"
+            "check_needed": false
           },
           {
-            "id": "reading_vocab_010",
+            "id": "3a6679d3-0126-4890-9d7e-f9738c768e7f",
             "type": "vocabulary_item",
             "order": 10,
             "hanzi": "表情",
@@ -3652,11 +3438,10 @@
             "examples": [],
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "822f8dbd-e516-4e81-b65b-7426cb223ca7"
+            "check_needed": false
           },
           {
-            "id": "reading_vocab_011",
+            "id": "736569e7-5f68-4e07-8891-11ff6f5bef6c",
             "type": "vocabulary_item",
             "order": 11,
             "hanzi": "原来",
@@ -3670,11 +3455,10 @@
             "examples": [],
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "bd29b604-cb05-4f7c-823e-32e992b0b6d5"
+            "check_needed": false
           },
           {
-            "id": "reading_vocab_012",
+            "id": "70dbd36c-4d41-4bfb-8dd5-2d03b176fb31",
             "type": "vocabulary_item",
             "order": 12,
             "hanzi": "砍柴",
@@ -3688,13 +3472,12 @@
             "examples": [],
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "7a602c5d-a5c3-400c-8543-87ae3e3457a7"
+            "check_needed": false
           }
         ],
         "blocks": [
           {
-            "id": "reading_01",
+            "id": "9bd9a79e-3279-468d-9f4b-ecd1f7365e19",
             "type": "text_reading",
             "order": 1,
             "title": "丢了斧子以后",
@@ -3703,7 +3486,7 @@
             "check_needed": false,
             "paragraphs": [
               {
-                "id": "reading_01_p01",
+                "id": "d2a4cf8b-55cd-4904-9fed-3141da682b19",
                 "order": 1,
                 "zh": "从前，有一个人丢了一把斧子。他怀疑自己的斧子是邻居的儿子偷走的。于是，他就注意邻居儿子的一举一动、一言一行。他觉得这个孩子走路的样子跟小偷儿一样，说话跟小偷儿一样，脸上的表情也跟小偷儿一样，他的一言一行、一举一动都像是偷斧子的。",
                 "pinyin": "",
@@ -3712,11 +3495,10 @@
                 "vocab_refs": [],
                 "grammar_refs": [],
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "71c8ab26-756f-4e28-8b0e-498612ca0418"
+                "check_needed": false
               },
               {
-                "id": "reading_01_p02",
+                "id": "a6b1119e-769b-4444-9eee-c4a26d7f6af3",
                 "order": 2,
                 "zh": "后来，丢斧子的人找到了自己的斧子，原来是他到山上去砍柴时，丢在山上了。",
                 "pinyin": "",
@@ -3724,14 +3506,13 @@
                 "audio_key": "",
                 "vocab_refs": [],
                 "grammar_refs": [
-                  "grammar_02"
+                  "57b14753-688a-41b6-9e0d-b61dbbf574d7"
                 ],
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "896efd21-6b28-4ff0-8e28-6538e51937bd"
+                "check_needed": false
               },
               {
-                "id": "reading_01_p03",
+                "id": "ce8bdbc9-b498-418a-ab2c-e16111228a35",
                 "order": 3,
                 "zh": "找到斧子以后，他再看邻居的儿子，觉得他走路的样子跟小偷儿不一样，说话的样子也跟小偷儿不一样，他的一言一行、一举一动都不像小偷儿了。",
                 "pinyin": "",
@@ -3740,54 +3521,48 @@
                 "vocab_refs": [],
                 "grammar_refs": [],
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "1de8cc85-751f-4684-9c6f-04bc0aea99a7"
+                "check_needed": false
               }
             ],
             "comprehension_questions": [
               {
-                "id": "reading_01_q01",
+                "id": "97c6a4ab-7de0-45b1-a796-4625f58d1fca",
                 "question": "丢斧子的人为什么怀疑自己的斧子是邻居的儿子偷走的？",
                 "answer": "因为他丢了斧子，又没有找到，所以怀疑是邻居的儿子偷走的。",
                 "source_origin": "textbook_question_generated_answer",
                 "answer_verified": true,
-                "check_needed": false,
-                "uuid": "624cc83e-e9ab-4d2a-b590-b1038ac7fc08"
+                "check_needed": false
               },
               {
-                "id": "reading_01_q02",
+                "id": "82b334af-11c3-4606-980f-154617982627",
                 "question": "斧子后来在哪儿找到了？",
                 "answer": "后来在山上找到了。",
                 "source_origin": "textbook_question_generated_answer",
                 "answer_verified": true,
-                "check_needed": false,
-                "uuid": "61fb7e77-36b0-4e9f-b836-a846340dfb5a"
+                "check_needed": false
               },
               {
-                "id": "reading_01_q03",
+                "id": "13181a17-4f4d-4923-a0ef-dd8d285261d4",
                 "question": "找到斧子以后，邻居的儿子为什么又不像小偷儿了？",
                 "answer": "因为他已经知道斧子不是邻居的儿子偷的，而是自己砍柴时丢在山上了。",
                 "source_origin": "textbook_question_generated_answer",
                 "answer_verified": true,
-                "check_needed": false,
-                "uuid": "406862f9-b3eb-4041-9902-169615218929"
+                "check_needed": false
               },
               {
-                "id": "reading_01_q04",
+                "id": "05127eb4-5037-4e27-a2e2-5a497d413bd1",
                 "question": "这个故事说明了什么？",
                 "answer": "人有了怀疑以后，常常会带着成见看别人；事实没弄清楚以前，不能随便怀疑别人。",
                 "source_origin": "textbook_question_generated_answer",
                 "answer_verified": true,
-                "check_needed": false,
-                "uuid": "629a2c80-3952-4e41-a809-635bff8cb1a5"
+                "check_needed": false
               }
-            ],
-            "uuid": "d675202a-6f63-4222-8e9a-4ae2c8b00eee"
+            ]
           }
         ],
         "items": [
           {
-            "id": "reading_01",
+            "id": "9bd9a79e-3279-468d-9f4b-ecd1f7365e19",
             "type": "text_reading",
             "order": 1,
             "title": "丢了斧子以后",
@@ -3796,7 +3571,7 @@
             "check_needed": false,
             "paragraphs": [
               {
-                "id": "reading_01_p01",
+                "id": "d2a4cf8b-55cd-4904-9fed-3141da682b19",
                 "order": 1,
                 "zh": "从前，有一个人丢了一把斧子。他怀疑自己的斧子是邻居的儿子偷走的。于是，他就注意邻居儿子的一举一动、一言一行。他觉得这个孩子走路的样子跟小偷儿一样，说话跟小偷儿一样，脸上的表情也跟小偷儿一样，他的一言一行、一举一动都像是偷斧子的。",
                 "pinyin": "",
@@ -3805,11 +3580,10 @@
                 "vocab_refs": [],
                 "grammar_refs": [],
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "2006fe0e-69a4-4d01-8a7d-39550a29c190"
+                "check_needed": false
               },
               {
-                "id": "reading_01_p02",
+                "id": "a6b1119e-769b-4444-9eee-c4a26d7f6af3",
                 "order": 2,
                 "zh": "后来，丢斧子的人找到了自己的斧子，原来是他到山上去砍柴时，丢在山上了。",
                 "pinyin": "",
@@ -3817,14 +3591,13 @@
                 "audio_key": "",
                 "vocab_refs": [],
                 "grammar_refs": [
-                  "grammar_02"
+                  "57b14753-688a-41b6-9e0d-b61dbbf574d7"
                 ],
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "1070b908-f33e-4072-a80a-224c15f15068"
+                "check_needed": false
               },
               {
-                "id": "reading_01_p03",
+                "id": "ce8bdbc9-b498-418a-ab2c-e16111228a35",
                 "order": 3,
                 "zh": "找到斧子以后，他再看邻居的儿子，觉得他走路的样子跟小偷儿不一样，说话的样子也跟小偷儿不一样，他的一言一行、一举一动都不像小偷儿了。",
                 "pinyin": "",
@@ -3833,55 +3606,48 @@
                 "vocab_refs": [],
                 "grammar_refs": [],
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "439328b8-8375-486d-ac08-73549000e119"
+                "check_needed": false
               }
             ],
             "comprehension_questions": [
               {
-                "id": "reading_01_q01",
+                "id": "97c6a4ab-7de0-45b1-a796-4625f58d1fca",
                 "question": "丢斧子的人为什么怀疑自己的斧子是邻居的儿子偷走的？",
                 "answer": "因为他丢了斧子，又没有找到，所以怀疑是邻居的儿子偷走的。",
                 "source_origin": "textbook_question_generated_answer",
                 "answer_verified": true,
-                "check_needed": false,
-                "uuid": "f12b47dc-7060-4bea-9bf2-303102b4e50b"
+                "check_needed": false
               },
               {
-                "id": "reading_01_q02",
+                "id": "82b334af-11c3-4606-980f-154617982627",
                 "question": "斧子后来在哪儿找到了？",
                 "answer": "后来在山上找到了。",
                 "source_origin": "textbook_question_generated_answer",
                 "answer_verified": true,
-                "check_needed": false,
-                "uuid": "e6fc5015-cb68-4a2d-b3ca-e3b15819e128"
+                "check_needed": false
               },
               {
-                "id": "reading_01_q03",
+                "id": "13181a17-4f4d-4923-a0ef-dd8d285261d4",
                 "question": "找到斧子以后，邻居的儿子为什么又不像小偷儿了？",
                 "answer": "因为他已经知道斧子不是邻居的儿子偷的，而是自己砍柴时丢在山上了。",
                 "source_origin": "textbook_question_generated_answer",
                 "answer_verified": true,
-                "check_needed": false,
-                "uuid": "d90cd167-1956-4369-ad22-75f8c7dec5aa"
+                "check_needed": false
               },
               {
-                "id": "reading_01_q04",
+                "id": "05127eb4-5037-4e27-a2e2-5a497d413bd1",
                 "question": "这个故事说明了什么？",
                 "answer": "人有了怀疑以后，常常会带着成见看别人；事实没弄清楚以前，不能随便怀疑别人。",
                 "source_origin": "textbook_question_generated_answer",
                 "answer_verified": true,
-                "check_needed": false,
-                "uuid": "5c51336c-a6e7-4bff-aa5e-93bbc4ed07d7"
+                "check_needed": false
               }
-            ],
-            "uuid": "f77ce0cb-6836-4641-9ce4-5dc54af13220"
+            ]
           }
-        ],
-        "uuid": "ec94df22-b079-4b4e-b7d0-68355286bfc7"
+        ]
       },
       {
-        "id": "section_09_character_writing",
+        "id": "e71f4398-291c-4f48-8aa7-f93e825f4d42",
         "type": "character_writing",
         "order": 9,
         "title": "写汉字",
@@ -3890,87 +3656,79 @@
         "check_needed": false,
         "items": [
           {
-            "id": "character_001",
+            "id": "c905b834-20c4-4c9a-b187-ccec4561a84e",
             "type": "character_writing_item",
             "order": 1,
             "hanzi": "护",
             "pinyin": "hù",
             "note_vi": "trong 护照; bộ 扌, liên quan thao tác / bảo vệ",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "d7f0bbe3-8865-46c1-9b2e-acbe9e0422ac"
+            "check_needed": false
           },
           {
-            "id": "character_002",
+            "id": "7478df75-0bb0-40e9-b09c-bc4827a500ba",
             "type": "character_writing_item",
             "order": 2,
             "hanzi": "照",
             "pinyin": "zhào",
             "note_vi": "trong 护照; chiếu, soi; trong bài theo nghĩa giấy tờ “hộ chiếu”",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "0358ee12-bea7-4532-ad9e-3a62eb19197d"
+            "check_needed": false
           },
           {
-            "id": "character_003",
+            "id": "8544058b-8787-4fbb-902a-2ace2a314787",
             "type": "character_writing_item",
             "order": 3,
             "hanzi": "签",
             "pinyin": "qiān",
             "note_vi": "trong 签证; ký, ký tên",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "8c6202e7-da59-4ca9-8161-80119445d3c3"
+            "check_needed": false
           },
           {
-            "id": "character_004",
+            "id": "5a56fe6b-cee9-4207-aae2-eb4785f61c4e",
             "type": "character_writing_item",
             "order": 4,
             "hanzi": "证",
             "pinyin": "zhèng",
             "note_vi": "trong 签证; chứng nhận, giấy chứng nhận",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "38a7cda4-2bc1-4bf5-a589-91d3689e98f5"
+            "check_needed": false
           },
           {
-            "id": "character_005",
+            "id": "32c0de09-74c3-441b-9cfc-193bf51e8280",
             "type": "character_writing_item",
             "order": 5,
             "hanzi": "袋",
             "pinyin": "dài",
             "note_vi": "trong 口袋; túi, bao",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "7a422f8a-aa98-4ce7-9ff7-cbe5972ceeed"
+            "check_needed": false
           },
           {
-            "id": "character_006",
+            "id": "bfcba395-b6dd-4eff-a14e-f86cddae7182",
             "type": "character_writing_item",
             "order": 6,
             "hanzi": "丢",
             "pinyin": "diū",
             "note_vi": "mất, đánh mất",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "3d927f50-598c-43d8-9a2f-3071d461a0bf"
+            "check_needed": false
           },
           {
-            "id": "character_007",
+            "id": "820f2f19-0ea1-42da-8ced-76f6dcfb4bee",
             "type": "character_writing_item",
             "order": 7,
             "hanzi": "程",
             "pinyin": "chéng",
             "note_vi": "trong 程度; mức độ, trình độ, quá trình",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "2682428d-e28e-4fe7-a5d2-436d12e29f7b"
+            "check_needed": false
           }
-        ],
-        "uuid": "f49e6508-59b4-4a3b-b6ca-24e15c98892f"
+        ]
       },
       {
-        "id": "section_10_summary",
+        "id": "8e88dc2d-d19b-4cbb-aa04-f38eb9b383c7",
         "type": "summary",
         "order": 10,
         "title": "总复习 / Tổng kết",
@@ -3990,55 +3748,49 @@
         ],
         "grammar_points": [
           {
-            "id": "grammar_01",
+            "id": "f8ec59f3-898a-47b2-b536-44dfd8183393",
             "title": "主谓谓语句（二）",
-            "title_vi": "Câu chủ-vị làm vị ngữ",
-            "uuid": "ab1a8010-9212-43e1-8c9c-44f53f91fed4"
+            "title_vi": "Câu chủ-vị làm vị ngữ"
           },
           {
-            "id": "grammar_02",
+            "id": "57b14753-688a-41b6-9e0d-b61dbbf574d7",
             "title": "结果补语（二）：在、着、好、成",
-            "title_vi": "Bổ ngữ kết quả: 在、着、好、成",
-            "uuid": "0a367cc8-fa58-414f-87d2-137d26c169ce"
+            "title_vi": "Bổ ngữ kết quả: 在、着、好、成"
           }
         ],
         "key_patterns": [
           {
-            "id": "pattern_01",
+            "id": "aa28b04d-1683-497e-aecf-780cd967ff2c",
             "zh": "我的护照你找到了没有？",
             "vi": "Bạn tìm thấy hộ chiếu của tôi chưa?",
             "grammar_refs": [
-              "grammar_01",
-              "grammar_02"
-            ],
-            "uuid": "b45ee60c-a65f-4bc8-961e-e31dd41e10eb"
+              "f8ec59f3-898a-47b2-b536-44dfd8183393",
+              "57b14753-688a-41b6-9e0d-b61dbbf574d7"
+            ]
           },
           {
-            "id": "pattern_02",
+            "id": "a5b1730d-2ded-4c3b-9d0a-e28edb8ac4f3",
             "zh": "我找了半天也没找着。",
             "vi": "Tôi tìm cả buổi mà vẫn không tìm thấy.",
             "grammar_refs": [
-              "grammar_02"
-            ],
-            "uuid": "5db06e05-33ed-4433-98c5-f68833954e79"
+              "57b14753-688a-41b6-9e0d-b61dbbf574d7"
+            ]
           },
           {
-            "id": "pattern_03",
+            "id": "3618f4f1-740d-4e15-b3b8-16e0472657fa",
             "zh": "放在我的手提包儿里了。",
             "vi": "Đã để trong túi xách tay của tôi rồi.",
             "grammar_refs": [
-              "grammar_02"
-            ],
-            "uuid": "3afbda3c-0824-4681-93c7-b08ad06bfc2e"
+              "57b14753-688a-41b6-9e0d-b61dbbf574d7"
+            ]
           },
           {
-            "id": "pattern_04",
+            "id": "6dd36c2f-115b-4aad-97f1-ec9f77d2c474",
             "zh": "最后去成了吗？",
             "vi": "Cuối cùng có đi được không?",
             "grammar_refs": [
-              "grammar_02"
-            ],
-            "uuid": "0cf415fa-b6d4-4bdd-b359-496838dc5caf"
+              "57b14753-688a-41b6-9e0d-b61dbbf574d7"
+            ]
           }
         ],
         "coverage_summary": {
@@ -4055,10 +3807,50 @@
             "vocab_015 平度 cần đối chiếu lại PDF scan trước khi set final_verified.",
             "JSON đã tạo nhưng chưa chạy validator TypeScript/Zod trong project app."
           ]
-        },
-        "uuid": "7e1ae03c-7569-4b19-96a9-854e5d62b2e0"
+        }
       }
     ],
+    "metadata": {
+      "legacy_id": "hanyu_2_1_lesson_12",
+      "book": "Hanyu Jiaocheng",
+      "volume": "第二册上",
+      "volume_vi": "Quyển 2 Thượng",
+      "lesson_index": 12,
+      "lesson_number_cn": "第十二课",
+      "lesson_title_cn": "我的护照你找到了没有",
+      "lesson_title_pinyin": "Wǒ de hùzhào nǐ zhǎodào le méiyǒu",
+      "lesson_title_vi": "Hộ chiếu của tôi bạn tìm thấy chưa?",
+      "lesson_title_en": "Did you find my passport?",
+      "source_files": [
+        {
+          "name": "Hanyu Jiaocheng 2-1.pdf",
+          "type": "pdf_scan",
+          "source_origin": "textbook",
+          "check_needed": true,
+          "page_start": 196,
+          "page_end": 209,
+          "note": "Main textbook source used during Markdown extraction."
+        },
+        {
+          "name": "Tong_hop_tu_vung_Han_ngu_quyen_2_Bai_1-25.docx",
+          "type": "uploaded_crosscheck",
+          "source_origin": "uploaded_crosscheck",
+          "check_needed": false
+        },
+        {
+          "name": "Học kì 2 上-下.md",
+          "type": "uploaded_crosscheck",
+          "source_origin": "uploaded_crosscheck",
+          "check_needed": false
+        },
+        {
+          "name": "hanyuLesson.schema.v2.3.0.full.ts",
+          "type": "schema",
+          "source_origin": "uploaded_crosscheck",
+          "check_needed": false
+        }
+      ]
+    },
     "summary": {
       "lesson_parts": [
         "Bài khóa",
@@ -4074,14 +3866,12 @@
       ],
       "grammar_points": [
         {
-          "id": "grammar_01",
-          "title": "Câu chủ-vị làm vị ngữ",
-          "uuid": "262408e3-6ead-4da0-8548-b0fb486c74d5"
+          "id": "f8ec59f3-898a-47b2-b536-44dfd8183393",
+          "title": "Câu chủ-vị làm vị ngữ"
         },
         {
-          "id": "grammar_02",
-          "title": "Bổ ngữ kết quả: 在、着、好、成",
-          "uuid": "e8ce5bbe-fe8c-483b-9443-c85dcf6e85ab"
+          "id": "57b14753-688a-41b6-9e0d-b61dbbf574d7",
+          "title": "Bổ ngữ kết quả: 在、着、好、成"
         }
       ],
       "main_patterns": [],
@@ -4094,180 +3884,6 @@
         "Sửa câu sai"
       ],
       "check_needed": false
-    },
-    "uuid": "0a45694d-b58b-4f40-8f4e-1691a4d7631b"
-  },
-  "coverage_report": {
-    "version": "coverage_v1",
-    "coverage_status": "complete_unverified",
-    "expected_exercise_count_from_pdf": 7,
-    "actual_exercise_count_in_json": 7,
-    "all_exercises_covered": true,
-    "all_exercise_content_verified": true,
-    "missing_exercise_indexes": [],
-    "expected_exercises_from_pdf": [
-      {
-        "order": 1,
-        "title_cn": "一、语音",
-        "title_vi": "Ngữ âm",
-        "canonical_type": "phonetics",
-        "canonical_variant": "pronunciation_tone_minimal_pairs",
-        "json_item_id": "exercise_01",
-        "page_start": 203,
-        "page_end": 203,
-        "extracted": true,
-        "content_verified": true,
-        "answer_verified": false,
-        "source_origin": "textbook",
-        "check_needed": false,
-        "missing_reason": ""
-      },
-      {
-        "order": 2,
-        "title_cn": "二、替换",
-        "title_vi": "Thay thế",
-        "canonical_type": "substitution_drill",
-        "canonical_variant": "substitution_or_transform_drill",
-        "json_item_id": "exercise_02",
-        "page_start": 203,
-        "page_end": 204,
-        "extracted": true,
-        "content_verified": true,
-        "answer_verified": false,
-        "source_origin": "textbook",
-        "check_needed": false,
-        "missing_reason": ""
-      },
-      {
-        "order": 3,
-        "title_cn": "三、选词填空",
-        "title_vi": "Chọn từ điền chỗ trống",
-        "canonical_type": "choose_words_fill_blank",
-        "canonical_variant": "word_bank_fill_blank",
-        "json_item_id": "exercise_03",
-        "page_start": 204,
-        "page_end": 205,
-        "extracted": true,
-        "content_verified": true,
-        "answer_verified": false,
-        "source_origin": "textbook",
-        "check_needed": false,
-        "missing_reason": ""
-      },
-      {
-        "order": 4,
-        "title_cn": "四、用适当的结果补语填空",
-        "title_vi": "Điền bổ ngữ kết quả thích hợp",
-        "canonical_type": "fill_blank",
-        "canonical_variant": "free_fill_blank",
-        "json_item_id": "exercise_04",
-        "page_start": 205,
-        "page_end": 206,
-        "extracted": true,
-        "content_verified": true,
-        "answer_verified": false,
-        "source_origin": "textbook",
-        "check_needed": false,
-        "missing_reason": ""
-      },
-      {
-        "order": 5,
-        "title_cn": "五、用动词和补语填空",
-        "title_vi": "Điền động từ và bổ ngữ",
-        "canonical_type": "fill_blank",
-        "canonical_variant": "free_fill_blank",
-        "json_item_id": "exercise_05",
-        "page_start": 206,
-        "page_end": 206,
-        "extracted": true,
-        "content_verified": true,
-        "answer_verified": false,
-        "source_origin": "textbook",
-        "check_needed": false,
-        "missing_reason": ""
-      },
-      {
-        "order": 6,
-        "title_cn": "六、改错句",
-        "title_vi": "Sửa câu sai",
-        "canonical_type": "correct_sentence",
-        "canonical_variant": "error_correction",
-        "json_item_id": "exercise_06",
-        "page_start": 206,
-        "page_end": 207,
-        "extracted": true,
-        "content_verified": true,
-        "answer_verified": false,
-        "source_origin": "textbook",
-        "check_needed": false,
-        "missing_reason": ""
-      },
-      {
-        "order": 7,
-        "title_cn": "七、交际会话",
-        "title_vi": "Hội thoại giao tiếp",
-        "canonical_type": "communication_dialogue",
-        "canonical_variant": "role_play",
-        "json_item_id": "communication_01",
-        "page_start": 207,
-        "page_end": 207,
-        "extracted": true,
-        "content_verified": true,
-        "answer_verified": false,
-        "source_origin": "textbook",
-        "check_needed": false,
-        "missing_reason": ""
-      }
-    ],
-    "unknown_or_unmapped_blocks": [],
-    "coverage_gates": [
-      {
-        "id": "gate_text",
-        "label": "Text covered",
-        "passed": true,
-        "expected": 2,
-        "actual": 2,
-        "reason": "",
-        "uuid": "669eec27-f474-47de-9f6b-ea1e629e4136"
-      },
-      {
-        "id": "gate_vocab",
-        "label": "Vocabulary covered",
-        "passed": true,
-        "expected": 62,
-        "actual": 62,
-        "reason": "",
-        "uuid": "7b443195-5617-4b84-b23b-df78669e5612"
-      },
-      {
-        "id": "gate_exercises",
-        "label": "Exercises covered",
-        "passed": true,
-        "expected": 7,
-        "actual": 7,
-        "reason": "",
-        "uuid": "4cb3104b-187e-466c-9daf-5b435efa86ca"
-      },
-      {
-        "id": "gate_reading",
-        "label": "Reading covered",
-        "passed": true,
-        "expected": 1,
-        "actual": 1,
-        "reason": "",
-        "uuid": "3dd37f52-1745-498b-83b2-aa8155ff058e"
-      },
-      {
-        "id": "gate_character_writing",
-        "label": "Character writing covered",
-        "passed": true,
-        "expected": 7,
-        "actual": 7,
-        "reason": "",
-        "uuid": "13b4a60e-cb73-4243-98f6-a50739e0755e"
-      }
-    ],
-    "final_verification_allowed": false
-  },
-  "created_at": "2026-06-02T03:58:08"
+    }
+  }
 }

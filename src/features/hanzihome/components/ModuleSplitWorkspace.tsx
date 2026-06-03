@@ -343,8 +343,8 @@ export function ModuleSplitWorkspace({
 
  if (!splitEnabled) {
   return (
-   <div className="grid gap-2.5">
-    <div className="sticky top-0 z-30 flex min-w-0 flex-wrap items-center justify-between gap-2 rounded-xl bg-bg-primary/95 py-1 backdrop-blur">
+   <div className="grid gap-2 sm:gap-2.5">
+    <div className="sticky top-0 z-30 flex min-w-0 flex-wrap items-center justify-between gap-1.5 rounded-lg bg-bg-primary/95 py-0.5 backdrop-blur sm:gap-2 sm:rounded-xl sm:py-1">
      <div className="min-w-0 flex-1">
       <SegmentedControl
        value={activeModule}
@@ -356,21 +356,21 @@ export function ModuleSplitWorkspace({
       type="button"
       variant="outline"
       size="sm"
-      className="shrink-0"
+      className="h-8 shrink-0 px-2.5 sm:h-9 sm:px-3"
       onClick={() => updateSplitEnabled(true)}
      >
       Mở split
      </Button>
     </div>
 
-     {singleContent}
+    {singleContent}
    </div>
   );
  }
 
  return (
-  <div className="grid gap-2.5">
-   <div className="flex flex-wrap items-center justify-between gap-2">
+  <div className="grid gap-2 sm:gap-2.5">
+   <div className="flex flex-wrap items-center justify-between gap-1.5 sm:gap-2">
     <p className="text-xs font-black uppercase tracking-wide text-text-muted">
      Kéo tab qua trái/phải để tự chia màn hình học.
     </p>
@@ -385,7 +385,7 @@ export function ModuleSplitWorkspace({
     </Button>
    </div>
 
-   <div className="grid min-w-0 gap-3 xl:h-[calc(100dvh-13rem)] xl:min-h-0 xl:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)]">
+   <div className="grid min-w-0 gap-2 sm:gap-3 xl:h-[calc(100dvh-13rem)] xl:min-h-0 xl:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)]">
     <ModulePane
      paneId="left"
      title="Nội dung bài"
@@ -463,7 +463,7 @@ function ModulePane({
   <section
    onDragOver={handleDragOver}
    onDrop={handleDrop}
-   className="grid min-h-112 min-w-0 grid-rows-[auto_auto_minmax(0,1fr)] gap-3 rounded-xl border border-border-default bg-bg-card p-3 shadow-theme-sm xl:min-h-0"
+   className="grid min-h-112 min-w-0 grid-rows-[auto_auto_minmax(0,1fr)] gap-2 rounded-xl border border-border-default bg-bg-card p-2 shadow-theme-sm sm:gap-3 sm:p-3 xl:min-h-0"
   >
    <div className="flex flex-wrap items-center justify-between gap-2">
     <h2 className="text-sm font-black uppercase tracking-wide text-text-primary">
@@ -475,7 +475,7 @@ function ModulePane({
     </span>
    </div>
 
-   <div className="no-scrollbar sticky top-0 z-20 flex min-w-0 gap-1 overflow-x-auto rounded-xl bg-bg-subtle p-1">
+   <div className="no-scrollbar sticky top-0 z-20 flex min-w-0 gap-1 overflow-x-auto rounded-lg bg-bg-subtle p-1 sm:rounded-xl">
     {items.map((item) => (
      <ModuleTabButton
       key={item}
@@ -489,7 +489,7 @@ function ModulePane({
     ))}
    </div>
 
-   <div className="min-h-0 min-w-0 overflow-y-auto rounded-xl bg-bg-subtle/60 p-2 pr-1">
+   <div className="min-h-0 min-w-0 overflow-y-auto rounded-lg bg-bg-subtle/60 p-1 sm:rounded-xl sm:p-2 sm:pr-1">
     {children}
    </div>
   </section>
@@ -528,7 +528,7 @@ function ModuleTabButton({
    onDragStart={handleDragStart}
    onDragEnd={onDragEnd}
    className={[
-    "flex h-10 shrink-0 cursor-grab items-center gap-2 whitespace-nowrap rounded-lg px-3 text-sm font-black transition-colors active:cursor-grabbing",
+    "flex h-9 shrink-0 cursor-grab items-center gap-1.5 whitespace-nowrap rounded-lg px-2.5 text-sm font-black transition-colors active:cursor-grabbing sm:h-10 sm:gap-2 sm:px-3",
     active
      ? "bg-bg-primary text-text-primary shadow-theme-sm"
      : "text-text-muted hover:bg-bg-primary hover:text-text-primary",

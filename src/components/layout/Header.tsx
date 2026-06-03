@@ -16,7 +16,8 @@ import {
  SelectTrigger,
  SelectValue,
 } from "@/components/ui/select";
-import { hanzihomeHeaderNavigation } from "@/features/hanzihome/static-json/header-navigation";
+import { hanzihomeCourses } from "@/features/hanzihome/courses/course-catalog";
+import { getHanziHomeCourseLessonSummaries } from "@/features/hanzihome/static-data";
 
 export function Header({ user }: { user?: User | null }) {
  const { theme, toggleTheme } = useTheme();
@@ -31,11 +32,17 @@ export function Header({ user }: { user?: User | null }) {
  const hanzihomeBreadcrumb = useMemo(() => {
   if (pathname !== "/hanzihome") return null;
 
+  const courses = hanzihomeCourses
+   .map((course) => ({
+    id: course.id,
+    title: course.title,
+    lessons: getHanziHomeCourseLessonSummaries(course.id),
+   }))
+   .filter((course) => course.lessons.length > 0);
   const selectedCourseId =
-   searchParams.get("courseId") || hanzihomeHeaderNavigation[0]?.id || "";
+   searchParams.get("courseId") || courses[0]?.id || "";
   const selectedCourse =
-   hanzihomeHeaderNavigation.find((course) => course.id === selectedCourseId) ??
-   hanzihomeHeaderNavigation[0];
+   courses.find((course) => course.id === selectedCourseId) ?? courses[0];
   const lessons = selectedCourse?.lessons ?? [];
   const lessonIdFromUrl = searchParams.get("lessonId");
   const selectedLesson =
@@ -44,6 +51,7 @@ export function Header({ user }: { user?: User | null }) {
   if (!selectedCourse || !selectedLesson) return null;
 
   return {
+   courses,
    selectedCourse,
    selectedLesson,
    lessons,
@@ -93,9 +101,9 @@ export function Header({ user }: { user?: User | null }) {
      <span className="rounded-lg px-2 py-1 text-text-primary">HanziHome</span>
      <ChevronRight className="h-4 w-4 shrink-0 text-text-muted" />
      <Select
-      value={hanzihomeBreadcrumb.selectedCourse.id}
-      onValueChange={(courseId) => {
-       const course = hanzihomeHeaderNavigation.find(
+     value={hanzihomeBreadcrumb.selectedCourse.id}
+     onValueChange={(courseId) => {
+       const course = hanzihomeBreadcrumb.courses.find(
         (item) => item.id === courseId,
        );
        const lessonId = course?.lessons[0]?.id;
@@ -110,7 +118,7 @@ export function Header({ user }: { user?: User | null }) {
        <SelectValue />
       </SelectTrigger>
       <SelectContent align="start">
-       {hanzihomeHeaderNavigation.map((course) => (
+       {hanzihomeBreadcrumb.courses.map((course) => (
         <SelectItem key={course.id} value={course.id}>
          {course.title}
         </SelectItem>
@@ -133,7 +141,7 @@ export function Header({ user }: { user?: User | null }) {
       <SelectContent align="start">
        {hanzihomeBreadcrumb.lessons.map((lesson) => (
         <SelectItem key={lesson.id} value={lesson.id}>
-         {`Bài ${lesson.lessonNumber}: ${lesson.titleZh}`}
+         {`Bài ${lesson.lessonNumber}: ${lesson.titleZh || lesson.title}`}
         </SelectItem>
        ))}
       </SelectContent>

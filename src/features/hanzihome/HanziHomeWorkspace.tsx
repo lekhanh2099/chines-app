@@ -263,6 +263,7 @@ export function HanziHomeWorkspace() {
     ) : (
      lesson && (
       <ModuleSplitWorkspace
+       key={lesson.id}
        lesson={lesson}
        learningState={learning.state}
        activeModule={activeLessonModule}

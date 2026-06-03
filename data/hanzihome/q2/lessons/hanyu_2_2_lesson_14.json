@@ -1,48 +1,6 @@
 {
-  "schema_version": "2.3.0-coverage-first",
-  "content_type": "chinese_textbook_lesson",
-  "verification_status": "verified_partial",
-  "source": {
-    "book": "Hanyu Jiaocheng",
-    "volume": "第二册下",
-    "volume_vi": "Quyển 2 Hạ",
-    "lesson_index": 14,
-    "lesson_number_cn": "第十四课",
-    "lesson_title_cn": "钥匙忘拔下来了",
-    "lesson_title_pinyin": "Yàoshi wàng bá xiàlai le",
-    "lesson_title_vi": "Chìa khóa quên rút ra rồi",
-    "lesson_title_en": "I forgot to pull out the keys",
-    "source_files": [
-      {
-        "name": "Hanyu Jiaocheng 2-2.pdf",
-        "type": "pdf_scan",
-        "source_origin": "textbook",
-        "check_needed": true,
-        "page_start": 15,
-        "page_end": 30
-      },
-      {
-        "name": "Đã dán markdown (1).md",
-        "type": "instruction_prompt",
-        "source_origin": "uploaded_crosscheck",
-        "check_needed": false
-      }
-    ],
-    "web_crosscheck": [
-      {
-        "title": "Bài 14: Văn bản và Ngữ pháp - Tôi quên rút chìa khoá rồi",
-        "source_origin": "web_crosscheck",
-        "note": "Used only to cross-check lesson title/section labels."
-      },
-      {
-        "title": "汉语教程（第3版）第二册下-参考答案",
-        "source_origin": "web_crosscheck",
-        "note": "Used only as auxiliary cross-check for answer keys where available."
-      }
-    ]
-  },
   "lesson": {
-    "id": "hanyu_2_2_lesson_14",
+    "id": "a9463697-c2f7-49f1-a3e1-7351b44d34c6",
     "title": {
       "zh": "钥匙忘拔下来了",
       "pinyin": "Yàoshi wàng bá xiàlai le",
@@ -57,7 +15,7 @@
     ],
     "sections": [
       {
-        "id": "section_01_text",
+        "id": "a6c0d522-99be-4f36-881c-b9b2c6beeb85",
         "type": "text",
         "order": 1,
         "title": "课文",
@@ -66,7 +24,7 @@
         "check_needed": false,
         "blocks": [
           {
-            "id": "text_01",
+            "id": "e155d5ea-f89d-45f0-ab8d-094ce9e719f0",
             "type": "text_narrative",
             "order": 1,
             "title": "钥匙忘拔下来了",
@@ -75,7 +33,7 @@
             "check_needed": false,
             "paragraphs": [
               {
-                "id": "text_01_p01",
+                "id": "43338a2c-2044-419e-9fdd-ed1739757a8d",
                 "order": 1,
                 "zh": "星期天，我和麦克一起骑车到图书城去买书。图书城离我们学校比较远。那天刮风，我们骑了一个多小时才骑到。图书城很大，里边有很多书店。每个书店我们都想进去看看。我们从一个书店走出来，又走进另一个书店。看到书店里有各种各样的书，我很兴奋。从这个书架上拿下来一本看看，再放上去，又从另一个书架上抽出来一本看看。我挑了几本历史书，麦克选了一些中文小说儿。快放寒假了，我们都想买一些书带回国去。",
                 "vi": "Chủ nhật, tôi và Mike cùng đạp xe đến thành phố sách để mua sách. Thành phố sách cách trường chúng tôi khá xa. Hôm đó có gió, chúng tôi đạp hơn một tiếng mới tới nơi. Thành phố sách rất lớn, bên trong có rất nhiều hiệu sách. Hiệu sách nào chúng tôi cũng muốn vào xem. Chúng tôi đi ra khỏi một hiệu sách, rồi lại bước vào một hiệu sách khác. Nhìn thấy trong hiệu sách có đủ loại sách, tôi rất phấn khích. Tôi lấy một quyển từ trên giá sách xuống xem, rồi lại đặt lên; sau đó lại rút một quyển từ giá sách khác ra xem. Tôi chọn vài quyển sách lịch sử, Mike chọn một ít tiểu thuyết tiếng Trung. Sắp nghỉ đông rồi, chúng tôi đều muốn mua một ít sách mang về nước.",
@@ -83,14 +41,13 @@
                 "audio_key": "",
                 "vocab_refs": [],
                 "grammar_refs": [
-                  "grammar_01"
+                  "f8ec59f3-898a-47b2-b536-44dfd8183393"
                 ],
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "c9b25562-11f0-4b15-bd0c-19e4a6d586dd"
+                "check_needed": false
               },
               {
-                "id": "text_01_p02",
+                "id": "4a807389-3592-4cf4-973f-6589e0118fb2",
                 "order": 2,
                 "zh": "除了买书以外，我们还想买一些小礼品，带回去送朋友。于是我们又走进一家商场去。",
                 "vi": "Ngoài mua sách ra, chúng tôi còn muốn mua một ít quà nhỏ, mang về tặng bạn bè. Vì thế chúng tôi lại đi vào một trung tâm thương mại.",
@@ -98,14 +55,13 @@
                 "audio_key": "",
                 "vocab_refs": [],
                 "grammar_refs": [
-                  "grammar_01"
+                  "f8ec59f3-898a-47b2-b536-44dfd8183393"
                 ],
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "6c982e34-26b8-46f0-aa45-f097e5f97bf5"
+                "check_needed": false
               },
               {
-                "id": "text_01_p03",
+                "id": "5a221404-05e7-4ae2-ad9f-0c920a73dc36",
                 "order": 3,
                 "zh": "这家商场里边什么商品都有。我买了一些京剧脸谱的小饰物，还买了一些丝织品。麦克买了很多漂亮的钥匙链儿，还买了不少小玩具，有小熊猫、小汽车什么的。他说，这些玩具带回去送给小朋友们，他们肯定喜欢。",
                 "vi": "Trong trung tâm thương mại này có đủ mọi loại hàng hóa. Tôi mua một ít đồ trang trí nhỏ hình mặt nạ Kinh kịch, còn mua thêm vài món hàng dệt tơ. Mike mua rất nhiều móc chìa khóa đẹp, còn mua không ít đồ chơi nhỏ, nào là gấu trúc con, ô tô nhỏ vân vân. Anh ấy nói, mang những món đồ chơi này về tặng các bạn nhỏ, chắc chắn các em sẽ thích.",
@@ -113,14 +69,13 @@
                 "audio_key": "",
                 "vocab_refs": [],
                 "grammar_refs": [
-                  "grammar_01"
+                  "f8ec59f3-898a-47b2-b536-44dfd8183393"
                 ],
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "5687ee54-131f-4aa8-8723-e9b9dd81bc27"
+                "check_needed": false
               },
               {
-                "id": "text_01_p04",
+                "id": "5c402bbc-a0e6-434c-a6c7-3c4f86c845fe",
                 "order": 4,
                 "zh": "售货员看我们买的东西多，不好拿，就给我们一人找了一个小纸箱。我们买的书和礼品正好都能放进去。",
                 "vi": "Nhân viên bán hàng thấy chúng tôi mua nhiều đồ, khó cầm, nên tìm cho mỗi người chúng tôi một chiếc thùng giấy nhỏ. Sách và quà chúng tôi mua vừa khéo đều có thể cho vào đó.",
@@ -128,14 +83,13 @@
                 "audio_key": "",
                 "vocab_refs": [],
                 "grammar_refs": [
-                  "grammar_01"
+                  "f8ec59f3-898a-47b2-b536-44dfd8183393"
                 ],
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "f2afebd5-9ab3-4b54-8739-6080f26a5411"
+                "check_needed": false
               },
               {
-                "id": "text_01_p05",
+                "id": "babe7f0b-2b53-402f-85af-c5de9b0e676d",
                 "order": 5,
                 "zh": "从商场出来，已经十二点多了。我和麦克走进一个小饭馆儿去吃午饭。我们要了一盘饺子和几个菜，吃得很舒服。",
                 "vi": "Từ trung tâm thương mại đi ra thì đã hơn mười hai giờ rồi. Tôi và Mike bước vào một quán ăn nhỏ để ăn trưa. Chúng tôi gọi một đĩa sủi cảo và vài món ăn, ăn rất thoải mái.",
@@ -143,14 +97,13 @@
                 "audio_key": "",
                 "vocab_refs": [],
                 "grammar_refs": [
-                  "grammar_01"
+                  "f8ec59f3-898a-47b2-b536-44dfd8183393"
                 ],
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "c86678a5-c51c-4d4c-8898-1c03de77f1ad"
+                "check_needed": false
               },
               {
-                "id": "text_01_p06",
+                "id": "d2683a70-b897-4979-ad07-0bca2bb00b31",
                 "order": 6,
                 "zh": "吃完饭，我们就骑车回来了。回到学校，我又累又困，想赶快回到宿舍去洗个澡，休息休息。我从车上拿下小纸箱。走进楼来，看见电梯门口贴了张通知：“电梯维修，请走楼梯。”我住十层，没办法，只好爬上去。我手里提着一箱子东西，一步一步地往上爬。爬了半天才爬到十层。到了门口，我放下箱子，要拿出钥匙开门的时候，却发现钥匙不见了，找了半天也没有找到。啊！我忽然想起来了，钥匙还在楼下自行车上插着呢，我忘拔下来了。这时，我真是哭笑不得。",
                 "vi": "Ăn cơm xong, chúng tôi liền đạp xe về. Về đến trường, tôi vừa mệt vừa buồn ngủ, muốn nhanh chóng về ký túc xá tắm một cái rồi nghỉ ngơi. Tôi lấy chiếc thùng giấy nhỏ từ trên xe xuống. Vừa đi vào tòa nhà, tôi thấy ở cửa thang máy có dán một thông báo: “Thang máy sửa chữa, xin đi cầu thang bộ.” Tôi ở tầng mười, không còn cách nào khác, đành phải leo lên. Tay tôi xách một thùng đồ, từng bước từng bước leo lên trên. Leo mãi mới lên tới tầng mười. Đến cửa phòng, tôi đặt thùng xuống, lúc định lấy chìa khóa mở cửa thì lại phát hiện chìa khóa không thấy đâu. Tìm cả buổi cũng không tìm thấy. A! Tôi bỗng nhớ ra rồi, chìa khóa vẫn đang cắm ở xe đạp dưới lầu, tôi quên rút ra rồi. Lúc đó, tôi thật sự dở khóc dở cười.",
@@ -158,14 +111,13 @@
                 "audio_key": "",
                 "vocab_refs": [],
                 "grammar_refs": [
-                  "grammar_01"
+                  "f8ec59f3-898a-47b2-b536-44dfd8183393"
                 ],
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "c1988dd2-f3a0-45e9-a081-98cc6144e14d"
+                "check_needed": false
               },
               {
-                "id": "text_01_p07",
+                "id": "cde61ddf-34c9-4d25-892b-99b26df9e427",
                 "order": 7,
                 "zh": "我刚要跑下楼去，就看见麦克也爬上来了，他手里拿的正是我的那串儿钥匙。",
                 "vi": "Tôi vừa định chạy xuống lầu thì nhìn thấy Mike cũng leo lên rồi. Thứ anh ấy cầm trong tay chính là chùm chìa khóa của tôi.",
@@ -173,22 +125,19 @@
                 "audio_key": "",
                 "vocab_refs": [],
                 "grammar_refs": [
-                  "grammar_01"
+                  "f8ec59f3-898a-47b2-b536-44dfd8183393"
                 ],
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "cc0bada5-fe6c-4b7a-8d72-1e9972ec8f56"
+                "check_needed": false
               }
             ],
             "lines": [],
-            "comprehension_questions": [],
-            "uuid": "7259a07d-c686-4f05-838c-714010a256f8"
+            "comprehension_questions": []
           }
-        ],
-        "uuid": "d40ba235-142f-4d33-ad22-c178ce886ac3"
+        ]
       },
       {
-        "id": "section_02_vocabulary",
+        "id": "78c30bf4-c314-4c4c-86e3-4dd62382dd78",
         "type": "vocabulary",
         "order": 2,
         "title": "生词",
@@ -197,7 +146,7 @@
         "check_needed": false,
         "items": [
           {
-            "id": "vocab_001",
+            "id": "68c05a12-9d8e-45d9-a413-786bcf2f780a",
             "type": "vocabulary_item",
             "order": 1,
             "hanzi": "图书城",
@@ -221,11 +170,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "7517e1be-807e-4e0e-8258-450b890a9f23"
+            "check_needed": false
           },
           {
-            "id": "vocab_002",
+            "id": "8c18cf3c-e9dc-42e1-8faf-eb26799cabab",
             "type": "vocabulary_item",
             "order": 2,
             "hanzi": "进去",
@@ -249,11 +197,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "da6eb029-de90-4c16-83cf-b00e3fc09ffc"
+            "check_needed": false
           },
           {
-            "id": "vocab_003",
+            "id": "1fbd69b7-603a-44ea-8d57-10cd4def9ced",
             "type": "vocabulary_item",
             "order": 3,
             "hanzi": "另",
@@ -277,11 +224,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "9393933f-0a7f-4178-b66b-bc81ce3f7b21"
+            "check_needed": false
           },
           {
-            "id": "vocab_004",
+            "id": "3dc505f1-bc0e-4a96-b448-17fed89fdc60",
             "type": "vocabulary_item",
             "order": 4,
             "hanzi": "另外",
@@ -305,11 +251,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "5e4dacaa-ee86-4a54-a555-021a51e51f4a"
+            "check_needed": false
           },
           {
-            "id": "vocab_005",
+            "id": "188412d4-4c23-4d60-b7b2-21f3490199e7",
             "type": "vocabulary_item",
             "order": 5,
             "hanzi": "各种各样",
@@ -333,11 +278,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "ac90f4b0-bb91-4665-88d7-ada9c7827216"
+            "check_needed": false
           },
           {
-            "id": "vocab_006",
+            "id": "5ea44727-d97c-467b-b1b8-babd195df50d",
             "type": "vocabulary_item",
             "order": 6,
             "hanzi": "兴奋",
@@ -361,11 +305,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "6e770b94-0075-44a7-b952-4d4e22587494"
+            "check_needed": false
           },
           {
-            "id": "vocab_007",
+            "id": "54613016-834a-4fc3-9912-2357a6d27058",
             "type": "vocabulary_item",
             "order": 7,
             "hanzi": "书架",
@@ -389,11 +332,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "ae9929f5-f8d8-480e-8eca-8cfeb14f9ef3"
+            "check_needed": false
           },
           {
-            "id": "vocab_008",
+            "id": "0da97406-c3ac-4fcb-a51c-398a59c3fbae",
             "type": "vocabulary_item",
             "order": 8,
             "hanzi": "下来",
@@ -417,11 +359,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "faac6d42-f141-4a67-b0c9-5d72950f0451"
+            "check_needed": false
           },
           {
-            "id": "vocab_009",
+            "id": "54b36889-82be-485b-8342-fb8aab572065",
             "type": "vocabulary_item",
             "order": 9,
             "hanzi": "抽",
@@ -445,11 +386,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "06d7ce53-e0f1-4164-a4fd-2df217f8797c"
+            "check_needed": false
           },
           {
-            "id": "vocab_010",
+            "id": "1354b1a3-93cc-4505-8d7f-c5550a1d6ae9",
             "type": "vocabulary_item",
             "order": 10,
             "hanzi": "挑",
@@ -473,11 +413,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "3eff9b5a-784e-4b02-8a1d-aedce45dfff7"
+            "check_needed": false
           },
           {
-            "id": "vocab_011",
+            "id": "f0684cb3-4577-4e6c-9f22-7d97c89692b3",
             "type": "vocabulary_item",
             "order": 11,
             "hanzi": "小说儿",
@@ -501,11 +440,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "30a7579c-ea64-441f-8bf7-39407663ca88"
+            "check_needed": false
           },
           {
-            "id": "vocab_012",
+            "id": "d5b362a7-c8f6-4f25-b2b5-0f1749c8afbb",
             "type": "vocabulary_item",
             "order": 12,
             "hanzi": "放寒假",
@@ -529,11 +467,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "dfc8cc52-db89-42cf-b209-f29727975f92"
+            "check_needed": false
           },
           {
-            "id": "vocab_013",
+            "id": "7eccd5e8-dac0-4f36-be2e-abcc0a2bdfcd",
             "type": "vocabulary_item",
             "order": 13,
             "hanzi": "寒假",
@@ -557,11 +494,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "6678d6fa-0269-465d-8db8-155f428261af"
+            "check_needed": false
           },
           {
-            "id": "vocab_014",
+            "id": "91fa9f81-e5ef-4c4a-b29c-c4b6daa02196",
             "type": "vocabulary_item",
             "order": 14,
             "hanzi": "暑假",
@@ -585,11 +521,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "92755f41-6529-4b7f-bef7-d5ef66a95bb0"
+            "check_needed": false
           },
           {
-            "id": "vocab_015",
+            "id": "8a5b1d09-23a6-4182-96e6-9bf4d761a1e1",
             "type": "vocabulary_item",
             "order": 15,
             "hanzi": "回去",
@@ -613,11 +548,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "3fa33d60-230d-405d-8eaf-adcc0d29b919"
+            "check_needed": false
           },
           {
-            "id": "vocab_016",
+            "id": "be7a835d-ff8f-4a86-9fd8-27c5f1093f0c",
             "type": "vocabulary_item",
             "order": 16,
             "hanzi": "除了……以外",
@@ -641,11 +575,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "344a7d78-ce46-4b2d-a122-0b65ff1bbc58"
+            "check_needed": false
           },
           {
-            "id": "vocab_017",
+            "id": "7a89dc80-d79d-4c2f-988c-d0f54e240d19",
             "type": "vocabulary_item",
             "order": 17,
             "hanzi": "礼品",
@@ -669,11 +602,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "69617191-99a6-4c10-822b-b9eb5e717a82"
+            "check_needed": false
           },
           {
-            "id": "vocab_018",
+            "id": "ff3e1818-66a9-4532-880b-02c9cacb0e5b",
             "type": "vocabulary_item",
             "order": 18,
             "hanzi": "于是",
@@ -697,11 +629,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "72beccc7-e59f-435a-95ae-00bef17d086d"
+            "check_needed": false
           },
           {
-            "id": "vocab_019",
+            "id": "0125bdae-fe4e-48fb-8264-145e95c75933",
             "type": "vocabulary_item",
             "order": 19,
             "hanzi": "商场",
@@ -725,11 +656,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "624048d8-2c32-4531-833c-5bdf3ae66a20"
+            "check_needed": false
           },
           {
-            "id": "vocab_020",
+            "id": "689eb64b-5d4f-469f-9afa-74017d399614",
             "type": "vocabulary_item",
             "order": 20,
             "hanzi": "商品",
@@ -753,11 +683,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "8475afc6-7f6b-4aa0-a59c-419e5df658e6"
+            "check_needed": false
           },
           {
-            "id": "vocab_021",
+            "id": "d45d5488-9293-41ae-9deb-1e5b51cee446",
             "type": "vocabulary_item",
             "order": 21,
             "hanzi": "脸谱",
@@ -781,11 +710,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "1ef1c659-61b1-44cc-8e1d-3d7740580282"
+            "check_needed": false
           },
           {
-            "id": "vocab_022",
+            "id": "c99a633b-27a2-429b-a139-44113a84c189",
             "type": "vocabulary_item",
             "order": 22,
             "hanzi": "饰物",
@@ -809,11 +737,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "703fad6e-eb57-4031-a459-03e0032e3fdf"
+            "check_needed": false
           },
           {
-            "id": "vocab_023",
+            "id": "79358c6f-3427-4c28-98f3-7ef98c7033c3",
             "type": "vocabulary_item",
             "order": 23,
             "hanzi": "丝织品",
@@ -837,11 +764,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "491eaf9c-ebbb-42ef-a4bd-81a9e23184ee"
+            "check_needed": false
           },
           {
-            "id": "vocab_024",
+            "id": "dc0f8e06-a359-4907-a8d8-fc9b02260590",
             "type": "vocabulary_item",
             "order": 24,
             "hanzi": "钥匙链儿",
@@ -865,11 +791,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "7ba38cba-abf6-45dc-8aef-928e29489244"
+            "check_needed": false
           },
           {
-            "id": "vocab_025",
+            "id": "c43cedbf-7024-4ec1-922f-e75119114baf",
             "type": "vocabulary_item",
             "order": 25,
             "hanzi": "玩具",
@@ -893,11 +818,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "3edbba7e-6563-4061-8efa-7b05607610d2"
+            "check_needed": false
           },
           {
-            "id": "vocab_026",
+            "id": "d9991c79-3454-4247-bf18-f14f43b4a24a",
             "type": "vocabulary_item",
             "order": 26,
             "hanzi": "熊猫",
@@ -921,11 +845,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "d199132c-5b3d-42b5-b88d-e95d28d2d354"
+            "check_needed": false
           },
           {
-            "id": "vocab_027",
+            "id": "55cd807c-eec7-412d-99db-f4e6508b170f",
             "type": "vocabulary_item",
             "order": 27,
             "hanzi": "肯定",
@@ -949,11 +872,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "df5a886e-8af6-4c34-96ad-c7f3fa5c895f"
+            "check_needed": false
           },
           {
-            "id": "vocab_028",
+            "id": "085e60d5-dd1c-4585-ac6b-0f1db0ded936",
             "type": "vocabulary_item",
             "order": 28,
             "hanzi": "售货员",
@@ -977,11 +899,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "77e0171d-c322-4923-bead-e4b479d93b1e"
+            "check_needed": false
           },
           {
-            "id": "vocab_029",
+            "id": "ba7ff0f9-b633-4516-ab3d-22b96046a1cf",
             "type": "vocabulary_item",
             "order": 29,
             "hanzi": "纸箱",
@@ -1005,11 +926,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "e0255943-0d0a-464a-b7fd-0dabc083196d"
+            "check_needed": false
           },
           {
-            "id": "vocab_030",
+            "id": "2185ee67-885d-4ffb-83e2-e97be4070796",
             "type": "vocabulary_item",
             "order": 30,
             "hanzi": "饭馆儿",
@@ -1033,11 +953,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "a709847c-fb17-4bb7-a207-a721baaef2e6"
+            "check_needed": false
           },
           {
-            "id": "vocab_031",
+            "id": "092a8c16-3739-4685-a4c0-39365071bd48",
             "type": "vocabulary_item",
             "order": 31,
             "hanzi": "盘",
@@ -1061,11 +980,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "3384b641-0b3e-4592-91f5-6c0399aca39b"
+            "check_needed": false
           },
           {
-            "id": "vocab_032",
+            "id": "22e66ee9-565e-4670-b2ac-4d5a9b500b38",
             "type": "vocabulary_item",
             "order": 32,
             "hanzi": "累",
@@ -1089,11 +1007,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "8da97b63-6601-4f36-a859-27d1c39f78af"
+            "check_needed": false
           },
           {
-            "id": "vocab_033",
+            "id": "275b46f4-3166-48b7-9766-58384178d1be",
             "type": "vocabulary_item",
             "order": 33,
             "hanzi": "困",
@@ -1117,11 +1034,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "b1e67790-2dcf-4ef2-b548-99284090e994"
+            "check_needed": false
           },
           {
-            "id": "vocab_034",
+            "id": "1190511f-5970-4304-8f84-d7201b287aeb",
             "type": "vocabulary_item",
             "order": 34,
             "hanzi": "电梯",
@@ -1145,11 +1061,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "abdb38a7-eb22-4339-aa10-d07d40014ae1"
+            "check_needed": false
           },
           {
-            "id": "vocab_035",
+            "id": "d42d3d90-443d-45da-bed7-987b50034e92",
             "type": "vocabulary_item",
             "order": 35,
             "hanzi": "维修",
@@ -1173,11 +1088,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "9dde6330-850f-48f4-a81b-8a4e2f96b25b"
+            "check_needed": false
           },
           {
-            "id": "vocab_036",
+            "id": "cfb712c9-c4ca-4314-b6b2-696b40ace25e",
             "type": "vocabulary_item",
             "order": 36,
             "hanzi": "楼梯",
@@ -1201,11 +1115,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "390601b2-fb86-41c1-b661-297145f7e1d8"
+            "check_needed": false
           },
           {
-            "id": "vocab_037",
+            "id": "6059829f-ae21-43cf-ac0c-05e19639ec43",
             "type": "vocabulary_item",
             "order": 37,
             "hanzi": "只好",
@@ -1229,11 +1142,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "32bdddde-2fd4-46c7-93bb-d55035aac13c"
+            "check_needed": false
           },
           {
-            "id": "vocab_038",
+            "id": "fefd5441-7b6c-47e3-b823-9e149b947bf7",
             "type": "vocabulary_item",
             "order": 38,
             "hanzi": "提",
@@ -1257,11 +1169,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "18d1dd09-0a8e-4ee3-babe-2195c999c140"
+            "check_needed": false
           },
           {
-            "id": "vocab_039",
+            "id": "27761bd2-433a-44ef-b79a-9e6f0a34b9c9",
             "type": "vocabulary_item",
             "order": 39,
             "hanzi": "步",
@@ -1285,11 +1196,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "dee239d4-a64e-45b9-8777-6ec1473eb87a"
+            "check_needed": false
           },
           {
-            "id": "vocab_040",
+            "id": "861ed325-b320-4ae0-8eac-bb6bb8ebc215",
             "type": "vocabulary_item",
             "order": 40,
             "hanzi": "钥匙",
@@ -1313,11 +1223,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "b46ba23f-48aa-479e-aeec-a5f1f2b9cd80"
+            "check_needed": false
           },
           {
-            "id": "vocab_041",
+            "id": "6fe8f20d-e712-4f0c-9cbc-021aaeb9698c",
             "type": "vocabulary_item",
             "order": 41,
             "hanzi": "却",
@@ -1341,11 +1250,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "f4680e48-2002-4ede-9e89-125189fce204"
+            "check_needed": false
           },
           {
-            "id": "vocab_042",
+            "id": "863bbf3f-83e7-4021-b98e-be632043d94c",
             "type": "vocabulary_item",
             "order": 42,
             "hanzi": "忽然",
@@ -1369,11 +1277,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "38d8a9c2-3850-4141-a4f7-73b9be2a414c"
+            "check_needed": false
           },
           {
-            "id": "vocab_043",
+            "id": "b14487b6-5579-4f1c-9ad7-16fd40991577",
             "type": "vocabulary_item",
             "order": 43,
             "hanzi": "起来",
@@ -1397,11 +1304,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "428fc520-cbca-46ae-a99f-6cab2ccfea0a"
+            "check_needed": false
           },
           {
-            "id": "vocab_044",
+            "id": "eb7cc112-7df2-44e6-a1df-9824d8b6e45a",
             "type": "vocabulary_item",
             "order": 44,
             "hanzi": "插",
@@ -1425,11 +1331,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "92d35268-0392-4d1d-84e2-820c538cbcd7"
+            "check_needed": false
           },
           {
-            "id": "vocab_045",
+            "id": "505dae11-836a-475d-b811-339f25caaf42",
             "type": "vocabulary_item",
             "order": 45,
             "hanzi": "拔",
@@ -1453,11 +1358,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "536e6791-4c3b-49ee-97b9-218655533e4e"
+            "check_needed": false
           },
           {
-            "id": "vocab_046",
+            "id": "a47b82f7-2260-4763-8c97-b1631e792e1c",
             "type": "vocabulary_item",
             "order": 46,
             "hanzi": "哭笑不得",
@@ -1481,11 +1385,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "642a75d5-ebb6-4813-898f-78dcdf46c221"
+            "check_needed": false
           },
           {
-            "id": "vocab_047",
+            "id": "71f9308f-7b38-435e-bfa8-c7c974599035",
             "type": "vocabulary_item",
             "order": 47,
             "hanzi": "串儿",
@@ -1509,15 +1412,13 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "a45c4288-aeae-4fa6-81fb-3c9583d8d56b"
+            "check_needed": false
           }
         ],
-        "coverage_note_vi": "Bảng chính đã được bóc; một số mục phụ như 另外/寒假/暑假 được giữ dạng sub_entry để app có thể render/flashcard linh hoạt.",
-        "uuid": "8db22d43-4b8f-43d3-a0a9-794a979b5e9f"
+        "coverage_note_vi": "Bảng chính đã được bóc; một số mục phụ như 另外/寒假/暑假 được giữ dạng sub_entry để app có thể render/flashcard linh hoạt."
       },
       {
-        "id": "section_03_proper_nouns",
+        "id": "3c5ee48e-5d44-44ac-bd53-cac996a83338",
         "type": "proper_nouns",
         "order": 3,
         "title": "专名",
@@ -1525,11 +1426,10 @@
         "source_origin": "textbook",
         "check_needed": false,
         "items": [],
-        "empty_reason_vi": "Bài này không thấy tên riêng riêng biệt trong bảng chính.",
-        "uuid": "b16ee74c-0019-486f-ade7-40024f188443"
+        "empty_reason_vi": "Bài này không thấy tên riêng riêng biệt trong bảng chính."
       },
       {
-        "id": "section_04_notes",
+        "id": "c18e9f54-6da1-4496-886b-c2c722605678",
         "type": "notes",
         "order": 4,
         "title": "注释",
@@ -1538,7 +1438,7 @@
         "check_needed": false,
         "items": [
           {
-            "id": "note_01",
+            "id": "63d654f5-4561-4d48-a144-bacbf9671dfc",
             "type": "note",
             "order": 1,
             "title": "脸谱",
@@ -1546,7 +1446,7 @@
             "meaning_vi": "Các kiểu hoa văn, màu sắc được vẽ trên mặt nhân vật trong Kinh kịch và các loại hí khúc truyền thống khác để biểu hiện tính cách, đặc điểm và khí chất nhân vật.",
             "examples": [
               {
-                "id": "note_01_ex01",
+                "id": "021014f3-ff12-43b6-9d12-352cb6dc863b",
                 "zh": "我买了一些京剧脸谱的小饰物，还买了一些丝织品。",
                 "vi": "Tôi mua một ít đồ trang trí nhỏ hình mặt nạ Kinh kịch, còn mua thêm vài món hàng dệt tơ.",
                 "pinyin": "",
@@ -1554,22 +1454,19 @@
                   "京剧脸谱"
                 ],
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "9eacfe05-6409-47de-9f54-5d3831e6cb7b"
+                "check_needed": false
               }
             ],
             "source_refs": [
-              "text_01_p03"
+              "5a221404-05e7-4ae2-ad9f-0c920a73dc36"
             ],
             "source_origin": "textbook/generated_mixed",
-            "check_needed": false,
-            "uuid": "afcdf14d-e131-467e-91af-63f4841c046e"
+            "check_needed": false
           }
-        ],
-        "uuid": "a90623d2-0fbd-47e8-a9b1-b07a3b7d560c"
+        ]
       },
       {
-        "id": "section_05_grammar",
+        "id": "b045e537-7383-494b-8d61-b0286977ed80",
         "type": "grammar",
         "order": 5,
         "title": "语法",
@@ -1578,7 +1475,7 @@
         "check_needed": false,
         "items": [
           {
-            "id": "grammar_01",
+            "id": "f8ec59f3-898a-47b2-b536-44dfd8183393",
             "type": "grammar_point",
             "order": 1,
             "title": "动作趋向的表达：复合趋向补语",
@@ -1592,14 +1489,14 @@
             "check_needed": false,
             "blocks": [
               {
-                "id": "grammar_01_overview",
+                "id": "b7c5d870-2db8-4e2e-950f-f0e6e522ac16",
                 "type": "grammar_overview",
                 "order": 1,
                 "title": "Bản chất",
                 "content_vi": "Bổ ngữ xu hướng kép diễn tả hướng di chuyển của hành động, đồng thời cho biết hướng đó về phía người nói/điểm quy chiếu hay rời xa người nói/điểm quy chiếu.",
                 "examples": [
                   {
-                    "id": "grammar_01_ex01",
+                    "id": "c6fbeb40-156e-450c-a390-d58626cae49e",
                     "zh": "我是上来的。",
                     "pinyin": "",
                     "vi": "Tôi đi lên đây.",
@@ -1607,15 +1504,14 @@
                       "上来"
                     ],
                     "grammar_refs": [
-                      "grammar_01"
+                      "f8ec59f3-898a-47b2-b536-44dfd8183393"
                     ],
                     "vocab_refs": [],
                     "source_origin": "textbook",
-                    "check_needed": false,
-                    "uuid": "9779169e-5adc-484f-9e74-53a9da3771a9"
+                    "check_needed": false
                   },
                   {
-                    "id": "grammar_01_ex02",
+                    "id": "d5b13929-16ec-4967-ac8a-868d80ec0b1e",
                     "zh": "他们走过来，我们走过去。",
                     "pinyin": "",
                     "vi": "Họ đi qua đây, chúng tôi đi qua đó.",
@@ -1624,15 +1520,14 @@
                       "过去"
                     ],
                     "grammar_refs": [
-                      "grammar_01"
+                      "f8ec59f3-898a-47b2-b536-44dfd8183393"
                     ],
                     "vocab_refs": [],
                     "source_origin": "textbook",
-                    "check_needed": false,
-                    "uuid": "595ed973-95aa-4f4b-80cb-0a8ed801479e"
+                    "check_needed": false
                   },
                   {
-                    "id": "grammar_01_ex03",
+                    "id": "50b5e564-92c8-4900-b66a-00f5bfca9437",
                     "zh": "他跑进来了。",
                     "pinyin": "",
                     "vi": "Anh ấy chạy vào đây rồi.",
@@ -1640,15 +1535,14 @@
                       "进来"
                     ],
                     "grammar_refs": [
-                      "grammar_01"
+                      "f8ec59f3-898a-47b2-b536-44dfd8183393"
                     ],
                     "vocab_refs": [],
                     "source_origin": "textbook",
-                    "check_needed": false,
-                    "uuid": "b6c014c9-2d10-4f6a-b119-acd429acafa6"
+                    "check_needed": false
                   },
                   {
-                    "id": "grammar_01_ex04",
+                    "id": "32ce3ad6-8de3-45db-b360-0c00996f1eef",
                     "zh": "他跑出去了。",
                     "pinyin": "",
                     "vi": "Anh ấy chạy ra ngoài rồi.",
@@ -1656,15 +1550,14 @@
                       "出去"
                     ],
                     "grammar_refs": [
-                      "grammar_01"
+                      "f8ec59f3-898a-47b2-b536-44dfd8183393"
                     ],
                     "vocab_refs": [],
                     "source_origin": "textbook",
-                    "check_needed": false,
-                    "uuid": "483dcbb8-1fd3-45fb-bafd-ad97658ae26b"
+                    "check_needed": false
                   },
                   {
-                    "id": "grammar_01_ex05",
+                    "id": "65da2f6a-6a1a-4d3d-8cf6-cc56c3fb01a8",
                     "zh": "这本书买回来了。",
                     "pinyin": "",
                     "vi": "Quyển sách này mua về rồi.",
@@ -1672,15 +1565,14 @@
                       "回来"
                     ],
                     "grammar_refs": [
-                      "grammar_01"
+                      "f8ec59f3-898a-47b2-b536-44dfd8183393"
                     ],
                     "vocab_refs": [],
                     "source_origin": "textbook",
-                    "check_needed": false,
-                    "uuid": "67bb945e-18bc-4f57-9973-159d6981ee82"
+                    "check_needed": false
                   },
                   {
-                    "id": "grammar_01_ex06",
+                    "id": "aee201a5-655e-471c-b56c-819ca00b8eeb",
                     "zh": "蝴蝶飞起来了。",
                     "pinyin": "",
                     "vi": "Con bướm bay lên rồi.",
@@ -1688,20 +1580,18 @@
                       "起来"
                     ],
                     "grammar_refs": [
-                      "grammar_01"
+                      "f8ec59f3-898a-47b2-b536-44dfd8183393"
                     ],
                     "vocab_refs": [],
                     "source_origin": "textbook",
-                    "check_needed": false,
-                    "uuid": "4f4db553-7f28-4725-8a2d-ddcf05b4b435"
+                    "check_needed": false
                   }
                 ],
                 "source_origin": "textbook/generated_mixed",
-                "check_needed": false,
-                "uuid": "5b437388-98ba-4a66-9817-1263bd15935d"
+                "check_needed": false
               },
               {
-                "id": "grammar_01_structure_01",
+                "id": "a85d60ae-5a59-4bad-a730-4e11cd8fd4ed",
                 "type": "grammar_structure",
                 "order": 2,
                 "title": "Cấu trúc chính",
@@ -1719,7 +1609,7 @@
                 ],
                 "examples": [
                   {
-                    "id": "grammar_01_ex01",
+                    "id": "c6fbeb40-156e-450c-a390-d58626cae49e",
                     "zh": "我是上来的。",
                     "pinyin": "",
                     "vi": "Tôi đi lên đây.",
@@ -1727,15 +1617,14 @@
                       "上来"
                     ],
                     "grammar_refs": [
-                      "grammar_01"
+                      "f8ec59f3-898a-47b2-b536-44dfd8183393"
                     ],
                     "vocab_refs": [],
                     "source_origin": "textbook",
-                    "check_needed": false,
-                    "uuid": "c507356f-a035-45dc-8a88-8dd7d43a63c8"
+                    "check_needed": false
                   },
                   {
-                    "id": "grammar_01_ex02",
+                    "id": "d5b13929-16ec-4967-ac8a-868d80ec0b1e",
                     "zh": "他们走过来，我们走过去。",
                     "pinyin": "",
                     "vi": "Họ đi qua đây, chúng tôi đi qua đó.",
@@ -1744,15 +1633,14 @@
                       "过去"
                     ],
                     "grammar_refs": [
-                      "grammar_01"
+                      "f8ec59f3-898a-47b2-b536-44dfd8183393"
                     ],
                     "vocab_refs": [],
                     "source_origin": "textbook",
-                    "check_needed": false,
-                    "uuid": "39c72b43-4f4f-4831-872e-5cf56dafa563"
+                    "check_needed": false
                   },
                   {
-                    "id": "grammar_01_ex03",
+                    "id": "50b5e564-92c8-4900-b66a-00f5bfca9437",
                     "zh": "他跑进来了。",
                     "pinyin": "",
                     "vi": "Anh ấy chạy vào đây rồi.",
@@ -1760,15 +1648,14 @@
                       "进来"
                     ],
                     "grammar_refs": [
-                      "grammar_01"
+                      "f8ec59f3-898a-47b2-b536-44dfd8183393"
                     ],
                     "vocab_refs": [],
                     "source_origin": "textbook",
-                    "check_needed": false,
-                    "uuid": "39afeb95-f338-4e80-ad18-f6848a40b5a1"
+                    "check_needed": false
                   },
                   {
-                    "id": "grammar_01_ex04",
+                    "id": "32ce3ad6-8de3-45db-b360-0c00996f1eef",
                     "zh": "他跑出去了。",
                     "pinyin": "",
                     "vi": "Anh ấy chạy ra ngoài rồi.",
@@ -1776,15 +1663,14 @@
                       "出去"
                     ],
                     "grammar_refs": [
-                      "grammar_01"
+                      "f8ec59f3-898a-47b2-b536-44dfd8183393"
                     ],
                     "vocab_refs": [],
                     "source_origin": "textbook",
-                    "check_needed": false,
-                    "uuid": "4997e5e7-2398-4521-9bf3-a995bbda0d4c"
+                    "check_needed": false
                   },
                   {
-                    "id": "grammar_01_ex05",
+                    "id": "65da2f6a-6a1a-4d3d-8cf6-cc56c3fb01a8",
                     "zh": "这本书买回来了。",
                     "pinyin": "",
                     "vi": "Quyển sách này mua về rồi.",
@@ -1792,15 +1678,14 @@
                       "回来"
                     ],
                     "grammar_refs": [
-                      "grammar_01"
+                      "f8ec59f3-898a-47b2-b536-44dfd8183393"
                     ],
                     "vocab_refs": [],
                     "source_origin": "textbook",
-                    "check_needed": false,
-                    "uuid": "d7b4e112-977e-4aa1-b083-3a8aac500295"
+                    "check_needed": false
                   },
                   {
-                    "id": "grammar_01_ex06",
+                    "id": "aee201a5-655e-471c-b56c-819ca00b8eeb",
                     "zh": "蝴蝶飞起来了。",
                     "pinyin": "",
                     "vi": "Con bướm bay lên rồi.",
@@ -1808,23 +1693,21 @@
                       "起来"
                     ],
                     "grammar_refs": [
-                      "grammar_01"
+                      "f8ec59f3-898a-47b2-b536-44dfd8183393"
                     ],
                     "vocab_refs": [],
                     "source_origin": "textbook",
-                    "check_needed": false,
-                    "uuid": "948d7d7c-45e4-4b21-a12c-fc2ae6088ddb"
+                    "check_needed": false
                   }
                 ],
                 "notes_vi": [
                   "起来 có nhiều nghĩa mở rộng như đứng dậy, nổi lên, bắt đầu, nhớ ra tùy ngữ cảnh."
                 ],
                 "source_origin": "textbook/generated_mixed",
-                "check_needed": false,
-                "uuid": "51e8256f-1ad6-4eb5-9c1d-8e2a501bd60b"
+                "check_needed": false
               },
               {
-                "id": "grammar_01_structure_02",
+                "id": "ca8c13db-9de3-46b8-a156-5be7570386a5",
                 "type": "grammar_structure",
                 "order": 3,
                 "title": "Khi tân ngữ là nơi chốn",
@@ -1832,7 +1715,7 @@
                 "meaning_vi": "Tân ngữ nơi chốn phải đặt trước 来/去.",
                 "examples": [
                   {
-                    "id": "grammar_01_ex07",
+                    "id": "82c84378-8c03-4e23-be01-d27117bb65ef",
                     "zh": "我看见他走进图书馆去了。",
                     "pinyin": "",
                     "vi": "Tôi nhìn thấy anh ấy đi vào thư viện rồi.",
@@ -1840,23 +1723,21 @@
                       "走进图书馆去"
                     ],
                     "grammar_refs": [
-                      "grammar_01"
+                      "f8ec59f3-898a-47b2-b536-44dfd8183393"
                     ],
                     "vocab_refs": [],
                     "source_origin": "textbook",
-                    "check_needed": false,
-                    "uuid": "3623dd28-0c66-4d95-837e-ece03e1dc124"
+                    "check_needed": false
                   }
                 ],
                 "notes_vi": [
                   "Đúng: 走进图书馆去。Sai: 走进去图书馆。"
                 ],
                 "source_origin": "textbook/generated_mixed",
-                "check_needed": false,
-                "uuid": "4fc96b8c-1eba-4d97-b6f1-629cbfc97971"
+                "check_needed": false
               },
               {
-                "id": "grammar_01_structure_03",
+                "id": "b4cc66d6-0523-4a75-bc1b-366c9bb288d0",
                 "type": "grammar_structure",
                 "order": 4,
                 "title": "Khi tân ngữ là sự vật",
@@ -1864,7 +1745,7 @@
                 "meaning_vi": "Tân ngữ sự vật linh hoạt hơn, có thể đứng trước hoặc sau 来/去 trong nhiều trường hợp.",
                 "examples": [
                   {
-                    "id": "grammar_01_ex08",
+                    "id": "d912f7f1-c6af-48af-9bbb-aa9f54ac3921",
                     "zh": "他从国外给我带回来一件礼物。",
                     "pinyin": "",
                     "vi": "Anh ấy mang từ nước ngoài về cho tôi một món quà.",
@@ -1872,23 +1753,21 @@
                       "带回来"
                     ],
                     "grammar_refs": [
-                      "grammar_01"
+                      "f8ec59f3-898a-47b2-b536-44dfd8183393"
                     ],
                     "vocab_refs": [],
                     "source_origin": "textbook",
-                    "check_needed": false,
-                    "uuid": "950543e6-74ff-497f-91b7-122ceb17ac6d"
+                    "check_needed": false
                   }
                 ],
                 "notes_vi": [
                   "带回来一件礼物 và 带回一件礼物来 đều có thể dùng."
                 ],
                 "source_origin": "textbook/generated_mixed",
-                "check_needed": false,
-                "uuid": "bdb95058-0da0-42a5-9980-ba079fe02965"
+                "check_needed": false
               },
               {
-                "id": "grammar_01_structure_04",
+                "id": "95fa8628-79ac-44cd-8cbf-3c57a325d1c6",
                 "type": "grammar_structure",
                 "order": 5,
                 "title": "Vị trí của 了",
@@ -1896,7 +1775,7 @@
                 "meaning_vi": "Vị trí của 了 thay đổi tùy câu có tân ngữ hay không, và tân ngữ là nơi chốn hay sự vật.",
                 "examples": [
                   {
-                    "id": "grammar_01_ex09",
+                    "id": "c650d743-227e-4e10-9373-95e0940ca9ec",
                     "zh": "刚一下课，同学们就都跑出去了。",
                     "pinyin": "",
                     "vi": "Vừa tan học, các bạn học sinh đều chạy ra ngoài.",
@@ -1904,15 +1783,14 @@
                       "跑出去"
                     ],
                     "grammar_refs": [
-                      "grammar_01"
+                      "f8ec59f3-898a-47b2-b536-44dfd8183393"
                     ],
                     "vocab_refs": [],
                     "source_origin": "textbook",
-                    "check_needed": false,
-                    "uuid": "a617917b-37c1-4353-b302-9d440f704520"
+                    "check_needed": false
                   },
                   {
-                    "id": "grammar_01_ex10",
+                    "id": "6f2f727c-79e3-48ed-a2b5-42a3afbdf18e",
                     "zh": "我给你买回来了一件羽绒服。",
                     "pinyin": "",
                     "vi": "Tôi mua về cho bạn một chiếc áo lông vũ.",
@@ -1920,12 +1798,11 @@
                       "买回来"
                     ],
                     "grammar_refs": [
-                      "grammar_01"
+                      "f8ec59f3-898a-47b2-b536-44dfd8183393"
                     ],
                     "vocab_refs": [],
                     "source_origin": "textbook",
-                    "check_needed": false,
-                    "uuid": "1fe7b6c9-4673-4b0e-b93a-48ef744e2972"
+                    "check_needed": false
                   }
                 ],
                 "notes_vi": [
@@ -1934,49 +1811,42 @@
                   "Có tân ngữ sự vật: thường V + hướng kép + 了 + sự vật."
                 ],
                 "source_origin": "textbook/generated_mixed",
-                "check_needed": false,
-                "uuid": "8dc7e25d-a876-4080-a867-2ce39c231509"
+                "check_needed": false
               },
               {
-                "id": "grammar_01_mistakes",
+                "id": "887640f9-1173-43fc-ad6b-663c06a0b9b3",
                 "type": "grammar_common_mistakes",
                 "order": 6,
                 "title": "Lỗi dễ sai",
                 "items": [
                   {
-                    "id": "mistake_01",
+                    "id": "fcca9d55-0c2d-4c43-a7dc-53d87054f2ad",
                     "wrong": "我看见他走进去图书馆了。",
                     "correct": "我看见他走进图书馆去了。",
-                    "explanation_vi": "图书馆 là nơi chốn, phải đứng trước 去.",
-                    "uuid": "b2e32472-a40b-4800-a9a2-aafabad502d5"
+                    "explanation_vi": "图书馆 là nơi chốn, phải đứng trước 去."
                   },
                   {
-                    "id": "mistake_02",
+                    "id": "43ad1993-846b-4c58-95cb-71d086060b17",
                     "wrong": "汽车开上去山了。",
                     "correct": "汽车开上山去了。",
-                    "explanation_vi": "山 là nơi chốn, phải đứng trước 去.",
-                    "uuid": "c9409f8d-9feb-4b74-b4af-43bfed00972e"
+                    "explanation_vi": "山 là nơi chốn, phải đứng trước 去."
                   },
                   {
-                    "id": "mistake_03",
+                    "id": "e9feed73-8319-4195-9b00-03aab9bbda3e",
                     "wrong": "他跑进来了。= Anh ấy chạy vào đó.",
                     "correct": "他跑进来了。= Anh ấy chạy vào đây.",
-                    "explanation_vi": "来 là hướng về phía người nói/điểm quy chiếu.",
-                    "uuid": "1a600a43-8c96-44b4-ab5f-472a5f550772"
+                    "explanation_vi": "来 là hướng về phía người nói/điểm quy chiếu."
                   }
                 ],
                 "source_origin": "textbook/generated_mixed",
-                "check_needed": false,
-                "uuid": "4e5b5c2b-ea84-4673-b935-7511052cd32f"
+                "check_needed": false
               }
-            ],
-            "uuid": "7e4bc3cd-264b-4f2a-a1c7-e3b7c58e5c57"
+            ]
           }
-        ],
-        "uuid": "69c99df0-a458-4bf9-b848-ac0584d48cf0"
+        ]
       },
       {
-        "id": "section_06_exercises",
+        "id": "9901c597-ca97-451e-b63d-11814aaf933e",
         "type": "exercises",
         "order": 6,
         "title": "练习",
@@ -1992,7 +1862,7 @@
         },
         "items": [
           {
-            "id": "exercise_01",
+            "id": "15cb6f38-593b-48d1-bcca-dc3d2a140f9e",
             "type": "phonetics",
             "variant": "pronunciation_tone_minimal_pairs",
             "order": 1,
@@ -2004,7 +1874,7 @@
             },
             "parts": [
               {
-                "id": "exercise_01_part_01",
+                "id": "0e5801e7-b89b-4cc6-8bd9-9e1fbbd30b31",
                 "type": "minimal_pair_group",
                 "title": "辨音辨调",
                 "items": [
@@ -2014,11 +1884,10 @@
                   "shūjià / shǔjià",
                   "yúshì / yìshì",
                   "zhǐhǎo / chīhǎo"
-                ],
-                "uuid": "a18412f2-0f10-4d21-9071-83a73605512b"
+                ]
               },
               {
-                "id": "exercise_01_part_02",
+                "id": "e7235fa8-9e47-43aa-a37c-271a2e83d738",
                 "type": "read_aloud_group",
                 "title": "朗读",
                 "items": [
@@ -2032,16 +1901,14 @@
                   "骑回学校来了",
                   "跑过马路去了",
                   "飞回美国去了"
-                ],
-                "uuid": "421ff3aa-3984-4e52-80ab-40928662f343"
+                ]
               }
             ],
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "2aafb2d0-7dac-45c9-97a2-54396d23f527"
+            "check_needed": false
           },
           {
-            "id": "exercise_02",
+            "id": "98e14c21-0449-4e36-b1ae-77ed46cf3aa0",
             "type": "substitution_drill",
             "variant": "substitution_or_transform_drill",
             "order": 2,
@@ -2053,7 +1920,7 @@
             },
             "parts": [
               {
-                "id": "exercise_02_part_01",
+                "id": "7db043f9-0d63-45ee-8c21-295d62f2ebd3",
                 "prompt_a": "咱们走下去吧。",
                 "prompt_b": "好吧。",
                 "replacements": [
@@ -2063,11 +1930,10 @@
                   "带回去",
                   "放进去",
                   "送上去"
-                ],
-                "uuid": "12cbd186-2496-4352-be21-f614a80ecc9e"
+                ]
               },
               {
-                "id": "exercise_02_part_02",
+                "id": "4ad1e1b3-374e-4ce8-b98f-907ffc4c88f2",
                 "prompt_a": "他买回来了什么？",
                 "prompt_b": "他买回来了一些小饰物。",
                 "replacements": [
@@ -2076,11 +1942,10 @@
                   "寄过来 — 一些丝织品",
                   "送上来 — 一些小玩具",
                   "买回来 — 一些钥匙链儿"
-                ],
-                "uuid": "96dc7d3e-3618-4570-9b3a-f6364e483cd9"
+                ]
               },
               {
-                "id": "exercise_02_part_03",
+                "id": "28f617eb-25d6-4678-b5e3-f7fca3508dbc",
                 "prompt_a": "他从箱子里拿出来了什么？",
                 "prompt_b": "他从箱子里拿出来了一些京剧脸谱。",
                 "replacements": [
@@ -2089,11 +1954,10 @@
                   "书店 — 买回来 — 一本小说儿",
                   "汽车里 — 拿出来 — 一箱啤酒",
                   "商场 — 买回来 — 一些小饰物"
-                ],
-                "uuid": "71c67376-ee3d-4f53-887a-a4aba0043f22"
+                ]
               },
               {
-                "id": "exercise_02_part_04",
+                "id": "6227f946-2a93-462c-8702-43b4abc4a614",
                 "prompt_a": "麦克去哪儿了？",
                 "prompt_b": "我看见他走出校门去了。",
                 "replacements": [
@@ -2103,11 +1967,10 @@
                   "走进商场",
                   "爬上山",
                   "走回宿舍"
-                ],
-                "uuid": "4de3077d-7660-41d1-8384-c73f42802bf2"
+                ]
               },
               {
-                "id": "exercise_02_part_05",
+                "id": "6b6b4fa0-c8d0-45c4-b28e-0293edd71e59",
                 "prompt_a": "你的钱取回来了没有？",
                 "prompt_b": "还没有呢。",
                 "replacements": [
@@ -2117,16 +1980,14 @@
                   "书 — 拿上来",
                   "邮件 — 发过去",
                   "词典 — 寄出去"
-                ],
-                "uuid": "ba67f53a-7b7f-406c-894b-3b0d41183b97"
+                ]
               }
             ],
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "432571c4-7dbc-4f78-a778-37a6da4172ae"
+            "check_needed": false
           },
           {
-            "id": "exercise_03",
+            "id": "5dfca3d2-8524-4a83-92dd-b036a7259465",
             "type": "choose_words_fill_blank",
             "variant": "word_bank_fill_blank",
             "order": 3,
@@ -2149,75 +2010,65 @@
             ],
             "questions": [
               {
-                "id": "ex03_q01",
+                "id": "941d80e5-8eb2-4e21-beae-597e6677cdaf",
                 "prompt": "收到他给我发来的邮件，我非常__________。",
                 "answer": "兴奋",
-                "answer_verified": false,
-                "uuid": "a2c6e5ae-20aa-4138-9d5a-d65b1aaa8546"
+                "answer_verified": false
               },
               {
-                "id": "ex03_q02",
+                "id": "f31d95d0-500f-4cc9-97ee-57a7295062d2",
                 "prompt": "我想买一些书带__________国去。",
                 "answer": "回",
-                "answer_verified": false,
-                "uuid": "2a514422-e09f-4a2b-9b22-bdcfbf875669"
+                "answer_verified": false
               },
               {
-                "id": "ex03_q03",
+                "id": "069f2cd8-233c-4227-8f46-78a1d28a4a59",
                 "prompt": "__________买书，我还想买一些小礼品。",
                 "answer": "除了",
-                "answer_verified": false,
-                "uuid": "184a57dd-bed9-4727-a393-4abc2c4ae16e"
+                "answer_verified": false
               },
               {
-                "id": "ex03_q04",
+                "id": "013e3712-30ac-4a8a-b60e-0d6f818f4cdb",
                 "prompt": "他想让我跟他一起去书店，__________我就跟他去了。",
                 "answer": "于是",
-                "answer_verified": false,
-                "uuid": "155e049a-193f-495d-a219-93831dd082ff"
+                "answer_verified": false
               },
               {
-                "id": "ex03_q05",
+                "id": "ba362929-16a5-4a79-8cad-ecfabcaa32f3",
                 "prompt": "我们从一个商场出来，又去了__________一个商场。",
                 "answer": "另",
-                "answer_verified": false,
-                "uuid": "1b31f152-0e4b-47a9-b842-5e3065719445"
+                "answer_verified": false
               },
               {
-                "id": "ex03_q06",
+                "id": "542ef74e-c843-4b6c-9cd8-0011b6ee7b7a",
                 "prompt": "很快就要放__________了。",
                 "answer": "寒假",
-                "answer_verified": false,
-                "uuid": "cd26fb04-3f15-4418-a75c-c31d1c176d6a"
+                "answer_verified": false
               },
               {
-                "id": "ex03_q07",
+                "id": "715f1fd6-1b2e-43e0-b3dc-cbc252152601",
                 "prompt": "因为没得到奖学金，我__________回国。",
                 "answer": "只好",
-                "answer_verified": false,
-                "uuid": "893b69fa-ae84-4aa2-9676-dfcda8e2a9ce"
+                "answer_verified": false
               },
               {
-                "id": "ex03_q08",
+                "id": "105a0775-7adb-418e-b770-133481e26360",
                 "prompt": "语言大学的学生主要是从世界__________国来的留学生。",
                 "answer": "各",
-                "answer_verified": false,
-                "uuid": "9bd76bad-83e3-4e5f-9cdf-2d92f11f7170"
+                "answer_verified": false
               },
               {
-                "id": "ex03_q09",
+                "id": "e4f087ec-f391-487e-9c09-fa2844c867d8",
                 "prompt": "这种事真让人__________。",
                 "answer": "哭笑不得",
-                "answer_verified": false,
-                "uuid": "52b1fd0d-29c0-4758-8a1b-733dbb5e1e65"
+                "answer_verified": false
               }
             ],
             "source_origin": "textbook/generated_mixed",
-            "check_needed": false,
-            "uuid": "7408a7e4-3197-4e82-964b-0874ebd0d505"
+            "check_needed": false
           },
           {
-            "id": "exercise_04",
+            "id": "809141fb-cc55-403a-9433-35eea89c8c90",
             "type": "fill_blank",
             "variant": "word_bank_fill_blank",
             "order": 4,
@@ -2229,7 +2080,7 @@
             },
             "parts": [
               {
-                "id": "exercise_04_part_A",
+                "id": "53d91418-6400-4c09-a947-ae3092204f6e",
                 "word_bank": [
                   "从楼下",
                   "从书架上",
@@ -2244,80 +2095,69 @@
                 ],
                 "questions": [
                   {
-                    "id": "ex04a_q01",
+                    "id": "beb246a6-566e-4793-9229-77920b631826",
                     "prompt": "__________买回一本词典来。",
                     "answer": "",
-                    "answer_verified": false,
-                    "uuid": "149bf820-2055-4049-bff9-b4fd74b35497"
+                    "answer_verified": false
                   },
                   {
-                    "id": "ex04a_q02",
+                    "id": "c08993b4-fed9-412e-b7f4-b11c70e7f407",
                     "prompt": "__________借回一些中文小说儿来。",
                     "answer": "",
-                    "answer_verified": false,
-                    "uuid": "7e081755-fe2d-4347-b304-57f2c3773b2c"
+                    "answer_verified": false
                   },
                   {
-                    "id": "ex04a_q03",
+                    "id": "4c9c0490-940b-4f06-a694-0a9fa9f40a4a",
                     "prompt": "__________拿出来一本中国历史书。",
                     "answer": "",
-                    "answer_verified": false,
-                    "uuid": "c76dcebd-0fef-4fa2-b46b-d3419d759e7f"
+                    "answer_verified": false
                   },
                   {
-                    "id": "ex04a_q04",
+                    "id": "6d68d16f-0bb6-49e8-a4b1-d4d16597f39c",
                     "prompt": "__________拿下来一本杂志。",
                     "answer": "",
-                    "answer_verified": false,
-                    "uuid": "50412563-7cc5-4832-8763-e32039849fae"
+                    "answer_verified": false
                   },
                   {
-                    "id": "ex04a_q05",
+                    "id": "9224c3af-7af0-4b1f-9006-41a420717046",
                     "prompt": "__________买回一些玩具。",
                     "answer": "",
-                    "answer_verified": false,
-                    "uuid": "101a36cd-a92c-441e-8dcb-4c783a54245a"
+                    "answer_verified": false
                   },
                   {
-                    "id": "ex04a_q06",
+                    "id": "01d47409-0dae-48d8-8818-95a3b4c644a4",
                     "prompt": "__________给你带回一点儿礼物去。",
                     "answer": "",
-                    "answer_verified": false,
-                    "uuid": "043a38f3-9edc-4c28-a1bd-c9d3f6dd7be4"
+                    "answer_verified": false
                   },
                   {
-                    "id": "ex04a_q07",
+                    "id": "966378d2-d667-4467-b5ff-abf0f0a1ffe7",
                     "prompt": "__________寄回一本词典来。",
                     "answer": "",
-                    "answer_verified": false,
-                    "uuid": "76f9c81e-fe56-4246-9e6f-f89df8c37bce"
+                    "answer_verified": false
                   },
                   {
-                    "id": "ex04a_q08",
+                    "id": "7a339036-9e1f-4f4a-8590-80d94997e37c",
                     "prompt": "__________提进来一个箱子。",
                     "answer": "",
-                    "answer_verified": false,
-                    "uuid": "1a696beb-307f-4743-833b-da693987dabe"
+                    "answer_verified": false
                   },
                   {
-                    "id": "ex04a_q09",
+                    "id": "ac0b8503-f009-4dec-9cb8-6df134e6cc0d",
                     "prompt": "__________提上来一箱子书。",
                     "answer": "",
-                    "answer_verified": false,
-                    "uuid": "0b71abc7-bbad-4e88-9420-c0a371fa0e14"
+                    "answer_verified": false
                   },
                   {
-                    "id": "ex04a_q10",
+                    "id": "d6474c10-d8a9-4f73-a248-16496c39b0d0",
                     "prompt": "__________给我寄来一件生日礼物。",
                     "answer": "",
-                    "answer_verified": false,
-                    "uuid": "635b76d9-88df-4427-906a-fcfdeaab294b"
+                    "answer_verified": false
                   }
-                ],
-                "uuid": "c7b20055-40d5-4f95-9bfb-91332038e91d"
+                ]
               },
               {
-                "id": "exercise_04_part_B",
+                "id": "852c835f-85d8-40ab-8633-fd42754e2cb8",
                 "word_bank": [
                   "拿起来",
                   "抽出来",
@@ -2332,85 +2172,73 @@
                 ],
                 "questions": [
                   {
-                    "id": "ex04b_q01",
+                    "id": "6ed960e4-62af-473b-94d7-12ebe9615f13",
                     "prompt": "他从手提包儿里__________一本护照。",
                     "answer": "",
-                    "answer_verified": false,
-                    "uuid": "6b9eab0d-dd74-427a-8548-c08215963bb6"
+                    "answer_verified": false
                   },
                   {
-                    "id": "ex04b_q02",
+                    "id": "d2066f92-084b-4ee4-8e35-05063cb6cecb",
                     "prompt": "玛丽从银行__________五百美元。",
                     "answer": "",
-                    "answer_verified": false,
-                    "uuid": "035a79f2-2778-4ffa-8fb9-69487785e91f"
+                    "answer_verified": false
                   },
                   {
-                    "id": "ex04b_q03",
+                    "id": "3b7c6050-05e8-47aa-8ffa-d8a83062edd8",
                     "prompt": "妈妈寄的礼物你__________了吗？",
                     "answer": "",
-                    "answer_verified": false,
-                    "uuid": "7d2b938f-1c16-4140-8d5b-f37af992b118"
+                    "answer_verified": false
                   },
                   {
-                    "id": "ex04b_q04",
+                    "id": "6565957b-bda4-4bcb-a024-16fba1653368",
                     "prompt": "麦克从商场__________一辆自行车。",
                     "answer": "",
-                    "answer_verified": false,
-                    "uuid": "20014bfd-4ce0-4cd7-bd9a-3e5c111902d6"
+                    "answer_verified": false
                   },
                   {
-                    "id": "ex04b_q05",
+                    "id": "1a62abcd-f4d8-4a9b-8f42-0d00218aadd8",
                     "prompt": "服务员从楼下__________一束花儿。",
                     "answer": "",
-                    "answer_verified": false,
-                    "uuid": "72a216a5-8f37-48e1-947e-2506e49fbc2e"
+                    "answer_verified": false
                   },
                   {
-                    "id": "ex04b_q06",
+                    "id": "04c467c4-4406-44f5-be71-7c64dd5bdcbe",
                     "prompt": "她从箱子里__________一件羽绒服。",
                     "answer": "",
-                    "answer_verified": false,
-                    "uuid": "06e57357-dcd0-47fa-8f82-9f92b0960ee3"
+                    "answer_verified": false
                   },
                   {
-                    "id": "ex04b_q07",
+                    "id": "b76ef368-a20d-4211-abee-6b019863fb57",
                     "prompt": "他从楼上__________一个纸箱子。",
                     "answer": "",
-                    "answer_verified": false,
-                    "uuid": "6d51116d-4ee1-47d4-8048-824ffd1aa772"
+                    "answer_verified": false
                   },
                   {
-                    "id": "ex04b_q08",
+                    "id": "248f154e-5a92-4290-a762-2c5d33d21160",
                     "prompt": "我从地上__________一个钱包儿。",
                     "answer": "",
-                    "answer_verified": false,
-                    "uuid": "762ce268-cf38-4470-96db-d6ab97b35b6a"
+                    "answer_verified": false
                   },
                   {
-                    "id": "ex04b_q09",
+                    "id": "94eacc6b-47d9-44f2-bb2d-ac3a4d489514",
                     "prompt": "他从桌子上__________一副眼镜儿。",
                     "answer": "",
-                    "answer_verified": false,
-                    "uuid": "34d7054f-9eed-4b40-bff1-98d308c80c9f"
+                    "answer_verified": false
                   },
                   {
-                    "id": "ex04b_q10",
+                    "id": "ceb7b201-2299-4c7d-9084-ce0e8db57bcf",
                     "prompt": "张东从书架上__________一本书。",
                     "answer": "",
-                    "answer_verified": false,
-                    "uuid": "a50f956a-1307-42e0-b1c7-f6ecd06a8d13"
+                    "answer_verified": false
                   }
-                ],
-                "uuid": "5f119e31-265a-4439-a7eb-ac0648131075"
+                ]
               }
             ],
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "80f2ea5b-26c3-42f2-86cf-8e78edb1b3d3"
+            "check_needed": false
           },
           {
-            "id": "exercise_05",
+            "id": "e843bb6e-2e51-4fb8-b362-7506b97cf2fc",
             "type": "fill_blank",
             "variant": "free_fill_blank",
             "order": 5,
@@ -2422,76 +2250,67 @@
             },
             "questions": [
               {
-                "id": "ex05_q01",
+                "id": "7d9c942a-bdc2-45a1-b852-6b3dd58fe8f2",
                 "prompt": "我们爬了半个多小时，才爬__________，往山下一看，风景漂亮极了。",
                 "answer": "",
                 "answer_verified": false,
-                "check_needed": false,
-                "uuid": "dbd13614-6846-4771-9caa-1e118002bde8"
+                "check_needed": false
               },
               {
-                "id": "ex05_q02",
+                "id": "a79733e1-ef69-41fd-ac55-9bb8b3bd4d2c",
                 "prompt": "小心点儿，别掉__________。",
                 "answer": "",
                 "answer_verified": false,
-                "check_needed": false,
-                "uuid": "3800f524-783f-4c2f-a916-9bd07059c124"
+                "check_needed": false
               },
               {
-                "id": "ex05_q03",
+                "id": "ec5f1e84-0693-46b3-b735-8005e47f103e",
                 "prompt": "她不小心，从楼梯上摔__________，腿摔坏了。",
                 "answer": "",
                 "answer_verified": false,
-                "check_needed": false,
-                "uuid": "99596c79-6043-4ed1-a301-f2295ecce229"
+                "check_needed": false
               },
               {
-                "id": "ex05_q04",
+                "id": "dc7f5f06-95a1-4158-98d8-b293729d6a13",
                 "prompt": "太累了，我们找个地方，坐__________休息一会儿吧。",
                 "answer": "",
                 "answer_verified": false,
-                "check_needed": false,
-                "uuid": "ab70ce44-7bb9-49ba-b6af-75171ca48baf"
+                "check_needed": false
               },
               {
-                "id": "ex05_q05",
+                "id": "55e24ac4-bbd1-40f9-9dee-e97b3f2e10f7",
                 "prompt": "我看见前边走__________一个人，就走__________问她去图书城怎么走。",
                 "answer": "",
                 "answer_verified": false,
-                "check_needed": false,
-                "uuid": "83046d19-ffc9-4d27-8174-d2c93188df39"
+                "check_needed": false
               },
               {
-                "id": "ex05_q06",
+                "id": "f7c603b4-c112-4d9c-ab37-b945d471ccee",
                 "prompt": "你别下来了，我给你拿__________。",
                 "answer": "",
                 "answer_verified": false,
-                "check_needed": false,
-                "uuid": "263fb2d7-d966-466f-a4d8-88ce2ea40286"
+                "check_needed": false
               },
               {
-                "id": "ex05_q07",
+                "id": "e904e37c-c385-4f11-9be3-45c2edea0b13",
                 "prompt": "她从口袋里拿__________一个钱包儿，又从钱包儿里拿__________三千块钱，放在我手里，说：“快给你妈妈寄__________吧，看病要紧。”",
                 "answer": "",
                 "answer_verified": false,
-                "check_needed": false,
-                "uuid": "67cbb885-5d7d-4371-bc41-7249bdb76101"
+                "check_needed": false
               },
               {
-                "id": "ex05_q08",
+                "id": "497e0d16-4f94-40ed-aa81-c09c6d7a0dbb",
                 "prompt": "“救命啊！有人掉__________水里__________了！”听见喊声，他很快脱下上衣，跑了__________。人们看见他跳__________水__________，向那个孩子游了__________。",
                 "answer": "",
                 "answer_verified": false,
-                "check_needed": false,
-                "uuid": "f991fb1f-8a60-431e-9441-9fac97ac9125"
+                "check_needed": false
               }
             ],
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "3559f991-817a-4ad2-b1cc-8eac6dddaa8a"
+            "check_needed": false
           },
           {
-            "id": "exercise_06",
+            "id": "60ec1197-2967-408c-a1f3-3c2112f8305a",
             "type": "custom",
             "variant": "location_inference",
             "order": 6,
@@ -2507,68 +2326,59 @@
             },
             "questions": [
               {
-                "id": "ex06_q01",
+                "id": "1b0dc397-26f4-4659-a964-f9c68ceab72a",
                 "prompt": "你看，他跑过去了。",
                 "answer": "",
-                "answer_verified": false,
-                "uuid": "0f2bfa80-68bc-4fef-848f-2416fa4c5c41"
+                "answer_verified": false
               },
               {
-                "id": "ex06_q02",
+                "id": "ab74bab2-0cd3-4c59-b4dd-6d9a3c6197b9",
                 "prompt": "您的行李已经给您搬上来了。",
                 "answer": "",
-                "answer_verified": false,
-                "uuid": "bd34a003-cf12-48de-968a-a5c0fa881fda"
+                "answer_verified": false
               },
               {
-                "id": "ex06_q03",
+                "id": "c503fed9-44e1-4df9-b284-51dbab822ee8",
                 "prompt": "他的车开进来了。",
                 "answer": "",
-                "answer_verified": false,
-                "uuid": "c101a614-07a4-4df1-9da2-d4f50506cff5"
+                "answer_verified": false
               },
               {
-                "id": "ex06_q04",
+                "id": "87b8a7fb-1969-49e6-b592-82a2e0147e96",
                 "prompt": "我们走上去吧。",
                 "answer": "",
-                "answer_verified": false,
-                "uuid": "9d68aadb-f7b4-487d-bbd1-97ed37f01d0b"
+                "answer_verified": false
               },
               {
-                "id": "ex06_q05",
+                "id": "6155b63d-c263-446a-9ad7-80d775f5be6e",
                 "prompt": "书他已经提上去了。",
                 "answer": "",
-                "answer_verified": false,
-                "uuid": "1eb9e809-b36b-4c79-8451-3a2e0a7feed6"
+                "answer_verified": false
               },
               {
-                "id": "ex06_q06",
+                "id": "8e9a9428-6659-4025-8fb4-b5bf4134d62d",
                 "prompt": "你要的电脑我已经买回来了。",
                 "answer": "",
-                "answer_verified": false,
-                "uuid": "7d2819c9-269a-49e1-927c-b4e205822947"
+                "answer_verified": false
               },
               {
-                "id": "ex06_q07",
+                "id": "d2ee010f-bdf3-46bc-b758-1c9bbab1af4b",
                 "prompt": "她们爬上山去了。",
                 "answer": "",
-                "answer_verified": false,
-                "uuid": "d923ef85-9be2-4e27-aae8-4134873950c3"
+                "answer_verified": false
               },
               {
-                "id": "ex06_q08",
+                "id": "8cd8da84-508c-4d14-9ec6-23425cabd8b3",
                 "prompt": "钱我已经取回来了。",
                 "answer": "",
-                "answer_verified": false,
-                "uuid": "1e10f9cb-f1af-492a-8b87-a1ab6a935ff6"
+                "answer_verified": false
               }
             ],
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "68907e62-e158-45b7-bf37-a5766321b4af"
+            "check_needed": false
           },
           {
-            "id": "exercise_07",
+            "id": "1fd4313d-93f3-4cbe-9dd4-2ba0d5bac415",
             "type": "custom",
             "variant": "image_prompt",
             "order": 7,
@@ -2580,7 +2390,7 @@
             },
             "questions": [
               {
-                "id": "ex07_img_01",
+                "id": "8d75de03-e551-4c2c-a572-199b5b2cc859",
                 "image_description_vi": "Một người đang leo lên núi / leo lên đá.",
                 "sample_answer": {
                   "zh": "他爬上山去了。",
@@ -2588,11 +2398,10 @@
                 },
                 "answer_verified": false,
                 "source_origin": "textbook_question_generated_answer",
-                "check_needed": true,
-                "uuid": "bdcc561d-cbb4-4e38-8eb0-b53852788e4d"
+                "check_needed": true
               },
               {
-                "id": "ex07_img_02",
+                "id": "a0adf525-bb05-47eb-878c-a3ce23685773",
                 "image_description_vi": "Một người từ trên cao nhảy xuống nước, người nói đứng dưới nhìn.",
                 "sample_answer": {
                   "zh": "他跳下来了。",
@@ -2600,11 +2409,10 @@
                 },
                 "answer_verified": false,
                 "source_origin": "textbook_question_generated_answer",
-                "check_needed": true,
-                "uuid": "c90ebdcd-38cf-4b5a-b191-4fa82385d262"
+                "check_needed": true
               },
               {
-                "id": "ex07_img_03",
+                "id": "16a753d0-afcd-4d39-a3b6-21a3e5831d6b",
                 "image_description_vi": "Một cô gái đi vào ngân hàng.",
                 "sample_answer": {
                   "zh": "她走进银行去了。",
@@ -2612,11 +2420,10 @@
                 },
                 "answer_verified": false,
                 "source_origin": "textbook_question_generated_answer",
-                "check_needed": true,
-                "uuid": "4d0f0bf7-ddf3-482b-9c7e-aa18099828a4"
+                "check_needed": true
               },
               {
-                "id": "ex07_img_04",
+                "id": "4884a221-94eb-4527-8e90-440a156a5538",
                 "image_description_vi": "Một người chạy vào phòng.",
                 "sample_answer": {
                   "zh": "他跑进来了。",
@@ -2624,11 +2431,10 @@
                 },
                 "answer_verified": false,
                 "source_origin": "textbook_question_generated_answer",
-                "check_needed": true,
-                "uuid": "9d80b6fc-a858-46c3-850b-b0c724e4dfc8"
+                "check_needed": true
               },
               {
-                "id": "ex07_img_05",
+                "id": "dd55c4d9-5a27-44b4-9bdf-ed2208a533c7",
                 "image_description_vi": "Một người đi ra khỏi bưu điện / đi từ bưu điện ra.",
                 "sample_answer": {
                   "zh": "他从邮局走出来了。",
@@ -2636,11 +2442,10 @@
                 },
                 "answer_verified": false,
                 "source_origin": "textbook_question_generated_answer",
-                "check_needed": true,
-                "uuid": "cc593b54-c2f2-46d8-bd84-3af1dc544ba7"
+                "check_needed": true
               },
               {
-                "id": "ex07_img_06",
+                "id": "819e1af3-b3de-44ec-b62f-f20a5af7d6a9",
                 "image_description_vi": "Một cô gái nhặt đồ lên từ dưới đất.",
                 "sample_answer": {
                   "zh": "她把东西捡起来了。",
@@ -2648,11 +2453,10 @@
                 },
                 "answer_verified": false,
                 "source_origin": "textbook_question_generated_answer",
-                "check_needed": true,
-                "uuid": "2354ee09-ea69-48cf-95e8-ff8cba329dea"
+                "check_needed": true
               },
               {
-                "id": "ex07_img_07",
+                "id": "07496d7c-9640-4a61-8ba8-5754feab5ad5",
                 "image_description_vi": "Một người chạy qua cầu về phía người nói.",
                 "sample_answer": {
                   "zh": "他跑过来了。",
@@ -2660,11 +2464,10 @@
                 },
                 "answer_verified": false,
                 "source_origin": "textbook_question_generated_answer",
-                "check_needed": true,
-                "uuid": "9fd1d127-8415-4510-a46d-4b85f0c040d9"
+                "check_needed": true
               },
               {
-                "id": "ex07_img_08",
+                "id": "51b15f46-d0fc-49ec-92f2-833ad313e191",
                 "image_description_vi": "Tàu chạy qua cầu, người nói đứng bên dưới/xa nhìn.",
                 "sample_answer": {
                   "zh": "火车开过去了。",
@@ -2672,16 +2475,14 @@
                 },
                 "answer_verified": false,
                 "source_origin": "textbook_question_generated_answer",
-                "check_needed": true,
-                "uuid": "f95605f7-1613-41ed-a4de-234cdf455048"
+                "check_needed": true
               }
             ],
             "source_origin": "textbook/generated_mixed",
-            "check_needed": true,
-            "uuid": "da4b1096-0389-4111-8723-b6e6a406c22e"
+            "check_needed": true
           },
           {
-            "id": "exercise_08",
+            "id": "b9e46637-94ca-4fea-90cf-29155c015046",
             "type": "correct_sentence",
             "variant": "error_correction",
             "order": 8,
@@ -2693,54 +2494,47 @@
             },
             "questions": [
               {
-                "id": "ex08_q01",
+                "id": "51d25007-39bc-4798-8fb4-fd9aaf8168f5",
                 "prompt": "上课十分钟他才走进来教室。",
                 "answer": "",
-                "answer_verified": false,
-                "uuid": "422e67a7-55f1-4870-a386-902e8c196284"
+                "answer_verified": false
               },
               {
-                "id": "ex08_q02",
+                "id": "e65bddbb-aff2-43d6-86ee-fb07381ebe3e",
                 "prompt": "我看见她走出去图书馆了。",
                 "answer": "",
-                "answer_verified": false,
-                "uuid": "e04e8803-3dab-4978-951e-69294d4ff865"
+                "answer_verified": false
               },
               {
-                "id": "ex08_q03",
+                "id": "2ac934ff-71d7-4d4a-b040-149ec5a5750e",
                 "prompt": "孩子看见我，就向我跑过去。",
                 "answer": "",
-                "answer_verified": false,
-                "uuid": "af1b5ff5-ca01-4a12-9286-0ff07d66dbe3"
+                "answer_verified": false
               },
               {
-                "id": "ex08_q04",
+                "id": "c5d39e80-de1f-4a3c-9b5f-9193a14a8a33",
                 "prompt": "他从箱子里拿出去一件羽绒服。",
                 "answer": "",
-                "answer_verified": false,
-                "uuid": "1118edd4-741b-4c6d-8936-5e63993df380"
+                "answer_verified": false
               },
               {
-                "id": "ex08_q05",
+                "id": "758a96f8-d8f5-4075-aafa-95e515a48195",
                 "prompt": "我们的飞机马上就飞上去天了。",
                 "answer": "",
-                "answer_verified": false,
-                "uuid": "3bb89eca-75f2-4ea6-a919-a4c35a3f1db6"
+                "answer_verified": false
               },
               {
-                "id": "ex08_q06",
+                "id": "7969b51e-cfc5-4e03-97be-0b29b48a7fdc",
                 "prompt": "妈妈病好了以后，我就送她回去老家了。",
                 "answer": "",
-                "answer_verified": false,
-                "uuid": "40c46362-c781-455d-857e-e8e95a143108"
+                "answer_verified": false
               }
             ],
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "76ecd089-02fb-4124-b701-06c3db2a5785"
+            "check_needed": false
           },
           {
-            "id": "exercise_09",
+            "id": "849f6690-a8ea-4b6f-937d-429f236714ad",
             "type": "reading_fill_blank",
             "variant": "reading_cloze",
             "order": 9,
@@ -2828,50 +2622,43 @@
               }
             ],
             "passage": {
-              "id": "reading_01",
+              "id": "9bd9a79e-3279-468d-9f4b-ecd1f7365e19",
               "zh": "罗兰：\n\n你好。我已经到了泰山，我是爬上①__________的，没有坐缆车。登上泰山，真有“一览众山小”的感觉。我还在山上住了一夜，等第二天早上看日出，能站在泰山上看日出，我很高兴。当我们看到太阳一下子跳②__________的时候，都兴奋地大声叫了起来，真是美③__________了。下午，我又从泰山上走④__________了。明天我要去曲阜参观孔庙和孔林。到那儿以后再给你介绍曲阜的情况。这次来旅行我很愉快，山东大学的朋友很热情，给了我很多帮助。\n\n这是我用手机照的泰山日出，发给你看看。\n\n祝好！\n\n丹尼斯\n7月28日",
-              "vi": "Roland: Chào bạn. Tôi đã đến núi Thái Sơn rồi. Tôi tự leo lên đấy, không ngồi cáp treo...",
-              "uuid": "ce810ac9-f65f-4830-a147-f2663809e4fc"
+              "vi": "Roland: Chào bạn. Tôi đã đến núi Thái Sơn rồi. Tôi tự leo lên đấy, không ngồi cáp treo..."
             },
             "questions": [
               {
-                "id": "ex09_blank_01",
+                "id": "0d82ab86-2b18-4749-8f20-32e5c7c6758f",
                 "prompt": "爬上①__________的",
                 "answer": "来",
-                "answer_verified": true,
-                "uuid": "3d59b017-0afa-418a-8522-679266ee32d0"
+                "answer_verified": true
               },
               {
-                "id": "ex09_blank_02",
+                "id": "7a9aa110-f471-44f5-93f8-e82ae6aefee3",
                 "prompt": "跳②__________的时候",
                 "answer": "出来",
-                "answer_verified": true,
-                "uuid": "a8c38f07-0393-42e5-9c85-bb0fbb3f5fb1"
+                "answer_verified": true
               },
               {
-                "id": "ex09_blank_03",
+                "id": "a7836085-ebad-4bef-b300-52734a96dbd1",
                 "prompt": "美③__________了",
                 "answer": "极",
-                "answer_verified": true,
-                "uuid": "93e57b26-7124-4421-bbcf-92603cbe3889"
+                "answer_verified": true
               },
               {
-                "id": "ex09_blank_04",
+                "id": "7ed4fadc-c6e9-4a39-b12b-2ad23d1c63fe",
                 "prompt": "走④__________了",
                 "answer": "下去",
-                "answer_verified": true,
-                "uuid": "79d12099-3e6b-4c30-acd4-de163455d0a0"
+                "answer_verified": true
               }
             ],
             "source_origin": "textbook/generated_mixed",
-            "check_needed": false,
-            "uuid": "d282292b-6776-44a3-b4c1-e64777446bf6"
+            "check_needed": false
           }
-        ],
-        "uuid": "27a1f7fe-2a5f-4c9a-9f8b-d8107bd62ec1"
+        ]
       },
       {
-        "id": "section_07_reading",
+        "id": "886f621e-85ce-4e1a-91df-d8d257596034",
         "type": "reading",
         "order": 7,
         "title": "阅读理解 / 综合填空",
@@ -2881,22 +2668,20 @@
         "linked_exercise_id": "exercise_09",
         "items": [
           {
-            "id": "reading_01",
+            "id": "9bd9a79e-3279-468d-9f4b-ecd1f7365e19",
             "type": "reading_cloze",
             "title": "综合填空：泰山",
             "title_vi": "Điền bài đọc: Thái Sơn",
-            "source_ref": "exercise_09",
+            "source_ref": "849f6690-a8ea-4b6f-937d-429f236714ad",
             "passage": {
-              "id": "reading_01_passage",
+              "id": "f69fa452-eb41-49bf-8121-dfc271ef9234",
               "segments": [
                 {
-                  "id": "reading_01_passage_text",
+                  "id": "a198d8b2-d2dc-44b2-93ba-9570993e5db5",
                   "type": "text",
-                  "text": "罗兰：\n\n你好。我已经到了泰山，我是爬上①__________的，没有坐缆车。登上泰山，真有“一览众山小”的感觉。我还在山上住了一夜，等第二天早上看日出，能站在泰山上看日出，我很高兴。当我们看到太阳一下子跳②__________的时候，都兴奋地大声叫了起来，真是美③__________了。下午，我又从泰山上走④__________了。明天我要去曲阜参观孔庙和孔林。到那儿以后再给你介绍曲阜的情况。这次来旅行我很愉快，山东大学的朋友很热情，给了我很多帮助。\n\n这是我用手机照的泰山日出，发给你看看。\n\n祝好！\n\n丹尼斯\n7月28日",
-                  "uuid": "c4b4ec8c-70b4-4b38-842f-b92d640a3af4"
+                  "text": "罗兰：\n\n你好。我已经到了泰山，我是爬上①__________的，没有坐缆车。登上泰山，真有“一览众山小”的感觉。我还在山上住了一夜，等第二天早上看日出，能站在泰山上看日出，我很高兴。当我们看到太阳一下子跳②__________的时候，都兴奋地大声叫了起来，真是美③__________了。下午，我又从泰山上走④__________了。明天我要去曲阜参观孔庙和孔林。到那儿以后再给你介绍曲阜的情况。这次来旅行我很愉快，山东大学的朋友很热情，给了我很多帮助。\n\n这是我用手机照的泰山日出，发给你看看。\n\n祝好！\n\n丹尼斯\n7月28日"
                 }
-              ],
-              "uuid": "ac31bae0-b2d0-46c1-93a2-2e3771af48aa"
+              ]
             },
             "answer_key": [
               {
@@ -2935,14 +2720,12 @@
                 "blank_id": "4",
                 "answer": "下去"
               }
-            ],
-            "uuid": "94e85586-d636-4d2c-b80e-d1f933167a5b"
+            ]
           }
-        ],
-        "uuid": "c0a0fe8d-3087-4ba5-bf7f-872cdac772b0"
+        ]
       },
       {
-        "id": "section_08_character_writing",
+        "id": "2a3cfdb8-618f-43d3-9ad4-160d1dbb366a",
         "type": "character_writing",
         "order": 8,
         "title": "写汉字",
@@ -2950,11 +2733,10 @@
         "source_origin": "textbook",
         "check_needed": false,
         "items": [],
-        "empty_reason_vi": "Bài này không thấy phần 写汉字 riêng trong PDF.",
-        "uuid": "7944baa8-cf2c-47c5-8466-2c45ee1a8598"
+        "empty_reason_vi": "Bài này không thấy phần 写汉字 riêng trong PDF."
       },
       {
-        "id": "section_09_summary",
+        "id": "944b8c3a-d3d4-4265-a907-10cef8340ac2",
         "type": "summary",
         "order": 9,
         "title": "总结",
@@ -2972,9 +2754,8 @@
           ],
           "grammar_points": [
             {
-              "id": "grammar_01",
-              "title": "动作趋向的表达：复合趋向补语",
-              "uuid": "936f14ce-177b-4226-9ee4-74c150b94696"
+              "id": "f8ec59f3-898a-47b2-b536-44dfd8183393",
+              "title": "动作趋向的表达：复合趋向补语"
             }
           ],
           "key_patterns": [
@@ -2995,10 +2776,37 @@
               "看图说话 nếu app muốn lưu ảnh gốc từng tranh thay vì mô tả/câu mẫu sinh."
             ]
           }
-        },
-        "uuid": "ed94606d-4597-4d2e-b7df-19d11675c066"
+        }
       }
     ],
+    "metadata": {
+      "legacy_id": "hanyu_2_2_lesson_14",
+      "book": "Hanyu Jiaocheng",
+      "volume": "第二册下",
+      "volume_vi": "Quyển 2 Hạ",
+      "lesson_index": 14,
+      "lesson_number_cn": "第十四课",
+      "lesson_title_cn": "钥匙忘拔下来了",
+      "lesson_title_pinyin": "Yàoshi wàng bá xiàlai le",
+      "lesson_title_vi": "Chìa khóa quên rút ra rồi",
+      "lesson_title_en": "I forgot to pull out the keys",
+      "source_files": [
+        {
+          "name": "Hanyu Jiaocheng 2-2.pdf",
+          "type": "pdf_scan",
+          "source_origin": "textbook",
+          "check_needed": true,
+          "page_start": 15,
+          "page_end": 30
+        },
+        {
+          "name": "Đã dán markdown (1).md",
+          "type": "instruction_prompt",
+          "source_origin": "uploaded_crosscheck",
+          "check_needed": false
+        }
+      ]
+    },
     "summary": {
       "lesson_parts": [
         "课文",
@@ -3010,9 +2818,8 @@
       ],
       "grammar_points": [
         {
-          "id": "grammar_01",
-          "title": "动作趋向的表达：复合趋向补语",
-          "uuid": "35ad7742-5271-45cd-a35d-1089fbbacefb"
+          "id": "f8ec59f3-898a-47b2-b536-44dfd8183393",
+          "title": "动作趋向的表达：复合趋向补语"
         }
       ],
       "main_patterns": [
@@ -3038,53 +2845,6 @@
         "Điền vào bài đọc tổng hợp"
       ],
       "check_needed": false
-    },
-    "uuid": "9c12c1ac-def5-4fc5-a315-3ba8c63570fc"
-  },
-  "coverage_report": {
-    "version": "coverage_v1",
-    "coverage_status": "partial",
-    "expected_exercise_count_from_pdf": 9,
-    "actual_exercise_count_in_json": 9,
-    "all_exercises_covered": true,
-    "all_exercise_content_verified": false,
-    "missing_exercise_indexes": [],
-    "final_verification_allowed": false,
-    "coverage_gates": [
-      {
-        "id": "gate_text",
-        "label": "Text covered",
-        "passed": true,
-        "uuid": "04fc982d-62df-49ad-afce-736430256664"
-      },
-      {
-        "id": "gate_vocab",
-        "label": "Vocabulary covered",
-        "passed": true,
-        "actual": 44,
-        "uuid": "d2b65854-0667-428d-842e-7e4f3591a589"
-      },
-      {
-        "id": "gate_exercises",
-        "label": "Exercises covered",
-        "passed": true,
-        "actual": 9,
-        "uuid": "6efd25c4-a4d7-4072-82ae-ed531772b3cf"
-      },
-      {
-        "id": "gate_image_prompt",
-        "label": "Image prompt source images preserved",
-        "passed": false,
-        "reason": "看图说话 has descriptions and generated sample answers, but original textbook images are not embedded in JSON.",
-        "uuid": "0b1373ed-53a0-4f12-9a91-30adcdf89b32"
-      },
-      {
-        "id": "gate_character_writing",
-        "label": "Character writing section checked",
-        "passed": true,
-        "reason": "No separate 写汉字 section found in PDF.",
-        "uuid": "993a09a1-ec02-4327-b1d6-9300be26f495"
-      }
-    ]
+    }
   }
 }

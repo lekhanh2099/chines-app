@@ -1,54 +1,6 @@
 {
-  "schema_version": "2.3.0",
-  "content_type": "chinese_textbook_lesson",
-  "verification_status": "verified",
-  "source": {
-    "book": "Hanyu Jiaocheng",
-    "volume": "第二册上",
-    "volume_vi": "Quyển 2 Thượng",
-    "lesson_index": 5,
-    "lesson_number_cn": "第五课",
-    "lesson_title_cn": "我来了两个多月了",
-    "lesson_title_pinyin": "Wǒ lái le liǎng ge duō yuè le",
-    "lesson_title_vi": "Tôi đến được hơn hai tháng rồi",
-    "lesson_title_en": "I've been here for more than two months",
-    "source_files": [
-      {
-        "name": "Hanyu Jiaocheng 2-1.pdf",
-        "type": "pdf_scan",
-        "source_origin": "textbook",
-        "check_needed": false,
-        "page_start": 68,
-        "page_end": 85
-      },
-      {
-        "name": "Tong_hop_tu_vung_Han_ngu_quyen_2_Bai_1-25.docx",
-        "type": "uploaded_crosscheck",
-        "source_origin": "uploaded_crosscheck",
-        "check_needed": false
-      },
-      {
-        "name": "Học kì 2 上-下.md",
-        "type": "uploaded_crosscheck",
-        "source_origin": "uploaded_crosscheck",
-        "check_needed": false
-      }
-    ],
-    "web_crosscheck": [
-      {
-        "title": "Chinese Course 2A lesson answers / Lesson 5 answer snippets",
-        "source_origin": "web_crosscheck",
-        "note": "Used only to cross-check selected exercise answer keys."
-      },
-      {
-        "title": "LingQ text page for 我来了两个多月了",
-        "source_origin": "web_crosscheck",
-        "note": "Used only to cross-check text/title, not as primary source."
-      }
-    ]
-  },
   "lesson": {
-    "id": "hanyu_2_1_lesson_05",
+    "id": "6ccc843c-74ab-4b14-a6e7-fce116520339",
     "title": {
       "zh": "我来了两个多月了",
       "pinyin": "Wǒ lái le liǎng ge duō yuè le",
@@ -64,7 +16,7 @@
     ],
     "sections": [
       {
-        "id": "section_01_text",
+        "id": "a6c0d522-99be-4f36-881c-b9b2c6beeb85",
         "type": "text",
         "order": 1,
         "title": "课文",
@@ -73,7 +25,7 @@
         "check_needed": false,
         "blocks": [
           {
-            "id": "text_01",
+            "id": "e155d5ea-f89d-45f0-ab8d-094ce9e719f0",
             "type": "text_narrative",
             "order": 1,
             "title": "我来了两个多月了",
@@ -82,61 +34,55 @@
             "check_needed": false,
             "paragraphs": [
               {
-                "id": "text_01_p01",
+                "id": "43338a2c-2044-419e-9fdd-ed1739757a8d",
                 "order": 1,
                 "zh": "我来了两个多月了，对这儿的生活差不多已经习惯了，不过有的地方还不太习惯。总觉得这儿的气候特别干燥，宿舍周围不太干净，也不太安静，食堂里的菜太油腻。",
                 "pinyin": "",
                 "vi": "Tôi đến được hơn hai tháng rồi, đối với cuộc sống ở đây thì gần như đã quen rồi, nhưng vẫn có vài chỗ còn chưa quen lắm. Tôi luôn cảm thấy khí hậu ở đây đặc biệt khô, xung quanh ký túc xá không sạch lắm, cũng không yên tĩnh lắm, đồ ăn trong nhà ăn thì quá nhiều dầu mỡ.",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "c18004be-0c18-47eb-8ef0-edb69a1092b6"
+                "check_needed": false
               },
               {
-                "id": "text_01_p02",
+                "id": "4a807389-3592-4cf4-973f-6589e0118fb2",
                 "order": 2,
                 "zh": "我每天早上七点多才起床，所以常常没时间吃早饭，喝杯牛奶就去上课了。不过，课间休息的时候，我可以去喝杯咖啡，吃一块点心。中午我去食堂吃午饭。因为吃饭的人很多，所以常常要等四五分钟才能买到饭。吃完饭，我回宿舍看书或者听一会儿音乐。中午我从来不睡午觉。",
                 "pinyin": "",
                 "vi": "Mỗi sáng hơn bảy giờ tôi mới dậy, vì vậy thường không có thời gian ăn sáng, uống một cốc sữa rồi đi học luôn. Tuy nhiên, lúc nghỉ giữa giờ, tôi có thể đi uống một cốc cà phê, ăn một miếng bánh. Buổi trưa tôi đến nhà ăn ăn cơm. Vì người ăn cơm rất đông, nên thường phải đợi bốn năm phút mới mua được cơm. Ăn xong, tôi về ký túc xá đọc sách hoặc nghe nhạc một lát. Buổi trưa tôi chưa bao giờ ngủ trưa.",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "649a3b25-d55e-436a-8ee2-613154e4cfac"
+                "check_needed": false
               },
               {
-                "id": "text_01_p03",
+                "id": "5a221404-05e7-4ae2-ad9f-0c920a73dc36",
                 "order": 3,
                 "zh": "下午，有时候上两节课，有时候自己学习。四点以后我去体育馆锻炼身体，跑步、游泳、打球或者跟老师学打太极拳。我很喜欢运动，每天都坚持锻炼一个小时，所以身体很好。",
                 "pinyin": "",
                 "vi": "Buổi chiều, có lúc tôi học hai tiết, có lúc tự học. Sau bốn giờ tôi đến nhà thi đấu rèn luyện thân thể, chạy bộ, bơi, chơi bóng hoặc học đánh Thái Cực Quyền với thầy. Tôi rất thích vận động, ngày nào cũng kiên trì tập luyện một tiếng, vì vậy sức khỏe rất tốt.",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "29b0122f-6d70-4044-9719-16e43e240164"
+                "check_needed": false
               },
               {
-                "id": "text_01_p04",
+                "id": "5c402bbc-a0e6-434c-a6c7-3c4f86c845fe",
                 "order": 4,
                 "zh": "晚饭后我常常散一会儿步，有时跟朋友聊聊天儿，然后就开始复习功课。听半个小时课文录音，练习会话，预习生词和课文。生词要记住，课文要念熟，所以每天晚上一般要复习、预习两三个小时，常常学到十一点多才睡觉。",
                 "pinyin": "",
                 "vi": "Sau bữa tối tôi thường đi dạo một lát, có lúc trò chuyện với bạn bè, sau đó bắt đầu ôn bài. Tôi nghe ghi âm bài khóa nửa tiếng, luyện hội thoại, chuẩn bị trước từ mới và bài khóa. Từ mới phải nhớ, bài khóa phải đọc cho thuộc, nên mỗi tối thường phải ôn tập và chuẩn bị bài khoảng hai ba tiếng, thường học đến hơn mười một giờ mới ngủ.",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "e1494e7d-43ce-4ac7-a2f3-4eeb6eda5662"
+                "check_needed": false
               },
               {
-                "id": "text_01_p05",
+                "id": "babe7f0b-2b53-402f-85af-c5de9b0e676d",
                 "order": 5,
                 "zh": "我每天都很忙，但过得很愉快。我很感谢父母给我这个机会，让我来中国留学。原来打算学一年，现在我觉得一年时间太短了，准备再延长一年。",
                 "pinyin": "",
                 "vi": "Ngày nào tôi cũng rất bận, nhưng sống rất vui vẻ. Tôi rất cảm ơn bố mẹ đã cho tôi cơ hội này, để tôi đến Trung Quốc du học. Ban đầu tôi định học một năm, bây giờ tôi cảm thấy thời gian một năm quá ngắn, chuẩn bị gia hạn thêm một năm nữa.",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "4d6501c0-b2b1-4479-be3f-0efbd2cae96b"
+                "check_needed": false
               }
             ],
-            "comprehension_questions": [],
-            "uuid": "9eff4f57-52b1-45e0-b3a9-122f109bf995"
+            "comprehension_questions": []
           },
           {
-            "id": "text_02",
+            "id": "0156dd39-d5b4-41f5-866d-d336dd29bbc2",
             "type": "text_dialogue",
             "order": 2,
             "title": "我每天都练一个小时",
@@ -145,104 +91,93 @@
             "check_needed": false,
             "lines": [
               {
-                "id": "text_02_l01",
+                "id": "887014e5-f6b0-4777-9f95-85a69532ca36",
                 "order": 1,
                 "speaker": "关经理",
                 "zh": "你好，王老师。每天都起得这么早吗？",
                 "vi": "Chào thầy Wang. Ngày nào thầy cũng dậy sớm thế à?",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "6acb5ce2-ecff-4541-b880-2ea9f572f5c2"
+                "check_needed": false
               },
               {
-                "id": "text_02_l02",
+                "id": "65232ef9-30a1-4305-b8b7-12a8ac5aeb91",
                 "order": 2,
                 "speaker": "王老师",
                 "zh": "对，因为我练气功，所以每天五点多就起来了。",
                 "vi": "Đúng vậy, vì tôi luyện khí công, nên ngày nào hơn năm giờ tôi cũng dậy rồi.",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "33e7e0c4-c0d5-4af4-82b6-22b0badc0698"
+                "check_needed": false
               },
               {
-                "id": "text_02_l03",
+                "id": "2c1213ac-f81d-414f-8b55-5abe77fe83fc",
                 "order": 3,
                 "speaker": "关经理",
                 "zh": "练了多长时间了？",
                 "vi": "Thầy đã luyện được bao lâu rồi?",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "7df896ea-e752-409d-8d87-87fe04d28fcd"
+                "check_needed": false
               },
               {
-                "id": "text_02_l04",
+                "id": "d797c234-0a16-42e3-bc45-29782e65cb1b",
                 "order": 4,
                 "speaker": "王老师",
                 "zh": "已经练了好几年了。",
                 "vi": "Đã luyện được mấy năm rồi.",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "6fbdefa8-354c-4d0d-a992-20a57c434d03"
+                "check_needed": false
               },
               {
-                "id": "text_02_l05",
+                "id": "c99f042b-fa9a-478c-aba1-5da333a677e1",
                 "order": 5,
                 "speaker": "关经理",
                 "zh": "每天练多长时间？",
                 "vi": "Mỗi ngày thầy luyện bao lâu?",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "7e1beccf-2149-49dd-9f20-62df0223f22c"
+                "check_needed": false
               },
               {
-                "id": "text_02_l06",
+                "id": "e8680b0f-6dcc-4fc7-abbd-084aba5d3b87",
                 "order": 6,
                 "speaker": "王老师",
                 "zh": "不一定。有时候练一个钟头，有时候半个钟头。",
                 "vi": "Không nhất định. Có lúc luyện một tiếng, có lúc nửa tiếng.",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "bd8f6990-9ed5-48df-9282-3b19606ae424"
+                "check_needed": false
               },
               {
-                "id": "text_02_l07",
+                "id": "cc8da348-3e89-4f64-a680-de239f505497",
                 "order": 7,
                 "speaker": "关经理",
                 "zh": "效果怎么样？",
                 "vi": "Hiệu quả thế nào?",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "61bc93b5-f157-4b83-b002-fece73548598"
+                "check_needed": false
               },
               {
-                "id": "text_02_l08",
+                "id": "2adb7cf6-26c1-4029-809e-67342fb0227f",
                 "order": 8,
                 "speaker": "王老师",
                 "zh": "挺好的。练气功对身体很有好处。以前我有好几种慢性病呢，高血压、失眠，坚持练了几年，我的这些病差不多都好了。你也来练练吧。",
                 "vi": "Khá tốt. Luyện khí công rất có lợi cho sức khỏe. Trước đây tôi có mấy bệnh mãn tính như huyết áp cao, mất ngủ; kiên trì luyện mấy năm, những bệnh này của tôi gần như đều khỏi rồi. Anh cũng đến luyện thử đi.",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "dd544ec0-2e01-439f-baae-af6fe37ffe21"
+                "check_needed": false
               },
               {
-                "id": "text_02_l09",
+                "id": "f42aa089-875d-48c4-9213-a083ec251fe7",
                 "order": 9,
                 "speaker": "关经理",
                 "zh": "练气功必须坚持天天练，“三天打鱼，两天晒网”不行。我也很想练，但是工作太忙，没有时间。",
                 "vi": "Luyện khí công thì nhất định phải kiên trì luyện hằng ngày, kiểu “ba ngày đánh cá, hai ngày phơi lưới” thì không được. Tôi cũng rất muốn luyện, nhưng công việc bận quá, không có thời gian.",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "57ea51c9-dab4-462d-b34b-59f122f0dfc7"
+                "check_needed": false
               }
             ],
-            "comprehension_questions": [],
-            "uuid": "978b1fa9-ff83-4972-ba37-e4287e9c1a10"
+            "comprehension_questions": []
           }
-        ],
-        "uuid": "b2ddccab-1169-4924-87da-9df8abf01ac2"
+        ]
       },
       {
-        "id": "section_02_vocabulary",
+        "id": "78c30bf4-c314-4c4c-86e3-4dd62382dd78",
         "type": "vocabulary",
         "order": 2,
         "title": "生词",
@@ -251,730 +186,689 @@
         "check_needed": false,
         "items": [
           {
-            "id": "vocab_001",
+            "id": "68c05a12-9d8e-45d9-a413-786bcf2f780a",
             "type": "vocabulary_item",
             "order": 1,
             "hanzi": "生活",
             "pinyin": "shēnghuó",
             "meaning_vi": "sống; cuộc sống",
             "meaning_en": "",
-            "pos": "noun",
+            "pos": "unknown",
             "tags": [
               "main_vocab"
             ],
             "examples": [],
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "72ea60d9-1a76-4f35-b530-b571a2b7bdb4"
+            "check_needed": false
           },
           {
-            "id": "vocab_002",
+            "id": "8c18cf3c-e9dc-42e1-8faf-eb26799cabab",
             "type": "vocabulary_item",
             "order": 2,
             "hanzi": "差不多",
             "pinyin": "chàbuduō",
             "meaning_vi": "gần như; xấp xỉ; không khác mấy",
             "meaning_en": "",
-            "pos": "adjective",
+            "pos": "unknown",
             "tags": [
               "main_vocab"
             ],
             "examples": [],
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "790cff65-d0be-4b2f-90e0-d8622162e14d"
+            "check_needed": false
           },
           {
-            "id": "vocab_003",
+            "id": "1fbd69b7-603a-44ea-8d57-10cd4def9ced",
             "type": "vocabulary_item",
             "order": 3,
             "hanzi": "习惯",
             "pinyin": "xíguàn",
             "meaning_vi": "quen; thói quen",
             "meaning_en": "",
-            "pos": "noun",
+            "pos": "unknown",
             "tags": [
               "main_vocab"
             ],
             "examples": [],
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "cef08de0-c341-4684-b094-fce3de3fda91"
+            "check_needed": false
           },
           {
-            "id": "vocab_004",
+            "id": "3dc505f1-bc0e-4a96-b448-17fed89fdc60",
             "type": "vocabulary_item",
             "order": 4,
             "hanzi": "不过",
             "pinyin": "búguò",
             "meaning_vi": "nhưng; tuy nhiên",
             "meaning_en": "",
-            "pos": "adverb",
+            "pos": "unknown",
             "tags": [
               "main_vocab"
             ],
             "examples": [],
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "4945083e-1881-4cb8-8cc9-0c65f37b925c"
+            "check_needed": false
           },
           {
-            "id": "vocab_005",
+            "id": "188412d4-4c23-4d60-b7b2-21f3490199e7",
             "type": "vocabulary_item",
             "order": 5,
             "hanzi": "气候",
             "pinyin": "qìhòu",
             "meaning_vi": "khí hậu",
             "meaning_en": "",
-            "pos": "noun",
+            "pos": "unknown",
             "tags": [
               "main_vocab"
             ],
             "examples": [],
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "1f9e48f6-4b3c-467f-af6a-010248445572"
+            "check_needed": false
           },
           {
-            "id": "vocab_006",
+            "id": "5ea44727-d97c-467b-b1b8-babd195df50d",
             "type": "vocabulary_item",
             "order": 6,
             "hanzi": "干燥",
             "pinyin": "gānzào",
             "meaning_vi": "khô; khô hanh",
             "meaning_en": "",
-            "pos": "adjective",
+            "pos": "unknown",
             "tags": [
               "main_vocab"
             ],
             "examples": [],
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "2746b3c9-9aed-462a-aa9b-50e3fcf4fb14"
+            "check_needed": false
           },
           {
-            "id": "vocab_007",
+            "id": "54613016-834a-4fc3-9912-2357a6d27058",
             "type": "vocabulary_item",
             "order": 7,
             "hanzi": "干净",
             "pinyin": "gānjìng",
             "meaning_vi": "sạch sẽ",
             "meaning_en": "",
-            "pos": "adjective",
+            "pos": "unknown",
             "tags": [
               "main_vocab"
             ],
             "examples": [],
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "46cbc3f1-356a-4958-9ae8-c6380f53d774"
+            "check_needed": false
           },
           {
-            "id": "vocab_008",
+            "id": "0da97406-c3ac-4fcb-a51c-398a59c3fbae",
             "type": "vocabulary_item",
             "order": 8,
             "hanzi": "菜",
             "pinyin": "cài",
             "meaning_vi": "món ăn; thức ăn; rau",
             "meaning_en": "",
-            "pos": "noun",
+            "pos": "unknown",
             "tags": [
               "main_vocab"
             ],
             "examples": [],
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "d21d7018-7cdc-48f9-9fbf-84a29d1fd072"
+            "check_needed": false
           },
           {
-            "id": "vocab_009",
+            "id": "54b36889-82be-485b-8342-fb8aab572065",
             "type": "vocabulary_item",
             "order": 9,
             "hanzi": "油腻",
             "pinyin": "yóunì",
             "meaning_vi": "nhiều dầu mỡ; béo ngậy",
             "meaning_en": "",
-            "pos": "adjective",
+            "pos": "unknown",
             "tags": [
               "main_vocab"
             ],
             "examples": [],
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "632f8cd0-b122-4797-ae0a-c4365dd1633e"
+            "check_needed": false
           },
           {
-            "id": "vocab_010",
+            "id": "1354b1a3-93cc-4505-8d7f-c5550a1d6ae9",
             "type": "vocabulary_item",
             "order": 10,
             "hanzi": "牛奶",
             "pinyin": "niúnǎi",
             "meaning_vi": "sữa bò",
             "meaning_en": "",
-            "pos": "noun",
+            "pos": "unknown",
             "tags": [
               "main_vocab"
             ],
             "examples": [],
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "392f85ea-1ac2-4dfe-9e94-e966803262ed"
+            "check_needed": false
           },
           {
-            "id": "vocab_011",
+            "id": "f0684cb3-4577-4e6c-9f22-7d97c89692b3",
             "type": "vocabulary_item",
             "order": 11,
             "hanzi": "课间",
             "pinyin": "kèjiān",
             "meaning_vi": "giờ nghỉ giữa tiết học",
             "meaning_en": "",
-            "pos": "noun",
+            "pos": "unknown",
             "tags": [
               "main_vocab"
             ],
             "examples": [],
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "62be9703-78a7-4b7d-8fbf-bf568f31b4a2"
+            "check_needed": false
           },
           {
-            "id": "vocab_012",
+            "id": "d5b362a7-c8f6-4f25-b2b5-0f1749c8afbb",
             "type": "vocabulary_item",
             "order": 12,
             "hanzi": "块",
             "pinyin": "kuài",
             "meaning_vi": "miếng; cục; mẩu",
             "meaning_en": "",
-            "pos": "noun",
+            "pos": "unknown",
             "tags": [
               "main_vocab"
             ],
             "examples": [],
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "a0dc3175-4eb6-4ad5-b644-16633c44b11a"
+            "check_needed": false
           },
           {
-            "id": "vocab_013",
+            "id": "7eccd5e8-dac0-4f36-be2e-abcc0a2bdfcd",
             "type": "vocabulary_item",
             "order": 13,
             "hanzi": "点心",
             "pinyin": "diǎnxin",
             "meaning_vi": "điểm tâm; bánh ăn nhẹ",
             "meaning_en": "",
-            "pos": "noun",
+            "pos": "unknown",
             "tags": [
               "main_vocab"
             ],
             "examples": [],
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "5bad7b1a-3e8d-49c5-a440-e98b84562e72"
+            "check_needed": false
           },
           {
-            "id": "vocab_014",
+            "id": "91fa9f81-e5ef-4c4a-b29c-c4b6daa02196",
             "type": "vocabulary_item",
             "order": 14,
             "hanzi": "从来",
             "pinyin": "cónglái",
             "meaning_vi": "từ trước đến nay; xưa nay luôn",
             "meaning_en": "",
-            "pos": "adverb",
+            "pos": "unknown",
             "tags": [
               "main_vocab"
             ],
             "examples": [],
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "dd403ad2-5bca-4ed3-a9b1-0b78d61b5f48"
+            "check_needed": false
           },
           {
-            "id": "vocab_015",
+            "id": "8a5b1d09-23a6-4182-96e6-9bf4d761a1e1",
             "type": "vocabulary_item",
             "order": 15,
             "hanzi": "午觉",
             "pinyin": "wǔjiào",
             "meaning_vi": "giấc ngủ trưa",
             "meaning_en": "",
-            "pos": "noun",
+            "pos": "unknown",
             "tags": [
               "main_vocab"
             ],
             "examples": [],
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "f572f981-6158-4afb-a2ce-5f63620f62d2"
+            "check_needed": false
           },
           {
-            "id": "vocab_016",
+            "id": "be7a835d-ff8f-4a86-9fd8-27c5f1093f0c",
             "type": "vocabulary_item",
             "order": 16,
             "hanzi": "游泳",
             "pinyin": "yóuyǒng",
             "meaning_vi": "bơi lội",
             "meaning_en": "",
-            "pos": "noun",
+            "pos": "unknown",
             "tags": [
               "main_vocab"
             ],
             "examples": [],
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "134b7d86-3393-453e-971f-cb1c2bb7222d"
+            "check_needed": false
           },
           {
-            "id": "vocab_017",
+            "id": "7a89dc80-d79d-4c2f-988c-d0f54e240d19",
             "type": "vocabulary_item",
             "order": 17,
             "hanzi": "散步",
             "pinyin": "sànbù",
             "meaning_vi": "đi dạo",
             "meaning_en": "",
-            "pos": "noun",
+            "pos": "unknown",
             "tags": [
               "main_vocab"
             ],
             "examples": [],
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "15ae37ef-6739-47a9-94f2-95bd4d946b58"
+            "check_needed": false
           },
           {
-            "id": "vocab_018",
+            "id": "ff3e1818-66a9-4532-880b-02c9cacb0e5b",
             "type": "vocabulary_item",
             "order": 18,
             "hanzi": "功课",
             "pinyin": "gōngkè",
             "meaning_vi": "bài học; bài vở; bài tập",
             "meaning_en": "",
-            "pos": "noun",
+            "pos": "unknown",
             "tags": [
               "main_vocab"
             ],
             "examples": [],
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "91f9cd92-19f8-4046-9414-0e0b60acadd2"
+            "check_needed": false
           },
           {
-            "id": "vocab_019",
+            "id": "0125bdae-fe4e-48fb-8264-145e95c75933",
             "type": "vocabulary_item",
             "order": 19,
             "hanzi": "记",
             "pinyin": "jì",
             "meaning_vi": "ghi nhớ; nhớ",
             "meaning_en": "",
-            "pos": "verb",
+            "pos": "unknown",
             "tags": [
               "main_vocab"
             ],
             "examples": [],
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "0a5a16bd-ce4a-46fb-84b4-c817b7800a64"
+            "check_needed": false
           },
           {
-            "id": "vocab_020",
+            "id": "689eb64b-5d4f-469f-9afa-74017d399614",
             "type": "vocabulary_item",
             "order": 20,
             "hanzi": "住",
             "pinyin": "zhù",
             "meaning_vi": "dùng sau động từ, biểu thị giữ chắc / ổn định kết quả",
             "meaning_en": "",
-            "pos": "verb",
+            "pos": "unknown",
             "tags": [
               "main_vocab"
             ],
             "examples": [],
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "686a37e0-5879-4eea-8c67-56db9c5dd079"
+            "check_needed": false
           },
           {
-            "id": "vocab_021",
+            "id": "d45d5488-9293-41ae-9deb-1e5b51cee446",
             "type": "vocabulary_item",
             "order": 21,
             "hanzi": "一般",
             "pinyin": "yìbān",
             "meaning_vi": "bình thường; thông thường; nói chung",
             "meaning_en": "",
-            "pos": "adjective",
+            "pos": "unknown",
             "tags": [
               "main_vocab"
             ],
             "examples": [],
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "aace04d2-a26e-4524-97ab-38fffff120f9"
+            "check_needed": false
           },
           {
-            "id": "vocab_022",
+            "id": "c99a633b-27a2-429b-a139-44113a84c189",
             "type": "vocabulary_item",
             "order": 22,
             "hanzi": "感谢",
             "pinyin": "gǎnxiè",
             "meaning_vi": "cảm ơn; biết ơn",
             "meaning_en": "",
-            "pos": "verb",
+            "pos": "unknown",
             "tags": [
               "main_vocab"
             ],
             "examples": [],
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "05f9f652-5212-480b-a6b5-6251661f852e"
+            "check_needed": false
           },
           {
-            "id": "vocab_023",
+            "id": "79358c6f-3427-4c28-98f3-7ef98c7033c3",
             "type": "vocabulary_item",
             "order": 23,
             "hanzi": "父母",
             "pinyin": "fùmǔ",
             "meaning_vi": "cha mẹ; bố mẹ",
             "meaning_en": "",
-            "pos": "noun",
+            "pos": "unknown",
             "tags": [
               "main_vocab"
             ],
             "examples": [],
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "65ea166d-30d9-4695-9c36-f7a530379fa6"
+            "check_needed": false
           },
           {
-            "id": "vocab_024",
+            "id": "dc0f8e06-a359-4907-a8d8-fc9b02260590",
             "type": "vocabulary_item",
             "order": 24,
             "hanzi": "机会",
             "pinyin": "jīhuì",
             "meaning_vi": "cơ hội",
             "meaning_en": "",
-            "pos": "noun",
+            "pos": "unknown",
             "tags": [
               "main_vocab"
             ],
             "examples": [],
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "eba910dc-ecb2-48e0-8abd-b8d26bda50e7"
+            "check_needed": false
           },
           {
-            "id": "vocab_025",
+            "id": "c43cedbf-7024-4ec1-922f-e75119114baf",
             "type": "vocabulary_item",
             "order": 25,
             "hanzi": "原来",
             "pinyin": "yuánlái",
             "meaning_vi": "ban đầu; vốn dĩ; thì ra",
             "meaning_en": "",
-            "pos": "noun",
+            "pos": "unknown",
             "tags": [
               "main_vocab"
             ],
             "examples": [],
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "e047ba3a-7545-4cdc-8239-561c2d30a065"
+            "check_needed": false
           },
           {
-            "id": "vocab_026",
+            "id": "d9991c79-3454-4247-bf18-f14f43b4a24a",
             "type": "vocabulary_item",
             "order": 26,
             "hanzi": "延长",
             "pinyin": "yáncháng",
             "meaning_vi": "kéo dài; gia hạn",
             "meaning_en": "",
-            "pos": "verb",
+            "pos": "unknown",
             "tags": [
               "main_vocab"
             ],
             "examples": [],
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "35f0ff0e-293d-4493-a577-d892914d9d90"
+            "check_needed": false
           },
           {
-            "id": "vocab_027",
+            "id": "55cd807c-eec7-412d-99db-f4e6508b170f",
             "type": "vocabulary_item",
             "order": 27,
             "hanzi": "练",
             "pinyin": "liàn",
             "meaning_vi": "luyện tập",
             "meaning_en": "",
-            "pos": "verb",
+            "pos": "unknown",
             "tags": [
               "main_vocab"
             ],
             "examples": [],
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "9d5677be-9368-4a49-ac38-1c8117fa91cb"
+            "check_needed": false
           },
           {
-            "id": "vocab_028",
+            "id": "085e60d5-dd1c-4585-ac6b-0f1db0ded936",
             "type": "vocabulary_item",
             "order": 28,
             "hanzi": "气功",
             "pinyin": "qìgōng",
             "meaning_vi": "khí công",
             "meaning_en": "",
-            "pos": "noun",
+            "pos": "unknown",
             "tags": [
               "main_vocab"
             ],
             "examples": [],
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "ed9f7f74-5615-4d75-91a2-6b5f238a249d"
+            "check_needed": false
           },
           {
-            "id": "vocab_029",
+            "id": "ba7ff0f9-b633-4516-ab3d-22b96046a1cf",
             "type": "vocabulary_item",
             "order": 29,
             "hanzi": "好",
             "pinyin": "hǎo",
             "meaning_vi": "khá; rất; dùng để nhấn mạnh số lượng nhiều hoặc thời gian dài",
             "meaning_en": "",
-            "pos": "adjective",
+            "pos": "unknown",
             "tags": [
               "main_vocab"
             ],
             "examples": [],
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "975051c9-37a9-4574-8546-adb8387ef17f"
+            "check_needed": false
           },
           {
-            "id": "vocab_030",
+            "id": "2185ee67-885d-4ffb-83e2-e97be4070796",
             "type": "vocabulary_item",
             "order": 30,
             "hanzi": "不一定",
             "pinyin": "bù yídìng",
             "meaning_vi": "không nhất định; chưa chắc",
             "meaning_en": "",
-            "pos": "adverb",
+            "pos": "unknown",
             "tags": [
               "main_vocab"
             ],
             "examples": [],
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "588cc663-51f1-49c7-87ab-a8a6727648aa"
+            "check_needed": false
           },
           {
-            "id": "vocab_031",
+            "id": "092a8c16-3739-4685-a4c0-39365071bd48",
             "type": "vocabulary_item",
             "order": 31,
             "hanzi": "钟头",
             "pinyin": "zhōngtóu",
             "meaning_vi": "tiếng; giờ đồng hồ",
             "meaning_en": "",
-            "pos": "noun",
+            "pos": "unknown",
             "tags": [
               "main_vocab"
             ],
             "examples": [],
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "952b1766-7bfb-4cb4-bb85-dcc67ac10bdb"
+            "check_needed": false
           },
           {
-            "id": "vocab_032",
+            "id": "22e66ee9-565e-4670-b2ac-4d5a9b500b38",
             "type": "vocabulary_item",
             "order": 32,
             "hanzi": "效果",
             "pinyin": "xiàoguǒ",
             "meaning_vi": "hiệu quả; kết quả",
             "meaning_en": "",
-            "pos": "noun",
+            "pos": "unknown",
             "tags": [
               "main_vocab"
             ],
             "examples": [],
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "cd174170-3359-410f-9334-27a4c502958e"
+            "check_needed": false
           },
           {
-            "id": "vocab_033",
+            "id": "275b46f4-3166-48b7-9766-58384178d1be",
             "type": "vocabulary_item",
             "order": 33,
             "hanzi": "挺",
             "pinyin": "tǐng",
             "meaning_vi": "khá; rất",
             "meaning_en": "",
-            "pos": "verb",
+            "pos": "unknown",
             "tags": [
               "main_vocab"
             ],
             "examples": [],
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "15adce2d-05ea-4bdf-bcd1-d409b1513f3e"
+            "check_needed": false
           },
           {
-            "id": "vocab_034",
+            "id": "1190511f-5970-4304-8f84-d7201b287aeb",
             "type": "vocabulary_item",
             "order": 34,
             "hanzi": "好处",
             "pinyin": "hǎochu",
             "meaning_vi": "lợi ích; điểm tốt",
             "meaning_en": "",
-            "pos": "noun",
+            "pos": "unknown",
             "tags": [
               "main_vocab"
             ],
             "examples": [],
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "3d269fcd-934e-4e62-8dc9-4ff8c74cfe0e"
+            "check_needed": false
           },
           {
-            "id": "vocab_035",
+            "id": "d42d3d90-443d-45da-bed7-987b50034e92",
             "type": "vocabulary_item",
             "order": 35,
             "hanzi": "慢性病",
             "pinyin": "mànxìngbìng",
             "meaning_vi": "bệnh mãn tính",
             "meaning_en": "",
-            "pos": "noun",
+            "pos": "unknown",
             "tags": [
               "main_vocab"
             ],
             "examples": [],
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "19600e63-47f3-4346-9d52-cfd611a7897b"
+            "check_needed": false
           },
           {
-            "id": "vocab_036",
+            "id": "cfb712c9-c4ca-4314-b6b2-696b40ace25e",
             "type": "vocabulary_item",
             "order": 36,
             "hanzi": "高血压",
             "pinyin": "gāoxuèyā",
             "meaning_vi": "huyết áp cao",
             "meaning_en": "",
-            "pos": "noun",
+            "pos": "unknown",
             "tags": [
               "main_vocab"
             ],
             "examples": [],
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "2c7787ef-ca73-4a25-9c00-776ca7c07e6e"
+            "check_needed": false
           },
           {
-            "id": "vocab_037",
+            "id": "6059829f-ae21-43cf-ac0c-05e19639ec43",
             "type": "vocabulary_item",
             "order": 37,
             "hanzi": "失眠",
             "pinyin": "shīmián",
             "meaning_vi": "mất ngủ",
             "meaning_en": "",
-            "pos": "noun",
+            "pos": "unknown",
             "tags": [
               "main_vocab"
             ],
             "examples": [],
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "c81bfaa7-3313-48a8-ad77-377ad0f78d70"
+            "check_needed": false
           },
           {
-            "id": "vocab_038",
+            "id": "fefd5441-7b6c-47e3-b823-9e149b947bf7",
             "type": "vocabulary_item",
             "order": 38,
             "hanzi": "必须",
             "pinyin": "bìxū",
             "meaning_vi": "nhất định phải; bắt buộc phải",
             "meaning_en": "",
-            "pos": "adverb",
+            "pos": "unknown",
             "tags": [
               "main_vocab"
             ],
             "examples": [],
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "6f034948-b1d9-435c-b770-23adf10d2e1a"
+            "check_needed": false
           },
           {
-            "id": "vocab_039",
+            "id": "27761bd2-433a-44ef-b79a-9e6f0a34b9c9",
             "type": "vocabulary_item",
             "order": 39,
             "hanzi": "打鱼",
             "pinyin": "dǎ yú",
             "meaning_vi": "đánh cá; bắt cá",
             "meaning_en": "",
-            "pos": "verb",
+            "pos": "unknown",
             "tags": [
               "main_vocab"
             ],
             "examples": [],
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "2d00abaa-4b0e-4b41-93eb-8aeefaf1354f"
+            "check_needed": false
           },
           {
-            "id": "vocab_040",
+            "id": "861ed325-b320-4ae0-8eac-bb6bb8ebc215",
             "type": "vocabulary_item",
             "order": 40,
             "hanzi": "晒",
             "pinyin": "shài",
             "meaning_vi": "phơi nắng; hong khô dưới nắng",
             "meaning_en": "",
-            "pos": "verb",
+            "pos": "unknown",
             "tags": [
               "main_vocab"
             ],
             "examples": [],
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "cf813ef0-e45e-4126-89cd-39ed71b6c7fd"
+            "check_needed": false
           }
-        ],
-        "uuid": "2a454058-d3fc-48e4-bd4b-61cbef9fd1b4"
+        ]
       },
       {
-        "id": "section_03_proper_nouns",
+        "id": "3c5ee48e-5d44-44ac-bd53-cac996a83338",
         "type": "proper_nouns",
         "order": 3,
         "title": "专名",
@@ -982,11 +876,10 @@
         "source_origin": "textbook",
         "check_needed": false,
         "items": [],
-        "empty_reason_vi": "Bài này không có 专名 riêng biệt trong bảng chính.",
-        "uuid": "6cb64123-e91c-4308-aa8c-bb252aaf6a1a"
+        "empty_reason_vi": "Bài này không có 专名 riêng biệt trong bảng chính."
       },
       {
-        "id": "section_04_notes",
+        "id": "c18e9f54-6da1-4496-886b-c2c722605678",
         "type": "notes",
         "order": 4,
         "title": "注释",
@@ -995,7 +888,7 @@
         "check_needed": false,
         "items": [
           {
-            "id": "note_01",
+            "id": "63d654f5-4561-4d48-a144-bacbf9671dfc",
             "type": "note",
             "order": 1,
             "title": "已经练了好多年了",
@@ -1003,23 +896,21 @@
             "meaning_vi": "Diễn tả hành động/trạng thái đã kéo dài đến hiện tại.",
             "examples": [
               {
-                "id": "note_01_ex01",
+                "id": "021014f3-ff12-43b6-9d12-352cb6dc863b",
                 "zh": "我已经学了两年汉语了。",
                 "vi": "Tôi đã học tiếng Hán được hai năm rồi.",
                 "source_origin": "generated",
-                "check_needed": false,
-                "uuid": "2d98b052-399f-4fc7-a05e-3ba70a545043"
+                "check_needed": false
               }
             ],
             "source_refs": [
-              "text_02_l04"
+              "d797c234-0a16-42e3-bc45-29782e65cb1b"
             ],
             "source_origin": "textbook/generated_mixed",
-            "check_needed": false,
-            "uuid": "b6953224-8655-41a6-bd22-9e923a913b79"
+            "check_needed": false
           },
           {
-            "id": "note_02",
+            "id": "7e2ee128-4fbd-4a93-898c-5f5fd99b371b",
             "type": "note",
             "order": 2,
             "title": "三天打鱼，两天晒网",
@@ -1027,26 +918,23 @@
             "meaning_vi": "Làm việc không đều đặn, không kiên trì; bữa đực bữa cái.",
             "examples": [
               {
-                "id": "note_02_ex01",
+                "id": "29279e2c-cb63-4437-bbc5-7c46c15b6f13",
                 "zh": "学习汉语不能三天打鱼，两天晒网。",
                 "vi": "Học tiếng Hán không thể bữa học bữa nghỉ.",
                 "source_origin": "generated",
-                "check_needed": false,
-                "uuid": "8f3b1b11-3811-41c4-9346-a9efda455d5c"
+                "check_needed": false
               }
             ],
             "source_refs": [
-              "text_02_l09"
+              "f42aa089-875d-48c4-9213-a083ec251fe7"
             ],
             "source_origin": "textbook/generated_mixed",
-            "check_needed": false,
-            "uuid": "35a189c0-b4af-4dff-8a98-e5a06dcb7dfe"
+            "check_needed": false
           }
-        ],
-        "uuid": "da6e676d-9869-413e-aa5c-07ee7b4b10f0"
+        ]
       },
       {
-        "id": "section_05_grammar",
+        "id": "b045e537-7383-494b-8d61-b0286977ed80",
         "type": "grammar",
         "order": 5,
         "title": "语法 / 词语用法",
@@ -1055,7 +943,7 @@
         "check_needed": false,
         "items": [
           {
-            "id": "grammar_01",
+            "id": "f8ec59f3-898a-47b2-b536-44dfd8183393",
             "type": "grammar_point",
             "order": 1,
             "title": "时量补语",
@@ -1066,18 +954,17 @@
             ],
             "blocks": [
               {
-                "id": "grammar_01_overview",
+                "id": "b7c5d870-2db8-4e2e-950f-f0e6e522ac16",
                 "type": "grammar_overview",
                 "order": 1,
                 "title": "Bản chất",
                 "content_vi": "Dùng để nói một hành động hoặc trạng thái kéo dài bao lâu.",
                 "examples": [],
                 "source_origin": "textbook/generated_mixed",
-                "check_needed": false,
-                "uuid": "a4e52467-1c96-408c-bd91-b0b7d7a96818"
+                "check_needed": false
               },
               {
-                "id": "grammar_01_block_02",
+                "id": "3674643b-c5fe-41c5-b271-a29c48b9f53c",
                 "type": "grammar_structure",
                 "order": 2,
                 "title": "V + 了 + 时量",
@@ -1085,28 +972,25 @@
                 "meaning_vi": "Hành động đã kéo dài trong một khoảng thời gian.",
                 "examples": [
                   {
-                    "id": "grammar_01_ex_2_1",
+                    "id": "6a0e9700-4c64-48cd-baeb-3b3660724dbf",
                     "zh": "他等了十分钟。",
                     "vi": "Anh ấy đã đợi mười phút.",
                     "source_origin": "generated",
-                    "check_needed": false,
-                    "uuid": "830286cc-039d-4500-9487-c6f45645085c"
+                    "check_needed": false
                   },
                   {
-                    "id": "grammar_01_ex_2_2",
+                    "id": "c0b64fb6-da47-4e0c-ab44-b1d3d20748d2",
                     "zh": "我练了一个小时。",
                     "vi": "Tôi đã luyện một tiếng.",
                     "source_origin": "generated",
-                    "check_needed": false,
-                    "uuid": "deb3f8b6-2252-4f3e-ac03-3f660dcfdc9c"
+                    "check_needed": false
                   }
                 ],
                 "source_origin": "textbook/generated_mixed",
-                "check_needed": false,
-                "uuid": "7ec2bc32-18ae-4093-bf53-83958a4b9fd7"
+                "check_needed": false
               },
               {
-                "id": "grammar_01_block_03",
+                "id": "8e1936ce-ade8-4128-b978-3b25afe05774",
                 "type": "grammar_structure",
                 "order": 3,
                 "title": "V + 了 + 时量 + 了",
@@ -1114,28 +998,25 @@
                 "meaning_vi": "Nhấn mạnh hành động/trạng thái kéo dài đến hiện tại.",
                 "examples": [
                   {
-                    "id": "grammar_01_ex_3_1",
+                    "id": "4c36c375-9ff5-4c51-ac9c-f078dc2e14f8",
                     "zh": "我来了两个多月了。",
                     "vi": "Tôi đến được hơn hai tháng rồi.",
                     "source_origin": "textbook/generated_mixed",
-                    "check_needed": false,
-                    "uuid": "edb991ab-c6dd-416d-83f0-b5ee4ec799d0"
+                    "check_needed": false
                   },
                   {
-                    "id": "grammar_01_ex_3_2",
+                    "id": "1418ba1c-d25d-44f8-b563-8aca890d6819",
                     "zh": "已经练了好多年了。",
                     "vi": "Đã luyện được nhiều năm rồi.",
                     "source_origin": "textbook/generated_mixed",
-                    "check_needed": false,
-                    "uuid": "4f1e2ffc-b132-4b4a-9fb5-329a479b57b1"
+                    "check_needed": false
                   }
                 ],
                 "source_origin": "textbook/generated_mixed",
-                "check_needed": false,
-                "uuid": "4ee1dbb5-5a49-447d-a14b-55cfaf9985dd"
+                "check_needed": false
               },
               {
-                "id": "grammar_01_block_04",
+                "id": "12068b62-081c-4004-960b-d52932b7031d",
                 "type": "grammar_question_form",
                 "order": 4,
                 "title": "V + 了 + 多长时间？",
@@ -1143,20 +1024,18 @@
                 "meaning_vi": "Hỏi một hành động đã kéo dài bao lâu.",
                 "examples": [
                   {
-                    "id": "grammar_01_ex_4_1",
+                    "id": "e5b0bffe-fc51-4c1d-9d25-b86b507d9b04",
                     "zh": "练了多长时间了？",
                     "vi": "Đã luyện được bao lâu rồi?",
                     "source_origin": "textbook/generated_mixed",
-                    "check_needed": false,
-                    "uuid": "aa33ea43-ce7b-4e9d-b53e-85c9f18028cf"
+                    "check_needed": false
                   }
                 ],
                 "source_origin": "textbook/generated_mixed",
-                "check_needed": false,
-                "uuid": "71245068-c4f8-4e11-9440-313a8f9223f8"
+                "check_needed": false
               },
               {
-                "id": "grammar_01_block_05",
+                "id": "33763f56-5421-4252-a77a-86581e1a2b97",
                 "type": "grammar_negative_form",
                 "order": 5,
                 "title": "没 / 没有 + V + 时量",
@@ -1164,25 +1043,22 @@
                 "meaning_vi": "Phủ định thời lượng.",
                 "examples": [
                   {
-                    "id": "grammar_01_ex_5_1",
+                    "id": "c4f9c8a7-25a5-42a3-90ba-2fbdc4050f80",
                     "zh": "他没有练很长时间。",
                     "vi": "Anh ấy không luyện trong thời gian dài.",
                     "source_origin": "generated",
-                    "check_needed": false,
-                    "uuid": "f6f96ad5-649d-4118-9559-ba972d8178af"
+                    "check_needed": false
                   }
                 ],
                 "source_origin": "textbook/generated_mixed",
-                "check_needed": false,
-                "uuid": "ea9065e1-271a-4d3e-9c42-b034b2048cb9"
+                "check_needed": false
               }
             ],
             "source_origin": "textbook/generated_mixed",
-            "check_needed": false,
-            "uuid": "e0e7250d-65f5-4eb7-8699-ab4fbbc669e7"
+            "check_needed": false
           },
           {
-            "id": "grammar_02",
+            "id": "57b14753-688a-41b6-9e0d-b61dbbf574d7",
             "type": "grammar_point",
             "order": 2,
             "title": "概数的表达",
@@ -1193,18 +1069,17 @@
             ],
             "blocks": [
               {
-                "id": "grammar_02_overview",
+                "id": "470b1ca1-e0a1-449f-b55e-a8aa481a4dd4",
                 "type": "grammar_overview",
                 "order": 1,
                 "title": "Bản chất",
                 "content_vi": "Dùng khi con số không tuyệt đối chính xác.",
                 "examples": [],
                 "source_origin": "textbook/generated_mixed",
-                "check_needed": false,
-                "uuid": "2f51b433-8e3d-4ee7-81b3-4f398f1e3942"
+                "check_needed": false
               },
               {
-                "id": "grammar_02_block_02",
+                "id": "f02570fc-ca40-4ce6-8874-a10e5165b43b",
                 "type": "grammar_structure",
                 "order": 2,
                 "title": "数词 + 多 + 量词 + 名词",
@@ -1212,20 +1087,18 @@
                 "meaning_vi": "Hơn con số đó.",
                 "examples": [
                   {
-                    "id": "grammar_02_ex_2_1",
+                    "id": "77bad803-f451-47a1-aa27-a9c16a3cc38c",
                     "zh": "二十多个学生",
                     "vi": "Hơn hai mươi học sinh",
                     "source_origin": "generated",
-                    "check_needed": false,
-                    "uuid": "d40530c4-101f-413c-8762-8f3feae28b4d"
+                    "check_needed": false
                   }
                 ],
                 "source_origin": "textbook/generated_mixed",
-                "check_needed": false,
-                "uuid": "b59b7bfa-3d71-46be-998f-929d1b3e9056"
+                "check_needed": false
               },
               {
-                "id": "grammar_02_block_03",
+                "id": "0633d730-b89f-482c-8aa9-feb380d11fe5",
                 "type": "grammar_structure",
                 "order": 3,
                 "title": "数词 + 量词 + 多 + 名词",
@@ -1233,28 +1106,25 @@
                 "meaning_vi": "Hơn số đó một chút.",
                 "examples": [
                   {
-                    "id": "grammar_02_ex_3_1",
+                    "id": "cb67c0a1-f92f-4224-a658-428d226d5b93",
                     "zh": "两个多月",
                     "vi": "Hơn hai tháng",
                     "source_origin": "textbook/generated_mixed",
-                    "check_needed": false,
-                    "uuid": "025d5062-1a86-4e27-b0a9-e6d79c7b6e7a"
+                    "check_needed": false
                   },
                   {
-                    "id": "grammar_02_ex_3_2",
+                    "id": "9fded5c6-c4db-4809-a75d-f412aef78bcc",
                     "zh": "三个多小时",
                     "vi": "Hơn ba tiếng",
                     "source_origin": "generated",
-                    "check_needed": false,
-                    "uuid": "cc84f68f-d527-4a5b-bf1d-6a58cc1868e3"
+                    "check_needed": false
                   }
                 ],
                 "source_origin": "textbook/generated_mixed",
-                "check_needed": false,
-                "uuid": "f9f51d47-f2d7-4e3d-b382-8d71423e6dbb"
+                "check_needed": false
               },
               {
-                "id": "grammar_02_block_04",
+                "id": "3da198f0-3262-4c4f-aba4-d4115519ad7a",
                 "type": "grammar_structure",
                 "order": 4,
                 "title": "相邻两个数词 + 量词 / 名词",
@@ -1262,28 +1132,25 @@
                 "meaning_vi": "Khoảng A đến B.",
                 "examples": [
                   {
-                    "id": "grammar_02_ex_4_1",
+                    "id": "7e976ada-ee87-4904-96ff-5ac11882c43e",
                     "zh": "四五分钟",
                     "vi": "Bốn năm phút",
                     "source_origin": "textbook/generated_mixed",
-                    "check_needed": false,
-                    "uuid": "ff4987e0-21f3-4843-9ac1-6235315c1aef"
+                    "check_needed": false
                   },
                   {
-                    "id": "grammar_02_ex_4_2",
+                    "id": "e6a4b9c7-b554-4377-b499-fc99d1b33044",
                     "zh": "两三个小时",
                     "vi": "Hai ba tiếng",
                     "source_origin": "textbook/generated_mixed",
-                    "check_needed": false,
-                    "uuid": "eb93904b-4dda-4209-a793-ff450827b846"
+                    "check_needed": false
                   }
                 ],
                 "source_origin": "textbook/generated_mixed",
-                "check_needed": false,
-                "uuid": "bf6f3698-602f-45cc-b5fd-b0aacb982fcd"
+                "check_needed": false
               },
               {
-                "id": "grammar_02_block_05",
+                "id": "0b4573b8-ecd5-407e-8bab-2ae95cf7610a",
                 "type": "grammar_structure",
                 "order": 5,
                 "title": "好几 / 好多 + 名词",
@@ -1291,33 +1158,29 @@
                 "meaning_vi": "Nhấn mạnh số lượng nhiều.",
                 "examples": [
                   {
-                    "id": "grammar_02_ex_5_1",
+                    "id": "3b7f8d5e-c361-481a-adbb-12330f83acd3",
                     "zh": "好几年",
                     "vi": "Nhiều năm / mấy năm liền",
                     "source_origin": "textbook/generated_mixed",
-                    "check_needed": false,
-                    "uuid": "8eecda9d-6e40-43f0-b06b-55df69d4c03c"
+                    "check_needed": false
                   },
                   {
-                    "id": "grammar_02_ex_5_2",
+                    "id": "02d75afb-c2af-4a6e-b914-c8caa4f6c70d",
                     "zh": "好多书",
                     "vi": "Rất nhiều sách",
                     "source_origin": "generated",
-                    "check_needed": false,
-                    "uuid": "c22f5575-6eed-44ed-9115-f2b83c568b70"
+                    "check_needed": false
                   }
                 ],
                 "source_origin": "textbook/generated_mixed",
-                "check_needed": false,
-                "uuid": "96acd564-0937-4446-a3fc-551122d162a9"
+                "check_needed": false
               }
             ],
             "source_origin": "textbook/generated_mixed",
-            "check_needed": false,
-            "uuid": "73c24a6a-e513-45ef-9caf-53a9248f995f"
+            "check_needed": false
           },
           {
-            "id": "grammar_03",
+            "id": "fa804fff-372b-4874-8571-f54e613d7e07",
             "type": "grammar_point",
             "order": 3,
             "title": "离合词",
@@ -1328,18 +1191,17 @@
             ],
             "blocks": [
               {
-                "id": "grammar_03_overview",
+                "id": "50dcd503-1832-4112-a0be-e09408954b90",
                 "type": "grammar_overview",
                 "order": 1,
                 "title": "Bản chất",
                 "content_vi": "Một số từ nhìn như động từ hai âm tiết nhưng bên trong là V + O, nên có thể tách ra khi thêm thời lượng, lượng từ, 了/过.",
                 "examples": [],
                 "source_origin": "textbook/generated_mixed",
-                "check_needed": false,
-                "uuid": "80abf39c-b299-4201-8efb-851959c4f009"
+                "check_needed": false
               },
               {
-                "id": "grammar_03_block_02",
+                "id": "ef8ef53f-9950-4b68-86a7-c5008e9d3ff8",
                 "type": "grammar_structure",
                 "order": 2,
                 "title": "V + 了 / 过 / 时量 + O",
@@ -1347,36 +1209,32 @@
                 "meaning_vi": "Chèn thành phần vào giữa động từ ly hợp.",
                 "examples": [
                   {
-                    "id": "grammar_03_ex_2_1",
+                    "id": "e3021d5c-f200-45e7-bcd4-aaad39f483e2",
                     "zh": "散了一会儿步",
                     "vi": "Đi dạo một lát",
                     "source_origin": "textbook/generated_mixed",
-                    "check_needed": false,
-                    "uuid": "16d317b0-87ab-4cec-9102-ee83cba0686f"
+                    "check_needed": false
                   },
                   {
-                    "id": "grammar_03_ex_2_2",
+                    "id": "c74f2fe2-3754-4bf3-94b7-619de58e80ab",
                     "zh": "游了一个小时泳",
                     "vi": "Bơi một tiếng",
                     "source_origin": "generated",
-                    "check_needed": false,
-                    "uuid": "af14b704-d0c5-4264-9a0a-2a7f632e429d"
+                    "check_needed": false
                   },
                   {
-                    "id": "grammar_03_ex_2_3",
+                    "id": "11c756a0-8831-4f26-82b7-63728ed657bd",
                     "zh": "见过一次面",
                     "vi": "Đã gặp mặt một lần",
                     "source_origin": "generated",
-                    "check_needed": false,
-                    "uuid": "73a14551-dbb9-4bf4-a048-de07b4cbe69e"
+                    "check_needed": false
                   }
                 ],
                 "source_origin": "textbook/generated_mixed",
-                "check_needed": false,
-                "uuid": "88ff6265-488b-4a62-8059-b8fdbc5cb303"
+                "check_needed": false
               },
               {
-                "id": "grammar_03_block_03",
+                "id": "098b743c-f59e-4a69-857f-4a4f34aeefa1",
                 "type": "grammar_structure",
                 "order": 3,
                 "title": "Không trực tiếp mang tân ngữ phía sau cả cụm ly hợp",
@@ -1384,36 +1242,31 @@
                 "meaning_vi": "Tân ngữ hoặc đối tượng thường đưa bằng 跟/给/帮... hoặc đổi cấu trúc.",
                 "examples": [
                   {
-                    "id": "grammar_03_ex_3_1",
+                    "id": "729e2042-188b-41ab-a95d-8bbbaa84b013",
                     "zh": "我跟朋友见面。",
                     "vi": "Tôi gặp mặt bạn.",
                     "source_origin": "generated",
-                    "check_needed": false,
-                    "uuid": "ef88cc03-53e0-445c-a6f3-b1cc5d73c4d5"
+                    "check_needed": false
                   },
                   {
-                    "id": "grammar_03_ex_3_2",
+                    "id": "3a07cb90-9326-46a1-a282-9cb242e9a9b2",
                     "zh": "我帮他的忙。",
                     "vi": "Tôi giúp anh ấy.",
                     "source_origin": "generated",
-                    "check_needed": false,
-                    "uuid": "80ebb709-b471-4565-816c-540a01b05b00"
+                    "check_needed": false
                   }
                 ],
                 "source_origin": "textbook/generated_mixed",
-                "check_needed": false,
-                "uuid": "4421945f-30d1-4f17-97e1-005d9725b453"
+                "check_needed": false
               }
             ],
             "source_origin": "textbook/generated_mixed",
-            "check_needed": false,
-            "uuid": "9ef0d5c2-8391-406d-ba1b-6a7d1e634c27"
+            "check_needed": false
           }
-        ],
-        "uuid": "e0d74ec8-c7aa-4915-823a-869c0bdd7e31"
+        ]
       },
       {
-        "id": "section_06_exercises",
+        "id": "9901c597-ca97-451e-b63d-11814aaf933e",
         "type": "exercises",
         "order": 6,
         "title": "练习",
@@ -1428,7 +1281,7 @@
         },
         "items": [
           {
-            "id": "exercise_01",
+            "id": "15cb6f38-593b-48d1-bcca-dc3d2a140f9e",
             "type": "phonetics",
             "variant": "pronunciation_tone_minimal_pairs",
             "order": 1,
@@ -1442,7 +1295,7 @@
             "check_needed": false,
             "parts": [
               {
-                "id": "exercise_01_part_01",
+                "id": "0e5801e7-b89b-4cc6-8bd9-9e1fbbd30b31",
                 "type": "minimal_pair_group",
                 "title": "辨音辨调",
                 "items": [
@@ -1452,11 +1305,10 @@
                   "cónglái / chóng lái",
                   "gōngkè / gōngkè",
                   "gǎnxiè / gǎixiě"
-                ],
-                "uuid": "f948cfb5-4a82-45a9-9f2b-16de33cf0f1a"
+                ]
               },
               {
-                "id": "exercise_01_part_02",
+                "id": "e7235fa8-9e47-43aa-a37c-271a2e83d738",
                 "type": "read_aloud",
                 "title": "朗读",
                 "items": [
@@ -1479,14 +1331,12 @@
                   "一年",
                   "五十年",
                   "一百年"
-                ],
-                "uuid": "447f3226-9312-4bea-8296-d4c542a25dd6"
+                ]
               }
-            ],
-            "uuid": "33cf23c0-2d12-4f1a-8e95-0f48ec938312"
+            ]
           },
           {
-            "id": "exercise_02",
+            "id": "98e14c21-0449-4e36-b1ae-77ed46cf3aa0",
             "type": "substitution_drill",
             "variant": "substitution_or_transform_drill",
             "order": 2,
@@ -1500,7 +1350,7 @@
             "check_needed": false,
             "parts": [
               {
-                "id": "ex02_part_01",
+                "id": "e04b0a16-0b9e-4b9c-a0ab-8bfaf07f602f",
                 "model": [
                   "A：你睡觉了吗？",
                   "B：睡了。",
@@ -1533,11 +1383,10 @@
                     "锻炼",
                     "一个钟头"
                   ]
-                ],
-                "uuid": "16f9bfbc-e684-4c05-ac76-b9f920679ae2"
+                ]
               },
               {
-                "id": "ex02_part_02",
+                "id": "99197fb2-5d38-4e3c-a412-a44f0a742629",
                 "model": [
                   "A：你学了几年汉语了？",
                   "B：学了一年了。"
@@ -1567,11 +1416,10 @@
                     "学",
                     "书法"
                   ]
-                ],
-                "uuid": "e61a2caf-385e-4646-9a09-7ac06085323b"
+                ]
               },
               {
-                "id": "ex02_part_03",
+                "id": "52c92a25-899a-4b53-b0dd-e19a7e312105",
                 "model": [
                   "A：你坐了多长时间的飞机？",
                   "B：坐了八个多小时。"
@@ -1602,11 +1450,10 @@
                     "录音",
                     "半个小时"
                   ]
-                ],
-                "uuid": "fc9f1794-65a1-4ddd-888b-a4181994e3d1"
+                ]
               },
               {
-                "id": "ex02_part_04",
+                "id": "977cb016-320f-43bb-a58c-bc5b0a233497",
                 "model": [
                   "A：你游泳游了多长时间？",
                   "B：我游了一个半钟头。"
@@ -1642,11 +1489,10 @@
                     "打",
                     "一个下午"
                   ]
-                ],
-                "uuid": "fc276602-f02c-4237-a4c0-62c4329e8f69"
+                ]
               },
               {
-                "id": "ex02_part_05",
+                "id": "f8742cef-ee07-4078-b816-ac98058a3c28",
                 "model": [
                   "A：你看了两个小时比赛吗？",
                   "B：没有，我只看了一会儿。"
@@ -1682,11 +1528,10 @@
                     "练习",
                     "一个半小时"
                   ]
-                ],
-                "uuid": "9a68883f-2d70-4f84-b2b6-921ae340925c"
+                ]
               },
               {
-                "id": "ex02_part_06",
+                "id": "1b93b497-6423-45ba-aaef-d78aa1a88d09",
                 "model": [
                   "A：你打算在这儿学习一年吗？",
                   "B：一年时间太短了，我想再延长一年。"
@@ -1708,14 +1553,12 @@
                     "那儿",
                     "教"
                   ]
-                ],
-                "uuid": "adc47165-1a6e-48a7-8cc3-f3608f3fbc80"
+                ]
               }
-            ],
-            "uuid": "58747b13-6b55-4d66-a33e-0719715d6e21"
+            ]
           },
           {
-            "id": "exercise_03",
+            "id": "5dfca3d2-8524-4a83-92dd-b036a7259465",
             "type": "choose_words_fill_blank",
             "variant": "word_bank_fill_blank",
             "order": 3,
@@ -1739,93 +1582,83 @@
             ],
             "questions": [
               {
-                "id": "ex03_q01",
+                "id": "941d80e5-8eb2-4e21-beae-597e6677cdaf",
                 "prompt": "我____打算学一年，现在想再延长一年。",
                 "answer": "原来",
                 "answer_verified": true,
                 "source_origin": "textbook_question_generated_answer",
-                "check_needed": false,
-                "uuid": "fd2b3a71-d26b-44e9-a4ed-077b8eeae9e3"
+                "check_needed": false
               },
               {
-                "id": "ex03_q02",
+                "id": "f31d95d0-500f-4cc9-97ee-57a7295062d2",
                 "prompt": "玛丽每天晚上____要学三个多小时。",
                 "answer": "差不多",
                 "answer_verified": true,
                 "source_origin": "textbook_question_generated_answer",
-                "check_needed": false,
-                "uuid": "efa961a7-7a0a-46eb-ac84-3cf2060a30dc"
+                "check_needed": false
               },
               {
-                "id": "ex03_q03",
+                "id": "069f2cd8-233c-4227-8f46-78a1d28a4a59",
                 "prompt": "学习汉语____坚持，“三天打鱼，两天晒网”是不行的。",
                 "answer": "必须",
                 "answer_verified": true,
                 "source_origin": "textbook_question_generated_answer",
-                "check_needed": false,
-                "uuid": "282fa5d2-5ad1-4738-a7b8-214dbeaf3e62"
+                "check_needed": false
               },
               {
-                "id": "ex03_q04",
+                "id": "013e3712-30ac-4a8a-b60e-0d6f818f4cdb",
                 "prompt": "我____不喝酒。",
                 "answer": "从来",
                 "answer_verified": true,
                 "source_origin": "textbook_question_generated_answer",
-                "check_needed": false,
-                "uuid": "fcef0433-868e-43d2-b112-e1f2f55369f2"
+                "check_needed": false
               },
               {
-                "id": "ex03_q05",
+                "id": "ba362929-16a5-4a79-8cad-ecfabcaa32f3",
                 "prompt": "她练太极拳已经____了好几个月了。",
                 "answer": "练",
                 "answer_verified": true,
                 "source_origin": "textbook_question_generated_answer",
-                "check_needed": false,
-                "uuid": "98f1146d-7e16-45a2-a921-10c14490f51c"
+                "check_needed": false
               },
               {
-                "id": "ex03_q06",
+                "id": "542ef74e-c843-4b6c-9cd8-0011b6ee7b7a",
                 "prompt": "A：这种药的____怎么样？\nB：____好的。",
                 "answer": "效果；挺",
                 "answer_verified": true,
                 "source_origin": "textbook_question_generated_answer",
-                "check_needed": false,
-                "uuid": "0c3fa784-129f-4011-bbf4-9a8ac0614c41"
+                "check_needed": false
               },
               {
-                "id": "ex03_q07",
+                "id": "715f1fd6-1b2e-43e0-b3dc-cbc252152601",
                 "prompt": "她今天晚上____能来。",
                 "answer": "不一定",
                 "answer_verified": true,
                 "source_origin": "textbook_question_generated_answer",
-                "check_needed": false,
-                "uuid": "46352ab0-154d-41ff-aae7-49d27061d7dc"
+                "check_needed": false
               },
               {
-                "id": "ex03_q08",
+                "id": "105a0775-7adb-418e-b770-133481e26360",
                 "prompt": "打太极拳比较难，____很有意思。",
                 "answer": "不过",
                 "answer_verified": true,
                 "source_origin": "textbook_question_generated_answer",
-                "check_needed": false,
-                "uuid": "b3088d75-0543-4f8f-a9a3-01b49a11c703"
+                "check_needed": false
               },
               {
-                "id": "ex03_q09",
+                "id": "e4f087ec-f391-487e-9c09-fa2844c867d8",
                 "prompt": "我觉得这本书对留学生很有____，但是这样的书太少了。",
                 "answer": "好处",
                 "answer_verified": true,
                 "source_origin": "textbook_question_generated_answer",
-                "check_needed": false,
-                "uuid": "ecbc8b4c-8bb5-40d6-9474-c5305453b2f4"
+                "check_needed": false
               }
             ],
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "c5d0b5eb-a1c5-4c42-883a-1efa4226094d"
+            "check_needed": false
           },
           {
-            "id": "exercise_04",
+            "id": "809141fb-cc55-403a-9433-35eea89c8c90",
             "type": "answer_questions",
             "variant": "textbook_task",
             "order": 4,
@@ -1862,11 +1695,10 @@
               "B：两个半钟头。"
             ],
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "a1de046b-561a-4ee0-9476-f5c6cf05a53c"
+            "check_needed": false
           },
           {
-            "id": "exercise_05",
+            "id": "e843bb6e-2e51-4fb8-b362-7506b97cf2fc",
             "type": "answer_questions",
             "variant": "free_response_actual_situation",
             "order": 5,
@@ -1897,11 +1729,10 @@
               "我打算在中国学习一年。"
             ],
             "source_origin": "textbook/generated_mixed",
-            "check_needed": false,
-            "uuid": "60c43822-76e8-4e63-bc43-b15f2503997f"
+            "check_needed": false
           },
           {
-            "id": "exercise_06",
+            "id": "60ec1197-2967-408c-a1f3-3c2112f8305a",
             "type": "fill_blank",
             "variant": "free_fill_blank",
             "order": 6,
@@ -1913,66 +1744,59 @@
             },
             "questions": [
               {
-                "id": "ex06_q01",
+                "id": "1b0dc397-26f4-4659-a964-f9c68ceab72a",
                 "prompt": "飞机已经起飞了，她____到机场。",
                 "answer": "才",
                 "answer_verified": true,
                 "source_origin": "textbook_question_generated_answer",
-                "check_needed": false,
-                "uuid": "61604950-f70d-43a5-9562-1991fd4f4807"
+                "check_needed": false
               },
               {
-                "id": "ex06_q02",
+                "id": "ab74bab2-0cd3-4c59-b4dd-6d9a3c6197b9",
                 "prompt": "今天的作业我只用了一个小时____做完了。",
                 "answer": "就",
                 "answer_verified": true,
                 "source_origin": "textbook_question_generated_answer",
-                "check_needed": false,
-                "uuid": "0bd52953-d50b-4381-95a1-99266111cc62"
+                "check_needed": false
               },
               {
-                "id": "ex06_q03",
+                "id": "c503fed9-44e1-4df9-b284-51dbab822ee8",
                 "prompt": "博物馆离这儿很近，坐车三站____到了。",
                 "answer": "就",
                 "answer_verified": true,
                 "source_origin": "textbook_question_generated_answer",
-                "check_needed": false,
-                "uuid": "73e33e5e-f8bd-4f1b-8142-8950073a9638"
+                "check_needed": false
               },
               {
-                "id": "ex06_q04",
+                "id": "87b8a7fb-1969-49e6-b592-82a2e0147e96",
                 "prompt": "这儿离北京很远，坐火车要十多个小时____能到。",
                 "answer": "才",
                 "answer_verified": true,
                 "source_origin": "textbook_question_generated_answer",
-                "check_needed": false,
-                "uuid": "84bfb0ec-e35a-4087-8f47-6b85fcd426fa"
+                "check_needed": false
               },
               {
-                "id": "ex06_q05",
+                "id": "6155b63d-c263-446a-9ad7-80d775f5be6e",
                 "prompt": "八点上课，他九点____来。",
                 "answer": "才",
                 "answer_verified": true,
                 "source_origin": "textbook_question_generated_answer",
-                "check_needed": false,
-                "uuid": "5cee6a97-a094-4644-8ad1-7e7a705d3e93"
+                "check_needed": false
               },
               {
-                "id": "ex06_q06",
+                "id": "8e9a9428-6659-4025-8fb4-b5bf4134d62d",
                 "prompt": "他早上六点____出发了。",
                 "answer": "就",
                 "answer_verified": true,
                 "source_origin": "textbook_question_generated_answer",
-                "check_needed": false,
-                "uuid": "597e6e61-f32b-4cdd-ad50-96f78c395a4b"
+                "check_needed": false
               }
             ],
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "dba5eb40-d4b6-428f-8c0d-5b0a3e25ad71"
+            "check_needed": false
           },
           {
-            "id": "exercise_07",
+            "id": "1fd4313d-93f3-4cbe-9dd4-2ba0d5bac415",
             "type": "correct_sentence",
             "variant": "error_correction",
             "order": 7,
@@ -1984,66 +1808,59 @@
             },
             "questions": [
               {
-                "id": "ex07_q01",
+                "id": "f8e911bf-9cbb-4dad-91ed-87032d2d95f2",
                 "prompt": "昨天我看了电视一个小时多。",
                 "answer": "昨天我看电视看了一个多小时。",
                 "answer_verified": true,
                 "source_origin": "textbook_question_generated_answer",
-                "check_needed": false,
-                "uuid": "73d474c1-5e6c-41a7-bd9b-263d3fb5527b"
+                "check_needed": false
               },
               {
-                "id": "ex07_q02",
+                "id": "3fd78baa-272c-4e07-8ee2-5399c9977a99",
                 "prompt": "我哥哥毕业大学已经两年了。",
                 "answer": "我哥哥大学毕业已经两年了。",
                 "answer_verified": true,
                 "source_origin": "textbook_question_generated_answer",
-                "check_needed": false,
-                "uuid": "6e556edb-0684-4e18-a2a3-9dc6c9ebeebe"
+                "check_needed": false
               },
               {
-                "id": "ex07_q03",
+                "id": "69f5ddfa-be8d-4292-b18f-6136daaa613f",
                 "prompt": "吃完晚饭，我常常跟朋友聊天儿一会儿。",
                 "answer": "吃完晚饭，我常常跟朋友聊一会儿天儿。",
                 "answer_verified": true,
                 "source_origin": "textbook_question_generated_answer",
-                "check_needed": false,
-                "uuid": "79c91a6a-5425-43e0-811b-a193d88c5595"
+                "check_needed": false
               },
               {
-                "id": "ex07_q04",
+                "id": "9c211f34-08a0-4478-b188-fe6a0e98ea41",
                 "prompt": "他已经没上课三天了。",
                 "answer": "他已经三天没上课了。",
                 "answer_verified": true,
                 "source_origin": "textbook_question_generated_answer",
-                "check_needed": false,
-                "uuid": "1169071a-0540-4a1e-abba-7856d08f624f"
+                "check_needed": false
               },
               {
-                "id": "ex07_q05",
+                "id": "c8ec5644-8adf-46de-b2ff-34b3088ba324",
                 "prompt": "我昨天晚上睡觉了八个小时。",
                 "answer": "我昨天晚上睡了八个小时觉。",
                 "answer_verified": true,
                 "source_origin": "textbook_question_generated_answer",
-                "check_needed": false,
-                "uuid": "4f5f2832-4850-4426-bd4a-e78102c06901"
+                "check_needed": false
               },
               {
-                "id": "ex07_q06",
+                "id": "6db3da52-2247-4991-a1d3-225528d56fff",
                 "prompt": "我学习汉语一个年了。",
                 "answer": "我学习汉语一年了。 / 我学汉语学了一年了。",
                 "answer_verified": true,
                 "source_origin": "textbook_question_generated_answer",
-                "check_needed": false,
-                "uuid": "35fe2213-abe0-4810-81f1-5c37f3828780"
+                "check_needed": false
               }
             ],
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "215fd5ef-97df-4bce-abfe-36bea18b24ac"
+            "check_needed": false
           },
           {
-            "id": "exercise_08",
+            "id": "b9e46637-94ca-4fea-90cf-29155c015046",
             "type": "communication_dialogue",
             "variant": "role_play",
             "order": 8,
@@ -2055,7 +1872,7 @@
             },
             "dialogues": [
               {
-                "id": "ex08_dialogue_01",
+                "id": "9d10590c-3dd7-4287-b930-4f4dbe1e9afb",
                 "title": "在网球场",
                 "lines": [
                   "A：我们打了多长时间了？",
@@ -2063,16 +1880,10 @@
                   "A：还打吗？",
                   "B：再打一会儿吧。"
                 ],
-                "vi": [
-                  "A: Chúng ta đánh được bao lâu rồi?",
-                  "B: Đánh gần một tiếng rồi.",
-                  "A: Còn đánh nữa không?",
-                  "B: Đánh thêm một lát nữa đi."
-                ],
-                "uuid": "3e4ddc9b-5c2f-4395-a182-b6e1064fd55a"
+                "vi": "A: Chúng ta đánh được bao lâu rồi?\nB: Đánh gần một tiếng rồi.\nA: Còn đánh nữa không?\nB: Đánh thêm một lát nữa đi."
               },
               {
-                "id": "ex08_dialogue_02",
+                "id": "57e12e55-5de1-4145-b9ff-e71fe2cc59e2",
                 "title": "在游泳池",
                 "lines": [
                   "A：你游了多长时间了？",
@@ -2081,22 +1892,14 @@
                   "B：还游吗？",
                   "A：不想游了。"
                 ],
-                "vi": [
-                  "A: Bạn bơi được bao lâu rồi?",
-                  "B: Vừa bơi được nửa tiếng. Còn bạn?",
-                  "A: Tôi bơi được một tiếng rồi.",
-                  "B: Còn bơi nữa không?",
-                  "A: Không muốn bơi nữa."
-                ],
-                "uuid": "32e6c3cb-ddad-49e7-896a-65c7a2d99b1b"
+                "vi": "A: Bạn bơi được bao lâu rồi?\nB: Vừa bơi được nửa tiếng. Còn bạn?\nA: Tôi bơi được một tiếng rồi.\nB: Còn bơi nữa không?\nA: Không muốn bơi nữa."
               }
             ],
             "source_origin": "textbook/generated_mixed",
-            "check_needed": false,
-            "uuid": "f55a1701-cd39-4917-928a-a50f44e8ea48"
+            "check_needed": false
           },
           {
-            "id": "exercise_09",
+            "id": "849f6690-a8ea-4b6f-937d-429f236714ad",
             "type": "reading_comprehension",
             "variant": "reading_comprehension",
             "order": 9,
@@ -2108,11 +1911,10 @@
             },
             "reading_ref": "section_07_reading",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "89a461df-6b78-457e-9dd0-7df592e1adbb"
+            "check_needed": false
           },
           {
-            "id": "exercise_10",
+            "id": "1ac62b88-14d2-473e-be1e-6a588e95e535",
             "type": "character_writing",
             "variant": "character_copying",
             "order": 10,
@@ -2124,14 +1926,12 @@
             },
             "character_writing_ref": "section_08_character_writing",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "d810db40-1b3f-491a-9ce9-aa269164f710"
+            "check_needed": false
           }
-        ],
-        "uuid": "b44d9112-969e-4919-8f90-d3edd162d901"
+        ]
       },
       {
-        "id": "section_07_reading",
+        "id": "886f621e-85ce-4e1a-91df-d8d257596034",
         "type": "reading",
         "order": 7,
         "title": "阅读理解",
@@ -2140,7 +1940,7 @@
         "check_needed": false,
         "supplementary_vocabulary": [
           {
-            "id": "reading_vocab_01",
+            "id": "44d7974e-3a5b-45c0-a0e2-9b883d814cc6",
             "type": "vocabulary_item",
             "order": 1,
             "hanzi": "小伙子",
@@ -2150,11 +1950,10 @@
               "reading_vocab"
             ],
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "6057da4f-15b3-4eb5-9c04-531992434dfa"
+            "check_needed": false
           },
           {
-            "id": "reading_vocab_02",
+            "id": "f0d02d73-fc09-4310-a941-3b9d8c50d6a0",
             "type": "vocabulary_item",
             "order": 2,
             "hanzi": "椅子",
@@ -2164,11 +1963,10 @@
               "reading_vocab"
             ],
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "86f46772-ec67-4c4d-9794-64a09e9649eb"
+            "check_needed": false
           },
           {
-            "id": "reading_vocab_03",
+            "id": "6b66426c-8005-4e6a-aa9b-387dd914dc92",
             "type": "vocabulary_item",
             "order": 3,
             "hanzi": "老人",
@@ -2178,11 +1976,10 @@
               "reading_vocab"
             ],
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "b5b80e08-9763-4a8b-93bf-81364778ba47"
+            "check_needed": false
           },
           {
-            "id": "reading_vocab_04",
+            "id": "3c0b0ba4-7b1d-45c1-a701-b9e5f8ae5928",
             "type": "vocabulary_item",
             "order": 4,
             "hanzi": "怕",
@@ -2192,11 +1989,10 @@
               "reading_vocab"
             ],
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "af6a1ed9-823b-4bd4-b148-eb2f08d22859"
+            "check_needed": false
           },
           {
-            "id": "reading_vocab_05",
+            "id": "077e6c6c-3462-47b0-ac93-6b325f5b1145",
             "type": "vocabulary_item",
             "order": 5,
             "hanzi": "生气",
@@ -2206,11 +2002,10 @@
               "reading_vocab"
             ],
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "a1204b70-5402-408d-b7a6-7d3170d7ae93"
+            "check_needed": false
           },
           {
-            "id": "reading_vocab_06",
+            "id": "1df9ccc5-a9e5-4ebb-b9ff-814448bf99a3",
             "type": "vocabulary_item",
             "order": 6,
             "hanzi": "涂",
@@ -2220,11 +2015,10 @@
               "reading_vocab"
             ],
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "df5bc540-fdf0-4c5b-b2c4-6de26233f44d"
+            "check_needed": false
           },
           {
-            "id": "reading_vocab_07",
+            "id": "771cae37-068b-43bf-90d2-afbb351ce227",
             "type": "vocabulary_item",
             "order": 7,
             "hanzi": "油漆",
@@ -2234,11 +2028,10 @@
               "reading_vocab"
             ],
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "964940d4-a325-414b-8f6c-e9828d283b96"
+            "check_needed": false
           },
           {
-            "id": "reading_vocab_08",
+            "id": "9a34b8d8-43d8-4a1c-822f-284b33d357bf",
             "type": "vocabulary_item",
             "order": 8,
             "hanzi": "裤子",
@@ -2248,131 +2041,120 @@
               "reading_vocab"
             ],
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "209b933c-ea68-42ea-8646-db971d7baa34"
+            "check_needed": false
           }
         ],
         "blocks": [
           {
-            "id": "reading_01",
+            "id": "9bd9a79e-3279-468d-9f4b-ecd1f7365e19",
             "type": "text_reading",
             "order": 1,
             "title": "小伙子和长椅子",
             "title_vi": "Chàng trai và chiếc ghế dài",
             "paragraphs": [
               {
-                "id": "reading_01_p01",
+                "id": "d2a4cf8b-55cd-4904-9fed-3141da682b19",
                 "order": 1,
                 "zh": "一个小伙子在公园玩儿了半天，玩儿累了，想找一个座位坐下休息一会儿。正好在离他不远的地方有一个长椅子。他想过去坐一会儿。这时一个老人也向椅子那儿走去。小伙子怕老人先过去坐，就很快向椅子那儿跑去。",
                 "vi": "",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "e08c4b21-7b12-42f6-a5c8-5394f5044dd1"
+                "check_needed": false
               },
               {
-                "id": "reading_01_p02",
+                "id": "a6b1119e-769b-4444-9eee-c4a26d7f6af3",
                 "order": 2,
                 "zh": "老人对小伙子大声叫：“小伙子，不要过去！”",
                 "vi": "",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "8cfe3ef4-0a73-47db-9e16-6f8ef05fd701"
+                "check_needed": false
               },
               {
-                "id": "reading_01_p03",
+                "id": "ce8bdbc9-b498-418a-ab2c-e16111228a35",
                 "order": 3,
                 "zh": "小伙子不听老人的话，很快跑到椅子那儿，一下子坐在椅子上。",
                 "vi": "",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "665e909c-687f-4171-96f2-f808821b81c2"
+                "check_needed": false
               },
               {
-                "id": "reading_01_p04",
+                "id": "b3e5d57c-8b64-4c60-b5f0-3976cd13fef0",
                 "order": 4,
                 "zh": "这时，老人过来了，他走到椅子旁边，生气地对小伙子说：“你这个小伙子，你没有看见吗？椅子刚涂上油漆，还没干呢！”",
                 "vi": "",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "e6da4c6d-d19d-406f-ba31-99e4451d864c"
+                "check_needed": false
               },
               {
-                "id": "reading_01_p05",
+                "id": "383c7578-216f-41aa-a8a5-b889b7ef0fec",
                 "order": 5,
                 "zh": "“啊！”小伙子一听，马上站起来了。可是裤子已经坐上了很多油漆。",
                 "vi": "",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "a66e898b-4886-4241-af91-f0d469f2f2a0"
+                "check_needed": false
               }
-            ],
-            "uuid": "c5744f8f-3e6f-4466-b074-7217c3f07620"
+            ]
           }
         ],
         "questions": [
           {
-            "id": "reading_q01",
+            "id": "9e251021-f762-48f1-9981-bc0e0750dca3",
             "type": "true_false",
             "prompt": "小伙子玩儿累了，想去那个长椅子上休息一会儿。",
             "answer": "对",
             "evidence": [
               {
-                "paragraph_id": "reading_01_p01",
+                "paragraph_id": "d2a4cf8b-55cd-4904-9fed-3141da682b19",
                 "quote": "玩儿累了，想找一个座位坐下休息一会儿"
               }
             ],
             "answer_verified": true,
             "source_origin": "textbook_question_generated_answer",
-            "check_needed": false,
-            "uuid": "acb1cee1-aaf0-40e8-8932-e5f9a76ae51a"
+            "check_needed": false
           },
           {
-            "id": "reading_q02",
+            "id": "ac4189db-8a03-4e48-a2b8-e00cd63fd634",
             "type": "true_false",
             "prompt": "老人也想去那个长椅子上休息。",
             "answer": "错",
             "evidence": [
               {
-                "paragraph_id": "reading_01_p04",
+                "paragraph_id": "b3e5d57c-8b64-4c60-b5f0-3976cd13fef0",
                 "quote": "椅子刚涂上油漆，还没干呢"
               }
             ],
             "answer_verified": true,
             "source_origin": "textbook_question_generated_answer",
-            "check_needed": false,
-            "uuid": "ba4ad5f8-ac01-4a6b-a17d-3899793d4bdb"
+            "check_needed": false
           },
           {
-            "id": "reading_q03",
+            "id": "20854fcd-8a0d-4fa4-9f31-9500b8e1b3a4",
             "type": "true_false",
             "prompt": "老人对小伙子大声叫是怕小伙子先过去坐。",
             "answer": "错",
             "evidence": [
               {
-                "paragraph_id": "reading_01_p04",
+                "paragraph_id": "b3e5d57c-8b64-4c60-b5f0-3976cd13fef0",
                 "quote": "椅子刚涂上油漆，还没干呢"
               }
             ],
             "answer_verified": true,
             "source_origin": "textbook_question_generated_answer",
-            "check_needed": false,
-            "uuid": "dbfcbccb-bfbd-4df9-ba33-e07450f4a3b1"
+            "check_needed": false
           },
           {
-            "id": "reading_q04",
+            "id": "2b8fa222-6f39-4c83-b910-93bae3740dcb",
             "type": "true_false",
             "prompt": "小伙子裤子上坐了很多油漆。",
             "answer": "对",
             "evidence": [
               {
-                "paragraph_id": "reading_01_p05",
+                "paragraph_id": "383c7578-216f-41aa-a8a5-b889b7ef0fec",
                 "quote": "裤子已经坐上了很多油漆"
               }
             ],
             "answer_verified": true,
             "source_origin": "textbook_question_generated_answer",
-            "check_needed": false,
-            "uuid": "69c1494b-f5d7-4272-af40-a983be6d70ba"
+            "check_needed": false
           }
         ],
         "key_phrases": [
@@ -2392,65 +2174,58 @@
         ],
         "items": [
           {
-            "id": "reading_01",
+            "id": "9bd9a79e-3279-468d-9f4b-ecd1f7365e19",
             "type": "text_reading",
             "order": 1,
             "title": "小伙子和长椅子",
             "title_vi": "Chàng trai và chiếc ghế dài",
             "paragraphs": [
               {
-                "id": "reading_01_p01",
+                "id": "d2a4cf8b-55cd-4904-9fed-3141da682b19",
                 "order": 1,
                 "zh": "一个小伙子在公园玩儿了半天，玩儿累了，想找一个座位坐下休息一会儿。正好在离他不远的地方有一个长椅子。他想过去坐一会儿。这时一个老人也向椅子那儿走去。小伙子怕老人先过去坐，就很快向椅子那儿跑去。",
                 "vi": "",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "8da63d85-c69d-497a-9cf9-b0238c94fb16"
+                "check_needed": false
               },
               {
-                "id": "reading_01_p02",
+                "id": "a6b1119e-769b-4444-9eee-c4a26d7f6af3",
                 "order": 2,
                 "zh": "老人对小伙子大声叫：“小伙子，不要过去！”",
                 "vi": "",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "e6fe60e6-3430-4d5e-a383-d5fe9781f1b8"
+                "check_needed": false
               },
               {
-                "id": "reading_01_p03",
+                "id": "ce8bdbc9-b498-418a-ab2c-e16111228a35",
                 "order": 3,
                 "zh": "小伙子不听老人的话，很快跑到椅子那儿，一下子坐在椅子上。",
                 "vi": "",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "9075e613-93b6-4a26-97a7-bd5d35426d5c"
+                "check_needed": false
               },
               {
-                "id": "reading_01_p04",
+                "id": "b3e5d57c-8b64-4c60-b5f0-3976cd13fef0",
                 "order": 4,
                 "zh": "这时，老人过来了，他走到椅子旁边，生气地对小伙子说：“你这个小伙子，你没有看见吗？椅子刚涂上油漆，还没干呢！”",
                 "vi": "",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "63279edc-ba00-45de-bbd7-74473faff583"
+                "check_needed": false
               },
               {
-                "id": "reading_01_p05",
+                "id": "383c7578-216f-41aa-a8a5-b889b7ef0fec",
                 "order": 5,
                 "zh": "“啊！”小伙子一听，马上站起来了。可是裤子已经坐上了很多油漆。",
                 "vi": "",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "8899293f-0052-4736-b95c-967f73d04eae"
+                "check_needed": false
               }
-            ],
-            "uuid": "4d17c9b2-53a4-4285-b738-e69fcb27446d"
+            ]
           }
-        ],
-        "uuid": "b4593330-9fc3-4380-a87e-9794d3ac76ea"
+        ]
       },
       {
-        "id": "section_08_character_writing",
+        "id": "2a3cfdb8-618f-43d3-9ad4-160d1dbb366a",
         "type": "character_writing",
         "order": 8,
         "title": "写汉字",
@@ -2459,142 +2234,129 @@
         "check_needed": false,
         "items": [
           {
-            "id": "char_01",
+            "id": "33bbf7c1-79c1-48ef-b67f-efb8d186cc5a",
             "type": "character_writing_item",
             "order": 1,
             "hanzi": "泳",
             "pinyin": "yǒng",
             "note_vi": "chữ trong 游泳; bộ 氵",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "6cc885de-3646-458e-aae0-321e7efe5bc4"
+            "check_needed": false
           },
           {
-            "id": "char_02",
+            "id": "e291c92e-298f-49b5-bd05-5de86da3e4fb",
             "type": "character_writing_item",
             "order": 2,
             "hanzi": "惯",
             "pinyin": "guàn",
             "note_vi": "chữ trong 习惯; bộ 忄",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "eee9aa7f-f784-43e3-80d8-efc5f2ec1425"
+            "check_needed": false
           },
           {
-            "id": "char_03",
+            "id": "df10490e-265f-4ba4-a30a-58e79f14c6b2",
             "type": "character_writing_item",
             "order": 3,
             "hanzi": "效",
             "pinyin": "xiào",
             "note_vi": "chữ trong 效果",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "780e0695-b74b-4538-b8e4-fa92e784d945"
+            "check_needed": false
           },
           {
-            "id": "char_04",
+            "id": "259742c7-fee4-4a5f-93ef-4f8323c6a728",
             "type": "character_writing_item",
             "order": 4,
             "hanzi": "果",
             "pinyin": "guǒ",
             "note_vi": "chữ trong 效果",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "0f8bb3a5-98a8-4ff1-bf4b-c7ff893af741"
+            "check_needed": false
           },
           {
-            "id": "char_05",
+            "id": "ea8080d5-339c-4116-a6ec-c23d6e9a45a1",
             "type": "character_writing_item",
             "order": 5,
             "hanzi": "处",
             "pinyin": "chù",
             "note_vi": "chữ trong 好处 / 坏处",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "e5f67548-2ae0-46f2-b581-45a1c68f37a8"
+            "check_needed": false
           },
           {
-            "id": "char_06",
+            "id": "f6fff594-0a78-4b14-b5bd-e7f236cab9d7",
             "type": "character_writing_item",
             "order": 6,
             "hanzi": "失",
             "pinyin": "shī",
             "note_vi": "chữ trong 失眠",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "6218695d-944f-4db4-83a1-f0d30ec051f5"
+            "check_needed": false
           },
           {
-            "id": "char_07",
+            "id": "8f711ecc-e82a-40ee-8e42-409a742ccf2f",
             "type": "character_writing_item",
             "order": 7,
             "hanzi": "必",
             "pinyin": "bì",
             "note_vi": "chữ trong 必须",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "57cf37c1-4075-4ae6-a6d7-ab4768bb94e1"
+            "check_needed": false
           },
           {
-            "id": "char_08",
+            "id": "a45cff42-2888-4327-885f-db58f61ba547",
             "type": "character_writing_item",
             "order": 8,
             "hanzi": "须",
             "pinyin": "xū",
             "note_vi": "chữ trong 必须",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "30ba0562-5cf6-4eeb-b5f8-ca74c87cec3e"
+            "check_needed": false
           },
           {
-            "id": "char_09",
+            "id": "9d5b2511-534c-4f43-a8b2-b80a2deb7a8e",
             "type": "character_writing_item",
             "order": 9,
             "hanzi": "散",
             "pinyin": "sàn",
             "note_vi": "chữ trong 散步",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "62cebc05-2370-4432-9a44-21bcfb8b260a"
+            "check_needed": false
           },
           {
-            "id": "char_10",
+            "id": "e7261155-052b-4251-b30a-9334f98de4d5",
             "type": "character_writing_item",
             "order": 10,
             "hanzi": "钟",
             "pinyin": "zhōng",
             "note_vi": "chữ trong 钟头",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "c3b3d346-9384-4c78-8bec-aa9355b32118"
+            "check_needed": false
           },
           {
-            "id": "char_11",
+            "id": "082014f2-68b8-463f-84f2-4e1348b09a8d",
             "type": "character_writing_item",
             "order": 11,
             "hanzi": "血",
             "pinyin": "xuè",
             "note_vi": "chữ trong 高血压",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "646319a0-5322-414c-abc5-0444318e824e"
+            "check_needed": false
           },
           {
-            "id": "char_12",
+            "id": "db44b358-2100-40d8-b4c0-4b02f320740b",
             "type": "character_writing_item",
             "order": 12,
             "hanzi": "挺",
             "pinyin": "tǐng",
             "note_vi": "nghĩa trong bài: khá, rất",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "1ea55274-e1dc-480b-a4ad-b9a0222dd894"
+            "check_needed": false
           }
-        ],
-        "uuid": "9b37da5d-2fd7-43c9-8c85-71235e68b8ca"
+        ]
       },
       {
-        "id": "section_09_summary",
+        "id": "944b8c3a-d3d4-4265-a907-10cef8340ac2",
         "type": "summary",
         "order": 9,
         "title": "总结",
@@ -2613,19 +2375,16 @@
         ],
         "grammar_points": [
           {
-            "id": "grammar_01",
-            "title": "时量补语",
-            "uuid": "b147b15a-8953-48e6-8af5-6c2b19c84cbd"
+            "id": "f8ec59f3-898a-47b2-b536-44dfd8183393",
+            "title": "时量补语"
           },
           {
-            "id": "grammar_02",
-            "title": "概数的表达",
-            "uuid": "bc4e2a7e-1e1e-4316-9733-c3d6e520c2ef"
+            "id": "57b14753-688a-41b6-9e0d-b61dbbf574d7",
+            "title": "概数的表达"
           },
           {
-            "id": "grammar_03",
-            "title": "离合词",
-            "uuid": "18f15dc4-dcd1-4611-9b4d-d07b303a6636"
+            "id": "fa804fff-372b-4874-8571-f54e613d7e07",
+            "title": "离合词"
           }
         ],
         "key_patterns": [
@@ -2645,10 +2404,43 @@
           "reading_covered": true,
           "character_writing_covered": true,
           "remaining_check_needed": "Một số đáp án bài tập mở là gợi ý, không phải đáp án textbook tuyệt đối."
-        },
-        "uuid": "c9c69d2d-a357-47eb-8b74-15f6c0c42e26"
+        }
       }
     ],
+    "metadata": {
+      "legacy_id": "hanyu_2_1_lesson_05",
+      "book": "Hanyu Jiaocheng",
+      "volume": "第二册上",
+      "volume_vi": "Quyển 2 Thượng",
+      "lesson_index": 5,
+      "lesson_number_cn": "第五课",
+      "lesson_title_cn": "我来了两个多月了",
+      "lesson_title_pinyin": "Wǒ lái le liǎng ge duō yuè le",
+      "lesson_title_vi": "Tôi đến được hơn hai tháng rồi",
+      "lesson_title_en": "I've been here for more than two months",
+      "source_files": [
+        {
+          "name": "Hanyu Jiaocheng 2-1.pdf",
+          "type": "pdf_scan",
+          "source_origin": "textbook",
+          "check_needed": false,
+          "page_start": 68,
+          "page_end": 85
+        },
+        {
+          "name": "Tong_hop_tu_vung_Han_ngu_quyen_2_Bai_1-25.docx",
+          "type": "uploaded_crosscheck",
+          "source_origin": "uploaded_crosscheck",
+          "check_needed": false
+        },
+        {
+          "name": "Học kì 2 上-下.md",
+          "type": "uploaded_crosscheck",
+          "source_origin": "uploaded_crosscheck",
+          "check_needed": false
+        }
+      ]
+    },
     "summary": {
       "lesson_parts": [
         "Bài khóa",
@@ -2663,19 +2455,16 @@
       ],
       "grammar_points": [
         {
-          "id": "grammar_01",
-          "title": "Bổ ngữ thời lượng",
-          "uuid": "a79c695d-6ed0-4507-8447-2b81adc7b660"
+          "id": "f8ec59f3-898a-47b2-b536-44dfd8183393",
+          "title": "Bổ ngữ thời lượng"
         },
         {
-          "id": "grammar_02",
-          "title": "Cách biểu đạt số ước lượng",
-          "uuid": "0455c06b-88d4-4b6e-8a78-e2a677916eac"
+          "id": "57b14753-688a-41b6-9e0d-b61dbbf574d7",
+          "title": "Cách biểu đạt số ước lượng"
         },
         {
-          "id": "grammar_03",
-          "title": "Động từ ly hợp",
-          "uuid": "a6afc4f2-867a-4a2d-8ef1-475a36873197"
+          "id": "fa804fff-372b-4874-8571-f54e613d7e07",
+          "title": "Động từ ly hợp"
         }
       ],
       "main_patterns": [],
@@ -2692,48 +2481,6 @@
         "Viết chữ Hán"
       ],
       "check_needed": false
-    },
-    "uuid": "349d5d57-4cd8-4e1f-8e15-9570cc3cb5db"
-  },
-  "coverage_report": {
-    "version": "coverage_v1",
-    "coverage_status": "complete_unverified",
-    "expected_exercise_count_from_pdf": 10,
-    "actual_exercise_count_in_json": 10,
-    "all_exercises_covered": true,
-    "all_exercise_content_verified": false,
-    "missing_exercise_indexes": [],
-    "final_verification_allowed": false,
-    "coverage_gates": [
-      {
-        "id": "gate_text",
-        "label": "Text covered",
-        "passed": true,
-        "expected": 2,
-        "actual": 2,
-        "uuid": "e1f25014-882b-4105-9177-458b5f43e665"
-      },
-      {
-        "id": "gate_vocab",
-        "label": "Vocabulary covered",
-        "passed": true,
-        "uuid": "11796b0f-2ec0-4a89-8388-fd78c15061f0"
-      },
-      {
-        "id": "gate_exercises",
-        "label": "Exercises covered",
-        "passed": true,
-        "expected": 10,
-        "actual": 10,
-        "uuid": "e30afad2-1317-4fa9-8d5c-dfd823b18f88"
-      },
-      {
-        "id": "gate_answers",
-        "label": "All answers textbook-verified",
-        "passed": false,
-        "reason": "Some open answers are suggested answers, not textbook official answers.",
-        "uuid": "19737424-0ae7-4e1a-b35a-b8961f75ef2d"
-      }
-    ]
+    }
   }
 }

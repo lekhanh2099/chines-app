@@ -126,7 +126,11 @@ export function LessonLinkedRichContentCard({
  placeholderText,
  icon: Icon,
 }: LessonLinkedRichContentCardProps) {
- const linkedNoteQuery = useLessonLinkedNote(lesson.id, relationType);
+ const linkedNoteQuery = useLessonLinkedNote(
+  lesson.id,
+  relationType,
+  lesson.legacyLessonId ? [lesson.legacyLessonId] : [],
+ );
  const createNoteMutation = useCreateLessonLinkedNote();
 
  const note = linkedNoteQuery.data;

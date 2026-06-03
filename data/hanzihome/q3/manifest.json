@@ -3,6 +3,7 @@
   "course": {
     "id": "hanyu-q3",
     "title": "Giáo trình Hán ngữ Quyển 3",
+    "description": "Static JSON source-of-truth for HanziHome Q3 exam review",
     "books": [
       {
         "id": "hanyu-q3-shang",
@@ -17,20 +18,39 @@
         "title": "Giáo trình Hán ngữ 3 Hạ",
         "lessonRange": [
           13,
-          19
+          26
         ]
       }
     ]
   },
+  "books": [
+    {
+      "id": "hanyu-q3-shang",
+      "title": "Giáo trình Hán ngữ 3 Thượng",
+      "lessonRange": [
+        1,
+        12
+      ]
+    },
+    {
+      "id": "hanyu-q3-xia",
+      "title": "Giáo trình Hán ngữ 3 Hạ",
+      "lessonRange": [
+        13,
+        26
+      ]
+    }
+  ],
   "counts": {
-    "lessons": 19,
-    "vocab": 342,
-    "lessonDocuments": 19
+    "lessons": 26,
+    "vocab": 1666,
+    "lessonDocuments": 26
   },
   "lessons": [
     {
       "lessonNumber": 1,
-      "id": "hanyu_3_1_lesson_01_deep_vocab",
+      "id": "e873fce4-cb2a-4add-8dcf-a0ed2073417f",
+      "bookId": "hanyu-q3-shang",
       "titleZh": "离家的时候",
       "titleVi": "Lúc rời khỏi nhà",
       "vocabCount": 56,
@@ -38,7 +58,8 @@
     },
     {
       "lessonNumber": 2,
-      "id": "hanyu_3_1_lesson_02_deep_vocab",
+      "id": "6264ba13-e376-4e63-947f-c126b0f02fff",
+      "bookId": "hanyu-q3-shang",
       "titleZh": "一封信",
       "titleVi": "Một bức thư",
       "vocabCount": 52,
@@ -46,7 +67,8 @@
     },
     {
       "lessonNumber": 3,
-      "id": "hanyu_3_1_lesson_03_deep_vocab",
+      "id": "8b815c89-a18a-4490-8420-0345b0be8760",
+      "bookId": "hanyu-q3-shang",
       "titleZh": "北京的四季",
       "titleVi": "Bốn mùa ở Bắc Kinh",
       "vocabCount": 55,
@@ -54,23 +76,26 @@
     },
     {
       "lessonNumber": 4,
-      "id": "hanyu_3_1_lesson_04_deep_vocab",
+      "id": "2984023f-8f2a-44c5-9eed-e239d7ee15c5",
+      "bookId": "hanyu-q3-shang",
       "titleZh": "理想",
       "titleVi": "Lý tưởng",
-      "vocabCount": 69,
+      "vocabCount": 61,
       "hasLessonDocument": true
     },
     {
       "lessonNumber": 5,
-      "id": "hanyu_3_1_lesson_05_deep_vocab",
+      "id": "617c8eb6-26fe-4259-a299-721d9bad3e15",
+      "bookId": "hanyu-q3-shang",
       "titleZh": "回头再说",
       "titleVi": "Để sau rồi nói / Để sau tính tiếp",
-      "vocabCount": 66,
+      "vocabCount": 54,
       "hasLessonDocument": true
     },
     {
       "lessonNumber": 6,
-      "id": "hanyu_3_1_lesson_06_deep_vocab",
+      "id": "77e57977-42a6-4df5-966e-3cc9ea90421d",
+      "bookId": "hanyu-q3-shang",
       "titleZh": "吃葡萄",
       "titleVi": "Ăn nho",
       "vocabCount": 44,
@@ -78,106 +103,182 @@
     },
     {
       "lessonNumber": 7,
-      "id": "hanyu_3_1_lesson_07_chengyu_gushi",
+      "id": "f3bf9e32-0f37-4cd4-8954-d1bf6c52a286",
+      "bookId": "hanyu-q3-shang",
       "titleZh": "成语故事",
       "titleVi": "Câu chuyện thành ngữ",
-      "vocabCount": 0,
+      "vocabCount": 55,
       "hasLessonDocument": true
     },
     {
       "lessonNumber": 8,
-      "id": "hanyu_3_1_lesson_08_love_story",
+      "id": "d3172216-f7c8-4a64-864f-9f22e289bbdd",
+      "bookId": "hanyu-q3-shang",
       "titleZh": "恋爱故事",
       "titleVi": "Chuyện tình yêu",
-      "vocabCount": 0,
+      "vocabCount": 55,
       "hasLessonDocument": true
     },
     {
       "lessonNumber": 9,
-      "id": "hanyu_3_1_lesson_09_xingfu_de_ganjue",
+      "id": "422cbd95-9bdb-4a4b-8d87-3e22b7e3a34b",
+      "bookId": "hanyu-q3-shang",
       "titleZh": "幸福的感觉",
       "titleVi": "Cảm giác hạnh phúc",
-      "vocabCount": 0,
+      "vocabCount": 44,
       "hasLessonDocument": true
     },
     {
       "lessonNumber": 10,
-      "id": "hanyu_3_1_lesson_10_tigao_ziji",
+      "id": "fd4c4806-3f1d-4af5-bd2c-b0d3ec074828",
+      "bookId": "hanyu-q3-shang",
       "titleZh": "提高自己",
       "titleVi": "Nâng cao bản thân",
-      "vocabCount": 0,
+      "vocabCount": 51,
       "hasLessonDocument": true
     },
     {
       "lessonNumber": 11,
-      "id": "hanyu_3_1_lesson_11",
+      "id": "4172d317-1d52-4425-a64e-21ecb495a1e3",
+      "bookId": "hanyu-q3-shang",
       "titleZh": "我看见了飞碟",
       "titleVi": "Tôi nhìn thấy đĩa bay",
-      "vocabCount": 0,
+      "vocabCount": 69,
       "hasLessonDocument": true
     },
     {
       "lessonNumber": 12,
-      "id": "hanyu_3_1_lesson_12_haoren_nandang",
+      "id": "02fe6df4-83d4-4c2d-9cce-e119bdd63a11",
+      "bookId": "hanyu-q3-shang",
       "titleZh": "好人难当",
       "titleVi": "Làm người tốt khó",
-      "vocabCount": 0,
+      "vocabCount": 57,
       "hasLessonDocument": true
     },
     {
       "lessonNumber": 13,
-      "id": "hanyu_3_1_lesson_13_baixing_de_hua",
+      "id": "1a1fd139-2ed5-4e53-ae75-ca925b44e2f1",
+      "bookId": "hanyu-q3-xia",
       "titleZh": "百姓的话",
       "titleVi": "Lời của người bình thường",
-      "vocabCount": 0,
+      "vocabCount": 64,
       "hasLessonDocument": true
     },
     {
       "lessonNumber": 14,
-      "id": "hanyu_3_2_lesson_14_shei_dang_jia",
+      "id": "400ebe9a-eea4-436e-b4f0-967c0cf3c826",
+      "bookId": "hanyu-q3-xia",
       "titleZh": "谁当家",
       "titleVi": "Ai làm chủ gia đình?",
-      "vocabCount": 0,
+      "vocabCount": 64,
       "hasLessonDocument": true
     },
     {
       "lessonNumber": 15,
-      "id": "hanyu_3_2_lesson_15_shoushang_yihou",
+      "id": "e01aa3ff-2b6e-4932-9a9c-b81d4a70c397",
+      "bookId": "hanyu-q3-xia",
       "titleZh": "受伤以后",
       "titleVi": "Sau khi bị thương",
-      "vocabCount": 0,
+      "vocabCount": 63,
       "hasLessonDocument": true
     },
     {
       "lessonNumber": 16,
-      "id": "hanyu_3_2_lesson_16_jinxingren_yudao_mafan",
+      "id": "6cc97e1f-8402-4cd5-9726-62488f164b65",
+      "bookId": "hanyu-q3-xia",
       "titleZh": "金星人遇到麻烦",
       "titleVi": "Người sao Kim gặp rắc rối",
-      "vocabCount": 0,
+      "vocabCount": 165,
       "hasLessonDocument": true
     },
     {
       "lessonNumber": 17,
-      "id": "hanyu_3_2_lesson_17_zai_shi_yi_ci",
+      "id": "705eb92f-7fa3-4b47-af35-a304002c4041",
+      "bookId": "hanyu-q3-xia",
       "titleZh": "再试一次",
       "titleVi": "Thử lại một lần nữa",
-      "vocabCount": 0,
+      "vocabCount": 59,
       "hasLessonDocument": true
     },
     {
       "lessonNumber": 18,
-      "id": "hanyu_3b_lesson_18_yi_he_dangao",
+      "id": "7ed1814a-440a-401c-b9b3-604df82de064",
+      "bookId": "hanyu-q3-xia",
       "titleZh": "一盒蛋糕",
       "titleVi": "Một hộp bánh kem",
-      "vocabCount": 0,
+      "vocabCount": 63,
       "hasLessonDocument": true
     },
     {
       "lessonNumber": 19,
-      "id": "hanyu_3_2_lesson_19",
+      "id": "f327d547-13fc-4ca9-b582-69e7f10cf28f",
+      "bookId": "hanyu-q3-xia",
       "titleZh": "无声的泪",
       "titleVi": "Những giọt nước mắt không lời",
-      "vocabCount": 0,
+      "vocabCount": 67,
+      "hasLessonDocument": true
+    },
+    {
+      "lessonNumber": 20,
+      "id": "0a870db2-e722-40ec-99a8-51952e0b2b48",
+      "bookId": "hanyu-q3-xia",
+      "titleZh": "什么最重要",
+      "titleVi": "Điều gì quan trọng nhất",
+      "vocabCount": 58,
+      "hasLessonDocument": true
+    },
+    {
+      "lessonNumber": 21,
+      "id": "36e522aa-e5a9-455a-841f-c0e1a739780d",
+      "bookId": "hanyu-q3-xia",
+      "titleZh": "理发",
+      "titleVi": "Cắt tóc",
+      "vocabCount": 69,
+      "hasLessonDocument": true
+    },
+    {
+      "lessonNumber": 22,
+      "id": "a039797d-00b9-423d-8f16-edc6bcd665e8",
+      "bookId": "hanyu-q3-xia",
+      "titleZh": "母亲的心",
+      "titleVi": "Tấm lòng người mẹ",
+      "vocabCount": 60,
+      "hasLessonDocument": true
+    },
+    {
+      "lessonNumber": 23,
+      "id": "e6b541c9-2420-4996-9bec-e4aeaba1851b",
+      "bookId": "hanyu-q3-xia",
+      "titleZh": "网络学校",
+      "titleVi": "Trường học trên mạng / Trường học trực tuyến",
+      "vocabCount": 57,
+      "hasLessonDocument": true
+    },
+    {
+      "lessonNumber": 24,
+      "id": "91bb0c36-894f-47df-854d-57cee7b1c61e",
+      "bookId": "hanyu-q3-xia",
+      "titleZh": "情商",
+      "titleVi": "Trí tuệ cảm xúc / Chỉ số cảm xúc",
+      "vocabCount": 60,
+      "hasLessonDocument": true
+    },
+    {
+      "lessonNumber": 25,
+      "id": "ff69df8e-9566-4c64-8e9e-b4029bb99d55",
+      "bookId": "hanyu-q3-xia",
+      "titleZh": "中秋月圆",
+      "titleVi": "Trăng Trung thu tròn",
+      "vocabCount": 92,
+      "hasLessonDocument": true
+    },
+    {
+      "lessonNumber": 26,
+      "id": "28effd86-e279-4464-bd26-3d3bc10bc6ed",
+      "bookId": "hanyu-q3-xia",
+      "titleZh": "梁山伯与祝英台",
+      "titleVi": "Lương Sơn Bá và Chúc Anh Đài",
+      "vocabCount": 72,
       "hasLessonDocument": true
     }
   ]

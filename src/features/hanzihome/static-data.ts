@@ -25,6 +25,10 @@ import {
  q2VocabJson,
 } from "@/features/hanzihome/static-json/q2-static-json";
 import {
+ getHanyuLessonIndex,
+ getHanyuLessonMeta,
+} from "@/features/hanzihome/static-json/hanyu-lesson-meta";
+import {
  DeepVocabularyLessonSchema,
  type DeepVocabularyItem,
  type DeepVocabularyLesson,
@@ -55,7 +59,7 @@ function parseStaticLessonDocuments(lessons: unknown[]) {
 
    return result.success ? [result.data] : [];
   })
-  .sort((a, b) => a.source.lesson_index - b.source.lesson_index);
+  .sort((a, b) => getHanyuLessonIndex(a) - getHanyuLessonIndex(b));
 }
 
 const q2VocabLessons = parseStaticVocabLessons(q2VocabJson);
@@ -65,11 +69,11 @@ const q2LessonDocuments = parseStaticLessonDocuments(q2LessonJson);
 const q3LessonDocuments = parseStaticLessonDocuments(q3LessonJson);
 
 const q2LessonDocumentsByIndex = new Map(
- q2LessonDocuments.map((lesson) => [lesson.source.lesson_index, lesson]),
+ q2LessonDocuments.map((lesson) => [getHanyuLessonIndex(lesson), lesson]),
 );
 
 const q3LessonDocumentsByIndex = new Map(
- q3LessonDocuments.map((lesson) => [lesson.source.lesson_index, lesson]),
+ q3LessonDocuments.map((lesson) => [getHanyuLessonIndex(lesson), lesson]),
 );
 
 type StaticCourseRuntime = {
@@ -155,7 +159,7 @@ function getRuntimeLessonEntries(runtime: StaticCourseRuntime) {
  const lessonIndexes = Array.from(
   new Set([
    ...runtime.vocabLessons.map((lesson) => lesson.source.lesson_index),
-   ...runtime.lessonDocuments.map((lesson) => lesson.source.lesson_index),
+   ...runtime.lessonDocuments.map(getHanyuLessonIndex),
   ]),
  ).sort((a, b) => a - b);
 
@@ -324,14 +328,13 @@ function buildLessonDocumentGrammarViewModels(
  return grammarSection.items.map((point) => {
   const itemTitle = point.title_vi || point.title;
   const contentMd = renderGrammarPoint(point);
-  const detailSections = point.blocks.map((block) => ({
-   key: `${lessonId}-${point.id}-${block.id}`,
-   title: block.title,
-   lines: renderGrammarBlock(block)
-    .split(/\n+/)
-    .map((line) => line.trim())
-    .filter(Boolean),
-  }));
+  const detailSections = point.blocks
+   .map((block) => ({
+    key: `${lessonId}-${point.id}-${block.id}`,
+    title: block.title,
+    lines: renderGrammarBlockDetailLines(block),
+   }))
+   .filter((section) => section.lines.length > 0);
   const examples = point.blocks.flatMap((block) => {
    const record = unknownRecord(block);
 
@@ -350,7 +353,7 @@ function buildLessonDocumentGrammarViewModels(
    id: `${lessonId}__${point.id}`,
    title: itemTitle,
    cleanTitle: itemTitle,
-   core: detailSections[0]?.lines[1] || contentMd,
+   core: getGrammarPointCore(point),
    contentMd,
    structuresView: point.blocks
     .map((block) => recordString(unknownRecord(block), "pattern"))
@@ -358,8 +361,28 @@ function buildLessonDocumentGrammarViewModels(
    examplesParsed: examples,
    notes: [],
    detailSections,
-  };
- });
+ };
+});
+}
+
+function getGrammarPointCore(point: GrammarPoint) {
+ for (const block of point.blocks) {
+  const record = unknownRecord(block);
+  const type = recordString(record, "type");
+  const content = recordString(record, "content_vi");
+
+  if (type === "grammar_overview" && content) return content;
+ }
+
+ for (const block of point.blocks) {
+  const record = unknownRecord(block);
+  const content =
+   recordString(record, "content_vi") || recordString(record, "meaning_vi");
+
+  if (content) return content;
+ }
+
+ return "";
 }
 
 function buildGrammarViewModels(entry: RuntimeLessonEntry, lessonId: string) {
@@ -428,9 +451,7 @@ function renderGrammarBlock(block: GrammarBlock) {
    ),
   );
  }
- if (items.length > 0) {
-  lines.push(...items.map((item) => `- ${JSON.stringify(item)}`));
- }
+ if (items.length > 0) lines.push(...items.flatMap(renderGrammarBlockItem));
  if (questions.length > 0) {
   lines.push(
    ...questions.map((question) => `- ${recordString(question, "prompt")}`),
@@ -438,6 +459,69 @@ function renderGrammarBlock(block: GrammarBlock) {
  }
 
  return lines.filter(Boolean).join("\n");
+}
+
+function renderGrammarBlockDetailLines(block: GrammarBlock) {
+ const record = unknownRecord(block);
+ const content = recordString(record, "content_vi");
+ const pattern = recordString(record, "pattern");
+ const meaning = recordString(record, "meaning_vi");
+ const formulas = recordArray(record, "formulas").map(unknownRecord);
+ const notes = recordArray(record, "notes_vi").filter(
+  (note): note is string => typeof note === "string" && Boolean(note.trim()),
+ );
+ const items = recordArray(record, "items");
+ const questions = recordArray(record, "questions").map(unknownRecord);
+
+ return [
+  content,
+  pattern ? `Cấu trúc: ${pattern}` : "",
+  meaning,
+  ...formulas.map((formula) =>
+   [recordString(formula, "label"), recordString(formula, "pattern")]
+    .filter(Boolean)
+    .join(": "),
+  ),
+  ...notes,
+  ...items.flatMap(renderGrammarBlockItem),
+  ...questions.map((question) => recordString(question, "prompt")),
+ ].filter(Boolean);
+}
+
+function renderGrammarBlockItem(itemValue: unknown) {
+ const item = unknownRecord(itemValue);
+ const left = unknownRecord(item.left);
+ const right = unknownRecord(item.right);
+ const wrong = recordString(item, "wrong");
+ const correct = recordString(item, "correct");
+ const explanation = recordString(item, "explanation_vi");
+ const aspect = recordString(item, "aspect");
+
+ if (recordString(left, "label") || recordString(right, "label")) {
+  return joinLines([
+   aspect ? `**${aspect}**` : undefined,
+   recordString(left, "label") || recordString(left, "value")
+    ? `- ${recordString(left, "label")}: ${recordString(left, "value")}`
+    : undefined,
+   recordString(right, "label") || recordString(right, "value")
+    ? `- ${recordString(right, "label")}: ${recordString(right, "value")}`
+    : undefined,
+  ]);
+ }
+
+ if (wrong || correct) {
+  return joinLines([
+   wrong ? `- Sai: ${wrong}` : undefined,
+   correct ? `- Đúng: ${correct}` : undefined,
+   explanation ? `- Vì sao: ${explanation}` : undefined,
+  ]);
+ }
+
+ return joinLines([
+  recordString(item, "title") || recordString(item, "label"),
+  recordString(item, "content_vi") || recordString(item, "meaning_vi"),
+  recordString(item, "note_vi") || recordString(item, "explanation_vi"),
+ ]).map((line) => `- ${line}`);
 }
 
 function renderGrammarPoint(item: GrammarPoint) {
@@ -599,13 +683,14 @@ function renderLessonOverviewMarkdown(
  fallbackIntro: string,
 ) {
  if (!lessonDocument) return fallbackIntro;
+ const lessonMeta = getHanyuLessonMeta(lessonDocument);
 
  return [
   joinLines([
    markdownHeading(2, "Thông tin bài học"),
-   lessonDocument.source.volume_vi,
-   lessonDocument.source.lesson_title_pinyin,
-   lessonDocument.source.lesson_title_vi,
+   lessonMeta.volumeVi,
+   lessonMeta.titlePinyin,
+   lessonMeta.titleVi,
   ]).join("\n\n"),
   ...lessonDocument.lesson.sections
    .sort((a, b) => a.order - b.order)
@@ -629,7 +714,9 @@ function getEntryTitleZh(entry: RuntimeLessonEntry) {
 
 function getEntrySourceFile(entry: RuntimeLessonEntry) {
  const sourceFiles =
-  entry.lessonDocument?.source.source_files ||
+  (entry.lessonDocument
+   ? getHanyuLessonMeta(entry.lessonDocument).sourceFiles
+   : undefined) ||
   entry.vocabLesson?.source.source_files;
 
  return sourceFiles?.map((file) => file.name).join(", ") || "";
@@ -637,7 +724,7 @@ function getEntrySourceFile(entry: RuntimeLessonEntry) {
 
 function getEntryOverviewNote(entry: RuntimeLessonEntry) {
  return (
-  entry.lessonDocument?.source.lesson_title_vi ||
+  (entry.lessonDocument ? getHanyuLessonMeta(entry.lessonDocument).titleVi : "") ||
   entry.vocabLesson?.overview.note_vi ||
   ""
  );
@@ -664,10 +751,14 @@ function buildLessonSummary(entry: RuntimeLessonEntry): HanziHomeLesson {
  const lessonNumber = entry.lessonNumber;
  const bookMeta = getBookMeta(entry.runtime.courseId, lessonNumber);
  const lessonId = getEntryLessonId(entry);
+ const lessonMeta = entry.lessonDocument
+  ? getHanyuLessonMeta(entry.lessonDocument)
+  : null;
  const grammar = buildGrammarViewModels(entry, lessonId);
 
  return {
   id: lessonId,
+  legacyLessonId: lessonMeta?.legacyId || undefined,
   lessonNumber,
   titleZh: getEntryTitleZh(entry),
   title: `Bài ${lessonNumber}: ${getEntryTitleZh(entry)}`,

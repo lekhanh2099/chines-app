@@ -58,11 +58,6 @@ export function GrammarPointReader({
       <h2 className="text-2xl font-black tracking-normal text-text-primary">
        {point.cleanTitle}
       </h2>
-      {point.core && (
-       <p className="text-sm leading-relaxed text-text-secondary">
-        {point.core}
-       </p>
-      )}
      </div>
      <div className="flex flex-wrap gap-2">
       <Button variant={bookmarked ? "default" : "outline"} onClick={onBookmark}>
@@ -97,22 +92,54 @@ export function GrammarPointReader({
  );
 }
 
-function StructuredGrammarContent({ point }: { point: GrammarViewModel }) {
+export function StructuredGrammarContent({
+ point,
+ exampleLimit,
+}: {
+ point: GrammarViewModel;
+ exampleLimit?: number;
+}) {
  const hasExampleDetailSection = Boolean(
   point.detailSections?.some((section) =>
    section.title.toLocaleLowerCase("vi-VN").includes("ví dụ"),
   ),
  );
+ const detailSections = (point.detailSections ?? []).filter(
+  (section) =>
+   section.lines.length > 0 && !isDuplicateCoreSection(section, point.core),
+ );
+ const examples =
+  typeof exampleLimit === "number"
+   ? point.examplesParsed.slice(0, exampleLimit)
+   : point.examplesParsed;
 
  return (
-  <>
+  <div className="grid gap-4">
+   {point.core && (
+    <section className="rounded-2xl border border-accent/25 bg-accent-subtle/60 p-4 shadow-theme-sm">
+     <p className="text-xs font-black uppercase tracking-[0.18em] text-accent-text">
+      Ý nghĩa cốt lõi
+     </p>
+     <p className="mt-2 text-base font-bold leading-relaxed text-text-primary">
+      {point.core}
+     </p>
+    </section>
+   )}
+
    {point.structuresView.length > 0 && (
-    <section className="grid gap-2">
-     <h3 className="text-base font-black text-text-primary">Công thức</h3>
+    <section className="grid gap-2 rounded-2xl border border-info/30 bg-info-subtle/45 p-4">
+     <div>
+      <p className="text-xs font-black uppercase tracking-[0.18em] text-info-text">
+       Công thức
+      </p>
+      <h3 className="text-lg font-black text-text-primary">
+       Mẫu cần nhớ
+      </h3>
+     </div>
      {point.structuresView.map((structure) => (
       <p
        key={structure}
-       className="rounded-xl border border-info/30 bg-info-subtle p-4 text-base font-black text-info-text"
+       className="rounded-xl border border-info/40 bg-bg-primary px-4 py-3 font-mono text-base font-black leading-relaxed text-info-text shadow-theme-sm"
       >
        {structure}
       </p>
@@ -120,32 +147,31 @@ function StructuredGrammarContent({ point }: { point: GrammarViewModel }) {
     </section>
    )}
 
-   {point.detailSections && point.detailSections.length > 0 && (
+   {detailSections.length > 0 && (
     <section className="grid gap-2">
      <h3 className="text-base font-black text-text-primary">Chi tiết</h3>
-     {point.detailSections.map((section) => (
-      <div
-       key={section.key}
-       className="grid gap-2 rounded-xl border border-border-default bg-bg-subtle p-3"
-      >
-       <h4 className="text-sm font-black text-text-primary">{section.title}</h4>
-       <MarkdownContent content={section.lines.join("\n")} />
-      </div>
+     {detailSections.map((section) => (
+      <GrammarDetailSectionCard key={section.key} section={section} />
      ))}
     </section>
    )}
 
-   {!hasExampleDetailSection && point.examplesParsed.length > 0 && (
+   {!hasExampleDetailSection && examples.length > 0 && (
     <section className="grid gap-2">
      <h3 className="text-base font-black text-text-primary">Ví dụ nhanh</h3>
-     {point.examplesParsed.map((example) => (
+     {examples.map((example) => (
       <div
        key={`${example.zh}-${example.vi}`}
-       className="rounded-xl bg-bg-subtle p-3"
+       className="rounded-xl border border-border-subtle bg-bg-subtle p-3"
       >
-       <p className="font-black leading-relaxed text-text-primary">
+       <p className="text-base font-black leading-relaxed text-text-primary">
         {example.zh}
        </p>
+       {example.pinyin && (
+        <p className="text-xs font-semibold leading-relaxed text-info-text">
+         {example.pinyin}
+        </p>
+       )}
        {example.vi && (
         <p className="text-sm font-semibold leading-relaxed text-text-secondary">
          {example.vi}
@@ -166,6 +192,91 @@ function StructuredGrammarContent({ point }: { point: GrammarViewModel }) {
      ))}
     </section>
    )}
-  </>
+  </div>
  );
+}
+
+type GrammarDetailSection = NonNullable<
+ GrammarViewModel["detailSections"]
+>[number];
+
+function GrammarDetailSectionCard({
+ section,
+}: {
+ section: GrammarDetailSection;
+}) {
+ const importantLines = section.lines.filter(isImportantGrammarLine);
+ const bodyLines = section.lines.filter((line) => !isImportantGrammarLine(line));
+
+ return (
+  <div className="grid gap-3 rounded-xl border border-border-default bg-bg-subtle p-3">
+   <h4 className="text-sm font-black text-text-primary">{section.title}</h4>
+
+   {importantLines.length > 0 && (
+    <div className="grid gap-2">
+     {importantLines.map((line) => {
+      const parts = splitImportantGrammarLine(line);
+
+      return (
+       <div
+        key={line}
+        className="rounded-xl border border-info/30 bg-bg-primary px-3 py-2 shadow-theme-sm"
+       >
+        {parts.label && (
+         <p className="text-xs font-black uppercase tracking-[0.16em] text-info-text">
+          {parts.label}
+         </p>
+        )}
+        <p className="mt-1 font-mono text-sm font-black leading-relaxed text-text-primary">
+         {parts.value}
+        </p>
+       </div>
+      );
+     })}
+    </div>
+   )}
+
+   {bodyLines.length > 0 && (
+    <MarkdownContent content={bodyLines.join("\n")} className="gap-2" />
+   )}
+  </div>
+ );
+}
+
+function normalizeGrammarText(value: string) {
+ return value
+  .replace(/[#*_`>-]/g, "")
+  .replace(/\s+/g, " ")
+  .trim()
+  .toLocaleLowerCase("vi-VN");
+}
+
+function isDuplicateCoreSection(section: GrammarDetailSection, core: string) {
+ const normalizedCore = normalizeGrammarText(core);
+ if (!normalizedCore) return false;
+
+ const normalizedSection = normalizeGrammarText(section.lines.join(" "));
+ if (normalizedSection === normalizedCore) return true;
+
+ const normalizedTitle = normalizeGrammarText(section.title);
+ return (
+  normalizedTitle.includes("bản chất") &&
+  normalizedSection.includes(normalizedCore) &&
+  normalizedSection.length <= normalizedCore.length + 32
+ );
+}
+
+function isImportantGrammarLine(line: string) {
+ return /^(cấu trúc|công thức|pattern|mẫu câu|句型|结构|格式)\s*[:：]/i.test(
+  line.trim(),
+ );
+}
+
+function splitImportantGrammarLine(line: string) {
+ const match = /^([^:：]{1,32})[:：]\s*(.+)$/.exec(line.trim());
+
+ return {
+  label: match?.[1]?.trim(),
+  value: match?.[2]?.trim() || line.trim(),
+ };
 }

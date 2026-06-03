@@ -340,7 +340,11 @@ function LessonSplitNoteEditor({
 }
 
 export function LessonNoteAccessCard({ lesson }: LessonNoteAccessCardProps) {
- const linkedNoteQuery = useLessonLinkedNote(lesson.id, "main");
+ const linkedNoteQuery = useLessonLinkedNote(
+  lesson.id,
+  "main",
+  lesson.legacyLessonId ? [lesson.legacyLessonId] : [],
+ );
  const createNoteMutation = useCreateLessonLinkedNote();
 
  const note = linkedNoteQuery.data;

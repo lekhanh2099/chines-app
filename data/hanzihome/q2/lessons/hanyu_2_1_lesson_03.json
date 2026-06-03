@@ -1,66 +1,6 @@
 {
-  "schema_version": "2.3.0",
-  "content_type": "chinese_textbook_lesson",
-  "verification_status": "verified",
-  "source": {
-    "book": "Hanyu Jiaocheng",
-    "volume": "第二册上",
-    "volume_vi": "Quyển 2 Thượng",
-    "lesson_index": 3,
-    "lesson_number_cn": "第三课",
-    "lesson_title_cn": "我吃了早饭就来了",
-    "lesson_title_pinyin": "Wǒ chī le zǎofàn jiù lái le",
-    "lesson_title_vi": "Tôi ăn sáng xong thì đến",
-    "lesson_title_en": "I came right after breakfast",
-    "source_files": [
-      {
-        "name": "Hanyu Jiaocheng 2-1.pdf",
-        "type": "pdf_scan",
-        "source_origin": "textbook",
-        "check_needed": true,
-        "page_start": 35,
-        "page_end": 48
-      },
-      {
-        "name": "Tong_hop_tu_vung_Han_ngu_quyen_2_Bai_1-25.docx",
-        "type": "uploaded_crosscheck",
-        "source_origin": "uploaded_crosscheck",
-        "check_needed": false
-      },
-      {
-        "name": "Học kì 2 上-下.md",
-        "type": "uploaded_crosscheck",
-        "source_origin": "uploaded_crosscheck",
-        "check_needed": false
-      },
-      {
-        "name": "hanyu_lesson_full_coverage_sample_v2_3_0.json",
-        "type": "structure_sample",
-        "source_origin": "uploaded_crosscheck",
-        "check_needed": false
-      },
-      {
-        "name": "hanyuLesson.schema.v2.3.0.full.ts",
-        "type": "schema",
-        "source_origin": "uploaded_crosscheck",
-        "check_needed": false
-      }
-    ],
-    "web_crosscheck": [
-      {
-        "title": "LingQ - 28-1 我吃了早饭就来了",
-        "source_origin": "web_crosscheck",
-        "note": "Dùng phụ trợ để đối chiếu bài khóa; không thay thế PDF."
-      },
-      {
-        "title": "Scribd - ANSWER Hanyu Jiaocheng 2A",
-        "source_origin": "web_crosscheck",
-        "note": "Dùng phụ trợ cho đáp án reading; không thay thế PDF."
-      }
-    ]
-  },
   "lesson": {
-    "id": "hanyu_2_1_lesson_03",
+    "id": "828d9720-d3be-49b5-abc1-59e868ee312e",
     "title": {
       "zh": "我吃了早饭就来了",
       "pinyin": "Wǒ chī le zǎofàn jiù lái le",
@@ -75,7 +15,7 @@
     ],
     "sections": [
       {
-        "id": "section_01_text",
+        "id": "a6c0d522-99be-4f36-881c-b9b2c6beeb85",
         "type": "text",
         "order": 1,
         "title": "课文",
@@ -84,7 +24,7 @@
         "check_needed": false,
         "blocks": [
           {
-            "id": "text_01",
+            "id": "e155d5ea-f89d-45f0-ab8d-094ce9e719f0",
             "type": "text_dialogue",
             "order": 1,
             "title": "我吃了早饭就来了",
@@ -94,202 +34,189 @@
             "summary_vi": "小张 muốn thuê nhà gần công ty hơn nên đi xem nhà với nhân viên môi giới.",
             "lines": [
               {
-                "id": "text_01_line_01",
+                "id": "5bc5cead-21f5-4b69-8457-1830793084f6",
                 "order": 1,
                 "speaker": "",
                 "zh": "小张住的地方离公司太远，他想租一套近点儿的房子。今天他休息，又去看房子了。",
                 "pinyin": "",
                 "vi": "Tiểu Trương ở quá xa công ty, nên anh ấy muốn thuê một căn nhà gần hơn một chút. Hôm nay anh ấy nghỉ, lại đi xem nhà.",
                 "grammar_refs": [
-                  "grammar_01"
+                  "f8ec59f3-898a-47b2-b536-44dfd8183393"
                 ],
                 "vocab_refs": [
-                  "vocab_001",
-                  "vocab_004"
+                  "68c05a12-9d8e-45d9-a413-786bcf2f780a",
+                  "3dc505f1-bc0e-4a96-b448-17fed89fdc60"
                 ],
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "a94357b5-460f-40bb-a8d9-ea5fc1d0d29a"
+                "check_needed": false
               },
               {
-                "id": "text_01_line_02",
+                "id": "32240d19-9736-4970-a8ee-cc2ff820a4e2",
                 "order": 2,
                 "speaker": "业务员",
                 "zh": "张先生，这么早！",
                 "pinyin": "",
                 "vi": "Anh Trương, sớm thế!",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "5ac62c94-0305-4f4b-9d72-599851afc409"
+                "check_needed": false
               },
               {
-                "id": "text_01_line_03",
+                "id": "e3404efe-2151-4299-93a0-6afe6e9f9bb0",
                 "order": 3,
                 "speaker": "小张",
                 "zh": "是啊。我吃了早饭就来了。",
                 "pinyin": "",
                 "vi": "Đúng vậy. Tôi ăn sáng xong là đến ngay.",
                 "grammar_refs": [
-                  "grammar_01"
+                  "f8ec59f3-898a-47b2-b536-44dfd8183393"
                 ],
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "9957f6a9-82ca-4275-ba86-2a713fdc6a22"
+                "check_needed": false
               },
               {
-                "id": "text_01_line_04",
+                "id": "3db2290a-3b04-44a5-bccf-cbe5fb8b7207",
                 "order": 4,
                 "speaker": "业务员",
                 "zh": "我也是。接了您的电话，八点半就到这儿了。上次您看了几套房子？",
                 "pinyin": "",
                 "vi": "Tôi cũng vậy. Nhận điện thoại của anh xong, tám giờ rưỡi tôi đã đến đây rồi. Lần trước anh đã xem mấy căn nhà?",
                 "grammar_refs": [
-                  "grammar_01"
+                  "f8ec59f3-898a-47b2-b536-44dfd8183393"
                 ],
                 "vocab_refs": [
-                  "vocab_001",
-                  "vocab_004"
+                  "68c05a12-9d8e-45d9-a413-786bcf2f780a",
+                  "3dc505f1-bc0e-4a96-b448-17fed89fdc60"
                 ],
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "fd85a63f-ef55-42ca-a98e-a4e32b1c4b5c"
+                "check_needed": false
               },
               {
-                "id": "text_01_line_05",
+                "id": "e0906c92-5b65-4ff5-85c8-e60165019eff",
                 "order": 5,
                 "speaker": "小张",
                 "zh": "看了三套，都不太满意。有的太小，有的周围环境太乱。",
                 "pinyin": "",
                 "vi": "Tôi xem ba căn, đều không hài lòng lắm. Có căn quá nhỏ, có căn xung quanh môi trường quá lộn xộn.",
                 "vocab_refs": [
-                  "vocab_001",
-                  "vocab_005",
-                  "vocab_006",
-                  "vocab_007",
-                  "vocab_008"
+                  "68c05a12-9d8e-45d9-a413-786bcf2f780a",
+                  "188412d4-4c23-4d60-b7b2-21f3490199e7",
+                  "5ea44727-d97c-467b-b1b8-babd195df50d",
+                  "54613016-834a-4fc3-9912-2357a6d27058",
+                  "0da97406-c3ac-4fcb-a51c-398a59c3fbae"
                 ],
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "88778aab-357d-4218-b3aa-30269c7401b7"
+                "check_needed": false
               },
               {
-                "id": "text_01_line_06",
+                "id": "697e8c17-de5e-4230-9758-e5103a9fcc48",
                 "order": 6,
                 "speaker": "业务员",
                 "zh": "我再带您去看几套吧。",
                 "pinyin": "",
                 "vi": "Để tôi lại dẫn anh đi xem thêm mấy căn nhé.",
                 "vocab_refs": [
-                  "vocab_001"
+                  "68c05a12-9d8e-45d9-a413-786bcf2f780a"
                 ],
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "8ed621a0-40ee-442c-be66-b2646e6fb644"
+                "check_needed": false
               },
               {
-                "id": "text_01_line_07",
+                "id": "85a6a6d4-4fe7-434d-865f-81501ecf7f4b",
                 "order": 7,
                 "speaker": "",
                 "zh": "看了房子以后。",
                 "pinyin": "",
                 "vi": "Sau khi xem nhà xong.",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "1b592fa6-0573-490d-a96f-ad13293293d9"
+                "check_needed": false
               },
               {
-                "id": "text_01_line_08",
+                "id": "fad45bf0-e51a-4400-8b0b-fc3c23e07e11",
                 "order": 8,
                 "speaker": "小张",
                 "zh": "这几套房子，厨房、卧室还可以，但是客厅面积小了点儿。有没有大一点儿的？",
                 "pinyin": "",
                 "vi": "Mấy căn nhà này, nhà bếp và phòng ngủ thì tạm được, nhưng diện tích phòng khách hơi nhỏ một chút. Có căn nào lớn hơn một chút không?",
                 "grammar_refs": [
-                  "note_01",
-                  "grammar_03"
+                  "63d654f5-4561-4d48-a144-bacbf9671dfc",
+                  "fa804fff-372b-4874-8571-f54e613d7e07"
                 ],
                 "vocab_refs": [
-                  "vocab_009",
-                  "vocab_010",
-                  "vocab_011",
-                  "vocab_012"
+                  "54b36889-82be-485b-8342-fb8aab572065",
+                  "1354b1a3-93cc-4505-8d7f-c5550a1d6ae9",
+                  "f0684cb3-4577-4e6c-9f22-7d97c89692b3",
+                  "d5b362a7-c8f6-4f25-b2b5-0f1749c8afbb"
                 ],
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "10ce60c4-eca8-4a3c-80ea-4097d365c0ea"
+                "check_needed": false
               },
               {
-                "id": "text_01_line_09",
+                "id": "895f5704-916e-4ec1-888f-a25e9f14643b",
                 "order": 9,
                 "speaker": "业务员",
                 "zh": "有，楼上18层有一套，客厅30多平（方）米。咱们上去看看吧。",
                 "pinyin": "",
                 "vi": "Có, trên tầng 18 có một căn, phòng khách hơn 30 mét vuông. Chúng ta lên xem thử nhé.",
                 "vocab_refs": [
-                  "vocab_002",
-                  "vocab_003",
-                  "vocab_001",
-                  "vocab_011",
-                  "vocab_013",
-                  "vocab_014"
+                  "8c18cf3c-e9dc-42e1-8faf-eb26799cabab",
+                  "1fbd69b7-603a-44ea-8d57-10cd4def9ced",
+                  "68c05a12-9d8e-45d9-a413-786bcf2f780a",
+                  "f0684cb3-4577-4e6c-9f22-7d97c89692b3",
+                  "7eccd5e8-dac0-4f36-be2e-abcc0a2bdfcd",
+                  "91fa9f81-e5ef-4c4a-b29c-c4b6daa02196"
                 ],
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "bdbd86fa-15ca-4f85-acd9-93ecb5b6fe94"
+                "check_needed": false
               },
               {
-                "id": "text_01_line_10",
+                "id": "ee57387d-1b7b-4282-80ba-5470ca982140",
                 "order": 10,
                 "speaker": "小张",
                 "zh": "这套房子下午就没有阳光了吧？",
                 "pinyin": "",
                 "vi": "Căn nhà này buổi chiều là không có nắng nữa phải không?",
                 "grammar_refs": [
-                  "grammar_01"
+                  "f8ec59f3-898a-47b2-b536-44dfd8183393"
                 ],
                 "vocab_refs": [
-                  "vocab_016"
+                  "be7a835d-ff8f-4a86-9fd8-27c5f1093f0c"
                 ],
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "c8eb9905-80ed-415e-a0f0-d15bae2e33db"
+                "check_needed": false
               },
               {
-                "id": "text_01_line_11",
+                "id": "ce649381-34e2-42eb-8384-b70fe6d0ca45",
                 "order": 11,
                 "speaker": "业务员",
                 "zh": "是的。",
                 "pinyin": "",
                 "vi": "Đúng vậy.",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "52af3272-16d3-4400-9bee-c2c8b502e547"
+                "check_needed": false
               },
               {
-                "id": "text_01_line_12",
+                "id": "913797d7-07ef-462d-978d-f151a164d2dc",
                 "order": 12,
                 "speaker": "小张",
                 "zh": "我还是想要上下午都有阳光的。",
                 "pinyin": "",
                 "vi": "Tôi vẫn muốn căn mà sáng chiều đều có nắng.",
                 "grammar_refs": [
-                  "note_02"
+                  "7e2ee128-4fbd-4a93-898c-5f5fd99b371b"
                 ],
                 "vocab_refs": [
-                  "vocab_016",
-                  "vocab_018"
+                  "be7a835d-ff8f-4a86-9fd8-27c5f1093f0c",
+                  "ff3e1818-66a9-4532-880b-02c9cacb0e5b"
                 ],
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "7764719d-2d46-467e-967a-261a04aeef95"
+                "check_needed": false
               }
             ],
             "paragraphs": [],
-            "comprehension_questions": [],
-            "uuid": "2cc4efb7-d5e2-4995-9f2d-93ddf485faa3"
+            "comprehension_questions": []
           },
           {
-            "id": "text_02",
+            "id": "0156dd39-d5b4-41f5-866d-d336dd29bbc2",
             "type": "text_dialogue",
             "order": 2,
             "title": "我早就下班了",
@@ -299,89 +226,84 @@
             "summary_vi": "小张 nói chuyện với vợ về căn nhà vừa xem, tiền thuê, môi trường và giao thông.",
             "lines": [
               {
-                "id": "text_02_line_01",
+                "id": "3c27c086-abbc-4087-b6e9-13d418c36c9d",
                 "order": 1,
                 "speaker": "",
                 "zh": "小张的妻子回来了。",
                 "pinyin": "",
                 "vi": "Vợ của Tiểu Trương về nhà.",
                 "vocab_refs": [
-                  "vocab_019"
+                  "0125bdae-fe4e-48fb-8264-145e95c75933"
                 ],
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "356960fe-624e-4290-abe3-c3587ea60547"
+                "check_needed": false
               },
               {
-                "id": "text_02_line_02",
+                "id": "a2868604-5679-4808-917d-2d87fdd4f798",
                 "order": 2,
                 "speaker": "小张",
                 "zh": "怎么现在才下班？",
                 "pinyin": "",
                 "vi": "Sao bây giờ em mới tan làm?",
                 "grammar_refs": [
-                  "grammar_01"
+                  "f8ec59f3-898a-47b2-b536-44dfd8183393"
                 ],
                 "vocab_refs": [
-                  "vocab_022"
+                  "c99a633b-27a2-429b-a139-44113a84c189"
                 ],
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "609ce11c-2006-4693-b67e-def748a89aa7"
+                "check_needed": false
               },
               {
-                "id": "text_02_line_03",
+                "id": "87328fc8-0572-4efa-9beb-80daa037b578",
                 "order": 3,
                 "speaker": "妻子",
                 "zh": "我早就下班了。路上堵车堵得厉害。我下了班就往回赶，到现在才到家。你今天看了几套房子？",
                 "pinyin": "",
                 "vi": "Em tan làm từ lâu rồi. Trên đường kẹt xe dữ quá. Em tan làm là vội về ngay, đến bây giờ mới tới nhà. Hôm nay anh xem mấy căn nhà?",
                 "grammar_refs": [
-                  "grammar_01"
+                  "f8ec59f3-898a-47b2-b536-44dfd8183393"
                 ],
                 "vocab_refs": [
-                  "vocab_020",
-                  "vocab_021",
-                  "vocab_022"
+                  "689eb64b-5d4f-469f-9afa-74017d399614",
+                  "d45d5488-9293-41ae-9deb-1e5b51cee446",
+                  "c99a633b-27a2-429b-a139-44113a84c189"
                 ],
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "9ef67466-0e65-482d-a75e-c5e9ce06aad6"
+                "check_needed": false
               },
               {
-                "id": "text_02_line_04",
+                "id": "9e143bd6-8273-4480-beea-b87921f0d67e",
                 "order": 4,
                 "speaker": "小张",
                 "zh": "看了七八套。有一套我觉得不错。等你休息的时候，再一起去看看。要是你也满意，咱们就租了。",
                 "pinyin": "",
                 "vi": "Anh xem bảy tám căn. Có một căn anh thấy khá được. Khi nào em nghỉ, mình lại cùng đi xem. Nếu em cũng hài lòng, chúng ta thuê luôn.",
                 "grammar_refs": [
-                  "grammar_02"
+                  "57b14753-688a-41b6-9e0d-b61dbbf574d7"
                 ],
                 "vocab_refs": [
-                  "vocab_001",
-                  "vocab_023"
+                  "68c05a12-9d8e-45d9-a413-786bcf2f780a",
+                  "79358c6f-3427-4c28-98f3-7ef98c7033c3"
                 ],
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "301ef397-64c5-4c48-a92d-607f7b8b4915"
+                "check_needed": false
               },
               {
-                "id": "text_02_line_05",
+                "id": "f58c9b6a-b3fa-489c-8ef6-7980b04b87a8",
                 "order": 5,
                 "speaker": "妻子",
                 "zh": "房租多少钱？",
                 "pinyin": "",
                 "vi": "Tiền thuê nhà bao nhiêu?",
                 "vocab_refs": [
-                  "vocab_025"
+                  "c43cedbf-7024-4ec1-922f-e75119114baf"
                 ],
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "4dba1e7f-f212-4f64-ba3f-317ed94b5671"
+                "check_needed": false
               },
               {
-                "id": "text_02_line_06",
+                "id": "58e383aa-03fb-4168-b559-8bebcf38414c",
                 "order": 6,
                 "speaker": "小张",
                 "zh": "一个月五千块。",
@@ -389,119 +311,110 @@
                 "vi": "Một tháng năm nghìn tệ.",
                 "source_origin": "textbook",
                 "check_needed": true,
-                "note_vi": "Số tiền trong các bản phụ có thể khác; cần kiểm tra lại PDF scan nếu cần tuyệt đối.",
-                "uuid": "f45d75ca-1403-405d-b7f7-76158fa57aab"
+                "note_vi": "Số tiền trong các bản phụ có thể khác; cần kiểm tra lại PDF scan nếu cần tuyệt đối."
               },
               {
-                "id": "text_02_line_07",
+                "id": "40414355-f8ce-4ba8-8778-08c6147e478c",
                 "order": 7,
                 "speaker": "妻子",
                 "zh": "怎么这么贵？",
                 "pinyin": "",
                 "vi": "Sao đắt thế?",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "50fbd0a6-695a-4702-a318-04a340db1ab8"
+                "check_needed": false
               },
               {
-                "id": "text_02_line_08",
+                "id": "ff1b6429-b216-4fe2-99ee-2aa3b42b374f",
                 "order": 8,
                 "speaker": "小张",
                 "zh": "虽然贵了点儿，但是房子真好。",
                 "pinyin": "",
                 "vi": "Tuy hơi đắt một chút, nhưng căn nhà thật sự tốt.",
                 "grammar_refs": [
-                  "grammar_03"
+                  "fa804fff-372b-4874-8571-f54e613d7e07"
                 ],
                 "vocab_refs": [
-                  "vocab_026",
-                  "vocab_027"
+                  "d9991c79-3454-4247-bf18-f14f43b4a24a",
+                  "55cd807c-eec7-412d-99db-f4e6508b170f"
                 ],
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "6c4218f8-86ce-4b8b-9aa1-31f2230c499e"
+                "check_needed": false
               },
               {
-                "id": "text_02_line_09",
+                "id": "27996fac-9247-4d26-b4af-23257b1221f3",
                 "order": 9,
                 "speaker": "妻子",
                 "zh": "周围环境怎么样？",
                 "pinyin": "",
                 "vi": "Môi trường xung quanh thế nào?",
                 "vocab_refs": [
-                  "vocab_006",
-                  "vocab_007"
+                  "5ea44727-d97c-467b-b1b8-babd195df50d",
+                  "54613016-834a-4fc3-9912-2357a6d27058"
                 ],
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "83ab94cf-9da8-43d8-8f74-adc37690942e"
+                "check_needed": false
               },
               {
-                "id": "text_02_line_10",
+                "id": "4f913244-329b-4ecd-a472-f1209c444dbd",
                 "order": 10,
                 "speaker": "小张",
                 "zh": "环境特别好。西边是山，山下边有一条小河，河边是一个很大的公园。周围非常安静。",
                 "pinyin": "",
                 "vi": "Môi trường đặc biệt tốt. Phía tây là núi, dưới chân núi có một con sông nhỏ, bên bờ sông là một công viên rất lớn. Xung quanh rất yên tĩnh.",
                 "vocab_refs": [
-                  "vocab_007",
-                  "vocab_028",
-                  "vocab_029"
+                  "54613016-834a-4fc3-9912-2357a6d27058",
+                  "085e60d5-dd1c-4585-ac6b-0f1db0ded936",
+                  "ba7ff0f9-b633-4516-ab3d-22b96046a1cf"
                 ],
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "01d639f7-a8f4-4e47-94d2-965a3eadac94"
+                "check_needed": false
               },
               {
-                "id": "text_02_line_11",
+                "id": "ccbbe354-225c-4255-ba75-a9dd20bd4445",
                 "order": 11,
                 "speaker": "妻子",
                 "zh": "交通方便不方便？",
                 "pinyin": "",
                 "vi": "Giao thông có tiện không?",
                 "vocab_refs": [
-                  "vocab_030",
-                  "vocab_031"
+                  "2185ee67-885d-4ffb-83e2-e97be4070796",
+                  "092a8c16-3739-4685-a4c0-39365071bd48"
                 ],
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "a0e7cfb3-ffea-46ad-869c-de888032f57d"
+                "check_needed": false
               },
               {
-                "id": "text_02_line_12",
+                "id": "f5f38cbd-5f83-45dd-9527-0d84520b1ff1",
                 "order": 12,
                 "speaker": "小张",
                 "zh": "交通很方便。楼下就有公共汽车站，坐车十分钟就到公司了。汽车站旁边就是地铁站。附近有学校、医院和体育馆……",
                 "pinyin": "",
                 "vi": "Giao thông rất thuận tiện. Ngay dưới lầu có trạm xe buýt, ngồi xe mười phút là đến công ty. Bên cạnh trạm xe chính là ga tàu điện ngầm. Gần đó có trường học, bệnh viện và nhà thi đấu…",
                 "grammar_refs": [
-                  "grammar_01"
+                  "f8ec59f3-898a-47b2-b536-44dfd8183393"
                 ],
                 "vocab_refs": [
-                  "vocab_030",
-                  "vocab_031",
-                  "vocab_033",
-                  "vocab_034",
-                  "vocab_035",
-                  "vocab_036",
-                  "vocab_037",
-                  "vocab_038",
-                  "vocab_039"
+                  "2185ee67-885d-4ffb-83e2-e97be4070796",
+                  "092a8c16-3739-4685-a4c0-39365071bd48",
+                  "275b46f4-3166-48b7-9766-58384178d1be",
+                  "1190511f-5970-4304-8f84-d7201b287aeb",
+                  "d42d3d90-443d-45da-bed7-987b50034e92",
+                  "cfb712c9-c4ca-4314-b6b2-696b40ace25e",
+                  "6059829f-ae21-43cf-ac0c-05e19639ec43",
+                  "fefd5441-7b6c-47e3-b823-9e149b947bf7",
+                  "27761bd2-433a-44ef-b79a-9e6f0a34b9c9"
                 ],
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "de9d2903-91a9-4051-9b1e-fdd6115edcb1"
+                "check_needed": false
               }
             ],
             "paragraphs": [],
-            "comprehension_questions": [],
-            "uuid": "a9583c50-2a03-4cf5-bfe1-8e0fc7edc1b7"
+            "comprehension_questions": []
           }
-        ],
-        "uuid": "7734e43f-607b-4605-aeef-bcc12427a049"
+        ]
       },
       {
-        "id": "section_02_vocabulary",
+        "id": "78c30bf4-c314-4c4c-86e3-4dd62382dd78",
         "type": "vocabulary",
         "order": 2,
         "title": "生词",
@@ -510,7 +423,7 @@
         "check_needed": false,
         "items": [
           {
-            "id": "vocab_001",
+            "id": "68c05a12-9d8e-45d9-a413-786bcf2f780a",
             "type": "vocabulary_item",
             "order": 1,
             "hanzi": "套",
@@ -534,11 +447,10 @@
             },
             "audio_key": "",
             "source_origin": "uploaded_crosscheck",
-            "check_needed": false,
-            "uuid": "65914f85-e054-4092-8fc7-f14d41eb78b5"
+            "check_needed": false
           },
           {
-            "id": "vocab_002",
+            "id": "8c18cf3c-e9dc-42e1-8faf-eb26799cabab",
             "type": "vocabulary_item",
             "order": 2,
             "hanzi": "层",
@@ -562,11 +474,10 @@
             },
             "audio_key": "",
             "source_origin": "uploaded_crosscheck",
-            "check_needed": false,
-            "uuid": "f7545002-fc38-459e-aeb5-388924124b1e"
+            "check_needed": false
           },
           {
-            "id": "vocab_003",
+            "id": "1fbd69b7-603a-44ea-8d57-10cd4def9ced",
             "type": "vocabulary_item",
             "order": 3,
             "hanzi": "楼",
@@ -590,11 +501,10 @@
             },
             "audio_key": "",
             "source_origin": "uploaded_crosscheck",
-            "check_needed": false,
-            "uuid": "62eb1da4-477e-4858-8031-efc07aa0d6f3"
+            "check_needed": false
           },
           {
-            "id": "vocab_004",
+            "id": "3dc505f1-bc0e-4a96-b448-17fed89fdc60",
             "type": "vocabulary_item",
             "order": 4,
             "hanzi": "房子",
@@ -618,11 +528,10 @@
             },
             "audio_key": "",
             "source_origin": "uploaded_crosscheck",
-            "check_needed": false,
-            "uuid": "f8672905-5342-4424-a84c-0065ebce358c"
+            "check_needed": false
           },
           {
-            "id": "vocab_005",
+            "id": "188412d4-4c23-4d60-b7b2-21f3490199e7",
             "type": "vocabulary_item",
             "order": 5,
             "hanzi": "有的",
@@ -646,11 +555,10 @@
             },
             "audio_key": "",
             "source_origin": "uploaded_crosscheck",
-            "check_needed": false,
-            "uuid": "a96be243-3b79-48cb-bfd8-190aa7fb5611"
+            "check_needed": false
           },
           {
-            "id": "vocab_006",
+            "id": "5ea44727-d97c-467b-b1b8-babd195df50d",
             "type": "vocabulary_item",
             "order": 6,
             "hanzi": "周围",
@@ -674,11 +582,10 @@
             },
             "audio_key": "",
             "source_origin": "uploaded_crosscheck",
-            "check_needed": false,
-            "uuid": "fec98908-ccc2-4360-a41e-5fc2b1d0b90e"
+            "check_needed": false
           },
           {
-            "id": "vocab_007",
+            "id": "54613016-834a-4fc3-9912-2357a6d27058",
             "type": "vocabulary_item",
             "order": 7,
             "hanzi": "环境",
@@ -702,11 +609,10 @@
             },
             "audio_key": "",
             "source_origin": "uploaded_crosscheck",
-            "check_needed": false,
-            "uuid": "83748f26-d279-4821-8558-481090f0a504"
+            "check_needed": false
           },
           {
-            "id": "vocab_008",
+            "id": "0da97406-c3ac-4fcb-a51c-398a59c3fbae",
             "type": "vocabulary_item",
             "order": 8,
             "hanzi": "乱",
@@ -730,11 +636,10 @@
             },
             "audio_key": "",
             "source_origin": "uploaded_crosscheck",
-            "check_needed": false,
-            "uuid": "fdba11a7-16cd-4842-a189-7d356e650a37"
+            "check_needed": false
           },
           {
-            "id": "vocab_009",
+            "id": "54b36889-82be-485b-8342-fb8aab572065",
             "type": "vocabulary_item",
             "order": 9,
             "hanzi": "厨房",
@@ -758,11 +663,10 @@
             },
             "audio_key": "",
             "source_origin": "uploaded_crosscheck",
-            "check_needed": false,
-            "uuid": "0a44820e-9d02-47a4-a84b-7565befb1783"
+            "check_needed": false
           },
           {
-            "id": "vocab_010",
+            "id": "1354b1a3-93cc-4505-8d7f-c5550a1d6ae9",
             "type": "vocabulary_item",
             "order": 10,
             "hanzi": "卧室",
@@ -786,11 +690,10 @@
             },
             "audio_key": "",
             "source_origin": "uploaded_crosscheck",
-            "check_needed": false,
-            "uuid": "08a91754-095f-4073-af2d-be5cd5ceb5f5"
+            "check_needed": false
           },
           {
-            "id": "vocab_011",
+            "id": "f0684cb3-4577-4e6c-9f22-7d97c89692b3",
             "type": "vocabulary_item",
             "order": 11,
             "hanzi": "客厅",
@@ -814,11 +717,10 @@
             },
             "audio_key": "",
             "source_origin": "uploaded_crosscheck",
-            "check_needed": false,
-            "uuid": "0b07670d-4841-4d8f-86d4-669b6f10fab5"
+            "check_needed": false
           },
           {
-            "id": "vocab_012",
+            "id": "d5b362a7-c8f6-4f25-b2b5-0f1749c8afbb",
             "type": "vocabulary_item",
             "order": 12,
             "hanzi": "面积",
@@ -842,11 +744,10 @@
             },
             "audio_key": "",
             "source_origin": "uploaded_crosscheck",
-            "check_needed": false,
-            "uuid": "b326375a-682f-43f4-8bda-2afe87dbede3"
+            "check_needed": false
           },
           {
-            "id": "vocab_013",
+            "id": "7eccd5e8-dac0-4f36-be2e-abcc0a2bdfcd",
             "type": "vocabulary_item",
             "order": 13,
             "hanzi": "平方米",
@@ -870,11 +771,10 @@
             },
             "audio_key": "",
             "source_origin": "uploaded_crosscheck",
-            "check_needed": false,
-            "uuid": "1927cb45-706d-41f0-b0ea-2dcb5ea1ce5d"
+            "check_needed": false
           },
           {
-            "id": "vocab_014",
+            "id": "91fa9f81-e5ef-4c4a-b29c-c4b6daa02196",
             "type": "vocabulary_item",
             "order": 14,
             "hanzi": "上去",
@@ -898,11 +798,10 @@
             },
             "audio_key": "",
             "source_origin": "uploaded_crosscheck",
-            "check_needed": false,
-            "uuid": "a73dcc15-da70-49cf-a18d-a532a4a2b606"
+            "check_needed": false
           },
           {
-            "id": "vocab_015",
+            "id": "8a5b1d09-23a6-4182-96e6-9bf4d761a1e1",
             "type": "vocabulary_item",
             "order": 15,
             "hanzi": "下去",
@@ -926,11 +825,10 @@
             },
             "audio_key": "",
             "source_origin": "uploaded_crosscheck",
-            "check_needed": false,
-            "uuid": "683befb8-4375-40cd-b957-8decf5a21ecd"
+            "check_needed": false
           },
           {
-            "id": "vocab_016",
+            "id": "be7a835d-ff8f-4a86-9fd8-27c5f1093f0c",
             "type": "vocabulary_item",
             "order": 16,
             "hanzi": "阳光",
@@ -955,11 +853,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook/generated_mixed",
-            "check_needed": true,
-            "uuid": "a4c4f8d2-0d62-4a39-966e-b808e8d8f8e0"
+            "check_needed": true
           },
           {
-            "id": "vocab_017",
+            "id": "7a89dc80-d79d-4c2f-988c-d0f54e240d19",
             "type": "vocabulary_item",
             "order": 17,
             "hanzi": "印象",
@@ -983,11 +880,10 @@
             },
             "audio_key": "",
             "source_origin": "uploaded_crosscheck",
-            "check_needed": false,
-            "uuid": "ca89ccb4-33e7-4025-9eaf-5bc75b43a0ef"
+            "check_needed": false
           },
           {
-            "id": "vocab_018",
+            "id": "ff3e1818-66a9-4532-880b-02c9cacb0e5b",
             "type": "vocabulary_item",
             "order": 18,
             "hanzi": "还是",
@@ -1011,11 +907,10 @@
             },
             "audio_key": "",
             "source_origin": "uploaded_crosscheck",
-            "check_needed": false,
-            "uuid": "749dbef3-f8ef-45ff-b1af-d96427705a05"
+            "check_needed": false
           },
           {
-            "id": "vocab_019",
+            "id": "0125bdae-fe4e-48fb-8264-145e95c75933",
             "type": "vocabulary_item",
             "order": 19,
             "hanzi": "妻子",
@@ -1039,11 +934,10 @@
             },
             "audio_key": "",
             "source_origin": "uploaded_crosscheck",
-            "check_needed": false,
-            "uuid": "8f4a5723-de0d-44ca-8789-b7c952e0a9bf"
+            "check_needed": false
           },
           {
-            "id": "vocab_020",
+            "id": "689eb64b-5d4f-469f-9afa-74017d399614",
             "type": "vocabulary_item",
             "order": 20,
             "hanzi": "堵车",
@@ -1067,11 +961,10 @@
             },
             "audio_key": "",
             "source_origin": "uploaded_crosscheck",
-            "check_needed": false,
-            "uuid": "18f5934e-c8a2-4dac-8310-2c1c9b662656"
+            "check_needed": false
           },
           {
-            "id": "vocab_021",
+            "id": "d45d5488-9293-41ae-9deb-1e5b51cee446",
             "type": "vocabulary_item",
             "order": 21,
             "hanzi": "赶",
@@ -1095,11 +988,10 @@
             },
             "audio_key": "",
             "source_origin": "uploaded_crosscheck",
-            "check_needed": false,
-            "uuid": "0b6df69d-fbac-4785-8a0e-4947dca23c99"
+            "check_needed": false
           },
           {
-            "id": "vocab_022",
+            "id": "c99a633b-27a2-429b-a139-44113a84c189",
             "type": "vocabulary_item",
             "order": 22,
             "hanzi": "才",
@@ -1123,11 +1015,10 @@
             },
             "audio_key": "",
             "source_origin": "uploaded_crosscheck",
-            "check_needed": false,
-            "uuid": "96676c52-8c7f-4ceb-8054-09e57b26b339"
+            "check_needed": false
           },
           {
-            "id": "vocab_023",
+            "id": "79358c6f-3427-4c28-98f3-7ef98c7033c3",
             "type": "vocabulary_item",
             "order": 23,
             "hanzi": "要是",
@@ -1151,11 +1042,10 @@
             },
             "audio_key": "",
             "source_origin": "uploaded_crosscheck",
-            "check_needed": false,
-            "uuid": "a05dd84b-0b47-4887-88d9-ac9112ddfaa5"
+            "check_needed": false
           },
           {
-            "id": "vocab_024",
+            "id": "dc0f8e06-a359-4907-a8d8-fc9b02260590",
             "type": "vocabulary_item",
             "order": 24,
             "hanzi": "组",
@@ -1179,11 +1069,10 @@
             },
             "audio_key": "",
             "source_origin": "uploaded_crosscheck",
-            "check_needed": false,
-            "uuid": "cd5e2486-e967-4c36-be3d-0620c744ea0f"
+            "check_needed": false
           },
           {
-            "id": "vocab_025",
+            "id": "c43cedbf-7024-4ec1-922f-e75119114baf",
             "type": "vocabulary_item",
             "order": 25,
             "hanzi": "房租",
@@ -1207,11 +1096,10 @@
             },
             "audio_key": "",
             "source_origin": "uploaded_crosscheck",
-            "check_needed": false,
-            "uuid": "7e398934-8bbf-4674-9919-77eaf93586ba"
+            "check_needed": false
           },
           {
-            "id": "vocab_026",
+            "id": "d9991c79-3454-4247-bf18-f14f43b4a24a",
             "type": "vocabulary_item",
             "order": 26,
             "hanzi": "虽然",
@@ -1235,11 +1123,10 @@
             },
             "audio_key": "",
             "source_origin": "uploaded_crosscheck",
-            "check_needed": false,
-            "uuid": "20410e25-fd1a-42ef-aa41-1f676a421d27"
+            "check_needed": false
           },
           {
-            "id": "vocab_027",
+            "id": "55cd807c-eec7-412d-99db-f4e6508b170f",
             "type": "vocabulary_item",
             "order": 27,
             "hanzi": "真",
@@ -1263,11 +1150,10 @@
             },
             "audio_key": "",
             "source_origin": "uploaded_crosscheck",
-            "check_needed": false,
-            "uuid": "80fdd921-212c-4f82-acb5-8098ec05d9e2"
+            "check_needed": false
           },
           {
-            "id": "vocab_028",
+            "id": "085e60d5-dd1c-4585-ac6b-0f1db0ded936",
             "type": "vocabulary_item",
             "order": 28,
             "hanzi": "条",
@@ -1291,11 +1177,10 @@
             },
             "audio_key": "",
             "source_origin": "uploaded_crosscheck",
-            "check_needed": false,
-            "uuid": "57ff03cb-03cf-45f0-80e2-7f769af254bc"
+            "check_needed": false
           },
           {
-            "id": "vocab_029",
+            "id": "ba7ff0f9-b633-4516-ab3d-22b96046a1cf",
             "type": "vocabulary_item",
             "order": 29,
             "hanzi": "河",
@@ -1319,11 +1204,10 @@
             },
             "audio_key": "",
             "source_origin": "uploaded_crosscheck",
-            "check_needed": false,
-            "uuid": "b10e1655-f5d7-4d16-93c1-13fea6230d10"
+            "check_needed": false
           },
           {
-            "id": "vocab_030",
+            "id": "2185ee67-885d-4ffb-83e2-e97be4070796",
             "type": "vocabulary_item",
             "order": 30,
             "hanzi": "交通",
@@ -1347,11 +1231,10 @@
             },
             "audio_key": "",
             "source_origin": "uploaded_crosscheck",
-            "check_needed": false,
-            "uuid": "1a5925fb-b66f-4afa-8941-212260be2f1e"
+            "check_needed": false
           },
           {
-            "id": "vocab_031",
+            "id": "092a8c16-3739-4685-a4c0-39365071bd48",
             "type": "vocabulary_item",
             "order": 31,
             "hanzi": "方便",
@@ -1375,11 +1258,10 @@
             },
             "audio_key": "",
             "source_origin": "uploaded_crosscheck",
-            "check_needed": false,
-            "uuid": "a33b2706-f150-48dd-b901-412a2cc90ff0"
+            "check_needed": false
           },
           {
-            "id": "vocab_032",
+            "id": "22e66ee9-565e-4670-b2ac-4d5a9b500b38",
             "type": "vocabulary_item",
             "order": 32,
             "hanzi": "顺便",
@@ -1403,11 +1285,10 @@
             },
             "audio_key": "",
             "source_origin": "uploaded_crosscheck",
-            "check_needed": false,
-            "uuid": "7ccae521-c552-4401-bd6f-a1b47b2e5e96"
+            "check_needed": false
           },
           {
-            "id": "vocab_033",
+            "id": "275b46f4-3166-48b7-9766-58384178d1be",
             "type": "vocabulary_item",
             "order": 33,
             "hanzi": "公共汽车 / 大巴",
@@ -1431,11 +1312,10 @@
             },
             "audio_key": "",
             "source_origin": "uploaded_crosscheck",
-            "check_needed": false,
-            "uuid": "659c8569-b0d4-459a-85cb-3431abf30a78"
+            "check_needed": false
           },
           {
-            "id": "vocab_034",
+            "id": "1190511f-5970-4304-8f84-d7201b287aeb",
             "type": "vocabulary_item",
             "order": 34,
             "hanzi": "站",
@@ -1459,11 +1339,10 @@
             },
             "audio_key": "",
             "source_origin": "uploaded_crosscheck",
-            "check_needed": false,
-            "uuid": "2ad2fdae-d430-4bfa-8a91-042dc941810a"
+            "check_needed": false
           },
           {
-            "id": "vocab_035",
+            "id": "d42d3d90-443d-45da-bed7-987b50034e92",
             "type": "vocabulary_item",
             "order": 35,
             "hanzi": "车站",
@@ -1487,11 +1366,10 @@
             },
             "audio_key": "",
             "source_origin": "uploaded_crosscheck",
-            "check_needed": false,
-            "uuid": "f5db8adb-c7dd-4234-a8e2-79fb9daed28a"
+            "check_needed": false
           },
           {
-            "id": "vocab_036",
+            "id": "cfb712c9-c4ca-4314-b6b2-696b40ace25e",
             "type": "vocabulary_item",
             "order": 36,
             "hanzi": "旁边",
@@ -1515,11 +1393,10 @@
             },
             "audio_key": "",
             "source_origin": "uploaded_crosscheck",
-            "check_needed": false,
-            "uuid": "7c64a2cd-bb87-48eb-b0f7-0f20998c24f8"
+            "check_needed": false
           },
           {
-            "id": "vocab_037",
+            "id": "6059829f-ae21-43cf-ac0c-05e19639ec43",
             "type": "vocabulary_item",
             "order": 37,
             "hanzi": "地铁",
@@ -1543,11 +1420,10 @@
             },
             "audio_key": "",
             "source_origin": "uploaded_crosscheck",
-            "check_needed": false,
-            "uuid": "9ccf6466-9336-4b81-a32b-b9e42b53ef01"
+            "check_needed": false
           },
           {
-            "id": "vocab_038",
+            "id": "fefd5441-7b6c-47e3-b823-9e149b947bf7",
             "type": "vocabulary_item",
             "order": 38,
             "hanzi": "附近",
@@ -1571,11 +1447,10 @@
             },
             "audio_key": "",
             "source_origin": "uploaded_crosscheck",
-            "check_needed": false,
-            "uuid": "5683b481-355d-4a16-869d-85825e5c787c"
+            "check_needed": false
           },
           {
-            "id": "vocab_039",
+            "id": "27761bd2-433a-44ef-b79a-9e6f0a34b9c9",
             "type": "vocabulary_item",
             "order": 39,
             "hanzi": "体育馆",
@@ -1599,11 +1474,10 @@
             },
             "audio_key": "",
             "source_origin": "uploaded_crosscheck",
-            "check_needed": false,
-            "uuid": "333669ce-f269-4de3-b359-911c1bed4e10"
+            "check_needed": false
           },
           {
-            "id": "vocab_040",
+            "id": "861ed325-b320-4ae0-8eac-bb6bb8ebc215",
             "type": "vocabulary_item",
             "order": 40,
             "hanzi": "会话",
@@ -1627,11 +1501,10 @@
             },
             "audio_key": "",
             "source_origin": "uploaded_crosscheck",
-            "check_needed": false,
-            "uuid": "076e8399-5680-4aac-85b6-5d7a7b3eeb39"
+            "check_needed": false
           },
           {
-            "id": "vocab_041",
+            "id": "6fe8f20d-e712-4f0c-9cbc-021aaeb9698c",
             "type": "vocabulary_item",
             "order": 41,
             "hanzi": "解答",
@@ -1655,14 +1528,12 @@
             },
             "audio_key": "",
             "source_origin": "uploaded_crosscheck",
-            "check_needed": false,
-            "uuid": "7beb8e39-ead7-4a0a-a741-a76a91fe3791"
+            "check_needed": false
           }
-        ],
-        "uuid": "a21d3302-a143-4228-b7c7-101478f30c58"
+        ]
       },
       {
-        "id": "section_03_proper_nouns",
+        "id": "3c5ee48e-5d44-44ac-bd53-cac996a83338",
         "type": "proper_nouns",
         "order": 3,
         "title": "专名",
@@ -1670,11 +1541,10 @@
         "source_origin": "textbook",
         "check_needed": false,
         "items": [],
-        "empty_reason_vi": "Bài này không có 专名 riêng biệt trong bảng chính.",
-        "uuid": "3623378c-80fa-405a-8814-94d10743e9ec"
+        "empty_reason_vi": "Bài này không có 专名 riêng biệt trong bảng chính."
       },
       {
-        "id": "section_04_notes",
+        "id": "c18e9f54-6da1-4496-886b-c2c722605678",
         "type": "notes",
         "order": 4,
         "title": "注释",
@@ -1683,7 +1553,7 @@
         "check_needed": false,
         "items": [
           {
-            "id": "note_01",
+            "id": "63d654f5-4561-4d48-a144-bacbf9671dfc",
             "type": "note",
             "order": 1,
             "title": "还可以 / 小了点儿",
@@ -1691,24 +1561,22 @@
             "meaning_vi": "Dùng để đánh giá nhiều mặt: trước nói phần tạm được, sau nêu điểm chưa hài lòng. 了点儿 làm nhận xét mềm hơn, nghĩa là 'hơi... một chút'.",
             "examples": [
               {
-                "id": "note_01_ex_01",
+                "id": "3eca03f3-67c0-40d2-9fee-8e57a4ad43ad",
                 "zh": "这套房子，卧室还可以，但是厨房小了点儿。",
                 "pinyin": "",
                 "vi": "Căn nhà này, phòng ngủ thì tạm được, nhưng nhà bếp hơi nhỏ một chút.",
                 "source_origin": "generated",
-                "check_needed": false,
-                "uuid": "e35c519b-027a-4ce6-b1f7-324bed0303cf"
+                "check_needed": false
               }
             ],
             "source_refs": [
-              "text_01_line_08"
+              "fad45bf0-e51a-4400-8b0b-fc3c23e07e11"
             ],
             "source_origin": "textbook/generated_mixed",
-            "check_needed": false,
-            "uuid": "16fb587d-bb5d-44ab-bb72-1fc30a9de3f4"
+            "check_needed": false
           },
           {
-            "id": "note_02",
+            "id": "7e2ee128-4fbd-4a93-898c-5f5fd99b371b",
             "type": "note",
             "order": 2,
             "title": "还是想要……的",
@@ -1716,27 +1584,24 @@
             "meaning_vi": "Sau khi cân nhắc nhiều lựa chọn, người nói vẫn giữ yêu cầu/lựa chọn ban đầu. 的 thay cho danh từ đã biết phía trước, ở đây là 房子.",
             "examples": [
               {
-                "id": "note_02_ex_01",
+                "id": "6ff01e57-e23b-475e-9cd6-da43acc8bd0a",
                 "zh": "这套房子很便宜，可是我还是想要离公司近一点儿的。",
                 "pinyin": "",
                 "vi": "Căn này rất rẻ, nhưng tôi vẫn muốn căn gần công ty hơn một chút.",
                 "source_origin": "generated",
-                "check_needed": false,
-                "uuid": "34e6ac44-be01-4507-a934-e75f96a4d498"
+                "check_needed": false
               }
             ],
             "source_refs": [
-              "text_01_line_12"
+              "913797d7-07ef-462d-978d-f151a164d2dc"
             ],
             "source_origin": "textbook/generated_mixed",
-            "check_needed": false,
-            "uuid": "b276115f-c4e2-4f35-a601-4401927935c8"
+            "check_needed": false
           }
-        ],
-        "uuid": "88f8ca1a-8afa-4ba8-8cae-c3532726a34a"
+        ]
       },
       {
-        "id": "section_05_grammar",
+        "id": "b045e537-7383-494b-8d61-b0286977ed80",
         "type": "grammar",
         "order": 5,
         "title": "语法 / 词语用法",
@@ -1745,7 +1610,7 @@
         "check_needed": false,
         "items": [
           {
-            "id": "grammar_01",
+            "id": "f8ec59f3-898a-47b2-b536-44dfd8183393",
             "type": "grammar_point",
             "order": 1,
             "title": "就 / 才",
@@ -1759,41 +1624,38 @@
             "check_needed": false,
             "blocks": [
               {
-                "id": "grammar_01_overview",
+                "id": "b7c5d870-2db8-4e2e-950f-f0e6e522ac16",
                 "type": "grammar_overview",
                 "order": 1,
                 "title": "Bản chất",
                 "content_vi": "就 nhấn mạnh sớm, nhanh, dễ đạt hoặc ít hơn dự đoán; 才 nhấn mạnh muộn, chậm, khó hoặc mãi mới đạt.",
                 "examples": [
                   {
-                    "id": "grammar_01_ex_01",
+                    "id": "5e614bf9-2578-4d49-87dc-107e6f3605d4",
                     "zh": "我吃了早饭就来了。",
                     "vi": "Tôi ăn sáng xong là đến ngay.",
                     "highlight": [
                       "就"
                     ],
-                    "source_ref": "text_01_line_03",
+                    "source_ref": "e3404efe-2151-4299-93a0-6afe6e9f9bb0",
                     "source_origin": "textbook",
-                    "check_needed": false,
-                    "uuid": "e0162aac-518f-4fb2-8bf8-c3ef2c7a1025"
+                    "check_needed": false
                   },
                   {
-                    "id": "grammar_01_ex_02",
+                    "id": "7ccdc8f9-59f3-4c7b-bd28-247acb68c535",
                     "zh": "到现在才到家。",
                     "vi": "Đến bây giờ mới về tới nhà.",
                     "highlight": [
                       "才"
                     ],
-                    "source_ref": "text_02_line_03",
+                    "source_ref": "87328fc8-0572-4efa-9beb-80daa037b578",
                     "source_origin": "textbook",
-                    "check_needed": false,
-                    "uuid": "a4034085-fcb5-4371-b2c8-4de58d9649a2"
+                    "check_needed": false
                   }
-                ],
-                "uuid": "24a9144d-ee11-46be-a2f6-f27035fcc775"
+                ]
               },
               {
-                "id": "grammar_01_structure_jiu",
+                "id": "fb42859f-c126-47b9-a3c8-1a04e9b00a76",
                 "type": "grammar_structure",
                 "order": 2,
                 "title": "就 — sớm / nhanh / dễ đạt",
@@ -1801,22 +1663,20 @@
                 "meaning_vi": "Nhấn mạnh sự việc xảy ra sớm, nhanh, hoặc đạt kết quả dễ hơn dự đoán.",
                 "examples": [
                   {
-                    "id": "grammar_01_ex_03",
+                    "id": "d84397d0-7b22-492a-a594-cb58d4dd46e0",
                     "zh": "坐车十分钟就到公司了。",
                     "vi": "Ngồi xe mười phút là tới công ty.",
                     "highlight": [
                       "就"
                     ],
-                    "source_ref": "text_02_line_12",
+                    "source_ref": "f5f38cbd-5f83-45dd-9527-0d84520b1ff1",
                     "source_origin": "textbook",
-                    "check_needed": false,
-                    "uuid": "2946a962-4ab5-401a-a1e6-36e155500534"
+                    "check_needed": false
                   }
-                ],
-                "uuid": "21c42387-25f1-4ff6-b8e8-2ce08c8b8466"
+                ]
               },
               {
-                "id": "grammar_01_structure_cai",
+                "id": "83b8d40e-f680-4f94-a9ab-f01134f4fd06",
                 "type": "grammar_structure",
                 "order": 3,
                 "title": "才 — muộn / mãi mới / chỉ mới",
@@ -1824,21 +1684,19 @@
                 "meaning_vi": "Nhấn mạnh sự việc xảy ra muộn, chậm, hoặc phải qua một quá trình mới đạt được.",
                 "examples": [
                   {
-                    "id": "grammar_01_ex_04",
+                    "id": "3c9a4bcc-7b95-4fbf-a27e-833a24841a8b",
                     "zh": "我等了半个小时，他才来。",
                     "vi": "Tôi đợi nửa tiếng, anh ấy mới đến.",
                     "highlight": [
                       "才"
                     ],
                     "source_origin": "generated",
-                    "check_needed": false,
-                    "uuid": "2e21ef02-44d8-4a77-8549-9c577ac429a8"
+                    "check_needed": false
                   }
-                ],
-                "uuid": "8a58b751-8753-457e-a194-6d2f3ca80d62"
+                ]
               },
               {
-                "id": "grammar_01_compare",
+                "id": "4ee92015-4c05-4b76-8808-3deca4d7b66a",
                 "type": "grammar_compare",
                 "order": 4,
                 "title": "So sánh nhanh",
@@ -1876,14 +1734,12 @@
                       "value": "八点才到公司。"
                     }
                   }
-                ],
-                "uuid": "17a8a688-5804-4817-91a8-4a4cbb3d3362"
+                ]
               }
-            ],
-            "uuid": "5f5a2c42-f1bc-4819-9045-b146f0e3e5f5"
+            ]
           },
           {
-            "id": "grammar_02",
+            "id": "57b14753-688a-41b6-9e0d-b61dbbf574d7",
             "type": "grammar_point",
             "order": 2,
             "title": "要是……就……",
@@ -1897,30 +1753,28 @@
             "check_needed": false,
             "blocks": [
               {
-                "id": "grammar_02_overview",
+                "id": "470b1ca1-e0a1-449f-b55e-a8aa481a4dd4",
                 "type": "grammar_overview",
                 "order": 1,
                 "title": "Bản chất",
                 "content_vi": "要是 đưa ra giả thiết, 就 dẫn ra kết quả. Gần nghĩa với 如果……就…… nhưng khẩu ngữ hơn.",
                 "examples": [
                   {
-                    "id": "grammar_02_ex_01",
+                    "id": "c8674d77-7e1f-44f8-9e45-e0a03accdc05",
                     "zh": "要是你也满意，咱们就租了。",
                     "vi": "Nếu em cũng hài lòng, chúng ta thuê luôn.",
                     "highlight": [
                       "要是",
                       "就"
                     ],
-                    "source_ref": "text_02_line_04",
+                    "source_ref": "9e143bd6-8273-4480-beea-b87921f0d67e",
                     "source_origin": "textbook",
-                    "check_needed": false,
-                    "uuid": "4321ae60-9e53-4b49-95f0-44adcdc5b175"
+                    "check_needed": false
                   }
-                ],
-                "uuid": "74efb290-ba57-4f99-9297-be7d933bed3f"
+                ]
               },
               {
-                "id": "grammar_02_structure",
+                "id": "0ef2b790-3209-4b5c-a519-ca5a424e4d49",
                 "type": "grammar_structure",
                 "order": 2,
                 "title": "Cấu trúc chính",
@@ -1928,18 +1782,16 @@
                 "meaning_vi": "Nếu điều kiện A xảy ra thì kết quả B xảy ra.",
                 "examples": [
                   {
-                    "id": "grammar_02_ex_02",
+                    "id": "1096379b-a91d-48aa-bc98-42ebe110f965",
                     "zh": "要是明天下雨，我们就不去公园了。",
                     "vi": "Nếu ngày mai mưa, chúng ta sẽ không đi công viên nữa.",
                     "source_origin": "generated",
-                    "check_needed": false,
-                    "uuid": "8e19969b-de42-4238-8c32-303375a65193"
+                    "check_needed": false
                   }
-                ],
-                "uuid": "e1424224-fe37-4db9-94bb-5bb74ad6596e"
+                ]
               },
               {
-                "id": "grammar_02_negative",
+                "id": "7ef0fe1b-7a15-4bc5-a252-97371e9335a3",
                 "type": "grammar_usage_notes",
                 "order": 3,
                 "title": "Dạng phủ định / biến thể",
@@ -1949,21 +1801,18 @@
                 ],
                 "examples": [
                   {
-                    "id": "grammar_02_ex_03",
+                    "id": "89cf2ddf-bb30-48d6-8d3d-9566092b6154",
                     "zh": "要是房租太贵，我们就不租了。",
                     "vi": "Nếu tiền thuê quá đắt, chúng ta không thuê nữa.",
                     "source_origin": "generated",
-                    "check_needed": false,
-                    "uuid": "97c4e120-2ea1-44c7-bccb-292f2db69bb3"
+                    "check_needed": false
                   }
-                ],
-                "uuid": "e0e179e7-7e2b-45a3-8959-3fd47ada2e30"
+                ]
               }
-            ],
-            "uuid": "bebd4e93-0a9a-46d2-990d-4e74a16b8a5c"
+            ]
           },
           {
-            "id": "grammar_03",
+            "id": "fa804fff-372b-4874-8571-f54e613d7e07",
             "type": "grammar_point",
             "order": 3,
             "title": "虽然……但是……",
@@ -1977,30 +1826,28 @@
             "check_needed": false,
             "blocks": [
               {
-                "id": "grammar_03_overview",
+                "id": "50dcd503-1832-4112-a0be-e09408954b90",
                 "type": "grammar_overview",
                 "order": 1,
                 "title": "Bản chất",
                 "content_vi": "虽然 mở phần nhượng bộ/sự thật nền, 但是 hoặc 可是 mở phần chuyển ý. Vế sau thường là ý chính.",
                 "examples": [
                   {
-                    "id": "grammar_03_ex_01",
+                    "id": "47d597ee-f98d-4604-907d-6e6946054ef4",
                     "zh": "虽然贵了点儿，但是房子真好。",
                     "vi": "Tuy hơi đắt một chút, nhưng căn nhà thật sự tốt.",
                     "highlight": [
                       "虽然",
                       "但是"
                     ],
-                    "source_ref": "text_02_line_08",
+                    "source_ref": "ff1b6429-b216-4fe2-99ee-2aa3b42b374f",
                     "source_origin": "textbook",
-                    "check_needed": false,
-                    "uuid": "9005d2bb-35b8-4ae6-a0fa-f25c4bd58bc3"
+                    "check_needed": false
                   }
-                ],
-                "uuid": "3c0db660-ec3c-4de7-9e84-781b2cf10184"
+                ]
               },
               {
-                "id": "grammar_03_structure",
+                "id": "3de2e20b-7535-4f1b-8355-4209acba1551",
                 "type": "grammar_structure",
                 "order": 2,
                 "title": "Cấu trúc chính",
@@ -2008,18 +1855,16 @@
                 "meaning_vi": "Tuy A, nhưng B. A là điều thừa nhận; B mới là kết luận/ý chính.",
                 "examples": [
                   {
-                    "id": "grammar_03_ex_02",
+                    "id": "9a65ce46-32b1-443f-8743-753c90b62d0f",
                     "zh": "虽然这套房子不大，但是环境很好。",
                     "vi": "Tuy căn nhà này không lớn, nhưng môi trường xung quanh rất tốt.",
                     "source_origin": "generated",
-                    "check_needed": false,
-                    "uuid": "e4bf7f48-1c0a-447b-a89a-22113a133926"
+                    "check_needed": false
                   }
-                ],
-                "uuid": "488c69ca-66ae-48d1-9546-50d39b4566c7"
+                ]
               },
               {
-                "id": "grammar_03_usage",
+                "id": "29d92417-f2a8-42cb-a345-8eecf4d4bbe6",
                 "type": "grammar_usage_notes",
                 "order": 3,
                 "title": "Lưu ý",
@@ -2029,24 +1874,20 @@
                 ],
                 "examples": [
                   {
-                    "id": "grammar_03_ex_03",
+                    "id": "11c0241f-0901-42a3-879e-03e8696d3e40",
                     "zh": "虽然房租贵了点儿，可是交通很方便。",
                     "vi": "Tuy tiền thuê hơi đắt, nhưng giao thông rất thuận tiện.",
                     "source_origin": "generated",
-                    "check_needed": false,
-                    "uuid": "e8c62307-fb67-4d6b-90fd-fed772561488"
+                    "check_needed": false
                   }
-                ],
-                "uuid": "d2e1cb85-9c69-4e54-bf0d-3a1162e51c20"
+                ]
               }
-            ],
-            "uuid": "17bfef1b-c1e3-4edf-84e5-4b5c83f8cd0e"
+            ]
           }
-        ],
-        "uuid": "4ad68118-21ad-47f6-a38b-cb89c474604b"
+        ]
       },
       {
-        "id": "section_06_exercises",
+        "id": "9901c597-ca97-451e-b63d-11814aaf933e",
         "type": "exercises",
         "order": 6,
         "title": "练习",
@@ -2062,7 +1903,7 @@
         },
         "items": [
           {
-            "id": "exercise_01",
+            "id": "15cb6f38-593b-48d1-bcca-dc3d2a140f9e",
             "type": "phonetics",
             "variant": "pronunciation_tone_minimal_pairs",
             "order": 1,
@@ -2080,113 +1921,97 @@
             ],
             "parts": [
               {
-                "id": "exercise_01_part_01",
+                "id": "0e5801e7-b89b-4cc6-8bd9-9e1fbbd30b31",
                 "type": "minimal_pair_group",
                 "title": "辨音辨调",
                 "items": [
                   {
-                    "id": "ex01_pair_01",
+                    "id": "e38d3cb2-2c33-4c4a-83fa-2934373f225d",
                     "left": "yàoshi",
-                    "right": "yàoshì",
-                    "uuid": "7e5c2117-31ba-4a92-aac4-778bc0bbaa2e"
+                    "right": "yàoshì"
                   },
                   {
-                    "id": "ex01_pair_02",
+                    "id": "79df1daa-2fc0-43b6-b4e3-aee6478eef8a",
                     "left": "zhōuwéi",
-                    "right": "shǒuwèi",
-                    "uuid": "848200ac-4524-457d-886d-d1357fcdb9d4"
+                    "right": "shǒuwèi"
                   },
                   {
-                    "id": "ex01_pair_03",
+                    "id": "93191d96-c6f7-4475-b285-9bfd75ad2b6c",
                     "left": "huánjìng",
-                    "right": "gānjìng",
-                    "uuid": "20195f58-6893-47e6-a173-74211934ecc8"
+                    "right": "gānjìng"
                   },
                   {
-                    "id": "ex01_pair_04",
+                    "id": "656ce346-d1fc-4d43-8acc-abf294d2d8da",
                     "left": "fāngbiàn",
-                    "right": "fāngmiàn",
-                    "uuid": "5186bc7a-dd3f-4b05-a4f0-d9b96a4ba9e9"
+                    "right": "fāngmiàn"
                   },
                   {
-                    "id": "ex01_pair_05",
+                    "id": "5e775bab-fb67-4293-b3f7-4b9e80f29c52",
                     "left": "fùjìn",
-                    "right": "fùqīn",
-                    "uuid": "fb607e92-698f-48ce-8977-2808173b3ccc"
+                    "right": "fùqīn"
                   },
                   {
-                    "id": "ex01_pair_06",
+                    "id": "7e23fb6e-376b-43d9-ae33-0413e3080ef9",
                     "left": "yángguāng",
-                    "right": "yǎnguāng",
-                    "uuid": "26be82a3-c121-4946-9ac1-5113884e52c6"
+                    "right": "yǎnguāng"
                   }
                 ],
                 "source_origin": "textbook",
-                "check_needed": true,
-                "uuid": "59e4574c-7a4c-4649-8ad0-1902468dfa16"
+                "check_needed": true
               },
               {
-                "id": "exercise_01_part_02",
+                "id": "e7235fa8-9e47-43aa-a37c-271a2e83d738",
                 "type": "read_aloud",
                 "title": "朗读",
                 "items": [
                   {
-                    "id": "ex01_read_01",
+                    "id": "b97d1a8c-3880-42ce-813f-12d8eb8cb219",
                     "text": "我六点钟就起床了，他七点钟才起床。",
-                    "vi": "Tôi sáu giờ đã dậy, anh ấy bảy giờ mới dậy.",
-                    "uuid": "166b541f-c0b5-43a4-9bb7-c0f72681ee14"
+                    "vi": "Tôi sáu giờ đã dậy, anh ấy bảy giờ mới dậy."
                   },
                   {
-                    "id": "ex01_read_02",
+                    "id": "8ae4a7da-2ae8-494c-99db-df12e85086a4",
                     "text": "练习她一个小时就做完了，我两个小时才做完。",
-                    "vi": "Bài tập cô ấy một tiếng là làm xong, tôi hai tiếng mới làm xong.",
-                    "uuid": "a31e4da4-6ec6-4c1e-9feb-41b726f00e43"
+                    "vi": "Bài tập cô ấy một tiếng là làm xong, tôi hai tiếng mới làm xong."
                   },
                   {
-                    "id": "ex01_read_03",
+                    "id": "1f523168-1c6e-4db9-abc5-198d4ccace2b",
                     "text": "坐飞机一个小时就到了，坐火车四个小时才到。",
-                    "vi": "Đi máy bay một tiếng là đến, đi tàu hỏa bốn tiếng mới đến.",
-                    "uuid": "8a23a552-0b1a-4b39-a1a9-3c0c56ab99cd"
+                    "vi": "Đi máy bay một tiếng là đến, đi tàu hỏa bốn tiếng mới đến."
                   },
                   {
-                    "id": "ex01_read_04",
+                    "id": "d08c4311-c1e6-40a3-b502-9a3f9140607d",
                     "text": "明天我吃了早饭就去医院。",
-                    "vi": "Ngày mai tôi ăn sáng xong là đi bệnh viện.",
-                    "uuid": "658630a2-d812-4606-a747-598314aa264f"
+                    "vi": "Ngày mai tôi ăn sáng xong là đi bệnh viện."
                   },
                   {
-                    "id": "ex01_read_05",
+                    "id": "2de586f4-3987-4413-b296-88e87f7b2af2",
                     "text": "昨天我吃了早饭就去医院了。",
-                    "vi": "Hôm qua tôi ăn sáng xong là đi bệnh viện.",
-                    "uuid": "66701b67-5997-4e15-b510-ce6e17e238b2"
+                    "vi": "Hôm qua tôi ăn sáng xong là đi bệnh viện."
                   },
                   {
-                    "id": "ex01_read_06",
+                    "id": "0a05bd24-1be3-4240-bcf0-7112a84ca9ae",
                     "text": "明天我下了课就去看她。",
-                    "vi": "Ngày mai tan học xong tôi sẽ đi thăm cô ấy.",
-                    "uuid": "0f33c70c-3bbf-43e3-a716-54a0fc446aef"
+                    "vi": "Ngày mai tan học xong tôi sẽ đi thăm cô ấy."
                   },
                   {
-                    "id": "ex01_read_07",
+                    "id": "69f1997b-58c5-4b9b-a007-fadb1405cb1c",
                     "text": "昨天我下了课就去看她了。",
-                    "vi": "Hôm qua tan học xong tôi đã đi thăm cô ấy.",
-                    "uuid": "fe998c28-67e3-4549-b52d-c1bd344baabf"
+                    "vi": "Hôm qua tan học xong tôi đã đi thăm cô ấy."
                   }
                 ],
                 "source_origin": "textbook",
-                "check_needed": true,
-                "uuid": "874f632a-b896-4c80-8b8c-9345d45930bc"
+                "check_needed": true
               }
             ],
             "rendering": {
               "renderer": "exercise.phonetics.v2"
             },
             "source_origin": "textbook",
-            "check_needed": true,
-            "uuid": "aeb678fb-3d07-4af0-8d18-d3a64e52db01"
+            "check_needed": true
           },
           {
-            "id": "exercise_02",
+            "id": "98e14c21-0449-4e36-b1ae-77ed46cf3aa0",
             "type": "substitution_drill",
             "variant": "substitution_or_transform_drill",
             "order": 2,
@@ -2198,175 +2023,145 @@
             },
             "parts": [
               {
-                "id": "exercise_02_part_01",
+                "id": "7db043f9-0d63-45ee-8c21-295d62f2ebd3",
                 "type": "substitution_pattern",
                 "pattern": "A：你吃了早饭去哪儿了？\nB：我吃了早饭就去看房子了。",
                 "items": [
                   {
-                    "id": "exercise_02_part_01_item_01",
-                    "text": "医院看病",
-                    "uuid": "e448e559-f75e-40f9-a839-106b20edba3d"
+                    "id": "4c11ba3f-ac5d-4c8c-b547-3a594b396b14",
+                    "text": "医院看病"
                   },
                   {
-                    "id": "exercise_02_part_01_item_02",
-                    "text": "图书馆",
-                    "uuid": "84030ba3-aa26-4a0a-b295-fcc76a855ceb"
+                    "id": "a80c1e6d-bb97-4bc2-b8ac-96aeb2853dd9",
+                    "text": "图书馆"
                   },
                   {
-                    "id": "exercise_02_part_01_item_03",
-                    "text": "买票",
-                    "uuid": "58d13429-6a63-4227-a348-9be706229625"
+                    "id": "65a929b8-68d0-4904-9a5e-2def1cd60c2b",
+                    "text": "买票"
                   },
                   {
-                    "id": "exercise_02_part_01_item_04",
-                    "text": "银行换钱",
-                    "uuid": "df672c2c-bd10-46d3-87f5-2f2cda038556"
+                    "id": "021763ee-5240-44a8-adca-563e8274ac6c",
+                    "text": "银行换钱"
                   },
                   {
-                    "id": "exercise_02_part_01_item_05",
-                    "text": "商店买东西",
-                    "uuid": "2c0e832b-a73d-4a48-8fa9-6922e9a9a618"
+                    "id": "40e220d6-51bb-4ead-b64c-5b0ac9c57a29",
+                    "text": "商店买东西"
                   },
                   {
-                    "id": "exercise_02_part_01_item_06",
-                    "text": "踢足球",
-                    "uuid": "748d56b7-47bc-4394-a215-49d9ce9a8db5"
+                    "id": "1e70803c-7cf8-48fd-abfd-66493ba1fb8a",
+                    "text": "踢足球"
                   }
-                ],
-                "uuid": "c4af050e-fc51-4966-983c-3ccf4a05ad47"
+                ]
               },
               {
-                "id": "exercise_02_part_02",
+                "id": "4ad1e1b3-374e-4ce8-b98f-907ffc4c88f2",
                 "type": "substitution_pattern",
                 "pattern": "A：你什么时候出发？\nB：吃了早饭就出发。",
                 "items": [
                   {
-                    "id": "exercise_02_part_02_item_01",
-                    "text": "去医院 / 下了课 / 去医院",
-                    "uuid": "d8bfd731-7133-4d50-86b9-3f36bcf3908c"
+                    "id": "f2d0840f-1e6c-4dc4-80d1-6e3e078eb606",
+                    "text": "去医院 / 下了课 / 去医院"
                   },
                   {
-                    "id": "exercise_02_part_02_item_02",
-                    "text": "去图书馆 / 吃了午饭 / 去图书馆",
-                    "uuid": "5e405e1b-4298-4037-a3bc-afb56cad6817"
+                    "id": "a809a344-454f-4a17-b4b5-fea33ef991a7",
+                    "text": "去图书馆 / 吃了午饭 / 去图书馆"
                   },
                   {
-                    "id": "exercise_02_part_02_item_03",
-                    "text": "去锻炼 / 吃了晚饭 / 去锻炼",
-                    "uuid": "a603f6a2-c9fa-4514-833c-bb5d5f3a4ff7"
+                    "id": "33e9481d-07e7-4121-a351-a7c64d504cbf",
+                    "text": "去锻炼 / 吃了晚饭 / 去锻炼"
                   },
                   {
-                    "id": "exercise_02_part_02_item_04",
-                    "text": "回来 / 买了东西 / 回来",
-                    "uuid": "ee5a1e66-e89b-4181-8b6c-35a3e06a266a"
+                    "id": "eb03e4a0-a52a-4de8-a679-9d754f634403",
+                    "text": "回来 / 买了东西 / 回来"
                   },
                   {
-                    "id": "exercise_02_part_02_item_05",
-                    "text": "做练习 / 看了电视 / 做练习",
-                    "uuid": "cadfa199-815e-4644-9062-64e2ba6b9695"
+                    "id": "ed0dc090-5850-4454-8c4c-2301fb58fb77",
+                    "text": "做练习 / 看了电视 / 做练习"
                   },
                   {
-                    "id": "exercise_02_part_02_item_06",
-                    "text": "去跳舞 / 下了课 / 去跳舞",
-                    "uuid": "b63379cd-7e0f-426e-9f92-04136e7ea81c"
+                    "id": "b5d5da4e-552f-4e8b-a725-36479f6bfe95",
+                    "text": "去跳舞 / 下了课 / 去跳舞"
                   }
-                ],
-                "uuid": "9f4ab221-c6fb-49fb-8f97-6b91090fa9d0"
+                ]
               },
               {
-                "id": "exercise_02_part_03",
+                "id": "28f617eb-25d6-4678-b5e3-f7fca3508dbc",
                 "type": "substitution_pattern",
                 "pattern": "A：你今天回来得早吗？\nB：不早，我八点半才回来。",
                 "items": [
                   {
-                    "id": "exercise_02_part_03_item_01",
-                    "text": "来",
-                    "uuid": "fdcb92a5-53bf-4e9b-b2a0-2211f69f1aed"
+                    "id": "294d26c1-7ff4-4e48-8428-92cb888a8820",
+                    "text": "来"
                   },
                   {
-                    "id": "exercise_02_part_03_item_02",
-                    "text": "去",
-                    "uuid": "08610965-a3f4-490a-b713-50223bc9a375"
+                    "id": "ece24478-9db9-476f-b8a7-73d6b5df366c",
+                    "text": "去"
                   },
                   {
-                    "id": "exercise_02_part_03_item_03",
-                    "text": "起",
-                    "uuid": "503ebb7b-1789-4e74-b10f-8225f253f868"
+                    "id": "1844659a-3dbc-4497-8a6c-42794b34c59a",
+                    "text": "起"
                   },
                   {
-                    "id": "exercise_02_part_03_item_04",
-                    "text": "走",
-                    "uuid": "9329ce98-3192-4185-b633-b1e5beae3155"
+                    "id": "47cfba80-84d2-4d44-9ead-afaa0ae4ed30",
+                    "text": "走"
                   }
-                ],
-                "uuid": "c4098361-d414-4792-809f-d9ef431632c6"
+                ]
               },
               {
-                "id": "exercise_02_part_04",
+                "id": "6227f946-2a93-462c-8702-43b4abc4a614",
                 "type": "substitution_pattern",
                 "pattern": "A：怎么这么贵？\nB：虽然贵了点儿，但是房子很好。",
                 "items": [
                   {
-                    "id": "exercise_02_part_04_item_01",
-                    "text": "房子 / 小 / 很干净",
-                    "uuid": "84512bd0-3f6e-4344-bd19-ecddf7dae43f"
+                    "id": "ee6c2934-b020-46f7-b918-5fb2b2ea1c69",
+                    "text": "房子 / 小 / 很干净"
                   },
                   {
-                    "id": "exercise_02_part_04_item_02",
-                    "text": "房子 / 远 / 很便宜",
-                    "uuid": "a1eb97f8-b45f-48b6-ac59-e6d89593c6d5"
+                    "id": "021ffecb-a96e-4060-8791-9606d3a52c42",
+                    "text": "房子 / 远 / 很便宜"
                   },
                   {
-                    "id": "exercise_02_part_04_item_03",
-                    "text": "汉语 / 难 / 很有意思",
-                    "uuid": "b99926ca-81e8-49a3-9176-37055d78e7fe"
+                    "id": "71ece2aa-8f5f-4079-ade7-e732a3cc934e",
+                    "text": "汉语 / 难 / 很有意思"
                   },
                   {
-                    "id": "exercise_02_part_04_item_04",
-                    "text": "练习 / 多 / 不太难",
-                    "uuid": "5614553f-45d9-475a-b9b5-afbbb6078092"
+                    "id": "7b0da6e0-4320-41a4-bbfa-6366aae08c76",
+                    "text": "练习 / 多 / 不太难"
                   }
-                ],
-                "uuid": "6c85a6fb-f42a-4e70-a85a-b821c33bdb5f"
+                ]
               },
               {
-                "id": "exercise_02_part_05",
+                "id": "6b6b4fa0-c8d0-45c4-b28e-0293edd71e59",
                 "type": "substitution_pattern",
                 "pattern": "要是你也满意，咱们就租了。",
                 "items": [
                   {
-                    "id": "exercise_02_part_05_item_01",
-                    "text": "便宜一点儿 / 买了",
-                    "uuid": "a0bad2b7-ee88-4d1b-933b-8becc94e2200"
+                    "id": "9e5b2b1b-b8a2-40bf-a39b-5eae8c1148fb",
+                    "text": "便宜一点儿 / 买了"
                   },
                   {
-                    "id": "exercise_02_part_05_item_02",
-                    "text": "不太远 / 骑车去",
-                    "uuid": "354e2caa-9442-4c81-8d01-de6b4f156c65"
+                    "id": "14c84fea-f320-4d24-8024-55b5a6e31c55",
+                    "text": "不太远 / 骑车去"
                   },
                   {
-                    "id": "exercise_02_part_05_item_03",
-                    "text": "他喜欢 / 给他",
-                    "uuid": "a7adcc9e-255d-46af-be84-a2510fc21220"
+                    "id": "23930966-c0e6-487d-b26e-92d3e2812c17",
+                    "text": "他喜欢 / 给他"
                   },
                   {
-                    "id": "exercise_02_part_05_item_04",
-                    "text": "你不喜欢 / 不买了",
-                    "uuid": "2982ba02-37b6-400c-bef9-fb222954ed24"
+                    "id": "471d8b36-c469-4cf9-aa7c-b31ce72f419d",
+                    "text": "你不喜欢 / 不买了"
                   }
-                ],
-                "uuid": "039ef6d7-ffa5-4d9e-beea-fd0def445178"
+                ]
               }
             ],
             "rendering": {
               "renderer": "exercise.substitution_drill.v2"
             },
             "source_origin": "textbook",
-            "check_needed": true,
-            "uuid": "d601c088-74a0-4a1f-9710-c1a7c5a5c8ea"
+            "check_needed": true
           },
           {
-            "id": "exercise_03",
+            "id": "5dfca3d2-8524-4a83-92dd-b036a7259465",
             "type": "choose_words_fill_blank",
             "variant": "word_bank_fill_blank",
             "order": 3,
@@ -2392,112 +2187,100 @@
             ],
             "questions": [
               {
-                "id": "ex03_q01",
+                "id": "941d80e5-8eb2-4e21-beae-597e6677cdaf",
                 "type": "fill_blank",
                 "prompt": "他昨天晚上九点____回家。",
                 "answer": "",
                 "answer_verified": false,
-                "check_needed": true,
-                "uuid": "258e5f3d-901c-4337-9934-c707fb5a7cfa"
+                "check_needed": true
               },
               {
-                "id": "ex03_q02",
+                "id": "f31d95d0-500f-4cc9-97ee-57a7295062d2",
                 "type": "fill_blank",
                 "prompt": "你们这____房子真不错。",
                 "answer": "",
                 "answer_verified": false,
-                "check_needed": true,
-                "uuid": "c7fefe43-2d7c-4445-857d-8184785d5624"
+                "check_needed": true
               },
               {
-                "id": "ex03_q03",
+                "id": "069f2cd8-233c-4227-8f46-78a1d28a4a59",
                 "type": "fill_blank",
                 "prompt": "我下了课____去医院看病了。",
                 "answer": "",
                 "answer_verified": false,
-                "check_needed": true,
-                "uuid": "b335cb42-5e62-4cdc-9a4f-f741a6d48241"
+                "check_needed": true
               },
               {
-                "id": "ex03_q04",
+                "id": "013e3712-30ac-4a8a-b60e-0d6f818f4cdb",
                 "type": "fill_blank",
                 "prompt": "我觉得这次考得____可以。",
                 "answer": "",
                 "answer_verified": false,
-                "check_needed": true,
-                "uuid": "eb5e547e-3223-4961-af3e-77f0cee2eab4"
+                "check_needed": true
               },
               {
-                "id": "ex03_q05",
+                "id": "ba362929-16a5-4a79-8cad-ecfabcaa32f3",
                 "type": "fill_blank",
                 "prompt": "____有什么事儿，就对我说，不要客气。",
                 "answer": "",
                 "answer_verified": false,
-                "check_needed": true,
-                "uuid": "f78f4363-4635-4bbb-b225-3b53b92fbad3"
+                "check_needed": true
               },
               {
-                "id": "ex03_q06",
+                "id": "542ef74e-c843-4b6c-9cd8-0011b6ee7b7a",
                 "type": "fill_blank",
                 "prompt": "____只学了一个多月，但是她已经会说很多话了。",
                 "answer": "",
                 "answer_verified": false,
-                "check_needed": true,
-                "uuid": "d62e10e1-69e4-4507-8872-e54082d88c0c"
+                "check_needed": true
               },
               {
-                "id": "ex03_q07",
+                "id": "715f1fd6-1b2e-43e0-b3dc-cbc252152601",
                 "type": "fill_blank",
                 "prompt": "我____毕业以后去中国留学。",
                 "answer": "",
                 "answer_verified": false,
-                "check_needed": true,
-                "uuid": "8dcc34fb-9074-4ecd-b25c-528e34edfc83"
+                "check_needed": true
               },
               {
-                "id": "ex03_q08",
+                "id": "105a0775-7adb-418e-b770-133481e26360",
                 "type": "fill_blank",
                 "prompt": "这儿周围的____很好。",
                 "answer": "",
                 "answer_verified": false,
-                "check_needed": true,
-                "uuid": "4ff1d4a5-03be-4c7f-90fe-95ea04403b74"
+                "check_needed": true
               },
               {
-                "id": "ex03_q09",
+                "id": "e4f087ec-f391-487e-9c09-fa2844c867d8",
                 "type": "fill_blank",
                 "prompt": "我们住的地方有地铁站，交通很____。",
                 "answer": "",
                 "answer_verified": false,
-                "check_needed": true,
-                "uuid": "efd6cd3e-f441-4a1c-9d1a-e6b523f96b6e"
+                "check_needed": true
               },
               {
-                "id": "ex03_q10",
+                "id": "59f17dca-dab9-4952-b7f4-3425c32679d3",
                 "type": "fill_blank",
                 "prompt": "公共汽车站就在我们学校____。",
                 "answer": "",
                 "answer_verified": false,
-                "check_needed": true,
-                "uuid": "f6d4fd30-ad17-472b-824e-e552f0ba6fbb"
+                "check_needed": true
               },
               {
-                "id": "ex03_q11",
+                "id": "0888bde7-83fa-45e6-bc0a-a874d88e9226",
                 "type": "fill_blank",
                 "prompt": "学校____有邮局、银行、商店、公园和体育馆。",
                 "answer": "",
                 "answer_verified": false,
-                "check_needed": true,
-                "uuid": "db086111-fced-4ea9-b3cf-c85be9ba472b"
+                "check_needed": true
               },
               {
-                "id": "ex03_q12",
+                "id": "3c19a1e7-6e46-4d2f-af98-be3059a2bfbb",
                 "type": "fill_blank",
                 "prompt": "这____河里的水很干净。",
                 "answer": "",
                 "answer_verified": false,
-                "check_needed": true,
-                "uuid": "60782ad8-1f57-4443-90f6-b0c6926b86a7"
+                "check_needed": true
               }
             ],
             "rendering": {
@@ -2505,11 +2288,10 @@
               "show_word_bank": true
             },
             "source_origin": "textbook",
-            "check_needed": true,
-            "uuid": "2d500b6b-f516-493b-8933-5e2aac6f576b"
+            "check_needed": true
           },
           {
-            "id": "exercise_04",
+            "id": "809141fb-cc55-403a-9433-35eea89c8c90",
             "type": "fill_blank",
             "variant": "free_fill_blank",
             "order": 4,
@@ -2525,87 +2307,78 @@
             ],
             "questions": [
               {
-                "id": "ex04_q01",
+                "id": "668ef942-39b3-4816-be06-f347b64fa456",
                 "type": "fill_blank",
                 "prompt": "她每天都六点半起床，今天六点钟____起床了。",
                 "answer": "",
                 "answer_verified": false,
-                "check_needed": true,
-                "uuid": "a725d359-b189-4eeb-93ec-c181a3eb9037"
+                "check_needed": true
               },
               {
-                "id": "ex04_q02",
+                "id": "6e23c236-94eb-4e83-9ea6-7353241c098d",
                 "type": "fill_blank",
                 "prompt": "八点钟上课，他八点半____来。",
                 "answer": "",
                 "answer_verified": false,
-                "check_needed": true,
-                "uuid": "1087577d-1442-45aa-8083-2e20f2235ef1"
+                "check_needed": true
               },
               {
-                "id": "ex04_q03",
+                "id": "ee3570f6-9872-4699-a1ed-c338e52b4e50",
                 "type": "fill_blank",
                 "prompt": "电影七点半____开演呢，你怎么现在____来了？",
                 "answer": "",
                 "answer_verified": false,
-                "check_needed": true,
-                "uuid": "1e3bd3f2-58f7-4023-a24b-b30a18046919"
+                "check_needed": true
               },
               {
-                "id": "ex04_q04",
+                "id": "3130979d-5cc3-4cf5-999c-9ed317ea7c14",
                 "type": "fill_blank",
                 "prompt": "飞机下午两点____起飞，上午十点他们____去机场了。",
                 "answer": "",
                 "answer_verified": false,
-                "check_needed": true,
-                "uuid": "8309d4fb-bc89-4065-b631-3a14223297fe"
+                "check_needed": true
               },
               {
-                "id": "ex04_q05",
+                "id": "9dd88fe0-ccfb-47b6-a74a-d1ee53c61219",
                 "type": "fill_blank",
                 "prompt": "我觉得听力很难，同学们听一遍____懂了，我听两三遍____能懂。",
                 "answer": "",
                 "answer_verified": false,
-                "check_needed": true,
-                "uuid": "885ce327-888e-44dd-b76d-1e58adfdbabc"
+                "check_needed": true
               },
               {
-                "id": "ex04_q06",
+                "id": "9002df8c-125f-489d-9396-d008958aa6b9",
                 "type": "fill_blank",
                 "prompt": "昨天晚上我十二点____睡觉。",
                 "answer": "",
                 "answer_verified": false,
-                "check_needed": true,
-                "uuid": "9880d428-b43e-4388-a13b-deaf0bbe261b"
+                "check_needed": true
               },
               {
-                "id": "ex04_q07",
+                "id": "7ccdf5ea-8943-40f8-b46c-5476825c5360",
                 "type": "fill_blank",
                 "prompt": "他上午下了课____去医院了。",
                 "answer": "",
                 "answer_verified": false,
-                "check_needed": true,
-                "uuid": "e95e3958-8b94-4f92-8f38-cd992618266d"
+                "check_needed": true
               },
               {
-                "id": "ex04_q08",
+                "id": "5808cb3e-509e-43fa-89bd-70c5334f1c6e",
                 "type": "fill_blank",
                 "prompt": "坐飞机去两个多小时____到了，坐火车十个小时____能到。",
                 "answer": "",
                 "answer_verified": false,
-                "check_needed": true,
-                "uuid": "05d9ebfe-01e5-4615-a000-485daf02af07"
+                "check_needed": true
               }
             ],
             "rendering": {
               "renderer": "exercise.free_fill_blank.v2"
             },
             "source_origin": "textbook",
-            "check_needed": true,
-            "uuid": "81c66e77-2c79-4a60-8bfd-bb7fd0e10dce"
+            "check_needed": true
           },
           {
-            "id": "exercise_05",
+            "id": "e843bb6e-2e51-4fb8-b362-7506b97cf2fc",
             "type": "complete_sentence",
             "variant": "complete_sentence_with_given_words",
             "order": 5,
@@ -2617,7 +2390,7 @@
             },
             "questions": [
               {
-                "id": "ex05_q01",
+                "id": "7d9c942a-bdc2-45a1-b852-6b3dd58fe8f2",
                 "type": "complete_sentence",
                 "prompt": "要是你来，就____。",
                 "answer": "",
@@ -2625,11 +2398,10 @@
                   "mode": "manual"
                 },
                 "answer_verified": false,
-                "check_needed": false,
-                "uuid": "ab8ca688-6b80-41bb-9502-2795473ca084"
+                "check_needed": false
               },
               {
-                "id": "ex05_q02",
+                "id": "a79733e1-ef69-41fd-ac55-9bb8b3bd4d2c",
                 "type": "complete_sentence",
                 "prompt": "虽然有点儿贵，但是____。",
                 "answer": "",
@@ -2637,11 +2409,10 @@
                   "mode": "manual"
                 },
                 "answer_verified": false,
-                "check_needed": false,
-                "uuid": "a91c4d02-1d10-4773-979b-9121371b7340"
+                "check_needed": false
               },
               {
-                "id": "ex05_q03",
+                "id": "ec5f1e84-0693-46b3-b735-8005e47f103e",
                 "type": "complete_sentence",
                 "prompt": "要是你想买，就____。",
                 "answer": "",
@@ -2649,11 +2420,10 @@
                   "mode": "manual"
                 },
                 "answer_verified": false,
-                "check_needed": false,
-                "uuid": "ee3dba53-b6a1-4348-b842-e604ca5efbe2"
+                "check_needed": false
               },
               {
-                "id": "ex05_q04",
+                "id": "dc7f5f06-95a1-4158-98d8-b293729d6a13",
                 "type": "complete_sentence",
                 "prompt": "要是你觉得不舒服，就____。",
                 "answer": "",
@@ -2661,11 +2431,10 @@
                   "mode": "manual"
                 },
                 "answer_verified": false,
-                "check_needed": false,
-                "uuid": "9685319e-e7e4-4350-96e3-37533d02658f"
+                "check_needed": false
               },
               {
-                "id": "ex05_q05",
+                "id": "55e24ac4-bbd1-40f9-9dee-e97b3f2e10f7",
                 "type": "complete_sentence",
                 "prompt": "屋子虽然不大，但是____。",
                 "answer": "",
@@ -2673,11 +2442,10 @@
                   "mode": "manual"
                 },
                 "answer_verified": false,
-                "check_needed": false,
-                "uuid": "a7fb4452-e01c-4001-b2ae-9ff31f3fd793"
+                "check_needed": false
               },
               {
-                "id": "ex05_q06",
+                "id": "f7c603b4-c112-4d9c-ab37-b945d471ccee",
                 "type": "complete_sentence",
                 "prompt": "她虽然学的时间不长，但是____。",
                 "answer": "",
@@ -2685,8 +2453,7 @@
                   "mode": "manual"
                 },
                 "answer_verified": false,
-                "check_needed": false,
-                "uuid": "032e4670-747f-4d1f-9dbf-0a25e2876115"
+                "check_needed": false
               }
             ],
             "rendering": {
@@ -2694,11 +2461,10 @@
               "allow_manual_check": true
             },
             "source_origin": "textbook",
-            "check_needed": true,
-            "uuid": "6a05d83a-adc7-4283-8b36-21db62d23fb1"
+            "check_needed": true
           },
           {
-            "id": "exercise_06",
+            "id": "60ec1197-2967-408c-a1f3-3c2112f8305a",
             "type": "complete_dialogue",
             "variant": "complete_dialogue",
             "order": 6,
@@ -2710,7 +2476,7 @@
             },
             "questions": [
               {
-                "id": "ex06_q01",
+                "id": "1b0dc397-26f4-4659-a964-f9c68ceab72a",
                 "type": "complete_dialogue",
                 "prompt": "A：你觉得这套房子怎么样？\nB：虽然有点儿小，____。",
                 "hint": "但是",
@@ -2719,11 +2485,10 @@
                   "mode": "manual"
                 },
                 "answer_verified": false,
-                "check_needed": true,
-                "uuid": "b1db3c89-2b59-4e5a-9685-d6b5a60fb22d"
+                "check_needed": true
               },
               {
-                "id": "ex06_q02",
+                "id": "ab74bab2-0cd3-4c59-b4dd-6d9a3c6197b9",
                 "type": "complete_dialogue",
                 "prompt": "A：这件衣服怎么样？\nB：虽然比较贵，____。",
                 "hint": "但是",
@@ -2732,11 +2497,10 @@
                   "mode": "manual"
                 },
                 "answer_verified": false,
-                "check_needed": true,
-                "uuid": "b1a2e521-d8dc-48bb-b74c-f52680813705"
+                "check_needed": true
               },
               {
-                "id": "ex06_q03",
+                "id": "c503fed9-44e1-4df9-b284-51dbab822ee8",
                 "type": "complete_dialogue",
                 "prompt": "A：你们国家城市交通怎么样？\nB：____。",
                 "hint": "方便 / 堵车堵得厉害",
@@ -2745,11 +2509,10 @@
                   "mode": "manual"
                 },
                 "answer_verified": false,
-                "check_needed": true,
-                "uuid": "948b707f-6f2d-4be9-b4c3-03bbcb4ffea5"
+                "check_needed": true
               },
               {
-                "id": "ex06_q04",
+                "id": "87b8a7fb-1969-49e6-b592-82a2e0147e96",
                 "type": "complete_dialogue",
                 "prompt": "A：你今天去得早吗？\nB：我很早____。",
                 "hint": "就",
@@ -2758,11 +2521,10 @@
                   "mode": "manual"
                 },
                 "answer_verified": false,
-                "check_needed": true,
-                "uuid": "3b63050b-a166-4a91-ac3d-acf9575c6918"
+                "check_needed": true
               },
               {
-                "id": "ex06_q05",
+                "id": "6155b63d-c263-446a-9ad7-80d775f5be6e",
                 "type": "complete_dialogue",
                 "prompt": "A：你怎么现在____？\nB：路上堵车堵得厉害。",
                 "hint": "才",
@@ -2771,11 +2533,10 @@
                   "mode": "manual"
                 },
                 "answer_verified": false,
-                "check_needed": true,
-                "uuid": "3dbcbf76-968c-4ee2-b2e2-243f1c5712fa"
+                "check_needed": true
               },
               {
-                "id": "ex06_q06",
+                "id": "8e9a9428-6659-4025-8fb4-b5bf4134d62d",
                 "type": "complete_dialogue",
                 "prompt": "A：你怎么现在才来电话？\nB：今天下午我____了。",
                 "hint": "",
@@ -2784,8 +2545,7 @@
                   "mode": "manual"
                 },
                 "answer_verified": false,
-                "check_needed": true,
-                "uuid": "cf73d509-bd09-4198-bc1d-1eb93d95167a"
+                "check_needed": true
               }
             ],
             "rendering": {
@@ -2793,11 +2553,10 @@
               "allow_manual_check": true
             },
             "source_origin": "textbook",
-            "check_needed": true,
-            "uuid": "8a7c26a4-5184-46eb-aba0-989e292d7181"
+            "check_needed": true
           },
           {
-            "id": "exercise_07",
+            "id": "1fd4313d-93f3-4cbe-9dd4-2ba0d5bac415",
             "type": "answer_questions",
             "variant": "text_comprehension_questions",
             "order": 7,
@@ -2809,70 +2568,64 @@
             },
             "questions": [
               {
-                "id": "ex07_q01",
+                "id": "f8e911bf-9cbb-4dad-91ed-87032d2d95f2",
                 "question": "你每天早上吃了早饭做什么？",
                 "answer": "",
                 "grading": {
                   "mode": "manual"
                 },
                 "answer_verified": false,
-                "check_needed": false,
-                "uuid": "bab6f305-6732-4681-9251-51d96d8ada03"
+                "check_needed": false
               },
               {
-                "id": "ex07_q02",
+                "id": "3fd78baa-272c-4e07-8ee2-5399c9977a99",
                 "question": "星期日你吃了早饭去哪儿了？",
                 "answer": "",
                 "grading": {
                   "mode": "manual"
                 },
                 "answer_verified": false,
-                "check_needed": false,
-                "uuid": "e8678a88-c137-4f00-ac05-8ec186b893a1"
+                "check_needed": false
               },
               {
-                "id": "ex07_q03",
+                "id": "69f5ddfa-be8d-4292-b18f-6136daaa613f",
                 "question": "你吃了午饭常常做什么？",
                 "answer": "",
                 "grading": {
                   "mode": "manual"
                 },
                 "answer_verified": false,
-                "check_needed": false,
-                "uuid": "65e9c4ff-e721-4b7e-b7ad-9f08d7336122"
+                "check_needed": false
               },
               {
-                "id": "ex07_q04",
+                "id": "9c211f34-08a0-4478-b188-fe6a0e98ea41",
                 "question": "昨天你吃了午饭做什么了？",
                 "answer": "",
                 "grading": {
                   "mode": "manual"
                 },
                 "answer_verified": false,
-                "check_needed": false,
-                "uuid": "d4261647-d03c-4ba1-b22d-855f6682491f"
+                "check_needed": false
               },
               {
-                "id": "ex07_q05",
+                "id": "c8ec5644-8adf-46de-b2ff-34b3088ba324",
                 "question": "你吃了晚饭常常做什么？",
                 "answer": "",
                 "grading": {
                   "mode": "manual"
                 },
                 "answer_verified": false,
-                "check_needed": false,
-                "uuid": "6d2610cf-6120-464c-b19c-2fa3bf8460ca"
+                "check_needed": false
               },
               {
-                "id": "ex07_q06",
+                "id": "6db3da52-2247-4991-a1d3-225528d56fff",
                 "question": "昨天你吃了晚饭做什么了？",
                 "answer": "",
                 "grading": {
                   "mode": "manual"
                 },
                 "answer_verified": false,
-                "check_needed": false,
-                "uuid": "ea45f12a-a3df-4ca5-8b24-6662381ced6c"
+                "check_needed": false
               }
             ],
             "rendering": {
@@ -2880,11 +2633,10 @@
               "allow_manual_check": true
             },
             "source_origin": "textbook",
-            "check_needed": true,
-            "uuid": "73a46b45-843e-4e15-b3fb-00cf1248abad"
+            "check_needed": true
           },
           {
-            "id": "exercise_08",
+            "id": "b9e46637-94ca-4fea-90cf-29155c015046",
             "type": "correct_sentence",
             "variant": "error_correction",
             "order": 8,
@@ -2896,64 +2648,58 @@
             },
             "questions": [
               {
-                "id": "ex08_q01",
+                "id": "51d25007-39bc-4798-8fb4-fd9aaf8168f5",
                 "type": "correct_sentence",
                 "prompt": "你想想才买吧。",
                 "answer": "",
                 "explanation_vi": "",
                 "answer_verified": false,
-                "check_needed": true,
-                "uuid": "58a12dd5-c0d3-4594-a2b9-5f16c6a4b94a"
+                "check_needed": true
               },
               {
-                "id": "ex08_q02",
+                "id": "e65bddbb-aff2-43d6-86ee-fb07381ebe3e",
                 "type": "correct_sentence",
                 "prompt": "你的病还没有好，病好了以后才上课吧。",
                 "answer": "",
                 "explanation_vi": "",
                 "answer_verified": false,
-                "check_needed": true,
-                "uuid": "fda64722-e28a-4da5-bdc0-693cd33a74d8"
+                "check_needed": true
               },
               {
-                "id": "ex08_q03",
+                "id": "2ac934ff-71d7-4d4a-b040-149ec5a5750e",
                 "type": "correct_sentence",
                 "prompt": "昨天我很不舒服，八点才睡觉。",
                 "answer": "",
                 "explanation_vi": "",
                 "answer_verified": false,
-                "check_needed": true,
-                "uuid": "213b312f-9923-4c5b-b561-371e0e5b2cf5"
+                "check_needed": true
               },
               {
-                "id": "ex08_q04",
+                "id": "c5d39e80-de1f-4a3c-9b5f-9193a14a8a33",
                 "type": "correct_sentence",
                 "prompt": "听了我的话，就玛丽很快不哭了。",
                 "answer": "",
                 "explanation_vi": "",
                 "answer_verified": false,
-                "check_needed": true,
-                "uuid": "2abdcbb2-5b1e-414d-91a4-6a97dc16813d"
+                "check_needed": true
               },
               {
-                "id": "ex08_q05",
+                "id": "758a96f8-d8f5-4075-aafa-95e515a48195",
                 "type": "correct_sentence",
                 "prompt": "到中国以后，这个电影我再看了一遍。",
                 "answer": "",
                 "explanation_vi": "",
                 "answer_verified": false,
-                "check_needed": true,
-                "uuid": "208aa89c-1b42-4e6c-986d-ea135c266b90"
+                "check_needed": true
               },
               {
-                "id": "ex08_q06",
+                "id": "7969b51e-cfc5-4e03-97be-0b29b48a7fdc",
                 "type": "correct_sentence",
                 "prompt": "今年九月，他再来中国了。",
                 "answer": "",
                 "explanation_vi": "",
                 "answer_verified": false,
-                "check_needed": true,
-                "uuid": "2321b707-679e-4f26-b89b-37af7aed25ac"
+                "check_needed": true
               }
             ],
             "rendering": {
@@ -2961,11 +2707,10 @@
               "allow_manual_check": true
             },
             "source_origin": "textbook",
-            "check_needed": true,
-            "uuid": "bae95b69-a623-4309-9dac-7cef4b4a8080"
+            "check_needed": true
           },
           {
-            "id": "exercise_09",
+            "id": "849f6690-a8ea-4b6f-937d-429f236714ad",
             "type": "communication_dialogue",
             "variant": "role_play",
             "order": 9,
@@ -3026,11 +2771,10 @@
               "renderer": "exercise.communication_dialogue.v2"
             },
             "source_origin": "textbook",
-            "check_needed": true,
-            "uuid": "f97552de-6e5b-477b-976d-d1637314d009"
+            "check_needed": true
           },
           {
-            "id": "exercise_10",
+            "id": "1ac62b88-14d2-473e-be1e-6a588e95e535",
             "type": "reading_comprehension",
             "variant": "reading_comprehension",
             "order": 10,
@@ -3042,16 +2786,15 @@
             },
             "reading_ref": "reading_01",
             "question_refs": [
-              "reading_01_q01",
-              "reading_01_q02",
-              "reading_01_q03"
+              "97c6a4ab-7de0-45b1-a796-4625f58d1fca",
+              "82b334af-11c3-4606-980f-154617982627",
+              "13181a17-4f4d-4923-a0ef-dd8d285261d4"
             ],
             "source_origin": "textbook",
-            "check_needed": true,
-            "uuid": "0165f015-b211-489f-880f-22b575ab59a4"
+            "check_needed": true
           },
           {
-            "id": "exercise_11",
+            "id": "b2a6a692-3bc6-48ef-8bca-f92f0da091a5",
             "type": "character_writing",
             "variant": "character_copying",
             "order": 11,
@@ -3062,18 +2805,16 @@
               "vi": "Luyện viết chữ Hán."
             },
             "character_refs": [
-              "char_01",
-              "char_02"
+              "33bbf7c1-79c1-48ef-b67f-efb8d186cc5a",
+              "e291c92e-298f-49b5-bd05-5de86da3e4fb"
             ],
             "source_origin": "textbook",
-            "check_needed": true,
-            "uuid": "66a2eddd-ca39-4e1e-9bb6-1c1460dd6f3b"
+            "check_needed": true
           }
-        ],
-        "uuid": "6e68f1de-01ab-43f5-bc2c-38cd06767d47"
+        ]
       },
       {
-        "id": "section_07_reading",
+        "id": "886f621e-85ce-4e1a-91df-d8d257596034",
         "type": "reading",
         "order": 7,
         "title": "阅读理解",
@@ -3082,127 +2823,116 @@
         "check_needed": true,
         "items": [
           {
-            "id": "reading_01",
+            "id": "9bd9a79e-3279-468d-9f4b-ecd1f7365e19",
             "type": "reading_passage",
             "order": 1,
             "title": "我在中国的家",
             "title_vi": "Nhà của tôi ở Trung Quốc",
             "supplementary_vocabulary": [
               {
-                "id": "reading_vocab_01",
+                "id": "44d7974e-3a5b-45c0-a0e2-9b883d814cc6",
                 "hanzi": "会话",
                 "pinyin": "huìhuà",
                 "meaning_vi": "hội thoại; đàm thoại",
-                "linked_vocab_ref": "vocab_040",
-                "uuid": "4d9ea4fa-29ec-4ba7-aadb-de21f276cb0e"
+                "linked_vocab_ref": "vocab_040"
               },
               {
-                "id": "reading_vocab_02",
+                "id": "f0d02d73-fc09-4310-a941-3b9d8c50d6a0",
                 "hanzi": "解答",
                 "pinyin": "jiědá",
                 "meaning_vi": "giải đáp; trả lời, giải thích câu hỏi",
-                "linked_vocab_ref": "vocab_041",
-                "uuid": "4db6fe6b-9cdf-4025-900e-a6a093dafc14"
+                "linked_vocab_ref": "vocab_041"
               }
             ],
             "paragraphs": [
               {
-                "id": "reading_01_p01",
+                "id": "d2a4cf8b-55cd-4904-9fed-3141da682b19",
                 "order": 1,
                 "zh": "我去年来到中国。来中国以后，认识了一个中国人，她就是我的中国妈妈。她有一个十六岁的女儿，叫小丽，小丽很喜欢学英语。有一次，我去她家的时候，小丽对我说：“爱华姐姐，你来和我一起住好吗？要是你能住我家多好啊！我爸爸妈妈也欢迎姐姐住我家。”听了小丽的话我心里很高兴。我想，来北京以后，我还没有中国朋友。小丽的爸爸妈妈就像我的爸爸妈妈一样。我想学好汉语，但是练习会话的时间很少，住小丽家可以教小丽英语，他们也可以帮助我学习汉语。",
                 "vi": "Năm ngoái tôi đến Trung Quốc. Sau khi đến Trung Quốc, tôi quen một người Trung Quốc, cô ấy chính là “mẹ Trung Quốc” của tôi. Cô ấy có một cô con gái mười sáu tuổi tên là Tiểu Lệ. Tiểu Lệ rất thích học tiếng Anh. Có một lần, khi tôi đến nhà cô ấy, Tiểu Lệ nói với tôi: “Chị Ái Hoa, chị đến ở cùng em được không? Nếu chị có thể ở nhà em thì tốt biết bao! Bố mẹ em cũng rất hoan nghênh chị đến ở nhà em.” Nghe lời Tiểu Lệ nói, trong lòng tôi rất vui. Tôi nghĩ, sau khi đến Bắc Kinh, tôi vẫn chưa có bạn Trung Quốc. Bố mẹ của Tiểu Lệ giống như bố mẹ của tôi vậy. Tôi muốn học tốt tiếng Hán, nhưng thời gian luyện hội thoại rất ít. Nếu ở nhà Tiểu Lệ, tôi có thể dạy Tiểu Lệ tiếng Anh, họ cũng có thể giúp tôi học tiếng Hán.",
                 "source_origin": "textbook",
-                "check_needed": true,
-                "uuid": "3e55dd2f-6aa1-4def-932e-0e518310d21d"
+                "check_needed": true
               },
               {
-                "id": "reading_01_p02",
+                "id": "a6b1119e-769b-4444-9eee-c4a26d7f6af3",
                 "order": 2,
                 "zh": "三天后，我就去他们家住了。开始的时候，他们对我很客气，我对他们也非常客气。时间长了，我们就像一家人了。我觉得，这儿就是我的家。晚上我回家以后，小丽给我讲一些学校里有意思的人和事，她也想知道西方国家的情况，我给他们介绍我们国家的文化。我要是有问题就问他们，他们也会认真地给我解答。每天我们都过得很愉快。",
                 "vi": "Ba ngày sau, tôi đến nhà họ ở. Lúc đầu, họ rất khách sáo với tôi, tôi cũng rất khách sáo với họ. Thời gian lâu dần, chúng tôi giống như người một nhà. Tôi cảm thấy nơi này chính là nhà của tôi. Buổi tối sau khi về nhà, Tiểu Lệ kể cho tôi nghe một số người và chuyện thú vị ở trường; cô ấy cũng muốn biết tình hình của các nước phương Tây. Tôi giới thiệu văn hóa nước tôi cho họ. Nếu tôi có vấn đề thì hỏi họ, họ cũng nghiêm túc giải đáp cho tôi. Mỗi ngày chúng tôi đều sống rất vui vẻ.",
                 "source_origin": "textbook",
-                "check_needed": true,
-                "uuid": "e1997fe4-8102-400f-88fe-a7fe84cc60d6"
+                "check_needed": true
               },
               {
-                "id": "reading_01_p03",
+                "id": "ce8bdbc9-b498-418a-ab2c-e16111228a35",
                 "order": 3,
                 "zh": "在我的中国家里，我能练习说汉语，也能了解中国的文化。",
                 "vi": "Ở “ngôi nhà Trung Quốc” của tôi, tôi có thể luyện nói tiếng Hán, cũng có thể tìm hiểu văn hóa Trung Quốc.",
                 "source_origin": "textbook",
-                "check_needed": true,
-                "uuid": "4c3074f5-1633-4f77-8581-166c907b172d"
+                "check_needed": true
               },
               {
-                "id": "reading_01_p04",
+                "id": "b3e5d57c-8b64-4c60-b5f0-3976cd13fef0",
                 "order": 4,
                 "zh": "一天，我爸爸妈妈来电话，问我想不想家，我说不想家。我告诉他们，现在我在中国也有了一个家。他们听了很高兴，还说，他们也想来中国，看看我在中国的家。",
                 "vi": "Một hôm, bố mẹ tôi gọi điện thoại đến, hỏi tôi có nhớ nhà không. Tôi nói không nhớ. Tôi nói với họ rằng bây giờ tôi ở Trung Quốc cũng đã có một ngôi nhà. Họ nghe xong rất vui, còn nói rằng họ cũng muốn đến Trung Quốc, xem ngôi nhà của tôi ở Trung Quốc.",
                 "source_origin": "textbook",
-                "check_needed": true,
-                "uuid": "1e350921-1e98-4b63-9bc1-7e8f2e1d1b9e"
+                "check_needed": true
               }
             ],
             "questions": [
               {
-                "id": "reading_01_q01",
+                "id": "97c6a4ab-7de0-45b1-a796-4625f58d1fca",
                 "type": "true_false",
                 "prompt": "爱华的中国家有一个小妹妹，她今年十九岁。",
                 "answer": "错",
                 "explanation_vi": "Bài đọc nói 小丽十六岁, không phải 十九岁.",
                 "evidence": [
                   {
-                    "paragraph_id": "reading_01_p01",
+                    "paragraph_id": "d2a4cf8b-55cd-4904-9fed-3141da682b19",
                     "quote": "她有一个十六岁的女儿，叫小丽"
                   }
                 ],
                 "source_origin": "textbook_question_generated_answer",
                 "answer_verified": false,
-                "check_needed": true,
-                "uuid": "b56c3870-41b8-4ced-b941-ffae2f49e875"
+                "check_needed": true
               },
               {
-                "id": "reading_01_q02",
+                "id": "82b334af-11c3-4606-980f-154617982627",
                 "type": "true_false",
                 "prompt": "爱华的爸爸妈妈也来中国了。",
                 "answer": "错",
                 "explanation_vi": "Bố mẹ chỉ gọi điện và nói cũng muốn đến Trung Quốc, chưa đến.",
                 "evidence": [
                   {
-                    "paragraph_id": "reading_01_p04",
+                    "paragraph_id": "b3e5d57c-8b64-4c60-b5f0-3976cd13fef0",
                     "quote": "还说，他们也想来中国"
                   }
                 ],
                 "source_origin": "textbook_question_generated_answer",
                 "answer_verified": false,
-                "check_needed": true,
-                "uuid": "28fb9ae9-0eec-4ec8-b1cc-2081e35f0dbc"
+                "check_needed": true
               },
               {
-                "id": "reading_01_q03",
+                "id": "13181a17-4f4d-4923-a0ef-dd8d285261d4",
                 "type": "true_false",
                 "prompt": "爱华是外国留学生。",
                 "answer": "对",
                 "explanation_vi": "Nhân vật đến Trung Quốc, học tiếng Hán và giới thiệu văn hóa nước mình.",
                 "evidence": [
                   {
-                    "paragraph_id": "reading_01_p01",
+                    "paragraph_id": "d2a4cf8b-55cd-4904-9fed-3141da682b19",
                     "quote": "我去年来到中国"
                   }
                 ],
                 "source_origin": "textbook_question_generated_answer",
                 "answer_verified": false,
-                "check_needed": true,
-                "uuid": "909ec7e7-a947-4ce9-8c9e-2e3598691a97"
+                "check_needed": true
               }
-            ],
-            "uuid": "d4a97a93-5e8b-47aa-a01f-0510b31e26c9"
+            ]
           }
-        ],
-        "uuid": "64279168-0b5b-43af-b3eb-fd07f0ccd32f"
+        ]
       },
       {
-        "id": "section_08_character_writing",
+        "id": "2a3cfdb8-618f-43d3-9ad4-160d1dbb366a",
         "type": "character_writing",
         "order": 8,
         "title": "写汉字",
@@ -3211,36 +2941,33 @@
         "check_needed": true,
         "items": [
           {
-            "id": "char_01",
+            "id": "33bbf7c1-79c1-48ef-b67f-efb8d186cc5a",
             "type": "character_writing_item",
             "order": 1,
             "hanzi": "光",
             "pinyin": "guāng",
             "meaning_vi": "ánh sáng; ánh nắng",
             "related_vocab_refs": [
-              "vocab_016"
+              "be7a835d-ff8f-4a86-9fd8-27c5f1093f0c"
             ],
-            "note_vi": "Chữ trong từ 阳光.",
-            "uuid": "36d1a460-06d9-466d-bd73-55f642534975"
+            "note_vi": "Chữ trong từ 阳光."
           },
           {
-            "id": "char_02",
+            "id": "e291c92e-298f-49b5-bd05-5de86da3e4fb",
             "type": "character_writing_item",
             "order": 2,
             "hanzi": "交",
             "pinyin": "jiāo",
             "meaning_vi": "giao; trao; kết giao; giao thông",
             "related_vocab_refs": [
-              "vocab_030"
+              "2185ee67-885d-4ffb-83e2-e97be4070796"
             ],
-            "note_vi": "Chữ trong từ 交通.",
-            "uuid": "ab97c448-74b6-4392-a79e-0d3a8e93a83a"
+            "note_vi": "Chữ trong từ 交通."
           }
-        ],
-        "uuid": "d1f9b24f-e9c8-4534-a785-c483fb3d1597"
+        ]
       },
       {
-        "id": "section_09_summary",
+        "id": "944b8c3a-d3d4-4265-a907-10cef8340ac2",
         "type": "summary",
         "order": 9,
         "title": "总结",
@@ -3261,19 +2988,16 @@
           ],
           "grammar_points": [
             {
-              "id": "grammar_01",
-              "title": "就 / 才",
-              "uuid": "781c0f52-d684-4576-a67c-ae88c8c0d4cb"
+              "id": "f8ec59f3-898a-47b2-b536-44dfd8183393",
+              "title": "就 / 才"
             },
             {
-              "id": "grammar_02",
-              "title": "要是……就……",
-              "uuid": "06fac8ad-ad38-48d6-aae4-2ee6b55bc846"
+              "id": "57b14753-688a-41b6-9e0d-b61dbbf574d7",
+              "title": "要是……就……"
             },
             {
-              "id": "grammar_03",
-              "title": "虽然……但是……",
-              "uuid": "1cf34286-ff5e-49b5-924a-240081ceaa6c"
+              "id": "fa804fff-372b-4874-8571-f54e613d7e07",
+              "title": "虽然……但是……"
             }
           ],
           "key_patterns": [
@@ -3296,10 +3020,55 @@
               "Một số số liệu/chi tiết nhỏ như tiền thuê nhà trong các nguồn phụ có thể khác nhau; ưu tiên PDF scan."
             ]
           }
-        },
-        "uuid": "db521ccc-b38b-4e4e-b3c3-296900b040ba"
+        }
       }
     ],
+    "metadata": {
+      "legacy_id": "hanyu_2_1_lesson_03",
+      "book": "Hanyu Jiaocheng",
+      "volume": "第二册上",
+      "volume_vi": "Quyển 2 Thượng",
+      "lesson_index": 3,
+      "lesson_number_cn": "第三课",
+      "lesson_title_cn": "我吃了早饭就来了",
+      "lesson_title_pinyin": "Wǒ chī le zǎofàn jiù lái le",
+      "lesson_title_vi": "Tôi ăn sáng xong thì đến",
+      "lesson_title_en": "I came right after breakfast",
+      "source_files": [
+        {
+          "name": "Hanyu Jiaocheng 2-1.pdf",
+          "type": "pdf_scan",
+          "source_origin": "textbook",
+          "check_needed": true,
+          "page_start": 35,
+          "page_end": 48
+        },
+        {
+          "name": "Tong_hop_tu_vung_Han_ngu_quyen_2_Bai_1-25.docx",
+          "type": "uploaded_crosscheck",
+          "source_origin": "uploaded_crosscheck",
+          "check_needed": false
+        },
+        {
+          "name": "Học kì 2 上-下.md",
+          "type": "uploaded_crosscheck",
+          "source_origin": "uploaded_crosscheck",
+          "check_needed": false
+        },
+        {
+          "name": "hanyu_lesson_full_coverage_sample_v2_3_0.json",
+          "type": "structure_sample",
+          "source_origin": "uploaded_crosscheck",
+          "check_needed": false
+        },
+        {
+          "name": "hanyuLesson.schema.v2.3.0.full.ts",
+          "type": "schema",
+          "source_origin": "uploaded_crosscheck",
+          "check_needed": false
+        }
+      ]
+    },
     "summary": {
       "lesson_parts": [
         "课文",
@@ -3314,19 +3083,16 @@
       ],
       "grammar_points": [
         {
-          "id": "grammar_01",
-          "title": "就 / 才",
-          "uuid": "1cc0aafa-124d-4ce4-8ae4-5b3cd4f491de"
+          "id": "f8ec59f3-898a-47b2-b536-44dfd8183393",
+          "title": "就 / 才"
         },
         {
-          "id": "grammar_02",
-          "title": "要是……就……",
-          "uuid": "2e8e9c83-89e6-483a-b629-3c316a185d75"
+          "id": "57b14753-688a-41b6-9e0d-b61dbbf574d7",
+          "title": "要是……就……"
         },
         {
-          "id": "grammar_03",
-          "title": "虽然……但是……",
-          "uuid": "2d610eb4-b59b-4309-b7dd-22fcba355625"
+          "id": "fa804fff-372b-4874-8571-f54e613d7e07",
+          "title": "虽然……但是……"
         }
       ],
       "main_patterns": [
@@ -3357,212 +3123,6 @@
         "Viết chữ Hán"
       ],
       "check_needed": false
-    },
-    "uuid": "d350ce56-f941-4ab9-9532-7d2b2cbcf764"
-  },
-  "coverage_report": {
-    "version": "coverage_v1",
-    "coverage_status": "complete_unverified",
-    "expected_exercise_count_from_pdf": 11,
-    "actual_exercise_count_in_json": 11,
-    "all_exercises_covered": true,
-    "all_exercise_content_verified": false,
-    "missing_exercise_indexes": [],
-    "expected_exercises_from_pdf": [
-      {
-        "order": 1,
-        "title_cn": "一、语音",
-        "title_vi": "",
-        "canonical_type": "phonetics",
-        "json_item_id": "exercise_01",
-        "page_start": null,
-        "page_end": null,
-        "extracted": true,
-        "content_verified": false,
-        "answer_verified": false,
-        "source_origin": "textbook",
-        "check_needed": true
-      },
-      {
-        "order": 2,
-        "title_cn": "二、替换",
-        "title_vi": "",
-        "canonical_type": "substitution_drill",
-        "json_item_id": "exercise_02",
-        "page_start": null,
-        "page_end": null,
-        "extracted": true,
-        "content_verified": false,
-        "answer_verified": false,
-        "source_origin": "textbook",
-        "check_needed": true
-      },
-      {
-        "order": 3,
-        "title_cn": "三、选词填空",
-        "title_vi": "",
-        "canonical_type": "choose_words_fill_blank",
-        "json_item_id": "exercise_03",
-        "page_start": null,
-        "page_end": null,
-        "extracted": true,
-        "content_verified": false,
-        "answer_verified": false,
-        "source_origin": "textbook",
-        "check_needed": true
-      },
-      {
-        "order": 4,
-        "title_cn": "四、用“就”或“才”填空",
-        "title_vi": "",
-        "canonical_type": "fill_blank",
-        "json_item_id": "exercise_04",
-        "page_start": null,
-        "page_end": null,
-        "extracted": true,
-        "content_verified": false,
-        "answer_verified": false,
-        "source_origin": "textbook",
-        "check_needed": true
-      },
-      {
-        "order": 5,
-        "title_cn": "五、完成句子",
-        "title_vi": "",
-        "canonical_type": "complete_sentence",
-        "json_item_id": "exercise_05",
-        "page_start": null,
-        "page_end": null,
-        "extracted": true,
-        "content_verified": false,
-        "answer_verified": false,
-        "source_origin": "textbook",
-        "check_needed": true
-      },
-      {
-        "order": 6,
-        "title_cn": "六、完成会话",
-        "title_vi": "",
-        "canonical_type": "complete_dialogue",
-        "json_item_id": "exercise_06",
-        "page_start": null,
-        "page_end": null,
-        "extracted": true,
-        "content_verified": false,
-        "answer_verified": false,
-        "source_origin": "textbook",
-        "check_needed": true
-      },
-      {
-        "order": 7,
-        "title_cn": "七、根据实际情况回答问题",
-        "title_vi": "",
-        "canonical_type": "answer_questions",
-        "json_item_id": "exercise_07",
-        "page_start": null,
-        "page_end": null,
-        "extracted": true,
-        "content_verified": false,
-        "answer_verified": false,
-        "source_origin": "textbook",
-        "check_needed": true
-      },
-      {
-        "order": 8,
-        "title_cn": "八、改错句",
-        "title_vi": "",
-        "canonical_type": "correct_sentence",
-        "json_item_id": "exercise_08",
-        "page_start": null,
-        "page_end": null,
-        "extracted": true,
-        "content_verified": false,
-        "answer_verified": false,
-        "source_origin": "textbook",
-        "check_needed": true
-      },
-      {
-        "order": 9,
-        "title_cn": "九、交际会话",
-        "title_vi": "",
-        "canonical_type": "communication_dialogue",
-        "json_item_id": "exercise_09",
-        "page_start": null,
-        "page_end": null,
-        "extracted": true,
-        "content_verified": false,
-        "answer_verified": false,
-        "source_origin": "textbook",
-        "check_needed": true
-      },
-      {
-        "order": 10,
-        "title_cn": "十、阅读理解",
-        "title_vi": "",
-        "canonical_type": "reading_comprehension",
-        "json_item_id": "exercise_10",
-        "page_start": null,
-        "page_end": null,
-        "extracted": true,
-        "content_verified": false,
-        "answer_verified": false,
-        "source_origin": "textbook",
-        "check_needed": true
-      },
-      {
-        "order": 11,
-        "title_cn": "十一、写汉字",
-        "title_vi": "",
-        "canonical_type": "character_writing",
-        "json_item_id": "exercise_11",
-        "page_start": null,
-        "page_end": null,
-        "extracted": true,
-        "content_verified": false,
-        "answer_verified": false,
-        "source_origin": "textbook",
-        "check_needed": true
-      }
-    ],
-    "unknown_or_unmapped_blocks": [],
-    "coverage_gates": [
-      {
-        "id": "gate_text",
-        "label": "Text covered",
-        "passed": true,
-        "expected": 2,
-        "actual": 2,
-        "reason": "Đã bóc 2 bài khóa.",
-        "uuid": "1e1067d8-5276-4f3f-ad85-d68aa5b04eb3"
-      },
-      {
-        "id": "gate_vocab",
-        "label": "Vocabulary covered",
-        "passed": true,
-        "expected": "套 → 解答",
-        "actual": 41,
-        "reason": "Đã map từ PART 02; 阳关 trong nguồn phụ được sửa theo ngữ cảnh thành 阳光.",
-        "uuid": "a21309a4-7690-4b2d-aced-6bbaf457107e"
-      },
-      {
-        "id": "gate_exercises",
-        "label": "Exercises covered",
-        "passed": true,
-        "expected": 11,
-        "actual": 11,
-        "reason": "Bao gồm 语音, 替换, 选词填空, 就/才填空, 完成句子, 完成会话, 回答问题, 改错句, 交际会话, 阅读理解, 写汉字.",
-        "uuid": "e5436cd4-1caf-4e78-8845-1bc7f57bdaff"
-      },
-      {
-        "id": "gate_final",
-        "label": "Final verification allowed",
-        "passed": false,
-        "expected": true,
-        "actual": false,
-        "reason": "Chưa đối chiếu thủ công lại toàn bộ PDF scan lần cuối nên không set final_verified.",
-        "uuid": "dcb2cf9e-a8de-418f-9643-788a4764248a"
-      }
-    ],
-    "final_verification_allowed": false
+    }
   }
 }

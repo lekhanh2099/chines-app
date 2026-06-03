@@ -1,50 +1,6 @@
 {
-  "schema_version": "2.3.0",
-  "content_type": "chinese_textbook_lesson",
-  "verification_status": "verified",
-  "source": {
-    "book": "Hanyu Jiaocheng",
-    "volume": "第三册上",
-    "volume_vi": "Quyển 3 Thượng",
-    "lesson_index": 5,
-    "lesson_number_cn": "第五课",
-    "lesson_title_cn": "回头再说",
-    "lesson_title_pinyin": "Huítóu zài shuō",
-    "lesson_title_vi": "Để sau rồi nói / Để sau tính tiếp",
-    "lesson_title_en": "We will talk about it later",
-    "source_files": [
-      {
-        "name": "Hanyu Jiaocheng 3-1.pdf",
-        "type": "pdf_scan",
-        "source_origin": "textbook",
-        "check_needed": true,
-        "page_start": 63,
-        "page_end": 75,
-        "note": "PDF scan được dùng làm nguồn chính; trang sách 75 bị thiếu/nhảy trang nên phần cuối 综合填空 cần check_needed."
-      },
-      {
-        "name": "Quyển 3- tổng hợp.docx",
-        "type": "uploaded_crosscheck",
-        "source_origin": "uploaded_crosscheck",
-        "check_needed": false
-      },
-      {
-        "name": "Đã dán markdown (1).md",
-        "type": "workflow_prompt",
-        "source_origin": "uploaded_crosscheck",
-        "check_needed": false
-      }
-    ],
-    "web_crosscheck": [
-      {
-        "title": "MandarinAi - Chinese Course 3A Lesson 5 回头再说",
-        "source_origin": "web_crosscheck",
-        "note": "Đối chiếu phụ cho bài khóa 回头再说."
-      }
-    ]
-  },
   "lesson": {
-    "id": "hanyu_3_1_lesson_05",
+    "id": "617c8eb6-26fe-4259-a299-721d9bad3e15",
     "title": {
       "zh": "回头再说",
       "pinyin": "Huítóu zài shuō",
@@ -59,7 +15,7 @@
     ],
     "sections": [
       {
-        "id": "section_01_text",
+        "id": "a6c0d522-99be-4f36-881c-b9b2c6beeb85",
         "type": "text",
         "order": 1,
         "title": "课文",
@@ -68,7 +24,7 @@
         "check_needed": false,
         "blocks": [
           {
-            "id": "text_01",
+            "id": "e155d5ea-f89d-45f0-ab8d-094ce9e719f0",
             "type": "text_narrative",
             "order": 1,
             "title": "回头再说",
@@ -77,105 +33,94 @@
             "check_needed": false,
             "paragraphs": [
               {
-                "id": "text_01_p01",
+                "id": "43338a2c-2044-419e-9fdd-ed1739757a8d",
                 "order": 1,
                 "zh": "我刚到北京时，听过一个相声，说北京人的口头语是“吃了吗”。后来我发现，其实，北京人最爱说的一句话是“回头再说”。",
                 "pinyin": "",
                 "vi": "Khi tôi mới đến Bắc Kinh, tôi từng nghe một tiết mục tướng thanh nói rằng câu cửa miệng của người Bắc Kinh là “Ăn cơm chưa?”. Sau này tôi phát hiện ra, thật ra câu người Bắc Kinh thích nói nhất là “回头再说” — để sau rồi nói.",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "0d515300-2e55-4c55-950e-e0ca80d04904"
+                "check_needed": false
               },
               {
-                "id": "text_01_p02",
+                "id": "4a807389-3592-4cf4-973f-6589e0118fb2",
                 "order": 2,
                 "zh": "我在香港坐上中国民航的飞机，邻座的一个人用地道的英语问我：“是去北京工作吗？”“不，去留学！”我回答。他是个中国人。我们就这样愉快地聊了一路。临下飞机，他还给了我一张名片，邀请我有空儿到他家去玩儿。",
                 "pinyin": "",
                 "vi": "Ở Hồng Kông, tôi lên máy bay của Hàng không Dân dụng Trung Quốc. Một người ngồi bên cạnh dùng tiếng Anh rất chuẩn hỏi tôi: “Bạn đến Bắc Kinh làm việc à?” “Không, tôi đi du học!” tôi trả lời. Anh ấy là người Trung Quốc. Chúng tôi cứ thế trò chuyện vui vẻ suốt cả chặng đường. Trước khi xuống máy bay, anh ấy còn đưa cho tôi một tấm danh thiếp, mời tôi khi nào rảnh đến nhà anh ấy chơi.",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "0c26303e-59f6-4763-b019-fcf9fbe1d41a"
+                "check_needed": false
               },
               {
-                "id": "text_01_p03",
+                "id": "5a221404-05e7-4ae2-ad9f-0c920a73dc36",
                 "order": 3,
                 "zh": "到北京后的第二个周末，我给飞机上认识的这位先生打电话。他在电话里热情地说：“有时间来家里玩儿吧。”我马上高兴起来，说：“太好了！我什么时候去？”他停了一会儿说：“这一段工作太忙，回头再说吧。”可是，几乎每次打电话，他都说欢迎我去他家，同时又带上一句“回头再说”。",
                 "pinyin": "",
                 "vi": "Cuối tuần thứ hai sau khi đến Bắc Kinh, tôi gọi điện cho vị tiên sinh quen trên máy bay. Trong điện thoại, anh ấy nhiệt tình nói: “Có thời gian thì đến nhà tôi chơi nhé.” Tôi lập tức vui hẳn lên, nói: “Tuyệt quá! Khi nào tôi đi được?” Anh ấy ngừng một lát rồi nói: “Dạo này công việc bận quá, để sau rồi nói nhé.” Thế nhưng gần như lần nào gọi điện, anh ấy cũng nói hoan nghênh tôi đến nhà anh ấy, đồng thời lại kèm thêm một câu “回头再说”.",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "3ccb5864-9345-45bd-8d1d-dc5ea1302244"
+                "check_needed": false
               },
               {
-                "id": "text_01_p04",
+                "id": "5c402bbc-a0e6-434c-a6c7-3c4f86c845fe",
                 "order": 4,
                 "zh": "我开始想，不是说有空儿就让我去吗？怎么会这样不实在？在三次“回头再说”之后，我终于去了他家。他和太太都十分热情，买菜做饭，准备了满满一桌的酒菜让我吃了个够。临了儿，他还送我好多书。我粗粗一看价钱，要五百多块钱呢，就说：“你给我这么贵的书，我一定要付钱。”他平淡地说：“这些书都是你用得着的，至于钱，回头再说吧。”之后我多次提起给他书钱的事，他都说：“回头再说吧。”",
                 "pinyin": "",
                 "vi": "Tôi bắt đầu nghĩ: Chẳng phải anh ấy nói khi nào rảnh thì cho tôi đến sao? Sao lại không thật lòng như vậy? Sau ba lần “回头再说”, cuối cùng tôi cũng đến nhà anh ấy. Anh ấy và vợ đều vô cùng nhiệt tình, mua thức ăn nấu cơm, chuẩn bị đầy cả một bàn rượu và đồ ăn để tôi ăn thật thỏa thích. Đến cuối, anh ấy còn tặng tôi rất nhiều sách. Tôi nhìn sơ giá tiền, hơn năm trăm tệ, liền nói: “Anh tặng tôi sách đắt như vậy, tôi nhất định phải trả tiền.” Anh ấy bình thản nói: “Những quyển sách này đều là thứ bạn sẽ cần dùng đến. Còn về tiền, để sau rồi nói nhé.” Sau đó tôi nhiều lần nhắc đến chuyện trả tiền sách cho anh ấy, anh ấy đều nói: “Để sau rồi nói nhé.”",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "30dfedbb-8d0d-4260-b013-1b0b38e10097"
+                "check_needed": false
               },
               {
-                "id": "text_01_p05",
+                "id": "babe7f0b-2b53-402f-85af-c5de9b0e676d",
                 "order": 5,
                 "zh": "在北京的日子里，我经常听到“回头再说”这句话。它让我感到的不只是客气的推辞，更多的是温暖的等待。",
                 "pinyin": "",
                 "vi": "Trong những ngày ở Bắc Kinh, tôi thường xuyên nghe thấy câu “回头再说”. Nó khiến tôi cảm thấy đó không chỉ là một lời từ chối khách sáo, mà còn nhiều hơn là một sự chờ đợi ấm áp.",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "70b4e1b4-2e43-4a74-826e-eb1dbb0034e2"
+                "check_needed": false
               },
               {
-                "id": "text_01_p06",
+                "id": "d2683a70-b897-4979-ad07-0bca2bb00b31",
                 "order": 6,
                 "zh": "那天，我在建国门上了地铁。这是我来中国后第一次坐地铁，以前从来没有坐过中国的地铁。车上人很多，下了地铁，上到地面时，我才发现那不是我要去的地方，因为没有找到熟悉的375路汽车站。正在我左顾右盼的时候，身后有两个小伙子主动跟我打招呼，我没有理他们。过了一会儿，他们看我还站在那里，就问我要去哪儿。",
                 "pinyin": "",
                 "vi": "Hôm đó, tôi lên tàu điện ngầm ở Kiến Quốc Môn. Đây là lần đầu tiên tôi đi tàu điện ngầm sau khi đến Trung Quốc; trước đây tôi chưa từng đi tàu điện ngầm ở Trung Quốc. Trên tàu rất đông người. Sau khi xuống tàu, lên đến mặt đất, tôi mới phát hiện đó không phải nơi mình muốn đến, vì tôi không tìm thấy trạm xe buýt số 375 quen thuộc. Đúng lúc tôi đang nhìn quanh trái phải, phía sau có hai chàng trai trẻ chủ động chào tôi, nhưng tôi không để ý đến họ. Một lát sau, thấy tôi vẫn đứng ở đó, họ liền hỏi tôi muốn đi đâu.",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "1a12b3ab-6143-4ac3-95bd-7f0f9f868ba4"
+                "check_needed": false
               },
               {
-                "id": "text_01_p07",
+                "id": "cde61ddf-34c9-4d25-892b-99b26df9e427",
                 "order": 7,
                 "zh": "我向他们打听去375路车站怎么走。他们说，375路车站在西直门那儿，而这儿是复兴门，离西直门还远着呢。当他们知道我要回学校时，就说：“上车吧，我们正好要去颐和园方向，可以带你一段。”我犹豫了一下儿才上了他们的车。一路上我没有说话，因为我不想跟不认识的人打交道。",
                 "pinyin": "",
                 "vi": "Tôi hỏi họ đường đi đến trạm xe buýt số 375. Họ nói trạm xe số 375 ở Tây Trực Môn, còn chỗ này là Phục Hưng Môn, cách Tây Trực Môn còn xa lắm. Khi biết tôi muốn về trường, họ nói: “Lên xe đi, chúng tôi vừa hay đang đi về hướng Di Hòa Viên, có thể chở bạn một đoạn.” Tôi do dự một chút rồi mới lên xe của họ. Suốt dọc đường tôi không nói gì, vì tôi không muốn giao tiếp với người lạ.",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "ac87fb8f-59ec-4979-a0b4-67492038782a"
+                "check_needed": false
               },
               {
-                "id": "text_01_p08",
+                "id": "37ac9b48-37ae-4d3e-aa1a-644f38547b84",
                 "order": 8,
                 "zh": "到了学校门口我下了车，掏出钱来要给他们的时候，两个小伙子笑着说：“我们又不是出租车，只是顺路送送你，怎么能要钱呢？”听了他们的话，我心里一热，忙向他们表示感谢，问他们叫什么名字，住在哪儿，可是他们已经把车发动起来，对我招招手说：“没准儿以后我们还会见面呢，回头再说吧。”说着就把车开走了。我愣在那里不知道说什么好。至今我也没有再见过这两个热情友好的小伙子。",
                 "pinyin": "",
                 "vi": "Đến cổng trường, tôi xuống xe. Khi tôi móc tiền ra định đưa cho họ, hai chàng trai trẻ cười nói: “Chúng tôi đâu phải taxi, chỉ tiện đường chở bạn một đoạn thôi, sao có thể lấy tiền được?” Nghe họ nói vậy, trong lòng tôi bỗng thấy ấm lên, vội vàng bày tỏ lời cảm ơn, hỏi họ tên là gì, sống ở đâu. Nhưng họ đã khởi động xe, vẫy tay với tôi và nói: “Biết đâu sau này chúng ta còn gặp lại, để sau rồi nói nhé.” Nói xong liền lái xe đi. Tôi đứng ngẩn ra đó, không biết nên nói gì. Cho đến tận bây giờ, tôi cũng chưa gặp lại hai chàng trai trẻ nhiệt tình và thân thiện ấy.",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "34540d65-d1eb-4cac-b870-a811f2982402"
+                "check_needed": false
               },
               {
-                "id": "text_01_p09",
+                "id": "2b9bed70-c477-49f4-8027-9bc4d7f13594",
                 "order": 9,
                 "zh": "我还要在北京学习和生活很久，和中国人打交道的日子还长着呢，可能还会遇到更多有意思的事，咱们也“回头再说”吧。",
                 "pinyin": "",
                 "vi": "Tôi còn phải học tập và sinh sống ở Bắc Kinh rất lâu, những ngày giao tiếp với người Trung Quốc còn dài. Có lẽ tôi sẽ còn gặp thêm nhiều chuyện thú vị nữa. Chúng ta cũng “để sau rồi nói” nhé.",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "2e762b84-9b64-4097-9545-814350546b0b"
+                "check_needed": false
               }
             ],
             "lines": [],
-            "comprehension_questions": [],
-            "uuid": "d5715d13-990e-4dd4-bfd9-c3c194428867"
+            "comprehension_questions": []
           }
-        ],
-        "uuid": "2375cd5c-897e-405f-8619-913502f5fd04"
+        ]
       },
       {
-        "id": "section_02_vocabulary",
+        "id": "78c30bf4-c314-4c4c-86e3-4dd62382dd78",
         "type": "vocabulary",
         "order": 2,
         "title": "生词",
@@ -184,7 +129,7 @@
         "check_needed": false,
         "items": [
           {
-            "id": "vocab_001",
+            "id": "68c05a12-9d8e-45d9-a413-786bcf2f780a",
             "type": "vocabulary_item",
             "order": 1,
             "hanzi": "回头",
@@ -208,11 +153,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "bea50355-fd5e-4df0-b6c3-84468c1982aa"
+            "check_needed": false
           },
           {
-            "id": "vocab_002",
+            "id": "8c18cf3c-e9dc-42e1-8faf-eb26799cabab",
             "type": "vocabulary_item",
             "order": 2,
             "hanzi": "再说",
@@ -236,11 +180,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "a566f591-29ea-4d5f-9f91-576303e603db"
+            "check_needed": false
           },
           {
-            "id": "vocab_003",
+            "id": "1fbd69b7-603a-44ea-8d57-10cd4def9ced",
             "type": "vocabulary_item",
             "order": 3,
             "hanzi": "口头语",
@@ -264,11 +207,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "8c1964fe-4941-4688-b232-b6ad8cb26e3a"
+            "check_needed": false
           },
           {
-            "id": "vocab_004",
+            "id": "3dc505f1-bc0e-4a96-b448-17fed89fdc60",
             "type": "vocabulary_item",
             "order": 4,
             "hanzi": "后来",
@@ -292,11 +234,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "a50223d6-01bd-4d1a-8a46-06007c398078"
+            "check_needed": false
           },
           {
-            "id": "vocab_005",
+            "id": "188412d4-4c23-4d60-b7b2-21f3490199e7",
             "type": "vocabulary_item",
             "order": 5,
             "hanzi": "其实",
@@ -320,11 +261,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "2a9815fd-cf81-4815-97e3-dde4fca78156"
+            "check_needed": false
           },
           {
-            "id": "vocab_006",
+            "id": "5ea44727-d97c-467b-b1b8-babd195df50d",
             "type": "vocabulary_item",
             "order": 6,
             "hanzi": "民航",
@@ -348,11 +288,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "8462e00f-b0e5-49e2-82f8-0884b76372e0"
+            "check_needed": false
           },
           {
-            "id": "vocab_007",
+            "id": "54613016-834a-4fc3-9912-2357a6d27058",
             "type": "vocabulary_item",
             "order": 7,
             "hanzi": "邻",
@@ -376,11 +315,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "15c22872-22da-4ada-8da4-b1bd468383d5"
+            "check_needed": false
           },
           {
-            "id": "vocab_008",
+            "id": "0da97406-c3ac-4fcb-a51c-398a59c3fbae",
             "type": "vocabulary_item",
             "order": 8,
             "hanzi": "地道",
@@ -404,11 +342,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "b9a34ef9-6dc6-45fc-9bf6-10cfa84ee222"
+            "check_needed": false
           },
           {
-            "id": "vocab_009",
+            "id": "54b36889-82be-485b-8342-fb8aab572065",
             "type": "vocabulary_item",
             "order": 9,
             "hanzi": "回答",
@@ -432,11 +369,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "3d4bb6fa-12fa-4ff7-95ab-8d0a472b8eb6"
+            "check_needed": false
           },
           {
-            "id": "vocab_010",
+            "id": "1354b1a3-93cc-4505-8d7f-c5550a1d6ae9",
             "type": "vocabulary_item",
             "order": 10,
             "hanzi": "名片",
@@ -460,11 +396,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "605cafa9-2478-4b69-b974-587bb6938494"
+            "check_needed": false
           },
           {
-            "id": "vocab_011",
+            "id": "f0684cb3-4577-4e6c-9f22-7d97c89692b3",
             "type": "vocabulary_item",
             "order": 11,
             "hanzi": "几乎",
@@ -488,11 +423,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "abb90596-4978-41a2-b887-cabddf594a7e"
+            "check_needed": false
           },
           {
-            "id": "vocab_012",
+            "id": "d5b362a7-c8f6-4f25-b2b5-0f1749c8afbb",
             "type": "vocabulary_item",
             "order": 12,
             "hanzi": "同时",
@@ -516,11 +450,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "9f3eaccd-cc94-4fde-9e79-5ac255da6538"
+            "check_needed": false
           },
           {
-            "id": "vocab_013",
+            "id": "7eccd5e8-dac0-4f36-be2e-abcc0a2bdfcd",
             "type": "vocabulary_item",
             "order": 13,
             "hanzi": "实在",
@@ -544,11 +477,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "ba52d604-c5a0-42fc-862e-1e8c3fe8eb11"
+            "check_needed": false
           },
           {
-            "id": "vocab_014",
+            "id": "91fa9f81-e5ef-4c4a-b29c-c4b6daa02196",
             "type": "vocabulary_item",
             "order": 14,
             "hanzi": "之后",
@@ -572,11 +504,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "06e2a08e-ea3e-461a-890a-40e2eacdb20f"
+            "check_needed": false
           },
           {
-            "id": "vocab_015",
+            "id": "8a5b1d09-23a6-4182-96e6-9bf4d761a1e1",
             "type": "vocabulary_item",
             "order": 15,
             "hanzi": "太太",
@@ -600,11 +531,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "268508d4-0477-4199-aa1e-1d0456bf359f"
+            "check_needed": false
           },
           {
-            "id": "vocab_016",
+            "id": "be7a835d-ff8f-4a86-9fd8-27c5f1093f0c",
             "type": "vocabulary_item",
             "order": 16,
             "hanzi": "临了儿",
@@ -628,11 +558,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "35611235-8386-4525-a914-04dff2316a6f"
+            "check_needed": false
           },
           {
-            "id": "vocab_017",
+            "id": "7a89dc80-d79d-4c2f-988c-d0f54e240d19",
             "type": "vocabulary_item",
             "order": 17,
             "hanzi": "粗",
@@ -656,11 +585,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "98af98bb-75ce-4bf4-ae01-7fceb2119ea9"
+            "check_needed": false
           },
           {
-            "id": "vocab_018",
+            "id": "ff3e1818-66a9-4532-880b-02c9cacb0e5b",
             "type": "vocabulary_item",
             "order": 18,
             "hanzi": "价钱",
@@ -684,11 +612,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "70e3bb5a-54b0-444e-99f8-b4e8a7504b69"
+            "check_needed": false
           },
           {
-            "id": "vocab_019",
+            "id": "0125bdae-fe4e-48fb-8264-145e95c75933",
             "type": "vocabulary_item",
             "order": 19,
             "hanzi": "付",
@@ -712,11 +639,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "81742f68-e00c-46c0-8fc9-9a38709f1839"
+            "check_needed": false
           },
           {
-            "id": "vocab_020",
+            "id": "689eb64b-5d4f-469f-9afa-74017d399614",
             "type": "vocabulary_item",
             "order": 20,
             "hanzi": "平淡",
@@ -740,11 +666,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "88ec287d-f2e3-44ee-9fd6-fc2c6a4ce0b9"
+            "check_needed": false
           },
           {
-            "id": "vocab_021",
+            "id": "d45d5488-9293-41ae-9deb-1e5b51cee446",
             "type": "vocabulary_item",
             "order": 21,
             "hanzi": "至于",
@@ -768,11 +693,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "7f5f3654-4506-4751-8dda-62e9b7b5cd1b"
+            "check_needed": false
           },
           {
-            "id": "vocab_022",
+            "id": "c99a633b-27a2-429b-a139-44113a84c189",
             "type": "vocabulary_item",
             "order": 22,
             "hanzi": "日子",
@@ -796,11 +720,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "ac62cc71-7981-42ce-855e-1dff9e9a4da3"
+            "check_needed": false
           },
           {
-            "id": "vocab_023",
+            "id": "79358c6f-3427-4c28-98f3-7ef98c7033c3",
             "type": "vocabulary_item",
             "order": 23,
             "hanzi": "推辞",
@@ -824,11 +747,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "186dbfd6-c68d-4367-99cb-9764ed8199d5"
+            "check_needed": false
           },
           {
-            "id": "vocab_024",
+            "id": "dc0f8e06-a359-4907-a8d8-fc9b02260590",
             "type": "vocabulary_item",
             "order": 24,
             "hanzi": "温暖",
@@ -852,11 +774,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "8f9dcf3e-e08a-41a6-93c3-20050c628cbc"
+            "check_needed": false
           },
           {
-            "id": "vocab_025",
+            "id": "c43cedbf-7024-4ec1-922f-e75119114baf",
             "type": "vocabulary_item",
             "order": 25,
             "hanzi": "等待",
@@ -880,11 +801,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "634c5209-e4c6-434c-bc95-43b57a9edfc0"
+            "check_needed": false
           },
           {
-            "id": "vocab_026",
+            "id": "d9991c79-3454-4247-bf18-f14f43b4a24a",
             "type": "vocabulary_item",
             "order": 26,
             "hanzi": "地面",
@@ -908,11 +828,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "63b6ba8a-836a-4da9-bc28-e92381c81d11"
+            "check_needed": false
           },
           {
-            "id": "vocab_027",
+            "id": "55cd807c-eec7-412d-99db-f4e6508b170f",
             "type": "vocabulary_item",
             "order": 27,
             "hanzi": "熟悉",
@@ -936,11 +855,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "d3538f30-9733-40c9-80ee-7cb7534fa51b"
+            "check_needed": false
           },
           {
-            "id": "vocab_028",
+            "id": "085e60d5-dd1c-4585-ac6b-0f1db0ded936",
             "type": "vocabulary_item",
             "order": 28,
             "hanzi": "路",
@@ -964,11 +882,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "47de058c-73d4-46d1-8fe3-84bf38afb641"
+            "check_needed": false
           },
           {
-            "id": "vocab_029",
+            "id": "ba7ff0f9-b633-4516-ab3d-22b96046a1cf",
             "type": "vocabulary_item",
             "order": 29,
             "hanzi": "左顾右盼",
@@ -992,11 +909,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "95838830-c841-4782-954a-d84e945e7db0"
+            "check_needed": false
           },
           {
-            "id": "vocab_030",
+            "id": "2185ee67-885d-4ffb-83e2-e97be4070796",
             "type": "vocabulary_item",
             "order": 30,
             "hanzi": "主动",
@@ -1020,11 +936,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "eeb2da2e-8efe-4537-b489-3fbd8f97bf23"
+            "check_needed": false
           },
           {
-            "id": "vocab_031",
+            "id": "092a8c16-3739-4685-a4c0-39365071bd48",
             "type": "vocabulary_item",
             "order": 31,
             "hanzi": "打招呼",
@@ -1048,11 +963,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "a47c12da-0bb9-4169-aac5-80dc023376cd"
+            "check_needed": false
           },
           {
-            "id": "vocab_032",
+            "id": "22e66ee9-565e-4670-b2ac-4d5a9b500b38",
             "type": "vocabulary_item",
             "order": 32,
             "hanzi": "理",
@@ -1076,11 +990,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "2261f51b-78a4-493d-8235-65352829f27f"
+            "check_needed": false
           },
           {
-            "id": "vocab_033",
+            "id": "275b46f4-3166-48b7-9766-58384178d1be",
             "type": "vocabulary_item",
             "order": 33,
             "hanzi": "方向",
@@ -1104,11 +1017,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "05ed1164-79cd-49a0-8bed-35cc62b4c1f2"
+            "check_needed": false
           },
           {
-            "id": "vocab_034",
+            "id": "1190511f-5970-4304-8f84-d7201b287aeb",
             "type": "vocabulary_item",
             "order": 34,
             "hanzi": "犹豫",
@@ -1132,11 +1044,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "8386a5c2-5e1e-4d9d-bfed-c0c3a89527ef"
+            "check_needed": false
           },
           {
-            "id": "vocab_035",
+            "id": "d42d3d90-443d-45da-bed7-987b50034e92",
             "type": "vocabulary_item",
             "order": 35,
             "hanzi": "打交道",
@@ -1160,11 +1071,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "cbd6d295-c63b-42c9-b9ab-31e804f64cc7"
+            "check_needed": false
           },
           {
-            "id": "vocab_036",
+            "id": "cfb712c9-c4ca-4314-b6b2-696b40ace25e",
             "type": "vocabulary_item",
             "order": 36,
             "hanzi": "顺路",
@@ -1188,11 +1098,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "1df647c3-f5c0-4ef9-b050-980589f32766"
+            "check_needed": false
           },
           {
-            "id": "vocab_037",
+            "id": "6059829f-ae21-43cf-ac0c-05e19639ec43",
             "type": "vocabulary_item",
             "order": 37,
             "hanzi": "发动",
@@ -1216,11 +1125,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "98ae5c95-60cf-4239-9748-32df7b47eb4e"
+            "check_needed": false
           },
           {
-            "id": "vocab_038",
+            "id": "fefd5441-7b6c-47e3-b823-9e149b947bf7",
             "type": "vocabulary_item",
             "order": 38,
             "hanzi": "招手",
@@ -1244,11 +1152,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "d0d7ff24-f063-4f6c-8213-fc81a2b376f4"
+            "check_needed": false
           },
           {
-            "id": "vocab_039",
+            "id": "27761bd2-433a-44ef-b79a-9e6f0a34b9c9",
             "type": "vocabulary_item",
             "order": 39,
             "hanzi": "没准儿",
@@ -1272,11 +1179,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "9f78f8f1-8f50-4285-8576-11edc7d6f204"
+            "check_needed": false
           },
           {
-            "id": "vocab_040",
+            "id": "861ed325-b320-4ae0-8eac-bb6bb8ebc215",
             "type": "vocabulary_item",
             "order": 40,
             "hanzi": "见面",
@@ -1300,11 +1206,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "8bd97965-4ee6-4bea-bd0f-7a9a360c9d5b"
+            "check_needed": false
           },
           {
-            "id": "vocab_041",
+            "id": "6fe8f20d-e712-4f0c-9cbc-021aaeb9698c",
             "type": "vocabulary_item",
             "order": 41,
             "hanzi": "愣",
@@ -1328,11 +1233,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "c2603c61-94b3-4260-bbf1-91abb8b4cceb"
+            "check_needed": false
           },
           {
-            "id": "vocab_042",
+            "id": "863bbf3f-83e7-4021-b98e-be632043d94c",
             "type": "vocabulary_item",
             "order": 42,
             "hanzi": "至今",
@@ -1356,14 +1260,12 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "c4363c3c-5929-4c88-b59d-ea0ae452a000"
+            "check_needed": false
           }
-        ],
-        "uuid": "405e91d4-3fd7-4354-9b73-7758d1327873"
+        ]
       },
       {
-        "id": "section_03_proper_nouns",
+        "id": "3c5ee48e-5d44-44ac-bd53-cac996a83338",
         "type": "proper_nouns",
         "order": 3,
         "title": "专名",
@@ -1372,7 +1274,7 @@
         "check_needed": false,
         "items": [
           {
-            "id": "proper_01",
+            "id": "3fe394c6-40ef-4aa3-8688-d61b706cd522",
             "type": "proper_noun",
             "order": 1,
             "hanzi": "中国民航",
@@ -1380,11 +1282,10 @@
             "meaning_vi": "Hàng không Dân dụng Trung Quốc / CAAC",
             "meaning_en": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "3b1c8fea-52bf-4771-92c0-2a742869b11d"
+            "check_needed": false
           },
           {
-            "id": "proper_02",
+            "id": "ca32b346-4a7d-4b3f-bc88-e7e8363c5c36",
             "type": "proper_noun",
             "order": 2,
             "hanzi": "建国门",
@@ -1392,11 +1293,10 @@
             "meaning_vi": "Kiến Quốc Môn, địa danh ở Bắc Kinh",
             "meaning_en": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "bc14a153-5541-4ce7-b0a8-be52a1b14f12"
+            "check_needed": false
           },
           {
-            "id": "proper_03",
+            "id": "beddacb8-1b88-4eac-a2ed-60e91192c489",
             "type": "proper_noun",
             "order": 3,
             "hanzi": "西直门",
@@ -1404,11 +1304,10 @@
             "meaning_vi": "Tây Trực Môn, địa danh ở Bắc Kinh",
             "meaning_en": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "47ddf399-0137-4aa3-b2b4-d6f890d8aaf5"
+            "check_needed": false
           },
           {
-            "id": "proper_04",
+            "id": "41894f87-dcc8-4f67-b1b8-b992eca7af65",
             "type": "proper_noun",
             "order": 4,
             "hanzi": "复兴门",
@@ -1416,14 +1315,12 @@
             "meaning_vi": "Phục Hưng Môn, địa danh ở Bắc Kinh",
             "meaning_en": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "cdd00177-89d0-489a-b45e-96a8ba270d80"
+            "check_needed": false
           }
-        ],
-        "uuid": "13d9b9b2-3c8a-4a8e-ba20-6060493286af"
+        ]
       },
       {
-        "id": "section_04_notes",
+        "id": "c18e9f54-6da1-4496-886b-c2c722605678",
         "type": "notes",
         "order": 4,
         "title": "注释",
@@ -1432,7 +1329,7 @@
         "check_needed": false,
         "items": [
           {
-            "id": "note_01",
+            "id": "63d654f5-4561-4d48-a144-bacbf9671dfc",
             "type": "note",
             "order": 1,
             "title": "临了儿，他还送我好多书。",
@@ -1440,7 +1337,7 @@
             "meaning_vi": "“临了儿” nghĩa là đến cuối cùng, lúc sắp kết thúc. “了” đọc liǎo, mang nghĩa kết thúc.",
             "examples": [
               {
-                "id": "note_01_ex_01",
+                "id": "3eca03f3-67c0-40d2-9fee-8e57a4ad43ad",
                 "zh": "临了儿，他还送我好多书。",
                 "vi": "Đến cuối, anh ấy còn tặng tôi rất nhiều sách.",
                 "pinyin": "",
@@ -1448,11 +1345,10 @@
                 "grammar_refs": [],
                 "vocab_refs": [],
                 "source_origin": "textbook/generated_mixed",
-                "check_needed": false,
-                "uuid": "1b1fcd32-d0cb-4068-9f06-16850ffc4eb9"
+                "check_needed": false
               },
               {
-                "id": "note_01_ex_02",
+                "id": "0ee91982-67ac-436a-881d-a00ebb257ebe",
                 "zh": "临了儿，他又说了一句“回头再说”。",
                 "vi": "Đến cuối, anh ấy lại nói một câu “để sau rồi nói”.",
                 "pinyin": "",
@@ -1460,17 +1356,15 @@
                 "grammar_refs": [],
                 "vocab_refs": [],
                 "source_origin": "textbook/generated_mixed",
-                "check_needed": false,
-                "uuid": "065105ba-15b8-4a64-9001-184ff336e452"
+                "check_needed": false
               }
             ],
             "source_refs": [],
             "source_origin": "textbook/generated_mixed",
-            "check_needed": false,
-            "uuid": "f774af4f-8b3f-4968-95f8-69f04958671e"
+            "check_needed": false
           },
           {
-            "id": "note_02",
+            "id": "7e2ee128-4fbd-4a93-898c-5f5fd99b371b",
             "type": "note",
             "order": 2,
             "title": "之后我多次提起给他书钱的事。",
@@ -1478,7 +1372,7 @@
             "meaning_vi": "“提起” nghĩa là nhắc đến, nói đến, đề cập đến; trong bài là lôi một chủ đề ra nói.",
             "examples": [
               {
-                "id": "note_02_ex_01",
+                "id": "6ff01e57-e23b-475e-9cd6-da43acc8bd0a",
                 "zh": "之后我多次提起给他书钱的事。",
                 "vi": "Sau đó tôi nhiều lần nhắc đến chuyện trả tiền sách cho anh ấy.",
                 "pinyin": "",
@@ -1486,11 +1380,10 @@
                 "grammar_refs": [],
                 "vocab_refs": [],
                 "source_origin": "textbook/generated_mixed",
-                "check_needed": false,
-                "uuid": "11487e96-de4a-4876-b1bb-18385a71d0f2"
+                "check_needed": false
               },
               {
-                "id": "note_02_ex_02",
+                "id": "b45bc13e-c6e0-4fab-a808-4b732cb085a7",
                 "zh": "一提起这件事我就生气。",
                 "vi": "Cứ nhắc đến chuyện này là tôi tức giận.",
                 "pinyin": "",
@@ -1498,17 +1391,15 @@
                 "grammar_refs": [],
                 "vocab_refs": [],
                 "source_origin": "textbook/generated_mixed",
-                "check_needed": false,
-                "uuid": "b8a94224-f11a-45ee-a196-b1d70d10c951"
+                "check_needed": false
               }
             ],
             "source_refs": [],
             "source_origin": "textbook/generated_mixed",
-            "check_needed": false,
-            "uuid": "0f91373d-bedd-4a84-b341-125ca3bd07dc"
+            "check_needed": false
           },
           {
-            "id": "note_03",
+            "id": "bf5e90df-dc03-4600-a2d2-426ab562c9a5",
             "type": "note",
             "order": 3,
             "title": "正在我左顾右盼的时候",
@@ -1516,7 +1407,7 @@
             "meaning_vi": "“左顾右盼” nghĩa là nhìn trái nhìn phải, nhìn quanh, thường khi đang tìm đường, tìm người hoặc lúng túng.",
             "examples": [
               {
-                "id": "note_03_ex_01",
+                "id": "b71a23a7-1107-46ec-b43e-de46214c5d0a",
                 "zh": "正在我左顾右盼的时候，身后有两个小伙子主动跟我打招呼。",
                 "vi": "Đúng lúc tôi đang nhìn quanh trái phải, phía sau có hai chàng trai trẻ chủ động chào tôi.",
                 "pinyin": "",
@@ -1524,11 +1415,10 @@
                 "grammar_refs": [],
                 "vocab_refs": [],
                 "source_origin": "textbook/generated_mixed",
-                "check_needed": false,
-                "uuid": "20ef83d3-da52-44c4-8f8c-ef30e8faa380"
+                "check_needed": false
               },
               {
-                "id": "note_03_ex_02",
+                "id": "1b3405fa-a29a-4d15-a133-d8b1cc886dec",
                 "zh": "他站在地铁口左顾右盼，好像在等人。",
                 "vi": "Anh ấy đứng ở cửa tàu điện ngầm nhìn trái nhìn phải, hình như đang đợi ai đó.",
                 "pinyin": "",
@@ -1536,20 +1426,17 @@
                 "grammar_refs": [],
                 "vocab_refs": [],
                 "source_origin": "textbook/generated_mixed",
-                "check_needed": false,
-                "uuid": "8dd88ce8-df04-4e6e-8a69-f243ced9f1e6"
+                "check_needed": false
               }
             ],
             "source_refs": [],
             "source_origin": "textbook/generated_mixed",
-            "check_needed": false,
-            "uuid": "9f79d82a-d809-4c70-89c8-6e121a6d7fdc"
+            "check_needed": false
           }
-        ],
-        "uuid": "f0fb59ac-3e3e-4625-b0a6-2adcc2d9f5e6"
+        ]
       },
       {
-        "id": "section_05_grammar",
+        "id": "b045e537-7383-494b-8d61-b0286977ed80",
         "type": "grammar",
         "order": 5,
         "title": "词语用法 / 语法",
@@ -1558,7 +1445,7 @@
         "check_needed": false,
         "items": [
           {
-            "id": "grammar_01",
+            "id": "f8ec59f3-898a-47b2-b536-44dfd8183393",
             "type": "grammar_point",
             "order": 1,
             "title": "其实",
@@ -1571,18 +1458,17 @@
             "check_needed": false,
             "blocks": [
               {
-                "id": "grammar_01_overview",
+                "id": "b7c5d870-2db8-4e2e-950f-f0e6e522ac16",
                 "type": "grammar_overview",
                 "order": 1,
                 "title": "Bản chất",
                 "content_vi": "Diễn tả sự thật phía sau, thường để đính chính, giải thích hoặc bổ sung điều người nghe/người nói tưởng trước đó.",
                 "examples": [],
                 "source_origin": "textbook/generated_mixed",
-                "check_needed": false,
-                "uuid": "6e202a82-8ab1-40a7-ae6b-0d7bbbf3c39b"
+                "check_needed": false
               },
               {
-                "id": "grammar_01_structure",
+                "id": "b3534a40-3bab-464a-97dd-67889b8bcb7b",
                 "type": "grammar_structure",
                 "order": 2,
                 "title": "Cấu trúc chính",
@@ -1596,7 +1482,7 @@
                 ],
                 "examples": [
                   {
-                    "id": "grammar_01_ex_01",
+                    "id": "5e614bf9-2578-4d49-87dc-107e6f3605d4",
                     "zh": "其实，北京人最爱说的一句话是“回头再说”。",
                     "vi": "Thật ra, câu người Bắc Kinh thích nói nhất là “回头再说”.",
                     "pinyin": "",
@@ -1604,15 +1490,14 @@
                       "其实"
                     ],
                     "grammar_refs": [
-                      "grammar_01"
+                      "f8ec59f3-898a-47b2-b536-44dfd8183393"
                     ],
                     "vocab_refs": [],
                     "source_origin": "textbook/generated_mixed",
-                    "check_needed": false,
-                    "uuid": "77cfc5bd-6c51-46d3-833b-32288ca348f7"
+                    "check_needed": false
                   },
                   {
-                    "id": "grammar_01_ex_02",
+                    "id": "7ccdc8f9-59f3-4c7b-bd28-247acb68c535",
                     "zh": "你以为他回国了，其实他去云南旅行了。",
                     "vi": "Bạn tưởng anh ấy về nước rồi, thật ra anh ấy đi du lịch Vân Nam.",
                     "pinyin": "",
@@ -1620,15 +1505,14 @@
                       "其实"
                     ],
                     "grammar_refs": [
-                      "grammar_01"
+                      "f8ec59f3-898a-47b2-b536-44dfd8183393"
                     ],
                     "vocab_refs": [],
                     "source_origin": "textbook/generated_mixed",
-                    "check_needed": false,
-                    "uuid": "0b321dd4-58a4-43f2-b5fa-cc2b6499e29a"
+                    "check_needed": false
                   },
                   {
-                    "id": "grammar_01_ex_03",
+                    "id": "d84397d0-7b22-492a-a594-cb58d4dd46e0",
                     "zh": "其实我没去过北京。",
                     "vi": "Thật ra tôi chưa từng đi Bắc Kinh.",
                     "pinyin": "",
@@ -1636,12 +1520,11 @@
                       "其实"
                     ],
                     "grammar_refs": [
-                      "grammar_01"
+                      "f8ec59f3-898a-47b2-b536-44dfd8183393"
                     ],
                     "vocab_refs": [],
                     "source_origin": "textbook/generated_mixed",
-                    "check_needed": false,
-                    "uuid": "b93c385a-7337-4fc1-9af5-05a18f11c237"
+                    "check_needed": false
                   }
                 ],
                 "notes_vi": [
@@ -1649,14 +1532,12 @@
                   "其实 thường đứng đầu câu hoặc sau chủ ngữ."
                 ],
                 "source_origin": "textbook/generated_mixed",
-                "check_needed": false,
-                "uuid": "e8153940-6ce3-43b8-a791-37b5241510c7"
+                "check_needed": false
               }
-            ],
-            "uuid": "2a8af994-e19d-4e96-b756-aadc01f565f2"
+            ]
           },
           {
-            "id": "grammar_02",
+            "id": "57b14753-688a-41b6-9e0d-b61dbbf574d7",
             "type": "grammar_point",
             "order": 2,
             "title": "再说",
@@ -1669,18 +1550,17 @@
             "check_needed": false,
             "blocks": [
               {
-                "id": "grammar_02_overview",
+                "id": "470b1ca1-e0a1-449f-b55e-a8aa481a4dd4",
                 "type": "grammar_overview",
                 "order": 1,
                 "title": "Bản chất",
                 "content_vi": "Trong bài nghĩa là để sau rồi tính / để lúc khác nói; có thể là lời hẹn thật hoặc lời từ chối khéo.",
                 "examples": [],
                 "source_origin": "textbook/generated_mixed",
-                "check_needed": false,
-                "uuid": "b15ab5f6-2ac9-4b20-aab2-1f5c1daa67b4"
+                "check_needed": false
               },
               {
-                "id": "grammar_02_structure",
+                "id": "0ef2b790-3209-4b5c-a519-ca5a424e4d49",
                 "type": "grammar_structure",
                 "order": 2,
                 "title": "Cấu trúc chính",
@@ -1694,7 +1574,7 @@
                 ],
                 "examples": [
                   {
-                    "id": "grammar_02_ex_01",
+                    "id": "c8674d77-7e1f-44f8-9e45-e0a03accdc05",
                     "zh": "这一段工作太忙，回头再说吧。",
                     "vi": "Dạo này công việc bận quá, để sau rồi nói nhé.",
                     "pinyin": "",
@@ -1702,15 +1582,14 @@
                       "再说"
                     ],
                     "grammar_refs": [
-                      "grammar_02"
+                      "57b14753-688a-41b6-9e0d-b61dbbf574d7"
                     ],
                     "vocab_refs": [],
                     "source_origin": "textbook/generated_mixed",
-                    "check_needed": false,
-                    "uuid": "9b4a135c-a9c6-4460-bd3e-3607b14310c4"
+                    "check_needed": false
                   },
                   {
-                    "id": "grammar_02_ex_02",
+                    "id": "1096379b-a91d-48aa-bc98-42ebe110f965",
                     "zh": "这件事以后再说吧。",
                     "vi": "Chuyện này để sau rồi nói nhé.",
                     "pinyin": "",
@@ -1718,15 +1597,14 @@
                       "再说"
                     ],
                     "grammar_refs": [
-                      "grammar_02"
+                      "57b14753-688a-41b6-9e0d-b61dbbf574d7"
                     ],
                     "vocab_refs": [],
                     "source_origin": "textbook/generated_mixed",
-                    "check_needed": false,
-                    "uuid": "43f7ad26-92df-4822-b1db-78d4b5504e9e"
+                    "check_needed": false
                   },
                   {
-                    "id": "grammar_02_ex_03",
+                    "id": "89cf2ddf-bb30-48d6-8d3d-9566092b6154",
                     "zh": "时间太晚了，我们明天再说吧。",
                     "vi": "Khuya quá rồi, mai hãy nói.",
                     "pinyin": "",
@@ -1734,12 +1612,11 @@
                       "再说"
                     ],
                     "grammar_refs": [
-                      "grammar_02"
+                      "57b14753-688a-41b6-9e0d-b61dbbf574d7"
                     ],
                     "vocab_refs": [],
                     "source_origin": "textbook/generated_mixed",
-                    "check_needed": false,
-                    "uuid": "9f2e1008-c9a4-43ae-8901-3c50430113ed"
+                    "check_needed": false
                   }
                 ],
                 "notes_vi": [
@@ -1747,14 +1624,12 @@
                   "回头再说 mềm hơn 不行, nhưng có thể hàm ý từ chối khéo."
                 ],
                 "source_origin": "textbook/generated_mixed",
-                "check_needed": false,
-                "uuid": "03de5bd3-4213-42b4-964c-5456274471f8"
+                "check_needed": false
               }
-            ],
-            "uuid": "92f66ab4-baf8-4d46-bf15-82342410a027"
+            ]
           },
           {
-            "id": "grammar_03",
+            "id": "fa804fff-372b-4874-8571-f54e613d7e07",
             "type": "grammar_point",
             "order": 3,
             "title": "实在",
@@ -1767,18 +1642,17 @@
             "check_needed": false,
             "blocks": [
               {
-                "id": "grammar_03_overview",
+                "id": "50dcd503-1832-4112-a0be-e09408954b90",
                 "type": "grammar_overview",
                 "order": 1,
                 "title": "Bản chất",
                 "content_vi": "Có hai tầng nghĩa: tính từ “thật thà, chân thật”; phó từ “thật sự, quả thật”.",
                 "examples": [],
                 "source_origin": "textbook/generated_mixed",
-                "check_needed": false,
-                "uuid": "449dda16-9c68-4b8c-aa21-e8539374ba70"
+                "check_needed": false
               },
               {
-                "id": "grammar_03_structure",
+                "id": "3de2e20b-7535-4f1b-8355-4209acba1551",
                 "type": "grammar_structure",
                 "order": 2,
                 "title": "Cấu trúc chính",
@@ -1792,7 +1666,7 @@
                 ],
                 "examples": [
                   {
-                    "id": "grammar_03_ex_01",
+                    "id": "47d597ee-f98d-4604-907d-6e6946054ef4",
                     "zh": "怎么会这样不实在？",
                     "vi": "Sao lại không thật lòng như vậy?",
                     "pinyin": "",
@@ -1800,15 +1674,14 @@
                       "实在"
                     ],
                     "grammar_refs": [
-                      "grammar_03"
+                      "fa804fff-372b-4874-8571-f54e613d7e07"
                     ],
                     "vocab_refs": [],
                     "source_origin": "textbook/generated_mixed",
-                    "check_needed": false,
-                    "uuid": "7d975a15-4f8d-4cea-ab1d-72ed66d1f175"
+                    "check_needed": false
                   },
                   {
-                    "id": "grammar_03_ex_02",
+                    "id": "9a65ce46-32b1-443f-8743-753c90b62d0f",
                     "zh": "要把汉语说得跟中国人一样好，实在不容易。",
                     "vi": "Muốn nói tiếng Hán tốt như người Trung Quốc, thật sự không dễ.",
                     "pinyin": "",
@@ -1816,15 +1689,14 @@
                       "实在"
                     ],
                     "grammar_refs": [
-                      "grammar_03"
+                      "fa804fff-372b-4874-8571-f54e613d7e07"
                     ],
                     "vocab_refs": [],
                     "source_origin": "textbook/generated_mixed",
-                    "check_needed": false,
-                    "uuid": "ba6cd89c-b21c-45ce-ace9-0b32ff49f603"
+                    "check_needed": false
                   },
                   {
-                    "id": "grammar_03_ex_03",
+                    "id": "11c0241f-0901-42a3-879e-03e8696d3e40",
                     "zh": "我实在不知道。",
                     "vi": "Tôi thật sự không biết.",
                     "pinyin": "",
@@ -1832,12 +1704,11 @@
                       "实在"
                     ],
                     "grammar_refs": [
-                      "grammar_03"
+                      "fa804fff-372b-4874-8571-f54e613d7e07"
                     ],
                     "vocab_refs": [],
                     "source_origin": "textbook/generated_mixed",
-                    "check_needed": false,
-                    "uuid": "12886d26-3f93-470a-84b2-28cf0e487067"
+                    "check_needed": false
                   }
                 ],
                 "notes_vi": [
@@ -1845,14 +1716,12 @@
                   "不实在 = không thật thà / không thực tế / không đáng tin."
                 ],
                 "source_origin": "textbook/generated_mixed",
-                "check_needed": false,
-                "uuid": "5247bcfd-3a71-4d19-9d8a-6435657c5824"
+                "check_needed": false
               }
-            ],
-            "uuid": "e819f31b-b619-4e41-b49b-dd5fb2f71f9e"
+            ]
           },
           {
-            "id": "grammar_04",
+            "id": "c6cd6c38-22fc-4546-a398-39efe02d6c17",
             "type": "grammar_point",
             "order": 4,
             "title": "用得着 / 用不着",
@@ -1865,18 +1734,17 @@
             "check_needed": false,
             "blocks": [
               {
-                "id": "grammar_04_overview",
+                "id": "6b109e8c-3e57-466f-89ea-5e3dd68f03d9",
                 "type": "grammar_overview",
                 "order": 1,
                 "title": "Bản chất",
                 "content_vi": "Diễn tả cần dùng đến, có ích, có chỗ dùng. Phủ định 用不着 nghĩa là không cần dùng đến.",
                 "examples": [],
                 "source_origin": "textbook/generated_mixed",
-                "check_needed": false,
-                "uuid": "b3dc276e-4832-4275-9263-efddcbc53abd"
+                "check_needed": false
               },
               {
-                "id": "grammar_04_structure",
+                "id": "3ecf1989-24b0-4088-8831-c92b1fd6d541",
                 "type": "grammar_structure",
                 "order": 2,
                 "title": "Cấu trúc chính",
@@ -1890,7 +1758,7 @@
                 ],
                 "examples": [
                   {
-                    "id": "grammar_04_ex_01",
+                    "id": "bb711337-b38f-48f1-9703-2cd0058438fa",
                     "zh": "这些书都是你用得着的。",
                     "vi": "Những quyển sách này đều là thứ bạn sẽ cần dùng đến.",
                     "pinyin": "",
@@ -1898,15 +1766,14 @@
                       "用得着"
                     ],
                     "grammar_refs": [
-                      "grammar_04"
+                      "c6cd6c38-22fc-4546-a398-39efe02d6c17"
                     ],
                     "vocab_refs": [],
                     "source_origin": "textbook/generated_mixed",
-                    "check_needed": false,
-                    "uuid": "6bc9e7df-722c-4dcf-9b01-f2888726ec9d"
+                    "check_needed": false
                   },
                   {
-                    "id": "grammar_04_ex_02",
+                    "id": "6829a99e-8c28-481f-a33f-c15c2f232489",
                     "zh": "这台电脑我已经用不着了。",
                     "vi": "Cái máy tính này tôi không cần dùng nữa.",
                     "pinyin": "",
@@ -1914,15 +1781,14 @@
                       "用得着"
                     ],
                     "grammar_refs": [
-                      "grammar_04"
+                      "c6cd6c38-22fc-4546-a398-39efe02d6c17"
                     ],
                     "vocab_refs": [],
                     "source_origin": "textbook/generated_mixed",
-                    "check_needed": false,
-                    "uuid": "769865f1-d5b7-4be5-bb91-bacc6bf383e7"
+                    "check_needed": false
                   },
                   {
-                    "id": "grammar_04_ex_03",
+                    "id": "8bd7092e-619f-4f28-a8d6-e09d666d9485",
                     "zh": "有什么意见你就好好儿说，用不着生这么大气。",
                     "vi": "Có ý kiến gì thì cứ nói tử tế, không cần tức giận như vậy.",
                     "pinyin": "",
@@ -1930,26 +1796,23 @@
                       "用得着"
                     ],
                     "grammar_refs": [
-                      "grammar_04"
+                      "c6cd6c38-22fc-4546-a398-39efe02d6c17"
                     ],
                     "vocab_refs": [],
                     "source_origin": "textbook/generated_mixed",
-                    "check_needed": false,
-                    "uuid": "2dfa8bfa-3915-45c8-ae8f-1878d0d7d72d"
+                    "check_needed": false
                   }
                 ],
                 "notes_vi": [
                   "这本书我用得着 nghĩa là quyển sách này có ích/cần cho tôi, không đơn giản là “dùng được”."
                 ],
                 "source_origin": "textbook/generated_mixed",
-                "check_needed": false,
-                "uuid": "2cc69bde-46c0-4e74-9e9d-5189b5b9bd49"
+                "check_needed": false
               }
-            ],
-            "uuid": "a623fddc-0d56-45a3-98c6-1acc679998d9"
+            ]
           },
           {
-            "id": "grammar_05",
+            "id": "c3d31639-0f40-4b2f-aa50-5dda9d443b78",
             "type": "grammar_point",
             "order": 5,
             "title": "至于",
@@ -1962,18 +1825,17 @@
             "check_needed": false,
             "blocks": [
               {
-                "id": "grammar_05_overview",
+                "id": "24a8fcd1-e9b7-43bf-92dc-3d3cc3fb385e",
                 "type": "grammar_overview",
                 "order": 1,
                 "title": "Bản chất",
                 "content_vi": "Dùng để chuyển sang một chủ đề khác trong cùng mạch nói: còn về..., về phần...",
                 "examples": [],
                 "source_origin": "textbook/generated_mixed",
-                "check_needed": false,
-                "uuid": "44e8cd9e-e882-431e-9174-2073afe903dd"
+                "check_needed": false
               },
               {
-                "id": "grammar_05_structure",
+                "id": "b7be4295-e408-4edd-882f-3fff358754f0",
                 "type": "grammar_structure",
                 "order": 2,
                 "title": "Cấu trúc chính",
@@ -1987,7 +1849,7 @@
                 ],
                 "examples": [
                   {
-                    "id": "grammar_05_ex_01",
+                    "id": "75371212-89bf-4cf8-a3a1-819fd569462d",
                     "zh": "至于钱，回头再说吧。",
                     "vi": "Còn về tiền thì để sau rồi nói.",
                     "pinyin": "",
@@ -1995,15 +1857,14 @@
                       "至于"
                     ],
                     "grammar_refs": [
-                      "grammar_05"
+                      "c3d31639-0f40-4b2f-aa50-5dda9d443b78"
                     ],
                     "vocab_refs": [],
                     "source_origin": "textbook/generated_mixed",
-                    "check_needed": false,
-                    "uuid": "26a586e3-c398-4973-9858-5ceb88842925"
+                    "check_needed": false
                   },
                   {
-                    "id": "grammar_05_ex_02",
+                    "id": "f9e042a0-fdff-4bbd-ae63-c89fd60a5d8e",
                     "zh": "我知道这是四川菜，至于怎么做的，我就不知道了。",
                     "vi": "Tôi biết đây là món Tứ Xuyên, còn làm như thế nào thì tôi không biết.",
                     "pinyin": "",
@@ -2011,15 +1872,14 @@
                       "至于"
                     ],
                     "grammar_refs": [
-                      "grammar_05"
+                      "c3d31639-0f40-4b2f-aa50-5dda9d443b78"
                     ],
                     "vocab_refs": [],
                     "source_origin": "textbook/generated_mixed",
-                    "check_needed": false,
-                    "uuid": "9c489b96-c0ee-460a-84af-afae85d702c5"
+                    "check_needed": false
                   },
                   {
-                    "id": "grammar_05_ex_03",
+                    "id": "94983de4-1c9c-4a06-a92a-dec034629020",
                     "zh": "至于你们赞成不赞成，那我就不管了。",
                     "vi": "Còn các bạn có tán thành hay không thì tôi không quản nữa.",
                     "pinyin": "",
@@ -2027,29 +1887,25 @@
                       "至于"
                     ],
                     "grammar_refs": [
-                      "grammar_05"
+                      "c3d31639-0f40-4b2f-aa50-5dda9d443b78"
                     ],
                     "vocab_refs": [],
                     "source_origin": "textbook/generated_mixed",
-                    "check_needed": false,
-                    "uuid": "3a827c2c-2bce-47ed-9e34-79f5fab6407f"
+                    "check_needed": false
                   }
                 ],
                 "notes_vi": [
                   "Trong bài này, 至于 chủ yếu là chuyển chủ đề, không phải nghĩa “đến mức” trong một số ngữ cảnh khác."
                 ],
                 "source_origin": "textbook/generated_mixed",
-                "check_needed": false,
-                "uuid": "cd7ec987-33cd-40e3-aa06-2a78aef9c368"
+                "check_needed": false
               }
-            ],
-            "uuid": "7d312b0f-555a-44b1-a8b8-0c0ab21704c7"
+            ]
           }
-        ],
-        "uuid": "d8ded773-6e53-49ca-a7d6-2697e0970fc6"
+        ]
       },
       {
-        "id": "section_06_exercises",
+        "id": "9901c597-ca97-451e-b63d-11814aaf933e",
         "type": "exercises",
         "order": 6,
         "title": "练习",
@@ -2065,7 +1921,7 @@
         },
         "items": [
           {
-            "id": "exercise_01",
+            "id": "15cb6f38-593b-48d1-bcca-dc3d2a140f9e",
             "type": "phonetics",
             "variant": "pronunciation_tone_minimal_pairs",
             "order": 1,
@@ -2077,140 +1933,124 @@
             },
             "parts": [
               {
-                "id": "exercise_01_part_01",
+                "id": "0e5801e7-b89b-4cc6-8bd9-9e1fbbd30b31",
                 "type": "minimal_pair_group",
                 "title": "辨音辨调",
                 "items": [
                   {
-                    "id": "ex01_pair_01",
+                    "id": "e38d3cb2-2c33-4c4a-83fa-2934373f225d",
                     "left": "其实 qíshí",
                     "right": "启事 qǐshì",
                     "source_origin": "textbook",
-                    "check_needed": false,
-                    "uuid": "9dba704f-f695-48bd-be47-10dedf184efa"
+                    "check_needed": false
                   },
                   {
-                    "id": "ex01_pair_02",
+                    "id": "79df1daa-2fc0-43b6-b4e3-aee6478eef8a",
                     "left": "民航 mínháng",
                     "right": "迷航 míháng",
                     "source_origin": "textbook",
-                    "check_needed": false,
-                    "uuid": "fc118cfa-74d6-4be3-ad68-8b2bc1819ef0"
+                    "check_needed": false
                   },
                   {
-                    "id": "ex01_pair_03",
+                    "id": "93191d96-c6f7-4475-b285-9bfd75ad2b6c",
                     "left": "招手 zhāo shǒu",
                     "right": "招收 zhāoshōu",
                     "source_origin": "textbook",
-                    "check_needed": false,
-                    "uuid": "7a4cff9f-1855-4504-85e3-ea2f7e66d6cc"
+                    "check_needed": false
                   },
                   {
-                    "id": "ex01_pair_04",
+                    "id": "656ce346-d1fc-4d43-8acc-abf294d2d8da",
                     "left": "地道 dìdao",
                     "right": "地道 dìdào",
                     "source_origin": "textbook",
-                    "check_needed": false,
-                    "uuid": "c0806807-17df-41d4-b814-e53f2b31ec4c"
+                    "check_needed": false
                   },
                   {
-                    "id": "ex01_pair_05",
+                    "id": "5e775bab-fb67-4293-b3f7-4b9e80f29c52",
                     "left": "熟悉 shúxī",
                     "right": "梳洗 shūxǐ",
                     "source_origin": "textbook",
-                    "check_needed": false,
-                    "uuid": "eacbf2d8-976b-4d9a-a432-80e30dc1e024"
+                    "check_needed": false
                   },
                   {
-                    "id": "ex01_pair_06",
+                    "id": "7e23fb6e-376b-43d9-ae33-0413e3080ef9",
                     "left": "犹豫 yóuyù",
                     "right": "由于 yóuyú",
                     "source_origin": "textbook",
-                    "check_needed": false,
-                    "uuid": "2d7019dd-4655-4fb3-bff4-0d9fee18f1df"
+                    "check_needed": false
                   },
                   {
-                    "id": "ex01_pair_07",
+                    "id": "5b58aa37-6cd8-4a57-86e3-bac8b945a84e",
                     "left": "地面 dìmiàn",
                     "right": "体面 tǐmiàn",
                     "source_origin": "textbook",
-                    "check_needed": false,
-                    "uuid": "d984b6a7-5d3c-4723-a14c-996d7239fba2"
+                    "check_needed": false
                   },
                   {
-                    "id": "ex01_pair_08",
+                    "id": "5dcaf7e0-6d93-4034-b992-da23295bca73",
                     "left": "打听 dǎtīng",
                     "right": "大厅 dàtīng",
                     "source_origin": "textbook",
-                    "check_needed": false,
-                    "uuid": "e2587d0d-dd4e-47ad-83b4-15bdf242ae4e"
+                    "check_needed": false
                   }
-                ],
-                "uuid": "8e4f76ce-ca40-4652-ac2a-934c97b37e4f"
+                ]
               },
               {
-                "id": "exercise_01_part_02",
+                "id": "e7235fa8-9e47-43aa-a37c-271a2e83d738",
                 "type": "proverb_reading",
                 "title": "朗读",
                 "items": [
                   {
-                    "id": "ex01_read_01",
+                    "id": "b97d1a8c-3880-42ce-813f-12d8eb8cb219",
                     "text": "入乡随俗",
                     "pinyin": "rùxiāng-suísú",
                     "vi": "Nhập gia tùy tục.",
                     "source_origin": "textbook",
-                    "check_needed": false,
-                    "uuid": "f2756433-2781-4c28-8258-97d4bf552664"
+                    "check_needed": false
                   },
                   {
-                    "id": "ex01_read_02",
+                    "id": "8ae4a7da-2ae8-494c-99db-df12e85086a4",
                     "text": "事在人为",
                     "pinyin": "shìzàirénwéi",
                     "vi": "Việc thành hay không do con người làm.",
                     "source_origin": "textbook",
-                    "check_needed": false,
-                    "uuid": "65f97a35-8162-4ec5-bd60-0113e92e57c5"
+                    "check_needed": false
                   },
                   {
-                    "id": "ex01_read_03",
+                    "id": "1f523168-1c6e-4db9-abc5-198d4ccace2b",
                     "text": "熟能生巧",
                     "pinyin": "shúnéngshēngqiǎo",
                     "vi": "Luyện nhiều thành khéo.",
                     "source_origin": "textbook",
-                    "check_needed": false,
-                    "uuid": "e61b980f-2d43-4d2a-bb28-9eb3980aca47"
+                    "check_needed": false
                   },
                   {
-                    "id": "ex01_read_04",
+                    "id": "d08c4311-c1e6-40a3-b502-9a3f9140607d",
                     "text": "勤能补拙",
                     "pinyin": "qínnéngbǔzhuō",
                     "vi": "Cần cù bù thông minh.",
                     "source_origin": "textbook",
-                    "check_needed": false,
-                    "uuid": "e71470cf-83b6-441a-b3b2-f532c73fcea1"
+                    "check_needed": false
                   },
                   {
-                    "id": "ex01_read_05",
+                    "id": "2de586f4-3987-4413-b296-88e87f7b2af2",
                     "text": "己所不欲，勿施于人。",
                     "pinyin": "Jǐ suǒ bú yù, wù shī yú rén.",
                     "vi": "Điều mình không muốn thì đừng làm cho người khác.",
                     "source_origin": "textbook",
-                    "check_needed": false,
-                    "uuid": "749c427b-82fc-43cc-96d9-7437226598f0"
+                    "check_needed": false
                   }
-                ],
-                "uuid": "95107e31-d20d-4345-b37e-6b5e866093ec"
+                ]
               }
             ],
             "rendering": {
               "renderer": "exercise.phonetics.v2"
             },
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "99ee56b7-dd72-4d52-a942-423e27d6623a"
+            "check_needed": false
           },
           {
-            "id": "exercise_02",
+            "id": "98e14c21-0449-4e36-b1ae-77ed46cf3aa0",
             "type": "read_aloud",
             "variant": "word_phrase_sentence_chunks",
             "order": 2,
@@ -2222,155 +2062,134 @@
             },
             "chunks": [
               {
-                "id": "ex02_chunk_01",
+                "id": "029b6888-951c-4d78-8e81-67211d2f2178",
                 "text": "邀请朋友",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "8dbf1256-3905-482a-b146-678640265f4f"
+                "check_needed": false
               },
               {
-                "id": "ex02_chunk_02",
+                "id": "f7a394ba-7ba1-4ced-9fb6-4a51e9b45e41",
                 "text": "邀请客人",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "e5a2420a-ab7b-497d-90e8-51f6b4bd4cb2"
+                "check_needed": false
               },
               {
-                "id": "ex02_chunk_03",
+                "id": "cbeae143-93f7-4e30-b03e-cafcbeecfee8",
                 "text": "热情邀请",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "e971d505-af11-4321-bb21-4045eca09b88"
+                "check_needed": false
               },
               {
-                "id": "ex02_chunk_04",
+                "id": "908385d2-03e2-42e6-8641-681ccbdb7383",
                 "text": "受到邀请",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "fe4fd157-4687-4142-a2e8-ddbfb14f489d"
+                "check_needed": false
               },
               {
-                "id": "ex02_chunk_05",
+                "id": "9e310873-3483-4086-91b4-53e6c4982438",
                 "text": "说得平淡",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "a2ee3344-98ce-4f86-b051-1eb51e5576a1"
+                "check_needed": false
               },
               {
-                "id": "ex02_chunk_06",
+                "id": "56e43701-a5ae-4070-ac7b-31f77ed52c81",
                 "text": "生活平淡",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "d5496c49-75f5-4289-8b88-bd00bee1d2ff"
+                "check_needed": false
               },
               {
-                "id": "ex02_chunk_07",
+                "id": "77a9ec03-cc9f-4170-b16a-7e20444a37a7",
                 "text": "平淡地说",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "71eb69b0-58ee-4ed6-a34e-50fb882acc9f"
+                "check_needed": false
               },
               {
-                "id": "ex02_chunk_08",
+                "id": "d7b385ae-57da-4e8c-aee4-b67137f2423a",
                 "text": "过得很平淡",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "9fcab862-5975-4a99-814e-0cf05c0b4073"
+                "check_needed": false
               },
               {
-                "id": "ex02_chunk_09",
+                "id": "d6835cb8-98d0-4ec4-896e-28edb097b655",
                 "text": "发现问题",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "bd9c190b-476a-4ee3-891a-26641cb82381"
+                "check_needed": false
               },
               {
-                "id": "ex02_chunk_10",
+                "id": "0783c634-e332-446a-9f6d-20a19656f7f3",
                 "text": "发现错误",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "3152acde-b982-4c23-91e6-26b964b656ca"
+                "check_needed": false
               },
               {
-                "id": "ex02_chunk_11",
+                "id": "b0cb1abd-bc89-4210-975d-f110f5646ad2",
                 "text": "发现变化",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "5347f0b8-b984-431f-94cb-40967460e9bb"
+                "check_needed": false
               },
               {
-                "id": "ex02_chunk_12",
+                "id": "2c8b801e-cb28-49ae-b8f1-b2c8b84f7f8b",
                 "text": "发现新问题",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "9cfe9173-da66-46c6-9924-1546fb377bb2"
+                "check_needed": false
               },
               {
-                "id": "ex02_chunk_13",
+                "id": "7b488f75-1c3d-4f10-9bd3-8d4b9d8b9c73",
                 "text": "准备考试",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "a03054bd-9891-43b1-b854-606ed011f20b"
+                "check_needed": false
               },
               {
-                "id": "ex02_chunk_14",
+                "id": "fc57888e-9c36-48be-9cd3-fb7aed77a414",
                 "text": "准备午饭",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "e38b4ffb-facf-445b-b5f6-6d18c7107e3b"
+                "check_needed": false
               },
               {
-                "id": "ex02_chunk_15",
+                "id": "284fe12e-9a3d-4209-8e18-cb94b6921962",
                 "text": "准备出发",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "ce8a6b27-2694-4341-8c72-4ee1855d02c9"
+                "check_needed": false
               },
               {
-                "id": "ex02_chunk_16",
+                "id": "e0b901fe-d32e-42d4-90cf-cf84348b418b",
                 "text": "没有准备",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "f7802567-0421-4db2-825a-cab7dcb81480"
+                "check_needed": false
               },
               {
-                "id": "ex02_chunk_17",
+                "id": "c5fe52bb-429a-4b32-9329-15a30ac53e7b",
                 "text": "跟他打交道",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "9473e1c0-616f-450a-ac2a-a28c4659ef1a"
+                "check_needed": false
               },
               {
-                "id": "ex02_chunk_18",
+                "id": "0f820d9d-48d8-408b-bd6e-9a8e31537e75",
                 "text": "好打交道",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "18d3f537-f411-443a-803e-d4e743eb3f56"
+                "check_needed": false
               },
               {
-                "id": "ex02_chunk_19",
+                "id": "eec959aa-6959-4a0a-a6df-75e2bcdc77b7",
                 "text": "不好打交道",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "f9d598e4-be01-4bb6-a2de-d9279b77e6f2"
+                "check_needed": false
               },
               {
-                "id": "ex02_chunk_20",
+                "id": "4e759df4-4ac6-40cd-af5d-0a33fb8ffede",
                 "text": "常打交道",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "10f50ba0-ed4e-4146-9286-45fb06be5045"
+                "check_needed": false
               }
             ],
             "rendering": {
               "renderer": "exercise.read_aloud.v2"
             },
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "901bb1ba-13ee-4116-a86a-b3662e10d7b8"
+            "check_needed": false
           },
           {
-            "id": "exercise_03",
+            "id": "5dfca3d2-8524-4a83-92dd-b036a7259465",
             "type": "choose_words_fill_blank",
             "variant": "word_bank_fill_blank",
             "order": 3,
@@ -2398,180 +2217,160 @@
             ],
             "parts": [
               {
-                "id": "exercise_03_A",
+                "id": "a6f7cca9-476b-4ad4-acfd-b1e7edf544a2",
                 "title": "A",
                 "questions": [
                   {
-                    "id": "ex03a_q01",
+                    "id": "d9a9a0fa-52b8-4416-a83b-90723f14f5b2",
                     "prompt": "今天没有时间了，我们明天________吧。",
                     "answer": "再说",
                     "source_origin": "textbook_question_generated_answer",
                     "answer_verified": false,
-                    "check_needed": false,
-                    "uuid": "dc204a91-9ff0-4934-b97b-fa31811e3ee7"
+                    "check_needed": false
                   },
                   {
-                    "id": "ex03a_q02",
+                    "id": "38d9ee94-15b5-463b-9116-b9d4c5b9d700",
                     "prompt": "你看他像中国人，________他是日本人。",
                     "answer": "其实",
                     "source_origin": "textbook_question_generated_answer",
                     "answer_verified": false,
-                    "check_needed": false,
-                    "uuid": "f893ddfe-0cea-4af8-b895-cb21945b0472"
+                    "check_needed": false
                   },
                   {
-                    "id": "ex03a_q03",
+                    "id": "80af13bc-72be-4894-b20e-3b0240046e7e",
                     "prompt": "她汉语说得真________。",
                     "answer": "地道",
                     "source_origin": "textbook_question_generated_answer",
                     "answer_verified": false,
-                    "check_needed": false,
-                    "uuid": "64cf827e-b39d-4398-9a13-ee176647888a"
+                    "check_needed": false
                   },
                   {
-                    "id": "ex03a_q04",
+                    "id": "fb498798-133a-42b3-96ef-2b41d6fb3b33",
                     "prompt": "我________想不起来把钥匙放在什么地方了。",
                     "answer": "实在",
                     "source_origin": "textbook_question_generated_answer",
                     "answer_verified": false,
-                    "check_needed": false,
-                    "uuid": "7a92ea94-119a-4861-9b84-d1f15281b53b"
+                    "check_needed": false
                   },
                   {
-                    "id": "ex03a_q05",
+                    "id": "550309ca-788b-4859-9f6d-650749a11c98",
                     "prompt": "我只听说他要去台湾开会，________什么时候去我就不知道了。",
                     "answer": "至于",
                     "source_origin": "textbook_question_generated_answer",
                     "answer_verified": false,
-                    "check_needed": false,
-                    "uuid": "13288e60-0066-4972-b129-9ceb714b129d"
+                    "check_needed": false
                   },
                   {
-                    "id": "ex03a_q06",
+                    "id": "f7a5c5c4-d85c-4641-b6d4-693ca7399d07",
                     "prompt": "我已经努力了，________能不能毕业，就看考试结果了。",
                     "answer": "至于",
                     "source_origin": "textbook_question_generated_answer",
                     "answer_verified": false,
-                    "check_needed": false,
-                    "uuid": "adb2aa9c-54ea-485c-b90a-ee4d02f2f8b6"
+                    "check_needed": false
                   },
                   {
-                    "id": "ex03a_q07",
+                    "id": "e16a4aa8-ee9c-4ce6-9c9d-2ae0829cb1f0",
                     "prompt": "中国人________的方法很多，像“你去哪儿了？”“你吃了吗？”等都是。",
                     "answer": "打招呼",
                     "source_origin": "textbook_question_generated_answer",
                     "answer_verified": false,
-                    "check_needed": false,
-                    "uuid": "00c42518-fcac-4498-884f-40fa57ad65ad"
+                    "check_needed": false
                   },
                   {
-                    "id": "ex03a_q08",
+                    "id": "a29b17cf-2ac9-46c2-abab-aaf6f360f768",
                     "prompt": "这件事你不能再________了，应该决定了。",
                     "answer": "犹豫",
                     "source_origin": "textbook_question_generated_answer",
                     "answer_verified": false,
-                    "check_needed": false,
-                    "uuid": "fa5db201-de7c-46e3-ba67-d5e8157698da"
+                    "check_needed": false
                   },
                   {
-                    "id": "ex03a_q09",
+                    "id": "3d2951e4-c09f-4887-80cd-9e2e46617f29",
                     "prompt": "你把你的地址告诉我，________我还有机会去你们国家旅行呢。",
                     "answer": "没准儿",
                     "source_origin": "textbook_question_generated_answer",
                     "answer_verified": false,
-                    "check_needed": false,
-                    "uuid": "d59bc8be-a0e0-47b5-89e2-8fe0e93eb592"
+                    "check_needed": false
                   },
                   {
-                    "id": "ex03a_q10",
+                    "id": "b6f002b2-c530-48cc-8a45-6cb9fe96e211",
                     "prompt": "她现在不来，________今天就不来了。",
                     "answer": "没准儿",
                     "source_origin": "textbook_question_generated_answer",
                     "answer_verified": false,
-                    "check_needed": false,
-                    "uuid": "046f78e8-ba92-47ac-b9fd-4ec717de156a"
+                    "check_needed": false
                   },
                   {
-                    "id": "ex03a_q11",
+                    "id": "743ae6c0-9a61-41c7-ba46-69ad8bd0be78",
                     "prompt": "学习汉语不但要学习语言，________还要了解中国的社会和文化。",
                     "answer": "同时",
                     "source_origin": "textbook_question_generated_answer",
                     "answer_verified": false,
-                    "check_needed": false,
-                    "uuid": "1a68d324-121a-45c7-b8d9-555e4bffa036"
+                    "check_needed": false
                   },
                   {
-                    "id": "ex03a_q12",
+                    "id": "f1b52ea4-eee8-4648-b584-aa0305202a0b",
                     "prompt": "学了汉语，以后跟中国人________就方便多了。",
                     "answer": "打交道",
                     "source_origin": "textbook_question_generated_answer",
                     "answer_verified": false,
-                    "check_needed": false,
-                    "uuid": "1b56fbb2-0cd6-465d-a959-8f8bbe8a599b"
+                    "check_needed": false
                   }
-                ],
-                "uuid": "5175f796-3de9-4181-9873-4e4eea7bf3e3"
+                ]
               },
               {
-                "id": "exercise_03_B",
+                "id": "c1dcda40-952b-400d-a5fc-d2e6342e30e8",
                 "title": "B",
                 "questions": [
                   {
-                    "id": "ex03b_q01",
+                    "id": "94ab3d83-50ac-4807-90f5-3ccc46be4ae1",
                     "prompt": "我早就________去书市买书比较便宜，所以今天我一定要去书市逛逛。",
                     "answer": "听说",
                     "source_origin": "textbook_question_generated_answer",
                     "answer_verified": false,
-                    "check_needed": false,
-                    "uuid": "04b882c8-e259-4def-b7c8-e7e8dc7a18db"
+                    "check_needed": false
                   },
                   {
-                    "id": "ex03b_q02",
+                    "id": "07469e97-a1b0-46e0-8866-d361f064c457",
                     "prompt": "________他不在这个公司了，你能不能帮我________一下儿他到哪个公司去了。",
                     "answer": "听说；打听",
                     "source_origin": "textbook_question_generated_answer",
                     "answer_verified": false,
-                    "check_needed": false,
-                    "uuid": "58a3585b-6d29-48da-8dc6-053fc0d802c1"
+                    "check_needed": false
                   },
                   {
-                    "id": "ex03b_q03",
+                    "id": "b60a0be3-2dd2-4ce6-8f3d-71f8b8f293f9",
                     "prompt": "她从小在北京长大，汉语说得很________，开始时我还以为她是中国人呢。",
                     "answer": "地道",
                     "source_origin": "textbook_question_generated_answer",
                     "answer_verified": false,
-                    "check_needed": false,
-                    "uuid": "a04871ed-2eaf-48e5-b334-8a16413bcee2"
+                    "check_needed": false
                   },
                   {
-                    "id": "ex03b_q04",
+                    "id": "1d405d7a-2484-4a21-bf6d-b5a49c5fa380",
                     "prompt": "她这人说话________，你不要听她的。",
                     "answer": "没准儿",
                     "source_origin": "textbook_question_generated_answer",
                     "answer_verified": false,
-                    "check_needed": false,
-                    "uuid": "3ff420ef-9b2c-4e02-80a3-6331e773f551"
+                    "check_needed": false
                   },
                   {
-                    "id": "ex03b_q05",
+                    "id": "dce87767-a467-497b-b4a9-5434e845aedf",
                     "prompt": "今天的晚会，他________参加得了，我们不要等他了。",
                     "answer": "不一定",
                     "source_origin": "textbook_question_generated_answer",
                     "answer_verified": false,
-                    "check_needed": false,
-                    "uuid": "c5bdfd1e-f04a-4bee-b079-f5bc9aaed3fe"
+                    "check_needed": false
                   },
                   {
-                    "id": "ex03b_q06",
+                    "id": "d2a0d942-c444-4b73-bfc9-58a9dc9fd96d",
                     "prompt": "都快九点了，又下这么大雨，今天________她不来了。",
                     "answer": "没准儿",
                     "source_origin": "textbook_question_generated_answer",
                     "answer_verified": false,
-                    "check_needed": false,
-                    "uuid": "1bc3f65e-83fd-485d-b264-a0d83fc04a91"
+                    "check_needed": false
                   }
-                ],
-                "uuid": "d2a9549e-5841-442e-b881-117350c0bff8"
+                ]
               }
             ],
             "rendering": {
@@ -2579,11 +2378,10 @@
               "show_word_bank": true
             },
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "f599381f-875c-46d5-ba3a-a647f455b58f"
+            "check_needed": false
           },
           {
-            "id": "exercise_04",
+            "id": "809141fb-cc55-403a-9433-35eea89c8c90",
             "type": "complete_sentence",
             "variant": "complete_sentence_with_given_words",
             "order": 4,
@@ -2595,84 +2393,76 @@
             },
             "questions": [
               {
-                "id": "ex04_q01",
+                "id": "668ef942-39b3-4816-be06-f347b64fa456",
                 "prompt": "爬到这儿，我已经很累了，他们还要往上爬，________________________。",
                 "given_word": "实在",
                 "answer": "实在爬不动了。",
                 "source_origin": "textbook_question_generated_answer",
                 "answer_verified": false,
-                "check_needed": false,
-                "uuid": "37cc959e-8c15-4bf2-87d0-51361cee3c42"
+                "check_needed": false
               },
               {
-                "id": "ex04_q02",
+                "id": "6e23c236-94eb-4e83-9ea6-7353241c098d",
                 "prompt": "________________________，我愿意跟她交朋友。",
                 "given_word": "实在",
                 "answer": "她这个人很实在。",
                 "source_origin": "textbook_question_generated_answer",
                 "answer_verified": false,
-                "check_needed": false,
-                "uuid": "316cbd50-22f0-4465-b0a6-216927b49ab4"
+                "check_needed": false
               },
               {
-                "id": "ex04_q03",
+                "id": "ee3570f6-9872-4699-a1ed-c338e52b4e50",
                 "prompt": "她告诉我下个月要来中国，________________________。",
                 "given_word": "至于",
                 "answer": "至于什么时候来，我就不知道了。",
                 "source_origin": "textbook_question_generated_answer",
                 "answer_verified": false,
-                "check_needed": false,
-                "uuid": "5ca2b644-c968-45b3-a19f-782c46dfcf53"
+                "check_needed": false
               },
               {
-                "id": "ex04_q04",
+                "id": "3130979d-5cc3-4cf5-999c-9ed317ea7c14",
                 "prompt": "我听说过这本书，________________________。",
                 "given_word": "至于",
                 "answer": "至于是谁写的，我就不知道了。",
                 "source_origin": "textbook_question_generated_answer",
                 "answer_verified": false,
-                "check_needed": false,
-                "uuid": "a2d9a391-1fcd-4e78-ac62-2bdb86045cb1"
+                "check_needed": false
               },
               {
-                "id": "ex04_q05",
+                "id": "9dd88fe0-ccfb-47b6-a74a-d1ee53c61219",
                 "prompt": "我的作业还没有做完呢，晚上看不看电影，________________________。",
                 "given_word": "犹豫",
                 "answer": "我还在犹豫。",
                 "source_origin": "textbook_question_generated_answer",
                 "answer_verified": false,
-                "check_needed": false,
-                "uuid": "47441b17-c183-4468-8843-09a42ad7390b"
+                "check_needed": false
               },
               {
-                "id": "ex04_q06",
+                "id": "9002df8c-125f-489d-9396-d008958aa6b9",
                 "prompt": "我最后一次去上海还是两年前，________________________。",
                 "given_word": "之后",
                 "answer": "之后就再也没去过。",
                 "source_origin": "textbook_question_generated_answer",
                 "answer_verified": false,
-                "check_needed": false,
-                "uuid": "66c09864-554f-4709-aba2-82769f5c76e1"
+                "check_needed": false
               },
               {
-                "id": "ex04_q07",
+                "id": "7ccdf5ea-8943-40f8-b46c-5476825c5360",
                 "prompt": "虽然她说要买，________________________。",
                 "given_word": "其实",
                 "answer": "其实她并不想买。",
                 "source_origin": "textbook_question_generated_answer",
                 "answer_verified": false,
-                "check_needed": false,
-                "uuid": "f100be17-3f99-45c3-b5ad-c140f097d6c9"
+                "check_needed": false
               },
               {
-                "id": "ex04_q08",
+                "id": "5808cb3e-509e-43fa-89bd-70c5334f1c6e",
                 "prompt": "从那次跟他见面以后，________________________。",
                 "given_word": "至今",
                 "answer": "至今我也没有再见过他。",
                 "source_origin": "textbook_question_generated_answer",
                 "answer_verified": false,
-                "check_needed": false,
-                "uuid": "cf0607a7-0604-435a-9ea5-549164de740a"
+                "check_needed": false
               }
             ],
             "rendering": {
@@ -2680,11 +2470,10 @@
               "allow_manual_check": true
             },
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "dcdd599d-6c7d-4129-9c25-13f41015681f"
+            "check_needed": false
           },
           {
-            "id": "exercise_05",
+            "id": "e843bb6e-2e51-4fb8-b362-7506b97cf2fc",
             "type": "complete_dialogue",
             "variant": "complete_dialogue",
             "order": 5,
@@ -2696,64 +2485,58 @@
             },
             "questions": [
               {
-                "id": "ex05_q01",
+                "id": "7d9c942a-bdc2-45a1-b852-6b3dd58fe8f2",
                 "prompt": "A：好久没去爬山了，这个星期日咱们去爬山，好吗？\nB：这个星期日我实在没时间，________________________。",
                 "given_word": "回头",
                 "answer": "回头再说吧。",
                 "source_origin": "textbook_question_generated_answer",
                 "answer_verified": false,
-                "check_needed": false,
-                "uuid": "7087eb89-de15-4a2d-a931-24868846cf23"
+                "check_needed": false
               },
               {
-                "id": "ex05_q02",
+                "id": "a79733e1-ef69-41fd-ac55-9bb8b3bd4d2c",
                 "prompt": "A：给你买菜的钱。\nB：我这儿有钱，________________________。",
                 "given_word": "回头",
                 "answer": "回头再给我吧。",
                 "source_origin": "textbook_question_generated_answer",
                 "answer_verified": false,
-                "check_needed": false,
-                "uuid": "3a468802-2a60-4222-9912-f27ce825af31"
+                "check_needed": false
               },
               {
-                "id": "ex05_q03",
+                "id": "ec5f1e84-0693-46b3-b735-8005e47f103e",
                 "prompt": "A：他长得真像中国人。\nB：________________________。",
                 "given_word": "其实",
                 "answer": "其实他是外国人。",
                 "source_origin": "textbook_question_generated_answer",
                 "answer_verified": false,
-                "check_needed": false,
-                "uuid": "846860e9-7519-470d-9d79-932b7e45f980"
+                "check_needed": false
               },
               {
-                "id": "ex05_q04",
+                "id": "dc7f5f06-95a1-4158-98d8-b293729d6a13",
                 "prompt": "A：你觉得他这个人怎么样？\nB：我觉得________________________。",
                 "given_word": "实在",
                 "answer": "我觉得他很实在。",
                 "source_origin": "textbook_question_generated_answer",
                 "answer_verified": false,
-                "check_needed": false,
-                "uuid": "7bdad231-223a-4bb3-a7ff-f87c336f67e9"
+                "check_needed": false
               },
               {
-                "id": "ex05_q05",
+                "id": "55e24ac4-bbd1-40f9-9dee-e97b3f2e10f7",
                 "prompt": "A：都快八点了，他怎么还不来呢？\nB：________________________。",
                 "given_word": "没准儿",
                 "answer": "没准儿他不来了。",
                 "source_origin": "textbook_question_generated_answer",
                 "answer_verified": false,
-                "check_needed": false,
-                "uuid": "dc0e3007-4281-45ea-83d2-5bd907b7809b"
+                "check_needed": false
               },
               {
-                "id": "ex05_q06",
+                "id": "f7c603b4-c112-4d9c-ab37-b945d471ccee",
                 "prompt": "A：你说我去不去留学呢？\nB：这是多好的机会呀，________________________。",
                 "given_word": "犹豫",
                 "answer": "别犹豫了。",
                 "source_origin": "textbook_question_generated_answer",
                 "answer_verified": false,
-                "check_needed": false,
-                "uuid": "060f24af-38f1-4938-8989-f00f68ffacf9"
+                "check_needed": false
               }
             ],
             "rendering": {
@@ -2761,11 +2544,10 @@
               "allow_manual_check": true
             },
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "25783d36-fa16-4aea-b864-f0e7f4ed58e2"
+            "check_needed": false
           },
           {
-            "id": "exercise_06",
+            "id": "60ec1197-2967-408c-a1f3-3c2112f8305a",
             "type": "reorder_sentence",
             "variant": "reorder_sentences_or_paragraph",
             "order": 6,
@@ -2777,7 +2559,7 @@
             },
             "questions": [
               {
-                "id": "ex06_q01",
+                "id": "1b0dc397-26f4-4659-a964-f9c68ceab72a",
                 "items": [
                   {
                     "key": "A",
@@ -2809,11 +2591,10 @@
                 ],
                 "source_origin": "textbook_question_generated_answer",
                 "answer_verified": false,
-                "check_needed": false,
-                "uuid": "6b0980db-498b-4f1c-916c-ef29f92fb96d"
+                "check_needed": false
               },
               {
-                "id": "ex06_q02",
+                "id": "ab74bab2-0cd3-4c59-b4dd-6d9a3c6197b9",
                 "items": [
                   {
                     "key": "A",
@@ -2845,8 +2626,7 @@
                 ],
                 "source_origin": "textbook_question_generated_answer",
                 "answer_verified": false,
-                "check_needed": false,
-                "uuid": "b75da5be-d641-42d6-a0a1-dccb72b0ee4b"
+                "check_needed": false
               }
             ],
             "rendering": {
@@ -2854,11 +2634,10 @@
               "allow_manual_check": true
             },
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "ade54bcb-aa38-4b19-951b-e33e0b456d05"
+            "check_needed": false
           },
           {
-            "id": "exercise_07",
+            "id": "1fd4313d-93f3-4cbe-9dd4-2ba0d5bac415",
             "type": "correct_sentence",
             "variant": "error_correction",
             "order": 7,
@@ -2870,58 +2649,52 @@
             },
             "questions": [
               {
-                "id": "ex07_q01",
+                "id": "f8e911bf-9cbb-4dad-91ed-87032d2d95f2",
                 "wrong": "中国人常常打招呼我“你去哪儿了？”。",
                 "correct": "中国人常常用“你去哪儿了？”跟我打招呼。 / 中国人常常跟我打招呼说：“你去哪儿了？”",
                 "source_origin": "textbook_question_generated_answer",
                 "answer_verified": false,
-                "check_needed": false,
-                "uuid": "ab943ce4-0943-458a-b87b-2d5a2dc46dc4"
+                "check_needed": false
               },
               {
-                "id": "ex07_q02",
+                "id": "3fd78baa-272c-4e07-8ee2-5399c9977a99",
                 "wrong": "他们家有四口人，他和妻子、两个女儿子。",
                 "correct": "他们家有四口人，他和妻子、两个女儿。",
                 "source_origin": "textbook_question_generated_answer",
                 "answer_verified": false,
-                "check_needed": false,
-                "uuid": "282274bb-0e23-4081-96b2-7cae2c5b8f0b"
+                "check_needed": false
               },
               {
-                "id": "ex07_q03",
+                "id": "69f5ddfa-be8d-4292-b18f-6136daaa613f",
                 "wrong": "我打交道了一个中国同学，她是个美丽的姑娘。",
                 "correct": "我跟一个中国同学打过交道，她是个美丽的姑娘。",
                 "source_origin": "textbook_question_generated_answer",
                 "answer_verified": false,
-                "check_needed": false,
-                "uuid": "d85901ba-2a31-4d52-830a-232c02b9b0d5"
+                "check_needed": false
               },
               {
-                "id": "ex07_q04",
+                "id": "9c211f34-08a0-4478-b188-fe6a0e98ea41",
                 "wrong": "他们招手我，但是我不想理他们。",
                 "correct": "他们向我招手，但是我不想理他们。",
                 "source_origin": "textbook_question_generated_answer",
                 "answer_verified": false,
-                "check_needed": false,
-                "uuid": "0a31b874-fc72-40e0-b93c-7cc0b1af0eb7"
+                "check_needed": false
               },
               {
-                "id": "ex07_q05",
+                "id": "c8ec5644-8adf-46de-b2ff-34b3088ba324",
                 "wrong": "今天天气不好，你要穿多衣服，不至于感冒。",
                 "correct": "今天天气不好，你要多穿衣服，免得感冒。",
                 "source_origin": "textbook_question_generated_answer",
                 "answer_verified": false,
-                "check_needed": false,
-                "uuid": "886ba533-e58c-45d1-9334-7724b658b6d4"
+                "check_needed": false
               },
               {
-                "id": "ex07_q06",
+                "id": "6db3da52-2247-4991-a1d3-225528d56fff",
                 "wrong": "我至今没把香港去过。",
                 "correct": "我至今没去过香港。",
                 "source_origin": "textbook_question_generated_answer",
                 "answer_verified": false,
-                "check_needed": false,
-                "uuid": "5e2463cb-1730-4ce0-ace3-d2e85295ba17"
+                "check_needed": false
               }
             ],
             "rendering": {
@@ -2929,11 +2702,10 @@
               "allow_manual_check": true
             },
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "c5c3909b-8f19-43ba-a3e8-50cc729a498a"
+            "check_needed": false
           },
           {
-            "id": "exercise_08",
+            "id": "b9e46637-94ca-4fea-90cf-29155c015046",
             "type": "custom",
             "variant": "custom_textbook_task",
             "order": 8,
@@ -2945,75 +2717,67 @@
             },
             "parts": [
               {
-                "id": "exercise_08_A",
+                "id": "cbfb3612-a34c-4644-a396-774e52fc6ee1",
                 "title": "下列句子什么情景下说？",
                 "questions": [
                   {
-                    "id": "ex08a_q01",
+                    "id": "c27289fb-5395-45bf-8c4f-dbfdc93a63a5",
                     "sentence": "我们愉快地聊了一路。",
                     "answer_vi": "Hai người ngồi cùng xe / cùng máy bay / cùng chuyến đi và nói chuyện rất vui suốt cả chặng đường.",
                     "source_origin": "textbook_question_generated_answer",
                     "answer_verified": false,
-                    "check_needed": false,
-                    "uuid": "ff6ae91a-62fa-493e-bf10-562428e85146"
+                    "check_needed": false
                   },
                   {
-                    "id": "ex08a_q02",
+                    "id": "eb607057-948c-40ce-8c5d-52f97effc6c1",
                     "sentence": "有空儿来家里玩儿吧。",
                     "answer_vi": "Dùng khi mời người khác đến nhà chơi, thường là lời mời thân thiện.",
                     "source_origin": "textbook_question_generated_answer",
                     "answer_verified": false,
-                    "check_needed": false,
-                    "uuid": "5040a2c0-89a2-4df7-83cc-b9a32915ff1c"
+                    "check_needed": false
                   },
                   {
-                    "id": "ex08a_q03",
+                    "id": "85ff6a7e-4f92-4e3e-8753-8783d21d3966",
                     "sentence": "最近太忙，回头再说吧。",
                     "answer_vi": "Dùng khi hiện tại bận, chưa thể quyết định hoặc muốn từ chối khéo, để sau tính tiếp.",
                     "source_origin": "textbook_question_generated_answer",
                     "answer_verified": false,
-                    "check_needed": false,
-                    "uuid": "3bd14933-d8dd-4038-b2de-dfdb41a7e7d6"
+                    "check_needed": false
                   }
-                ],
-                "uuid": "12f04b71-1b5c-43e9-97f8-7dd371e2a993"
+                ]
               },
               {
-                "id": "exercise_08_B",
+                "id": "d838bf4d-016d-4b03-80d0-56d71451374a",
                 "title": "下列情景怎么说？",
                 "questions": [
                   {
-                    "id": "ex08b_q01",
+                    "id": "e1ef3a5f-4baa-422e-8e36-2eeab7b1384c",
                     "situation_vi": "朋友邀请你去他家，可是你正好有事，又不能决定什么时候去。",
                     "given_word": "至于",
                     "answer": "我很想去，至于什么时候去，回头再说吧。",
                     "source_origin": "textbook_question_generated_answer",
                     "answer_verified": false,
-                    "check_needed": false,
-                    "uuid": "b32b56f8-c212-420b-9a60-0ed5cc20ea7c"
+                    "check_needed": false
                   },
                   {
-                    "id": "ex08b_q02",
+                    "id": "96bf9664-bf63-4d17-9d73-6402c58ab07c",
                     "situation_vi": "朋友问你暑假后还要不要继续在中国学习，你现在还决定不了。",
                     "given_word": "犹豫",
                     "answer": "我还在犹豫呢。",
                     "source_origin": "textbook_question_generated_answer",
                     "answer_verified": false,
-                    "check_needed": false,
-                    "uuid": "7bb84e70-e812-41e6-bd39-c2cffb853750"
+                    "check_needed": false
                   },
                   {
-                    "id": "ex08b_q03",
+                    "id": "6d7d18e7-c22d-499c-a688-e70d6eaa63e9",
                     "situation_vi": "你要回国了，有些东西不需要了，你想把它们送给朋友。",
                     "given_word": "用不着",
                     "answer": "这些东西我用不着了，送给你吧。",
                     "source_origin": "textbook_question_generated_answer",
                     "answer_verified": false,
-                    "check_needed": false,
-                    "uuid": "4d8b1cfa-3b4b-463e-abd6-ba91d7aa88af"
+                    "check_needed": false
                   }
-                ],
-                "uuid": "181e98b0-b273-43ef-a267-5dad6e82d48c"
+                ]
               }
             ],
             "rendering": {
@@ -3021,11 +2785,10 @@
               "allow_manual_check": true
             },
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "d64d7fd2-09d6-46be-9e94-b63457304af9"
+            "check_needed": false
           },
           {
-            "id": "exercise_09",
+            "id": "849f6690-a8ea-4b6f-937d-429f236714ad",
             "type": "reading_fill_blank",
             "variant": "reading_cloze",
             "order": 9,
@@ -3037,14 +2800,12 @@
             },
             "reading_ref": "reading_01",
             "source_origin": "textbook/generated_mixed",
-            "check_needed": true,
-            "uuid": "cce8a774-7a91-4e86-9034-58be15bf2a04"
+            "check_needed": true
           }
-        ],
-        "uuid": "bb4a1c12-96c1-4d71-a6ad-8eaccc3bbb39"
+        ]
       },
       {
-        "id": "section_07_reading",
+        "id": "886f621e-85ce-4e1a-91df-d8d257596034",
         "type": "reading",
         "order": 7,
         "title": "阅读理解 / 综合填空",
@@ -3053,7 +2814,7 @@
         "check_needed": true,
         "items": [
           {
-            "id": "reading_01",
+            "id": "9bd9a79e-3279-468d-9f4b-ecd1f7365e19",
             "type": "reading_cloze",
             "order": 1,
             "title": "占座位",
@@ -3062,232 +2823,208 @@
             "check_needed": true,
             "supplementary_vocabulary": [
               {
-                "id": "reading_vocab_01",
+                "id": "44d7974e-3a5b-45c0-a0e2-9b883d814cc6",
                 "hanzi": "占",
                 "pinyin": "zhàn",
                 "meaning_vi": "chiếm; giữ; chiếm lấy",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "bbfa69e9-d2b6-454a-9ef7-5a55974a2693"
+                "check_needed": false
               },
               {
-                "id": "reading_vocab_02",
+                "id": "f0d02d73-fc09-4310-a941-3b9d8c50d6a0",
                 "hanzi": "白",
                 "pinyin": "bái",
                 "meaning_vi": "uổng công; vô ích; phí mất",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "f31cb95f-3fdb-4f9f-a7d1-802199e52af6"
+                "check_needed": false
               },
               {
-                "id": "reading_vocab_03",
+                "id": "6b66426c-8005-4e6a-aa9b-387dd914dc92",
                 "hanzi": "热情",
                 "pinyin": "rèqíng",
                 "meaning_vi": "nhiệt tình",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "03714d76-0013-4ccd-80ad-7d8735a3e3e7"
+                "check_needed": false
               },
               {
-                "id": "reading_vocab_04",
+                "id": "3c0b0ba4-7b1d-45c1-a701-b9e5f8ae5928",
                 "hanzi": "奇怪",
                 "pinyin": "qíguài",
                 "meaning_vi": "kỳ lạ; thấy lạ",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "a2ed19b5-768b-47e7-aff0-2630dc4e5574"
+                "check_needed": false
               },
               {
-                "id": "reading_vocab_05",
+                "id": "077e6c6c-3462-47b0-ac93-6b325f5b1145",
                 "hanzi": "责任",
                 "pinyin": "zérèn",
                 "meaning_vi": "trách nhiệm",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "bd60cfc3-8f67-489a-9fda-cebb527bef0d"
+                "check_needed": false
               },
               {
-                "id": "reading_vocab_06",
+                "id": "1df9ccc5-a9e5-4ebb-b9ff-814448bf99a3",
                 "hanzi": "未来",
                 "pinyin": "wèilái",
                 "meaning_vi": "tương lai",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "453e9e4b-90dd-47c4-8a2e-d160d3ba77a0"
+                "check_needed": false
               },
               {
-                "id": "reading_vocab_07",
+                "id": "771cae37-068b-43bf-90d2-afbb351ce227",
                 "hanzi": "珍惜",
                 "pinyin": "zhēnxī",
                 "meaning_vi": "trân trọng; quý trọng",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "7f8e7380-bb29-4a28-af54-299eab8dcf8f"
+                "check_needed": false
               },
               {
-                "id": "reading_vocab_08",
+                "id": "9a34b8d8-43d8-4a1c-822f-284b33d357bf",
                 "hanzi": "占座位",
                 "pinyin": "zhàn zuòwèi",
                 "meaning_vi": "chiếm chỗ; giữ chỗ ngồi",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "4b9d5c92-52d9-4d6d-b88d-ba33363a0afd"
+                "check_needed": false
               }
             ],
             "paragraphs": [
               {
-                "id": "reading_01_p01",
+                "id": "d2a4cf8b-55cd-4904-9fed-3141da682b19",
                 "order": 1,
                 "zh": "我是去年九月到这个大学学习的。以前曾在另一个学校学过一年汉语。刚来中国时我只是想看看，玩儿玩儿，没想好好儿学，对自己没有什么要求，常常不上课，跟朋友一起到外边去逛。来到这个学校以后，才发现过去的一年真是白过了，学到的东西太少了，汉语水平一点儿也没有提高。而且，我从来没去过学校的图书馆。",
                 "vi": "Tôi đến trường đại học này học vào tháng Chín năm ngoái. Trước đây tôi từng học tiếng Hán một năm ở một trường khác...",
                 "source_origin": "textbook/generated_mixed",
-                "check_needed": false,
-                "uuid": "81778da4-163c-48e3-84f9-8a8080949b47"
+                "check_needed": false
               },
               {
-                "id": "reading_01_p02",
+                "id": "a6b1119e-769b-4444-9eee-c4a26d7f6af3",
                 "order": 2,
                 "zh": "这一天，因为要准备考试，宿舍楼里不太安静，我只好去图书馆复习。到阅览室一看，一个空座位也没有，所有的座位都已经有人了。这时一个中国同学让我坐他的位子，我觉得很不好意思。他还告诉我，要想在这儿看书①______应该早点儿来。",
                 "vi": "Hôm đó, vì phải chuẩn bị thi, ký túc xá không yên tĩnh, tôi đành đến thư viện ôn bài...",
                 "source_origin": "textbook/generated_mixed",
-                "check_needed": false,
-                "uuid": "b90a68cb-fef7-4147-acfc-c3e33a44314f"
+                "check_needed": false
               },
               {
-                "id": "reading_01_p03",
+                "id": "ce8bdbc9-b498-418a-ab2c-e16111228a35",
                 "order": 3,
                 "zh": "第二天上午我没有课，所以吃了早饭就又到图书馆去了，心想这次一定能找到一个好座位。②______进去以后，还是没有空座位，因为中国同学去得比我早得多。",
                 "vi": "Sáng hôm sau tôi không có tiết, nên ăn sáng xong lại đến thư viện...",
                 "source_origin": "textbook/generated_mixed",
-                "check_needed": false,
-                "uuid": "e8a4894b-245f-48d4-8f60-18c107896f62"
+                "check_needed": false
               },
               {
-                "id": "reading_01_p04",
+                "id": "b3e5d57c-8b64-4c60-b5f0-3976cd13fef0",
                 "order": 4,
                 "zh": "第三天，我一吃完早饭，就急急忙忙往图书馆跑去，远远看到一群人站在图书馆门口等着开门。天啊！这么早就来了这么多人！",
                 "vi": "Ngày thứ ba, tôi vừa ăn sáng xong liền vội chạy đến thư viện...",
                 "source_origin": "textbook/generated_mixed",
-                "check_needed": false,
-                "uuid": "67df8fef-8a6e-4e79-93e6-3ce8a6428b1d"
+                "check_needed": false
               },
               {
-                "id": "reading_01_p05",
+                "id": "383c7578-216f-41aa-a8a5-b889b7ef0fec",
                 "order": 5,
                 "zh": "大门一开，人们就都往里挤，③______也随着人流挤了进去，还好，这次我找到了一个座位。坐在座位上，我想了好久，中国同学的学习热情怎么这么高？他们为什么这么努力呢？",
                 "vi": "Cửa vừa mở, mọi người đều chen vào trong, tôi cũng chen theo dòng người vào...",
                 "source_origin": "textbook/generated_mixed",
-                "check_needed": false,
-                "uuid": "18dfe1a9-3f21-4198-aef6-dc3616fb2547"
+                "check_needed": false
               },
               {
-                "id": "reading_01_p06",
+                "id": "bbed4df4-546b-4399-90a0-483fe2b0f43b",
                 "order": 6,
                 "zh": "后来，我认识④______一个中国同学。看到她星期天也不休息，就问她，你们为什么这么努力呢？⑤______看了我一眼，觉得我问的问题很奇怪，不过她还是回答了我的问题，而且很认真。",
                 "vi": "Sau này, tôi quen một bạn học Trung Quốc...",
                 "source_origin": "textbook/generated_mixed",
-                "check_needed": false,
-                "uuid": "5fef75f4-868c-4ab7-b47a-51a1ec7cb664"
+                "check_needed": false
               },
               {
-                "id": "reading_01_p07",
+                "id": "65b480dc-c5c7-41fb-a021-f43e4aacf57c",
                 "order": 7,
                 "zh": "她说：“在中国上大学很不容易，很多同学因为考试成绩少了一分就不能进大学的门，所以，我们大学生总是感到身上有很重的责任。要说为什么，我可以告诉你，一是为了我们国家的富强，⑥______是为了我自己的未来。”",
                 "vi": "Cô ấy nói: Ở Trung Quốc, vào đại học không dễ chút nào...",
                 "source_origin": "textbook/generated_mixed",
-                "check_needed": true,
-                "uuid": "e393ac08-4377-4681-959c-ab2b9d2c8949"
+                "check_needed": true
               },
               {
-                "id": "reading_01_p08",
+                "id": "e1c38cca-fcba-4622-8fb9-fbe48b4dab2c",
                 "order": 8,
                 "zh": "我明白了。我想我应该⑦______他们学习。从此以后，我差不多每天都来图书馆和中国同学一起学习，在拥挤的人群中，我学会了珍惜时间，⑧______学会了很多书本上没有的东西。",
                 "vi": "Tôi hiểu ra rồi. Tôi nghĩ tôi nên học theo họ...",
                 "source_origin": "textbook/generated_mixed",
-                "check_needed": true,
-                "uuid": "e1ccf979-7deb-4fd1-8c5e-dc208e812654"
+                "check_needed": true
               }
             ],
             "questions": [
               {
-                "id": "reading_01_blank_01",
+                "id": "f947f691-eb21-4ecc-913b-1129cc333dad",
                 "type": "fill_blank",
                 "blank_no": 1,
                 "answer": "就",
                 "source_origin": "textbook_question_generated_answer",
                 "answer_verified": false,
-                "check_needed": false,
-                "uuid": "de1c3062-7b1f-4365-b23d-a830d12d2046"
+                "check_needed": false
               },
               {
-                "id": "reading_01_blank_02",
+                "id": "0b220fac-0bf5-42fd-babe-e65263e68779",
                 "type": "fill_blank",
                 "blank_no": 2,
                 "answer": "没想到 / 可是",
                 "source_origin": "textbook_question_generated_answer",
                 "answer_verified": false,
-                "check_needed": false,
-                "uuid": "caed198e-1e5e-4abb-a3b3-1f4ecb308e62"
+                "check_needed": false
               },
               {
-                "id": "reading_01_blank_03",
+                "id": "f8b49491-aa35-4b0a-92b9-149028558d9d",
                 "type": "fill_blank",
                 "blank_no": 3,
                 "answer": "我",
                 "source_origin": "textbook_question_generated_answer",
                 "answer_verified": false,
-                "check_needed": false,
-                "uuid": "078806e7-496a-4206-b508-63694965d655"
+                "check_needed": false
               },
               {
-                "id": "reading_01_blank_04",
+                "id": "b56e0cbe-ff73-4242-bb38-406995b1e4a5",
                 "type": "fill_blank",
                 "blank_no": 4,
                 "answer": "了",
                 "source_origin": "textbook_question_generated_answer",
                 "answer_verified": false,
-                "check_needed": false,
-                "uuid": "33ac398c-d132-45f3-b9d9-cf320ae75d07"
+                "check_needed": false
               },
               {
-                "id": "reading_01_blank_05",
+                "id": "b0b9f00c-8733-4e21-a614-8cea604d638d",
                 "type": "fill_blank",
                 "blank_no": 5,
                 "answer": "她",
                 "source_origin": "textbook_question_generated_answer",
                 "answer_verified": false,
-                "check_needed": false,
-                "uuid": "b5e2ea62-0fb0-404c-a1ee-1a9a08d78057"
+                "check_needed": false
               },
               {
-                "id": "reading_01_blank_06",
+                "id": "dd0ccf31-756f-49b8-86b7-095bc68a2567",
                 "type": "fill_blank",
                 "blank_no": 6,
                 "answer": "二",
                 "source_origin": "textbook_question_generated_answer",
                 "answer_verified": false,
-                "check_needed": true,
-                "uuid": "defe88a1-c085-4859-bda8-d64535443012"
+                "check_needed": true
               },
               {
-                "id": "reading_01_blank_07",
+                "id": "f3c59e19-bc2d-4045-b93a-df6f0bea2e93",
                 "type": "fill_blank",
                 "blank_no": 7,
                 "answer": "向",
                 "source_origin": "textbook_question_generated_answer",
                 "answer_verified": false,
-                "check_needed": true,
-                "uuid": "bb97449a-4af6-4147-87ef-98978dc9c882"
+                "check_needed": true
               },
               {
-                "id": "reading_01_blank_08",
+                "id": "8e1c2d97-f329-49c9-8438-58aebed03d9b",
                 "type": "fill_blank",
                 "blank_no": 8,
                 "answer": "也",
                 "source_origin": "textbook_question_generated_answer",
                 "answer_verified": false,
-                "check_needed": true,
-                "uuid": "1470008b-07a6-4212-a758-cfc6feb2f8e4"
+                "check_needed": true
               }
             ],
             "completed_text_zh": "我是去年九月到这个大学学习的。以前曾在另一个学校学过一年汉语。刚来中国时我只是想看看，玩儿玩儿，没想好好儿学，对自己没有什么要求，常常不上课，跟朋友一起到外边去逛。来到这个学校以后，才发现过去的一年真是白过了，学到的东西太少了，汉语水平一点儿也没有提高。而且，我从来没去过学校的图书馆。\n\n这一天，因为要准备考试，宿舍楼里不太安静，我只好去图书馆复习。到阅览室一看，一个空座位也没有，所有的座位都已经有人了。这时一个中国同学让我坐他的位子，我觉得很不好意思。他还告诉我，要想在这儿看书就应该早点儿来。\n\n第二天上午我没有课，所以吃了早饭就又到图书馆去了，心想这次一定能找到一个好座位。没想到进去以后，还是没有空座位，因为中国同学去得比我早得多。\n\n第三天，我一吃完早饭，就急急忙忙往图书馆跑去，远远看到一群人站在图书馆门口等着开门。天啊！这么早就来了这么多人！\n\n大门一开，人们就都往里挤，我也随着人流挤了进去，还好，这次我找到了一个座位。坐在座位上，我想了好久，中国同学的学习热情怎么这么高？他们为什么这么努力呢？\n\n后来，我认识了一个中国同学。看到她星期天也不休息，就问她，你们为什么这么努力呢？她看了我一眼，觉得我问的问题很奇怪，不过她还是回答了我的问题，而且很认真。\n\n她说：“在中国上大学很不容易，很多同学因为考试成绩少了一分就不能进大学的门，所以，我们大学生总是感到身上有很重的责任。要说为什么，我可以告诉你，一是为了我们国家的富强，二是为了我自己的未来。”\n\n我明白了。我想我应该向他们学习。从此以后，我差不多每天都来图书馆和中国同学一起学习，在拥挤的人群中，我学会了珍惜时间，也学会了很多书本上没有的东西。",
@@ -3295,14 +3032,12 @@
               "Trang sách 75 trong PDF scan bị thiếu/nhảy trang; phần cuối đoạn đọc và các đáp án ⑥–⑧ cần giữ check_needed=true khi import."
             ],
             "answers": [],
-            "answer_key": [],
-            "uuid": "a2cbbd93-e414-4426-afa5-bbde17920edc"
+            "answer_key": []
           }
-        ],
-        "uuid": "ea1328e2-99c8-4c64-8e0c-1449f0ced189"
+        ]
       },
       {
-        "id": "section_08_character_writing",
+        "id": "2a3cfdb8-618f-43d3-9ad4-160d1dbb366a",
         "type": "character_writing",
         "order": 8,
         "title": "写汉字",
@@ -3313,118 +3048,105 @@
         "empty_reason_vi": "Bài này không thấy mục 写汉字 riêng trong PDF. Không tự coi danh sách generated là textbook-original.",
         "suggested_generated_items": [
           {
-            "id": "char_suggest_01",
+            "id": "b437d2c1-0f1d-4745-a4d0-3e20b572ad99",
             "hanzi": "其实",
             "pinyin": "qíshí",
             "meaning_vi": "thật ra",
             "source_origin": "generated",
-            "check_needed": true,
-            "uuid": "888accb6-b26f-40d1-9587-c48481a7cb68"
+            "check_needed": true
           },
           {
-            "id": "char_suggest_02",
+            "id": "3fbdaaa0-3bdd-4bf6-93c6-6e0fe00b7372",
             "hanzi": "民航",
             "pinyin": "mínháng",
             "meaning_vi": "hàng không dân dụng",
             "source_origin": "generated",
-            "check_needed": true,
-            "uuid": "14da8b42-0536-44b3-a7a6-9371f83ca6f2"
+            "check_needed": true
           },
           {
-            "id": "char_suggest_03",
+            "id": "dda9418f-d564-4567-a46a-70f5dd5f6bad",
             "hanzi": "回答",
             "pinyin": "huídá",
             "meaning_vi": "trả lời",
             "source_origin": "generated",
-            "check_needed": true,
-            "uuid": "24cf88e5-f367-45ef-9fee-38287c36c39d"
+            "check_needed": true
           },
           {
-            "id": "char_suggest_04",
+            "id": "37562188-6bf8-47d5-acfc-736abdb60782",
             "hanzi": "名片",
             "pinyin": "míngpiàn",
             "meaning_vi": "danh thiếp",
             "source_origin": "generated",
-            "check_needed": true,
-            "uuid": "d7868ee0-f184-427f-9ec7-a37849423a69"
+            "check_needed": true
           },
           {
-            "id": "char_suggest_05",
+            "id": "fb01c05c-9264-4436-94c8-a72410da45e3",
             "hanzi": "实在",
             "pinyin": "shízài",
             "meaning_vi": "thật sự; thật thà",
             "source_origin": "generated",
-            "check_needed": true,
-            "uuid": "fce4e3c8-28f5-410a-ba3f-b974fb5ec1c8"
+            "check_needed": true
           },
           {
-            "id": "char_suggest_06",
+            "id": "5881486b-b2ba-4fc2-9972-ab4db84c2c27",
             "hanzi": "至于",
             "pinyin": "zhìyú",
             "meaning_vi": "còn về",
             "source_origin": "generated",
-            "check_needed": true,
-            "uuid": "07abba85-d168-4dc9-be52-3241776c3850"
+            "check_needed": true
           },
           {
-            "id": "char_suggest_07",
+            "id": "9271ee48-f4cc-4553-a460-e5499be5d36e",
             "hanzi": "推辞",
             "pinyin": "tuīcí",
             "meaning_vi": "từ chối",
             "source_origin": "generated",
-            "check_needed": true,
-            "uuid": "ad09e7af-c919-4eaa-8c65-fe05c8e946f5"
+            "check_needed": true
           },
           {
-            "id": "char_suggest_08",
+            "id": "f9bd4a1d-31bf-4123-b844-73c2b2591bac",
             "hanzi": "温暖",
             "pinyin": "wēnnuǎn",
             "meaning_vi": "ấm áp",
             "source_origin": "generated",
-            "check_needed": true,
-            "uuid": "6e0164d1-699e-4891-bd06-2bf88bba9388"
+            "check_needed": true
           },
           {
-            "id": "char_suggest_09",
+            "id": "f95ada03-5cd1-4d58-845b-f10104add74e",
             "hanzi": "熟悉",
             "pinyin": "shúxī",
             "meaning_vi": "quen thuộc",
             "source_origin": "generated",
-            "check_needed": true,
-            "uuid": "84da8b1a-d61c-4201-8dc2-0a53289ec850"
+            "check_needed": true
           },
           {
-            "id": "char_suggest_10",
+            "id": "e2e94499-d467-4c26-9ece-633502f31089",
             "hanzi": "犹豫",
             "pinyin": "yóuyù",
             "meaning_vi": "do dự",
             "source_origin": "generated",
-            "check_needed": true,
-            "uuid": "776dc3db-e700-4cfc-8d0c-42f321b07957"
+            "check_needed": true
           },
           {
-            "id": "char_suggest_11",
+            "id": "e2c3c663-14a2-44a6-8ed2-97a5daace2ee",
             "hanzi": "发动",
             "pinyin": "fādòng",
             "meaning_vi": "khởi động",
             "source_origin": "generated",
-            "check_needed": true,
-            "uuid": "a244e73d-5b94-48e5-ba44-61a46a78036a"
+            "check_needed": true
           },
           {
-            "id": "char_suggest_12",
+            "id": "6f48464e-9c1a-4293-a681-92bd67ce9e38",
             "hanzi": "珍惜",
             "pinyin": "zhēnxī",
             "meaning_vi": "trân trọng",
             "source_origin": "generated",
-            "check_needed": true,
-            "uuid": "99db8548-d482-4d09-8d62-1cae618761f1"
+            "check_needed": true
           }
-        ],
-        "uuid": "65f47aac-49fe-4dfd-a5dc-5c6f33e27876"
+        ]
       },
       {
-        "id": "section_09_summary",
+        "id": "944b8c3a-d3d4-4265-a907-10cef8340ac2",
         "type": "summary",
         "order": 9,
         "title": "总结",
@@ -3444,29 +3166,24 @@
           ],
           "grammar_points": [
             {
-              "id": "grammar_01",
-              "title": "其实",
-              "uuid": "04ea85b8-59af-4330-8b83-ef752391ed15"
+              "id": "f8ec59f3-898a-47b2-b536-44dfd8183393",
+              "title": "其实"
             },
             {
-              "id": "grammar_02",
-              "title": "再说",
-              "uuid": "74dc00ae-a7e4-48de-adba-fbf1e4916f6a"
+              "id": "57b14753-688a-41b6-9e0d-b61dbbf574d7",
+              "title": "再说"
             },
             {
-              "id": "grammar_03",
-              "title": "实在",
-              "uuid": "c2da1ca6-28ee-489d-bf71-c1364a1284c9"
+              "id": "fa804fff-372b-4874-8571-f54e613d7e07",
+              "title": "实在"
             },
             {
-              "id": "grammar_04",
-              "title": "用得着 / 用不着",
-              "uuid": "5fff1e8d-aad6-4457-ba14-c20996229a8b"
+              "id": "c6cd6c38-22fc-4546-a398-39efe02d6c17",
+              "title": "用得着 / 用不着"
             },
             {
-              "id": "grammar_05",
-              "title": "至于",
-              "uuid": "f71a5c75-5470-4b2a-adb6-a59c11b5ae78"
+              "id": "c3d31639-0f40-4b2f-aa50-5dda9d443b78",
+              "title": "至于"
             }
           ],
           "key_patterns": [
@@ -3489,10 +3206,44 @@
               "PDF scan thiếu/nhảy trang sách 75; phần cuối 综合填空：占座位 cần check lại."
             ]
           }
-        },
-        "uuid": "2d0bee45-41ef-47d7-b137-215996b40375"
+        }
       }
     ],
+    "metadata": {
+      "legacy_id": "hanyu_3_1_lesson_05",
+      "book": "Hanyu Jiaocheng",
+      "volume": "第三册上",
+      "volume_vi": "Quyển 3 Thượng",
+      "lesson_index": 5,
+      "lesson_number_cn": "第五课",
+      "lesson_title_cn": "回头再说",
+      "lesson_title_pinyin": "Huítóu zài shuō",
+      "lesson_title_vi": "Để sau rồi nói / Để sau tính tiếp",
+      "lesson_title_en": "We will talk about it later",
+      "source_files": [
+        {
+          "name": "Hanyu Jiaocheng 3-1.pdf",
+          "type": "pdf_scan",
+          "source_origin": "textbook",
+          "check_needed": true,
+          "page_start": 63,
+          "page_end": 75,
+          "note": "PDF scan được dùng làm nguồn chính; trang sách 75 bị thiếu/nhảy trang nên phần cuối 综合填空 cần check_needed."
+        },
+        {
+          "name": "Quyển 3- tổng hợp.docx",
+          "type": "uploaded_crosscheck",
+          "source_origin": "uploaded_crosscheck",
+          "check_needed": false
+        },
+        {
+          "name": "Đã dán markdown (1).md",
+          "type": "workflow_prompt",
+          "source_origin": "uploaded_crosscheck",
+          "check_needed": false
+        }
+      ]
+    },
     "summary": {
       "lesson_parts": [
         "课文",
@@ -3506,29 +3257,24 @@
       ],
       "grammar_points": [
         {
-          "id": "grammar_01",
-          "title": "其实",
-          "uuid": "f8f2385d-c756-47aa-921b-85a28814e525"
+          "id": "f8ec59f3-898a-47b2-b536-44dfd8183393",
+          "title": "其实"
         },
         {
-          "id": "grammar_02",
-          "title": "再说",
-          "uuid": "5e61e07a-7f12-473f-8fae-3cad6e3510ae"
+          "id": "57b14753-688a-41b6-9e0d-b61dbbf574d7",
+          "title": "再说"
         },
         {
-          "id": "grammar_03",
-          "title": "实在",
-          "uuid": "d53ea0f0-6a93-4521-9d16-1400b66f1b51"
+          "id": "fa804fff-372b-4874-8571-f54e613d7e07",
+          "title": "实在"
         },
         {
-          "id": "grammar_04",
-          "title": "用得着 / 用不着",
-          "uuid": "519d7d93-e4af-4965-a91f-66b361646bfb"
+          "id": "c6cd6c38-22fc-4546-a398-39efe02d6c17",
+          "title": "用得着 / 用不着"
         },
         {
-          "id": "grammar_05",
-          "title": "至于",
-          "uuid": "bc16817b-a3fa-4d06-8c5a-e43eaa6f3982"
+          "id": "c3d31639-0f40-4b2f-aa50-5dda9d443b78",
+          "title": "至于"
         }
       ],
       "main_patterns": [
@@ -3560,220 +3306,6 @@
         "Điền từ tổng hợp: Chiếm chỗ ngồi"
       ],
       "check_needed": false
-    },
-    "uuid": "4cf90835-3cfe-4eff-9a99-5e902158551e"
-  },
-  "coverage_report": {
-    "version": "coverage_v1",
-    "coverage_status": "partial",
-    "expected_exercise_count_from_pdf": 9,
-    "actual_exercise_count_in_json": 9,
-    "all_exercises_covered": true,
-    "all_exercise_content_verified": false,
-    "missing_exercise_indexes": [],
-    "expected_exercises_from_pdf": [
-      {
-        "order": 1,
-        "title_cn": "一、语音",
-        "title_vi": "Ngữ âm",
-        "canonical_type": "phonetics",
-        "canonical_variant": "pronunciation_tone_minimal_pairs",
-        "json_item_id": "exercise_01",
-        "page_start": null,
-        "page_end": null,
-        "extracted": true,
-        "content_verified": true,
-        "answer_verified": false,
-        "source_origin": "textbook/generated_mixed",
-        "check_needed": false
-      },
-      {
-        "order": 2,
-        "title_cn": "二、词语",
-        "title_vi": "Đọc cụm từ",
-        "canonical_type": "read_aloud",
-        "canonical_variant": "word_phrase_sentence_chunks",
-        "json_item_id": "exercise_02",
-        "page_start": null,
-        "page_end": null,
-        "extracted": true,
-        "content_verified": true,
-        "answer_verified": false,
-        "source_origin": "textbook/generated_mixed",
-        "check_needed": false
-      },
-      {
-        "order": 3,
-        "title_cn": "三、选词填空",
-        "title_vi": "Chọn từ điền chỗ trống",
-        "canonical_type": "choose_words_fill_blank",
-        "canonical_variant": "word_bank_fill_blank",
-        "json_item_id": "exercise_03",
-        "page_start": null,
-        "page_end": null,
-        "extracted": true,
-        "content_verified": true,
-        "answer_verified": false,
-        "source_origin": "textbook/generated_mixed",
-        "check_needed": false
-      },
-      {
-        "order": 4,
-        "title_cn": "四、用括号里的词语完成句子",
-        "title_vi": "Dùng từ trong ngoặc hoàn thành câu",
-        "canonical_type": "complete_sentence",
-        "canonical_variant": "complete_sentence_with_given_words",
-        "json_item_id": "exercise_04",
-        "page_start": null,
-        "page_end": null,
-        "extracted": true,
-        "content_verified": true,
-        "answer_verified": false,
-        "source_origin": "textbook/generated_mixed",
-        "check_needed": false
-      },
-      {
-        "order": 5,
-        "title_cn": "五、用括号里的词语完成会话",
-        "title_vi": "Dùng từ trong ngoặc hoàn thành hội thoại",
-        "canonical_type": "complete_dialogue",
-        "canonical_variant": "complete_dialogue",
-        "json_item_id": "exercise_05",
-        "page_start": null,
-        "page_end": null,
-        "extracted": true,
-        "content_verified": true,
-        "answer_verified": false,
-        "source_origin": "textbook/generated_mixed",
-        "check_needed": false
-      },
-      {
-        "order": 6,
-        "title_cn": "六、连句成段",
-        "title_vi": "Sắp xếp câu thành đoạn",
-        "canonical_type": "reorder_sentence",
-        "canonical_variant": "reorder_sentences_or_paragraph",
-        "json_item_id": "exercise_06",
-        "page_start": null,
-        "page_end": null,
-        "extracted": true,
-        "content_verified": true,
-        "answer_verified": false,
-        "source_origin": "textbook/generated_mixed",
-        "check_needed": false
-      },
-      {
-        "order": 7,
-        "title_cn": "七、改错句",
-        "title_vi": "Sửa câu sai",
-        "canonical_type": "correct_sentence",
-        "canonical_variant": "error_correction",
-        "json_item_id": "exercise_07",
-        "page_start": null,
-        "page_end": null,
-        "extracted": true,
-        "content_verified": true,
-        "answer_verified": false,
-        "source_origin": "textbook/generated_mixed",
-        "check_needed": false
-      },
-      {
-        "order": 8,
-        "title_cn": "八、情景表达",
-        "title_vi": "Diễn đạt theo tình huống",
-        "canonical_type": "custom",
-        "canonical_variant": "custom_textbook_task",
-        "json_item_id": "exercise_08",
-        "page_start": null,
-        "page_end": null,
-        "extracted": true,
-        "content_verified": true,
-        "answer_verified": false,
-        "source_origin": "textbook/generated_mixed",
-        "check_needed": false
-      },
-      {
-        "order": 9,
-        "title_cn": "九、综合填空：占座位",
-        "title_vi": "Điền từ tổng hợp: Chiếm chỗ ngồi",
-        "canonical_type": "reading_fill_blank",
-        "canonical_variant": "reading_cloze",
-        "json_item_id": "exercise_09",
-        "page_start": null,
-        "page_end": null,
-        "extracted": true,
-        "content_verified": false,
-        "answer_verified": false,
-        "source_origin": "textbook/generated_mixed",
-        "check_needed": true
-      }
-    ],
-    "unknown_or_unmapped_blocks": [
-      {
-        "id": "unknown_pdf_page_75",
-        "section_id": "section_07_reading",
-        "page": 75,
-        "raw_text": "PDF scan bị thiếu/nhảy trang ở phần cuối 综合填空：占座位",
-        "reason": "MISSING_SCAN_PAGE",
-        "resolved": false,
-        "uuid": "3f78caf9-6da2-44d6-b347-a8c2af85dcee"
-      }
-    ],
-    "coverage_gates": [
-      {
-        "id": "gate_text",
-        "label": "Text covered",
-        "passed": true,
-        "uuid": "5b4cc2e1-0d7d-47e0-a42c-ef54187cc5a0"
-      },
-      {
-        "id": "gate_vocab",
-        "label": "Vocabulary covered",
-        "passed": true,
-        "expected": 42,
-        "actual": 42,
-        "uuid": "638a3f8d-8837-4bd4-a895-2b26f0accd3b"
-      },
-      {
-        "id": "gate_proper_nouns",
-        "label": "Proper nouns covered",
-        "passed": true,
-        "expected": 4,
-        "actual": 4,
-        "uuid": "ee4f4aa6-7c94-44f9-b54e-a2ffe327ea21"
-      },
-      {
-        "id": "gate_notes",
-        "label": "Notes covered",
-        "passed": true,
-        "expected": 3,
-        "actual": 3,
-        "uuid": "9419c915-05bd-4105-8c27-71a1069dae13"
-      },
-      {
-        "id": "gate_grammar",
-        "label": "Word usage covered",
-        "passed": true,
-        "expected": 5,
-        "actual": 5,
-        "uuid": "f3a7e9eb-7529-4e3a-9c6d-1b9d5ebe3a03"
-      },
-      {
-        "id": "gate_exercises",
-        "label": "Exercises covered",
-        "passed": true,
-        "expected": 9,
-        "actual": 9,
-        "uuid": "8ac23b20-a4d7-4825-86c2-9c975ff430b9"
-      },
-      {
-        "id": "gate_pdf_page_75",
-        "label": "PDF page 75 verified",
-        "passed": false,
-        "reason": "Scan page missing/jumped; reading tail cross-checked online but must remain check_needed.",
-        "uuid": "cdb7c4e7-a66f-43d1-bc7e-08dec8a34cde"
-      }
-    ],
-    "final_verification_allowed": false
+    }
   }
 }

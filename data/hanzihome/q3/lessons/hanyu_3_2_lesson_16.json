@@ -1,49 +1,6 @@
 {
-  "schema_version": "2.3.0",
-  "content_type": "chinese_textbook_lesson",
-  "verification_status": "verified",
-  "source": {
-    "book": "Hanyu Jiaocheng",
-    "volume": "第三册下",
-    "volume_vi": "Quyển 3 Hạ",
-    "lesson_index": 16,
-    "lesson_number_cn": "第十六课",
-    "lesson_title_cn": "金星人遇到麻烦",
-    "lesson_title_pinyin": "Jīnxīng rén yùdào máfan",
-    "lesson_title_vi": "Người sao Kim gặp rắc rối",
-    "lesson_title_en": "The Venusians are having a trouble",
-    "source_files": [
-      {
-        "name": "Hanyu Jiaocheng 3-2.pdf",
-        "type": "pdf_scan",
-        "source_origin": "textbook",
-        "check_needed": false,
-        "page_start": 33,
-        "page_end": 49
-      },
-      {
-        "name": "Đã dán markdown (1).md",
-        "type": "user_instruction",
-        "source_origin": "uploaded_crosscheck",
-        "check_needed": false
-      },
-      {
-        "name": "hanyuLesson.schema.v2.3.0.full.ts",
-        "type": "schema",
-        "source_origin": "uploaded_crosscheck",
-        "check_needed": false
-      }
-    ],
-    "web_crosscheck": [
-      {
-        "title": "Chinese Course (3rd Edition) 3B汉语教程第三册下Lesson 16 金星人遇到麻烦",
-        "source_origin": "web_crosscheck",
-        "note": "Used only as secondary cross-check for lesson identity and text; PDF scan remains primary."
-      }
-    ]
-  },
   "lesson": {
-    "id": "hanyu_3_2_lesson_16_jinxingren_yudao_mafan",
+    "id": "6cc97e1f-8402-4cd5-9726-62488f164b65",
     "title": {
       "zh": "金星人遇到麻烦",
       "pinyin": "Jīnxīng rén yùdào máfan",
@@ -58,7 +15,7 @@
     ],
     "sections": [
       {
-        "id": "section_01_text",
+        "id": "a6c0d522-99be-4f36-881c-b9b2c6beeb85",
         "type": "text",
         "order": 1,
         "title": "课文",
@@ -67,7 +24,7 @@
         "check_needed": false,
         "blocks": [
           {
-            "id": "text_01",
+            "id": "e155d5ea-f89d-45f0-ab8d-094ce9e719f0",
             "type": "text_narrative",
             "order": 1,
             "title": "金星人遇到麻烦",
@@ -76,169 +33,150 @@
             "check_needed": false,
             "paragraphs": [
               {
-                "id": "text_01_p01",
+                "id": "43338a2c-2044-419e-9fdd-ed1739757a8d",
                 "order": 1,
                 "zh": "上星期，金星上一片欢腾——科学家们成功地向地球发射了一颗卫星。目前，这颗卫星停留在天壶地区的上空，正连续不断向金星发回照片和信号。",
                 "vi": "Tuần trước, trên sao Kim tràn ngập không khí vui mừng — các nhà khoa học đã phóng thành công một vệ tinh về phía Trái Đất. Hiện nay, vệ tinh này đang dừng lại trên bầu trời khu vực Thiên Hồ, liên tục gửi ảnh và tín hiệu về sao Kim.",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "22bbb863-65d3-45fd-bded-c663565e5c7a"
+                "check_needed": false
               },
               {
-                "id": "text_01_p02",
+                "id": "4a807389-3592-4cf4-973f-6589e0118fb2",
                 "order": 2,
                 "zh": "由于地球上空天气很好，科学家们便有可能获得不少珍贵资料。载人飞船登上地球究竟能否实现？对这个重大问题，他们也已经取得了某些突破。",
                 "vi": "Do thời tiết phía trên Trái Đất rất tốt, các nhà khoa học có khả năng thu được không ít tư liệu quý giá. Liệu tàu vũ trụ có người lái có thể đáp xuống Trái Đất hay không? Về vấn đề trọng đại này, họ cũng đã đạt được một số đột phá.",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "88af13d3-d87b-431b-9b27-cc53ca6254a2"
+                "check_needed": false
               },
               {
-                "id": "text_01_p03",
+                "id": "5a221404-05e7-4ae2-ad9f-0c920a73dc36",
                 "order": 3,
                 "zh": "在金星科技大学里，一个记者招待会正在进行。",
                 "vi": "Tại Đại học Khoa học Kỹ thuật sao Kim, một buổi họp báo đang diễn ra.",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "389652c7-d7d8-4d74-8a1d-481bbeb3682e"
+                "check_needed": false
               },
               {
-                "id": "text_01_p04",
+                "id": "5c402bbc-a0e6-434c-a6c7-3c4f86c845fe",
                 "order": 4,
                 "zh": "“我们已经能得出结论，”格林教授说，“地球上是没有生命存在的。”",
                 "vi": "“Chúng tôi đã có thể đưa ra kết luận,” giáo sư Green nói, “trên Trái Đất không có sự sống tồn tại.”",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "4afd1a7a-c813-4a44-995d-3c50ba43d0db"
+                "check_needed": false
               },
               {
-                "id": "text_01_p05",
+                "id": "babe7f0b-2b53-402f-85af-c5de9b0e676d",
                 "order": 5,
                 "zh": "“格林教授，您能不能介绍一下儿，这个结论是怎么得出的？”《金星日报》记者问道。",
                 "vi": "“Giáo sư Green, ông có thể giới thiệu một chút, kết luận này được rút ra như thế nào không?” phóng viên của Nhật báo sao Kim hỏi.",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "06bea00a-0ffb-4f76-9d1a-0a3051695f38"
+                "check_needed": false
               },
               {
-                "id": "text_01_p06",
+                "id": "d2683a70-b897-4979-ad07-0bca2bb00b31",
                 "order": 6,
                 "zh": "“首先，天壶区的地面都由一种坚硬无比的混凝土覆盖着，这就是说，任何植物都不能生长。第二，地球的大气中充满一氧化碳和其他种种有害气体，在这样的环境里，人类是无法生存的。因为没有氧气，所以如果说有人能在那里生存，那真是不可思议。”",
                 "vi": "“Trước hết, mặt đất ở khu vực Thiên Hồ đều được phủ bởi một loại bê tông cực kỳ cứng, điều này có nghĩa là bất kỳ loài thực vật nào cũng không thể sinh trưởng. Thứ hai, bầu khí quyển của Trái Đất đầy khí CO và nhiều loại khí độc hại khác. Trong môi trường như vậy, loài người không thể sinh tồn. Vì không có oxy, nên nếu nói có người có thể sống ở đó thì thật là không thể tưởng tượng nổi.”",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "4a57fe00-cc44-4923-a23e-3b130e58cce4"
+                "check_needed": false
               },
               {
-                "id": "text_01_p07",
+                "id": "cde61ddf-34c9-4d25-892b-99b26df9e427",
                 "order": 7,
                 "zh": "“教授，这些和我们金星人的空间计划有没有联系？”",
                 "vi": "“Thưa giáo sư, những điều này có liên quan gì đến kế hoạch không gian của người sao Kim chúng ta không?”",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "cb484475-705b-4c3a-8573-03040e6c797c"
+                "check_needed": false
               },
               {
-                "id": "text_01_p08",
+                "id": "37ac9b48-37ae-4d3e-aa1a-644f38547b84",
                 "order": 8,
                 "zh": "“当然有。这样，我们发射的飞船还得自带氧气，飞船的重量也将不得不大大增加。”",
                 "vi": "“Đương nhiên là có. Như vậy, tàu vũ trụ mà chúng ta phóng đi còn phải tự mang theo oxy, trọng lượng của tàu cũng sẽ buộc phải tăng lên rất nhiều.”",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "de416f22-bd69-47ed-b225-27c434633465"
+                "check_needed": false
               },
               {
-                "id": "text_01_p09",
+                "id": "2b9bed70-c477-49f4-8027-9bc4d7f13594",
                 "order": 9,
                 "zh": "“那儿还有什么其他危险吗？”",
                 "vi": "“Nơi đó còn có nguy hiểm nào khác không?”",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "6c523491-2bf6-44ad-a13f-06f7bf153eee"
+                "check_needed": false
               },
               {
-                "id": "text_01_p10",
+                "id": "35ac2478-e068-41a9-9ca0-6f305253ec3e",
                 "order": 10,
                 "zh": "“请看这张照片。你看到的这些线，实际上是地球上的一条条河流，但卫星已发现，这些河水里充满了有害物质，根本不能饮用。因此，连喝的水我们都得自己带上！”",
                 "vi": "“Xin hãy xem bức ảnh này. Những đường mà anh nhìn thấy, thực ra là từng con sông trên Trái Đất. Nhưng vệ tinh đã phát hiện rằng trong nước sông này chứa đầy chất độc hại, căn bản không thể uống được. Vì vậy, ngay cả nước uống chúng ta cũng phải tự mang theo!”",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "b2549d9b-bcff-48e2-aaa6-39eda9bb2dd7"
+                "check_needed": false
               },
               {
-                "id": "text_01_p11",
+                "id": "cc6c9b34-ea2c-405a-aa42-b5ec0853d4c0",
                 "order": 11,
                 "zh": "“请问，照片上的这些黑色颗粒又是什么呢？”",
                 "vi": "“Xin hỏi, những hạt màu đen trên ảnh này lại là gì vậy?”",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "af05f73a-23d1-400a-b867-da555cea5154"
+                "check_needed": false
               },
               {
-                "id": "text_01_p12",
+                "id": "4aad4f45-1496-48b1-a678-14c38023b32d",
                 "order": 12,
                 "zh": "“对此，我们还不能肯定，也许是些金属颗粒——它们沿着固定轨道移动，并能喷出气体，发出噪音，还会互相碰撞。它们的数量大得惊人，毫无疑问，我们的飞船如果遇到它们，就会被撞个稀巴烂。”",
                 "vi": "“Về điều này, chúng tôi vẫn chưa thể khẳng định. Có lẽ đó là một số hạt kim loại — chúng di chuyển dọc theo quỹ đạo cố định, có thể phun khí, phát ra tiếng ồn, và còn có thể va chạm lẫn nhau. Số lượng của chúng lớn đến mức đáng kinh ngạc. Không nghi ngờ gì nữa, nếu tàu vũ trụ của chúng ta gặp phải chúng, nó sẽ bị đâm cho nát bấy.”",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "b9f41c86-8749-4520-a4e8-d119791db10a"
+                "check_needed": false
               },
               {
-                "id": "text_01_p13",
+                "id": "bedf8b9f-d890-4b23-bf82-75e03d656a7d",
                 "order": 13,
                 "zh": "“如果您说的没错，那么这是否意味着我们将不得不推迟实施数年来的飞船计划？”",
                 "vi": "“Nếu những gì ông nói không sai, vậy điều này có phải có nghĩa là chúng ta sẽ buộc phải hoãn kế hoạch tàu vũ trụ đã triển khai trong nhiều năm không?”",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "e3b5f3d5-758f-4a13-a8c4-d5d90b4154a5"
+                "check_needed": false
               },
               {
-                "id": "text_01_p14",
+                "id": "b0532a8b-4236-447d-b3d9-6844511a5b14",
                 "order": 14,
                 "zh": "“对！不过，只要能拿到补充资金，我们会马上继续开展工作的。”",
                 "vi": "“Đúng vậy! Tuy nhiên, chỉ cần có thể nhận được nguồn vốn bổ sung, chúng tôi sẽ lập tức tiếp tục triển khai công việc.”",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "385a338b-a03c-44b9-86d7-d9312ce19d3b"
+                "check_needed": false
               },
               {
-                "id": "text_01_p15",
+                "id": "a8fbf726-7f7c-4990-8148-676f5eda45c9",
                 "order": 15,
                 "zh": "“教授先生，请问，为什么我们金星人要耗费数十亿金元（金星货币）向地球发射载人飞船呢？”",
                 "vi": "“Thưa giáo sư, xin hỏi, vì sao người sao Kim chúng ta phải tiêu tốn mấy chục tỷ kim nguyên — tiền tệ của sao Kim — để phóng tàu vũ trụ có người lái về phía Trái Đất?”",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "21eb9327-070d-4bb7-ac92-9254918e963c"
+                "check_needed": false
               },
               {
-                "id": "text_01_p16",
+                "id": "d40a18cb-6822-4533-a855-e8a46f5c3264",
                 "order": 16,
                 "zh": "“我们的目的是：当我们学会在地球上生存时，我们去宇宙的任何地方都可以平安无事了。”",
                 "vi": "“Mục đích của chúng tôi là: khi chúng ta học được cách sinh tồn trên Trái Đất, thì chúng ta đi đến bất kỳ nơi nào trong vũ trụ cũng đều có thể bình an vô sự.”",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "e2d031e1-9630-4d99-9f42-06e49c05fc75"
+                "check_needed": false
               },
               {
-                "id": "text_01_p17",
+                "id": "f9ac66d9-ea34-470c-af6d-3f72a40ffa99",
                 "order": 17,
                 "zh": "（选自微型小说选集《英雄之死》，有改动）",
                 "vi": "Trích từ tuyển tập tiểu thuyết vi hình 《Cái chết của anh hùng》, có chỉnh sửa.",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "98bf01fe-9718-4fa6-8bb3-358fc3b4072a"
+                "check_needed": false
               }
             ],
             "lines": [],
-            "comprehension_questions": [],
-            "uuid": "2befc610-9287-464e-8316-95c343a61657"
+            "comprehension_questions": []
           }
         ],
-        "comprehension_questions": [],
-        "uuid": "d6aad59b-d13f-4f89-9aab-7bd22e0113a3"
+        "comprehension_questions": []
       },
       {
-        "id": "section_02_vocabulary",
+        "id": "78c30bf4-c314-4c4c-86e3-4dd62382dd78",
         "type": "vocabulary",
         "order": 2,
         "title": "生词",
@@ -247,7 +185,7 @@
         "check_needed": false,
         "items": [
           {
-            "id": "vocab_001",
+            "id": "68c05a12-9d8e-45d9-a413-786bcf2f780a",
             "type": "vocabulary_item",
             "order": 1,
             "hanzi": "金星",
@@ -271,11 +209,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "875ea605-a9ad-4560-984e-9b6947024085"
+            "check_needed": false
           },
           {
-            "id": "vocab_002",
+            "id": "8c18cf3c-e9dc-42e1-8faf-eb26799cabab",
             "type": "vocabulary_item",
             "order": 2,
             "hanzi": "欢腾",
@@ -299,11 +236,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "7b01cb40-febe-41cc-8c5a-bb767b7d448f"
+            "check_needed": false
           },
           {
-            "id": "vocab_003",
+            "id": "1fbd69b7-603a-44ea-8d57-10cd4def9ced",
             "type": "vocabulary_item",
             "order": 3,
             "hanzi": "科学家",
@@ -327,11 +263,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "de610ec2-5b8d-4996-a246-1d6aac26f2ab"
+            "check_needed": false
           },
           {
-            "id": "vocab_004",
+            "id": "3dc505f1-bc0e-4a96-b448-17fed89fdc60",
             "type": "vocabulary_item",
             "order": 4,
             "hanzi": "科学",
@@ -355,11 +290,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "e03c23a0-c290-4afc-a001-d13503772f52"
+            "check_needed": false
           },
           {
-            "id": "vocab_005",
+            "id": "188412d4-4c23-4d60-b7b2-21f3490199e7",
             "type": "vocabulary_item",
             "order": 5,
             "hanzi": "发射",
@@ -383,11 +317,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "45aa4a07-fbe2-4c8c-a61b-a70161f85f9c"
+            "check_needed": false
           },
           {
-            "id": "vocab_006",
+            "id": "5ea44727-d97c-467b-b1b8-babd195df50d",
             "type": "vocabulary_item",
             "order": 6,
             "hanzi": "卫星",
@@ -411,11 +344,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "59fc6ce9-5bda-48cb-9fff-69855d686e24"
+            "check_needed": false
           },
           {
-            "id": "vocab_007",
+            "id": "54613016-834a-4fc3-9912-2357a6d27058",
             "type": "vocabulary_item",
             "order": 7,
             "hanzi": "目前",
@@ -439,11 +371,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "c658ee4c-bbc0-48f5-bb48-30b4ba8e6dc6"
+            "check_needed": false
           },
           {
-            "id": "vocab_008",
+            "id": "0da97406-c3ac-4fcb-a51c-398a59c3fbae",
             "type": "vocabulary_item",
             "order": 8,
             "hanzi": "停留",
@@ -467,11 +398,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "5831d06d-5cd6-4b45-80de-880499786ede"
+            "check_needed": false
           },
           {
-            "id": "vocab_009",
+            "id": "54b36889-82be-485b-8342-fb8aab572065",
             "type": "vocabulary_item",
             "order": 9,
             "hanzi": "上空",
@@ -495,11 +425,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "fd82c16e-fdd7-435e-8edb-9303ece66d60"
+            "check_needed": false
           },
           {
-            "id": "vocab_010",
+            "id": "1354b1a3-93cc-4505-8d7f-c5550a1d6ae9",
             "type": "vocabulary_item",
             "order": 10,
             "hanzi": "连续",
@@ -523,11 +452,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "3131699f-fc3a-41f1-8d77-682bbffd94e3"
+            "check_needed": false
           },
           {
-            "id": "vocab_011",
+            "id": "f0684cb3-4577-4e6c-9f22-7d97c89692b3",
             "type": "vocabulary_item",
             "order": 11,
             "hanzi": "不断",
@@ -551,11 +479,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "db9d1e02-24a6-4874-bc14-efcbe228d568"
+            "check_needed": false
           },
           {
-            "id": "vocab_012",
+            "id": "d5b362a7-c8f6-4f25-b2b5-0f1749c8afbb",
             "type": "vocabulary_item",
             "order": 12,
             "hanzi": "信号",
@@ -579,11 +506,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "035516ff-d381-42f2-8da7-7912f991a604"
+            "check_needed": false
           },
           {
-            "id": "vocab_013",
+            "id": "7eccd5e8-dac0-4f36-be2e-abcc0a2bdfcd",
             "type": "vocabulary_item",
             "order": 13,
             "hanzi": "获得",
@@ -607,11 +533,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "ab9c9ccd-62ec-4026-97da-5a4df82a2b20"
+            "check_needed": false
           },
           {
-            "id": "vocab_014",
+            "id": "91fa9f81-e5ef-4c4a-b29c-c4b6daa02196",
             "type": "vocabulary_item",
             "order": 14,
             "hanzi": "珍贵",
@@ -635,11 +560,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "4ed6dbcc-e33c-4a65-ab16-74fca370f134"
+            "check_needed": false
           },
           {
-            "id": "vocab_015",
+            "id": "8a5b1d09-23a6-4182-96e6-9bf4d761a1e1",
             "type": "vocabulary_item",
             "order": 15,
             "hanzi": "载人",
@@ -663,11 +587,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "f2521d4a-2dc1-4e11-934e-73aae2e3f7cc"
+            "check_needed": false
           },
           {
-            "id": "vocab_016",
+            "id": "be7a835d-ff8f-4a86-9fd8-27c5f1093f0c",
             "type": "vocabulary_item",
             "order": 16,
             "hanzi": "飞船",
@@ -691,11 +614,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "edcd3661-40c0-472d-95af-94cea1b24578"
+            "check_needed": false
           },
           {
-            "id": "vocab_017",
+            "id": "7a89dc80-d79d-4c2f-988c-d0f54e240d19",
             "type": "vocabulary_item",
             "order": 17,
             "hanzi": "究竟",
@@ -719,11 +641,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "82e65c87-9d8e-4d15-b609-326392079c75"
+            "check_needed": false
           },
           {
-            "id": "vocab_018",
+            "id": "ff3e1818-66a9-4532-880b-02c9cacb0e5b",
             "type": "vocabulary_item",
             "order": 18,
             "hanzi": "重大",
@@ -747,11 +668,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "5a26b1bd-b60f-44b8-babe-bb4e8ca784c2"
+            "check_needed": false
           },
           {
-            "id": "vocab_019",
+            "id": "0125bdae-fe4e-48fb-8264-145e95c75933",
             "type": "vocabulary_item",
             "order": 19,
             "hanzi": "某",
@@ -775,11 +695,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "db33bf85-e3cf-4562-903b-e146e7929555"
+            "check_needed": false
           },
           {
-            "id": "vocab_020",
+            "id": "689eb64b-5d4f-469f-9afa-74017d399614",
             "type": "vocabulary_item",
             "order": 20,
             "hanzi": "突破",
@@ -803,11 +722,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "c6682582-f802-4a62-8660-9e45b02614c4"
+            "check_needed": false
           },
           {
-            "id": "vocab_021",
+            "id": "d45d5488-9293-41ae-9deb-1e5b51cee446",
             "type": "vocabulary_item",
             "order": 21,
             "hanzi": "科技",
@@ -831,11 +749,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "53855acb-b323-4df2-8c11-4098e905f342"
+            "check_needed": false
           },
           {
-            "id": "vocab_022",
+            "id": "c99a633b-27a2-429b-a139-44113a84c189",
             "type": "vocabulary_item",
             "order": 22,
             "hanzi": "记者",
@@ -859,11 +776,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "71bd6daf-d721-4a6c-90d6-4be332757acf"
+            "check_needed": false
           },
           {
-            "id": "vocab_023",
+            "id": "79358c6f-3427-4c28-98f3-7ef98c7033c3",
             "type": "vocabulary_item",
             "order": 23,
             "hanzi": "招待会",
@@ -887,11 +803,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "c38e75b5-f19d-4b17-aea3-4285c1f1773e"
+            "check_needed": false
           },
           {
-            "id": "vocab_024",
+            "id": "dc0f8e06-a359-4907-a8d8-fc9b02260590",
             "type": "vocabulary_item",
             "order": 24,
             "hanzi": "招待",
@@ -915,11 +830,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "e8126f74-c8b2-47fb-82b2-a0495484d410"
+            "check_needed": false
           },
           {
-            "id": "vocab_025",
+            "id": "c43cedbf-7024-4ec1-922f-e75119114baf",
             "type": "vocabulary_item",
             "order": 25,
             "hanzi": "结论",
@@ -943,11 +857,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "b0f34c26-0a27-4a85-a92c-d7568054f4eb"
+            "check_needed": false
           },
           {
-            "id": "vocab_026",
+            "id": "d9991c79-3454-4247-bf18-f14f43b4a24a",
             "type": "vocabulary_item",
             "order": 26,
             "hanzi": "生命",
@@ -971,11 +884,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "5747f335-5d67-4032-a2bd-93eacab2ef22"
+            "check_needed": false
           },
           {
-            "id": "vocab_027",
+            "id": "55cd807c-eec7-412d-99db-f4e6508b170f",
             "type": "vocabulary_item",
             "order": 27,
             "hanzi": "坚硬",
@@ -999,11 +911,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "aa25772f-df76-4181-bec3-db72fe2936e3"
+            "check_needed": false
           },
           {
-            "id": "vocab_028",
+            "id": "085e60d5-dd1c-4585-ac6b-0f1db0ded936",
             "type": "vocabulary_item",
             "order": 28,
             "hanzi": "混凝土",
@@ -1027,11 +938,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "9ea3993b-ff37-4270-ab48-976d85b084d9"
+            "check_needed": false
           },
           {
-            "id": "vocab_029",
+            "id": "ba7ff0f9-b633-4516-ab3d-22b96046a1cf",
             "type": "vocabulary_item",
             "order": 29,
             "hanzi": "覆盖",
@@ -1055,11 +965,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "c66f97cd-8592-401b-a723-d1d0105ba0af"
+            "check_needed": false
           },
           {
-            "id": "vocab_030",
+            "id": "2185ee67-885d-4ffb-83e2-e97be4070796",
             "type": "vocabulary_item",
             "order": 30,
             "hanzi": "植物",
@@ -1083,11 +992,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "0289c591-cbf3-4656-ad9c-8397cd31dcfa"
+            "check_needed": false
           },
           {
-            "id": "vocab_031",
+            "id": "092a8c16-3739-4685-a4c0-39365071bd48",
             "type": "vocabulary_item",
             "order": 31,
             "hanzi": "生长",
@@ -1111,11 +1019,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "14b96d82-81d6-426a-858d-6797c1f47eb9"
+            "check_needed": false
           },
           {
-            "id": "vocab_032",
+            "id": "22e66ee9-565e-4670-b2ac-4d5a9b500b38",
             "type": "vocabulary_item",
             "order": 32,
             "hanzi": "一氧化碳",
@@ -1139,11 +1046,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "c86b35a1-6d96-4569-9770-973b796b56fc"
+            "check_needed": false
           },
           {
-            "id": "vocab_033",
+            "id": "275b46f4-3166-48b7-9766-58384178d1be",
             "type": "vocabulary_item",
             "order": 33,
             "hanzi": "有害",
@@ -1167,11 +1073,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "357de51f-13b7-4657-9a36-e0f295d789c5"
+            "check_needed": false
           },
           {
-            "id": "vocab_034",
+            "id": "1190511f-5970-4304-8f84-d7201b287aeb",
             "type": "vocabulary_item",
             "order": 34,
             "hanzi": "气体",
@@ -1195,11 +1100,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "f4e1e22c-a79a-454a-a714-a9b0fa53fc2b"
+            "check_needed": false
           },
           {
-            "id": "vocab_035",
+            "id": "d42d3d90-443d-45da-bed7-987b50034e92",
             "type": "vocabulary_item",
             "order": 35,
             "hanzi": "无法",
@@ -1223,11 +1127,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "0aa5dacd-98f9-4640-af5c-5193bfca35e9"
+            "check_needed": false
           },
           {
-            "id": "vocab_036",
+            "id": "cfb712c9-c4ca-4314-b6b2-696b40ace25e",
             "type": "vocabulary_item",
             "order": 36,
             "hanzi": "生存",
@@ -1251,11 +1154,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "6d0f4288-ace4-4149-91dc-d4fd25107ef1"
+            "check_needed": false
           },
           {
-            "id": "vocab_037",
+            "id": "6059829f-ae21-43cf-ac0c-05e19639ec43",
             "type": "vocabulary_item",
             "order": 37,
             "hanzi": "氧气",
@@ -1279,11 +1181,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "05aa6e74-13c3-4d7f-8928-c908b9083726"
+            "check_needed": false
           },
           {
-            "id": "vocab_038",
+            "id": "fefd5441-7b6c-47e3-b823-9e149b947bf7",
             "type": "vocabulary_item",
             "order": 38,
             "hanzi": "不可思议",
@@ -1307,11 +1208,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "e72bbf9e-468d-4fa1-a85b-70e8ec1527a9"
+            "check_needed": false
           },
           {
-            "id": "vocab_039",
+            "id": "27761bd2-433a-44ef-b79a-9e6f0a34b9c9",
             "type": "vocabulary_item",
             "order": 39,
             "hanzi": "空间",
@@ -1335,11 +1235,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "bf5f0502-07ad-459a-927d-68344fa1b8db"
+            "check_needed": false
           },
           {
-            "id": "vocab_040",
+            "id": "861ed325-b320-4ae0-8eac-bb6bb8ebc215",
             "type": "vocabulary_item",
             "order": 40,
             "hanzi": "重量",
@@ -1363,11 +1262,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "ae3a4781-7bf2-4ecd-9acb-71cfd5e51144"
+            "check_needed": false
           },
           {
-            "id": "vocab_041",
+            "id": "6fe8f20d-e712-4f0c-9cbc-021aaeb9698c",
             "type": "vocabulary_item",
             "order": 41,
             "hanzi": "将",
@@ -1391,11 +1289,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "320a26e4-9822-4924-b6d9-c2222dbee94f"
+            "check_needed": false
           },
           {
-            "id": "vocab_042",
+            "id": "863bbf3f-83e7-4021-b98e-be632043d94c",
             "type": "vocabulary_item",
             "order": 42,
             "hanzi": "实际上",
@@ -1419,11 +1316,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "821b65bb-8b03-42d8-b7ac-bccf254b2715"
+            "check_needed": false
           },
           {
-            "id": "vocab_043",
+            "id": "b14487b6-5579-4f1c-9ad7-16fd40991577",
             "type": "vocabulary_item",
             "order": 43,
             "hanzi": "物质",
@@ -1447,11 +1343,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "aa576639-63c5-49e9-9be2-f0f06f1bb4a7"
+            "check_needed": false
           },
           {
-            "id": "vocab_044",
+            "id": "eb7cc112-7df2-44e6-a1df-9824d8b6e45a",
             "type": "vocabulary_item",
             "order": 44,
             "hanzi": "饮用",
@@ -1475,11 +1370,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "1599838a-6837-472b-8039-a258363c025b"
+            "check_needed": false
           },
           {
-            "id": "vocab_045",
+            "id": "505dae11-836a-475d-b811-339f25caaf42",
             "type": "vocabulary_item",
             "order": 45,
             "hanzi": "颗粒",
@@ -1503,11 +1397,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "5b9ebec0-05f8-4921-a027-a5e3ed30c32a"
+            "check_needed": false
           },
           {
-            "id": "vocab_046",
+            "id": "a47b82f7-2260-4763-8c97-b1631e792e1c",
             "type": "vocabulary_item",
             "order": 46,
             "hanzi": "金属",
@@ -1531,11 +1424,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "982dcabf-8041-4cfe-bdf4-3a041426a19b"
+            "check_needed": false
           },
           {
-            "id": "vocab_047",
+            "id": "71f9308f-7b38-435e-bfa8-c7c974599035",
             "type": "vocabulary_item",
             "order": 47,
             "hanzi": "沿",
@@ -1559,11 +1451,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "8e592fc3-d984-4354-9e8c-306299057b0c"
+            "check_needed": false
           },
           {
-            "id": "vocab_048",
+            "id": "05e1ac20-79be-406d-9c90-4b0c847182bc",
             "type": "vocabulary_item",
             "order": 48,
             "hanzi": "固定",
@@ -1587,11 +1478,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "e3213219-88d5-40d1-8965-580f5ff6e145"
+            "check_needed": false
           },
           {
-            "id": "vocab_049",
+            "id": "358d5baa-5ba1-4cb5-984a-44770a1724d6",
             "type": "vocabulary_item",
             "order": 49,
             "hanzi": "轨道",
@@ -1615,11 +1505,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "cd9405fa-280c-498c-846b-ecf092046685"
+            "check_needed": false
           },
           {
-            "id": "vocab_050",
+            "id": "20f66e08-4820-43f5-a18a-50f61591e7cd",
             "type": "vocabulary_item",
             "order": 50,
             "hanzi": "移动",
@@ -1643,11 +1532,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "aaacbda6-a141-4f93-9f28-5dce7265de7f"
+            "check_needed": false
           },
           {
-            "id": "vocab_051",
+            "id": "db0c0e40-5639-4c1e-bd66-9728a0c5006e",
             "type": "vocabulary_item",
             "order": 51,
             "hanzi": "喷",
@@ -1671,11 +1559,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "190c2884-4b67-4aae-b6ce-0b6cab33b9e7"
+            "check_needed": false
           },
           {
-            "id": "vocab_052",
+            "id": "e890b44f-c76e-4dbf-92e7-201722d3274e",
             "type": "vocabulary_item",
             "order": 52,
             "hanzi": "噪音",
@@ -1699,11 +1586,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "d688456e-ba25-46a7-9c13-a21cc9854e15"
+            "check_needed": false
           },
           {
-            "id": "vocab_053",
+            "id": "d36b89c4-d29e-486a-b7d9-aeb589592aa6",
             "type": "vocabulary_item",
             "order": 53,
             "hanzi": "碰撞",
@@ -1727,11 +1613,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "57205971-7b29-46b7-af76-8f8dc54a50db"
+            "check_needed": false
           },
           {
-            "id": "vocab_054",
+            "id": "addea99a-d455-4f20-bd7b-e7d7b320bc0c",
             "type": "vocabulary_item",
             "order": 54,
             "hanzi": "惊人",
@@ -1755,11 +1640,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "83e9a144-fdec-4b3a-b6db-d598f0503f8d"
+            "check_needed": false
           },
           {
-            "id": "vocab_055",
+            "id": "672023ad-14d1-47d0-a3c4-5dabd01b69e9",
             "type": "vocabulary_item",
             "order": 55,
             "hanzi": "毫无",
@@ -1783,11 +1667,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "987466c7-fcf0-4ae7-826c-20677b64d9f7"
+            "check_needed": false
           },
           {
-            "id": "vocab_056",
+            "id": "e93080a4-2857-4582-a75a-94276764a235",
             "type": "vocabulary_item",
             "order": 56,
             "hanzi": "疑问",
@@ -1811,11 +1694,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "523aa601-0e25-4c5a-b5a6-61c6a8ca43e1"
+            "check_needed": false
           },
           {
-            "id": "vocab_057",
+            "id": "682e1087-39f5-4c67-9836-fa89206dfba5",
             "type": "vocabulary_item",
             "order": 57,
             "hanzi": "稀巴烂",
@@ -1839,11 +1721,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "b826b6a4-3d34-410d-a55b-4d5ef163345a"
+            "check_needed": false
           },
           {
-            "id": "vocab_058",
+            "id": "26999e7c-e64c-4401-9d09-bcfd351db7b5",
             "type": "vocabulary_item",
             "order": 58,
             "hanzi": "意味着",
@@ -1867,11 +1748,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "bb3f1ede-54aa-4bea-8a0f-3f4c479409d9"
+            "check_needed": false
           },
           {
-            "id": "vocab_059",
+            "id": "67d5f931-79d4-4182-8e48-3c718cfcb016",
             "type": "vocabulary_item",
             "order": 59,
             "hanzi": "推迟",
@@ -1895,11 +1775,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "822e1e39-bb12-4f2c-889d-db849968ad90"
+            "check_needed": false
           },
           {
-            "id": "vocab_060",
+            "id": "baf4d641-8698-4777-840f-6002f16a0a62",
             "type": "vocabulary_item",
             "order": 60,
             "hanzi": "实施",
@@ -1923,11 +1802,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "1e3584aa-2135-4212-a8a9-0a17d38eaa00"
+            "check_needed": false
           },
           {
-            "id": "vocab_061",
+            "id": "9abc5789-0caa-4699-a5f3-b6099b75d0fa",
             "type": "vocabulary_item",
             "order": 61,
             "hanzi": "数",
@@ -1951,11 +1829,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "3ff952c3-e2b7-4ad3-aad1-34d37a613a0c"
+            "check_needed": false
           },
           {
-            "id": "vocab_062",
+            "id": "d2a7ce6a-a83e-42aa-8d6e-9f24d1253da9",
             "type": "vocabulary_item",
             "order": 62,
             "hanzi": "补充",
@@ -1979,11 +1856,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "42473fc0-f8b3-4fad-ab4d-3e484da6f47e"
+            "check_needed": false
           },
           {
-            "id": "vocab_063",
+            "id": "bdc30b6a-44e0-4a88-b63c-3e23a453d7ed",
             "type": "vocabulary_item",
             "order": 63,
             "hanzi": "资金",
@@ -2007,11 +1883,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "0f3d2fe6-ba34-414e-a1da-cda032b59b57"
+            "check_needed": false
           },
           {
-            "id": "vocab_064",
+            "id": "b0403e9c-53df-4785-a285-f0508b88c6a3",
             "type": "vocabulary_item",
             "order": 64,
             "hanzi": "耗费",
@@ -2035,11 +1910,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "2fa050eb-5939-4548-a094-f7da8f8bb6f7"
+            "check_needed": false
           },
           {
-            "id": "vocab_065",
+            "id": "c28685e7-31b1-4a86-a9f3-59fe9f10c468",
             "type": "vocabulary_item",
             "order": 65,
             "hanzi": "目的",
@@ -2063,14 +1937,12 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "e1ad3049-eebc-4330-8ed2-cd083de1791f"
+            "check_needed": false
           }
-        ],
-        "uuid": "99cf1273-36a7-4378-b0fa-593ed3411f36"
+        ]
       },
       {
-        "id": "section_03_proper_nouns",
+        "id": "3c5ee48e-5d44-44ac-bd53-cac996a83338",
         "type": "proper_nouns",
         "order": 3,
         "title": "专名",
@@ -2079,7 +1951,7 @@
         "check_needed": false,
         "items": [
           {
-            "id": "proper_001",
+            "id": "070690f6-fd26-41df-ab28-f5031668ed3e",
             "type": "proper_noun",
             "order": 1,
             "hanzi": "天壶",
@@ -2087,14 +1959,12 @@
             "meaning_vi": "Thiên Hồ; tên một khu vực",
             "meaning_en": "Tianhu; a place name",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "f0fba1f3-07bd-419d-a38e-e6f52a20afb3"
+            "check_needed": false
           }
-        ],
-        "uuid": "ef260e12-9908-4f4d-9676-24db5c301b46"
+        ]
       },
       {
-        "id": "section_04_notes",
+        "id": "c18e9f54-6da1-4496-886b-c2c722605678",
         "type": "notes",
         "order": 4,
         "title": "注释",
@@ -2103,7 +1973,7 @@
         "check_needed": false,
         "items": [
           {
-            "id": "note_01",
+            "id": "63d654f5-4561-4d48-a144-bacbf9671dfc",
             "type": "note",
             "order": 1,
             "title": "《金星人遇到麻烦》",
@@ -2111,14 +1981,13 @@
             "meaning_vi": "《金星人遇到麻烦》 là một truyện khoa học viễn tưởng. Bài dùng góc nhìn giả tưởng của người sao Kim để nhìn ngược Trái Đất.",
             "examples": [],
             "source_refs": [
-              "text_01"
+              "e155d5ea-f89d-45f0-ab8d-094ce9e719f0"
             ],
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "b686f31d-d4f6-40c1-b1d6-12f519c10b0d"
+            "check_needed": false
           },
           {
-            "id": "note_02",
+            "id": "7e2ee128-4fbd-4a93-898c-5f5fd99b371b",
             "type": "note",
             "order": 2,
             "title": "被撞个稀巴烂",
@@ -2126,26 +1995,23 @@
             "meaning_vi": "Trong câu ‘被撞个稀巴烂’, 个 đứng sau động từ để dẫn ra kết quả/trạng thái, gần giống tác dụng của 得 sau động từ, nhấn mạnh kết quả ‘bị đâm nát bét’. Cách dùng này có sắc thái khẩu ngữ mạnh.",
             "examples": [
               {
-                "id": "note_02_ex_01",
+                "id": "6ff01e57-e23b-475e-9cd6-da43acc8bd0a",
                 "zh": "我们的飞船如果遇到它们，就会被撞个稀巴烂。",
                 "vi": "Nếu tàu vũ trụ của chúng ta gặp phải chúng, nó sẽ bị đâm cho nát bét.",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "bfb7e87f-284b-429d-97e5-2704bed57148"
+                "check_needed": false
               }
             ],
             "source_refs": [
-              "text_01_p12"
+              "4aad4f45-1496-48b1-a678-14c38023b32d"
             ],
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "6d5a706b-80a3-4790-b41b-e4675792a39a"
+            "check_needed": false
           }
-        ],
-        "uuid": "ab271eb3-47dd-43df-baf4-f0c62ba94ae5"
+        ]
       },
       {
-        "id": "section_05_grammar",
+        "id": "b045e537-7383-494b-8d61-b0286977ed80",
         "type": "grammar",
         "order": 5,
         "title": "词语用法",
@@ -2154,7 +2020,7 @@
         "check_needed": false,
         "items": [
           {
-            "id": "grammar_01",
+            "id": "f8ec59f3-898a-47b2-b536-44dfd8183393",
             "type": "grammar_point",
             "order": 1,
             "title": "可能",
@@ -2167,16 +2033,15 @@
             "check_needed": false,
             "blocks": [
               {
-                "id": "grammar_01_overview",
+                "id": "b7c5d870-2db8-4e2e-950f-f0e6e522ac16",
                 "type": "grammar_overview",
                 "order": 1,
                 "title": "Bản chất",
                 "content_vi": "可能 có thể làm danh từ, tính từ hoặc trợ động từ/phó từ hóa. Nghĩa lõi là một việc có khả năng xảy ra hoặc có khả năng làm được.",
-                "examples": [],
-                "uuid": "4178de08-0254-42e5-9e05-bc69fba56178"
+                "examples": []
               },
               {
-                "id": "grammar_01_structure_01",
+                "id": "a85d60ae-5a59-4bad-a730-4e11cd8fd4ed",
                 "type": "grammar_structure",
                 "order": 2,
                 "title": "可能 làm danh từ",
@@ -2184,34 +2049,30 @@
                 "meaning_vi": "Có / không có khả năng làm việc gì hoặc xảy ra việc gì.",
                 "examples": [
                   {
-                    "id": "g01s01_ex_01",
+                    "id": "5fca05ce-f053-441b-b9f6-985e6b04195f",
                     "zh": "由于地球上空天气很好，科学家们便有可能获得不少珍贵资料。",
                     "vi": "Vì thời tiết phía trên Trái Đất rất tốt, các nhà khoa học có khả năng thu được không ít tư liệu quý giá.",
                     "source_origin": "textbook/generated_mixed",
-                    "check_needed": false,
-                    "uuid": "3abf7302-9c3f-4e32-8d64-0cd1109aa132"
+                    "check_needed": false
                   },
                   {
-                    "id": "g01s01_ex_02",
+                    "id": "9868f0c3-2e97-4878-b738-29bd8b263cb4",
                     "zh": "明年他有可能出国留学。",
                     "vi": "Năm sau anh ấy có khả năng đi du học.",
                     "source_origin": "textbook/generated_mixed",
-                    "check_needed": false,
-                    "uuid": "67b5ef76-9da1-476b-91ce-0d6291901f8b"
+                    "check_needed": false
                   },
                   {
-                    "id": "g01s01_ex_03",
+                    "id": "905409e6-f9d7-4276-ab0c-68bce9484f28",
                     "zh": "公司有可能派他去广州工作。",
                     "vi": "Công ty có khả năng cử anh ấy đi Quảng Châu làm việc.",
                     "source_origin": "textbook/generated_mixed",
-                    "check_needed": false,
-                    "uuid": "e7953c71-60b3-416d-b948-167692f0f8f0"
+                    "check_needed": false
                   }
-                ],
-                "uuid": "e2d1da15-a56d-4a30-9b4f-5114919da838"
+                ]
               },
               {
-                "id": "grammar_01_structure_02",
+                "id": "ca8c13db-9de3-46b8-a156-5be7570386a5",
                 "type": "grammar_structure",
                 "order": 3,
                 "title": "可能 làm hình dung từ",
@@ -2219,26 +2080,23 @@
                 "meaning_vi": "Có thể trở thành sự thật; có khả năng xảy ra.",
                 "examples": [
                   {
-                    "id": "g01s02_ex_01",
+                    "id": "d45a1ea9-c421-4a1c-b360-0019956ffbca",
                     "zh": "我们要想到一切可能的情况。",
                     "vi": "Chúng ta phải nghĩ đến mọi tình huống có thể xảy ra.",
                     "source_origin": "textbook/generated_mixed",
-                    "check_needed": false,
-                    "uuid": "26877bc7-94bd-4345-92b9-1a6fe7405a3a"
+                    "check_needed": false
                   },
                   {
-                    "id": "g01s02_ex_02",
+                    "id": "0af8ff36-eff6-4a37-b5bd-71c474d82243",
                     "zh": "我觉得不太可能。",
                     "vi": "Tôi thấy không có khả năng lắm.",
                     "source_origin": "textbook/generated_mixed",
-                    "check_needed": false,
-                    "uuid": "8290677a-aa6f-4a4b-8ae4-51d68b18eaee"
+                    "check_needed": false
                   }
-                ],
-                "uuid": "8abf998f-3376-4f5b-b769-16582b601c97"
+                ]
               },
               {
-                "id": "grammar_01_structure_03",
+                "id": "b4cc66d6-0523-4a75-bc1b-366c9bb288d0",
                 "type": "grammar_structure",
                 "order": 4,
                 "title": "可能 làm phó từ / trợ động từ",
@@ -2246,37 +2104,32 @@
                 "meaning_vi": "Có lẽ, có thể; biểu thị phỏng đoán.",
                 "examples": [
                   {
-                    "id": "g01s03_ex_01",
+                    "id": "5ae96ee4-ae58-428f-abc6-b6f6c621c83f",
                     "zh": "这件事她可能已经知道了。",
                     "vi": "Việc này có lẽ cô ấy đã biết rồi.",
                     "source_origin": "textbook/generated_mixed",
-                    "check_needed": false,
-                    "uuid": "77cfab68-b7a2-4e2d-9eea-4813110e6031"
+                    "check_needed": false
                   },
                   {
-                    "id": "g01s03_ex_02",
+                    "id": "e53e3134-4686-4a28-b29b-445ae8ab0ae5",
                     "zh": "带上雨伞吧，可能要下雨。",
                     "vi": "Mang ô theo đi, có thể sắp mưa.",
                     "source_origin": "textbook/generated_mixed",
-                    "check_needed": false,
-                    "uuid": "9f53ce0e-a396-4bc8-a22b-bdc91064a94d"
+                    "check_needed": false
                   },
                   {
-                    "id": "g01s03_ex_03",
+                    "id": "d33f1e22-b7c1-45a2-87d7-860d3d5fcc45",
                     "zh": "她没在，可能去图书馆了。",
                     "vi": "Cô ấy không có ở đây, có lẽ đã đi thư viện rồi.",
                     "source_origin": "textbook/generated_mixed",
-                    "check_needed": false,
-                    "uuid": "27363926-98e9-44a6-ba58-b5a96ae4b9dc"
+                    "check_needed": false
                   }
-                ],
-                "uuid": "7e3c8372-5e13-474a-be63-bd74f289315b"
+                ]
               }
-            ],
-            "uuid": "3d9e2a8f-5701-4cfa-bf9a-17e437932570"
+            ]
           },
           {
-            "id": "grammar_02",
+            "id": "57b14753-688a-41b6-9e0d-b61dbbf574d7",
             "type": "grammar_point",
             "order": 2,
             "title": "究竟",
@@ -2290,16 +2143,15 @@
             "check_needed": false,
             "blocks": [
               {
-                "id": "grammar_02_overview",
+                "id": "470b1ca1-e0a1-449f-b55e-a8aa481a4dd4",
                 "type": "grammar_overview",
                 "order": 1,
                 "title": "Bản chất",
                 "content_vi": "究竟 dùng trong câu hỏi để truy hỏi sâu hơn, làm giọng hỏi mạnh hơn. Khẩu ngữ thường dùng 到底 nhiều hơn.",
-                "examples": [],
-                "uuid": "620a9b3a-08ea-4493-8390-c57179e58c81"
+                "examples": []
               },
               {
-                "id": "grammar_02_structure",
+                "id": "0ef2b790-3209-4b5c-a519-ca5a424e4d49",
                 "type": "grammar_structure",
                 "order": 2,
                 "title": "究竟 trong câu hỏi",
@@ -2307,34 +2159,30 @@
                 "meaning_vi": "Rốt cuộc là...? Thực ra là...?",
                 "examples": [
                   {
-                    "id": "g02s01_ex_01",
+                    "id": "3a97eea8-9a42-401f-a819-c4a071338b64",
                     "zh": "载人飞船登上地球究竟能否实现？",
                     "vi": "Rốt cuộc tàu vũ trụ có người lái đáp xuống Trái Đất có thể thực hiện được không?",
                     "source_origin": "textbook/generated_mixed",
-                    "check_needed": false,
-                    "uuid": "1572f910-3104-4151-accb-fc0ce49db647"
+                    "check_needed": false
                   },
                   {
-                    "id": "g02s01_ex_02",
+                    "id": "f31b2bc9-65b6-45e7-a0a9-1ba457a53c6c",
                     "zh": "你究竟想干什么？",
                     "vi": "Rốt cuộc bạn muốn làm gì?",
                     "source_origin": "textbook/generated_mixed",
-                    "check_needed": false,
-                    "uuid": "34530d88-4055-43d2-a137-c551c40419c6"
+                    "check_needed": false
                   },
                   {
-                    "id": "g02s01_ex_03",
+                    "id": "ea532717-6398-4aa4-ad25-fbd50151f07d",
                     "zh": "这件事情究竟是谁的错呢？",
                     "vi": "Rốt cuộc chuyện này là lỗi của ai?",
                     "source_origin": "textbook/generated_mixed",
-                    "check_needed": false,
-                    "uuid": "694ae845-dc03-458e-854a-abb3c00a2c7b"
+                    "check_needed": false
                   }
-                ],
-                "uuid": "064ee825-38d2-41e8-934c-2edd0e235fa2"
+                ]
               },
               {
-                "id": "grammar_02_compare",
+                "id": "2366c7ed-c003-4f30-8320-9ae5ed41c89b",
                 "type": "grammar_compare",
                 "order": 3,
                 "title": "究竟 và 到底",
@@ -2365,20 +2213,18 @@
                 ],
                 "examples": [
                   {
-                    "id": "g02cmp_ex_01",
+                    "id": "5d489b50-62e9-4040-a651-9a0118a314ad",
                     "zh": "明天你究竟/到底跟不跟我们一起去？",
                     "vi": "Ngày mai rốt cuộc bạn có đi cùng chúng tôi không?",
                     "source_origin": "textbook/generated_mixed",
-                    "check_needed": false,
-                    "uuid": "24b067a4-c99a-420e-a5f5-84bad5bc54f1"
+                    "check_needed": false
                   },
                   {
-                    "id": "g02cmp_ex_02",
+                    "id": "10f70b56-3976-4036-9d1a-c87e500ea4be",
                     "zh": "经过一年的努力，他到底通过了 HSK 四级考试。",
                     "vi": "Sau một năm nỗ lực, cuối cùng anh ấy đã thi đỗ HSK cấp 4.",
                     "source_origin": "textbook/generated_mixed",
-                    "check_needed": false,
-                    "uuid": "f152b9d4-5b82-4eda-9c2a-e5ab34762f23"
+                    "check_needed": false
                   }
                 ],
                 "bad_examples": [
@@ -2386,14 +2232,12 @@
                     "zh": "经过一年的努力，他究竟通过了 HSK 四级考试。",
                     "reason_vi": "Muốn nói kết quả cuối cùng sau quá trình thì dùng 到底, không dùng 究竟."
                   }
-                ],
-                "uuid": "79a6a01a-ec9d-4286-92a1-b5f959d5203e"
+                ]
               }
-            ],
-            "uuid": "5db4617b-9d36-48ee-aed2-c740489ee9f4"
+            ]
           },
           {
-            "id": "grammar_03",
+            "id": "fa804fff-372b-4874-8571-f54e613d7e07",
             "type": "grammar_point",
             "order": 3,
             "title": "充满",
@@ -2406,7 +2250,7 @@
             "check_needed": false,
             "blocks": [
               {
-                "id": "grammar_03_structure",
+                "id": "3de2e20b-7535-4f1b-8355-4209acba1551",
                 "type": "grammar_structure",
                 "order": 1,
                 "title": "A 充满 B",
@@ -2414,40 +2258,35 @@
                 "meaning_vi": "Một nơi/sự vật được lấp đầy bởi chất, khí, cảm xúc hoặc không khí trừu tượng.",
                 "examples": [
                   {
-                    "id": "g03_ex_01",
+                    "id": "f664466c-c1f3-40c0-bcfd-8258997e6e92",
                     "zh": "地球的大气中充满一氧化碳和其他种种有害气体。",
                     "vi": "Trong bầu khí quyển Trái Đất đầy khí CO và các khí độc hại khác.",
                     "source_origin": "textbook/generated_mixed",
-                    "check_needed": false,
-                    "uuid": "5e5c8c19-2912-4b85-b377-b8c558a055c9"
+                    "check_needed": false
                   },
                   {
-                    "id": "g03_ex_02",
+                    "id": "a2ba52df-5d1a-46a0-9790-c91b7118c175",
                     "zh": "我对这次 HSK 考试充满信心。",
                     "vi": "Tôi đầy tự tin đối với kỳ thi HSK lần này.",
                     "source_origin": "textbook/generated_mixed",
-                    "check_needed": false,
-                    "uuid": "cfcb692a-e80e-4997-8ce5-e94d3caa472f"
+                    "check_needed": false
                   },
                   {
-                    "id": "g03_ex_03",
+                    "id": "c9c1146b-b140-47fe-8e58-515b474e220b",
                     "zh": "掌声和欢呼声充满了整个会场。",
                     "vi": "Tiếng vỗ tay và reo hò tràn ngập cả hội trường.",
                     "source_origin": "textbook/generated_mixed",
-                    "check_needed": false,
-                    "uuid": "15592f67-5e8f-47ed-9367-5b2ecae73bdb"
+                    "check_needed": false
                   }
                 ],
                 "notes_vi": [
                   "Không thường dùng cho sự đầy vật lý quá đời thường như ‘ly đầy nước’; khi đó dùng 满 hoặc 装满."
-                ],
-                "uuid": "4cc3b62f-60c1-42a1-975a-0f76ac812ef3"
+                ]
               }
-            ],
-            "uuid": "7dfbcc3a-fd47-4863-98a5-1767325a1eee"
+            ]
           },
           {
-            "id": "grammar_04",
+            "id": "c6cd6c38-22fc-4546-a398-39efe02d6c17",
             "type": "grammar_point",
             "order": 4,
             "title": "其他",
@@ -2460,7 +2299,7 @@
             "check_needed": false,
             "blocks": [
               {
-                "id": "grammar_04_structure",
+                "id": "3ecf1989-24b0-4088-8831-c92b1fd6d541",
                 "type": "grammar_structure",
                 "order": 1,
                 "title": "其他 + 名词",
@@ -2468,37 +2307,32 @@
                 "meaning_vi": "Chỉ người hoặc sự vật nằm ngoài phạm vi đã nói đến.",
                 "examples": [
                   {
-                    "id": "g04_ex_01",
+                    "id": "cda58959-8fe3-43d2-94fb-16bbae8204e0",
                     "zh": "地球的大气中充满一氧化碳和其他种种有害气体。",
                     "vi": "Bầu khí quyển Trái Đất đầy khí CO và các loại khí độc hại khác.",
                     "source_origin": "textbook/generated_mixed",
-                    "check_needed": false,
-                    "uuid": "0c34effd-d1be-4c2e-9a3c-44c88c56cc09"
+                    "check_needed": false
                   },
                   {
-                    "id": "g04_ex_02",
+                    "id": "87b653ed-f937-4bdf-bfab-4f99b811e1a3",
                     "zh": "我们班除了玛丽以外，其他同学都去博物馆参观了。",
                     "vi": "Ngoài Mary ra, các bạn khác trong lớp đều đi tham quan bảo tàng rồi.",
                     "source_origin": "textbook/generated_mixed",
-                    "check_needed": false,
-                    "uuid": "e75d0cd2-a6b0-4bbb-ab85-46e29c4e4648"
+                    "check_needed": false
                   },
                   {
-                    "id": "g04_ex_03",
+                    "id": "f010fd1c-c4e5-40bd-8d58-aac80988d9c0",
                     "zh": "我们今天先把签证的手续办了，再办其他的事。",
                     "vi": "Hôm nay chúng ta làm thủ tục visa trước, rồi làm những việc khác.",
                     "source_origin": "textbook/generated_mixed",
-                    "check_needed": false,
-                    "uuid": "71040e65-a03b-41fd-b6ae-6b2b1bcc0370"
+                    "check_needed": false
                   }
-                ],
-                "uuid": "2517b6f9-fd18-4363-8232-e67b79d59851"
+                ]
               }
-            ],
-            "uuid": "66ba0491-6126-43cd-9583-bb30f95dcdfd"
+            ]
           },
           {
-            "id": "grammar_05",
+            "id": "c3d31639-0f40-4b2f-aa50-5dda9d443b78",
             "type": "grammar_point",
             "order": 5,
             "title": "不可思议",
@@ -2511,36 +2345,32 @@
             "check_needed": false,
             "blocks": [
               {
-                "id": "grammar_05_usage",
+                "id": "b9b9dc3a-5654-4108-b979-b2b241620dbd",
                 "type": "grammar_usage_notes",
                 "order": 1,
                 "title": "Cách dùng",
                 "content_vi": "Dùng khi một việc rất khó hiểu, khó tin, vượt ngoài tưởng tượng thông thường. Mạnh hơn 奇怪.",
                 "examples": [
                   {
-                    "id": "g05_ex_01",
+                    "id": "67bb630d-1dd2-487e-87f5-950d393a6cc6",
                     "zh": "因为没有氧气，所以如果说有人能在那里生存，那真是不可思议。",
                     "vi": "Vì không có oxy, nếu nói có người có thể sống ở đó thì thật khó tin.",
                     "source_origin": "textbook/generated_mixed",
-                    "check_needed": false,
-                    "uuid": "e33139ef-5c95-47f8-9223-16c581708ace"
+                    "check_needed": false
                   },
                   {
-                    "id": "g05_ex_02",
+                    "id": "282df6bf-65d0-42ef-bbea-8ccee162fe63",
                     "zh": "魔术师一转眼就把一朵花儿变成了一只小鸟，真是不可思议。",
                     "vi": "Nhà ảo thuật trong chớp mắt biến một bông hoa thành một con chim, thật khó tin.",
                     "source_origin": "textbook/generated_mixed",
-                    "check_needed": false,
-                    "uuid": "83cf5894-1e92-478e-8af6-c8d11c0ab5c6"
+                    "check_needed": false
                   }
-                ],
-                "uuid": "f72b73bf-3268-4980-bf99-632199e55b68"
+                ]
               }
-            ],
-            "uuid": "07d064e8-4f08-442d-b689-bdade5a57ee0"
+            ]
           },
           {
-            "id": "grammar_06",
+            "id": "b0c8e101-1500-4742-9064-1e102a0eb8b9",
             "type": "grammar_point",
             "order": 6,
             "title": "沿 / 沿着",
@@ -2553,7 +2383,7 @@
             "check_needed": false,
             "blocks": [
               {
-                "id": "grammar_06_structure",
+                "id": "36af8925-9df2-4371-9cce-405d3672953f",
                 "type": "grammar_structure",
                 "order": 1,
                 "title": "沿 / 沿着 + tuyến đường + V",
@@ -2561,37 +2391,32 @@
                 "meaning_vi": "Biểu thị đi hoặc chuyển động men theo một tuyến đường/quỹ đạo.",
                 "examples": [
                   {
-                    "id": "g06_ex_01",
+                    "id": "ea57c877-d10c-4b2d-af45-0358931f8ecb",
                     "zh": "它们沿着固定轨道移动。",
                     "vi": "Chúng di chuyển dọc theo quỹ đạo cố định.",
                     "source_origin": "textbook/generated_mixed",
-                    "check_needed": false,
-                    "uuid": "39cebe14-6498-4eb8-a341-102ba802d306"
+                    "check_needed": false
                   },
                   {
-                    "id": "g06_ex_02",
+                    "id": "e60bbcd3-adec-42ff-9e2f-cfe92c4b96b5",
                     "zh": "我们沿着这条小河走一走吧。",
                     "vi": "Chúng ta đi dọc theo con sông nhỏ này một lát đi.",
                     "source_origin": "textbook/generated_mixed",
-                    "check_needed": false,
-                    "uuid": "d6ded0df-c78c-42c4-a6af-275b6df5b8bf"
+                    "check_needed": false
                   },
                   {
-                    "id": "g06_ex_03",
+                    "id": "d84658f2-02ad-4334-bbc0-5ba532be8936",
                     "zh": "你沿着这条路一直走，五分钟就到图书城了。",
                     "vi": "Bạn cứ đi thẳng theo con đường này, năm phút là đến nhà sách.",
                     "source_origin": "textbook/generated_mixed",
-                    "check_needed": false,
-                    "uuid": "9e83aa17-ac10-43cc-ad82-ee0a98521ce7"
+                    "check_needed": false
                   }
-                ],
-                "uuid": "e18e60fa-92f1-4918-a9e7-14befd923108"
+                ]
               }
-            ],
-            "uuid": "468547a9-e28d-453a-a5be-15ce3784b096"
+            ]
           },
           {
-            "id": "grammar_07",
+            "id": "f3302370-f1c2-4d08-99ba-fda75cc4a335",
             "type": "grammar_point",
             "order": 7,
             "title": "毫无 / 毫不",
@@ -2605,7 +2430,7 @@
             "check_needed": false,
             "blocks": [
               {
-                "id": "grammar_07_compare",
+                "id": "d0d92fed-3441-48d9-b7b4-54d7065594d3",
                 "type": "grammar_compare",
                 "order": 1,
                 "title": "毫无 và 毫不",
@@ -2636,37 +2461,32 @@
                 ],
                 "examples": [
                   {
-                    "id": "g07_ex_01",
+                    "id": "1aba4840-8cf7-47e5-a79b-0e32854e7b9b",
                     "zh": "毫无疑问，我们的飞船如果遇到它们，就会被撞个稀巴烂。",
                     "vi": "Không nghi ngờ gì nữa, nếu tàu vũ trụ gặp chúng thì sẽ bị đâm nát bét.",
                     "source_origin": "textbook/generated_mixed",
-                    "check_needed": false,
-                    "uuid": "9fe27143-7c8d-4c19-8ae9-502d1a50b446"
+                    "check_needed": false
                   },
                   {
-                    "id": "g07_ex_02",
+                    "id": "afaeef24-47e9-41b7-a269-abe4dbb5103c",
                     "zh": "你这么做是毫无道理的。",
                     "vi": "Bạn làm như vậy là hoàn toàn vô lý.",
                     "source_origin": "textbook/generated_mixed",
-                    "check_needed": false,
-                    "uuid": "eca20d94-2911-4ec6-bc54-31049fba58d8"
+                    "check_needed": false
                   },
                   {
-                    "id": "g07_ex_03",
+                    "id": "38170452-cdca-4162-a6ba-f51871c04e82",
                     "zh": "她能做出这种事是毫不奇怪的。",
                     "vi": "Cô ấy làm ra chuyện như vậy thì hoàn toàn không lạ.",
                     "source_origin": "textbook/generated_mixed",
-                    "check_needed": false,
-                    "uuid": "9da61d49-6fc9-48de-bbdd-9875f8f192bc"
+                    "check_needed": false
                   }
-                ],
-                "uuid": "da4920b4-ed3b-442e-baf0-c61c5346a299"
+                ]
               }
-            ],
-            "uuid": "b3fc3f06-949d-4e46-a2cd-61b33b6f6b61"
+            ]
           },
           {
-            "id": "grammar_08",
+            "id": "b7073860-473c-4cb7-82ba-943917998455",
             "type": "grammar_point",
             "order": 8,
             "title": "意味着",
@@ -2679,7 +2499,7 @@
             "check_needed": false,
             "blocks": [
               {
-                "id": "grammar_08_structure",
+                "id": "b8bf8ab4-0822-4c15-a0b7-0322d492d0fa",
                 "type": "grammar_structure",
                 "order": 1,
                 "title": "A 意味着 B",
@@ -2687,40 +2507,34 @@
                 "meaning_vi": "A kéo theo ý nghĩa hoặc hệ quả B. Trang trọng hơn 意思是.",
                 "examples": [
                   {
-                    "id": "g08_ex_01",
+                    "id": "70a6a0d5-6359-4568-b802-8a868e1f732e",
                     "zh": "这是否意味着我们将不得不推迟实施数年来的飞船计划？",
                     "vi": "Điều này có nghĩa là chúng ta sẽ buộc phải trì hoãn kế hoạch tàu vũ trụ nhiều năm sao?",
                     "source_origin": "textbook/generated_mixed",
-                    "check_needed": false,
-                    "uuid": "d7d6a967-1eda-40c4-8e6a-a9ca5174f33d"
+                    "check_needed": false
                   },
                   {
-                    "id": "g08_ex_02",
+                    "id": "6419e705-bfa5-44bf-8abb-ecf442d68e14",
                     "zh": "听说能力强并不意味着读写的能力也强。",
                     "vi": "Nghe nói tốt không có nghĩa là đọc viết cũng tốt.",
                     "source_origin": "textbook/generated_mixed",
-                    "check_needed": false,
-                    "uuid": "c95f4262-6a79-4a32-a511-2d1622cb0bab"
+                    "check_needed": false
                   },
                   {
-                    "id": "g08_ex_03",
+                    "id": "6d28122e-dcc9-4128-948c-0d0387fc240f",
                     "zh": "这次载人航天飞船的发射成功，意味着人类在探索宇宙的道路上又前进了一大步。",
                     "vi": "Việc phóng tàu có người lái thành công có nghĩa là loài người đã tiến thêm một bước lớn trong khám phá vũ trụ.",
                     "source_origin": "textbook/generated_mixed",
-                    "check_needed": false,
-                    "uuid": "05ab234b-d5ca-42d9-89ff-958b1284b505"
+                    "check_needed": false
                   }
-                ],
-                "uuid": "393fb375-6a67-445a-b360-8a25f3a76a45"
+                ]
               }
-            ],
-            "uuid": "975e8824-4be9-4fd6-9a42-03b24b0d53d7"
+            ]
           }
-        ],
-        "uuid": "ceae57fa-2710-4e7b-9a2f-a37ddb09ff42"
+        ]
       },
       {
-        "id": "section_06_exercises",
+        "id": "9901c597-ca97-451e-b63d-11814aaf933e",
         "type": "exercises",
         "order": 6,
         "title": "练习",
@@ -2742,7 +2556,7 @@
         },
         "items": [
           {
-            "id": "exercise_01",
+            "id": "15cb6f38-593b-48d1-bcca-dc3d2a140f9e",
             "type": "phonetics",
             "variant": "pronunciation_tone_minimal_pairs",
             "canonical_variant": "pronunciation_tone_minimal_pairs",
@@ -2767,78 +2581,67 @@
             "answer_key": [],
             "parts": [
               {
-                "id": "exercise_01_part_01",
+                "id": "0e5801e7-b89b-4cc6-8bd9-9e1fbbd30b31",
                 "type": "minimal_pair_group",
                 "title": "辨音辨调",
                 "items": [
                   {
-                    "id": "ex01_pair_01",
+                    "id": "e38d3cb2-2c33-4c4a-83fa-2934373f225d",
                     "left": "地球 dìqiú",
-                    "right": "踢球 tī qiú",
-                    "uuid": "18682f4a-c8dc-480e-ab3c-aa83962bbcc2"
+                    "right": "踢球 tī qiú"
                   },
                   {
-                    "id": "ex01_pair_02",
+                    "id": "79df1daa-2fc0-43b6-b4e3-aee6478eef8a",
                     "left": "卫星 wèixīng",
-                    "right": "卫生 wèishēng",
-                    "uuid": "da06514e-f65d-4bf7-86b5-fb6e5b7c8336"
+                    "right": "卫生 wèishēng"
                   },
                   {
-                    "id": "ex01_pair_03",
+                    "id": "93191d96-c6f7-4475-b285-9bfd75ad2b6c",
                     "left": "信号 xìnhào",
-                    "right": "幸好 xìnghǎo",
-                    "uuid": "0985f8fa-0d7c-4a52-93be-753fb0619434"
+                    "right": "幸好 xìnghǎo"
                   },
                   {
-                    "id": "ex01_pair_04",
+                    "id": "656ce346-d1fc-4d43-8acc-abf294d2d8da",
                     "left": "生长 shēngzhǎng",
-                    "right": "申张 shēnzhāng",
-                    "uuid": "7cde747a-cf0f-4505-9595-5a4e3390ef4a"
+                    "right": "申张 shēnzhāng"
                   },
                   {
-                    "id": "ex01_pair_05",
+                    "id": "5e775bab-fb67-4293-b3f7-4b9e80f29c52",
                     "left": "气体 qìtǐ",
-                    "right": "集体 jítǐ",
-                    "uuid": "f2473e00-99c4-421e-9e3e-d49923726f2d"
+                    "right": "集体 jítǐ"
                   },
                   {
-                    "id": "ex01_pair_06",
+                    "id": "7e23fb6e-376b-43d9-ae33-0413e3080ef9",
                     "left": "资金 zījīn",
-                    "right": "至今 zhìjīn",
-                    "uuid": "15c19d03-5a1b-44ca-81e5-ce4e714640bd"
+                    "right": "至今 zhìjīn"
                   }
                 ],
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "a21eef9f-84d8-4944-b35b-ff83924119ea"
+                "check_needed": false
               },
               {
-                "id": "exercise_01_part_02",
+                "id": "e7235fa8-9e47-43aa-a37c-271a2e83d738",
                 "type": "proverb_reading",
                 "title": "朗读",
                 "items": [
                   {
-                    "id": "ex01_read_01",
+                    "id": "b97d1a8c-3880-42ce-813f-12d8eb8cb219",
                     "text": "一寸光阴一寸金，寸金难买寸光阴。",
-                    "vi": "Thời gian quý như vàng, vàng không mua được thời gian.",
-                    "uuid": "86952a96-0fe8-49c4-b03c-5be89c389003"
+                    "vi": "Thời gian quý như vàng, vàng không mua được thời gian."
                   },
                   {
-                    "id": "ex01_read_02",
+                    "id": "8ae4a7da-2ae8-494c-99db-df12e85086a4",
                     "text": "一个篱笆三个桩，一个好汉三个帮。",
-                    "vi": "Một hàng rào cần ba cọc, một người giỏi cần ba người giúp.",
-                    "uuid": "40eaa4ef-e710-4436-9062-545130e98fbf"
+                    "vi": "Một hàng rào cần ba cọc, một người giỏi cần ba người giúp."
                   },
                   {
-                    "id": "ex01_read_03",
+                    "id": "1f523168-1c6e-4db9-abc5-198d4ccace2b",
                     "text": "长江后浪推前浪，世上新人换旧人。",
-                    "vi": "Sóng sau Trường Giang đẩy sóng trước, người mới thay người cũ.",
-                    "uuid": "18f73fcc-7095-4964-860b-5d4ed0025b5c"
+                    "vi": "Sóng sau Trường Giang đẩy sóng trước, người mới thay người cũ."
                   }
                 ],
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "3b9e54c6-0f5a-4cf2-9c97-9040364aab79"
+                "check_needed": false
               }
             ],
             "models": [],
@@ -2848,11 +2651,10 @@
               "show_answer_after_submit": false
             },
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "9dc9f5b3-86ed-4e71-a5b8-11047913d1c2"
+            "check_needed": false
           },
           {
-            "id": "exercise_02",
+            "id": "98e14c21-0449-4e36-b1ae-77ed46cf3aa0",
             "type": "read_aloud",
             "variant": "word_phrase_sentence_chunks",
             "canonical_variant": "word_phrase_sentence_chunks",
@@ -2876,119 +2678,97 @@
             "answer_key": [],
             "parts": [
               {
-                "id": "exercise_02_part_01",
+                "id": "7db043f9-0d63-45ee-8c21-295d62f2ebd3",
                 "type": "phrase_list",
                 "title": "Read out the following phrases",
                 "items": [
                   {
-                    "id": "ex02_item_01",
-                    "text": "发射卫星",
-                    "uuid": "8b5ce01f-c4c3-418d-8437-5b29fb00609e"
+                    "id": "267f32d9-d882-42c6-9ffa-c681ee378723",
+                    "text": "发射卫星"
                   },
                   {
-                    "id": "ex02_item_02",
-                    "text": "获得资料",
-                    "uuid": "0ffb989d-4062-4cb7-9740-6760448ad96c"
+                    "id": "e35d768a-dd70-4b09-ba8f-b66404caa828",
+                    "text": "获得资料"
                   },
                   {
-                    "id": "ex02_item_03",
-                    "text": "珍贵资料",
-                    "uuid": "ab0a5772-5f01-4161-9761-a33ab618b50b"
+                    "id": "19d6e70a-59c3-43fe-bc17-8c0142a74134",
+                    "text": "珍贵资料"
                   },
                   {
-                    "id": "ex02_item_04",
-                    "text": "正在进行",
-                    "uuid": "f9559782-48ee-4549-9fb2-7a57f78917a1"
+                    "id": "3585db31-e484-43bc-aba5-dd05f911d08f",
+                    "text": "正在进行"
                   },
                   {
-                    "id": "ex02_item_05",
-                    "text": "增加重量",
-                    "uuid": "5f382a77-f0ce-4f24-b843-64800e5e2d38"
+                    "id": "725ac103-1ea1-4c9d-96ac-bc6181c986d6",
+                    "text": "增加重量"
                   },
                   {
-                    "id": "ex02_item_06",
-                    "text": "毫无疑问",
-                    "uuid": "9bf4ce13-cb6f-4cfb-a9e0-833138f80a60"
+                    "id": "f8c7fa7b-9da7-41ac-8ab9-0b0419331580",
+                    "text": "毫无疑问"
                   },
                   {
-                    "id": "ex02_item_07",
-                    "text": "推迟计划",
-                    "uuid": "de373565-e8ac-467a-8c1b-0128ebd485ab"
+                    "id": "0d00f627-6f6c-47de-a7f2-daf82d40069e",
+                    "text": "推迟计划"
                   },
                   {
-                    "id": "ex02_item_08",
-                    "text": "非常成功",
-                    "uuid": "26921cad-2455-42ae-be43-0204ff199304"
+                    "id": "db22c3f9-34b9-475c-b453-6b64c7dbded8",
+                    "text": "非常成功"
                   },
                   {
-                    "id": "ex02_item_09",
-                    "text": "获得成功",
-                    "uuid": "464362b5-350d-4465-8af2-db3215928d05"
+                    "id": "8572c070-3968-4cce-80b2-987aba49df84",
+                    "text": "获得成功"
                   },
                   {
-                    "id": "ex02_item_10",
-                    "text": "珍贵动物",
-                    "uuid": "a56fc438-22bb-476a-bd91-c90d74557e73"
+                    "id": "6d17885b-5fc7-461f-b47f-d32d8517816a",
+                    "text": "珍贵动物"
                   },
                   {
-                    "id": "ex02_item_11",
-                    "text": "正在试验",
-                    "uuid": "68f89d96-2119-4652-b586-0fc13c38ec56"
+                    "id": "fdcba066-f584-409b-bf2b-da4c71f89bd0",
+                    "text": "正在试验"
                   },
                   {
-                    "id": "ex02_item_12",
-                    "text": "增加时间",
-                    "uuid": "bdab60f4-c87a-4957-aa80-4d1dae5a1e2a"
+                    "id": "b4c8d848-01b4-477e-833e-2a01d96e13c6",
+                    "text": "增加时间"
                   },
                   {
-                    "id": "ex02_item_13",
-                    "text": "毫无准备",
-                    "uuid": "21e9085a-51ec-4baf-90e0-3a4f437219c2"
+                    "id": "896e8e84-981b-4718-b5f0-d08215109480",
+                    "text": "毫无准备"
                   },
                   {
-                    "id": "ex02_item_14",
-                    "text": "推迟几天",
-                    "uuid": "c7f28a58-0ddf-4a76-a94b-7d71bc89a560"
+                    "id": "f162490d-8309-4410-8ce9-d1ff7c5c15ef",
+                    "text": "推迟几天"
                   },
                   {
-                    "id": "ex02_item_15",
-                    "text": "一片欢腾",
-                    "uuid": "ab06ae55-b52f-402e-825f-10fa05dfd8c5"
+                    "id": "c99ea5b9-4931-4f26-bd08-424a892cc6e2",
+                    "text": "一片欢腾"
                   },
                   {
-                    "id": "ex02_item_16",
-                    "text": "获得资金",
-                    "uuid": "dc735e3b-2b86-4272-8857-0aa6ef52b731"
+                    "id": "c6bae023-3d89-4615-bffd-675629c89544",
+                    "text": "获得资金"
                   },
                   {
-                    "id": "ex02_item_17",
-                    "text": "珍贵植物",
-                    "uuid": "109e9d49-e865-40f2-b793-48c887f13015"
+                    "id": "72c8a357-96bc-4240-b311-c1947dbc062e",
+                    "text": "珍贵植物"
                   },
                   {
-                    "id": "ex02_item_18",
-                    "text": "正在研究",
-                    "uuid": "1dc8497a-80a6-4bd7-b688-31456c0903e0"
+                    "id": "df219441-e86b-4264-94c5-143825371e6d",
+                    "text": "正在研究"
                   },
                   {
-                    "id": "ex02_item_19",
-                    "text": "增加收入",
-                    "uuid": "1f3647e8-c897-4419-abcb-e8aeb52b659d"
+                    "id": "5bb86b13-11e6-4d02-b820-2cd679543afe",
+                    "text": "增加收入"
                   },
                   {
-                    "id": "ex02_item_20",
-                    "text": "毫无信心",
-                    "uuid": "b576419c-a1bb-4d17-b92d-d3817b96bd12"
+                    "id": "0a452dec-9f1b-4697-bef7-0dce689e321d",
+                    "text": "毫无信心"
                   },
                   {
-                    "id": "ex02_item_21",
-                    "text": "推迟进行",
-                    "uuid": "65e96ea2-8df1-4cb3-8f28-b1d591f3176a"
+                    "id": "0f3b226f-7237-413b-893a-a5a862016c78",
+                    "text": "推迟进行"
                   }
                 ],
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "e70f8ae9-7693-4989-aa9a-2975b033bea7"
+                "check_needed": false
               }
             ],
             "models": [],
@@ -2997,11 +2777,10 @@
               "renderer": "exercise.read_aloud.v2"
             },
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "8798fe72-63ec-4914-9f5c-e8b0b6c49f9b"
+            "check_needed": false
           },
           {
-            "id": "exercise_03",
+            "id": "5dfca3d2-8524-4a83-92dd-b036a7259465",
             "type": "choose_words_fill_blank",
             "variant": "word_bank",
             "canonical_variant": "word_bank_fill_blank",
@@ -3036,7 +2815,7 @@
             ],
             "questions": [
               {
-                "id": "ex03_q01",
+                "id": "941d80e5-8eb2-4e21-beae-597e6677cdaf",
                 "prompt": "听说国家足球队得了奥运冠军，全国一片____。",
                 "source_origin": "textbook_question_generated_answer",
                 "answer_verified": true,
@@ -3045,11 +2824,10 @@
                 "answer": "欢腾",
                 "grading": {
                   "mode": "exact"
-                },
-                "uuid": "9e8ac8b0-077d-44f6-9182-b918dd756f94"
+                }
               },
               {
-                "id": "ex03_q02",
+                "id": "f31d95d0-500f-4cc9-97ee-57a7295062d2",
                 "prompt": "他们国家正准备____载人飞船。",
                 "source_origin": "textbook_question_generated_answer",
                 "answer_verified": true,
@@ -3058,11 +2836,10 @@
                 "answer": "发射",
                 "grading": {
                   "mode": "exact"
-                },
-                "uuid": "cb65e50e-a58a-4537-a475-03adcb7d9943"
+                }
               },
               {
-                "id": "ex03_q03",
+                "id": "069f2cd8-233c-4227-8f46-78a1d28a4a59",
                 "prompt": "这次宇宙飞船在空中____了十五天。",
                 "source_origin": "textbook_question_generated_answer",
                 "answer_verified": true,
@@ -3071,11 +2848,10 @@
                 "answer": "停留",
                 "grading": {
                   "mode": "exact"
-                },
-                "uuid": "a7790be3-1d02-456b-9205-b53a7ed622c2"
+                }
               },
               {
-                "id": "ex03_q04",
+                "id": "013e3712-30ac-4a8a-b60e-0d6f818f4cdb",
                 "prompt": "经过一年的努力，你们都____了很好的成绩。",
                 "source_origin": "textbook_question_generated_answer",
                 "answer_verified": true,
@@ -3084,11 +2860,10 @@
                 "answer": "取得",
                 "grading": {
                   "mode": "exact"
-                },
-                "uuid": "96dc5ec8-3229-429b-a26b-3f71eec033bf"
+                }
               },
               {
-                "id": "ex03_q05",
+                "id": "ba362929-16a5-4a79-8cad-ecfabcaa32f3",
                 "prompt": "她从小____在海边，对大海有着很深的感情。",
                 "source_origin": "textbook_question_generated_answer",
                 "answer_verified": true,
@@ -3097,11 +2872,10 @@
                 "answer": "生长",
                 "grading": {
                   "mode": "exact"
-                },
-                "uuid": "42d8a04a-d8ac-4675-8bda-3caa7c372043"
+                }
               },
               {
-                "id": "ex03_q06",
+                "id": "542ef74e-c843-4b6c-9cd8-0011b6ee7b7a",
                 "prompt": "我们学校有中国学生，也有很多外国留学生，校园里____了中外师生团结友好的气氛。",
                 "source_origin": "textbook_question_generated_answer",
                 "answer_verified": true,
@@ -3110,11 +2884,10 @@
                 "answer": "充满",
                 "grading": {
                   "mode": "exact"
-                },
-                "uuid": "81554d32-0c0a-4b23-a418-cfed46b49619"
+                }
               },
               {
-                "id": "ex03_q07",
+                "id": "715f1fd6-1b2e-43e0-b3dc-cbc252152601",
                 "prompt": "我们要好好儿保护地球，因为这是我们人类唯一能够____的地方。",
                 "source_origin": "textbook_question_generated_answer",
                 "answer_verified": true,
@@ -3123,11 +2896,10 @@
                 "answer": "生存",
                 "grading": {
                   "mode": "exact"
-                },
-                "uuid": "7a9006fb-f7af-4870-92a0-e092f9c12412"
+                }
               },
               {
-                "id": "ex03_q08",
+                "id": "105a0775-7adb-418e-b770-133481e26360",
                 "prompt": "发生这样的事情，真让人觉得____。",
                 "source_origin": "textbook_question_generated_answer",
                 "answer_verified": true,
@@ -3136,11 +2908,10 @@
                 "answer": "不可思议",
                 "grading": {
                   "mode": "exact"
-                },
-                "uuid": "2eab91db-e487-41ef-ad72-d09b6ab653f0"
+                }
               },
               {
-                "id": "ex03_q09",
+                "id": "e4f087ec-f391-487e-9c09-fa2844c867d8",
                 "prompt": "这个地方的经济这几年取得了____的发展。",
                 "source_origin": "textbook_question_generated_answer",
                 "answer_verified": true,
@@ -3149,11 +2920,10 @@
                 "answer": "惊人",
                 "grading": {
                   "mode": "exact"
-                },
-                "uuid": "397242cc-eb55-4d1e-9f2f-43a53dedbb3a"
+                }
               },
               {
-                "id": "ex03_q10",
+                "id": "59f17dca-dab9-4952-b7f4-3425c32679d3",
                 "prompt": "放假后我想去南方旅行，所以可能要____一个月回国。",
                 "source_origin": "textbook_question_generated_answer",
                 "answer_verified": true,
@@ -3162,11 +2932,10 @@
                 "answer": "推迟",
                 "grading": {
                   "mode": "exact"
-                },
-                "uuid": "8c13aab0-242e-4949-9a47-4da566e9c12e"
+                }
               },
               {
-                "id": "ex03_q11",
+                "id": "0888bde7-83fa-45e6-bc0a-a874d88e9226",
                 "prompt": "中国青少年发展基金会____了希望工程，让更多贫困地区的失学儿童重回校园。",
                 "source_origin": "textbook_question_generated_answer",
                 "answer_verified": true,
@@ -3175,11 +2944,10 @@
                 "answer": "实施",
                 "grading": {
                   "mode": "exact"
-                },
-                "uuid": "58e4f92d-738c-4738-a5f9-5df9dd4d4224"
+                }
               },
               {
-                "id": "ex03_q12",
+                "id": "3c19a1e7-6e46-4d2f-af98-be3059a2bfbb",
                 "prompt": "课堂上，老师常常给我们____一些练习。",
                 "source_origin": "textbook_question_generated_answer",
                 "answer_verified": true,
@@ -3188,8 +2956,7 @@
                 "answer": "补充",
                 "grading": {
                   "mode": "exact"
-                },
-                "uuid": "ba59d7ad-3d25-443d-ae88-bbe751e1dd00"
+                }
               }
             ],
             "answer_key": [
@@ -3275,11 +3042,10 @@
               "show_answer_after_submit": true
             },
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "5b63d8ad-5853-4760-bb7d-84cfc8e306ba"
+            "check_needed": false
           },
           {
-            "id": "exercise_04",
+            "id": "809141fb-cc55-403a-9433-35eea89c8c90",
             "type": "complete_sentence",
             "variant": "complete_sentence_with_given_words",
             "canonical_variant": "complete_sentence_with_given_words",
@@ -3301,7 +3067,7 @@
             "word_bank": [],
             "questions": [
               {
-                "id": "ex04_q01",
+                "id": "668ef942-39b3-4816-be06-f347b64fa456",
                 "prompt": "他对这次 HSK 考试____。",
                 "source_origin": "textbook_question_generated_answer",
                 "answer_verified": false,
@@ -3310,11 +3076,10 @@
                 "answer": "他对这次 HSK 考试充满信心。",
                 "grading": {
                   "mode": "manual"
-                },
-                "uuid": "e0179ada-1502-4c94-b9a4-659fcf3ffe89"
+                }
               },
               {
-                "id": "ex04_q02",
+                "id": "6e23c236-94eb-4e83-9ea6-7353241c098d",
                 "prompt": "下学期，我们班除了他不再继续学了以外，____。",
                 "source_origin": "textbook_question_generated_answer",
                 "answer_verified": false,
@@ -3323,11 +3088,10 @@
                 "answer": "下学期，我们班除了他不再继续学了以外，其他同学都继续学习。",
                 "grading": {
                   "mode": "manual"
-                },
-                "uuid": "3518b886-14bc-4ad5-b788-2779a9e42afc"
+                }
               },
               {
-                "id": "ex04_q03",
+                "id": "ee3570f6-9872-4699-a1ed-c338e52b4e50",
                 "prompt": "地球上的气候不断变暖，____。",
                 "source_origin": "textbook_question_generated_answer",
                 "answer_verified": false,
@@ -3336,11 +3100,10 @@
                 "answer": "地球上的气候不断变暖，这意味着将来地球生物会遇到很多问题。",
                 "grading": {
                   "mode": "manual"
-                },
-                "uuid": "0afee6ba-5c25-4a6a-b7d4-1dd959dbd55a"
+                }
               },
               {
-                "id": "ex04_q04",
+                "id": "3130979d-5cc3-4cf5-999c-9ed317ea7c14",
                 "prompt": "你说他是加拿大人，可他的护照是美国的，____？",
                 "source_origin": "textbook_question_generated_answer",
                 "answer_verified": false,
@@ -3349,11 +3112,10 @@
                 "answer": "你说他是加拿大人，可他的护照是美国的，他究竟来自哪里？",
                 "grading": {
                   "mode": "manual"
-                },
-                "uuid": "99874ea9-6f3f-4174-910c-c770280ebba6"
+                }
               },
               {
-                "id": "ex04_q05",
+                "id": "9dd88fe0-ccfb-47b6-a74a-d1ee53c61219",
                 "prompt": "他的护照是美国护照，____。",
                 "source_origin": "textbook_question_generated_answer",
                 "answer_verified": false,
@@ -3362,11 +3124,10 @@
                 "answer": "他的护照是美国护照，实际上他是美国人。",
                 "grading": {
                   "mode": "manual"
-                },
-                "uuid": "02a4c375-569b-4400-b8b3-c40abb0dcd5e"
+                }
               },
               {
-                "id": "ex04_q06",
+                "id": "9002df8c-125f-489d-9396-d008958aa6b9",
                 "prompt": "他说在中文学校学了一年汉语，可是____。",
                 "source_origin": "textbook_question_generated_answer",
                 "answer_verified": false,
@@ -3375,8 +3136,7 @@
                 "answer": "他说在中文学校学了一年汉语，可是实际上他只学了三个月。",
                 "grading": {
                   "mode": "manual"
-                },
-                "uuid": "fe68cbc9-af5d-4887-a03c-1e9660134ed4"
+                }
               }
             ],
             "answer_key": [
@@ -3426,11 +3186,10 @@
               "allow_manual_check": true
             },
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "0c706709-4707-4205-94be-6db07ba85493"
+            "check_needed": false
           },
           {
-            "id": "exercise_05",
+            "id": "e843bb6e-2e51-4fb8-b362-7506b97cf2fc",
             "type": "complete_dialogue",
             "variant": "complete_dialogue",
             "canonical_variant": "complete_dialogue",
@@ -3453,7 +3212,7 @@
             "word_bank": [],
             "questions": [
               {
-                "id": "ex05_q01",
+                "id": "7d9c942a-bdc2-45a1-b852-6b3dd58fe8f2",
                 "prompt": "A：明年你有什么打算？\nB：____。\n（可能）",
                 "source_origin": "textbook_question_generated_answer",
                 "answer_verified": false,
@@ -3462,11 +3221,10 @@
                 "answer": "我明年可能去中国留学。",
                 "grading": {
                   "mode": "manual"
-                },
-                "uuid": "ab21d69d-ce4f-48be-b8f1-5f159847a6af"
+                }
               },
               {
-                "id": "ex05_q02",
+                "id": "a79733e1-ef69-41fd-ac55-9bb8b3bd4d2c",
                 "prompt": "A：你认为这件事办得成吗？\nB：____。\n（可能）",
                 "source_origin": "textbook_question_generated_answer",
                 "answer_verified": false,
@@ -3475,11 +3233,10 @@
                 "answer": "我觉得有可能。",
                 "grading": {
                   "mode": "manual"
-                },
-                "uuid": "1638d54c-07a9-4f93-8c79-9810f0a045f2"
+                }
               },
               {
-                "id": "ex05_q03",
+                "id": "ec5f1e84-0693-46b3-b735-8005e47f103e",
                 "prompt": "A：____？\nB：大概有一万多留学生。\n（究竟）",
                 "source_origin": "textbook_question_generated_answer",
                 "answer_verified": false,
@@ -3488,11 +3245,10 @@
                 "answer": "这个学校究竟有多少留学生？",
                 "grading": {
                   "mode": "manual"
-                },
-                "uuid": "95495642-7466-41ba-b8c1-9086510e8558"
+                }
               },
               {
-                "id": "ex05_q04",
+                "id": "dc7f5f06-95a1-4158-98d8-b293729d6a13",
                 "prompt": "A：你觉得这场足球赛____？\nB：很难说。\n（究竟）",
                 "source_origin": "textbook_question_generated_answer",
                 "answer_verified": false,
@@ -3501,11 +3257,10 @@
                 "answer": "你觉得这场足球赛究竟谁会赢？",
                 "grading": {
                   "mode": "manual"
-                },
-                "uuid": "5fd128d3-8745-47a1-a40a-cafedca3ad98"
+                }
               },
               {
-                "id": "ex05_q05",
+                "id": "55e24ac4-bbd1-40f9-9dee-e97b3f2e10f7",
                 "prompt": "A：为了研究大熊猫的生活，她一个人在大山里和大熊猫一起生活了三年。\nB：是吗？____。\n（不可思议）",
                 "source_origin": "textbook_question_generated_answer",
                 "answer_verified": false,
@@ -3514,11 +3269,10 @@
                 "answer": "是吗？真是不可思议。",
                 "grading": {
                   "mode": "manual"
-                },
-                "uuid": "90ccf81a-fa45-4f7a-bb01-8d0c7d9d5720"
+                }
               },
               {
-                "id": "ex05_q06",
+                "id": "f7c603b4-c112-4d9c-ab37-b945d471ccee",
                 "prompt": "A：你刚来中国一年，汉语就说得这么好，真不简单！\nB：哪里，____。\n（实际上）",
                 "source_origin": "textbook_question_generated_answer",
                 "answer_verified": false,
@@ -3527,8 +3281,7 @@
                 "answer": "哪里，实际上我的汉语还差得远呢。",
                 "grading": {
                   "mode": "manual"
-                },
-                "uuid": "7bd6cdc6-b323-4ee4-9aec-f6e6c9962cfa"
+                }
               }
             ],
             "answer_key": [
@@ -3578,11 +3331,10 @@
               "allow_manual_check": true
             },
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "4f9eb127-ba33-4f89-bc40-36d2be30ba29"
+            "check_needed": false
           },
           {
-            "id": "exercise_06",
+            "id": "60ec1197-2967-408c-a1f3-3c2112f8305a",
             "type": "reorder_sentence",
             "variant": "reorder_sentences_or_paragraph",
             "canonical_variant": "reorder_sentences_or_paragraph",
@@ -3605,7 +3357,7 @@
             "word_bank": [],
             "questions": [
               {
-                "id": "ex06_q01",
+                "id": "1b0dc397-26f4-4659-a964-f9c68ceab72a",
                 "prompt": {
                   "A": "他们建议人们出门最好乘坐公共汽车、地铁，尽量少开汽车。",
                   "B": "这些物质越来越影响人们的健康。",
@@ -3624,11 +3376,10 @@
                 ],
                 "grading": {
                   "mode": "exact"
-                },
-                "uuid": "5785770b-3e03-4ac6-aeae-c39066391d58"
+                }
               },
               {
-                "id": "ex06_q02",
+                "id": "ab74bab2-0cd3-4c59-b4dd-6d9a3c6197b9",
                 "prompt": {
                   "A": "如果大家都乘坐公共交通工具上下班，就有可能大大减少空气中的一氧化碳和其他有害气体。",
                   "B": "只要大家都关心环境问题，就会愿意试着去做，时间长了就慢慢习惯了。",
@@ -3647,8 +3398,7 @@
                 ],
                 "grading": {
                   "mode": "exact"
-                },
-                "uuid": "2e35a929-db31-408c-ae5e-2b0c8d7fa3f8"
+                }
               }
             ],
             "answer_key": [
@@ -3683,11 +3433,10 @@
               "show_answer_after_submit": true
             },
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "e9cb3768-4834-4038-9990-d13fc4f8b649"
+            "check_needed": false
           },
           {
-            "id": "exercise_07",
+            "id": "1fd4313d-93f3-4cbe-9dd4-2ba0d5bac415",
             "type": "correct_sentence",
             "variant": "error_correction",
             "canonical_variant": "error_correction",
@@ -3709,7 +3458,7 @@
             "word_bank": [],
             "questions": [
               {
-                "id": "ex07_q01",
+                "id": "f8e911bf-9cbb-4dad-91ed-87032d2d95f2",
                 "prompt": "我的发烧比昨天增加了。",
                 "source_origin": "textbook_question_generated_answer",
                 "answer_verified": false,
@@ -3720,11 +3469,10 @@
                 "correct_sentence": "我比昨天烧得更厉害了。",
                 "grading": {
                   "mode": "manual"
-                },
-                "uuid": "37600481-a785-430a-a163-81f64e1e5bdc"
+                }
               },
               {
-                "id": "ex07_q02",
+                "id": "3fd78baa-272c-4e07-8ee2-5399c9977a99",
                 "prompt": "好久没看见他了，他很也许回国了。",
                 "source_origin": "textbook_question_generated_answer",
                 "answer_verified": false,
@@ -3735,11 +3483,10 @@
                 "correct_sentence": "好久没看见他了，他也许已经回国了。",
                 "grading": {
                   "mode": "manual"
-                },
-                "uuid": "045aef82-62d0-4103-ad36-3e445598c569"
+                }
               },
               {
-                "id": "ex07_q03",
+                "id": "69f5ddfa-be8d-4292-b18f-6136daaa613f",
                 "prompt": "我先去香港玩儿玩儿了几天，然后就来这里学汉语了。",
                 "source_origin": "textbook_question_generated_answer",
                 "answer_verified": false,
@@ -3750,11 +3497,10 @@
                 "correct_sentence": "我先去香港玩儿了几天，然后就来这里学汉语了。",
                 "grading": {
                   "mode": "manual"
-                },
-                "uuid": "7a213a73-e489-4745-be62-4c9e8f801f88"
+                }
               },
               {
-                "id": "ex07_q04",
+                "id": "9c211f34-08a0-4478-b188-fe6a0e98ea41",
                 "prompt": "他成功他的考试，所以他能上大学了。",
                 "source_origin": "textbook_question_generated_answer",
                 "answer_verified": false,
@@ -3765,11 +3511,10 @@
                 "correct_sentence": "他通过了考试，所以他能上大学了。",
                 "grading": {
                   "mode": "manual"
-                },
-                "uuid": "6581e83a-b705-4067-894d-380f82381def"
+                }
               },
               {
-                "id": "ex07_q05",
+                "id": "c8ec5644-8adf-46de-b2ff-34b3088ba324",
                 "prompt": "他想当律师，不知道他的这个愿望究竟能成功。",
                 "source_origin": "textbook_question_generated_answer",
                 "answer_verified": false,
@@ -3780,11 +3525,10 @@
                 "correct_sentence": "他想当律师，不知道他的这个愿望究竟能不能实现。",
                 "grading": {
                   "mode": "manual"
-                },
-                "uuid": "cd3c80a8-5c39-4ecb-b936-fdf431b525a8"
+                }
               },
               {
-                "id": "ex07_q06",
+                "id": "6db3da52-2247-4991-a1d3-225528d56fff",
                 "prompt": "为了这个目的达到，我必须努力学习。",
                 "source_origin": "textbook_question_generated_answer",
                 "answer_verified": false,
@@ -3795,11 +3539,10 @@
                 "correct_sentence": "为了达到这个目的，我必须努力学习。",
                 "grading": {
                   "mode": "manual"
-                },
-                "uuid": "d25c8c7b-ebd8-41b1-849b-203b3ed1738f"
+                }
               },
               {
-                "id": "ex07_q07",
+                "id": "5b7be530-a6ca-4d5c-bfbd-12b682bde9e4",
                 "prompt": "很多人都不可思议她跟这个人结婚。",
                 "source_origin": "textbook_question_generated_answer",
                 "answer_verified": false,
@@ -3810,11 +3553,10 @@
                 "correct_sentence": "很多人都觉得她跟这个人结婚不可思议。",
                 "grading": {
                   "mode": "manual"
-                },
-                "uuid": "d777ea72-417c-441c-b7d9-99b55a95ee56"
+                }
               },
               {
-                "id": "ex07_q08",
+                "id": "04d0444c-2ff8-4ab0-a3a6-82a956b50e6b",
                 "prompt": "这个问题我不但解答不了，她也同样解答不了。",
                 "source_origin": "textbook_question_generated_answer",
                 "answer_verified": false,
@@ -3825,8 +3567,7 @@
                 "correct_sentence": "这个问题不但我解答不了，她也同样解答不了。",
                 "grading": {
                   "mode": "manual"
-                },
-                "uuid": "d40e1b92-3694-4568-99f9-c582d18ddcc0"
+                }
               }
             ],
             "answer_key": [
@@ -3888,11 +3629,10 @@
               "allow_manual_check": true
             },
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "19e26f86-a435-45ba-960d-a7567ac034cc"
+            "check_needed": false
           },
           {
-            "id": "exercise_08",
+            "id": "b9e46637-94ca-4fea-90cf-29155c015046",
             "type": "custom",
             "variant": "situational_expression",
             "canonical_variant": "custom_textbook_task",
@@ -3915,7 +3655,7 @@
             "word_bank": [],
             "questions": [
               {
-                "id": "ex08a_q01",
+                "id": "c27289fb-5395-45bf-8c4f-dbfdc93a63a5",
                 "prompt": "下列句子什么情景下说？全城一片欢腾。",
                 "source_origin": "textbook_question_generated_answer",
                 "answer_verified": false,
@@ -3923,11 +3663,10 @@
                 "explanation_vi": "",
                 "grading": {
                   "mode": "manual"
-                },
-                "uuid": "9fac67a0-1ac3-4a92-be24-254fd43fe447"
+                }
               },
               {
-                "id": "ex08a_q02",
+                "id": "eb607057-948c-40ce-8c5d-52f97effc6c1",
                 "prompt": "下列句子什么情景下说？这件事简直不可思议。",
                 "source_origin": "textbook_question_generated_answer",
                 "answer_verified": false,
@@ -3935,11 +3674,10 @@
                 "explanation_vi": "",
                 "grading": {
                   "mode": "manual"
-                },
-                "uuid": "5b135073-7795-4b93-ab31-95f48c3780a9"
+                }
               },
               {
-                "id": "ex08a_q03",
+                "id": "85ff6a7e-4f92-4e3e-8753-8783d21d3966",
                 "prompt": "下列句子什么情景下说？那条河里的水根本不能喝。",
                 "source_origin": "textbook_question_generated_answer",
                 "answer_verified": false,
@@ -3947,11 +3685,10 @@
                 "explanation_vi": "",
                 "grading": {
                   "mode": "manual"
-                },
-                "uuid": "fc7dc99d-2982-4505-8ba8-3f3bad7e3465"
+                }
               },
               {
-                "id": "ex08b_q01",
+                "id": "e1ef3a5f-4baa-422e-8e36-2eeab7b1384c",
                 "prompt": "下列情景怎么说？科学家发明了一种治疗癌症的新药，你听到这个消息后想表达自己的想法。",
                 "source_origin": "textbook_question_generated_answer",
                 "answer_verified": false,
@@ -3960,11 +3697,10 @@
                 "answer": "科学家在治疗癌症方面取得了重大突破，这真是不可思议。",
                 "grading": {
                   "mode": "manual"
-                },
-                "uuid": "e7e8723a-b97e-4ee8-b744-92529e8bdf22"
+                }
               },
               {
-                "id": "ex08b_q02",
+                "id": "96bf9664-bf63-4d17-9d73-6402c58ab07c",
                 "prompt": "下列情景怎么说？你看到一起车祸，一辆车被撞碎了。",
                 "source_origin": "textbook_question_generated_answer",
                 "answer_verified": false,
@@ -3973,11 +3709,10 @@
                 "answer": "那辆车被撞个稀巴烂。",
                 "grading": {
                   "mode": "manual"
-                },
-                "uuid": "5eec4163-1a35-42a8-a1b9-2cc8590aed39"
+                }
               },
               {
-                "id": "ex08b_q03",
+                "id": "6d7d18e7-c22d-499c-a688-e70d6eaa63e9",
                 "prompt": "下列情景怎么说？你去外地旅行了一个月，还遇到了一起车祸，但是你一点儿事没有，安全地回来了。",
                 "source_origin": "textbook_question_generated_answer",
                 "answer_verified": false,
@@ -3986,8 +3721,7 @@
                 "answer": "虽然我在旅行中遇到了一起车祸，但是最后平安无事地回来了。",
                 "grading": {
                   "mode": "manual"
-                },
-                "uuid": "d7363e41-d9fc-4fbd-9171-81529d9d8bdf"
+                }
               }
             ],
             "answer_key": [
@@ -4012,57 +3746,49 @@
             ],
             "parts": [
               {
-                "id": "exercise_08_part_01",
+                "id": "25b54876-62e8-4f94-b204-4c2ee708b2b3",
                 "type": "situation_usage",
                 "title": "下列句子什么情景下说？",
                 "items": [
                   {
-                    "id": "ex08a_item_01",
-                    "text": "全城一片欢腾。",
-                    "uuid": "dc53bf96-40c0-40e1-9678-96541c890d98"
+                    "id": "172e38f9-bd4b-4daa-97bb-5236d6cd7e36",
+                    "text": "全城一片欢腾。"
                   },
                   {
-                    "id": "ex08a_item_02",
-                    "text": "这件事简直不可思议。",
-                    "uuid": "16efedc6-5eaf-4e78-8aad-732b46a7a54f"
+                    "id": "c0dfb6f3-cac6-41a3-85cb-f02f394cdc6b",
+                    "text": "这件事简直不可思议。"
                   },
                   {
-                    "id": "ex08a_item_03",
-                    "text": "那条河里的水根本不能喝。",
-                    "uuid": "f8e5edf0-f2db-4eb2-b951-c6b433fc0a3e"
+                    "id": "03a60966-8b95-44fe-ab51-4acbb928c24f",
+                    "text": "那条河里的水根本不能喝。"
                   }
                 ],
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "3166614b-c268-4c38-97d6-b7b43c46d95b"
+                "check_needed": false
               },
               {
-                "id": "exercise_08_part_02",
+                "id": "f0e71485-f72f-4ecf-9357-426332e4da76",
                 "type": "situation_response",
                 "title": "下列情景怎么说？",
                 "items": [
                   {
-                    "id": "ex08b_item_01",
+                    "id": "bac40bc7-249c-458f-bf93-af4db7327207",
                     "situation": "科学家发明了一种治疗癌症的新药，你听到这个消息后想表达自己的想法。",
-                    "sample_answer": "科学家在治疗癌症方面取得了重大突破，这真是不可思议。",
-                    "uuid": "85ea0fb7-8543-4ec2-a268-55bd0c9b77be"
+                    "sample_answer": "科学家在治疗癌症方面取得了重大突破，这真是不可思议。"
                   },
                   {
-                    "id": "ex08b_item_02",
+                    "id": "08beb753-590c-4db0-b3d4-a8877b767d6d",
                     "situation": "你看到一起车祸，一辆车被撞碎了。",
-                    "sample_answer": "那辆车被撞个稀巴烂。",
-                    "uuid": "50896a94-a792-4839-9210-728c9c323223"
+                    "sample_answer": "那辆车被撞个稀巴烂。"
                   },
                   {
-                    "id": "ex08b_item_03",
+                    "id": "0a1da020-65a1-44cd-91b0-a25a03aafd15",
                     "situation": "你去外地旅行了一个月，还遇到了一起车祸，但是你一点儿事没有，安全地回来了。",
-                    "sample_answer": "虽然我在旅行中遇到了一起车祸，但是最后平安无事地回来了。",
-                    "uuid": "51915b6c-4c76-4352-baed-9eb1428ab307"
+                    "sample_answer": "虽然我在旅行中遇到了一起车祸，但是最后平安无事地回来了。"
                   }
                 ],
                 "source_origin": "textbook_question_generated_answer",
-                "check_needed": false,
-                "uuid": "a48ab9ce-836f-41bd-a6db-151bad242eb8"
+                "check_needed": false
               }
             ],
             "models": [],
@@ -4073,11 +3799,10 @@
               "allow_manual_check": true
             },
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "096912c1-7dc0-4786-b876-fa9e2f7be31c"
+            "check_needed": false
           },
           {
-            "id": "exercise_09",
+            "id": "849f6690-a8ea-4b6f-937d-429f236714ad",
             "type": "reading_fill_blank",
             "variant": "reading_cloze",
             "canonical_variant": "reading_cloze",
@@ -4100,7 +3825,7 @@
             "word_bank": [],
             "questions": [
               {
-                "id": "ex09_blank_01",
+                "id": "0d82ab86-2b18-4749-8f20-32e5c7c6758f",
                 "prompt": "Blank 1",
                 "source_origin": "textbook_question_generated_answer",
                 "answer_verified": true,
@@ -4109,11 +3834,10 @@
                 "answer": "为了",
                 "grading": {
                   "mode": "exact"
-                },
-                "uuid": "543b71b7-d9c8-4e9f-bef1-76dfa3900b8b"
+                }
               },
               {
-                "id": "ex09_blank_02",
+                "id": "7a9aa110-f471-44f5-93f8-e82ae6aefee3",
                 "prompt": "Blank 2",
                 "source_origin": "textbook_question_generated_answer",
                 "answer_verified": true,
@@ -4122,11 +3846,10 @@
                 "answer": "的",
                 "grading": {
                   "mode": "exact"
-                },
-                "uuid": "8c3e87cd-0452-4a1d-ba8e-8dfcc0771bb6"
+                }
               },
               {
-                "id": "ex09_blank_03",
+                "id": "a7836085-ebad-4bef-b300-52734a96dbd1",
                 "prompt": "Blank 3",
                 "source_origin": "textbook_question_generated_answer",
                 "answer_verified": true,
@@ -4135,11 +3858,10 @@
                 "answer": "连",
                 "grading": {
                   "mode": "exact"
-                },
-                "uuid": "0149a092-319a-49d4-a683-96cd75cb223c"
+                }
               },
               {
-                "id": "ex09_blank_04",
+                "id": "7ed4fadc-c6e9-4a39-b12b-2ad23d1c63fe",
                 "prompt": "Blank 4",
                 "source_origin": "textbook_question_generated_answer",
                 "answer_verified": true,
@@ -4148,11 +3870,10 @@
                 "answer": "把",
                 "grading": {
                   "mode": "exact"
-                },
-                "uuid": "16ea1ab8-074a-4b6d-944f-f3dec0525a3c"
+                }
               },
               {
-                "id": "ex09_blank_05",
+                "id": "aaa2e0dc-a8e9-4eff-85c6-a760d71590d2",
                 "prompt": "Blank 5",
                 "source_origin": "textbook_question_generated_answer",
                 "answer_verified": true,
@@ -4161,11 +3882,10 @@
                 "answer": "到",
                 "grading": {
                   "mode": "exact"
-                },
-                "uuid": "cbf93067-44cc-498b-94af-ec8c72e41740"
+                }
               },
               {
-                "id": "ex09_blank_06",
+                "id": "33270f13-abf8-480b-ac35-1c518dbf7ca9",
                 "prompt": "Blank 6",
                 "source_origin": "textbook_question_generated_answer",
                 "answer_verified": true,
@@ -4174,11 +3894,10 @@
                 "answer": "成",
                 "grading": {
                   "mode": "exact"
-                },
-                "uuid": "56d48af4-ae80-4982-82fc-38acc899641f"
+                }
               },
               {
-                "id": "ex09_blank_07",
+                "id": "17aec650-77a9-4654-a2b6-da0eb06d2f13",
                 "prompt": "Blank 7",
                 "source_origin": "textbook_question_generated_answer",
                 "answer_verified": true,
@@ -4187,11 +3906,10 @@
                 "answer": "多",
                 "grading": {
                   "mode": "exact"
-                },
-                "uuid": "0c883d5a-ac0d-4014-9799-80df148684ca"
+                }
               },
               {
-                "id": "ex09_blank_08",
+                "id": "ab0349e9-e777-44cd-9f7b-8b7f065023b0",
                 "prompt": "Blank 8",
                 "source_origin": "textbook_question_generated_answer",
                 "answer_verified": true,
@@ -4200,11 +3918,10 @@
                 "answer": "使",
                 "grading": {
                   "mode": "exact"
-                },
-                "uuid": "1def31d0-89d0-4cb0-b68b-c2de46e20375"
+                }
               },
               {
-                "id": "ex09_blank_09",
+                "id": "a16e1e89-5c64-4895-a450-e4d057f5c79f",
                 "prompt": "Blank 9",
                 "source_origin": "textbook_question_generated_answer",
                 "answer_verified": true,
@@ -4213,11 +3930,10 @@
                 "answer": "出",
                 "grading": {
                   "mode": "exact"
-                },
-                "uuid": "8ed517a9-b84f-42aa-86f4-836bb9840e2e"
+                }
               },
               {
-                "id": "ex09_blank_10",
+                "id": "e35e1bf7-610d-4619-a193-04b69f5c3998",
                 "prompt": "Blank 10",
                 "source_origin": "textbook_question_generated_answer",
                 "answer_verified": true,
@@ -4226,11 +3942,10 @@
                 "answer": "了",
                 "grading": {
                   "mode": "exact"
-                },
-                "uuid": "4b9fd34a-aa01-42d6-9bb0-ee2863277b95"
+                }
               },
               {
-                "id": "ex09_blank_11",
+                "id": "64f8aa50-a474-4a6a-96ec-2266fceab08e",
                 "prompt": "Blank 11",
                 "source_origin": "textbook_question_generated_answer",
                 "answer_verified": true,
@@ -4239,11 +3954,10 @@
                 "answer": "去",
                 "grading": {
                   "mode": "exact"
-                },
-                "uuid": "dd20a25e-dff5-4787-97bf-c9799a19a8a1"
+                }
               },
               {
-                "id": "ex09_blank_12",
+                "id": "88e45df6-5c45-47cb-a0d9-876d0339aa83",
                 "prompt": "Blank 12",
                 "source_origin": "textbook_question_generated_answer",
                 "answer_verified": true,
@@ -4252,8 +3966,7 @@
                 "answer": "了",
                 "grading": {
                   "mode": "exact"
-                },
-                "uuid": "0f57a19e-f1c0-4d60-a2c1-4c6d9e8fc05c"
+                }
               }
             ],
             "answer_key": [
@@ -4332,57 +4045,50 @@
             ],
             "parts": [
               {
-                "id": "exercise_09_part_01",
+                "id": "f0106cc8-664f-44a0-aaf3-0a4e67278ad2",
                 "type": "supplementary_words",
                 "title": "补充生词",
                 "items": [
                   {
-                    "id": "supp_01",
+                    "id": "cb2bb23b-dc87-42d4-9232-b6d5b31383df",
                     "hanzi": "破坏",
                     "pinyin": "pòhuài",
-                    "meaning_vi": "phá hoại",
-                    "uuid": "bc3b0df3-a67f-4a99-bbc7-f3d83b21b9cd"
+                    "meaning_vi": "phá hoại"
                   },
                   {
-                    "id": "supp_02",
+                    "id": "08b8fa90-a50b-403f-b3ec-2638f07e0e47",
                     "hanzi": "污染",
                     "pinyin": "wūrǎn",
-                    "meaning_vi": "ô nhiễm; làm ô nhiễm",
-                    "uuid": "201bd9c2-bf00-48bf-9d0d-44416a50f710"
+                    "meaning_vi": "ô nhiễm; làm ô nhiễm"
                   },
                   {
-                    "id": "supp_03",
+                    "id": "d121f926-3920-487e-b91c-8720a8f4e5b4",
                     "hanzi": "砍伐",
                     "pinyin": "kǎnfá",
-                    "meaning_vi": "chặt phá cây rừng",
-                    "uuid": "e362c3ee-908b-4675-9d1c-dac8f0910178"
+                    "meaning_vi": "chặt phá cây rừng"
                   },
                   {
-                    "id": "supp_04",
+                    "id": "7c985af5-f4cd-412c-a2ad-884e907aecc3",
                     "hanzi": "沙漠",
                     "pinyin": "shāmò",
-                    "meaning_vi": "sa mạc",
-                    "uuid": "8e7a6281-9692-40f5-8108-894469a3e72d"
+                    "meaning_vi": "sa mạc"
                   }
                 ],
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "00f86c7d-0888-4422-8a8e-cd9f31207c89"
+                "check_needed": false
               },
               {
-                "id": "exercise_09_part_02",
+                "id": "5abf3416-4bb1-4c0c-8fe0-8fee4f52927e",
                 "type": "cloze_text",
                 "title": "短文",
                 "items": [
                   {
-                    "id": "ex09_text",
-                    "text": "过去几十年，人类①____发展经济，破坏了地球的环境。地球上②____水越来越少，很多河长年断流，有的地方甚至③____人和动物喝的水也没有了。即使这样，大批工厂还④____污水排放到河里和海里。很多河水受⑤____污染，清水变⑥____了黑水。\n\n地球上的人口越来越⑦____。为了生存，人类只顾眼前利益，不顾环境受到破坏，拼命地砍伐森林，造成大量水土流失，⑧____大片绿色的土地变成了黄色的沙漠。\n\n更糟糕的是越来越严重的空气污染。工厂排放大量的一氧化碳，汽车放⑨____大量有害气体，蓝色的天空也变得很少见⑩____。地球表面的气温逐渐升高，气候不断变暖。如果不改变这种情况，这样下⑪____，地球真的会成为人类难以居住的地方⑫____。\n\n好在目前，人类已经开始关注并注意保护环境了。",
-                    "uuid": "ee78f65f-1fbe-4602-a867-39a48a410f5f"
+                    "id": "bc95901f-0b25-4f8a-9b66-393b9f689d05",
+                    "text": "过去几十年，人类①____发展经济，破坏了地球的环境。地球上②____水越来越少，很多河长年断流，有的地方甚至③____人和动物喝的水也没有了。即使这样，大批工厂还④____污水排放到河里和海里。很多河水受⑤____污染，清水变⑥____了黑水。\n\n地球上的人口越来越⑦____。为了生存，人类只顾眼前利益，不顾环境受到破坏，拼命地砍伐森林，造成大量水土流失，⑧____大片绿色的土地变成了黄色的沙漠。\n\n更糟糕的是越来越严重的空气污染。工厂排放大量的一氧化碳，汽车放⑨____大量有害气体，蓝色的天空也变得很少见⑩____。地球表面的气温逐渐升高，气候不断变暖。如果不改变这种情况，这样下⑪____，地球真的会成为人类难以居住的地方⑫____。\n\n好在目前，人类已经开始关注并注意保护环境了。"
                   }
                 ],
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "d1e77801-58eb-4ca9-ab6a-aa8f391db288"
+                "check_needed": false
               }
             ],
             "models": [],
@@ -4395,11 +4101,10 @@
             "source_origin": "textbook",
             "check_needed": false,
             "text": "过去几十年，人类①____发展经济，破坏了地球的环境。地球上②____水越来越少，很多河长年断流，有的地方甚至③____人和动物喝的水也没有了。即使这样，大批工厂还④____污水排放到河里和海里。很多河水受⑤____污染，清水变⑥____了黑水。\n\n地球上的人口越来越⑦____。为了生存，人类只顾眼前利益，不顾环境受到破坏，拼命地砍伐森林，造成大量水土流失，⑧____大片绿色的土地变成了黄色的沙漠。\n\n更糟糕的是越来越严重的空气污染。工厂排放大量的一氧化碳，汽车放⑨____大量有害气体，蓝色的天空也变得很少见⑩____。地球表面的气温逐渐升高，气候不断变暖。如果不改变这种情况，这样下⑪____，地球真的会成为人类难以居住的地方⑫____。\n\n好在目前，人类已经开始关注并注意保护环境了。",
-            "summary_vi": "Đoạn đọc nói về việc phát triển kinh tế làm phá hoại môi trường Trái Đất: thiếu nước, ô nhiễm nước, chặt phá rừng, sa mạc hóa, ô nhiễm không khí và biến đổi khí hậu.",
-            "uuid": "96f87f6b-ef33-4877-bbb3-315859b7cd59"
+            "summary_vi": "Đoạn đọc nói về việc phát triển kinh tế làm phá hoại môi trường Trái Đất: thiếu nước, ô nhiễm nước, chặt phá rừng, sa mạc hóa, ô nhiễm không khí và biến đổi khí hậu."
           },
           {
-            "id": "exercise_10",
+            "id": "1ac62b88-14d2-473e-be1e-6a588e95e535",
             "type": "communication_dialogue",
             "variant": "role_play",
             "canonical_variant": "role_play",
@@ -4423,7 +4128,7 @@
             "answer_key": [],
             "parts": [
               {
-                "id": "exercise_10_part_01",
+                "id": "1675fae1-6a9a-40a8-aed2-bbf8b04111db",
                 "type": "dialogue",
                 "title": "讨论环境问题",
                 "items": [
@@ -4474,14 +4179,13 @@
                   }
                 ],
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "7530e178-8b6c-4684-8b2a-f424a6459d58"
+                "check_needed": false
               }
             ],
             "models": [],
             "dialogues": [
               {
-                "id": "ex10_dialogue_01",
+                "id": "717741c4-a444-413a-9538-06898c4f033c",
                 "lines": [
                   {
                     "speaker": "A",
@@ -4531,8 +4235,7 @@
                 ],
                 "source_origin": "textbook",
                 "answer_verified": true,
-                "check_needed": false,
-                "uuid": "53e46845-81c5-4b87-9d8e-e0e85dfb69f7"
+                "check_needed": false
               }
             ],
             "rendering": {
@@ -4540,14 +4243,12 @@
               "show_answer_after_submit": false
             },
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "41bd3e62-d354-4869-9f85-5a9a8d00bc40"
+            "check_needed": false
           }
-        ],
-        "uuid": "23e9f551-e58a-4f4f-84b8-40457f4944e2"
+        ]
       },
       {
-        "id": "section_07_reading",
+        "id": "886f621e-85ce-4e1a-91df-d8d257596034",
         "type": "reading",
         "order": 7,
         "title": "综合填空",
@@ -4556,7 +4257,7 @@
         "check_needed": false,
         "items": [
           {
-            "id": "reading_01",
+            "id": "9bd9a79e-3279-468d-9f4b-ecd1f7365e19",
             "type": "reading_cloze",
             "order": 1,
             "title": "综合填空",
@@ -4564,201 +4265,181 @@
             "text": "过去几十年，人类①____发展经济，破坏了地球的环境。地球上②____水越来越少，很多河长年断流，有的地方甚至③____人和动物喝的水也没有了。即使这样，大批工厂还④____污水排放到河里和海里。很多河水受⑤____污染，清水变⑥____了黑水。\n\n地球上的人口越来越⑦____。为了生存，人类只顾眼前利益，不顾环境受到破坏，拼命地砍伐森林，造成大量水土流失，⑧____大片绿色的土地变成了黄色的沙漠。\n\n更糟糕的是越来越严重的空气污染。工厂排放大量的一氧化碳，汽车放⑨____大量有害气体，蓝色的天空也变得很少见⑩____。地球表面的气温逐渐升高，气候不断变暖。如果不改变这种情况，这样下⑪____，地球真的会成为人类难以居住的地方⑫____。\n\n好在目前，人类已经开始关注并注意保护环境了。",
             "paragraphs": [
               {
-                "id": "reading_01_p01",
+                "id": "d2a4cf8b-55cd-4904-9fed-3141da682b19",
                 "order": 1,
                 "zh": "过去几十年，人类①____发展经济，破坏了地球的环境。地球上②____水越来越少，很多河长年断流，有的地方甚至③____人和动物喝的水也没有了。即使这样，大批工厂还④____污水排放到河里和海里。很多河水受⑤____污染，清水变⑥____了黑水。",
                 "vi": "",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "7460defb-a189-46f9-86e4-8c3ede1e8cb6"
+                "check_needed": false
               },
               {
-                "id": "reading_01_p01",
+                "id": "d2a4cf8b-55cd-4904-9fed-3141da682b19",
                 "order": 1,
                 "zh": "地球上的人口越来越⑦____。为了生存，人类只顾眼前利益，不顾环境受到破坏，拼命地砍伐森林，造成大量水土流失，⑧____大片绿色的土地变成了黄色的沙漠。",
                 "vi": "",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "dd4179ff-4225-4967-8308-9cb09829fc27"
+                "check_needed": false
               },
               {
-                "id": "reading_01_p01",
+                "id": "d2a4cf8b-55cd-4904-9fed-3141da682b19",
                 "order": 1,
                 "zh": "更糟糕的是越来越严重的空气污染。工厂排放大量的一氧化碳，汽车放⑨____大量有害气体，蓝色的天空也变得很少见⑩____。地球表面的气温逐渐升高，气候不断变暖。如果不改变这种情况，这样下⑪____，地球真的会成为人类难以居住的地方⑫____。",
                 "vi": "",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "bba7f6bf-9fde-4fb9-973d-88fc729755dc"
+                "check_needed": false
               },
               {
-                "id": "reading_01_p01",
+                "id": "d2a4cf8b-55cd-4904-9fed-3141da682b19",
                 "order": 1,
                 "zh": "好在目前，人类已经开始关注并注意保护环境了。",
                 "vi": "",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "aa1f7b71-f375-42d0-a5b9-f35740584818"
+                "check_needed": false
               }
             ],
             "supplementary_words": [
               {
-                "id": "reading_vocab_01",
+                "id": "44d7974e-3a5b-45c0-a0e2-9b883d814cc6",
                 "hanzi": "破坏",
                 "pinyin": "pòhuài",
                 "meaning_vi": "phá hoại",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "9d8fe7cb-cfbb-45cc-8266-55695b6bcff9"
+                "check_needed": false
               },
               {
-                "id": "reading_vocab_02",
+                "id": "f0d02d73-fc09-4310-a941-3b9d8c50d6a0",
                 "hanzi": "污染",
                 "pinyin": "wūrǎn",
                 "meaning_vi": "ô nhiễm; làm ô nhiễm",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "f18bc810-5b9c-4a57-8ada-3f786318e984"
+                "check_needed": false
               },
               {
-                "id": "reading_vocab_03",
+                "id": "6b66426c-8005-4e6a-aa9b-387dd914dc92",
                 "hanzi": "砍伐",
                 "pinyin": "kǎnfá",
                 "meaning_vi": "chặt phá cây rừng",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "0791b7a5-02ab-40ac-be4c-fb8deea8bed1"
+                "check_needed": false
               },
               {
-                "id": "reading_vocab_04",
+                "id": "3c0b0ba4-7b1d-45c1-a701-b9e5f8ae5928",
                 "hanzi": "沙漠",
                 "pinyin": "shāmò",
                 "meaning_vi": "sa mạc",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "cf1b68ae-2470-49ec-bb8c-77942d70b33f"
+                "check_needed": false
               }
             ],
             "vi": "Đoạn đọc về môi trường Trái Đất bị phá hoại do phát triển kinh tế, ô nhiễm nước, chặt phá rừng, sa mạc hóa, ô nhiễm không khí và biến đổi khí hậu.",
             "questions": [
               {
-                "id": "reading_01_blank_01",
+                "id": "f947f691-eb21-4ecc-913b-1129cc333dad",
                 "prompt": "Blank 1",
                 "source_origin": "textbook_question_generated_answer",
                 "answer_verified": true,
                 "check_needed": false,
                 "explanation_vi": "",
-                "answer": "为了",
-                "uuid": "ae2e99f2-7fce-42b6-b90f-f96e2c78f637"
+                "answer": "为了"
               },
               {
-                "id": "reading_01_blank_02",
+                "id": "0b220fac-0bf5-42fd-babe-e65263e68779",
                 "prompt": "Blank 2",
                 "source_origin": "textbook_question_generated_answer",
                 "answer_verified": true,
                 "check_needed": false,
                 "explanation_vi": "",
-                "answer": "的",
-                "uuid": "4bb43067-b21e-44e7-bd64-237fc4eaa80b"
+                "answer": "的"
               },
               {
-                "id": "reading_01_blank_03",
+                "id": "f8b49491-aa35-4b0a-92b9-149028558d9d",
                 "prompt": "Blank 3",
                 "source_origin": "textbook_question_generated_answer",
                 "answer_verified": true,
                 "check_needed": false,
                 "explanation_vi": "",
-                "answer": "连",
-                "uuid": "3b847031-f498-4ecf-b3ec-9d76a01f598f"
+                "answer": "连"
               },
               {
-                "id": "reading_01_blank_04",
+                "id": "b56e0cbe-ff73-4242-bb38-406995b1e4a5",
                 "prompt": "Blank 4",
                 "source_origin": "textbook_question_generated_answer",
                 "answer_verified": true,
                 "check_needed": false,
                 "explanation_vi": "",
-                "answer": "把",
-                "uuid": "413bba74-fd50-465b-813d-438a0ef60f70"
+                "answer": "把"
               },
               {
-                "id": "reading_01_blank_05",
+                "id": "b0b9f00c-8733-4e21-a614-8cea604d638d",
                 "prompt": "Blank 5",
                 "source_origin": "textbook_question_generated_answer",
                 "answer_verified": true,
                 "check_needed": false,
                 "explanation_vi": "",
-                "answer": "到",
-                "uuid": "98229895-b767-43c3-bb56-665294e37fa4"
+                "answer": "到"
               },
               {
-                "id": "reading_01_blank_06",
+                "id": "dd0ccf31-756f-49b8-86b7-095bc68a2567",
                 "prompt": "Blank 6",
                 "source_origin": "textbook_question_generated_answer",
                 "answer_verified": true,
                 "check_needed": false,
                 "explanation_vi": "",
-                "answer": "成",
-                "uuid": "ac8bbb12-1f61-4116-b3af-062b8e1a70a9"
+                "answer": "成"
               },
               {
-                "id": "reading_01_blank_07",
+                "id": "f3c59e19-bc2d-4045-b93a-df6f0bea2e93",
                 "prompt": "Blank 7",
                 "source_origin": "textbook_question_generated_answer",
                 "answer_verified": true,
                 "check_needed": false,
                 "explanation_vi": "",
-                "answer": "多",
-                "uuid": "c2e3ca22-6dfa-4d06-98e4-e10866349c0d"
+                "answer": "多"
               },
               {
-                "id": "reading_01_blank_08",
+                "id": "8e1c2d97-f329-49c9-8438-58aebed03d9b",
                 "prompt": "Blank 8",
                 "source_origin": "textbook_question_generated_answer",
                 "answer_verified": true,
                 "check_needed": false,
                 "explanation_vi": "",
-                "answer": "使",
-                "uuid": "3702408c-f141-4e51-bad5-59e2318f051c"
+                "answer": "使"
               },
               {
-                "id": "reading_01_blank_09",
+                "id": "79309c87-6c7d-4fae-940f-982e99c028d8",
                 "prompt": "Blank 9",
                 "source_origin": "textbook_question_generated_answer",
                 "answer_verified": true,
                 "check_needed": false,
                 "explanation_vi": "",
-                "answer": "出",
-                "uuid": "d9c63c16-71ae-42f7-8c73-576fe402720b"
+                "answer": "出"
               },
               {
-                "id": "reading_01_blank_10",
+                "id": "31f677e5-28a5-42b8-a1c0-e141275731f9",
                 "prompt": "Blank 10",
                 "source_origin": "textbook_question_generated_answer",
                 "answer_verified": true,
                 "check_needed": false,
                 "explanation_vi": "",
-                "answer": "了",
-                "uuid": "6457c6d6-958d-49dc-b419-397f9b87f49f"
+                "answer": "了"
               },
               {
-                "id": "reading_01_blank_11",
+                "id": "0ef35202-35c0-46a3-8c42-eb1caf3cca09",
                 "prompt": "Blank 11",
                 "source_origin": "textbook_question_generated_answer",
                 "answer_verified": true,
                 "check_needed": false,
                 "explanation_vi": "",
-                "answer": "去",
-                "uuid": "d7eac796-9d73-41fa-9142-15743818de45"
+                "answer": "去"
               },
               {
-                "id": "reading_01_blank_12",
+                "id": "cffc5072-c697-400e-a1bc-ea829d7e7629",
                 "prompt": "Blank 12",
                 "source_origin": "textbook_question_generated_answer",
                 "answer_verified": true,
                 "check_needed": false,
                 "explanation_vi": "",
-                "answer": "了",
-                "uuid": "5a9dae95-77c8-4bb3-a96e-c19b1e81c43e"
+                "answer": "了"
               }
             ],
             "answer_key": [
@@ -4910,14 +4591,12 @@
                 "check_needed": false,
                 "answer": "了"
               }
-            ],
-            "uuid": "947a247b-e9f3-4976-8f4e-cfdab791178a"
+            ]
           }
-        ],
-        "uuid": "7b421e0a-d6fa-45db-8a43-75d1e40e2bd8"
+        ]
       },
       {
-        "id": "section_08_communication",
+        "id": "bf79ed98-ebbe-47bb-ab7e-ed968dcf1861",
         "type": "communication",
         "order": 8,
         "title": "交际会话",
@@ -4926,7 +4605,7 @@
         "check_needed": false,
         "items": [
           {
-            "id": "communication_01",
+            "id": "d47481cc-fd2a-4991-ac01-d4168b47f7e0",
             "type": "communication_dialogue",
             "variant": "discuss_environmental_problems",
             "order": 1,
@@ -4982,14 +4661,12 @@
               }
             ],
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "4b64cb8e-012a-4b5a-a0c6-b99dd0380cee"
+            "check_needed": false
           }
-        ],
-        "uuid": "439e2a58-ddc4-4cfd-82bb-3f6de43fae84"
+        ]
       },
       {
-        "id": "section_09_character_writing",
+        "id": "e71f4398-291c-4f48-8aa7-f93e825f4d42",
         "type": "character_writing",
         "order": 9,
         "title": "写汉字",
@@ -4997,8 +4674,7 @@
         "source_origin": "textbook",
         "check_needed": false,
         "items": [],
-        "empty_reason_vi": "Bài này không thấy phần 写汉字 riêng trong PDF.",
-        "uuid": "80ae33cf-5069-4ac0-b773-e26829fb537c"
+        "empty_reason_vi": "Bài này không thấy phần 写汉字 riêng trong PDF."
       }
     ],
     "summary": {
@@ -5015,66 +4691,58 @@
       ],
       "grammar_points": [
         {
-          "id": "grammar_01",
-          "title": "可能",
-          "uuid": "a9cf04f1-8a0d-4e98-b59f-bfb1a2fbbc1d"
+          "id": "f8ec59f3-898a-47b2-b536-44dfd8183393",
+          "title": "可能"
         },
         {
-          "id": "grammar_02",
-          "title": "究竟",
-          "uuid": "b16df5c8-9de8-4d06-871f-1f638f5bd817"
+          "id": "57b14753-688a-41b6-9e0d-b61dbbf574d7",
+          "title": "究竟"
         },
         {
-          "id": "grammar_03",
-          "title": "充满",
-          "uuid": "1e26f48b-9a64-4a01-806a-d964cbd23685"
+          "id": "fa804fff-372b-4874-8571-f54e613d7e07",
+          "title": "充满"
         },
         {
-          "id": "grammar_04",
-          "title": "其他",
-          "uuid": "04399cbd-04d9-46bd-8a37-6f11b1f3ca8f"
+          "id": "c6cd6c38-22fc-4546-a398-39efe02d6c17",
+          "title": "其他"
         },
         {
-          "id": "grammar_05",
-          "title": "不可思议",
-          "uuid": "19c99df5-b473-4739-b321-8534328c569a"
+          "id": "c3d31639-0f40-4b2f-aa50-5dda9d443b78",
+          "title": "不可思议"
         },
         {
-          "id": "grammar_06",
-          "title": "沿 / 沿着",
-          "uuid": "b6dce1d1-aa99-49d2-8c82-34f7a73f3a17"
+          "id": "b0c8e101-1500-4742-9064-1e102a0eb8b9",
+          "title": "沿 / 沿着"
         },
         {
-          "id": "grammar_07",
-          "title": "毫无 / 毫不",
-          "uuid": "83d3b96a-ca36-4fb4-b5ac-fb0bc15cd742"
+          "id": "f3302370-f1c2-4d08-99ba-fda75cc4a335",
+          "title": "毫无 / 毫不"
         },
         {
-          "id": "grammar_08",
-          "title": "意味着",
-          "uuid": "b21fa8ba-8ac2-419e-8bb7-4aca22757cb2"
+          "id": "b7073860-473c-4cb7-82ba-943917998455",
+          "title": "意味着"
         }
       ],
       "main_patterns": [
         {
           "pattern": "有可能 + V / 句子",
-          "grammar_ref": "grammar_01"
+          "grammar_ref": "f8ec59f3-898a-47b2-b536-44dfd8183393"
         },
         {
           "pattern": "究竟 + 能否 / 是不是 / 有没有...?",
-          "grammar_ref": "grammar_02"
+          "grammar_ref": "57b14753-688a-41b6-9e0d-b61dbbf574d7"
         },
         {
           "pattern": "A 中充满 B",
-          "grammar_ref": "grammar_03"
+          "grammar_ref": "fa804fff-372b-4874-8571-f54e613d7e07"
         },
         {
           "pattern": "A 意味着 B",
-          "grammar_ref": "grammar_08"
+          "grammar_ref": "b7073860-473c-4cb7-82ba-943917998455"
         },
         {
           "pattern": "只要……就……",
-          "grammar_ref": "text_01_p14"
+          "grammar_ref": "b0532a8b-4236-447d-b3d9-6844511a5b14"
         }
       ],
       "exercise_types": [
@@ -5095,319 +4763,39 @@
       },
       "check_needed": false
     },
-    "uuid": "16103e41-30e9-465a-b990-31a907ca2089"
-  },
-  "coverage_report": {
-    "version": "coverage_v2.3.0",
-    "coverage_status": "complete_verified",
-    "section_coverage": [
-      {
-        "section_type": "text",
-        "expected": true,
-        "present": true,
-        "item_count_expected": 1,
-        "item_count_actual": 1,
-        "content_verified": true,
-        "check_needed": false,
-        "note": "课文 covered."
-      },
-      {
-        "section_type": "vocabulary",
-        "expected": true,
-        "present": true,
-        "item_count_expected": 65,
-        "item_count_actual": 65,
-        "content_verified": true,
-        "check_needed": false,
-        "note": "生词 table covered; includes helper subentries 科学 and 招待."
-      },
-      {
-        "section_type": "proper_nouns",
-        "expected": true,
-        "present": true,
-        "item_count_expected": 1,
-        "item_count_actual": 1,
-        "content_verified": true,
-        "check_needed": false,
-        "note": "专名 天壶."
-      },
-      {
-        "section_type": "notes",
-        "expected": true,
-        "present": true,
-        "item_count_expected": 2,
-        "item_count_actual": 2,
-        "content_verified": true,
-        "check_needed": false,
-        "note": "注释 covered."
-      },
-      {
-        "section_type": "grammar",
-        "expected": true,
-        "present": true,
-        "item_count_expected": 8,
-        "item_count_actual": 8,
-        "content_verified": true,
-        "check_needed": false,
-        "note": "词语用法 covered."
-      },
-      {
-        "section_type": "exercises",
-        "expected": true,
-        "present": true,
-        "item_count_expected": 10,
-        "item_count_actual": 10,
-        "content_verified": true,
-        "check_needed": false,
-        "note": "五、练习 10/10 covered."
-      },
-      {
-        "section_type": "reading",
-        "expected": true,
-        "present": true,
-        "item_count_expected": 1,
-        "item_count_actual": 1,
-        "content_verified": true,
-        "check_needed": false,
-        "note": "综合填空 represented as exercise_09 and reading item."
-      },
-      {
-        "section_type": "communication",
-        "expected": true,
-        "present": true,
-        "item_count_expected": 1,
-        "item_count_actual": 1,
-        "content_verified": true,
-        "check_needed": false,
-        "note": "交际会话 represented as exercise_10 and communication item."
-      },
-      {
-        "section_type": "character_writing",
-        "expected": false,
-        "present": true,
-        "item_count_expected": 0,
-        "item_count_actual": 0,
-        "content_verified": true,
-        "check_needed": false,
-        "note": "PDF lesson has no separate 写汉字 section; empty section preserved."
-      }
-    ],
-    "expected_units_from_pdf": [],
-    "expected_exercise_count_from_pdf": 10,
-    "actual_exercise_count_in_json": 10,
-    "all_exercises_covered": true,
-    "all_exercise_content_verified": true,
-    "missing_exercise_indexes": [],
-    "expected_exercises_from_pdf": [
-      {
-        "order": 1,
-        "title_cn": "一、语音",
-        "title_vi": "Ngữ âm",
-        "canonical_type": "exercise",
-        "canonical_variant": "pronunciation_tone_minimal_pairs",
-        "json_item_id": "exercise_01",
-        "page_start": 43,
-        "page_end": 47,
-        "extracted": true,
-        "content_verified": true,
-        "answer_verified": true,
-        "source_origin": "textbook",
-        "check_needed": false,
-        "missing_reason": ""
-      },
-      {
-        "order": 2,
-        "title_cn": "二、词语",
-        "title_vi": "Từ/cụm từ",
-        "canonical_type": "exercise",
-        "canonical_variant": "word_phrase_sentence_chunks",
-        "json_item_id": "exercise_02",
-        "page_start": 43,
-        "page_end": 47,
-        "extracted": true,
-        "content_verified": true,
-        "answer_verified": true,
-        "source_origin": "textbook",
-        "check_needed": false,
-        "missing_reason": ""
-      },
-      {
-        "order": 3,
-        "title_cn": "三、选词填空",
-        "title_vi": "Chọn từ điền chỗ trống",
-        "canonical_type": "exercise",
-        "canonical_variant": "word_bank_fill_blank",
-        "json_item_id": "exercise_03",
-        "page_start": 43,
-        "page_end": 47,
-        "extracted": true,
-        "content_verified": true,
-        "answer_verified": true,
-        "source_origin": "textbook",
-        "check_needed": false,
-        "missing_reason": ""
-      },
-      {
-        "order": 4,
-        "title_cn": "四、用括号里的词语完成句子",
-        "title_vi": "Hoàn thành câu",
-        "canonical_type": "exercise",
-        "canonical_variant": "complete_sentence_with_given_words",
-        "json_item_id": "exercise_04",
-        "page_start": 43,
-        "page_end": 47,
-        "extracted": true,
-        "content_verified": true,
-        "answer_verified": false,
-        "source_origin": "textbook",
-        "check_needed": false,
-        "missing_reason": ""
-      },
-      {
-        "order": 5,
-        "title_cn": "五、用括号里的词语完成会话",
-        "title_vi": "Hoàn thành hội thoại",
-        "canonical_type": "exercise",
-        "canonical_variant": "complete_dialogue",
-        "json_item_id": "exercise_05",
-        "page_start": 43,
-        "page_end": 47,
-        "extracted": true,
-        "content_verified": true,
-        "answer_verified": false,
-        "source_origin": "textbook",
-        "check_needed": false,
-        "missing_reason": ""
-      },
-      {
-        "order": 6,
-        "title_cn": "六、连句成段",
-        "title_vi": "Sắp xếp câu thành đoạn",
-        "canonical_type": "exercise",
-        "canonical_variant": "reorder_sentences_or_paragraph",
-        "json_item_id": "exercise_06",
-        "page_start": 43,
-        "page_end": 47,
-        "extracted": true,
-        "content_verified": true,
-        "answer_verified": true,
-        "source_origin": "textbook",
-        "check_needed": false,
-        "missing_reason": ""
-      },
-      {
-        "order": 7,
-        "title_cn": "七、改错句",
-        "title_vi": "Sửa câu sai",
-        "canonical_type": "exercise",
-        "canonical_variant": "error_correction",
-        "json_item_id": "exercise_07",
-        "page_start": 43,
-        "page_end": 47,
-        "extracted": true,
-        "content_verified": true,
-        "answer_verified": false,
-        "source_origin": "textbook",
-        "check_needed": false,
-        "missing_reason": ""
-      },
-      {
-        "order": 8,
-        "title_cn": "八、情景表达",
-        "title_vi": "Diễn đạt theo tình huống",
-        "canonical_type": "exercise",
-        "canonical_variant": "custom_textbook_task",
-        "json_item_id": "exercise_08",
-        "page_start": 43,
-        "page_end": 47,
-        "extracted": true,
-        "content_verified": true,
-        "answer_verified": false,
-        "source_origin": "textbook",
-        "check_needed": false,
-        "missing_reason": ""
-      },
-      {
-        "order": 9,
-        "title_cn": "九、综合填空",
-        "title_vi": "Điền khuyết tổng hợp",
-        "canonical_type": "exercise",
-        "canonical_variant": "reading_cloze",
-        "json_item_id": "exercise_09",
-        "page_start": 48,
-        "page_end": 49,
-        "extracted": true,
-        "content_verified": true,
-        "answer_verified": true,
-        "source_origin": "textbook",
-        "check_needed": false,
-        "missing_reason": ""
-      },
-      {
-        "order": 10,
-        "title_cn": "十、交际会话",
-        "title_vi": "Hội thoại giao tiếp",
-        "canonical_type": "exercise",
-        "canonical_variant": "role_play",
-        "json_item_id": "exercise_10",
-        "page_start": 48,
-        "page_end": 49,
-        "extracted": true,
-        "content_verified": true,
-        "answer_verified": true,
-        "source_origin": "textbook",
-        "check_needed": false,
-        "missing_reason": ""
-      }
-    ],
-    "unknown_or_unmapped_blocks": [],
-    "coverage_gates": [
-      {
-        "id": "gate_sections_present",
-        "label": "All expected sections represented",
-        "passed": true,
-        "expected": "课文/生词/专名/注释/词语用法/练习/综合填空/交际会话",
-        "actual": "all represented; 写汉字 preserved empty",
-        "reason": "",
-        "uuid": "a21e6424-517d-4b1f-976e-e0ba96fcb53b"
-      },
-      {
-        "id": "gate_exercise_count",
-        "label": "Exercise count matches PDF",
-        "passed": true,
-        "expected": 10,
-        "actual": 10,
-        "reason": "",
-        "uuid": "031f2224-76b4-4e4c-b1d1-a823213c20cd"
-      },
-      {
-        "id": "gate_unknown_blocks",
-        "label": "No unresolved unknown blocks",
-        "passed": true,
-        "expected": 0,
-        "actual": 0,
-        "reason": "",
-        "uuid": "bb53c2cc-3f05-4809-a822-14a099cb7017"
-      }
-    ],
-    "final_verification_allowed": true
-  },
-  "fix_history": [
-    {
-      "date": "2026-06-02",
-      "action": "Generated JSON after Markdown PART 01-06 verification.",
-      "note": "Set verification_status=verified; coverage_report complete_verified; final verification allowed but not claiming final_verified in root status."
+    "metadata": {
+      "legacy_id": "hanyu_3_2_lesson_16_jinxingren_yudao_mafan",
+      "book": "Hanyu Jiaocheng",
+      "volume": "第三册下",
+      "volume_vi": "Quyển 3 Hạ",
+      "lesson_index": 16,
+      "lesson_number_cn": "第十六课",
+      "lesson_title_cn": "金星人遇到麻烦",
+      "lesson_title_pinyin": "Jīnxīng rén yùdào máfan",
+      "lesson_title_vi": "Người sao Kim gặp rắc rối",
+      "lesson_title_en": "The Venusians are having a trouble",
+      "source_files": [
+        {
+          "name": "Hanyu Jiaocheng 3-2.pdf",
+          "type": "pdf_scan",
+          "source_origin": "textbook",
+          "check_needed": false,
+          "page_start": 33,
+          "page_end": 49
+        },
+        {
+          "name": "Đã dán markdown (1).md",
+          "type": "user_instruction",
+          "source_origin": "uploaded_crosscheck",
+          "check_needed": false
+        },
+        {
+          "name": "hanyuLesson.schema.v2.3.0.full.ts",
+          "type": "schema",
+          "source_origin": "uploaded_crosscheck",
+          "check_needed": false
+        }
+      ]
     }
-  ],
-  "verification_report": {
-    "validated_by_script": true,
-    "checks": [
-      "JSON syntax valid",
-      "exercise count 10/10",
-      "coverage expected exercise IDs match exercise items",
-      "required sections present",
-      "no unresolved unknown_or_unmapped_blocks"
-    ],
-    "web_crosscheck_note": "MandarinAi lesson page used only as secondary cross-check for title/text identity; PDF scan remains source of truth."
   }
 }

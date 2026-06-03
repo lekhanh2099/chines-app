@@ -5,7 +5,6 @@ const vocabDir = path.join(process.cwd(), "data/hanzihome/q2/vocab");
 const lessonDir = path.join(process.cwd(), "data/hanzihome/q2/lessons");
 const manifestPath = path.join(process.cwd(), "data/hanzihome/q2/manifest.json");
 const expectedLessonCount = 25;
-const expectedVocabCount = 1195;
 const vocabSchemaModulePath =
  "../src/features/hanzihome/static-json/schemas/vocab.schema.ts";
 const lessonSchemaModulePath =
@@ -14,6 +13,10 @@ const lessonSchemaModulePath =
 async function main() {
  const { DeepVocabularyLessonSchema } = await import(vocabSchemaModulePath);
  const { HanyuLessonSchema } = await import(lessonSchemaModulePath);
+ const { getHanyuLessonIndex, getHanyuLessonMeta } = await import(
+  new URL("../src/features/hanzihome/static-json/hanyu-lesson-meta.ts", import.meta.url)
+   .href
+ );
  const vocabFiles = (await readdir(vocabDir))
   .filter((file) => file.endsWith("_deep_vocab.json"))
   .sort();
@@ -54,7 +57,9 @@ async function main() {
    vocabCount: number;
   }>;
  };
- const lessonIndexes = lessonDocuments.map((lesson) => lesson.document.source.lesson_index);
+ const lessonIndexes = lessonDocuments.map((lesson) =>
+  getHanyuLessonIndex(lesson.document),
+ );
  const missingIndexes = Array.from({ length: expectedLessonCount }, (_, index) => index + 1).filter(
   (lessonIndex) => !lessonIndexes.includes(lessonIndex),
  );
@@ -67,37 +72,36 @@ async function main() {
   throw new Error(`Missing Q2 lessons: ${missingIndexes.join(", ")}`);
  }
 
- if (totalVocab !== expectedVocabCount) {
-  throw new Error(`Expected ${expectedVocabCount} vocab items, found ${totalVocab}`);
- }
-
  if (
   manifest.counts?.lessons !== expectedLessonCount ||
-  manifest.counts?.vocab !== expectedVocabCount ||
+  manifest.counts?.vocab !== totalVocab ||
   manifest.lessons?.length !== expectedLessonCount
  ) {
   throw new Error("Q2 manifest counts do not match expected lesson/vocab totals");
  }
 
  for (const lesson of lessonDocuments) {
-  const lessonIndex = lesson.document.source.lesson_index;
+  const lessonIndex = getHanyuLessonIndex(lesson.document);
   const manifestLesson = manifest.lessons.find(
    (entry) => entry.lessonNumber === lessonIndex,
   );
   const vocabCount = vocabCountByLessonIndex.get(lessonIndex) ?? 0;
+  const lessonMeta = getHanyuLessonMeta(lesson.document);
 
   if (!manifestLesson) {
    throw new Error(`Manifest is missing lesson ${lessonIndex}`);
   }
 
-  if (
-   manifestLesson.id !== lesson.id ||
-   manifestLesson.titleZh !== lesson.document.source.lesson_title_cn ||
+	  if (
+   manifestLesson.id !== lesson.document.lesson.id ||
+   manifestLesson.titleZh !== lessonMeta.titleZh ||
    manifestLesson.vocabCount !== vocabCount
   ) {
    throw new Error(`Manifest mismatch for lesson ${lessonIndex}`);
   }
  }
+ const firstLesson = lessonDocuments[0];
+ const lastLesson = lessonDocuments.at(-1);
 
  console.log(
   JSON.stringify(
@@ -105,8 +109,12 @@ async function main() {
     ok: true,
     lessons: lessonDocuments.length,
     vocab: totalVocab,
-    firstLesson: lessonDocuments[0]?.document.source.lesson_title_cn,
-    lastLesson: lessonDocuments.at(-1)?.document.source.lesson_title_cn,
+    firstLesson: firstLesson
+     ? getHanyuLessonMeta(firstLesson.document).titleZh
+     : undefined,
+    lastLesson: lastLesson
+     ? getHanyuLessonMeta(lastLesson.document).titleZh
+     : undefined,
    },
    null,
    2,

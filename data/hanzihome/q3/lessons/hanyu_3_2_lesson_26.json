@@ -1,0 +1,4584 @@
+{
+  "lesson": {
+    "id": "28effd86-e279-4464-bd26-3d3bc10bc6ed",
+    "title": {
+      "zh": "梁山伯与祝英台",
+      "pinyin": "Liáng Shānbó yǔ Zhù Yīngtái",
+      "vi": "Lương Sơn Bá và Chúc Anh Đài",
+      "en": "The butterfly lovers"
+    },
+    "tags": [
+      "hanyu_jiaocheng",
+      "book_3b",
+      "lesson_26",
+      "coverage_first"
+    ],
+    "sections": [
+      {
+        "id": "a6c0d522-99be-4f36-881c-b9b2c6beeb85",
+        "type": "text",
+        "order": 1,
+        "title": "课文",
+        "title_vi": "Bài khóa",
+        "source_origin": "textbook",
+        "check_needed": false,
+        "blocks": [
+          {
+            "id": "7bb17baa-96d2-4a1c-b51b-85df82e42125",
+            "type": "text_narrative",
+            "order": 1,
+            "title": "（一）结拜",
+            "title_vi": "Kết nghĩa",
+            "source_origin": "textbook",
+            "page_start": 211,
+            "page_end": 212,
+            "check_needed": false,
+            "paragraphs": [
+              {
+                "id": "43338a2c-2044-419e-9fdd-ed1739757a8d",
+                "order": 1,
+                "zh": "梁山伯与祝英台的故事在中国家喻户晓。",
+                "pinyin": "",
+                "vi": "Câu chuyện Lương Sơn Bá và Chúc Anh Đài ở Trung Quốc ai ai cũng biết.",
+                "audio_key": "",
+                "vocab_refs": [],
+                "grammar_refs": [],
+                "source_origin": "textbook",
+                "page_start": 211,
+                "page_end": 211,
+                "check_needed": false
+              },
+              {
+                "id": "4a807389-3592-4cf4-973f-6589e0118fb2",
+                "order": 2,
+                "zh": "古时候，祝家有个女儿叫祝英台，小名九妹，不仅长得美丽，而且聪明好学。由于那时候女人不能上学读书，所以祝英台常常站在窗前，望着大街上背着书包来来往往的读书人，心里非常羡慕。难道女人只能在家里绣花吗？为什么我不能去上学？想到这儿，祝英台来到父母的房间，对父母说：“爸，妈，我也要到杭州去读书。我可以女扮男装，一定不让别人看出来，你们就答应我吧。”开始，她父母不同意，但经不住女儿苦苦哀求，就只好答应了。",
+                "pinyin": "",
+                "vi": "Thời xưa, nhà họ Chúc có cô con gái tên Chúc Anh Đài, tên ở nhà là Cửu Muội, không chỉ xinh đẹp mà còn thông minh hiếu học. Vì lúc đó phụ nữ không thể đi học, nàng thường đứng bên cửa sổ nhìn người đọc sách qua lại trên phố mà rất ngưỡng mộ. Nàng xin cha mẹ cho đến Hàng Châu học và hứa cải trang thành nam. Ban đầu cha mẹ không đồng ý, nhưng không chịu nổi sự năn nỉ khẩn khoản nên đành chấp thuận.",
+                "audio_key": "",
+                "vocab_refs": [],
+                "grammar_refs": [
+                  "d5eaf408-514c-4987-b142-668f43d140be"
+                ],
+                "source_origin": "textbook",
+                "page_start": 211,
+                "page_end": 211,
+                "check_needed": false
+              },
+              {
+                "id": "5a221404-05e7-4ae2-ad9f-0c920a73dc36",
+                "order": 3,
+                "zh": "这样祝英台就女扮男装，高高兴兴地来到了杭州万松书院。到学校的第一天，祝英台就认识了一个叫梁山伯的男生，他学问出众，人品优秀。祝英台想：这么好的人，要是能天天和他在一起，一定会非常开心。而梁山伯也对祝英台有一种一见如故的感觉。从此，两人学习上互相帮助，生活上互相关心。后来，他们结拜为兄弟。",
+                "pinyin": "",
+                "vi": "Vậy là Chúc Anh Đài cải trang thành nam, vui vẻ đến Vạn Tùng Thư Viện ở Hàng Châu. Ngày đầu tiên nàng quen nam sinh tên Lương Sơn Bá, người học vấn xuất chúng, nhân phẩm tốt. Hai người giúp nhau học tập, quan tâm nhau trong đời sống, rồi kết nghĩa làm anh em.",
+                "audio_key": "",
+                "vocab_refs": [],
+                "grammar_refs": [
+                  "a8720887-db26-4d49-b41f-8a6d646a791d"
+                ],
+                "source_origin": "textbook",
+                "page_start": 211,
+                "page_end": 211,
+                "check_needed": false
+              }
+            ],
+            "comprehension_questions": []
+          },
+          {
+            "id": "c85956fd-28db-486e-b2a0-86c9b7f5048a",
+            "type": "text_narrative",
+            "order": 2,
+            "title": "（二）送别",
+            "title_vi": "Tiễn biệt",
+            "source_origin": "textbook",
+            "page_start": 212,
+            "page_end": 212,
+            "check_needed": false,
+            "paragraphs": [
+              {
+                "id": "99e63fca-bad7-4aff-8eba-621a119e5a19",
+                "order": 1,
+                "zh": "一转眼三年过去了。三年间，他们俩一起读书，互相帮助，结下了深厚的情谊。祝英台早已爱上了梁山伯，而山伯始终不知道英台是女孩子。",
+                "pinyin": "",
+                "vi": "Chớp mắt ba năm trôi qua. Ba năm đó họ cùng học, giúp đỡ nhau và kết nên tình nghĩa sâu đậm. Chúc Anh Đài từ lâu đã yêu Lương Sơn Bá, nhưng Sơn Bá từ đầu đến cuối vẫn không biết Anh Đài là con gái.",
+                "audio_key": "",
+                "vocab_refs": [],
+                "grammar_refs": [
+                  "28ce5846-ff50-47d0-927a-dd6a1699d21a"
+                ],
+                "source_origin": "textbook",
+                "page_start": 212,
+                "page_end": 212,
+                "check_needed": false
+              },
+              {
+                "id": "07e24203-eb21-4c88-96af-29e78d8ca2a2",
+                "order": 2,
+                "zh": "有一天，英台突然接到家里来的一封信，要她赶快回家。可是她不愿意离开山伯，又不便对山伯说，只好向师母说出了自己的心思，并把一个白玉手镯作为爱情的信物交给师母，拜托师母转交给梁山伯。英台要走了，梁山伯给她送行。一路上英台多次暗示山伯，自己是个女孩子，表达对山伯恋恋不舍的感情，但山伯始终没有听出来。山伯一直把英台送出十八里。分别时，英台说，她家有一个小九妹，又聪明又美丽，如果山伯愿意，她可以给山伯做媒，希望山伯能早日来祝家相亲。",
+                "pinyin": "",
+                "vi": "Một hôm Anh Đài nhận thư nhà bảo về gấp. Nàng không muốn rời Sơn Bá, lại không tiện nói rõ, nên nói tâm tư với sư mẫu, giao vòng bạch ngọc làm tín vật tình yêu nhờ chuyển cho Sơn Bá. Trên đường Sơn Bá tiễn, Anh Đài nhiều lần ám chỉ mình là con gái và bày tỏ sự lưu luyến, nhưng Sơn Bá vẫn không hiểu. Chàng tiễn nàng mười tám dặm; lúc chia tay, nàng nói có một Cửu Muội thông minh xinh đẹp và có thể làm mai cho chàng.",
+                "audio_key": "",
+                "vocab_refs": [],
+                "grammar_refs": [
+                  "28ce5846-ff50-47d0-927a-dd6a1699d21a",
+                  "a9bc0f78-52c9-4ca7-b62e-d1d8343543ae"
+                ],
+                "source_origin": "textbook",
+                "page_start": 212,
+                "page_end": 212,
+                "check_needed": false
+              }
+            ],
+            "comprehension_questions": []
+          },
+          {
+            "id": "91ae7ef3-6f7c-41e8-b8d1-b079edad85f7",
+            "type": "text_narrative",
+            "order": 3,
+            "title": "（三）相会",
+            "title_vi": "Gặp lại",
+            "source_origin": "textbook",
+            "page_start": 213,
+            "page_end": 213,
+            "check_needed": false,
+            "paragraphs": [
+              {
+                "id": "84deecb3-9d2f-428c-bc0e-a3c52ed1477d",
+                "order": 1,
+                "zh": "山伯从师母那里得到英台赠送给他的白玉镯，才恍然大悟。原来，与自己一起生活了三年的同学竟是个姑娘，英台所说的小九妹就是她自己。于是，山伯急忙赶到祝家庄去见英台。到了祝家庄，他才知道，英台父亲写信要她回家，是要把她嫁给一个大官的儿子马文才。祝英台当然不愿意，并与梁山伯在楼台上相会，向山伯表明了自己的爱情。",
+                "pinyin": "",
+                "vi": "Sơn Bá nhận được chiếc vòng bạch ngọc từ sư mẫu mới chợt hiểu ra: người bạn cùng sống ba năm với mình hóa ra là cô gái, Cửu Muội chính là nàng. Chàng vội đến Chúc Gia Trang, mới biết cha nàng gọi về để gả cho Mã Văn Tài. Chúc Anh Đài không muốn, gặp Sơn Bá trên lầu và bày tỏ tình yêu.",
+                "audio_key": "",
+                "vocab_refs": [],
+                "grammar_refs": [
+                  "a9bc0f78-52c9-4ca7-b62e-d1d8343543ae"
+                ],
+                "source_origin": "textbook",
+                "page_start": 213,
+                "page_end": 213,
+                "check_needed": false
+              }
+            ],
+            "comprehension_questions": []
+          },
+          {
+            "id": "a023e471-3886-45d8-a652-cee8a139c742",
+            "type": "text_narrative",
+            "order": 4,
+            "title": "（四）化蝶",
+            "title_vi": "Hóa bướm",
+            "source_origin": "textbook",
+            "page_start": 213,
+            "page_end": 214,
+            "check_needed": false,
+            "paragraphs": [
+              {
+                "id": "919f0189-9f84-4168-aee2-37254e356348",
+                "order": 1,
+                "zh": "山伯请人到祝家去求婚。可英台的父亲认为梁家太穷，不同意女儿嫁给山伯，非逼英台嫁给马文才不可。山伯觉得没有了希望，回家后得了一场大病，不久就死了。",
+                "pinyin": "",
+                "vi": "Sơn Bá nhờ người đến nhà họ Chúc cầu hôn. Nhưng cha Anh Đài cho rằng nhà họ Lương quá nghèo, không đồng ý cho con gái lấy Sơn Bá, nhất định ép nàng gả cho Mã Văn Tài. Sơn Bá thấy không còn hy vọng, về nhà bệnh nặng rồi qua đời.",
+                "audio_key": "",
+                "vocab_refs": [],
+                "grammar_refs": [],
+                "source_origin": "textbook",
+                "page_start": 213,
+                "page_end": 213,
+                "check_needed": false
+              },
+              {
+                "id": "2fa39b34-744a-4e61-870d-0888f40e57cd",
+                "order": 2,
+                "zh": "英台听到山伯去世的消息，请求到梁家去吊孝。但她父亲坚决不答应。后来，马家前来接新娘，英台要求迎亲的花轿一定要路过梁山伯的坟墓，她要向山伯做最后的告别。不然，宁可死也不进马家的门。她父亲无奈，只好答应。",
+                "pinyin": "",
+                "vi": "Nghe tin Sơn Bá mất, Anh Đài xin đến nhà họ Lương viếng tang nhưng cha nàng kiên quyết không cho. Khi nhà họ Mã đến rước dâu, Anh Đài yêu cầu kiệu hoa phải đi qua mộ Sơn Bá để nàng từ biệt lần cuối; nếu không, nàng thà chết cũng không vào cửa nhà họ Mã. Cha nàng bất lực, đành đồng ý.",
+                "audio_key": "",
+                "vocab_refs": [],
+                "grammar_refs": [
+                  "43a1f72d-1510-4a57-a1fa-0af2b4890023",
+                  "cb4fa491-3ff6-4992-b0d5-5abdd9044560"
+                ],
+                "source_origin": "textbook",
+                "page_start": 213,
+                "page_end": 213,
+                "check_needed": false
+              },
+              {
+                "id": "7042db7b-7669-4d0a-8e29-09ecb0874da8",
+                "order": 3,
+                "zh": "花轿来到了梁山伯的坟墓前。英台从轿上下来，跪在墓前，大声痛哭，一边哭一边诉说自己愿与山伯生死在一起的心愿。这时，突然间，天空乌云翻滚，远处雷声隆隆，刮起了大风，下起了大雨。一声霹雳之后，梁山伯的坟墓一下子裂开了，祝英台向前一跃，跳入墓中，坟墓又立刻合上了。一会儿，乌云散去，雨过天晴，空中出现了一道彩虹，坟墓里飞出一对蝴蝶，翩翩起舞，越飞越高，自由自在地飞翔。从此，梁山伯与祝英台的故事，就在中国代代流传。",
+                "pinyin": "",
+                "vi": "Kiệu hoa đến trước mộ Sơn Bá. Anh Đài xuống kiệu, quỳ trước mộ khóc lớn, vừa khóc vừa giãi bày tâm nguyện sống chết bên Sơn Bá. Bỗng mây đen cuộn, sấm vang, gió mưa nổi lên. Sau một tiếng sét, mộ nứt ra; Anh Đài lao vào, mộ khép lại. Một lát sau mây tan, mưa tạnh trời quang, cầu vồng xuất hiện, từ mộ bay ra một đôi bướm múa lượn, bay cao và tự do. Từ đó câu chuyện Lương Chúc lưu truyền đời đời ở Trung Quốc.",
+                "audio_key": "",
+                "vocab_refs": [],
+                "grammar_refs": [
+                  "a8720887-db26-4d49-b41f-8a6d646a791d"
+                ],
+                "source_origin": "textbook",
+                "page_start": 214,
+                "page_end": 214,
+                "check_needed": false
+              }
+            ],
+            "comprehension_questions": [
+              {
+                "id": "e476d92d-a9d6-42a1-89be-f61d9dbdc130",
+                "question": "祝英台是个什么样的女孩子？她为什么要女扮男装？",
+                "answer": "她美丽、聪明好学。由于那时候女人不能上学读书，所以她女扮男装去杭州读书。",
+                "source_origin": "textbook_question_generated_answer",
+                "answer_verified": false,
+                "check_needed": true
+              },
+              {
+                "id": "3186f811-a0dc-4de4-b669-0d28c52eca7c",
+                "question": "祝英台为什么多次向梁山伯暗示自己是个女孩子？",
+                "answer": "因为她爱梁山伯，不愿意离开他，想让他明白自己的真实身份和感情。",
+                "source_origin": "textbook_question_generated_answer",
+                "answer_verified": false,
+                "check_needed": true
+              },
+              {
+                "id": "6409a791-f0ad-40a7-ba94-dbbb6c99c11b",
+                "question": "梁山伯是怎么知道祝英台是个姑娘的？知道以后他去祝家做什么？",
+                "answer": "他从师母那里得到英台赠送的白玉手镯后恍然大悟。知道以后，他赶到祝家庄去见英台并求婚。",
+                "source_origin": "textbook_question_generated_answer",
+                "answer_verified": false,
+                "check_needed": true
+              },
+              {
+                "id": "5621a739-7c80-47f1-80f8-de3f39c3c58f",
+                "question": "梁山伯为什么觉得没有了希望？",
+                "answer": "因为祝英台的父亲嫌梁家太穷，不同意英台嫁给山伯，非逼她嫁给马文才不可。",
+                "source_origin": "textbook_question_generated_answer",
+                "answer_verified": false,
+                "check_needed": true
+              },
+              {
+                "id": "e87a4513-cc58-4a84-806c-7903e671a7f3",
+                "question": "祝英台为什么要求花轿从梁山伯坟墓前经过？",
+                "answer": "因为她要向梁山伯做最后的告别。",
+                "source_origin": "textbook_question_generated_answer",
+                "answer_verified": false,
+                "check_needed": true
+              },
+              {
+                "id": "bd63d228-3392-4ba6-86ac-06b7d05ef081",
+                "question": "花轿到了梁山伯坟墓前，发生了什么事情？",
+                "answer": "祝英台在墓前痛哭，后来风雨大作，坟墓裂开，她跳入墓中，最后两人化为蝴蝶。",
+                "source_origin": "textbook_question_generated_answer",
+                "answer_verified": false,
+                "check_needed": true
+              },
+              {
+                "id": "4282b5e3-6deb-4150-bd1f-ef416c97229d",
+                "question": "用你自己的话讲一讲这个故事。",
+                "answer": "开放题。可按女扮男装、结拜、送别、相会、求婚失败、化蝶的顺序复述。",
+                "source_origin": "textbook_question_generated_answer",
+                "answer_verified": false,
+                "check_needed": true
+              }
+            ]
+          }
+        ],
+        "comprehension_questions": [
+          {
+            "id": "e476d92d-a9d6-42a1-89be-f61d9dbdc130",
+            "question": "祝英台是个什么样的女孩子？她为什么要女扮男装？",
+            "answer": "她美丽、聪明好学。由于那时候女人不能上学读书，所以她女扮男装去杭州读书。",
+            "source_origin": "textbook_question_generated_answer",
+            "answer_verified": false,
+            "check_needed": true
+          },
+          {
+            "id": "3186f811-a0dc-4de4-b669-0d28c52eca7c",
+            "question": "祝英台为什么多次向梁山伯暗示自己是个女孩子？",
+            "answer": "因为她爱梁山伯，不愿意离开他，想让他明白自己的真实身份和感情。",
+            "source_origin": "textbook_question_generated_answer",
+            "answer_verified": false,
+            "check_needed": true
+          },
+          {
+            "id": "6409a791-f0ad-40a7-ba94-dbbb6c99c11b",
+            "question": "梁山伯是怎么知道祝英台是个姑娘的？知道以后他去祝家做什么？",
+            "answer": "他从师母那里得到英台赠送的白玉手镯后恍然大悟。知道以后，他赶到祝家庄去见英台并求婚。",
+            "source_origin": "textbook_question_generated_answer",
+            "answer_verified": false,
+            "check_needed": true
+          },
+          {
+            "id": "5621a739-7c80-47f1-80f8-de3f39c3c58f",
+            "question": "梁山伯为什么觉得没有了希望？",
+            "answer": "因为祝英台的父亲嫌梁家太穷，不同意英台嫁给山伯，非逼她嫁给马文才不可。",
+            "source_origin": "textbook_question_generated_answer",
+            "answer_verified": false,
+            "check_needed": true
+          },
+          {
+            "id": "e87a4513-cc58-4a84-806c-7903e671a7f3",
+            "question": "祝英台为什么要求花轿从梁山伯坟墓前经过？",
+            "answer": "因为她要向梁山伯做最后的告别。",
+            "source_origin": "textbook_question_generated_answer",
+            "answer_verified": false,
+            "check_needed": true
+          },
+          {
+            "id": "bd63d228-3392-4ba6-86ac-06b7d05ef081",
+            "question": "花轿到了梁山伯坟墓前，发生了什么事情？",
+            "answer": "祝英台在墓前痛哭，后来风雨大作，坟墓裂开，她跳入墓中，最后两人化为蝴蝶。",
+            "source_origin": "textbook_question_generated_answer",
+            "answer_verified": false,
+            "check_needed": true
+          },
+          {
+            "id": "4282b5e3-6deb-4150-bd1f-ef416c97229d",
+            "question": "用你自己的话讲一讲这个故事。",
+            "answer": "开放题。可按女扮男装、结拜、送别、相会、求婚失败、化蝶的顺序复述。",
+            "source_origin": "textbook_question_generated_answer",
+            "answer_verified": false,
+            "check_needed": true
+          }
+        ]
+      },
+      {
+        "id": "78c30bf4-c314-4c4c-86e3-4dd62382dd78",
+        "type": "vocabulary",
+        "order": 2,
+        "title": "生词",
+        "title_vi": "Từ vựng",
+        "source_origin": "textbook",
+        "check_needed": true,
+        "items": [
+          {
+            "id": "68c05a12-9d8e-45d9-a413-786bcf2f780a",
+            "type": "vocabulary_item",
+            "order": 1,
+            "hanzi": "结拜",
+            "pinyin": "jiébài",
+            "meaning_vi": "kết nghĩa anh em",
+            "meaning_en": "to become sworn brothers",
+            "pos": "verb",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "结拜",
+              "back": "jiébài — kết nghĩa anh em",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "page_start": 214,
+            "page_end": 214,
+            "check_needed": false
+          },
+          {
+            "id": "8c18cf3c-e9dc-42e1-8faf-eb26799cabab",
+            "type": "vocabulary_item",
+            "order": 2,
+            "hanzi": "家喻户晓",
+            "pinyin": "jiāyù-hùxiǎo",
+            "meaning_vi": "nhà nhà đều biết; ai ai cũng biết",
+            "meaning_en": "known to every household",
+            "pos": "idiom",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "家喻户晓",
+              "back": "jiāyù-hùxiǎo — nhà nhà đều biết; ai ai cũng biết",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "page_start": 215,
+            "page_end": 215,
+            "check_needed": false
+          },
+          {
+            "id": "1fbd69b7-603a-44ea-8d57-10cd4def9ced",
+            "type": "vocabulary_item",
+            "order": 3,
+            "hanzi": "绣花",
+            "pinyin": "xiù huā",
+            "meaning_vi": "thêu hoa",
+            "meaning_en": "to embroider",
+            "pos": "verb",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "绣花",
+              "back": "xiù huā — thêu hoa",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "page_start": 215,
+            "page_end": 215,
+            "check_needed": false
+          },
+          {
+            "id": "3dc505f1-bc0e-4a96-b448-17fed89fdc60",
+            "type": "vocabulary_item",
+            "order": 4,
+            "hanzi": "女扮男装",
+            "pinyin": "nǚbàn-nánzhuāng",
+            "meaning_vi": "nữ cải trang thành nam",
+            "meaning_en": "a woman disguised as a man",
+            "pos": "phrase",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "女扮男装",
+              "back": "nǚbàn-nánzhuāng — nữ cải trang thành nam",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "page_start": 215,
+            "page_end": 215,
+            "check_needed": false
+          },
+          {
+            "id": "188412d4-4c23-4d60-b7b2-21f3490199e7",
+            "type": "vocabulary_item",
+            "order": 5,
+            "hanzi": "经不住",
+            "pinyin": "jīng bu zhù",
+            "meaning_vi": "không chịu nổi; không cưỡng lại được",
+            "meaning_en": "cannot stand/resist",
+            "pos": "verb_phrase",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "经不住",
+              "back": "jīng bu zhù — không chịu nổi; không cưỡng lại được",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "page_start": 215,
+            "page_end": 215,
+            "check_needed": false
+          },
+          {
+            "id": "5ea44727-d97c-467b-b1b8-babd195df50d",
+            "type": "vocabulary_item",
+            "order": 6,
+            "hanzi": "苦苦",
+            "pinyin": "kǔkǔ",
+            "meaning_vi": "khẩn khoản; dai dẳng; một cách khổ sở",
+            "meaning_en": "painstakingly; persistently",
+            "pos": "adverb",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "苦苦",
+              "back": "kǔkǔ — khẩn khoản; dai dẳng; một cách khổ sở",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "page_start": 215,
+            "page_end": 215,
+            "check_needed": false
+          },
+          {
+            "id": "54613016-834a-4fc3-9912-2357a6d27058",
+            "type": "vocabulary_item",
+            "order": 7,
+            "hanzi": "哀求",
+            "pinyin": "āiqiú",
+            "meaning_vi": "van xin; nài nỉ",
+            "meaning_en": "to implore",
+            "pos": "verb",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "哀求",
+              "back": "āiqiú — van xin; nài nỉ",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "page_start": 215,
+            "page_end": 215,
+            "check_needed": false
+          },
+          {
+            "id": "0da97406-c3ac-4fcb-a51c-398a59c3fbae",
+            "type": "vocabulary_item",
+            "order": 8,
+            "hanzi": "男生",
+            "pinyin": "nánshēng",
+            "meaning_vi": "nam sinh",
+            "meaning_en": "male student",
+            "pos": "noun",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "男生",
+              "back": "nánshēng — nam sinh",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "page_start": 215,
+            "page_end": 215,
+            "check_needed": false
+          },
+          {
+            "id": "54b36889-82be-485b-8342-fb8aab572065",
+            "type": "vocabulary_item",
+            "order": 9,
+            "hanzi": "女生",
+            "pinyin": "nǚshēng",
+            "meaning_vi": "nữ sinh",
+            "meaning_en": "female student",
+            "pos": "noun",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "女生",
+              "back": "nǚshēng — nữ sinh",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "page_start": 215,
+            "page_end": 215,
+            "check_needed": false
+          },
+          {
+            "id": "1354b1a3-93cc-4505-8d7f-c5550a1d6ae9",
+            "type": "vocabulary_item",
+            "order": 10,
+            "hanzi": "学问",
+            "pinyin": "xuéwen",
+            "meaning_vi": "học vấn; tri thức",
+            "meaning_en": "knowledge; learning",
+            "pos": "noun",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "学问",
+              "back": "xuéwen — học vấn; tri thức",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "page_start": 215,
+            "page_end": 215,
+            "check_needed": false
+          },
+          {
+            "id": "f0684cb3-4577-4e6c-9f22-7d97c89692b3",
+            "type": "vocabulary_item",
+            "order": 11,
+            "hanzi": "出众",
+            "pinyin": "chūzhòng",
+            "meaning_vi": "xuất chúng; nổi bật",
+            "meaning_en": "outstanding; exceptional",
+            "pos": "adjective",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "出众",
+              "back": "chūzhòng — xuất chúng; nổi bật",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "page_start": 215,
+            "page_end": 215,
+            "check_needed": false
+          },
+          {
+            "id": "d5b362a7-c8f6-4f25-b2b5-0f1749c8afbb",
+            "type": "vocabulary_item",
+            "order": 12,
+            "hanzi": "人品",
+            "pinyin": "rénpǐn",
+            "meaning_vi": "nhân phẩm",
+            "meaning_en": "moral character",
+            "pos": "noun",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "人品",
+              "back": "rénpǐn — nhân phẩm",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "page_start": 215,
+            "page_end": 215,
+            "check_needed": false
+          },
+          {
+            "id": "7eccd5e8-dac0-4f36-be2e-abcc0a2bdfcd",
+            "type": "vocabulary_item",
+            "order": 13,
+            "hanzi": "一见如故",
+            "pinyin": "yíjiàn-rúgù",
+            "meaning_vi": "vừa gặp như đã quen lâu",
+            "meaning_en": "to feel like old friends at first meeting",
+            "pos": "idiom",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "一见如故",
+              "back": "yíjiàn-rúgù — vừa gặp như đã quen lâu",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "page_start": 215,
+            "page_end": 215,
+            "check_needed": false
+          },
+          {
+            "id": "91fa9f81-e5ef-4c4a-b29c-c4b6daa02196",
+            "type": "vocabulary_item",
+            "order": 14,
+            "hanzi": "兄弟",
+            "pinyin": "xiōngdì",
+            "meaning_vi": "anh em",
+            "meaning_en": "brothers",
+            "pos": "noun",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "兄弟",
+              "back": "xiōngdì — anh em",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "page_start": 215,
+            "page_end": 215,
+            "check_needed": false
+          },
+          {
+            "id": "8a5b1d09-23a6-4182-96e6-9bf4d761a1e1",
+            "type": "vocabulary_item",
+            "order": 15,
+            "hanzi": "送别",
+            "pinyin": "sòngbié",
+            "meaning_vi": "tiễn biệt",
+            "meaning_en": "to see sb. off",
+            "pos": "verb",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "送别",
+              "back": "sòngbié — tiễn biệt",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "page_start": 215,
+            "page_end": 215,
+            "check_needed": false
+          },
+          {
+            "id": "be7a835d-ff8f-4a86-9fd8-27c5f1093f0c",
+            "type": "vocabulary_item",
+            "order": 16,
+            "hanzi": "结",
+            "pinyin": "jié",
+            "meaning_vi": "kết; kết thành; hình thành",
+            "meaning_en": "to congeal; to form; to associate",
+            "pos": "verb",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "结",
+              "back": "jié — kết; kết thành; hình thành",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "page_start": 215,
+            "page_end": 215,
+            "check_needed": false
+          },
+          {
+            "id": "7a89dc80-d79d-4c2f-988c-d0f54e240d19",
+            "type": "vocabulary_item",
+            "order": 17,
+            "hanzi": "深厚",
+            "pinyin": "shēnhòu",
+            "meaning_vi": "sâu đậm; sâu sắc",
+            "meaning_en": "deep; profound",
+            "pos": "adjective",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "深厚",
+              "back": "shēnhòu — sâu đậm; sâu sắc",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "page_start": 215,
+            "page_end": 215,
+            "check_needed": false
+          },
+          {
+            "id": "ff3e1818-66a9-4532-880b-02c9cacb0e5b",
+            "type": "vocabulary_item",
+            "order": 18,
+            "hanzi": "情谊",
+            "pinyin": "qíngyì",
+            "meaning_vi": "tình nghĩa; tình bạn bè",
+            "meaning_en": "friendly feelings",
+            "pos": "noun",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "情谊",
+              "back": "qíngyì — tình nghĩa; tình bạn bè",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "page_start": 215,
+            "page_end": 215,
+            "check_needed": false
+          },
+          {
+            "id": "0125bdae-fe4e-48fb-8264-145e95c75933",
+            "type": "vocabulary_item",
+            "order": 19,
+            "hanzi": "师母",
+            "pinyin": "shīmǔ",
+            "meaning_vi": "sư mẫu; vợ của thầy",
+            "meaning_en": "wife of one's teacher/master",
+            "pos": "noun",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "师母",
+              "back": "shīmǔ — sư mẫu; vợ của thầy",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "page_start": 215,
+            "page_end": 215,
+            "check_needed": false
+          },
+          {
+            "id": "689eb64b-5d4f-469f-9afa-74017d399614",
+            "type": "vocabulary_item",
+            "order": 20,
+            "hanzi": "心思",
+            "pinyin": "xīnsi",
+            "meaning_vi": "tâm tư; suy nghĩ",
+            "meaning_en": "idea; thought",
+            "pos": "noun",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "心思",
+              "back": "xīnsi — tâm tư; suy nghĩ",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "page_start": 215,
+            "page_end": 215,
+            "check_needed": false
+          },
+          {
+            "id": "d45d5488-9293-41ae-9deb-1e5b51cee446",
+            "type": "vocabulary_item",
+            "order": 21,
+            "hanzi": "玉",
+            "pinyin": "yù",
+            "meaning_vi": "ngọc",
+            "meaning_en": "jade",
+            "pos": "noun",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "玉",
+              "back": "yù — ngọc",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "page_start": 215,
+            "page_end": 215,
+            "check_needed": false
+          },
+          {
+            "id": "c99a633b-27a2-429b-a139-44113a84c189",
+            "type": "vocabulary_item",
+            "order": 22,
+            "hanzi": "手镯",
+            "pinyin": "shǒuzhuó",
+            "meaning_vi": "vòng tay",
+            "meaning_en": "bracelet",
+            "pos": "noun",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "手镯",
+              "back": "shǒuzhuó — vòng tay",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "page_start": 215,
+            "page_end": 215,
+            "check_needed": false
+          },
+          {
+            "id": "79358c6f-3427-4c28-98f3-7ef98c7033c3",
+            "type": "vocabulary_item",
+            "order": 23,
+            "hanzi": "信物",
+            "pinyin": "xìnwù",
+            "meaning_vi": "tín vật; vật làm tin",
+            "meaning_en": "token of pledge; keepsake",
+            "pos": "noun",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "信物",
+              "back": "xìnwù — tín vật; vật làm tin",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "page_start": 215,
+            "page_end": 215,
+            "check_needed": false
+          },
+          {
+            "id": "dc0f8e06-a359-4907-a8d8-fc9b02260590",
+            "type": "vocabulary_item",
+            "order": 24,
+            "hanzi": "拜托",
+            "pinyin": "bàituō",
+            "meaning_vi": "nhờ vả; gửi gắm",
+            "meaning_en": "to ask a favor; to entrust",
+            "pos": "verb",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "拜托",
+              "back": "bàituō — nhờ vả; gửi gắm",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "page_start": 215,
+            "page_end": 215,
+            "check_needed": false
+          },
+          {
+            "id": "c43cedbf-7024-4ec1-922f-e75119114baf",
+            "type": "vocabulary_item",
+            "order": 25,
+            "hanzi": "转交",
+            "pinyin": "zhuǎnjiāo",
+            "meaning_vi": "chuyển giao; chuyển lại",
+            "meaning_en": "to pass on; to deliver",
+            "pos": "verb",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "转交",
+              "back": "zhuǎnjiāo — chuyển giao; chuyển lại",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "page_start": 215,
+            "page_end": 215,
+            "check_needed": false
+          },
+          {
+            "id": "d9991c79-3454-4247-bf18-f14f43b4a24a",
+            "type": "vocabulary_item",
+            "order": 26,
+            "hanzi": "送行",
+            "pinyin": "sòngxíng",
+            "meaning_vi": "tiễn đưa",
+            "meaning_en": "to see sb. off",
+            "pos": "verb",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "送行",
+              "back": "sòngxíng — tiễn đưa",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "page_start": 215,
+            "page_end": 215,
+            "check_needed": false
+          },
+          {
+            "id": "55cd807c-eec7-412d-99db-f4e6508b170f",
+            "type": "vocabulary_item",
+            "order": 27,
+            "hanzi": "暗示",
+            "pinyin": "ànshì",
+            "meaning_vi": "ám chỉ; gợi ý ngầm",
+            "meaning_en": "to drop a hint; to suggest",
+            "pos": "verb",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "暗示",
+              "back": "ànshì — ám chỉ; gợi ý ngầm",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "page_start": 216,
+            "page_end": 216,
+            "check_needed": false
+          },
+          {
+            "id": "085e60d5-dd1c-4585-ac6b-0f1db0ded936",
+            "type": "vocabulary_item",
+            "order": 28,
+            "hanzi": "始终",
+            "pinyin": "shǐzhōng",
+            "meaning_vi": "từ đầu đến cuối; trước sau vẫn",
+            "meaning_en": "from beginning to end; all along",
+            "pos": "adverb",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "始终",
+              "back": "shǐzhōng — từ đầu đến cuối; trước sau vẫn",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "page_start": 216,
+            "page_end": 216,
+            "check_needed": false
+          },
+          {
+            "id": "ba7ff0f9-b633-4516-ab3d-22b96046a1cf",
+            "type": "vocabulary_item",
+            "order": 29,
+            "hanzi": "里",
+            "pinyin": "lǐ",
+            "meaning_vi": "dặm Trung Quốc, khoảng 500 mét",
+            "meaning_en": "a unit of length (=500 meters)",
+            "pos": "measure_word",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "里",
+              "back": "lǐ — dặm Trung Quốc, khoảng 500 mét",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "page_start": 216,
+            "page_end": 216,
+            "check_needed": false
+          },
+          {
+            "id": "2185ee67-885d-4ffb-83e2-e97be4070796",
+            "type": "vocabulary_item",
+            "order": 30,
+            "hanzi": "做媒",
+            "pinyin": "zuò méi",
+            "meaning_vi": "làm mai; mai mối",
+            "meaning_en": "to be a matchmaker",
+            "pos": "verb_phrase",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "做媒",
+              "back": "zuò méi — làm mai; mai mối",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "page_start": 216,
+            "page_end": 216,
+            "check_needed": false
+          },
+          {
+            "id": "092a8c16-3739-4685-a4c0-39365071bd48",
+            "type": "vocabulary_item",
+            "order": 31,
+            "hanzi": "相亲",
+            "pinyin": "xiāng qīn",
+            "meaning_vi": "xem mặt; gặp để tính chuyện hôn nhân",
+            "meaning_en": "to go on a blind date",
+            "pos": "verb",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "相亲",
+              "back": "xiāng qīn — xem mặt; gặp để tính chuyện hôn nhân",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "page_start": 216,
+            "page_end": 216,
+            "check_needed": false
+          },
+          {
+            "id": "22e66ee9-565e-4670-b2ac-4d5a9b500b38",
+            "type": "vocabulary_item",
+            "order": 32,
+            "hanzi": "恍然大悟",
+            "pinyin": "huǎngrán-dàwù",
+            "meaning_vi": "bỗng nhiên hiểu ra; chợt vỡ lẽ",
+            "meaning_en": "to suddenly realize",
+            "pos": "idiom",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "恍然大悟",
+              "back": "huǎngrán-dàwù — bỗng nhiên hiểu ra; chợt vỡ lẽ",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "page_start": 216,
+            "page_end": 216,
+            "check_needed": true
+          },
+          {
+            "id": "275b46f4-3166-48b7-9766-58384178d1be",
+            "type": "vocabulary_item",
+            "order": 33,
+            "hanzi": "赠送",
+            "pinyin": "zèngsòng",
+            "meaning_vi": "tặng; biếu",
+            "meaning_en": "to give as a present",
+            "pos": "verb",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "赠送",
+              "back": "zèngsòng — tặng; biếu",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "page_start": 216,
+            "page_end": 216,
+            "check_needed": false
+          },
+          {
+            "id": "1190511f-5970-4304-8f84-d7201b287aeb",
+            "type": "vocabulary_item",
+            "order": 34,
+            "hanzi": "嫁",
+            "pinyin": "jià",
+            "meaning_vi": "gả/lấy chồng",
+            "meaning_en": "of a woman: to marry",
+            "pos": "verb",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "嫁",
+              "back": "jià — gả/lấy chồng",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "page_start": 216,
+            "page_end": 216,
+            "check_needed": false
+          },
+          {
+            "id": "d42d3d90-443d-45da-bed7-987b50034e92",
+            "type": "vocabulary_item",
+            "order": 35,
+            "hanzi": "官",
+            "pinyin": "guān",
+            "meaning_vi": "quan; quan chức",
+            "meaning_en": "officer; official",
+            "pos": "noun",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "官",
+              "back": "guān — quan; quan chức",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "page_start": 216,
+            "page_end": 216,
+            "check_needed": false
+          },
+          {
+            "id": "cfb712c9-c4ca-4314-b6b2-696b40ace25e",
+            "type": "vocabulary_item",
+            "order": 36,
+            "hanzi": "楼台",
+            "pinyin": "lóutái",
+            "meaning_vi": "lầu đài; ban công/sân lầu",
+            "meaning_en": "balcony; terrace",
+            "pos": "noun",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "楼台",
+              "back": "lóutái — lầu đài; ban công/sân lầu",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "page_start": 216,
+            "page_end": 216,
+            "check_needed": false
+          },
+          {
+            "id": "6059829f-ae21-43cf-ac0c-05e19639ec43",
+            "type": "vocabulary_item",
+            "order": 37,
+            "hanzi": "表明",
+            "pinyin": "biǎomíng",
+            "meaning_vi": "bày tỏ rõ; làm rõ",
+            "meaning_en": "to make known; to make clear",
+            "pos": "verb",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "表明",
+              "back": "biǎomíng — bày tỏ rõ; làm rõ",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "page_start": 216,
+            "page_end": 216,
+            "check_needed": false
+          },
+          {
+            "id": "fefd5441-7b6c-47e3-b823-9e149b947bf7",
+            "type": "vocabulary_item",
+            "order": 38,
+            "hanzi": "化蝶",
+            "pinyin": "huà dié",
+            "meaning_vi": "hóa thành bướm",
+            "meaning_en": "to turn into butterflies",
+            "pos": "verb_phrase",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "化蝶",
+              "back": "huà dié — hóa thành bướm",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "page_start": 216,
+            "page_end": 216,
+            "check_needed": false
+          },
+          {
+            "id": "27761bd2-433a-44ef-b79a-9e6f0a34b9c9",
+            "type": "vocabulary_item",
+            "order": 39,
+            "hanzi": "求婚",
+            "pinyin": "qiú hūn",
+            "meaning_vi": "cầu hôn",
+            "meaning_en": "to make an offer of marriage",
+            "pos": "verb",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "求婚",
+              "back": "qiú hūn — cầu hôn",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "page_start": 216,
+            "page_end": 216,
+            "check_needed": false
+          },
+          {
+            "id": "861ed325-b320-4ae0-8eac-bb6bb8ebc215",
+            "type": "vocabulary_item",
+            "order": 40,
+            "hanzi": "逼",
+            "pinyin": "bī",
+            "meaning_vi": "ép buộc",
+            "meaning_en": "to force; to compel",
+            "pos": "verb",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "逼",
+              "back": "bī — ép buộc",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "page_start": 216,
+            "page_end": 216,
+            "check_needed": false
+          },
+          {
+            "id": "6fe8f20d-e712-4f0c-9cbc-021aaeb9698c",
+            "type": "vocabulary_item",
+            "order": 41,
+            "hanzi": "请求",
+            "pinyin": "qǐngqiú",
+            "meaning_vi": "thỉnh cầu; xin",
+            "meaning_en": "to ask; to request; to beg",
+            "pos": "verb",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "请求",
+              "back": "qǐngqiú — thỉnh cầu; xin",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "page_start": 216,
+            "page_end": 216,
+            "check_needed": false
+          },
+          {
+            "id": "863bbf3f-83e7-4021-b98e-be632043d94c",
+            "type": "vocabulary_item",
+            "order": 42,
+            "hanzi": "吊孝",
+            "pinyin": "diào xiào",
+            "meaning_vi": "viếng tang",
+            "meaning_en": "to pay a condolence call",
+            "pos": "verb",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "吊孝",
+              "back": "diào xiào — viếng tang",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "page_start": 216,
+            "page_end": 216,
+            "check_needed": false
+          },
+          {
+            "id": "b14487b6-5579-4f1c-9ad7-16fd40991577",
+            "type": "vocabulary_item",
+            "order": 43,
+            "hanzi": "坚决",
+            "pinyin": "jiānjué",
+            "meaning_vi": "kiên quyết",
+            "meaning_en": "firm; resolute",
+            "pos": "adjective",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "坚决",
+              "back": "jiānjué — kiên quyết",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "page_start": 216,
+            "page_end": 216,
+            "check_needed": false
+          },
+          {
+            "id": "eb7cc112-7df2-44e6-a1df-9824d8b6e45a",
+            "type": "vocabulary_item",
+            "order": 44,
+            "hanzi": "迎亲",
+            "pinyin": "yíngqīn",
+            "meaning_vi": "rước dâu",
+            "meaning_en": "to escort bride to bridegroom's home",
+            "pos": "verb",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "迎亲",
+              "back": "yíngqīn — rước dâu",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "page_start": 216,
+            "page_end": 216,
+            "check_needed": false
+          },
+          {
+            "id": "505dae11-836a-475d-b811-339f25caaf42",
+            "type": "vocabulary_item",
+            "order": 45,
+            "hanzi": "花轿",
+            "pinyin": "huājiào",
+            "meaning_vi": "kiệu hoa",
+            "meaning_en": "bridal sedan chair",
+            "pos": "noun",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "花轿",
+              "back": "huājiào — kiệu hoa",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "page_start": 216,
+            "page_end": 216,
+            "check_needed": false
+          },
+          {
+            "id": "a47b82f7-2260-4763-8c97-b1631e792e1c",
+            "type": "vocabulary_item",
+            "order": 46,
+            "hanzi": "路过",
+            "pinyin": "lùguò",
+            "meaning_vi": "đi ngang qua; đi qua",
+            "meaning_en": "to pass by or through",
+            "pos": "verb",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "路过",
+              "back": "lùguò — đi ngang qua; đi qua",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "page_start": 216,
+            "page_end": 216,
+            "check_needed": false
+          },
+          {
+            "id": "71f9308f-7b38-435e-bfa8-c7c974599035",
+            "type": "vocabulary_item",
+            "order": 47,
+            "hanzi": "坟墓",
+            "pinyin": "fénmù",
+            "meaning_vi": "mồ mả; phần mộ",
+            "meaning_en": "tomb; grave",
+            "pos": "noun",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "坟墓",
+              "back": "fénmù — mồ mả; phần mộ",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "page_start": 216,
+            "page_end": 216,
+            "check_needed": false
+          },
+          {
+            "id": "05e1ac20-79be-406d-9c90-4b0c847182bc",
+            "type": "vocabulary_item",
+            "order": 48,
+            "hanzi": "墓",
+            "pinyin": "mù",
+            "meaning_vi": "mộ",
+            "meaning_en": "tomb; grave",
+            "pos": "noun",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "墓",
+              "back": "mù — mộ",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "page_start": 216,
+            "page_end": 216,
+            "check_needed": false
+          },
+          {
+            "id": "358d5baa-5ba1-4cb5-984a-44770a1724d6",
+            "type": "vocabulary_item",
+            "order": 49,
+            "hanzi": "告别",
+            "pinyin": "gàobié",
+            "meaning_vi": "từ biệt; chia tay",
+            "meaning_en": "to leave; to say goodbye",
+            "pos": "verb",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "告别",
+              "back": "gàobié — từ biệt; chia tay",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "page_start": 216,
+            "page_end": 216,
+            "check_needed": false
+          },
+          {
+            "id": "20f66e08-4820-43f5-a18a-50f61591e7cd",
+            "type": "vocabulary_item",
+            "order": 50,
+            "hanzi": "宁可",
+            "pinyin": "nìngkě",
+            "meaning_vi": "thà; thà rằng",
+            "meaning_en": "would rather",
+            "pos": "adverb",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "宁可",
+              "back": "nìngkě — thà; thà rằng",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "page_start": 217,
+            "page_end": 217,
+            "check_needed": false
+          },
+          {
+            "id": "db0c0e40-5639-4c1e-bd66-9728a0c5006e",
+            "type": "vocabulary_item",
+            "order": 51,
+            "hanzi": "无奈",
+            "pinyin": "wúnài",
+            "meaning_vi": "bất lực; không biết làm sao",
+            "meaning_en": "to have no choice",
+            "pos": "adjective",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "无奈",
+              "back": "wúnài — bất lực; không biết làm sao",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "page_start": 217,
+            "page_end": 217,
+            "check_needed": false
+          },
+          {
+            "id": "e890b44f-c76e-4dbf-92e7-201722d3274e",
+            "type": "vocabulary_item",
+            "order": 52,
+            "hanzi": "跪",
+            "pinyin": "guì",
+            "meaning_vi": "quỳ",
+            "meaning_en": "to kneel",
+            "pos": "verb",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "跪",
+              "back": "guì — quỳ",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "page_start": 217,
+            "page_end": 217,
+            "check_needed": false
+          },
+          {
+            "id": "d36b89c4-d29e-486a-b7d9-aeb589592aa6",
+            "type": "vocabulary_item",
+            "order": 53,
+            "hanzi": "痛哭",
+            "pinyin": "tòngkū",
+            "meaning_vi": "khóc lớn; khóc đau đớn",
+            "meaning_en": "to cry or weep bitterly",
+            "pos": "verb",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "痛哭",
+              "back": "tòngkū — khóc lớn; khóc đau đớn",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "page_start": 217,
+            "page_end": 217,
+            "check_needed": false
+          },
+          {
+            "id": "addea99a-d455-4f20-bd7b-e7d7b320bc0c",
+            "type": "vocabulary_item",
+            "order": 54,
+            "hanzi": "诉说",
+            "pinyin": "sùshuō",
+            "meaning_vi": "giãi bày; kể lể",
+            "meaning_en": "to tell; to relate",
+            "pos": "verb",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "诉说",
+              "back": "sùshuō — giãi bày; kể lể",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "page_start": 217,
+            "page_end": 217,
+            "check_needed": false
+          },
+          {
+            "id": "672023ad-14d1-47d0-a3c4-5dabd01b69e9",
+            "type": "vocabulary_item",
+            "order": 55,
+            "hanzi": "心愿",
+            "pinyin": "xīnyuàn",
+            "meaning_vi": "tâm nguyện",
+            "meaning_en": "wish",
+            "pos": "noun",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "心愿",
+              "back": "xīnyuàn — tâm nguyện",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "page_start": 217,
+            "page_end": 217,
+            "check_needed": false
+          },
+          {
+            "id": "e93080a4-2857-4582-a75a-94276764a235",
+            "type": "vocabulary_item",
+            "order": 56,
+            "hanzi": "天空",
+            "pinyin": "tiānkōng",
+            "meaning_vi": "bầu trời",
+            "meaning_en": "sky",
+            "pos": "noun",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "天空",
+              "back": "tiānkōng — bầu trời",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "page_start": 217,
+            "page_end": 217,
+            "check_needed": false
+          },
+          {
+            "id": "682e1087-39f5-4c67-9836-fa89206dfba5",
+            "type": "vocabulary_item",
+            "order": 57,
+            "hanzi": "乌云",
+            "pinyin": "wūyún",
+            "meaning_vi": "mây đen",
+            "meaning_en": "dark clouds",
+            "pos": "noun",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "乌云",
+              "back": "wūyún — mây đen",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "page_start": 217,
+            "page_end": 217,
+            "check_needed": false
+          },
+          {
+            "id": "26999e7c-e64c-4401-9d09-bcfd351db7b5",
+            "type": "vocabulary_item",
+            "order": 58,
+            "hanzi": "翻滚",
+            "pinyin": "fāngǔn",
+            "meaning_vi": "cuộn lên; cuồn cuộn",
+            "meaning_en": "to roll; to turn over and over",
+            "pos": "verb",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "翻滚",
+              "back": "fāngǔn — cuộn lên; cuồn cuộn",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "page_start": 217,
+            "page_end": 217,
+            "check_needed": false
+          },
+          {
+            "id": "67d5f931-79d4-4182-8e48-3c718cfcb016",
+            "type": "vocabulary_item",
+            "order": 59,
+            "hanzi": "雷",
+            "pinyin": "léi",
+            "meaning_vi": "sấm",
+            "meaning_en": "thunder",
+            "pos": "noun",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "雷",
+              "back": "léi — sấm",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "page_start": 217,
+            "page_end": 217,
+            "check_needed": false
+          },
+          {
+            "id": "baf4d641-8698-4777-840f-6002f16a0a62",
+            "type": "vocabulary_item",
+            "order": 60,
+            "hanzi": "隆隆",
+            "pinyin": "lónglóng",
+            "meaning_vi": "ầm ầm; vang rền",
+            "meaning_en": "roar; rumble",
+            "pos": "onomatopoeia",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "隆隆",
+              "back": "lónglóng — ầm ầm; vang rền",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "page_start": 217,
+            "page_end": 217,
+            "check_needed": false
+          },
+          {
+            "id": "9abc5789-0caa-4699-a5f3-b6099b75d0fa",
+            "type": "vocabulary_item",
+            "order": 61,
+            "hanzi": "霹雳",
+            "pinyin": "pīlì",
+            "meaning_vi": "sét; tiếng sét",
+            "meaning_en": "thunderbolt",
+            "pos": "noun",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "霹雳",
+              "back": "pīlì — sét; tiếng sét",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "page_start": 217,
+            "page_end": 217,
+            "check_needed": false
+          },
+          {
+            "id": "d2a7ce6a-a83e-42aa-8d6e-9f24d1253da9",
+            "type": "vocabulary_item",
+            "order": 62,
+            "hanzi": "裂",
+            "pinyin": "liè",
+            "meaning_vi": "nứt; rách; tách ra",
+            "meaning_en": "to split; to crack",
+            "pos": "verb",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "裂",
+              "back": "liè — nứt; rách; tách ra",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "page_start": 217,
+            "page_end": 217,
+            "check_needed": false
+          },
+          {
+            "id": "bdc30b6a-44e0-4a88-b63c-3e23a453d7ed",
+            "type": "vocabulary_item",
+            "order": 63,
+            "hanzi": "跃",
+            "pinyin": "yuè",
+            "meaning_vi": "nhảy vọt; lao lên",
+            "meaning_en": "to leap; to jump",
+            "pos": "verb",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "跃",
+              "back": "yuè — nhảy vọt; lao lên",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "page_start": 217,
+            "page_end": 217,
+            "check_needed": false
+          },
+          {
+            "id": "b0403e9c-53df-4785-a285-f0508b88c6a3",
+            "type": "vocabulary_item",
+            "order": 64,
+            "hanzi": "散",
+            "pinyin": "sàn",
+            "meaning_vi": "tan; phân tán",
+            "meaning_en": "to disperse; to separate",
+            "pos": "verb",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "散",
+              "back": "sàn — tan; phân tán",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "page_start": 217,
+            "page_end": 217,
+            "check_needed": false
+          },
+          {
+            "id": "c28685e7-31b1-4a86-a9f3-59fe9f10c468",
+            "type": "vocabulary_item",
+            "order": 65,
+            "hanzi": "蝴蝶",
+            "pinyin": "húdié",
+            "meaning_vi": "bướm",
+            "meaning_en": "butterfly",
+            "pos": "noun",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "蝴蝶",
+              "back": "húdié — bướm",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "page_start": 217,
+            "page_end": 217,
+            "check_needed": false
+          },
+          {
+            "id": "0dcf52b0-96e4-43ed-bad8-b69164df33ab",
+            "type": "vocabulary_item",
+            "order": 66,
+            "hanzi": "彩蝶",
+            "pinyin": "cǎidié",
+            "meaning_vi": "bướm màu; bướm đẹp",
+            "meaning_en": "colorful butterfly",
+            "pos": "noun",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "彩蝶",
+              "back": "cǎidié — bướm màu; bướm đẹp",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "page_start": 217,
+            "page_end": 217,
+            "check_needed": true
+          },
+          {
+            "id": "b7a52061-c897-47c7-a82d-e167737e2e36",
+            "type": "vocabulary_item",
+            "order": 67,
+            "hanzi": "飞翔",
+            "pinyin": "fēixiáng",
+            "meaning_vi": "bay lượn",
+            "meaning_en": "to fly; to circle in the air",
+            "pos": "verb",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "飞翔",
+              "back": "fēixiáng — bay lượn",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "page_start": 217,
+            "page_end": 217,
+            "check_needed": false
+          },
+          {
+            "id": "60ce46a6-8f84-4ea6-8b11-b610519eb1d0",
+            "type": "vocabulary_item",
+            "order": 68,
+            "hanzi": "代",
+            "pinyin": "dài",
+            "meaning_vi": "đời; thế hệ",
+            "meaning_en": "generation",
+            "pos": "noun",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "代",
+              "back": "dài — đời; thế hệ",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "page_start": 217,
+            "page_end": 217,
+            "check_needed": false
+          },
+          {
+            "id": "258cca79-f757-4221-9066-1ce48101cf88",
+            "type": "vocabulary_item",
+            "order": 69,
+            "hanzi": "流传",
+            "pinyin": "liúchuán",
+            "meaning_vi": "lưu truyền",
+            "meaning_en": "to spread; to hand down",
+            "pos": "verb",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "流传",
+              "back": "liúchuán — lưu truyền",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "page_start": 217,
+            "page_end": 217,
+            "check_needed": false
+          },
+          {
+            "id": "61ce3463-fded-4c37-a81f-90fc745e8ab7",
+            "type": "vocabulary_item",
+            "order": 70,
+            "hanzi": "端午节",
+            "pinyin": "Duānwǔ Jié",
+            "meaning_vi": "Tết Đoan Ngọ",
+            "meaning_en": "Dragon Boat Festival",
+            "pos": "unknown",
+            "tags": [
+              "supplementary_vocab",
+              "reading_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "端午节",
+              "back": "Duānwǔ Jié — Tết Đoan Ngọ",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "page_start": 227,
+            "page_end": 227,
+            "check_needed": false
+          },
+          {
+            "id": "b29ccb2e-0c64-4431-8cf1-56bea2ed6817",
+            "type": "vocabulary_item",
+            "order": 71,
+            "hanzi": "粽子",
+            "pinyin": "zòngzi",
+            "meaning_vi": "bánh ú/bánh nếp Đoan Ngọ",
+            "meaning_en": "glutinous rice dumpling",
+            "pos": "unknown",
+            "tags": [
+              "supplementary_vocab",
+              "reading_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "粽子",
+              "back": "zòngzi — bánh ú/bánh nếp Đoan Ngọ",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "page_start": 227,
+            "page_end": 227,
+            "check_needed": false
+          },
+          {
+            "id": "b359523f-65ab-4d65-a183-b4f0c3bdfb4e",
+            "type": "vocabulary_item",
+            "order": 72,
+            "hanzi": "龙舟",
+            "pinyin": "lóngzhōu",
+            "meaning_vi": "thuyền rồng",
+            "meaning_en": "dragon boat",
+            "pos": "unknown",
+            "tags": [
+              "supplementary_vocab",
+              "reading_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "龙舟",
+              "back": "lóngzhōu — thuyền rồng",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "page_start": 227,
+            "page_end": 227,
+            "check_needed": false
+          },
+          {
+            "id": "25879a5f-f396-4cfd-b9cf-ab952da43059",
+            "type": "vocabulary_item",
+            "order": 73,
+            "hanzi": "传说",
+            "pinyin": "chuánshuō",
+            "meaning_vi": "truyền thuyết",
+            "meaning_en": "legend",
+            "pos": "unknown",
+            "tags": [
+              "supplementary_vocab",
+              "reading_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "传说",
+              "back": "chuánshuō — truyền thuyết",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "page_start": 227,
+            "page_end": 227,
+            "check_needed": false
+          },
+          {
+            "id": "772d40d7-1f7f-49d3-b04b-8591ec396374",
+            "type": "vocabulary_item",
+            "order": 74,
+            "hanzi": "屈原",
+            "pinyin": "Qū Yuán",
+            "meaning_vi": "Khuất Nguyên",
+            "meaning_en": "Qu Yuan",
+            "pos": "unknown",
+            "tags": [
+              "supplementary_vocab",
+              "reading_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "屈原",
+              "back": "Qū Yuán — Khuất Nguyên",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "page_start": 227,
+            "page_end": 227,
+            "check_needed": false
+          },
+          {
+            "id": "8d6bfeeb-4c9e-4835-910d-ac19ba6aa9d6",
+            "type": "vocabulary_item",
+            "order": 75,
+            "hanzi": "疏远",
+            "pinyin": "shūyuǎn",
+            "meaning_vi": "xa cách; trở nên xa lạ",
+            "meaning_en": "to alienate; to become estranged",
+            "pos": "unknown",
+            "tags": [
+              "supplementary_vocab",
+              "reading_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "疏远",
+              "back": "shūyuǎn — xa cách; trở nên xa lạ",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "page_start": 228,
+            "page_end": 228,
+            "check_needed": false
+          },
+          {
+            "id": "c63b7881-f980-40bf-8f25-a60025781a0e",
+            "type": "vocabulary_item",
+            "order": 76,
+            "hanzi": "抑制",
+            "pinyin": "yìzhì",
+            "meaning_vi": "kiềm chế",
+            "meaning_en": "to control; to curb",
+            "pos": "unknown",
+            "tags": [
+              "supplementary_vocab",
+              "reading_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "抑制",
+              "back": "yìzhì — kiềm chế",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "page_start": 228,
+            "page_end": 228,
+            "check_needed": false
+          },
+          {
+            "id": "19e5e636-f19d-40ec-ad61-552d20baa3a8",
+            "type": "vocabulary_item",
+            "order": 77,
+            "hanzi": "悲愤",
+            "pinyin": "bēifèn",
+            "meaning_vi": "bi phẫn; buồn giận",
+            "meaning_en": "sad and angry",
+            "pos": "unknown",
+            "tags": [
+              "supplementary_vocab",
+              "reading_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "悲愤",
+              "back": "bēifèn — bi phẫn; buồn giận",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "page_start": 228,
+            "page_end": 228,
+            "check_needed": false
+          },
+          {
+            "id": "50e9b559-9eb2-416e-9bc8-3b5f001c11be",
+            "type": "vocabulary_item",
+            "order": 78,
+            "hanzi": "囚禁",
+            "pinyin": "qiújìn",
+            "meaning_vi": "giam cầm",
+            "meaning_en": "to imprison",
+            "pos": "unknown",
+            "tags": [
+              "supplementary_vocab",
+              "reading_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "囚禁",
+              "back": "qiújìn — giam cầm",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "page_start": 228,
+            "page_end": 228,
+            "check_needed": false
+          },
+          {
+            "id": "42b6ebd4-6ff4-478a-849d-c6d1dce5ad92",
+            "type": "vocabulary_item",
+            "order": 79,
+            "hanzi": "攻占",
+            "pinyin": "gōngzhàn",
+            "meaning_vi": "đánh chiếm",
+            "meaning_en": "to attack and capture",
+            "pos": "unknown",
+            "tags": [
+              "supplementary_vocab",
+              "reading_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "攻占",
+              "back": "gōngzhàn — đánh chiếm",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "page_start": 228,
+            "page_end": 228,
+            "check_needed": false
+          },
+          {
+            "id": "c6cc0b7f-747e-498b-8625-85ce1ec9ac2d",
+            "type": "vocabulary_item",
+            "order": 80,
+            "hanzi": "激流",
+            "pinyin": "jīliú",
+            "meaning_vi": "dòng nước xiết",
+            "meaning_en": "torrent; rip current",
+            "pos": "unknown",
+            "tags": [
+              "supplementary_vocab",
+              "reading_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "激流",
+              "back": "jīliú — dòng nước xiết",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "page_start": 228,
+            "page_end": 228,
+            "check_needed": false
+          },
+          {
+            "id": "d14b14cd-cc14-4056-b3ad-9dcfc32f7be5",
+            "type": "vocabulary_item",
+            "order": 81,
+            "hanzi": "打捞",
+            "pinyin": "dǎlāo",
+            "meaning_vi": "vớt; trục vớt",
+            "meaning_en": "to salvage",
+            "pos": "unknown",
+            "tags": [
+              "supplementary_vocab",
+              "reading_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "打捞",
+              "back": "dǎlāo — vớt; trục vớt",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "page_start": 228,
+            "page_end": 228,
+            "check_needed": false
+          }
+        ]
+      },
+      {
+        "id": "3c5ee48e-5d44-44ac-bd53-cac996a83338",
+        "type": "proper_nouns",
+        "order": 3,
+        "title": "专名",
+        "title_vi": "Tên riêng",
+        "source_origin": "textbook",
+        "check_needed": false,
+        "items": [
+          {
+            "id": "070690f6-fd26-41df-ab28-f5031668ed3e",
+            "type": "proper_noun",
+            "order": 1,
+            "hanzi": "梁山伯",
+            "pinyin": "Liáng Shānbó",
+            "meaning_vi": "Lương Sơn Bá",
+            "meaning_en": "Liang Shanbo",
+            "source_origin": "textbook",
+            "page_start": 217,
+            "page_end": 217,
+            "check_needed": false
+          },
+          {
+            "id": "d0cc2a3d-951d-4dc5-93e3-bc90ee212237",
+            "type": "proper_noun",
+            "order": 2,
+            "hanzi": "祝英台",
+            "pinyin": "Zhù Yīngtái",
+            "meaning_vi": "Chúc Anh Đài",
+            "meaning_en": "Zhu Yingtai",
+            "source_origin": "textbook",
+            "page_start": 217,
+            "page_end": 217,
+            "check_needed": false
+          },
+          {
+            "id": "785dd718-c838-45cf-87e7-b278bab8b7c0",
+            "type": "proper_noun",
+            "order": 3,
+            "hanzi": "万松书院",
+            "pinyin": "Wànsōng Shūyuàn",
+            "meaning_vi": "Vạn Tùng Thư Viện",
+            "meaning_en": "Wansong Academy",
+            "source_origin": "textbook",
+            "page_start": 217,
+            "page_end": 217,
+            "check_needed": false
+          },
+          {
+            "id": "7f7913ed-3e88-470e-ac98-ecb06f3f6c05",
+            "type": "proper_noun",
+            "order": 4,
+            "hanzi": "祝家庄",
+            "pinyin": "Zhùjiā Zhuāng",
+            "meaning_vi": "Chúc Gia Trang",
+            "meaning_en": "Zhu Village",
+            "source_origin": "textbook",
+            "page_start": 218,
+            "page_end": 218,
+            "check_needed": false
+          },
+          {
+            "id": "03d3483d-dfb7-4cd5-8ca7-caa3e54a6ee2",
+            "type": "proper_noun",
+            "order": 5,
+            "hanzi": "马文才",
+            "pinyin": "Mǎ Wéncái",
+            "meaning_vi": "Mã Văn Tài",
+            "meaning_en": "Ma Wencai",
+            "source_origin": "textbook",
+            "page_start": 218,
+            "page_end": 218,
+            "check_needed": false
+          },
+          {
+            "id": "ea82d601-11f9-4cab-9f5d-b4a8dd9cebbc",
+            "type": "proper_noun",
+            "order": 6,
+            "hanzi": "梁祝",
+            "pinyin": "Liáng-Zhù",
+            "meaning_vi": "Lương Chúc",
+            "meaning_en": "The Butterfly Lovers / Liang-Zhu",
+            "source_origin": "textbook",
+            "page_start": 223,
+            "page_end": 223,
+            "check_needed": false
+          },
+          {
+            "id": "c24bd242-3609-4657-b5f1-db9cd21472f6",
+            "type": "proper_noun",
+            "order": 7,
+            "hanzi": "杭州",
+            "pinyin": "Hángzhōu",
+            "meaning_vi": "Hàng Châu",
+            "meaning_en": "Hangzhou",
+            "source_origin": "textbook",
+            "page_start": 211,
+            "page_end": 211,
+            "check_needed": false
+          },
+          {
+            "id": "a4a354d8-d066-415f-a5cd-e59f03580c28",
+            "type": "proper_noun",
+            "order": 8,
+            "hanzi": "秦国",
+            "pinyin": "Qín guó",
+            "meaning_vi": "nước Tần",
+            "meaning_en": "Qin State",
+            "source_origin": "textbook",
+            "page_start": 228,
+            "page_end": 228,
+            "check_needed": false
+          },
+          {
+            "id": "5f5fdc9c-74dd-458b-b5a7-8e999a418667",
+            "type": "proper_noun",
+            "order": 9,
+            "hanzi": "楚国",
+            "pinyin": "Chǔ guó",
+            "meaning_vi": "nước Sở",
+            "meaning_en": "Chu State",
+            "source_origin": "textbook",
+            "page_start": 228,
+            "page_end": 228,
+            "check_needed": false
+          },
+          {
+            "id": "4912acc3-45af-4e8f-8291-9049240abccd",
+            "type": "proper_noun",
+            "order": 10,
+            "hanzi": "楚怀王",
+            "pinyin": "Chǔhuái Wáng",
+            "meaning_vi": "Sở Hoài Vương",
+            "meaning_en": "King Huai of Chu",
+            "source_origin": "textbook",
+            "page_start": 228,
+            "page_end": 228,
+            "check_needed": false
+          },
+          {
+            "id": "f170a9a5-3c11-4110-9cd4-7e9ff7046a93",
+            "type": "proper_noun",
+            "order": 11,
+            "hanzi": "郢都",
+            "pinyin": "Yǐngdū",
+            "meaning_vi": "Dĩnh Đô",
+            "meaning_en": "Yingdu",
+            "source_origin": "textbook",
+            "page_start": 229,
+            "page_end": 229,
+            "check_needed": false
+          },
+          {
+            "id": "113f1c69-d782-4d83-aeef-a34467e0dfb0",
+            "type": "proper_noun",
+            "order": 12,
+            "hanzi": "汨罗江",
+            "pinyin": "Mìluó Jiāng",
+            "meaning_vi": "sông Mịch La",
+            "meaning_en": "Miluo River",
+            "source_origin": "textbook",
+            "page_start": 229,
+            "page_end": 229,
+            "check_needed": false
+          }
+        ]
+      },
+      {
+        "id": "c18e9f54-6da1-4496-886b-c2c722605678",
+        "type": "notes",
+        "order": 4,
+        "title": "注释",
+        "title_vi": "Chú thích",
+        "source_origin": "textbook/generated_mixed",
+        "check_needed": false,
+        "items": [
+          {
+            "id": "63d654f5-4561-4d48-a144-bacbf9671dfc",
+            "type": "note",
+            "order": 1,
+            "title": "家喻户晓",
+            "structure": "固定成语",
+            "meaning_vi": "nhà nào cũng biết, ai ai cũng rõ",
+            "examples": [
+              {
+                "id": "021014f3-ff12-43b6-9d12-352cb6dc863b",
+                "zh": "梁山伯与祝英台的故事在中国家喻户晓。",
+                "pinyin": "",
+                "vi": "",
+                "en": "",
+                "highlight": [],
+                "grammar_refs": [],
+                "vocab_refs": [],
+                "source_ref": "",
+                "note_vi": "",
+                "audio_key": "",
+                "source_origin": "textbook",
+                "check_needed": false
+              }
+            ],
+            "source_refs": [],
+            "source_origin": "textbook/generated_mixed",
+            "check_needed": false
+          },
+          {
+            "id": "7e2ee128-4fbd-4a93-898c-5f5fd99b371b",
+            "type": "note",
+            "order": 2,
+            "title": "女扮男装",
+            "structure": "女 + 扮 + 男 + 装",
+            "meaning_vi": "phụ nữ cải trang thành nam",
+            "examples": [
+              {
+                "id": "29279e2c-cb63-4437-bbc5-7c46c15b6f13",
+                "zh": "祝英台可以女扮男装去读书。",
+                "pinyin": "",
+                "vi": "",
+                "en": "",
+                "highlight": [],
+                "grammar_refs": [],
+                "vocab_refs": [],
+                "source_ref": "",
+                "note_vi": "",
+                "audio_key": "",
+                "source_origin": "textbook",
+                "check_needed": false
+              }
+            ],
+            "source_refs": [],
+            "source_origin": "textbook/generated_mixed",
+            "check_needed": false
+          },
+          {
+            "id": "bf5e90df-dc03-4600-a2d2-426ab562c9a5",
+            "type": "note",
+            "order": 3,
+            "title": "一见如故",
+            "structure": "一见 + 如 + 故",
+            "meaning_vi": "vừa gặp đã như bạn cũ",
+            "examples": [
+              {
+                "id": "3bb13249-7132-47f4-b974-8144c96f3e29",
+                "zh": "梁山伯也对祝英台有一种一见如故的感觉。",
+                "pinyin": "",
+                "vi": "",
+                "en": "",
+                "highlight": [],
+                "grammar_refs": [],
+                "vocab_refs": [],
+                "source_ref": "",
+                "note_vi": "",
+                "audio_key": "",
+                "source_origin": "textbook",
+                "check_needed": false
+              }
+            ],
+            "source_refs": [],
+            "source_origin": "textbook/generated_mixed",
+            "check_needed": false
+          },
+          {
+            "id": "d85c63bd-7607-4517-874a-7a596fc80b7d",
+            "type": "note",
+            "order": 4,
+            "title": "恍然大悟",
+            "structure": "恍然 + 大悟",
+            "meaning_vi": "bỗng nhiên hiểu ra",
+            "examples": [
+              {
+                "id": "2ac6cf45-ba53-4dbc-887c-e57f4e3d233c",
+                "zh": "山伯得到白玉镯，才恍然大悟。",
+                "pinyin": "",
+                "vi": "",
+                "en": "",
+                "highlight": [],
+                "grammar_refs": [],
+                "vocab_refs": [],
+                "source_ref": "",
+                "note_vi": "",
+                "audio_key": "",
+                "source_origin": "textbook",
+                "check_needed": false
+              }
+            ],
+            "source_refs": [],
+            "source_origin": "textbook/generated_mixed",
+            "check_needed": false
+          },
+          {
+            "id": "7bb9601d-22c6-4b07-bc26-8b7269802a02",
+            "type": "note",
+            "order": 5,
+            "title": "非……不可",
+            "structure": "非 + V + 不可",
+            "meaning_vi": "nhất định phải làm gì; không làm không được",
+            "examples": [
+              {
+                "id": "49ae3435-56e4-4efe-bf35-b5456170f88d",
+                "zh": "她父亲非逼英台嫁给马文才不可。",
+                "pinyin": "",
+                "vi": "",
+                "en": "",
+                "highlight": [],
+                "grammar_refs": [],
+                "vocab_refs": [],
+                "source_ref": "",
+                "note_vi": "",
+                "audio_key": "",
+                "source_origin": "textbook",
+                "check_needed": false
+              }
+            ],
+            "source_refs": [],
+            "source_origin": "textbook/generated_mixed",
+            "check_needed": false
+          },
+          {
+            "id": "62e53f39-f7bb-4347-a1dc-e28ccd3ef963",
+            "type": "note",
+            "order": 6,
+            "title": "化蝶",
+            "structure": "化 + 名词",
+            "meaning_vi": "hóa thành bướm",
+            "examples": [
+              {
+                "id": "cfc9ce32-9622-4ae8-b4e6-c96ac2de6119",
+                "zh": "他们最后化为一对蝴蝶。",
+                "pinyin": "",
+                "vi": "",
+                "en": "",
+                "highlight": [],
+                "grammar_refs": [],
+                "vocab_refs": [],
+                "source_ref": "",
+                "note_vi": "",
+                "audio_key": "",
+                "source_origin": "textbook",
+                "check_needed": false
+              }
+            ],
+            "source_refs": [],
+            "source_origin": "textbook/generated_mixed",
+            "check_needed": false
+          }
+        ]
+      },
+      {
+        "id": "b045e537-7383-494b-8d61-b0286977ed80",
+        "type": "grammar",
+        "order": 5,
+        "title": "词语用法",
+        "title_vi": "Cách dùng từ / ngữ pháp",
+        "source_origin": "textbook/generated_mixed",
+        "check_needed": false,
+        "items": [
+          {
+            "id": "d5eaf408-514c-4987-b142-668f43d140be",
+            "type": "grammar_point",
+            "order": 1,
+            "title": "由于",
+            "title_vi": "Do / bởi vì",
+            "level": "HSK3+",
+            "tags": [
+              "词语用法"
+            ],
+            "source_origin": "textbook/generated_mixed",
+            "page_start": 218,
+            "page_end": 222,
+            "check_needed": false,
+            "blocks": [
+              {
+                "id": "b7c5d870-2db8-4e2e-950f-f0e6e522ac16",
+                "type": "grammar_overview",
+                "order": 1,
+                "title": "Bản chất",
+                "content_vi": "由于 nêu nguyên nhân hoặc lý do. Trong khẩu ngữ thường dùng 因为 hơn; 由于 có sắc thái văn viết hơn.",
+                "examples": []
+              },
+              {
+                "id": "b3534a40-3bab-464a-97dd-67889b8bcb7b",
+                "type": "grammar_structure",
+                "order": 2,
+                "title": "Cấu trúc",
+                "pattern": "由于 + nguyên nhân，所以/因此/因而 + kết quả",
+                "meaning_vi": "Do nguyên nhân nào đó nên có kết quả phía sau.",
+                "formulas": [
+                  {
+                    "label": "cause_result",
+                    "pattern": "由于 A，所以/因此/因而 B"
+                  }
+                ],
+                "examples": [
+                  {
+                    "id": "2e38466f-cc5f-451a-9612-b188f7cd2dcf",
+                    "zh": "由于古时候女子不能上学读书，所以祝英台常常站在窗前。",
+                    "pinyin": "",
+                    "vi": "Do thời xưa phụ nữ không thể đi học nên Chúc Anh Đài thường đứng bên cửa sổ.",
+                    "en": "",
+                    "highlight": [
+                      "由于",
+                      "所以"
+                    ],
+                    "grammar_refs": [
+                      "d5eaf408-514c-4987-b142-668f43d140be"
+                    ],
+                    "vocab_refs": [],
+                    "source_ref": "4a807389-3592-4cf4-973f-6589e0118fb2",
+                    "note_vi": "",
+                    "audio_key": "",
+                    "source_origin": "textbook",
+                    "check_needed": false
+                  }
+                ],
+                "notes_vi": [
+                  "由于 có thể đứng sau 是: 他不参加比赛是由于最近身体不太好。",
+                  "因为 có thể đứng ở vế sau; 由于 thường không đứng ở vế sau theo kiểu khẩu ngữ."
+                ]
+              }
+            ]
+          },
+          {
+            "id": "a8720887-db26-4d49-b41f-8a6d646a791d",
+            "type": "grammar_point",
+            "order": 2,
+            "title": "为",
+            "title_vi": "Làm thành / vì / bởi",
+            "level": "HSK3+",
+            "tags": [
+              "词语用法"
+            ],
+            "source_origin": "textbook/generated_mixed",
+            "page_start": 218,
+            "page_end": 222,
+            "check_needed": false,
+            "blocks": [
+              {
+                "id": "470b1ca1-e0a1-449f-b55e-a8aa481a4dd4",
+                "type": "grammar_overview",
+                "order": 1,
+                "title": "Bản chất",
+                "content_vi": "为 trong bài có nhiều nghĩa: làm/đóng vai, trở thành, làm việc, là, hoặc bị/bởi khi đi với 所.",
+                "examples": []
+              },
+              {
+                "id": "0ef2b790-3209-4b5c-a519-ca5a424e4d49",
+                "type": "grammar_structure",
+                "order": 2,
+                "title": "为 = trở thành / hóa thành",
+                "pattern": "A + 化为 / 结拜为 + B",
+                "meaning_vi": "A trở thành hoặc được kết thành B.",
+                "formulas": [
+                  {
+                    "label": "become",
+                    "pattern": "A + 为 + B"
+                  }
+                ],
+                "examples": [
+                  {
+                    "id": "148dd5b4-2deb-4724-b898-7d508f8a6e77",
+                    "zh": "梁山伯和祝英台最后化为一对蝴蝶。",
+                    "pinyin": "",
+                    "vi": "Lương Sơn Bá và Chúc Anh Đài cuối cùng hóa thành một đôi bướm.",
+                    "en": "",
+                    "highlight": [
+                      "化为"
+                    ],
+                    "grammar_refs": [
+                      "a8720887-db26-4d49-b41f-8a6d646a791d"
+                    ],
+                    "vocab_refs": [],
+                    "source_ref": "grammar_page_219",
+                    "note_vi": "",
+                    "audio_key": "",
+                    "source_origin": "textbook",
+                    "check_needed": false
+                  }
+                ],
+                "notes_vi": [
+                  "为 wéi: làm thành, trở thành, là.",
+                  "为 wèi: vì/cho; trong bài có thể gặp khi diễn đạt mục đích hoặc nguyên nhân."
+                ]
+              }
+            ]
+          },
+          {
+            "id": "28ce5846-ff50-47d0-927a-dd6a1699d21a",
+            "type": "grammar_point",
+            "order": 3,
+            "title": "始终",
+            "title_vi": "Từ đầu đến cuối",
+            "level": "HSK3+",
+            "tags": [
+              "词语用法"
+            ],
+            "source_origin": "textbook/generated_mixed",
+            "page_start": 220,
+            "page_end": 222,
+            "check_needed": false,
+            "blocks": [
+              {
+                "id": "50dcd503-1832-4112-a0be-e09408954b90",
+                "type": "grammar_overview",
+                "order": 1,
+                "title": "Bản chất",
+                "content_vi": "始终 nghĩa là từ đầu đến cuối, luôn luôn; trong sách ghi thường dùng với phủ định.",
+                "examples": []
+              },
+              {
+                "id": "2a6a13b8-74d6-4b36-a365-dd671224bcb6",
+                "type": "grammar_negative_form",
+                "order": 2,
+                "title": "Dạng phủ định thường gặp",
+                "pattern": "始终 + 不/没 + V",
+                "wrong_pattern": "一直 có thể thay trong nhiều câu, nhưng 始终 nhấn mạnh toàn bộ quá trình.",
+                "meaning_vi": "Từ đầu đến cuối vẫn không/chưa làm gì.",
+                "correct_examples": [
+                  {
+                    "id": "3620f823-6377-41e3-9821-e498d2c8ac94",
+                    "zh": "梁山伯始终不知道祝英台是女孩子。",
+                    "pinyin": "",
+                    "vi": "Lương Sơn Bá từ đầu đến cuối vẫn không biết Chúc Anh Đài là con gái.",
+                    "highlight": [
+                      "始终不知道"
+                    ],
+                    "explanation_vi": "Nhấn mạnh suốt cả quá trình ba năm và lúc tiễn biệt vẫn không biết."
+                  }
+                ],
+                "wrong_examples": []
+              }
+            ]
+          },
+          {
+            "id": "43a1f72d-1510-4a57-a1fa-0af2b4890023",
+            "type": "grammar_point",
+            "order": 4,
+            "title": "不然",
+            "title_vi": "Nếu không thì",
+            "level": "HSK3+",
+            "tags": [
+              "词语用法"
+            ],
+            "source_origin": "textbook/generated_mixed",
+            "page_start": 220,
+            "page_end": 222,
+            "check_needed": false,
+            "blocks": [
+              {
+                "id": "3ecf1989-24b0-4088-8831-c92b1fd6d541",
+                "type": "grammar_structure",
+                "order": 1,
+                "title": "Cấu trúc",
+                "pattern": "Câu trước， 不然 / 要不然 / 要不 + hậu quả",
+                "meaning_vi": "Nếu không làm theo điều vừa nói thì sẽ xảy ra hậu quả phía sau.",
+                "formulas": [
+                  {
+                    "label": "otherwise",
+                    "pattern": "A，不然 B"
+                  }
+                ],
+                "examples": [
+                  {
+                    "id": "4c24a67d-5112-438c-96a0-1fe26e7867ad",
+                    "zh": "还是给他打个电话吧，不然他会担心的。",
+                    "pinyin": "",
+                    "vi": "Vẫn nên gọi điện cho anh ấy, nếu không anh ấy sẽ lo.",
+                    "en": "",
+                    "highlight": [
+                      "不然"
+                    ],
+                    "grammar_refs": [
+                      "43a1f72d-1510-4a57-a1fa-0af2b4890023"
+                    ],
+                    "vocab_refs": [],
+                    "source_ref": "grammar_page_222",
+                    "note_vi": "",
+                    "audio_key": "",
+                    "source_origin": "textbook",
+                    "check_needed": false
+                  }
+                ],
+                "notes_vi": [
+                  "不然 cũng có thể nói 要不然 hoặc 要不 trong khẩu ngữ."
+                ]
+              }
+            ]
+          },
+          {
+            "id": "cb4fa491-3ff6-4992-b0d5-5abdd9044560",
+            "type": "grammar_point",
+            "order": 5,
+            "title": "宁可",
+            "title_vi": "Thà rằng",
+            "level": "HSK3+",
+            "tags": [
+              "词语用法"
+            ],
+            "source_origin": "textbook/generated_mixed",
+            "page_start": 220,
+            "page_end": 222,
+            "check_needed": false,
+            "blocks": [
+              {
+                "id": "b7be4295-e408-4edd-882f-3fff358754f0",
+                "type": "grammar_structure",
+                "order": 1,
+                "title": "Cấu trúc",
+                "pattern": "宁可 + A，也不/也要 + B",
+                "meaning_vi": "Sau khi so sánh lợi hại, người nói chọn A, thường để từ chối hoặc quyết tâm với B.",
+                "formulas": [
+                  {
+                    "label": "would_rather",
+                    "pattern": "宁可 A，也不 B"
+                  }
+                ],
+                "examples": [
+                  {
+                    "id": "528ab4f2-319d-4271-8800-f92a399a6e8c",
+                    "zh": "不然，宁可死也不进马家的门。",
+                    "pinyin": "",
+                    "vi": "Nếu không, nàng thà chết cũng không bước vào cửa nhà họ Mã.",
+                    "en": "",
+                    "highlight": [
+                      "宁可",
+                      "也不"
+                    ],
+                    "grammar_refs": [
+                      "cb4fa491-3ff6-4992-b0d5-5abdd9044560"
+                    ],
+                    "vocab_refs": [],
+                    "source_ref": "2fa39b34-744a-4e61-870d-0888f40e57cd",
+                    "note_vi": "",
+                    "audio_key": "",
+                    "source_origin": "textbook",
+                    "check_needed": false
+                  }
+                ],
+                "notes_vi": [
+                  "宁可 cũng có dạng 宁肯, 宁愿.",
+                  "Có thể đứng trước động từ hoặc trước chủ ngữ."
+                ]
+              }
+            ]
+          },
+          {
+            "id": "a9bc0f78-52c9-4ca7-b62e-d1d8343543ae",
+            "type": "grammar_point",
+            "order": 6,
+            "title": "表达",
+            "title_vi": "Diễn đạt / bày tỏ",
+            "level": "HSK3+",
+            "tags": [
+              "词语用法"
+            ],
+            "source_origin": "textbook/generated_mixed",
+            "page_start": 220,
+            "page_end": 222,
+            "check_needed": false,
+            "blocks": [
+              {
+                "id": "437a4fe6-cbe3-4168-b3de-181d1e249363",
+                "type": "grammar_overview",
+                "order": 1,
+                "title": "Bản chất",
+                "content_vi": "表达 là nói hoặc viết ra suy nghĩ, tình cảm trong lòng. Sách so sánh với 表示: 表达 chủ yếu bằng lời nói/chữ viết, 表示 có thể bằng lời, cử chỉ, màu sắc, tín hiệu, hành động.",
+                "examples": []
+              },
+              {
+                "id": "36af8925-9df2-4371-9cce-405d3672953f",
+                "type": "grammar_structure",
+                "order": 2,
+                "title": "Cấu trúc",
+                "pattern": "表达 + 思想/感情/感谢/爱情/能力",
+                "meaning_vi": "Bày tỏ hoặc diễn đạt một nội dung bên trong.",
+                "formulas": [
+                  {
+                    "label": "express_content",
+                    "pattern": "表达 + nội dung"
+                  }
+                ],
+                "examples": [
+                  {
+                    "id": "efefab30-bcd8-4248-a5e1-9730cca9d249",
+                    "zh": "一路上英台多次暗示山伯，表达对山伯恋恋不舍的感情。",
+                    "pinyin": "",
+                    "vi": "Trên đường, Anh Đài nhiều lần ám chỉ Sơn Bá, bày tỏ tình cảm lưu luyến không nỡ rời.",
+                    "en": "",
+                    "highlight": [
+                      "表达"
+                    ],
+                    "grammar_refs": [
+                      "a9bc0f78-52c9-4ca7-b62e-d1d8343543ae"
+                    ],
+                    "vocab_refs": [],
+                    "source_ref": "07e24203-eb21-4c88-96af-29e78d8ca2a2",
+                    "note_vi": "",
+                    "audio_key": "",
+                    "source_origin": "textbook",
+                    "check_needed": false
+                  }
+                ],
+                "notes_vi": [
+                  "Không nói trống 我表达了 nếu thiếu nội dung; nên nói 表达了自己的想法/感情."
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "9901c597-ca97-451e-b63d-11814aaf933e",
+        "type": "exercises",
+        "order": 6,
+        "title": "练习",
+        "title_vi": "Bài tập",
+        "source_origin": "textbook/generated_mixed",
+        "check_needed": true,
+        "coverage_contract": {
+          "expected_exercise_count_from_pdf": 11,
+          "actual_exercise_count_in_json": 11,
+          "all_exercises_covered": true,
+          "note": "Exercises 1–11 are preserved. Textbook questions are extracted; generated answer samples are marked check_needed/answer_verified=false."
+        },
+        "items": [
+          {
+            "id": "15cb6f38-593b-48d1-bcca-dc3d2a140f9e",
+            "type": "phonetics",
+            "variant": "pronunciation_tone_minimal_pairs",
+            "order": 1,
+            "title": "一、语音",
+            "title_vi": "Ngữ âm",
+            "instruction": {
+              "zh": "辨音辨调；朗读。",
+              "vi": "Phân biệt âm/thanh điệu; đọc đoạn thơ."
+            },
+            "difficulty": "normal",
+            "skill_focus": [
+              "pronunciation",
+              "speaking"
+            ],
+            "parts": [
+              {
+                "id": "82f9b16a-0baa-4450-88ae-a5c4756e2b2e",
+                "type": "minimal_pair_group",
+                "title": "辨音辨调",
+                "items": [
+                  {
+                    "id": "82c79e56-60d5-4529-9c2a-21fa36265276",
+                    "left": "始终 shǐzhōng",
+                    "right": "时钟 shízhōng"
+                  },
+                  {
+                    "id": "e74c1847-ac69-441f-89d1-78f5d4cf3c26",
+                    "left": "送行 sòngxíng",
+                    "right": "送信 sòng xìn"
+                  },
+                  {
+                    "id": "5fe4fb20-01c2-40c3-9c9b-3213ffeee9e6",
+                    "left": "暗示 ànshì",
+                    "right": "按时 ànshí"
+                  },
+                  {
+                    "id": "8d1c3196-8bde-4da6-ae03-84c4876ed101",
+                    "left": "相亲 xiāngqīn",
+                    "right": "相信 xiāngxìn"
+                  },
+                  {
+                    "id": "ea0b34ec-1e1d-45b8-9637-2ed5f767a7f4",
+                    "left": "表明 biǎomíng",
+                    "right": "标明 biāomíng"
+                  },
+                  {
+                    "id": "364420c7-caf2-4a45-9cfe-26f9a68e2bd9",
+                    "left": "痛哭 tòngkū",
+                    "right": "痛苦 tòngkǔ"
+                  }
+                ]
+              },
+              {
+                "id": "6be4fd46-7acf-499a-a2a9-5099d80f03a5",
+                "type": "poem_reading",
+                "title": "朗读",
+                "items": [
+                  {
+                    "id": "644ac23c-2af0-4808-ba24-74ce7932a0f9",
+                    "text": "山伯英台两无猜，同窗共读整三载。心心相印情意深，可叹阴阳两分开。感天动地哭声哀，二人化为彩蝶来。《梁祝》一曲传千古，昭示人间有真爱。",
+                    "pinyin": "",
+                    "vi": "Sơn Bá Anh Đài vốn không nghi kỵ, cùng học suốt ba năm. Tình sâu tâm ý tương thông, tiếc thay âm dương chia cách. Tiếng khóc cảm trời động đất, hai người hóa thành bướm đẹp. Một khúc Lương Chúc truyền ngàn đời, chỉ rõ nhân gian có tình yêu thật."
+                  }
+                ]
+              }
+            ],
+            "rendering": {
+              "renderer": "exercise.phonetics.v2"
+            },
+            "source_origin": "textbook",
+            "page_start": 222,
+            "page_end": 223,
+            "check_needed": false
+          },
+          {
+            "id": "98e14c21-0449-4e36-b1ae-77ed46cf3aa0",
+            "type": "read_aloud",
+            "variant": "word_phrase_sentence_chunks",
+            "order": 2,
+            "title": "二、词语",
+            "title_vi": "Đọc cụm từ",
+            "instruction": {
+              "zh": "读下列词语。",
+              "vi": "Đọc các cụm từ sau."
+            },
+            "chunks": [
+              {
+                "id": "029b6888-951c-4d78-8e81-67211d2f2178",
+                "text": "家喻户晓",
+                "pinyin": "",
+                "vi": "",
+                "source_origin": "textbook",
+                "check_needed": false
+              },
+              {
+                "id": "f7a394ba-7ba1-4ced-9fb6-4a51e9b45e41",
+                "text": "女扮男装",
+                "pinyin": "",
+                "vi": "",
+                "source_origin": "textbook",
+                "check_needed": false
+              },
+              {
+                "id": "cbeae143-93f7-4e30-b03e-cafcbeecfee8",
+                "text": "一见如故",
+                "pinyin": "",
+                "vi": "",
+                "source_origin": "textbook",
+                "check_needed": false
+              },
+              {
+                "id": "908385d2-03e2-42e6-8641-681ccbdb7383",
+                "text": "恍然大悟",
+                "pinyin": "",
+                "vi": "",
+                "source_origin": "textbook",
+                "check_needed": false
+              },
+              {
+                "id": "9e310873-3483-4086-91b4-53e6c4982438",
+                "text": "苦苦哀求",
+                "pinyin": "",
+                "vi": "",
+                "source_origin": "textbook",
+                "check_needed": false
+              },
+              {
+                "id": "56e43701-a5ae-4070-ac7b-31f77ed52c81",
+                "text": "苦苦等待",
+                "pinyin": "",
+                "vi": "",
+                "source_origin": "textbook",
+                "check_needed": false
+              },
+              {
+                "id": "77a9ec03-cc9f-4170-b16a-7e20444a37a7",
+                "text": "恋恋不舍",
+                "pinyin": "",
+                "vi": "",
+                "source_origin": "textbook",
+                "check_needed": false
+              },
+              {
+                "id": "d7b385ae-57da-4e8c-aee4-b67137f2423a",
+                "text": "翩翩起舞",
+                "pinyin": "",
+                "vi": "",
+                "source_origin": "textbook",
+                "check_needed": false
+              },
+              {
+                "id": "d6835cb8-98d0-4ec4-896e-28edb097b655",
+                "text": "不断暗示",
+                "pinyin": "",
+                "vi": "",
+                "source_origin": "textbook",
+                "check_needed": false
+              },
+              {
+                "id": "0783c634-e332-446a-9f6d-20a19656f7f3",
+                "text": "难以领悟",
+                "pinyin": "",
+                "vi": "",
+                "source_origin": "textbook",
+                "check_needed": false
+              },
+              {
+                "id": "b0cb1abd-bc89-4210-975d-f110f5646ad2",
+                "text": "告别朋友",
+                "pinyin": "",
+                "vi": "",
+                "source_origin": "textbook",
+                "check_needed": false
+              },
+              {
+                "id": "2c8b801e-cb28-49ae-b8f1-b2c8b84f7f8b",
+                "text": "告别父母",
+                "pinyin": "",
+                "vi": "",
+                "source_origin": "textbook",
+                "check_needed": false
+              }
+            ],
+            "rendering": {
+              "renderer": "exercise.read_aloud.v2"
+            },
+            "source_origin": "textbook",
+            "page_start": 223,
+            "page_end": 223,
+            "check_needed": false
+          },
+          {
+            "id": "5dfca3d2-8524-4a83-92dd-b036a7259465",
+            "type": "choose_words_fill_blank",
+            "variant": "word_bank_fill_blank",
+            "order": 3,
+            "title": "三、选词填空",
+            "title_vi": "Chọn từ điền chỗ trống",
+            "instruction": {
+              "zh": "选择合适的词语填空。",
+              "vi": "Chọn từ/cụm đúng điền vào chỗ trống."
+            },
+            "parts": [
+              {
+                "id": "7959adb6-0f83-4f16-a74e-466ec827f47d",
+                "title": "A",
+                "word_bank": [
+                  "宁可",
+                  "经不住",
+                  "始终",
+                  "恍然大悟",
+                  "路过",
+                  "转交",
+                  "家喻户晓",
+                  "情谊"
+                ],
+                "questions": [
+                  {
+                    "id": "1a0426a9-f989-4da2-bd31-19d12c9b0e3b",
+                    "prompt": "梁山伯和祝英台的故事，在中国可以说____。",
+                    "answer": "家喻户晓"
+                  },
+                  {
+                    "id": "08921ff1-686c-4aa9-a3f6-be06d0031fa4",
+                    "prompt": "你早上____食堂时，帮我带两个包子。",
+                    "answer": "路过"
+                  },
+                  {
+                    "id": "f19a9ec2-8fb6-405e-942f-ee9d56df1f3c",
+                    "prompt": "我本来不想陪她去，但是____她苦苦请求，我只好同意了。",
+                    "answer": "经不住"
+                  },
+                  {
+                    "id": "8244883d-957c-4cdd-ac12-2c140c2a0b5a",
+                    "prompt": "我们班的同学来自世界各国，大家共同学习生活了一年，结下了深厚的____。",
+                    "answer": "情谊"
+                  },
+                  {
+                    "id": "7182e6c8-bd10-4ecf-94f2-1de4bfdaec8b",
+                    "prompt": "一年来，他____坚持上课，所以，学得比别人都好。",
+                    "answer": "始终"
+                  },
+                  {
+                    "id": "1b2c55ca-ee6a-497f-b077-d43734b33897",
+                    "prompt": "我想拜托你把这个____给他。",
+                    "answer": "转交"
+                  },
+                  {
+                    "id": "a9dc2f98-f656-410c-aad3-f71045490b45",
+                    "prompt": "直到现在我才____，原来她也深深地爱着我。",
+                    "answer": "恍然大悟"
+                  },
+                  {
+                    "id": "ab47abe1-348e-4d97-aebd-a5c61421af99",
+                    "prompt": "我____走着去，也不坐你这破车。",
+                    "answer": "宁可"
+                  }
+                ]
+              },
+              {
+                "id": "275fcb77-2038-4ab8-bdfc-27ef149a3b4b",
+                "title": "B",
+                "questions": [
+                  {
+                    "id": "677e3119-df64-45a9-9d65-f1d7ac355bc3",
+                    "prompt": "他之所以也搬到这个小区来住，是____这里安静，离公司也近。（因为 / 由于）",
+                    "answer": "因为"
+                  },
+                  {
+                    "id": "11959e96-b4d9-491a-90e5-eca1f59e7d13",
+                    "prompt": "____她学习非常刻苦，因而考上了一所名牌儿大学。（因为 / 由于）",
+                    "answer": "由于"
+                  },
+                  {
+                    "id": "b60a0125-509f-4432-bec1-5cb6d5310c7e",
+                    "prompt": "昨天晚上他____工作到十二点。（一直 / 始终）",
+                    "answer": "一直"
+                  },
+                  {
+                    "id": "4bf2c957-77bc-40b4-8e55-eedb31e25ab0",
+                    "prompt": "我在车站足足等了他两个小时，可他____没来。（一直 / 始终）",
+                    "answer": "始终"
+                  },
+                  {
+                    "id": "eb16c7a4-2ce7-4096-bd1d-922dc606dea1",
+                    "prompt": "我送给他一件礼物是为了向他____感谢。（表达 / 表示）",
+                    "answer": "表示"
+                  },
+                  {
+                    "id": "ecca702d-8720-4253-8c48-3ad33ef25f45",
+                    "prompt": "他现在的口头____能力还不行。（表达 / 表示）",
+                    "answer": "表达"
+                  }
+                ]
+              }
+            ],
+            "rendering": {
+              "renderer": "exercise.fill_blank.word_bank.v2",
+              "show_word_bank": true,
+              "show_answer_after_submit": true
+            },
+            "source_origin": "textbook_question_generated_answer",
+            "page_start": 223,
+            "page_end": 224,
+            "answer_verified": false,
+            "check_needed": true
+          },
+          {
+            "id": "809141fb-cc55-403a-9433-35eea89c8c90",
+            "type": "complete_sentence",
+            "variant": "complete_idioms_and_make_sentences",
+            "order": 4,
+            "title": "四、完成下列成语并造句",
+            "title_vi": "Hoàn thành thành ngữ và đặt câu",
+            "instruction": {
+              "zh": "完成下列成语并造句。",
+              "vi": "Hoàn thành thành ngữ và đặt câu với chúng."
+            },
+            "questions": [
+              {
+                "id": "668ef942-39b3-4816-be06-f347b64fa456",
+                "prompt": "一见如____",
+                "answer": "故",
+                "full_answer": "一见如故"
+              },
+              {
+                "id": "6e23c236-94eb-4e83-9ea6-7353241c098d",
+                "prompt": "恍然大____",
+                "answer": "悟",
+                "full_answer": "恍然大悟"
+              },
+              {
+                "id": "ee3570f6-9872-4699-a1ed-c338e52b4e50",
+                "prompt": "家喻____晓",
+                "answer": "户",
+                "full_answer": "家喻户晓"
+              },
+              {
+                "id": "3130979d-5cc3-4cf5-999c-9ed317ea7c14",
+                "prompt": "恋恋不____",
+                "answer": "舍",
+                "full_answer": "恋恋不舍"
+              }
+            ],
+            "rendering": {
+              "renderer": "exercise.complete_idiom.v1"
+            },
+            "source_origin": "textbook_question_generated_answer",
+            "page_start": 224,
+            "page_end": 224,
+            "answer_verified": false,
+            "check_needed": true
+          },
+          {
+            "id": "e843bb6e-2e51-4fb8-b362-7506b97cf2fc",
+            "type": "complete_sentence",
+            "variant": "complete_sentence_with_given_words",
+            "order": 5,
+            "title": "五、用括号里的词语完成句子",
+            "title_vi": "Dùng từ trong ngoặc hoàn thành câu",
+            "instruction": {
+              "zh": "用括号里的词语完成句子。",
+              "vi": "Dùng từ trong ngoặc hoàn thành câu."
+            },
+            "questions": [
+              {
+                "id": "7d9c942a-bdc2-45a1-b852-6b3dd58fe8f2",
+                "prompt": "他不想参加比赛是____。（由于）",
+                "answer_sample": "他不想参加比赛是由于最近身体不太好。"
+              },
+              {
+                "id": "a79733e1-ef69-41fd-ac55-9bb8b3bd4d2c",
+                "prompt": "读了这个故事，____。（十分）",
+                "answer_sample": "读了这个故事，我十分感动。"
+              },
+              {
+                "id": "ec5f1e84-0693-46b3-b735-8005e47f103e",
+                "prompt": "老师的话我差不多都能听懂，但是____。（表达）",
+                "answer_sample": "老师的话我差不多都能听懂，但是还不能准确地表达出来。"
+              },
+              {
+                "id": "dc7f5f06-95a1-4158-98d8-b293729d6a13",
+                "prompt": "学习汉语当然应该到中国各地多走走、多看看，____。（不然）",
+                "answer_sample": "学习汉语当然应该到中国各地多走走、多看看，不然很难真正了解中国。"
+              },
+              {
+                "id": "55e24ac4-bbd1-40f9-9dee-e97b3f2e10f7",
+                "prompt": "____，也不交这样的男/女朋友。（宁可）",
+                "answer_sample": "我宁可一个人生活，也不交这样的男/女朋友。"
+              },
+              {
+                "id": "f7c603b4-c112-4d9c-ab37-b945d471ccee",
+                "prompt": "虽然那么多人说这件事是他干的，但是____。（始终）",
+                "answer_sample": "虽然那么多人说这件事是他干的，但是我始终不相信。"
+              }
+            ],
+            "rendering": {
+              "renderer": "exercise.complete_sentence.v2",
+              "allow_manual_check": true
+            },
+            "source_origin": "textbook_question_generated_answer",
+            "page_start": 224,
+            "page_end": 225,
+            "answer_verified": false,
+            "check_needed": true
+          },
+          {
+            "id": "60ec1197-2967-408c-a1f3-3c2112f8305a",
+            "type": "complete_dialogue",
+            "variant": "complete_dialogue_with_given_words",
+            "order": 6,
+            "title": "六、用括号里的词语完成会话",
+            "title_vi": "Dùng từ trong ngoặc hoàn thành hội thoại",
+            "instruction": {
+              "zh": "用括号里的词语完成会话。",
+              "vi": "Dùng từ trong ngoặc hoàn thành hội thoại."
+            },
+            "questions": [
+              {
+                "id": "1b0dc397-26f4-4659-a964-f9c68ceab72a",
+                "prompt": "A：你怎么知道他不会干出这样的事？\nB：____。（始终）",
+                "answer_sample": "我始终相信他不会干出这样的事。"
+              },
+              {
+                "id": "ab74bab2-0cd3-4c59-b4dd-6d9a3c6197b9",
+                "prompt": "A：你为什么选他做你的指导老师？\nB：____。（由于）",
+                "answer_sample": "由于他学问出众，人品优秀，所以我选他做我的指导老师。"
+              },
+              {
+                "id": "c503fed9-44e1-4df9-b284-51dbab822ee8",
+                "prompt": "A：我发现他是个非常认真的人。\nB：不仅如此，他还是____。（学问）",
+                "answer_sample": "不仅如此，他还是一个学问出众的人。"
+              },
+              {
+                "id": "87b8a7fb-1969-49e6-b592-82a2e0147e96",
+                "prompt": "A：____？\nB：我现在的口语和书面表达能力还不行。尤其是写，____。（十分）",
+                "answer_sample": "A：你的汉语学习怎么样？\nB：我现在的口语和书面表达能力还不行。尤其是写，十分困难。"
+              },
+              {
+                "id": "6155b63d-c263-446a-9ad7-80d775f5be6e",
+                "prompt": "A：老师，汉字对我来说太难了，我想只学口语，不学汉字，行吗？\nB：可能不行，你要真想学好汉语，就必须学习汉字，____。（不然）",
+                "answer_sample": "不然你的汉语水平很难提高。"
+              },
+              {
+                "id": "8e9a9428-6659-4025-8fb4-b5bf4134d62d",
+                "prompt": "A：你们以前不是好朋友吗，怎么现在连话都不说了？\nB：____。（宁可）",
+                "answer_sample": "我宁可一个人，也不想再跟他做朋友。"
+              }
+            ],
+            "rendering": {
+              "renderer": "exercise.complete_dialogue.v2",
+              "allow_manual_check": true
+            },
+            "source_origin": "textbook_question_generated_answer",
+            "page_start": 225,
+            "page_end": 225,
+            "answer_verified": false,
+            "check_needed": true
+          },
+          {
+            "id": "1fd4313d-93f3-4cbe-9dd4-2ba0d5bac415",
+            "type": "reorder_sentence",
+            "variant": "reorder_sentences_or_paragraph",
+            "order": 7,
+            "title": "七、连句成段",
+            "title_vi": "Sắp xếp câu thành đoạn",
+            "instruction": {
+              "zh": "连句成段。",
+              "vi": "Sắp xếp các câu thành đoạn văn."
+            },
+            "questions": [
+              {
+                "id": "f8e911bf-9cbb-4dad-91ed-87032d2d95f2",
+                "sentences": {
+                  "A": "这难道是因为丈夫优点不多，反而更加值得被爱吗？",
+                  "B": "美满的婚姻是难得一遇的，常可以看到这种家庭。",
+                  "C": "还是因为有这么一位丈夫，女人会感到更安全、更放心？",
+                  "D": "不怎么出色的丈夫却有着一位十分贤惠、美丽的妻子。"
+                },
+                "answer_order": [
+                  "B",
+                  "D",
+                  "A",
+                  "C"
+                ]
+              },
+              {
+                "id": "3fd78baa-272c-4e07-8ee2-5399c9977a99",
+                "sentences": {
+                  "A": "因此，我认为只要有合适的对象，任何时候结婚都是有道理的，而不要为了所谓的自由而逃避婚姻。",
+                  "B": "她是青年时代的情人。",
+                  "C": "中年时代的伴侣，晚年时代的守护者。",
+                  "D": "在一个男人的生命历程中，妻子是什么呢？"
+                },
+                "answer_order": [
+                  "D",
+                  "B",
+                  "C",
+                  "A"
+                ]
+              }
+            ],
+            "rendering": {
+              "renderer": "exercise.reorder_paragraph.v2",
+              "show_answer_after_submit": true
+            },
+            "source_origin": "textbook_question_generated_answer",
+            "page_start": 226,
+            "page_end": 226,
+            "answer_verified": false,
+            "check_needed": true
+          },
+          {
+            "id": "b9e46637-94ca-4fea-90cf-29155c015046",
+            "type": "correct_sentence",
+            "variant": "error_correction",
+            "order": 8,
+            "title": "八、改错句",
+            "title_vi": "Sửa câu sai",
+            "instruction": {
+              "zh": "改错句。",
+              "vi": "Sửa câu sai."
+            },
+            "questions": [
+              {
+                "id": "51d25007-39bc-4798-8fb4-fd9aaf8168f5",
+                "wrong": "我决定了，无论遇到很多困难，都始终坚持学下去。",
+                "correct_sample": "我决定了，无论遇到多少困难，都要始终坚持学下去。"
+              },
+              {
+                "id": "e65bddbb-aff2-43d6-86ee-fb07381ebe3e",
+                "wrong": "他宁可不请假去旅行，也不想上他的课。",
+                "correct_sample": "他宁可请假去旅行，也不想上他的课。"
+              },
+              {
+                "id": "2ac934ff-71d7-4d4a-b040-149ec5a5750e",
+                "wrong": "这个老师让我很怕，由于他常常不笑了。",
+                "correct_sample": "这个老师让我很怕，因为他常常不笑。"
+              },
+              {
+                "id": "c5d39e80-de1f-4a3c-9b5f-9193a14a8a33",
+                "wrong": "我为梁山伯和祝英台的故事非常感动。",
+                "correct_sample": "我被梁山伯和祝英台的故事深深感动了。"
+              },
+              {
+                "id": "758a96f8-d8f5-4075-aafa-95e515a48195",
+                "wrong": "我真想用汉语向她表示表示我的爱情。",
+                "correct_sample": "我真想用汉语向她表达我的爱情。"
+              },
+              {
+                "id": "7969b51e-cfc5-4e03-97be-0b29b48a7fdc",
+                "wrong": "因为他们两人朝夕相处在一起，所以产生了很深的爱情。",
+                "correct_sample": "因为他们两人朝夕相处，所以产生了很深的爱情。"
+              }
+            ],
+            "rendering": {
+              "renderer": "exercise.error_correction.v2",
+              "allow_manual_check": true
+            },
+            "source_origin": "textbook_question_generated_answer",
+            "page_start": 226,
+            "page_end": 227,
+            "answer_verified": false,
+            "check_needed": true
+          },
+          {
+            "id": "849f6690-a8ea-4b6f-937d-429f236714ad",
+            "type": "custom",
+            "variant": "language_and_context",
+            "order": 9,
+            "title": "九、情景表达",
+            "title_vi": "Biểu đạt theo ngữ cảnh",
+            "instruction": {
+              "zh": "下列句子什么情景下说？下列情景怎么说？",
+              "vi": "Các câu sau dùng trong tình huống nào? Với tình huống sau thì nói thế nào?"
+            },
+            "parts": [
+              {
+                "id": "488ae5f8-4dd9-4d3d-84f3-f8419cb45ce5",
+                "title": "下列句子什么情景下说？",
+                "items": [
+                  "你如果再逼我，我宁可一死。",
+                  "这时我才恍然大悟，原来他也爱我。",
+                  "我真是感到很无奈。"
+                ]
+              },
+              {
+                "id": "548bb879-d19c-4be2-9294-b50338cd6fcd",
+                "title": "下列情景怎么说？",
+                "items": [
+                  {
+                    "prompt": "路上太拥挤，朋友问你怎么去某地，你回答他。（宁可）",
+                    "answer_sample": "路上太拥挤，我宁可走着去，也不坐车。"
+                  },
+                  {
+                    "prompt": "两个人一见面就无话不谈，像多年不见的老朋友一样。（一见如故）",
+                    "answer_sample": "他们两个人一见如故，无话不谈。"
+                  },
+                  {
+                    "prompt": "梁山伯与祝英台的爱情故事在中国没有人不知道。（家喻户晓）",
+                    "answer_sample": "梁山伯与祝英台的爱情故事在中国家喻户晓。"
+                  }
+                ]
+              }
+            ],
+            "rendering": {
+              "renderer": "exercise.context_expression.v1",
+              "allow_manual_check": true
+            },
+            "source_origin": "textbook_question_generated_answer",
+            "page_start": 227,
+            "page_end": 227,
+            "answer_verified": false,
+            "check_needed": true
+          },
+          {
+            "id": "17063a8b-9f58-474f-91c4-2d8cb1e87c5d",
+            "type": "reading_fill_blank",
+            "variant": "reading_cloze",
+            "order": 10,
+            "title": "十、综合填空：端午节的由来",
+            "title_vi": "Điền tổng hợp: Nguồn gốc Tết Đoan Ngọ",
+            "instruction": {
+              "zh": "综合填空。",
+              "vi": "Làm bài đọc điền khuyết ở section reading."
+            },
+            "reading_ref": "reading_01_cloze_duanwu",
+            "source_origin": "textbook_question_generated_answer",
+            "page_start": 227,
+            "page_end": 229,
+            "answer_verified": false,
+            "check_needed": true
+          },
+          {
+            "id": "908dacce-d378-4d3b-90b7-1f687447bf45",
+            "type": "communication_dialogue",
+            "variant": "role_play",
+            "order": 11,
+            "title": "十一、交际会话：谈论恋爱与失恋",
+            "title_vi": "Giao tiếp: nói về yêu và thất tình",
+            "instruction": {
+              "zh": "谈论恋爱与失恋。",
+              "vi": "Luyện hội thoại về yêu và thất tình."
+            },
+            "communication_ref": "communication_01_love_heartbreak",
+            "source_origin": "textbook",
+            "page_start": 229,
+            "page_end": 230,
+            "answer_verified": false,
+            "check_needed": false
+          }
+        ]
+      },
+      {
+        "id": "886f621e-85ce-4e1a-91df-d8d257596034",
+        "type": "reading",
+        "order": 7,
+        "title": "综合填空",
+        "title_vi": "Bài đọc điền tổng hợp",
+        "source_origin": "textbook/generated_mixed",
+        "check_needed": true,
+        "items": [
+          {
+            "id": "8066d389-fa71-471e-b146-8fb1076261f9",
+            "type": "reading_cloze",
+            "order": 1,
+            "title": "端午节的由来",
+            "title_vi": "Nguồn gốc Tết Đoan Ngọ",
+            "source_origin": "textbook",
+            "page_start": 227,
+            "page_end": 229,
+            "check_needed": true,
+            "supplementary_vocab_refs": [
+              "61ce3463-fded-4c37-a81f-90fc745e8ab7",
+              "b29ccb2e-0c64-4431-8cf1-56bea2ed6817",
+              "b359523f-65ab-4d65-a183-b4f0c3bdfb4e",
+              "25879a5f-f396-4cfd-b9cf-ab952da43059",
+              "772d40d7-1f7f-49d3-b04b-8591ec396374",
+              "8d6bfeeb-4c9e-4835-910d-ac19ba6aa9d6",
+              "c63b7881-f980-40bf-8f25-a60025781a0e",
+              "19e5e636-f19d-40ec-ad61-552d20baa3a8",
+              "50e9b559-9eb2-416e-9bc8-3b5f001c11be",
+              "42b6ebd4-6ff4-478a-849d-c6d1dce5ad92",
+              "c6cc0b7f-747e-498b-8625-85ce1ec9ac2d",
+              "d14b14cd-cc14-4056-b3ad-9dcfc32f7be5"
+            ],
+            "passage": {
+              "id": "f69fa452-eb41-49bf-8121-dfc271ef9234",
+              "paragraphs": [
+                {
+                  "id": "d2a4cf8b-55cd-4904-9fed-3141da682b19",
+                  "order": 1,
+                  "zh": "农历五月初五，是中国传统的节日——端午节。端午节这一天，民间有吃粽子、赛龙舟的风俗。那么，端午节是怎么来的呢？这里也有一个家喻户晓的传说。",
+                  "pinyin": "",
+                  "vi": "Mùng 5 tháng 5 âm lịch là Tết Đoan Ngọ, một ngày lễ truyền thống của Trung Quốc. Vào ngày này dân gian có phong tục ăn bánh粽子 và đua thuyền rồng. Vậy Tết Đoan Ngọ bắt nguồn thế nào? Ở đây cũng có một truyền thuyết ai ai cũng biết.",
+                  "audio_key": "",
+                  "vocab_refs": [],
+                  "grammar_refs": [],
+                  "source_origin": "textbook",
+                  "page_start": 228,
+                  "page_end": 228,
+                  "check_needed": false
+                },
+                {
+                  "id": "a6b1119e-769b-4444-9eee-c4a26d7f6af3",
+                  "order": 2,
+                  "zh": "据说，战国时代，强大的秦国总想灭掉楚国。开始，楚怀王①____屈原还很重视。为了国家的安全，屈原给楚怀王出了不少好主意。后来，秦国收买了楚怀王身边的大臣，他们在楚怀王面前说屈原的坏话，反对屈原的正确主张，楚怀王没有主见，②____渐渐疏远了屈原。",
+                  "pinyin": "",
+                  "vi": "Nghe nói thời Chiến Quốc, nước Tần hùng mạnh luôn muốn tiêu diệt nước Sở. Ban đầu Sở Hoài Vương còn rất coi trọng Khuất Nguyên. Vì an toàn của đất nước, Khuất Nguyên hiến nhiều kế hay. Về sau nước Tần mua chuộc đại thần bên cạnh Sở Hoài Vương, họ nói xấu Khuất Nguyên và phản đối chủ trương đúng đắn của ông; Sở Hoài Vương không có chính kiến nên dần xa lánh ông.",
+                  "audio_key": "",
+                  "vocab_refs": [],
+                  "grammar_refs": [],
+                  "source_origin": "textbook",
+                  "page_start": 228,
+                  "page_end": 228,
+                  "check_needed": true
+                },
+                {
+                  "id": "ce8bdbc9-b498-418a-ab2c-e16111228a35",
+                  "order": 3,
+                  "zh": "屈原感到很痛心，他看到自己的祖国将要③____强大的秦国所消灭，而自己的主张又得不到楚怀王的支持，于是，便怀着难以抑制的悲愤，写出了《离骚》《天问》等不朽的诗篇，抒发心中的苦闷，表达自己救国救民的远大理想。",
+                  "pinyin": "",
+                  "vi": "Khuất Nguyên rất đau lòng, thấy tổ quốc sắp bị nước Tần hùng mạnh tiêu diệt mà chủ trương của mình không được vua ủng hộ, bèn mang nỗi bi phẫn khó kìm nén viết nên Ly Tao, Thiên Vấn và các áng thơ bất hủ, bày tỏ nỗi khổ trong lòng và lý tưởng cứu nước cứu dân.",
+                  "audio_key": "",
+                  "vocab_refs": [],
+                  "grammar_refs": [],
+                  "source_origin": "textbook",
+                  "page_start": 228,
+                  "page_end": 228,
+                  "check_needed": true
+                },
+                {
+                  "id": "b3e5d57c-8b64-4c60-b5f0-3976cd13fef0",
+                  "order": 4,
+                  "zh": "公元前229年，秦国攻占了楚国的八个城市，接着便派使者请楚怀王去秦国议和。屈原看破了秦王的阴谋，劝告他不要去秦国，楚怀王不但不听，④____将屈原赶出了都城。后来楚怀王到了秦国，但他一到秦国就被囚禁了起来，楚怀王非常后悔，后来又死在了秦国。不久，秦兵就⑤____郢都攻占了。",
+                  "pinyin": "",
+                  "vi": "Năm 229 TCN, Tần đánh chiếm tám thành của Sở, rồi phái sứ giả mời Sở Hoài Vương đến Tần nghị hòa. Khuất Nguyên nhìn thấu âm mưu của vua Tần, khuyên ông đừng đi; Sở Hoài Vương không những không nghe mà còn đuổi Khuất Nguyên khỏi kinh đô. Về sau Hoài Vương đến Tần, vừa đến đã bị giam, vô cùng hối hận rồi chết ở Tần. Không lâu sau, quân Tần đánh chiếm Dĩnh Đô.",
+                  "audio_key": "",
+                  "vocab_refs": [],
+                  "grammar_refs": [],
+                  "source_origin": "textbook",
+                  "page_start": 228,
+                  "page_end": 228,
+                  "check_needed": true
+                },
+                {
+                  "id": "383c7578-216f-41aa-a8a5-b889b7ef0fec",
+                  "order": 5,
+                  "zh": "屈原在流放途中，听到楚怀王死了，郢都也被攻破的消息，觉得没有了希望，就跳进了激流滚滚的汨罗江。这一天正好是五月初五。江上的渔夫和岸上的百姓，听说屈原跳江了，⑥____纷纷来到江上，打捞屈原的尸体。他们拿出粽子投入江中，为的是不让江中的鱼虫伤害屈原的尸体。⑦____，每年五月初五屈原投江这一天，人们都到江上划龙舟，投粽子，以此来纪念这位伟大的爱国诗人。端午节的风俗就这样流传了⑧____。",
+                  "pinyin": "",
+                  "vi": "Khuất Nguyên trên đường bị lưu đày nghe tin Sở Hoài Vương chết và Dĩnh Đô bị phá, thấy không còn hy vọng nên nhảy xuống dòng nước xiết sông Mịch La. Hôm đó đúng mùng 5 tháng 5. Ngư dân trên sông và dân chúng trên bờ nghe tin Khuất Nguyên nhảy sông liền lần lượt ra sông vớt thi thể. Họ ném bánh粽子 xuống sông để cá trùng không làm hại thi thể ông. Từ đó, hằng năm vào ngày Khuất Nguyên gieo mình xuống sông, người ta ra sông đua thuyền rồng và thả粽子 để tưởng nhớ nhà thơ yêu nước vĩ đại này. Phong tục Đoan Ngọ cứ thế lưu truyền lại.",
+                  "audio_key": "",
+                  "vocab_refs": [],
+                  "grammar_refs": [],
+                  "source_origin": "textbook",
+                  "page_start": 229,
+                  "page_end": 229,
+                  "check_needed": true
+                }
+              ]
+            },
+            "questions": [
+              {
+                "id": "5b1c23b4-26cb-4f98-a3f5-93724265d731",
+                "blank_id": "blank_01",
+                "prompt": "①",
+                "answer": "对",
+                "answer_verified": false,
+                "check_needed": true
+              },
+              {
+                "id": "bdeb7ae8-5514-47ef-9bb2-dc85fb305394",
+                "blank_id": "blank_02",
+                "prompt": "②",
+                "answer": "便",
+                "answer_verified": false,
+                "check_needed": true
+              },
+              {
+                "id": "fc4b291b-dccd-495c-b9b2-034efe4d036a",
+                "blank_id": "blank_03",
+                "prompt": "③",
+                "answer": "被",
+                "answer_verified": false,
+                "check_needed": true
+              },
+              {
+                "id": "301dcd2c-2a85-4313-b5ea-6ef65549c2f3",
+                "blank_id": "blank_04",
+                "prompt": "④",
+                "answer": "反而",
+                "answer_verified": false,
+                "check_needed": true
+              },
+              {
+                "id": "1b4ee441-72a5-4e5a-81a9-94612cfe8766",
+                "blank_id": "blank_05",
+                "prompt": "⑤",
+                "answer": "把",
+                "answer_verified": false,
+                "check_needed": true
+              },
+              {
+                "id": "5eeae101-4fd8-41de-bf52-2c02fb7d3bbd",
+                "blank_id": "blank_06",
+                "prompt": "⑥",
+                "answer": "便",
+                "answer_verified": false,
+                "check_needed": true
+              },
+              {
+                "id": "82d2f258-5d28-4767-b6c7-ca32ba9fa0e3",
+                "blank_id": "blank_07",
+                "prompt": "⑦",
+                "answer": "从此",
+                "answer_verified": false,
+                "check_needed": true
+              },
+              {
+                "id": "d85873cb-372a-4e56-a139-5debc7dd1665",
+                "blank_id": "blank_08",
+                "prompt": "⑧",
+                "answer": "下来",
+                "answer_verified": false,
+                "check_needed": true
+              }
+            ],
+            "answer_key": [
+              {
+                "blank_id": "blank_01",
+                "answer": "对",
+                "answer_verified": false,
+                "check_needed": true
+              },
+              {
+                "blank_id": "blank_02",
+                "answer": "便",
+                "answer_verified": false,
+                "check_needed": true
+              },
+              {
+                "blank_id": "blank_03",
+                "answer": "被",
+                "answer_verified": false,
+                "check_needed": true
+              },
+              {
+                "blank_id": "blank_04",
+                "answer": "反而",
+                "answer_verified": false,
+                "check_needed": true
+              },
+              {
+                "blank_id": "blank_05",
+                "answer": "把",
+                "answer_verified": false,
+                "check_needed": true
+              },
+              {
+                "blank_id": "blank_06",
+                "answer": "便",
+                "answer_verified": false,
+                "check_needed": true
+              },
+              {
+                "blank_id": "blank_07",
+                "answer": "从此",
+                "answer_verified": false,
+                "check_needed": true
+              },
+              {
+                "blank_id": "blank_08",
+                "answer": "下来",
+                "answer_verified": false,
+                "check_needed": true
+              }
+            ],
+            "rendering": {
+              "renderer": "reading.cloze.v2",
+              "input_mode": "text",
+              "show_answer_after_submit": true,
+              "allow_manual_check": true
+            },
+            "answers": [
+              {
+                "blank_id": "blank_01",
+                "answer": "对",
+                "answer_verified": false,
+                "check_needed": true
+              },
+              {
+                "blank_id": "blank_02",
+                "answer": "便",
+                "answer_verified": false,
+                "check_needed": true
+              },
+              {
+                "blank_id": "blank_03",
+                "answer": "被",
+                "answer_verified": false,
+                "check_needed": true
+              },
+              {
+                "blank_id": "blank_04",
+                "answer": "反而",
+                "answer_verified": false,
+                "check_needed": true
+              },
+              {
+                "blank_id": "blank_05",
+                "answer": "把",
+                "answer_verified": false,
+                "check_needed": true
+              },
+              {
+                "blank_id": "blank_06",
+                "answer": "便",
+                "answer_verified": false,
+                "check_needed": true
+              },
+              {
+                "blank_id": "blank_07",
+                "answer": "从此",
+                "answer_verified": false,
+                "check_needed": true
+              },
+              {
+                "blank_id": "blank_08",
+                "answer": "下来",
+                "answer_verified": false,
+                "check_needed": true
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "bf79ed98-ebbe-47bb-ab7e-ed968dcf1861",
+        "type": "communication",
+        "order": 8,
+        "title": "交际会话",
+        "title_vi": "Hội thoại giao tiếp",
+        "source_origin": "textbook",
+        "check_needed": false,
+        "items": [
+          {
+            "id": "45627c31-dd85-401d-8b8e-a1a2497402da",
+            "type": "communication_dialogue",
+            "order": 1,
+            "title": "谈论恋爱与失恋",
+            "title_vi": "Nói về yêu và thất tình",
+            "source_origin": "textbook",
+            "page_start": 229,
+            "page_end": 230,
+            "check_needed": false,
+            "lines": [
+              {
+                "speaker": "A",
+                "zh": "周兰，我从没谈过恋爱，你能不能告诉我，失恋是一种什么感觉？"
+              },
+              {
+                "speaker": "B",
+                "zh": "你想知道吗？"
+              },
+              {
+                "speaker": "A",
+                "zh": "当然。"
+              },
+              {
+                "speaker": "B",
+                "zh": "那你就赶快去谈一次恋爱，找一找失恋的感觉吧。"
+              },
+              {
+                "speaker": "A",
+                "zh": "我问你，你告诉我，我不就知道了吗？"
+              },
+              {
+                "speaker": "B",
+                "zh": "你没有那种经历，别人告诉你有什么用？那不等于看爱情小说儿吗？你没谈过恋爱，不会懂的。那种感觉只有亲身体验才能明白。"
+              },
+              {
+                "speaker": "A",
+                "zh": "可能吧，我好想谈一次恋爱，找找失恋的感觉啊。可是我的白马王子在哪儿呢？"
+              },
+              {
+                "speaker": "B",
+                "zh": "傻瓜，你以为失恋是好事儿啊？告诉你吧，那种经历真是不堪回首，是心中永远的痛。"
+              },
+              {
+                "speaker": "A",
+                "zh": "对不起，周兰，我让你伤心了。"
+              },
+              {
+                "speaker": "B",
+                "zh": "没有。其实，过后我也觉得自己很傻，但毕竟是我的初恋，所以爱得执着，把对方看成了自己生命中的唯一。一旦失去，生命中第一次经受那种打击，就觉得难以承受。"
+              },
+              {
+                "speaker": "A",
+                "zh": "那一段时间你是怎么过来的？"
+              },
+              {
+                "speaker": "B",
+                "zh": "多亏我姐姐，还有我一个最好的朋友，是她们帮助我、开导我，使我逐渐走出了那段天昏地暗的日子。后来我也渐渐明白，人生有那么一段经历，未必是一件坏事。就像林老师昨天在课堂说的，结婚的对象往往不是初恋的情人。"
+              },
+              {
+                "speaker": "A",
+                "zh": "这可能也是老师自己的经验吧。"
+              },
+              {
+                "speaker": "B",
+                "zh": "老师还说，爱一个人就是希望他/她得到幸福。爱不是自私地占有，而是无私地给予。当我们有了这样的精神准备，才可能去爱，也才能真正得到爱。我想，老师讲的是一种精神境界。如果真正这么去想、这么去做，就能从容应对人生中的各种难题了，包括失恋。"
+              },
+              {
+                "speaker": "A",
+                "zh": "你说得真好！"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "e71f4398-291c-4f48-8aa7-f93e825f4d42",
+        "type": "character_writing",
+        "order": 9,
+        "title": "写汉字",
+        "title_vi": "Luyện viết chữ Hán",
+        "source_origin": "textbook",
+        "check_needed": false,
+        "items": [],
+        "empty_reason_vi": "Trong phạm vi trang Lesson 26 đã kiểm (trang sách 211–230), không thấy mục 写汉字 riêng biệt."
+      }
+    ],
+    "summary": {
+      "lesson_parts": [
+        "课文",
+        "生词",
+        "专名",
+        "注释",
+        "词语用法",
+        "练习",
+        "综合填空",
+        "交际会话",
+        "写汉字"
+      ],
+      "grammar_points": [
+        {
+          "id": "d5eaf408-514c-4987-b142-668f43d140be",
+          "title": "由于"
+        },
+        {
+          "id": "a8720887-db26-4d49-b41f-8a6d646a791d",
+          "title": "为"
+        },
+        {
+          "id": "28ce5846-ff50-47d0-927a-dd6a1699d21a",
+          "title": "始终"
+        },
+        {
+          "id": "43a1f72d-1510-4a57-a1fa-0af2b4890023",
+          "title": "不然"
+        },
+        {
+          "id": "cb4fa491-3ff6-4992-b0d5-5abdd9044560",
+          "title": "宁可"
+        },
+        {
+          "id": "a9bc0f78-52c9-4ca7-b62e-d1d8343543ae",
+          "title": "表达"
+        }
+      ],
+      "main_patterns": [
+        {
+          "pattern": "由于 A，所以/因此/因而 B",
+          "grammar_ref": "d5eaf408-514c-4987-b142-668f43d140be"
+        },
+        {
+          "pattern": "A 化为 B / A 结拜为 B",
+          "grammar_ref": "a8720887-db26-4d49-b41f-8a6d646a791d"
+        },
+        {
+          "pattern": "始终 + 不/没 + V",
+          "grammar_ref": "28ce5846-ff50-47d0-927a-dd6a1699d21a"
+        },
+        {
+          "pattern": "A，不然 B",
+          "grammar_ref": "43a1f72d-1510-4a57-a1fa-0af2b4890023"
+        },
+        {
+          "pattern": "宁可 A，也不 B",
+          "grammar_ref": "cb4fa491-3ff6-4992-b0d5-5abdd9044560"
+        },
+        {
+          "pattern": "表达 + 思想/感情/感谢/爱情",
+          "grammar_ref": "a9bc0f78-52c9-4ca7-b62e-d1d8343543ae"
+        }
+      ],
+      "exercise_types": [
+        "phonetics",
+        "read_aloud",
+        "choose_words_fill_blank",
+        "complete_sentence",
+        "complete_dialogue",
+        "reorder_sentence",
+        "correct_sentence",
+        "language_and_context",
+        "reading_cloze",
+        "communication_dialogue"
+      ],
+      "source_origin_policy": {
+        "textbook": "Chinese text extracted/checked from PDF scan",
+        "textbook_question_generated_answer": "answers or Vietnamese explanations inferred by assistant and marked check_needed where appropriate",
+        "textbook/generated_mixed": "Vietnamese explanations generated from textbook examples"
+      },
+      "check_needed": true
+    },
+    "metadata": {
+      "legacy_id": "hanyu_3_2_lesson_26_liang_shanbo_zhu_yingtai",
+      "book": "Hanyu Jiaocheng",
+      "volume": "第三册下",
+      "volume_vi": "Quyển 3 Hạ / Book 3B",
+      "lesson_index": 26,
+      "lesson_number_cn": "第二十六课",
+      "lesson_title_cn": "梁山伯与祝英台",
+      "lesson_title_pinyin": "Liáng Shānbó yǔ Zhù Yīngtái",
+      "lesson_title_vi": "Lương Sơn Bá và Chúc Anh Đài",
+      "lesson_title_en": "The butterfly lovers",
+      "source_files": [
+        {
+          "name": "Hanyu Jiaocheng 3-2.pdf",
+          "type": "pdf_scan",
+          "source_origin": "textbook",
+          "check_needed": false,
+          "page_start": 211,
+          "page_end": 230,
+          "note": "Checked against local PDF page images generated from /mnt/data/Hanyu Jiaocheng 3-2.pdf, pages 211–230."
+        },
+        {
+          "name": "Quyển 3- tổng hợp.docx",
+          "type": "uploaded_crosscheck",
+          "source_origin": "uploaded_crosscheck",
+          "check_needed": false,
+          "note": "Used to cross-check lesson grammar focus."
+        }
+      ]
+    }
+  }
+}

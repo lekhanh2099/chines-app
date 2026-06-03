@@ -1,52 +1,6 @@
 {
-  "schema_version": "2.3.0-coverage-first",
-  "content_type": "chinese_textbook_lesson",
-  "verification_status": "verified",
-  "source": {
-    "book": "Hanyu Jiaocheng",
-    "volume": "第二册下",
-    "volume_vi": "Quyển 2 Hạ",
-    "lesson_index": 17,
-    "lesson_number_cn": "第十七课",
-    "lesson_title_cn": "把“福”字倒着贴在门上",
-    "lesson_title_pinyin": "Bǎ “fú” zì dàozhe tiē zài mén shang",
-    "lesson_title_vi": "Dán chữ “Phúc” ngược lên cửa",
-    "lesson_title_en": "Paste “福” upside down on the door",
-    "source_files": [
-      {
-        "name": "Hanyu Jiaocheng 2-2.pdf",
-        "type": "pdf_scan",
-        "source_origin": "textbook",
-        "check_needed": false
-      },
-      {
-        "name": "Tong_hop_tu_vung_Han_ngu_quyen_2_Bai_1-25.docx",
-        "type": "uploaded_crosscheck",
-        "source_origin": "uploaded_crosscheck",
-        "check_needed": false
-      },
-      {
-        "name": "Học kì 2 上-下.md",
-        "type": "uploaded_crosscheck",
-        "source_origin": "uploaded_crosscheck",
-        "check_needed": false
-      }
-    ],
-    "web_crosscheck": [
-      {
-        "title": "Using “把” sentences - Chinese Grammar Wiki",
-        "source_origin": "web_crosscheck",
-        "note": "Cross-check grammar: 把 sentences move a definite object before the verb and usually require a result/disposal component."
-      },
-      {
-        "title": "Chinese Boost: Chinese grammar 把 structure",
-        "source_origin": "web_crosscheck",
-        "note": "Cross-check grammar: negation is placed before 把 and psychological verbs generally do not fit 把."
-      }
-    ]
-  },
   "lesson": {
-    "id": "hanyu_2_2_lesson_17",
+    "id": "372dc1fc-bb39-4177-add0-742fd9491362",
     "title": {
       "zh": "把“福”字倒着贴在门上",
       "pinyin": "Bǎ “fú” zì dàozhe tiē zài mén shang",
@@ -62,7 +16,7 @@
     ],
     "sections": [
       {
-        "id": "section_01_text",
+        "id": "a6c0d522-99be-4f36-881c-b9b2c6beeb85",
         "type": "text",
         "order": 1,
         "title": "课文",
@@ -71,7 +25,7 @@
         "check_needed": false,
         "blocks": [
           {
-            "id": "text_01",
+            "id": "e155d5ea-f89d-45f0-ab8d-094ce9e719f0",
             "type": "text_narrative",
             "order": 1,
             "title": "我们把教室布置成了会场",
@@ -80,130 +34,121 @@
             "check_needed": false,
             "paragraphs": [
               {
-                "id": "text_01_p01",
+                "id": "43338a2c-2044-419e-9fdd-ed1739757a8d",
                 "order": 1,
                 "zh": "圣诞节和新年快到了，我们班准备在圣诞节前举行一个联欢晚会，请老师们也来参加。晚会上我们要唱中文歌，用汉语讲故事，表演节目，品尝各国的特色菜。班长要求我们那天把自己亲手做的菜带到晚会上来，让大家品尝。",
                 "vi": "Giáng sinh và năm mới sắp đến rồi, lớp chúng tôi chuẩn bị tổ chức một buổi liên hoan trước Giáng sinh, mời các thầy cô cũng đến tham gia. Trong buổi liên hoan, chúng tôi sẽ hát bài hát tiếng Trung, kể chuyện bằng tiếng Hán, biểu diễn tiết mục, thưởng thức các món ăn đặc sắc của các nước. Lớp trưởng yêu cầu hôm đó chúng tôi mang món ăn tự tay mình làm đến buổi liên hoan để mọi người cùng thưởng thức.",
                 "grammar_refs": [
-                  "grammar_01"
+                  "f8ec59f3-898a-47b2-b536-44dfd8183393"
                 ],
                 "vocab_refs": [
-                  "vocab_001",
-                  "vocab_002",
-                  "vocab_003",
-                  "vocab_004",
-                  "vocab_005"
-                ],
-                "uuid": "c58fc686-3c6d-424a-942c-43e0fb5de2a1"
+                  "68c05a12-9d8e-45d9-a413-786bcf2f780a",
+                  "8c18cf3c-e9dc-42e1-8faf-eb26799cabab",
+                  "1fbd69b7-603a-44ea-8d57-10cd4def9ced",
+                  "3dc505f1-bc0e-4a96-b448-17fed89fdc60",
+                  "188412d4-4c23-4d60-b7b2-21f3490199e7"
+                ]
               },
               {
-                "id": "text_01_p02",
+                "id": "4a807389-3592-4cf4-973f-6589e0118fb2",
                 "order": 2,
                 "zh": "玛丽说：“我们最好借一个大教室，把它布置成会场。”",
                 "vi": "Mary nói: “Tốt nhất chúng ta mượn một phòng học lớn, trang trí nó thành hội trường.”",
                 "grammar_refs": [
-                  "grammar_01"
+                  "f8ec59f3-898a-47b2-b536-44dfd8183393"
                 ],
                 "vocab_refs": [
-                  "vocab_006",
-                  "vocab_007",
-                  "vocab_008",
-                  "vocab_009"
-                ],
-                "uuid": "faef6479-f685-4d11-9a05-92a1d9ba4a99"
+                  "5ea44727-d97c-467b-b1b8-babd195df50d",
+                  "54613016-834a-4fc3-9912-2357a6d27058",
+                  "0da97406-c3ac-4fcb-a51c-398a59c3fbae",
+                  "54b36889-82be-485b-8342-fb8aab572065"
+                ]
               },
               {
-                "id": "text_01_p03",
+                "id": "5a221404-05e7-4ae2-ad9f-0c920a73dc36",
                 "order": 3,
                 "zh": "前天，我们找到管理员，告诉了她借教室的事儿，她答应把那个大教室借给我们。昨天下午服务员把教室打扫了一下儿，把门和窗户也都擦得干干净净的。",
                 "vi": "Hôm kia, chúng tôi tìm quản lý, nói với cô ấy việc mượn phòng học, cô ấy đồng ý cho chúng tôi mượn phòng học lớn đó. Chiều hôm qua, nhân viên phục vụ đã quét dọn phòng học một chút, cửa và cửa sổ cũng đều được lau rất sạch sẽ.",
                 "grammar_refs": [
-                  "grammar_01"
+                  "f8ec59f3-898a-47b2-b536-44dfd8183393"
                 ],
                 "vocab_refs": [
-                  "vocab_010",
-                  "vocab_012",
-                  "vocab_013",
-                  "vocab_014",
-                  "vocab_015",
-                  "vocab_017"
-                ],
-                "uuid": "e4f3e98c-b97c-4136-bea4-9c857b753ebb"
+                  "1354b1a3-93cc-4505-8d7f-c5550a1d6ae9",
+                  "d5b362a7-c8f6-4f25-b2b5-0f1749c8afbb",
+                  "7eccd5e8-dac0-4f36-be2e-abcc0a2bdfcd",
+                  "91fa9f81-e5ef-4c4a-b29c-c4b6daa02196",
+                  "8a5b1d09-23a6-4182-96e6-9bf4d761a1e1",
+                  "7a89dc80-d79d-4c2f-988c-d0f54e240d19"
+                ]
               },
               {
-                "id": "text_01_p04",
+                "id": "5c402bbc-a0e6-434c-a6c7-3c4f86c845fe",
                 "order": 4,
                 "zh": "我们把桌子摆成了一个大圆圈儿，爱德华把“圣诞——新年快乐”几个大字贴在了黑板上。",
                 "vi": "Chúng tôi xếp bàn thành một vòng tròn lớn, Edward dán mấy chữ lớn “圣诞——新年快乐” lên bảng đen.",
                 "grammar_refs": [
-                  "grammar_01"
+                  "f8ec59f3-898a-47b2-b536-44dfd8183393"
                 ],
                 "vocab_refs": [
-                  "vocab_018",
-                  "vocab_019",
-                  "vocab_020"
-                ],
-                "uuid": "d14757c4-a2af-462d-b649-36812a284fee"
+                  "ff3e1818-66a9-4532-880b-02c9cacb0e5b",
+                  "0125bdae-fe4e-48fb-8264-145e95c75933",
+                  "689eb64b-5d4f-469f-9afa-74017d399614"
+                ]
               },
               {
-                "id": "text_01_p05",
+                "id": "babe7f0b-2b53-402f-85af-c5de9b0e676d",
                 "order": 5,
                 "zh": "李美英说，晚会上她要和几个同学唱歌，跳舞，所以把音响也搬到教室里来了。爱德华昨天从商店买回来一棵圣诞树，我们把它摆在了教室的前边，用彩灯和彩带把它装饰得非常漂亮。",
                 "vi": "Lee Mi-young nói trong buổi liên hoan cô ấy sẽ hát và nhảy cùng vài bạn học, nên cũng đã chuyển dàn âm thanh đến phòng học. Hôm qua Edward mua về từ cửa hàng một cây thông Giáng sinh, chúng tôi đặt nó ở phía trước phòng học, dùng đèn màu và dây màu trang trí nó rất đẹp.",
                 "grammar_refs": [
-                  "grammar_01"
+                  "f8ec59f3-898a-47b2-b536-44dfd8183393"
                 ],
                 "vocab_refs": [
-                  "proper_01",
-                  "vocab_021",
-                  "vocab_022",
-                  "vocab_023"
-                ],
-                "uuid": "a9a83e2c-663b-45e0-8852-63a62427372a"
+                  "3fe394c6-40ef-4aa3-8688-d61b706cd522",
+                  "d45d5488-9293-41ae-9deb-1e5b51cee446",
+                  "c99a633b-27a2-429b-a139-44113a84c189",
+                  "79358c6f-3427-4c28-98f3-7ef98c7033c3"
+                ]
               },
               {
-                "id": "text_01_p06",
+                "id": "d2683a70-b897-4979-ad07-0bca2bb00b31",
                 "order": 6,
                 "zh": "安娜是我们班最小的同学，她的生日正好是十二月二十五号，所以同学们还为她准备了一份生日礼物和一个生日蛋糕，但是我们还没把这事儿告诉她。我们想，到晚会上再把生日礼物送给她，给她一个惊喜，让她在中国过一个快乐的生日。",
                 "vi": "Anna là bạn nhỏ tuổi nhất lớp chúng tôi, sinh nhật của cô ấy vừa đúng ngày 25 tháng 12, nên các bạn còn chuẩn bị cho cô ấy một món quà sinh nhật và một chiếc bánh sinh nhật, nhưng chúng tôi vẫn chưa nói chuyện này với cô ấy. Chúng tôi muốn đến buổi liên hoan mới tặng quà sinh nhật cho cô ấy, cho cô ấy một bất ngờ, để cô ấy có một sinh nhật vui vẻ ở Trung Quốc.",
                 "grammar_refs": [
-                  "grammar_01"
+                  "f8ec59f3-898a-47b2-b536-44dfd8183393"
                 ],
                 "vocab_refs": [
-                  "proper_02",
-                  "vocab_024",
-                  "vocab_025"
-                ],
-                "uuid": "2e7d8258-6a06-487d-9848-5d07122a2c5d"
+                  "ca32b346-4a7d-4b3f-bc88-e7e8363c5c36",
+                  "dc0f8e06-a359-4907-a8d8-fc9b02260590",
+                  "c43cedbf-7024-4ec1-922f-e75119114baf"
+                ]
               },
               {
-                "id": "text_01_p07",
+                "id": "cde61ddf-34c9-4d25-892b-99b26df9e427",
                 "order": 7,
                 "zh": "我们把教室布置好以后，请老师来看了看，老师高兴地说：“你们把教室布置得真漂亮！”",
                 "vi": "Sau khi chúng tôi trang trí xong phòng học, chúng tôi mời thầy cô đến xem thử, thầy cô vui vẻ nói: “Các em trang trí phòng học đẹp thật!”",
                 "grammar_refs": [
-                  "grammar_01"
+                  "f8ec59f3-898a-47b2-b536-44dfd8183393"
                 ],
                 "vocab_refs": [
-                  "vocab_008"
-                ],
-                "uuid": "90b753fa-d6ef-4dfa-87f7-9d7db095a688"
+                  "0da97406-c3ac-4fcb-a51c-398a59c3fbae"
+                ]
               },
               {
-                "id": "text_01_p08",
+                "id": "37ac9b48-37ae-4d3e-aa1a-644f38547b84",
                 "order": 8,
                 "zh": "为了开好这个联欢会，同学们都认真地做了准备。明天晚上六点钟，我们的晚会就要开始了，欢迎大家来参加。",
                 "vi": "Để tổ chức tốt buổi liên hoan này, các bạn học đều chuẩn bị rất nghiêm túc. Sáu giờ tối mai, buổi liên hoan của chúng tôi sẽ bắt đầu, hoan nghênh mọi người đến tham gia.",
                 "grammar_refs": [],
-                "vocab_refs": [],
-                "uuid": "1cbac858-963d-4ade-a78d-ef249f330462"
+                "vocab_refs": []
               }
             ],
-            "comprehension_questions": [],
-            "uuid": "51fbecaf-c863-47a9-b2ac-803b12b602fb"
+            "comprehension_questions": []
           },
           {
-            "id": "text_02",
+            "id": "0156dd39-d5b4-41f5-866d-d336dd29bbc2",
             "type": "text_dialogue",
             "order": 2,
             "title": "把对联儿贴在大门两边",
@@ -212,111 +157,103 @@
             "check_needed": false,
             "lines": [
               {
-                "id": "text_02_l01",
+                "id": "887014e5-f6b0-4777-9f95-85a69532ca36",
                 "order": 1,
                 "speaker": "高老师",
                 "zh": "哎，这幅画儿挂在什么地方比较好？",
                 "vi": "Ôi, bức tranh này treo ở đâu thì tốt hơn?",
                 "vocab_refs": [
-                  "vocab_026"
-                ],
-                "uuid": "e165e889-2a01-45d4-a0c9-b67d38891e7f"
+                  "d9991c79-3454-4247-bf18-f14f43b4a24a"
+                ]
               },
               {
-                "id": "text_02_l02",
+                "id": "65232ef9-30a1-4305-b8b7-12a8ac5aeb91",
                 "order": 2,
                 "speaker": "王老师",
                 "zh": "我想把它挂在中间。对了，小林还没把水仙花送来吧？",
                 "vi": "Tôi muốn treo nó ở giữa. À đúng rồi, Tiểu Lâm vẫn chưa mang hoa thủy tiên đến à?",
                 "grammar_refs": [
-                  "grammar_01"
+                  "f8ec59f3-898a-47b2-b536-44dfd8183393"
                 ],
                 "vocab_refs": [
-                  "vocab_027"
-                ],
-                "uuid": "32161cdf-f463-4320-b8f3-9ff6169230df"
+                  "55cd807c-eec7-412d-99db-f4e6508b170f"
+                ]
               },
               {
-                "id": "text_02_l03",
+                "id": "2c1213ac-f81d-414f-8b55-5abe77fe83fc",
                 "order": 3,
                 "speaker": "高老师",
                 "zh": "已经送来了，我把它摆在卧室里了。你来看，开得可好了。",
                 "vi": "Mang đến rồi, em đặt nó trong phòng ngủ rồi. Anh lại xem này, nở đẹp lắm.",
                 "grammar_refs": [
-                  "grammar_01"
+                  "f8ec59f3-898a-47b2-b536-44dfd8183393"
                 ],
                 "vocab_refs": [
-                  "vocab_028"
-                ],
-                "uuid": "9ca3732e-04ad-4154-92b1-e9cb88e8710f"
+                  "085e60d5-dd1c-4585-ac6b-0f1db0ded936"
+                ]
               },
               {
-                "id": "text_02_l04",
+                "id": "d797c234-0a16-42e3-bc45-29782e65cb1b",
                 "order": 4,
                 "speaker": "王老师",
                 "zh": "把它摆在客厅里比较好。我把“福”字贴在门上吧。",
                 "vi": "Đặt nó ở phòng khách thì tốt hơn. Tôi dán chữ “Phúc” lên cửa nhé.",
                 "grammar_refs": [
-                  "grammar_01"
+                  "f8ec59f3-898a-47b2-b536-44dfd8183393"
                 ],
                 "vocab_refs": [
-                  "vocab_029",
-                  "vocab_030"
-                ],
-                "uuid": "0b5dac91-e276-428a-9155-9b6d8a4cce34"
+                  "ba7ff0f9-b633-4516-ab3d-22b96046a1cf",
+                  "2185ee67-885d-4ffb-83e2-e97be4070796"
+                ]
               },
               {
-                "id": "text_02_l05",
+                "id": "c99f042b-fa9a-478c-aba1-5da333a677e1",
                 "order": 5,
                 "speaker": "高老师",
                 "zh": "把你写的对联儿也贴上去吧。",
                 "vi": "Anh cũng dán câu đối anh viết lên đi.",
                 "grammar_refs": [
-                  "grammar_01"
+                  "f8ec59f3-898a-47b2-b536-44dfd8183393"
                 ],
                 "vocab_refs": [
-                  "vocab_031"
-                ],
-                "uuid": "8e15fdc6-ab28-41f8-a322-d166f039d8c7"
+                  "092a8c16-3739-4685-a4c0-39365071bd48"
+                ]
               },
               {
-                "id": "text_02_l06",
+                "id": "e8680b0f-6dcc-4fc7-abbd-084aba5d3b87",
                 "order": 6,
                 "speaker": "高老师",
                 "zh": "“新年新春吉祥，百行百业……”你是不是把“兴”字也写成“旺”字了？",
                 "vi": "“Năm mới xuân mới cát tường, trăm nghề trăm nghiệp…” Có phải anh cũng viết chữ “兴” thành chữ “旺” rồi không?",
                 "grammar_refs": [
-                  "grammar_01"
+                  "f8ec59f3-898a-47b2-b536-44dfd8183393"
                 ],
                 "vocab_refs": [
-                  "vocab_032",
-                  "vocab_033",
-                  "vocab_034"
-                ],
-                "uuid": "e6617abe-2a3c-4fd2-befa-677e1b52ff95"
+                  "22e66ee9-565e-4670-b2ac-4d5a9b500b38",
+                  "275b46f4-3166-48b7-9766-58384178d1be",
+                  "1190511f-5970-4304-8f84-d7201b287aeb"
+                ]
               },
               {
-                "id": "text_02_l07",
+                "id": "cc8da348-3e89-4f64-a680-de239f505497",
                 "order": 7,
                 "speaker": "王老师",
                 "zh": "哦，可不是嘛，写错了。应该是“新年新春吉祥，百行百业兴旺”。",
                 "vi": "Ồ, đúng thật, viết sai rồi. Phải là “新年新春吉祥，百行百业兴旺”.",
                 "grammar_refs": [
-                  "note_01"
+                  "63d654f5-4561-4d48-a144-bacbf9671dfc"
                 ],
                 "vocab_refs": [
-                  "vocab_035",
-                  "vocab_036",
-                  "vocab_037"
-                ],
-                "uuid": "3033b762-c314-4801-9bee-fa55e0b41c87"
+                  "d42d3d90-443d-45da-bed7-987b50034e92",
+                  "cfb712c9-c4ca-4314-b6b2-696b40ace25e",
+                  "6059829f-ae21-43cf-ac0c-05e19639ec43"
+                ]
               }
             ],
-            "comprehension_questions": [],
-            "uuid": "a0ea6463-800d-4e33-8028-79aabc44e268"
+            "comprehension_questions": []
           },
           {
-            "id": "text_03",
+            "id": "e198f9da-fae1-4ab9-aaf8-4be7549579c8",
             "type": "text_dialogue",
             "order": 3,
             "title": "把“福”字倒着贴在门上",
@@ -325,121 +262,110 @@
             "check_needed": false,
             "lines": [
               {
-                "id": "text_03_l01",
+                "id": "dae16c6f-5eb1-4c5e-ae2a-6b8d0971f6c1",
                 "order": 1,
                 "speaker": "麦克",
                 "zh": "田芳，这就是你说的对联儿吗？",
                 "vi": "Tian Fang, đây chính là câu đối mà bạn nói à?",
                 "vocab_refs": [
-                  "vocab_031"
-                ],
-                "uuid": "07f7d85a-5802-4282-8104-2ce95b853aab"
+                  "092a8c16-3739-4685-a4c0-39365071bd48"
+                ]
               },
               {
-                "id": "text_03_l02",
+                "id": "6a9f9409-a14a-4e5b-957f-5609b29abcf4",
                 "order": 2,
                 "speaker": "田芳",
                 "zh": "是啊。",
-                "vi": "Đúng rồi.",
-                "uuid": "9af805b1-ab01-4055-a6fb-e94a43f71af9"
+                "vi": "Đúng rồi."
               },
               {
-                "id": "text_03_l03",
+                "id": "8783fa9f-f6d3-4d28-8301-714146384d01",
                 "order": 3,
                 "speaker": "麦克",
                 "zh": "门上这个字怎么念？",
                 "vi": "Chữ này trên cửa đọc thế nào?",
                 "vocab_refs": [
-                  "vocab_030"
-                ],
-                "uuid": "6b752837-467e-4089-acac-416fee8ec5e4"
+                  "2185ee67-885d-4ffb-83e2-e97be4070796"
+                ]
               },
               {
-                "id": "text_03_l04",
+                "id": "077fca74-cf50-4164-80a0-217b40399296",
                 "order": 4,
                 "speaker": "田芳",
                 "zh": "你仔细看看，认识不认识？",
                 "vi": "Bạn nhìn kỹ xem, có nhận ra không?",
                 "vocab_refs": [
-                  "vocab_038"
-                ],
-                "uuid": "be48525a-8ee4-4b1c-8ef1-03ca66690157"
+                  "fefd5441-7b6c-47e3-b823-9e149b947bf7"
+                ]
               },
               {
-                "id": "text_03_l05",
+                "id": "cdc21194-bac0-4711-b327-6993d80ab6f3",
                 "order": 5,
                 "speaker": "麦克",
                 "zh": "没学过。",
-                "vi": "Chưa học qua.",
-                "uuid": "38b4d2df-4244-45c0-a6c5-a1bc0c457036"
+                "vi": "Chưa học qua."
               },
               {
-                "id": "text_03_l06",
+                "id": "8fb969b7-ea3c-4f62-a650-16652a998ba7",
                 "order": 6,
                 "speaker": "田芳",
                 "zh": "这不是幸福的“福”字吗？过春节的时候，差不多家家都贴“福”字。",
                 "vi": "Đây chẳng phải là chữ “福” trong “幸福” sao? Khi đón Tết, hầu như nhà nào cũng dán chữ “Phúc”.",
                 "grammar_refs": [
-                  "note_02"
+                  "7e2ee128-4fbd-4a93-898c-5f5fd99b371b"
                 ],
                 "vocab_refs": [
-                  "vocab_039",
-                  "vocab_029"
-                ],
-                "uuid": "dc9b2215-bfcf-44bf-8169-abec20f56bc0"
+                  "27761bd2-433a-44ef-b79a-9e6f0a34b9c9",
+                  "ba7ff0f9-b633-4516-ab3d-22b96046a1cf"
+                ]
               },
               {
-                "id": "text_03_l07",
+                "id": "1143881f-b56a-4893-900c-f7d92482e9a7",
                 "order": 7,
                 "speaker": "麦克",
                 "zh": "这是幸福的“福”字？为什么把“福”字倒着贴在门上呢？",
                 "vi": "Đây là chữ “Phúc” trong hạnh phúc à? Vì sao lại dán ngược chữ “Phúc” lên cửa?",
                 "grammar_refs": [
-                  "grammar_01"
+                  "f8ec59f3-898a-47b2-b536-44dfd8183393"
                 ],
                 "vocab_refs": [
-                  "vocab_040"
-                ],
-                "uuid": "70cd90d6-3938-40f8-a090-2c6814823c42"
+                  "861ed325-b320-4ae0-8eac-bb6bb8ebc215"
+                ]
               },
               {
-                "id": "text_03_l08",
+                "id": "6e898255-5e01-4f04-b692-db1a83acfb9e",
                 "order": 8,
                 "speaker": "田芳",
                 "zh": "这样，人们一看见就会说“福倒了”，听声音就是“福到了”。",
                 "vi": "Làm như vậy, người ta vừa nhìn thấy sẽ nói “福倒了”, nghe âm thì giống “福到了”.",
                 "vocab_refs": [
-                  "vocab_041"
-                ],
-                "uuid": "9a0016b8-c3d2-40b6-8e68-c385364070ed"
+                  "6fe8f20d-e712-4f0c-9cbc-021aaeb9698c"
+                ]
               },
               {
-                "id": "text_03_l09",
+                "id": "144d961a-c5bd-4553-b0f5-e4ba233f2985",
                 "order": 9,
                 "speaker": "麦克",
                 "zh": "哦，那我也去买一些“福”字来，把它倒着贴在门上、床上、桌子上、椅子上、沙发上、冰箱上、洗衣机上、空调上……等着幸福来找我。",
                 "vi": "Ồ, vậy tôi cũng đi mua vài chữ “Phúc”, dán ngược nó lên cửa, lên giường, lên bàn, lên ghế, lên sofa, lên tủ lạnh, lên máy giặt, lên máy lạnh… rồi đợi hạnh phúc đến tìm tôi.",
                 "grammar_refs": [
-                  "grammar_01"
+                  "f8ec59f3-898a-47b2-b536-44dfd8183393"
                 ],
                 "vocab_refs": [
-                  "vocab_042",
-                  "vocab_043",
-                  "vocab_044",
-                  "vocab_045",
-                  "vocab_046"
-                ],
-                "uuid": "9a85371e-9ae4-4cb3-9793-4869b8a0f74b"
+                  "863bbf3f-83e7-4021-b98e-be632043d94c",
+                  "b14487b6-5579-4f1c-9ad7-16fd40991577",
+                  "eb7cc112-7df2-44e6-a1df-9824d8b6e45a",
+                  "505dae11-836a-475d-b811-339f25caaf42",
+                  "a47b82f7-2260-4763-8c97-b1631e792e1c"
+                ]
               }
             ],
-            "comprehension_questions": [],
-            "uuid": "0b581cb4-ae55-406a-86be-d08d158b478b"
+            "comprehension_questions": []
           }
-        ],
-        "uuid": "dc60213d-2667-4254-a499-9b3ec3d72e40"
+        ]
       },
       {
-        "id": "section_02_vocabulary",
+        "id": "78c30bf4-c314-4c4c-86e3-4dd62382dd78",
         "type": "vocabulary",
         "order": 2,
         "title": "生词",
@@ -448,7 +374,7 @@
         "check_needed": false,
         "items": [
           {
-            "id": "vocab_001",
+            "id": "68c05a12-9d8e-45d9-a413-786bcf2f780a",
             "type": "vocabulary_item",
             "order": 1,
             "hanzi": "品尝",
@@ -472,11 +398,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "f2e85187-5a5c-487b-8fde-39f873c4cad1"
+            "check_needed": false
           },
           {
-            "id": "vocab_002",
+            "id": "8c18cf3c-e9dc-42e1-8faf-eb26799cabab",
             "type": "vocabulary_item",
             "order": 2,
             "hanzi": "特色",
@@ -500,11 +425,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "359e41c8-e0d9-4ec8-81cc-78d80e1fef68"
+            "check_needed": false
           },
           {
-            "id": "vocab_003",
+            "id": "1fbd69b7-603a-44ea-8d57-10cd4def9ced",
             "type": "vocabulary_item",
             "order": 3,
             "hanzi": "班长",
@@ -528,11 +452,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "396d2114-fbe6-41f9-8f8e-0bb341385741"
+            "check_needed": false
           },
           {
-            "id": "vocab_004",
+            "id": "3dc505f1-bc0e-4a96-b448-17fed89fdc60",
             "type": "vocabulary_item",
             "order": 4,
             "hanzi": "把",
@@ -556,11 +479,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "e972f745-a4ca-4d31-b16f-d274472a5365"
+            "check_needed": false
           },
           {
-            "id": "vocab_005",
+            "id": "188412d4-4c23-4d60-b7b2-21f3490199e7",
             "type": "vocabulary_item",
             "order": 5,
             "hanzi": "亲手",
@@ -584,11 +506,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "f94aedce-4091-4034-af96-9ed05ea20df4"
+            "check_needed": false
           },
           {
-            "id": "vocab_006",
+            "id": "5ea44727-d97c-467b-b1b8-babd195df50d",
             "type": "vocabulary_item",
             "order": 6,
             "hanzi": "最好",
@@ -612,11 +533,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "4b0db4ad-48e0-49fa-8348-04bf549911b8"
+            "check_needed": false
           },
           {
-            "id": "vocab_007",
+            "id": "54613016-834a-4fc3-9912-2357a6d27058",
             "type": "vocabulary_item",
             "order": 7,
             "hanzi": "它",
@@ -640,11 +560,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "ad2bf50b-7aef-4ff3-b826-12ed18cafac3"
+            "check_needed": false
           },
           {
-            "id": "vocab_008",
+            "id": "0da97406-c3ac-4fcb-a51c-398a59c3fbae",
             "type": "vocabulary_item",
             "order": 8,
             "hanzi": "布置",
@@ -668,11 +587,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "0114df01-3914-4e89-9931-0e8c575ac4b3"
+            "check_needed": false
           },
           {
-            "id": "vocab_009",
+            "id": "54b36889-82be-485b-8342-fb8aab572065",
             "type": "vocabulary_item",
             "order": 9,
             "hanzi": "会场",
@@ -696,11 +614,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "f9bc536a-a91e-4104-a4d4-adc93f924840"
+            "check_needed": false
           },
           {
-            "id": "vocab_010",
+            "id": "1354b1a3-93cc-4505-8d7f-c5550a1d6ae9",
             "type": "vocabulary_item",
             "order": 10,
             "hanzi": "管理员",
@@ -724,11 +641,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "2e2324df-b33f-4e9e-91e4-937cf0807d2e"
+            "check_needed": false
           },
           {
-            "id": "vocab_011",
+            "id": "f0684cb3-4577-4e6c-9f22-7d97c89692b3",
             "type": "vocabulary_item",
             "order": 11,
             "hanzi": "管理",
@@ -753,11 +669,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "cbaee81e-d383-4e08-967e-bea708e04fd1"
+            "check_needed": false
           },
           {
-            "id": "vocab_012",
+            "id": "d5b362a7-c8f6-4f25-b2b5-0f1749c8afbb",
             "type": "vocabulary_item",
             "order": 12,
             "hanzi": "告诉",
@@ -781,11 +696,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "cccc38b0-df54-4549-b484-9fb44da75676"
+            "check_needed": false
           },
           {
-            "id": "vocab_013",
+            "id": "7eccd5e8-dac0-4f36-be2e-abcc0a2bdfcd",
             "type": "vocabulary_item",
             "order": 13,
             "hanzi": "答应",
@@ -809,11 +723,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "055b26aa-f529-4c11-a31c-bb7778edc6c5"
+            "check_needed": false
           },
           {
-            "id": "vocab_014",
+            "id": "91fa9f81-e5ef-4c4a-b29c-c4b6daa02196",
             "type": "vocabulary_item",
             "order": 14,
             "hanzi": "打扫",
@@ -837,11 +750,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "7ae50632-9e9e-4866-9743-5db5ace8ea58"
+            "check_needed": false
           },
           {
-            "id": "vocab_015",
+            "id": "8a5b1d09-23a6-4182-96e6-9bf4d761a1e1",
             "type": "vocabulary_item",
             "order": 15,
             "hanzi": "窗户",
@@ -865,11 +777,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "eaa02b1d-2b5a-4e28-9741-2199c94d02fb"
+            "check_needed": false
           },
           {
-            "id": "vocab_016",
+            "id": "be7a835d-ff8f-4a86-9fd8-27c5f1093f0c",
             "type": "vocabulary_item",
             "order": 16,
             "hanzi": "窗",
@@ -894,11 +805,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "e0624261-7f2d-4db9-9628-bd162267b4fe"
+            "check_needed": false
           },
           {
-            "id": "vocab_017",
+            "id": "7a89dc80-d79d-4c2f-988c-d0f54e240d19",
             "type": "vocabulary_item",
             "order": 17,
             "hanzi": "擦",
@@ -922,11 +832,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "3bf04e9f-93b9-4dbc-a1b5-134776c90915"
+            "check_needed": false
           },
           {
-            "id": "vocab_018",
+            "id": "ff3e1818-66a9-4532-880b-02c9cacb0e5b",
             "type": "vocabulary_item",
             "order": 18,
             "hanzi": "桌子",
@@ -950,11 +859,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "a59853d0-c80e-44c8-973c-80f6178f820a"
+            "check_needed": false
           },
           {
-            "id": "vocab_019",
+            "id": "0125bdae-fe4e-48fb-8264-145e95c75933",
             "type": "vocabulary_item",
             "order": 19,
             "hanzi": "圆圈儿",
@@ -978,11 +886,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "2fd78bef-5608-408c-9d45-bd682e68d2a1"
+            "check_needed": false
           },
           {
-            "id": "vocab_020",
+            "id": "689eb64b-5d4f-469f-9afa-74017d399614",
             "type": "vocabulary_item",
             "order": 20,
             "hanzi": "黑板",
@@ -1006,11 +913,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "23bf1c34-7906-4c10-a77f-d6075d3a87d0"
+            "check_needed": false
           },
           {
-            "id": "vocab_021",
+            "id": "d45d5488-9293-41ae-9deb-1e5b51cee446",
             "type": "vocabulary_item",
             "order": 21,
             "hanzi": "音响",
@@ -1034,11 +940,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "0eebd94e-30e1-4e0b-8f14-882fe7bd13ea"
+            "check_needed": false
           },
           {
-            "id": "vocab_022",
+            "id": "c99a633b-27a2-429b-a139-44113a84c189",
             "type": "vocabulary_item",
             "order": 22,
             "hanzi": "彩灯",
@@ -1062,11 +967,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "3789a29b-163e-4efa-9572-1b365a2c9ac4"
+            "check_needed": false
           },
           {
-            "id": "vocab_023",
+            "id": "79358c6f-3427-4c28-98f3-7ef98c7033c3",
             "type": "vocabulary_item",
             "order": 23,
             "hanzi": "彩带",
@@ -1090,11 +994,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "7f17e261-3dc5-4c0e-9276-f1e972680eed"
+            "check_needed": false
           },
           {
-            "id": "vocab_024",
+            "id": "dc0f8e06-a359-4907-a8d8-fc9b02260590",
             "type": "vocabulary_item",
             "order": 24,
             "hanzi": "份",
@@ -1118,11 +1021,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "209fd210-13cd-4097-a0b0-02e1aa5309ac"
+            "check_needed": false
           },
           {
-            "id": "vocab_025",
+            "id": "c43cedbf-7024-4ec1-922f-e75119114baf",
             "type": "vocabulary_item",
             "order": 25,
             "hanzi": "惊喜",
@@ -1146,11 +1048,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "70392013-9f3f-434b-b8b1-e45cedbce8da"
+            "check_needed": false
           },
           {
-            "id": "vocab_026",
+            "id": "d9991c79-3454-4247-bf18-f14f43b4a24a",
             "type": "vocabulary_item",
             "order": 26,
             "hanzi": "幅",
@@ -1174,11 +1075,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "8421f7b6-a0c1-40fa-8fe4-fee2ae8dab7f"
+            "check_needed": false
           },
           {
-            "id": "vocab_027",
+            "id": "55cd807c-eec7-412d-99db-f4e6508b170f",
             "type": "vocabulary_item",
             "order": 27,
             "hanzi": "水仙",
@@ -1202,11 +1102,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "ce8a52d7-fd3d-4871-8065-2362c7f67b9b"
+            "check_needed": false
           },
           {
-            "id": "vocab_028",
+            "id": "085e60d5-dd1c-4585-ac6b-0f1db0ded936",
             "type": "vocabulary_item",
             "order": 28,
             "hanzi": "开",
@@ -1230,11 +1129,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "5278b05f-e5f9-49ac-99cc-de24721d8767"
+            "check_needed": false
           },
           {
-            "id": "vocab_029",
+            "id": "ba7ff0f9-b633-4516-ab3d-22b96046a1cf",
             "type": "vocabulary_item",
             "order": 29,
             "hanzi": "福",
@@ -1258,11 +1156,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "58c0912b-b6a6-462e-a05d-88e2b207b22b"
+            "check_needed": false
           },
           {
-            "id": "vocab_030",
+            "id": "2185ee67-885d-4ffb-83e2-e97be4070796",
             "type": "vocabulary_item",
             "order": 30,
             "hanzi": "字",
@@ -1286,11 +1183,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "c628f9e6-23bb-47b9-b9da-cf03f0c8639f"
+            "check_needed": false
           },
           {
-            "id": "vocab_031",
+            "id": "092a8c16-3739-4685-a4c0-39365071bd48",
             "type": "vocabulary_item",
             "order": 31,
             "hanzi": "对联儿",
@@ -1314,11 +1210,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "12252e86-928f-4b0d-a0c7-2ecefb33275d"
+            "check_needed": false
           },
           {
-            "id": "vocab_032",
+            "id": "22e66ee9-565e-4670-b2ac-4d5a9b500b38",
             "type": "vocabulary_item",
             "order": 32,
             "hanzi": "新春",
@@ -1342,11 +1237,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "3048e03c-7ba5-4417-bf16-0221a5ee0106"
+            "check_needed": false
           },
           {
-            "id": "vocab_033",
+            "id": "275b46f4-3166-48b7-9766-58384178d1be",
             "type": "vocabulary_item",
             "order": 33,
             "hanzi": "吉祥",
@@ -1370,11 +1264,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "069c002e-23f2-47e3-9f38-20e509a85515"
+            "check_needed": false
           },
           {
-            "id": "vocab_034",
+            "id": "1190511f-5970-4304-8f84-d7201b287aeb",
             "type": "vocabulary_item",
             "order": 34,
             "hanzi": "行业",
@@ -1398,11 +1291,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "cabcc865-6db7-4262-9677-aea1463a4c45"
+            "check_needed": false
           },
           {
-            "id": "vocab_035",
+            "id": "d42d3d90-443d-45da-bed7-987b50034e92",
             "type": "vocabulary_item",
             "order": 35,
             "hanzi": "兴旺",
@@ -1426,11 +1318,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "0a1d234f-7a29-45eb-b3de-8eb2c540cecb"
+            "check_needed": false
           },
           {
-            "id": "vocab_036",
+            "id": "cfb712c9-c4ca-4314-b6b2-696b40ace25e",
             "type": "vocabulary_item",
             "order": 36,
             "hanzi": "哦",
@@ -1454,11 +1345,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "b5a6bb8b-d49a-4415-b667-fde577683b8a"
+            "check_needed": false
           },
           {
-            "id": "vocab_037",
+            "id": "6059829f-ae21-43cf-ac0c-05e19639ec43",
             "type": "vocabulary_item",
             "order": 37,
             "hanzi": "可不是",
@@ -1482,11 +1372,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "dda86d8c-618f-441f-9090-99d4dd31dc27"
+            "check_needed": false
           },
           {
-            "id": "vocab_038",
+            "id": "fefd5441-7b6c-47e3-b823-9e149b947bf7",
             "type": "vocabulary_item",
             "order": 38,
             "hanzi": "仔细",
@@ -1510,11 +1399,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "c00159a6-9829-4556-9e77-4ab3bc4a3e20"
+            "check_needed": false
           },
           {
-            "id": "vocab_039",
+            "id": "27761bd2-433a-44ef-b79a-9e6f0a34b9c9",
             "type": "vocabulary_item",
             "order": 39,
             "hanzi": "幸福",
@@ -1538,11 +1426,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "babc92d3-592e-49c7-9f04-25f3e494803d"
+            "check_needed": false
           },
           {
-            "id": "vocab_040",
+            "id": "861ed325-b320-4ae0-8eac-bb6bb8ebc215",
             "type": "vocabulary_item",
             "order": 40,
             "hanzi": "倒",
@@ -1566,11 +1453,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "66099697-2d93-411d-b671-f87c4922538c"
+            "check_needed": false
           },
           {
-            "id": "vocab_041",
+            "id": "6fe8f20d-e712-4f0c-9cbc-021aaeb9698c",
             "type": "vocabulary_item",
             "order": 41,
             "hanzi": "声音",
@@ -1594,11 +1480,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "1446cf7c-9f93-47a4-af72-68253fa4109b"
+            "check_needed": false
           },
           {
-            "id": "vocab_042",
+            "id": "863bbf3f-83e7-4021-b98e-be632043d94c",
             "type": "vocabulary_item",
             "order": 42,
             "hanzi": "椅子",
@@ -1622,11 +1507,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "a2a5ceac-d505-4fab-9a1f-2d6729c98ba5"
+            "check_needed": false
           },
           {
-            "id": "vocab_043",
+            "id": "b14487b6-5579-4f1c-9ad7-16fd40991577",
             "type": "vocabulary_item",
             "order": 43,
             "hanzi": "沙发",
@@ -1650,11 +1534,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "3e8c37fd-5a12-423f-8a2b-b03e568b9850"
+            "check_needed": false
           },
           {
-            "id": "vocab_044",
+            "id": "eb7cc112-7df2-44e6-a1df-9824d8b6e45a",
             "type": "vocabulary_item",
             "order": 44,
             "hanzi": "冰箱",
@@ -1678,11 +1561,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "66a2f336-4bc0-454f-afb0-dd5140071282"
+            "check_needed": false
           },
           {
-            "id": "vocab_045",
+            "id": "505dae11-836a-475d-b811-339f25caaf42",
             "type": "vocabulary_item",
             "order": 45,
             "hanzi": "洗衣机",
@@ -1706,11 +1588,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "790a955e-64f2-4a1c-96a8-b4c003ea5c83"
+            "check_needed": false
           },
           {
-            "id": "vocab_046",
+            "id": "a47b82f7-2260-4763-8c97-b1631e792e1c",
             "type": "vocabulary_item",
             "order": 46,
             "hanzi": "空调",
@@ -1734,11 +1615,10 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "b2fea68c-d0dc-495b-b16d-dd3b754e5365"
+            "check_needed": false
           },
           {
-            "id": "vocab_047",
+            "id": "71f9308f-7b38-435e-bfa8-c7c974599035",
             "type": "vocabulary_item",
             "order": 47,
             "hanzi": "调",
@@ -1763,14 +1643,12 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "d7e41a3b-6da4-445b-93b6-a10dd92f8999"
+            "check_needed": false
           }
-        ],
-        "uuid": "39e49c03-6a6e-4af0-b97e-a3b632e8c9bf"
+        ]
       },
       {
-        "id": "section_03_proper_nouns",
+        "id": "3c5ee48e-5d44-44ac-bd53-cac996a83338",
         "type": "proper_nouns",
         "order": 3,
         "title": "专名",
@@ -1779,7 +1657,7 @@
         "check_needed": false,
         "items": [
           {
-            "id": "proper_01",
+            "id": "3fe394c6-40ef-4aa3-8688-d61b706cd522",
             "type": "proper_noun",
             "order": 1,
             "hanzi": "李美英",
@@ -1787,11 +1665,10 @@
             "meaning_vi": "Lee Mi-young; tên người",
             "meaning_en": "Lee Mi-young",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "f21d671b-3aa7-4825-bff0-aea400e4af0c"
+            "check_needed": false
           },
           {
-            "id": "proper_02",
+            "id": "ca32b346-4a7d-4b3f-bc88-e7e8363c5c36",
             "type": "proper_noun",
             "order": 2,
             "hanzi": "安娜",
@@ -1799,14 +1676,12 @@
             "meaning_vi": "Anna; tên người",
             "meaning_en": "Anna",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "3f77c55b-c8aa-4610-9c0e-9a2d86dc8a95"
+            "check_needed": false
           }
-        ],
-        "uuid": "cf38f47d-835a-4481-a57f-d78fe149813f"
+        ]
       },
       {
-        "id": "section_04_notes",
+        "id": "c18e9f54-6da1-4496-886b-c2c722605678",
         "type": "notes",
         "order": 4,
         "title": "注释",
@@ -1815,7 +1690,7 @@
         "check_needed": false,
         "items": [
           {
-            "id": "note_01",
+            "id": "63d654f5-4561-4d48-a144-bacbf9671dfc",
             "type": "note",
             "order": 1,
             "title": "哦，可不是嘛。",
@@ -1823,23 +1698,21 @@
             "meaning_vi": "Dùng khi người nói đột nhiên nhận ra / hiểu ra điều gì đó và đồng ý mạnh với lời người khác. Không hiểu theo nghĩa phủ định.",
             "examples": [
               {
-                "id": "note_01_ex01",
+                "id": "021014f3-ff12-43b6-9d12-352cb6dc863b",
                 "zh": "哦，可不是嘛，写错了。",
                 "vi": "À, đúng thật, viết sai rồi.",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "72a1a787-276f-4a1c-8c4d-0ec8603ec300"
+                "check_needed": false
               }
             ],
             "source_refs": [
-              "text_02_l07"
+              "cc8da348-3e89-4f64-a680-de239f505497"
             ],
             "source_origin": "textbook/generated_mixed",
-            "check_needed": false,
-            "uuid": "cc8e7fe2-b16d-47eb-aa96-926204ba8fba"
+            "check_needed": false
           },
           {
-            "id": "note_02",
+            "id": "7e2ee128-4fbd-4a93-898c-5f5fd99b371b",
             "type": "note",
             "order": 2,
             "title": "名词重叠：家家 / 天天 / 人人",
@@ -1847,42 +1720,37 @@
             "meaning_vi": "Một số danh từ một âm tiết lặp lại để mang nghĩa mỗi / mọi / ... nào cũng.",
             "examples": [
               {
-                "id": "note_02_ex01",
+                "id": "29279e2c-cb63-4437-bbc5-7c46c15b6f13",
                 "zh": "过春节的时候，差不多家家都贴“福”字。",
                 "vi": "Khi đón Tết, hầu như nhà nào cũng dán chữ “Phúc”.",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "a0bcfda2-9806-4473-bee2-0ea65d469cb7"
+                "check_needed": false
               },
               {
-                "id": "note_02_ex02",
+                "id": "e8ba8406-5f51-49de-8d45-8a461bbaaba6",
                 "zh": "我天天都坚持锻炼一个小时。",
                 "vi": "Ngày nào tôi cũng kiên trì tập luyện một tiếng.",
                 "source_origin": "generated",
-                "check_needed": false,
-                "uuid": "79c3e0fa-73ec-41a1-81b1-a981beae7be8"
+                "check_needed": false
               },
               {
-                "id": "note_02_ex03",
+                "id": "b2d63b5e-4dff-4d3a-98c9-f96916db8256",
                 "zh": "人人都要遵守交通规则。",
                 "vi": "Ai cũng phải tuân thủ quy tắc giao thông.",
                 "source_origin": "generated",
-                "check_needed": false,
-                "uuid": "798451b0-b65a-44ee-9580-c92b4a7c1f80"
+                "check_needed": false
               }
             ],
             "source_refs": [
-              "text_03_l06"
+              "8fb969b7-ea3c-4f62-a650-16652a998ba7"
             ],
             "source_origin": "textbook/generated_mixed",
-            "check_needed": false,
-            "uuid": "b57c50f3-2fef-4821-945f-dc0aab226b2c"
+            "check_needed": false
           }
-        ],
-        "uuid": "41a54b64-3ab1-468e-8bc8-a60e0576a7a3"
+        ]
       },
       {
-        "id": "section_05_grammar",
+        "id": "b045e537-7383-494b-8d61-b0286977ed80",
         "type": "grammar",
         "order": 5,
         "title": "语法 / 词语用法",
@@ -1891,7 +1759,7 @@
         "check_needed": false,
         "items": [
           {
-            "id": "grammar_01",
+            "id": "f8ec59f3-898a-47b2-b536-44dfd8183393",
             "type": "grammar_point",
             "order": 1,
             "title": "“把”字句（1）",
@@ -1906,33 +1774,30 @@
             "check_needed": false,
             "blocks": [
               {
-                "id": "grammar_01_overview",
+                "id": "b7c5d870-2db8-4e2e-950f-f0e6e522ac16",
                 "type": "grammar_overview",
                 "order": 1,
                 "title": "Bản chất",
                 "content_vi": "Câu chữ 把 đưa đối tượng bị xử lý lên trước động từ, rồi nói rõ đối tượng đó bị làm gì, chuyển đến đâu, giao cho ai, biến thành gì hoặc đạt kết quả gì.",
                 "examples": [
                   {
-                    "id": "grammar_01_ex01",
+                    "id": "c6fbeb40-156e-450c-a390-d58626cae49e",
                     "zh": "我们把教室布置成了会场。",
                     "vi": "Chúng tôi trang trí phòng học thành hội trường.",
                     "source_origin": "textbook",
-                    "check_needed": false,
-                    "uuid": "9d43b516-b198-4fae-82de-1401e4548acd"
+                    "check_needed": false
                   },
                   {
-                    "id": "grammar_01_ex02",
+                    "id": "d5b13929-16ec-4967-ac8a-868d80ec0b1e",
                     "zh": "我把“福”字贴在门上吧。",
                     "vi": "Tôi dán chữ “Phúc” lên cửa nhé.",
                     "source_origin": "textbook",
-                    "check_needed": false,
-                    "uuid": "7fb796d5-0f53-404c-bca6-27c194f543fa"
+                    "check_needed": false
                   }
-                ],
-                "uuid": "3b1a4b7b-dbf9-4a71-97f5-609cf4348023"
+                ]
               },
               {
-                "id": "grammar_01_structure",
+                "id": "b3534a40-3bab-464a-97dd-67889b8bcb7b",
                 "type": "grammar_structure",
                 "order": 2,
                 "title": "Cấu trúc chính",
@@ -1958,24 +1823,21 @@
                 ],
                 "examples": [
                   {
-                    "id": "grammar_01_structure_ex01",
+                    "id": "92aa1855-c06f-49c9-8cc5-506e8b35b440",
                     "zh": "把你写的对联儿也贴上去吧。",
                     "vi": "Cũng dán câu đối anh viết lên đi.",
-                    "source_origin": "textbook",
-                    "uuid": "111a24ac-0685-4013-b763-da5025a0abda"
+                    "source_origin": "textbook"
                   },
                   {
-                    "id": "grammar_01_structure_ex02",
+                    "id": "9dfe4e21-1b6d-4f7c-8da9-ee29f914749b",
                     "zh": "你是不是把“兴”字也写成“旺”字了？",
                     "vi": "Có phải anh cũng viết chữ “兴” thành chữ “旺” rồi không?",
-                    "source_origin": "textbook",
-                    "uuid": "cdbba0fe-fe80-4ad4-afec-10ef976ccc2e"
+                    "source_origin": "textbook"
                   }
-                ],
-                "uuid": "0e46f793-bcf7-4037-88d5-9fbbe4a73fcf"
+                ]
               },
               {
-                "id": "grammar_01_usage",
+                "id": "f9d96f02-6b23-4c56-a739-db75b628cdcf",
                 "type": "grammar_usage_notes",
                 "order": 3,
                 "title": "Điều kiện dùng 把",
@@ -1987,25 +1849,22 @@
                 ],
                 "examples": [
                   {
-                    "id": "grammar_01_usage_ex01",
+                    "id": "af3179bb-cac5-47fc-be2f-be94b9701fee",
                     "zh": "我把门打开了。",
                     "vi": "Tôi mở cửa ra rồi.",
-                    "source_origin": "generated",
-                    "uuid": "621f11ea-27c5-49fa-b17a-f08b60671477"
+                    "source_origin": "generated"
                   },
                   {
-                    "id": "grammar_01_usage_ex02",
+                    "id": "f4803aa6-a61f-4a04-9b6d-ca39344100de",
                     "zh": "我喜欢中文。",
                     "vi": "Tôi thích tiếng Trung.",
                     "note_vi": "Không nói *我把中文喜欢。",
-                    "source_origin": "generated",
-                    "uuid": "6a2e1475-87d5-4316-8973-32a22008165d"
+                    "source_origin": "generated"
                   }
-                ],
-                "uuid": "2fb7bb82-e12d-4d74-a969-e4f68de44186"
+                ]
               },
               {
-                "id": "grammar_01_negative",
+                "id": "d20f2f52-d6ab-478a-b684-6adcb0004a12",
                 "type": "grammar_negative_form",
                 "order": 4,
                 "title": "Dạng phủ định",
@@ -2014,33 +1873,29 @@
                 "meaning_vi": "Phủ định thường đặt trước 把, phủ định toàn bộ cấu trúc xử lý đối tượng.",
                 "correct_examples": [
                   {
-                    "id": "grammar_01_neg_ok01",
+                    "id": "16895d79-eae2-4cee-8f35-6a5d54787bec",
                     "zh": "我们还没把这事儿告诉她。",
                     "vi": "Chúng tôi vẫn chưa nói chuyện này với cô ấy.",
-                    "source_origin": "textbook",
-                    "uuid": "c2cab4b5-080c-4da3-b9d9-6abe7c7da724"
+                    "source_origin": "textbook"
                   },
                   {
-                    "id": "grammar_01_neg_ok02",
+                    "id": "717b6c9b-1cd7-4d69-b64d-28d9294f41e5",
                     "zh": "我没把作业交给老师。",
                     "vi": "Tôi chưa nộp bài tập cho giáo viên.",
-                    "source_origin": "generated",
-                    "uuid": "63ef7690-b44d-4907-9b2d-6efcf7e3a24e"
+                    "source_origin": "generated"
                   }
                 ],
                 "wrong_examples": [
                   {
-                    "id": "grammar_01_neg_wrong01",
+                    "id": "0b7e7bde-7bbc-4c5c-8a09-dcd4100810ee",
                     "zh": "*我把书没放在桌子上。",
                     "explanation_vi": "没 đặt sai vị trí; phải đặt trước 把.",
-                    "source_origin": "generated",
-                    "uuid": "0b5c2edd-ad4c-4171-8547-5624485897fb"
+                    "source_origin": "generated"
                   }
-                ],
-                "uuid": "02cb40ca-e127-4b80-af4e-dd2f4f19d5ee"
+                ]
               },
               {
-                "id": "grammar_01_question",
+                "id": "0ea62f46-0157-49d6-aadc-75dbed1d507b",
                 "type": "grammar_question_form",
                 "order": 5,
                 "title": "Dạng nghi vấn",
@@ -2048,67 +1903,57 @@
                 "meaning_vi": "Hỏi đối tượng đã được xử lý đến kết quả/vị trí/người nhận nào chưa.",
                 "examples": [
                   {
-                    "id": "grammar_01_q_ex01",
+                    "id": "bccc2688-3046-4eb6-a85e-64c39f5815a0",
                     "zh": "你把“福”字贴在门上了吗？",
                     "vi": "Bạn đã dán chữ “Phúc” lên cửa chưa?",
-                    "source_origin": "generated",
-                    "uuid": "0cd059ca-759f-4533-a8c0-fa869a58964e"
+                    "source_origin": "generated"
                   },
                   {
-                    "id": "grammar_01_q_ex02",
+                    "id": "8fb1af45-d259-45eb-8880-80037ae50bc3",
                     "zh": "你是不是把“兴”字也写成“旺”字了？",
                     "vi": "Có phải anh cũng viết chữ “兴” thành chữ “旺” rồi không?",
-                    "source_origin": "textbook",
-                    "uuid": "8e45dd5d-934b-4cf7-b7ea-5e811562589d"
+                    "source_origin": "textbook"
                   }
-                ],
-                "uuid": "7160b98b-10fe-48e6-a221-e9d9d35397fe"
+                ]
               },
               {
-                "id": "grammar_01_mistakes",
+                "id": "887640f9-1173-43fc-ad6b-663c06a0b9b3",
                 "type": "grammar_common_mistakes",
                 "order": 6,
                 "title": "Lỗi sai dễ gặp",
                 "items": [
                   {
-                    "id": "mistake_01",
+                    "id": "fcca9d55-0c2d-4c43-a7dc-53d87054f2ad",
                     "wrong": "我贴“福”字在门上了。",
                     "correct": "我把“福”字贴在门上了。",
-                    "explanation_vi": "Khi động từ có nơi chốn/kết quả phía sau, nên dùng 把 để đưa tân ngữ lên trước.",
-                    "uuid": "97097404-1dcd-4115-b629-a0e932c6e7ca"
+                    "explanation_vi": "Khi động từ có nơi chốn/kết quả phía sau, nên dùng 把 để đưa tân ngữ lên trước."
                   },
                   {
-                    "id": "mistake_02",
+                    "id": "43ad1993-846b-4c58-95cb-71d086060b17",
                     "wrong": "我把中文喜欢。",
                     "correct": "我喜欢中文。",
-                    "explanation_vi": "喜欢 là động từ tâm lý, không xử lý đối tượng.",
-                    "uuid": "c43c3dd9-f5d1-49f8-9c35-cd03b8ea81fb"
+                    "explanation_vi": "喜欢 là động từ tâm lý, không xử lý đối tượng."
                   },
                   {
-                    "id": "mistake_03",
+                    "id": "e9feed73-8319-4195-9b00-03aab9bbda3e",
                     "wrong": "我把作业做。",
                     "correct": "我把作业做完了。",
-                    "explanation_vi": "Động từ sau 把 không nên đứng trơ một mình.",
-                    "uuid": "c42ff96a-c61b-4760-9948-c7f9e33fbde8"
+                    "explanation_vi": "Động từ sau 把 không nên đứng trơ một mình."
                   },
                   {
-                    "id": "mistake_04",
+                    "id": "ccd14908-21af-41df-9f0b-f6fa405b2647",
                     "wrong": "我把礼物没送给她。",
                     "correct": "我没把礼物送给她。",
-                    "explanation_vi": "Phủ định đặt trước 把.",
-                    "uuid": "8833db1d-bc9f-4ae4-a5a0-6321f332edd2"
+                    "explanation_vi": "Phủ định đặt trước 把."
                   }
-                ],
-                "uuid": "04b2e9f5-3188-4375-8f31-c842f007f0d4"
+                ]
               }
-            ],
-            "uuid": "853bfa54-d699-491b-8702-6adc1f8981c7"
+            ]
           }
-        ],
-        "uuid": "df830288-4fde-48ec-8c49-20b111b19a69"
+        ]
       },
       {
-        "id": "section_06_exercises",
+        "id": "9901c597-ca97-451e-b63d-11814aaf933e",
         "type": "exercises",
         "order": 6,
         "title": "练习",
@@ -2123,7 +1968,7 @@
         },
         "items": [
           {
-            "id": "exercise_01",
+            "id": "15cb6f38-593b-48d1-bcca-dc3d2a140f9e",
             "type": "phonetics",
             "variant": "pronunciation_tone_minimal_pairs",
             "order": 1,
@@ -2139,51 +1984,44 @@
             "check_needed": false,
             "parts": [
               {
-                "id": "exercise_01_part_01",
+                "id": "0e5801e7-b89b-4cc6-8bd9-9e1fbbd30b31",
                 "type": "minimal_pair_group",
                 "title": "辨音辨调",
                 "items": [
                   {
-                    "id": "ex01_pair_01",
+                    "id": "e38d3cb2-2c33-4c4a-83fa-2934373f225d",
                     "left": "xīngwàng",
-                    "right": "xìng Wáng",
-                    "uuid": "ca2745d8-d2d9-4870-931f-7dbaec0a9622"
+                    "right": "xìng Wáng"
                   },
                   {
-                    "id": "ex01_pair_02",
+                    "id": "79df1daa-2fc0-43b6-b4e3-aee6478eef8a",
                     "left": "bùzhì",
-                    "right": "bú shì",
-                    "uuid": "464d1271-0e4e-45c6-a4b5-1ace64780e07"
+                    "right": "bú shì"
                   },
                   {
-                    "id": "ex01_pair_03",
+                    "id": "93191d96-c6f7-4475-b285-9bfd75ad2b6c",
                     "left": "dǎsǎo",
-                    "right": "dǎsǎo",
-                    "uuid": "388bb3e0-47bd-4dcf-ba68-dcf4444a409a"
+                    "right": "dǎsǎo"
                   },
                   {
-                    "id": "ex01_pair_04",
+                    "id": "656ce346-d1fc-4d43-8acc-abf294d2d8da",
                     "left": "pǐncháng",
-                    "right": "píngcháng",
-                    "uuid": "d31402dc-4b6b-4de6-8707-129d7b6a8b19"
+                    "right": "píngcháng"
                   },
                   {
-                    "id": "ex01_pair_05",
+                    "id": "5e775bab-fb67-4293-b3f7-4b9e80f29c52",
                     "left": "xìngfú",
-                    "right": "xīnkǔ",
-                    "uuid": "8facd601-83fe-4307-98e8-f7617cddad8d"
+                    "right": "xīnkǔ"
                   },
                   {
-                    "id": "ex01_pair_06",
+                    "id": "7e23fb6e-376b-43d9-ae33-0413e3080ef9",
                     "left": "jíxiáng",
-                    "right": "jìxiàng",
-                    "uuid": "cd71687c-bad4-4460-951c-5f652d4d9338"
+                    "right": "jìxiàng"
                   }
-                ],
-                "uuid": "3f061bf7-6110-47f1-9587-2b0ec29d95a7"
+                ]
               },
               {
-                "id": "exercise_01_part_02",
+                "id": "e7235fa8-9e47-43aa-a37c-271a2e83d738",
                 "type": "read_aloud_phrases",
                 "title": "朗读",
                 "items": [
@@ -2203,14 +2041,12 @@
                   "把礼物带给王老师",
                   "把小说儿拍成电影",
                   "把教室布置成会场"
-                ],
-                "uuid": "153151e7-515d-4aa7-9822-ac9228630307"
+                ]
               }
-            ],
-            "uuid": "014d62a9-413f-49c5-932f-58bd84c2ca7c"
+            ]
           },
           {
-            "id": "exercise_02",
+            "id": "98e14c21-0449-4e36-b1ae-77ed46cf3aa0",
             "type": "substitution_drill",
             "variant": "ba_sentence_substitution",
             "order": 2,
@@ -2248,7 +2084,7 @@
             ],
             "patterns": [
               {
-                "id": "ex02_p01",
+                "id": "efe4fcc6-985c-4b80-8997-a90ab83d2195",
                 "model_a": "把这瓶花儿摆在哪儿？",
                 "model_b": "把它摆在客厅里吧。",
                 "items": [
@@ -2300,11 +2136,10 @@
                     ],
                     "answer": "把这些书放在书架上吧。"
                   }
-                ],
-                "uuid": "8b2bcea2-3659-4893-9bb0-4b65d8a6a562"
+                ]
               },
               {
-                "id": "ex02_p02",
+                "id": "93842d29-ae31-4813-945b-8f68b57b9d6f",
                 "model": "她把音响搬到了教室。",
                 "items": [
                   {
@@ -2355,11 +2190,10 @@
                     ],
                     "answer": "她把花儿摆到了客厅。"
                   }
-                ],
-                "uuid": "fcceae9c-9783-4744-8e3a-f176569cd668"
+                ]
               },
               {
-                "id": "ex02_p03",
+                "id": "ac7e9d9d-6721-4b2f-90e9-5a02c0b84ee5",
                 "model": "把这件礼物送给安娜。",
                 "items": [
                   {
@@ -2410,11 +2244,10 @@
                     ],
                     "answer": "把这些钱借给他。"
                   }
-                ],
-                "uuid": "30631ab1-e43c-4f1e-861f-23ff62373d8b"
+                ]
               },
               {
-                "id": "ex02_p04",
+                "id": "544990cd-1bc8-42e1-ad6d-fb2e68fd8ad4",
                 "model_a": "你是不是想把这个教室布置成会场？",
                 "model_b": "对。（我想把教室布置成会场。）",
                 "items": [
@@ -2458,14 +2291,12 @@
                     ],
                     "answer": "我想把这个故事写成小说儿。"
                   }
-                ],
-                "uuid": "8a7df287-b24b-4708-84d8-40e7790e500f"
+                ]
               }
-            ],
-            "uuid": "f8902f24-2032-43cd-8d7d-edd6d99cbf67"
+            ]
           },
           {
-            "id": "exercise_03",
+            "id": "5dfca3d2-8524-4a83-92dd-b036a7259465",
             "type": "choose_words_fill_blank",
             "variant": "word_bank_fill_blank",
             "order": 3,
@@ -2491,58 +2322,49 @@
             ],
             "questions": [
               {
-                "id": "ex03_q01",
+                "id": "941d80e5-8eb2-4e21-beae-597e6677cdaf",
                 "prompt": "这是我亲手做的家乡菜，请您______一下儿。",
-                "answer": "品尝",
-                "uuid": "45b0d0b9-ddfc-4be9-8837-d2db7ee8e1ea"
+                "answer": "品尝"
               },
               {
-                "id": "ex03_q02",
+                "id": "f31d95d0-500f-4cc9-97ee-57a7295062d2",
                 "prompt": "上课以前______把课文和生词都预习一下儿。",
-                "answer": "最好",
-                "uuid": "89c61662-9cf2-4f5f-91a8-3bc5b602f67d"
+                "answer": "最好"
               },
               {
-                "id": "ex03_q03",
+                "id": "069f2cd8-233c-4227-8f46-78a1d28a4a59",
                 "prompt": "我们把房间______一下儿吧。",
-                "answer": "打扫",
-                "uuid": "dc35c05c-8fd6-4f57-adda-ed30ea26939f"
+                "answer": "打扫"
               },
               {
-                "id": "ex03_q04",
+                "id": "013e3712-30ac-4a8a-b60e-0d6f818f4cdb",
                 "prompt": "把“福”字______着贴，我觉得很有意思。",
-                "answer": "倒",
-                "uuid": "dd953df2-e4af-48d2-ab12-b6e947290e40"
+                "answer": "倒"
               },
               {
-                "id": "ex03_q05",
+                "id": "ba362929-16a5-4a79-8cad-ecfabcaa32f3",
                 "prompt": "这件棉袄是妈妈______给我做的，不是买的。",
-                "answer": "亲手",
-                "uuid": "2e7230f5-de6d-4a67-b83c-a6171bdf1ce8"
+                "answer": "亲手"
               },
               {
-                "id": "ex03_q06",
+                "id": "542ef74e-c843-4b6c-9cd8-0011b6ee7b7a",
                 "prompt": "把这瓶花儿______到客厅里吧。",
-                "answer": "摆",
-                "uuid": "d59e0003-3d3d-4cf0-ae08-01998fa7889b"
+                "answer": "摆"
               },
               {
-                "id": "ex03_q07",
+                "id": "715f1fd6-1b2e-43e0-b3dc-cbc252152601",
                 "prompt": "把这______画儿挂在那边的墙上。",
-                "answer": "幅",
-                "uuid": "e7789a84-9335-4eed-a318-0032150892e6"
+                "answer": "幅"
               },
               {
-                "id": "ex03_q08",
+                "id": "105a0775-7adb-418e-b770-133481e26360",
                 "prompt": "把买来的______贴在大门两边吧。",
-                "answer": "对联儿",
-                "uuid": "012c045f-4afc-4b01-85ab-cca5b363e334"
+                "answer": "对联儿"
               }
-            ],
-            "uuid": "ee4de2cc-e8b9-4288-8a47-0fb531c53642"
+            ]
           },
           {
-            "id": "exercise_04",
+            "id": "809141fb-cc55-403a-9433-35eea89c8c90",
             "type": "fill_blank",
             "variant": "grammar_particle_choice",
             "order": 4,
@@ -2564,58 +2386,49 @@
             ],
             "questions": [
               {
-                "id": "ex04_q01",
+                "id": "668ef942-39b3-4816-be06-f347b64fa456",
                 "prompt": "请帮我把这封信翻译______英文，好吗？",
-                "answer": "成",
-                "uuid": "1e808d19-744e-4c61-bf6d-5056cb96ed6f"
+                "answer": "成"
               },
               {
-                "id": "ex04_q02",
+                "id": "6e23c236-94eb-4e83-9ea6-7353241c098d",
                 "prompt": "我要把这张画儿送______朋友作生日礼物。",
-                "answer": "给",
-                "uuid": "4b186625-b594-41fc-b73f-2666cc683532"
+                "answer": "给"
               },
               {
-                "id": "ex04_q03",
+                "id": "ee3570f6-9872-4699-a1ed-c338e52b4e50",
                 "prompt": "我把她送______车站就回来了。",
-                "answer": "到",
-                "uuid": "25c48a41-7682-44f0-8258-79c3d5d90c02"
+                "answer": "到"
               },
               {
-                "id": "ex04_q04",
+                "id": "3130979d-5cc3-4cf5-999c-9ed317ea7c14",
                 "prompt": "把这幅画儿挂______那儿不太好。",
-                "answer": "在",
-                "uuid": "9eed2ca6-5b13-4c93-9a7a-0bec84004a70"
+                "answer": "在"
               },
               {
-                "id": "ex04_q05",
+                "id": "9dd88fe0-ccfb-47b6-a74a-d1ee53c61219",
                 "prompt": "把这张桌子搬______外屋去吧。",
-                "answer": "到",
-                "uuid": "bc0cd16b-2f44-4d55-b4be-6fd3927c9855"
+                "answer": "到"
               },
               {
-                "id": "ex04_q06",
+                "id": "9002df8c-125f-489d-9396-d008958aa6b9",
                 "prompt": "你把钥匙放______哪儿了？",
-                "answer": "在",
-                "uuid": "3bf1398f-f8a1-4d62-9efc-ac56da6f91cc"
+                "answer": "在"
               },
               {
-                "id": "ex04_q07",
+                "id": "7ccdf5ea-8943-40f8-b46c-5476825c5360",
                 "prompt": "“眼睛”的“睛”左边是“目”，你把它写______“日”了。",
-                "answer": "成",
-                "uuid": "22d74dc8-d5f2-4ef3-a784-c55983bb7959"
+                "answer": "成"
               },
               {
-                "id": "ex04_q08",
+                "id": "5808cb3e-509e-43fa-89bd-70c5334f1c6e",
                 "prompt": "我的发音还不太好，常常把“是不是”说______“四不四”。",
-                "answer": "成",
-                "uuid": "3a1b83f2-19cc-4d89-b040-12f4f2395915"
+                "answer": "成"
               }
-            ],
-            "uuid": "b021c07d-85a9-462e-bede-00d8d91c563d"
+            ]
           },
           {
-            "id": "exercise_05",
+            "id": "e843bb6e-2e51-4fb8-b362-7506b97cf2fc",
             "type": "answer_questions",
             "variant": "interrogative_pronoun_transformation",
             "order": 5,
@@ -2631,66 +2444,57 @@
             "check_needed": false,
             "questions": [
               {
-                "id": "ex05_q01",
+                "id": "7d9c942a-bdc2-45a1-b852-6b3dd58fe8f2",
                 "prompt": "我把钥匙放在大衣口袋里了。",
                 "answer": "你把钥匙放在什么地方 / 哪儿了？",
-                "answer_verified": false,
-                "uuid": "a48e8a66-c819-41c2-9cc3-5ef9e2f1c9d1"
+                "answer_verified": false
               },
               {
-                "id": "ex05_q02",
+                "id": "a79733e1-ef69-41fd-ac55-9bb8b3bd4d2c",
                 "prompt": "我把那本书借给玛丽了。",
                 "answer": "你把那本书借给谁了？",
-                "answer_verified": false,
-                "uuid": "aad48a34-b7b1-4f80-a4a7-c4e9a1393296"
+                "answer_verified": false
               },
               {
-                "id": "ex05_q03",
+                "id": "ec5f1e84-0693-46b3-b735-8005e47f103e",
                 "prompt": "她已经把礼物寄给男朋友了。",
                 "answer": "她已经把礼物寄给谁了？",
-                "answer_verified": false,
-                "uuid": "fe1e0b1a-0c90-4ce5-bc48-533d89e2be44"
+                "answer_verified": false
               },
               {
-                "id": "ex05_q04",
+                "id": "dc7f5f06-95a1-4158-98d8-b293729d6a13",
                 "prompt": "她打算把买来的画儿挂在宿舍的墙上。",
                 "answer": "她打算把买来的画儿挂在什么地方 / 哪儿？",
-                "answer_verified": false,
-                "uuid": "7489b3fb-d1fc-47fa-b29d-6857435cc2ee"
+                "answer_verified": false
               },
               {
-                "id": "ex05_q05",
+                "id": "55e24ac4-bbd1-40f9-9dee-e97b3f2e10f7",
                 "prompt": "麦克把这封信翻译成了英文。",
                 "answer": "麦克把这封信翻译成什么了？",
-                "answer_verified": false,
-                "uuid": "aadbbb95-edd7-4746-b46b-7d1e004ffc17"
+                "answer_verified": false
               },
               {
-                "id": "ex05_q06",
+                "id": "f7c603b4-c112-4d9c-ab37-b945d471ccee",
                 "prompt": "把你的手机号写在这儿吧。",
                 "answer": "把你的手机号写在哪儿吧？",
-                "answer_verified": false,
-                "uuid": "e9a95781-a4f9-4c0b-abc8-46a6bc28fa37"
+                "answer_verified": false
               },
               {
-                "id": "ex05_q07",
+                "id": "e904e37c-c385-4f11-9be3-45c2edea0b13",
                 "prompt": "我想把这些书送给她。",
                 "answer": "你想把这些书送给谁？",
-                "answer_verified": false,
-                "uuid": "6b1796c4-6639-4f7e-8b19-cc147c0e61c0"
+                "answer_verified": false
               },
               {
-                "id": "ex05_q08",
+                "id": "497e0d16-4f94-40ed-aa81-c09c6d7a0dbb",
                 "prompt": "咱们把这棵树种在院子里吧。",
                 "answer": "咱们把什么种在院子里吧？",
-                "answer_verified": false,
-                "uuid": "06e2c7c1-bb3b-4cfe-bbba-5fa610db9786"
+                "answer_verified": false
               }
-            ],
-            "uuid": "0ffcdbcc-3605-44c4-b8c2-0915f6e8c40b"
+            ]
           },
           {
-            "id": "exercise_06",
+            "id": "60ec1197-2967-408c-a1f3-3c2112f8305a",
             "type": "complete_sentence",
             "variant": "affirmative_to_negative",
             "order": 6,
@@ -2706,67 +2510,58 @@
             "check_needed": false,
             "questions": [
               {
-                "id": "ex06_q01",
+                "id": "1b0dc397-26f4-4659-a964-f9c68ceab72a",
                 "prompt": "他把那幅画儿挂在大厅里了。",
                 "answer": "他没把那幅画儿挂在大厅里。",
-                "answer_verified": false,
-                "uuid": "e02748b5-1cff-4cc9-ae2d-bc27965d85c8"
+                "answer_verified": false
               },
               {
-                "id": "ex06_q02",
+                "id": "ab74bab2-0cd3-4c59-b4dd-6d9a3c6197b9",
                 "prompt": "我把那本词典放在书架上了。",
                 "answer": "我没把那本词典放在书架上。",
-                "answer_verified": false,
-                "uuid": "dbab47f1-98d4-48d3-a661-4ff80d4214f7"
+                "answer_verified": false
               },
               {
-                "id": "ex06_q03",
+                "id": "c503fed9-44e1-4df9-b284-51dbab822ee8",
                 "prompt": "他把新买的电脑放在书桌上了。",
                 "answer": "他没把新买的电脑放在书桌上。",
-                "answer_verified": false,
-                "uuid": "f0a2068c-ab0f-4598-9111-816a4f69d9d0"
+                "answer_verified": false
               },
               {
-                "id": "ex06_q04",
+                "id": "87b8a7fb-1969-49e6-b592-82a2e0147e96",
                 "prompt": "玛丽把自行车放在楼前边了。",
                 "answer": "玛丽没把自行车放在楼前边。",
-                "answer_verified": false,
-                "uuid": "7140453f-94c6-4b6d-8f82-5e8735cb5fb4"
+                "answer_verified": false
               },
               {
-                "id": "ex06_q05",
+                "id": "6155b63d-c263-446a-9ad7-80d775f5be6e",
                 "prompt": "我已经把作业交给老师了。",
                 "answer": "我没把作业交给老师。",
-                "answer_verified": false,
-                "uuid": "c9e0f48e-85fb-4d75-8d61-879eeecc3a68"
+                "answer_verified": false
               },
               {
-                "id": "ex06_q06",
+                "id": "8e9a9428-6659-4025-8fb4-b5bf4134d62d",
                 "prompt": "我想把这些钱借给他。",
                 "answer": "我不想把这些钱借给他。",
-                "answer_verified": false,
-                "uuid": "a28d7628-bad2-4a20-b878-7b024fba8098"
+                "answer_verified": false
               },
               {
-                "id": "ex06_q07",
+                "id": "d2ee010f-bdf3-46bc-b758-1c9bbab1af4b",
                 "prompt": "他要把这篇文章翻译成中文。",
                 "answer": "他不要把这篇文章翻译成中文。",
-                "answer_verified": false,
-                "uuid": "51b8f7df-fffe-49a1-9b84-a6f9dc7c9c7b"
+                "answer_verified": false
               },
               {
-                "id": "ex06_q08",
+                "id": "8cd8da84-508c-4d14-9ec6-23425cabd8b3",
                 "prompt": "我把那些日元都换成人民币了。",
                 "answer": "我没把那些日元都换成人民币。",
-                "answer_verified": false,
-                "uuid": "234fe403-843a-4f7d-8464-f4c847ecfb2a"
+                "answer_verified": false
               }
             ],
-            "note_vi": "Câu có 想 / 要 phủ định tự nhiên bằng 不想 / 不要.",
-            "uuid": "f82eb44f-7606-4e78-9e7e-74e506b87805"
+            "note_vi": "Câu có 想 / 要 phủ định tự nhiên bằng 不想 / 不要."
           },
           {
-            "id": "exercise_07",
+            "id": "1fd4313d-93f3-4cbe-9dd4-2ba0d5bac415",
             "type": "complete_sentence",
             "variant": "make_ba_sentences",
             "order": 7,
@@ -2782,109 +2577,99 @@
             "check_needed": false,
             "questions": [
               {
-                "id": "ex07_q01",
+                "id": "f8e911bf-9cbb-4dad-91ed-87032d2d95f2",
                 "prompt": [
                   "书",
                   "放",
                   "书架上"
                 ],
                 "answer": "把书放在书架上。",
-                "answer_verified": false,
-                "uuid": "3a79d768-e1cb-40c3-a98c-7bb20c751eff"
+                "answer_verified": false
               },
               {
-                "id": "ex07_q02",
+                "id": "3fd78baa-272c-4e07-8ee2-5399c9977a99",
                 "prompt": [
                   "椅子",
                   "搬",
                   "楼上"
                 ],
                 "answer": "把椅子搬到楼上。",
-                "answer_verified": false,
-                "uuid": "8cb4a5b0-fe19-4dcb-a57d-53971d8c25dd"
+                "answer_verified": false
               },
               {
-                "id": "ex07_q03",
+                "id": "69f5ddfa-be8d-4292-b18f-6136daaa613f",
                 "prompt": [
                   "车",
                   "停",
                   "家门口"
                 ],
                 "answer": "把车停在家门口。",
-                "answer_verified": false,
-                "uuid": "c288eca2-7645-4c46-a6cb-1e88cb88b645"
+                "answer_verified": false
               },
               {
-                "id": "ex07_q04",
+                "id": "9c211f34-08a0-4478-b188-fe6a0e98ea41",
                 "prompt": [
                   "画儿",
                   "挂",
                   "墙上"
                 ],
                 "answer": "把画儿挂在墙上。",
-                "answer_verified": false,
-                "uuid": "8af78e61-67cf-410e-927a-de4ec00c29ce"
+                "answer_verified": false
               },
               {
-                "id": "ex07_q05",
+                "id": "c8ec5644-8adf-46de-b2ff-34b3088ba324",
                 "prompt": [
                   "作业",
                   "交",
                   "老师"
                 ],
                 "answer": "把作业交给老师。",
-                "answer_verified": false,
-                "uuid": "a749963d-045f-41b4-a36c-c2089182a81f"
+                "answer_verified": false
               },
               {
-                "id": "ex07_q06",
+                "id": "6db3da52-2247-4991-a1d3-225528d56fff",
                 "prompt": [
                   "礼物",
                   "送",
                   "安娜"
                 ],
                 "answer": "把礼物送给安娜。",
-                "answer_verified": false,
-                "uuid": "6e5df3ab-5b0c-4b74-a595-f4e349acd949"
+                "answer_verified": false
               },
               {
-                "id": "ex07_q07",
+                "id": "5b7be530-a6ca-4d5c-bfbd-12b682bde9e4",
                 "prompt": [
                   "词典",
                   "寄",
                   "朋友"
                 ],
                 "answer": "把词典寄给朋友。",
-                "answer_verified": false,
-                "uuid": "f7b8bce3-317b-4cd2-96d6-d5dd7e6b6432"
+                "answer_verified": false
               },
               {
-                "id": "ex07_q08",
+                "id": "04d0444c-2ff8-4ab0-a3a6-82a956b50e6b",
                 "prompt": [
                   "这个句子",
                   "翻译",
                   "汉语"
                 ],
                 "answer": "把这个句子翻译成汉语。",
-                "answer_verified": false,
-                "uuid": "305693f7-4cf3-451a-89d1-1149e7bebac1"
+                "answer_verified": false
               },
               {
-                "id": "ex07_q09",
+                "id": "0f722135-76e2-4016-81f2-8cb774a7dc7c",
                 "prompt": [
                   "美元",
                   "换",
                   "人民币"
                 ],
                 "answer": "把美元换成人民币。",
-                "answer_verified": false,
-                "uuid": "116fcd20-c271-4f18-8b30-969d163fc5dd"
+                "answer_verified": false
               }
-            ],
-            "uuid": "ec520c8c-82f8-4c11-ad31-d2e249b00cc9"
+            ]
           },
           {
-            "id": "exercise_08",
+            "id": "b9e46637-94ca-4fea-90cf-29155c015046",
             "type": "correct_sentence",
             "variant": "error_correction",
             "order": 8,
@@ -2900,53 +2685,46 @@
             "check_needed": false,
             "questions": [
               {
-                "id": "ex08_q01",
+                "id": "51d25007-39bc-4798-8fb4-fd9aaf8168f5",
                 "wrong": "我在书包里把词典放了。",
                 "answer": "我把词典放在书包里了。",
-                "answer_verified": false,
-                "uuid": "f5c3011a-d69f-4af0-893a-4e5febbb18ec"
+                "answer_verified": false
               },
               {
-                "id": "ex08_q02",
+                "id": "e65bddbb-aff2-43d6-86ee-fb07381ebe3e",
                 "wrong": "我应该送这个礼物给她。",
                 "answer": "我应该把这个礼物送给她。",
-                "answer_verified": false,
-                "uuid": "181f7c0f-ffb1-4ef6-9fe6-fa905678a83b"
+                "answer_verified": false
               },
               {
-                "id": "ex08_q03",
+                "id": "2ac934ff-71d7-4d4a-b040-149ec5a5750e",
                 "wrong": "我用了两天的时间翻译这篇小说儿成英文。",
                 "answer": "我用了两天的时间把这篇小说儿翻译成英文。",
-                "answer_verified": false,
-                "uuid": "b4614de8-c033-45d4-9a01-abf43477254e"
+                "answer_verified": false
               },
               {
-                "id": "ex08_q04",
+                "id": "c5d39e80-de1f-4a3c-9b5f-9193a14a8a33",
                 "wrong": "我常常把晚饭吃在饭店里。",
                 "answer": "我常常在饭店里吃晚饭。",
-                "answer_verified": false,
-                "uuid": "a08d4fe7-81bf-4162-b2d8-d28d952255f1"
+                "answer_verified": false
               },
               {
-                "id": "ex08_q05",
+                "id": "758a96f8-d8f5-4075-aafa-95e515a48195",
                 "wrong": "我挂新买的画儿在宿舍的墙上。",
                 "answer": "我把新买的画儿挂在宿舍的墙上。",
-                "answer_verified": false,
-                "uuid": "57ca92b9-cfed-46cc-9d1c-c00a3cdfc8a6"
+                "answer_verified": false
               },
               {
-                "id": "ex08_q06",
+                "id": "7969b51e-cfc5-4e03-97be-0b29b48a7fdc",
                 "wrong": "我已经发那些照片给妈妈了。",
                 "answer": "我已经把那些照片发给妈妈了。",
-                "answer_verified": false,
-                "uuid": "4fc9e8ea-ad33-4cb1-b0bd-64253b3a7fdf"
+                "answer_verified": false
               }
             ],
-            "note_vi": "Câu 4 không nên ép dùng 把 vì 吃晚饭 là hành động ăn bữa tối, không phải xử lý 晚饭 thành vị trí/kết quả mới.",
-            "uuid": "28d6962c-f024-463a-8eb5-5e51b05e5958"
+            "note_vi": "Câu 4 không nên ép dùng 把 vì 吃晚饭 là hành động ăn bữa tối, không phải xử lý 晚饭 thành vị trí/kết quả mới."
           },
           {
-            "id": "exercise_09",
+            "id": "849f6690-a8ea-4b6f-937d-429f236714ad",
             "type": "custom",
             "variant": "situation_response_using_ba_sentence",
             "order": 9,
@@ -2962,52 +2740,45 @@
             "check_needed": false,
             "questions": [
               {
-                "id": "ex09_q01",
+                "id": "3af137aa-d01d-4333-a9bd-7492eb9068a5",
                 "prompt": "你买了一幅画儿，想挂在屋子里，怎么和家人商量挂在什么地方？",
                 "answer": "我们把这幅画儿挂在哪儿好？",
-                "answer_verified": false,
-                "uuid": "e130c52c-e31a-4a3e-a9a8-72ac9bade87a"
+                "answer_verified": false
               },
               {
-                "id": "ex09_q02",
+                "id": "86fd6e42-435a-453b-bf75-59e679636c7e",
                 "prompt": "你想借你同学的手机用一下儿，怎么对他说？",
                 "answer": "请把你的手机借给我用一下儿，好吗？",
-                "answer_verified": false,
-                "uuid": "49daf4d4-147d-4fb4-9ee3-dc7f3f509622"
+                "answer_verified": false
               },
               {
-                "id": "ex09_q03",
+                "id": "7b48ca7a-5f83-4ba8-bd18-a44a11401230",
                 "prompt": "你在宾馆，要去住的房间，你让服务员帮你搬箱子，怎么说？",
                 "answer": "请帮我把箱子搬到房间里，好吗？",
-                "answer_verified": false,
-                "uuid": "1c2e1a88-4ad7-4936-91f4-1cd4c8f6c844"
+                "answer_verified": false
               },
               {
-                "id": "ex09_q04",
+                "id": "137bcdc2-ab88-4f32-9239-8b2f18b60622",
                 "prompt": "你想买一个手机，让营业员拿给你看看，怎么说？",
                 "answer": "请把那个手机拿给我看看，好吗？",
-                "answer_verified": false,
-                "uuid": "24c3b5b4-1598-4ce2-940d-763d82732806"
+                "answer_verified": false
               },
               {
-                "id": "ex09_q05",
+                "id": "8c3f44a6-fd92-4cb7-a722-9fedda1e2e67",
                 "prompt": "玛丽要去医院看安娜，你想请玛丽带一束花儿给安娜，怎么说？",
                 "answer": "玛丽，请把这束花儿带给安娜，好吗？",
-                "answer_verified": false,
-                "uuid": "0e62625d-694a-49a9-af07-55cbc3b9dd6e"
+                "answer_verified": false
               },
               {
-                "id": "ex09_q06",
+                "id": "ca796db0-fba0-4e92-9374-2ed1fd8b0695",
                 "prompt": "在出租车里，怎么告诉出租车师傅在你的宿舍门口停车？",
                 "answer": "师傅，请把车停在我的宿舍门口。",
-                "answer_verified": false,
-                "uuid": "0b3a9a55-b76c-4e67-b1ce-b6ac5d6cc664"
+                "answer_verified": false
               }
-            ],
-            "uuid": "73e93c5c-a118-43b8-97d1-32d5b81ffcde"
+            ]
           },
           {
-            "id": "exercise_10",
+            "id": "1ac62b88-14d2-473e-be1e-6a588e95e535",
             "type": "communication_dialogue",
             "variant": "entrusting_someone_with_something",
             "order": 10,
@@ -3062,11 +2833,10 @@
                 "zh": "问她好，祝她早日康复。",
                 "vi": "Gửi lời hỏi thăm cô ấy, chúc cô ấy sớm bình phục."
               }
-            ],
-            "uuid": "dfe1fc3a-312b-4454-9c54-385df6635378"
+            ]
           },
           {
-            "id": "exercise_11",
+            "id": "b2a6a692-3bc6-48ef-8bca-f92f0da091a5",
             "type": "reading_comprehension",
             "variant": "read_and_retell",
             "order": 11,
@@ -3080,14 +2850,12 @@
             "skill_focus": [],
             "source_origin": "textbook/generated_mixed",
             "check_needed": false,
-            "linked_reading_id": "reading_01",
-            "uuid": "25116165-e12b-4d60-b43c-3d5943da29b6"
+            "linked_reading_id": "reading_01"
           }
-        ],
-        "uuid": "5a27171d-6172-4ef8-a513-8c8a277c10f9"
+        ]
       },
       {
-        "id": "section_07_reading",
+        "id": "886f621e-85ce-4e1a-91df-d8d257596034",
         "type": "reading",
         "order": 7,
         "title": "读后复述",
@@ -3096,7 +2864,7 @@
         "check_needed": false,
         "items": [
           {
-            "id": "reading_01",
+            "id": "9bd9a79e-3279-468d-9f4b-ecd1f7365e19",
             "type": "text_reading",
             "variant": "read_and_retell",
             "order": 1,
@@ -3153,32 +2921,29 @@
             ],
             "paragraphs": [
               {
-                "id": "reading_01_p01",
+                "id": "d2a4cf8b-55cd-4904-9fed-3141da682b19",
                 "order": 1,
                 "zh": "爸爸带着三岁的儿子坐火车去看奶奶。在火车上，儿子喜欢把头伸到窗外去。爸爸对他说：“儿子，小心点儿，别把头伸到窗外去。”可是男孩儿不听爸爸的话，还是把头伸到窗外。这时爸爸悄悄地把儿子的帽子摘了下来，放在自己身后，然后对他说：“你看，风把你的帽子刮跑了。”儿子急得哭了，哭着要他的帽子。",
                 "vi": "Người bố dẫn cậu con trai ba tuổi ngồi tàu hỏa đi thăm bà nội. Trên tàu, cậu con trai thích thò đầu ra ngoài cửa sổ. Bố nói với cậu: “Con trai, cẩn thận một chút, đừng thò đầu ra ngoài cửa sổ.” Nhưng cậu bé không nghe lời bố, vẫn cứ thò đầu ra ngoài. Lúc này, bố lặng lẽ tháo mũ của con trai xuống, đặt sau lưng mình, rồi nói với cậu: “Con xem, gió thổi bay mũ của con rồi.” Cậu con trai sốt ruột đến phát khóc, vừa khóc vừa đòi mũ của mình.",
                 "grammar_refs": [
-                  "grammar_01"
-                ],
-                "uuid": "684cc357-ddca-4a41-a086-2e28cc0a58e4"
+                  "f8ec59f3-898a-47b2-b536-44dfd8183393"
+                ]
               },
               {
-                "id": "reading_01_p02",
+                "id": "a6b1119e-769b-4444-9eee-c4a26d7f6af3",
                 "order": 2,
                 "zh": "爸爸说：“好，你对着窗口吹一口气，帽子就回来了。”",
                 "vi": "Bố nói: “Được, con thổi một hơi về phía cửa sổ, mũ sẽ quay lại.”",
-                "grammar_refs": [],
-                "uuid": "8c6049b6-e5f0-4a46-bd6b-9182ddaf0c7a"
+                "grammar_refs": []
               },
               {
-                "id": "reading_01_p03",
+                "id": "ce8bdbc9-b498-418a-ab2c-e16111228a35",
                 "order": 3,
                 "zh": "儿子就对着窗口吹了一口气，爸爸很快把帽子戴到他的头上。儿子笑了。他想，这太有意思了。就一下子把爸爸的帽子摘了下来，扔到车窗外边去了，然后高兴地对爸爸说：“爸爸，快！现在该你吹气了。”",
                 "vi": "Cậu con trai liền thổi một hơi về phía cửa sổ, bố rất nhanh đội mũ lên đầu cậu. Cậu con trai cười. Cậu nghĩ: chuyện này thú vị quá. Thế là cậu bỗng tháo mũ của bố xuống, ném ra ngoài cửa sổ tàu, rồi vui vẻ nói với bố: “Bố ơi, nhanh lên! Bây giờ đến lượt bố thổi rồi.”",
                 "grammar_refs": [
-                  "grammar_01"
-                ],
-                "uuid": "d840666a-d38a-40b2-9450-d274f00b2768"
+                  "f8ec59f3-898a-47b2-b536-44dfd8183393"
+                ]
               }
             ],
             "retell_outline": [
@@ -3208,67 +2973,59 @@
             ],
             "generated_comprehension_questions": [
               {
-                "id": "reading_01_q01",
+                "id": "97c6a4ab-7de0-45b1-a796-4625f58d1fca",
                 "question": "爸爸带儿子去哪儿？",
                 "answer": "爸爸带儿子坐火车去看奶奶。",
                 "source_origin": "textbook_question_generated_answer",
                 "answer_verified": false,
-                "check_needed": true,
-                "uuid": "a3130c6b-8139-49e9-a258-edd8f699eb09"
+                "check_needed": true
               },
               {
-                "id": "reading_01_q02",
+                "id": "82b334af-11c3-4606-980f-154617982627",
                 "question": "儿子在火车上喜欢做什么？",
                 "answer": "儿子喜欢把头伸到窗外去。",
                 "source_origin": "textbook_question_generated_answer",
                 "answer_verified": false,
-                "check_needed": true,
-                "uuid": "2c9d98f4-aae5-4642-b6e0-e73ff01f1e4f"
+                "check_needed": true
               },
               {
-                "id": "reading_01_q03",
+                "id": "13181a17-4f4d-4923-a0ef-dd8d285261d4",
                 "question": "爸爸为什么把儿子的帽子摘下来？",
                 "answer": "因为爸爸想让儿子知道把头伸到窗外很危险。",
                 "source_origin": "textbook_question_generated_answer",
                 "answer_verified": false,
-                "check_needed": true,
-                "uuid": "f46e21d6-7f82-495c-992a-ad7deb6254ba"
+                "check_needed": true
               },
               {
-                "id": "reading_01_q04",
+                "id": "05127eb4-5037-4e27-a2e2-5a497d413bd1",
                 "question": "爸爸说帽子怎么了？",
                 "answer": "爸爸说风把帽子刮跑了。",
                 "source_origin": "textbook_question_generated_answer",
                 "answer_verified": false,
-                "check_needed": true,
-                "uuid": "9c080aaa-7a0f-4b10-81e6-fc9daf92f286"
+                "check_needed": true
               },
               {
-                "id": "reading_01_q05",
+                "id": "b7ee22d3-687c-4fed-acb8-66db927f5e7a",
                 "question": "儿子怎么让帽子“回来”？",
                 "answer": "他对着窗口吹了一口气。",
                 "source_origin": "textbook_question_generated_answer",
                 "answer_verified": false,
-                "check_needed": true,
-                "uuid": "f5bdb944-66df-4033-949e-c908bda6bacc"
+                "check_needed": true
               },
               {
-                "id": "reading_01_q06",
+                "id": "3e37585b-c64f-4211-93cb-b7d95c5b9ee6",
                 "question": "最后儿子做了什么？",
                 "answer": "他把爸爸的帽子摘下来，扔到车窗外边去了。",
                 "source_origin": "textbook_question_generated_answer",
                 "answer_verified": false,
-                "check_needed": true,
-                "uuid": "69a18c19-07a8-49e2-86ba-5903d4ea2afc"
+                "check_needed": true
               }
-            ],
-            "uuid": "6fa4ae59-a42f-4b19-b1ac-3eba5f1bb11a"
+            ]
           }
-        ],
-        "uuid": "70c10273-df90-4181-9792-71f4b20ce759"
+        ]
       },
       {
-        "id": "section_08_character_writing",
+        "id": "2a3cfdb8-618f-43d3-9ad4-160d1dbb366a",
         "type": "character_writing",
         "order": 8,
         "title": "写汉字",
@@ -3276,11 +3033,10 @@
         "source_origin": "textbook",
         "check_needed": true,
         "items": [],
-        "empty_reason_vi": "Bài này không thấy phần 写汉字 riêng trong PDF scan hiện có.",
-        "uuid": "ae4149f0-60d0-40d6-a2ce-d689ed85a970"
+        "empty_reason_vi": "Bài này không thấy phần 写汉字 riêng trong PDF scan hiện có."
       },
       {
-        "id": "section_09_summary",
+        "id": "944b8c3a-d3d4-4265-a907-10cef8340ac2",
         "type": "summary",
         "order": 9,
         "title": "总结",
@@ -3300,14 +3056,12 @@
           ],
           "grammar_points": [
             {
-              "id": "grammar_01",
-              "title": "“把”字句（1）",
-              "uuid": "6284785a-77d1-40f0-9d49-c8739ec08022"
+              "id": "f8ec59f3-898a-47b2-b536-44dfd8183393",
+              "title": "“把”字句（1）"
             },
             {
-              "id": "note_02",
-              "title": "名词重叠：家家 / 天天 / 人人",
-              "uuid": "222f27e3-0875-4ea7-9c5c-b6ff54f38540"
+              "id": "7e2ee128-4fbd-4a93-898c-5f5fd99b371b",
+              "title": "名词重叠：家家 / 天天 / 人人"
             }
           ],
           "key_patterns": [
@@ -3340,10 +3094,41 @@
             "character_writing_covered": false,
             "remaining_check_needed": "Nếu cần final_verified tuyệt đối, check lại PDF scan quanh cuối bài 17 để chắc không có trang 写汉字 bị tách riêng."
           }
-        },
-        "uuid": "7e76b8c3-d927-40ca-a67a-ed060aebf872"
+        }
       }
     ],
+    "metadata": {
+      "legacy_id": "hanyu_2_2_lesson_17",
+      "book": "Hanyu Jiaocheng",
+      "volume": "第二册下",
+      "volume_vi": "Quyển 2 Hạ",
+      "lesson_index": 17,
+      "lesson_number_cn": "第十七课",
+      "lesson_title_cn": "把“福”字倒着贴在门上",
+      "lesson_title_pinyin": "Bǎ “fú” zì dàozhe tiē zài mén shang",
+      "lesson_title_vi": "Dán chữ “Phúc” ngược lên cửa",
+      "lesson_title_en": "Paste “福” upside down on the door",
+      "source_files": [
+        {
+          "name": "Hanyu Jiaocheng 2-2.pdf",
+          "type": "pdf_scan",
+          "source_origin": "textbook",
+          "check_needed": false
+        },
+        {
+          "name": "Tong_hop_tu_vung_Han_ngu_quyen_2_Bai_1-25.docx",
+          "type": "uploaded_crosscheck",
+          "source_origin": "uploaded_crosscheck",
+          "check_needed": false
+        },
+        {
+          "name": "Học kì 2 上-下.md",
+          "type": "uploaded_crosscheck",
+          "source_origin": "uploaded_crosscheck",
+          "check_needed": false
+        }
+      ]
+    },
     "summary": {
       "lesson_parts": [
         "课文",
@@ -3357,14 +3142,12 @@
       ],
       "grammar_points": [
         {
-          "id": "grammar_01",
-          "title": "“把”字句（1）",
-          "uuid": "c9d2fc2f-5908-425e-8d21-1b38d5724a00"
+          "id": "f8ec59f3-898a-47b2-b536-44dfd8183393",
+          "title": "“把”字句（1）"
         },
         {
-          "id": "note_02",
-          "title": "名词重叠：家家 / 天天 / 人人",
-          "uuid": "420982e8-2d85-43a7-90a5-5d7c9d62d331"
+          "id": "7e2ee128-4fbd-4a93-898c-5f5fd99b371b",
+          "title": "名词重叠：家家 / 天天 / 人人"
         }
       ],
       "main_patterns": [
@@ -3398,66 +3181,6 @@
         "Đọc xong kể lại"
       ],
       "check_needed": false
-    },
-    "uuid": "45754cb4-96d2-4661-817b-0e18e7f8f6c4"
-  },
-  "coverage_report": {
-    "version": "coverage_v1",
-    "coverage_status": "complete_unverified",
-    "expected_exercise_count_from_pdf": 11,
-    "actual_exercise_count_in_json": 11,
-    "all_exercises_covered": true,
-    "all_exercise_content_verified": true,
-    "all_text_covered": true,
-    "all_vocabulary_covered": true,
-    "all_proper_nouns_covered": true,
-    "all_notes_covered": true,
-    "all_grammar_covered": true,
-    "reading_covered": true,
-    "character_writing_covered": false,
-    "character_writing_reason": "Không thấy phần 写汉字 riêng trong PDF scan hiện có.",
-    "missing_exercise_indexes": [],
-    "final_verification_allowed": false,
-    "coverage_gates": [
-      {
-        "id": "gate_text",
-        "label": "Text covered",
-        "passed": true,
-        "uuid": "a831089f-2054-44f3-9b85-732e035d5db2"
-      },
-      {
-        "id": "gate_vocab",
-        "label": "Vocabulary covered",
-        "passed": true,
-        "uuid": "5e540376-db43-4c68-869b-4d664332b699"
-      },
-      {
-        "id": "gate_proper_nouns",
-        "label": "Proper nouns covered",
-        "passed": true,
-        "uuid": "6eb591fc-64ff-44ca-b95b-6328faeccc4b"
-      },
-      {
-        "id": "gate_exercises",
-        "label": "11 exercises covered",
-        "passed": true,
-        "expected": 11,
-        "actual": 11,
-        "uuid": "9fdcb512-cb94-48bf-9c73-905848d35ce2"
-      },
-      {
-        "id": "gate_reading",
-        "label": "Read and retell covered",
-        "passed": true,
-        "uuid": "0419eabf-f809-448a-9a78-f56ec59c629a"
-      },
-      {
-        "id": "gate_character_writing",
-        "label": "Character writing found",
-        "passed": false,
-        "reason": "No separate 写汉字 section found in available scan.",
-        "uuid": "b9d5fdc6-a5ef-406c-959c-7913e9aac636"
-      }
-    ]
+    }
   }
 }

@@ -28,7 +28,7 @@
     "notes": []
   },
   "lesson": {
-    "id": "hanyu_2_2_lesson_13_deep_vocab",
+    "id": "3707b818-a5ca-489f-819c-c083912e3869",
     "title": {
       "zh": "我的眼镜儿摔坏了",
       "pinyin": "Wǒ de yǎnjìngr shuāi huài le",
@@ -47,7 +47,7 @@
   "overview": {
     "groups": [
       {
-        "id": "group_001",
+        "id": "95607bcd-55c0-4bd7-a785-d67bd3066032",
         "order": 1,
         "title_vi": "Ảnh, thao tác xử lý ảnh & kích thước",
         "words": [
@@ -61,7 +61,7 @@
         "notes": []
       },
       {
-        "id": "group_002",
+        "id": "2373b2be-fbbb-4bb1-97de-3dc953fed5bb",
         "order": 2,
         "title_vi": "Động tác gây kết quả / trạng thái bị ảnh hưởng",
         "words": [
@@ -74,7 +74,7 @@
         "notes": []
       },
       {
-        "id": "group_003",
+        "id": "635e453f-e537-4973-a0ca-0c2c377e8fc2",
         "order": 3,
         "title_vi": "Sự cố, nguyên nhân & quy tắc",
         "words": [
@@ -90,7 +90,7 @@
         "notes": []
       },
       {
-        "id": "group_004",
+        "id": "6a7df093-8bf7-484d-8914-ab24f0650e2a",
         "order": 4,
         "title_vi": "Thời gian, mức độ & độ rõ",
         "words": [
@@ -102,7 +102,7 @@
         "notes": []
       },
       {
-        "id": "group_005",
+        "id": "a6885596-5173-46fe-89d0-5476947dfb5d",
         "order": 5,
         "title_vi": "Đồ vật, vị trí & thân thể",
         "words": [
@@ -112,7 +112,7 @@
         "notes": []
       },
       {
-        "id": "group_006",
+        "id": "b97f6abb-6e97-40bf-beed-26559e9a7d8d",
         "order": 6,
         "title_vi": "Cảm xúc, đánh giá & khẩu ngữ",
         "words": [
@@ -126,7 +126,7 @@
         "notes": []
       },
       {
-        "id": "group_007",
+        "id": "f4c2b154-a45e-42b4-8b1d-cbd69487d755",
         "order": 7,
         "title_vi": "Giao thông, đô thị & địa danh",
         "words": [
@@ -144,7 +144,7 @@
   },
   "items": [
     {
-      "id": "vocab_001",
+      "id": "ea75021b-c364-415a-8f81-0bc53daf0665",
       "type": "deep_vocabulary_item",
       "order": 1,
       "hanzi": "照",
@@ -288,7 +288,7 @@
       },
       "collocations": [
         {
-          "id": "vocab_001_col_001",
+          "id": "41e2430c-fffd-4303-8d1f-7ad27cfb4f42",
           "order": 1,
           "zh": "照相",
           "pinyin": "",
@@ -299,7 +299,7 @@
           "notes": []
         },
         {
-          "id": "vocab_001_col_002",
+          "id": "5e3dd73c-2204-4dde-99ad-d133be85a188",
           "order": 2,
           "zh": "照照片",
           "pinyin": "",
@@ -310,7 +310,7 @@
           "notes": []
         },
         {
-          "id": "vocab_001_col_003",
+          "id": "ecb6e4c3-4b9f-424f-99e1-bd972934bbf4",
           "order": 3,
           "zh": "照规定办",
           "pinyin": "",
@@ -321,7 +321,7 @@
           "notes": []
         },
         {
-          "id": "vocab_001_col_004",
+          "id": "1b00c12f-0da8-414e-b39a-da871b08b0d2",
           "order": 4,
           "zh": "[Đời sống] 帮我拍张照",
           "pinyin": "",
@@ -334,7 +334,7 @@
       ],
       "examples": [
         {
-          "id": "vocab_001_ex_001",
+          "id": "e89a187f-8ae6-4133-86d4-e1407d14e5b9",
           "order": 1,
           "zh": "这张照片照得有点儿虚，洗出来以后可能不太清楚。",
           "pinyin": "Zhè zhāng zhàopiàn zhào de yǒudiǎnr xū, xǐ chūlai yǐhòu kěnéng bú tài qīngchu.",
@@ -345,7 +345,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_001"
+            "ea75021b-c364-415a-8f81-0bc53daf0665"
           ],
           "source_ref": "current_thread_or_structured_source",
           "level": "basic",
@@ -354,7 +354,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_001_ex_002",
+          "id": "fc7115f6-fa2c-4472-b281-95467775b27a",
           "order": 2,
           "zh": "要洗的照片已经选好了，张张都很清楚。",
           "pinyin": "Yào xǐ de zhàopiàn yǐjīng xuǎn hǎo le, zhāngzhāng dōu hěn qīngchu.",
@@ -365,7 +365,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_001"
+            "ea75021b-c364-415a-8f81-0bc53daf0665"
           ],
           "source_ref": "current_thread_or_structured_source",
           "level": "expanded",
@@ -374,7 +374,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_001_ex_003",
+          "id": "2c135cc1-9abb-426d-b3b2-f779eec628a6",
           "order": 3,
           "zh": "这次去王府井，我没有一直拍照，而是慢慢儿看街上的人和风景。",
           "pinyin": "Zhè cì qù Wángfǔjǐng, wǒ méiyǒu yìzhí pāizhào, ér shì mànmānr kàn jiē shàng de rén hé fēngjǐng.",
@@ -385,7 +385,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_001"
+            "ea75021b-c364-415a-8f81-0bc53daf0665"
           ],
           "source_ref": "current_thread_or_structured_source",
           "level": "complex",
@@ -407,7 +407,7 @@
       },
       "warnings": [
         {
-          "id": "vocab_001_warning_001",
+          "id": "34221a3d-c905-4729-af41-883ad7df7525",
           "order": 1,
           "rule_vi": "Dùng 照 đơn lẻ quá nhiều khi nói “chụp ảnh”.",
           "natural_examples": [],
@@ -457,7 +457,7 @@
       "check_needed": false
     },
     {
-      "id": "vocab_002",
+      "id": "2bf17394-1506-4c11-bdba-3fe7d941a4ee",
       "type": "deep_vocabulary_item",
       "order": 2,
       "hanzi": "选",
@@ -588,7 +588,7 @@
       },
       "collocations": [
         {
-          "id": "vocab_002_col_001",
+          "id": "876cf3b6-ea40-44ed-b327-3a542bb5ee7c",
           "order": 1,
           "zh": "选照片",
           "pinyin": "",
@@ -599,7 +599,7 @@
           "notes": []
         },
         {
-          "id": "vocab_002_col_002",
+          "id": "1997af86-1ca7-4eb1-a124-392ad33003fe",
           "order": 2,
           "zh": "选好",
           "pinyin": "",
@@ -610,7 +610,7 @@
           "notes": []
         },
         {
-          "id": "vocab_002_col_003",
+          "id": "56f945dc-9d62-49db-91c4-cff22561a22a",
           "order": 3,
           "zh": "选择专业",
           "pinyin": "",
@@ -621,7 +621,7 @@
           "notes": []
         },
         {
-          "id": "vocab_002_col_004",
+          "id": "9fc54f85-6c01-4f95-9701-cee883664a5b",
           "order": 4,
           "zh": "[Đời sống] 你自己选吧",
           "pinyin": "",
@@ -634,7 +634,7 @@
       ],
       "examples": [
         {
-          "id": "vocab_002_ex_001",
+          "id": "21dd2d31-b57f-4a50-9b75-6a29bde1af0e",
           "order": 1,
           "zh": "要洗的照片选好了吗？",
           "pinyin": "Yào xǐ de zhàopiàn xuǎn hǎo le ma?",
@@ -645,7 +645,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_002"
+            "2bf17394-1506-4c11-bdba-3fe7d941a4ee"
           ],
           "source_ref": "current_thread_or_structured_source",
           "level": "basic",
@@ -654,7 +654,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_002_ex_002",
+          "id": "61e15b3c-be34-4e5d-916e-1a56ccec2c64",
           "order": 2,
           "zh": "这些照片张张都不错，我选了半天才选出五张。",
           "pinyin": "Zhèxiē zhàopiàn zhāngzhāng dōu búcuò, wǒ xuǎn le bàntiān cái xuǎn chū wǔ zhāng.",
@@ -665,7 +665,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_002"
+            "2bf17394-1506-4c11-bdba-3fe7d941a4ee"
           ],
           "source_ref": "current_thread_or_structured_source",
           "level": "expanded",
@@ -674,7 +674,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_002_ex_003",
+          "id": "497bd34b-87ad-4709-ace2-18043ec28ac6",
           "order": 3,
           "zh": "选例句的时候，不要只选漂亮的句子，也要选自己真的会用的句子。",
           "pinyin": "Xuǎn lìjù de shíhou, bú yào zhǐ xuǎn piàoliang de jùzi, yě yào xuǎn zìjǐ zhēn de huì yòng de jùzi.",
@@ -685,7 +685,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_002"
+            "2bf17394-1506-4c11-bdba-3fe7d941a4ee"
           ],
           "source_ref": "current_thread_or_structured_source",
           "level": "complex",
@@ -707,7 +707,7 @@
       },
       "warnings": [
         {
-          "id": "vocab_002_warning_001",
+          "id": "12bd65c3-4669-411e-a6e6-cc031bf7559e",
           "order": 1,
           "rule_vi": "Dùng 选 mà thiếu kết quả khi cần nói “đã chọn xong”.",
           "natural_examples": [],
@@ -741,7 +741,7 @@
       "check_needed": false
     },
     {
-      "id": "vocab_003",
+      "id": "5930eab0-69e2-4367-bf38-70edae28efe2",
       "type": "deep_vocabulary_item",
       "order": 3,
       "hanzi": "洗",
@@ -873,7 +873,7 @@
       },
       "collocations": [
         {
-          "id": "vocab_003_col_001",
+          "id": "95dccd3d-1604-4cc9-a59a-f3308a2ab276",
           "order": 1,
           "zh": "洗照片",
           "pinyin": "",
@@ -884,7 +884,7 @@
           "notes": []
         },
         {
-          "id": "vocab_003_col_002",
+          "id": "1d4553b0-b93f-4510-b947-c8c9fc68abaf",
           "order": 2,
           "zh": "洗衣服",
           "pinyin": "",
@@ -895,7 +895,7 @@
           "notes": []
         },
         {
-          "id": "vocab_003_col_003",
+          "id": "32bf5a78-5a13-44c0-9ea6-9ec943263379",
           "order": 3,
           "zh": "洗手",
           "pinyin": "",
@@ -906,7 +906,7 @@
           "notes": []
         },
         {
-          "id": "vocab_003_col_004",
+          "id": "27b748d0-96dd-462f-b65a-83c5ae2cf296",
           "order": 4,
           "zh": "[Đời sống] 照片洗出来了吗？",
           "pinyin": "",
@@ -919,7 +919,7 @@
       ],
       "examples": [
         {
-          "id": "vocab_003_ex_001",
+          "id": "b4cd9b0c-01a6-426e-959c-1b917ac89197",
           "order": 1,
           "zh": "照片已经洗出来了，但是有两张不太清楚。",
           "pinyin": "Zhàopiàn yǐjīng xǐ chūlai le, dànshì yǒu liǎng zhāng bú tài qīngchu.",
@@ -930,7 +930,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_003"
+            "5930eab0-69e2-4367-bf38-70edae28efe2"
           ],
           "source_ref": "current_thread_or_structured_source",
           "level": "basic",
@@ -939,7 +939,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_003_ex_002",
+          "id": "8965743c-b515-41b8-ab3e-605ea708c982",
           "order": 2,
           "zh": "要洗的照片都选好了，明天可以拿去店里。",
           "pinyin": "Yào xǐ de zhàopiàn dōu xuǎn hǎo le, míngtiān kěyǐ ná qù diàn lǐ.",
@@ -950,7 +950,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_003"
+            "5930eab0-69e2-4367-bf38-70edae28efe2"
           ],
           "source_ref": "current_thread_or_structured_source",
           "level": "expanded",
@@ -959,7 +959,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_003_ex_003",
+          "id": "1fa947d7-0f55-4f5d-8443-b975374e9831",
           "order": 3,
           "zh": "现在很多人不洗照片了，只把照片存在手机里。",
           "pinyin": "Xiànzài hěn duō rén bù xǐ zhàopiàn le, zhǐ bǎ zhàopiàn cún zài shǒujī lǐ.",
@@ -970,7 +970,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_003"
+            "5930eab0-69e2-4367-bf38-70edae28efe2"
           ],
           "source_ref": "current_thread_or_structured_source",
           "level": "complex",
@@ -992,7 +992,7 @@
       },
       "warnings": [
         {
-          "id": "vocab_003_warning_001",
+          "id": "91abbcb4-ef14-4471-90fc-1561c32de9cb",
           "order": 1,
           "rule_vi": "Hiểu 洗照片 là “rửa tấm ảnh cho sạch”.",
           "natural_examples": [],
@@ -1026,7 +1026,7 @@
       "check_needed": false
     },
     {
-      "id": "vocab_004",
+      "id": "fd053cc2-2a04-47e8-8469-b1be46ae9a78",
       "type": "deep_vocabulary_item",
       "order": 4,
       "hanzi": "放大",
@@ -1190,7 +1190,7 @@
       },
       "collocations": [
         {
-          "id": "vocab_004_col_001",
+          "id": "5d71ec43-f538-4c74-8122-18a090094cc7",
           "order": 1,
           "zh": "放大照片",
           "pinyin": "",
@@ -1201,7 +1201,7 @@
           "notes": []
         },
         {
-          "id": "vocab_004_col_002",
+          "id": "a00bae75-0419-4fb0-9b53-a38741003178",
           "order": 2,
           "zh": "放大字体",
           "pinyin": "",
@@ -1212,7 +1212,7 @@
           "notes": []
         },
         {
-          "id": "vocab_004_col_003",
+          "id": "4f63956b-520a-4758-9c25-0191f96b531f",
           "order": 3,
           "zh": "放大成两寸",
           "pinyin": "",
@@ -1223,7 +1223,7 @@
           "notes": []
         },
         {
-          "id": "vocab_004_col_004",
+          "id": "34cfa31e-1947-41fc-bea0-4cd217c82458",
           "order": 4,
           "zh": "[Đời sống] 别把小问题放大",
           "pinyin": "",
@@ -1236,7 +1236,7 @@
       ],
       "examples": [
         {
-          "id": "vocab_004_ex_001",
+          "id": "d7ba7407-a00c-4fbb-aeca-711ca957e338",
           "order": 1,
           "zh": "这张照片可以放大成两寸吗？",
           "pinyin": "Zhè zhāng zhàopiàn kěyǐ fàngdà chéng liǎng cùn ma?",
@@ -1247,7 +1247,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_004"
+            "fd053cc2-2a04-47e8-8469-b1be46ae9a78"
           ],
           "source_ref": "current_thread_or_structured_source",
           "level": "basic",
@@ -1256,7 +1256,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_004_ex_002",
+          "id": "ca53d760-c5bd-4882-b50c-a7c0080eb4ce",
           "order": 2,
           "zh": "照片本来就有点儿虚，放大以后会更不清楚。",
           "pinyin": "Zhàopiàn běnlái jiù yǒudiǎnr xū, fàngdà yǐhòu huì gèng bù qīngchu.",
@@ -1267,7 +1267,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_004"
+            "fd053cc2-2a04-47e8-8469-b1be46ae9a78"
           ],
           "source_ref": "current_thread_or_structured_source",
           "level": "expanded",
@@ -1276,7 +1276,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_004_ex_003",
+          "id": "28c9d561-8e29-49c1-95da-35d12c64c59b",
           "order": 3,
           "zh": "学习的时候，不要把一次小错误放大成“我不适合学中文”。",
           "pinyin": "Xuéxí de shíhou, bú yào bǎ yí cì xiǎo cuòwù fàngdà chéng “wǒ bù shìhé xué Zhōngwén”.",
@@ -1287,7 +1287,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_004"
+            "fd053cc2-2a04-47e8-8469-b1be46ae9a78"
           ],
           "source_ref": "current_thread_or_structured_source",
           "level": "complex",
@@ -1309,7 +1309,7 @@
       },
       "warnings": [
         {
-          "id": "vocab_004_warning_001",
+          "id": "dc43e561-07c0-4b05-b90a-3fe6151169d2",
           "order": 1,
           "rule_vi": "Nhầm 放大 và 夸大.",
           "natural_examples": [],
@@ -1351,7 +1351,7 @@
       "check_needed": false
     },
     {
-      "id": "vocab_005",
+      "id": "0fe8bcf9-ba78-4ddc-afda-9c867860336b",
       "type": "deep_vocabulary_item",
       "order": 5,
       "hanzi": "寸",
@@ -1483,7 +1483,7 @@
       },
       "collocations": [
         {
-          "id": "vocab_005_col_001",
+          "id": "3e3884e2-dfc0-44bc-8e0d-80d56cc42c19",
           "order": 1,
           "zh": "一寸照片",
           "pinyin": "",
@@ -1494,7 +1494,7 @@
           "notes": []
         },
         {
-          "id": "vocab_005_col_002",
+          "id": "c788eca5-bbd9-4481-b03e-1a558d1f12dc",
           "order": 2,
           "zh": "两寸照片",
           "pinyin": "",
@@ -1505,7 +1505,7 @@
           "notes": []
         },
         {
-          "id": "vocab_005_col_003",
+          "id": "0da9d54a-5a77-4014-a8df-b32a15c5b663",
           "order": 3,
           "zh": "照片尺寸",
           "pinyin": "",
@@ -1516,7 +1516,7 @@
           "notes": []
         },
         {
-          "id": "vocab_005_col_004",
+          "id": "39fb0d93-ab0a-4269-bb42-050e2dbc5167",
           "order": 4,
           "zh": "[Hồ sơ] 需要两张一寸照片",
           "pinyin": "",
@@ -1529,7 +1529,7 @@
       ],
       "examples": [
         {
-          "id": "vocab_005_ex_001",
+          "id": "83c84851-e2bf-4747-bc4c-e8e2c738a833",
           "order": 1,
           "zh": "报名表上写着需要两张一寸照片。",
           "pinyin": "Bàomíngbiǎo shàng xiězhe xūyào liǎng zhāng yí cùn zhàopiàn.",
@@ -1540,7 +1540,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_005"
+            "0fe8bcf9-ba78-4ddc-afda-9c867860336b"
           ],
           "source_ref": "current_thread_or_structured_source",
           "level": "basic",
@@ -1549,7 +1549,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_005_ex_002",
+          "id": "cd18740a-b3c8-40af-bf3f-bf3464171f4e",
           "order": 2,
           "zh": "这张照片太大了，能不能改成一寸的？",
           "pinyin": "Zhè zhāng zhàopiàn tài dà le, néng bu néng gǎi chéng yí cùn de?",
@@ -1560,7 +1560,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_005"
+            "0fe8bcf9-ba78-4ddc-afda-9c867860336b"
           ],
           "source_ref": "current_thread_or_structured_source",
           "level": "expanded",
@@ -1569,7 +1569,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_005_ex_003",
+          "id": "049d8197-045b-486b-9b11-03b9fc7b154c",
           "order": 3,
           "zh": "办证件以前，最好先看清楚照片尺寸，别洗错了。",
           "pinyin": "Bàn zhèngjiàn yǐqián, zuìhǎo xiān kàn qīngchu zhàopiàn chǐcùn, bié xǐ cuò le.",
@@ -1580,7 +1580,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_005"
+            "0fe8bcf9-ba78-4ddc-afda-9c867860336b"
           ],
           "source_ref": "current_thread_or_structured_source",
           "level": "complex",
@@ -1602,7 +1602,7 @@
       },
       "warnings": [
         {
-          "id": "vocab_005_warning_001",
+          "id": "e3155d4b-0216-47ac-89fc-3aa8064385d5",
           "order": 1,
           "rule_vi": "Tự quy đổi 寸 theo thói quen tiếng Việt rồi làm sai ảnh hồ sơ.",
           "natural_examples": [],
@@ -1636,7 +1636,7 @@
       "check_needed": false
     },
     {
-      "id": "vocab_006",
+      "id": "24d1b843-1b65-4375-b0b6-f25544e0841c",
       "type": "deep_vocabulary_item",
       "order": 6,
       "hanzi": "油画",
@@ -1789,7 +1789,7 @@
       },
       "collocations": [
         {
-          "id": "vocab_006_col_001",
+          "id": "7b61aca1-c63d-4371-808c-4ab69928f04a",
           "order": 1,
           "zh": "一幅油画",
           "pinyin": "",
@@ -1800,7 +1800,7 @@
           "notes": []
         },
         {
-          "id": "vocab_006_col_002",
+          "id": "d2de37b2-ca44-4351-b7ea-d7af72ffb85c",
           "order": 2,
           "zh": "画油画",
           "pinyin": "",
@@ -1811,7 +1811,7 @@
           "notes": []
         },
         {
-          "id": "vocab_006_col_003",
+          "id": "83cd8437-1d12-406f-ab4a-c2c48fe7f73a",
           "order": 3,
           "zh": "油画展",
           "pinyin": "",
@@ -1822,7 +1822,7 @@
           "notes": []
         },
         {
-          "id": "vocab_006_col_004",
+          "id": "022342c7-7262-4583-8a8b-6f4ef464111b",
           "order": 4,
           "zh": "[Miêu tả ảnh] 像油画一样",
           "pinyin": "",
@@ -1835,7 +1835,7 @@
       ],
       "examples": [
         {
-          "id": "vocab_006_ex_001",
+          "id": "c8ad6ab5-bb51-40ed-b74e-62563ee8a21c",
           "order": 1,
           "zh": "这张照片放大以后，看起来像一幅油画。",
           "pinyin": "Zhè zhāng zhàopiàn fàngdà yǐhòu, kàn qǐlai xiàng yì fú yóuhuà.",
@@ -1846,7 +1846,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_006"
+            "24d1b843-1b65-4375-b0b6-f25544e0841c"
           ],
           "source_ref": "current_thread_or_structured_source",
           "level": "basic",
@@ -1855,7 +1855,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_006_ex_002",
+          "id": "7045fef6-8519-4c0f-b072-8cb7bc4b87d7",
           "order": 2,
           "zh": "墙上挂着一幅油画，颜色很深，人物的表情也很清楚。",
           "pinyin": "Qiáng shàng guàzhe yì fú yóuhuà, yánsè hěn shēn, rénwù de biǎoqíng yě hěn qīngchu.",
@@ -1866,7 +1866,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_006"
+            "24d1b843-1b65-4375-b0b6-f25544e0841c"
           ],
           "source_ref": "current_thread_or_structured_source",
           "level": "expanded",
@@ -1875,7 +1875,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_006_ex_003",
+          "id": "b8efa103-7233-4ab4-b1d1-5c9e08959b72",
           "order": 3,
           "zh": "如果只是普通证件照，不需要修得像油画一样。",
           "pinyin": "Rúguǒ zhǐ shì pǔtōng zhèngjiànzhào, bù xūyào xiū de xiàng yóuhuà yíyàng.",
@@ -1886,7 +1886,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_006"
+            "24d1b843-1b65-4375-b0b6-f25544e0841c"
           ],
           "source_ref": "current_thread_or_structured_source",
           "level": "complex",
@@ -1908,7 +1908,7 @@
       },
       "warnings": [
         {
-          "id": "vocab_006_warning_001",
+          "id": "eb4370ac-8568-43ef-b15a-a36db8a0679c",
           "order": 1,
           "rule_vi": "Dùng sai lượng từ.",
           "natural_examples": [],
@@ -1950,7 +1950,7 @@
       "check_needed": false
     },
     {
-      "id": "vocab_007",
+      "id": "5580d93f-cb50-452c-85df-6621e4c6bb4a",
       "type": "deep_vocabulary_item",
       "order": 7,
       "hanzi": "闭",
@@ -2082,7 +2082,7 @@
       },
       "collocations": [
         {
-          "id": "vocab_007_col_001",
+          "id": "a08ce92d-61ea-4761-94c7-6286c8c20fc0",
           "order": 1,
           "zh": "闭上眼睛",
           "pinyin": "",
@@ -2093,7 +2093,7 @@
           "notes": []
         },
         {
-          "id": "vocab_007_col_002",
+          "id": "bcdc9256-8a70-4f9f-80c4-64396a0d4f3a",
           "order": 2,
           "zh": "闭着眼睛",
           "pinyin": "",
@@ -2104,7 +2104,7 @@
           "notes": []
         },
         {
-          "id": "vocab_007_col_003",
+          "id": "d0cca8d2-7eb4-49f6-8d41-38a4b7dc017b",
           "order": 3,
           "zh": "关闭手机",
           "pinyin": "",
@@ -2115,7 +2115,7 @@
           "notes": []
         },
         {
-          "id": "vocab_007_col_004",
+          "id": "3b8939eb-5e2e-4d5e-a781-d42d47acf0a4",
           "order": 4,
           "zh": "[Đời sống] 闭嘴",
           "pinyin": "",
@@ -2128,7 +2128,7 @@
       ],
       "examples": [
         {
-          "id": "vocab_007_ex_001",
+          "id": "55802048-b384-4842-be0f-93452a856ed2",
           "order": 1,
           "zh": "拍照的时候别闭眼睛，不然这张照片就不能用了。",
           "pinyin": "Pāizhào de shíhou bié bì yǎnjing, bùrán zhè zhāng zhàopiàn jiù bù néng yòng le.",
@@ -2139,7 +2139,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_007"
+            "5580d93f-cb50-452c-85df-6621e4c6bb4a"
           ],
           "source_ref": "current_thread_or_structured_source",
           "level": "basic",
@@ -2148,7 +2148,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_007_ex_002",
+          "id": "f1d8a508-a010-46a0-ac85-2292bab64ea0",
           "order": 2,
           "zh": "照片洗出来以后，我才发现自己闭着眼睛。",
           "pinyin": "Zhàopiàn xǐ chūlai yǐhòu, wǒ cái fāxiàn zìjǐ bìzhe yǎnjing.",
@@ -2159,7 +2159,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_007"
+            "5580d93f-cb50-452c-85df-6621e4c6bb4a"
           ],
           "source_ref": "current_thread_or_structured_source",
           "level": "expanded",
@@ -2168,7 +2168,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_007_ex_003",
+          "id": "2a2dbb40-f2c2-44de-af79-da147f660a67",
           "order": 3,
           "zh": "上课前最好把不用的网页关掉，把注意力放回课本上。",
           "pinyin": "Shàngkè qián zuìhǎo bǎ bú yòng de wǎngyè guān diào, bǎ zhùyìlì fàng huí kèběn shàng.",
@@ -2179,7 +2179,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_007"
+            "5580d93f-cb50-452c-85df-6621e4c6bb4a"
           ],
           "source_ref": "current_thread_or_structured_source",
           "level": "complex",
@@ -2201,7 +2201,7 @@
       },
       "warnings": [
         {
-          "id": "vocab_007_warning_001",
+          "id": "742c4e00-6b73-483c-ad99-cc268561772f",
           "order": 1,
           "rule_vi": "Dùng 闭 thay 关 trong mọi trường hợp “đóng”.",
           "natural_examples": [],
@@ -2243,7 +2243,7 @@
       "check_needed": false
     },
     {
-      "id": "vocab_008",
+      "id": "6134d27c-7caa-4ba3-b1f8-1f4ac8d28634",
       "type": "deep_vocabulary_item",
       "order": 8,
       "hanzi": "虚",
@@ -2376,7 +2376,7 @@
       },
       "collocations": [
         {
-          "id": "vocab_008_col_001",
+          "id": "2a691096-38cb-4a1e-b802-a71253982333",
           "order": 1,
           "zh": "照片照虚了",
           "pinyin": "",
@@ -2387,7 +2387,7 @@
           "notes": []
         },
         {
-          "id": "vocab_008_col_002",
+          "id": "c6fab76f-03b0-4b83-a054-a73e2bf77e4e",
           "order": 2,
           "zh": "有点儿虚",
           "pinyin": "",
@@ -2398,7 +2398,7 @@
           "notes": []
         },
         {
-          "id": "vocab_008_col_003",
+          "id": "8167141f-df61-4a57-b2ee-3828c2e6528b",
           "order": 3,
           "zh": "身体虚",
           "pinyin": "",
@@ -2409,7 +2409,7 @@
           "notes": []
         },
         {
-          "id": "vocab_008_col_004",
+          "id": "8699b1fa-c35b-46d3-99ca-dd0d292bc1d3",
           "order": 4,
           "zh": "[Công nghệ] 虚拟现实",
           "pinyin": "",
@@ -2422,7 +2422,7 @@
       ],
       "examples": [
         {
-          "id": "vocab_008_ex_001",
+          "id": "4023fe97-5a7c-472b-9307-071736039ed5",
           "order": 1,
           "zh": "这张照片照虚了，人物的脸看不清楚。",
           "pinyin": "Zhè zhāng zhàopiàn zhào xū le, rénwù de liǎn kàn bù qīngchu.",
@@ -2433,7 +2433,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_008"
+            "6134d27c-7caa-4ba3-b1f8-1f4ac8d28634"
           ],
           "source_ref": "current_thread_or_structured_source",
           "level": "basic",
@@ -2442,7 +2442,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_008_ex_002",
+          "id": "6b8180c4-5256-4a96-9b8e-71080deda91d",
           "order": 2,
           "zh": "照片放大以后更虚了，最好不要洗成大尺寸。",
           "pinyin": "Zhàopiàn fàngdà yǐhòu gèng xū le, zuìhǎo bú yào xǐ chéng dà chǐcùn.",
@@ -2453,7 +2453,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_008"
+            "6134d27c-7caa-4ba3-b1f8-1f4ac8d28634"
           ],
           "source_ref": "current_thread_or_structured_source",
           "level": "expanded",
@@ -2462,7 +2462,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_008_ex_003",
+          "id": "c83a39ca-8bc2-47bb-852a-046588983d8b",
           "order": 3,
           "zh": "他刚生病好，身体还有点儿虚，别让他马上去跑步。",
           "pinyin": "Tā gāng shēngbìng hǎo, shēntǐ hái yǒudiǎnr xū, bié ràng tā mǎshàng qù pǎobù.",
@@ -2473,7 +2473,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_008"
+            "6134d27c-7caa-4ba3-b1f8-1f4ac8d28634"
           ],
           "source_ref": "current_thread_or_structured_source",
           "level": "complex",
@@ -2495,7 +2495,7 @@
       },
       "warnings": [
         {
-          "id": "vocab_008_warning_001",
+          "id": "ec1f8888-50be-4b91-b9e5-43079c71427e",
           "order": 1,
           "rule_vi": "Dịch 照片虚了 thành “ảnh hư rồi”.",
           "natural_examples": [],
@@ -2537,7 +2537,7 @@
       "check_needed": false
     },
     {
-      "id": "vocab_009",
+      "id": "6cc4ff11-0ed3-4c43-9a79-1b668742197e",
       "type": "deep_vocabulary_item",
       "order": 9,
       "hanzi": "删",
@@ -2668,7 +2668,7 @@
       },
       "collocations": [
         {
-          "id": "vocab_009_col_001",
+          "id": "c6de4aae-2343-411e-a5c2-362468140a40",
           "order": 1,
           "zh": "删照片",
           "pinyin": "",
@@ -2679,7 +2679,7 @@
           "notes": []
         },
         {
-          "id": "vocab_009_col_002",
+          "id": "91662449-ade4-4e87-8982-b221c97981b6",
           "order": 2,
           "zh": "删掉文件",
           "pinyin": "",
@@ -2690,7 +2690,7 @@
           "notes": []
         },
         {
-          "id": "vocab_009_col_003",
+          "id": "c65e171c-afc4-4de3-bbe8-6eea8bdb4c69",
           "order": 3,
           "zh": "删除消息",
           "pinyin": "",
@@ -2701,7 +2701,7 @@
           "notes": []
         },
         {
-          "id": "vocab_009_col_004",
+          "id": "42521b5b-46cc-4f3a-8dd5-dfe0b28cc5db",
           "order": 4,
           "zh": "[Mạng xã hội] 删好友",
           "pinyin": "",
@@ -2714,7 +2714,7 @@
       ],
       "examples": [
         {
-          "id": "vocab_009_ex_001",
+          "id": "e72f6861-4a8b-4eef-b6e8-3cfc44bf8513",
           "order": 1,
           "zh": "那几张虚的照片已经删掉了。",
           "pinyin": "Nà jǐ zhāng xū de zhàopiàn yǐjīng shān diào le.",
@@ -2725,7 +2725,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_009"
+            "6cc4ff11-0ed3-4c43-9a79-1b668742197e"
           ],
           "source_ref": "current_thread_or_structured_source",
           "level": "basic",
@@ -2734,7 +2734,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_009_ex_002",
+          "id": "97799a1d-d503-4e7d-adf4-910b3486754f",
           "order": 2,
           "zh": "你别急着删，先看看这些照片能不能修清楚。",
           "pinyin": "Nǐ bié jízhe shān, xiān kànkan zhèxiē zhàopiàn néng bu néng xiū qīngchu.",
@@ -2745,7 +2745,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_009"
+            "6cc4ff11-0ed3-4c43-9a79-1b668742197e"
           ],
           "source_ref": "current_thread_or_structured_source",
           "level": "expanded",
@@ -2754,7 +2754,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_009_ex_003",
+          "id": "d34944a1-91f1-48ce-81db-1b36d1759dc3",
           "order": 3,
           "zh": "写作文的时候，有些重复的句子删掉以后，文章反而更清楚。",
           "pinyin": "Xiě zuòwén de shíhou, yǒuxiē chóngfù de jùzi shān diào yǐhòu, wénzhāng fǎn'ér gèng qīngchu.",
@@ -2765,7 +2765,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_009"
+            "6cc4ff11-0ed3-4c43-9a79-1b668742197e"
           ],
           "source_ref": "current_thread_or_structured_source",
           "level": "complex",
@@ -2787,7 +2787,7 @@
       },
       "warnings": [
         {
-          "id": "vocab_009_warning_001",
+          "id": "7c00371a-f947-4d3c-89fd-f85b5faadaf9",
           "order": 1,
           "rule_vi": "Nhầm 删掉 và 擦掉.",
           "natural_examples": [],
@@ -2829,7 +2829,7 @@
       "check_needed": false
     },
     {
-      "id": "vocab_010",
+      "id": "12f42953-a0d2-4e83-a495-3ed4125f05bb",
       "type": "deep_vocabulary_item",
       "order": 10,
       "hanzi": "碰",
@@ -2971,7 +2971,7 @@
       },
       "collocations": [
         {
-          "id": "vocab_010_col_001",
+          "id": "27732052-313c-47cc-821f-1b0bf974e0e3",
           "order": 1,
           "zh": "碰到桌子",
           "pinyin": "",
@@ -2982,7 +2982,7 @@
           "notes": []
         },
         {
-          "id": "vocab_010_col_002",
+          "id": "db5bb87f-a10a-4201-b797-3b135e873d5b",
           "order": 2,
           "zh": "碰掉眼镜儿",
           "pinyin": "",
@@ -2993,7 +2993,7 @@
           "notes": []
         },
         {
-          "id": "vocab_010_col_003",
+          "id": "1e73675e-8bff-4e8e-b599-718c320d0ede",
           "order": 3,
           "zh": "碰坏东西",
           "pinyin": "",
@@ -3004,7 +3004,7 @@
           "notes": []
         },
         {
-          "id": "vocab_010_col_004",
+          "id": "acabca09-db37-4db6-96ff-b6916288d1ee",
           "order": 4,
           "zh": "[Đời sống] 别碰我的电脑",
           "pinyin": "",
@@ -3017,7 +3017,7 @@
       ],
       "examples": [
         {
-          "id": "vocab_010_ex_001",
+          "id": "d6438b6c-30ed-4cde-93a9-234f63a208e1",
           "order": 1,
           "zh": "我的眼镜儿被他碰掉了，掉在地上以后摔坏了。",
           "pinyin": "Wǒ de yǎnjìngr bèi tā pèng diào le, diào zài dì shàng yǐhòu shuāi huài le.",
@@ -3028,7 +3028,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_010"
+            "12f42953-a0d2-4e83-a495-3ed4125f05bb"
           ],
           "source_ref": "current_thread_or_structured_source",
           "level": "basic",
@@ -3037,7 +3037,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_010_ex_002",
+          "id": "27985350-ef27-48e5-b3b4-ce1e95e1824e",
           "order": 2,
           "zh": "桌上的杯子碰倒了，水洒了一地。",
           "pinyin": "Zhuō shàng de bēizi pèng dǎo le, shuǐ sǎ le yí dì.",
@@ -3048,7 +3048,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_010"
+            "12f42953-a0d2-4e83-a495-3ed4125f05bb"
           ],
           "source_ref": "current_thread_or_structured_source",
           "level": "expanded",
@@ -3057,7 +3057,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_010_ex_003",
+          "id": "153021b0-2c82-4fef-86fe-e066a036638a",
           "order": 3,
           "zh": "做项目的时候，碰到不明白的地方要先记录下来。",
           "pinyin": "Zuò xiàngmù de shíhou, pèngdào bù míngbai de dìfang yào xiān jìlù xiàlai.",
@@ -3068,7 +3068,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_010"
+            "12f42953-a0d2-4e83-a495-3ed4125f05bb"
           ],
           "source_ref": "current_thread_or_structured_source",
           "level": "complex",
@@ -3090,7 +3090,7 @@
       },
       "warnings": [
         {
-          "id": "vocab_010_warning_001",
+          "id": "fd6b313a-2912-43b5-a465-c9c371b5efcc",
           "order": 1,
           "rule_vi": "Nhầm 碰 và 撞.",
           "natural_examples": [],
@@ -3132,7 +3132,7 @@
       "check_needed": false
     },
     {
-      "id": "vocab_011",
+      "id": "5d43ce94-8ac9-46c0-b743-4ab68f034c74",
       "type": "deep_vocabulary_item",
       "order": 11,
       "hanzi": "掉",
@@ -3264,7 +3264,7 @@
       },
       "collocations": [
         {
-          "id": "vocab_011_col_001",
+          "id": "878d57b0-4688-43e9-b81e-5d3a468c1b20",
           "order": 1,
           "zh": "掉在地上",
           "pinyin": "",
@@ -3275,7 +3275,7 @@
           "notes": []
         },
         {
-          "id": "vocab_011_col_002",
+          "id": "d84e37c8-704d-4991-85d8-2004e2250bcb",
           "order": 2,
           "zh": "掉头发",
           "pinyin": "",
@@ -3286,7 +3286,7 @@
           "notes": []
         },
         {
-          "id": "vocab_011_col_003",
+          "id": "2dd5ee2d-56b4-4d36-a255-52208406352f",
           "order": 3,
           "zh": "删掉照片",
           "pinyin": "",
@@ -3297,7 +3297,7 @@
           "notes": []
         },
         {
-          "id": "vocab_011_col_004",
+          "id": "d939fcc9-b93c-44e8-b6f3-d78215ecf539",
           "order": 4,
           "zh": "[Đời sống] 手机差点儿掉了",
           "pinyin": "",
@@ -3310,7 +3310,7 @@
       ],
       "examples": [
         {
-          "id": "vocab_011_ex_001",
+          "id": "0ee974fe-b429-4fe4-8294-f822ace80560",
           "order": 1,
           "zh": "眼镜儿掉在地上以后，右边的镜片摔坏了。",
           "pinyin": "Yǎnjìngr diào zài dì shàng yǐhòu, yòubian de jìngpiàn shuāi huài le.",
@@ -3321,7 +3321,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_011"
+            "5d43ce94-8ac9-46c0-b743-4ab68f034c74"
           ],
           "source_ref": "current_thread_or_structured_source",
           "level": "basic",
@@ -3330,7 +3330,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_011_ex_002",
+          "id": "239297c5-36b2-446d-a7d7-7621d18e71f9",
           "order": 2,
           "zh": "那几张不清楚的照片已经删掉了，剩下的张张都能用。",
           "pinyin": "Nà jǐ zhāng bù qīngchu de zhàopiàn yǐjīng shān diào le, shèngxià de zhāngzhāng dōu néng yòng.",
@@ -3341,7 +3341,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_011"
+            "5d43ce94-8ac9-46c0-b743-4ab68f034c74"
           ],
           "source_ref": "current_thread_or_structured_source",
           "level": "expanded",
@@ -3350,7 +3350,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_011_ex_003",
+          "id": "cc20275f-0533-41fe-bfd3-da2da7bba2e4",
           "order": 3,
           "zh": "最近压力太大，他天天掉头发，整个人看起来没有精神。",
           "pinyin": "Zuìjìn yālì tài dà, tā tiāntiān diào tóufa, zhěng ge rén kàn qǐlai méiyǒu jīngshén.",
@@ -3361,7 +3361,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_011"
+            "5d43ce94-8ac9-46c0-b743-4ab68f034c74"
           ],
           "source_ref": "current_thread_or_structured_source",
           "level": "complex",
@@ -3383,7 +3383,7 @@
       },
       "warnings": [
         {
-          "id": "vocab_011_warning_001",
+          "id": "79b0ed11-8e66-4d35-8009-78408389d37e",
           "order": 1,
           "rule_vi": "Nhầm 掉了 với 丢了.",
           "natural_examples": [],
@@ -3417,7 +3417,7 @@
       "check_needed": false
     },
     {
-      "id": "vocab_012",
+      "id": "3bed324e-3b8f-4785-8be4-7aea1df346d2",
       "type": "deep_vocabulary_item",
       "order": 12,
       "hanzi": "起",
@@ -3558,7 +3558,7 @@
       },
       "collocations": [
         {
-          "id": "vocab_012_col_001",
+          "id": "e3932cb3-3da4-479d-9e0c-dc461ccbb55b",
           "order": 1,
           "zh": "一起事故",
           "pinyin": "",
@@ -3569,7 +3569,7 @@
           "notes": []
         },
         {
-          "id": "vocab_012_col_002",
+          "id": "337d430c-9868-458a-a469-8c7a9fb4e8d4",
           "order": 2,
           "zh": "一起交通事故",
           "pinyin": "",
@@ -3580,7 +3580,7 @@
           "notes": []
         },
         {
-          "id": "vocab_012_col_003",
+          "id": "13bd173d-386c-48c3-ba49-5899b43ed7e6",
           "order": 3,
           "zh": "一起案件",
           "pinyin": "",
@@ -3591,7 +3591,7 @@
           "notes": []
         },
         {
-          "id": "vocab_012_col_004",
+          "id": "55e99051-fa10-4d71-aae2-d46c5f15d328",
           "order": 4,
           "zh": "[Tin tức] 发生了一起事故",
           "pinyin": "",
@@ -3604,7 +3604,7 @@
       ],
       "examples": [
         {
-          "id": "vocab_012_ex_001",
+          "id": "d2f840b5-4043-4017-8681-9994aef73503",
           "order": 1,
           "zh": "昨天晚上，这条路上发生了一起交通事故。",
           "pinyin": "Zuótiān wǎnshang, zhè tiáo lù shàng fāshēng le yì qǐ jiāotōng shìgù.",
@@ -3615,7 +3615,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_012"
+            "3bed324e-3b8f-4785-8be4-7aea1df346d2"
           ],
           "source_ref": "current_thread_or_structured_source",
           "level": "basic",
@@ -3624,7 +3624,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_012_ex_002",
+          "id": "cf5da968-f0df-481e-94d9-48c0920d64a5",
           "order": 2,
           "zh": "这起事故的主要原因还没查清楚。",
           "pinyin": "Zhè qǐ shìgù de zhǔyào yuányīn hái méi chá qīngchu.",
@@ -3635,7 +3635,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_012"
+            "3bed324e-3b8f-4785-8be4-7aea1df346d2"
           ],
           "source_ref": "current_thread_or_structured_source",
           "level": "expanded",
@@ -3644,7 +3644,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_012_ex_003",
+          "id": "1ea513cc-af71-4234-b3a3-56b64ef73e3a",
           "order": 3,
           "zh": "不要把“一起去”和“一起事故”的“一起”看成同一个意思。",
           "pinyin": "Bú yào bǎ “yìqǐ qù” hé “yì qǐ shìgù” de “yìqǐ” kàn chéng tóng yí ge yìsi.",
@@ -3655,7 +3655,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_012"
+            "3bed324e-3b8f-4785-8be4-7aea1df346d2"
           ],
           "source_ref": "current_thread_or_structured_source",
           "level": "complex",
@@ -3677,7 +3677,7 @@
       },
       "warnings": [
         {
-          "id": "vocab_012_warning_001",
+          "id": "b3929a00-f24b-4232-805a-6b6f471c9001",
           "order": 1,
           "rule_vi": "Nhầm 一起 “cùng nhau” với 一 + 起 lượng từ.",
           "natural_examples": [],
@@ -3711,7 +3711,7 @@
       "check_needed": false
     },
     {
-      "id": "vocab_013",
+      "id": "bbbabaed-bb52-47a7-80e7-58c41ab8f4ff",
       "type": "deep_vocabulary_item",
       "order": 13,
       "hanzi": "事故",
@@ -3853,7 +3853,7 @@
       },
       "collocations": [
         {
-          "id": "vocab_013_col_001",
+          "id": "b4c6d1f8-fd36-409f-88a7-0663135dd268",
           "order": 1,
           "zh": "交通事故",
           "pinyin": "",
@@ -3864,7 +3864,7 @@
           "notes": []
         },
         {
-          "id": "vocab_013_col_002",
+          "id": "ca72478a-06ab-40f6-a782-20dc687e0c11",
           "order": 2,
           "zh": "发生事故",
           "pinyin": "",
@@ -3875,7 +3875,7 @@
           "notes": []
         },
         {
-          "id": "vocab_013_col_003",
+          "id": "7e159053-6f35-4c80-ba2a-8bfcda765d3f",
           "order": 3,
           "zh": "造成事故",
           "pinyin": "",
@@ -3886,7 +3886,7 @@
           "notes": []
         },
         {
-          "id": "vocab_013_col_004",
+          "id": "bfb6b634-1b81-4aa2-9d42-567387be87a1",
           "order": 4,
           "zh": "[Tin tức] 事故原因还在调查中",
           "pinyin": "",
@@ -3899,7 +3899,7 @@
       ],
       "examples": [
         {
-          "id": "vocab_013_ex_001",
+          "id": "146d5a47-a352-440a-be3d-882483dfefac",
           "order": 1,
           "zh": "这起事故造成了交通拥挤。",
           "pinyin": "Zhè qǐ shìgù zàochéng le jiāotōng yōngjǐ.",
@@ -3910,7 +3910,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_013"
+            "bbbabaed-bb52-47a7-80e7-58c41ab8f4ff"
           ],
           "source_ref": "current_thread_or_structured_source",
           "level": "basic",
@@ -3919,7 +3919,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_013_ex_002",
+          "id": "87ef27bd-1013-4985-b03d-b3dddbfddd60",
           "order": 2,
           "zh": "事故发生以后，现场很乱，大家都在找自己的东西。",
           "pinyin": "Shìgù fāshēng yǐhòu, xiànchǎng hěn luàn, dàjiā dōu zài zhǎo zìjǐ de dōngxi.",
@@ -3930,7 +3930,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_013"
+            "bbbabaed-bb52-47a7-80e7-58c41ab8f4ff"
           ],
           "source_ref": "current_thread_or_structured_source",
           "level": "expanded",
@@ -3939,7 +3939,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_013_ex_003",
+          "id": "50b39a39-f3ef-4273-86a8-0c738e1d79f6",
           "order": 3,
           "zh": "写报告的时候，要把事故的时间、地点、原因和结果说清楚。",
           "pinyin": "Xiě bàogào de shíhou, yào bǎ shìgù de shíjiān, dìdiǎn, yuányīn hé jiéguǒ shuō qīngchu.",
@@ -3950,7 +3950,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_013"
+            "bbbabaed-bb52-47a7-80e7-58c41ab8f4ff"
           ],
           "source_ref": "current_thread_or_structured_source",
           "level": "complex",
@@ -3972,7 +3972,7 @@
       },
       "warnings": [
         {
-          "id": "vocab_013_warning_001",
+          "id": "be84223b-35fa-448e-ae2f-01cfde7563de",
           "order": 1,
           "rule_vi": "Gọi lỗi nhỏ là 事故 làm câu bị nặng.",
           "natural_examples": [],
@@ -4006,7 +4006,7 @@
       "check_needed": false
     },
     {
-      "id": "vocab_014",
+      "id": "d3026f5f-baa5-4043-93e8-8854b83592ea",
       "type": "deep_vocabulary_item",
       "order": 14,
       "hanzi": "整整",
@@ -4137,7 +4137,7 @@
       },
       "collocations": [
         {
-          "id": "vocab_014_col_001",
+          "id": "f5239777-5f10-4687-8e18-63b98c9a9700",
           "order": 1,
           "zh": "整整一天",
           "pinyin": "",
@@ -4148,7 +4148,7 @@
           "notes": []
         },
         {
-          "id": "vocab_014_col_002",
+          "id": "c6939be4-bb25-439f-99f0-8d9cb5b6b0cf",
           "order": 2,
           "zh": "整整三年",
           "pinyin": "",
@@ -4159,7 +4159,7 @@
           "notes": []
         },
         {
-          "id": "vocab_014_col_003",
+          "id": "1f2b389a-b48b-406d-8fef-ad6c5358876e",
           "order": 3,
           "zh": "整整等了两个小时",
           "pinyin": "",
@@ -4170,7 +4170,7 @@
           "notes": []
         },
         {
-          "id": "vocab_014_col_004",
+          "id": "cdbf7c16-e1aa-45c7-906a-c880194a70e6",
           "order": 4,
           "zh": "[Đời sống] 我整整找了一晚上",
           "pinyin": "",
@@ -4183,7 +4183,7 @@
       ],
       "examples": [
         {
-          "id": "vocab_014_ex_001",
+          "id": "34b7b4cd-52e4-4cdf-a234-b03ec35b21dc",
           "order": 1,
           "zh": "他整整找了半天，才在地上找着眼镜儿。",
           "pinyin": "Tā zhěngzhěng zhǎo le bàntiān, cái zài dì shàng zhǎozháo yǎnjìngr.",
@@ -4194,7 +4194,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_014"
+            "d3026f5f-baa5-4043-93e8-8854b83592ea"
           ],
           "source_ref": "current_thread_or_structured_source",
           "level": "basic",
@@ -4203,7 +4203,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_014_ex_002",
+          "id": "64d256b7-6b50-4aa7-aa25-e55f91c24edb",
           "order": 2,
           "zh": "这篇文章我整整改了三遍，最后才改成比较自然的中文。",
           "pinyin": "Zhè piān wénzhāng wǒ zhěngzhěng gǎi le sān biàn, zuìhòu cái gǎi chéng bǐjiào zìrán de Zhōngwén.",
@@ -4214,7 +4214,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_014"
+            "d3026f5f-baa5-4043-93e8-8854b83592ea"
           ],
           "source_ref": "current_thread_or_structured_source",
           "level": "expanded",
@@ -4223,7 +4223,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_014_ex_003",
+          "id": "e6f39a01-6fbf-4f27-87ae-c0317ed4727b",
           "order": 3,
           "zh": "为了把照片选好，她整整看了一个晚上，张张都比较了。",
           "pinyin": "Wèile bǎ zhàopiàn xuǎn hǎo, tā zhěngzhěng kàn le yí ge wǎnshang, zhāngzhāng dōu bǐjiào le.",
@@ -4234,7 +4234,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_014"
+            "d3026f5f-baa5-4043-93e8-8854b83592ea"
           ],
           "source_ref": "current_thread_or_structured_source",
           "level": "complex",
@@ -4256,7 +4256,7 @@
       },
       "warnings": [
         {
-          "id": "vocab_014_warning_001",
+          "id": "d7509da3-44ba-42b8-b472-1f5dc96c5aa0",
           "order": 1,
           "rule_vi": "Dùng 整整 với thời gian quá mơ hồ.",
           "natural_examples": [],
@@ -4306,7 +4306,7 @@
       "check_needed": false
     },
     {
-      "id": "vocab_015",
+      "id": "ffced445-f9a7-453a-8acf-4705962019d7",
       "type": "deep_vocabulary_item",
       "order": 15,
       "hanzi": "清楚",
@@ -4480,7 +4480,7 @@
       },
       "collocations": [
         {
-          "id": "vocab_015_col_001",
+          "id": "4e96ec73-848c-4893-bc5a-3a704cb4f903",
           "order": 1,
           "zh": "看清楚",
           "pinyin": "",
@@ -4491,7 +4491,7 @@
           "notes": []
         },
         {
-          "id": "vocab_015_col_002",
+          "id": "43317a11-4669-42c2-b291-b0383ef70471",
           "order": 2,
           "zh": "听清楚",
           "pinyin": "",
@@ -4502,7 +4502,7 @@
           "notes": []
         },
         {
-          "id": "vocab_015_col_003",
+          "id": "2dbacba5-05ce-4f7a-a52b-799136a95c1c",
           "order": 3,
           "zh": "说清楚",
           "pinyin": "",
@@ -4513,7 +4513,7 @@
           "notes": []
         },
         {
-          "id": "vocab_015_col_004",
+          "id": "db288028-c179-48da-ad17-350ea5ab1fd5",
           "order": 4,
           "zh": "[Học tập] 把问题写清楚",
           "pinyin": "",
@@ -4526,7 +4526,7 @@
       ],
       "examples": [
         {
-          "id": "vocab_015_ex_001",
+          "id": "28a90413-2062-4773-8ddd-67121e035f1c",
           "order": 1,
           "zh": "这张照片洗出来以后很清楚，不需要再放大。",
           "pinyin": "Zhè zhāng zhàopiàn xǐ chūlai yǐhòu hěn qīngchu, bù xūyào zài fàngdà.",
@@ -4537,7 +4537,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_015"
+            "ffced445-f9a7-453a-8acf-4705962019d7"
           ],
           "source_ref": "current_thread_or_structured_source",
           "level": "basic",
@@ -4546,7 +4546,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_015_ex_002",
+          "id": "781a3ede-40d7-4f58-a05a-293a03bc3072",
           "order": 2,
           "zh": "通知上的时间你看清楚了吗？别把上午看成下午。",
           "pinyin": "Tōngzhī shàng de shíjiān nǐ kàn qīngchu le ma? Bié bǎ shàngwǔ kàn chéng xiàwǔ.",
@@ -4557,7 +4557,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_015"
+            "ffced445-f9a7-453a-8acf-4705962019d7"
           ],
           "source_ref": "current_thread_or_structured_source",
           "level": "expanded",
@@ -4566,7 +4566,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_015_ex_003",
+          "id": "cbff593b-2dc9-4059-bee6-cb45714d20f4",
           "order": 3,
           "zh": "老师让我们把事故的主要原因说清楚，不要只说“很倒霉”。",
           "pinyin": "Lǎoshī ràng wǒmen bǎ shìgù de zhǔyào yuányīn shuō qīngchu, bú yào zhǐ shuō “hěn dǎoméi”.",
@@ -4577,7 +4577,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_015"
+            "ffced445-f9a7-453a-8acf-4705962019d7"
           ],
           "source_ref": "current_thread_or_structured_source",
           "level": "complex",
@@ -4599,7 +4599,7 @@
       },
       "warnings": [
         {
-          "id": "vocab_015_warning_001",
+          "id": "8d523d6f-cb3e-43ab-9a7b-c99c5c62d936",
           "order": 1,
           "rule_vi": "Nhầm 听清楚 và 听懂.",
           "natural_examples": [],
@@ -4633,7 +4633,7 @@
       "check_needed": false
     },
     {
-      "id": "vocab_016",
+      "id": "8057acdc-54a0-45e7-bdb6-dbb6ed8bd046",
       "type": "deep_vocabulary_item",
       "order": 16,
       "hanzi": "眼镜儿",
@@ -4809,7 +4809,7 @@
       },
       "collocations": [
         {
-          "id": "vocab_016_col_001",
+          "id": "ccfd0955-09ea-4043-b8aa-cd5026543e9f",
           "order": 1,
           "zh": "戴眼镜儿",
           "pinyin": "",
@@ -4820,7 +4820,7 @@
           "notes": []
         },
         {
-          "id": "vocab_016_col_002",
+          "id": "d058115d-4f7e-4aad-b28a-c786544d08c3",
           "order": 2,
           "zh": "摘眼镜儿",
           "pinyin": "",
@@ -4831,7 +4831,7 @@
           "notes": []
         },
         {
-          "id": "vocab_016_col_003",
+          "id": "1d6a8481-05a0-4882-890c-ed2c736b37b9",
           "order": 3,
           "zh": "眼镜儿摔坏了",
           "pinyin": "",
@@ -4842,7 +4842,7 @@
           "notes": []
         },
         {
-          "id": "vocab_016_col_004",
+          "id": "0f561405-7471-4cc1-b80d-a42e3bed061f",
           "order": 4,
           "zh": "[Đời sống] 我的眼镜儿不见了",
           "pinyin": "",
@@ -4855,7 +4855,7 @@
       ],
       "examples": [
         {
-          "id": "vocab_016_ex_001",
+          "id": "f8fa7a71-59bd-4ca8-bdd3-0246630fa97c",
           "order": 1,
           "zh": "我的眼镜儿摔坏了，今天看黑板有点儿困难。",
           "pinyin": "Wǒ de yǎnjìngr shuāi huài le, jīntiān kàn hēibǎn yǒudiǎnr kùnnan.",
@@ -4866,7 +4866,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_016"
+            "8057acdc-54a0-45e7-bdb6-dbb6ed8bd046"
           ],
           "source_ref": "current_thread_or_structured_source",
           "level": "basic",
@@ -4875,7 +4875,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_016_ex_002",
+          "id": "d03ff816-71a4-4a27-aa4b-7d63333b662f",
           "order": 2,
           "zh": "眼镜儿掉在地上以后，左边的镜片裂了。",
           "pinyin": "Yǎnjìngr diào zài dì shàng yǐhòu, zuǒbian de jìngpiàn liè le.",
@@ -4886,7 +4886,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_016"
+            "8057acdc-54a0-45e7-bdb6-dbb6ed8bd046"
           ],
           "source_ref": "current_thread_or_structured_source",
           "level": "expanded",
@@ -4895,7 +4895,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_016_ex_003",
+          "id": "b7b23acb-6f3a-4cd7-996e-6d0d38d47841",
           "order": 3,
           "zh": "他没有戴眼镜儿，所以通知上的小字看不清楚。",
           "pinyin": "Tā méiyǒu dài yǎnjìngr, suǒyǐ tōngzhī shàng de xiǎo zì kàn bù qīngchu.",
@@ -4906,7 +4906,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_016"
+            "8057acdc-54a0-45e7-bdb6-dbb6ed8bd046"
           ],
           "source_ref": "current_thread_or_structured_source",
           "level": "complex",
@@ -4928,7 +4928,7 @@
       },
       "warnings": [
         {
-          "id": "vocab_016_warning_001",
+          "id": "e0e7c30c-db24-4919-828a-8a64591ae933",
           "order": 1,
           "rule_vi": "Nhầm 眼睛 và 眼镜.",
           "natural_examples": [],
@@ -4962,7 +4962,7 @@
       "check_needed": false
     },
     {
-      "id": "vocab_017",
+      "id": "32801fdd-6593-41d8-b677-71b9880294f1",
       "type": "deep_vocabulary_item",
       "order": 17,
       "hanzi": "别提了",
@@ -5128,7 +5128,7 @@
       },
       "collocations": [
         {
-          "id": "vocab_017_col_001",
+          "id": "9b6a6ca4-4562-4944-8a12-a956f22a8a2e",
           "order": 1,
           "zh": "别提了，太倒霉了",
           "pinyin": "",
@@ -5139,7 +5139,7 @@
           "notes": []
         },
         {
-          "id": "vocab_017_col_002",
+          "id": "b8bbb994-dbaf-4b30-a3f9-b9364201f5da",
           "order": 2,
           "zh": "别提这件事了",
           "pinyin": "",
@@ -5150,7 +5150,7 @@
           "notes": []
         },
         {
-          "id": "vocab_017_col_003",
+          "id": "625733b4-2afe-4fb6-85ee-01e3fb0a6090",
           "order": 3,
           "zh": "一提就生气",
           "pinyin": "",
@@ -5161,7 +5161,7 @@
           "notes": []
         },
         {
-          "id": "vocab_017_col_004",
+          "id": "746394e9-17db-4f6f-90aa-99eacff8d925",
           "order": 4,
           "zh": "[Khẩu ngữ] 别提有多麻烦了",
           "pinyin": "",
@@ -5174,7 +5174,7 @@
       ],
       "examples": [
         {
-          "id": "vocab_017_ex_001",
+          "id": "b46e9db4-83bc-471d-8722-5a22752bb883",
           "order": 1,
           "zh": "别提了，我的眼镜儿掉在地上，摔坏了。",
           "pinyin": "Bié tí le, wǒ de yǎnjìngr diào zài dì shàng, shuāi huài le.",
@@ -5185,7 +5185,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_017"
+            "32801fdd-6593-41d8-b677-71b9880294f1"
           ],
           "source_ref": "current_thread_or_structured_source",
           "level": "basic",
@@ -5194,7 +5194,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_017_ex_002",
+          "id": "0a02a969-e692-4550-bf8c-0f3940812c5c",
           "order": 2,
           "zh": "别提了，照片洗出来以后，张张都不清楚。",
           "pinyin": "Bié tí le, zhàopiàn xǐ chūlai yǐhòu, zhāngzhāng dōu bù qīngchu.",
@@ -5205,7 +5205,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_017"
+            "32801fdd-6593-41d8-b677-71b9880294f1"
           ],
           "source_ref": "current_thread_or_structured_source",
           "level": "expanded",
@@ -5214,7 +5214,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_017_ex_003",
+          "id": "51a02b6c-bfda-445c-a81c-531cebe320df",
           "order": 3,
           "zh": "别人问你今天怎么样，如果真的很倒霉，可以先说“别提了”，再慢慢儿解释。",
           "pinyin": "Biérén wèn nǐ jīntiān zěnmeyàng, rúguǒ zhēn de hěn dǎoméi, kěyǐ xiān shuō “bié tí le”, zài mànmānr jiěshì.",
@@ -5225,7 +5225,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_017"
+            "32801fdd-6593-41d8-b677-71b9880294f1"
           ],
           "source_ref": "current_thread_or_structured_source",
           "level": "complex",
@@ -5247,7 +5247,7 @@
       },
       "warnings": [
         {
-          "id": "vocab_017_warning_001",
+          "id": "4770d208-f4ed-474d-9933-39b3bd62b3a8",
           "order": 1,
           "rule_vi": "Dùng 别提了 trong email hoặc văn bản trang trọng.",
           "natural_examples": [],
@@ -5281,7 +5281,7 @@
       "check_needed": false
     },
     {
-      "id": "vocab_018",
+      "id": "93cf7412-691c-4260-a8e3-9fb813e5fc29",
       "type": "deep_vocabulary_item",
       "order": 18,
       "hanzi": "倒霉",
@@ -5446,7 +5446,7 @@
       },
       "collocations": [
         {
-          "id": "vocab_018_col_001",
+          "id": "fa4c632f-7c70-4e07-a7f0-04efb3a07aaa",
           "order": 1,
           "zh": "真倒霉",
           "pinyin": "",
@@ -5457,7 +5457,7 @@
           "notes": []
         },
         {
-          "id": "vocab_018_col_002",
+          "id": "49813e21-6f1a-47b4-866a-cf1b0bf30079",
           "order": 2,
           "zh": "太倒霉了",
           "pinyin": "",
@@ -5468,7 +5468,7 @@
           "notes": []
         },
         {
-          "id": "vocab_018_col_003",
+          "id": "73e45614-f269-4816-9c8b-5453aba82c5f",
           "order": 3,
           "zh": "倒霉的一天",
           "pinyin": "",
@@ -5479,7 +5479,7 @@
           "notes": []
         },
         {
-          "id": "vocab_018_col_004",
+          "id": "71bd30ac-0cfe-460b-9bd7-d17b2a69b9f5",
           "order": 4,
           "zh": "[Khẩu ngữ] 怎么这么倒霉啊？",
           "pinyin": "",
@@ -5492,7 +5492,7 @@
       ],
       "examples": [
         {
-          "id": "vocab_018_ex_001",
+          "id": "743420e9-7648-4d74-8db9-984f4809a576",
           "order": 1,
           "zh": "今天太倒霉了，眼镜儿摔坏了，照片也删错了。",
           "pinyin": "Jīntiān tài dǎoméi le, yǎnjìngr shuāi huài le, zhàopiàn yě shān cuò le.",
@@ -5503,7 +5503,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_018"
+            "93cf7412-691c-4260-a8e3-9fb813e5fc29"
           ],
           "source_ref": "current_thread_or_structured_source",
           "level": "basic",
@@ -5512,7 +5512,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_018_ex_002",
+          "id": "c36cd841-855e-41cb-9770-d3384ae33e65",
           "order": 2,
           "zh": "我不是不遵守规则，是今天真的有点儿倒霉。",
           "pinyin": "Wǒ bú shì bù zūnshǒu guīzé, shì jīntiān zhēn de yǒudiǎnr dǎoméi.",
@@ -5523,7 +5523,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_018"
+            "93cf7412-691c-4260-a8e3-9fb813e5fc29"
           ],
           "source_ref": "current_thread_or_structured_source",
           "level": "expanded",
@@ -5532,7 +5532,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_018_ex_003",
+          "id": "b7c8803d-30bc-41fc-9b9d-e9e42b5a4806",
           "order": 3,
           "zh": "考试时忘带眼镜儿当然很倒霉，但下次可以提前把东西放好。",
           "pinyin": "Kǎoshì shí wàng dài yǎnjìngr dāngrán hěn dǎoméi, dàn xià cì kěyǐ tíqián bǎ dōngxi fàng hǎo.",
@@ -5543,7 +5543,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_018"
+            "93cf7412-691c-4260-a8e3-9fb813e5fc29"
           ],
           "source_ref": "current_thread_or_structured_source",
           "level": "complex",
@@ -5565,7 +5565,7 @@
       },
       "warnings": [
         {
-          "id": "vocab_018_warning_001",
+          "id": "caa32235-4f57-4fda-a113-4f851c2ae6c2",
           "order": 1,
           "rule_vi": "Dùng 倒霉 trong văn cảnh quá trang trọng.",
           "natural_examples": [],
@@ -5599,7 +5599,7 @@
       "check_needed": false
     },
     {
-      "id": "vocab_019",
+      "id": "f9044a50-e5f5-4c31-9380-993069b09dd7",
       "type": "deep_vocabulary_item",
       "order": 19,
       "hanzi": "地上",
@@ -5742,7 +5742,7 @@
       },
       "collocations": [
         {
-          "id": "vocab_019_col_001",
+          "id": "8e54c248-b264-4da0-bbcd-da21b9517075",
           "order": 1,
           "zh": "掉在地上",
           "pinyin": "",
@@ -5753,7 +5753,7 @@
           "notes": []
         },
         {
-          "id": "vocab_019_col_002",
+          "id": "898c94e9-05e6-4edc-89fd-3c9f6e6009b6",
           "order": 2,
           "zh": "放在地上",
           "pinyin": "",
@@ -5764,7 +5764,7 @@
           "notes": []
         },
         {
-          "id": "vocab_019_col_003",
+          "id": "eb3c87a5-3430-40ab-9ca9-0a0ece7973be",
           "order": 3,
           "zh": "躺在地上",
           "pinyin": "",
@@ -5775,7 +5775,7 @@
           "notes": []
         },
         {
-          "id": "vocab_019_col_004",
+          "id": "8ecc1ba4-8b3f-45fe-9f94-566bcc2682ac",
           "order": 4,
           "zh": "[Đời sống] 地上很滑，小心一点儿",
           "pinyin": "",
@@ -5788,7 +5788,7 @@
       ],
       "examples": [
         {
-          "id": "vocab_019_ex_001",
+          "id": "35af1f5c-4558-43b3-bca6-e5ac6dbcfab4",
           "order": 1,
           "zh": "我的眼镜儿掉在地上，摔坏了。",
           "pinyin": "Wǒ de yǎnjìngr diào zài dì shàng, shuāi huài le.",
@@ -5799,7 +5799,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_019"
+            "f9044a50-e5f5-4c31-9380-993069b09dd7"
           ],
           "source_ref": "current_thread_or_structured_source",
           "level": "basic",
@@ -5808,7 +5808,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_019_ex_002",
+          "id": "a605b755-2f8d-4912-a379-024318247bc8",
           "order": 2,
           "zh": "地上有很多水，走路的时候要小心，别滑倒。",
           "pinyin": "Dì shàng yǒu hěn duō shuǐ, zǒulù de shíhou yào xiǎoxīn, bié huádǎo.",
@@ -5819,7 +5819,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_019"
+            "f9044a50-e5f5-4c31-9380-993069b09dd7"
           ],
           "source_ref": "current_thread_or_structured_source",
           "level": "expanded",
@@ -5828,7 +5828,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_019_ex_003",
+          "id": "1fa51200-8cb1-4b55-b122-0230bb829a2e",
           "order": 3,
           "zh": "照片不要放在地上，容易被人踩坏或者弄脏。",
           "pinyin": "Zhàopiàn bú yào fàng zài dì shàng, róngyì bèi rén cǎi huài huòzhě nòng zāng.",
@@ -5839,7 +5839,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_019"
+            "f9044a50-e5f5-4c31-9380-993069b09dd7"
           ],
           "source_ref": "current_thread_or_structured_source",
           "level": "complex",
@@ -5861,7 +5861,7 @@
       },
       "warnings": [
         {
-          "id": "vocab_019_warning_001",
+          "id": "0a87bc48-72e3-4f02-a8a0-bf8506c29ed0",
           "order": 1,
           "rule_vi": "Dịch “dưới đất” thành 地下.",
           "natural_examples": [],
@@ -5903,7 +5903,7 @@
       "check_needed": false
     },
     {
-      "id": "vocab_020",
+      "id": "e7171979-9bfe-4195-8802-b46fc021c9b9",
       "type": "deep_vocabulary_item",
       "order": 20,
       "hanzi": "保证",
@@ -6058,7 +6058,7 @@
       },
       "collocations": [
         {
-          "id": "vocab_020_col_001",
+          "id": "f6e7a204-5255-44ae-9255-4e1f8e9fda9a",
           "order": 1,
           "zh": "保证安全",
           "pinyin": "",
@@ -6069,7 +6069,7 @@
           "notes": []
         },
         {
-          "id": "vocab_020_col_002",
+          "id": "3f9dbb74-bf28-43f6-ae1b-c272a9ba30d2",
           "order": 2,
           "zh": "保证质量",
           "pinyin": "",
@@ -6080,7 +6080,7 @@
           "notes": []
         },
         {
-          "id": "vocab_020_col_003",
+          "id": "6432ce0e-0f8b-4e1d-bce6-236f1d3d61e8",
           "order": 3,
           "zh": "我保证",
           "pinyin": "",
@@ -6091,7 +6091,7 @@
           "notes": []
         },
         {
-          "id": "vocab_020_col_004",
+          "id": "ae9d5996-74e7-4515-958e-b189679dcce6",
           "order": 4,
           "zh": "[Đời sống] 我不敢保证",
           "pinyin": "",
@@ -6104,7 +6104,7 @@
       ],
       "examples": [
         {
-          "id": "vocab_020_ex_001",
+          "id": "4c46c581-1113-466e-a7bd-256e66b76f2a",
           "order": 1,
           "zh": "照片洗出来以后，店员保证张张都很清楚。",
           "pinyin": "Zhàopiàn xǐ chūlai yǐhòu, diànyuán bǎozhèng zhāngzhāng dōu hěn qīngchu.",
@@ -6115,7 +6115,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_020"
+            "e7171979-9bfe-4195-8802-b46fc021c9b9"
           ],
           "source_ref": "current_thread_or_structured_source",
           "level": "basic",
@@ -6124,7 +6124,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_020_ex_002",
+          "id": "24a7c14f-a53a-4cc8-8929-ce4904acf15c",
           "order": 2,
           "zh": "我不能保证明天一定有空，但我会尽量赶快回复你。",
           "pinyin": "Wǒ bù néng bǎozhèng míngtiān yídìng yǒu kòng, dàn wǒ huì jǐnliàng gǎnkuài huífù nǐ.",
@@ -6135,7 +6135,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_020"
+            "e7171979-9bfe-4195-8802-b46fc021c9b9"
           ],
           "source_ref": "current_thread_or_structured_source",
           "level": "expanded",
@@ -6144,7 +6144,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_020_ex_003",
+          "id": "6210aa8b-fffd-4d7a-bcf6-c62efe01a91b",
           "order": 3,
           "zh": "为了保证交通安全，骑车的时候一定要遵守规则。",
           "pinyin": "Wèile bǎozhèng jiāotōng ānquán, qí chē de shíhou yídìng yào zūnshǒu guīzé.",
@@ -6155,7 +6155,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_020"
+            "e7171979-9bfe-4195-8802-b46fc021c9b9"
           ],
           "source_ref": "current_thread_or_structured_source",
           "level": "complex",
@@ -6177,7 +6177,7 @@
       },
       "warnings": [
         {
-          "id": "vocab_020_warning_001",
+          "id": "84c0fd7d-d4ff-4d96-aebd-713f5c1529c4",
           "order": 1,
           "rule_vi": "Dùng 保证 quá dễ, làm câu nghe như đang cam kết chắc chắn.",
           "natural_examples": [],
@@ -6211,7 +6211,7 @@
       "check_needed": false
     },
     {
-      "id": "vocab_021",
+      "id": "d1e29a55-051f-4940-b8e5-5fdb3d835e7e",
       "type": "deep_vocabulary_item",
       "order": 21,
       "hanzi": "遵守",
@@ -6407,7 +6407,7 @@
       },
       "collocations": [
         {
-          "id": "vocab_021_col_001",
+          "id": "93918715-3eca-424e-af58-54574c7d3cfe",
           "order": 1,
           "zh": "遵守规则",
           "pinyin": "",
@@ -6418,7 +6418,7 @@
           "notes": []
         },
         {
-          "id": "vocab_021_col_002",
+          "id": "03fa73cb-75b5-4da1-a809-a6873feec35b",
           "order": 2,
           "zh": "遵守交通规则",
           "pinyin": "",
@@ -6429,7 +6429,7 @@
           "notes": []
         },
         {
-          "id": "vocab_021_col_003",
+          "id": "1b87b029-bef7-4bc7-85c4-6979d2360725",
           "order": 3,
           "zh": "遵守法律",
           "pinyin": "",
@@ -6440,7 +6440,7 @@
           "notes": []
         },
         {
-          "id": "vocab_021_col_004",
+          "id": "165e256c-653c-4c88-a2a9-ab0b9933d98f",
           "order": 4,
           "zh": "[Trường học] 遵守课堂纪律",
           "pinyin": "",
@@ -6453,7 +6453,7 @@
       ],
       "examples": [
         {
-          "id": "vocab_021_ex_001",
+          "id": "ae13c68a-045c-4e18-a576-eb2799e12f82",
           "order": 1,
           "zh": "交通规则人人都要遵守，不能只靠警察提醒。",
           "pinyin": "Jiāotōng guīzé rénrén dōu yào zūnshǒu, bù néng zhǐ kào jǐngchá tíxǐng.",
@@ -6464,7 +6464,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_021"
+            "d1e29a55-051f-4940-b8e5-5fdb3d835e7e"
           ],
           "source_ref": "current_thread_or_structured_source",
           "level": "basic",
@@ -6473,7 +6473,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_021_ex_002",
+          "id": "8c2d0488-fa80-41bc-acbe-e317559f5958",
           "order": 2,
           "zh": "如果不遵守规则，很小的举动也可能造成事故。",
           "pinyin": "Rúguǒ bù zūnshǒu guīzé, hěn xiǎo de jǔdòng yě kěnéng zàochéng shìgù.",
@@ -6484,7 +6484,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_021"
+            "d1e29a55-051f-4940-b8e5-5fdb3d835e7e"
           ],
           "source_ref": "current_thread_or_structured_source",
           "level": "expanded",
@@ -6493,7 +6493,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_021_ex_003",
+          "id": "34c8cbfd-78c8-4eab-9bf1-7cfa64da9812",
           "order": 3,
           "zh": "上课的时候，手机最好关掉，这是大家都应该遵守的规则。",
           "pinyin": "Shàngkè de shíhou, shǒujī zuìhǎo guān diào, zhè shì dàjiā dōu yīnggāi zūnshǒu de guīzé.",
@@ -6504,7 +6504,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_021"
+            "d1e29a55-051f-4940-b8e5-5fdb3d835e7e"
           ],
           "source_ref": "current_thread_or_structured_source",
           "level": "complex",
@@ -6526,7 +6526,7 @@
       },
       "warnings": [
         {
-          "id": "vocab_021_warning_001",
+          "id": "c8fba4cb-597d-4f9a-8e6d-d1713b97b908",
           "order": 1,
           "rule_vi": "Nói 遵守老师 là sai.",
           "natural_examples": [],
@@ -6568,7 +6568,7 @@
       "check_needed": false
     },
     {
-      "id": "vocab_022",
+      "id": "5ad92da3-d05c-4c3a-a13c-f6a65539efaa",
       "type": "deep_vocabulary_item",
       "order": 22,
       "hanzi": "规则",
@@ -6742,7 +6742,7 @@
       },
       "collocations": [
         {
-          "id": "vocab_022_col_001",
+          "id": "e571b6d6-2494-400b-b2e4-8d7bedd3baa6",
           "order": 1,
           "zh": "交通规则",
           "pinyin": "",
@@ -6753,7 +6753,7 @@
           "notes": []
         },
         {
-          "id": "vocab_022_col_002",
+          "id": "6e317518-65fc-4bf6-a83c-fbe286fcf92e",
           "order": 2,
           "zh": "比赛规则",
           "pinyin": "",
@@ -6764,7 +6764,7 @@
           "notes": []
         },
         {
-          "id": "vocab_022_col_003",
+          "id": "3bd4a709-d4e9-45cb-b7d7-287769b91bed",
           "order": 3,
           "zh": "语法规则",
           "pinyin": "",
@@ -6775,7 +6775,7 @@
           "notes": []
         },
         {
-          "id": "vocab_022_col_004",
+          "id": "43f35c38-ec18-4b9f-afb7-f9e92b128ff9",
           "order": 4,
           "zh": "[Đời sống] 按规则来",
           "pinyin": "",
@@ -6788,7 +6788,7 @@
       ],
       "examples": [
         {
-          "id": "vocab_022_ex_001",
+          "id": "a7758f74-2b25-4b45-8357-11a452625448",
           "order": 1,
           "zh": "这个比赛的规则你看清楚了吗？",
           "pinyin": "Zhège bǐsài de guīzé nǐ kàn qīngchu le ma?",
@@ -6799,7 +6799,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_022"
+            "5ad92da3-d05c-4c3a-a13c-f6a65539efaa"
           ],
           "source_ref": "current_thread_or_structured_source",
           "level": "basic",
@@ -6808,7 +6808,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_022_ex_002",
+          "id": "fb110ff9-649c-4bd8-8027-420714a09de4",
           "order": 2,
           "zh": "交通规则不是写在纸上给人看的，是要真正遵守的。",
           "pinyin": "Jiāotōng guīzé bú shì xiě zài zhǐ shàng gěi rén kàn de, shì yào zhēnzhèng zūnshǒu de.",
@@ -6819,7 +6819,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_022"
+            "5ad92da3-d05c-4c3a-a13c-f6a65539efaa"
           ],
           "source_ref": "current_thread_or_structured_source",
           "level": "expanded",
@@ -6828,7 +6828,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_022_ex_003",
+          "id": "3a127361-b808-4589-a11b-1b812e484f7c",
           "order": 3,
           "zh": "学语法不能只背规则，还要看这个规则在句子里怎么用。",
           "pinyin": "Xué yǔfǎ bù néng zhǐ bèi guīzé, hái yào kàn zhège guīzé zài jùzi lǐ zěnme yòng.",
@@ -6839,7 +6839,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_022"
+            "5ad92da3-d05c-4c3a-a13c-f6a65539efaa"
           ],
           "source_ref": "current_thread_or_structured_source",
           "level": "complex",
@@ -6861,7 +6861,7 @@
       },
       "warnings": [
         {
-          "id": "vocab_022_warning_001",
+          "id": "d808d480-c311-40fa-b288-0d109b47e68b",
           "order": 1,
           "rule_vi": "Nhầm 规则 và 规定.",
           "natural_examples": [],
@@ -6903,7 +6903,7 @@
       "check_needed": false
     },
     {
-      "id": "vocab_023",
+      "id": "0d73fab4-a30c-4c1e-bd15-5e0e539fe6da",
       "type": "deep_vocabulary_item",
       "order": 23,
       "hanzi": "造成",
@@ -7036,7 +7036,7 @@
       },
       "collocations": [
         {
-          "id": "vocab_023_col_001",
+          "id": "f7d4b24c-9a72-45b4-a134-166707605663",
           "order": 1,
           "zh": "造成事故",
           "pinyin": "",
@@ -7047,7 +7047,7 @@
           "notes": []
         },
         {
-          "id": "vocab_023_col_002",
+          "id": "cc00d3af-3f4f-4fe5-aa60-50de912cd5f5",
           "order": 2,
           "zh": "造成交通拥挤",
           "pinyin": "",
@@ -7058,7 +7058,7 @@
           "notes": []
         },
         {
-          "id": "vocab_023_col_003",
+          "id": "8c97fca3-ef50-4688-88e6-28586e38a32b",
           "order": 3,
           "zh": "造成影响",
           "pinyin": "",
@@ -7069,7 +7069,7 @@
           "notes": []
         },
         {
-          "id": "vocab_023_col_004",
+          "id": "ce4c9948-4b3d-4f9a-8881-154aaabd72ab",
           "order": 4,
           "zh": "[Tin tức] 造成严重后果",
           "pinyin": "",
@@ -7082,7 +7082,7 @@
       ],
       "examples": [
         {
-          "id": "vocab_023_ex_001",
+          "id": "e9aff115-778e-4cf5-ab68-29284960b2d7",
           "order": 1,
           "zh": "这起事故造成了严重的交通拥挤。",
           "pinyin": "Zhè qǐ shìgù zàochéng le yánzhòng de jiāotōng yōngjǐ.",
@@ -7093,7 +7093,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_023"
+            "0d73fab4-a30c-4c1e-bd15-5e0e539fe6da"
           ],
           "source_ref": "current_thread_or_structured_source",
           "level": "basic",
@@ -7102,7 +7102,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_023_ex_002",
+          "id": "37b03edb-b9a0-47eb-b36e-a7c31ba75280",
           "order": 2,
           "zh": "照片删错了，可能会造成很大的麻烦。",
           "pinyin": "Zhàopiàn shān cuò le, kěnéng huì zàochéng hěn dà de máfan.",
@@ -7113,7 +7113,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_023"
+            "0d73fab4-a30c-4c1e-bd15-5e0e539fe6da"
           ],
           "source_ref": "current_thread_or_structured_source",
           "level": "expanded",
@@ -7122,7 +7122,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_023_ex_003",
+          "id": "ec20d479-81b4-402c-9f4b-7403cb42827a",
           "order": 3,
           "zh": "学习时例句写得不清楚，会造成以后复习困难。",
           "pinyin": "Xuéxí shí lìjù xiě de bù qīngchu, huì zàochéng yǐhòu fùxí kùnnan.",
@@ -7133,7 +7133,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_023"
+            "0d73fab4-a30c-4c1e-bd15-5e0e539fe6da"
           ],
           "source_ref": "current_thread_or_structured_source",
           "level": "complex",
@@ -7155,7 +7155,7 @@
       },
       "warnings": [
         {
-          "id": "vocab_023_warning_001",
+          "id": "35f23305-7925-467c-834f-fa5239badfb2",
           "order": 1,
           "rule_vi": "Dùng 造成 với kết quả tích cực đơn giản.",
           "natural_examples": [],
@@ -7212,7 +7212,7 @@
       "check_needed": false
     },
     {
-      "id": "vocab_024",
+      "id": "84088b44-87a7-47d6-883e-e95f60fd78b6",
       "type": "deep_vocabulary_item",
       "order": 24,
       "hanzi": "交通",
@@ -7355,7 +7355,7 @@
       },
       "collocations": [
         {
-          "id": "vocab_024_col_001",
+          "id": "ac620627-70de-4d33-8e8d-568533af1b13",
           "order": 1,
           "zh": "交通规则",
           "pinyin": "",
@@ -7366,7 +7366,7 @@
           "notes": []
         },
         {
-          "id": "vocab_024_col_002",
+          "id": "88c0e079-d223-4914-a90e-af6b96b02c10",
           "order": 2,
           "zh": "交通事故",
           "pinyin": "",
@@ -7377,7 +7377,7 @@
           "notes": []
         },
         {
-          "id": "vocab_024_col_003",
+          "id": "99bad58e-2ecc-474c-b88b-29d00de0230f",
           "order": 3,
           "zh": "交通拥挤",
           "pinyin": "",
@@ -7388,7 +7388,7 @@
           "notes": []
         },
         {
-          "id": "vocab_024_col_004",
+          "id": "e2360477-6377-4629-b98f-d5d6f5af39f6",
           "order": 4,
           "zh": "[Đời sống] 交通很方便",
           "pinyin": "",
@@ -7401,7 +7401,7 @@
       ],
       "examples": [
         {
-          "id": "vocab_024_ex_001",
+          "id": "8d00bb7b-6dec-4a1c-b9b6-1025928c187e",
           "order": 1,
           "zh": "这个城市的交通一年比一年方便。",
           "pinyin": "Zhège chéngshì de jiāotōng yì nián bǐ yì nián fāngbiàn.",
@@ -7412,7 +7412,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_024"
+            "84088b44-87a7-47d6-883e-e95f60fd78b6"
           ],
           "source_ref": "current_thread_or_structured_source",
           "level": "basic",
@@ -7421,7 +7421,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_024_ex_002",
+          "id": "de12039a-8ac5-4108-b767-673df717a8ac",
           "order": 2,
           "zh": "交通事故的主要原因，你们查清楚了吗？",
           "pinyin": "Jiāotōng shìgù de zhǔyào yuányīn, nǐmen chá qīngchu le ma?",
@@ -7432,7 +7432,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_024"
+            "84088b44-87a7-47d6-883e-e95f60fd78b6"
           ],
           "source_ref": "current_thread_or_structured_source",
           "level": "expanded",
@@ -7441,7 +7441,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_024_ex_003",
+          "id": "d1d51623-233a-4107-8d1c-42907203d6fe",
           "order": 3,
           "zh": "去王府井的时候，最好先看地图，因为那一带交通很复杂。",
           "pinyin": "Qù Wángfǔjǐng de shíhou, zuìhǎo xiān kàn dìtú, yīnwèi nà yí dài jiāotōng hěn fùzá.",
@@ -7452,7 +7452,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_024"
+            "84088b44-87a7-47d6-883e-e95f60fd78b6"
           ],
           "source_ref": "current_thread_or_structured_source",
           "level": "complex",
@@ -7474,7 +7474,7 @@
       },
       "warnings": [
         {
-          "id": "vocab_024_warning_001",
+          "id": "f9ab430e-aad4-48f0-82b6-1397cf38843c",
           "order": 1,
           "rule_vi": "Dịch “giao tiếp” thành 交通.",
           "natural_examples": [],
@@ -7524,7 +7524,7 @@
       "check_needed": false
     },
     {
-      "id": "vocab_025",
+      "id": "ad91766d-a581-4299-bc29-ae69173bef59",
       "type": "deep_vocabulary_item",
       "order": 25,
       "hanzi": "拥挤",
@@ -7710,7 +7710,7 @@
       },
       "collocations": [
         {
-          "id": "vocab_025_col_001",
+          "id": "102e1a44-f53e-4a28-acda-de5ebec4f7da",
           "order": 1,
           "zh": "交通拥挤",
           "pinyin": "",
@@ -7721,7 +7721,7 @@
           "notes": []
         },
         {
-          "id": "vocab_025_col_002",
+          "id": "571000ba-2aab-4507-bb93-b6a8b9afc112",
           "order": 2,
           "zh": "人很拥挤",
           "pinyin": "",
@@ -7732,7 +7732,7 @@
           "notes": []
         },
         {
-          "id": "vocab_025_col_003",
+          "id": "80e90cad-012e-450b-9d55-2b49e639a269",
           "order": 3,
           "zh": "地铁很拥挤",
           "pinyin": "",
@@ -7743,7 +7743,7 @@
           "notes": []
         },
         {
-          "id": "vocab_025_col_004",
+          "id": "b8337f3a-1d5a-46a7-b4f9-8405ec72e6a7",
           "order": 4,
           "zh": "[Đời sống] 上下班高峰期特别拥挤",
           "pinyin": "",
@@ -7756,7 +7756,7 @@
       ],
       "examples": [
         {
-          "id": "vocab_025_ex_001",
+          "id": "39e07690-a128-4246-959e-79b94a5f4049",
           "order": 1,
           "zh": "这条路一天比一天拥挤，早上开车很慢。",
           "pinyin": "Zhè tiáo lù yì tiān bǐ yì tiān yōngjǐ, zǎoshang kāichē hěn màn.",
@@ -7767,7 +7767,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_025"
+            "ad91766d-a581-4299-bc29-ae69173bef59"
           ],
           "source_ref": "current_thread_or_structured_source",
           "level": "basic",
@@ -7776,7 +7776,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_025_ex_002",
+          "id": "22627420-3a0c-4333-8314-ff16d316395d",
           "order": 2,
           "zh": "事故发生以后，附近的交通马上变得很拥挤。",
           "pinyin": "Shìgù fāshēng yǐhòu, fùjìn de jiāotōng mǎshàng biàn de hěn yōngjǐ.",
@@ -7787,7 +7787,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_025"
+            "ad91766d-a581-4299-bc29-ae69173bef59"
           ],
           "source_ref": "current_thread_or_structured_source",
           "level": "expanded",
@@ -7796,7 +7796,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_025_ex_003",
+          "id": "d16102a4-2699-4c71-9086-028a89348a94",
           "order": 3,
           "zh": "王府井很热闹，但节假日人太多，会有点儿拥挤。",
           "pinyin": "Wángfǔjǐng hěn rènao, dàn jiéjiàrì rén tài duō, huì yǒudiǎnr yōngjǐ.",
@@ -7807,7 +7807,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_025"
+            "ad91766d-a581-4299-bc29-ae69173bef59"
           ],
           "source_ref": "current_thread_or_structured_source",
           "level": "complex",
@@ -7829,7 +7829,7 @@
       },
       "warnings": [
         {
-          "id": "vocab_025_warning_001",
+          "id": "527612f8-8e51-490f-a1dd-3c6051e8d9f2",
           "order": 1,
           "rule_vi": "Dùng 拥挤 thay cho 热闹 khi muốn khen nơi vui.",
           "natural_examples": [],
@@ -7863,7 +7863,7 @@
       "check_needed": false
     },
     {
-      "id": "vocab_026",
+      "id": "3764f482-45a7-4b65-800c-f01821a5dbc5",
       "type": "deep_vocabulary_item",
       "order": 26,
       "hanzi": "主要",
@@ -7986,7 +7986,7 @@
       },
       "collocations": [
         {
-          "id": "vocab_026_col_001",
+          "id": "4be6d24f-1b9e-47f7-88d4-20f0d16cca07",
           "order": 1,
           "zh": "主要原因",
           "pinyin": "",
@@ -7997,7 +7997,7 @@
           "notes": []
         },
         {
-          "id": "vocab_026_col_002",
+          "id": "62c130ff-5c67-45e4-85b9-87ba0168bcd8",
           "order": 2,
           "zh": "主要问题",
           "pinyin": "",
@@ -8008,7 +8008,7 @@
           "notes": []
         },
         {
-          "id": "vocab_026_col_003",
+          "id": "bb587133-35a4-441f-8e48-5608de652b75",
           "order": 3,
           "zh": "主要内容",
           "pinyin": "",
@@ -8019,7 +8019,7 @@
           "notes": []
         },
         {
-          "id": "vocab_026_col_004",
+          "id": "b56b58a7-f8b7-4392-86d6-566dfb878faa",
           "order": 4,
           "zh": "[Học tập] 抓住主要意思",
           "pinyin": "",
@@ -8032,7 +8032,7 @@
       ],
       "examples": [
         {
-          "id": "vocab_026_ex_001",
+          "id": "e6f58919-5119-405e-99ef-8b853c918a38",
           "order": 1,
           "zh": "这起事故的主要原因是司机没有遵守交通规则。",
           "pinyin": "Zhè qǐ shìgù de zhǔyào yuányīn shì sījī méiyǒu zūnshǒu jiāotōng guīzé.",
@@ -8043,7 +8043,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_026"
+            "3764f482-45a7-4b65-800c-f01821a5dbc5"
           ],
           "source_ref": "current_thread_or_structured_source",
           "level": "basic",
@@ -8052,7 +8052,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_026_ex_002",
+          "id": "a3e32fda-e052-46d3-a804-0a39ee693afd",
           "order": 2,
           "zh": "这篇文章的主要内容你看明白了吗？",
           "pinyin": "Zhè piān wénzhāng de zhǔyào nèiróng nǐ kàn míngbai le ma?",
@@ -8063,7 +8063,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_026"
+            "3764f482-45a7-4b65-800c-f01821a5dbc5"
           ],
           "source_ref": "current_thread_or_structured_source",
           "level": "expanded",
@@ -8072,7 +8072,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_026_ex_003",
+          "id": "b07c36a8-ea2e-41d3-98ca-8d48ee6f4e2d",
           "order": 3,
           "zh": "我学这个词，主要不是为了考试，而是为了以后真的会用。",
           "pinyin": "Wǒ xué zhège cí, zhǔyào bú shì wèile kǎoshì, ér shì wèile yǐhòu zhēn de huì yòng.",
@@ -8083,7 +8083,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_026"
+            "3764f482-45a7-4b65-800c-f01821a5dbc5"
           ],
           "source_ref": "current_thread_or_structured_source",
           "level": "complex",
@@ -8105,7 +8105,7 @@
       },
       "warnings": [
         {
-          "id": "vocab_026_warning_001",
+          "id": "007c5386-37a5-44e7-b750-dac8f6672a81",
           "order": 1,
           "rule_vi": "Nhầm 主要 với 重要.",
           "natural_examples": [],
@@ -8139,7 +8139,7 @@
       "check_needed": false
     },
     {
-      "id": "vocab_027",
+      "id": "08eb72df-19aa-4f10-93db-ae877a311a8a",
       "type": "deep_vocabulary_item",
       "order": 27,
       "hanzi": "原因",
@@ -8334,7 +8334,7 @@
       },
       "collocations": [
         {
-          "id": "vocab_027_col_001",
+          "id": "9f6561c0-3a0f-465d-b9eb-a3b32383c695",
           "order": 1,
           "zh": "主要原因",
           "pinyin": "",
@@ -8345,7 +8345,7 @@
           "notes": []
         },
         {
-          "id": "vocab_027_col_002",
+          "id": "bf63e693-5d84-44a1-aea0-f1cccedfce27",
           "order": 2,
           "zh": "真正的原因",
           "pinyin": "",
@@ -8356,7 +8356,7 @@
           "notes": []
         },
         {
-          "id": "vocab_027_col_003",
+          "id": "53306e93-4409-4471-9ba7-7916e41b2cb1",
           "order": 3,
           "zh": "事故原因",
           "pinyin": "",
@@ -8367,7 +8367,7 @@
           "notes": []
         },
         {
-          "id": "vocab_027_col_004",
+          "id": "02c56524-77fe-4618-96f9-4fa87d886f53",
           "order": 4,
           "zh": "[Học tập] 找出原因",
           "pinyin": "",
@@ -8380,7 +8380,7 @@
       ],
       "examples": [
         {
-          "id": "vocab_027_ex_001",
+          "id": "5f2efe5f-af53-49c9-9d32-25c8be948373",
           "order": 1,
           "zh": "这起交通事故的主要原因已经查清楚了。",
           "pinyin": "Zhè qǐ jiāotōng shìgù de zhǔyào yuányīn yǐjīng chá qīngchu le.",
@@ -8391,7 +8391,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_027"
+            "08eb72df-19aa-4f10-93db-ae877a311a8a"
           ],
           "source_ref": "current_thread_or_structured_source",
           "level": "basic",
@@ -8400,7 +8400,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_027_ex_002",
+          "id": "c3a8ab7a-4b46-49a1-90c7-03825e62529d",
           "order": 2,
           "zh": "照片洗出来以后不清楚，原因可能是原来的照片照虚了。",
           "pinyin": "Zhàopiàn xǐ chūlai yǐhòu bù qīngchu, yuányīn kěnéng shì yuánlái de zhàopiàn zhào xū le.",
@@ -8411,7 +8411,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_027"
+            "08eb72df-19aa-4f10-93db-ae877a311a8a"
           ],
           "source_ref": "current_thread_or_structured_source",
           "level": "expanded",
@@ -8420,7 +8420,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_027_ex_003",
+          "id": "2b99a203-2cae-4b24-af28-f40eb5e59330",
           "order": 3,
           "zh": "学不好不一定是因为笨，真正的原因可能是方法没有整理好。",
           "pinyin": "Xué bù hǎo bù yídìng shì yīnwèi bèn, zhēnzhèng de yuányīn kěnéng shì fāngfǎ méiyǒu zhěnglǐ hǎo.",
@@ -8431,7 +8431,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_027"
+            "08eb72df-19aa-4f10-93db-ae877a311a8a"
           ],
           "source_ref": "current_thread_or_structured_source",
           "level": "complex",
@@ -8453,7 +8453,7 @@
       },
       "warnings": [
         {
-          "id": "vocab_027_warning_001",
+          "id": "9c499c3d-5da8-4436-a4f5-51230824a7f6",
           "order": 1,
           "rule_vi": "Nhầm 原因 và 借口.",
           "natural_examples": [],
@@ -8495,7 +8495,7 @@
       "check_needed": false
     },
     {
-      "id": "vocab_028",
+      "id": "dc00363e-0dc4-4618-b36d-5de440bd8f53",
       "type": "deep_vocabulary_item",
       "order": 28,
       "hanzi": "之一",
@@ -8595,7 +8595,7 @@
       },
       "collocations": [
         {
-          "id": "vocab_028_col_001",
+          "id": "86960a65-3589-4c26-b3e9-21c6692d5658",
           "order": 1,
           "zh": "原因之一",
           "pinyin": "",
@@ -8606,7 +8606,7 @@
           "notes": []
         },
         {
-          "id": "vocab_028_col_002",
+          "id": "53912953-b709-4208-987d-c54fa0b56054",
           "order": 2,
           "zh": "问题之一",
           "pinyin": "",
@@ -8617,7 +8617,7 @@
           "notes": []
         },
         {
-          "id": "vocab_028_col_003",
+          "id": "c9661975-39d1-483d-ae19-c2dab26c991b",
           "order": 3,
           "zh": "方法之一",
           "pinyin": "",
@@ -8628,7 +8628,7 @@
           "notes": []
         },
         {
-          "id": "vocab_028_col_004",
+          "id": "f7baad51-6401-48b6-b011-136edb3926ed",
           "order": 4,
           "zh": "[Thuyết trình] 最重要的原因之一",
           "pinyin": "",
@@ -8641,7 +8641,7 @@
       ],
       "examples": [
         {
-          "id": "vocab_028_ex_001",
+          "id": "7f0a3f50-d792-42e4-bb40-70e21340c66f",
           "order": 1,
           "zh": "交通拥挤是造成事故的原因之一。",
           "pinyin": "Jiāotōng yōngjǐ shì zàochéng shìgù de yuányīn zhī yī.",
@@ -8652,7 +8652,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_028"
+            "dc00363e-0dc4-4618-b36d-5de440bd8f53"
           ],
           "source_ref": "current_thread_or_structured_source",
           "level": "basic",
@@ -8661,7 +8661,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_028_ex_002",
+          "id": "f859dcb3-5764-4c00-80fe-045160b8a520",
           "order": 2,
           "zh": "照片不清楚的原因之一，是拍照的时候手动了一下。",
           "pinyin": "Zhàopiàn bù qīngchu de yuányīn zhī yī, shì pāizhào de shíhou shǒu dòng le yíxià.",
@@ -8672,7 +8672,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_028"
+            "dc00363e-0dc4-4618-b36d-5de440bd8f53"
           ],
           "source_ref": "current_thread_or_structured_source",
           "level": "expanded",
@@ -8681,7 +8681,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_028_ex_003",
+          "id": "b5cf97d7-ac6a-49c0-81c6-296b2eddce4d",
           "order": 3,
           "zh": "每天整理例句，是提高汉语水平的方法之一。",
           "pinyin": "Měitiān zhěnglǐ lìjù, shì tígāo Hànyǔ shuǐpíng de fāngfǎ zhī yī.",
@@ -8692,7 +8692,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_028"
+            "dc00363e-0dc4-4618-b36d-5de440bd8f53"
           ],
           "source_ref": "current_thread_or_structured_source",
           "level": "complex",
@@ -8714,7 +8714,7 @@
       },
       "warnings": [
         {
-          "id": "vocab_028_warning_001",
+          "id": "b703e67f-8626-47ef-8727-7fed7e5d4f29",
           "order": 1,
           "rule_vi": "Thiếu danh từ nhóm trước 之一.",
           "natural_examples": [],
@@ -8764,7 +8764,7 @@
       "check_needed": false
     },
     {
-      "id": "vocab_029",
+      "id": "e9286561-6eb2-4d2c-9816-fe52081106a3",
       "type": "deep_vocabulary_item",
       "order": 29,
       "hanzi": "引起",
@@ -8930,7 +8930,7 @@
       },
       "collocations": [
         {
-          "id": "vocab_029_col_001",
+          "id": "efbc111b-7a14-4b1c-86cf-9e48db8f0f94",
           "order": 1,
           "zh": "引起注意",
           "pinyin": "",
@@ -8941,7 +8941,7 @@
           "notes": []
         },
         {
-          "id": "vocab_029_col_002",
+          "id": "b7bf105e-8b0d-463d-b65c-3a58ce5d4308",
           "order": 2,
           "zh": "引起讨论",
           "pinyin": "",
@@ -8952,7 +8952,7 @@
           "notes": []
         },
         {
-          "id": "vocab_029_col_003",
+          "id": "99f49c31-fa86-47b3-8c76-23b30c89cb00",
           "order": 3,
           "zh": "引起误会",
           "pinyin": "",
@@ -8963,7 +8963,7 @@
           "notes": []
         },
         {
-          "id": "vocab_029_col_004",
+          "id": "9c8621f7-fb00-4cee-aaba-cc446f890024",
           "order": 4,
           "zh": "[Tin tức] 引起广泛关注",
           "pinyin": "",
@@ -8976,7 +8976,7 @@
       ],
       "examples": [
         {
-          "id": "vocab_029_ex_001",
+          "id": "f3a5ba40-914c-404f-991a-4980a0dea7d8",
           "order": 1,
           "zh": "这起事故引起了大家对交通安全的注意。",
           "pinyin": "Zhè qǐ shìgù yǐnqǐ le dàjiā duì jiāotōng ānquán de zhùyì.",
@@ -8987,7 +8987,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_029"
+            "e9286561-6eb2-4d2c-9816-fe52081106a3"
           ],
           "source_ref": "current_thread_or_structured_source",
           "level": "basic",
@@ -8996,7 +8996,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_029_ex_002",
+          "id": "f361d957-1d17-476c-a3a1-aa16ad2c6df4",
           "order": 2,
           "zh": "通知写得不清楚，很容易引起误会。",
           "pinyin": "Tōngzhī xiě de bù qīngchu, hěn róngyì yǐnqǐ wùhuì.",
@@ -9007,7 +9007,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_029"
+            "e9286561-6eb2-4d2c-9816-fe52081106a3"
           ],
           "source_ref": "current_thread_or_structured_source",
           "level": "expanded",
@@ -9016,7 +9016,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_029_ex_003",
+          "id": "5854f38f-72d0-4150-927c-af77275e1006",
           "order": 3,
           "zh": "一个小小的声调错误，有时候也会引起完全不同的理解。",
           "pinyin": "Yí ge xiǎoxiǎo de shēngdiào cuòwù, yǒu shíhou yě huì yǐnqǐ wánquán bù tóng de lǐjiě.",
@@ -9027,7 +9027,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_029"
+            "e9286561-6eb2-4d2c-9816-fe52081106a3"
           ],
           "source_ref": "current_thread_or_structured_source",
           "level": "complex",
@@ -9049,7 +9049,7 @@
       },
       "warnings": [
         {
-          "id": "vocab_029_warning_001",
+          "id": "97c3d569-a151-49e8-94e3-07a430e91717",
           "order": 1,
           "rule_vi": "Dùng 引起 và 造成 như nhau.",
           "natural_examples": [],
@@ -9091,7 +9091,7 @@
       "check_needed": false
     },
     {
-      "id": "vocab_030",
+      "id": "3aff3a22-053d-4177-ad26-7554f878ceb8",
       "type": "deep_vocabulary_item",
       "order": 30,
       "hanzi": "赶快",
@@ -9276,7 +9276,7 @@
       },
       "collocations": [
         {
-          "id": "vocab_030_col_001",
+          "id": "b2c3a059-2a94-49c8-bf08-e8a3e3f43170",
           "order": 1,
           "zh": "赶快走",
           "pinyin": "",
@@ -9287,7 +9287,7 @@
           "notes": []
         },
         {
-          "id": "vocab_030_col_002",
+          "id": "42b3a6c7-d8cf-4f72-8612-758a10329032",
           "order": 2,
           "zh": "赶快回来",
           "pinyin": "",
@@ -9298,7 +9298,7 @@
           "notes": []
         },
         {
-          "id": "vocab_030_col_003",
+          "id": "ebc6109f-97ff-42f7-bef7-07bab9215193",
           "order": 3,
           "zh": "赶快告诉我",
           "pinyin": "",
@@ -9309,7 +9309,7 @@
           "notes": []
         },
         {
-          "id": "vocab_030_col_004",
+          "id": "e243a597-b199-40c0-986e-a96d37110858",
           "order": 4,
           "zh": "[Đời sống] 赶快检查一下",
           "pinyin": "",
@@ -9322,7 +9322,7 @@
       ],
       "examples": [
         {
-          "id": "vocab_030_ex_001",
+          "id": "0359d45c-ec91-4177-a5eb-c7a8b0653ec9",
           "order": 1,
           "zh": "眼镜儿摔坏了，你赶快去眼镜店看看能不能修。",
           "pinyin": "Yǎnjìngr shuāi huài le, nǐ gǎnkuài qù yǎnjìngdiàn kànkan néng bu néng xiū.",
@@ -9333,7 +9333,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_030"
+            "3aff3a22-053d-4177-ad26-7554f878ceb8"
           ],
           "source_ref": "current_thread_or_structured_source",
           "level": "basic",
@@ -9342,7 +9342,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_030_ex_002",
+          "id": "2022b31f-bd78-4dd2-a59d-7c830f85ac2c",
           "order": 2,
           "zh": "照片删错了就赶快去回收站找，时间久了可能找不回来。",
           "pinyin": "Zhàopiàn shān cuò le jiù gǎnkuài qù huíshōuzhàn zhǎo, shíjiān jiǔ le kěnéng zhǎo bù huílai.",
@@ -9353,7 +9353,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_030"
+            "3aff3a22-053d-4177-ad26-7554f878ceb8"
           ],
           "source_ref": "current_thread_or_structured_source",
           "level": "expanded",
@@ -9362,7 +9362,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_030_ex_003",
+          "id": "c4ab79a3-0689-4e1b-bfde-c2ca21536d22",
           "order": 3,
           "zh": "通知上写得很清楚，报名今天下午结束，你最好赶快准备材料。",
           "pinyin": "Tōngzhī shàng xiě de hěn qīngchu, bàomíng jīntiān xiàwǔ jiéshù, nǐ zuìhǎo gǎnkuài zhǔnbèi cáiliào.",
@@ -9373,7 +9373,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_030"
+            "3aff3a22-053d-4177-ad26-7554f878ceb8"
           ],
           "source_ref": "current_thread_or_structured_source",
           "level": "complex",
@@ -9395,7 +9395,7 @@
       },
       "warnings": [
         {
-          "id": "vocab_030_warning_001",
+          "id": "5a0d97f5-4775-49af-9d4a-84a1937b4a2b",
           "order": 1,
           "rule_vi": "Dùng 赶快 trong email công việc trang trọng khiến câu hơi thúc ép.",
           "natural_examples": [],
@@ -9429,7 +9429,7 @@
       "check_needed": false
     },
     {
-      "id": "vocab_031",
+      "id": "3a3ac853-5694-498b-988c-62f8c3d26f96",
       "type": "deep_vocabulary_item",
       "order": 31,
       "hanzi": "发展",
@@ -9571,7 +9571,7 @@
       },
       "collocations": [
         {
-          "id": "vocab_031_col_001",
+          "id": "196ef026-c67a-4b67-8294-0c0a560bd0e4",
           "order": 1,
           "zh": "经济发展",
           "pinyin": "",
@@ -9582,7 +9582,7 @@
           "notes": []
         },
         {
-          "id": "vocab_031_col_002",
+          "id": "30d6841d-e17f-42d4-845c-428b276a2205",
           "order": 2,
           "zh": "城市发展",
           "pinyin": "",
@@ -9593,7 +9593,7 @@
           "notes": []
         },
         {
-          "id": "vocab_031_col_003",
+          "id": "fee1d97b-e424-4c1d-b1c2-6e7852b33816",
           "order": 3,
           "zh": "发展很快",
           "pinyin": "",
@@ -9604,7 +9604,7 @@
           "notes": []
         },
         {
-          "id": "vocab_031_col_004",
+          "id": "61e45b46-91ca-4b1a-977b-621fd0c755b9",
           "order": 4,
           "zh": "[Học tập] 语言能力的发展",
           "pinyin": "",
@@ -9617,7 +9617,7 @@
       ],
       "examples": [
         {
-          "id": "vocab_031_ex_001",
+          "id": "b3556067-77db-4392-bd86-cf4d656785e8",
           "order": 1,
           "zh": "这个城市的交通一年比一年发展得快。",
           "pinyin": "Zhège chéngshì de jiāotōng yì nián bǐ yì nián fāzhǎn de kuài.",
@@ -9628,7 +9628,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_031"
+            "3a3ac853-5694-498b-988c-62f8c3d26f96"
           ],
           "source_ref": "current_thread_or_structured_source",
           "level": "basic",
@@ -9637,7 +9637,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_031_ex_002",
+          "id": "40fc9034-56c6-443c-abb6-0f2f9efd1fcc",
           "order": 2,
           "zh": "城市发展太快，也可能引起交通拥挤和生活压力。",
           "pinyin": "Chéngshì fāzhǎn tài kuài, yě kěnéng yǐnqǐ jiāotōng yōngjǐ hé shēnghuó yālì.",
@@ -9648,7 +9648,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_031"
+            "3a3ac853-5694-498b-988c-62f8c3d26f96"
           ],
           "source_ref": "current_thread_or_structured_source",
           "level": "expanded",
@@ -9657,7 +9657,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_031_ex_003",
+          "id": "ad3af03d-901c-4613-a6ed-c97e4854b4ae",
           "order": 3,
           "zh": "学习语言的发展不是一天完成的，要靠长期输入和反复使用。",
           "pinyin": "Xuéxí yǔyán de fāzhǎn bú shì yì tiān wánchéng de, yào kào chángqī shūrù hé fǎnfù shǐyòng.",
@@ -9668,7 +9668,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_031"
+            "3a3ac853-5694-498b-988c-62f8c3d26f96"
           ],
           "source_ref": "current_thread_or_structured_source",
           "level": "complex",
@@ -9690,7 +9690,7 @@
       },
       "warnings": [
         {
-          "id": "vocab_031_warning_001",
+          "id": "f72b39e4-4182-4285-b06b-0c21e473b4c4",
           "order": 1,
           "rule_vi": "Dùng 发展 thay 提高 khi nói trình độ cá nhân.",
           "natural_examples": [],
@@ -9732,7 +9732,7 @@
       "check_needed": false
     },
     {
-      "id": "vocab_032",
+      "id": "cbd82d5d-9d1d-467e-a764-884e254c306b",
       "type": "deep_vocabulary_item",
       "order": 32,
       "hanzi": "奇怪",
@@ -9918,7 +9918,7 @@
       },
       "collocations": [
         {
-          "id": "vocab_032_col_001",
+          "id": "4a821e36-2fb3-4768-b9b8-b827fa47adac",
           "order": 1,
           "zh": "很奇怪",
           "pinyin": "",
@@ -9929,7 +9929,7 @@
           "notes": []
         },
         {
-          "id": "vocab_032_col_002",
+          "id": "fe7db585-ced5-4fa9-ad10-15b4ff7dded0",
           "order": 2,
           "zh": "奇怪的声音",
           "pinyin": "",
@@ -9940,7 +9940,7 @@
           "notes": []
         },
         {
-          "id": "vocab_032_col_003",
+          "id": "0c3f3cb1-5ede-4857-aaaf-bcc0b1392008",
           "order": 3,
           "zh": "奇怪的表情",
           "pinyin": "",
@@ -9951,7 +9951,7 @@
           "notes": []
         },
         {
-          "id": "vocab_032_col_004",
+          "id": "9428bff9-d378-43c3-a292-97a4b90c12b6",
           "order": 4,
           "zh": "[Khẩu ngữ] 真奇怪",
           "pinyin": "",
@@ -9964,7 +9964,7 @@
       ],
       "examples": [
         {
-          "id": "vocab_032_ex_001",
+          "id": "5b9bcb86-5bd9-443c-9150-c4f5f27bfd33",
           "order": 1,
           "zh": "这张照片很奇怪，眼睛是闭着的，表情也不自然。",
           "pinyin": "Zhè zhāng zhàopiàn hěn qíguài, yǎnjing shì bìzhe de, biǎoqíng yě bù zìrán.",
@@ -9975,7 +9975,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_032"
+            "cbd82d5d-9d1d-467e-a764-884e254c306b"
           ],
           "source_ref": "current_thread_or_structured_source",
           "level": "basic",
@@ -9984,7 +9984,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_032_ex_002",
+          "id": "49f31a89-323b-425c-b67f-124c06d414aa",
           "order": 2,
           "zh": "奇怪的是，通知已经贴在门口了，他还是说没看见。",
           "pinyin": "Qíguài de shì, tōngzhī yǐjīng tiē zài ménkǒu le, tā háishi shuō méi kànjiàn.",
@@ -9995,7 +9995,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_032"
+            "cbd82d5d-9d1d-467e-a764-884e254c306b"
           ],
           "source_ref": "current_thread_or_structured_source",
           "level": "expanded",
@@ -10004,7 +10004,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_032_ex_003",
+          "id": "5278e4c5-9fb1-4e34-8506-8ddae7e2962d",
           "order": 3,
           "zh": "刚开始听普通话，觉得声调很奇怪，其实听多了就会慢慢儿习惯。",
           "pinyin": "Gāng kāishǐ tīng Pǔtōnghuà, juéde shēngdiào hěn qíguài, qíshí tīng duō le jiù huì mànmānr xíguàn.",
@@ -10015,7 +10015,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_032"
+            "cbd82d5d-9d1d-467e-a764-884e254c306b"
           ],
           "source_ref": "current_thread_or_structured_source",
           "level": "complex",
@@ -10037,7 +10037,7 @@
       },
       "warnings": [
         {
-          "id": "vocab_032_warning_001",
+          "id": "0ef66966-e2bb-48e5-b1ce-1ce93eccd22a",
           "order": 1,
           "rule_vi": "Dùng 奇怪 để khen “đặc biệt”.",
           "natural_examples": [],
@@ -10087,7 +10087,7 @@
       "check_needed": false
     },
     {
-      "id": "vocab_033",
+      "id": "6331257e-8119-400f-a744-96c1953a5a10",
       "type": "deep_vocabulary_item",
       "order": 33,
       "hanzi": "首都",
@@ -10198,7 +10198,7 @@
       },
       "collocations": [
         {
-          "id": "vocab_033_col_001",
+          "id": "ca71a9de-521c-4d87-8482-98de3169ef1c",
           "order": 1,
           "zh": "中国的首都",
           "pinyin": "",
@@ -10209,7 +10209,7 @@
           "notes": []
         },
         {
-          "id": "vocab_033_col_002",
+          "id": "de793612-6dd1-4388-a14a-ab7e82a97aa3",
           "order": 2,
           "zh": "首都北京",
           "pinyin": "",
@@ -10220,7 +10220,7 @@
           "notes": []
         },
         {
-          "id": "vocab_033_col_003",
+          "id": "89c67095-188b-48aa-a972-a5bd3174126b",
           "order": 3,
           "zh": "首都机场",
           "pinyin": "",
@@ -10231,7 +10231,7 @@
           "notes": []
         },
         {
-          "id": "vocab_033_col_004",
+          "id": "fc7facf2-a9c8-4a73-a421-7e53aeb31f30",
           "order": 4,
           "zh": "[Du lịch] 去首都旅行",
           "pinyin": "",
@@ -10244,7 +10244,7 @@
       ],
       "examples": [
         {
-          "id": "vocab_033_ex_001",
+          "id": "98e160e7-0a67-48f3-a6de-58688c620eac",
           "order": 1,
           "zh": "北京是中国的首都，也是很多游客第一次去中国时会选择的城市之一。",
           "pinyin": "Běijīng shì Zhōngguó de shǒudū, yě shì hěn duō yóukè dì yī cì qù Zhōngguó shí huì xuǎnzé de chéngshì zhī yī.",
@@ -10255,7 +10255,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_033"
+            "6331257e-8119-400f-a744-96c1953a5a10"
           ],
           "source_ref": "current_thread_or_structured_source",
           "level": "basic",
@@ -10264,7 +10264,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_033_ex_002",
+          "id": "8a2fdb7d-0ef4-4d2f-989a-b92638b12997",
           "order": 2,
           "zh": "首都的交通一年比一年方便，但上下班的时候还是很拥挤。",
           "pinyin": "Shǒudū de jiāotōng yì nián bǐ yì nián fāngbiàn, dàn shàngxiàbān de shíhou háishi hěn yōngjǐ.",
@@ -10275,7 +10275,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_033"
+            "6331257e-8119-400f-a744-96c1953a5a10"
           ],
           "source_ref": "current_thread_or_structured_source",
           "level": "expanded",
@@ -10284,7 +10284,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_033_ex_003",
+          "id": "442e7b32-3fe7-406c-bbe6-b927907ad232",
           "order": 3,
           "zh": "介绍一个国家的时候，除了说首都，还可以说它的主要城市和文化特点。",
           "pinyin": "Jièshào yí ge guójiā de shíhou, chúle shuō shǒudū, hái kěyǐ shuō tā de zhǔyào chéngshì hé wénhuà tèdiǎn.",
@@ -10295,7 +10295,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_033"
+            "6331257e-8119-400f-a744-96c1953a5a10"
           ],
           "source_ref": "current_thread_or_structured_source",
           "level": "complex",
@@ -10317,7 +10317,7 @@
       },
       "warnings": [
         {
-          "id": "vocab_033_warning_001",
+          "id": "201cfdca-8f6e-4636-8581-daad2f8ee2df",
           "order": 1,
           "rule_vi": "Thấy thành phố lớn là gọi 首都.",
           "natural_examples": [],
@@ -10359,7 +10359,7 @@
       "check_needed": false
     },
     {
-      "id": "vocab_034",
+      "id": "88adb12d-1bb4-44d1-92cf-c8c308291ec9",
       "type": "deep_vocabulary_item",
       "order": 34,
       "hanzi": "王府井",
@@ -10526,7 +10526,7 @@
       },
       "collocations": [
         {
-          "id": "vocab_034_col_001",
+          "id": "d163e953-b105-4651-9d6e-bc3823bcfb76",
           "order": 1,
           "zh": "去王府井",
           "pinyin": "",
@@ -10537,7 +10537,7 @@
           "notes": []
         },
         {
-          "id": "vocab_034_col_002",
+          "id": "34b13626-c2b2-47d7-9f6a-f3d918ec8cdf",
           "order": 2,
           "zh": "王府井大街",
           "pinyin": "",
@@ -10548,7 +10548,7 @@
           "notes": []
         },
         {
-          "id": "vocab_034_col_003",
+          "id": "05f1ed6a-fbbf-4c5f-a540-8fc6d8ed21bc",
           "order": 3,
           "zh": "在王府井买东西",
           "pinyin": "",
@@ -10559,7 +10559,7 @@
           "notes": []
         },
         {
-          "id": "vocab_034_col_004",
+          "id": "bb7d6bfd-7c1c-465b-aa1a-8d6d887d078a",
           "order": 4,
           "zh": "[Du lịch] 王府井人很多",
           "pinyin": "",
@@ -10572,7 +10572,7 @@
       ],
       "examples": [
         {
-          "id": "vocab_034_ex_001",
+          "id": "1a92e26e-86ea-49f5-8e56-6c46a39e19bc",
           "order": 1,
           "zh": "我们在王府井拍的照片已经洗出来了，张张都很清楚。",
           "pinyin": "Wǒmen zài Wángfǔjǐng pāi de zhàopiàn yǐjīng xǐ chūlai le, zhāngzhāng dōu hěn qīngchu.",
@@ -10583,7 +10583,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_034"
+            "88adb12d-1bb4-44d1-92cf-c8c308291ec9"
           ],
           "source_ref": "current_thread_or_structured_source",
           "level": "basic",
@@ -10592,7 +10592,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_034_ex_002",
+          "id": "8448d625-8b09-4878-98ce-1e6e5ac1ab8d",
           "order": 2,
           "zh": "节假日去王府井，地铁口和商场门口常常很拥挤。",
           "pinyin": "Jiéjiàrì qù Wángfǔjǐng, dìtiěkǒu hé shāngchǎng ménkǒu chángcháng hěn yōngjǐ.",
@@ -10603,7 +10603,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_034"
+            "88adb12d-1bb4-44d1-92cf-c8c308291ec9"
           ],
           "source_ref": "current_thread_or_structured_source",
           "level": "expanded",
@@ -10612,7 +10612,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_034_ex_003",
+          "id": "0580338f-d507-4a1d-8885-cc803afde96c",
           "order": 3,
           "zh": "如果第一次去北京，王府井可以看看，但不要把它当成北京的全部。",
           "pinyin": "Rúguǒ dì yī cì qù Běijīng, Wángfǔjǐng kěyǐ kànkan, dàn bú yào bǎ tā dāng chéng Běijīng de quánbù.",
@@ -10623,7 +10623,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_034"
+            "88adb12d-1bb4-44d1-92cf-c8c308291ec9"
           ],
           "source_ref": "current_thread_or_structured_source",
           "level": "complex",
@@ -10645,7 +10645,7 @@
       },
       "warnings": [
         {
-          "id": "vocab_034_warning_001",
+          "id": "6c79ef2f-be62-40ff-892a-ebfc1ae5c1d9",
           "order": 1,
           "rule_vi": "Dịch từng chữ 王府井 thành “giếng phủ vua” trong câu tiếng Việt thông thường.",
           "natural_examples": [],
@@ -10687,7 +10687,7 @@
       "check_needed": false
     },
     {
-      "id": "vocab_035",
+      "id": "7fa47faa-40ea-4f5d-9a57-17ba65ac24f0",
       "type": "deep_vocabulary_item",
       "order": 35,
       "hanzi": "怕",
@@ -10828,7 +10828,7 @@
       },
       "collocations": [
         {
-          "id": "vocab_035_col_001",
+          "id": "9b365795-2a42-4229-a685-c9c27dfba744",
           "order": 1,
           "zh": "怕黑",
           "pinyin": "",
@@ -10839,7 +10839,7 @@
           "notes": []
         },
         {
-          "id": "vocab_035_col_002",
+          "id": "15d86c06-ba31-4e2d-8074-9d4270db1ecc",
           "order": 2,
           "zh": "怕麻烦",
           "pinyin": "",
@@ -10850,7 +10850,7 @@
           "notes": []
         },
         {
-          "id": "vocab_035_col_003",
+          "id": "f4e5e31d-1eb5-451a-8717-487eef2396dc",
           "order": 3,
           "zh": "怕来不及",
           "pinyin": "",
@@ -10861,7 +10861,7 @@
           "notes": []
         },
         {
-          "id": "vocab_035_col_004",
+          "id": "b3f2d1f1-a26e-4fef-b133-368ccfeb4584",
           "order": 4,
           "zh": "[Giao tiếp] 我怕我说不清楚",
           "pinyin": "",
@@ -10874,7 +10874,7 @@
       ],
       "examples": [
         {
-          "id": "vocab_035_ex_001",
+          "id": "60a2b1bb-3104-49dd-983e-88548cd2b6c1",
           "order": 1,
           "zh": "我怕照片洗出来以后不清楚，所以想先放大看看。",
           "pinyin": "Wǒ pà zhàopiàn xǐ chūlai yǐhòu bù qīngchu, suǒyǐ xiǎng xiān fàngdà kànkan.",
@@ -10885,7 +10885,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_035"
+            "7fa47faa-40ea-4f5d-9a57-17ba65ac24f0"
           ],
           "source_ref": "current_thread_or_structured_source",
           "level": "basic",
@@ -10894,7 +10894,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_035_ex_002",
+          "id": "cfe23e11-9444-4d1e-b37a-223e00dffcc2",
           "order": 2,
           "zh": "他不是怕考试，是怕自己看不清楚题目，因为眼镜儿摔坏了。",
           "pinyin": "Tā bú shì pà kǎoshì, shì pà zìjǐ kàn bù qīngchu tímù, yīnwèi yǎnjìngr shuāi huài le.",
@@ -10905,7 +10905,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_035"
+            "7fa47faa-40ea-4f5d-9a57-17ba65ac24f0"
           ],
           "source_ref": "current_thread_or_structured_source",
           "level": "expanded",
@@ -10914,7 +10914,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_035_ex_003",
+          "id": "e91eab54-12e1-4f10-a2eb-4636928b5b1f",
           "order": 3,
           "zh": "别怕说错，真正可怕的是一直不说，问题就一直发现不了。",
           "pinyin": "Bié pà shuō cuò, zhēnzhèng kěpà de shì yìzhí bù shuō, wèntí jiù yìzhí fāxiàn bù liǎo.",
@@ -10925,7 +10925,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_035"
+            "7fa47faa-40ea-4f5d-9a57-17ba65ac24f0"
           ],
           "source_ref": "current_thread_or_structured_source",
           "level": "complex",
@@ -10947,7 +10947,7 @@
       },
       "warnings": [
         {
-          "id": "vocab_035_warning_001",
+          "id": "bf14d2f4-9a61-4390-9da6-a00ec143df8d",
           "order": 1,
           "rule_vi": "Dùng 怕 và 担心 như nhau trong mọi câu.",
           "natural_examples": [],
@@ -10989,7 +10989,7 @@
       "check_needed": false
     },
     {
-      "id": "vocab_036",
+      "id": "3b63795b-85c9-4108-9566-ec9919139fa1",
       "type": "deep_vocabulary_item",
       "order": 36,
       "hanzi": "低",
@@ -11120,7 +11120,7 @@
       },
       "collocations": [
         {
-          "id": "vocab_036_col_001",
+          "id": "f9c14193-b786-4df1-83d1-c588aaed74eb",
           "order": 1,
           "zh": "声音低",
           "pinyin": "",
@@ -11131,7 +11131,7 @@
           "notes": []
         },
         {
-          "id": "vocab_036_col_002",
+          "id": "42eb2c79-8598-4e18-a2c5-70016a23d549",
           "order": 2,
           "zh": "价格低",
           "pinyin": "",
@@ -11142,7 +11142,7 @@
           "notes": []
         },
         {
-          "id": "vocab_036_col_003",
+          "id": "90652a42-7319-4801-95af-878a4aafa196",
           "order": 3,
           "zh": "水平低",
           "pinyin": "",
@@ -11153,7 +11153,7 @@
           "notes": []
         },
         {
-          "id": "vocab_036_col_004",
+          "id": "b5c529b0-2803-49c5-ad13-a66cdf6f0b44",
           "order": 4,
           "zh": "[Đời sống] 低头看手机",
           "pinyin": "",
@@ -11166,7 +11166,7 @@
       ],
       "examples": [
         {
-          "id": "vocab_036_ex_001",
+          "id": "da32756e-0c81-4668-a329-2866092aceda",
           "order": 1,
           "zh": "他说话声音太低了，我没听清楚。",
           "pinyin": "Tā shuōhuà shēngyīn tài dī le, wǒ méi tīng qīngchu.",
@@ -11177,7 +11177,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_036"
+            "3b63795b-85c9-4108-9566-ec9919139fa1"
           ],
           "source_ref": "current_thread_or_structured_source",
           "level": "basic",
@@ -11186,7 +11186,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_036_ex_002",
+          "id": "59c2b31e-4780-4693-9879-d096f2524255",
           "order": 2,
           "zh": "这张照片的清楚程度太低，放大以后更看不清楚。",
           "pinyin": "Zhè zhāng zhàopiàn de qīngchu chéngdù tài dī, fàngdà yǐhòu gèng kàn bù qīngchu.",
@@ -11197,7 +11197,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_036"
+            "3b63795b-85c9-4108-9566-ec9919139fa1"
           ],
           "source_ref": "current_thread_or_structured_source",
           "level": "expanded",
@@ -11206,7 +11206,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_036_ex_003",
+          "id": "3ab09ed3-f16b-4243-8fb2-0a5ce091f774",
           "order": 3,
           "zh": "不要因为现在水平低就失望，重要的是每天都能改一点儿。",
           "pinyin": "Bú yào yīnwèi xiànzài shuǐpíng dī jiù shīwàng, zhòngyào de shì měitiān dōu néng gǎi yìdiǎnr.",
@@ -11217,7 +11217,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_036"
+            "3b63795b-85c9-4108-9566-ec9919139fa1"
           ],
           "source_ref": "current_thread_or_structured_source",
           "level": "complex",
@@ -11239,7 +11239,7 @@
       },
       "warnings": [
         {
-          "id": "vocab_036_warning_001",
+          "id": "48fcc001-e384-40f1-9002-c191fd5ea902",
           "order": 1,
           "rule_vi": "Nhầm 低 và 矮.",
           "natural_examples": [],
@@ -11281,7 +11281,7 @@
       "check_needed": false
     },
     {
-      "id": "vocab_037",
+      "id": "e84aed36-ae39-4fb2-a258-4e739c33c175",
       "type": "deep_vocabulary_item",
       "order": 37,
       "hanzi": "高",
@@ -11390,7 +11390,7 @@
       },
       "collocations": [
         {
-          "id": "vocab_037_col_001",
+          "id": "db1273ea-9c2c-4a97-86a9-3ff54a130d5c",
           "order": 1,
           "zh": "个子高",
           "pinyin": "",
@@ -11401,7 +11401,7 @@
           "notes": []
         },
         {
-          "id": "vocab_037_col_002",
+          "id": "dc9e6983-1753-4ead-af58-0842d38debf1",
           "order": 2,
           "zh": "水平高",
           "pinyin": "",
@@ -11412,7 +11412,7 @@
           "notes": []
         },
         {
-          "id": "vocab_037_col_003",
+          "id": "652db5eb-b45c-46d2-97ee-2fcd6b1617c6",
           "order": 3,
           "zh": "价格高",
           "pinyin": "",
@@ -11423,7 +11423,7 @@
           "notes": []
         },
         {
-          "id": "vocab_037_col_004",
+          "id": "4a3b0307-5c4a-457b-a01f-5ee89b39e1c3",
           "order": 4,
           "zh": "[Học tập] 要求很高",
           "pinyin": "",
@@ -11436,7 +11436,7 @@
       ],
       "examples": [
         {
-          "id": "vocab_037_ex_001",
+          "id": "c6e59e52-7fcf-44f2-81d8-0abedcbba669",
           "order": 1,
           "zh": "这张照片放大以后，清楚程度反而更高了。",
           "pinyin": "Zhè zhāng zhàopiàn fàngdà yǐhòu, qīngchu chéngdù fǎn'ér gèng gāo le.",
@@ -11447,7 +11447,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_037"
+            "e84aed36-ae39-4fb2-a258-4e739c33c175"
           ],
           "source_ref": "current_thread_or_structured_source",
           "level": "basic",
@@ -11456,7 +11456,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_037_ex_002",
+          "id": "5be242c2-c92e-4288-8e7e-7847d9578366",
           "order": 2,
           "zh": "王府井的名气很高，但节假日人也很多。",
           "pinyin": "Wángfǔjǐng de míngqì hěn gāo, dàn jiéjiàrì rén yě hěn duō.",
@@ -11467,7 +11467,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_037"
+            "e84aed36-ae39-4fb2-a258-4e739c33c175"
           ],
           "source_ref": "current_thread_or_structured_source",
           "level": "expanded",
@@ -11476,7 +11476,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_037_ex_003",
+          "id": "f22ca9ad-57dd-441b-a9b0-e915fa657cf5",
           "order": 3,
           "zh": "老师对例句的要求一年比一年高，因为大家的水平也在提高。",
           "pinyin": "Lǎoshī duì lìjù de yāoqiú yì nián bǐ yì nián gāo, yīnwèi dàjiā de shuǐpíng yě zài tígāo.",
@@ -11487,7 +11487,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_037"
+            "e84aed36-ae39-4fb2-a258-4e739c33c175"
           ],
           "source_ref": "current_thread_or_structured_source",
           "level": "complex",
@@ -11509,7 +11509,7 @@
       },
       "warnings": [
         {
-          "id": "vocab_037_warning_001",
+          "id": "a5c81b86-16d8-4b65-a26e-da8a4db59db8",
           "order": 1,
           "rule_vi": "Dịch mọi chữ “cao” bằng 高 mà không xét cụm.",
           "natural_examples": [],

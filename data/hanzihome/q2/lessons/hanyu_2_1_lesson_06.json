@@ -1,54 +1,6 @@
 {
-  "schema_version": "2.3.0",
-  "content_type": "chinese_textbook_lesson",
-  "verification_status": "verified",
-  "source": {
-    "book": "Hanyu Jiaocheng",
-    "volume": "第二册上",
-    "volume_vi": "Quyển 2 Thượng",
-    "lesson_index": 6,
-    "lesson_number_cn": "第六课",
-    "lesson_title_cn": "我比你更喜欢音乐",
-    "lesson_title_pinyin": "Wǒ bǐ nǐ gèng xǐhuan yīnyuè",
-    "lesson_title_vi": "Tôi thích âm nhạc hơn bạn",
-    "lesson_title_en": "I like music more than you do",
-    "source_files": [
-      {
-        "name": "Hanyu Jiaocheng 2-1.pdf",
-        "type": "pdf_scan",
-        "source_origin": "textbook",
-        "check_needed": false,
-        "page_start": 86,
-        "page_end": 107
-      },
-      {
-        "name": "Tong_hop_tu_vung_Han_ngu_quyen_2_Bai_1-25.docx",
-        "type": "uploaded_crosscheck",
-        "source_origin": "uploaded_crosscheck",
-        "check_needed": false
-      },
-      {
-        "name": "Học kì 2 上-下.md",
-        "type": "uploaded_crosscheck",
-        "source_origin": "uploaded_crosscheck",
-        "check_needed": false
-      }
-    ],
-    "web_crosscheck": [
-      {
-        "title": "Hack Chinese — Lesson 6: 我比你更喜欢音乐 vocabulary list",
-        "source_origin": "web_crosscheck",
-        "note": "Used only as light cross-check for lesson title and vocabulary count."
-      },
-      {
-        "title": "Quizlet — 汉语教程第二册上第六课我比你更喜欢音乐生词",
-        "source_origin": "web_crosscheck",
-        "note": "Used only as light cross-check for vocabulary including 建筑."
-      }
-    ]
-  },
   "lesson": {
-    "id": "hanyu_2_1_lesson_06",
+    "id": "e3fa4618-6a01-41d7-9c47-1fe900a40c1b",
     "title": {
       "zh": "我比你更喜欢音乐",
       "pinyin": "Wǒ bǐ nǐ gèng xǐhuan yīnyuè",
@@ -64,7 +16,7 @@
     ],
     "sections": [
       {
-        "id": "section_01_text",
+        "id": "a6c0d522-99be-4f36-881c-b9b2c6beeb85",
         "type": "text",
         "order": 1,
         "title": "课文",
@@ -73,7 +25,7 @@
         "check_needed": false,
         "blocks": [
           {
-            "id": "text_01",
+            "id": "e155d5ea-f89d-45f0-ab8d-094ce9e719f0",
             "type": "text_dialogue",
             "order": 1,
             "title": "北京比上海大吧",
@@ -84,7 +36,7 @@
             "comprehension_questions": [],
             "lines": [
               {
-                "id": "text_01_l01",
+                "id": "f8046d8e-353e-4b63-a072-7498c8f1d9ff",
                 "order": 1,
                 "speaker": "山本",
                 "zh": "田芳，上海怎么样？我想坐火车去上海旅行。",
@@ -95,238 +47,225 @@
                 "en": "",
                 "audio_key": "",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "d9d70a65-69dd-475e-b076-c4941bcd8b3b"
+                "check_needed": false
               },
               {
-                "id": "text_01_l02",
+                "id": "30929615-34c8-4e5b-b0a2-5ad3358ad755",
                 "order": 2,
                 "speaker": "田芳",
                 "zh": "上海很好，这几年变化很大。今年暑假我还在那儿玩儿了一个多月呢。我一个同学家就在上海。",
                 "vi": "Thượng Hải rất tốt, mấy năm nay thay đổi rất nhiều. Nghỉ hè năm nay tôi còn chơi ở đó hơn một tháng. Nhà một bạn học của tôi ở ngay Thượng Hải.",
                 "grammar_refs": [
-                  "grammar_07"
+                  "f3302370-f1c2-4d08-99ba-fda75cc4a335"
                 ],
                 "vocab_refs": [
-                  "vocab_001",
-                  "vocab_003",
-                  "vocab_004"
+                  "68c05a12-9d8e-45d9-a413-786bcf2f780a",
+                  "1fbd69b7-603a-44ea-8d57-10cd4def9ced",
+                  "3dc505f1-bc0e-4a96-b448-17fed89fdc60"
                 ],
                 "pinyin": "",
                 "en": "",
                 "audio_key": "",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "31be5b04-182c-47e9-8b2a-75434d9692be"
+                "check_needed": false
               },
               {
-                "id": "text_01_l03",
+                "id": "9faf6980-effe-42f1-a01e-7f1740da2edb",
                 "order": 3,
                 "speaker": "山本",
                 "zh": "上海比北京大吧？",
                 "vi": "Thượng Hải lớn hơn Bắc Kinh nhỉ?",
                 "grammar_refs": [
-                  "grammar_01"
+                  "f8ec59f3-898a-47b2-b536-44dfd8183393"
                 ],
                 "vocab_refs": [
-                  "vocab_005"
+                  "188412d4-4c23-4d60-b7b2-21f3490199e7"
                 ],
                 "pinyin": "",
                 "en": "",
                 "audio_key": "",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "bf655254-fb76-4b09-a9a7-1423832b5136"
+                "check_needed": false
               },
               {
-                "id": "text_01_l04",
+                "id": "146f8fa1-ae74-468d-910e-19cab53e3cf3",
                 "order": 4,
                 "speaker": "田芳",
                 "zh": "不，上海没有北京大，不过人口比北京多。上海是中国人口最多的城市。这几年，增加了不少新建筑，现在比过去变得更漂亮了。",
                 "vi": "Không, Thượng Hải không lớn bằng Bắc Kinh, nhưng dân số đông hơn Bắc Kinh. Thượng Hải là thành phố có dân số đông nhất Trung Quốc. Mấy năm nay, có thêm không ít công trình kiến trúc mới, bây giờ so với trước đã trở nên đẹp hơn rồi.",
                 "grammar_refs": [
-                  "grammar_04",
-                  "grammar_06",
-                  "grammar_01"
+                  "c6cd6c38-22fc-4546-a398-39efe02d6c17",
+                  "b0c8e101-1500-4742-9064-1e102a0eb8b9",
+                  "f8ec59f3-898a-47b2-b536-44dfd8183393"
                 ],
                 "vocab_refs": [
-                  "vocab_006",
-                  "vocab_007",
-                  "vocab_008",
-                  "vocab_009",
-                  "vocab_010",
-                  "vocab_011",
-                  "vocab_012",
-                  "vocab_013"
+                  "5ea44727-d97c-467b-b1b8-babd195df50d",
+                  "54613016-834a-4fc3-9912-2357a6d27058",
+                  "0da97406-c3ac-4fcb-a51c-398a59c3fbae",
+                  "54b36889-82be-485b-8342-fb8aab572065",
+                  "1354b1a3-93cc-4505-8d7f-c5550a1d6ae9",
+                  "f0684cb3-4577-4e6c-9f22-7d97c89692b3",
+                  "d5b362a7-c8f6-4f25-b2b5-0f1749c8afbb",
+                  "7eccd5e8-dac0-4f36-be2e-abcc0a2bdfcd"
                 ],
                 "pinyin": "",
                 "en": "",
                 "audio_key": "",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "a0d434cc-a1e4-4f25-afad-b497dd023c77"
+                "check_needed": false
               },
               {
-                "id": "text_01_l05",
+                "id": "44d4c32e-309d-4802-b7cf-e41ee8052535",
                 "order": 5,
                 "speaker": "山本",
                 "zh": "上海的公园有北京的多吗？",
                 "vi": "Công viên ở Thượng Hải có nhiều như ở Bắc Kinh không?",
                 "grammar_refs": [
-                  "grammar_05"
+                  "c3d31639-0f40-4b2f-aa50-5dda9d443b78"
                 ],
                 "vocab_refs": [],
                 "pinyin": "",
                 "en": "",
                 "audio_key": "",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "78e2d4ef-c507-4803-9980-5846fcb1099d"
+                "check_needed": false
               },
               {
-                "id": "text_01_l06",
+                "id": "6f4b4423-8315-40e6-88fa-2fa2038271af",
                 "order": 6,
                 "speaker": "田芳",
                 "zh": "上海的公园没有北京的多，也没有北京的公园这么大。",
                 "vi": "Công viên ở Thượng Hải không nhiều bằng Bắc Kinh, cũng không lớn như công viên ở Bắc Kinh.",
                 "grammar_refs": [
-                  "grammar_04",
-                  "grammar_05"
+                  "c6cd6c38-22fc-4546-a398-39efe02d6c17",
+                  "c3d31639-0f40-4b2f-aa50-5dda9d443b78"
                 ],
                 "vocab_refs": [],
                 "pinyin": "",
                 "en": "",
                 "audio_key": "",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "e0864049-f290-4530-8b03-acd980c0ecbe"
+                "check_needed": false
               },
               {
-                "id": "text_01_l07",
+                "id": "6de58c5b-164f-4b2f-8d7e-84f1c7c1a66c",
                 "order": 7,
                 "speaker": "山本",
                 "zh": "上海的冬天是不是比北京暖和一点儿？",
                 "vi": "Mùa đông ở Thượng Hải có phải ấm hơn Bắc Kinh một chút không?",
                 "grammar_refs": [
-                  "grammar_01",
-                  "grammar_03"
+                  "f8ec59f3-898a-47b2-b536-44dfd8183393",
+                  "fa804fff-372b-4874-8571-f54e613d7e07"
                 ],
                 "vocab_refs": [
-                  "vocab_014",
-                  "vocab_021"
+                  "91fa9f81-e5ef-4c4a-b29c-c4b6daa02196",
+                  "d45d5488-9293-41ae-9deb-1e5b51cee446"
                 ],
                 "pinyin": "",
                 "en": "",
                 "audio_key": "",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "f1ee42de-e4f4-4e0e-921c-38e747d8e44e"
+                "check_needed": false
               },
               {
-                "id": "text_01_l08",
+                "id": "9d76be1a-c606-44bb-a490-a9bd82982e3b",
                 "order": 8,
                 "speaker": "田芳",
                 "zh": "上海不一定比北京暖和。",
                 "vi": "Thượng Hải không nhất định ấm hơn Bắc Kinh.",
                 "grammar_refs": [
-                  "grammar_01"
+                  "f8ec59f3-898a-47b2-b536-44dfd8183393"
                 ],
                 "vocab_refs": [
-                  "vocab_021"
+                  "d45d5488-9293-41ae-9deb-1e5b51cee446"
                 ],
                 "pinyin": "",
                 "en": "",
                 "audio_key": "",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "cea48519-d840-4da2-a6f8-4d8b61125c7c"
+                "check_needed": false
               },
               {
-                "id": "text_01_l09",
+                "id": "6e148072-17aa-4ebd-88a1-c59b2fc0ba17",
                 "order": 9,
                 "speaker": "山本",
                 "zh": "可是，我看天气预报，上海的气温比北京高得多。",
                 "vi": "Nhưng tôi xem dự báo thời tiết, nhiệt độ ở Thượng Hải cao hơn Bắc Kinh nhiều.",
                 "grammar_refs": [
-                  "grammar_03",
-                  "grammar_07"
+                  "fa804fff-372b-4874-8571-f54e613d7e07",
+                  "f3302370-f1c2-4d08-99ba-fda75cc4a335"
                 ],
                 "vocab_refs": [
-                  "vocab_015",
-                  "vocab_016",
-                  "vocab_017",
-                  "vocab_018"
+                  "8a5b1d09-23a6-4182-96e6-9bf4d761a1e1",
+                  "be7a835d-ff8f-4a86-9fd8-27c5f1093f0c",
+                  "7a89dc80-d79d-4c2f-988c-d0f54e240d19",
+                  "ff3e1818-66a9-4532-880b-02c9cacb0e5b"
                 ],
                 "pinyin": "",
                 "en": "",
                 "audio_key": "",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "09eff19b-6198-4803-89ff-610802cd0191"
+                "check_needed": false
               },
               {
-                "id": "text_01_l10",
+                "id": "a8845639-9fca-4398-853d-a08fb63482a8",
                 "order": 10,
                 "speaker": "田芳",
                 "zh": "是，上海的气温比北京高好几度，不过因为屋子里没有暖气，所以感觉还没有北京暖和。",
                 "vi": "Đúng, nhiệt độ ở Thượng Hải cao hơn Bắc Kinh mấy độ, nhưng vì trong nhà không có hệ thống sưởi, nên cảm giác vẫn không ấm bằng Bắc Kinh.",
                 "grammar_refs": [
-                  "grammar_03",
-                  "grammar_04"
+                  "fa804fff-372b-4874-8571-f54e613d7e07",
+                  "c6cd6c38-22fc-4546-a398-39efe02d6c17"
                 ],
                 "vocab_refs": [
-                  "vocab_018",
-                  "vocab_019",
-                  "vocab_020",
-                  "vocab_021",
-                  "vocab_022"
+                  "ff3e1818-66a9-4532-880b-02c9cacb0e5b",
+                  "0125bdae-fe4e-48fb-8264-145e95c75933",
+                  "689eb64b-5d4f-469f-9afa-74017d399614",
+                  "d45d5488-9293-41ae-9deb-1e5b51cee446",
+                  "c99a633b-27a2-429b-a139-44113a84c189"
                 ],
                 "pinyin": "",
                 "en": "",
                 "audio_key": "",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "767299ab-4f0c-43cd-ab75-6d9e28e39354"
+                "check_needed": false
               },
               {
-                "id": "text_01_l11",
+                "id": "eb3a72ec-54fc-469d-929b-b614c65e00f1",
                 "order": 11,
                 "speaker": "山本",
                 "zh": "上海人家里没有暖气？",
                 "vi": "Nhà người Thượng Hải không có hệ thống sưởi à?",
                 "grammar_refs": [],
                 "vocab_refs": [
-                  "vocab_020"
+                  "689eb64b-5d4f-469f-9afa-74017d399614"
                 ],
                 "pinyin": "",
                 "en": "",
                 "audio_key": "",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "e3b56602-edec-4ff0-969a-6cea30e72daf"
+                "check_needed": false
               },
               {
-                "id": "text_01_l12",
+                "id": "5d22fae9-a022-41b5-a551-b9b68c51b516",
                 "order": 12,
                 "speaker": "田芳",
                 "zh": "一般的家庭没有，不过旅馆和饭店里有。",
                 "vi": "Gia đình bình thường thì không có, nhưng trong khách sạn và nhà hàng thì có.",
                 "grammar_refs": [],
                 "vocab_refs": [
-                  "vocab_023"
+                  "79358c6f-3427-4c28-98f3-7ef98c7033c3"
                 ],
                 "pinyin": "",
                 "en": "",
                 "audio_key": "",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "68819b3e-4774-4edc-9d5d-ca9e0fc0244d"
+                "check_needed": false
               }
-            ],
-            "uuid": "8b77c358-f4f9-4389-8e07-bd9f0dc852ee"
+            ]
           },
           {
-            "id": "text_02",
+            "id": "0156dd39-d5b4-41f5-866d-d336dd29bbc2",
             "type": "text_dialogue",
             "order": 2,
             "title": "我比你更喜欢音乐",
@@ -337,7 +276,7 @@
             "comprehension_questions": [],
             "lines": [
               {
-                "id": "text_02_l01",
+                "id": "887014e5-f6b0-4777-9f95-85a69532ca36",
                 "order": 1,
                 "speaker": "林老师",
                 "zh": "王老师，你喜欢音乐吗？",
@@ -348,155 +287,145 @@
                 "en": "",
                 "audio_key": "",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "31465ea8-14df-4efb-a4ae-8b27b080be53"
+                "check_needed": false
               },
               {
-                "id": "text_02_l02",
+                "id": "65232ef9-30a1-4305-b8b7-12a8ac5aeb91",
                 "order": 2,
                 "speaker": "王老师",
                 "zh": "喜欢啊！我是个音乐迷，我电脑里，光交响乐就下载了好几百首呢。",
                 "vi": "Thích chứ! Tôi là một người mê âm nhạc, trong máy tính của tôi, chỉ riêng nhạc giao hưởng thôi đã tải mấy trăm bài rồi.",
                 "grammar_refs": [],
                 "vocab_refs": [
-                  "vocab_024",
-                  "vocab_025",
-                  "vocab_026",
-                  "vocab_027",
-                  "vocab_028"
+                  "dc0f8e06-a359-4907-a8d8-fc9b02260590",
+                  "c43cedbf-7024-4ec1-922f-e75119114baf",
+                  "d9991c79-3454-4247-bf18-f14f43b4a24a",
+                  "55cd807c-eec7-412d-99db-f4e6508b170f",
+                  "085e60d5-dd1c-4585-ac6b-0f1db0ded936"
                 ],
                 "pinyin": "",
                 "en": "",
                 "audio_key": "",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "424fc3f1-578b-4dd4-a95c-ee9e4c2ebc27"
+                "check_needed": false
               },
               {
-                "id": "text_02_l03",
+                "id": "2c1213ac-f81d-414f-8b55-5abe77fe83fc",
                 "order": 3,
                 "speaker": "林老师",
                 "zh": "我也很喜欢音乐，也许比你更喜欢。你喜欢古典音乐还是喜欢现代音乐？",
                 "vi": "Tôi cũng rất thích âm nhạc, có lẽ còn thích hơn thầy. Thầy thích nhạc cổ điển hay nhạc hiện đại?",
                 "grammar_refs": [
-                  "grammar_02"
+                  "57b14753-688a-41b6-9e0d-b61dbbf574d7"
                 ],
                 "vocab_refs": [
-                  "vocab_029",
-                  "vocab_030"
+                  "ba7ff0f9-b633-4516-ab3d-22b96046a1cf",
+                  "2185ee67-885d-4ffb-83e2-e97be4070796"
                 ],
                 "pinyin": "",
                 "en": "",
                 "audio_key": "",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "303628e1-2bef-4884-811c-2a7e176815f8"
+                "check_needed": false
               },
               {
-                "id": "text_02_l04",
+                "id": "d797c234-0a16-42e3-bc45-29782e65cb1b",
                 "order": 4,
                 "speaker": "王老师",
                 "zh": "我喜欢古典音乐。喜欢听世界名曲，还喜欢听民歌。",
                 "vi": "Tôi thích nhạc cổ điển. Tôi thích nghe các danh khúc thế giới, còn thích nghe dân ca nữa.",
                 "grammar_refs": [],
                 "vocab_refs": [
-                  "vocab_032",
-                  "vocab_033",
-                  "vocab_034"
+                  "22e66ee9-565e-4670-b2ac-4d5a9b500b38",
+                  "275b46f4-3166-48b7-9766-58384178d1be",
+                  "1190511f-5970-4304-8f84-d7201b287aeb"
                 ],
                 "pinyin": "",
                 "en": "",
                 "audio_key": "",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "2aac1fa4-9fb6-42a6-aeb0-380de5cf03ed"
+                "check_needed": false
               },
               {
-                "id": "text_02_l05",
+                "id": "c99f042b-fa9a-478c-aba1-5da333a677e1",
                 "order": 5,
                 "speaker": "林老师",
                 "zh": "我也喜欢古典音乐。你喜欢流行歌曲吗？",
                 "vi": "Tôi cũng thích nhạc cổ điển. Thầy có thích ca khúc thịnh hành không?",
                 "grammar_refs": [],
                 "vocab_refs": [
-                  "vocab_035",
-                  "vocab_036"
+                  "d42d3d90-443d-45da-bed7-987b50034e92",
+                  "cfb712c9-c4ca-4314-b6b2-696b40ace25e"
                 ],
                 "pinyin": "",
                 "en": "",
                 "audio_key": "",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "14838dc2-0995-4f55-8eed-2f077293baca"
+                "check_needed": false
               },
               {
-                "id": "text_02_l06",
+                "id": "e8680b0f-6dcc-4fc7-abbd-084aba5d3b87",
                 "order": 6,
                 "speaker": "王老师",
                 "zh": "怎么说呢？可能没有你们年轻人那么喜欢。我觉得流行歌曲的歌词没有民歌写得好。",
                 "vi": "Nói thế nào nhỉ? Có lẽ không thích như người trẻ các bạn. Tôi thấy lời ca của nhạc thịnh hành không được viết hay bằng dân ca.",
                 "grammar_refs": [
-                  "grammar_05",
-                  "grammar_08",
-                  "grammar_07"
+                  "c3d31639-0f40-4b2f-aa50-5dda9d443b78",
+                  "b7073860-473c-4cb7-82ba-943917998455",
+                  "f3302370-f1c2-4d08-99ba-fda75cc4a335"
                 ],
                 "vocab_refs": [
-                  "vocab_037",
-                  "vocab_038"
+                  "6059829f-ae21-43cf-ac0c-05e19639ec43",
+                  "fefd5441-7b6c-47e3-b823-9e149b947bf7"
                 ],
                 "pinyin": "",
                 "en": "",
                 "audio_key": "",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "8711ca5a-dd5d-4237-a73c-e9c87bb0cfe6"
+                "check_needed": false
               },
               {
-                "id": "text_02_l07",
+                "id": "cc8da348-3e89-4f64-a680-de239f505497",
                 "order": 7,
                 "speaker": "林老师",
                 "zh": "有些流行歌曲的歌词写得还是不错的。",
                 "vi": "Lời của một số ca khúc thịnh hành viết vẫn khá hay đấy.",
                 "grammar_refs": [
-                  "grammar_08"
+                  "b7073860-473c-4cb7-82ba-943917998455"
                 ],
                 "vocab_refs": [
-                  "vocab_039"
+                  "27761bd2-433a-44ef-b79a-9e6f0a34b9c9"
                 ],
                 "pinyin": "",
                 "en": "",
                 "audio_key": "",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "24029c17-04c0-422b-84e9-15b78c64ef80"
+                "check_needed": false
               },
               {
-                "id": "text_02_l08",
+                "id": "2adb7cf6-26c1-4029-809e-67342fb0227f",
                 "order": 8,
                 "speaker": "王老师",
                 "zh": "可是，我还是觉得民歌的歌词好。你听咱们的民歌，“在那遥远的地方……”，写得多好！",
                 "vi": "Nhưng tôi vẫn thấy lời dân ca hay hơn. Cô nghe bài dân ca của chúng ta đi, “Ở nơi xa xôi ấy…”, viết hay biết bao!",
                 "grammar_refs": [
-                  "grammar_09"
+                  "3253aaee-3b06-4864-9b11-98c656764ed4"
                 ],
                 "vocab_refs": [
-                  "vocab_040"
+                  "861ed325-b320-4ae0-8eac-bb6bb8ebc215"
                 ],
                 "pinyin": "",
                 "en": "",
                 "audio_key": "",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "1d1aab8a-23a3-4afc-85c5-7a149ebbfbb3"
+                "check_needed": false
               }
-            ],
-            "uuid": "59391f8c-d2e9-4abf-be0b-5d0277823311"
+            ]
           }
-        ],
-        "uuid": "435d9ec9-36ac-4f11-9295-ae8a3c4fbda4"
+        ]
       },
       {
-        "id": "section_02_vocabulary",
+        "id": "78c30bf4-c314-4c4c-86e3-4dd62382dd78",
         "type": "vocabulary",
         "order": 2,
         "title": "生词",
@@ -505,14 +434,14 @@
         "check_needed": false,
         "items": [
           {
-            "id": "vocab_001",
+            "id": "68c05a12-9d8e-45d9-a413-786bcf2f780a",
             "type": "vocabulary_item",
             "order": 1,
             "hanzi": "变化",
             "pinyin": "biànhuà",
             "meaning_vi": "biến hóa; thay đổi",
             "meaning_en": "change; change",
-            "pos": "noun",
+            "pos": "unknown",
             "tags": [
               "main_vocab"
             ],
@@ -529,18 +458,17 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "d4957722-d772-4105-ab0a-0e53f2824951"
+            "check_needed": false
           },
           {
-            "id": "vocab_002",
+            "id": "8c18cf3c-e9dc-42e1-8faf-eb26799cabab",
             "type": "vocabulary_item",
             "order": 2,
             "hanzi": "变",
             "pinyin": "biàn",
             "meaning_vi": "biến đổi; trở nên khác",
             "meaning_en": "to change",
-            "pos": "verb",
+            "pos": "unknown",
             "tags": [
               "main_vocab"
             ],
@@ -557,18 +485,17 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "cee210b2-4d5f-4c20-8e0e-6d95107d603b"
+            "check_needed": false
           },
           {
-            "id": "vocab_003",
+            "id": "1fbd69b7-603a-44ea-8d57-10cd4def9ced",
             "type": "vocabulary_item",
             "order": 3,
             "hanzi": "暑假",
             "pinyin": "shǔjià",
             "meaning_vi": "nghỉ hè",
             "meaning_en": "summer vacation",
-            "pos": "noun",
+            "pos": "unknown",
             "tags": [
               "main_vocab"
             ],
@@ -585,18 +512,17 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "cec75849-52b4-44be-baa6-283b39d083af"
+            "check_needed": false
           },
           {
-            "id": "vocab_004",
+            "id": "3dc505f1-bc0e-4a96-b448-17fed89fdc60",
             "type": "vocabulary_item",
             "order": 4,
             "hanzi": "还",
             "pinyin": "hái",
             "meaning_vi": "còn; vẫn; lại còn",
             "meaning_en": "still; also",
-            "pos": "adverb",
+            "pos": "unknown",
             "tags": [
               "main_vocab"
             ],
@@ -613,18 +539,17 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "bc98b8b6-81ae-4648-95fe-5166ab4c66b0"
+            "check_needed": false
           },
           {
-            "id": "vocab_005",
+            "id": "188412d4-4c23-4d60-b7b2-21f3490199e7",
             "type": "vocabulary_item",
             "order": 5,
             "hanzi": "比",
             "pinyin": "bǐ",
             "meaning_vi": "so với; hơn",
             "meaning_en": "comparison word",
-            "pos": "preposition",
+            "pos": "unknown",
             "tags": [
               "main_vocab"
             ],
@@ -641,18 +566,17 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "35ce31c1-44ec-4551-8fa6-8601bcb598b6"
+            "check_needed": false
           },
           {
-            "id": "vocab_006",
+            "id": "5ea44727-d97c-467b-b1b8-babd195df50d",
             "type": "vocabulary_item",
             "order": 6,
             "hanzi": "人口",
             "pinyin": "rénkǒu",
             "meaning_vi": "dân số",
             "meaning_en": "population",
-            "pos": "noun",
+            "pos": "unknown",
             "tags": [
               "main_vocab"
             ],
@@ -669,18 +593,17 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "3bc9b982-5d45-41da-9ebb-fd6ec97cc426"
+            "check_needed": false
           },
           {
-            "id": "vocab_007",
+            "id": "54613016-834a-4fc3-9912-2357a6d27058",
             "type": "vocabulary_item",
             "order": 7,
             "hanzi": "最",
             "pinyin": "zuì",
             "meaning_vi": "nhất",
             "meaning_en": "most",
-            "pos": "adverb",
+            "pos": "unknown",
             "tags": [
               "main_vocab"
             ],
@@ -697,18 +620,17 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "2461e47e-eebb-4d45-a7bc-fddfcb977154"
+            "check_needed": false
           },
           {
-            "id": "vocab_008",
+            "id": "0da97406-c3ac-4fcb-a51c-398a59c3fbae",
             "type": "vocabulary_item",
             "order": 8,
             "hanzi": "城市",
             "pinyin": "chéngshì",
             "meaning_vi": "thành phố",
             "meaning_en": "city",
-            "pos": "noun",
+            "pos": "unknown",
             "tags": [
               "main_vocab"
             ],
@@ -725,18 +647,17 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "66e15db7-81da-427f-b55d-6e19242a193c"
+            "check_needed": false
           },
           {
-            "id": "vocab_009",
+            "id": "54b36889-82be-485b-8342-fb8aab572065",
             "type": "vocabulary_item",
             "order": 9,
             "hanzi": "增加",
             "pinyin": "zēngjiā",
             "meaning_vi": "tăng thêm; gia tăng",
             "meaning_en": "to increase",
-            "pos": "verb",
+            "pos": "unknown",
             "tags": [
               "main_vocab"
             ],
@@ -753,18 +674,17 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "4e364da3-80af-46fe-95ca-d42706f600b4"
+            "check_needed": false
           },
           {
-            "id": "vocab_010",
+            "id": "1354b1a3-93cc-4505-8d7f-c5550a1d6ae9",
             "type": "vocabulary_item",
             "order": 10,
             "hanzi": "建筑",
             "pinyin": "jiànzhù",
             "meaning_vi": "kiến trúc; công trình kiến trúc; xây dựng",
             "meaning_en": "architecture; building; to construct",
-            "pos": "noun",
+            "pos": "unknown",
             "tags": [
               "main_vocab"
             ],
@@ -781,18 +701,17 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "87a034d9-2d9a-42fa-8eff-3dad1a11d301"
+            "check_needed": false
           },
           {
-            "id": "vocab_011",
+            "id": "f0684cb3-4577-4e6c-9f22-7d97c89692b3",
             "type": "vocabulary_item",
             "order": 11,
             "hanzi": "过去",
             "pinyin": "guòqù",
             "meaning_vi": "trước đây; quá khứ",
             "meaning_en": "past; formerly",
-            "pos": "noun",
+            "pos": "unknown",
             "tags": [
               "main_vocab"
             ],
@@ -809,18 +728,17 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "923783c7-1614-4ca2-87d5-4e4260cf1a08"
+            "check_needed": false
           },
           {
-            "id": "vocab_012",
+            "id": "d5b362a7-c8f6-4f25-b2b5-0f1749c8afbb",
             "type": "vocabulary_item",
             "order": 12,
             "hanzi": "更",
             "pinyin": "gèng",
             "meaning_vi": "càng; hơn nữa",
             "meaning_en": "even more",
-            "pos": "adverb",
+            "pos": "unknown",
             "tags": [
               "main_vocab"
             ],
@@ -837,18 +755,17 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "306db03e-7e10-4a62-b485-7776f14a56a1"
+            "check_needed": false
           },
           {
-            "id": "vocab_013",
+            "id": "7eccd5e8-dac0-4f36-be2e-abcc0a2bdfcd",
             "type": "vocabulary_item",
             "order": 13,
             "hanzi": "漂亮",
             "pinyin": "piàoliang",
             "meaning_vi": "đẹp",
             "meaning_en": "beautiful",
-            "pos": "adjective",
+            "pos": "unknown",
             "tags": [
               "main_vocab"
             ],
@@ -865,18 +782,17 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "0c549ec4-2737-4aeb-aee2-3a17933cb58f"
+            "check_needed": false
           },
           {
-            "id": "vocab_014",
+            "id": "91fa9f81-e5ef-4c4a-b29c-c4b6daa02196",
             "type": "vocabulary_item",
             "order": 14,
             "hanzi": "冬",
             "pinyin": "dōng",
             "meaning_vi": "mùa đông; đông",
             "meaning_en": "winter",
-            "pos": "noun",
+            "pos": "unknown",
             "tags": [
               "main_vocab"
             ],
@@ -893,18 +809,17 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "1c8100ff-bc25-4e6d-a16b-8d2fd6ebe8f5"
+            "check_needed": false
           },
           {
-            "id": "vocab_015",
+            "id": "8a5b1d09-23a6-4182-96e6-9bf4d761a1e1",
             "type": "vocabulary_item",
             "order": 15,
             "hanzi": "可是",
             "pinyin": "kěshì",
             "meaning_vi": "nhưng; thế nhưng",
             "meaning_en": "but",
-            "pos": "conjunction",
+            "pos": "unknown",
             "tags": [
               "main_vocab"
             ],
@@ -921,18 +836,17 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "86ab8b6f-4639-4c6e-ae72-3f804d17e534"
+            "check_needed": false
           },
           {
-            "id": "vocab_016",
+            "id": "be7a835d-ff8f-4a86-9fd8-27c5f1093f0c",
             "type": "vocabulary_item",
             "order": 16,
             "hanzi": "天气",
             "pinyin": "tiānqì",
             "meaning_vi": "thời tiết",
             "meaning_en": "weather",
-            "pos": "noun",
+            "pos": "unknown",
             "tags": [
               "main_vocab"
             ],
@@ -949,18 +863,17 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "720c30ed-5843-4c38-82e2-a41db37dc543"
+            "check_needed": false
           },
           {
-            "id": "vocab_017",
+            "id": "7a89dc80-d79d-4c2f-988c-d0f54e240d19",
             "type": "vocabulary_item",
             "order": 17,
             "hanzi": "预报",
             "pinyin": "yùbào",
             "meaning_vi": "dự báo",
             "meaning_en": "forecast",
-            "pos": "verb",
+            "pos": "unknown",
             "tags": [
               "main_vocab"
             ],
@@ -977,18 +890,17 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "61f13f8d-6264-4e8d-9d51-7035f1531a60"
+            "check_needed": false
           },
           {
-            "id": "vocab_018",
+            "id": "ff3e1818-66a9-4532-880b-02c9cacb0e5b",
             "type": "vocabulary_item",
             "order": 18,
             "hanzi": "高",
             "pinyin": "gāo",
             "meaning_vi": "cao",
             "meaning_en": "high; tall",
-            "pos": "adjective",
+            "pos": "unknown",
             "tags": [
               "main_vocab"
             ],
@@ -1005,18 +917,17 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "3f9be074-acd8-4746-bef3-957104f37cbd"
+            "check_needed": false
           },
           {
-            "id": "vocab_019",
+            "id": "0125bdae-fe4e-48fb-8264-145e95c75933",
             "type": "vocabulary_item",
             "order": 19,
             "hanzi": "度",
             "pinyin": "dù",
             "meaning_vi": "độ; mức độ",
             "meaning_en": "degree",
-            "pos": "noun",
+            "pos": "unknown",
             "tags": [
               "main_vocab"
             ],
@@ -1033,18 +944,17 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "c860aa12-41fc-4fcc-a478-2e85b2514612"
+            "check_needed": false
           },
           {
-            "id": "vocab_020",
+            "id": "689eb64b-5d4f-469f-9afa-74017d399614",
             "type": "vocabulary_item",
             "order": 20,
             "hanzi": "低",
             "pinyin": "dī",
             "meaning_vi": "thấp",
             "meaning_en": "low",
-            "pos": "adjective",
+            "pos": "unknown",
             "tags": [
               "main_vocab"
             ],
@@ -1061,18 +971,17 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "81085409-4faf-4640-ab18-65184ccdeec9"
+            "check_needed": false
           },
           {
-            "id": "vocab_021",
+            "id": "d45d5488-9293-41ae-9deb-1e5b51cee446",
             "type": "vocabulary_item",
             "order": 21,
             "hanzi": "暖气",
             "pinyin": "nuǎnqì",
             "meaning_vi": "hệ thống sưởi; hơi ấm sưởi",
             "meaning_en": "heating",
-            "pos": "noun",
+            "pos": "unknown",
             "tags": [
               "main_vocab"
             ],
@@ -1089,18 +998,17 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "b97f89aa-0b7a-42d3-a931-3b412b4d34e5"
+            "check_needed": false
           },
           {
-            "id": "vocab_022",
+            "id": "c99a633b-27a2-429b-a139-44113a84c189",
             "type": "vocabulary_item",
             "order": 22,
             "hanzi": "感觉",
             "pinyin": "gǎnjué",
             "meaning_vi": "cảm giác; cảm thấy",
             "meaning_en": "to feel; feeling",
-            "pos": "noun",
+            "pos": "unknown",
             "tags": [
               "main_vocab"
             ],
@@ -1117,18 +1025,17 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "ea80e8c5-b773-4d64-9c30-8cffff118131"
+            "check_needed": false
           },
           {
-            "id": "vocab_023",
+            "id": "79358c6f-3427-4c28-98f3-7ef98c7033c3",
             "type": "vocabulary_item",
             "order": 23,
             "hanzi": "旅馆",
             "pinyin": "lǚguǎn",
             "meaning_vi": "khách sạn; nhà trọ",
             "meaning_en": "hotel",
-            "pos": "noun",
+            "pos": "unknown",
             "tags": [
               "main_vocab"
             ],
@@ -1145,18 +1052,17 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "69a20543-249b-4da7-940f-7f71e69abdf0"
+            "check_needed": false
           },
           {
-            "id": "vocab_024",
+            "id": "dc0f8e06-a359-4907-a8d8-fc9b02260590",
             "type": "vocabulary_item",
             "order": 24,
             "hanzi": "迷",
             "pinyin": "mí",
             "meaning_vi": "người mê; fan; mê",
             "meaning_en": "fan; enthusiast",
-            "pos": "noun",
+            "pos": "unknown",
             "tags": [
               "main_vocab"
             ],
@@ -1173,18 +1079,17 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "685bcbd0-2be3-47e0-ae0d-c7e146394af5"
+            "check_needed": false
           },
           {
-            "id": "vocab_025",
+            "id": "c43cedbf-7024-4ec1-922f-e75119114baf",
             "type": "vocabulary_item",
             "order": 25,
             "hanzi": "光",
             "pinyin": "guāng",
             "meaning_vi": "chỉ riêng; chỉ có",
             "meaning_en": "only; just",
-            "pos": "adverb",
+            "pos": "unknown",
             "tags": [
               "main_vocab"
             ],
@@ -1201,18 +1106,17 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "21f13d93-7a37-4016-b0f2-50da92542dcc"
+            "check_needed": false
           },
           {
-            "id": "vocab_026",
+            "id": "d9991c79-3454-4247-bf18-f14f43b4a24a",
             "type": "vocabulary_item",
             "order": 26,
             "hanzi": "交响乐",
             "pinyin": "jiāoxiǎngyuè",
             "meaning_vi": "nhạc giao hưởng",
             "meaning_en": "symphony",
-            "pos": "noun",
+            "pos": "unknown",
             "tags": [
               "main_vocab"
             ],
@@ -1229,18 +1133,17 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "facfdd27-2268-4085-a1ed-8da50a2f0781"
+            "check_needed": false
           },
           {
-            "id": "vocab_027",
+            "id": "55cd807c-eec7-412d-99db-f4e6508b170f",
             "type": "vocabulary_item",
             "order": 27,
             "hanzi": "下载",
             "pinyin": "xiàzài",
             "meaning_vi": "tải xuống; download",
             "meaning_en": "to download",
-            "pos": "verb",
+            "pos": "unknown",
             "tags": [
               "main_vocab"
             ],
@@ -1257,18 +1160,17 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "080a51fb-28c4-4d12-96f5-45d4840066fa"
+            "check_needed": false
           },
           {
-            "id": "vocab_028",
+            "id": "085e60d5-dd1c-4585-ac6b-0f1db0ded936",
             "type": "vocabulary_item",
             "order": 28,
             "hanzi": "首",
             "pinyin": "shǒu",
             "meaning_vi": "lượng từ cho bài hát / bài thơ",
             "meaning_en": "measure word for songs/poems",
-            "pos": "noun",
+            "pos": "unknown",
             "tags": [
               "main_vocab"
             ],
@@ -1285,18 +1187,17 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "3a124054-f7a0-4e2c-ba03-97e923cf2ea0"
+            "check_needed": false
           },
           {
-            "id": "vocab_029",
+            "id": "ba7ff0f9-b633-4516-ab3d-22b96046a1cf",
             "type": "vocabulary_item",
             "order": 29,
             "hanzi": "也许",
             "pinyin": "yěxǔ",
             "meaning_vi": "có lẽ; biết đâu",
             "meaning_en": "perhaps",
-            "pos": "adverb",
+            "pos": "unknown",
             "tags": [
               "main_vocab"
             ],
@@ -1313,18 +1214,17 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "ef7c51db-8a30-47c0-a982-0b5f44cfeac7"
+            "check_needed": false
           },
           {
-            "id": "vocab_030",
+            "id": "2185ee67-885d-4ffb-83e2-e97be4070796",
             "type": "vocabulary_item",
             "order": 30,
             "hanzi": "现代",
             "pinyin": "xiàndài",
             "meaning_vi": "hiện đại",
             "meaning_en": "modern",
-            "pos": "noun",
+            "pos": "unknown",
             "tags": [
               "main_vocab"
             ],
@@ -1341,18 +1241,17 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "79506517-0e04-4729-add9-db8bc7bdd309"
+            "check_needed": false
           },
           {
-            "id": "vocab_031",
+            "id": "092a8c16-3739-4685-a4c0-39365071bd48",
             "type": "vocabulary_item",
             "order": 31,
             "hanzi": "代",
             "pinyin": "dài",
             "meaning_vi": "đời; thế hệ; thời đại",
             "meaning_en": "generation; era",
-            "pos": "noun",
+            "pos": "unknown",
             "tags": [
               "main_vocab"
             ],
@@ -1369,18 +1268,17 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "9331175a-2cf3-4545-a5af-3eb6edd2f358"
+            "check_needed": false
           },
           {
-            "id": "vocab_032",
+            "id": "22e66ee9-565e-4670-b2ac-4d5a9b500b38",
             "type": "vocabulary_item",
             "order": 32,
             "hanzi": "世界",
             "pinyin": "shìjiè",
             "meaning_vi": "thế giới",
             "meaning_en": "world",
-            "pos": "noun",
+            "pos": "unknown",
             "tags": [
               "main_vocab"
             ],
@@ -1397,18 +1295,17 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "18c0cee1-b7e6-475f-a2c8-3f381619c7c3"
+            "check_needed": false
           },
           {
-            "id": "vocab_033",
+            "id": "275b46f4-3166-48b7-9766-58384178d1be",
             "type": "vocabulary_item",
             "order": 33,
             "hanzi": "名曲",
             "pinyin": "míngqǔ",
             "meaning_vi": "danh khúc; bản nhạc nổi tiếng",
             "meaning_en": "famous music piece",
-            "pos": "noun",
+            "pos": "unknown",
             "tags": [
               "main_vocab"
             ],
@@ -1425,18 +1322,17 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "8e8f67cf-97fe-4d21-9268-a9c061178dc7"
+            "check_needed": false
           },
           {
-            "id": "vocab_034",
+            "id": "1190511f-5970-4304-8f84-d7201b287aeb",
             "type": "vocabulary_item",
             "order": 34,
             "hanzi": "民歌",
             "pinyin": "míngē",
             "meaning_vi": "dân ca",
             "meaning_en": "folk song",
-            "pos": "noun",
+            "pos": "unknown",
             "tags": [
               "main_vocab"
             ],
@@ -1453,18 +1349,17 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "6e422915-7435-4c7b-b5f2-dd6e61dbdb76"
+            "check_needed": false
           },
           {
-            "id": "vocab_035",
+            "id": "d42d3d90-443d-45da-bed7-987b50034e92",
             "type": "vocabulary_item",
             "order": 35,
             "hanzi": "流行",
             "pinyin": "liúxíng",
             "meaning_vi": "thịnh hành; phổ biến",
             "meaning_en": "popular; fashionable",
-            "pos": "verb",
+            "pos": "unknown",
             "tags": [
               "main_vocab"
             ],
@@ -1481,18 +1376,17 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "ed9f9fd8-5936-4815-a2a6-c6f641df4fa9"
+            "check_needed": false
           },
           {
-            "id": "vocab_036",
+            "id": "cfb712c9-c4ca-4314-b6b2-696b40ace25e",
             "type": "vocabulary_item",
             "order": 36,
             "hanzi": "歌曲",
             "pinyin": "gēqǔ",
             "meaning_vi": "ca khúc; bài hát",
             "meaning_en": "song",
-            "pos": "noun",
+            "pos": "unknown",
             "tags": [
               "main_vocab"
             ],
@@ -1509,18 +1403,17 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "fa71731d-a10a-4664-b04c-d18744d27972"
+            "check_needed": false
           },
           {
-            "id": "vocab_037",
+            "id": "6059829f-ae21-43cf-ac0c-05e19639ec43",
             "type": "vocabulary_item",
             "order": 37,
             "hanzi": "年轻",
             "pinyin": "niánqīng",
             "meaning_vi": "trẻ; trẻ tuổi",
             "meaning_en": "young",
-            "pos": "adjective",
+            "pos": "unknown",
             "tags": [
               "main_vocab"
             ],
@@ -1537,18 +1430,17 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "7a85f6db-7a52-40b6-b9a6-5353fdcdd27f"
+            "check_needed": false
           },
           {
-            "id": "vocab_038",
+            "id": "fefd5441-7b6c-47e3-b823-9e149b947bf7",
             "type": "vocabulary_item",
             "order": 38,
             "hanzi": "歌词",
             "pinyin": "gēcí",
             "meaning_vi": "lời bài hát",
             "meaning_en": "lyrics",
-            "pos": "noun",
+            "pos": "unknown",
             "tags": [
               "main_vocab"
             ],
@@ -1565,18 +1457,17 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "7422ec2f-fb43-48ec-8aa0-5fd704bd67b3"
+            "check_needed": false
           },
           {
-            "id": "vocab_039",
+            "id": "27761bd2-433a-44ef-b79a-9e6f0a34b9c9",
             "type": "vocabulary_item",
             "order": 39,
             "hanzi": "有些",
             "pinyin": "yǒuxiē",
             "meaning_vi": "có một số; hơi; phần nào",
             "meaning_en": "some; somewhat",
-            "pos": "pronoun",
+            "pos": "unknown",
             "tags": [
               "main_vocab"
             ],
@@ -1593,18 +1484,17 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "93a3422c-a397-44b8-b56f-41b849e6a13a"
+            "check_needed": false
           },
           {
-            "id": "vocab_040",
+            "id": "861ed325-b320-4ae0-8eac-bb6bb8ebc215",
             "type": "vocabulary_item",
             "order": 40,
             "hanzi": "遥远",
             "pinyin": "yáoyuǎn",
             "meaning_vi": "xa xôi",
             "meaning_en": "distant",
-            "pos": "adjective",
+            "pos": "unknown",
             "tags": [
               "main_vocab"
             ],
@@ -1621,14 +1511,12 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "4d628d76-1035-4e61-be35-d0f51d89e55a"
+            "check_needed": false
           }
-        ],
-        "uuid": "72918bd1-cd7d-4b97-89c7-7bac4f8eab41"
+        ]
       },
       {
-        "id": "section_03_proper_nouns",
+        "id": "3c5ee48e-5d44-44ac-bd53-cac996a83338",
         "type": "proper_nouns",
         "order": 3,
         "title": "专名",
@@ -1637,7 +1525,7 @@
         "check_needed": false,
         "items": [
           {
-            "id": "proper_001",
+            "id": "070690f6-fd26-41df-ab28-f5031668ed3e",
             "type": "proper_noun",
             "order": 1,
             "hanzi": "上海",
@@ -1645,14 +1533,12 @@
             "meaning_vi": "Thượng Hải",
             "meaning_en": "Shanghai",
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "2adf95fc-8fce-4d03-a771-0d83ccb336d9"
+            "check_needed": false
           }
-        ],
-        "uuid": "d8b00adc-6740-4e62-a36c-53b0ac4532fd"
+        ]
       },
       {
-        "id": "section_04_notes",
+        "id": "c18e9f54-6da1-4496-886b-c2c722605678",
         "type": "notes",
         "order": 4,
         "title": "注释",
@@ -1661,7 +1547,7 @@
         "check_needed": false,
         "items": [
           {
-            "id": "note_01",
+            "id": "63d654f5-4561-4d48-a144-bacbf9671dfc",
             "type": "note",
             "order": 1,
             "title": "这几年变化很大",
@@ -1669,7 +1555,7 @@
             "meaning_vi": "“这几年” nghĩa là mấy năm gần đây; “几” ở đây chỉ số ước lượng nhỏ, không phải câu hỏi.",
             "examples": [
               {
-                "id": "note_01_ex01",
+                "id": "021014f3-ff12-43b6-9d12-352cb6dc863b",
                 "zh": "这几年变化很大。",
                 "pinyin": "",
                 "vi": "Mấy năm gần đây thay đổi rất lớn.",
@@ -1681,17 +1567,15 @@
                 "note_vi": "",
                 "audio_key": "",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "f3eb0ed0-e7c9-4542-9956-e76473798be1"
+                "check_needed": false
               }
             ],
             "source_refs": [],
             "source_origin": "textbook/generated_mixed",
-            "check_needed": false,
-            "uuid": "f22a42c8-4129-4942-9c7d-b2c47101bf25"
+            "check_needed": false
           },
           {
-            "id": "note_02",
+            "id": "7e2ee128-4fbd-4a93-898c-5f5fd99b371b",
             "type": "note",
             "order": 2,
             "title": "上海的气温比北京高得多",
@@ -1699,7 +1583,7 @@
             "meaning_vi": "“得多” đặt sau tính từ trong câu so sánh để nói mức chênh lệch lớn.",
             "examples": [
               {
-                "id": "note_02_ex01",
+                "id": "29279e2c-cb63-4437-bbc5-7c46c15b6f13",
                 "zh": "上海的气温比北京高得多。",
                 "pinyin": "",
                 "vi": "Nhiệt độ Thượng Hải cao hơn Bắc Kinh nhiều.",
@@ -1711,17 +1595,15 @@
                 "note_vi": "",
                 "audio_key": "",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "d8ed559a-8116-4b4f-b8bb-67f691735a74"
+                "check_needed": false
               }
             ],
             "source_refs": [],
             "source_origin": "textbook/generated_mixed",
-            "check_needed": false,
-            "uuid": "065fdf35-7e0f-4471-b38c-56493f87551e"
+            "check_needed": false
           },
           {
-            "id": "note_03",
+            "id": "bf5e90df-dc03-4600-a2d2-426ab562c9a5",
             "type": "note",
             "order": 3,
             "title": "怎么说呢？",
@@ -1729,7 +1611,7 @@
             "meaning_vi": "Câu đệm khi người nói cần nghĩ hoặc muốn nói khéo trước khi nêu ý kiến.",
             "examples": [
               {
-                "id": "note_03_ex01",
+                "id": "3bb13249-7132-47f4-b974-8144c96f3e29",
                 "zh": "怎么说呢？可能没有你们年轻人那么喜欢。",
                 "pinyin": "",
                 "vi": "Nói thế nào nhỉ? Có lẽ tôi không thích như người trẻ các bạn.",
@@ -1741,20 +1623,17 @@
                 "note_vi": "",
                 "audio_key": "",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "0dd836e8-2f52-42ca-9c04-ed16c683879c"
+                "check_needed": false
               }
             ],
             "source_refs": [],
             "source_origin": "textbook/generated_mixed",
-            "check_needed": false,
-            "uuid": "ec11d237-3e12-4c62-9b7c-4c56f00c8280"
+            "check_needed": false
           }
-        ],
-        "uuid": "a8d4a99d-c160-42fb-9674-a6300574f570"
+        ]
       },
       {
-        "id": "section_05_grammar",
+        "id": "b045e537-7383-494b-8d61-b0286977ed80",
         "type": "grammar",
         "order": 5,
         "title": "语法 / 词语用法",
@@ -1763,7 +1642,7 @@
         "check_needed": false,
         "items": [
           {
-            "id": "grammar_01",
+            "id": "f8ec59f3-898a-47b2-b536-44dfd8183393",
             "type": "grammar_point",
             "order": 1,
             "title": "比较句：A 比 B + 形容词",
@@ -1777,53 +1656,50 @@
             "check_needed": false,
             "blocks": [
               {
-                "id": "grammar_01_overview",
+                "id": "b7c5d870-2db8-4e2e-950f-f0e6e522ac16",
                 "type": "grammar_overview",
                 "order": 1,
                 "title": "Bản chất",
                 "content_vi": "比 đặt hai đối tượng lên cùng một trục so sánh rồi nói A hơn B ở điểm nào.",
                 "examples": [
                   {
-                    "id": "grammar_01_ex01",
+                    "id": "c6fbeb40-156e-450c-a390-d58626cae49e",
                     "zh": "飞机比汽车快。",
                     "pinyin": "",
                     "vi": "Máy bay nhanh hơn ô tô.",
                     "en": "",
                     "highlight": [],
                     "grammar_refs": [
-                      "grammar_01"
+                      "f8ec59f3-898a-47b2-b536-44dfd8183393"
                     ],
                     "vocab_refs": [],
                     "source_ref": "",
                     "note_vi": "",
                     "audio_key": "",
                     "source_origin": "textbook/generated_mixed",
-                    "check_needed": false,
-                    "uuid": "44ff3c21-3143-4871-addd-7696661a212e"
+                    "check_needed": false
                   },
                   {
-                    "id": "grammar_01_ex02",
+                    "id": "d5b13929-16ec-4967-ac8a-868d80ec0b1e",
                     "zh": "上海的气温比北京高得多。",
                     "pinyin": "",
                     "vi": "Nhiệt độ Thượng Hải cao hơn Bắc Kinh nhiều.",
                     "en": "",
                     "highlight": [],
                     "grammar_refs": [
-                      "grammar_01"
+                      "f8ec59f3-898a-47b2-b536-44dfd8183393"
                     ],
                     "vocab_refs": [],
                     "source_ref": "",
                     "note_vi": "",
                     "audio_key": "",
                     "source_origin": "textbook/generated_mixed",
-                    "check_needed": false,
-                    "uuid": "deb1b885-e6f1-458e-b917-c2094c8a9c04"
+                    "check_needed": false
                   }
-                ],
-                "uuid": "c1d18fc6-b7af-4890-b103-950a888a9dde"
+                ]
               },
               {
-                "id": "grammar_01_structure",
+                "id": "b3534a40-3bab-464a-97dd-67889b8bcb7b",
                 "type": "grammar_structure",
                 "order": 2,
                 "title": "Cấu trúc chính",
@@ -1837,31 +1713,28 @@
                 ],
                 "examples": [
                   {
-                    "id": "grammar_01_ex03",
+                    "id": "50b5e564-92c8-4900-b66a-00f5bfca9437",
                     "zh": "西瓜比苹果大。",
                     "pinyin": "",
                     "vi": "Dưa hấu to hơn táo.",
                     "en": "",
                     "highlight": [],
                     "grammar_refs": [
-                      "grammar_01"
+                      "f8ec59f3-898a-47b2-b536-44dfd8183393"
                     ],
                     "vocab_refs": [],
                     "source_ref": "",
                     "note_vi": "",
                     "audio_key": "",
                     "source_origin": "textbook/generated_mixed",
-                    "check_needed": false,
-                    "uuid": "a4d87801-db47-4b75-b2f4-d2f915f61886"
+                    "check_needed": false
                   }
-                ],
-                "uuid": "81e589cc-c93b-496e-a9df-b074a269c77c"
+                ]
               }
-            ],
-            "uuid": "a28e98bf-4208-4db3-a907-ffb3bb91c625"
+            ]
           },
           {
-            "id": "grammar_02",
+            "id": "57b14753-688a-41b6-9e0d-b61dbbf574d7",
             "type": "grammar_point",
             "order": 2,
             "title": "更",
@@ -1875,56 +1748,52 @@
             "check_needed": false,
             "blocks": [
               {
-                "id": "grammar_02_overview",
+                "id": "470b1ca1-e0a1-449f-b55e-a8aa481a4dd4",
                 "type": "grammar_overview",
                 "order": 1,
                 "title": "Bản chất",
                 "content_vi": "更 nhấn mạnh mức độ “hơn nữa / càng hơn”, thường đứng trước tính từ hoặc động từ tâm lý trong ngữ cảnh so sánh.",
                 "examples": [
                   {
-                    "id": "grammar_02_ex01",
+                    "id": "771ce2b4-8b49-4b48-be3a-e887eb2024df",
                     "zh": "我比你更喜欢音乐。",
                     "pinyin": "",
                     "vi": "Tôi thích âm nhạc hơn bạn.",
                     "en": "",
                     "highlight": [],
                     "grammar_refs": [
-                      "grammar_02"
+                      "57b14753-688a-41b6-9e0d-b61dbbf574d7"
                     ],
                     "vocab_refs": [],
                     "source_ref": "",
                     "note_vi": "",
                     "audio_key": "",
                     "source_origin": "textbook/generated_mixed",
-                    "check_needed": false,
-                    "uuid": "e248955d-a722-4007-80d8-21ad2fd66e53"
+                    "check_needed": false
                   },
                   {
-                    "id": "grammar_02_ex02",
+                    "id": "773f0eeb-9162-44a6-b2c7-d20f86c5bf5f",
                     "zh": "现在比过去变得更漂亮了。",
                     "pinyin": "",
                     "vi": "Bây giờ so với trước đã trở nên đẹp hơn rồi.",
                     "en": "",
                     "highlight": [],
                     "grammar_refs": [
-                      "grammar_02"
+                      "57b14753-688a-41b6-9e0d-b61dbbf574d7"
                     ],
                     "vocab_refs": [],
                     "source_ref": "",
                     "note_vi": "",
                     "audio_key": "",
                     "source_origin": "textbook/generated_mixed",
-                    "check_needed": false,
-                    "uuid": "a5a907d6-d7f0-4e4c-b77c-ba9ea03bba06"
+                    "check_needed": false
                   }
-                ],
-                "uuid": "97a24d21-d350-420b-b328-406268b8683b"
+                ]
               }
-            ],
-            "uuid": "c681e876-e18b-4f9f-b9f2-62e5f259aa5b"
+            ]
           },
           {
-            "id": "grammar_03",
+            "id": "fa804fff-372b-4874-8571-f54e613d7e07",
             "type": "grammar_point",
             "order": 3,
             "title": "比较句中的数量补语",
@@ -1938,7 +1807,7 @@
             "check_needed": false,
             "blocks": [
               {
-                "id": "grammar_03_structure",
+                "id": "3de2e20b-7535-4f1b-8355-4209acba1551",
                 "type": "grammar_structure",
                 "order": 1,
                 "title": "Cấu trúc",
@@ -1952,49 +1821,45 @@
                 ],
                 "examples": [
                   {
-                    "id": "grammar_03_ex01",
+                    "id": "34e0cef7-0e8a-4e66-91ff-c118178ee232",
                     "zh": "上海的气温比北京高好几度。",
                     "pinyin": "",
                     "vi": "Nhiệt độ Thượng Hải cao hơn Bắc Kinh mấy độ.",
                     "en": "",
                     "highlight": [],
                     "grammar_refs": [
-                      "grammar_03"
+                      "fa804fff-372b-4874-8571-f54e613d7e07"
                     ],
                     "vocab_refs": [],
                     "source_ref": "",
                     "note_vi": "",
                     "audio_key": "",
                     "source_origin": "textbook/generated_mixed",
-                    "check_needed": false,
-                    "uuid": "20a4d702-bbeb-48ac-b79f-4fe4ae2a5e91"
+                    "check_needed": false
                   },
                   {
-                    "id": "grammar_03_ex02",
+                    "id": "7c24a5fc-d281-4017-a211-63bd1c1f89e3",
                     "zh": "他比弟弟大两岁。",
                     "pinyin": "",
                     "vi": "Anh ấy lớn hơn em trai 2 tuổi.",
                     "en": "",
                     "highlight": [],
                     "grammar_refs": [
-                      "grammar_03"
+                      "fa804fff-372b-4874-8571-f54e613d7e07"
                     ],
                     "vocab_refs": [],
                     "source_ref": "",
                     "note_vi": "",
                     "audio_key": "",
                     "source_origin": "textbook/generated_mixed",
-                    "check_needed": false,
-                    "uuid": "5e8166f9-247c-42cb-b852-cae5bad8d466"
+                    "check_needed": false
                   }
-                ],
-                "uuid": "129198b5-82f7-4aa3-937d-510333caf21a"
+                ]
               }
-            ],
-            "uuid": "f049f754-32b8-4ff6-bf60-d69945ecc7c7"
+            ]
           },
           {
-            "id": "grammar_04",
+            "id": "c6cd6c38-22fc-4546-a398-39efe02d6c17",
             "type": "grammar_point",
             "order": 4,
             "title": "没有 trong phủ định so sánh",
@@ -2009,7 +1874,7 @@
             "check_needed": false,
             "blocks": [
               {
-                "id": "grammar_04_structure",
+                "id": "3ecf1989-24b0-4088-8831-c92b1fd6d541",
                 "type": "grammar_structure",
                 "order": 1,
                 "title": "Cấu trúc",
@@ -2017,46 +1882,43 @@
                 "meaning_vi": "A không bằng B về tính chất nào đó.",
                 "examples": [
                   {
-                    "id": "grammar_04_ex01",
+                    "id": "abb3af48-9bf2-410c-899c-ffd83c7d12ee",
                     "zh": "上海没有北京大。",
                     "pinyin": "",
                     "vi": "Thượng Hải không lớn bằng Bắc Kinh.",
                     "en": "",
                     "highlight": [],
                     "grammar_refs": [
-                      "grammar_04"
+                      "c6cd6c38-22fc-4546-a398-39efe02d6c17"
                     ],
                     "vocab_refs": [],
                     "source_ref": "",
                     "note_vi": "",
                     "audio_key": "",
                     "source_origin": "textbook/generated_mixed",
-                    "check_needed": false,
-                    "uuid": "81724689-64b4-4b24-809f-0900c0e97df1"
+                    "check_needed": false
                   },
                   {
-                    "id": "grammar_04_ex02",
+                    "id": "2a29aedf-6b97-40ed-8a7d-a80bc62a8a4a",
                     "zh": "火车没有飞机快。",
                     "pinyin": "",
                     "vi": "Tàu hỏa không nhanh bằng máy bay.",
                     "en": "",
                     "highlight": [],
                     "grammar_refs": [
-                      "grammar_04"
+                      "c6cd6c38-22fc-4546-a398-39efe02d6c17"
                     ],
                     "vocab_refs": [],
                     "source_ref": "",
                     "note_vi": "",
                     "audio_key": "",
                     "source_origin": "textbook/generated_mixed",
-                    "check_needed": false,
-                    "uuid": "4e06cbaa-d431-46b4-b7cd-6949f4307436"
+                    "check_needed": false
                   }
-                ],
-                "uuid": "183b38b0-f604-4d99-89d5-a8fb86bc0d32"
+                ]
               },
               {
-                "id": "grammar_04_usage",
+                "id": "7a188f50-c617-4e96-9c47-0d97fdf96624",
                 "type": "grammar_usage_notes",
                 "order": 2,
                 "title": "Lưu ý 不比",
@@ -2065,31 +1927,28 @@
                 ],
                 "examples": [
                   {
-                    "id": "grammar_04_ex03",
+                    "id": "8288a918-6f9b-494b-a233-412682661258",
                     "zh": "我不比他高。我们俩差不多高。",
                     "pinyin": "",
                     "vi": "Tôi đâu có cao hơn anh ấy. Hai chúng tôi cao gần như nhau.",
                     "en": "",
                     "highlight": [],
                     "grammar_refs": [
-                      "grammar_04"
+                      "c6cd6c38-22fc-4546-a398-39efe02d6c17"
                     ],
                     "vocab_refs": [],
                     "source_ref": "",
                     "note_vi": "",
                     "audio_key": "",
                     "source_origin": "textbook/generated_mixed",
-                    "check_needed": false,
-                    "uuid": "2cb18a7c-847d-42cc-b346-241d31af94ae"
+                    "check_needed": false
                   }
-                ],
-                "uuid": "cffc5b04-38cc-4827-898c-d609581e31af"
+                ]
               }
-            ],
-            "uuid": "440b172f-e8d7-400c-b985-d907752f1fc0"
+            ]
           },
           {
-            "id": "grammar_05",
+            "id": "c3d31639-0f40-4b2f-aa50-5dda9d443b78",
             "type": "grammar_point",
             "order": 5,
             "title": "有 / 没有……这么 / 那么……",
@@ -2103,7 +1962,7 @@
             "check_needed": false,
             "blocks": [
               {
-                "id": "grammar_05_structure",
+                "id": "b7be4295-e408-4edd-882f-3fff358754f0",
                 "type": "grammar_structure",
                 "order": 1,
                 "title": "Cấu trúc",
@@ -2111,49 +1970,45 @@
                 "meaning_vi": "A có / không có mức độ như B.",
                 "examples": [
                   {
-                    "id": "grammar_05_ex01",
+                    "id": "6bf266cb-265d-4e6d-9c03-ff8d7f47ff9a",
                     "zh": "她没有我这么高。",
                     "pinyin": "",
                     "vi": "Cô ấy không cao bằng tôi.",
                     "en": "",
                     "highlight": [],
                     "grammar_refs": [
-                      "grammar_05"
+                      "c3d31639-0f40-4b2f-aa50-5dda9d443b78"
                     ],
                     "vocab_refs": [],
                     "source_ref": "",
                     "note_vi": "",
                     "audio_key": "",
                     "source_origin": "textbook/generated_mixed",
-                    "check_needed": false,
-                    "uuid": "febd9533-366a-4212-a1bb-30bd65460059"
+                    "check_needed": false
                   },
                   {
-                    "id": "grammar_05_ex02",
+                    "id": "8775efc2-08d3-431f-ba3d-04de4aa5337e",
                     "zh": "上海的公园也没有北京的公园这么大。",
                     "pinyin": "",
                     "vi": "Công viên Thượng Hải cũng không lớn như công viên Bắc Kinh.",
                     "en": "",
                     "highlight": [],
                     "grammar_refs": [
-                      "grammar_05"
+                      "c3d31639-0f40-4b2f-aa50-5dda9d443b78"
                     ],
                     "vocab_refs": [],
                     "source_ref": "",
                     "note_vi": "",
                     "audio_key": "",
                     "source_origin": "textbook/generated_mixed",
-                    "check_needed": false,
-                    "uuid": "13095c38-508c-46eb-a615-1ce9e54b7bfb"
+                    "check_needed": false
                   }
-                ],
-                "uuid": "840ecbbd-7e85-4380-8d0c-d963e4e10599"
+                ]
               }
-            ],
-            "uuid": "0ed836ed-9131-4918-8f27-f35bf1a2d02a"
+            ]
           },
           {
-            "id": "grammar_06",
+            "id": "b0c8e101-1500-4742-9064-1e102a0eb8b9",
             "type": "grammar_point",
             "order": 6,
             "title": "最",
@@ -2167,38 +2022,35 @@
             "check_needed": false,
             "blocks": [
               {
-                "id": "grammar_06_overview",
+                "id": "437a4fe6-cbe3-4168-b3de-181d1e249363",
                 "type": "grammar_overview",
                 "order": 1,
                 "title": "Bản chất",
                 "content_vi": "最 biểu thị mức cao nhất trong một phạm vi.",
                 "examples": [
                   {
-                    "id": "grammar_06_ex01",
+                    "id": "41c8d735-a12e-4c22-a8de-add795878b00",
                     "zh": "上海是中国人口最多的城市。",
                     "pinyin": "",
                     "vi": "Thượng Hải là thành phố có dân số đông nhất Trung Quốc.",
                     "en": "",
                     "highlight": [],
                     "grammar_refs": [
-                      "grammar_06"
+                      "b0c8e101-1500-4742-9064-1e102a0eb8b9"
                     ],
                     "vocab_refs": [],
                     "source_ref": "",
                     "note_vi": "",
                     "audio_key": "",
                     "source_origin": "textbook/generated_mixed",
-                    "check_needed": false,
-                    "uuid": "215f787b-17b5-4ffa-9e4e-89b50f18f048"
+                    "check_needed": false
                   }
-                ],
-                "uuid": "891017d4-b889-49b1-8a52-3ad8c9f5dea0"
+                ]
               }
-            ],
-            "uuid": "d869e429-0e0c-428c-8670-9b57011faea8"
+            ]
           },
           {
-            "id": "grammar_07",
+            "id": "f3302370-f1c2-4d08-99ba-fda75cc4a335",
             "type": "grammar_point",
             "order": 7,
             "title": "程度差异：一点儿 / 得多 / 多了 / 很多",
@@ -2212,7 +2064,7 @@
             "check_needed": false,
             "blocks": [
               {
-                "id": "grammar_07_usage",
+                "id": "e5c98156-13fd-40e5-8d99-90f2e443ff49",
                 "type": "grammar_usage_notes",
                 "order": 1,
                 "title": "Cách dùng",
@@ -2222,49 +2074,45 @@
                 ],
                 "examples": [
                   {
-                    "id": "grammar_07_ex01",
+                    "id": "2c1d1a39-aff8-418a-9813-624d4b06e892",
                     "zh": "上海的冬天是不是比北京暖和一点儿？",
                     "pinyin": "",
                     "vi": "Mùa đông Thượng Hải có phải ấm hơn Bắc Kinh một chút không?",
                     "en": "",
                     "highlight": [],
                     "grammar_refs": [
-                      "grammar_07"
+                      "f3302370-f1c2-4d08-99ba-fda75cc4a335"
                     ],
                     "vocab_refs": [],
                     "source_ref": "",
                     "note_vi": "",
                     "audio_key": "",
                     "source_origin": "textbook/generated_mixed",
-                    "check_needed": false,
-                    "uuid": "06f272bf-a315-4f5f-b931-a9b35e83f59c"
+                    "check_needed": false
                   },
                   {
-                    "id": "grammar_07_ex02",
+                    "id": "7011ba59-80c0-4b7b-a888-fb7674ebb297",
                     "zh": "这件比那件贵多了。",
                     "pinyin": "",
                     "vi": "Cái này đắt hơn cái kia nhiều.",
                     "en": "",
                     "highlight": [],
                     "grammar_refs": [
-                      "grammar_07"
+                      "f3302370-f1c2-4d08-99ba-fda75cc4a335"
                     ],
                     "vocab_refs": [],
                     "source_ref": "",
                     "note_vi": "",
                     "audio_key": "",
                     "source_origin": "textbook/generated_mixed",
-                    "check_needed": false,
-                    "uuid": "f5b66dac-d675-429d-8b70-ebb6147c52ef"
+                    "check_needed": false
                   }
-                ],
-                "uuid": "2c78dced-7003-4715-b2c0-a87e441867d6"
+                ]
               }
-            ],
-            "uuid": "21a02441-1fa0-41e5-bf80-d3cdefbf7669"
+            ]
           },
           {
-            "id": "grammar_08",
+            "id": "b7073860-473c-4cb7-82ba-943917998455",
             "type": "grammar_point",
             "order": 8,
             "title": "动词 + 得 + 补语 trong so sánh",
@@ -2278,7 +2126,7 @@
             "check_needed": false,
             "blocks": [
               {
-                "id": "grammar_08_structure",
+                "id": "b8bf8ab4-0822-4c15-a0b7-0322d492d0fa",
                 "type": "grammar_structure",
                 "order": 1,
                 "title": "Cấu trúc",
@@ -2286,49 +2134,45 @@
                 "meaning_vi": "So sánh kết quả/trạng thái của hành động.",
                 "examples": [
                   {
-                    "id": "grammar_08_ex01",
+                    "id": "354b8cbd-123a-425b-9441-db216c23c747",
                     "zh": "他比我考得好。",
                     "pinyin": "",
                     "vi": "Anh ấy thi tốt hơn tôi.",
                     "en": "",
                     "highlight": [],
                     "grammar_refs": [
-                      "grammar_08"
+                      "b7073860-473c-4cb7-82ba-943917998455"
                     ],
                     "vocab_refs": [],
                     "source_ref": "",
                     "note_vi": "",
                     "audio_key": "",
                     "source_origin": "textbook/generated_mixed",
-                    "check_needed": false,
-                    "uuid": "0872cdd2-1288-4894-b1b4-eae71f1e6781"
+                    "check_needed": false
                   },
                   {
-                    "id": "grammar_08_ex02",
+                    "id": "70f73a3e-6c84-4eeb-be6d-51e382932cb2",
                     "zh": "流行歌曲的歌词没有民歌写得好。",
                     "pinyin": "",
                     "vi": "Lời ca của nhạc thịnh hành không được viết hay bằng dân ca.",
                     "en": "",
                     "highlight": [],
                     "grammar_refs": [
-                      "grammar_08"
+                      "b7073860-473c-4cb7-82ba-943917998455"
                     ],
                     "vocab_refs": [],
                     "source_ref": "",
                     "note_vi": "",
                     "audio_key": "",
                     "source_origin": "textbook/generated_mixed",
-                    "check_needed": false,
-                    "uuid": "e0d74991-2719-4e9b-8e13-48c6370579f8"
+                    "check_needed": false
                   }
-                ],
-                "uuid": "e69dd59d-6740-4c72-ad4e-1f385ac8a7b4"
+                ]
               }
-            ],
-            "uuid": "bcc94542-6dd9-4577-8aac-4cabb2d1e767"
+            ]
           },
           {
-            "id": "grammar_09",
+            "id": "3253aaee-3b06-4864-9b11-98c656764ed4",
             "type": "grammar_point",
             "order": 9,
             "title": "感叹句",
@@ -2342,7 +2186,7 @@
             "check_needed": false,
             "blocks": [
               {
-                "id": "grammar_09_structure",
+                "id": "11d96e9d-d0e5-46c6-9f2d-25b8b9be7d85",
                 "type": "grammar_structure",
                 "order": 1,
                 "title": "Cấu trúc",
@@ -2350,52 +2194,47 @@
                 "meaning_vi": "Bộc lộ cảm xúc mạnh: đẹp quá, hay biết bao, nhanh quá.",
                 "examples": [
                   {
-                    "id": "grammar_09_ex01",
+                    "id": "ed185aa6-319f-4407-8820-6c0976099966",
                     "zh": "写得多好！",
                     "pinyin": "",
                     "vi": "Viết hay biết bao!",
                     "en": "",
                     "highlight": [],
                     "grammar_refs": [
-                      "grammar_09"
+                      "3253aaee-3b06-4864-9b11-98c656764ed4"
                     ],
                     "vocab_refs": [],
                     "source_ref": "",
                     "note_vi": "",
                     "audio_key": "",
                     "source_origin": "textbook/generated_mixed",
-                    "check_needed": false,
-                    "uuid": "b4337f52-59a5-4f23-9f0b-f6414b9f8eda"
+                    "check_needed": false
                   },
                   {
-                    "id": "grammar_09_ex02",
+                    "id": "91191217-6a93-4006-b93a-45f37a4434a4",
                     "zh": "这个公园好漂亮啊！",
                     "pinyin": "",
                     "vi": "Công viên này đẹp quá!",
                     "en": "",
                     "highlight": [],
                     "grammar_refs": [
-                      "grammar_09"
+                      "3253aaee-3b06-4864-9b11-98c656764ed4"
                     ],
                     "vocab_refs": [],
                     "source_ref": "",
                     "note_vi": "",
                     "audio_key": "",
                     "source_origin": "textbook/generated_mixed",
-                    "check_needed": false,
-                    "uuid": "64f5585e-0a88-4d5b-8d62-6b02fcf5c326"
+                    "check_needed": false
                   }
-                ],
-                "uuid": "264f8a11-337d-4a7c-8ebd-72de25c19e85"
+                ]
               }
-            ],
-            "uuid": "9fb73c4a-9519-4f48-91c7-37632d5cbd01"
+            ]
           }
-        ],
-        "uuid": "bcb956fd-b037-4b63-896a-7ca7f7832cc3"
+        ]
       },
       {
-        "id": "section_06_exercises",
+        "id": "9901c597-ca97-451e-b63d-11814aaf933e",
         "type": "exercises",
         "order": 6,
         "title": "练习",
@@ -2416,7 +2255,7 @@
         },
         "items": [
           {
-            "id": "exercise_01",
+            "id": "15cb6f38-593b-48d1-bcca-dc3d2a140f9e",
             "type": "phonetics",
             "variant": "pronunciation_tone_minimal_pairs",
             "order": 1,
@@ -2434,65 +2273,56 @@
             ],
             "parts": [
               {
-                "id": "exercise_01_part_01",
+                "id": "0e5801e7-b89b-4cc6-8bd9-9e1fbbd30b31",
                 "type": "minimal_pair_group",
                 "title": "辨音辨调",
                 "items": [
                   {
-                    "id": "ex01_pair01",
+                    "id": "82c79e56-60d5-4529-9c2a-21fa36265276",
                     "left": "chéngshì",
-                    "right": "chéngshí",
-                    "uuid": "3b36bea7-21dc-48dc-8546-b8daf8db90f3"
+                    "right": "chéngshí"
                   },
                   {
-                    "id": "ex01_pair02",
+                    "id": "e74c1847-ac69-441f-89d1-78f5d4cf3c26",
                     "left": "tiānqì",
-                    "right": "diànqì",
-                    "uuid": "f2b9974f-49b3-406c-9c96-44b1bc405a64"
+                    "right": "diànqì"
                   },
                   {
-                    "id": "ex01_pair03",
+                    "id": "5fe4fb20-01c2-40c3-9c9b-3213ffeee9e6",
                     "left": "yùbào",
-                    "right": "yì bào",
-                    "uuid": "e137d912-1542-43d5-bc1d-d744a396be7b"
+                    "right": "yì bào"
                   },
                   {
-                    "id": "ex01_pair04",
+                    "id": "8d1c3196-8bde-4da6-ae03-84c4876ed101",
                     "left": "qìwēn",
-                    "right": "qǔwén",
-                    "uuid": "0a7a43c4-1307-4c67-a7f3-9f16ffb35e52"
+                    "right": "qǔwén"
                   },
                   {
-                    "id": "ex01_pair05",
+                    "id": "ea0b34ec-1e1d-45b8-9637-2ed5f767a7f4",
                     "left": "fàndiàn",
-                    "right": "fángjiān",
-                    "uuid": "478c2954-a5fe-4f3a-bd68-97066875f095"
+                    "right": "fángjiān"
                   },
                   {
-                    "id": "ex01_pair06",
+                    "id": "364420c7-caf2-4a45-9cfe-26f9a68e2bd9",
                     "left": "xiàzài",
-                    "right": "xiázhǎi",
-                    "uuid": "40cbf6a1-7c34-4d62-9693-b7daeba9d6fa"
+                    "right": "xiázhǎi"
                   },
                   {
-                    "id": "ex01_pair07",
+                    "id": "5d732d8b-ab7d-4d04-a382-94d5641bcccb",
                     "left": "míngqǔ",
-                    "right": "míngqì",
-                    "uuid": "ea87ad9d-e9ad-4e17-8c4e-18dcef08185e"
+                    "right": "míngqì"
                   },
                   {
-                    "id": "ex01_pair08",
+                    "id": "edd5428c-8a3a-44ef-88e9-64165b7f42c1",
                     "left": "liúxíng",
-                    "right": "lǚxíng",
-                    "uuid": "0c223add-0c8b-439c-9cb7-a6fc651433cb"
+                    "right": "lǚxíng"
                   }
                 ],
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "405c18f7-8bf7-417d-b3f2-090b9e206adf"
+                "check_needed": false
               },
               {
-                "id": "exercise_01_part_02",
+                "id": "e7235fa8-9e47-43aa-a37c-271a2e83d738",
                 "type": "read_aloud_items",
                 "title": "朗读",
                 "items": [
@@ -2517,8 +2347,7 @@
                   "今天的气温比昨天高两度。"
                 ],
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "f6971dd0-6e27-4f51-95d8-66e79e6126d2"
+                "check_needed": false
               }
             ],
             "rendering": {
@@ -2526,11 +2355,10 @@
               "show_answer_after_submit": false
             },
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "d3310a23-6d3b-487f-8851-5182570ce222"
+            "check_needed": false
           },
           {
-            "id": "exercise_02",
+            "id": "98e14c21-0449-4e36-b1ae-77ed46cf3aa0",
             "type": "substitution_drill",
             "variant": "substitution_or_transform_drill",
             "order": 2,
@@ -2547,399 +2375,356 @@
             ],
             "parts": [
               {
-                "id": "ex02_part01",
+                "id": "82a1a6f2-35a2-49b9-91c3-07b5ac98e488",
                 "type": "substitution_pattern",
                 "pattern": "这首歌怎么样？ / 这首歌比那首好听。",
                 "items": [
                   {
-                    "id": "ex02_part01_item_01",
+                    "id": "434bb841-fc9c-4d6f-bec4-091ec1312518",
                     "values": [
                       "张",
                       "画儿",
                       "贵"
-                    ],
-                    "uuid": "a07122fe-9102-4fee-9a9d-7dda78c218b6"
+                    ]
                   },
                   {
-                    "id": "ex02_part01_item_02",
+                    "id": "dbd24f25-bbec-4d33-a1a0-167198926f2f",
                     "values": [
                       "件",
                       "大衣",
                       "长"
-                    ],
-                    "uuid": "c91ce50f-0a4d-45c8-a5d0-390f0a672840"
+                    ]
                   },
                   {
-                    "id": "ex02_part01_item_03",
+                    "id": "edcb227b-5c28-4f2d-8657-70afd93e001c",
                     "values": [
                       "个",
                       "房间",
                       "大"
-                    ],
-                    "uuid": "8957dd23-0159-4828-b6c1-1481b1c4e893"
+                    ]
                   },
                   {
-                    "id": "ex02_part01_item_04",
+                    "id": "ea68c5c7-e00e-49d8-9041-f5ecd03c5037",
                     "values": [
                       "辆",
                       "汽车",
                       "新"
-                    ],
-                    "uuid": "d293563c-c3d2-4802-8871-796409920f16"
+                    ]
                   },
                   {
-                    "id": "ex02_part01_item_05",
+                    "id": "2a066669-b260-47bb-932f-73d3a8483926",
                     "values": [
                       "个",
                       "地方",
                       "安静"
-                    ],
-                    "uuid": "2cb1f70d-5cbe-4074-b77c-203061f9e214"
+                    ]
                   },
                   {
-                    "id": "ex02_part01_item_06",
+                    "id": "c6809a0c-6c2b-462c-af63-9c49d4deb1d2",
                     "values": [
                       "座",
                       "楼",
                       "高"
-                    ],
-                    "uuid": "04f38e87-9e8c-4160-94f5-26c626317c78"
+                    ]
                   }
                 ],
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "257c3956-4cfa-4567-bf05-1747290e1d5f"
+                "check_needed": false
               },
               {
-                "id": "ex02_part02",
+                "id": "68192b9b-3fd7-4e9e-b186-f7c8343a36ad",
                 "type": "substitution_pattern",
                 "pattern": "这件大衣比那件贵吗？ / 这件没有那件贵。",
                 "items": [
                   {
-                    "id": "ex02_part02_item_01",
+                    "id": "1c09e241-632f-4565-90bb-f073786ac82e",
                     "values": [
                       "这台电脑",
                       "那台",
                       "好"
-                    ],
-                    "uuid": "94969de8-03af-470e-96c8-0694509931cc"
+                    ]
                   },
                   {
-                    "id": "ex02_part02_item_02",
+                    "id": "5f10175f-70e8-4df8-8ac0-ae6a78aea00c",
                     "values": [
                       "这辆汽车",
                       "那辆",
                       "便宜"
-                    ],
-                    "uuid": "b0cd1e3c-7362-4619-8898-ab0688a20368"
+                    ]
                   },
                   {
-                    "id": "ex02_part02_item_03",
+                    "id": "cb96a4b2-b918-4891-83fd-f15364026588",
                     "values": [
                       "这个屋子",
                       "那个",
                       "大"
-                    ],
-                    "uuid": "aa9bb138-40a9-4662-8622-0a66e79842a1"
+                    ]
                   },
                   {
-                    "id": "ex02_part02_item_04",
+                    "id": "5c4a4b41-0c6c-4885-b7e9-6eeb6d48cf61",
                     "values": [
                       "这课",
                       "那课",
                       "难"
-                    ],
-                    "uuid": "006958c4-8b1c-4c8b-b986-610244ff10c4"
+                    ]
                   },
                   {
-                    "id": "ex02_part02_item_05",
+                    "id": "2110433f-30d7-4426-a49a-bdde6b1fb902",
                     "values": [
                       "你",
                       "你弟弟",
                       "高"
-                    ],
-                    "uuid": "439f7203-e138-4f95-bc8c-431b2f42f5eb"
+                    ]
                   },
                   {
-                    "id": "ex02_part02_item_06",
+                    "id": "fd999c79-d08f-4baa-9d60-aa2f97b63ea3",
                     "values": [
                       "他",
                       "你",
                       "大"
-                    ],
-                    "uuid": "b92b38bf-ad93-4067-b91d-4e3d10135c38"
+                    ]
                   }
                 ],
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "0d228e7a-8ebf-4361-bda4-968c698a04a5"
+                "check_needed": false
               },
               {
-                "id": "ex02_part03",
+                "id": "6b4e5107-3092-431d-ac0c-d302df1317fc",
                 "type": "substitution_pattern",
                 "pattern": "那儿的气温有北京高吗？ / 比北京高得多。",
                 "items": [
                   {
-                    "id": "ex02_part03_item_01",
+                    "id": "56fc6418-c349-4c67-b395-7cb66c8f3bb5",
                     "values": [
                       "这个教室",
                       "那个",
                       "大"
-                    ],
-                    "uuid": "3bc04ce6-f160-4535-8fb8-d9aa92b57cb9"
+                    ]
                   },
                   {
-                    "id": "ex02_part03_item_02",
+                    "id": "d0ff3981-4c2d-4ced-aea8-272799343754",
                     "values": [
                       "弟弟",
                       "你",
                       "高"
-                    ],
-                    "uuid": "b4332d50-65c8-43cf-bc78-329047b20307"
+                    ]
                   },
                   {
-                    "id": "ex02_part03_item_03",
+                    "id": "c1b478e2-6cd1-4c03-8f23-5db6ef444e2c",
                     "values": [
                       "这个城市的人口",
                       "北京",
                       "多"
-                    ],
-                    "uuid": "29c71cf7-3ea9-42ff-ba97-319474276241"
+                    ]
                   },
                   {
-                    "id": "ex02_part03_item_04",
+                    "id": "7c227e90-bf22-4add-a870-a02d0eb1648a",
                     "values": [
                       "这个公园",
                       "那个",
                       "漂亮"
-                    ],
-                    "uuid": "49a557f2-5fc4-411e-aa1c-eb87b6f07e94"
+                    ]
                   },
                   {
-                    "id": "ex02_part03_item_05",
+                    "id": "f36bcba5-0256-4861-8f64-5239a9304a39",
                     "values": [
                       "这个手机",
                       "那个",
                       "贵"
-                    ],
-                    "uuid": "6b70ba9e-7623-4965-9fbe-d9ce31e5710f"
+                    ]
                   },
                   {
-                    "id": "ex02_part03_item_06",
+                    "id": "b35aecf0-bc48-4e22-bf50-5580a4a04bd4",
                     "values": [
                       "这辆车",
                       "那辆",
                       "便宜"
-                    ],
-                    "uuid": "ae7ff312-24a0-41ff-a180-14a60ed5b3fe"
+                    ]
                   }
                 ],
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "e640a0b4-4b78-4bf0-adee-e70b4b869a85"
+                "check_needed": false
               },
               {
-                "id": "ex02_part04",
+                "id": "2f244631-33e7-46fb-9864-aa5e7089e11d",
                 "type": "substitution_pattern",
                 "pattern": "她唱歌唱得比我好。",
                 "items": [
                   {
-                    "id": "ex02_part04_item_01",
+                    "id": "81364967-d4fe-478e-aac0-dede9e5a6ba8",
                     "values": [
                       "写",
                       "汉字",
                       "快"
-                    ],
-                    "uuid": "f20f01ed-fd9e-4019-a83a-a3d8c26f7bd6"
+                    ]
                   },
                   {
-                    "id": "ex02_part04_item_02",
+                    "id": "b91153c0-1c89-4cff-8f04-bd81a3866a73",
                     "values": [
                       "做",
                       "练习",
                       "认真"
-                    ],
-                    "uuid": "4a9e447b-f3cc-48a2-985e-1aa3d6811806"
+                    ]
                   },
                   {
-                    "id": "ex02_part04_item_03",
+                    "id": "d18df8fe-65b2-4795-a197-c165ab94b4ac",
                     "values": [
                       "跳",
                       "舞",
                       "好"
-                    ],
-                    "uuid": "7704a8f1-fc93-4c09-86af-c432949c409d"
+                    ]
                   },
                   {
-                    "id": "ex02_part04_item_04",
+                    "id": "1842e55c-ece3-45ac-8443-9f3191fe8f4e",
                     "values": [
                       "看",
                       "书",
                       "多"
-                    ],
-                    "uuid": "c887e6e6-5742-4def-ba00-69271121646c"
+                    ]
                   },
                   {
-                    "id": "ex02_part04_item_05",
+                    "id": "d8158747-9955-491d-b58f-e6e9c566445f",
                     "values": [
                       "读",
                       "课文",
                       "熟"
-                    ],
-                    "uuid": "f2e48a37-e3af-4095-8900-2df962e06d33"
+                    ]
                   },
                   {
-                    "id": "ex02_part04_item_06",
+                    "id": "94358631-0459-4e35-8454-d46a3618fbb0",
                     "values": [
                       "说",
                       "英语",
                       "流利"
-                    ],
-                    "uuid": "f04022e9-6f5d-4836-bdfc-b877ecf40a3b"
+                    ]
                   }
                 ],
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "e97b5fb6-8472-45d9-8db0-e4b11e7690b5"
+                "check_needed": false
               },
               {
-                "id": "ex02_part05",
+                "id": "b760e557-27ca-4e81-80b2-6bb0e9425201",
                 "type": "substitution_pattern",
                 "pattern": "你们谁考得好？ / 我没有他考得好。",
                 "items": [
                   {
-                    "id": "ex02_part05_item_01",
+                    "id": "eb436c65-1d3f-45bc-abfa-4768c6fffe8c",
                     "values": [
                       "学",
                       "好"
-                    ],
-                    "uuid": "60389bd4-7707-4d48-9964-2bffb279c0ab"
+                    ]
                   },
                   {
-                    "id": "ex02_part05_item_02",
+                    "id": "548befb5-b86c-4ba4-be72-249ad6101baf",
                     "values": [
                       "说",
                       "流利"
-                    ],
-                    "uuid": "f979125b-243f-46d3-adbf-19b79dc0d04d"
+                    ]
                   },
                   {
-                    "id": "ex02_part05_item_03",
+                    "id": "8e621623-dafd-440c-8b47-4737aa2ec5ef",
                     "values": [
                       "唱",
                       "好"
-                    ],
-                    "uuid": "1acafd37-77f2-417a-91e4-99e7a7479857"
+                    ]
                   },
                   {
-                    "id": "ex02_part05_item_04",
+                    "id": "8c8f1e35-1cba-4375-8453-6b27a97375fa",
                     "values": [
                       "跑",
                       "快"
-                    ],
-                    "uuid": "c3c0d6a4-6615-45b5-a6fa-43847dbcae79"
+                    ]
                   },
                   {
-                    "id": "ex02_part05_item_05",
+                    "id": "bb3c7cbd-177c-49b8-8a34-0846f99a6dfb",
                     "values": [
                       "打",
                       "好"
-                    ],
-                    "uuid": "4dea2fae-934d-4840-93a4-57a21043ef24"
+                    ]
                   },
                   {
-                    "id": "ex02_part05_item_06",
+                    "id": "b9c07200-02b1-47e0-bdee-274c5fa29996",
                     "values": [
                       "写",
                       "漂亮"
-                    ],
-                    "uuid": "7a9d7ad6-d2b2-4052-8aea-49b7bb41475e"
+                    ]
                   }
                 ],
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "d5d89b95-88a9-4214-8754-39fb47a41c42"
+                "check_needed": false
               },
               {
-                "id": "ex02_part06",
+                "id": "07168b57-23d1-48c3-a8e0-7061e8489e60",
                 "type": "substitution_pattern",
                 "pattern": "你比你妹妹大多少？ / 大两岁。 / 我比我妹妹大两岁。",
                 "items": [
                   {
-                    "id": "ex02_part06_item_01",
+                    "id": "cf039f5f-985e-4d42-a056-46f2fc9731b7",
                     "values": [
                       "她",
                       "你",
                       "快",
                       "两分钟"
-                    ],
-                    "uuid": "c716d46a-de79-4a36-9e80-5039ef1cec2d"
+                    ]
                   },
                   {
-                    "id": "ex02_part06_item_02",
+                    "id": "66d29a58-beca-4ee8-b40b-ff3f208a6340",
                     "values": [
                       "这台电脑",
                       "那台",
                       "贵",
                       "一千块"
-                    ],
-                    "uuid": "bd183e3d-b376-45e1-a2ce-34f3f1aad82b"
+                    ]
                   },
                   {
-                    "id": "ex02_part06_item_03",
+                    "id": "428d48c1-6796-4f0f-a88a-274d8bdcfa53",
                     "values": [
                       "这个屋子",
                       "那个",
                       "大",
                       "二十平方米"
-                    ],
-                    "uuid": "c428f972-64ab-41f0-91c3-646ede1f632e"
+                    ]
                   },
                   {
-                    "id": "ex02_part06_item_04",
+                    "id": "8b1292be-4444-4f9c-9ab2-c9d1719e7e42",
                     "values": [
                       "这条河",
                       "那条",
                       "长",
                       "一百公里"
-                    ],
-                    "uuid": "925f6683-fbcc-4cdb-9155-05c43546df2d"
+                    ]
                   },
                   {
-                    "id": "ex02_part06_item_05",
+                    "id": "576d983c-d3c5-4499-92d1-4e01f6008a16",
                     "values": [
                       "今天的气温",
                       "昨天",
                       "高",
                       "三度"
-                    ],
-                    "uuid": "ec967abc-d592-4bde-9236-acb1cc87d0e6"
+                    ]
                   },
                   {
-                    "id": "ex02_part06_item_06",
+                    "id": "f0cd8cfe-5d34-42cc-a6c9-b3eaf2113055",
                     "values": [
                       "这件大衣",
                       "那件",
                       "便宜",
                       "五十块"
-                    ],
-                    "uuid": "83a9632f-6c55-490b-b625-9fea9f1145b5"
+                    ]
                   }
                 ],
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "7697e232-653a-4aba-8875-91b69a16e6fc"
+                "check_needed": false
               }
             ],
             "rendering": {
               "renderer": "exercise.substitution.v2"
             },
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "2dd7017f-e5db-40b0-beab-7456ee4e96a4"
+            "check_needed": false
           },
           {
-            "id": "exercise_03",
+            "id": "5dfca3d2-8524-4a83-92dd-b036a7259465",
             "type": "choose_words_fill_blank",
             "variant": "word_bank_fill_blank",
             "order": 3,
@@ -2956,7 +2741,7 @@
             ],
             "groups": [
               {
-                "id": "ex03_group_a",
+                "id": "3c6abc78-c535-4b35-ad12-2de93d45f291",
                 "label": "A",
                 "word_bank": [
                   "气温",
@@ -2970,90 +2755,81 @@
                 ],
                 "questions": [
                   {
-                    "id": "ex03_a_01",
+                    "id": "d5584c38-c49a-4a02-93e5-1edf3a523e2a",
                     "prompt": "他____喜欢看足球比赛。",
                     "answer": "",
                     "acceptable_answers": [],
                     "source_origin": "textbook_question_generated_answer",
                     "answer_verified": false,
-                    "check_needed": true,
-                    "uuid": "2df4f491-8f0b-4675-ba0c-1dfbdf98e502"
+                    "check_needed": true
                   },
                   {
-                    "id": "ex03_a_02",
+                    "id": "696265f9-09dd-497a-9b64-f04b659d5ec5",
                     "prompt": "我们国家的冬天比这儿____。",
                     "answer": "",
                     "acceptable_answers": [],
                     "source_origin": "textbook_question_generated_answer",
                     "answer_verified": false,
-                    "check_needed": true,
-                    "uuid": "75ae6808-a201-47a0-a5e9-00ba3883089c"
+                    "check_needed": true
                   },
                   {
-                    "id": "ex03_a_03",
+                    "id": "40a95160-1a19-4d94-a00f-e539610cd9c0",
                     "prompt": "我们班又____了两个新同学。",
                     "answer": "",
                     "acceptable_answers": [],
                     "source_origin": "textbook_question_generated_answer",
                     "answer_verified": false,
-                    "check_needed": true,
-                    "uuid": "52c8faa1-7041-4708-bf5f-7f9e5b25e2df"
+                    "check_needed": true
                   },
                   {
-                    "id": "ex03_a_04",
+                    "id": "8713e894-c003-4512-a355-ae4e66217828",
                     "prompt": "他是一个足球____，要是晚上电视里有足球比赛，他可以不睡觉。",
                     "answer": "",
                     "acceptable_answers": [],
                     "source_origin": "textbook_question_generated_answer",
                     "answer_verified": false,
-                    "check_needed": true,
-                    "uuid": "88858025-7202-4c4f-8e41-e8ec200b7d3d"
+                    "check_needed": true
                   },
                   {
-                    "id": "ex03_a_05",
+                    "id": "dafa3bb1-528f-4b84-99b8-0c9d450c4ad5",
                     "prompt": "我没有你那么喜欢民歌，我喜欢____歌曲。",
                     "answer": "",
                     "acceptable_answers": [],
                     "source_origin": "textbook_question_generated_answer",
                     "answer_verified": false,
-                    "check_needed": true,
-                    "uuid": "4bf6da0d-4c0b-4db5-addd-be079825a1f8"
+                    "check_needed": true
                   },
                   {
-                    "id": "ex03_a_06",
+                    "id": "95b87316-a8b5-49e8-b4c1-a4bd131c8c01",
                     "prompt": "这是一首世界____。",
                     "answer": "",
                     "acceptable_answers": [],
                     "source_origin": "textbook_question_generated_answer",
                     "answer_verified": false,
-                    "check_needed": true,
-                    "uuid": "8b54865d-b063-4e86-83b2-50a50379043e"
+                    "check_needed": true
                   },
                   {
-                    "id": "ex03_a_07",
+                    "id": "225488c9-ad70-442b-ab4a-2862fde52b73",
                     "prompt": "天气预报说，今天最高____是零下一度。",
                     "answer": "",
                     "acceptable_answers": [],
                     "source_origin": "textbook_question_generated_answer",
                     "answer_verified": false,
-                    "check_needed": true,
-                    "uuid": "376aabdc-40f2-4b12-b14d-28edc7462d78"
+                    "check_needed": true
                   },
                   {
-                    "id": "ex03_a_08",
+                    "id": "b4aceabb-4279-45d2-b6d2-6b5bf466eda0",
                     "prompt": "天气____说得不一定对。",
                     "answer": "",
                     "acceptable_answers": [],
                     "source_origin": "textbook_question_generated_answer",
                     "answer_verified": false,
-                    "check_needed": true,
-                    "uuid": "0a667e37-3464-474b-a669-524212caa4f8"
+                    "check_needed": true
                   }
-                ],
-                "uuid": "9286e740-3f5d-4de8-8f3c-58c56c0f717d"
+                ]
               },
               {
-                "id": "ex03_group_b",
+                "id": "3e471981-44cf-443c-ab5b-a2e8901bc776",
                 "label": "B",
                 "word_bank": [
                   "冷一点儿",
@@ -3067,90 +2843,81 @@
                 ],
                 "questions": [
                   {
-                    "id": "ex03_b_01",
+                    "id": "be526b38-57fe-418e-9e6a-1208f510e794",
                     "prompt": "北京比我们那儿____。",
                     "answer": "",
                     "acceptable_answers": [],
                     "source_origin": "textbook_question_generated_answer",
                     "answer_verified": false,
-                    "check_needed": true,
-                    "uuid": "f77dc144-7b3d-4c96-8002-d4e33dc64ded"
+                    "check_needed": true
                   },
                   {
-                    "id": "ex03_b_02",
+                    "id": "eba629e6-2242-43b8-85f5-c737fcc92926",
                     "prompt": "我姐姐比我____。",
                     "answer": "",
                     "acceptable_answers": [],
                     "source_origin": "textbook_question_generated_answer",
                     "answer_verified": false,
-                    "check_needed": true,
-                    "uuid": "7b3bc682-c652-4f9f-81a7-44958139b2de"
+                    "check_needed": true
                   },
                   {
-                    "id": "ex03_b_03",
+                    "id": "bd47ffbb-df15-49b7-bb72-18827b8d8b6b",
                     "prompt": "每天早上她都比我起得____。",
                     "answer": "",
                     "acceptable_answers": [],
                     "source_origin": "textbook_question_generated_answer",
                     "answer_verified": false,
-                    "check_needed": true,
-                    "uuid": "d5adfc44-3380-4aa9-940d-7b860059c034"
+                    "check_needed": true
                   },
                   {
-                    "id": "ex03_b_04",
+                    "id": "84e41c1a-d0cb-407f-afbe-b591aa36c638",
                     "prompt": "他比我跑得____。",
                     "answer": "",
                     "acceptable_answers": [],
                     "source_origin": "textbook_question_generated_answer",
                     "answer_verified": false,
-                    "check_needed": true,
-                    "uuid": "eecb9c86-8810-4467-9b8b-d8bb6006442d"
+                    "check_needed": true
                   },
                   {
-                    "id": "ex03_b_05",
+                    "id": "d2f24459-eb79-4044-b559-587ed7b46a53",
                     "prompt": "这件羽绒服比那件____。",
                     "answer": "",
                     "acceptable_answers": [],
                     "source_origin": "textbook_question_generated_answer",
                     "answer_verified": false,
-                    "check_needed": true,
-                    "uuid": "742342f3-9fd7-43a0-a99c-99f792307dfb"
+                    "check_needed": true
                   },
                   {
-                    "id": "ex03_b_06",
+                    "id": "d9013416-9343-4402-ad04-bc05f1ca1e01",
                     "prompt": "这种大衣的颜色比那件____。",
                     "answer": "",
                     "acceptable_answers": [],
                     "source_origin": "textbook_question_generated_answer",
                     "answer_verified": false,
-                    "check_needed": true,
-                    "uuid": "339dc954-b3c8-47cf-8318-b5af8f4d8eed"
+                    "check_needed": true
                   },
                   {
-                    "id": "ex03_b_07",
+                    "id": "e317be92-d281-4fbb-a3c8-dcbbfc9d454e",
                     "prompt": "明天上海的气温比北京____。",
                     "answer": "",
                     "acceptable_answers": [],
                     "source_origin": "textbook_question_generated_answer",
                     "answer_verified": false,
-                    "check_needed": true,
-                    "uuid": "0fce0731-4064-4fef-8c6e-f84b2b6ce847"
+                    "check_needed": true
                   },
                   {
-                    "id": "ex03_b_08",
+                    "id": "528049d3-0296-4adf-8d86-f5809feffc8f",
                     "prompt": "今天的气温比昨天____。",
                     "answer": "",
                     "acceptable_answers": [],
                     "source_origin": "textbook_question_generated_answer",
                     "answer_verified": false,
-                    "check_needed": true,
-                    "uuid": "1adca11c-2124-4ea1-8c88-fe3dbeba27f7"
+                    "check_needed": true
                   }
-                ],
-                "uuid": "fba2d730-1a0b-411f-bb78-2d5c78b50ed4"
+                ]
               },
               {
-                "id": "ex03_group_c",
+                "id": "c62559da-aa7d-4c52-bfe1-8f575a5e78fc",
                 "label": "C",
                 "word_bank": [
                   "就",
@@ -3160,90 +2927,81 @@
                 ],
                 "questions": [
                   {
-                    "id": "ex03_c_01",
+                    "id": "54466b8b-8e09-42be-8127-1d860c35892c",
                     "prompt": "爸爸每天都很晚____下班，今天下午五点____下班了。",
                     "answer": "",
                     "acceptable_answers": [],
                     "source_origin": "textbook_question_generated_answer",
                     "answer_verified": false,
-                    "check_needed": true,
-                    "uuid": "dd714785-093b-48f3-92e9-b0fd45b9b283"
+                    "check_needed": true
                   },
                   {
-                    "id": "ex03_c_02",
+                    "id": "8dde6728-2a68-4040-b5a2-bf02d31b9675",
                     "prompt": "明天我下了课____去看她。",
                     "answer": "",
                     "acceptable_answers": [],
                     "source_origin": "textbook_question_generated_answer",
                     "answer_verified": false,
-                    "check_needed": true,
-                    "uuid": "595bc0d8-1cc0-46c2-98fa-95386ee809ad"
+                    "check_needed": true
                   },
                   {
-                    "id": "ex03_c_03",
+                    "id": "cd3ef4af-196f-428f-8c0f-7aacdc678359",
                     "prompt": "您的话我没听懂，请您____说一遍，好吗？",
                     "answer": "",
                     "acceptable_answers": [],
                     "source_origin": "textbook_question_generated_answer",
                     "answer_verified": false,
-                    "check_needed": true,
-                    "uuid": "d558e76d-01fe-4a46-a011-9c35c72e1f01"
+                    "check_needed": true
                   },
                   {
-                    "id": "ex03_c_04",
+                    "id": "a8060920-0d55-4260-a8d9-ea0de9bceb29",
                     "prompt": "老师____说了一遍，我____听懂。",
                     "answer": "",
                     "acceptable_answers": [],
                     "source_origin": "textbook_question_generated_answer",
                     "answer_verified": false,
-                    "check_needed": true,
-                    "uuid": "739aca98-33ed-41e7-b965-83de2c0b8dd7"
+                    "check_needed": true
                   },
                   {
-                    "id": "ex03_c_05",
+                    "id": "4971dbea-78e7-45b0-a104-f87e98b00d78",
                     "prompt": "上星期我已经买了一本，今天我____买了一本。",
                     "answer": "",
                     "acceptable_answers": [],
                     "source_origin": "textbook_question_generated_answer",
                     "answer_verified": false,
-                    "check_needed": true,
-                    "uuid": "38082a93-da27-4fca-87a4-f5d0f98681eb"
+                    "check_needed": true
                   },
                   {
-                    "id": "ex03_c_06",
+                    "id": "c4982650-992a-4abf-91ef-d22ff52a58e2",
                     "prompt": "要是你不想看，我们____回学校吧。",
                     "answer": "",
                     "acceptable_answers": [],
                     "source_origin": "textbook_question_generated_answer",
                     "answer_verified": false,
-                    "check_needed": true,
-                    "uuid": "9a800a99-ade1-4053-a706-58e647cf7736"
+                    "check_needed": true
                   },
                   {
-                    "id": "ex03_c_07",
+                    "id": "09f1d1fe-3cc4-42fc-a732-d478b9749d61",
                     "prompt": "看见她哭了，我____问：“你是不是想家了？”",
                     "answer": "",
                     "acceptable_answers": [],
                     "source_origin": "textbook_question_generated_answer",
                     "answer_verified": false,
-                    "check_needed": true,
-                    "uuid": "a313a85b-45bb-452d-9f94-92a5627c2ae1"
+                    "check_needed": true
                   },
                   {
-                    "id": "ex03_c_08",
+                    "id": "8b65a492-c8de-4777-86eb-3a2e5aad6d90",
                     "prompt": "你怎么现在____来？晚会早____开始了。",
                     "answer": "",
                     "acceptable_answers": [],
                     "source_origin": "textbook_question_generated_answer",
                     "answer_verified": false,
-                    "check_needed": true,
-                    "uuid": "fd5955a7-a040-436f-8239-41da059ba164"
+                    "check_needed": true
                   }
-                ],
-                "uuid": "cb070d75-7b93-45a1-82ce-f98fc0e4fa98"
+                ]
               },
               {
-                "id": "ex03_group_d",
+                "id": "c9d579ad-0397-4464-bb1e-ccef65736bf3",
                 "label": "D",
                 "word_bank": [
                   "懂",
@@ -3255,87 +3013,78 @@
                 ],
                 "questions": [
                   {
-                    "id": "ex03_d_01",
+                    "id": "928412cd-e4e6-4363-a1ac-f73837c8ab16",
                     "prompt": "这课的语法你听____了没有？",
                     "answer": "",
                     "acceptable_answers": [],
                     "source_origin": "textbook_question_generated_answer",
                     "answer_verified": false,
-                    "check_needed": true,
-                    "uuid": "3dbf6ee9-32ed-49bf-883f-d93f327d91bd"
+                    "check_needed": true
                   },
                   {
-                    "id": "ex03_d_02",
+                    "id": "cd8eb200-984e-4c25-8c5c-0cbbbf433c90",
                     "prompt": "A：我叫你，你怎么不回答？ B：对不起，我正听录音呢，没听____。",
                     "answer": "",
                     "acceptable_answers": [],
                     "source_origin": "textbook_question_generated_answer",
                     "answer_verified": false,
-                    "check_needed": true,
-                    "uuid": "430b1daf-b049-412e-bb47-843c2a4deee6"
+                    "check_needed": true
                   },
                   {
-                    "id": "ex03_d_03",
+                    "id": "0f298c9d-5a3f-4035-9590-51a66a493f73",
                     "prompt": "A：你看____麦克了没有？ B：看____了，他正在操场跑步呢。",
                     "answer": "",
                     "acceptable_answers": [],
                     "source_origin": "textbook_question_generated_answer",
                     "answer_verified": false,
-                    "check_needed": true,
-                    "uuid": "f9ce0979-62ba-41ad-ae74-820a6f006afb"
+                    "check_needed": true
                   },
                   {
-                    "id": "ex03_d_04",
+                    "id": "ed75b1e8-2d0d-40bb-8fbd-ca0dccaf78b9",
                     "prompt": "A：老师，这些练习题我做____了没有？ B：你没都做____，做____了三道题，做错了一道题。",
                     "answer": "",
                     "acceptable_answers": [],
                     "source_origin": "textbook_question_generated_answer",
                     "answer_verified": false,
-                    "check_needed": true,
-                    "uuid": "008feef0-8e62-4dc3-bb84-fb77fea2c84a"
+                    "check_needed": true
                   },
                   {
-                    "id": "ex03_d_05",
+                    "id": "6fd77c68-34eb-4089-9469-d51b18cd1d80",
                     "prompt": "快开____窗户吧，屋子里太热了。",
                     "answer": "",
                     "acceptable_answers": [],
                     "source_origin": "textbook_question_generated_answer",
                     "answer_verified": false,
-                    "check_needed": true,
-                    "uuid": "deb21c8a-efde-4f2c-a1e0-3dd48e9a1e37"
+                    "check_needed": true
                   },
                   {
-                    "id": "ex03_d_06",
+                    "id": "522bcaf8-c754-4bcc-8435-08fb233f7cc3",
                     "prompt": "关____电视吧，已经十二点了。",
                     "answer": "",
                     "acceptable_answers": [],
                     "source_origin": "textbook_question_generated_answer",
                     "answer_verified": false,
-                    "check_needed": true,
-                    "uuid": "7557725b-e937-414b-a889-019b4706931d"
+                    "check_needed": true
                   },
                   {
-                    "id": "ex03_d_07",
+                    "id": "613352f7-0642-4c46-ade8-5f220a4a50b0",
                     "prompt": "A：我给你的书你看____了没有？ B：还没有看____呢。",
                     "answer": "",
                     "acceptable_answers": [],
                     "source_origin": "textbook_question_generated_answer",
                     "answer_verified": false,
-                    "check_needed": true,
-                    "uuid": "10d3ca33-3d1d-41a2-9e24-14bd3fa17204"
+                    "check_needed": true
                   },
                   {
-                    "id": "ex03_d_08",
+                    "id": "541ccced-1fbf-4cc8-a4de-0a8a5a3ab02e",
                     "prompt": "这课课文有点儿难，我没有看____。",
                     "answer": "",
                     "acceptable_answers": [],
                     "source_origin": "textbook_question_generated_answer",
                     "answer_verified": false,
-                    "check_needed": true,
-                    "uuid": "f7314728-de99-49b6-bd19-12f51a69f78c"
+                    "check_needed": true
                   }
-                ],
-                "uuid": "a8335390-064d-47e8-847b-dcd74ebf51a1"
+                ]
               }
             ],
             "rendering": {
@@ -3344,11 +3093,10 @@
               "show_answer_after_submit": true
             },
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "ffd385e9-4026-4acb-bed7-d60392ade9eb"
+            "check_needed": false
           },
           {
-            "id": "exercise_04",
+            "id": "809141fb-cc55-403a-9433-35eea89c8c90",
             "type": "custom",
             "variant": "custom_textbook_task",
             "order": 4,
@@ -3397,11 +3145,10 @@
               }
             ],
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "752e07df-ee2b-484e-a498-e9c0b84026e5"
+            "check_needed": false
           },
           {
-            "id": "exercise_05",
+            "id": "e843bb6e-2e51-4fb8-b362-7506b97cf2fc",
             "type": "complete_dialogue",
             "variant": "complete_dialogue",
             "order": 5,
@@ -3418,7 +3165,7 @@
             ],
             "items": [
               {
-                "id": "ex05_01",
+                "id": "2c6cca7c-c71c-4c94-a001-d471d9eb2fbc",
                 "context": "宿舍楼：40米；教学楼：60米",
                 "lines": [
                   "A：哪座楼高？",
@@ -3429,11 +3176,10 @@
                 "answer": "",
                 "answer_verified": false,
                 "source_origin": "textbook_question_generated_answer",
-                "check_needed": true,
-                "uuid": "87057583-38b0-4b70-b2ca-facb1b9e2234"
+                "check_needed": true
               },
               {
-                "id": "ex05_02",
+                "id": "5b2ff0b9-2045-486a-b36d-743ada304d79",
                 "context": "长江：6300公里；黄河：5464公里",
                 "lines": [
                   "A：黄河有长江长吗？",
@@ -3444,11 +3190,10 @@
                 "answer": "",
                 "answer_verified": false,
                 "source_origin": "textbook_question_generated_answer",
-                "check_needed": true,
-                "uuid": "2eaed2d0-d9f2-4864-8b74-10ecb08feccb"
+                "check_needed": true
               },
               {
-                "id": "ex05_03",
+                "id": "821c03fd-638f-4157-b60d-665b9bd7073c",
                 "context": "这台电脑：4000元；那台电脑：6000元",
                 "lines": [
                   "A：那台电脑有这台贵吗？",
@@ -3459,11 +3204,10 @@
                 "answer": "",
                 "answer_verified": false,
                 "source_origin": "textbook_question_generated_answer",
-                "check_needed": true,
-                "uuid": "b602369f-6731-4d65-8e3e-c239f5d5b540"
+                "check_needed": true
               },
               {
-                "id": "ex05_04",
+                "id": "c26f4cb0-e95b-486a-bb98-a44ef13b6df9",
                 "context": "大箱子：20公斤；小箱子：15公斤",
                 "lines": [
                   "A：小箱子有大箱子重吗？",
@@ -3474,11 +3218,10 @@
                 "answer": "",
                 "answer_verified": false,
                 "source_origin": "textbook_question_generated_answer",
-                "check_needed": true,
-                "uuid": "a523af1a-2537-4d19-8d93-62d3fc03c755"
+                "check_needed": true
               },
               {
-                "id": "ex05_05",
+                "id": "f1692edf-ecb9-47a3-a7e3-85a3ede4d81a",
                 "context": "麦克：八点起床；玛丽：六点起床",
                 "lines": [
                   "A：麦克比玛丽起得早吗？",
@@ -3489,19 +3232,17 @@
                 "answer": "",
                 "answer_verified": false,
                 "source_origin": "textbook_question_generated_answer",
-                "check_needed": true,
-                "uuid": "53f041d5-181d-4bbe-957b-5cf6bd554e1f"
+                "check_needed": true
               }
             ],
             "rendering": {
               "renderer": "exercise.complete_dialogue.v2"
             },
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "a1741305-2428-48a0-b0af-ccf5ea63acfc"
+            "check_needed": false
           },
           {
-            "id": "exercise_06",
+            "id": "60ec1197-2967-408c-a1f3-3c2112f8305a",
             "type": "correct_sentence",
             "variant": "error_correction",
             "order": 6,
@@ -3518,75 +3259,68 @@
             ],
             "items": [
               {
-                "id": "ex06_01",
+                "id": "ced333eb-0c24-46af-8ef0-224088ab34bb",
                 "prompt": "他们的生活比以前很好。",
                 "answer": "",
                 "explanation_vi": "",
                 "answer_verified": false,
                 "source_origin": "textbook_question_generated_answer",
-                "check_needed": true,
-                "uuid": "ddce2ae9-819a-420a-bd15-5e4f334645c7"
+                "check_needed": true
               },
               {
-                "id": "ex06_02",
+                "id": "3fd2c4b2-0fa5-46d4-a3e3-1172619dcaa4",
                 "prompt": "玛丽考了成绩比我考了成绩好。",
                 "answer": "",
                 "explanation_vi": "",
                 "answer_verified": false,
                 "source_origin": "textbook_question_generated_answer",
-                "check_needed": true,
-                "uuid": "846fa6f1-7630-4d47-b388-566d48b78581"
+                "check_needed": true
               },
               {
-                "id": "ex06_03",
+                "id": "485289c3-03dd-4fc1-905d-d410e6e4598a",
                 "prompt": "她说比我好得多。",
                 "answer": "",
                 "explanation_vi": "",
                 "answer_verified": false,
                 "source_origin": "textbook_question_generated_answer",
-                "check_needed": true,
-                "uuid": "ba309f8b-a606-4e87-a59b-15692fc99fdb"
+                "check_needed": true
               },
               {
-                "id": "ex06_04",
+                "id": "90f24372-1c4b-445f-925b-af742edfddda",
                 "prompt": "弟弟比我不高。",
                 "answer": "",
                 "explanation_vi": "",
                 "answer_verified": false,
                 "source_origin": "textbook_question_generated_answer",
-                "check_needed": true,
-                "uuid": "e441438a-741e-4129-be22-d337f82f5188"
+                "check_needed": true
               },
               {
-                "id": "ex06_05",
+                "id": "21e3c509-8c7e-41f7-8b82-28338cbab8b7",
                 "prompt": "他们比我们不来得早。",
                 "answer": "",
                 "explanation_vi": "",
                 "answer_verified": false,
                 "source_origin": "textbook_question_generated_answer",
-                "check_needed": true,
-                "uuid": "1cfe975a-39f6-4f00-95e5-10edfbadcd4a"
+                "check_needed": true
               },
               {
-                "id": "ex06_06",
+                "id": "6cd3b845-5ff7-43b6-b5af-2033f6ed3ceb",
                 "prompt": "麦克比我一点儿高。",
                 "answer": "",
                 "explanation_vi": "",
                 "answer_verified": false,
                 "source_origin": "textbook_question_generated_answer",
-                "check_needed": true,
-                "uuid": "d587737b-9578-4ce0-bb66-3f5e3ef08f1d"
+                "check_needed": true
               }
             ],
             "rendering": {
               "renderer": "exercise.error_correction.v2"
             },
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "9513528a-0fed-480a-9244-9325da922c7f"
+            "check_needed": false
           },
           {
-            "id": "exercise_07",
+            "id": "1fd4313d-93f3-4cbe-9dd4-2ba0d5bac415",
             "type": "answer_questions",
             "variant": "custom_textbook_task",
             "order": 7,
@@ -3603,76 +3337,68 @@
             ],
             "items": [
               {
-                "id": "ex07_01",
+                "id": "9ce35690-7bf3-4433-9256-a5b0c7bb9f58",
                 "question": "北京冬天最冷是零下16度，你们国家的冬天比北京冷吗？",
                 "answer": "",
                 "answer_verified": false,
                 "source_origin": "textbook_question_generated_answer",
-                "check_needed": false,
-                "uuid": "1d9effab-c3d7-4464-97b9-0f83d25ebbc3"
+                "check_needed": false
               },
               {
-                "id": "ex07_02",
+                "id": "5750a92e-36cf-46f8-b23d-81322c5acec9",
                 "question": "你住的城市东西比中国的便宜吗？",
                 "answer": "",
                 "answer_verified": false,
                 "source_origin": "textbook_question_generated_answer",
-                "check_needed": false,
-                "uuid": "16e5ccd4-c477-4a3d-a8e6-f5465f7c702e"
+                "check_needed": false
               },
               {
-                "id": "ex07_03",
+                "id": "b22c7a00-021e-4222-888f-dd21f1b11f8b",
                 "question": "语言大学有10000多学生，你们学校的学生比语言大学多吗？",
                 "answer": "",
                 "answer_verified": false,
                 "source_origin": "textbook_question_generated_answer",
-                "check_needed": false,
-                "uuid": "b4997b97-0738-45ac-8867-623c07d78410"
+                "check_needed": false
               },
               {
-                "id": "ex07_04",
+                "id": "00b22a73-cefe-4b7c-a833-ac50f9f220ac",
                 "question": "玛丽听力考了95分，你考得比她好吗？",
                 "answer": "",
                 "answer_verified": false,
                 "source_origin": "textbook_question_generated_answer",
-                "check_needed": false,
-                "uuid": "57aed24c-a0a5-4c58-8f6a-219ae7b6618f"
+                "check_needed": false
               },
               {
-                "id": "ex07_05",
+                "id": "f72c10b8-fe16-48ac-a16a-df2130eb71d3",
                 "question": "爱德华一分钟能写18个汉字，你写得比他快吗？",
                 "answer": "",
                 "answer_verified": false,
                 "source_origin": "textbook_question_generated_answer",
-                "check_needed": false,
-                "uuid": "f9d953c1-8386-408f-9f7d-d88365c62b00"
+                "check_needed": false
               },
               {
-                "id": "ex07_06",
+                "id": "cc211e61-85a1-48c6-a9f9-771a96448dc6",
                 "question": "山本每天7点45分到教室，你比她到得早吗？",
                 "answer": "",
                 "answer_verified": false,
                 "source_origin": "textbook_question_generated_answer",
-                "check_needed": false,
-                "uuid": "fbbc565a-83ef-4f68-b2e3-2f4ce7e86255"
+                "check_needed": false
               },
               {
-                "id": "ex07_07",
+                "id": "0af2bc94-1db5-4dd3-b86b-5335bf94b8f8",
                 "question": "山本有40多本中文书，你的中文书比她的多吗？",
                 "answer": "",
                 "answer_verified": false,
                 "source_origin": "textbook_question_generated_answer",
-                "check_needed": false,
-                "uuid": "101dc393-f48d-4f2a-91c4-b490afc62b5e"
+                "check_needed": false
               },
               {
-                "id": "ex07_08",
+                "id": "6075d236-1683-4f8b-ac60-0017fbf9ccff",
                 "question": "罗兰每天锻炼一个小时，你锻炼的时间比她长吗？",
                 "answer": "",
                 "answer_verified": false,
                 "source_origin": "textbook_question_generated_answer",
-                "check_needed": false,
-                "uuid": "0f8ed331-978f-4134-bbd8-e58c4fa15c76"
+                "check_needed": false
               }
             ],
             "rendering": {
@@ -3680,11 +3406,10 @@
               "input_mode": "free_text"
             },
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "049e9b59-3b34-4252-9b7c-2ce0b0c53886"
+            "check_needed": false
           },
           {
-            "id": "exercise_08",
+            "id": "b9e46637-94ca-4fea-90cf-29155c015046",
             "type": "communication_dialogue",
             "variant": "role_play",
             "order": 8,
@@ -3701,7 +3426,7 @@
             ],
             "items": [
               {
-                "id": "ex08_01",
+                "id": "533030ea-90d1-444f-8f68-b2da7c9f8843",
                 "title": "买自行车",
                 "title_vi": "Mua xe đạp",
                 "lines": [
@@ -3710,11 +3435,10 @@
                   "A：可是那辆比这辆贵得多。",
                   "B：贵多少？",
                   "A：贵两百块。"
-                ],
-                "uuid": "4804b19f-7519-4f9b-a8c3-6092e2a99eea"
+                ]
               },
               {
-                "id": "ex08_02",
+                "id": "1e233739-0502-4639-967a-6dce08e3aa7a",
                 "title": "理发",
                 "title_vi": "Cắt tóc",
                 "lines": [
@@ -3722,19 +3446,17 @@
                   "B：按原来的样子理吧。",
                   "A：留长点儿还是留短点儿？",
                   "B：天冷了，留长点儿吧。"
-                ],
-                "uuid": "a96f9626-6739-4922-aed6-57909c5e616b"
+                ]
               }
             ],
             "rendering": {
               "renderer": "exercise.role_play.v2"
             },
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "ca701d8a-777d-4e9e-8b8e-0e949fa1dd32"
+            "check_needed": false
           },
           {
-            "id": "exercise_09",
+            "id": "849f6690-a8ea-4b6f-937d-429f236714ad",
             "type": "reading_comprehension",
             "variant": "reading_comprehension",
             "order": 9,
@@ -3751,83 +3473,78 @@
             "reading_ref": "reading_01",
             "questions": [
               {
-                "id": "reading_01_q01",
+                "id": "97c6a4ab-7de0-45b1-a796-4625f58d1fca",
                 "type": "true_false",
                 "prompt": "“我”和罗兰坐公共汽车去公园玩儿了。",
                 "answer": "错",
                 "answer_verified": false,
                 "evidence": [
                   {
-                    "paragraph_id": "reading_01_p02",
+                    "paragraph_id": "a6b1119e-769b-4444-9eee-c4a26d7f6af3",
                     "quote": "我们最好骑自行车去"
                   }
                 ],
                 "source_origin": "textbook_question_generated_answer",
-                "check_needed": false,
-                "uuid": "548bd8b2-ae13-4adf-9842-c5763d0c3ce7"
+                "check_needed": false
               },
               {
-                "id": "reading_01_q02",
+                "id": "82b334af-11c3-4606-980f-154617982627",
                 "type": "true_false",
                 "prompt": "“我们”排了五分钟才买到票。",
                 "answer": "对",
                 "answer_verified": false,
                 "evidence": [
                   {
-                    "paragraph_id": "reading_01_p04",
+                    "paragraph_id": "b3e5d57c-8b64-4c60-b5f0-3976cd13fef0",
                     "quote": "我们排了五分钟才买到票"
                   }
                 ],
                 "source_origin": "textbook_question_generated_answer",
-                "check_needed": false,
-                "uuid": "94a8d5f6-0f8c-4b44-9444-959cb7f8cf38"
+                "check_needed": false
               },
               {
-                "id": "reading_01_q03",
+                "id": "13181a17-4f4d-4923-a0ef-dd8d285261d4",
                 "type": "true_false",
                 "prompt": "“我们”先爬山了，然后又划船了，还照了很多相。",
                 "answer": "错",
                 "answer_verified": false,
                 "evidence": [
                   {
-                    "paragraph_id": "reading_01_p04",
+                    "paragraph_id": "b3e5d57c-8b64-4c60-b5f0-3976cd13fef0",
                     "quote": "还有不少人在湖上划船"
                   },
                   {
-                    "paragraph_id": "reading_01_p05",
+                    "paragraph_id": "383c7578-216f-41aa-a8a5-b889b7ef0fec",
                     "quote": "我和罗兰在山上照了很多相"
                   }
                 ],
                 "source_origin": "textbook_question_generated_answer",
-                "check_needed": false,
-                "uuid": "9ced135e-1fa8-4774-bbcb-7523834fe97e"
+                "check_needed": false
               },
               {
-                "id": "reading_01_q04",
+                "id": "05127eb4-5037-4e27-a2e2-5a497d413bd1",
                 "type": "true_false",
                 "prompt": "“我们”以后还会再去那个公园。",
                 "answer": "对",
                 "answer_verified": false,
                 "evidence": [
                   {
-                    "paragraph_id": "reading_01_p07",
+                    "paragraph_id": "65b480dc-c5c7-41fb-a021-f43e4aacf57c",
                     "quote": "以后我们可以再来"
                   }
                 ],
                 "source_origin": "textbook_question_generated_answer",
-                "check_needed": false,
-                "uuid": "51aa957c-8006-42a7-bf0a-094b3d36028d"
+                "check_needed": false
               }
             ],
             "rendering": {
               "renderer": "exercise.reading.true_false.v2"
             },
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "fb75af04-9da6-47b9-8bba-7290c4f2b71a"
+            "check_needed": false
           },
           {
-            "id": "exercise_10",
+            "id": "1ac62b88-14d2-473e-be1e-6a588e95e535",
             "type": "character_writing",
             "variant": "character_copying",
             "order": 10,
@@ -3844,162 +3561,144 @@
             ],
             "items": [
               {
-                "id": "char_001",
+                "id": "9f8c867c-beba-46cf-99e0-2dc871b61547",
                 "hanzi": "变",
                 "pinyin": "biàn",
                 "meaning_vi": "biến; thay đổi",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "1251edee-4e4f-44a4-a613-a990fe4bd8bf"
+                "check_needed": false
               },
               {
-                "id": "char_002",
+                "id": "d64267f3-d0df-480d-ac2c-799cc72c5727",
                 "hanzi": "迷",
                 "pinyin": "mí",
                 "meaning_vi": "mê; fan",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "ffb07af8-5037-4069-8360-ea5a7c6b58dd"
+                "check_needed": false
               },
               {
-                "id": "char_003",
+                "id": "f18de2f5-ea9a-4c6f-8203-9ec87e6074f0",
                 "hanzi": "古",
                 "pinyin": "gǔ",
                 "meaning_vi": "cổ; xưa",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "24fb7084-d34c-41b2-a489-462bf823b1f0"
+                "check_needed": false
               },
               {
-                "id": "char_004",
+                "id": "eeadefcb-f658-4422-878c-4642cec9caa5",
                 "hanzi": "高",
                 "pinyin": "gāo",
                 "meaning_vi": "cao",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "eb7bbbed-0da6-4e04-9b1a-a40742563135"
+                "check_needed": false
               },
               {
-                "id": "char_005",
+                "id": "7986bf0d-0a2a-4df2-bfb5-77177a96c27a",
                 "hanzi": "最",
                 "pinyin": "zuì",
                 "meaning_vi": "nhất",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "947c092d-d68c-4811-af24-55e90872f0cf"
+                "check_needed": false
               },
               {
-                "id": "char_006",
+                "id": "69cee776-d51f-4d4c-8865-44e5c500be8b",
                 "hanzi": "曲",
                 "pinyin": "qǔ",
                 "meaning_vi": "khúc; bản nhạc",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "2ab096cf-add5-42a9-84da-4e74d2c2cdb0"
+                "check_needed": false
               },
               {
-                "id": "char_007",
+                "id": "b00ce016-cc5e-4ca7-8718-7ddcae1618a6",
                 "hanzi": "城",
                 "pinyin": "chéng",
                 "meaning_vi": "thành; thành phố",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "219cb0a4-d895-4983-a6bc-f4572d916482"
+                "check_needed": false
               },
               {
-                "id": "char_008",
+                "id": "9fcc24e3-9e1c-4296-b02c-04422fc58fd1",
                 "hanzi": "漂",
                 "pinyin": "piào",
                 "meaning_vi": "trôi; trong 漂亮 đọc piào",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "483f316b-2e4b-4632-9246-196b04e024bf"
+                "check_needed": false
               },
               {
-                "id": "char_009",
+                "id": "465657de-9263-4d12-86f0-2441c5765015",
                 "hanzi": "亮",
                 "pinyin": "liàng",
                 "meaning_vi": "sáng; đẹp",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "b2d6cc4b-51ba-45de-93d6-080c0a662e96"
+                "check_needed": false
               },
               {
-                "id": "char_010",
+                "id": "fc063ab3-c1b4-44d9-bd34-c6ed58bdbba7",
                 "hanzi": "流",
                 "pinyin": "liú",
                 "meaning_vi": "chảy; lưu hành",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "75fd9a2e-7e64-4d78-b9c5-eae1ccaff854"
+                "check_needed": false
               },
               {
-                "id": "char_011",
+                "id": "937cd534-2bef-484c-ac0b-fc654e6db919",
                 "hanzi": "增",
                 "pinyin": "zēng",
                 "meaning_vi": "tăng thêm",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "e24ac8e3-4d94-495d-a657-c9a0f66eab89"
+                "check_needed": false
               },
               {
-                "id": "char_012",
+                "id": "df0df0d7-11b4-49e3-804b-a0fc179aab2a",
                 "hanzi": "更",
                 "pinyin": "gèng",
                 "meaning_vi": "càng; hơn nữa",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "011c1591-80fa-4992-881e-795d7b24ff33"
+                "check_needed": false
               },
               {
-                "id": "char_013",
+                "id": "d8cdf3e0-e26d-4968-a7e2-6a30d0af1b90",
                 "hanzi": "温",
                 "pinyin": "wēn",
                 "meaning_vi": "ấm; nhiệt",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "b5247b48-263e-4337-84c7-67513e633498"
+                "check_needed": false
               },
               {
-                "id": "char_014",
+                "id": "e11918fd-b3c9-4cb7-b623-0179aa82488b",
                 "hanzi": "暖",
                 "pinyin": "nuǎn",
                 "meaning_vi": "ấm áp",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "10113962-ddf3-413a-a480-3a8dcc9ba021"
+                "check_needed": false
               },
               {
-                "id": "char_015",
+                "id": "fe2d69a5-d155-4723-ba67-501d887ac2f9",
                 "hanzi": "度",
                 "pinyin": "dù",
                 "meaning_vi": "độ; mức độ",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "5ceda453-ad39-4c07-84f3-267f2b5d04d1"
+                "check_needed": false
               },
               {
-                "id": "char_016",
+                "id": "6c79894d-40a6-41be-9333-c875515563fb",
                 "hanzi": "首",
                 "pinyin": "shǒu",
                 "meaning_vi": "lượng từ cho bài hát / bài thơ",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "522b388b-1a9f-43b8-b288-2045105232ed"
+                "check_needed": false
               }
             ],
             "rendering": {
               "renderer": "exercise.character_writing.v2"
             },
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "352dc366-edfb-44b0-8a50-2b71ab3140f9"
+            "check_needed": false
           }
-        ],
-        "uuid": "2f3c6186-d968-40c2-8d0b-3e0cf71bad97"
+        ]
       },
       {
-        "id": "section_07_reading",
+        "id": "886f621e-85ce-4e1a-91df-d8d257596034",
         "type": "reading",
         "order": 7,
         "title": "阅读理解",
@@ -4008,7 +3707,7 @@
         "check_needed": false,
         "supplementary_vocabulary": [
           {
-            "id": "reading_vocab_001",
+            "id": "97948db8-350f-468f-a584-08ac6ee8ea70",
             "type": "vocabulary_item",
             "order": 1,
             "hanzi": "逛",
@@ -4021,11 +3720,10 @@
               "reading"
             ],
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "882b10b0-aa4e-4dfc-b1ef-aec076b1e55c"
+            "check_needed": false
           },
           {
-            "id": "reading_vocab_002",
+            "id": "2e47d0d4-9926-4054-a4e1-cfe61d63cfac",
             "type": "vocabulary_item",
             "order": 2,
             "hanzi": "票",
@@ -4038,11 +3736,10 @@
               "reading"
             ],
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "61bafa4a-c986-4b5e-8484-162e724d11e7"
+            "check_needed": false
           },
           {
-            "id": "reading_vocab_003",
+            "id": "bb1aecd4-8b82-45bf-8c9d-b3e9082911a6",
             "type": "vocabulary_item",
             "order": 3,
             "hanzi": "排队",
@@ -4055,11 +3752,10 @@
               "reading"
             ],
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "ec44c8ca-dbc9-42b7-aefb-625eea9d08f8"
+            "check_needed": false
           },
           {
-            "id": "reading_vocab_004",
+            "id": "66286879-4464-4667-b96b-edb647e8e7a6",
             "type": "vocabulary_item",
             "order": 4,
             "hanzi": "汗",
@@ -4072,11 +3768,10 @@
               "reading"
             ],
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "608c8558-8ed9-4727-9c12-0186a0f082db"
+            "check_needed": false
           },
           {
-            "id": "reading_vocab_005",
+            "id": "e6317463-2f70-47e1-94a3-4f609e48161a",
             "type": "vocabulary_item",
             "order": 5,
             "hanzi": "湖",
@@ -4089,11 +3784,10 @@
               "reading"
             ],
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "770b0133-40ed-486e-8437-d9c8d7a70e98"
+            "check_needed": false
           },
           {
-            "id": "reading_vocab_006",
+            "id": "7d280f35-81eb-4265-bc39-135c0a35e019",
             "type": "vocabulary_item",
             "order": 6,
             "hanzi": "桥",
@@ -4106,11 +3800,10 @@
               "reading"
             ],
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "369deb70-2e82-4e7b-8c97-89fb9978dcaa"
+            "check_needed": false
           },
           {
-            "id": "reading_vocab_007",
+            "id": "1fe04b57-27fb-446a-a96c-ac48b8e36867",
             "type": "vocabulary_item",
             "order": 7,
             "hanzi": "划船",
@@ -4123,11 +3816,10 @@
               "reading"
             ],
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "3aec5bf7-4c34-486a-8ba9-756fbc93da37"
+            "check_needed": false
           },
           {
-            "id": "reading_vocab_008",
+            "id": "fc6f1323-fa97-4b01-93e5-607c6f16c165",
             "type": "vocabulary_item",
             "order": 8,
             "hanzi": "照相",
@@ -4140,20 +3832,19 @@
               "reading"
             ],
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "19c2979f-9367-40c8-bfd5-f83636a47540"
+            "check_needed": false
           }
         ],
         "items": [
           {
-            "id": "reading_01",
+            "id": "9bd9a79e-3279-468d-9f4b-ecd1f7365e19",
             "type": "text_reading",
             "order": 1,
             "title": "逛公园",
             "title_vi": "Đi chơi công viên",
             "paragraphs": [
               {
-                "id": "reading_01_p01",
+                "id": "d2a4cf8b-55cd-4904-9fed-3141da682b19",
                 "order": 1,
                 "zh": "昨天晚上我对罗兰说，听说我们学校西边有个公园，那个公园很大。公园里有山有水，很漂亮。明天是星期六，我们去公园玩儿玩儿怎么样？罗兰说，她也正想去公园散散步呢。",
                 "pinyin": "",
@@ -4162,11 +3853,10 @@
                 "vocab_refs": [],
                 "grammar_refs": [],
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "bb270937-1e5e-4176-b56d-b0c40e55f3c7"
+                "check_needed": false
               },
               {
-                "id": "reading_01_p02",
+                "id": "a6b1119e-769b-4444-9eee-c4a26d7f6af3",
                 "order": 2,
                 "zh": "我问罗兰怎么去，罗兰说，星期六坐公共汽车的人比较多，我们最好骑自行车去，还可以锻炼身体。",
                 "pinyin": "",
@@ -4175,11 +3865,10 @@
                 "vocab_refs": [],
                 "grammar_refs": [],
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "9cb5d239-a6c4-4f5f-ab0c-04ea24d7d14f"
+                "check_needed": false
               },
               {
-                "id": "reading_01_p03",
+                "id": "ce8bdbc9-b498-418a-ab2c-e16111228a35",
                 "order": 3,
                 "zh": "今天早上，我们起得很早，吃了早饭就出发了，半个小时就到公园了。",
                 "pinyin": "",
@@ -4188,11 +3877,10 @@
                 "vocab_refs": [],
                 "grammar_refs": [],
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "7000ae31-0b38-4691-8bf8-db3920d8a398"
+                "check_needed": false
               },
               {
-                "id": "reading_01_p04",
+                "id": "b3e5d57c-8b64-4c60-b5f0-3976cd13fef0",
                 "order": 4,
                 "zh": "今天逛公园的人真多，买票要排队，我们排了五分钟才买到票。买了票我们就进去了。我和罗兰先爬山，爬了二十多分钟就爬到了山上。因为爬得太快了，我出了一身汗。从山上往下看，非常漂亮。山上有很多树，还有很多花儿。公园里有一个很大的湖，湖上有一座白色的桥。很多人在湖边散步，还有不少人在湖上划船。罗兰说，这个公园真大，真漂亮。",
                 "pinyin": "",
@@ -4201,11 +3889,10 @@
                 "vocab_refs": [],
                 "grammar_refs": [],
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "b321db01-ae1b-4dfd-b394-b5ff6ccb2398"
+                "check_needed": false
               },
               {
-                "id": "reading_01_p05",
+                "id": "383c7578-216f-41aa-a8a5-b889b7ef0fec",
                 "order": 5,
                 "zh": "我和罗兰在山上照了很多相。照完相我们就下山了。",
                 "pinyin": "",
@@ -4214,11 +3901,10 @@
                 "vocab_refs": [],
                 "grammar_refs": [],
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "6b0090a1-6a54-4ee5-b71c-eea8da0abe7c"
+                "check_needed": false
               },
               {
-                "id": "reading_01_p06",
+                "id": "bbed4df4-546b-4399-90a0-483fe2b0f43b",
                 "order": 6,
                 "zh": "我们在公园里玩儿了一个上午，看了很多地方。",
                 "pinyin": "",
@@ -4227,11 +3913,10 @@
                 "vocab_refs": [],
                 "grammar_refs": [],
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "d98c1d1a-c2c9-4c1d-be5c-47a9127f23d8"
+                "check_needed": false
               },
               {
-                "id": "reading_01_p07",
+                "id": "65b480dc-c5c7-41fb-a021-f43e4aacf57c",
                 "order": 7,
                 "zh": "我对罗兰说，学校离这个公园不太远，可以经常骑车到这儿来玩儿。爬爬山，划划船，或者跟朋友一起来散散步，聊聊天儿。罗兰说，以后我们可以再来。",
                 "pinyin": "",
@@ -4240,89 +3925,82 @@
                 "vocab_refs": [],
                 "grammar_refs": [],
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "fd618fb9-5c41-4016-b3c0-b5d3defb7ffb"
+                "check_needed": false
               }
             ],
             "questions": [
               {
-                "id": "reading_01_q01",
+                "id": "97c6a4ab-7de0-45b1-a796-4625f58d1fca",
                 "type": "true_false",
                 "prompt": "“我”和罗兰坐公共汽车去公园玩儿了。",
                 "answer": "错",
                 "answer_verified": false,
                 "evidence": [
                   {
-                    "paragraph_id": "reading_01_p02",
+                    "paragraph_id": "a6b1119e-769b-4444-9eee-c4a26d7f6af3",
                     "quote": "我们最好骑自行车去"
                   }
                 ],
                 "source_origin": "textbook_question_generated_answer",
-                "check_needed": false,
-                "uuid": "da17a2db-8c14-4b84-8237-fe2cdd56f545"
+                "check_needed": false
               },
               {
-                "id": "reading_01_q02",
+                "id": "82b334af-11c3-4606-980f-154617982627",
                 "type": "true_false",
                 "prompt": "“我们”排了五分钟才买到票。",
                 "answer": "对",
                 "answer_verified": false,
                 "evidence": [
                   {
-                    "paragraph_id": "reading_01_p04",
+                    "paragraph_id": "b3e5d57c-8b64-4c60-b5f0-3976cd13fef0",
                     "quote": "我们排了五分钟才买到票"
                   }
                 ],
                 "source_origin": "textbook_question_generated_answer",
-                "check_needed": false,
-                "uuid": "5ce8e683-a14b-4ecc-b238-d889e16d0896"
+                "check_needed": false
               },
               {
-                "id": "reading_01_q03",
+                "id": "13181a17-4f4d-4923-a0ef-dd8d285261d4",
                 "type": "true_false",
                 "prompt": "“我们”先爬山了，然后又划船了，还照了很多相。",
                 "answer": "错",
                 "answer_verified": false,
                 "evidence": [
                   {
-                    "paragraph_id": "reading_01_p04",
+                    "paragraph_id": "b3e5d57c-8b64-4c60-b5f0-3976cd13fef0",
                     "quote": "还有不少人在湖上划船"
                   },
                   {
-                    "paragraph_id": "reading_01_p05",
+                    "paragraph_id": "383c7578-216f-41aa-a8a5-b889b7ef0fec",
                     "quote": "我和罗兰在山上照了很多相"
                   }
                 ],
                 "source_origin": "textbook_question_generated_answer",
-                "check_needed": false,
-                "uuid": "edbd5626-8b83-4364-9c9a-7103bef2b111"
+                "check_needed": false
               },
               {
-                "id": "reading_01_q04",
+                "id": "05127eb4-5037-4e27-a2e2-5a497d413bd1",
                 "type": "true_false",
                 "prompt": "“我们”以后还会再去那个公园。",
                 "answer": "对",
                 "answer_verified": false,
                 "evidence": [
                   {
-                    "paragraph_id": "reading_01_p07",
+                    "paragraph_id": "65b480dc-c5c7-41fb-a021-f43e4aacf57c",
                     "quote": "以后我们可以再来"
                   }
                 ],
                 "source_origin": "textbook_question_generated_answer",
-                "check_needed": false,
-                "uuid": "45eb871d-a30f-48de-a352-c81a08655b2f"
+                "check_needed": false
               }
             ],
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "332bf6bf-45ce-45e2-bed3-632a68a490a1"
+            "check_needed": false
           }
-        ],
-        "uuid": "eb7e0f55-4cba-4682-a4e5-bfad7f1f757a"
+        ]
       },
       {
-        "id": "section_08_character_writing",
+        "id": "2a3cfdb8-618f-43d3-9ad4-160d1dbb366a",
         "type": "character_writing",
         "order": 8,
         "title": "写汉字",
@@ -4331,186 +4009,169 @@
         "check_needed": false,
         "items": [
           {
-            "id": "char_001",
+            "id": "9f8c867c-beba-46cf-99e0-2dc871b61547",
             "hanzi": "变",
             "pinyin": "biàn",
             "meaning_vi": "biến; thay đổi",
             "source_origin": "textbook",
             "check_needed": false,
             "type": "character_writing_item",
-            "order": 1,
-            "uuid": "f992e5b0-b236-4238-9c0d-2ada08864b5d"
+            "order": 1
           },
           {
-            "id": "char_002",
+            "id": "d64267f3-d0df-480d-ac2c-799cc72c5727",
             "hanzi": "迷",
             "pinyin": "mí",
             "meaning_vi": "mê; fan",
             "source_origin": "textbook",
             "check_needed": false,
             "type": "character_writing_item",
-            "order": 2,
-            "uuid": "62573b3b-12de-4d60-9298-1427ba02783b"
+            "order": 2
           },
           {
-            "id": "char_003",
+            "id": "f18de2f5-ea9a-4c6f-8203-9ec87e6074f0",
             "hanzi": "古",
             "pinyin": "gǔ",
             "meaning_vi": "cổ; xưa",
             "source_origin": "textbook",
             "check_needed": false,
             "type": "character_writing_item",
-            "order": 3,
-            "uuid": "0195fbc0-b6cd-4c39-84aa-4bad1e4f1a28"
+            "order": 3
           },
           {
-            "id": "char_004",
+            "id": "eeadefcb-f658-4422-878c-4642cec9caa5",
             "hanzi": "高",
             "pinyin": "gāo",
             "meaning_vi": "cao",
             "source_origin": "textbook",
             "check_needed": false,
             "type": "character_writing_item",
-            "order": 4,
-            "uuid": "9331d595-c9ad-48c1-90da-3e5720ac7782"
+            "order": 4
           },
           {
-            "id": "char_005",
+            "id": "7986bf0d-0a2a-4df2-bfb5-77177a96c27a",
             "hanzi": "最",
             "pinyin": "zuì",
             "meaning_vi": "nhất",
             "source_origin": "textbook",
             "check_needed": false,
             "type": "character_writing_item",
-            "order": 5,
-            "uuid": "2773e50c-18e1-4dbf-87bd-cf49395ecfdd"
+            "order": 5
           },
           {
-            "id": "char_006",
+            "id": "69cee776-d51f-4d4c-8865-44e5c500be8b",
             "hanzi": "曲",
             "pinyin": "qǔ",
             "meaning_vi": "khúc; bản nhạc",
             "source_origin": "textbook",
             "check_needed": false,
             "type": "character_writing_item",
-            "order": 6,
-            "uuid": "17aa7215-bee8-4846-9a82-f3e9d5566ccb"
+            "order": 6
           },
           {
-            "id": "char_007",
+            "id": "b00ce016-cc5e-4ca7-8718-7ddcae1618a6",
             "hanzi": "城",
             "pinyin": "chéng",
             "meaning_vi": "thành; thành phố",
             "source_origin": "textbook",
             "check_needed": false,
             "type": "character_writing_item",
-            "order": 7,
-            "uuid": "48967a23-28e8-435e-94b5-c13fc3d99c40"
+            "order": 7
           },
           {
-            "id": "char_008",
+            "id": "9fcc24e3-9e1c-4296-b02c-04422fc58fd1",
             "hanzi": "漂",
             "pinyin": "piào",
             "meaning_vi": "trôi; trong 漂亮 đọc piào",
             "source_origin": "textbook",
             "check_needed": false,
             "type": "character_writing_item",
-            "order": 8,
-            "uuid": "ca226508-72f3-4aba-a69a-a39026319ecd"
+            "order": 8
           },
           {
-            "id": "char_009",
+            "id": "465657de-9263-4d12-86f0-2441c5765015",
             "hanzi": "亮",
             "pinyin": "liàng",
             "meaning_vi": "sáng; đẹp",
             "source_origin": "textbook",
             "check_needed": false,
             "type": "character_writing_item",
-            "order": 9,
-            "uuid": "7be774e0-1d44-4b13-a05d-c8dab41de5c1"
+            "order": 9
           },
           {
-            "id": "char_010",
+            "id": "fc063ab3-c1b4-44d9-bd34-c6ed58bdbba7",
             "hanzi": "流",
             "pinyin": "liú",
             "meaning_vi": "chảy; lưu hành",
             "source_origin": "textbook",
             "check_needed": false,
             "type": "character_writing_item",
-            "order": 10,
-            "uuid": "4e1d8dce-ffdf-429c-810d-28f865025a3e"
+            "order": 10
           },
           {
-            "id": "char_011",
+            "id": "937cd534-2bef-484c-ac0b-fc654e6db919",
             "hanzi": "增",
             "pinyin": "zēng",
             "meaning_vi": "tăng thêm",
             "source_origin": "textbook",
             "check_needed": false,
             "type": "character_writing_item",
-            "order": 11,
-            "uuid": "c8af3304-0953-4495-9579-cf86f47ff896"
+            "order": 11
           },
           {
-            "id": "char_012",
+            "id": "df0df0d7-11b4-49e3-804b-a0fc179aab2a",
             "hanzi": "更",
             "pinyin": "gèng",
             "meaning_vi": "càng; hơn nữa",
             "source_origin": "textbook",
             "check_needed": false,
             "type": "character_writing_item",
-            "order": 12,
-            "uuid": "03efb6bf-d6d1-4d8b-90a9-cc83cf9cb4d3"
+            "order": 12
           },
           {
-            "id": "char_013",
+            "id": "d8cdf3e0-e26d-4968-a7e2-6a30d0af1b90",
             "hanzi": "温",
             "pinyin": "wēn",
             "meaning_vi": "ấm; nhiệt",
             "source_origin": "textbook",
             "check_needed": false,
             "type": "character_writing_item",
-            "order": 13,
-            "uuid": "3be20713-f424-4495-a7dc-6234e57480d0"
+            "order": 13
           },
           {
-            "id": "char_014",
+            "id": "e11918fd-b3c9-4cb7-b623-0179aa82488b",
             "hanzi": "暖",
             "pinyin": "nuǎn",
             "meaning_vi": "ấm áp",
             "source_origin": "textbook",
             "check_needed": false,
             "type": "character_writing_item",
-            "order": 14,
-            "uuid": "f519e404-9c92-42e1-b2d6-09001410fadd"
+            "order": 14
           },
           {
-            "id": "char_015",
+            "id": "fe2d69a5-d155-4723-ba67-501d887ac2f9",
             "hanzi": "度",
             "pinyin": "dù",
             "meaning_vi": "độ; mức độ",
             "source_origin": "textbook",
             "check_needed": false,
             "type": "character_writing_item",
-            "order": 15,
-            "uuid": "3a7a5080-9fb6-476b-9830-7ddb86d78b0c"
+            "order": 15
           },
           {
-            "id": "char_016",
+            "id": "6c79894d-40a6-41be-9333-c875515563fb",
             "hanzi": "首",
             "pinyin": "shǒu",
             "meaning_vi": "lượng từ cho bài hát / bài thơ",
             "source_origin": "textbook",
             "check_needed": false,
             "type": "character_writing_item",
-            "order": 16,
-            "uuid": "f399c8b4-fd26-42b3-b205-b23c93d32ee3"
+            "order": 16
           }
-        ],
-        "uuid": "025c91a8-5c88-4406-b57a-efe6d5aa2b05"
+        ]
       },
       {
-        "id": "section_09_summary",
+        "id": "944b8c3a-d3d4-4265-a907-10cef8340ac2",
         "type": "summary",
         "order": 9,
         "title": "总结",
@@ -4530,49 +4191,40 @@
           ],
           "grammar_points": [
             {
-              "id": "grammar_01",
-              "title": "比较句：A 比 B + 形容词",
-              "uuid": "e7f50f0f-ffab-4333-9075-5980b94b1192"
+              "id": "f8ec59f3-898a-47b2-b536-44dfd8183393",
+              "title": "比较句：A 比 B + 形容词"
             },
             {
-              "id": "grammar_02",
-              "title": "更",
-              "uuid": "41403405-9f6f-41f6-9607-cb456d475ebd"
+              "id": "57b14753-688a-41b6-9e0d-b61dbbf574d7",
+              "title": "更"
             },
             {
-              "id": "grammar_03",
-              "title": "比较句中的数量补语",
-              "uuid": "c5b51faa-8663-4f0c-a784-d30e125fd8a8"
+              "id": "fa804fff-372b-4874-8571-f54e613d7e07",
+              "title": "比较句中的数量补语"
             },
             {
-              "id": "grammar_04",
-              "title": "没有 trong phủ định so sánh",
-              "uuid": "42a063ba-ef20-4766-8431-9d890cd90944"
+              "id": "c6cd6c38-22fc-4546-a398-39efe02d6c17",
+              "title": "没有 trong phủ định so sánh"
             },
             {
-              "id": "grammar_05",
-              "title": "有 / 没有……这么 / 那么……",
-              "uuid": "bbcabf33-2150-4040-ac27-7def8ff66010"
+              "id": "c3d31639-0f40-4b2f-aa50-5dda9d443b78",
+              "title": "有 / 没有……这么 / 那么……"
             },
             {
-              "id": "grammar_06",
-              "title": "最",
-              "uuid": "8d6e96c0-268d-4561-8df2-0d7e7bd5dcfb"
+              "id": "b0c8e101-1500-4742-9064-1e102a0eb8b9",
+              "title": "最"
             },
             {
-              "id": "grammar_07",
-              "title": "程度差异：一点儿 / 得多 / 多了 / 很多",
-              "uuid": "ff650312-e58a-4928-ba1c-d67a7f0a31b5"
+              "id": "f3302370-f1c2-4d08-99ba-fda75cc4a335",
+              "title": "程度差异：一点儿 / 得多 / 多了 / 很多"
             },
             {
-              "id": "grammar_08",
-              "title": "动词 + 得 + 补语 trong so sánh",
-              "uuid": "d2936580-ec6c-47b8-9b20-2c1ce57d9be7"
+              "id": "b7073860-473c-4cb7-82ba-943917998455",
+              "title": "动词 + 得 + 补语 trong so sánh"
             },
             {
-              "id": "grammar_09",
-              "title": "感叹句",
-              "uuid": "5bda350a-dbed-470f-97c8-c9ea0e4f3fc8"
+              "id": "3253aaee-3b06-4864-9b11-98c656764ed4",
+              "title": "感叹句"
             }
           ],
           "key_patterns": [
@@ -4596,10 +4248,43 @@
               "Official answer key for some exercises not included in PDF scan; generated answers are not marked final_verified."
             ]
           }
-        },
-        "uuid": "41309083-3e94-4be6-a982-51c387c6939e"
+        }
       }
     ],
+    "metadata": {
+      "legacy_id": "hanyu_2_1_lesson_06",
+      "book": "Hanyu Jiaocheng",
+      "volume": "第二册上",
+      "volume_vi": "Quyển 2 Thượng",
+      "lesson_index": 6,
+      "lesson_number_cn": "第六课",
+      "lesson_title_cn": "我比你更喜欢音乐",
+      "lesson_title_pinyin": "Wǒ bǐ nǐ gèng xǐhuan yīnyuè",
+      "lesson_title_vi": "Tôi thích âm nhạc hơn bạn",
+      "lesson_title_en": "I like music more than you do",
+      "source_files": [
+        {
+          "name": "Hanyu Jiaocheng 2-1.pdf",
+          "type": "pdf_scan",
+          "source_origin": "textbook",
+          "check_needed": false,
+          "page_start": 86,
+          "page_end": 107
+        },
+        {
+          "name": "Tong_hop_tu_vung_Han_ngu_quyen_2_Bai_1-25.docx",
+          "type": "uploaded_crosscheck",
+          "source_origin": "uploaded_crosscheck",
+          "check_needed": false
+        },
+        {
+          "name": "Học kì 2 上-下.md",
+          "type": "uploaded_crosscheck",
+          "source_origin": "uploaded_crosscheck",
+          "check_needed": false
+        }
+      ]
+    },
     "summary": {
       "lesson_parts": [
         "课文",
@@ -4613,49 +4298,40 @@
       ],
       "grammar_points": [
         {
-          "id": "grammar_01",
-          "title": "比较句：A 比 B + 形容词",
-          "uuid": "3e92c2be-5af1-4d94-ab19-b726b466d5b0"
+          "id": "f8ec59f3-898a-47b2-b536-44dfd8183393",
+          "title": "比较句：A 比 B + 形容词"
         },
         {
-          "id": "grammar_02",
-          "title": "更",
-          "uuid": "0ab28c00-45bf-4b36-8624-d89bb16b803d"
+          "id": "57b14753-688a-41b6-9e0d-b61dbbf574d7",
+          "title": "更"
         },
         {
-          "id": "grammar_03",
-          "title": "比较句中的数量补语",
-          "uuid": "b6d7c0ee-5488-49c3-aab0-e7f3bf1e471d"
+          "id": "fa804fff-372b-4874-8571-f54e613d7e07",
+          "title": "比较句中的数量补语"
         },
         {
-          "id": "grammar_04",
-          "title": "没有 trong phủ định so sánh",
-          "uuid": "177c7ddd-0766-4b66-bd30-ac2dc4dfcb0c"
+          "id": "c6cd6c38-22fc-4546-a398-39efe02d6c17",
+          "title": "没有 trong phủ định so sánh"
         },
         {
-          "id": "grammar_05",
-          "title": "有 / 没有……这么 / 那么……",
-          "uuid": "242c4cae-5252-4bd7-ba4d-06e0c5bf74d9"
+          "id": "c3d31639-0f40-4b2f-aa50-5dda9d443b78",
+          "title": "有 / 没有……这么 / 那么……"
         },
         {
-          "id": "grammar_06",
-          "title": "最",
-          "uuid": "78edf13c-5bcc-43e2-bad1-3bc36bdd3c28"
+          "id": "b0c8e101-1500-4742-9064-1e102a0eb8b9",
+          "title": "最"
         },
         {
-          "id": "grammar_07",
-          "title": "程度差异：一点儿 / 得多 / 多了 / 很多",
-          "uuid": "8c79a961-1a36-4cc2-a049-92aceee2a9f1"
+          "id": "f3302370-f1c2-4d08-99ba-fda75cc4a335",
+          "title": "程度差异：一点儿 / 得多 / 多了 / 很多"
         },
         {
-          "id": "grammar_08",
-          "title": "动词 + 得 + 补语 trong so sánh",
-          "uuid": "479feb8b-01d7-4892-a50d-a08de0fb33ef"
+          "id": "b7073860-473c-4cb7-82ba-943917998455",
+          "title": "动词 + 得 + 补语 trong so sánh"
         },
         {
-          "id": "grammar_09",
-          "title": "感叹句",
-          "uuid": "751d08b2-9445-4759-8da1-dca1efcab65b"
+          "id": "3253aaee-3b06-4864-9b11-98c656764ed4",
+          "title": "感叹句"
         }
       ],
       "main_patterns": [
@@ -4691,223 +4367,6 @@
         "Viết chữ Hán"
       ],
       "check_needed": false
-    },
-    "uuid": "36efb1d7-48b8-46f4-874f-4e321172ba6b"
-  },
-  "coverage_report": {
-    "version": "coverage_v1",
-    "coverage_status": "complete_unverified",
-    "expected_exercise_count_from_pdf": 10,
-    "actual_exercise_count_in_json": 10,
-    "all_exercises_covered": true,
-    "all_exercise_content_verified": true,
-    "missing_exercise_indexes": [],
-    "expected_exercises_from_pdf": [
-      {
-        "order": 1,
-        "title_cn": "一、语音",
-        "title_vi": "Ngữ âm",
-        "canonical_type": "phonetics",
-        "canonical_variant": "pronunciation_tone_minimal_pairs",
-        "json_item_id": "exercise_01",
-        "page_start": null,
-        "page_end": null,
-        "extracted": true,
-        "content_verified": true,
-        "answer_verified": true,
-        "source_origin": "textbook",
-        "check_needed": false,
-        "missing_reason": ""
-      },
-      {
-        "order": 2,
-        "title_cn": "二、替换",
-        "title_vi": "Thay thế theo mẫu",
-        "canonical_type": "substitution_drill",
-        "canonical_variant": "substitution_or_transform_drill",
-        "json_item_id": "exercise_02",
-        "page_start": null,
-        "page_end": null,
-        "extracted": true,
-        "content_verified": true,
-        "answer_verified": true,
-        "source_origin": "textbook",
-        "check_needed": false,
-        "missing_reason": ""
-      },
-      {
-        "order": 3,
-        "title_cn": "三、选词填空",
-        "title_vi": "Chọn từ điền chỗ trống",
-        "canonical_type": "choose_words_fill_blank",
-        "canonical_variant": "word_bank_fill_blank",
-        "json_item_id": "exercise_03",
-        "page_start": null,
-        "page_end": null,
-        "extracted": true,
-        "content_verified": true,
-        "answer_verified": false,
-        "source_origin": "textbook",
-        "check_needed": false,
-        "missing_reason": ""
-      },
-      {
-        "order": 4,
-        "title_cn": "四、按照例句做练习",
-        "title_vi": "Làm theo mẫu",
-        "canonical_type": "custom",
-        "canonical_variant": "custom_textbook_task",
-        "json_item_id": "exercise_04",
-        "page_start": null,
-        "page_end": null,
-        "extracted": true,
-        "content_verified": true,
-        "answer_verified": true,
-        "source_origin": "textbook",
-        "check_needed": false,
-        "missing_reason": ""
-      },
-      {
-        "order": 5,
-        "title_cn": "五、完成会话",
-        "title_vi": "Hoàn thành hội thoại",
-        "canonical_type": "complete_dialogue",
-        "canonical_variant": "complete_dialogue",
-        "json_item_id": "exercise_05",
-        "page_start": null,
-        "page_end": null,
-        "extracted": true,
-        "content_verified": true,
-        "answer_verified": false,
-        "source_origin": "textbook",
-        "check_needed": false,
-        "missing_reason": ""
-      },
-      {
-        "order": 6,
-        "title_cn": "六、改错句",
-        "title_vi": "Sửa câu sai",
-        "canonical_type": "correct_sentence",
-        "canonical_variant": "error_correction",
-        "json_item_id": "exercise_06",
-        "page_start": null,
-        "page_end": null,
-        "extracted": true,
-        "content_verified": true,
-        "answer_verified": false,
-        "source_origin": "textbook",
-        "check_needed": false,
-        "missing_reason": ""
-      },
-      {
-        "order": 7,
-        "title_cn": "七、根据实际情况回答问题",
-        "title_vi": "Trả lời theo tình hình thực tế",
-        "canonical_type": "answer_questions",
-        "canonical_variant": "custom_textbook_task",
-        "json_item_id": "exercise_07",
-        "page_start": null,
-        "page_end": null,
-        "extracted": true,
-        "content_verified": true,
-        "answer_verified": false,
-        "source_origin": "textbook",
-        "check_needed": false,
-        "missing_reason": ""
-      },
-      {
-        "order": 8,
-        "title_cn": "八、交际会话",
-        "title_vi": "Hội thoại giao tiếp",
-        "canonical_type": "communication_dialogue",
-        "canonical_variant": "role_play",
-        "json_item_id": "exercise_08",
-        "page_start": null,
-        "page_end": null,
-        "extracted": true,
-        "content_verified": true,
-        "answer_verified": true,
-        "source_origin": "textbook",
-        "check_needed": false,
-        "missing_reason": ""
-      },
-      {
-        "order": 9,
-        "title_cn": "九、阅读理解",
-        "title_vi": "Đọc hiểu",
-        "canonical_type": "reading_comprehension",
-        "canonical_variant": "reading_comprehension",
-        "json_item_id": "exercise_09",
-        "page_start": null,
-        "page_end": null,
-        "extracted": true,
-        "content_verified": true,
-        "answer_verified": false,
-        "source_origin": "textbook",
-        "check_needed": false,
-        "missing_reason": ""
-      },
-      {
-        "order": 10,
-        "title_cn": "十、写汉字",
-        "title_vi": "Viết chữ Hán",
-        "canonical_type": "character_writing",
-        "canonical_variant": "character_copying",
-        "json_item_id": "exercise_10",
-        "page_start": null,
-        "page_end": null,
-        "extracted": true,
-        "content_verified": true,
-        "answer_verified": true,
-        "source_origin": "textbook",
-        "check_needed": false,
-        "missing_reason": ""
-      }
-    ],
-    "unknown_or_unmapped_blocks": [],
-    "coverage_gates": [
-      {
-        "id": "gate_text",
-        "label": "Text blocks covered",
-        "passed": true,
-        "expected": 2,
-        "actual": 2,
-        "reason": "",
-        "uuid": "b9acc73d-7eb6-4886-b473-a17c8f68a463"
-      },
-      {
-        "id": "gate_vocabulary",
-        "label": "Vocabulary corrected",
-        "passed": true,
-        "expected": "main vocab incl 建筑, 年轻, proper noun 上海",
-        "actual": "included",
-        "reason": "",
-        "uuid": "e47af7a7-b5f9-4fd3-84bd-65ae39062a9e"
-      },
-      {
-        "id": "gate_exercises",
-        "label": "All exercise headings covered",
-        "passed": true,
-        "expected": 10,
-        "actual": 10,
-        "reason": "",
-        "uuid": "74f54602-fdf4-45e9-90c2-0fc2dbafea14"
-      },
-      {
-        "id": "gate_final_allowed",
-        "label": "Final verification allowed",
-        "passed": false,
-        "expected": true,
-        "actual": false,
-        "reason": "No official full answer key; keep verification_status=verified, not final_verified.",
-        "uuid": "dc9e0442-3eee-49f1-bcc4-840944a666a2"
-      }
-    ],
-    "final_verification_allowed": false
-  },
-  "warnings": [
-    "PART 02 đã được sửa trong JSON: thêm 建筑, sửa 年轻, thêm 专名 上海.",
-    "Một số answer key bài tập là đáp án suy luận, không phải đáp án chính thức từ sách; các trường đó dùng source_origin='textbook_question_generated_answer' và answer_verified=false.",
-    "Không set final_verified vì chưa có answer key chính thức của toàn bộ bài tập."
-  ]
+    }
+  }
 }

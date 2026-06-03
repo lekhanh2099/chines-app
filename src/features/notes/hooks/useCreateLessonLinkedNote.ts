@@ -50,12 +50,10 @@ export function useCreateLessonLinkedNote() {
 
       return note;
     },
-    onSuccess: async (_note, variables) => {
-      const relationType = variables.relationType ?? "main";
-
+    onSuccess: async () => {
       await queryClient.invalidateQueries({ queryKey: ["notes-list"] });
       await queryClient.invalidateQueries({
-        queryKey: ["lesson-linked-note", variables.lessonId, relationType],
+        queryKey: ["lesson-linked-note"],
       });
     },
   });

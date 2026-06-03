@@ -13,26 +13,36 @@ import {
 export function useLessonLinkedNote(
   lessonId: string | null | undefined,
   relationType: LessonNoteRelationType = "main",
+  fallbackLessonIds: string[] = [],
 ) {
   const supabaseRef = useRef(createClient());
   const supabase = supabaseRef.current;
 
+  const lessonIds = [lessonId, ...fallbackLessonIds]
+    .filter((value): value is string => Boolean(value))
+    .filter((value, index, source) => source.indexOf(value) === index);
+
   return useQuery({
-    queryKey: ["lesson-linked-note", lessonId, relationType],
-    enabled: Boolean(lessonId),
+    queryKey: ["lesson-linked-note", lessonIds, relationType],
+    enabled: lessonIds.length > 0,
     queryFn: async () => {
-      if (!lessonId) return null;
+      if (lessonIds.length === 0) return null;
 
       const user = await getClientSessionUser(supabase);
       if (!user) return null;
 
-      return getNoteByLessonNoteLink(
-        supabase,
-        user.id,
-        lessonId,
-        "hanzihome_lesson",
-        relationType,
-      );
+      for (const currentLessonId of lessonIds) {
+        const note = await getNoteByLessonNoteLink(
+          supabase,
+          user.id,
+          currentLessonId,
+          "hanzihome_lesson",
+          relationType,
+        );
+        if (note) return note;
+      }
+
+      return null;
     },
   });
 }

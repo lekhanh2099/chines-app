@@ -1,4 +1,4 @@
-import { randomUUID } from "node:crypto";
+import { createHash } from "node:crypto";
 import { mkdir, readdir, readFile, rm, writeFile } from "node:fs/promises";
 import path from "node:path";
 
@@ -40,6 +40,18 @@ type ExistingUuidMaps = {
  byPathAndId: Map<string, string>;
  byUniqueId: Map<string, string>;
 };
+
+type IdUuidMaps = ExistingUuidMaps & {
+ byOldId: Map<string, string>;
+};
+
+const refKeys = new Set([
+ "paragraph_id",
+ "source_ref",
+ "source_text_ref",
+ "vocab_ref",
+ "grammar_ref",
+]);
 
 function parseArgs(): ImportArgs {
  const args = process.argv.slice(2);
@@ -160,41 +172,99 @@ function collectExistingUuidMaps(value: unknown): ExistingUuidMaps {
  };
 }
 
-function addStableUuids(value: unknown, maps: ExistingUuidMaps): unknown {
- const used = new Set<string>();
+function isUuid(value: string) {
+ return /^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i.test(value);
+}
 
- function nextUuid(current: JsonRecord, pointer: string) {
-  const existing = stringValue(current, "uuid");
-  if (existing && !used.has(existing)) return existing;
+function stableUuidFromKey(key: string) {
+ const bytes = Buffer.from(createHash("sha256").update(key).digest("hex").slice(0, 32), "hex");
+ bytes[6] = (bytes[6] & 0x0f) | 0x40;
+ bytes[8] = (bytes[8] & 0x3f) | 0x80;
+ const hex = bytes.toString("hex");
+ return [
+  hex.slice(0, 8),
+  hex.slice(8, 12),
+  hex.slice(12, 16),
+  hex.slice(16, 20),
+  hex.slice(20, 32),
+ ].join("-");
+}
 
+function collectIds(value: unknown) {
+ const ids = new Set<string>();
+
+ function visit(current: unknown) {
+  if (Array.isArray(current)) {
+   current.forEach(visit);
+   return;
+  }
+
+  if (!isRecord(current)) return;
   const id = stringValue(current, "id");
-  const byPath = id ? maps.byPathAndId.get(`${pointer}#${id}`) : undefined;
-  const byId = id ? maps.byUniqueId.get(id) : undefined;
-  const candidate = byPath || byId;
+  if (id) ids.add(id);
 
-  if (candidate && !used.has(candidate)) return candidate;
-
-  let uuid = randomUUID();
-  while (used.has(uuid)) uuid = randomUUID();
-  return uuid;
+  for (const entry of Object.values(current)) visit(entry);
  }
 
- function visit(current: unknown, pointer: string): unknown {
+ visit(value);
+ return ids;
+}
+
+function buildIdUuidMaps(value: unknown, existingMaps: ExistingUuidMaps): IdUuidMaps {
+ const byOldId = new Map<string, string>();
+
+ for (const oldId of collectIds(value)) {
+  byOldId.set(
+   oldId,
+   isUuid(oldId)
+    ? oldId
+    : existingMaps.byUniqueId.get(oldId) || stableUuidFromKey(`hanzihome-lesson-json:${oldId}`),
+  );
+ }
+
+ return {
+  ...existingMaps,
+  byOldId,
+ };
+}
+
+function mapIdValue(value: string, maps: IdUuidMaps) {
+ return maps.byOldId.get(value) || value;
+}
+
+function convertIdsToStableUuids(value: unknown, maps: IdUuidMaps): unknown {
+ function nextUuid(current: JsonRecord, pointer: string) {
+  const id = stringValue(current, "id");
+  if (!id) return "";
+  const byPath = maps.byPathAndId.get(`${pointer}#${id}`);
+  return byPath || mapIdValue(id, maps);
+ }
+
+ function visit(current: unknown, pointer: string, keyName = ""): unknown {
   if (Array.isArray(current)) {
+   if (keyName.endsWith("_refs")) {
+    return current.map((entry) =>
+     typeof entry === "string" ? mapIdValue(entry, maps) : visit(entry, pointer, keyName),
+    );
+   }
+
    return current.map((entry, index) => visit(entry, `${pointer}/${index}`));
+  }
+
+  if (typeof current === "string") {
+   return refKeys.has(keyName) ? mapIdValue(current, maps) : current;
   }
 
   if (!isRecord(current)) return current;
 
   const output: JsonRecord = {};
   for (const [key, entry] of Object.entries(current)) {
-   output[key] = visit(entry, `${pointer}/${key}`);
+   if (key === "uuid") continue;
+   output[key] = visit(entry, `${pointer}/${key}`, key);
   }
 
   if (stringValue(output, "id")) {
-   const uuid = nextUuid(output, pointer);
-   output.uuid = uuid;
-   used.add(uuid);
+   output.id = nextUuid(output, pointer);
   }
 
   return output;
@@ -389,15 +459,39 @@ function normalizeLessonDocument(input: unknown): unknown {
 
  const root: JsonRecord = { ...input };
  const lesson = isRecord(root.lesson) ? { ...root.lesson } : {};
+ const source = isRecord(root.source) ? root.source : {};
  const sections = arrayValue(lesson, "sections").map(normalizeSection);
+ const lessonTitle = isRecord(lesson.title) ? lesson.title : {};
+ const lessonIndex = getLessonIndex(input, numberValue(lesson, "lesson_number") ?? 1);
 
+ lesson.metadata = {
+  ...(isRecord(lesson.metadata) ? lesson.metadata : {}),
+  legacy_id: stringValue(lesson, "id"),
+  book: stringValue(source, "book"),
+  volume: stringValue(source, "volume"),
+  volume_vi: stringValue(source, "volume_vi"),
+  lesson_index: lessonIndex,
+  lesson_number_cn: stringValue(source, "lesson_number_cn"),
+  lesson_title_cn:
+   stringValue(source, "lesson_title_cn") || stringValue(lessonTitle, "zh"),
+  lesson_title_pinyin:
+   stringValue(source, "lesson_title_pinyin") ||
+   stringValue(lessonTitle, "pinyin"),
+  lesson_title_vi:
+   stringValue(source, "lesson_title_vi") || stringValue(lessonTitle, "vi"),
+  lesson_title_en:
+   stringValue(source, "lesson_title_en") || stringValue(lessonTitle, "en"),
+  source_files: arrayValue(source, "source_files"),
+ };
  lesson.sections = sections;
  lesson.summary = normalizeLessonSummary(
   isRecord(lesson.summary) ? lesson.summary : buildLessonSummary(lesson, sections),
  );
 
  root.lesson = lesson;
- root.content_type = stringValue(root, "content_type") || "chinese_textbook_lesson";
+ for (const key of Object.keys(root)) {
+  if (key !== "lesson") delete root[key];
+ }
 
  return root;
 }
@@ -436,7 +530,8 @@ async function main() {
    }
 
    const normalized = normalizeStringLikeValues(normalizeLessonDocument(raw));
-   const withUuids = addStableUuids(normalized, collectExistingUuidMaps(existing));
+   const idMaps = buildIdUuidMaps(normalized, collectExistingUuidMaps(existing));
+   const withUuids = convertIdsToStableUuids(normalized, idMaps);
 
    return { inputFile: file, outputFile, outputPath, value: withUuids };
   }),

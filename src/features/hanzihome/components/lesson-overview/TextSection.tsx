@@ -13,9 +13,9 @@ export function TextBlockView({
  const lines = block.lines;
 
  return (
-  <section className="grid gap-3 rounded-2xl border border-border-default bg-bg-subtle p-4">
+  <section className="grid gap-3 rounded-xl border border-border-default bg-bg-subtle p-2.5 sm:gap-4 sm:rounded-2xl sm:p-4">
    <div>
-    <h4 className="text-lg font-black text-text-primary">
+    <h4 className="text-base font-black text-text-primary sm:text-lg">
      {block.title_vi || block.title}
     </h4>
     <p className="text-xs font-bold uppercase tracking-wide text-text-muted">
@@ -24,7 +24,7 @@ export function TextBlockView({
    </div>
 
    {lines.length > 0 && (
-    <div className="grid gap-2">
+    <div className="rounded-lg border border-border-default bg-bg-primary px-3 sm:rounded-xl sm:px-4">
      {lines.map((line) => (
       <TextLineCard
        key={line.id}
@@ -33,14 +33,18 @@ export function TextBlockView({
        pinyin={line.pinyin}
        vi={line.vi}
        displayMode={displayMode}
+       variant="reader"
       />
      ))}
     </div>
    )}
 
    {block.type === "text_dialogue" &&
-    block.scenes.map((scene) => (
-     <div key={scene.id} className="grid gap-2">
+   block.scenes.map((scene) => (
+     <div
+      key={scene.id}
+      className="grid gap-2 rounded-lg border border-border-default bg-bg-primary px-3 py-2.5 sm:rounded-xl sm:px-4 sm:py-3"
+     >
       {scene.summary_vi && (
        <p className="text-sm font-bold text-text-muted">{scene.summary_vi}</p>
       )}
@@ -52,21 +56,27 @@ export function TextBlockView({
         pinyin={line.pinyin}
         vi={line.vi}
         displayMode={displayMode}
+        variant="reader"
        />
       ))}
      </div>
     ))}
 
    {block.type === "text_narrative" &&
-    block.paragraphs.map((paragraph) => (
-     <TextLineCard
-      key={paragraph.id}
-      zh={paragraph.zh}
-      pinyin={paragraph.pinyin}
-      vi={paragraph.vi}
-      displayMode={displayMode}
-     />
-    ))}
+    block.paragraphs.length > 0 && (
+     <div className="rounded-lg border border-border-default bg-bg-primary px-3 sm:rounded-xl sm:px-4">
+      {block.paragraphs.map((paragraph) => (
+       <TextLineCard
+        key={paragraph.id}
+        zh={paragraph.zh}
+        pinyin={paragraph.pinyin}
+        vi={paragraph.vi}
+        displayMode={displayMode}
+        variant="reader"
+       />
+      ))}
+     </div>
+    )}
   </section>
  );
 }

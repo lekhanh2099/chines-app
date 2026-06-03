@@ -2,6 +2,7 @@ import type { ReadingItem } from "@/features/hanzihome/static-json/schemas/hanyu
 
 import { AnswerKeyList, ExercisePill, ExerciseQuestionCard } from "./CommonCards";
 import { TextLineCard } from "./TextLineCard";
+import { getHanziTypographyStyle } from "./hanzi-typography";
 import type { LessonDisplayMode } from "./types";
 import {
  answerToString,
@@ -123,8 +124,9 @@ export function ReadingCard({
    {(segments.length > 0 || passageText) && (
     <div className="rounded-xl border border-border-default bg-bg-subtle p-4">
      <p
-      className="whitespace-pre-wrap text-base font-bold leading-8 text-text-primary"
+      className="whitespace-pre-wrap leading-8 text-text-primary"
       lang="zh-CN"
+      style={getHanziTypographyStyle(displayMode, { size: "lg" })}
      >
       {passageText ||
        segments

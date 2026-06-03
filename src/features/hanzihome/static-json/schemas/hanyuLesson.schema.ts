@@ -103,6 +103,20 @@ export const SourceSchema = z.object({
  source_files: z.array(SourceFileSchema).optional().default([]),
 });
 
+export const LessonMetadataSchema = z.object({
+ legacy_id: z.string().optional().default(""),
+ book: z.string().optional().default(""),
+ volume: z.string().optional().default(""),
+ volume_vi: z.string().optional().default(""),
+ lesson_index: z.number().int().positive(),
+ lesson_number_cn: z.string().optional().default(""),
+ lesson_title_cn: z.string().optional().default(""),
+ lesson_title_pinyin: z.string().optional().default(""),
+ lesson_title_vi: z.string().optional().default(""),
+ lesson_title_en: z.string().optional().default(""),
+ source_files: z.array(SourceFileSchema).optional().default([]),
+}).passthrough();
+
 /* -------------------------------------------------------------------------- */
 /* Text section                                                               */
 /* -------------------------------------------------------------------------- */
@@ -957,15 +971,16 @@ export const LessonSchema = z.object({
  id: z.string(),
  title: LocalizedTextSchema,
  tags: z.array(z.string()).optional().default([]),
+ metadata: LessonMetadataSchema.optional(),
  sections: z.array(SectionSchema),
  summary: LessonSummarySchema.optional().default({ lesson_parts: [] }),
 }).passthrough();
 
 export const HanyuLessonSchema = z.object({
- schema_version: z.string().min(1),
- content_type: z.literal("chinese_textbook_lesson"),
- verification_status: z.string().optional().default(""),
- source: SourceSchema,
+ schema_version: z.string().min(1).optional(),
+ content_type: z.literal("chinese_textbook_lesson").optional(),
+ verification_status: z.string().optional(),
+ source: SourceSchema.optional(),
  lesson: LessonSchema,
  coverage_report: z.unknown().optional(),
  schema_extension_notes: z.unknown().optional(),

@@ -5,11 +5,17 @@ import { useMemo, useState } from "react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import { getHanyuLessonMeta } from "@/features/hanzihome/static-json/hanyu-lesson-meta";
 import { cn } from "@/lib/utils";
 
 import { BookSectionContent } from "./BookSectionContent";
+import { LessonTypographyControls } from "./LessonTypographyControls";
 import { BookOpen, sectionIcons } from "./section-icons";
-import type { LessonDisplayMode, SourceLessonOverviewProps } from "./types";
+import {
+ DEFAULT_LESSON_DISPLAY_MODE,
+ type LessonDisplayMode,
+ type SourceLessonOverviewProps,
+} from "./types";
 import { getBookSections } from "./utils";
 
 export function SourceLessonOverview({
@@ -23,10 +29,8 @@ export function SourceLessonOverview({
   null,
  );
  const [isSectionListVisible, setIsSectionListVisible] = useState(true);
- const [globalDisplayMode, setGlobalDisplayMode] = useState<LessonDisplayMode>({
-  showPinyin: true,
-  showMeaning: true,
- });
+ const [globalDisplayMode, setGlobalDisplayMode] =
+  useState<LessonDisplayMode>(DEFAULT_LESSON_DISPLAY_MODE);
  const [sectionDisplayOverrides, setSectionDisplayOverrides] = useState<
   Record<string, Partial<LessonDisplayMode>>
  >({});
@@ -34,9 +38,17 @@ export function SourceLessonOverview({
   sections.find((section) => section.id === selectedSectionId) ??
   sections[0] ??
   null;
+ const lessonMeta = getHanyuLessonMeta(lessonDocument);
 
- function updateGlobalDisplayMode(key: keyof LessonDisplayMode) {
+ function updateGlobalDisplayMode(key: "showPinyin" | "showMeaning") {
   setGlobalDisplayMode((current) => ({ ...current, [key]: !current[key] }));
+  setSectionDisplayOverrides({});
+ }
+
+ function updateGlobalTypography(
+  updates: Partial<Pick<LessonDisplayMode, "hanziFont" | "hanziSize">>,
+ ) {
+  setGlobalDisplayMode((current) => ({ ...current, ...updates }));
   setSectionDisplayOverrides({});
  }
 
@@ -47,7 +59,7 @@ export function SourceLessonOverview({
   ...sectionDisplayOverrides[selectedSection.id],
  };
 
- function updateSectionDisplayMode(key: keyof LessonDisplayMode) {
+ function updateSectionDisplayMode(key: "showPinyin" | "showMeaning") {
   setSectionDisplayOverrides((current) => ({
    ...current,
    [selectedSection.id]: {
@@ -69,15 +81,17 @@ export function SourceLessonOverview({
        {lessonDocument.lesson.title.zh}
       </h2>
       <p className="text-sm font-semibold text-text-muted">
-       {lessonDocument.source.volume_vi}
-       {globalDisplayMode.showPinyin &&
-       (lessonDocument.lesson.title.pinyin ||
-        lessonDocument.source.lesson_title_pinyin)
-        ? ` · ${lessonDocument.lesson.title.pinyin || lessonDocument.source.lesson_title_pinyin}`
+       {lessonMeta.volumeVi}
+       {globalDisplayMode.showPinyin && lessonMeta.titlePinyin
+        ? ` · ${lessonMeta.titlePinyin}`
         : ""}
-      </p>
-     </div>
-     <div className="flex items-center gap-2">
+     </p>
+    </div>
+    <div className="flex flex-wrap items-center justify-end gap-2">
+      <LessonTypographyControls
+       displayMode={globalDisplayMode}
+       onChange={updateGlobalTypography}
+      />
       <Button
        type="button"
        variant="outline"
@@ -162,6 +176,7 @@ export function SourceLessonOverview({
          )}
         </div>
        </div>
+      <div className="flex flex-wrap gap-2">
        <Button
         type="button"
         variant="outline"
@@ -178,6 +193,7 @@ export function SourceLessonOverview({
        >
         Nghĩa phần: {selectedSectionDisplayMode.showMeaning ? "Bật" : "Tắt"}
        </Button>
+      </div>
       </div>
       <div className="max-h-[34rem] overflow-y-auto pr-2">
        <BookSectionContent

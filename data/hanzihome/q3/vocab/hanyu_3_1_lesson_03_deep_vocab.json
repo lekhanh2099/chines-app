@@ -56,7 +56,7 @@
     "notes": []
   },
   "lesson": {
-    "id": "hanyu_3_1_lesson_03_deep_vocab",
+    "id": "8b815c89-a18a-4490-8420-0345b0be8760",
     "title": {
       "zh": "北京的四季",
       "pinyin": "Běijīng de sìjì",
@@ -75,7 +75,7 @@
   "overview": {
     "groups": [
       {
-        "id": "group_001",
+        "id": "eff791cc-e253-40c4-9452-86a5ca4d0da7",
         "order": 1,
         "title_vi": "Không gian / khu vực / địa điểm",
         "words": [
@@ -91,7 +91,7 @@
         "notes": []
       },
       {
-        "id": "group_002",
+        "id": "08d22450-6bb4-4d42-8d9f-f3791538104e",
         "order": 2,
         "title_vi": "Quần áo / mùa / thay đổi thời tiết",
         "words": [
@@ -106,7 +106,7 @@
         "notes": []
       },
       {
-        "id": "group_003",
+        "id": "e4e2891e-1c47-4e1d-b0c6-1a1923a4a051",
         "order": 3,
         "title_vi": "Hoạt động ngoài trời / du lịch / vui chơi",
         "words": [
@@ -123,7 +123,7 @@
         "notes": []
       },
       {
-        "id": "group_004",
+        "id": "06bb9971-0cb3-4e04-8cab-9f3507b0e124",
         "order": 4,
         "title_vi": "Cảnh sắc / thiên nhiên / mùa vụ",
         "words": [
@@ -141,7 +141,7 @@
         "notes": []
       },
       {
-        "id": "group_005",
+        "id": "b428593d-6de9-4305-b242-3c98a4951c5e",
         "order": 5,
         "title_vi": "Miêu tả / đánh giá / cảm xúc",
         "words": [
@@ -163,7 +163,7 @@
         "notes": []
       },
       {
-        "id": "group_006",
+        "id": "87738332-0d8f-4bb6-8913-726ffef0a977",
         "order": 6,
         "title_vi": "Văn hóa / ẩm thực / lễ tết",
         "words": [
@@ -175,7 +175,7 @@
         "notes": []
       },
       {
-        "id": "group_007",
+        "id": "998f635a-e90c-4b6b-90aa-cea7cce505a0",
         "order": 7,
         "title_vi": "Từ bổ sung trong luyện tập / đọc thêm",
         "words": [
@@ -191,7 +191,7 @@
   },
   "items": [
     {
-      "id": "vocab_001",
+      "id": "b937f1e7-36d7-4de8-9763-ad401495d822",
       "type": "deep_vocabulary_item",
       "order": 1,
       "hanzi": "部分",
@@ -385,7 +385,7 @@
       },
       "collocations": [
         {
-          "id": "vocab_001_col_001",
+          "id": "47007556-8e95-447a-b0a7-857a83bb7b54",
           "order": 1,
           "zh": "部分地区",
           "pinyin": "",
@@ -396,7 +396,7 @@
           "notes": []
         },
         {
-          "id": "vocab_001_col_002",
+          "id": "8b070d37-1766-46d2-84c4-c3210171f4a9",
           "order": 2,
           "zh": "部分学生",
           "pinyin": "",
@@ -407,7 +407,7 @@
           "notes": []
         },
         {
-          "id": "vocab_001_col_003",
+          "id": "c7c508d6-bc49-4cfa-84ca-56844e8011b4",
           "order": 3,
           "zh": "部分原因",
           "pinyin": "",
@@ -418,7 +418,7 @@
           "notes": []
         },
         {
-          "id": "vocab_001_col_004",
+          "id": "5d0a9345-7a84-4052-94b4-79cc1ebb2f13",
           "order": 4,
           "zh": "一部分",
           "pinyin": "",
@@ -429,7 +429,7 @@
           "notes": []
         },
         {
-          "id": "vocab_001_col_005",
+          "id": "974ba196-2a09-4d74-ae37-772c52d756f0",
           "order": 5,
           "zh": "大部分",
           "pinyin": "",
@@ -440,7 +440,7 @@
           "notes": []
         },
         {
-          "id": "vocab_001_col_006",
+          "id": "a4d68ec4-58d4-49bc-ab9d-c873ba97ecc2",
           "order": 6,
           "zh": "全部内容",
           "pinyin": "",
@@ -453,7 +453,7 @@
       ],
       "examples": [
         {
-          "id": "vocab_001_ex_001",
+          "id": "01cf554d-1d5b-41d8-8493-a8fbdc42ee04",
           "order": 1,
           "zh": "北京的部分地区春天风比较大。",
           "pinyin": "",
@@ -464,7 +464,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_001"
+            "b937f1e7-36d7-4de8-9763-ad401495d822"
           ],
           "source_ref": "manual_thread_vocab",
           "level": "intermediate",
@@ -473,7 +473,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_001_ex_002",
+          "id": "920056f4-ec99-41b4-900c-566dee73efb3",
           "order": 2,
           "zh": "拿北京来说，部分地方一到春天就能看到很多鲜花。",
           "pinyin": "",
@@ -484,7 +484,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_001"
+            "b937f1e7-36d7-4de8-9763-ad401495d822"
           ],
           "source_ref": "manual_thread_vocab",
           "level": "intermediate",
@@ -493,7 +493,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_001_ex_003",
+          "id": "1886dc15-cceb-4d2a-b0c7-4ad00b26cd16",
           "order": 3,
           "zh": "只有部分地区风特别大。",
           "pinyin": "",
@@ -504,7 +504,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_001"
+            "b937f1e7-36d7-4de8-9763-ad401495d822"
           ],
           "source_ref": "manual_thread_vocab",
           "level": "intermediate",
@@ -528,7 +528,7 @@
       },
       "warnings": [
         {
-          "id": "vocab_001_warning_001",
+          "id": "db4eb52d-06a3-4f2f-ae1f-5b8c8562b2f5",
           "order": 1,
           "rule_vi": "Không dùng 部分 như lượng từ sau số: không nói 三个部分学生; nói 部分学生 hoặc 一部分学生.",
           "natural_examples": [
@@ -569,7 +569,7 @@
       "check_needed": false
     },
     {
-      "id": "vocab_002",
+      "id": "e2d465f2-937a-4a93-bb32-737321643ad0",
       "type": "deep_vocabulary_item",
       "order": 2,
       "hanzi": "地区",
@@ -763,7 +763,7 @@
       },
       "collocations": [
         {
-          "id": "vocab_002_col_001",
+          "id": "705fec91-bc47-4b0d-bdfd-31ef08cf5b7c",
           "order": 1,
           "zh": "北方地区",
           "pinyin": "",
@@ -774,7 +774,7 @@
           "notes": []
         },
         {
-          "id": "vocab_002_col_002",
+          "id": "b720e421-b876-4258-98b5-097962cce714",
           "order": 2,
           "zh": "南方地区",
           "pinyin": "",
@@ -785,7 +785,7 @@
           "notes": []
         },
         {
-          "id": "vocab_002_col_003",
+          "id": "dce4d687-070d-466a-bb1a-d8cb12d9ea61",
           "order": 3,
           "zh": "部分地区",
           "pinyin": "",
@@ -796,7 +796,7 @@
           "notes": []
         },
         {
-          "id": "vocab_002_col_004",
+          "id": "53b275f5-8085-4a47-b77c-e655e545b0b0",
           "order": 4,
           "zh": "不同地区",
           "pinyin": "",
@@ -807,7 +807,7 @@
           "notes": []
         },
         {
-          "id": "vocab_002_col_005",
+          "id": "037c4ec7-5f23-48d4-a6c3-69a97241964b",
           "order": 5,
           "zh": "沿海地区",
           "pinyin": "",
@@ -818,7 +818,7 @@
           "notes": []
         },
         {
-          "id": "vocab_002_col_006",
+          "id": "be79a0a0-b961-473a-8746-bc372723e6ba",
           "order": 6,
           "zh": "农村地区",
           "pinyin": "",
@@ -831,7 +831,7 @@
       ],
       "examples": [
         {
-          "id": "vocab_002_ex_001",
+          "id": "3d080d02-5cd0-4aa8-bef9-7d7513ac1957",
           "order": 1,
           "zh": "中国北方地区的冬天一般比较冷。",
           "pinyin": "",
@@ -842,7 +842,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_002"
+            "e2d465f2-937a-4a93-bb32-737321643ad0"
           ],
           "source_ref": "manual_thread_vocab",
           "level": "intermediate",
@@ -851,7 +851,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_002_ex_002",
+          "id": "1f865570-649b-41f2-a232-fd19fe2eae41",
           "order": 2,
           "zh": "拿北京这个地区来说，春天有时候风很大。",
           "pinyin": "",
@@ -862,7 +862,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_002"
+            "e2d465f2-937a-4a93-bb32-737321643ad0"
           ],
           "source_ref": "manual_thread_vocab",
           "level": "intermediate",
@@ -871,7 +871,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_002_ex_003",
+          "id": "8d598987-734e-43d5-851b-d713aa047a69",
           "order": 3,
           "zh": "不同地区的春天不一样。",
           "pinyin": "",
@@ -882,7 +882,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_002"
+            "e2d465f2-937a-4a93-bb32-737321643ad0"
           ],
           "source_ref": "manual_thread_vocab",
           "level": "intermediate",
@@ -906,7 +906,7 @@
       },
       "warnings": [
         {
-          "id": "vocab_002_warning_001",
+          "id": "27d319e3-84b1-440e-9c4e-b044fdd33749",
           "order": 1,
           "rule_vi": "Không dịch cứng 地区 thành “địa khu” trong tiếng Việt đời thường; thường dịch là khu vực/vùng.",
           "natural_examples": [
@@ -947,7 +947,7 @@
       "check_needed": false
     },
     {
-      "id": "vocab_003",
+      "id": "ccd75507-3e1f-4981-bf11-9ff1d04a89c9",
       "type": "deep_vocabulary_item",
       "order": 3,
       "hanzi": "拿",
@@ -1087,7 +1087,7 @@
       },
       "collocations": [
         {
-          "id": "vocab_003_col_001",
+          "id": "517a58c3-9e2e-4a27-8b42-57592ab92450",
           "order": 1,
           "zh": "拿书",
           "pinyin": "",
@@ -1098,7 +1098,7 @@
           "notes": []
         },
         {
-          "id": "vocab_003_col_002",
+          "id": "86a21caa-d338-49e1-9151-f8dc57f80e36",
           "order": 2,
           "zh": "拿手机",
           "pinyin": "",
@@ -1109,7 +1109,7 @@
           "notes": []
         },
         {
-          "id": "vocab_003_col_003",
+          "id": "98a25082-58df-480b-958c-7863bcdfebf6",
           "order": 3,
           "zh": "拿出来",
           "pinyin": "",
@@ -1120,7 +1120,7 @@
           "notes": []
         },
         {
-          "id": "vocab_003_col_004",
+          "id": "a7fcd8de-d7ee-4cf9-978c-34139b076e75",
           "order": 4,
           "zh": "拿回去",
           "pinyin": "",
@@ -1131,7 +1131,7 @@
           "notes": []
         },
         {
-          "id": "vocab_003_col_005",
+          "id": "6d453415-62f2-4bce-85d5-05a3ba758edc",
           "order": 5,
           "zh": "拿北京来说",
           "pinyin": "",
@@ -1142,7 +1142,7 @@
           "notes": []
         },
         {
-          "id": "vocab_003_col_006",
+          "id": "65f24ee3-5c05-40fb-9884-9383ef16db6e",
           "order": 6,
           "zh": "拿这个做例子",
           "pinyin": "",
@@ -1155,7 +1155,7 @@
       ],
       "examples": [
         {
-          "id": "vocab_003_ex_001",
+          "id": "28777946-9ef4-42cc-ba5e-871d2774ea36",
           "order": 1,
           "zh": "请你把桌子上的书拿给我。",
           "pinyin": "",
@@ -1166,7 +1166,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_003"
+            "ccd75507-3e1f-4981-bf11-9ff1d04a89c9"
           ],
           "source_ref": "manual_thread_vocab",
           "level": "intermediate",
@@ -1175,7 +1175,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_003_ex_002",
+          "id": "ae2ed059-b764-4485-9126-ac259c368826",
           "order": 2,
           "zh": "拿北京来说，春天一到，公园里的游人就多起来了。",
           "pinyin": "",
@@ -1186,7 +1186,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_003"
+            "ccd75507-3e1f-4981-bf11-9ff1d04a89c9"
           ],
           "source_ref": "manual_thread_vocab",
           "level": "intermediate",
@@ -1195,7 +1195,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_003_ex_003",
+          "id": "362f9635-aebb-40ba-926a-f2189cb097f4",
           "order": 3,
           "zh": "老师让我们拿北京的四季做例子。",
           "pinyin": "",
@@ -1206,7 +1206,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_003"
+            "ccd75507-3e1f-4981-bf11-9ff1d04a89c9"
           ],
           "source_ref": "manual_thread_vocab",
           "level": "intermediate",
@@ -1230,7 +1230,7 @@
       },
       "warnings": [
         {
-          "id": "vocab_003_warning_001",
+          "id": "14efe5ff-e6d9-457e-8aa9-8e116c997786",
           "order": 1,
           "rule_vi": "Không phải mọi chữ “lấy” tiếng Việt đều dùng 拿; “lấy vợ” nói 结婚, không nói 拿妻子.",
           "natural_examples": [
@@ -1271,7 +1271,7 @@
       "check_needed": false
     },
     {
-      "id": "vocab_004",
+      "id": "504b914e-8ac1-4d4f-b15a-5f933aa8ca3c",
       "type": "deep_vocabulary_item",
       "order": 4,
       "hanzi": "脱",
@@ -1410,7 +1410,7 @@
       },
       "collocations": [
         {
-          "id": "vocab_004_col_001",
+          "id": "474367e7-2eb1-4ba6-a3bc-a68519983916",
           "order": 1,
           "zh": "脱衣服",
           "pinyin": "",
@@ -1421,7 +1421,7 @@
           "notes": []
         },
         {
-          "id": "vocab_004_col_002",
+          "id": "b5bad0e6-00ea-4fb6-8456-557a05d9fa95",
           "order": 2,
           "zh": "脱冬衣",
           "pinyin": "",
@@ -1432,7 +1432,7 @@
           "notes": []
         },
         {
-          "id": "vocab_004_col_003",
+          "id": "31557cf8-81b8-4d7d-8057-87431a46a549",
           "order": 3,
           "zh": "脱鞋",
           "pinyin": "",
@@ -1443,7 +1443,7 @@
           "notes": []
         },
         {
-          "id": "vocab_004_col_004",
+          "id": "d595011f-66b9-428b-a2de-cccbf50c1781",
           "order": 4,
           "zh": "脱帽子",
           "pinyin": "",
@@ -1454,7 +1454,7 @@
           "notes": []
         },
         {
-          "id": "vocab_004_col_005",
+          "id": "19cb2d31-af37-4aef-8736-c8d0b4c16749",
           "order": 5,
           "zh": "脱下来",
           "pinyin": "",
@@ -1465,7 +1465,7 @@
           "notes": []
         },
         {
-          "id": "vocab_004_col_006",
+          "id": "20ac212f-b448-4cde-a1d0-185ec71c945c",
           "order": 6,
           "zh": "摆脱困难",
           "pinyin": "",
@@ -1478,7 +1478,7 @@
       ],
       "examples": [
         {
-          "id": "vocab_004_ex_001",
+          "id": "56d1950a-1635-4225-8f04-3facc877651d",
           "order": 1,
           "zh": "天气热了，他把冬衣脱下来了。",
           "pinyin": "",
@@ -1489,7 +1489,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_004"
+            "504b914e-8ac1-4d4f-b15a-5f933aa8ca3c"
           ],
           "source_ref": "manual_thread_vocab",
           "level": "intermediate",
@@ -1498,7 +1498,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_004_ex_002",
+          "id": "645349b9-02c5-4284-8abe-1ddaea9f5ceb",
           "order": 2,
           "zh": "北京春天来的时候，人们慢慢脱下冬衣。",
           "pinyin": "",
@@ -1509,7 +1509,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_004"
+            "504b914e-8ac1-4d4f-b15a-5f933aa8ca3c"
           ],
           "source_ref": "manual_thread_vocab",
           "level": "intermediate",
@@ -1518,7 +1518,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_004_ex_003",
+          "id": "f5ccdc77-6a59-41f6-ae0c-d9352715b5ff",
           "order": 3,
           "zh": "他把外套脱下来挂在门旁边。",
           "pinyin": "",
@@ -1529,7 +1529,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_004"
+            "504b914e-8ac1-4d4f-b15a-5f933aa8ca3c"
           ],
           "source_ref": "manual_thread_vocab",
           "level": "intermediate",
@@ -1553,7 +1553,7 @@
       },
       "warnings": [
         {
-          "id": "vocab_004_warning_001",
+          "id": "aff3401c-6fb4-4e0c-9e8c-037a5e37a8c4",
           "order": 1,
           "rule_vi": "脱 dùng cho đồ đang mặc/cái gắn trên thân; bỏ thói quen nói 改掉坏习惯, không nói 脱坏习惯.",
           "natural_examples": [
@@ -1594,7 +1594,7 @@
       "check_needed": false
     },
     {
-      "id": "vocab_005",
+      "id": "d46e868c-ff5c-4753-b14b-3881ca25519d",
       "type": "deep_vocabulary_item",
       "order": 5,
       "hanzi": "冬衣",
@@ -1778,7 +1778,7 @@
       },
       "collocations": [
         {
-          "id": "vocab_005_col_001",
+          "id": "8800e9ce-9856-4274-923e-6d708a34cd0c",
           "order": 1,
           "zh": "穿冬衣",
           "pinyin": "",
@@ -1789,7 +1789,7 @@
           "notes": []
         },
         {
-          "id": "vocab_005_col_002",
+          "id": "b6f51ba6-f7c3-41a9-b8c0-726026ea2390",
           "order": 2,
           "zh": "脱冬衣",
           "pinyin": "",
@@ -1800,7 +1800,7 @@
           "notes": []
         },
         {
-          "id": "vocab_005_col_003",
+          "id": "112a6907-f054-4555-bfbc-278743508097",
           "order": 3,
           "zh": "准备冬衣",
           "pinyin": "",
@@ -1811,7 +1811,7 @@
           "notes": []
         },
         {
-          "id": "vocab_005_col_004",
+          "id": "bde4e4a1-40c6-40e2-b48b-7fdc2f73e811",
           "order": 4,
           "zh": "收起冬衣",
           "pinyin": "",
@@ -1822,7 +1822,7 @@
           "notes": []
         },
         {
-          "id": "vocab_005_col_005",
+          "id": "3baae69b-648f-48ab-8a95-951d7cc44979",
           "order": 5,
           "zh": "换下冬衣",
           "pinyin": "",
@@ -1833,7 +1833,7 @@
           "notes": []
         },
         {
-          "id": "vocab_005_col_006",
+          "id": "26aefdf5-994a-4082-a77d-bc723876988a",
           "order": 6,
           "zh": "厚厚的冬衣",
           "pinyin": "",
@@ -1846,7 +1846,7 @@
       ],
       "examples": [
         {
-          "id": "vocab_005_ex_001",
+          "id": "004cee48-5cba-4bcd-b711-ee53517cbc36",
           "order": 1,
           "zh": "天气还很冷，别急着脱冬衣。",
           "pinyin": "",
@@ -1857,7 +1857,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_005"
+            "d46e868c-ff5c-4753-b14b-3881ca25519d"
           ],
           "source_ref": "manual_thread_vocab",
           "level": "intermediate",
@@ -1866,7 +1866,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_005_ex_002",
+          "id": "253f6412-8128-40c7-b1bf-c0155c70f377",
           "order": 2,
           "zh": "春天快到了，很多人已经把冬衣收起来了。",
           "pinyin": "",
@@ -1877,7 +1877,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_005"
+            "d46e868c-ff5c-4753-b14b-3881ca25519d"
           ],
           "source_ref": "manual_thread_vocab",
           "level": "intermediate",
@@ -1886,7 +1886,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_005_ex_003",
+          "id": "63665a48-f523-438f-af34-d10227532bf1",
           "order": 3,
           "zh": "有些人还穿着冬衣。",
           "pinyin": "",
@@ -1897,7 +1897,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_005"
+            "d46e868c-ff5c-4753-b14b-3881ca25519d"
           ],
           "source_ref": "manual_thread_vocab",
           "level": "intermediate",
@@ -1921,7 +1921,7 @@
       },
       "warnings": [
         {
-          "id": "vocab_005_warning_001",
+          "id": "2af9ed23-2073-49c9-953b-dc83ed8e743d",
           "order": 1,
           "rule_vi": "冬天 là mùa đông; 冬衣 là quần áo mùa đông. Không nói 我穿冬天.",
           "natural_examples": [
@@ -1962,7 +1962,7 @@
       "check_needed": false
     },
     {
-      "id": "vocab_006",
+      "id": "dc688635-93ee-442b-86be-51489ca25d82",
       "type": "deep_vocabulary_item",
       "order": 6,
       "hanzi": "春装",
@@ -2178,7 +2178,7 @@
       },
       "collocations": [
         {
-          "id": "vocab_006_col_001",
+          "id": "03283763-dd61-4960-a0b8-0bbc7094bae8",
           "order": 1,
           "zh": "穿春装",
           "pinyin": "",
@@ -2189,7 +2189,7 @@
           "notes": []
         },
         {
-          "id": "vocab_006_col_002",
+          "id": "40173a50-efd9-4b01-93f1-92136081cba1",
           "order": 2,
           "zh": "换上春装",
           "pinyin": "",
@@ -2200,7 +2200,7 @@
           "notes": []
         },
         {
-          "id": "vocab_006_col_003",
+          "id": "13e9fce6-9ae0-41cc-b6a6-beffc4305c7e",
           "order": 3,
           "zh": "春装上市",
           "pinyin": "",
@@ -2211,7 +2211,7 @@
           "notes": []
         },
         {
-          "id": "vocab_006_col_004",
+          "id": "5aff3189-6f25-41ff-b502-504944f0eaa6",
           "order": 4,
           "zh": "新款春装",
           "pinyin": "",
@@ -2222,7 +2222,7 @@
           "notes": []
         },
         {
-          "id": "vocab_006_col_005",
+          "id": "2baa3c80-746a-4b0d-8edb-d6dbdffb7c08",
           "order": 5,
           "zh": "春装搭配",
           "pinyin": "",
@@ -2233,7 +2233,7 @@
           "notes": []
         },
         {
-          "id": "vocab_006_col_006",
+          "id": "38e9b32f-bc7b-4d72-93ca-a1e6670465b9",
           "order": 6,
           "zh": "脱冬衣，穿春装",
           "pinyin": "",
@@ -2246,7 +2246,7 @@
       ],
       "examples": [
         {
-          "id": "vocab_006_ex_001",
+          "id": "6ac159d4-694a-4888-95ca-9634d9015e08",
           "order": 1,
           "zh": "天气暖和了，很多姑娘都穿上了春装。",
           "pinyin": "",
@@ -2257,7 +2257,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_006"
+            "dc688635-93ee-442b-86be-51489ca25d82"
           ],
           "source_ref": "manual_thread_vocab",
           "level": "intermediate",
@@ -2266,7 +2266,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_006_ex_002",
+          "id": "a1b69786-6d75-4c9d-bbad-b5b5a8307a64",
           "order": 2,
           "zh": "北京的春天一来，大街上就能看到各种各样的春装。",
           "pinyin": "",
@@ -2277,7 +2277,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_006"
+            "dc688635-93ee-442b-86be-51489ca25d82"
           ],
           "source_ref": "manual_thread_vocab",
           "level": "intermediate",
@@ -2286,7 +2286,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_006_ex_003",
+          "id": "45e79f1a-44f0-4c3c-b373-1b633df034d9",
           "order": 3,
           "zh": "她换上了一件浅色春装，显得轻松多了。",
           "pinyin": "",
@@ -2297,7 +2297,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_006"
+            "dc688635-93ee-442b-86be-51489ca25d82"
           ],
           "source_ref": "manual_thread_vocab",
           "level": "intermediate",
@@ -2321,7 +2321,7 @@
       },
       "warnings": [
         {
-          "id": "vocab_006_warning_001",
+          "id": "22aeaf9d-4d9a-4bc5-9e00-85276998794d",
           "order": 1,
           "rule_vi": "春装 không phải trang điểm mùa xuân. Trang điểm là 化妆; đồ xuân là 春装.",
           "natural_examples": [
@@ -2362,7 +2362,7 @@
       "check_needed": false
     },
     {
-      "id": "vocab_007",
+      "id": "fb4a8484-ab9d-4ab1-97f2-652ce9b63822",
       "type": "deep_vocabulary_item",
       "order": 7,
       "hanzi": "姑娘",
@@ -2578,7 +2578,7 @@
       },
       "collocations": [
         {
-          "id": "vocab_007_col_001",
+          "id": "6c584ff6-93d2-4adc-bb05-3b6df87aa344",
           "order": 1,
           "zh": "年轻姑娘",
           "pinyin": "",
@@ -2589,7 +2589,7 @@
           "notes": []
         },
         {
-          "id": "vocab_007_col_002",
+          "id": "405ae1a0-d6ea-464f-97e7-93dad2f26cd0",
           "order": 2,
           "zh": "漂亮姑娘",
           "pinyin": "",
@@ -2600,7 +2600,7 @@
           "notes": []
         },
         {
-          "id": "vocab_007_col_003",
+          "id": "790ae590-e809-4649-ab2e-11fef1aef447",
           "order": 3,
           "zh": "小姑娘",
           "pinyin": "",
@@ -2611,7 +2611,7 @@
           "notes": []
         },
         {
-          "id": "vocab_007_col_004",
+          "id": "488c7b38-de86-42a6-8dc3-86bc02fbb2ed",
           "order": 4,
           "zh": "北京姑娘",
           "pinyin": "",
@@ -2622,7 +2622,7 @@
           "notes": []
         },
         {
-          "id": "vocab_007_col_005",
+          "id": "21afb320-5c2b-41c2-b1e6-7cac272fe6cd",
           "order": 5,
           "zh": "姑娘们",
           "pinyin": "",
@@ -2633,7 +2633,7 @@
           "notes": []
         },
         {
-          "id": "vocab_007_col_006",
+          "id": "a39eff40-18de-469c-a65c-ab6aea7baf37",
           "order": 6,
           "zh": "这位姑娘",
           "pinyin": "",
@@ -2646,7 +2646,7 @@
       ],
       "examples": [
         {
-          "id": "vocab_007_ex_001",
+          "id": "7a35eddf-d530-42eb-bea4-b6073239c79a",
           "order": 1,
           "zh": "那个姑娘穿着一件漂亮的春装。",
           "pinyin": "",
@@ -2657,7 +2657,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_007"
+            "fb4a8484-ab9d-4ab1-97f2-652ce9b63822"
           ],
           "source_ref": "manual_thread_vocab",
           "level": "intermediate",
@@ -2666,7 +2666,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_007_ex_002",
+          "id": "bb3d1556-52eb-4f60-895d-e512a4d6db40",
           "order": 2,
           "zh": "春天一到，姑娘们都换上了春装。",
           "pinyin": "",
@@ -2677,7 +2677,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_007"
+            "fb4a8484-ab9d-4ab1-97f2-652ce9b63822"
           ],
           "source_ref": "manual_thread_vocab",
           "level": "intermediate",
@@ -2686,7 +2686,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_007_ex_003",
+          "id": "5b190e5a-5966-46fd-bf78-582f76994a8f",
           "order": 3,
           "zh": "穿着春装的姑娘让城市显得更有生气。",
           "pinyin": "",
@@ -2697,7 +2697,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_007"
+            "fb4a8484-ab9d-4ab1-97f2-652ce9b63822"
           ],
           "source_ref": "manual_thread_vocab",
           "level": "intermediate",
@@ -2721,7 +2721,7 @@
       },
       "warnings": [
         {
-          "id": "vocab_007_warning_001",
+          "id": "89b594bd-c7ce-4985-b733-22dadfe23255",
           "order": 1,
           "rule_vi": "Không dùng 小姐 thay 姑娘 bừa ở Mainland; với người lạ nên nói 你好，请问……",
           "natural_examples": [
@@ -2762,7 +2762,7 @@
       "check_needed": false
     },
     {
-      "id": "vocab_008",
+      "id": "87e1e083-6e7c-4c70-ab42-053c023ad061",
       "type": "deep_vocabulary_item",
       "order": 8,
       "hanzi": "湖",
@@ -2932,7 +2932,7 @@
       },
       "collocations": [
         {
-          "id": "vocab_008_col_001",
+          "id": "49d75ea8-90fe-47de-b5df-29c4f75fb97b",
           "order": 1,
           "zh": "湖上",
           "pinyin": "",
@@ -2943,7 +2943,7 @@
           "notes": []
         },
         {
-          "id": "vocab_008_col_002",
+          "id": "e2333537-36b3-445a-90fa-8806c9463155",
           "order": 2,
           "zh": "湖边",
           "pinyin": "",
@@ -2954,7 +2954,7 @@
           "notes": []
         },
         {
-          "id": "vocab_008_col_003",
+          "id": "98914dad-786a-4e31-b32d-9258f9818a4a",
           "order": 3,
           "zh": "湖水",
           "pinyin": "",
@@ -2965,7 +2965,7 @@
           "notes": []
         },
         {
-          "id": "vocab_008_col_004",
+          "id": "f808b849-60ae-4591-9ff6-e7b789ff4a10",
           "order": 4,
           "zh": "湖面",
           "pinyin": "",
@@ -2976,7 +2976,7 @@
           "notes": []
         },
         {
-          "id": "vocab_008_col_005",
+          "id": "8208b1ef-3804-4794-98d5-c6702a188bc0",
           "order": 5,
           "zh": "在湖上划船",
           "pinyin": "",
@@ -2987,7 +2987,7 @@
           "notes": []
         },
         {
-          "id": "vocab_008_col_006",
+          "id": "e1dcea78-2460-4917-ab56-460b1a97f59d",
           "order": 6,
           "zh": "美丽的湖",
           "pinyin": "",
@@ -3000,7 +3000,7 @@
       ],
       "examples": [
         {
-          "id": "vocab_008_ex_001",
+          "id": "7baa0ee9-1d26-480c-b692-25a0da3531a4",
           "order": 1,
           "zh": "春天，湖边有很多人散步。",
           "pinyin": "",
@@ -3011,7 +3011,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_008"
+            "87e1e083-6e7c-4c70-ab42-053c023ad061"
           ],
           "source_ref": "manual_thread_vocab",
           "level": "intermediate",
@@ -3020,7 +3020,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_008_ex_002",
+          "id": "bdf49458-77a3-4e42-8728-1b4ce394634b",
           "order": 2,
           "zh": "北京的春天一到，湖上的船就多起来了。",
           "pinyin": "",
@@ -3031,7 +3031,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_008"
+            "87e1e083-6e7c-4c70-ab42-053c023ad061"
           ],
           "source_ref": "manual_thread_vocab",
           "level": "intermediate",
@@ -3040,7 +3040,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_008_ex_003",
+          "id": "ccb4bc3c-4c41-4efd-affd-672f4c5f7785",
           "order": 3,
           "zh": "我们走到湖边的时候，看到几个游人正在划船。",
           "pinyin": "",
@@ -3051,7 +3051,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_008"
+            "87e1e083-6e7c-4c70-ab42-053c023ad061"
           ],
           "source_ref": "manual_thread_vocab",
           "level": "intermediate",
@@ -3075,7 +3075,7 @@
       },
       "warnings": [
         {
-          "id": "vocab_008_warning_001",
+          "id": "c96394aa-c884-4e1b-9ea2-b019371d2c13",
           "order": 1,
           "rule_vi": "Chèo thuyền trên hồ nói 在湖上划船, không nói 在湖里划船 nếu muốn nói trên mặt hồ.",
           "natural_examples": [
@@ -3116,7 +3116,7 @@
       "check_needed": false
     },
     {
-      "id": "vocab_009",
+      "id": "a2eb2880-dbb7-4782-a3ec-4f013a7b5181",
       "type": "deep_vocabulary_item",
       "order": 9,
       "hanzi": "划船",
@@ -3330,7 +3330,7 @@
       },
       "collocations": [
         {
-          "id": "vocab_009_col_001",
+          "id": "e4e10b64-55eb-4cc3-abea-504025b69b02",
           "order": 1,
           "zh": "去划船",
           "pinyin": "",
@@ -3341,7 +3341,7 @@
           "notes": []
         },
         {
-          "id": "vocab_009_col_002",
+          "id": "5f2739b1-f19e-44be-b0bf-f62fd2c671e7",
           "order": 2,
           "zh": "在湖上划船",
           "pinyin": "",
@@ -3352,7 +3352,7 @@
           "notes": []
         },
         {
-          "id": "vocab_009_col_003",
+          "id": "5184ebde-a029-4d5b-8b20-4be594fbfc12",
           "order": 3,
           "zh": "一起划船",
           "pinyin": "",
@@ -3363,7 +3363,7 @@
           "notes": []
         },
         {
-          "id": "vocab_009_col_004",
+          "id": "52e798b8-19c8-4f04-b877-65d7782d6b35",
           "order": 4,
           "zh": "划小船",
           "pinyin": "",
@@ -3374,7 +3374,7 @@
           "notes": []
         },
         {
-          "id": "vocab_009_col_005",
+          "id": "ece0ccfa-95da-4279-89b3-d3fd5fece3e8",
           "order": 5,
           "zh": "划船比赛",
           "pinyin": "",
@@ -3385,7 +3385,7 @@
           "notes": []
         },
         {
-          "id": "vocab_009_col_006",
+          "id": "3626bf15-9910-41d6-81d8-fb2a2d99df2e",
           "order": 6,
           "zh": "不会划船",
           "pinyin": "",
@@ -3398,7 +3398,7 @@
       ],
       "examples": [
         {
-          "id": "vocab_009_ex_001",
+          "id": "a6a0e7b7-f913-4b8a-a4c9-bc182e759f44",
           "order": 1,
           "zh": "我们周末去北海划船吧。",
           "pinyin": "",
@@ -3409,7 +3409,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_009"
+            "a2eb2880-dbb7-4782-a3ec-4f013a7b5181"
           ],
           "source_ref": "manual_thread_vocab",
           "level": "intermediate",
@@ -3418,7 +3418,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_009_ex_002",
+          "id": "94bbbcc1-f699-4b97-92ed-1b348bdbc54b",
           "order": 2,
           "zh": "春天一到，湖上就有很多人在划船。",
           "pinyin": "",
@@ -3429,7 +3429,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_009"
+            "a2eb2880-dbb7-4782-a3ec-4f013a7b5181"
           ],
           "source_ref": "manual_thread_vocab",
           "level": "intermediate",
@@ -3438,7 +3438,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_009_ex_003",
+          "id": "7f50401a-6167-4ecc-bed4-c11e98413e51",
           "order": 3,
           "zh": "风大起来了，他们只好把船划回岸边。",
           "pinyin": "",
@@ -3449,7 +3449,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_009"
+            "a2eb2880-dbb7-4782-a3ec-4f013a7b5181"
           ],
           "source_ref": "manual_thread_vocab",
           "level": "intermediate",
@@ -3473,7 +3473,7 @@
       },
       "warnings": [
         {
-          "id": "vocab_009_warning_001",
+          "id": "44bfff64-58f6-4357-a200-67ac10e8f4c7",
           "order": 1,
           "rule_vi": "划船 là chèo thuyền, không phải 画船 “vẽ thuyền”. 划 đọc huá trong từ này.",
           "natural_examples": [
@@ -3514,7 +3514,7 @@
       "check_needed": false
     },
     {
-      "id": "vocab_010",
+      "id": "869ee3c2-14d7-425a-aec3-5fd7265b34f3",
       "type": "deep_vocabulary_item",
       "order": 10,
       "hanzi": "划",
@@ -3675,7 +3675,7 @@
       },
       "collocations": [
         {
-          "id": "vocab_010_col_001",
+          "id": "e2fc0eea-fbb3-435e-b042-ed731b9b0fbf",
           "order": 1,
           "zh": "划船",
           "pinyin": "",
@@ -3686,7 +3686,7 @@
           "notes": []
         },
         {
-          "id": "vocab_010_col_002",
+          "id": "ce74cf3e-67c2-4348-b443-6d2c1ec77385",
           "order": 2,
           "zh": "划桨",
           "pinyin": "",
@@ -3697,7 +3697,7 @@
           "notes": []
         },
         {
-          "id": "vocab_010_col_003",
+          "id": "bf3ed4bb-bc88-458a-98b2-eb2bbbee97c5",
           "order": 3,
           "zh": "划龙舟",
           "pinyin": "",
@@ -3708,7 +3708,7 @@
           "notes": []
         },
         {
-          "id": "vocab_010_col_004",
+          "id": "cccf882c-b152-4c64-9860-57154fd7222c",
           "order": 4,
           "zh": "划回来",
           "pinyin": "",
@@ -3719,7 +3719,7 @@
           "notes": []
         },
         {
-          "id": "vocab_010_col_005",
+          "id": "2a2952ed-6614-41f1-a884-f0a72ed514c1",
           "order": 5,
           "zh": "划过去",
           "pinyin": "",
@@ -3730,7 +3730,7 @@
           "notes": []
         },
         {
-          "id": "vocab_010_col_006",
+          "id": "70eeed89-1a59-4f88-886b-a69364a9b19a",
           "order": 6,
           "zh": "划得来",
           "pinyin": "",
@@ -3743,7 +3743,7 @@
       ],
       "examples": [
         {
-          "id": "vocab_010_ex_001",
+          "id": "665fa017-9f68-4186-9ba6-87ebeb26684a",
           "order": 1,
           "zh": "他划得很快，一会儿就到了湖对面。",
           "pinyin": "",
@@ -3754,7 +3754,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_010"
+            "869ee3c2-14d7-425a-aec3-5fd7265b34f3"
           ],
           "source_ref": "manual_thread_vocab",
           "level": "intermediate",
@@ -3763,7 +3763,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_010_ex_002",
+          "id": "e179d9db-e47c-4e73-bc58-e37fe3db2926",
           "order": 2,
           "zh": "风太大了，我们划不过去。",
           "pinyin": "",
@@ -3774,7 +3774,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_010"
+            "869ee3c2-14d7-425a-aec3-5fd7265b34f3"
           ],
           "source_ref": "manual_thread_vocab",
           "level": "intermediate",
@@ -3783,7 +3783,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_010_ex_003",
+          "id": "e9c53a2f-8089-4cc1-a960-ac43ab2c0797",
           "order": 3,
           "zh": "他现在能把船划得又稳又快。",
           "pinyin": "",
@@ -3794,7 +3794,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_010"
+            "869ee3c2-14d7-425a-aec3-5fd7265b34f3"
           ],
           "source_ref": "manual_thread_vocab",
           "level": "intermediate",
@@ -3818,7 +3818,7 @@
       },
       "warnings": [
         {
-          "id": "vocab_010_warning_001",
+          "id": "f9310f36-2b31-4d7e-b29b-1812f6e5765b",
           "order": 1,
           "rule_vi": "划船 đọc huá chuán; 计划/划分/划线 đọc huà trong nhiều từ khác.",
           "natural_examples": [
@@ -3859,7 +3859,7 @@
       "check_needed": false
     },
     {
-      "id": "vocab_011",
+      "id": "9924bfea-00ee-46af-bea8-5a489091c61b",
       "type": "deep_vocabulary_item",
       "order": 11,
       "hanzi": "船",
@@ -4018,7 +4018,7 @@
       },
       "collocations": [
         {
-          "id": "vocab_011_col_001",
+          "id": "81094441-54d7-438d-81b1-b3d6d95e8393",
           "order": 1,
           "zh": "一条船",
           "pinyin": "",
@@ -4029,7 +4029,7 @@
           "notes": []
         },
         {
-          "id": "vocab_011_col_002",
+          "id": "924ff712-1fb4-494b-bb0a-959df9e3e0aa",
           "order": 2,
           "zh": "坐船",
           "pinyin": "",
@@ -4040,7 +4040,7 @@
           "notes": []
         },
         {
-          "id": "vocab_011_col_003",
+          "id": "2b91b8e9-e3dd-4a9f-8c0d-22233916d729",
           "order": 3,
           "zh": "划船",
           "pinyin": "",
@@ -4051,7 +4051,7 @@
           "notes": []
         },
         {
-          "id": "vocab_011_col_004",
+          "id": "f19f101c-ea9d-4776-8a41-dcad833bc4e9",
           "order": 4,
           "zh": "上船",
           "pinyin": "",
@@ -4062,7 +4062,7 @@
           "notes": []
         },
         {
-          "id": "vocab_011_col_005",
+          "id": "95587ffa-b4e8-4a6a-b7af-726fa3a38d2b",
           "order": 5,
           "zh": "下船",
           "pinyin": "",
@@ -4073,7 +4073,7 @@
           "notes": []
         },
         {
-          "id": "vocab_011_col_006",
+          "id": "db1c3d7e-f8fe-4437-a237-d4b11f47d0be",
           "order": 6,
           "zh": "湖上的船",
           "pinyin": "",
@@ -4086,7 +4086,7 @@
       ],
       "examples": [
         {
-          "id": "vocab_011_ex_001",
+          "id": "28546109-41d6-4e7e-a3ab-4830e6508f57",
           "order": 1,
           "zh": "湖上有几条小船。",
           "pinyin": "",
@@ -4097,7 +4097,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_011"
+            "9924bfea-00ee-46af-bea8-5a489091c61b"
           ],
           "source_ref": "manual_thread_vocab",
           "level": "intermediate",
@@ -4106,7 +4106,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_011_ex_002",
+          "id": "588b5d24-1c92-4f3b-8970-ee34cb37047e",
           "order": 2,
           "zh": "春天来了，湖上的船多起来了。",
           "pinyin": "",
@@ -4117,7 +4117,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_011"
+            "9924bfea-00ee-46af-bea8-5a489091c61b"
           ],
           "source_ref": "manual_thread_vocab",
           "level": "intermediate",
@@ -4126,7 +4126,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_011_ex_003",
+          "id": "78edc3b3-2538-41a1-bebe-98f2cd7c3180",
           "order": 3,
           "zh": "我们刚上船，风就大起来了。",
           "pinyin": "",
@@ -4137,7 +4137,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_011"
+            "9924bfea-00ee-46af-bea8-5a489091c61b"
           ],
           "source_ref": "manual_thread_vocab",
           "level": "intermediate",
@@ -4161,7 +4161,7 @@
       },
       "warnings": [
         {
-          "id": "vocab_011_warning_001",
+          "id": "e5c308f3-bdfd-4417-af5a-c7c29191c578",
           "order": 1,
           "rule_vi": "Lên thuyền nói 上船, không nói 进船 trong ngữ cảnh thường.",
           "natural_examples": [
@@ -4202,7 +4202,7 @@
       "check_needed": false
     },
     {
-      "id": "vocab_012",
+      "id": "53ca6c95-106c-4051-bfc6-b3470e21655b",
       "type": "deep_vocabulary_item",
       "order": 12,
       "hanzi": "充满",
@@ -4418,7 +4418,7 @@
       },
       "collocations": [
         {
-          "id": "vocab_012_col_001",
+          "id": "2f5a1e63-c84b-44b2-ad16-8fab48ff32d6",
           "order": 1,
           "zh": "充满阳光",
           "pinyin": "",
@@ -4429,7 +4429,7 @@
           "notes": []
         },
         {
-          "id": "vocab_012_col_002",
+          "id": "d4df2c8a-427b-4d6d-aca9-759d204d09c2",
           "order": 2,
           "zh": "充满希望",
           "pinyin": "",
@@ -4440,7 +4440,7 @@
           "notes": []
         },
         {
-          "id": "vocab_012_col_003",
+          "id": "1b5d01d7-8608-4a95-b76d-6e001d6876e9",
           "order": 3,
           "zh": "充满信心",
           "pinyin": "",
@@ -4451,7 +4451,7 @@
           "notes": []
         },
         {
-          "id": "vocab_012_col_004",
+          "id": "5f43c735-8c9e-4287-9175-e7c74b3b99ef",
           "order": 4,
           "zh": "充满活力",
           "pinyin": "",
@@ -4462,7 +4462,7 @@
           "notes": []
         },
         {
-          "id": "vocab_012_col_005",
+          "id": "4faee115-c230-4994-8905-5445492356fe",
           "order": 5,
           "zh": "充满春天的气息",
           "pinyin": "",
@@ -4473,7 +4473,7 @@
           "notes": []
         },
         {
-          "id": "vocab_012_col_006",
+          "id": "77a1c19d-fdaa-4edc-94c3-f6811d8ba673",
           "order": 6,
           "zh": "房间里充满了花香",
           "pinyin": "",
@@ -4486,7 +4486,7 @@
       ],
       "examples": [
         {
-          "id": "vocab_012_ex_001",
+          "id": "cbc31dc4-a151-41e7-993d-1888aa3142e6",
           "order": 1,
           "zh": "春天的北京充满了阳光。",
           "pinyin": "",
@@ -4497,7 +4497,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_012"
+            "53ca6c95-106c-4051-bfc6-b3470e21655b"
           ],
           "source_ref": "manual_thread_vocab",
           "level": "intermediate",
@@ -4506,7 +4506,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_012_ex_002",
+          "id": "0bd4fed1-ba1b-4abc-9fbc-dad12ef40c1d",
           "order": 2,
           "zh": "一到春天，公园里就充满了游人和鲜花。",
           "pinyin": "",
@@ -4517,7 +4517,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_012"
+            "53ca6c95-106c-4051-bfc6-b3470e21655b"
           ],
           "source_ref": "manual_thread_vocab",
           "level": "intermediate",
@@ -4526,7 +4526,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_012_ex_003",
+          "id": "4f8575a7-684a-4965-8757-a80f51fb1b9c",
           "order": 3,
           "zh": "空气里好像充满了春天的气息。",
           "pinyin": "",
@@ -4537,7 +4537,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_012"
+            "53ca6c95-106c-4051-bfc6-b3470e21655b"
           ],
           "source_ref": "manual_thread_vocab",
           "level": "intermediate",
@@ -4561,7 +4561,7 @@
       },
       "warnings": [
         {
-          "id": "vocab_012_warning_001",
+          "id": "05f778b0-5ae3-49a7-8f20-f3c841e6bdfc",
           "order": 1,
           "rule_vi": "Không lạm dụng 充满 cho mọi câu “rất nhiều”; nó hợp khi muốn tả cảm giác đầy khắp/ngập tràn.",
           "natural_examples": [
@@ -4602,7 +4602,7 @@
       "check_needed": false
     },
     {
-      "id": "vocab_013",
+      "id": "dbd2a426-3126-416b-9140-af42475a64d1",
       "type": "deep_vocabulary_item",
       "order": 13,
       "hanzi": "游人",
@@ -4796,7 +4796,7 @@
       },
       "collocations": [
         {
-          "id": "vocab_013_col_001",
+          "id": "1c781fbf-7fa8-4c8d-ac6b-db2a7954f79c",
           "order": 1,
           "zh": "很多游人",
           "pinyin": "",
@@ -4807,7 +4807,7 @@
           "notes": []
         },
         {
-          "id": "vocab_013_col_002",
+          "id": "5d05951d-2cd8-4c88-ae33-d8d975e982ca",
           "order": 2,
           "zh": "公园里的游人",
           "pinyin": "",
@@ -4818,7 +4818,7 @@
           "notes": []
         },
         {
-          "id": "vocab_013_col_003",
+          "id": "c9dd877a-5266-4fd1-ab38-9666ce0ff73a",
           "order": 3,
           "zh": "湖边的游人",
           "pinyin": "",
@@ -4829,7 +4829,7 @@
           "notes": []
         },
         {
-          "id": "vocab_013_col_004",
+          "id": "c50d8b0b-580d-4980-b964-f7ade0b56df4",
           "order": 4,
           "zh": "吸引游人",
           "pinyin": "",
@@ -4840,7 +4840,7 @@
           "notes": []
         },
         {
-          "id": "vocab_013_col_005",
+          "id": "c5bbd919-e2db-4ee3-a147-b3223b960bfe",
           "order": 5,
           "zh": "游人如织",
           "pinyin": "",
@@ -4851,7 +4851,7 @@
           "notes": []
         },
         {
-          "id": "vocab_013_col_006",
+          "id": "9fc58ea4-6c4f-4b31-8dd5-5fea11bbd6fa",
           "order": 6,
           "zh": "外地游人",
           "pinyin": "",
@@ -4864,7 +4864,7 @@
       ],
       "examples": [
         {
-          "id": "vocab_013_ex_001",
+          "id": "730f29f7-f5ad-40ab-95e7-bffc223ff855",
           "order": 1,
           "zh": "春天，公园里的游人很多。",
           "pinyin": "",
@@ -4875,7 +4875,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_013"
+            "dbd2a426-3126-416b-9140-af42475a64d1"
           ],
           "source_ref": "manual_thread_vocab",
           "level": "intermediate",
@@ -4884,7 +4884,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_013_ex_002",
+          "id": "96b26f7d-bd79-4dff-9bd2-e2a1d7feaa7f",
           "order": 2,
           "zh": "一到春天，湖边就来了很多游人。",
           "pinyin": "",
@@ -4895,7 +4895,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_013"
+            "dbd2a426-3126-416b-9140-af42475a64d1"
           ],
           "source_ref": "manual_thread_vocab",
           "level": "intermediate",
@@ -4904,7 +4904,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_013_ex_003",
+          "id": "cb7e8443-b456-4f46-b2a7-de17083c9aa6",
           "order": 3,
           "zh": "北海、香山这样的地方会吸引很多游人。",
           "pinyin": "",
@@ -4915,7 +4915,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_013"
+            "dbd2a426-3126-416b-9140-af42475a64d1"
           ],
           "source_ref": "manual_thread_vocab",
           "level": "intermediate",
@@ -4939,7 +4939,7 @@
       },
       "warnings": [
         {
-          "id": "vocab_013_warning_001",
+          "id": "cf09ba25-e99d-4439-99cd-4137b30095c0",
           "order": 1,
           "rule_vi": "游人 không phải “người bơi”; người bơi là 游泳的人.",
           "natural_examples": [
@@ -4980,7 +4980,7 @@
       "check_needed": false
     },
     {
-      "id": "vocab_014",
+      "id": "df149110-9c83-495d-8477-51b4e5d90221",
       "type": "deep_vocabulary_item",
       "order": 14,
       "hanzi": "显得",
@@ -5174,7 +5174,7 @@
       },
       "collocations": [
         {
-          "id": "vocab_014_col_001",
+          "id": "4ed0b78d-cfe5-4ef0-a93e-02915d31e820",
           "order": 1,
           "zh": "显得年轻",
           "pinyin": "",
@@ -5185,7 +5185,7 @@
           "notes": []
         },
         {
-          "id": "vocab_014_col_002",
+          "id": "689a933c-5a2e-4144-9f1c-10402ebc0138",
           "order": 2,
           "zh": "显得轻松",
           "pinyin": "",
@@ -5196,7 +5196,7 @@
           "notes": []
         },
         {
-          "id": "vocab_014_col_003",
+          "id": "6a691435-26ae-43f3-bc52-9defc07bd88e",
           "order": 3,
           "zh": "显得很高兴",
           "pinyin": "",
@@ -5207,7 +5207,7 @@
           "notes": []
         },
         {
-          "id": "vocab_014_col_004",
+          "id": "75e9b20b-157f-409b-95b0-2a786cc79509",
           "order": 4,
           "zh": "显得更美丽",
           "pinyin": "",
@@ -5218,7 +5218,7 @@
           "notes": []
         },
         {
-          "id": "vocab_014_col_005",
+          "id": "55e449c0-372c-4598-aa1c-a7fe473d40cd",
           "order": 5,
           "zh": "显得有点儿累",
           "pinyin": "",
@@ -5229,7 +5229,7 @@
           "notes": []
         },
         {
-          "id": "vocab_014_col_006",
+          "id": "23d041d1-20b6-4716-bf67-af234514ffb4",
           "order": 6,
           "zh": "显得很自然",
           "pinyin": "",
@@ -5242,7 +5242,7 @@
       ],
       "examples": [
         {
-          "id": "vocab_014_ex_001",
+          "id": "c17973a5-70ca-49d9-8338-00cdc290f039",
           "order": 1,
           "zh": "她穿上春装以后，显得年轻多了。",
           "pinyin": "",
@@ -5253,7 +5253,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_014"
+            "df149110-9c83-495d-8477-51b4e5d90221"
           ],
           "source_ref": "manual_thread_vocab",
           "level": "intermediate",
@@ -5262,7 +5262,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_014_ex_002",
+          "id": "64ca87b3-9555-40d4-ba11-8b97e487ab00",
           "order": 2,
           "zh": "公园里充满了鲜花和游人，整个城市显得很有活力。",
           "pinyin": "",
@@ -5273,7 +5273,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_014"
+            "df149110-9c83-495d-8477-51b4e5d90221"
           ],
           "source_ref": "manual_thread_vocab",
           "level": "intermediate",
@@ -5282,7 +5282,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_014_ex_003",
+          "id": "0a6e9870-1451-4718-a8dc-077f620f2ae0",
           "order": 3,
           "zh": "阳光和鲜花让这座城市显得轻松而美丽。",
           "pinyin": "",
@@ -5293,7 +5293,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_014"
+            "df149110-9c83-495d-8477-51b4e5d90221"
           ],
           "source_ref": "manual_thread_vocab",
           "level": "intermediate",
@@ -5317,7 +5317,7 @@
       },
       "warnings": [
         {
-          "id": "vocab_014_warning_001",
+          "id": "48699e1c-f7c1-4300-b2d8-9c6cfe29f911",
           "order": 1,
           "rule_vi": "显得 là “trông có vẻ”; 觉得 là “cảm thấy/nghĩ rằng”. Đừng nhầm.",
           "natural_examples": [
@@ -5358,7 +5358,7 @@
       "check_needed": false
     },
     {
-      "id": "vocab_015",
+      "id": "b66f040f-522e-423a-8926-531c5c0c7a4b",
       "type": "deep_vocabulary_item",
       "order": 15,
       "hanzi": "轻松",
@@ -5586,7 +5586,7 @@
       },
       "collocations": [
         {
-          "id": "vocab_015_col_001",
+          "id": "931eb1eb-a42a-4947-b9a0-73395fadfcc5",
           "order": 1,
           "zh": "很轻松",
           "pinyin": "",
@@ -5597,7 +5597,7 @@
           "notes": []
         },
         {
-          "id": "vocab_015_col_002",
+          "id": "80fa81d6-1e1f-4215-bab6-1b1ac8d1eacd",
           "order": 2,
           "zh": "显得轻松",
           "pinyin": "",
@@ -5608,7 +5608,7 @@
           "notes": []
         },
         {
-          "id": "vocab_015_col_003",
+          "id": "5c9d7f08-9df2-4271-a632-b0a4f5efe4c2",
           "order": 3,
           "zh": "心情轻松",
           "pinyin": "",
@@ -5619,7 +5619,7 @@
           "notes": []
         },
         {
-          "id": "vocab_015_col_004",
+          "id": "5ab7fbef-5682-4a5a-9798-294c54686c21",
           "order": 4,
           "zh": "轻松一点儿",
           "pinyin": "",
@@ -5630,7 +5630,7 @@
           "notes": []
         },
         {
-          "id": "vocab_015_col_005",
+          "id": "c51e01c0-7d7a-41d2-b077-9dd7be30d352",
           "order": 5,
           "zh": "轻松地散步",
           "pinyin": "",
@@ -5641,7 +5641,7 @@
           "notes": []
         },
         {
-          "id": "vocab_015_col_006",
+          "id": "aa70ad58-079d-4e09-ac0f-e57adb30c2cd",
           "order": 6,
           "zh": "气氛很轻松",
           "pinyin": "",
@@ -5654,7 +5654,7 @@
       ],
       "examples": [
         {
-          "id": "vocab_015_ex_001",
+          "id": "1af53ccb-3933-4925-a3ff-0652aab6e0e9",
           "order": 1,
           "zh": "今天的课不难，大家都觉得很轻松。",
           "pinyin": "",
@@ -5665,7 +5665,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_015"
+            "b66f040f-522e-423a-8926-531c5c0c7a4b"
           ],
           "source_ref": "manual_thread_vocab",
           "level": "intermediate",
@@ -5674,7 +5674,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_015_ex_002",
+          "id": "ed7902b7-010f-477b-9d89-597881cb8f4d",
           "order": 2,
           "zh": "春天的阳光让人觉得很轻松。",
           "pinyin": "",
@@ -5685,7 +5685,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_015"
+            "b66f040f-522e-423a-8926-531c5c0c7a4b"
           ],
           "source_ref": "manual_thread_vocab",
           "level": "intermediate",
@@ -5694,7 +5694,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_015_ex_003",
+          "id": "1389753b-f9c3-49bd-8b9f-dddc8aec07f0",
           "order": 3,
           "zh": "游人一边聊天一边散步，公园显得特别轻松。",
           "pinyin": "",
@@ -5705,7 +5705,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_015"
+            "b66f040f-522e-423a-8926-531c5c0c7a4b"
           ],
           "source_ref": "manual_thread_vocab",
           "level": "intermediate",
@@ -5729,7 +5729,7 @@
       },
       "warnings": [
         {
-          "id": "vocab_015_warning_001",
+          "id": "6a714b74-969b-49cf-bb07-b645cc220185",
           "order": 1,
           "rule_vi": "轻松 không đồng nghĩa hoàn toàn với 简单/容易; nó nhấn cảm giác nhẹ nhõm, không căng.",
           "natural_examples": [
@@ -5770,7 +5770,7 @@
       "check_needed": false
     },
     {
-      "id": "vocab_016",
+      "id": "fa366a45-c716-438f-bd6f-e05f63ea637e",
       "type": "deep_vocabulary_item",
       "order": 16,
       "hanzi": "火锅儿",
@@ -5998,7 +5998,7 @@
       },
       "collocations": [
         {
-          "id": "vocab_016_col_001",
+          "id": "6bd06428-aaac-4a66-9abe-d07a7e3a83a8",
           "order": 1,
           "zh": "吃火锅儿",
           "pinyin": "",
@@ -6009,7 +6009,7 @@
           "notes": []
         },
         {
-          "id": "vocab_016_col_002",
+          "id": "44592a01-e4c0-4c91-8e1e-43c5a3f2327b",
           "order": 2,
           "zh": "涮火锅儿",
           "pinyin": "",
@@ -6020,7 +6020,7 @@
           "notes": []
         },
         {
-          "id": "vocab_016_col_003",
+          "id": "9efe9a65-a764-462d-b220-b3ca0bdb0c17",
           "order": 3,
           "zh": "一顿火锅儿",
           "pinyin": "",
@@ -6031,7 +6031,7 @@
           "notes": []
         },
         {
-          "id": "vocab_016_col_004",
+          "id": "6add818f-bcea-4574-8388-faed057c3479",
           "order": 4,
           "zh": "北京火锅儿",
           "pinyin": "",
@@ -6042,7 +6042,7 @@
           "notes": []
         },
         {
-          "id": "vocab_016_col_005",
+          "id": "3fffd382-d4ad-420b-a806-2bcc0a793213",
           "order": 5,
           "zh": "火锅店",
           "pinyin": "",
@@ -6053,7 +6053,7 @@
           "notes": []
         },
         {
-          "id": "vocab_016_col_006",
+          "id": "46d713c9-9d09-49de-9dd0-da75bd6e4e74",
           "order": 6,
           "zh": "围着火锅儿坐",
           "pinyin": "",
@@ -6066,7 +6066,7 @@
       ],
       "examples": [
         {
-          "id": "vocab_016_ex_001",
+          "id": "baccabe9-fde4-4de3-a609-f5a3f2e43f18",
           "order": 1,
           "zh": "冬天，我们常常一起吃火锅儿。",
           "pinyin": "",
@@ -6077,7 +6077,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_016"
+            "fa366a45-c716-438f-bd6f-e05f63ea637e"
           ],
           "source_ref": "manual_thread_vocab",
           "level": "intermediate",
@@ -6086,7 +6086,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_016_ex_002",
+          "id": "34c2be88-b0e9-45f4-b08f-0fe9aed904f0",
           "order": 2,
           "zh": "天气一冷，火锅店里就坐满了人。",
           "pinyin": "",
@@ -6097,7 +6097,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_016"
+            "fa366a45-c716-438f-bd6f-e05f63ea637e"
           ],
           "source_ref": "manual_thread_vocab",
           "level": "intermediate",
@@ -6106,7 +6106,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_016_ex_003",
+          "id": "3b67d190-8a09-4028-bfdc-cba19bc198bf",
           "order": 3,
           "zh": "大家围着火锅儿坐，一边吃一边聊天。",
           "pinyin": "",
@@ -6117,7 +6117,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_016"
+            "fa366a45-c716-438f-bd6f-e05f63ea637e"
           ],
           "source_ref": "manual_thread_vocab",
           "level": "intermediate",
@@ -6141,7 +6141,7 @@
       },
       "warnings": [
         {
-          "id": "vocab_016_warning_001",
+          "id": "3a203fa5-f55b-4d7a-a956-9c501831ed00",
           "order": 1,
           "rule_vi": "锅 là nồi; 火锅 mới là lẩu. Không phải món nào nấu trong nồi cũng gọi 火锅.",
           "natural_examples": [
@@ -6182,7 +6182,7 @@
       "check_needed": false
     },
     {
-      "id": "vocab_017",
+      "id": "d70c4980-9869-40da-ae26-5798e3c6f855",
       "type": "deep_vocabulary_item",
       "order": 17,
       "hanzi": "围",
@@ -6343,7 +6343,7 @@
       },
       "collocations": [
         {
-          "id": "vocab_017_col_001",
+          "id": "6f83dfc1-9ddb-4c8d-a84b-9e352f763fb8",
           "order": 1,
           "zh": "围着桌子坐",
           "pinyin": "",
@@ -6354,7 +6354,7 @@
           "notes": []
         },
         {
-          "id": "vocab_017_col_002",
+          "id": "97c51988-6496-4a6d-be35-1e86dc531eb2",
           "order": 2,
           "zh": "围着火锅儿坐",
           "pinyin": "",
@@ -6365,7 +6365,7 @@
           "notes": []
         },
         {
-          "id": "vocab_017_col_003",
+          "id": "82e9380e-b62a-428b-86f4-f23bdafd8a2f",
           "order": 3,
           "zh": "围起来",
           "pinyin": "",
@@ -6376,7 +6376,7 @@
           "notes": []
         },
         {
-          "id": "vocab_017_col_004",
+          "id": "b256de59-9143-467e-9d91-b586bdc4840b",
           "order": 4,
           "zh": "围成一圈",
           "pinyin": "",
@@ -6387,7 +6387,7 @@
           "notes": []
         },
         {
-          "id": "vocab_017_col_005",
+          "id": "4774b309-0cbf-4e09-b8af-b941bee655a1",
           "order": 5,
           "zh": "围观",
           "pinyin": "",
@@ -6398,7 +6398,7 @@
           "notes": []
         },
         {
-          "id": "vocab_017_col_006",
+          "id": "8655ed09-61d0-44ae-be51-7b4d14c1587b",
           "order": 6,
           "zh": "围绕这个问题",
           "pinyin": "",
@@ -6411,7 +6411,7 @@
       ],
       "examples": [
         {
-          "id": "vocab_017_ex_001",
+          "id": "00c2f6af-ceb9-46de-af5c-4e4190c0c832",
           "order": 1,
           "zh": "大家围着桌子坐。",
           "pinyin": "",
@@ -6422,7 +6422,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_017"
+            "d70c4980-9869-40da-ae26-5798e3c6f855"
           ],
           "source_ref": "manual_thread_vocab",
           "level": "intermediate",
@@ -6431,7 +6431,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_017_ex_002",
+          "id": "ab2585a5-e544-44d9-a5ce-6b80f71dd205",
           "order": 2,
           "zh": "朋友们围着火锅儿一边吃一边聊天。",
           "pinyin": "",
@@ -6442,7 +6442,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_017"
+            "d70c4980-9869-40da-ae26-5798e3c6f855"
           ],
           "source_ref": "manual_thread_vocab",
           "level": "intermediate",
@@ -6451,7 +6451,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_017_ex_003",
+          "id": "6857fd1c-110d-4be6-adf1-8f591e39332b",
           "order": 3,
           "zh": "很多游人都围了过去。",
           "pinyin": "",
@@ -6462,7 +6462,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_017"
+            "d70c4980-9869-40da-ae26-5798e3c6f855"
           ],
           "source_ref": "manual_thread_vocab",
           "level": "intermediate",
@@ -6486,7 +6486,7 @@
       },
       "warnings": [
         {
-          "id": "vocab_017_warning_001",
+          "id": "f0f124b2-3d80-47f2-97f8-0d42315908f9",
           "order": 1,
           "rule_vi": "周围 là danh từ “xung quanh”; 围 là động từ “quây/vây quanh”.",
           "natural_examples": [
@@ -6527,7 +6527,7 @@
       "check_needed": false
     },
     {
-      "id": "vocab_018",
+      "id": "4dbf221b-b73d-4997-81d7-e402206ea32d",
       "type": "deep_vocabulary_item",
       "order": 18,
       "hanzi": "向往",
@@ -6711,7 +6711,7 @@
       },
       "collocations": [
         {
-          "id": "vocab_018_col_001",
+          "id": "b3b072a0-bc53-4d5c-a1b6-b953ae11f35e",
           "order": 1,
           "zh": "向往北京",
           "pinyin": "",
@@ -6722,7 +6722,7 @@
           "notes": []
         },
         {
-          "id": "vocab_018_col_002",
+          "id": "e43bb55e-2547-40c9-b8ca-03926e78c7a0",
           "order": 2,
           "zh": "向往春天",
           "pinyin": "",
@@ -6733,7 +6733,7 @@
           "notes": []
         },
         {
-          "id": "vocab_018_col_003",
+          "id": "91ad2050-9926-4b47-8453-147b92c1502b",
           "order": 3,
           "zh": "向往自由",
           "pinyin": "",
@@ -6744,7 +6744,7 @@
           "notes": []
         },
         {
-          "id": "vocab_018_col_004",
+          "id": "faec1c2c-a1f7-4d3b-8fa0-4c7c459ccd9e",
           "order": 4,
           "zh": "向往美好的生活",
           "pinyin": "",
@@ -6755,7 +6755,7 @@
           "notes": []
         },
         {
-          "id": "vocab_018_col_005",
+          "id": "6647d32d-1a2a-4531-8c8a-0ae1509a38a6",
           "order": 5,
           "zh": "令人向往",
           "pinyin": "",
@@ -6766,7 +6766,7 @@
           "notes": []
         },
         {
-          "id": "vocab_018_col_006",
+          "id": "8658c821-d262-425e-aff8-34a8a10b9f44",
           "order": 6,
           "zh": "向往已久",
           "pinyin": "",
@@ -6779,7 +6779,7 @@
       ],
       "examples": [
         {
-          "id": "vocab_018_ex_001",
+          "id": "1b7161ff-28dd-4490-84a7-d41df5a039e0",
           "order": 1,
           "zh": "我一直很向往北京的秋天。",
           "pinyin": "",
@@ -6790,7 +6790,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_018"
+            "4dbf221b-b73d-4997-81d7-e402206ea32d"
           ],
           "source_ref": "manual_thread_vocab",
           "level": "intermediate",
@@ -6799,7 +6799,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_018_ex_002",
+          "id": "e3115690-fb51-4945-8d84-536f225137b0",
           "order": 2,
           "zh": "香山的红叶让很多外地游人向往。",
           "pinyin": "",
@@ -6810,7 +6810,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_018"
+            "4dbf221b-b73d-4997-81d7-e402206ea32d"
           ],
           "source_ref": "manual_thread_vocab",
           "level": "intermediate",
@@ -6819,7 +6819,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_018_ex_003",
+          "id": "8d1b60a1-edc1-4a57-91d3-3e0344184949",
           "order": 3,
           "zh": "北京的四季都让人十分向往。",
           "pinyin": "",
@@ -6830,7 +6830,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_018"
+            "4dbf221b-b73d-4997-81d7-e402206ea32d"
           ],
           "source_ref": "manual_thread_vocab",
           "level": "intermediate",
@@ -6854,7 +6854,7 @@
       },
       "warnings": [
         {
-          "id": "vocab_018_warning_001",
+          "id": "4b4d73d0-1b1d-493b-be33-a82cd36d4280",
           "order": 1,
           "rule_vi": "Không dùng 向往 cho nhu cầu nhỏ tức thời như uống trà sữa; nói 想喝奶茶.",
           "natural_examples": [
@@ -6895,7 +6895,7 @@
       "check_needed": false
     },
     {
-      "id": "vocab_019",
+      "id": "1be75b54-5a29-4a14-802f-34c23bec0284",
       "type": "deep_vocabulary_item",
       "order": 19,
       "hanzi": "堆雪人儿",
@@ -7165,7 +7165,7 @@
       },
       "collocations": [
         {
-          "id": "vocab_019_col_001",
+          "id": "17cdbd60-0fbb-4ea5-a114-7d7c317c0ba1",
           "order": 1,
           "zh": "堆雪人儿",
           "pinyin": "",
@@ -7176,7 +7176,7 @@
           "notes": []
         },
         {
-          "id": "vocab_019_col_002",
+          "id": "6b47707e-0184-4f17-912f-c79d2f3a9742",
           "order": 2,
           "zh": "一起堆雪人儿",
           "pinyin": "",
@@ -7187,7 +7187,7 @@
           "notes": []
         },
         {
-          "id": "vocab_019_col_003",
+          "id": "38437c40-a81b-4937-a440-2493f933bdd0",
           "order": 3,
           "zh": "堆一个雪人儿",
           "pinyin": "",
@@ -7198,7 +7198,7 @@
           "notes": []
         },
         {
-          "id": "vocab_019_col_004",
+          "id": "0a7f7d3f-79ea-45fa-9842-60f7d128447d",
           "order": 4,
           "zh": "孩子们堆雪人儿",
           "pinyin": "",
@@ -7209,7 +7209,7 @@
           "notes": []
         },
         {
-          "id": "vocab_019_col_005",
+          "id": "e708f386-17e4-480a-a275-17f1c23171e3",
           "order": 5,
           "zh": "又堆雪人儿又打雪仗",
           "pinyin": "",
@@ -7220,7 +7220,7 @@
           "notes": []
         },
         {
-          "id": "vocab_019_col_006",
+          "id": "94036016-af10-44b0-8dfc-c6d7f111844d",
           "order": 6,
           "zh": "堆得很像",
           "pinyin": "",
@@ -7233,7 +7233,7 @@
       ],
       "examples": [
         {
-          "id": "vocab_019_ex_001",
+          "id": "73128a00-dfb2-44d7-b1ed-3c4f3a95d3d1",
           "order": 1,
           "zh": "下雪了，孩子们都出去堆雪人儿。",
           "pinyin": "",
@@ -7244,7 +7244,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_019"
+            "1be75b54-5a29-4a14-802f-34c23bec0284"
           ],
           "source_ref": "manual_thread_vocab",
           "level": "intermediate",
@@ -7253,7 +7253,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_019_ex_002",
+          "id": "7b997a08-042c-4e8e-91d5-2e602bfdce99",
           "order": 2,
           "zh": "冬天一到，公园里就有很多孩子堆雪人儿。",
           "pinyin": "",
@@ -7264,7 +7264,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_019"
+            "1be75b54-5a29-4a14-802f-34c23bec0284"
           ],
           "source_ref": "manual_thread_vocab",
           "level": "intermediate",
@@ -7273,7 +7273,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_019_ex_003",
+          "id": "184a0cde-c2fc-449e-b839-bc07614f43b4",
           "order": 3,
           "zh": "我们一到楼下，就看见几个小朋友正在堆雪人儿。",
           "pinyin": "",
@@ -7284,7 +7284,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_019"
+            "1be75b54-5a29-4a14-802f-34c23bec0284"
           ],
           "source_ref": "manual_thread_vocab",
           "level": "intermediate",
@@ -7308,7 +7308,7 @@
       },
       "warnings": [
         {
-          "id": "vocab_019_warning_001",
+          "id": "c95b0c0a-84f3-4f42-b0b7-11c4a8d8351f",
           "order": 1,
           "rule_vi": "Tự nhiên nhất là 堆雪人儿; 做雪人儿 không phải trọng tâm bài và kém chuẩn hơn cho hành động đắp bằng tuyết.",
           "natural_examples": [
@@ -7349,7 +7349,7 @@
       "check_needed": false
     },
     {
-      "id": "vocab_020",
+      "id": "244395ab-2282-425b-831d-e4082beb091a",
       "type": "deep_vocabulary_item",
       "order": 20,
       "hanzi": "堆",
@@ -7510,7 +7510,7 @@
       },
       "collocations": [
         {
-          "id": "vocab_020_col_001",
+          "id": "dc0ee6c6-cea6-4e84-95f1-6a7e215eb46a",
           "order": 1,
           "zh": "一堆雪",
           "pinyin": "",
@@ -7521,7 +7521,7 @@
           "notes": []
         },
         {
-          "id": "vocab_020_col_002",
+          "id": "fc345d30-0942-44aa-982c-d5506bfe4211",
           "order": 2,
           "zh": "一堆书",
           "pinyin": "",
@@ -7532,7 +7532,7 @@
           "notes": []
         },
         {
-          "id": "vocab_020_col_003",
+          "id": "2733c9e1-b578-4617-8dbd-96ad122f251f",
           "order": 3,
           "zh": "一堆人",
           "pinyin": "",
@@ -7543,7 +7543,7 @@
           "notes": []
         },
         {
-          "id": "vocab_020_col_004",
+          "id": "f78539fb-ab65-4cc6-8942-1cc89dcc1e02",
           "order": 4,
           "zh": "堆在桌子上",
           "pinyin": "",
@@ -7554,7 +7554,7 @@
           "notes": []
         },
         {
-          "id": "vocab_020_col_005",
+          "id": "d1d049bd-162a-4fb7-8b47-a648264d9198",
           "order": 5,
           "zh": "堆起来",
           "pinyin": "",
@@ -7565,7 +7565,7 @@
           "notes": []
         },
         {
-          "id": "vocab_020_col_006",
+          "id": "b7c01e13-1ad5-42a3-b18a-797c9f0560f9",
           "order": 6,
           "zh": "堆满",
           "pinyin": "",
@@ -7578,7 +7578,7 @@
       ],
       "examples": [
         {
-          "id": "vocab_020_ex_001",
+          "id": "83a06560-9969-424e-af4a-1ea3d7e4ac72",
           "order": 1,
           "zh": "桌子上堆着一堆书。",
           "pinyin": "",
@@ -7589,7 +7589,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_020"
+            "244395ab-2282-425b-831d-e4082beb091a"
           ],
           "source_ref": "manual_thread_vocab",
           "level": "intermediate",
@@ -7598,7 +7598,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_020_ex_002",
+          "id": "3b657822-f28d-4ed0-aca1-11d15d6f72ff",
           "order": 2,
           "zh": "雪下了一夜，院子里堆满了雪。",
           "pinyin": "",
@@ -7609,7 +7609,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_020"
+            "244395ab-2282-425b-831d-e4082beb091a"
           ],
           "source_ref": "manual_thread_vocab",
           "level": "intermediate",
@@ -7618,7 +7618,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_020_ex_003",
+          "id": "ceb8dc7f-f147-4078-b9c5-d81e1f99e981",
           "order": 3,
           "zh": "孩子们把雪堆起来，最后堆成了一个雪人儿。",
           "pinyin": "",
@@ -7629,7 +7629,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_020"
+            "244395ab-2282-425b-831d-e4082beb091a"
           ],
           "source_ref": "manual_thread_vocab",
           "level": "intermediate",
@@ -7653,7 +7653,7 @@
       },
       "warnings": [
         {
-          "id": "vocab_020_warning_001",
+          "id": "67c99ca4-114f-4643-9c6a-1a5fbaae79aa",
           "order": 1,
           "rule_vi": "一堆 có thể mang sắc thái “nhiều và hơi lộn xộn/phiền”; văn nghiêm túc nên dùng 很多 nếu cần trung tính.",
           "natural_examples": [
@@ -7694,7 +7694,7 @@
       "check_needed": false
     },
     {
-      "id": "vocab_021",
+      "id": "d8c787c8-85d2-4d8c-b1a8-645471b6d06d",
       "type": "deep_vocabulary_item",
       "order": 21,
       "hanzi": "打",
@@ -7844,7 +7844,7 @@
       },
       "collocations": [
         {
-          "id": "vocab_021_col_001",
+          "id": "0956c011-ca92-43a4-87f7-2f657289dd5a",
           "order": 1,
           "zh": "打雪仗",
           "pinyin": "",
@@ -7855,7 +7855,7 @@
           "notes": []
         },
         {
-          "id": "vocab_021_col_002",
+          "id": "376c355e-2dd4-4509-9689-1c92ea342f3c",
           "order": 2,
           "zh": "打电话",
           "pinyin": "",
@@ -7866,7 +7866,7 @@
           "notes": []
         },
         {
-          "id": "vocab_021_col_003",
+          "id": "3024da4c-1ea2-4f6e-80ca-badf8ea56b78",
           "order": 3,
           "zh": "打球",
           "pinyin": "",
@@ -7877,7 +7877,7 @@
           "notes": []
         },
         {
-          "id": "vocab_021_col_004",
+          "id": "7e3001b2-b3a2-46eb-b2f3-98f3612f4213",
           "order": 4,
           "zh": "打车",
           "pinyin": "",
@@ -7888,7 +7888,7 @@
           "notes": []
         },
         {
-          "id": "vocab_021_col_005",
+          "id": "dfa829ab-9460-41c6-922a-5d5b1c436711",
           "order": 5,
           "zh": "打伞",
           "pinyin": "",
@@ -7899,7 +7899,7 @@
           "notes": []
         },
         {
-          "id": "vocab_021_col_006",
+          "id": "0ffb9718-34a2-4b0f-b2a7-4dc0087d126d",
           "order": 6,
           "zh": "打工",
           "pinyin": "",
@@ -7912,7 +7912,7 @@
       ],
       "examples": [
         {
-          "id": "vocab_021_ex_001",
+          "id": "ed37f7d3-0f26-4656-bf6e-1740f1fa54bf",
           "order": 1,
           "zh": "下雪以后，孩子们在外面打雪仗。",
           "pinyin": "",
@@ -7923,7 +7923,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_021"
+            "d8c787c8-85d2-4d8c-b1a8-645471b6d06d"
           ],
           "source_ref": "manual_thread_vocab",
           "level": "intermediate",
@@ -7932,7 +7932,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_021_ex_002",
+          "id": "fdc10bff-1071-4a63-bbb0-8236fac78aa7",
           "order": 2,
           "zh": "冬天一到，孩子们就想堆雪人儿、打雪仗。",
           "pinyin": "",
@@ -7943,7 +7943,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_021"
+            "d8c787c8-85d2-4d8c-b1a8-645471b6d06d"
           ],
           "source_ref": "manual_thread_vocab",
           "level": "intermediate",
@@ -7952,7 +7952,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_021_ex_003",
+          "id": "7ad0f877-5ea5-43d3-a8d0-b4e390a6d8a5",
           "order": 3,
           "zh": "几个小朋友一边打雪仗，一边笑。",
           "pinyin": "",
@@ -7963,7 +7963,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_021"
+            "d8c787c8-85d2-4d8c-b1a8-645471b6d06d"
           ],
           "source_ref": "manual_thread_vocab",
           "level": "intermediate",
@@ -7987,7 +7987,7 @@
       },
       "warnings": [
         {
-          "id": "vocab_021_warning_001",
+          "id": "6c50a901-7516-45d2-9acb-883004d6bf78",
           "order": 1,
           "rule_vi": "Không dịch 打 là “đánh” trong mọi cụm: 打电话 = gọi điện, 打车 = gọi xe, 打雪仗 = chơi ném tuyết.",
           "natural_examples": [
@@ -8028,7 +8028,7 @@
       "check_needed": false
     },
     {
-      "id": "vocab_022",
+      "id": "bb3b0ba1-b444-420c-9573-a18d2f7cd951",
       "type": "deep_vocabulary_item",
       "order": 22,
       "hanzi": "冻",
@@ -8200,7 +8200,7 @@
       },
       "collocations": [
         {
-          "id": "vocab_022_col_001",
+          "id": "79a6ed38-eb6f-46d6-a105-29746b539dd7",
           "order": 1,
           "zh": "冻了",
           "pinyin": "",
@@ -8211,7 +8211,7 @@
           "notes": []
         },
         {
-          "id": "vocab_022_col_002",
+          "id": "fe118b3b-cb07-4c13-992b-1e2cfc3ac467",
           "order": 2,
           "zh": "冻得发抖",
           "pinyin": "",
@@ -8222,7 +8222,7 @@
           "notes": []
         },
         {
-          "id": "vocab_022_col_003",
+          "id": "79e538ef-1b72-4f0b-bf86-8dd32aca97fc",
           "order": 3,
           "zh": "冻坏了",
           "pinyin": "",
@@ -8233,7 +8233,7 @@
           "notes": []
         },
         {
-          "id": "vocab_022_col_004",
+          "id": "0cfa3d7f-0eab-495b-8762-8474e4ad47f6",
           "order": 4,
           "zh": "冻伤",
           "pinyin": "",
@@ -8244,7 +8244,7 @@
           "notes": []
         },
         {
-          "id": "vocab_022_col_005",
+          "id": "5696bcd1-320f-439f-a9b6-fa5bd9ba88a8",
           "order": 5,
           "zh": "防冻",
           "pinyin": "",
@@ -8255,7 +8255,7 @@
           "notes": []
         },
         {
-          "id": "vocab_022_col_006",
+          "id": "1ad4c37a-d11d-43a4-9590-56711126ad87",
           "order": 6,
           "zh": "湖水冻住了",
           "pinyin": "",
@@ -8268,7 +8268,7 @@
       ],
       "examples": [
         {
-          "id": "vocab_022_ex_001",
+          "id": "78617ec9-25ce-4177-80ce-a3fa27e288ff",
           "order": 1,
           "zh": "外面太冷了，我的手都冻红了。",
           "pinyin": "",
@@ -8279,7 +8279,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_022"
+            "bb3b0ba1-b444-420c-9573-a18d2f7cd951"
           ],
           "source_ref": "manual_thread_vocab",
           "level": "intermediate",
@@ -8288,7 +8288,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_022_ex_002",
+          "id": "9b816ec0-ddaa-4fbc-bdbc-490b99b459bc",
           "order": 2,
           "zh": "冬天一到，湖水就冻住了。",
           "pinyin": "",
@@ -8299,7 +8299,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_022"
+            "bb3b0ba1-b444-420c-9573-a18d2f7cd951"
           ],
           "source_ref": "manual_thread_vocab",
           "level": "intermediate",
@@ -8308,7 +8308,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_022_ex_003",
+          "id": "995ede47-6424-4dda-a329-8bdb6710f7f0",
           "order": 3,
           "zh": "父母提醒孩子们别冻着。",
           "pinyin": "",
@@ -8319,7 +8319,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_022"
+            "bb3b0ba1-b444-420c-9573-a18d2f7cd951"
           ],
           "source_ref": "manual_thread_vocab",
           "level": "intermediate",
@@ -8343,7 +8343,7 @@
       },
       "warnings": [
         {
-          "id": "vocab_022_warning_001",
+          "id": "dae8831e-ac56-4862-bc7f-cc1c0028c79d",
           "order": 1,
           "rule_vi": "Tôi rất lạnh nói 我很冷, không nói 我很冻. 冻 thường dùng với kết quả: 冻得发抖, 手冻红了.",
           "natural_examples": [
@@ -8384,7 +8384,7 @@
       "check_needed": false
     },
     {
-      "id": "vocab_023",
+      "id": "b8d739a6-f975-4489-bae5-14fee8ea01e6",
       "type": "deep_vocabulary_item",
       "order": 23,
       "hanzi": "瑞雪兆丰年",
@@ -8667,7 +8667,7 @@
       },
       "collocations": [
         {
-          "id": "vocab_023_col_001",
+          "id": "89a6471b-306e-4d14-8601-947a8aeac498",
           "order": 1,
           "zh": "俗话说，瑞雪兆丰年",
           "pinyin": "",
@@ -8678,7 +8678,7 @@
           "notes": []
         },
         {
-          "id": "vocab_023_col_002",
+          "id": "01f986d7-cf29-47d4-abf6-fc2c6844258a",
           "order": 2,
           "zh": "真是瑞雪兆丰年",
           "pinyin": "",
@@ -8689,7 +8689,7 @@
           "notes": []
         },
         {
-          "id": "vocab_023_col_003",
+          "id": "70e135dd-403c-4afb-be8b-7a06e43b912f",
           "order": 3,
           "zh": "瑞雪",
           "pinyin": "",
@@ -8700,7 +8700,7 @@
           "notes": []
         },
         {
-          "id": "vocab_023_col_004",
+          "id": "07ad143a-93a7-4d23-9adc-e8d2b377d73f",
           "order": 4,
           "zh": "丰年",
           "pinyin": "",
@@ -8711,7 +8711,7 @@
           "notes": []
         },
         {
-          "id": "vocab_023_col_005",
+          "id": "515d4178-4f9c-4797-b228-cba0957ec035",
           "order": 5,
           "zh": "预示丰收",
           "pinyin": "",
@@ -8722,7 +8722,7 @@
           "notes": []
         },
         {
-          "id": "vocab_023_col_006",
+          "id": "485e1463-d2e0-4efb-b193-0ccb048ac789",
           "order": 6,
           "zh": "风调雨顺",
           "pinyin": "",
@@ -8735,7 +8735,7 @@
       ],
       "examples": [
         {
-          "id": "vocab_023_ex_001",
+          "id": "3985bbef-3687-48c7-a2b0-09d9172c42a7",
           "order": 1,
           "zh": "今年冬天下了几场大雪，老人们都说：“瑞雪兆丰年。”",
           "pinyin": "",
@@ -8746,7 +8746,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_023"
+            "b8d739a6-f975-4489-bae5-14fee8ea01e6"
           ],
           "source_ref": "manual_thread_vocab",
           "level": "intermediate",
@@ -8755,7 +8755,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_023_ex_002",
+          "id": "d6b0c0cf-c72e-4691-860f-3415a4a6efc7",
           "order": 2,
           "zh": "冬天适当地下一些雪，对农作物有好处。",
           "pinyin": "",
@@ -8766,7 +8766,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_023"
+            "b8d739a6-f975-4489-bae5-14fee8ea01e6"
           ],
           "source_ref": "manual_thread_vocab",
           "level": "intermediate",
@@ -8775,7 +8775,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_023_ex_003",
+          "id": "c9bfdb92-9744-4e1d-a4d2-da75dbe43fc7",
           "order": 3,
           "zh": "农民更关心这场雪会不会带来好收成。",
           "pinyin": "",
@@ -8786,7 +8786,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_023"
+            "b8d739a6-f975-4489-bae5-14fee8ea01e6"
           ],
           "source_ref": "manual_thread_vocab",
           "level": "intermediate",
@@ -8810,7 +8810,7 @@
       },
       "warnings": [
         {
-          "id": "vocab_023_warning_001",
+          "id": "316a50fc-a313-465c-b3a1-7148b492f043",
           "order": 1,
           "rule_vi": "Không dùng 瑞雪兆丰年 chỉ để nói tuyết đẹp; phải có sắc thái tuyết đúng mùa/có lợi cho mùa màng.",
           "natural_examples": [
@@ -8851,7 +8851,7 @@
       "check_needed": false
     },
     {
-      "id": "vocab_024",
+      "id": "ba154db2-34fc-4bf9-a64d-bc6baa13708b",
       "type": "deep_vocabulary_item",
       "order": 24,
       "hanzi": "场",
@@ -9001,7 +9001,7 @@
       },
       "collocations": [
         {
-          "id": "vocab_024_col_001",
+          "id": "22c209ab-5215-42fe-93cc-269463427bf6",
           "order": 1,
           "zh": "一场雪",
           "pinyin": "",
@@ -9012,7 +9012,7 @@
           "notes": []
         },
         {
-          "id": "vocab_024_col_002",
+          "id": "19475a73-5de4-470b-a9e5-5ceb6207e331",
           "order": 2,
           "zh": "一场大雪",
           "pinyin": "",
@@ -9023,7 +9023,7 @@
           "notes": []
         },
         {
-          "id": "vocab_024_col_003",
+          "id": "cfacf3e3-0fe9-4dd1-8c47-48c5ff075d34",
           "order": 3,
           "zh": "一场雨",
           "pinyin": "",
@@ -9034,7 +9034,7 @@
           "notes": []
         },
         {
-          "id": "vocab_024_col_004",
+          "id": "c64e247c-44fd-4e46-b745-e9fd3d9f82c9",
           "order": 4,
           "zh": "一场比赛",
           "pinyin": "",
@@ -9045,7 +9045,7 @@
           "notes": []
         },
         {
-          "id": "vocab_024_col_005",
+          "id": "2e701408-43c3-4e42-8f73-ed83fcfb0b97",
           "order": 5,
           "zh": "广场",
           "pinyin": "",
@@ -9056,7 +9056,7 @@
           "notes": []
         },
         {
-          "id": "vocab_024_col_006",
+          "id": "1a9588dd-b531-4221-a94d-dfa40382e1c3",
           "order": 6,
           "zh": "考场",
           "pinyin": "",
@@ -9069,7 +9069,7 @@
       ],
       "examples": [
         {
-          "id": "vocab_024_ex_001",
+          "id": "b8d708b0-fb10-403c-845a-95d593e7d15f",
           "order": 1,
           "zh": "昨天北京下了一场大雪。",
           "pinyin": "",
@@ -9080,7 +9080,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_024"
+            "ba154db2-34fc-4bf9-a64d-bc6baa13708b"
           ],
           "source_ref": "manual_thread_vocab",
           "level": "intermediate",
@@ -9089,7 +9089,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_024_ex_002",
+          "id": "036c2a7b-370f-4328-a708-766d29b5919d",
           "order": 2,
           "zh": "这场雪下得很大。",
           "pinyin": "",
@@ -9100,7 +9100,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_024"
+            "ba154db2-34fc-4bf9-a64d-bc6baa13708b"
           ],
           "source_ref": "manual_thread_vocab",
           "level": "intermediate",
@@ -9109,7 +9109,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_024_ex_003",
+          "id": "b5a4e0cb-3ef4-48cf-b271-dc27273b8f3e",
           "order": 3,
           "zh": "广场上堆着一堆一堆的雪。",
           "pinyin": "",
@@ -9120,7 +9120,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_024"
+            "ba154db2-34fc-4bf9-a64d-bc6baa13708b"
           ],
           "source_ref": "manual_thread_vocab",
           "level": "intermediate",
@@ -9144,7 +9144,7 @@
       },
       "warnings": [
         {
-          "id": "vocab_024_warning_001",
+          "id": "2b594585-1d59-41f1-b725-d7440a599634",
           "order": 1,
           "rule_vi": "Phân biệt âm: 广场 guǎngchǎng, 一场雪 yì cháng xuě, 一场比赛 yì chǎng bǐsài.",
           "natural_examples": [
@@ -9185,7 +9185,7 @@
       "check_needed": false
     },
     {
-      "id": "vocab_025",
+      "id": "aa468218-3ad5-4724-829f-8a2e91382277",
       "type": "deep_vocabulary_item",
       "order": 25,
       "hanzi": "收成",
@@ -9379,7 +9379,7 @@
       },
       "collocations": [
         {
-          "id": "vocab_025_col_001",
+          "id": "1278987f-ee06-4f5d-b756-aabadabac595",
           "order": 1,
           "zh": "收成好",
           "pinyin": "",
@@ -9390,7 +9390,7 @@
           "notes": []
         },
         {
-          "id": "vocab_025_col_002",
+          "id": "4d313cd5-c331-4677-bbc1-dedf752b3fa7",
           "order": 2,
           "zh": "收成不好",
           "pinyin": "",
@@ -9401,7 +9401,7 @@
           "notes": []
         },
         {
-          "id": "vocab_025_col_003",
+          "id": "6091934f-bc08-4a2e-9f13-fec1931490c4",
           "order": 3,
           "zh": "今年的收成",
           "pinyin": "",
@@ -9412,7 +9412,7 @@
           "notes": []
         },
         {
-          "id": "vocab_025_col_004",
+          "id": "c0993526-9fae-4405-bdc9-cb84c364da7e",
           "order": 4,
           "zh": "好收成",
           "pinyin": "",
@@ -9423,7 +9423,7 @@
           "notes": []
         },
         {
-          "id": "vocab_025_col_005",
+          "id": "6d429fe5-dd09-4e5b-ade9-1181195d1368",
           "order": 5,
           "zh": "影响收成",
           "pinyin": "",
@@ -9434,7 +9434,7 @@
           "notes": []
         },
         {
-          "id": "vocab_025_col_006",
+          "id": "a841b075-5684-49a5-93a9-67cf47e2fa3d",
           "order": 6,
           "zh": "带来好收成",
           "pinyin": "",
@@ -9447,7 +9447,7 @@
       ],
       "examples": [
         {
-          "id": "vocab_025_ex_001",
+          "id": "70f6852e-c072-4098-aedd-314bb21ebc3e",
           "order": 1,
           "zh": "今年的收成很好。",
           "pinyin": "",
@@ -9458,7 +9458,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_025"
+            "aa468218-3ad5-4724-829f-8a2e91382277"
           ],
           "source_ref": "manual_thread_vocab",
           "level": "intermediate",
@@ -9467,7 +9467,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_025_ex_002",
+          "id": "a5d2de2c-122b-4f21-8045-e938fbc3ec5d",
           "order": 2,
           "zh": "农民都希望明年有个好收成。",
           "pinyin": "",
@@ -9478,7 +9478,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_025"
+            "aa468218-3ad5-4724-829f-8a2e91382277"
           ],
           "source_ref": "manual_thread_vocab",
           "level": "intermediate",
@@ -9487,7 +9487,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_025_ex_003",
+          "id": "88f648f0-8f55-40ff-9d1f-62371c3330ed",
           "order": 3,
           "zh": "孩子们想到堆雪人儿，农民想到来年的收成。",
           "pinyin": "",
@@ -9498,7 +9498,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_025"
+            "aa468218-3ad5-4724-829f-8a2e91382277"
           ],
           "source_ref": "manual_thread_vocab",
           "level": "intermediate",
@@ -9521,7 +9521,7 @@
       },
       "warnings": [
         {
-          "id": "vocab_025_warning_001",
+          "id": "c77551d3-29b5-466d-96fa-4861460d2e8c",
           "order": 1,
           "rule_vi": "收成 thiên về mùa màng; kinh nghiệm học được nói 收获, không nói 收成.",
           "natural_examples": [
@@ -9561,7 +9561,7 @@
       "check_needed": false
     },
     {
-      "id": "vocab_026",
+      "id": "8be43b4c-bdd5-40c9-a8f1-9d9513e86d12",
       "type": "deep_vocabulary_item",
       "order": 26,
       "hanzi": "大街",
@@ -9754,7 +9754,7 @@
       },
       "collocations": [
         {
-          "id": "vocab_026_col_001",
+          "id": "a140993a-31ee-43ff-bd7f-4d85b72b8e7b",
           "order": 1,
           "zh": "大街上",
           "pinyin": "",
@@ -9765,7 +9765,7 @@
           "notes": []
         },
         {
-          "id": "vocab_026_col_002",
+          "id": "9cd4c357-c5e8-4aa9-8888-c671d9949a78",
           "order": 2,
           "zh": "走在大街上",
           "pinyin": "",
@@ -9776,7 +9776,7 @@
           "notes": []
         },
         {
-          "id": "vocab_026_col_003",
+          "id": "c2afb39a-6cff-451f-a8da-6a7df103b0a7",
           "order": 3,
           "zh": "大街小巷",
           "pinyin": "",
@@ -9787,7 +9787,7 @@
           "notes": []
         },
         {
-          "id": "vocab_026_col_004",
+          "id": "5de3cbeb-bc35-44d0-84e9-866dab5906b1",
           "order": 4,
           "zh": "热闹的大街",
           "pinyin": "",
@@ -9798,7 +9798,7 @@
           "notes": []
         },
         {
-          "id": "vocab_026_col_005",
+          "id": "b0aac3b5-4d92-42e8-b594-0ff5c9b552fc",
           "order": 5,
           "zh": "大街两旁",
           "pinyin": "",
@@ -9809,7 +9809,7 @@
           "notes": []
         },
         {
-          "id": "vocab_026_col_006",
+          "id": "d89a793c-de83-4b2e-8e2f-27d14fdd8e38",
           "order": 6,
           "zh": "北京的大街",
           "pinyin": "",
@@ -9822,7 +9822,7 @@
       ],
       "examples": [
         {
-          "id": "vocab_026_ex_001",
+          "id": "6b216c35-eed1-4fb3-af25-f80eaf42a608",
           "order": 1,
           "zh": "春天的大街上有很多鲜花。",
           "pinyin": "",
@@ -9833,7 +9833,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_026"
+            "8be43b4c-bdd5-40c9-a8f1-9d9513e86d12"
           ],
           "source_ref": "manual_thread_vocab",
           "level": "intermediate",
@@ -9842,7 +9842,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_026_ex_002",
+          "id": "b213b1cb-3d06-47b3-84e3-a1d9d4dcba0b",
           "order": 2,
           "zh": "一到国庆节，大街上就挂满了红旗。",
           "pinyin": "",
@@ -9853,7 +9853,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_026"
+            "8be43b4c-bdd5-40c9-a8f1-9d9513e86d12"
           ],
           "source_ref": "manual_thread_vocab",
           "level": "intermediate",
@@ -9862,7 +9862,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_026_ex_003",
+          "id": "d49d90a5-0b97-4e2e-a7ca-554cd3ea4385",
           "order": 3,
           "zh": "北京春天的大街上有鲜花，也有游人。",
           "pinyin": "",
@@ -9873,7 +9873,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_026"
+            "8be43b4c-bdd5-40c9-a8f1-9d9513e86d12"
           ],
           "source_ref": "manual_thread_vocab",
           "level": "intermediate",
@@ -9897,7 +9897,7 @@
       },
       "warnings": [
         {
-          "id": "vocab_026_warning_001",
+          "id": "aa597fa1-147d-4a60-880d-6945adbfb2a2",
           "order": 1,
           "rule_vi": "大街 là phố lớn; 街道 có thể là đường phố hoặc đơn vị quản lý đô thị.",
           "natural_examples": [
@@ -9938,7 +9938,7 @@
       "check_needed": false
     },
     {
-      "id": "vocab_027",
+      "id": "5fcf867b-2c06-4140-9a1c-b9641c781ccb",
       "type": "deep_vocabulary_item",
       "order": 27,
       "hanzi": "鲜花",
@@ -10174,7 +10174,7 @@
       },
       "collocations": [
         {
-          "id": "vocab_027_col_001",
+          "id": "0b12ec6d-c223-4994-8d02-643d6da9fc95",
           "order": 1,
           "zh": "一束鲜花",
           "pinyin": "",
@@ -10185,7 +10185,7 @@
           "notes": []
         },
         {
-          "id": "vocab_027_col_002",
+          "id": "129bc991-8859-41bc-afdd-5429ded7b7fa",
           "order": 2,
           "zh": "买鲜花",
           "pinyin": "",
@@ -10196,7 +10196,7 @@
           "notes": []
         },
         {
-          "id": "vocab_027_col_003",
+          "id": "bf0aa7d8-257b-4ba5-839a-c1a79206841d",
           "order": 3,
           "zh": "送鲜花",
           "pinyin": "",
@@ -10207,7 +10207,7 @@
           "notes": []
         },
         {
-          "id": "vocab_027_col_004",
+          "id": "9e1b45d0-510d-4e87-a5c9-fe932ae8128c",
           "order": 4,
           "zh": "摆满鲜花",
           "pinyin": "",
@@ -10218,7 +10218,7 @@
           "notes": []
         },
         {
-          "id": "vocab_027_col_005",
+          "id": "c8d406a8-0ec6-4ad5-823b-b4c472270fb1",
           "order": 5,
           "zh": "开满鲜花",
           "pinyin": "",
@@ -10229,7 +10229,7 @@
           "notes": []
         },
         {
-          "id": "vocab_027_col_006",
+          "id": "dea708a1-5499-437d-880f-5d77cee45927",
           "order": 6,
           "zh": "鲜花盛开",
           "pinyin": "",
@@ -10242,7 +10242,7 @@
       ],
       "examples": [
         {
-          "id": "vocab_027_ex_001",
+          "id": "48eeae3d-387c-4729-a9ed-05430c230338",
           "order": 1,
           "zh": "桌子上放着一束鲜花。",
           "pinyin": "",
@@ -10253,7 +10253,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_027"
+            "5fcf867b-2c06-4140-9a1c-b9641c781ccb"
           ],
           "source_ref": "manual_thread_vocab",
           "level": "intermediate",
@@ -10262,7 +10262,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_027_ex_002",
+          "id": "2edb910d-a052-41ed-87a6-72fe11931b00",
           "order": 2,
           "zh": "春天一到，大街上就开满了鲜花。",
           "pinyin": "",
@@ -10273,7 +10273,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_027"
+            "5fcf867b-2c06-4140-9a1c-b9641c781ccb"
           ],
           "source_ref": "manual_thread_vocab",
           "level": "intermediate",
@@ -10282,7 +10282,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_027_ex_003",
+          "id": "944f250a-c885-44c9-b86d-60c1232e1177",
           "order": 3,
           "zh": "公园里充满了阳光和鲜花。",
           "pinyin": "",
@@ -10293,7 +10293,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_027"
+            "5fcf867b-2c06-4140-9a1c-b9641c781ccb"
           ],
           "source_ref": "manual_thread_vocab",
           "level": "intermediate",
@@ -10317,7 +10317,7 @@
       },
       "warnings": [
         {
-          "id": "vocab_027_warning_001",
+          "id": "9512af41-62ea-48b4-80e6-9856b4ebdd98",
           "order": 1,
           "rule_vi": "花 có nhiều nghĩa: hoa, tiêu tiền, hoa văn; 鲜花 chỉ hoa tươi.",
           "natural_examples": [
@@ -10358,7 +10358,7 @@
       "check_needed": false
     },
     {
-      "id": "vocab_028",
+      "id": "6a9f49e9-efd3-49ac-a66d-06f0bd21f8b8",
       "type": "deep_vocabulary_item",
       "order": 28,
       "hanzi": "瓜",
@@ -10487,7 +10487,7 @@
       },
       "collocations": [
         {
-          "id": "vocab_028_col_001",
+          "id": "459935d4-c4d8-4173-801d-63ddf83aa664",
           "order": 1,
           "zh": "西瓜",
           "pinyin": "",
@@ -10498,7 +10498,7 @@
           "notes": []
         },
         {
-          "id": "vocab_028_col_002",
+          "id": "b8f2444a-63f6-47df-b340-4336662157e4",
           "order": 2,
           "zh": "黄瓜",
           "pinyin": "",
@@ -10509,7 +10509,7 @@
           "notes": []
         },
         {
-          "id": "vocab_028_col_003",
+          "id": "bd104c22-3511-4c6a-b2e3-52b077aeaf2b",
           "order": 3,
           "zh": "冬瓜",
           "pinyin": "",
@@ -10520,7 +10520,7 @@
           "notes": []
         },
         {
-          "id": "vocab_028_col_004",
+          "id": "8eb93efe-a2a3-4d82-b124-e82838757728",
           "order": 4,
           "zh": "南瓜",
           "pinyin": "",
@@ -10531,7 +10531,7 @@
           "notes": []
         },
         {
-          "id": "vocab_028_col_005",
+          "id": "45d809ab-f8ba-42ac-ab21-27f66bf272b1",
           "order": 5,
           "zh": "瓜果",
           "pinyin": "",
@@ -10542,7 +10542,7 @@
           "notes": []
         },
         {
-          "id": "vocab_028_col_006",
+          "id": "ff91ae6f-c331-4ef3-8bbb-fd2ba0cc3276",
           "order": 6,
           "zh": "种瓜",
           "pinyin": "",
@@ -10555,7 +10555,7 @@
       ],
       "examples": [
         {
-          "id": "vocab_028_ex_001",
+          "id": "96c6077d-bce9-4413-b9e9-87da00550e6b",
           "order": 1,
           "zh": "夏天吃西瓜很舒服。",
           "pinyin": "",
@@ -10566,7 +10566,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_028"
+            "6a9f49e9-efd3-49ac-a66d-06f0bd21f8b8"
           ],
           "source_ref": "manual_thread_vocab",
           "level": "intermediate",
@@ -10575,7 +10575,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_028_ex_002",
+          "id": "98e1c333-d81d-4c3f-8cab-00d788fb8c06",
           "order": 2,
           "zh": "秋天到了，郊外有很多瓜果。",
           "pinyin": "",
@@ -10586,7 +10586,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_028"
+            "6a9f49e9-efd3-49ac-a66d-06f0bd21f8b8"
           ],
           "source_ref": "manual_thread_vocab",
           "level": "intermediate",
@@ -10595,7 +10595,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_028_ex_003",
+          "id": "520c26a1-21fd-4b45-a6ab-318a8c98d813",
           "order": 3,
           "zh": "北京的秋天不冷不热，瓜果也很多。",
           "pinyin": "",
@@ -10606,7 +10606,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_028"
+            "6a9f49e9-efd3-49ac-a66d-06f0bd21f8b8"
           ],
           "source_ref": "manual_thread_vocab",
           "level": "intermediate",
@@ -10630,7 +10630,7 @@
       },
       "warnings": [
         {
-          "id": "vocab_028_warning_001",
+          "id": "19ab7209-23b0-4f73-8f0a-ecae573002e1",
           "order": 1,
           "rule_vi": "Không gọi mọi trái cây là 瓜; táo là 苹果, cam là 橙子. Trái cây nói chung là 水果.",
           "natural_examples": [
@@ -10671,7 +10671,7 @@
       "check_needed": false
     },
     {
-      "id": "vocab_029",
+      "id": "92c4981f-0c93-42e1-b1e7-5fe7c361b706",
       "type": "deep_vocabulary_item",
       "order": 29,
       "hanzi": "果",
@@ -10833,7 +10833,7 @@
       },
       "collocations": [
         {
-          "id": "vocab_029_col_001",
+          "id": "d7bccabb-bb81-434a-950e-c2d54c4f129c",
           "order": 1,
           "zh": "水果",
           "pinyin": "",
@@ -10844,7 +10844,7 @@
           "notes": []
         },
         {
-          "id": "vocab_029_col_002",
+          "id": "7a874385-2777-4f96-8520-ed8bc2b5a3b9",
           "order": 2,
           "zh": "瓜果",
           "pinyin": "",
@@ -10855,7 +10855,7 @@
           "notes": []
         },
         {
-          "id": "vocab_029_col_003",
+          "id": "451c986b-0ee6-4b6c-aca9-53c1f2c8cd30",
           "order": 3,
           "zh": "果实",
           "pinyin": "",
@@ -10866,7 +10866,7 @@
           "notes": []
         },
         {
-          "id": "vocab_029_col_004",
+          "id": "3daebe76-d126-410d-be33-e23a46ff669f",
           "order": 4,
           "zh": "结果",
           "pinyin": "",
@@ -10877,7 +10877,7 @@
           "notes": []
         },
         {
-          "id": "vocab_029_col_005",
+          "id": "920262a3-b188-4fe7-91e7-371832fd28c0",
           "order": 5,
           "zh": "成果",
           "pinyin": "",
@@ -10888,7 +10888,7 @@
           "notes": []
         },
         {
-          "id": "vocab_029_col_006",
+          "id": "2725970e-690c-4b4f-85f9-757c3eeb786b",
           "order": 6,
           "zh": "效果",
           "pinyin": "",
@@ -10901,7 +10901,7 @@
       ],
       "examples": [
         {
-          "id": "vocab_029_ex_001",
+          "id": "08f32e81-c999-48c5-8ecb-8aed1ec8492f",
           "order": 1,
           "zh": "秋天是瓜果成熟的季节。",
           "pinyin": "",
@@ -10912,7 +10912,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_029"
+            "92c4981f-0c93-42e1-b1e7-5fe7c361b706"
           ],
           "source_ref": "manual_thread_vocab",
           "level": "intermediate",
@@ -10921,7 +10921,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_029_ex_002",
+          "id": "882247ee-82a3-4193-a8bb-392ad17833a4",
           "order": 2,
           "zh": "这场雪可能会给明年的瓜果带来好收成。",
           "pinyin": "",
@@ -10932,7 +10932,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_029"
+            "92c4981f-0c93-42e1-b1e7-5fe7c361b706"
           ],
           "source_ref": "manual_thread_vocab",
           "level": "intermediate",
@@ -10941,7 +10941,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_029_ex_003",
+          "id": "4768b225-47d9-495b-98e5-be0dd440e039",
           "order": 3,
           "zh": "他只看到眼前的果，没有想到背后的因。",
           "pinyin": "",
@@ -10952,7 +10952,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_029"
+            "92c4981f-0c93-42e1-b1e7-5fe7c361b706"
           ],
           "source_ref": "manual_thread_vocab",
           "level": "intermediate",
@@ -10976,7 +10976,7 @@
       },
       "warnings": [
         {
-          "id": "vocab_029_warning_001",
+          "id": "1103e636-4d69-4495-809b-975cb21000de",
           "order": 1,
           "rule_vi": "Muốn nói trái cây đời thường dùng 水果, không nói trống 我想买果.",
           "natural_examples": [
@@ -11017,7 +11017,7 @@
       "check_needed": false
     },
     {
-      "id": "vocab_030",
+      "id": "96f078c6-c5d8-4706-bd7a-1dcd88848a9e",
       "type": "deep_vocabulary_item",
       "order": 30,
       "hanzi": "每",
@@ -11133,7 +11133,7 @@
       },
       "collocations": [
         {
-          "id": "vocab_030_col_001",
+          "id": "ea1dc9d9-95ae-4fbd-9763-9aabbb1dd10b",
           "order": 1,
           "zh": "每天",
           "pinyin": "",
@@ -11144,7 +11144,7 @@
           "notes": []
         },
         {
-          "id": "vocab_030_col_002",
+          "id": "b1ad7118-74c9-4e8c-86e3-fe0e00f65f2b",
           "order": 2,
           "zh": "每年",
           "pinyin": "",
@@ -11155,7 +11155,7 @@
           "notes": []
         },
         {
-          "id": "vocab_030_col_003",
+          "id": "68f569b5-97f6-43c8-9f6b-dbb1a48ef4d6",
           "order": 3,
           "zh": "每次",
           "pinyin": "",
@@ -11166,7 +11166,7 @@
           "notes": []
         },
         {
-          "id": "vocab_030_col_004",
+          "id": "d46c7399-b755-486d-bdf6-5e90facd4e73",
           "order": 4,
           "zh": "每个人",
           "pinyin": "",
@@ -11177,7 +11177,7 @@
           "notes": []
         },
         {
-          "id": "vocab_030_col_005",
+          "id": "030ec49b-6c48-47c7-88ed-59a677275b8b",
           "order": 5,
           "zh": "每个季节",
           "pinyin": "",
@@ -11188,7 +11188,7 @@
           "notes": []
         },
         {
-          "id": "vocab_030_col_006",
+          "id": "af71792b-bf96-4aed-91f1-b471b3616f58",
           "order": 6,
           "zh": "每到春天",
           "pinyin": "",
@@ -11201,7 +11201,7 @@
       ],
       "examples": [
         {
-          "id": "vocab_030_ex_001",
+          "id": "0c22edb3-592e-4154-92c8-a059136c5fd1",
           "order": 1,
           "zh": "我每天都学习汉语。",
           "pinyin": "",
@@ -11212,7 +11212,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_030"
+            "96f078c6-c5d8-4706-bd7a-1dcd88848a9e"
           ],
           "source_ref": "manual_thread_vocab",
           "level": "intermediate",
@@ -11221,7 +11221,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_030_ex_002",
+          "id": "798d92b9-a39a-48d3-8474-ff3879c81656",
           "order": 2,
           "zh": "每到春天，北京的大街上就开满了鲜花。",
           "pinyin": "",
@@ -11232,7 +11232,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_030"
+            "96f078c6-c5d8-4706-bd7a-1dcd88848a9e"
           ],
           "source_ref": "manual_thread_vocab",
           "level": "intermediate",
@@ -11241,7 +11241,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_030_ex_003",
+          "id": "782d8494-bd69-4ffe-8481-3375e2bee748",
           "order": 3,
           "zh": "每个季节的北京都有不同的景色。",
           "pinyin": "",
@@ -11252,7 +11252,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_030"
+            "96f078c6-c5d8-4706-bd7a-1dcd88848a9e"
           ],
           "source_ref": "manual_thread_vocab",
           "level": "intermediate",
@@ -11276,7 +11276,7 @@
       },
       "warnings": [
         {
-          "id": "vocab_030_warning_001",
+          "id": "9ccb0263-08dd-44d7-acf3-7dd67d69ce2c",
           "order": 1,
           "rule_vi": "Mẫu an toàn: 每 + lượng từ/danh từ đơn vị + 都 + vị ngữ.",
           "natural_examples": [
@@ -11317,7 +11317,7 @@
       "check_needed": false
     },
     {
-      "id": "vocab_031",
+      "id": "97c28005-6c21-4c5b-b138-9e6342ed8838",
       "type": "deep_vocabulary_item",
       "order": 31,
       "hanzi": "郊外",
@@ -11532,7 +11532,7 @@
       },
       "collocations": [
         {
-          "id": "vocab_031_col_001",
+          "id": "b66f4e90-7362-487b-91c7-20fae1b6d240",
           "order": 1,
           "zh": "去郊外",
           "pinyin": "",
@@ -11543,7 +11543,7 @@
           "notes": []
         },
         {
-          "id": "vocab_031_col_002",
+          "id": "a020de36-8f69-4680-92aa-b994b087803d",
           "order": 2,
           "zh": "到郊外玩儿",
           "pinyin": "",
@@ -11554,7 +11554,7 @@
           "notes": []
         },
         {
-          "id": "vocab_031_col_003",
+          "id": "df2f2d1e-37dd-4ec0-af76-d5bd64cbff68",
           "order": 3,
           "zh": "北京的郊外",
           "pinyin": "",
@@ -11565,7 +11565,7 @@
           "notes": []
         },
         {
-          "id": "vocab_031_col_004",
+          "id": "77b990e7-fa5a-4b85-9049-98b1a7e4e603",
           "order": 4,
           "zh": "郊外的景色",
           "pinyin": "",
@@ -11576,7 +11576,7 @@
           "notes": []
         },
         {
-          "id": "vocab_031_col_005",
+          "id": "4c387e71-0bfe-4e5a-a022-bcf2749f1f3c",
           "order": 5,
           "zh": "住在郊外",
           "pinyin": "",
@@ -11587,7 +11587,7 @@
           "notes": []
         },
         {
-          "id": "vocab_031_col_006",
+          "id": "4b94d0b6-2ee4-4ffe-bb2b-81c3dbad7855",
           "order": 6,
           "zh": "郊外空气很好",
           "pinyin": "",
@@ -11600,7 +11600,7 @@
       ],
       "examples": [
         {
-          "id": "vocab_031_ex_001",
+          "id": "53cfbf55-b417-42a8-ad3f-c110784c6f50",
           "order": 1,
           "zh": "周末我们想去郊外玩儿。",
           "pinyin": "",
@@ -11611,7 +11611,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_031"
+            "97c28005-6c21-4c5b-b138-9e6342ed8838"
           ],
           "source_ref": "manual_thread_vocab",
           "level": "intermediate",
@@ -11620,7 +11620,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_031_ex_002",
+          "id": "f0ff8138-a0aa-4d22-8210-e33b6f712c30",
           "order": 2,
           "zh": "每到秋天，很多人都喜欢去郊外看景色。",
           "pinyin": "",
@@ -11631,7 +11631,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_031"
+            "97c28005-6c21-4c5b-b138-9e6342ed8838"
           ],
           "source_ref": "manual_thread_vocab",
           "level": "intermediate",
@@ -11640,7 +11640,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_031_ex_003",
+          "id": "c2d57683-09b4-4a2a-87d5-d364cb9ee6db",
           "order": 3,
           "zh": "郊外的景色更自然，也更让人向往。",
           "pinyin": "",
@@ -11651,7 +11651,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_031"
+            "97c28005-6c21-4c5b-b138-9e6342ed8838"
           ],
           "source_ref": "manual_thread_vocab",
           "level": "intermediate",
@@ -11675,7 +11675,7 @@
       },
       "warnings": [
         {
-          "id": "vocab_031_warning_001",
+          "id": "f24f42ed-0590-4073-a1c2-21924ce3e83e",
           "order": 1,
           "rule_vi": "郊外 không phải “ngoài trời” nói chung; ngoài trời là 户外/外面 tùy ngữ cảnh.",
           "natural_examples": [
@@ -11716,7 +11716,7 @@
       "check_needed": false
     },
     {
-      "id": "vocab_032",
+      "id": "5e1cc03a-e062-4ae8-86e0-9ec983b7a128",
       "type": "deep_vocabulary_item",
       "order": 32,
       "hanzi": "美丽",
@@ -11921,7 +11921,7 @@
       },
       "collocations": [
         {
-          "id": "vocab_032_col_001",
+          "id": "9d10dd1f-75fb-40a0-b81b-3da7e98c63cc",
           "order": 1,
           "zh": "美丽的景色",
           "pinyin": "",
@@ -11932,7 +11932,7 @@
           "notes": []
         },
         {
-          "id": "vocab_032_col_002",
+          "id": "07c3150c-4d5f-4653-a90b-9b1d04c78d5f",
           "order": 2,
           "zh": "美丽的城市",
           "pinyin": "",
@@ -11943,7 +11943,7 @@
           "notes": []
         },
         {
-          "id": "vocab_032_col_003",
+          "id": "1b0f77c0-d94f-4dc1-9843-4977af3d7b17",
           "order": 3,
           "zh": "美丽的姑娘",
           "pinyin": "",
@@ -11954,7 +11954,7 @@
           "notes": []
         },
         {
-          "id": "vocab_032_col_004",
+          "id": "132fd644-d039-4029-b87d-5ef01a2eead6",
           "order": 4,
           "zh": "美丽的春天",
           "pinyin": "",
@@ -11965,7 +11965,7 @@
           "notes": []
         },
         {
-          "id": "vocab_032_col_005",
+          "id": "8a4ab8de-35ef-4b15-a7af-467ef21faa9d",
           "order": 5,
           "zh": "非常美丽",
           "pinyin": "",
@@ -11976,7 +11976,7 @@
           "notes": []
         },
         {
-          "id": "vocab_032_col_006",
+          "id": "bb320b12-0842-4f4a-a971-b3c0d99bd9ac",
           "order": 6,
           "zh": "显得更加美丽",
           "pinyin": "",
@@ -11989,7 +11989,7 @@
       ],
       "examples": [
         {
-          "id": "vocab_032_ex_001",
+          "id": "48c59642-78ee-4336-af4d-279929f6af5a",
           "order": 1,
           "zh": "北京的秋天很美丽。",
           "pinyin": "",
@@ -12000,7 +12000,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_032"
+            "5e1cc03a-e062-4ae8-86e0-9ec983b7a128"
           ],
           "source_ref": "manual_thread_vocab",
           "level": "intermediate",
@@ -12009,7 +12009,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_032_ex_002",
+          "id": "35100f16-73af-4beb-86b6-7dd6ac96160a",
           "order": 2,
           "zh": "鲜花让这座城市显得更加美丽。",
           "pinyin": "",
@@ -12020,7 +12020,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_032"
+            "5e1cc03a-e062-4ae8-86e0-9ec983b7a128"
           ],
           "source_ref": "manual_thread_vocab",
           "level": "intermediate",
@@ -12029,7 +12029,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_032_ex_003",
+          "id": "decb39e3-1083-4115-ba15-367120b48ad5",
           "order": 3,
           "zh": "雪后的景色也非常美丽。",
           "pinyin": "",
@@ -12040,7 +12040,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_032"
+            "5e1cc03a-e062-4ae8-86e0-9ec983b7a128"
           ],
           "source_ref": "manual_thread_vocab",
           "level": "intermediate",
@@ -12063,7 +12063,7 @@
       },
       "warnings": [
         {
-          "id": "vocab_032_warning_001",
+          "id": "33379a15-deae-4fb8-967f-3b5ec6aca71d",
           "order": 1,
           "rule_vi": "Món ăn ngon nói 好吃, không dùng 美丽 nếu chỉ muốn nói ngon.",
           "natural_examples": [
@@ -12103,7 +12103,7 @@
       "check_needed": false
     },
     {
-      "id": "vocab_033",
+      "id": "8f22d28d-68a2-4fa5-a024-ad186bc0156c",
       "type": "deep_vocabulary_item",
       "order": 33,
       "hanzi": "美",
@@ -12286,7 +12286,7 @@
       },
       "collocations": [
         {
-          "id": "vocab_033_col_001",
+          "id": "a23a1a17-56a1-4ab8-8526-1d9a9feb5d03",
           "order": 1,
           "zh": "很美",
           "pinyin": "",
@@ -12297,7 +12297,7 @@
           "notes": []
         },
         {
-          "id": "vocab_033_col_002",
+          "id": "bed69104-40fd-45e8-b007-0ff7de05d433",
           "order": 2,
           "zh": "真美",
           "pinyin": "",
@@ -12308,7 +12308,7 @@
           "notes": []
         },
         {
-          "id": "vocab_033_col_003",
+          "id": "3280ebb3-d221-426f-b1be-336b94eb49b2",
           "order": 3,
           "zh": "多么美",
           "pinyin": "",
@@ -12319,7 +12319,7 @@
           "notes": []
         },
         {
-          "id": "vocab_033_col_004",
+          "id": "c5b9408c-406a-4c66-b29a-eaade73515f7",
           "order": 4,
           "zh": "景色美",
           "pinyin": "",
@@ -12330,7 +12330,7 @@
           "notes": []
         },
         {
-          "id": "vocab_033_col_005",
+          "id": "98bb77e4-b4d1-4646-a86f-1c9288bf3a88",
           "order": 5,
           "zh": "美好",
           "pinyin": "",
@@ -12341,7 +12341,7 @@
           "notes": []
         },
         {
-          "id": "vocab_033_col_006",
+          "id": "0bc4cf11-999e-46be-8684-9444b6913f83",
           "order": 6,
           "zh": "完美",
           "pinyin": "",
@@ -12354,7 +12354,7 @@
       ],
       "examples": [
         {
-          "id": "vocab_033_ex_001",
+          "id": "f842c40b-807c-4889-b4de-fec7daf83bf6",
           "order": 1,
           "zh": "这里的景色真美。",
           "pinyin": "",
@@ -12365,7 +12365,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_033"
+            "8f22d28d-68a2-4fa5-a024-ad186bc0156c"
           ],
           "source_ref": "manual_thread_vocab",
           "level": "intermediate",
@@ -12374,7 +12374,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_033_ex_002",
+          "id": "7b4b0870-fdf9-4031-9b69-344c386a742f",
           "order": 2,
           "zh": "秋天的北京多么美啊！",
           "pinyin": "",
@@ -12385,7 +12385,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_033"
+            "8f22d28d-68a2-4fa5-a024-ad186bc0156c"
           ],
           "source_ref": "manual_thread_vocab",
           "level": "intermediate",
@@ -12394,7 +12394,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_033_ex_003",
+          "id": "91520a4c-9afb-42fe-a4f3-860d4357b68f",
           "order": 3,
           "zh": "整个城市美得让人不想离开。",
           "pinyin": "",
@@ -12405,7 +12405,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_033"
+            "8f22d28d-68a2-4fa5-a024-ad186bc0156c"
           ],
           "source_ref": "manual_thread_vocab",
           "level": "intermediate",
@@ -12429,7 +12429,7 @@
       },
       "warnings": [
         {
-          "id": "vocab_033_warning_001",
+          "id": "7c22271a-fc38-449f-ac8b-0e4c38906baf",
           "order": 1,
           "rule_vi": "美 có thể là viết tắt của 美国 trong 中美关系; phải xem ngữ cảnh.",
           "natural_examples": [
@@ -12470,7 +12470,7 @@
       "check_needed": false
     },
     {
-      "id": "vocab_034",
+      "id": "1b2ae0cc-9d4c-49fc-9782-24ce0c35269b",
       "type": "deep_vocabulary_item",
       "order": 34,
       "hanzi": "景色",
@@ -12652,7 +12652,7 @@
       },
       "collocations": [
         {
-          "id": "vocab_034_col_001",
+          "id": "c2bebbe8-da74-4f3b-b941-0df435039d7e",
           "order": 1,
           "zh": "景色很美",
           "pinyin": "",
@@ -12663,7 +12663,7 @@
           "notes": []
         },
         {
-          "id": "vocab_034_col_002",
+          "id": "1b0a9d22-2050-4af2-b14e-abeac5e367e5",
           "order": 2,
           "zh": "美丽的景色",
           "pinyin": "",
@@ -12674,7 +12674,7 @@
           "notes": []
         },
         {
-          "id": "vocab_034_col_003",
+          "id": "9e52c386-5949-4722-ac95-7c739e2e9b8e",
           "order": 3,
           "zh": "春天的景色",
           "pinyin": "",
@@ -12685,7 +12685,7 @@
           "notes": []
         },
         {
-          "id": "vocab_034_col_004",
+          "id": "d6b8a4ce-7fde-4a7a-bb19-8397eb96b6f2",
           "order": 4,
           "zh": "秋天的景色",
           "pinyin": "",
@@ -12696,7 +12696,7 @@
           "notes": []
         },
         {
-          "id": "vocab_034_col_005",
+          "id": "176dfb12-b9e8-4267-9f96-73dd8c21f6c3",
           "order": 5,
           "zh": "郊外的景色",
           "pinyin": "",
@@ -12707,7 +12707,7 @@
           "notes": []
         },
         {
-          "id": "vocab_034_col_006",
+          "id": "68db52d7-895d-4b27-bcdc-5e039333bb65",
           "order": 6,
           "zh": "欣赏景色",
           "pinyin": "",
@@ -12720,7 +12720,7 @@
       ],
       "examples": [
         {
-          "id": "vocab_034_ex_001",
+          "id": "a4a3cd0d-7329-4c31-85ad-b8b993b2ba83",
           "order": 1,
           "zh": "香山秋天的景色很美。",
           "pinyin": "",
@@ -12731,7 +12731,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_034"
+            "1b2ae0cc-9d4c-49fc-9782-24ce0c35269b"
           ],
           "source_ref": "manual_thread_vocab",
           "level": "intermediate",
@@ -12740,7 +12740,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_034_ex_002",
+          "id": "adbd8138-4cf0-4d40-8147-449da366ff8b",
           "order": 2,
           "zh": "很多游人都去郊外欣赏景色。",
           "pinyin": "",
@@ -12751,7 +12751,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_034"
+            "1b2ae0cc-9d4c-49fc-9782-24ce0c35269b"
           ],
           "source_ref": "manual_thread_vocab",
           "level": "intermediate",
@@ -12760,7 +12760,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_034_ex_003",
+          "id": "798066ff-e9d9-44ac-96bc-e13b8d88a0e8",
           "order": 3,
           "zh": "雪后的北京也有一种特别安静的景色。",
           "pinyin": "",
@@ -12771,7 +12771,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_034"
+            "1b2ae0cc-9d4c-49fc-9782-24ce0c35269b"
           ],
           "source_ref": "manual_thread_vocab",
           "level": "intermediate",
@@ -12795,7 +12795,7 @@
       },
       "warnings": [
         {
-          "id": "vocab_034_warning_001",
+          "id": "4517cf48-3e1a-424c-ba7c-2fe922fe8850",
           "order": 1,
           "rule_vi": "景色 là cảnh sắc; 颜色 mới là màu sắc.",
           "natural_examples": [
@@ -12836,7 +12836,7 @@
       "check_needed": false
     },
     {
-      "id": "vocab_035",
+      "id": "0158cb61-7337-4e34-bd52-2c590e53fe2d",
       "type": "deep_vocabulary_item",
       "order": 35,
       "hanzi": "如今",
@@ -13052,7 +13052,7 @@
       },
       "collocations": [
         {
-          "id": "vocab_035_col_001",
+          "id": "cddcabc0-5016-4862-8fc5-cf23927f2671",
           "order": 1,
           "zh": "如今的北京",
           "pinyin": "",
@@ -13063,7 +13063,7 @@
           "notes": []
         },
         {
-          "id": "vocab_035_col_002",
+          "id": "b5b928e3-ad4b-4a81-916c-8318f0d57dc4",
           "order": 2,
           "zh": "如今的生活",
           "pinyin": "",
@@ -13074,7 +13074,7 @@
           "notes": []
         },
         {
-          "id": "vocab_035_col_003",
+          "id": "a4dde044-4046-4c68-b749-770ec1d98021",
           "order": 3,
           "zh": "如今不一样了",
           "pinyin": "",
@@ -13085,7 +13085,7 @@
           "notes": []
         },
         {
-          "id": "vocab_035_col_004",
+          "id": "55e42cb8-720a-4826-beac-a037b289c438",
           "order": 4,
           "zh": "直到如今",
           "pinyin": "",
@@ -13096,7 +13096,7 @@
           "notes": []
         },
         {
-          "id": "vocab_035_col_005",
+          "id": "2a682da5-5045-4112-9119-4dff1fff8a8c",
           "order": 5,
           "zh": "如今看来",
           "pinyin": "",
@@ -13107,7 +13107,7 @@
           "notes": []
         },
         {
-          "id": "vocab_035_col_006",
+          "id": "77f7e3e8-b266-49a3-8c0c-c8c2c0e5d5a2",
           "order": 6,
           "zh": "从前……如今……",
           "pinyin": "",
@@ -13120,7 +13120,7 @@
       ],
       "examples": [
         {
-          "id": "vocab_035_ex_001",
+          "id": "5cb57b61-5b61-45e3-9308-c1d3ba41226b",
           "order": 1,
           "zh": "如今，北京的交通方便多了。",
           "pinyin": "",
@@ -13131,7 +13131,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_035"
+            "0158cb61-7337-4e34-bd52-2c590e53fe2d"
           ],
           "source_ref": "manual_thread_vocab",
           "level": "intermediate",
@@ -13140,7 +13140,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_035_ex_002",
+          "id": "787768dc-a2ed-4af8-a899-c8a431f8e9d7",
           "order": 2,
           "zh": "从前这里很安静，如今每到春天都有很多游人。",
           "pinyin": "",
@@ -13151,7 +13151,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_035"
+            "0158cb61-7337-4e34-bd52-2c590e53fe2d"
           ],
           "source_ref": "manual_thread_vocab",
           "level": "intermediate",
@@ -13160,7 +13160,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_035_ex_003",
+          "id": "9714e619-1a9a-40ff-aefd-0d2bd4c02299",
           "order": 3,
           "zh": "如今的北京不只有古老的胡同，还有热闹的大街。",
           "pinyin": "",
@@ -13171,7 +13171,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_035"
+            "0158cb61-7337-4e34-bd52-2c590e53fe2d"
           ],
           "source_ref": "manual_thread_vocab",
           "level": "intermediate",
@@ -13194,7 +13194,7 @@
       },
       "warnings": [
         {
-          "id": "vocab_035_warning_001",
+          "id": "2b35ef7b-2e69-4f94-8477-c940bb959c20",
           "order": 1,
           "rule_vi": "今天 là hôm nay; 如今 là hiện nay/ngày nay, không dùng tùy tiện cho “hôm nay đi học”.",
           "natural_examples": [
@@ -13234,7 +13234,7 @@
       "check_needed": false
     },
     {
-      "id": "vocab_036",
+      "id": "1a35f473-b250-4945-9674-605a7ba51f88",
       "type": "deep_vocabulary_item",
       "order": 36,
       "hanzi": "多么",
@@ -13406,7 +13406,7 @@
       },
       "collocations": [
         {
-          "id": "vocab_036_col_001",
+          "id": "3de0f767-3451-4550-80d8-704e49ed8111",
           "order": 1,
           "zh": "多么美啊",
           "pinyin": "",
@@ -13417,7 +13417,7 @@
           "notes": []
         },
         {
-          "id": "vocab_036_col_002",
+          "id": "a6165ed5-71c4-4701-b551-bd43f77ede2a",
           "order": 2,
           "zh": "多么漂亮",
           "pinyin": "",
@@ -13428,7 +13428,7 @@
           "notes": []
         },
         {
-          "id": "vocab_036_col_003",
+          "id": "bf210eff-83c1-40f4-8cd4-de2808c21ae2",
           "order": 3,
           "zh": "多么重要",
           "pinyin": "",
@@ -13439,7 +13439,7 @@
           "notes": []
         },
         {
-          "id": "vocab_036_col_004",
+          "id": "d171b759-93de-4ba5-9d46-77d262f6eac1",
           "order": 4,
           "zh": "多么不容易",
           "pinyin": "",
@@ -13450,7 +13450,7 @@
           "notes": []
         },
         {
-          "id": "vocab_036_col_005",
+          "id": "9822a4b9-8a92-4f35-8c55-510f5a20b41e",
           "order": 5,
           "zh": "多么让人向往",
           "pinyin": "",
@@ -13461,7 +13461,7 @@
           "notes": []
         },
         {
-          "id": "vocab_036_col_006",
+          "id": "299fe9a8-e5c0-413c-bf32-b14066f5b84b",
           "order": 6,
           "zh": "无论多么难",
           "pinyin": "",
@@ -13474,7 +13474,7 @@
       ],
       "examples": [
         {
-          "id": "vocab_036_ex_001",
+          "id": "5dc3b61f-0e1f-4b41-8551-f1fc95d614e8",
           "order": 1,
           "zh": "北京的秋天多么美啊！",
           "pinyin": "",
@@ -13485,7 +13485,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_036"
+            "1a35f473-b250-4945-9674-605a7ba51f88"
           ],
           "source_ref": "manual_thread_vocab",
           "level": "intermediate",
@@ -13494,7 +13494,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_036_ex_002",
+          "id": "b226c33b-763f-4008-8848-1fe510b22ab7",
           "order": 2,
           "zh": "景色多么美丽啊！",
           "pinyin": "",
@@ -13505,7 +13505,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_036"
+            "1a35f473-b250-4945-9674-605a7ba51f88"
           ],
           "source_ref": "manual_thread_vocab",
           "level": "intermediate",
@@ -13514,7 +13514,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_036_ex_003",
+          "id": "e43574f3-228b-40c9-8898-ed5199d2d81b",
           "order": 3,
           "zh": "你会明白北京的秋天多么让人向往。",
           "pinyin": "",
@@ -13525,7 +13525,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_036"
+            "1a35f473-b250-4945-9674-605a7ba51f88"
           ],
           "source_ref": "manual_thread_vocab",
           "level": "intermediate",
@@ -13549,7 +13549,7 @@
       },
       "warnings": [
         {
-          "id": "vocab_036_warning_001",
+          "id": "133b5aa1-e46f-465a-8867-1a76e80571a3",
           "order": 1,
           "rule_vi": "多么 hỏi/nhấn mức độ; 多少 hỏi số lượng. Không nói 多少美啊.",
           "natural_examples": [
@@ -13590,7 +13590,7 @@
       "check_needed": false
     },
     {
-      "id": "vocab_037",
+      "id": "af4ed40d-a49d-427f-9197-4d16ea64da39",
       "type": "deep_vocabulary_item",
       "order": 37,
       "hanzi": "勤劳",
@@ -13817,7 +13817,7 @@
       },
       "collocations": [
         {
-          "id": "vocab_037_col_001",
+          "id": "50a92075-a09b-4aff-aa78-6a2c0dc8f96e",
           "order": 1,
           "zh": "勤劳的人",
           "pinyin": "",
@@ -13828,7 +13828,7 @@
           "notes": []
         },
         {
-          "id": "vocab_037_col_002",
+          "id": "762fdaf3-cef3-4f85-baf0-15948d9375ec",
           "order": 2,
           "zh": "勤劳的农民",
           "pinyin": "",
@@ -13839,7 +13839,7 @@
           "notes": []
         },
         {
-          "id": "vocab_037_col_003",
+          "id": "df096c3b-a0e9-4ba9-9469-0471d63be624",
           "order": 3,
           "zh": "勤劳善良",
           "pinyin": "",
@@ -13850,7 +13850,7 @@
           "notes": []
         },
         {
-          "id": "vocab_037_col_004",
+          "id": "21a30ee3-2343-461d-aa97-d8c20da43055",
           "order": 4,
           "zh": "勤劳勇敢",
           "pinyin": "",
@@ -13861,7 +13861,7 @@
           "notes": []
         },
         {
-          "id": "vocab_037_col_005",
+          "id": "d83785cb-dc09-4278-96ab-05842a0e3bf9",
           "order": 5,
           "zh": "勤劳的双手",
           "pinyin": "",
@@ -13872,7 +13872,7 @@
           "notes": []
         },
         {
-          "id": "vocab_037_col_006",
+          "id": "83b02415-38cc-4ae2-b0f8-0ec0db0d4c91",
           "order": 6,
           "zh": "靠勤劳致富",
           "pinyin": "",
@@ -13885,7 +13885,7 @@
       ],
       "examples": [
         {
-          "id": "vocab_037_ex_001",
+          "id": "24a493c4-ac37-4dc6-943e-f1d90d76408f",
           "order": 1,
           "zh": "我的父母都很勤劳。",
           "pinyin": "",
@@ -13896,7 +13896,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_037"
+            "af4ed40d-a49d-427f-9197-4d16ea64da39"
           ],
           "source_ref": "manual_thread_vocab",
           "level": "intermediate",
@@ -13905,7 +13905,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_037_ex_002",
+          "id": "bb4a0412-367c-4827-b49c-47f2daf7362d",
           "order": 2,
           "zh": "每到秋天，勤劳的农民就开始收瓜果。",
           "pinyin": "",
@@ -13916,7 +13916,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_037"
+            "af4ed40d-a49d-427f-9197-4d16ea64da39"
           ],
           "source_ref": "manual_thread_vocab",
           "level": "intermediate",
@@ -13925,7 +13925,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_037_ex_003",
+          "id": "d41828ea-7b12-4fa7-9d6f-c446cfa5ca38",
           "order": 3,
           "zh": "好收成常常离不开农民一年的勤劳。",
           "pinyin": "",
@@ -13936,7 +13936,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_037"
+            "af4ed40d-a49d-427f-9197-4d16ea64da39"
           ],
           "source_ref": "manual_thread_vocab",
           "level": "intermediate",
@@ -13959,7 +13959,7 @@
       },
       "warnings": [
         {
-          "id": "vocab_037_warning_001",
+          "id": "282be585-a721-4d2c-afb0-c6247f97805a",
           "order": 1,
           "rule_vi": "Học chăm thường nói 努力学习/勤奋学习; 勤劳 thiên về lao động và phẩm chất.",
           "natural_examples": [
@@ -13999,7 +13999,7 @@
       "check_needed": false
     },
     {
-      "id": "vocab_038",
+      "id": "f82dc7a8-affa-4cc7-9d94-e382b45c83d4",
       "type": "deep_vocabulary_item",
       "order": 38,
       "hanzi": "善良",
@@ -14215,7 +14215,7 @@
       },
       "collocations": [
         {
-          "id": "vocab_038_col_001",
+          "id": "e7b3d658-2549-4be4-9b83-5bece84c6362",
           "order": 1,
           "zh": "善良的人",
           "pinyin": "",
@@ -14226,7 +14226,7 @@
           "notes": []
         },
         {
-          "id": "vocab_038_col_002",
+          "id": "0f1d4934-eec0-49c9-a620-6355a8f67dcd",
           "order": 2,
           "zh": "善良的心",
           "pinyin": "",
@@ -14237,7 +14237,7 @@
           "notes": []
         },
         {
-          "id": "vocab_038_col_003",
+          "id": "9f3695a3-e251-4f66-89ba-1646daae82e6",
           "order": 3,
           "zh": "心地善良",
           "pinyin": "",
@@ -14248,7 +14248,7 @@
           "notes": []
         },
         {
-          "id": "vocab_038_col_004",
+          "id": "432b65b2-0895-4fca-814e-cff74429b125",
           "order": 4,
           "zh": "勤劳善良",
           "pinyin": "",
@@ -14259,7 +14259,7 @@
           "notes": []
         },
         {
-          "id": "vocab_038_col_005",
+          "id": "38f7620c-f76c-4972-9d32-642a28a79f7a",
           "order": 5,
           "zh": "非常善良",
           "pinyin": "",
@@ -14270,7 +14270,7 @@
           "notes": []
         },
         {
-          "id": "vocab_038_col_006",
+          "id": "8e1fee5b-80c1-4599-afbf-fabdd7d1736c",
           "order": 6,
           "zh": "保持善良",
           "pinyin": "",
@@ -14283,7 +14283,7 @@
       ],
       "examples": [
         {
-          "id": "vocab_038_ex_001",
+          "id": "a980a489-c4fa-4064-b42f-c0449d1c0e00",
           "order": 1,
           "zh": "她是一个很善良的人。",
           "pinyin": "",
@@ -14294,7 +14294,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_038"
+            "f82dc7a8-affa-4cc7-9d94-e382b45c83d4"
           ],
           "source_ref": "manual_thread_vocab",
           "level": "intermediate",
@@ -14303,7 +14303,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_038_ex_002",
+          "id": "c5e6d5f6-1ed3-4816-b468-d30a6c2dbc79",
           "order": 2,
           "zh": "北京的秋天景色很美，那里的人也很善良。",
           "pinyin": "",
@@ -14314,7 +14314,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_038"
+            "f82dc7a8-affa-4cc7-9d94-e382b45c83d4"
           ],
           "source_ref": "manual_thread_vocab",
           "level": "intermediate",
@@ -14323,7 +14323,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_038_ex_003",
+          "id": "b088195e-42a8-4b0d-be0a-a523d6affc23",
           "order": 3,
           "zh": "他一直保持着一颗善良的心。",
           "pinyin": "",
@@ -14334,7 +14334,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_038"
+            "f82dc7a8-affa-4cc7-9d94-e382b45c83d4"
           ],
           "source_ref": "manual_thread_vocab",
           "level": "intermediate",
@@ -14357,7 +14357,7 @@
       },
       "warnings": [
         {
-          "id": "vocab_038_warning_001",
+          "id": "aae98fce-d5ac-428f-93a0-b4ddddfcc5e3",
           "order": 1,
           "rule_vi": "善良 nói phẩm chất đạo đức của người, không dùng cho đồ vật như 手机很善良.",
           "natural_examples": [
@@ -14397,7 +14397,7 @@
       "check_needed": false
     },
     {
-      "id": "vocab_039",
+      "id": "2dd81312-9e2d-4a8d-bb88-a4ceaf2f2bc0",
       "type": "deep_vocabulary_item",
       "order": 39,
       "hanzi": "热爱",
@@ -14601,7 +14601,7 @@
       },
       "collocations": [
         {
-          "id": "vocab_039_col_001",
+          "id": "646bc656-015d-4d32-ba17-66cf5837db27",
           "order": 1,
           "zh": "热爱生活",
           "pinyin": "",
@@ -14612,7 +14612,7 @@
           "notes": []
         },
         {
-          "id": "vocab_039_col_002",
+          "id": "e3830377-5681-4a13-9abb-9644c51b2e18",
           "order": 2,
           "zh": "热爱祖国",
           "pinyin": "",
@@ -14623,7 +14623,7 @@
           "notes": []
         },
         {
-          "id": "vocab_039_col_003",
+          "id": "34d2202e-4132-437c-89e5-90365decdd81",
           "order": 3,
           "zh": "热爱自然",
           "pinyin": "",
@@ -14634,7 +14634,7 @@
           "notes": []
         },
         {
-          "id": "vocab_039_col_004",
+          "id": "defd00af-879b-4833-ad3c-e7b903835490",
           "order": 4,
           "zh": "热爱工作",
           "pinyin": "",
@@ -14645,7 +14645,7 @@
           "notes": []
         },
         {
-          "id": "vocab_039_col_005",
+          "id": "35102656-b64a-4054-9b9c-633a81e9cba1",
           "order": 5,
           "zh": "热爱汉语",
           "pinyin": "",
@@ -14656,7 +14656,7 @@
           "notes": []
         },
         {
-          "id": "vocab_039_col_006",
+          "id": "1a82284e-900a-41a7-9280-91775da1d319",
           "order": 6,
           "zh": "热爱和平",
           "pinyin": "",
@@ -14669,7 +14669,7 @@
       ],
       "examples": [
         {
-          "id": "vocab_039_ex_001",
+          "id": "1647622a-ea48-4639-a19f-67d346a23800",
           "order": 1,
           "zh": "他很热爱自己的工作。",
           "pinyin": "",
@@ -14680,7 +14680,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_039"
+            "2dd81312-9e2d-4a8d-bb88-a4ceaf2f2bc0"
           ],
           "source_ref": "manual_thread_vocab",
           "level": "intermediate",
@@ -14689,7 +14689,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_039_ex_002",
+          "id": "0ed8dd2f-23b9-4afc-87d2-fef43c83f703",
           "order": 2,
           "zh": "每到春天，我都会想起那些热爱自然的人。",
           "pinyin": "",
@@ -14700,7 +14700,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_039"
+            "2dd81312-9e2d-4a8d-bb88-a4ceaf2f2bc0"
           ],
           "source_ref": "manual_thread_vocab",
           "level": "intermediate",
@@ -14709,7 +14709,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_039_ex_003",
+          "id": "17e54f83-65a8-416b-b0b8-9976491bbea1",
           "order": 3,
           "zh": "热爱生活的人会看到美丽的景色。",
           "pinyin": "",
@@ -14720,7 +14720,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_039"
+            "2dd81312-9e2d-4a8d-bb88-a4ceaf2f2bc0"
           ],
           "source_ref": "manual_thread_vocab",
           "level": "intermediate",
@@ -14743,7 +14743,7 @@
       },
       "warnings": [
         {
-          "id": "vocab_039_warning_001",
+          "id": "cabe2fba-1aab-409d-bb85-4c101188d017",
           "order": 1,
           "rule_vi": "Không dùng 热爱 cho nhu cầu nhỏ tức thời như uống trà sữa; dùng 喜欢/想.",
           "natural_examples": [
@@ -14783,7 +14783,7 @@
       "check_needed": false
     },
     {
-      "id": "vocab_040",
+      "id": "98819618-8efa-4dcf-bfab-ca0dc6880c32",
       "type": "deep_vocabulary_item",
       "order": 40,
       "hanzi": "友好",
@@ -14978,7 +14978,7 @@
       },
       "collocations": [
         {
-          "id": "vocab_040_col_001",
+          "id": "6c2df4b9-8816-40ec-bd44-209665927a56",
           "order": 1,
           "zh": "友好的人",
           "pinyin": "",
@@ -14989,7 +14989,7 @@
           "notes": []
         },
         {
-          "id": "vocab_040_col_002",
+          "id": "bb76889e-1b7c-4cec-af4a-0bcb50a1688d",
           "order": 2,
           "zh": "友好的态度",
           "pinyin": "",
@@ -15000,7 +15000,7 @@
           "notes": []
         },
         {
-          "id": "vocab_040_col_003",
+          "id": "ea71b54e-cb0a-4548-b3df-eabd38267195",
           "order": 3,
           "zh": "友好关系",
           "pinyin": "",
@@ -15011,7 +15011,7 @@
           "notes": []
         },
         {
-          "id": "vocab_040_col_004",
+          "id": "7ee96c97-aad6-4b70-b844-ed1b8e6b5cbc",
           "order": 4,
           "zh": "友好往来",
           "pinyin": "",
@@ -15022,7 +15022,7 @@
           "notes": []
         },
         {
-          "id": "vocab_040_col_005",
+          "id": "c9030795-63c8-48b5-af1a-06a7fe1215f6",
           "order": 5,
           "zh": "对人友好",
           "pinyin": "",
@@ -15033,7 +15033,7 @@
           "notes": []
         },
         {
-          "id": "vocab_040_col_006",
+          "id": "cb15aeec-9a15-461c-a922-1d772f2f81ec",
           "order": 6,
           "zh": "中越友好",
           "pinyin": "",
@@ -15046,7 +15046,7 @@
       ],
       "examples": [
         {
-          "id": "vocab_040_ex_001",
+          "id": "56cc4447-4fc3-4ea3-9cb3-34214e587509",
           "order": 1,
           "zh": "这里的人都很友好。",
           "pinyin": "",
@@ -15057,7 +15057,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_040"
+            "98819618-8efa-4dcf-bfab-ca0dc6880c32"
           ],
           "source_ref": "manual_thread_vocab",
           "level": "intermediate",
@@ -15066,7 +15066,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_040_ex_002",
+          "id": "8005e5a8-cc1d-4336-b9f9-b04f9d73344a",
           "order": 2,
           "zh": "每次去郊外，我都会遇到很友好的当地人。",
           "pinyin": "",
@@ -15077,7 +15077,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_040"
+            "98819618-8efa-4dcf-bfab-ca0dc6880c32"
           ],
           "source_ref": "manual_thread_vocab",
           "level": "intermediate",
@@ -15086,7 +15086,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_040_ex_003",
+          "id": "5f8c90c8-17bf-4b86-b753-dca049dd70a5",
           "order": 3,
           "zh": "美丽的景色和友好的人都会让游人向往。",
           "pinyin": "",
@@ -15097,7 +15097,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_040"
+            "98819618-8efa-4dcf-bfab-ca0dc6880c32"
           ],
           "source_ref": "manual_thread_vocab",
           "level": "intermediate",
@@ -15120,7 +15120,7 @@
       },
       "warnings": [
         {
-          "id": "vocab_040_warning_001",
+          "id": "edfd5fd1-623f-435a-910d-3620a026c68d",
           "order": 1,
           "rule_vi": "Bạn tôi nói 我的朋友, không nói 我的友好. 友好 thường là tính từ.",
           "natural_examples": [
@@ -15160,7 +15160,7 @@
       "check_needed": false
     },
     {
-      "id": "vocab_041",
+      "id": "4f3a8943-37fe-406c-b323-c12593751bb8",
       "type": "deep_vocabulary_item",
       "order": 41,
       "hanzi": "亲爱",
@@ -15354,7 +15354,7 @@
       },
       "collocations": [
         {
-          "id": "vocab_041_col_001",
+          "id": "ab5ad050-eac0-4390-9186-57c8c1e3e08d",
           "order": 1,
           "zh": "亲爱的朋友",
           "pinyin": "",
@@ -15365,7 +15365,7 @@
           "notes": []
         },
         {
-          "id": "vocab_041_col_002",
+          "id": "9126300c-f9a7-45e8-a7fa-b0060eb04d43",
           "order": 2,
           "zh": "亲爱的同学们",
           "pinyin": "",
@@ -15376,7 +15376,7 @@
           "notes": []
         },
         {
-          "id": "vocab_041_col_003",
+          "id": "76082cfc-2178-4872-86e7-63bb8cc1bc97",
           "order": 3,
           "zh": "亲爱的老师",
           "pinyin": "",
@@ -15387,7 +15387,7 @@
           "notes": []
         },
         {
-          "id": "vocab_041_col_004",
+          "id": "62977aa6-fb45-4875-85a8-3fb474a2b0f4",
           "order": 4,
           "zh": "亲爱的妈妈",
           "pinyin": "",
@@ -15398,7 +15398,7 @@
           "notes": []
         },
         {
-          "id": "vocab_041_col_005",
+          "id": "09ef5c93-4cc2-444c-a5b7-e11c2e8d3f87",
           "order": 5,
           "zh": "亲爱的祖国",
           "pinyin": "",
@@ -15409,7 +15409,7 @@
           "notes": []
         },
         {
-          "id": "vocab_041_col_006",
+          "id": "a9e018a9-81b7-465d-a6c8-24377fb57d66",
           "order": 6,
           "zh": "亲爱的家人",
           "pinyin": "",
@@ -15422,7 +15422,7 @@
       ],
       "examples": [
         {
-          "id": "vocab_041_ex_001",
+          "id": "e046703a-e146-4774-aff9-44a0eecb9cd6",
           "order": 1,
           "zh": "亲爱的朋友，欢迎你来北京。",
           "pinyin": "",
@@ -15433,7 +15433,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_041"
+            "4f3a8943-37fe-406c-b323-c12593751bb8"
           ],
           "source_ref": "manual_thread_vocab",
           "level": "intermediate",
@@ -15442,7 +15442,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_041_ex_002",
+          "id": "5ced81e3-0daa-43ae-ab2d-129f92c214b0",
           "order": 2,
           "zh": "每到秋天，我都会想起亲爱的家人。",
           "pinyin": "",
@@ -15453,7 +15453,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_041"
+            "4f3a8943-37fe-406c-b323-c12593751bb8"
           ],
           "source_ref": "manual_thread_vocab",
           "level": "intermediate",
@@ -15462,7 +15462,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_041_ex_003",
+          "id": "8ef45252-2a19-4f12-b192-20024840b421",
           "order": 3,
           "zh": "他离开家以后，才明白亲爱的父母一直在为他担心。",
           "pinyin": "",
@@ -15473,7 +15473,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_041"
+            "4f3a8943-37fe-406c-b323-c12593751bb8"
           ],
           "source_ref": "manual_thread_vocab",
           "level": "intermediate",
@@ -15497,7 +15497,7 @@
       },
       "warnings": [
         {
-          "id": "vocab_041_warning_001",
+          "id": "d460b752-5a8a-48c0-a80b-a86b5f818dc0",
           "order": 1,
           "rule_vi": "Không dùng 亲爱的 để gọi người lạ; dễ quá thân. Với người lạ nói 你好，请问……",
           "natural_examples": [
@@ -15538,7 +15538,7 @@
       "check_needed": false
     },
     {
-      "id": "vocab_042",
+      "id": "aad2821c-dbd6-4036-bc7a-30039cbe2a9d",
       "type": "deep_vocabulary_item",
       "order": 42,
       "hanzi": "愿",
@@ -15721,7 +15721,7 @@
       },
       "collocations": [
         {
-          "id": "vocab_042_col_001",
+          "id": "22345a6e-a440-4c7d-a43e-10d93838f059",
           "order": 1,
           "zh": "愿你平安",
           "pinyin": "",
@@ -15732,7 +15732,7 @@
           "notes": []
         },
         {
-          "id": "vocab_042_col_002",
+          "id": "103c117a-6ad5-4e00-9f95-92af09f985da",
           "order": 2,
           "zh": "愿大家健康",
           "pinyin": "",
@@ -15743,7 +15743,7 @@
           "notes": []
         },
         {
-          "id": "vocab_042_col_003",
+          "id": "f9036d4f-2c74-4bf7-8517-602a87b89235",
           "order": 3,
           "zh": "愿世界和平",
           "pinyin": "",
@@ -15754,7 +15754,7 @@
           "notes": []
         },
         {
-          "id": "vocab_042_col_004",
+          "id": "8c3f213b-5f04-46c9-830f-e558339c223c",
           "order": 4,
           "zh": "愿望",
           "pinyin": "",
@@ -15765,7 +15765,7 @@
           "notes": []
         },
         {
-          "id": "vocab_042_col_005",
+          "id": "9044a8d3-1c6b-4887-85cc-1bf78137f6fb",
           "order": 5,
           "zh": "愿意帮忙",
           "pinyin": "",
@@ -15776,7 +15776,7 @@
           "notes": []
         },
         {
-          "id": "vocab_042_col_006",
+          "id": "df52d13f-7495-4f59-84b8-c277245a37fd",
           "order": 6,
           "zh": "但愿如此",
           "pinyin": "",
@@ -15789,7 +15789,7 @@
       ],
       "examples": [
         {
-          "id": "vocab_042_ex_001",
+          "id": "fa2da6b2-200d-4493-b19a-18f0f3308013",
           "order": 1,
           "zh": "愿你一路平安。",
           "pinyin": "",
@@ -15800,7 +15800,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_042"
+            "aad2821c-dbd6-4036-bc7a-30039cbe2a9d"
           ],
           "source_ref": "manual_thread_vocab",
           "level": "intermediate",
@@ -15809,7 +15809,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_042_ex_002",
+          "id": "bc8a5fca-cc88-433e-8189-7ac667694a91",
           "order": 2,
           "zh": "每到新年，人们都愿家人平安。",
           "pinyin": "",
@@ -15820,7 +15820,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_042"
+            "aad2821c-dbd6-4036-bc7a-30039cbe2a9d"
           ],
           "source_ref": "manual_thread_vocab",
           "level": "intermediate",
@@ -15829,7 +15829,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_042_ex_003",
+          "id": "6b120257-fe37-40b4-a4c5-9b90bca82d55",
           "order": 3,
           "zh": "他热爱和平，也愿意为友好的关系做一点儿事情。",
           "pinyin": "",
@@ -15840,7 +15840,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_042"
+            "aad2821c-dbd6-4036-bc7a-30039cbe2a9d"
           ],
           "source_ref": "manual_thread_vocab",
           "level": "intermediate",
@@ -15864,7 +15864,7 @@
       },
       "warnings": [
         {
-          "id": "vocab_042_warning_001",
+          "id": "1cee37e8-951f-447e-a4b5-c5bf39c87059",
           "order": 1,
           "rule_vi": "愿 đứng một mình hơi văn; nhu cầu nhỏ nói 想. 我想喝奶茶, không nói 我愿喝奶茶.",
           "natural_examples": [
@@ -15905,7 +15905,7 @@
       "check_needed": false
     },
     {
-      "id": "vocab_043",
+      "id": "d7665ff7-8aa1-4f4f-b22e-b05321011a1c",
       "type": "deep_vocabulary_item",
       "order": 43,
       "hanzi": "平安",
@@ -16122,7 +16122,7 @@
       },
       "collocations": [
         {
-          "id": "vocab_043_col_001",
+          "id": "a17af2b8-46f0-49d9-8d66-94befb907feb",
           "order": 1,
           "zh": "一路平安",
           "pinyin": "",
@@ -16133,7 +16133,7 @@
           "notes": []
         },
         {
-          "id": "vocab_043_col_002",
+          "id": "2f8637f2-634c-4b0e-9bdd-7b3ef8d89af4",
           "order": 2,
           "zh": "平安到家",
           "pinyin": "",
@@ -16144,7 +16144,7 @@
           "notes": []
         },
         {
-          "id": "vocab_043_col_003",
+          "id": "ad980845-1b64-4c4d-a6ee-de31ca738cdc",
           "order": 3,
           "zh": "平安无事",
           "pinyin": "",
@@ -16155,7 +16155,7 @@
           "notes": []
         },
         {
-          "id": "vocab_043_col_004",
+          "id": "621e02ac-acf2-47c6-a994-e7b2f449e486",
           "order": 4,
           "zh": "愿你平安",
           "pinyin": "",
@@ -16166,7 +16166,7 @@
           "notes": []
         },
         {
-          "id": "vocab_043_col_005",
+          "id": "81ea2e4b-d29e-416f-8de8-b6a5e4d90652",
           "order": 5,
           "zh": "报平安",
           "pinyin": "",
@@ -16177,7 +16177,7 @@
           "notes": []
         },
         {
-          "id": "vocab_043_col_006",
+          "id": "a32d0cd4-2829-4e6f-b544-a2def9ad0193",
           "order": 6,
           "zh": "家人平安",
           "pinyin": "",
@@ -16190,7 +16190,7 @@
       ],
       "examples": [
         {
-          "id": "vocab_043_ex_001",
+          "id": "9d72a3f9-83d1-47ce-bc7c-8444c3086ffc",
           "order": 1,
           "zh": "祝你一路平安。",
           "pinyin": "",
@@ -16201,7 +16201,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_043"
+            "d7665ff7-8aa1-4f4f-b22e-b05321011a1c"
           ],
           "source_ref": "manual_thread_vocab",
           "level": "intermediate",
@@ -16210,7 +16210,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_043_ex_002",
+          "id": "d8f441ec-e660-405b-bfd0-475928a8f4fc",
           "order": 2,
           "zh": "每到新年，人们都愿家人平安。",
           "pinyin": "",
@@ -16221,7 +16221,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_043"
+            "d7665ff7-8aa1-4f4f-b22e-b05321011a1c"
           ],
           "source_ref": "manual_thread_vocab",
           "level": "intermediate",
@@ -16230,7 +16230,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_043_ex_003",
+          "id": "2296b652-529e-4401-87e1-b72e1c5f3442",
           "order": 3,
           "zh": "他到北京以后，马上给父母打电话报平安。",
           "pinyin": "",
@@ -16241,7 +16241,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_043"
+            "d7665ff7-8aa1-4f4f-b22e-b05321011a1c"
           ],
           "source_ref": "manual_thread_vocab",
           "level": "intermediate",
@@ -16265,7 +16265,7 @@
       },
       "warnings": [
         {
-          "id": "vocab_043_warning_001",
+          "id": "0502e17f-9222-4b3f-82ba-0186382443dd",
           "order": 1,
           "rule_vi": "平安 là bình an/an toàn; 安心 là yên tâm; 安静 là yên tĩnh.",
           "natural_examples": [
@@ -16306,7 +16306,7 @@
       "check_needed": false
     },
     {
-      "id": "vocab_044",
+      "id": "7880a325-88c5-4624-b2ad-012861967595",
       "type": "deep_vocabulary_item",
       "order": 44,
       "hanzi": "北海",
@@ -16477,7 +16477,7 @@
       },
       "collocations": [
         {
-          "id": "vocab_044_col_001",
+          "id": "a6b1ab12-ad94-4df0-bbee-2ff8e5dfd4e4",
           "order": 1,
           "zh": "北海公园",
           "pinyin": "",
@@ -16488,7 +16488,7 @@
           "notes": []
         },
         {
-          "id": "vocab_044_col_002",
+          "id": "02bdcf77-af47-4503-b90d-0cb457dfaed4",
           "order": 2,
           "zh": "去北海",
           "pinyin": "",
@@ -16499,7 +16499,7 @@
           "notes": []
         },
         {
-          "id": "vocab_044_col_003",
+          "id": "c4f5517b-089b-41c0-a907-0891591ac091",
           "order": 3,
           "zh": "在北海划船",
           "pinyin": "",
@@ -16510,7 +16510,7 @@
           "notes": []
         },
         {
-          "id": "vocab_044_col_004",
+          "id": "39a920bd-07ed-41f2-9465-af7264e73872",
           "order": 4,
           "zh": "北海的湖",
           "pinyin": "",
@@ -16521,7 +16521,7 @@
           "notes": []
         },
         {
-          "id": "vocab_044_col_005",
+          "id": "56a7efd6-4ffd-48dc-8b31-668e472c9eab",
           "order": 5,
           "zh": "游北海",
           "pinyin": "",
@@ -16532,7 +16532,7 @@
           "notes": []
         },
         {
-          "id": "vocab_044_col_006",
+          "id": "f10403b8-c8a0-4563-9aaf-a9171f896031",
           "order": 6,
           "zh": "北海公园的景色",
           "pinyin": "",
@@ -16545,7 +16545,7 @@
       ],
       "examples": [
         {
-          "id": "vocab_044_ex_001",
+          "id": "f2056c40-0f79-4ecd-9303-130c87f8bd7b",
           "order": 1,
           "zh": "春天，我们去北海划船。",
           "pinyin": "",
@@ -16556,7 +16556,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_044"
+            "7880a325-88c5-4624-b2ad-012861967595"
           ],
           "source_ref": "manual_thread_vocab",
           "level": "intermediate",
@@ -16565,7 +16565,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_044_ex_002",
+          "id": "e9b71c22-9be1-47c7-8828-ef130ab12367",
           "order": 2,
           "zh": "每到春天，北海公园里都有很多游人。",
           "pinyin": "",
@@ -16576,7 +16576,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_044"
+            "7880a325-88c5-4624-b2ad-012861967595"
           ],
           "source_ref": "manual_thread_vocab",
           "level": "intermediate",
@@ -16585,7 +16585,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_044_ex_003",
+          "id": "48ca82b7-d1e7-474f-b68b-6e4d78850bc2",
           "order": 3,
           "zh": "北海适合春天去划船。",
           "pinyin": "",
@@ -16596,7 +16596,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_044"
+            "7880a325-88c5-4624-b2ad-012861967595"
           ],
           "source_ref": "manual_thread_vocab",
           "level": "intermediate",
@@ -16620,7 +16620,7 @@
       },
       "warnings": [
         {
-          "id": "vocab_044_warning_001",
+          "id": "2682f789-298e-4be7-83e6-2b0f2f455fc0",
           "order": 1,
           "rule_vi": "北海 trong bài là Công viên Bắc Hải ở Bắc Kinh, không phải thành phố Bắc Hải ở Quảng Tây hay “biển phía bắc”.",
           "natural_examples": [
@@ -16661,7 +16661,7 @@
       "check_needed": false
     },
     {
-      "id": "vocab_045",
+      "id": "379d06e4-6234-4de9-9afe-5ac8f96fe229",
       "type": "deep_vocabulary_item",
       "order": 45,
       "hanzi": "香山",
@@ -16866,7 +16866,7 @@
       },
       "collocations": [
         {
-          "id": "vocab_045_col_001",
+          "id": "02fbfba0-f20c-4cd0-a4f1-5f99d62304f0",
           "order": 1,
           "zh": "香山公园",
           "pinyin": "",
@@ -16877,7 +16877,7 @@
           "notes": []
         },
         {
-          "id": "vocab_045_col_002",
+          "id": "6bdac3c1-3a91-4ee6-a5d9-73a521424b06",
           "order": 2,
           "zh": "去香山",
           "pinyin": "",
@@ -16888,7 +16888,7 @@
           "notes": []
         },
         {
-          "id": "vocab_045_col_003",
+          "id": "1f4cb396-2312-4fff-852c-7c03fb3ddb19",
           "order": 3,
           "zh": "香山的红叶",
           "pinyin": "",
@@ -16899,7 +16899,7 @@
           "notes": []
         },
         {
-          "id": "vocab_045_col_004",
+          "id": "b45457e8-bfdb-4189-81f5-5dbd65b14b7c",
           "order": 4,
           "zh": "爬香山",
           "pinyin": "",
@@ -16910,7 +16910,7 @@
           "notes": []
         },
         {
-          "id": "vocab_045_col_005",
+          "id": "9ac7e01c-23e8-4651-8107-329abaa45ed4",
           "order": 5,
           "zh": "游香山",
           "pinyin": "",
@@ -16921,7 +16921,7 @@
           "notes": []
         },
         {
-          "id": "vocab_045_col_006",
+          "id": "13d624ac-5434-4cc0-8bc6-5940ab71c532",
           "order": 6,
           "zh": "到香山看红叶",
           "pinyin": "",
@@ -16934,7 +16934,7 @@
       ],
       "examples": [
         {
-          "id": "vocab_045_ex_001",
+          "id": "5ae54a64-b9e4-45d8-b291-121d8db66294",
           "order": 1,
           "zh": "秋天，我们想去香山看红叶。",
           "pinyin": "",
@@ -16945,7 +16945,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_045"
+            "379d06e4-6234-4de9-9afe-5ac8f96fe229"
           ],
           "source_ref": "manual_thread_vocab",
           "level": "intermediate",
@@ -16954,7 +16954,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_045_ex_002",
+          "id": "1885e34d-cdb8-4a97-9153-c998ea7eefef",
           "order": 2,
           "zh": "每到秋天，香山的游人就特别多。",
           "pinyin": "",
@@ -16965,7 +16965,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_045"
+            "379d06e4-6234-4de9-9afe-5ac8f96fe229"
           ],
           "source_ref": "manual_thread_vocab",
           "level": "intermediate",
@@ -16974,7 +16974,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_045_ex_003",
+          "id": "28c1679b-96b4-493e-874e-429f12de56e1",
           "order": 3,
           "zh": "香山更适合秋天去看红叶。",
           "pinyin": "",
@@ -16985,7 +16985,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_045"
+            "379d06e4-6234-4de9-9afe-5ac8f96fe229"
           ],
           "source_ref": "manual_thread_vocab",
           "level": "intermediate",
@@ -17009,7 +17009,7 @@
       },
       "warnings": [
         {
-          "id": "vocab_045_warning_001",
+          "id": "3d0a7154-f80a-4488-b382-53b046bb57f7",
           "order": 1,
           "rule_vi": "香山 trong bài là Hương Sơn ở Bắc Kinh; đừng nhầm với các Hương Sơn khác.",
           "natural_examples": [
@@ -17050,7 +17050,7 @@
       "check_needed": false
     },
     {
-      "id": "vocab_046",
+      "id": "eefdeb01-2fba-4b2b-9988-94937f35412a",
       "type": "deep_vocabulary_item",
       "order": 46,
       "hanzi": "十三陵",
@@ -17277,7 +17277,7 @@
       },
       "collocations": [
         {
-          "id": "vocab_046_col_001",
+          "id": "6564f238-8af3-4541-a65d-5c0f009a2c7c",
           "order": 1,
           "zh": "明十三陵",
           "pinyin": "",
@@ -17288,7 +17288,7 @@
           "notes": []
         },
         {
-          "id": "vocab_046_col_002",
+          "id": "c667f5b5-062c-4ba8-ab36-491e6663d381",
           "order": 2,
           "zh": "去十三陵",
           "pinyin": "",
@@ -17299,7 +17299,7 @@
           "notes": []
         },
         {
-          "id": "vocab_046_col_003",
+          "id": "770f89c6-2ee4-4f74-a069-8760ef43a3d3",
           "order": 3,
           "zh": "游十三陵",
           "pinyin": "",
@@ -17310,7 +17310,7 @@
           "notes": []
         },
         {
-          "id": "vocab_046_col_004",
+          "id": "1814fd3e-2364-49f1-acc9-0f2c27b86359",
           "order": 4,
           "zh": "十三陵景区",
           "pinyin": "",
@@ -17321,7 +17321,7 @@
           "notes": []
         },
         {
-          "id": "vocab_046_col_005",
+          "id": "157477e5-8045-4a6a-adad-b24088524395",
           "order": 5,
           "zh": "十三陵的历史",
           "pinyin": "",
@@ -17332,7 +17332,7 @@
           "notes": []
         },
         {
-          "id": "vocab_046_col_006",
+          "id": "5ceeec0e-2aa4-4178-bb54-02a49bc346bb",
           "order": 6,
           "zh": "参观十三陵",
           "pinyin": "",
@@ -17345,7 +17345,7 @@
       ],
       "examples": [
         {
-          "id": "vocab_046_ex_001",
+          "id": "28d673a2-aab7-4364-9864-26e5c8c749af",
           "order": 1,
           "zh": "明天我们去十三陵参观。",
           "pinyin": "",
@@ -17356,7 +17356,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_046"
+            "eefdeb01-2fba-4b2b-9988-94937f35412a"
           ],
           "source_ref": "manual_thread_vocab",
           "level": "intermediate",
@@ -17365,7 +17365,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_046_ex_002",
+          "id": "257d75d3-56f5-4503-98cb-972202d4feac",
           "order": 2,
           "zh": "每年都有很多游人去十三陵了解明朝的历史。",
           "pinyin": "",
@@ -17376,7 +17376,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_046"
+            "eefdeb01-2fba-4b2b-9988-94937f35412a"
           ],
           "source_ref": "manual_thread_vocab",
           "level": "intermediate",
@@ -17385,7 +17385,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_046_ex_003",
+          "id": "c57c13e8-0aae-4801-aef3-db3c16b8a71c",
           "order": 3,
           "zh": "十三陵更适合了解历史。",
           "pinyin": "",
@@ -17396,7 +17396,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_046"
+            "eefdeb01-2fba-4b2b-9988-94937f35412a"
           ],
           "source_ref": "manual_thread_vocab",
           "level": "intermediate",
@@ -17420,7 +17420,7 @@
       },
       "warnings": [
         {
-          "id": "vocab_046_warning_001",
+          "id": "371ba0e7-d1bf-472f-ac04-635765e4c0dd",
           "order": 1,
           "rule_vi": "Không dịch 十三陵 là “mười ba mộ”; nên dịch Thập Tam Lăng hoặc quần thể lăng mộ 13 hoàng đế nhà Minh.",
           "natural_examples": [
@@ -17461,7 +17461,7 @@
       "check_needed": false
     },
     {
-      "id": "vocab_047",
+      "id": "7c4d6e9e-e285-4a09-a56c-b25fb0d28b4d",
       "type": "deep_vocabulary_item",
       "order": 47,
       "hanzi": "国庆节",
@@ -17730,7 +17730,7 @@
       },
       "collocations": [
         {
-          "id": "vocab_047_col_001",
+          "id": "0c8c7d8a-794c-46d6-b43b-c528a166bb1e",
           "order": 1,
           "zh": "国庆节到了",
           "pinyin": "",
@@ -17741,7 +17741,7 @@
           "notes": []
         },
         {
-          "id": "vocab_047_col_002",
+          "id": "d9e3acaf-ddba-41c2-8a97-d88dd22b9846",
           "order": 2,
           "zh": "国庆节假期",
           "pinyin": "",
@@ -17752,7 +17752,7 @@
           "notes": []
         },
         {
-          "id": "vocab_047_col_003",
+          "id": "98764c15-be03-4628-a769-d3b96c47130f",
           "order": 3,
           "zh": "庆祝国庆节",
           "pinyin": "",
@@ -17763,7 +17763,7 @@
           "notes": []
         },
         {
-          "id": "vocab_047_col_004",
+          "id": "62cb6f0e-5cb5-40d5-95b6-9713f9227aee",
           "order": 4,
           "zh": "国庆节的时候",
           "pinyin": "",
@@ -17774,7 +17774,7 @@
           "notes": []
         },
         {
-          "id": "vocab_047_col_005",
+          "id": "4324d9e0-b8a3-4036-9bcf-ef30a6ab25ca",
           "order": 5,
           "zh": "国庆节快乐",
           "pinyin": "",
@@ -17785,7 +17785,7 @@
           "notes": []
         },
         {
-          "id": "vocab_047_col_006",
+          "id": "0e373f4d-95dd-4d5d-9d35-742e3c51fb84",
           "order": 6,
           "zh": "国庆节放假",
           "pinyin": "",
@@ -17798,7 +17798,7 @@
       ],
       "examples": [
         {
-          "id": "vocab_047_ex_001",
+          "id": "a30a23a7-06f6-450f-af0f-7319a9fb4ed4",
           "order": 1,
           "zh": "十月一日是中国的国庆节。",
           "pinyin": "",
@@ -17809,7 +17809,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_047"
+            "7c4d6e9e-e285-4a09-a56c-b25fb0d28b4d"
           ],
           "source_ref": "manual_thread_vocab",
           "level": "intermediate",
@@ -17818,7 +17818,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_047_ex_002",
+          "id": "15b6b6d4-aeec-4304-a1af-7b2a6358c248",
           "order": 2,
           "zh": "每到国庆节，北京的大街上就挂满了红旗。",
           "pinyin": "",
@@ -17829,7 +17829,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_047"
+            "7c4d6e9e-e285-4a09-a56c-b25fb0d28b4d"
           ],
           "source_ref": "manual_thread_vocab",
           "level": "intermediate",
@@ -17838,7 +17838,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_047_ex_003",
+          "id": "32789e66-6223-4db5-81e3-abaac4f0f550",
           "order": 3,
           "zh": "国庆节假期，很多游人来到北京。",
           "pinyin": "",
@@ -17849,7 +17849,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_047"
+            "7c4d6e9e-e285-4a09-a56c-b25fb0d28b4d"
           ],
           "source_ref": "manual_thread_vocab",
           "level": "intermediate",
@@ -17873,7 +17873,7 @@
       },
       "warnings": [
         {
-          "id": "vocab_047_warning_001",
+          "id": "775ca682-9b75-4a8f-8fa4-e0d6b5a8b7c9",
           "order": 1,
           "rule_vi": "Trong bài Trung Quốc, 国庆节 mặc định là Quốc khánh Trung Quốc, không phải Quốc khánh Việt Nam.",
           "natural_examples": [
@@ -17914,7 +17914,7 @@
       "check_needed": false
     },
     {
-      "id": "vocab_048",
+      "id": "fd3787dd-9f23-4d11-9409-f4a20357eef2",
       "type": "deep_vocabulary_item",
       "order": 48,
       "hanzi": "阵",
@@ -18075,7 +18075,7 @@
       },
       "collocations": [
         {
-          "id": "vocab_048_col_001",
+          "id": "4e707ef8-c60c-42c2-af4f-ef8ec2a7057a",
           "order": 1,
           "zh": "一阵风",
           "pinyin": "",
@@ -18086,7 +18086,7 @@
           "notes": []
         },
         {
-          "id": "vocab_048_col_002",
+          "id": "b7f20bfe-db6f-49bf-b42e-ada74a57f048",
           "order": 2,
           "zh": "一阵雨",
           "pinyin": "",
@@ -18097,7 +18097,7 @@
           "notes": []
         },
         {
-          "id": "vocab_048_col_003",
+          "id": "28c1d761-807d-4113-b554-81da113f7bb1",
           "order": 3,
           "zh": "一阵雪",
           "pinyin": "",
@@ -18108,7 +18108,7 @@
           "notes": []
         },
         {
-          "id": "vocab_048_col_004",
+          "id": "3bed304b-28d0-4651-b3a7-862f9b1f5658",
           "order": 4,
           "zh": "一阵笑声",
           "pinyin": "",
@@ -18119,7 +18119,7 @@
           "notes": []
         },
         {
-          "id": "vocab_048_col_005",
+          "id": "a7fb7e45-1e53-4888-8072-9304b6cc602d",
           "order": 5,
           "zh": "一阵掌声",
           "pinyin": "",
@@ -18130,7 +18130,7 @@
           "notes": []
         },
         {
-          "id": "vocab_048_col_006",
+          "id": "c55416bc-d61e-43db-af1f-21c2c794e2bc",
           "order": 6,
           "zh": "这阵子",
           "pinyin": "",
@@ -18143,7 +18143,7 @@
       ],
       "examples": [
         {
-          "id": "vocab_048_ex_001",
+          "id": "041193a5-eafd-4942-a398-f8ae0926250b",
           "order": 1,
           "zh": "忽然刮来一阵风。",
           "pinyin": "",
@@ -18154,7 +18154,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_048"
+            "fd3787dd-9f23-4d11-9409-f4a20357eef2"
           ],
           "source_ref": "manual_thread_vocab",
           "level": "intermediate",
@@ -18163,7 +18163,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_048_ex_002",
+          "id": "8dfb51d6-9fd3-43d9-81e0-0cd9f8830509",
           "order": 2,
           "zh": "春天的北京有时候会刮一阵大风。",
           "pinyin": "",
@@ -18174,7 +18174,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_048"
+            "fd3787dd-9f23-4d11-9409-f4a20357eef2"
           ],
           "source_ref": "manual_thread_vocab",
           "level": "intermediate",
@@ -18183,7 +18183,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_048_ex_003",
+          "id": "65c36d09-f60a-4ec4-a1c6-2a7e5d3c91d7",
           "order": 3,
           "zh": "我们正在湖边划船，突然刮来一阵风。",
           "pinyin": "",
@@ -18194,7 +18194,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_048"
+            "fd3787dd-9f23-4d11-9409-f4a20357eef2"
           ],
           "source_ref": "manual_thread_vocab",
           "level": "intermediate",
@@ -18218,7 +18218,7 @@
       },
       "warnings": [
         {
-          "id": "vocab_048_warning_001",
+          "id": "5076e450-5097-43ca-9b6e-7d4f2a3080d5",
           "order": 1,
           "rule_vi": "Không nói 一个风/一个雨. Nói 一阵风, 一场雨.",
           "natural_examples": [
@@ -18259,7 +18259,7 @@
       "check_needed": false
     },
     {
-      "id": "vocab_049",
+      "id": "ac76a4d4-87a7-4529-a233-25b76da5f3a6",
       "type": "deep_vocabulary_item",
       "order": 49,
       "hanzi": "抬",
@@ -18430,7 +18430,7 @@
       },
       "collocations": [
         {
-          "id": "vocab_049_col_001",
+          "id": "b047f85c-a1ce-414a-8d6c-43cd31b1f00c",
           "order": 1,
           "zh": "抬头",
           "pinyin": "",
@@ -18441,7 +18441,7 @@
           "notes": []
         },
         {
-          "id": "vocab_049_col_002",
+          "id": "077fad6f-e054-44d3-a594-0956b281906a",
           "order": 2,
           "zh": "抬起头来",
           "pinyin": "",
@@ -18452,7 +18452,7 @@
           "notes": []
         },
         {
-          "id": "vocab_049_col_003",
+          "id": "175b4be6-970e-49ae-91b3-e71ef759e269",
           "order": 3,
           "zh": "抬手",
           "pinyin": "",
@@ -18463,7 +18463,7 @@
           "notes": []
         },
         {
-          "id": "vocab_049_col_004",
+          "id": "2340ddc4-4017-47da-86b3-ca14e291d4d5",
           "order": 4,
           "zh": "抬眼",
           "pinyin": "",
@@ -18474,7 +18474,7 @@
           "notes": []
         },
         {
-          "id": "vocab_049_col_005",
+          "id": "01656570-d186-4f84-bf14-6a8c90f56aba",
           "order": 5,
           "zh": "抬东西",
           "pinyin": "",
@@ -18485,7 +18485,7 @@
           "notes": []
         },
         {
-          "id": "vocab_049_col_006",
+          "id": "bd96c401-b2dc-4d58-b6c0-a58f70d81bc9",
           "order": 6,
           "zh": "抬高价格",
           "pinyin": "",
@@ -18498,7 +18498,7 @@
       ],
       "examples": [
         {
-          "id": "vocab_049_ex_001",
+          "id": "ba348b20-6d2e-4f1a-b3d1-80b04e513657",
           "order": 1,
           "zh": "他抬头看了看天。",
           "pinyin": "",
@@ -18509,7 +18509,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_049"
+            "ac76a4d4-87a7-4529-a233-25b76da5f3a6"
           ],
           "source_ref": "manual_thread_vocab",
           "level": "intermediate",
@@ -18518,7 +18518,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_049_ex_002",
+          "id": "4cd04d39-4acd-488f-98e9-599a4f405c00",
           "order": 2,
           "zh": "春天一到，人们抬头就能看到大街上的鲜花。",
           "pinyin": "",
@@ -18529,7 +18529,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_049"
+            "ac76a4d4-87a7-4529-a233-25b76da5f3a6"
           ],
           "source_ref": "manual_thread_vocab",
           "level": "intermediate",
@@ -18538,7 +18538,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_049_ex_003",
+          "id": "b1739254-9bff-42ce-9049-5bf4491216d8",
           "order": 3,
           "zh": "几个孩子把一大块雪抬起来，准备堆雪人儿。",
           "pinyin": "",
@@ -18549,7 +18549,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_049"
+            "ac76a4d4-87a7-4529-a233-25b76da5f3a6"
           ],
           "source_ref": "manual_thread_vocab",
           "level": "intermediate",
@@ -18572,7 +18572,7 @@
       },
       "warnings": [
         {
-          "id": "vocab_049_warning_001",
+          "id": "cd4f89e1-23d8-46f8-9f1a-dd7a081f8c73",
           "order": 1,
           "rule_vi": "Cầm điện thoại nói 拿手机, không nói 抬手机 nếu chỉ cầm.",
           "natural_examples": [
@@ -18612,7 +18612,7 @@
       "check_needed": false
     },
     {
-      "id": "vocab_050",
+      "id": "ef924af8-5c98-4e17-a489-a0ae0294f9e4",
       "type": "deep_vocabulary_item",
       "order": 50,
       "hanzi": "将近",
@@ -18818,7 +18818,7 @@
       },
       "collocations": [
         {
-          "id": "vocab_050_col_001",
+          "id": "9dc376e3-bb96-42c4-b2e8-3bfea9c2dead",
           "order": 1,
           "zh": "将近四点",
           "pinyin": "",
@@ -18829,7 +18829,7 @@
           "notes": []
         },
         {
-          "id": "vocab_050_col_002",
+          "id": "34fbf5da-e8d4-4374-b384-ed112e28d3f0",
           "order": 2,
           "zh": "将近一年",
           "pinyin": "",
@@ -18840,7 +18840,7 @@
           "notes": []
         },
         {
-          "id": "vocab_050_col_003",
+          "id": "b33bbe2f-a5a6-44c4-8854-2da2b68984d7",
           "order": 3,
           "zh": "将近十年",
           "pinyin": "",
@@ -18851,7 +18851,7 @@
           "notes": []
         },
         {
-          "id": "vocab_050_col_004",
+          "id": "b3083ae2-78d1-4c21-ab21-745a803d18ba",
           "order": 4,
           "zh": "将近一百人",
           "pinyin": "",
@@ -18862,7 +18862,7 @@
           "notes": []
         },
         {
-          "id": "vocab_050_col_005",
+          "id": "c146da9e-69fd-4d3d-b9de-a36cf558642e",
           "order": 5,
           "zh": "将近一个小时",
           "pinyin": "",
@@ -18873,7 +18873,7 @@
           "notes": []
         },
         {
-          "id": "vocab_050_col_006",
+          "id": "352d493e-7563-4e06-a6cb-5926ec2dd5d9",
           "order": 6,
           "zh": "将近一半",
           "pinyin": "",
@@ -18886,7 +18886,7 @@
       ],
       "examples": [
         {
-          "id": "vocab_050_ex_001",
+          "id": "8bd1204c-61e6-49ed-b53d-3bb92a053922",
           "order": 1,
           "zh": "现在将近五点了。",
           "pinyin": "",
@@ -18897,7 +18897,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_050"
+            "ef924af8-5c98-4e17-a489-a0ae0294f9e4"
           ],
           "source_ref": "manual_thread_vocab",
           "level": "intermediate",
@@ -18906,7 +18906,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_050_ex_002",
+          "id": "6b351afc-dbfb-4d01-8327-6e7e9c3f54ae",
           "order": 2,
           "zh": "我们在郊外走了将近两个小时。",
           "pinyin": "",
@@ -18917,7 +18917,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_050"
+            "ef924af8-5c98-4e17-a489-a0ae0294f9e4"
           ],
           "source_ref": "manual_thread_vocab",
           "level": "intermediate",
@@ -18926,7 +18926,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_050_ex_003",
+          "id": "1e40d017-c1cb-4e35-b7de-60b3bbcf44fd",
           "order": 3,
           "zh": "有些景点排队的时间将近一个小时。",
           "pinyin": "",
@@ -18937,7 +18937,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_050"
+            "ef924af8-5c98-4e17-a489-a0ae0294f9e4"
           ],
           "source_ref": "manual_thread_vocab",
           "level": "intermediate",
@@ -18961,7 +18961,7 @@
       },
       "warnings": [
         {
-          "id": "vocab_050_warning_001",
+          "id": "83114c38-da34-41b0-b370-3cbcdefd291d",
           "order": 1,
           "rule_vi": "Sắp mưa nói 快下雨了, không nói 将近下雨了. 将近 cần mốc lượng/thời gian rõ.",
           "natural_examples": [
@@ -19002,7 +19002,7 @@
       "check_needed": false
     },
     {
-      "id": "vocab_051",
+      "id": "1a7e95a6-600a-456b-92da-0b0288ad1fa9",
       "type": "deep_vocabulary_item",
       "order": 51,
       "hanzi": "经历",
@@ -19195,7 +19195,7 @@
       },
       "collocations": [
         {
-          "id": "vocab_051_col_001",
+          "id": "0b49f8d5-598a-4323-a0ca-ae7382cc53d4",
           "order": 1,
           "zh": "经历困难",
           "pinyin": "",
@@ -19206,7 +19206,7 @@
           "notes": []
         },
         {
-          "id": "vocab_051_col_002",
+          "id": "7f8da04c-c5aa-4d1e-ac6e-02fe33e8215b",
           "order": 2,
           "zh": "经历变化",
           "pinyin": "",
@@ -19217,7 +19217,7 @@
           "notes": []
         },
         {
-          "id": "vocab_051_col_003",
+          "id": "cec3b845-d08a-44d9-bc19-8407e85075a2",
           "order": 3,
           "zh": "经历过很多事",
           "pinyin": "",
@@ -19228,7 +19228,7 @@
           "notes": []
         },
         {
-          "id": "vocab_051_col_004",
+          "id": "7d5cb15e-ead2-46a9-ac56-81d67be99a9b",
           "order": 4,
           "zh": "难忘的经历",
           "pinyin": "",
@@ -19239,7 +19239,7 @@
           "notes": []
         },
         {
-          "id": "vocab_051_col_005",
+          "id": "645b0874-af3a-4d8e-866a-f812ffd9f58c",
           "order": 5,
           "zh": "生活经历",
           "pinyin": "",
@@ -19250,7 +19250,7 @@
           "notes": []
         },
         {
-          "id": "vocab_051_col_006",
+          "id": "6e04a847-0c77-4490-8b21-af04da580a0b",
           "order": 6,
           "zh": "工作经历",
           "pinyin": "",
@@ -19263,7 +19263,7 @@
       ],
       "examples": [
         {
-          "id": "vocab_051_ex_001",
+          "id": "d08869f4-442f-41a9-80ca-87560bb7914c",
           "order": 1,
           "zh": "这是一段难忘的经历。",
           "pinyin": "",
@@ -19274,7 +19274,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_051"
+            "1a7e95a6-600a-456b-92da-0b0288ad1fa9"
           ],
           "source_ref": "manual_thread_vocab",
           "level": "intermediate",
@@ -19283,7 +19283,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_051_ex_002",
+          "id": "87fdc892-82de-4c60-ac79-6916be32f107",
           "order": 2,
           "zh": "经历过北京的冬天以后，我才知道什么叫真正的冷。",
           "pinyin": "",
@@ -19294,7 +19294,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_051"
+            "1a7e95a6-600a-456b-92da-0b0288ad1fa9"
           ],
           "source_ref": "manual_thread_vocab",
           "level": "intermediate",
@@ -19303,7 +19303,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_051_ex_003",
+          "id": "2d4b2ab7-59e7-4626-b2db-e5420fbfd9f4",
           "order": 3,
           "zh": "他经历了将近一年的努力，终于可以介绍北京的四季了。",
           "pinyin": "",
@@ -19314,7 +19314,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_051"
+            "1a7e95a6-600a-456b-92da-0b0288ad1fa9"
           ],
           "source_ref": "manual_thread_vocab",
           "level": "intermediate",
@@ -19337,7 +19337,7 @@
       },
       "warnings": [
         {
-          "id": "vocab_051_warning_001",
+          "id": "71f42899-c6ef-46df-a978-228b7db9d457",
           "order": 1,
           "rule_vi": "经历 là việc/quãng đã trải qua; 经验 là kinh nghiệm rút ra. Có教学经验 khác với 有教学经历.",
           "natural_examples": [
@@ -19377,7 +19377,7 @@
       "check_needed": false
     },
     {
-      "id": "vocab_052",
+      "id": "4d2054dc-bdd7-4b1e-a821-f80b4b997bca",
       "type": "deep_vocabulary_item",
       "order": 52,
       "hanzi": "鸟语花香",
@@ -19681,7 +19681,7 @@
       },
       "collocations": [
         {
-          "id": "vocab_052_col_001",
+          "id": "6e10aa97-8a7a-419c-b14c-8cd7bb9b15fe",
           "order": 1,
           "zh": "鸟语花香的春天",
           "pinyin": "",
@@ -19692,7 +19692,7 @@
           "notes": []
         },
         {
-          "id": "vocab_052_col_002",
+          "id": "efa549d6-e8c5-49fe-9c0a-700c1d9aa240",
           "order": 2,
           "zh": "一片鸟语花香",
           "pinyin": "",
@@ -19703,7 +19703,7 @@
           "notes": []
         },
         {
-          "id": "vocab_052_col_003",
+          "id": "2a2f3e62-601a-49b4-876f-8c2c7f0a59ec",
           "order": 3,
           "zh": "到处鸟语花香",
           "pinyin": "",
@@ -19714,7 +19714,7 @@
           "notes": []
         },
         {
-          "id": "vocab_052_col_004",
+          "id": "ff3f68cd-6ad8-4006-a4cb-50754c196207",
           "order": 4,
           "zh": "公园里鸟语花香",
           "pinyin": "",
@@ -19725,7 +19725,7 @@
           "notes": []
         },
         {
-          "id": "vocab_052_col_005",
+          "id": "028ddb13-d652-4fb4-bfd5-829d66f0ed9a",
           "order": 5,
           "zh": "景色宜人",
           "pinyin": "",
@@ -19736,7 +19736,7 @@
           "notes": []
         },
         {
-          "id": "vocab_052_col_006",
+          "id": "dbb295cd-405b-4642-84f3-e018017c3cc7",
           "order": 6,
           "zh": "感受鸟语花香",
           "pinyin": "",
@@ -19749,7 +19749,7 @@
       ],
       "examples": [
         {
-          "id": "vocab_052_ex_001",
+          "id": "744e0627-57a3-4e6b-8af4-1cc75770dedf",
           "order": 1,
           "zh": "春天到了，公园里鸟语花香。",
           "pinyin": "",
@@ -19760,7 +19760,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_052"
+            "4d2054dc-bdd7-4b1e-a821-f80b4b997bca"
           ],
           "source_ref": "manual_thread_vocab",
           "level": "intermediate",
@@ -19769,7 +19769,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_052_ex_002",
+          "id": "c508c174-202e-4cea-b174-5b1d8cec9d71",
           "order": 2,
           "zh": "每到春天，北海公园里一片鸟语花香。",
           "pinyin": "",
@@ -19780,7 +19780,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_052"
+            "4d2054dc-bdd7-4b1e-a821-f80b4b997bca"
           ],
           "source_ref": "manual_thread_vocab",
           "level": "intermediate",
@@ -19789,7 +19789,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_052_ex_003",
+          "id": "d7409782-7dca-4ce7-b7a9-9bde0d9b225c",
           "order": 3,
           "zh": "鸟语花香不是书上的词，而是真能看到、听到、闻到的景色。",
           "pinyin": "",
@@ -19800,7 +19800,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_052"
+            "4d2054dc-bdd7-4b1e-a821-f80b4b997bca"
           ],
           "source_ref": "manual_thread_vocab",
           "level": "intermediate",
@@ -19824,7 +19824,7 @@
       },
       "warnings": [
         {
-          "id": "vocab_052_warning_001",
+          "id": "387218fb-6a51-4e2b-8b55-9344e60de915",
           "order": 1,
           "rule_vi": "Không dùng 鸟语花香 để tả mùa đông nếu không cố ý đối lập.",
           "natural_examples": [
@@ -19865,7 +19865,7 @@
       "check_needed": false
     },
     {
-      "id": "vocab_053",
+      "id": "3e21e064-8710-4a16-bd7a-302621db435e",
       "type": "deep_vocabulary_item",
       "order": 53,
       "hanzi": "烈日高照",
@@ -20148,7 +20148,7 @@
       },
       "collocations": [
         {
-          "id": "vocab_053_col_001",
+          "id": "fc242d19-924a-4c73-b94d-f8f5948ad127",
           "order": 1,
           "zh": "烈日高照的夏天",
           "pinyin": "",
@@ -20159,7 +20159,7 @@
           "notes": []
         },
         {
-          "id": "vocab_053_col_002",
+          "id": "9d99f261-6d93-477a-8379-8a588800ccd9",
           "order": 2,
           "zh": "烈日高照的中午",
           "pinyin": "",
@@ -20170,7 +20170,7 @@
           "notes": []
         },
         {
-          "id": "vocab_053_col_003",
+          "id": "f02f056f-e9b2-44a2-889e-176a7d412a76",
           "order": 3,
           "zh": "在烈日下走路",
           "pinyin": "",
@@ -20181,7 +20181,7 @@
           "notes": []
         },
         {
-          "id": "vocab_053_col_004",
+          "id": "b465a794-ab94-4c4a-91a9-78557267c69c",
           "order": 4,
           "zh": "烈日当空",
           "pinyin": "",
@@ -20192,7 +20192,7 @@
           "notes": []
         },
         {
-          "id": "vocab_053_col_005",
+          "id": "6d67f3ed-12e7-4a08-929d-07acf37bc2a9",
           "order": 5,
           "zh": "烈日炎炎",
           "pinyin": "",
@@ -20203,7 +20203,7 @@
           "notes": []
         },
         {
-          "id": "vocab_053_col_006",
+          "id": "86d39a60-c3b7-44d2-9da0-90891bfe6513",
           "order": 6,
           "zh": "避开烈日",
           "pinyin": "",
@@ -20216,7 +20216,7 @@
       ],
       "examples": [
         {
-          "id": "vocab_053_ex_001",
+          "id": "3e18087b-654f-4fa0-ab3a-976466876005",
           "order": 1,
           "zh": "夏天的中午，烈日高照。",
           "pinyin": "",
@@ -20227,7 +20227,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_053"
+            "3e21e064-8710-4a16-bd7a-302621db435e"
           ],
           "source_ref": "manual_thread_vocab",
           "level": "intermediate",
@@ -20236,7 +20236,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_053_ex_002",
+          "id": "74011c03-f349-4661-9d3a-4d51fa238b6a",
           "order": 2,
           "zh": "烈日高照的时候，大家都不愿意在大街上走太久。",
           "pinyin": "",
@@ -20247,7 +20247,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_053"
+            "3e21e064-8710-4a16-bd7a-302621db435e"
           ],
           "source_ref": "manual_thread_vocab",
           "level": "intermediate",
@@ -20256,7 +20256,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_053_ex_003",
+          "id": "4f0f93b5-985d-4ad4-909d-ffb5d0dcda36",
           "order": 3,
           "zh": "北京的夏天有时候烈日高照，游人热得想休息。",
           "pinyin": "",
@@ -20267,7 +20267,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_053"
+            "3e21e064-8710-4a16-bd7a-302621db435e"
           ],
           "source_ref": "manual_thread_vocab",
           "level": "intermediate",
@@ -20291,7 +20291,7 @@
       },
       "warnings": [
         {
-          "id": "vocab_053_warning_001",
+          "id": "478d1cb3-781a-4bab-94ce-40ee3aa867f1",
           "order": 1,
           "rule_vi": "烈日高照 tả nắng gắt, không phải nắng đẹp dễ chịu; nắng đẹp nói 阳光明媚.",
           "natural_examples": [
@@ -20332,7 +20332,7 @@
       "check_needed": false
     },
     {
-      "id": "vocab_054",
+      "id": "df3bcc03-2e95-4f1c-af0e-a49d951f748d",
       "type": "deep_vocabulary_item",
       "order": 54,
       "hanzi": "秋高气爽",
@@ -20583,7 +20583,7 @@
       },
       "collocations": [
         {
-          "id": "vocab_054_col_001",
+          "id": "7062565a-768a-48fd-9aee-1408c155e6d8",
           "order": 1,
           "zh": "秋高气爽的季节",
           "pinyin": "",
@@ -20594,7 +20594,7 @@
           "notes": []
         },
         {
-          "id": "vocab_054_col_002",
+          "id": "2a4df520-6bb9-44db-be4c-ad8a623fb645",
           "order": 2,
           "zh": "秋高气爽，适合郊游",
           "pinyin": "",
@@ -20605,7 +20605,7 @@
           "notes": []
         },
         {
-          "id": "vocab_054_col_003",
+          "id": "e5133ef0-0dff-4ea9-bd32-791c0c1a7780",
           "order": 3,
           "zh": "北京秋高气爽",
           "pinyin": "",
@@ -20616,7 +20616,7 @@
           "notes": []
         },
         {
-          "id": "vocab_054_col_004",
+          "id": "a5d0cfc0-33c4-4b78-9683-2fca1d2cdb5c",
           "order": 4,
           "zh": "正是秋高气爽的时候",
           "pinyin": "",
@@ -20627,7 +20627,7 @@
           "notes": []
         },
         {
-          "id": "vocab_054_col_005",
+          "id": "f655653a-2a8c-4568-ba8e-7e9c63d94bf8",
           "order": 5,
           "zh": "秋高气爽的日子",
           "pinyin": "",
@@ -20638,7 +20638,7 @@
           "notes": []
         },
         {
-          "id": "vocab_054_col_006",
+          "id": "e3072305-bd70-4892-8730-98aa7b2e7a70",
           "order": 6,
           "zh": "景色宜人",
           "pinyin": "",
@@ -20651,7 +20651,7 @@
       ],
       "examples": [
         {
-          "id": "vocab_054_ex_001",
+          "id": "4ecdce0a-b564-44d4-8035-02247d577e45",
           "order": 1,
           "zh": "北京的秋天秋高气爽。",
           "pinyin": "",
@@ -20662,7 +20662,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_054"
+            "df3bcc03-2e95-4f1c-af0e-a49d951f748d"
           ],
           "source_ref": "manual_thread_vocab",
           "level": "intermediate",
@@ -20671,7 +20671,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_054_ex_002",
+          "id": "0319c8a9-5d76-439f-8bbd-f8573da25890",
           "order": 2,
           "zh": "每到秋高气爽的时候，很多人都去香山看红叶。",
           "pinyin": "",
@@ -20682,7 +20682,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_054"
+            "df3bcc03-2e95-4f1c-af0e-a49d951f748d"
           ],
           "source_ref": "manual_thread_vocab",
           "level": "intermediate",
@@ -20691,7 +20691,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_054_ex_003",
+          "id": "4d1dfee9-715a-48dd-9dcc-72596da6d785",
           "order": 3,
           "zh": "经历过北京秋高气爽的日子，就会明白为什么那么多人向往这里的秋天。",
           "pinyin": "",
@@ -20702,7 +20702,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_054"
+            "df3bcc03-2e95-4f1c-af0e-a49d951f748d"
           ],
           "source_ref": "manual_thread_vocab",
           "level": "intermediate",
@@ -20726,7 +20726,7 @@
       },
       "warnings": [
         {
-          "id": "vocab_054_warning_001",
+          "id": "35811b39-5afe-4274-9c40-f60fded46edd",
           "order": 1,
           "rule_vi": "Không dùng 秋高气爽 cho mùa hè/mùa đông; mùa hè dùng 烈日高照, mùa đông dùng 万里雪飘/冰天雪地.",
           "natural_examples": [
@@ -20767,7 +20767,7 @@
       "check_needed": false
     },
     {
-      "id": "vocab_055",
+      "id": "0aca98b4-c783-4587-b7cc-a018442400eb",
       "type": "deep_vocabulary_item",
       "order": 55,
       "hanzi": "万里雪飘",
@@ -21017,7 +21017,7 @@
       },
       "collocations": [
         {
-          "id": "vocab_055_col_001",
+          "id": "cc42b4d0-23ba-458b-bd50-432994b198d8",
           "order": 1,
           "zh": "万里雪飘",
           "pinyin": "",
@@ -21028,7 +21028,7 @@
           "notes": []
         },
         {
-          "id": "vocab_055_col_002",
+          "id": "6e75ef64-79d5-483b-b0b8-5590144c8180",
           "order": 2,
           "zh": "千里冰封，万里雪飘",
           "pinyin": "",
@@ -21039,7 +21039,7 @@
           "notes": []
         },
         {
-          "id": "vocab_055_col_003",
+          "id": "c9801934-267d-4ed2-b8f6-684b73f1de18",
           "order": 3,
           "zh": "北国风光，万里雪飘",
           "pinyin": "",
@@ -21050,7 +21050,7 @@
           "notes": []
         },
         {
-          "id": "vocab_055_col_004",
+          "id": "5622d844-4180-46dd-b515-773516ea2427",
           "order": 4,
           "zh": "大雪纷飞",
           "pinyin": "",
@@ -21061,7 +21061,7 @@
           "notes": []
         },
         {
-          "id": "vocab_055_col_005",
+          "id": "54897790-50e2-4d1e-9820-43819b2752b5",
           "order": 5,
           "zh": "冰天雪地",
           "pinyin": "",
@@ -21072,7 +21072,7 @@
           "notes": []
         },
         {
-          "id": "vocab_055_col_006",
+          "id": "7ffb985c-f568-4ba8-9b1b-317a9fba2c3e",
           "order": 6,
           "zh": "白雪皑皑",
           "pinyin": "",
@@ -21085,7 +21085,7 @@
       ],
       "examples": [
         {
-          "id": "vocab_055_ex_001",
+          "id": "e815f73c-3ad7-406b-9d23-53531d3519f1",
           "order": 1,
           "zh": "冬天的北方，有时候真是一片万里雪飘的景象。",
           "pinyin": "",
@@ -21096,7 +21096,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_055"
+            "0aca98b4-c783-4587-b7cc-a018442400eb"
           ],
           "source_ref": "manual_thread_vocab",
           "level": "intermediate",
@@ -21105,7 +21105,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_055_ex_002",
+          "id": "f44006be-2532-43a6-a803-98cdaf526d83",
           "order": 2,
           "zh": "课文里常用“万里雪飘”来形容北方壮丽的雪景。",
           "pinyin": "",
@@ -21116,7 +21116,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_055"
+            "0aca98b4-c783-4587-b7cc-a018442400eb"
           ],
           "source_ref": "manual_thread_vocab",
           "level": "intermediate",
@@ -21125,7 +21125,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_055_ex_003",
+          "id": "ab89c06c-5b41-400e-9d68-696e781f2a3c",
           "order": 3,
           "zh": "春天是鸟语花香，夏天是烈日高照，秋天是秋高气爽，冬天可以写万里雪飘。",
           "pinyin": "",
@@ -21136,7 +21136,7 @@
           ],
           "grammar_refs": [],
           "vocab_refs": [
-            "vocab_055"
+            "0aca98b4-c783-4587-b7cc-a018442400eb"
           ],
           "source_ref": "manual_thread_vocab",
           "level": "intermediate",
@@ -21161,7 +21161,7 @@
       },
       "warnings": [
         {
-          "id": "vocab_055_warning_001",
+          "id": "6eaf7b05-9a76-43c8-b044-b0fc26575b88",
           "order": 1,
           "rule_vi": "Không dùng 万里雪飘 cho tuyết nhỏ hoặc câu đời thường; nói 今天下雪了 khi chỉ thông báo thời tiết.",
           "natural_examples": [

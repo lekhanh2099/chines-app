@@ -1,58 +1,6 @@
 {
-  "schema_version": "2.3.0",
-  "content_type": "chinese_textbook_lesson",
-  "verification_status": "draft",
-  "source": {
-    "book": "Hanyu Jiaocheng",
-    "volume": "第二册上",
-    "volume_vi": "Quyển 2 Thượng",
-    "lesson_index": 7,
-    "lesson_number_cn": "第七课",
-    "lesson_title_cn": "我们那儿的冬天跟北京一样冷",
-    "lesson_title_pinyin": "Wǒmen nàr de dōngtiān gēn Běijīng yíyàng lěng",
-    "lesson_title_vi": "Mùa đông ở chỗ chúng tôi lạnh như Bắc Kinh",
-    "lesson_title_en": "The winter in my hometown is as cold as in Beijing",
-    "source_files": [
-      {
-        "name": "Hanyu Jiaocheng 2-1.pdf",
-        "type": "pdf_scan",
-        "source_origin": "textbook",
-        "check_needed": true,
-        "page_start": 108,
-        "page_end": 124,
-        "note": "PDF scan; lesson content extracted in conversation PART 01–06."
-      },
-      {
-        "name": "Tong_hop_tu_vung_Han_ngu_quyen_2_Bai_1-25.docx",
-        "type": "uploaded_crosscheck",
-        "source_origin": "uploaded_crosscheck",
-        "check_needed": false,
-        "note": "Used to cross-check main vocabulary and absence of proper nouns."
-      },
-      {
-        "name": "Học kì 2 上-下.md",
-        "type": "uploaded_crosscheck",
-        "source_origin": "uploaded_crosscheck",
-        "check_needed": false,
-        "note": "Used to cross-check main grammar points."
-      },
-      {
-        "name": "hanyuLesson.schema.v2.3.0.full.ts",
-        "type": "schema",
-        "source_origin": "uploaded_crosscheck",
-        "check_needed": false
-      }
-    ],
-    "web_crosscheck": [
-      {
-        "title": "Giáo trình Hán Ngữ 3 – Bài 2: 我们那儿的冬天跟北京一样冷",
-        "source_origin": "web_crosscheck",
-        "note": "Used only as non-authoritative cross-check for title, text topic, and grammar focus."
-      }
-    ]
-  },
   "lesson": {
-    "id": "hanyu_2_1_lesson_07",
+    "id": "5fdf8f10-aca0-4432-8bf7-ee5e7ba9d27b",
     "title": {
       "zh": "我们那儿的冬天跟北京一样冷",
       "pinyin": "Wǒmen nàr de dōngtiān gēn Běijīng yíyàng lěng",
@@ -68,7 +16,7 @@
     ],
     "sections": [
       {
-        "id": "section_01_text",
+        "id": "a6c0d522-99be-4f36-881c-b9b2c6beeb85",
         "type": "text",
         "order": 1,
         "title": "课文",
@@ -77,7 +25,7 @@
         "check_needed": false,
         "blocks": [
           {
-            "id": "text_01",
+            "id": "e155d5ea-f89d-45f0-ab8d-094ce9e719f0",
             "type": "text_dialogue",
             "order": 1,
             "title": "我们那儿的冬天跟北京一样冷",
@@ -86,7 +34,7 @@
             "check_needed": false,
             "lines": [
               {
-                "id": "text_line_001",
+                "id": "0d702b5a-265e-4467-b5d4-d34cc91e80d7",
                 "order": 1,
                 "speaker": "田芳",
                 "zh": "罗兰，你们国家的时间跟北京不一样吧？",
@@ -95,14 +43,13 @@
                 "audio_key": "",
                 "vocab_refs": [],
                 "grammar_refs": [
-                  "grammar_01"
+                  "f8ec59f3-898a-47b2-b536-44dfd8183393"
                 ],
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "cc92d23a-f893-4895-98be-86be75e389ec"
+                "check_needed": false
               },
               {
-                "id": "text_line_002",
+                "id": "4c837029-53b1-4a97-8057-b7d9394b6810",
                 "order": 2,
                 "speaker": "罗兰",
                 "zh": "当然不一样。我们那儿跟北京有七个小时的时差呢！",
@@ -111,14 +58,13 @@
                 "audio_key": "",
                 "vocab_refs": [],
                 "grammar_refs": [
-                  "grammar_01"
+                  "f8ec59f3-898a-47b2-b536-44dfd8183393"
                 ],
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "ecee6c4b-ebd9-4a90-b3a7-2d3bb1d4d640"
+                "check_needed": false
               },
               {
-                "id": "text_line_003",
+                "id": "68867e17-037e-4416-a919-3df82d290ae5",
                 "order": 3,
                 "speaker": "田芳",
                 "zh": "你们那儿早还是北京早？",
@@ -128,11 +74,10 @@
                 "vocab_refs": [],
                 "grammar_refs": [],
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "b0338af3-b405-4cb0-ad42-841eec9d91ac"
+                "check_needed": false
               },
               {
-                "id": "text_line_004",
+                "id": "6179bdb7-83fb-48eb-9ee6-e8bc4437190e",
                 "order": 4,
                 "speaker": "罗兰",
                 "zh": "北京比我们那儿早七个小时。现在北京是上午八点多，我们那儿才夜里一点多。",
@@ -142,11 +87,10 @@
                 "vocab_refs": [],
                 "grammar_refs": [],
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "3cfd4a92-016b-4dc6-b15e-4338eb8f10ef"
+                "check_needed": false
               },
               {
-                "id": "text_line_005",
+                "id": "584da1f1-b892-4d11-96d1-d8f6d5c35279",
                 "order": 5,
                 "speaker": "田芳",
                 "zh": "季节跟北京一样吗？",
@@ -155,14 +99,13 @@
                 "audio_key": "",
                 "vocab_refs": [],
                 "grammar_refs": [
-                  "grammar_01"
+                  "f8ec59f3-898a-47b2-b536-44dfd8183393"
                 ],
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "f30b6ae2-fb48-4b24-9a27-006522826d85"
+                "check_needed": false
               },
               {
-                "id": "text_line_006",
+                "id": "b0f3dd17-9607-425a-ab21-fa23c3fe0428",
                 "order": 6,
                 "speaker": "罗兰",
                 "zh": "季节跟北京一样，也是春、夏、秋、冬四个季节。",
@@ -171,14 +114,13 @@
                 "audio_key": "",
                 "vocab_refs": [],
                 "grammar_refs": [
-                  "grammar_01"
+                  "f8ec59f3-898a-47b2-b536-44dfd8183393"
                 ],
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "ddbe2801-65ac-483e-9cae-ee85b9981dc5"
+                "check_needed": false
               },
               {
-                "id": "text_line_007",
+                "id": "d71a9cc0-8e09-4e1d-8c80-8041f1fe6567",
                 "order": 7,
                 "speaker": "田芳",
                 "zh": "气候跟北京一样不一样？",
@@ -187,14 +129,13 @@
                 "audio_key": "",
                 "vocab_refs": [],
                 "grammar_refs": [
-                  "grammar_01"
+                  "f8ec59f3-898a-47b2-b536-44dfd8183393"
                 ],
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "fe19d9db-6f26-47ac-b4ef-6d55eb7f3fae"
+                "check_needed": false
               },
               {
-                "id": "text_line_008",
+                "id": "31a79611-4b10-4760-9d87-9b84ceb8b17b",
                 "order": 8,
                 "speaker": "罗兰",
                 "zh": "不一样。北京的夏天很热，我们那儿夏天没有这么热。",
@@ -203,14 +144,13 @@
                 "audio_key": "",
                 "vocab_refs": [],
                 "grammar_refs": [
-                  "grammar_01"
+                  "f8ec59f3-898a-47b2-b536-44dfd8183393"
                 ],
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "ab6c87d6-4ff1-4fa0-8a14-be1da4316b9f"
+                "check_needed": false
               },
               {
-                "id": "text_line_009",
+                "id": "dd5e19e2-db1e-480f-93ae-dc2ae89bee70",
                 "order": 9,
                 "speaker": "田芳",
                 "zh": "冬天冷不冷？",
@@ -220,11 +160,10 @@
                 "vocab_refs": [],
                 "grammar_refs": [],
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "af6da55f-090a-46e0-9b2c-6459df72321d"
+                "check_needed": false
               },
               {
-                "id": "text_line_010",
+                "id": "b5341ae8-1b49-4826-b097-d018662915fc",
                 "order": 10,
                 "speaker": "罗兰",
                 "zh": "冬天跟北京一样冷，但是不常刮大风。",
@@ -233,14 +172,13 @@
                 "audio_key": "",
                 "vocab_refs": [],
                 "grammar_refs": [
-                  "grammar_01"
+                  "f8ec59f3-898a-47b2-b536-44dfd8183393"
                 ],
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "c9b82591-a6d5-41f2-a62a-6ecd873a1282"
+                "check_needed": false
               },
               {
-                "id": "text_line_011",
+                "id": "5ed5760c-eacb-45f3-8138-096cb33bb256",
                 "order": 11,
                 "speaker": "田芳",
                 "zh": "常下雪吗？",
@@ -250,11 +188,10 @@
                 "vocab_refs": [],
                 "grammar_refs": [],
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "954e8afa-d5be-4e10-a951-f25f4a0e1402"
+                "check_needed": false
               },
               {
-                "id": "text_line_012",
+                "id": "d1c8f679-10a4-4e05-9cca-427d7eb28ea9",
                 "order": 12,
                 "speaker": "罗兰",
                 "zh": "不但常常下雪，而且下得很大。北京呢？",
@@ -263,14 +200,13 @@
                 "audio_key": "",
                 "vocab_refs": [],
                 "grammar_refs": [
-                  "grammar_02"
+                  "57b14753-688a-41b6-9e0d-b61dbbf574d7"
                 ],
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "f478c408-593e-43be-85e1-d7508f81f63e"
+                "check_needed": false
               },
               {
-                "id": "text_line_013",
+                "id": "f84e9257-c93d-44a9-87d0-969f06cdc7db",
                 "order": 13,
                 "speaker": "田芳",
                 "zh": "北京冬天不常下雪。",
@@ -280,16 +216,14 @@
                 "vocab_refs": [],
                 "grammar_refs": [],
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "b96f45f6-c374-4996-98fc-ad4c1c901097"
+                "check_needed": false
               }
             ],
             "paragraphs": [],
-            "comprehension_questions": [],
-            "uuid": "e6230d33-e71a-4161-ac08-d6e956badc37"
+            "comprehension_questions": []
           },
           {
-            "id": "text_02",
+            "id": "0156dd39-d5b4-41f5-866d-d336dd29bbc2",
             "type": "text_dialogue",
             "order": 2,
             "title": "我跟你不一样",
@@ -298,7 +232,7 @@
             "check_needed": false,
             "lines": [
               {
-                "id": "text_line_014",
+                "id": "db54c3d1-f44c-4a4a-ad1f-c41114f0d1f5",
                 "order": 14,
                 "speaker": "麦克",
                 "zh": "玛丽，这次你考得怎么样？",
@@ -308,11 +242,10 @@
                 "vocab_refs": [],
                 "grammar_refs": [],
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "73467500-0389-47d8-9e65-60125f41ede9"
+                "check_needed": false
               },
               {
-                "id": "text_line_015",
+                "id": "58d995ce-1e95-46a5-8041-eaac9bf287ee",
                 "order": 15,
                 "speaker": "玛丽",
                 "zh": "还可以，综合课考了95分，听力跟阅读一样，都是90分，口语考得不太好，只考了85分。你呢？",
@@ -321,14 +254,13 @@
                 "audio_key": "",
                 "vocab_refs": [],
                 "grammar_refs": [
-                  "grammar_01"
+                  "f8ec59f3-898a-47b2-b536-44dfd8183393"
                 ],
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "dcb8aabc-cdce-42e7-a318-5ece66d43c81"
+                "check_needed": false
               },
               {
-                "id": "text_line_016",
+                "id": "b2851f6f-c78e-4391-b88b-b834a9eb83d8",
                 "order": 16,
                 "speaker": "麦克",
                 "zh": "你比我考得好。我的阅读跟你考得一样，综合课和听力课都没有你考得好，只得了80分。",
@@ -337,14 +269,13 @@
                 "audio_key": "",
                 "vocab_refs": [],
                 "grammar_refs": [
-                  "grammar_01"
+                  "f8ec59f3-898a-47b2-b536-44dfd8183393"
                 ],
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "a505a418-faa2-4a43-9991-1aa76b6d36b1"
+                "check_needed": false
               },
               {
-                "id": "text_line_017",
+                "id": "52a1e6b8-7cf5-4801-b0aa-3cdfc8697bc8",
                 "order": 17,
                 "speaker": "玛丽",
                 "zh": "听写我没考好，有的汉字不会写。",
@@ -354,11 +285,10 @@
                 "vocab_refs": [],
                 "grammar_refs": [],
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "e59d6445-bd7f-4102-85f7-5139d10bff2a"
+                "check_needed": false
               },
               {
-                "id": "text_line_018",
+                "id": "5e6308d6-3de7-45cc-a207-613d495e48f2",
                 "order": 18,
                 "speaker": "麦克",
                 "zh": "好了，不谈考试了。我问你，周末有什么打算？出去玩儿吗？",
@@ -368,11 +298,10 @@
                 "vocab_refs": [],
                 "grammar_refs": [],
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "749dd19c-e7dc-4e22-8622-ddefd6aca32c"
+                "check_needed": false
               },
               {
-                "id": "text_line_019",
+                "id": "af1daa2e-5950-4d4b-acf1-27dbbb24ec42",
                 "order": 19,
                 "speaker": "玛丽",
                 "zh": "出去。最近，我常到历史博物馆去参观。",
@@ -382,11 +311,10 @@
                 "vocab_refs": [],
                 "grammar_refs": [],
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "2c0e217c-eab2-424a-b767-7ef79898f770"
+                "check_needed": false
               },
               {
-                "id": "text_line_020",
+                "id": "672f6f8a-a6fc-4432-b505-3eab376d0abd",
                 "order": 20,
                 "speaker": "麦克",
                 "zh": "是吗？你怎么对历史产生兴趣了？",
@@ -395,14 +323,13 @@
                 "audio_key": "",
                 "vocab_refs": [],
                 "grammar_refs": [
-                  "note_01"
+                  "63d654f5-4561-4d48-a144-bacbf9671dfc"
                 ],
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "8bc8c0d9-d9a3-467e-bdd4-fc2e071fe6b1"
+                "check_needed": false
               },
               {
-                "id": "text_line_021",
+                "id": "7957c566-a6d5-4e43-b40b-5fe3c63069f2",
                 "order": 21,
                 "speaker": "玛丽",
                 "zh": "学了京剧以后，我就对中国历史产生了兴趣。有一天，我在书店买到了一本画册，是介绍中国历史的。看了以后，就想到历史博物馆去看看。",
@@ -411,14 +338,13 @@
                 "audio_key": "",
                 "vocab_refs": [],
                 "grammar_refs": [
-                  "note_01"
+                  "63d654f5-4561-4d48-a144-bacbf9671dfc"
                 ],
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "ad62f8af-0cf9-47b2-83a2-59ccfd088cb3"
+                "check_needed": false
               },
               {
-                "id": "text_line_022",
+                "id": "32ad4f02-55d6-44c2-a190-68bd70607e50",
                 "order": 22,
                 "speaker": "麦克",
                 "zh": "你打算研究中国历史吗？",
@@ -428,11 +354,10 @@
                 "vocab_refs": [],
                 "grammar_refs": [],
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "48676237-8f0c-409e-afee-712cb38e88fd"
+                "check_needed": false
               },
               {
-                "id": "text_line_023",
+                "id": "21b2136e-d19a-4928-a5df-029313d55763",
                 "order": 23,
                 "speaker": "玛丽",
                 "zh": "不，我只是对中国历史感兴趣。",
@@ -441,14 +366,13 @@
                 "audio_key": "",
                 "vocab_refs": [],
                 "grammar_refs": [
-                  "note_02"
+                  "7e2ee128-4fbd-4a93-898c-5f5fd99b371b"
                 ],
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "1b2dc51f-1420-4a8e-9cef-edde4cc264d7"
+                "check_needed": false
               },
               {
-                "id": "text_line_024",
+                "id": "9adfbc86-8bfb-46d7-ac4e-d41fca97d111",
                 "order": 24,
                 "speaker": "麦克",
                 "zh": "我跟你不一样，你喜欢老的，我喜欢新的。我对中国改革开放以后的一切都很感兴趣。",
@@ -457,24 +381,21 @@
                 "audio_key": "",
                 "vocab_refs": [],
                 "grammar_refs": [
-                  "grammar_01",
-                  "note_03"
+                  "f8ec59f3-898a-47b2-b536-44dfd8183393",
+                  "bf5e90df-dc03-4600-a2d2-426ab562c9a5"
                 ],
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "3cfcd5a2-adac-41b5-8676-702f19ef2612"
+                "check_needed": false
               }
             ],
             "paragraphs": [],
-            "comprehension_questions": [],
-            "uuid": "0af6af69-e44d-4d82-a7c5-a263b031a1c8"
+            "comprehension_questions": []
           }
         ],
-        "comprehension_questions": [],
-        "uuid": "0204898e-7ee2-424e-b904-84cb91062dcf"
+        "comprehension_questions": []
       },
       {
-        "id": "section_02_vocabulary",
+        "id": "78c30bf4-c314-4c4c-86e3-4dd62382dd78",
         "type": "vocabulary",
         "order": 2,
         "title": "生词",
@@ -483,7 +404,7 @@
         "check_needed": false,
         "items": [
           {
-            "id": "vocab_001",
+            "id": "68c05a12-9d8e-45d9-a413-786bcf2f780a",
             "type": "vocabulary_item",
             "order": 1,
             "hanzi": "国家",
@@ -507,11 +428,10 @@
             },
             "audio_key": "",
             "source_origin": "uploaded_crosscheck",
-            "check_needed": false,
-            "uuid": "7bee2900-7b54-4c1c-bbc0-f53f0d1e7c85"
+            "check_needed": false
           },
           {
-            "id": "vocab_002",
+            "id": "8c18cf3c-e9dc-42e1-8faf-eb26799cabab",
             "type": "vocabulary_item",
             "order": 2,
             "hanzi": "一样",
@@ -535,11 +455,10 @@
             },
             "audio_key": "",
             "source_origin": "uploaded_crosscheck",
-            "check_needed": false,
-            "uuid": "c16ee30a-4aa5-4a98-97db-dbedf14d6a81"
+            "check_needed": false
           },
           {
-            "id": "vocab_003",
+            "id": "1fbd69b7-603a-44ea-8d57-10cd4def9ced",
             "type": "vocabulary_item",
             "order": 3,
             "hanzi": "时差",
@@ -563,11 +482,10 @@
             },
             "audio_key": "",
             "source_origin": "uploaded_crosscheck",
-            "check_needed": false,
-            "uuid": "eb62806a-1d7a-4e00-8525-587126935ed2"
+            "check_needed": false
           },
           {
-            "id": "vocab_004",
+            "id": "3dc505f1-bc0e-4a96-b448-17fed89fdc60",
             "type": "vocabulary_item",
             "order": 4,
             "hanzi": "季节",
@@ -591,11 +509,10 @@
             },
             "audio_key": "",
             "source_origin": "uploaded_crosscheck",
-            "check_needed": false,
-            "uuid": "1465587b-228d-43f5-b0ce-cc27017e278b"
+            "check_needed": false
           },
           {
-            "id": "vocab_005",
+            "id": "188412d4-4c23-4d60-b7b2-21f3490199e7",
             "type": "vocabulary_item",
             "order": 5,
             "hanzi": "春",
@@ -619,11 +536,10 @@
             },
             "audio_key": "",
             "source_origin": "uploaded_crosscheck",
-            "check_needed": false,
-            "uuid": "48b70fe8-a118-43e7-803a-9bb178ba358d"
+            "check_needed": false
           },
           {
-            "id": "vocab_006",
+            "id": "5ea44727-d97c-467b-b1b8-babd195df50d",
             "type": "vocabulary_item",
             "order": 6,
             "hanzi": "夏",
@@ -647,11 +563,10 @@
             },
             "audio_key": "",
             "source_origin": "uploaded_crosscheck",
-            "check_needed": false,
-            "uuid": "e280c237-20ce-4098-af7b-6d88647d76ae"
+            "check_needed": false
           },
           {
-            "id": "vocab_007",
+            "id": "54613016-834a-4fc3-9912-2357a6d27058",
             "type": "vocabulary_item",
             "order": 7,
             "hanzi": "秋",
@@ -675,11 +590,10 @@
             },
             "audio_key": "",
             "source_origin": "uploaded_crosscheck",
-            "check_needed": false,
-            "uuid": "6405b900-5b6c-4d11-a5a4-fd824f3cac6a"
+            "check_needed": false
           },
           {
-            "id": "vocab_008",
+            "id": "0da97406-c3ac-4fcb-a51c-398a59c3fbae",
             "type": "vocabulary_item",
             "order": 8,
             "hanzi": "冬",
@@ -703,11 +617,10 @@
             },
             "audio_key": "",
             "source_origin": "uploaded_crosscheck",
-            "check_needed": false,
-            "uuid": "1a8200ae-4457-4bc9-89a8-5358dc1d9f67"
+            "check_needed": false
           },
           {
-            "id": "vocab_009",
+            "id": "54b36889-82be-485b-8342-fb8aab572065",
             "type": "vocabulary_item",
             "order": 9,
             "hanzi": "热",
@@ -731,11 +644,10 @@
             },
             "audio_key": "",
             "source_origin": "uploaded_crosscheck",
-            "check_needed": false,
-            "uuid": "43c971cc-e849-44da-ab2e-6f7695822f7b"
+            "check_needed": false
           },
           {
-            "id": "vocab_010",
+            "id": "1354b1a3-93cc-4505-8d7f-c5550a1d6ae9",
             "type": "vocabulary_item",
             "order": 10,
             "hanzi": "冷",
@@ -759,11 +671,10 @@
             },
             "audio_key": "",
             "source_origin": "uploaded_crosscheck",
-            "check_needed": false,
-            "uuid": "a3cbd013-fb75-44de-9573-92195faf740c"
+            "check_needed": false
           },
           {
-            "id": "vocab_011",
+            "id": "f0684cb3-4577-4e6c-9f22-7d97c89692b3",
             "type": "vocabulary_item",
             "order": 11,
             "hanzi": "凉",
@@ -787,11 +698,10 @@
             },
             "audio_key": "",
             "source_origin": "uploaded_crosscheck",
-            "check_needed": false,
-            "uuid": "2f70899d-11a5-48fa-83f8-ae64785aba17"
+            "check_needed": false
           },
           {
-            "id": "vocab_012",
+            "id": "d5b362a7-c8f6-4f25-b2b5-0f1749c8afbb",
             "type": "vocabulary_item",
             "order": 12,
             "hanzi": "刮风",
@@ -815,11 +725,10 @@
             },
             "audio_key": "",
             "source_origin": "uploaded_crosscheck",
-            "check_needed": false,
-            "uuid": "10c12aa9-5e7d-4653-a881-b157d8c29677"
+            "check_needed": false
           },
           {
-            "id": "vocab_013",
+            "id": "7eccd5e8-dac0-4f36-be2e-abcc0a2bdfcd",
             "type": "vocabulary_item",
             "order": 13,
             "hanzi": "刮",
@@ -843,11 +752,10 @@
             },
             "audio_key": "",
             "source_origin": "uploaded_crosscheck",
-            "check_needed": false,
-            "uuid": "b0f1a27f-9d4f-4762-a9c8-39ee89c618b5"
+            "check_needed": false
           },
           {
-            "id": "vocab_014",
+            "id": "91fa9f81-e5ef-4c4a-b29c-c4b6daa02196",
             "type": "vocabulary_item",
             "order": 14,
             "hanzi": "风",
@@ -871,11 +779,10 @@
             },
             "audio_key": "",
             "source_origin": "uploaded_crosscheck",
-            "check_needed": false,
-            "uuid": "8f87af04-3b60-41af-8ee7-fd49ed1b068c"
+            "check_needed": false
           },
           {
-            "id": "vocab_015",
+            "id": "8a5b1d09-23a6-4182-96e6-9bf4d761a1e1",
             "type": "vocabulary_item",
             "order": 15,
             "hanzi": "雪",
@@ -899,11 +806,10 @@
             },
             "audio_key": "",
             "source_origin": "uploaded_crosscheck",
-            "check_needed": false,
-            "uuid": "0a7f4ba5-6202-4c66-9ec0-7591354926a4"
+            "check_needed": false
           },
           {
-            "id": "vocab_016",
+            "id": "be7a835d-ff8f-4a86-9fd8-27c5f1093f0c",
             "type": "vocabulary_item",
             "order": 16,
             "hanzi": "雨",
@@ -927,11 +833,10 @@
             },
             "audio_key": "",
             "source_origin": "uploaded_crosscheck",
-            "check_needed": false,
-            "uuid": "3b0230c3-4b2f-4af5-9342-d076d71c3aa0"
+            "check_needed": false
           },
           {
-            "id": "vocab_017",
+            "id": "7a89dc80-d79d-4c2f-988c-d0f54e240d19",
             "type": "vocabulary_item",
             "order": 17,
             "hanzi": "不但……而且……",
@@ -955,11 +860,10 @@
             },
             "audio_key": "",
             "source_origin": "uploaded_crosscheck",
-            "check_needed": false,
-            "uuid": "7ed89445-b798-4897-ab1f-06fc2a07e37d"
+            "check_needed": false
           },
           {
-            "id": "vocab_018",
+            "id": "ff3e1818-66a9-4532-880b-02c9cacb0e5b",
             "type": "vocabulary_item",
             "order": 18,
             "hanzi": "份",
@@ -983,11 +887,10 @@
             },
             "audio_key": "",
             "source_origin": "uploaded_crosscheck",
-            "check_needed": false,
-            "uuid": "40ea6032-036b-4e81-b2b7-1b5f322fa0b1"
+            "check_needed": false
           },
           {
-            "id": "vocab_019",
+            "id": "0125bdae-fe4e-48fb-8264-145e95c75933",
             "type": "vocabulary_item",
             "order": 19,
             "hanzi": "分",
@@ -1011,11 +914,10 @@
             },
             "audio_key": "",
             "source_origin": "uploaded_crosscheck",
-            "check_needed": false,
-            "uuid": "a2cbc011-13b5-4004-8d27-40970e92673a"
+            "check_needed": false
           },
           {
-            "id": "vocab_020",
+            "id": "689eb64b-5d4f-469f-9afa-74017d399614",
             "type": "vocabulary_item",
             "order": 20,
             "hanzi": "得",
@@ -1039,11 +941,10 @@
             },
             "audio_key": "",
             "source_origin": "uploaded_crosscheck",
-            "check_needed": false,
-            "uuid": "42d1fd62-9216-4dd9-b8fc-5dfbb0744bbd"
+            "check_needed": false
           },
           {
-            "id": "vocab_021",
+            "id": "d45d5488-9293-41ae-9deb-1e5b51cee446",
             "type": "vocabulary_item",
             "order": 21,
             "hanzi": "周末",
@@ -1067,11 +968,10 @@
             },
             "audio_key": "",
             "source_origin": "uploaded_crosscheck",
-            "check_needed": false,
-            "uuid": "1ff37be0-bd2f-4a9f-ab97-7275821010e2"
+            "check_needed": false
           },
           {
-            "id": "vocab_022",
+            "id": "c99a633b-27a2-429b-a139-44113a84c189",
             "type": "vocabulary_item",
             "order": 22,
             "hanzi": "历史",
@@ -1095,11 +995,10 @@
             },
             "audio_key": "",
             "source_origin": "uploaded_crosscheck",
-            "check_needed": false,
-            "uuid": "3732c789-f1cf-4060-8192-ae9b8f0e97b1"
+            "check_needed": false
           },
           {
-            "id": "vocab_023",
+            "id": "79358c6f-3427-4c28-98f3-7ef98c7033c3",
             "type": "vocabulary_item",
             "order": 23,
             "hanzi": "产生",
@@ -1123,11 +1022,10 @@
             },
             "audio_key": "",
             "source_origin": "uploaded_crosscheck",
-            "check_needed": false,
-            "uuid": "bb4a3955-f2be-40f2-a512-27435f430054"
+            "check_needed": false
           },
           {
-            "id": "vocab_024",
+            "id": "dc0f8e06-a359-4907-a8d8-fc9b02260590",
             "type": "vocabulary_item",
             "order": 24,
             "hanzi": "画册",
@@ -1151,11 +1049,10 @@
             },
             "audio_key": "",
             "source_origin": "uploaded_crosscheck",
-            "check_needed": false,
-            "uuid": "65104b90-4a22-478f-816e-95b5d4580ca1"
+            "check_needed": false
           },
           {
-            "id": "vocab_025",
+            "id": "c43cedbf-7024-4ec1-922f-e75119114baf",
             "type": "vocabulary_item",
             "order": 25,
             "hanzi": "研究",
@@ -1179,11 +1076,10 @@
             },
             "audio_key": "",
             "source_origin": "uploaded_crosscheck",
-            "check_needed": false,
-            "uuid": "0b9849dc-73cd-45d6-8e9e-0827502bcb2c"
+            "check_needed": false
           },
           {
-            "id": "vocab_026",
+            "id": "d9991c79-3454-4247-bf18-f14f43b4a24a",
             "type": "vocabulary_item",
             "order": 26,
             "hanzi": "只是",
@@ -1207,11 +1103,10 @@
             },
             "audio_key": "",
             "source_origin": "uploaded_crosscheck",
-            "check_needed": false,
-            "uuid": "15069cd3-2a91-4445-961e-dc31f2008621"
+            "check_needed": false
           },
           {
-            "id": "vocab_027",
+            "id": "55cd807c-eec7-412d-99db-f4e6508b170f",
             "type": "vocabulary_item",
             "order": 27,
             "hanzi": "老",
@@ -1235,11 +1130,10 @@
             },
             "audio_key": "",
             "source_origin": "uploaded_crosscheck",
-            "check_needed": false,
-            "uuid": "4caffb00-6b17-4542-a25f-13633b1e7067"
+            "check_needed": false
           },
           {
-            "id": "vocab_028",
+            "id": "085e60d5-dd1c-4585-ac6b-0f1db0ded936",
             "type": "vocabulary_item",
             "order": 28,
             "hanzi": "改",
@@ -1263,11 +1157,10 @@
             },
             "audio_key": "",
             "source_origin": "uploaded_crosscheck",
-            "check_needed": false,
-            "uuid": "4c733993-8511-4189-b9c9-22f75b52a11f"
+            "check_needed": false
           },
           {
-            "id": "vocab_029",
+            "id": "ba7ff0f9-b633-4516-ab3d-22b96046a1cf",
             "type": "vocabulary_item",
             "order": 29,
             "hanzi": "改革",
@@ -1291,11 +1184,10 @@
             },
             "audio_key": "",
             "source_origin": "uploaded_crosscheck",
-            "check_needed": false,
-            "uuid": "8d55e2b2-5284-4b16-a835-2f689b2c0adb"
+            "check_needed": false
           },
           {
-            "id": "vocab_030",
+            "id": "2185ee67-885d-4ffb-83e2-e97be4070796",
             "type": "vocabulary_item",
             "order": 30,
             "hanzi": "开放",
@@ -1319,11 +1211,10 @@
             },
             "audio_key": "",
             "source_origin": "uploaded_crosscheck",
-            "check_needed": false,
-            "uuid": "09f7ba53-89c1-45be-9be9-9275fde36f2b"
+            "check_needed": false
           },
           {
-            "id": "vocab_031",
+            "id": "092a8c16-3739-4685-a4c0-39365071bd48",
             "type": "vocabulary_item",
             "order": 31,
             "hanzi": "一切",
@@ -1347,11 +1238,10 @@
             },
             "audio_key": "",
             "source_origin": "uploaded_crosscheck",
-            "check_needed": false,
-            "uuid": "a14a05fe-6956-4a28-966b-6ec4ae3d384e"
+            "check_needed": false
           },
           {
-            "id": "vocab_032",
+            "id": "22e66ee9-565e-4670-b2ac-4d5a9b500b38",
             "type": "vocabulary_item",
             "order": 32,
             "hanzi": "专业",
@@ -1375,11 +1265,10 @@
             },
             "audio_key": "",
             "source_origin": "uploaded_crosscheck",
-            "check_needed": false,
-            "uuid": "6db51cb2-bc87-46eb-b85c-0aeac792d73a"
+            "check_needed": false
           },
           {
-            "id": "vocab_033",
+            "id": "275b46f4-3166-48b7-9766-58384178d1be",
             "type": "vocabulary_item",
             "order": 33,
             "hanzi": "速度",
@@ -1403,11 +1292,10 @@
             },
             "audio_key": "",
             "source_origin": "uploaded_crosscheck",
-            "check_needed": false,
-            "uuid": "383d9b2f-d3b2-467a-a92c-111bc37d6e7f"
+            "check_needed": false
           },
           {
-            "id": "vocab_034",
+            "id": "1190511f-5970-4304-8f84-d7201b287aeb",
             "type": "vocabulary_item",
             "order": 34,
             "hanzi": "想法",
@@ -1431,11 +1319,10 @@
             },
             "audio_key": "",
             "source_origin": "uploaded_crosscheck",
-            "check_needed": false,
-            "uuid": "b3423e09-265e-430c-b5d5-3c173a8202ec"
+            "check_needed": false
           },
           {
-            "id": "vocab_035",
+            "id": "d42d3d90-443d-45da-bed7-987b50034e92",
             "type": "vocabulary_item",
             "order": 35,
             "hanzi": "价格",
@@ -1459,11 +1346,10 @@
             },
             "audio_key": "",
             "source_origin": "uploaded_crosscheck",
-            "check_needed": false,
-            "uuid": "68f8b398-d23f-4a05-ae62-45ee63af6f69"
+            "check_needed": false
           },
           {
-            "id": "vocab_036",
+            "id": "cfb712c9-c4ca-4314-b6b2-696b40ace25e",
             "type": "vocabulary_item",
             "order": 36,
             "hanzi": "转",
@@ -1487,11 +1373,10 @@
             },
             "audio_key": "",
             "source_origin": "uploaded_crosscheck",
-            "check_needed": false,
-            "uuid": "b1d40c69-8b16-4617-92f9-75948fccc3ce"
+            "check_needed": false
           },
           {
-            "id": "vocab_037",
+            "id": "6059829f-ae21-43cf-ac0c-05e19639ec43",
             "type": "vocabulary_item",
             "order": 37,
             "hanzi": "等",
@@ -1515,11 +1400,10 @@
             },
             "audio_key": "",
             "source_origin": "uploaded_crosscheck",
-            "check_needed": false,
-            "uuid": "9f96c448-2fd4-4faa-8b2e-4adaeb7a97d4"
+            "check_needed": false
           },
           {
-            "id": "vocab_038",
+            "id": "fefd5441-7b6c-47e3-b823-9e149b947bf7",
             "type": "vocabulary_item",
             "order": 38,
             "hanzi": "中等",
@@ -1543,11 +1427,10 @@
             },
             "audio_key": "",
             "source_origin": "uploaded_crosscheck",
-            "check_needed": false,
-            "uuid": "1f17de11-340e-4cfe-85fa-8458770a9640"
+            "check_needed": false
           },
           {
-            "id": "vocab_039",
+            "id": "27761bd2-433a-44ef-b79a-9e6f0a34b9c9",
             "type": "vocabulary_item",
             "order": 39,
             "hanzi": "上等",
@@ -1571,11 +1454,10 @@
             },
             "audio_key": "",
             "source_origin": "uploaded_crosscheck",
-            "check_needed": false,
-            "uuid": "a5a730a8-6373-4650-8286-0b5c88e591b1"
+            "check_needed": false
           },
           {
-            "id": "vocab_040",
+            "id": "861ed325-b320-4ae0-8eac-bb6bb8ebc215",
             "type": "vocabulary_item",
             "order": 40,
             "hanzi": "下等",
@@ -1599,14 +1481,12 @@
             },
             "audio_key": "",
             "source_origin": "uploaded_crosscheck",
-            "check_needed": false,
-            "uuid": "7ca4f04a-6fbc-4b76-b7ae-9b561c61960e"
+            "check_needed": false
           }
-        ],
-        "uuid": "7a03f9b5-f20c-4e7a-b167-12415e091624"
+        ]
       },
       {
-        "id": "section_03_proper_nouns",
+        "id": "3c5ee48e-5d44-44ac-bd53-cac996a83338",
         "type": "proper_nouns",
         "order": 3,
         "title": "专名",
@@ -1614,11 +1494,10 @@
         "source_origin": "uploaded_crosscheck",
         "check_needed": false,
         "items": [],
-        "empty_reason_vi": "Bài này không có 专名 riêng biệt trong bảng chính.",
-        "uuid": "f983a19c-b6d4-48fa-893b-40e744fd7773"
+        "empty_reason_vi": "Bài này không có 专名 riêng biệt trong bảng chính."
       },
       {
-        "id": "section_04_notes",
+        "id": "c18e9f54-6da1-4496-886b-c2c722605678",
         "type": "notes",
         "order": 4,
         "title": "注释",
@@ -1627,7 +1506,7 @@
         "check_needed": false,
         "items": [
           {
-            "id": "note_01",
+            "id": "63d654f5-4561-4d48-a144-bacbf9671dfc",
             "type": "note",
             "order": 1,
             "title": "对历史产生兴趣",
@@ -1635,7 +1514,7 @@
             "meaning_vi": "Nảy sinh hứng thú / bắt đầu có hứng thú với cái gì.",
             "examples": [
               {
-                "id": "note_01_ex_01",
+                "id": "3eca03f3-67c0-40d2-9fee-8e57a4ad43ad",
                 "zh": "学了京剧以后，我就对中国历史产生了兴趣。",
                 "pinyin": "",
                 "vi": "Sau khi học Kinh kịch, tôi liền bắt đầu có hứng thú với lịch sử Trung Quốc.",
@@ -1647,20 +1526,18 @@
                 "note_vi": "",
                 "audio_key": "",
                 "source_origin": "textbook/generated_mixed",
-                "check_needed": false,
-                "uuid": "f470079b-249b-4dcb-a1d5-816cde1841f6"
+                "check_needed": false
               }
             ],
             "source_refs": [
-              "text_line_020",
-              "text_line_021"
+              "672f6f8a-a6fc-4432-b505-3eab376d0abd",
+              "7957c566-a6d5-4e43-b40b-5fe3c63069f2"
             ],
             "source_origin": "textbook/generated_mixed",
-            "check_needed": false,
-            "uuid": "4ae79e65-2694-4ce0-801c-2df0282fb629"
+            "check_needed": false
           },
           {
-            "id": "note_02",
+            "id": "7e2ee128-4fbd-4a93-898c-5f5fd99b371b",
             "type": "note",
             "order": 2,
             "title": "只是",
@@ -1668,7 +1545,7 @@
             "meaning_vi": "Chỉ là / chỉ có điều; dùng để giới hạn ý vừa nói, tránh hiểu quá rộng.",
             "examples": [
               {
-                "id": "note_02_ex_01",
+                "id": "6ff01e57-e23b-475e-9cd6-da43acc8bd0a",
                 "zh": "我只是对中国历史感兴趣。",
                 "pinyin": "",
                 "vi": "Tôi chỉ là có hứng thú với lịch sử Trung Quốc thôi.",
@@ -1680,19 +1557,17 @@
                 "note_vi": "",
                 "audio_key": "",
                 "source_origin": "textbook/generated_mixed",
-                "check_needed": false,
-                "uuid": "0f4e1b1e-b6e9-4cb1-9863-a583c981767c"
+                "check_needed": false
               }
             ],
             "source_refs": [
-              "text_line_023"
+              "21b2136e-d19a-4928-a5df-029313d55763"
             ],
             "source_origin": "textbook/generated_mixed",
-            "check_needed": false,
-            "uuid": "e8024610-ad73-4e3c-b70c-238e3f2a5c72"
+            "check_needed": false
           },
           {
-            "id": "note_03",
+            "id": "bf5e90df-dc03-4600-a2d2-426ab562c9a5",
             "type": "note",
             "order": 3,
             "title": "改革开放以后的一切",
@@ -1700,7 +1575,7 @@
             "meaning_vi": "Tất cả mọi thứ sau cải cách mở cửa.",
             "examples": [
               {
-                "id": "note_03_ex_01",
+                "id": "b71a23a7-1107-46ec-b43e-de46214c5d0a",
                 "zh": "我对中国改革开放以后的一切都很感兴趣。",
                 "pinyin": "",
                 "vi": "Tôi rất có hứng thú với mọi thứ của Trung Quốc sau cải cách mở cửa.",
@@ -1712,22 +1587,19 @@
                 "note_vi": "",
                 "audio_key": "",
                 "source_origin": "textbook/generated_mixed",
-                "check_needed": false,
-                "uuid": "0043f2fc-f3fa-4475-9b79-fcc37d3d4089"
+                "check_needed": false
               }
             ],
             "source_refs": [
-              "text_line_024"
+              "9adfbc86-8bfb-46d7-ac4e-d41fca97d111"
             ],
             "source_origin": "textbook/generated_mixed",
-            "check_needed": false,
-            "uuid": "a35faa4f-8a9c-4172-bb85-d0bdbff9c418"
+            "check_needed": false
           }
-        ],
-        "uuid": "91112e9b-9b60-4ba7-a640-923663d8e107"
+        ]
       },
       {
-        "id": "section_05_grammar",
+        "id": "b045e537-7383-494b-8d61-b0286977ed80",
         "type": "grammar",
         "order": 5,
         "title": "语法 / 词语用法",
@@ -1736,7 +1608,7 @@
         "check_needed": false,
         "items": [
           {
-            "id": "grammar_01",
+            "id": "f8ec59f3-898a-47b2-b536-44dfd8183393",
             "type": "grammar_point",
             "order": 1,
             "title": "跟……一样 / 跟……不一样",
@@ -1750,55 +1622,52 @@
             "check_needed": false,
             "blocks": [
               {
-                "id": "grammar_01_overview",
+                "id": "b7c5d870-2db8-4e2e-950f-f0e6e522ac16",
                 "type": "grammar_overview",
                 "order": 1,
                 "title": "Bản chất",
                 "content_vi": "Dùng để so sánh A và B giống hoặc không giống nhau. Khác với 比 dùng để nói hơn/kém, 跟……一样 nhấn mạnh mức độ hoặc tính chất ngang nhau.",
                 "examples": [
                   {
-                    "id": "grammar_01_ex_01",
+                    "id": "5e614bf9-2578-4d49-87dc-107e6f3605d4",
                     "zh": "我们那儿的冬天跟北京一样冷。",
                     "pinyin": "",
                     "vi": "Mùa đông chỗ chúng tôi lạnh như Bắc Kinh.",
                     "en": "",
                     "highlight": [],
                     "grammar_refs": [
-                      "grammar_01"
+                      "f8ec59f3-898a-47b2-b536-44dfd8183393"
                     ],
                     "vocab_refs": [],
                     "source_ref": "",
                     "note_vi": "",
                     "audio_key": "",
                     "source_origin": "textbook/generated_mixed",
-                    "check_needed": false,
-                    "uuid": "94308e90-8732-4ff9-b024-71a945e088dc"
+                    "check_needed": false
                   },
                   {
-                    "id": "grammar_01_ex_02",
+                    "id": "7ccdc8f9-59f3-4c7b-bd28-247acb68c535",
                     "zh": "我跟你不一样。",
                     "pinyin": "",
                     "vi": "Tôi không giống bạn.",
                     "en": "",
                     "highlight": [],
                     "grammar_refs": [
-                      "grammar_01"
+                      "f8ec59f3-898a-47b2-b536-44dfd8183393"
                     ],
                     "vocab_refs": [],
                     "source_ref": "",
                     "note_vi": "",
                     "audio_key": "",
                     "source_origin": "textbook/generated_mixed",
-                    "check_needed": false,
-                    "uuid": "de7109d1-8fe3-45b4-b6a2-fd449e0c80f5"
+                    "check_needed": false
                   }
                 ],
                 "source_origin": "textbook/generated_mixed",
-                "check_needed": false,
-                "uuid": "396ff2bd-42eb-40d2-adfd-879f17191adc"
+                "check_needed": false
               },
               {
-                "id": "grammar_01_structure_01",
+                "id": "a85d60ae-5a59-4bad-a730-4e11cd8fd4ed",
                 "type": "grammar_structure",
                 "order": 2,
                 "title": "Cấu trúc khẳng định",
@@ -1812,40 +1681,38 @@
                 ],
                 "examples": [
                   {
-                    "id": "grammar_01_ex_03",
+                    "id": "d84397d0-7b22-492a-a594-cb58d4dd46e0",
                     "zh": "他跟我一样高。",
                     "pinyin": "",
                     "vi": "Anh ấy cao bằng tôi.",
                     "en": "",
                     "highlight": [],
                     "grammar_refs": [
-                      "grammar_01"
+                      "f8ec59f3-898a-47b2-b536-44dfd8183393"
                     ],
                     "vocab_refs": [],
                     "source_ref": "",
                     "note_vi": "",
                     "audio_key": "",
                     "source_origin": "textbook/generated_mixed",
-                    "check_needed": false,
-                    "uuid": "48f7df0c-5ccd-4227-a84f-d23ff208e93b"
+                    "check_needed": false
                   },
                   {
-                    "id": "grammar_01_ex_04",
+                    "id": "3c9a4bcc-7b95-4fbf-a27e-833a24841a8b",
                     "zh": "这件衣服跟那件一样贵。",
                     "pinyin": "",
                     "vi": "Cái áo này đắt như cái kia.",
                     "en": "",
                     "highlight": [],
                     "grammar_refs": [
-                      "grammar_01"
+                      "f8ec59f3-898a-47b2-b536-44dfd8183393"
                     ],
                     "vocab_refs": [],
                     "source_ref": "",
                     "note_vi": "",
                     "audio_key": "",
                     "source_origin": "textbook/generated_mixed",
-                    "check_needed": false,
-                    "uuid": "d21d54a9-0f76-43cf-81f0-24b785134b71"
+                    "check_needed": false
                   }
                 ],
                 "notes_vi": [
@@ -1853,11 +1720,10 @@
                   "Không chèn 很 trước tính từ chính trong mẫu này."
                 ],
                 "source_origin": "generated",
-                "check_needed": false,
-                "uuid": "10305478-33e9-4bf0-8fa1-da7bdb5fc291"
+                "check_needed": false
               },
               {
-                "id": "grammar_01_structure_02",
+                "id": "ca8c13db-9de3-46b8-a156-5be7570386a5",
                 "type": "grammar_structure",
                 "order": 3,
                 "title": "Không thêm tính từ",
@@ -1871,31 +1737,29 @@
                 ],
                 "examples": [
                   {
-                    "id": "grammar_01_ex_05",
+                    "id": "dd839fde-a24a-4a33-bc3a-4e0db7c01197",
                     "zh": "季节跟北京一样。",
                     "pinyin": "",
                     "vi": "Các mùa giống Bắc Kinh.",
                     "en": "",
                     "highlight": [],
                     "grammar_refs": [
-                      "grammar_01"
+                      "f8ec59f3-898a-47b2-b536-44dfd8183393"
                     ],
                     "vocab_refs": [],
                     "source_ref": "",
                     "note_vi": "",
                     "audio_key": "",
                     "source_origin": "textbook/generated_mixed",
-                    "check_needed": false,
-                    "uuid": "01d2688e-e237-4b9f-a3fc-c8cb1cd96e1d"
+                    "check_needed": false
                   }
                 ],
                 "notes_vi": [],
                 "source_origin": "textbook/generated_mixed",
-                "check_needed": false,
-                "uuid": "ba031ef7-e6a3-4aa6-a7b1-552db5be7359"
+                "check_needed": false
               },
               {
-                "id": "grammar_01_negative",
+                "id": "d20f2f52-d6ab-478a-b684-6adcb0004a12",
                 "type": "grammar_negative_form",
                 "order": 4,
                 "title": "Dạng phủ định",
@@ -1904,7 +1768,7 @@
                 "meaning_vi": "A không giống B.",
                 "correct_examples": [
                   {
-                    "id": "grammar_01_correct_01",
+                    "id": "f89ac453-7a3f-4fe3-a424-dc1e136bce62",
                     "zh": "气候跟北京不一样。",
                     "pinyin": "",
                     "vi": "Khí hậu không giống Bắc Kinh.",
@@ -1912,17 +1776,15 @@
                       "跟",
                       "不一样"
                     ],
-                    "explanation_vi": "",
-                    "uuid": "c320c9b6-5c59-46b5-84b5-47af2936f241"
+                    "explanation_vi": ""
                   }
                 ],
                 "wrong_examples": [],
                 "source_origin": "textbook/generated_mixed",
-                "check_needed": false,
-                "uuid": "23212e86-1601-499b-a383-6d7212fa2ba7"
+                "check_needed": false
               },
               {
-                "id": "grammar_01_question",
+                "id": "0ea62f46-0157-49d6-aadc-75dbed1d507b",
                 "type": "grammar_question_form",
                 "order": 5,
                 "title": "Dạng nghi vấn",
@@ -1930,51 +1792,47 @@
                 "meaning_vi": "Hỏi A có giống B không.",
                 "examples": [
                   {
-                    "id": "grammar_01_ex_06",
+                    "id": "6d81a490-7d47-451c-b5d2-ffe940b59486",
                     "zh": "季节跟北京一样吗？",
                     "pinyin": "",
                     "vi": "Các mùa có giống Bắc Kinh không?",
                     "en": "",
                     "highlight": [],
                     "grammar_refs": [
-                      "grammar_01"
+                      "f8ec59f3-898a-47b2-b536-44dfd8183393"
                     ],
                     "vocab_refs": [],
                     "source_ref": "",
                     "note_vi": "",
                     "audio_key": "",
                     "source_origin": "textbook/generated_mixed",
-                    "check_needed": false,
-                    "uuid": "2a12d29d-157a-403a-b3ac-5b8c5d7cf3af"
+                    "check_needed": false
                   },
                   {
-                    "id": "grammar_01_ex_07",
+                    "id": "4e8b40b1-222a-4104-9eb5-372e426eae08",
                     "zh": "气候跟北京一样不一样？",
                     "pinyin": "",
                     "vi": "Khí hậu có giống Bắc Kinh không?",
                     "en": "",
                     "highlight": [],
                     "grammar_refs": [
-                      "grammar_01"
+                      "f8ec59f3-898a-47b2-b536-44dfd8183393"
                     ],
                     "vocab_refs": [],
                     "source_ref": "",
                     "note_vi": "",
                     "audio_key": "",
                     "source_origin": "textbook/generated_mixed",
-                    "check_needed": false,
-                    "uuid": "faf67bf1-4d42-4de2-aa9e-ae1a2f9e8c27"
+                    "check_needed": false
                   }
                 ],
                 "source_origin": "textbook/generated_mixed",
-                "check_needed": false,
-                "uuid": "2a41d752-b4fb-49ca-a9d0-f89e312fa30d"
+                "check_needed": false
               }
-            ],
-            "uuid": "270a2480-1636-498a-9949-72efd129f9e7"
+            ]
           },
           {
-            "id": "grammar_02",
+            "id": "57b14753-688a-41b6-9e0d-b61dbbf574d7",
             "type": "grammar_point",
             "order": 2,
             "title": "不但……而且……",
@@ -1988,37 +1846,35 @@
             "check_needed": false,
             "blocks": [
               {
-                "id": "grammar_02_overview",
+                "id": "470b1ca1-e0a1-449f-b55e-a8aa481a4dd4",
                 "type": "grammar_overview",
                 "order": 1,
                 "title": "Bản chất",
                 "content_vi": "Dùng để nối hai ý theo kiểu bổ sung/tăng cấp. Vế sau thường thêm thông tin mạnh hơn hoặc đáng chú ý hơn vế trước.",
                 "examples": [
                   {
-                    "id": "grammar_02_ex_01",
+                    "id": "c8674d77-7e1f-44f8-9e45-e0a03accdc05",
                     "zh": "不但常常下雪，而且下得很大。",
                     "pinyin": "",
                     "vi": "Không những thường có tuyết rơi, mà tuyết còn rơi rất lớn.",
                     "en": "",
                     "highlight": [],
                     "grammar_refs": [
-                      "grammar_02"
+                      "57b14753-688a-41b6-9e0d-b61dbbf574d7"
                     ],
                     "vocab_refs": [],
                     "source_ref": "",
                     "note_vi": "",
                     "audio_key": "",
                     "source_origin": "textbook/generated_mixed",
-                    "check_needed": false,
-                    "uuid": "567c96ad-ae78-498a-9477-6094b90d2b5c"
+                    "check_needed": false
                   }
                 ],
                 "source_origin": "textbook/generated_mixed",
-                "check_needed": false,
-                "uuid": "83724024-243a-4545-aa79-75bce48f750b"
+                "check_needed": false
               },
               {
-                "id": "grammar_02_structure_01",
+                "id": "a6012e0f-4ca0-438c-bcf0-1043d8150bda",
                 "type": "grammar_structure",
                 "order": 2,
                 "title": "Cấu trúc chính",
@@ -2032,51 +1888,48 @@
                 ],
                 "examples": [
                   {
-                    "id": "grammar_02_ex_02",
+                    "id": "1096379b-a91d-48aa-bc98-42ebe110f965",
                     "zh": "他不但会说汉语，而且会写汉字。",
                     "pinyin": "",
                     "vi": "Anh ấy không những biết nói tiếng Trung, mà còn biết viết chữ Hán.",
                     "en": "",
                     "highlight": [],
                     "grammar_refs": [
-                      "grammar_02"
+                      "57b14753-688a-41b6-9e0d-b61dbbf574d7"
                     ],
                     "vocab_refs": [],
                     "source_ref": "",
                     "note_vi": "",
                     "audio_key": "",
                     "source_origin": "textbook/generated_mixed",
-                    "check_needed": false,
-                    "uuid": "11344d7e-9fa4-44aa-b047-5610f39ca48d"
+                    "check_needed": false
                   },
                   {
-                    "id": "grammar_02_ex_03",
+                    "id": "89cf2ddf-bb30-48d6-8d3d-9566092b6154",
                     "zh": "这个地方不但风景漂亮，而且天气也很好。",
                     "pinyin": "",
                     "vi": "Nơi này không những phong cảnh đẹp, mà thời tiết cũng rất tốt.",
                     "en": "",
                     "highlight": [],
                     "grammar_refs": [
-                      "grammar_02"
+                      "57b14753-688a-41b6-9e0d-b61dbbf574d7"
                     ],
                     "vocab_refs": [],
                     "source_ref": "",
                     "note_vi": "",
                     "audio_key": "",
                     "source_origin": "textbook/generated_mixed",
-                    "check_needed": false,
-                    "uuid": "fd0ece8f-9d6e-4a8f-b0c6-bbd1bd85dbc8"
+                    "check_needed": false
                   }
                 ],
                 "notes_vi": [
                   "Khi cùng một chủ ngữ, 不但 thường đứng sau chủ ngữ."
                 ],
                 "source_origin": "generated",
-                "check_needed": false,
-                "uuid": "c43f053c-6ae3-4966-ad87-446ff7d52ff0"
+                "check_needed": false
               },
               {
-                "id": "grammar_02_structure_02",
+                "id": "fcfef93c-e55f-46bb-9a38-17ca999a1197",
                 "type": "grammar_structure",
                 "order": 3,
                 "title": "Hai vế khác chủ ngữ",
@@ -2090,33 +1943,31 @@
                 ],
                 "examples": [
                   {
-                    "id": "grammar_02_ex_04",
+                    "id": "519958ea-f183-4f7d-af9d-45c6e79d137c",
                     "zh": "不但玛丽对中国历史感兴趣，而且麦克也对中国改革开放以后的一切感兴趣。",
                     "pinyin": "",
                     "vi": "Không chỉ Mary có hứng thú với lịch sử Trung Quốc, mà Mike cũng có hứng thú với mọi thứ của Trung Quốc sau cải cách mở cửa.",
                     "en": "",
                     "highlight": [],
                     "grammar_refs": [
-                      "grammar_02"
+                      "57b14753-688a-41b6-9e0d-b61dbbf574d7"
                     ],
                     "vocab_refs": [],
                     "source_ref": "",
                     "note_vi": "",
                     "audio_key": "",
                     "source_origin": "textbook/generated_mixed",
-                    "check_needed": false,
-                    "uuid": "37575a2f-20a7-4922-8dd0-b6711066eef4"
+                    "check_needed": false
                   }
                 ],
                 "notes_vi": [
                   "Khi đổi chủ ngữ, 不但 thường đứng trước chủ ngữ thứ nhất."
                 ],
                 "source_origin": "generated",
-                "check_needed": false,
-                "uuid": "fcad0352-e149-4008-9ec0-048cd70ee17b"
+                "check_needed": false
               },
               {
-                "id": "grammar_02_negative",
+                "id": "7ef0fe1b-7a15-4bc5-a252-97371e9335a3",
                 "type": "grammar_negative_form",
                 "order": 4,
                 "title": "Dạng phủ định",
@@ -2125,7 +1976,7 @@
                 "meaning_vi": "Không những không..., mà trái lại/còn...",
                 "correct_examples": [
                   {
-                    "id": "grammar_02_correct_01",
+                    "id": "b8abc062-6355-4841-b60a-e8a21b568937",
                     "zh": "他不但不累，反而很高兴。",
                     "pinyin": "",
                     "vi": "Anh ấy không những không mệt, trái lại còn rất vui.",
@@ -2133,17 +1984,15 @@
                       "不但不",
                       "反而"
                     ],
-                    "explanation_vi": "",
-                    "uuid": "37a42d03-e101-4333-bec9-3514ba97a538"
+                    "explanation_vi": ""
                   }
                 ],
                 "wrong_examples": [],
                 "source_origin": "generated",
-                "check_needed": false,
-                "uuid": "4488a07e-c99c-4a91-bcf8-83c7cdc5640c"
+                "check_needed": false
               },
               {
-                "id": "grammar_02_question",
+                "id": "370bbfd6-4cc1-4fde-bdde-2c955c30e48c",
                 "type": "grammar_question_form",
                 "order": 5,
                 "title": "Dạng nghi vấn",
@@ -2151,36 +2000,32 @@
                 "meaning_vi": "Hỏi xác nhận có phải không những..., mà còn... hay không.",
                 "examples": [
                   {
-                    "id": "grammar_02_ex_05",
+                    "id": "8b6ded0e-4da3-4960-9cff-fc3c883c3be4",
                     "zh": "你们那儿是不是不但常常下雪，而且下得很大？",
                     "pinyin": "",
                     "vi": "Có phải chỗ các bạn không những thường có tuyết, mà tuyết còn rơi rất lớn không?",
                     "en": "",
                     "highlight": [],
                     "grammar_refs": [
-                      "grammar_02"
+                      "57b14753-688a-41b6-9e0d-b61dbbf574d7"
                     ],
                     "vocab_refs": [],
                     "source_ref": "",
                     "note_vi": "",
                     "audio_key": "",
                     "source_origin": "textbook/generated_mixed",
-                    "check_needed": false,
-                    "uuid": "627828a1-eb00-4679-a28f-66710b971307"
+                    "check_needed": false
                   }
                 ],
                 "source_origin": "generated",
-                "check_needed": false,
-                "uuid": "45bab63f-8654-4033-bd92-22b7fecd66db"
+                "check_needed": false
               }
-            ],
-            "uuid": "6b5019b9-4017-44d7-926d-3158abe22d98"
+            ]
           }
-        ],
-        "uuid": "49d0cf50-7b54-414a-80c0-bb8aa625e974"
+        ]
       },
       {
-        "id": "section_06_exercises",
+        "id": "9901c597-ca97-451e-b63d-11814aaf933e",
         "type": "exercises",
         "order": 6,
         "title": "练习",
@@ -2202,7 +2047,7 @@
         },
         "items": [
           {
-            "id": "exercise_01",
+            "id": "15cb6f38-593b-48d1-bcca-dc3d2a140f9e",
             "type": "phonetics",
             "variant": "pronunciation_tone_minimal_pairs",
             "order": 1,
@@ -2219,168 +2064,150 @@
             ],
             "parts": [
               {
-                "id": "exercise_01_part_01",
+                "id": "0e5801e7-b89b-4cc6-8bd9-9e1fbbd30b31",
                 "type": "minimal_pair_group",
                 "title": "辨音辨调",
                 "items": [
                   {
-                    "id": "ex01_pair_01",
+                    "id": "e38d3cb2-2c33-4c4a-83fa-2934373f225d",
                     "left": "jìjié",
                     "right": "jùjué",
                     "audio_keys": [],
                     "source_origin": "textbook",
-                    "check_needed": false,
-                    "uuid": "bb843068-ac8a-44df-a444-6671561976ef"
+                    "check_needed": false
                   },
                   {
-                    "id": "ex01_pair_02",
+                    "id": "79df1daa-2fc0-43b6-b4e3-aee6478eef8a",
                     "left": "yíyàng",
                     "right": "yìyàng",
                     "audio_keys": [],
                     "source_origin": "textbook",
-                    "check_needed": false,
-                    "uuid": "758df78d-ecdc-4a9f-9405-572319136215"
+                    "check_needed": false
                   },
                   {
-                    "id": "ex01_pair_03",
+                    "id": "93191d96-c6f7-4475-b285-9bfd75ad2b6c",
                     "left": "jiāxiāng",
                     "right": "jiāqiáng",
                     "audio_keys": [],
                     "source_origin": "textbook",
-                    "check_needed": false,
-                    "uuid": "fc0b076e-d7ca-4541-b70b-89d90cda45bf"
+                    "check_needed": false
                   },
                   {
-                    "id": "ex01_pair_04",
+                    "id": "656ce346-d1fc-4d43-8acc-abf294d2d8da",
                     "left": "qìhòu",
                     "right": "jīgòu",
                     "audio_keys": [],
                     "source_origin": "textbook",
-                    "check_needed": false,
-                    "uuid": "88c3b682-642e-49dd-b044-dd04e05af6b2"
+                    "check_needed": false
                   },
                   {
-                    "id": "ex01_pair_05",
+                    "id": "5e775bab-fb67-4293-b3f7-4b9e80f29c52",
                     "left": "zhīshi",
                     "right": "zhǐshì",
                     "audio_keys": [],
                     "source_origin": "textbook",
-                    "check_needed": false,
-                    "uuid": "ec955339-cb6a-4610-ad74-35b5664436bf"
+                    "check_needed": false
                   },
                   {
-                    "id": "ex01_pair_06",
+                    "id": "7e23fb6e-376b-43d9-ae33-0413e3080ef9",
                     "left": "yíqiè",
                     "right": "yìxiē",
                     "audio_keys": [],
                     "source_origin": "textbook",
-                    "check_needed": false,
-                    "uuid": "cf4617ad-6504-4d92-b023-2b36cb48b2a2"
+                    "check_needed": false
                   }
                 ],
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "d3f81c2d-298a-4275-a43c-e4b2fb96a770"
+                "check_needed": false
               },
               {
-                "id": "exercise_01_part_02",
+                "id": "e7235fa8-9e47-43aa-a37c-271a2e83d738",
                 "type": "read_aloud_group",
                 "title": "朗读",
                 "items": [
                   {
-                    "id": "ex01_read_01",
+                    "id": "b97d1a8c-3880-42ce-813f-12d8eb8cb219",
                     "text": "这两个一样",
                     "pinyin": "",
                     "vi": "",
                     "source_origin": "textbook",
-                    "check_needed": false,
-                    "uuid": "71334258-dd85-45e4-879b-44115981276e"
+                    "check_needed": false
                   },
                   {
-                    "id": "ex01_read_02",
+                    "id": "8ae4a7da-2ae8-494c-99db-df12e85086a4",
                     "text": "这两张桌子一样",
                     "pinyin": "",
                     "vi": "",
                     "source_origin": "textbook",
-                    "check_needed": false,
-                    "uuid": "c71e8c18-35fb-4b24-9ebe-0e7cb4a533de"
+                    "check_needed": false
                   },
                   {
-                    "id": "ex01_read_03",
+                    "id": "1f523168-1c6e-4db9-abc5-198d4ccace2b",
                     "text": "这两辆汽车颜色不一样",
                     "pinyin": "",
                     "vi": "",
                     "source_origin": "textbook",
-                    "check_needed": false,
-                    "uuid": "4416a538-4667-4bf3-ae0a-78df979f7d9d"
+                    "check_needed": false
                   },
                   {
-                    "id": "ex01_read_04",
+                    "id": "d08c4311-c1e6-40a3-b502-9a3f9140607d",
                     "text": "这两件衣服大小不一样",
                     "pinyin": "",
                     "vi": "",
                     "source_origin": "textbook",
-                    "check_needed": false,
-                    "uuid": "991d9399-42bc-4262-94b9-f1a975984a72"
+                    "check_needed": false
                   },
                   {
-                    "id": "ex01_read_05",
+                    "id": "2de586f4-3987-4413-b296-88e87f7b2af2",
                     "text": "他考得跟玛丽一样好",
                     "pinyin": "",
                     "vi": "",
                     "source_origin": "textbook",
-                    "check_needed": false,
-                    "uuid": "1c64ac9b-6b66-4a24-a9dd-9e7ee49eeb10"
+                    "check_needed": false
                   },
                   {
-                    "id": "ex01_read_06",
+                    "id": "0a05bd24-1be3-4240-bcf0-7112a84ca9ae",
                     "text": "他说得跟玛丽一样流利",
                     "pinyin": "",
                     "vi": "",
                     "source_origin": "textbook",
-                    "check_needed": false,
-                    "uuid": "8efc8c42-1111-426c-8a8a-0df90fda6938"
+                    "check_needed": false
                   },
                   {
-                    "id": "ex01_read_07",
+                    "id": "69f1997b-58c5-4b9b-a007-fadb1405cb1c",
                     "text": "我跟你一样喜欢唱歌",
                     "pinyin": "",
                     "vi": "",
                     "source_origin": "textbook",
-                    "check_needed": false,
-                    "uuid": "ec1bc9e5-cc20-4788-a0d7-26ff86fc4ffe"
+                    "check_needed": false
                   },
                   {
-                    "id": "ex01_read_08",
+                    "id": "e8769d7d-1b18-41fe-93ab-54a1b416ee31",
                     "text": "我跟你一样喜欢旅行",
                     "pinyin": "",
                     "vi": "",
                     "source_origin": "textbook",
-                    "check_needed": false,
-                    "uuid": "15a1d934-ade7-42a3-85c5-02fb4638b264"
+                    "check_needed": false
                   },
                   {
-                    "id": "ex01_read_09",
+                    "id": "4120cc5d-0811-4c8b-ae92-1269c9ab61af",
                     "text": "不但好而且很便宜",
                     "pinyin": "",
                     "vi": "",
                     "source_origin": "textbook",
-                    "check_needed": false,
-                    "uuid": "7b31d611-ef87-4535-a675-1e84f0592ee0"
+                    "check_needed": false
                   },
                   {
-                    "id": "ex01_read_10",
+                    "id": "41f7aaa1-0a54-490a-94bc-2a50f627bf4c",
                     "text": "不但会唱而且唱得很好",
                     "pinyin": "",
                     "vi": "",
                     "source_origin": "textbook",
-                    "check_needed": false,
-                    "uuid": "d89a3697-aa83-467c-bcf8-4b6dacbeb95b"
+                    "check_needed": false
                   }
                 ],
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "66c9a26b-bdcc-4526-b763-54c03d230553"
+                "check_needed": false
               }
             ],
             "rendering": {
@@ -2388,11 +2215,10 @@
               "show_answer_after_submit": false
             },
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "cc665546-1f52-4be8-ac22-cdc0c1db6ac9"
+            "check_needed": false
           },
           {
-            "id": "exercise_02",
+            "id": "98e14c21-0449-4e36-b1ae-77ed46cf3aa0",
             "type": "substitution_drill",
             "variant": "substitution_or_transform_drill",
             "order": 2,
@@ -2409,305 +2235,266 @@
             ],
             "parts": [
               {
-                "id": "exercise_02_part_01",
+                "id": "7db043f9-0d63-45ee-8c21-295d62f2ebd3",
                 "type": "substitution_group",
                 "title": "跟……不一样",
                 "model": "A：你们国家的气候跟这儿一样吗？\nB：跟这儿不一样。\nB：我们国家的气候跟这儿不一样。",
                 "prompts": [
                   {
-                    "id": "exercise_02_part_01_item_01",
+                    "id": "4c11ba3f-ac5d-4c8c-b547-3a594b396b14",
                     "text": "你的电脑 / 他的",
                     "source_origin": "textbook",
-                    "check_needed": false,
-                    "uuid": "734eef6d-672b-49ae-b734-dbaac9e2c550"
+                    "check_needed": false
                   },
                   {
-                    "id": "exercise_02_part_01_item_02",
+                    "id": "a80c1e6d-bb97-4bc2-b8ac-96aeb2853dd9",
                     "text": "他的手机 / 我的",
                     "source_origin": "textbook",
-                    "check_needed": false,
-                    "uuid": "a5019360-d729-463a-be1e-18d35cf3d911"
+                    "check_needed": false
                   },
                   {
-                    "id": "exercise_02_part_01_item_03",
+                    "id": "65a929b8-68d0-4904-9a5e-2def1cd60c2b",
                     "text": "你的词典 / 这本",
                     "source_origin": "textbook",
-                    "check_needed": false,
-                    "uuid": "06bbb0bd-d649-42b3-9466-37de9e4ebac1"
+                    "check_needed": false
                   },
                   {
-                    "id": "exercise_02_part_01_item_04",
+                    "id": "021763ee-5240-44a8-adca-563e8274ac6c",
                     "text": "这件衣服 / 你的",
                     "source_origin": "textbook",
-                    "check_needed": false,
-                    "uuid": "115069cd-5065-4c58-aeb0-9f19e02ce0b3"
+                    "check_needed": false
                   },
                   {
-                    "id": "exercise_02_part_01_item_05",
+                    "id": "40e220d6-51bb-4ead-b64c-5b0ac9c57a29",
                     "text": "你的爱好 / 你朋友的",
                     "source_origin": "textbook",
-                    "check_needed": false,
-                    "uuid": "3707f9af-8146-45eb-b4a9-c08f32b51c23"
+                    "check_needed": false
                   },
                   {
-                    "id": "exercise_02_part_01_item_06",
+                    "id": "1e70803c-7cf8-48fd-abfd-66493ba1fb8a",
                     "text": "玛丽的兴趣 / 麦克的",
                     "source_origin": "textbook",
-                    "check_needed": false,
-                    "uuid": "9f00c54c-5c2e-44ac-af8a-6e57ee8105e4"
+                    "check_needed": false
                   }
                 ],
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "5ac1e18a-3e47-4a95-bfc0-427ac823b5fc"
+                "check_needed": false
               },
               {
-                "id": "exercise_02_part_02",
+                "id": "4ad1e1b3-374e-4ce8-b98f-907ffc4c88f2",
                 "type": "substitution_group",
                 "title": "比……还……",
                 "model": "A：你们那儿的冬天跟这儿一样冷吗？\nB：我们那儿的冬天比这儿还冷。",
                 "prompts": [
                   {
-                    "id": "exercise_02_part_02_item_01",
+                    "id": "f2d0840f-1e6c-4dc4-80d1-6e3e078eb606",
                     "text": "这个教室 / 那个 / 大",
                     "source_origin": "textbook",
-                    "check_needed": false,
-                    "uuid": "5c02fa29-1ef7-466a-aae9-e2d9d99097d5"
+                    "check_needed": false
                   },
                   {
-                    "id": "exercise_02_part_02_item_02",
+                    "id": "a809a344-454f-4a17-b4b5-fea33ef991a7",
                     "text": "你弟弟 / 你 / 高",
                     "source_origin": "textbook",
-                    "check_needed": false,
-                    "uuid": "70661276-2988-45b2-844e-d69cfba8b944"
+                    "check_needed": false
                   },
                   {
-                    "id": "exercise_02_part_02_item_03",
+                    "id": "33e9481d-07e7-4121-a351-a7c64d504cbf",
                     "text": "这儿的夏天 / 北京 / 热",
                     "source_origin": "textbook",
-                    "check_needed": false,
-                    "uuid": "c90302e6-ccc8-405f-9d29-7194a9c38384"
+                    "check_needed": false
                   },
                   {
-                    "id": "exercise_02_part_02_item_04",
+                    "id": "eb03e4a0-a52a-4de8-a679-9d754f634403",
                     "text": "那儿的冬天 / 上海 / 冷",
                     "source_origin": "textbook",
-                    "check_needed": false,
-                    "uuid": "7d2eb790-f511-489a-95c0-503902135555"
+                    "check_needed": false
                   },
                   {
-                    "id": "exercise_02_part_02_item_05",
+                    "id": "ed0dc090-5850-4454-8c4c-2301fb58fb77",
                     "text": "这件衣服 / 那件 / 长",
                     "source_origin": "textbook",
-                    "check_needed": false,
-                    "uuid": "19ed5d62-d0cd-46b4-93d3-f1a3b314654f"
+                    "check_needed": false
                   },
                   {
-                    "id": "exercise_02_part_02_item_06",
+                    "id": "b5d5da4e-552f-4e8b-a725-36479f6bfe95",
                     "text": "这个手机 / 那个 / 贵",
                     "source_origin": "textbook",
-                    "check_needed": false,
-                    "uuid": "223e896e-75ab-4101-a35d-857516d18e06"
+                    "check_needed": false
                   }
                 ],
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "aef54261-ccf1-450e-b607-f776f60c9c17"
+                "check_needed": false
               },
               {
-                "id": "exercise_02_part_03",
+                "id": "28f617eb-25d6-4678-b5e3-f7fca3508dbc",
                 "type": "substitution_group",
                 "title": "跟……一样感兴趣",
                 "model": "A：她对中国的历史很感兴趣。你呢？\nB：我跟她一样感兴趣。",
                 "prompts": [
                   {
-                    "id": "exercise_02_part_03_item_01",
+                    "id": "294d26c1-7ff4-4e48-8428-92cb888a8820",
                     "text": "书法",
                     "source_origin": "textbook",
-                    "check_needed": false,
-                    "uuid": "6c40ba1d-e0eb-4477-be14-40171ad25620"
+                    "check_needed": false
                   },
                   {
-                    "id": "exercise_02_part_03_item_02",
+                    "id": "ece24478-9db9-476f-b8a7-73d6b5df366c",
                     "text": "中国电影",
                     "source_origin": "textbook",
-                    "check_needed": false,
-                    "uuid": "4c4fe369-f7b5-4280-adf5-cf611d376cb4"
+                    "check_needed": false
                   },
                   {
-                    "id": "exercise_02_part_03_item_03",
+                    "id": "1844659a-3dbc-4497-8a6c-42794b34c59a",
                     "text": "中国文化",
                     "source_origin": "textbook",
-                    "check_needed": false,
-                    "uuid": "59a5c966-90ba-4541-8c03-15bcd1e9a894"
+                    "check_needed": false
                   },
                   {
-                    "id": "exercise_02_part_03_item_04",
+                    "id": "47cfba80-84d2-4d44-9ead-afaa0ae4ed30",
                     "text": "太极拳",
                     "source_origin": "textbook",
-                    "check_needed": false,
-                    "uuid": "66f49a80-0a84-4b15-99cb-37f2be80ca56"
+                    "check_needed": false
                   },
                   {
-                    "id": "exercise_02_part_03_item_05",
+                    "id": "61af5e98-16c4-4f59-9ffb-1801d8d03bbc",
                     "text": "中国画",
                     "source_origin": "textbook",
-                    "check_needed": false,
-                    "uuid": "03593596-bed6-48a2-9cd2-9cb6277daccf"
+                    "check_needed": false
                   },
                   {
-                    "id": "exercise_02_part_03_item_06",
+                    "id": "a7f8475e-882a-444e-a77a-1db85e3f2d84",
                     "text": "京剧",
                     "source_origin": "textbook",
-                    "check_needed": false,
-                    "uuid": "ada66c67-a1c4-4f74-ad23-5fd33e34aaab"
+                    "check_needed": false
                   }
                 ],
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "5a7f5125-609b-4e28-b14a-70c2d46a3934"
+                "check_needed": false
               },
               {
-                "id": "exercise_02_part_04",
+                "id": "6227f946-2a93-462c-8702-43b4abc4a614",
                 "type": "substitution_group",
                 "title": "得跟……一样……",
                 "model": "A：她考得怎么样？\nB：她考得跟你一样好。",
                 "prompts": [
                   {
-                    "id": "exercise_02_part_04_item_01",
+                    "id": "ee6c2934-b020-46f7-b918-5fb2b2ea1c69",
                     "text": "学 / 好",
                     "source_origin": "textbook",
-                    "check_needed": false,
-                    "uuid": "e7d6a7f3-8512-454e-a549-2874d75c9ddf"
+                    "check_needed": false
                   },
                   {
-                    "id": "exercise_02_part_04_item_02",
+                    "id": "021ffecb-a96e-4060-8791-9606d3a52c42",
                     "text": "说 / 流利",
                     "source_origin": "textbook",
-                    "check_needed": false,
-                    "uuid": "9c5ab6f7-70f7-4836-ae95-f91febc838ea"
+                    "check_needed": false
                   },
                   {
-                    "id": "exercise_02_part_04_item_03",
+                    "id": "71ece2aa-8f5f-4079-ade7-e732a3cc934e",
                     "text": "唱 / 好听",
                     "source_origin": "textbook",
-                    "check_needed": false,
-                    "uuid": "fa7988e6-a2d5-498c-8602-a066a278a9a8"
+                    "check_needed": false
                   },
                   {
-                    "id": "exercise_02_part_04_item_04",
+                    "id": "7b0da6e0-4320-41a4-bbfa-6366aae08c76",
                     "text": "写 / 漂亮",
                     "source_origin": "textbook",
-                    "check_needed": false,
-                    "uuid": "022fa915-46f6-4276-90ab-114d60a751b8"
+                    "check_needed": false
                   },
                   {
-                    "id": "exercise_02_part_04_item_05",
+                    "id": "a03a3e70-7d3f-47c2-8cb7-4687d81e20bd",
                     "text": "跑 / 快",
                     "source_origin": "textbook",
-                    "check_needed": false,
-                    "uuid": "e38b89c8-95c0-44cf-a3f4-7202bd2ecb7b"
+                    "check_needed": false
                   },
                   {
-                    "id": "exercise_02_part_04_item_06",
+                    "id": "827c253b-a9a7-4dd8-8735-f8211d3718b6",
                     "text": "来 / 早",
                     "source_origin": "textbook",
-                    "check_needed": false,
-                    "uuid": "e74ecb9f-3cae-474a-9924-74c72ef001fc"
+                    "check_needed": false
                   }
                 ],
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "35c68d8e-f98f-4ea0-8f3a-8c6966459be0"
+                "check_needed": false
               },
               {
-                "id": "exercise_02_part_05",
+                "id": "6b6b4fa0-c8d0-45c4-b28e-0293edd71e59",
                 "type": "substitution_group",
                 "title": "不但……而且……",
                 "model": "这儿的冬天不但常下雪，而且下得很大。",
                 "prompts": [
                   {
-                    "id": "exercise_02_part_05_item_01",
+                    "id": "9e5b2b1b-b8a2-40bf-a39b-5eae8c1148fb",
                     "text": "北京的冬天 / 很冷 / 常常刮风",
                     "source_origin": "textbook",
-                    "check_needed": false,
-                    "uuid": "948c48db-92f3-40ee-b73f-06ebc5ae1d3b"
+                    "check_needed": false
                   },
                   {
-                    "id": "exercise_02_part_05_item_02",
+                    "id": "14c84fea-f320-4d24-8024-55b5a6e31c55",
                     "text": "她 / 会说汉语 / 说得很好",
                     "source_origin": "textbook",
-                    "check_needed": false,
-                    "uuid": "22855d86-8cc7-4b20-ae46-4886f57f35a7"
+                    "check_needed": false
                   },
                   {
-                    "id": "exercise_02_part_05_item_03",
+                    "id": "23930966-c0e6-487d-b26e-92d3e2812c17",
                     "text": "他 / 会画画儿 / 画得很好",
                     "source_origin": "textbook",
-                    "check_needed": false,
-                    "uuid": "c781facb-d7d2-43e1-aafa-2bb39f965ffd"
+                    "check_needed": false
                   },
                   {
-                    "id": "exercise_02_part_05_item_04",
+                    "id": "471d8b36-c469-4cf9-aa7c-b31ce72f419d",
                     "text": "玛丽 / 会唱京剧 / 唱得很不错",
                     "source_origin": "textbook",
-                    "check_needed": false,
-                    "uuid": "fca85414-5fea-4db3-88ae-a79126bd7813"
+                    "check_needed": false
                   },
                   {
-                    "id": "exercise_02_part_05_item_05",
+                    "id": "e34b160f-2ace-4858-b9dc-9330888a7aaa",
                     "text": "她 / 想学好汉语 / 想研究中国历史",
                     "source_origin": "textbook",
-                    "check_needed": false,
-                    "uuid": "378976da-c96f-40ef-b4a4-53f3af8ba723"
+                    "check_needed": false
                   }
                 ],
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "2f311915-4f18-4297-a4a8-44934912ff2d"
+                "check_needed": false
               },
               {
-                "id": "exercise_02_part_06",
+                "id": "eb298846-dba5-4ab4-aaae-f9f806a8bb4e",
                 "type": "substitution_group",
                 "title": "不但……而且……",
                 "model": "不但我学习汉语，而且弟弟也学习汉语。",
                 "prompts": [
                   {
-                    "id": "exercise_02_part_06_item_01",
+                    "id": "9b499d10-550d-47f6-9b3f-c04ba4a8ad40",
                     "text": "喜欢吃中国菜 / 想去旅行",
                     "source_origin": "textbook",
-                    "check_needed": false,
-                    "uuid": "06ef6a78-1f51-4eca-8e49-90ec301317b0"
+                    "check_needed": false
                   },
                   {
-                    "id": "exercise_02_part_06_item_02",
+                    "id": "fa68ac6c-a5be-4d2c-9760-d376cacef424",
                     "text": "会说英语 / 会打太极拳",
                     "source_origin": "textbook",
-                    "check_needed": false,
-                    "uuid": "bca42319-6df1-4b26-ae70-a5b81338743f"
+                    "check_needed": false
                   },
                   {
-                    "id": "exercise_02_part_06_item_03",
+                    "id": "be4785c1-2481-41ec-b8d5-5e5bb5272573",
                     "text": "打算延长一年 / 对历史感兴趣",
                     "source_origin": "textbook",
-                    "check_needed": false,
-                    "uuid": "c016e2ef-d9a9-4db1-ac1e-953e869e2b65"
+                    "check_needed": false
                   }
                 ],
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "82547c4f-acab-4b1e-a975-13fa59ee41ef"
+                "check_needed": false
               }
             ],
             "rendering": {
               "renderer": "exercise.substitution_drill.v2"
             },
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "81f4da23-c045-4282-ab6f-329ee807cbc8"
+            "check_needed": false
           },
           {
-            "id": "exercise_03",
+            "id": "5dfca3d2-8524-4a83-92dd-b036a7259465",
             "type": "choose_words_fill_blank",
             "variant": "word_bank_fill_blank",
             "order": 3,
@@ -2730,7 +2517,7 @@
             ],
             "questions": [
               {
-                "id": "ex03_q_01",
+                "id": "b68a6153-e2e3-4348-a118-16806679081c",
                 "prompt": "北京一年有四个季节，春天、夏天、______、冬天。",
                 "answer": "秋天",
                 "acceptable_answers": [
@@ -2739,11 +2526,10 @@
                 "explanation_vi": "",
                 "source_origin": "textbook",
                 "answer_verified": true,
-                "check_needed": false,
-                "uuid": "f5a61a36-faa0-4446-809d-ca2617951b01"
+                "check_needed": false
               },
               {
-                "id": "ex03_q_02",
+                "id": "37581a75-d93f-4d1d-a8e9-3cac88780780",
                 "prompt": "我们国家的气候跟这儿不______。",
                 "answer": "一样",
                 "acceptable_answers": [
@@ -2752,11 +2538,10 @@
                 "explanation_vi": "",
                 "source_origin": "textbook",
                 "answer_verified": true,
-                "check_needed": false,
-                "uuid": "659b0621-74ca-407b-be3d-2f97c9cd2bb7"
+                "check_needed": false
               },
               {
-                "id": "ex03_q_03",
+                "id": "f85e03c5-83bc-407b-86ba-5d268ff51fda",
                 "prompt": "______了一夜大风，天气一下变冷了。",
                 "answer": "刮",
                 "acceptable_answers": [
@@ -2765,11 +2550,10 @@
                 "explanation_vi": "",
                 "source_origin": "textbook",
                 "answer_verified": true,
-                "check_needed": false,
-                "uuid": "0e6cf2c0-b6c0-495f-b776-d9da9771f397"
+                "check_needed": false
               },
               {
-                "id": "ex03_q_04",
+                "id": "0028b758-0b44-419a-ba70-73945fdddab8",
                 "prompt": "你打算______这个城市的历史吗？",
                 "answer": "研究",
                 "acceptable_answers": [
@@ -2778,11 +2562,10 @@
                 "explanation_vi": "",
                 "source_origin": "textbook",
                 "answer_verified": true,
-                "check_needed": false,
-                "uuid": "8f1b606d-6417-46b2-ab0f-d3f7ec4b02c8"
+                "check_needed": false
               },
               {
-                "id": "ex03_q_05",
+                "id": "6358e96a-2814-4909-a41f-5274dbdb9088",
                 "prompt": "我______认识她，对她还不太了解。",
                 "answer": "只是",
                 "acceptable_answers": [
@@ -2791,11 +2574,10 @@
                 "explanation_vi": "",
                 "source_origin": "textbook",
                 "answer_verified": true,
-                "check_needed": false,
-                "uuid": "cf1cca4e-56ad-429c-9f27-80b401aa6837"
+                "check_needed": false
               },
               {
-                "id": "ex03_q_06",
+                "id": "82f1d5f7-1f30-4944-8931-eb28a9dbb6e3",
                 "prompt": "最近，我对中国画和书法______了兴趣。",
                 "answer": "产生",
                 "acceptable_answers": [
@@ -2804,11 +2586,10 @@
                 "explanation_vi": "",
                 "source_origin": "textbook",
                 "answer_verified": true,
-                "check_needed": false,
-                "uuid": "9e306b4c-0916-4c1e-8181-560d726e0464"
+                "check_needed": false
               },
               {
-                "id": "ex03_q_07",
+                "id": "1b032f73-6a88-4ed2-8b8d-e6a809af83de",
                 "prompt": "我周末常去______参观。",
                 "answer": "博物馆",
                 "acceptable_answers": [
@@ -2817,11 +2598,10 @@
                 "explanation_vi": "",
                 "source_origin": "textbook",
                 "answer_verified": true,
-                "check_needed": false,
-                "uuid": "93859263-145a-4f7a-93f3-33a19c03d318"
+                "check_needed": false
               },
               {
-                "id": "ex03_q_08",
+                "id": "9502981f-5398-4af0-b16d-c1881db461a4",
                 "prompt": "改革______以后，中国的变化很大。",
                 "answer": "开放",
                 "acceptable_answers": [
@@ -2830,11 +2610,10 @@
                 "explanation_vi": "",
                 "source_origin": "textbook",
                 "answer_verified": true,
-                "check_needed": false,
-                "uuid": "ea666021-93de-47a6-a38c-4b6ad16cabeb"
+                "check_needed": false
               },
               {
-                "id": "ex03_q_09",
+                "id": "a08c55fc-b29c-4cc5-9e26-efd5a27fa33d",
                 "prompt": "这儿的冬天不但很冷，______还常常刮风。",
                 "answer": "而且",
                 "acceptable_answers": [
@@ -2843,8 +2622,7 @@
                 "explanation_vi": "",
                 "source_origin": "textbook",
                 "answer_verified": true,
-                "check_needed": false,
-                "uuid": "6c22df4a-60aa-4846-8409-d83263472fce"
+                "check_needed": false
               }
             ],
             "rendering": {
@@ -2853,11 +2631,10 @@
               "show_answer_after_submit": true
             },
             "source_origin": "textbook_question_generated_answer",
-            "check_needed": false,
-            "uuid": "cc915ec6-4a66-492d-8531-0962d7c950bb"
+            "check_needed": false
           },
           {
-            "id": "exercise_04",
+            "id": "809141fb-cc55-403a-9433-35eea89c8c90",
             "type": "complete_sentence",
             "variant": "complete_sentence_with_given_words",
             "order": 4,
@@ -2891,7 +2668,7 @@
             ],
             "parts": [
               {
-                "id": "exercise_04_part_01",
+                "id": "ff282d24-4562-4c17-9e1f-5acd2a0f2e5a",
                 "type": "sentence_transform",
                 "title": "跟……一样",
                 "example": {
@@ -2900,143 +2677,125 @@
                 },
                 "questions": [
                   {
-                    "id": "ex04_same_01",
+                    "id": "8e312282-09fa-4b2f-b639-7ef0a2074a5e",
                     "prompt": "我的专业是汉语，她的专业也是汉语。",
                     "answer": "",
                     "answer_verified": false,
-                    "check_needed": true,
-                    "uuid": "084720fe-744b-4abd-835e-15dd8b2cabca"
+                    "check_needed": true
                   },
                   {
-                    "id": "ex04_same_02",
+                    "id": "ee163490-52e4-4f4b-b6cd-9d87a3ea430f",
                     "prompt": "我的羽绒服是红的，她的也是红的。",
                     "answer": "",
                     "answer_verified": false,
-                    "check_needed": true,
-                    "uuid": "2c1bf703-ef16-4140-8991-dcbe8c6c8a2a"
+                    "check_needed": true
                   },
                   {
-                    "id": "ex04_same_03",
+                    "id": "f4a12abb-8822-4aa2-9bab-539141d87bcc",
                     "prompt": "我的身高是1米68，她的身高也是1米68。",
                     "answer": "",
                     "answer_verified": false,
-                    "check_needed": true,
-                    "uuid": "16ee0aa6-6143-4618-8530-db1f2ea4f2cb"
+                    "check_needed": true
                   },
                   {
-                    "id": "ex04_same_04",
+                    "id": "12028cef-5cee-43a9-a87c-d8da0dbf42a4",
                     "prompt": "我口语考试的成绩是95分，她也是95分。",
                     "answer": "",
                     "answer_verified": false,
-                    "check_needed": true,
-                    "uuid": "a7eb69e9-6efe-4e6c-a00c-49997cc813e7"
+                    "check_needed": true
                   },
                   {
-                    "id": "ex04_same_05",
+                    "id": "021c228b-d1a0-4fa6-b497-6bae86961d0d",
                     "prompt": "我喜欢踢足球，他也喜欢踢足球。",
                     "answer": "",
                     "answer_verified": false,
-                    "check_needed": true,
-                    "uuid": "032cbd30-b05c-4a77-9198-89f4fa93cb2b"
+                    "check_needed": true
                   },
                   {
-                    "id": "ex04_same_06",
+                    "id": "d162fd77-ad31-4b4e-9ec5-ce97458fee4c",
                     "prompt": "她今年19岁，我也是19岁。",
                     "answer": "",
                     "answer_verified": false,
-                    "check_needed": true,
-                    "uuid": "a2a640e2-9a57-479f-a97e-b9a7e640a9c4"
+                    "check_needed": true
                   },
                   {
-                    "id": "ex04_same_07",
+                    "id": "7205e1e2-5cc2-4208-9cdd-d5e68ac69c8b",
                     "prompt": "我去上海旅行，她也去上海旅行。",
                     "answer": "",
                     "answer_verified": false,
-                    "check_needed": true,
-                    "uuid": "81e26488-a923-42b5-a63e-0bfadf878790"
+                    "check_needed": true
                   },
                   {
-                    "id": "ex04_same_08",
+                    "id": "fb0ece92-0d9e-42f1-9832-d21888497d56",
                     "prompt": "我买的是《汉英词典》，他买的也是《汉英词典》。",
                     "answer": "",
                     "answer_verified": false,
-                    "check_needed": true,
-                    "uuid": "f3fc277d-1601-4224-b784-e19c19e5a72b"
+                    "check_needed": true
                   }
-                ],
-                "uuid": "4c8f60c4-fbed-4965-9c16-d96a97487c40"
+                ]
               },
               {
-                "id": "exercise_04_part_02",
+                "id": "c66c00bf-e530-4d0e-b7b3-4e2e961f6371",
                 "type": "sentence_transform",
                 "title": "跟……不一样",
                 "questions": [
                   {
-                    "id": "ex04_diff_01",
+                    "id": "5603e6ff-e862-4ef2-be12-d4ef8512356d",
                     "prompt": "我的车是黑的，她的车是红的。",
                     "answer": "",
                     "answer_verified": false,
-                    "check_needed": true,
-                    "uuid": "14fc92f9-c536-44a7-a27f-ade34152aad8"
+                    "check_needed": true
                   },
                   {
-                    "id": "ex04_diff_02",
+                    "id": "54409f30-02b3-4bb2-a56d-a369d3a70fa4",
                     "prompt": "我今年毕业，弟弟明年毕业。",
                     "answer": "",
                     "answer_verified": false,
-                    "check_needed": true,
-                    "uuid": "ba58099e-df51-404c-b03b-57e8e0a1a693"
+                    "check_needed": true
                   },
                   {
-                    "id": "ex04_diff_03",
+                    "id": "14ef9e27-bdd9-4e47-b306-bb97a93fca3c",
                     "prompt": "我学建筑，弟弟学医。",
                     "answer": "",
                     "answer_verified": false,
-                    "check_needed": true,
-                    "uuid": "51c8f72a-8a94-471f-8404-e4f75323f352"
+                    "check_needed": true
                   },
                   {
-                    "id": "ex04_diff_04",
+                    "id": "b5ff6303-e048-4db0-a0fe-4a883e295785",
                     "prompt": "我以后要当翻译，弟弟要当大夫。",
                     "answer": "",
                     "answer_verified": false,
-                    "check_needed": true,
-                    "uuid": "4b824672-dcd3-40f3-88ee-62c09977fb64"
+                    "check_needed": true
                   },
                   {
-                    "id": "ex04_diff_05",
+                    "id": "a9766f6d-8849-49e3-9b39-5774b6038723",
                     "prompt": "火车每小时200公里，汽车每小时120公里。",
                     "answer": "",
                     "answer_verified": false,
-                    "check_needed": true,
-                    "uuid": "87985753-f715-4f40-8750-c902796997f1"
+                    "check_needed": true
                   },
                   {
-                    "id": "ex04_diff_06",
+                    "id": "5624191d-32cc-4399-a14d-059cbad0ef0c",
                     "prompt": "北京今天29度，广州31度。",
                     "answer": "",
                     "answer_verified": false,
-                    "check_needed": true,
-                    "uuid": "d14cfb2d-6188-46f5-986a-9513f0e7fa44"
+                    "check_needed": true
                   },
                   {
-                    "id": "ex04_diff_07",
+                    "id": "7ab8c0b2-b024-4d32-aefc-042409d178f8",
                     "prompt": "这个房间30平方米，那个房间35平方米。",
                     "answer": "",
                     "answer_verified": false,
-                    "check_needed": true,
-                    "uuid": "77812787-67c6-4bb4-ad67-4151579c3b18"
+                    "check_needed": true
                   },
                   {
-                    "id": "ex04_diff_08",
+                    "id": "f9b1e868-317f-44ae-acf0-4a1f0dd2796e",
                     "prompt": "这件羽绒服850元，那件900元。",
                     "answer": "",
                     "answer_verified": false,
-                    "check_needed": true,
-                    "uuid": "f1bb6539-bbfb-49ad-bc1a-43d4ff1258a9"
+                    "check_needed": true
                   }
-                ],
-                "uuid": "f0987594-3d98-4e64-8adb-a33d3321f311"
+                ]
               }
             ],
             "rendering": {
@@ -3044,11 +2803,10 @@
               "allow_manual_check": true
             },
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "58e506a8-8cc2-4c51-8dd3-1582aa0aebaa"
+            "check_needed": false
           },
           {
-            "id": "exercise_05",
+            "id": "e843bb6e-2e51-4fb8-b362-7506b97cf2fc",
             "type": "fill_blank",
             "variant": "free_fill_blank",
             "order": 5,
@@ -3064,52 +2822,46 @@
             },
             "questions": [
               {
-                "id": "ex05_q_01",
+                "id": "93e6c779-f5e9-448d-8c40-124be06b1a8d",
                 "prompt": "A：这座楼______那座楼一样高吗？\nB：不一样高。那座楼______这座楼高。",
                 "answer": "",
                 "answer_verified": false,
-                "check_needed": true,
-                "uuid": "87251623-f02c-4df8-80ea-a5023509db93"
+                "check_needed": true
               },
               {
-                "id": "ex05_q_02",
+                "id": "6b97692f-0566-487c-8057-957a43eee0c8",
                 "prompt": "A：这本书______那本一样难吗？\nB：不一样难。这本______那本容易一点儿。",
                 "answer": "",
                 "answer_verified": false,
-                "check_needed": true,
-                "uuid": "8c5152c3-7e9e-4c1f-a434-2ffdaffbccd8"
+                "check_needed": true
               },
               {
-                "id": "ex05_q_03",
+                "id": "75374ca3-2dca-4c34-b897-eaa2fccf5be7",
                 "prompt": "A：他______你一样大吗？\nB：不一样大。我______他大一岁。",
                 "answer": "",
                 "answer_verified": false,
-                "check_needed": true,
-                "uuid": "cde2de9b-96ac-43bd-882d-1c7488e52d96"
+                "check_needed": true
               },
               {
-                "id": "ex05_q_04",
+                "id": "4d0ee05b-d56d-4376-a884-2ca68b7d82a1",
                 "prompt": "A：这两瓶酒一样贵吗？\nB：不一样贵。这瓶______得多。",
                 "answer": "",
                 "answer_verified": false,
-                "check_needed": true,
-                "uuid": "a5d70568-36f1-4ca1-a006-7b2478125bff"
+                "check_needed": true
               },
               {
-                "id": "ex05_q_05",
+                "id": "942c6d4c-a625-4843-b3cc-5b0131e16b8d",
                 "prompt": "A：这两个箱子一样重吗？\nB：不一样重。这个______多了。",
                 "answer": "",
                 "answer_verified": false,
-                "check_needed": true,
-                "uuid": "e207d94e-c12b-4215-96ae-135129e8d24d"
+                "check_needed": true
               },
               {
-                "id": "ex05_q_06",
+                "id": "ba546a37-7735-4eec-8a50-c6df149bb3ff",
                 "prompt": "A：这两个地方一样冷吗？\nB：不一样冷。这儿______得多。",
                 "answer": "",
                 "answer_verified": false,
-                "check_needed": true,
-                "uuid": "242b2c26-a187-4445-b1bb-5d10bd2988be"
+                "check_needed": true
               }
             ],
             "rendering": {
@@ -3117,11 +2869,10 @@
               "allow_manual_check": true
             },
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "a5b18c26-bcb4-4b55-ab95-08513ccf5f44"
+            "check_needed": false
           },
           {
-            "id": "exercise_06",
+            "id": "60ec1197-2967-408c-a1f3-3c2112f8305a",
             "type": "answer_questions",
             "variant": "custom_textbook_task",
             "order": 6,
@@ -3133,76 +2884,68 @@
             },
             "questions": [
               {
-                "id": "ex06_q_01",
+                "id": "8766d3f1-51e1-4e82-9bf7-d17252a8653e",
                 "question": "山本的自行车是蓝的，你的自行车跟她的颜色一样吗？",
                 "answer": "",
                 "source_origin": "textbook",
                 "answer_verified": false,
-                "check_needed": false,
-                "uuid": "93a26046-92f1-4d28-b5eb-08c183e35be4"
+                "check_needed": false
               },
               {
-                "id": "ex06_q_02",
+                "id": "d2fe29f9-0133-4c9f-a3b4-3279a63a56a4",
                 "question": "爱德华周末想去书店，你想跟他一起去吗？",
                 "answer": "",
                 "source_origin": "textbook",
                 "answer_verified": false,
-                "check_needed": false,
-                "uuid": "01e599cd-dbe2-44a4-855f-ccf79fa4ec11"
+                "check_needed": false
               },
               {
-                "id": "ex06_q_03",
+                "id": "6bd521f4-025c-46a5-a751-e4c7a867dda9",
                 "question": "山本喜欢爬山，你的爱好跟她的一样吗？",
                 "answer": "",
                 "source_origin": "textbook",
                 "answer_verified": false,
-                "check_needed": false,
-                "uuid": "9399247f-641b-49c6-9224-5abc613603f7"
+                "check_needed": false
               },
               {
-                "id": "ex06_q_04",
+                "id": "abd241f1-0d34-4094-9565-06946739739e",
                 "question": "安娜喜欢吃中国菜，你跟她一样吗？",
                 "answer": "",
                 "source_origin": "textbook",
                 "answer_verified": false,
-                "check_needed": false,
-                "uuid": "bb98144f-bb48-4b16-9a97-54cf0bde7cf2"
+                "check_needed": false
               },
               {
-                "id": "ex06_q_05",
+                "id": "14c2bee7-7d2e-4b93-b4e8-6a15ee4f0551",
                 "question": "罗兰考了90分，你考得跟她一样好吗？",
                 "answer": "",
                 "source_origin": "textbook",
                 "answer_verified": false,
-                "check_needed": false,
-                "uuid": "5fb8abcb-8226-43e8-ac83-7743f3e34acc"
+                "check_needed": false
               },
               {
-                "id": "ex06_q_06",
+                "id": "abf79730-caca-4c12-96e4-dd5229c073ae",
                 "question": "麦克不会打太极拳，你呢？",
                 "answer": "",
                 "source_origin": "textbook",
                 "answer_verified": false,
-                "check_needed": false,
-                "uuid": "858e0283-b403-4636-8344-b8d8dc56ede9"
+                "check_needed": false
               },
               {
-                "id": "ex06_q_07",
+                "id": "6b0fa87b-81b3-48c4-a2aa-6ce92710abc9",
                 "question": "我们国家没有冬天，你们国家呢？",
                 "answer": "",
                 "source_origin": "textbook",
                 "answer_verified": false,
-                "check_needed": false,
-                "uuid": "6465224b-3dca-4d9f-9bc8-a67293dca518"
+                "check_needed": false
               },
               {
-                "id": "ex06_q_08",
+                "id": "b3f63569-71e5-49fd-b41c-ada5dcc6acbe",
                 "question": "玛丽对中国历史很感兴趣，你呢？",
                 "answer": "",
                 "source_origin": "textbook",
                 "answer_verified": false,
-                "check_needed": false,
-                "uuid": "c582dfe1-f738-4aa2-a742-d0c0978b3439"
+                "check_needed": false
               }
             ],
             "rendering": {
@@ -3210,11 +2953,10 @@
               "allow_manual_check": true
             },
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "92f248c4-ffd7-42a8-aea2-37a54964693e"
+            "check_needed": false
           },
           {
-            "id": "exercise_07",
+            "id": "1fd4313d-93f3-4cbe-9dd4-2ba0d5bac415",
             "type": "correct_sentence",
             "variant": "error_correction",
             "order": 7,
@@ -3226,64 +2968,58 @@
             },
             "questions": [
               {
-                "id": "ex07_q_01",
+                "id": "45a8afb3-4d41-4bac-879e-1440dde67d71",
                 "wrong": "他写了汉字跟你一样好。",
                 "correct": "",
                 "explanation_vi": "",
                 "answer_verified": false,
                 "source_origin": "textbook",
-                "check_needed": true,
-                "uuid": "cdf7d411-7579-44e6-8567-58ddc1cae8ae"
+                "check_needed": true
               },
               {
-                "id": "ex07_q_02",
+                "id": "b2ede27a-7ea6-4796-a59b-46b707309280",
                 "wrong": "我们班的学生比他们班一样多。",
                 "correct": "",
                 "explanation_vi": "",
                 "answer_verified": false,
                 "source_origin": "textbook",
-                "check_needed": true,
-                "uuid": "10fc2138-82e9-429a-a4af-f97d517ac420"
+                "check_needed": true
               },
               {
-                "id": "ex07_q_03",
+                "id": "98db6d2b-3824-444e-94cd-411f20be3802",
                 "wrong": "爸爸也妈妈一样，身体很好。",
                 "correct": "",
                 "explanation_vi": "",
                 "answer_verified": false,
                 "source_origin": "textbook",
-                "check_needed": true,
-                "uuid": "26802672-734e-49bf-baf7-8e005f0da417"
+                "check_needed": true
               },
               {
-                "id": "ex07_q_04",
+                "id": "5756bbe5-64bc-42c8-9b17-a6bba7812e96",
                 "wrong": "今天跟昨天冷一样。",
                 "correct": "",
                 "explanation_vi": "",
                 "answer_verified": false,
                 "source_origin": "textbook",
-                "check_needed": true,
-                "uuid": "655f037f-f2a1-41c9-bb03-8f7df0d1e88a"
+                "check_needed": true
               },
               {
-                "id": "ex07_q_05",
+                "id": "9bb06c86-2267-48b4-9e13-33e9dd0a6aba",
                 "wrong": "我们国家跟中国一样气候。",
                 "correct": "",
                 "explanation_vi": "",
                 "answer_verified": false,
                 "source_origin": "textbook",
-                "check_needed": true,
-                "uuid": "b024526b-7d80-4656-bf00-2b53eb490165"
+                "check_needed": true
               },
               {
-                "id": "ex07_q_06",
+                "id": "d879fff3-0681-4c3e-9c5a-919ca7fb1c20",
                 "wrong": "我的自行车跟他的一样红颜色。",
                 "correct": "",
                 "explanation_vi": "",
                 "answer_verified": false,
                 "source_origin": "textbook",
-                "check_needed": true,
-                "uuid": "db751279-9752-4465-8081-671586970d84"
+                "check_needed": true
               }
             ],
             "rendering": {
@@ -3291,11 +3027,10 @@
               "allow_manual_check": true
             },
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "9d4014b2-2ff5-4518-815a-cf9121fdc685"
+            "check_needed": false
           },
           {
-            "id": "exercise_08",
+            "id": "b9e46637-94ca-4fea-90cf-29155c015046",
             "type": "communication_dialogue",
             "variant": "role_play",
             "order": 8,
@@ -3307,108 +3042,96 @@
             },
             "dialogue": [
               {
-                "id": "ex08_line_01",
+                "id": "f52796f9-5f63-4af1-8948-89d7c85ee6fd",
                 "speaker": "A",
                 "zh": "你听天气预报了吗？",
                 "vi": "",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "b4b15cfa-a6ab-4aec-aa81-cbf480e9e3fa"
+                "check_needed": false
               },
               {
-                "id": "ex08_line_02",
+                "id": "b26d9060-a396-49b7-9afe-4d814fbc6004",
                 "speaker": "B",
                 "zh": "听了。",
                 "vi": "",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "46e99685-f870-4f1f-a847-6acd1b7f0cae"
+                "check_needed": false
               },
               {
-                "id": "ex08_line_03",
+                "id": "f5645182-4b46-494e-961f-3b5ec9164b36",
                 "speaker": "A",
                 "zh": "明天天气怎么样？",
                 "vi": "",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "993dad32-14fd-423c-831a-6115f38978d4"
+                "check_needed": false
               },
               {
-                "id": "ex08_line_04",
+                "id": "f5ee5452-4013-42e0-add2-74cd9655d1aa",
                 "speaker": "B",
                 "zh": "明天晴转多云，北风三四级转一二级，最高气温18度，最低气温是多少我没听清楚。",
                 "vi": "",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "73f52ca3-d7f3-40a8-a4ca-d594c904f353"
+                "check_needed": false
               },
               {
-                "id": "ex08_line_05",
+                "id": "7fe8fa5b-98fb-495c-b81a-8950b514a5ee",
                 "speaker": "A",
                 "zh": "我们那儿这个时候已经很冷了。北京的秋天真好！不冷也不热，不下雨，也很少刮大风。",
                 "vi": "",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "75e29fa3-db47-4993-999f-289a17b0e220"
+                "check_needed": false
               },
               {
-                "id": "ex08_line_06",
+                "id": "590f5123-b1cf-4406-ad15-905410435801",
                 "speaker": "B",
                 "zh": "可是，我觉得现在已经很冷了。",
                 "vi": "",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "a411d1d6-d9a8-4ceb-ad16-1f9d4bea0950"
+                "check_needed": false
               },
               {
-                "id": "ex08_line_07",
+                "id": "18980709-047d-4a36-b93d-9e35cbb641a0",
                 "speaker": "A",
                 "zh": "你怎么这么怕冷？你们那儿现在怎么样？",
                 "vi": "",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "71c104ad-7c9e-4d34-b203-a4049261ef63"
+                "check_needed": false
               },
               {
-                "id": "ex08_line_08",
+                "id": "4092035f-006c-4e87-a049-4557714dc3bc",
                 "speaker": "B",
                 "zh": "我们那儿跟北京不一样。北京一年有四个季节，我们那儿只有夏天。",
                 "vi": "",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "5636425b-cbb4-4fbe-8fb6-432c60468b84"
+                "check_needed": false
               },
               {
-                "id": "ex08_line_09",
+                "id": "e28f7cdd-1541-4e28-8531-ad465a229e1f",
                 "speaker": "A",
                 "zh": "只有夏天多好啊！可以常到海里去游泳。",
                 "vi": "",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "6eae2bf7-3753-4135-ba69-fc61d930369b"
+                "check_needed": false
               },
               {
-                "id": "ex08_line_10",
+                "id": "ebbe8ddf-1bb4-47ac-bc09-b176e5b25724",
                 "speaker": "B",
                 "zh": "可是太热了。",
                 "vi": "",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "cf43d3c8-7e91-4e53-b87e-ac024deda481"
+                "check_needed": false
               }
             ],
             "rendering": {
               "renderer": "exercise.communication_dialogue.v2"
             },
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "5403fcc0-79fc-4914-b4a9-730dd60b13e3"
+            "check_needed": false
           }
-        ],
-        "uuid": "a8d618e2-5e8d-4f1b-94df-bb306bc8216d"
+        ]
       },
       {
-        "id": "section_07_reading",
+        "id": "886f621e-85ce-4e1a-91df-d8d257596034",
         "type": "reading",
         "order": 7,
         "title": "阅读理解",
@@ -3417,7 +3140,7 @@
         "check_needed": false,
         "items": [
           {
-            "id": "reading_01",
+            "id": "9bd9a79e-3279-468d-9f4b-ecd1f7365e19",
             "type": "text_reading",
             "order": 1,
             "title": "赛马",
@@ -3426,157 +3149,141 @@
             "check_needed": false,
             "supplementary_vocab": [
               {
-                "id": "reading_vocab_01",
+                "id": "44d7974e-3a5b-45c0-a0e2-9b883d814cc6",
                 "hanzi": "赛",
                 "pinyin": "sài",
                 "meaning_vi": "thi đấu, đua, tranh tài",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "d09fd07b-63c2-4210-9229-838f818d490d"
+                "check_needed": false
               },
               {
-                "id": "reading_vocab_02",
+                "id": "f0d02d73-fc09-4310-a941-3b9d8c50d6a0",
                 "hanzi": "马",
                 "pinyin": "mǎ",
                 "meaning_vi": "ngựa",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "5629cf9a-b3c8-4041-a334-46f41bdc80e4"
+                "check_needed": false
               },
               {
-                "id": "reading_vocab_03",
+                "id": "6b66426c-8005-4e6a-aa9b-387dd914dc92",
                 "hanzi": "国王",
                 "pinyin": "guówáng",
                 "meaning_vi": "quốc vương, nhà vua",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "2cea211c-1a15-4acb-a727-d8a54c009527"
+                "check_needed": false
               },
               {
-                "id": "reading_vocab_04",
+                "id": "3c0b0ba4-7b1d-45c1-a701-b9e5f8ae5928",
                 "hanzi": "等",
                 "pinyin": "děng",
                 "meaning_vi": "hạng, cấp, loại",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "b17220ad-94d7-4c60-8527-afd8eb54bbfb"
+                "check_needed": false
               },
               {
-                "id": "reading_vocab_05",
+                "id": "077e6c6c-3462-47b0-ac93-6b325f5b1145",
                 "hanzi": "上等",
                 "pinyin": "shàngděng",
                 "meaning_vi": "hạng nhất, loại tốt",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "abb74ce6-4038-40ca-bb7f-12394db5d2cb"
+                "check_needed": false
               },
               {
-                "id": "reading_vocab_06",
+                "id": "1df9ccc5-a9e5-4ebb-b9ff-814448bf99a3",
                 "hanzi": "中等",
                 "pinyin": "zhōngděng",
                 "meaning_vi": "hạng trung",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "70eeadfa-206a-4b39-850f-bacc24850464"
+                "check_needed": false
               },
               {
-                "id": "reading_vocab_07",
+                "id": "771cae37-068b-43bf-90d2-afbb351ce227",
                 "hanzi": "下等",
                 "pinyin": "xiàděng",
                 "meaning_vi": "hạng thấp",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "813f7cda-11dc-48e9-b502-878341f613ec"
+                "check_needed": false
               },
               {
-                "id": "reading_vocab_08",
+                "id": "9a34b8d8-43d8-4a1c-822f-284b33d357bf",
                 "hanzi": "场",
                 "pinyin": "chǎng",
                 "meaning_vi": "lượng từ cho trận đấu / hoạt động giải trí, thể thao",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "5bf5c687-312b-4a03-b3b2-29b459d79c2d"
+                "check_needed": false
               },
               {
-                "id": "reading_vocab_09",
+                "id": "25bdb49c-da31-43a4-8707-18c57b2a7d1d",
                 "hanzi": "同样",
                 "pinyin": "tóngyàng",
                 "meaning_vi": "giống nhau, cùng kiểu, cùng cách",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "5b736d84-6c30-4282-8e85-225607c9f4ed"
+                "check_needed": false
               }
             ],
             "paragraphs": [
               {
-                "id": "reading_01_p01",
+                "id": "d2a4cf8b-55cd-4904-9fed-3141da682b19",
                 "order": 1,
                 "zh": "两千多年前，有个人叫田忌，很喜欢赛马。一天，国王对他说：“听说你又买了一些好马，我们再赛赛怎么样？”",
                 "pinyin": "",
                 "vi": "",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "a8e8b7ed-185b-4e4c-9812-890e8fe9ea23"
+                "check_needed": false
               },
               {
-                "id": "reading_01_p02",
+                "id": "a6b1119e-769b-4444-9eee-c4a26d7f6af3",
                 "order": 2,
                 "zh": "田忌知道自己的马没有国王的好，但是又不好意思说不赛，就答应了。",
                 "pinyin": "",
                 "vi": "",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "6a67bf75-c922-4237-b5d8-0dbdaaf532a9"
+                "check_needed": false
               },
               {
-                "id": "reading_01_p03",
+                "id": "ce8bdbc9-b498-418a-ab2c-e16111228a35",
                 "order": 3,
                 "zh": "田忌和国王的马，都分三等：上等、中等、下等。比赛进行三场，每场赛三次，按最后的得分决定输赢。",
                 "pinyin": "",
                 "vi": "",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "a61e2830-f9dc-4e7c-bfef-c56488bcebe0"
+                "check_needed": false
               },
               {
-                "id": "reading_01_p04",
+                "id": "b3e5d57c-8b64-4c60-b5f0-3976cd13fef0",
                 "order": 4,
                 "zh": "比赛开始了。第一场，田忌用同等级的马跟国王赛，田忌的马都没有国王的马跑得快，结果三次都输了。",
                 "pinyin": "",
                 "vi": "",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "73d1ad48-249a-4c7f-9318-263f846c7d81"
+                "check_needed": false
               },
               {
-                "id": "reading_01_p05",
+                "id": "383c7578-216f-41aa-a8a5-b889b7ef0fec",
                 "order": 5,
                 "zh": "田忌输了第一场，心里很不高兴。这时一个朋友对他说：“你不能这样赛，我教你一个办法……”",
                 "pinyin": "",
                 "vi": "",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "b9e7df7e-d626-49de-ad21-6726cb3506c8"
+                "check_needed": false
               },
               {
-                "id": "reading_01_p06",
+                "id": "bbed4df4-546b-4399-90a0-483fe2b0f43b",
                 "order": 6,
                 "zh": "第二场比赛开始了。田忌先用下等马跟国王的上等马赛，结果田忌输了。大家都想，这场比赛田忌又要输。但是第二次比赛，当国王用中等马时，田忌却用了上等马。田忌的上等马比国王的中等马跑得快，这次田忌赢了。第三次，田忌用中等马跟国王的下等马赛，结果又赢了。这样，第二场比赛国王输了。",
                 "pinyin": "",
                 "vi": "",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "4ae77ad5-867f-41b7-8861-c865f6ee85a5"
+                "check_needed": false
               },
               {
-                "id": "reading_01_p07",
+                "id": "65b480dc-c5c7-41fb-a021-f43e4aacf57c",
                 "order": 7,
                 "zh": "第三场跟第二场一样，田忌用同样的方法又赢了国王。比赛的结果是二比一，田忌赢了。",
                 "pinyin": "",
                 "vi": "",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "2d11c34f-344d-413f-9e56-0f63b060c267"
+                "check_needed": false
               }
             ],
             "translation_vi": [
@@ -3590,46 +3297,41 @@
             ],
             "questions": [
               {
-                "id": "reading_q_01",
+                "id": "e81c0412-b4fa-43e2-bd9d-e364cbcd8096",
                 "question": "比赛一共进行了几次？",
                 "answer": "比赛一共进行了三场，每场三次。",
                 "answer_vi": "Cuộc thi tổng cộng tiến hành ba ván, mỗi ván ba lượt.",
                 "evidence": [],
                 "source_origin": "textbook_question_generated_answer",
                 "answer_verified": false,
-                "check_needed": true,
-                "uuid": "87be0acd-148e-4a08-ae36-f67b7f3d1329"
+                "check_needed": true
               },
               {
-                "id": "reading_q_02",
+                "id": "ad0e09b0-da17-4adf-895b-6c58a776489c",
                 "question": "田忌赢了几场？",
                 "answer": "田忌赢了两场。",
                 "answer_vi": "Điền Kỵ thắng hai ván.",
                 "evidence": [],
                 "source_origin": "textbook_question_generated_answer",
                 "answer_verified": false,
-                "check_needed": true,
-                "uuid": "3b5e23db-4e10-4beb-8509-b90552eddc86"
+                "check_needed": true
               },
               {
-                "id": "reading_q_03",
+                "id": "3b56612b-652e-4497-a723-f04d5ec8b98e",
                 "question": "最后田忌为什么赢了国王？",
                 "answer": "因为田忌用了朋友教他的办法，没有用同等级的马跟国王赛，而是用下等马对国王的上等马，用上等马对国王的中等马，用中等马对国王的下等马，所以最后赢了国王。",
                 "answer_vi": "Vì Điền Kỵ dùng cách mà bạn chỉ cho, nên cuối cùng thắng nhà vua.",
                 "evidence": [],
                 "source_origin": "textbook_question_generated_answer",
                 "answer_verified": false,
-                "check_needed": true,
-                "uuid": "6905ffe7-7a6d-4302-a666-224e1125ff6d"
+                "check_needed": true
               }
-            ],
-            "uuid": "75521d55-073f-4c00-bf4f-3d7a6db86781"
+            ]
           }
-        ],
-        "uuid": "1ac217c3-a21f-4dad-b476-9694de4484d3"
+        ]
       },
       {
-        "id": "section_08_character_writing",
+        "id": "2a3cfdb8-618f-43d3-9ad4-160d1dbb366a",
         "type": "character_writing",
         "order": 8,
         "title": "写汉字",
@@ -3637,11 +3339,10 @@
         "source_origin": "textbook",
         "check_needed": false,
         "items": [],
-        "empty_reason_vi": "Bài này không thấy phần 写汉字 riêng trong PDF sau 阅读理解.",
-        "uuid": "b51d2248-3e1a-44d7-a951-4e07b456cf8b"
+        "empty_reason_vi": "Bài này không thấy phần 写汉字 riêng trong PDF sau 阅读理解."
       },
       {
-        "id": "section_09_summary",
+        "id": "944b8c3a-d3d4-4265-a907-10cef8340ac2",
         "type": "summary",
         "order": 9,
         "title": "总结",
@@ -3661,14 +3362,12 @@
           ],
           "grammar_points": [
             {
-              "id": "grammar_01",
-              "title": "跟……一样 / 跟……不一样",
-              "uuid": "3f703d62-b085-4d22-972b-a5fe3b938347"
+              "id": "f8ec59f3-898a-47b2-b536-44dfd8183393",
+              "title": "跟……一样 / 跟……不一样"
             },
             {
-              "id": "grammar_02",
-              "title": "不但……而且……",
-              "uuid": "fc3cc715-b4a5-4098-b43b-b5fa9f3e4372"
+              "id": "57b14753-688a-41b6-9e0d-b61dbbf574d7",
+              "title": "不但……而且……"
             }
           ],
           "sentence_patterns": [
@@ -3692,10 +3391,52 @@
             "character_writing_covered": true,
             "remaining_check_needed": "Exercise answer keys for open-ended/transform/correction items are left check_needed where not explicitly verified from textbook."
           }
-        },
-        "uuid": "52495c17-e81b-4a50-b22e-4057a610ca5a"
+        }
       }
     ],
+    "metadata": {
+      "legacy_id": "hanyu_2_1_lesson_07",
+      "book": "Hanyu Jiaocheng",
+      "volume": "第二册上",
+      "volume_vi": "Quyển 2 Thượng",
+      "lesson_index": 7,
+      "lesson_number_cn": "第七课",
+      "lesson_title_cn": "我们那儿的冬天跟北京一样冷",
+      "lesson_title_pinyin": "Wǒmen nàr de dōngtiān gēn Běijīng yíyàng lěng",
+      "lesson_title_vi": "Mùa đông ở chỗ chúng tôi lạnh như Bắc Kinh",
+      "lesson_title_en": "The winter in my hometown is as cold as in Beijing",
+      "source_files": [
+        {
+          "name": "Hanyu Jiaocheng 2-1.pdf",
+          "type": "pdf_scan",
+          "source_origin": "textbook",
+          "check_needed": true,
+          "page_start": 108,
+          "page_end": 124,
+          "note": "PDF scan; lesson content extracted in conversation PART 01–06."
+        },
+        {
+          "name": "Tong_hop_tu_vung_Han_ngu_quyen_2_Bai_1-25.docx",
+          "type": "uploaded_crosscheck",
+          "source_origin": "uploaded_crosscheck",
+          "check_needed": false,
+          "note": "Used to cross-check main vocabulary and absence of proper nouns."
+        },
+        {
+          "name": "Học kì 2 上-下.md",
+          "type": "uploaded_crosscheck",
+          "source_origin": "uploaded_crosscheck",
+          "check_needed": false,
+          "note": "Used to cross-check main grammar points."
+        },
+        {
+          "name": "hanyuLesson.schema.v2.3.0.full.ts",
+          "type": "schema",
+          "source_origin": "uploaded_crosscheck",
+          "check_needed": false
+        }
+      ]
+    },
     "summary": {
       "lesson_parts": [
         "课文",
@@ -3709,14 +3450,12 @@
       ],
       "grammar_points": [
         {
-          "id": "grammar_01",
-          "title": "跟……一样 / 跟……不一样",
-          "uuid": "a3a9c21f-1449-44eb-a475-8967d48acd7f"
+          "id": "f8ec59f3-898a-47b2-b536-44dfd8183393",
+          "title": "跟……一样 / 跟……不一样"
         },
         {
-          "id": "grammar_02",
-          "title": "不但……而且……",
-          "uuid": "5cee7859-5626-48a6-8df8-cf93d4b07a98"
+          "id": "57b14753-688a-41b6-9e0d-b61dbbf574d7",
+          "title": "不但……而且……"
         }
       ],
       "main_patterns": [],
@@ -3731,211 +3470,6 @@
         "Hội thoại giao tiếp: nói về thời tiết"
       ],
       "check_needed": false
-    },
-    "uuid": "834b2c39-a685-4ba6-b157-7bf18bf97f03"
-  },
-  "coverage_report": {
-    "version": "coverage_v1",
-    "coverage_status": "complete_unverified",
-    "expected_exercise_count_from_pdf": 9,
-    "actual_exercise_count_in_json": 9,
-    "all_exercises_covered": true,
-    "all_exercise_content_verified": false,
-    "missing_exercise_indexes": [],
-    "expected_exercises_from_pdf": [
-      {
-        "order": 1,
-        "title_cn": "一、语音",
-        "title_vi": "Ngữ âm",
-        "canonical_type": "phonetics",
-        "canonical_variant": "pronunciation_tone_minimal_pairs",
-        "json_item_id": "exercise_01",
-        "page_start": 114,
-        "page_end": 114,
-        "extracted": true,
-        "content_verified": true,
-        "answer_verified": false,
-        "source_origin": "textbook",
-        "check_needed": false,
-        "missing_reason": ""
-      },
-      {
-        "order": 2,
-        "title_cn": "二、替换",
-        "title_vi": "Thay thế",
-        "canonical_type": "substitution_drill",
-        "canonical_variant": "substitution_or_transform_drill",
-        "json_item_id": "exercise_02",
-        "page_start": 114,
-        "page_end": 116,
-        "extracted": true,
-        "content_verified": true,
-        "answer_verified": false,
-        "source_origin": "textbook",
-        "check_needed": false,
-        "missing_reason": ""
-      },
-      {
-        "order": 3,
-        "title_cn": "三、选词填空",
-        "title_vi": "Chọn từ điền chỗ trống",
-        "canonical_type": "choose_words_fill_blank",
-        "canonical_variant": "word_bank_fill_blank",
-        "json_item_id": "exercise_03",
-        "page_start": 116,
-        "page_end": 117,
-        "extracted": true,
-        "content_verified": true,
-        "answer_verified": true,
-        "source_origin": "textbook_question_generated_answer",
-        "check_needed": false,
-        "missing_reason": ""
-      },
-      {
-        "order": 4,
-        "title_cn": "四、用“跟……一样 / 不一样”说句子",
-        "title_vi": "Dùng mẫu câu nói câu",
-        "canonical_type": "complete_sentence",
-        "canonical_variant": "complete_sentence_with_given_words",
-        "json_item_id": "exercise_04",
-        "page_start": 117,
-        "page_end": 118,
-        "extracted": true,
-        "content_verified": true,
-        "answer_verified": false,
-        "source_origin": "textbook",
-        "check_needed": true,
-        "missing_reason": ""
-      },
-      {
-        "order": 5,
-        "title_cn": "五、用适当的词语填空",
-        "title_vi": "Điền từ thích hợp",
-        "canonical_type": "fill_blank",
-        "canonical_variant": "free_fill_blank",
-        "json_item_id": "exercise_05",
-        "page_start": 118,
-        "page_end": 119,
-        "extracted": true,
-        "content_verified": true,
-        "answer_verified": false,
-        "source_origin": "textbook",
-        "check_needed": true,
-        "missing_reason": ""
-      },
-      {
-        "order": 6,
-        "title_cn": "六、根据实际情况回答问题",
-        "title_vi": "Trả lời theo thực tế",
-        "canonical_type": "answer_questions",
-        "canonical_variant": "custom_textbook_task",
-        "json_item_id": "exercise_06",
-        "page_start": 119,
-        "page_end": 119,
-        "extracted": true,
-        "content_verified": true,
-        "answer_verified": false,
-        "source_origin": "textbook",
-        "check_needed": false,
-        "missing_reason": ""
-      },
-      {
-        "order": 7,
-        "title_cn": "七、改错句",
-        "title_vi": "Sửa câu sai",
-        "canonical_type": "correct_sentence",
-        "canonical_variant": "error_correction",
-        "json_item_id": "exercise_07",
-        "page_start": 119,
-        "page_end": 120,
-        "extracted": true,
-        "content_verified": true,
-        "answer_verified": false,
-        "source_origin": "textbook",
-        "check_needed": true,
-        "missing_reason": ""
-      },
-      {
-        "order": 8,
-        "title_cn": "八、交际会话",
-        "title_vi": "Hội thoại giao tiếp",
-        "canonical_type": "communication_dialogue",
-        "canonical_variant": "role_play",
-        "json_item_id": "exercise_08",
-        "page_start": 120,
-        "page_end": 121,
-        "extracted": true,
-        "content_verified": true,
-        "answer_verified": false,
-        "source_origin": "textbook",
-        "check_needed": false,
-        "missing_reason": ""
-      },
-      {
-        "order": 9,
-        "title_cn": "九、阅读理解",
-        "title_vi": "Đọc hiểu",
-        "canonical_type": "reading_comprehension",
-        "canonical_variant": "reading_comprehension",
-        "json_item_id": "reading_01",
-        "page_start": 121,
-        "page_end": 122,
-        "extracted": true,
-        "content_verified": true,
-        "answer_verified": false,
-        "source_origin": "textbook_question_generated_answer",
-        "check_needed": true,
-        "missing_reason": ""
-      }
-    ],
-    "unknown_or_unmapped_blocks": [],
-    "coverage_gates": [
-      {
-        "id": "gate_text",
-        "label": "Text covered",
-        "passed": true,
-        "expected": 2,
-        "actual": 2,
-        "reason": "",
-        "uuid": "e9f9c7c1-ebda-4826-851f-1f8a40caa196"
-      },
-      {
-        "id": "gate_vocab",
-        "label": "Vocabulary covered",
-        "passed": true,
-        "expected": 40,
-        "actual": 40,
-        "reason": "",
-        "uuid": "e9ac84e3-6b69-4c99-8ce5-94292b92aacb"
-      },
-      {
-        "id": "gate_exercises",
-        "label": "Exercises covered",
-        "passed": true,
-        "expected": 9,
-        "actual": 9,
-        "reason": "",
-        "uuid": "bcf79d0b-8f5e-4db1-82ba-64548177839f"
-      },
-      {
-        "id": "gate_reading",
-        "label": "Reading covered",
-        "passed": true,
-        "expected": 1,
-        "actual": 1,
-        "reason": "",
-        "uuid": "96775d26-9e3a-492e-8852-b2154ca467e5"
-      },
-      {
-        "id": "gate_verified_final",
-        "label": "Final verification allowed",
-        "passed": false,
-        "expected": "manual full verification",
-        "actual": "complete_unverified",
-        "reason": "Open-ended exercise answers and reading answers are not fully textbook-verified.",
-        "uuid": "ca2e0d5c-c78a-40cb-9ba6-a079c876662c"
-      }
-    ],
-    "final_verification_allowed": false
+    }
   }
 }

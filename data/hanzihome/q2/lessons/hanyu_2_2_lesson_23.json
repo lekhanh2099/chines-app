@@ -1,66 +1,6 @@
 {
-  "schema_version": "2.3.0",
-  "content_type": "chinese_textbook_lesson",
-  "verification_status": "verified",
-  "source": {
-    "book": "Hanyu Jiaocheng",
-    "volume": "第二册下",
-    "volume_vi": "Quyển 2 Hạ",
-    "lesson_index": 23,
-    "lesson_number_cn": "第二十三课",
-    "lesson_title_cn": "寒假你打算去哪儿旅行",
-    "lesson_title_pinyin": "Hánjià nǐ dǎsuàn qù nǎr lǚxíng",
-    "lesson_title_vi": "Kỳ nghỉ đông bạn định đi đâu du lịch?",
-    "lesson_title_en": "Where are you planning to travel during the winter vacation?",
-    "source_files": [
-      {
-        "name": "Hanyu Jiaocheng 2-2.pdf",
-        "type": "pdf_scan",
-        "source_origin": "textbook",
-        "check_needed": true,
-        "page_start": 167,
-        "page_end": 180
-      },
-      {
-        "name": "Tong_hop_tu_vung_Han_ngu_quyen_2_Bai_1-25.docx",
-        "type": "uploaded_crosscheck",
-        "source_origin": "uploaded_crosscheck",
-        "check_needed": false
-      },
-      {
-        "name": "Học kì 2 上-下.md",
-        "type": "uploaded_crosscheck",
-        "source_origin": "uploaded_crosscheck",
-        "check_needed": false
-      },
-      {
-        "name": "hanyu_lesson_full_coverage_sample_v2_3_0.json",
-        "type": "structure_sample",
-        "source_origin": "uploaded_crosscheck",
-        "check_needed": false
-      },
-      {
-        "name": "hanyuLesson.schema.v2.3.0.full.ts",
-        "type": "schema",
-        "source_origin": "uploaded_crosscheck",
-        "check_needed": false
-      }
-    ],
-    "web_crosscheck": [
-      {
-        "title": "Lesson 23: 寒假你打算去哪儿旅行？ — Hack Chinese",
-        "source_origin": "web_crosscheck",
-        "note": "Used only to cross-check lesson identity and vocabulary count, not as replacement for textbook PDF."
-      },
-      {
-        "title": "Hanyu Jiaocheng 2-2 product/table-of-contents pages",
-        "source_origin": "web_crosscheck",
-        "note": "Used only to cross-check volume/lesson presence."
-      }
-    ]
-  },
   "lesson": {
-    "id": "hanyu_2_2_lesson_23",
+    "id": "797e3ba2-5d5d-45d7-8cd7-aeca38cd6056",
     "title": {
       "zh": "寒假你打算去哪儿旅行",
       "pinyin": "Hánjià nǐ dǎsuàn qù nǎr lǚxíng",
@@ -76,7 +16,7 @@
     ],
     "sections": [
       {
-        "id": "section_01_text",
+        "id": "a6c0d522-99be-4f36-881c-b9b2c6beeb85",
         "type": "text",
         "order": 1,
         "title": "课文",
@@ -85,7 +25,7 @@
         "check_needed": false,
         "blocks": [
           {
-            "id": "text_01",
+            "id": "e155d5ea-f89d-45f0-ab8d-094ce9e719f0",
             "type": "text_dialogue",
             "order": 1,
             "title": "吃什么都可以",
@@ -95,25 +35,24 @@
             "paragraphs": [],
             "lines": [
               {
-                "id": "text_01_l01",
+                "id": "f8046d8e-353e-4b63-a072-7498c8f1d9ff",
                 "order": 1,
                 "speaker": "麦克",
                 "zh": "我有点儿饿了，想吃点儿什么。你呢？",
                 "vi": "Tôi hơi đói rồi, muốn ăn chút gì đó. Còn bạn?",
                 "pinyin": "",
                 "grammar_refs": [
-                  "grammar_01"
+                  "f8ec59f3-898a-47b2-b536-44dfd8183393"
                 ],
                 "vocab_refs": [
-                  "vocab_001"
+                  "68c05a12-9d8e-45d9-a413-786bcf2f780a"
                 ],
                 "audio_key": "",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "f0de763b-3e35-4706-9b33-ea9c35fb891b"
+                "check_needed": false
               },
               {
-                "id": "text_01_l02",
+                "id": "30929615-34c8-4e5b-b0a2-5ad3358ad755",
                 "order": 2,
                 "speaker": "玛丽",
                 "zh": "我也又饿又渴。咱们去饭馆儿吧。",
@@ -121,123 +60,116 @@
                 "pinyin": "",
                 "grammar_refs": [],
                 "vocab_refs": [
-                  "vocab_001"
+                  "68c05a12-9d8e-45d9-a413-786bcf2f780a"
                 ],
                 "audio_key": "",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "8239b08d-7f67-4398-9444-6a1ff6622c51"
+                "check_needed": false
               },
               {
-                "id": "text_01_l03",
+                "id": "9faf6980-effe-42f1-a01e-7f1740da2edb",
                 "order": 3,
                 "speaker": "麦克",
                 "zh": "你想吃点儿什么？",
                 "vi": "Bạn muốn ăn chút gì?",
                 "pinyin": "",
                 "grammar_refs": [
-                  "grammar_01"
+                  "f8ec59f3-898a-47b2-b536-44dfd8183393"
                 ],
                 "vocab_refs": [
-                  "vocab_002"
+                  "8c18cf3c-e9dc-42e1-8faf-eb26799cabab"
                 ],
                 "audio_key": "",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "fe430044-a82a-4615-a006-7eb0ec08e7ff"
+                "check_needed": false
               },
               {
-                "id": "text_01_l04",
+                "id": "146f8fa1-ae74-468d-910e-19cab53e3cf3",
                 "order": 4,
                 "speaker": "玛丽",
                 "zh": "你点吧，什么都可以。",
                 "vi": "Bạn gọi đi, món gì cũng được.",
                 "pinyin": "",
                 "grammar_refs": [
-                  "grammar_01"
+                  "f8ec59f3-898a-47b2-b536-44dfd8183393"
                 ],
                 "vocab_refs": [
-                  "vocab_002"
+                  "8c18cf3c-e9dc-42e1-8faf-eb26799cabab"
                 ],
                 "audio_key": "",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "826c2332-a787-4d43-91e8-6c32d8e3fe45"
+                "check_needed": false
               },
               {
-                "id": "text_01_l05",
+                "id": "44d4c32e-309d-4802-b7cf-e41ee8052535",
                 "order": 5,
                 "speaker": "麦克",
                 "zh": "那就什么好吃吃什么。",
                 "vi": "Vậy món nào ngon thì ăn món đó.",
                 "pinyin": "",
                 "grammar_refs": [
-                  "grammar_01"
+                  "f8ec59f3-898a-47b2-b536-44dfd8183393"
                 ],
                 "vocab_refs": [
-                  "vocab_003"
+                  "1fbd69b7-603a-44ea-8d57-10cd4def9ced"
                 ],
                 "audio_key": "",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "c7daf1ff-ffe7-445c-9394-688919afc37f"
+                "check_needed": false
               },
               {
-                "id": "text_01_l06",
+                "id": "6f4b4423-8315-40e6-88fa-2fa2038271af",
                 "order": 6,
                 "speaker": "服务员",
                 "zh": "你们两位要点儿什么？",
                 "vi": "Hai vị muốn gọi chút gì?",
                 "pinyin": "",
                 "grammar_refs": [
-                  "grammar_01"
+                  "f8ec59f3-898a-47b2-b536-44dfd8183393"
                 ],
                 "vocab_refs": [
-                  "vocab_002"
+                  "8c18cf3c-e9dc-42e1-8faf-eb26799cabab"
                 ],
                 "audio_key": "",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "7e57f2b6-d6e0-4048-813d-3c8d3f35f11e"
+                "check_needed": false
               },
               {
-                "id": "text_01_l07",
+                "id": "6de58c5b-164f-4b2f-8d7e-84f1c7c1a66c",
                 "order": 7,
                 "speaker": "麦克",
                 "zh": "服务员，你们这儿有什么好吃的菜？",
                 "vi": "Phục vụ ơi, ở đây có món gì ngon?",
                 "pinyin": "",
                 "grammar_refs": [
-                  "grammar_01"
+                  "f8ec59f3-898a-47b2-b536-44dfd8183393"
                 ],
                 "vocab_refs": [
-                  "vocab_003"
+                  "1fbd69b7-603a-44ea-8d57-10cd4def9ced"
                 ],
                 "audio_key": "",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "e7a91a67-2d4a-46ed-b95a-b43613e6ae72"
+                "check_needed": false
               },
               {
-                "id": "text_01_l08",
+                "id": "9d76be1a-c606-44bb-a490-a9bd82982e3b",
                 "order": 8,
                 "speaker": "服务员",
                 "zh": "我们这儿什么菜都好吃啊。",
                 "vi": "Ở chỗ chúng tôi món nào cũng ngon cả.",
                 "pinyin": "",
                 "grammar_refs": [
-                  "grammar_01"
+                  "f8ec59f3-898a-47b2-b536-44dfd8183393"
                 ],
                 "vocab_refs": [
-                  "vocab_003"
+                  "1fbd69b7-603a-44ea-8d57-10cd4def9ced"
                 ],
                 "audio_key": "",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "ca0ca8eb-ef21-411e-83fe-1f072838afef"
+                "check_needed": false
               },
               {
-                "id": "text_01_l09",
+                "id": "6e148072-17aa-4ebd-88a1-c59b2fc0ba17",
                 "order": 9,
                 "speaker": "麦克",
                 "zh": "是吗？那把你们这儿最好吃的菜给我们来两个。",
@@ -245,15 +177,14 @@
                 "pinyin": "",
                 "grammar_refs": [],
                 "vocab_refs": [
-                  "vocab_003"
+                  "1fbd69b7-603a-44ea-8d57-10cd4def9ced"
                 ],
                 "audio_key": "",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "fba0871f-ba83-4316-b781-edd173c5f644"
+                "check_needed": false
               },
               {
-                "id": "text_01_l10",
+                "id": "a8845639-9fca-4398-853d-a08fb63482a8",
                 "order": 10,
                 "speaker": "服务员",
                 "zh": "这儿的辣子鸡丁和糖醋鱼都不错。",
@@ -261,52 +192,48 @@
                 "pinyin": "",
                 "grammar_refs": [],
                 "vocab_refs": [
-                  "vocab_004",
-                  "vocab_005"
+                  "3dc505f1-bc0e-4a96-b448-17fed89fdc60",
+                  "188412d4-4c23-4d60-b7b2-21f3490199e7"
                 ],
                 "audio_key": "",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "d65ab6a8-858b-4e87-be46-4268b8a39e38"
+                "check_needed": false
               },
               {
-                "id": "text_01_l11",
+                "id": "eb3a72ec-54fc-469d-929b-b614c65e00f1",
                 "order": 11,
                 "speaker": "麦克",
                 "zh": "那就一样来一个吧。我们喝点儿什么呢？",
                 "vi": "Vậy mỗi món lấy một phần đi. Chúng ta uống chút gì nhỉ?",
                 "pinyin": "",
                 "grammar_refs": [
-                  "grammar_01"
+                  "f8ec59f3-898a-47b2-b536-44dfd8183393"
                 ],
                 "vocab_refs": [],
                 "audio_key": "",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "9b81a8f5-2051-4faa-8c63-9a97ac2c973f"
+                "check_needed": false
               },
               {
-                "id": "text_01_l12",
+                "id": "5d22fae9-a022-41b5-a551-b9b68c51b516",
                 "order": 12,
                 "speaker": "玛丽",
                 "zh": "随便。你说喝什么就喝什么吧。",
                 "vi": "Tùy bạn. Bạn nói uống gì thì uống cái đó đi.",
                 "pinyin": "",
                 "grammar_refs": [
-                  "grammar_01"
+                  "f8ec59f3-898a-47b2-b536-44dfd8183393"
                 ],
                 "vocab_refs": [],
                 "audio_key": "",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "671c70b2-6abc-4a85-8968-5ae0bb19fbfa"
+                "check_needed": false
               }
             ],
-            "comprehension_questions": [],
-            "uuid": "f0f2921e-cff1-4fc1-9cfa-e7c049711fbd"
+            "comprehension_questions": []
           },
           {
-            "id": "text_02",
+            "id": "0156dd39-d5b4-41f5-866d-d336dd29bbc2",
             "type": "text_dialogue",
             "order": 2,
             "title": "你是哪儿冷去哪儿啊",
@@ -316,7 +243,7 @@
             "paragraphs": [],
             "lines": [
               {
-                "id": "text_02_l01",
+                "id": "887014e5-f6b0-4777-9f95-85a69532ca36",
                 "order": 1,
                 "speaker": "田中",
                 "zh": "时间过得真快，下周考完试就要放寒假了。",
@@ -324,15 +251,14 @@
                 "pinyin": "",
                 "grammar_refs": [],
                 "vocab_refs": [
-                  "vocab_006"
+                  "5ea44727-d97c-467b-b1b8-babd195df50d"
                 ],
                 "audio_key": "",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "5c651321-2555-4900-bb1c-c244d954890f"
+                "check_needed": false
               },
               {
-                "id": "text_02_l02",
+                "id": "65232ef9-30a1-4305-b8b7-12a8ac5aeb91",
                 "order": 2,
                 "speaker": "麦克",
                 "zh": "是啊。寒假你有什么打算吗？",
@@ -342,45 +268,42 @@
                 "vocab_refs": [],
                 "audio_key": "",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "ed1882ee-f09e-4814-a175-1d61399f9592"
+                "check_needed": false
               },
               {
-                "id": "text_02_l03",
+                "id": "2c1213ac-f81d-414f-8b55-5abe77fe83fc",
                 "order": 3,
                 "speaker": "田中",
                 "zh": "学校要组织留学生去外地旅行，谁都可以报名，你报名吗？",
                 "vi": "Trường sẽ tổ chức cho lưu học sinh đi du lịch nơi khác, ai cũng có thể đăng ký, bạn có đăng ký không?",
                 "pinyin": "",
                 "grammar_refs": [
-                  "grammar_01"
+                  "f8ec59f3-898a-47b2-b536-44dfd8183393"
                 ],
                 "vocab_refs": [
-                  "vocab_007"
+                  "54613016-834a-4fc3-9912-2357a6d27058"
                 ],
                 "audio_key": "",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "11ac0aeb-800b-4da7-8aad-1f32352e223a"
+                "check_needed": false
               },
               {
-                "id": "text_02_l04",
+                "id": "d797c234-0a16-42e3-bc45-29782e65cb1b",
                 "order": 4,
                 "speaker": "麦克",
                 "zh": "我听谁说过这件事儿。不过我想自己去旅行。",
                 "vi": "Tôi có nghe ai đó nói chuyện này rồi. Nhưng tôi muốn tự mình đi du lịch.",
                 "pinyin": "",
                 "grammar_refs": [
-                  "grammar_01"
+                  "f8ec59f3-898a-47b2-b536-44dfd8183393"
                 ],
                 "vocab_refs": [],
                 "audio_key": "",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "6e4f7c91-5d4e-4a2e-ae13-0c4b514c0251"
+                "check_needed": false
               },
               {
-                "id": "text_02_l05",
+                "id": "c99f042b-fa9a-478c-aba1-5da333a677e1",
                 "order": 5,
                 "speaker": "田中",
                 "zh": "去哪儿？",
@@ -390,49 +313,46 @@
                 "vocab_refs": [],
                 "audio_key": "",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "9f88ccc6-5112-4745-819e-187993d07e4d"
+                "check_needed": false
               },
               {
-                "id": "text_02_l06",
+                "id": "e8680b0f-6dcc-4fc7-abbd-084aba5d3b87",
                 "order": 6,
                 "speaker": "麦克",
                 "zh": "哪儿好玩儿就去哪儿。我想去哈尔滨。",
                 "vi": "Chỗ nào vui thì đi chỗ đó. Tôi muốn đi Cáp Nhĩ Tân.",
                 "pinyin": "",
                 "grammar_refs": [
-                  "grammar_01"
+                  "f8ec59f3-898a-47b2-b536-44dfd8183393"
                 ],
                 "vocab_refs": [
-                  "vocab_008",
-                  "pn_extra_01"
+                  "0da97406-c3ac-4fcb-a51c-398a59c3fbae",
+                  "5ec05b3a-2b29-4f33-961a-cbc764fc73de"
                 ],
                 "audio_key": "",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "6fabb6fa-2b83-4aae-a6f2-0f6dcfcbbcf4"
+                "check_needed": false
               },
               {
-                "id": "text_02_l07",
+                "id": "cc8da348-3e89-4f64-a680-de239f505497",
                 "order": 7,
                 "speaker": "田中",
                 "zh": "哈尔滨？你是哪儿冷去哪儿啊。现在那儿白天已经零下二十多度了。",
                 "vi": "Cáp Nhĩ Tân á? Bạn chỗ nào lạnh thì đi chỗ đó hả? Bây giờ ban ngày ở đó đã âm hơn hai mươi độ rồi.",
                 "pinyin": "",
                 "grammar_refs": [
-                  "grammar_01"
+                  "f8ec59f3-898a-47b2-b536-44dfd8183393"
                 ],
                 "vocab_refs": [
-                  "vocab_009",
-                  "pn_extra_01"
+                  "54b36889-82be-485b-8342-fb8aab572065",
+                  "5ec05b3a-2b29-4f33-961a-cbc764fc73de"
                 ],
                 "audio_key": "",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "f840e806-dbf2-461e-b77a-af845e5d22e3"
+                "check_needed": false
               },
               {
-                "id": "text_02_l08",
+                "id": "2adb7cf6-26c1-4029-809e-67342fb0227f",
                 "order": 8,
                 "speaker": "麦克",
                 "zh": "听说哈尔滨的冰灯冰雕很好看，我想去看看。",
@@ -440,17 +360,16 @@
                 "pinyin": "",
                 "grammar_refs": [],
                 "vocab_refs": [
-                  "vocab_010",
-                  "vocab_011",
-                  "pn_extra_01"
+                  "1354b1a3-93cc-4505-8d7f-c5550a1d6ae9",
+                  "f0684cb3-4577-4e6c-9f22-7d97c89692b3",
+                  "5ec05b3a-2b29-4f33-961a-cbc764fc73de"
                 ],
                 "audio_key": "",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "3e9748c1-4be2-41cf-ae52-d8f2f3d2af60"
+                "check_needed": false
               },
               {
-                "id": "text_02_l09",
+                "id": "f42aa089-875d-48c4-9213-a083ec251fe7",
                 "order": 9,
                 "speaker": "田中",
                 "zh": "你想怎么去？",
@@ -460,28 +379,26 @@
                 "vocab_refs": [],
                 "audio_key": "",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "b42ba4c5-b44e-4382-9108-7e734dbe6110"
+                "check_needed": false
               },
               {
-                "id": "text_02_l10",
+                "id": "f7419a05-c714-4cff-ae26-210852d56303",
                 "order": 10,
                 "speaker": "麦克",
                 "zh": "除了骑自行车以外，怎么去都行。",
                 "vi": "Ngoài đi xe đạp ra, đi bằng cách nào cũng được.",
                 "pinyin": "",
                 "grammar_refs": [
-                  "grammar_01",
-                  "grammar_04"
+                  "f8ec59f3-898a-47b2-b536-44dfd8183393",
+                  "c6cd6c38-22fc-4546-a398-39efe02d6c17"
                 ],
                 "vocab_refs": [],
                 "audio_key": "",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "bb7157a5-8d4b-46be-8651-669f42ae6386"
+                "check_needed": false
               },
               {
-                "id": "text_02_l11",
+                "id": "22e52ff8-58e5-4bfd-8912-95faed7e26d1",
                 "order": 11,
                 "speaker": "田中",
                 "zh": "你又开玩笑。",
@@ -489,15 +406,14 @@
                 "pinyin": "",
                 "grammar_refs": [],
                 "vocab_refs": [
-                  "vocab_012"
+                  "d5b362a7-c8f6-4f25-b2b5-0f1749c8afbb"
                 ],
                 "audio_key": "",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "35019bf6-8425-46c0-80c3-2f8d5d0ed2e6"
+                "check_needed": false
               },
               {
-                "id": "text_02_l12",
+                "id": "7ae9e54c-f536-4783-b05d-0d7e8ac4fb77",
                 "order": 12,
                 "speaker": "麦克",
                 "zh": "要是买不到火车票就坐飞机去。你的计划呢？",
@@ -505,44 +421,42 @@
                 "pinyin": "",
                 "grammar_refs": [],
                 "vocab_refs": [
-                  "vocab_014"
+                  "91fa9f81-e5ef-4c4a-b29c-c4b6daa02196"
                 ],
                 "audio_key": "",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "94b17d59-5c69-4a60-9a6e-dae7316f0ee6"
+                "check_needed": false
               },
               {
-                "id": "text_02_l13",
+                "id": "491f58c7-7ead-4d8c-876d-7e3113dcff35",
                 "order": 13,
                 "speaker": "田中",
                 "zh": "我打算先去西安看碑林和兵马俑，再到重庆，从重庆坐船游览长江三峡，然后去云南、桂林，最后去苏州和杭州。",
                 "vi": "Tôi định trước tiên đi Tây An xem Rừng Bia và Binh Mã Dũng, sau đó đến Trùng Khánh, từ Trùng Khánh ngồi thuyền tham quan Tam Hiệp Trường Giang, rồi đi Vân Nam, Quế Lâm, cuối cùng đi Tô Châu và Hàng Châu.",
                 "pinyin": "",
                 "grammar_refs": [
-                  "grammar_03"
+                  "fa804fff-372b-4874-8571-f54e613d7e07"
                 ],
                 "vocab_refs": [
-                  "vocab_015",
-                  "vocab_016",
-                  "vocab_017",
-                  "vocab_018",
-                  "pn_01",
-                  "pn_02",
-                  "pn_03",
-                  "pn_04",
-                  "pn_05",
-                  "pn_06",
-                  "pn_07",
-                  "pn_extra_02"
+                  "8a5b1d09-23a6-4182-96e6-9bf4d761a1e1",
+                  "be7a835d-ff8f-4a86-9fd8-27c5f1093f0c",
+                  "7a89dc80-d79d-4c2f-988c-d0f54e240d19",
+                  "ff3e1818-66a9-4532-880b-02c9cacb0e5b",
+                  "d9dbd495-04ca-4812-8d30-6a5da05b79e7",
+                  "1ed335bd-381a-44af-b3ee-f4fc918f7f57",
+                  "a217b6bc-7139-4243-929e-4fe36d3fea53",
+                  "134cbc81-d7f7-472f-8066-712e3fee85b8",
+                  "fa65b188-b538-4e32-aecb-7c68f4a13220",
+                  "ebebc588-f85e-4ac3-b97f-7aad7df7fbd9",
+                  "95291278-779f-45c9-9708-e51e7a2241f2",
+                  "b3d3cdb5-27aa-4b35-8422-6d12786a0f5f"
                 ],
                 "audio_key": "",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "0ee6f76e-6665-4ebc-bcc7-749e8fff8cff"
+                "check_needed": false
               },
               {
-                "id": "text_02_l14",
+                "id": "b4e15ca3-0527-433b-9b2f-a6027ebfe8e3",
                 "order": 14,
                 "speaker": "麦克",
                 "zh": "田芳说，苏州、杭州很美。",
@@ -550,16 +464,15 @@
                 "pinyin": "",
                 "grammar_refs": [],
                 "vocab_refs": [
-                  "pn_06",
-                  "pn_07"
+                  "ebebc588-f85e-4ac3-b97f-7aad7df7fbd9",
+                  "95291278-779f-45c9-9708-e51e7a2241f2"
                 ],
                 "audio_key": "",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "043821f9-c636-451a-9da4-9da1c2ef0260"
+                "check_needed": false
               },
               {
-                "id": "text_02_l15",
+                "id": "ded8d12b-4a00-4a64-b5b2-66cab3f2d1c6",
                 "order": 15,
                 "speaker": "田中",
                 "zh": "“上有天堂，下有苏杭”嘛。另外，桂林也不错，“桂林山水甲天下”，风景像画儿一样，美极了。你去过桂林吗？",
@@ -567,62 +480,59 @@
                 "pinyin": "",
                 "grammar_refs": [],
                 "vocab_refs": [
-                  "vocab_019",
-                  "vocab_020",
-                  "vocab_021",
-                  "vocab_022",
-                  "pn_05"
+                  "0125bdae-fe4e-48fb-8264-145e95c75933",
+                  "689eb64b-5d4f-469f-9afa-74017d399614",
+                  "d45d5488-9293-41ae-9deb-1e5b51cee446",
+                  "c99a633b-27a2-429b-a139-44113a84c189",
+                  "fa65b188-b538-4e32-aecb-7c68f4a13220"
                 ],
                 "audio_key": "",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "f60a1758-e944-472b-ab8e-523bb34a2821"
+                "check_needed": false
               },
               {
-                "id": "text_02_l16",
+                "id": "e3695c3e-b28b-4953-b424-71dcf1fad1b2",
                 "order": 16,
                 "speaker": "麦克",
                 "zh": "没有。我对云南少数民族的风俗很感兴趣。要是有机会一定去看看。你的旅行路线很好，不过要花多少钱啊？",
                 "vi": "Chưa. Tôi rất hứng thú với phong tục của các dân tộc thiểu số ở Vân Nam. Nếu có cơ hội nhất định sẽ đi xem. Lộ trình du lịch của bạn rất hay, nhưng phải tốn bao nhiêu tiền?",
                 "pinyin": "",
                 "grammar_refs": [
-                  "grammar_06"
+                  "b0c8e101-1500-4742-9064-1e102a0eb8b9"
                 ],
                 "vocab_refs": [
-                  "vocab_023",
-                  "vocab_024",
-                  "vocab_025",
-                  "vocab_026",
-                  "pn_04"
+                  "79358c6f-3427-4c28-98f3-7ef98c7033c3",
+                  "dc0f8e06-a359-4907-a8d8-fc9b02260590",
+                  "c43cedbf-7024-4ec1-922f-e75119114baf",
+                  "d9991c79-3454-4247-bf18-f14f43b4a24a",
+                  "134cbc81-d7f7-472f-8066-712e3fee85b8"
                 ],
                 "audio_key": "",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "dad56878-0a43-4c7d-9b87-28a6b1ba2f69"
+                "check_needed": false
               },
               {
-                "id": "text_02_l17",
+                "id": "94807735-96c4-4f7b-a7a3-0b2830d4e7c1",
                 "order": 17,
                 "speaker": "田中",
                 "zh": "我喜欢旅行，只要玩儿得开心，多花点儿钱也值得。另外最重要的是还可以一边旅行一边练习说汉语，多有意义啊！",
                 "vi": "Tôi thích du lịch, chỉ cần chơi vui thì tốn thêm chút tiền cũng đáng. Ngoài ra, quan trọng nhất là còn có thể vừa du lịch vừa luyện nói tiếng Hán, ý nghĩa biết bao!",
                 "pinyin": "",
                 "grammar_refs": [
-                  "grammar_02",
-                  "grammar_05"
+                  "57b14753-688a-41b6-9e0d-b61dbbf574d7",
+                  "c3d31639-0f40-4b2f-aa50-5dda9d443b78"
                 ],
                 "vocab_refs": [
-                  "vocab_027",
-                  "vocab_028",
-                  "vocab_029"
+                  "55cd807c-eec7-412d-99db-f4e6508b170f",
+                  "085e60d5-dd1c-4585-ac6b-0f1db0ded936",
+                  "ba7ff0f9-b633-4516-ab3d-22b96046a1cf"
                 ],
                 "audio_key": "",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "4bad4fd1-79f9-41e1-9569-2c7f7c9ddfd5"
+                "check_needed": false
               },
               {
-                "id": "text_02_l18",
+                "id": "d562e0f1-cf06-4951-bc59-0df0b5f6b59d",
                 "order": 18,
                 "speaker": "麦克",
                 "zh": "你说得对。",
@@ -632,18 +542,15 @@
                 "vocab_refs": [],
                 "audio_key": "",
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "b865d705-297b-4b87-b752-489fa4e9fae5"
+                "check_needed": false
               }
             ],
-            "comprehension_questions": [],
-            "uuid": "cc35aca9-2b38-41ef-8a25-72c5e72821b5"
+            "comprehension_questions": []
           }
-        ],
-        "uuid": "b8bd758b-f8ed-4aa7-bc62-1f638e15e1cd"
+        ]
       },
       {
-        "id": "section_02_vocabulary",
+        "id": "78c30bf4-c314-4c4c-86e3-4dd62382dd78",
         "type": "vocabulary",
         "order": 2,
         "title": "生词",
@@ -652,14 +559,14 @@
         "check_needed": false,
         "items": [
           {
-            "id": "vocab_001",
+            "id": "68c05a12-9d8e-45d9-a413-786bcf2f780a",
             "type": "vocabulary_item",
             "order": 1,
             "hanzi": "渴",
             "pinyin": "kě",
             "meaning_vi": "khát",
             "meaning_en": "",
-            "pos": "adjective",
+            "pos": "unknown",
             "tags": [
               "main_vocab"
             ],
@@ -676,18 +583,17 @@
             },
             "audio_key": "",
             "source_origin": "uploaded_crosscheck",
-            "check_needed": false,
-            "uuid": "532fd7d1-e0c2-4d4b-8615-9b7ec4a86e11"
+            "check_needed": false
           },
           {
-            "id": "vocab_002",
+            "id": "8c18cf3c-e9dc-42e1-8faf-eb26799cabab",
             "type": "vocabulary_item",
             "order": 2,
             "hanzi": "点菜 / 点（菜）",
             "pinyin": "diǎn cài / diǎn cài",
             "meaning_vi": "gọi món",
             "meaning_en": "",
-            "pos": "verb_phrase",
+            "pos": "unknown",
             "tags": [
               "main_vocab"
             ],
@@ -704,18 +610,17 @@
             },
             "audio_key": "",
             "source_origin": "uploaded_crosscheck",
-            "check_needed": false,
-            "uuid": "fd9a6131-c5d4-4e71-bba7-8cadd91a5f25"
+            "check_needed": false
           },
           {
-            "id": "vocab_003",
+            "id": "1fbd69b7-603a-44ea-8d57-10cd4def9ced",
             "type": "vocabulary_item",
             "order": 3,
             "hanzi": "好吃",
             "pinyin": "hǎochī",
             "meaning_vi": "ngon, ăn ngon",
             "meaning_en": "",
-            "pos": "adjective",
+            "pos": "unknown",
             "tags": [
               "main_vocab"
             ],
@@ -732,18 +637,17 @@
             },
             "audio_key": "",
             "source_origin": "uploaded_crosscheck",
-            "check_needed": false,
-            "uuid": "a9e96b2c-e695-4ad6-adfe-abfbe9dffa56"
+            "check_needed": false
           },
           {
-            "id": "vocab_004",
+            "id": "3dc505f1-bc0e-4a96-b448-17fed89fdc60",
             "type": "vocabulary_item",
             "order": 4,
             "hanzi": "辣子鸡丁",
             "pinyin": "làzi jīdīng",
             "meaning_vi": "gà xào ớt thái hạt lựu",
             "meaning_en": "",
-            "pos": "noun",
+            "pos": "unknown",
             "tags": [
               "main_vocab"
             ],
@@ -760,18 +664,17 @@
             },
             "audio_key": "",
             "source_origin": "uploaded_crosscheck",
-            "check_needed": false,
-            "uuid": "938845cb-b077-4a6f-a192-69a03b751224"
+            "check_needed": false
           },
           {
-            "id": "vocab_005",
+            "id": "188412d4-4c23-4d60-b7b2-21f3490199e7",
             "type": "vocabulary_item",
             "order": 5,
             "hanzi": "糖醋鱼",
             "pinyin": "tángcùyú",
             "meaning_vi": "cá chua ngọt",
             "meaning_en": "",
-            "pos": "noun",
+            "pos": "unknown",
             "tags": [
               "main_vocab"
             ],
@@ -788,18 +691,17 @@
             },
             "audio_key": "",
             "source_origin": "uploaded_crosscheck",
-            "check_needed": false,
-            "uuid": "fe40af1a-9da7-4815-9bad-86771e821358"
+            "check_needed": false
           },
           {
-            "id": "vocab_006",
+            "id": "5ea44727-d97c-467b-b1b8-babd195df50d",
             "type": "vocabulary_item",
             "order": 6,
             "hanzi": "周",
             "pinyin": "zhōu",
             "meaning_vi": "tuần",
             "meaning_en": "",
-            "pos": "measure_word",
+            "pos": "unknown",
             "tags": [
               "main_vocab"
             ],
@@ -816,18 +718,17 @@
             },
             "audio_key": "",
             "source_origin": "uploaded_crosscheck",
-            "check_needed": false,
-            "uuid": "41ba6ba5-9f0d-4d8f-89a3-7ae9f199e719"
+            "check_needed": false
           },
           {
-            "id": "vocab_007",
+            "id": "54613016-834a-4fc3-9912-2357a6d27058",
             "type": "vocabulary_item",
             "order": 7,
             "hanzi": "外地",
             "pinyin": "wàidì",
             "meaning_vi": "nơi khác, địa phương khác",
             "meaning_en": "",
-            "pos": "noun",
+            "pos": "unknown",
             "tags": [
               "main_vocab"
             ],
@@ -844,18 +745,17 @@
             },
             "audio_key": "",
             "source_origin": "uploaded_crosscheck",
-            "check_needed": false,
-            "uuid": "13c319d9-b870-451e-bd08-081184362682"
+            "check_needed": false
           },
           {
-            "id": "vocab_008",
+            "id": "0da97406-c3ac-4fcb-a51c-398a59c3fbae",
             "type": "vocabulary_item",
             "order": 8,
             "hanzi": "好玩儿",
             "pinyin": "hǎowánr",
             "meaning_vi": "vui, thú vị, đáng chơi",
             "meaning_en": "",
-            "pos": "adjective",
+            "pos": "unknown",
             "tags": [
               "main_vocab"
             ],
@@ -872,18 +772,17 @@
             },
             "audio_key": "",
             "source_origin": "uploaded_crosscheck",
-            "check_needed": false,
-            "uuid": "87b5a64e-9f9a-4aca-b6d1-158ee73e9a8d"
+            "check_needed": false
           },
           {
-            "id": "vocab_009",
+            "id": "54b36889-82be-485b-8342-fb8aab572065",
             "type": "vocabulary_item",
             "order": 9,
             "hanzi": "零下",
             "pinyin": "língxià",
             "meaning_vi": "dưới 0 độ, âm độ",
             "meaning_en": "",
-            "pos": "noun",
+            "pos": "unknown",
             "tags": [
               "main_vocab"
             ],
@@ -900,18 +799,17 @@
             },
             "audio_key": "",
             "source_origin": "uploaded_crosscheck",
-            "check_needed": false,
-            "uuid": "3544fa03-7fa2-499e-b4e6-d8ac0f742408"
+            "check_needed": false
           },
           {
-            "id": "vocab_010",
+            "id": "1354b1a3-93cc-4505-8d7f-c5550a1d6ae9",
             "type": "vocabulary_item",
             "order": 10,
             "hanzi": "冰灯",
             "pinyin": "bīngdēng",
             "meaning_vi": "đèn băng",
             "meaning_en": "",
-            "pos": "noun",
+            "pos": "unknown",
             "tags": [
               "main_vocab"
             ],
@@ -928,18 +826,17 @@
             },
             "audio_key": "",
             "source_origin": "uploaded_crosscheck",
-            "check_needed": false,
-            "uuid": "1f0d16aa-49a3-4845-bfc4-19e58d81ce59"
+            "check_needed": false
           },
           {
-            "id": "vocab_011",
+            "id": "f0684cb3-4577-4e6c-9f22-7d97c89692b3",
             "type": "vocabulary_item",
             "order": 11,
             "hanzi": "冰雕",
             "pinyin": "bīngdiāo",
             "meaning_vi": "tượng băng, điêu khắc băng",
             "meaning_en": "",
-            "pos": "noun",
+            "pos": "unknown",
             "tags": [
               "main_vocab"
             ],
@@ -956,18 +853,17 @@
             },
             "audio_key": "",
             "source_origin": "uploaded_crosscheck",
-            "check_needed": false,
-            "uuid": "70d8197a-0f70-4ccf-bed2-bea43247396e"
+            "check_needed": false
           },
           {
-            "id": "vocab_012",
+            "id": "d5b362a7-c8f6-4f25-b2b5-0f1749c8afbb",
             "type": "vocabulary_item",
             "order": 12,
             "hanzi": "开玩笑",
             "pinyin": "kāi wánxiào",
             "meaning_vi": "nói đùa, đùa giỡn",
             "meaning_en": "",
-            "pos": "verb_phrase",
+            "pos": "unknown",
             "tags": [
               "main_vocab"
             ],
@@ -984,18 +880,17 @@
             },
             "audio_key": "",
             "source_origin": "uploaded_crosscheck",
-            "check_needed": false,
-            "uuid": "9abf97e6-c05b-4e32-bae8-841debf3c765"
+            "check_needed": false
           },
           {
-            "id": "vocab_013",
+            "id": "7eccd5e8-dac0-4f36-be2e-abcc0a2bdfcd",
             "type": "vocabulary_item",
             "order": 13,
             "hanzi": "玩笑",
             "pinyin": "wánxiào",
             "meaning_vi": "lời nói đùa, chuyện đùa",
             "meaning_en": "",
-            "pos": "noun",
+            "pos": "unknown",
             "tags": [
               "main_vocab"
             ],
@@ -1012,18 +907,17 @@
             },
             "audio_key": "",
             "source_origin": "uploaded_crosscheck",
-            "check_needed": false,
-            "uuid": "e26c535a-c01d-4695-8f4e-3d3d6091c6b6"
+            "check_needed": false
           },
           {
-            "id": "vocab_014",
+            "id": "91fa9f81-e5ef-4c4a-b29c-c4b6daa02196",
             "type": "vocabulary_item",
             "order": 14,
             "hanzi": "计划",
             "pinyin": "jìhuà",
             "meaning_vi": "kế hoạch",
             "meaning_en": "",
-            "pos": "noun",
+            "pos": "unknown",
             "tags": [
               "main_vocab"
             ],
@@ -1040,18 +934,17 @@
             },
             "audio_key": "",
             "source_origin": "uploaded_crosscheck",
-            "check_needed": false,
-            "uuid": "c08c6156-199e-4fd3-b524-7d5f62fba5f1"
+            "check_needed": false
           },
           {
-            "id": "vocab_015",
+            "id": "8a5b1d09-23a6-4182-96e6-9bf4d761a1e1",
             "type": "vocabulary_item",
             "order": 15,
             "hanzi": "碑林",
             "pinyin": "bēilín",
             "meaning_vi": "rừng bia đá; Bia Lâm",
             "meaning_en": "",
-            "pos": "proper_noun",
+            "pos": "unknown",
             "tags": [
               "main_vocab"
             ],
@@ -1068,18 +961,17 @@
             },
             "audio_key": "",
             "source_origin": "uploaded_crosscheck",
-            "check_needed": false,
-            "uuid": "657ad8ae-2a63-487d-a582-e2a6aca43b8f"
+            "check_needed": false
           },
           {
-            "id": "vocab_016",
+            "id": "be7a835d-ff8f-4a86-9fd8-27c5f1093f0c",
             "type": "vocabulary_item",
             "order": 16,
             "hanzi": "兵马俑",
             "pinyin": "bīngmǎyǒng",
             "meaning_vi": "tượng binh mã; đội quân đất nung",
             "meaning_en": "",
-            "pos": "proper_noun",
+            "pos": "unknown",
             "tags": [
               "main_vocab"
             ],
@@ -1096,18 +988,17 @@
             },
             "audio_key": "",
             "source_origin": "uploaded_crosscheck",
-            "check_needed": false,
-            "uuid": "35de7e32-5089-45a7-9058-3816f1f31846"
+            "check_needed": false
           },
           {
-            "id": "vocab_017",
+            "id": "7a89dc80-d79d-4c2f-988c-d0f54e240d19",
             "type": "vocabulary_item",
             "order": 17,
             "hanzi": "船",
             "pinyin": "chuán",
             "meaning_vi": "thuyền, tàu thủy",
             "meaning_en": "",
-            "pos": "noun",
+            "pos": "unknown",
             "tags": [
               "main_vocab"
             ],
@@ -1124,18 +1015,17 @@
             },
             "audio_key": "",
             "source_origin": "uploaded_crosscheck",
-            "check_needed": false,
-            "uuid": "7b1434e8-79a5-46f4-a3cb-10b5203e8279"
+            "check_needed": false
           },
           {
-            "id": "vocab_018",
+            "id": "ff3e1818-66a9-4532-880b-02c9cacb0e5b",
             "type": "vocabulary_item",
             "order": 18,
             "hanzi": "游览",
             "pinyin": "yóulǎn",
             "meaning_vi": "tham quan, du ngoạn",
             "meaning_en": "",
-            "pos": "verb",
+            "pos": "unknown",
             "tags": [
               "main_vocab"
             ],
@@ -1152,18 +1042,17 @@
             },
             "audio_key": "",
             "source_origin": "uploaded_crosscheck",
-            "check_needed": false,
-            "uuid": "f300fa76-0917-4346-a5b0-55416e47deef"
+            "check_needed": false
           },
           {
-            "id": "vocab_019",
+            "id": "0125bdae-fe4e-48fb-8264-145e95c75933",
             "type": "vocabulary_item",
             "order": 19,
             "hanzi": "天堂",
             "pinyin": "tiāntáng",
             "meaning_vi": "thiên đường",
             "meaning_en": "",
-            "pos": "noun",
+            "pos": "unknown",
             "tags": [
               "main_vocab"
             ],
@@ -1180,18 +1069,17 @@
             },
             "audio_key": "",
             "source_origin": "uploaded_crosscheck",
-            "check_needed": false,
-            "uuid": "02d1275e-9091-40cb-beb3-abc125eb88aa"
+            "check_needed": false
           },
           {
-            "id": "vocab_020",
+            "id": "689eb64b-5d4f-469f-9afa-74017d399614",
             "type": "vocabulary_item",
             "order": 20,
             "hanzi": "山水",
             "pinyin": "shānshuǐ",
             "meaning_vi": "núi sông; phong cảnh sơn thủy",
             "meaning_en": "",
-            "pos": "noun",
+            "pos": "unknown",
             "tags": [
               "main_vocab"
             ],
@@ -1208,18 +1096,17 @@
             },
             "audio_key": "",
             "source_origin": "uploaded_crosscheck",
-            "check_needed": false,
-            "uuid": "6a397de3-6ca5-45b1-99a4-b43ca4b5a851"
+            "check_needed": false
           },
           {
-            "id": "vocab_021",
+            "id": "d45d5488-9293-41ae-9deb-1e5b51cee446",
             "type": "vocabulary_item",
             "order": 21,
             "hanzi": "甲",
             "pinyin": "jiǎ",
             "meaning_vi": "đứng đầu, hạng nhất",
             "meaning_en": "",
-            "pos": "morpheme",
+            "pos": "unknown",
             "tags": [
               "main_vocab"
             ],
@@ -1236,18 +1123,17 @@
             },
             "audio_key": "",
             "source_origin": "uploaded_crosscheck",
-            "check_needed": false,
-            "uuid": "98082db4-31f9-4d9f-885e-26cb16fd482c"
+            "check_needed": false
           },
           {
-            "id": "vocab_022",
+            "id": "c99a633b-27a2-429b-a139-44113a84c189",
             "type": "vocabulary_item",
             "order": 22,
             "hanzi": "天下",
             "pinyin": "tiānxià",
             "meaning_vi": "thiên hạ, khắp thế gian",
             "meaning_en": "",
-            "pos": "noun",
+            "pos": "unknown",
             "tags": [
               "main_vocab"
             ],
@@ -1264,18 +1150,17 @@
             },
             "audio_key": "",
             "source_origin": "uploaded_crosscheck",
-            "check_needed": false,
-            "uuid": "960c4c84-96c1-4d4b-98d4-5e2439f61480"
+            "check_needed": false
           },
           {
-            "id": "vocab_023",
+            "id": "79358c6f-3427-4c28-98f3-7ef98c7033c3",
             "type": "vocabulary_item",
             "order": 23,
             "hanzi": "少数",
             "pinyin": "shǎoshù",
             "meaning_vi": "thiểu số, số ít",
             "meaning_en": "",
-            "pos": "noun",
+            "pos": "unknown",
             "tags": [
               "main_vocab"
             ],
@@ -1292,18 +1177,17 @@
             },
             "audio_key": "",
             "source_origin": "uploaded_crosscheck",
-            "check_needed": false,
-            "uuid": "285a1383-fce2-4662-a123-402e0553cfab"
+            "check_needed": false
           },
           {
-            "id": "vocab_024",
+            "id": "dc0f8e06-a359-4907-a8d8-fc9b02260590",
             "type": "vocabulary_item",
             "order": 24,
             "hanzi": "民族",
             "pinyin": "mínzú",
             "meaning_vi": "dân tộc",
             "meaning_en": "",
-            "pos": "noun",
+            "pos": "unknown",
             "tags": [
               "main_vocab"
             ],
@@ -1320,18 +1204,17 @@
             },
             "audio_key": "",
             "source_origin": "uploaded_crosscheck",
-            "check_needed": false,
-            "uuid": "79e439ab-a3f0-4231-a00a-852fb8b173de"
+            "check_needed": false
           },
           {
-            "id": "vocab_025",
+            "id": "c43cedbf-7024-4ec1-922f-e75119114baf",
             "type": "vocabulary_item",
             "order": 25,
             "hanzi": "风俗",
             "pinyin": "fēngsú",
             "meaning_vi": "phong tục",
             "meaning_en": "",
-            "pos": "noun",
+            "pos": "unknown",
             "tags": [
               "main_vocab"
             ],
@@ -1348,18 +1231,17 @@
             },
             "audio_key": "",
             "source_origin": "uploaded_crosscheck",
-            "check_needed": false,
-            "uuid": "e30a5700-102c-42ef-a2a7-484746621e51"
+            "check_needed": false
           },
           {
-            "id": "vocab_026",
+            "id": "d9991c79-3454-4247-bf18-f14f43b4a24a",
             "type": "vocabulary_item",
             "order": 26,
             "hanzi": "路线",
             "pinyin": "lùxiàn",
             "meaning_vi": "tuyến đường, lộ trình",
             "meaning_en": "",
-            "pos": "noun",
+            "pos": "unknown",
             "tags": [
               "main_vocab"
             ],
@@ -1376,18 +1258,17 @@
             },
             "audio_key": "",
             "source_origin": "uploaded_crosscheck",
-            "check_needed": false,
-            "uuid": "c3cb44ac-37c1-43f5-ad80-cfbcd946e0fa"
+            "check_needed": false
           },
           {
-            "id": "vocab_027",
+            "id": "55cd807c-eec7-412d-99db-f4e6508b170f",
             "type": "vocabulary_item",
             "order": 27,
             "hanzi": "开心",
             "pinyin": "kāixīn",
             "meaning_vi": "vui vẻ, vui lòng",
             "meaning_en": "",
-            "pos": "adjective",
+            "pos": "unknown",
             "tags": [
               "main_vocab"
             ],
@@ -1404,18 +1285,17 @@
             },
             "audio_key": "",
             "source_origin": "uploaded_crosscheck",
-            "check_needed": false,
-            "uuid": "8fa57cc7-bb0f-4b15-a010-d7e6ca4a4c7b"
+            "check_needed": false
           },
           {
-            "id": "vocab_028",
+            "id": "085e60d5-dd1c-4585-ac6b-0f1db0ded936",
             "type": "vocabulary_item",
             "order": 28,
             "hanzi": "值得",
             "pinyin": "zhídé",
             "meaning_vi": "đáng, xứng đáng",
             "meaning_en": "",
-            "pos": "verb",
+            "pos": "unknown",
             "tags": [
               "main_vocab"
             ],
@@ -1432,18 +1312,17 @@
             },
             "audio_key": "",
             "source_origin": "uploaded_crosscheck",
-            "check_needed": false,
-            "uuid": "d18c2c0e-4973-447b-b982-95d8f4996a98"
+            "check_needed": false
           },
           {
-            "id": "vocab_029",
+            "id": "ba7ff0f9-b633-4516-ab3d-22b96046a1cf",
             "type": "vocabulary_item",
             "order": 29,
             "hanzi": "意义",
             "pinyin": "yìyì",
             "meaning_vi": "ý nghĩa",
             "meaning_en": "",
-            "pos": "noun",
+            "pos": "unknown",
             "tags": [
               "main_vocab"
             ],
@@ -1460,18 +1339,17 @@
             },
             "audio_key": "",
             "source_origin": "uploaded_crosscheck",
-            "check_needed": false,
-            "uuid": "afd9d3b2-9ca7-4a7f-b8fc-369b696db97b"
+            "check_needed": false
           },
           {
-            "id": "vocab_030",
+            "id": "2185ee67-885d-4ffb-83e2-e97be4070796",
             "type": "vocabulary_item",
             "order": 30,
             "hanzi": "经济",
             "pinyin": "jīngjì",
             "meaning_vi": "kinh tế",
             "meaning_en": "",
-            "pos": "noun",
+            "pos": "unknown",
             "tags": [
               "main_vocab"
             ],
@@ -1488,18 +1366,17 @@
             },
             "audio_key": "",
             "source_origin": "uploaded_crosscheck",
-            "check_needed": false,
-            "uuid": "adbf1cd3-7bb3-4502-b991-54ae910cd81d"
+            "check_needed": false
           },
           {
-            "id": "vocab_031",
+            "id": "092a8c16-3739-4685-a4c0-39365071bd48",
             "type": "vocabulary_item",
             "order": 31,
             "hanzi": "法律",
             "pinyin": "fǎlǜ",
             "meaning_vi": "pháp luật",
             "meaning_en": "",
-            "pos": "noun",
+            "pos": "unknown",
             "tags": [
               "main_vocab"
             ],
@@ -1516,18 +1393,17 @@
             },
             "audio_key": "",
             "source_origin": "uploaded_crosscheck",
-            "check_needed": false,
-            "uuid": "f66bdfe1-1f27-4397-a401-9b0f83c0dfd5"
+            "check_needed": false
           },
           {
-            "id": "vocab_032",
+            "id": "22e66ee9-565e-4670-b2ac-4d5a9b500b38",
             "type": "vocabulary_item",
             "order": 32,
             "hanzi": "医学",
             "pinyin": "yīxué",
             "meaning_vi": "y học",
             "meaning_en": "",
-            "pos": "noun",
+            "pos": "unknown",
             "tags": [
               "main_vocab"
             ],
@@ -1544,18 +1420,17 @@
             },
             "audio_key": "",
             "source_origin": "uploaded_crosscheck",
-            "check_needed": false,
-            "uuid": "dcb215be-5fc3-4098-b2df-4e74cb2ec26b"
+            "check_needed": false
           },
           {
-            "id": "vocab_033",
+            "id": "275b46f4-3166-48b7-9766-58384178d1be",
             "type": "vocabulary_item",
             "order": 33,
             "hanzi": "记者",
             "pinyin": "jìzhě",
             "meaning_vi": "phóng viên, nhà báo",
             "meaning_en": "",
-            "pos": "noun",
+            "pos": "unknown",
             "tags": [
               "main_vocab"
             ],
@@ -1572,18 +1447,17 @@
             },
             "audio_key": "",
             "source_origin": "uploaded_crosscheck",
-            "check_needed": false,
-            "uuid": "5b041ca7-7446-4c0e-aa69-e814b8d95f68"
+            "check_needed": false
           },
           {
-            "id": "vocab_034",
+            "id": "1190511f-5970-4304-8f84-d7201b287aeb",
             "type": "vocabulary_item",
             "order": 34,
             "hanzi": "作家",
             "pinyin": "zuòjiā",
             "meaning_vi": "nhà văn",
             "meaning_en": "",
-            "pos": "noun",
+            "pos": "unknown",
             "tags": [
               "main_vocab"
             ],
@@ -1600,18 +1474,17 @@
             },
             "audio_key": "",
             "source_origin": "uploaded_crosscheck",
-            "check_needed": false,
-            "uuid": "2b56abb2-0876-4aa6-aa29-4bd55f06dd49"
+            "check_needed": false
           },
           {
-            "id": "vocab_035",
+            "id": "d42d3d90-443d-45da-bed7-987b50034e92",
             "type": "vocabulary_item",
             "order": 35,
             "hanzi": "工程师",
             "pinyin": "gōngchéngshī",
             "meaning_vi": "kỹ sư",
             "meaning_en": "",
-            "pos": "noun",
+            "pos": "unknown",
             "tags": [
               "main_vocab"
             ],
@@ -1628,18 +1501,17 @@
             },
             "audio_key": "",
             "source_origin": "uploaded_crosscheck",
-            "check_needed": false,
-            "uuid": "eb9100b9-3519-4d97-9b27-3b0935c9c4b7"
+            "check_needed": false
           },
           {
-            "id": "vocab_036",
+            "id": "cfb712c9-c4ca-4314-b6b2-696b40ace25e",
             "type": "vocabulary_item",
             "order": 36,
             "hanzi": "方面",
             "pinyin": "fāngmiàn",
             "meaning_vi": "phương diện, mặt, lĩnh vực",
             "meaning_en": "",
-            "pos": "noun",
+            "pos": "unknown",
             "tags": [
               "main_vocab"
             ],
@@ -1656,18 +1528,17 @@
             },
             "audio_key": "",
             "source_origin": "uploaded_crosscheck",
-            "check_needed": false,
-            "uuid": "8d38cd25-3ddd-43b7-a75b-6bb19d73e822"
+            "check_needed": false
           },
           {
-            "id": "vocab_037",
+            "id": "6059829f-ae21-43cf-ac0c-05e19639ec43",
             "type": "vocabulary_item",
             "order": 37,
             "hanzi": "减肥",
             "pinyin": "jiǎnféi",
             "meaning_vi": "giảm béo, giảm cân",
             "meaning_en": "",
-            "pos": "verb_phrase",
+            "pos": "unknown",
             "tags": [
               "supplement_vocab"
             ],
@@ -1684,18 +1555,17 @@
             },
             "audio_key": "",
             "source_origin": "uploaded_crosscheck",
-            "check_needed": false,
-            "uuid": "911fa5e6-1fa2-4b66-851d-d2ee53e23759"
+            "check_needed": false
           },
           {
-            "id": "vocab_038",
+            "id": "fefd5441-7b6c-47e3-b823-9e149b947bf7",
             "type": "vocabulary_item",
             "order": 38,
             "hanzi": "奥林匹克",
             "pinyin": "Àolínpǐkè",
             "meaning_vi": "Olympic",
             "meaning_en": "",
-            "pos": "proper_noun",
+            "pos": "unknown",
             "tags": [
               "supplement_vocab"
             ],
@@ -1712,18 +1582,17 @@
             },
             "audio_key": "",
             "source_origin": "uploaded_crosscheck",
-            "check_needed": false,
-            "uuid": "f9f084d5-6788-475e-ad09-261032a61a08"
+            "check_needed": false
           },
           {
-            "id": "vocab_039",
+            "id": "27761bd2-433a-44ef-b79a-9e6f0a34b9c9",
             "type": "vocabulary_item",
             "order": 39,
             "hanzi": "嗓子",
             "pinyin": "sǎngzi",
             "meaning_vi": "cổ họng, giọng",
             "meaning_en": "",
-            "pos": "noun",
+            "pos": "unknown",
             "tags": [
               "supplement_vocab"
             ],
@@ -1740,18 +1609,17 @@
             },
             "audio_key": "",
             "source_origin": "uploaded_crosscheck",
-            "check_needed": false,
-            "uuid": "c93f568d-a3d7-4d68-a78b-8cd35a4654b1"
+            "check_needed": false
           },
           {
-            "id": "vocab_040",
+            "id": "861ed325-b320-4ae0-8eac-bb6bb8ebc215",
             "type": "vocabulary_item",
             "order": 40,
             "hanzi": "连忙",
             "pinyin": "liánmáng",
             "meaning_vi": "vội vàng, lập tức",
             "meaning_en": "",
-            "pos": "adverb",
+            "pos": "unknown",
             "tags": [
               "supplement_vocab"
             ],
@@ -1768,18 +1636,17 @@
             },
             "audio_key": "",
             "source_origin": "uploaded_crosscheck",
-            "check_needed": false,
-            "uuid": "fa554619-1575-4a75-8d4a-800c71e3e251"
+            "check_needed": false
           },
           {
-            "id": "vocab_041",
+            "id": "6fe8f20d-e712-4f0c-9cbc-021aaeb9698c",
             "type": "vocabulary_item",
             "order": 41,
             "hanzi": "厕所",
             "pinyin": "cèsuǒ",
             "meaning_vi": "nhà vệ sinh",
             "meaning_en": "",
-            "pos": "noun",
+            "pos": "unknown",
             "tags": [
               "supplement_vocab"
             ],
@@ -1796,18 +1663,17 @@
             },
             "audio_key": "",
             "source_origin": "uploaded_crosscheck",
-            "check_needed": false,
-            "uuid": "ca3d14a1-6635-420a-88eb-54e99ca9a644"
+            "check_needed": false
           },
           {
-            "id": "vocab_042",
+            "id": "863bbf3f-83e7-4021-b98e-be632043d94c",
             "type": "vocabulary_item",
             "order": 42,
             "hanzi": "脸色",
             "pinyin": "liǎnsè",
             "meaning_vi": "sắc mặt",
             "meaning_en": "",
-            "pos": "noun",
+            "pos": "unknown",
             "tags": [
               "supplement_vocab"
             ],
@@ -1824,18 +1690,17 @@
             },
             "audio_key": "",
             "source_origin": "uploaded_crosscheck",
-            "check_needed": false,
-            "uuid": "cf4bd5cf-624d-4cdd-a1d7-ce28abba3e09"
+            "check_needed": false
           },
           {
-            "id": "vocab_043",
+            "id": "b14487b6-5579-4f1c-9ad7-16fd40991577",
             "type": "vocabulary_item",
             "order": 43,
             "hanzi": "难看",
             "pinyin": "nánkàn",
             "meaning_vi": "khó coi; sắc mặt xấu; trông không ổn",
             "meaning_en": "",
-            "pos": "adjective",
+            "pos": "unknown",
             "tags": [
               "supplement_vocab"
             ],
@@ -1852,18 +1717,17 @@
             },
             "audio_key": "",
             "source_origin": "uploaded_crosscheck",
-            "check_needed": false,
-            "uuid": "8888e2b5-decb-4856-a11e-eae3cf8ea014"
+            "check_needed": false
           },
           {
-            "id": "vocab_044",
+            "id": "eb7cc112-7df2-44e6-a1df-9824d8b6e45a",
             "type": "vocabulary_item",
             "order": 44,
             "hanzi": "立刻",
             "pinyin": "lìkè",
             "meaning_vi": "lập tức, ngay",
             "meaning_en": "",
-            "pos": "adverb",
+            "pos": "unknown",
             "tags": [
               "supplement_vocab"
             ],
@@ -1880,14 +1744,12 @@
             },
             "audio_key": "",
             "source_origin": "uploaded_crosscheck",
-            "check_needed": false,
-            "uuid": "7be50ebe-762b-4265-9118-b0426f1491c4"
+            "check_needed": false
           }
-        ],
-        "uuid": "7125c79f-e09f-4f25-bc66-3c4bae44b9af"
+        ]
       },
       {
-        "id": "section_03_proper_nouns",
+        "id": "3c5ee48e-5d44-44ac-bd53-cac996a83338",
         "type": "proper_nouns",
         "order": 3,
         "title": "专名",
@@ -1896,7 +1758,7 @@
         "check_needed": true,
         "items": [
           {
-            "id": "pn_01",
+            "id": "d9dbd495-04ca-4812-8d30-6a5da05b79e7",
             "type": "proper_noun",
             "order": 1,
             "hanzi": "重庆",
@@ -1904,11 +1766,10 @@
             "meaning_vi": "Trùng Khánh",
             "meaning_en": "",
             "source_origin": "uploaded_crosscheck",
-            "check_needed": false,
-            "uuid": "1c21be5a-0b35-4e41-bb35-8acd0fc1b886"
+            "check_needed": false
           },
           {
-            "id": "pn_02",
+            "id": "1ed335bd-381a-44af-b3ee-f4fc918f7f57",
             "type": "proper_noun",
             "order": 2,
             "hanzi": "长江",
@@ -1916,11 +1777,10 @@
             "meaning_vi": "Trường Giang / sông Dương Tử",
             "meaning_en": "",
             "source_origin": "uploaded_crosscheck",
-            "check_needed": false,
-            "uuid": "af309f6f-bc69-49fa-8339-8e4f59b8546d"
+            "check_needed": false
           },
           {
-            "id": "pn_03",
+            "id": "a217b6bc-7139-4243-929e-4fe36d3fea53",
             "type": "proper_noun",
             "order": 3,
             "hanzi": "三峡",
@@ -1928,11 +1788,10 @@
             "meaning_vi": "Tam Hiệp",
             "meaning_en": "",
             "source_origin": "uploaded_crosscheck",
-            "check_needed": false,
-            "uuid": "0100350c-abec-46cd-b0cc-afe0c3a096e1"
+            "check_needed": false
           },
           {
-            "id": "pn_04",
+            "id": "134cbc81-d7f7-472f-8066-712e3fee85b8",
             "type": "proper_noun",
             "order": 4,
             "hanzi": "云南",
@@ -1940,11 +1799,10 @@
             "meaning_vi": "Vân Nam",
             "meaning_en": "",
             "source_origin": "uploaded_crosscheck",
-            "check_needed": false,
-            "uuid": "90b7a2aa-610b-4877-805c-74bc775597a4"
+            "check_needed": false
           },
           {
-            "id": "pn_05",
+            "id": "fa65b188-b538-4e32-aecb-7c68f4a13220",
             "type": "proper_noun",
             "order": 5,
             "hanzi": "桂林",
@@ -1952,11 +1810,10 @@
             "meaning_vi": "Quế Lâm",
             "meaning_en": "",
             "source_origin": "uploaded_crosscheck",
-            "check_needed": false,
-            "uuid": "553ccc01-2e18-4b76-803b-072be418d79a"
+            "check_needed": false
           },
           {
-            "id": "pn_06",
+            "id": "ebebc588-f85e-4ac3-b97f-7aad7df7fbd9",
             "type": "proper_noun",
             "order": 6,
             "hanzi": "苏州",
@@ -1964,11 +1821,10 @@
             "meaning_vi": "Tô Châu",
             "meaning_en": "",
             "source_origin": "uploaded_crosscheck",
-            "check_needed": false,
-            "uuid": "cd57468a-66ea-485a-a7e4-b55a735ea50d"
+            "check_needed": false
           },
           {
-            "id": "pn_07",
+            "id": "95291278-779f-45c9-9708-e51e7a2241f2",
             "type": "proper_noun",
             "order": 7,
             "hanzi": "杭州",
@@ -1976,11 +1832,10 @@
             "meaning_vi": "Hàng Châu",
             "meaning_en": "",
             "source_origin": "uploaded_crosscheck",
-            "check_needed": false,
-            "uuid": "ba07c22a-2670-41ba-a1e7-3cf815143300"
+            "check_needed": false
           },
           {
-            "id": "pn_extra_01",
+            "id": "5ec05b3a-2b29-4f33-961a-cbc764fc73de",
             "type": "proper_noun",
             "order": 8,
             "hanzi": "哈尔滨",
@@ -1991,11 +1846,10 @@
             "check_needed": true,
             "tags": [
               "proper_noun_in_text_not_in_main_table"
-            ],
-            "uuid": "56fb4e3e-b0b5-4d25-bb04-34a67627b359"
+            ]
           },
           {
-            "id": "pn_extra_02",
+            "id": "b3d3cdb5-27aa-4b35-8422-6d12786a0f5f",
             "type": "proper_noun",
             "order": 9,
             "hanzi": "西安",
@@ -2006,14 +1860,12 @@
             "check_needed": true,
             "tags": [
               "proper_noun_in_text_not_in_main_table"
-            ],
-            "uuid": "90099afd-c4b4-439c-a288-4b5da85086c8"
+            ]
           }
-        ],
-        "uuid": "7d310711-3795-4913-81f5-1a4346a4ca2c"
+        ]
       },
       {
-        "id": "section_04_notes",
+        "id": "c18e9f54-6da1-4496-886b-c2c722605678",
         "type": "notes",
         "order": 4,
         "title": "注释",
@@ -2022,7 +1874,7 @@
         "check_needed": false,
         "items": [
           {
-            "id": "note_01",
+            "id": "63d654f5-4561-4d48-a144-bacbf9671dfc",
             "type": "note",
             "order": 1,
             "title": "上有天堂，下有苏杭",
@@ -2030,7 +1882,7 @@
             "meaning_vi": "Câu nói nổi tiếng khen Tô Châu và Hàng Châu đẹp như thiên đường dưới nhân gian.",
             "examples": [
               {
-                "id": "note_01_ex01",
+                "id": "021014f3-ff12-43b6-9d12-352cb6dc863b",
                 "zh": "“上有天堂，下有苏杭”嘛。",
                 "pinyin": "",
                 "vi": "Chẳng phải có câu “Trên có thiên đường, dưới có Tô Châu và Hàng Châu” đó sao.",
@@ -2042,19 +1894,17 @@
                 "note_vi": "",
                 "audio_key": "",
                 "source_origin": "textbook/generated_mixed",
-                "check_needed": false,
-                "uuid": "6adaf380-a0aa-4d7f-b0d6-97551562499f"
+                "check_needed": false
               }
             ],
             "source_refs": [
-              "text_02_l15"
+              "ded8d12b-4a00-4a64-b5b2-66cab3f2d1c6"
             ],
             "source_origin": "textbook/generated_mixed",
-            "check_needed": false,
-            "uuid": "8f8e3a28-5502-4539-ba04-47d8c97c3d73"
+            "check_needed": false
           },
           {
-            "id": "note_02",
+            "id": "7e2ee128-4fbd-4a93-898c-5f5fd99b371b",
             "type": "note",
             "order": 2,
             "title": "桂林山水甲天下",
@@ -2062,7 +1912,7 @@
             "meaning_vi": "Sơn thủy Quế Lâm đứng đầu thiên hạ; câu văn hóa dùng để khen phong cảnh Quế Lâm đẹp bậc nhất.",
             "examples": [
               {
-                "id": "note_02_ex01",
+                "id": "29279e2c-cb63-4437-bbc5-7c46c15b6f13",
                 "zh": "“桂林山水甲天下”，风景像画儿一样，美极了。",
                 "pinyin": "",
                 "vi": "“Sơn thủy Quế Lâm đứng đầu thiên hạ”, phong cảnh như tranh vậy, đẹp cực kỳ.",
@@ -2074,22 +1924,19 @@
                 "note_vi": "",
                 "audio_key": "",
                 "source_origin": "textbook/generated_mixed",
-                "check_needed": false,
-                "uuid": "c752d5d2-65e3-48bb-94e5-aa55f5ec796e"
+                "check_needed": false
               }
             ],
             "source_refs": [
-              "text_02_l15"
+              "ded8d12b-4a00-4a64-b5b2-66cab3f2d1c6"
             ],
             "source_origin": "textbook/generated_mixed",
-            "check_needed": false,
-            "uuid": "e7df0f55-e040-43d8-b7a5-8dd9b6da2450"
+            "check_needed": false
           }
-        ],
-        "uuid": "bc18715e-8d36-4f53-bfae-1cff57b7b17b"
+        ]
       },
       {
-        "id": "section_05_grammar",
+        "id": "b045e537-7383-494b-8d61-b0286977ed80",
         "type": "grammar",
         "order": 5,
         "title": "语法 / 词语用法",
@@ -2098,7 +1945,7 @@
         "check_needed": false,
         "items": [
           {
-            "id": "grammar_01",
+            "id": "f8ec59f3-898a-47b2-b536-44dfd8183393",
             "type": "grammar_point",
             "order": 1,
             "title": "疑问代词的活用",
@@ -2111,71 +1958,67 @@
             "check_needed": false,
             "blocks": [
               {
-                "id": "grammar_01_overview",
+                "id": "b7c5d870-2db8-4e2e-950f-f0e6e522ac16",
                 "type": "grammar_overview",
                 "order": 1,
                 "title": "Bản chất",
                 "content_vi": "谁、什么、哪儿、怎么 không chỉ dùng để hỏi. Khi đi với 都/也 hoặc lặp lại theo mẫu điều kiện, chúng chỉ nghĩa bất kỳ ai/cái gì/nơi nào/cách nào.",
                 "examples": [
                   {
-                    "id": "g01_ex01",
+                    "id": "2e38466f-cc5f-451a-9612-b188f7cd2dcf",
                     "zh": "什么都可以。",
                     "pinyin": "",
                     "vi": "Món gì cũng được.",
                     "en": "",
                     "highlight": [],
                     "grammar_refs": [
-                      "grammar_01"
+                      "f8ec59f3-898a-47b2-b536-44dfd8183393"
                     ],
                     "vocab_refs": [],
                     "source_ref": "",
                     "note_vi": "",
                     "audio_key": "",
                     "source_origin": "textbook/generated_mixed",
-                    "check_needed": false,
-                    "uuid": "7eb76fe9-f8bd-4dde-a14f-f0695d5ee9f0"
+                    "check_needed": false
                   },
                   {
-                    "id": "g01_ex02",
+                    "id": "64dc50f6-13c5-4723-9aed-94e0d978cb90",
                     "zh": "谁都可以报名。",
                     "pinyin": "",
                     "vi": "Ai cũng có thể đăng ký.",
                     "en": "",
                     "highlight": [],
                     "grammar_refs": [
-                      "grammar_01"
+                      "f8ec59f3-898a-47b2-b536-44dfd8183393"
                     ],
                     "vocab_refs": [],
                     "source_ref": "",
                     "note_vi": "",
                     "audio_key": "",
                     "source_origin": "textbook/generated_mixed",
-                    "check_needed": false,
-                    "uuid": "882f1573-a7da-40d4-8bdc-b917184bfbb0"
+                    "check_needed": false
                   },
                   {
-                    "id": "g01_ex03",
+                    "id": "b7a3d982-8f73-4ed4-b3d6-828fba6e2949",
                     "zh": "哪儿好玩儿就去哪儿。",
                     "pinyin": "",
                     "vi": "Chỗ nào vui thì đi chỗ đó.",
                     "en": "",
                     "highlight": [],
                     "grammar_refs": [
-                      "grammar_01"
+                      "f8ec59f3-898a-47b2-b536-44dfd8183393"
                     ],
                     "vocab_refs": [],
                     "source_ref": "",
                     "note_vi": "",
                     "audio_key": "",
                     "source_origin": "textbook/generated_mixed",
-                    "check_needed": false,
-                    "uuid": "4aaf5d41-369b-4ff9-a01b-4cd38f3c0c4f"
+                    "check_needed": false
                   }
-                ],
-                "uuid": "2790cec7-d203-497e-9c38-05fb05acddb8"
+                ]
               },
               {
-                "id": "grammar_01_structure_01",
+                "id": "a85d60ae-5a59-4bad-a730-4e11cd8fd4ed",
                 "type": "grammar_structure",
                 "order": 2,
                 "title": "疑问代词 + 都/也 + 肯定/否定",
@@ -2193,46 +2036,43 @@
                 ],
                 "examples": [
                   {
-                    "id": "g01_ex04",
+                    "id": "7aa9ef46-6f3d-4ea1-b0f6-1ba89dd9b81b",
                     "zh": "什么都没吃。",
                     "pinyin": "",
                     "vi": "Chưa ăn gì cả.",
                     "en": "",
                     "highlight": [],
                     "grammar_refs": [
-                      "grammar_01"
+                      "f8ec59f3-898a-47b2-b536-44dfd8183393"
                     ],
                     "vocab_refs": [],
                     "source_ref": "",
                     "note_vi": "",
                     "audio_key": "",
                     "source_origin": "textbook/generated_mixed",
-                    "check_needed": false,
-                    "uuid": "7c4f2475-4186-4b7a-bcb9-485b1a1fd7bd"
+                    "check_needed": false
                   },
                   {
-                    "id": "g01_ex05",
+                    "id": "58943086-638c-4919-b0ca-007b22e954eb",
                     "zh": "怎么说都不行。",
                     "pinyin": "",
                     "vi": "Nói thế nào cũng không được.",
                     "en": "",
                     "highlight": [],
                     "grammar_refs": [
-                      "grammar_01"
+                      "f8ec59f3-898a-47b2-b536-44dfd8183393"
                     ],
                     "vocab_refs": [],
                     "source_ref": "",
                     "note_vi": "",
                     "audio_key": "",
                     "source_origin": "textbook/generated_mixed",
-                    "check_needed": false,
-                    "uuid": "8cf65fee-fb57-4fba-bd0c-cb3ce0e5a5d4"
+                    "check_needed": false
                   }
-                ],
-                "uuid": "fa155db3-a1f2-4950-b9ba-1050dfc31ac5"
+                ]
               },
               {
-                "id": "grammar_01_structure_02",
+                "id": "ca8c13db-9de3-46b8-a156-5be7570386a5",
                 "type": "grammar_structure",
                 "order": 3,
                 "title": "疑问代词 lặp lại",
@@ -2246,49 +2086,45 @@
                 ],
                 "examples": [
                   {
-                    "id": "g01_ex06",
+                    "id": "f695da48-2229-4bfe-bba6-da73b6f01a56",
                     "zh": "什么好吃吃什么。",
                     "pinyin": "",
                     "vi": "Món nào ngon thì ăn món đó.",
                     "en": "",
                     "highlight": [],
                     "grammar_refs": [
-                      "grammar_01"
+                      "f8ec59f3-898a-47b2-b536-44dfd8183393"
                     ],
                     "vocab_refs": [],
                     "source_ref": "",
                     "note_vi": "",
                     "audio_key": "",
                     "source_origin": "textbook/generated_mixed",
-                    "check_needed": false,
-                    "uuid": "20abfa80-e69e-4823-ad38-11ede8a6fba0"
+                    "check_needed": false
                   },
                   {
-                    "id": "g01_ex07",
+                    "id": "ea19f0da-a2ab-4e04-93a4-ec516d98065a",
                     "zh": "你说喝什么就喝什么吧。",
                     "pinyin": "",
                     "vi": "Bạn nói uống gì thì uống cái đó đi.",
                     "en": "",
                     "highlight": [],
                     "grammar_refs": [
-                      "grammar_01"
+                      "f8ec59f3-898a-47b2-b536-44dfd8183393"
                     ],
                     "vocab_refs": [],
                     "source_ref": "",
                     "note_vi": "",
                     "audio_key": "",
                     "source_origin": "textbook/generated_mixed",
-                    "check_needed": false,
-                    "uuid": "0b405756-d7da-4c84-b4c4-970bda8cddab"
+                    "check_needed": false
                   }
-                ],
-                "uuid": "02e7ae32-520d-4ae8-9686-a459419bc659"
+                ]
               }
-            ],
-            "uuid": "5f6efb96-5fe3-475a-989b-ec2aa54fab45"
+            ]
           },
           {
-            "id": "grammar_02",
+            "id": "57b14753-688a-41b6-9e0d-b61dbbf574d7",
             "type": "grammar_point",
             "order": 2,
             "title": "一边……一边……",
@@ -2301,35 +2137,33 @@
             "check_needed": false,
             "blocks": [
               {
-                "id": "grammar_02_overview",
+                "id": "470b1ca1-e0a1-449f-b55e-a8aa481a4dd4",
                 "type": "grammar_overview",
                 "order": 1,
                 "title": "Bản chất",
                 "content_vi": "Nói hai hành động diễn ra song song trong cùng một khoảng thời gian. Hai hành động phải có khả năng xảy ra đồng thời.",
                 "examples": [
                   {
-                    "id": "g02_ex01",
+                    "id": "148dd5b4-2deb-4724-b898-7d508f8a6e77",
                     "zh": "一边旅行一边练习说汉语。",
                     "pinyin": "",
                     "vi": "Vừa đi du lịch vừa luyện nói tiếng Hán.",
                     "en": "",
                     "highlight": [],
                     "grammar_refs": [
-                      "grammar_02"
+                      "57b14753-688a-41b6-9e0d-b61dbbf574d7"
                     ],
                     "vocab_refs": [],
                     "source_ref": "",
                     "note_vi": "",
                     "audio_key": "",
                     "source_origin": "textbook/generated_mixed",
-                    "check_needed": false,
-                    "uuid": "97f75128-37f5-4987-8435-5ce3edc2549b"
+                    "check_needed": false
                   }
-                ],
-                "uuid": "26503ae8-f377-48d9-8988-56d90874ab65"
+                ]
               },
               {
-                "id": "grammar_02_structure",
+                "id": "0ef2b790-3209-4b5c-a519-ca5a424e4d49",
                 "type": "grammar_structure",
                 "order": 2,
                 "title": "Cấu trúc",
@@ -2347,49 +2181,45 @@
                 ],
                 "examples": [
                   {
-                    "id": "g02_ex02",
+                    "id": "34fb6f43-cac8-4ca9-9004-ccfbcfc6d263",
                     "zh": "他一边吃饭，一边看电视。",
                     "pinyin": "",
                     "vi": "Anh ấy vừa ăn cơm vừa xem TV.",
                     "en": "",
                     "highlight": [],
                     "grammar_refs": [
-                      "grammar_02"
+                      "57b14753-688a-41b6-9e0d-b61dbbf574d7"
                     ],
                     "vocab_refs": [],
                     "source_ref": "",
                     "note_vi": "",
                     "audio_key": "",
                     "source_origin": "textbook/generated_mixed",
-                    "check_needed": false,
-                    "uuid": "7644a2e9-a196-40ec-bede-6d3a240d502a"
+                    "check_needed": false
                   },
                   {
-                    "id": "g02_ex03",
+                    "id": "e32b9b44-0167-4608-818f-ad358140a4ff",
                     "zh": "我们边走边聊。",
                     "pinyin": "",
                     "vi": "Chúng tôi vừa đi vừa nói chuyện.",
                     "en": "",
                     "highlight": [],
                     "grammar_refs": [
-                      "grammar_02"
+                      "57b14753-688a-41b6-9e0d-b61dbbf574d7"
                     ],
                     "vocab_refs": [],
                     "source_ref": "",
                     "note_vi": "",
                     "audio_key": "",
                     "source_origin": "textbook/generated_mixed",
-                    "check_needed": false,
-                    "uuid": "2a906d18-dd84-4633-9af7-7648b840bbad"
+                    "check_needed": false
                   }
-                ],
-                "uuid": "7ade49c4-1775-4f73-a838-d5f733af7aad"
+                ]
               }
-            ],
-            "uuid": "c78dab93-43ba-4a52-99b6-d3615d2fac1e"
+            ]
           },
           {
-            "id": "grammar_03",
+            "id": "fa804fff-372b-4874-8571-f54e613d7e07",
             "type": "grammar_point",
             "order": 3,
             "title": "先……再……然后……最后……",
@@ -2402,35 +2232,33 @@
             "check_needed": false,
             "blocks": [
               {
-                "id": "grammar_03_overview",
+                "id": "50dcd503-1832-4112-a0be-e09408954b90",
                 "type": "grammar_overview",
                 "order": 1,
                 "title": "Bản chất",
                 "content_vi": "Dùng để xếp trình tự hành động/kế hoạch/lộ trình: trước tiên → rồi → sau đó → cuối cùng.",
                 "examples": [
                   {
-                    "id": "g03_ex01",
+                    "id": "3620f823-6377-41e3-9821-e498d2c8ac94",
                     "zh": "我打算先去西安看碑林和兵马俑，再到重庆，从重庆坐船游览长江三峡，然后去云南、桂林，最后去苏州和杭州。",
                     "pinyin": "",
                     "vi": "Tôi định trước tiên đi Tây An xem Rừng Bia và Binh Mã Dũng, rồi đến Trùng Khánh, sau đó đi Vân Nam, Quế Lâm, cuối cùng đi Tô Châu và Hàng Châu.",
                     "en": "",
                     "highlight": [],
                     "grammar_refs": [
-                      "grammar_03"
+                      "fa804fff-372b-4874-8571-f54e613d7e07"
                     ],
                     "vocab_refs": [],
                     "source_ref": "",
                     "note_vi": "",
                     "audio_key": "",
                     "source_origin": "textbook/generated_mixed",
-                    "check_needed": false,
-                    "uuid": "d6180766-fab4-4520-aac2-076d4f11edd7"
+                    "check_needed": false
                   }
-                ],
-                "uuid": "e6781672-f6c2-4afd-a419-1a505a7ba02a"
+                ]
               },
               {
-                "id": "grammar_03_structure",
+                "id": "3de2e20b-7535-4f1b-8355-4209acba1551",
                 "type": "grammar_structure",
                 "order": 2,
                 "title": "Cấu trúc",
@@ -2448,31 +2276,28 @@
                 ],
                 "examples": [
                   {
-                    "id": "g03_ex02",
+                    "id": "67dbf307-9e3e-454a-9d27-30b827684ec9",
                     "zh": "你先写作业，再看电视。",
                     "pinyin": "",
                     "vi": "Bạn làm bài tập trước, rồi xem TV.",
                     "en": "",
                     "highlight": [],
                     "grammar_refs": [
-                      "grammar_03"
+                      "fa804fff-372b-4874-8571-f54e613d7e07"
                     ],
                     "vocab_refs": [],
                     "source_ref": "",
                     "note_vi": "",
                     "audio_key": "",
                     "source_origin": "textbook/generated_mixed",
-                    "check_needed": false,
-                    "uuid": "3157c2a6-b1b4-44c5-a555-bff05dc9dd0f"
+                    "check_needed": false
                   }
-                ],
-                "uuid": "df11e481-e161-4f4f-9d69-8d707bc4c19a"
+                ]
               }
-            ],
-            "uuid": "2b212627-7105-4b66-8797-3b891ad5bad8"
+            ]
           },
           {
-            "id": "grammar_04",
+            "id": "c6cd6c38-22fc-4546-a398-39efe02d6c17",
             "type": "grammar_point",
             "order": 4,
             "title": "除了……以外，……都……",
@@ -2485,7 +2310,7 @@
             "check_needed": false,
             "blocks": [
               {
-                "id": "grammar_04_structure",
+                "id": "3ecf1989-24b0-4088-8831-c92b1fd6d541",
                 "type": "grammar_structure",
                 "order": 1,
                 "title": "Cấu trúc",
@@ -2493,31 +2318,28 @@
                 "meaning_vi": "Nêu một ngoại lệ bị loại ra, sau đó nói các lựa chọn còn lại đều được/đều đúng.",
                 "examples": [
                   {
-                    "id": "g04_ex01",
+                    "id": "4c24a67d-5112-438c-96a0-1fe26e7867ad",
                     "zh": "除了骑自行车以外，怎么去都行。",
                     "pinyin": "",
                     "vi": "Ngoài đi xe đạp ra, đi bằng cách nào cũng được.",
                     "en": "",
                     "highlight": [],
                     "grammar_refs": [
-                      "grammar_04"
+                      "c6cd6c38-22fc-4546-a398-39efe02d6c17"
                     ],
                     "vocab_refs": [],
                     "source_ref": "",
                     "note_vi": "",
                     "audio_key": "",
                     "source_origin": "textbook/generated_mixed",
-                    "check_needed": false,
-                    "uuid": "886f1256-df11-4f27-9c82-e661cfc8e6c6"
+                    "check_needed": false
                   }
-                ],
-                "uuid": "c1ad7633-3491-4516-88ba-530befaef65a"
+                ]
               }
-            ],
-            "uuid": "d94a4b5a-4f94-4365-9684-27d81eafb0c7"
+            ]
           },
           {
-            "id": "grammar_05",
+            "id": "c3d31639-0f40-4b2f-aa50-5dda9d443b78",
             "type": "grammar_point",
             "order": 5,
             "title": "只要……就……",
@@ -2530,7 +2352,7 @@
             "check_needed": false,
             "blocks": [
               {
-                "id": "grammar_05_structure",
+                "id": "b7be4295-e408-4edd-882f-3fff358754f0",
                 "type": "grammar_structure",
                 "order": 1,
                 "title": "Cấu trúc",
@@ -2538,31 +2360,28 @@
                 "meaning_vi": "Nhấn mạnh điều kiện đủ: chỉ cần điều kiện trước thỏa mãn thì kết quả sau có thể xảy ra/chấp nhận được.",
                 "examples": [
                   {
-                    "id": "g05_ex01",
+                    "id": "528ab4f2-319d-4271-8800-f92a399a6e8c",
                     "zh": "只要玩儿得开心，多花点儿钱也值得。",
                     "pinyin": "",
                     "vi": "Chỉ cần chơi vui, tốn thêm chút tiền cũng đáng.",
                     "en": "",
                     "highlight": [],
                     "grammar_refs": [
-                      "grammar_05"
+                      "c3d31639-0f40-4b2f-aa50-5dda9d443b78"
                     ],
                     "vocab_refs": [],
                     "source_ref": "",
                     "note_vi": "",
                     "audio_key": "",
                     "source_origin": "textbook/generated_mixed",
-                    "check_needed": false,
-                    "uuid": "d5f42ff3-aa45-4363-9e18-62cc29aa3f4f"
+                    "check_needed": false
                   }
-                ],
-                "uuid": "e3c6d5be-ea99-4ba7-b0cd-f66b7f7adacb"
+                ]
               }
-            ],
-            "uuid": "86216165-f4c7-402e-9de9-67c41ed09efc"
+            ]
           },
           {
-            "id": "grammar_06",
+            "id": "b0c8e101-1500-4742-9064-1e102a0eb8b9",
             "type": "grammar_point",
             "order": 6,
             "title": "对……感兴趣",
@@ -2575,7 +2394,7 @@
             "check_needed": false,
             "blocks": [
               {
-                "id": "grammar_06_structure",
+                "id": "36af8925-9df2-4371-9cce-405d3672953f",
                 "type": "grammar_structure",
                 "order": 1,
                 "title": "Cấu trúc",
@@ -2583,34 +2402,30 @@
                 "meaning_vi": "Diễn tả hứng thú với một đối tượng, lĩnh vực hoặc sự việc.",
                 "examples": [
                   {
-                    "id": "g06_ex01",
+                    "id": "efefab30-bcd8-4248-a5e1-9730cca9d249",
                     "zh": "我对云南少数民族的风俗很感兴趣。",
                     "pinyin": "",
                     "vi": "Tôi rất hứng thú với phong tục của các dân tộc thiểu số ở Vân Nam.",
                     "en": "",
                     "highlight": [],
                     "grammar_refs": [
-                      "grammar_06"
+                      "b0c8e101-1500-4742-9064-1e102a0eb8b9"
                     ],
                     "vocab_refs": [],
                     "source_ref": "",
                     "note_vi": "",
                     "audio_key": "",
                     "source_origin": "textbook/generated_mixed",
-                    "check_needed": false,
-                    "uuid": "6eb81a44-d06d-476a-bb11-71094db28730"
+                    "check_needed": false
                   }
-                ],
-                "uuid": "55aaa509-53c8-4ca5-a1fb-37db3a2c81af"
+                ]
               }
-            ],
-            "uuid": "04d80fd6-2857-4c2a-8150-9fd88bb756ed"
+            ]
           }
-        ],
-        "uuid": "f17f710d-7589-4a6a-b470-c4d9f3ed79fc"
+        ]
       },
       {
-        "id": "section_06_exercises",
+        "id": "9901c597-ca97-451e-b63d-11814aaf933e",
         "type": "exercises",
         "order": 6,
         "title": "练习",
@@ -2626,7 +2441,7 @@
         },
         "items": [
           {
-            "id": "exercise_01",
+            "id": "15cb6f38-593b-48d1-bcca-dc3d2a140f9e",
             "type": "phonetics",
             "variant": "pronunciation_tone_minimal_pairs",
             "order": 1,
@@ -2643,7 +2458,7 @@
             ],
             "parts": [
               {
-                "id": "exercise_01_part_01",
+                "id": "0e5801e7-b89b-4cc6-8bd9-9e1fbbd30b31",
                 "type": "minimal_pair_group",
                 "title": "辨音辨调",
                 "items": [
@@ -2657,11 +2472,10 @@
                   "lùxiàn — lùxiàng"
                 ],
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "677cbf32-e718-439a-8d49-9ba3e99828f9"
+                "check_needed": false
               },
               {
-                "id": "exercise_01_part_02",
+                "id": "e7235fa8-9e47-43aa-a37c-271a2e83d738",
                 "type": "read_aloud_chunks",
                 "title": "朗读",
                 "items": [
@@ -2686,16 +2500,14 @@
                   "一边听音乐一边做练习"
                 ],
                 "source_origin": "textbook",
-                "check_needed": false,
-                "uuid": "023b72bb-4400-46da-a1ed-5acdeff374a2"
+                "check_needed": false
               }
             ],
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "1b06f9aa-e627-4b44-9961-fdde1f682cda"
+            "check_needed": false
           },
           {
-            "id": "exercise_02",
+            "id": "98e14c21-0449-4e36-b1ae-77ed46cf3aa0",
             "type": "substitution_drill",
             "variant": "substitution_or_transform_drill",
             "order": 2,
@@ -2712,7 +2524,7 @@
             ],
             "parts": [
               {
-                "id": "exercise_02_part_01",
+                "id": "7db043f9-0d63-45ee-8c21-295d62f2ebd3",
                 "type": "pattern_drill",
                 "pattern": "A：我们……吧。 B：好吧。",
                 "base": "A：我们去哪儿玩儿玩儿吧。 B：好吧。",
@@ -2722,11 +2534,10 @@
                   "去请谁帮帮忙",
                   "什么时候去看看她",
                   "吃点儿什么"
-                ],
-                "uuid": "b8de1932-2f77-41dd-883c-68d3e8266836"
+                ]
               },
               {
-                "id": "exercise_02_part_02",
+                "id": "4ad1e1b3-374e-4ce8-b98f-907ffc4c88f2",
                 "type": "pattern_drill",
                 "pattern": "你想……我们就……",
                 "base": "A：我们去哪儿呢？ B：你想去哪儿我们就去哪儿。",
@@ -2736,11 +2547,10 @@
                   "什么时候去 → 什么时候有空儿就什么时候去",
                   "派谁去 → 谁能办好这件事就派谁去",
                   "借给他多少 → 他需要多少就借给他多少"
-                ],
-                "uuid": "a372f93a-8efa-4f59-8d5e-94fefdb9cb8c"
+                ]
               },
               {
-                "id": "exercise_02_part_03",
+                "id": "28f617eb-25d6-4678-b5e3-f7fca3508dbc",
                 "type": "pattern_drill",
                 "pattern": "疑问代词 + 都行/可以",
                 "base": "A：你想吃点儿什么？ B：什么都行 / 可以。",
@@ -2751,11 +2561,10 @@
                   "跟谁去 → 谁",
                   "要哪个 → 哪个",
                   "要多少 → 多少"
-                ],
-                "uuid": "0e27c6ba-5dc2-4ef3-a4a6-d151acd92c97"
+                ]
               },
               {
-                "id": "exercise_02_part_04",
+                "id": "6227f946-2a93-462c-8702-43b4abc4a614",
                 "type": "pattern_drill",
                 "pattern": "什么/哪儿/怎么 + 条件 + 就 + V",
                 "base": "A：想吃点儿什么？ B：什么好吃我就吃什么。",
@@ -2765,11 +2574,10 @@
                   "看哪个 → 哪个好看 → 看哪个",
                   "去哪儿 → 哪儿好玩儿 → 去哪儿",
                   "怎么去 → 怎么方便 → 怎么去"
-                ],
-                "uuid": "8d74d7e7-de12-4320-83a5-9123c037d992"
+                ]
               },
               {
-                "id": "exercise_02_part_05",
+                "id": "6b6b4fa0-c8d0-45c4-b28e-0293edd71e59",
                 "type": "pattern_drill",
                 "pattern": "一边 + V1 + 一边 + V2",
                 "base": "他一边旅行一边练习说汉语。",
@@ -2779,16 +2587,14 @@
                   "跳 — 唱",
                   "想 — 写",
                   "哭 — 说"
-                ],
-                "uuid": "7533fa44-18bc-40f5-8fa3-6a218b9eadee"
+                ]
               }
             ],
             "source_origin": "textbook",
-            "check_needed": false,
-            "uuid": "eafbcd08-0014-41de-9b40-4fe49c29edfe"
+            "check_needed": false
           },
           {
-            "id": "exercise_03",
+            "id": "5dfca3d2-8524-4a83-92dd-b036a7259465",
             "type": "choose_words_fill_blank",
             "variant": "word_bank_fill_blank",
             "order": 3,
@@ -2813,82 +2619,71 @@
             ],
             "questions": [
               {
-                "id": "ex03_q01",
+                "id": "941d80e5-8eb2-4e21-beae-597e6677cdaf",
                 "prompt": "我想利用________去南方旅行。",
                 "answer": "寒假",
-                "answer_verified": false,
-                "uuid": "fd61e9f0-aadd-462c-8838-831583a6fe45"
+                "answer_verified": false
               },
               {
-                "id": "ex03_q02",
+                "id": "f31d95d0-500f-4cc9-97ee-57a7295062d2",
                 "prompt": "他________听音乐________做练习。",
                 "answer": "一边……一边……",
-                "answer_verified": false,
-                "uuid": "9ac38ce0-b1a6-4d5a-a8cc-e34808cac63c"
+                "answer_verified": false
               },
               {
-                "id": "ex03_q03",
+                "id": "069f2cd8-233c-4227-8f46-78a1d28a4a59",
                 "prompt": "这里有不少小________，饭菜又便宜又好吃。",
                 "answer": "饭馆儿",
-                "answer_verified": false,
-                "uuid": "8cd81976-1364-451a-a64c-88214decdfea"
+                "answer_verified": false
               },
               {
-                "id": "ex03_q04",
+                "id": "013e3712-30ac-4a8a-b60e-0d6f818f4cdb",
                 "prompt": "我们那儿一年四季都很暖和，气温从来没有到过________一度。",
                 "answer": "零下",
-                "answer_verified": false,
-                "uuid": "36ffdc35-0e23-4a0b-a98b-47ffcdbff00c"
+                "answer_verified": false
               },
               {
-                "id": "ex03_q05",
+                "id": "ba362929-16a5-4a79-8cad-ecfabcaa32f3",
                 "prompt": "________旅行以外，我还想________一下儿中国南方的城市交通。",
                 "answer": "除了；了解",
-                "answer_verified": false,
-                "uuid": "42223fa9-fc08-4334-9bc0-1b296bbe828a"
+                "answer_verified": false
               },
               {
-                "id": "ex03_q06",
+                "id": "542ef74e-c843-4b6c-9cd8-0011b6ee7b7a",
                 "prompt": "我们公司也________在这儿开展业务。",
                 "answer": "计划",
-                "answer_verified": false,
-                "uuid": "8c13c281-ae4e-4dfa-95d4-0e5f3d0c605d"
+                "answer_verified": false
               },
               {
-                "id": "ex03_q07",
+                "id": "715f1fd6-1b2e-43e0-b3dc-cbc252152601",
                 "prompt": "我想研究中国少数民族的________习惯。",
                 "answer": "风俗",
-                "answer_verified": false,
-                "uuid": "5a5bff67-a8d3-40d1-bb22-4db0863a1ea4"
+                "answer_verified": false
               },
               {
-                "id": "ex03_q08",
+                "id": "105a0775-7adb-418e-b770-133481e26360",
                 "prompt": "杭州、桂林，这两个地方都________去看看。",
                 "answer": "值得",
-                "answer_verified": false,
-                "uuid": "143391a0-56cc-44b4-a837-273cceff87b3"
+                "answer_verified": false
               },
               {
-                "id": "ex03_q09",
+                "id": "e4f087ec-f391-487e-9c09-fa2844c867d8",
                 "prompt": "今天我过得特别________。",
                 "answer": "开心",
-                "answer_verified": false,
-                "uuid": "020db427-84dd-45b2-a312-d6f7c13fdcb8"
+                "answer_verified": false
               },
               {
-                "id": "ex03_q10",
+                "id": "59f17dca-dab9-4952-b7f4-3425c32679d3",
                 "prompt": "请把你的________跟大家说说吧。",
                 "answer": "要求",
-                "answer_verified": false,
-                "uuid": "93ecd02c-9cb1-4f94-8bf6-cf089bda0c5b"
+                "answer_verified": false
               }
             ],
             "source_origin": "textbook_question_generated_answer",
-            "check_needed": true,
-            "uuid": "52499a15-6728-41a6-83da-bd06425e2791"
+            "check_needed": true
           },
           {
-            "id": "exercise_04",
+            "id": "809141fb-cc55-403a-9433-35eea89c8c90",
             "type": "complete_sentence",
             "variant": "complete_sentence_with_given_words",
             "order": 4,
@@ -2900,54 +2695,47 @@
             },
             "questions": [
               {
-                "id": "ex04_q01",
+                "id": "668ef942-39b3-4816-be06-f347b64fa456",
                 "prompt": "A：她怎么样？ B：她又热情又漂亮，班上的同学________________。（谁）",
                 "answer": "谁都喜欢她。",
-                "answer_verified": false,
-                "uuid": "0d1d8828-3e17-4e5f-bcba-30fcfb5fb168"
+                "answer_verified": false
               },
               {
-                "id": "ex04_q02",
+                "id": "6e23c236-94eb-4e83-9ea6-7353241c098d",
                 "prompt": "A：你今天出去吗？ B：今天外边太冷，我________________。（哪儿）",
                 "answer": "哪儿都不去。",
-                "answer_verified": false,
-                "uuid": "d01a2315-95d4-44f8-a217-98ab4dfe1c60"
+                "answer_verified": false
               },
               {
-                "id": "ex04_q03",
+                "id": "ee3570f6-9872-4699-a1ed-c338e52b4e50",
                 "prompt": "A：你看这件事儿怎么办呢？ B：________________。（怎么）",
                 "answer": "怎么做都行。 / 你说怎么办就怎么办。",
-                "answer_verified": false,
-                "uuid": "383d7bd1-abfd-4457-af5f-06141877658e"
+                "answer_verified": false
               },
               {
-                "id": "ex04_q04",
+                "id": "3130979d-5cc3-4cf5-999c-9ed317ea7c14",
                 "prompt": "A：我想去看看你，什么时候去比较合适？ B：你________________。（什么）",
                 "answer": "什么时候来都行。",
-                "answer_verified": false,
-                "uuid": "71243f56-2a9c-4f6f-8156-f958fdeda270"
+                "answer_verified": false
               },
               {
-                "id": "ex04_q05",
+                "id": "9dd88fe0-ccfb-47b6-a74a-d1ee53c61219",
                 "prompt": "A：来中国以后，你去过什么地方？ B：除了北京以外，我________________。（哪儿）",
                 "answer": "哪儿都没去过。",
-                "answer_verified": false,
-                "uuid": "60671994-51fd-449b-a213-b9a6db279b8b"
+                "answer_verified": false
               },
               {
-                "id": "ex04_q06",
+                "id": "9002df8c-125f-489d-9396-d008958aa6b9",
                 "prompt": "A：我们坐火车去还是坐飞机去？ B：________________。（怎么）",
                 "answer": "怎么去都行。",
-                "answer_verified": false,
-                "uuid": "d9fcea84-8fb0-425c-9a49-c71e39121f1a"
+                "answer_verified": false
               }
             ],
             "source_origin": "textbook_question_generated_answer",
-            "check_needed": true,
-            "uuid": "f3d5e3d1-6fb6-433d-a748-45b01fc0dbba"
+            "check_needed": true
           },
           {
-            "id": "exercise_05",
+            "id": "e843bb6e-2e51-4fb8-b362-7506b97cf2fc",
             "type": "answer_questions",
             "variant": "free_fill_blank",
             "order": 5,
@@ -2959,54 +2747,47 @@
             },
             "questions": [
               {
-                "id": "ex05_q01",
+                "id": "7d9c942a-bdc2-45a1-b852-6b3dd58fe8f2",
                 "prompt": "A：你想吃点儿什么？ B：________________。（什么……什么……）",
                 "answer": "什么好吃就吃什么。",
-                "answer_verified": false,
-                "uuid": "f3b20f68-ea17-47ce-bed6-b062b79a4380"
+                "answer_verified": false
               },
               {
-                "id": "ex05_q02",
+                "id": "a79733e1-ef69-41fd-ac55-9bb8b3bd4d2c",
                 "prompt": "A：你想让谁跟你去？ B：________________。（谁……谁……）",
                 "answer": "谁愿意去就让谁去。",
-                "answer_verified": false,
-                "uuid": "67482b24-fdda-4fe0-9870-404e542ac801"
+                "answer_verified": false
               },
               {
-                "id": "ex05_q03",
+                "id": "ec5f1e84-0693-46b3-b735-8005e47f103e",
                 "prompt": "A：我们怎么去呢？ B：________________。（怎么……怎么……）",
                 "answer": "怎么方便就怎么去。",
-                "answer_verified": false,
-                "uuid": "886c7a36-f0db-4ca2-aeab-3c8c2a1b5853"
+                "answer_verified": false
               },
               {
-                "id": "ex05_q04",
+                "id": "dc7f5f06-95a1-4158-98d8-b293729d6a13",
                 "prompt": "A：我们什么时候出发？ B：________________。（什么（时候）……什么（时候）……）",
                 "answer": "什么时候有空儿就什么时候出发。",
-                "answer_verified": false,
-                "uuid": "97ba0c97-c6ac-41d1-8ec2-6e99217e99b0"
+                "answer_verified": false
               },
               {
-                "id": "ex05_q05",
+                "id": "55e24ac4-bbd1-40f9-9dee-e97b3f2e10f7",
                 "prompt": "A：我们去哪儿买？ B：________________。（哪儿……哪儿……）",
                 "answer": "哪儿便宜就去哪儿买。",
-                "answer_verified": false,
-                "uuid": "ed0ded93-66ae-47a6-ae4a-694222c638ad"
+                "answer_verified": false
               },
               {
-                "id": "ex05_q06",
+                "id": "f7c603b4-c112-4d9c-ab37-b945d471ccee",
                 "prompt": "A：你想学哪本书？ B：________________。（哪……哪……）",
                 "answer": "哪本有意思就学哪本。",
-                "answer_verified": false,
-                "uuid": "16789862-7288-4da2-820a-3aec86d0deb5"
+                "answer_verified": false
               }
             ],
             "source_origin": "textbook_question_generated_answer",
-            "check_needed": true,
-            "uuid": "cb1ed1ac-1662-4f7f-a7c2-a53ec0020675"
+            "check_needed": true
           },
           {
-            "id": "exercise_06",
+            "id": "60ec1197-2967-408c-a1f3-3c2112f8305a",
             "type": "custom",
             "variant": "custom_textbook_task",
             "order": 6,
@@ -3027,40 +2808,35 @@
             ],
             "questions": [
               {
-                "id": "ex06_q01",
+                "id": "1b0dc397-26f4-4659-a964-f9c68ceab72a",
                 "prompt": "你们班的同学有的以后要学经济，有的要学法律，有的要学医学，有的要学历史……（什么）",
                 "answer": "你们班的同学以后有的想学经济，有的想学法律，有的想学医学，什么都有人学。",
-                "answer_verified": false,
-                "uuid": "a03ad274-42c6-446c-b268-e8882eb83cf6"
+                "answer_verified": false
               },
               {
-                "id": "ex06_q02",
+                "id": "ab74bab2-0cd3-4c59-b4dd-6d9a3c6197b9",
                 "prompt": "我有很多朋友，有的是老师，有的是记者，有的是作家，有的是工程师，有的是大夫，有的是律师……（什么）",
                 "answer": "我的朋友做什么的都有。",
-                "answer_verified": false,
-                "uuid": "be54a605-072a-45a6-8895-f7029158ac36"
+                "answer_verified": false
               },
               {
-                "id": "ex06_q03",
+                "id": "c503fed9-44e1-4df9-b284-51dbab822ee8",
                 "prompt": "我喜欢看书，文学、历史、医学、经济、法律等方面的书我都喜欢看。（什么）",
                 "answer": "文学、历史、医学、经济、法律等方面的书我都喜欢看，什么方面的书都喜欢。",
-                "answer_verified": false,
-                "uuid": "e175d38b-c0b1-4d1a-9364-39f85d7a406c"
+                "answer_verified": false
               },
               {
-                "id": "ex06_q04",
+                "id": "87b8a7fb-1969-49e6-b592-82a2e0147e96",
                 "prompt": "他来中国快一年了，只去过一次北京，别的地方还没有去过。（除了……以外，哪儿）",
                 "answer": "除了北京以外，他哪儿都没去过。",
-                "answer_verified": false,
-                "uuid": "4053d64f-a429-466b-9a0e-9daa932cac97"
+                "answer_verified": false
               }
             ],
             "source_origin": "textbook_question_generated_answer",
-            "check_needed": true,
-            "uuid": "cafc34e2-5b88-47d1-bdc2-a870762fe53e"
+            "check_needed": true
           },
           {
-            "id": "exercise_07",
+            "id": "1fd4313d-93f3-4cbe-9dd4-2ba0d5bac415",
             "type": "correct_sentence",
             "variant": "error_correction",
             "order": 7,
@@ -3072,60 +2848,53 @@
             },
             "questions": [
               {
-                "id": "ex07_q01",
+                "id": "f8e911bf-9cbb-4dad-91ed-87032d2d95f2",
                 "wrong": "哪个题容易，我就做什么题。",
                 "correct": "哪个题容易，我就做哪个题。 / 什么题容易，我就做什么题。",
                 "explanation_vi": "Đại từ nghi vấn trước và sau phải tương ứng.",
-                "answer_verified": false,
-                "uuid": "1956c7f0-bb52-4553-b1c2-40f02c798911"
+                "answer_verified": false
               },
               {
-                "id": "ex07_q02",
+                "id": "3fd78baa-272c-4e07-8ee2-5399c9977a99",
                 "wrong": "你说怎么，我就做怎么。",
                 "correct": "你说怎么做，我就怎么做。",
                 "explanation_vi": "怎么 cần gắn với động tác cụ thể: 怎么做.",
-                "answer_verified": false,
-                "uuid": "0efca4b7-43bb-4e76-96a3-078a02b2961a"
+                "answer_verified": false
               },
               {
-                "id": "ex07_q03",
+                "id": "69f5ddfa-be8d-4292-b18f-6136daaa613f",
                 "wrong": "哪儿好玩儿，就我们去哪儿玩儿。",
                 "correct": "哪儿好玩儿，我们就去哪儿玩儿。",
                 "explanation_vi": "就 đứng trước vị ngữ/động tác, không đặt trước chủ ngữ trong mẫu này.",
-                "answer_verified": false,
-                "uuid": "6ee6303b-c043-40a8-a4b4-1c71d98c165d"
+                "answer_verified": false
               },
               {
-                "id": "ex07_q04",
+                "id": "9c211f34-08a0-4478-b188-fe6a0e98ea41",
                 "wrong": "我的电脑坏了，什么也修不好。",
                 "correct": "我的电脑坏了，怎么也修不好。 / 我的电脑坏了，谁也修不好。",
                 "explanation_vi": "修不好 cần hỏi cách sửa hoặc người sửa, không dùng 什么.",
-                "answer_verified": false,
-                "uuid": "5b64434f-4be2-4c40-b361-c2eb294687f2"
+                "answer_verified": false
               },
               {
-                "id": "ex07_q05",
+                "id": "c8ec5644-8adf-46de-b2ff-34b3088ba324",
                 "wrong": "我刚来中国的时候，什么汉语不会说。",
                 "correct": "我刚来中国的时候，什么汉语都不会说。 / 我刚来中国的时候，一句汉语也不会说。",
                 "explanation_vi": "Phủ định bao trùm cần 都/也; câu tự nhiên hơn là 一句汉语也不会说.",
-                "answer_verified": false,
-                "uuid": "29ea66a5-a330-4cbd-af6b-7afb3ce0df23"
+                "answer_verified": false
               },
               {
-                "id": "ex07_q06",
+                "id": "6db3da52-2247-4991-a1d3-225528d56fff",
                 "wrong": "老师的话我一边听，一边不懂。",
                 "correct": "老师的话我听不懂。 / 我一边听老师讲，一边记笔记。",
                 "explanation_vi": "一边……一边…… nối hai hành động đồng thời; 不懂 là kết quả/trạng thái, không phải hành động song song tự nhiên.",
-                "answer_verified": false,
-                "uuid": "49c912b2-8229-4592-8b06-89f82ed9edb1"
+                "answer_verified": false
               }
             ],
             "source_origin": "textbook_question_generated_answer",
-            "check_needed": true,
-            "uuid": "6dc7fdbd-ecf7-4000-80f8-700309342341"
+            "check_needed": true
           },
           {
-            "id": "exercise_08",
+            "id": "b9e46637-94ca-4fea-90cf-29155c015046",
             "type": "communication_dialogue",
             "variant": "role_play",
             "order": 8,
@@ -3137,7 +2906,7 @@
             },
             "dialogues": [
               {
-                "id": "ex08_dialogue_01",
+                "id": "9d10590c-3dd7-4287-b930-4f4dbe1e9afb",
                 "title": "计划",
                 "title_vi": "Lập kế hoạch",
                 "lines": [
@@ -3161,11 +2930,10 @@
                     "zh": "除了杭州，我还想去苏州看看。",
                     "vi": "Ngoài Hàng Châu, tôi còn muốn đi Tô Châu xem thử."
                   }
-                ],
-                "uuid": "16d027f7-84ce-4294-ba30-44e41e0f911b"
+                ]
               },
               {
-                "id": "ex08_dialogue_02",
+                "id": "57e12e55-5de1-4145-b9ff-e71fe2cc59e2",
                 "title": "送行",
                 "title_vi": "Tiễn người đi",
                 "lines": [
@@ -3189,11 +2957,10 @@
                     "zh": "谢谢！",
                     "vi": "Cảm ơn!"
                   }
-                ],
-                "uuid": "f1cd4c08-8db2-4b9b-b6f7-853f705b364f"
+                ]
               },
               {
-                "id": "ex08_dialogue_03",
+                "id": "e64b5e74-5b95-4c55-bc5f-1d7320d1cd27",
                 "title": "表达无所谓",
                 "title_vi": "Diễn đạt “sao cũng được / gì cũng được”",
                 "lines": [
@@ -3222,19 +2989,16 @@
                     "zh": "我无所谓，喝什么都行。",
                     "vi": "Tôi sao cũng được, uống gì cũng được."
                   }
-                ],
-                "uuid": "8431bfbd-d7ee-4660-9d74-5767f0b5aff0"
+                ]
               }
             ],
             "source_origin": "textbook/generated_mixed",
-            "check_needed": false,
-            "uuid": "960ca06b-e545-4f01-85aa-652b1c8de430"
+            "check_needed": false
           }
-        ],
-        "uuid": "2c8e5bc1-3eae-4169-a167-cdfa205b7f62"
+        ]
       },
       {
-        "id": "section_07_reading",
+        "id": "886f621e-85ce-4e1a-91df-d8d257596034",
         "type": "reading",
         "order": 7,
         "title": "阅读理解 / 阅读",
@@ -3243,7 +3007,7 @@
         "check_needed": true,
         "items": [
           {
-            "id": "reading_01",
+            "id": "9bd9a79e-3279-468d-9f4b-ecd1f7365e19",
             "type": "text_dialogue",
             "order": 1,
             "title": "会话",
@@ -3391,37 +3155,33 @@
             ],
             "comprehension_questions": [
               {
-                "id": "reading_01_q01",
+                "id": "97c6a4ab-7de0-45b1-a796-4625f58d1fca",
                 "question": "罗兰是什么时候回来的？",
                 "answer": "罗兰昨天晚上回来的。",
                 "source_origin": "generated",
                 "answer_verified": false,
-                "check_needed": true,
-                "uuid": "31442151-5b18-4265-a75e-96ee60a0c446"
+                "check_needed": true
               },
               {
-                "id": "reading_01_q02",
+                "id": "82b334af-11c3-4606-980f-154617982627",
                 "question": "罗兰先去哪儿了？",
                 "answer": "她先去哈尔滨了。",
                 "source_origin": "generated",
                 "answer_verified": false,
-                "check_needed": true,
-                "uuid": "2c16eeb4-24c1-419e-9def-99f1a6d24e05"
+                "check_needed": true
               },
               {
-                "id": "reading_01_q03",
+                "id": "13181a17-4f4d-4923-a0ef-dd8d285261d4",
                 "question": "罗兰为什么在云南呆了一个星期？",
                 "answer": "因为她对中国少数民族的风俗很感兴趣。",
                 "source_origin": "generated",
                 "answer_verified": false,
-                "check_needed": true,
-                "uuid": "02b70596-72f5-4213-a513-eb8c1c3af485"
+                "check_needed": true
               }
-            ],
-            "uuid": "a6eba20f-8eae-413a-acb5-28de14b60094"
+            ]
           },
           {
-            "id": "reading_02",
+            "id": "8bcbb3c5-a0eb-456f-980a-a7394a3d7971",
             "type": "text_narrative",
             "order": 2,
             "title": "画蛇添足",
@@ -3498,70 +3258,61 @@
             ],
             "paragraphs": [
               {
-                "id": "reading_02_p01",
+                "id": "c3df38fe-05a1-4939-9475-202c6ad5f23d",
                 "order": 1,
                 "zh": "从前，有几个人得到了一壶酒。他们谁都想喝这壶酒，可是这壶酒只够一个人喝，给谁喝呢，半天决定不了。一个人就说：“这样吧，我们每个人都在地上画一条蛇。谁先画完，这壶酒就给谁喝。”",
-                "vi": "Ngày xưa, có mấy người có được một bình rượu. Ai cũng muốn uống bình rượu này, nhưng bình rượu chỉ đủ cho một người uống. Cho ai uống đây? Nghĩ mãi vẫn không quyết định được. Một người liền nói: “Thế này nhé, mỗi người chúng ta vẽ một con rắn trên mặt đất. Ai vẽ xong trước thì bình rượu này cho người đó uống.”",
-                "uuid": "9c5518bc-e085-4637-9f1a-7b29062f7470"
+                "vi": "Ngày xưa, có mấy người có được một bình rượu. Ai cũng muốn uống bình rượu này, nhưng bình rượu chỉ đủ cho một người uống. Cho ai uống đây? Nghĩ mãi vẫn không quyết định được. Một người liền nói: “Thế này nhé, mỗi người chúng ta vẽ một con rắn trên mặt đất. Ai vẽ xong trước thì bình rượu này cho người đó uống.”"
               },
               {
-                "id": "reading_02_p02",
+                "id": "610c3615-0f91-45ba-98ba-27d941854f12",
                 "order": 2,
                 "zh": "大家都同意他的办法，于是就在地上画了起来。",
-                "vi": "Mọi người đều đồng ý với cách của anh ta, thế là bắt đầu vẽ trên mặt đất.",
-                "uuid": "cb9bdd7f-ae21-459d-a25e-cf02ac8fa99c"
+                "vi": "Mọi người đều đồng ý với cách của anh ta, thế là bắt đầu vẽ trên mặt đất."
               },
               {
-                "id": "reading_02_p03",
+                "id": "5f9b209f-1714-45a9-a2bf-f135ac836382",
                 "order": 3,
                 "zh": "有一个人很快就把蛇画好了。他看别人还都没有画完，就左手拿起壶酒，右手又画起来，还得意地说：“你们画得太慢了！你们看我，还能给蛇添上几只脚呢。”",
-                "vi": "Có một người rất nhanh đã vẽ xong con rắn. Anh ta thấy những người khác vẫn chưa vẽ xong, liền tay trái cầm bình rượu lên, tay phải lại tiếp tục vẽ, còn đắc ý nói: “Các anh vẽ chậm quá! Nhìn tôi này, tôi còn có thể vẽ thêm mấy cái chân cho rắn nữa.”",
-                "uuid": "1a68e3c3-f114-4961-bd10-4d6b53aac8e6"
+                "vi": "Có một người rất nhanh đã vẽ xong con rắn. Anh ta thấy những người khác vẫn chưa vẽ xong, liền tay trái cầm bình rượu lên, tay phải lại tiếp tục vẽ, còn đắc ý nói: “Các anh vẽ chậm quá! Nhìn tôi này, tôi còn có thể vẽ thêm mấy cái chân cho rắn nữa.”"
               },
               {
-                "id": "reading_02_p04",
+                "id": "3ec1288d-754e-468b-9114-2785a0b02b25",
                 "order": 4,
                 "zh": "当他正在给蛇画脚的时候，另一个人也把蛇画好了，就把壶酒拿过去，说：“蛇是没有脚的，你给它画上了脚，就不是蛇了。所以，第一个画完蛇的是我，不是你！”说完就把酒喝了。",
-                "vi": "Khi anh ta đang vẽ chân cho rắn, một người khác cũng đã vẽ xong rắn, liền cầm bình rượu qua và nói: “Rắn thì không có chân. Anh vẽ thêm chân cho nó thì nó không còn là rắn nữa. Vì vậy, người đầu tiên vẽ xong rắn là tôi, không phải anh!” Nói xong liền uống rượu.",
-                "uuid": "b9e54c28-2219-4026-8f87-609f5f063875"
+                "vi": "Khi anh ta đang vẽ chân cho rắn, một người khác cũng đã vẽ xong rắn, liền cầm bình rượu qua và nói: “Rắn thì không có chân. Anh vẽ thêm chân cho nó thì nó không còn là rắn nữa. Vì vậy, người đầu tiên vẽ xong rắn là tôi, không phải anh!” Nói xong liền uống rượu."
               }
             ],
             "comprehension_questions": [
               {
-                "id": "reading_02_q01",
+                "id": "b9cbd9ce-0cfe-4c00-87c6-494908b619f0",
                 "question": "几个人得到了一壶什么？",
                 "answer": "他们得到了一壶酒。",
                 "source_origin": "generated",
                 "answer_verified": false,
-                "check_needed": true,
-                "uuid": "f9992298-53c4-4c32-a6f6-bd4dda6cbdc8"
+                "check_needed": true
               },
               {
-                "id": "reading_02_q02",
+                "id": "30d63861-7dd8-4f74-a607-528be59ea49e",
                 "question": "这壶酒够几个人喝？",
                 "answer": "这壶酒只够一个人喝。",
                 "source_origin": "generated",
                 "answer_verified": false,
-                "check_needed": true,
-                "uuid": "a902050d-b489-4a19-9063-d0a6f998f292"
+                "check_needed": true
               },
               {
-                "id": "reading_02_q03",
+                "id": "c4fbb36f-89f4-4993-8289-aee45ed64a5b",
                 "question": "“画蛇添足”这个成语是什么意思？",
                 "answer": "意思是做了多余的事，反而把事情弄坏了。",
                 "source_origin": "generated",
                 "answer_verified": false,
-                "check_needed": true,
-                "uuid": "53ddd75a-eb78-4092-b797-cbc8e12555e6"
+                "check_needed": true
               }
-            ],
-            "uuid": "18a31c5c-c362-4535-b33c-f41e0f416215"
+            ]
           }
-        ],
-        "uuid": "f63d57d9-fb7a-496d-a6e0-fcb539877d10"
+        ]
       },
       {
-        "id": "section_08_character_writing",
+        "id": "2a3cfdb8-618f-43d3-9ad4-160d1dbb366a",
         "type": "character_writing",
         "order": 8,
         "title": "写汉字",
@@ -3570,330 +3321,300 @@
         "check_needed": true,
         "items": [
           {
-            "id": "char_001",
+            "id": "9f8c867c-beba-46cf-99e0-2dc871b61547",
             "type": "character_copying",
             "order": 1,
             "hanzi": "渴",
             "pinyin": "",
             "meaning_vi": "",
             "source_origin": "generated",
-            "check_needed": true,
-            "uuid": "f78adc6d-26ac-45c1-9698-28cbd9f8ceb3"
+            "check_needed": true
           },
           {
-            "id": "char_002",
+            "id": "d64267f3-d0df-480d-ac2c-799cc72c5727",
             "type": "character_copying",
             "order": 2,
             "hanzi": "周",
             "pinyin": "",
             "meaning_vi": "",
             "source_origin": "generated",
-            "check_needed": true,
-            "uuid": "0f2730a0-bfdf-440b-9e1b-fc31225cbb15"
+            "check_needed": true
           },
           {
-            "id": "char_003",
+            "id": "f18de2f5-ea9a-4c6f-8203-9ec87e6074f0",
             "type": "character_copying",
             "order": 3,
             "hanzi": "玩",
             "pinyin": "",
             "meaning_vi": "",
             "source_origin": "generated",
-            "check_needed": true,
-            "uuid": "dde11bb3-e701-458a-bd94-7e5adb393b17"
+            "check_needed": true
           },
           {
-            "id": "char_004",
+            "id": "eeadefcb-f658-4422-878c-4642cec9caa5",
             "type": "character_copying",
             "order": 4,
             "hanzi": "计",
             "pinyin": "",
             "meaning_vi": "",
             "source_origin": "generated",
-            "check_needed": true,
-            "uuid": "aaf5c794-b78f-4176-b047-34088e5b0686"
+            "check_needed": true
           },
           {
-            "id": "char_005",
+            "id": "7986bf0d-0a2a-4df2-bfb5-77177a96c27a",
             "type": "character_copying",
             "order": 5,
             "hanzi": "划",
             "pinyin": "",
             "meaning_vi": "",
             "source_origin": "generated",
-            "check_needed": true,
-            "uuid": "8b6be925-4ae1-4519-93a5-a233b9bec351"
+            "check_needed": true
           },
           {
-            "id": "char_006",
+            "id": "69cee776-d51f-4d4c-8865-44e5c500be8b",
             "type": "character_copying",
             "order": 6,
             "hanzi": "船",
             "pinyin": "",
             "meaning_vi": "",
             "source_origin": "generated",
-            "check_needed": true,
-            "uuid": "4927574a-7544-4cf4-b985-35f42fac64d8"
+            "check_needed": true
           },
           {
-            "id": "char_007",
+            "id": "b00ce016-cc5e-4ca7-8718-7ddcae1618a6",
             "type": "character_copying",
             "order": 7,
             "hanzi": "游",
             "pinyin": "",
             "meaning_vi": "",
             "source_origin": "generated",
-            "check_needed": true,
-            "uuid": "b3ebd418-29af-4edb-8106-aafe77d65194"
+            "check_needed": true
           },
           {
-            "id": "char_008",
+            "id": "9fcc24e3-9e1c-4296-b02c-04422fc58fd1",
             "type": "character_copying",
             "order": 8,
             "hanzi": "览",
             "pinyin": "",
             "meaning_vi": "",
             "source_origin": "generated",
-            "check_needed": true,
-            "uuid": "c488f4f4-5735-42d6-85d2-83e0c88edfd2"
+            "check_needed": true
           },
           {
-            "id": "char_009",
+            "id": "465657de-9263-4d12-86f0-2441c5765015",
             "type": "character_copying",
             "order": 9,
             "hanzi": "天",
             "pinyin": "",
             "meaning_vi": "",
             "source_origin": "generated",
-            "check_needed": true,
-            "uuid": "795518f5-d8d5-4d00-a42c-fa02da9382d6"
+            "check_needed": true
           },
           {
-            "id": "char_010",
+            "id": "fc063ab3-c1b4-44d9-bd34-c6ed58bdbba7",
             "type": "character_copying",
             "order": 10,
             "hanzi": "下",
             "pinyin": "",
             "meaning_vi": "",
             "source_origin": "generated",
-            "check_needed": true,
-            "uuid": "3a284340-6481-4c0d-a9ff-54632b93ae5f"
+            "check_needed": true
           },
           {
-            "id": "char_011",
+            "id": "937cd534-2bef-484c-ac0b-fc654e6db919",
             "type": "character_copying",
             "order": 11,
             "hanzi": "民",
             "pinyin": "",
             "meaning_vi": "",
             "source_origin": "generated",
-            "check_needed": true,
-            "uuid": "044b3bab-9ed0-4bea-ba1b-97a3c8b6187d"
+            "check_needed": true
           },
           {
-            "id": "char_012",
+            "id": "df0df0d7-11b4-49e3-804b-a0fc179aab2a",
             "type": "character_copying",
             "order": 12,
             "hanzi": "族",
             "pinyin": "",
             "meaning_vi": "",
             "source_origin": "generated",
-            "check_needed": true,
-            "uuid": "795ed768-2a5b-4e38-9d62-75ea22446c52"
+            "check_needed": true
           },
           {
-            "id": "char_013",
+            "id": "d8cdf3e0-e26d-4968-a7e2-6a30d0af1b90",
             "type": "character_copying",
             "order": 13,
             "hanzi": "风",
             "pinyin": "",
             "meaning_vi": "",
             "source_origin": "generated",
-            "check_needed": true,
-            "uuid": "80d7279a-5d1d-4188-ad1d-86ebbea0c625"
+            "check_needed": true
           },
           {
-            "id": "char_014",
+            "id": "e11918fd-b3c9-4cb7-b623-0179aa82488b",
             "type": "character_copying",
             "order": 14,
             "hanzi": "俗",
             "pinyin": "",
             "meaning_vi": "",
             "source_origin": "generated",
-            "check_needed": true,
-            "uuid": "09d6b65d-725a-46a9-97d8-179ec5ce7fd2"
+            "check_needed": true
           },
           {
-            "id": "char_015",
+            "id": "fe2d69a5-d155-4723-ba67-501d887ac2f9",
             "type": "character_copying",
             "order": 15,
             "hanzi": "路",
             "pinyin": "",
             "meaning_vi": "",
             "source_origin": "generated",
-            "check_needed": true,
-            "uuid": "f6378d7f-0467-4ac6-be0e-a40a7034b123"
+            "check_needed": true
           },
           {
-            "id": "char_016",
+            "id": "6c79894d-40a6-41be-9333-c875515563fb",
             "type": "character_copying",
             "order": 16,
             "hanzi": "线",
             "pinyin": "",
             "meaning_vi": "",
             "source_origin": "generated",
-            "check_needed": true,
-            "uuid": "ed73d162-a929-4fee-b3aa-24094d0ee740"
+            "check_needed": true
           },
           {
-            "id": "char_017",
+            "id": "ce0a9298-ea47-4a52-b701-758c6dab11b5",
             "type": "character_copying",
             "order": 17,
             "hanzi": "值",
             "pinyin": "",
             "meaning_vi": "",
             "source_origin": "generated",
-            "check_needed": true,
-            "uuid": "e64d2ea6-ace1-4a28-8ecd-83df93933895"
+            "check_needed": true
           },
           {
-            "id": "char_018",
+            "id": "59521ea2-4427-4918-8593-59465c201b2c",
             "type": "character_copying",
             "order": 18,
             "hanzi": "意",
             "pinyin": "",
             "meaning_vi": "",
             "source_origin": "generated",
-            "check_needed": true,
-            "uuid": "3eb8cab3-ce5b-4e84-9afc-c9f092c8202d"
+            "check_needed": true
           },
           {
-            "id": "char_019",
+            "id": "24960e10-d1fe-4ba7-9f07-a05f4eeedc2f",
             "type": "character_copying",
             "order": 19,
             "hanzi": "义",
             "pinyin": "",
             "meaning_vi": "",
             "source_origin": "generated",
-            "check_needed": true,
-            "uuid": "4df11a8f-f43b-4952-becb-326f8a483982"
+            "check_needed": true
           },
           {
-            "id": "char_020",
+            "id": "a6a87167-2b01-4228-a7dc-8c541bb553d8",
             "type": "character_copying",
             "order": 20,
             "hanzi": "律",
             "pinyin": "",
             "meaning_vi": "",
             "source_origin": "generated",
-            "check_needed": true,
-            "uuid": "3e400453-5a73-49e0-8d77-2dfd4804aff3"
+            "check_needed": true
           },
           {
-            "id": "char_021",
+            "id": "826166c1-f1d9-4339-b008-1f1fca0ce764",
             "type": "character_copying",
             "order": 21,
             "hanzi": "医",
             "pinyin": "",
             "meaning_vi": "",
             "source_origin": "generated",
-            "check_needed": true,
-            "uuid": "ac01eed1-fd75-4786-87fd-88e264bd237c"
+            "check_needed": true
           },
           {
-            "id": "char_022",
+            "id": "cf6c2bec-a30d-4b71-823a-43e970b73e6d",
             "type": "character_copying",
             "order": 22,
             "hanzi": "记",
             "pinyin": "",
             "meaning_vi": "",
             "source_origin": "generated",
-            "check_needed": true,
-            "uuid": "12e6f9a6-12ee-4480-8777-324d43f08018"
+            "check_needed": true
           },
           {
-            "id": "char_023",
+            "id": "3905c22e-8711-425d-b8ce-f850e476332f",
             "type": "character_copying",
             "order": 23,
             "hanzi": "者",
             "pinyin": "",
             "meaning_vi": "",
             "source_origin": "generated",
-            "check_needed": true,
-            "uuid": "3e995e4e-2e21-4ecc-be98-450e2beccc7d"
+            "check_needed": true
           },
           {
-            "id": "char_024",
+            "id": "3aa48fb0-9b5e-4076-ba39-ca30936c3202",
             "type": "character_copying",
             "order": 24,
             "hanzi": "作",
             "pinyin": "",
             "meaning_vi": "",
             "source_origin": "generated",
-            "check_needed": true,
-            "uuid": "ce14b906-ce68-4068-99e9-1bb216bf5302"
+            "check_needed": true
           },
           {
-            "id": "char_025",
+            "id": "ccf16d48-233f-4a02-8f5d-8e395949748a",
             "type": "character_copying",
             "order": 25,
             "hanzi": "工",
             "pinyin": "",
             "meaning_vi": "",
             "source_origin": "generated",
-            "check_needed": true,
-            "uuid": "902e7a14-17e7-4012-9623-b4f12bd00d49"
+            "check_needed": true
           },
           {
-            "id": "char_026",
+            "id": "b80a7041-c7a9-4a3e-95c9-cfeece6329f4",
             "type": "character_copying",
             "order": 26,
             "hanzi": "程",
             "pinyin": "",
             "meaning_vi": "",
             "source_origin": "generated",
-            "check_needed": true,
-            "uuid": "dce4c2ed-b1c5-4daa-996e-691d370bbe81"
+            "check_needed": true
           },
           {
-            "id": "char_027",
+            "id": "d7dc219b-33ae-4d74-a66b-dcb0ee281a55",
             "type": "character_copying",
             "order": 27,
             "hanzi": "师",
             "pinyin": "",
             "meaning_vi": "",
             "source_origin": "generated",
-            "check_needed": true,
-            "uuid": "96c6c2b2-db55-4936-8546-570a74135d09"
+            "check_needed": true
           },
           {
-            "id": "char_028",
+            "id": "8bdb2c56-68f3-4771-8c40-1ec6bbab31c1",
             "type": "character_copying",
             "order": 28,
             "hanzi": "方",
             "pinyin": "",
             "meaning_vi": "",
             "source_origin": "generated",
-            "check_needed": true,
-            "uuid": "d62fb0e7-5dca-4f66-bfbe-d2aece588c7c"
+            "check_needed": true
           },
           {
-            "id": "char_029",
+            "id": "5fbffe9f-1bd1-49a8-9059-25ca183ce711",
             "type": "character_copying",
             "order": 29,
             "hanzi": "面",
             "pinyin": "",
             "meaning_vi": "",
             "source_origin": "generated",
-            "check_needed": true,
-            "uuid": "c1ede817-ced4-427f-b806-1d189f175756"
+            "check_needed": true
           }
         ],
-        "note_vi": "Danh sách gợi ý luyện viết rút từ từ vựng bài; chưa xác nhận là danh sách 写汉字 nguyên sách.",
-        "uuid": "5c41810f-1cd6-441b-879e-13371aee34d2"
+        "note_vi": "Danh sách gợi ý luyện viết rút từ từ vựng bài; chưa xác nhận là danh sách 写汉字 nguyên sách."
       },
       {
-        "id": "section_09_summary",
+        "id": "944b8c3a-d3d4-4265-a907-10cef8340ac2",
         "type": "summary",
         "order": 9,
         "title": "总结",
@@ -3912,34 +3633,28 @@
         ],
         "grammar_points": [
           {
-            "id": "grammar_01",
-            "title": "疑问代词的活用",
-            "uuid": "08bee725-6465-4391-accb-2d64c18b7cce"
+            "id": "f8ec59f3-898a-47b2-b536-44dfd8183393",
+            "title": "疑问代词的活用"
           },
           {
-            "id": "grammar_02",
-            "title": "一边……一边……",
-            "uuid": "0269ea92-57bc-4064-9a0f-26c434a5a7ea"
+            "id": "57b14753-688a-41b6-9e0d-b61dbbf574d7",
+            "title": "一边……一边……"
           },
           {
-            "id": "grammar_03",
-            "title": "先……再……然后……最后……",
-            "uuid": "1b1cc5cc-a48a-4c2a-b371-92b2bc62344d"
+            "id": "fa804fff-372b-4874-8571-f54e613d7e07",
+            "title": "先……再……然后……最后……"
           },
           {
-            "id": "grammar_04",
-            "title": "除了……以外，……都……",
-            "uuid": "a2cfbc94-d059-4d2c-a350-8cda22860f69"
+            "id": "c6cd6c38-22fc-4546-a398-39efe02d6c17",
+            "title": "除了……以外，……都……"
           },
           {
-            "id": "grammar_05",
-            "title": "只要……就……",
-            "uuid": "500ff4a9-9b77-4542-914c-d95ec7262c25"
+            "id": "c3d31639-0f40-4b2f-aa50-5dda9d443b78",
+            "title": "只要……就……"
           },
           {
-            "id": "grammar_06",
-            "title": "对……感兴趣",
-            "uuid": "20b325c4-6724-4ea4-acfd-4a15d3e21ffc"
+            "id": "b0c8e101-1500-4742-9064-1e102a0eb8b9",
+            "title": "对……感兴趣"
           }
         ],
         "key_patterns": [
@@ -3969,10 +3684,55 @@
             "Câu hỏi đọc hiểu sau phần 阅读 có nằm trong sách hay chỉ nên để generated.",
             "哈尔滨、西安 có nên đưa vào 专名 chính hay nhóm review."
           ]
-        },
-        "uuid": "b945de0d-6586-47c4-be89-ae3f52b742cc"
+        }
       }
     ],
+    "metadata": {
+      "legacy_id": "hanyu_2_2_lesson_23",
+      "book": "Hanyu Jiaocheng",
+      "volume": "第二册下",
+      "volume_vi": "Quyển 2 Hạ",
+      "lesson_index": 23,
+      "lesson_number_cn": "第二十三课",
+      "lesson_title_cn": "寒假你打算去哪儿旅行",
+      "lesson_title_pinyin": "Hánjià nǐ dǎsuàn qù nǎr lǚxíng",
+      "lesson_title_vi": "Kỳ nghỉ đông bạn định đi đâu du lịch?",
+      "lesson_title_en": "Where are you planning to travel during the winter vacation?",
+      "source_files": [
+        {
+          "name": "Hanyu Jiaocheng 2-2.pdf",
+          "type": "pdf_scan",
+          "source_origin": "textbook",
+          "check_needed": true,
+          "page_start": 167,
+          "page_end": 180
+        },
+        {
+          "name": "Tong_hop_tu_vung_Han_ngu_quyen_2_Bai_1-25.docx",
+          "type": "uploaded_crosscheck",
+          "source_origin": "uploaded_crosscheck",
+          "check_needed": false
+        },
+        {
+          "name": "Học kì 2 上-下.md",
+          "type": "uploaded_crosscheck",
+          "source_origin": "uploaded_crosscheck",
+          "check_needed": false
+        },
+        {
+          "name": "hanyu_lesson_full_coverage_sample_v2_3_0.json",
+          "type": "structure_sample",
+          "source_origin": "uploaded_crosscheck",
+          "check_needed": false
+        },
+        {
+          "name": "hanyuLesson.schema.v2.3.0.full.ts",
+          "type": "schema",
+          "source_origin": "uploaded_crosscheck",
+          "check_needed": false
+        }
+      ]
+    },
     "summary": {
       "lesson_parts": [
         "Bài khóa",
@@ -3987,34 +3747,28 @@
       ],
       "grammar_points": [
         {
-          "id": "grammar_01",
-          "title": "Đại từ nghi vấn dùng mở rộng",
-          "uuid": "62201374-320f-43d9-ad46-f53401f73afc"
+          "id": "f8ec59f3-898a-47b2-b536-44dfd8183393",
+          "title": "Đại từ nghi vấn dùng mở rộng"
         },
         {
-          "id": "grammar_02",
-          "title": "Vừa... vừa...",
-          "uuid": "0ea629a8-3401-49e5-8dab-9f2a3e173a5a"
+          "id": "57b14753-688a-41b6-9e0d-b61dbbf574d7",
+          "title": "Vừa... vừa..."
         },
         {
-          "id": "grammar_03",
-          "title": "Trình tự hành động",
-          "uuid": "4a2ee5bc-02e7-470c-a25d-5ca9eaece187"
+          "id": "fa804fff-372b-4874-8571-f54e613d7e07",
+          "title": "Trình tự hành động"
         },
         {
-          "id": "grammar_04",
-          "title": "Ngoài... ra, đều...",
-          "uuid": "6a4d4e81-b34c-4fea-8296-3a3c2df05566"
+          "id": "c6cd6c38-22fc-4546-a398-39efe02d6c17",
+          "title": "Ngoài... ra, đều..."
         },
         {
-          "id": "grammar_05",
-          "title": "Chỉ cần... thì...",
-          "uuid": "26d6bd21-e21e-46c9-8bcc-37e48e7d650f"
+          "id": "c3d31639-0f40-4b2f-aa50-5dda9d443b78",
+          "title": "Chỉ cần... thì..."
         },
         {
-          "id": "grammar_06",
-          "title": "Hứng thú với...",
-          "uuid": "a8924764-6870-43f2-8eae-3eefbd30b289"
+          "id": "b0c8e101-1500-4742-9064-1e102a0eb8b9",
+          "title": "Hứng thú với..."
         }
       ],
       "main_patterns": [],
@@ -4029,185 +3783,6 @@
         "Hội thoại giao tiếp"
       ],
       "check_needed": false
-    },
-    "uuid": "80ee0c2a-fb02-4b37-aba1-b19966584ec5"
-  },
-  "coverage_report": {
-    "version": "coverage_v1",
-    "coverage_status": "partial",
-    "expected_exercise_count_from_pdf": 8,
-    "actual_exercise_count_in_json": 8,
-    "all_exercises_covered": true,
-    "all_exercise_content_verified": false,
-    "missing_exercise_indexes": [],
-    "expected_exercises_from_pdf": [
-      {
-        "order": 1,
-        "title_cn": "语音",
-        "title_vi": "",
-        "canonical_type": "phonetics",
-        "canonical_variant": "pronunciation_tone_minimal_pairs",
-        "json_item_id": "exercise_01",
-        "page_start": null,
-        "page_end": null,
-        "extracted": true,
-        "content_verified": true,
-        "answer_verified": false,
-        "source_origin": "textbook/generated_mixed",
-        "check_needed": false,
-        "missing_reason": ""
-      },
-      {
-        "order": 2,
-        "title_cn": "替换",
-        "title_vi": "",
-        "canonical_type": "substitution_drill",
-        "canonical_variant": "substitution_or_transform_drill",
-        "json_item_id": "exercise_02",
-        "page_start": null,
-        "page_end": null,
-        "extracted": true,
-        "content_verified": true,
-        "answer_verified": false,
-        "source_origin": "textbook/generated_mixed",
-        "check_needed": false,
-        "missing_reason": ""
-      },
-      {
-        "order": 3,
-        "title_cn": "选词填空",
-        "title_vi": "",
-        "canonical_type": "choose_words_fill_blank",
-        "canonical_variant": "word_bank_fill_blank",
-        "json_item_id": "exercise_03",
-        "page_start": null,
-        "page_end": null,
-        "extracted": true,
-        "content_verified": false,
-        "answer_verified": false,
-        "source_origin": "textbook/generated_mixed",
-        "check_needed": true,
-        "missing_reason": ""
-      },
-      {
-        "order": 4,
-        "title_cn": "用括号里的词语完成句子",
-        "title_vi": "",
-        "canonical_type": "complete_sentence",
-        "canonical_variant": "complete_sentence_with_given_words",
-        "json_item_id": "exercise_04",
-        "page_start": null,
-        "page_end": null,
-        "extracted": true,
-        "content_verified": false,
-        "answer_verified": false,
-        "source_origin": "textbook/generated_mixed",
-        "check_needed": true,
-        "missing_reason": ""
-      },
-      {
-        "order": 5,
-        "title_cn": "用括号里的词语回答问题",
-        "title_vi": "",
-        "canonical_type": "answer_questions",
-        "canonical_variant": "free_fill_blank",
-        "json_item_id": "exercise_05",
-        "page_start": null,
-        "page_end": null,
-        "extracted": true,
-        "content_verified": false,
-        "answer_verified": false,
-        "source_origin": "textbook/generated_mixed",
-        "check_needed": true,
-        "missing_reason": ""
-      },
-      {
-        "order": 6,
-        "title_cn": "下列情景怎么说（用上疑问代词）",
-        "title_vi": "",
-        "canonical_type": "custom",
-        "canonical_variant": "custom_textbook_task",
-        "json_item_id": "exercise_06",
-        "page_start": null,
-        "page_end": null,
-        "extracted": true,
-        "content_verified": false,
-        "answer_verified": false,
-        "source_origin": "textbook/generated_mixed",
-        "check_needed": true,
-        "missing_reason": ""
-      },
-      {
-        "order": 7,
-        "title_cn": "改错句",
-        "title_vi": "",
-        "canonical_type": "correct_sentence",
-        "canonical_variant": "error_correction",
-        "json_item_id": "exercise_07",
-        "page_start": null,
-        "page_end": null,
-        "extracted": true,
-        "content_verified": false,
-        "answer_verified": false,
-        "source_origin": "textbook/generated_mixed",
-        "check_needed": true,
-        "missing_reason": ""
-      },
-      {
-        "order": 8,
-        "title_cn": "交际会话",
-        "title_vi": "",
-        "canonical_type": "communication_dialogue",
-        "canonical_variant": "role_play",
-        "json_item_id": "exercise_08",
-        "page_start": null,
-        "page_end": null,
-        "extracted": true,
-        "content_verified": true,
-        "answer_verified": false,
-        "source_origin": "textbook/generated_mixed",
-        "check_needed": false,
-        "missing_reason": ""
-      }
-    ],
-    "unknown_or_unmapped_blocks": [],
-    "coverage_gates": [
-      {
-        "id": "gate_text",
-        "label": "Text covered",
-        "passed": true,
-        "uuid": "ffc19965-89d0-42c6-b04b-af608cc041ec"
-      },
-      {
-        "id": "gate_vocab",
-        "label": "Vocabulary covered",
-        "passed": true,
-        "uuid": "cf8ff2f9-f5e2-4185-a0ff-ee3f108b44b6"
-      },
-      {
-        "id": "gate_exercises",
-        "label": "Exercise count covered",
-        "passed": true,
-        "expected": 8,
-        "actual": 8,
-        "uuid": "6dd79cac-fb96-4bcd-9861-dbb2af2dbb84"
-      },
-      {
-        "id": "gate_answers",
-        "label": "Answer key verified",
-        "passed": false,
-        "reason": "Several answers are inferred/guided; textbook answer key not verified.",
-        "uuid": "7ab4c235-9355-410e-be95-eb4b445250a1"
-      },
-      {
-        "id": "gate_character_writing",
-        "label": "Character writing verified",
-        "passed": false,
-        "reason": "写汉字 section not confirmed from scan.",
-        "uuid": "bfe55072-8a98-471e-a857-b420cee22632"
-      }
-    ],
-    "final_verification_allowed": false
-  },
-  "created_at": "2026-06-02T02:06:55.212055Z"
+    }
+  }
 }

@@ -6,7 +6,10 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Sheet, SheetHeader } from "@/components/ui/sheet";
 import { GrammarPointList } from "@/features/hanzihome/components/GrammarPointList";
-import { GrammarPointReader } from "@/features/hanzihome/components/GrammarPointReader";
+import {
+ GrammarPointReader,
+ StructuredGrammarContent,
+} from "@/features/hanzihome/components/GrammarPointReader";
 import { GrammarPracticeMini } from "@/features/hanzihome/components/GrammarPracticeMini";
 import { MarkdownContent } from "@/features/hanzihome/components/MarkdownContent";
 import type {
@@ -383,14 +386,6 @@ function GrammarReadingReader({ reading }: { reading: GrammarReading }) {
  );
 }
 
-function hasExampleDetailSection(point: GrammarViewModel) {
- return Boolean(
-  point.detailSections?.some((section) =>
-   section.title.toLocaleLowerCase("vi-VN").includes("ví dụ"),
-  ),
- );
-}
-
 function AllGrammarPointReader({ points }: { points: GrammarViewModel[] }) {
  return (
   <div className="grid gap-4">
@@ -413,83 +408,7 @@ function AllGrammarPointReader({ points }: { points: GrammarViewModel[] }) {
 
       </div>
 
-      {point.core && (
-       <p className="text-sm font-semibold leading-relaxed text-text-secondary">
-        {point.core}
-       </p>
-      )}
-
-      {point.structuresView.length > 0 && (
-       <section className="grid gap-2">
-        <h3 className="text-sm font-black text-text-primary">Công thức</h3>
-        {point.structuresView.map((structure) => (
-         <p
-          key={structure}
-          className="rounded-xl border border-info/30 bg-info-subtle p-3 text-sm font-black text-info-text"
-         >
-          {structure}
-         </p>
-        ))}
-       </section>
-      )}
-
-      {point.detailSections && point.detailSections.length > 0 && (
-       <section className="grid gap-2">
-        <h3 className="text-sm font-black text-text-primary">
-         Chi tiết nhập từ markdown
-        </h3>
-        {point.detailSections.map((section) => (
-         <div
-          key={section.key}
-          className="grid gap-2 rounded-xl border border-border-default bg-bg-subtle p-3"
-         >
-          <h4 className="text-sm font-black text-text-primary">
-           {section.title}
-          </h4>
-          {section.lines.map((line, lineIndex) => (
-           <p
-            key={`${section.key}-${lineIndex}`}
-            className="text-sm leading-relaxed text-text-secondary"
-           >
-            {line}
-           </p>
-          ))}
-         </div>
-        ))}
-       </section>
-      )}
-
-      {!hasExampleDetailSection(point) && point.examplesParsed.length > 0 && (
-       <section className="grid gap-2">
-        <h3 className="text-sm font-black text-text-primary">Ví dụ</h3>
-        {point.examplesParsed.slice(0, 5).map((example) => (
-         <div
-          key={`${point.id}-${example.zh}-${example.vi}`}
-          className="rounded-xl bg-bg-subtle p-3"
-         >
-          <p className="font-black leading-relaxed text-text-primary">
-           {example.zh}
-          </p>
-          {example.vi && (
-           <p className="text-sm font-semibold leading-relaxed text-text-secondary">
-            {example.vi}
-           </p>
-          )}
-         </div>
-        ))}
-       </section>
-      )}
-
-      {point.notes.length > 0 && (
-       <section className="grid gap-2">
-        <h3 className="text-sm font-black text-text-primary">Lưu ý</h3>
-        {point.notes.slice(0, 5).map((note) => (
-         <p key={note} className="text-sm leading-relaxed text-text-secondary">
-          {note}
-         </p>
-        ))}
-       </section>
-      )}
+      <StructuredGrammarContent point={point} exampleLimit={5} />
      </div>
     </article>
    ))}

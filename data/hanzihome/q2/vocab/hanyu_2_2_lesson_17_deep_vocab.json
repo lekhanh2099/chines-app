@@ -34,7 +34,7 @@
     "notes": []
   },
   "lesson": {
-    "id": "hanyu_2_2_lesson_17_deep_vocab",
+    "id": "372dc1fc-bb39-4177-add0-742fd9491362",
     "title": {
       "zh": "把“福”字倒着贴在门上",
       "pinyin": "Bǎ “Fú” zì dàozhe tiē zài mén shang",
@@ -53,7 +53,7 @@
   "overview": {
     "groups": [
       {
-        "id": "group_001",
+        "id": "78b70829-3579-44a0-b44e-c16ac162cd32",
         "order": 1,
         "title_vi": "Ăn uống / trải nghiệm vị",
         "words": [
@@ -63,7 +63,7 @@
         "notes": []
       },
       {
-        "id": "group_002",
+        "id": "1afbb4cc-79b6-49b6-845c-c6d4663761a9",
         "order": 2,
         "title_vi": "Tổ chức lớp học / hội trường / trang trí",
         "words": [
@@ -79,7 +79,7 @@
         "notes": []
       },
       {
-        "id": "group_003",
+        "id": "38371720-cf5a-4be5-96ea-c0cc603fe4ef",
         "order": 3,
         "title_vi": "Đồ vật trong lớp / hội trường",
         "words": [
@@ -96,7 +96,7 @@
         "notes": []
       },
       {
-        "id": "group_004",
+        "id": "e50157f2-4dad-4930-ac8c-df939a14f37d",
         "order": 4,
         "title_vi": "Trang trí Tết / văn hóa chữ nghĩa",
         "words": [
@@ -114,7 +114,7 @@
         "notes": []
       },
       {
-        "id": "group_005",
+        "id": "64f59837-1528-481b-93f1-cf47f0b34814",
         "order": 5,
         "title_vi": "Câu chữ 把 / xử lý đồ vật",
         "words": [
@@ -130,7 +130,7 @@
         "notes": []
       },
       {
-        "id": "group_006",
+        "id": "56da3e2b-4765-41c4-a716-26e9053afe6a",
         "order": 6,
         "title_vi": "Đồ gia dụng hiện đại",
         "words": [
@@ -141,7 +141,7 @@
         "notes": []
       },
       {
-        "id": "group_007",
+        "id": "d5d39f0a-7820-4e40-8223-3c2a21175b62",
         "order": 7,
         "title_vi": "Động tác nhỏ / trạng thái / sắc thái hội thoại",
         "words": [
@@ -165,7 +165,7 @@
   },
   "items": [
     {
-      "id": "vocab_001",
+      "id": "c2bd6834-9339-4616-8a7d-c32c02284224",
       "type": "deep_vocabulary_item",
       "order": 1,
       "hanzi": "品尝",
@@ -361,7 +361,7 @@
       },
       "collocations": [
         {
-          "id": "vocab_001_col_001",
+          "id": "86d49a1c-01d0-4d81-a2db-160aeb00babe",
           "order": 1,
           "zh": "品尝美食",
           "pinyin": "",
@@ -372,7 +372,7 @@
           "notes": []
         },
         {
-          "id": "vocab_001_col_002",
+          "id": "6c3d5da2-ecda-4b46-bf87-9be4918f0b15",
           "order": 2,
           "zh": "品尝特色小吃",
           "pinyin": "",
@@ -383,7 +383,7 @@
           "notes": []
         },
         {
-          "id": "vocab_001_col_003",
+          "id": "e0830d2e-1c36-40d7-bc5a-c560783b7dc9",
           "order": 3,
           "zh": "品尝中国茶",
           "pinyin": "",
@@ -394,7 +394,7 @@
           "notes": []
         },
         {
-          "id": "vocab_001_col_004",
+          "id": "2c17c6e5-4c9a-4301-8d0c-4201540b17cc",
           "order": 4,
           "zh": "请大家品尝",
           "pinyin": "",
@@ -407,7 +407,7 @@
       ],
       "examples": [
         {
-          "id": "vocab_001_ex_001",
+          "id": "5400010e-f6d2-4b9d-8470-493dac81b7a6",
           "order": 1,
           "zh": "客人来了以后，爷爷亲手端出一盘红枣，请大家品尝。",
           "pinyin": "Kèrén lái le yǐhòu, yéye qīnshǒu duān chū yì pán hóngzǎo, qǐng dàjiā pǐncháng.",
@@ -420,7 +420,7 @@
             "grammar_17_ba_construction"
           ],
           "vocab_refs": [
-            "vocab_001"
+            "c2bd6834-9339-4616-8a7d-c32c02284224"
           ],
           "source_ref": "current_thread",
           "level": "basic",
@@ -429,7 +429,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_001_ex_002",
+          "id": "08c53344-e81f-48c3-a337-64c713b06e7c",
           "order": 2,
           "zh": "春节联欢会上，大家可以品尝不同地方的特色小吃。",
           "pinyin": "Chūnjié liánhuānhuì shang, dàjiā kěyǐ pǐncháng bù tóng dìfang de tèsè xiǎochī.",
@@ -442,7 +442,7 @@
             "grammar_17_ba_construction"
           ],
           "vocab_refs": [
-            "vocab_001"
+            "c2bd6834-9339-4616-8a7d-c32c02284224"
           ],
           "source_ref": "current_thread",
           "level": "expanded",
@@ -451,7 +451,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_001_ex_003",
+          "id": "6dde6ef3-9fa5-41c2-aca9-70579268e366",
           "order": 3,
           "zh": "你先别急着评价，最好先品尝一下，再说自己的意见。",
           "pinyin": "Nǐ xiān bié jízhe píngjià, zuìhǎo xiān pǐncháng yíxià, zài shuō zìjǐ de yìjiàn.",
@@ -464,7 +464,7 @@
             "grammar_17_ba_construction"
           ],
           "vocab_refs": [
-            "vocab_001"
+            "c2bd6834-9339-4616-8a7d-c32c02284224"
           ],
           "source_ref": "current_thread",
           "level": "complex",
@@ -487,7 +487,7 @@
       },
       "warnings": [
         {
-          "id": "vocab_001_warning_001",
+          "id": "d71071e1-913e-4142-99fc-9e4a49311188",
           "order": 1,
           "rule_vi": "Lỗi sai phổ biến: Dùng 品尝 cho tình huống quá đời thường làm câu bị sang quá mức. Đời thường: 你尝尝这个。 Nǐ chángchang zhège. Bạn nếm thử cái này đi. Trang trọng hơn: 欢迎大家品尝我们的特色菜。 Huānyíng dàjiā pǐncháng wǒmen de tèsè cài. Hoan nghênh mọi người thưởng thức món…",
           "natural_examples": [],
@@ -522,7 +522,7 @@
       "check_needed": false
     },
     {
-      "id": "vocab_002",
+      "id": "a5095f9f-a541-4efa-b405-900a3e2f0640",
       "type": "deep_vocabulary_item",
       "order": 2,
       "hanzi": "特色",
@@ -707,7 +707,7 @@
       },
       "collocations": [
         {
-          "id": "vocab_002_col_001",
+          "id": "e26db4f2-9d6c-4fd4-af5a-3ec774847987",
           "order": 1,
           "zh": "有特色",
           "pinyin": "",
@@ -718,7 +718,7 @@
           "notes": []
         },
         {
-          "id": "vocab_002_col_002",
+          "id": "394baee5-9063-488c-a010-4489685a6355",
           "order": 2,
           "zh": "地方特色",
           "pinyin": "",
@@ -729,7 +729,7 @@
           "notes": []
         },
         {
-          "id": "vocab_002_col_003",
+          "id": "1f2ef093-6272-4f55-a7d0-693b980c51ee",
           "order": 3,
           "zh": "特色菜",
           "pinyin": "",
@@ -740,7 +740,7 @@
           "notes": []
         },
         {
-          "id": "vocab_002_col_004",
+          "id": "debf23c1-a4f5-497d-bfbf-a84f42de8ae5",
           "order": 4,
           "zh": "中国特色",
           "pinyin": "",
@@ -753,7 +753,7 @@
       ],
       "examples": [
         {
-          "id": "vocab_002_ex_001",
+          "id": "30a455af-c114-4e56-8477-626753add0b0",
           "order": 1,
           "zh": "这个会场布置得很有中国特色，门上贴着红色的“福”字。",
           "pinyin": "Zhège huìchǎng bùzhì de hěn yǒu Zhōngguó tèsè, mén shang tiēzhe hóngsè de “Fú” zì.",
@@ -766,7 +766,7 @@
             "grammar_17_ba_construction"
           ],
           "vocab_refs": [
-            "vocab_002"
+            "a5095f9f-a541-4efa-b405-900a3e2f0640"
           ],
           "source_ref": "current_thread",
           "level": "basic",
@@ -775,7 +775,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_002_ex_002",
+          "id": "10e85f83-d723-4f43-b248-93c35d82ea68",
           "order": 2,
           "zh": "春节的时候，大家会品尝一些有地方特色的食物。",
           "pinyin": "Chūnjié de shíhou, dàjiā huì pǐncháng yìxiē yǒu dìfang tèsè de shíwù.",
@@ -788,7 +788,7 @@
             "grammar_17_ba_construction"
           ],
           "vocab_refs": [
-            "vocab_002"
+            "a5095f9f-a541-4efa-b405-900a3e2f0640"
           ],
           "source_ref": "current_thread",
           "level": "expanded",
@@ -797,7 +797,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_002_ex_003",
+          "id": "2a05b7ca-6ef9-4f9b-b583-604b6e848796",
           "order": 3,
           "zh": "我们把教室布置成一个有节日特色的小会场。",
           "pinyin": "Wǒmen bǎ jiàoshì bùzhì chéng yí ge yǒu jiérì tèsè de xiǎo huìchǎng.",
@@ -810,7 +810,7 @@
             "grammar_17_ba_construction"
           ],
           "vocab_refs": [
-            "vocab_002"
+            "a5095f9f-a541-4efa-b405-900a3e2f0640"
           ],
           "source_ref": "current_thread",
           "level": "complex",
@@ -833,7 +833,7 @@
       },
       "warnings": [
         {
-          "id": "vocab_002_warning_001",
+          "id": "f8e6d6d9-e2d1-4870-b34c-83c75bc3ba70",
           "order": 1,
           "rule_vi": "Lỗi sai phổ biến: Dùng 特色 như tính từ đứng trực tiếp trước mọi danh từ. Tự nhiên: 这个地方很有特色。 Zhège dìfang hěn yǒu tèsè. Nơi này rất có nét đặc sắc. 这是这里的特色菜。 Zhè shì zhèlǐ de tèsè cài. Đây là món đặc sản/món đặc sắc ở đây.",
           "natural_examples": [],
@@ -868,7 +868,7 @@
       "check_needed": false
     },
     {
-      "id": "vocab_003",
+      "id": "7da7f70a-9e6f-44bf-92a6-78e3ce324d93",
       "type": "deep_vocabulary_item",
       "order": 3,
       "hanzi": "班长",
@@ -1064,7 +1064,7 @@
       },
       "collocations": [
         {
-          "id": "vocab_003_col_001",
+          "id": "2e84fc1d-9bc1-42c5-9128-b7d20a68848f",
           "order": 1,
           "zh": "当班长",
           "pinyin": "",
@@ -1075,7 +1075,7 @@
           "notes": []
         },
         {
-          "id": "vocab_003_col_002",
+          "id": "90e7541d-c4a5-48e3-bdda-0bbc060f551d",
           "order": 2,
           "zh": "班长告诉大家",
           "pinyin": "",
@@ -1086,7 +1086,7 @@
           "notes": []
         },
         {
-          "id": "vocab_003_col_003",
+          "id": "c6035698-5e32-4358-a17a-f5df5fe42f25",
           "order": 3,
           "zh": "班长布置任务",
           "pinyin": "",
@@ -1097,7 +1097,7 @@
           "notes": []
         },
         {
-          "id": "vocab_003_col_004",
+          "id": "458c160e-7fae-4a69-87ee-1b75b11fb847",
           "order": 4,
           "zh": "班长答应帮忙",
           "pinyin": "",
@@ -1110,7 +1110,7 @@
       ],
       "examples": [
         {
-          "id": "vocab_003_ex_001",
+          "id": "a1edfb0b-4d8a-49c4-a4af-7775a40fbe0a",
           "order": 1,
           "zh": "班长告诉大家，下午要把教室布置成会场。",
           "pinyin": "Bānzhǎng gàosu dàjiā, xiàwǔ yào bǎ jiàoshì bùzhì chéng huìchǎng.",
@@ -1123,7 +1123,7 @@
             "grammar_17_ba_construction"
           ],
           "vocab_refs": [
-            "vocab_003"
+            "7da7f70a-9e6f-44bf-92a6-78e3ce324d93"
           ],
           "source_ref": "current_thread",
           "level": "basic",
@@ -1132,7 +1132,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_003_ex_002",
+          "id": "5940d92f-06ff-4940-91fb-1fb411ca7d20",
           "order": 2,
           "zh": "班长把任务写在黑板上，让大家看清楚。",
           "pinyin": "Bānzhǎng bǎ rènwu xiě zài hēibǎn shang, ràng dàjiā kàn qīngchu.",
@@ -1145,7 +1145,7 @@
             "grammar_17_ba_construction"
           ],
           "vocab_refs": [
-            "vocab_003"
+            "7da7f70a-9e6f-44bf-92a6-78e3ce324d93"
           ],
           "source_ref": "current_thread",
           "level": "expanded",
@@ -1154,7 +1154,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_003_ex_003",
+          "id": "effea2cf-b4f1-4571-b65a-01dea006d886",
           "order": 3,
           "zh": "打扫完以后，班长又仔细检查了一遍窗户和桌子。",
           "pinyin": "Dǎsǎo wán yǐhòu, bānzhǎng yòu zǐxì jiǎnchá le yí biàn chuānghu hé zhuōzi.",
@@ -1167,7 +1167,7 @@
             "grammar_17_ba_construction"
           ],
           "vocab_refs": [
-            "vocab_003"
+            "7da7f70a-9e6f-44bf-92a6-78e3ce324d93"
           ],
           "source_ref": "current_thread",
           "level": "complex",
@@ -1190,7 +1190,7 @@
       },
       "warnings": [
         {
-          "id": "vocab_003_warning_001",
+          "id": "b58e6c0f-2df6-40bf-aff3-83f13614c24e",
           "order": 1,
           "rule_vi": "Lỗi sai phổ biến: Đọc sai 长. 班长 Bānzhǎng Lớp trưởng. 很长 Hěn cháng Rất dài.",
           "natural_examples": [],
@@ -1225,7 +1225,7 @@
       "check_needed": false
     },
     {
-      "id": "vocab_004",
+      "id": "3cf4cd85-6283-4816-82b6-bd041e35d54c",
       "type": "deep_vocabulary_item",
       "order": 4,
       "hanzi": "把",
@@ -1330,7 +1330,7 @@
       "collocations": [],
       "examples": [
         {
-          "id": "vocab_004_ex_001",
+          "id": "58ae167d-5c98-4edb-bc91-47b2b281bf8f",
           "order": 1,
           "zh": "我们把教室布置成了一个小会场。",
           "pinyin": "Wǒmen bǎ jiàoshì bùzhì chéng le yí ge xiǎo huìchǎng.",
@@ -1343,7 +1343,7 @@
             "grammar_17_ba_construction"
           ],
           "vocab_refs": [
-            "vocab_004"
+            "3cf4cd85-6283-4816-82b6-bd041e35d54c"
           ],
           "source_ref": "current_thread",
           "level": "basic",
@@ -1352,7 +1352,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_004_ex_002",
+          "id": "6faaa6fd-acd6-4396-aa9e-5774b5bfc231",
           "order": 2,
           "zh": "班长让我们把桌子摆成一个圆圈儿。",
           "pinyin": "Bānzhǎng ràng wǒmen bǎ zhuōzi bǎi chéng yí ge yuánquānr.",
@@ -1365,7 +1365,7 @@
             "grammar_17_ba_construction"
           ],
           "vocab_refs": [
-            "vocab_004"
+            "3cf4cd85-6283-4816-82b6-bd041e35d54c"
           ],
           "source_ref": "current_thread",
           "level": "expanded",
@@ -1374,7 +1374,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_004_ex_003",
+          "id": "29d97c99-ae1a-4464-ac12-a795cc2d4882",
           "order": 3,
           "zh": "管理员说，不能把音响调得太大。",
           "pinyin": "Guǎnlǐyuán shuō, bù néng bǎ yīnxiǎng tiáo de tài dà.",
@@ -1387,7 +1387,7 @@
             "grammar_17_ba_construction"
           ],
           "vocab_refs": [
-            "vocab_004"
+            "3cf4cd85-6283-4816-82b6-bd041e35d54c"
           ],
           "source_ref": "current_thread",
           "level": "complex",
@@ -1410,7 +1410,7 @@
       },
       "warnings": [
         {
-          "id": "vocab_004_warning_001",
+          "id": "9f8b5d61-7794-4857-9ead-078df26488e6",
           "order": 1,
           "rule_vi": "Lỗi sai phổ biến nhất: Tân ngữ không xác định mà dùng 把. Không tự nhiên: 我把一本书看完了。 nếu người nghe chưa biết quyển nào, câu dễ kỳ. Tự nhiên hơn: 我看完了一本书。 Tôi đọc xong một quyển sách. Hoặc khi đã xác định: 我把那本书看完了。 Tôi đọc xong quyển sách đó rồi. Động từ đứng…",
           "natural_examples": [],
@@ -1445,7 +1445,7 @@
       "check_needed": false
     },
     {
-      "id": "vocab_005",
+      "id": "0f3e6d78-d762-4b9d-98b9-08f00c8eef1a",
       "type": "deep_vocabulary_item",
       "order": 5,
       "hanzi": "亲手",
@@ -1641,7 +1641,7 @@
       },
       "collocations": [
         {
-          "id": "vocab_005_col_001",
+          "id": "0af4f1c1-e92e-43bb-b069-2926ccd922a8",
           "order": 1,
           "zh": "亲手做",
           "pinyin": "",
@@ -1652,7 +1652,7 @@
           "notes": []
         },
         {
-          "id": "vocab_005_col_002",
+          "id": "0f4500c2-95ef-479f-9e89-d05f7d6a4302",
           "order": 2,
           "zh": "亲手包礼物",
           "pinyin": "",
@@ -1663,7 +1663,7 @@
           "notes": []
         },
         {
-          "id": "vocab_005_col_003",
+          "id": "f301a754-dcfb-456f-87db-022e2931e06a",
           "order": 3,
           "zh": "亲手布置",
           "pinyin": "",
@@ -1674,7 +1674,7 @@
           "notes": []
         },
         {
-          "id": "vocab_005_col_004",
+          "id": "16ece2d3-5b92-4533-8e66-242e7bccee08",
           "order": 4,
           "zh": "亲手写的字",
           "pinyin": "",
@@ -1687,7 +1687,7 @@
       ],
       "examples": [
         {
-          "id": "vocab_005_ex_001",
+          "id": "e96e9133-61b0-48fa-b8d7-469d04c2370f",
           "order": 1,
           "zh": "这个“福”字是爷爷亲手写的。",
           "pinyin": "Zhège “Fú” zì shì yéye qīnshǒu xiě de.",
@@ -1700,7 +1700,7 @@
             "grammar_17_ba_construction"
           ],
           "vocab_refs": [
-            "vocab_005"
+            "0f3e6d78-d762-4b9d-98b9-08f00c8eef1a"
           ],
           "source_ref": "current_thread",
           "level": "basic",
@@ -1709,7 +1709,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_005_ex_002",
+          "id": "8e22ace4-1c48-4c39-a13b-f2bc94462a6f",
           "order": 2,
           "zh": "她把礼物亲手包好，然后悄悄放在桌子上。",
           "pinyin": "Tā bǎ lǐwù qīnshǒu bāo hǎo, ránhòu qiāoqiāo fàng zài zhuōzi shang.",
@@ -1722,7 +1722,7 @@
             "grammar_17_ba_construction"
           ],
           "vocab_refs": [
-            "vocab_005"
+            "0f3e6d78-d762-4b9d-98b9-08f00c8eef1a"
           ],
           "source_ref": "current_thread",
           "level": "expanded",
@@ -1731,7 +1731,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_005_ex_003",
+          "id": "6ed75e4f-ffdb-48e9-b722-29a24ec21aed",
           "order": 3,
           "zh": "班长说，这次会场最好由我们亲手布置。",
           "pinyin": "Bānzhǎng shuō, zhè cì huìchǎng zuìhǎo yóu wǒmen qīnshǒu bùzhì.",
@@ -1744,7 +1744,7 @@
             "grammar_17_ba_construction"
           ],
           "vocab_refs": [
-            "vocab_005"
+            "0f3e6d78-d762-4b9d-98b9-08f00c8eef1a"
           ],
           "source_ref": "current_thread",
           "level": "complex",
@@ -1767,7 +1767,7 @@
       },
       "warnings": [
         {
-          "id": "vocab_005_warning_001",
+          "id": "597f1a71-2ab5-4bd2-9580-def3be966ade",
           "order": 1,
           "rule_vi": "Lỗi sai phổ biến: Nhầm 亲手 với 亲自. 我亲手写了这张卡片。 Wǒ qīnshǒu xiě le zhè zhāng kǎpiàn. Tôi tự tay viết tấm thiệp này. 校长亲自来了。 Xiàozhǎng qīnzì lái le. Hiệu trưởng đích thân đến.",
           "natural_examples": [],
@@ -1802,7 +1802,7 @@
       "check_needed": false
     },
     {
-      "id": "vocab_006",
+      "id": "27d3d6d3-e80f-4170-83f0-c271d00e7626",
       "type": "deep_vocabulary_item",
       "order": 6,
       "hanzi": "最好",
@@ -1998,7 +1998,7 @@
       },
       "collocations": [
         {
-          "id": "vocab_006_col_001",
+          "id": "be80d0e6-5b30-4607-bb03-3b8366f6cb53",
           "order": 1,
           "zh": "最好先……",
           "pinyin": "",
@@ -2009,7 +2009,7 @@
           "notes": []
         },
         {
-          "id": "vocab_006_col_002",
+          "id": "75d90653-c4eb-49d6-9d71-fe0965196d82",
           "order": 2,
           "zh": "最好不要……",
           "pinyin": "",
@@ -2020,7 +2020,7 @@
           "notes": []
         },
         {
-          "id": "vocab_006_col_003",
+          "id": "9f0acfe4-c7da-4184-baf5-92ffc3c61f84",
           "order": 3,
           "zh": "最好别……",
           "pinyin": "",
@@ -2031,7 +2031,7 @@
           "notes": []
         },
         {
-          "id": "vocab_006_col_004",
+          "id": "28ce89fd-56af-42fb-9fcc-454adf8b4087",
           "order": 4,
           "zh": "这样最好",
           "pinyin": "",
@@ -2044,7 +2044,7 @@
       ],
       "examples": [
         {
-          "id": "vocab_006_ex_001",
+          "id": "e8ad4a31-9ff4-478b-bcc6-fd562a9d1af6",
           "order": 1,
           "zh": "贴对联儿以前，最好先把门擦干净。",
           "pinyin": "Tiē duìliánr yǐqián, zuìhǎo xiān bǎ mén cā gānjìng.",
@@ -2057,7 +2057,7 @@
             "grammar_17_ba_construction"
           ],
           "vocab_refs": [
-            "vocab_006"
+            "27d3d6d3-e80f-4170-83f0-c271d00e7626"
           ],
           "source_ref": "current_thread",
           "level": "basic",
@@ -2066,7 +2066,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_006_ex_002",
+          "id": "83d1a5bd-4bc3-4e70-aaf9-70bd6231cfe3",
           "order": 2,
           "zh": "如果不知道“福”字该怎么贴，最好先问问管理员。",
           "pinyin": "Rúguǒ bù zhīdào “Fú” zì gāi zěnme tiē, zuìhǎo xiān wènwen guǎnlǐyuán.",
@@ -2079,7 +2079,7 @@
             "grammar_17_ba_construction"
           ],
           "vocab_refs": [
-            "vocab_006"
+            "27d3d6d3-e80f-4170-83f0-c271d00e7626"
           ],
           "source_ref": "current_thread",
           "level": "expanded",
@@ -2088,7 +2088,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_006_ex_003",
+          "id": "98362b48-7254-4eae-a285-90f3c641e888",
           "order": 3,
           "zh": "音响最好不要调得太大，旁边的教室还在上课。",
           "pinyin": "Yīnxiǎng zuìhǎo bú yào tiáo de tài dà, pángbiān de jiàoshì hái zài shàngkè.",
@@ -2101,7 +2101,7 @@
             "grammar_17_ba_construction"
           ],
           "vocab_refs": [
-            "vocab_006"
+            "27d3d6d3-e80f-4170-83f0-c271d00e7626"
           ],
           "source_ref": "current_thread",
           "level": "complex",
@@ -2124,7 +2124,7 @@
       },
       "warnings": [
         {
-          "id": "vocab_006_warning_001",
+          "id": "97b4bab0-5d0c-4dc4-a8bf-83fa1dddba2f",
           "order": 1,
           "rule_vi": "Lỗi sai phổ biến: Dùng 最好 như 很好的 trong mọi câu. Khác nhau: 这是最好的办法。 Zhè shì zuì hǎo de bànfǎ. Đây là cách tốt nhất. 你最好先问问老师。 Nǐ zuìhǎo xiān wènwen lǎoshī. Tốt nhất bạn hỏi thầy/cô trước.",
           "natural_examples": [],
@@ -2159,7 +2159,7 @@
       "check_needed": false
     },
     {
-      "id": "vocab_007",
+      "id": "7cbc91cb-599d-4475-b922-25e5e7770cbc",
       "type": "deep_vocabulary_item",
       "order": 7,
       "hanzi": "布置",
@@ -2334,7 +2334,7 @@
       },
       "collocations": [
         {
-          "id": "vocab_007_col_001",
+          "id": "53aff1c8-7736-4f9b-9ce8-98b51ecb115d",
           "order": 1,
           "zh": "布置会场",
           "pinyin": "",
@@ -2345,7 +2345,7 @@
           "notes": []
         },
         {
-          "id": "vocab_007_col_002",
+          "id": "106f587d-43c1-4461-9a2d-b71382763162",
           "order": 2,
           "zh": "布置教室",
           "pinyin": "",
@@ -2356,7 +2356,7 @@
           "notes": []
         },
         {
-          "id": "vocab_007_col_003",
+          "id": "75f1d286-e020-4082-b9cb-fbddb5c37ed6",
           "order": 3,
           "zh": "布置作业",
           "pinyin": "",
@@ -2367,7 +2367,7 @@
           "notes": []
         },
         {
-          "id": "vocab_007_col_004",
+          "id": "0184cb44-35ec-4ca6-9666-0ae58068a70e",
           "order": 4,
           "zh": "布置任务",
           "pinyin": "",
@@ -2378,7 +2378,7 @@
           "notes": []
         },
         {
-          "id": "vocab_007_col_005",
+          "id": "de71e6fe-935c-4ee9-b155-4e4b47720499",
           "order": 5,
           "zh": "布置成……",
           "pinyin": "",
@@ -2391,7 +2391,7 @@
       ],
       "examples": [
         {
-          "id": "vocab_007_ex_001",
+          "id": "1a0642e5-e7aa-4bff-89e1-2f727cb88f45",
           "order": 1,
           "zh": "我们把教室布置成了春节联欢会的会场。",
           "pinyin": "Wǒmen bǎ jiàoshì bùzhì chéng le Chūnjié liánhuānhuì de huìchǎng.",
@@ -2404,7 +2404,7 @@
             "grammar_17_ba_construction"
           ],
           "vocab_refs": [
-            "vocab_007"
+            "7cbc91cb-599d-4475-b922-25e5e7770cbc"
           ],
           "source_ref": "current_thread",
           "level": "basic",
@@ -2413,7 +2413,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_007_ex_002",
+          "id": "0716d398-7c34-498c-8557-201fd07a8e43",
           "order": 2,
           "zh": "班长正在布置任务：有人擦窗户，有人摆桌子，有人调音响。",
           "pinyin": "Bānzhǎng zhèngzài bùzhì rènwu: yǒu rén cā chuānghu, yǒu rén bǎi zhuōzi, yǒu rén tiáo yīnxiǎng.",
@@ -2426,7 +2426,7 @@
             "grammar_17_ba_construction"
           ],
           "vocab_refs": [
-            "vocab_007"
+            "7cbc91cb-599d-4475-b922-25e5e7770cbc"
           ],
           "source_ref": "current_thread",
           "level": "expanded",
@@ -2435,7 +2435,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_007_ex_003",
+          "id": "d0708100-93f9-4eff-b0b1-37905b6ac37f",
           "order": 3,
           "zh": "会场布置好以后，管理员又仔细检查了一遍彩灯和彩带。",
           "pinyin": "Huìchǎng bùzhì hǎo yǐhòu, guǎnlǐyuán yòu zǐxì jiǎnchá le yí biàn cǎidēng hé cǎidài.",
@@ -2448,7 +2448,7 @@
             "grammar_17_ba_construction"
           ],
           "vocab_refs": [
-            "vocab_007"
+            "7cbc91cb-599d-4475-b922-25e5e7770cbc"
           ],
           "source_ref": "current_thread",
           "level": "complex",
@@ -2471,7 +2471,7 @@
       },
       "warnings": [
         {
-          "id": "vocab_007_warning_001",
+          "id": "2f6999a3-f467-4821-aee2-f183ec13925e",
           "order": 1,
           "rule_vi": "Lỗi sai phổ biến: Nhầm 布置, 装饰, 安排. 布置教室 Bùzhì jiàoshì Bố trí/trang trí lớp học. 装饰窗户 Zhuāngshì chuānghu Trang trí cửa sổ. 安排时间 Ānpái shíjiān Sắp xếp thời gian. 布置作业 Bùzhì zuòyè Giao bài tập.",
           "natural_examples": [],
@@ -2506,7 +2506,7 @@
       "check_needed": false
     },
     {
-      "id": "vocab_008",
+      "id": "fb36c0e7-bb40-47f8-adbc-979dee8f75d8",
       "type": "deep_vocabulary_item",
       "order": 8,
       "hanzi": "会场",
@@ -2702,7 +2702,7 @@
       },
       "collocations": [
         {
-          "id": "vocab_008_col_001",
+          "id": "2e21e8b6-d2a8-4e29-8d3e-fdd7b9963594",
           "order": 1,
           "zh": "布置会场",
           "pinyin": "",
@@ -2713,7 +2713,7 @@
           "notes": []
         },
         {
-          "id": "vocab_008_col_002",
+          "id": "28a6dbce-1d41-4357-96cc-e70eb6b1b5e4",
           "order": 2,
           "zh": "进入会场",
           "pinyin": "",
@@ -2724,7 +2724,7 @@
           "notes": []
         },
         {
-          "id": "vocab_008_col_003",
+          "id": "c11587cf-91f3-4e3f-9e34-3304f7a4b4f1",
           "order": 3,
           "zh": "会场里",
           "pinyin": "",
@@ -2735,7 +2735,7 @@
           "notes": []
         },
         {
-          "id": "vocab_008_col_004",
+          "id": "c7ee779a-6a12-4f36-9822-f3c4808d94c1",
           "order": 4,
           "zh": "会场气氛",
           "pinyin": "",
@@ -2746,7 +2746,7 @@
           "notes": []
         },
         {
-          "id": "vocab_008_col_005",
+          "id": "a2571edd-1bba-4155-9079-0e7960e2bd7a",
           "order": 5,
           "zh": "会场前面 / 后面",
           "pinyin": "",
@@ -2759,7 +2759,7 @@
       ],
       "examples": [
         {
-          "id": "vocab_008_ex_001",
+          "id": "f65332e5-e7b4-4ac3-a1b8-f13a67d7d650",
           "order": 1,
           "zh": "我们把教室布置成了春节联欢会的会场。",
           "pinyin": "Wǒmen bǎ jiàoshì bùzhì chéng le Chūnjié liánhuānhuì de huìchǎng.",
@@ -2772,7 +2772,7 @@
             "grammar_17_ba_construction"
           ],
           "vocab_refs": [
-            "vocab_008"
+            "fb36c0e7-bb40-47f8-adbc-979dee8f75d8"
           ],
           "source_ref": "current_thread",
           "level": "basic",
@@ -2781,7 +2781,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_008_ex_002",
+          "id": "c2603fe5-dc1a-4ced-8b05-432ac0d63adc",
           "order": 2,
           "zh": "会场前面摆着一张桌子，后面挂着彩带。",
           "pinyin": "Huìchǎng qiánmian bǎizhe yì zhāng zhuōzi, hòumian guàzhe cǎidài.",
@@ -2794,7 +2794,7 @@
             "grammar_17_ba_construction"
           ],
           "vocab_refs": [
-            "vocab_008"
+            "fb36c0e7-bb40-47f8-adbc-979dee8f75d8"
           ],
           "source_ref": "current_thread",
           "level": "expanded",
@@ -2803,7 +2803,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_008_ex_003",
+          "id": "3ba0ecbd-8be4-40a2-b46e-83c40a10820f",
           "order": 3,
           "zh": "管理员说，不能把会场里的音响调得太大。",
           "pinyin": "Guǎnlǐyuán shuō, bù néng bǎ huìchǎng lǐ de yīnxiǎng tiáo de tài dà.",
@@ -2816,7 +2816,7 @@
             "grammar_17_ba_construction"
           ],
           "vocab_refs": [
-            "vocab_008"
+            "fb36c0e7-bb40-47f8-adbc-979dee8f75d8"
           ],
           "source_ref": "current_thread",
           "level": "complex",
@@ -2839,7 +2839,7 @@
       },
       "warnings": [
         {
-          "id": "vocab_008_warning_001",
+          "id": "973e402a-e47b-4e8c-b16f-fdf2c114281d",
           "order": 1,
           "rule_vi": "Lỗi sai phổ biến: Dịch 会场 cứng thành “phòng họp” trong mọi trường hợp. Tự nhiên hơn: 布置会场 Bùzhì huìchǎng Bố trí địa điểm tổ chức sự kiện. 会议在三楼会议厅举行。 Huìyì zài sān lóu huìyìtīng jǔxíng. Cuộc họp tổ chức ở phòng họp lớn tầng ba.",
           "natural_examples": [],
@@ -2874,7 +2874,7 @@
       "check_needed": false
     },
     {
-      "id": "vocab_009",
+      "id": "dd9b0899-8374-4638-8b94-d434b80d23c6",
       "type": "deep_vocabulary_item",
       "order": 9,
       "hanzi": "管理员",
@@ -3157,7 +3157,7 @@
       },
       "collocations": [
         {
-          "id": "vocab_009_col_001",
+          "id": "ff1f257a-20ed-44ef-91fd-cd3b73b04119",
           "order": 1,
           "zh": "图书馆管理员",
           "pinyin": "",
@@ -3168,7 +3168,7 @@
           "notes": []
         },
         {
-          "id": "vocab_009_col_002",
+          "id": "365fcd58-51f2-48bc-ab3c-1dc96ebbb031",
           "order": 2,
           "zh": "宿舍管理员",
           "pinyin": "",
@@ -3179,7 +3179,7 @@
           "notes": []
         },
         {
-          "id": "vocab_009_col_003",
+          "id": "23deca55-15e8-456e-919d-4b7baade394d",
           "order": 3,
           "zh": "系统管理员",
           "pinyin": "",
@@ -3190,7 +3190,7 @@
           "notes": []
         },
         {
-          "id": "vocab_009_col_004",
+          "id": "1a19df7e-423c-4b9d-a67f-b905156cc614",
           "order": 4,
           "zh": "管理员告诉大家",
           "pinyin": "",
@@ -3201,7 +3201,7 @@
           "notes": []
         },
         {
-          "id": "vocab_009_col_005",
+          "id": "627f8848-2f20-4290-b0d7-b3001a5986c2",
           "order": 5,
           "zh": "问管理员",
           "pinyin": "",
@@ -3214,7 +3214,7 @@
       ],
       "examples": [
         {
-          "id": "vocab_009_ex_001",
+          "id": "3716b0b4-ee39-4385-92b8-b2703e5ba8c1",
           "order": 1,
           "zh": "管理员告诉我们，下午可以用这个会场。",
           "pinyin": "Guǎnlǐyuán gàosu wǒmen, xiàwǔ kěyǐ yòng zhège huìchǎng.",
@@ -3227,7 +3227,7 @@
             "grammar_17_ba_construction"
           ],
           "vocab_refs": [
-            "vocab_009"
+            "dd9b0899-8374-4638-8b94-d434b80d23c6"
           ],
           "source_ref": "current_thread",
           "level": "basic",
@@ -3236,7 +3236,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_009_ex_002",
+          "id": "5f0045d2-7e43-482e-8811-da89e6085047",
           "order": 2,
           "zh": "音响坏了以后，班长马上去找管理员。",
           "pinyin": "Yīnxiǎng huài le yǐhòu, bānzhǎng mǎshàng qù zhǎo guǎnlǐyuán.",
@@ -3249,7 +3249,7 @@
             "grammar_17_ba_construction"
           ],
           "vocab_refs": [
-            "vocab_009"
+            "dd9b0899-8374-4638-8b94-d434b80d23c6"
           ],
           "source_ref": "current_thread",
           "level": "expanded",
@@ -3258,7 +3258,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_009_ex_003",
+          "id": "bdda0666-e346-489a-9e3d-0495e3add08c",
           "order": 3,
           "zh": "管理员答应帮我们把彩灯挂起来。",
           "pinyin": "Guǎnlǐyuán dāying bāng wǒmen bǎ cǎidēng guà qǐlai.",
@@ -3271,7 +3271,7 @@
             "grammar_17_ba_construction"
           ],
           "vocab_refs": [
-            "vocab_009"
+            "dd9b0899-8374-4638-8b94-d434b80d23c6"
           ],
           "source_ref": "current_thread",
           "level": "complex",
@@ -3294,7 +3294,7 @@
       },
       "warnings": [
         {
-          "id": "vocab_009_warning_001",
+          "id": "8f756ca8-e51b-4d5b-ba05-4e5a92348c32",
           "order": 1,
           "rule_vi": "Lỗi sai phổ biến: Tưởng 管理员 luôn là “manager” cấp cao. Không hẳn. 管理员 Guǎnlǐyuán Người phụ trách quản lý/trông coi. 经理 Jīnglǐ Giám đốc/quản lý bộ phận. Ví dụ: 图书馆管理员 Túshūguǎn guǎnlǐyuán Nhân viên quản lý thư viện.",
           "natural_examples": [],
@@ -3329,7 +3329,7 @@
       "check_needed": false
     },
     {
-      "id": "vocab_010",
+      "id": "70debb9c-6fc1-49e9-a62a-32617a91aa54",
       "type": "deep_vocabulary_item",
       "order": 10,
       "hanzi": "管理",
@@ -3535,7 +3535,7 @@
       },
       "collocations": [
         {
-          "id": "vocab_010_col_001",
+          "id": "18290677-17c4-40a4-9830-1885a8452088",
           "order": 1,
           "zh": "管理会场",
           "pinyin": "",
@@ -3546,7 +3546,7 @@
           "notes": []
         },
         {
-          "id": "vocab_010_col_002",
+          "id": "a2471a70-de4f-4581-9ac3-d2027acf225f",
           "order": 2,
           "zh": "管理时间",
           "pinyin": "",
@@ -3557,7 +3557,7 @@
           "notes": []
         },
         {
-          "id": "vocab_010_col_003",
+          "id": "d66cb926-f22a-4ce1-b7a7-00ce157746c7",
           "order": 3,
           "zh": "管理系统",
           "pinyin": "",
@@ -3568,7 +3568,7 @@
           "notes": []
         },
         {
-          "id": "vocab_010_col_004",
+          "id": "d3fc65e1-e43d-4105-bf75-dd799f435e1f",
           "order": 4,
           "zh": "管理人员",
           "pinyin": "",
@@ -3579,7 +3579,7 @@
           "notes": []
         },
         {
-          "id": "vocab_010_col_005",
+          "id": "79f71cf4-0f58-400d-8e8c-81f03bee89d4",
           "order": 5,
           "zh": "管理得很好",
           "pinyin": "",
@@ -3592,7 +3592,7 @@
       ],
       "examples": [
         {
-          "id": "vocab_010_ex_001",
+          "id": "5a0beffa-14fd-4405-82ac-157bcec8d39e",
           "order": 1,
           "zh": "这个会场由学校的管理员管理。",
           "pinyin": "Zhège huìchǎng yóu xuéxiào de guǎnlǐyuán guǎnlǐ.",
@@ -3605,7 +3605,7 @@
             "grammar_17_ba_construction"
           ],
           "vocab_refs": [
-            "vocab_010"
+            "70debb9c-6fc1-49e9-a62a-32617a91aa54"
           ],
           "source_ref": "current_thread",
           "level": "basic",
@@ -3614,7 +3614,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_010_ex_002",
+          "id": "67f0a0e4-ba77-4b56-a94f-a4a1e44fa3ff",
           "order": 2,
           "zh": "如果没人管理，音响和彩灯很容易出问题。",
           "pinyin": "Rúguǒ méi rén guǎnlǐ, yīnxiǎng hé cǎidēng hěn róngyì chū wèntí.",
@@ -3627,7 +3627,7 @@
             "grammar_17_ba_construction"
           ],
           "vocab_refs": [
-            "vocab_010"
+            "70debb9c-6fc1-49e9-a62a-32617a91aa54"
           ],
           "source_ref": "current_thread",
           "level": "expanded",
@@ -3636,7 +3636,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_010_ex_003",
+          "id": "c1e1edb1-8d19-4563-ab52-8b0a79079252",
           "order": 3,
           "zh": "学习中文也要管理好时间，不能只背词不复习。",
           "pinyin": "Xuéxí Zhōngwén yě yào guǎnlǐ hǎo shíjiān, bù néng zhǐ bèi cí bù fùxí.",
@@ -3649,7 +3649,7 @@
             "grammar_17_ba_construction"
           ],
           "vocab_refs": [
-            "vocab_010"
+            "70debb9c-6fc1-49e9-a62a-32617a91aa54"
           ],
           "source_ref": "current_thread",
           "level": "complex",
@@ -3670,7 +3670,7 @@
       },
       "warnings": [
         {
-          "id": "vocab_010_warning_001",
+          "id": "d1a4e85b-6ac2-4fa6-9a4c-f60b1e89348b",
           "order": 1,
           "rule_vi": "Dùng theo cụm đã học, tránh dịch từng chữ nếu ngữ cảnh không rõ.",
           "natural_examples": [],
@@ -3705,7 +3705,7 @@
       "check_needed": false
     },
     {
-      "id": "vocab_011",
+      "id": "b6e04919-3436-4e18-b2d3-976a45714b29",
       "type": "deep_vocabulary_item",
       "order": 11,
       "hanzi": "告诉",
@@ -3922,7 +3922,7 @@
       },
       "collocations": [
         {
-          "id": "vocab_011_col_001",
+          "id": "a767a73e-9ed3-4424-ba3d-66860a48baa8",
           "order": 1,
           "zh": "告诉我",
           "pinyin": "",
@@ -3933,7 +3933,7 @@
           "notes": []
         },
         {
-          "id": "vocab_011_col_002",
+          "id": "2bc0c692-efcc-41e9-88a7-e1a3300a6615",
           "order": 2,
           "zh": "告诉大家",
           "pinyin": "",
@@ -3944,7 +3944,7 @@
           "notes": []
         },
         {
-          "id": "vocab_011_col_003",
+          "id": "d3c993ff-c077-4d53-9175-a548b7b0f9ac",
           "order": 3,
           "zh": "告诉他怎么做",
           "pinyin": "",
@@ -3955,7 +3955,7 @@
           "notes": []
         },
         {
-          "id": "vocab_011_col_004",
+          "id": "972d0c4a-1f8c-4677-9c19-77d7cccb24c4",
           "order": 4,
           "zh": "别告诉别人",
           "pinyin": "",
@@ -3968,7 +3968,7 @@
       ],
       "examples": [
         {
-          "id": "vocab_011_ex_001",
+          "id": "d604db43-f6ad-4579-ade6-20a598af16bc",
           "order": 1,
           "zh": "班长告诉大家，今天下午要打扫教室。",
           "pinyin": "Bānzhǎng gàosu dàjiā, jīntiān xiàwǔ yào dǎsǎo jiàoshì.",
@@ -3981,7 +3981,7 @@
             "grammar_17_ba_construction"
           ],
           "vocab_refs": [
-            "vocab_011"
+            "b6e04919-3436-4e18-b2d3-976a45714b29"
           ],
           "source_ref": "current_thread",
           "level": "basic",
@@ -3990,7 +3990,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_011_ex_002",
+          "id": "764dbcb2-523b-4b5d-b2ea-b04e5bf3edac",
           "order": 2,
           "zh": "管理员告诉我们，不能把彩灯挂在空调旁边。",
           "pinyin": "Guǎnlǐyuán gàosu wǒmen, bù néng bǎ cǎidēng guà zài kōngtiáo pángbiān.",
@@ -4003,7 +4003,7 @@
             "grammar_17_ba_construction"
           ],
           "vocab_refs": [
-            "vocab_011"
+            "b6e04919-3436-4e18-b2d3-976a45714b29"
           ],
           "source_ref": "current_thread",
           "level": "expanded",
@@ -4012,7 +4012,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_011_ex_003",
+          "id": "9bce54e4-9175-4eaa-b78d-e06cb9343677",
           "order": 3,
           "zh": "你要是知道答案，就悄悄告诉我，别一下子说出来。",
           "pinyin": "Nǐ yàoshi zhīdào dá’àn, jiù qiāoqiāo gàosu wǒ, bié yíxiàzi shuō chūlai.",
@@ -4025,7 +4025,7 @@
             "grammar_17_ba_construction"
           ],
           "vocab_refs": [
-            "vocab_011"
+            "b6e04919-3436-4e18-b2d3-976a45714b29"
           ],
           "source_ref": "current_thread",
           "level": "complex",
@@ -4048,7 +4048,7 @@
       },
       "warnings": [
         {
-          "id": "vocab_011_warning_001",
+          "id": "08e45fb5-2a33-4451-9f8c-7404154aa2d0",
           "order": 1,
           "rule_vi": "Lỗi sai phổ biến: Thiếu người nhận sau 告诉. Không tự nhiên: 他告诉一件事。 Tự nhiên: 他告诉我一件事。 Tā gàosu wǒ yí jiàn shì. Anh ấy nói cho tôi biết một việc. 他告诉大家怎么布置会场。 Tā gàosu dàjiā zěnme bùzhì huìchǎng. Anh ấy nói cho mọi người biết cách bố trí hội trường.",
           "natural_examples": [],
@@ -4083,7 +4083,7 @@
       "check_needed": false
     },
     {
-      "id": "vocab_012",
+      "id": "509129b1-82df-4cbb-8ef1-4f6275531cde",
       "type": "deep_vocabulary_item",
       "order": 12,
       "hanzi": "答应",
@@ -4290,7 +4290,7 @@
       },
       "collocations": [
         {
-          "id": "vocab_012_col_001",
+          "id": "50502434-7f68-4c70-b9e4-7d9f3f6e71d1",
           "order": 1,
           "zh": "答应帮忙",
           "pinyin": "",
@@ -4301,7 +4301,7 @@
           "notes": []
         },
         {
-          "id": "vocab_012_col_002",
+          "id": "1d2b2299-5fdf-4560-8414-7e66de2a8dde",
           "order": 2,
           "zh": "答应了",
           "pinyin": "",
@@ -4312,7 +4312,7 @@
           "notes": []
         },
         {
-          "id": "vocab_012_col_003",
+          "id": "f0cff1df-f53c-4a24-8a70-b9da3d34ccc2",
           "order": 3,
           "zh": "答应我一件事",
           "pinyin": "",
@@ -4323,7 +4323,7 @@
           "notes": []
         },
         {
-          "id": "vocab_012_col_004",
+          "id": "25554651-2904-4165-8d25-6ed2f35827fe",
           "order": 4,
           "zh": "没有答应",
           "pinyin": "",
@@ -4336,7 +4336,7 @@
       ],
       "examples": [
         {
-          "id": "vocab_012_ex_001",
+          "id": "a20479cb-23b5-43ee-8713-092d20c52d31",
           "order": 1,
           "zh": "管理员答应下午把会场借给我们用。",
           "pinyin": "Guǎnlǐyuán dāying xiàwǔ bǎ huìchǎng jiè gěi wǒmen yòng.",
@@ -4349,7 +4349,7 @@
             "grammar_17_ba_construction"
           ],
           "vocab_refs": [
-            "vocab_012"
+            "509129b1-82df-4cbb-8ef1-4f6275531cde"
           ],
           "source_ref": "current_thread",
           "level": "basic",
@@ -4358,7 +4358,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_012_ex_002",
+          "id": "99b58e9a-d913-462a-96dd-b742037a7997",
           "order": 2,
           "zh": "班长答应帮我们把教室布置成会场。",
           "pinyin": "Bānzhǎng dāying bāng wǒmen bǎ jiàoshì bùzhì chéng huìchǎng.",
@@ -4371,7 +4371,7 @@
             "grammar_17_ba_construction"
           ],
           "vocab_refs": [
-            "vocab_012"
+            "509129b1-82df-4cbb-8ef1-4f6275531cde"
           ],
           "source_ref": "current_thread",
           "level": "expanded",
@@ -4380,7 +4380,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_012_ex_003",
+          "id": "bf1f40f4-3c76-4816-b9ef-abd79de6ba8f",
           "order": 3,
           "zh": "他答应得很快，可是后来没有来，大家都有点儿失望。",
           "pinyin": "Tā dāying de hěn kuài, kěshì hòulái méiyǒu lái, dàjiā dōu yǒudiǎnr shīwàng.",
@@ -4393,7 +4393,7 @@
             "grammar_17_ba_construction"
           ],
           "vocab_refs": [
-            "vocab_012"
+            "509129b1-82df-4cbb-8ef1-4f6275531cde"
           ],
           "source_ref": "current_thread",
           "level": "complex",
@@ -4416,7 +4416,7 @@
       },
       "warnings": [
         {
-          "id": "vocab_012_warning_001",
+          "id": "4fdf8c68-a1ed-4b4d-bcac-85fa8915a4aa",
           "order": 1,
           "rule_vi": "Lỗi sai phổ biến: Nhầm 答应 với 回答. 回答问题 Huídá wèntí Trả lời câu hỏi. 答应帮忙 Dāying bāngmáng Đồng ý giúp. Không nói: 答应问题 nếu nghĩa là trả lời câu hỏi.",
           "natural_examples": [],
@@ -4451,7 +4451,7 @@
       "check_needed": false
     },
     {
-      "id": "vocab_013",
+      "id": "78767453-1cc4-463a-9a8e-aad770df79f6",
       "type": "deep_vocabulary_item",
       "order": 13,
       "hanzi": "打扫",
@@ -4657,7 +4657,7 @@
       },
       "collocations": [
         {
-          "id": "vocab_013_col_001",
+          "id": "cf5de2ca-96f4-4356-b3b1-8b01582b0c20",
           "order": 1,
           "zh": "打扫教室",
           "pinyin": "",
@@ -4668,7 +4668,7 @@
           "notes": []
         },
         {
-          "id": "vocab_013_col_002",
+          "id": "eb928049-5b53-480d-88e1-c2fe1d07da86",
           "order": 2,
           "zh": "打扫房间",
           "pinyin": "",
@@ -4679,7 +4679,7 @@
           "notes": []
         },
         {
-          "id": "vocab_013_col_003",
+          "id": "3c506216-1776-4b05-a262-5e676a0c23e9",
           "order": 3,
           "zh": "打扫会场",
           "pinyin": "",
@@ -4690,7 +4690,7 @@
           "notes": []
         },
         {
-          "id": "vocab_013_col_004",
+          "id": "d6a924b9-f467-4a9c-9758-917b36ee3e1a",
           "order": 4,
           "zh": "打扫干净",
           "pinyin": "",
@@ -4701,7 +4701,7 @@
           "notes": []
         },
         {
-          "id": "vocab_013_col_005",
+          "id": "2b4bbee5-d08b-4a1e-a5e1-d3f8c20a4f59",
           "order": 5,
           "zh": "打扫卫生",
           "pinyin": "",
@@ -4714,7 +4714,7 @@
       ],
       "examples": [
         {
-          "id": "vocab_013_ex_001",
+          "id": "fe953aec-7a56-4ca6-8231-605ac37f16cc",
           "order": 1,
           "zh": "联欢会以前，我们要先把教室打扫干净。",
           "pinyin": "Liánhuānhuì yǐqián, wǒmen yào xiān bǎ jiàoshì dǎsǎo gānjìng.",
@@ -4727,7 +4727,7 @@
             "grammar_17_ba_construction"
           ],
           "vocab_refs": [
-            "vocab_013"
+            "78767453-1cc4-463a-9a8e-aad770df79f6"
           ],
           "source_ref": "current_thread",
           "level": "basic",
@@ -4736,7 +4736,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_013_ex_002",
+          "id": "60fa15e6-06e3-413a-bd88-463a19b0ed53",
           "order": 2,
           "zh": "有人打扫会场，有人擦窗户，还有人把桌子摆成圆圈儿。",
           "pinyin": "Yǒu rén dǎsǎo huìchǎng, yǒu rén cā chuānghu, hái yǒu rén bǎ zhuōzi bǎi chéng yuánquānr.",
@@ -4749,7 +4749,7 @@
             "grammar_17_ba_construction"
           ],
           "vocab_refs": [
-            "vocab_013"
+            "78767453-1cc4-463a-9a8e-aad770df79f6"
           ],
           "source_ref": "current_thread",
           "level": "expanded",
@@ -4758,7 +4758,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_013_ex_003",
+          "id": "35a58a55-834b-49a7-85c2-b66c41f2fbb7",
           "order": 3,
           "zh": "打扫完以后，管理员仔细看了看地上还有没有垃圾。",
           "pinyin": "Dǎsǎo wán yǐhòu, guǎnlǐyuán zǐxì kàn le kan dì shang hái yǒu méiyǒu lājī.",
@@ -4771,7 +4771,7 @@
             "grammar_17_ba_construction"
           ],
           "vocab_refs": [
-            "vocab_013"
+            "78767453-1cc4-463a-9a8e-aad770df79f6"
           ],
           "source_ref": "current_thread",
           "level": "complex",
@@ -4794,7 +4794,7 @@
       },
       "warnings": [
         {
-          "id": "vocab_013_warning_001",
+          "id": "22669c2d-6d75-4796-b5af-b7b400afb5b5",
           "order": 1,
           "rule_vi": "Lỗi sai phổ biến: Dùng 打扫 cho mọi hành động làm sạch. Tự nhiên: 打扫教室 Dǎsǎo jiàoshì Dọn lớp học. 擦桌子 Cā zhuōzi Lau bàn. 擦窗户 Cā chuānghu Lau cửa sổ. 整理书包 Zhěnglǐ shūbāo Sắp xếp cặp sách.",
           "natural_examples": [],
@@ -4829,7 +4829,7 @@
       "check_needed": false
     },
     {
-      "id": "vocab_014",
+      "id": "037919fc-8b24-4bb8-a91e-d0a7a9553254",
       "type": "deep_vocabulary_item",
       "order": 14,
       "hanzi": "窗户",
@@ -5015,7 +5015,7 @@
       },
       "collocations": [
         {
-          "id": "vocab_014_col_001",
+          "id": "7b16962e-c923-47eb-8cb1-6358e8553bf1",
           "order": 1,
           "zh": "擦窗户",
           "pinyin": "",
@@ -5026,7 +5026,7 @@
           "notes": []
         },
         {
-          "id": "vocab_014_col_002",
+          "id": "8aeec7f6-d54a-4505-acaf-5b7a69760fff",
           "order": 2,
           "zh": "把窗户擦干净",
           "pinyin": "",
@@ -5037,7 +5037,7 @@
           "notes": []
         },
         {
-          "id": "vocab_014_col_003",
+          "id": "64b43a56-b3da-4c78-90b3-65cb99d99696",
           "order": 3,
           "zh": "开窗户",
           "pinyin": "",
@@ -5048,7 +5048,7 @@
           "notes": []
         },
         {
-          "id": "vocab_014_col_004",
+          "id": "96a6fa9a-760d-48ff-946f-ba87dfb8f8c1",
           "order": 4,
           "zh": "关窗户",
           "pinyin": "",
@@ -5059,7 +5059,7 @@
           "notes": []
         },
         {
-          "id": "vocab_014_col_005",
+          "id": "a3d8523f-0d78-4f8b-b035-633277133260",
           "order": 5,
           "zh": "窗户上贴着窗花",
           "pinyin": "",
@@ -5072,7 +5072,7 @@
       ],
       "examples": [
         {
-          "id": "vocab_014_ex_001",
+          "id": "025725ff-e962-46d0-8c16-1004c6853146",
           "order": 1,
           "zh": "联欢会以前，我们先把窗户擦干净。",
           "pinyin": "Liánhuānhuì yǐqián, wǒmen xiān bǎ chuānghu cā gānjìng.",
@@ -5085,7 +5085,7 @@
             "grammar_17_ba_construction"
           ],
           "vocab_refs": [
-            "vocab_014"
+            "037919fc-8b24-4bb8-a91e-d0a7a9553254"
           ],
           "source_ref": "current_thread",
           "level": "basic",
@@ -5094,7 +5094,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_014_ex_002",
+          "id": "0a198389-71d3-4ed0-a23c-2bc6e81bac8d",
           "order": 2,
           "zh": "窗户上贴着红色的窗花，教室一下子有了春节气氛。",
           "pinyin": "Chuānghu shang tiēzhe hóngsè de chuānghuā, jiàoshì yíxiàzi yǒu le Chūnjié qìfēn.",
@@ -5107,7 +5107,7 @@
             "grammar_17_ba_construction"
           ],
           "vocab_refs": [
-            "vocab_014"
+            "037919fc-8b24-4bb8-a91e-d0a7a9553254"
           ],
           "source_ref": "current_thread",
           "level": "expanded",
@@ -5116,7 +5116,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_014_ex_003",
+          "id": "99a67a75-95cd-4bb4-a814-67fad72feee6",
           "order": 3,
           "zh": "管理员告诉我们，开空调的时候最好把窗户关上。",
           "pinyin": "Guǎnlǐyuán gàosu wǒmen, kāi kōngtiáo de shíhou zuìhǎo bǎ chuānghu guān shang.",
@@ -5129,7 +5129,7 @@
             "grammar_17_ba_construction"
           ],
           "vocab_refs": [
-            "vocab_014"
+            "037919fc-8b24-4bb8-a91e-d0a7a9553254"
           ],
           "source_ref": "current_thread",
           "level": "complex",
@@ -5150,7 +5150,7 @@
       },
       "warnings": [
         {
-          "id": "vocab_014_warning_001",
+          "id": "1201a7f4-e323-4007-a201-de410993e138",
           "order": 1,
           "rule_vi": "Dùng theo cụm đã học, tránh dịch từng chữ nếu ngữ cảnh không rõ.",
           "natural_examples": [],
@@ -5185,7 +5185,7 @@
       "check_needed": false
     },
     {
-      "id": "vocab_015",
+      "id": "9ac8cf35-f748-4557-adb7-16caee032f5e",
       "type": "deep_vocabulary_item",
       "order": 15,
       "hanzi": "擦",
@@ -5336,7 +5336,7 @@
       },
       "collocations": [
         {
-          "id": "vocab_015_col_001",
+          "id": "91464bc6-a6bc-4b14-bf25-7cd3f5533d3d",
           "order": 1,
           "zh": "擦窗户",
           "pinyin": "",
@@ -5347,7 +5347,7 @@
           "notes": []
         },
         {
-          "id": "vocab_015_col_002",
+          "id": "3d1d5efe-6bce-44ea-a43e-9c36ca9c0962",
           "order": 2,
           "zh": "擦桌子",
           "pinyin": "",
@@ -5358,7 +5358,7 @@
           "notes": []
         },
         {
-          "id": "vocab_015_col_003",
+          "id": "6c23e415-8d0f-4176-8324-e10be81e9c47",
           "order": 3,
           "zh": "擦黑板",
           "pinyin": "",
@@ -5369,7 +5369,7 @@
           "notes": []
         },
         {
-          "id": "vocab_015_col_004",
+          "id": "887af2a9-30a8-44d2-8d42-e497863359b2",
           "order": 4,
           "zh": "擦干净",
           "pinyin": "",
@@ -5380,7 +5380,7 @@
           "notes": []
         },
         {
-          "id": "vocab_015_col_005",
+          "id": "4a9bb1da-98dc-4b62-be43-31aaa8dcd7d3",
           "order": 5,
           "zh": "擦掉",
           "pinyin": "",
@@ -5393,7 +5393,7 @@
       ],
       "examples": [
         {
-          "id": "vocab_015_ex_001",
+          "id": "b0e8e8f3-3623-4306-8ca5-cb149df35098",
           "order": 1,
           "zh": "请你把桌子擦干净，再把礼物放上去。",
           "pinyin": "Qǐng nǐ bǎ zhuōzi cā gānjìng, zài bǎ lǐwù fàng shàngqù.",
@@ -5406,7 +5406,7 @@
             "grammar_17_ba_construction"
           ],
           "vocab_refs": [
-            "vocab_015"
+            "9ac8cf35-f748-4557-adb7-16caee032f5e"
           ],
           "source_ref": "current_thread",
           "level": "basic",
@@ -5415,7 +5415,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_015_ex_002",
+          "id": "faa683eb-b0be-47a7-bde6-aed8dadd6f62",
           "order": 2,
           "zh": "黑板上的字不用全擦掉，留下标题就可以。",
           "pinyin": "Hēibǎn shang de zì bú yòng quán cā diào, liú xià biāotí jiù kěyǐ.",
@@ -5428,7 +5428,7 @@
             "grammar_17_ba_construction"
           ],
           "vocab_refs": [
-            "vocab_015"
+            "9ac8cf35-f748-4557-adb7-16caee032f5e"
           ],
           "source_ref": "current_thread",
           "level": "expanded",
@@ -5437,7 +5437,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_015_ex_003",
+          "id": "a7734d26-8e71-40e9-a499-553f7beb2e0e",
           "order": 3,
           "zh": "窗户太脏了，擦了一遍还不够，最好再擦一遍。",
           "pinyin": "Chuānghu tài zāng le, cā le yí biàn hái bú gòu, zuìhǎo zài cā yí biàn.",
@@ -5450,7 +5450,7 @@
             "grammar_17_ba_construction"
           ],
           "vocab_refs": [
-            "vocab_015"
+            "9ac8cf35-f748-4557-adb7-16caee032f5e"
           ],
           "source_ref": "current_thread",
           "level": "complex",
@@ -5473,7 +5473,7 @@
       },
       "warnings": [
         {
-          "id": "vocab_015_warning_001",
+          "id": "ed6b5a82-68bf-4516-acac-ebf78e270f71",
           "order": 1,
           "rule_vi": "Lỗi sai phổ biến: Dùng 擦 cho quần áo. Không tự nhiên: 擦衣服 Tự nhiên: 洗衣服 Xǐ yīfu Giặt quần áo. 擦桌子 Cā zhuōzi Lau bàn.",
           "natural_examples": [],
@@ -5508,7 +5508,7 @@
       "check_needed": false
     },
     {
-      "id": "vocab_016",
+      "id": "27c6ca54-5c36-45bb-a954-83d52f06cb58",
       "type": "deep_vocabulary_item",
       "order": 16,
       "hanzi": "桌子",
@@ -5662,7 +5662,7 @@
       },
       "collocations": [
         {
-          "id": "vocab_016_col_001",
+          "id": "7c079c58-9243-4906-add2-18ae75a4eca1",
           "order": 1,
           "zh": "一张桌子",
           "pinyin": "",
@@ -5673,7 +5673,7 @@
           "notes": []
         },
         {
-          "id": "vocab_016_col_002",
+          "id": "644b8a76-baad-4d7f-b801-0497a901c858",
           "order": 2,
           "zh": "擦桌子",
           "pinyin": "",
@@ -5684,7 +5684,7 @@
           "notes": []
         },
         {
-          "id": "vocab_016_col_003",
+          "id": "aaf31825-42d6-443f-b9ae-e57edb528014",
           "order": 3,
           "zh": "摆桌子",
           "pinyin": "",
@@ -5695,7 +5695,7 @@
           "notes": []
         },
         {
-          "id": "vocab_016_col_004",
+          "id": "99c0d804-f82e-4bdd-85b2-2829be856959",
           "order": 4,
           "zh": "把桌子摆成圆圈儿",
           "pinyin": "",
@@ -5706,7 +5706,7 @@
           "notes": []
         },
         {
-          "id": "vocab_016_col_005",
+          "id": "77d5c1e6-be1c-4d5b-90e9-4fe43e93f6d8",
           "order": 5,
           "zh": "桌子上放着……",
           "pinyin": "",
@@ -5719,7 +5719,7 @@
       ],
       "examples": [
         {
-          "id": "vocab_016_ex_001",
+          "id": "c726f843-de11-4ca7-b7c7-6ca9fb8213c5",
           "order": 1,
           "zh": "班长让我们把桌子摆成一个圆圈儿。",
           "pinyin": "Bānzhǎng ràng wǒmen bǎ zhuōzi bǎi chéng yí ge yuánquānr.",
@@ -5732,7 +5732,7 @@
             "grammar_17_ba_construction"
           ],
           "vocab_refs": [
-            "vocab_016"
+            "27c6ca54-5c36-45bb-a954-83d52f06cb58"
           ],
           "source_ref": "current_thread",
           "level": "basic",
@@ -5741,7 +5741,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_016_ex_002",
+          "id": "d0d092a5-0618-41de-8f07-8572ac737087",
           "order": 2,
           "zh": "桌子上放着一份礼物和一副对联儿。",
           "pinyin": "Zhuōzi shang fàngzhe yí fèn lǐwù hé yí fù duìliánr.",
@@ -5754,7 +5754,7 @@
             "grammar_17_ba_construction"
           ],
           "vocab_refs": [
-            "vocab_016"
+            "27c6ca54-5c36-45bb-a954-83d52f06cb58"
           ],
           "source_ref": "current_thread",
           "level": "expanded",
@@ -5763,7 +5763,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_016_ex_003",
+          "id": "8ba0c978-85f9-4098-9fba-969b283aca9a",
           "order": 3,
           "zh": "打扫会场的时候，先把桌子擦干净，再摆好。",
           "pinyin": "Dǎsǎo huìchǎng de shíhou, xiān bǎ zhuōzi cā gānjìng, zài bǎi hǎo.",
@@ -5776,7 +5776,7 @@
             "grammar_17_ba_construction"
           ],
           "vocab_refs": [
-            "vocab_016"
+            "27c6ca54-5c36-45bb-a954-83d52f06cb58"
           ],
           "source_ref": "current_thread",
           "level": "complex",
@@ -5799,7 +5799,7 @@
       },
       "warnings": [
         {
-          "id": "vocab_016_warning_001",
+          "id": "a67a2fcb-889f-4803-99d8-9f6471948d97",
           "order": 1,
           "rule_vi": "Lỗi sai phổ biến: Dùng sai lượng từ. Tự nhiên: 一张桌子 Yì zhāng zhuōzi Một cái bàn. 一把椅子 Yì bǎ yǐzi Một cái ghế.",
           "natural_examples": [],
@@ -5834,7 +5834,7 @@
       "check_needed": false
     },
     {
-      "id": "vocab_017",
+      "id": "114d55cb-2716-4187-b91d-bec3fbae8761",
       "type": "deep_vocabulary_item",
       "order": 17,
       "hanzi": "圆圈儿",
@@ -6085,7 +6085,7 @@
       },
       "collocations": [
         {
-          "id": "vocab_017_col_001",
+          "id": "91bd93e1-247e-4fa3-a900-7fa95e73bbc1",
           "order": 1,
           "zh": "一个圆圈儿",
           "pinyin": "",
@@ -6096,7 +6096,7 @@
           "notes": []
         },
         {
-          "id": "vocab_017_col_002",
+          "id": "b5075e37-7c49-47dd-b09e-5b127cabf75d",
           "order": 2,
           "zh": "画一个圆圈儿",
           "pinyin": "",
@@ -6107,7 +6107,7 @@
           "notes": []
         },
         {
-          "id": "vocab_017_col_003",
+          "id": "793ec73a-b2ff-4938-a5be-109b79e359b6",
           "order": 3,
           "zh": "围成一个圆圈儿",
           "pinyin": "",
@@ -6118,7 +6118,7 @@
           "notes": []
         },
         {
-          "id": "vocab_017_col_004",
+          "id": "4a9a3272-a5cb-4a3c-958e-63d79f564a34",
           "order": 4,
           "zh": "摆成圆圈儿",
           "pinyin": "",
@@ -6131,7 +6131,7 @@
       ],
       "examples": [
         {
-          "id": "vocab_017_ex_001",
+          "id": "1de02d62-eb05-4fa2-a8f8-a17c5707f808",
           "order": 1,
           "zh": "我们把桌子摆成一个圆圈儿，中间留出地方表演节目。",
           "pinyin": "Wǒmen bǎ zhuōzi bǎi chéng yí ge yuánquānr, zhōngjiān liú chū dìfang biǎoyǎn jiémù.",
@@ -6144,7 +6144,7 @@
             "grammar_17_ba_construction"
           ],
           "vocab_refs": [
-            "vocab_017"
+            "114d55cb-2716-4187-b91d-bec3fbae8761"
           ],
           "source_ref": "current_thread",
           "level": "basic",
@@ -6153,7 +6153,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_017_ex_002",
+          "id": "03baa57f-224e-4060-9dd6-bc023a7428f3",
           "order": 2,
           "zh": "孩子们围成一个圆圈儿，悄悄准备给老师一个惊喜。",
           "pinyin": "Háizimen wéi chéng yí ge yuánquānr, qiāoqiāo zhǔnbèi gěi lǎoshī yí ge jīngxǐ.",
@@ -6166,7 +6166,7 @@
             "grammar_17_ba_construction"
           ],
           "vocab_refs": [
-            "vocab_017"
+            "114d55cb-2716-4187-b91d-bec3fbae8761"
           ],
           "source_ref": "current_thread",
           "level": "expanded",
@@ -6175,7 +6175,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_017_ex_003",
+          "id": "8f588144-f2bf-4389-b764-213b08d1b56e",
           "order": 3,
           "zh": "黑板上画着一个圆圈儿，里面写着“新春快乐”。",
           "pinyin": "Hēibǎn shang huàzhe yí ge yuánquānr, lǐmian xiězhe “Xīnchūn kuàilè”.",
@@ -6188,7 +6188,7 @@
             "grammar_17_ba_construction"
           ],
           "vocab_refs": [
-            "vocab_017"
+            "114d55cb-2716-4187-b91d-bec3fbae8761"
           ],
           "source_ref": "current_thread",
           "level": "complex",
@@ -6211,7 +6211,7 @@
       },
       "warnings": [
         {
-          "id": "vocab_017_warning_001",
+          "id": "c0027b32-8486-4068-b8c4-09f75bbfd26a",
           "order": 1,
           "rule_vi": "Lỗi sai phổ biến: Nhầm 圆圈儿 với 圈子. 圆圈儿 thường là vòng tròn cụ thể. 圈子 có thể là “giới/nhóm quan hệ”. Ví dụ: 画一个圆圈儿。 Huà yí ge yuánquānr. Vẽ một vòng tròn. 他的朋友圈子很大。 Tā de péngyou quānzi hěn dà. Vòng bạn bè của anh ấy rất rộng.",
           "natural_examples": [],
@@ -6246,7 +6246,7 @@
       "check_needed": false
     },
     {
-      "id": "vocab_018",
+      "id": "e6d83257-9434-4602-8828-00cad4d30b4d",
       "type": "deep_vocabulary_item",
       "order": 18,
       "hanzi": "黑板",
@@ -6442,7 +6442,7 @@
       },
       "collocations": [
         {
-          "id": "vocab_018_col_001",
+          "id": "4332c7f8-82bc-4183-bcf5-28560afe10ce",
           "order": 1,
           "zh": "在黑板上写字",
           "pinyin": "",
@@ -6453,7 +6453,7 @@
           "notes": []
         },
         {
-          "id": "vocab_018_col_002",
+          "id": "5fc96edc-aa42-412f-ab28-189d02af993f",
           "order": 2,
           "zh": "黑板上写着……",
           "pinyin": "",
@@ -6464,7 +6464,7 @@
           "notes": []
         },
         {
-          "id": "vocab_018_col_003",
+          "id": "c8d0f8c9-11b3-492a-a399-9746570a7500",
           "order": 3,
           "zh": "擦黑板",
           "pinyin": "",
@@ -6475,7 +6475,7 @@
           "notes": []
         },
         {
-          "id": "vocab_018_col_004",
+          "id": "80761b00-055f-4cd2-9eca-d469d0625da2",
           "order": 4,
           "zh": "把黑板擦干净",
           "pinyin": "",
@@ -6486,7 +6486,7 @@
           "notes": []
         },
         {
-          "id": "vocab_018_col_005",
+          "id": "11829280-8aa9-449e-a430-3f95bcb32597",
           "order": 5,
           "zh": "看黑板",
           "pinyin": "",
@@ -6499,7 +6499,7 @@
       ],
       "examples": [
         {
-          "id": "vocab_018_ex_001",
+          "id": "51855077-8d82-4595-a4b6-f8a19d211501",
           "order": 1,
           "zh": "班长把活动安排写在黑板上。",
           "pinyin": "Bānzhǎng bǎ huódòng ānpái xiě zài hēibǎn shang.",
@@ -6512,7 +6512,7 @@
             "grammar_17_ba_construction"
           ],
           "vocab_refs": [
-            "vocab_018"
+            "e6d83257-9434-4602-8828-00cad4d30b4d"
           ],
           "source_ref": "current_thread",
           "level": "basic",
@@ -6521,7 +6521,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_018_ex_002",
+          "id": "8c22031c-67e4-45cb-b367-fd2f5b78d60c",
           "order": 2,
           "zh": "黑板上写着四个大字：新春快乐。",
           "pinyin": "Hēibǎn shang xiězhe sì ge dà zì: Xīnchūn kuàilè.",
@@ -6534,7 +6534,7 @@
             "grammar_17_ba_construction"
           ],
           "vocab_refs": [
-            "vocab_018"
+            "e6d83257-9434-4602-8828-00cad4d30b4d"
           ],
           "source_ref": "current_thread",
           "level": "expanded",
@@ -6543,7 +6543,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_018_ex_003",
+          "id": "08b1fb47-9dc2-4704-92ff-eb626cb085eb",
           "order": 3,
           "zh": "联欢会结束以后，别忘了把黑板擦干净。",
           "pinyin": "Liánhuānhuì jiéshù yǐhòu, bié wàng le bǎ hēibǎn cā gānjìng.",
@@ -6556,7 +6556,7 @@
             "grammar_17_ba_construction"
           ],
           "vocab_refs": [
-            "vocab_018"
+            "e6d83257-9434-4602-8828-00cad4d30b4d"
           ],
           "source_ref": "current_thread",
           "level": "complex",
@@ -6579,7 +6579,7 @@
       },
       "warnings": [
         {
-          "id": "vocab_018_warning_001",
+          "id": "e09b2717-800e-459f-9495-9f25471fca02",
           "order": 1,
           "rule_vi": "Lỗi sai phổ biến: Thiếu 上 khi nói viết trên bảng. Không tự nhiên: 写黑板 Tự nhiên: 写在黑板上。 Xiě zài hēibǎn shang. Viết lên bảng. 黑板上写着字。 Hēibǎn shang xiězhe zì. Trên bảng có viết chữ.",
           "natural_examples": [],
@@ -6614,7 +6614,7 @@
       "check_needed": false
     },
     {
-      "id": "vocab_019",
+      "id": "00700602-f335-4f99-a1c6-f25df120c005",
       "type": "deep_vocabulary_item",
       "order": 19,
       "hanzi": "音响",
@@ -6789,7 +6789,7 @@
       },
       "collocations": [
         {
-          "id": "vocab_019_col_001",
+          "id": "69d3ef04-8341-4aab-9d97-9699bad49896",
           "order": 1,
           "zh": "调音响",
           "pinyin": "",
@@ -6800,7 +6800,7 @@
           "notes": []
         },
         {
-          "id": "vocab_019_col_002",
+          "id": "71c49218-eda1-4d52-b921-3227814efa30",
           "order": 2,
           "zh": "音响太大",
           "pinyin": "",
@@ -6811,7 +6811,7 @@
           "notes": []
         },
         {
-          "id": "vocab_019_col_003",
+          "id": "018601ee-bfdc-468d-bb3b-044156924801",
           "order": 3,
           "zh": "音响效果",
           "pinyin": "",
@@ -6822,7 +6822,7 @@
           "notes": []
         },
         {
-          "id": "vocab_019_col_004",
+          "id": "e9572827-9fef-4dfc-9027-b884315a4f09",
           "order": 4,
           "zh": "打开音响",
           "pinyin": "",
@@ -6833,7 +6833,7 @@
           "notes": []
         },
         {
-          "id": "vocab_019_col_005",
+          "id": "26f9b088-75b2-4652-95d1-bd6be8b1a20b",
           "order": 5,
           "zh": "把音响调小一点儿",
           "pinyin": "",
@@ -6846,7 +6846,7 @@
       ],
       "examples": [
         {
-          "id": "vocab_019_ex_001",
+          "id": "ba041cee-01b7-49b8-8228-c73dd490df59",
           "order": 1,
           "zh": "管理员告诉我们，别把音响调得太大。",
           "pinyin": "Guǎnlǐyuán gàosu wǒmen, bié bǎ yīnxiǎng tiáo de tài dà.",
@@ -6859,7 +6859,7 @@
             "grammar_17_ba_construction"
           ],
           "vocab_refs": [
-            "vocab_019"
+            "00700602-f335-4f99-a1c6-f25df120c005"
           ],
           "source_ref": "current_thread",
           "level": "basic",
@@ -6868,7 +6868,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_019_ex_002",
+          "id": "17883c06-1ebd-4230-9321-7ccb48e72f09",
           "order": 2,
           "zh": "会场后边放着一套音响，旁边还有两个麦克风。",
           "pinyin": "Huìchǎng hòubian fàngzhe yí tào yīnxiǎng, pángbiān hái yǒu liǎng ge màikèfēng.",
@@ -6881,7 +6881,7 @@
             "grammar_17_ba_construction"
           ],
           "vocab_refs": [
-            "vocab_019"
+            "00700602-f335-4f99-a1c6-f25df120c005"
           ],
           "source_ref": "current_thread",
           "level": "expanded",
@@ -6890,7 +6890,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_019_ex_003",
+          "id": "9a233746-252e-4d2b-b03c-2e89bf9fbdeb",
           "order": 3,
           "zh": "联欢会开始以前，班长先检查音响有没有问题。",
           "pinyin": "Liánhuānhuì kāishǐ yǐqián, bānzhǎng xiān jiǎnchá yīnxiǎng yǒu méiyǒu wèntí.",
@@ -6903,7 +6903,7 @@
             "grammar_17_ba_construction"
           ],
           "vocab_refs": [
-            "vocab_019"
+            "00700602-f335-4f99-a1c6-f25df120c005"
           ],
           "source_ref": "current_thread",
           "level": "complex",
@@ -6926,7 +6926,7 @@
       },
       "warnings": [
         {
-          "id": "vocab_019_warning_001",
+          "id": "d04f74b6-9223-40a2-9443-12ae19338b3b",
           "order": 1,
           "rule_vi": "Lỗi sai phổ biến: Nhầm 音响 với 声音. 音响 là thiết bị/hệ thống âm thanh: 把音响调小一点儿。 Bǎ yīnxiǎng tiáo xiǎo yìdiǎnr. Chỉnh âm thanh nhỏ xuống một chút. 声音 là tiếng/âm thanh: 你的声音太小了。 Nǐ de shēngyīn tài xiǎo le. Giọng bạn nhỏ quá.",
           "natural_examples": [],
@@ -6961,7 +6961,7 @@
       "check_needed": false
     },
     {
-      "id": "vocab_020",
+      "id": "8b26ec8b-accf-4f39-899a-76cf3fa11a68",
       "type": "deep_vocabulary_item",
       "order": 20,
       "hanzi": "彩灯",
@@ -7146,7 +7146,7 @@
       },
       "collocations": [
         {
-          "id": "vocab_020_col_001",
+          "id": "8497b604-a361-4793-b0b3-68aef55a8656",
           "order": 1,
           "zh": "挂彩灯",
           "pinyin": "",
@@ -7157,7 +7157,7 @@
           "notes": []
         },
         {
-          "id": "vocab_020_col_002",
+          "id": "355f7769-c18d-4bee-9519-e48dd8798faf",
           "order": 2,
           "zh": "开彩灯",
           "pinyin": "",
@@ -7168,7 +7168,7 @@
           "notes": []
         },
         {
-          "id": "vocab_020_col_003",
+          "id": "d005543b-c700-42ac-bf8f-1445cdb4e4d2",
           "order": 3,
           "zh": "会场里的彩灯",
           "pinyin": "",
@@ -7179,7 +7179,7 @@
           "notes": []
         },
         {
-          "id": "vocab_020_col_004",
+          "id": "0ef7d409-1900-4c40-80fd-bf9ff26d1c18",
           "order": 4,
           "zh": "把彩灯挂起来",
           "pinyin": "",
@@ -7190,7 +7190,7 @@
           "notes": []
         },
         {
-          "id": "vocab_020_col_005",
+          "id": "0f3c303f-50c8-4e7d-a230-cd4c7dd69d87",
           "order": 5,
           "zh": "彩灯亮了",
           "pinyin": "",
@@ -7203,7 +7203,7 @@
       ],
       "examples": [
         {
-          "id": "vocab_020_ex_001",
+          "id": "09cd7644-dd3f-4e7d-ac22-35f37a0c2ea0",
           "order": 1,
           "zh": "我们把彩灯挂在会场两边。",
           "pinyin": "Wǒmen bǎ cǎidēng guà zài huìchǎng liǎng biān.",
@@ -7216,7 +7216,7 @@
             "grammar_17_ba_construction"
           ],
           "vocab_refs": [
-            "vocab_020"
+            "8b26ec8b-accf-4f39-899a-76cf3fa11a68"
           ],
           "source_ref": "current_thread",
           "level": "basic",
@@ -7225,7 +7225,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_020_ex_002",
+          "id": "7ab81f43-3f96-4c04-9f82-3ab16b0be700",
           "order": 2,
           "zh": "彩灯一亮，会场的气氛一下子就热闹起来了。",
           "pinyin": "Cǎidēng yí liàng, huìchǎng de qìfēn yíxiàzi jiù rènao qǐlai le.",
@@ -7238,7 +7238,7 @@
             "grammar_17_ba_construction"
           ],
           "vocab_refs": [
-            "vocab_020"
+            "8b26ec8b-accf-4f39-899a-76cf3fa11a68"
           ],
           "source_ref": "current_thread",
           "level": "expanded",
@@ -7247,7 +7247,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_020_ex_003",
+          "id": "a2becab2-dde2-42d2-910d-82e288cfe9d7",
           "order": 3,
           "zh": "管理员说，最好别把彩灯挂在空调旁边。",
           "pinyin": "Guǎnlǐyuán shuō, zuìhǎo bié bǎ cǎidēng guà zài kōngtiáo pángbiān.",
@@ -7260,7 +7260,7 @@
             "grammar_17_ba_construction"
           ],
           "vocab_refs": [
-            "vocab_020"
+            "8b26ec8b-accf-4f39-899a-76cf3fa11a68"
           ],
           "source_ref": "current_thread",
           "level": "complex",
@@ -7283,7 +7283,7 @@
       },
       "warnings": [
         {
-          "id": "vocab_020_warning_001",
+          "id": "3cd6109d-12dd-48c0-9ca9-924e46a50e66",
           "order": 1,
           "rule_vi": "Lỗi sai phổ biến: Nhầm 开彩灯 với “mở đèn màu” theo nghĩa mở ra vật lý. Trong tiếng Trung, 开灯 là bật đèn. Tự nhiên: 把彩灯打开。 Bǎ cǎidēng dǎkāi. Bật đèn màu lên. 彩灯开着呢。 Cǎidēng kāizhe ne. Đèn màu đang bật đó.",
           "natural_examples": [],
@@ -7318,7 +7318,7 @@
       "check_needed": false
     },
     {
-      "id": "vocab_021",
+      "id": "dca8c3eb-20fa-48c5-b402-105c52d6183b",
       "type": "deep_vocabulary_item",
       "order": 21,
       "hanzi": "彩带",
@@ -7461,7 +7461,7 @@
       },
       "collocations": [
         {
-          "id": "vocab_021_col_001",
+          "id": "09d5240b-b17e-49f5-a571-60258503e68c",
           "order": 1,
           "zh": "挂彩带",
           "pinyin": "",
@@ -7472,7 +7472,7 @@
           "notes": []
         },
         {
-          "id": "vocab_021_col_002",
+          "id": "81700157-46ec-41c2-82b4-ef6d0476e2bf",
           "order": 2,
           "zh": "系彩带",
           "pinyin": "",
@@ -7483,7 +7483,7 @@
           "notes": []
         },
         {
-          "id": "vocab_021_col_003",
+          "id": "7686a52f-abed-4bca-bf3a-7dc0d15c3331",
           "order": 3,
           "zh": "用彩带装饰会场",
           "pinyin": "",
@@ -7494,7 +7494,7 @@
           "notes": []
         },
         {
-          "id": "vocab_021_col_004",
+          "id": "cf229248-67b1-41d8-a7b7-480d7a0d5042",
           "order": 4,
           "zh": "把彩带挂起来",
           "pinyin": "",
@@ -7505,7 +7505,7 @@
           "notes": []
         },
         {
-          "id": "vocab_021_col_005",
+          "id": "8807a2f1-20d0-466b-a4ba-d386f0595446",
           "order": 5,
           "zh": "彩带和彩灯",
           "pinyin": "",
@@ -7518,7 +7518,7 @@
       ],
       "examples": [
         {
-          "id": "vocab_021_ex_001",
+          "id": "fee64aab-97ca-4951-855e-9ea9fc55d34f",
           "order": 1,
           "zh": "他们把彩带挂在黑板上边。",
           "pinyin": "Tāmen bǎ cǎidài guà zài hēibǎn shàngbian.",
@@ -7531,7 +7531,7 @@
             "grammar_17_ba_construction"
           ],
           "vocab_refs": [
-            "vocab_021"
+            "dca8c3eb-20fa-48c5-b402-105c52d6183b"
           ],
           "source_ref": "current_thread",
           "level": "basic",
@@ -7540,7 +7540,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_021_ex_002",
+          "id": "1de0f8b3-9372-4369-9735-91048726c934",
           "order": 2,
           "zh": "女生把彩带系在礼物盒上，看起来很漂亮。",
           "pinyin": "Nǚshēng bǎ cǎidài jì zài lǐwù hé shang, kàn qǐlai hěn piàoliang.",
@@ -7553,7 +7553,7 @@
             "grammar_17_ba_construction"
           ],
           "vocab_refs": [
-            "vocab_021"
+            "dca8c3eb-20fa-48c5-b402-105c52d6183b"
           ],
           "source_ref": "current_thread",
           "level": "expanded",
@@ -7562,7 +7562,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_021_ex_003",
+          "id": "e0c294b8-481d-4918-ab37-dde50ad503cd",
           "order": 3,
           "zh": "会场里挂着彩灯和彩带，春节气氛越来越浓了。",
           "pinyin": "Huìchǎng lǐ guàzhe cǎidēng hé cǎidài, Chūnjié qìfēn yuè lái yuè nóng le.",
@@ -7575,7 +7575,7 @@
             "grammar_17_ba_construction"
           ],
           "vocab_refs": [
-            "vocab_021"
+            "dca8c3eb-20fa-48c5-b402-105c52d6183b"
           ],
           "source_ref": "current_thread",
           "level": "complex",
@@ -7598,7 +7598,7 @@
       },
       "warnings": [
         {
-          "id": "vocab_021_warning_001",
+          "id": "6ce60690-70c5-4a77-8c86-01b914b48e02",
           "order": 1,
           "rule_vi": "Lỗi sai phổ biến: Nhầm 彩带 và 领带 vì đều có 带. 彩带 Cǎidài Dây ruy băng màu / dây trang trí. 领带 Lǐngdài Cà vạt. 腰带 Yāodài Thắt lưng.",
           "natural_examples": [],
@@ -7633,7 +7633,7 @@
       "check_needed": false
     },
     {
-      "id": "vocab_022",
+      "id": "970d57cc-3bfc-4704-a696-5aad8628383d",
       "type": "deep_vocabulary_item",
       "order": 22,
       "hanzi": "份",
@@ -7784,7 +7784,7 @@
       },
       "collocations": [
         {
-          "id": "vocab_022_col_001",
+          "id": "bf782fe0-46d2-40d7-91ca-55cb4c93c44a",
           "order": 1,
           "zh": "一份礼物",
           "pinyin": "",
@@ -7795,7 +7795,7 @@
           "notes": []
         },
         {
-          "id": "vocab_022_col_002",
+          "id": "17bffbcd-8978-4158-9d8d-5ae722ac575d",
           "order": 2,
           "zh": "一份惊喜",
           "pinyin": "",
@@ -7806,7 +7806,7 @@
           "notes": []
         },
         {
-          "id": "vocab_022_col_003",
+          "id": "77de1849-1b12-408b-84ab-f22f9570e78c",
           "order": 3,
           "zh": "一份材料",
           "pinyin": "",
@@ -7817,7 +7817,7 @@
           "notes": []
         },
         {
-          "id": "vocab_022_col_004",
+          "id": "bf32b24f-6b1c-4a08-a377-17b227ca8b3a",
           "order": 4,
           "zh": "一份通知",
           "pinyin": "",
@@ -7828,7 +7828,7 @@
           "notes": []
         },
         {
-          "id": "vocab_022_col_005",
+          "id": "7edae250-d1b9-46df-8dff-60901804c8a2",
           "order": 5,
           "zh": "一份心意",
           "pinyin": "",
@@ -7841,7 +7841,7 @@
       ],
       "examples": [
         {
-          "id": "vocab_022_ex_001",
+          "id": "99548458-8db0-4e35-8787-341bcd10e20b",
           "order": 1,
           "zh": "同学们给老师准备了一份惊喜。",
           "pinyin": "Tóngxuémen gěi lǎoshī zhǔnbèi le yí fèn jīngxǐ.",
@@ -7854,7 +7854,7 @@
             "grammar_17_ba_construction"
           ],
           "vocab_refs": [
-            "vocab_022"
+            "970d57cc-3bfc-4704-a696-5aad8628383d"
           ],
           "source_ref": "current_thread",
           "level": "basic",
@@ -7863,7 +7863,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_022_ex_002",
+          "id": "9a4767ed-b8a6-4de5-b24b-348555ec0b8e",
           "order": 2,
           "zh": "她把那份礼物悄悄放在老师的桌子上。",
           "pinyin": "Tā bǎ nà fèn lǐwù qiāoqiāo fàng zài lǎoshī de zhuōzi shang.",
@@ -7876,7 +7876,7 @@
             "grammar_17_ba_construction"
           ],
           "vocab_refs": [
-            "vocab_022"
+            "970d57cc-3bfc-4704-a696-5aad8628383d"
           ],
           "source_ref": "current_thread",
           "level": "expanded",
@@ -7885,7 +7885,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_022_ex_003",
+          "id": "ef9f6e69-8b43-468c-8027-55e87127d4d1",
           "order": 3,
           "zh": "管理员给班长一份会场使用说明，让他仔细看。",
           "pinyin": "Guǎnlǐyuán gěi bānzhǎng yí fèn huìchǎng shǐyòng shuōmíng, ràng tā zǐxì kàn.",
@@ -7898,7 +7898,7 @@
             "grammar_17_ba_construction"
           ],
           "vocab_refs": [
-            "vocab_022"
+            "970d57cc-3bfc-4704-a696-5aad8628383d"
           ],
           "source_ref": "current_thread",
           "level": "complex",
@@ -7921,7 +7921,7 @@
       },
       "warnings": [
         {
-          "id": "vocab_022_warning_001",
+          "id": "8beb3b2c-8092-455f-b13a-621d10be4f5b",
           "order": 1,
           "rule_vi": "Lỗi sai phổ biến: Nhầm 份 và 分. 一份礼物 Yí fèn lǐwù Một món/phần quà. 十分 Shí fēn Mười điểm / mười phần. 三分钟 Sān fēnzhōng Ba phút.",
           "natural_examples": [],
@@ -7956,7 +7956,7 @@
       "check_needed": false
     },
     {
-      "id": "vocab_023",
+      "id": "195d10fb-c2d5-4271-a73c-1f6a1dd89f54",
       "type": "deep_vocabulary_item",
       "order": 23,
       "hanzi": "惊喜",
@@ -8173,7 +8173,7 @@
       },
       "collocations": [
         {
-          "id": "vocab_023_col_001",
+          "id": "e9fc9c30-aa15-4128-9712-5af0a045655b",
           "order": 1,
           "zh": "一个惊喜",
           "pinyin": "",
@@ -8184,7 +8184,7 @@
           "notes": []
         },
         {
-          "id": "vocab_023_col_002",
+          "id": "b458695a-4642-416f-afdf-e91661146b34",
           "order": 2,
           "zh": "一份惊喜",
           "pinyin": "",
@@ -8195,7 +8195,7 @@
           "notes": []
         },
         {
-          "id": "vocab_023_col_003",
+          "id": "c7340827-f150-41ed-88c4-994bbdf29c0f",
           "order": 3,
           "zh": "给……一个惊喜",
           "pinyin": "",
@@ -8206,7 +8206,7 @@
           "notes": []
         },
         {
-          "id": "vocab_023_col_004",
+          "id": "b40a4ac1-dab3-45c8-8068-33e7e98c44ef",
           "order": 4,
           "zh": "准备惊喜",
           "pinyin": "",
@@ -8217,7 +8217,7 @@
           "notes": []
         },
         {
-          "id": "vocab_023_col_005",
+          "id": "dfc5f9b2-ea24-4204-b330-232f793fe27a",
           "order": 5,
           "zh": "又惊又喜",
           "pinyin": "",
@@ -8230,7 +8230,7 @@
       ],
       "examples": [
         {
-          "id": "vocab_023_ex_001",
+          "id": "e14e92a5-302e-4bb1-a1e5-4b9c63497db2",
           "order": 1,
           "zh": "同学们悄悄把会场布置好，想给老师一个惊喜。",
           "pinyin": "Tóngxuémen qiāoqiāo bǎ huìchǎng bùzhì hǎo, xiǎng gěi lǎoshī yí ge jīngxǐ.",
@@ -8243,7 +8243,7 @@
             "grammar_17_ba_construction"
           ],
           "vocab_refs": [
-            "vocab_023"
+            "195d10fb-c2d5-4271-a73c-1f6a1dd89f54"
           ],
           "source_ref": "current_thread",
           "level": "basic",
@@ -8252,7 +8252,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_023_ex_002",
+          "id": "1a637182-9adc-4659-976f-9d549a397820",
           "order": 2,
           "zh": "老师一走进会场，就看见黑板上写着“新春快乐”，觉得又惊又喜。",
           "pinyin": "Lǎoshī yì zǒu jìn huìchǎng, jiù kànjiàn hēibǎn shang xiězhe “Xīnchūn kuàilè”, juéde yòu jīng yòu xǐ.",
@@ -8265,7 +8265,7 @@
             "grammar_17_ba_construction"
           ],
           "vocab_refs": [
-            "vocab_023"
+            "195d10fb-c2d5-4271-a73c-1f6a1dd89f54"
           ],
           "source_ref": "current_thread",
           "level": "expanded",
@@ -8274,7 +8274,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_023_ex_003",
+          "id": "81ce0f4b-403d-40e2-a875-aab266df8e2c",
           "order": 3,
           "zh": "这份礼物不贵，但是很有心意，对她来说是一个很大的惊喜。",
           "pinyin": "Zhè fèn lǐwù bú guì, dànshì hěn yǒu xīnyì, duì tā lái shuō shì yí ge hěn dà de jīngxǐ.",
@@ -8287,7 +8287,7 @@
             "grammar_17_ba_construction"
           ],
           "vocab_refs": [
-            "vocab_023"
+            "195d10fb-c2d5-4271-a73c-1f6a1dd89f54"
           ],
           "source_ref": "current_thread",
           "level": "complex",
@@ -8310,7 +8310,7 @@
       },
       "warnings": [
         {
-          "id": "vocab_023_warning_001",
+          "id": "b966f53e-f8f2-4e4a-987f-32729163f966",
           "order": 1,
           "rule_vi": "Lỗi sai phổ biến: Dùng 惊喜 cho bất ngờ xấu. Không tự nhiên: 听到坏消息，我很惊喜。 Đúng: 听到坏消息，我很惊讶。 Tīng dào huài xiāoxi, wǒ hěn jīngyà. Nghe tin xấu, tôi rất ngạc nhiên. 收到这份礼物，我很惊喜。 Shōu dào zhè fèn lǐwù, wǒ hěn jīngxǐ. Nhận được món quà này, tôi rất bất ngờ vui.",
           "natural_examples": [],
@@ -8345,7 +8345,7 @@
       "check_needed": false
     },
     {
-      "id": "vocab_024",
+      "id": "6d542826-29a5-49cd-b8e5-1923cb681d20",
       "type": "deep_vocabulary_item",
       "order": 24,
       "hanzi": "幅",
@@ -8496,7 +8496,7 @@
       },
       "collocations": [
         {
-          "id": "vocab_024_col_001",
+          "id": "12eb64e3-53d0-498a-a27e-c8a84b4692aa",
           "order": 1,
           "zh": "一幅画",
           "pinyin": "",
@@ -8507,7 +8507,7 @@
           "notes": []
         },
         {
-          "id": "vocab_024_col_002",
+          "id": "652969be-a7fb-4d83-86e2-1f51679ba989",
           "order": 2,
           "zh": "一幅对联儿",
           "pinyin": "",
@@ -8518,7 +8518,7 @@
           "notes": []
         },
         {
-          "id": "vocab_024_col_003",
+          "id": "848ca7e2-42ff-424b-a748-2c2e69da9622",
           "order": 3,
           "zh": "一幅字",
           "pinyin": "",
@@ -8529,7 +8529,7 @@
           "notes": []
         },
         {
-          "id": "vocab_024_col_004",
+          "id": "4324a12b-339f-4e0c-9831-cd545cb5e514",
           "order": 4,
           "zh": "墙上挂着一幅画",
           "pinyin": "",
@@ -8540,7 +8540,7 @@
           "notes": []
         },
         {
-          "id": "vocab_024_col_005",
+          "id": "553ed01c-2aac-4109-9b89-76846e55ea2f",
           "order": 5,
           "zh": "把一幅对联儿贴在门两边",
           "pinyin": "",
@@ -8553,7 +8553,7 @@
       ],
       "examples": [
         {
-          "id": "vocab_024_ex_001",
+          "id": "cd800b9d-4780-4f93-bbd8-72632337b545",
           "order": 1,
           "zh": "我们把一幅对联儿贴在大门两边。",
           "pinyin": "Wǒmen bǎ yì fú duìliánr tiē zài dàmén liǎng biān.",
@@ -8566,7 +8566,7 @@
             "grammar_17_ba_construction"
           ],
           "vocab_refs": [
-            "vocab_024"
+            "6d542826-29a5-49cd-b8e5-1923cb681d20"
           ],
           "source_ref": "current_thread",
           "level": "basic",
@@ -8575,7 +8575,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_024_ex_002",
+          "id": "539cbe65-8de4-4883-839c-2bde5e8942f3",
           "order": 2,
           "zh": "会场前边挂着一幅画，画上写着“新春吉祥”。",
           "pinyin": "Huìchǎng qiánbian guàzhe yì fú huà, huà shang xiězhe “Xīnchūn jíxiáng”.",
@@ -8588,7 +8588,7 @@
             "grammar_17_ba_construction"
           ],
           "vocab_refs": [
-            "vocab_024"
+            "6d542826-29a5-49cd-b8e5-1923cb681d20"
           ],
           "source_ref": "current_thread",
           "level": "expanded",
@@ -8597,7 +8597,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_024_ex_003",
+          "id": "9ca1f351-86a2-467c-af36-01edc8fd72db",
           "order": 3,
           "zh": "这幅字是老师亲手写的，所以大家都舍不得摘下来。",
           "pinyin": "Zhè fú zì shì lǎoshī qīnshǒu xiě de, suǒyǐ dàjiā dōu shěbude zhāi xiàlai.",
@@ -8610,7 +8610,7 @@
             "grammar_17_ba_construction"
           ],
           "vocab_refs": [
-            "vocab_024"
+            "6d542826-29a5-49cd-b8e5-1923cb681d20"
           ],
           "source_ref": "current_thread",
           "level": "complex",
@@ -8633,7 +8633,7 @@
       },
       "warnings": [
         {
-          "id": "vocab_024_warning_001",
+          "id": "93213dab-fd85-4a0b-a135-b42e1474435a",
           "order": 1,
           "rule_vi": "Lỗi sai phổ biến: Dùng 张 cho mọi thứ phẳng. Tự nhiên: 一幅画 Yì fú huà Một bức tranh. 一张照片 Yì zhāng zhàopiàn Một tấm ảnh. 一幅对联儿 / 一副对联儿 Yì fú duìliánr / yí fù duìliánr Một bộ câu đối.",
           "natural_examples": [],
@@ -8668,7 +8668,7 @@
       "check_needed": false
     },
     {
-      "id": "vocab_025",
+      "id": "e8b6760e-1468-47f6-bf43-1c430d87b6ab",
       "type": "deep_vocabulary_item",
       "order": 25,
       "hanzi": "水仙",
@@ -8886,7 +8886,7 @@
       },
       "collocations": [
         {
-          "id": "vocab_025_col_001",
+          "id": "63e539fa-fd3d-42bb-b8db-b7d7fcb5a6ff",
           "order": 1,
           "zh": "水仙花",
           "pinyin": "",
@@ -8897,7 +8897,7 @@
           "notes": []
         },
         {
-          "id": "vocab_025_col_002",
+          "id": "59f4fb37-42f4-4f66-8377-f14c1081e6b7",
           "order": 2,
           "zh": "水仙开了",
           "pinyin": "",
@@ -8908,7 +8908,7 @@
           "notes": []
         },
         {
-          "id": "vocab_025_col_003",
+          "id": "11a8a11d-93b0-4a2e-a882-e4f5688300f8",
           "order": 3,
           "zh": "一盆水仙",
           "pinyin": "",
@@ -8919,7 +8919,7 @@
           "notes": []
         },
         {
-          "id": "vocab_025_col_004",
+          "id": "46edf8c2-e3a1-4906-a629-4a8577806f8e",
           "order": 4,
           "zh": "把水仙放在窗台上",
           "pinyin": "",
@@ -8930,7 +8930,7 @@
           "notes": []
         },
         {
-          "id": "vocab_025_col_005",
+          "id": "23120466-d3c5-492b-a542-ba9e9de1e035",
           "order": 5,
           "zh": "春节摆水仙",
           "pinyin": "",
@@ -8943,7 +8943,7 @@
       ],
       "examples": [
         {
-          "id": "vocab_025_ex_001",
+          "id": "d65c4798-f730-4976-938f-5ca87021473b",
           "order": 1,
           "zh": "窗台上放着一盆水仙，花已经开了。",
           "pinyin": "Chuāngtái shang fàngzhe yì pén shuǐxiān, huā yǐjīng kāi le.",
@@ -8956,7 +8956,7 @@
             "grammar_17_ba_construction"
           ],
           "vocab_refs": [
-            "vocab_025"
+            "e8b6760e-1468-47f6-bf43-1c430d87b6ab"
           ],
           "source_ref": "current_thread",
           "level": "basic",
@@ -8965,7 +8965,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_025_ex_002",
+          "id": "b9b39f9e-7f42-4948-834c-b6dc153ea6be",
           "order": 2,
           "zh": "联欢会以前，我们把水仙放在会场前边。",
           "pinyin": "Liánhuānhuì yǐqián, wǒmen bǎ shuǐxiān fàng zài huìchǎng qiánbian.",
@@ -8978,7 +8978,7 @@
             "grammar_17_ba_construction"
           ],
           "vocab_refs": [
-            "vocab_025"
+            "e8b6760e-1468-47f6-bf43-1c430d87b6ab"
           ],
           "source_ref": "current_thread",
           "level": "expanded",
@@ -8987,7 +8987,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_025_ex_003",
+          "id": "b0e5e34f-a6b0-476f-876a-d4bf0320728b",
           "order": 3,
           "zh": "这盆水仙是老师亲手养的，所以大家都很小心。",
           "pinyin": "Zhè pén shuǐxiān shì lǎoshī qīnshǒu yǎng de, suǒyǐ dàjiā dōu hěn xiǎoxīn.",
@@ -9000,7 +9000,7 @@
             "grammar_17_ba_construction"
           ],
           "vocab_refs": [
-            "vocab_025"
+            "e8b6760e-1468-47f6-bf43-1c430d87b6ab"
           ],
           "source_ref": "current_thread",
           "level": "complex",
@@ -9023,7 +9023,7 @@
       },
       "warnings": [
         {
-          "id": "vocab_025_warning_001",
+          "id": "e0f41154-771f-4518-b96c-b45fd7c590e8",
           "order": 1,
           "rule_vi": "Lỗi sai phổ biến: Nhầm 水仙 với tên người hoặc dịch từng chữ. Tự nhiên: 水仙开了。 Shuǐxiān kāi le. Hoa thủy tiên nở rồi. 窗台上放着一盆水仙。 Chuāngtái shang fàngzhe yì pén shuǐxiān. Trên bệ cửa sổ đặt một chậu thủy tiên.",
           "natural_examples": [],
@@ -9058,7 +9058,7 @@
       "check_needed": false
     },
     {
-      "id": "vocab_026",
+      "id": "22fb876e-fc2b-4751-84fa-8b279e3c7f0e",
       "type": "deep_vocabulary_item",
       "order": 26,
       "hanzi": "开",
@@ -9167,7 +9167,7 @@
       },
       "collocations": [
         {
-          "id": "vocab_026_col_001",
+          "id": "bde9e213-5e7c-4253-b763-e6e68a6af424",
           "order": 1,
           "zh": "水仙开了",
           "pinyin": "",
@@ -9178,7 +9178,7 @@
           "notes": []
         },
         {
-          "id": "vocab_026_col_002",
+          "id": "c8caa246-0fcd-4af0-b107-336151f1b560",
           "order": 2,
           "zh": "开窗户",
           "pinyin": "",
@@ -9189,7 +9189,7 @@
           "notes": []
         },
         {
-          "id": "vocab_026_col_003",
+          "id": "61b56d28-7413-4a51-b90b-a50ddf2a9433",
           "order": 3,
           "zh": "开空调",
           "pinyin": "",
@@ -9200,7 +9200,7 @@
           "notes": []
         },
         {
-          "id": "vocab_026_col_004",
+          "id": "d3895285-d9b4-4c27-b9a5-ebf24de6fba2",
           "order": 4,
           "zh": "开联欢会",
           "pinyin": "",
@@ -9211,7 +9211,7 @@
           "notes": []
         },
         {
-          "id": "vocab_026_col_005",
+          "id": "e637d827-765e-4b15-93a7-2136e169b952",
           "order": 5,
           "zh": "把门打开",
           "pinyin": "",
@@ -9224,7 +9224,7 @@
       ],
       "examples": [
         {
-          "id": "vocab_026_ex_001",
+          "id": "edddbb74-471a-4de3-a352-9f569624be71",
           "order": 1,
           "zh": "水仙一开，教室里就有了新春的气氛。",
           "pinyin": "Shuǐxiān yì kāi, jiàoshì lǐ jiù yǒu le xīnchūn de qìfēn.",
@@ -9237,7 +9237,7 @@
             "grammar_17_ba_construction"
           ],
           "vocab_refs": [
-            "vocab_026"
+            "22fb876e-fc2b-4751-84fa-8b279e3c7f0e"
           ],
           "source_ref": "current_thread",
           "level": "basic",
@@ -9246,7 +9246,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_026_ex_002",
+          "id": "6b9e509f-6976-4a80-b9ef-46f9c25433db",
           "order": 2,
           "zh": "管理员说，开空调以前最好把窗户关上。",
           "pinyin": "Guǎnlǐyuán shuō, kāi kōngtiáo yǐqián zuìhǎo bǎ chuānghu guān shang.",
@@ -9259,7 +9259,7 @@
             "grammar_17_ba_construction"
           ],
           "vocab_refs": [
-            "vocab_026"
+            "22fb876e-fc2b-4751-84fa-8b279e3c7f0e"
           ],
           "source_ref": "current_thread",
           "level": "expanded",
@@ -9268,7 +9268,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_026_ex_003",
+          "id": "977c6337-0042-4bb0-9ac5-9908b6f27c64",
           "order": 3,
           "zh": "春节前，班里要开联欢会，所以大家一起布置会场。",
           "pinyin": "Chūnjié qián, bān lǐ yào kāi liánhuānhuì, suǒyǐ dàjiā yìqǐ bùzhì huìchǎng.",
@@ -9281,7 +9281,7 @@
             "grammar_17_ba_construction"
           ],
           "vocab_refs": [
-            "vocab_026"
+            "22fb876e-fc2b-4751-84fa-8b279e3c7f0e"
           ],
           "source_ref": "current_thread",
           "level": "complex",
@@ -9304,7 +9304,7 @@
       },
       "warnings": [
         {
-          "id": "vocab_026_warning_001",
+          "id": "d69097bd-4259-4bfa-a4ca-f2005616283b",
           "order": 1,
           "rule_vi": "Lỗi sai phổ biến: Dịch 开空调 là “mở máy lạnh” thì tiếng Việt hiểu được, nhưng trong tiếng Trung bản chất là “bật cho máy vận hành”. Cụm cần nhớ: 开灯 – bật đèn. 关灯 – tắt đèn. 开空调 – bật máy lạnh. 关空调 – tắt máy lạnh. 花开了 – hoa nở rồi.",
           "natural_examples": [],
@@ -9339,7 +9339,7 @@
       "check_needed": false
     },
     {
-      "id": "vocab_027",
+      "id": "ace21fa7-a562-4101-884e-a0b12ca84999",
       "type": "deep_vocabulary_item",
       "order": 27,
       "hanzi": "副",
@@ -9490,7 +9490,7 @@
       },
       "collocations": [
         {
-          "id": "vocab_027_col_001",
+          "id": "78a847f3-b38f-4863-bd0f-6eebeb4a6734",
           "order": 1,
           "zh": "一副对联儿",
           "pinyin": "",
@@ -9501,7 +9501,7 @@
           "notes": []
         },
         {
-          "id": "vocab_027_col_002",
+          "id": "5f10911e-e8ce-4207-9ca3-0503a4a16361",
           "order": 2,
           "zh": "一副眼镜",
           "pinyin": "",
@@ -9512,7 +9512,7 @@
           "notes": []
         },
         {
-          "id": "vocab_027_col_003",
+          "id": "6855e319-31b1-4865-b0ff-6b6fb519aed7",
           "order": 3,
           "zh": "一副手套",
           "pinyin": "",
@@ -9523,7 +9523,7 @@
           "notes": []
         },
         {
-          "id": "vocab_027_col_004",
+          "id": "3ee933fa-d203-45c8-a937-5cdb5fa12a69",
           "order": 4,
           "zh": "副班长",
           "pinyin": "",
@@ -9534,7 +9534,7 @@
           "notes": []
         },
         {
-          "id": "vocab_027_col_005",
+          "id": "c2bc950c-3cce-4903-98ac-dfc0c8be00ce",
           "order": 5,
           "zh": "一副很高兴的样子",
           "pinyin": "",
@@ -9547,7 +9547,7 @@
       ],
       "examples": [
         {
-          "id": "vocab_027_ex_001",
+          "id": "ca8fa47d-8afd-453e-9a50-bfa28d8dbf78",
           "order": 1,
           "zh": "我们把一副对联儿贴在大门两边。",
           "pinyin": "Wǒmen bǎ yí fù duìliánr tiē zài dàmén liǎng biān.",
@@ -9560,7 +9560,7 @@
             "grammar_17_ba_construction"
           ],
           "vocab_refs": [
-            "vocab_027"
+            "ace21fa7-a562-4101-884e-a0b12ca84999"
           ],
           "source_ref": "current_thread",
           "level": "basic",
@@ -9569,7 +9569,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_027_ex_002",
+          "id": "57e6ada4-6aa1-405b-9d4d-bc035da307b6",
           "order": 2,
           "zh": "桌子上放着一副对联儿和一个红色的“福”字。",
           "pinyin": "Zhuōzi shang fàngzhe yí fù duìliánr hé yí ge hóngsè de “Fú” zì.",
@@ -9582,7 +9582,7 @@
             "grammar_17_ba_construction"
           ],
           "vocab_refs": [
-            "vocab_027"
+            "ace21fa7-a562-4101-884e-a0b12ca84999"
           ],
           "source_ref": "current_thread",
           "level": "expanded",
@@ -9591,7 +9591,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_027_ex_003",
+          "id": "44081774-b58a-4030-9f20-2910210d3014",
           "order": 3,
           "zh": "副班长答应帮我们把彩带挂起来。",
           "pinyin": "Fù bānzhǎng dāying bāng wǒmen bǎ cǎidài guà qǐlai.",
@@ -9604,7 +9604,7 @@
             "grammar_17_ba_construction"
           ],
           "vocab_refs": [
-            "vocab_027"
+            "ace21fa7-a562-4101-884e-a0b12ca84999"
           ],
           "source_ref": "current_thread",
           "level": "complex",
@@ -9627,7 +9627,7 @@
       },
       "warnings": [
         {
-          "id": "vocab_027_warning_001",
+          "id": "8b4f9930-760e-40ef-8c38-70981fc51690",
           "order": 1,
           "rule_vi": "Lỗi sai phổ biến: Nhầm 副, 幅, 份. 一副对联儿 Yí fù duìliánr Một bộ câu đối. 一幅画 Yì fú huà Một bức tranh. 一份礼物 Yí fèn lǐwù Một món/phần quà.",
           "natural_examples": [],
@@ -9662,7 +9662,7 @@
       "check_needed": false
     },
     {
-      "id": "vocab_028",
+      "id": "a1ad3f19-f0cf-48e3-b1b2-98c9d9602227",
       "type": "deep_vocabulary_item",
       "order": 28,
       "hanzi": "字",
@@ -9835,7 +9835,7 @@
       },
       "collocations": [
         {
-          "id": "vocab_028_col_001",
+          "id": "d2e90920-095d-4ade-9bd9-46fd081bab47",
           "order": 1,
           "zh": "写字",
           "pinyin": "",
@@ -9846,7 +9846,7 @@
           "notes": []
         },
         {
-          "id": "vocab_028_col_002",
+          "id": "f4bf8ca7-cbf5-4e98-87e6-cb9ae3d2913d",
           "order": 2,
           "zh": "认字",
           "pinyin": "",
@@ -9857,7 +9857,7 @@
           "notes": []
         },
         {
-          "id": "vocab_028_col_003",
+          "id": "1ea97924-1fcf-434c-aa95-296a53abc23a",
           "order": 3,
           "zh": "汉字",
           "pinyin": "",
@@ -9868,7 +9868,7 @@
           "notes": []
         },
         {
-          "id": "vocab_028_col_004",
+          "id": "6685979e-94ec-4637-ba20-df1a687f2602",
           "order": 4,
           "zh": "“福”字",
           "pinyin": "",
@@ -9879,7 +9879,7 @@
           "notes": []
         },
         {
-          "id": "vocab_028_col_005",
+          "id": "0eacf993-a246-4e6a-8763-0476aec93b4a",
           "order": 5,
           "zh": "把字写在黑板上",
           "pinyin": "",
@@ -9892,7 +9892,7 @@
       ],
       "examples": [
         {
-          "id": "vocab_028_ex_001",
+          "id": "89b48e47-e011-4e06-b731-29ea707bb078",
           "order": 1,
           "zh": "老师把“福”字写在红纸上。",
           "pinyin": "Lǎoshī bǎ “Fú” zì xiě zài hóng zhǐ shang.",
@@ -9905,7 +9905,7 @@
             "grammar_17_ba_construction"
           ],
           "vocab_refs": [
-            "vocab_028"
+            "a1ad3f19-f0cf-48e3-b1b2-98c9d9602227"
           ],
           "source_ref": "current_thread",
           "level": "basic",
@@ -9914,7 +9914,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_028_ex_002",
+          "id": "2ba13050-350f-4c34-81c0-82cc1c5a004e",
           "order": 2,
           "zh": "黑板上写着四个大字：新春吉祥。",
           "pinyin": "Hēibǎn shang xiězhe sì ge dà zì: Xīnchūn jíxiáng.",
@@ -9927,7 +9927,7 @@
             "grammar_17_ba_construction"
           ],
           "vocab_refs": [
-            "vocab_028"
+            "a1ad3f19-f0cf-48e3-b1b2-98c9d9602227"
           ],
           "source_ref": "current_thread",
           "level": "expanded",
@@ -9936,7 +9936,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_028_ex_003",
+          "id": "f8876816-9b8c-4284-a830-1955e760b709",
           "order": 3,
           "zh": "“幸福”不是一个字，是一个词。",
           "pinyin": "“Xìngfú” bú shì yí ge zì, shì yí ge cí.",
@@ -9949,7 +9949,7 @@
             "grammar_17_ba_construction"
           ],
           "vocab_refs": [
-            "vocab_028"
+            "a1ad3f19-f0cf-48e3-b1b2-98c9d9602227"
           ],
           "source_ref": "current_thread",
           "level": "complex",
@@ -9972,7 +9972,7 @@
       },
       "warnings": [
         {
-          "id": "vocab_028_warning_001",
+          "id": "e76e72cf-0afd-4523-8bd7-8b492ea1fc7d",
           "order": 1,
           "rule_vi": "Lỗi sai phổ biến: Nhầm 字 và 词. 一个字 Yí ge zì Một chữ/ký tự. 一个词 Yí ge cí Một từ. Ví dụ: 福 là một 字. 幸福 là một 词.",
           "natural_examples": [],
@@ -10007,7 +10007,7 @@
       "check_needed": false
     },
     {
-      "id": "vocab_029",
+      "id": "1b64e687-7b50-4774-89d3-c1387a4e79a3",
       "type": "deep_vocabulary_item",
       "order": 29,
       "hanzi": "对联儿",
@@ -10269,7 +10269,7 @@
       },
       "collocations": [
         {
-          "id": "vocab_029_col_001",
+          "id": "4fe8b0ad-ae60-4ca2-bb5a-853d4299c1b7",
           "order": 1,
           "zh": "一副对联儿",
           "pinyin": "",
@@ -10280,7 +10280,7 @@
           "notes": []
         },
         {
-          "id": "vocab_029_col_002",
+          "id": "57870102-1369-4c63-8668-2a1ac4a0fa16",
           "order": 2,
           "zh": "贴对联儿",
           "pinyin": "",
@@ -10291,7 +10291,7 @@
           "notes": []
         },
         {
-          "id": "vocab_029_col_003",
+          "id": "c5edbbb0-12af-4406-ac7c-0fd279f8c356",
           "order": 3,
           "zh": "把对联儿贴在门两边",
           "pinyin": "",
@@ -10302,7 +10302,7 @@
           "notes": []
         },
         {
-          "id": "vocab_029_col_004",
+          "id": "292dc87b-d636-4f00-928b-b232b7749e58",
           "order": 4,
           "zh": "春联",
           "pinyin": "",
@@ -10313,7 +10313,7 @@
           "notes": []
         },
         {
-          "id": "vocab_029_col_005",
+          "id": "605f918f-3e5f-4ca3-9b1f-3f2b5ea389b4",
           "order": 5,
           "zh": "写对联儿",
           "pinyin": "",
@@ -10326,7 +10326,7 @@
       ],
       "examples": [
         {
-          "id": "vocab_029_ex_001",
+          "id": "8cdb4be3-f994-4ca9-87d9-01831c922684",
           "order": 1,
           "zh": "春节前，我们把对联儿贴在大门两边。",
           "pinyin": "Chūnjié qián, wǒmen bǎ duìliánr tiē zài dàmén liǎng biān.",
@@ -10339,7 +10339,7 @@
             "grammar_17_ba_construction"
           ],
           "vocab_refs": [
-            "vocab_029"
+            "1b64e687-7b50-4774-89d3-c1387a4e79a3"
           ],
           "source_ref": "current_thread",
           "level": "basic",
@@ -10348,7 +10348,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_029_ex_002",
+          "id": "3dd4d427-2dd0-48f5-b620-eb6f63b41f9b",
           "order": 2,
           "zh": "门两边贴着一副对联儿，中间贴着一个“福”字。",
           "pinyin": "Mén liǎng biān tiēzhe yí fù duìliánr, zhōngjiān tiēzhe yí ge “Fú” zì.",
@@ -10361,7 +10361,7 @@
             "grammar_17_ba_construction"
           ],
           "vocab_refs": [
-            "vocab_029"
+            "1b64e687-7b50-4774-89d3-c1387a4e79a3"
           ],
           "source_ref": "current_thread",
           "level": "expanded",
@@ -10370,7 +10370,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_029_ex_003",
+          "id": "bf872a95-5f11-4bc3-b827-7a525dbaf0c2",
           "order": 3,
           "zh": "班长说，对联儿不要贴歪，最好先量一下位置。",
           "pinyin": "Bānzhǎng shuō, duìliánr bú yào tiē wāi, zuìhǎo xiān liáng yíxià wèizhi.",
@@ -10383,7 +10383,7 @@
             "grammar_17_ba_construction"
           ],
           "vocab_refs": [
-            "vocab_029"
+            "1b64e687-7b50-4774-89d3-c1387a4e79a3"
           ],
           "source_ref": "current_thread",
           "level": "complex",
@@ -10406,7 +10406,7 @@
       },
       "warnings": [
         {
-          "id": "vocab_029_warning_001",
+          "id": "c5f46478-aa88-4724-ba7e-3a267c95ee57",
           "order": 1,
           "rule_vi": "Lỗi sai phổ biến: Dán sai vị trí hoặc dùng sai lượng từ. Tự nhiên: 一副对联儿 Yí fù duìliánr Một bộ câu đối. 把对联儿贴在门两边。 Bǎ duìliánr tiē zài mén liǎng biān. Dán câu đối ở hai bên cửa. 把“福”字贴在门上。 Bǎ “Fú” zì tiē zài mén shang. Dán chữ Phúc lên cửa.",
           "natural_examples": [],
@@ -10441,7 +10441,7 @@
       "check_needed": false
     },
     {
-      "id": "vocab_030",
+      "id": "188a0253-ee2b-45a2-a35e-ef31f4512f6f",
       "type": "deep_vocabulary_item",
       "order": 30,
       "hanzi": "新春",
@@ -10616,7 +10616,7 @@
       },
       "collocations": [
         {
-          "id": "vocab_030_col_001",
+          "id": "1dadea82-06b8-41ef-9aea-2296d8d35b6d",
           "order": 1,
           "zh": "新春快乐",
           "pinyin": "",
@@ -10627,7 +10627,7 @@
           "notes": []
         },
         {
-          "id": "vocab_030_col_002",
+          "id": "dc8fb16e-b65a-49d7-9f17-8726c79bf547",
           "order": 2,
           "zh": "新春吉祥",
           "pinyin": "",
@@ -10638,7 +10638,7 @@
           "notes": []
         },
         {
-          "id": "vocab_030_col_003",
+          "id": "8606a26a-2731-4086-b07b-2333c3b104e8",
           "order": 3,
           "zh": "迎新春",
           "pinyin": "",
@@ -10649,7 +10649,7 @@
           "notes": []
         },
         {
-          "id": "vocab_030_col_004",
+          "id": "f5bbdb0f-5c00-4da5-8f97-c85497cc5407",
           "order": 4,
           "zh": "新春联欢会",
           "pinyin": "",
@@ -10660,7 +10660,7 @@
           "notes": []
         },
         {
-          "id": "vocab_030_col_005",
+          "id": "833f1d0b-1c53-4dc0-8deb-75122f3f612b",
           "order": 5,
           "zh": "新春祝福",
           "pinyin": "",
@@ -10673,7 +10673,7 @@
       ],
       "examples": [
         {
-          "id": "vocab_030_ex_001",
+          "id": "3d6d2c47-41d6-4baa-af5e-09d0d474d5bc",
           "order": 1,
           "zh": "黑板上写着四个大字：新春快乐。",
           "pinyin": "Hēibǎn shang xiězhe sì ge dà zì: Xīnchūn kuàilè.",
@@ -10686,7 +10686,7 @@
             "grammar_17_ba_construction"
           ],
           "vocab_refs": [
-            "vocab_030"
+            "188a0253-ee2b-45a2-a35e-ef31f4512f6f"
           ],
           "source_ref": "current_thread",
           "level": "basic",
@@ -10695,7 +10695,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_030_ex_002",
+          "id": "2bc812cc-921e-4f95-a8fc-0121d4f1d3dd",
           "order": 2,
           "zh": "我们把“新春吉祥”写在红纸上，贴在会场前边。",
           "pinyin": "Wǒmen bǎ “Xīnchūn jíxiáng” xiě zài hóng zhǐ shang, tiē zài huìchǎng qiánbian.",
@@ -10708,7 +10708,7 @@
             "grammar_17_ba_construction"
           ],
           "vocab_refs": [
-            "vocab_030"
+            "188a0253-ee2b-45a2-a35e-ef31f4512f6f"
           ],
           "source_ref": "current_thread",
           "level": "expanded",
@@ -10717,7 +10717,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_030_ex_003",
+          "id": "396650e0-34c2-4dcc-a37c-19aa4738ce48",
           "order": 3,
           "zh": "新春快到了，班长让大家一起布置教室。",
           "pinyin": "Xīnchūn kuài dào le, bānzhǎng ràng dàjiā yìqǐ bùzhì jiàoshì.",
@@ -10730,7 +10730,7 @@
             "grammar_17_ba_construction"
           ],
           "vocab_refs": [
-            "vocab_030"
+            "188a0253-ee2b-45a2-a35e-ef31f4512f6f"
           ],
           "source_ref": "current_thread",
           "level": "complex",
@@ -10753,7 +10753,7 @@
       },
       "warnings": [
         {
-          "id": "vocab_030_warning_001",
+          "id": "16b7195b-18cb-4403-8bb5-e08ebcb67d46",
           "order": 1,
           "rule_vi": "Lỗi sai phổ biến: Nhầm 新春 với 春节. 春节 là tên ngày lễ: 春节是中国最重要的传统节日之一。 Chūnjié shì Zhōngguó zuì zhòngyào de chuántǒng jiérì zhī yī. Tết Nguyên Đán là một trong những ngày lễ truyền thống quan trọng nhất của Trung Quốc. 新春 thường dùng trong lời chúc: 新春快乐！…",
           "natural_examples": [],
@@ -10788,7 +10788,7 @@
       "check_needed": false
     },
     {
-      "id": "vocab_031",
+      "id": "8af64730-3fbd-466e-86bd-b371bda1bbbd",
       "type": "deep_vocabulary_item",
       "order": 31,
       "hanzi": "吉祥",
@@ -11005,7 +11005,7 @@
       },
       "collocations": [
         {
-          "id": "vocab_031_col_001",
+          "id": "d766bf78-9812-465f-9d6f-fd38104b86d8",
           "order": 1,
           "zh": "新春吉祥",
           "pinyin": "",
@@ -11016,7 +11016,7 @@
           "notes": []
         },
         {
-          "id": "vocab_031_col_002",
+          "id": "4261a5a5-e96c-4ba0-b5c6-bc28088d3a61",
           "order": 2,
           "zh": "吉祥如意",
           "pinyin": "",
@@ -11027,7 +11027,7 @@
           "notes": []
         },
         {
-          "id": "vocab_031_col_003",
+          "id": "2174bf48-808b-463e-b01f-aee4025b06d3",
           "order": 3,
           "zh": "吉祥话",
           "pinyin": "",
@@ -11038,7 +11038,7 @@
           "notes": []
         },
         {
-          "id": "vocab_031_col_004",
+          "id": "fce448ef-449f-4516-a8f9-8349178918c5",
           "order": 4,
           "zh": "吉祥物",
           "pinyin": "",
@@ -11049,7 +11049,7 @@
           "notes": []
         },
         {
-          "id": "vocab_031_col_005",
+          "id": "980339dd-f0ef-4b5a-9829-81d0dac6ac4c",
           "order": 5,
           "zh": "大吉大利",
           "pinyin": "",
@@ -11062,7 +11062,7 @@
       ],
       "examples": [
         {
-          "id": "vocab_031_ex_001",
+          "id": "fa8a7f5a-85d9-466f-b6f4-191a699950fa",
           "order": 1,
           "zh": "对联儿上写着“新春吉祥”。",
           "pinyin": "Duìliánr shang xiězhe “Xīnchūn jíxiáng”.",
@@ -11075,7 +11075,7 @@
             "grammar_17_ba_construction"
           ],
           "vocab_refs": [
-            "vocab_031"
+            "8af64730-3fbd-466e-86bd-b371bda1bbbd"
           ],
           "source_ref": "current_thread",
           "level": "basic",
@@ -11084,7 +11084,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_031_ex_002",
+          "id": "1eb44d77-1bb0-4c32-8979-0ca9d4d4e94d",
           "order": 2,
           "zh": "春节前，爷爷亲手写了几个吉祥字。",
           "pinyin": "Chūnjié qián, yéye qīnshǒu xiě le jǐ ge jíxiáng zì.",
@@ -11097,7 +11097,7 @@
             "grammar_17_ba_construction"
           ],
           "vocab_refs": [
-            "vocab_031"
+            "8af64730-3fbd-466e-86bd-b371bda1bbbd"
           ],
           "source_ref": "current_thread",
           "level": "expanded",
@@ -11106,7 +11106,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_031_ex_003",
+          "id": "deccd800-9eca-4e4d-832f-432d4ddf2267",
           "order": 3,
           "zh": "我们把“吉祥如意”贴在会场门口。",
           "pinyin": "Wǒmen bǎ “Jíxiáng rúyì” tiē zài huìchǎng ménkǒu.",
@@ -11119,7 +11119,7 @@
             "grammar_17_ba_construction"
           ],
           "vocab_refs": [
-            "vocab_031"
+            "8af64730-3fbd-466e-86bd-b371bda1bbbd"
           ],
           "source_ref": "current_thread",
           "level": "complex",
@@ -11142,7 +11142,7 @@
       },
       "warnings": [
         {
-          "id": "vocab_031_warning_001",
+          "id": "8d58577d-6d54-42ec-9090-d0c5b2743465",
           "order": 1,
           "rule_vi": "Lỗi sai phổ biến: Dùng 吉祥 để nói may mắn cá nhân đời thường. Không tự nhiên lắm: 我今天很吉祥。 Tự nhiên: 我今天很幸运。 Wǒ jīntiān hěn xìngyùn. Hôm nay tôi rất may mắn. Lời chúc: 祝你新春吉祥！ Zhù nǐ xīnchūn jíxiáng! Chúc bạn xuân mới cát tường!",
           "natural_examples": [],
@@ -11177,7 +11177,7 @@
       "check_needed": false
     },
     {
-      "id": "vocab_032",
+      "id": "c9acbed6-2424-4217-a813-6dc0bd9cdc6f",
       "type": "deep_vocabulary_item",
       "order": 32,
       "hanzi": "行业",
@@ -11299,7 +11299,7 @@
       },
       "collocations": [
         {
-          "id": "vocab_032_col_001",
+          "id": "324d5c9b-0701-463c-bb0f-c33b764e8f3a",
           "order": 1,
           "zh": "教育行业",
           "pinyin": "",
@@ -11310,7 +11310,7 @@
           "notes": []
         },
         {
-          "id": "vocab_032_col_002",
+          "id": "6c1c96b2-5f07-4c68-80c6-6a3ec1e13a3c",
           "order": 2,
           "zh": "旅游行业",
           "pinyin": "",
@@ -11321,7 +11321,7 @@
           "notes": []
         },
         {
-          "id": "vocab_032_col_003",
+          "id": "f2779f9c-28ee-44c9-9fec-f8c97b30fdac",
           "order": 3,
           "zh": "服务行业",
           "pinyin": "",
@@ -11332,7 +11332,7 @@
           "notes": []
         },
         {
-          "id": "vocab_032_col_004",
+          "id": "0242d41e-9fd6-4a72-936c-ba1b5ff5f3f7",
           "order": 4,
           "zh": "互联网行业",
           "pinyin": "",
@@ -11343,7 +11343,7 @@
           "notes": []
         },
         {
-          "id": "vocab_032_col_005",
+          "id": "03ac8e96-dda6-41db-b84a-4f590543942f",
           "order": 5,
           "zh": "各行各业",
           "pinyin": "",
@@ -11356,7 +11356,7 @@
       ],
       "examples": [
         {
-          "id": "vocab_032_ex_001",
+          "id": "9f93ff74-96f7-4826-b2d2-d1d02e84a9ad",
           "order": 1,
           "zh": "新春对联儿里常常有祝各行各业兴旺的话。",
           "pinyin": "Xīnchūn duìliánr lǐ chángcháng yǒu zhù gè háng gè yè xīngwàng de huà.",
@@ -11369,7 +11369,7 @@
             "grammar_17_ba_construction"
           ],
           "vocab_refs": [
-            "vocab_032"
+            "c9acbed6-2424-4217-a813-6dc0bd9cdc6f"
           ],
           "source_ref": "current_thread",
           "level": "basic",
@@ -11378,7 +11378,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_032_ex_002",
+          "id": "4a9c8fe8-48f9-4978-810a-fd79eef23686",
           "order": 2,
           "zh": "现在互联网行业发展很快，年轻人越来越关注这个行业。",
           "pinyin": "Xiànzài hùliánwǎng hángyè fāzhǎn hěn kuài, niánqīng rén yuè lái yuè guānzhù zhège hángyè.",
@@ -11391,7 +11391,7 @@
             "grammar_17_ba_construction"
           ],
           "vocab_refs": [
-            "vocab_032"
+            "c9acbed6-2424-4217-a813-6dc0bd9cdc6f"
           ],
           "source_ref": "current_thread",
           "level": "expanded",
@@ -11400,7 +11400,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_032_ex_003",
+          "id": "bcfc5646-1c55-458b-be14-776b0b007027",
           "order": 3,
           "zh": "如果你想了解一个行业，最好先听听行业里的人怎么说。",
           "pinyin": "Rúguǒ nǐ xiǎng liǎojiě yí ge hángyè, zuìhǎo xiān tīngting hángyè lǐ de rén zěnme shuō.",
@@ -11413,7 +11413,7 @@
             "grammar_17_ba_construction"
           ],
           "vocab_refs": [
-            "vocab_032"
+            "c9acbed6-2424-4217-a813-6dc0bd9cdc6f"
           ],
           "source_ref": "current_thread",
           "level": "complex",
@@ -11436,7 +11436,7 @@
       },
       "warnings": [
         {
-          "id": "vocab_032_warning_001",
+          "id": "2535ede9-07ef-402e-859d-038b8125fb58",
           "order": 1,
           "rule_vi": "Lỗi sai phổ biến: Đọc sai 行. 行业 Hángyè Ngành nghề. 行不行？ Xíng bu xíng? Được không? 银行 Yínháng Ngân hàng.",
           "natural_examples": [],
@@ -11471,7 +11471,7 @@
       "check_needed": false
     },
     {
-      "id": "vocab_033",
+      "id": "d7d9b4ee-0b9a-4057-96e8-6725f9d64520",
       "type": "deep_vocabulary_item",
       "order": 33,
       "hanzi": "兴旺",
@@ -11691,7 +11691,7 @@
       },
       "collocations": [
         {
-          "id": "vocab_033_col_001",
+          "id": "f865e33a-7b27-4ecb-ba1c-1c2956021963",
           "order": 1,
           "zh": "生意兴旺",
           "pinyin": "",
@@ -11702,7 +11702,7 @@
           "notes": []
         },
         {
-          "id": "vocab_033_col_002",
+          "id": "38da3485-f5b2-42bf-a12e-38cf83848d4e",
           "order": 2,
           "zh": "事业兴旺",
           "pinyin": "",
@@ -11713,7 +11713,7 @@
           "notes": []
         },
         {
-          "id": "vocab_033_col_003",
+          "id": "a9fde38d-58df-499e-a1bd-2ab366cda9da",
           "order": 3,
           "zh": "家业兴旺",
           "pinyin": "",
@@ -11724,7 +11724,7 @@
           "notes": []
         },
         {
-          "id": "vocab_033_col_004",
+          "id": "81fe5df7-eca8-4ebc-8278-2ef978622113",
           "order": 4,
           "zh": "国家兴旺",
           "pinyin": "",
@@ -11735,7 +11735,7 @@
           "notes": []
         },
         {
-          "id": "vocab_033_col_005",
+          "id": "5eb677cd-acfe-4111-95ab-e325f8ed11b8",
           "order": 5,
           "zh": "兴旺发达",
           "pinyin": "",
@@ -11746,7 +11746,7 @@
           "notes": []
         },
         {
-          "id": "vocab_033_col_006",
+          "id": "8791645f-82d5-42c8-857b-859e79bd660c",
           "order": 6,
           "zh": "哦，原来是这样。",
           "pinyin": "",
@@ -11757,7 +11757,7 @@
           "notes": []
         },
         {
-          "id": "vocab_033_col_007",
+          "id": "00fbb0ff-4fc3-4c23-808b-e119ea93b3fb",
           "order": 7,
           "zh": "哦，我明白了。",
           "pinyin": "",
@@ -11768,7 +11768,7 @@
           "notes": []
         },
         {
-          "id": "vocab_033_col_008",
+          "id": "04850194-72da-4132-a030-0dc5d6da122d",
           "order": 8,
           "zh": "哦？真的吗？",
           "pinyin": "",
@@ -11781,7 +11781,7 @@
       ],
       "examples": [
         {
-          "id": "vocab_033_ex_001",
+          "id": "44e406c8-dcae-414c-b15b-86614b3e2b72",
           "order": 1,
           "zh": "这副对联儿上写着“生意兴旺”。",
           "pinyin": "Zhè fù duìliánr shang xiězhe “Shēngyì xīngwàng”.",
@@ -11794,7 +11794,7 @@
             "grammar_17_ba_construction"
           ],
           "vocab_refs": [
-            "vocab_033"
+            "d7d9b4ee-0b9a-4057-96e8-6725f9d64520"
           ],
           "source_ref": "current_thread",
           "level": "basic",
@@ -11803,7 +11803,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_033_ex_002",
+          "id": "481b194a-5145-44ad-8164-bde8426d490e",
           "order": 2,
           "zh": "春节前，店主把“生意兴旺”贴在门上。",
           "pinyin": "Chūnjié qián, diànzhǔ bǎ “Shēngyì xīngwàng” tiē zài mén shang.",
@@ -11816,7 +11816,7 @@
             "grammar_17_ba_construction"
           ],
           "vocab_refs": [
-            "vocab_033"
+            "d7d9b4ee-0b9a-4057-96e8-6725f9d64520"
           ],
           "source_ref": "current_thread",
           "level": "expanded",
@@ -11825,7 +11825,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_033_ex_003",
+          "id": "bf55e36b-5c93-4b53-bb98-3cbedc844ae7",
           "order": 3,
           "zh": "人们希望新的一年事业兴旺、生活幸福。",
           "pinyin": "Rénmen xīwàng xīn de yì nián shìyè xīngwàng, shēnghuó xìngfú.",
@@ -11838,7 +11838,7 @@
             "grammar_17_ba_construction"
           ],
           "vocab_refs": [
-            "vocab_033"
+            "d7d9b4ee-0b9a-4057-96e8-6725f9d64520"
           ],
           "source_ref": "current_thread",
           "level": "complex",
@@ -11861,7 +11861,7 @@
       },
       "warnings": [
         {
-          "id": "vocab_033_warning_001",
+          "id": "d736d428-5d38-42a6-9ac0-4c2bc8375db7",
           "order": 1,
           "rule_vi": "Lỗi sai phổ biến: Dùng 兴旺 cho cảm xúc cá nhân. Không tự nhiên: 我今天很兴旺。 Tự nhiên: 生意兴旺。 Shēngyì xīngwàng. Buôn bán phát đạt. 事业兴旺。 Shìyè xīngwàng. Sự nghiệp hưng thịnh. 哦 – ò / ó / o – ồ, à, ờ; ra là vậy Thán từ / Trợ từ ngữ khí 【叹词/语气词】 Lỗi sai phổ biến: Dùng…",
           "natural_examples": [],
@@ -11896,7 +11896,7 @@
       "check_needed": false
     },
     {
-      "id": "vocab_034",
+      "id": "666e097a-ef90-4239-a6b7-72cd021d0362",
       "type": "deep_vocabulary_item",
       "order": 34,
       "hanzi": "哦",
@@ -12056,7 +12056,7 @@
       },
       "collocations": [
         {
-          "id": "vocab_034_col_001",
+          "id": "c05ea6b0-f37d-4af4-afa1-0545ed0fc52c",
           "order": 1,
           "zh": "哦，我明白了",
           "pinyin": "",
@@ -12067,7 +12067,7 @@
           "notes": []
         },
         {
-          "id": "vocab_034_col_002",
+          "id": "20414851-4198-409b-80e8-c9c91636f4af",
           "order": 2,
           "zh": "哦，是这样啊",
           "pinyin": "",
@@ -12078,7 +12078,7 @@
           "notes": []
         },
         {
-          "id": "vocab_034_col_003",
+          "id": "67b0da37-a8fa-4e89-ab69-ab98ba33e3fd",
           "order": 3,
           "zh": "哦，原来如此",
           "pinyin": "",
@@ -12089,7 +12089,7 @@
           "notes": []
         },
         {
-          "id": "vocab_034_col_004",
+          "id": "88ddf0c4-b380-4edb-84ad-da9c27250148",
           "order": 4,
           "zh": "哦？真的吗？",
           "pinyin": "",
@@ -12100,7 +12100,7 @@
           "notes": []
         },
         {
-          "id": "vocab_034_col_005",
+          "id": "ea1404b7-28f4-47b6-8b87-37239d856b12",
           "order": 5,
           "zh": "哦，我知道了",
           "pinyin": "",
@@ -12111,7 +12111,7 @@
           "notes": []
         },
         {
-          "id": "vocab_034_col_006",
+          "id": "9e1916ad-37e7-4d9b-8726-e7f8f3ec94aa",
           "order": 6,
           "zh": "哦，好吧",
           "pinyin": "",
@@ -12122,7 +12122,7 @@
           "notes": []
         },
         {
-          "id": "vocab_034_col_007",
+          "id": "546e8b99-5538-4a94-b414-dacb324dc148",
           "order": 7,
           "zh": "哦，对了",
           "pinyin": "",
@@ -12135,7 +12135,7 @@
       ],
       "examples": [
         {
-          "id": "vocab_034_ex_001",
+          "id": "5a6f2e5f-cf13-4a4d-83c2-5824ec4390ab",
           "order": 1,
           "zh": "哦，我明白了。",
           "pinyin": "Ò, wǒ míngbai le.",
@@ -12148,7 +12148,7 @@
             "grammar_17_ba_construction"
           ],
           "vocab_refs": [
-            "vocab_034"
+            "666e097a-ef90-4239-a6b7-72cd021d0362"
           ],
           "source_ref": "current_thread",
           "level": "basic",
@@ -12157,7 +12157,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_034_ex_002",
+          "id": "bed4921d-47f3-49a9-b8b3-293c6cc2b962",
           "order": 2,
           "zh": "哦，原来你想把“福”字倒着贴在门上。",
           "pinyin": "Ò, yuánlái nǐ xiǎng bǎ “Fú” zì dàozhe tiē zài mén shang.",
@@ -12170,7 +12170,7 @@
             "grammar_17_ba_construction"
           ],
           "vocab_refs": [
-            "vocab_034"
+            "666e097a-ef90-4239-a6b7-72cd021d0362"
           ],
           "source_ref": "current_thread",
           "level": "expanded",
@@ -12179,7 +12179,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_034_ex_003",
+          "id": "d20e2dc3-1d91-4382-a40f-cd1e677dc13d",
           "order": 3,
           "zh": "我刚开始不知道为什么要倒着贴“福”字，听老师一解释，哦，原来是“福到了”的意思。",
           "pinyin": "Wǒ gāng kāishǐ bù zhīdào wèishénme yào dàozhe tiē “Fú” zì, tīng lǎoshī yì jiěshì, ò, yuánlái shì “fú dào le” de yìsi.",
@@ -12192,7 +12192,7 @@
             "grammar_17_ba_construction"
           ],
           "vocab_refs": [
-            "vocab_034"
+            "666e097a-ef90-4239-a6b7-72cd021d0362"
           ],
           "source_ref": "current_thread",
           "level": "complex",
@@ -12215,7 +12215,7 @@
       },
       "warnings": [
         {
-          "id": "vocab_034_warning_001",
+          "id": "c4fa1eb6-0105-4389-91ce-137fffa3312d",
           "order": 1,
           "rule_vi": "Không dùng 哦 như câu trả lời lịch sự trong mọi tình huống. Với thầy cô/người lớn, an toàn hơn: 好的，我明白了。",
           "natural_examples": [],
@@ -12250,7 +12250,7 @@
       "check_needed": false
     },
     {
-      "id": "vocab_035",
+      "id": "7b5ee534-b23a-4221-9ac3-fd466cfd890b",
       "type": "deep_vocabulary_item",
       "order": 35,
       "hanzi": "可不是",
@@ -12459,7 +12459,7 @@
       },
       "collocations": [
         {
-          "id": "vocab_035_col_001",
+          "id": "8291df8d-1165-495e-9b0f-785c77e4f881",
           "order": 1,
           "zh": "可不是！",
           "pinyin": "",
@@ -12470,7 +12470,7 @@
           "notes": []
         },
         {
-          "id": "vocab_035_col_002",
+          "id": "c945bd51-b81f-4c85-b184-e440cc3051f9",
           "order": 2,
           "zh": "可不是嘛！",
           "pinyin": "",
@@ -12481,7 +12481,7 @@
           "notes": []
         },
         {
-          "id": "vocab_035_col_003",
+          "id": "b090990d-8da0-4402-8764-621e1b261535",
           "order": 3,
           "zh": "可不是吗？",
           "pinyin": "",
@@ -12492,7 +12492,7 @@
           "notes": []
         },
         {
-          "id": "vocab_035_col_004",
+          "id": "3e4e430e-db10-4fd8-8e03-3383234b406d",
           "order": 4,
           "zh": "哦，可不是！",
           "pinyin": "",
@@ -12505,7 +12505,7 @@
       ],
       "examples": [
         {
-          "id": "vocab_035_ex_001",
+          "id": "7d432dcc-6bfd-4272-9b35-97fad7e105a0",
           "order": 1,
           "zh": "A：这个“福”字贴倒了。B：可不是！这样才有“福到了”的意思。",
           "pinyin": "A: Zhège “Fú” zì tiē dào le. B: Kě bú shì! Zhèyàng cái yǒu “fú dào le” de yìsi.",
@@ -12518,7 +12518,7 @@
             "grammar_17_ba_construction"
           ],
           "vocab_refs": [
-            "vocab_035"
+            "7b5ee534-b23a-4221-9ac3-fd466cfd890b"
           ],
           "source_ref": "current_thread",
           "level": "basic",
@@ -12527,7 +12527,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_035_ex_002",
+          "id": "bf470592-08ea-4203-bf60-74d3dcbacb2a",
           "order": 2,
           "zh": "A：会场布置得真漂亮。B：可不是，都是同学们亲手布置的。",
           "pinyin": "A: Huìchǎng bùzhì de zhēn piàoliang. B: Kě bú shì, dōu shì tóngxuémen qīnshǒu bùzhì de.",
@@ -12540,7 +12540,7 @@
             "grammar_17_ba_construction"
           ],
           "vocab_refs": [
-            "vocab_035"
+            "7b5ee534-b23a-4221-9ac3-fd466cfd890b"
           ],
           "source_ref": "current_thread",
           "level": "expanded",
@@ -12549,7 +12549,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_035_ex_003",
+          "id": "09ca2e7c-2482-4237-8532-cb859422c32a",
           "order": 3,
           "zh": "A：音响声音太大了。B：可不是，管理员刚才也让我们调小一点儿。",
           "pinyin": "A: Yīnxiǎng shēngyīn tài dà le. B: Kě bú shì, guǎnlǐyuán gāngcái yě ràng wǒmen tiáo xiǎo yìdiǎnr.",
@@ -12562,7 +12562,7 @@
             "grammar_17_ba_construction"
           ],
           "vocab_refs": [
-            "vocab_035"
+            "7b5ee534-b23a-4221-9ac3-fd466cfd890b"
           ],
           "source_ref": "current_thread",
           "level": "complex",
@@ -12585,7 +12585,7 @@
       },
       "warnings": [
         {
-          "id": "vocab_035_warning_001",
+          "id": "56a4a8bb-1768-45a6-bb82-82bd3c0019f1",
           "order": 1,
           "rule_vi": "Lỗi sai phổ biến: Dịch từng chữ 可不是 thành phủ định. Không hiểu theo nghĩa: có thể không phải Mà hiểu là: đúng vậy mà / chứ còn gì nữa Ví dụ: A：今天真冷。B：可不是！ A: Jīntiān zhēn lěng. B: Kě bú shì! A: Hôm nay lạnh thật. B: Đúng vậy mà!",
           "natural_examples": [],
@@ -12620,7 +12620,7 @@
       "check_needed": false
     },
     {
-      "id": "vocab_036",
+      "id": "161955f1-066a-42cd-9900-f316f212a4b3",
       "type": "deep_vocabulary_item",
       "order": 36,
       "hanzi": "仔细",
@@ -12848,7 +12848,7 @@
       },
       "collocations": [
         {
-          "id": "vocab_036_col_001",
+          "id": "e24c7a1a-b296-4efd-acdf-14830b7086f7",
           "order": 1,
           "zh": "仔细看",
           "pinyin": "",
@@ -12859,7 +12859,7 @@
           "notes": []
         },
         {
-          "id": "vocab_036_col_002",
+          "id": "608c3e72-a211-4c6a-8f06-0eea444b0eef",
           "order": 2,
           "zh": "仔细听",
           "pinyin": "",
@@ -12870,7 +12870,7 @@
           "notes": []
         },
         {
-          "id": "vocab_036_col_003",
+          "id": "86d46101-0413-4bc2-9049-9b98c123061f",
           "order": 3,
           "zh": "仔细检查",
           "pinyin": "",
@@ -12881,7 +12881,7 @@
           "notes": []
         },
         {
-          "id": "vocab_036_col_004",
+          "id": "db0175c8-86c9-4c44-8617-93c7276b56d7",
           "order": 4,
           "zh": "仔细想想",
           "pinyin": "",
@@ -12892,7 +12892,7 @@
           "notes": []
         },
         {
-          "id": "vocab_036_col_005",
+          "id": "7d80c783-bd2d-42e8-afb3-54e8612917ae",
           "order": 5,
           "zh": "看得很仔细",
           "pinyin": "",
@@ -12905,7 +12905,7 @@
       ],
       "examples": [
         {
-          "id": "vocab_036_ex_001",
+          "id": "fdec7d5a-9a11-4f09-ac5f-962f21c2dcec",
           "order": 1,
           "zh": "贴“福”字以前，最好先仔细看一看正反。",
           "pinyin": "Tiē “Fú” zì yǐqián, zuìhǎo xiān zǐxì kàn yi kan zhèngfǎn.",
@@ -12918,7 +12918,7 @@
             "grammar_17_ba_construction"
           ],
           "vocab_refs": [
-            "vocab_036"
+            "161955f1-066a-42cd-9900-f316f212a4b3"
           ],
           "source_ref": "current_thread",
           "level": "basic",
@@ -12927,7 +12927,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_036_ex_002",
+          "id": "0944aa93-acc7-46ca-bdbe-9a4986e2aa26",
           "order": 2,
           "zh": "管理员仔细检查了音响和彩灯，才答应我们用会场。",
           "pinyin": "Guǎnlǐyuán zǐxì jiǎnchá le yīnxiǎng hé cǎidēng, cái dāying wǒmen yòng huìchǎng.",
@@ -12940,7 +12940,7 @@
             "grammar_17_ba_construction"
           ],
           "vocab_refs": [
-            "vocab_036"
+            "161955f1-066a-42cd-9900-f316f212a4b3"
           ],
           "source_ref": "current_thread",
           "level": "expanded",
@@ -12949,7 +12949,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_036_ex_003",
+          "id": "29f7cb82-1954-4954-a2ee-72f92c312451",
           "order": 3,
           "zh": "你把这副对联儿仔细贴好，别贴歪了。",
           "pinyin": "Nǐ bǎ zhè fù duìliánr zǐxì tiē hǎo, bié tiē wāi le.",
@@ -12962,7 +12962,7 @@
             "grammar_17_ba_construction"
           ],
           "vocab_refs": [
-            "vocab_036"
+            "161955f1-066a-42cd-9900-f316f212a4b3"
           ],
           "source_ref": "current_thread",
           "level": "complex",
@@ -12985,7 +12985,7 @@
       },
       "warnings": [
         {
-          "id": "vocab_036_warning_001",
+          "id": "a0858597-a88f-4e78-aa78-dfb75699f393",
           "order": 1,
           "rule_vi": "Lỗi sai phổ biến: Dịch 仔细 thành “tử tế”. Không đúng: 他很仔细。 không phải “anh ấy rất tử tế”. Đúng hơn: 他很仔细。 Tā hěn zǐxì. Anh ấy rất cẩn thận/tỉ mỉ. Tốt bụng là: 他很善良。 Tā hěn shànliáng. Anh ấy rất tốt bụng.",
           "natural_examples": [],
@@ -13020,7 +13020,7 @@
       "check_needed": false
     },
     {
-      "id": "vocab_037",
+      "id": "da25dbe3-4a63-4598-8c85-37ac271d055d",
       "type": "deep_vocabulary_item",
       "order": 37,
       "hanzi": "幸福",
@@ -13184,7 +13184,7 @@
       },
       "collocations": [
         {
-          "id": "vocab_037_col_001",
+          "id": "5818f83a-9d11-46cb-94f8-e4811bb9fded",
           "order": 1,
           "zh": "很幸福",
           "pinyin": "",
@@ -13195,7 +13195,7 @@
           "notes": []
         },
         {
-          "id": "vocab_037_col_002",
+          "id": "a67f932d-158a-41eb-8b84-3041aa5622ca",
           "order": 2,
           "zh": "幸福生活",
           "pinyin": "",
@@ -13206,7 +13206,7 @@
           "notes": []
         },
         {
-          "id": "vocab_037_col_003",
+          "id": "5da4bd93-cc40-4307-88c5-c064a4452a87",
           "order": 3,
           "zh": "祝你幸福",
           "pinyin": "",
@@ -13217,7 +13217,7 @@
           "notes": []
         },
         {
-          "id": "vocab_037_col_004",
+          "id": "4e39483a-6025-4bd2-9b00-1755ef3029e8",
           "order": 4,
           "zh": "家庭幸福",
           "pinyin": "",
@@ -13228,7 +13228,7 @@
           "notes": []
         },
         {
-          "id": "vocab_037_col_005",
+          "id": "5b970c68-5f5b-47b5-9964-183a297fdafd",
           "order": 5,
           "zh": "幸福美满",
           "pinyin": "",
@@ -13241,7 +13241,7 @@
       ],
       "examples": [
         {
-          "id": "vocab_037_ex_001",
+          "id": "92d60e23-81df-493d-abf5-d7e9a594fa96",
           "order": 1,
           "zh": "对联儿上写着“家庭幸福”。",
           "pinyin": "Duìliánr shang xiězhe “jiātíng xìngfú”.",
@@ -13254,7 +13254,7 @@
             "grammar_17_ba_construction"
           ],
           "vocab_refs": [
-            "vocab_037"
+            "da25dbe3-4a63-4598-8c85-37ac271d055d"
           ],
           "source_ref": "current_thread",
           "level": "basic",
@@ -13263,7 +13263,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_037_ex_002",
+          "id": "b3e92afe-9c59-4649-9f99-f9496d051b8e",
           "order": 2,
           "zh": "老师看到同学们亲手布置的会场，觉得很幸福。",
           "pinyin": "Lǎoshī kàn dào tóngxuémen qīnshǒu bùzhì de huìchǎng, juéde hěn xìngfú.",
@@ -13276,7 +13276,7 @@
             "grammar_17_ba_construction"
           ],
           "vocab_refs": [
-            "vocab_037"
+            "da25dbe3-4a63-4598-8c85-37ac271d055d"
           ],
           "source_ref": "current_thread",
           "level": "expanded",
@@ -13285,7 +13285,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_037_ex_003",
+          "id": "51c1f442-89b7-4000-ba06-87d0e607000a",
           "order": 3,
           "zh": "人们把“福”字贴在门上，希望新的一年生活幸福。",
           "pinyin": "Rénmen bǎ “Fú” zì tiē zài mén shang, xīwàng xīn de yì nián shēnghuó xìngfú.",
@@ -13298,7 +13298,7 @@
             "grammar_17_ba_construction"
           ],
           "vocab_refs": [
-            "vocab_037"
+            "da25dbe3-4a63-4598-8c85-37ac271d055d"
           ],
           "source_ref": "current_thread",
           "level": "complex",
@@ -13321,7 +13321,7 @@
       },
       "warnings": [
         {
-          "id": "vocab_037_warning_001",
+          "id": "085ef96f-7fdc-4543-be37-8b72aaeb5b32",
           "order": 1,
           "rule_vi": "Lỗi sai phổ biến: Dùng 幸福 cho niềm vui rất ngắn. Tự nhiên: 收到礼物，我很高兴。 Shōu dào lǐwù, wǒ hěn gāoxìng. Nhận được quà, tôi rất vui. Sâu hơn: 和家人在一起，我觉得很幸福。 Hé jiārén zài yìqǐ, wǒ juéde hěn xìngfú. Ở bên gia đình, tôi thấy rất hạnh phúc.",
           "natural_examples": [],
@@ -13356,7 +13356,7 @@
       "check_needed": false
     },
     {
-      "id": "vocab_038",
+      "id": "c66c324c-4f13-4d2f-981d-b78002a4531c",
       "type": "deep_vocabulary_item",
       "order": 38,
       "hanzi": "倒",
@@ -13507,7 +13507,7 @@
       },
       "collocations": [
         {
-          "id": "vocab_038_col_001",
+          "id": "e834f821-beb2-4ae6-92f9-dc70d4c72d86",
           "order": 1,
           "zh": "倒着贴",
           "pinyin": "",
@@ -13518,7 +13518,7 @@
           "notes": []
         },
         {
-          "id": "vocab_038_col_002",
+          "id": "278ecb9b-9b61-4082-81c9-d5a564213059",
           "order": 2,
           "zh": "倒着看",
           "pinyin": "",
@@ -13529,7 +13529,7 @@
           "notes": []
         },
         {
-          "id": "vocab_038_col_003",
+          "id": "334a8ad9-98d6-4ba0-a227-6e6c8456096a",
           "order": 3,
           "zh": "把“福”字倒着贴在门上",
           "pinyin": "",
@@ -13540,7 +13540,7 @@
           "notes": []
         },
         {
-          "id": "vocab_038_col_004",
+          "id": "4ff4cd99-f006-4be5-9225-4cfad74ed088",
           "order": 4,
           "zh": "倒茶",
           "pinyin": "",
@@ -13551,7 +13551,7 @@
           "notes": []
         },
         {
-          "id": "vocab_038_col_005",
+          "id": "9a348dc3-1ee9-458c-9459-9c2db2a5956a",
           "order": 5,
           "zh": "摔倒",
           "pinyin": "",
@@ -13564,7 +13564,7 @@
       ],
       "examples": [
         {
-          "id": "vocab_038_ex_001",
+          "id": "79fc85bf-b648-42fd-ac2c-c1d8ee56088d",
           "order": 1,
           "zh": "春节的时候，很多人把“福”字倒着贴在门上。",
           "pinyin": "Chūnjié de shíhou, hěn duō rén bǎ “Fú” zì dàozhe tiē zài mén shang.",
@@ -13577,7 +13577,7 @@
             "grammar_17_ba_construction"
           ],
           "vocab_refs": [
-            "vocab_038"
+            "c66c324c-4f13-4d2f-981d-b78002a4531c"
           ],
           "source_ref": "current_thread",
           "level": "basic",
@@ -13586,7 +13586,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_038_ex_002",
+          "id": "dddff98f-baa4-4a23-94c2-d2191bde30e8",
           "order": 2,
           "zh": "这张纸你拿倒了，字都看不清楚。",
           "pinyin": "Zhè zhāng zhǐ nǐ ná dào le, zì dōu kàn bù qīngchu.",
@@ -13599,7 +13599,7 @@
             "grammar_17_ba_construction"
           ],
           "vocab_refs": [
-            "vocab_038"
+            "c66c324c-4f13-4d2f-981d-b78002a4531c"
           ],
           "source_ref": "current_thread",
           "level": "expanded",
@@ -13608,7 +13608,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_038_ex_003",
+          "id": "5358da5b-1d0c-4385-a709-530d29e002cc",
           "order": 3,
           "zh": "客人来了，爷爷先给大家倒茶。",
           "pinyin": "Kèrén lái le, yéye xiān gěi dàjiā dào chá.",
@@ -13621,7 +13621,7 @@
             "grammar_17_ba_construction"
           ],
           "vocab_refs": [
-            "vocab_038"
+            "c66c324c-4f13-4d2f-981d-b78002a4531c"
           ],
           "source_ref": "current_thread",
           "level": "complex",
@@ -13642,7 +13642,7 @@
       },
       "warnings": [
         {
-          "id": "vocab_038_warning_001",
+          "id": "b14fa0a2-cb3b-4dd3-b696-01adca6a7ecc",
           "order": 1,
           "rule_vi": "Dùng theo cụm đã học, tránh dịch từng chữ nếu ngữ cảnh không rõ.",
           "natural_examples": [],
@@ -13677,7 +13677,7 @@
       "check_needed": false
     },
     {
-      "id": "vocab_039",
+      "id": "eba0a31a-2116-4f35-adac-96def40cb07b",
       "type": "deep_vocabulary_item",
       "order": 39,
       "hanzi": "声音",
@@ -13810,7 +13810,7 @@
       },
       "collocations": [
         {
-          "id": "vocab_039_col_001",
+          "id": "b0c47359-e4c8-4524-b4cc-c3e58fbc6dfe",
           "order": 1,
           "zh": "声音很大",
           "pinyin": "",
@@ -13821,7 +13821,7 @@
           "notes": []
         },
         {
-          "id": "vocab_039_col_002",
+          "id": "d550cf8b-ae98-4833-9c05-c17622e55584",
           "order": 2,
           "zh": "声音太小",
           "pinyin": "",
@@ -13832,7 +13832,7 @@
           "notes": []
         },
         {
-          "id": "vocab_039_col_003",
+          "id": "49d169f8-f671-48d0-8872-1ad6c272ff4b",
           "order": 3,
           "zh": "声音很好听",
           "pinyin": "",
@@ -13843,7 +13843,7 @@
           "notes": []
         },
         {
-          "id": "vocab_039_col_004",
+          "id": "6e04ef12-0547-4caf-9410-f654878451bd",
           "order": 4,
           "zh": "听见声音",
           "pinyin": "",
@@ -13854,7 +13854,7 @@
           "notes": []
         },
         {
-          "id": "vocab_039_col_005",
+          "id": "513f6365-55b4-40e3-99c1-e970135a6efb",
           "order": 5,
           "zh": "把声音调小一点儿",
           "pinyin": "",
@@ -13867,7 +13867,7 @@
       ],
       "examples": [
         {
-          "id": "vocab_039_ex_001",
+          "id": "4bf0aa56-28c0-4475-bdc2-969d492b6cae",
           "order": 1,
           "zh": "音响的声音太大了，管理员让我们调小一点儿。",
           "pinyin": "Yīnxiǎng de shēngyīn tài dà le, guǎnlǐyuán ràng wǒmen tiáo xiǎo yìdiǎnr.",
@@ -13880,7 +13880,7 @@
             "grammar_17_ba_construction"
           ],
           "vocab_refs": [
-            "vocab_039"
+            "eba0a31a-2116-4f35-adac-96def40cb07b"
           ],
           "source_ref": "current_thread",
           "level": "basic",
@@ -13889,7 +13889,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_039_ex_002",
+          "id": "9d13b135-79b0-47ff-b955-8b77449cc36d",
           "order": 2,
           "zh": "她悄悄走进会场，一点儿声音也没有。",
           "pinyin": "Tā qiāoqiāo zǒu jìn huìchǎng, yìdiǎnr shēngyīn yě méiyǒu.",
@@ -13902,7 +13902,7 @@
             "grammar_17_ba_construction"
           ],
           "vocab_refs": [
-            "vocab_039"
+            "eba0a31a-2116-4f35-adac-96def40cb07b"
           ],
           "source_ref": "current_thread",
           "level": "expanded",
@@ -13911,7 +13911,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_039_ex_003",
+          "id": "0d2ddf10-9c38-4559-b219-62e1c3bb1e86",
           "order": 3,
           "zh": "班长把麦克风打开以后，老师的声音一下子清楚多了。",
           "pinyin": "Bānzhǎng bǎ màikèfēng dǎkāi yǐhòu, lǎoshī de shēngyīn yíxiàzi qīngchu duō le.",
@@ -13924,7 +13924,7 @@
             "grammar_17_ba_construction"
           ],
           "vocab_refs": [
-            "vocab_039"
+            "eba0a31a-2116-4f35-adac-96def40cb07b"
           ],
           "source_ref": "current_thread",
           "level": "complex",
@@ -13947,7 +13947,7 @@
       },
       "warnings": [
         {
-          "id": "vocab_039_warning_001",
+          "id": "0350b6ed-8288-4ebc-84ef-6a91b86cde47",
           "order": 1,
           "rule_vi": "Lỗi sai phổ biến: Nhầm 声音 và 音响. 声音太大。 Shēngyīn tài dà. Âm thanh/giọng quá to. 音响太大。 Yīnxiǎng tài dà. Câu này có thể hiểu là dàn âm thanh quá to về âm lượng trong khẩu ngữ, nhưng chuẩn hơn là: 音响的声音太大。 Yīnxiǎng de shēngyīn tài dà. Âm thanh của dàn loa quá to.",
           "natural_examples": [],
@@ -13982,7 +13982,7 @@
       "check_needed": false
     },
     {
-      "id": "vocab_040",
+      "id": "731e8f95-8298-4e9d-be14-411eaa6ece60",
       "type": "deep_vocabulary_item",
       "order": 40,
       "hanzi": "椅子",
@@ -14146,7 +14146,7 @@
       },
       "collocations": [
         {
-          "id": "vocab_040_col_001",
+          "id": "93835cbe-8fa9-4909-9e0e-9015c460438a",
           "order": 1,
           "zh": "一把椅子",
           "pinyin": "",
@@ -14157,7 +14157,7 @@
           "notes": []
         },
         {
-          "id": "vocab_040_col_002",
+          "id": "a73dd690-6f5c-438d-81ef-3106a45a0d77",
           "order": 2,
           "zh": "搬椅子",
           "pinyin": "",
@@ -14168,7 +14168,7 @@
           "notes": []
         },
         {
-          "id": "vocab_040_col_003",
+          "id": "451a5b37-f059-4547-a8c8-af854a177e94",
           "order": 3,
           "zh": "摆椅子",
           "pinyin": "",
@@ -14179,7 +14179,7 @@
           "notes": []
         },
         {
-          "id": "vocab_040_col_004",
+          "id": "275068e2-b2d7-48d2-9a12-527a92f2c7a2",
           "order": 4,
           "zh": "把椅子搬到旁边",
           "pinyin": "",
@@ -14190,7 +14190,7 @@
           "notes": []
         },
         {
-          "id": "vocab_040_col_005",
+          "id": "27032570-1c1a-4cd7-bda0-1fca77a683bb",
           "order": 5,
           "zh": "坐在椅子上",
           "pinyin": "",
@@ -14203,7 +14203,7 @@
       ],
       "examples": [
         {
-          "id": "vocab_040_ex_001",
+          "id": "94bbed77-6a1c-451d-bae9-d5b8ad81441e",
           "order": 1,
           "zh": "班长让我们把椅子搬到会场后边。",
           "pinyin": "Bānzhǎng ràng wǒmen bǎ yǐzi bān dào huìchǎng hòubian.",
@@ -14216,7 +14216,7 @@
             "grammar_17_ba_construction"
           ],
           "vocab_refs": [
-            "vocab_040"
+            "731e8f95-8298-4e9d-be14-411eaa6ece60"
           ],
           "source_ref": "current_thread",
           "level": "basic",
@@ -14225,7 +14225,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_040_ex_002",
+          "id": "2d45cbfe-f5dc-445e-88b4-0d2c06c473e4",
           "order": 2,
           "zh": "会场前边摆着几把椅子，是给老师坐的。",
           "pinyin": "Huìchǎng qiánbian bǎizhe jǐ bǎ yǐzi, shì gěi lǎoshī zuò de.",
@@ -14238,7 +14238,7 @@
             "grammar_17_ba_construction"
           ],
           "vocab_refs": [
-            "vocab_040"
+            "731e8f95-8298-4e9d-be14-411eaa6ece60"
           ],
           "source_ref": "current_thread",
           "level": "expanded",
@@ -14247,7 +14247,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_040_ex_003",
+          "id": "47a1f2c6-649e-45ef-beec-7b7017b06748",
           "order": 3,
           "zh": "联欢会结束以后，大家要把椅子摆回原来的地方。",
           "pinyin": "Liánhuānhuì jiéshù yǐhòu, dàjiā yào bǎ yǐzi bǎi huí yuánlái de dìfang.",
@@ -14260,7 +14260,7 @@
             "grammar_17_ba_construction"
           ],
           "vocab_refs": [
-            "vocab_040"
+            "731e8f95-8298-4e9d-be14-411eaa6ece60"
           ],
           "source_ref": "current_thread",
           "level": "complex",
@@ -14283,7 +14283,7 @@
       },
       "warnings": [
         {
-          "id": "vocab_040_warning_001",
+          "id": "b88f21be-40fb-4955-a554-403bc6fc4b8f",
           "order": 1,
           "rule_vi": "Lỗi sai phổ biến: Dùng sai lượng từ. Tự nhiên: 一把椅子 Yì bǎ yǐzi Một cái ghế. 一张桌子 Yì zhāng zhuōzi Một cái bàn.",
           "natural_examples": [],
@@ -14318,7 +14318,7 @@
       "check_needed": false
     },
     {
-      "id": "vocab_041",
+      "id": "8cfd5506-1809-4c14-84ec-66022f2dfa65",
       "type": "deep_vocabulary_item",
       "order": 41,
       "hanzi": "沙发",
@@ -14482,7 +14482,7 @@
       },
       "collocations": [
         {
-          "id": "vocab_041_col_001",
+          "id": "3dd7b014-c272-4fea-9e7e-aa720d03c28c",
           "order": 1,
           "zh": "一张沙发",
           "pinyin": "",
@@ -14493,7 +14493,7 @@
           "notes": []
         },
         {
-          "id": "vocab_041_col_002",
+          "id": "1a91216b-6263-496b-a3c3-cfe676215cdb",
           "order": 2,
           "zh": "坐在沙发上",
           "pinyin": "",
@@ -14504,7 +14504,7 @@
           "notes": []
         },
         {
-          "id": "vocab_041_col_003",
+          "id": "2453f4dc-c3a1-455e-8cb4-9dcb265a427e",
           "order": 3,
           "zh": "把沙发搬到旁边",
           "pinyin": "",
@@ -14515,7 +14515,7 @@
           "notes": []
         },
         {
-          "id": "vocab_041_col_004",
+          "id": "850e303b-507b-42c2-9ee8-c3d7729fffc9",
           "order": 4,
           "zh": "沙发旁边",
           "pinyin": "",
@@ -14526,7 +14526,7 @@
           "notes": []
         },
         {
-          "id": "vocab_041_col_005",
+          "id": "8cc2fb93-80ab-4f0f-8064-468657c247b7",
           "order": 5,
           "zh": "旧沙发",
           "pinyin": "",
@@ -14539,7 +14539,7 @@
       ],
       "examples": [
         {
-          "id": "vocab_041_ex_001",
+          "id": "b62badf4-af76-40ad-90d7-f8e12142fa1b",
           "order": 1,
           "zh": "管理员说，这张沙发太重了，最好不要搬。",
           "pinyin": "Guǎnlǐyuán shuō, zhè zhāng shāfā tài zhòng le, zuìhǎo bú yào bān.",
@@ -14552,7 +14552,7 @@
             "grammar_17_ba_construction"
           ],
           "vocab_refs": [
-            "vocab_041"
+            "8cfd5506-1809-4c14-84ec-66022f2dfa65"
           ],
           "source_ref": "current_thread",
           "level": "basic",
@@ -14561,7 +14561,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_041_ex_002",
+          "id": "aaefaa84-4c34-4dca-bdf0-6219ddefde94",
           "order": 2,
           "zh": "我们把沙发搬到会场旁边，给老人坐。",
           "pinyin": "Wǒmen bǎ shāfā bān dào huìchǎng pángbiān, gěi lǎorén zuò.",
@@ -14574,7 +14574,7 @@
             "grammar_17_ba_construction"
           ],
           "vocab_refs": [
-            "vocab_041"
+            "8cfd5506-1809-4c14-84ec-66022f2dfa65"
           ],
           "source_ref": "current_thread",
           "level": "expanded",
@@ -14583,7 +14583,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_041_ex_003",
+          "id": "940a7228-37cd-457d-9007-ec51f7816dfc",
           "order": 3,
           "zh": "沙发后边放着一个小冰箱，里面有水果和饮料。",
           "pinyin": "Shāfā hòubian fàngzhe yí ge xiǎo bīngxiāng, lǐmian yǒu shuǐguǒ hé yǐnliào.",
@@ -14596,7 +14596,7 @@
             "grammar_17_ba_construction"
           ],
           "vocab_refs": [
-            "vocab_041"
+            "8cfd5506-1809-4c14-84ec-66022f2dfa65"
           ],
           "source_ref": "current_thread",
           "level": "complex",
@@ -14619,7 +14619,7 @@
       },
       "warnings": [
         {
-          "id": "vocab_041_warning_001",
+          "id": "e1463d46-5403-4fcb-860b-345c0afee59d",
           "order": 1,
           "rule_vi": "Lỗi sai phổ biến: Dùng sai lượng từ. Tự nhiên: 一张沙发 Yì zhāng shāfā Một cái sofa. 一把椅子 Yì bǎ yǐzi Một cái ghế.",
           "natural_examples": [],
@@ -14654,7 +14654,7 @@
       "check_needed": false
     },
     {
-      "id": "vocab_042",
+      "id": "bd2faa1f-6a16-4adc-8c49-421df050a6f4",
       "type": "deep_vocabulary_item",
       "order": 42,
       "hanzi": "冰箱",
@@ -14871,7 +14871,7 @@
       },
       "collocations": [
         {
-          "id": "vocab_042_col_001",
+          "id": "3c782f72-89f4-4ddc-a962-18fb234a1c22",
           "order": 1,
           "zh": "冰箱里",
           "pinyin": "",
@@ -14882,7 +14882,7 @@
           "notes": []
         },
         {
-          "id": "vocab_042_col_002",
+          "id": "4d15b25f-a1ca-4f34-b212-7ea7e616ea74",
           "order": 2,
           "zh": "打开冰箱",
           "pinyin": "",
@@ -14893,7 +14893,7 @@
           "notes": []
         },
         {
-          "id": "vocab_042_col_003",
+          "id": "b4c42241-6a1e-4092-a78e-a887ea92d94f",
           "order": 3,
           "zh": "把水果放进冰箱里",
           "pinyin": "",
@@ -14904,7 +14904,7 @@
           "notes": []
         },
         {
-          "id": "vocab_042_col_004",
+          "id": "77beda9e-c3c5-4032-8a04-06e89a0a45d7",
           "order": 4,
           "zh": "从冰箱里拿出来",
           "pinyin": "",
@@ -14915,7 +14915,7 @@
           "notes": []
         },
         {
-          "id": "vocab_042_col_005",
+          "id": "7741ac09-db6f-4caf-81a4-25da98953cbc",
           "order": 5,
           "zh": "关上冰箱门",
           "pinyin": "",
@@ -14928,7 +14928,7 @@
       ],
       "examples": [
         {
-          "id": "vocab_042_ex_001",
+          "id": "eda51d07-cfb4-40f3-be06-677e4441edc7",
           "order": 1,
           "zh": "请把饮料放进冰箱里，等客人来了再拿出来。",
           "pinyin": "Qǐng bǎ yǐnliào fàng jìn bīngxiāng lǐ, děng kèrén lái le zài ná chūlai.",
@@ -14941,7 +14941,7 @@
             "grammar_17_ba_construction"
           ],
           "vocab_refs": [
-            "vocab_042"
+            "bd2faa1f-6a16-4adc-8c49-421df050a6f4"
           ],
           "source_ref": "current_thread",
           "level": "basic",
@@ -14950,7 +14950,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_042_ex_002",
+          "id": "cc5bd60b-ca0b-4222-ae95-1cf79c746c86",
           "order": 2,
           "zh": "冰箱里放着几瓶水，是给参加联欢会的人准备的。",
           "pinyin": "Bīngxiāng lǐ fàngzhe jǐ píng shuǐ, shì gěi cānjiā liánhuānhuì de rén zhǔnbèi de.",
@@ -14963,7 +14963,7 @@
             "grammar_17_ba_construction"
           ],
           "vocab_refs": [
-            "vocab_042"
+            "bd2faa1f-6a16-4adc-8c49-421df050a6f4"
           ],
           "source_ref": "current_thread",
           "level": "expanded",
@@ -14972,7 +14972,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_042_ex_003",
+          "id": "7eb40500-8a9b-4fbb-a206-a2b566a78332",
           "order": 3,
           "zh": "别一直开着冰箱门，里面的东西会不够冷。",
           "pinyin": "Bié yìzhí kāizhe bīngxiāng mén, lǐmian de dōngxi huì bú gòu lěng.",
@@ -14985,7 +14985,7 @@
             "grammar_17_ba_construction"
           ],
           "vocab_refs": [
-            "vocab_042"
+            "bd2faa1f-6a16-4adc-8c49-421df050a6f4"
           ],
           "source_ref": "current_thread",
           "level": "complex",
@@ -15008,7 +15008,7 @@
       },
       "warnings": [
         {
-          "id": "vocab_042_warning_001",
+          "id": "e468f647-d1cd-4d4f-907c-779bb8792450",
           "order": 1,
           "rule_vi": "Lỗi sai phổ biến: Thiếu 里 khi nói “trong tủ lạnh”. Không đủ rõ: 放冰箱 Tự nhiên hơn: 放进冰箱里。 Fàng jìn bīngxiāng lǐ. Bỏ vào trong tủ lạnh. 冰箱里有水果。 Bīngxiāng lǐ yǒu shuǐguǒ. Trong tủ lạnh có trái cây.",
           "natural_examples": [],
@@ -15043,7 +15043,7 @@
       "check_needed": false
     },
     {
-      "id": "vocab_043",
+      "id": "62a4668e-ec42-4861-804b-ee5c866e7101",
       "type": "deep_vocabulary_item",
       "order": 43,
       "hanzi": "洗衣机",
@@ -15294,7 +15294,7 @@
       },
       "collocations": [
         {
-          "id": "vocab_043_col_001",
+          "id": "decc2de3-5e7f-425b-8a90-04034d86a7b1",
           "order": 1,
           "zh": "一台洗衣机",
           "pinyin": "",
@@ -15305,7 +15305,7 @@
           "notes": []
         },
         {
-          "id": "vocab_043_col_002",
+          "id": "f3156a8b-bfb5-45ff-934e-9045b41abc8d",
           "order": 2,
           "zh": "用洗衣机洗衣服",
           "pinyin": "",
@@ -15316,7 +15316,7 @@
           "notes": []
         },
         {
-          "id": "vocab_043_col_003",
+          "id": "70a14fbc-380f-425a-9761-a03e35a8fb36",
           "order": 3,
           "zh": "把衣服放进洗衣机里",
           "pinyin": "",
@@ -15327,7 +15327,7 @@
           "notes": []
         },
         {
-          "id": "vocab_043_col_004",
+          "id": "f2c89432-0bae-4408-84bc-37edd112e400",
           "order": 4,
           "zh": "洗衣机坏了",
           "pinyin": "",
@@ -15338,7 +15338,7 @@
           "notes": []
         },
         {
-          "id": "vocab_043_col_005",
+          "id": "fddcd08b-5222-4259-9786-30a7f441ba5b",
           "order": 5,
           "zh": "打开洗衣机",
           "pinyin": "",
@@ -15351,7 +15351,7 @@
       ],
       "examples": [
         {
-          "id": "vocab_043_ex_001",
+          "id": "8295bd4a-dbff-462e-a6c3-2222e2e774e7",
           "order": 1,
           "zh": "她把彩带弄脏了，只好把它放进洗衣机里洗。",
           "pinyin": "Tā bǎ cǎidài nòng zāng le, zhǐhǎo bǎ tā fàng jìn xǐyījī lǐ xǐ.",
@@ -15364,7 +15364,7 @@
             "grammar_17_ba_construction"
           ],
           "vocab_refs": [
-            "vocab_043"
+            "62a4668e-ec42-4861-804b-ee5c866e7101"
           ],
           "source_ref": "current_thread",
           "level": "basic",
@@ -15373,7 +15373,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_043_ex_002",
+          "id": "e1a74d92-e62f-4366-9861-2cdc4b89645e",
           "order": 2,
           "zh": "洗衣机旁边放着一个小篮子，里面都是要洗的衣服。",
           "pinyin": "Xǐyījī pángbiān fàngzhe yí ge xiǎo lánzi, lǐmian dōu shì yào xǐ de yīfu.",
@@ -15386,7 +15386,7 @@
             "grammar_17_ba_construction"
           ],
           "vocab_refs": [
-            "vocab_043"
+            "62a4668e-ec42-4861-804b-ee5c866e7101"
           ],
           "source_ref": "current_thread",
           "level": "expanded",
@@ -15395,7 +15395,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_043_ex_003",
+          "id": "ebe52f50-3c33-4351-9b1b-8d96e537770f",
           "order": 3,
           "zh": "管理员提醒大家，不能在会场旁边用洗衣机。",
           "pinyin": "Guǎnlǐyuán tíxǐng dàjiā, bù néng zài huìchǎng pángbiān yòng xǐyījī.",
@@ -15408,7 +15408,7 @@
             "grammar_17_ba_construction"
           ],
           "vocab_refs": [
-            "vocab_043"
+            "62a4668e-ec42-4861-804b-ee5c866e7101"
           ],
           "source_ref": "current_thread",
           "level": "complex",
@@ -15431,7 +15431,7 @@
       },
       "warnings": [
         {
-          "id": "vocab_043_warning_001",
+          "id": "bde7bc2e-640e-4da9-993c-fa9f7d6b1253",
           "order": 1,
           "rule_vi": "Lỗi sai phổ biến: Nhầm 洗衣机 với hành động giặt. 洗衣机 là danh từ: 洗衣机坏了。 Xǐyījī huài le. Máy giặt hỏng rồi. 洗衣服 là hành động: 我在洗衣服。 Wǒ zài xǐ yīfu. Tôi đang giặt quần áo.",
           "natural_examples": [],
@@ -15466,7 +15466,7 @@
       "check_needed": false
     },
     {
-      "id": "vocab_044",
+      "id": "d131541f-6655-4dfe-bb2d-fc9c72570559",
       "type": "deep_vocabulary_item",
       "order": 44,
       "hanzi": "空调",
@@ -15683,7 +15683,7 @@
       },
       "collocations": [
         {
-          "id": "vocab_044_col_001",
+          "id": "84979da8-8521-46da-84a4-ae3954016160",
           "order": 1,
           "zh": "开空调",
           "pinyin": "",
@@ -15694,7 +15694,7 @@
           "notes": []
         },
         {
-          "id": "vocab_044_col_002",
+          "id": "bf126345-61b2-4412-a82e-06e6695643ee",
           "order": 2,
           "zh": "关空调",
           "pinyin": "",
@@ -15705,7 +15705,7 @@
           "notes": []
         },
         {
-          "id": "vocab_044_col_003",
+          "id": "da5141c9-8dc7-407c-8a76-11cf10656b4d",
           "order": 3,
           "zh": "把空调调低一点儿",
           "pinyin": "",
@@ -15716,7 +15716,7 @@
           "notes": []
         },
         {
-          "id": "vocab_044_col_004",
+          "id": "8ad92446-6808-4946-a30f-fa9ed2b2528f",
           "order": 4,
           "zh": "空调旁边",
           "pinyin": "",
@@ -15727,7 +15727,7 @@
           "notes": []
         },
         {
-          "id": "vocab_044_col_005",
+          "id": "26d56b9c-57e1-4f1f-9c9a-fc66b829b5e9",
           "order": 5,
           "zh": "空调开着",
           "pinyin": "",
@@ -15740,7 +15740,7 @@
       ],
       "examples": [
         {
-          "id": "vocab_044_ex_001",
+          "id": "ce6dd65e-a997-4101-9ad4-c724e3244c76",
           "order": 1,
           "zh": "开空调以前，最好先把窗户关上。",
           "pinyin": "Kāi kōngtiáo yǐqián, zuìhǎo xiān bǎ chuānghu guān shang.",
@@ -15753,7 +15753,7 @@
             "grammar_17_ba_construction"
           ],
           "vocab_refs": [
-            "vocab_044"
+            "d131541f-6655-4dfe-bb2d-fc9c72570559"
           ],
           "source_ref": "current_thread",
           "level": "basic",
@@ -15762,7 +15762,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_044_ex_002",
+          "id": "3993b9c6-351a-488e-a08d-d7229c7914a9",
           "order": 2,
           "zh": "管理员说，不要把彩带挂在空调旁边。",
           "pinyin": "Guǎnlǐyuán shuō, bú yào bǎ cǎidài guà zài kōngtiáo pángbiān.",
@@ -15775,7 +15775,7 @@
             "grammar_17_ba_construction"
           ],
           "vocab_refs": [
-            "vocab_044"
+            "d131541f-6655-4dfe-bb2d-fc9c72570559"
           ],
           "source_ref": "current_thread",
           "level": "expanded",
@@ -15784,7 +15784,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_044_ex_003",
+          "id": "ba237217-75ba-4a44-a3fd-f90ff088296a",
           "order": 3,
           "zh": "会场里的空调开着，大家进来以后觉得舒服多了。",
           "pinyin": "Huìchǎng lǐ de kōngtiáo kāizhe, dàjiā jìnlai yǐhòu juéde shūfu duō le.",
@@ -15797,7 +15797,7 @@
             "grammar_17_ba_construction"
           ],
           "vocab_refs": [
-            "vocab_044"
+            "d131541f-6655-4dfe-bb2d-fc9c72570559"
           ],
           "source_ref": "current_thread",
           "level": "complex",
@@ -15820,7 +15820,7 @@
       },
       "warnings": [
         {
-          "id": "vocab_044_warning_001",
+          "id": "1976d0b2-3776-4247-8755-99e2e28e7207",
           "order": 1,
           "rule_vi": "Lỗi sai phổ biến: Dịch 开空调 thành “mở máy lạnh” thì tiếng Việt hiểu, nhưng khi học tiếng Trung nên nhớ 开 = bật/vận hành thiết bị. Cụm chuẩn: 开空调 Kāi kōngtiáo Bật máy lạnh. 关空调 Guān kōngtiáo Tắt máy lạnh. 空调开着呢。 Kōngtiáo kāizhe ne. Máy lạnh đang bật đó.",
           "natural_examples": [],
@@ -15855,7 +15855,7 @@
       "check_needed": false
     },
     {
-      "id": "vocab_045",
+      "id": "991698fb-d143-4ca9-9cb9-5e60879d29c4",
       "type": "deep_vocabulary_item",
       "order": 45,
       "hanzi": "调",
@@ -16006,7 +16006,7 @@
       },
       "collocations": [
         {
-          "id": "vocab_045_col_001",
+          "id": "9e3cba3b-8bc0-4d48-8271-666817c715b8",
           "order": 1,
           "zh": "调音响",
           "pinyin": "",
@@ -16017,7 +16017,7 @@
           "notes": []
         },
         {
-          "id": "vocab_045_col_002",
+          "id": "7b633db1-2ade-4015-854a-1033c1d23729",
           "order": 2,
           "zh": "调空调",
           "pinyin": "",
@@ -16028,7 +16028,7 @@
           "notes": []
         },
         {
-          "id": "vocab_045_col_003",
+          "id": "d0a13d39-a4cb-4e16-bd26-b48c12b358e1",
           "order": 3,
           "zh": "调小一点儿",
           "pinyin": "",
@@ -16039,7 +16039,7 @@
           "notes": []
         },
         {
-          "id": "vocab_045_col_004",
+          "id": "6759b756-568b-408c-9698-e39e9bdd66ac",
           "order": 4,
           "zh": "调高 / 调低",
           "pinyin": "",
@@ -16050,7 +16050,7 @@
           "notes": []
         },
         {
-          "id": "vocab_045_col_005",
+          "id": "3b5ff8e4-277c-4a1b-9477-d026640c3ccd",
           "order": 5,
           "zh": "声调",
           "pinyin": "",
@@ -16063,7 +16063,7 @@
       ],
       "examples": [
         {
-          "id": "vocab_045_ex_001",
+          "id": "857da347-2c78-41e0-84d0-9ffe5207495b",
           "order": 1,
           "zh": "管理员让我们把音响调小一点儿。",
           "pinyin": "Guǎnlǐyuán ràng wǒmen bǎ yīnxiǎng tiáo xiǎo yìdiǎnr.",
@@ -16076,7 +16076,7 @@
             "grammar_17_ba_construction"
           ],
           "vocab_refs": [
-            "vocab_045"
+            "991698fb-d143-4ca9-9cb9-5e60879d29c4"
           ],
           "source_ref": "current_thread",
           "level": "basic",
@@ -16085,7 +16085,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_045_ex_002",
+          "id": "a186b9a3-45dc-46c1-8fcc-8d3992e5fa0e",
           "order": 2,
           "zh": "空调太冷了，你能不能把温度调高一点儿？",
           "pinyin": "Kōngtiáo tài lěng le, nǐ néng bu néng bǎ wēndù tiáo gāo yìdiǎnr?",
@@ -16098,7 +16098,7 @@
             "grammar_17_ba_construction"
           ],
           "vocab_refs": [
-            "vocab_045"
+            "991698fb-d143-4ca9-9cb9-5e60879d29c4"
           ],
           "source_ref": "current_thread",
           "level": "expanded",
@@ -16107,7 +16107,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_045_ex_003",
+          "id": "b0b0b922-42b2-4cf9-8b18-a3c598a05c38",
           "order": 3,
           "zh": "学中文的时候，声调不能乱，第三声和第四声要分清楚。",
           "pinyin": "Xué Zhōngwén de shíhou, shēngdiào bù néng luàn, dì sān shēng hé dì sì shēng yào fēn qīngchu.",
@@ -16120,7 +16120,7 @@
             "grammar_17_ba_construction"
           ],
           "vocab_refs": [
-            "vocab_045"
+            "991698fb-d143-4ca9-9cb9-5e60879d29c4"
           ],
           "source_ref": "current_thread",
           "level": "complex",
@@ -16143,7 +16143,7 @@
       },
       "warnings": [
         {
-          "id": "vocab_045_warning_001",
+          "id": "6fccfd41-362c-40b7-b47a-884992032c1c",
           "order": 1,
           "rule_vi": "Lỗi sai phổ biến: Đọc 调 một âm cho mọi trường hợp. 调音响 Tiáo yīnxiǎng Chỉnh dàn âm thanh. 调空调 Tiáo kōngtiáo Chỉnh máy lạnh. 声调 Shēngdiào Thanh điệu. 语调 Yǔdiào Ngữ điệu.",
           "natural_examples": [],
@@ -16178,7 +16178,7 @@
       "check_needed": false
     },
     {
-      "id": "vocab_046",
+      "id": "9de4422b-c7c2-4ea5-8070-10bdf637af59",
       "type": "deep_vocabulary_item",
       "order": 46,
       "hanzi": "伸",
@@ -16329,7 +16329,7 @@
       },
       "collocations": [
         {
-          "id": "vocab_046_col_001",
+          "id": "b889d99e-afbb-447a-9659-ab3b2c25bfcb",
           "order": 1,
           "zh": "伸手",
           "pinyin": "",
@@ -16340,7 +16340,7 @@
           "notes": []
         },
         {
-          "id": "vocab_046_col_002",
+          "id": "3ed8f4d2-a04c-4650-b169-e47acbc78fea",
           "order": 2,
           "zh": "伸出手来",
           "pinyin": "",
@@ -16351,7 +16351,7 @@
           "notes": []
         },
         {
-          "id": "vocab_046_col_003",
+          "id": "95d2226f-afa9-4060-9ad7-c3d7b23fac2e",
           "order": 3,
           "zh": "伸进……里",
           "pinyin": "",
@@ -16362,7 +16362,7 @@
           "notes": []
         },
         {
-          "id": "vocab_046_col_004",
+          "id": "5ded9061-5499-46e6-a2ce-e3fb5f7c558e",
           "order": 4,
           "zh": "伸出来",
           "pinyin": "",
@@ -16373,7 +16373,7 @@
           "notes": []
         },
         {
-          "id": "vocab_046_col_005",
+          "id": "1d7fbc76-c6f0-4f27-a6ef-484807da8286",
           "order": 5,
           "zh": "伸懒腰",
           "pinyin": "",
@@ -16386,7 +16386,7 @@
       ],
       "examples": [
         {
-          "id": "vocab_046_ex_001",
+          "id": "61fecd75-182a-414b-9780-564263d61106",
           "order": 1,
           "zh": "他小心地把手伸进纸箱里，想把彩带拿出来。",
           "pinyin": "Tā xiǎoxīn de bǎ shǒu shēn jìn zhǐxiāng lǐ, xiǎng bǎ cǎidài ná chūlai.",
@@ -16399,7 +16399,7 @@
             "grammar_17_ba_construction"
           ],
           "vocab_refs": [
-            "vocab_046"
+            "9de4422b-c7c2-4ea5-8070-10bdf637af59"
           ],
           "source_ref": "current_thread",
           "level": "basic",
@@ -16408,7 +16408,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_046_ex_002",
+          "id": "00fa051b-2367-48c8-9db7-683efce413f4",
           "order": 2,
           "zh": "贴“福”字的时候，别把头伸得太远，小心摔倒。",
           "pinyin": "Tiē “Fú” zì de shíhou, bié bǎ tóu shēn de tài yuǎn, xiǎoxīn shuāidǎo.",
@@ -16421,7 +16421,7 @@
             "grammar_17_ba_construction"
           ],
           "vocab_refs": [
-            "vocab_046"
+            "9de4422b-c7c2-4ea5-8070-10bdf637af59"
           ],
           "source_ref": "current_thread",
           "level": "expanded",
@@ -16430,7 +16430,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_046_ex_003",
+          "id": "13a4c71f-14ef-4c2d-969a-b90f52ca7e0b",
           "order": 3,
           "zh": "水仙从花盆里伸出绿叶来，教室一下子有了春天的感觉。",
           "pinyin": "Shuǐxiān cóng huāpén lǐ shēn chū lǜyè lái, jiàoshì yíxiàzi yǒu le chūntiān de gǎnjué.",
@@ -16443,7 +16443,7 @@
             "grammar_17_ba_construction"
           ],
           "vocab_refs": [
-            "vocab_046"
+            "9de4422b-c7c2-4ea5-8070-10bdf637af59"
           ],
           "source_ref": "current_thread",
           "level": "complex",
@@ -16466,7 +16466,7 @@
       },
       "warnings": [
         {
-          "id": "vocab_046_warning_001",
+          "id": "ac756883-6c9f-4601-97a0-34156f007e45",
           "order": 1,
           "rule_vi": "Lỗi sai phổ biến: Nhầm 伸手 và 举手. 伸手 Shēn shǒu Đưa/vươn tay ra. 举手 Jǔ shǒu Giơ tay lên. Ví dụ: 请伸出手来。 Qǐng shēn chū shǒu lái. Xin đưa tay ra. 请举手回答问题。 Qǐng jǔ shǒu huídá wèntí. Xin giơ tay trả lời câu hỏi.",
           "natural_examples": [],
@@ -16501,7 +16501,7 @@
       "check_needed": false
     },
     {
-      "id": "vocab_047",
+      "id": "3d103ca7-9cee-45eb-8964-08c7750b8e1c",
       "type": "deep_vocabulary_item",
       "order": 47,
       "hanzi": "小心",
@@ -16655,7 +16655,7 @@
       },
       "collocations": [
         {
-          "id": "vocab_047_col_001",
+          "id": "f1fe5a77-b98e-4c02-9ac2-1806bd78e620",
           "order": 1,
           "zh": "小心一点儿",
           "pinyin": "",
@@ -16666,7 +16666,7 @@
           "notes": []
         },
         {
-          "id": "vocab_047_col_002",
+          "id": "c1b7f6dc-1b66-4095-8553-27ba78976f38",
           "order": 2,
           "zh": "小心摔倒",
           "pinyin": "",
@@ -16677,7 +16677,7 @@
           "notes": []
         },
         {
-          "id": "vocab_047_col_003",
+          "id": "7dabfc12-1065-4a6d-bdc3-568f4703bbf5",
           "order": 3,
           "zh": "小心别弄坏",
           "pinyin": "",
@@ -16688,7 +16688,7 @@
           "notes": []
         },
         {
-          "id": "vocab_047_col_004",
+          "id": "e5b51741-afb0-4f4f-8a2d-6d6513bdb068",
           "order": 4,
           "zh": "小心地做",
           "pinyin": "",
@@ -16699,7 +16699,7 @@
           "notes": []
         },
         {
-          "id": "vocab_047_col_005",
+          "id": "50400764-9ee3-4c07-83bb-9201087d4b0c",
           "order": 5,
           "zh": "路上小心",
           "pinyin": "",
@@ -16712,7 +16712,7 @@
       ],
       "examples": [
         {
-          "id": "vocab_047_ex_001",
+          "id": "57f74d19-f6e6-4b92-8edd-45da05d59972",
           "order": 1,
           "zh": "贴对联儿的时候，小心别把纸撕坏了。",
           "pinyin": "Tiē duìliánr de shíhou, xiǎoxīn bié bǎ zhǐ sī huài le.",
@@ -16725,7 +16725,7 @@
             "grammar_17_ba_construction"
           ],
           "vocab_refs": [
-            "vocab_047"
+            "3d103ca7-9cee-45eb-8964-08c7750b8e1c"
           ],
           "source_ref": "current_thread",
           "level": "basic",
@@ -16734,7 +16734,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_047_ex_002",
+          "id": "67ff05f4-97a5-4131-92a0-493f7f149f70",
           "order": 2,
           "zh": "这盆水仙是老师亲手养的，你搬的时候一定要小心。",
           "pinyin": "Zhè pén shuǐxiān shì lǎoshī qīnshǒu yǎng de, nǐ bān de shíhou yídìng yào xiǎoxīn.",
@@ -16747,7 +16747,7 @@
             "grammar_17_ba_construction"
           ],
           "vocab_refs": [
-            "vocab_047"
+            "3d103ca7-9cee-45eb-8964-08c7750b8e1c"
           ],
           "source_ref": "current_thread",
           "level": "expanded",
@@ -16756,7 +16756,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_047_ex_003",
+          "id": "9f2f0992-c533-422a-ada6-5fad259b9660",
           "order": 3,
           "zh": "管理员提醒我们，彩灯开着的时候要小心用电。",
           "pinyin": "Guǎnlǐyuán tíxǐng wǒmen, cǎidēng kāizhe de shíhou yào xiǎoxīn yòng diàn.",
@@ -16769,7 +16769,7 @@
             "grammar_17_ba_construction"
           ],
           "vocab_refs": [
-            "vocab_047"
+            "3d103ca7-9cee-45eb-8964-08c7750b8e1c"
           ],
           "source_ref": "current_thread",
           "level": "complex",
@@ -16792,7 +16792,7 @@
       },
       "warnings": [
         {
-          "id": "vocab_047_warning_001",
+          "id": "87643818-0413-42e2-850a-c16f60c9d30a",
           "order": 1,
           "rule_vi": "Lỗi sai phổ biến: Nhầm 小心 và 仔细. 小心！ Xiǎoxīn! Cẩn thận! Coi chừng! 仔细看。 Zǐxì kàn. Xem kỹ. 小心地搬。 Xiǎoxīn de bān. Chuyển/bê một cách cẩn thận.",
           "natural_examples": [],
@@ -16827,7 +16827,7 @@
       "check_needed": false
     },
     {
-      "id": "vocab_048",
+      "id": "57d008b9-dccb-4651-96da-bed4064c85c4",
       "type": "deep_vocabulary_item",
       "order": 48,
       "hanzi": "悄悄",
@@ -17033,7 +17033,7 @@
       },
       "collocations": [
         {
-          "id": "vocab_048_col_001",
+          "id": "20eca433-ca9b-4441-a7d6-e6a49f88e478",
           "order": 1,
           "zh": "悄悄走进来",
           "pinyin": "",
@@ -17044,7 +17044,7 @@
           "notes": []
         },
         {
-          "id": "vocab_048_col_002",
+          "id": "46ff17fe-5415-4036-9173-b62ac1f62b75",
           "order": 2,
           "zh": "悄悄告诉我",
           "pinyin": "",
@@ -17055,7 +17055,7 @@
           "notes": []
         },
         {
-          "id": "vocab_048_col_003",
+          "id": "5476d986-e6cd-4970-9549-fb55fefd4112",
           "order": 3,
           "zh": "悄悄准备惊喜",
           "pinyin": "",
@@ -17066,7 +17066,7 @@
           "notes": []
         },
         {
-          "id": "vocab_048_col_004",
+          "id": "63c2dc53-da90-44a2-b613-3b28a80f7dc4",
           "order": 4,
           "zh": "悄悄放在桌子上",
           "pinyin": "",
@@ -17077,7 +17077,7 @@
           "notes": []
         },
         {
-          "id": "vocab_048_col_005",
+          "id": "1d51e475-e987-4448-a9b9-41ba2864da2e",
           "order": 5,
           "zh": "悄悄地离开",
           "pinyin": "",
@@ -17090,7 +17090,7 @@
       ],
       "examples": [
         {
-          "id": "vocab_048_ex_001",
+          "id": "939fa706-e96a-46c8-a01f-da163a52784b",
           "order": 1,
           "zh": "同学们悄悄把会场布置好，想给老师一个惊喜。",
           "pinyin": "Tóngxuémen qiāoqiāo bǎ huìchǎng bùzhì hǎo, xiǎng gěi lǎoshī yí ge jīngxǐ.",
@@ -17103,7 +17103,7 @@
             "grammar_17_ba_construction"
           ],
           "vocab_refs": [
-            "vocab_048"
+            "57d008b9-dccb-4651-96da-bed4064c85c4"
           ],
           "source_ref": "current_thread",
           "level": "basic",
@@ -17112,7 +17112,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_048_ex_002",
+          "id": "76cfa52d-d1ca-4ff0-843d-025d9bddda63",
           "order": 2,
           "zh": "她把那份礼物悄悄放在老师的桌子上。",
           "pinyin": "Tā bǎ nà fèn lǐwù qiāoqiāo fàng zài lǎoshī de zhuōzi shang.",
@@ -17125,7 +17125,7 @@
             "grammar_17_ba_construction"
           ],
           "vocab_refs": [
-            "vocab_048"
+            "57d008b9-dccb-4651-96da-bed4064c85c4"
           ],
           "source_ref": "current_thread",
           "level": "expanded",
@@ -17134,7 +17134,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_048_ex_003",
+          "id": "39b50492-3f5e-4042-b815-80dde130db9e",
           "order": 3,
           "zh": "老师走进来以前，班长悄悄把音响打开了。",
           "pinyin": "Lǎoshī zǒu jìnlai yǐqián, bānzhǎng qiāoqiāo bǎ yīnxiǎng dǎkāi le.",
@@ -17147,7 +17147,7 @@
             "grammar_17_ba_construction"
           ],
           "vocab_refs": [
-            "vocab_048"
+            "57d008b9-dccb-4651-96da-bed4064c85c4"
           ],
           "source_ref": "current_thread",
           "level": "complex",
@@ -17170,7 +17170,7 @@
       },
       "warnings": [
         {
-          "id": "vocab_048_warning_001",
+          "id": "6fa8ee14-73e7-47f8-90fd-e61755291a59",
           "order": 1,
           "rule_vi": "Lỗi sai phổ biến: Nhầm 悄悄 với 偷偷. 悄悄 có thể tích cực: 悄悄准备惊喜。 Qiāoqiāo zhǔnbèi jīngxǐ. Âm thầm chuẩn bị bất ngờ. 偷偷 dễ có sắc thái lén làm điều không nên: 偷偷玩手机。 Tōutōu wán shǒujī. Lén chơi điện thoại.",
           "natural_examples": [],
@@ -17205,7 +17205,7 @@
       "check_needed": false
     },
     {
-      "id": "vocab_049",
+      "id": "3a828e94-6a2a-4620-8c77-db219fd82582",
       "type": "deep_vocabulary_item",
       "order": 49,
       "hanzi": "帽子",
@@ -17369,7 +17369,7 @@
       },
       "collocations": [
         {
-          "id": "vocab_049_col_001",
+          "id": "49ee3a4d-6852-4392-a9cc-0c40a76a376a",
           "order": 1,
           "zh": "戴帽子",
           "pinyin": "",
@@ -17380,7 +17380,7 @@
           "notes": []
         },
         {
-          "id": "vocab_049_col_002",
+          "id": "6978c74d-9e99-41d0-9d46-002ebd040e21",
           "order": 2,
           "zh": "摘帽子",
           "pinyin": "",
@@ -17391,7 +17391,7 @@
           "notes": []
         },
         {
-          "id": "vocab_049_col_003",
+          "id": "44c86a0a-8e0c-456a-af30-da1ce7caec3e",
           "order": 3,
           "zh": "把帽子摘下来",
           "pinyin": "",
@@ -17402,7 +17402,7 @@
           "notes": []
         },
         {
-          "id": "vocab_049_col_004",
+          "id": "23eaa30e-e3df-4be1-b00c-6fb7014cfdf0",
           "order": 4,
           "zh": "红帽子",
           "pinyin": "",
@@ -17413,7 +17413,7 @@
           "notes": []
         },
         {
-          "id": "vocab_049_col_005",
+          "id": "72059735-405d-47a6-9b26-2371a979b194",
           "order": 5,
           "zh": "帽子掉了",
           "pinyin": "",
@@ -17426,7 +17426,7 @@
       ],
       "examples": [
         {
-          "id": "vocab_049_ex_001",
+          "id": "ea57d33e-55a0-4480-b85e-4008a0d71526",
           "order": 1,
           "zh": "进会场以后，请把帽子摘下来。",
           "pinyin": "Jìn huìchǎng yǐhòu, qǐng bǎ màozi zhāi xiàlai.",
@@ -17439,7 +17439,7 @@
             "grammar_17_ba_construction"
           ],
           "vocab_refs": [
-            "vocab_049"
+            "3a828e94-6a2a-4620-8c77-db219fd82582"
           ],
           "source_ref": "current_thread",
           "level": "basic",
@@ -17448,7 +17448,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_049_ex_002",
+          "id": "64771518-b895-4a79-83c2-be319ccc2551",
           "order": 2,
           "zh": "他的帽子上贴着一个小小的“福”字，看起来很有意思。",
           "pinyin": "Tā de màozi shang tiēzhe yí ge xiǎoxiǎo de “Fú” zì, kàn qǐlai hěn yǒu yìsi.",
@@ -17461,7 +17461,7 @@
             "grammar_17_ba_construction"
           ],
           "vocab_refs": [
-            "vocab_049"
+            "3a828e94-6a2a-4620-8c77-db219fd82582"
           ],
           "source_ref": "current_thread",
           "level": "expanded",
@@ -17470,7 +17470,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_049_ex_003",
+          "id": "d3a7828e-8008-4ea7-8d5c-25aa1358d1f9",
           "order": 3,
           "zh": "外边风很大，小心别把帽子吹掉了。",
           "pinyin": "Wàibian fēng hěn dà, xiǎoxīn bié bǎ màozi chuī diào le.",
@@ -17483,7 +17483,7 @@
             "grammar_17_ba_construction"
           ],
           "vocab_refs": [
-            "vocab_049"
+            "3a828e94-6a2a-4620-8c77-db219fd82582"
           ],
           "source_ref": "current_thread",
           "level": "complex",
@@ -17506,7 +17506,7 @@
       },
       "warnings": [
         {
-          "id": "vocab_049_warning_001",
+          "id": "d62ee62f-a4f7-445d-a261-78a36a9db923",
           "order": 1,
           "rule_vi": "Lỗi sai phổ biến: Dùng 穿 với mũ. Sai: 穿帽子 Đúng: 戴帽子 Dài màozi Đội mũ. 摘帽子 Zhāi màozi Cởi/bỏ mũ xuống.",
           "natural_examples": [],
@@ -17541,7 +17541,7 @@
       "check_needed": false
     },
     {
-      "id": "vocab_050",
+      "id": "895eb018-532f-41ed-992f-ce15687359c6",
       "type": "deep_vocabulary_item",
       "order": 50,
       "hanzi": "摘",
@@ -17692,7 +17692,7 @@
       },
       "collocations": [
         {
-          "id": "vocab_050_col_001",
+          "id": "ca25e7d8-1acf-4f87-bb5f-09affa0d7790",
           "order": 1,
           "zh": "摘花",
           "pinyin": "",
@@ -17703,7 +17703,7 @@
           "notes": []
         },
         {
-          "id": "vocab_050_col_002",
+          "id": "8cb43b20-f787-4f8b-a74f-8a88206dcd7e",
           "order": 2,
           "zh": "摘枣",
           "pinyin": "",
@@ -17714,7 +17714,7 @@
           "notes": []
         },
         {
-          "id": "vocab_050_col_003",
+          "id": "35592bef-bdb0-49df-bad9-02803a9b71e1",
           "order": 3,
           "zh": "摘帽子",
           "pinyin": "",
@@ -17725,7 +17725,7 @@
           "notes": []
         },
         {
-          "id": "vocab_050_col_004",
+          "id": "b07e9be1-9db0-4779-8674-4f3942592e14",
           "order": 4,
           "zh": "摘眼镜",
           "pinyin": "",
@@ -17736,7 +17736,7 @@
           "notes": []
         },
         {
-          "id": "vocab_050_col_005",
+          "id": "84427eaf-51df-417f-b2e1-d8478be411e5",
           "order": 5,
           "zh": "把对联儿摘下来",
           "pinyin": "",
@@ -17749,7 +17749,7 @@
       ],
       "examples": [
         {
-          "id": "vocab_050_ex_001",
+          "id": "019db047-438a-4f37-b358-7c31bfc67cae",
           "order": 1,
           "zh": "联欢会结束以后，大家把彩带和彩灯摘下来。",
           "pinyin": "Liánhuānhuì jiéshù yǐhòu, dàjiā bǎ cǎidài hé cǎidēng zhāi xiàlai.",
@@ -17762,7 +17762,7 @@
             "grammar_17_ba_construction"
           ],
           "vocab_refs": [
-            "vocab_050"
+            "895eb018-532f-41ed-992f-ce15687359c6"
           ],
           "source_ref": "current_thread",
           "level": "basic",
@@ -17771,7 +17771,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_050_ex_002",
+          "id": "83d1909c-ee8c-4a52-ae31-cd74f78ba341",
           "order": 2,
           "zh": "爷爷从院子里的树上摘下几个枣，请客人品尝。",
           "pinyin": "Yéye cóng yuànzi lǐ de shù shang zhāi xià jǐ ge zǎo, qǐng kèrén pǐncháng.",
@@ -17784,7 +17784,7 @@
             "grammar_17_ba_construction"
           ],
           "vocab_refs": [
-            "vocab_050"
+            "895eb018-532f-41ed-992f-ce15687359c6"
           ],
           "source_ref": "current_thread",
           "level": "expanded",
@@ -17793,7 +17793,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_050_ex_003",
+          "id": "fe0086a3-4ca0-4ff7-9153-a476bce19167",
           "order": 3,
           "zh": "进会场以前，他把帽子摘下来，放在椅子上。",
           "pinyin": "Jìn huìchǎng yǐqián, tā bǎ màozi zhāi xiàlai, fàng zài yǐzi shang.",
@@ -17806,7 +17806,7 @@
             "grammar_17_ba_construction"
           ],
           "vocab_refs": [
-            "vocab_050"
+            "895eb018-532f-41ed-992f-ce15687359c6"
           ],
           "source_ref": "current_thread",
           "level": "complex",
@@ -17829,7 +17829,7 @@
       },
       "warnings": [
         {
-          "id": "vocab_050_warning_001",
+          "id": "e4f9479d-e84b-40dd-ab79-4b06c22f04a2",
           "order": 1,
           "rule_vi": "Lỗi sai phổ biến: Dùng 脱 cho mũ/kính. Tự nhiên: 摘帽子 Zhāi màozi Cởi/bỏ mũ xuống. 摘眼镜 Zhāi yǎnjìng Tháo kính. 脱衣服 Tuō yīfu Cởi quần áo.",
           "natural_examples": [],
@@ -17864,7 +17864,7 @@
       "check_needed": false
     },
     {
-      "id": "vocab_051",
+      "id": "edf523f1-a22e-4c10-8b1a-26892ca4208a",
       "type": "deep_vocabulary_item",
       "order": 51,
       "hanzi": "吹气",
@@ -18060,7 +18060,7 @@
       },
       "collocations": [
         {
-          "id": "vocab_051_col_001",
+          "id": "7f7aaafb-8fc6-4540-bc41-f42b8beb8718",
           "order": 1,
           "zh": "吹一口气",
           "pinyin": "",
@@ -18071,7 +18071,7 @@
           "notes": []
         },
         {
-          "id": "vocab_051_col_002",
+          "id": "f57ccb6c-ed4f-4d4d-9312-a4fa29820168",
           "order": 2,
           "zh": "吹气球",
           "pinyin": "",
@@ -18082,7 +18082,7 @@
           "notes": []
         },
         {
-          "id": "vocab_051_col_003",
+          "id": "8d85389a-cd51-493f-89e5-d75af2defebd",
           "order": 3,
           "zh": "对着……吹气",
           "pinyin": "",
@@ -18093,7 +18093,7 @@
           "notes": []
         },
         {
-          "id": "vocab_051_col_004",
+          "id": "9098cb96-4847-406b-9132-2e5162aea52f",
           "order": 4,
           "zh": "轻轻吹气",
           "pinyin": "",
@@ -18104,7 +18104,7 @@
           "notes": []
         },
         {
-          "id": "vocab_051_col_005",
+          "id": "8e50d8e2-da95-46de-a10c-91c55f50202a",
           "order": 5,
           "zh": "吹掉灰尘",
           "pinyin": "",
@@ -18117,7 +18117,7 @@
       ],
       "examples": [
         {
-          "id": "vocab_051_ex_001",
+          "id": "b420cc43-ebbc-4f94-b094-9dae9be5194c",
           "order": 1,
           "zh": "他对着彩带轻轻吹了一口气，想把上面的灰尘吹掉。",
           "pinyin": "Tā duìzhe cǎidài qīngqīng chuī le yì kǒu qì, xiǎng bǎ shàngmian de huīchén chuī diào.",
@@ -18130,7 +18130,7 @@
             "grammar_17_ba_construction"
           ],
           "vocab_refs": [
-            "vocab_051"
+            "edf523f1-a22e-4c10-8b1a-26892ca4208a"
           ],
           "source_ref": "current_thread",
           "level": "basic",
@@ -18139,7 +18139,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_051_ex_002",
+          "id": "448487d7-b287-4027-a15b-08a8ac108700",
           "order": 2,
           "zh": "同学们正在吹气球，准备把气球挂在会场两边。",
           "pinyin": "Tóngxuémen zhèngzài chuī qìqiú, zhǔnbèi bǎ qìqiú guà zài huìchǎng liǎng biān.",
@@ -18152,7 +18152,7 @@
             "grammar_17_ba_construction"
           ],
           "vocab_refs": [
-            "vocab_051"
+            "edf523f1-a22e-4c10-8b1a-26892ca4208a"
           ],
           "source_ref": "current_thread",
           "level": "expanded",
@@ -18161,7 +18161,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_051_ex_003",
+          "id": "4be50429-2f7b-4bba-9337-6b868ebd286e",
           "order": 3,
           "zh": "这个“福”字刚贴好，别对着它吹气，小心把它吹下来。",
           "pinyin": "Zhège “Fú” zì gāng tiē hǎo, bié duìzhe tā chuīqì, xiǎoxīn bǎ tā chuī xiàlai.",
@@ -18174,7 +18174,7 @@
             "grammar_17_ba_construction"
           ],
           "vocab_refs": [
-            "vocab_051"
+            "edf523f1-a22e-4c10-8b1a-26892ca4208a"
           ],
           "source_ref": "current_thread",
           "level": "complex",
@@ -18197,7 +18197,7 @@
       },
       "warnings": [
         {
-          "id": "vocab_051_warning_001",
+          "id": "976ecf9d-70ff-48d9-8ec2-2e1d3a95c702",
           "order": 1,
           "rule_vi": "Lỗi sai phổ biến: Nhầm 吹气 và 打气. 吹气球 Chuī qìqiú Thổi bóng bay bằng miệng. 给气球打气 Gěi qìqiú dǎ qì Bơm hơi cho bóng bay.",
           "natural_examples": [],
@@ -18232,7 +18232,7 @@
       "check_needed": false
     },
     {
-      "id": "vocab_052",
+      "id": "2b7d7c91-7cc4-4ad3-989c-2ca5d60ba1b3",
       "type": "deep_vocabulary_item",
       "order": 52,
       "hanzi": "一下子",
@@ -18389,7 +18389,7 @@
       },
       "collocations": [
         {
-          "id": "vocab_052_col_001",
+          "id": "ad3ee750-716c-43ce-98e9-4ef4c6a843b6",
           "order": 1,
           "zh": "一下子明白了",
           "pinyin": "",
@@ -18400,7 +18400,7 @@
           "notes": []
         },
         {
-          "id": "vocab_052_col_002",
+          "id": "e5f5cb36-0eb6-4ba9-8365-4aea87454e64",
           "order": 2,
           "zh": "一下子热闹起来了",
           "pinyin": "",
@@ -18411,7 +18411,7 @@
           "notes": []
         },
         {
-          "id": "vocab_052_col_003",
+          "id": "36b95aa5-a278-45dd-a4fb-aee3e37c010f",
           "order": 3,
           "zh": "一下子安静下来了",
           "pinyin": "",
@@ -18422,7 +18422,7 @@
           "notes": []
         },
         {
-          "id": "vocab_052_col_004",
+          "id": "c5eeeed1-c71d-42bf-bd45-349f6b02453f",
           "order": 4,
           "zh": "一下子站起来",
           "pinyin": "",
@@ -18433,7 +18433,7 @@
           "notes": []
         },
         {
-          "id": "vocab_052_col_005",
+          "id": "685600a6-fbc2-468d-9310-220348abab73",
           "order": 5,
           "zh": "一下子多了很多人",
           "pinyin": "",
@@ -18446,7 +18446,7 @@
       ],
       "examples": [
         {
-          "id": "vocab_052_ex_001",
+          "id": "36282628-5a23-4808-a96c-818e3f8ea256",
           "order": 1,
           "zh": "彩灯一亮，会场一下子热闹起来了。",
           "pinyin": "Cǎidēng yí liàng, huìchǎng yíxiàzi rènao qǐlai le.",
@@ -18459,7 +18459,7 @@
             "grammar_17_ba_construction"
           ],
           "vocab_refs": [
-            "vocab_052"
+            "2b7d7c91-7cc4-4ad3-989c-2ca5d60ba1b3"
           ],
           "source_ref": "current_thread",
           "level": "basic",
@@ -18468,7 +18468,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_052_ex_002",
+          "id": "f4bf6f64-9d3c-4f61-a46a-70190308ec77",
           "order": 2,
           "zh": "老师一走进来，大家一下子安静下来了。",
           "pinyin": "Lǎoshī yì zǒu jìnlai, dàjiā yíxiàzi ānjìng xiàlai le.",
@@ -18481,7 +18481,7 @@
             "grammar_17_ba_construction"
           ],
           "vocab_refs": [
-            "vocab_052"
+            "2b7d7c91-7cc4-4ad3-989c-2ca5d60ba1b3"
           ],
           "source_ref": "current_thread",
           "level": "expanded",
@@ -18490,7 +18490,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_052_ex_003",
+          "id": "f7e7794c-cfc2-498a-86c8-19cb2ff60446",
           "order": 3,
           "zh": "听了管理员的解释，我一下子明白了为什么不能把彩带挂在空调旁边。",
           "pinyin": "Tīng le guǎnlǐyuán de jiěshì, wǒ yíxiàzi míngbai le wèishénme bù néng bǎ cǎidài guà zài kōngtiáo pángbiān.",
@@ -18503,7 +18503,7 @@
             "grammar_17_ba_construction"
           ],
           "vocab_refs": [
-            "vocab_052"
+            "2b7d7c91-7cc4-4ad3-989c-2ca5d60ba1b3"
           ],
           "source_ref": "current_thread",
           "level": "complex",
@@ -18526,7 +18526,7 @@
       },
       "warnings": [
         {
-          "id": "vocab_052_warning_001",
+          "id": "0b6dc788-de1d-460f-a718-0ac0a0a574d7",
           "order": 1,
           "rule_vi": "Lỗi sai phổ biến: Nhầm 一下子 với 一下. 看一下 Kàn yíxià Xem một chút. 一下子明白了 Yíxiàzi míngbai le Lập tức hiểu ra. 等一下 Děng yíxià Đợi một chút. Không nói 等一下子 trong câu thông thường.",
           "natural_examples": [],
@@ -18561,7 +18561,7 @@
       "check_needed": false
     },
     {
-      "id": "vocab_053",
+      "id": "09cbec09-c944-4bed-9a39-ead94dad55e0",
       "type": "deep_vocabulary_item",
       "order": 53,
       "hanzi": "仍",
@@ -18712,7 +18712,7 @@
       },
       "collocations": [
         {
-          "id": "vocab_053_col_001",
+          "id": "cea35f8f-e904-4165-ab11-93293b2ce1ef",
           "order": 1,
           "zh": "仍然记得",
           "pinyin": "",
@@ -18723,7 +18723,7 @@
           "notes": []
         },
         {
-          "id": "vocab_053_col_002",
+          "id": "e5a7c548-9d15-44af-bf34-77e294ae5b75",
           "order": 2,
           "zh": "仍然喜欢",
           "pinyin": "",
@@ -18734,7 +18734,7 @@
           "notes": []
         },
         {
-          "id": "vocab_053_col_003",
+          "id": "a2c5a501-3052-495d-b61e-19110011faee",
           "order": 3,
           "zh": "仍在继续",
           "pinyin": "",
@@ -18745,7 +18745,7 @@
           "notes": []
         },
         {
-          "id": "vocab_053_col_004",
+          "id": "a3891ca5-2bcd-4949-96bd-6039b3d4c1bf",
           "order": 4,
           "zh": "仍有问题",
           "pinyin": "",
@@ -18756,7 +18756,7 @@
           "notes": []
         },
         {
-          "id": "vocab_053_col_005",
+          "id": "ff0d5934-4d38-4304-b380-f9ff139c0d1f",
           "order": 5,
           "zh": "仍然很热闹",
           "pinyin": "",
@@ -18769,7 +18769,7 @@
       ],
       "examples": [
         {
-          "id": "vocab_053_ex_001",
+          "id": "393cda5f-4493-4a57-83af-26857ec73df5",
           "order": 1,
           "zh": "联欢会结束以后，会场里仍然很热闹。",
           "pinyin": "Liánhuānhuì jiéshù yǐhòu, huìchǎng lǐ réngrán hěn rènao.",
@@ -18782,7 +18782,7 @@
             "grammar_17_ba_construction"
           ],
           "vocab_refs": [
-            "vocab_053"
+            "09cbec09-c944-4bed-9a39-ead94dad55e0"
           ],
           "source_ref": "current_thread",
           "level": "basic",
@@ -18791,7 +18791,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_053_ex_002",
+          "id": "df07057a-d639-4114-8e5e-2c4d47d02291",
           "order": 2,
           "zh": "大家把彩灯摘下来了，可是门上的“福”字仍然贴着。",
           "pinyin": "Dàjiā bǎ cǎidēng zhāi xiàlai le, kěshì mén shang de “Fú” zì réngrán tiēzhe.",
@@ -18804,7 +18804,7 @@
             "grammar_17_ba_construction"
           ],
           "vocab_refs": [
-            "vocab_053"
+            "09cbec09-c944-4bed-9a39-ead94dad55e0"
           ],
           "source_ref": "current_thread",
           "level": "expanded",
@@ -18813,7 +18813,7 @@
           "check_needed": false
         },
         {
-          "id": "vocab_053_ex_003",
+          "id": "01cdd80d-4200-4f7a-be1e-fabf072311a9",
           "order": 3,
           "zh": "虽然搬进了现代化小区，爷爷仍然舍不得以前的四合院。",
           "pinyin": "Suīrán bān jìn le xiàndàihuà xiǎoqū, yéye réngrán shěbude yǐqián de sìhéyuàn.",
@@ -18826,7 +18826,7 @@
             "grammar_17_ba_construction"
           ],
           "vocab_refs": [
-            "vocab_053"
+            "09cbec09-c944-4bed-9a39-ead94dad55e0"
           ],
           "source_ref": "current_thread",
           "level": "complex",
@@ -18849,7 +18849,7 @@
       },
       "warnings": [
         {
-          "id": "vocab_053_warning_001",
+          "id": "ac3015c1-78ae-4999-9454-75b047bf157c",
           "order": 1,
           "rule_vi": "Lỗi sai phổ biến: Dùng 仍 như “nhưng” trong tiếng Việt. Không đúng: 我很忙，仍我会去。 Đúng: 我很忙，但是我还是会去。 Wǒ hěn máng, dànshì wǒ háishi huì qù. Tôi rất bận, nhưng tôi vẫn sẽ đi. Với nghĩa “vẫn”: 他仍然在会场里。 Tā réngrán zài huìchǎng lǐ. Anh ấy vẫn ở trong hội trường.",
           "natural_examples": [],
