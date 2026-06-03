@@ -1,6 +1,6 @@
 "use client";
 
-import { Bookmark } from "lucide-react";
+import { Bookmark, Lightbulb, Sigma } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
@@ -50,11 +50,13 @@ export function GrammarPointReader({
   point.notes.length > 0;
 
  return (
-  <Card padding="lg" className="rounded-xl">
-   <article className="flex flex-col gap-3">
+  <Card padding="lg" className="rounded-xl border-border-default bg-bg-primary">
+   <article className="flex flex-col gap-4">
     <div className="flex flex-wrap items-start justify-between gap-3">
-     <div className="min-w-0">
-      <Badge variant="info">{status}</Badge>
+     <div className="grid min-w-0 gap-1">
+      <Badge variant="info" className="w-fit">
+       {status}
+      </Badge>
       <h2 className="text-2xl font-black tracking-normal text-text-primary">
        {point.cleanTitle}
       </h2>
@@ -116,32 +118,42 @@ export function StructuredGrammarContent({
  return (
   <div className="grid gap-4">
    {point.core && (
-    <section className="rounded-2xl border border-accent/25 bg-accent-subtle/60 p-4 shadow-theme-sm">
-     <p className="text-xs font-black uppercase tracking-[0.18em] text-accent-text">
-      Ý nghĩa cốt lõi
-     </p>
-     <p className="mt-2 text-base font-bold leading-relaxed text-text-primary">
-      {point.core}
+    <section className="rounded-xl border border-primary/20 bg-primary/8 p-4 shadow-theme-sm">
+     <div className="flex items-center gap-2">
+      <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-bg-primary text-primary">
+       <Lightbulb className="h-4 w-4" />
+      </span>
+      <p className="text-xs font-black uppercase tracking-[0.18em] text-primary">
+       Ý nghĩa cần nhớ
+      </p>
+     </div>
+     <p className="mt-3 text-base font-bold leading-relaxed text-text-primary sm:text-lg">
+      {cleanGrammarDisplayLine(point.core)}
      </p>
     </section>
    )}
 
    {point.structuresView.length > 0 && (
-    <section className="grid gap-2 rounded-2xl border border-info/30 bg-info-subtle/45 p-4">
-     <div>
+    <section className="grid gap-3 rounded-xl border border-info/30 bg-info-subtle/45 p-4">
+     <div className="flex items-center gap-2">
+      <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-bg-primary text-info-text">
+       <Sigma className="h-4 w-4" />
+      </span>
+      <div>
       <p className="text-xs font-black uppercase tracking-[0.18em] text-info-text">
        Công thức
       </p>
-      <h3 className="text-lg font-black text-text-primary">
+      <h3 className="text-base font-black text-text-primary">
        Mẫu cần nhớ
       </h3>
+      </div>
      </div>
      {point.structuresView.map((structure) => (
       <p
        key={structure}
-       className="rounded-xl border border-info/40 bg-bg-primary px-4 py-3 font-mono text-base font-black leading-relaxed text-info-text shadow-theme-sm"
+       className="rounded-xl border border-info/40 bg-bg-primary px-4 py-3 font-mono text-base font-black leading-relaxed text-info-text shadow-theme-sm sm:text-lg"
       >
-       {structure}
+       {cleanGrammarDisplayLine(structure)}
       </p>
      ))}
     </section>
@@ -162,9 +174,9 @@ export function StructuredGrammarContent({
      {examples.map((example) => (
       <div
        key={`${example.zh}-${example.vi}`}
-       className="rounded-xl border border-border-subtle bg-bg-subtle p-3"
+       className="rounded-xl border border-border-subtle bg-bg-subtle p-3 sm:p-4"
       >
-       <p className="text-base font-black leading-relaxed text-text-primary">
+       <p className="text-lg font-black leading-relaxed text-text-primary">
         {example.zh}
        </p>
        {example.pinyin && (
@@ -209,8 +221,10 @@ function GrammarDetailSectionCard({
  const bodyLines = section.lines.filter((line) => !isImportantGrammarLine(line));
 
  return (
-  <div className="grid gap-3 rounded-xl border border-border-default bg-bg-subtle p-3">
-   <h4 className="text-sm font-black text-text-primary">{section.title}</h4>
+  <div className="grid gap-3 rounded-xl border border-border-default bg-bg-subtle p-3 sm:p-4">
+   <h4 className="text-base font-black text-text-primary">
+    {cleanGrammarDisplayLine(section.title)}
+   </h4>
 
    {importantLines.length > 0 && (
     <div className="grid gap-2">
@@ -227,8 +241,8 @@ function GrammarDetailSectionCard({
           {parts.label}
          </p>
         )}
-        <p className="mt-1 font-mono text-sm font-black leading-relaxed text-text-primary">
-         {parts.value}
+        <p className="mt-1 font-mono text-sm font-black leading-relaxed text-text-primary sm:text-base">
+         {cleanGrammarDisplayLine(parts.value)}
         </p>
        </div>
       );
@@ -237,10 +251,23 @@ function GrammarDetailSectionCard({
    )}
 
    {bodyLines.length > 0 && (
-    <MarkdownContent content={bodyLines.join("\n")} className="gap-2" />
+    <MarkdownContent
+     content={bodyLines.map(cleanGrammarDisplayLine).join("\n")}
+     className="gap-2"
+    />
    )}
   </div>
  );
+}
+
+function cleanGrammarDisplayLine(value: string) {
+ return value
+  .replace(/^#{1,6}\s*/g, "")
+  .replace(/\*\*([^*\n]+)\*\*/g, "$1")
+  .replace(/__([^_\n]+)__/g, "$1")
+  .replace(/`([^`\n]+)`/g, "$1")
+  .replace(/^[-*]\s*(?=(cấu trúc|công thức|pattern|mẫu câu|句型|结构|格式)\s*[:：])/i, "")
+  .trim();
 }
 
 function normalizeGrammarText(value: string) {

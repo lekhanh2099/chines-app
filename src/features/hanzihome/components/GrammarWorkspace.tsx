@@ -10,7 +10,6 @@ import {
  GrammarPointReader,
  StructuredGrammarContent,
 } from "@/features/hanzihome/components/GrammarPointReader";
-import { GrammarPracticeMini } from "@/features/hanzihome/components/GrammarPracticeMini";
 import { MarkdownContent } from "@/features/hanzihome/components/MarkdownContent";
 import type {
  GrammarViewModel,
@@ -145,7 +144,7 @@ export function GrammarWorkspace({
  const [selectedPointId, setSelectedPointId] = useState<string | null>(
   lesson.grammar[0]?.id || null,
  );
- const [isGrammarSidebarOpen, setIsGrammarSidebarOpen] = useState(true);
+ const [isGrammarSidebarOpen, setIsGrammarSidebarOpen] = useState(false);
  const [isGrammarSidebarSheetOpen, setIsGrammarSidebarSheetOpen] =
   useState(false);
 
@@ -220,10 +219,6 @@ export function GrammarWorkspace({
     allPointId={ALL_GRAMMAR_POINTS_ID}
    />
 
-   {!isAllView && !isReadingView && (
-    <GrammarPracticeMini point={selectedPoint} />
-   )}
-
    {reading && (
     <GrammarReadingSidebarCard
      reading={reading}
@@ -257,60 +252,61 @@ export function GrammarWorkspace({
 
  return (
   <div className="grid gap-3">
-   <div className="sticky top-0 z-20 flex flex-wrap items-center justify-between gap-2 rounded-xl border border-border-default bg-bg-primary/95 p-2 shadow-theme-sm backdrop-blur">
-    <div className="min-w-0">
-     <p className="text-xs font-black uppercase tracking-wide text-text-muted">
-      Ngữ pháp bài này
-     </p>
-     <p className="truncate text-sm font-bold text-text-secondary">
-      {lesson.grammar.length} điểm · {isAllView ? "Xem toàn bộ" : isReadingView ? "Bài đọc áp dụng" : selectedPoint?.cleanTitle || "Chọn điểm ngữ pháp"}
-     </p>
-    </div>
-
-    <div className="flex flex-wrap items-center gap-2">
-     <Button
-      type="button"
-      variant="outline"
-      size="sm"
-      className="lg:hidden"
-      onClick={() => setIsGrammarSidebarSheetOpen(true)}
-     >
-      <PanelLeftOpen className="h-4 w-4" />
-      Điểm ngữ pháp
-     </Button>
-
-     <Button
-      type="button"
-      variant="outline"
-      size="sm"
-      className="hidden lg:inline-flex"
-      onClick={() => setIsGrammarSidebarOpen((current) => !current)}
-     >
-      {isGrammarSidebarOpen ? (
-       <PanelLeftClose className="h-4 w-4" />
-      ) : (
-       <PanelLeftOpen className="h-4 w-4" />
-      )}
-      {isGrammarSidebarOpen ? "Ẩn danh sách" : "Điểm ngữ pháp"}
-     </Button>
-    </div>
-   </div>
-
    <div
     className={[
      "grid min-w-0 gap-3",
      isGrammarSidebarOpen
-      ? "lg:grid-cols-[minmax(20rem,23.75rem)_minmax(0,1fr)]"
+      ? "lg:grid-cols-[minmax(17rem,21rem)_minmax(0,1fr)]"
       : "lg:grid-cols-1",
     ].join(" ")}
    >
     {isGrammarSidebarOpen && (
      <aside className="hidden min-w-0 lg:block lg:sticky lg:top-20 lg:self-start">
+      <div className="mb-2 flex justify-end">
+       <Button
+        type="button"
+        variant="outline"
+        size="sm"
+        className="h-8 px-2.5 text-xs"
+        onClick={() => setIsGrammarSidebarOpen(false)}
+       >
+        <PanelLeftClose className="h-4 w-4" />
+        Ẩn
+       </Button>
+      </div>
       {renderGrammarSidebar()}
      </aside>
     )}
 
-    <div className="min-w-0">{readerContent}</div>
+    <div className="min-w-0">
+     <div className="mb-2 flex flex-wrap items-center gap-2">
+      <Button
+       type="button"
+       variant="outline"
+       size="sm"
+       className="h-8 px-2.5 text-xs lg:hidden"
+       onClick={() => setIsGrammarSidebarSheetOpen(true)}
+      >
+       <PanelLeftOpen className="h-4 w-4" />
+       Điểm ngữ pháp
+      </Button>
+
+      {!isGrammarSidebarOpen && (
+       <Button
+        type="button"
+        variant="outline"
+        size="sm"
+        className="hidden h-8 px-2.5 text-xs lg:inline-flex"
+        onClick={() => setIsGrammarSidebarOpen(true)}
+       >
+        <PanelLeftOpen className="h-4 w-4" />
+        {lesson.grammar.length} điểm
+       </Button>
+      )}
+     </div>
+
+     {readerContent}
+    </div>
    </div>
 
    <Sheet

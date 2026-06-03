@@ -80,6 +80,10 @@ function getRank(status: LearningStatus) {
   return rankByStatus[status];
 }
 
+function getItemRank(item: ReviewItem) {
+  return getRank(item.status);
+}
+
 export function useVocabReviewSession(input: {
   vocab: HanziHomeVocabItem[];
   grammar: GrammarViewModel[];
@@ -126,7 +130,13 @@ export function useVocabReviewSession(input: {
         if (input.mode === "hard") return item.status === "hard";
         return true;
       })
-      .sort((a, b) => getRank(a.status) - getRank(b.status));
+      .map((item, index) => ({ item, index }))
+      .sort((a, b) => {
+        if (input.mode !== "hard") return a.index - b.index;
+
+        return getItemRank(a.item) - getItemRank(b.item) || a.index - b.index;
+      })
+      .map(({ item }) => item);
   }, [
     input.grammar,
     input.grammarProgress,

@@ -51,7 +51,7 @@ export function SegmentedControl<T extends string>({
  return (
   <div
    className={cn(
-    "no-scrollbar flex w-full max-w-full min-w-0 items-center gap-1 overflow-x-auto overscroll-x-contain rounded-xl bg-bg-subtle p-1 mb-2",
+    "no-scrollbar flex w-full max-w-full min-w-0 items-center gap-1 overflow-x-auto overscroll-x-contain rounded-lg bg-bg-subtle/70 p-0.5",
     className,
    )}
   >
@@ -77,7 +77,7 @@ export function SegmentedControl<T extends string>({
          data-active={active ? "true" : "false"}
          onClick={() => onChange(item.key)}
          className={cn(
-          "flex h-10 shrink-0 items-center gap-2 whitespace-nowrap rounded-lg px-3 text-sm font-black transition-colors disabled:cursor-not-allowed disabled:opacity-50",
+          "flex h-9 shrink-0 items-center gap-2 whitespace-nowrap rounded-md px-2.5 text-sm font-semibold transition-colors disabled:cursor-not-allowed disabled:opacity-50",
           active
            ? "bg-bg-primary text-text-primary shadow-theme-sm"
            : "text-text-muted hover:bg-bg-primary hover:text-text-primary",

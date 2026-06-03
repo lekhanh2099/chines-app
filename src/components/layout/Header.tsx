@@ -92,17 +92,17 @@ export function Header({ user }: { user?: User | null }) {
  };
 
  return (
-  <header className="z-10 flex h-16 w-full max-w-full min-w-0 shrink-0 items-center justify-between gap-2 overflow-x-hidden scrollbar-soft border-b border-border-default bg-bg-card px-3 sm:gap-4 sm:px-5 md:h-[76px] lg:px-8">
+  <header className="z-10 flex min-h-14 w-full max-w-full min-w-0 shrink-0 items-center justify-between gap-2 overflow-x-hidden scrollbar-soft border-b border-border-default bg-background/95 px-3 py-2 backdrop-blur sm:gap-3 sm:px-5 lg:px-7">
    {hanzihomeBreadcrumb && (
     <nav
      aria-label="Chuyển nhanh bài HanziHome"
-     className="hidden min-w-0 max-w-xl shrink-0 items-center gap-1 text-sm font-bold text-text-secondary lg:flex"
+     className="hidden min-w-0 max-w-[42rem] shrink-0 items-center gap-1 text-sm font-semibold text-text-secondary lg:flex"
     >
-     <span className="rounded-lg px-2 py-1 text-text-primary">HanziHome</span>
-     <ChevronRight className="h-4 w-4 shrink-0 text-text-muted" />
+     <span className="px-1.5 text-text-primary">HanziHome</span>
+     <ChevronRight className="h-3.5 w-3.5 shrink-0 text-text-muted" />
      <Select
-     value={hanzihomeBreadcrumb.selectedCourse.id}
-     onValueChange={(courseId) => {
+      value={hanzihomeBreadcrumb.selectedCourse.id}
+      onValueChange={(courseId) => {
        const course = hanzihomeBreadcrumb.courses.find(
         (item) => item.id === courseId,
        );
@@ -113,7 +113,7 @@ export function Header({ user }: { user?: User | null }) {
      >
       <SelectTrigger
        size="sm"
-       className="max-w-52 border-border-default bg-bg-input text-text-primary"
+       className="h-8 max-w-56 border-border-default bg-bg-card px-2.5 text-sm font-semibold text-text-primary shadow-none"
       >
        <SelectValue />
       </SelectTrigger>
@@ -125,7 +125,7 @@ export function Header({ user }: { user?: User | null }) {
        ))}
       </SelectContent>
      </Select>
-     <ChevronRight className="h-4 w-4 shrink-0 text-text-muted" />
+     <ChevronRight className="h-3.5 w-3.5 shrink-0 text-text-muted" />
      <Select
       value={hanzihomeBreadcrumb.selectedLesson.id}
       onValueChange={(lessonId) => {
@@ -134,7 +134,7 @@ export function Header({ user }: { user?: User | null }) {
      >
       <SelectTrigger
        size="sm"
-       className="max-w-64 border-border-default bg-bg-input text-text-primary"
+       className="h-8 max-w-64 border-border-default bg-bg-card px-2.5 text-sm font-semibold text-text-primary shadow-none"
       >
        <SelectValue />
       </SelectTrigger>
@@ -149,29 +149,42 @@ export function Header({ user }: { user?: User | null }) {
     </nav>
    )}
 
-   <form onSubmit={handleSearch} className="relative min-w-0 max-w-md flex-1">
-    <Search className="absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 text-text-muted" />
+   <form
+    onSubmit={handleSearch}
+    className="relative min-w-0 flex-1 lg:max-w-[34rem]"
+   >
+    <Search className="absolute left-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-text-muted" />
     <input
      ref={inputRef}
      value={searchValue}
      onChange={(event) => setSearchValue(event.target.value)}
      placeholder="Từ điển"
-     className="h-11 w-full rounded-xl border border-border-default bg-bg-input pl-11 pr-3 text-sm font-bold text-text-primary outline-none transition focus:border-ring focus:ring-4 focus:ring-ring/20 sm:h-12 sm:pl-12 sm:pr-4 sm:text-base"
+     className="h-10 w-full rounded-lg border border-border-default bg-bg-card pl-10 pr-3 text-sm font-medium text-text-primary outline-none transition focus:border-ring focus:ring-3 focus:ring-ring/20 sm:pr-4"
     />
    </form>
 
-   <div className="flex min-w-0 shrink-0 items-center gap-1.5 sm:gap-2 lg:gap-3">
+   <div className="flex min-w-0 shrink-0 items-center gap-1.5 sm:gap-2">
     <Button
      type="button"
      onClick={() => toggleLookup(pathname)}
      variant={lookupEnabled ? "default" : "outline"}
+     size="lg"
+     className="h-9 px-2.5"
      title="Bật/Tắt tra từ tự động"
     >
      <BookOpenCheck className="h-5 w-5" />
-     {lookupEnabled ? "Tra từ bật" : "Tra từ tắt"}
+     <span className="hidden sm:inline">
+      {lookupEnabled ? "Tra từ bật" : "Tra từ tắt"}
+     </span>
     </Button>
 
-    <Button type="button" onClick={toggleTheme} aria-label="Toggle theme">
+    <Button
+     type="button"
+     onClick={toggleTheme}
+     aria-label="Toggle theme"
+     size="icon-lg"
+     className="h-9 w-9"
+    >
      {theme === "light" ? (
       <Moon className="h-5 w-5" />
      ) : (
@@ -179,13 +192,13 @@ export function Header({ user }: { user?: User | null }) {
      )}
     </Button>
 
-    <div className="hidden h-11 items-center gap-2 rounded-xl px-3 text-sm font-black text-text-secondary lg:flex">
+    <div className="hidden h-9 items-center gap-2 rounded-lg px-2.5 text-sm font-bold text-text-secondary lg:flex">
      <span className="text-lg">🇻🇳</span>
      Tiếng Việt
     </div>
 
     <div className="hidden min-w-0 items-center gap-2 pl-1 xl:flex">
-     <div className="flex h-10 w-10 items-center justify-center rounded-full bg-accent-subtle text-sm font-black text-accent-text">
+     <div className="flex h-9 w-9 items-center justify-center rounded-full bg-accent-subtle text-sm font-bold text-accent-text">
       {(user?.user_metadata?.display_name || user?.email || "B")
        .slice(0, 1)
        .toUpperCase()}

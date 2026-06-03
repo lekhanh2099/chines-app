@@ -102,14 +102,14 @@ function NavRow({
    href={item.href}
    title={collapsed ? item.name : undefined}
    className={cn(
-    "group flex h-12 items-center gap-3 rounded-xl border-2 text-[15px] font-black transition-all",
-    collapsed ? "w-12 justify-center px-0" : "px-4",
+    "group flex h-10 items-center gap-3 rounded-lg border text-sm font-semibold transition-colors",
+    collapsed ? "w-10 justify-center px-0" : "px-3",
     active
-     ? "border-primary/30 bg-accent-subtle text-accent-text shadow-theme-sm"
-     : "border-transparent text-text-muted hover:border-border-hover hover:bg-bg-subtle hover:text-text-primary",
+     ? "border-primary/20 bg-accent-subtle/80 text-accent-text"
+     : "border-transparent text-text-muted hover:bg-bg-subtle hover:text-text-primary",
    )}
   >
-   <Icon className="h-5 w-5 shrink-0" />
+   <Icon className={cn("h-4 w-4 shrink-0", active && "text-accent-text")} />
    {!collapsed && <span className="min-w-0 flex-1 truncate">{item.name}</span>}
    {!collapsed && item.badge && (
     <span className="rounded-full bg-primary px-2 py-0.5 text-[11px] font-black text-primary-foreground">
@@ -127,6 +127,7 @@ export function Sidebar() {
  const isCollapsed = useSidebarStore((s) => s.isCollapsed);
  const toggleSidebar = useSidebarStore((s) => s.toggle);
  const hydrateSidebar = useSidebarStore((s) => s.hydrate);
+ const isHanziHome = pathname === "/hanzihome";
 
  useEffect(() => {
   hydrateSidebar();
@@ -147,27 +148,32 @@ export function Sidebar() {
   <>
    <aside
     className={cn(
-     "hidden h-full shrink-0 flex-col border-r border-border-default bg-bg-card shadow-theme-sm transition-all duration-200 md:flex",
-     isCollapsed ? "w-21" : "w-73",
+     "hidden h-full shrink-0 flex-col border-r border-border-default bg-bg-card/95 transition-all duration-200 md:flex",
+     isCollapsed ? "w-16" : "w-64",
     )}
    >
     <div
      className={cn(
-      "flex h-19 items-center border-b border-border-default",
-      isCollapsed ? "justify-center px-3" : "px-5",
+      "flex h-14 items-center border-b border-border-default",
+      isCollapsed ? "justify-center px-3" : "px-4",
      )}
     >
      <Link href="/" className="flex min-w-0 items-center gap-3">
-      <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border-2 border-primary/30 bg-accent-subtle text-accent-text shadow-theme-sm">
-       <span className="text-2xl">汉</span>
+      <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-primary/25 bg-accent-subtle text-accent-text">
+       <span className="text-2xl leading-none">汉</span>
       </div>
+      {!isCollapsed && (
+       <span className="truncate text-sm font-black text-text-primary">
+        HanziHome
+       </span>
+      )}
      </Link>
     </div>
 
     <nav
      className={cn(
-      "flex flex-col gap-2 py-4",
-      isCollapsed ? "items-center px-3" : "px-4",
+      "flex flex-col gap-1.5 py-3",
+      isCollapsed ? "items-center px-3" : "px-3",
      )}
     >
      {mainItems.map((item) => (
@@ -208,13 +214,13 @@ export function Sidebar() {
 
     <div
      className={cn(
-      "grid gap-3 border-t border-border-default py-4",
+      "grid gap-2 border-t border-border-default py-3",
       isCollapsed ? "px-3" : "px-4",
      )}
     >
-     {!isCollapsed && (
-      <div className="rounded-xl border border-danger/20 bg-danger-subtle p-3 shadow-theme-sm">
-       <div className="flex items-center gap-2 text-sm font-black text-danger-text">
+     {!isCollapsed && !isHanziHome && (
+      <div className="rounded-lg border border-border-default bg-bg-subtle/70 p-3">
+       <div className="flex items-center gap-2 text-sm font-bold text-text-primary">
         <Flame className="h-4 w-4" />
         Học theo bài
        </div>
@@ -228,8 +234,8 @@ export function Sidebar() {
       type="button"
       onClick={handleLogout}
       className={cn(
-       "flex h-11 items-center gap-3 rounded-xl px-4 text-[15px] font-black text-danger transition-colors hover:bg-danger-subtle",
-       isCollapsed ? "w-12 justify-center px-0" : "w-full",
+       "flex h-10 items-center gap-3 rounded-lg px-3 text-sm font-semibold text-danger transition-colors hover:bg-danger-subtle",
+       isCollapsed ? "w-10 justify-center px-0" : "w-full",
       )}
       title={isCollapsed ? "Đăng xuất" : undefined}
      >
@@ -241,8 +247,8 @@ export function Sidebar() {
       type="button"
       onClick={toggleSidebar}
       className={cn(
-       "flex h-10 items-center justify-center gap-2 rounded-xl text-sm font-bold text-text-muted transition-colors hover:bg-bg-subtle",
-       isCollapsed ? "w-12" : "w-full",
+       "flex h-9 items-center justify-center gap-2 rounded-lg text-sm font-medium text-text-muted transition-colors hover:bg-bg-subtle",
+       isCollapsed ? "w-10" : "w-full",
       )}
      >
       {isCollapsed ? (

@@ -16,6 +16,7 @@ import {
 type VocabWorkspaceProps = {
  lesson: HanziHomeLesson;
  state: UserLearningState;
+ compact?: boolean;
  onBookmark: (id: string) => void;
  onMarkStatus: (id: string, status: LearningStatus) => void;
  onOpenReview?: () => void;
@@ -24,6 +25,7 @@ type VocabWorkspaceProps = {
 export function VocabWorkspace({
  lesson,
  state,
+ compact = false,
  onBookmark,
  onMarkStatus,
 }: VocabWorkspaceProps) {
@@ -120,6 +122,7 @@ export function VocabWorkspace({
     bookmarkedIds={bookmarks}
     searchValue={searchValue}
     statusFilter={statusFilter}
+    compact={compact}
     onSearchChange={setSearchValue}
     onStatusFilterChange={setStatusFilter}
     onSelectWord={setSelectedWordId}

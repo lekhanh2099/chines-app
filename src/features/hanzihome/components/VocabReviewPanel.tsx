@@ -1,7 +1,7 @@
 "use client";
 
 import { useCallback, useState } from "react";
-import { RotateCcw } from "lucide-react";
+import { BookOpen, GraduationCap, Lightbulb, RotateCcw, Sigma } from "lucide-react";
 
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -28,9 +28,7 @@ import type {
  ReviewResult,
  UserLearningState,
 } from "@/features/hanzihome/types";
-import {
- getVocabDisplayMeaning,
-} from "@/features/hanzihome/utils/vocab-item";
+import { getVocabDisplayMeaning } from "@/features/hanzihome/utils/vocab-item";
 
 type VocabReviewPanelProps = {
  lesson: HanziHomeLesson;
@@ -89,10 +87,10 @@ export function VocabReviewPanel({
  const { answer, reveal } = session;
 
  const writingCharacterCount =
- item?.type === "vocab" && session.state.revealed
+  item?.type === "vocab" && session.state.revealed
    ? Array.from(item.source.hanzi).filter((char) =>
-    /\p{Script=Han}/u.test(char),
-   ).length
+      /\p{Script=Han}/u.test(char),
+     ).length
    : 0;
 
  const handleAnswer = useCallback(
@@ -109,13 +107,13 @@ export function VocabReviewPanel({
   disabled: !item || session.state.completed || detailOpen,
   canOpenDetail: Boolean(item && session.state.revealed),
   writingCharacterCount,
- onReveal: reveal,
- onAnswer: handleAnswer,
+  onReveal: reveal,
+  onAnswer: handleAnswer,
   onPrevious: session.previous,
   onNext: session.next,
- onOpenDetail: () => setDetailOpen(true),
- onSelectWritingCharacter: setSelectedWritingIndex,
-});
+  onOpenDetail: () => setDetailOpen(true),
+  onSelectWritingCharacter: setSelectedWritingIndex,
+ });
 
  const resetWithMode = (nextMode: ReviewDeckMode) => {
   setMode(nextMode);
@@ -169,14 +167,19 @@ export function VocabReviewPanel({
      <div className="grid gap-2 rounded-xl bg-bg-subtle p-4">
       <h2 className="text-2xl font-black text-text-primary">Đã hết lượt ôn</h2>
       <p className="text-sm font-semibold text-text-muted">
-       Bạn đã đi qua toàn bộ flashcard trong deck này.
+       Bạn đã đi qua toàn bộ thẻ ôn trong deck này.
       </p>
      </div>
 
-     <Button onClick={session.reset} className="justify-self-center">
-      <RotateCcw className="h-4 w-4" />
-      Ôn lại
-     </Button>
+     <div className="flex flex-wrap justify-center gap-2">
+      <Button type="button" variant="outline" onClick={session.previous}>
+       Trở lại thẻ cuối
+      </Button>
+      <Button onClick={session.reset}>
+       <RotateCcw className="h-4 w-4" />
+       Ôn lại
+      </Button>
+     </div>
     </div>
    </Card>
   );
@@ -221,7 +224,7 @@ export function VocabReviewPanel({
      </div>
     </div>
 
-    <FlashCard
+    <StudyReviewCard
      item={item}
      revealed={session.state.revealed}
      onReveal={session.reveal}
@@ -255,7 +258,7 @@ export function VocabReviewPanel({
       Học lại
      </Button>
      <Button variant="outline" onClick={() => handleAnswer("hard")}>
-     Còn khó
+      Còn khó
      </Button>
      <Button onClick={() => handleAnswer("known")}>Đã biết</Button>
      <Button type="button" variant="outline" onClick={session.next}>
@@ -263,13 +266,9 @@ export function VocabReviewPanel({
      </Button>
     </div>
 
-    <div className="flex flex-wrap justify-center gap-2 text-xs font-bold text-text-muted">
-     <span>Space/Enter lật thẻ</span>
-     <span>D chi tiết</span>
-     <span>P/N trước/tiếp</span>
-     <span>←/↓/→ chấm điểm</span>
-     <span>Mobile: vuốt trái/phải/lên</span>
-    </div>
+    <p className="text-center text-xs font-bold text-text-muted">
+     Space mở đáp án · P/N trước/tiếp · D xem chi tiết
+    </p>
    </div>
   </Card>
  );
@@ -292,7 +291,7 @@ function ReviewHeader({
   <div className="flex flex-wrap items-end justify-between gap-3">
    <div>
     <p className="text-xs font-black uppercase tracking-[0.18em] text-text-muted">
-     Flashcards
+     Ôn tập
     </p>
     <h2 className="text-2xl font-black text-text-primary">{title}</h2>
     {description && (
@@ -318,7 +317,7 @@ function ReviewHeader({
  );
 }
 
-function FlashCard({
+function StudyReviewCard({
  item,
  revealed,
  onReveal,
@@ -335,6 +334,8 @@ function FlashCard({
  onSelectedWritingIndexChange: (index: number) => void;
  touchHandlers: ReturnType<typeof useFlashcardControls>;
 }) {
+ const isGrammar = item.type === "grammar";
+
  return (
   <div
    role="button"
@@ -345,25 +346,14 @@ function FlashCard({
    className="grid min-h-80 w-full touch-pan-y select-none place-items-center rounded-xl border border-border-default bg-bg-primary p-3 text-center shadow-theme-sm transition-colors hover:border-accent-muted sm:p-4"
   >
    <div className="grid w-full max-w-3xl gap-3">
-    <div className="grid gap-3">
-     <p className="text-xs font-black uppercase tracking-[0.18em] text-text-muted">
-      Mặt trước
-     </p>
-
-     <h3
-      className={
-       item.type === "vocab"
-        ? "font-hanzi-display text-6xl font-black tracking-normal text-text-primary"
-        : "text-3xl font-black tracking-tight text-text-primary"
-      }
-      lang={item.type === "vocab" ? "zh-CN" : "vi"}
-     >
-      {item.prompt}
-     </h3>
-    </div>
+    {isGrammar ? (
+     <GrammarReviewFront item={item} />
+    ) : (
+     <VocabReviewFront item={item} />
+    )}
 
     {revealed ? (
-     <FlashCardBack
+     <StudyReviewBack
       item={item}
       onOpenDetail={onOpenDetail}
       selectedWritingIndex={selectedWritingIndex}
@@ -371,7 +361,9 @@ function FlashCard({
      />
     ) : (
      <p className="rounded-xl bg-bg-subtle p-4 text-sm font-bold text-text-muted">
-      Bấm vào thẻ hoặc nhấn Space để lật đáp án.
+      {isGrammar
+       ? "Tự nhớ ý nghĩa, công thức và ví dụ trước khi mở đáp án."
+       : "Bấm vào thẻ hoặc nhấn Space để lật đáp án."}
      </p>
     )}
    </div>
@@ -379,7 +371,58 @@ function FlashCard({
  );
 }
 
-function FlashCardBack({
+function VocabReviewFront({ item }: { item: Extract<ReviewItem, { type: "vocab" }> }) {
+ return (
+  <div className="grid gap-3">
+   <div className="mx-auto flex h-10 w-10 items-center justify-center rounded-xl bg-accent-subtle text-accent-text">
+    <BookOpen className="h-5 w-5" />
+   </div>
+   <p className="text-xs font-black uppercase tracking-[0.18em] text-text-muted">
+    Nhớ nghĩa và cách dùng
+   </p>
+   <h3
+    className="text-6xl font-black tracking-normal text-text-primary"
+    lang="zh-CN"
+   >
+    {item.prompt}
+   </h3>
+  </div>
+ );
+}
+
+function GrammarReviewFront({
+ item,
+}: {
+ item: Extract<ReviewItem, { type: "grammar" }>;
+}) {
+ return (
+  <div className="grid gap-4 text-left">
+   <div className="mx-auto flex h-10 w-10 items-center justify-center rounded-xl bg-info-subtle text-info-text">
+    <GraduationCap className="h-5 w-5" />
+   </div>
+   <div className="text-center">
+    <p className="text-xs font-black uppercase tracking-[0.18em] text-text-muted">
+     Nhận diện ngữ pháp
+    </p>
+    <h3 className="mt-2 text-3xl font-black tracking-tight text-text-primary">
+     {item.prompt}
+    </h3>
+   </div>
+   <div className="grid gap-2 rounded-xl border border-border-default bg-bg-subtle p-4">
+    <p className="text-sm font-black text-text-primary">
+     Trước khi mở đáp án, tự trả lời:
+    </p>
+    <ul className="grid gap-1 text-sm font-semibold leading-relaxed text-text-secondary">
+     <li>Ý nghĩa cốt lõi là gì?</li>
+     <li>Công thức / pattern chính là gì?</li>
+     <li>Dùng trong câu ví dụ nào?</li>
+    </ul>
+   </div>
+  </div>
+ );
+}
+
+function StudyReviewBack({
  item,
  onOpenDetail,
  selectedWritingIndex,
@@ -415,7 +458,7 @@ function FlashCardBack({
       onClick={(event) => {
        event.stopPropagation();
        onOpenDetail();
-     }}
+      }}
      >
       Xem chi tiết
       <kbd className="ml-2 rounded bg-bg-subtle px-1.5 py-0.5 text-[0.65rem] font-black text-text-muted">
@@ -448,9 +491,7 @@ function FlashCardBack({
       )}
 
       {example.vi && (
-       <p className="text-sm font-semibold text-text-secondary">
-        {example.vi}
-       </p>
+       <p className="text-sm font-semibold text-text-secondary">{example.vi}</p>
       )}
      </div>
     )}
@@ -463,9 +504,19 @@ function FlashCardBack({
  return (
   <div className="grid gap-3 rounded-xl border border-border-default bg-bg-subtle p-3 text-left sm:p-4">
    <div className="flex flex-wrap items-start justify-between gap-3">
-    <p className="min-w-0 flex-1 text-base font-semibold leading-relaxed text-text-secondary">
-     {item.source.core}
-    </p>
+    <div className="grid min-w-0 flex-1 gap-2">
+     <div className="rounded-xl border border-primary/20 bg-primary/8 p-3">
+      <div className="flex items-center gap-2">
+       <Lightbulb className="h-4 w-4 text-primary" />
+       <p className="text-xs font-black uppercase tracking-wide text-primary">
+        Ý nghĩa
+       </p>
+      </div>
+      <p className="mt-2 text-base font-bold leading-relaxed text-text-primary">
+       {item.source.core || item.answer}
+      </p>
+     </div>
+    </div>
 
     <Button
      type="button"
@@ -486,9 +537,17 @@ function FlashCardBack({
    </div>
 
    {item.source.structuresView[0] && (
-    <p className="rounded-xl border border-info/30 bg-info-subtle p-3 text-base font-black text-info-text">
-     {item.source.structuresView[0]}
-    </p>
+    <div className="rounded-xl border border-info/30 bg-info-subtle p-3">
+     <div className="flex items-center gap-2">
+      <Sigma className="h-4 w-4 text-info-text" />
+      <p className="text-xs font-black uppercase tracking-wide text-info-text">
+       Công thức
+      </p>
+     </div>
+     <p className="mt-2 font-mono text-base font-black text-info-text">
+      {item.source.structuresView[0]}
+     </p>
+    </div>
    )}
 
    {example && (
@@ -501,9 +560,7 @@ function FlashCardBack({
      </p>
 
      {example.vi && (
-      <p className="text-sm font-semibold text-text-secondary">
-       {example.vi}
-      </p>
+      <p className="text-sm font-semibold text-text-secondary">{example.vi}</p>
      )}
     </div>
    )}
