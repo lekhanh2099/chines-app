@@ -29,6 +29,17 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: "Popular Xingkai";
+  src: url("/fonts/STXingkai.ttf") format("truetype");
+  font-display: swap;
+}
+
+.font-popular-xingkai {
+  font-family: "Popular Xingkai", "FZ Kai Pinyin", "Mengshen Han Serif",
+    "Hanzi Songti", serif;
+}
+
 /* =============================================
    THEME SYSTEM — CSS Custom Property Tokens
    ============================================= */

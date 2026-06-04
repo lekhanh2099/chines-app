@@ -22,12 +22,16 @@ export function VocabDetailHeader({
  return (
   <div className="grid grid-cols-1 items-start gap-4 xl:grid-cols-[minmax(0,1fr)_minmax(0,46rem)]">
    <div className="min-w-0">
-    <div className="flex flex-wrap items-end gap-3">
-     <h2 className="text-6xl font-black leading-none tracking-normal text-text-primary">
-      {word.hanzi}
-     </h2>
+    <div className="grid gap-3 lg:grid-cols-[minmax(0,1fr)_minmax(10rem,14rem)] lg:items-end">
+     <div className="min-w-0">
+      <div className="flex flex-wrap items-end gap-3">
+       <h2 className="text-6xl leading-none tracking-normal text-text-primary">
+        <PopularFontPreview word={word.hanzi} />
+       </h2>
 
-     <p className="text-xl font-black text-accent-text">{word.pinyin}</p>
+       <p className="text-xl font-black text-accent-text">{word.pinyin}</p>
+      </div>
+     </div>
     </div>
 
     <div className="mt-2 flex flex-wrap items-center gap-1.5">
@@ -70,5 +74,13 @@ export function VocabDetailHeader({
     </div>
    </div>
   </div>
+ );
+}
+
+function PopularFontPreview({ word }: { word: string }) {
+ return (
+  <p className="font-popular-xingkai mt-1 truncate text-8xl leading-none text-text-primary">
+   {word}
+  </p>
  );
 }
