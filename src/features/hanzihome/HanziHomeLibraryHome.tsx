@@ -12,6 +12,7 @@ import type {
  HanziHomeCatalogCourse,
  HanziHomeCourseBook,
 } from "@/features/hanzihome/types";
+import { buildHanziHomeLessonHref } from "@/features/hanzihome/utils/lesson-route";
 import Select from "@/components/ui/select/index";
 import { IOption } from "@/types/option";
 
@@ -89,23 +90,25 @@ function CourseCard({
  const primaryBook = stats.books[0];
  const courseLessons = useHanziHomeCourseLessons(course.id);
  const [selectedLessonId, setSelectedLessonId] = useState(
-  stats.fallbackLessonId ?? "",
+ stats.fallbackLessonId ?? "",
  );
- const effectiveLessonId = useMemo(() => {
+ const effectiveLesson = useMemo(() => {
   const selectedExists = courseLessons.some(
    (lesson) => lesson.id === selectedLessonId,
   );
-
-  return (
+  const effectiveLessonId =
    (selectedExists ? selectedLessonId : null) ||
    stats.fallbackLessonId ||
    courseLessons[0]?.id ||
-   ""
-  );
+   "";
+
+  return courseLessons.find((lesson) => lesson.id === effectiveLessonId) ?? null;
  }, [courseLessons, selectedLessonId, stats.fallbackLessonId]);
- const href = effectiveLessonId
-  ? `/hanzihome?courseId=${course.id}&lessonId=${effectiveLessonId}`
-  : `/hanzihome?courseId=${course.id}`;
+ const effectiveLessonId = effectiveLesson?.id ?? "";
+ const href = buildHanziHomeLessonHref({
+  courseId: course.id,
+  lessonNumber: effectiveLesson?.lessonNumber,
+ });
  const visibleLessonCount = courseLessons.length || stats.lessonCount;
  const visibleVocabCount =
   courseLessons.length > 0

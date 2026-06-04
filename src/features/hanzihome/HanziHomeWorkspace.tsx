@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo } from "react";
+import { useEffect, useMemo } from "react";
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
 
@@ -24,6 +24,10 @@ import {
  getHanziHomeCourseLessonSummaries,
  getHanziHomeLessonDetail,
 } from "@/features/hanzihome/static-data";
+import {
+ findLessonByRouteParam,
+ getLessonRouteValue,
+} from "@/features/hanzihome/utils/lesson-route";
 import type {
  HanziHomeModule,
  LearningStatus,
@@ -88,26 +92,43 @@ export function HanziHomeWorkspace() {
   [lessons, courseCatalog.courses, selectedCourseId],
  );
 
- const lessonIdFromUrl = searchParams.get("lessonId");
+ const lessonNumberFromUrl = searchParams.get("lesson");
+ const legacyLessonIdFromUrl = searchParams.get("lessonId");
  const lastLessonId = learning.state.settings.lastLessonId;
- const lessonIdFromUrlInCourse = courseLessons.some(
-  (item) => item.id === lessonIdFromUrl,
+ const lessonFromUrl = findLessonByRouteParam(
+  courseLessons,
+  lessonNumberFromUrl,
+  legacyLessonIdFromUrl,
  );
- const lastLessonIdInCourse = courseLessons.some(
+ const lessonFromLastState = courseLessons.find(
   (item) => item.id === lastLessonId,
  );
 
- const fallbackLessonId = courseLessons[0]?.id || "";
+ const fallbackLesson = courseLessons[0] ?? null;
 
- const lessonId =
-  (lessonIdFromUrlInCourse ? lessonIdFromUrl : null) ||
-  (lastLessonIdInCourse ? lastLessonId : null) ||
-  fallbackLessonId;
+ const selectedLesson = lessonFromUrl || lessonFromLastState || fallbackLesson;
+ const lessonId = selectedLesson?.id || "";
 
  const activeModule =
   parseModule(searchParams.get("module")) ||
   learning.state.settings.lastModule ||
   "overview";
+
+ useEffect(() => {
+  if (!selectedLesson || activeModule === "radicals") return;
+
+  const hasCanonicalLesson =
+   searchParams.get("lesson") === getLessonRouteValue(selectedLesson.lessonNumber);
+  const hasLegacyLessonId = searchParams.has("lessonId");
+
+  if (hasCanonicalLesson && !hasLegacyLessonId) return;
+
+  const nextParams = new URLSearchParams(searchParams.toString());
+  nextParams.set("courseId", selectedCourseId);
+  nextParams.set("lesson", getLessonRouteValue(selectedLesson.lessonNumber));
+  nextParams.delete("lessonId");
+  router.replace(`/hanzihome?${nextParams.toString()}`);
+ }, [activeModule, router, searchParams, selectedCourseId, selectedLesson]);
 
  const activeLessonModule: StudyModule =
   activeModule === "radicals" ? "overview" : activeModule;
@@ -121,7 +142,7 @@ export function HanziHomeWorkspace() {
  );
 
  const replaceWorkspaceParams = (
-  updates: Partial<Record<"courseId" | "lessonId" | "module", string>>,
+  updates: Partial<Record<"courseId" | "lesson" | "module", string>>,
  ) => {
   const nextParams = new URLSearchParams(searchParams.toString());
 
@@ -129,6 +150,10 @@ export function HanziHomeWorkspace() {
    if (value) nextParams.set(key, value);
    else nextParams.delete(key);
   });
+
+  if ("courseId" in updates || "lesson" in updates) {
+   nextParams.delete("lessonId");
+  }
 
   router.replace(`/hanzihome?${nextParams.toString()}`);
  };

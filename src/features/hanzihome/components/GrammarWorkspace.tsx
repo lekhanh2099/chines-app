@@ -1,7 +1,6 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { PanelLeftClose, PanelLeftOpen } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Sheet, SheetHeader } from "@/components/ui/sheet";
@@ -17,10 +16,12 @@ import type {
  LearningStatus,
  UserLearningState,
 } from "@/features/hanzihome/types";
+import { LessonModuleFrame } from "./lesson-overview/LessonModuleFrame";
 
 type GrammarWorkspaceProps = {
  lesson: HanziHomeLesson;
  state: UserLearningState;
+ compact?: boolean;
  onBookmark: (id: string) => void;
  onMarkStatus: (id: string, status: LearningStatus) => void;
 };
@@ -138,13 +139,14 @@ function extractReadingFromMarkdown(contentMd?: string): GrammarReading | null {
 export function GrammarWorkspace({
  lesson,
  state,
+ compact = false,
  onBookmark,
  onMarkStatus,
 }: GrammarWorkspaceProps) {
  const [selectedPointId, setSelectedPointId] = useState<string | null>(
   lesson.grammar[0]?.id || null,
  );
- const [isGrammarSidebarOpen, setIsGrammarSidebarOpen] = useState(false);
+ const [isGrammarSidebarOpen, setIsGrammarSidebarOpen] = useState(true);
  const [isGrammarSidebarSheetOpen, setIsGrammarSidebarSheetOpen] =
   useState(false);
 
@@ -203,7 +205,7 @@ export function GrammarWorkspace({
  }, [lesson.vocab, selectedPoint]);
 
  const renderGrammarSidebar = () => (
-  <div className="grid content-start gap-3">
+  <div className="grid min-w-0 max-w-full content-start gap-3 overflow-hidden">
    <GrammarPointList
     points={lesson.grammar}
     selectedPointId={
@@ -218,17 +220,6 @@ export function GrammarWorkspace({
     }}
     allPointId={ALL_GRAMMAR_POINTS_ID}
    />
-
-   {reading && (
-    <GrammarReadingSidebarCard
-     reading={reading}
-     selected={isReadingView}
-     onSelect={() => {
-      setSelectedPointId(READING_VIEW_ID);
-      setIsGrammarSidebarSheetOpen(false);
-     }}
-    />
-   )}
   </div>
  );
 
@@ -252,62 +243,32 @@ export function GrammarWorkspace({
 
  return (
   <div className="grid gap-3">
-   <div
-    className={[
-     "grid min-w-0 gap-3",
-     isGrammarSidebarOpen
-      ? "lg:grid-cols-[minmax(17rem,21rem)_minmax(0,1fr)]"
-      : "lg:grid-cols-1",
-    ].join(" ")}
+   <LessonModuleFrame
+    title="Ngữ pháp"
+    subtitle={
+     selectedPoint?.cleanTitle ||
+     (isAllView ? "Xem toàn bộ điểm ngữ pháp" : "Bài đọc áp dụng")
+    }
+    sidebarLabel="Điểm ngữ pháp"
+    sidebarSummary={`${lesson.grammar.length} mục`}
+    sidebarOpen={isGrammarSidebarOpen}
+    onSidebarOpenChange={setIsGrammarSidebarOpen}
+    sidebar={renderGrammarSidebar()}
+    compact={compact}
+    actions={
+     <Button
+      type="button"
+      variant="outline"
+      size="sm"
+      className="lg:hidden"
+      onClick={() => setIsGrammarSidebarSheetOpen(true)}
+     >
+      Mở danh sách
+     </Button>
+    }
    >
-    {isGrammarSidebarOpen && (
-     <aside className="hidden min-w-0 lg:block lg:sticky lg:top-20 lg:self-start">
-      <div className="mb-2 flex justify-end">
-       <Button
-        type="button"
-        variant="outline"
-        size="sm"
-        className="h-8 px-2.5 text-xs"
-        onClick={() => setIsGrammarSidebarOpen(false)}
-       >
-        <PanelLeftClose className="h-4 w-4" />
-        Ẩn
-       </Button>
-      </div>
-      {renderGrammarSidebar()}
-     </aside>
-    )}
-
-    <div className="min-w-0">
-     <div className="mb-2 flex flex-wrap items-center gap-2">
-      <Button
-       type="button"
-       variant="outline"
-       size="sm"
-       className="h-8 px-2.5 text-xs lg:hidden"
-       onClick={() => setIsGrammarSidebarSheetOpen(true)}
-      >
-       <PanelLeftOpen className="h-4 w-4" />
-       Điểm ngữ pháp
-      </Button>
-
-      {!isGrammarSidebarOpen && (
-       <Button
-        type="button"
-        variant="outline"
-        size="sm"
-        className="hidden h-8 px-2.5 text-xs lg:inline-flex"
-        onClick={() => setIsGrammarSidebarOpen(true)}
-       >
-        <PanelLeftOpen className="h-4 w-4" />
-        {lesson.grammar.length} điểm
-       </Button>
-      )}
-     </div>
-
-     {readerContent}
-    </div>
-   </div>
+    {readerContent}
+   </LessonModuleFrame>
 
    <Sheet
     open={isGrammarSidebarSheetOpen}
@@ -322,41 +283,6 @@ export function GrammarWorkspace({
     {renderGrammarSidebar()}
    </Sheet>
   </div>
- );
-}
-
-function GrammarReadingSidebarCard({
- reading,
- selected,
- onSelect,
-}: {
- reading: GrammarReading;
- selected: boolean;
- onSelect: () => void;
-}) {
- return (
-  <Button
-   type="button"
-   variant={selected ? "default" : "outline"}
-   className={
-    selected
-     ? "h-auto min-w-0 justify-start rounded-xl p-3 text-left shadow-theme-sm"
-     : "h-auto min-w-0 justify-start rounded-xl bg-bg-primary p-3 text-left"
-   }
-   onClick={onSelect}
-  >
-   <span className="grid min-w-0 gap-1">
-    <span className="text-sm font-black">Bài đọc áp dụng</span>
-    <span className="text-xs font-semibold leading-relaxed opacity-80">
-     Đọc đoạn văn dùng các điểm ngữ pháp trong bài.
-    </span>
-    {reading.preview && (
-     <span className="truncate text-xs font-semibold opacity-70">
-      {reading.preview}
-     </span>
-    )}
-   </span>
-  </Button>
  );
 }
 
@@ -401,7 +327,6 @@ function AllGrammarPointReader({ points }: { points: GrammarViewModel[] }) {
          {point.cleanTitle}
         </h2>
        </div>
-
       </div>
 
       <StructuredGrammarContent point={point} exampleLimit={5} />

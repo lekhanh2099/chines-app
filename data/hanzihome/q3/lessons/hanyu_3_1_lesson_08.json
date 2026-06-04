@@ -11,7 +11,10 @@
       "hanyu_3_1",
       "lesson_08",
       "coverage_first",
-      "verified_partial_from_pdf_scan"
+      "pdf_checked",
+      "answers_checked",
+      "pinyin_added",
+      "pos_vi_added"
     ],
     "sections": [
       {
@@ -20,7 +23,7 @@
         "order": 1,
         "title": "课文",
         "title_vi": "Bài khóa",
-        "source_origin": "textbook",
+        "source_origin": "textbook_pdf_checked",
         "check_needed": false,
         "blocks": [
           {
@@ -29,14 +32,14 @@
             "order": 1,
             "title": "恋爱故事",
             "title_vi": "Chuyện tình yêu",
-            "source_origin": "textbook",
+            "source_origin": "textbook_pdf_checked",
             "check_needed": false,
             "paragraphs": [
               {
                 "id": "43338a2c-2044-419e-9fdd-ed1739757a8d",
                 "order": 1,
                 "zh": "我们班的赵霞聪明漂亮，大方开朗，是个人见人爱的女孩儿。我当然也很喜欢她。但我从没有跟别人说过，也没有向她做过任何表示，这是我心中的一个秘密，因为我知道，我的好朋友余辉也很喜欢她。",
-                "pinyin": "",
+                "pinyin": "Wǒmen bān de Zhào Xiá cōngming piàoliang, dàfang kāilǎng, shì ge rén jiàn rén ài de nǚháir. Wǒ dāngrán yě hěn xǐhuan tā. Dàn wǒ cóng méiyǒu gēn biéren shuō guo, yě méiyǒu xiàng tā zuò guo rènhé biǎoshì, zhè shì wǒ xīnzhōng de yí ge mìmì, yīnwèi wǒ zhīdào, wǒ de hǎo péngyou Yú Huī yě hěn xǐhuan tā.",
                 "vi": "Triệu Hà ở lớp chúng tôi vừa thông minh xinh đẹp, vừa rộng rãi cởi mở, là một cô gái ai gặp cũng quý. Đương nhiên tôi cũng rất thích cô ấy. Nhưng tôi chưa từng nói với ai, cũng chưa từng bày tỏ gì với cô ấy. Đây là một bí mật trong lòng tôi, vì tôi biết bạn thân của tôi là Dư Huy cũng rất thích cô ấy.",
                 "vocab_refs": [
                   "8c18cf3c-e9dc-42e1-8faf-eb26799cabab",
@@ -48,18 +51,18 @@
                   "d0cc2a3d-951d-4dc5-93e3-bc90ee212237"
                 ],
                 "grammar_refs": [],
-                "source_origin": "textbook",
+                "source_origin": "textbook_pdf_checked",
                 "check_needed": false
               },
               {
                 "id": "4a807389-3592-4cf4-973f-6589e0118fb2",
                 "order": 2,
                 "zh": "余辉和赵霞的家离得很近，他每次来找我玩儿都带着赵霞。看着心爱的女孩儿跟自己的好朋友有说有笑的情景，我心里有一种说不出的滋味，常常表现得很不自然，所以我总是尽量不跟他们在一起。",
-                "pinyin": "",
+                "pinyin": "Yú Huī hé Zhào Xiá de jiā lí de hěn jìn, tā měi cì lái zhǎo wǒ wánr dōu dàizhe Zhào Xiá. Kànzhe xīn'ài de nǚháir gēn zìjǐ de hǎo péngyou yǒu shuō yǒu xiào de qíngjǐng, wǒ xīnli yǒu yì zhǒng shuō bù chū de zīwèi, chángcháng biǎoxiàn de hěn bù zìrán, suǒyǐ wǒ zǒngshì jǐnliàng bù gēn tāmen zài yìqǐ.",
                 "vi": "Nhà của Dư Huy và Triệu Hà ở rất gần nhau. Mỗi lần cậu ấy đến tìm tôi chơi đều dẫn Triệu Hà theo. Nhìn cảnh cô gái mình yêu quý nói cười vui vẻ với người bạn thân của mình, trong lòng tôi có một cảm giác khó nói thành lời, thường biểu hiện rất không tự nhiên, nên tôi luôn cố gắng tránh ở cùng họ.",
                 "vocab_refs": [
-                  "070690f6-fd26-41df-ab28-f5031668ed3e",
                   "d0cc2a3d-951d-4dc5-93e3-bc90ee212237",
+                  "070690f6-fd26-41df-ab28-f5031668ed3e",
                   "0da97406-c3ac-4fcb-a51c-398a59c3fbae",
                   "54b36889-82be-485b-8342-fb8aab572065",
                   "1354b1a3-93cc-4505-8d7f-c5550a1d6ae9",
@@ -69,15 +72,15 @@
                 "grammar_refs": [
                   "f8ec59f3-898a-47b2-b536-44dfd8183393"
                 ],
-                "source_origin": "textbook",
+                "source_origin": "textbook_pdf_checked",
                 "check_needed": false
               },
               {
                 "id": "5a221404-05e7-4ae2-ad9f-0c920a73dc36",
                 "order": 3,
                 "zh": "那是一个冬天的上午，天很冷，我病了，没去上课，一个人无聊地待在家里。忽然有人敲门，我开门一看，是赵霞。她手捧一束鲜花站在门口，脸冻得红红的，笑着问：“我可以进去吗？”我请她进来。亲切的问候，浅浅的微笑，再加上这束鲜花，我感动得眼泪都快要流出来了。整个上午我都很开心。第一次和自己心爱的姑娘说了那么多话，我想，我已经不知不觉地表示了对她的感情。",
-                "pinyin": "",
-                "vi": "Đó là một buổi sáng mùa đông, trời rất lạnh. Tôi bị ốm, không đi học, một mình buồn chán ở nhà. Bỗng có người gõ cửa. Tôi mở cửa ra xem thì là Triệu Hà. Cô ấy tay ôm một bó hoa tươi đứng ở cửa, mặt lạnh đến đỏ ửng, mỉm cười hỏi: “Tôi có thể vào không?” Tôi mời cô ấy vào. Lời hỏi thăm thân thiết, nụ cười nhẹ nhàng, lại thêm bó hoa này nữa, khiến tôi cảm động đến mức nước mắt gần như muốn trào ra. Cả buổi sáng hôm đó tôi đều rất vui. Lần đầu tiên được nói nhiều như vậy với cô gái mình yêu quý, tôi nghĩ mình đã vô thức bày tỏ tình cảm với cô ấy rồi.",
+                "pinyin": "Nà shì yí ge dōngtiān de shàngwǔ, tiān hěn lěng, wǒ bìng le, méi qù shàngkè, yí ge rén wúliáo de dāi zài jiā lǐ. Hūrán yǒu rén qiāo mén, wǒ kāi mén yí kàn, shì Zhào Xiá. Tā shǒu pěng yí shù xiānhuā zhàn zài ménkǒu, liǎn dòng de hónghóng de, xiàozhe wèn: “Wǒ kěyǐ jìnqu ma?” Wǒ qǐng tā jìnlái. Qīnqiè de wènhòu, qiǎnqiǎn de wēixiào, zài jiā shàng zhè shù xiānhuā, wǒ gǎndòng de yǎnlèi dōu kuài yào liú chūlai le. Zhěnggè shàngwǔ wǒ dōu hěn kāixīn. Dì yī cì hé zìjǐ xīn'ài de gūniang shuō le nàme duō huà, wǒ xiǎng, wǒ yǐjīng bù zhī bù jué de biǎoshì le duì tā de gǎnqíng.",
+                "vi": "Đó là một buổi sáng mùa đông, trời rất lạnh. Tôi bị ốm, không đi học, một mình buồn chán ở nhà. Bỗng có người gõ cửa. Tôi mở cửa ra xem thì là Triệu Hà. Cô ấy tay ôm một bó hoa tươi đứng ở cửa, mặt lạnh đến đỏ ửng, mỉm cười hỏi: “Tôi có thể vào không?” Tôi mời cô ấy vào. Lời hỏi thăm thân tình, nụ cười nhẹ, lại thêm bó hoa tươi này nữa, khiến tôi cảm động đến mức nước mắt gần như muốn trào ra. Cả buổi sáng hôm đó tôi đều rất vui. Lần đầu tiên được nói nhiều như vậy với cô gái mình yêu quý, tôi nghĩ mình đã vô thức bày tỏ tình cảm với cô ấy rồi.",
                 "vocab_refs": [
                   "7eccd5e8-dac0-4f36-be2e-abcc0a2bdfcd",
                   "91fa9f81-e5ef-4c4a-b29c-c4b6daa02196",
@@ -89,18 +92,19 @@
                   "689eb64b-5d4f-469f-9afa-74017d399614",
                   "d45d5488-9293-41ae-9deb-1e5b51cee446",
                   "c99a633b-27a2-429b-a139-44113a84c189",
-                  "79358c6f-3427-4c28-98f3-7ef98c7033c3"
+                  "79358c6f-3427-4c28-98f3-7ef98c7033c3",
+                  "070690f6-fd26-41df-ab28-f5031668ed3e"
                 ],
                 "grammar_refs": [],
-                "source_origin": "textbook",
+                "source_origin": "textbook_pdf_checked",
                 "check_needed": false
               },
               {
                 "id": "5c402bbc-a0e6-434c-a6c7-3c4f86c845fe",
                 "order": 4,
                 "zh": "一天，我突然发现电子信箱里有一封信，打开一看，是赵霞写的。信中说，她和余辉只是普通的朋友，她真正喜欢的是我。我立刻高兴得跳了起来。但是兴奋中也带着淡淡的忧愁。一连好几个晚上，我都翻来覆去睡不着。我想了很多，心里很矛盾。一个是自己爱恋已久的女孩儿，一个是自己最好的朋友，失去谁我都觉得是很大的遗憾。该怎么办呢？",
-                "pinyin": "",
-                "vi": "Một hôm, tôi đột nhiên phát hiện trong hộp thư điện tử có một bức thư. Mở ra xem thì là Triệu Hà viết. Trong thư nói rằng cô ấy và Dư Huy chỉ là bạn bè bình thường, người cô ấy thật sự thích là tôi. Tôi lập tức vui đến mức nhảy cẫng lên. Nhưng trong sự hưng phấn ấy cũng có một nỗi buồn man mác. Liên tục mấy tối liền, tôi trằn trọc không ngủ được. Tôi đã nghĩ rất nhiều, trong lòng rất mâu thuẫn. Một bên là cô gái mình đã yêu từ lâu, một bên là người bạn thân nhất của mình; mất ai tôi cũng đều thấy là một tiếc nuối rất lớn. Phải làm sao đây?",
+                "pinyin": "Yì tiān, wǒ tūrán fāxiàn diànzǐ xìnxiāng lǐ yǒu yì fēng xìn, dǎkāi yí kàn, shì Zhào Xiá xiě de. Xìn zhōng shuō, tā hé Yú Huī zhǐ shì pǔtōng de péngyou, tā zhēnzhèng xǐhuan de shì wǒ. Wǒ lìkè gāoxìng de tiào le qǐlai. Dànshì xīngfèn zhōng yě dàizhe dàndàn de yōuchóu. Yìlián hǎo jǐ ge wǎnshang, wǒ dōu fānlái-fùqù shuì bù zháo. Wǒ xiǎng le hěn duō, xīnli hěn máodùn. Yí ge shì zìjǐ àiliàn yǐ jiǔ de nǚháir, yí ge shì zìjǐ zuì hǎo de péngyou, shīqù shéi wǒ dōu juéde shì hěn dà de yíhàn. Gāi zěnme bàn ne?",
+                "vi": "Một hôm, tôi đột nhiên phát hiện trong hộp thư điện tử có một bức thư. Mở ra xem thì là Triệu Hà viết. Trong thư nói rằng cô ấy và Dư Huy chỉ là bạn bè bình thường, người cô ấy thật sự thích là tôi. Tôi lập tức vui đến mức nhảy cẫng lên. Nhưng trong sự hưng phấn ấy cũng có một nỗi buồn man mác. Mấy tối liền, tôi trằn trọc không ngủ được. Tôi đã nghĩ rất nhiều, trong lòng rất mâu thuẫn. Một bên là cô gái mình đã yêu từ lâu, một bên là người bạn thân nhất của mình; mất ai tôi cũng đều thấy là một tiếc nuối rất lớn. Phải làm sao đây?",
                 "vocab_refs": [
                   "dc0f8e06-a359-4907-a8d8-fc9b02260590",
                   "c43cedbf-7024-4ec1-922f-e75119114baf",
@@ -110,50 +114,52 @@
                   "ba7ff0f9-b633-4516-ab3d-22b96046a1cf",
                   "2185ee67-885d-4ffb-83e2-e97be4070796",
                   "092a8c16-3739-4685-a4c0-39365071bd48",
-                  "22e66ee9-565e-4670-b2ac-4d5a9b500b38"
+                  "22e66ee9-565e-4670-b2ac-4d5a9b500b38",
+                  "070690f6-fd26-41df-ab28-f5031668ed3e",
+                  "d0cc2a3d-951d-4dc5-93e3-bc90ee212237"
                 ],
                 "grammar_refs": [
                   "57b14753-688a-41b6-9e0d-b61dbbf574d7",
                   "fa804fff-372b-4874-8571-f54e613d7e07"
                 ],
-                "source_origin": "textbook",
+                "source_origin": "textbook_pdf_checked",
                 "check_needed": false
               },
               {
                 "id": "babe7f0b-2b53-402f-85af-c5de9b0e676d",
                 "order": 5,
                 "zh": "我给赵霞回了一封信，把自己矛盾的心情告诉了她。",
-                "pinyin": "",
+                "pinyin": "Wǒ gěi Zhào Xiá huí le yì fēng xìn, bǎ zìjǐ máodùn de xīnqíng gàosu le tā.",
                 "vi": "Tôi viết thư trả lời Triệu Hà, kể cho cô ấy biết tâm trạng mâu thuẫn của mình.",
                 "vocab_refs": [
                   "070690f6-fd26-41df-ab28-f5031668ed3e"
                 ],
                 "grammar_refs": [],
-                "source_origin": "textbook",
+                "source_origin": "textbook_pdf_checked",
                 "check_needed": false
               },
               {
                 "id": "d2683a70-b897-4979-ad07-0bca2bb00b31",
                 "order": 6,
                 "zh": "一个星期六晚上，余辉打电话要我去他家。当我赶到时，他已经喝了很多酒，哭着对我说：“我失恋了，赵霞不喜欢我。而且她告诉我，她早就有男朋友了。”我默默地看着余辉，除了陪他喝酒以外，我还能做什么呢？",
-                "pinyin": "",
+                "pinyin": "Yí ge xīngqīliù wǎnshang, Yú Huī dǎ diànhuà yào wǒ qù tā jiā. Dāng wǒ gǎn dào shí, tā yǐjīng hē le hěn duō jiǔ, kūzhe duì wǒ shuō: “Wǒ shīliàn le, Zhào Xiá bù xǐhuan wǒ. Érqiě tā gàosu wǒ, tā zǎo jiù yǒu nánpéngyou le.” Wǒ mòmò de kànzhe Yú Huī, chúle péi tā hē jiǔ yǐwài, wǒ hái néng zuò shénme ne?",
                 "vi": "Một tối thứ Bảy, Dư Huy gọi điện bảo tôi đến nhà cậu ấy. Khi tôi chạy đến nơi, cậu ấy đã uống rất nhiều rượu, vừa khóc vừa nói với tôi: “Tớ thất tình rồi. Triệu Hà không thích tớ. Hơn nữa cô ấy nói với tớ rằng cô ấy đã có bạn trai từ lâu rồi.” Tôi lặng lẽ nhìn Dư Huy. Ngoài việc uống rượu cùng cậu ấy, tôi còn có thể làm gì nữa đây?",
                 "vocab_refs": [
-                  "070690f6-fd26-41df-ab28-f5031668ed3e",
                   "d0cc2a3d-951d-4dc5-93e3-bc90ee212237",
+                  "070690f6-fd26-41df-ab28-f5031668ed3e",
                   "275b46f4-3166-48b7-9766-58384178d1be",
                   "1190511f-5970-4304-8f84-d7201b287aeb",
                   "d42d3d90-443d-45da-bed7-987b50034e92"
                 ],
                 "grammar_refs": [],
-                "source_origin": "textbook",
+                "source_origin": "textbook_pdf_checked",
                 "check_needed": false
               },
               {
                 "id": "cde61ddf-34c9-4d25-892b-99b26df9e427",
                 "order": 7,
                 "zh": "赵霞有男朋友的消息很快就在班上传开了。有人说她的男朋友是外交大学的研究生，长得很帅，学习也很好，正准备出国留学呢。说得跟真的一样，同学们都相信了。",
-                "pinyin": "",
+                "pinyin": "Zhào Xiá yǒu nánpéngyou de xiāoxi hěn kuài jiù zài bān shang chuán kāi le. Yǒu rén shuō tā de nánpéngyou shì Wàijiāo Dàxué de yánjiūshēng, zhǎng de hěn shuài, xuéxí yě hěn hǎo, zhèng zhǔnbèi chūguó liúxué ne. Shuō de gēn zhēn de yíyàng, tóngxuémen dōu xiāngxìn le.",
                 "vi": "Tin Triệu Hà có bạn trai rất nhanh đã lan truyền trong lớp. Có người nói bạn trai của cô ấy là nghiên cứu sinh của Đại học Ngoại giao, trông rất đẹp trai, học cũng rất giỏi, đang chuẩn bị ra nước ngoài du học. Nói cứ như thật vậy, nên các bạn trong lớp đều tin.",
                 "vocab_refs": [
                   "070690f6-fd26-41df-ab28-f5031668ed3e",
@@ -162,33 +168,34 @@
                   "6059829f-ae21-43cf-ac0c-05e19639ec43"
                 ],
                 "grammar_refs": [],
-                "source_origin": "textbook",
+                "source_origin": "textbook_pdf_checked",
                 "check_needed": false
               },
               {
                 "id": "37ac9b48-37ae-4d3e-aa1a-644f38547b84",
                 "order": 8,
                 "zh": "后来，余辉有了新的女朋友。赵霞跟我恋爱的消息才慢慢公开。余辉问我：“你们是怎么走到一起的？”我说：“赵霞的男朋友出国后就把她给甩了，于是我们就走到了一起。”",
-                "pinyin": "",
+                "pinyin": "Hòulái, Yú Huī yǒu le xīn de nǚpéngyou. Zhào Xiá gēn wǒ liàn'ài de xiāoxi cái mànmàn gōngkāi. Yú Huī wèn wǒ: “Nǐmen shì zěnme zǒu dào yìqǐ de?” Wǒ shuō: “Zhào Xiá de nánpéngyou chūguó hòu jiù bǎ tā gěi shuǎi le, yúshì wǒmen jiù zǒu dào le yìqǐ.”",
                 "vi": "Sau đó, Dư Huy có bạn gái mới. Tin Triệu Hà và tôi yêu nhau lúc ấy mới dần dần công khai. Dư Huy hỏi tôi: “Hai người đến với nhau như thế nào vậy?” Tôi nói: “Sau khi bạn trai của Triệu Hà ra nước ngoài, anh ta đã đá cô ấy, thế là chúng tớ đến với nhau.”",
                 "vocab_refs": [
-                  "070690f6-fd26-41df-ab28-f5031668ed3e",
                   "d0cc2a3d-951d-4dc5-93e3-bc90ee212237",
-                  "68c05a12-9d8e-45d9-a413-786bcf2f780a",
+                  "070690f6-fd26-41df-ab28-f5031668ed3e",
                   "fefd5441-7b6c-47e3-b823-9e149b947bf7",
+                  "68c05a12-9d8e-45d9-a413-786bcf2f780a",
+                  "cfb712c9-c4ca-4314-b6b2-696b40ace25e",
                   "27761bd2-433a-44ef-b79a-9e6f0a34b9c9",
                   "861ed325-b320-4ae0-8eac-bb6bb8ebc215",
                   "6fe8f20d-e712-4f0c-9cbc-021aaeb9698c"
                 ],
                 "grammar_refs": [],
-                "source_origin": "textbook",
+                "source_origin": "textbook_pdf_checked",
                 "check_needed": false
               },
               {
                 "id": "2b9bed70-c477-49f4-8027-9bc4d7f13594",
                 "order": 9,
                 "zh": "“我早就料到那家伙不是好东西。”余辉说。",
-                "pinyin": "",
+                "pinyin": "“Wǒ zǎo jiù liào dào nà jiāhuo bú shì hǎo dōngxi.” Yú Huī shuō.",
                 "vi": "“Tớ đã sớm đoán ra cái gã đó chẳng phải người tử tế gì rồi,” Dư Huy nói.",
                 "vocab_refs": [
                   "d0cc2a3d-951d-4dc5-93e3-bc90ee212237",
@@ -196,14 +203,14 @@
                   "b14487b6-5579-4f1c-9ad7-16fd40991577"
                 ],
                 "grammar_refs": [],
-                "source_origin": "textbook",
+                "source_origin": "textbook_pdf_checked",
                 "check_needed": false
               },
               {
                 "id": "35ac2478-e068-41a9-9ca0-6f305253ec3e",
                 "order": 10,
                 "zh": "现在赵霞已经成了我的妻子，余辉仍然是我最好的朋友。",
-                "pinyin": "",
+                "pinyin": "Xiànzài Zhào Xiá yǐjīng chéng le wǒ de qīzi, Yú Huī réngrán shì wǒ zuì hǎo de péngyou.",
                 "vi": "Bây giờ Triệu Hà đã trở thành vợ tôi, còn Dư Huy vẫn là người bạn thân nhất của tôi.",
                 "vocab_refs": [
                   "070690f6-fd26-41df-ab28-f5031668ed3e",
@@ -213,11 +220,97 @@
                 "grammar_refs": [
                   "c6cd6c38-22fc-4546-a398-39efe02d6c17"
                 ],
-                "source_origin": "textbook",
+                "source_origin": "textbook_pdf_checked",
                 "check_needed": false
               }
             ],
-            "comprehension_questions": []
+            "comprehension_questions": [
+              {
+                "id": "0bebe079-f7c4-4457-a527-4c939eaab4e3",
+                "order": 1,
+                "zh": "赵霞是一个什么样的女孩儿？你遇到过这样的女孩儿吗？",
+                "pinyin": "Zhào Xiá shì yí ge shénme yàng de nǚháir? Nǐ yùdào guo zhèyàng de nǚháir ma?",
+                "vi": "Triệu Hà là cô gái như thế nào? Bạn đã từng gặp cô gái như vậy chưa?",
+                "answer_type": "open",
+                "check_needed": false
+              },
+              {
+                "id": "7be9db60-6965-42f3-9460-0cb677d331b4",
+                "order": 2,
+                "zh": "为什么“我”看到余辉和赵霞在一起，心里就有一种说不出的滋味？你尝过这样的滋味吗？",
+                "pinyin": "Wèishénme ‘wǒ’ kàn dào Yú Huī hé Zhào Xiá zài yìqǐ, xīnli jiù yǒu yì zhǒng shuō bù chū de zīwèi? Nǐ cháng guo zhèyàng de zīwèi ma?",
+                "vi": "Vì sao khi ‘tôi’ thấy Dư Huy và Triệu Hà ở cùng nhau thì trong lòng có cảm giác khó nói? Bạn từng nếm trải cảm giác như vậy chưa?",
+                "answer_type": "open",
+                "check_needed": false
+              },
+              {
+                "id": "6becd1ae-946d-4215-a7f8-38e9e237bbb0",
+                "order": 3,
+                "zh": "“我”为什么尽量不跟他们在一起？",
+                "pinyin": "‘Wǒ’ wèishénme jǐnliàng bù gēn tāmen zài yìqǐ?",
+                "vi": "Vì sao ‘tôi’ cố gắng không ở cùng họ?",
+                "answer_type": "open",
+                "check_needed": false
+              },
+              {
+                "id": "32726b61-684d-4817-ba3e-9702a4a5eeec",
+                "order": 4,
+                "zh": "“我”病了，为什么还觉得很开心？",
+                "pinyin": "‘Wǒ’ bìng le, wèishénme hái juéde hěn kāixīn?",
+                "vi": "‘Tôi’ bị ốm, vì sao vẫn thấy rất vui?",
+                "answer_type": "open",
+                "check_needed": false
+              },
+              {
+                "id": "f49b6661-e9a1-43bd-b7bd-f0855c67e414",
+                "order": 5,
+                "zh": "赵霞到底喜欢谁？",
+                "pinyin": "Zhào Xiá dàodǐ xǐhuan shéi?",
+                "vi": "Rốt cuộc Triệu Hà thích ai?",
+                "answer_type": "open",
+                "sample_answer_zh": "赵霞真正喜欢的是“我”。",
+                "sample_answer_vi": "Triệu Hà thật sự thích ‘tôi’.",
+                "check_needed": false
+              },
+              {
+                "id": "2763e6d1-9b7f-485f-be8c-630ea0557c94",
+                "order": 6,
+                "zh": "当知道赵霞喜欢自己的时候，“我”是什么感觉？",
+                "pinyin": "Dāng zhīdào Zhào Xiá xǐhuan zìjǐ de shíhou, ‘wǒ’ shì shénme gǎnjué?",
+                "vi": "Khi biết Triệu Hà thích mình, ‘tôi’ có cảm giác gì?",
+                "answer_type": "open",
+                "check_needed": false
+              },
+              {
+                "id": "7fd1d761-d2ec-4bbb-ba65-ed94fce578c1",
+                "order": 7,
+                "zh": "“我”的心里为什么很矛盾？如果是你，你会怎么办？",
+                "pinyin": "‘Wǒ’ de xīnli wèishénme hěn máodùn? Rúguǒ shì nǐ, nǐ huì zěnme bàn?",
+                "vi": "Vì sao trong lòng ‘tôi’ rất mâu thuẫn? Nếu là bạn, bạn sẽ làm thế nào?",
+                "answer_type": "open",
+                "check_needed": false
+              },
+              {
+                "id": "e941bce1-ab41-4c6b-b139-874fac8bf27a",
+                "order": 8,
+                "zh": "赵霞跟“我”恋爱的消息是什么时候公开的？",
+                "pinyin": "Zhào Xiá gēn ‘wǒ’ liàn'ài de xiāoxi shì shénme shíhou gōngkāi de?",
+                "vi": "Tin Triệu Hà và ‘tôi’ yêu nhau được công khai vào lúc nào?",
+                "answer_type": "open",
+                "sample_answer_zh": "后来，余辉有了新的女朋友以后，赵霞跟“我”恋爱的消息才慢慢公开。",
+                "sample_answer_vi": "Sau này, sau khi Dư Huy có bạn gái mới, tin Triệu Hà và ‘tôi’ yêu nhau mới dần dần công khai.",
+                "check_needed": false
+              },
+              {
+                "id": "d44801b6-efdf-458f-be63-c5bb36af5969",
+                "order": 9,
+                "zh": "“我”处理问题的方法你赞成吗？为什么？",
+                "pinyin": "‘Wǒ’ chǔlǐ wèntí de fāngfǎ nǐ zànchéng ma? Wèishénme?",
+                "vi": "Bạn có tán thành cách ‘tôi’ xử lý vấn đề không? Vì sao?",
+                "answer_type": "open",
+                "check_needed": false
+              }
+            ]
           }
         ]
       },
@@ -226,8 +319,8 @@
         "type": "vocabulary",
         "order": 2,
         "title": "生词",
-        "title_vi": "Từ vựng chính",
-        "source_origin": "textbook",
+        "title_vi": "Từ vựng chính / bổ sung / giao tiếp",
+        "source_origin": "textbook_pdf_checked",
         "check_needed": false,
         "items": [
           {
@@ -237,8 +330,19 @@
             "hanzi": "恋爱",
             "pinyin": "liàn'ài",
             "meaning_vi": "yêu đương; tình yêu nam nữ",
-            "meaning_en": "to love; romantic love",
-            "pos": "verb_noun",
+            "meaning_en": "to be in love; romantic love",
+            "pos": "Động từ / Danh từ",
+            "pos_detail": {
+              "vi": "Động từ / Danh từ",
+              "cn": "动词 / 名词",
+              "normalized": "verb_noun",
+              "schema_compatible_pos": "verb_noun",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "",
+              "notes": []
+            },
             "tags": [
               "main_vocab"
             ],
@@ -252,8 +356,19 @@
             "hanzi": "聪明",
             "pinyin": "cōngming",
             "meaning_vi": "thông minh",
-            "meaning_en": "smart",
-            "pos": "adjective",
+            "meaning_en": "smart; clever",
+            "pos": "Tính từ",
+            "pos_detail": {
+              "vi": "Tính từ",
+              "cn": "形容词",
+              "normalized": "adjective",
+              "schema_compatible_pos": "adjective",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "",
+              "notes": []
+            },
             "tags": [
               "main_vocab"
             ],
@@ -266,9 +381,20 @@
             "order": 3,
             "hanzi": "大方",
             "pinyin": "dàfang",
-            "meaning_vi": "rộng rãi; hào phóng; tự nhiên, không gò bó",
-            "meaning_en": "generous; natural",
-            "pos": "adjective",
+            "meaning_vi": "tự nhiên, không gò bó; rộng rãi; hào phóng",
+            "meaning_en": "natural and poised; generous",
+            "pos": "Tính từ",
+            "pos_detail": {
+              "vi": "Tính từ",
+              "cn": "形容词",
+              "normalized": "adjective",
+              "schema_compatible_pos": "adjective",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "",
+              "notes": []
+            },
             "tags": [
               "main_vocab"
             ],
@@ -282,8 +408,19 @@
             "hanzi": "开朗",
             "pinyin": "kāilǎng",
             "meaning_vi": "cởi mở; vui vẻ; sáng sủa",
-            "meaning_en": "open and bright",
-            "pos": "adjective",
+            "meaning_en": "sanguine; optimistic; open and bright",
+            "pos": "Tính từ",
+            "pos_detail": {
+              "vi": "Tính từ",
+              "cn": "形容词",
+              "normalized": "adjective",
+              "schema_compatible_pos": "adjective",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "",
+              "notes": []
+            },
             "tags": [
               "main_vocab"
             ],
@@ -298,7 +435,18 @@
             "pinyin": "nǚháir",
             "meaning_vi": "cô gái; bé gái",
             "meaning_en": "girl",
-            "pos": "noun",
+            "pos": "Danh từ",
+            "pos_detail": {
+              "vi": "Danh từ",
+              "cn": "名词",
+              "normalized": "noun",
+              "schema_compatible_pos": "noun",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "",
+              "notes": []
+            },
             "tags": [
               "main_vocab"
             ],
@@ -313,7 +461,18 @@
             "pinyin": "nánháir",
             "meaning_vi": "chàng trai; bé trai",
             "meaning_en": "boy",
-            "pos": "noun",
+            "pos": "Danh từ",
+            "pos_detail": {
+              "vi": "Danh từ",
+              "cn": "名词",
+              "normalized": "noun",
+              "schema_compatible_pos": "noun",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "",
+              "notes": []
+            },
             "tags": [
               "main_vocab"
             ],
@@ -328,7 +487,18 @@
             "pinyin": "mìmì",
             "meaning_vi": "bí mật",
             "meaning_en": "secret",
-            "pos": "noun",
+            "pos": "Danh từ",
+            "pos_detail": {
+              "vi": "Danh từ",
+              "cn": "名词",
+              "normalized": "noun",
+              "schema_compatible_pos": "noun",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "",
+              "notes": []
+            },
             "tags": [
               "main_vocab"
             ],
@@ -341,9 +511,20 @@
             "order": 8,
             "hanzi": "心爱",
             "pinyin": "xīn'ài",
-            "meaning_vi": "yêu quý; yêu dấu",
-            "meaning_en": "beloved",
-            "pos": "adjective",
+            "meaning_vi": "yêu quý; yêu dấu; trân quý",
+            "meaning_en": "beloved; treasured",
+            "pos": "Tính từ",
+            "pos_detail": {
+              "vi": "Tính từ",
+              "cn": "形容词",
+              "normalized": "adjective",
+              "schema_compatible_pos": "adjective",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "",
+              "notes": []
+            },
             "tags": [
               "main_vocab"
             ],
@@ -358,7 +539,18 @@
             "pinyin": "yǒu shuō yǒu xiào",
             "meaning_vi": "vừa nói vừa cười; nói cười vui vẻ",
             "meaning_en": "talking and laughing",
-            "pos": "phrase",
+            "pos": "Cụm cố định",
+            "pos_detail": {
+              "vi": "Cụm cố định",
+              "cn": "固定短语",
+              "normalized": "phrase",
+              "schema_compatible_pos": "phrase",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "",
+              "notes": []
+            },
             "tags": [
               "main_vocab"
             ],
@@ -373,7 +565,18 @@
             "pinyin": "zīwèi",
             "meaning_vi": "mùi vị; cảm giác; tâm trạng khó tả",
             "meaning_en": "taste; feeling",
-            "pos": "noun",
+            "pos": "Danh từ",
+            "pos_detail": {
+              "vi": "Danh từ",
+              "cn": "名词",
+              "normalized": "noun",
+              "schema_compatible_pos": "noun",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "",
+              "notes": []
+            },
             "tags": [
               "main_vocab"
             ],
@@ -386,9 +589,20 @@
             "order": 11,
             "hanzi": "自然",
             "pinyin": "zìrán",
-            "meaning_vi": "tự nhiên",
-            "meaning_en": "natural",
-            "pos": "adjective",
+            "meaning_vi": "tự nhiên; không gượng gạo; thiên nhiên",
+            "meaning_en": "natural; unaffected; nature",
+            "pos": "Tính từ / Danh từ",
+            "pos_detail": {
+              "vi": "Tính từ / Danh từ",
+              "cn": "形容词 / 名词",
+              "normalized": "adjective",
+              "schema_compatible_pos": "adjective",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "",
+              "notes": []
+            },
             "tags": [
               "main_vocab"
             ],
@@ -402,8 +616,19 @@
             "hanzi": "尽量",
             "pinyin": "jǐnliàng",
             "meaning_vi": "cố gắng hết sức; cố gắng trong khả năng",
-            "meaning_en": "as much as possible",
-            "pos": "adverb",
+            "meaning_en": "as far as possible",
+            "pos": "Phó từ",
+            "pos_detail": {
+              "vi": "Phó từ",
+              "cn": "副词",
+              "normalized": "adverb",
+              "schema_compatible_pos": "adverb",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "",
+              "notes": []
+            },
             "tags": [
               "main_vocab",
               "grammar"
@@ -417,9 +642,20 @@
             "order": 13,
             "hanzi": "无聊",
             "pinyin": "wúliáo",
-            "meaning_vi": "buồn chán; tẻ nhạt",
-            "meaning_en": "bored",
-            "pos": "adjective",
+            "meaning_vi": "buồn chán; tẻ nhạt; vô vị",
+            "meaning_en": "bored; boring",
+            "pos": "Tính từ",
+            "pos_detail": {
+              "vi": "Tính từ",
+              "cn": "形容词",
+              "normalized": "adjective",
+              "schema_compatible_pos": "adjective",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "",
+              "notes": []
+            },
             "tags": [
               "main_vocab"
             ],
@@ -432,9 +668,20 @@
             "order": 14,
             "hanzi": "待",
             "pinyin": "dāi",
-            "meaning_vi": "ở; lưu lại",
+            "meaning_vi": "ở; lưu lại; nán lại",
             "meaning_en": "to stay",
-            "pos": "verb",
+            "pos": "Động từ",
+            "pos_detail": {
+              "vi": "Động từ",
+              "cn": "动词",
+              "normalized": "verb",
+              "schema_compatible_pos": "verb",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "",
+              "notes": []
+            },
             "tags": [
               "main_vocab"
             ],
@@ -449,7 +696,18 @@
             "pinyin": "qiāo",
             "meaning_vi": "gõ",
             "meaning_en": "to knock",
-            "pos": "verb",
+            "pos": "Động từ",
+            "pos_detail": {
+              "vi": "Động từ",
+              "cn": "动词",
+              "normalized": "verb",
+              "schema_compatible_pos": "verb",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "",
+              "notes": []
+            },
             "tags": [
               "main_vocab"
             ],
@@ -462,9 +720,20 @@
             "order": 16,
             "hanzi": "捧",
             "pinyin": "pěng",
-            "meaning_vi": "ôm/nâng bằng hai tay",
-            "meaning_en": "to hold with both hands",
-            "pos": "verb",
+            "meaning_vi": "ôm/nâng bằng hai tay; bưng bằng hai tay",
+            "meaning_en": "to hold in both hands",
+            "pos": "Động từ",
+            "pos_detail": {
+              "vi": "Động từ",
+              "cn": "动词",
+              "normalized": "verb",
+              "schema_compatible_pos": "verb",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "",
+              "notes": []
+            },
             "tags": [
               "main_vocab"
             ],
@@ -478,8 +747,19 @@
             "hanzi": "束",
             "pinyin": "shù",
             "meaning_vi": "bó; chùm; lượng từ cho hoa, ánh sáng",
-            "meaning_en": "bunch; measure word",
-            "pos": "measure_word",
+            "meaning_en": "bundle; bunch; measure word",
+            "pos": "Lượng từ",
+            "pos_detail": {
+              "vi": "Lượng từ",
+              "cn": "量词",
+              "normalized": "measure_word",
+              "schema_compatible_pos": "measure_word",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "",
+              "notes": []
+            },
             "tags": [
               "main_vocab"
             ],
@@ -493,8 +773,19 @@
             "hanzi": "亲切",
             "pinyin": "qīnqiè",
             "meaning_vi": "thân thiết; ân cần; gần gũi",
-            "meaning_en": "kind; cordial",
-            "pos": "adjective",
+            "meaning_en": "warm; close; kind",
+            "pos": "Tính từ",
+            "pos_detail": {
+              "vi": "Tính từ",
+              "cn": "形容词",
+              "normalized": "adjective",
+              "schema_compatible_pos": "adjective",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "",
+              "notes": []
+            },
             "tags": [
               "main_vocab"
             ],
@@ -508,8 +799,19 @@
             "hanzi": "问候",
             "pinyin": "wènhòu",
             "meaning_vi": "hỏi thăm; lời hỏi thăm",
-            "meaning_en": "to send regards",
-            "pos": "verb_noun",
+            "meaning_en": "to send regards; greetings",
+            "pos": "Động từ / Danh từ",
+            "pos_detail": {
+              "vi": "Động từ / Danh từ",
+              "cn": "动词 / 名词",
+              "normalized": "verb_noun",
+              "schema_compatible_pos": "verb_noun",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "",
+              "notes": []
+            },
             "tags": [
               "main_vocab"
             ],
@@ -523,8 +825,19 @@
             "hanzi": "微笑",
             "pinyin": "wēixiào",
             "meaning_vi": "mỉm cười; nụ cười nhẹ",
-            "meaning_en": "smile",
-            "pos": "verb_noun",
+            "meaning_en": "to smile; smile",
+            "pos": "Động từ / Danh từ",
+            "pos_detail": {
+              "vi": "Động từ / Danh từ",
+              "cn": "动词 / 名词",
+              "normalized": "verb_noun",
+              "schema_compatible_pos": "verb_noun",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "",
+              "notes": []
+            },
             "tags": [
               "main_vocab"
             ],
@@ -538,8 +851,19 @@
             "hanzi": "加",
             "pinyin": "jiā",
             "meaning_vi": "thêm; cộng thêm",
-            "meaning_en": "to add",
-            "pos": "verb",
+            "meaning_en": "to add; plus",
+            "pos": "Động từ",
+            "pos_detail": {
+              "vi": "Động từ",
+              "cn": "动词",
+              "normalized": "verb",
+              "schema_compatible_pos": "verb",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "",
+              "notes": []
+            },
             "tags": [
               "main_vocab"
             ],
@@ -554,7 +878,18 @@
             "pinyin": "zhěnggè",
             "meaning_vi": "toàn bộ; cả",
             "meaning_en": "whole; entire",
-            "pos": "adjective",
+            "pos": "Tính từ",
+            "pos_detail": {
+              "vi": "Tính từ",
+              "cn": "形容词",
+              "normalized": "adjective",
+              "schema_compatible_pos": "adjective",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "",
+              "notes": []
+            },
             "tags": [
               "main_vocab"
             ],
@@ -568,8 +903,19 @@
             "hanzi": "不知不觉",
             "pinyin": "bù zhī bù jué",
             "meaning_vi": "lúc nào không hay; vô thức; không nhận ra",
-            "meaning_en": "unconsciously",
-            "pos": "phrase",
+            "meaning_en": "unconsciously; unwittingly",
+            "pos": "Cụm cố định",
+            "pos_detail": {
+              "vi": "Cụm cố định",
+              "cn": "固定短语",
+              "normalized": "phrase",
+              "schema_compatible_pos": "phrase",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "",
+              "notes": []
+            },
             "tags": [
               "main_vocab"
             ],
@@ -583,8 +929,19 @@
             "hanzi": "突然",
             "pinyin": "tūrán",
             "meaning_vi": "đột nhiên; bỗng nhiên",
-            "meaning_en": "suddenly",
-            "pos": "adverb",
+            "meaning_en": "sudden; suddenly",
+            "pos": "Phó từ",
+            "pos_detail": {
+              "vi": "Phó từ",
+              "cn": "副词",
+              "normalized": "adverb",
+              "schema_compatible_pos": "adverb",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "",
+              "notes": []
+            },
             "tags": [
               "main_vocab"
             ],
@@ -597,9 +954,20 @@
             "order": 25,
             "hanzi": "电子信箱",
             "pinyin": "diànzǐ xìnxiāng",
-            "meaning_vi": "hộp thư điện tử; email inbox",
-            "meaning_en": "email inbox",
-            "pos": "noun",
+            "meaning_vi": "hộp thư điện tử; email",
+            "meaning_en": "electronic mailbox; email inbox",
+            "pos": "Danh từ",
+            "pos_detail": {
+              "vi": "Danh từ",
+              "cn": "名词",
+              "normalized": "noun",
+              "schema_compatible_pos": "noun",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "",
+              "notes": []
+            },
             "tags": [
               "main_vocab"
             ],
@@ -612,9 +980,20 @@
             "order": 26,
             "hanzi": "普通",
             "pinyin": "pǔtōng",
-            "meaning_vi": "bình thường; phổ thông",
-            "meaning_en": "ordinary",
-            "pos": "adjective",
+            "meaning_vi": "bình thường; phổ thông; thông thường",
+            "meaning_en": "common; ordinary",
+            "pos": "Tính từ",
+            "pos_detail": {
+              "vi": "Tính từ",
+              "cn": "形容词",
+              "normalized": "adjective",
+              "schema_compatible_pos": "adjective",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "",
+              "notes": []
+            },
             "tags": [
               "main_vocab"
             ],
@@ -628,8 +1007,19 @@
             "hanzi": "立刻",
             "pinyin": "lìkè",
             "meaning_vi": "lập tức; ngay lập tức",
-            "meaning_en": "immediately",
-            "pos": "adverb",
+            "meaning_en": "immediately; at once",
+            "pos": "Phó từ",
+            "pos_detail": {
+              "vi": "Phó từ",
+              "cn": "副词",
+              "normalized": "adverb",
+              "schema_compatible_pos": "adverb",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "",
+              "notes": []
+            },
             "tags": [
               "main_vocab",
               "grammar"
@@ -643,9 +1033,20 @@
             "order": 28,
             "hanzi": "淡",
             "pinyin": "dàn",
-            "meaning_vi": "nhạt; mờ; nhẹ",
-            "meaning_en": "light; faint",
-            "pos": "adjective",
+            "meaning_vi": "nhạt; mờ; nhẹ; lạnh nhạt/phai nhạt",
+            "meaning_en": "light; faint; bland",
+            "pos": "Tính từ",
+            "pos_detail": {
+              "vi": "Tính từ",
+              "cn": "形容词",
+              "normalized": "adjective",
+              "schema_compatible_pos": "adjective",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "",
+              "notes": []
+            },
             "tags": [
               "main_vocab"
             ],
@@ -658,9 +1059,20 @@
             "order": 29,
             "hanzi": "忧愁",
             "pinyin": "yōuchóu",
-            "meaning_vi": "buồn rầu; ưu sầu",
-            "meaning_en": "sadness",
-            "pos": "noun",
+            "meaning_vi": "buồn rầu; ưu sầu; lo buồn",
+            "meaning_en": "worried; troubled; sorrowful",
+            "pos": "Tính từ",
+            "pos_detail": {
+              "vi": "Tính từ",
+              "cn": "形容词",
+              "normalized": "adjective",
+              "schema_compatible_pos": "adjective",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "",
+              "notes": []
+            },
             "tags": [
               "main_vocab"
             ],
@@ -674,8 +1086,19 @@
             "hanzi": "一连",
             "pinyin": "yìlián",
             "meaning_vi": "liên tục; liền một mạch",
-            "meaning_en": "in succession",
-            "pos": "adverb",
+            "meaning_en": "in a row; in succession",
+            "pos": "Phó từ",
+            "pos_detail": {
+              "vi": "Phó từ",
+              "cn": "副词",
+              "normalized": "adverb",
+              "schema_compatible_pos": "adverb",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "",
+              "notes": []
+            },
             "tags": [
               "main_vocab",
               "grammar"
@@ -689,9 +1112,20 @@
             "order": 31,
             "hanzi": "翻来覆去",
             "pinyin": "fān lái fù qù",
-            "meaning_vi": "lăn qua lộn lại; trằn trọc",
-            "meaning_en": "toss and turn",
-            "pos": "phrase",
+            "meaning_vi": "trằn trọc; lăn qua lộn lại; nghĩ đi nghĩ lại",
+            "meaning_en": "to toss and turn",
+            "pos": "Cụm cố định",
+            "pos_detail": {
+              "vi": "Cụm cố định",
+              "cn": "固定短语",
+              "normalized": "phrase",
+              "schema_compatible_pos": "phrase",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "",
+              "notes": []
+            },
             "tags": [
               "main_vocab"
             ],
@@ -705,8 +1139,19 @@
             "hanzi": "爱恋",
             "pinyin": "àiliàn",
             "meaning_vi": "yêu say đắm; tình yêu lưu luyến",
-            "meaning_en": "to be in love with",
-            "pos": "verb_noun",
+            "meaning_en": "to be in love with; feel deeply attached",
+            "pos": "Động từ",
+            "pos_detail": {
+              "vi": "Động từ",
+              "cn": "动词",
+              "normalized": "verb",
+              "schema_compatible_pos": "verb",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "",
+              "notes": []
+            },
             "tags": [
               "main_vocab"
             ],
@@ -720,8 +1165,19 @@
             "hanzi": "失恋",
             "pinyin": "shīliàn",
             "meaning_vi": "thất tình",
-            "meaning_en": "to be disappointed in love",
-            "pos": "verb",
+            "meaning_en": "to lose love; be disappointed in love",
+            "pos": "Động từ li hợp",
+            "pos_detail": {
+              "vi": "Động từ li hợp",
+              "cn": "动宾式离合词",
+              "normalized": "verb_phrase",
+              "schema_compatible_pos": "verb_phrase",
+              "is_separable_verb": true,
+              "separable_type": "động-tân / 离合词",
+              "structure_vi": "động từ 失 + tân ngữ 恋",
+              "usage_note_vi": "Có thể nói 失过恋, 失了一次恋. Không nói *失恋了一个女朋友; nếu muốn nói mất bạn gái thì dùng 失去了一个女朋友 hoặc 被女朋友甩了.",
+              "notes": []
+            },
             "tags": [
               "main_vocab"
             ],
@@ -733,10 +1189,21 @@
             "type": "vocabulary_item",
             "order": 34,
             "hanzi": "男朋友",
-            "pinyin": "nán péngyou",
-            "meaning_vi": "bạn trai",
+            "pinyin": "nánpéngyou",
+            "meaning_vi": "bạn trai; người yêu nam",
             "meaning_en": "boyfriend",
-            "pos": "noun",
+            "pos": "Danh từ",
+            "pos_detail": {
+              "vi": "Danh từ",
+              "cn": "名词",
+              "normalized": "noun",
+              "schema_compatible_pos": "noun",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "",
+              "notes": []
+            },
             "tags": [
               "main_vocab"
             ],
@@ -750,8 +1217,19 @@
             "hanzi": "默默",
             "pinyin": "mòmò",
             "meaning_vi": "lặng lẽ; âm thầm",
-            "meaning_en": "silently",
-            "pos": "adverb",
+            "meaning_en": "quietly; silently",
+            "pos": "Phó từ",
+            "pos_detail": {
+              "vi": "Phó từ",
+              "cn": "副词",
+              "normalized": "adverb",
+              "schema_compatible_pos": "adverb",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "",
+              "notes": []
+            },
             "tags": [
               "main_vocab"
             ],
@@ -764,9 +1242,20 @@
             "order": 36,
             "hanzi": "消息",
             "pinyin": "xiāoxi",
-            "meaning_vi": "tin tức; thông tin",
-            "meaning_en": "news",
-            "pos": "noun",
+            "meaning_vi": "tin tức; tin; tin nhắn; thông tin",
+            "meaning_en": "news; message",
+            "pos": "Danh từ",
+            "pos_detail": {
+              "vi": "Danh từ",
+              "cn": "名词",
+              "normalized": "noun",
+              "schema_compatible_pos": "noun",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "",
+              "notes": []
+            },
             "tags": [
               "main_vocab"
             ],
@@ -781,7 +1270,18 @@
             "pinyin": "wàijiāo",
             "meaning_vi": "ngoại giao",
             "meaning_en": "diplomacy",
-            "pos": "noun",
+            "pos": "Danh từ",
+            "pos_detail": {
+              "vi": "Danh từ",
+              "cn": "名词",
+              "normalized": "noun",
+              "schema_compatible_pos": "noun",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "",
+              "notes": []
+            },
             "tags": [
               "main_vocab"
             ],
@@ -793,10 +1293,21 @@
             "type": "vocabulary_item",
             "order": 38,
             "hanzi": "女朋友",
-            "pinyin": "nǚ péngyou",
-            "meaning_vi": "bạn gái",
+            "pinyin": "nǚpéngyou",
+            "meaning_vi": "bạn gái; người yêu nữ",
             "meaning_en": "girlfriend",
-            "pos": "noun",
+            "pos": "Danh từ",
+            "pos_detail": {
+              "vi": "Danh từ",
+              "cn": "名词",
+              "normalized": "noun",
+              "schema_compatible_pos": "noun",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "",
+              "notes": []
+            },
             "tags": [
               "main_vocab"
             ],
@@ -809,9 +1320,20 @@
             "order": 39,
             "hanzi": "公开",
             "pinyin": "gōngkāi",
-            "meaning_vi": "công khai",
-            "meaning_en": "public; open",
-            "pos": "verb_adjective",
+            "meaning_vi": "công khai; làm cho công khai",
+            "meaning_en": "to make public; public",
+            "pos": "Động từ / Tính từ",
+            "pos_detail": {
+              "vi": "Động từ / Tính từ",
+              "cn": "动词 / 形容词",
+              "normalized": "verb_adjective",
+              "schema_compatible_pos": "verb_adjective",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "",
+              "notes": []
+            },
             "tags": [
               "main_vocab"
             ],
@@ -824,9 +1346,20 @@
             "order": 40,
             "hanzi": "一起",
             "pinyin": "yìqǐ",
-            "meaning_vi": "cùng nhau",
+            "meaning_vi": "cùng nhau; cùng một chỗ",
             "meaning_en": "together",
-            "pos": "adverb",
+            "pos": "Phó từ",
+            "pos_detail": {
+              "vi": "Phó từ",
+              "cn": "副词",
+              "normalized": "adverb",
+              "schema_compatible_pos": "adverb",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "",
+              "notes": []
+            },
             "tags": [
               "main_vocab"
             ],
@@ -839,9 +1372,20 @@
             "order": 41,
             "hanzi": "甩",
             "pinyin": "shuǎi",
-            "meaning_vi": "vứt bỏ; hất; đá/bỏ rơi trong tình cảm",
+            "meaning_vi": "vứt/hất/quăng; đá/bỏ rơi trong tình cảm",
             "meaning_en": "to dump; to throw off",
-            "pos": "verb",
+            "pos": "Động từ",
+            "pos_detail": {
+              "vi": "Động từ",
+              "cn": "动词",
+              "normalized": "verb",
+              "schema_compatible_pos": "verb",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "",
+              "notes": []
+            },
             "tags": [
               "main_vocab"
             ],
@@ -855,8 +1399,19 @@
             "hanzi": "料",
             "pinyin": "liào",
             "meaning_vi": "đoán; dự đoán; liệu trước",
-            "meaning_en": "to expect; predict",
-            "pos": "verb",
+            "meaning_en": "to foresee; to anticipate",
+            "pos": "Động từ",
+            "pos_detail": {
+              "vi": "Động từ",
+              "cn": "动词",
+              "normalized": "verb",
+              "schema_compatible_pos": "verb",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "",
+              "notes": []
+            },
             "tags": [
               "main_vocab"
             ],
@@ -869,9 +1424,20 @@
             "order": 43,
             "hanzi": "家伙",
             "pinyin": "jiāhuo",
-            "meaning_vi": "gã; thằng cha; đồ/kẻ ấy",
-            "meaning_en": "guy; fellow",
-            "pos": "noun",
+            "meaning_vi": "gã; thằng cha; tên; đồ/kẻ ấy",
+            "meaning_en": "fellow; guy",
+            "pos": "Danh từ",
+            "pos_detail": {
+              "vi": "Danh từ",
+              "cn": "名词",
+              "normalized": "noun",
+              "schema_compatible_pos": "noun",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "",
+              "notes": []
+            },
             "tags": [
               "main_vocab"
             ],
@@ -885,8 +1451,19 @@
             "hanzi": "仍然",
             "pinyin": "réngrán",
             "meaning_vi": "vẫn; vẫn cứ",
-            "meaning_en": "still; yet",
-            "pos": "adverb",
+            "meaning_en": "still",
+            "pos": "Phó từ",
+            "pos_detail": {
+              "vi": "Phó từ",
+              "cn": "副词",
+              "normalized": "adverb",
+              "schema_compatible_pos": "adverb",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "",
+              "notes": []
+            },
             "tags": [
               "main_vocab",
               "grammar"
@@ -902,7 +1479,18 @@
             "pinyin": "kànfǎ",
             "meaning_vi": "cách nhìn; quan điểm",
             "meaning_en": "view; opinion",
-            "pos": "noun",
+            "pos": "Danh từ",
+            "pos_detail": {
+              "vi": "Danh từ",
+              "cn": "名词",
+              "normalized": "noun",
+              "schema_compatible_pos": "noun",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "",
+              "notes": []
+            },
             "tags": [
               "supplement_vocab"
             ],
@@ -915,9 +1503,20 @@
             "order": 46,
             "hanzi": "各自",
             "pinyin": "gèzì",
-            "meaning_vi": "mỗi người tự; riêng từng người",
+            "meaning_vi": "mỗi người tự; riêng từng người/từng bên",
             "meaning_en": "each; respective",
-            "pos": "adverb",
+            "pos": "Phó từ",
+            "pos_detail": {
+              "vi": "Phó từ",
+              "cn": "副词",
+              "normalized": "adverb",
+              "schema_compatible_pos": "adverb",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "",
+              "notes": []
+            },
             "tags": [
               "supplement_vocab"
             ],
@@ -932,7 +1531,18 @@
             "pinyin": "hù bù xiāng ràng",
             "meaning_vi": "không ai chịu nhường ai",
             "meaning_en": "neither side gives in",
-            "pos": "phrase",
+            "pos": "Cụm cố định",
+            "pos_detail": {
+              "vi": "Cụm cố định",
+              "cn": "固定短语",
+              "normalized": "phrase",
+              "schema_compatible_pos": "phrase",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "",
+              "notes": []
+            },
             "tags": [
               "supplement_vocab"
             ],
@@ -946,8 +1556,19 @@
             "hanzi": "随和",
             "pinyin": "suíhe",
             "meaning_vi": "dễ tính; hòa nhã; dễ gần",
-            "meaning_en": "easygoing",
-            "pos": "adjective",
+            "meaning_en": "amiable; easygoing",
+            "pos": "Tính từ",
+            "pos_detail": {
+              "vi": "Tính từ",
+              "cn": "形容词",
+              "normalized": "adjective",
+              "schema_compatible_pos": "adjective",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "",
+              "notes": []
+            },
             "tags": [
               "supplement_vocab"
             ],
@@ -960,9 +1581,20 @@
             "order": 49,
             "hanzi": "让步",
             "pinyin": "ràngbù",
-            "meaning_vi": "nhượng bộ",
-            "meaning_en": "to give in",
-            "pos": "verb_noun",
+            "meaning_vi": "nhượng bộ; chịu nhường",
+            "meaning_en": "to give in; concession",
+            "pos": "Động từ li hợp",
+            "pos_detail": {
+              "vi": "Động từ li hợp",
+              "cn": "动宾式离合词",
+              "normalized": "verb_phrase",
+              "schema_compatible_pos": "verb_phrase",
+              "is_separable_verb": true,
+              "separable_type": "động-tân / 离合词",
+              "structure_vi": "động từ 让 + tân ngữ 步",
+              "usage_note_vi": "Có thể nói 让了一步 / 让了几步; trong văn viết cũng dùng 作出让步.",
+              "notes": []
+            },
             "tags": [
               "supplement_vocab"
             ],
@@ -974,10 +1606,21 @@
             "type": "vocabulary_item",
             "order": 50,
             "hanzi": "迈步",
-            "pinyin": "màibù",
+            "pinyin": "mài bù",
             "meaning_vi": "bước đi; cất bước",
             "meaning_en": "to take a step",
-            "pos": "verb",
+            "pos": "Động từ li hợp",
+            "pos_detail": {
+              "vi": "Động từ li hợp",
+              "cn": "动宾式离合词",
+              "normalized": "verb_phrase",
+              "schema_compatible_pos": "verb_phrase",
+              "is_separable_verb": true,
+              "separable_type": "động-tân / 离合词",
+              "structure_vi": "động từ 迈 + tân ngữ 步",
+              "usage_note_vi": "Có thể nói 迈出第一步 / 迈了一步; không dùng thay cho 去 trong câu đi học/đi làm thường ngày.",
+              "notes": []
+            },
             "tags": [
               "supplement_vocab"
             ],
@@ -991,10 +1634,21 @@
             "hanzi": "沉",
             "pinyin": "chén",
             "meaning_vi": "chìm; trầm xuống; nặng",
-            "meaning_en": "to sink",
-            "pos": "verb_adjective",
+            "meaning_en": "to sink; heavy",
+            "pos": "Động từ / Tính từ",
+            "pos_detail": {
+              "vi": "Động từ / Tính từ",
+              "cn": "动词 / 形容词",
+              "normalized": "verb_adjective",
+              "schema_compatible_pos": "verb_adjective",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "",
+              "notes": []
+            },
             "tags": [
-              "supplement_vocab"
+              "communication_vocab"
             ],
             "source_origin": "textbook",
             "check_needed": false
@@ -1007,9 +1661,20 @@
             "pinyin": "déjiù",
             "meaning_vi": "được cứu; thoát nạn",
             "meaning_en": "to be saved",
-            "pos": "verb",
+            "pos": "Động từ",
+            "pos_detail": {
+              "vi": "Động từ",
+              "cn": "动词",
+              "normalized": "verb",
+              "schema_compatible_pos": "verb",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "",
+              "notes": []
+            },
             "tags": [
-              "supplement_vocab"
+              "communication_vocab"
             ],
             "source_origin": "textbook",
             "check_needed": false
@@ -1022,9 +1687,20 @@
             "pinyin": "lǎo diào yá",
             "meaning_vi": "cũ rích; lỗi thời; xưa như trái đất",
             "meaning_en": "outdated; hackneyed",
-            "pos": "phrase",
+            "pos": "Cụm cố định",
+            "pos_detail": {
+              "vi": "Cụm cố định",
+              "cn": "固定短语",
+              "normalized": "phrase",
+              "schema_compatible_pos": "phrase",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "",
+              "notes": []
+            },
             "tags": [
-              "supplement_vocab"
+              "communication_vocab"
             ],
             "source_origin": "textbook",
             "check_needed": false
@@ -1037,7 +1713,7 @@
         "order": 3,
         "title": "专名",
         "title_vi": "Tên riêng",
-        "source_origin": "textbook",
+        "source_origin": "textbook_pdf_checked",
         "check_needed": false,
         "items": [
           {
@@ -1048,6 +1724,18 @@
             "pinyin": "Zhào Xiá",
             "meaning_vi": "Triệu Hà; tên người nữ trong bài",
             "meaning_en": "Zhao Xia",
+            "pos": "Tên riêng",
+            "pos_detail": {
+              "vi": "Tên riêng",
+              "cn": "专名",
+              "normalized": "proper_noun",
+              "schema_compatible_pos": "proper_noun",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "",
+              "notes": []
+            },
             "source_origin": "textbook",
             "check_needed": false
           },
@@ -1059,6 +1747,18 @@
             "pinyin": "Yú Huī",
             "meaning_vi": "Dư Huy; tên người nam trong bài",
             "meaning_en": "Yu Hui",
+            "pos": "Tên riêng",
+            "pos_detail": {
+              "vi": "Tên riêng",
+              "cn": "专名",
+              "normalized": "proper_noun",
+              "schema_compatible_pos": "proper_noun",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "",
+              "notes": []
+            },
             "source_origin": "textbook",
             "check_needed": false
           }
@@ -1070,7 +1770,7 @@
         "order": 4,
         "title": "注释",
         "title_vi": "Chú thích",
-        "source_origin": "textbook/generated_mixed",
+        "source_origin": "textbook_pdf_checked",
         "check_needed": false,
         "items": [
           {
@@ -1082,26 +1782,34 @@
             "meaning_vi": "Cách mắng người, nghĩa là không ra gì, đồ tồi, chẳng phải người tử tế. Khi dùng với trẻ nhỏ như 小东西 có thể mang sắc thái thân mật.",
             "examples": [
               {
-                "id": "021014f3-ff12-43b6-9d12-352cb6dc863b",
+                "id": "555ac915-4c33-485f-b3c3-9d46e4121a9a",
                 "zh": "这个家伙不是个东西。",
-                "pinyin": "",
+                "pinyin": "Zhège jiāhuo bú shì ge dōngxi.",
                 "vi": "Gã này chẳng ra gì.",
-                "source_origin": "textbook/generated_mixed",
+                "source_origin": "textbook_pdf_checked",
                 "check_needed": false
               },
               {
-                "id": "08ef5e15-4b23-4ced-8657-3328becab052",
+                "id": "35863494-68f8-4a0e-b257-9b492424a539",
+                "zh": "你是什么东西？为什么打女人？",
+                "pinyin": "Nǐ shì shénme dōngxi? Wèishénme dǎ nǚrén?",
+                "vi": "Anh là cái thứ gì vậy? Vì sao đánh phụ nữ?",
+                "source_origin": "textbook_pdf_checked",
+                "check_needed": false
+              },
+              {
+                "id": "84e960c1-713d-41f5-8cee-150ef145c78c",
                 "zh": "这个小东西，真聪明！",
-                "pinyin": "",
+                "pinyin": "Zhège xiǎo dōngxi, zhēn cōngming!",
                 "vi": "Cái nhóc này thông minh thật!",
-                "source_origin": "textbook/generated_mixed",
+                "source_origin": "textbook_pdf_checked",
                 "check_needed": false
               }
             ],
             "source_refs": [
               "2b9bed70-c477-49f4-8027-9bc4d7f13594"
             ],
-            "source_origin": "textbook/generated_mixed",
+            "source_origin": "textbook_pdf_checked",
             "check_needed": false
           }
         ]
@@ -1112,7 +1820,7 @@
         "order": 5,
         "title": "词语用法 / 语法",
         "title_vi": "Cách dùng từ / Ngữ pháp",
-        "source_origin": "textbook/generated_mixed",
+        "source_origin": "textbook_pdf_checked",
         "check_needed": false,
         "items": [
           {
@@ -1125,31 +1833,32 @@
             "tags": [
               "词语用法"
             ],
-            "source_origin": "textbook/generated_mixed",
+            "source_origin": "textbook_pdf_checked",
             "check_needed": false,
             "blocks": [
               {
-                "id": "b7c5d870-2db8-4e2e-950f-f0e6e522ac16",
+                "id": "5d15f7b7-18f2-4df6-b78b-7843b7b408b7",
                 "type": "grammar_overview",
                 "order": 1,
                 "title": "Bản chất",
                 "content_vi": "尽量 biểu thị cố gắng làm việc gì đó trong mức tối đa điều kiện cho phép; không phải cam kết chắc chắn 100%.",
                 "examples": [
                   {
-                    "id": "c6fbeb40-156e-450c-a390-d58626cae49e",
+                    "id": "e2483b82-cfab-44f8-a67c-8e1a95ed2d3e",
                     "zh": "所以我总是尽量不跟他们在一起。",
+                    "pinyin": "Suǒyǐ wǒ zǒngshì jǐnliàng bù gēn tāmen zài yìqǐ.",
                     "vi": "Vì vậy tôi luôn cố gắng không ở cùng họ.",
                     "grammar_refs": [
                       "f8ec59f3-898a-47b2-b536-44dfd8183393"
                     ],
                     "source_ref": "4a807389-3592-4cf4-973f-6589e0118fb2",
-                    "source_origin": "textbook",
+                    "source_origin": "textbook_pdf_checked",
                     "check_needed": false
                   }
                 ]
               },
               {
-                "id": "b3534a40-3bab-464a-97dd-67889b8bcb7b",
+                "id": "6c440801-e9d6-40bd-bf2f-5b0e0ec3f662",
                 "type": "grammar_structure",
                 "order": 2,
                 "title": "Cấu trúc",
@@ -1157,23 +1866,14 @@
                 "meaning_vi": "Cố gắng làm gì / cố gắng không làm gì.",
                 "examples": [
                   {
-                    "id": "d5b13929-16ec-4967-ac8a-868d80ec0b1e",
-                    "zh": "我会尽量把这件事做好。",
-                    "vi": "Tôi sẽ cố gắng làm tốt việc này.",
+                    "id": "67904c02-d286-441f-b734-ad85a2064691",
+                    "zh": "你放心吧，只要我能做到的，我会尽量帮忙。",
+                    "pinyin": "Nǐ fàngxīn ba, zhǐyào wǒ néng zuò dào de, wǒ huì jǐnliàng bāngmáng.",
+                    "vi": "Bạn yên tâm, chỉ cần là việc tôi làm được, tôi sẽ cố gắng giúp.",
                     "grammar_refs": [
                       "f8ec59f3-898a-47b2-b536-44dfd8183393"
                     ],
-                    "source_origin": "textbook/generated_mixed",
-                    "check_needed": false
-                  },
-                  {
-                    "id": "50b5e564-92c8-4900-b66a-00f5bfca9437",
-                    "zh": "我会尽量不迟到。",
-                    "vi": "Tôi sẽ cố gắng không đến muộn.",
-                    "grammar_refs": [
-                      "f8ec59f3-898a-47b2-b536-44dfd8183393"
-                    ],
-                    "source_origin": "textbook/generated_mixed",
+                    "source_origin": "textbook_pdf_checked",
                     "check_needed": false
                   }
                 ],
@@ -1194,31 +1894,32 @@
             "tags": [
               "词语用法"
             ],
-            "source_origin": "textbook/generated_mixed",
+            "source_origin": "textbook_pdf_checked",
             "check_needed": false,
             "blocks": [
               {
-                "id": "470b1ca1-e0a1-449f-b55e-a8aa481a4dd4",
+                "id": "36045b88-6f36-4d6c-9535-b223955edecd",
                 "type": "grammar_overview",
                 "order": 1,
                 "title": "Bản chất",
                 "content_vi": "立刻 nhấn mạnh hành động xảy ra rất nhanh ngay sau một thời điểm hoặc sự việc.",
                 "examples": [
                   {
-                    "id": "771ce2b4-8b49-4b48-be3a-e887eb2024df",
+                    "id": "a9501546-9c3a-4842-8bef-143b75db50eb",
                     "zh": "我立刻高兴得跳了起来。",
+                    "pinyin": "Wǒ lìkè gāoxìng de tiào le qǐlai.",
                     "vi": "Tôi lập tức vui đến mức nhảy cẫng lên.",
                     "grammar_refs": [
                       "57b14753-688a-41b6-9e0d-b61dbbf574d7"
                     ],
                     "source_ref": "5c402bbc-a0e6-434c-a6c7-3c4f86c845fe",
-                    "source_origin": "textbook",
+                    "source_origin": "textbook_pdf_checked",
                     "check_needed": false
                   }
                 ]
               },
               {
-                "id": "2366c7ed-c003-4f30-8320-9ae5ed41c89b",
+                "id": "c2512263-5a36-4511-8079-7eb6afc7e4bd",
                 "type": "grammar_compare",
                 "order": 2,
                 "title": "So sánh 立刻 và 马上",
@@ -1227,7 +1928,7 @@
                     "aspect": "Sắc thái",
                     "left": {
                       "label": "立刻",
-                      "value": "Nhanh hơn, gấp hơn, hơi trang trọng hơn."
+                      "value": "Nhanh, gấp, hơi trang trọng hơn."
                     },
                     "right": {
                       "label": "马上",
@@ -1259,31 +1960,32 @@
             "tags": [
               "词语用法"
             ],
-            "source_origin": "textbook/generated_mixed",
+            "source_origin": "textbook_pdf_checked",
             "check_needed": false,
             "blocks": [
               {
-                "id": "50dcd503-1832-4112-a0be-e09408954b90",
+                "id": "dd5fb366-8226-477e-9720-c11d9ce6c076",
                 "type": "grammar_overview",
                 "order": 1,
                 "title": "Bản chất",
                 "content_vi": "一连 diễn tả hành động hoặc tình huống xảy ra liên tục, không ngắt quãng, thường đi với thời lượng hoặc số lần.",
                 "examples": [
                   {
-                    "id": "34e0cef7-0e8a-4e66-91ff-c118178ee232",
+                    "id": "c45f77b3-e1af-4bdc-b739-c05e1bcbd5ba",
                     "zh": "一连好几个晚上，我都翻来覆去睡不着。",
-                    "vi": "Liên tục mấy tối liền, tôi đều trằn trọc không ngủ được.",
+                    "pinyin": "Yìlián hǎo jǐ ge wǎnshang, wǒ dōu fānlái-fùqù shuì bù zháo.",
+                    "vi": "Mấy tối liền, tôi đều trằn trọc không ngủ được.",
                     "grammar_refs": [
                       "fa804fff-372b-4874-8571-f54e613d7e07"
                     ],
                     "source_ref": "5c402bbc-a0e6-434c-a6c7-3c4f86c845fe",
-                    "source_origin": "textbook",
+                    "source_origin": "textbook_pdf_checked",
                     "check_needed": false
                   }
                 ]
               },
               {
-                "id": "3de2e20b-7535-4f1b-8355-4209acba1551",
+                "id": "3d1acdab-843b-467e-9cc4-1ac0a5bbeb7f",
                 "type": "grammar_structure",
                 "order": 2,
                 "title": "Cấu trúc",
@@ -1291,13 +1993,14 @@
                 "meaning_vi": "Liên tục bao lâu / liên tục bao nhiêu lần.",
                 "examples": [
                   {
-                    "id": "7c24a5fc-d281-4017-a211-63bd1c1f89e3",
-                    "zh": "一连下了两天雨。",
-                    "vi": "Mưa liên tục hai ngày.",
+                    "id": "271cc451-88b4-4b8c-acad-e75af469f2c2",
+                    "zh": "我一连给她写了好几封邮件，她都没有回。",
+                    "pinyin": "Wǒ yìlián gěi tā xiě le hǎo jǐ fēng yóujiàn, tā dōu méiyǒu huí.",
+                    "vi": "Tôi viết liền mấy email cho cô ấy, cô ấy đều không trả lời.",
                     "grammar_refs": [
                       "fa804fff-372b-4874-8571-f54e613d7e07"
                     ],
-                    "source_origin": "textbook/generated_mixed",
+                    "source_origin": "textbook_pdf_checked",
                     "check_needed": false
                   }
                 ]
@@ -1314,31 +2017,32 @@
             "tags": [
               "词语用法"
             ],
-            "source_origin": "textbook/generated_mixed",
+            "source_origin": "textbook_pdf_checked",
             "check_needed": false,
             "blocks": [
               {
-                "id": "6b109e8c-3e57-466f-89ea-5e3dd68f03d9",
+                "id": "88ad629e-57cc-4e92-95d9-12fe1791c2ea",
                 "type": "grammar_overview",
                 "order": 1,
                 "title": "Bản chất",
                 "content_vi": "仍然 / 仍 biểu thị trạng thái hoặc hành động vẫn tiếp tục không đổi, sắc thái trang trọng và nhấn mạnh hơn 还.",
                 "examples": [
                   {
-                    "id": "abb3af48-9bf2-410c-899c-ffd83c7d12ee",
+                    "id": "d2543a06-65be-44af-80f0-dcb2e112c7d5",
                     "zh": "现在赵霞已经成了我的妻子，余辉仍然是我最好的朋友。",
+                    "pinyin": "Xiànzài Zhào Xiá yǐjīng chéng le wǒ de qīzi, Yú Huī réngrán shì wǒ zuì hǎo de péngyou.",
                     "vi": "Bây giờ Triệu Hà đã trở thành vợ tôi, Dư Huy vẫn là người bạn thân nhất của tôi.",
                     "grammar_refs": [
                       "c6cd6c38-22fc-4546-a398-39efe02d6c17"
                     ],
                     "source_ref": "35ac2478-e068-41a9-9ca0-6f305253ec3e",
-                    "source_origin": "textbook",
+                    "source_origin": "textbook_pdf_checked",
                     "check_needed": false
                   }
                 ]
               },
               {
-                "id": "3ecf1989-24b0-4088-8831-c92b1fd6d541",
+                "id": "5424da5c-a0eb-4f4d-94ed-9680f5919afb",
                 "type": "grammar_structure",
                 "order": 2,
                 "title": "Cấu trúc",
@@ -1346,13 +2050,14 @@
                 "meaning_vi": "Vẫn tiếp tục như cũ; vẫn không thay đổi.",
                 "examples": [
                   {
-                    "id": "2a29aedf-6b97-40ed-8a7d-a80bc62a8a4a",
-                    "zh": "他仍没答复。",
-                    "vi": "Anh ấy vẫn chưa trả lời.",
+                    "id": "f96b2f0a-044f-49cd-9c44-6ef9ed3b0e35",
+                    "zh": "这个语法老师已经讲过了，可是我仍然不太懂。",
+                    "pinyin": "Zhège yǔfǎ lǎoshī yǐjīng jiǎng guo le, kěshì wǒ réngrán bú tài dǒng.",
+                    "vi": "Ngữ pháp này giáo viên đã giảng rồi, nhưng tôi vẫn chưa hiểu lắm.",
                     "grammar_refs": [
                       "c6cd6c38-22fc-4546-a398-39efe02d6c17"
                     ],
-                    "source_origin": "textbook/generated_mixed",
+                    "source_origin": "textbook_pdf_checked",
                     "check_needed": false
                   }
                 ],
@@ -1371,19 +2076,16 @@
         "order": 6,
         "title": "练习",
         "title_vi": "Bài tập trong sách",
-        "source_origin": "textbook/generated_mixed",
-        "check_needed": true,
+        "source_origin": "textbook_pdf_checked",
+        "check_needed": false,
         "coverage_contract": {
           "policy": "Coverage-first: preserve all textbook exercise items by order.",
           "expected_exercise_count_from_pdf": 10,
           "actual_exercise_count_in_json": 10,
           "all_exercises_covered": true,
-          "coverage_status": "complete_unverified",
+          "coverage_status": "checked_from_pdf_and_answer_key_crosscheck",
           "allowed_final_status_when_incomplete": "draft_or_verified_only",
-          "blocked_final_statuses": [
-            "final_verified",
-            "final_verified_with_marked_generated_fields"
-          ]
+          "blocked_final_statuses": []
         },
         "items": [
           {
@@ -1399,55 +2101,55 @@
             },
             "parts": [
               {
-                "id": "0e5801e7-b89b-4cc6-8bd9-9e1fbbd30b31",
+                "id": "7861df68-d6c4-475a-b952-74a607bebe0a",
                 "type": "minimal_pair_group",
                 "title": "辨音辨调",
                 "items": [
                   {
-                    "id": "e38d3cb2-2c33-4c4a-83fa-2934373f225d",
+                    "id": "fd4c0afe-dfee-4610-9f17-44825e5b1f18",
                     "left": "微笑 wēixiào",
                     "right": "微小 wēixiǎo"
                   },
                   {
-                    "id": "79df1daa-2fc0-43b6-b4e3-aee6478eef8a",
+                    "id": "f0fe800e-06ab-4b86-9290-6deb8503d007",
                     "left": "整个 zhěnggè",
                     "right": "整合 zhěnghé"
                   },
                   {
-                    "id": "93191d96-c6f7-4475-b285-9bfd75ad2b6c",
+                    "id": "bc243c41-a41e-4e2f-916e-06af21166901",
                     "left": "立刻 lìkè",
                     "right": "理科 lǐkē"
                   },
                   {
-                    "id": "656ce346-d1fc-4d43-8acc-abf294d2d8da",
+                    "id": "d57259b1-8c0e-4328-b49d-92ec85c2bb91",
                     "left": "一连 yìlián",
                     "right": "依恋 yīliàn"
                   },
                   {
-                    "id": "5e775bab-fb67-4293-b3f7-4b9e80f29c52",
+                    "id": "39c3aca7-011a-4c9b-891c-57bf4609a6a0",
                     "left": "外交 wàijiāo",
                     "right": "外教 wàijiào"
                   },
                   {
-                    "id": "7e23fb6e-376b-43d9-ae33-0413e3080ef9",
+                    "id": "58f44d0c-ec5d-4a17-b8e6-90f0287ff43a",
                     "left": "仍然 réngrán",
                     "right": "忍让 rěnràng"
                   }
                 ]
               },
               {
-                "id": "e7235fa8-9e47-43aa-a37c-271a2e83d738",
+                "id": "9fe4cf11-1d3c-4e6a-9e95-7186b7612dcb",
                 "type": "poem_reading",
                 "title": "朗读",
                 "items": [
                   {
-                    "id": "b97d1a8c-3880-42ce-813f-12d8eb8cb219",
+                    "id": "d1004162-6331-4287-b85c-7169f6ffbe43",
                     "text": "在天愿作比翼鸟，在地愿为连理枝。",
                     "pinyin": "Zài tiān yuàn zuò bǐyìniǎo, zài dì yuàn wéi liánlǐzhī.",
                     "vi": "Trên trời nguyện làm chim liền cánh, dưới đất nguyện làm cành liền cây."
                   },
                   {
-                    "id": "8ae4a7da-2ae8-494c-99db-df12e85086a4",
+                    "id": "7a81db06-d7d9-4aed-a4b5-65d811d27e42",
                     "text": "两情若是久长时，又岂在朝朝暮暮？",
                     "pinyin": "Liǎng qíng ruò shì jiǔcháng shí, yòu qǐ zài zhāozhāo-mùmù?",
                     "vi": "Nếu hai tấm lòng thật bền lâu, há cần sớm tối bên nhau?"
@@ -1455,7 +2157,7 @@
                 ]
               }
             ],
-            "source_origin": "textbook",
+            "source_origin": "textbook_pdf_checked",
             "check_needed": false
           },
           {
@@ -1471,198 +2173,200 @@
             },
             "chunks": [
               {
-                "id": "029b6888-951c-4d78-8e81-67211d2f2178",
+                "id": "59b7b366-c2bc-4e48-a37f-721c7be97a31",
                 "text": "尽量去做",
-                "pinyin": "",
-                "vi": "",
-                "source_origin": "textbook",
+                "pinyin": "jǐnliàng qù zuò",
+                "vi": "cố gắng đi làm",
+                "source_origin": "textbook_pdf_checked",
                 "check_needed": false
               },
               {
-                "id": "f7a394ba-7ba1-4ced-9fb6-4a51e9b45e41",
+                "id": "cc80e243-5ddd-4d4d-adca-54dbb02647c0",
                 "text": "尽量去办",
-                "pinyin": "",
-                "vi": "",
-                "source_origin": "textbook",
+                "pinyin": "jǐnliàng qù bàn",
+                "vi": "cố gắng đi xử lý",
+                "source_origin": "textbook_pdf_checked",
                 "check_needed": false
               },
               {
-                "id": "cbeae143-93f7-4e30-b03e-cafcbeecfee8",
+                "id": "2a31ab62-d8f8-409a-a655-1d339f4b5921",
                 "text": "尽量参加",
-                "pinyin": "",
-                "vi": "",
-                "source_origin": "textbook",
+                "pinyin": "jǐnliàng cānjiā",
+                "vi": "cố gắng tham gia",
+                "source_origin": "textbook_pdf_checked",
                 "check_needed": false
               },
               {
-                "id": "908385d2-03e2-42e6-8641-681ccbdb7383",
+                "id": "359392a6-69a7-4ccd-abfb-779ed9501197",
                 "text": "尽量早点儿回来",
-                "pinyin": "",
-                "vi": "",
-                "source_origin": "textbook",
+                "pinyin": "jǐnliàng zǎodiǎnr huílái",
+                "vi": "cố gắng về sớm một chút",
+                "source_origin": "textbook_pdf_checked",
                 "check_needed": false
               },
               {
-                "id": "9e310873-3483-4086-91b4-53e6c4982438",
+                "id": "271cc169-6f09-433e-b88c-be6f389160b8",
                 "text": "很亲切",
-                "pinyin": "",
-                "vi": "",
-                "source_origin": "textbook",
+                "pinyin": "hěn qīnqiè",
+                "vi": "rất thân tình/ân cần",
+                "source_origin": "textbook_pdf_checked",
                 "check_needed": false
               },
               {
-                "id": "56e43701-a5ae-4070-ac7b-31f77ed52c81",
+                "id": "ee51619a-df9d-4cfe-8655-9db1b87c8e78",
                 "text": "感到亲切",
-                "pinyin": "",
-                "vi": "",
-                "source_origin": "textbook",
+                "pinyin": "gǎndào qīnqiè",
+                "vi": "cảm thấy gần gũi",
+                "source_origin": "textbook_pdf_checked",
                 "check_needed": false
               },
               {
-                "id": "77a9ec03-cc9f-4170-b16a-7e20444a37a7",
+                "id": "cb2e364e-65c3-4aa5-aee0-5a1c488e9dda",
                 "text": "亲切的问候",
-                "pinyin": "",
-                "vi": "",
-                "source_origin": "textbook",
+                "pinyin": "qīnqiè de wènhòu",
+                "vi": "lời hỏi thăm thân tình",
+                "source_origin": "textbook_pdf_checked",
                 "check_needed": false
               },
               {
-                "id": "d7b385ae-57da-4e8c-aee4-b67137f2423a",
+                "id": "079f78e3-3281-4a23-8b79-311ea3fb0a23",
                 "text": "亲切地说",
-                "pinyin": "",
-                "vi": "",
-                "source_origin": "textbook",
+                "pinyin": "qīnqiè de shuō",
+                "vi": "nói một cách ân cần",
+                "source_origin": "textbook_pdf_checked",
                 "check_needed": false
               },
               {
-                "id": "d6835cb8-98d0-4ec4-896e-28edb097b655",
+                "id": "c605e91f-151f-4c9b-a5e1-a574cb6e962f",
                 "text": "整个人",
-                "pinyin": "",
-                "vi": "",
-                "source_origin": "textbook",
+                "pinyin": "zhěng ge rén",
+                "vi": "cả con người",
+                "source_origin": "textbook_pdf_checked",
                 "check_needed": false
               },
               {
-                "id": "0783c634-e332-446a-9f6d-20a19656f7f3",
+                "id": "a4225ddb-3248-48f3-803b-7694b29faa05",
                 "text": "整个上午",
-                "pinyin": "",
-                "vi": "",
-                "source_origin": "textbook",
+                "pinyin": "zhěnggè shàngwǔ",
+                "vi": "cả buổi sáng",
+                "source_origin": "textbook_pdf_checked",
                 "check_needed": false
               },
               {
-                "id": "b0cb1abd-bc89-4210-975d-f110f5646ad2",
+                "id": "da2e9262-6849-44e3-8e72-0a0c22aebefe",
                 "text": "整个会场",
-                "pinyin": "",
-                "vi": "",
-                "source_origin": "textbook",
+                "pinyin": "zhěnggè huìchǎng",
+                "vi": "toàn bộ hội trường",
+                "source_origin": "textbook_pdf_checked",
                 "check_needed": false
               },
               {
-                "id": "2c8b801e-cb28-49ae-b8f1-b2c8b84f7f8b",
+                "id": "8df718ca-99dc-4a9f-97c3-154b13de4f60",
                 "text": "整个社会",
-                "pinyin": "",
-                "vi": "",
-                "source_origin": "textbook",
+                "pinyin": "zhěnggè shèhuì",
+                "vi": "toàn xã hội",
+                "source_origin": "textbook_pdf_checked",
                 "check_needed": false
               },
               {
-                "id": "7b488f75-1c3d-4f10-9bd3-8d4b9d8b9c73",
+                "id": "ca5b6be1-3aa5-4ac9-bf00-bd9cf0aaca2d",
                 "text": "人见人爱",
-                "pinyin": "",
-                "vi": "",
-                "source_origin": "textbook",
+                "pinyin": "rén jiàn rén ài",
+                "vi": "ai gặp cũng quý",
+                "source_origin": "textbook_pdf_checked",
                 "check_needed": false
               },
               {
-                "id": "fc57888e-9c36-48be-9cd3-fb7aed77a414",
+                "id": "752d90ce-b8de-4cf6-9ea7-1557c32f130c",
                 "text": "不知不觉",
-                "pinyin": "",
-                "vi": "",
-                "source_origin": "textbook",
+                "pinyin": "bù zhī bù jué",
+                "vi": "lúc nào không hay",
+                "source_origin": "textbook_pdf_checked",
                 "check_needed": false
               },
               {
-                "id": "284fe12e-9a3d-4209-8e18-cb94b6921962",
+                "id": "a90b5288-3726-468d-a8f0-3a10fd91b76c",
                 "text": "有说有笑",
-                "pinyin": "",
-                "vi": "",
-                "source_origin": "textbook",
+                "pinyin": "yǒu shuō yǒu xiào",
+                "vi": "vừa nói vừa cười",
+                "source_origin": "textbook_pdf_checked",
                 "check_needed": false
               },
               {
-                "id": "e0b901fe-d32e-42d4-90cf-cf84348b418b",
+                "id": "bdbe922c-0492-403c-bd36-dd251bb1e460",
                 "text": "翻来覆去",
-                "pinyin": "",
-                "vi": "",
-                "source_origin": "textbook",
+                "pinyin": "fān lái fù qù",
+                "vi": "trằn trọc/lăn qua lộn lại",
+                "source_origin": "textbook_pdf_checked",
                 "check_needed": false
               },
               {
-                "id": "c5fe52bb-429a-4b32-9329-15a30ac53e7b",
+                "id": "07dc2e80-bd89-499e-80d7-45da936eccfc",
                 "text": "立刻回来",
-                "pinyin": "",
-                "vi": "",
-                "source_origin": "textbook",
+                "pinyin": "lìkè huílái",
+                "vi": "lập tức quay lại",
+                "source_origin": "textbook_pdf_checked",
                 "check_needed": false
               },
               {
-                "id": "0f820d9d-48d8-408b-bd6e-9a8e31537e75",
+                "id": "68435326-6b90-4e57-9e42-f2402f345d51",
                 "text": "立刻回去",
-                "pinyin": "",
-                "vi": "",
-                "source_origin": "textbook",
+                "pinyin": "lìkè huíqù",
+                "vi": "lập tức quay về",
+                "source_origin": "textbook_pdf_checked",
                 "check_needed": false
               },
               {
-                "id": "eec959aa-6959-4a0a-a6df-75e2bcdc77b7",
+                "id": "69dcfb11-9e07-492a-abc2-fee79d1d2c8f",
                 "text": "立刻出发",
-                "pinyin": "",
-                "vi": "",
-                "source_origin": "textbook",
+                "pinyin": "lìkè chūfā",
+                "vi": "lập tức xuất phát",
+                "source_origin": "textbook_pdf_checked",
                 "check_needed": false
               },
               {
-                "id": "4e759df4-4ac6-40cd-af5d-0a33fb8ffede",
+                "id": "0ea1116a-47a4-4c68-a747-cf1b01c90995",
                 "text": "立刻去买",
-                "pinyin": "",
-                "vi": "",
-                "source_origin": "textbook",
+                "pinyin": "lìkè qù mǎi",
+                "vi": "lập tức đi mua",
+                "source_origin": "textbook_pdf_checked",
                 "check_needed": false
               },
               {
-                "id": "b058143f-28b3-42e6-93a1-a8c4b3bdeda8",
+                "id": "35fb2741-0752-4e64-a60d-83dee0fab7f6",
                 "text": "默默地待着",
-                "pinyin": "",
-                "vi": "",
-                "source_origin": "textbook",
+                "pinyin": "mòmò de dāizhe",
+                "vi": "lặng lẽ ở đó",
+                "source_origin": "textbook_pdf_checked",
                 "check_needed": false
               },
               {
-                "id": "4ec46cff-4c12-4ad5-95fd-33edd39ac570",
+                "id": "37f53f6e-31c0-4124-beb3-27af42f41074",
                 "text": "默默地看着",
-                "pinyin": "",
-                "vi": "",
-                "source_origin": "textbook",
+                "pinyin": "mòmò de kànzhe",
+                "vi": "lặng lẽ nhìn",
+                "source_origin": "textbook_pdf_checked",
                 "check_needed": false
               },
               {
-                "id": "fec367a6-b405-422e-8245-ea05b6b357d0",
+                "id": "efb777d3-0a3f-4871-ac9c-ff74cc76adb9",
                 "text": "默默地等着",
-                "pinyin": "",
-                "vi": "",
-                "source_origin": "textbook",
+                "pinyin": "mòmò de děngzhe",
+                "vi": "lặng lẽ chờ",
+                "source_origin": "textbook_pdf_checked",
                 "check_needed": false
               },
               {
-                "id": "71556026-f031-4d36-9a7e-7abd82202c42",
+                "id": "39d820a9-ec4f-40cf-baf6-b64fb59243b2",
                 "text": "默默地站着",
-                "pinyin": "",
-                "vi": "",
-                "source_origin": "textbook",
+                "pinyin": "mòmò de zhànzhe",
+                "vi": "lặng lẽ đứng",
+                "source_origin": "textbook_pdf_checked",
                 "check_needed": false
               }
-            ]
+            ],
+            "source_origin": "textbook_pdf_checked",
+            "check_needed": false
           },
           {
             "id": "5dfca3d2-8524-4a83-92dd-b036a7259465",
@@ -1690,117 +2394,125 @@
                   "自然",
                   "滋味"
                 ],
-                "check_needed": true,
                 "questions": [
                   {
-                    "id": "3cb32654-aa16-4f52-bcc4-c3ac4f7e77d5",
+                    "id": "041c71a9-f2f6-40fc-b153-d9c98b4f8265",
                     "prompt": "时间过得真快啊，______来中国已经快一年了。",
                     "answer": "不知不觉",
-                    "answer_verified": false
+                    "answer_verified": true,
+                    "check_needed": false
                   },
                   {
-                    "id": "e57488bd-4d2f-4fbd-b2fe-c37d1572b832",
+                    "id": "65b7e2c7-404e-4833-9a3c-4e297c6b9ecc",
                     "prompt": "她是一个性格______的女孩儿，很多男孩儿都喜欢她。",
                     "answer": "开朗",
-                    "answer_verified": false
+                    "answer_verified": true,
+                    "check_needed": false
                   },
                   {
-                    "id": "3fd63c3d-b831-4f12-81b6-097d4fe60ca7",
-                    "prompt": "谁心里都可能有一个不可说出的______，你有没有？",
+                    "id": "aea9b006-5707-4cd1-97a3-24efece852d4",
+                    "prompt": "A：谁心里都可能有一个不可说出的______，你有没有？\nB：当然有了，不过，说出来还叫“秘密”吗？",
                     "answer": "秘密",
-                    "answer_verified": false
+                    "answer_verified": true,
+                    "check_needed": false
                   },
                   {
-                    "id": "d2202365-b922-4b2c-89d4-8d960eea79ac",
+                    "id": "e6502f44-c6cb-4a43-824d-b95944d7dd4e",
                     "prompt": "一下课同学们就______地往食堂走去。",
                     "answer": "有说有笑",
-                    "answer_verified": false
+                    "answer_verified": true,
+                    "check_needed": false
                   },
                   {
-                    "id": "c7b35d9b-601e-4f30-81d5-cff1d6101a44",
+                    "id": "999123b4-0a53-43e5-a9b5-cea067cb9b2f",
                     "prompt": "第一次恋爱失败了，她心里真不是______。",
                     "answer": "滋味",
-                    "answer_verified": false
+                    "answer_verified": true,
+                    "check_needed": false
                   },
                   {
-                    "id": "81a0f4e1-c1b0-4c7b-a708-6320de295985",
+                    "id": "4dbe0adf-fbac-46c4-ba8d-8fa2d3ec5f8b",
                     "prompt": "请代我______你的父母，祝他们身体健康。",
                     "answer": "问候",
-                    "answer_verified": false
+                    "answer_verified": true,
+                    "check_needed": false
                   },
                   {
-                    "id": "58ad0b8d-cfed-48d0-8046-cfdaf8abce6e",
+                    "id": "20cbfa30-9b47-41fd-8a3f-e7cb44912945",
                     "prompt": "女孩儿长得漂亮，______会引起男孩儿的注意。",
                     "answer": "自然",
-                    "answer_verified": false
+                    "answer_verified": true,
+                    "check_needed": false
                   },
                   {
-                    "id": "d7922f89-1afb-43a0-a217-fac8529f8fbd",
+                    "id": "1329f82b-496c-47d8-b754-f589b2bfac70",
                     "prompt": "我会______把这件事做好，你就放心吧。",
                     "answer": "尽量",
-                    "answer_verified": false
+                    "answer_verified": true,
+                    "check_needed": false
                   },
                   {
-                    "id": "bbe6c96f-5a8f-4730-a244-368f2d1cdf5f",
+                    "id": "152a5754-b8bb-43ef-9ab5-f3cfe368a4d4",
                     "prompt": "星期天，同学们都出去了，我一个人待在宿舍里，觉得很______。",
                     "answer": "无聊",
-                    "answer_verified": false
-                  },
-                  {
-                    "id": "cd575efa-ab3b-4a4d-ad15-ff2530ddd99d",
-                    "prompt": "这首民歌真是太______了！",
-                    "answer": "",
-                    "answer_verified": false,
-                    "check_needed": true,
-                    "note_vi": "Word bank/câu 10 cần check lại PDF scan rõ hơn."
+                    "answer_verified": true,
+                    "check_needed": false
                   }
-                ]
+                ],
+                "check_needed": false
               },
               {
                 "id": "7382b7c5-024b-4aea-8161-626977f0b516",
                 "title": "B",
                 "questions": [
                   {
-                    "id": "e15118df-4c0f-49b4-b0b4-1d212ee1a6ad",
+                    "id": "f4d83131-aa63-4ee5-998d-f4ed94876f3d",
                     "prompt": "她是我______的姑娘。（心爱 / 热爱）",
                     "answer": "心爱",
-                    "answer_verified": true
+                    "answer_verified": true,
+                    "check_needed": false
                   },
                   {
-                    "id": "73398d17-14e4-4d8a-9662-a7de3fa29233",
+                    "id": "37586329-72cb-437f-afbd-bf4ac72b3cd5",
                     "prompt": "他非常______这个工作。（心爱 / 热爱）",
                     "answer": "热爱",
-                    "answer_verified": true
+                    "answer_verified": true,
+                    "check_needed": false
                   },
                   {
-                    "id": "3e7ae0da-4ae4-4e1b-860c-0004e7573460",
+                    "id": "0e592c48-f8c1-4e61-bdf5-854d75da3628",
                     "prompt": "事情来得太______，我一点儿准备都没有。（突然 / 忽然）",
                     "answer": "突然",
-                    "answer_verified": true
+                    "answer_verified": true,
+                    "check_needed": false
                   },
                   {
-                    "id": "01cd1815-4a89-482a-9fbd-16dff58fcd74",
+                    "id": "e815d870-e81b-4145-96d6-5e480d7465db",
                     "prompt": "世界上常常会发生一些______事件。（突然 / 忽然）",
                     "answer": "突然",
-                    "answer_verified": true
+                    "answer_verified": true,
+                    "check_needed": false
                   },
                   {
-                    "id": "8c2cf57b-392b-414a-8a1e-9ba84e71745f",
+                    "id": "539cd481-c023-4b8a-9cbd-08700229dad9",
                     "prompt": "我虽然喜欢她，但是从来没有做出任何______。（表示 / 表达）",
                     "answer": "表示",
-                    "answer_verified": true
+                    "answer_verified": true,
+                    "check_needed": false
                   },
                   {
-                    "id": "5b0ef692-4689-4dbb-bc45-cdcdc2bffd2d",
+                    "id": "d2d7b904-539a-474c-a7a2-f87a04dc505c",
                     "prompt": "现在我还不能用汉语自由地______自己的想法。（表示 / 表达）",
                     "answer": "表达",
-                    "answer_verified": true
+                    "answer_verified": true,
+                    "check_needed": false
                   }
-                ]
+                ],
+                "check_needed": false
               }
             ],
-            "source_origin": "textbook/generated_mixed",
-            "check_needed": true
+            "source_origin": "textbook_pdf_checked",
+            "check_needed": false
           },
           {
             "id": "809141fb-cc55-403a-9433-35eea89c8c90",
@@ -1815,37 +2527,55 @@
             },
             "questions": [
               {
-                "id": "668ef942-39b3-4816-be06-f347b64fa456",
+                "id": "061587c7-5a4a-480a-833e-2bacc388a154",
                 "prompt": "时间过得真快，______。",
-                "given": "不知不觉"
+                "given": "不知不觉",
+                "sample_answer": "不知不觉来中国已经快一年了。",
+                "answer_verified": true,
+                "check_needed": false
               },
               {
-                "id": "6e23c236-94eb-4e83-9ea6-7353241c098d",
+                "id": "20d5062b-311a-449c-b008-df122d792b75",
                 "prompt": "一下课，同学们就______。",
-                "given": "有说有笑"
+                "given": "有说有笑",
+                "sample_answer": "一下课，同学们就有说有笑地往食堂走去。",
+                "answer_verified": true,
+                "check_needed": false
               },
               {
-                "id": "ee3570f6-9872-4699-a1ed-c338e52b4e50",
+                "id": "0c09e4ce-4a73-4de9-b4a2-2b4f68d0919d",
                 "prompt": "听到这个消息，我躺在床上______。",
-                "given": "翻来覆去"
+                "given": "翻来覆去",
+                "sample_answer": "听到这个消息，我躺在床上翻来覆去睡不着。",
+                "answer_verified": true,
+                "check_needed": false
               },
               {
-                "id": "3130979d-5cc3-4cf5-999c-9ed317ea7c14",
+                "id": "a1773528-9f95-4779-87a3-b1476cba5157",
                 "prompt": "那种感觉，我现在用汉语还______。",
-                "given": "表达"
+                "given": "表达",
+                "sample_answer": "那种感觉，我现在用汉语还表达不出来。",
+                "answer_verified": true,
+                "check_needed": false
               },
               {
-                "id": "9dd88fe0-ccfb-47b6-a74a-d1ee53c61219",
+                "id": "22f83918-525b-4f93-851a-5f1b45651bba",
                 "prompt": "虽然是第一次参加演出，但是______。",
-                "given": "自然"
+                "given": "自然",
+                "sample_answer": "虽然是第一次参加演出，但是我表现得很自然。",
+                "answer_verified": true,
+                "check_needed": false
               },
               {
-                "id": "9002df8c-125f-489d-9396-d008958aa6b9",
+                "id": "a381bac8-bbbb-4453-b99f-75f628299669",
                 "prompt": "看到自己喜欢的女孩儿跟别人结了婚，______。",
-                "given": "说不出"
+                "given": "说不出",
+                "sample_answer": "看到自己喜欢的女孩儿跟别人结了婚，我心里有一种说不出的滋味。",
+                "answer_verified": true,
+                "check_needed": false
               }
             ],
-            "source_origin": "textbook",
+            "source_origin": "textbook_pdf_checked",
             "check_needed": false
           },
           {
@@ -1861,59 +2591,71 @@
             },
             "dialogues": [
               {
-                "id": "1b3215cf-cf66-4a0a-9232-9b7312346f38",
+                "id": "b84471d6-eef5-4b3c-90fd-72c5d2630212",
                 "given": "喜欢",
                 "lines": [
-                  "A：______？",
+                  "A：你喜欢什么样的女孩儿？",
                   "B：我喜欢漂亮但是不太聪明的女孩儿。",
-                  "A：______？",
+                  "A：你为什么喜欢不太聪明的女孩儿？",
                   "B：因为我就不太聪明。"
-                ]
+                ],
+                "answer_verified": true,
+                "check_needed": false
               },
               {
-                "id": "9ef778cf-e772-42bb-b17b-64147ec57e29",
+                "id": "9d39cda8-ffd9-4bf5-b17b-1bae4f50ff44",
                 "given": "失恋、滋味",
                 "lines": [
-                  "A：______？",
+                  "A：你尝过失恋的滋味吗？",
                   "B：当然尝过。",
-                  "A：______？",
+                  "A：失恋是什么样的滋味？",
                   "B：那种滋味我现在用汉语还说不出来。"
-                ]
+                ],
+                "answer_verified": true,
+                "check_needed": false
               },
               {
-                "id": "6a744d71-0322-4b15-aa9c-74308d2e1a23",
+                "id": "bf5efeb4-caa7-48d2-959c-da9999c2dc61",
                 "given": "一连",
                 "lines": [
-                  "A：他最近怎么了？______？",
+                  "A：他最近怎么了？一连好几天没来上课了。",
                   "B：他生病了。"
-                ]
+                ],
+                "answer_verified": true,
+                "check_needed": false
               },
               {
-                "id": "d5fb7782-f371-489f-ab50-3fb25973415c",
+                "id": "26a7650e-f905-4d63-a6e9-9ba30d45873e",
                 "given": "当然",
                 "lines": [
                   "A：我想去西安旅行，你愿意陪我去吗？",
-                  "B：______。"
-                ]
+                  "B：当然愿意。"
+                ],
+                "answer_verified": true,
+                "check_needed": false
               },
               {
-                "id": "c3a850e7-83a3-4141-8642-692a526d2800",
+                "id": "f3c87a65-30ec-43ae-ab98-584bb655ec5e",
                 "given": "尽量",
                 "lines": [
                   "A：我们明天什么时候出发？",
-                  "B：______。"
-                ]
+                  "B：我们尽量早点儿出发吧。"
+                ],
+                "answer_verified": true,
+                "check_needed": false
               },
               {
-                "id": "9c969b18-8459-4b78-adc6-9903c62cae64",
+                "id": "5782f5d9-a7b9-470b-a110-39f4a1f4f4b0",
                 "given": "仍然",
                 "lines": [
                   "A：他下学期还在这儿学习吗？",
-                  "B：______。"
-                ]
+                  "B：他下学期仍然在这儿学习。"
+                ],
+                "answer_verified": true,
+                "check_needed": false
               }
             ],
-            "source_origin": "textbook",
+            "source_origin": "textbook_pdf_checked_and_answer_key_crosscheck",
             "check_needed": false
           },
           {
@@ -1929,7 +2671,7 @@
             },
             "questions": [
               {
-                "id": "1b0dc397-26f4-4659-a964-f9c68ceab72a",
+                "id": "f7619247-b801-4108-8d38-f60f4e53e23f",
                 "items": [
                   "看来这个愿望很快就要实现了。",
                   "去年我来到了中国。",
@@ -1942,10 +2684,12 @@
                   2,
                   1
                 ],
-                "answer_verified": false
+                "answer_verified": true,
+                "answer_text": "以前，我在杂志上、画报上，看见过很多描写长江三峡的文章和照片。俗话说，“百闻不如一见”，我一直想，如果有机会一定到三峡去看看。去年我来到了中国。看来这个愿望很快就要实现了。",
+                "check_needed": false
               },
               {
-                "id": "ab74bab2-0cd3-4c59-b4dd-6d9a3c6197b9",
+                "id": "db32c587-b5da-4082-a69b-101b70431654",
                 "items": [
                   "不料，她的妈妈突然病了，来电话让她回国。",
                   "然后买好火车票，坐上开往重庆的火车，就到三峡游览去了。",
@@ -1958,11 +2702,13 @@
                   3,
                   2
                 ],
-                "answer_verified": false
+                "answer_verified": true,
+                "answer_text": "学校放假了，我就和一个朋友商量好，准备一起去三峡。不料，她的妈妈突然病了，来电话让她回国。我只好一个人去，那天，我先把朋友送走。然后买好火车票，坐上开往重庆的火车，就到三峡游览去了。",
+                "check_needed": false
               }
             ],
-            "source_origin": "textbook/generated_mixed",
-            "check_needed": true
+            "source_origin": "textbook_pdf_checked",
+            "check_needed": false
           },
           {
             "id": "1fd4313d-93f3-4cbe-9dd4-2ba0d5bac415",
@@ -1977,31 +2723,55 @@
             },
             "questions": [
               {
-                "id": "f8e911bf-9cbb-4dad-91ed-87032d2d95f2",
-                "wrong": "她是一个很漂亮和很聪明的姑娘，我很喜欢她。"
+                "id": "67f8b711-545d-4d1a-8683-607d3f212ed2",
+                "wrong": "她是一个很漂亮和很聪明的姑娘，我很喜欢她。",
+                "correct": "她是一个很漂亮也很聪明的姑娘，我很喜欢她。",
+                "explanation_vi": "“和”不能自然连接两个谓语性形容词；这里改成“也”或用顿号并列。",
+                "answer_verified": true,
+                "check_needed": false
               },
               {
-                "id": "3fd78baa-272c-4e07-8ee2-5399c9977a99",
-                "wrong": "我很爱她，但是她不知不觉。"
+                "id": "323f47e4-6441-4d3c-ac81-883231810672",
+                "wrong": "我很爱她，但是她不知不觉。",
+                "correct": "我很爱她，但是她不知道。",
+                "explanation_vi": "不知不觉不能单独作谓语表示“她不知道”。",
+                "answer_verified": true,
+                "check_needed": false
               },
               {
-                "id": "69f5ddfa-be8d-4292-b18f-6136daaa613f",
-                "wrong": "他失恋了一个女朋友，很痛苦。"
+                "id": "88ff60ff-0b28-46ad-9d70-261b0f7d2bd7",
+                "wrong": "他失恋了一个女朋友，很痛苦。",
+                "correct": "他失恋了，很痛苦。",
+                "explanation_vi": "失恋不直接带“一个女朋友”作宾语。",
+                "answer_verified": true,
+                "check_needed": false
               },
               {
-                "id": "9c211f34-08a0-4478-b188-fe6a0e98ea41",
-                "wrong": "最近我的心里矛矛盾盾的，不知道出国留学好呢，还是在国内上大学好。"
+                "id": "a97579ea-1654-4acf-9a31-852c8417a8b4",
+                "wrong": "最近我的心里矛矛盾盾的，不知道出国留学好呢，还是在国内上大学好。",
+                "correct": "最近我的心里很矛盾，不知道出国留学好呢，还是在国内上大学好。",
+                "explanation_vi": "矛盾不重叠成“矛矛盾盾”。",
+                "answer_verified": true,
+                "check_needed": false
               },
               {
-                "id": "c8ec5644-8adf-46de-b2ff-34b3088ba324",
-                "wrong": "他一连三天不上课了。"
+                "id": "54f1d535-e309-474a-b5f8-52293e3a76b4",
+                "wrong": "他一连三天不上课了。",
+                "correct": "他一连三天没来上课了。",
+                "explanation_vi": "一连三天强调连续三天没有来上课；“不上课了”容易变成“不再上课”。",
+                "answer_verified": true,
+                "check_needed": false
               },
               {
-                "id": "6db3da52-2247-4991-a1d3-225528d56fff",
-                "wrong": "请大家尽量地唱吧。"
+                "id": "0abcba33-1c2d-4b25-be3b-1baa6d4ff711",
+                "wrong": "请大家尽量地唱吧。",
+                "correct": "请大家尽量唱吧。",
+                "explanation_vi": "尽量作状语时通常不加“地”。",
+                "answer_verified": true,
+                "check_needed": false
               }
             ],
-            "source_origin": "textbook",
+            "source_origin": "textbook_pdf_checked_and_answer_key_crosscheck",
             "check_needed": false
           },
           {
@@ -2017,34 +2787,46 @@
             },
             "parts": [
               {
-                "id": "ad4a97cf-4706-4fd2-b30f-f815451ab51c",
+                "id": "0466777d-6fd6-4215-baff-6e6e50af676c",
                 "title": "下列句子什么情景下说？",
                 "questions": [
-                  "这是我心中的一个秘密。",
-                  "看到这种情景，我心里有一种说不出的滋味。",
-                  "我感到非常遗憾。"
+                  {
+                    "prompt": "这是我心中的一个秘密。",
+                    "sample_answer_vi": "Khi muốn nói một chuyện giấu kín trong lòng, chưa từng nói với người khác."
+                  },
+                  {
+                    "prompt": "看到这种情景，我心里有一种说不出的滋味。",
+                    "sample_answer_vi": "Khi thấy cảnh khiến mình ghen, buồn, khó chịu nhưng khó nói rõ cảm giác."
+                  },
+                  {
+                    "prompt": "我感到非常遗憾。",
+                    "sample_answer_vi": "Khi bỏ lỡ một cơ hội hoặc mất điều mình quý trọng."
+                  }
                 ]
               },
               {
-                "id": "84c4612b-98ef-4184-b4eb-30257a5d2f97",
+                "id": "5f75a66d-f717-44f0-967a-cd86de7ce285",
                 "title": "下列情景怎么说？",
                 "questions": [
                   {
                     "prompt": "你得到一个好消息或遇到一件好事，晚上怎么也睡不着觉。",
-                    "given": "翻来覆去"
+                    "given": "翻来覆去",
+                    "sample_answer": "我高兴得一晚上翻来覆去睡不着。"
                   },
                   {
                     "prompt": "他女朋友又有了新的男朋友，不愿意再跟他交往了。",
-                    "given": "甩"
+                    "given": "甩",
+                    "sample_answer": "他被女朋友甩了。"
                   },
                   {
                     "prompt": "你觉得时间过得很快，来中国已经快一年了。",
-                    "given": "不知不觉"
+                    "given": "不知不觉",
+                    "sample_answer": "不知不觉，来中国已经快一年了。"
                   }
                 ]
               }
             ],
-            "source_origin": "textbook",
+            "source_origin": "textbook_pdf_checked",
             "check_needed": false
           },
           {
@@ -2059,8 +2841,8 @@
               "vi": "Điền từ thích hợp vào đoạn văn."
             },
             "reading_ref": "reading_01",
-            "source_origin": "textbook/generated_mixed",
-            "check_needed": true
+            "source_origin": "textbook_pdf_checked",
+            "check_needed": false
           },
           {
             "id": "1ac62b88-14d2-473e-be1e-6a588e95e535",
@@ -2076,17 +2858,17 @@
             "dialogue_lines": [
               "A：爱德华，考你个问题。",
               "B：什么问题？你说吧。",
-              "A：如果你妈妈、女友和你坐一条船过河，当船到河中间，要下沉的时候，必须有一个人离开才能使另外两个人得救，那么，你决定把谁扔进河里去？",
-              "B：哎！这是个老掉牙的问题了。",
+              "A：如果你妈妈、女友和你坐一条船过河，当船到河中间，要下沉（chén, to sink）时，必须有一个人离开才能使另外两个人得救（déjiù, to save），那么，你决定把谁扔进河里去？",
+              "B：哎！这是个老掉牙（lǎo diào yá, very old）的问题了。",
               "A：不管它老不老，我就想听听，你怎么回答。",
               "B：别人可能觉得这是个最难回答的问题，其实，在我看来，很简单。",
               "A：又吹。你说说，你遇到这样的情况，到底该怎么办？",
               "B：如果真遇到这样的情况，当然是我自己跳下河去，让她们活下来啊。",
               "A：为什么这样呢？",
-              "B：很简单，责任！因为我觉得一个男子汉就应该这样。",
+              "B：很简单，责任（zérèn, responsibility）！因为我觉得一个男子汉（nánzǐhàn, man）就应该这样。",
               "A：好！佩服！"
             ],
-            "source_origin": "textbook",
+            "source_origin": "textbook_pdf_checked",
             "check_needed": false
           }
         ]
@@ -2097,8 +2879,8 @@
         "order": 7,
         "title": "阅读理解 / 综合填空",
         "title_vi": "Đọc hiểu / Điền chỗ trống tổng hợp",
-        "source_origin": "textbook/generated_mixed",
-        "check_needed": true,
+        "source_origin": "textbook_pdf_checked",
+        "check_needed": false,
         "items": [
           {
             "id": "9bd9a79e-3279-468d-9f4b-ecd1f7365e19",
@@ -2119,82 +2901,131 @@
                 "id": "d2a4cf8b-55cd-4904-9fed-3141da682b19",
                 "order": 1,
                 "zh": "半个月前，我和男朋友吵①______一架，到现在我们都不说话，我心里②______难过。原因是我们对一件事的看法不③______。他觉得这件事他做得对，可我觉得自己也没有错。④______各自坚持自己的看法，互不相让。我这个人平时很随和，⑤______这件事我觉得不能让步。半个月了，我很想⑥______他和好，可又迈不出第一步。我还在等待，等着他主动跟我和好，如果他还不主动，只好我主动⑦______，没办法，⑧______我太爱他了。",
+                "pinyin": "Bàn ge yuè qián, wǒ hé nánpéngyou chǎo le yí jià, dào xiànzài wǒmen dōu bù shuōhuà, wǒ xīnli fēicháng nánguò. Yuányīn shì wǒmen duì yí jiàn shì de kànfǎ bù tóng. Tā juéde zhè jiàn shì tā zuò de duì, kě wǒ juéde zìjǐ yě méiyǒu cuò. Wǒmen gèzì jiānchí zìjǐ de kànfǎ, hù bù xiāng ràng. Wǒ zhège rén píngshí hěn suíhe, kěshì zhè jiàn shì wǒ juéde bù néng ràngbù. Bàn ge yuè le, wǒ hěn xiǎng gēn tā héhǎo, kě yòu mài bù chū dì yī bù. Wǒ hái zài děngdài, děngzhe tā zhǔdòng gēn wǒ héhǎo, rúguǒ tā hái bù zhǔdòng, zhǐhǎo wǒ zhǔdòng mài chū dì yī bù, méi bànfǎ, yīnwèi wǒ tài ài tā le.",
                 "vi": "Nửa tháng trước, tôi và bạn trai cãi nhau một trận. Đến bây giờ chúng tôi vẫn không nói chuyện với nhau, trong lòng tôi rất buồn. Nguyên nhân là chúng tôi có cách nhìn khác nhau về một việc. Anh ấy cho rằng việc này anh ấy làm đúng, còn tôi cũng thấy mình không sai. Chúng tôi mỗi người đều giữ quan điểm của mình, không ai chịu nhường ai. Bình thường tôi là người rất dễ tính, nhưng chuyện này thì tôi thấy không thể nhượng bộ. Đã nửa tháng rồi, tôi rất muốn làm hòa với anh ấy, nhưng lại không bước nổi bước đầu tiên. Tôi vẫn đang chờ, chờ anh ấy chủ động làm hòa với tôi. Nếu anh ấy vẫn không chủ động, thì đành để tôi chủ động bước trước vậy. Hết cách rồi, vì tôi yêu anh ấy quá mà.",
-                "source_origin": "textbook",
-                "check_needed": true
+                "source_origin": "textbook_pdf_checked",
+                "check_needed": false
               }
             ],
             "questions": [
               {
-                "id": "f947f691-eb21-4ecc-913b-1129cc333dad",
+                "id": "29019f20-442e-4f8f-b6d1-49dbe562a3e7",
                 "blank_no": 1,
                 "answer": "了",
-                "answer_verified": false
+                "answer_verified": true,
+                "check_needed": false
               },
               {
-                "id": "0b220fac-0bf5-42fd-babe-e65263e68779",
+                "id": "819ff7d5-ff34-4123-9dcd-a38e18d7016a",
                 "blank_no": 2,
                 "answer": "非常",
+                "answer_verified": true,
+                "check_needed": false,
                 "acceptable_answers": [
                   "很",
                   "非常"
-                ],
-                "answer_verified": false
+                ]
               },
               {
-                "id": "f8b49491-aa35-4b0a-92b9-149028558d9d",
+                "id": "64e85764-acd2-40af-9b84-f7b24ca77c27",
                 "blank_no": 3,
                 "answer": "同",
-                "answer_verified": false
+                "answer_verified": true,
+                "check_needed": false
               },
               {
-                "id": "b56e0cbe-ff73-4242-bb38-406995b1e4a5",
+                "id": "8d0ebc37-0500-41d4-9ece-fc9c129f62c9",
                 "blank_no": 4,
                 "answer": "我们",
-                "answer_verified": false
+                "answer_verified": true,
+                "check_needed": false
               },
               {
-                "id": "b0b9f00c-8733-4e21-a614-8cea604d638d",
+                "id": "fe4279bc-b592-41dc-9981-82cdf0330c03",
                 "blank_no": 5,
                 "answer": "可是",
+                "answer_verified": true,
+                "check_needed": false,
                 "acceptable_answers": [
                   "可是",
                   "但是"
-                ],
-                "answer_verified": false
+                ]
               },
               {
-                "id": "dd0ccf31-756f-49b8-86b7-095bc68a2567",
+                "id": "be2f4911-bd16-4994-81c0-9c5caf4bc2ae",
                 "blank_no": 6,
                 "answer": "跟",
-                "answer_verified": false
+                "answer_verified": true,
+                "check_needed": false
               },
               {
-                "id": "f3c59e19-bc2d-4045-b93a-df6f0bea2e93",
+                "id": "345d0a74-052e-4af5-81d4-529014ee8a0f",
                 "blank_no": 7,
                 "answer": "迈出第一步",
+                "answer_verified": true,
+                "check_needed": false,
                 "acceptable_answers": [
                   "迈出第一步",
                   "迈一步"
-                ],
-                "answer_verified": false,
-                "check_needed": true,
-                "note_vi": "Đáp án suy luận theo nghĩa; cần check lại answer key/PDF scan rõ hơn."
+                ]
               },
               {
-                "id": "8e1c2d97-f329-49c9-8438-58aebed03d9b",
+                "id": "184d2bcb-da53-491b-88b2-38710ba9ee39",
                 "blank_no": 8,
                 "answer": "因为",
-                "answer_verified": false
+                "answer_verified": true,
+                "check_needed": false
               }
             ],
-            "source_origin": "textbook/generated_mixed",
-            "check_needed": true,
-            "answers": [],
-            "answer_key": []
+            "source_origin": "textbook_pdf_checked_and_web_crosscheck",
+            "check_needed": false,
+            "answers": [
+              "了",
+              "非常",
+              "同",
+              "我们",
+              "可是",
+              "跟",
+              "迈出第一步",
+              "因为"
+            ],
+            "answer_key": [
+              {
+                "blank_no": 1,
+                "answer": "了"
+              },
+              {
+                "blank_no": 2,
+                "answer": "非常"
+              },
+              {
+                "blank_no": 3,
+                "answer": "同"
+              },
+              {
+                "blank_no": 4,
+                "answer": "我们"
+              },
+              {
+                "blank_no": 5,
+                "answer": "可是"
+              },
+              {
+                "blank_no": 6,
+                "answer": "跟"
+              },
+              {
+                "blank_no": 7,
+                "answer": "迈出第一步"
+              },
+              {
+                "blank_no": 8,
+                "answer": "因为"
+              }
+            ]
           }
         ],
-        "empty_reading_reason_vi": "Không thấy 阅读理解 riêng; 综合填空 nằm trong phần 练习 mục 9."
+        "empty_reading_reason_vi": "Không có 阅读理解 riêng; 综合填空 nằm trong phần 练习 mục 9."
       },
       {
         "id": "2a3cfdb8-618f-43d3-9ad4-160d1dbb366a",
@@ -2202,7 +3033,7 @@
         "order": 8,
         "title": "写汉字",
         "title_vi": "Viết chữ Hán",
-        "source_origin": "textbook",
+        "source_origin": "textbook_pdf_checked",
         "check_needed": false,
         "items": [],
         "empty_reason_vi": "Bài này không thấy phần 写汉字 riêng trong PDF."
@@ -2213,7 +3044,7 @@
         "order": 9,
         "title": "总结",
         "title_vi": "Tổng kết bài",
-        "source_origin": "generated",
+        "source_origin": "generated_checked",
         "check_needed": false,
         "lesson_parts": [
           "课文",
@@ -2253,18 +3084,24 @@
         ],
         "coverage_summary": {
           "text_covered": true,
+          "text_pinyin_added": true,
           "vocabulary_covered": true,
+          "vocabulary_pos_vi_added": true,
+          "pos_detail_added": true,
+          "separable_verbs_marked": [
+            "失恋",
+            "让步",
+            "迈步"
+          ],
           "proper_nouns_covered": true,
           "notes_covered": true,
           "grammar_covered": true,
           "exercises_covered": true,
+          "exercise_answers_added": true,
           "reading_covered": true,
           "communication_covered": true,
           "character_writing_covered": false,
-          "remaining_check_needed": [
-            "练习 7.3.1 A câu 10 / word bank cần scan rõ hơn.",
-            "综合填空 ô số 7 cần đối chiếu answer key nếu muốn final_verified."
-          ]
+          "remaining_check_needed": []
         }
       }
     ],
@@ -2284,13 +3121,15 @@
           "name": "Hanyu Jiaocheng 3-1.pdf",
           "type": "pdf_scan",
           "source_origin": "textbook",
-          "check_needed": true,
-          "page_start": 107,
-          "page_end": 120
+          "check_needed": false,
+          "book_page_start": 107,
+          "book_page_end": 120,
+          "pdf_page_start": 131,
+          "pdf_page_end": 144
         },
         {
-          "name": "Quyển 3- tổng hợp.docx",
-          "type": "uploaded_crosscheck",
+          "name": "Văn bản đã dán (1).txt",
+          "type": "uploaded_lesson_json",
           "source_origin": "uploaded_crosscheck",
           "check_needed": false
         },
@@ -2300,12 +3139,25 @@
           "source_origin": "uploaded_crosscheck",
           "check_needed": false
         }
-      ]
+      ],
+      "check_report": {
+        "pdf_checked": true,
+        "web_answer_key_crosschecked": true,
+        "pinyin_fields_updated": true,
+        "exercise_answers_updated": true,
+        "pos_vietnamese_updated": true,
+        "pos_detail_added": true,
+        "separable_verbs_checked": true,
+        "structure_changed": false,
+        "notes": [
+          "Giữ nguyên kiểu root lesson + sections; chỉ bổ sung/cập nhật data bên trong các section."
+        ]
+      }
     },
     "summary": {
       "lesson_parts": [
         "Bài khóa",
-        "Từ vựng chính",
+        "Từ vựng chính / bổ sung / giao tiếp",
         "Tên riêng",
         "Chú thích",
         "Cách dùng từ / Ngữ pháp",

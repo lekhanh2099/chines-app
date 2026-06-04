@@ -11,11 +11,12 @@
       "hanyu_2_1",
       "lesson_02",
       "coverage_first",
-      "verified_partial_to_pdf_scan"
+      "verified_to_pdf_scan",
+      "updated_pinyin_pos_answers"
     ],
     "sections": [
       {
-        "id": "a6c0d522-99be-4f36-881c-b9b2c6beeb85",
+        "id": "section_01_text",
         "type": "text",
         "order": 1,
         "title": "课文",
@@ -24,7 +25,7 @@
         "check_needed": false,
         "blocks": [
           {
-            "id": "e155d5ea-f89d-45f0-ab8d-094ce9e719f0",
+            "id": "text_block_001",
             "type": "text_dialogue",
             "order": 1,
             "title": "你怎么了",
@@ -33,246 +34,294 @@
             "check_needed": false,
             "lines": [
               {
-                "id": "f8046d8e-353e-4b63-a072-7498c8f1d9ff",
+                "id": "text_line_001",
                 "order": 1,
                 "speaker": "大夫",
                 "zh": "你怎么了？",
+                "pinyin": "Nǐ zěnme le?",
                 "vi": "Anh/chị bị sao vậy?",
-                "pinyin": "",
+                "vocab_refs": [],
                 "grammar_refs": [
-                  "grammar_03_note_ni_zenmele"
-                ]
+                  "grammar_note_zenmele"
+                ],
+                "audio_key": "",
+                "notes": []
               },
               {
-                "id": "30929615-34c8-4e5b-b0a2-5ad3358ad755",
+                "id": "text_line_002",
                 "order": 2,
                 "speaker": "病人",
                 "zh": "肚子疼得厉害，在家吃了两片药，还不行。",
+                "pinyin": "Dùzi téng de lìhai, zài jiā chī le liǎng piàn yào, hái bù xíng.",
                 "vi": "Bụng đau dữ lắm, ở nhà uống hai viên thuốc rồi mà vẫn không khỏi.",
-                "pinyin": "",
                 "vocab_refs": [
-                  "1fbd69b7-603a-44ea-8d57-10cd4def9ced",
-                  "3dc505f1-bc0e-4a96-b448-17fed89fdc60",
-                  "5ea44727-d97c-467b-b1b8-babd195df50d"
+                  "vocab_003",
+                  "vocab_004",
+                  "vocab_006"
                 ],
                 "grammar_refs": [
-                  "f8ec59f3-898a-47b2-b536-44dfd8183393"
-                ]
+                  "grammar_02_verb_le"
+                ],
+                "audio_key": "",
+                "notes": []
               },
               {
-                "id": "9faf6980-effe-42f1-a01e-7f1740da2edb",
+                "id": "text_line_003",
                 "order": 3,
                 "speaker": "大夫",
                 "zh": "拉肚子了吗？",
+                "pinyin": "Lā dùzi le ma?",
                 "vi": "Có bị tiêu chảy không?",
-                "pinyin": "",
                 "vocab_refs": [
-                  "54613016-834a-4fc3-9912-2357a6d27058"
+                  "vocab_007"
                 ],
                 "grammar_refs": [
-                  "f8ec59f3-898a-47b2-b536-44dfd8183393"
-                ]
+                  "grammar_02_verb_le"
+                ],
+                "audio_key": "",
+                "notes": []
               },
               {
-                "id": "146f8fa1-ae74-468d-910e-19cab53e3cf3",
+                "id": "text_line_004",
                 "order": 4,
                 "speaker": "病人",
                 "zh": "拉了。",
+                "pinyin": "Lā le.",
                 "vi": "Có.",
-                "pinyin": "",
                 "vocab_refs": [
-                  "0da97406-c3ac-4fcb-a51c-398a59c3fbae"
+                  "vocab_008"
                 ],
                 "grammar_refs": [
-                  "f8ec59f3-898a-47b2-b536-44dfd8183393"
-                ]
+                  "grammar_02_verb_le"
+                ],
+                "audio_key": "",
+                "notes": []
               },
               {
-                "id": "44d4c32e-309d-4802-b7cf-e41ee8052535",
+                "id": "text_line_005",
                 "order": 5,
                 "speaker": "大夫",
                 "zh": "昨天吃什么了？",
+                "pinyin": "Zuótiān chī shénme le?",
                 "vi": "Hôm qua đã ăn gì?",
-                "pinyin": "",
+                "vocab_refs": [],
                 "grammar_refs": [
-                  "f8ec59f3-898a-47b2-b536-44dfd8183393"
-                ]
+                  "grammar_02_verb_le"
+                ],
+                "audio_key": "",
+                "notes": []
               },
               {
-                "id": "6f4b4423-8315-40e6-88fa-2fa2038271af",
+                "id": "text_line_006",
                 "order": 6,
                 "speaker": "病人",
                 "zh": "就吃了一些鱼和牛肉。",
+                "pinyin": "Jiù chī le yìxiē yú hé niúròu.",
                 "vi": "Chỉ ăn một ít cá và thịt bò thôi.",
-                "pinyin": "",
                 "vocab_refs": [
-                  "54b36889-82be-485b-8342-fb8aab572065",
-                  "1354b1a3-93cc-4505-8d7f-c5550a1d6ae9"
+                  "vocab_009",
+                  "vocab_010"
                 ],
                 "grammar_refs": [
-                  "f8ec59f3-898a-47b2-b536-44dfd8183393",
-                  "grammar_03_note_jiu"
-                ]
+                  "grammar_02_verb_le",
+                  "note_jiu_only"
+                ],
+                "audio_key": "",
+                "notes": []
               },
               {
-                "id": "6de58c5b-164f-4b2f-8d7e-84f1c7c1a66c",
+                "id": "text_line_007",
                 "order": 7,
                 "speaker": "大夫",
                 "zh": "喝什么了？",
+                "pinyin": "Hē shénme le?",
                 "vi": "Đã uống gì?",
-                "pinyin": "",
+                "vocab_refs": [],
                 "grammar_refs": [
-                  "f8ec59f3-898a-47b2-b536-44dfd8183393"
-                ]
+                  "grammar_02_verb_le"
+                ],
+                "audio_key": "",
+                "notes": []
               },
               {
-                "id": "9d76be1a-c606-44bb-a490-a9bd82982e3b",
+                "id": "text_line_008",
                 "order": 8,
                 "speaker": "病人",
                 "zh": "喝了一瓶啤酒。",
+                "pinyin": "Hē le yì píng píjiǔ.",
                 "vi": "Uống một chai bia.",
-                "pinyin": "",
+                "vocab_refs": [],
                 "grammar_refs": [
-                  "f8ec59f3-898a-47b2-b536-44dfd8183393"
-                ]
+                  "grammar_02_verb_le"
+                ],
+                "audio_key": "",
+                "notes": []
               },
               {
-                "id": "6e148072-17aa-4ebd-88a1-c59b2fc0ba17",
+                "id": "text_line_009",
                 "order": 9,
                 "speaker": "大夫",
                 "zh": "发烧吗？",
+                "pinyin": "Fāshāo ma?",
                 "vi": "Có sốt không?",
-                "pinyin": "",
                 "vocab_refs": [
-                  "2185ee67-885d-4ffb-83e2-e97be4070796"
-                ]
+                  "vocab_031"
+                ],
+                "grammar_refs": [],
+                "audio_key": "",
+                "notes": []
               },
               {
-                "id": "a8845639-9fca-4398-853d-a08fb63482a8",
+                "id": "text_line_010",
                 "order": 10,
                 "speaker": "病人",
                 "zh": "不发烧。",
+                "pinyin": "Bù fāshāo.",
                 "vi": "Không sốt.",
-                "pinyin": "",
                 "vocab_refs": [
-                  "2185ee67-885d-4ffb-83e2-e97be4070796"
-                ]
+                  "vocab_031"
+                ],
+                "grammar_refs": [],
+                "audio_key": "",
+                "notes": []
               },
               {
-                "id": "eb3a72ec-54fc-469d-929b-b614c65e00f1",
+                "id": "text_line_011",
                 "order": 11,
                 "speaker": "大夫",
                 "zh": "你先去化验一下儿大便，然后我再给你检查检查。",
-                "vi": "Anh/chị đi xét nghiệm đại tiện trước một chút, sau đó tôi sẽ kiểm tra lại cho anh/chị.",
-                "pinyin": "",
+                "pinyin": "Nǐ xiān qù huàyàn yíxiàr dàbiàn, ránhòu wǒ zài gěi nǐ jiǎnchá jiǎnchá.",
+                "vi": "Anh/chị đi xét nghiệm phân trước một chút, sau đó tôi sẽ kiểm tra lại cho anh/chị.",
                 "vocab_refs": [
-                  "f0684cb3-4577-4e6c-9f22-7d97c89692b3",
-                  "d5b362a7-c8f6-4f25-b2b5-0f1749c8afbb",
-                  "7eccd5e8-dac0-4f36-be2e-abcc0a2bdfcd"
+                  "vocab_011",
+                  "vocab_013",
+                  "vocab_012"
                 ],
                 "grammar_refs": [
-                  "5c6d8f8c-e237-49a9-90ed-774267549aa6",
-                  "00283e6f-e5c3-4028-a2c6-6296e5ecb407",
-                  "32221e32-5abd-40ef-abc1-2fa1076bc342"
-                ]
+                  "helper_yixiar",
+                  "helper_verb_reduplication"
+                ],
+                "audio_key": "",
+                "notes": []
               },
               {
-                "id": "5d22fae9-a022-41b5-a551-b9b68c51b516",
+                "id": "text_line_012",
                 "order": 12,
                 "speaker": "病人",
                 "zh": "好吧。",
+                "pinyin": "Hǎo ba.",
                 "vi": "Được ạ.",
-                "pinyin": ""
+                "vocab_refs": [],
+                "grammar_refs": [],
+                "audio_key": "",
+                "notes": []
               },
               {
-                "id": "a568d979-0ebe-412d-9200-f663609af6c5",
+                "id": "text_line_013",
                 "order": 13,
                 "speaker": "大夫",
                 "zh": "化验结果出来了吗？",
+                "pinyin": "Huàyàn jiéguǒ chūlai le ma?",
                 "vi": "Kết quả xét nghiệm đã có chưa?",
-                "pinyin": "",
                 "vocab_refs": [
-                  "8a5b1d09-23a6-4182-96e6-9bf4d761a1e1",
-                  "be7a835d-ff8f-4a86-9fd8-27c5f1093f0c"
+                  "vocab_011",
+                  "vocab_015",
+                  "vocab_016"
                 ],
                 "grammar_refs": [
-                  "f8ec59f3-898a-47b2-b536-44dfd8183393"
-                ]
+                  "grammar_02_verb_le"
+                ],
+                "audio_key": "",
+                "notes": []
               },
               {
-                "id": "352eb6a5-7ba0-4d98-80b5-4781602b9aea",
+                "id": "text_line_014",
                 "order": 14,
                 "speaker": "病人",
                 "zh": "出来了。",
+                "pinyin": "Chūlai le.",
                 "vi": "Có rồi.",
-                "pinyin": "",
                 "vocab_refs": [
-                  "be7a835d-ff8f-4a86-9fd8-27c5f1093f0c"
+                  "vocab_016"
                 ],
                 "grammar_refs": [
-                  "f8ec59f3-898a-47b2-b536-44dfd8183393"
-                ]
+                  "grammar_02_verb_le"
+                ],
+                "audio_key": "",
+                "notes": []
               },
               {
-                "id": "fba2b141-cab4-4f5e-8224-ecf84e4848a5",
+                "id": "text_line_015",
                 "order": 15,
                 "speaker": "病人",
                 "zh": "大夫，我是不是得了肠炎？",
+                "pinyin": "Dàifu, wǒ shì bú shì dé le chángyán?",
                 "vi": "Bác sĩ, có phải tôi bị viêm ruột không?",
-                "pinyin": "",
                 "vocab_refs": [
-                  "7a89dc80-d79d-4c2f-988c-d0f54e240d19",
-                  "ff3e1818-66a9-4532-880b-02c9cacb0e5b"
+                  "vocab_017",
+                  "vocab_018"
                 ],
                 "grammar_refs": [
-                  "f8ec59f3-898a-47b2-b536-44dfd8183393"
-                ]
+                  "grammar_02_verb_le"
+                ],
+                "audio_key": "",
+                "notes": []
               },
               {
-                "id": "aa764237-7eb1-41b2-a294-69d008848cef",
+                "id": "text_line_016",
                 "order": 16,
                 "speaker": "大夫",
                 "zh": "我看了化验结果。不是肠炎，只是消化不好。先给你开一些药，再给你打一针。",
+                "pinyin": "Wǒ kàn le huàyàn jiéguǒ. Bú shì chángyán, zhǐ shì xiāohuà bù hǎo. Xiān gěi nǐ kāi yìxiē yào, zài gěi nǐ dǎ yì zhēn.",
                 "vi": "Tôi xem kết quả xét nghiệm rồi. Không phải viêm ruột, chỉ là tiêu hóa không tốt. Trước tiên tôi kê cho anh/chị một ít thuốc, rồi tiêm cho anh/chị một mũi.",
-                "pinyin": "",
                 "vocab_refs": [
-                  "8a5b1d09-23a6-4182-96e6-9bf4d761a1e1",
-                  "ff3e1818-66a9-4532-880b-02c9cacb0e5b",
-                  "0125bdae-fe4e-48fb-8264-145e95c75933",
-                  "689eb64b-5d4f-469f-9afa-74017d399614",
-                  "d45d5488-9293-41ae-9deb-1e5b51cee446"
+                  "vocab_011",
+                  "vocab_015",
+                  "vocab_018",
+                  "vocab_019",
+                  "vocab_020",
+                  "vocab_021"
                 ],
                 "grammar_refs": [
-                  "f8ec59f3-898a-47b2-b536-44dfd8183393",
-                  "5c6d8f8c-e237-49a9-90ed-774267549aa6"
-                ]
+                  "grammar_02_verb_le",
+                  "helper_xian_zai"
+                ],
+                "audio_key": "",
+                "notes": []
               },
               {
-                "id": "0f8281fb-2805-45f3-acba-147f5cbed2c9",
+                "id": "text_line_017",
                 "order": 17,
                 "speaker": "病人",
                 "zh": "这药怎么吃？",
+                "pinyin": "Zhè yào zěnme chī?",
                 "vi": "Thuốc này uống thế nào?",
-                "pinyin": ""
+                "vocab_refs": [],
+                "grammar_refs": [],
+                "audio_key": "",
+                "notes": []
               },
               {
-                "id": "d09c0385-2b8e-40b2-98c0-968d24dd2d58",
+                "id": "text_line_018",
                 "order": 18,
                 "speaker": "护士",
                 "zh": "一天三次，一次两片，饭后吃。",
+                "pinyin": "Yì tiān sān cì, yí cì liǎng piàn, fàn hòu chī.",
                 "vi": "Một ngày ba lần, mỗi lần hai viên, uống sau bữa ăn.",
-                "pinyin": "",
                 "vocab_refs": [
-                  "5ea44727-d97c-467b-b1b8-babd195df50d",
-                  "c99a633b-27a2-429b-a139-44113a84c189"
-                ]
+                  "vocab_006",
+                  "vocab_022"
+                ],
+                "grammar_refs": [],
+                "audio_key": "",
+                "notes": []
               }
             ],
             "paragraphs": [],
             "comprehension_questions": []
           },
           {
-            "id": "0156dd39-d5b4-41f5-866d-d336dd29bbc2",
+            "id": "text_block_002",
             "type": "text_dialogue",
             "order": 2,
             "title": "玛丽哭了",
@@ -281,127 +330,158 @@
             "check_needed": false,
             "lines": [
               {
-                "id": "887014e5-f6b0-4777-9f95-85a69532ca36",
+                "id": "text_line_019",
                 "order": 1,
                 "speaker": "罗兰",
                 "zh": "玛丽，你怎么哭了？病了吗？",
+                "pinyin": "Mǎlì, nǐ zěnme kū le? Bìng le ma?",
                 "vi": "Mary, sao cậu khóc vậy? Bị ốm à?",
-                "pinyin": "",
                 "vocab_refs": [
-                  "68c05a12-9d8e-45d9-a413-786bcf2f780a"
+                  "vocab_023",
+                  "vocab_001"
                 ],
                 "grammar_refs": [
-                  "f8ec59f3-898a-47b2-b536-44dfd8183393",
-                  "grammar_03_note_ni_zenmele"
-                ]
+                  "grammar_02_verb_le",
+                  "grammar_note_zenmele"
+                ],
+                "audio_key": "",
+                "notes": []
               },
               {
-                "id": "65232ef9-30a1-4305-b8b7-12a8ac5aeb91",
+                "id": "text_line_020",
                 "order": 2,
                 "speaker": "玛丽",
                 "zh": "不是。想家了。因为感到寂寞，所以心情不好，很难过。",
+                "pinyin": "Bú shì. Xiǎng jiā le. Yīnwèi gǎndào jìmò, suǒyǐ xīnqíng bù hǎo, hěn nánguò.",
                 "vi": "Không phải. Tớ nhớ nhà. Vì cảm thấy cô đơn nên tâm trạng không tốt, rất buồn.",
-                "pinyin": "",
                 "vocab_refs": [
-                  "79358c6f-3427-4c28-98f3-7ef98c7033c3",
-                  "dc0f8e06-a359-4907-a8d8-fc9b02260590",
-                  "c43cedbf-7024-4ec1-922f-e75119114baf"
+                  "vocab_024",
+                  "vocab_025",
+                  "vocab_026"
                 ],
                 "grammar_refs": [
-                  "57b14753-688a-41b6-9e0d-b61dbbf574d7"
-                ]
+                  "grammar_02_yinwei_suoyi"
+                ],
+                "audio_key": "",
+                "notes": []
               },
               {
-                "id": "2c1213ac-f81d-414f-8b55-5abe77fe83fc",
+                "id": "text_line_021",
                 "order": 3,
                 "speaker": "罗兰",
                 "zh": "别难过了。",
+                "pinyin": "Bié nánguò le.",
                 "vi": "Đừng buồn nữa.",
-                "pinyin": "",
                 "vocab_refs": [
-                  "d9991c79-3454-4247-bf18-f14f43b4a24a"
+                  "vocab_027",
+                  "vocab_026"
                 ],
                 "grammar_refs": [
-                  "d3a1ecc2-8c1f-4b77-8f62-a76d0b71b893"
-                ]
+                  "note_bie_le"
+                ],
+                "audio_key": "",
+                "notes": []
               },
               {
-                "id": "d797c234-0a16-42e3-bc45-29782e65cb1b",
+                "id": "text_line_022",
                 "order": 4,
                 "speaker": "玛丽",
                 "zh": "你不想家吗？",
+                "pinyin": "Nǐ bù xiǎng jiā ma?",
                 "vi": "Cậu không nhớ nhà à?",
-                "pinyin": ""
+                "vocab_refs": [],
+                "grammar_refs": [],
+                "audio_key": "",
+                "notes": []
               },
               {
-                "id": "c99f042b-fa9a-478c-aba1-5da333a677e1",
+                "id": "text_line_023",
                 "order": 5,
                 "speaker": "罗兰",
                 "zh": "我也常想家，但是不感到寂寞。",
+                "pinyin": "Wǒ yě cháng xiǎng jiā, dànshì bù gǎndào jìmò.",
                 "vi": "Tớ cũng thường nhớ nhà, nhưng không cảm thấy cô đơn.",
-                "pinyin": "",
                 "vocab_refs": [
-                  "79358c6f-3427-4c28-98f3-7ef98c7033c3"
-                ]
+                  "vocab_024"
+                ],
+                "grammar_refs": [],
+                "audio_key": "",
+                "notes": []
               },
               {
-                "id": "e8680b0f-6dcc-4fc7-abbd-084aba5d3b87",
+                "id": "text_line_024",
                 "order": 6,
                 "speaker": "玛丽",
                 "zh": "我有姐姐，还有弟弟。在家时，我们常常一起玩儿，所以感到寂寞时总想他们。",
+                "pinyin": "Wǒ yǒu jiějie, hái yǒu dìdi. Zài jiā shí, wǒmen chángcháng yìqǐ wánr, suǒyǐ gǎndào jìmò shí zǒng xiǎng tāmen.",
                 "vi": "Tớ có chị gái, còn có em trai. Khi ở nhà, bọn tớ thường chơi cùng nhau, nên mỗi khi cảm thấy cô đơn thì luôn nhớ họ.",
-                "pinyin": "",
                 "vocab_refs": [
-                  "dc0f8e06-a359-4907-a8d8-fc9b02260590"
+                  "vocab_025",
+                  "vocab_024"
                 ],
                 "grammar_refs": [
-                  "57b14753-688a-41b6-9e0d-b61dbbf574d7"
-                ]
+                  "grammar_02_yinwei_suoyi"
+                ],
+                "audio_key": "",
+                "notes": []
               },
               {
-                "id": "cc8da348-3e89-4f64-a680-de239f505497",
+                "id": "text_line_025",
                 "order": 7,
                 "speaker": "罗兰",
                 "zh": "今天晚上礼堂有舞会，我们一起去跳跳舞吧。玩儿玩儿就好了。",
-                "vi": "Tối nay ở lễ đường có vũ hội, chúng ta cùng đi nhảy một chút nhé. Chơi một chút là sẽ đỡ thôi.",
-                "pinyin": "",
+                "pinyin": "Jīntiān wǎnshang lǐtáng yǒu wǔhuì, wǒmen yìqǐ qù tiàotiao wǔ ba. Wánrwanr jiù hǎo le.",
+                "vi": "Tối nay ở hội trường có vũ hội, chúng ta cùng đi nhảy một chút nhé. Chơi một chút là sẽ đỡ thôi.",
                 "vocab_refs": [
-                  "55cd807c-eec7-412d-99db-f4e6508b170f",
-                  "085e60d5-dd1c-4585-ac6b-0f1db0ded936",
-                  "ba7ff0f9-b633-4516-ab3d-22b96046a1cf"
+                  "vocab_028",
+                  "vocab_029",
+                  "vocab_030"
                 ],
                 "grammar_refs": [
-                  "grammar_03_note_tiaotiaowu",
-                  "32221e32-5abd-40ef-abc1-2fa1076bc342"
-                ]
+                  "note_tiaotiaowu",
+                  "helper_verb_reduplication"
+                ],
+                "audio_key": "",
+                "notes": []
               },
               {
-                "id": "2adb7cf6-26c1-4029-809e-67342fb0227f",
+                "id": "text_line_026",
                 "order": 8,
                 "speaker": "玛丽",
                 "zh": "什么时候去？",
+                "pinyin": "Shénme shíhou qù?",
                 "vi": "Khi nào đi?",
-                "pinyin": ""
+                "vocab_refs": [],
+                "grammar_refs": [],
+                "audio_key": "",
+                "notes": []
               },
               {
-                "id": "f42aa089-875d-48c4-9213-a083ec251fe7",
+                "id": "text_line_027",
                 "order": 9,
                 "speaker": "罗兰",
                 "zh": "吃了晚饭就去吧。你在宿舍等我，我来叫你。",
+                "pinyin": "Chī le wǎnfàn jiù qù ba. Nǐ zài sùshè děng wǒ, wǒ lái jiào nǐ.",
                 "vi": "Ăn tối xong thì đi nhé. Cậu đợi tớ ở ký túc xá, tớ sẽ đến gọi cậu.",
-                "pinyin": "",
+                "vocab_refs": [],
                 "grammar_refs": [
-                  "f8ec59f3-898a-47b2-b536-44dfd8183393",
-                  "grammar_03_helper_jiu_after_action"
-                ]
+                  "grammar_02_verb_le",
+                  "helper_jiu_after_action"
+                ],
+                "audio_key": "",
+                "notes": []
               },
               {
-                "id": "f7419a05-c714-4cff-ae26-210852d56303",
+                "id": "text_line_028",
                 "order": 10,
                 "speaker": "玛丽",
                 "zh": "好吧。",
+                "pinyin": "Hǎo ba.",
                 "vi": "Được.",
-                "pinyin": ""
+                "vocab_refs": [],
+                "grammar_refs": [],
+                "audio_key": "",
+                "notes": []
               }
             ],
             "paragraphs": [],
@@ -410,30 +490,43 @@
         ]
       },
       {
-        "id": "78c30bf4-c314-4c4c-86e3-4dd62382dd78",
+        "id": "section_02_vocabulary",
         "type": "vocabulary",
         "order": 2,
         "title": "生词",
-        "title_vi": "Từ vựng chính",
-        "source_origin": "textbook",
+        "title_vi": "Từ vựng",
+        "source_origin": "textbook_and_reading_supplement",
         "check_needed": false,
         "items": [
           {
-            "id": "68c05a12-9d8e-45d9-a413-786bcf2f780a",
+            "id": "vocab_001",
             "type": "vocabulary_item",
             "order": 1,
             "hanzi": "病",
             "pinyin": "bìng",
-            "meaning_vi": "bệnh; ốm",
+            "meaning_vi": "bệnh; ốm; bị bệnh",
             "meaning_en": "illness; to be ill",
-            "pos": "unknown",
+            "pos": "Danh từ / Động từ trạng thái",
+            "pos_detail": {
+              "vi": "Danh từ / Động từ trạng thái",
+              "cn": "名 / 动",
+              "normalized": "verb",
+              "schema_compatible_pos": "verb",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "",
+              "notes": []
+            },
             "tags": [
+              "hanyu_2_1",
+              "lesson_02",
               "main_vocab"
             ],
             "examples": [],
             "flashcard": {
               "front": "病",
-              "back": "bìng — bệnh; ốm",
+              "back": "bìng — bệnh; ốm; bị bệnh",
               "modes": [
                 "hanzi_to_meaning",
                 "meaning_to_hanzi",
@@ -446,21 +539,34 @@
             "check_needed": false
           },
           {
-            "id": "8c18cf3c-e9dc-42e1-8faf-eb26799cabab",
+            "id": "vocab_002",
             "type": "vocabulary_item",
             "order": 2,
             "hanzi": "病人",
             "pinyin": "bìngrén",
-            "meaning_vi": "bệnh nhân",
+            "meaning_vi": "bệnh nhân; người bệnh",
             "meaning_en": "patient",
-            "pos": "unknown",
+            "pos": "Danh từ",
+            "pos_detail": {
+              "vi": "Danh từ",
+              "cn": "名词",
+              "normalized": "noun",
+              "schema_compatible_pos": "noun",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "",
+              "notes": []
+            },
             "tags": [
+              "hanyu_2_1",
+              "lesson_02",
               "main_vocab"
             ],
             "examples": [],
             "flashcard": {
               "front": "病人",
-              "back": "bìngrén — bệnh nhân",
+              "back": "bìngrén — bệnh nhân; người bệnh",
               "modes": [
                 "hanzi_to_meaning",
                 "meaning_to_hanzi",
@@ -473,15 +579,28 @@
             "check_needed": false
           },
           {
-            "id": "1fbd69b7-603a-44ea-8d57-10cd4def9ced",
+            "id": "vocab_003",
             "type": "vocabulary_item",
             "order": 3,
             "hanzi": "肚子",
             "pinyin": "dùzi",
             "meaning_vi": "bụng",
             "meaning_en": "belly; abdomen",
-            "pos": "unknown",
+            "pos": "Danh từ",
+            "pos_detail": {
+              "vi": "Danh từ",
+              "cn": "名词",
+              "normalized": "noun",
+              "schema_compatible_pos": "noun",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "",
+              "notes": []
+            },
             "tags": [
+              "hanyu_2_1",
+              "lesson_02",
               "main_vocab"
             ],
             "examples": [],
@@ -500,21 +619,34 @@
             "check_needed": false
           },
           {
-            "id": "3dc505f1-bc0e-4a96-b448-17fed89fdc60",
+            "id": "vocab_004",
             "type": "vocabulary_item",
             "order": 4,
             "hanzi": "厉害",
             "pinyin": "lìhai",
-            "meaning_vi": "dữ dội; nghiêm trọng; lợi hại",
-            "meaning_en": "severe; serious",
-            "pos": "unknown",
+            "meaning_vi": "dữ dội; nghiêm trọng; lợi hại/giỏi tùy ngữ cảnh",
+            "meaning_en": "severe; serious; formidable",
+            "pos": "Tính từ",
+            "pos_detail": {
+              "vi": "Tính từ",
+              "cn": "形容词",
+              "normalized": "adjective",
+              "schema_compatible_pos": "adjective",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "",
+              "notes": []
+            },
             "tags": [
+              "hanyu_2_1",
+              "lesson_02",
               "main_vocab"
             ],
             "examples": [],
             "flashcard": {
               "front": "厉害",
-              "back": "lìhai — dữ dội; nghiêm trọng; lợi hại",
+              "back": "lìhai — dữ dội; nghiêm trọng; lợi hại/giỏi tùy ngữ cảnh",
               "modes": [
                 "hanzi_to_meaning",
                 "meaning_to_hanzi",
@@ -527,21 +659,34 @@
             "check_needed": false
           },
           {
-            "id": "188412d4-4c23-4d60-b7b2-21f3490199e7",
+            "id": "vocab_005",
             "type": "vocabulary_item",
             "order": 5,
             "hanzi": "害",
             "pinyin": "hài",
-            "meaning_vi": "hại; gây hại",
+            "meaning_vi": "hại; gây hại; yếu tố trong 厉害",
             "meaning_en": "to harm",
-            "pos": "unknown",
+            "pos": "Động từ / Yếu tố cấu tạo từ",
+            "pos_detail": {
+              "vi": "Động từ / Yếu tố cấu tạo từ",
+              "cn": "动词 / 语素",
+              "normalized": "verb",
+              "schema_compatible_pos": "verb",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "",
+              "notes": []
+            },
             "tags": [
+              "hanyu_2_1",
+              "lesson_02",
               "main_vocab"
             ],
             "examples": [],
             "flashcard": {
               "front": "害",
-              "back": "hài — hại; gây hại",
+              "back": "hài — hại; gây hại; yếu tố trong 厉害",
               "modes": [
                 "hanzi_to_meaning",
                 "meaning_to_hanzi",
@@ -554,21 +699,34 @@
             "check_needed": false
           },
           {
-            "id": "5ea44727-d97c-467b-b1b8-babd195df50d",
+            "id": "vocab_006",
             "type": "vocabulary_item",
             "order": 6,
             "hanzi": "片",
             "pinyin": "piàn",
-            "meaning_vi": "viên; lát; mảnh",
+            "meaning_vi": "viên; lát; mảnh; lượng từ cho vật mỏng/thuốc viên",
             "meaning_en": "slice; piece; measure word",
-            "pos": "unknown",
+            "pos": "Lượng từ / Danh từ",
+            "pos_detail": {
+              "vi": "Lượng từ / Danh từ",
+              "cn": "量词 / 名词",
+              "normalized": "measure_word",
+              "schema_compatible_pos": "measure_word",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "",
+              "notes": []
+            },
             "tags": [
+              "hanyu_2_1",
+              "lesson_02",
               "main_vocab"
             ],
             "examples": [],
             "flashcard": {
               "front": "片",
-              "back": "piàn — viên; lát; mảnh",
+              "back": "piàn — viên; lát; mảnh; lượng từ cho vật mỏng/thuốc viên",
               "modes": [
                 "hanzi_to_meaning",
                 "meaning_to_hanzi",
@@ -581,21 +739,34 @@
             "check_needed": false
           },
           {
-            "id": "54613016-834a-4fc3-9912-2357a6d27058",
+            "id": "vocab_007",
             "type": "vocabulary_item",
             "order": 7,
             "hanzi": "拉肚子",
             "pinyin": "lā dùzi",
-            "meaning_vi": "tiêu chảy; đau bụng đi ngoài",
+            "meaning_vi": "tiêu chảy; bị đi ngoài",
             "meaning_en": "to have diarrhea",
-            "pos": "unknown",
+            "pos": "Động từ li hợp",
+            "pos_detail": {
+              "vi": "Động từ li hợp",
+              "cn": "动宾式离合词",
+              "normalized": "verb_phrase",
+              "schema_compatible_pos": "verb_phrase",
+              "is_separable_verb": true,
+              "separable_type": "động-tân / 离合词",
+              "structure_vi": "động từ 拉 + tân ngữ 肚子",
+              "usage_note_vi": "Có thể nói 拉了三天肚子; khi thêm bổ ngữ mức độ thường nói 拉肚子拉得很厉害.",
+              "notes": []
+            },
             "tags": [
+              "hanyu_2_1",
+              "lesson_02",
               "main_vocab"
             ],
             "examples": [],
             "flashcard": {
               "front": "拉肚子",
-              "back": "lā dùzi — tiêu chảy; đau bụng đi ngoài",
+              "back": "lā dùzi — tiêu chảy; bị đi ngoài",
               "modes": [
                 "hanzi_to_meaning",
                 "meaning_to_hanzi",
@@ -608,21 +779,34 @@
             "check_needed": false
           },
           {
-            "id": "0da97406-c3ac-4fcb-a51c-398a59c3fbae",
+            "id": "vocab_008",
             "type": "vocabulary_item",
             "order": 8,
             "hanzi": "拉",
             "pinyin": "lā",
-            "meaning_vi": "kéo; lôi; trong 拉肚子 nghĩa là đi ngoài / tiêu chảy",
-            "meaning_en": "to pull",
-            "pos": "unknown",
+            "meaning_vi": "kéo; lôi; trong 拉肚子 nghĩa là đi ngoài/tiêu chảy",
+            "meaning_en": "to pull; to have bowel movement in fixed phrase",
+            "pos": "Động từ",
+            "pos_detail": {
+              "vi": "Động từ",
+              "cn": "动词",
+              "normalized": "verb",
+              "schema_compatible_pos": "verb",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "",
+              "notes": []
+            },
             "tags": [
+              "hanyu_2_1",
+              "lesson_02",
               "main_vocab"
             ],
             "examples": [],
             "flashcard": {
               "front": "拉",
-              "back": "lā — kéo; lôi; trong 拉肚子 nghĩa là đi ngoài / tiêu chảy",
+              "back": "lā — kéo; lôi; trong 拉肚子 nghĩa là đi ngoài/tiêu chảy",
               "modes": [
                 "hanzi_to_meaning",
                 "meaning_to_hanzi",
@@ -635,15 +819,28 @@
             "check_needed": false
           },
           {
-            "id": "54b36889-82be-485b-8342-fb8aab572065",
+            "id": "vocab_009",
             "type": "vocabulary_item",
             "order": 9,
             "hanzi": "鱼",
             "pinyin": "yú",
             "meaning_vi": "cá",
             "meaning_en": "fish",
-            "pos": "unknown",
+            "pos": "Danh từ",
+            "pos_detail": {
+              "vi": "Danh từ",
+              "cn": "名词",
+              "normalized": "noun",
+              "schema_compatible_pos": "noun",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "",
+              "notes": []
+            },
             "tags": [
+              "hanyu_2_1",
+              "lesson_02",
               "main_vocab"
             ],
             "examples": [],
@@ -662,15 +859,28 @@
             "check_needed": false
           },
           {
-            "id": "1354b1a3-93cc-4505-8d7f-c5550a1d6ae9",
+            "id": "vocab_010",
             "type": "vocabulary_item",
             "order": 10,
             "hanzi": "牛肉",
             "pinyin": "niúròu",
             "meaning_vi": "thịt bò",
             "meaning_en": "beef",
-            "pos": "unknown",
+            "pos": "Danh từ",
+            "pos_detail": {
+              "vi": "Danh từ",
+              "cn": "名词",
+              "normalized": "noun",
+              "schema_compatible_pos": "noun",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "",
+              "notes": []
+            },
             "tags": [
+              "hanyu_2_1",
+              "lesson_02",
               "main_vocab"
             ],
             "examples": [],
@@ -689,21 +899,34 @@
             "check_needed": false
           },
           {
-            "id": "f0684cb3-4577-4e6c-9f22-7d97c89692b3",
+            "id": "vocab_011",
             "type": "vocabulary_item",
             "order": 11,
             "hanzi": "化验",
             "pinyin": "huàyàn",
-            "meaning_vi": "xét nghiệm",
-            "meaning_en": "laboratory test",
-            "pos": "unknown",
+            "meaning_vi": "xét nghiệm; kiểm nghiệm bằng mẫu",
+            "meaning_en": "to test; laboratory test",
+            "pos": "Động từ / Danh từ",
+            "pos_detail": {
+              "vi": "Động từ / Danh từ",
+              "cn": "动词 / 名词",
+              "normalized": "verb",
+              "schema_compatible_pos": "verb",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "",
+              "notes": []
+            },
             "tags": [
+              "hanyu_2_1",
+              "lesson_02",
               "main_vocab"
             ],
             "examples": [],
             "flashcard": {
               "front": "化验",
-              "back": "huàyàn — xét nghiệm",
+              "back": "huàyàn — xét nghiệm; kiểm nghiệm bằng mẫu",
               "modes": [
                 "hanzi_to_meaning",
                 "meaning_to_hanzi",
@@ -716,15 +939,28 @@
             "check_needed": false
           },
           {
-            "id": "d5b362a7-c8f6-4f25-b2b5-0f1749c8afbb",
+            "id": "vocab_012",
             "type": "vocabulary_item",
             "order": 12,
             "hanzi": "检查",
             "pinyin": "jiǎnchá",
             "meaning_vi": "kiểm tra; khám",
-            "meaning_en": "to inspect; examine",
-            "pos": "unknown",
+            "meaning_en": "to examine; to check up",
+            "pos": "Động từ / Danh từ",
+            "pos_detail": {
+              "vi": "Động từ / Danh từ",
+              "cn": "动词 / 名词",
+              "normalized": "verb",
+              "schema_compatible_pos": "verb",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "",
+              "notes": []
+            },
             "tags": [
+              "hanyu_2_1",
+              "lesson_02",
               "main_vocab"
             ],
             "examples": [],
@@ -743,15 +979,28 @@
             "check_needed": false
           },
           {
-            "id": "7eccd5e8-dac0-4f36-be2e-abcc0a2bdfcd",
+            "id": "vocab_013",
             "type": "vocabulary_item",
             "order": 13,
             "hanzi": "大便",
             "pinyin": "dàbiàn",
             "meaning_vi": "đại tiện; phân",
-            "meaning_en": "stool; bowel movement",
-            "pos": "unknown",
+            "meaning_en": "feces; to defecate",
+            "pos": "Danh từ / Động từ",
+            "pos_detail": {
+              "vi": "Danh từ / Động từ",
+              "cn": "名词 / 动词",
+              "normalized": "noun",
+              "schema_compatible_pos": "noun",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "",
+              "notes": []
+            },
             "tags": [
+              "hanyu_2_1",
+              "lesson_02",
               "main_vocab"
             ],
             "examples": [],
@@ -770,15 +1019,28 @@
             "check_needed": false
           },
           {
-            "id": "91fa9f81-e5ef-4c4a-b29c-c4b6daa02196",
+            "id": "vocab_014",
             "type": "vocabulary_item",
             "order": 14,
             "hanzi": "小便",
             "pinyin": "xiǎobiàn",
             "meaning_vi": "tiểu tiện; nước tiểu",
-            "meaning_en": "urine; urination",
-            "pos": "unknown",
+            "meaning_en": "urine; to urinate",
+            "pos": "Danh từ / Động từ",
+            "pos_detail": {
+              "vi": "Danh từ / Động từ",
+              "cn": "名词 / 动词",
+              "normalized": "noun",
+              "schema_compatible_pos": "noun",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "",
+              "notes": []
+            },
             "tags": [
+              "hanyu_2_1",
+              "lesson_02",
               "main_vocab"
             ],
             "examples": [],
@@ -797,15 +1059,28 @@
             "check_needed": false
           },
           {
-            "id": "8a5b1d09-23a6-4182-96e6-9bf4d761a1e1",
+            "id": "vocab_015",
             "type": "vocabulary_item",
             "order": 15,
             "hanzi": "结果",
             "pinyin": "jiéguǒ",
             "meaning_vi": "kết quả",
             "meaning_en": "result",
-            "pos": "unknown",
+            "pos": "Danh từ",
+            "pos_detail": {
+              "vi": "Danh từ",
+              "cn": "名词",
+              "normalized": "noun",
+              "schema_compatible_pos": "noun",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "",
+              "notes": []
+            },
             "tags": [
+              "hanyu_2_1",
+              "lesson_02",
               "main_vocab"
             ],
             "examples": [],
@@ -824,21 +1099,34 @@
             "check_needed": false
           },
           {
-            "id": "be7a835d-ff8f-4a86-9fd8-27c5f1093f0c",
+            "id": "vocab_016",
             "type": "vocabulary_item",
             "order": 16,
             "hanzi": "出来",
-            "pinyin": "chūlái",
-            "meaning_vi": "đi ra; xuất hiện; có kết quả",
-            "meaning_en": "to come out",
-            "pos": "unknown",
+            "pinyin": "chūlai",
+            "meaning_vi": "đi/ra; xuất hiện; có kết quả",
+            "meaning_en": "to come out; to materialize",
+            "pos": "Động từ / Bổ ngữ xu hướng",
+            "pos_detail": {
+              "vi": "Động từ / Bổ ngữ xu hướng",
+              "cn": "动词 / 趋向补语",
+              "normalized": "verb_phrase",
+              "schema_compatible_pos": "verb_phrase",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "",
+              "notes": []
+            },
             "tags": [
+              "hanyu_2_1",
+              "lesson_02",
               "main_vocab"
             ],
             "examples": [],
             "flashcard": {
               "front": "出来",
-              "back": "chūlái — đi ra; xuất hiện; có kết quả",
+              "back": "chūlai — đi/ra; xuất hiện; có kết quả",
               "modes": [
                 "hanzi_to_meaning",
                 "meaning_to_hanzi",
@@ -851,21 +1139,34 @@
             "check_needed": false
           },
           {
-            "id": "7a89dc80-d79d-4c2f-988c-d0f54e240d19",
+            "id": "vocab_017",
             "type": "vocabulary_item",
             "order": 17,
             "hanzi": "得",
             "pinyin": "dé",
-            "meaning_vi": "mắc; bị; đạt được",
+            "meaning_vi": "mắc; bị; đạt được; đọc de/děi trong chức năng khác",
             "meaning_en": "to get; to contract",
-            "pos": "unknown",
+            "pos": "Động từ / Trợ từ / Động từ tình thái",
+            "pos_detail": {
+              "vi": "Động từ / Trợ từ / Động từ tình thái",
+              "cn": "动词 / 助词 / 能愿动词",
+              "normalized": "grammar_word",
+              "schema_compatible_pos": "grammar_word",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "",
+              "notes": []
+            },
             "tags": [
+              "hanyu_2_1",
+              "lesson_02",
               "main_vocab"
             ],
             "examples": [],
             "flashcard": {
               "front": "得",
-              "back": "dé — mắc; bị; đạt được",
+              "back": "dé — mắc; bị; đạt được; đọc de/děi trong chức năng khác",
               "modes": [
                 "hanzi_to_meaning",
                 "meaning_to_hanzi",
@@ -878,15 +1179,28 @@
             "check_needed": false
           },
           {
-            "id": "ff3e1818-66a9-4532-880b-02c9cacb0e5b",
+            "id": "vocab_018",
             "type": "vocabulary_item",
             "order": 18,
             "hanzi": "肠炎",
             "pinyin": "chángyán",
             "meaning_vi": "viêm ruột",
             "meaning_en": "enteritis",
-            "pos": "unknown",
+            "pos": "Danh từ bệnh lý",
+            "pos_detail": {
+              "vi": "Danh từ bệnh lý",
+              "cn": "名词",
+              "normalized": "noun",
+              "schema_compatible_pos": "noun",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "",
+              "notes": []
+            },
             "tags": [
+              "hanyu_2_1",
+              "lesson_02",
               "main_vocab"
             ],
             "examples": [],
@@ -905,21 +1219,34 @@
             "check_needed": false
           },
           {
-            "id": "0125bdae-fe4e-48fb-8264-145e95c75933",
+            "id": "vocab_019",
             "type": "vocabulary_item",
             "order": 19,
             "hanzi": "消化",
             "pinyin": "xiāohuà",
-            "meaning_vi": "tiêu hóa",
-            "meaning_en": "to digest",
-            "pos": "unknown",
+            "meaning_vi": "tiêu hóa; tiếp thu",
+            "meaning_en": "to digest; to absorb/understand",
+            "pos": "Động từ / Danh từ",
+            "pos_detail": {
+              "vi": "Động từ / Danh từ",
+              "cn": "动词 / 名词",
+              "normalized": "verb",
+              "schema_compatible_pos": "verb",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "",
+              "notes": []
+            },
             "tags": [
+              "hanyu_2_1",
+              "lesson_02",
               "main_vocab"
             ],
             "examples": [],
             "flashcard": {
               "front": "消化",
-              "back": "xiāohuà — tiêu hóa",
+              "back": "xiāohuà — tiêu hóa; tiếp thu",
               "modes": [
                 "hanzi_to_meaning",
                 "meaning_to_hanzi",
@@ -932,21 +1259,34 @@
             "check_needed": false
           },
           {
-            "id": "689eb64b-5d4f-469f-9afa-74017d399614",
+            "id": "vocab_020",
             "type": "vocabulary_item",
             "order": 20,
             "hanzi": "开（药）",
-            "pinyin": "kāi yào",
+            "pinyin": "kāi (yào)",
             "meaning_vi": "kê thuốc",
             "meaning_en": "to prescribe medicine",
-            "pos": "unknown",
+            "pos": "Động từ li hợp / Cụm động-tân",
+            "pos_detail": {
+              "vi": "Động từ li hợp / Cụm động-tân",
+              "cn": "动宾式离合词",
+              "normalized": "verb_phrase",
+              "schema_compatible_pos": "verb_phrase",
+              "is_separable_verb": true,
+              "separable_type": "động-tân / 离合词",
+              "structure_vi": "động từ 开 + tân ngữ 药",
+              "usage_note_vi": "Có thể nói 开了两种药 / 给病人开药; chủ thể thường là bác sĩ.",
+              "notes": []
+            },
             "tags": [
+              "hanyu_2_1",
+              "lesson_02",
               "main_vocab"
             ],
             "examples": [],
             "flashcard": {
               "front": "开（药）",
-              "back": "kāi yào — kê thuốc",
+              "back": "kāi (yào) — kê thuốc",
               "modes": [
                 "hanzi_to_meaning",
                 "meaning_to_hanzi",
@@ -959,15 +1299,28 @@
             "check_needed": false
           },
           {
-            "id": "d45d5488-9293-41ae-9deb-1e5b51cee446",
+            "id": "vocab_021",
             "type": "vocabulary_item",
             "order": 21,
             "hanzi": "打针",
             "pinyin": "dǎ zhēn",
             "meaning_vi": "tiêm; chích thuốc",
-            "meaning_en": "to have an injection",
-            "pos": "unknown",
+            "meaning_en": "to give or have an injection",
+            "pos": "Động từ li hợp",
+            "pos_detail": {
+              "vi": "Động từ li hợp",
+              "cn": "动宾式离合词",
+              "normalized": "verb_phrase",
+              "schema_compatible_pos": "verb_phrase",
+              "is_separable_verb": true,
+              "separable_type": "động-tân / 离合词",
+              "structure_vi": "động từ 打 + tân ngữ 针",
+              "usage_note_vi": "Có thể nói 打了一针; 打针 là cụm động-tân cố định, không dịch là “đánh kim”.",
+              "notes": []
+            },
             "tags": [
+              "hanyu_2_1",
+              "lesson_02",
               "main_vocab"
             ],
             "examples": [],
@@ -986,21 +1339,34 @@
             "check_needed": false
           },
           {
-            "id": "c99a633b-27a2-429b-a139-44113a84c189",
+            "id": "vocab_022",
             "type": "vocabulary_item",
             "order": 22,
             "hanzi": "后",
             "pinyin": "hòu",
-            "meaning_vi": "sau; phía sau",
-            "meaning_en": "after; behind",
-            "pos": "unknown",
+            "meaning_vi": "sau; sau khi; phía sau",
+            "meaning_en": "after; later",
+            "pos": "Danh từ chỉ thời gian/vị trí",
+            "pos_detail": {
+              "vi": "Danh từ chỉ thời gian/vị trí",
+              "cn": "名词 / 方位词",
+              "normalized": "noun",
+              "schema_compatible_pos": "noun",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "",
+              "notes": []
+            },
             "tags": [
+              "hanyu_2_1",
+              "lesson_02",
               "main_vocab"
             ],
             "examples": [],
             "flashcard": {
               "front": "后",
-              "back": "hòu — sau; phía sau",
+              "back": "hòu — sau; sau khi; phía sau",
               "modes": [
                 "hanzi_to_meaning",
                 "meaning_to_hanzi",
@@ -1013,21 +1379,75 @@
             "check_needed": false
           },
           {
-            "id": "79358c6f-3427-4c28-98f3-7ef98c7033c3",
+            "id": "vocab_023",
             "type": "vocabulary_item",
             "order": 23,
+            "hanzi": "哭",
+            "pinyin": "kū",
+            "meaning_vi": "khóc",
+            "meaning_en": "to cry; to weep",
+            "pos": "Động từ",
+            "pos_detail": {
+              "vi": "Động từ",
+              "cn": "动词",
+              "normalized": "verb",
+              "schema_compatible_pos": "verb",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "",
+              "notes": []
+            },
+            "tags": [
+              "hanyu_2_1",
+              "lesson_02",
+              "main_vocab",
+              "added_from_pdf"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "哭",
+              "back": "kū — khóc",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "check_needed": false
+          },
+          {
+            "id": "vocab_024",
+            "type": "vocabulary_item",
+            "order": 24,
             "hanzi": "寂寞",
             "pinyin": "jìmò",
-            "meaning_vi": "cô đơn; lẻ loi",
+            "meaning_vi": "cô đơn; lẻ loi; vắng vẻ",
             "meaning_en": "lonely",
-            "pos": "unknown",
+            "pos": "Tính từ",
+            "pos_detail": {
+              "vi": "Tính từ",
+              "cn": "形容词",
+              "normalized": "adjective",
+              "schema_compatible_pos": "adjective",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "",
+              "notes": []
+            },
             "tags": [
+              "hanyu_2_1",
+              "lesson_02",
               "main_vocab"
             ],
             "examples": [],
             "flashcard": {
               "front": "寂寞",
-              "back": "jìmò — cô đơn; lẻ loi",
+              "back": "jìmò — cô đơn; lẻ loi; vắng vẻ",
               "modes": [
                 "hanzi_to_meaning",
                 "meaning_to_hanzi",
@@ -1040,15 +1460,28 @@
             "check_needed": false
           },
           {
-            "id": "dc0f8e06-a359-4907-a8d8-fc9b02260590",
+            "id": "vocab_025",
             "type": "vocabulary_item",
-            "order": 24,
+            "order": 25,
             "hanzi": "所以",
             "pinyin": "suǒyǐ",
             "meaning_vi": "cho nên; vì vậy",
-            "meaning_en": "therefore",
-            "pos": "unknown",
+            "meaning_en": "so; therefore",
+            "pos": "Liên từ",
+            "pos_detail": {
+              "vi": "Liên từ",
+              "cn": "连词",
+              "normalized": "conjunction",
+              "schema_compatible_pos": "conjunction",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "",
+              "notes": []
+            },
             "tags": [
+              "hanyu_2_1",
+              "lesson_02",
               "main_vocab"
             ],
             "examples": [],
@@ -1067,21 +1500,34 @@
             "check_needed": false
           },
           {
-            "id": "c43cedbf-7024-4ec1-922f-e75119114baf",
+            "id": "vocab_026",
             "type": "vocabulary_item",
-            "order": 25,
+            "order": 26,
             "hanzi": "难过",
             "pinyin": "nánguò",
-            "meaning_vi": "buồn; khó chịu; đau lòng",
-            "meaning_en": "sad; upset",
-            "pos": "unknown",
+            "meaning_vi": "buồn; khó chịu trong lòng",
+            "meaning_en": "sad; unhappy",
+            "pos": "Tính từ",
+            "pos_detail": {
+              "vi": "Tính từ",
+              "cn": "形容词",
+              "normalized": "adjective",
+              "schema_compatible_pos": "adjective",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "",
+              "notes": []
+            },
             "tags": [
+              "hanyu_2_1",
+              "lesson_02",
               "main_vocab"
             ],
             "examples": [],
             "flashcard": {
               "front": "难过",
-              "back": "nánguò — buồn; khó chịu; đau lòng",
+              "back": "nánguò — buồn; khó chịu trong lòng",
               "modes": [
                 "hanzi_to_meaning",
                 "meaning_to_hanzi",
@@ -1094,21 +1540,34 @@
             "check_needed": false
           },
           {
-            "id": "d9991c79-3454-4247-bf18-f14f43b4a24a",
+            "id": "vocab_027",
             "type": "vocabulary_item",
-            "order": 26,
+            "order": 27,
             "hanzi": "别",
             "pinyin": "bié",
-            "meaning_vi": "đừng; không nên",
-            "meaning_en": "do not",
-            "pos": "unknown",
+            "meaning_vi": "đừng; chớ",
+            "meaning_en": "don’t",
+            "pos": "Phó từ phủ định mệnh lệnh",
+            "pos_detail": {
+              "vi": "Phó từ phủ định mệnh lệnh",
+              "cn": "副词",
+              "normalized": "adverb",
+              "schema_compatible_pos": "adverb",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "",
+              "notes": []
+            },
             "tags": [
+              "hanyu_2_1",
+              "lesson_02",
               "main_vocab"
             ],
             "examples": [],
             "flashcard": {
               "front": "别",
-              "back": "bié — đừng; không nên",
+              "back": "bié — đừng; chớ",
               "modes": [
                 "hanzi_to_meaning",
                 "meaning_to_hanzi",
@@ -1121,15 +1580,28 @@
             "check_needed": false
           },
           {
-            "id": "55cd807c-eec7-412d-99db-f4e6508b170f",
+            "id": "vocab_028",
             "type": "vocabulary_item",
-            "order": 27,
+            "order": 28,
             "hanzi": "礼堂",
             "pinyin": "lǐtáng",
             "meaning_vi": "lễ đường; hội trường",
             "meaning_en": "auditorium",
-            "pos": "unknown",
+            "pos": "Danh từ",
+            "pos_detail": {
+              "vi": "Danh từ",
+              "cn": "名词",
+              "normalized": "noun",
+              "schema_compatible_pos": "noun",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "",
+              "notes": []
+            },
             "tags": [
+              "hanyu_2_1",
+              "lesson_02",
               "main_vocab"
             ],
             "examples": [],
@@ -1148,21 +1620,34 @@
             "check_needed": false
           },
           {
-            "id": "085e60d5-dd1c-4585-ac6b-0f1db0ded936",
+            "id": "vocab_029",
             "type": "vocabulary_item",
-            "order": 28,
+            "order": 29,
             "hanzi": "舞会",
             "pinyin": "wǔhuì",
-            "meaning_vi": "buổi khiêu vũ; vũ hội",
-            "meaning_en": "dance party; ball",
-            "pos": "unknown",
+            "meaning_vi": "vũ hội; buổi khiêu vũ",
+            "meaning_en": "ball; dancing party",
+            "pos": "Danh từ",
+            "pos_detail": {
+              "vi": "Danh từ",
+              "cn": "名词",
+              "normalized": "noun",
+              "schema_compatible_pos": "noun",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "",
+              "notes": []
+            },
             "tags": [
+              "hanyu_2_1",
+              "lesson_02",
               "main_vocab"
             ],
             "examples": [],
             "flashcard": {
               "front": "舞会",
-              "back": "wǔhuì — buổi khiêu vũ; vũ hội",
+              "back": "wǔhuì — vũ hội; buổi khiêu vũ",
               "modes": [
                 "hanzi_to_meaning",
                 "meaning_to_hanzi",
@@ -1175,21 +1660,34 @@
             "check_needed": false
           },
           {
-            "id": "ba7ff0f9-b633-4516-ab3d-22b96046a1cf",
+            "id": "vocab_030",
             "type": "vocabulary_item",
-            "order": 29,
+            "order": 30,
             "hanzi": "跳舞",
-            "pinyin": "tiào wǔ",
-            "meaning_vi": "nhảy múa; khiêu vũ",
+            "pinyin": "tiàowǔ",
+            "meaning_vi": "nhảy; khiêu vũ",
             "meaning_en": "to dance",
-            "pos": "unknown",
+            "pos": "Động từ li hợp",
+            "pos_detail": {
+              "vi": "Động từ li hợp",
+              "cn": "动宾式离合词",
+              "normalized": "verb_phrase",
+              "schema_compatible_pos": "verb_phrase",
+              "is_separable_verb": true,
+              "separable_type": "động-tân / 离合词",
+              "structure_vi": "động từ 跳 + tân ngữ 舞",
+              "usage_note_vi": "Có thể nói 跳跳舞, 跳了一个小时舞; khi dùng 得 thường lặp động từ: 跳舞跳得很好.",
+              "notes": []
+            },
             "tags": [
+              "hanyu_2_1",
+              "lesson_02",
               "main_vocab"
             ],
             "examples": [],
             "flashcard": {
               "front": "跳舞",
-              "back": "tiào wǔ — nhảy múa; khiêu vũ",
+              "back": "tiàowǔ — nhảy; khiêu vũ",
               "modes": [
                 "hanzi_to_meaning",
                 "meaning_to_hanzi",
@@ -1202,21 +1700,34 @@
             "check_needed": false
           },
           {
-            "id": "2185ee67-885d-4ffb-83e2-e97be4070796",
+            "id": "vocab_031",
             "type": "vocabulary_item",
-            "order": 30,
+            "order": 31,
             "hanzi": "发烧",
             "pinyin": "fāshāo",
-            "meaning_vi": "sốt",
+            "meaning_vi": "sốt; bị sốt",
             "meaning_en": "to have a fever",
-            "pos": "unknown",
+            "pos": "Động từ li hợp / Cụm động-tân",
+            "pos_detail": {
+              "vi": "Động từ li hợp / Cụm động-tân",
+              "cn": "动宾式离合词",
+              "normalized": "verb_phrase",
+              "schema_compatible_pos": "verb_phrase",
+              "is_separable_verb": true,
+              "separable_type": "động-tân / 离合词",
+              "structure_vi": "động từ 发 + tân ngữ 烧",
+              "usage_note_vi": "Có thể nói 发了三天烧; thường dùng nguyên cụm 发烧了 trong hội thoại.",
+              "notes": []
+            },
             "tags": [
+              "hanyu_2_1",
+              "lesson_02",
               "main_vocab"
             ],
             "examples": [],
             "flashcard": {
               "front": "发烧",
-              "back": "fāshāo — sốt",
+              "back": "fāshāo — sốt; bị sốt",
               "modes": [
                 "hanzi_to_meaning",
                 "meaning_to_hanzi",
@@ -1229,16 +1740,29 @@
             "check_needed": false
           },
           {
-            "id": "092a8c16-3739-4685-a4c0-39365071bd48",
+            "id": "vocab_032",
             "type": "vocabulary_item",
-            "order": 31,
+            "order": 32,
             "hanzi": "嗓子",
             "pinyin": "sǎngzi",
             "meaning_vi": "cổ họng; giọng",
             "meaning_en": "throat; voice",
-            "pos": "unknown",
+            "pos": "Danh từ",
+            "pos_detail": {
+              "vi": "Danh từ",
+              "cn": "名词",
+              "normalized": "noun",
+              "schema_compatible_pos": "noun",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "",
+              "notes": []
+            },
             "tags": [
-              "main_vocab"
+              "hanyu_2_1",
+              "lesson_02",
+              "supplementary_vocab"
             ],
             "examples": [],
             "flashcard": {
@@ -1252,25 +1776,38 @@
               ]
             },
             "audio_key": "",
-            "source_origin": "textbook",
+            "source_origin": "reading_supplementary_words",
             "check_needed": false
           },
           {
-            "id": "22e66ee9-565e-4670-b2ac-4d5a9b500b38",
+            "id": "vocab_033",
             "type": "vocabulary_item",
-            "order": 32,
+            "order": 33,
             "hanzi": "出汗",
             "pinyin": "chū hàn",
-            "meaning_vi": "ra mồ hôi",
-            "meaning_en": "to sweat",
-            "pos": "unknown",
+            "meaning_vi": "ra mồ hôi; đổ mồ hôi",
+            "meaning_en": "to perspire; to sweat",
+            "pos": "Động từ li hợp",
+            "pos_detail": {
+              "vi": "Động từ li hợp",
+              "cn": "动宾式离合词",
+              "normalized": "verb_phrase",
+              "schema_compatible_pos": "verb_phrase",
+              "is_separable_verb": true,
+              "separable_type": "động-tân / 离合词",
+              "structure_vi": "động từ 出 + tân ngữ 汗",
+              "usage_note_vi": "Có thể tách: 出了很多汗; không nói 出汗了很多.",
+              "notes": []
+            },
             "tags": [
-              "main_vocab"
+              "hanyu_2_1",
+              "lesson_02",
+              "supplementary_vocab"
             ],
             "examples": [],
             "flashcard": {
               "front": "出汗",
-              "back": "chū hàn — ra mồ hôi",
+              "back": "chū hàn — ra mồ hôi; đổ mồ hôi",
               "modes": [
                 "hanzi_to_meaning",
                 "meaning_to_hanzi",
@@ -1279,442 +1816,309 @@
               ]
             },
             "audio_key": "",
-            "source_origin": "textbook",
+            "source_origin": "reading_supplementary_words",
             "check_needed": false
           }
         ]
       },
       {
-        "id": "3c5ee48e-5d44-44ac-bd53-cac996a83338",
-        "type": "proper_nouns",
-        "order": 3,
-        "title": "专名",
-        "title_vi": "Tên riêng",
-        "source_origin": "textbook",
-        "check_needed": false,
-        "items": [],
-        "empty_reason_vi": "Bài này không có 专名 riêng biệt trong bảng chính."
-      },
-      {
-        "id": "c18e9f54-6da1-4496-886b-c2c722605678",
+        "id": "section_03_notes",
         "type": "notes",
-        "order": 4,
+        "order": 3,
         "title": "注释",
         "title_vi": "Chú thích",
-        "source_origin": "textbook/generated_mixed",
+        "source_origin": "textbook",
         "check_needed": false,
         "items": [
           {
-            "id": "63d654f5-4561-4d48-a144-bacbf9671dfc",
+            "id": "note_zenmele",
             "type": "note",
             "order": 1,
             "title": "你怎么了？",
-            "structure": "你怎么了？",
-            "meaning_vi": "Dùng để hỏi người khác “bạn bị sao vậy?”, thường khi thấy người đó có biểu hiện bất thường. 怎么 hỏi “thế nào / sao”, 了 cuối câu báo hiệu một tình trạng mới hoặc thay đổi.",
+            "structure": "你 + 怎么了？",
+            "meaning_vi": "Dùng để hỏi người khác đã xảy ra chuyện gì / bị sao vậy khi thấy có tình trạng bất thường.",
             "examples": [
               {
-                "id": "3eca03f3-67c0-40d2-9fee-8e57a4ad43ad",
+                "id": "note_zenmele_ex_001",
                 "zh": "你怎么了？",
-                "vi": "",
-                "pinyin": "",
-                "source_origin": "textbook/generated_mixed",
-                "check_needed": false
-              },
-              {
-                "id": "0ee91982-67ac-436a-881d-a00ebb257ebe",
-                "zh": "玛丽，你怎么哭了？",
-                "vi": "",
-                "pinyin": "",
-                "source_origin": "textbook/generated_mixed",
-                "check_needed": false
-              },
-              {
-                "id": "b8b00131-7f5e-4693-ac5b-7bcfce304e11",
-                "zh": "你怎么不说话了？",
-                "vi": "",
-                "pinyin": "",
-                "source_origin": "textbook/generated_mixed",
-                "check_needed": false
+                "pinyin": "Nǐ zěnme le?",
+                "vi": "Bạn bị sao vậy?",
+                "highlight": [
+                  "怎么了"
+                ],
+                "grammar_refs": [
+                  "grammar_note_zenmele"
+                ],
+                "vocab_refs": [],
+                "source_ref": "pdf_p35",
+                "note_vi": "Mẫu hỏi tình trạng đã xảy ra.",
+                "audio_key": ""
               }
             ],
-            "source_origin": "textbook/generated_mixed",
+            "source_refs": [
+              "pdf_p39_note_1"
+            ],
             "check_needed": false
           },
           {
-            "id": "7e2ee128-4fbd-4a93-898c-5f5fd99b371b",
+            "id": "note_jiu_only",
             "type": "note",
             "order": 2,
-            "title": "就吃了一些鱼和牛肉。",
-            "structure": "就 + 动词 + 了 + 数量/宾语",
-            "meaning_vi": "就 ở đây nghĩa là “chỉ / chỉ có”, nhấn mạnh phạm vi hạn chế. Trong bài, người bệnh nói mình chỉ ăn một ít cá và thịt bò thôi.",
+            "title": "就 + động-tân: chỉ / chỉ có",
+            "structure": "就 + V + O",
+            "meaning_vi": "就 đứng trước cụm động-tân để nói phạm vi/lượng ít: chỉ, chỉ có, chẳng qua là.",
             "examples": [
               {
-                "id": "6ff01e57-e23b-475e-9cd6-da43acc8bd0a",
+                "id": "note_jiu_ex_001",
                 "zh": "就吃了一些鱼和牛肉。",
-                "vi": "",
-                "pinyin": "",
-                "source_origin": "textbook/generated_mixed",
-                "check_needed": false
-              },
-              {
-                "id": "b45bc13e-c6e0-4fab-a808-4b732cb085a7",
-                "zh": "我就喝了一杯水。",
-                "vi": "",
-                "pinyin": "",
-                "source_origin": "textbook/generated_mixed",
-                "check_needed": false
-              },
-              {
-                "id": "f88bd16e-4cfa-40b5-841c-cfbc61411c51",
-                "zh": "他就买了两本书。",
-                "vi": "",
-                "pinyin": "",
-                "source_origin": "textbook/generated_mixed",
-                "check_needed": false
+                "pinyin": "Jiù chī le yìxiē yú hé niúròu.",
+                "vi": "Chỉ ăn một ít cá và thịt bò thôi.",
+                "highlight": [
+                  "就"
+                ],
+                "grammar_refs": [
+                  "note_jiu_only"
+                ],
+                "vocab_refs": [
+                  "vocab_009",
+                  "vocab_010"
+                ],
+                "source_ref": "pdf_p39_note_2",
+                "note_vi": "就 ở đây gần nghĩa 只/仅仅.",
+                "audio_key": ""
               }
             ],
-            "source_origin": "textbook/generated_mixed",
+            "source_refs": [
+              "pdf_p39_note_2"
+            ],
             "check_needed": false
           },
           {
-            "id": "bf5e90df-dc03-4600-a2d2-426ab562c9a5",
+            "id": "note_bie_le",
             "type": "note",
             "order": 3,
-            "title": "别难过了。",
-            "structure": "别 + 动词/形容词 + 了",
-            "meaning_vi": "Khuyên người khác đừng tiếp tục ở trạng thái đó nữa. 别 là “đừng”, 了 làm sắc thái “đừng... nữa”.",
+            "title": "别……了",
+            "structure": "别 + V/Adj + 了",
+            "meaning_vi": "Dùng trong khẩu ngữ để an ủi, khuyên ngăn hoặc bảo người khác đừng tiếp tục một trạng thái/hành động.",
             "examples": [
               {
-                "id": "b71a23a7-1107-46ec-b43e-de46214c5d0a",
+                "id": "note_bie_ex_001",
                 "zh": "别难过了。",
-                "vi": "",
-                "pinyin": "",
-                "source_origin": "textbook/generated_mixed",
-                "check_needed": false
-              },
-              {
-                "id": "1b3405fa-a29a-4d15-a133-d8b1cc886dec",
-                "zh": "别哭了。",
-                "vi": "",
-                "pinyin": "",
-                "source_origin": "textbook/generated_mixed",
-                "check_needed": false
-              },
-              {
-                "id": "725e3118-8a0a-4e0b-928a-e06e4004f156",
-                "zh": "别说了。",
-                "vi": "",
-                "pinyin": "",
-                "source_origin": "textbook/generated_mixed",
-                "check_needed": false
+                "pinyin": "Bié nánguò le.",
+                "vi": "Đừng buồn nữa.",
+                "highlight": [
+                  "别",
+                  "了"
+                ],
+                "grammar_refs": [
+                  "note_bie_le"
+                ],
+                "vocab_refs": [
+                  "vocab_027",
+                  "vocab_026"
+                ],
+                "source_ref": "pdf_p39_note_3",
+                "note_vi": "Không dùng 不 để thay thế 别 trong mệnh lệnh phủ định.",
+                "audio_key": ""
               }
             ],
-            "source_origin": "textbook/generated_mixed",
+            "source_refs": [
+              "pdf_p39_note_3"
+            ],
             "check_needed": false
           },
           {
-            "id": "d85c63bd-7607-4517-874a-7a596fc80b7d",
+            "id": "note_tiaotiaowu",
             "type": "note",
             "order": 4,
             "title": "跳跳舞",
-            "structure": "V + V + O",
-            "meaning_vi": "Lặp động từ để làm giọng nhẹ hơn: làm một chút / làm cho vui. 跳舞 là động từ ly hợp, lặp phần động từ phía trước: 跳跳舞.",
+            "structure": "động từ li hợp 跳舞 lặp động từ: 跳跳舞",
+            "meaning_vi": "跳舞 là động-tân/li hợp từ. Khi lặp để nói làm một chút, thường lặp phần động từ: 跳跳舞.",
             "examples": [
               {
-                "id": "ba6f33e1-5a6f-47fc-896e-13e6e19ed2d0",
+                "id": "note_tiaotiaowu_ex_001",
                 "zh": "我们一起去跳跳舞吧。",
-                "vi": "",
-                "pinyin": "",
-                "source_origin": "textbook/generated_mixed",
-                "check_needed": false
-              },
-              {
-                "id": "7ab25155-2d20-40f8-81ed-fc1b421cdbd6",
-                "zh": "我想出去散散步。",
-                "vi": "",
-                "pinyin": "",
-                "source_origin": "textbook/generated_mixed",
-                "check_needed": false
-              },
-              {
-                "id": "efe958a9-0c4e-4f47-bfbb-8ede12a3ce31",
-                "zh": "你休息休息吧。",
-                "vi": "",
-                "pinyin": "",
-                "source_origin": "textbook/generated_mixed",
-                "check_needed": false
+                "pinyin": "Wǒmen yìqǐ qù tiàotiao wǔ ba.",
+                "vi": "Chúng ta cùng đi nhảy một chút nhé.",
+                "highlight": [
+                  "跳跳舞"
+                ],
+                "grammar_refs": [
+                  "note_tiaotiaowu"
+                ],
+                "vocab_refs": [
+                  "vocab_030"
+                ],
+                "source_ref": "pdf_p40_note_4",
+                "note_vi": "Không nói máy móc *跳舞跳舞 trong mẫu này.",
+                "audio_key": ""
               }
             ],
-            "source_origin": "textbook/generated_mixed",
+            "source_refs": [
+              "pdf_p40_note_4"
+            ],
             "check_needed": false
           }
         ]
       },
       {
-        "id": "b045e537-7383-494b-8d61-b0286977ed80",
+        "id": "section_04_grammar",
         "type": "grammar",
-        "order": 5,
-        "title": "语法 / 词语用法",
-        "title_vi": "Ngữ pháp / cách dùng từ",
-        "source_origin": "textbook/generated_mixed",
+        "order": 4,
+        "title": "语法",
+        "title_vi": "Ngữ pháp",
+        "source_origin": "textbook",
         "check_needed": false,
         "items": [
           {
-            "id": "f8ec59f3-898a-47b2-b536-44dfd8183393",
+            "id": "grammar_02_verb_le",
             "type": "grammar_point",
             "order": 1,
             "title": "动作的完成：动词 + 了",
-            "title_vi": "Động tác hoàn thành: Động từ + 了",
-            "level": "HSK2/HSK3",
+            "title_vi": "Hành động hoàn thành: Động từ + 了",
+            "level": "A2",
             "tags": [
-              "语法"
+              "lesson_02",
+              "aspect_particle"
             ],
-            "source_origin": "textbook/generated_mixed",
-            "check_needed": false,
             "blocks": [
               {
-                "id": "b7c5d870-2db8-4e2e-950f-f0e6e522ac16",
-                "type": "grammar_overview",
-                "order": 1,
-                "title": "Bản chất",
-                "content_vi": "了 đặt ngay sau động từ để nói hành động đã xảy ra và hoàn thành. Trọng tâm không phải quá khứ đơn thuần, mà là hành động đã có kết quả / đã hoàn tất.",
-                "examples": [
-                  {
-                    "id": "5e614bf9-2578-4d49-87dc-107e6f3605d4",
-                    "zh": "在家吃了两片药。",
-                    "vi": "Ở nhà đã uống hai viên thuốc.",
-                    "highlight": [
-                      "吃了"
-                    ],
-                    "source_origin": "textbook"
-                  },
-                  {
-                    "id": "7ccdc8f9-59f3-4c7b-bd28-247acb68c535",
-                    "zh": "喝了一瓶啤酒。",
-                    "vi": "Đã uống một chai bia.",
-                    "highlight": [
-                      "喝了"
-                    ],
-                    "source_origin": "textbook"
-                  },
-                  {
-                    "id": "d84397d0-7b22-492a-a594-cb58d4dd46e0",
-                    "zh": "我看了化验结果。",
-                    "vi": "Tôi đã xem kết quả xét nghiệm rồi.",
-                    "highlight": [
-                      "看了"
-                    ],
-                    "source_origin": "textbook"
-                  }
-                ]
-              },
-              {
-                "id": "b3534a40-3bab-464a-97dd-67889b8bcb7b",
+                "id": "grammar_02_verb_le_block_001",
                 "type": "grammar_structure",
-                "order": 2,
-                "title": "Cấu trúc khẳng định",
-                "pattern": "主语 + 动词 + 了 + 宾语",
-                "meaning_vi": "Ai đó đã làm xong một việc gì.",
+                "order": 1,
+                "title": "Công thức cơ bản",
+                "pattern": "S + V + 了 + số lượng/định ngữ + O",
+                "meaning_vi": "了 đặt sau động từ biểu thị hành động đã hoàn thành. Nếu động từ + 了 có tân ngữ, tân ngữ thường cần số lượng từ hoặc định ngữ đi trước.",
                 "formulas": [
                   {
                     "label": "Khẳng định",
-                    "pattern": "S + V + 了 + O"
+                    "pattern": "我吃了一些鱼。"
+                  },
+                  {
+                    "label": "Nghi vấn chính phản",
+                    "pattern": "你吃药了没有？/ 你吃没吃药？"
+                  },
+                  {
+                    "label": "Phủ định",
+                    "pattern": "没(有) + V + O; không dùng 了 sau V trong phủ định."
                   }
+                ],
+                "examples": [
+                  {
+                    "id": "grammar_02_verb_le_ex_001",
+                    "zh": "我吃了一些鱼和牛肉。",
+                    "pinyin": "Wǒ chī le yìxiē yú hé niúròu.",
+                    "vi": "Tôi đã ăn một ít cá và thịt bò.",
+                    "highlight": [
+                      "吃了",
+                      "一些"
+                    ],
+                    "grammar_refs": [
+                      "grammar_02_verb_le"
+                    ],
+                    "vocab_refs": [
+                      "vocab_009",
+                      "vocab_010"
+                    ],
+                    "source_ref": "pdf_p35",
+                    "note_vi": "Tân ngữ có 一些 nên V+了+O tự nhiên.",
+                    "audio_key": ""
+                  }
+                ],
+                "notes_vi": [
+                  "Nếu tân ngữ không có số lượng từ/định ngữ, thường cần 了 cuối câu: 我吃饭了。",
+                  "Trong liên động, động từ thứ nhất thường không thêm 了: 她们坐飞机去香港了, không nói *坐了飞机去香港."
                 ]
               },
               {
-                "id": "d20f2f52-d6ab-478a-b684-6adcb0004a12",
+                "id": "grammar_02_verb_le_block_002",
                 "type": "grammar_negative_form",
-                "order": 3,
-                "title": "Dạng phủ định",
-                "pattern": "没/没有 + 动词 + 宾语",
-                "wrong_pattern": "没 + V + 了",
-                "meaning_vi": "Chưa làm / đã không làm việc đó. Khi phủ định hành động hoàn thành thì bỏ 了.",
+                "order": 2,
+                "title": "Phủ định và lỗi dễ sai",
+                "pattern": "没(有) + V + O",
+                "wrong_pattern": "*没 + V + 了 + O",
+                "meaning_vi": "Phủ định hành động đã hoàn thành dùng 没(有), bỏ 了 sau động từ.",
                 "correct_examples": [
                   {
-                    "id": "4c916f9e-1a98-4e0f-8424-c3e0f8dc69a6",
-                    "zh": "我没吃药。",
-                    "vi": "Tôi chưa uống thuốc."
-                  },
-                  {
-                    "id": "6520d7e5-4799-4112-b0ad-f687dc346a6d",
-                    "zh": "他没喝啤酒。",
-                    "vi": "Anh ấy không uống bia."
+                    "id": "grammar_02_verb_le_correct_001",
+                    "zh": "昨天的作业我还没有做。",
+                    "pinyin": "Zuótiān de zuòyè wǒ hái méiyǒu zuò.",
+                    "vi": "Bài tập hôm qua tôi vẫn chưa làm.",
+                    "highlight": [
+                      "没有做"
+                    ],
+                    "explanation_vi": "Phủ định quá khứ dùng 没有做, không thêm 了."
                   }
                 ],
                 "wrong_examples": [
                   {
-                    "id": "1a4abdcd-8810-4792-9b70-e68677751bef",
-                    "zh": "我没吃了药。",
-                    "vi": "Sai: không dùng 没 + V + 了 trong mẫu này.",
-                    "explanation_vi": "Phủ định hành động hoàn thành dùng 没/没有 + V, không thêm 了."
-                  }
-                ]
-              },
-              {
-                "id": "0ea62f46-0157-49d6-aadc-75dbed1d507b",
-                "type": "grammar_question_form",
-                "order": 4,
-                "title": "Dạng nghi vấn",
-                "pattern": "V + 了 + O + 吗？ / V + 了 + 没有？",
-                "meaning_vi": "Hỏi hành động đã xảy ra/chưa.",
-                "examples": [
-                  {
-                    "id": "27028544-385d-40f6-bd95-24429bbdceb6",
-                    "zh": "你吃了药吗？",
-                    "vi": "Bạn uống thuốc chưa?"
-                  },
-                  {
-                    "id": "127b58f2-0e0f-4828-9690-578993e443b7",
-                    "zh": "化验结果出来了没有？",
-                    "vi": "Kết quả xét nghiệm đã có chưa?"
+                    "id": "grammar_02_verb_le_wrong_001",
+                    "zh": "昨天的作业我还没有做了。",
+                    "pinyin": "Zuótiān de zuòyè wǒ hái méiyǒu zuò le.",
+                    "vi": "Sai: Bài tập hôm qua tôi vẫn chưa làm rồi.",
+                    "highlight": [
+                      "没有做了"
+                    ],
+                    "explanation_vi": "没(有) phủ định sự hoàn thành nên không dùng 了 sau động từ."
                   }
                 ]
               }
             ]
           },
           {
-            "id": "57b14753-688a-41b6-9e0d-b61dbbf574d7",
+            "id": "grammar_02_yinwei_suoyi",
             "type": "grammar_point",
             "order": 2,
             "title": "因为……所以……",
             "title_vi": "Vì... nên...",
-            "level": "HSK2/HSK3",
+            "level": "A2",
             "tags": [
-              "语法"
+              "lesson_02",
+              "cause_effect"
             ],
-            "source_origin": "textbook/generated_mixed",
-            "check_needed": false,
             "blocks": [
               {
-                "id": "470b1ca1-e0a1-449f-b55e-a8aa481a4dd4",
-                "type": "grammar_overview",
+                "id": "grammar_02_yinwei_suoyi_block_001",
+                "type": "grammar_structure",
                 "order": 1,
-                "title": "Bản chất",
-                "content_vi": "因为 đưa ra nguyên nhân, 所以 đưa ra kết quả. Cấu trúc này làm rõ logic “vì sao → nên thế nào”.",
+                "title": "Quan hệ nguyên nhân - kết quả",
+                "pattern": "因为 + nguyên nhân，所以 + kết quả",
+                "meaning_vi": "Dùng để nối hai vế nguyên nhân và kết quả. Trong khẩu ngữ có thể lược 因为 hoặc 所以 nếu quan hệ đã rõ.",
+                "formulas": [
+                  {
+                    "label": "Đủ cặp",
+                    "pattern": "因为他病了，所以没来上课。"
+                  },
+                  {
+                    "label": "Lược 所以",
+                    "pattern": "因为下雨，下午我们不去公园了。"
+                  }
+                ],
                 "examples": [
                   {
-                    "id": "c8674d77-7e1f-44f8-9e45-e0a03accdc05",
+                    "id": "grammar_02_yinwei_suoyi_ex_001",
                     "zh": "因为感到寂寞，所以心情不好，很难过。",
+                    "pinyin": "Yīnwèi gǎndào jìmò, suǒyǐ xīnqíng bù hǎo, hěn nánguò.",
                     "vi": "Vì cảm thấy cô đơn nên tâm trạng không tốt, rất buồn.",
                     "highlight": [
                       "因为",
                       "所以"
                     ],
-                    "source_origin": "textbook"
+                    "grammar_refs": [
+                      "grammar_02_yinwei_suoyi"
+                    ],
+                    "vocab_refs": [
+                      "vocab_024",
+                      "vocab_025",
+                      "vocab_026"
+                    ],
+                    "source_ref": "pdf_p36",
+                    "note_vi": "因为 nêu nguyên nhân, 所以 dẫn kết quả.",
+                    "audio_key": ""
                   }
-                ]
-              },
-              {
-                "id": "0ef2b790-3209-4b5c-a519-ca5a424e4d49",
-                "type": "grammar_structure",
-                "order": 2,
-                "title": "Cấu trúc chính",
-                "pattern": "因为 + 原因，所以 + 结果",
-                "meaning_vi": "Vì... nên...",
-                "formulas": [
-                  {
-                    "label": "Nguyên nhân - kết quả",
-                    "pattern": "因为 A，所以 B"
-                  }
-                ]
-              },
-              {
-                "id": "21fbb1a3-0847-4c15-9ca8-be559cee0dd7",
-                "type": "grammar_usage_notes",
-                "order": 3,
-                "title": "Có thể lược bỏ 因为 hoặc 所以",
-                "notes_vi": [
-                  "Dạng đầy đủ nên luyện trước: 因为他病了，所以没来上课。",
-                  "Khẩu ngữ có thể lược 因为 hoặc 所以 tùy ngữ cảnh."
                 ],
-                "examples": [
-                  {
-                    "id": "abaebd39-a149-46e0-b3ca-2feb0c0a9cc6",
-                    "zh": "他病了，所以没来上课。",
-                    "vi": "Anh ấy bị ốm, nên không đến lớp."
-                  },
-                  {
-                    "id": "6bd5af24-6777-4062-bc59-104744d1f764",
-                    "zh": "因为他病了，没来上课。",
-                    "vi": "Vì anh ấy bị ốm, nên không đến lớp."
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "id": "fa804fff-372b-4874-8571-f54e613d7e07",
-            "type": "grammar_point",
-            "order": 3,
-            "title": "Mẫu câu phụ trợ trong bài",
-            "title_vi": "Các mẫu phụ trợ đáng gom",
-            "level": "HSK2/HSK3",
-            "tags": [
-              "句型",
-              "补充"
-            ],
-            "source_origin": "textbook/generated_mixed",
-            "check_needed": false,
-            "blocks": [
-              {
-                "id": "5c6d8f8c-e237-49a9-90ed-774267549aa6",
-                "type": "grammar_structure",
-                "order": 1,
-                "title": "先……然后……再……",
-                "pattern": "先 + V1，然后 + V2，再 + V3",
-                "meaning_vi": "Trước tiên..., sau đó..., rồi...",
-                "examples": [
-                  {
-                    "id": "3620f823-6377-41e3-9821-e498d2c8ac94",
-                    "zh": "你先去化验一下儿大便，然后我再给你检查检查。",
-                    "vi": "Anh/chị đi xét nghiệm đại tiện trước, sau đó tôi kiểm tra lại cho anh/chị."
-                  }
-                ]
-              },
-              {
-                "id": "00283e6f-e5c3-4028-a2c6-6296e5ecb407",
-                "type": "grammar_structure",
-                "order": 2,
-                "title": "V + 一下儿",
-                "pattern": "动词 + 一下儿",
-                "meaning_vi": "Làm một chút / làm thử / làm nhẹ hành động.",
-                "examples": [
-                  {
-                    "id": "67dbf307-9e3e-454a-9d27-30b827684ec9",
-                    "zh": "我看一下儿。",
-                    "vi": "Tôi xem một chút."
-                  }
-                ]
-              },
-              {
-                "id": "32221e32-5abd-40ef-abc1-2fa1076bc342",
-                "type": "grammar_structure",
-                "order": 3,
-                "title": "V + V",
-                "pattern": "动词重叠",
-                "meaning_vi": "Lặp động từ để làm nhẹ giọng, thường dùng trong đề nghị/rủ rê.",
-                "examples": [
-                  {
-                    "id": "d3ca42bf-fbbd-4347-98a8-7a697fe218c2",
-                    "zh": "我们一起去跳跳舞吧。",
-                    "vi": "Chúng ta cùng đi nhảy một chút nhé."
-                  }
-                ]
-              },
-              {
-                "id": "d3a1ecc2-8c1f-4b77-8f62-a76d0b71b893",
-                "type": "grammar_structure",
-                "order": 4,
-                "title": "别 + V/Adj + 了",
-                "pattern": "别 + 动词/形容词 + 了",
-                "meaning_vi": "Đừng tiếp tục làm / ở trạng thái đó nữa.",
-                "examples": [
-                  {
-                    "id": "8a5a1327-5977-406d-b2eb-0873fdcdff0b",
-                    "zh": "别难过了。",
-                    "vi": "Đừng buồn nữa."
-                  }
+                "notes_vi": [
+                  "Không đảo 因为 và 所以: 因为 là nguyên nhân, 所以 là kết quả."
                 ]
               }
             ]
@@ -1722,187 +2126,404 @@
         ]
       },
       {
-        "id": "9901c597-ca97-451e-b63d-11814aaf933e",
+        "id": "section_05_exercises",
         "type": "exercises",
-        "order": 6,
+        "order": 5,
         "title": "练习",
-        "title_vi": "Bài tập trong sách",
-        "source_origin": "textbook/generated_mixed",
+        "title_vi": "Bài tập",
+        "source_origin": "textbook",
         "check_needed": false,
-        "coverage_contract": {
-          "expected_exercise_count_from_pdf": 11,
-          "actual_exercise_count_in_json": 11,
-          "all_exercises_covered": true,
-          "coverage_status": "complete_unverified"
-        },
         "items": [
           {
-            "id": "15cb6f38-593b-48d1-bcca-dc3d2a140f9e",
+            "id": "ex_01_phonetics",
             "type": "phonetics",
-            "variant": "pronunciation_tone_minimal_pairs",
+            "variant": "minimal_pair_and_read_aloud",
             "order": 1,
-            "title": "一、语音",
+            "title": "语音",
             "title_vi": "Ngữ âm",
             "instruction": {
-              "zh": "",
-              "vi": "Phân biệt âm đọc và thanh điệu."
+              "zh": "辨音辨调；朗读词组。",
+              "vi": "Phân biệt phát âm/thanh điệu và đọc các cụm từ."
             },
-            "source_origin": "textbook",
-            "check_needed": false,
+            "difficulty": "easy",
+            "skill_focus": [
+              "pronunciation",
+              "tones"
+            ],
+            "grammar_refs": [],
+            "vocab_refs": [],
             "parts": [
               {
-                "id": "82f9b16a-0baa-4450-88ae-a5c4756e2b2e",
-                "type": "minimal_pair_group",
+                "id": "ex_01_part_01",
+                "type": "minimal_pair",
                 "title": "辨音辨调",
+                "instruction_vi": "Phân biệt phát âm và thanh điệu.",
                 "items": [
-                  "dùzi — tùzi",
-                  "dàbiàn — dábiàn",
-                  "jiéguǒ — jiēzhe",
-                  "xiǎohuà — xiàohua",
-                  "gǎndào — kàndào",
-                  "dànshì — dāngshí",
-                  "wùhuì — wǔhuì",
-                  "lìhai — lìhài"
+                  {
+                    "id": "ex_01_pair_001",
+                    "left": "dùzi",
+                    "right": "tùzi",
+                    "audio_keys": []
+                  },
+                  {
+                    "id": "ex_01_pair_002",
+                    "left": "dàbiàn",
+                    "right": "dǎbiān",
+                    "audio_keys": []
+                  },
+                  {
+                    "id": "ex_01_pair_003",
+                    "left": "jiéguǒ",
+                    "right": "jiēzhe",
+                    "audio_keys": []
+                  },
+                  {
+                    "id": "ex_01_pair_004",
+                    "left": "xiāohuà",
+                    "right": "xiǎohuà",
+                    "audio_keys": []
+                  },
+                  {
+                    "id": "ex_01_pair_005",
+                    "left": "gǎndào",
+                    "right": "kàndào",
+                    "audio_keys": []
+                  },
+                  {
+                    "id": "ex_01_pair_006",
+                    "left": "dànshì",
+                    "right": "dāngshí",
+                    "audio_keys": []
+                  },
+                  {
+                    "id": "ex_01_pair_007",
+                    "left": "wǔhuì",
+                    "right": "wùhuì",
+                    "audio_keys": []
+                  },
+                  {
+                    "id": "ex_01_pair_008",
+                    "left": "lìhai",
+                    "right": "lìhài",
+                    "audio_keys": []
+                  }
                 ]
               },
               {
-                "id": "6be4fd46-7acf-499a-a2a9-5099d80f03a5",
+                "id": "ex_01_part_02",
                 "type": "read_aloud",
                 "title": "朗读",
+                "instruction_vi": "Đọc các cụm từ.",
                 "items": [
-                  "头疼",
-                  "牙疼",
-                  "肚子疼",
-                  "头疼得很厉害",
-                  "牙疼得很厉害",
-                  "肚子疼得很厉害",
-                  "别说了",
-                  "别哭了",
-                  "别喝了",
-                  "别睡了",
-                  "别看了",
-                  "别去了",
-                  "检查身体",
-                  "检查一下儿",
-                  "检查了一下儿",
-                  "感到寂寞",
-                  "感到高兴",
-                  "感到不舒服"
+                  {
+                    "id": "ex_01_read_001",
+                    "text": "肚子疼得很厉害",
+                    "pinyin": "Dùzi téng de hěn lìhai"
+                  },
+                  {
+                    "id": "ex_01_read_002",
+                    "text": "我只是感到难过",
+                    "pinyin": "Wǒ zhǐ shì gǎndào nánguò"
+                  },
+                  {
+                    "id": "ex_01_read_003",
+                    "text": "别说了",
+                    "pinyin": "Bié shuō le"
+                  },
+                  {
+                    "id": "ex_01_read_004",
+                    "text": "别喝了",
+                    "pinyin": "Bié hē le"
+                  },
+                  {
+                    "id": "ex_01_read_005",
+                    "text": "别睡了",
+                    "pinyin": "Bié shuì le"
+                  },
+                  {
+                    "id": "ex_01_read_006",
+                    "text": "别看了",
+                    "pinyin": "Bié kàn le"
+                  },
+                  {
+                    "id": "ex_01_read_007",
+                    "text": "别去了",
+                    "pinyin": "Bié qù le"
+                  },
+                  {
+                    "id": "ex_01_read_008",
+                    "text": "检查身体",
+                    "pinyin": "Jiǎnchá shēntǐ"
+                  },
+                  {
+                    "id": "ex_01_read_009",
+                    "text": "检查一下儿",
+                    "pinyin": "Jiǎnchá yíxiàr"
+                  },
+                  {
+                    "id": "ex_01_read_010",
+                    "text": "检查了一下儿",
+                    "pinyin": "Jiǎnchá le yíxiàr"
+                  },
+                  {
+                    "id": "ex_01_read_011",
+                    "text": "感到寂寞",
+                    "pinyin": "Gǎndào jìmò"
+                  },
+                  {
+                    "id": "ex_01_read_012",
+                    "text": "感到高兴",
+                    "pinyin": "Gǎndào gāoxìng"
+                  },
+                  {
+                    "id": "ex_01_read_013",
+                    "text": "感到不舒服",
+                    "pinyin": "Gǎndào bù shūfu"
+                  }
                 ]
               }
             ],
-            "rendering": {
-              "renderer": "exercise.phonetics.v2"
-            }
+            "check_needed": false
           },
           {
-            "id": "98e14c21-0449-4e36-b1ae-77ed46cf3aa0",
-            "type": "substitution_drill",
-            "variant": "substitution_or_transform_drill",
+            "id": "ex_02_substitution",
+            "type": "substitution",
+            "variant": "textbook_models",
             "order": 2,
-            "title": "二、替换",
-            "title_vi": "Thay thế",
+            "title": "替换",
+            "title_vi": "Luyện thay thế",
             "instruction": {
-              "zh": "",
-              "vi": "Thay thế từ/cụm theo mẫu."
+              "zh": "按例句替换练习。",
+              "vi": "Thay từ theo mẫu để luyện câu."
             },
-            "source_origin": "textbook",
-            "check_needed": false,
-            "parts": [
+            "difficulty": "normal",
+            "skill_focus": [
+              "speaking",
+              "pattern_drill"
+            ],
+            "grammar_refs": [
+              "grammar_02_verb_le"
+            ],
+            "vocab_refs": [],
+            "model": [
+              "A: 他怎么了？",
+              "B: 他病了。"
+            ],
+            "items": [
               {
-                "id": "82a1a6f2-35a2-49b9-91c3-07b5ac98e488",
-                "model": [
-                  "A：他怎么了？",
-                  "B：他拉肚子了。"
+                "id": "ex_02_item_001",
+                "substitution": "发烧",
+                "expected_dialogue": [
+                  "A: 他怎么了？",
+                  "B: 他发烧了。"
                 ],
-                "items": [
-                  "哭",
-                  "病",
-                  "想家",
-                  "感冒",
-                  "发烧",
-                  "喝酒喝多"
+                "vocab_refs": [
+                  "vocab_031"
                 ]
               },
               {
-                "id": "68192b9b-3fd7-4e9e-b186-f7c8343a36ad",
-                "model": [
-                  "A：你吃什么了？",
-                  "B：吃了一些鱼和牛肉。"
+                "id": "ex_02_item_002",
+                "substitution": "喝酒喝多",
+                "expected_dialogue": [
+                  "A: 他怎么了？",
+                  "B: 他喝酒喝多了。"
                 ],
-                "items": [
-                  "喝 — 一瓶啤酒",
-                  "买 — 一本词典",
-                  "写 — 两封信",
-                  "看 — 一个电影",
-                  "借 — 一本书",
-                  "听 — 新课的录音"
+                "vocab_refs": []
+              },
+              {
+                "id": "ex_02_item_003",
+                "substitution": "喝一瓶啤酒",
+                "expected_dialogue": [
+                  "A: 你喝什么了？",
+                  "B: 喝了一瓶啤酒。"
+                ],
+                "vocab_refs": []
+              },
+              {
+                "id": "ex_02_item_004",
+                "substitution": "买一本词典",
+                "expected_dialogue": [
+                  "A: 你买什么了？",
+                  "B: 买了一本词典。"
+                ],
+                "vocab_refs": []
+              },
+              {
+                "id": "ex_02_item_005",
+                "substitution": "写两封信",
+                "expected_dialogue": [
+                  "A: 你写什么了？",
+                  "B: 写了两封信。"
+                ],
+                "vocab_refs": []
+              },
+              {
+                "id": "ex_02_item_006",
+                "substitution": "看一个电影",
+                "expected_dialogue": [
+                  "A: 你看什么了？",
+                  "B: 看了一个电影。"
+                ],
+                "vocab_refs": []
+              },
+              {
+                "id": "ex_02_item_007",
+                "substitution": "借一本书",
+                "expected_dialogue": [
+                  "A: 你借什么了？",
+                  "B: 借了一本书。"
+                ],
+                "vocab_refs": []
+              },
+              {
+                "id": "ex_02_item_008",
+                "substitution": "听新课的录音",
+                "expected_dialogue": [
+                  "A: 你听什么了？",
+                  "B: 听了新课的录音。"
+                ],
+                "vocab_refs": []
+              },
+              {
+                "id": "ex_02_item_009",
+                "substitution": "吃药",
+                "expected_dialogue": [
+                  "A: 你吃药了没有？/ 你吃没吃药？",
+                  "B: 吃了。"
+                ],
+                "vocab_refs": []
+              },
+              {
+                "id": "ex_02_item_010",
+                "substitution": "换钱",
+                "expected_dialogue": [
+                  "A: 你换钱了没有？/ 你换没换钱？",
+                  "B: 换了。"
+                ],
+                "vocab_refs": []
+              },
+              {
+                "id": "ex_02_item_011",
+                "substitution": "喝酒",
+                "expected_dialogue": [
+                  "A: 你喝酒了没有？/ 你喝没喝酒？",
+                  "B: 喝了。"
+                ],
+                "vocab_refs": []
+              },
+              {
+                "id": "ex_02_item_012",
+                "substitution": "去礼堂",
+                "expected_dialogue": [
+                  "A: 你去礼堂了没有？/ 你去没去礼堂？",
+                  "B: 去了。"
+                ],
+                "vocab_refs": [
+                  "vocab_028"
                 ]
               },
               {
-                "id": "6b4e5107-3092-431d-ac0c-d302df1317fc",
-                "model": [
-                  "A：你吃饭了没有？ / 你吃没吃饭？",
-                  "B：吃了。"
+                "id": "ex_02_item_013",
+                "substitution": "带药 2 瓶",
+                "expected_dialogue": [
+                  "A: 你带什么了？",
+                  "B: 我带药了。",
+                  "A: 带了多少？",
+                  "B: 我只带了两瓶。"
                 ],
-                "items": [
-                  "吃 — 药",
-                  "发 — 微信",
-                  "换 — 钱",
-                  "喝 — 酒",
-                  "买 — 报纸",
-                  "去 — 礼堂"
-                ]
+                "vocab_refs": []
               },
               {
-                "id": "2f244631-33e7-46fb-9864-aa5e7089e11d",
-                "model": [
-                  "A：你吃什么了？",
-                  "B：我吃饺子了。",
-                  "A：吃了多少？",
-                  "B：我只吃了10个。"
+                "id": "ex_02_item_014",
+                "substitution": "买苹果 5 个",
+                "expected_dialogue": [
+                  "A: 你买什么了？",
+                  "B: 我买苹果了。",
+                  "A: 买了多少？",
+                  "B: 我只买了五个。"
                 ],
-                "items": [
-                  "带 — 药 — 2 — 瓶",
-                  "要 — 啤酒 — 2 — 瓶",
-                  "买 — 苹果 — 5 — 个",
-                  "借 — 书 — 1 — 本",
-                  "换 — 人民币 — 500 — 元"
-                ]
+                "vocab_refs": []
               },
               {
-                "id": "b760e557-27ca-4e81-80b2-6bb0e9425201",
-                "model": [
-                  "A：你什么时候去？",
-                  "B：我吃了饭就去。"
+                "id": "ex_02_item_015",
+                "substitution": "借书 1 本",
+                "expected_dialogue": [
+                  "A: 你借什么了？",
+                  "B: 我借书了。",
+                  "A: 借了多少？",
+                  "B: 我只借了一本。"
                 ],
-                "items": [
-                  "下了课",
-                  "买了书",
-                  "换了衣服",
-                  "做了练习",
-                  "打了球",
-                  "看了电影"
-                ]
+                "vocab_refs": []
+              },
+              {
+                "id": "ex_02_item_016",
+                "substitution": "换人民币 500 元",
+                "expected_dialogue": [
+                  "A: 你换什么了？",
+                  "B: 我换人民币了。",
+                  "A: 换了多少？",
+                  "B: 我只换了五百元。"
+                ],
+                "vocab_refs": []
+              },
+              {
+                "id": "ex_02_item_017",
+                "substitution": "下了课 / 买了书",
+                "expected_dialogue": [
+                  "A: 你什么时候去？",
+                  "B: 我下了课就去。"
+                ],
+                "vocab_refs": []
+              },
+              {
+                "id": "ex_02_item_018",
+                "substitution": "换了衣服 / 做了练习",
+                "expected_dialogue": [
+                  "A: 你什么时候做练习？",
+                  "B: 我换了衣服就做练习。"
+                ],
+                "vocab_refs": []
+              },
+              {
+                "id": "ex_02_item_019",
+                "substitution": "打了球 / 看了电影",
+                "expected_dialogue": [
+                  "A: 你什么时候看电影？",
+                  "B: 我打了球就看电影。"
+                ],
+                "vocab_refs": []
               }
             ],
-            "rendering": {
-              "renderer": "exercise.substitution.v2"
-            }
+            "answer_mode": "manual",
+            "check_needed": false
           },
           {
-            "id": "5dfca3d2-8524-4a83-92dd-b036a7259465",
+            "id": "ex_03_choose_words_fill_blank",
             "type": "choose_words_fill_blank",
-            "variant": "word_bank_fill_blank",
+            "variant": "textbook",
             "order": 3,
-            "title": "三、选词填空",
-            "title_vi": "Chọn từ điền chỗ trống",
+            "title": "选词填空",
+            "title_vi": "Chọn từ điền vào chỗ trống",
             "instruction": {
-              "zh": "",
-              "vi": "Chọn từ trong khung điền vào chỗ trống."
+              "zh": "选词填空。",
+              "vi": "Chọn từ đúng trong khung để điền vào chỗ trống."
             },
-            "source_origin": "textbook",
-            "check_needed": false,
+            "difficulty": "normal",
+            "skill_focus": [
+              "vocabulary",
+              "grammar"
+            ],
+            "grammar_refs": [
+              "grammar_02_yinwei_suoyi",
+              "note_bie_le"
+            ],
+            "vocab_refs": [
+              "vocab_008",
+              "vocab_026",
+              "vocab_025",
+              "vocab_012",
+              "vocab_024"
+            ],
             "word_bank": [
               "感到",
               "难过",
@@ -1915,782 +2536,1573 @@
             ],
             "questions": [
               {
-                "id": "941d80e5-8eb2-4e21-beae-597e6677cdaf",
-                "prompt": "昨天晚上我________肚子了。",
+                "id": "ex_03_q001",
+                "prompt": "昨天晚上我____肚子了。",
                 "answer": "拉",
-                "answer_verified": false,
-                "check_needed": true
+                "acceptable_answers": [
+                  "拉"
+                ],
+                "explanation_vi": "拉肚子 là cụm cố định nghĩa là tiêu chảy.",
+                "grammar_refs": [],
+                "vocab_refs": [],
+                "grading": {
+                  "mode": "exact"
+                },
+                "answer_pinyin": "Zuótiān wǎnshang wǒ lā dùzi le."
               },
               {
-                "id": "f31d95d0-500f-4cc9-97ee-57a7295062d2",
-                "prompt": "我的肚子________得很厉害。",
+                "id": "ex_03_q002",
+                "prompt": "我的肚子____得很厉害。",
                 "answer": "疼",
-                "answer_verified": false,
-                "check_needed": true
+                "acceptable_answers": [
+                  "疼"
+                ],
+                "explanation_vi": "疼得很厉害 = đau dữ dội.",
+                "grammar_refs": [],
+                "vocab_refs": [],
+                "grading": {
+                  "mode": "exact"
+                },
+                "answer_pinyin": "Wǒ de dùzi téng de hěn lìhai."
               },
               {
-                "id": "069f2cd8-233c-4227-8f46-78a1d28a4a59",
-                "prompt": "刚来中国的时候，我________想家。",
+                "id": "ex_03_q003",
+                "prompt": "刚来中国的时候，我____想家。",
                 "answer": "总",
-                "answer_verified": false,
-                "check_needed": true
+                "acceptable_answers": [
+                  "总"
+                ],
+                "explanation_vi": "总 = luôn/cứ, hợp với cảm giác nhớ nhà lặp lại.",
+                "grammar_refs": [],
+                "vocab_refs": [],
+                "grading": {
+                  "mode": "exact"
+                },
+                "answer_pinyin": "Gāng lái Zhōngguó de shíhou, wǒ zǒng xiǎng jiā."
               },
               {
-                "id": "013e3712-30ac-4a8a-b60e-0d6f818f4cdb",
-                "prompt": "大夫________以后说我不是得了肠炎，只是消化不好。",
+                "id": "ex_03_q004",
+                "prompt": "大夫____以后说我不是得了肠炎，只是消化不好。",
                 "answer": "检查",
-                "answer_verified": false,
-                "check_needed": true
+                "acceptable_answers": [
+                  "检查"
+                ],
+                "explanation_vi": "检查以后 = sau khi khám/kiểm tra.",
+                "grammar_refs": [],
+                "vocab_refs": [],
+                "grading": {
+                  "mode": "exact"
+                },
+                "answer_pinyin": "Dàifu jiǎnchá yǐhòu shuō wǒ bú shì dé le chángyán, zhǐ shì xiāohuà bù hǎo."
               },
               {
-                "id": "ba362929-16a5-4a79-8cad-ecfabcaa32f3",
-                "prompt": "她________发烧了。",
+                "id": "ex_03_q005",
+                "prompt": "她____发烧了。",
                 "answer": "又",
-                "answer_verified": false,
-                "check_needed": true
+                "acceptable_answers": [
+                  "又"
+                ],
+                "explanation_vi": "又 = lại, việc không mong muốn xảy ra thêm lần nữa.",
+                "grammar_refs": [],
+                "vocab_refs": [],
+                "grading": {
+                  "mode": "exact"
+                },
+                "answer_pinyin": "Tā yòu fāshāo le."
               },
               {
-                "id": "542ef74e-c843-4b6c-9cd8-0011b6ee7b7a",
-                "prompt": "别________了，我们一起去跳跳舞吧。",
+                "id": "ex_03_q006",
+                "prompt": "别____了，我们一起去跳跳舞吧。",
                 "answer": "难过",
-                "answer_verified": false,
-                "check_needed": true
+                "acceptable_answers": [
+                  "难过"
+                ],
+                "explanation_vi": "别难过了 = đừng buồn nữa.",
+                "grammar_refs": [],
+                "vocab_refs": [],
+                "grading": {
+                  "mode": "exact"
+                },
+                "answer_pinyin": "Bié nánguò le, wǒmen yìqǐ qù tiàotiao wǔ ba."
               },
               {
-                "id": "715f1fd6-1b2e-43e0-b3dc-cbc252152601",
-                "prompt": "因为我爸爸在中国工作，________要我来中国留学。",
+                "id": "ex_03_q007",
+                "prompt": "因为我爸爸在中国工作，____要我来中国留学。",
                 "answer": "所以",
-                "answer_verified": false,
-                "check_needed": true
+                "acceptable_answers": [
+                  "所以"
+                ],
+                "explanation_vi": "因为...所以... nối nguyên nhân và kết quả.",
+                "grammar_refs": [],
+                "vocab_refs": [],
+                "grading": {
+                  "mode": "exact"
+                },
+                "answer_pinyin": "Yīnwèi wǒ bàba zài Zhōngguó gōngzuò, suǒyǐ yào wǒ lái Zhōngguó liúxué."
               },
               {
-                "id": "105a0775-7adb-418e-b770-133481e26360",
-                "prompt": "有时候我也________寂寞，但是过一会儿就好了。",
+                "id": "ex_03_q008",
+                "prompt": "有时候我也____寂寞，但是过一会儿就好了。",
                 "answer": "感到",
-                "answer_verified": false,
-                "check_needed": true
+                "acceptable_answers": [
+                  "感到"
+                ],
+                "explanation_vi": "感到寂寞 = cảm thấy cô đơn.",
+                "grammar_refs": [],
+                "vocab_refs": [],
+                "grading": {
+                  "mode": "exact"
+                },
+                "answer_pinyin": "Yǒu shíhou wǒ yě gǎndào jìmò, dànshì guò yíhuìr jiù hǎo le."
               }
             ],
-            "rendering": {
-              "renderer": "exercise.fill_blank.word_bank.v2",
-              "show_word_bank": true,
-              "show_answer_after_submit": true
-            }
+            "answer_key": [
+              {
+                "question_id": "ex_03_q001",
+                "answer": "拉",
+                "pinyin": "Zuótiān wǎnshang wǒ lā dùzi le.",
+                "check_needed": false
+              },
+              {
+                "question_id": "ex_03_q002",
+                "answer": "疼",
+                "pinyin": "Wǒ de dùzi téng de hěn lìhai.",
+                "check_needed": false
+              },
+              {
+                "question_id": "ex_03_q003",
+                "answer": "总",
+                "pinyin": "Gāng lái Zhōngguó de shíhou, wǒ zǒng xiǎng jiā.",
+                "check_needed": false
+              },
+              {
+                "question_id": "ex_03_q004",
+                "answer": "检查",
+                "pinyin": "Dàifu jiǎnchá yǐhòu shuō wǒ bú shì dé le chángyán, zhǐ shì xiāohuà bù hǎo.",
+                "check_needed": false
+              },
+              {
+                "question_id": "ex_03_q005",
+                "answer": "又",
+                "pinyin": "Tā yòu fāshāo le.",
+                "check_needed": false
+              },
+              {
+                "question_id": "ex_03_q006",
+                "answer": "难过",
+                "pinyin": "Bié nánguò le, wǒmen yìqǐ qù tiàotiao wǔ ba.",
+                "check_needed": false
+              },
+              {
+                "question_id": "ex_03_q007",
+                "answer": "所以",
+                "pinyin": "Yīnwèi wǒ bàba zài Zhōngguó gōngzuò, suǒyǐ yào wǒ lái Zhōngguó liúxué.",
+                "check_needed": false
+              },
+              {
+                "question_id": "ex_03_q008",
+                "answer": "感到",
+                "pinyin": "Yǒu shíhou wǒ yě gǎndào jìmò, dànshì guò yíhuìr jiù hǎo le.",
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
           },
           {
-            "id": "809141fb-cc55-403a-9433-35eea89c8c90",
-            "type": "custom",
-            "variant": "custom_textbook_task",
+            "id": "ex_04_position",
+            "type": "fill_blank",
+            "variant": "choose_position",
             "order": 4,
-            "title": "四、为括号里的词语选择适当的位置",
-            "title_vi": "Chọn vị trí thích hợp",
+            "title": "为括号里的词语选择适当的位置",
+            "title_vi": "Chọn vị trí thích hợp cho từ trong ngoặc",
             "instruction": {
-              "zh": "",
-              "vi": "Đặt từ trong ngoặc vào vị trí thích hợp."
+              "zh": "为括号里的词语选择适当的位置。",
+              "vi": "Chọn vị trí A/B/C/D thích hợp cho từ trong ngoặc."
             },
-            "source_origin": "textbook",
-            "check_needed": false,
+            "difficulty": "normal",
+            "skill_focus": [
+              "word_order",
+              "grammar"
+            ],
+            "grammar_refs": [
+              "grammar_02_verb_le"
+            ],
+            "vocab_refs": [],
             "questions": [
               {
-                "id": "668ef942-39b3-4816-be06-f347b64fa456",
-                "prompt": "我想 A 下 B 课就去 C 买飞机票 D。",
-                "word": "了",
+                "id": "ex_04_q001",
+                "prompt": "我想 A 下 B 课就去 C 买飞机票 D。（了）",
                 "answer": "B",
-                "answer_verified": false,
-                "check_needed": true
+                "acceptable_answers": [
+                  "B"
+                ],
+                "explanation_vi": "V + 了 + O + 就 + V: 下了课就去...",
+                "grammar_refs": [],
+                "vocab_refs": [],
+                "grading": {
+                  "mode": "choice"
+                },
+                "correct_sentence": "我想下了课就去买飞机票。"
               },
               {
-                "id": "6e23c236-94eb-4e83-9ea6-7353241c098d",
-                "prompt": "A 来中国以前 B 我 C 会说 D 一点儿汉语。",
-                "word": "只",
+                "id": "ex_04_q002",
+                "prompt": "A 来中国以前 B 我 C 会说 D 一点儿汉语。（只）",
                 "answer": "C",
-                "answer_verified": false,
-                "check_needed": true
+                "acceptable_answers": [
+                  "C"
+                ],
+                "explanation_vi": "只 đứng trước động từ/năng nguyện động từ 会.",
+                "grammar_refs": [],
+                "vocab_refs": [],
+                "grading": {
+                  "mode": "choice"
+                },
+                "correct_sentence": "来中国以前我只会说一点儿汉语。"
               },
               {
-                "id": "ee3570f6-9872-4699-a1ed-c338e52b4e50",
-                "prompt": "昨天我给 A 妈妈 B 发 C 几张照片 D。",
-                "word": "了",
-                "answer": "D",
-                "answer_verified": false,
-                "check_needed": true
-              },
-              {
-                "id": "3130979d-5cc3-4cf5-999c-9ed317ea7c14",
-                "prompt": "上午你去 A 哪儿 B？玛丽来 C 找你，你不在 D。",
-                "word": "了",
-                "answer": "B",
-                "answer_verified": false,
-                "check_needed": true
-              },
-              {
-                "id": "9dd88fe0-ccfb-47b6-a74a-d1ee53c61219",
-                "prompt": "A 爸爸 B 给 C 我 D 买了一辆新车。",
-                "word": "又",
-                "answer": "B",
-                "answer_verified": false,
-                "check_needed": true
-              },
-              {
-                "id": "9002df8c-125f-489d-9396-d008958aa6b9",
-                "prompt": "明天晚上我们吃 A 晚饭 B 就去 C 看电影 D。",
-                "word": "了",
-                "answer": "B",
-                "answer_verified": false,
-                "check_needed": true
-              },
-              {
-                "id": "7ccdf5ea-8943-40f8-b46c-5476825c5360",
-                "prompt": "你 A 先去 B 化验一下儿，我 C 给你 D 检查。",
-                "word": "再",
+                "id": "ex_04_q003",
+                "prompt": "昨天我给 A 妈妈 B 发 C 几张照片 D。（了）",
                 "answer": "C",
-                "answer_verified": false,
-                "check_needed": true
+                "acceptable_answers": [
+                  "C"
+                ],
+                "explanation_vi": "了 đặt sau động từ 发.",
+                "grammar_refs": [],
+                "vocab_refs": [],
+                "grading": {
+                  "mode": "choice"
+                },
+                "correct_sentence": "昨天我给妈妈发了几张照片。"
               },
               {
-                "id": "5808cb3e-509e-43fa-89bd-70c5334f1c6e",
-                "prompt": "我 A 昨天 B 去 C 看他 D 了。",
-                "word": "又",
+                "id": "ex_04_q004",
+                "prompt": "上午你去 A 哪儿 B？玛丽来 C 找你，你不在 D。（了）",
                 "answer": "B",
-                "answer_verified": false,
-                "check_needed": true
+                "acceptable_answers": [
+                  "B"
+                ],
+                "explanation_vi": "去哪儿了 hỏi địa điểm đã đi trong bối cảnh đã xảy ra.",
+                "grammar_refs": [],
+                "vocab_refs": [],
+                "grading": {
+                  "mode": "choice"
+                },
+                "correct_sentence": "上午你去哪儿了？玛丽来找你，你不在。"
+              },
+              {
+                "id": "ex_04_q005",
+                "prompt": "A 爸爸 B 给 C 我 D 买了一辆新车。（又）",
+                "answer": "B",
+                "acceptable_answers": [
+                  "B"
+                ],
+                "explanation_vi": "又 đứng trước cụm động từ 给我买了...",
+                "grammar_refs": [],
+                "vocab_refs": [],
+                "grading": {
+                  "mode": "choice"
+                },
+                "correct_sentence": "爸爸又给我买了一辆新车。"
+              },
+              {
+                "id": "ex_04_q006",
+                "prompt": "明天晚上我们吃 A 晚饭 B 就去 C 看电影 D。（了）",
+                "answer": "B",
+                "acceptable_answers": [
+                  "B"
+                ],
+                "explanation_vi": "吃了晚饭就去... là quan hệ trước-sau.",
+                "grammar_refs": [],
+                "vocab_refs": [],
+                "grading": {
+                  "mode": "choice"
+                },
+                "correct_sentence": "明天晚上我们吃了晚饭就去看电影。"
+              },
+              {
+                "id": "ex_04_q007",
+                "prompt": "你 A 先去 B 化验一下儿，我 C 给你 D 检查。（再）",
+                "answer": "C",
+                "acceptable_answers": [
+                  "C"
+                ],
+                "explanation_vi": "先...再...: trước đi xét nghiệm, sau đó tôi kiểm tra.",
+                "grammar_refs": [],
+                "vocab_refs": [],
+                "grading": {
+                  "mode": "choice"
+                },
+                "correct_sentence": "你先去化验一下儿，我再给你检查。"
+              },
+              {
+                "id": "ex_04_q008",
+                "prompt": "我 A 昨天 B 去 C 看他 D 了。（又）",
+                "answer": "B",
+                "acceptable_answers": [
+                  "B"
+                ],
+                "explanation_vi": "又 đặt sau trạng ngữ thời gian, trước cụm động từ.",
+                "grammar_refs": [],
+                "vocab_refs": [],
+                "grading": {
+                  "mode": "choice"
+                },
+                "correct_sentence": "我昨天又去看他了。"
               }
             ],
-            "rendering": {
-              "renderer": "exercise.position_choice.v1",
-              "show_answer_after_submit": true
-            }
+            "answer_key": [
+              {
+                "question_id": "ex_04_q001",
+                "answer": "B",
+                "sample_answer": "我想下了课就去买飞机票。",
+                "check_needed": false
+              },
+              {
+                "question_id": "ex_04_q002",
+                "answer": "C",
+                "sample_answer": "来中国以前我只会说一点儿汉语。",
+                "check_needed": false
+              },
+              {
+                "question_id": "ex_04_q003",
+                "answer": "C",
+                "sample_answer": "昨天我给妈妈发了几张照片。",
+                "check_needed": false
+              },
+              {
+                "question_id": "ex_04_q004",
+                "answer": "B",
+                "sample_answer": "上午你去哪儿了？玛丽来找你，你不在。",
+                "check_needed": false
+              },
+              {
+                "question_id": "ex_04_q005",
+                "answer": "B",
+                "sample_answer": "爸爸又给我买了一辆新车。",
+                "check_needed": false
+              },
+              {
+                "question_id": "ex_04_q006",
+                "answer": "B",
+                "sample_answer": "明天晚上我们吃了晚饭就去看电影。",
+                "check_needed": false
+              },
+              {
+                "question_id": "ex_04_q007",
+                "answer": "C",
+                "sample_answer": "你先去化验一下儿，我再给你检查。",
+                "check_needed": false
+              },
+              {
+                "question_id": "ex_04_q008",
+                "answer": "B",
+                "sample_answer": "我昨天又去看他了。",
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
           },
           {
-            "id": "e843bb6e-2e51-4fb8-b362-7506b97cf2fc",
-            "type": "complete_sentence",
-            "variant": "complete_sentence_with_given_words",
+            "id": "ex_05_complete_with_jiu",
+            "type": "answer_with_pattern",
+            "variant": "textbook_open_sample",
             "order": 5,
-            "title": "五、用“就”完成句子",
-            "title_vi": "Dùng 就 hoàn thành câu",
+            "title": "用“就”完成句子",
+            "title_vi": "Dùng “就” hoàn thành câu",
             "instruction": {
-              "zh": "",
-              "vi": "Hoàn thành câu với 就."
+              "zh": "用“就”完成句子。",
+              "vi": "Dùng 就 để hoàn thành câu."
             },
-            "source_origin": "textbook",
-            "check_needed": false,
+            "difficulty": "normal",
+            "skill_focus": [
+              "sentence_completion"
+            ],
+            "grammar_refs": [
+              "grammar_02_verb_le",
+              "helper_jiu_after_action"
+            ],
+            "vocab_refs": [],
+            "pattern": "V + 了 + O + 就 + V",
+            "model": {
+              "prompt": "吃了晚饭就去吧。",
+              "answer": "吃了晚饭就去吧。"
+            },
             "questions": [
               {
-                "id": "7d9c942a-bdc2-45a1-b852-6b3dd58fe8f2",
-                "prompt": "明天我吃了早饭________。",
-                "answer": "",
-                "answer_verified": false,
+                "id": "ex_05_q001",
+                "prompt": "明天我吃了早饭____。",
+                "response_prompt": "用 就 补全句子。",
+                "sample_answer": "明天我吃了早饭就去图书馆。",
+                "acceptable_answers": [
+                  "明天我吃了早饭就去图书馆。"
+                ],
+                "grading": {
+                  "mode": "semantic"
+                },
+                "grammar_refs": [
+                  "grammar_02_verb_le"
+                ]
+              },
+              {
+                "id": "ex_05_q002",
+                "prompt": "昨天上午我下了课____。",
+                "response_prompt": "用 就 补全句子。",
+                "sample_answer": "昨天上午我下了课就去买飞机票。",
+                "acceptable_answers": [
+                  "昨天上午我下了课就去买飞机票。"
+                ],
+                "grading": {
+                  "mode": "semantic"
+                },
+                "grammar_refs": [
+                  "grammar_02_verb_le"
+                ]
+              },
+              {
+                "id": "ex_05_q003",
+                "prompt": "上午我觉得有点儿发烧，下了课____。",
+                "response_prompt": "用 就 补全句子。",
+                "sample_answer": "上午我觉得有点儿发烧，下了课就去医院。",
+                "acceptable_answers": [
+                  "上午我觉得有点儿发烧，下了课就去医院。"
+                ],
+                "grading": {
+                  "mode": "semantic"
+                },
+                "grammar_refs": [
+                  "grammar_02_verb_le"
+                ]
+              },
+              {
+                "id": "ex_05_q004",
+                "prompt": "我去银行换了钱____。",
+                "response_prompt": "用 就 补全句子。",
+                "sample_answer": "我去银行换了钱就去买书。",
+                "acceptable_answers": [
+                  "我去银行换了钱就去买书。"
+                ],
+                "grading": {
+                  "mode": "semantic"
+                },
+                "grammar_refs": [
+                  "grammar_02_verb_le"
+                ]
+              },
+              {
+                "id": "ex_05_q005",
+                "prompt": "我们看了电影____。",
+                "response_prompt": "用 就 补全句子。",
+                "sample_answer": "我们看了电影就回宿舍。",
+                "acceptable_answers": [
+                  "我们看了电影就回宿舍。"
+                ],
+                "grading": {
+                  "mode": "semantic"
+                },
+                "grammar_refs": [
+                  "grammar_02_verb_le"
+                ]
+              },
+              {
+                "id": "ex_05_q006",
+                "prompt": "她吃了药____。",
+                "response_prompt": "用 就 补全句子。",
+                "sample_answer": "她吃了药就休息了。",
+                "acceptable_answers": [
+                  "她吃了药就休息了。"
+                ],
+                "grading": {
+                  "mode": "semantic"
+                },
+                "grammar_refs": [
+                  "grammar_02_verb_le"
+                ]
+              }
+            ],
+            "answer_key": [
+              {
+                "question_id": "ex_05_q001",
+                "sample_answer": "明天我吃了早饭就去图书馆。",
                 "check_needed": true
               },
               {
-                "id": "a79733e1-ef69-41fd-ac55-9bb8b3bd4d2c",
-                "prompt": "昨天上午我下了课________。",
-                "answer": "",
-                "answer_verified": false,
+                "question_id": "ex_05_q002",
+                "sample_answer": "昨天上午我下了课就去买飞机票。",
                 "check_needed": true
               },
               {
-                "id": "ec5f1e84-0693-46b3-b735-8005e47f103e",
-                "prompt": "上午我觉得有点儿发烧，下了课________。",
-                "answer": "",
-                "answer_verified": false,
+                "question_id": "ex_05_q003",
+                "sample_answer": "上午我觉得有点儿发烧，下了课就去医院。",
                 "check_needed": true
               },
               {
-                "id": "dc7f5f06-95a1-4158-98d8-b293729d6a13",
-                "prompt": "我去银行换了钱________。",
-                "answer": "",
-                "answer_verified": false,
+                "question_id": "ex_05_q004",
+                "sample_answer": "我去银行换了钱就去买书。",
                 "check_needed": true
               },
               {
-                "id": "55e24ac4-bbd1-40f9-9dee-e97b3f2e10f7",
-                "prompt": "我们看了电影________。",
-                "answer": "",
-                "answer_verified": false,
+                "question_id": "ex_05_q005",
+                "sample_answer": "我们看了电影就回宿舍。",
                 "check_needed": true
               },
               {
-                "id": "f7c603b4-c112-4d9c-ab37-b945d471ccee",
-                "prompt": "她吃了药________。",
-                "answer": "",
-                "answer_verified": false,
+                "question_id": "ex_05_q006",
+                "sample_answer": "她吃了药就休息了。",
                 "check_needed": true
               }
             ],
-            "rendering": {
-              "renderer": "exercise.complete_sentence.v2",
-              "input_mode": "free_text"
-            }
+            "check_needed": true
           },
           {
-            "id": "60ec1197-2967-408c-a1f3-3c2112f8305a",
+            "id": "ex_06_complete_dialogues",
             "type": "complete_dialogue",
-            "variant": "complete_dialogue",
+            "variant": "open_sample_answers",
             "order": 6,
-            "title": "六、完成会话",
+            "title": "完成会话",
             "title_vi": "Hoàn thành hội thoại",
             "instruction": {
-              "zh": "",
-              "vi": "Hoàn thành các hội thoại."
+              "zh": "完成会话。",
+              "vi": "Hoàn thành hội thoại."
             },
-            "source_origin": "textbook",
-            "check_needed": false,
+            "difficulty": "normal",
+            "skill_focus": [
+              "dialogue",
+              "speaking"
+            ],
+            "grammar_refs": [
+              "grammar_02_verb_le"
+            ],
+            "vocab_refs": [],
             "dialogues": [
               {
-                "id": "81fd4867-c855-4acb-9ca9-efeaa5656dcf",
+                "id": "ex_06_dialogue_001",
                 "lines": [
-                  "A：昨天晚上你做什么了？",
-                  "B：____________________________。",
-                  "A：你给妈妈打电话了吗？",
-                  "B：____________________________。"
+                  {
+                    "speaker": "A",
+                    "text": "昨天晚上你做什么了？"
+                  },
+                  {
+                    "speaker": "B",
+                    "text": "____",
+                    "blank_id": "b1"
+                  },
+                  {
+                    "speaker": "A",
+                    "text": "你给妈妈打电话了吗？"
+                  },
+                  {
+                    "speaker": "B",
+                    "text": "____",
+                    "blank_id": "b2"
+                  }
                 ],
-                "answer": "",
-                "answer_verified": false,
-                "check_needed": true
+                "sample_answers": [
+                  {
+                    "blank_id": "b1",
+                    "answer": "我看电影了。"
+                  },
+                  {
+                    "blank_id": "b2",
+                    "answer": "打了。"
+                  }
+                ],
+                "grading": {
+                  "mode": "semantic"
+                }
               },
               {
-                "id": "90d4d05a-ff20-442d-bdad-1bbbcb3d70d9",
+                "id": "ex_06_dialogue_002",
                 "lines": [
-                  "A：你去超市了没有？",
-                  "B：____________________________。",
-                  "A：买水果了吗？",
-                  "B：____________________________。",
-                  "A：买了多少？",
-                  "B：____________________________。"
+                  {
+                    "speaker": "A",
+                    "text": "你去超市了没有？"
+                  },
+                  {
+                    "speaker": "B",
+                    "text": "____",
+                    "blank_id": "b1"
+                  },
+                  {
+                    "speaker": "A",
+                    "text": "买什么了？"
+                  },
+                  {
+                    "speaker": "B",
+                    "text": "____",
+                    "blank_id": "b2"
+                  }
                 ],
-                "answer": "",
-                "answer_verified": false,
-                "check_needed": true
+                "sample_answers": [
+                  {
+                    "blank_id": "b1",
+                    "answer": "去了。"
+                  },
+                  {
+                    "blank_id": "b2",
+                    "answer": "我买了一些水果。"
+                  }
+                ],
+                "grading": {
+                  "mode": "semantic"
+                }
               },
               {
-                "id": "ea829e56-dd20-474c-ad76-06a2425ae2f9",
+                "id": "ex_06_dialogue_003",
                 "lines": [
-                  "A：这本书你学了没有？",
-                  "B：____________________________。",
-                  "A：学了几课了？",
-                  "B：____________________________。"
+                  {
+                    "speaker": "A",
+                    "text": "这本书你学了没有？"
+                  },
+                  {
+                    "speaker": "B",
+                    "text": "____",
+                    "blank_id": "b1"
+                  },
+                  {
+                    "speaker": "A",
+                    "text": "学了几课了？"
+                  },
+                  {
+                    "speaker": "B",
+                    "text": "____",
+                    "blank_id": "b2"
+                  }
                 ],
-                "answer": "",
-                "answer_verified": false,
-                "check_needed": true
+                "sample_answers": [
+                  {
+                    "blank_id": "b1",
+                    "answer": "学了。"
+                  },
+                  {
+                    "blank_id": "b2",
+                    "answer": "学了两课了。"
+                  }
+                ],
+                "grading": {
+                  "mode": "semantic"
+                }
               },
               {
-                "id": "41416d1e-d6cc-4260-9762-94d0da24ab87",
+                "id": "ex_06_dialogue_004",
                 "lines": [
-                  "A：____________________________？",
-                  "B：我买药了。",
-                  "A：____________________________？",
-                  "B：我买了一瓶。"
+                  {
+                    "speaker": "A",
+                    "text": "____",
+                    "blank_id": "b1"
+                  },
+                  {
+                    "speaker": "B",
+                    "text": "我买药了。"
+                  },
+                  {
+                    "speaker": "A",
+                    "text": "买了什么药？"
+                  },
+                  {
+                    "speaker": "B",
+                    "text": "买了感冒药。"
+                  }
                 ],
-                "answer": "",
-                "answer_verified": false,
-                "check_needed": true
+                "sample_answers": [
+                  {
+                    "blank_id": "b1",
+                    "answer": "你做什么了？"
+                  }
+                ],
+                "grading": {
+                  "mode": "semantic"
+                }
               },
               {
-                "id": "5fd442f0-f19b-4d2e-a64b-e8a9ab6526d5",
+                "id": "ex_06_dialogue_005",
                 "lines": [
-                  "A：____________________________？",
-                  "B：我去看电影了。",
-                  "A：____________________________？",
-                  "B：我看了一个中国电影。"
+                  {
+                    "speaker": "A",
+                    "text": "____",
+                    "blank_id": "b1"
+                  },
+                  {
+                    "speaker": "B",
+                    "text": "我去看电影了。"
+                  },
+                  {
+                    "speaker": "A",
+                    "text": "____",
+                    "blank_id": "b2"
+                  }
                 ],
-                "answer": "",
-                "answer_verified": false,
-                "check_needed": true
+                "sample_answers": [
+                  {
+                    "blank_id": "b1",
+                    "answer": "你昨天晚上做什么了？"
+                  },
+                  {
+                    "blank_id": "b2",
+                    "answer": "看了什么电影？"
+                  }
+                ],
+                "grading": {
+                  "mode": "semantic"
+                }
               }
             ],
-            "rendering": {
-              "renderer": "exercise.complete_dialogue.v2",
-              "input_mode": "free_text"
-            }
+            "check_needed": true
           },
           {
-            "id": "1fd4313d-93f3-4cbe-9dd4-2ba0d5bac415",
+            "id": "ex_07_correct_sentences",
             "type": "correct_sentence",
-            "variant": "error_correction",
+            "variant": "textbook",
             "order": 7,
-            "title": "七、改错句",
+            "title": "改错句",
             "title_vi": "Sửa câu sai",
             "instruction": {
-              "zh": "",
+              "zh": "改错句。",
               "vi": "Sửa các câu sai."
             },
-            "source_origin": "textbook",
-            "check_needed": false,
+            "difficulty": "normal",
+            "skill_focus": [
+              "error_correction"
+            ],
+            "grammar_refs": [
+              "grammar_02_verb_le"
+            ],
+            "vocab_refs": [],
             "questions": [
               {
-                "id": "f8e911bf-9cbb-4dad-91ed-87032d2d95f2",
-                "prompt": "她感冒了，昨天我去了看她。",
-                "answer": "她感冒了，昨天我去看她了。",
-                "answer_verified": false,
-                "check_needed": true
+                "id": "ex_07_q001",
+                "wrong_sentence": "她感冒了，昨天我去了看她。",
+                "correct_sentence": "她感冒了，昨天我去看她了。",
+                "acceptable_answers": [
+                  "她感冒了，昨天我去看她了。"
+                ],
+                "explanation_vi": "连动句中第一个动词 去 后不加 了; 了 放在句末更自然。",
+                "grammar_refs": [
+                  "grammar_02_verb_le"
+                ],
+                "check_needed": false
               },
               {
-                "id": "3fd78baa-272c-4e07-8ee2-5399c9977a99",
-                "prompt": "昨天的作业我还没有做了。",
-                "answer": "昨天的作业我还没有做。",
-                "answer_verified": false,
-                "check_needed": true
+                "id": "ex_07_q002",
+                "wrong_sentence": "昨天的作业我还没有做了。",
+                "correct_sentence": "昨天的作业我还没有做。",
+                "acceptable_answers": [
+                  "昨天的作业我还没有做。"
+                ],
+                "explanation_vi": "没(有) 否定完成，动词后不再用 了。",
+                "grammar_refs": [
+                  "grammar_02_verb_le"
+                ],
+                "check_needed": false
               },
               {
-                "id": "69f5ddfa-be8d-4292-b18f-6136daaa613f",
-                "prompt": "玛丽常常去了操场锻炼身体。",
-                "answer": "玛丽常常去操场锻炼身体。",
-                "answer_verified": false,
-                "check_needed": true
+                "id": "ex_07_q003",
+                "wrong_sentence": "玛丽常常去了操场锻炼身体。",
+                "correct_sentence": "玛丽常常去操场锻炼身体。",
+                "acceptable_answers": [
+                  "玛丽常常去操场锻炼身体。"
+                ],
+                "explanation_vi": "常常 表示习惯性动作，不用 了。",
+                "grammar_refs": [
+                  "grammar_02_verb_le"
+                ],
+                "check_needed": false
               },
               {
-                "id": "9c211f34-08a0-4478-b188-fe6a0e98ea41",
-                "prompt": "昨天晚上我没做了作业就睡觉了。",
-                "answer": "昨天晚上我没做作业就睡觉了。",
-                "answer_verified": false,
-                "check_needed": true
+                "id": "ex_07_q004",
+                "wrong_sentence": "昨天晚上我没做了作业就睡觉了。",
+                "correct_sentence": "昨天晚上我没做作业就睡觉了。",
+                "acceptable_answers": [
+                  "昨天晚上我没做作业就睡觉了。"
+                ],
+                "explanation_vi": "没 + V 后不加 了。",
+                "grammar_refs": [
+                  "grammar_02_verb_le"
+                ],
+                "check_needed": false
               },
               {
-                "id": "c8ec5644-8adf-46de-b2ff-34b3088ba324",
-                "prompt": "昨天我吃了早饭就去教室。",
-                "answer": "昨天我吃了早饭就去教室了。",
-                "answer_verified": false,
-                "check_needed": true
+                "id": "ex_07_q005",
+                "wrong_sentence": "昨天我吃了早饭就去教室。",
+                "correct_sentence": "昨天我吃了早饭就去教室了。",
+                "acceptable_answers": [
+                  "昨天我吃了早饭就去教室了。"
+                ],
+                "explanation_vi": "第二个动作是已发生的结果，句末加 了 使句子完整自然。",
+                "grammar_refs": [
+                  "grammar_02_verb_le"
+                ],
+                "check_needed": false
               },
               {
-                "id": "6db3da52-2247-4991-a1d3-225528d56fff",
-                "prompt": "那天他下了课就来我这儿。",
-                "answer": "那天他下了课就来我这儿了。",
-                "answer_verified": false,
-                "check_needed": true
+                "id": "ex_07_q006",
+                "wrong_sentence": "那天他下了课就来我这儿，。",
+                "correct_sentence": "那天他下了课就来我这儿了。",
+                "acceptable_answers": [
+                  "那天他下了课就来我这儿了。"
+                ],
+                "explanation_vi": "句末标点错误，并补 了 表示动作已发生。",
+                "grammar_refs": [
+                  "grammar_02_verb_le"
+                ],
+                "check_needed": false
               }
             ],
-            "rendering": {
-              "renderer": "exercise.error_correction.v2",
-              "show_answer_after_submit": true
-            }
+            "answer_key": [
+              {
+                "question_id": "ex_07_q001",
+                "answer": "她感冒了，昨天我去看她了。",
+                "check_needed": false
+              },
+              {
+                "question_id": "ex_07_q002",
+                "answer": "昨天的作业我还没有做。",
+                "check_needed": false
+              },
+              {
+                "question_id": "ex_07_q003",
+                "answer": "玛丽常常去操场锻炼身体。",
+                "check_needed": false
+              },
+              {
+                "question_id": "ex_07_q004",
+                "answer": "昨天晚上我没做作业就睡觉了。",
+                "check_needed": false
+              },
+              {
+                "question_id": "ex_07_q005",
+                "answer": "昨天我吃了早饭就去教室了。",
+                "check_needed": false
+              },
+              {
+                "question_id": "ex_07_q006",
+                "answer": "那天他下了课就来我这儿了。",
+                "check_needed": false
+              }
+            ],
+            "check_needed": false
           },
           {
-            "id": "b9e46637-94ca-4fea-90cf-29155c015046",
-            "type": "answer_questions",
-            "variant": "text_comprehension_questions",
+            "id": "ex_08_actual_situation",
+            "type": "answer_with_pattern",
+            "variant": "actual_situation_sample",
             "order": 8,
-            "title": "八、根据实际情况回答问题",
+            "title": "根据实际情况回答问题",
             "title_vi": "Trả lời theo tình huống thực tế",
             "instruction": {
-              "zh": "",
-              "vi": "Trả lời câu hỏi theo tình hình thực tế."
+              "zh": "根据实际情况回答问题。",
+              "vi": "Trả lời theo tình huống thực tế. Đáp án trong file là đáp án mẫu."
             },
-            "source_origin": "textbook",
-            "check_needed": false,
+            "difficulty": "normal",
+            "skill_focus": [
+              "speaking",
+              "personalized_answer"
+            ],
+            "grammar_refs": [
+              "grammar_02_verb_le"
+            ],
+            "vocab_refs": [],
+            "pattern": "自由回答，注意 V + 了 / 没 + V",
+            "model": {
+              "prompt": "今天早上你起床后做什么了？",
+              "answer": "今天早上我起床后刷牙、洗脸，然后吃早饭了。"
+            },
             "questions": [
               {
-                "id": "51d25007-39bc-4798-8fb4-fd9aaf8168f5",
-                "question": "今天早上你起床后做什么了？",
-                "answer": "",
-                "answer_verified": false,
-                "check_needed": false
+                "id": "ex_08_q001",
+                "prompt": "今天早上你起床后做什么了？",
+                "response_prompt": "按实际情况回答。",
+                "sample_answer": "今天早上我起床后刷牙、洗脸，然后吃早饭了。",
+                "acceptable_answers": [
+                  "今天早上我起床后刷牙、洗脸，然后吃早饭了。"
+                ],
+                "grading": {
+                  "mode": "semantic"
+                },
+                "grammar_refs": [
+                  "grammar_02_verb_le"
+                ]
               },
               {
-                "id": "e65bddbb-aff2-43d6-86ee-fb07381ebe3e",
-                "question": "你吃了早饭去哪儿了？",
-                "answer": "",
-                "answer_verified": false,
-                "check_needed": false
+                "id": "ex_08_q002",
+                "prompt": "你吃了早饭去哪儿了？",
+                "response_prompt": "按实际情况回答。",
+                "sample_answer": "我吃了早饭就去上课了。",
+                "acceptable_answers": [
+                  "我吃了早饭就去上课了。"
+                ],
+                "grading": {
+                  "mode": "semantic"
+                },
+                "grammar_refs": [
+                  "grammar_02_verb_le"
+                ]
               },
               {
-                "id": "2ac934ff-71d7-4d4a-b040-149ec5a5750e",
-                "question": "中午下了课你去哪儿吃饭？",
-                "answer": "",
-                "answer_verified": false,
-                "check_needed": false
+                "id": "ex_08_q003",
+                "prompt": "中午下了课你去哪儿吃饭？",
+                "response_prompt": "按实际情况回答。",
+                "sample_answer": "中午下了课我去食堂吃饭。",
+                "acceptable_answers": [
+                  "中午下了课我去食堂吃饭。"
+                ],
+                "grading": {
+                  "mode": "semantic"
+                },
+                "grammar_refs": [
+                  "grammar_02_verb_le"
+                ]
               },
               {
-                "id": "c5d39e80-de1f-4a3c-9b5f-9193a14a8a33",
-                "question": "中午你吃了饭做什么了？",
-                "answer": "",
-                "answer_verified": false,
-                "check_needed": false
+                "id": "ex_08_q004",
+                "prompt": "中午你吃了饭做什么了？",
+                "response_prompt": "按实际情况回答。",
+                "sample_answer": "中午我吃了饭就回宿舍休息了。",
+                "acceptable_answers": [
+                  "中午我吃了饭就回宿舍休息了。"
+                ],
+                "grading": {
+                  "mode": "semantic"
+                },
+                "grammar_refs": [
+                  "grammar_02_verb_le"
+                ]
               },
               {
-                "id": "758a96f8-d8f5-4075-aafa-95e515a48195",
-                "question": "你什么时候做练习？",
-                "answer": "",
-                "answer_verified": false,
-                "check_needed": false
+                "id": "ex_08_q005",
+                "prompt": "你什么时候做练习？",
+                "response_prompt": "按实际情况回答。",
+                "sample_answer": "我下了课就做练习。",
+                "acceptable_answers": [
+                  "我下了课就做练习。"
+                ],
+                "grading": {
+                  "mode": "semantic"
+                },
+                "grammar_refs": [
+                  "grammar_02_verb_le"
+                ]
               },
               {
-                "id": "7969b51e-cfc5-4e03-97be-0b29b48a7fdc",
-                "question": "今天晚上你看电影吗？",
-                "answer": "",
-                "answer_verified": false,
-                "check_needed": false
+                "id": "ex_08_q006",
+                "prompt": "今天晚上你看电影吗？",
+                "response_prompt": "按实际情况回答。",
+                "sample_answer": "今天晚上我不看电影，我要复习。",
+                "acceptable_answers": [
+                  "今天晚上我不看电影，我要复习。"
+                ],
+                "grading": {
+                  "mode": "semantic"
+                },
+                "grammar_refs": [
+                  "grammar_02_verb_le"
+                ]
               },
               {
-                "id": "a38bba23-f596-4371-82c0-14a75cbc3dee",
-                "question": "昨天晚上你看电影了没有？",
-                "answer": "",
-                "answer_verified": false,
-                "check_needed": false
+                "id": "ex_08_q007",
+                "prompt": "昨天晚上你看电影了没有？",
+                "response_prompt": "按实际情况回答。",
+                "sample_answer": "昨天晚上我没看电影。",
+                "acceptable_answers": [
+                  "昨天晚上我没看电影。"
+                ],
+                "grading": {
+                  "mode": "semantic"
+                },
+                "grammar_refs": [
+                  "grammar_02_verb_le"
+                ]
               },
               {
-                "id": "97b922c5-eca7-4c57-817f-978352efaddc",
-                "question": "昨天晚上你做练习了没有？",
-                "answer": "",
-                "answer_verified": false,
-                "check_needed": false
+                "id": "ex_08_q008",
+                "prompt": "昨天晚上你做练习了没有？",
+                "response_prompt": "按实际情况回答。",
+                "sample_answer": "昨天晚上我做练习了。",
+                "acceptable_answers": [
+                  "昨天晚上我做练习了。"
+                ],
+                "grading": {
+                  "mode": "semantic"
+                },
+                "grammar_refs": [
+                  "grammar_02_verb_le"
+                ]
               }
             ],
-            "rendering": {
-              "renderer": "exercise.answer_questions.v2",
-              "input_mode": "free_text"
-            }
+            "answer_key": [
+              {
+                "question_id": "ex_08_q001",
+                "sample_answer": "今天早上我起床后刷牙、洗脸，然后吃早饭了。",
+                "check_needed": true
+              },
+              {
+                "question_id": "ex_08_q002",
+                "sample_answer": "我吃了早饭就去上课了。",
+                "check_needed": true
+              },
+              {
+                "question_id": "ex_08_q003",
+                "sample_answer": "中午下了课我去食堂吃饭。",
+                "check_needed": true
+              },
+              {
+                "question_id": "ex_08_q004",
+                "sample_answer": "中午我吃了饭就回宿舍休息了。",
+                "check_needed": true
+              },
+              {
+                "question_id": "ex_08_q005",
+                "sample_answer": "我下了课就做练习。",
+                "check_needed": true
+              },
+              {
+                "question_id": "ex_08_q006",
+                "sample_answer": "今天晚上我不看电影，我要复习。",
+                "check_needed": true
+              },
+              {
+                "question_id": "ex_08_q007",
+                "sample_answer": "昨天晚上我没看电影。",
+                "check_needed": true
+              },
+              {
+                "question_id": "ex_08_q008",
+                "sample_answer": "昨天晚上我做练习了。",
+                "check_needed": true
+              }
+            ],
+            "check_needed": true
           },
           {
-            "id": "849f6690-a8ea-4b6f-937d-429f236714ad",
+            "id": "ex_09_communication",
             "type": "communication_dialogue",
-            "variant": "role_play",
+            "variant": "textbook",
             "order": 9,
-            "title": "九、交际会话",
+            "title": "交际会话",
             "title_vi": "Hội thoại giao tiếp",
             "instruction": {
-              "zh": "",
-              "vi": "Luyện giao tiếp."
+              "zh": "交际会话。",
+              "vi": "Luyện hội thoại giao tiếp."
             },
-            "source_origin": "textbook",
-            "check_needed": false,
-            "situations": [
+            "difficulty": "normal",
+            "skill_focus": [
+              "communication",
+              "speaking"
+            ],
+            "grammar_refs": [],
+            "vocab_refs": [],
+            "function": "看病挂号；劝慰",
+            "function_vi": "Đăng ký khám bệnh; an ủi và khuyên ngăn",
+            "dialogue": [
               {
-                "id": "1c078a3c-7e79-49b6-adb0-1f5e7de4a280",
-                "title": "看病挂号",
-                "title_vi": "Đăng ký khám bệnh",
-                "lines": [
+                "speaker": "病人",
+                "text": "请给我挂个号。"
+              },
+              {
+                "speaker": "护士",
+                "text": "挂什么科？"
+              },
+              {
+                "speaker": "A",
+                "text": "你怎么哭了？"
+              },
+              {
+                "speaker": "B",
+                "text": "我想家了。"
+              },
+              {
+                "speaker": "A",
+                "text": "别难过了。我们去看电影吧。"
+              },
+              {
+                "speaker": "A",
+                "text": "你喝得不少了，别喝了。"
+              },
+              {
+                "speaker": "B",
+                "text": "我只喝了一瓶。"
+              }
+            ],
+            "practice_tasks": [
+              {
+                "id": "ex_09_task_001",
+                "type": "roleplay",
+                "instruction_vi": "Đóng vai bệnh nhân và y tá để luyện đăng ký khám bệnh.",
+                "sample_answer": [
                   "病人：请给我挂个号。",
                   "护士：挂什么科？",
                   "病人：内科。"
                 ]
               },
               {
-                "id": "3436bbad-84b4-4084-b853-b0ad41065a9f",
-                "title": "劝慰",
-                "title_vi": "An ủi / khuyên nhủ",
-                "lines": [
-                  "A：你怎么哭了？",
-                  "B：心情不太好。",
-                  "A：别难过了。我们去看电影吧。"
-                ]
-              },
-              {
-                "id": "fe477f44-fd91-46ba-b6c9-2ed8d5c3da5c",
-                "title": "劝慰",
-                "title_vi": "Khuyên ngừng uống",
-                "lines": [
-                  "A：你喝得不少了，别喝了。",
-                  "B：我只喝了一瓶。"
+                "id": "ex_09_task_002",
+                "type": "roleplay",
+                "instruction_vi": "Dùng 别……了 để an ủi hoặc khuyên bạn.",
+                "sample_answer": [
+                  "A：别难过了，我们一起去散散步吧。",
+                  "B：好吧。"
                 ]
               }
             ],
-            "rendering": {
-              "renderer": "exercise.role_play.v2"
-            }
+            "check_needed": false
           }
         ]
       },
       {
-        "id": "886f621e-85ce-4e1a-91df-d8d257596034",
+        "id": "section_06_reading",
         "type": "reading",
-        "order": 7,
-        "title": "阅读理解 / 综合填空",
-        "title_vi": "Đọc hiểu / điền khuyết tổng hợp",
-        "source_origin": "textbook/generated_mixed",
+        "order": 6,
+        "title": "阅读理解",
+        "title_vi": "Đọc hiểu",
+        "source_origin": "textbook",
         "check_needed": false,
         "items": [
           {
-            "id": "9bd9a79e-3279-468d-9f4b-ecd1f7365e19",
-            "type": "reading_comprehension",
-            "order": 10,
-            "title": "十、阅读理解",
-            "title_vi": "Đọc hiểu",
-            "source_origin": "textbook",
-            "check_needed": false,
-            "supplementary_vocabulary": [
+            "id": "reading_01_text",
+            "type": "reading_text",
+            "order": 1,
+            "title": "我病了",
+            "title_vi": "Tôi bị bệnh rồi",
+            "supplementary_words": [
               {
-                "id": "44d7974e-3a5b-45c0-a0e2-9b883d814cc6",
+                "id": "supp_word_001",
                 "hanzi": "嗓子",
                 "pinyin": "sǎngzi",
-                "meaning_vi": "cổ họng; giọng"
+                "meaning_vi": "cổ họng; giọng",
+                "vocab_ref": "vocab_032",
+                "pos": "Danh từ",
+                "pos_detail": {
+                  "vi": "Danh từ",
+                  "cn": "名词",
+                  "normalized": "noun",
+                  "schema_compatible_pos": "noun",
+                  "is_separable_verb": false,
+                  "separable_type": "",
+                  "structure_vi": "",
+                  "usage_note_vi": "",
+                  "notes": []
+                }
               },
               {
-                "id": "f0d02d73-fc09-4310-a941-3b9d8c50d6a0",
+                "id": "supp_word_002",
                 "hanzi": "出汗",
                 "pinyin": "chū hàn",
-                "meaning_vi": "ra mồ hôi"
+                "meaning_vi": "ra mồ hôi; đổ mồ hôi",
+                "vocab_ref": "vocab_033",
+                "pos": "Động từ li hợp",
+                "pos_detail": {
+                  "vi": "Động từ li hợp",
+                  "cn": "动宾式离合词",
+                  "normalized": "verb_phrase",
+                  "schema_compatible_pos": "verb_phrase",
+                  "is_separable_verb": true,
+                  "separable_type": "động-tân / 离合词",
+                  "structure_vi": "động từ 出 + tân ngữ 汗",
+                  "usage_note_vi": "Có thể tách: 出了很多汗; không nói 出汗了很多.",
+                  "notes": []
+                }
               }
             ],
-            "passages": [
+            "paragraphs": [
               {
-                "id": "d2a4cf8b-55cd-4904-9fed-3141da682b19",
+                "id": "reading_para_001",
                 "order": 1,
-                "zh": "我病了。头疼，发烧，嗓子也疼，不想吃东西，晚上咳嗽得很厉害。上午同学们都去上课了，我一个人在宿舍里，感到很寂寞，很想家。我家里人很多，有哥哥、姐姐，还有一个弟弟。在家的时候，我们常常一起玩儿。现在，我在中国学习汉语，寂寞的时候就常常想他们。",
-                "vi": "Tôi bị bệnh. Đau đầu, sốt, cổ họng cũng đau, không muốn ăn, buổi tối ho rất dữ. Buổi sáng các bạn đều đi học, tôi ở ký túc xá một mình, cảm thấy rất cô đơn, rất nhớ nhà. Nhà tôi có nhiều người, có anh trai, chị gái, còn có một em trai. Khi ở nhà, chúng tôi thường chơi cùng nhau. Bây giờ tôi học tiếng Hán ở Trung Quốc, khi cô đơn thì thường nhớ họ."
+                "zh": "我病了。发烧、头疼，嗓子也疼，不想吃东西，晚上咳嗽得很厉害。上午同学们都去上课了，我一个人在宿舍里，感到很寂寞，很想家。我家里人很多，有哥哥、姐姐，还有一个弟弟。在家的时候，我们常常一起玩儿。现在，我在中国学习汉语，寂寞的时候就常常想他们。",
+                "pinyin": "Wǒ bìng le. Fāshāo, tóu téng, sǎngzi yě téng, bù xiǎng chī dōngxi, wǎnshang késou de hěn lìhai. Shàngwǔ tóngxuémen dōu qù shàngkè le, wǒ yí ge rén zài sùshè lǐ, gǎndào hěn jìmò, hěn xiǎng jiā. Wǒ jiā lǐ rén hěn duō, yǒu gēge, jiějie, hái yǒu yí ge dìdi. Zài jiā de shíhou, wǒmen chángcháng yìqǐ wánr. Xiànzài, wǒ zài Zhōngguó xuéxí Hànyǔ, jìmò de shíhou jiù chángcháng xiǎng tāmen.",
+                "vi": "Tôi bị bệnh rồi. Sốt, đau đầu, cổ họng cũng đau, không muốn ăn, buổi tối ho rất dữ. Buổi sáng các bạn học đều đi học, một mình tôi ở trong ký túc xá, cảm thấy rất cô đơn, rất nhớ nhà. Nhà tôi đông người, có anh trai, chị gái, còn có một em trai. Khi ở nhà, chúng tôi thường chơi cùng nhau. Bây giờ tôi học tiếng Hán ở Trung Quốc, lúc cô đơn thì thường nhớ họ.",
+                "grammar_refs": [
+                  "grammar_02_verb_le",
+                  "grammar_02_yinwei_suoyi"
+                ],
+                "vocab_refs": [
+                  "vocab_001",
+                  "vocab_031",
+                  "vocab_032",
+                  "vocab_004",
+                  "vocab_024",
+                  "vocab_012",
+                  "vocab_021",
+                  "vocab_020",
+                  "vocab_033",
+                  "vocab_025"
+                ]
               },
               {
-                "id": "a6b1119e-769b-4444-9eee-c4a26d7f6af3",
+                "id": "reading_para_002",
                 "order": 2,
                 "zh": "因为不舒服，所以我今天起得很晚。起了床就去医院了。大夫给我检查了一下儿，说我感冒了。给我打了一针，还开了一些药。他说，没关系，吃了药病就好了。",
-                "vi": "Vì không khỏe nên hôm nay tôi dậy rất muộn. Dậy xong thì đi bệnh viện. Bác sĩ kiểm tra cho tôi một chút, nói tôi bị cảm. Bác sĩ tiêm cho tôi một mũi, còn kê một ít thuốc. Ông ấy nói không sao, uống thuốc rồi bệnh sẽ khỏi."
+                "pinyin": "Yīnwèi bù shūfu, suǒyǐ wǒ jīntiān qǐ de hěn wǎn. Qǐ le chuáng jiù qù yīyuàn le. Dàifu gěi wǒ jiǎnchá le yíxiàr, shuō wǒ gǎnmào le. Gěi wǒ dǎ le yì zhēn, hái kāi le yìxiē yào. Tā shuō, méi guānxi, chī le yào bìng jiù hǎo le.",
+                "vi": "Vì không khỏe nên hôm nay tôi dậy rất muộn. Dậy xong liền đi bệnh viện. Bác sĩ kiểm tra cho tôi một chút, nói tôi bị cảm. Bác sĩ tiêm cho tôi một mũi, còn kê một ít thuốc. Ông ấy nói không sao, uống thuốc rồi bệnh sẽ khỏi.",
+                "grammar_refs": [
+                  "grammar_02_verb_le",
+                  "grammar_02_yinwei_suoyi"
+                ],
+                "vocab_refs": [
+                  "vocab_001",
+                  "vocab_031",
+                  "vocab_032",
+                  "vocab_004",
+                  "vocab_024",
+                  "vocab_012",
+                  "vocab_021",
+                  "vocab_020",
+                  "vocab_033",
+                  "vocab_025"
+                ]
               },
               {
-                "id": "ce8bdbc9-b498-418a-ab2c-e16111228a35",
+                "id": "reading_para_003",
                 "order": 3,
                 "zh": "老师和同学们知道我病了，都来看我。林老师听说我不想吃东西，还给我做了一碗面条儿。吃了面条儿，我身上出了很多汗，老师说，出了汗可能就不发烧了。",
-                "vi": "Thầy cô và các bạn biết tôi bị bệnh nên đều đến thăm tôi. Thầy/cô Lâm nghe nói tôi không muốn ăn, còn nấu cho tôi một bát mì. Ăn mì xong, người tôi ra rất nhiều mồ hôi, thầy/cô nói ra mồ hôi rồi có thể sẽ không sốt nữa."
+                "pinyin": "Lǎoshī hé tóngxuémen zhīdào wǒ bìng le, dōu lái kàn wǒ. Lín lǎoshī tīngshuō wǒ bù xiǎng chī dōngxi, hái gěi wǒ zuò le yì wǎn miàntiáor. Chī le miàntiáor, wǒ shēnshang chū le hěn duō hàn, lǎoshī shuō, chū le hàn kěnéng jiù bù fāshāo le.",
+                "vi": "Thầy cô và các bạn biết tôi bị bệnh, đều đến thăm tôi. Cô/thầy Lâm nghe nói tôi không muốn ăn, còn nấu cho tôi một bát mì. Ăn mì xong, trên người tôi ra rất nhiều mồ hôi, thầy/cô nói ra mồ hôi rồi có lẽ sẽ không sốt nữa.",
+                "grammar_refs": [
+                  "grammar_02_verb_le",
+                  "grammar_02_yinwei_suoyi"
+                ],
+                "vocab_refs": [
+                  "vocab_001",
+                  "vocab_031",
+                  "vocab_032",
+                  "vocab_004",
+                  "vocab_024",
+                  "vocab_012",
+                  "vocab_021",
+                  "vocab_020",
+                  "vocab_033",
+                  "vocab_025"
+                ]
               },
               {
-                "id": "b3e5d57c-8b64-4c60-b5f0-3976cd13fef0",
+                "id": "reading_para_004",
                 "order": 4,
-                "zh": "下午，我不发烧了，心情也好了。我给姐姐发了微信。我说，我在这儿生活得很好，我们老师也很好，还有很多好朋友，和他们在一起，我感到很愉快。",
-                "vi": "Buổi chiều, tôi không sốt nữa, tâm trạng cũng tốt hơn. Tôi gửi WeChat cho chị gái. Tôi nói, tôi sống ở đây rất tốt, thầy cô cũng rất tốt, còn có nhiều bạn tốt, ở cùng họ tôi cảm thấy rất vui."
+                "zh": "下午，我不发烧了，心情也好了。我给姐姐发了微信。告诉她，我在这儿生活得很好，我们老师也很好，还有很多好朋友，和他们在一起，我感到很愉快。",
+                "pinyin": "Xiàwǔ, wǒ bù fāshāo le, xīnqíng yě hǎo le. Wǒ gěi jiějie fā le Wēixìn. Gàosu tā, wǒ zài zhèr shēnghuó de hěn hǎo, wǒmen lǎoshī yě hěn hǎo, hái yǒu hěn duō hǎo péngyou, hé tāmen zài yìqǐ, wǒ gǎndào hěn yúkuài.",
+                "vi": "Buổi chiều, tôi không sốt nữa, tâm trạng cũng tốt hơn. Tôi gửi WeChat cho chị gái, nói với chị rằng tôi sống ở đây rất tốt, thầy cô của chúng tôi cũng rất tốt, còn có rất nhiều bạn tốt; ở cùng họ, tôi cảm thấy rất vui vẻ.",
+                "grammar_refs": [
+                  "grammar_02_verb_le",
+                  "grammar_02_yinwei_suoyi"
+                ],
+                "vocab_refs": [
+                  "vocab_001",
+                  "vocab_031",
+                  "vocab_032",
+                  "vocab_004",
+                  "vocab_024",
+                  "vocab_012",
+                  "vocab_021",
+                  "vocab_020",
+                  "vocab_033",
+                  "vocab_025"
+                ]
               }
             ],
+            "check_needed": false
+          },
+          {
+            "id": "reading_02_short_answer",
+            "type": "reading_short_answer",
+            "order": 2,
+            "title": "读后回答问题",
+            "title_vi": "Đọc xong trả lời câu hỏi",
+            "source_text_ref": "reading_01_text",
             "questions": [
               {
-                "id": "9e251021-f762-48f1-9981-bc0e0750dca3",
-                "question": "“我”怎么了？",
-                "answer": "“我”病了，头疼，发烧，嗓子也疼，晚上咳嗽得很厉害。",
-                "answer_verified": false,
-                "check_needed": true,
-                "evidence": [
-                  {
-                    "paragraph_id": "d2a4cf8b-55cd-4904-9fed-3141da682b19",
-                    "quote": "我病了。头疼，发烧，嗓子也疼，不想吃东西，晚上咳嗽得很厉害。"
-                  }
-                ]
+                "id": "reading_q001",
+                "question": {
+                  "zh": "“我”怎么了？",
+                  "vi": "Tôi bị sao?"
+                },
+                "answer": {
+                  "zh": "我病了，感冒了，发烧、头疼、嗓子也疼，晚上咳嗽得很厉害。",
+                  "vi": "Tôi bị bệnh/cảm, sốt, đau đầu, cổ họng cũng đau, buổi tối ho rất dữ."
+                },
+                "acceptable_answers": [
+                  "我病了，感冒了，发烧、头疼、嗓子也疼，晚上咳嗽得很厉害。"
+                ],
+                "evidence": {
+                  "paragraph_id": "reading_para_001",
+                  "quote": ""
+                },
+                "grading": {
+                  "mode": "semantic"
+                }
               },
               {
-                "id": "ac4189db-8a03-4e48-a2b8-e00cd63fd634",
-                "question": "“我”为什么感到很寂寞？",
-                "answer": "因为同学们都去上课了，“我”一个人在宿舍里，而且很想家，所以感到很寂寞。",
-                "answer_verified": false,
-                "check_needed": true,
-                "evidence": [
-                  {
-                    "paragraph_id": "d2a4cf8b-55cd-4904-9fed-3141da682b19",
-                    "quote": "上午同学们都去上课了，我一个人在宿舍里，感到很寂寞，很想家。"
-                  }
-                ]
+                "id": "reading_q002",
+                "question": {
+                  "zh": "“我”为什么感到很寂寞？",
+                  "vi": "Vì sao tôi cảm thấy rất cô đơn?"
+                },
+                "answer": {
+                  "zh": "因为上午同学们都去上课了，“我”一个人在宿舍里，而且很想家。",
+                  "vi": "Vì buổi sáng các bạn đều đi học, tôi ở một mình trong ký túc xá, hơn nữa rất nhớ nhà."
+                },
+                "acceptable_answers": [
+                  "因为上午同学们都去上课了，“我”一个人在宿舍里，而且很想家。"
+                ],
+                "evidence": {
+                  "paragraph_id": "reading_para_001",
+                  "quote": ""
+                },
+                "grading": {
+                  "mode": "semantic"
+                }
               },
               {
-                "id": "20854fcd-8a0d-4fa4-9f31-9500b8e1b3a4",
-                "question": "今天“我”起得早吗？为什么？",
-                "answer": "今天“我”起得不早，起得很晚，因为“我”不舒服。",
-                "answer_verified": false,
-                "check_needed": true,
-                "evidence": [
-                  {
-                    "paragraph_id": "a6b1119e-769b-4444-9eee-c4a26d7f6af3",
-                    "quote": "因为不舒服，所以我今天起得很晚。"
-                  }
-                ]
+                "id": "reading_q003",
+                "question": {
+                  "zh": "今天“我”起得早吗？为什么？",
+                  "vi": "Hôm nay tôi dậy sớm không? Vì sao?"
+                },
+                "answer": {
+                  "zh": "不早，起得很晚。因为“我”不舒服。",
+                  "vi": "Không sớm, dậy rất muộn, vì tôi không khỏe."
+                },
+                "acceptable_answers": [
+                  "不早，起得很晚。因为“我”不舒服。"
+                ],
+                "evidence": {
+                  "paragraph_id": "reading_para_002",
+                  "quote": ""
+                },
+                "grading": {
+                  "mode": "semantic"
+                }
               },
               {
-                "id": "2b8fa222-6f39-4c83-b910-93bae3740dcb",
-                "question": "起床后“我”去哪儿了？",
-                "answer": "起床后“我”去医院了。",
-                "answer_verified": false,
-                "check_needed": true,
-                "evidence": [
-                  {
-                    "paragraph_id": "a6b1119e-769b-4444-9eee-c4a26d7f6af3",
-                    "quote": "起了床就去医院了。"
-                  }
-                ]
+                "id": "reading_q004",
+                "question": {
+                  "zh": "起床后“我”去哪儿了？",
+                  "vi": "Sau khi dậy tôi đi đâu?"
+                },
+                "answer": {
+                  "zh": "起床后“我”去医院了。",
+                  "vi": "Sau khi dậy tôi đi bệnh viện."
+                },
+                "acceptable_answers": [
+                  "起床后“我”去医院了。"
+                ],
+                "evidence": {
+                  "paragraph_id": "reading_para_002",
+                  "quote": ""
+                },
+                "grading": {
+                  "mode": "semantic"
+                }
               },
               {
-                "id": "5e69569d-fb68-4a4b-943a-6680d390f578",
-                "question": "谁来看“我”了？",
-                "answer": "老师和同学们都来看“我”了。",
-                "answer_verified": false,
-                "check_needed": true,
-                "evidence": [
-                  {
-                    "paragraph_id": "ce8bdbc9-b498-418a-ab2c-e16111228a35",
-                    "quote": "老师和同学们知道我病了，都来看我。"
-                  }
-                ]
+                "id": "reading_q005",
+                "question": {
+                  "zh": "谁来看“我”了？",
+                  "vi": "Ai đến thăm tôi?"
+                },
+                "answer": {
+                  "zh": "老师和同学们来看“我”了。",
+                  "vi": "Thầy/cô và các bạn đến thăm tôi."
+                },
+                "acceptable_answers": [
+                  "老师和同学们来看“我”了。"
+                ],
+                "evidence": {
+                  "paragraph_id": "reading_para_003",
+                  "quote": ""
+                },
+                "grading": {
+                  "mode": "semantic"
+                }
               },
               {
-                "id": "4d8667e1-afa3-4893-809b-1dd743530070",
-                "question": "下午“我”做什么了？",
-                "answer": "下午，“我”给姐姐发了微信。",
-                "answer_verified": false,
-                "check_needed": true,
-                "evidence": [
-                  {
-                    "paragraph_id": "b3e5d57c-8b64-4c60-b5f0-3976cd13fef0",
-                    "quote": "下午，我不发烧了，心情也好了。我给姐姐发了微信。"
-                  }
-                ]
+                "id": "reading_q006",
+                "question": {
+                  "zh": "下午“我”做什么了？",
+                  "vi": "Buổi chiều tôi đã làm gì?"
+                },
+                "answer": {
+                  "zh": "下午“我”给姐姐发了微信，告诉她自己在这儿生活得很好。",
+                  "vi": "Buổi chiều tôi gửi WeChat cho chị gái, nói với chị rằng mình sống ở đây rất tốt."
+                },
+                "acceptable_answers": [
+                  "下午“我”给姐姐发了微信，告诉她自己在这儿生活得很好。"
+                ],
+                "evidence": {
+                  "paragraph_id": "reading_para_004",
+                  "quote": ""
+                },
+                "grading": {
+                  "mode": "semantic"
+                }
               }
-            ]
+            ],
+            "answer_key": [
+              {
+                "question_id": "reading_q001",
+                "sample_answer": "我病了，感冒了，发烧、头疼、嗓子也疼，晚上咳嗽得很厉害。",
+                "check_needed": false
+              },
+              {
+                "question_id": "reading_q002",
+                "sample_answer": "因为上午同学们都去上课了，“我”一个人在宿舍里，而且很想家。",
+                "check_needed": false
+              },
+              {
+                "question_id": "reading_q003",
+                "sample_answer": "不早，起得很晚。因为“我”不舒服。",
+                "check_needed": false
+              },
+              {
+                "question_id": "reading_q004",
+                "sample_answer": "起床后“我”去医院了。",
+                "check_needed": false
+              },
+              {
+                "question_id": "reading_q005",
+                "sample_answer": "老师和同学们来看“我”了。",
+                "check_needed": false
+              },
+              {
+                "question_id": "reading_q006",
+                "sample_answer": "下午“我”给姐姐发了微信，告诉她自己在这儿生活得很好。",
+                "check_needed": false
+              }
+            ],
+            "rendering": {
+              "renderer": "short_answer",
+              "show_answer_after_submit": true
+            },
+            "check_needed": false
           }
         ]
       },
       {
-        "id": "2a3cfdb8-618f-43d3-9ad4-160d1dbb366a",
+        "id": "section_07_character_writing",
         "type": "character_writing",
-        "order": 8,
+        "order": 7,
         "title": "写汉字",
         "title_vi": "Viết chữ Hán",
         "source_origin": "textbook",
         "check_needed": false,
         "items": [
           {
-            "id": "33bbf7c1-79c1-48ef-b67f-efb8d186cc5a",
-            "type": "character_copying",
+            "id": "char_write_001",
+            "type": "character_writing_item",
             "order": 1,
             "hanzi": "拉",
             "pinyin": "lā",
-            "meaning_vi": "kéo; trong bài dùng trong 拉肚子: tiêu chảy",
-            "note_vi": "bộ 扌 bên trái, liên quan động tác tay",
-            "source_origin": "textbook",
-            "check_needed": false
+            "vocab_ref": "vocab_008",
+            "stroke_count": null,
+            "radical": "扌",
+            "stroke_order_key": "",
+            "practice": {
+              "grid_type": "田字格",
+              "repeat_count": 6
+            }
           },
           {
-            "id": "e291c92e-298f-49b5-bd05-5de86da3e4fb",
-            "type": "character_copying",
+            "id": "char_write_002",
+            "type": "character_writing_item",
             "order": 2,
             "hanzi": "肚",
             "pinyin": "dù",
-            "meaning_vi": "bụng; trong 肚子",
-            "note_vi": "bộ 月 bên trái, trong chữ chỉ bộ phận cơ thể thường là nhục nguyệt",
-            "source_origin": "textbook",
-            "check_needed": false
+            "vocab_ref": "vocab_003",
+            "stroke_count": null,
+            "radical": "月",
+            "stroke_order_key": "",
+            "practice": {
+              "grid_type": "田字格",
+              "repeat_count": 6
+            }
           },
           {
-            "id": "df10490e-265f-4ba4-a30a-58e79f14c6b2",
-            "type": "character_copying",
+            "id": "char_write_003",
+            "type": "character_writing_item",
             "order": 3,
             "hanzi": "厉",
             "pinyin": "lì",
-            "meaning_vi": "dữ dội; nghiêm trọng; trong 厉害",
-            "note_vi": "chú ý phần 厂 bên ngoài, không viết thành 历",
-            "source_origin": "textbook",
-            "check_needed": false
+            "vocab_ref": "vocab_004",
+            "stroke_count": null,
+            "radical": "厂",
+            "stroke_order_key": "",
+            "practice": {
+              "grid_type": "田字格",
+              "repeat_count": 6
+            }
           },
           {
-            "id": "259742c7-fee4-4a5f-93ef-4f8323c6a728",
-            "type": "character_copying",
+            "id": "char_write_004",
+            "type": "character_writing_item",
             "order": 4,
             "hanzi": "害",
             "pinyin": "hài",
-            "meaning_vi": "hại; trong 厉害 / 害",
-            "note_vi": "phía trên có 宀, dưới là phần 口",
-            "source_origin": "textbook",
-            "check_needed": false
+            "vocab_ref": "vocab_005",
+            "stroke_count": null,
+            "radical": "宀",
+            "stroke_order_key": "",
+            "practice": {
+              "grid_type": "田字格",
+              "repeat_count": 6
+            }
           },
           {
-            "id": "ea8080d5-339c-4116-a6ec-c23d6e9a45a1",
-            "type": "character_copying",
+            "id": "char_write_005",
+            "type": "character_writing_item",
             "order": 5,
             "hanzi": "鱼",
             "pinyin": "yú",
-            "meaning_vi": "cá",
-            "note_vi": "dạng giản thể của 魚, chú ý nét ngang cuối",
-            "source_origin": "textbook",
-            "check_needed": false
+            "vocab_ref": "vocab_009",
+            "stroke_count": null,
+            "radical": "鱼",
+            "stroke_order_key": "",
+            "practice": {
+              "grid_type": "田字格",
+              "repeat_count": 6
+            }
           },
           {
-            "id": "f6fff594-0a78-4b14-b5bd-e7f236cab9d7",
-            "type": "character_copying",
+            "id": "char_write_006",
+            "type": "character_writing_item",
             "order": 6,
             "hanzi": "肉",
             "pinyin": "ròu",
-            "meaning_vi": "thịt; trong 牛肉",
-            "note_vi": "chữ độc lập, không nhầm với 月 khi làm bộ",
-            "source_origin": "textbook",
-            "check_needed": false
+            "vocab_ref": "vocab_010",
+            "stroke_count": null,
+            "radical": "肉",
+            "stroke_order_key": "",
+            "practice": {
+              "grid_type": "田字格",
+              "repeat_count": 6
+            }
           },
           {
-            "id": "8f711ecc-e82a-40ee-8e42-409a742ccf2f",
-            "type": "character_copying",
+            "id": "char_write_007",
+            "type": "character_writing_item",
             "order": 7,
             "hanzi": "检",
             "pinyin": "jiǎn",
-            "meaning_vi": "kiểm; trong 检查",
-            "note_vi": "bộ 木 bên trái",
-            "source_origin": "textbook",
-            "check_needed": false
+            "vocab_ref": "vocab_012",
+            "stroke_count": null,
+            "radical": "木",
+            "stroke_order_key": "",
+            "practice": {
+              "grid_type": "田字格",
+              "repeat_count": 6
+            }
           },
           {
-            "id": "a45cff42-2888-4327-885f-db58f61ba547",
-            "type": "character_copying",
+            "id": "char_write_008",
+            "type": "character_writing_item",
             "order": 8,
             "hanzi": "消",
             "pinyin": "xiāo",
-            "meaning_vi": "tiêu; trong 消化",
-            "note_vi": "bộ 氵 bên trái",
-            "source_origin": "textbook",
-            "check_needed": false
+            "vocab_ref": "vocab_019",
+            "stroke_count": null,
+            "radical": "氵",
+            "stroke_order_key": "",
+            "practice": {
+              "grid_type": "田字格",
+              "repeat_count": 6
+            }
           }
         ]
-      },
-      {
-        "id": "944b8c3a-d3d4-4265-a907-10cef8340ac2",
-        "type": "summary",
-        "order": 9,
-        "title": "总结",
-        "title_vi": "Tổng kết bài",
-        "source_origin": "generated",
-        "check_needed": false,
-        "summary": {
-          "lesson_parts": [
-            "课文",
-            "生词",
-            "专名",
-            "注释",
-            "语法 / 词语用法",
-            "练习",
-            "阅读理解 / 综合填空",
-            "写汉字"
-          ],
-          "grammar_points": [
-            {
-              "id": "f8ec59f3-898a-47b2-b536-44dfd8183393",
-              "title": "动作的完成：动词 + 了"
-            },
-            {
-              "id": "57b14753-688a-41b6-9e0d-b61dbbf574d7",
-              "title": "因为……所以……"
-            },
-            {
-              "id": "fa804fff-372b-4874-8571-f54e613d7e07",
-              "title": "Mẫu phụ trợ: 先……然后……再…… / V + 一下儿 / V+V / 别...了"
-            }
-          ],
-          "key_patterns": [
-            "你怎么了？",
-            "肚子疼得厉害。",
-            "昨天吃什么了？",
-            "就吃了一些鱼和牛肉。",
-            "化验结果出来了吗？",
-            "我是不是得了肠炎？",
-            "不是肠炎，只是消化不好。",
-            "一天三次，一次两片，饭后吃。",
-            "因为感到寂寞，所以心情不好，很难过。",
-            "别难过了。",
-            "我们一起去跳跳舞吧。",
-            "吃了晚饭就去吧。"
-          ],
-          "coverage": {
-            "text_covered": true,
-            "vocabulary_covered": true,
-            "proper_nouns_covered": true,
-            "notes_covered": true,
-            "grammar_covered": true,
-            "exercises_covered": true,
-            "reading_covered": true,
-            "character_writing_covered": true,
-            "remaining_check_needed": "Đáp án một số bài tập dạng mở/điền vị trí là gợi ý suy ra, cần giáo viên hoặc answer key xác nhận nếu muốn set final_verified."
-          }
-        }
       }
     ],
     "metadata": {
@@ -2714,6 +4126,12 @@
           "page_end": 50
         },
         {
+          "name": "Văn bản đã dán (1).txt",
+          "type": "uploaded_lesson_json",
+          "source_origin": "user_upload",
+          "check_needed": false
+        },
+        {
           "name": "Tong_hop_tu_vung_Han_ngu_quyen_2_Bai_1-25.docx",
           "type": "uploaded_crosscheck",
           "source_origin": "uploaded_crosscheck",
@@ -2724,89 +4142,114 @@
           "type": "uploaded_crosscheck",
           "source_origin": "uploaded_crosscheck",
           "check_needed": false
-        },
-        {
-          "name": "hanyu_lesson_full_coverage_sample_v2_3_0.json",
-          "type": "structure_sample",
-          "source_origin": "uploaded_crosscheck",
-          "check_needed": false
         }
-      ]
+      ],
+      "update_report": {
+        "added_items": [
+          "哭"
+        ],
+        "supplementary_vocab_checked": [
+          "嗓子",
+          "出汗"
+        ],
+        "pinyin_filled_for_text": true,
+        "exercise_answers_checked": true,
+        "pos_translated_to_vietnamese": true,
+        "pos_detail_added": true,
+        "separable_verbs": [
+          "拉肚子",
+          "开（药）",
+          "打针",
+          "跳舞",
+          "发烧",
+          "出汗"
+        ],
+        "notes": [
+          "哭 xuất hiện ở bảng 生词 của PDF bài 2 nên được bổ sung vào vocabulary section.",
+          "嗓子 và 出汗 nằm trong 补充生词 của phần 阅读理解 nên giữ tag supplementary_vocab.",
+          "Các câu hỏi dạng 根据实际情况回答问题 và 完成会话 có đáp án mẫu, không phải đáp án duy nhất."
+        ]
+      }
     },
     "summary": {
       "lesson_parts": [
         "课文",
         "生词",
-        "专名",
+        "补充生词",
         "注释",
-        "语法 / 词语用法",
+        "语法",
         "练习",
-        "阅读理解 / 综合填空",
+        "阅读理解",
         "写汉字"
       ],
       "grammar_points": [
         {
-          "id": "f8ec59f3-898a-47b2-b536-44dfd8183393",
+          "id": "grammar_02_verb_le",
           "title": "动作的完成：动词 + 了"
         },
         {
-          "id": "57b14753-688a-41b6-9e0d-b61dbbf574d7",
+          "id": "grammar_02_yinwei_suoyi",
           "title": "因为……所以……"
         },
         {
-          "id": "fa804fff-372b-4874-8571-f54e613d7e07",
-          "title": "Mẫu phụ trợ: 先……然后……再…… / V + 一下儿 / V+V / 别...了"
+          "id": "note_bie_le",
+          "title": "别……了"
+        },
+        {
+          "id": "note_tiaotiaowu",
+          "title": "跳跳舞 / động từ li hợp"
         }
       ],
       "main_patterns": [
         {
-          "pattern": "你怎么了？"
+          "pattern": "肚子疼得厉害。",
+          "grammar_ref": "grammar_02_verb_le"
         },
         {
-          "pattern": "肚子疼得厉害。"
+          "pattern": "昨天吃什么了？",
+          "grammar_ref": "grammar_02_verb_le"
         },
         {
-          "pattern": "昨天吃什么了？"
+          "pattern": "我是不是得了肠炎？",
+          "grammar_ref": "grammar_02_verb_le"
         },
         {
-          "pattern": "就吃了一些鱼和牛肉。"
+          "pattern": "因为感到寂寞，所以心情不好，很难过。",
+          "grammar_ref": "grammar_02_yinwei_suoyi"
         },
         {
-          "pattern": "化验结果出来了吗？"
+          "pattern": "别难过了。",
+          "grammar_ref": "note_bie_le"
         },
         {
-          "pattern": "我是不是得了肠炎？"
-        },
-        {
-          "pattern": "不是肠炎，只是消化不好。"
-        },
-        {
-          "pattern": "一天三次，一次两片，饭后吃。"
-        },
-        {
-          "pattern": "因为感到寂寞，所以心情不好，很难过。"
-        },
-        {
-          "pattern": "别难过了。"
-        },
-        {
-          "pattern": "我们一起去跳跳舞吧。"
-        },
-        {
-          "pattern": "吃了晚饭就去吧。"
+          "pattern": "我们一起去跳跳舞吧。",
+          "grammar_ref": "note_tiaotiaowu"
         }
       ],
       "exercise_types": [
-        "Ngữ âm",
-        "Thay thế",
-        "Chọn từ điền chỗ trống",
-        "Chọn vị trí thích hợp",
-        "Dùng 就 hoàn thành câu",
-        "Hoàn thành hội thoại",
-        "Sửa câu sai",
-        "Trả lời theo tình huống thực tế",
-        "Hội thoại giao tiếp"
+        "phonetics",
+        "substitution",
+        "choose_words_fill_blank",
+        "choose_position",
+        "complete_with_jiu",
+        "complete_dialogue",
+        "correct_sentence",
+        "actual_situation_answer",
+        "communication",
+        "reading_short_answer",
+        "character_writing"
       ],
+      "coverage": {
+        "text_covered": true,
+        "vocabulary_covered": true,
+        "supplementary_vocabulary_covered": true,
+        "notes_covered": true,
+        "grammar_covered": true,
+        "exercises_covered": true,
+        "reading_covered": true,
+        "character_writing_covered": true,
+        "remaining_check_needed": "Bài tập dạng mở đã có đáp án mẫu; giáo viên có thể chấp nhận nhiều biến thể tự nhiên khác."
+      },
       "check_needed": false
     }
   }

@@ -12,39 +12,20 @@ import {
  type LessonDisplayMode,
 } from "@/features/hanzihome/components/lesson-overview/types";
 import { sectionIcons } from "@/features/hanzihome/components/lesson-overview/section-icons";
+import {
+ sectionSubtitle,
+ sectionTitle,
+} from "@/features/hanzihome/components/lesson-overview/utils";
 import type { Section } from "@/features/hanzihome/static-json/schemas/hanyuLesson.schema";
 import type { HanziHomeLesson } from "@/features/hanzihome/types";
 import { cn } from "@/lib/utils";
 
 type LessonTextInlineEditorProps = {
  lesson: HanziHomeLesson;
+ compact?: boolean;
 };
 
-const lessonTextSectionTypes = new Set<Section["type"]>([
- "text",
- "reading",
- "exercises",
- "communication",
- "character_writing",
-]);
-
 const allSectionsId = "__all_lesson_sections__";
-
-function sectionTitle(section: Section) {
- return section.title_vi || section.title;
-}
-
-function sectionSubtitle(section: Section) {
- if (section.type === "text") return `${section.blocks.length} phần bài khóa`;
- if (section.type === "reading") return `${section.items.length} bài đọc`;
- if (section.type === "exercises")
-  return `${section.items.length} nhóm bài tập`;
- if (section.type === "communication")
-  return `${section.items.length} hội thoại`;
- if (section.type === "character_writing")
-  return `${section.items.length} chữ luyện viết`;
- return "";
-}
 
 function TextbookSectionCard({
  section,
@@ -61,7 +42,7 @@ function TextbookSectionCard({
    <article className="grid gap-3">
     <div className="flex flex-wrap items-end justify-between gap-2">
      <div>
-      <p className="text-xs font-black uppercase tracking-wide text-text-muted">
+      <p className="text-[0.7rem] font-black uppercase tracking-wide text-text-muted">
        {section.type.replaceAll("_", " ")}
       </p>
       <h2 className="text-lg font-black text-text-primary sm:text-xl">
@@ -81,34 +62,40 @@ function TextbookSectionCard({
  );
 }
 
-export function LessonTextInlineEditor({ lesson }: LessonTextInlineEditorProps) {
+export function LessonTextInlineEditor({
+ lesson,
+ compact = false,
+}: LessonTextInlineEditorProps) {
  const [displayMode, setDisplayMode] = useState<LessonDisplayMode>(
   DEFAULT_LESSON_DISPLAY_MODE,
  );
  const sourceSections = useMemo(
   () =>
    lesson.sourceLesson?.lesson.sections
-    .filter((section) => lessonTextSectionTypes.has(section.type))
+    .slice()
     .sort((a, b) => a.order - b.order) ?? [],
   [lesson.sourceLesson],
  );
- const [selectedSectionId, setSelectedSectionId] = useState<string>(
-  sourceSections[0]?.id ?? allSectionsId,
- );
- const [isSectionNavOpen, setIsSectionNavOpen] = useState(false);
+ const [selectedSectionId, setSelectedSectionId] =
+  useState<string>(allSectionsId);
+ const [isSectionNavOpen, setIsSectionNavOpen] = useState(true);
  const selectedSection =
-  sourceSections.find((section) => section.id === selectedSectionId) ??
-  sourceSections[0] ??
-  null;
- const showAllSections = selectedSectionId === allSectionsId;
+  sourceSections.find((section) => section.id === selectedSectionId) ?? null;
+ const showAllSections =
+  selectedSectionId === allSectionsId || !selectedSection;
 
  function toggleDisplayMode(key: "showPinyin" | "showMeaning") {
   setDisplayMode((current) => ({ ...current, [key]: !current[key] }));
  }
 
  return (
-  <div className="grid gap-2.5 sm:gap-3">
-   <div className="sticky top-0 z-20 rounded-lg border border-border-default bg-bg-primary/95 px-2 py-1.5 shadow-theme-sm backdrop-blur sm:px-2.5">
+  <div className="grid gap-2.5">
+   <div
+    className={cn(
+     "sticky z-20 rounded-lg border border-border-default bg-bg-primary/95 px-2 py-1.5 shadow-theme-sm backdrop-blur sm:px-2.5",
+     compact ? "top-0" : "top-11",
+    )}
+   >
     <div className="flex flex-wrap items-center justify-between gap-2">
      <div className="flex min-w-0 flex-1 items-center gap-2">
       <Button
@@ -178,6 +165,17 @@ export function LessonTextInlineEditor({ lesson }: LessonTextInlineEditorProps) 
        className="h-fit rounded-xl border-border-default bg-bg-primary lg:sticky lg:top-24"
       >
        <div className="grid gap-2">
+        <Button
+         type="button"
+         variant="outline"
+         size="sm"
+         className="h-8 justify-self-end px-2.5 text-xs"
+         onClick={() => setIsSectionNavOpen(false)}
+        >
+         <PanelLeftClose className="h-4 w-4" />
+         Ẩn mục
+        </Button>
+
         <button
          type="button"
          onClick={() => setSelectedSectionId(allSectionsId)}
@@ -200,8 +198,7 @@ export function LessonTextInlineEditor({ lesson }: LessonTextInlineEditorProps) 
         <div className="flex gap-2 overflow-x-auto pb-1 lg:grid lg:max-h-[calc(100dvh-15rem)] lg:overflow-y-auto lg:pb-0 lg:pr-1 scrollbar-soft">
          {sourceSections.map((section, index) => {
           const Icon = sectionIcons[section.type] ?? FileText;
-          const active =
-           !showAllSections && selectedSection?.id === section.id;
+          const active = !showAllSections && selectedSection?.id === section.id;
 
           return (
            <button

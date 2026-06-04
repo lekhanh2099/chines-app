@@ -1,15 +1,14 @@
 import type { ReadingItem } from "@/features/hanzihome/static-json/schemas/hanyuLesson.schema";
 
-import { AnswerKeyList, ExercisePill, ExerciseQuestionCard } from "./CommonCards";
-import { TextLineCard } from "./TextLineCard";
-import { getHanziTypographyStyle } from "./hanzi-typography";
-import type { LessonDisplayMode } from "./types";
 import {
- answerToString,
- arrayValue,
- asRecord,
- stringValue,
-} from "./utils";
+ AnswerKeyList,
+ ExercisePill,
+ ExerciseQuestionCard,
+} from "./CommonCards";
+import { PassageCard } from "./PassageCard";
+import { TextLineCard } from "./TextLineCard";
+import type { LessonDisplayMode } from "./types";
+import { answerToString, arrayValue, asRecord, stringValue } from "./utils";
 
 export function ReadingCard({
  item,
@@ -41,7 +40,13 @@ export function ReadingCard({
  const flatText = stringValue(record, "text");
  const flatPinyin = stringValue(record, "pinyin");
  const flatMeaning = stringValue(record, "vi");
- const supplementaryWords = arrayValue(record, "supplementary_words");
+ const supplementaryWords = [
+  ...arrayValue(record, "supplementary_words"),
+  ...arrayValue(record, "supplementary_vocab"),
+  ...arrayValue(record, "supplementary_vocabulary"),
+  ...arrayValue(record, "supplement_vocab"),
+  ...arrayValue(record, "supplemental_vocab"),
+ ];
  const supplementaryItems =
   supplementaryWords.length > 0
    ? supplementaryWords
@@ -51,15 +56,22 @@ export function ReadingCard({
   arrayValue(record, "answers").length > 0
    ? arrayValue(record, "answers")
    : arrayValue(record, "answer_key");
- const passage = asRecord(record.passage);
- const segments =
-  arrayValue(passage, "segments").length > 0
-   ? arrayValue(passage, "segments")
-   : arrayValue(record, "cloze_segments");
- const passageText = typeof record.passage === "string" ? record.passage : "";
  const wordBank = arrayValue(record, "word_bank").filter(
   (word): word is string => typeof word === "string" && Boolean(word.trim()),
  );
+ const exerciseRef = stringValue(record, "exercise_ref");
+ const linkedReadingId = stringValue(record, "linked_reading_id");
+ const retellOutline = arrayValue(record, "retell_outline").filter(
+  (line): line is string => typeof line === "string" && Boolean(line.trim()),
+ );
+ const baSentences = arrayValue(record, "ba_sentences").filter(
+  (line): line is string => typeof line === "string" && Boolean(line.trim()),
+ );
+ const generatedQuestions = arrayValue(
+  record,
+  "generated_comprehension_questions",
+ );
+ const sampleRetelling = asRecord(record.sample_retelling);
  const instruction = asRecord(record.instruction);
 
  return (
@@ -121,32 +133,35 @@ export function ReadingCard({
     </div>
    )}
 
-   {(segments.length > 0 || passageText) && (
-    <div className="rounded-xl border border-border-default bg-bg-subtle p-4">
-     <p
-      className="whitespace-pre-wrap leading-8 text-text-primary"
-      lang="zh-CN"
-      style={getHanziTypographyStyle(displayMode, { size: "lg" })}
-     >
-      {passageText ||
-       segments
-        .map((segmentValue, index) => {
-         const segment = asRecord(segmentValue);
-         if (stringValue(segment, "type") === "blank") {
-          return ` ____(${stringValue(segment, "blank_id") || index + 1})____ `;
-         }
-         return stringValue(segment, "text");
-        })
-        .join("")}
-     </p>
-    </div>
-   )}
+   <PassageCard
+    itemId={item.id}
+    passage={record.passage}
+    displayMode={displayMode}
+   />
 
    {wordBank.length > 0 && (
     <div className="flex flex-wrap gap-2">
      {wordBank.map((word) => (
       <ExercisePill key={word}>{word}</ExercisePill>
      ))}
+    </div>
+   )}
+
+   {(exerciseRef || linkedReadingId) && (
+    <div className="rounded-xl border border-border-default bg-bg-subtle p-3">
+     <p className="text-xs font-black uppercase tracking-wide text-text-muted">
+      Liên kết trong bài
+     </p>
+     {exerciseRef && (
+      <p className="mt-1 text-sm font-bold text-text-primary">
+       Bài tập liên quan: {exerciseRef}
+      </p>
+     )}
+     {linkedReadingId && (
+      <p className="mt-1 text-sm font-bold text-text-primary">
+       Bài đọc liên quan: {linkedReadingId}
+      </p>
+     )}
     </div>
    )}
 
@@ -184,6 +199,92 @@ export function ReadingCard({
        />
       );
      })}
+    </div>
+   )}
+
+   {generatedQuestions.length > 0 && (
+    <div className="grid gap-2">
+     <p className="text-xs font-black uppercase tracking-wide text-text-muted">
+      Câu hỏi đọc hiểu
+     </p>
+     {generatedQuestions.map((questionValue, index) => {
+      const question = asRecord(questionValue);
+      return (
+       <ExerciseQuestionCard
+        key={
+         stringValue(question, "id") || `${item.id}-generated-question-${index}`
+        }
+        index={index + 1}
+        title={stringValue(question, "question") || "Câu hỏi"}
+        answer={stringValue(question, "answer")}
+        note={stringValue(question, "explanation_vi")}
+       />
+      );
+     })}
+    </div>
+   )}
+
+   {retellOutline.length > 0 && (
+    <div className="grid gap-2 rounded-xl border border-border-default bg-bg-subtle p-3">
+     <p className="text-xs font-black uppercase tracking-wide text-text-muted">
+      Dàn ý kể lại
+     </p>
+     <div className="grid gap-2">
+      {retellOutline.map((line, index) => (
+       <p
+        key={`${item.id}-retell-${index}`}
+        className="rounded-lg bg-bg-primary px-3 py-2 text-sm font-bold text-text-primary"
+        lang="zh-CN"
+       >
+        {index + 1}. {line}
+       </p>
+      ))}
+     </div>
+    </div>
+   )}
+
+   {(stringValue(sampleRetelling, "zh") ||
+    stringValue(sampleRetelling, "vi")) && (
+    <div className="grid gap-2 rounded-xl border border-border-default bg-bg-subtle p-3">
+     <p className="text-xs font-black uppercase tracking-wide text-text-muted">
+      Bài kể mẫu
+     </p>
+     <TextLineCard
+      zh={stringValue(sampleRetelling, "zh")}
+      pinyin={stringValue(sampleRetelling, "pinyin")}
+      vi={stringValue(sampleRetelling, "vi")}
+      displayMode={displayMode}
+     />
+    </div>
+   )}
+
+   {baSentences.length > 0 && (
+    <div className="grid gap-2 rounded-xl border border-accent/30 bg-accent-subtle p-3">
+     <p className="text-xs font-black uppercase tracking-wide text-accent-text">
+      Câu 把 trọng tâm
+     </p>
+     <div className="flex flex-wrap gap-2">
+      {baSentences.map((sentence, index) => (
+       <ExercisePill key={`${item.id}-ba-${index}`}>{sentence}</ExercisePill>
+      ))}
+     </div>
+    </div>
+   )}
+   {answers.length > 0 && (
+    <div className="space-y-2">
+     <p className="text-xs font-black uppercase tracking-wide text-accent-text">
+      Đáp án
+     </p>
+     <div className="flex gap-2 ">
+      {answers.map((answer, index) => (
+       <p
+        key={answer + index}
+        className="text-sm font-bold text-accent-text rounded-xl border border-accent/30 bg-accent-subtle p-3"
+       >
+        {answer}
+       </p>
+      ))}
+     </div>
     </div>
    )}
 

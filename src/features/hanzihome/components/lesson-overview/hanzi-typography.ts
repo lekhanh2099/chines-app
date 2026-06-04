@@ -8,7 +8,8 @@ import type {
 
 const hanziFontFamilies: Record<HanziReaderFont, string> = {
  system: 'var(--font-hanzi), "PingFang SC", sans-serif',
- songti: '"Hanzi Songti", "Songti SC", "STSong", "Noto Serif CJK SC", "SimSun", serif',
+ songti:
+  '"Hanzi Songti", "Songti SC", "STSong", "Noto Serif CJK SC", "SimSun", serif',
  kai: '"FZ Kai Pinyin", "Kaiti SC", "KaiTi", "STKaiti", serif',
  pinyin: '"Chinese Pinyin Font", "FZ Kai Pinyin", "Kaiti SC", serif',
  mengshen: '"Mengshen Han Serif", "Hanzi Songti", "Songti SC", serif',
@@ -23,8 +24,8 @@ const hanziFontSizes: Record<HanziReaderSize, string> = {
 };
 
 const hanziFontWeights: Record<HanziReaderFont, CSSProperties["fontWeight"]> = {
- system: 800,
- songti: 600,
+ system: 400,
+ songti: 500,
  kai: 500,
  pinyin: 500,
  mengshen: 500,

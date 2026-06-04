@@ -6,7 +6,6 @@ import {
  answerToString,
  arrayValue,
  asRecord,
- nonEmptyStrings,
  stringValue,
 } from "./utils";
 
@@ -118,21 +117,47 @@ export function GenericItemCard({
  displayMode: LessonDisplayMode;
 }) {
  const item = asRecord(value);
- const title = [item.title_vi, item.title, item.hanzi, item.id].find(
-  (entry) => typeof entry === "string" && entry.trim(),
- ) as string | undefined;
- const pinyin = typeof item.pinyin === "string" ? item.pinyin : "";
- const meaning = typeof item.meaning_vi === "string" ? item.meaning_vi : "";
- const functionVi =
-  typeof item.function_vi === "string" ? item.function_vi : "";
- const dialogue = Array.isArray(item.dialogue) ? item.dialogue : [];
+ const title =
+  stringValue(item, "title_vi") ||
+  stringValue(item, "title") ||
+  stringValue(item, "hanzi") ||
+  stringValue(item, "zh") ||
+  stringValue(item, "text") ||
+  stringValue(item, "id") ||
+  "Mục";
+ const hanzi = stringValue(item, "hanzi");
+ const zh = stringValue(item, "zh");
+ const pinyin = stringValue(item, "pinyin");
+ const meaning =
+  stringValue(item, "meaning_vi") || stringValue(item, "vi");
+ const functionVi = stringValue(item, "function_vi");
+ const lineItems = Array.isArray(item.lines)
+  ? item.lines
+  : Array.isArray(item.dialogue)
+    ? item.dialogue
+    : [];
  const practiceTasks = Array.isArray(item.practice_tasks)
   ? item.practice_tasks
   : [];
+ const examples = arrayValue(item, "examples");
+ const extraFields = getRenderableFields(item);
 
  return (
   <article className="grid gap-2 rounded-xl border border-border-default bg-bg-primary p-3">
-   <h4 className="text-base font-black text-text-primary">{title || "Mục"}</h4>
+   <h4 className="text-base font-black text-text-primary">{title}</h4>
+   {hanzi && hanzi !== title && (
+    <p lang="zh-CN" style={getInlineHanziStyle(displayMode)}>
+     {hanzi}
+    </p>
+   )}
+   {zh && zh !== title && (
+    <TextLineCard
+     zh={zh}
+     pinyin={pinyin}
+     vi={meaning}
+     displayMode={displayMode}
+    />
+   )}
    {displayMode.showPinyin && pinyin && (
     <p className="text-sm font-bold italic text-text-muted">{pinyin}</p>
    )}
@@ -142,7 +167,14 @@ export function GenericItemCard({
    {functionVi && (
     <p className="text-sm font-semibold text-text-secondary">{functionVi}</p>
    )}
-   {dialogue.map((lineValue, index) => {
+   {extraFields.length > 0 && (
+    <div className="grid gap-2">
+     {extraFields.map((field) => (
+      <FieldValueBlock key={field.key} field={field} displayMode={displayMode} />
+     ))}
+    </div>
+   )}
+   {lineItems.map((lineValue, index) => {
     const line = asRecord(lineValue);
     const zh =
      typeof line.zh === "string"
@@ -162,6 +194,31 @@ export function GenericItemCard({
      />
     );
    })}
+   {examples.length > 0 && (
+    <div className="grid gap-2">
+     <p className="text-xs font-black uppercase tracking-wide text-text-muted">
+      Ví dụ
+     </p>
+     {examples.map((exampleValue, index) => {
+      const example = asRecord(exampleValue);
+      const exampleZh =
+       stringValue(example, "zh") ||
+       stringValue(example, "text") ||
+       answerToString(exampleValue);
+      if (!exampleZh) return null;
+
+      return (
+       <TextLineCard
+        key={stringValue(example, "id") || `${title}-example-${index}`}
+        zh={exampleZh}
+        pinyin={stringValue(example, "pinyin")}
+        vi={stringValue(example, "vi") || stringValue(example, "meaning_vi")}
+        displayMode={displayMode}
+       />
+      );
+     })}
+    </div>
+   )}
    {practiceTasks.length > 0 && (
     <div className="mt-2 grid gap-2">
      {practiceTasks.map((taskValue, index) => {
@@ -192,6 +249,237 @@ export function GenericItemCard({
  );
 }
 
+type RenderableField = {
+ key: string;
+ label: string;
+ value: unknown;
+};
+
+const FIELD_LABELS: Record<string, string> = {
+ answer: "Đáp án",
+ correct: "Đúng",
+ correct_sentence: "Câu đúng",
+ explanation_vi: "Giải thích",
+ instruction_vi: "Yêu cầu",
+ note_vi: "Ghi chú",
+ pattern: "Cấu trúc",
+ prompt: "Câu hỏi",
+ sample_answer: "Đáp án mẫu",
+ structure: "Cấu trúc",
+ text: "Nội dung",
+ wrong: "Sai",
+ wrong_sentence: "Câu sai",
+};
+
+const GENERIC_FIELD_ORDER = [
+ "structure",
+ "pattern",
+ "content_vi",
+ "instruction_vi",
+ "prompt",
+ "text",
+ "answer",
+ "sample_answer",
+ "wrong",
+ "wrong_sentence",
+ "correct",
+ "correct_sentence",
+ "explanation_vi",
+ "note_vi",
+];
+
+const HIDDEN_GENERIC_FIELDS = new Set([
+ "id",
+ "type",
+ "variant",
+ "order",
+ "title",
+ "title_vi",
+ "hanzi",
+ "pinyin",
+ "meaning_vi",
+ "meaning_en",
+ "vi",
+ "zh",
+ "function_vi",
+ "lines",
+ "dialogue",
+ "examples",
+ "practice_tasks",
+ "grammar_refs",
+ "vocab_refs",
+ "source_refs",
+ "source_origin",
+ "audio_key",
+ "check_needed",
+ "answer_verified",
+ "rendering",
+ "grading",
+]);
+
+function getInlineHanziStyle(displayMode: LessonDisplayMode) {
+ return {
+  fontFamily:
+   displayMode.hanziFont === "kai"
+    ? '"Hanzi Kaiti", "Kaiti SC", serif'
+    : displayMode.hanziFont === "mengshen"
+      ? '"Mengshen Han Serif", "Hanzi Songti", "Songti SC", serif'
+      : '"Hanzi Songti", "Songti SC", serif',
+  fontSize: "1.75rem",
+  fontWeight: 700,
+  lineHeight: 1.25,
+ };
+}
+
+function getFieldLabel(key: string) {
+ return FIELD_LABELS[key] || key.replaceAll("_", " ");
+}
+
+function getRenderableFields(item: Record<string, unknown>): RenderableField[] {
+ const orderedKeys = [
+  ...GENERIC_FIELD_ORDER,
+  ...Object.keys(item).filter((key) => !GENERIC_FIELD_ORDER.includes(key)),
+ ];
+
+ return orderedKeys
+  .filter((key, index) => orderedKeys.indexOf(key) === index)
+  .filter((key) => !HIDDEN_GENERIC_FIELDS.has(key))
+  .map((key) => ({ key, label: getFieldLabel(key), value: item[key] }))
+  .filter((field) => hasRenderableValue(field.value));
+}
+
+function hasRenderableValue(value: unknown): boolean {
+ if (typeof value === "string") return Boolean(value.trim());
+ if (typeof value === "number" || typeof value === "boolean") return true;
+ if (Array.isArray(value)) return value.some(hasRenderableValue);
+ const record = asRecord(value);
+ return Object.keys(record).length > 0 && Object.values(record).some(hasRenderableValue);
+}
+
+function FieldValueBlock({
+ field,
+ displayMode,
+}: {
+ field: RenderableField;
+ displayMode: LessonDisplayMode;
+}) {
+ const value = field.value;
+ if (!hasRenderableValue(value)) return null;
+
+ return (
+  <div className="rounded-lg border border-border-default bg-bg-subtle p-3">
+   <p className="text-xs font-black uppercase tracking-wide text-text-muted">
+    {field.label}
+   </p>
+   <div className="mt-2">
+    <FieldValue value={value} displayMode={displayMode} />
+   </div>
+  </div>
+ );
+}
+
+function FieldValue({
+ value,
+ displayMode,
+}: {
+ value: unknown;
+ displayMode: LessonDisplayMode;
+}) {
+ if (typeof value === "string" || typeof value === "number") {
+  return (
+   <p className="whitespace-pre-wrap text-sm font-semibold leading-relaxed text-text-secondary">
+    {value}
+   </p>
+  );
+ }
+
+ if (typeof value === "boolean") {
+  return (
+   <p className="text-sm font-semibold text-text-secondary">
+    {value ? "Có" : "Không"}
+   </p>
+  );
+ }
+
+ if (Array.isArray(value)) {
+  return (
+   <div className="grid gap-2">
+    {value.map((entry, index) => (
+     <FieldListItem
+      key={`field-entry-${index}`}
+      value={entry}
+      displayMode={displayMode}
+     />
+    ))}
+   </div>
+  );
+ }
+
+ const record = asRecord(value);
+ const primary =
+  stringValue(record, "title_vi") ||
+  stringValue(record, "title") ||
+  stringValue(record, "hanzi") ||
+  stringValue(record, "zh") ||
+  stringValue(record, "text") ||
+  stringValue(record, "prompt") ||
+  stringValue(record, "answer") ||
+  answerToString(value);
+ const secondary =
+  stringValue(record, "meaning_vi") ||
+  stringValue(record, "vi") ||
+  stringValue(record, "pinyin") ||
+  stringValue(record, "explanation_vi");
+
+ return (
+  <div className="grid gap-1 text-sm font-semibold text-text-secondary">
+   {primary && <p className="text-text-primary">{primary}</p>}
+   {displayMode.showMeaning && secondary && secondary !== primary && (
+    <p>{secondary}</p>
+   )}
+   {!primary &&
+    Object.entries(record)
+     .filter(([, entryValue]) => hasRenderableValue(entryValue))
+     .map(([key, entryValue]) => (
+      <p key={key}>
+       <span className="font-black text-text-primary">{getFieldLabel(key)}:</span>{" "}
+       {answerToString(entryValue) || stringValue(asRecord(entryValue), "text")}
+      </p>
+     ))}
+  </div>
+ );
+}
+
+function FieldListItem({
+ value,
+ displayMode,
+}: {
+ value: unknown;
+ displayMode: LessonDisplayMode;
+}) {
+ const record = asRecord(value);
+ const zh = stringValue(record, "zh") || stringValue(record, "text");
+ if (zh) {
+  return (
+   <TextLineCard
+    zh={zh}
+    pinyin={stringValue(record, "pinyin")}
+    vi={stringValue(record, "vi") || stringValue(record, "meaning_vi")}
+    displayMode={displayMode}
+   />
+  );
+ }
+
+ const text = answerToString(value);
+ if (text) return <ExercisePill>{text}</ExercisePill>;
+
+ return (
+  <div className="rounded-lg bg-bg-primary px-3 py-2">
+   <FieldValue value={value} displayMode={displayMode} />
+  </div>
+ );
+}
+
 export function LooseItemGrid({
  items,
  displayMode,
@@ -201,133 +489,39 @@ export function LooseItemGrid({
  displayMode: LessonDisplayMode;
  emptyReason?: string;
 }) {
- type LooseRenderedItem = {
-  id: string;
-  text: string;
-  pinyin?: string;
-  meaning?: string;
- };
+ const visibleItems = items.filter(hasRenderableValue);
 
- const renderedItems = items
-  .flatMap<LooseRenderedItem>((entryValue, index) => {
-   if (typeof entryValue === "string") {
-    return [{ id: `string-${index}`, text: entryValue }];
-   }
-
-   if (Array.isArray(entryValue)) {
-    return [
-     { id: `array-${index}`, text: nonEmptyStrings(entryValue).join(" / ") },
-    ];
-   }
-
-   const entry = asRecord(entryValue);
-   const pairs = arrayValue(entry, "pairs");
-   if (pairs.length > 0) {
-    return pairs.map((pairValue, pairIndex) => ({
-     id: `${stringValue(entry, "id") || index}-pair-${pairIndex}`,
-     text: Array.isArray(pairValue)
-      ? nonEmptyStrings(pairValue).join(" / ")
-      : answerToString(pairValue),
-    }));
-   }
-
-   const lines = arrayValue(entry, "lines");
-   if (lines.length > 0) {
-    return lines.map((lineValue, lineIndex) => ({
-     id: `${stringValue(entry, "id") || index}-line-${lineIndex}`,
-     text:
-      answerToString(lineValue) || stringValue(asRecord(lineValue), "text"),
-    }));
-   }
-
-   const content = arrayValue(entry, "content");
-   if (content.length > 0) {
-    return content.map((lineValue, lineIndex) => ({
-     id: `${stringValue(entry, "id") || index}-content-${lineIndex}`,
-     text: `${stringValue(entry, "title") ? `${stringValue(entry, "title")}: ` : ""}${answerToString(lineValue) || stringValue(asRecord(lineValue), "text")}`,
-    }));
-   }
-
-   const dialogue = arrayValue(entry, "dialogue");
-   if (dialogue.length > 0) {
-    return dialogue.map((lineValue, lineIndex) => {
-     const line = asRecord(lineValue);
-     return {
-      id: `${stringValue(entry, "id") || index}-dialogue-${lineIndex}`,
-      text:
-       answerToString(lineValue) ||
-       stringValue(line, "text") ||
-       stringValue(line, "zh"),
-     };
-    });
-   }
-
-   const substitutions = arrayValue(entry, "substitutions");
-   if (substitutions.length > 0) {
-    return substitutions.map((lineValue, lineIndex) => ({
-     id: `${stringValue(entry, "id") || index}-substitution-${lineIndex}`,
-     text: `${stringValue(entry, "title") ? `${stringValue(entry, "title")}: ` : ""}${answerToString(lineValue)}`,
-    }));
-   }
-
-   const parts = asRecord(entry.parts);
-   const partEntries = Object.entries(parts).filter(
-    ([, value]) => typeof value === "string" && value.trim(),
-   );
-   if (partEntries.length > 0) {
-    return partEntries.map(([label, value]) => ({
-     id: `${stringValue(entry, "id") || index}-part-${label}`,
-     text: `${label}. ${value}`,
-    }));
-   }
-
-   const sentences = arrayValue(entry, "sentences");
-   if (sentences.length > 0) {
-    return sentences.map((sentenceValue, sentenceIndex) => {
-     const sentence = asRecord(sentenceValue);
-     return {
-      id: `${stringValue(entry, "id") || index}-sentence-${sentenceIndex}`,
-      text: `${stringValue(sentence, "id") || sentenceIndex + 1}. ${stringValue(sentence, "text")}`,
-     };
-    });
-   }
-
-   const text =
-    stringValue(entry, "text") ||
-    stringValue(entry, "prompt") ||
-    stringValue(entry, "zh") ||
-    stringValue(entry, "title") ||
-    stringValue(entry, "substitution") ||
-    stringValue(entry, "wrong_sentence") ||
-    stringValue(entry, "correct_sentence") ||
-    stringValue(entry, "sample_text") ||
-    stringValue(entry, "answer");
-
-   return text
-    ? [
-       {
-        id: stringValue(entry, "id") || `object-${index}`,
-        text,
-        pinyin: stringValue(entry, "pinyin"),
-        meaning: stringValue(entry, "vi") || stringValue(entry, "meaning_vi"),
-       },
-      ]
-    : [];
-  })
-  .filter((entry) => entry.text);
-
- if (renderedItems.length === 0)
+ if (visibleItems.length === 0) {
   return <EmptySectionState reason={emptyReason} />;
+ }
 
  return (
-  <div className="flex flex-wrap gap-2">
-   {renderedItems.map((entry) => (
-    <ExercisePill key={entry.id}>
-     {entry.text}
-     {displayMode.showPinyin && entry.pinyin && ` · ${entry.pinyin}`}
-     {displayMode.showMeaning && entry.meaning && ` · ${entry.meaning}`}
-    </ExercisePill>
-   ))}
+  <div className="grid gap-2 sm:grid-cols-2">
+   {visibleItems.map((item, index) => {
+    const text = answerToString(item);
+    if (text) {
+     return <ExercisePill key={`${text}-${index}`}>{text}</ExercisePill>;
+    }
+
+    const record = asRecord(item);
+    const compactText =
+     stringValue(record, "text") ||
+     stringValue(record, "substitution") ||
+     stringValue(record, "prompt") ||
+     stringValue(record, "answer");
+
+    if (compactText && Object.keys(record).length <= 3) {
+     return <ExercisePill key={`${compactText}-${index}`}>{compactText}</ExercisePill>;
+    }
+
+    return (
+     <GenericItemCard
+      key={stringValue(record, "id") || `${index}`}
+      value={item}
+      displayMode={displayMode}
+     />
+    );
+   })}
   </div>
  );
 }

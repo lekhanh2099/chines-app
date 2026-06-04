@@ -25,6 +25,29 @@ export const LocalizedTextSchema = z.object({
  en: z.string().optional().default(""),
 });
 
+function schemaRecord(value: unknown): Record<string, unknown> {
+ return value && typeof value === "object" && !Array.isArray(value)
+  ? (value as Record<string, unknown>)
+  : {};
+}
+
+function optionalString(value: unknown) {
+ return typeof value === "string" ? value.trim() : "";
+}
+
+function optionalArray(value: unknown) {
+ return Array.isArray(value) ? value : [];
+}
+
+function hasTextLikeValue(value: unknown): boolean {
+ if (typeof value === "string") return Boolean(value.trim());
+ if (typeof value === "number" || typeof value === "boolean") return true;
+ if (Array.isArray(value)) return value.some(hasTextLikeValue);
+
+ const record = schemaRecord(value);
+ return Object.values(record).some(hasTextLikeValue);
+}
+
 export const InstructionSchema = z.object({
  zh: z.string().optional().default(""),
  vi: z.string().optional().default(""),
@@ -387,7 +410,7 @@ export const GrammarBlockSchema = z
  ])
  .or(GenericGrammarBlockSchema);
 
-export const GrammarPointSchema = z.object({
+const GrammarPointBaseSchema = z.object({
  id: z.string(),
  type: z.literal("grammar_point"),
  order: z.number().int().positive(),
@@ -397,6 +420,42 @@ export const GrammarPointSchema = z.object({
  tags: z.array(z.string()).optional().default([]),
  blocks: z.array(GrammarBlockSchema),
 }).passthrough();
+
+export const GrammarPointSchema = z.preprocess((value) => {
+ const record = schemaRecord(value);
+ const currentType = optionalString(record.type);
+ const blocks = optionalArray(record.blocks);
+
+ if (
+  (currentType !== "grammar_item" && currentType !== "grammar_point") ||
+  blocks.length > 0
+ ) {
+  return currentType === "grammar_item" ? { ...record, type: "grammar_point" } : value;
+ }
+
+ const structure = optionalString(record.structure);
+ const meaning = optionalString(record.meaning_vi);
+ const examples = optionalArray(record.examples);
+
+ return {
+  ...record,
+  type: "grammar_point",
+  blocks:
+   structure || meaning || examples.length > 0
+    ? [
+       {
+        id: `${optionalString(record.id) || "grammar"}_legacy_content`,
+        type: "grammar_legacy_item",
+        order: 1,
+        title: optionalString(record.title_vi) || optionalString(record.title) || "Nội dung",
+        pattern: structure,
+        content_vi: meaning,
+        examples,
+       },
+      ]
+    : [],
+ };
+}, GrammarPointBaseSchema);
 
 /* -------------------------------------------------------------------------- */
 /* Exercises                                                                  */
@@ -854,7 +913,7 @@ export const NotesSectionSchema = z.object({
  items: z.array(NoteItemSchema),
 }).passthrough();
 
-export const GrammarSectionSchema = z.object({
+const GrammarSectionBaseSchema = z.object({
  id: z.string(),
  type: z.literal("grammar"),
  order: z.number().int().positive(),
@@ -862,6 +921,37 @@ export const GrammarSectionSchema = z.object({
  title_vi: z.string().optional().default(""),
  items: z.array(GrammarPointSchema),
 }).passthrough();
+
+export const GrammarSectionSchema = z.preprocess((value) => {
+ const record = schemaRecord(value);
+ const items = optionalArray(record.items);
+
+ if (optionalString(record.type) !== "grammar" || items.length === 0) {
+  return value;
+ }
+
+ const firstItemType = optionalString(schemaRecord(items[0]).type);
+ const itemsAreBlocks =
+  firstItemType.startsWith("grammar_") &&
+  firstItemType !== "grammar_point" &&
+  firstItemType !== "grammar_item";
+
+ return itemsAreBlocks
+  ? {
+     ...record,
+     items: [
+      {
+       id: `${optionalString(record.id) || "grammar"}_point`,
+       type: "grammar_point",
+       order: 1,
+       title: optionalString(record.title) || "语法",
+       title_vi: optionalString(record.title_vi) || "Ngữ pháp",
+       blocks: items,
+      },
+     ],
+    }
+  : value;
+}, GrammarSectionBaseSchema);
 
 export const ExercisesSectionSchema = z.object({
  id: z.string(),
@@ -872,7 +962,7 @@ export const ExercisesSectionSchema = z.object({
  items: z.array(ExerciseSchema),
 }).passthrough();
 
-export const ReadingSectionSchema = z.object({
+const ReadingSectionBaseSchema = z.object({
  id: z.string(),
  type: z.literal("reading"),
  order: z.number().int().positive(),
@@ -880,6 +970,49 @@ export const ReadingSectionSchema = z.object({
  title_vi: z.string().optional().default(""),
  items: z.array(ReadingItemSchema),
 }).passthrough();
+
+export const ReadingSectionSchema = z.preprocess((value) => {
+ const record = schemaRecord(value);
+ const items = optionalArray(record.items);
+ const blocks = optionalArray(record.blocks);
+
+ if (optionalString(record.type) !== "reading" || items.length > 0) {
+  return value;
+ }
+
+ if (blocks.length > 0) return { ...record, items: blocks };
+
+ const rootReadingPayloadKeys = [
+  "passage",
+  "paragraphs",
+  "questions",
+  "answer_key",
+  "supplementary_words",
+  "supplementary_vocab",
+  "generated_comprehension_questions",
+  "retell_outline",
+  "sample_retelling",
+ ];
+ const hasRootPayload = rootReadingPayloadKeys.some((key) =>
+  hasTextLikeValue(record[key]),
+ );
+
+ return hasRootPayload
+  ? {
+     ...record,
+     items: [
+      {
+       ...record,
+       id: `${optionalString(record.id) || "reading"}_item`,
+       type: "reading_text",
+       order: 1,
+       title: optionalString(record.title) || "阅读",
+       title_vi: optionalString(record.title_vi) || "Đọc hiểu",
+      },
+     ],
+    }
+  : value;
+}, ReadingSectionBaseSchema);
 
 export const CharacterWritingSectionSchema = z.object({
  id: z.string(),
@@ -924,18 +1057,85 @@ export const SummarySectionSchema = z
  })
  .passthrough();
 
-export const SectionSchema = z.discriminatedUnion("type", [
- TextSectionSchema,
- VocabularySectionSchema,
- ProperNounsSectionSchema,
- NotesSectionSchema,
- GrammarSectionSchema,
- ExercisesSectionSchema,
- CommunicationSectionSchema,
- ReadingSectionSchema,
- CharacterWritingSectionSchema,
- SummarySectionSchema,
-]);
+function normalizeSectionInput(value: unknown): unknown {
+ const record = schemaRecord(value);
+ const type = optionalString(record.type);
+ const id = optionalString(record.id) || "section";
+ const blocks = optionalArray(record.blocks);
+ const items = optionalArray(record.items);
+ const normalizedType =
+  type === "reading_comprehension"
+   ? "reading"
+   : type === "writing_characters"
+     ? "character_writing"
+     : type === "proper_names"
+       ? "proper_nouns"
+       : type;
+
+ if (normalizedType === "grammar" && items.length === 0 && blocks.length > 0) {
+  return {
+   ...record,
+   type: normalizedType,
+   items: [
+    {
+     id: `${id}_point`,
+     type: "grammar_point",
+     order: 1,
+     title: optionalString(record.title) || "语法",
+     title_vi: optionalString(record.title_vi) || "Ngữ pháp",
+     blocks,
+    },
+   ],
+  };
+ }
+
+ if (normalizedType === "exercises" && items.length === 0 && blocks.length > 0) {
+  return { ...record, type: normalizedType, items: blocks };
+ }
+
+ if (normalizedType === "reading" && items.length === 0 && blocks.length > 0) {
+  return { ...record, type: normalizedType, items: blocks };
+ }
+
+ if (normalizedType === "character_writing") {
+  return {
+   ...record,
+   type: normalizedType,
+   items: items.map((itemValue, index) => {
+    const item = schemaRecord(itemValue);
+    return {
+     ...item,
+     id: optionalString(item.id) || `${id}_character_${index + 1}`,
+     type: optionalString(item.type) || "character_writing_item",
+     order:
+      typeof item.order === "number" && Number.isFinite(item.order)
+       ? item.order
+       : index + 1,
+    };
+   }),
+  };
+ }
+
+ return normalizedType && normalizedType !== type
+  ? { ...record, type: normalizedType }
+  : value;
+}
+
+export const SectionSchema = z.preprocess(
+ normalizeSectionInput,
+ z.union([
+  TextSectionSchema,
+  VocabularySectionSchema,
+  ProperNounsSectionSchema,
+  NotesSectionSchema,
+  GrammarSectionSchema,
+  ExercisesSectionSchema,
+  CommunicationSectionSchema,
+  ReadingSectionSchema,
+  CharacterWritingSectionSchema,
+  SummarySectionSchema,
+ ]),
+);
 
 /* -------------------------------------------------------------------------- */
 /* Summary                                                                    */

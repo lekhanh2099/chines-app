@@ -6,9 +6,12 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { getHanyuLessonMeta } from "@/features/hanzihome/static-json/hanyu-lesson-meta";
-import { cn } from "@/lib/utils";
 
 import { BookSectionContent } from "./BookSectionContent";
+import {
+ LessonModuleFrame,
+ LessonModuleSidebarItem,
+} from "./LessonModuleFrame";
 import { LessonTypographyControls } from "./LessonTypographyControls";
 import { BookOpen, sectionIcons } from "./section-icons";
 import {
@@ -17,6 +20,8 @@ import {
  type SourceLessonOverviewProps,
 } from "./types";
 import { getBookSections } from "./utils";
+
+const ALL_SECTIONS_ID = "__all_sections__";
 
 export function SourceLessonOverview({
  lessonDocument,
@@ -32,12 +37,14 @@ export function SourceLessonOverview({
  const [globalDisplayMode, setGlobalDisplayMode] =
   useState<LessonDisplayMode>(DEFAULT_LESSON_DISPLAY_MODE);
  const [sectionDisplayOverrides, setSectionDisplayOverrides] = useState<
-  Record<string, Partial<LessonDisplayMode>>
+ Record<string, Partial<LessonDisplayMode>>
  >({});
  const selectedSection =
-  sections.find((section) => section.id === selectedSectionId) ??
-  sections[0] ??
-  null;
+  selectedSectionId === ALL_SECTIONS_ID
+   ? null
+   : sections.find((section) => section.id === selectedSectionId) ??
+     sections[0] ??
+     null;
  const lessonMeta = getHanyuLessonMeta(lessonDocument);
 
  function updateGlobalDisplayMode(key: "showPinyin" | "showMeaning") {
@@ -52,126 +59,96 @@ export function SourceLessonOverview({
   setSectionDisplayOverrides({});
  }
 
- if (!selectedSection) return null;
- const Icon = sectionIcons[selectedSection.type] ?? BookOpen;
+ if (sections.length === 0) return null;
+ const activeSection = selectedSection ?? sections[0];
+ const Icon = sectionIcons[activeSection.type] ?? BookOpen;
  const selectedSectionDisplayMode = {
   ...globalDisplayMode,
-  ...sectionDisplayOverrides[selectedSection.id],
+  ...(selectedSection ? sectionDisplayOverrides[selectedSection.id] : {}),
  };
 
  function updateSectionDisplayMode(key: "showPinyin" | "showMeaning") {
   setSectionDisplayOverrides((current) => ({
    ...current,
-   [selectedSection.id]: {
-    ...current[selectedSection.id],
+   [activeSection.id]: {
+    ...current[activeSection.id],
     [key]: !selectedSectionDisplayMode[key],
    },
   }));
  }
 
  return (
-  <Card padding="lg" className="rounded-xl">
-   <div className="grid gap-4">
-    <div className="flex flex-wrap items-start justify-between gap-3">
-     <div>
-      <p className="text-xs font-black uppercase tracking-wide text-text-muted">
-       Bài học
-      </p>
-      <h2 className="text-xl font-black text-text-primary">
-       {lessonDocument.lesson.title.zh}
-      </h2>
-      <p className="text-sm font-semibold text-text-muted">
-       {lessonMeta.volumeVi}
-       {globalDisplayMode.showPinyin && lessonMeta.titlePinyin
-        ? ` · ${lessonMeta.titlePinyin}`
-        : ""}
-     </p>
+  <LessonModuleFrame
+   title="Bài khóa"
+   subtitle={`${lessonDocument.lesson.title.zh} · ${lessonMeta.volumeVi}`}
+   sidebarLabel="Đề mục"
+   sidebarSummary={`${sections.length} phần`}
+   sidebarOpen={isSectionListVisible}
+   onSidebarOpenChange={setIsSectionListVisible}
+   sidebar={
+    <div className="grid max-h-[calc(100vh-11rem)] content-start gap-2 overflow-y-auto pr-1">
+     <LessonModuleSidebarItem
+      selected={!selectedSection}
+      title="Xem toàn bộ"
+      subtitle={`${sections.length} đề mục`}
+      icon={<BookOpen className="h-4 w-4" />}
+      onClick={() => setSelectedSectionId(ALL_SECTIONS_ID)}
+     />
+     {sections.map((section, index) => {
+      const SectionIcon = sectionIcons[section.type] ?? BookOpen;
+      return (
+       <LessonModuleSidebarItem
+        key={section.id}
+        selected={selectedSection?.id === section.id}
+        title={`${index + 1}. ${section.title}`}
+        subtitle={section.subtitle}
+        icon={<SectionIcon className="h-4 w-4" />}
+        onClick={() => setSelectedSectionId(section.id)}
+       />
+      );
+     })}
     </div>
-    <div className="flex flex-wrap items-center justify-end gap-2">
-      <LessonTypographyControls
-       displayMode={globalDisplayMode}
-       onChange={updateGlobalTypography}
-      />
-      <Button
-       type="button"
-       variant="outline"
-       size="sm"
-       onClick={() => updateGlobalDisplayMode("showPinyin")}
-      >
-       Pinyin bài: {globalDisplayMode.showPinyin ? "Bật" : "Tắt"}
-      </Button>
-      <Button
-       type="button"
-       variant="outline"
-       size="sm"
-       onClick={() => updateGlobalDisplayMode("showMeaning")}
-      >
-       Nghĩa bài: {globalDisplayMode.showMeaning ? "Bật" : "Tắt"}
-      </Button>
-      <Button
-       type="button"
-       variant="outline"
-       size="sm"
-       onClick={() => setIsSectionListVisible((value) => !value)}
-      >
-       {isSectionListVisible ? "Ẩn danh sách" : "Hiện danh sách"}
-      </Button>
-      <Badge>{sections.length} phần</Badge>
-     </div>
-    </div>
-
-    <div
-     className={cn(
-      "grid gap-3",
-      isSectionListVisible && "lg:grid-cols-[18rem_minmax(0,1fr)]",
-     )}
-    >
-     {isSectionListVisible && (
-      <div className="grid max-h-[32rem] content-start gap-2 overflow-y-auto pr-1">
-       {sections.map((section, index) => {
-        const SectionIcon = sectionIcons[section.type] ?? BookOpen;
-        return (
-         <button
-          key={section.id}
-          type="button"
-          onClick={() => setSelectedSectionId(section.id)}
-          className={cn(
-           "flex gap-3 rounded-xl border p-3 text-left transition-colors",
-           selectedSection.id === section.id
-            ? "border-primary bg-primary text-primary-foreground"
-            : "border-border-default bg-bg-primary hover:bg-bg-subtle",
-          )}
-         >
-          <SectionIcon className="mt-0.5 h-4 w-4 shrink-0" />
-          <span className="min-w-0">
-           <span className="line-clamp-2 text-sm font-black">
-            {index + 1}. {section.title}
-           </span>
-           {section.subtitle && (
-            <span className="mt-1 block text-xs font-bold opacity-75">
-             {section.subtitle}
-            </span>
-           )}
-          </span>
-         </button>
-        );
-       })}
-      </div>
-     )}
-
-     <section className="min-w-0 rounded-xl border border-border-default bg-bg-subtle p-4">
-      <div className="mb-4 flex flex-wrap items-start justify-between gap-3">
+   }
+   actions={
+    <>
+     <LessonTypographyControls
+      displayMode={globalDisplayMode}
+      onChange={updateGlobalTypography}
+     />
+     <Button
+      type="button"
+      variant="outline"
+      size="sm"
+      onClick={() => updateGlobalDisplayMode("showPinyin")}
+     >
+      Pinyin: {globalDisplayMode.showPinyin ? "Bật" : "Tắt"}
+     </Button>
+     <Button
+      type="button"
+      variant="outline"
+      size="sm"
+      onClick={() => updateGlobalDisplayMode("showMeaning")}
+     >
+      Nghĩa: {globalDisplayMode.showMeaning ? "Bật" : "Tắt"}
+     </Button>
+     <Badge>{sections.length} phần</Badge>
+    </>
+   }
+  >
+   <Card padding="lg" className="rounded-xl">
+    <section className="min-w-0">
+     <div className="mb-4 flex flex-wrap items-start justify-between gap-3">
        <div className="flex items-start gap-3">
         <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-accent-subtle text-accent-text">
          <Icon className="h-5 w-5" />
         </span>
         <div>
          <h3 className="text-lg font-black text-text-primary">
-          {selectedSection.title}
+          {selectedSection?.title ?? "Toàn bộ bài khóa"}
          </h3>
-         {selectedSection.subtitle && (
+         {(selectedSection?.subtitle || !selectedSection) && (
           <p className="text-sm font-semibold text-text-muted">
-           {selectedSection.subtitle}
+           {selectedSection?.subtitle ?? `${sections.length} đề mục`}
           </p>
          )}
         </div>
@@ -181,7 +158,11 @@ export function SourceLessonOverview({
         type="button"
         variant="outline"
         size="sm"
-        onClick={() => updateSectionDisplayMode("showPinyin")}
+        onClick={() =>
+         selectedSection
+          ? updateSectionDisplayMode("showPinyin")
+          : updateGlobalDisplayMode("showPinyin")
+        }
        >
         Pinyin phần: {selectedSectionDisplayMode.showPinyin ? "Bật" : "Tắt"}
        </Button>
@@ -189,21 +170,58 @@ export function SourceLessonOverview({
         type="button"
         variant="outline"
         size="sm"
-        onClick={() => updateSectionDisplayMode("showMeaning")}
+        onClick={() =>
+         selectedSection
+          ? updateSectionDisplayMode("showMeaning")
+          : updateGlobalDisplayMode("showMeaning")
+        }
        >
         Nghĩa phần: {selectedSectionDisplayMode.showMeaning ? "Bật" : "Tắt"}
        </Button>
       </div>
       </div>
-      <div className="max-h-[34rem] overflow-y-auto pr-2">
-       <BookSectionContent
-        section={selectedSection.section}
-        displayMode={selectedSectionDisplayMode}
-       />
+      <div className="max-h-[calc(100vh-14rem)] overflow-y-auto pr-2">
+       {selectedSection ? (
+        <BookSectionContent
+         section={selectedSection.section}
+         displayMode={selectedSectionDisplayMode}
+        />
+       ) : (
+        <div className="grid gap-4">
+         {sections.map((section) => {
+          const SectionIcon = sectionIcons[section.type] ?? BookOpen;
+          return (
+           <article
+            key={section.id}
+            className="rounded-xl border border-border-default bg-bg-subtle p-4"
+           >
+            <div className="mb-3 flex items-start gap-3">
+             <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-bg-primary text-primary">
+              <SectionIcon className="h-4 w-4" />
+             </span>
+             <div>
+              <h4 className="text-base font-black text-text-primary">
+               {section.title}
+              </h4>
+              {section.subtitle && (
+               <p className="text-sm font-semibold text-text-muted">
+                {section.subtitle}
+               </p>
+              )}
+             </div>
+            </div>
+            <BookSectionContent
+             section={section.section}
+             displayMode={globalDisplayMode}
+            />
+           </article>
+          );
+         })}
+        </div>
+       )}
       </div>
-     </section>
-    </div>
-   </div>
-  </Card>
+    </section>
+   </Card>
+  </LessonModuleFrame>
  );
 }

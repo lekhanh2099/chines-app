@@ -10,8 +10,10 @@
     "tags": [
       "hanyu_2_2",
       "lesson_15",
-      "partial_until_exercises",
-      "grammar_zhe"
+      "grammar_zhe",
+      "pdf_checked",
+      "exercises_verified",
+      "pinyin_checked"
     ],
     "sections": [
       {
@@ -38,7 +40,7 @@
                 "vi": "Xin hỏi, vừa rồi có một quý cô đi vào, anh/chị có thấy không?",
                 "id": "5bc5cead-21f5-4b69-8457-1830793084f6",
                 "order": 1,
-                "pinyin": "",
+                "pinyin": "Qǐngwèn, gāngcái jìnqù yí wèi nǚshì, nǐ kànjiàn méiyǒu?",
                 "audio_key": "",
                 "vocab_refs": [],
                 "grammar_refs": [
@@ -53,7 +55,7 @@
                 "vi": "Quý cô nào? Trông như thế nào?",
                 "id": "32240d19-9736-4970-a8ee-cc2ff820a4e2",
                 "order": 2,
-                "pinyin": "",
+                "pinyin": "Shénme nǚshì? Zhǎng de shénme yàng?",
                 "audio_key": "",
                 "vocab_refs": [],
                 "grammar_refs": [
@@ -68,7 +70,7 @@
                 "vi": "Cô ấy dáng cao cao, khoảng một mét bảy, tóc vàng, mắt to, đeo một cặp kính. Phần trên mặc một áo vest màu đỏ, bên dưới mặc một chiếc váy màu đen.",
                 "id": "e3404efe-2151-4299-93a0-6afe6e9f9bb0",
                 "order": 3,
-                "pinyin": "",
+                "pinyin": "Tā gèzi gāogāo de, dàgài yǒu yì mǐ qī zuǒyòu, huáng tóufa, dà yǎnjing, dàizhe yì fù yǎnjìngr. Shàngshēn chuānzhe yí jiàn hóngsè de xīfú, xiàbian chuānzhe yì tiáo hēisè de qúnzi.",
                 "audio_key": "",
                 "vocab_refs": [],
                 "grammar_refs": [
@@ -83,7 +85,7 @@
                 "vi": "Cô ấy làm nghề gì?",
                 "id": "3db2290a-3b04-44a5-bccf-cbe5fb8b7207",
                 "order": 4,
-                "pinyin": "",
+                "pinyin": "Shì gàn shénme de?",
                 "audio_key": "",
                 "vocab_refs": [],
                 "grammar_refs": [
@@ -98,7 +100,7 @@
                 "vi": "Là người dẫn chương trình của đài truyền hình.",
                 "id": "e0906c92-5b65-4ff5-85c8-e60165019eff",
                 "order": 5,
-                "pinyin": "",
+                "pinyin": "Shì diànshìtái de zhǔchírén.",
                 "audio_key": "",
                 "vocab_refs": [],
                 "grammar_refs": [
@@ -113,7 +115,7 @@
                 "vi": "Phía sau có phải còn có hai chàng trai đi theo, vác máy quay không?",
                 "id": "697e8c17-de5e-4230-9758-e5103a9fcc48",
                 "order": 6,
-                "pinyin": "",
+                "pinyin": "Hòubian shì bú shì hái gēnzhe liǎng ge xiǎohuǒzi, kángzhe shèxiàngjī?",
                 "audio_key": "",
                 "vocab_refs": [],
                 "grammar_refs": [
@@ -128,7 +130,7 @@
                 "vi": "Đúng rồi.",
                 "id": "85a6a6d4-4fe7-434d-865f-81501ecf7f4b",
                 "order": 7,
-                "pinyin": "",
+                "pinyin": "Duì.",
                 "audio_key": "",
                 "vocab_refs": [],
                 "grammar_refs": [
@@ -140,10 +142,10 @@
               {
                 "speaker": "服务员",
                 "zh": "会议厅的门开着呢，你们进去找吧。",
-                "vi": "Cửa hội trường đang mở đấy, các bạn vào tìm đi.",
+                "vi": "Cửa phòng hội nghị đang mở đấy, các bạn vào tìm đi.",
                 "id": "fad45bf0-e51a-4400-8b0b-fc3c23e07e11",
                 "order": 8,
-                "pinyin": "",
+                "pinyin": "Huìyìtīng de mén kāizhe ne, nǐmen jìnqu zhǎo ba.",
                 "audio_key": "",
                 "vocab_refs": [],
                 "grammar_refs": [
@@ -158,7 +160,7 @@
                 "vi": "Bên trong đang họp à?",
                 "id": "895f5704-916e-4ec1-888f-a25e9f14643b",
                 "order": 9,
-                "pinyin": "",
+                "pinyin": "Lǐbian zhèng kāizhe huì ne ma?",
                 "audio_key": "",
                 "vocab_refs": [],
                 "grammar_refs": [
@@ -173,7 +175,7 @@
                 "vi": "Không. Các bạn nhìn xem, có phải là người đang cầm micro trong tay, nói trước máy quay không?",
                 "id": "ee57387d-1b7b-4282-80ba-5470ca982140",
                 "order": 10,
-                "pinyin": "",
+                "pinyin": "Méiyǒu. Nǐmen kàn, shì bú shì shǒu lǐ názhe màikèfēng, duìzhe shèxiàngjī jiǎnghuà de nà wèi?",
                 "audio_key": "",
                 "vocab_refs": [],
                 "grammar_refs": [
@@ -188,7 +190,7 @@
                 "vi": "Đúng, chính là cô ấy. Họ đang đợi chúng tôi đấy.",
                 "id": "ce649381-34e2-42eb-8384-b70fe6d0ca45",
                 "order": 11,
-                "pinyin": "",
+                "pinyin": "Duì, jiù shì tā. Tāmen zhèng děngzhe wǒmen ne.",
                 "audio_key": "",
                 "vocab_refs": [],
                 "grammar_refs": [
@@ -203,7 +205,7 @@
                 "vi": "Các bạn vào đi.",
                 "id": "913797d7-07ef-462d-978d-f151a164d2dc",
                 "order": 12,
-                "pinyin": "",
+                "pinyin": "Nǐmen jìnqu ba.",
                 "audio_key": "",
                 "vocab_refs": [],
                 "grammar_refs": [
@@ -218,7 +220,7 @@
                 "vi": "Cảm ơn nhé!",
                 "id": "0a444ce3-3e40-40a0-aaea-fa6943fbbbb7",
                 "order": 13,
-                "pinyin": "",
+                "pinyin": "Xièxie la!",
                 "audio_key": "",
                 "vocab_refs": [],
                 "grammar_refs": [
@@ -233,7 +235,7 @@
                 "vi": "Không có gì.",
                 "id": "9fef5c28-00b3-4eb9-8716-b9f33e606079",
                 "order": 14,
-                "pinyin": "",
+                "pinyin": "Bú kèqi.",
                 "audio_key": "",
                 "vocab_refs": [],
                 "grammar_refs": [
@@ -261,7 +263,7 @@
                 "vi": "Hôm qua bạn đi đâu vậy?",
                 "id": "3c27c086-abbc-4087-b6e9-13d418c36c9d",
                 "order": 1,
-                "pinyin": "",
+                "pinyin": "Nǐ zuótiān qù nǎr le?",
                 "audio_key": "",
                 "vocab_refs": [],
                 "grammar_refs": [
@@ -276,7 +278,7 @@
                 "vi": "Trương Đông đưa tôi đi tham dự một đám cưới của người Trung Quốc.",
                 "id": "a2868604-5679-4808-917d-2d87fdd4f798",
                 "order": 2,
-                "pinyin": "",
+                "pinyin": "Zhāng Dōng dài wǒ qù cānjiā le yí ge Zhōngguórén de hūnlǐ.",
                 "audio_key": "",
                 "vocab_refs": [],
                 "grammar_refs": [
@@ -291,7 +293,7 @@
                 "vi": "Thế nào? Nghe nói đám cưới của người Trung Quốc rất náo nhiệt.",
                 "id": "87328fc8-0572-4efa-9beb-80daa037b578",
                 "order": 3,
-                "pinyin": "",
+                "pinyin": "Zěnmeyàng? Tīngshuō Zhōngguórén de hūnlǐ hěn rènao.",
                 "audio_key": "",
                 "vocab_refs": [],
                 "grammar_refs": [
@@ -303,10 +305,10 @@
               {
                 "speaker": "麦克",
                 "zh": "是！我是第一次参加这样的婚礼。屋子里挂着大红灯笼，墙上贴着一个很大的红双喜字。桌子上摆着很多酒和菜。新娘长得很漂亮，穿着一件红棉袄，头上还戴着红花。新郎是一个帅小伙儿，穿着一身深蓝色的西服，系着红领带。他们笑着对我们说：“欢迎！欢迎！”新娘热情地请客人吃糖，新郎忙着给客人倒喜酒。孩子们不停地说着、笑着，热热闹闹的，气氛非常好。",
-                "vi": "Đúng vậy! Đây là lần đầu tiên tôi tham dự một đám cưới như thế. Trong phòng treo đèn lồng đỏ lớn, trên tường dán một chữ song hỷ đỏ rất to. Trên bàn bày rất nhiều rượu và món ăn. Cô dâu trông rất xinh, mặc một chiếc áo bông đỏ, trên đầu còn cài hoa đỏ. Chú rể là một chàng trai rất đẹp trai, mặc một bộ vest màu xanh đậm, thắt cà vạt đỏ. Họ cười và nói với chúng tôi: “Hoan nghênh! Hoan nghênh!” Cô dâu nhiệt tình mời khách ăn kẹo, chú rể bận rót rượu mừng cho khách. Bọn trẻ không ngừng nói cười, rất náo nhiệt, bầu không khí vô cùng vui vẻ.",
+                "vi": "Đúng vậy! Đây là lần đầu tiên tôi tham dự một đám cưới như thế. Trong phòng treo đèn lồng đỏ lớn, trên tường dán một chữ song hỷ đỏ rất to. Trên bàn bày rất nhiều rượu và món ăn. Cô dâu trông rất xinh, mặc một chiếc áo bông đỏ, trên đầu còn cài hoa đỏ. Chú rể là một chàng trai rất đẹp trai, mặc một bộ âu phục màu xanh đậm, thắt cà vạt đỏ. Họ cười nói với chúng tôi: “Hoan nghênh! Hoan nghênh!” Cô dâu nhiệt tình mời khách ăn kẹo, chú rể bận rót rượu mừng cho khách. Bọn trẻ không ngừng nói cười, rất náo nhiệt, bầu không khí vô cùng tốt.",
                 "id": "9e143bd6-8273-4480-beea-b87921f0d67e",
                 "order": 4,
-                "pinyin": "",
+                "pinyin": "Shì! Wǒ shì dì yī cì cānjiā zhèyàng de hūnlǐ. Wūzi lǐ guàzhe dà hóng dēnglong, qiáng shàng tiēzhe yí ge hěn dà de hóng shuāngxǐ zì. Zhuōzi shàng bǎizhe hěn duō jiǔ hé cài. Xīnniáng zhǎng de hěn piàoliang, chuānzhe yí jiàn hóng mián’ǎo, tóu shàng hái dàizhe hóng huā. Xīnláng shì yí ge shuài xiǎohuǒr, chuānzhe yì shēn shēnlánsè de xīfú, jìzhe hóng lǐngdài. Tāmen xiàozhe duì wǒmen shuō: “Huānyíng! Huānyíng!” Xīnniáng rèqíng de qǐng kèrén chī táng, xīnláng mángzhe gěi kèrén dào xǐjiǔ. Háizimen bùtíng de shuōzhe, xiàozhe, rèrènaonao de, qìfēn fēicháng hǎo.",
                 "audio_key": "",
                 "vocab_refs": [],
                 "grammar_refs": [
@@ -321,7 +323,7 @@
                 "vi": "“Rượu hỷ” là rượu gì?",
                 "id": "f58c9b6a-b3fa-489c-8ef6-7980b04b87a8",
                 "order": 5,
-                "pinyin": "",
+                "pinyin": "“Xǐjiǔ” shì shénme jiǔ?",
                 "audio_key": "",
                 "vocab_refs": [],
                 "grammar_refs": [
@@ -336,7 +338,7 @@
                 "vi": "Rượu uống khi kết hôn, người Trung Quốc gọi là rượu hỷ; kẹo ăn trong dịp đó gọi là kẹo hỷ. Vì vậy, nếu người Trung Quốc hỏi “khi nào được ăn kẹo hỷ của bạn?”, tức là đang hỏi khi nào bạn kết hôn.",
                 "id": "58e383aa-03fb-4168-b559-8bebcf38414c",
                 "order": 6,
-                "pinyin": "",
+                "pinyin": "Jiéhūn shí hē de jiǔ Zhōngguórén jiào xǐjiǔ, chī de táng jiào xǐtáng. Suǒyǐ, Zhōngguórén yào wèn “shénme shíhou chī nǐ de xǐtáng a”, jiù shì wèn nǐ shénme shíhou jiéhūn.",
                 "audio_key": "",
                 "vocab_refs": [],
                 "grammar_refs": [
@@ -351,7 +353,7 @@
                 "vi": "Thật vậy à?",
                 "id": "40414355-f8ce-4ba8-8778-08c6147e478c",
                 "order": 7,
-                "pinyin": "",
+                "pinyin": "Shì ma?",
                 "audio_key": "",
                 "vocab_refs": [],
                 "grammar_refs": [
@@ -383,7 +385,7 @@
             "pinyin": "nǚshì",
             "meaning_vi": "quý cô; bà; chị",
             "meaning_en": "",
-            "pos": "noun",
+            "pos": "Danh từ",
             "tags": [
               "main_vocab"
             ],
@@ -400,7 +402,18 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false
+            "check_needed": false,
+            "pos_detail": {
+              "vi": "Danh từ",
+              "cn": "名词",
+              "normalized": "noun",
+              "schema_compatible_pos": "noun",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "Cách xưng hô lịch sự dành cho phụ nữ trưởng thành.",
+              "notes": []
+            }
           },
           {
             "id": "8c18cf3c-e9dc-42e1-8faf-eb26799cabab",
@@ -410,7 +423,7 @@
             "pinyin": "fúwùyuán",
             "meaning_vi": "nhân viên phục vụ; nhân viên dịch vụ",
             "meaning_en": "",
-            "pos": "noun",
+            "pos": "Danh từ",
             "tags": [
               "main_vocab"
             ],
@@ -427,7 +440,18 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false
+            "check_needed": false,
+            "pos_detail": {
+              "vi": "Danh từ",
+              "cn": "名词",
+              "normalized": "noun",
+              "schema_compatible_pos": "noun",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "Chỉ người làm công việc phục vụ/dịch vụ.",
+              "notes": []
+            }
           },
           {
             "id": "1fbd69b7-603a-44ea-8d57-10cd4def9ced",
@@ -437,7 +461,7 @@
             "pinyin": "zhǎng",
             "meaning_vi": "trông; có vẻ; mọc; lớn lên",
             "meaning_en": "",
-            "pos": "verb",
+            "pos": "Động từ",
             "tags": [
               "main_vocab"
             ],
@@ -454,7 +478,20 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false
+            "check_needed": false,
+            "pos_detail": {
+              "vi": "Động từ",
+              "cn": "动词",
+              "normalized": "verb",
+              "schema_compatible_pos": "verb",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "Trong bài đọc zhǎng, dùng trong 长得什么样 / 长得很帅; không phải cháng = dài.",
+              "notes": [
+                "长 là chữ đa âm: zhǎng trong 长得, cháng trong 很长."
+              ]
+            }
           },
           {
             "id": "3dc505f1-bc0e-4a96-b448-17fed89fdc60",
@@ -464,7 +501,7 @@
             "pinyin": "yàngzi",
             "meaning_vi": "dáng vẻ; kiểu dáng; bộ dạng",
             "meaning_en": "",
-            "pos": "noun",
+            "pos": "Danh từ",
             "tags": [
               "main_vocab",
               "has_variant_forms"
@@ -485,7 +522,18 @@
             "check_needed": false,
             "variant_forms": [
               "样"
-            ]
+            ],
+            "pos_detail": {
+              "vi": "Danh từ",
+              "cn": "名词",
+              "normalized": "noun",
+              "schema_compatible_pos": "noun",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "Chỉ dáng vẻ, bộ dạng, kiểu dáng.",
+              "notes": []
+            }
           },
           {
             "id": "188412d4-4c23-4d60-b7b2-21f3490199e7",
@@ -495,7 +543,7 @@
             "pinyin": "gèzi",
             "meaning_vi": "vóc dáng; chiều cao",
             "meaning_en": "",
-            "pos": "noun",
+            "pos": "Danh từ",
             "tags": [
               "main_vocab"
             ],
@@ -512,7 +560,18 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false
+            "check_needed": false,
+            "pos_detail": {
+              "vi": "Danh từ",
+              "cn": "名词",
+              "normalized": "noun",
+              "schema_compatible_pos": "noun",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "Chỉ vóc dáng/chiều cao của người, thường dùng trong 个子高/矮.",
+              "notes": []
+            }
           },
           {
             "id": "5ea44727-d97c-467b-b1b8-babd195df50d",
@@ -522,7 +581,7 @@
             "pinyin": "zuǒyòu",
             "meaning_vi": "khoảng; chừng; trên dưới",
             "meaning_en": "",
-            "pos": "adverb",
+            "pos": "Từ chỉ ước lượng",
             "tags": [
               "main_vocab"
             ],
@@ -539,7 +598,18 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false
+            "check_needed": false,
+            "pos_detail": {
+              "vi": "Từ chỉ ước lượng",
+              "cn": "约数词 / 方位词",
+              "normalized": "adverb",
+              "schema_compatible_pos": "adverb",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "Đứng sau số lượng để chỉ khoảng chừng, ví dụ 一米七左右.",
+              "notes": []
+            }
           },
           {
             "id": "54613016-834a-4fc3-9912-2357a6d27058",
@@ -549,7 +619,7 @@
             "pinyin": "dài",
             "meaning_vi": "đeo, đội, mang phụ kiện",
             "meaning_en": "",
-            "pos": "verb",
+            "pos": "Động từ",
             "tags": [
               "main_vocab",
               "collocation_verb"
@@ -567,7 +637,18 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false
+            "check_needed": false,
+            "pos_detail": {
+              "vi": "Động từ",
+              "cn": "动词",
+              "normalized": "verb",
+              "schema_compatible_pos": "verb",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "Dùng với vật đeo/đội trên cơ thể: 戴眼镜、戴帽子、戴口罩.",
+              "notes": []
+            }
           },
           {
             "id": "0da97406-c3ac-4fcb-a51c-398a59c3fbae",
@@ -577,7 +658,7 @@
             "pinyin": "zhe",
             "meaning_vi": "trợ từ biểu thị hành động/trạng thái đang duy trì",
             "meaning_en": "",
-            "pos": "particle",
+            "pos": "Trợ từ",
             "tags": [
               "main_vocab",
               "grammar_particle"
@@ -595,7 +676,18 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false
+            "check_needed": false,
+            "pos_detail": {
+              "vi": "Trợ từ",
+              "cn": "动态助词",
+              "normalized": "particle",
+              "schema_compatible_pos": "particle",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "Đứng sau động từ để biểu thị trạng thái/hành động đang duy trì, trọng tâm ngữ pháp bài 15.",
+              "notes": []
+            }
           },
           {
             "id": "54b36889-82be-485b-8342-fb8aab572065",
@@ -605,7 +697,7 @@
             "pinyin": "fù",
             "meaning_vi": "lượng từ cho kính/găng tay...; đôi/cặp/bộ",
             "meaning_en": "",
-            "pos": "measure_word",
+            "pos": "Lượng từ",
             "tags": [
               "main_vocab"
             ],
@@ -622,7 +714,18 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false
+            "check_needed": false,
+            "pos_detail": {
+              "vi": "Lượng từ",
+              "cn": "量词",
+              "normalized": "measure_word",
+              "schema_compatible_pos": "measure_word",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "Dùng cho kính/găng tay/bộ phận hoặc vẻ mặt: 一副眼镜、一副样子.",
+              "notes": []
+            }
           },
           {
             "id": "1354b1a3-93cc-4505-8d7f-c5550a1d6ae9",
@@ -632,7 +735,7 @@
             "pinyin": "chuān",
             "meaning_vi": "mặc; đi giày/tất",
             "meaning_en": "",
-            "pos": "verb",
+            "pos": "Động từ",
             "tags": [
               "main_vocab",
               "collocation_verb"
@@ -650,7 +753,18 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false
+            "check_needed": false,
+            "pos_detail": {
+              "vi": "Động từ",
+              "cn": "动词",
+              "normalized": "verb",
+              "schema_compatible_pos": "verb",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "Dùng với quần áo, giày, tất: 穿西服、穿裙子、穿鞋.",
+              "notes": []
+            }
           },
           {
             "id": "f0684cb3-4577-4e6c-9f22-7d97c89692b3",
@@ -660,7 +774,7 @@
             "pinyin": "xīfú",
             "meaning_vi": "com-lê; âu phục; vest",
             "meaning_en": "",
-            "pos": "noun",
+            "pos": "Danh từ",
             "tags": [
               "main_vocab"
             ],
@@ -677,7 +791,18 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false
+            "check_needed": false,
+            "pos_detail": {
+              "vi": "Danh từ",
+              "cn": "名词",
+              "normalized": "noun",
+              "schema_compatible_pos": "noun",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "Chỉ âu phục/vest; khẩu ngữ hiện đại thường gặp 西装 hơn.",
+              "notes": []
+            }
           },
           {
             "id": "d5b362a7-c8f6-4f25-b2b5-0f1749c8afbb",
@@ -687,7 +812,7 @@
             "pinyin": "qúnzi",
             "meaning_vi": "váy",
             "meaning_en": "",
-            "pos": "noun",
+            "pos": "Danh từ",
             "tags": [
               "main_vocab"
             ],
@@ -704,7 +829,18 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false
+            "check_needed": false,
+            "pos_detail": {
+              "vi": "Danh từ",
+              "cn": "名词",
+              "normalized": "noun",
+              "schema_compatible_pos": "noun",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "Chỉ váy; thường dùng lượng từ 条.",
+              "notes": []
+            }
           },
           {
             "id": "7eccd5e8-dac0-4f36-be2e-abcc0a2bdfcd",
@@ -714,7 +850,7 @@
             "pinyin": "gàn",
             "meaning_vi": "làm; làm việc",
             "meaning_en": "",
-            "pos": "verb",
+            "pos": "Động từ",
             "tags": [
               "main_vocab"
             ],
@@ -731,7 +867,18 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false
+            "check_needed": false,
+            "pos_detail": {
+              "vi": "Động từ",
+              "cn": "动词",
+              "normalized": "verb",
+              "schema_compatible_pos": "verb",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "Trong bài đọc gàn, nghĩa là làm/làm việc; phân biệt với gān = khô.",
+              "notes": []
+            }
           },
           {
             "id": "91fa9f81-e5ef-4c4a-b29c-c4b6daa02196",
@@ -741,7 +888,7 @@
             "pinyin": "zhǔchírén",
             "meaning_vi": "người dẫn chương trình; người chủ trì",
             "meaning_en": "",
-            "pos": "noun",
+            "pos": "Danh từ",
             "tags": [
               "main_vocab"
             ],
@@ -758,7 +905,18 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false
+            "check_needed": false,
+            "pos_detail": {
+              "vi": "Danh từ",
+              "cn": "名词",
+              "normalized": "noun",
+              "schema_compatible_pos": "noun",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "Chỉ người dẫn chương trình/người chủ trì.",
+              "notes": []
+            }
           },
           {
             "id": "8a5b1d09-23a6-4182-96e6-9bf4d761a1e1",
@@ -768,7 +926,7 @@
             "pinyin": "zhǔchí",
             "meaning_vi": "chủ trì; dẫn chương trình",
             "meaning_en": "",
-            "pos": "verb",
+            "pos": "Động từ",
             "tags": [
               "main_vocab"
             ],
@@ -785,7 +943,18 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false
+            "check_needed": false,
+            "pos_detail": {
+              "vi": "Động từ",
+              "cn": "动词",
+              "normalized": "verb",
+              "schema_compatible_pos": "verb",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "Chủ trì/dẫn/điều hành một hoạt động: 主持会议、主持婚礼.",
+              "notes": []
+            }
           },
           {
             "id": "be7a835d-ff8f-4a86-9fd8-27c5f1093f0c",
@@ -795,7 +964,7 @@
             "pinyin": "xiǎohuǒzi",
             "meaning_vi": "chàng trai; thanh niên trẻ",
             "meaning_en": "",
-            "pos": "noun",
+            "pos": "Danh từ",
             "tags": [
               "main_vocab",
               "has_variant_forms"
@@ -816,7 +985,18 @@
             "check_needed": false,
             "variant_forms": [
               "小伙儿"
-            ]
+            ],
+            "pos_detail": {
+              "vi": "Danh từ",
+              "cn": "名词",
+              "normalized": "noun",
+              "schema_compatible_pos": "noun",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "Chỉ chàng trai/thanh niên nam, sắc thái khẩu ngữ thân mật.",
+              "notes": []
+            }
           },
           {
             "id": "7a89dc80-d79d-4c2f-988c-d0f54e240d19",
@@ -826,7 +1006,7 @@
             "pinyin": "káng",
             "meaning_vi": "vác trên vai",
             "meaning_en": "",
-            "pos": "verb",
+            "pos": "Động từ",
             "tags": [
               "main_vocab",
               "collocation_verb"
@@ -844,7 +1024,18 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false
+            "check_needed": false,
+            "pos_detail": {
+              "vi": "Động từ",
+              "cn": "动词",
+              "normalized": "verb",
+              "schema_compatible_pos": "verb",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "Vác trên vai, thường với vật nặng/cồng kềnh: 扛摄像机.",
+              "notes": []
+            }
           },
           {
             "id": "ff3e1818-66a9-4532-880b-02c9cacb0e5b",
@@ -854,7 +1045,7 @@
             "pinyin": "shèxiàngjī",
             "meaning_vi": "máy quay phim; máy quay video",
             "meaning_en": "",
-            "pos": "noun",
+            "pos": "Danh từ",
             "tags": [
               "main_vocab"
             ],
@@ -871,7 +1062,18 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false
+            "check_needed": false,
+            "pos_detail": {
+              "vi": "Danh từ",
+              "cn": "名词",
+              "normalized": "noun",
+              "schema_compatible_pos": "noun",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "Chỉ máy quay phim/máy ghi hình; lượng từ thường dùng 台.",
+              "notes": []
+            }
           },
           {
             "id": "0125bdae-fe4e-48fb-8264-145e95c75933",
@@ -881,7 +1083,7 @@
             "pinyin": "huìyìtīng",
             "meaning_vi": "phòng hội nghị; hội trường họp",
             "meaning_en": "",
-            "pos": "noun",
+            "pos": "Danh từ",
             "tags": [
               "main_vocab"
             ],
@@ -898,7 +1100,18 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false
+            "check_needed": false,
+            "pos_detail": {
+              "vi": "Danh từ",
+              "cn": "名词",
+              "normalized": "noun",
+              "schema_compatible_pos": "noun",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "Chỉ phòng hội nghị/hội trường họp.",
+              "notes": []
+            }
           },
           {
             "id": "689eb64b-5d4f-469f-9afa-74017d399614",
@@ -908,7 +1121,7 @@
             "pinyin": "tīng",
             "meaning_vi": "sảnh; phòng lớn; hội trường",
             "meaning_en": "",
-            "pos": "noun",
+            "pos": "Danh từ",
             "tags": [
               "main_vocab"
             ],
@@ -925,7 +1138,18 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false
+            "check_needed": false,
+            "pos_detail": {
+              "vi": "Danh từ",
+              "cn": "名词",
+              "normalized": "noun",
+              "schema_compatible_pos": "noun",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "Chỉ sảnh/phòng lớn/hội trường, là yếu tố trong 会议厅.",
+              "notes": []
+            }
           },
           {
             "id": "d45d5488-9293-41ae-9deb-1e5b51cee446",
@@ -935,7 +1159,7 @@
             "pinyin": "màikèfēng",
             "meaning_vi": "micro",
             "meaning_en": "",
-            "pos": "noun",
+            "pos": "Danh từ",
             "tags": [
               "main_vocab"
             ],
@@ -952,17 +1176,28 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false
+            "check_needed": false,
+            "pos_detail": {
+              "vi": "Danh từ",
+              "cn": "名词 / 音译词",
+              "normalized": "noun",
+              "schema_compatible_pos": "noun",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "Từ phiên âm chỉ micro; không suy nghĩa từng chữ.",
+              "notes": []
+            }
           },
           {
             "id": "c99a633b-27a2-429b-a139-44113a84c189",
             "type": "vocabulary_item",
             "order": 22,
             "hanzi": "讲话",
-            "pinyin": "jiǎng huà",
+            "pinyin": "jiǎnghuà",
             "meaning_vi": "nói chuyện; phát biểu",
             "meaning_en": "",
-            "pos": "verb_phrase",
+            "pos": "Động từ li hợp",
             "tags": [
               "main_vocab"
             ],
@@ -979,7 +1214,18 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false
+            "check_needed": false,
+            "pos_detail": {
+              "vi": "Động từ li hợp",
+              "cn": "动宾式离合词",
+              "normalized": "verb_phrase",
+              "schema_compatible_pos": "verb_phrase",
+              "is_separable_verb": true,
+              "separable_type": "động-tân / 离合词",
+              "structure_vi": "động từ 讲 + tân ngữ 话",
+              "usage_note_vi": "Có thể nói 讲了几句话; trong bài dùng nghĩa nói chuyện/phát biểu.",
+              "notes": []
+            }
           },
           {
             "id": "79358c6f-3427-4c28-98f3-7ef98c7033c3",
@@ -989,7 +1235,7 @@
             "pinyin": "hūnlǐ",
             "meaning_vi": "lễ cưới; hôn lễ",
             "meaning_en": "",
-            "pos": "noun",
+            "pos": "Danh từ",
             "tags": [
               "main_vocab"
             ],
@@ -1006,7 +1252,18 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false
+            "check_needed": false,
+            "pos_detail": {
+              "vi": "Danh từ",
+              "cn": "名词",
+              "normalized": "noun",
+              "schema_compatible_pos": "noun",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "Chỉ lễ cưới/hôn lễ.",
+              "notes": []
+            }
           },
           {
             "id": "dc0f8e06-a359-4907-a8d8-fc9b02260590",
@@ -1016,7 +1273,7 @@
             "pinyin": "rènao",
             "meaning_vi": "náo nhiệt; đông vui",
             "meaning_en": "",
-            "pos": "adjective",
+            "pos": "Tính từ",
             "tags": [
               "main_vocab"
             ],
@@ -1033,7 +1290,18 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false
+            "check_needed": false,
+            "pos_detail": {
+              "vi": "Tính từ",
+              "cn": "形容词",
+              "normalized": "adjective",
+              "schema_compatible_pos": "adjective",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "Miêu tả không khí đông vui/náo nhiệt; không phải 热评.",
+              "notes": []
+            }
           },
           {
             "id": "c43cedbf-7024-4ec1-922f-e75119114baf",
@@ -1043,7 +1311,7 @@
             "pinyin": "guà",
             "meaning_vi": "treo; mắc",
             "meaning_en": "",
-            "pos": "verb",
+            "pos": "Động từ",
             "tags": [
               "main_vocab",
               "collocation_verb"
@@ -1061,7 +1329,18 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false
+            "check_needed": false,
+            "pos_detail": {
+              "vi": "Động từ",
+              "cn": "动词",
+              "normalized": "verb",
+              "schema_compatible_pos": "verb",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "Treo/móc vật lên: 挂灯笼、挂在墙上.",
+              "notes": []
+            }
           },
           {
             "id": "d9991c79-3454-4247-bf18-f14f43b4a24a",
@@ -1071,7 +1350,7 @@
             "pinyin": "dēnglong",
             "meaning_vi": "đèn lồng",
             "meaning_en": "",
-            "pos": "noun",
+            "pos": "Danh từ",
             "tags": [
               "main_vocab"
             ],
@@ -1088,7 +1367,18 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false
+            "check_needed": false,
+            "pos_detail": {
+              "vi": "Danh từ",
+              "cn": "名词",
+              "normalized": "noun",
+              "schema_compatible_pos": "noun",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "Chỉ đèn lồng; trong Putonghua thường đọc 笼 nhẹ trong 灯笼.",
+              "notes": []
+            }
           },
           {
             "id": "55cd807c-eec7-412d-99db-f4e6508b170f",
@@ -1098,7 +1388,7 @@
             "pinyin": "qiáng",
             "meaning_vi": "tường",
             "meaning_en": "",
-            "pos": "noun",
+            "pos": "Danh từ",
             "tags": [
               "main_vocab"
             ],
@@ -1115,7 +1405,18 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false
+            "check_needed": false,
+            "pos_detail": {
+              "vi": "Danh từ",
+              "cn": "名词",
+              "normalized": "noun",
+              "schema_compatible_pos": "noun",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "Chỉ tường; thường đi với 墙上.",
+              "notes": []
+            }
           },
           {
             "id": "085e60d5-dd1c-4585-ac6b-0f1db0ded936",
@@ -1125,7 +1426,7 @@
             "pinyin": "shuāng",
             "meaning_vi": "đôi; kép; song",
             "meaning_en": "",
-            "pos": "adjective",
+            "pos": "Tính từ - lượng từ",
             "tags": [
               "main_vocab"
             ],
@@ -1142,7 +1443,18 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false
+            "check_needed": false,
+            "pos_detail": {
+              "vi": "Tính từ - lượng từ",
+              "cn": "形容词 / 量词 / 语素",
+              "normalized": "measure_word",
+              "schema_compatible_pos": "measure_word",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "Nghĩa đôi/kép/song; trong bài liên quan 双喜, cũng dùng làm lượng từ như 一双鞋.",
+              "notes": []
+            }
           },
           {
             "id": "ba7ff0f9-b633-4516-ab3d-22b96046a1cf",
@@ -1152,7 +1464,7 @@
             "pinyin": "xǐ",
             "meaning_vi": "vui mừng; hỷ; may mắn, vui vẻ",
             "meaning_en": "",
-            "pos": "adjective",
+            "pos": "Hình vị - tính từ",
             "tags": [
               "main_vocab"
             ],
@@ -1169,7 +1481,18 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false
+            "check_needed": false,
+            "pos_detail": {
+              "vi": "Hình vị - tính từ",
+              "cn": "语素 / 形容词",
+              "normalized": "morpheme",
+              "schema_compatible_pos": "adjective",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "Trong bài chủ yếu xuất hiện trong 双喜/喜字, nghĩa hỷ/vui mừng; ít dùng độc lập trong khẩu ngữ hiện đại.",
+              "notes": []
+            }
           },
           {
             "id": "2185ee67-885d-4ffb-83e2-e97be4070796",
@@ -1179,7 +1502,7 @@
             "pinyin": "bǎi",
             "meaning_vi": "bày; đặt; sắp xếp",
             "meaning_en": "",
-            "pos": "verb",
+            "pos": "Động từ",
             "tags": [
               "main_vocab",
               "collocation_verb"
@@ -1197,7 +1520,18 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false
+            "check_needed": false,
+            "pos_detail": {
+              "vi": "Động từ",
+              "cn": "动词",
+              "normalized": "verb",
+              "schema_compatible_pos": "verb",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "Bày/đặt/xếp đồ vật vào vị trí: 摆椅子、摆花.",
+              "notes": []
+            }
           },
           {
             "id": "092a8c16-3739-4685-a4c0-39365071bd48",
@@ -1207,7 +1541,7 @@
             "pinyin": "xīnniáng",
             "meaning_vi": "cô dâu",
             "meaning_en": "",
-            "pos": "noun",
+            "pos": "Danh từ",
             "tags": [
               "main_vocab"
             ],
@@ -1224,17 +1558,28 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false
+            "check_needed": false,
+            "pos_detail": {
+              "vi": "Danh từ",
+              "cn": "名词",
+              "normalized": "noun",
+              "schema_compatible_pos": "noun",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "Chỉ cô dâu.",
+              "notes": []
+            }
           },
           {
             "id": "22e66ee9-565e-4670-b2ac-4d5a9b500b38",
             "type": "vocabulary_item",
             "order": 32,
             "hanzi": "棉袄",
-            "pinyin": "mián’ǎo",
+            "pinyin": "mián'ǎo",
             "meaning_vi": "áo bông; áo khoác bông",
             "meaning_en": "",
-            "pos": "noun",
+            "pos": "Danh từ",
             "tags": [
               "main_vocab"
             ],
@@ -1251,7 +1596,18 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false
+            "check_needed": false,
+            "pos_detail": {
+              "vi": "Danh từ",
+              "cn": "名词",
+              "normalized": "noun",
+              "schema_compatible_pos": "noun",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "Chỉ áo bông/áo khoác bông; từ đời sống, hơi truyền thống hơn áo khoác hiện đại.",
+              "notes": []
+            }
           },
           {
             "id": "275b46f4-3166-48b7-9766-58384178d1be",
@@ -1261,7 +1617,7 @@
             "pinyin": "xīnláng",
             "meaning_vi": "chú rể",
             "meaning_en": "",
-            "pos": "noun",
+            "pos": "Danh từ",
             "tags": [
               "main_vocab"
             ],
@@ -1278,7 +1634,18 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false
+            "check_needed": false,
+            "pos_detail": {
+              "vi": "Danh từ",
+              "cn": "名词",
+              "normalized": "noun",
+              "schema_compatible_pos": "noun",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "Chỉ chú rể.",
+              "notes": []
+            }
           },
           {
             "id": "1190511f-5970-4304-8f84-d7201b287aeb",
@@ -1288,7 +1655,7 @@
             "pinyin": "shuài",
             "meaning_vi": "đẹp trai; bảnh",
             "meaning_en": "",
-            "pos": "adjective",
+            "pos": "Tính từ",
             "tags": [
               "main_vocab"
             ],
@@ -1305,7 +1672,18 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false
+            "check_needed": false,
+            "pos_detail": {
+              "vi": "Tính từ",
+              "cn": "形容词",
+              "normalized": "adjective",
+              "schema_compatible_pos": "adjective",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "Khen đẹp trai/phong độ, thường dùng cho nam hoặc phong cách/hành động ngầu.",
+              "notes": []
+            }
           },
           {
             "id": "d42d3d90-443d-45da-bed7-987b50034e92",
@@ -1315,7 +1693,7 @@
             "pinyin": "jì",
             "meaning_vi": "thắt; buộc; cài",
             "meaning_en": "",
-            "pos": "verb",
+            "pos": "Động từ",
             "tags": [
               "main_vocab",
               "collocation_verb"
@@ -1333,7 +1711,18 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false
+            "check_needed": false,
+            "pos_detail": {
+              "vi": "Động từ",
+              "cn": "动词",
+              "normalized": "verb",
+              "schema_compatible_pos": "verb",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "Trong bài đọc jì, nghĩa là thắt/buộc/cài: 系领带、系安全带; không đọc xì ở nghĩa này.",
+              "notes": []
+            }
           },
           {
             "id": "cfb712c9-c4ca-4314-b6b2-696b40ace25e",
@@ -1343,7 +1732,7 @@
             "pinyin": "lǐngdài",
             "meaning_vi": "cà vạt",
             "meaning_en": "",
-            "pos": "noun",
+            "pos": "Danh từ",
             "tags": [
               "main_vocab"
             ],
@@ -1360,7 +1749,18 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false
+            "check_needed": false,
+            "pos_detail": {
+              "vi": "Danh từ",
+              "cn": "名词",
+              "normalized": "noun",
+              "schema_compatible_pos": "noun",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "Chỉ cà vạt; động từ đi kèm thường là 系/打, không phải 穿.",
+              "notes": []
+            }
           },
           {
             "id": "6059829f-ae21-43cf-ac0c-05e19639ec43",
@@ -1370,7 +1770,7 @@
             "pinyin": "rèqíng",
             "meaning_vi": "nhiệt tình; nồng hậu",
             "meaning_en": "",
-            "pos": "adjective",
+            "pos": "Tính từ - danh từ",
             "tags": [
               "main_vocab"
             ],
@@ -1387,7 +1787,18 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false
+            "check_needed": false,
+            "pos_detail": {
+              "vi": "Tính từ - danh từ",
+              "cn": "形容词 / 名词",
+              "normalized": "adjective",
+              "schema_compatible_pos": "adjective",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "Có thể là tính từ 'nhiệt tình/nồng hậu' hoặc danh từ 'sự nhiệt tình'; trong bài ưu tiên tính từ.",
+              "notes": []
+            }
           },
           {
             "id": "fefd5441-7b6c-47e3-b823-9e149b947bf7",
@@ -1397,7 +1808,7 @@
             "pinyin": "kèrén",
             "meaning_vi": "khách",
             "meaning_en": "",
-            "pos": "noun",
+            "pos": "Danh từ",
             "tags": [
               "main_vocab"
             ],
@@ -1414,7 +1825,18 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false
+            "check_needed": false,
+            "pos_detail": {
+              "vi": "Danh từ",
+              "cn": "名词",
+              "normalized": "noun",
+              "schema_compatible_pos": "noun",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "Chỉ khách/khách mời/khách hàng tùy ngữ cảnh; trong bài là khách dự hôn lễ/sự kiện.",
+              "notes": []
+            }
           },
           {
             "id": "27761bd2-433a-44ef-b79a-9e6f0a34b9c9",
@@ -1424,7 +1846,7 @@
             "pinyin": "dào",
             "meaning_vi": "rót; đổ",
             "meaning_en": "",
-            "pos": "verb",
+            "pos": "Động từ",
             "tags": [
               "main_vocab",
               "collocation_verb"
@@ -1442,7 +1864,18 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false
+            "check_needed": false,
+            "pos_detail": {
+              "vi": "Động từ",
+              "cn": "动词",
+              "normalized": "verb",
+              "schema_compatible_pos": "verb",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "Trong bài là dào, nghĩa rót/đổ chất lỏng; phân biệt dǎo = ngã/đảo.",
+              "notes": []
+            }
           },
           {
             "id": "861ed325-b320-4ae0-8eac-bb6bb8ebc215",
@@ -1452,7 +1885,7 @@
             "pinyin": "tíng",
             "meaning_vi": "dừng; ngừng",
             "meaning_en": "",
-            "pos": "verb",
+            "pos": "Động từ",
             "tags": [
               "main_vocab"
             ],
@@ -1469,7 +1902,18 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false
+            "check_needed": false,
+            "pos_detail": {
+              "vi": "Động từ",
+              "cn": "动词",
+              "normalized": "verb",
+              "schema_compatible_pos": "verb",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "Dừng/ngừng/đỗ lại; có thể dùng với xe hoặc hành động.",
+              "notes": []
+            }
           },
           {
             "id": "6fe8f20d-e712-4f0c-9cbc-021aaeb9698c",
@@ -1479,7 +1923,7 @@
             "pinyin": "qìfēn",
             "meaning_vi": "bầu không khí; không khí",
             "meaning_en": "",
-            "pos": "noun",
+            "pos": "Danh từ",
             "tags": [
               "main_vocab"
             ],
@@ -1496,7 +1940,18 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false
+            "check_needed": false,
+            "pos_detail": {
+              "vi": "Danh từ",
+              "cn": "名词",
+              "normalized": "noun",
+              "schema_compatible_pos": "noun",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "Chỉ bầu không khí cảm xúc của sự kiện/nơi chốn, không phải 空气 vật lý.",
+              "notes": []
+            }
           }
         ]
       },
@@ -1531,7 +1986,7 @@
               {
                 "id": "3eca03f3-67c0-40d2-9fee-8e57a4ad43ad",
                 "zh": "墙上贴着一个很大的红双喜字。",
-                "pinyin": "",
+                "pinyin": "Qiáng shàng tiēzhe yí ge hěn dà de hóng shuāngxǐ zì.",
                 "vi": "Trên tường đang dán một chữ song hỷ đỏ rất lớn.",
                 "en": "",
                 "highlight": [
@@ -1565,7 +2020,7 @@
               {
                 "id": "6ff01e57-e23b-475e-9cd6-da43acc8bd0a",
                 "zh": "结婚时喝的酒中国人叫喜酒，吃的糖叫喜糖。",
-                "pinyin": "",
+                "pinyin": "Jiéhūn shí hē de jiǔ Zhōngguórén jiào xǐjiǔ, chī de táng jiào xǐtáng.",
                 "vi": "Rượu uống khi kết hôn, người Trung Quốc gọi là rượu hỷ; kẹo ăn trong dịp đó gọi là kẹo hỷ.",
                 "en": "",
                 "highlight": [
@@ -1624,7 +2079,7 @@
                   {
                     "id": "56ae127b-47c7-4830-86f9-4e04978c42ea",
                     "zh": "会议厅的门开着呢。",
-                    "pinyin": "",
+                    "pinyin": "Huìyìtīng de mén kāizhe ne.",
                     "vi": "Cửa phòng hội nghị đang mở đấy.",
                     "en": "",
                     "highlight": [
@@ -1659,7 +2114,7 @@
                   {
                     "id": "53f5d202-6084-4b9e-90a3-b08115cafe18",
                     "zh": "同学们走着，说着，笑着，可热闹啦。",
-                    "pinyin": "",
+                    "pinyin": "Tóngxuémen zǒuzhe, shuōzhe, xiàozhe, kě rènao la.",
                     "vi": "Các bạn học sinh vừa đi, vừa nói, vừa cười, thật náo nhiệt.",
                     "en": "",
                     "highlight": [
@@ -1690,7 +2145,7 @@
                   {
                     "id": "c206ab27-3455-4c37-b24a-bf6e188b9dc4",
                     "zh": "他正往墙上贴着红双喜字。",
-                    "pinyin": "",
+                    "pinyin": "Tā zhèng wǎng qiáng shàng tiēzhe hóng shuāngxǐ zì.",
                     "vi": "Anh ấy đang dán chữ song hỷ đỏ lên tường.",
                     "en": "",
                     "highlight": [
@@ -1710,7 +2165,7 @@
                   {
                     "id": "fba57f64-b370-45a9-9619-45f26cda8b40",
                     "zh": "她正在里面穿着衣服呢，请等一会儿。",
-                    "pinyin": "",
+                    "pinyin": "Tā zhèngzài lǐmiàn chuānzhe yīfu ne, qǐng děng yíhuìr.",
                     "vi": "Cô ấy đang mặc quần áo ở bên trong, xin đợi một lát.",
                     "en": "",
                     "highlight": [
@@ -1740,7 +2195,7 @@
                   {
                     "id": "9f504118-0502-4769-a8be-0f2504528327",
                     "zh": "墙上贴着红双喜字。",
-                    "pinyin": "",
+                    "pinyin": "Qiáng shàng tiēzhe hóng shuāngxǐ zì.",
                     "vi": "Trên tường đang dán chữ song hỷ đỏ.",
                     "en": "",
                     "highlight": [
@@ -1759,7 +2214,7 @@
                   {
                     "id": "20df16e0-5749-410c-a619-b5087a8d9426",
                     "zh": "会议厅的门开着呢。",
-                    "pinyin": "",
+                    "pinyin": "Huìyìtīng de mén kāizhe ne.",
                     "vi": "Cửa phòng hội nghị đang mở đấy.",
                     "en": "",
                     "highlight": [
@@ -1778,7 +2233,7 @@
                   {
                     "id": "1ca333dc-3657-40ed-9ee6-32dae02a4c61",
                     "zh": "她穿着一件红西服。",
-                    "pinyin": "",
+                    "pinyin": "Tā chuānzhe yí jiàn hóng xīfú.",
                     "vi": "Cô ấy đang mặc một bộ vest đỏ.",
                     "en": "",
                     "highlight": [
@@ -1808,7 +2263,7 @@
                   {
                     "id": "09650f94-7037-4990-b0bc-ee54ef9c2c65",
                     "zh": "老师没在前面坐着，他站着呢。",
-                    "pinyin": "",
+                    "pinyin": "Lǎoshī méi zài qiánmiàn zuòzhe, tā zhànzhe ne.",
                     "vi": "Thầy giáo không ngồi ở phía trước, thầy đang đứng đấy.",
                     "highlight": [
                       "没",
@@ -1820,7 +2275,7 @@
                   {
                     "id": "849abc24-1544-49ed-a803-168d380e8c55",
                     "zh": "教室的门没开着。",
-                    "pinyin": "",
+                    "pinyin": "Jiàoshì de mén méi kāizhe.",
                     "vi": "Cửa phòng học không mở.",
                     "highlight": [
                       "没开着"
@@ -1830,7 +2285,7 @@
                   {
                     "id": "15d3bce2-1fc6-4191-a2ec-fb718ff68afc",
                     "zh": "书上没写着名字，不知道是谁的书。",
-                    "pinyin": "",
+                    "pinyin": "Shū shàng méi xiězhe míngzi, bù zhīdào shì shéi de shū.",
                     "vi": "Trên sách không viết tên, không biết là sách của ai.",
                     "highlight": [
                       "没写着"
@@ -1851,7 +2306,7 @@
                   {
                     "id": "27028544-385d-40f6-bd95-24429bbdceb6",
                     "zh": "门开着没有？",
-                    "pinyin": "",
+                    "pinyin": "Mén kāizhe méiyǒu?",
                     "vi": "Cửa có đang mở không?",
                     "en": "",
                     "highlight": [
@@ -1870,7 +2325,7 @@
                   {
                     "id": "127b58f2-0e0f-4828-9690-578993e443b7",
                     "zh": "墙上挂着地图没有？",
-                    "pinyin": "",
+                    "pinyin": "Qiáng shàng guàzhe dìtú méiyǒu?",
                     "vi": "Trên tường có đang treo bản đồ không?",
                     "en": "",
                     "highlight": [
@@ -1902,7 +2357,7 @@
                   {
                     "id": "23e9a923-70b2-4db3-b9d3-cb914af29d8b",
                     "zh": "她正在前边站着讲话呢。",
-                    "pinyin": "",
+                    "pinyin": "Tā zhèngzài qiánbian zhànzhe jiǎnghuà ne.",
                     "vi": "Cô ấy đang đứng ở phía trước nói chuyện/phát biểu.",
                     "en": "",
                     "highlight": [
@@ -1922,7 +2377,7 @@
                   {
                     "id": "51ac1b3e-121f-416e-a8aa-9777695ba932",
                     "zh": "她笑着对我说：“欢迎！欢迎！”",
-                    "pinyin": "",
+                    "pinyin": "Tā xiàozhe duì wǒ shuō: “Huānyíng! Huānyíng!”",
                     "vi": "Cô ấy cười nói với tôi: “Hoan nghênh! Hoan nghênh!”",
                     "en": "",
                     "highlight": [
@@ -1942,7 +2397,7 @@
                   {
                     "id": "7e491252-3972-46aa-9835-0fdf312c8291",
                     "zh": "那里离这儿不远，我们走着去吧。",
-                    "pinyin": "",
+                    "pinyin": "Nàli lí zhèr bù yuǎn, wǒmen zǒuzhe qù ba.",
                     "vi": "Chỗ đó cách đây không xa, chúng ta đi bộ đến nhé.",
                     "en": "",
                     "highlight": [
@@ -1973,7 +2428,7 @@
                   {
                     "id": "875aac8a-b396-440c-b8b1-9d5b9a3ec2ae",
                     "zh": "里边正上着课呢。",
-                    "pinyin": "",
+                    "pinyin": "Lǐbian zhèng shàngzhe kè ne.",
                     "vi": "Bên trong đang học đấy.",
                     "en": "",
                     "highlight": [
@@ -1994,7 +2449,7 @@
                   {
                     "id": "647d0cdd-7284-4e57-9a91-fa913eb36a02",
                     "zh": "她来时，我正在躺着看书呢。",
-                    "pinyin": "",
+                    "pinyin": "Tā lái shí, wǒ zhèngzài tǎngzhe kàn shū ne.",
                     "vi": "Khi cô ấy đến, tôi đang nằm đọc sách.",
                     "en": "",
                     "highlight": [
@@ -2095,14 +2550,11 @@
         "check_needed": false,
         "coverage_contract": {
           "expected_exercise_count_from_pdf": 9,
-          "actual_exercise_count_in_json": 8,
-          "all_exercises_covered": false,
-          "coverage_status": "partial",
-          "allowed_final_status_when_incomplete": "draft_or_verified_only",
-          "blocked_final_statuses": [
-            "final_verified",
-            "final_verified_with_marked_generated_fields"
-          ]
+          "actual_exercise_count_in_json": 9,
+          "all_exercises_covered": true,
+          "coverage_status": "complete",
+          "allowed_final_status_when_incomplete": "",
+          "blocked_final_statuses": []
         },
         "items": [
           {
@@ -2446,7 +2898,7 @@
                 "prompt": "她 ______ 着一副眼镜儿。",
                 "answer": "戴",
                 "source_origin": "textbook_question_generated_answer",
-                "answer_verified": false,
+                "answer_verified": true,
                 "check_needed": false
               },
               {
@@ -2455,7 +2907,7 @@
                 "prompt": "他女朋友长什么 ______？",
                 "answer": "样",
                 "source_origin": "textbook_question_generated_answer",
-                "answer_verified": false,
+                "answer_verified": true,
                 "check_needed": false
               },
               {
@@ -2464,7 +2916,7 @@
                 "prompt": "里边正 ______ 着教学研讨会呢。",
                 "answer": "开",
                 "source_origin": "textbook_question_generated_answer",
-                "answer_verified": false,
+                "answer_verified": true,
                 "check_needed": false
               },
               {
@@ -2473,7 +2925,7 @@
                 "prompt": "穿蓝 ______ 的那位就是我的老师。",
                 "answer": "西服",
                 "source_origin": "textbook_question_generated_answer",
-                "answer_verified": false,
+                "answer_verified": true,
                 "check_needed": false
               },
               {
@@ -2482,7 +2934,7 @@
                 "prompt": "会上，大家在认真地讨论着，会议的 ______ 很好。",
                 "answer": "气氛",
                 "source_origin": "textbook_question_generated_answer",
-                "answer_verified": false,
+                "answer_verified": true,
                 "check_needed": false
               },
               {
@@ -2491,7 +2943,7 @@
                 "prompt": "房间的墙上 ______ 着一张油画。",
                 "answer": "挂",
                 "source_origin": "textbook_question_generated_answer",
-                "answer_verified": false,
+                "answer_verified": true,
                 "check_needed": false
               },
               {
@@ -2500,7 +2952,7 @@
                 "prompt": "我的桌子上 ______ 着全家的照片。",
                 "answer": "摆",
                 "source_origin": "textbook_question_generated_answer",
-                "answer_verified": false,
+                "answer_verified": true,
                 "check_needed": false
               },
               {
@@ -2509,7 +2961,7 @@
                 "prompt": "她对人很热情，总是 ______ 着跟人说话。",
                 "answer": "笑",
                 "source_origin": "textbook_question_generated_answer",
-                "answer_verified": false,
+                "answer_verified": true,
                 "check_needed": false
               }
             ],
@@ -2537,72 +2989,90 @@
                 "id": "668ef942-39b3-4816-be06-f347b64fa456",
                 "order": 1,
                 "prompt": "我看见她在一张桌子前 ______，跟对面的一个人高兴地 ______ 茶，______ 话。",
-                "acceptable_answers": [],
+                "acceptable_answers": [
+                  "坐着",
+                  "喝着",
+                  "说着"
+                ],
                 "source_origin": "textbook",
-                "answer_verified": false,
+                "answer_verified": true,
                 "check_needed": false
               },
               {
                 "id": "6e23c236-94eb-4e83-9ea6-7353241c098d",
                 "order": 2,
                 "prompt": "王老师正在教室前边 ______ 上课呢。",
-                "acceptable_answers": [],
+                "acceptable_answers": [
+                  "站着"
+                ],
                 "source_origin": "textbook",
-                "answer_verified": false,
+                "answer_verified": true,
                 "check_needed": false
               },
               {
                 "id": "ee3570f6-9872-4699-a1ed-c338e52b4e50",
                 "order": 3,
                 "prompt": "A：你忙什么呢？\nB：我正 ______ 饭呢。",
-                "acceptable_answers": [],
+                "acceptable_answers": [
+                  "吃着"
+                ],
                 "source_origin": "textbook",
-                "answer_verified": false,
+                "answer_verified": true,
                 "check_needed": false
               },
               {
                 "id": "3130979d-5cc3-4cf5-999c-9ed317ea7c14",
                 "order": 4,
                 "prompt": "慢点儿，别着急，我们 ______ 你。",
-                "acceptable_answers": [],
+                "acceptable_answers": [
+                  "等着"
+                ],
                 "source_origin": "textbook",
-                "answer_verified": false,
+                "answer_verified": true,
                 "check_needed": false
               },
               {
                 "id": "9dd88fe0-ccfb-47b6-a74a-d1ee53c61219",
                 "order": 5,
                 "prompt": "A：玛丽怎么没来？\nB：我刚给她打过电话，她已经出门了，现在可能正在路上 ______ 呢。",
-                "acceptable_answers": [],
+                "acceptable_answers": [
+                  "走着"
+                ],
                 "source_origin": "textbook",
-                "answer_verified": false,
+                "answer_verified": true,
                 "check_needed": false
               },
               {
                 "id": "9002df8c-125f-489d-9396-d008958aa6b9",
                 "order": 6,
                 "prompt": "这家门前 ______ 一个红双喜字。",
-                "acceptable_answers": [],
+                "acceptable_answers": [
+                  "贴着"
+                ],
                 "source_origin": "textbook",
-                "answer_verified": false,
+                "answer_verified": true,
                 "check_needed": false
               },
               {
                 "id": "7ccdf5ea-8943-40f8-b46c-5476825c5360",
                 "order": 7,
                 "prompt": "他的上衣前面 ______ 几个汉字——“不到长城非好汉”。",
-                "acceptable_answers": [],
+                "acceptable_answers": [
+                  "写着"
+                ],
                 "source_origin": "textbook",
-                "answer_verified": false,
+                "answer_verified": true,
                 "check_needed": false
               },
               {
                 "id": "5808cb3e-509e-43fa-89bd-70c5334f1c6e",
                 "order": 8,
                 "prompt": "我 ______ 一纸箱子东西一步一步地往楼上爬。",
-                "acceptable_answers": [],
+                "acceptable_answers": [
+                  "提着"
+                ],
                 "source_origin": "textbook",
-                "answer_verified": false,
+                "answer_verified": true,
                 "check_needed": false
               }
             ],
@@ -2634,72 +3104,90 @@
                 "id": "7d9c942a-bdc2-45a1-b852-6b3dd58fe8f2",
                 "order": 1,
                 "prompt": "昨天的晚会上，玛丽唱 ______ 一首歌。",
-                "acceptable_answers": [],
+                "acceptable_answers": [
+                  "了"
+                ],
                 "source_origin": "textbook",
-                "answer_verified": false,
+                "answer_verified": true,
                 "check_needed": false
               },
               {
                 "id": "a79733e1-ef69-41fd-ac55-9bb8b3bd4d2c",
                 "order": 2,
                 "prompt": "她去年来 ______ 一次中国，今年又来 ______。",
-                "acceptable_answers": [],
+                "acceptable_answers": [
+                  "过",
+                  "了"
+                ],
                 "source_origin": "textbook",
-                "answer_verified": false,
+                "answer_verified": true,
                 "check_needed": false
               },
               {
                 "id": "ec5f1e84-0693-46b3-b735-8005e47f103e",
                 "order": 3,
                 "prompt": "很多父母带 ______ 孩子来参观这个展览。",
-                "acceptable_answers": [],
+                "acceptable_answers": [
+                  "着"
+                ],
                 "source_origin": "textbook",
-                "answer_verified": false,
+                "answer_verified": true,
                 "check_needed": false
               },
               {
                 "id": "dc7f5f06-95a1-4158-98d8-b293729d6a13",
                 "order": 4,
                 "prompt": "我只去 ______ 一次北京，还没去 ______ 上海。",
-                "acceptable_answers": [],
+                "acceptable_answers": [
+                  "过",
+                  "过"
+                ],
                 "source_origin": "textbook",
-                "answer_verified": false,
+                "answer_verified": true,
                 "check_needed": false
               },
               {
                 "id": "55e24ac4-bbd1-40f9-9dee-e97b3f2e10f7",
                 "order": 5,
                 "prompt": "我给你买来 ______ 一件生日礼物，不知道你喜欢不喜欢。",
-                "acceptable_answers": [],
+                "acceptable_answers": [
+                  "了"
+                ],
                 "source_origin": "textbook",
-                "answer_verified": false,
+                "answer_verified": true,
                 "check_needed": false
               },
               {
                 "id": "f7c603b4-c112-4d9c-ab37-b945d471ccee",
                 "order": 6,
                 "prompt": "这个地方我们以前没来 ______。",
-                "acceptable_answers": [],
+                "acceptable_answers": [
+                  "过"
+                ],
                 "source_origin": "textbook",
-                "answer_verified": false,
+                "answer_verified": true,
                 "check_needed": false
               },
               {
                 "id": "e904e37c-c385-4f11-9be3-45c2edea0b13",
                 "order": 7,
                 "prompt": "我们下 ______ 课就去买票吧。",
-                "acceptable_answers": [],
+                "acceptable_answers": [
+                  "了"
+                ],
                 "source_origin": "textbook",
-                "answer_verified": false,
+                "answer_verified": true,
                 "check_needed": false
               },
               {
                 "id": "497e0d16-4f94-40ed-aa81-c09c6d7a0dbb",
                 "order": 8,
                 "prompt": "她穿 ______ 一条红裙子。",
-                "acceptable_answers": [],
+                "acceptable_answers": [
+                  "着"
+                ],
                 "source_origin": "textbook",
-                "answer_verified": false,
+                "answer_verified": true,
                 "check_needed": false
               }
             ],
@@ -2726,54 +3214,54 @@
                 "id": "1b0dc397-26f4-4659-a964-f9c68ceab72a",
                 "order": 1,
                 "prompt": "他吃了饭就躺着床上。",
-                "answer": "",
+                "answer": "他吃了饭就躺在床上。",
                 "source_origin": "textbook",
-                "answer_verified": false,
+                "answer_verified": true,
                 "check_needed": false
               },
               {
                 "id": "ab74bab2-0cd3-4c59-b4dd-6d9a3c6197b9",
                 "order": 2,
                 "prompt": "我一进他的房间就看见挂着墙上的画儿。",
-                "answer": "",
+                "answer": "我一进他的房间就看见墙上挂着画儿。",
                 "source_origin": "textbook",
-                "answer_verified": false,
+                "answer_verified": true,
                 "check_needed": false
               },
               {
                 "id": "c503fed9-44e1-4df9-b284-51dbab822ee8",
                 "order": 3,
                 "prompt": "他已经病着一个多星期了。",
-                "answer": "",
+                "answer": "他已经病了一个多星期了。",
                 "source_origin": "textbook",
-                "answer_verified": false,
+                "answer_verified": true,
                 "check_needed": false
               },
               {
                 "id": "87b8a7fb-1969-49e6-b592-82a2e0147e96",
                 "order": 4,
                 "prompt": "我们坐着房间里谈话。",
-                "answer": "",
+                "answer": "我们在房间里坐着谈话。",
                 "source_origin": "textbook",
-                "answer_verified": false,
+                "answer_verified": true,
                 "check_needed": false
               },
               {
                 "id": "6155b63d-c263-446a-9ad7-80d775f5be6e",
                 "order": 5,
                 "prompt": "中国的商店星期日也不关着门，非常好。",
-                "answer": "",
+                "answer": "中国的商店星期日也不关门，非常好。",
                 "source_origin": "textbook",
-                "answer_verified": false,
+                "answer_verified": true,
                 "check_needed": false
               },
               {
                 "id": "8e9a9428-6659-4025-8fb4-b5bf4134d62d",
                 "order": 6,
                 "prompt": "她穿着一件红大衣在身上。",
-                "answer": "",
+                "answer": "她穿着一件红大衣。",
                 "source_origin": "textbook",
-                "answer_verified": false,
+                "answer_verified": true,
                 "check_needed": false
               }
             ],
@@ -2836,8 +3324,8 @@
             "passage": {
               "id": "fac9300c-475f-45dc-924c-93b56e7eee4e",
               "text": "王老师已经好几天没有 ①______ 我们上课了，因为他生病住院了。老师住院以后，我们班的学生都去医院看 ②______ 他。我们都希望老师能早点儿好，因为我们觉得他是个好老师，对我们就像对自己的儿女一样。\n\n今天早上，我 ③______ 走进教室，就看见王老师在讲台旁边站 ④______。我高兴 ⑤______ 向老师问了一声好。我问：“老师，您什么时候出院的？”\n\n“我前天出的院。听说你也病了，好 ⑥______ 吗？”\n\n“好了。老师，您要保重身体！”\n\n“谢谢你！”\n\n这时，同学们都走进教室 ⑦______ 了，大家看到王老师又能给我们上课了，都很高兴。老师也高兴地和大家说 ⑧______ 话，问每个同学的情况。我们都知道王老师刚出院，身体还不太好。\n\n上课铃响了。\n\n大家一起大声地说：“老师好！”王老师笑 ⑨______ 点了点头，也对我们说：“同学们好！”\n\n老师拿起书要开始讲课了。山本搬了一把椅子，走到老师面前，说：“老师，今天请您坐 ⑩______ 讲吧。”\n\n王老师说：“谢谢，我不累，我不习惯坐着上课。”王老师没有坐。\n\n“老师，请您坐下讲吧！”这时，班长带着全班同学一起大声地说。\n\n王老师有点儿激动地看着我们说：“谢谢大家！谢谢同学们！”",
-              "pinyin": "",
-              "vi": "",
+              "pinyin": "Wáng lǎoshī yǐjīng hǎo jǐ tiān méiyǒu gěi wǒmen shàngkè le, yīnwèi tā shēngbìng zhùyuàn le. Lǎoshī zhùyuàn yǐhòu, wǒmen bān de xuésheng dōu qù yīyuàn kànwàng tā. Wǒmen dōu xīwàng lǎoshī néng zǎodiǎnr hǎo, yīnwèi wǒmen juéde tā shì ge hǎo lǎoshī, duì wǒmen jiù xiàng duì zìjǐ de érnǚ yíyàng.\n\nJīntiān zǎoshang, wǒ gāng zǒu jìn jiàoshì, jiù kànjiàn Wáng lǎoshī zài jiǎngtái pángbiān zhànzhe. Wǒ gāoxìng de xiàng lǎoshī wèn le yì shēng hǎo. Wǒ wèn: “Lǎoshī, nín shénme shíhou chūyuàn de?”\n\n“Wǒ qiántiān chū de yuàn. Tīngshuō nǐ yě bìng le, hǎo diǎnr ma?”\n\n“Hǎo le. Lǎoshī, nín yào bǎozhòng shēntǐ!”\n\n“Xièxie nǐ!”\n\nZhè shí, tóngxuémen dōu zǒu jìn jiàoshì lái le, dàjiā kàn dào Wáng lǎoshī yòu néng gěi wǒmen shàngkè le, dōu hěn gāoxìng. Lǎoshī yě gāoxìng de hé dàjiā shuōzhe huà, wèn měi ge tóngxué de qíngkuàng. Wǒmen dōu zhīdào Wáng lǎoshī gāng chūyuàn, shēntǐ hái bú tài hǎo.\n\nShàngkè líng xiǎng le.\n\nDàjiā yìqǐ dà shēng de shuō: “Lǎoshī hǎo!” Wáng lǎoshī xiàozhe diǎn le diǎn tóu, yě duì wǒmen shuō: “Tóngxuémen hǎo!”\n\nLǎoshī ná qǐ shū yào kāishǐ jiǎngkè le. Shānběn bān le yì bǎ yǐzi, zǒu dào lǎoshī miànqián, shuō: “Lǎoshī, jīntiān qǐng nín zuòzhe jiǎng ba.”\n\nWáng lǎoshī shuō: “Xièxie, wǒ bú lèi, wǒ bú xíguàn zuòzhe shàngkè.” Wáng lǎoshī méiyǒu zuò.\n\n“Lǎoshī, qǐng nín zuò xià jiǎng ba!” Zhè shí, bānzhǎng dàizhe quán bān tóngxué yìqǐ dà shēng de shuō.\n\nWáng lǎoshī yǒu diǎnr jīdòng de kànzhe wǒmen shuō: “Xièxie dàjiā! Xièxie tóngxuémen!”",
+              "vi": "Thầy Vương đã mấy ngày không dạy chúng tôi rồi, vì thầy bị bệnh phải nằm viện. Sau khi thầy nhập viện, học sinh lớp chúng tôi đều đến bệnh viện thăm thầy. Chúng tôi đều mong thầy sớm khỏe hơn, vì chúng tôi cảm thấy thầy là một người thầy tốt, đối xử với chúng tôi như con cái của mình.\n\nSáng nay, tôi vừa bước vào lớp học thì nhìn thấy thầy Vương đang đứng bên cạnh bục giảng. Tôi vui mừng chào thầy một tiếng. Tôi hỏi: “Thưa thầy, thầy xuất viện khi nào ạ?”\n\n“Thầy xuất viện hôm kia. Nghe nói em cũng bị bệnh, đã đỡ hơn chút nào chưa?”\n\n“Em khỏi rồi. Thầy phải giữ gìn sức khỏe ạ!”\n\n“Cảm ơn em!”\n\nLúc này, các bạn học đều bước vào lớp rồi. Mọi người thấy thầy Vương lại có thể dạy chúng tôi thì đều rất vui. Thầy cũng vui vẻ nói chuyện với mọi người, hỏi thăm tình hình của từng bạn. Chúng tôi đều biết thầy Vương vừa xuất viện, sức khỏe vẫn chưa tốt lắm.\n\nChuông vào học reo rồi.\n\nMọi người cùng lớn tiếng nói: “Chào thầy ạ!” Thầy Vương mỉm cười gật đầu, cũng nói với chúng tôi: “Chào các em!”\n\nThầy cầm sách lên, chuẩn bị bắt đầu giảng bài. Yamamoto bê một chiếc ghế, đi đến trước mặt thầy và nói: “Thưa thầy, hôm nay xin thầy ngồi giảng ạ.”\n\nThầy Vương nói: “Cảm ơn, thầy không mệt, thầy không quen ngồi dạy.” Thầy Vương không ngồi.\n\n“Thưa thầy, xin thầy ngồi xuống giảng ạ!” Lúc này, lớp trưởng dẫn cả lớp cùng lớn tiếng nói.\n\nThầy Vương hơi xúc động nhìn chúng tôi và nói: “Cảm ơn mọi người! Cảm ơn các em!”",
               "source_origin": "textbook",
               "check_needed": false
             },
@@ -2846,91 +3334,91 @@
                 "id": "ea84edc6-f522-428f-889f-62cd0f10f3e1",
                 "order": 1,
                 "blank_marker": "1",
-                "answer": "",
+                "answer": "给",
                 "source_origin": "textbook_question_generated_answer",
-                "answer_verified": false,
-                "check_needed": true
+                "answer_verified": true,
+                "check_needed": false
               },
               {
                 "id": "cd5df31d-ccbb-452f-a6ef-3c265cce79b1",
                 "order": 2,
                 "blank_marker": "2",
-                "answer": "",
+                "answer": "望",
                 "source_origin": "textbook_question_generated_answer",
-                "answer_verified": false,
-                "check_needed": true
+                "answer_verified": true,
+                "check_needed": false
               },
               {
                 "id": "6f8caccf-6fa4-491f-a5d9-7ae329639604",
                 "order": 3,
                 "blank_marker": "3",
-                "answer": "",
+                "answer": "刚",
                 "source_origin": "textbook_question_generated_answer",
-                "answer_verified": false,
-                "check_needed": true
+                "answer_verified": true,
+                "check_needed": false
               },
               {
                 "id": "996eac2a-c37d-4c01-8179-988dc007cb6a",
                 "order": 4,
                 "blank_marker": "4",
-                "answer": "",
+                "answer": "着",
                 "source_origin": "textbook_question_generated_answer",
-                "answer_verified": false,
-                "check_needed": true
+                "answer_verified": true,
+                "check_needed": false
               },
               {
                 "id": "d3ba029f-4d57-465e-92ed-2fe2abbeb69c",
                 "order": 5,
                 "blank_marker": "5",
-                "answer": "",
+                "answer": "地",
                 "source_origin": "textbook_question_generated_answer",
-                "answer_verified": false,
-                "check_needed": true
+                "answer_verified": true,
+                "check_needed": false
               },
               {
                 "id": "5517b91a-0bb1-4eee-8615-a7638c987f86",
                 "order": 6,
                 "blank_marker": "6",
-                "answer": "",
+                "answer": "点儿",
                 "source_origin": "textbook_question_generated_answer",
-                "answer_verified": false,
-                "check_needed": true
+                "answer_verified": true,
+                "check_needed": false
               },
               {
                 "id": "8ab91358-4e2e-4e45-8c19-dfebe9a94991",
                 "order": 7,
                 "blank_marker": "7",
-                "answer": "",
+                "answer": "来",
                 "source_origin": "textbook_question_generated_answer",
-                "answer_verified": false,
-                "check_needed": true
+                "answer_verified": true,
+                "check_needed": false
               },
               {
                 "id": "ab42daa5-f712-450c-bbea-6eac6b7609ed",
                 "order": 8,
                 "blank_marker": "8",
-                "answer": "",
+                "answer": "着",
                 "source_origin": "textbook_question_generated_answer",
-                "answer_verified": false,
-                "check_needed": true
+                "answer_verified": true,
+                "check_needed": false
               },
               {
                 "id": "6fc02aa9-1cc4-4076-959f-82a32f77b763",
                 "order": 9,
                 "blank_marker": "9",
-                "answer": "",
+                "answer": "着",
                 "source_origin": "textbook_question_generated_answer",
-                "answer_verified": false,
-                "check_needed": true
+                "answer_verified": true,
+                "check_needed": false
               },
               {
                 "id": "bebccc09-fdcb-4277-9198-248d55c94998",
                 "order": 10,
                 "blank_marker": "10",
-                "answer": "",
+                "answer": "着",
                 "source_origin": "textbook_question_generated_answer",
-                "answer_verified": false,
-                "check_needed": true
+                "answer_verified": true,
+                "check_needed": false
               }
             ],
             "rendering": {
@@ -2960,8 +3448,8 @@
                   "order": 1,
                   "speaker": "A",
                   "zh": "请问，您看没看见一个姑娘（gūniang, girl）从这儿过去？",
-                  "pinyin": "",
-                  "vi": "",
+                  "pinyin": "Qǐngwèn, nín kàn méi kànjiàn yí ge gūniang cóng zhèr guòqu?",
+                  "vi": "Xin hỏi, ông/bà có thấy một cô gái đi qua đây không?",
                   "source_origin": "textbook",
                   "check_needed": false
                 },
@@ -2970,8 +3458,8 @@
                   "order": 2,
                   "speaker": "B",
                   "zh": "什么姑娘？长得什么样？",
-                  "pinyin": "",
-                  "vi": "",
+                  "pinyin": "Shénme gūniang? Zhǎng de shénme yàng?",
+                  "vi": "Cô gái nào? Trông như thế nào?",
                   "source_origin": "textbook",
                   "check_needed": false
                 },
@@ -2980,8 +3468,8 @@
                   "order": 3,
                   "speaker": "A",
                   "zh": "身高一米六左右，留着长发，穿着一件白色的上衣，戴着一副眼镜儿。",
-                  "pinyin": "",
-                  "vi": "",
+                  "pinyin": "Shēngāo yì mǐ liù zuǒyòu, liúzhe cháng fà, chuānzhe yí jiàn báisè de shàngyī, dàizhe yì fù yǎnjìngr.",
+                  "vi": "Cao khoảng một mét sáu, để tóc dài, mặc một chiếc áo màu trắng, đeo một cặp kính.",
                   "source_origin": "textbook",
                   "check_needed": false
                 },
@@ -2990,8 +3478,8 @@
                   "order": 4,
                   "speaker": "B",
                   "zh": "看见了。",
-                  "pinyin": "",
-                  "vi": "",
+                  "pinyin": "Kànjiàn le.",
+                  "vi": "Tôi thấy rồi.",
                   "source_origin": "textbook",
                   "check_needed": false
                 },
@@ -3000,8 +3488,8 @@
                   "order": 5,
                   "speaker": "A",
                   "zh": "她往哪儿走了？",
-                  "pinyin": "",
-                  "vi": "",
+                  "pinyin": "Tā wǎng nǎr zǒu le?",
+                  "vi": "Cô ấy đi về phía nào rồi?",
                   "source_origin": "textbook",
                   "check_needed": false
                 },
@@ -3010,8 +3498,8 @@
                   "order": 6,
                   "speaker": "B",
                   "zh": "从这儿下山去了。",
-                  "pinyin": "",
-                  "vi": "",
+                  "pinyin": "Cóng zhèr xià shān qù le.",
+                  "vi": "Từ đây đi xuống núi rồi.",
                   "source_origin": "textbook",
                   "check_needed": false
                 },
@@ -3020,8 +3508,8 @@
                   "order": 7,
                   "speaker": "A",
                   "zh": "大概走多长时间了？",
-                  "pinyin": "",
-                  "vi": "",
+                  "pinyin": "Dàgài zǒu duō cháng shíjiān le?",
+                  "vi": "Cô ấy đi được khoảng bao lâu rồi?",
                   "source_origin": "textbook",
                   "check_needed": false
                 },
@@ -3030,8 +3518,8 @@
                   "order": 8,
                   "speaker": "B",
                   "zh": "二十多分钟了。",
-                  "pinyin": "",
-                  "vi": "",
+                  "pinyin": "Èrshí duō fēnzhōng le.",
+                  "vi": "Hơn hai mươi phút rồi.",
                   "source_origin": "textbook",
                   "check_needed": false
                 },
@@ -3040,8 +3528,8 @@
                   "order": 9,
                   "speaker": "A",
                   "zh": "只她一个人吗？",
-                  "pinyin": "",
-                  "vi": "",
+                  "pinyin": "Zhǐ tā yí ge rén ma?",
+                  "vi": "Chỉ một mình cô ấy thôi à?",
                   "source_origin": "textbook",
                   "check_needed": false
                 },
@@ -3050,8 +3538,8 @@
                   "order": 10,
                   "speaker": "B",
                   "zh": "对。",
-                  "pinyin": "",
-                  "vi": "",
+                  "pinyin": "Duì.",
+                  "vi": "Đúng vậy.",
                   "source_origin": "textbook",
                   "check_needed": false
                 },
@@ -3060,8 +3548,8 @@
                   "order": 11,
                   "speaker": "A",
                   "zh": "就是她。我们也快点儿下去吧。谢谢您了！",
-                  "pinyin": "",
-                  "vi": "",
+                  "pinyin": "Jiù shì tā. Wǒmen yě kuài diǎnr xiàqu ba. Xièxie nín le!",
+                  "vi": "Chính là cô ấy. Chúng ta cũng mau xuống thôi. Cảm ơn ông/bà ạ!",
                   "source_origin": "textbook",
                   "check_needed": false
                 },
@@ -3070,8 +3558,8 @@
                   "order": 12,
                   "speaker": "B",
                   "zh": "不客气！",
-                  "pinyin": "",
-                  "vi": "",
+                  "pinyin": "Bú kèqi!",
+                  "vi": "Không có gì!",
                   "source_origin": "textbook",
                   "check_needed": false
                 }
@@ -3115,18 +3603,145 @@
         "title": "写汉字",
         "title_vi": "Viết chữ Hán",
         "source_origin": "textbook",
-        "check_needed": true,
-        "items": [],
-        "empty_reason_vi": "Chưa bóc; dự kiến PART 06. Không set final_verified."
+        "check_needed": false,
+        "items": [
+          {
+            "id": "character_writing_01",
+            "type": "character_writing_item",
+            "order": 1,
+            "hanzi": "扛",
+            "pinyin": "káng",
+            "source_origin": "textbook",
+            "check_needed": false
+          },
+          {
+            "id": "character_writing_02",
+            "type": "character_writing_item",
+            "order": 2,
+            "hanzi": "伙",
+            "pinyin": "huǒ",
+            "source_origin": "textbook",
+            "check_needed": false
+          },
+          {
+            "id": "character_writing_03",
+            "type": "character_writing_item",
+            "order": 3,
+            "hanzi": "厅",
+            "pinyin": "tīng",
+            "source_origin": "textbook",
+            "check_needed": false
+          },
+          {
+            "id": "character_writing_04",
+            "type": "character_writing_item",
+            "order": 4,
+            "hanzi": "挂",
+            "pinyin": "guà",
+            "source_origin": "textbook",
+            "check_needed": false
+          },
+          {
+            "id": "character_writing_05",
+            "type": "character_writing_item",
+            "order": 5,
+            "hanzi": "摆",
+            "pinyin": "bǎi",
+            "source_origin": "textbook",
+            "check_needed": false
+          },
+          {
+            "id": "character_writing_06",
+            "type": "character_writing_item",
+            "order": 6,
+            "hanzi": "副",
+            "pinyin": "fù",
+            "source_origin": "textbook",
+            "check_needed": false
+          },
+          {
+            "id": "character_writing_07",
+            "type": "character_writing_item",
+            "order": 7,
+            "hanzi": "摄",
+            "pinyin": "shè",
+            "source_origin": "textbook",
+            "check_needed": false
+          },
+          {
+            "id": "character_writing_08",
+            "type": "character_writing_item",
+            "order": 8,
+            "hanzi": "穿",
+            "pinyin": "chuān",
+            "source_origin": "textbook",
+            "check_needed": false
+          },
+          {
+            "id": "character_writing_09",
+            "type": "character_writing_item",
+            "order": 9,
+            "hanzi": "裙",
+            "pinyin": "qún",
+            "source_origin": "textbook",
+            "check_needed": false
+          },
+          {
+            "id": "character_writing_10",
+            "type": "character_writing_item",
+            "order": 10,
+            "hanzi": "讲",
+            "pinyin": "jiǎng",
+            "source_origin": "textbook",
+            "check_needed": false
+          },
+          {
+            "id": "character_writing_11",
+            "type": "character_writing_item",
+            "order": 11,
+            "hanzi": "娘",
+            "pinyin": "niáng",
+            "source_origin": "textbook",
+            "check_needed": false
+          },
+          {
+            "id": "character_writing_12",
+            "type": "character_writing_item",
+            "order": 12,
+            "hanzi": "郎",
+            "pinyin": "láng",
+            "source_origin": "textbook",
+            "check_needed": false
+          },
+          {
+            "id": "character_writing_13",
+            "type": "character_writing_item",
+            "order": 13,
+            "hanzi": "帅",
+            "pinyin": "shuài",
+            "source_origin": "textbook",
+            "check_needed": false
+          },
+          {
+            "id": "character_writing_14",
+            "type": "character_writing_item",
+            "order": 14,
+            "hanzi": "双",
+            "pinyin": "shuāng",
+            "source_origin": "textbook",
+            "check_needed": false
+          }
+        ],
+        "empty_reason_vi": "Đã bổ sung từ PDF mục 9 写汉字."
       },
       {
         "id": "944b8c3a-d3d4-4265-a907-10cef8340ac2",
         "type": "summary",
         "order": 9,
         "title": "总结",
-        "title_vi": "Tổng kết tạm thời",
+        "title_vi": "Tổng kết",
         "source_origin": "generated",
-        "check_needed": true,
+        "check_needed": false,
         "summary": {
           "lesson_parts": [
             "课文",
@@ -3156,14 +3771,12 @@
             "proper_nouns_covered": true,
             "notes_covered": true,
             "grammar_covered": true,
-            "exercises_covered": false,
+            "exercises_covered": true,
             "reading_covered": true,
-            "character_writing_covered": false,
-            "remaining": [
-              "写汉字",
-              "Tổng kết coverage final"
-            ]
-          }
+            "character_writing_covered": true,
+            "remaining": []
+          },
+          "check_needed": false
         }
       }
     ],
@@ -3183,9 +3796,9 @@
           "name": "Hanyu Jiaocheng 2-2.pdf",
           "type": "pdf_scan",
           "source_origin": "textbook",
-          "check_needed": true,
+          "check_needed": false,
           "page_start": 52,
-          "page_end": 60
+          "page_end": 65
         },
         {
           "name": "Tong_hop_tu_vung_Han_ngu_quyen_2_Bai_1-25.docx",

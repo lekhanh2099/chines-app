@@ -11,11 +11,13 @@
       "hanyu_2_1",
       "lesson_04",
       "result_complement",
-      "coverage_first"
+      "coverage_first",
+      "pdf_checked",
+      "pos_detail_updated"
     ],
     "sections": [
       {
-        "id": "a6c0d522-99be-4f36-881c-b9b2c6beeb85",
+        "id": "f9adcc75-8a79-532a-9ea8-f55e181efd2b",
         "type": "text",
         "order": 1,
         "title": "课文",
@@ -24,7 +26,7 @@
         "check_needed": false,
         "blocks": [
           {
-            "id": "e155d5ea-f89d-45f0-ab8d-094ce9e719f0",
+            "id": "2ab10358-244b-5173-8ce5-b86fe5736c94",
             "type": "text_dialogue",
             "order": 1,
             "title": "我都做对了",
@@ -34,133 +36,132 @@
             "paragraphs": [],
             "lines": [
               {
-                "id": "f8046d8e-353e-4b63-a072-7498c8f1d9ff",
+                "id": "825e0342-b9e5-5d79-9796-dc51a5eee702",
                 "order": 1,
                 "speaker": "玛丽",
                 "zh": "你今天考得怎么样？",
                 "vi": "Hôm nay bạn thi thế nào?",
                 "grammar_refs": [],
                 "vocab_refs": [
-                  "68c05a12-9d8e-45d9-a413-786bcf2f780a"
+                  "ca0b9d81-7c9f-5438-a79b-5001ee51eb9c"
                 ]
               },
               {
-                "id": "30929615-34c8-4e5b-b0a2-5ad3358ad755",
+                "id": "c2616511-56eb-5d85-bcf0-ab18df6cc8c8",
                 "order": 2,
                 "speaker": "罗兰",
                 "zh": "这次没考好。题太多了，我没有做完。你做完了没有？",
                 "vi": "Lần này mình thi không tốt. Đề nhiều quá, mình chưa làm xong. Bạn làm xong chưa?",
                 "grammar_refs": [
-                  "f8ec59f3-898a-47b2-b536-44dfd8183393"
+                  "8d4a41cc-5929-57ae-8374-f06990696ca1"
                 ],
                 "vocab_refs": [
-                  "8c18cf3c-e9dc-42e1-8faf-eb26799cabab",
-                  "3dc505f1-bc0e-4a96-b448-17fed89fdc60"
+                  "b00ff202-6b4d-560f-8156-c7a86469c55e",
+                  "5c8f1856-3a92-56cf-9a25-b3cc1b880991"
                 ]
               },
               {
-                "id": "9faf6980-effe-42f1-a01e-7f1740da2edb",
+                "id": "5fb2d6cf-0601-5b26-a54c-2ca94e6d7eb2",
                 "order": 3,
                 "speaker": "玛丽",
                 "zh": "我都做完了，但是没都做对，做错了两道题，所以成绩不会太好。",
                 "vi": "Mình làm xong hết rồi, nhưng không phải câu nào cũng làm đúng, mình làm sai hai câu, nên điểm chắc sẽ không tốt lắm.",
                 "grammar_refs": [
-                  "f8ec59f3-898a-47b2-b536-44dfd8183393",
-                  "c6cd6c38-22fc-4546-a398-39efe02d6c17"
+                  "8d4a41cc-5929-57ae-8374-f06990696ca1"
                 ],
                 "vocab_refs": [
-                  "1fbd69b7-603a-44ea-8d57-10cd4def9ced",
-                  "188412d4-4c23-4d60-b7b2-21f3490199e7"
+                  "0b29807c-58e3-566f-a8f7-728b421addd2",
+                  "e1ea579a-d627-541d-9a55-aeaa5b4d73dd"
                 ]
               },
               {
-                "id": "146f8fa1-ae74-468d-910e-19cab53e3cf3",
+                "id": "95b5d726-5bd9-5c19-a06f-1b4b27b3277b",
                 "order": 4,
                 "speaker": "罗兰",
                 "zh": "语法题不太难，我觉得都做对了。听力比较难，很多句子我没听懂。",
                 "vi": "Câu ngữ pháp không khó lắm, mình thấy mình đều làm đúng rồi. Nghe hiểu thì khá khó, nhiều câu mình không nghe hiểu.",
                 "grammar_refs": [
-                  "f8ec59f3-898a-47b2-b536-44dfd8183393",
-                  "c6cd6c38-22fc-4546-a398-39efe02d6c17"
+                  "8d4a41cc-5929-57ae-8374-f06990696ca1"
                 ],
                 "vocab_refs": [
-                  "5ea44727-d97c-467b-b1b8-babd195df50d"
+                  "47075cb0-4b1e-5383-8bbf-cb76797a30ec"
                 ]
               },
               {
-                "id": "44d4c32e-309d-4802-b7cf-e41ee8052535",
+                "id": "21d37b88-c08e-520a-a2d7-2e8546a21c55",
                 "order": 5,
                 "speaker": "玛丽",
                 "zh": "我也不知道做对了没有。我的词典呢？",
                 "vi": "Mình cũng không biết có làm đúng không nữa. Từ điển của mình đâu rồi?",
                 "grammar_refs": [
-                  "f8ec59f3-898a-47b2-b536-44dfd8183393"
+                  "8d4a41cc-5929-57ae-8374-f06990696ca1"
                 ],
                 "vocab_refs": [
-                  "f0684cb3-4577-4e6c-9f22-7d97c89692b3"
+                  "f38aa506-4563-51e5-8561-210b9ce47db6"
                 ]
               },
               {
-                "id": "6f4b4423-8315-40e6-88fa-2fa2038271af",
+                "id": "1bf18a3f-24f4-573a-aa33-dff5445e0d76",
                 "order": 6,
                 "speaker": "罗兰",
                 "zh": "我没看见你的词典。你找词典干什么？",
-                "vi": "Mình không thấy từ điển của bạn. Bạn tìm từ điển làm gì?",
+                "vi": "Mình không nhìn thấy từ điển của bạn. Bạn tìm từ điển làm gì?",
                 "grammar_refs": [
-                  "f8ec59f3-898a-47b2-b536-44dfd8183393"
+                  "8d4a41cc-5929-57ae-8374-f06990696ca1"
                 ],
                 "vocab_refs": [
-                  "54613016-834a-4fc3-9912-2357a6d27058"
+                  "a0ced0ff-55cb-56f8-8c48-ce26dad1d9b0",
+                  "9b8674cb-58e6-5545-85d2-1e0330ddbcc6"
                 ]
               },
               {
-                "id": "6de58c5b-164f-4b2f-8d7e-84f1c7c1a66c",
+                "id": "dd26f137-1f20-5a09-bed3-68bc8221e9d8",
                 "order": 7,
                 "speaker": "玛丽",
                 "zh": "我查一个词，看看写对了没有。糟糕，写错了，是这个“得”，我写成这个“的”了。",
                 "vi": "Mình tra một từ, xem có viết đúng không. Thôi xong, viết sai rồi, là chữ “得” này, mình lại viết thành chữ “的” này rồi.",
                 "grammar_refs": [
-                  "f8ec59f3-898a-47b2-b536-44dfd8183393",
-                  "57b14753-688a-41b6-9e0d-b61dbbf574d7"
+                  "8d4a41cc-5929-57ae-8374-f06990696ca1",
+                  "9e3fe40c-a428-5a85-b969-583cb893e5e1"
                 ],
                 "vocab_refs": [
-                  "f0684cb3-4577-4e6c-9f22-7d97c89692b3",
-                  "d5b362a7-c8f6-4f25-b2b5-0f1749c8afbb",
-                  "7eccd5e8-dac0-4f36-be2e-abcc0a2bdfcd"
+                  "f38aa506-4563-51e5-8561-210b9ce47db6",
+                  "4a04c506-8bac-5b95-8c71-f28f7ce04f8f",
+                  "c759ddc3-c71d-58f7-bed6-f205e574047c"
                 ]
               },
               {
-                "id": "9d76be1a-c606-44bb-a490-a9bd82982e3b",
+                "id": "d21c1852-9223-58da-8461-b16e6d44d39a",
                 "order": 8,
                 "speaker": "罗兰",
                 "zh": "别查了，休息休息吧。快打开电脑，看看电视剧吧。",
                 "vi": "Đừng tra nữa, nghỉ một chút đi. Mau bật máy tính lên, xem phim truyền hình đi.",
                 "grammar_refs": [],
                 "vocab_refs": [
-                  "dc0f8e06-a359-4907-a8d8-fc9b02260590"
+                  "00a523f4-593d-5869-8185-4a76b261b2cb"
                 ]
               },
               {
-                "id": "6e148072-17aa-4ebd-88a1-c59b2fc0ba17",
+                "id": "8b66184d-79b8-565c-bb46-254ae133cac8",
                 "order": 9,
                 "speaker": "玛丽",
                 "zh": "我的衣服还没有洗完呢，还得给我妹妹回信。",
-                "vi": "Quần áo của mình vẫn chưa giặt xong, còn phải viết thư trả lời em gái mình nữa.",
+                "vi": "Quần áo của mình vẫn chưa giặt xong, còn phải hồi âm cho em gái mình nữa.",
                 "grammar_refs": [
-                  "f8ec59f3-898a-47b2-b536-44dfd8183393"
+                  "8d4a41cc-5929-57ae-8374-f06990696ca1"
                 ],
                 "vocab_refs": [
-                  "91fa9f81-e5ef-4c4a-b29c-c4b6daa02196"
+                  "6930efab-fe31-5586-a0a8-d2dd2eda324a"
                 ]
               },
               {
-                "id": "a8845639-9fca-4398-853d-a08fb63482a8",
+                "id": "c45bd0c9-06c3-5720-8b9f-370d73c816ac",
                 "order": 10,
                 "speaker": "罗兰",
                 "zh": "看完电视剧再洗吧。",
                 "vi": "Xem xong phim truyền hình rồi giặt sau đi.",
                 "grammar_refs": [
-                  "fa804fff-372b-4874-8571-f54e613d7e07"
+                  "27b872c2-090b-5746-b74c-9f8490bb948c"
                 ],
                 "vocab_refs": []
               }
@@ -168,7 +169,7 @@
             "comprehension_questions": []
           },
           {
-            "id": "0156dd39-d5b4-41f5-866d-d336dd29bbc2",
+            "id": "83aec1e7-2354-59f9-96d8-96ea4bc0ae6c",
             "type": "text_narrative",
             "order": 2,
             "title": "看完电影再做作业",
@@ -178,71 +179,71 @@
             "lines": [],
             "paragraphs": [
               {
-                "id": "99e63fca-bad7-4aff-8eba-621a119e5a19",
+                "id": "5ac85743-a04b-5924-9395-e812489e0841",
                 "order": 1,
-                "zh": "吃完晚饭，我和玛丽回到宿舍。玛丽说，田芳借给她一本书，书里都是小故事，很有意思。我问她：“你看完了没有？”",
-                "vi": "Ăn xong bữa tối, tôi và Mary về ký túc xá. Mary nói Điền Phương cho cô ấy mượn một quyển sách, trong sách toàn là truyện ngắn, rất thú vị. Tôi hỏi cô ấy: “Bạn xem xong chưa?”",
+                "zh": "吃完晚饭，我和玛丽回到宿舍。玛丽说，田芳借给她一本书，书里都是小故事，很有意思。我问她：“你看完了没有？”她说：“还没看完呢，才看了三十页。”",
+                "vi": "Ăn xong bữa tối, tôi và Mary về ký túc xá. Mary nói Điền Phương cho cô ấy mượn một quyển sách, trong sách toàn là truyện ngắn, rất thú vị. Tôi hỏi cô ấy: “Bạn xem xong chưa?” Cô ấy nói: “Vẫn chưa xem xong, mới xem được ba mươi trang thôi.”",
                 "grammar_refs": [
-                  "f8ec59f3-898a-47b2-b536-44dfd8183393",
-                  "fa804fff-372b-4874-8571-f54e613d7e07",
-                  "c6cd6c38-22fc-4546-a398-39efe02d6c17"
+                  "8d4a41cc-5929-57ae-8374-f06990696ca1"
                 ],
                 "vocab_refs": [
-                  "8a5b1d09-23a6-4182-96e6-9bf4d761a1e1",
-                  "be7a835d-ff8f-4a86-9fd8-27c5f1093f0c"
+                  "4efe6c68-4e03-54bb-a860-e655181f730d",
+                  "325dd767-1feb-553f-8035-9f2d25f71a27",
+                  "c3fb838c-d85f-55f7-8775-003ddd547707"
                 ]
               },
               {
-                "id": "07e24203-eb21-4c88-96af-29e78d8ca2a2",
+                "id": "da1a0e55-73f6-5de2-a8fb-62e16ce5a18e",
                 "order": 2,
-                "zh": "玛丽说：“还没有看完呢，才看了三十页。”我问：“都看懂了吗？”玛丽说：“有的看懂了，有的没有懂。”",
-                "vi": "Mary nói: “Vẫn chưa xem xong, mới xem được ba mươi trang thôi.” Tôi hỏi: “Đều đọc hiểu hết chưa?” Mary nói: “Có cái đọc hiểu rồi, có cái chưa hiểu.”",
+                "zh": "我问玛丽：“都看懂了吗？”她回答：“有的看懂了，有的没看懂。”",
+                "vi": "Tôi hỏi Mary: “Đều đọc hiểu hết chưa?” Cô ấy trả lời: “Có cái đọc hiểu rồi, có cái chưa hiểu.”",
                 "grammar_refs": [
-                  "f8ec59f3-898a-47b2-b536-44dfd8183393",
-                  "c6cd6c38-22fc-4546-a398-39efe02d6c17"
+                  "8d4a41cc-5929-57ae-8374-f06990696ca1"
                 ],
-                "vocab_refs": [
-                  "0125bdae-fe4e-48fb-8264-145e95c75933"
-                ]
+                "vocab_refs": []
               },
               {
-                "id": "a95090b2-e303-4079-9c8c-04b8d52d756d",
+                "id": "ba33203f-caa8-5af5-836f-11b4feede70e",
                 "order": 3,
-                "zh": "我说：“可以让我看看吗？”玛丽说：“当然可以。”我看了两个故事，也觉得很有意思。看到有意思的地方，就想笑。",
-                "vi": "Tôi nói: “Có thể cho mình xem thử không?” Mary nói: “Tất nhiên là được.” Tôi xem hai câu chuyện, cũng thấy rất thú vị. Đọc đến chỗ thú vị thì muốn cười.",
+                "zh": "“可以让我看看吗？”“当然可以。”我看了两个故事，也觉得很有意思。看到有意思的地方，就想笑。我对玛丽说：“咱们可以用这些故事练习会话。”",
+                "vi": "“Có thể cho mình xem thử không?” “Tất nhiên là được.” Tôi xem hai câu chuyện, cũng thấy rất thú vị. Đọc đến chỗ thú vị thì muốn cười. Tôi nói với Mary: “Chúng ta có thể dùng những câu chuyện này để luyện hội thoại.”",
                 "grammar_refs": [
-                  "f8ec59f3-898a-47b2-b536-44dfd8183393"
+                  "8d4a41cc-5929-57ae-8374-f06990696ca1"
                 ],
                 "vocab_refs": [
-                  "8a5b1d09-23a6-4182-96e6-9bf4d761a1e1",
-                  "be7a835d-ff8f-4a86-9fd8-27c5f1093f0c"
+                  "4efe6c68-4e03-54bb-a860-e655181f730d",
+                  "325dd767-1feb-553f-8035-9f2d25f71a27",
+                  "1402a972-04b0-5317-914f-6bc1f505da43",
+                  "0b8cb7a4-5285-53b9-9902-5a8743f81767"
                 ]
               },
               {
-                "id": "700d39f4-2b3a-4134-a5d1-78801541da6c",
+                "id": "c4e3378b-77d6-5a01-87be-f4fee1fff5d9",
                 "order": 4,
-                "zh": "我对玛丽说：“咱们可以用这些故事练习会话。”玛丽问：“怎么练习？”我说：“我念完一个故事，问你几个问题，看你能不能答对；你念完一个故事，也问我几个问题，看我能不能答对。”",
-                "vi": "Tôi nói với Mary: “Chúng ta có thể dùng những câu chuyện này để luyện hội thoại.” Mary hỏi: “Luyện thế nào?” Tôi nói: “Tôi đọc xong một câu chuyện, hỏi bạn vài câu, xem bạn có trả lời đúng được không; bạn đọc xong một câu chuyện, cũng hỏi tôi vài câu, xem tôi có trả lời đúng được không.”",
+                "zh": "玛丽说：“怎么练习？”“我念完一个故事，问你几个问题，看你能不能答对；你念完一个故事，也问我几个问题，看我能不能答对。”玛丽说：“这是个好办法。”我念了一个故事，玛丽听懂了。问了她五个问题，她都答对了。",
+                "vi": "Mary nói: “Luyện thế nào?” “Tôi đọc xong một câu chuyện, hỏi bạn vài câu, xem bạn có trả lời đúng được không; bạn đọc xong một câu chuyện, cũng hỏi tôi vài câu, xem tôi có trả lời đúng được không.” Mary nói: “Đây là một cách hay.” Tôi đọc một câu chuyện, Mary nghe hiểu rồi. Tôi hỏi cô ấy năm câu, cô ấy đều trả lời đúng.",
                 "grammar_refs": [
-                  "f8ec59f3-898a-47b2-b536-44dfd8183393"
+                  "8d4a41cc-5929-57ae-8374-f06990696ca1"
                 ],
                 "vocab_refs": [
-                  "689eb64b-5d4f-469f-9afa-74017d399614",
-                  "d45d5488-9293-41ae-9deb-1e5b51cee446",
-                  "c99a633b-27a2-429b-a139-44113a84c189"
+                  "c445fb06-9909-5c65-9595-2a326c0dc1fb",
+                  "fa2703dc-b0f0-5715-a9a6-945f17be9d36",
+                  "6c8b4057-89e0-5683-9845-92ee007dd93c"
                 ]
               },
               {
-                "id": "a3cc56f8-271e-429d-9cfd-4728fb5a3797",
+                "id": "0a2fb0a1-7e4c-59bb-b343-fe1314193106",
                 "order": 5,
-                "zh": "玛丽说：“这是个好办法。”我念了一个故事，玛丽听懂了。问了她五个问题，她都答对了。",
-                "vi": "Mary nói: “Đây là một cách hay.” Tôi đọc một câu chuyện, Mary nghe hiểu rồi. Tôi hỏi cô ấy năm câu, cô ấy đều trả lời đúng.",
+                "zh": "我们还没有练习完，就听见安娜在门外叫我们。我开门问她：“什么事？”“晚上礼堂有电影，你们看吗？”“什么电影？”“是个新电影，我不知道叫什么名字。田芳说，这个电影非常好。”“想看。但是我今天的作业还没有做完呢，课文也读得不太熟。”安娜说：“我也没做完呢，看完电影再做吧。”说完，我们三个就去礼堂看电影了。我们看到九点才看完。九点半我才开始做作业。做完作业已经十点半了。",
+                "vi": "Chúng tôi vẫn chưa luyện xong thì nghe thấy Anna gọi ngoài cửa. Tôi mở cửa hỏi cô ấy: “Có chuyện gì?” “Tối nay ở lễ đường có phim, các bạn xem không?” “Phim gì?” “Là phim mới, mình không biết tên là gì. Điền Phương nói phim này rất hay.” “Muốn xem. Nhưng bài tập hôm nay của mình vẫn chưa làm xong, bài khóa cũng đọc chưa thuộc lắm.” Anna nói: “Mình cũng chưa làm xong, xem phim xong rồi làm sau đi.” Nói xong, ba chúng tôi liền đi lễ đường xem phim. Chúng tôi xem đến chín giờ mới xem xong. Chín rưỡi tôi mới bắt đầu làm bài tập. Làm xong bài tập thì đã mười rưỡi rồi.",
                 "grammar_refs": [
-                  "f8ec59f3-898a-47b2-b536-44dfd8183393",
-                  "c6cd6c38-22fc-4546-a398-39efe02d6c17"
+                  "8d4a41cc-5929-57ae-8374-f06990696ca1",
+                  "ae9d5de6-67ad-5bd3-b494-59b55884c4ac"
                 ],
                 "vocab_refs": [
-                  "c99a633b-27a2-429b-a139-44113a84c189"
+                  "466069b8-d708-573c-a906-5319fbc3a388",
+                  "f5f4d880-8706-5424-bc96-494fcd18c4c5",
+                  "31b49048-5330-5b63-8521-9124ffc1a48f"
                 ]
               }
             ],
@@ -251,30 +252,42 @@
         ]
       },
       {
-        "id": "78c30bf4-c314-4c4c-86e3-4dd62382dd78",
+        "id": "cf17bdf7-e760-5a53-8b17-3dc0a20da08e",
         "type": "vocabulary",
         "order": 2,
         "title": "生词",
-        "title_vi": "Từ vựng chính",
-        "source_origin": "textbook",
+        "title_vi": "Từ vựng chính và bổ sung",
+        "source_origin": "textbook/pdf_checked",
         "check_needed": false,
         "items": [
           {
-            "id": "68c05a12-9d8e-45d9-a413-786bcf2f780a",
+            "id": "ca0b9d81-7c9f-5438-a79b-5001ee51eb9c",
             "type": "vocabulary_item",
             "order": 1,
             "hanzi": "考试",
             "pinyin": "kǎoshì",
-            "meaning_vi": "thi, kỳ thi",
-            "meaning_en": "",
-            "pos": "noun",
+            "meaning_vi": "thi; kỳ thi",
+            "meaning_en": "to take an exam; exam",
+            "pos": "Động từ li hợp / Danh từ",
+            "pos_detail": {
+              "vi": "Động từ li hợp / Danh từ",
+              "cn": "动宾式离合词 / 名词",
+              "normalized": "verb_noun",
+              "schema_compatible_pos": "verb_phrase",
+              "is_separable_verb": true,
+              "separable_type": "động-tân / 离合词",
+              "structure_vi": "động từ 考 + tân ngữ 试",
+              "usage_note_vi": "Có thể nói 考完试、考了一次试. Khi làm danh từ nghĩa là kỳ thi/bài thi.",
+              "notes": []
+            },
             "tags": [
-              "main_vocab"
+              "main_vocab",
+              "separable_verb"
             ],
             "examples": [],
             "flashcard": {
               "front": "考试",
-              "back": "kǎoshì — thi, kỳ thi",
+              "back": "kǎoshì — thi; kỳ thi",
               "modes": [
                 "hanzi_to_meaning",
                 "meaning_to_hanzi",
@@ -287,21 +300,32 @@
             "check_needed": false
           },
           {
-            "id": "8c18cf3c-e9dc-42e1-8faf-eb26799cabab",
+            "id": "b00ff202-6b4d-560f-8156-c7a86469c55e",
             "type": "vocabulary_item",
             "order": 2,
             "hanzi": "题",
             "pinyin": "tí",
-            "meaning_vi": "đề bài, câu hỏi",
-            "meaning_en": "",
-            "pos": "noun",
+            "meaning_vi": "đề bài, câu hỏi, bài toán",
+            "meaning_en": "question; problem",
+            "pos": "Danh từ",
+            "pos_detail": {
+              "vi": "Danh từ",
+              "cn": "名词",
+              "normalized": "noun",
+              "schema_compatible_pos": "noun",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "",
+              "notes": []
+            },
             "tags": [
               "main_vocab"
             ],
             "examples": [],
             "flashcard": {
               "front": "题",
-              "back": "tí — đề bài, câu hỏi",
+              "back": "tí — đề bài, câu hỏi, bài toán",
               "modes": [
                 "hanzi_to_meaning",
                 "meaning_to_hanzi",
@@ -314,48 +338,33 @@
             "check_needed": false
           },
           {
-            "id": "1fbd69b7-603a-44ea-8d57-10cd4def9ced",
+            "id": "5c8f1856-3a92-56cf-9a25-b3cc1b880991",
             "type": "vocabulary_item",
             "order": 3,
-            "hanzi": "道",
-            "pinyin": "dào",
-            "meaning_vi": "lượng từ cho câu hỏi / bài toán / món ăn",
-            "meaning_en": "",
-            "pos": "measure_word",
-            "tags": [
-              "main_vocab"
-            ],
-            "examples": [],
-            "flashcard": {
-              "front": "道",
-              "back": "dào — lượng từ cho câu hỏi / bài toán / món ăn",
-              "modes": [
-                "hanzi_to_meaning",
-                "meaning_to_hanzi",
-                "pinyin_to_hanzi",
-                "audio_to_hanzi"
-              ]
-            },
-            "audio_key": "",
-            "source_origin": "textbook",
-            "check_needed": false
-          },
-          {
-            "id": "3dc505f1-bc0e-4a96-b448-17fed89fdc60",
-            "type": "vocabulary_item",
-            "order": 4,
             "hanzi": "完",
             "pinyin": "wán",
-            "meaning_vi": "xong, hoàn thành",
-            "meaning_en": "",
-            "pos": "verb",
+            "meaning_vi": "xong, hoàn thành; hết",
+            "meaning_en": "to finish; to be over",
+            "pos": "Động từ / Bổ ngữ kết quả",
+            "pos_detail": {
+              "vi": "Động từ / Bổ ngữ kết quả",
+              "cn": "动词 / 结果补语",
+              "normalized": "verb",
+              "schema_compatible_pos": "verb",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "Trong bài thường làm bổ ngữ kết quả: 做完、看完、听完.",
+              "notes": []
+            },
             "tags": [
-              "main_vocab"
+              "main_vocab",
+              "result_complement"
             ],
             "examples": [],
             "flashcard": {
               "front": "完",
-              "back": "wán — xong, hoàn thành",
+              "back": "wán — xong, hoàn thành; hết",
               "modes": [
                 "hanzi_to_meaning",
                 "meaning_to_hanzi",
@@ -368,14 +377,64 @@
             "check_needed": false
           },
           {
-            "id": "188412d4-4c23-4d60-b7b2-21f3490199e7",
+            "id": "0b29807c-58e3-566f-a8f7-728b421addd2",
+            "type": "vocabulary_item",
+            "order": 4,
+            "hanzi": "道",
+            "pinyin": "dào",
+            "meaning_vi": "lượng từ cho câu hỏi/bài toán/món ăn; con đường",
+            "meaning_en": "measure word for questions/orders/dishes; way",
+            "pos": "Lượng từ / Danh từ",
+            "pos_detail": {
+              "vi": "Lượng từ / Danh từ",
+              "cn": "量词 / 名词",
+              "normalized": "measure_word",
+              "schema_compatible_pos": "measure_word",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "",
+              "notes": []
+            },
+            "tags": [
+              "main_vocab",
+              "measure_word"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "道",
+              "back": "dào — lượng từ cho câu hỏi/bài toán/món ăn; con đường",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "check_needed": false
+          },
+          {
+            "id": "e1ea579a-d627-541d-9a55-aeaa5b4d73dd",
             "type": "vocabulary_item",
             "order": 5,
             "hanzi": "成绩",
             "pinyin": "chéngjì",
             "meaning_vi": "thành tích, điểm số, kết quả học tập",
-            "meaning_en": "",
-            "pos": "noun",
+            "meaning_en": "result; achievement; score",
+            "pos": "Danh từ",
+            "pos_detail": {
+              "vi": "Danh từ",
+              "cn": "名词",
+              "normalized": "noun",
+              "schema_compatible_pos": "noun",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "",
+              "notes": []
+            },
             "tags": [
               "main_vocab"
             ],
@@ -395,21 +454,32 @@
             "check_needed": false
           },
           {
-            "id": "5ea44727-d97c-467b-b1b8-babd195df50d",
+            "id": "47075cb0-4b1e-5383-8bbf-cb76797a30ec",
             "type": "vocabulary_item",
             "order": 6,
             "hanzi": "句子",
             "pinyin": "jùzi",
-            "meaning_vi": "câu",
-            "meaning_en": "",
-            "pos": "noun",
+            "meaning_vi": "câu, câu văn",
+            "meaning_en": "sentence",
+            "pos": "Danh từ",
+            "pos_detail": {
+              "vi": "Danh từ",
+              "cn": "名词",
+              "normalized": "noun",
+              "schema_compatible_pos": "noun",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "",
+              "notes": []
+            },
             "tags": [
               "main_vocab"
             ],
             "examples": [],
             "flashcard": {
               "front": "句子",
-              "back": "jùzi — câu",
+              "back": "jùzi — câu, câu văn",
               "modes": [
                 "hanzi_to_meaning",
                 "meaning_to_hanzi",
@@ -422,16 +492,108 @@
             "check_needed": false
           },
           {
-            "id": "54613016-834a-4fc3-9912-2357a6d27058",
+            "id": "a0ced0ff-55cb-56f8-8c48-ce26dad1d9b0",
             "type": "vocabulary_item",
             "order": 7,
+            "hanzi": "看见",
+            "pinyin": "kànjiàn",
+            "meaning_vi": "nhìn thấy, trông thấy",
+            "meaning_en": "to see; to catch sight of",
+            "pos": "Động từ + bổ ngữ kết quả",
+            "pos_detail": {
+              "vi": "Động từ + bổ ngữ kết quả",
+              "cn": "动词 + 结果补语",
+              "normalized": "verb_phrase",
+              "schema_compatible_pos": "verb_phrase",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "động từ 看 + bổ ngữ kết quả 见",
+              "usage_note_vi": "Không phải động từ li hợp; 见 là bổ ngữ kết quả chỉ kết quả 'thấy được'.",
+              "notes": []
+            },
+            "tags": [
+              "main_vocab",
+              "result_complement",
+              "added_from_pdf"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "看见",
+              "back": "kànjiàn — nhìn thấy, trông thấy",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "check_needed": false
+          },
+          {
+            "id": "d6126a57-9f41-5ec5-9ed6-c69bf93e568a",
+            "type": "vocabulary_item",
+            "order": 8,
+            "hanzi": "见",
+            "pinyin": "jiàn",
+            "meaning_vi": "thấy, gặp; nhìn thấy",
+            "meaning_en": "to see; to meet",
+            "pos": "Động từ / Yếu tố cấu tạo từ",
+            "pos_detail": {
+              "vi": "Động từ / Yếu tố cấu tạo từ",
+              "cn": "动词 / 语素",
+              "normalized": "verb",
+              "schema_compatible_pos": "verb",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "Trong bài chủ yếu xuất hiện trong 看见、听见 như bổ ngữ kết quả.",
+              "notes": []
+            },
+            "tags": [
+              "sub_vocab",
+              "result_complement",
+              "added_from_pdf"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "见",
+              "back": "jiàn — thấy, gặp; nhìn thấy",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "check_needed": false
+          },
+          {
+            "id": "9b8674cb-58e6-5545-85d2-1e0330ddbcc6",
+            "type": "vocabulary_item",
+            "order": 9,
             "hanzi": "干什么",
             "pinyin": "gàn shénme",
             "meaning_vi": "làm gì",
-            "meaning_en": "",
-            "pos": "phrase",
+            "meaning_en": "why; for what purpose",
+            "pos": "Cụm nghi vấn khẩu ngữ",
+            "pos_detail": {
+              "vi": "Cụm nghi vấn khẩu ngữ",
+              "cn": "疑问短语",
+              "normalized": "phrase",
+              "schema_compatible_pos": "phrase",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "干 + 什么",
+              "usage_note_vi": "Dùng trong khẩu ngữ để hỏi mục đích: 你找词典干什么？",
+              "notes": []
+            },
             "tags": [
-              "main_vocab"
+              "main_vocab",
+              "spoken"
             ],
             "examples": [],
             "flashcard": {
@@ -449,16 +611,67 @@
             "check_needed": false
           },
           {
-            "id": "0da97406-c3ac-4fcb-a51c-398a59c3fbae",
+            "id": "96b01728-43d3-5e9e-88e0-9c9b638feac4",
             "type": "vocabulary_item",
-            "order": 8,
+            "order": 10,
+            "hanzi": "干",
+            "pinyin": "gàn",
+            "meaning_vi": "làm, làm việc",
+            "meaning_en": "to do; to work",
+            "pos": "Động từ",
+            "pos_detail": {
+              "vi": "Động từ",
+              "cn": "动词",
+              "normalized": "verb",
+              "schema_compatible_pos": "verb",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "Trong bài là thành phần của 干什么.",
+              "notes": []
+            },
+            "tags": [
+              "sub_vocab",
+              "added_from_pdf"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "干",
+              "back": "gàn — làm, làm việc",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "check_needed": false
+          },
+          {
+            "id": "420e68e0-c8e6-5bfc-9e7c-b1cf65638514",
+            "type": "vocabulary_item",
+            "order": 11,
             "hanzi": "啥",
             "pinyin": "shá",
             "meaning_vi": "gì, cái gì",
-            "meaning_en": "",
-            "pos": "pronoun",
+            "meaning_en": "what",
+            "pos": "Đại từ nghi vấn khẩu ngữ",
+            "pos_detail": {
+              "vi": "Đại từ nghi vấn khẩu ngữ",
+              "cn": "疑问代词 / 口语",
+              "normalized": "pronoun",
+              "schema_compatible_pos": "pronoun",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "Khẩu ngữ hơn 什么; không dùng trong văn viết trang trọng.",
+              "notes": []
+            },
             "tags": [
-              "main_vocab"
+              "extra_vocab",
+              "spoken"
             ],
             "examples": [],
             "flashcard": {
@@ -472,20 +685,32 @@
               ]
             },
             "audio_key": "",
-            "source_origin": "textbook",
+            "source_origin": "textbook/generated_mixed",
             "check_needed": false
           },
           {
-            "id": "54b36889-82be-485b-8342-fb8aab572065",
+            "id": "1b9e4905-8e2e-5727-bca1-7f12ccfb106c",
             "type": "vocabulary_item",
-            "order": 9,
+            "order": 12,
             "hanzi": "笨蛋",
             "pinyin": "bèndàn",
             "meaning_vi": "đồ ngốc, kẻ ngốc",
-            "meaning_en": "",
-            "pos": "noun",
+            "meaning_en": "fool; idiot",
+            "pos": "Danh từ mắng người",
+            "pos_detail": {
+              "vi": "Danh từ mắng người",
+              "cn": "名词 / 骂人话",
+              "normalized": "noun",
+              "schema_compatible_pos": "noun",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "Từ mắng người; giữa người thân có thể dùng đùa tùy ngữ điệu.",
+              "notes": []
+            },
             "tags": [
-              "main_vocab"
+              "extra_vocab",
+              "spoken"
             ],
             "examples": [],
             "flashcard": {
@@ -499,25 +724,36 @@
               ]
             },
             "audio_key": "",
-            "source_origin": "textbook",
+            "source_origin": "textbook/generated_mixed",
             "check_needed": false
           },
           {
-            "id": "1354b1a3-93cc-4505-8d7f-c5550a1d6ae9",
+            "id": "a781daa7-c8f6-5dbf-93c7-b2fdec40bb77",
             "type": "vocabulary_item",
-            "order": 10,
+            "order": 13,
             "hanzi": "笨",
             "pinyin": "bèn",
-            "meaning_vi": "ngốc, vụng, không thông minh",
-            "meaning_en": "",
-            "pos": "adjective",
+            "meaning_vi": "ngốc, vụng, chậm hiểu",
+            "meaning_en": "stupid; clumsy",
+            "pos": "Tính từ",
+            "pos_detail": {
+              "vi": "Tính từ",
+              "cn": "形容词",
+              "normalized": "adjective",
+              "schema_compatible_pos": "adjective",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "Dùng để chê người/vật không linh hoạt; cần tránh dùng thẳng với người khác.",
+              "notes": []
+            },
             "tags": [
-              "main_vocab"
+              "extra_vocab"
             ],
             "examples": [],
             "flashcard": {
               "front": "笨",
-              "back": "bèn — ngốc, vụng, không thông minh",
+              "back": "bèn — ngốc, vụng, chậm hiểu",
               "modes": [
                 "hanzi_to_meaning",
                 "meaning_to_hanzi",
@@ -526,25 +762,36 @@
               ]
             },
             "audio_key": "",
-            "source_origin": "textbook",
+            "source_origin": "textbook/generated_mixed",
             "check_needed": false
           },
           {
-            "id": "f0684cb3-4577-4e6c-9f22-7d97c89692b3",
+            "id": "f38aa506-4563-51e5-8561-210b9ce47db6",
             "type": "vocabulary_item",
-            "order": 11,
+            "order": 14,
             "hanzi": "词",
             "pinyin": "cí",
-            "meaning_vi": "từ",
-            "meaning_en": "",
-            "pos": "noun",
+            "meaning_vi": "từ, từ vựng",
+            "meaning_en": "word",
+            "pos": "Danh từ",
+            "pos_detail": {
+              "vi": "Danh từ",
+              "cn": "名词",
+              "normalized": "noun",
+              "schema_compatible_pos": "noun",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "",
+              "notes": []
+            },
             "tags": [
               "main_vocab"
             ],
             "examples": [],
             "flashcard": {
               "front": "词",
-              "back": "cí — từ",
+              "back": "cí — từ, từ vựng",
               "modes": [
                 "hanzi_to_meaning",
                 "meaning_to_hanzi",
@@ -557,21 +804,33 @@
             "check_needed": false
           },
           {
-            "id": "d5b362a7-c8f6-4f25-b2b5-0f1749c8afbb",
+            "id": "4a04c506-8bac-5b95-8c71-f28f7ce04f8f",
             "type": "vocabulary_item",
-            "order": 12,
+            "order": 15,
             "hanzi": "糟糕",
             "pinyin": "zāogāo",
-            "meaning_vi": "hỏng rồi, tệ quá, gay go",
-            "meaning_en": "",
-            "pos": "adjective",
+            "meaning_vi": "tệ quá, hỏng rồi, gay rồi",
+            "meaning_en": "terrible; too bad",
+            "pos": "Tính từ / Thán ngữ",
+            "pos_detail": {
+              "vi": "Tính từ / Thán ngữ",
+              "cn": "形容词 / 叹词",
+              "normalized": "adjective",
+              "schema_compatible_pos": "adjective",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "Có thể làm tính từ hoặc lời cảm thán khi phát hiện tình huống xấu.",
+              "notes": []
+            },
             "tags": [
-              "main_vocab"
+              "main_vocab",
+              "spoken"
             ],
             "examples": [],
             "flashcard": {
               "front": "糟糕",
-              "back": "zāogāo — hỏng rồi, tệ quá, gay go",
+              "back": "zāogāo — tệ quá, hỏng rồi, gay rồi",
               "modes": [
                 "hanzi_to_meaning",
                 "meaning_to_hanzi",
@@ -584,16 +843,28 @@
             "check_needed": false
           },
           {
-            "id": "7eccd5e8-dac0-4f36-be2e-abcc0a2bdfcd",
+            "id": "c759ddc3-c71d-58f7-bed6-f205e574047c",
             "type": "vocabulary_item",
-            "order": 13,
+            "order": 16,
             "hanzi": "成",
             "pinyin": "chéng",
             "meaning_vi": "thành, trở thành, biến thành",
-            "meaning_en": "",
-            "pos": "verb",
+            "meaning_en": "to become; to turn into",
+            "pos": "Động từ / Bổ ngữ kết quả",
+            "pos_detail": {
+              "vi": "Động từ / Bổ ngữ kết quả",
+              "cn": "动词 / 结果补语",
+              "normalized": "verb",
+              "schema_compatible_pos": "verb",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "Trong bài thường dùng sau động từ: 写成、说成、改成.",
+              "notes": []
+            },
             "tags": [
-              "main_vocab"
+              "main_vocab",
+              "result_complement"
             ],
             "examples": [],
             "flashcard": {
@@ -611,21 +882,33 @@
             "check_needed": false
           },
           {
-            "id": "91fa9f81-e5ef-4c4a-b29c-c4b6daa02196",
+            "id": "6930efab-fe31-5586-a0a8-d2dd2eda324a",
             "type": "vocabulary_item",
-            "order": 14,
+            "order": 17,
             "hanzi": "回信",
             "pinyin": "huíxìn",
-            "meaning_vi": "trả lời thư, hồi âm",
-            "meaning_en": "",
-            "pos": "verb",
+            "meaning_vi": "trả lời thư, hồi âm; thư hồi âm",
+            "meaning_en": "to reply to a letter/email; reply letter",
+            "pos": "Động từ li hợp / Danh từ",
+            "pos_detail": {
+              "vi": "Động từ li hợp / Danh từ",
+              "cn": "动宾式离合词 / 名词",
+              "normalized": "verb_noun",
+              "schema_compatible_pos": "verb_phrase",
+              "is_separable_verb": true,
+              "separable_type": "động-tân / 离合词",
+              "structure_vi": "động từ 回 + tân ngữ 信",
+              "usage_note_vi": "Có thể nói 给他回信、回了一封信、一直没回信. Khi làm danh từ nghĩa là thư hồi âm.",
+              "notes": []
+            },
             "tags": [
-              "main_vocab"
+              "main_vocab",
+              "separable_verb"
             ],
             "examples": [],
             "flashcard": {
               "front": "回信",
-              "back": "huíxìn — trả lời thư, hồi âm",
+              "back": "huíxìn — trả lời thư, hồi âm; thư hồi âm",
               "modes": [
                 "hanzi_to_meaning",
                 "meaning_to_hanzi",
@@ -638,21 +921,32 @@
             "check_needed": false
           },
           {
-            "id": "8a5b1d09-23a6-4182-96e6-9bf4d761a1e1",
+            "id": "4efe6c68-4e03-54bb-a860-e655181f730d",
             "type": "vocabulary_item",
-            "order": 15,
+            "order": 18,
             "hanzi": "故事",
             "pinyin": "gùshi",
-            "meaning_vi": "câu chuyện",
-            "meaning_en": "",
-            "pos": "noun",
+            "meaning_vi": "câu chuyện, truyện",
+            "meaning_en": "story",
+            "pos": "Danh từ",
+            "pos_detail": {
+              "vi": "Danh từ",
+              "cn": "名词",
+              "normalized": "noun",
+              "schema_compatible_pos": "noun",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "",
+              "notes": []
+            },
             "tags": [
               "main_vocab"
             ],
             "examples": [],
             "flashcard": {
               "front": "故事",
-              "back": "gùshi — câu chuyện",
+              "back": "gùshi — câu chuyện, truyện",
               "modes": [
                 "hanzi_to_meaning",
                 "meaning_to_hanzi",
@@ -665,21 +959,32 @@
             "check_needed": false
           },
           {
-            "id": "be7a835d-ff8f-4a86-9fd8-27c5f1093f0c",
+            "id": "325dd767-1feb-553f-8035-9f2d25f71a27",
             "type": "vocabulary_item",
-            "order": 16,
+            "order": 19,
             "hanzi": "有意思",
             "pinyin": "yǒu yìsi",
-            "meaning_vi": "thú vị, có ý nghĩa",
-            "meaning_en": "",
-            "pos": "adjective",
+            "meaning_vi": "thú vị, có ý nghĩa, đáng chú ý",
+            "meaning_en": "interesting; meaningful",
+            "pos": "Cụm tính từ",
+            "pos_detail": {
+              "vi": "Cụm tính từ",
+              "cn": "形容性短语",
+              "normalized": "adjective_phrase",
+              "schema_compatible_pos": "adjective_phrase",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "有 + 意思",
+              "usage_note_vi": "Cụm cố định, không bỏ 有. Có thể mang nghĩa 'thú vị' hoặc 'đáng suy nghĩ'.",
+              "notes": []
+            },
             "tags": [
               "main_vocab"
             ],
             "examples": [],
             "flashcard": {
               "front": "有意思",
-              "back": "yǒu yìsi — thú vị, có ý nghĩa",
+              "back": "yǒu yìsi — thú vị, có ý nghĩa, đáng chú ý",
               "modes": [
                 "hanzi_to_meaning",
                 "meaning_to_hanzi",
@@ -692,21 +997,32 @@
             "check_needed": false
           },
           {
-            "id": "7a89dc80-d79d-4c2f-988c-d0f54e240d19",
+            "id": "3c048f3a-3a2e-5364-ab1a-b547edea7b34",
             "type": "vocabulary_item",
-            "order": 17,
+            "order": 20,
             "hanzi": "夜",
             "pinyin": "yè",
-            "meaning_vi": "đêm",
-            "meaning_en": "",
-            "pos": "noun",
+            "meaning_vi": "đêm, ban đêm",
+            "meaning_en": "night",
+            "pos": "Danh từ / Yếu tố cấu tạo từ",
+            "pos_detail": {
+              "vi": "Danh từ / Yếu tố cấu tạo từ",
+              "cn": "名词 / 语素",
+              "normalized": "noun",
+              "schema_compatible_pos": "noun",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "",
+              "notes": []
+            },
             "tags": [
-              "main_vocab"
+              "extra_vocab"
             ],
             "examples": [],
             "flashcard": {
               "front": "夜",
-              "back": "yè — đêm",
+              "back": "yè — đêm, ban đêm",
               "modes": [
                 "hanzi_to_meaning",
                 "meaning_to_hanzi",
@@ -715,20 +1031,31 @@
               ]
             },
             "audio_key": "",
-            "source_origin": "textbook",
+            "source_origin": "textbook/generated_mixed",
             "check_needed": false
           },
           {
-            "id": "ff3e1818-66a9-4532-880b-02c9cacb0e5b",
+            "id": "f39bb90f-3044-5b1b-ae19-4eb6fc46a085",
             "type": "vocabulary_item",
-            "order": 18,
+            "order": 21,
             "hanzi": "叶",
             "pinyin": "yè",
             "meaning_vi": "lá cây",
-            "meaning_en": "",
-            "pos": "noun",
+            "meaning_en": "leaf",
+            "pos": "Danh từ",
+            "pos_detail": {
+              "vi": "Danh từ",
+              "cn": "名词",
+              "normalized": "noun",
+              "schema_compatible_pos": "noun",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "",
+              "notes": []
+            },
             "tags": [
-              "main_vocab"
+              "extra_vocab"
             ],
             "examples": [],
             "flashcard": {
@@ -742,25 +1069,37 @@
               ]
             },
             "audio_key": "",
-            "source_origin": "textbook",
+            "source_origin": "textbook/generated_mixed",
             "check_needed": false
           },
           {
-            "id": "0125bdae-fe4e-48fb-8264-145e95c75933",
+            "id": "c3fb838c-d85f-55f7-8775-003ddd547707",
             "type": "vocabulary_item",
-            "order": 19,
+            "order": 22,
             "hanzi": "页",
             "pinyin": "yè",
-            "meaning_vi": "trang sách",
-            "meaning_en": "",
-            "pos": "measure_word",
+            "meaning_vi": "trang sách, trang giấy",
+            "meaning_en": "page",
+            "pos": "Danh từ / Lượng từ",
+            "pos_detail": {
+              "vi": "Danh từ / Lượng từ",
+              "cn": "名词 / 量词",
+              "normalized": "measure_word",
+              "schema_compatible_pos": "measure_word",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "Trong bài dùng làm lượng từ: 三十页.",
+              "notes": []
+            },
             "tags": [
-              "main_vocab"
+              "main_vocab",
+              "measure_word"
             ],
             "examples": [],
             "flashcard": {
               "front": "页",
-              "back": "yè — trang sách",
+              "back": "yè — trang sách, trang giấy",
               "modes": [
                 "hanzi_to_meaning",
                 "meaning_to_hanzi",
@@ -773,21 +1112,110 @@
             "check_needed": false
           },
           {
-            "id": "689eb64b-5d4f-469f-9afa-74017d399614",
+            "id": "1402a972-04b0-5317-914f-6bc1f505da43",
             "type": "vocabulary_item",
-            "order": 20,
+            "order": 23,
+            "hanzi": "笑",
+            "pinyin": "xiào",
+            "meaning_vi": "cười",
+            "meaning_en": "to smile; to laugh",
+            "pos": "Động từ",
+            "pos_detail": {
+              "vi": "Động từ",
+              "cn": "动词",
+              "normalized": "verb",
+              "schema_compatible_pos": "verb",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "",
+              "notes": []
+            },
+            "tags": [
+              "main_vocab",
+              "added_from_pdf"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "笑",
+              "back": "xiào — cười",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "check_needed": false
+          },
+          {
+            "id": "0b8cb7a4-5285-53b9-9902-5a8743f81767",
+            "type": "vocabulary_item",
+            "order": 24,
+            "hanzi": "会话",
+            "pinyin": "huìhuà",
+            "meaning_vi": "hội thoại; luyện nói chuyện",
+            "meaning_en": "to converse; conversation",
+            "pos": "Động từ / Danh từ",
+            "pos_detail": {
+              "vi": "Động từ / Danh từ",
+              "cn": "动词 / 名词",
+              "normalized": "verb_noun",
+              "schema_compatible_pos": "verb",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "会 + 话",
+              "usage_note_vi": "Trong bài dùng trong 练习会话: luyện hội thoại. Không đánh dấu động từ li hợp nếu không có ngữ cảnh tách.",
+              "notes": []
+            },
+            "tags": [
+              "main_vocab",
+              "added_from_pdf"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "会话",
+              "back": "huìhuà — hội thoại; luyện nói chuyện",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "check_needed": false
+          },
+          {
+            "id": "c445fb06-9909-5c65-9595-2a326c0dc1fb",
+            "type": "vocabulary_item",
+            "order": 25,
             "hanzi": "念",
             "pinyin": "niàn",
-            "meaning_vi": "đọc thành tiếng; học",
-            "meaning_en": "",
-            "pos": "verb",
+            "meaning_vi": "đọc thành tiếng; đọc/học; nhớ",
+            "meaning_en": "to read aloud",
+            "pos": "Động từ",
+            "pos_detail": {
+              "vi": "Động từ",
+              "cn": "动词",
+              "normalized": "verb",
+              "schema_compatible_pos": "verb",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "",
+              "notes": []
+            },
             "tags": [
               "main_vocab"
             ],
             "examples": [],
             "flashcard": {
               "front": "念",
-              "back": "niàn — đọc thành tiếng; học",
+              "back": "niàn — đọc thành tiếng; đọc/học; nhớ",
               "modes": [
                 "hanzi_to_meaning",
                 "meaning_to_hanzi",
@@ -800,14 +1228,25 @@
             "check_needed": false
           },
           {
-            "id": "d45d5488-9293-41ae-9deb-1e5b51cee446",
+            "id": "fa2703dc-b0f0-5715-a9a6-945f17be9d36",
             "type": "vocabulary_item",
-            "order": 21,
+            "order": 26,
             "hanzi": "答",
             "pinyin": "dá",
             "meaning_vi": "trả lời, đáp",
-            "meaning_en": "",
-            "pos": "verb",
+            "meaning_en": "to answer",
+            "pos": "Động từ / Yếu tố cấu tạo từ",
+            "pos_detail": {
+              "vi": "Động từ / Yếu tố cấu tạo từ",
+              "cn": "动词 / 语素",
+              "normalized": "verb",
+              "schema_compatible_pos": "verb",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "Thường đi trong 答对、答错、回答、答案.",
+              "notes": []
+            },
             "tags": [
               "main_vocab"
             ],
@@ -827,21 +1266,32 @@
             "check_needed": false
           },
           {
-            "id": "c99a633b-27a2-429b-a139-44113a84c189",
+            "id": "6c8b4057-89e0-5683-9845-92ee007dd93c",
             "type": "vocabulary_item",
-            "order": 22,
+            "order": 27,
             "hanzi": "办法",
             "pinyin": "bànfǎ",
-            "meaning_vi": "cách, biện pháp",
-            "meaning_en": "",
-            "pos": "noun",
+            "meaning_vi": "cách, cách làm, biện pháp",
+            "meaning_en": "way; method",
+            "pos": "Danh từ",
+            "pos_detail": {
+              "vi": "Danh từ",
+              "cn": "名词",
+              "normalized": "noun",
+              "schema_compatible_pos": "noun",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "",
+              "notes": []
+            },
             "tags": [
               "main_vocab"
             ],
             "examples": [],
             "flashcard": {
               "front": "办法",
-              "back": "bànfǎ — cách, biện pháp",
+              "back": "bànfǎ — cách, cách làm, biện pháp",
               "modes": [
                 "hanzi_to_meaning",
                 "meaning_to_hanzi",
@@ -854,21 +1304,33 @@
             "check_needed": false
           },
           {
-            "id": "79358c6f-3427-4c28-98f3-7ef98c7033c3",
+            "id": "9be4cabc-66d1-591d-9807-71159c6ee3d2",
             "type": "vocabulary_item",
-            "order": 23,
+            "order": 28,
             "hanzi": "合上",
             "pinyin": "héshang",
-            "meaning_vi": "đóng lại, khép lại",
-            "meaning_en": "",
-            "pos": "verb",
+            "meaning_vi": "khép lại, gấp lại, đóng lại",
+            "meaning_en": "to shut; to close",
+            "pos": "Động từ + bổ ngữ kết quả",
+            "pos_detail": {
+              "vi": "Động từ + bổ ngữ kết quả",
+              "cn": "动词 + 结果补语",
+              "normalized": "verb_phrase",
+              "schema_compatible_pos": "verb_phrase",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "động từ 合 + bổ ngữ kết quả 上",
+              "usage_note_vi": "Không phải động từ li hợp; 上 là bổ ngữ kết quả chỉ trạng thái khép/đóng xong.",
+              "notes": []
+            },
             "tags": [
-              "main_vocab"
+              "main_vocab",
+              "result_complement"
             ],
             "examples": [],
             "flashcard": {
               "front": "合上",
-              "back": "héshang — đóng lại, khép lại",
+              "back": "héshang — khép lại, gấp lại, đóng lại",
               "modes": [
                 "hanzi_to_meaning",
                 "meaning_to_hanzi",
@@ -881,16 +1343,28 @@
             "check_needed": false
           },
           {
-            "id": "dc0f8e06-a359-4907-a8d8-fc9b02260590",
+            "id": "00a523f4-593d-5869-8185-4a76b261b2cb",
             "type": "vocabulary_item",
-            "order": 24,
+            "order": 29,
             "hanzi": "打开",
             "pinyin": "dǎkāi",
             "meaning_vi": "mở ra, bật lên",
-            "meaning_en": "",
-            "pos": "verb",
+            "meaning_en": "to open; to unfold",
+            "pos": "Động từ + bổ ngữ kết quả",
+            "pos_detail": {
+              "vi": "Động từ + bổ ngữ kết quả",
+              "cn": "动词 + 结果补语",
+              "normalized": "verb_phrase",
+              "schema_compatible_pos": "verb_phrase",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "động từ 打 + bổ ngữ kết quả 开",
+              "usage_note_vi": "Không phải động từ li hợp; 开 là bổ ngữ kết quả chỉ trạng thái mở ra.",
+              "notes": []
+            },
             "tags": [
-              "main_vocab"
+              "main_vocab",
+              "result_complement"
             ],
             "examples": [],
             "flashcard": {
@@ -908,14 +1382,65 @@
             "check_needed": false
           },
           {
-            "id": "c43cedbf-7024-4ec1-922f-e75119114baf",
+            "id": "466069b8-d708-573c-a906-5319fbc3a388",
             "type": "vocabulary_item",
-            "order": 25,
+            "order": 30,
+            "hanzi": "听见",
+            "pinyin": "tīngjiàn",
+            "meaning_vi": "nghe thấy",
+            "meaning_en": "to hear",
+            "pos": "Động từ + bổ ngữ kết quả",
+            "pos_detail": {
+              "vi": "Động từ + bổ ngữ kết quả",
+              "cn": "动词 + 结果补语",
+              "normalized": "verb_phrase",
+              "schema_compatible_pos": "verb_phrase",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "động từ 听 + bổ ngữ kết quả 见",
+              "usage_note_vi": "Không phải động từ li hợp; 见 là bổ ngữ kết quả chỉ nghe đạt kết quả 'thấy/nghe được'.",
+              "notes": []
+            },
+            "tags": [
+              "main_vocab",
+              "result_complement",
+              "added_from_pdf"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "听见",
+              "back": "tīngjiàn — nghe thấy",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "check_needed": false
+          },
+          {
+            "id": "f5f4d880-8706-5424-bc96-494fcd18c4c5",
+            "type": "vocabulary_item",
+            "order": 31,
             "hanzi": "作业",
             "pinyin": "zuòyè",
             "meaning_vi": "bài tập, bài làm",
-            "meaning_en": "",
-            "pos": "noun",
+            "meaning_en": "homework",
+            "pos": "Danh từ",
+            "pos_detail": {
+              "vi": "Danh từ",
+              "cn": "名词",
+              "normalized": "noun",
+              "schema_compatible_pos": "noun",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "",
+              "notes": []
+            },
             "tags": [
               "main_vocab"
             ],
@@ -935,21 +1460,33 @@
             "check_needed": false
           },
           {
-            "id": "d9991c79-3454-4247-bf18-f14f43b4a24a",
+            "id": "31b49048-5330-5b63-8521-9124ffc1a48f",
             "type": "vocabulary_item",
-            "order": 26,
-            "hanzi": "于是",
-            "pinyin": "yúshì",
-            "meaning_vi": "thế là, do đó, vì vậy",
-            "meaning_en": "",
-            "pos": "conjunction",
+            "order": 32,
+            "hanzi": "熟",
+            "pinyin": "shú",
+            "meaning_vi": "quen thuộc; thuộc, nhuần; chín",
+            "meaning_en": "familiar; well acquainted; ripe",
+            "pos": "Tính từ",
+            "pos_detail": {
+              "vi": "Tính từ",
+              "cn": "形容词",
+              "normalized": "adjective",
+              "schema_compatible_pos": "adjective",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "Trong bài dùng trong 念熟课文: đọc đến mức thuộc/nhuần.",
+              "notes": []
+            },
             "tags": [
-              "main_vocab"
+              "main_vocab",
+              "added_from_pdf"
             ],
             "examples": [],
             "flashcard": {
-              "front": "于是",
-              "back": "yúshì — thế là, do đó, vì vậy",
+              "front": "熟",
+              "back": "shú — quen thuộc; thuộc, nhuần; chín",
               "modes": [
                 "hanzi_to_meaning",
                 "meaning_to_hanzi",
@@ -962,21 +1499,32 @@
             "check_needed": false
           },
           {
-            "id": "55cd807c-eec7-412d-99db-f4e6508b170f",
+            "id": "0230c969-1e60-5e89-8492-2fa21221e1fa",
             "type": "vocabulary_item",
-            "order": 27,
-            "hanzi": "必须",
-            "pinyin": "bìxū",
-            "meaning_vi": "bắt buộc phải, nhất định phải",
-            "meaning_en": "",
-            "pos": "adverb",
+            "order": 33,
+            "hanzi": "于是",
+            "pinyin": "yúshì",
+            "meaning_vi": "thế là, vì vậy, rồi sau đó",
+            "meaning_en": "so; then",
+            "pos": "Liên từ / Phó từ liên kết",
+            "pos_detail": {
+              "vi": "Liên từ / Phó từ liên kết",
+              "cn": "连词 / 副词",
+              "normalized": "conjunction",
+              "schema_compatible_pos": "conjunction",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "",
+              "notes": []
+            },
             "tags": [
-              "main_vocab"
+              "supplementary_vocab"
             ],
             "examples": [],
             "flashcard": {
-              "front": "必须",
-              "back": "bìxū — bắt buộc phải, nhất định phải",
+              "front": "于是",
+              "back": "yúshì — thế là, vì vậy, rồi sau đó",
               "modes": [
                 "hanzi_to_meaning",
                 "meaning_to_hanzi",
@@ -987,11 +1535,88 @@
             "audio_key": "",
             "source_origin": "textbook",
             "check_needed": false
+          },
+          {
+            "id": "763f3527-c03b-5091-9321-a9bac37c65a9",
+            "type": "vocabulary_item",
+            "order": 34,
+            "hanzi": "最好",
+            "pinyin": "zuìhǎo",
+            "meaning_vi": "tốt nhất, nên nhất",
+            "meaning_en": "had better; it would be best",
+            "pos": "Phó từ / Cụm phó từ",
+            "pos_detail": {
+              "vi": "Phó từ / Cụm phó từ",
+              "cn": "副词 / 副词性短语",
+              "normalized": "adverb",
+              "schema_compatible_pos": "adverb",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "最 + 好",
+              "usage_note_vi": "Trong đọc hiểu dùng để khuyên: 你最好再去医院看看.",
+              "notes": []
+            },
+            "tags": [
+              "supplementary_vocab",
+              "added_from_pdf"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "最好",
+              "back": "zuìhǎo — tốt nhất, nên nhất",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "check_needed": false
+          },
+          {
+            "id": "d5746051-4d94-52c5-9d46-daa8218b53a0",
+            "type": "vocabulary_item",
+            "order": 35,
+            "hanzi": "必须",
+            "pinyin": "bìxū",
+            "meaning_vi": "bắt buộc phải, nhất thiết phải",
+            "meaning_en": "must; have to",
+            "pos": "Phó từ",
+            "pos_detail": {
+              "vi": "Phó từ",
+              "cn": "副词",
+              "normalized": "adverb",
+              "schema_compatible_pos": "adverb",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "",
+              "notes": []
+            },
+            "tags": [
+              "extra_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "必须",
+              "back": "bìxū — bắt buộc phải, nhất thiết phải",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook/generated_mixed",
+            "check_needed": false
           }
         ]
       },
       {
-        "id": "3c5ee48e-5d44-44ac-bd53-cac996a83338",
+        "id": "324eddc4-e087-5215-8692-978ceb66b2b2",
         "type": "proper_nouns",
         "order": 3,
         "title": "专名",
@@ -1000,20 +1625,32 @@
         "check_needed": false,
         "items": [
           {
-            "id": "070690f6-fd26-41df-ab28-f5031668ed3e",
+            "id": "22954589-0ba6-5724-8eb4-2cd4a95e2e66",
             "type": "proper_noun",
             "order": 1,
             "hanzi": "安娜",
             "pinyin": "Ānnà",
             "meaning_vi": "Anna",
             "meaning_en": "Anna",
+            "pos": "Tên riêng",
+            "pos_detail": {
+              "vi": "Tên riêng",
+              "cn": "专名 / 人名",
+              "normalized": "proper_noun",
+              "schema_compatible_pos": "proper_noun",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "",
+              "notes": []
+            },
             "source_origin": "textbook",
             "check_needed": false
           }
         ]
       },
       {
-        "id": "c18e9f54-6da1-4496-886b-c2c722605678",
+        "id": "3230aea6-b3af-5700-a9dd-94e22ba40410",
         "type": "notes",
         "order": 4,
         "title": "注释",
@@ -1022,7 +1659,7 @@
         "check_needed": false,
         "items": [
           {
-            "id": "63d654f5-4561-4d48-a144-bacbf9671dfc",
+            "id": "c7e76d8d-477e-576b-9097-16f6349f438a",
             "type": "note",
             "order": 1,
             "title": "做完 / 做对 / 做错",
@@ -1030,21 +1667,21 @@
             "meaning_vi": "Sau động từ thêm thành phần nói rõ kết quả cuối cùng của hành động: làm xong, làm đúng, làm sai.",
             "examples": [
               {
-                "id": "021014f3-ff12-43b6-9d12-352cb6dc863b",
+                "id": "f3b22aab-101c-586d-8935-9c3e32eeb6c7",
                 "zh": "我没有做完。",
                 "vi": "Tôi chưa làm xong.",
                 "source_origin": "textbook",
                 "check_needed": false
               },
               {
-                "id": "08ef5e15-4b23-4ced-8657-3328becab052",
+                "id": "85c72fda-f91e-512c-923c-e757b16f8992",
                 "zh": "我都做对了。",
                 "vi": "Tôi đều làm đúng rồi.",
                 "source_origin": "textbook",
                 "check_needed": false
               },
               {
-                "id": "ac5fb196-0a9c-44f0-a081-7826b4a25afa",
+                "id": "4119e6ed-3839-5b6b-bd65-16d27f1c150b",
                 "zh": "做错了两道题。",
                 "vi": "Làm sai hai câu.",
                 "source_origin": "textbook",
@@ -1052,13 +1689,13 @@
               }
             ],
             "source_refs": [
-              "e155d5ea-f89d-45f0-ab8d-094ce9e719f0"
+              "2ab10358-244b-5173-8ce5-b86fe5736c94"
             ],
             "source_origin": "textbook/generated_mixed",
             "check_needed": false
           },
           {
-            "id": "7e2ee128-4fbd-4a93-898c-5f5fd99b371b",
+            "id": "8a3b4007-90cf-5f2a-aee3-2c4c196cca16",
             "type": "note",
             "order": 2,
             "title": "写成这个“的”了",
@@ -1066,7 +1703,7 @@
             "meaning_vi": "Viết A thành B; kết quả bị chuyển thành dạng khác.",
             "examples": [
               {
-                "id": "29279e2c-cb63-4437-bbc5-7c46c15b6f13",
+                "id": "39891ec3-ba56-5feb-93fb-40f3d12ebebf",
                 "zh": "是这个“得”，我写成这个“的”了。",
                 "vi": "Là chữ “得” này, tôi lại viết thành chữ “的” này rồi.",
                 "source_origin": "textbook",
@@ -1074,36 +1711,7 @@
               }
             ],
             "source_refs": [
-              "6de58c5b-164f-4b2f-8d7e-84f1c7c1a66c"
-            ],
-            "source_origin": "textbook/generated_mixed",
-            "check_needed": false
-          },
-          {
-            "id": "bf5e90df-dc03-4600-a2d2-426ab562c9a5",
-            "type": "note",
-            "order": 3,
-            "title": "看完电影再做作业",
-            "structure": "V1 + 完 + O + 再 + V2",
-            "meaning_vi": "Làm xong việc thứ nhất rồi mới làm việc thứ hai.",
-            "examples": [
-              {
-                "id": "3bb13249-7132-47f4-b974-8144c96f3e29",
-                "zh": "看完电视剧再洗吧。",
-                "vi": "Xem xong phim truyền hình rồi hãy giặt.",
-                "source_origin": "textbook",
-                "check_needed": false
-              },
-              {
-                "id": "c1bf6315-9ce8-4f86-bfaf-562eda781518",
-                "zh": "看完电影再做作业。",
-                "vi": "Xem phim xong rồi hãy làm bài tập.",
-                "source_origin": "textbook",
-                "check_needed": false
-              }
-            ],
-            "source_refs": [
-              "a8845639-9fca-4398-853d-a08fb63482a8"
+              "dd26f137-1f20-5a09-bed3-68bc8221e9d8"
             ],
             "source_origin": "textbook/generated_mixed",
             "check_needed": false
@@ -1111,1064 +1719,1201 @@
         ]
       },
       {
-        "id": "b045e537-7383-494b-8d61-b0286977ed80",
+        "id": "8c045232-7510-54a0-b113-df6367c3077e",
         "type": "grammar",
         "order": 5,
-        "title": "语法 / 词语用法",
-        "title_vi": "Ngữ pháp / Cách dùng từ",
+        "title": "语法",
+        "title_vi": "Ngữ pháp",
         "source_origin": "textbook/generated_mixed",
         "check_needed": false,
         "items": [
           {
-            "id": "f8ec59f3-898a-47b2-b536-44dfd8183393",
+            "id": "8d4a41cc-5929-57ae-8374-f06990696ca1",
             "type": "grammar_point",
             "order": 1,
             "title": "结果补语",
             "title_vi": "Bổ ngữ kết quả",
-            "level": "HSK3",
+            "level": "A++",
             "tags": [
-              "结果补语"
+              "result_complement"
             ],
-            "source_origin": "textbook/generated_mixed",
-            "check_needed": false,
             "blocks": [
               {
-                "id": "b7c5d870-2db8-4e2e-950f-f0e6e522ac16",
-                "type": "grammar_overview",
-                "order": 1,
-                "title": "Bản chất",
-                "content_vi": "Bổ ngữ kết quả trả lời câu hỏi: hành động làm xong thì ra kết quả gì? Ví dụ: 做完, 做对, 做错, 看懂, 听懂, 写成.",
-                "examples": [],
-                "source_origin": "textbook/generated_mixed",
-                "check_needed": false
-              },
-              {
-                "id": "b3534a40-3bab-464a-97dd-67889b8bcb7b",
+                "id": "e6b61fa5-4e03-5fb5-bbf2-feea49b3cc58",
                 "type": "grammar_structure",
-                "order": 2,
-                "title": "Cấu trúc chính",
-                "pattern": "主语 + 动词 + 结果补语 + 宾语 + 了",
-                "meaning_vi": "Hành động đã đạt tới một kết quả cụ thể.",
-                "examples": [
+                "order": 1,
+                "title": "动词 + 结果补语",
+                "pattern": "V + 结果补语 (+ 了)",
+                "meaning_vi": "Dùng để nói rõ kết quả của hành động. Ví dụ: 做完, 做对, 做错, 听懂, 看见.",
+                "formulas": [
                   {
-                    "id": "2e38466f-cc5f-451a-9612-b188f7cd2dcf",
-                    "zh": "我做完作业了。",
-                    "vi": "Tôi làm xong bài tập rồi.",
-                    "source_origin": "generated",
-                    "check_needed": false
+                    "label": "Khẳng định",
+                    "pattern": "V + 结果补语 + 了"
                   },
                   {
-                    "id": "64dc50f6-13c5-4723-9aed-94e0d978cb90",
-                    "zh": "很多句子我没听懂。",
-                    "vi": "Nhiều câu tôi không nghe hiểu.",
-                    "source_origin": "textbook",
-                    "check_needed": false
+                    "label": "Phủ định",
+                    "pattern": "没(有) + V + 结果补语"
+                  },
+                  {
+                    "label": "Nghi vấn chính phản",
+                    "pattern": "V + 结果补语 + 了 + 没有？"
+                  }
+                ],
+                "examples": [
+                  {
+                    "id": "60fcfd27-1457-5945-ac65-f1296e938a24",
+                    "zh": "我都做对了。",
+                    "vi": "Tôi đều làm đúng rồi.",
+                    "highlight": [
+                      "做对"
+                    ],
+                    "grammar_refs": [
+                      "8d4a41cc-5929-57ae-8374-f06990696ca1"
+                    ]
+                  },
+                  {
+                    "id": "78e584bd-5ca0-54eb-9b9c-6b3ccccd02ba",
+                    "zh": "这道题我没做对。",
+                    "vi": "Câu này tôi chưa làm đúng.",
+                    "highlight": [
+                      "没做对"
+                    ],
+                    "grammar_refs": [
+                      "8d4a41cc-5929-57ae-8374-f06990696ca1"
+                    ]
                   }
                 ],
                 "notes_vi": [
-                  "Phủ định thường dùng 没 / 没有 + V + kết quả, không thêm 了.",
-                  "Nghi vấn thường dùng V + kết quả + 了没有？ hoặc V + kết quả + 了吗？"
-                ],
-                "source_origin": "textbook/generated_mixed",
-                "check_needed": false
+                  "Nếu có tân ngữ, tân ngữ thường đứng sau bổ ngữ kết quả: 看见玛丽, 做错了两道题."
+                ]
               }
             ]
           },
           {
-            "id": "57b14753-688a-41b6-9e0d-b61dbbf574d7",
+            "id": "9e3fe40c-a428-5a85-b969-583cb893e5e1",
             "type": "grammar_point",
             "order": 2,
             "title": "结果补语：上、成、到",
             "title_vi": "Bổ ngữ kết quả: 上、成、到",
-            "level": "HSK3",
+            "level": "A++",
             "tags": [
-              "结果补语"
+              "result_complement"
             ],
-            "source_origin": "textbook/generated_mixed",
-            "check_needed": false,
             "blocks": [
               {
-                "id": "470b1ca1-e0a1-449f-b55e-a8aa481a4dd4",
-                "type": "grammar_overview",
-                "order": 1,
-                "title": "Bản chất",
-                "content_vi": "上 thường chỉ khép lại/gắn vào/đạt được; 成 chỉ biến thành/làm thành; 到 chỉ đạt tới đích hoặc đạt được kết quả.",
-                "examples": [],
-                "source_origin": "textbook/generated_mixed",
-                "check_needed": false
-              },
-              {
-                "id": "0ef2b790-3209-4b5c-a519-ca5a424e4d49",
+                "id": "bcb6dfe3-b040-57f5-ae54-66adbd2fe2da",
                 "type": "grammar_structure",
-                "order": 2,
-                "title": "Ví dụ chính",
+                "order": 1,
+                "title": "V + 上 / 成 / 到",
                 "pattern": "V + 上 / 成 / 到",
-                "meaning_vi": "Nêu kết quả cụ thể sau hành động.",
+                "meaning_vi": "上 chỉ khép/gắn/đạt tiếp xúc; 成 chỉ biến thành kết quả khác; 到 chỉ đạt đến mục đích, địa điểm hoặc thời điểm.",
+                "formulas": [],
                 "examples": [
                   {
-                    "id": "148dd5b4-2deb-4724-b898-7d508f8a6e77",
-                    "zh": "请合上书。",
-                    "vi": "Xin hãy khép sách lại.",
-                    "source_origin": "generated",
-                    "check_needed": false
+                    "id": "42e73b69-49ae-5a67-bb0d-d1ca2aed9924",
+                    "zh": "请同学们合上书。",
+                    "vi": "Các bạn hãy gấp sách lại.",
+                    "highlight": [
+                      "合上"
+                    ],
+                    "grammar_refs": [
+                      "9e3fe40c-a428-5a85-b969-583cb893e5e1"
+                    ]
                   },
                   {
-                    "id": "34fb6f43-cac8-4ca9-9004-ccfbcfc6d263",
-                    "zh": "我把“得”写成“的”了。",
-                    "vi": "Tôi viết chữ “得” thành chữ “的” rồi.",
-                    "source_origin": "textbook/generated_mixed",
-                    "check_needed": false
+                    "id": "c2a75465-a306-5f8c-a676-163ce4799932",
+                    "zh": "你写成“找”字了。",
+                    "vi": "Bạn viết thành chữ “找” rồi.",
+                    "highlight": [
+                      "写成"
+                    ],
+                    "grammar_refs": [
+                      "9e3fe40c-a428-5a85-b969-583cb893e5e1"
+                    ]
                   },
                   {
-                    "id": "e32b9b44-0167-4608-818f-ad358140a4ff",
-                    "zh": "我找到词典了。",
-                    "vi": "Tôi tìm thấy từ điển rồi.",
-                    "source_origin": "generated",
-                    "check_needed": false
+                    "id": "6124ea31-dbbf-5c67-bb8e-1c0bf60c6da5",
+                    "zh": "我找到王老师了。",
+                    "vi": "Tôi tìm thấy thầy/cô Vương rồi.",
+                    "highlight": [
+                      "找到"
+                    ],
+                    "grammar_refs": [
+                      "9e3fe40c-a428-5a85-b969-583cb893e5e1"
+                    ]
                   }
                 ],
-                "notes_vi": [],
-                "source_origin": "textbook/generated_mixed",
-                "check_needed": false
+                "notes_vi": []
               }
             ]
           },
           {
-            "id": "fa804fff-372b-4874-8571-f54e613d7e07",
+            "id": "27b872c2-090b-5746-b74c-9f8490bb948c",
             "type": "grammar_point",
             "order": 3,
             "title": "主谓词组作定语",
             "title_vi": "Cụm chủ-vị làm định ngữ",
-            "level": "HSK3",
+            "level": "A++",
             "tags": [
-              "定语"
+              "attributive",
+              "de"
             ],
-            "source_origin": "textbook/generated_mixed",
-            "check_needed": false,
             "blocks": [
               {
-                "id": "50dcd503-1832-4112-a0be-e09408954b90",
-                "type": "grammar_overview",
-                "order": 1,
-                "title": "Bản chất",
-                "content_vi": "Một cụm có chủ ngữ + vị ngữ có thể đứng trước danh từ để bổ nghĩa cho danh từ đó, thường dùng 的 để nối.",
-                "examples": [],
-                "source_origin": "textbook/generated_mixed",
-                "check_needed": false
-              },
-              {
-                "id": "3de2e20b-7535-4f1b-8355-4209acba1551",
+                "id": "e5ad7bf3-6ce6-50cc-a194-78104d622e0f",
                 "type": "grammar_structure",
-                "order": 2,
-                "title": "Cấu trúc",
-                "pattern": "主语 + 谓语 + 的 + 中心语",
-                "meaning_vi": "Danh từ phía sau được bổ nghĩa bởi cả một cụm phía trước.",
-                "examples": [
-                  {
-                    "id": "3620f823-6377-41e3-9821-e498d2c8ac94",
-                    "zh": "你送我的书",
-                    "vi": "quyển sách bạn tặng tôi",
-                    "source_origin": "generated",
-                    "check_needed": false
-                  },
-                  {
-                    "id": "67dbf307-9e3e-454a-9d27-30b827684ec9",
-                    "zh": "田芳借给她的书",
-                    "vi": "quyển sách Điền Phương cho cô ấy mượn",
-                    "source_origin": "textbook/generated_mixed",
-                    "check_needed": false
-                  },
-                  {
-                    "id": "d3ca42bf-fbbd-4347-98a8-7a697fe218c2",
-                    "zh": "田芳借给玛丽的那本书里都是小故事。",
-                    "vi": "Trong quyển sách mà Điền Phương cho Mary mượn toàn là những câu chuyện nhỏ.",
-                    "source_origin": "generated",
-                    "check_needed": false
-                  }
-                ],
-                "notes_vi": [
-                  "Khi dịch Việt, thường đảo thành “danh từ mà ...”, không dịch máy móc theo thứ tự tiếng Trung."
-                ],
-                "source_origin": "textbook/generated_mixed",
-                "check_needed": false
-              }
-            ]
-          },
-          {
-            "id": "c6cd6c38-22fc-4546-a398-39efe02d6c17",
-            "type": "grammar_point",
-            "order": 4,
-            "title": "都",
-            "title_vi": "Đều / tất cả",
-            "level": "HSK2",
-            "tags": [
-              "副词"
-            ],
-            "source_origin": "textbook/generated_mixed",
-            "check_needed": false,
-            "blocks": [
-              {
-                "id": "6b109e8c-3e57-466f-89ea-5e3dd68f03d9",
-                "type": "grammar_overview",
                 "order": 1,
-                "title": "Bản chất",
-                "content_vi": "都 gom toàn bộ phạm vi đã nói đến trước đó, nghĩa là “đều / tất cả”.",
+                "title": "主谓词组 + 的 + 名词",
+                "pattern": "[chủ-vị nhỏ] + 的 + danh từ",
+                "meaning_vi": "Khi một cụm chủ-vị bổ nghĩa cho danh từ, phải thêm 的 trước danh từ trung tâm.",
+                "formulas": [],
                 "examples": [
                   {
-                    "id": "4c24a67d-5112-438c-96a0-1fe26e7867ad",
-                    "zh": "我都做完了。",
-                    "vi": "Tôi làm xong hết rồi.",
-                    "source_origin": "textbook",
-                    "check_needed": false
-                  },
-                  {
-                    "id": "857c43af-3f3e-491c-988c-f6e69807c407",
-                    "zh": "她都答对了。",
-                    "vi": "Cô ấy đều trả lời đúng.",
-                    "source_origin": "textbook/generated_mixed",
-                    "check_needed": false
+                    "id": "e9c986b9-381e-5fcb-a90d-5c40a92615d1",
+                    "zh": "田芳借给你的那本书你看完了没有？",
+                    "vi": "Quyển sách Điền Phương cho bạn mượn, bạn xem xong chưa?",
+                    "highlight": [
+                      "田芳借给你的那本书"
+                    ],
+                    "grammar_refs": [
+                      "27b872c2-090b-5746-b74c-9f8490bb948c"
+                    ]
                   }
                 ],
-                "source_origin": "textbook/generated_mixed",
-                "check_needed": false
+                "notes_vi": []
               }
             ]
           }
         ]
       },
       {
-        "id": "9901c597-ca97-451e-b63d-11814aaf933e",
+        "id": "b4342514-0251-5138-9696-4f71c7aaf8da",
         "type": "exercises",
         "order": 6,
         "title": "练习",
-        "title_vi": "Bài tập trong sách",
-        "source_origin": "textbook/generated_mixed",
-        "check_needed": true,
-        "coverage_contract": {
-          "expected_exercise_count_from_pdf": 6,
-          "actual_exercise_count_in_json": 6,
-          "all_exercises_covered": true,
-          "coverage_status": "complete_unverified",
-          "final_verification_allowed": false
-        },
+        "title_vi": "Bài tập",
+        "source_origin": "textbook/pdf_checked",
+        "check_needed": false,
         "items": [
           {
-            "id": "15cb6f38-593b-48d1-bcca-dc3d2a140f9e",
+            "id": "2493bea8-812b-5637-84a0-506ae60ef500",
             "type": "phonetics",
-            "variant": "pronunciation_tone_minimal_pairs",
+            "variant": "read_aloud",
             "order": 1,
-            "title": "一、语音",
+            "title": "语音",
             "title_vi": "Ngữ âm",
             "instruction": {
-              "zh": "辨音辨调，朗读。",
-              "vi": "Phân biệt âm / thanh điệu, sau đó đọc to các cụm từ."
+              "zh": "辨音辨调；朗读。",
+              "vi": "Phân biệt âm/điệu; đọc thành tiếng."
             },
-            "parts": [
+            "difficulty": "normal",
+            "skill_focus": [],
+            "grammar_refs": [],
+            "vocab_refs": [],
+            "rendering": {
+              "renderer": "phonetics"
+            },
+            "source_origin": "textbook",
+            "check_needed": false,
+            "pairs": [
               {
-                "id": "0e5801e7-b89b-4cc6-8bd9-9e1fbbd30b31",
-                "type": "minimal_pair_group",
-                "title": "辨音辨调",
-                "items": [
-                  "kǎoshì — hǎoshì — gùshi — gùshì",
-                  "dìfang — dìfāng — bànfǎ — fāngfǎ",
-                  "zāogāo — cǎobāo — júzi — jùzi"
-                ],
-                "source_origin": "textbook",
-                "check_needed": true
+                "id": "92c92eb0-e5d5-513e-89b0-ff3b02120ea0",
+                "left": "kǎo shì",
+                "right": "hǎo shì"
               },
               {
-                "id": "e7235fa8-9e47-43aa-a37c-271a2e83d738",
-                "type": "read_aloud_group",
-                "title": "朗读",
-                "items": [
-                  "回到了学校",
-                  "回到了宿舍",
-                  "回到了家",
-                  "找到了人",
-                  "关上门",
-                  "关上电视",
-                  "开开门",
-                  "开开电视",
-                  "洗完了",
-                  "喝完了",
-                  "读完了",
-                  "看完了",
-                  "买到了",
-                  "听到了",
-                  "看见了",
-                  "听见了",
-                  "看懂了",
-                  "听懂了",
-                  "做对了",
-                  "说对了",
-                  "做错了题",
-                  "写错了字",
-                  "看错了时间",
-                  "打错了电话",
-                  "看完了没有",
-                  "做完了没有",
-                  "做对了没有",
-                  "写错了没有",
-                  "没有看完",
-                  "没有做完",
-                  "没有做对",
-                  "没有写错"
-                ],
-                "source_origin": "textbook",
-                "check_needed": false
+                "id": "44f386c6-4a45-5a78-8add-bec908305cd9",
+                "left": "gùshi",
+                "right": "gǔshī"
+              },
+              {
+                "id": "abd2d96d-af57-571f-b2aa-34d57e8cf15b",
+                "left": "dìfang",
+                "right": "dīfàng"
+              },
+              {
+                "id": "0f31b56d-a7e0-5499-9581-b8fc3832aca1",
+                "left": "bànfǎ",
+                "right": "fāngfǎ"
+              },
+              {
+                "id": "79152d31-87a2-503c-aa24-98a8eaff0f4f",
+                "left": "zāogāo",
+                "right": "cǎobāo"
+              },
+              {
+                "id": "f93f1928-5693-5f10-b4e8-4c19fcfc34fa",
+                "left": "jùzi",
+                "right": "júzi"
               }
             ],
-            "source_origin": "textbook",
-            "check_needed": true
+            "phrases": [
+              "回到了学校",
+              "回到了宿舍",
+              "回到了家",
+              "找到了人",
+              "关上门",
+              "关上电视",
+              "开开门",
+              "开开电视",
+              "洗完了",
+              "喝完了",
+              "读完了",
+              "看完了",
+              "买到了",
+              "听到了",
+              "看见了",
+              "听见了",
+              "看懂了",
+              "听懂了",
+              "做对了",
+              "说对了",
+              "做错了题",
+              "答错了题",
+              "看错了时间",
+              "打错了电话",
+              "看完了没有",
+              "做完了没有",
+              "做对了没有",
+              "写错了没有",
+              "没有看完",
+              "没有做完",
+              "没有做对",
+              "没有写错"
+            ]
           },
           {
-            "id": "98e14c21-0449-4e36-b1ae-77ed46cf3aa0",
-            "type": "substitution_drill",
-            "variant": "substitution_or_transform_drill",
+            "id": "25cd3771-8d19-52a2-9981-d8d2039b22bd",
+            "type": "substitution",
+            "variant": "pattern_drill",
             "order": 2,
-            "title": "二、替换",
-            "title_vi": "Thay thế",
+            "title": "替换",
+            "title_vi": "Thay thế mẫu câu",
             "instruction": {
               "zh": "替换练习。",
-              "vi": "Dựa theo mẫu, thay thế phần gợi ý để luyện câu."
+              "vi": "Luyện thay thế theo mẫu."
             },
-            "parts": [
+            "difficulty": "normal",
+            "skill_focus": [],
+            "grammar_refs": [],
+            "vocab_refs": [],
+            "rendering": {
+              "renderer": "substitution"
+            },
+            "source_origin": "textbook",
+            "check_needed": false,
+            "drills": [
               {
-                "id": "7db043f9-0d63-45ee-8c21-295d62f2ebd3",
-                "title": "看见 / 听见",
-                "model": {
-                  "a": "你看见我的词典了吗？",
-                  "b": "看见了。"
-                },
-                "items": [
-                  [
-                    "看见",
-                    "我的书"
-                  ],
-                  [
-                    "看见",
-                    "我的钥匙"
-                  ],
-                  [
-                    "看见",
-                    "我的手机"
-                  ],
-                  [
-                    "看见",
-                    "王老师"
-                  ],
-                  [
-                    "听见",
-                    "我说的话"
-                  ],
-                  [
-                    "听见",
-                    "她叫你"
-                  ]
+                "id": "7202ed0c-1169-5241-b62f-e4caee28fc62",
+                "model": "A: 你看见我的词典了吗？ B: 看见了。",
+                "substitutions": [
+                  "看见我的书",
+                  "看见我的钥匙",
+                  "看见我的手机",
+                  "看见王老师",
+                  "听见我说的话",
+                  "听见她叫你"
                 ]
               },
               {
-                "id": "4ad1e1b3-374e-4ce8-b98f-907ffc4c88f2",
-                "title": "做对 / 翻译对 / 听懂 / 看懂 / 念熟",
-                "model": {
-                  "a": "这道题你做对了没有？",
-                  "b": "我做对了。"
-                },
-                "items": [
-                  [
-                    "这个字",
-                    "写对"
-                  ],
-                  [
-                    "这些句子",
-                    "翻译对"
-                  ],
-                  [
-                    "老师的话",
-                    "听懂"
-                  ],
-                  [
-                    "今天的语法",
-                    "听懂"
-                  ],
-                  [
-                    "这本书",
-                    "看懂"
-                  ],
-                  [
-                    "这课课文",
-                    "念熟"
-                  ]
+                "id": "f278a8e3-7f73-5a62-8fc2-adcd193497de",
+                "model": "A: 这道题你做对了没有？ B: 做对了。",
+                "substitutions": [
+                  "题/答对",
+                  "老师的话/听懂",
+                  "今天的语法/听懂",
+                  "这本书/看懂"
                 ]
               },
               {
-                "id": "28f617eb-25d6-4678-b5e3-f7fca3508dbc",
-                "title": "做完 / 听完 / 看完 / 写完 / 念熟 / 洗完 / 预习好",
-                "model": {
-                  "a": "今天的作业你做完了没有？",
-                  "b": "（我）还没做完呢。"
-                },
-                "items": [
-                  [
-                    "这一课的录音",
-                    "听完"
-                  ],
-                  [
-                    "这本书",
-                    "看完"
-                  ],
-                  [
-                    "今天的汉字",
-                    "写完"
-                  ],
-                  [
-                    "这课课文",
-                    "念熟"
-                  ],
-                  [
-                    "这些衣服",
-                    "洗完"
-                  ],
-                  [
-                    "明天的生词",
-                    "预习好"
-                  ]
-                ]
-              },
-              {
-                "id": "6227f946-2a93-462c-8702-43b4abc4a614",
-                "title": "写错 / 写对 / 翻译对 / 回答错 / 看见 / 听懂 / 做完",
-                "model": {
-                  "a": "他写错了吗？",
-                  "b": "没写错。"
-                },
-                "items": [
-                  "写对",
-                  "翻译对",
-                  "回答错",
-                  "看见",
-                  "听懂",
-                  "做完"
-                ]
-              },
-              {
-                "id": "6b6b4fa0-c8d0-45c4-b28e-0293edd71e59",
-                "title": "打开 / 关上 / 合上",
-                "model": {
-                  "a": "打开电脑，好吗？"
-                },
-                "items": [
-                  "关上电脑",
-                  "关上电视",
-                  "合上书",
-                  "打开灯",
-                  "打开窗户",
-                  "打开书"
+                "id": "20a08006-68ac-5c31-b693-f566fd8874a5",
+                "model": "A: 今天的作业你做完了没有？ B: 我还没做完呢。",
+                "substitutions": [
+                  "这一课的录音/听完",
+                  "这本书/看完",
+                  "今天的汉字/写完",
+                  "明天的生词/预习好"
                 ]
               }
-            ],
-            "source_origin": "textbook",
-            "check_needed": false
+            ]
           },
           {
-            "id": "5dfca3d2-8524-4a83-92dd-b036a7259465",
+            "id": "b177b9ac-02e7-5455-8853-fd248bef7208",
             "type": "choose_words_fill_blank",
-            "variant": "word_bank_fill_blank",
+            "variant": "word_bank",
             "order": 3,
-            "title": "三、选词填空",
+            "title": "选词填空",
             "title_vi": "Chọn từ điền chỗ trống",
             "instruction": {
               "zh": "选词填空。",
-              "vi": "Chọn từ thích hợp điền vào chỗ trống."
+              "vi": "Chọn từ đúng để điền vào chỗ trống."
             },
-            "parts": [
-              {
-                "id": "4b345bd3-635c-4818-9831-0a797e1af57e",
-                "title": "A组",
-                "word_bank": [
-                  "懂",
-                  "开",
-                  "成",
-                  "好",
-                  "熟",
-                  "错",
-                  "关",
-                  "道",
-                  "上"
-                ],
-                "questions": [
-                  {
-                    "id": "3cb32654-aa16-4f52-bcc4-c3ac4f7e77d5",
-                    "prompt": "这几____题比较难，我虽然做完了，但是不知道做对没做对。",
-                    "answer": "道"
-                  },
-                  {
-                    "id": "e57488bd-4d2f-4fbd-b2fe-c37d1572b832",
-                    "prompt": "外边风很大，____上窗户吧。",
-                    "answer": "关"
-                  },
-                  {
-                    "id": "3fd63c3d-b831-4f12-81b6-097d4fe60ca7",
-                    "prompt": "打____电脑，看看电视剧吧。",
-                    "answer": "开"
-                  },
-                  {
-                    "id": "d2202365-b922-4b2c-89d4-8d960eea79ac",
-                    "prompt": "对不起，我看____时间了，所以来晚了。",
-                    "answer": "错"
-                  },
-                  {
-                    "id": "c7b35d9b-601e-4f30-81d5-cff1d6101a44",
-                    "prompt": "这次我没考____，因为考试前我病了。",
-                    "answer": "好"
-                  },
-                  {
-                    "id": "81a0f4e1-c1b0-4c7b-a708-6320de295985",
-                    "prompt": "你说得太快，我没听____，请你再说一遍，好吗？",
-                    "answer": "懂"
-                  },
-                  {
-                    "id": "58ad0b8d-cfed-48d0-8046-cfdaf8abce6e",
-                    "prompt": "要是不预习，上课的时候，就很难听____老师讲的语法。",
-                    "answer": "懂"
-                  },
-                  {
-                    "id": "d7922f89-1afb-43a0-a217-fac8529f8fbd",
-                    "prompt": "请大家合____书，现在听写生词。",
-                    "answer": "上"
-                  },
-                  {
-                    "id": "bbe6c96f-5a8f-4730-a244-368f2d1cdf5f",
-                    "prompt": "糟糕，这个是“找”字，我写____“我”字了。",
-                    "answer": "成"
-                  },
-                  {
-                    "id": "cd575efa-ab3b-4a4d-ad15-ff2530ddd99d",
-                    "prompt": "“ān（安）”这个音，我总是发____“āng”。",
-                    "answer": "成"
-                  },
-                  {
-                    "id": "828a0482-3630-495f-b3e7-1bb14e0d1c4f",
-                    "prompt": "我作业已经做完了，课文还没有念____呢。",
-                    "answer": "熟"
-                  }
-                ]
-              },
-              {
-                "id": "c6245ec9-8ee5-42fb-92ba-f1c4462ab3b6",
-                "title": "B组",
-                "word_bank": [
-                  "看",
-                  "看见",
-                  "听",
-                  "听见"
-                ],
-                "dialogues": [
-                  {
-                    "id": "28dcaf6b-0338-4744-ba48-79ac0dad317c",
-                    "lines": [
-                      "A：你____田芳了没有？",
-                      "B：____了，她在球场看比赛呢。",
-                      "A：哪个球场？",
-                      "B：篮球场。你____，她在那儿呢，____了吗？",
-                      "A：____了。田芳！田芳！"
-                    ],
-                    "answers": [
-                      "看见",
-                      "看见",
-                      "看",
-                      "看见",
-                      "看见"
-                    ]
-                  },
-                  {
-                    "id": "ffca1ca3-6265-4cee-9539-c15a6d43cac6",
-                    "lines": [
-                      "A：田芳！",
-                      "B：哎！",
-                      "A：我刚才叫你，你没____吗？",
-                      "B：对不起，我没____，你____，我正在____音乐呢。",
-                      "A：明天下午我想去____电影，你去不去？",
-                      "B：我也想去。"
-                    ],
-                    "answers": [
-                      "听见",
-                      "听见",
-                      "看",
-                      "听",
-                      "看"
-                    ]
-                  }
-                ]
-              }
+            "difficulty": "normal",
+            "skill_focus": [],
+            "grammar_refs": [],
+            "vocab_refs": [],
+            "rendering": {
+              "renderer": "choose_words_fill_blank"
+            },
+            "source_origin": "textbook",
+            "check_needed": false,
+            "word_bank": [
+              "懂",
+              "开",
+              "成",
+              "好",
+              "熟",
+              "错",
+              "关",
+              "道",
+              "上"
             ],
-            "source_origin": "textbook/generated_mixed",
-            "check_needed": true
-          },
-          {
-            "id": "809141fb-cc55-403a-9433-35eea89c8c90",
-            "type": "fill_blank",
-            "variant": "free_fill_blank",
-            "order": 4,
-            "title": "四、用结果补语填空",
-            "title_vi": "Điền bổ ngữ kết quả",
-            "instruction": {
-              "zh": "用结果补语填空。",
-              "vi": "Điền bổ ngữ kết quả thích hợp vào chỗ trống."
-            },
             "questions": [
               {
-                "id": "668ef942-39b3-4816-be06-f347b64fa456",
-                "prompt": "A：老师，这个字我写____了吗？\nB：没有写____，你写____了。",
-                "answer": [
-                  "对",
-                  "对",
-                  "错"
-                ]
+                "id": "3f115566-0620-5f42-b63f-ef0221a2ad49",
+                "order": 1,
+                "prompt": "这几____题比较难，我虽然做完了，但是不知道做对没做对。",
+                "answer": "道",
+                "check_needed": false
               },
               {
-                "id": "6e23c236-94eb-4e83-9ea6-7353241c098d",
-                "prompt": "A：妈妈，晚饭做____了吗？\nB：已经做____了。你吃____晚饭有事儿吗？\nA：我要跟同学去看电影。\nB：今天的作业你做____了没有？\nA：做____了。\nB：做____了没有？\nA：不知道做____没做____。",
-                "answer": [
-                  "好",
-                  "好",
-                  "完",
-                  "完",
-                  "完",
-                  "对",
-                  "对",
-                  "对"
-                ]
+                "id": "fd44e5ab-35d7-5f84-b471-3371bcbd0383",
+                "order": 2,
+                "prompt": "外边风很大，____上窗户吧。",
+                "answer": "关",
+                "check_needed": false
               },
               {
-                "id": "ee3570f6-9872-4699-a1ed-c338e52b4e50",
-                "prompt": "A：现在，老师说的话你能听____吗？\nB：能听____。",
-                "answer": [
-                  "懂",
-                  "懂"
-                ]
+                "id": "bddc5baa-30bc-56a9-8b76-b0b9b083e36f",
+                "order": 3,
+                "prompt": "打____电脑，看看电视剧吧。",
+                "answer": "开",
+                "check_needed": false
               },
               {
-                "id": "3130979d-5cc3-4cf5-999c-9ed317ea7c14",
-                "prompt": "A：喂，你找谁？\nB：我找玛丽。\nA：我们这儿没有叫玛丽的。\nB：你是 62324567 吗？\nA：不是。\nB：对不起，我打____了。",
-                "answer": [
-                  "错"
-                ]
+                "id": "76f4b67f-d8eb-5bfb-baa7-bbd431b3ed91",
+                "order": 4,
+                "prompt": "对不起，我看____时间了，所以来晚了。",
+                "answer": "错",
+                "check_needed": false
               },
               {
-                "id": "9dd88fe0-ccfb-47b6-a74a-d1ee53c61219",
-                "prompt": "A：昨天晚上的比赛你看了吗？\nB：我看了，但是没看____。\nA：怎么没看____？\nB：我看____一半儿，肚子疼得很厉害，就去医院了。",
-                "answer": [
-                  "完",
-                  "完",
-                  "到"
-                ]
+                "id": "4f1361eb-0842-56b9-af6f-5e49100053e7",
+                "order": 5,
+                "prompt": "这次我没考____，因为考试前我病了。",
+                "answer": "好",
+                "check_needed": false
+              },
+              {
+                "id": "ebdc5083-f8c8-5a31-8774-4c15527f6e41",
+                "order": 6,
+                "prompt": "你说得太快，我没听____，请你再说一遍，好吗？",
+                "answer": "懂",
+                "check_needed": false
+              },
+              {
+                "id": "d2c7de3d-bb02-5077-927e-8a47716be3dd",
+                "order": 7,
+                "prompt": "要是不预习，上课的时候，就很难听____老师讲的语法。",
+                "answer": "懂",
+                "check_needed": false
+              },
+              {
+                "id": "00edc11a-4464-56fa-806b-856db5004c28",
+                "order": 8,
+                "prompt": "请大家合____书，现在听写生词。",
+                "answer": "上",
+                "check_needed": false
+              },
+              {
+                "id": "41916769-be27-50d8-8587-aeb1f3c78478",
+                "order": 9,
+                "prompt": "糟糕，这个是“找”字，我写____“我”字了。",
+                "answer": "成",
+                "check_needed": false
+              },
+              {
+                "id": "e15362a6-f9d0-5921-861d-27158474dff2",
+                "order": 10,
+                "prompt": "“ān（安）”这个音，我总是发____“āng”。",
+                "answer": "成",
+                "check_needed": false
+              },
+              {
+                "id": "e6d36646-4aea-5692-88f6-462d8cef4db5",
+                "order": 11,
+                "prompt": "我作业已经做完了，课文还没有念____呢。",
+                "answer": "熟",
+                "check_needed": false
               }
             ],
-            "source_origin": "textbook/generated_mixed",
-            "check_needed": true
+            "answer_key": [
+              {
+                "question_id": "3f115566-0620-5f42-b63f-ef0221a2ad49",
+                "answer": "道",
+                "check_needed": false
+              },
+              {
+                "question_id": "fd44e5ab-35d7-5f84-b471-3371bcbd0383",
+                "answer": "关",
+                "check_needed": false
+              },
+              {
+                "question_id": "bddc5baa-30bc-56a9-8b76-b0b9b083e36f",
+                "answer": "开",
+                "check_needed": false
+              },
+              {
+                "question_id": "76f4b67f-d8eb-5bfb-baa7-bbd431b3ed91",
+                "answer": "错",
+                "check_needed": false
+              },
+              {
+                "question_id": "4f1361eb-0842-56b9-af6f-5e49100053e7",
+                "answer": "好",
+                "check_needed": false
+              },
+              {
+                "question_id": "ebdc5083-f8c8-5a31-8774-4c15527f6e41",
+                "answer": "懂",
+                "check_needed": false
+              },
+              {
+                "question_id": "d2c7de3d-bb02-5077-927e-8a47716be3dd",
+                "answer": "懂",
+                "check_needed": false
+              },
+              {
+                "question_id": "00edc11a-4464-56fa-806b-856db5004c28",
+                "answer": "上",
+                "check_needed": false
+              },
+              {
+                "question_id": "41916769-be27-50d8-8587-aeb1f3c78478",
+                "answer": "成",
+                "check_needed": false
+              },
+              {
+                "question_id": "e15362a6-f9d0-5921-861d-27158474dff2",
+                "answer": "成",
+                "check_needed": false
+              },
+              {
+                "question_id": "e6d36646-4aea-5692-88f6-462d8cef4db5",
+                "answer": "熟",
+                "check_needed": false
+              }
+            ]
           },
           {
-            "id": "e843bb6e-2e51-4fb8-b362-7506b97cf2fc",
-            "type": "answer_questions",
-            "variant": "custom_textbook_task",
+            "id": "18c8341a-7a1c-51a7-afca-15be0cee170a",
+            "type": "complete_dialogue",
+            "variant": "result_complement",
+            "order": 4,
+            "title": "用结果补语填空",
+            "title_vi": "Dùng bổ ngữ kết quả điền vào chỗ trống",
+            "instruction": {
+              "zh": "用结果补语填空。",
+              "vi": "Điền bổ ngữ kết quả phù hợp vào chỗ trống."
+            },
+            "difficulty": "normal",
+            "skill_focus": [],
+            "grammar_refs": [],
+            "vocab_refs": [],
+            "rendering": {
+              "renderer": "complete_dialogue"
+            },
+            "source_origin": "textbook",
+            "check_needed": false,
+            "dialogues": [
+              {
+                "id": "985a2a3c-0237-5c7b-bb67-8a0824425189",
+                "lines": [
+                  {
+                    "speaker": "A",
+                    "text": "老师，这个字我写____了吗？",
+                    "blank_id": "d1_b1"
+                  },
+                  {
+                    "speaker": "B",
+                    "text": "没有写____，你写____了。",
+                    "blank_id": "d1_b2_b3"
+                  }
+                ],
+                "sample_answers": [
+                  {
+                    "blank_id": "d1_b1",
+                    "answer": "对",
+                    "explanation_vi": "写对了吗 = viết đúng chưa."
+                  },
+                  {
+                    "blank_id": "d1_b2_b3",
+                    "answer": "对 / 错",
+                    "explanation_vi": "没有写对，你写错了 = không viết đúng, bạn viết sai rồi."
+                  }
+                ]
+              },
+              {
+                "id": "3f1ccb7a-e62e-5a7a-99c8-552cb524b79b",
+                "lines": [
+                  {
+                    "speaker": "A",
+                    "text": "妈妈，晚饭做____了吗？",
+                    "blank_id": "d2_b1"
+                  },
+                  {
+                    "speaker": "B",
+                    "text": "已经做____了。你吃____晚饭有事儿吗？",
+                    "blank_id": "d2_b2_b3"
+                  },
+                  {
+                    "speaker": "A",
+                    "text": "我要跟同学去看电影。"
+                  },
+                  {
+                    "speaker": "B",
+                    "text": "今天的作业你做____了没有？",
+                    "blank_id": "d2_b4"
+                  },
+                  {
+                    "speaker": "A",
+                    "text": "做____了。",
+                    "blank_id": "d2_b5"
+                  },
+                  {
+                    "speaker": "B",
+                    "text": "做____了没有？",
+                    "blank_id": "d2_b6"
+                  },
+                  {
+                    "speaker": "A",
+                    "text": "不知道做____没做____。",
+                    "blank_id": "d2_b7_b8"
+                  }
+                ],
+                "sample_answers": [
+                  {
+                    "blank_id": "d2_b1",
+                    "answer": "完",
+                    "explanation_vi": "做完 = làm xong."
+                  },
+                  {
+                    "blank_id": "d2_b2_b3",
+                    "answer": "完 / 完",
+                    "explanation_vi": "已经做完了；吃完晚饭."
+                  },
+                  {
+                    "blank_id": "d2_b4",
+                    "answer": "完",
+                    "explanation_vi": "做完了没有 = đã làm xong chưa."
+                  },
+                  {
+                    "blank_id": "d2_b5",
+                    "answer": "完",
+                    "explanation_vi": "做完了 = làm xong rồi."
+                  },
+                  {
+                    "blank_id": "d2_b6",
+                    "answer": "对",
+                    "explanation_vi": "做对了没有 = làm đúng chưa."
+                  },
+                  {
+                    "blank_id": "d2_b7_b8",
+                    "answer": "对 / 对",
+                    "explanation_vi": "做对没做对 = có làm đúng hay không."
+                  }
+                ]
+              },
+              {
+                "id": "43292163-66c0-548a-9e84-03b182f36c6b",
+                "lines": [
+                  {
+                    "speaker": "A",
+                    "text": "现在，老师说的话你能听____吗？",
+                    "blank_id": "d3_b1"
+                  },
+                  {
+                    "speaker": "B",
+                    "text": "能听____。",
+                    "blank_id": "d3_b2"
+                  }
+                ],
+                "sample_answers": [
+                  {
+                    "blank_id": "d3_b1",
+                    "answer": "懂",
+                    "explanation_vi": "听懂 = nghe hiểu."
+                  },
+                  {
+                    "blank_id": "d3_b2",
+                    "answer": "懂",
+                    "explanation_vi": "能听懂 = có thể nghe hiểu."
+                  }
+                ]
+              },
+              {
+                "id": "23923d80-b490-51df-b4c3-1ce2ae7e74e1",
+                "lines": [
+                  {
+                    "speaker": "A",
+                    "text": "喂，你找谁？"
+                  },
+                  {
+                    "speaker": "B",
+                    "text": "我找玛丽。"
+                  },
+                  {
+                    "speaker": "A",
+                    "text": "我们这儿没有叫玛丽的。"
+                  },
+                  {
+                    "speaker": "B",
+                    "text": "你是62324567吗？"
+                  },
+                  {
+                    "speaker": "A",
+                    "text": "不是。"
+                  },
+                  {
+                    "speaker": "B",
+                    "text": "对不起，我打____了。",
+                    "blank_id": "d4_b1"
+                  }
+                ],
+                "sample_answers": [
+                  {
+                    "blank_id": "d4_b1",
+                    "answer": "错",
+                    "explanation_vi": "打错电话 = gọi nhầm số/nhầm điện thoại."
+                  }
+                ]
+              },
+              {
+                "id": "0cdedcd2-2ffc-5b31-be28-b300a1703b33",
+                "lines": [
+                  {
+                    "speaker": "A",
+                    "text": "昨天晚上的比赛你看了吗？"
+                  },
+                  {
+                    "speaker": "B",
+                    "text": "我看了，但是没看____。",
+                    "blank_id": "d5_b1"
+                  },
+                  {
+                    "speaker": "A",
+                    "text": "怎么没有看____？",
+                    "blank_id": "d5_b2"
+                  },
+                  {
+                    "speaker": "B",
+                    "text": "我看____一半儿，肚子疼得厉害，就去医院了。",
+                    "blank_id": "d5_b3"
+                  }
+                ],
+                "sample_answers": [
+                  {
+                    "blank_id": "d5_b1",
+                    "answer": "完",
+                    "explanation_vi": "没看完 = chưa xem xong."
+                  },
+                  {
+                    "blank_id": "d5_b2",
+                    "answer": "完",
+                    "explanation_vi": "怎么没有看完 = sao lại chưa xem xong."
+                  },
+                  {
+                    "blank_id": "d5_b3",
+                    "answer": "了",
+                    "explanation_vi": "看了一半儿 = đã xem được một nửa; đây là động thái 了, không phải kết quả bổ ngữ."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "ca39b5ea-3b70-5293-97df-4436f4966b11",
+            "type": "answer_with_pattern",
+            "variant": "actual_situation",
             "order": 5,
-            "title": "五、根据实际情况回答问题",
+            "title": "根据实际情况回答问题",
             "title_vi": "Trả lời theo tình hình thực tế",
             "instruction": {
               "zh": "根据实际情况回答问题。",
-              "vi": "Trả lời câu hỏi theo tình hình thực tế của bạn."
+              "vi": "Trả lời theo tình hình thực tế."
+            },
+            "difficulty": "normal",
+            "skill_focus": [],
+            "grammar_refs": [],
+            "vocab_refs": [],
+            "rendering": {
+              "renderer": "answer_with_pattern"
+            },
+            "source_origin": "textbook",
+            "check_needed": false,
+            "pattern": "根据实际情况回答。",
+            "model": {
+              "prompt": "第一本书（1A）你学了吗？",
+              "answer": "我学了。"
             },
             "questions": [
               {
-                "id": "7d9c942a-bdc2-45a1-b852-6b3dd58fe8f2",
-                "question": "第一本书（1A）你学了吗？",
-                "answer": "",
-                "grading": {
-                  "mode": "manual"
-                }
+                "id": "3e741848-7e69-53a0-a218-22e913c81d4b",
+                "prompt": "第一本书（1A）你学了吗？",
+                "sample_answer": "我学了。",
+                "acceptable_answers": [],
+                "grammar_refs": []
               },
               {
-                "id": "a79733e1-ef69-41fd-ac55-9bb8b3bd4d2c",
-                "question": "第一本书你学完了吗？",
-                "answer": "",
-                "grading": {
-                  "mode": "manual"
-                }
+                "id": "d7eae95e-99bb-5064-9901-e91c89b09a15",
+                "prompt": "第一本书你学完了吗？",
+                "sample_answer": "我已经学完了。",
+                "acceptable_answers": [],
+                "grammar_refs": []
               },
               {
-                "id": "ec5f1e84-0693-46b3-b735-8005e47f103e",
-                "question": "第二本书你学了吗？",
-                "answer": "",
-                "grading": {
-                  "mode": "manual"
-                }
+                "id": "b850457c-0887-58fa-b895-63266ebe2e66",
+                "prompt": "第二本书你学了吗？",
+                "sample_answer": "我正在学第二本书。",
+                "acceptable_answers": [],
+                "grammar_refs": []
               },
               {
-                "id": "dc7f5f06-95a1-4158-98d8-b293729d6a13",
-                "question": "第二本书你学完了吗？",
-                "answer": "",
-                "grading": {
-                  "mode": "manual"
-                }
+                "id": "3d519c0a-ed84-57c0-a0b9-eb656df232b7",
+                "prompt": "第二本书你学完了吗？",
+                "sample_answer": "还没有学完。",
+                "acceptable_answers": [],
+                "grammar_refs": []
               },
               {
-                "id": "55e24ac4-bbd1-40f9-9dee-e97b3f2e10f7",
-                "question": "你们学到第几课了？",
-                "answer": "",
-                "grading": {
-                  "mode": "manual"
-                }
+                "id": "b31f640b-c26a-53ae-b14c-90edefb45818",
+                "prompt": "你们学到第几课了？",
+                "sample_answer": "我们学到第四课了。",
+                "acceptable_answers": [],
+                "grammar_refs": []
               },
               {
-                "id": "f7c603b4-c112-4d9c-ab37-b945d471ccee",
-                "question": "今天的作业你做完了没有？课文念熟了没有？",
-                "answer": "",
-                "grading": {
-                  "mode": "manual"
-                }
+                "id": "c183ea81-5dec-58da-b605-0372b1e01fc6",
+                "prompt": "今天的作业你做完了没有？课文念熟了没有？",
+                "sample_answer": "作业做完了，课文还没念熟。",
+                "acceptable_answers": [],
+                "grammar_refs": []
               },
               {
-                "id": "e904e37c-c385-4f11-9be3-45c2edea0b13",
-                "question": "什么时候能做完作业？什么时候能念熟课文？",
-                "answer": "",
-                "grading": {
-                  "mode": "manual"
-                }
+                "id": "2214b9b6-7b4d-5c2e-9b46-a62b5b0ff69c",
+                "prompt": "什么时候能做完作业？什么时候能念熟课文？",
+                "sample_answer": "晚上能做完作业，复习以后能念熟课文。",
+                "acceptable_answers": [],
+                "grammar_refs": []
               },
               {
-                "id": "497e0d16-4f94-40ed-aa81-c09c6d7a0dbb",
-                "question": "你做完作业要干什么？",
-                "answer": "",
-                "grading": {
-                  "mode": "manual"
-                }
+                "id": "0fe8469e-f0f9-57f0-bef8-f8bfd1dbdc7d",
+                "prompt": "你做完作业要干什么？",
+                "sample_answer": "我做完作业要休息。",
+                "acceptable_answers": [],
+                "grammar_refs": []
               }
             ],
-            "source_origin": "textbook",
-            "check_needed": false
+            "answer_key": []
           },
           {
-            "id": "60ec1197-2967-408c-a1f3-3c2112f8305a",
+            "id": "dc944293-87e2-5fc5-9caf-9f190165e366",
             "type": "correct_sentence",
-            "variant": "error_correction",
+            "variant": "grammar_correction",
             "order": 6,
-            "title": "六、改错句",
+            "title": "改错句",
             "title_vi": "Sửa câu sai",
             "instruction": {
               "zh": "改错句。",
-              "vi": "Sửa câu sai."
+              "vi": "Sửa các câu sai."
             },
+            "difficulty": "normal",
+            "skill_focus": [],
+            "grammar_refs": [],
+            "vocab_refs": [],
+            "rendering": {
+              "renderer": "correct_sentence"
+            },
+            "source_origin": "textbook",
+            "check_needed": false,
             "questions": [
               {
-                "id": "1b0dc397-26f4-4659-a964-f9c68ceab72a",
-                "wrong": "我学这本书完了。",
-                "correct": "我学完这本书了。",
-                "explanation_vi": "Bổ ngữ kết quả 完 đứng ngay sau động từ 学."
+                "id": "573de3da-a6e6-55e7-b40d-7172b984cfe3",
+                "order": 1,
+                "wrong_sentence": "我学这本书完了。",
+                "correct_sentence": "我学完这本书了。",
+                "acceptable_answers": [
+                  "我学完这本书了。"
+                ],
+                "explanation_vi": "Bổ ngữ kết quả 完 phải đứng ngay sau động từ 学, rồi mới đến tân ngữ 这本书.",
+                "grammar_refs": [],
+                "check_needed": false
               },
               {
-                "id": "ab74bab2-0cd3-4c59-b4dd-6d9a3c6197b9",
-                "wrong": "我已经做了完今天的作业。",
-                "correct": "我已经做完今天的作业了。",
-                "explanation_vi": "做完 là cụm động từ + bổ ngữ kết quả; không chen 了 vào giữa 做 và 完."
+                "id": "984ba935-a329-5053-99b2-56d70ff04221",
+                "order": 2,
+                "wrong_sentence": "我已经做了完今天的作业。",
+                "correct_sentence": "我已经做完了今天的作业。",
+                "acceptable_answers": [
+                  "我已经做完了今天的作业。"
+                ],
+                "explanation_vi": "了 đặt sau bổ ngữ kết quả 完, không chen giữa 做 và 完.",
+                "grammar_refs": [],
+                "check_needed": false
               },
               {
-                "id": "c503fed9-44e1-4df9-b284-51dbab822ee8",
-                "wrong": "这个问题我错了回答。",
-                "correct": "这个问题我回答错了。",
-                "explanation_vi": "错 đứng sau động từ 回答 làm bổ ngữ kết quả."
+                "id": "c19d56f9-8f6a-56e5-a486-b86272390546",
+                "order": 3,
+                "wrong_sentence": "这个问题我错了回答。",
+                "correct_sentence": "这个问题我回答错了。",
+                "acceptable_answers": [
+                  "这个问题我回答错了。"
+                ],
+                "explanation_vi": "错 làm bổ ngữ kết quả, phải đứng sau động từ 回答.",
+                "grammar_refs": [],
+                "check_needed": false
               },
               {
-                "id": "87b8a7fb-1969-49e6-b592-82a2e0147e96",
-                "wrong": "昨天在书店我看了我们班的同学玛丽。",
-                "correct": "昨天在书店我看见了我们班的同学玛丽。",
-                "explanation_vi": "Nhìn thấy ai phải dùng 看见 để chỉ kết quả nhận thấy."
+                "id": "734ba92b-7f25-5013-8616-b1a47eeddf5f",
+                "order": 4,
+                "wrong_sentence": "昨天在书店我看了我们班的同学玛丽。",
+                "correct_sentence": "昨天在书店我看见了我们班的同学玛丽。",
+                "acceptable_answers": [
+                  "昨天在书店我看见了我们班的同学玛丽。"
+                ],
+                "explanation_vi": "Muốn nói 'nhìn thấy/gặp thấy' phải dùng 看见, không dùng 看 đơn thuần.",
+                "grammar_refs": [],
+                "check_needed": false
               },
               {
-                "id": "6155b63d-c263-446a-9ad7-80d775f5be6e",
-                "wrong": "我现在能听老师的话懂了。",
-                "correct": "我现在能听懂老师的话了。",
-                "explanation_vi": "听懂 là động từ + bổ ngữ kết quả, đứng trước tân ngữ 老师的话."
+                "id": "3c7565ea-6321-5d4f-bdf4-4f0e36b88ad3",
+                "order": 5,
+                "wrong_sentence": "我现在能听老师的话懂了。",
+                "correct_sentence": "我现在能听懂老师的话了。",
+                "acceptable_answers": [
+                  "我现在能听懂老师的话了。"
+                ],
+                "explanation_vi": "懂 phải đứng ngay sau 听 để tạo 听懂; 了 đặt cuối câu báo trạng thái mới.",
+                "grammar_refs": [],
+                "check_needed": false
               },
               {
-                "id": "8e9a9428-6659-4025-8fb4-b5bf4134d62d",
-                "wrong": "明天我吃午饭就去买票。",
-                "correct": "明天我吃完午饭就去买票。",
-                "explanation_vi": "Cần 完 để nói ăn xong rồi mới đi mua vé."
+                "id": "4946a970-ad15-57ea-a86e-d20377376393",
+                "order": 6,
+                "wrong_sentence": "明天我吃早饭就去买票。",
+                "correct_sentence": "明天我吃完早饭就去买票。",
+                "acceptable_answers": [
+                  "明天我吃完早饭就去买票。"
+                ],
+                "explanation_vi": "Mẫu bài này cần kết quả 'ăn xong' trước rồi mới đi mua vé: 吃完早饭就……",
+                "grammar_refs": [],
+                "check_needed": false
               }
             ],
-            "source_origin": "textbook/generated_mixed",
-            "check_needed": true
+            "answer_key": [
+              {
+                "question_id": "573de3da-a6e6-55e7-b40d-7172b984cfe3",
+                "answer": "我学完这本书了。",
+                "check_needed": false
+              },
+              {
+                "question_id": "984ba935-a329-5053-99b2-56d70ff04221",
+                "answer": "我已经做完了今天的作业。",
+                "check_needed": false
+              },
+              {
+                "question_id": "c19d56f9-8f6a-56e5-a486-b86272390546",
+                "answer": "这个问题我回答错了。",
+                "check_needed": false
+              },
+              {
+                "question_id": "734ba92b-7f25-5013-8616-b1a47eeddf5f",
+                "answer": "昨天在书店我看见了我们班的同学玛丽。",
+                "check_needed": false
+              },
+              {
+                "question_id": "3c7565ea-6321-5d4f-bdf4-4f0e36b88ad3",
+                "answer": "我现在能听懂老师的话了。",
+                "check_needed": false
+              },
+              {
+                "question_id": "4946a970-ad15-57ea-a86e-d20377376393",
+                "answer": "明天我吃完早饭就去买票。",
+                "check_needed": false
+              }
+            ]
           }
         ]
       },
       {
-        "id": "4b3f514b-98a2-4e74-84c5-c83ff12ee313",
+        "id": "0deb2b67-428e-56e1-89e9-f8298a6e677c",
         "type": "communication",
         "order": 7,
         "title": "交际会话",
-        "title_vi": "Luyện giao tiếp",
+        "title_vi": "Hội thoại giao tiếp",
         "source_origin": "textbook",
-        "check_needed": true,
+        "check_needed": false,
         "items": [
           {
-            "id": "d47481cc-fd2a-4991-ac01-d4168b47f7e0",
+            "id": "992f5d2c-e3e0-5c4d-b0c5-a95d765562a3",
             "type": "communication_dialogue",
             "order": 1,
             "title": "找东西",
             "title_vi": "Tìm đồ",
-            "instruction": {
-              "zh": "找东西。",
-              "vi": "Luyện hội thoại theo tình huống tìm đồ."
-            },
             "lines": [
               {
-                "id": "14d03f78-43df-40be-a598-3bebc0f33c34",
                 "speaker": "A",
-                "zh": "你看见我的车钥匙了没有？",
-                "vi": "Bạn có thấy chìa khóa xe của tôi không?"
+                "text": "你看见我的车钥匙了没有？"
               },
               {
-                "id": "2b4731fc-0a8b-4d41-861b-6cccce0676c3",
                 "speaker": "B",
-                "zh": "你的车钥匙放什么地方了？",
-                "vi": "Bạn để chìa khóa xe ở đâu?"
+                "text": "你的车钥匙放什么地方了？"
               },
               {
-                "id": "a4685bea-243d-459c-a695-7bb913c09214",
                 "speaker": "A",
-                "zh": "我放在桌子上了。",
-                "vi": "Tôi để trên bàn rồi."
+                "text": "我放在桌子上了。"
               },
               {
-                "id": "b0536515-f369-430c-bed0-ae2e634c9b68",
                 "speaker": "B",
-                "zh": "你看看是不是掉到桌子下边了。",
-                "vi": "Bạn xem thử có phải nó rơi xuống dưới bàn rồi không."
+                "text": "你看看是不是掉到桌子下边了。"
               },
               {
-                "id": "dbe477b1-a934-4624-81eb-1bdecaa6d91b",
                 "speaker": "A",
-                "zh": "啊，找到了。",
-                "vi": "À, tìm thấy rồi."
+                "text": "啊，找到了。"
               }
             ],
-            "notes_vi": [
-              "看见……了没有？ = Có nhìn thấy… không?",
-              "放什么地方了？ = Để ở chỗ nào rồi?",
-              "找到了。 = Tìm thấy rồi."
-            ],
-            "source_origin": "textbook",
-            "check_needed": true
+            "check_needed": false
           }
         ]
       },
       {
-        "id": "dd46fe53-ff4b-4bc5-ae98-6d6174d0ad17",
+        "id": "ab9937a4-0784-57bc-8006-a8337e932df5",
         "type": "reading",
         "order": 8,
         "title": "阅读理解",
         "title_vi": "Đọc hiểu",
-        "source_origin": "textbook/generated_mixed",
-        "check_needed": true,
-        "items": [
+        "source_origin": "textbook",
+        "check_needed": false,
+        "supplementary_words": [
           {
-            "id": "9bd9a79e-3279-468d-9f4b-ecd1f7365e19",
-            "type": "reading_comprehension",
+            "id": "8e51b852-efb3-5e3a-b97c-c42878f85eea",
+            "hanzi": "于是",
+            "pinyin": "yúshì",
+            "meaning_vi": "thế là; vì vậy",
+            "pos": "Liên từ / Phó từ liên kết",
+            "pos_detail": {
+              "vi": "Liên từ / Phó từ liên kết",
+              "cn": "连词 / 副词",
+              "normalized": "conjunction",
+              "schema_compatible_pos": "conjunction",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "",
+              "notes": []
+            },
+            "source_origin": "textbook",
+            "check_needed": false,
+            "vocab_ref": "0230c969-1e60-5e89-8492-2fa21221e1fa"
+          },
+          {
+            "id": "2ae852f7-69ff-579a-9be8-8ff69511845c",
+            "hanzi": "最好",
+            "pinyin": "zuìhǎo",
+            "meaning_vi": "tốt nhất; nên nhất",
+            "pos": "Phó từ / Cụm phó từ",
+            "pos_detail": {
+              "vi": "Phó từ / Cụm phó từ",
+              "cn": "副词 / 副词性短语",
+              "normalized": "adverb",
+              "schema_compatible_pos": "adverb",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "最 + 好",
+              "usage_note_vi": "Trong đọc hiểu dùng để khuyên: 你最好再去医院看看.",
+              "notes": []
+            },
+            "source_origin": "textbook",
+            "check_needed": false,
+            "vocab_ref": "763f3527-c03b-5091-9321-a9bac37c65a9"
+          }
+        ],
+        "paragraphs": [
+          {
+            "id": "e3986a36-4397-5e65-a819-881381df4529",
             "order": 1,
-            "title": "玛丽生病了",
-            "title_vi": "Mary bị ốm",
-            "supplementary_vocab": [
-              {
-                "id": "44d7974e-3a5b-45c0-a0e2-9b883d814cc6",
-                "hanzi": "于是",
-                "pinyin": "yúshì",
-                "meaning_vi": "thế là, vì vậy, do đó"
-              },
-              {
-                "id": "f0d02d73-fc09-4310-a941-3b9d8c50d6a0",
-                "hanzi": "最好",
-                "pinyin": "zuìhǎo",
-                "meaning_vi": "tốt nhất, nên… thì hơn"
-              }
-            ],
-            "paragraphs": [
-              {
-                "id": "d2a4cf8b-55cd-4904-9fed-3141da682b19",
-                "order": 1,
-                "zh": "昨天下午，我和玛丽一起去超市买东西。回到学校的时候，玛丽觉得不舒服，我就陪她一起去医院看病。到了医院，大夫问她：“你怎么了？”玛丽说：“我头疼，很不舒服。”大夫给她检查了检查说：“你感冒了。烧得很厉害，三十九度五。给你打一针吧。”玛丽说：“不！我不打针！”大夫说：“打了针就不发烧了。”玛丽说：“不！你给我开点儿药吧。我可以吃药，但是我不想打针。”于是，大夫给她开了一些药。晚上，玛丽吃了药就睡了。",
-                "vi": "Chiều hôm qua, tôi và Mary cùng đi siêu thị mua đồ. Khi về đến trường, Mary thấy không khỏe, tôi bèn đi cùng cô ấy đến bệnh viện khám bệnh. Đến bệnh viện, bác sĩ hỏi cô ấy: “Em bị sao vậy?” Mary nói: “Em đau đầu, rất khó chịu.” Bác sĩ khám cho cô ấy rồi nói: “Em bị cảm rồi. Sốt khá nặng, ba mươi chín độ rưỡi. Tiêm cho em một mũi nhé.” Mary nói: “Không! Em không tiêm đâu!” Bác sĩ nói: “Tiêm rồi thì sẽ hết sốt.” Mary nói: “Không! Bác sĩ kê cho em ít thuốc đi. Em có thể uống thuốc, nhưng em không muốn tiêm.” Thế là bác sĩ kê cho cô ấy một ít thuốc. Buổi tối, Mary uống thuốc xong thì ngủ."
-              },
-              {
-                "id": "a6b1119e-769b-4444-9eee-c4a26d7f6af3",
-                "order": 2,
-                "zh": "今天早上，她不发烧了。吃完早饭，她要去教室上课，我说：“你在宿舍休息吧，我给你请假。”她说：“我的感冒已经好了，可以上课了。”",
-                "vi": "Sáng nay, cô ấy không sốt nữa. Ăn sáng xong, cô ấy muốn đến lớp học. Tôi nói: “Bạn nghỉ ở ký túc xá đi, mình xin nghỉ giúp bạn.” Cô ấy nói: “Cảm của mình đã khỏi rồi, có thể đi học.”"
-              },
-              {
-                "id": "ce8bdbc9-b498-418a-ab2c-e16111228a35",
-                "order": 3,
-                "zh": "到了教室，老师对玛丽说：“玛丽，要是不舒服就回宿舍休息吧。”上午，玛丽又有点儿发烧，下了第二节课她就回宿舍了。我对她说：“你最好再去医院看看。”",
-                "vi": "Đến lớp, thầy/cô giáo nói với Mary: “Mary, nếu em không khỏe thì về ký túc xá nghỉ đi.” Buổi sáng, Mary lại hơi sốt, tan tiết thứ hai thì cô ấy về ký túc xá. Tôi nói với cô ấy: “Tốt nhất bạn nên đi bệnh viện khám lại.”"
-              }
-            ],
-            "questions": [
-              {
-                "id": "97c6a4ab-7de0-45b1-a796-4625f58d1fca",
-                "question": "玛丽怎么了？",
-                "answer": "玛丽感冒了，头疼，发烧，很不舒服。",
-                "answer_verified": false
-              },
-              {
-                "id": "82b334af-11c3-4606-980f-154617982627",
-                "question": "玛丽打针了吗？为什么？",
-                "answer": "玛丽没有打针，因为她不想打针，她只想吃药。",
-                "answer_verified": false
-              },
-              {
-                "id": "13181a17-4f4d-4923-a0ef-dd8d285261d4",
-                "question": "玛丽吃药后病好了吗？",
-                "answer": "没有完全好。今天早上她不发烧了，但是上午又有点儿发烧。",
-                "answer_verified": false
-              },
-              {
-                "id": "05127eb4-5037-4e27-a2e2-5a497d413bd1",
-                "question": "你觉得玛丽会再去医院吗？",
-                "answer": "我觉得她会再去医院，因为她又有点儿发烧，朋友也劝她最好再去医院看看。",
-                "answer_verified": false
-              }
-            ],
-            "grammar_focus": [
-              {
-                "pattern": "V + 完 + O + 就 / 要 / 再…",
-                "example": "吃完早饭，她要去教室上课。",
-                "vi": "Ăn sáng xong, cô ấy muốn đến lớp học."
-              },
-              {
-                "pattern": "于是",
-                "example": "于是，大夫给她开了一些药。",
-                "vi": "Thế là bác sĩ kê cho cô ấy một ít thuốc."
-              },
-              {
-                "pattern": "最好 + V",
-                "example": "你最好再去医院看看。",
-                "vi": "Tốt nhất bạn nên đi bệnh viện khám lại."
-              },
-              {
-                "pattern": "要是……就……",
-                "example": "要是不舒服就回宿舍休息吧。",
-                "vi": "Nếu không khỏe thì về ký túc xá nghỉ đi."
-              }
-            ],
-            "source_origin": "textbook/generated_mixed",
-            "check_needed": true
+            "zh": "昨天下午，我和玛丽一起去超市买东西。回到学校的时候，玛丽觉得不舒服，我就陪她一起去医院看病。到了医院，大夫问她：“你怎么了？”玛丽说：“我头疼，很不舒服。”大夫给她检查了检查说：“你感冒了。烧得很厉害，三十九度五。给你打一针吧。”玛丽说：“不！我不打针！”大夫说：“打了针就不发烧了。”玛丽说：“不！你给我开点儿药吧。我可以吃药，但我不想打针。”于是，大夫给她开了一些药。晚上，玛丽吃了药就睡了。",
+            "vi": "Chiều hôm qua, tôi và Mary cùng đi siêu thị mua đồ. Khi về đến trường, Mary thấy không khỏe, tôi liền đi cùng cô ấy đến bệnh viện khám. Đến bệnh viện, bác sĩ hỏi: “Bạn sao vậy?” Mary nói: “Tôi đau đầu, rất khó chịu.” Bác sĩ kiểm tra cho cô ấy rồi nói: “Bạn bị cảm rồi. Sốt rất nặng, 39 độ rưỡi. Tiêm cho bạn một mũi nhé.” Mary nói: “Không! Tôi không tiêm!” Bác sĩ nói: “Tiêm rồi thì sẽ không sốt nữa.” Mary nói: “Không! Bác sĩ kê cho tôi ít thuốc đi. Tôi có thể uống thuốc, nhưng tôi không muốn tiêm.” Thế là bác sĩ kê cho cô ấy một ít thuốc. Buổi tối, Mary uống thuốc rồi ngủ."
+          },
+          {
+            "id": "52c01d3f-eb47-53eb-acd4-e8cf5851f02d",
+            "order": 2,
+            "zh": "今天早上，她不发烧了。吃完早饭，她要去教室上课，我说：“你在宿舍休息吧，我给你请假。”她说：“我的感冒已经好了，可以上课了。”",
+            "vi": "Sáng nay cô ấy không sốt nữa. Ăn sáng xong, cô ấy muốn đến lớp học, tôi nói: “Bạn nghỉ ở ký túc xá đi, mình xin nghỉ giúp bạn.” Cô ấy nói: “Cảm của mình đã khỏi rồi, có thể đi học.”"
+          },
+          {
+            "id": "c94251ac-108a-5d78-9821-a0d82f06387a",
+            "order": 3,
+            "zh": "到了教室，老师对玛丽说：“玛丽，要是不舒服就回宿舍休息吧。”上午，玛丽又有点儿发烧，下了第二节课她就回宿舍了。我对她说：“你最好再去医院看看。”",
+            "vi": "Đến lớp, thầy/cô nói với Mary: “Mary, nếu không khỏe thì về ký túc xá nghỉ đi.” Buổi sáng Mary lại hơi sốt, hết tiết thứ hai thì cô ấy về ký túc xá. Tôi nói với cô ấy: “Bạn tốt nhất nên đến bệnh viện khám lại.”"
+          }
+        ],
+        "questions": [
+          {
+            "id": "1da29e82-92c8-505b-b9bb-f29329765414",
+            "order": 1,
+            "prompt": "玛丽怎么了？",
+            "sample_answer": "玛丽感冒了，头疼，还发烧。",
+            "check_needed": false
+          },
+          {
+            "id": "660faaca-6075-53fc-891b-25d995c04276",
+            "order": 2,
+            "prompt": "玛丽打针了吗？为什么？",
+            "sample_answer": "没有。因为她不想打针，只让大夫给她开药。",
+            "check_needed": false
+          },
+          {
+            "id": "36090818-525c-545d-bab9-11f9630bf381",
+            "order": 3,
+            "prompt": "玛丽吃药后病好了吗？",
+            "sample_answer": "早上她不发烧了，她说自己的感冒已经好了。",
+            "check_needed": false
+          },
+          {
+            "id": "a576d174-b385-5874-b986-24a6af34dd4b",
+            "order": 4,
+            "prompt": "你觉得玛丽会再去医院吗？",
+            "sample_answer": "会。因为上午她又有点儿发烧，老师建议她最好再去医院看看。",
+            "check_needed": false
+          }
+        ],
+        "answer_key": [
+          {
+            "question_id": "1da29e82-92c8-505b-b9bb-f29329765414",
+            "sample_answer": "玛丽感冒了，头疼，还发烧。",
+            "check_needed": false
+          },
+          {
+            "question_id": "660faaca-6075-53fc-891b-25d995c04276",
+            "sample_answer": "没有。因为她不想打针，只让大夫给她开药。",
+            "check_needed": false
+          },
+          {
+            "question_id": "36090818-525c-545d-bab9-11f9630bf381",
+            "sample_answer": "早上她不发烧了，她说自己的感冒已经好了。",
+            "check_needed": false
+          },
+          {
+            "question_id": "a576d174-b385-5874-b986-24a6af34dd4b",
+            "sample_answer": "会。因为上午她又有点儿发烧，老师建议她最好再去医院看看。",
+            "check_needed": false
           }
         ]
       },
       {
-        "id": "e71f4398-291c-4f48-8aa7-f93e825f4d42",
+        "id": "12b31b56-6c6b-5614-84cd-951ba71b2d1c",
         "type": "character_writing",
         "order": 9,
         "title": "写汉字",
         "title_vi": "Viết chữ Hán",
-        "source_origin": "generated",
+        "source_origin": "textbook/pdf_checked",
         "check_needed": false,
-        "empty_reason_vi": "Bài này không thấy phần 写汉字 riêng trong PDF. Các mục dưới đây chỉ là gợi ý luyện chữ generated practice, không phải section textbook.",
         "items": [
           {
-            "id": "9f8c867c-beba-46cf-99e0-2dc871b61547",
+            "id": "77ee3947-9334-5386-8977-b5eb5ae48cd0",
             "type": "character_writing_item",
             "order": 1,
             "hanzi": "考",
             "pinyin": "kǎo",
             "note_vi": "chữ trong 考试",
-            "source_origin": "generated"
+            "source_origin": "textbook/generated_mixed"
           },
           {
-            "id": "d64267f3-d0df-480d-ac2c-799cc72c5727",
+            "id": "79dc18b3-159a-5f3b-b491-547a2367f885",
             "type": "character_writing_item",
             "order": 2,
             "hanzi": "题",
             "pinyin": "tí",
             "note_vi": "câu hỏi, đề bài",
-            "source_origin": "generated"
+            "source_origin": "textbook/generated_mixed"
           },
           {
-            "id": "f18de2f5-ea9a-4c6f-8203-9ec87e6074f0",
+            "id": "3184893e-1712-5a86-8337-d86675952a2e",
             "type": "character_writing_item",
             "order": 3,
             "hanzi": "完",
             "pinyin": "wán",
             "note_vi": "xong",
-            "source_origin": "generated"
+            "source_origin": "textbook/generated_mixed"
           },
           {
-            "id": "eeadefcb-f658-4422-878c-4642cec9caa5",
+            "id": "5962a7bc-8eeb-57d8-90bb-fca194fcc6e8",
             "type": "character_writing_item",
             "order": 4,
-            "hanzi": "成",
-            "pinyin": "chéng",
-            "note_vi": "thành, trở thành",
-            "source_origin": "generated"
+            "hanzi": "道",
+            "pinyin": "dào",
+            "note_vi": "lượng từ",
+            "source_origin": "textbook/generated_mixed"
           },
           {
-            "id": "7986bf0d-0a2a-4df2-bfb5-77177a96c27a",
+            "id": "79d24b5c-79c0-5685-976b-cd5036334915",
             "type": "character_writing_item",
             "order": 5,
+            "hanzi": "成",
+            "pinyin": "chéng",
+            "note_vi": "thành",
+            "source_origin": "textbook/generated_mixed"
+          },
+          {
+            "id": "d4d91adc-86f0-50b9-8b01-efebab5cc68a",
+            "type": "character_writing_item",
+            "order": 6,
             "hanzi": "绩",
             "pinyin": "jì",
             "note_vi": "chữ trong 成绩",
-            "source_origin": "generated"
+            "source_origin": "textbook/generated_mixed"
           },
           {
-            "id": "69cee776-d51f-4d4c-8865-44e5c500be8b",
-            "type": "character_writing_item",
-            "order": 6,
-            "hanzi": "句",
-            "pinyin": "jù",
-            "note_vi": "chữ trong 句子",
-            "source_origin": "generated"
-          },
-          {
-            "id": "b00ce016-cc5e-4ca7-8718-7ddcae1618a6",
+            "id": "aa74b7d0-a3b8-502a-8630-1f42a5398c63",
             "type": "character_writing_item",
             "order": 7,
             "hanzi": "词",
             "pinyin": "cí",
             "note_vi": "từ",
-            "source_origin": "generated"
+            "source_origin": "textbook/generated_mixed"
           },
           {
-            "id": "9fcc24e3-9e1c-4296-b02c-04422fc58fd1",
+            "id": "c64bf75a-a412-543e-ab2c-ff7057589405",
             "type": "character_writing_item",
             "order": 8,
             "hanzi": "糟",
             "pinyin": "zāo",
             "note_vi": "chữ trong 糟糕",
-            "source_origin": "generated"
+            "source_origin": "textbook/generated_mixed"
           },
           {
-            "id": "465657de-9263-4d12-86f0-2441c5765015",
+            "id": "44567990-b122-5cda-823b-cc5ad6af1523",
             "type": "character_writing_item",
             "order": 9,
             "hanzi": "答",
             "pinyin": "dá",
             "note_vi": "trả lời",
-            "source_origin": "generated"
+            "source_origin": "textbook/generated_mixed"
           },
           {
-            "id": "fc063ab3-c1b4-44d9-bd34-c6ed58bdbba7",
+            "id": "15b6cb75-8042-5211-af25-24a266627f3e",
             "type": "character_writing_item",
             "order": 10,
             "hanzi": "法",
             "pinyin": "fǎ",
             "note_vi": "chữ trong 办法",
-            "source_origin": "generated"
+            "source_origin": "textbook/generated_mixed"
           }
         ]
       },
       {
-        "id": "8e88dc2d-d19b-4cbb-aa04-f38eb9b383c7",
+        "id": "58d359b7-d0a7-5652-8b8e-6881ee0eec4e",
         "type": "summary",
         "order": 10,
         "title": "总结",
@@ -2188,20 +2933,19 @@
         ],
         "grammar_points": [
           {
-            "id": "f8ec59f3-898a-47b2-b536-44dfd8183393",
-            "title": "结果补语"
+            "id": "b619a99f-116c-5a03-a2c6-34e7a8cf9809",
+            "title": "结果补语",
+            "grammar_ref": "8d4a41cc-5929-57ae-8374-f06990696ca1"
           },
           {
-            "id": "57b14753-688a-41b6-9e0d-b61dbbf574d7",
-            "title": "结果补语：上、成、到"
+            "id": "82e3e5b8-a49e-5745-976b-4b0126b451e9",
+            "title": "结果补语：上、成、到",
+            "grammar_ref": "9e3fe40c-a428-5a85-b969-583cb893e5e1"
           },
           {
-            "id": "fa804fff-372b-4874-8571-f54e613d7e07",
-            "title": "主谓词组作定语"
-          },
-          {
-            "id": "c6cd6c38-22fc-4546-a398-39efe02d6c17",
-            "title": "都"
+            "id": "93bc3baa-dbfc-5762-a6d6-8f40888d5769",
+            "title": "主谓词组作定语",
+            "grammar_ref": "27b872c2-090b-5746-b74c-9f8490bb948c"
           }
         ],
         "key_patterns": [
@@ -2218,16 +2962,14 @@
           "text_covered": true,
           "vocabulary_covered": true,
           "proper_nouns_covered": true,
+          "supplementary_vocabulary_covered": true,
           "notes_covered": true,
           "grammar_covered": true,
           "exercises_covered": true,
           "communication_covered": true,
           "reading_covered": true,
-          "character_writing_covered": "generated_only",
-          "remaining_check_needed": [
-            "Đối chiếu lại ảnh PDF scan cho phần 交际练习 / 阅读理解 trước khi set final_verified.",
-            "写汉字 là generated practice, không đánh dấu textbook."
-          ]
+          "character_writing_covered": "pdf_checked_plus_generated_notes",
+          "remaining_check_needed": []
         }
       }
     ],
@@ -2247,63 +2989,39 @@
           "name": "Hanyu Jiaocheng 2-1.pdf",
           "type": "pdf_scan",
           "source_origin": "textbook",
-          "check_needed": true,
-          "page_start": 51,
-          "page_end": 67
-        },
-        {
-          "name": "Tong_hop_tu_vung_Han_ngu_quyen_2_Bai_1-25.docx",
-          "type": "uploaded_crosscheck",
-          "source_origin": "uploaded_crosscheck",
           "check_needed": false
         },
         {
-          "name": "Học kì 2 上-下.md",
-          "type": "uploaded_crosscheck",
-          "source_origin": "uploaded_crosscheck",
+          "name": "Văn bản đã dán (1).txt",
+          "type": "json",
+          "source_origin": "user_uploaded_lesson_json",
           "check_needed": false
         }
-      ]
-    },
-    "summary": {
-      "lesson_parts": [
-        "Bài khóa",
-        "Từ vựng chính",
-        "Tên riêng",
-        "Chú thích sau bài khóa",
-        "Ngữ pháp / Cách dùng từ",
-        "Bài tập trong sách",
-        "Luyện giao tiếp",
-        "Đọc hiểu",
-        "Viết chữ Hán",
-        "Tổng kết bài"
       ],
-      "grammar_points": [
-        {
-          "id": "f8ec59f3-898a-47b2-b536-44dfd8183393",
-          "title": "Bổ ngữ kết quả"
-        },
-        {
-          "id": "57b14753-688a-41b6-9e0d-b61dbbf574d7",
-          "title": "Bổ ngữ kết quả: 上、成、到"
-        },
-        {
-          "id": "fa804fff-372b-4874-8571-f54e613d7e07",
-          "title": "Cụm chủ-vị làm định ngữ"
-        },
-        {
-          "id": "c6cd6c38-22fc-4546-a398-39efe02d6c17",
-          "title": "Đều / tất cả"
-        }
+      "pdf_pages_checked": [
+        68,
+        69,
+        70,
+        71,
+        72,
+        73,
+        74,
+        75,
+        76,
+        77,
+        78,
+        79,
+        80,
+        81,
+        82,
+        83,
+        84
       ],
-      "main_patterns": [],
-      "exercise_types": [
-        "Ngữ âm",
-        "Thay thế",
-        "Chọn từ điền chỗ trống",
-        "Điền bổ ngữ kết quả",
-        "Trả lời theo tình hình thực tế",
-        "Sửa câu sai"
+      "update_notes": [
+        "Bổ sung các từ còn thiếu so với PDF: 看见、见、干、笑、会话、听见、熟、最好.",
+        "Cập nhật pos sang tiếng Việt và thêm pos_detail cho từng từ.",
+        "Đánh dấu động từ li hợp rõ ràng cho 考试 và 回信; các cụm 看见、听见、合上、打开 được đánh dấu là động từ + bổ ngữ kết quả, không phải động từ li hợp.",
+        "Rà lại đáp án bài tập phần 选词填空、用结果补语填空、改错句、阅读理解."
       ],
       "check_needed": false
     }

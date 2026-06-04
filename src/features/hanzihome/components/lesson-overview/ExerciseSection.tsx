@@ -7,6 +7,7 @@ import {
  ExerciseQuestionCard,
  LooseItemGrid,
 } from "./CommonCards";
+import { PassageCard } from "./PassageCard";
 import { TextLineCard } from "./TextLineCard";
 import type { LessonDisplayMode } from "./types";
 import {
@@ -16,6 +17,29 @@ import {
  nonEmptyStrings,
  stringValue,
 } from "./utils";
+
+function promptToString(value: unknown): string {
+ if (typeof value === "string") return value.trim();
+ if (Array.isArray(value)) return nonEmptyStrings(value).join(" / ");
+
+ const record = asRecord(value);
+ return (
+  stringValue(record, "zh") ||
+  stringValue(record, "vi") ||
+  stringValue(record, "text") ||
+  stringValue(record, "prompt")
+ );
+}
+
+function modelLines(record: Record<string, unknown>): string[] {
+ return [
+  stringValue(record, "model"),
+  stringValue(record, "model_a"),
+  stringValue(record, "model_b"),
+  stringValue(record, "prompt_a"),
+  stringValue(record, "prompt_b"),
+ ].filter(Boolean);
+}
 
 function PhoneticsExerciseBody({
  item,
@@ -91,17 +115,45 @@ function SubstitutionExerciseBody({
  item: Exercise;
  displayMode: LessonDisplayMode;
 }) {
+ console.log("Rendering SubstitutionExerciseBody", { item });
  const record = asRecord(item);
  const model = "model" in item && Array.isArray(item.model) ? item.model : [];
  const models = arrayValue(record, "models");
+ const patternGroups = arrayValue(record, "patterns");
+ const partGroups = arrayValue(record, "parts");
  const items = [
   ...("items" in item && Array.isArray(item.items) ? item.items : []),
   ...arrayValue(record, "questions"),
  ];
  const answerKey = arrayValue(record, "answer_key");
+ const supplementaryWords = arrayValue(record, "supplementary_words");
 
  return (
   <div className="grid gap-3">
+   {supplementaryWords.length > 0 && (
+    <div className="flex flex-wrap gap-2">
+     {supplementaryWords.map((wordValue, index) => {
+      const word = asRecord(wordValue);
+      const label =
+       stringValue(word, "hanzi") ||
+       stringValue(word, "text") ||
+       answerToString(wordValue);
+      const pinyin = stringValue(word, "pinyin");
+      const meaning = stringValue(word, "meaning_vi");
+
+      return (
+       <ExercisePill
+        key={stringValue(word, "id") || `${item.id}-word-${index}`}
+       >
+        {label}
+        {displayMode.showPinyin && pinyin && ` · ${pinyin}`}
+        {displayMode.showMeaning && meaning && ` · ${meaning}`}
+       </ExercisePill>
+      );
+     })}
+    </div>
+   )}
+
    {(model.length > 0 || models.length > 0) && (
     <div className="rounded-xl border border-accent/30 bg-accent-subtle p-3">
      <p className="text-xs font-black uppercase tracking-wide text-accent-text">
@@ -119,6 +171,114 @@ function SubstitutionExerciseBody({
       ))}
       <LooseItemGrid items={models} displayMode={displayMode} />
      </div>
+    </div>
+   )}
+
+   {partGroups.length > 0 && (
+    <div className="grid gap-3">
+     {partGroups.map((partValue, partIndex) => {
+      const part = asRecord(partValue);
+      const partModels = modelLines(part);
+      const partItems = arrayValue(part, "items");
+      const partTitle =
+       stringValue(part, "title_vi") ||
+       stringValue(part, "title") ||
+       `Mẫu ${partIndex + 1}`;
+
+      return (
+       <div
+        key={stringValue(part, "id") || `${item.id}-part-${partIndex}`}
+        className="grid gap-2 rounded-xl border border-border-default bg-bg-subtle p-3"
+       >
+        <div>
+         <h5 className="font-black text-text-primary">{partTitle}</h5>
+         {partModels.length > 0 && (
+          <div className="mt-2 rounded-lg border border-accent/30 bg-accent-subtle px-3 py-2">
+           <p className="text-xs font-black uppercase tracking-wide text-accent-text">
+            Mẫu
+           </p>
+           <div className="mt-1 grid gap-1">
+            {partModels.map((line) => (
+             <p
+              key={line}
+              className="text-sm font-black text-accent-text"
+              lang="zh-CN"
+             >
+              {line}
+             </p>
+            ))}
+           </div>
+          </div>
+         )}
+        </div>
+        <LooseItemGrid items={partItems} displayMode={displayMode} />
+       </div>
+      );
+     })}
+    </div>
+   )}
+
+   {patternGroups.length > 0 && (
+    <div className="grid gap-3">
+     {patternGroups.map((groupValue, groupIndex) => {
+      const group = asRecord(groupValue);
+      const groupModels = modelLines(group);
+      const groupItems = arrayValue(group, "items");
+
+      return (
+       <div
+        key={stringValue(group, "id") || `${item.id}-pattern-${groupIndex}`}
+        className="grid gap-2 rounded-xl border border-border-default bg-bg-subtle p-3"
+       >
+        {groupModels.length > 0 && (
+         <div className="rounded-lg border border-accent/30 bg-accent-subtle px-3 py-2">
+          <p className="text-xs font-black uppercase tracking-wide text-accent-text">
+           Mẫu
+          </p>
+          <div className="mt-1 grid gap-1">
+           {groupModels.map((line) => (
+            <p
+             key={line}
+             className="text-sm font-black text-accent-text"
+             lang="zh-CN"
+            >
+             {line}
+            </p>
+           ))}
+          </div>
+         </div>
+        )}
+        {groupItems.length > 0 ? (
+         <div className="grid gap-2 md:grid-cols-2">
+          {groupItems.map((entryValue, index) => {
+           const entry = asRecord(entryValue);
+           const title =
+            promptToString(entry.prompt) ||
+            stringValue(entry, "prompt") ||
+            stringValue(entry, "substitution") ||
+            "Câu";
+           const answer =
+            stringValue(entry, "sample_answer") || answerToString(entry.answer);
+
+           return (
+            <ExerciseQuestionCard
+             key={
+              stringValue(entry, "id") || `${item.id}-${groupIndex}-${index}`
+             }
+             index={index + 1}
+             title={title}
+             answer={answer}
+             note={stringValue(entry, "explanation_vi")}
+            />
+           );
+          })}
+         </div>
+        ) : (
+         <EmptySectionState reason="Nhóm mẫu này chưa có câu luyện." />
+        )}
+       </div>
+      );
+     })}
     </div>
    )}
 
@@ -142,6 +302,7 @@ function SubstitutionExerciseBody({
         key={stringValue(entry, "id") || `${item.id}-${index}`}
         index={index + 1}
         title={
+         promptToString(entry.prompt) ||
          stringValue(entry, "substitution") ||
          stringValue(entry, "prompt") ||
          stringValue(entry, "text") ||
@@ -155,7 +316,10 @@ function SubstitutionExerciseBody({
      })}
     </div>
    ) : (
-    <EmptySectionState reason={stringValue(record, "empty_reason_vi")} />
+    patternGroups.length === 0 &&
+    partGroups.length === 0 && (
+     <EmptySectionState reason={stringValue(record, "empty_reason_vi")} />
+    )
    )}
    <AnswerKeyList itemId={item.id} values={answerKey} />
   </div>
@@ -205,6 +369,12 @@ function QuestionExerciseBody({
      answer={stringValue(model, "answer")}
     />
    )}
+
+   <PassageCard
+    itemId={item.id}
+    passage={record.passage}
+    displayMode={displayMode}
+   />
 
    {items.length > 0 && (
     <LooseItemGrid items={items} displayMode={displayMode} />
@@ -269,14 +439,18 @@ function QuestionExerciseBody({
        .filter(Boolean);
       const answerValue = question.answer;
       const title =
+       promptToString(question.prompt) ||
        stringValue(question, "prompt") ||
+       stringValue(question, "wrong") ||
        stringValue(question, "wrong_sentence") ||
        stringValue(question, "response_prompt") ||
+       stringValue(question, "question") ||
        stringValue(asRecord(question.question), "zh") ||
        stringValue(asRecord(question.statement), "zh") ||
        "Câu hỏi";
       const answer =
        stringValue(question, "sample_answer") ||
+       stringValue(question, "correct") ||
        stringValue(question, "correct_sentence") ||
        answerToString(question.answer) ||
        stringValue(asRecord(question.answer), "zh") ||
@@ -385,8 +559,10 @@ function CommunicationExerciseBody({
  displayMode: LessonDisplayMode;
 }) {
  const record = asRecord(item);
- const dialogue =
-  "dialogue" in item && Array.isArray(item.dialogue) ? item.dialogue : [];
+ const dialogueValue = record.dialogue;
+ const dialogue = Array.isArray(dialogueValue)
+  ? dialogueValue
+  : arrayValue(asRecord(dialogueValue), "lines");
  const questions = arrayValue(record, "questions");
  const tasks =
   "practice_tasks" in item && Array.isArray(item.practice_tasks)
@@ -403,7 +579,7 @@ function CommunicationExerciseBody({
        <TextLineCard
         key={`${stringValue(line, "speaker")}-${index}`}
         speaker={stringValue(line, "speaker")}
-        zh={stringValue(line, "text")}
+        zh={stringValue(line, "zh") || stringValue(line, "text")}
         pinyin={stringValue(line, "pinyin")}
         vi={stringValue(line, "vi")}
         displayMode={displayMode}

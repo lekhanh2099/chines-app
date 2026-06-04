@@ -10,7 +10,13 @@ export function TextBlockView({
  block: TextBlock;
  displayMode: LessonDisplayMode;
 }) {
- const lines = block.lines;
+ const directLines = block.lines;
+ const narrativeParagraphs =
+  block.type === "text_narrative" ? block.paragraphs : [];
+ const dialogueScenes = block.type === "text_dialogue" ? block.scenes : [];
+ const shouldRenderDirectLines =
+  directLines.length > 0 &&
+  (block.type !== "text_narrative" || narrativeParagraphs.length === 0);
 
  return (
   <section className="grid gap-3 rounded-xl border border-border-default bg-bg-subtle p-2.5 sm:gap-4 sm:rounded-2xl sm:p-4">
@@ -23,9 +29,9 @@ export function TextBlockView({
     </p>
    </div>
 
-   {lines.length > 0 && (
+   {shouldRenderDirectLines && (
     <div className="rounded-lg border border-border-default bg-bg-primary px-3 sm:rounded-xl sm:px-4">
-     {lines.map((line) => (
+     {directLines.map((line) => (
       <TextLineCard
        key={line.id}
        speaker={line.speaker}
@@ -39,8 +45,7 @@ export function TextBlockView({
     </div>
    )}
 
-   {block.type === "text_dialogue" &&
-   block.scenes.map((scene) => (
+   {dialogueScenes.map((scene) => (
      <div
       key={scene.id}
       className="grid gap-2 rounded-lg border border-border-default bg-bg-primary px-3 py-2.5 sm:rounded-xl sm:px-4 sm:py-3"
@@ -62,10 +67,9 @@ export function TextBlockView({
      </div>
     ))}
 
-   {block.type === "text_narrative" &&
-    block.paragraphs.length > 0 && (
+   {narrativeParagraphs.length > 0 && (
      <div className="rounded-lg border border-border-default bg-bg-primary px-3 sm:rounded-xl sm:px-4">
-      {block.paragraphs.map((paragraph) => (
+      {narrativeParagraphs.map((paragraph) => (
        <TextLineCard
         key={paragraph.id}
         zh={paragraph.zh}

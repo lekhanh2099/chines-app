@@ -1,12 +1,11 @@
 "use client";
 
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
 import type {
  GrammarViewModel,
  LearningStatus,
 } from "@/features/hanzihome/types";
+import { cn } from "@/lib/utils";
 
 type GrammarPointListProps = {
  points: GrammarViewModel[];
@@ -24,60 +23,59 @@ export function GrammarPointList({
  allPointId,
 }: GrammarPointListProps) {
  return (
-  <Card
-   padding="md"
-   className="rounded-xl border border-border-default bg-bg-primary shadow-theme-sm"
-  >
-   <div className="flex flex-col gap-3">
+  <div className="flex min-w-0 max-w-full flex-col gap-3 overflow-hidden">
     <div className="flex items-center justify-between gap-3">
-     <h2 className="text-lg font-black text-text-primary">Điểm ngữ pháp</h2>
+     <h2 className="text-base font-black text-text-primary">Điểm ngữ pháp</h2>
      <Badge>{points.length} mục</Badge>
     </div>
 
     <div className="grid gap-2">
      {allPointId && (
-      <Button
-       variant={selectedPointId === allPointId ? "default" : "outline"}
-       className={
+      <button
+       type="button"
+       className={cn(
+        "flex min-h-14 w-full min-w-0 max-w-full gap-2 overflow-hidden rounded-lg border p-2.5 text-left transition-colors",
         selectedPointId === allPointId
-         ? "h-auto min-w-0 justify-start rounded-xl py-3 text-left shadow-theme-sm"
-         : "h-auto min-w-0 justify-start rounded-xl bg-bg-primary py-3 text-left"
-       }
+         ? "border-primary bg-primary text-primary-foreground shadow-theme-sm"
+         : "border-border-default bg-bg-subtle text-text-primary hover:bg-bg-primary",
+       )}
        onClick={() => onSelectPoint(allPointId)}
       >
        <span className="min-w-0 flex-1">
-        <span className="block truncate font-black">Xem toàn bộ</span>
+        <span className="block truncate text-sm font-black">Xem toàn bộ</span>
         <span className="block truncate text-xs font-semibold opacity-80">
          Hiển thị tất cả điểm ngữ pháp trong một trang
         </span>
        </span>
-      </Button>
+      </button>
      )}
 
      {points.map((point) => (
-      <Button
+      <button
        key={point.id}
-       variant={point.id === selectedPointId ? "default" : "outline"}
-       className={
+       type="button"
+       className={cn(
+        "flex min-h-14 w-full min-w-0 max-w-full items-center gap-2 overflow-hidden rounded-lg border p-2.5 text-left transition-colors",
         point.id === selectedPointId
-         ? "h-auto min-w-0 justify-start rounded-xl py-3 text-left shadow-theme-sm"
-         : "h-auto min-w-0 justify-start rounded-xl bg-bg-primary py-3 text-left"
-       }
+         ? "border-primary bg-primary text-primary-foreground shadow-theme-sm"
+         : "border-border-default bg-bg-subtle text-text-primary hover:bg-bg-primary",
+       )}
        onClick={() => onSelectPoint(point.id)}
       >
        <span className="min-w-0 flex-1">
-        <span className="block truncate font-black">{point.cleanTitle}</span>
+        <span className="block truncate text-sm font-black">
+         {point.cleanTitle}
+        </span>
         <span className="block truncate text-xs font-semibold opacity-80">
          {point.core || point.structuresView[0] || "Chưa có mô tả"}
         </span>
        </span>
-       <span className="text-xs uppercase">
+       <span className="shrink-0 text-xs uppercase">
         {progress[point.id]?.status || "new"}
        </span>
-      </Button>
+      </button>
      ))}
     </div>
    </div>
-  </Card>
  );
 }

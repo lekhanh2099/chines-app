@@ -60,7 +60,10 @@ export function VocabList({
  ];
 
  return (
-  <Card padding="sm" className="rounded-xl border border-border-default bg-bg-primary shadow-theme-sm">
+  <Card
+   padding="sm"
+   className="rounded-xl border border-border-default bg-bg-primary shadow-theme-sm"
+  >
    <div className="grid gap-2">
     <div className="flex flex-wrap items-center justify-between gap-2">
      <div>
@@ -121,8 +124,8 @@ export function VocabList({
      </label>
 
      <p className="hidden items-center rounded-xl border border-border-default bg-bg-subtle px-3 text-xs font-bold text-text-muted md:flex">
-      Tab / Shift+Tab để chuyển từ nhanh. Dùng search để lọc theo Hán tự, pinyin,
-      Hán Việt hoặc nghĩa.
+      Tab / Shift+Tab để chuyển từ nhanh. Dùng search để lọc theo Hán tự,
+      pinyin, Hán Việt hoặc nghĩa.
      </p>
     </div>
 
@@ -159,7 +162,7 @@ export function VocabList({
           style={getHanziTypographyStyle(
            {
             showPinyin: true,
-            showMeaning: true,
+            showMeaning: false,
             hanziFont: "kai",
             hanziSize: "lg",
            },

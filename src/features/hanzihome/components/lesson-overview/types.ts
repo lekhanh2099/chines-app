@@ -19,10 +19,10 @@ export type HanziReaderFont =
 export type HanziReaderSize = "md" | "lg" | "xl" | "2xl" | "3xl";
 
 export const DEFAULT_LESSON_DISPLAY_MODE: LessonDisplayMode = {
- showPinyin: true,
- showMeaning: true,
- hanziFont: "mengshen",
- hanziSize: "lg",
+ showPinyin: false,
+ showMeaning: false,
+ hanziFont: "songti",
+ hanziSize: "3xl",
 };
 
 export type BookSection = {

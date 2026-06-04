@@ -3,7 +3,7 @@
     "id": "77e57977-42a6-4df5-966e-3cc9ea90421d",
     "title": {
       "zh": "吃葡萄",
-      "pinyin": "Chī pútáo",
+      "pinyin": "Chī pútao",
       "vi": "Ăn nho",
       "en": "Eating grapes"
     },
@@ -11,7 +11,10 @@
       "hanyu_3_1",
       "lesson_06",
       "coverage_first",
-      "pdf_checked"
+      "pdf_checked",
+      "pinyin_checked",
+      "answer_checked",
+      "pos_detail_added"
     ],
     "sections": [
       {
@@ -36,84 +39,84 @@
                 "id": "43338a2c-2044-419e-9fdd-ed1739757a8d",
                 "order": 1,
                 "zh": "我家院子里种着一棵葡萄树，几年来一直半死不活的。不料，去年竟然长出了许多叶子，还结了许多葡萄。当秋天到来的时候，那一串串紫红色的葡萄，看了真让人高兴。摘下来一尝，特别甜，就想送一些给别人尝尝，让大家也分享一下儿我收获的喜悦。",
-                "pinyin": "",
+                "pinyin": "Wǒ jiā yuànzi lǐ zhòngzhe yì kē pútao shù, jǐ nián lái yìzhí bànsǐ-bùhuó de. Búliào, qùnián jìngrán zhǎngchū le xǔduō yèzi, hái jié le xǔduō pútao. Dāng qiūtiān dàolái de shíhou, nà yí chuàn chuàn zǐhóngsè de pútao, kàn le zhēn ràng rén gāoxìng. Zhāi xiàlai yì cháng, tèbié tián, jiù xiǎng sòng yìxiē gěi biérén chángchang, ràng dàjiā yě fēnxiǎng yíxiàr wǒ shōuhuò de xǐyuè.",
                 "vi": "Trong sân nhà tôi có trồng một cây nho. Mấy năm nay nó cứ sống dở chết dở. Không ngờ năm ngoái nó lại mọc ra rất nhiều lá, còn kết rất nhiều nho. Khi mùa thu đến, từng chùm nho tím đỏ ấy nhìn thật khiến người ta vui. Hái xuống nếm thử thì đặc biệt ngọt, thế là tôi muốn đem một ít cho người khác nếm thử, để mọi người cùng chia sẻ niềm vui thu hoạch của tôi.",
                 "audio_key": "",
                 "vocab_refs": [],
                 "grammar_refs": [],
-                "source_origin": "textbook",
+                "source_origin": "textbook_pdf_checked",
                 "check_needed": false
               },
               {
                 "id": "4a807389-3592-4cf4-973f-6589e0118fb2",
                 "order": 2,
                 "zh": "我把葡萄送给一个做生意的朋友。他接过去，用两个手指捏了一颗送进嘴里，说：“好吃，好吃。”接着就问：“多少钱一斤？”我说不要钱，只是想请他尝尝。他不愿意，说不能白吃，坚持要付钱。没办法，我只好收下了他的钱。",
-                "pinyin": "",
+                "pinyin": "Wǒ bǎ pútao sòng gěi yí ge zuò shēngyi de péngyou. Tā jiē guòqu, yòng liǎng ge shǒuzhǐ niē le yì kē sòng jìn zuǐ lǐ, shuō: “Hǎochī, hǎochī.” Jiēzhe jiù wèn: “Duōshao qián yì jīn?” Wǒ shuō bú yào qián, zhǐshì xiǎng qǐng tā chángchang. Tā bú yuànyì, shuō bù néng bái chī, jiānchí yào fù qián. Méi bànfǎ, wǒ zhǐhǎo shōu xià le tā de qián.",
                 "vi": "Tôi đem nho tặng cho một người bạn làm kinh doanh. Anh ấy nhận lấy, dùng hai ngón tay nhón một quả đưa vào miệng rồi nói: “Ngon, ngon.” Ngay sau đó liền hỏi: “Bao nhiêu tiền một cân?” Tôi nói không cần tiền, chỉ là muốn mời anh ấy nếm thử thôi. Anh ấy không chịu, nói không thể ăn không, nhất quyết muốn trả tiền. Không còn cách nào, tôi đành nhận tiền của anh ấy.",
                 "audio_key": "",
                 "vocab_refs": [],
                 "grammar_refs": [],
-                "source_origin": "textbook",
+                "source_origin": "textbook_pdf_checked",
                 "check_needed": false
               },
               {
                 "id": "5a221404-05e7-4ae2-ad9f-0c920a73dc36",
                 "order": 3,
                 "zh": "我把葡萄送给一位领导。他接过我的葡萄后一直注视着我，然后低声问：“你有什么事儿要办吗？”我告诉他，我没有什么事儿，只是想让他尝尝这棵老树结的新葡萄。他吃了我的葡萄，但是从他脸上的表情看得出来，他并不相信我的话。",
-                "pinyin": "",
+                "pinyin": "Wǒ bǎ pútao sòng gěi yí wèi lǐngdǎo. Tā jiēguò wǒ de pútao hòu yìzhí zhùshìzhe wǒ, ránhòu dī shēng wèn: “Nǐ yǒu shénme shìr yào bàn ma?” Wǒ gàosu tā, wǒ méiyǒu shénme shìr, zhǐshì xiǎng ràng tā chángchang zhè kē lǎo shù jié de xīn pútao. Tā chī le wǒ de pútao, dànshì cóng tā liǎn shang de biǎoqíng kàn de chūlai, tā bìng bù xiāngxìn wǒ de huà.",
                 "vi": "Tôi đem nho tặng cho một vị lãnh đạo. Ông ấy nhận nho của tôi xong thì cứ nhìn chăm chăm vào tôi, rồi thấp giọng hỏi: “Anh có việc gì cần nhờ xử lý à?” Tôi nói với ông ấy rằng tôi không có việc gì cả, chỉ là muốn để ông ấy nếm thử nho mới kết từ cây nho già này thôi. Ông ấy ăn nho của tôi, nhưng nhìn vẻ mặt ông ấy thì có thể thấy được rằng ông ấy vốn không tin lời tôi.",
                 "audio_key": "",
                 "vocab_refs": [],
                 "grammar_refs": [],
-                "source_origin": "textbook",
+                "source_origin": "textbook_pdf_checked",
                 "check_needed": false
               },
               {
                 "id": "5c402bbc-a0e6-434c-a6c7-3c4f86c845fe",
                 "order": 4,
                 "zh": "我把葡萄送给漂亮的女邻居。她感到有些意外，她的丈夫更是一脸的警惕。我很尴尬，忙说这是从自己家的葡萄树上摘下来的，很甜，很好吃，想请大家尝尝。那男的像吃毒药一样吃了一颗。没想到，那天晚上他们家就传来了吵架声。",
-                "pinyin": "",
-                "vi": "Tôi đem nho tặng cho cô hàng xóm nữ xinh đẹp. Cô ấy cảm thấy hơi bất ngờ, chồng cô ấy thì càng tỏ ra đầy cảnh giác. Tôi rất ngượng, vội nói rằng đây là nho hái từ cây nho nhà mình, rất ngọt, rất ngon, muốn mời mọi người nếm thử. Người đàn ông kia ăn một quả như thể đang ăn thuốc độc vậy. Không ngờ, tối hôm đó nhà họ liền truyền ra tiếng cãi nhau.",
+                "pinyin": "Wǒ bǎ pútao sòng gěi piàoliang de nǚ línjū. Tā gǎndào yǒuxiē yìwài, tā de zhàngfu gèng shì yì liǎn de jǐngtì. Wǒ hěn gāngà, máng shuō zhè shì cóng zìjǐ jiā de pútao shù shang zhāi xiàlai de, hěn tián, hěn hǎochī, xiǎng qǐng dàjiā chángchang. Nà nán de xiàng chī dúyào yíyàng chī le yì kē. Méi xiǎngdào, nà tiān wǎnshang tāmen jiā jiù chuán lái le chǎojià shēng.",
+                "vi": "Tôi đem nho tặng cho cô hàng xóm xinh đẹp. Cô ấy cảm thấy hơi bất ngờ, chồng cô ấy thì càng tỏ ra đầy cảnh giác. Tôi rất ngượng, vội nói rằng đây là nho hái từ cây nho nhà mình, rất ngọt, rất ngon, chỉ muốn mời mọi người nếm thử. Người đàn ông kia ăn một quả như thể đang ăn thuốc độc vậy. Không ngờ, tối hôm đó từ nhà họ liền vọng ra tiếng cãi nhau.",
                 "audio_key": "",
                 "vocab_refs": [],
                 "grammar_refs": [],
-                "source_origin": "textbook",
+                "source_origin": "textbook_pdf_checked",
                 "check_needed": false
               },
               {
                 "id": "babe7f0b-2b53-402f-85af-c5de9b0e676d",
                 "order": 5,
                 "zh": "我把葡萄送给隔壁的一个小孩儿。他吃了还想再吃，脸上露出甜甜的笑，嘴里也甜甜地说着：“这种葡萄好甜啊！谢谢叔叔！”然后一蹦一跳地把葡萄拿走了。",
-                "pinyin": "",
+                "pinyin": "Wǒ bǎ pútao sòng gěi gébì de yí ge xiǎoháir. Tā chī le hái xiǎng zài chī, liǎn shang lù chū tiántián de xiào, zuǐ lǐ yě tiántián de shuōzhe: “Zhè zhǒng pútao hǎo tián a! Xièxie shūshu!” Ránhòu yí bèng yí tiào de bǎ pútao názǒu le.",
                 "vi": "Tôi đem nho tặng cho một đứa trẻ nhà bên cạnh. Nó ăn rồi còn muốn ăn nữa, trên mặt hiện ra nụ cười ngọt ngào, miệng cũng ngọt ngào nói: “Loại nho này ngọt quá! Cảm ơn chú!” Sau đó nó nhảy chân sáo cầm nho đi mất.",
                 "audio_key": "",
                 "vocab_refs": [],
                 "grammar_refs": [],
-                "source_origin": "textbook",
+                "source_origin": "textbook_pdf_checked",
                 "check_needed": false
               },
               {
                 "id": "d2683a70-b897-4979-ad07-0bca2bb00b31",
                 "order": 6,
                 "zh": "我很高兴，我终于找到了一个人，一个真正吃葡萄的人。",
-                "pinyin": "",
+                "pinyin": "Wǒ hěn gāoxìng, wǒ zhōngyú zhǎodào le yí ge rén, yí ge zhēnzhèng chī pútao de rén.",
                 "vi": "Tôi rất vui, cuối cùng tôi đã tìm được một người, một người thật sự ăn nho.",
                 "audio_key": "",
                 "vocab_refs": [],
                 "grammar_refs": [],
-                "source_origin": "textbook",
+                "source_origin": "textbook_pdf_checked",
                 "check_needed": false
               },
               {
                 "id": "cde61ddf-34c9-4d25-892b-99b26df9e427",
                 "order": 7,
                 "zh": "（根据《文汇报》王建光的文章改写）",
-                "pinyin": "",
+                "pinyin": "（Gēnjù 《Wénhuì Bào》 Wáng Jiànguāng de wénzhāng gǎixiě）",
                 "vi": "Cải biên theo bài viết của Vương Kiến Quang trên Văn Hối Báo.",
                 "audio_key": "",
                 "vocab_refs": [],
                 "grammar_refs": [],
-                "source_origin": "textbook",
+                "source_origin": "textbook_pdf_checked",
                 "check_needed": false
               }
             ],
@@ -136,17 +139,17 @@
             "type": "vocabulary_item",
             "order": 1,
             "hanzi": "葡萄",
-            "pinyin": "pútáo",
+            "pinyin": "pútao",
             "meaning_vi": "nho",
             "meaning_en": "",
-            "pos": "noun",
+            "pos": "Danh từ",
             "tags": [
               "main_vocab"
             ],
             "examples": [],
             "flashcard": {
               "front": "葡萄",
-              "back": "pútáo — nho",
+              "back": "pútao — nho",
               "modes": [
                 "hanzi_to_meaning",
                 "meaning_to_hanzi",
@@ -155,8 +158,16 @@
               ]
             },
             "audio_key": "",
-            "source_origin": "textbook",
-            "check_needed": false
+            "source_origin": "textbook_pdf_checked",
+            "check_needed": false,
+            "pos_detail": {
+              "vi": "Danh từ",
+              "cn": "名词",
+              "normalized": "noun",
+              "schema_compatible_pos": "noun",
+              "is_separable_verb": false,
+              "notes": []
+            }
           },
           {
             "id": "8c18cf3c-e9dc-42e1-8faf-eb26799cabab",
@@ -164,16 +175,16 @@
             "order": 2,
             "hanzi": "来",
             "pinyin": "lái",
-            "meaning_vi": "đến nay; tới hiện tại",
+            "meaning_vi": "đến nay; trong mấy năm qua/tới hiện tại",
             "meaning_en": "",
-            "pos": "verb",
+            "pos": "Danh từ chỉ thời đoạn / Yếu tố thời gian",
             "tags": [
               "main_vocab"
             ],
             "examples": [],
             "flashcard": {
               "front": "来",
-              "back": "lái — đến nay; tới hiện tại",
+              "back": "lái — đến nay; trong mấy năm qua/tới hiện tại",
               "modes": [
                 "hanzi_to_meaning",
                 "meaning_to_hanzi",
@@ -182,8 +193,18 @@
               ]
             },
             "audio_key": "",
-            "source_origin": "textbook",
-            "check_needed": false
+            "source_origin": "textbook_pdf_checked",
+            "check_needed": false,
+            "pos_detail": {
+              "vi": "Danh từ chỉ thời đoạn / Yếu tố thời gian",
+              "cn": "名词",
+              "normalized": "noun",
+              "schema_compatible_pos": "noun",
+              "is_separable_verb": false,
+              "notes": [
+                "Trong bài dùng trong 几年来, nghĩa là “mấy năm qua”, không phải động từ “đến”."
+              ]
+            }
           },
           {
             "id": "1fbd69b7-603a-44ea-8d57-10cd4def9ced",
@@ -193,7 +214,7 @@
             "pinyin": "bànsǐ-bùhuó",
             "meaning_vi": "nửa sống nửa chết; sống dở chết dở",
             "meaning_en": "",
-            "pos": "phrase",
+            "pos": "Cụm tính từ / Thành ngữ",
             "tags": [
               "main_vocab"
             ],
@@ -209,8 +230,16 @@
               ]
             },
             "audio_key": "",
-            "source_origin": "textbook",
-            "check_needed": false
+            "source_origin": "textbook_pdf_checked",
+            "check_needed": false,
+            "pos_detail": {
+              "vi": "Cụm tính từ / Thành ngữ",
+              "cn": "形容词性短语",
+              "normalized": "phrase",
+              "schema_compatible_pos": "phrase",
+              "is_separable_verb": false,
+              "notes": []
+            }
           },
           {
             "id": "3dc505f1-bc0e-4a96-b448-17fed89fdc60",
@@ -220,7 +249,7 @@
             "pinyin": "búliào",
             "meaning_vi": "không ngờ; chẳng ngờ",
             "meaning_en": "",
-            "pos": "conjunction",
+            "pos": "Liên từ",
             "tags": [
               "main_vocab"
             ],
@@ -236,8 +265,16 @@
               ]
             },
             "audio_key": "",
-            "source_origin": "textbook",
-            "check_needed": false
+            "source_origin": "textbook_pdf_checked",
+            "check_needed": false,
+            "pos_detail": {
+              "vi": "Liên từ",
+              "cn": "连词",
+              "normalized": "conjunction",
+              "schema_compatible_pos": "conjunction",
+              "is_separable_verb": false,
+              "notes": []
+            }
           },
           {
             "id": "188412d4-4c23-4d60-b7b2-21f3490199e7",
@@ -247,7 +284,7 @@
             "pinyin": "jìngrán",
             "meaning_vi": "không ngờ lại; thế mà lại",
             "meaning_en": "",
-            "pos": "adverb",
+            "pos": "Phó từ",
             "tags": [
               "main_vocab"
             ],
@@ -263,8 +300,16 @@
               ]
             },
             "audio_key": "",
-            "source_origin": "textbook",
-            "check_needed": false
+            "source_origin": "textbook_pdf_checked",
+            "check_needed": false,
+            "pos_detail": {
+              "vi": "Phó từ",
+              "cn": "副词",
+              "normalized": "adverb",
+              "schema_compatible_pos": "adverb",
+              "is_separable_verb": false,
+              "notes": []
+            }
           },
           {
             "id": "5ea44727-d97c-467b-b1b8-babd195df50d",
@@ -272,16 +317,16 @@
             "order": 6,
             "hanzi": "许多",
             "pinyin": "xǔduō",
-            "meaning_vi": "rất nhiều",
+            "meaning_vi": "rất nhiều; nhiều",
             "meaning_en": "",
-            "pos": "adjective",
+            "pos": "Số lượng từ",
             "tags": [
               "main_vocab"
             ],
             "examples": [],
             "flashcard": {
               "front": "许多",
-              "back": "xǔduō — rất nhiều",
+              "back": "xǔduō — rất nhiều; nhiều",
               "modes": [
                 "hanzi_to_meaning",
                 "meaning_to_hanzi",
@@ -290,8 +335,16 @@
               ]
             },
             "audio_key": "",
-            "source_origin": "textbook",
-            "check_needed": false
+            "source_origin": "textbook_pdf_checked",
+            "check_needed": false,
+            "pos_detail": {
+              "vi": "Số lượng từ",
+              "cn": "数词/数量词",
+              "normalized": "numeral",
+              "schema_compatible_pos": "adjective",
+              "is_separable_verb": false,
+              "notes": []
+            }
           },
           {
             "id": "54613016-834a-4fc3-9912-2357a6d27058",
@@ -301,7 +354,7 @@
             "pinyin": "yèzi",
             "meaning_vi": "lá cây",
             "meaning_en": "",
-            "pos": "noun",
+            "pos": "Danh từ",
             "tags": [
               "main_vocab"
             ],
@@ -317,8 +370,16 @@
               ]
             },
             "audio_key": "",
-            "source_origin": "textbook",
-            "check_needed": false
+            "source_origin": "textbook_pdf_checked",
+            "check_needed": false,
+            "pos_detail": {
+              "vi": "Danh từ",
+              "cn": "名词",
+              "normalized": "noun",
+              "schema_compatible_pos": "noun",
+              "is_separable_verb": false,
+              "notes": []
+            }
           },
           {
             "id": "0da97406-c3ac-4fcb-a51c-398a59c3fbae",
@@ -326,16 +387,16 @@
             "order": 8,
             "hanzi": "当",
             "pinyin": "dāng",
-            "meaning_vi": "vào lúc; khi",
+            "meaning_vi": "vào lúc; khi; ngay tại",
             "meaning_en": "",
-            "pos": "preposition",
+            "pos": "Giới từ",
             "tags": [
               "main_vocab"
             ],
             "examples": [],
             "flashcard": {
               "front": "当",
-              "back": "dāng — vào lúc; khi",
+              "back": "dāng — vào lúc; khi; ngay tại",
               "modes": [
                 "hanzi_to_meaning",
                 "meaning_to_hanzi",
@@ -344,8 +405,16 @@
               ]
             },
             "audio_key": "",
-            "source_origin": "textbook",
-            "check_needed": false
+            "source_origin": "textbook_pdf_checked",
+            "check_needed": false,
+            "pos_detail": {
+              "vi": "Giới từ",
+              "cn": "介词",
+              "normalized": "preposition",
+              "schema_compatible_pos": "preposition",
+              "is_separable_verb": false,
+              "notes": []
+            }
           },
           {
             "id": "54b36889-82be-485b-8342-fb8aab572065",
@@ -355,7 +424,7 @@
             "pinyin": "chuàn",
             "meaning_vi": "xâu; chùm; lượng từ cho vật thành chuỗi/chùm",
             "meaning_en": "",
-            "pos": "measure_word",
+            "pos": "Lượng từ / Danh từ",
             "tags": [
               "main_vocab"
             ],
@@ -371,8 +440,16 @@
               ]
             },
             "audio_key": "",
-            "source_origin": "textbook",
-            "check_needed": false
+            "source_origin": "textbook_pdf_checked",
+            "check_needed": false,
+            "pos_detail": {
+              "vi": "Lượng từ / Danh từ",
+              "cn": "量词/名词",
+              "normalized": "measure_word",
+              "schema_compatible_pos": "measure_word",
+              "is_separable_verb": false,
+              "notes": []
+            }
           },
           {
             "id": "1354b1a3-93cc-4505-8d7f-c5550a1d6ae9",
@@ -382,7 +459,7 @@
             "pinyin": "zǐ",
             "meaning_vi": "màu tím",
             "meaning_en": "",
-            "pos": "adjective",
+            "pos": "Tính từ",
             "tags": [
               "main_vocab"
             ],
@@ -398,8 +475,16 @@
               ]
             },
             "audio_key": "",
-            "source_origin": "textbook",
-            "check_needed": false
+            "source_origin": "textbook_pdf_checked",
+            "check_needed": false,
+            "pos_detail": {
+              "vi": "Tính từ",
+              "cn": "形容词",
+              "normalized": "adjective",
+              "schema_compatible_pos": "adjective",
+              "is_separable_verb": false,
+              "notes": []
+            }
           },
           {
             "id": "f0684cb3-4577-4e6c-9f22-7d97c89692b3",
@@ -407,16 +492,16 @@
             "order": 11,
             "hanzi": "摘",
             "pinyin": "zhāi",
-            "meaning_vi": "hái; ngắt; bứt",
+            "meaning_vi": "hái; ngắt; bứt; tháo/gỡ xuống",
             "meaning_en": "",
-            "pos": "verb",
+            "pos": "Động từ",
             "tags": [
               "main_vocab"
             ],
             "examples": [],
             "flashcard": {
               "front": "摘",
-              "back": "zhāi — hái; ngắt; bứt",
+              "back": "zhāi — hái; ngắt; bứt; tháo/gỡ xuống",
               "modes": [
                 "hanzi_to_meaning",
                 "meaning_to_hanzi",
@@ -425,8 +510,16 @@
               ]
             },
             "audio_key": "",
-            "source_origin": "textbook",
-            "check_needed": false
+            "source_origin": "textbook_pdf_checked",
+            "check_needed": false,
+            "pos_detail": {
+              "vi": "Động từ",
+              "cn": "动词",
+              "normalized": "verb",
+              "schema_compatible_pos": "verb",
+              "is_separable_verb": false,
+              "notes": []
+            }
           },
           {
             "id": "d5b362a7-c8f6-4f25-b2b5-0f1749c8afbb",
@@ -436,7 +529,7 @@
             "pinyin": "fēnxiǎng",
             "meaning_vi": "chia sẻ",
             "meaning_en": "",
-            "pos": "verb",
+            "pos": "Động từ",
             "tags": [
               "main_vocab"
             ],
@@ -452,8 +545,16 @@
               ]
             },
             "audio_key": "",
-            "source_origin": "textbook",
-            "check_needed": false
+            "source_origin": "textbook_pdf_checked",
+            "check_needed": false,
+            "pos_detail": {
+              "vi": "Động từ",
+              "cn": "动词",
+              "normalized": "verb",
+              "schema_compatible_pos": "verb",
+              "is_separable_verb": false,
+              "notes": []
+            }
           },
           {
             "id": "7eccd5e8-dac0-4f36-be2e-abcc0a2bdfcd",
@@ -463,7 +564,7 @@
             "pinyin": "shōuhuò",
             "meaning_vi": "thu hoạch; thành quả",
             "meaning_en": "",
-            "pos": "noun",
+            "pos": "Danh từ / Động từ",
             "tags": [
               "main_vocab"
             ],
@@ -479,8 +580,18 @@
               ]
             },
             "audio_key": "",
-            "source_origin": "textbook",
-            "check_needed": false
+            "source_origin": "textbook_pdf_checked",
+            "check_needed": false,
+            "pos_detail": {
+              "vi": "Danh từ / Động từ",
+              "cn": "名词/动词",
+              "normalized": "verb_noun",
+              "schema_compatible_pos": "verb_noun",
+              "is_separable_verb": false,
+              "notes": [
+                "PDF ghi 名、动; trong bài 收获的喜悦 dùng như danh từ."
+              ]
+            }
           },
           {
             "id": "91fa9f81-e5ef-4c4a-b29c-c4b6daa02196",
@@ -488,16 +599,16 @@
             "order": 14,
             "hanzi": "喜悦",
             "pinyin": "xǐyuè",
-            "meaning_vi": "niềm vui; vui mừng",
+            "meaning_vi": "niềm vui; vui mừng; hân hoan",
             "meaning_en": "",
-            "pos": "noun",
+            "pos": "Tính từ / Danh từ",
             "tags": [
               "main_vocab"
             ],
             "examples": [],
             "flashcard": {
               "front": "喜悦",
-              "back": "xǐyuè — niềm vui; vui mừng",
+              "back": "xǐyuè — niềm vui; vui mừng; hân hoan",
               "modes": [
                 "hanzi_to_meaning",
                 "meaning_to_hanzi",
@@ -506,8 +617,18 @@
               ]
             },
             "audio_key": "",
-            "source_origin": "textbook",
-            "check_needed": false
+            "source_origin": "textbook_pdf_checked",
+            "check_needed": false,
+            "pos_detail": {
+              "vi": "Tính từ / Danh từ",
+              "cn": "形容词/名词",
+              "normalized": "adjective",
+              "schema_compatible_pos": "adjective",
+              "is_separable_verb": false,
+              "notes": [
+                "PDF ghi 形; trong cụm 收获的喜悦 có chức năng danh từ hóa là “niềm vui”."
+              ]
+            }
           },
           {
             "id": "8a5b1d09-23a6-4182-96e6-9bf4d761a1e1",
@@ -517,7 +638,7 @@
             "pinyin": "shēngyi",
             "meaning_vi": "việc buôn bán; kinh doanh",
             "meaning_en": "",
-            "pos": "noun",
+            "pos": "Danh từ",
             "tags": [
               "main_vocab"
             ],
@@ -533,8 +654,16 @@
               ]
             },
             "audio_key": "",
-            "source_origin": "textbook",
-            "check_needed": false
+            "source_origin": "textbook_pdf_checked",
+            "check_needed": false,
+            "pos_detail": {
+              "vi": "Danh từ",
+              "cn": "名词",
+              "normalized": "noun",
+              "schema_compatible_pos": "noun",
+              "is_separable_verb": false,
+              "notes": []
+            }
           },
           {
             "id": "be7a835d-ff8f-4a86-9fd8-27c5f1093f0c",
@@ -544,7 +673,7 @@
             "pinyin": "shǒuzhǐ",
             "meaning_vi": "ngón tay",
             "meaning_en": "",
-            "pos": "noun",
+            "pos": "Danh từ",
             "tags": [
               "main_vocab"
             ],
@@ -560,8 +689,16 @@
               ]
             },
             "audio_key": "",
-            "source_origin": "textbook",
-            "check_needed": false
+            "source_origin": "textbook_pdf_checked",
+            "check_needed": false,
+            "pos_detail": {
+              "vi": "Danh từ",
+              "cn": "名词",
+              "normalized": "noun",
+              "schema_compatible_pos": "noun",
+              "is_separable_verb": false,
+              "notes": []
+            }
           },
           {
             "id": "7a89dc80-d79d-4c2f-988c-d0f54e240d19",
@@ -571,7 +708,7 @@
             "pinyin": "niē",
             "meaning_vi": "nhón; kẹp giữa ngón tay; bóp nhẹ",
             "meaning_en": "",
-            "pos": "verb",
+            "pos": "Động từ",
             "tags": [
               "main_vocab"
             ],
@@ -587,8 +724,16 @@
               ]
             },
             "audio_key": "",
-            "source_origin": "textbook",
-            "check_needed": false
+            "source_origin": "textbook_pdf_checked",
+            "check_needed": false,
+            "pos_detail": {
+              "vi": "Động từ",
+              "cn": "动词",
+              "normalized": "verb",
+              "schema_compatible_pos": "verb",
+              "is_separable_verb": false,
+              "notes": []
+            }
           },
           {
             "id": "ff3e1818-66a9-4532-880b-02c9cacb0e5b",
@@ -598,7 +743,7 @@
             "pinyin": "kē",
             "meaning_vi": "lượng từ cho vật nhỏ, tròn",
             "meaning_en": "",
-            "pos": "measure_word",
+            "pos": "Lượng từ",
             "tags": [
               "main_vocab"
             ],
@@ -614,8 +759,16 @@
               ]
             },
             "audio_key": "",
-            "source_origin": "textbook",
-            "check_needed": false
+            "source_origin": "textbook_pdf_checked",
+            "check_needed": false,
+            "pos_detail": {
+              "vi": "Lượng từ",
+              "cn": "量词",
+              "normalized": "measure_word",
+              "schema_compatible_pos": "measure_word",
+              "is_separable_verb": false,
+              "notes": []
+            }
           },
           {
             "id": "0125bdae-fe4e-48fb-8264-145e95c75933",
@@ -625,7 +778,7 @@
             "pinyin": "zuǐ",
             "meaning_vi": "miệng",
             "meaning_en": "",
-            "pos": "noun",
+            "pos": "Danh từ",
             "tags": [
               "main_vocab"
             ],
@@ -641,8 +794,16 @@
               ]
             },
             "audio_key": "",
-            "source_origin": "textbook",
-            "check_needed": false
+            "source_origin": "textbook_pdf_checked",
+            "check_needed": false,
+            "pos_detail": {
+              "vi": "Danh từ",
+              "cn": "名词",
+              "normalized": "noun",
+              "schema_compatible_pos": "noun",
+              "is_separable_verb": false,
+              "notes": []
+            }
           },
           {
             "id": "689eb64b-5d4f-469f-9afa-74017d399614",
@@ -652,7 +813,7 @@
             "pinyin": "bái",
             "meaning_vi": "miễn phí; vô ích; uổng công",
             "meaning_en": "",
-            "pos": "adverb",
+            "pos": "Phó từ",
             "tags": [
               "main_vocab"
             ],
@@ -668,8 +829,16 @@
               ]
             },
             "audio_key": "",
-            "source_origin": "textbook",
-            "check_needed": false
+            "source_origin": "textbook_pdf_checked",
+            "check_needed": false,
+            "pos_detail": {
+              "vi": "Phó từ",
+              "cn": "副词",
+              "normalized": "adverb",
+              "schema_compatible_pos": "adverb",
+              "is_separable_verb": false,
+              "notes": []
+            }
           },
           {
             "id": "d45d5488-9293-41ae-9deb-1e5b51cee446",
@@ -679,7 +848,7 @@
             "pinyin": "zhùshì",
             "meaning_vi": "nhìn chăm chú",
             "meaning_en": "",
-            "pos": "verb",
+            "pos": "Động từ",
             "tags": [
               "main_vocab"
             ],
@@ -695,8 +864,16 @@
               ]
             },
             "audio_key": "",
-            "source_origin": "textbook",
-            "check_needed": false
+            "source_origin": "textbook_pdf_checked",
+            "check_needed": false,
+            "pos_detail": {
+              "vi": "Động từ",
+              "cn": "动词",
+              "normalized": "verb",
+              "schema_compatible_pos": "verb",
+              "is_separable_verb": false,
+              "notes": []
+            }
           },
           {
             "id": "c99a633b-27a2-429b-a139-44113a84c189",
@@ -706,7 +883,7 @@
             "pinyin": "dī shēng",
             "meaning_vi": "nhỏ giọng; nói khẽ",
             "meaning_en": "",
-            "pos": "adverb",
+            "pos": "Cụm trạng ngữ",
             "tags": [
               "main_vocab"
             ],
@@ -722,8 +899,16 @@
               ]
             },
             "audio_key": "",
-            "source_origin": "textbook",
-            "check_needed": false
+            "source_origin": "textbook_pdf_checked",
+            "check_needed": false,
+            "pos_detail": {
+              "vi": "Cụm trạng ngữ",
+              "cn": "副词性短语",
+              "normalized": "adverb",
+              "schema_compatible_pos": "adverb",
+              "is_separable_verb": false,
+              "notes": []
+            }
           },
           {
             "id": "79358c6f-3427-4c28-98f3-7ef98c7033c3",
@@ -733,7 +918,7 @@
             "pinyin": "dī",
             "meaning_vi": "thấp; nhỏ; trầm",
             "meaning_en": "",
-            "pos": "adjective",
+            "pos": "Tính từ",
             "tags": [
               "main_vocab"
             ],
@@ -749,8 +934,16 @@
               ]
             },
             "audio_key": "",
-            "source_origin": "textbook",
-            "check_needed": false
+            "source_origin": "textbook_pdf_checked",
+            "check_needed": false,
+            "pos_detail": {
+              "vi": "Tính từ",
+              "cn": "形容词",
+              "normalized": "adjective",
+              "schema_compatible_pos": "adjective",
+              "is_separable_verb": false,
+              "notes": []
+            }
           },
           {
             "id": "dc0f8e06-a359-4907-a8d8-fc9b02260590",
@@ -760,7 +953,7 @@
             "pinyin": "gāo shēng",
             "meaning_vi": "lớn tiếng; to giọng",
             "meaning_en": "",
-            "pos": "adverb",
+            "pos": "Cụm trạng ngữ",
             "tags": [
               "main_vocab"
             ],
@@ -776,8 +969,16 @@
               ]
             },
             "audio_key": "",
-            "source_origin": "textbook",
-            "check_needed": false
+            "source_origin": "textbook_pdf_checked",
+            "check_needed": false,
+            "pos_detail": {
+              "vi": "Cụm trạng ngữ",
+              "cn": "副词性短语",
+              "normalized": "adverb",
+              "schema_compatible_pos": "adverb",
+              "is_separable_verb": false,
+              "notes": []
+            }
           },
           {
             "id": "c43cedbf-7024-4ec1-922f-e75119114baf",
@@ -787,7 +988,7 @@
             "pinyin": "biǎoqíng",
             "meaning_vi": "vẻ mặt; biểu cảm",
             "meaning_en": "",
-            "pos": "noun",
+            "pos": "Danh từ",
             "tags": [
               "main_vocab"
             ],
@@ -803,8 +1004,16 @@
               ]
             },
             "audio_key": "",
-            "source_origin": "textbook",
-            "check_needed": false
+            "source_origin": "textbook_pdf_checked",
+            "check_needed": false,
+            "pos_detail": {
+              "vi": "Danh từ",
+              "cn": "名词",
+              "normalized": "noun",
+              "schema_compatible_pos": "noun",
+              "is_separable_verb": false,
+              "notes": []
+            }
           },
           {
             "id": "d9991c79-3454-4247-bf18-f14f43b4a24a",
@@ -814,7 +1023,7 @@
             "pinyin": "bìng",
             "meaning_vi": "thực ra; hoàn toàn; dùng trước phủ định để nhấn mạnh",
             "meaning_en": "",
-            "pos": "adverb",
+            "pos": "Phó từ",
             "tags": [
               "main_vocab"
             ],
@@ -830,8 +1039,16 @@
               ]
             },
             "audio_key": "",
-            "source_origin": "textbook",
-            "check_needed": false
+            "source_origin": "textbook_pdf_checked",
+            "check_needed": false,
+            "pos_detail": {
+              "vi": "Phó từ",
+              "cn": "副词",
+              "normalized": "adverb",
+              "schema_compatible_pos": "adverb",
+              "is_separable_verb": false,
+              "notes": []
+            }
           },
           {
             "id": "55cd807c-eec7-412d-99db-f4e6508b170f",
@@ -841,7 +1058,7 @@
             "pinyin": "línjū",
             "meaning_vi": "hàng xóm",
             "meaning_en": "",
-            "pos": "noun",
+            "pos": "Danh từ",
             "tags": [
               "main_vocab"
             ],
@@ -857,8 +1074,16 @@
               ]
             },
             "audio_key": "",
-            "source_origin": "textbook",
-            "check_needed": false
+            "source_origin": "textbook_pdf_checked",
+            "check_needed": false,
+            "pos_detail": {
+              "vi": "Danh từ",
+              "cn": "名词",
+              "normalized": "noun",
+              "schema_compatible_pos": "noun",
+              "is_separable_verb": false,
+              "notes": []
+            }
           },
           {
             "id": "085e60d5-dd1c-4585-ac6b-0f1db0ded936",
@@ -868,7 +1093,7 @@
             "pinyin": "yìwài",
             "meaning_vi": "bất ngờ; ngoài ý muốn; sự cố",
             "meaning_en": "",
-            "pos": "noun",
+            "pos": "Tính từ / Danh từ",
             "tags": [
               "main_vocab"
             ],
@@ -884,8 +1109,18 @@
               ]
             },
             "audio_key": "",
-            "source_origin": "textbook",
-            "check_needed": false
+            "source_origin": "textbook_pdf_checked",
+            "check_needed": false,
+            "pos_detail": {
+              "vi": "Tính từ / Danh từ",
+              "cn": "形容词/名词",
+              "normalized": "adjective",
+              "schema_compatible_pos": "adjective",
+              "is_separable_verb": false,
+              "notes": [
+                "PDF ghi 形、名; trong bài dùng 感到有些意外 là tính từ/trạng thái."
+              ]
+            }
           },
           {
             "id": "ba7ff0f9-b633-4516-ab3d-22b96046a1cf",
@@ -895,7 +1130,7 @@
             "pinyin": "zhàngfu",
             "meaning_vi": "chồng",
             "meaning_en": "",
-            "pos": "noun",
+            "pos": "Danh từ",
             "tags": [
               "main_vocab"
             ],
@@ -911,8 +1146,16 @@
               ]
             },
             "audio_key": "",
-            "source_origin": "textbook",
-            "check_needed": false
+            "source_origin": "textbook_pdf_checked",
+            "check_needed": false,
+            "pos_detail": {
+              "vi": "Danh từ",
+              "cn": "名词",
+              "normalized": "noun",
+              "schema_compatible_pos": "noun",
+              "is_separable_verb": false,
+              "notes": []
+            }
           },
           {
             "id": "2185ee67-885d-4ffb-83e2-e97be4070796",
@@ -922,7 +1165,7 @@
             "pinyin": "jǐngtì",
             "meaning_vi": "cảnh giác; đề phòng",
             "meaning_en": "",
-            "pos": "verb",
+            "pos": "Động từ / Tính từ trạng thái",
             "tags": [
               "main_vocab"
             ],
@@ -938,8 +1181,18 @@
               ]
             },
             "audio_key": "",
-            "source_origin": "textbook",
-            "check_needed": false
+            "source_origin": "textbook_pdf_checked",
+            "check_needed": false,
+            "pos_detail": {
+              "vi": "Động từ / Tính từ trạng thái",
+              "cn": "动词/形容词",
+              "normalized": "verb",
+              "schema_compatible_pos": "verb",
+              "is_separable_verb": false,
+              "notes": [
+                "PDF ghi 动; trong 一脸的警惕, từ này danh từ hóa/trạng thái hóa trong cụm biểu cảm."
+              ]
+            }
           },
           {
             "id": "092a8c16-3739-4685-a4c0-39365071bd48",
@@ -949,7 +1202,7 @@
             "pinyin": "gāngà",
             "meaning_vi": "lúng túng; ngượng; khó xử",
             "meaning_en": "",
-            "pos": "adjective",
+            "pos": "Tính từ",
             "tags": [
               "main_vocab"
             ],
@@ -965,8 +1218,16 @@
               ]
             },
             "audio_key": "",
-            "source_origin": "textbook",
-            "check_needed": false
+            "source_origin": "textbook_pdf_checked",
+            "check_needed": false,
+            "pos_detail": {
+              "vi": "Tính từ",
+              "cn": "形容词",
+              "normalized": "adjective",
+              "schema_compatible_pos": "adjective",
+              "is_separable_verb": false,
+              "notes": []
+            }
           },
           {
             "id": "22e66ee9-565e-4670-b2ac-4d5a9b500b38",
@@ -976,7 +1237,7 @@
             "pinyin": "dúyào",
             "meaning_vi": "thuốc độc; chất độc",
             "meaning_en": "",
-            "pos": "noun",
+            "pos": "Danh từ",
             "tags": [
               "main_vocab"
             ],
@@ -992,8 +1253,16 @@
               ]
             },
             "audio_key": "",
-            "source_origin": "textbook",
-            "check_needed": false
+            "source_origin": "textbook_pdf_checked",
+            "check_needed": false,
+            "pos_detail": {
+              "vi": "Danh từ",
+              "cn": "名词",
+              "normalized": "noun",
+              "schema_compatible_pos": "noun",
+              "is_separable_verb": false,
+              "notes": []
+            }
           },
           {
             "id": "275b46f4-3166-48b7-9766-58384178d1be",
@@ -1001,16 +1270,16 @@
             "order": 33,
             "hanzi": "传",
             "pinyin": "chuán",
-            "meaning_vi": "truyền; lan truyền",
+            "meaning_vi": "truyền; lan truyền; vọng đến",
             "meaning_en": "",
-            "pos": "verb",
+            "pos": "Động từ",
             "tags": [
               "main_vocab"
             ],
             "examples": [],
             "flashcard": {
               "front": "传",
-              "back": "chuán — truyền; lan truyền",
+              "back": "chuán — truyền; lan truyền; vọng đến",
               "modes": [
                 "hanzi_to_meaning",
                 "meaning_to_hanzi",
@@ -1019,8 +1288,16 @@
               ]
             },
             "audio_key": "",
-            "source_origin": "textbook",
-            "check_needed": false
+            "source_origin": "textbook_pdf_checked",
+            "check_needed": false,
+            "pos_detail": {
+              "vi": "Động từ",
+              "cn": "动词",
+              "normalized": "verb",
+              "schema_compatible_pos": "verb",
+              "is_separable_verb": false,
+              "notes": []
+            }
           },
           {
             "id": "1190511f-5970-4304-8f84-d7201b287aeb",
@@ -1030,7 +1307,7 @@
             "pinyin": "chǎojià",
             "meaning_vi": "cãi nhau",
             "meaning_en": "",
-            "pos": "verb_phrase",
+            "pos": "Động từ li hợp",
             "tags": [
               "main_vocab"
             ],
@@ -1046,8 +1323,19 @@
               ]
             },
             "audio_key": "",
-            "source_origin": "textbook",
-            "check_needed": false
+            "source_origin": "textbook_pdf_checked",
+            "check_needed": false,
+            "pos_detail": {
+              "vi": "Động từ li hợp",
+              "cn": "动宾式离合词",
+              "normalized": "verb_phrase",
+              "schema_compatible_pos": "verb_phrase",
+              "is_separable_verb": true,
+              "notes": [],
+              "separable_type": "động-tân / 离合词",
+              "structure_vi": "động từ 吵 + tân ngữ 架",
+              "usage_note_vi": "Có thể nói 吵了一架; đây là động-tân thức, số lượng/tân ngữ kiểu 一架 chen giữa 吵 và 架."
+            }
           },
           {
             "id": "d42d3d90-443d-45da-bed7-987b50034e92",
@@ -1055,16 +1343,16 @@
             "order": 35,
             "hanzi": "隔壁",
             "pinyin": "gébì",
-            "meaning_vi": "sát vách; bên cạnh",
+            "meaning_vi": "sát vách; bên cạnh; nhà/phòng bên cạnh",
             "meaning_en": "",
-            "pos": "noun",
+            "pos": "Danh từ chỉ vị trí",
             "tags": [
               "main_vocab"
             ],
             "examples": [],
             "flashcard": {
               "front": "隔壁",
-              "back": "gébì — sát vách; bên cạnh",
+              "back": "gébì — sát vách; bên cạnh; nhà/phòng bên cạnh",
               "modes": [
                 "hanzi_to_meaning",
                 "meaning_to_hanzi",
@@ -1073,8 +1361,16 @@
               ]
             },
             "audio_key": "",
-            "source_origin": "textbook",
-            "check_needed": false
+            "source_origin": "textbook_pdf_checked",
+            "check_needed": false,
+            "pos_detail": {
+              "vi": "Danh từ chỉ vị trí",
+              "cn": "方位名词/名词",
+              "normalized": "noun",
+              "schema_compatible_pos": "noun",
+              "is_separable_verb": false,
+              "notes": []
+            }
           },
           {
             "id": "cfb712c9-c4ca-4314-b6b2-696b40ace25e",
@@ -1084,7 +1380,7 @@
             "pinyin": "lù",
             "meaning_vi": "lộ ra; hiện ra",
             "meaning_en": "",
-            "pos": "verb",
+            "pos": "Động từ",
             "tags": [
               "main_vocab"
             ],
@@ -1100,8 +1396,18 @@
               ]
             },
             "audio_key": "",
-            "source_origin": "textbook",
-            "check_needed": false
+            "source_origin": "textbook_pdf_checked",
+            "check_needed": false,
+            "pos_detail": {
+              "vi": "Động từ",
+              "cn": "动词",
+              "normalized": "verb",
+              "schema_compatible_pos": "verb",
+              "is_separable_verb": false,
+              "notes": [
+                "PDF cho pinyin lù ở mục từ; trong bài dùng 露出甜甜的笑 = lộ ra nụ cười."
+              ]
+            }
           },
           {
             "id": "6059829f-ae21-43cf-ac0c-05e19639ec43",
@@ -1111,7 +1417,7 @@
             "pinyin": "bèng",
             "meaning_vi": "nhảy bật lên; nhún nhảy",
             "meaning_en": "",
-            "pos": "verb",
+            "pos": "Động từ",
             "tags": [
               "main_vocab"
             ],
@@ -1127,8 +1433,16 @@
               ]
             },
             "audio_key": "",
-            "source_origin": "textbook",
-            "check_needed": false
+            "source_origin": "textbook_pdf_checked",
+            "check_needed": false,
+            "pos_detail": {
+              "vi": "Động từ",
+              "cn": "动词",
+              "normalized": "verb",
+              "schema_compatible_pos": "verb",
+              "is_separable_verb": false,
+              "notes": []
+            }
           },
           {
             "id": "fefd5441-7b6c-47e3-b823-9e149b947bf7",
@@ -1138,7 +1452,7 @@
             "pinyin": "tiào",
             "meaning_vi": "nhảy",
             "meaning_en": "",
-            "pos": "verb",
+            "pos": "Động từ",
             "tags": [
               "main_vocab"
             ],
@@ -1154,8 +1468,16 @@
               ]
             },
             "audio_key": "",
-            "source_origin": "textbook",
-            "check_needed": false
+            "source_origin": "textbook_pdf_checked",
+            "check_needed": false,
+            "pos_detail": {
+              "vi": "Động từ",
+              "cn": "动词",
+              "normalized": "verb",
+              "schema_compatible_pos": "verb",
+              "is_separable_verb": false,
+              "notes": []
+            }
           },
           {
             "id": "27761bd2-433a-44ef-b79a-9e6f0a34b9c9",
@@ -1165,7 +1487,7 @@
             "pinyin": "zhēnzhèng",
             "meaning_vi": "thật sự; chân chính; đích thực",
             "meaning_en": "",
-            "pos": "adjective",
+            "pos": "Tính từ / Phó từ",
             "tags": [
               "main_vocab"
             ],
@@ -1181,10 +1503,235 @@
               ]
             },
             "audio_key": "",
-            "source_origin": "textbook",
+            "source_origin": "textbook_pdf_checked",
+            "check_needed": false,
+            "pos_detail": {
+              "vi": "Tính từ / Phó từ",
+              "cn": "形容词/副词",
+              "normalized": "adjective",
+              "schema_compatible_pos": "adjective",
+              "is_separable_verb": false,
+              "notes": []
+            }
+          },
+          {
+            "id": "ed49836b-7a59-4c82-8d71-e30d574c2ff7",
+            "type": "vocabulary_item",
+            "order": 40,
+            "hanzi": "搭档",
+            "pinyin": "dādàng",
+            "meaning_vi": "bạn đánh cặp; cộng sự; bạn phối hợp",
+            "meaning_en": "",
+            "pos": "Danh từ / Động từ",
+            "pos_detail": {
+              "vi": "Danh từ / Động từ",
+              "cn": "名词/动词",
+              "normalized": "verb_noun",
+              "schema_compatible_pos": "verb_noun",
+              "is_separable_verb": false,
+              "notes": []
+            },
+            "tags": [
+              "supplementary_vocab",
+              "reading_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "搭档",
+              "back": "dādàng — bạn đánh cặp; cộng sự; bạn phối hợp",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook_supplementary_pdf_checked",
+            "check_needed": false
+          },
+          {
+            "id": "3be1706e-e341-400f-a3d1-c48ae2ca82fb",
+            "type": "vocabulary_item",
+            "order": 41,
+            "hanzi": "羽毛球",
+            "pinyin": "yǔmáoqiú",
+            "meaning_vi": "cầu lông; quả cầu lông",
+            "meaning_en": "",
+            "pos": "Danh từ",
+            "pos_detail": {
+              "vi": "Danh từ",
+              "cn": "名词",
+              "normalized": "noun",
+              "schema_compatible_pos": "noun",
+              "is_separable_verb": false,
+              "notes": []
+            },
+            "tags": [
+              "supplementary_vocab",
+              "reading_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "羽毛球",
+              "back": "yǔmáoqiú — cầu lông; quả cầu lông",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook_supplementary_pdf_checked",
+            "check_needed": false
+          },
+          {
+            "id": "f1c9260b-65af-4303-b4c7-048a945af1e9",
+            "type": "vocabulary_item",
+            "order": 42,
+            "hanzi": "现象",
+            "pinyin": "xiànxiàng",
+            "meaning_vi": "hiện tượng",
+            "meaning_en": "",
+            "pos": "Danh từ",
+            "pos_detail": {
+              "vi": "Danh từ",
+              "cn": "名词",
+              "normalized": "noun",
+              "schema_compatible_pos": "noun",
+              "is_separable_verb": false,
+              "notes": []
+            },
+            "tags": [
+              "supplementary_vocab",
+              "reading_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "现象",
+              "back": "xiànxiàng — hiện tượng",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook_supplementary_pdf_checked",
+            "check_needed": false
+          },
+          {
+            "id": "0112f23e-571d-4222-8c66-2969be299e92",
+            "type": "vocabulary_item",
+            "order": 43,
+            "hanzi": "埋怨",
+            "pinyin": "mányuàn",
+            "meaning_vi": "oán trách; trách móc; phàn nàn",
+            "meaning_en": "",
+            "pos": "Động từ",
+            "pos_detail": {
+              "vi": "Động từ",
+              "cn": "动词",
+              "normalized": "verb",
+              "schema_compatible_pos": "verb",
+              "is_separable_verb": false,
+              "notes": []
+            },
+            "tags": [
+              "supplementary_vocab",
+              "reading_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "埋怨",
+              "back": "mányuàn — oán trách; trách móc; phàn nàn",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook_supplementary_pdf_checked",
+            "check_needed": false
+          },
+          {
+            "id": "e66d8b84-2429-43ee-9b0d-48b29b0c28bd",
+            "type": "vocabulary_item",
+            "order": 44,
+            "hanzi": "闹",
+            "pinyin": "nào",
+            "meaning_vi": "làm ầm lên; gây chuyện; quậy; gây rối",
+            "meaning_en": "",
+            "pos": "Động từ / Tính từ",
+            "pos_detail": {
+              "vi": "Động từ / Tính từ",
+              "cn": "动词/形容词",
+              "normalized": "verb",
+              "schema_compatible_pos": "verb",
+              "is_separable_verb": false,
+              "notes": []
+            },
+            "tags": [
+              "supplementary_vocab",
+              "reading_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "闹",
+              "back": "nào — làm ầm lên; gây chuyện; quậy; gây rối",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook_supplementary_pdf_checked",
+            "check_needed": false
+          },
+          {
+            "id": "12b03973-2606-4193-a5b5-9a5594ae1d95",
+            "type": "vocabulary_item",
+            "order": 45,
+            "hanzi": "经验",
+            "pinyin": "jīngyàn",
+            "meaning_vi": "kinh nghiệm",
+            "meaning_en": "",
+            "pos": "Danh từ / Động từ",
+            "pos_detail": {
+              "vi": "Danh từ / Động từ",
+              "cn": "名词/动词",
+              "normalized": "verb_noun",
+              "schema_compatible_pos": "verb_noun",
+              "is_separable_verb": false,
+              "notes": []
+            },
+            "tags": [
+              "supplementary_vocab",
+              "reading_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "经验",
+              "back": "jīngyàn — kinh nghiệm",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook_supplementary_pdf_checked",
             "check_needed": false
           }
-        ]
+        ],
+        "vocab_count": 45
       },
       {
         "id": "3c5ee48e-5d44-44ac-bd53-cac996a83338",
@@ -1217,14 +1764,14 @@
               {
                 "id": "3eca03f3-67c0-40d2-9fee-8e57a4ad43ad",
                 "zh": "我家院子里种着一棵葡萄树，几年来一直半死不活的。",
-                "pinyin": "",
+                "pinyin": "Wǒ jiā yuànzi lǐ zhòngzhe yì kē pútao shù, jǐ nián lái yìzhí bànsǐ-bùhuó de.",
                 "vi": "Trong sân nhà tôi có trồng một cây nho, mấy năm nay nó cứ sống dở chết dở.",
-                "source_origin": "textbook",
+                "source_origin": "textbook_pdf_checked",
                 "check_needed": false
               }
             ],
             "source_refs": [],
-            "source_origin": "textbook/generated_mixed",
+            "source_origin": "textbook_pdf_checked",
             "check_needed": false
           },
           {
@@ -1238,14 +1785,14 @@
               {
                 "id": "6ff01e57-e23b-475e-9cd6-da43acc8bd0a",
                 "zh": "她感到有些意外，她的丈夫更是一脸的警惕。",
-                "pinyin": "",
+                "pinyin": "Tā gǎndào yǒuxiē yìwài, tā de zhàngfu gèng shì yì liǎn de jǐngtì.",
                 "vi": "Cô ấy thấy hơi bất ngờ, chồng cô ấy thì càng tỏ ra đầy cảnh giác.",
-                "source_origin": "textbook",
+                "source_origin": "textbook_pdf_checked",
                 "check_needed": false
               }
             ],
             "source_refs": [],
-            "source_origin": "textbook/generated_mixed",
+            "source_origin": "textbook_pdf_checked",
             "check_needed": false
           },
           {
@@ -1259,14 +1806,14 @@
               {
                 "id": "b71a23a7-1107-46ec-b43e-de46214c5d0a",
                 "zh": "这种葡萄好甜啊！",
-                "pinyin": "",
+                "pinyin": "Zhè zhǒng pútao hǎo tián a!",
                 "vi": "Loại nho này ngọt quá!",
-                "source_origin": "textbook",
+                "source_origin": "textbook_pdf_checked",
                 "check_needed": false
               }
             ],
             "source_refs": [],
-            "source_origin": "textbook/generated_mixed",
+            "source_origin": "textbook_pdf_checked",
             "check_needed": false
           }
         ]
@@ -1290,7 +1837,7 @@
             "tags": [
               "词语用法"
             ],
-            "source_origin": "textbook/generated_mixed",
+            "source_origin": "textbook_pdf_checked",
             "check_needed": false,
             "blocks": [
               {
@@ -1303,15 +1850,17 @@
                   {
                     "id": "5e614bf9-2578-4d49-87dc-107e6f3605d4",
                     "zh": "我以为他不会来，不料他第一个到了。",
-                    "pinyin": "",
+                    "pinyin": "Wǒ yǐwéi tā bú huì lái, búliào tā dì yí ge dào le.",
                     "vi": "Tôi tưởng anh ấy sẽ không đến, không ngờ anh ấy lại đến đầu tiên.",
                     "grammar_refs": [
                       "f8ec59f3-898a-47b2-b536-44dfd8183393"
                     ],
-                    "source_origin": "generated",
+                    "source_origin": "generated_pdf_checked",
                     "check_needed": false
                   }
-                ]
+                ],
+                "source_origin": "textbook_pdf_checked",
+                "check_needed": false
               },
               {
                 "id": "b3534a40-3bab-464a-97dd-67889b8bcb7b",
@@ -1321,7 +1870,9 @@
                 "pattern": "Câu A，不料 + câu B ngoài dự đoán",
                 "meaning_vi": "Diễn tả kết quả xảy ra ngoài dự đoán; thiên về văn viết/kể chuyện.",
                 "examples": [],
-                "notes_vi": []
+                "notes_vi": [],
+                "source_origin": "textbook_pdf_checked",
+                "check_needed": false
               }
             ]
           },
@@ -1335,7 +1886,7 @@
             "tags": [
               "词语用法"
             ],
-            "source_origin": "textbook/generated_mixed",
+            "source_origin": "textbook_pdf_checked",
             "check_needed": false,
             "blocks": [
               {
@@ -1348,15 +1899,17 @@
                   {
                     "id": "c8674d77-7e1f-44f8-9e45-e0a03accdc05",
                     "zh": "他竟然没来。",
-                    "pinyin": "",
+                    "pinyin": "Tā jìngrán méi lái.",
                     "vi": "Không ngờ anh ấy lại không đến.",
                     "grammar_refs": [
                       "57b14753-688a-41b6-9e0d-b61dbbf574d7"
                     ],
-                    "source_origin": "generated",
+                    "source_origin": "generated_pdf_checked",
                     "check_needed": false
                   }
-                ]
+                ],
+                "source_origin": "textbook_pdf_checked",
+                "check_needed": false
               },
               {
                 "id": "0ef2b790-3209-4b5c-a519-ca5a424e4d49",
@@ -1366,7 +1919,9 @@
                 "pattern": "Chủ ngữ + 竟然 + vị ngữ",
                 "meaning_vi": "Nhấn mạnh sự bất ngờ, khó tin, trái với dự đoán ban đầu.",
                 "examples": [],
-                "notes_vi": []
+                "notes_vi": [],
+                "source_origin": "textbook_pdf_checked",
+                "check_needed": false
               }
             ]
           },
@@ -1380,7 +1935,7 @@
             "tags": [
               "词语用法"
             ],
-            "source_origin": "textbook/generated_mixed",
+            "source_origin": "textbook_pdf_checked",
             "check_needed": false,
             "blocks": [
               {
@@ -1393,15 +1948,17 @@
                   {
                     "id": "47d597ee-f98d-4604-907d-6e6946054ef4",
                     "zh": "一看就懂。",
-                    "pinyin": "",
+                    "pinyin": "Yí kàn jiù dǒng.",
                     "vi": "Nhìn một cái là hiểu.",
                     "grammar_refs": [
                       "fa804fff-372b-4874-8571-f54e613d7e07"
                     ],
-                    "source_origin": "generated",
+                    "source_origin": "generated_pdf_checked",
                     "check_needed": false
                   }
-                ]
+                ],
+                "source_origin": "textbook_pdf_checked",
+                "check_needed": false
               },
               {
                 "id": "3de2e20b-7535-4f1b-8355-4209acba1551",
@@ -1411,7 +1968,9 @@
                 "pattern": "一 + V1 + 就 + V2",
                 "meaning_vi": "Diễn tả vừa làm hành động thứ nhất thì kết quả/hành động sau xảy ra ngay.",
                 "examples": [],
-                "notes_vi": []
+                "notes_vi": [],
+                "source_origin": "textbook_pdf_checked",
+                "check_needed": false
               }
             ]
           },
@@ -1425,7 +1984,7 @@
             "tags": [
               "词语用法"
             ],
-            "source_origin": "textbook/generated_mixed",
+            "source_origin": "textbook_pdf_checked",
             "check_needed": false,
             "blocks": [
               {
@@ -1438,15 +1997,17 @@
                   {
                     "id": "bb711337-b38f-48f1-9703-2cd0058438fa",
                     "zh": "我只是问问。",
-                    "pinyin": "",
+                    "pinyin": "Wǒ zhǐshì wènwen.",
                     "vi": "Tôi chỉ hỏi chút thôi.",
                     "grammar_refs": [
                       "c6cd6c38-22fc-4546-a398-39efe02d6c17"
                     ],
-                    "source_origin": "generated",
+                    "source_origin": "generated_pdf_checked",
                     "check_needed": false
                   }
-                ]
+                ],
+                "source_origin": "textbook_pdf_checked",
+                "check_needed": false
               },
               {
                 "id": "3ecf1989-24b0-4088-8831-c92b1fd6d541",
@@ -1456,7 +2017,9 @@
                 "pattern": "只是 + động từ/cụm động từ; Câu A，只是 + câu B",
                 "meaning_vi": "Nghĩa là chỉ là/chỉ có điều; dùng để giới hạn ý hoặc chuyển ý nhẹ.",
                 "examples": [],
-                "notes_vi": []
+                "notes_vi": [],
+                "source_origin": "textbook_pdf_checked",
+                "check_needed": false
               }
             ]
           },
@@ -1470,7 +2033,7 @@
             "tags": [
               "词语用法"
             ],
-            "source_origin": "textbook/generated_mixed",
+            "source_origin": "textbook_pdf_checked",
             "check_needed": false,
             "blocks": [
               {
@@ -1483,15 +2046,17 @@
                   {
                     "id": "75371212-89bf-4cf8-a3a1-819fd569462d",
                     "zh": "他并没有生气。",
-                    "pinyin": "",
+                    "pinyin": "Tā bìng méiyǒu shēngqì.",
                     "vi": "Anh ấy thực ra không giận.",
                     "grammar_refs": [
                       "c3d31639-0f40-4b2f-aa50-5dda9d443b78"
                     ],
-                    "source_origin": "generated",
+                    "source_origin": "generated_pdf_checked",
                     "check_needed": false
                   }
-                ]
+                ],
+                "source_origin": "textbook_pdf_checked",
+                "check_needed": false
               },
               {
                 "id": "b7be4295-e408-4edd-882f-3fff358754f0",
@@ -1501,7 +2066,9 @@
                 "pattern": "并 + 不/没/没有/非 + vị ngữ",
                 "meaning_vi": "Nhấn mạnh phủ định: thực ra không, không hề, không phải như người nghe nghĩ.",
                 "examples": [],
-                "notes_vi": []
+                "notes_vi": [],
+                "source_origin": "textbook_pdf_checked",
+                "check_needed": false
               }
             ]
           },
@@ -1515,7 +2082,7 @@
             "tags": [
               "词语用法"
             ],
-            "source_origin": "textbook/generated_mixed",
+            "source_origin": "textbook_pdf_checked",
             "check_needed": false,
             "blocks": [
               {
@@ -1528,15 +2095,17 @@
                   {
                     "id": "dac06a15-2133-4363-b088-fba19458cb07",
                     "zh": "孩子一蹦一跳地回家了。",
-                    "pinyin": "",
+                    "pinyin": "Háizi yí bèng yí tiào de huí jiā le.",
                     "vi": "Đứa trẻ nhảy chân sáo về nhà.",
                     "grammar_refs": [
                       "b0c8e101-1500-4742-9064-1e102a0eb8b9"
                     ],
-                    "source_origin": "generated",
+                    "source_origin": "generated_pdf_checked",
                     "check_needed": false
                   }
-                ]
+                ],
+                "source_origin": "textbook_pdf_checked",
+                "check_needed": false
               },
               {
                 "id": "36af8925-9df2-4371-9cce-405d3672953f",
@@ -1546,7 +2115,9 @@
                 "pattern": "一 + V1 + 一 + V2 + 地 + V3",
                 "meaning_vi": "Diễn tả hai hành động/trạng thái đi kèm, tạo sắc thái miêu tả sinh động.",
                 "examples": [],
-                "notes_vi": []
+                "notes_vi": [],
+                "source_origin": "textbook_pdf_checked",
+                "check_needed": false
               }
             ]
           }
@@ -1564,7 +2135,7 @@
           "expected_exercise_count_from_pdf": 10,
           "actual_exercise_count_in_json": 10,
           "all_exercises_covered": true,
-          "coverage_status": "complete_unverified",
+          "coverage_status": "complete_pdf_checked",
           "allowed_final_status_when_incomplete": "draft_or_verified_only"
         },
         "items": [
@@ -1587,28 +2158,33 @@
                 "items": [
                   {
                     "id": "e38d3cb2-2c33-4c4a-83fa-2934373f225d",
-                    "left": "葡萄 pútáo",
-                    "right": "辅导 fǔdǎo"
+                    "left": "葡萄 pútao",
+                    "right": "辅导 fǔdǎo",
+                    "check_needed": false
                   },
                   {
                     "id": "79df1daa-2fc0-43b6-b4e3-aee6478eef8a",
                     "left": "生意 shēngyi",
-                    "right": "生疑 shēng yí"
+                    "right": "生疑 shēng yí",
+                    "check_needed": false
                   },
                   {
                     "id": "93191d96-c6f7-4475-b285-9bfd75ad2b6c",
                     "left": "收获 shōuhuò",
-                    "right": "售货 shòu huò"
+                    "right": "售货 shòu huò",
+                    "check_needed": false
                   },
                   {
                     "id": "656ce346-d1fc-4d43-8acc-abf294d2d8da",
                     "left": "意外 yìwài",
-                    "right": "以外 yǐwài"
+                    "right": "以外 yǐwài",
+                    "check_needed": false
                   },
                   {
                     "id": "5e775bab-fb67-4293-b3f7-4b9e80f29c52",
                     "left": "真正 zhēnzhèng",
-                    "right": "真诚 zhēnchéng"
+                    "right": "真诚 zhēnchéng",
+                    "check_needed": false
                   }
                 ]
               },
@@ -1621,19 +2197,22 @@
                     "id": "b97d1a8c-3880-42ce-813f-12d8eb8cb219",
                     "text": "不经一事，不长一智。",
                     "pinyin": "Bù jīng yí shì, bù zhǎng yí zhì.",
-                    "vi": "Không trải qua một việc thì không thêm một phần trí khôn."
+                    "vi": "Không trải qua một việc thì không thêm một phần trí khôn.",
+                    "check_needed": false
                   },
                   {
                     "id": "8ae4a7da-2ae8-494c-99db-df12e85086a4",
                     "text": "不比不知道，一比吓一跳。",
                     "pinyin": "Bù bǐ bù zhīdào, yí bǐ xià yí tiào.",
-                    "vi": "Không so thì không biết, vừa so thì giật mình."
+                    "vi": "Không so thì không biết, vừa so thì giật mình.",
+                    "check_needed": false
                   },
                   {
                     "id": "1f523168-1c6e-4db9-abc5-198d4ccace2b",
                     "text": "无求到处人情好，不饮随它酒价高。",
-                    "pinyin": "",
-                    "vi": ""
+                    "pinyin": "Wú qiú dàochù rénqíng hǎo, bù yǐn suí tā jiǔjià gāo.",
+                    "vi": "Không cầu cạnh thì đi đâu tình người cũng tốt; không uống thì mặc cho giá rượu cao.",
+                    "check_needed": false
                   }
                 ]
               }
@@ -1656,120 +2235,120 @@
               {
                 "id": "029b6888-951c-4d78-8e81-67211d2f2178",
                 "text": "一脸警惕",
-                "pinyin": "",
-                "vi": "",
+                "pinyin": "yì liǎn jǐngtì",
+                "vi": "vẻ mặt đầy cảnh giác",
                 "source_origin": "textbook",
                 "check_needed": false
               },
               {
                 "id": "f7a394ba-7ba1-4ced-9fb6-4a51e9b45e41",
                 "text": "一脸汗",
-                "pinyin": "",
-                "vi": "",
+                "pinyin": "yì liǎn hàn",
+                "vi": "mặt đầy mồ hôi",
                 "source_origin": "textbook",
                 "check_needed": false
               },
               {
                 "id": "cbeae143-93f7-4e30-b03e-cafcbeecfee8",
                 "text": "一身汗",
-                "pinyin": "",
-                "vi": "",
+                "pinyin": "yì shēn hàn",
+                "vi": "mồ hôi đầy người",
                 "source_origin": "textbook",
                 "check_needed": false
               },
               {
                 "id": "908385d2-03e2-42e6-8641-681ccbdb7383",
                 "text": "真正的朋友",
-                "pinyin": "",
-                "vi": "",
+                "pinyin": "zhēnzhèng de péngyou",
+                "vi": "người bạn thật sự",
                 "source_origin": "textbook",
                 "check_needed": false
               },
               {
                 "id": "9e310873-3483-4086-91b4-53e6c4982438",
                 "text": "真正的友谊",
-                "pinyin": "",
-                "vi": "",
+                "pinyin": "zhēnzhèng de yǒuyì",
+                "vi": "tình bạn thật sự",
                 "source_origin": "textbook",
                 "check_needed": false
               },
               {
                 "id": "56e43701-a5ae-4070-ac7b-31f77ed52c81",
                 "text": "真正好吃",
-                "pinyin": "",
-                "vi": "",
+                "pinyin": "zhēnzhèng hǎochī",
+                "vi": "thật sự ngon",
                 "source_origin": "textbook",
                 "check_needed": false
               },
               {
                 "id": "77a9ec03-cc9f-4170-b16a-7e20444a37a7",
                 "text": "有些意外",
-                "pinyin": "",
-                "vi": "",
+                "pinyin": "yǒuxiē yìwài",
+                "vi": "hơi bất ngờ",
                 "source_origin": "textbook",
                 "check_needed": false
               },
               {
                 "id": "d7b385ae-57da-4e8c-aee4-b67137f2423a",
                 "text": "有些犹豫",
-                "pinyin": "",
-                "vi": "",
+                "pinyin": "yǒuxiē yóuyù",
+                "vi": "hơi do dự",
                 "source_origin": "textbook",
                 "check_needed": false
               },
               {
                 "id": "d6835cb8-98d0-4ec4-896e-28edb097b655",
                 "text": "有些尴尬",
-                "pinyin": "",
-                "vi": "",
+                "pinyin": "yǒuxiē gāngà",
+                "vi": "hơi khó xử/ngượng",
                 "source_origin": "textbook",
                 "check_needed": false
               },
               {
                 "id": "0783c634-e332-446a-9f6d-20a19656f7f3",
                 "text": "分享收获的喜悦",
-                "pinyin": "",
-                "vi": "",
+                "pinyin": "fēnxiǎng shōuhuò de xǐyuè",
+                "vi": "chia sẻ niềm vui thu hoạch",
                 "source_origin": "textbook",
                 "check_needed": false
               },
               {
                 "id": "b0cb1abd-bc89-4210-975d-f110f5646ad2",
                 "text": "分享胜利的喜悦",
-                "pinyin": "",
-                "vi": "",
+                "pinyin": "fēnxiǎng shènglì de xǐyuè",
+                "vi": "chia sẻ niềm vui chiến thắng",
                 "source_origin": "textbook",
                 "check_needed": false
               },
               {
                 "id": "2c8b801e-cb28-49ae-b8f1-b2c8b84f7f8b",
                 "text": "分享成功的喜悦",
-                "pinyin": "",
-                "vi": "",
+                "pinyin": "fēnxiǎng chénggōng de xǐyuè",
+                "vi": "chia sẻ niềm vui thành công",
                 "source_origin": "textbook",
                 "check_needed": false
               },
               {
                 "id": "7b488f75-1c3d-4f10-9bd3-8d4b9d8b9c73",
                 "text": "结了许多葡萄",
-                "pinyin": "",
-                "vi": "",
+                "pinyin": "jié le xǔduō pútao",
+                "vi": "kết rất nhiều nho",
                 "source_origin": "textbook",
                 "check_needed": false
               },
               {
                 "id": "fc57888e-9c36-48be-9cd3-fb7aed77a414",
                 "text": "结了很多苹果",
-                "pinyin": "",
-                "vi": "",
+                "pinyin": "jié le hěn duō píngguǒ",
+                "vi": "kết rất nhiều táo",
                 "source_origin": "textbook",
                 "check_needed": false
               },
               {
                 "id": "284fe12e-9a3d-4209-8e18-cb94b6921962",
                 "text": "结了很多枣",
-                "pinyin": "",
-                "vi": "",
+                "pinyin": "jié le hěn duō zǎo",
+                "vi": "kết rất nhiều táo tàu",
                 "source_origin": "textbook",
                 "check_needed": false
               }
@@ -1858,9 +2437,9 @@
                 "注视"
               ]
             ],
-            "answer_verified": false,
-            "source_origin": "textbook_question_generated_answer",
-            "check_needed": true
+            "answer_verified": true,
+            "source_origin": "textbook_question_model_answer_pdf_checked",
+            "check_needed": false
           },
           {
             "id": "809141fb-cc55-403a-9433-35eea89c8c90",
@@ -1881,7 +2460,9 @@
                   "不料"
                 ],
                 "sample_answer": "我正要做饭，不料停电了。",
-                "answer_verified": false
+                "answer_verified": true,
+                "check_needed": false,
+                "answer_note_vi": "Mẫu đáp án đã kiểm tra ngữ pháp; câu mở nên có thể có đáp án khác tự nhiên."
               },
               {
                 "id": "6e23c236-94eb-4e83-9ea6-7353241c098d",
@@ -1890,7 +2471,9 @@
                   "竟然"
                 ],
                 "sample_answer": "我们已经好多年没见过面了，竟然在北京又见面了。",
-                "answer_verified": false
+                "answer_verified": true,
+                "check_needed": false,
+                "answer_note_vi": "Mẫu đáp án đã kiểm tra ngữ pháp; câu mở nên có thể có đáp án khác tự nhiên."
               },
               {
                 "id": "ee3570f6-9872-4699-a1ed-c338e52b4e50",
@@ -1899,7 +2482,9 @@
                   "也许"
                 ],
                 "sample_answer": "今年，当葡萄熟了的时候，也许我会送一些给朋友尝尝。",
-                "answer_verified": false
+                "answer_verified": true,
+                "check_needed": false,
+                "answer_note_vi": "Mẫu đáp án đã kiểm tra ngữ pháp; câu mở nên có thể có đáp án khác tự nhiên."
               },
               {
                 "id": "3130979d-5cc3-4cf5-999c-9ed317ea7c14",
@@ -1907,8 +2492,10 @@
                 "given_words": [
                   "只好"
                 ],
-                "sample_answer": "我和一个中国同学去饭馆儿吃饭，吃完饭，他坚持要替我付钱，我只好让他付了。",
-                "answer_verified": false
+                "sample_answer": "我和一个中国同学去饭馆儿吃饭，吃完饭，他坚持要替我付钱，我只好让他替我付了。",
+                "answer_verified": true,
+                "check_needed": false,
+                "answer_note_vi": "Mẫu đáp án đã kiểm tra ngữ pháp; câu mở nên có thể có đáp án khác tự nhiên."
               },
               {
                 "id": "9dd88fe0-ccfb-47b6-a74a-d1ee53c61219",
@@ -1917,7 +2504,9 @@
                   "只是"
                 ],
                 "sample_answer": "我跟这位同学不太熟，只是见过几次面。",
-                "answer_verified": false
+                "answer_verified": true,
+                "check_needed": false,
+                "answer_note_vi": "Mẫu đáp án đã kiểm tra ngữ pháp; câu mở nên có thể có đáp án khác tự nhiên."
               },
               {
                 "id": "9002df8c-125f-489d-9396-d008958aa6b9",
@@ -1926,11 +2515,14 @@
                   "意外"
                 ],
                 "sample_answer": "我对她说的那些话，让她感到很意外。",
-                "answer_verified": false
+                "answer_verified": true,
+                "check_needed": false,
+                "answer_note_vi": "Mẫu đáp án đã kiểm tra ngữ pháp; câu mở nên có thể có đáp án khác tự nhiên."
               }
             ],
-            "source_origin": "textbook_question_generated_answer",
-            "check_needed": true
+            "source_origin": "textbook_question_model_answer_pdf_checked",
+            "check_needed": false,
+            "answer_verified": true
           },
           {
             "id": "e843bb6e-2e51-4fb8-b362-7506b97cf2fc",
@@ -1954,7 +2546,9 @@
                   "半死不活"
                 ],
                 "sample_answer": "是啊。我不太会养花儿，养得半死不活的。",
-                "answer_verified": false
+                "answer_verified": true,
+                "check_needed": false,
+                "answer_note_vi": "Mẫu đáp án đã kiểm tra ngữ pháp; câu mở nên có thể có đáp án khác tự nhiên."
               },
               {
                 "id": "a79733e1-ef69-41fd-ac55-9bb8b3bd4d2c",
@@ -1966,7 +2560,9 @@
                   "不料"
                 ],
                 "sample_answer": "开始的时候长得好极了，不料后来慢慢死了。",
-                "answer_verified": false
+                "answer_verified": true,
+                "check_needed": false,
+                "answer_note_vi": "Mẫu đáp án đã kiểm tra ngữ pháp; câu mở nên có thể có đáp án khác tự nhiên."
               },
               {
                 "id": "ec5f1e84-0693-46b3-b735-8005e47f103e",
@@ -1978,7 +2574,9 @@
                   "不料"
                 ],
                 "sample_answer": "今天，我多找了一个顾客八十块钱，不料他又给我送回来了。",
-                "answer_verified": false
+                "answer_verified": true,
+                "check_needed": false,
+                "answer_note_vi": "Mẫu đáp án đã kiểm tra ngữ pháp; câu mở nên có thể có đáp án khác tự nhiên."
               },
               {
                 "id": "dc7f5f06-95a1-4158-98d8-b293729d6a13",
@@ -1990,7 +2588,9 @@
                   "意外"
                 ],
                 "sample_answer": "是吗？我感到很意外。",
-                "answer_verified": false
+                "answer_verified": true,
+                "check_needed": false,
+                "answer_note_vi": "Mẫu đáp án đã kiểm tra ngữ pháp; câu mở nên có thể có đáp án khác tự nhiên."
               },
               {
                 "id": "55e24ac4-bbd1-40f9-9dee-e97b3f2e10f7",
@@ -2003,11 +2603,14 @@
                   "并不"
                 ],
                 "sample_answer": "他跟我说他愿意，可是看得出来，他并不想去。",
-                "answer_verified": false
+                "answer_verified": true,
+                "check_needed": false,
+                "answer_note_vi": "Mẫu đáp án đã kiểm tra ngữ pháp; câu mở nên có thể có đáp án khác tự nhiên."
               }
             ],
-            "source_origin": "textbook_question_generated_answer",
-            "check_needed": true
+            "source_origin": "textbook_question_model_answer_pdf_checked",
+            "check_needed": false,
+            "answer_verified": true
           },
           {
             "id": "60ec1197-2967-408c-a1f3-3c2112f8305a",
@@ -2035,7 +2638,8 @@
                   4,
                   2
                 ],
-                "answer_verified": false
+                "answer_verified": true,
+                "check_needed": false
               },
               {
                 "id": "ab74bab2-0cd3-4c59-b4dd-6d9a3c6197b9",
@@ -2053,11 +2657,13 @@
                   1,
                   5
                 ],
-                "answer_verified": false
+                "answer_verified": true,
+                "check_needed": false
               }
             ],
-            "source_origin": "textbook_question_generated_answer",
-            "check_needed": true
+            "source_origin": "textbook_question_model_answer_pdf_checked",
+            "check_needed": false,
+            "answer_verified": true
           },
           {
             "id": "1fd4313d-93f3-4cbe-9dd4-2ba0d5bac415",
@@ -2096,9 +2702,9 @@
                 "学校里的花儿开得特别好看。"
               ]
             ],
-            "answer_verified": false,
-            "source_origin": "textbook_question_generated_answer",
-            "check_needed": true
+            "answer_verified": true,
+            "source_origin": "textbook_question_model_answer_pdf_checked",
+            "check_needed": false
           },
           {
             "id": "b9e46637-94ca-4fea-90cf-29155c015046",
@@ -2164,9 +2770,9 @@
                 ]
               }
             ],
-            "answer_verified": false,
-            "source_origin": "textbook_question_generated_answer",
-            "check_needed": true
+            "answer_verified": true,
+            "source_origin": "textbook_question_model_answer_pdf_checked",
+            "check_needed": false
           },
           {
             "id": "849f6690-a8ea-4b6f-937d-429f236714ad",
@@ -2183,40 +2789,155 @@
               {
                 "hanzi": "搭档",
                 "pinyin": "dādàng",
-                "meaning_vi": "bạn đánh cặp; cộng sự"
+                "meaning_vi": "bạn đánh cặp; cộng sự; bạn phối hợp",
+                "pos": "Danh từ / Động từ",
+                "pos_detail": {
+                  "vi": "Danh từ / Động từ",
+                  "cn": "名词/动词",
+                  "normalized": "verb_noun",
+                  "schema_compatible_pos": "verb_noun",
+                  "is_separable_verb": false,
+                  "notes": []
+                },
+                "check_needed": false
               },
               {
                 "hanzi": "羽毛球",
                 "pinyin": "yǔmáoqiú",
-                "meaning_vi": "cầu lông"
+                "meaning_vi": "cầu lông; quả cầu lông",
+                "pos": "Danh từ",
+                "pos_detail": {
+                  "vi": "Danh từ",
+                  "cn": "名词",
+                  "normalized": "noun",
+                  "schema_compatible_pos": "noun",
+                  "is_separable_verb": false,
+                  "notes": []
+                },
+                "check_needed": false
               },
               {
                 "hanzi": "现象",
                 "pinyin": "xiànxiàng",
-                "meaning_vi": "hiện tượng"
+                "meaning_vi": "hiện tượng",
+                "pos": "Danh từ",
+                "pos_detail": {
+                  "vi": "Danh từ",
+                  "cn": "名词",
+                  "normalized": "noun",
+                  "schema_compatible_pos": "noun",
+                  "is_separable_verb": false,
+                  "notes": []
+                },
+                "check_needed": false
               },
               {
                 "hanzi": "埋怨",
                 "pinyin": "mányuàn",
-                "meaning_vi": "oán trách; trách móc"
+                "meaning_vi": "oán trách; trách móc; phàn nàn",
+                "pos": "Động từ",
+                "pos_detail": {
+                  "vi": "Động từ",
+                  "cn": "动词",
+                  "normalized": "verb",
+                  "schema_compatible_pos": "verb",
+                  "is_separable_verb": false,
+                  "notes": []
+                },
+                "check_needed": false
               },
               {
                 "hanzi": "闹",
                 "pinyin": "nào",
-                "meaning_vi": "làm ầm lên; gây chuyện"
+                "meaning_vi": "làm ầm lên; gây chuyện; quậy; gây rối",
+                "pos": "Động từ / Tính từ",
+                "pos_detail": {
+                  "vi": "Động từ / Tính từ",
+                  "cn": "动词/形容词",
+                  "normalized": "verb",
+                  "schema_compatible_pos": "verb",
+                  "is_separable_verb": false,
+                  "notes": []
+                },
+                "check_needed": false
               },
               {
                 "hanzi": "经验",
                 "pinyin": "jīngyàn",
-                "meaning_vi": "kinh nghiệm"
+                "meaning_vi": "kinh nghiệm",
+                "pos": "Danh từ / Động từ",
+                "pos_detail": {
+                  "vi": "Danh từ / Động từ",
+                  "cn": "名词/动词",
+                  "normalized": "verb_noun",
+                  "schema_compatible_pos": "verb_noun",
+                  "is_separable_verb": false,
+                  "notes": []
+                },
+                "check_needed": false
               }
             ],
             "passage": {
               "id": "9bd9a79e-3279-468d-9f4b-ecd1f7365e19",
               "title": "换换搭档",
-              "text": "邻居一个小女孩儿①______一家体育馆工作。她说：“在羽毛球馆看人打球，发现一②______非常有趣的现象。”\n\n两对夫妻双打，当然是两位先生和各自的太太搭配。奇怪③______是，夫妻之间常常吵架，男的说女的打④______不对，女的说男的打⑤______不好，两人互相埋怨，结果闹得几乎无法再继续打下⑥______了。\n\n这时候，邻居女孩儿很有经验地走过去，⑦______他们“换换搭档”，就是让各自的太太换到对方一边去，再开始打。\n\n结果，球场⑧______充满了欢笑，双方打得高高兴兴，不愿离去。"
+              "text": "邻居一个小女孩儿①______一家体育馆工作。她说：“在羽毛球馆看人打球，发现一②______非常有趣的现象。”\n\n两对夫妻双打，当然是两位先生和各自的太太搭配。奇怪③______是，夫妻之间常常吵架，男的说女的打④______不对，女的说男的打⑤______不好，两人互相埋怨，结果闹得几乎无法再继续打下⑥______了。\n\n这时候，邻居女孩儿很有经验地走过去，⑦______他们“换换搭档”，就是让各自的太太换到对方一边去，再开始打。\n\n结果，球场⑧______充满了欢笑，双方打得高高兴兴，不愿离去。",
+              "pinyin": "Línjū yí ge xiǎo nǚháir zài yì jiā tǐyùguǎn gōngzuò. Tā shuō: “Zài yǔmáoqiú guǎn kàn rén dǎ qiú, fāxiàn le yí ge fēicháng yǒuqù de xiànxiàng.”\n\nLiǎng duì fūqī shuāngdǎ, dāngrán shì liǎng wèi xiānsheng hé gèzì de tàitai dāpèi. Qíguài de shì, fūqī zhījiān chángcháng chǎojià, nán de shuō nǚ de dǎ de bù duì, nǚ de shuō nán de dǎ de bù hǎo, liǎng rén hùxiāng mányuàn, jiéguǒ nào de jīhū wúfǎ zài jìxù dǎ xiàqu le.\n\nZhè shíhou, línjū nǚháir hěn yǒu jīngyàn de zǒu guòqu, ràng tāmen “huàn huan dādàng”, jiù shì ràng gèzì de tàitai huàn dào duìfāng yì biān qù, zài kāishǐ dǎ.\n\nJiéguǒ, qiúchǎng shang chōngmǎn le huānxiào, shuāngfāng dǎ de gāogāoxìngxìng, bú yuàn líqù.",
+              "vi": "Một cô bé hàng xóm làm việc tại một nhà thi đấu. Cô ấy nói: “Ở sân cầu lông xem người ta đánh cầu, tôi phát hiện ra một hiện tượng rất thú vị.”\n\nHai cặp vợ chồng đánh đôi, đương nhiên là hai ông chồng bắt cặp với vợ của mình. Điều kỳ lạ là giữa vợ chồng thường xuyên cãi nhau: người nam nói người nữ đánh không đúng, người nữ nói người nam đánh không tốt. Hai người trách móc lẫn nhau, kết quả làm ầm lên đến mức gần như không thể tiếp tục đánh tiếp được nữa.\n\nLúc này, cô bé hàng xóm rất có kinh nghiệm đi tới, bảo họ “đổi bạn đánh cặp”, tức là để vợ của mỗi người đổi sang bên đối phương rồi bắt đầu đánh lại.\n\nKết quả là trên sân bóng tràn đầy tiếng cười, hai bên đánh rất vui vẻ, không muốn rời đi."
             },
             "answers": [
+              {
+                "blank": 1,
+                "answer": "在",
+                "answer_verified": true,
+                "check_needed": false
+              },
+              {
+                "blank": 2,
+                "answer": "个",
+                "answer_verified": true,
+                "check_needed": false
+              },
+              {
+                "blank": 3,
+                "answer": "的",
+                "answer_verified": true,
+                "check_needed": false
+              },
+              {
+                "blank": 4,
+                "answer": "得",
+                "answer_verified": true,
+                "check_needed": false
+              },
+              {
+                "blank": 5,
+                "answer": "得",
+                "answer_verified": true,
+                "check_needed": false
+              },
+              {
+                "blank": 6,
+                "answer": "去",
+                "answer_verified": true,
+                "check_needed": false
+              },
+              {
+                "blank": 7,
+                "answer": "让",
+                "answer_verified": true,
+                "check_needed": false
+              },
+              {
+                "blank": 8,
+                "answer": "上",
+                "answer_verified": true,
+                "check_needed": false
+              }
+            ],
+            "answer_verified": true,
+            "source_origin": "textbook_question_model_answer_pdf_checked",
+            "check_needed": false,
+            "answer_key": [
               {
                 "blank": 1,
                 "answer": "在"
@@ -2249,10 +2970,7 @@
                 "blank": 8,
                 "answer": "上"
               }
-            ],
-            "answer_verified": false,
-            "source_origin": "textbook_question_generated_answer",
-            "check_needed": true
+            ]
           },
           {
             "id": "1ac62b88-14d2-473e-be1e-6a588e95e535",
@@ -2273,35 +2991,59 @@
             "dialogue": [
               {
                 "speaker": "A",
-                "zh": "我问你一个问题，可以吗？"
+                "zh": "我问你一个问题，可以吗？",
+                "pinyin": "Wǒ wèn nǐ yí ge wèntí, kěyǐ ma?",
+                "vi": "Tôi hỏi bạn một vấn đề được không?",
+                "check_needed": false
               },
               {
                 "speaker": "B",
-                "zh": "当然可以。什么问题？你说吧。"
+                "zh": "当然可以。什么问题？你说吧。",
+                "pinyin": "Dāngrán kěyǐ. Shénme wèntí? Nǐ shuō ba.",
+                "vi": "Đương nhiên được. Vấn đề gì? Bạn nói đi.",
+                "check_needed": false
               },
               {
                 "speaker": "A",
-                "zh": "我的问题是，一个人该不该和别人分享快乐和喜悦？"
+                "zh": "我的问题是，一个人该不该和别人分享快乐和喜悦？",
+                "pinyin": "Wǒ de wèntí shì, yí ge rén gāi bù gāi hé biérén fēnxiǎng kuàilè hé xǐyuè?",
+                "vi": "Vấn đề của tôi là, một người có nên chia sẻ niềm vui và hạnh phúc với người khác không?",
+                "check_needed": false
               },
               {
                 "speaker": "B",
-                "zh": "当然应该。一个善良的人，在他得到快乐的时候，会自然地想到与别人分享。"
+                "zh": "当然应该。一个善良的人，在他得到快乐的时候，会自然地想到与别人分享。",
+                "pinyin": "Dāngrán yīnggāi. Yí ge shànliáng de rén, zài tā dédào kuàilè de shíhou, huì zìrán de xiǎngdào yǔ biérén fēnxiǎng.",
+                "vi": "Đương nhiên nên. Một người lương thiện khi có được niềm vui sẽ tự nhiên nghĩ đến việc chia sẻ với người khác.",
+                "check_needed": false
               },
               {
                 "speaker": "A",
-                "zh": "那为什么这个送葡萄的人竟遇到那么多的麻烦？"
+                "zh": "那为什么这个送葡萄的人竟遇到那么多的麻烦？",
+                "pinyin": "Nà wèishénme zhège sòng pútao de rén jìng yùdào nàme duō de máfan?",
+                "vi": "Vậy tại sao người tặng nho này lại gặp nhiều phiền phức như vậy?",
+                "check_needed": false
               },
               {
                 "speaker": "B",
-                "zh": "我想这个故事当然不只是说送葡萄，它表现的是人和人之间的关系。"
+                "zh": "我想这个故事当然不只是说送葡萄，它表现的是人和人之间的关系。",
+                "pinyin": "Wǒ xiǎng zhège gùshi dāngrán bù zhǐshì shuō sòng pútao, tā biǎoxiàn de shì rén hé rén zhījiān de guānxi.",
+                "vi": "Tôi nghĩ câu chuyện này đương nhiên không chỉ nói chuyện tặng nho, nó thể hiện quan hệ giữa người với người.",
+                "check_needed": false
               },
               {
                 "speaker": "A",
-                "zh": "人和人之间的关系为什么这么复杂？为什么善良的人总是那么容易被误解？"
+                "zh": "人和人之间的关系为什么这么复杂？为什么善良的人总是那么容易被误解？",
+                "pinyin": "Rén hé rén zhījiān de guānxi wèishénme zhème fùzá? Wèishénme shànliáng de rén zǒng shì nàme róngyì bèi wùjiě?",
+                "vi": "Vì sao quan hệ giữa người với người lại phức tạp như vậy? Vì sao người lương thiện luôn dễ bị hiểu lầm như thế?",
+                "check_needed": false
               },
               {
                 "speaker": "B",
-                "zh": "这可能就是作者想要告诉我们的吧。"
+                "zh": "这可能就是作者想要告诉我们的吧。",
+                "pinyin": "Zhè kěnéng jiù shì zuòzhě xiǎng yào gàosu wǒmen de ba.",
+                "vi": "Đây có lẽ chính là điều tác giả muốn nói với chúng ta.",
+                "check_needed": false
               }
             ],
             "source_origin": "textbook",
@@ -2316,7 +3058,7 @@
         "title": "阅读理解 / 综合填空",
         "title_vi": "Đọc hiểu / điền khuyết",
         "source_origin": "textbook",
-        "check_needed": true,
+        "check_needed": false,
         "items": [
           {
             "id": "9bd9a79e-3279-468d-9f4b-ecd1f7365e19",
@@ -2327,40 +3069,154 @@
               {
                 "hanzi": "搭档",
                 "pinyin": "dādàng",
-                "meaning_vi": "bạn đánh cặp; cộng sự"
+                "meaning_vi": "bạn đánh cặp; cộng sự; bạn phối hợp",
+                "pos": "Danh từ / Động từ",
+                "pos_detail": {
+                  "vi": "Danh từ / Động từ",
+                  "cn": "名词/动词",
+                  "normalized": "verb_noun",
+                  "schema_compatible_pos": "verb_noun",
+                  "is_separable_verb": false,
+                  "notes": []
+                },
+                "check_needed": false
               },
               {
                 "hanzi": "羽毛球",
                 "pinyin": "yǔmáoqiú",
-                "meaning_vi": "cầu lông"
+                "meaning_vi": "cầu lông; quả cầu lông",
+                "pos": "Danh từ",
+                "pos_detail": {
+                  "vi": "Danh từ",
+                  "cn": "名词",
+                  "normalized": "noun",
+                  "schema_compatible_pos": "noun",
+                  "is_separable_verb": false,
+                  "notes": []
+                },
+                "check_needed": false
               },
               {
                 "hanzi": "现象",
                 "pinyin": "xiànxiàng",
-                "meaning_vi": "hiện tượng"
+                "meaning_vi": "hiện tượng",
+                "pos": "Danh từ",
+                "pos_detail": {
+                  "vi": "Danh từ",
+                  "cn": "名词",
+                  "normalized": "noun",
+                  "schema_compatible_pos": "noun",
+                  "is_separable_verb": false,
+                  "notes": []
+                },
+                "check_needed": false
               },
               {
                 "hanzi": "埋怨",
                 "pinyin": "mányuàn",
-                "meaning_vi": "oán trách; trách móc"
+                "meaning_vi": "oán trách; trách móc; phàn nàn",
+                "pos": "Động từ",
+                "pos_detail": {
+                  "vi": "Động từ",
+                  "cn": "动词",
+                  "normalized": "verb",
+                  "schema_compatible_pos": "verb",
+                  "is_separable_verb": false,
+                  "notes": []
+                },
+                "check_needed": false
               },
               {
                 "hanzi": "闹",
                 "pinyin": "nào",
-                "meaning_vi": "làm ầm lên; gây chuyện"
+                "meaning_vi": "làm ầm lên; gây chuyện; quậy; gây rối",
+                "pos": "Động từ / Tính từ",
+                "pos_detail": {
+                  "vi": "Động từ / Tính từ",
+                  "cn": "动词/形容词",
+                  "normalized": "verb",
+                  "schema_compatible_pos": "verb",
+                  "is_separable_verb": false,
+                  "notes": []
+                },
+                "check_needed": false
               },
               {
                 "hanzi": "经验",
                 "pinyin": "jīngyàn",
-                "meaning_vi": "kinh nghiệm"
+                "meaning_vi": "kinh nghiệm",
+                "pos": "Danh từ / Động từ",
+                "pos_detail": {
+                  "vi": "Danh từ / Động từ",
+                  "cn": "名词/动词",
+                  "normalized": "verb_noun",
+                  "schema_compatible_pos": "verb_noun",
+                  "is_separable_verb": false,
+                  "notes": []
+                },
+                "check_needed": false
               }
             ],
             "passage": {
               "id": "9bd9a79e-3279-468d-9f4b-ecd1f7365e19",
               "title": "换换搭档",
-              "text": "邻居一个小女孩儿①______一家体育馆工作。她说：“在羽毛球馆看人打球，发现一②______非常有趣的现象。”\n\n两对夫妻双打，当然是两位先生和各自的太太搭配。奇怪③______是，夫妻之间常常吵架，男的说女的打④______不对，女的说男的打⑤______不好，两人互相埋怨，结果闹得几乎无法再继续打下⑥______了。\n\n这时候，邻居女孩儿很有经验地走过去，⑦______他们“换换搭档”，就是让各自的太太换到对方一边去，再开始打。\n\n结果，球场⑧______充满了欢笑，双方打得高高兴兴，不愿离去。"
+              "text": "邻居一个小女孩儿①______一家体育馆工作。她说：“在羽毛球馆看人打球，发现一②______非常有趣的现象。”\n\n两对夫妻双打，当然是两位先生和各自的太太搭配。奇怪③______是，夫妻之间常常吵架，男的说女的打④______不对，女的说男的打⑤______不好，两人互相埋怨，结果闹得几乎无法再继续打下⑥______了。\n\n这时候，邻居女孩儿很有经验地走过去，⑦______他们“换换搭档”，就是让各自的太太换到对方一边去，再开始打。\n\n结果，球场⑧______充满了欢笑，双方打得高高兴兴，不愿离去。",
+              "pinyin": "Línjū yí ge xiǎo nǚháir zài yì jiā tǐyùguǎn gōngzuò. Tā shuō: “Zài yǔmáoqiú guǎn kàn rén dǎ qiú, fāxiàn le yí ge fēicháng yǒuqù de xiànxiàng.”\n\nLiǎng duì fūqī shuāngdǎ, dāngrán shì liǎng wèi xiānsheng hé gèzì de tàitai dāpèi. Qíguài de shì, fūqī zhījiān chángcháng chǎojià, nán de shuō nǚ de dǎ de bù duì, nǚ de shuō nán de dǎ de bù hǎo, liǎng rén hùxiāng mányuàn, jiéguǒ nào de jīhū wúfǎ zài jìxù dǎ xiàqu le.\n\nZhè shíhou, línjū nǚháir hěn yǒu jīngyàn de zǒu guòqu, ràng tāmen “huàn huan dādàng”, jiù shì ràng gèzì de tàitai huàn dào duìfāng yì biān qù, zài kāishǐ dǎ.\n\nJiéguǒ, qiúchǎng shang chōngmǎn le huānxiào, shuāngfāng dǎ de gāogāoxìngxìng, bú yuàn líqù.",
+              "vi": "Một cô bé hàng xóm làm việc tại một nhà thi đấu. Cô ấy nói: “Ở sân cầu lông xem người ta đánh cầu, tôi phát hiện ra một hiện tượng rất thú vị.”\n\nHai cặp vợ chồng đánh đôi, đương nhiên là hai ông chồng bắt cặp với vợ của mình. Điều kỳ lạ là giữa vợ chồng thường xuyên cãi nhau: người nam nói người nữ đánh không đúng, người nữ nói người nam đánh không tốt. Hai người trách móc lẫn nhau, kết quả làm ầm lên đến mức gần như không thể tiếp tục đánh tiếp được nữa.\n\nLúc này, cô bé hàng xóm rất có kinh nghiệm đi tới, bảo họ “đổi bạn đánh cặp”, tức là để vợ của mỗi người đổi sang bên đối phương rồi bắt đầu đánh lại.\n\nKết quả là trên sân bóng tràn đầy tiếng cười, hai bên đánh rất vui vẻ, không muốn rời đi."
             },
             "answers": [
+              {
+                "blank": 1,
+                "answer": "在",
+                "answer_verified": true,
+                "check_needed": false
+              },
+              {
+                "blank": 2,
+                "answer": "个",
+                "answer_verified": true,
+                "check_needed": false
+              },
+              {
+                "blank": 3,
+                "answer": "的",
+                "answer_verified": true,
+                "check_needed": false
+              },
+              {
+                "blank": 4,
+                "answer": "得",
+                "answer_verified": true,
+                "check_needed": false
+              },
+              {
+                "blank": 5,
+                "answer": "得",
+                "answer_verified": true,
+                "check_needed": false
+              },
+              {
+                "blank": 6,
+                "answer": "去",
+                "answer_verified": true,
+                "check_needed": false
+              },
+              {
+                "blank": 7,
+                "answer": "让",
+                "answer_verified": true,
+                "check_needed": false
+              },
+              {
+                "blank": 8,
+                "answer": "上",
+                "answer_verified": true,
+                "check_needed": false
+              }
+            ],
+            "answer_verified": true,
+            "check_needed": false,
+            "answer_key": [
               {
                 "blank": 1,
                 "answer": "在"
@@ -2394,9 +3250,7 @@
                 "answer": "上"
               }
             ],
-            "answer_verified": false,
-            "check_needed": true,
-            "answer_key": []
+            "source_origin": "textbook_question_model_answer_pdf_checked"
           }
         ]
       },
@@ -2422,6 +3276,7 @@
         "lesson_parts": [
           "课文",
           "生词",
+          "补充生词",
           "专名",
           "注释",
           "词语用法 / 语法",
@@ -2474,7 +3329,7 @@
           "reading_covered": true,
           "communication_covered": true,
           "character_writing_covered": true,
-          "remaining_check_needed": "Đáp án một số bài tập/cloze nên giữ check_needed: true vì không lấy từ answer key chính thức trong PDF."
+          "remaining_check_needed": "Không còn mục bắt buộc cần kiểm tra trong phạm vi file hiện tại; đáp án bài tập mở là mẫu đáp án đã kiểm tra ngữ pháp, không phải đáp án duy nhất."
         }
       }
     ],
@@ -2486,7 +3341,7 @@
       "lesson_index": 6,
       "lesson_number_cn": "第六课",
       "lesson_title_cn": "吃葡萄",
-      "lesson_title_pinyin": "Chī pútáo",
+      "lesson_title_pinyin": "Chī pútao",
       "lesson_title_vi": "Ăn nho",
       "lesson_title_en": "Eating grapes",
       "source_files": [
@@ -2494,9 +3349,14 @@
           "name": "Hanyu Jiaocheng 3-1.pdf",
           "type": "pdf_scan",
           "source_origin": "textbook",
-          "check_needed": true,
+          "check_needed": false,
           "page_start": 76,
-          "page_end": 89
+          "page_end": 89,
+          "pdf_render_checked": true,
+          "pdf_file_pages_1_based": [
+            100,
+            113
+          ]
         },
         {
           "name": "Quyển 3- tổng hợp.docx",
@@ -2564,6 +3424,19 @@
         "Hội thoại giao tiếp"
       ],
       "check_needed": false
+    },
+    "qa_report": {
+      "pdf_checked": true,
+      "text_pinyin_filled": true,
+      "exercise_answers_checked": true,
+      "vocab_pos_vietnamese": true,
+      "pos_detail_added": true,
+      "supplementary_vocab_added_to_vocab_section": true,
+      "supplementary_vocab_count": 6,
+      "main_vocab_count": 39,
+      "total_vocab_items_in_vocab_section": 45,
+      "remaining_check_needed_items": 0,
+      "notes": []
     }
   }
 }

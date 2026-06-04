@@ -90,7 +90,7 @@ export function useFlashcardControls({
 
       if (event.key === "ArrowLeft") {
         event.preventDefault();
-        onAnswer("again");
+        onPrevious?.();
         return;
       }
 
@@ -102,7 +102,7 @@ export function useFlashcardControls({
 
       if (event.key === "ArrowRight") {
         event.preventDefault();
-        onAnswer("known");
+        onNext?.();
       }
     };
 
@@ -149,8 +149,8 @@ export function useFlashcardControls({
       if (absX < SWIPE_DISTANCE && absY < SWIPE_DISTANCE) return;
 
       if (absX > absY) {
-        if (deltaX > 0) onAnswer("known");
-        else onAnswer("again");
+        if (deltaX > 0) onPrevious?.();
+        else onNext?.();
         return;
       }
 

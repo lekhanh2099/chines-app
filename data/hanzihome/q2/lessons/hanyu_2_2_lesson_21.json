@@ -38,21 +38,24 @@
                 "order": 1,
                 "speaker": "旁白",
                 "zh": "王老师和林老师跟同学们一起去爬山……",
-                "vi": "Thầy Vương và cô Lâm cùng các bạn học sinh đi leo núi…"
+                "vi": "Thầy Vương và cô Lâm cùng các bạn học sinh đi leo núi…",
+                "pinyin": "Wáng lǎoshī hé Lín lǎoshī gēn tóngxuémen yìqǐ qù páshān……"
               },
               {
                 "id": "30929615-34c8-4e5b-b0a2-5ad3358ad755",
                 "order": 2,
                 "speaker": "林老师",
                 "zh": "王老师，咱们怎么上山？坐缆车上去还是爬上去？",
-                "vi": "Thầy Vương, chúng ta lên núi thế nào? Ngồi cáp treo lên hay leo lên?"
+                "vi": "Thầy Vương, chúng ta lên núi thế nào? Ngồi cáp treo lên hay leo lên?",
+                "pinyin": "Wáng lǎoshī, zánmen zěnme shàng shān? Zuò lǎnchē shàngqù háishi pá shàngqù?"
               },
               {
                 "id": "9faf6980-effe-42f1-a01e-7f1740da2edb",
                 "order": 3,
                 "speaker": "王老师",
                 "zh": "别坐缆车了。跟同学们一起爬上去吧。",
-                "vi": "Đừng ngồi cáp treo nữa. Cùng các bạn học sinh leo lên đi."
+                "vi": "Đừng ngồi cáp treo nữa. Cùng các bạn học sinh leo lên đi.",
+                "pinyin": "Bié zuò lǎnchē le. Gēn tóngxuémen yìqǐ pá shàngqù ba."
               },
               {
                 "id": "146f8fa1-ae74-468d-910e-19cab53e3cf3",
@@ -62,7 +65,8 @@
                 "vi": "Núi cao thế này, thầy leo lên nổi không?",
                 "grammar_refs": [
                   "f8ec59f3-898a-47b2-b536-44dfd8183393"
-                ]
+                ],
+                "pinyin": "Shān zhème gāo, nǐ pá de shàngqù ma?"
               },
               {
                 "id": "44d4c32e-309d-4802-b7cf-e41ee8052535",
@@ -72,14 +76,16 @@
                 "vi": "Không vấn đề gì. Leo lên được.",
                 "grammar_refs": [
                   "f8ec59f3-898a-47b2-b536-44dfd8183393"
-                ]
+                ],
+                "pinyin": "Méi wèntí. Pá de shàngqù."
               },
               {
                 "id": "6f4b4423-8315-40e6-88fa-2fa2038271af",
                 "order": 6,
                 "speaker": "旁白",
                 "zh": "老师和同学们一起爬山……",
-                "vi": "Thầy cô và các bạn học sinh cùng leo núi…"
+                "vi": "Thầy cô và các bạn học sinh cùng leo núi…",
+                "pinyin": "Lǎoshī hé tóngxuémen yìqǐ páshān……"
               },
               {
                 "id": "6de58c5b-164f-4b2f-8d7e-84f1c7c1a66c",
@@ -90,7 +96,8 @@
                 "grammar_refs": [
                   "f8ec59f3-898a-47b2-b536-44dfd8183393",
                   "57b14753-688a-41b6-9e0d-b61dbbf574d7"
-                ]
+                ],
+                "pinyin": "Měiyīng, wǒ kàn nǐ lèi de dōu chuǎn bù shàng qì lái le, hái pá de dòng ma?"
               },
               {
                 "id": "9d76be1a-c606-44bb-a490-a9bd82982e3b",
@@ -100,7 +107,8 @@
                 "vi": "Vẫn leo được ạ.",
                 "grammar_refs": [
                   "f8ec59f3-898a-47b2-b536-44dfd8183393"
-                ]
+                ],
+                "pinyin": "Pá de dòng."
               },
               {
                 "id": "6e148072-17aa-4ebd-88a1-c59b2fc0ba17",
@@ -114,7 +122,8 @@
                 "notes": [
                   "加油儿啊",
                   "坚持就是胜利"
-                ]
+                ],
+                "pinyin": "Bié zháojí, yí bù yí bù de wǎng shàng pá, pá bù dòng de shíhou jiù xiūxi yíhuìr. Zǒu, zánmen yìqǐ pá, yào jiānchí dàodǐ, jiānchí jiù shì shènglì. …… Wáng lǎoshī, jiā yóur a!"
               },
               {
                 "id": "a8845639-9fca-4398-853d-a08fb63482a8",
@@ -124,28 +133,32 @@
                 "vi": "Vừa mới leo một lát mà tôi đã ra mồ hôi khắp người rồi, tôi nghỉ một lát rồi leo tiếp, không so được với người trẻ các em nữa rồi.",
                 "notes": [
                   "比不了你们年轻人啦"
-                ]
+                ],
+                "pinyin": "Gāng pá yíhuìr jiù chū le yì shēn hàn, wǒ xiūxi yíhuìr zài jiēzhe pá, bǐ bù liǎo nǐmen niánqīngrén la."
               },
               {
                 "id": "eb3a72ec-54fc-469d-929b-b614c65e00f1",
                 "order": 11,
                 "speaker": "李美英",
                 "zh": "啊，看，王老师也爬上来了。",
-                "vi": "A, nhìn kìa, thầy Vương cũng leo lên rồi."
+                "vi": "A, nhìn kìa, thầy Vương cũng leo lên rồi.",
+                "pinyin": "A, kàn, Wáng lǎoshī yě pá shànglai le."
               },
               {
                 "id": "5d22fae9-a022-41b5-a551-b9b68c51b516",
                 "order": 12,
                 "speaker": "王老师",
                 "zh": "麦克，别从那儿上，太危险了。要注意安全。",
-                "vi": "Mike, đừng leo từ chỗ đó, nguy hiểm quá. Phải chú ý an toàn."
+                "vi": "Mike, đừng leo từ chỗ đó, nguy hiểm quá. Phải chú ý an toàn.",
+                "pinyin": "Màikè, bié cóng nàr shàng, tài wēixiǎn le. Yào zhùyì ānquán."
               },
               {
                 "id": "a568d979-0ebe-412d-9200-f663609af6c5",
                 "order": 13,
                 "speaker": "麦克",
                 "zh": "知道了。",
-                "vi": "Em biết rồi ạ."
+                "vi": "Em biết rồi ạ.",
+                "pinyin": "Zhīdào le."
               }
             ],
             "paragraphs": [],
@@ -165,28 +178,32 @@
                 "order": 1,
                 "speaker": "旁白",
                 "zh": "同学们都在积极准备节目，参加联欢会……",
-                "vi": "Các bạn học sinh đều đang tích cực chuẩn bị tiết mục để tham gia buổi liên hoan…"
+                "vi": "Các bạn học sinh đều đang tích cực chuẩn bị tiết mục để tham gia buổi liên hoan…",
+                "pinyin": "Tóngxuémen dōu zài jījí zhǔnbèi jiémù, cānjiā liánhuānhuì……"
               },
               {
                 "id": "65232ef9-30a1-4305-b8b7-12a8ac5aeb91",
                 "order": 2,
                 "speaker": "林老师",
                 "zh": "爱德华，咱们班参加联欢会的节目准备得怎么样了？",
-                "vi": "Edward, tiết mục của lớp mình tham gia buổi liên hoan chuẩn bị thế nào rồi?"
+                "vi": "Edward, tiết mục của lớp mình tham gia buổi liên hoan chuẩn bị thế nào rồi?",
+                "pinyin": "Àidéhuá, zánmen bān cānjiā liánhuānhuì de jiémù zhǔnbèi de zěnmeyàng le?"
               },
               {
                 "id": "2c1213ac-f81d-414f-8b55-5abe77fe83fc",
                 "order": 3,
                 "speaker": "爱德华",
                 "zh": "大家都在积极地准备呢。",
-                "vi": "Mọi người đều đang tích cực chuẩn bị ạ."
+                "vi": "Mọi người đều đang tích cực chuẩn bị ạ.",
+                "pinyin": "Dàjiā dōu zài jījí de zhǔnbèi ne."
               },
               {
                 "id": "d797c234-0a16-42e3-bc45-29782e65cb1b",
                 "order": 4,
                 "speaker": "林老师",
                 "zh": "你表演什么节目？",
-                "vi": "Em biểu diễn tiết mục gì?"
+                "vi": "Em biểu diễn tiết mục gì?",
+                "pinyin": "Nǐ biǎoyǎn shénme jiémù?"
               },
               {
                 "id": "c99f042b-fa9a-478c-aba1-5da333a677e1",
@@ -196,21 +213,24 @@
                 "vi": "Em và Mike sẽ nói một tiết mục tấu nói. Nhưng em cứ không nhớ được lời thoại, đang học thuộc lời thoại đây ạ.",
                 "grammar_refs": [
                   "f8ec59f3-898a-47b2-b536-44dfd8183393"
-                ]
+                ],
+                "pinyin": "Wǒ hé Màikè shuō ge xiàngsheng. Kěshì wǒ zǒng jì bù zhù táicí, zhèng bèi táicí ne."
               },
               {
                 "id": "e8680b0f-6dcc-4fc7-abbd-084aba5d3b87",
                 "order": 6,
                 "speaker": "林老师",
                 "zh": "背会了吗？",
-                "vi": "Đã thuộc chưa?"
+                "vi": "Đã thuộc chưa?",
+                "pinyin": "Bèi huì le ma?"
               },
               {
                 "id": "cc8da348-3e89-4f64-a680-de239f505497",
                 "order": 7,
                 "speaker": "爱德华",
                 "zh": "快了。山本，你们的小话剧呢？",
-                "vi": "Sắp rồi ạ. Yamamoto, vở kịch ngắn của các bạn thì sao?"
+                "vi": "Sắp rồi ạ. Yamamoto, vở kịch ngắn của các bạn thì sao?",
+                "pinyin": "Kuài le. Shānběn, nǐmen de xiǎo huàjù ne?"
               },
               {
                 "id": "2adb7cf6-26c1-4029-809e-67342fb0227f",
@@ -220,14 +240,16 @@
                 "vi": "Chúng em cũng đang tập luyện. Có vài âm em phát âm không chuẩn, em nhờ Điền Phương sửa từng câu từng câu cho em.",
                 "grammar_refs": [
                   "f8ec59f3-898a-47b2-b536-44dfd8183393"
-                ]
+                ],
+                "pinyin": "Wǒmen yě zhèngzài páiliàn ne. Yǒu de yīn wǒ fā bù zhǔn, wǒ qǐng Tián Fāng yí jù yí jù de gěi wǒ jiūzhèng."
               },
               {
                 "id": "f42aa089-875d-48c4-9213-a083ec251fe7",
                 "order": 9,
                 "speaker": "林老师",
                 "zh": "谁跟你一起表演？",
-                "vi": "Ai biểu diễn cùng em?"
+                "vi": "Ai biểu diễn cùng em?",
+                "pinyin": "Shéi gēn nǐ yìqǐ biǎoyǎn?"
               },
               {
                 "id": "f7419a05-c714-4cff-ae26-210852d56303",
@@ -237,7 +259,8 @@
                 "vi": "Ban đầu là Mary, nhưng chân Mary bị thương rồi, không thể tham gia được nữa. Em mời Roland biểu diễn cùng em.",
                 "grammar_refs": [
                   "f8ec59f3-898a-47b2-b536-44dfd8183393"
-                ]
+                ],
+                "pinyin": "Yuánlái shì Mǎlì, kěshì Mǎlì tuǐ shòu shāng le, cānjiā bù liǎo le. Wǒ qǐng Luólán gēn wǒ yìqǐ biǎoyǎn."
               },
               {
                 "id": "22e52ff8-58e5-4bfd-8912-95faed7e26d1",
@@ -247,14 +270,16 @@
                 "vi": "Em lo mình diễn không tốt.",
                 "grammar_refs": [
                   "f8ec59f3-898a-47b2-b536-44dfd8183393"
-                ]
+                ],
+                "pinyin": "Wǒ dānxīn zìjǐ yǎn bù hǎo."
               },
               {
                 "id": "7ae9e54c-f536-4783-b05d-0d7e8ac4fb77",
                 "order": 12,
                 "speaker": "林老师",
                 "zh": "要有自信，相信自己能演好。",
-                "vi": "Phải có tự tin, tin rằng mình có thể diễn tốt."
+                "vi": "Phải có tự tin, tin rằng mình có thể diễn tốt.",
+                "pinyin": "Yào yǒu zìxìn, xiāngxìn zìjǐ néng yǎn hǎo."
               },
               {
                 "id": "491f58c7-7ead-4d8c-876d-7e3113dcff35",
@@ -267,21 +292,24 @@
                 ],
                 "notes": [
                   "世上无难事，只怕有心人"
-                ]
+                ],
+                "pinyin": "Zhǐyào wǒmen hǎohāor liàn, jiù yídìng néng yǎn hǎo. “Shìshàng wú nánshì, zhǐ pà yǒuxīnrén” ma!"
               },
               {
                 "id": "b4e15ca3-0527-433b-9b2f-a6027ebfe8e3",
                 "order": 14,
                 "speaker": "罗兰",
                 "zh": "我一定努力，争取演出成功。",
-                "vi": "Em nhất định sẽ cố gắng, phấn đấu biểu diễn thành công."
+                "vi": "Em nhất định sẽ cố gắng, phấn đấu biểu diễn thành công.",
+                "pinyin": "Wǒ yídìng nǔlì, zhēngqǔ yǎnchū chénggōng."
               },
               {
                 "id": "ded8d12b-4a00-4a64-b5b2-66cab3f2d1c6",
                 "order": 15,
                 "speaker": "山本",
                 "zh": "老师，您也给我们表演个节目吧。",
-                "vi": "Cô ơi, cô cũng biểu diễn một tiết mục cho chúng em đi ạ."
+                "vi": "Cô ơi, cô cũng biểu diễn một tiết mục cho chúng em đi ạ.",
+                "pinyin": "Lǎoshī, nín yě gěi wǒmen biǎoyǎn ge jiémù ba."
               },
               {
                 "id": "e3695c3e-b28b-4953-b424-71dcf1fad1b2",
@@ -291,7 +319,8 @@
                 "vi": "Cô đã chuẩn bị một bài hát, nhưng lâu lắm rồi chưa hát, e là hát không hay.",
                 "grammar_refs": [
                   "c6cd6c38-22fc-4546-a398-39efe02d6c17"
-                ]
+                ],
+                "pinyin": "Wǒ zhǔnbèi le yì shǒu gē, búguò, hěn cháng shíjiān méi chàng le, kǒngpà chàng bù hǎo."
               },
               {
                 "id": "94807735-96c4-4f7b-a7a3-0b2830d4e7c1",
@@ -301,14 +330,16 @@
                 "vi": "Cô ơi, chỗ này nhỏ thế này, ngồi được hơn hai trăm người không?",
                 "grammar_refs": [
                   "f8ec59f3-898a-47b2-b536-44dfd8183393"
-                ]
+                ],
+                "pinyin": "Lǎoshī, zhège dìfang zhème xiǎo, zuò de xià èr bǎi duō rén ma?"
               },
               {
                 "id": "d562e0f1-cf06-4951-bc59-0df0b5f6b59d",
                 "order": 18,
                 "speaker": "林老师",
                 "zh": "联欢会在楼下小礼堂举行，那儿能坐下三四百人呢。",
-                "vi": "Buổi liên hoan tổ chức ở hội trường nhỏ dưới lầu, chỗ đó có thể ngồi được ba bốn trăm người đấy."
+                "vi": "Buổi liên hoan tổ chức ở hội trường nhỏ dưới lầu, chỗ đó có thể ngồi được ba bốn trăm người đấy.",
+                "pinyin": "Liánhuānhuì zài lóuxià xiǎo lǐtáng jǔxíng, nàr néng zuò xià sān sì bǎi rén ne."
               }
             ],
             "paragraphs": [],
@@ -333,7 +364,7 @@
             "pinyin": "lǎnchē",
             "meaning_vi": "cáp treo",
             "meaning_en": "",
-            "pos": "noun",
+            "pos": "Danh từ",
             "tags": [
               "main_vocab"
             ],
@@ -350,7 +381,18 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false
+            "check_needed": false,
+            "pos_detail": {
+              "vi": "Danh từ",
+              "cn": "名词",
+              "normalized": "noun",
+              "schema_compatible_pos": "noun",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "Chỉ phương tiện cáp treo; không phải động từ.",
+              "notes": []
+            }
           },
           {
             "id": "8c18cf3c-e9dc-42e1-8faf-eb26799cabab",
@@ -360,7 +402,7 @@
             "pinyin": "chuǎnqì",
             "meaning_vi": "thở dốc; thở hổn hển",
             "meaning_en": "",
-            "pos": "verb",
+            "pos": "Động từ li hợp",
             "tags": [
               "main_vocab"
             ],
@@ -377,7 +419,18 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false
+            "check_needed": false,
+            "pos_detail": {
+              "vi": "Động từ li hợp",
+              "cn": "动宾式离合词",
+              "normalized": "verb_phrase",
+              "schema_compatible_pos": "verb_phrase",
+              "is_separable_verb": true,
+              "separable_type": "động-tân / 离合词",
+              "structure_vi": "động từ 喘 + tân ngữ 气",
+              "usage_note_vi": "Có thể nói 喘着气, 喘了一口气, 喘不上气; nghĩa là thở dốc/thở hổn hển.",
+              "notes": []
+            }
           },
           {
             "id": "1fbd69b7-603a-44ea-8d57-10cd4def9ced",
@@ -387,7 +440,7 @@
             "pinyin": "dòng",
             "meaning_vi": "động đậy; di chuyển",
             "meaning_en": "",
-            "pos": "verb",
+            "pos": "Động từ",
             "tags": [
               "main_vocab"
             ],
@@ -404,7 +457,18 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false
+            "check_needed": false,
+            "pos_detail": {
+              "vi": "Động từ",
+              "cn": "动词",
+              "normalized": "verb",
+              "schema_compatible_pos": "verb",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "Trong bài dùng trong 爬得动/爬不动: còn có sức để di chuyển/tiếp tục leo.",
+              "notes": []
+            }
           },
           {
             "id": "3dc505f1-bc0e-4a96-b448-17fed89fdc60",
@@ -414,7 +478,7 @@
             "pinyin": "dàodǐ",
             "meaning_vi": "đến cùng; rốt cuộc",
             "meaning_en": "",
-            "pos": "adverb",
+            "pos": "Phó từ",
             "tags": [
               "main_vocab"
             ],
@@ -431,7 +495,18 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false
+            "check_needed": false,
+            "pos_detail": {
+              "vi": "Phó từ",
+              "cn": "副词",
+              "normalized": "adverb",
+              "schema_compatible_pos": "adverb",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "Dùng trong 坚持到底: đến cùng; cũng dùng trong câu hỏi nhấn mạnh ‘rốt cuộc’.",
+              "notes": []
+            }
           },
           {
             "id": "188412d4-4c23-4d60-b7b2-21f3490199e7",
@@ -439,16 +514,16 @@
             "order": 5,
             "hanzi": "胜利",
             "pinyin": "shènglì",
-            "meaning_vi": "thắng lợi; chiến thắng",
+            "meaning_vi": "thắng lợi; giành thắng lợi; chiến thắng",
             "meaning_en": "",
-            "pos": "noun",
+            "pos": "Động từ / Danh từ",
             "tags": [
               "main_vocab"
             ],
             "examples": [],
             "flashcard": {
               "front": "胜利",
-              "back": "shènglì — thắng lợi; chiến thắng",
+              "back": "shènglì — thắng lợi; giành thắng lợi; chiến thắng",
               "modes": [
                 "hanzi_to_meaning",
                 "meaning_to_hanzi",
@@ -458,24 +533,35 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false
+            "check_needed": false,
+            "pos_detail": {
+              "vi": "Động từ / Danh từ",
+              "cn": "动词 / 名词",
+              "normalized": "verb_noun",
+              "schema_compatible_pos": "verb_noun",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "Có thể là danh từ ‘thắng lợi’ hoặc động từ ‘giành thắng lợi’; trong 坚持就是胜利 thiên về danh từ.",
+              "notes": []
+            }
           },
           {
             "id": "5ea44727-d97c-467b-b1b8-babd195df50d",
             "type": "vocabulary_item",
             "order": 6,
-            "hanzi": "加油",
-            "pinyin": "jiāyóu",
-            "meaning_vi": "cố lên; tiếp thêm sức",
+            "hanzi": "加油（儿）",
+            "pinyin": "jiāyóu(r)",
+            "meaning_vi": "cố lên; động viên; tiếp thêm sức",
             "meaning_en": "",
-            "pos": "verb_phrase",
+            "pos": "Động từ li hợp / Cụm động từ cố định",
             "tags": [
               "main_vocab"
             ],
             "examples": [],
             "flashcard": {
-              "front": "加油",
-              "back": "jiāyóu — cố lên; tiếp thêm sức",
+              "front": "加油（儿）",
+              "back": "jiāyóu(r) — cố lên; động viên; tiếp thêm sức",
               "modes": [
                 "hanzi_to_meaning",
                 "meaning_to_hanzi",
@@ -485,7 +571,18 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false
+            "check_needed": false,
+            "pos_detail": {
+              "vi": "Động từ li hợp / Cụm động từ cố định",
+              "cn": "动宾式离合词 / 固定口语短语",
+              "normalized": "verb_phrase",
+              "schema_compatible_pos": "verb_phrase",
+              "is_separable_verb": true,
+              "separable_type": "động-tân / 离合词",
+              "structure_vi": "động từ 加 + tân ngữ 油",
+              "usage_note_vi": "Nghĩa gốc là thêm nhiên liệu; trong bài là lời cổ vũ 加油儿啊. Khi dùng để cổ vũ thường nói cố định 加油/加油儿, không nên tách tùy tiện trong trình độ này.",
+              "notes": []
+            }
           },
           {
             "id": "54613016-834a-4fc3-9912-2357a6d27058",
@@ -495,7 +592,7 @@
             "pinyin": "chū hàn",
             "meaning_vi": "ra mồ hôi",
             "meaning_en": "",
-            "pos": "verb_phrase",
+            "pos": "Động từ li hợp",
             "tags": [
               "main_vocab"
             ],
@@ -512,7 +609,18 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false
+            "check_needed": false,
+            "pos_detail": {
+              "vi": "Động từ li hợp",
+              "cn": "动宾式离合词",
+              "normalized": "verb_phrase",
+              "schema_compatible_pos": "verb_phrase",
+              "is_separable_verb": true,
+              "separable_type": "động-tân / 离合词",
+              "structure_vi": "động từ 出 + tân ngữ 汗",
+              "usage_note_vi": "Có thể nói 出了一身汗, 出了很多汗; nghĩa là ra mồ hôi.",
+              "notes": []
+            }
           },
           {
             "id": "0da97406-c3ac-4fcb-a51c-398a59c3fbae",
@@ -522,7 +630,7 @@
             "pinyin": "hàn",
             "meaning_vi": "mồ hôi",
             "meaning_en": "",
-            "pos": "noun",
+            "pos": "Danh từ",
             "tags": [
               "main_vocab"
             ],
@@ -539,7 +647,18 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false
+            "check_needed": false,
+            "pos_detail": {
+              "vi": "Danh từ",
+              "cn": "名词",
+              "normalized": "noun",
+              "schema_compatible_pos": "noun",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "Chỉ mồ hôi; trong 出汗 là tân ngữ của 出.",
+              "notes": []
+            }
           },
           {
             "id": "54b36889-82be-485b-8342-fb8aab572065",
@@ -549,7 +668,7 @@
             "pinyin": "jiēzhe",
             "meaning_vi": "tiếp tục; nối tiếp",
             "meaning_en": "",
-            "pos": "adverb",
+            "pos": "Phó từ / Liên từ nối tiếp",
             "tags": [
               "main_vocab"
             ],
@@ -566,7 +685,18 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false
+            "check_needed": false,
+            "pos_detail": {
+              "vi": "Phó từ / Liên từ nối tiếp",
+              "cn": "副词 / 连词性成分",
+              "normalized": "adverb",
+              "schema_compatible_pos": "adverb",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "Dùng để nối hành động tiếp theo: 休息一会儿再接着爬.",
+              "notes": []
+            }
           },
           {
             "id": "1354b1a3-93cc-4505-8d7f-c5550a1d6ae9",
@@ -574,16 +704,16 @@
             "order": 10,
             "hanzi": "比",
             "pinyin": "bǐ",
-            "meaning_vi": "so với; bằng; so sánh với",
+            "meaning_vi": "so sánh; không bằng được trong 比不了",
             "meaning_en": "",
-            "pos": "preposition",
+            "pos": "Động từ",
             "tags": [
               "main_vocab"
             ],
             "examples": [],
             "flashcard": {
               "front": "比",
-              "back": "bǐ — so với; bằng; so sánh với",
+              "back": "bǐ — so sánh; không bằng được trong 比不了",
               "modes": [
                 "hanzi_to_meaning",
                 "meaning_to_hanzi",
@@ -593,7 +723,18 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false
+            "check_needed": false,
+            "pos_detail": {
+              "vi": "Động từ",
+              "cn": "动词",
+              "normalized": "verb",
+              "schema_compatible_pos": "verb",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "Trong 比不了你们年轻人 nghĩa là không so được/không bằng được; khác với giới từ 比 trong câu so sánh.",
+              "notes": []
+            }
           },
           {
             "id": "f0684cb3-4577-4e6c-9f22-7d97c89692b3",
@@ -601,16 +742,16 @@
             "order": 11,
             "hanzi": "危险",
             "pinyin": "wēixiǎn",
-            "meaning_vi": "nguy hiểm",
+            "meaning_vi": "nguy hiểm; sự nguy hiểm",
             "meaning_en": "",
-            "pos": "adjective",
+            "pos": "Tính từ / Danh từ",
             "tags": [
               "main_vocab"
             ],
             "examples": [],
             "flashcard": {
               "front": "危险",
-              "back": "wēixiǎn — nguy hiểm",
+              "back": "wēixiǎn — nguy hiểm; sự nguy hiểm",
               "modes": [
                 "hanzi_to_meaning",
                 "meaning_to_hanzi",
@@ -620,7 +761,18 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false
+            "check_needed": false,
+            "pos_detail": {
+              "vi": "Tính từ / Danh từ",
+              "cn": "形容词 / 名词",
+              "normalized": "adjective",
+              "schema_compatible_pos": "adjective",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "Có thể nói 太危险了; cũng có thể làm danh từ ‘sự nguy hiểm’ trong 注意危险.",
+              "notes": []
+            }
           },
           {
             "id": "d5b362a7-c8f6-4f25-b2b5-0f1749c8afbb",
@@ -630,7 +782,7 @@
             "pinyin": "jījí",
             "meaning_vi": "tích cực",
             "meaning_en": "",
-            "pos": "adjective",
+            "pos": "Tính từ",
             "tags": [
               "main_vocab"
             ],
@@ -647,7 +799,18 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false
+            "check_needed": false,
+            "pos_detail": {
+              "vi": "Tính từ",
+              "cn": "形容词",
+              "normalized": "adjective",
+              "schema_compatible_pos": "adjective",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "Dùng trước động từ hoặc làm vị ngữ: 积极回答问题, 态度很积极.",
+              "notes": []
+            }
           },
           {
             "id": "7eccd5e8-dac0-4f36-be2e-abcc0a2bdfcd",
@@ -657,7 +820,7 @@
             "pinyin": "xiàngsheng",
             "meaning_vi": "tướng thanh; hài nói Trung Quốc",
             "meaning_en": "",
-            "pos": "noun",
+            "pos": "Danh từ",
             "tags": [
               "main_vocab"
             ],
@@ -674,7 +837,18 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false
+            "check_needed": false,
+            "pos_detail": {
+              "vi": "Danh từ",
+              "cn": "名词",
+              "normalized": "noun",
+              "schema_compatible_pos": "noun",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "Chỉ loại hình hài nói/tướng thanh; không phải động từ.",
+              "notes": []
+            }
           },
           {
             "id": "91fa9f81-e5ef-4c4a-b29c-c4b6daa02196",
@@ -684,7 +858,7 @@
             "pinyin": "táicí",
             "meaning_vi": "lời thoại",
             "meaning_en": "",
-            "pos": "noun",
+            "pos": "Danh từ",
             "tags": [
               "main_vocab"
             ],
@@ -701,7 +875,18 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false
+            "check_needed": false,
+            "pos_detail": {
+              "vi": "Danh từ",
+              "cn": "名词",
+              "normalized": "noun",
+              "schema_compatible_pos": "noun",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "Chỉ lời thoại/lời kịch; thường đi với 背台词, 记台词.",
+              "notes": []
+            }
           },
           {
             "id": "8a5b1d09-23a6-4182-96e6-9bf4d761a1e1",
@@ -711,7 +896,7 @@
             "pinyin": "bèi",
             "meaning_vi": "học thuộc; đọc thuộc lòng",
             "meaning_en": "",
-            "pos": "verb",
+            "pos": "Động từ",
             "tags": [
               "main_vocab"
             ],
@@ -728,7 +913,18 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false
+            "check_needed": false,
+            "pos_detail": {
+              "vi": "Động từ",
+              "cn": "动词",
+              "normalized": "verb",
+              "schema_compatible_pos": "verb",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "Trong bài nghĩa là học thuộc/đọc thuộc: 背台词, 背课文.",
+              "notes": []
+            }
           },
           {
             "id": "be7a835d-ff8f-4a86-9fd8-27c5f1093f0c",
@@ -738,7 +934,7 @@
             "pinyin": "huàjù",
             "meaning_vi": "kịch nói",
             "meaning_en": "",
-            "pos": "noun",
+            "pos": "Danh từ",
             "tags": [
               "main_vocab"
             ],
@@ -755,7 +951,18 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false
+            "check_needed": false,
+            "pos_detail": {
+              "vi": "Danh từ",
+              "cn": "名词",
+              "normalized": "noun",
+              "schema_compatible_pos": "noun",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "Chỉ kịch nói; khác với 京剧/戏曲.",
+              "notes": []
+            }
           },
           {
             "id": "7a89dc80-d79d-4c2f-988c-d0f54e240d19",
@@ -765,7 +972,7 @@
             "pinyin": "páiliàn",
             "meaning_vi": "tập luyện; diễn tập",
             "meaning_en": "",
-            "pos": "verb",
+            "pos": "Động từ",
             "tags": [
               "main_vocab"
             ],
@@ -782,7 +989,18 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false
+            "check_needed": false,
+            "pos_detail": {
+              "vi": "Động từ",
+              "cn": "动词",
+              "normalized": "verb",
+              "schema_compatible_pos": "verb",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "Nghĩa là tập luyện/diễn tập tiết mục; không phải động từ li hợp trong dữ liệu bài này.",
+              "notes": []
+            }
           },
           {
             "id": "ff3e1818-66a9-4532-880b-02c9cacb0e5b",
@@ -792,7 +1010,7 @@
             "pinyin": "jiūzhèng",
             "meaning_vi": "sửa cho đúng; uốn nắn",
             "meaning_en": "",
-            "pos": "verb",
+            "pos": "Động từ",
             "tags": [
               "main_vocab"
             ],
@@ -809,7 +1027,18 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false
+            "check_needed": false,
+            "pos_detail": {
+              "vi": "Động từ",
+              "cn": "动词",
+              "normalized": "verb",
+              "schema_compatible_pos": "verb",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "Nghĩa là sửa cho đúng, thường đi với 错误/发音/动作.",
+              "notes": []
+            }
           },
           {
             "id": "0125bdae-fe4e-48fb-8264-145e95c75933",
@@ -819,7 +1048,7 @@
             "pinyin": "shòu shāng",
             "meaning_vi": "bị thương",
             "meaning_en": "",
-            "pos": "verb_phrase",
+            "pos": "Động từ li hợp",
             "tags": [
               "main_vocab"
             ],
@@ -836,17 +1065,66 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false
+            "check_needed": false,
+            "pos_detail": {
+              "vi": "Động từ li hợp",
+              "cn": "动宾式离合词",
+              "normalized": "verb_phrase",
+              "schema_compatible_pos": "verb_phrase",
+              "is_separable_verb": true,
+              "separable_type": "động-tân / 离合词",
+              "structure_vi": "động từ 受 + tân ngữ 伤",
+              "usage_note_vi": "Có thể nói 受了伤, 受了一点儿伤; nghĩa là bị thương.",
+              "notes": []
+            }
+          },
+          {
+            "id": "e2bd2269-2e26-4800-bbb0-436b82b6dbbd",
+            "type": "vocabulary_item",
+            "order": 20,
+            "hanzi": "演",
+            "pinyin": "yǎn",
+            "meaning_vi": "diễn; biểu diễn; đóng vai",
+            "meaning_en": "",
+            "pos": "Động từ",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "演",
+              "back": "yǎn — diễn; biểu diễn; đóng vai",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "check_needed": false,
+            "pos_detail": {
+              "vi": "Động từ",
+              "cn": "动词",
+              "normalized": "verb",
+              "schema_compatible_pos": "verb",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "Nghĩa là diễn/đóng vai/biểu diễn: 演节目, 演话剧.",
+              "notes": []
+            }
           },
           {
             "id": "689eb64b-5d4f-469f-9afa-74017d399614",
             "type": "vocabulary_item",
-            "order": 20,
+            "order": 21,
             "hanzi": "自信",
             "pinyin": "zìxìn",
             "meaning_vi": "tự tin; lòng tự tin",
             "meaning_en": "",
-            "pos": "noun",
+            "pos": "Danh từ / Tính từ trạng thái",
             "tags": [
               "main_vocab"
             ],
@@ -863,17 +1141,28 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false
+            "check_needed": false,
+            "pos_detail": {
+              "vi": "Danh từ / Tính từ trạng thái",
+              "cn": "名词 / 形容词",
+              "normalized": "noun",
+              "schema_compatible_pos": "noun",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "Có thể là danh từ ‘lòng tự tin’ hoặc tính từ ‘tự tin’: 很自信.",
+              "notes": []
+            }
           },
           {
             "id": "d45d5488-9293-41ae-9deb-1e5b51cee446",
             "type": "vocabulary_item",
-            "order": 21,
+            "order": 22,
             "hanzi": "相信",
             "pinyin": "xiāngxìn",
             "meaning_vi": "tin; tin tưởng",
             "meaning_en": "",
-            "pos": "verb",
+            "pos": "Động từ",
             "tags": [
               "main_vocab"
             ],
@@ -890,17 +1179,66 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false
+            "check_needed": false,
+            "pos_detail": {
+              "vi": "Động từ",
+              "cn": "动词",
+              "normalized": "verb",
+              "schema_compatible_pos": "verb",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "Nghĩa là tin/tin tưởng; thường nói 相信他说的话, 相信自己.",
+              "notes": []
+            }
+          },
+          {
+            "id": "4759c48a-ae8a-4005-b11a-400ba0bc9883",
+            "type": "vocabulary_item",
+            "order": 23,
+            "hanzi": "只要……就……",
+            "pinyin": "zhǐyào……jiù……",
+            "meaning_vi": "chỉ cần… thì…",
+            "meaning_en": "",
+            "pos": "Liên từ / Cấu trúc câu điều kiện",
+            "tags": [
+              "main_vocab"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "只要……就……",
+              "back": "zhǐyào……jiù…… — chỉ cần… thì…",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook",
+            "check_needed": false,
+            "pos_detail": {
+              "vi": "Liên từ / Cấu trúc câu điều kiện",
+              "cn": "连词 / 条件复句结构",
+              "normalized": "conjunction",
+              "schema_compatible_pos": "conjunction",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "Cấu trúc điều kiện đủ: chỉ cần điều kiện ở vế trước thỏa, vế sau xảy ra.",
+              "notes": []
+            }
           },
           {
             "id": "c99a633b-27a2-429b-a139-44113a84c189",
             "type": "vocabulary_item",
-            "order": 22,
+            "order": 24,
             "hanzi": "世上",
             "pinyin": "shìshàng",
             "meaning_vi": "trên đời; trên thế gian",
             "meaning_en": "",
-            "pos": "noun",
+            "pos": "Danh từ chỉ phạm vi",
             "tags": [
               "main_vocab"
             ],
@@ -917,17 +1255,28 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false
+            "check_needed": false,
+            "pos_detail": {
+              "vi": "Danh từ chỉ phạm vi",
+              "cn": "处所名词 / 范围名词",
+              "normalized": "noun",
+              "schema_compatible_pos": "noun",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "Nghĩa là trên đời/trên thế gian; thường dùng trong câu khái quát.",
+              "notes": []
+            }
           },
           {
             "id": "79358c6f-3427-4c28-98f3-7ef98c7033c3",
             "type": "vocabulary_item",
-            "order": 23,
+            "order": 25,
             "hanzi": "无",
             "pinyin": "wú",
             "meaning_vi": "không; không có",
             "meaning_en": "",
-            "pos": "verb",
+            "pos": "Yếu tố Hán ngữ / Động từ phủ định văn viết",
             "tags": [
               "main_vocab"
             ],
@@ -944,17 +1293,28 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false
+            "check_needed": false,
+            "pos_detail": {
+              "vi": "Yếu tố Hán ngữ / Động từ phủ định văn viết",
+              "cn": "语素 / 文言色彩否定动词",
+              "normalized": "grammar_word",
+              "schema_compatible_pos": "grammar_word",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "Nghĩa là không/không có; chủ yếu dùng trong cụm cố định hoặc văn viết như 无法, 无论, 无声.",
+              "notes": []
+            }
           },
           {
             "id": "dc0f8e06-a359-4907-a8d8-fc9b02260590",
             "type": "vocabulary_item",
-            "order": 24,
+            "order": 26,
             "hanzi": "怕",
             "pinyin": "pà",
             "meaning_vi": "sợ; e rằng",
             "meaning_en": "",
-            "pos": "verb",
+            "pos": "Động từ / Tính từ tâm lý",
             "tags": [
               "main_vocab"
             ],
@@ -971,17 +1331,28 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false
+            "check_needed": false,
+            "pos_detail": {
+              "vi": "Động từ / Tính từ tâm lý",
+              "cn": "动词 / 心理形容词",
+              "normalized": "verb",
+              "schema_compatible_pos": "verb",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "Có thể là sợ một vật/việc hoặc e rằng; 我怕蛇 khác với 恐怕有蛇.",
+              "notes": []
+            }
           },
           {
             "id": "c43cedbf-7024-4ec1-922f-e75119114baf",
             "type": "vocabulary_item",
-            "order": 25,
+            "order": 27,
             "hanzi": "心",
             "pinyin": "xīn",
             "meaning_vi": "tim; lòng; tâm",
             "meaning_en": "",
-            "pos": "noun",
+            "pos": "Danh từ",
             "tags": [
               "main_vocab"
             ],
@@ -998,17 +1369,28 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false
+            "check_needed": false,
+            "pos_detail": {
+              "vi": "Danh từ",
+              "cn": "名词",
+              "normalized": "noun",
+              "schema_compatible_pos": "noun",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "Chỉ tim/lòng/tâm; thường tạo từ như 自信心, 放心, 担心.",
+              "notes": []
+            }
           },
           {
             "id": "d9991c79-3454-4247-bf18-f14f43b4a24a",
             "type": "vocabulary_item",
-            "order": 26,
+            "order": 28,
             "hanzi": "争取",
             "pinyin": "zhēngqǔ",
             "meaning_vi": "phấn đấu giành được; cố gắng đạt được",
             "meaning_en": "",
-            "pos": "verb",
+            "pos": "Động từ",
             "tags": [
               "main_vocab"
             ],
@@ -1025,17 +1407,28 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false
+            "check_needed": false,
+            "pos_detail": {
+              "vi": "Động từ",
+              "cn": "动词",
+              "normalized": "verb",
+              "schema_compatible_pos": "verb",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "Nghĩa là cố gắng giành lấy/đạt được: 争取胜利, 争取机会.",
+              "notes": []
+            }
           },
           {
             "id": "55cd807c-eec7-412d-99db-f4e6508b170f",
             "type": "vocabulary_item",
-            "order": 27,
+            "order": 29,
             "hanzi": "恐怕",
             "pinyin": "kǒngpà",
             "meaning_vi": "e rằng; chỉ sợ là",
             "meaning_en": "",
-            "pos": "adverb",
+            "pos": "Phó từ",
             "tags": [
               "main_vocab"
             ],
@@ -1052,19 +1445,30 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false
+            "check_needed": false,
+            "pos_detail": {
+              "vi": "Phó từ",
+              "cn": "副词",
+              "normalized": "adverb",
+              "schema_compatible_pos": "adverb",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "Dùng để phỏng đoán kết quả không tốt: 恐怕不行, 恐怕爬不上去; không dùng để nói sợ vật trực tiếp.",
+              "notes": []
+            }
           },
           {
             "id": "085e60d5-dd1c-4585-ac6b-0f1db0ded936",
             "type": "vocabulary_item",
-            "order": 28,
+            "order": 30,
             "hanzi": "啦啦队",
             "pinyin": "lālāduì",
             "meaning_vi": "đội cổ vũ",
             "meaning_en": "",
-            "pos": "noun",
+            "pos": "Danh từ",
             "tags": [
-              "main_vocab"
+              "practice_vocab"
             ],
             "examples": [],
             "flashcard": {
@@ -1078,20 +1482,31 @@
               ]
             },
             "audio_key": "",
-            "source_origin": "textbook",
-            "check_needed": false
+            "source_origin": "exercise_crosscheck",
+            "check_needed": false,
+            "pos_detail": {
+              "vi": "Danh từ",
+              "cn": "名词",
+              "normalized": "noun",
+              "schema_compatible_pos": "noun",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "Chỉ đội cổ vũ/cheerleading squad.",
+              "notes": []
+            }
           },
           {
             "id": "ba7ff0f9-b633-4516-ab3d-22b96046a1cf",
             "type": "vocabulary_item",
-            "order": 29,
+            "order": 31,
             "hanzi": "错误",
             "pinyin": "cuòwù",
             "meaning_vi": "sai lầm; lỗi sai",
             "meaning_en": "",
-            "pos": "noun",
+            "pos": "Danh từ / Tính từ",
             "tags": [
-              "main_vocab"
+              "practice_vocab"
             ],
             "examples": [],
             "flashcard": {
@@ -1105,20 +1520,31 @@
               ]
             },
             "audio_key": "",
-            "source_origin": "textbook",
-            "check_needed": false
+            "source_origin": "exercise_crosscheck",
+            "check_needed": false,
+            "pos_detail": {
+              "vi": "Danh từ / Tính từ",
+              "cn": "名词 / 形容词",
+              "normalized": "noun",
+              "schema_compatible_pos": "noun",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "Là danh từ ‘lỗi sai’ hoặc tính từ ‘sai’: 纠正错误, 这个答案是错误的.",
+              "notes": []
+            }
           },
           {
             "id": "2185ee67-885d-4ffb-83e2-e97be4070796",
             "type": "vocabulary_item",
-            "order": 30,
+            "order": 32,
             "hanzi": "外语",
             "pinyin": "wàiyǔ",
             "meaning_vi": "ngoại ngữ",
             "meaning_en": "",
-            "pos": "noun",
+            "pos": "Danh từ",
             "tags": [
-              "main_vocab"
+              "practice_vocab"
             ],
             "examples": [],
             "flashcard": {
@@ -1132,20 +1558,31 @@
               ]
             },
             "audio_key": "",
-            "source_origin": "textbook",
-            "check_needed": false
+            "source_origin": "exercise_crosscheck",
+            "check_needed": false,
+            "pos_detail": {
+              "vi": "Danh từ",
+              "cn": "名词",
+              "normalized": "noun",
+              "schema_compatible_pos": "noun",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "Chỉ ngoại ngữ; không chỉ riêng tiếng Anh.",
+              "notes": []
+            }
           },
           {
             "id": "092a8c16-3739-4685-a4c0-39365071bd48",
             "type": "vocabulary_item",
-            "order": 31,
+            "order": 33,
             "hanzi": "鞋",
             "pinyin": "xié",
             "meaning_vi": "giày",
             "meaning_en": "",
-            "pos": "noun",
+            "pos": "Danh từ",
             "tags": [
-              "main_vocab"
+              "practice_vocab"
             ],
             "examples": [],
             "flashcard": {
@@ -1159,20 +1596,32 @@
               ]
             },
             "audio_key": "",
-            "source_origin": "textbook",
-            "check_needed": false
+            "source_origin": "exercise_crosscheck",
+            "check_needed": false,
+            "pos_detail": {
+              "vi": "Danh từ",
+              "cn": "名词",
+              "normalized": "noun",
+              "schema_compatible_pos": "noun",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "Chỉ giày; lượng từ thường là 双.",
+              "notes": []
+            }
           },
           {
             "id": "22e66ee9-565e-4670-b2ac-4d5a9b500b38",
             "type": "vocabulary_item",
-            "order": 32,
+            "order": 34,
             "hanzi": "画蛇添足",
             "pinyin": "huà shé tiān zú",
             "meaning_vi": "vẽ rắn thêm chân; làm thừa khiến hỏng việc",
             "meaning_en": "",
-            "pos": "phrase",
+            "pos": "Thành ngữ",
             "tags": [
-              "main_vocab"
+              "supplementary_vocab",
+              "reading_vocab"
             ],
             "examples": [],
             "flashcard": {
@@ -1186,20 +1635,32 @@
               ]
             },
             "audio_key": "",
-            "source_origin": "textbook",
-            "check_needed": false
+            "source_origin": "textbook_reading",
+            "check_needed": false,
+            "pos_detail": {
+              "vi": "Thành ngữ",
+              "cn": "成语",
+              "normalized": "idiom",
+              "schema_compatible_pos": "phrase",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "Nghĩa là làm thêm việc thừa khiến hỏng việc; dùng như vị ngữ/định ngữ trong câu.",
+              "notes": []
+            }
           },
           {
             "id": "275b46f4-3166-48b7-9766-58384178d1be",
             "type": "vocabulary_item",
-            "order": 33,
+            "order": 35,
             "hanzi": "蛇",
             "pinyin": "shé",
             "meaning_vi": "rắn",
             "meaning_en": "",
-            "pos": "noun",
+            "pos": "Danh từ",
             "tags": [
-              "main_vocab"
+              "supplementary_vocab",
+              "reading_vocab"
             ],
             "examples": [],
             "flashcard": {
@@ -1213,20 +1674,32 @@
               ]
             },
             "audio_key": "",
-            "source_origin": "textbook",
-            "check_needed": false
+            "source_origin": "textbook_reading",
+            "check_needed": false,
+            "pos_detail": {
+              "vi": "Danh từ",
+              "cn": "名词",
+              "normalized": "noun",
+              "schema_compatible_pos": "noun",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "Chỉ con rắn.",
+              "notes": []
+            }
           },
           {
             "id": "1190511f-5970-4304-8f84-d7201b287aeb",
             "type": "vocabulary_item",
-            "order": 34,
+            "order": 36,
             "hanzi": "添",
             "pinyin": "tiān",
             "meaning_vi": "thêm vào",
             "meaning_en": "",
-            "pos": "verb",
+            "pos": "Động từ",
             "tags": [
-              "main_vocab"
+              "supplementary_vocab",
+              "reading_vocab"
             ],
             "examples": [],
             "flashcard": {
@@ -1240,20 +1713,32 @@
               ]
             },
             "audio_key": "",
-            "source_origin": "textbook",
-            "check_needed": false
+            "source_origin": "textbook_reading",
+            "check_needed": false,
+            "pos_detail": {
+              "vi": "Động từ",
+              "cn": "动词",
+              "normalized": "verb",
+              "schema_compatible_pos": "verb",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "Nghĩa là thêm vào; trong 画蛇添足 là thêm chân vào con rắn.",
+              "notes": []
+            }
           },
           {
             "id": "d42d3d90-443d-45da-bed7-987b50034e92",
             "type": "vocabulary_item",
-            "order": 35,
+            "order": 37,
             "hanzi": "壶",
             "pinyin": "hú",
             "meaning_vi": "bình; ấm; bầu rượu/nước",
             "meaning_en": "",
-            "pos": "measure_word",
+            "pos": "Danh từ / Lượng từ",
             "tags": [
-              "main_vocab"
+              "supplementary_vocab",
+              "reading_vocab"
             ],
             "examples": [],
             "flashcard": {
@@ -1267,25 +1752,37 @@
               ]
             },
             "audio_key": "",
-            "source_origin": "textbook",
-            "check_needed": false
+            "source_origin": "textbook_reading",
+            "check_needed": false,
+            "pos_detail": {
+              "vi": "Danh từ / Lượng từ",
+              "cn": "名词 / 量词",
+              "normalized": "measure_word",
+              "schema_compatible_pos": "measure_word",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "Có thể chỉ bình/ấm, cũng dùng làm lượng từ: 一壶酒.",
+              "notes": []
+            }
           },
           {
             "id": "cfb712c9-c4ca-4314-b6b2-696b40ace25e",
             "type": "vocabulary_item",
-            "order": 36,
-            "hanzi": "同一",
-            "pinyin": "tóngyī",
-            "meaning_vi": "cùng một; giống nhau",
+            "order": 38,
+            "hanzi": "同意",
+            "pinyin": "tóngyì",
+            "meaning_vi": "đồng ý",
             "meaning_en": "",
-            "pos": "adjective",
+            "pos": "Động từ",
             "tags": [
-              "main_vocab"
+              "supplementary_vocab",
+              "reading_vocab"
             ],
             "examples": [],
             "flashcard": {
-              "front": "同一",
-              "back": "tóngyī — cùng một; giống nhau",
+              "front": "同意",
+              "back": "tóngyì — đồng ý",
               "modes": [
                 "hanzi_to_meaning",
                 "meaning_to_hanzi",
@@ -1294,20 +1791,32 @@
               ]
             },
             "audio_key": "",
-            "source_origin": "textbook",
-            "check_needed": false
+            "source_origin": "textbook_reading",
+            "check_needed": false,
+            "pos_detail": {
+              "vi": "Động từ",
+              "cn": "动词",
+              "normalized": "verb",
+              "schema_compatible_pos": "verb",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "Nghĩa là đồng ý; không phải 同一. Không đánh dấu là động từ li hợp trong bài này.",
+              "notes": []
+            }
           },
           {
             "id": "6059829f-ae21-43cf-ac0c-05e19639ec43",
             "type": "vocabulary_item",
-            "order": 37,
+            "order": 39,
             "hanzi": "得意",
             "pinyin": "déyì",
             "meaning_vi": "đắc ý; tự mãn; hài lòng",
             "meaning_en": "",
-            "pos": "adjective",
+            "pos": "Tính từ",
             "tags": [
-              "main_vocab"
+              "supplementary_vocab",
+              "reading_vocab"
             ],
             "examples": [],
             "flashcard": {
@@ -1321,20 +1830,32 @@
               ]
             },
             "audio_key": "",
-            "source_origin": "textbook",
-            "check_needed": false
+            "source_origin": "textbook_reading",
+            "check_needed": false,
+            "pos_detail": {
+              "vi": "Tính từ",
+              "cn": "形容词",
+              "normalized": "adjective",
+              "schema_compatible_pos": "adjective",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "Nghĩa là đắc ý/tự mãn/hài lòng vì đạt được gì đó.",
+              "notes": []
+            }
           },
           {
             "id": "fefd5441-7b6c-47e3-b823-9e149b947bf7",
             "type": "vocabulary_item",
-            "order": 38,
+            "order": 40,
             "hanzi": "脚",
             "pinyin": "jiǎo",
             "meaning_vi": "chân; bàn chân",
             "meaning_en": "",
-            "pos": "noun",
+            "pos": "Danh từ",
             "tags": [
-              "main_vocab"
+              "supplementary_vocab",
+              "reading_vocab"
             ],
             "examples": [],
             "flashcard": {
@@ -1348,8 +1869,19 @@
               ]
             },
             "audio_key": "",
-            "source_origin": "textbook",
-            "check_needed": false
+            "source_origin": "textbook_reading",
+            "check_needed": false,
+            "pos_detail": {
+              "vi": "Danh từ",
+              "cn": "名词",
+              "normalized": "noun",
+              "schema_compatible_pos": "noun",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "Chỉ chân/bàn chân; khác với 腿 là cẳng chân/chân nói rộng.",
+              "notes": []
+            }
           }
         ]
       },
@@ -1385,7 +1917,7 @@
                 "id": "3eca03f3-67c0-40d2-9fee-8e57a4ad43ad",
                 "zh": "王老师，加油儿啊！",
                 "vi": "Thầy Vương, cố lên nhé!",
-                "pinyin": "",
+                "pinyin": "Wáng lǎoshī, jiā yóur a!",
                 "en": "",
                 "highlight": [],
                 "grammar_refs": [],
@@ -1400,7 +1932,7 @@
                 "id": "0ee91982-67ac-436a-881d-a00ebb257ebe",
                 "zh": "考试快到了，大家加油！",
                 "vi": "Sắp thi rồi, mọi người cố lên!",
-                "pinyin": "",
+                "pinyin": "Kǎoshì kuài dào le, dàjiā jiāyóu!",
                 "en": "",
                 "highlight": [],
                 "grammar_refs": [],
@@ -1428,7 +1960,7 @@
                 "id": "6ff01e57-e23b-475e-9cd6-da43acc8bd0a",
                 "zh": "坚持就是胜利。",
                 "vi": "Kiên trì chính là thắng lợi.",
-                "pinyin": "",
+                "pinyin": "Jiānchí jiù shì shènglì.",
                 "en": "",
                 "highlight": [],
                 "grammar_refs": [],
@@ -1443,7 +1975,7 @@
                 "id": "b45bc13e-c6e0-4fab-a808-4b732cb085a7",
                 "zh": "别放弃，再努力一下，坚持就是胜利。",
                 "vi": "Đừng bỏ cuộc, cố thêm chút nữa, kiên trì là thắng lợi.",
-                "pinyin": "",
+                "pinyin": "Bié fàngqì, zài nǔlì yíxià, jiānchí jiù shì shènglì.",
                 "en": "",
                 "highlight": [],
                 "grammar_refs": [],
@@ -1471,7 +2003,7 @@
                 "id": "b71a23a7-1107-46ec-b43e-de46214c5d0a",
                 "zh": "我比不了你们年轻人啦。",
                 "vi": "Tôi không so được với người trẻ các em nữa rồi.",
-                "pinyin": "",
+                "pinyin": "Wǒ bǐ bù liǎo nǐmen niánqīngrén la.",
                 "en": "",
                 "highlight": [],
                 "grammar_refs": [],
@@ -1486,7 +2018,7 @@
                 "id": "1b3405fa-a29a-4d15-a133-d8b1cc886dec",
                 "zh": "这方面我比不了他。",
                 "vi": "Về mặt này tôi không bằng anh ấy.",
-                "pinyin": "",
+                "pinyin": "Zhè fāngmiàn wǒ bǐ bù liǎo tā.",
                 "en": "",
                 "highlight": [],
                 "grammar_refs": [],
@@ -1514,7 +2046,7 @@
                 "id": "ba6f33e1-5a6f-47fc-896e-13e6e19ed2d0",
                 "zh": "世上无难事，只怕有心人。",
                 "vi": "Trên đời không có việc gì khó, chỉ sợ người có lòng.",
-                "pinyin": "",
+                "pinyin": "Shìshàng wú nánshì, zhǐ pà yǒuxīnrén.",
                 "en": "",
                 "highlight": [],
                 "grammar_refs": [],
@@ -1529,7 +2061,7 @@
                 "id": "7ab25155-2d20-40f8-81ed-fc1b421cdbd6",
                 "zh": "只要我们好好儿练，就一定能演好。“世上无难事，只怕有心人”嘛！",
                 "vi": "Chỉ cần chúng ta luyện tập thật tốt, nhất định sẽ diễn tốt.",
-                "pinyin": "",
+                "pinyin": "Zhǐyào wǒmen hǎohāor liàn, jiù yídìng néng yǎn hǎo. “Shìshàng wú nánshì, zhǐ pà yǒuxīnrén” ma!",
                 "en": "",
                 "highlight": [],
                 "grammar_refs": [],
@@ -1560,8 +2092,8 @@
             "id": "f8ec59f3-898a-47b2-b536-44dfd8183393",
             "type": "grammar_point",
             "order": 1,
-            "title": "可能补语（2）：动词 + 得 / 不 + 复合趋向补语",
-            "title_vi": "Bổ ngữ khả năng với bổ ngữ xu hướng kép",
+            "title": "可能补语（2）：动词 + 得 / 不 + 动 / 好 / 住",
+            "title_vi": "Bổ ngữ khả năng với 动 / 好 / 住",
             "level": "HSK3+",
             "tags": [
               "语法",
@@ -1575,7 +2107,7 @@
                 "type": "grammar_overview",
                 "order": 1,
                 "title": "Bản chất",
-                "content_vi": "Diễn tả có thể đạt được hướng/kết quả sau hành động hay không: lên được, xuống được, vào được, ra được, chứa được...",
+                "content_vi": "Diễn tả hành động có làm nổi/làm tốt/ghi nhớ được hay không: 搬得动, 演得好, 记得住.",
                 "examples": []
               },
               {
@@ -1583,20 +2115,20 @@
                 "type": "grammar_structure",
                 "order": 2,
                 "title": "Cấu trúc chính",
-                "pattern": "V + 得 / 不 + 复合趋向补语 / 结果补语",
-                "meaning_vi": "Có làm được theo hướng/kết quả đó hay không.",
+                "pattern": "V + 得 / 不 + 动 / 好 / 住",
+                "meaning_vi": "Có làm nổi, làm tốt, giữ/nhớ được kết quả hay không.",
                 "formulas": [
                   {
                     "label": "khẳng định",
-                    "pattern": "V + 得 + 补语"
+                    "pattern": "V + 得 + 动 / 好 / 住"
                   },
                   {
                     "label": "phủ định",
-                    "pattern": "V + 不 + 补语"
+                    "pattern": "V + 不 + 动 / 好 / 住"
                   },
                   {
                     "label": "nghi vấn",
-                    "pattern": "V + 得 + 补语 + 吗？ / V得补语V不补语？"
+                    "pattern": "V得补语吗？ / V得补语V不补语？"
                   }
                 ],
                 "examples": [
@@ -1604,7 +2136,7 @@
                     "id": "5e614bf9-2578-4d49-87dc-107e6f3605d4",
                     "zh": "山这么高，你爬得上去吗？",
                     "vi": "Núi cao thế này, bạn leo lên được không?",
-                    "pinyin": "",
+                    "pinyin": "Shān zhème gāo, nǐ pá de shàngqù ma?",
                     "en": "",
                     "highlight": [
                       "爬得上去"
@@ -1620,7 +2152,7 @@
                     "id": "7ccdc8f9-59f3-4c7b-bd28-247acb68c535",
                     "zh": "我爬不上去。",
                     "vi": "Tôi leo lên không nổi.",
-                    "pinyin": "",
+                    "pinyin": "Wǒ pá bù shàngqù.",
                     "en": "",
                     "highlight": [
                       "爬不上去"
@@ -1636,7 +2168,7 @@
                     "id": "d84397d0-7b22-492a-a594-cb58d4dd46e0",
                     "zh": "这个地方这么小，坐得下二百多人吗？",
                     "vi": "Chỗ này nhỏ thế này, ngồi được hơn hai trăm người không?",
-                    "pinyin": "",
+                    "pinyin": "Zhège dìfang zhème xiǎo, zuò de xià èr bǎi duō rén ma?",
                     "en": "",
                     "highlight": [
                       "坐得下"
@@ -1647,10 +2179,58 @@
                     "vocab_refs": [],
                     "source_origin": "textbook",
                     "check_needed": false
+                  },
+                  {
+                    "id": "31b4ac9b-961c-4682-8352-cfed243f13a6",
+                    "zh": "你一个人搬得动吗？",
+                    "vi": "Một mình bạn chuyển nổi không?",
+                    "pinyin": "Nǐ yí ge rén bān de dòng ma?",
+                    "en": "",
+                    "highlight": [
+                      "搬得动"
+                    ],
+                    "grammar_refs": [
+                      "f8ec59f3-898a-47b2-b536-44dfd8183393"
+                    ],
+                    "vocab_refs": [],
+                    "source_origin": "textbook",
+                    "check_needed": false
+                  },
+                  {
+                    "id": "6fa17420-e2f3-4a3e-86c2-ce81fa7d9f70",
+                    "zh": "我担心这个节目演不好。",
+                    "vi": "Tôi lo tiết mục này diễn không hay được.",
+                    "pinyin": "Wǒ dānxīn zhège jiémù yǎn bù hǎo.",
+                    "en": "",
+                    "highlight": [
+                      "演不好"
+                    ],
+                    "grammar_refs": [
+                      "f8ec59f3-898a-47b2-b536-44dfd8183393"
+                    ],
+                    "vocab_refs": [],
+                    "source_origin": "textbook",
+                    "check_needed": false
+                  },
+                  {
+                    "id": "5f6161ff-5342-41f4-94f7-cecfb38cd49f",
+                    "zh": "你一天记得住二十个生词吗？",
+                    "vi": "Một ngày bạn nhớ được 20 từ mới không?",
+                    "pinyin": "Nǐ yì tiān jì de zhù èrshí ge shēngcí ma?",
+                    "en": "",
+                    "highlight": [
+                      "记得住"
+                    ],
+                    "grammar_refs": [
+                      "f8ec59f3-898a-47b2-b536-44dfd8183393"
+                    ],
+                    "vocab_refs": [],
+                    "source_origin": "textbook",
+                    "check_needed": false
                   }
                 ],
                 "notes_vi": [
-                  "能爬上去 không sai, nhưng 爬得上去 nhấn mạnh khả năng đạt được kết quả trong điều kiện cụ thể."
+                  "Theo PDF bài 21, trọng tâm của 可能补语（2）là 动 / 好 / 住; các mẫu hướng như 爬得上去 vẫn xuất hiện trong bài khóa và luyện tập."
                 ]
               }
             ]
@@ -1717,6 +2297,71 @@
                     }
                   }
                 ]
+              },
+              {
+                "id": "d58b8b4a-655a-4a3e-8456-c1ce6d51e413",
+                "type": "grammar_structure",
+                "order": 3,
+                "title": "Các điểm khác nhau theo PDF",
+                "pattern": "可能补语 vs 状态补语",
+                "meaning_vi": "可能补语 nói kết quả có thể thực hiện; 状态补语 nói trạng thái/mức độ đã xảy ra.",
+                "formulas": [
+                  {
+                    "label": "phủ định khả năng",
+                    "pattern": "V + 不 + 补语"
+                  },
+                  {
+                    "label": "phủ định trạng thái",
+                    "pattern": "V + 得 + 不 + 形容词/状态"
+                  },
+                  {
+                    "label": "正反疑问 khả năng",
+                    "pattern": "V得补语V不补语？"
+                  },
+                  {
+                    "label": "正反疑问 trạng thái",
+                    "pattern": "V得补语不补语？"
+                  }
+                ],
+                "examples": [
+                  {
+                    "id": "d3907e3f-5494-4696-a954-3b9e7e2be284",
+                    "zh": "她担心演不好这个节目。",
+                    "pinyin": "Tā dānxīn yǎn bù hǎo zhège jiémù.",
+                    "vi": "Cô ấy lo không diễn tốt được tiết mục này.",
+                    "en": "",
+                    "highlight": [
+                      "演不好"
+                    ],
+                    "grammar_refs": [
+                      "57b14753-688a-41b6-9e0d-b61dbbf574d7"
+                    ],
+                    "vocab_refs": [],
+                    "source_origin": "textbook",
+                    "check_needed": false
+                  },
+                  {
+                    "id": "824b9f20-fff5-4141-a49e-8358ae216882",
+                    "zh": "这个节目她演得不好。",
+                    "pinyin": "Zhège jiémù tā yǎn de bù hǎo.",
+                    "vi": "Tiết mục này cô ấy diễn không hay.",
+                    "en": "",
+                    "highlight": [
+                      "演得不好"
+                    ],
+                    "grammar_refs": [
+                      "57b14753-688a-41b6-9e0d-b61dbbf574d7"
+                    ],
+                    "vocab_refs": [],
+                    "source_origin": "textbook",
+                    "check_needed": false
+                  }
+                ],
+                "notes_vi": [
+                  "可能补语 có thể mang tân ngữ; 状态补语 thường không mang tân ngữ trực tiếp sau cụm 得."
+                ],
+                "source_origin": "textbook",
+                "check_needed": false
               }
             ]
           },
@@ -1760,7 +2405,7 @@
                     "id": "47d597ee-f98d-4604-907d-6e6946054ef4",
                     "zh": "只要我们好好儿练，就一定能演好。",
                     "vi": "Chỉ cần chúng ta luyện tập thật tốt, thì nhất định có thể diễn tốt.",
-                    "pinyin": "",
+                    "pinyin": "Zhǐyào wǒmen hǎohāor liàn, jiù yídìng néng yǎn hǎo.",
                     "en": "",
                     "highlight": [
                       "只要",
@@ -1777,7 +2422,7 @@
                     "id": "9a65ce46-32b1-443f-8743-753c90b62d0f",
                     "zh": "只要你不放弃，就还有机会。",
                     "vi": "Chỉ cần bạn không bỏ cuộc, thì vẫn còn cơ hội.",
-                    "pinyin": "",
+                    "pinyin": "Zhǐyào nǐ bú fàngqì, jiù hái yǒu jīhuì.",
                     "en": "",
                     "highlight": [
                       "只要",
@@ -1837,7 +2482,7 @@
                     "id": "bb711337-b38f-48f1-9703-2cd0058438fa",
                     "zh": "我准备了一首歌，不过，很长时间没唱了，恐怕唱不好。",
                     "vi": "Cô đã chuẩn bị một bài hát, nhưng lâu lắm rồi chưa hát, e là hát không hay.",
-                    "pinyin": "",
+                    "pinyin": "Wǒ zhǔnbèi le yì shǒu gē, búguò, hěn cháng shíjiān méi chàng le, kǒngpà chàng bù hǎo.",
                     "en": "",
                     "highlight": [
                       "恐怕"
@@ -1853,7 +2498,7 @@
                     "id": "6829a99e-8c28-481f-a33f-c15c2f232489",
                     "zh": "今天他恐怕来不了了。",
                     "vi": "Hôm nay e là anh ấy không đến được nữa.",
-                    "pinyin": "",
+                    "pinyin": "Jīntiān tā kǒngpà lái bù liǎo le.",
                     "en": "",
                     "highlight": [
                       "恐怕"
@@ -2136,18 +2781,28 @@
             "source_origin": "textbook",
             "check_needed": false,
             "word_bank": [
-              "学得了 / 学不了",
-              "学不了 / 学得了",
-              "修不好 / 修不了",
-              "记得住 / 记不住",
-              "上得去 / 上不去",
-              "用得了 / 用不了",
-              "找得到 / 找不到",
-              "走得动 / 走不动",
-              "搬得动 / 搬不动",
-              "参加得了 / 参加不了",
-              "放不进去 / 放得进去",
-              "爬得上去 / 爬不上去"
+              "学得了",
+              "学不了",
+              "记得住",
+              "记不住",
+              "修不好",
+              "修不了",
+              "上得去",
+              "上不去",
+              "用得了",
+              "用不了",
+              "找得到",
+              "找不到",
+              "走得动",
+              "走不动",
+              "搬得动",
+              "搬不动",
+              "参加得了",
+              "参加不了",
+              "放不进去",
+              "放得进去",
+              "爬得上去",
+              "爬不上去"
             ],
             "questions": [
               {
@@ -2183,7 +2838,7 @@
               {
                 "id": "7ccdf5ea-8943-40f8-b46c-5476825c5360",
                 "prompt": "他感冒了，明天的比赛可能____________了。",
-                "answer": "参加不了了"
+                "answer": "参加不了"
               },
               {
                 "id": "5808cb3e-509e-43fa-89bd-70c5334f1c6e",
@@ -2230,11 +2885,11 @@
                 "lines": [
                   "A：请你填一下儿这张表。",
                   "B：对不起，有没有法文的？中文的我____________。",
-                  "A：英文的你填写了吗？",
+                  "A：英文的你填写得了吗？",
                   "B：英文的我也____________。",
                   "A：那怎么办呢？"
                 ],
-                "answer_hint": "看不懂/填不了；填不好/填不了"
+                "answer_hint": "填不了；填不了"
               }
             ],
             "rendering": {
@@ -2452,7 +3107,7 @@
                 "order": 1,
                 "zh": "从前，有几个人得到了一壶酒。他们谁都想喝这壶酒，可是这壶酒只够一个人喝，给谁喝呢，半天决定不了。一个人说：“这样吧，我们每个人都在地上画一条蛇。谁先画完，这壶酒就给谁喝。”",
                 "vi": "Ngày xưa, có mấy người có được một bình rượu. Ai cũng muốn uống bình rượu này, nhưng bình rượu chỉ đủ cho một người uống. Vậy nên đưa cho ai uống đây? Nghĩ mãi nửa ngày vẫn không quyết định được. Một người nói: “Thế này nhé, mỗi người chúng ta vẽ một con rắn trên mặt đất. Ai vẽ xong trước thì bình rượu này sẽ cho người đó uống.”",
-                "pinyin": "",
+                "pinyin": "Cóngqián, yǒu jǐ ge rén dédào le yì hú jiǔ. Tāmen shéi dōu xiǎng hē zhè hú jiǔ, kěshì zhè hú jiǔ zhǐ gòu yí ge rén hē, gěi shéi hē ne, bàntiān juédìng bù liǎo. Yí ge rén shuō: “Zhèyàng ba, wǒmen měi ge rén dōu zài dì shang huà yì tiáo shé. Shéi xiān huà wán, zhè hú jiǔ jiù gěi shéi hē.”",
                 "source_origin": "textbook",
                 "check_needed": false
               },
@@ -2461,7 +3116,7 @@
                 "order": 2,
                 "zh": "大家都同意他的办法，于是就在地上画了起来。",
                 "vi": "Mọi người đều đồng ý với cách của anh ta, thế là bắt đầu vẽ trên mặt đất.",
-                "pinyin": "",
+                "pinyin": "Dàjiā dōu tóngyì tā de bànfǎ, yúshì jiù zài dì shang huà le qǐlai.",
                 "source_origin": "textbook",
                 "check_needed": false
               },
@@ -2470,7 +3125,7 @@
                 "order": 3,
                 "zh": "有一个人很快把蛇画好了。他看别人还都没有画完，就左手拿起酒壶，右手又画起来，还得意地说：“你们画得太慢了！你们看我，还能给蛇添上几只脚呢。”",
                 "vi": "Có một người rất nhanh đã vẽ xong con rắn. Anh ta thấy người khác vẫn chưa vẽ xong, bèn tay trái cầm bình rượu lên, tay phải lại tiếp tục vẽ, còn đắc ý nói: “Các anh vẽ chậm quá! Nhìn tôi này, tôi còn có thể thêm mấy cái chân cho con rắn nữa đấy.”",
-                "pinyin": "",
+                "pinyin": "Yǒu yí ge rén hěn kuài bǎ shé huà hǎo le. Tā kàn biérén hái dōu méiyǒu huà wán, jiù zuǒ shǒu ná qǐ jiǔhú, yòu shǒu yòu huà qǐlai, hái déyì de shuō: “Nǐmen huà de tài màn le! Nǐmen kàn wǒ, hái néng gěi shé tiān shàng jǐ zhī jiǎo ne.”",
                 "source_origin": "textbook",
                 "check_needed": false
               },
@@ -2479,7 +3134,7 @@
                 "order": 4,
                 "zh": "当他正在给蛇画脚的时候，另一个人也把蛇画好了，就把酒壶拿了过去，说：“蛇是没有脚的，你给它画上了脚，就不是蛇了。所以，第一个画完蛇的是我，不是你！”说完就把酒喝了。",
                 "vi": "Khi anh ta đang vẽ chân cho con rắn, một người khác cũng vẽ xong con rắn, bèn cầm bình rượu đi và nói: “Rắn vốn không có chân. Anh vẽ thêm chân cho nó thì nó không còn là rắn nữa. Vì vậy, người đầu tiên vẽ xong rắn là tôi, không phải anh!” Nói xong liền uống bình rượu.",
-                "pinyin": "",
+                "pinyin": "Dāng tā zhèngzài gěi shé huà jiǎo de shíhou, lìng yí ge rén yě bǎ shé huà hǎo le, jiù bǎ jiǔhú ná le guòqù, shuō: “Shé shì méiyǒu jiǎo de, nǐ gěi tā huà shàng le jiǎo, jiù bú shì shé le. Suǒyǐ, dì yī ge huà wán shé de shì wǒ, bú shì nǐ!” Shuō wán jiù bǎ jiǔ hē le.",
                 "source_origin": "textbook",
                 "check_needed": false
               }
@@ -2508,12 +3163,100 @@
         "check_needed": false,
         "items": [
           {
-            "id": "33bbf7c1-79c1-48ef-b67f-efb8d186cc5a",
+            "id": "76b55f33-3a62-47a5-b59c-0d94f75ee886",
             "type": "character_writing_item",
             "order": 1,
+            "hanzi": "无",
+            "pinyin": "wú",
+            "meaning_vi": "không; không có",
+            "example_word": "无",
+            "source_origin": "textbook",
+            "check_needed": false
+          },
+          {
+            "id": "7d6bd634-864e-4d45-ad19-e7308c743b8b",
+            "type": "character_writing_item",
+            "order": 2,
+            "hanzi": "怕",
+            "pinyin": "pà",
+            "meaning_vi": "sợ; e rằng",
+            "example_word": "怕",
+            "source_origin": "textbook",
+            "check_needed": false
+          },
+          {
+            "id": "3dd99e54-cdad-4fa4-be2d-613446e9b82c",
+            "type": "character_writing_item",
+            "order": 3,
+            "hanzi": "心",
+            "pinyin": "xīn",
+            "meaning_vi": "tim; lòng; tâm",
+            "example_word": "心",
+            "source_origin": "textbook",
+            "check_needed": false
+          },
+          {
+            "id": "beb1a89f-3abf-4e2e-bc12-d6adc3e4e275",
+            "type": "character_writing_item",
+            "order": 4,
+            "hanzi": "喘",
+            "pinyin": "chuǎn",
+            "meaning_vi": "thở dốc",
+            "example_word": "喘气",
+            "source_origin": "textbook",
+            "check_needed": false
+          },
+          {
+            "id": "8ee5ba6b-0ff4-41d1-8540-08c5db77570a",
+            "type": "character_writing_item",
+            "order": 5,
+            "hanzi": "恐",
+            "pinyin": "kǒng",
+            "meaning_vi": "sợ; e rằng",
+            "example_word": "恐怕",
+            "source_origin": "textbook",
+            "check_needed": false
+          },
+          {
+            "id": "cd98a72f-20ba-4b78-b197-f575f5fd1bc2",
+            "type": "character_writing_item",
+            "order": 6,
+            "hanzi": "争",
+            "pinyin": "zhēng",
+            "meaning_vi": "tranh; giành; cố gắng đạt",
+            "example_word": "争取",
+            "source_origin": "textbook",
+            "check_needed": false
+          },
+          {
+            "id": "8ac714c0-06a5-4424-bc1c-682a71310d2b",
+            "type": "character_writing_item",
+            "order": 7,
+            "hanzi": "胜",
+            "pinyin": "shèng",
+            "meaning_vi": "thắng; thắng lợi",
+            "example_word": "胜利",
+            "source_origin": "textbook",
+            "check_needed": false
+          },
+          {
+            "id": "ebeffaba-b6fe-4980-915c-7951c07fe4a8",
+            "type": "character_writing_item",
+            "order": 8,
+            "hanzi": "危",
+            "pinyin": "wēi",
+            "meaning_vi": "nguy; nguy hiểm",
+            "example_word": "危险",
+            "source_origin": "textbook",
+            "check_needed": false
+          },
+          {
+            "id": "33bbf7c1-79c1-48ef-b67f-efb8d186cc5a",
+            "type": "character_writing_item",
+            "order": 9,
             "hanzi": "险",
             "pinyin": "xiǎn",
-            "meaning_vi": "nguy hiểm; hiểm",
+            "meaning_vi": "hiểm; nguy hiểm",
             "example_word": "危险",
             "source_origin": "textbook",
             "check_needed": false
@@ -2521,10 +3264,10 @@
           {
             "id": "e291c92e-298f-49b5-bd05-5de86da3e4fb",
             "type": "character_writing_item",
-            "order": 2,
+            "order": 10,
             "hanzi": "积",
             "pinyin": "jī",
-            "meaning_vi": "tích; gom lại; tích cực",
+            "meaning_vi": "tích; tích cực",
             "example_word": "积极",
             "source_origin": "textbook",
             "check_needed": false
@@ -2532,7 +3275,7 @@
           {
             "id": "df10490e-265f-4ba4-a30a-58e79f14c6b2",
             "type": "character_writing_item",
-            "order": 3,
+            "order": 11,
             "hanzi": "底",
             "pinyin": "dǐ",
             "meaning_vi": "đáy; cuối; tận cùng",
@@ -2543,7 +3286,7 @@
           {
             "id": "259742c7-fee4-4a5f-93ef-4f8323c6a728",
             "type": "character_writing_item",
-            "order": 4,
+            "order": 12,
             "hanzi": "背",
             "pinyin": "bèi",
             "meaning_vi": "học thuộc; đọc thuộc lòng",
@@ -2554,7 +3297,7 @@
           {
             "id": "ea8080d5-339c-4116-a6ec-c23d6e9a45a1",
             "type": "character_writing_item",
-            "order": 5,
+            "order": 13,
             "hanzi": "纠",
             "pinyin": "jiū",
             "meaning_vi": "sửa; uốn nắn; chỉnh lại",
@@ -2640,7 +3383,7 @@
           "source_origin": "textbook",
           "check_needed": false,
           "page_start": 134,
-          "page_end": 167
+          "page_end": 149
         },
         {
           "name": "Tong_hop_tu_vung_Han_ngu_quyen_2_Bai_1-25.docx",

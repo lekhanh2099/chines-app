@@ -43,7 +43,7 @@
                 "vi": "Điền Phương, Thượng Hải thế nào? Tôi muốn đi tàu hỏa đến Thượng Hải du lịch.",
                 "grammar_refs": [],
                 "vocab_refs": [],
-                "pinyin": "",
+                "pinyin": "Tián Fāng， Shànghǎi zěn me yàng？ wǒ xiǎng zuò huǒ chē qù Shànghǎi lǚ xíng。",
                 "en": "",
                 "audio_key": "",
                 "source_origin": "textbook",
@@ -60,10 +60,11 @@
                 ],
                 "vocab_refs": [
                   "68c05a12-9d8e-45d9-a413-786bcf2f780a",
+                  "3dc505f1-bc0e-4a96-b448-17fed89fdc60",
                   "1fbd69b7-603a-44ea-8d57-10cd4def9ced",
-                  "3dc505f1-bc0e-4a96-b448-17fed89fdc60"
+                  "8c18cf3c-e9dc-42e1-8faf-eb26799cabab"
                 ],
-                "pinyin": "",
+                "pinyin": "Shànghǎi hěn hǎo， zhè jǐ nián biàn huà hěn dà。 jīn nián shǔ jià wǒ hái zài nà ér wán ér le yí ge duō yuè ne。 wǒ yí ge tóng xué jiā jiù zài Shànghǎi。",
                 "en": "",
                 "audio_key": "",
                 "source_origin": "textbook",
@@ -81,7 +82,7 @@
                 "vocab_refs": [
                   "188412d4-4c23-4d60-b7b2-21f3490199e7"
                 ],
-                "pinyin": "",
+                "pinyin": "Shànghǎi bǐ Běijīng dà ba？",
                 "en": "",
                 "audio_key": "",
                 "source_origin": "textbook",
@@ -99,16 +100,18 @@
                   "f8ec59f3-898a-47b2-b536-44dfd8183393"
                 ],
                 "vocab_refs": [
+                  "7eccd5e8-dac0-4f36-be2e-abcc0a2bdfcd",
+                  "f0684cb3-4577-4e6c-9f22-7d97c89692b3",
                   "5ea44727-d97c-467b-b1b8-babd195df50d",
-                  "54613016-834a-4fc3-9912-2357a6d27058",
                   "0da97406-c3ac-4fcb-a51c-398a59c3fbae",
+                  "d5b362a7-c8f6-4f25-b2b5-0f1749c8afbb",
+                  "8c18cf3c-e9dc-42e1-8faf-eb26799cabab",
+                  "54613016-834a-4fc3-9912-2357a6d27058",
                   "54b36889-82be-485b-8342-fb8aab572065",
                   "1354b1a3-93cc-4505-8d7f-c5550a1d6ae9",
-                  "f0684cb3-4577-4e6c-9f22-7d97c89692b3",
-                  "d5b362a7-c8f6-4f25-b2b5-0f1749c8afbb",
-                  "7eccd5e8-dac0-4f36-be2e-abcc0a2bdfcd"
+                  "188412d4-4c23-4d60-b7b2-21f3490199e7"
                 ],
-                "pinyin": "",
+                "pinyin": "Bù， Shànghǎi méi yǒu Běijīng dà， bù guò rén kǒu bǐ Běijīng duō。 Shànghǎi shì zhōng guó rén kǒu zuì duō de chéng shì。 zhè jǐ nián， zēng jiā le bù shǎo xīn jiàn zhù， xiàn zài bǐ guò qù biàn de gèng piàoliang le。",
                 "en": "",
                 "audio_key": "",
                 "source_origin": "textbook",
@@ -124,7 +127,7 @@
                   "c3d31639-0f40-4b2f-aa50-5dda9d443b78"
                 ],
                 "vocab_refs": [],
-                "pinyin": "",
+                "pinyin": "Shànghǎi de gōng yuán yǒu Běijīng de duō ma？",
                 "en": "",
                 "audio_key": "",
                 "source_origin": "textbook",
@@ -141,7 +144,7 @@
                   "c3d31639-0f40-4b2f-aa50-5dda9d443b78"
                 ],
                 "vocab_refs": [],
-                "pinyin": "",
+                "pinyin": "Shànghǎi de gōng yuán méi yǒu Běijīng de duō， yě méi yǒu Běijīng de gōng yuán zhè me dà。",
                 "en": "",
                 "audio_key": "",
                 "source_origin": "textbook",
@@ -159,9 +162,11 @@
                 ],
                 "vocab_refs": [
                   "91fa9f81-e5ef-4c4a-b29c-c4b6daa02196",
+                  "465b5fe3-3c02-42e1-8a47-1b018820cde1",
+                  "188412d4-4c23-4d60-b7b2-21f3490199e7",
                   "d45d5488-9293-41ae-9deb-1e5b51cee446"
                 ],
-                "pinyin": "",
+                "pinyin": "Shànghǎi de dōng tiān shì bú shì bǐ Běijīng nuǎn huo yì diǎnr？",
                 "en": "",
                 "audio_key": "",
                 "source_origin": "textbook",
@@ -177,9 +182,11 @@
                   "f8ec59f3-898a-47b2-b536-44dfd8183393"
                 ],
                 "vocab_refs": [
+                  "465b5fe3-3c02-42e1-8a47-1b018820cde1",
+                  "188412d4-4c23-4d60-b7b2-21f3490199e7",
                   "d45d5488-9293-41ae-9deb-1e5b51cee446"
                 ],
-                "pinyin": "",
+                "pinyin": "Shànghǎi bù yí dìng bǐ Běijīng nuǎn huo。",
                 "en": "",
                 "audio_key": "",
                 "source_origin": "textbook",
@@ -197,11 +204,13 @@
                 ],
                 "vocab_refs": [
                   "8a5b1d09-23a6-4182-96e6-9bf4d761a1e1",
-                  "be7a835d-ff8f-4a86-9fd8-27c5f1093f0c",
+                  "ff3e1818-66a9-4532-880b-02c9cacb0e5b",
+                  "188412d4-4c23-4d60-b7b2-21f3490199e7",
                   "7a89dc80-d79d-4c2f-988c-d0f54e240d19",
-                  "ff3e1818-66a9-4532-880b-02c9cacb0e5b"
+                  "3993fa67-0c01-4fda-9f60-2befdc1c71cb",
+                  "be7a835d-ff8f-4a86-9fd8-27c5f1093f0c"
                 ],
-                "pinyin": "",
+                "pinyin": "Kě shì， wǒ kàn tiānqì yùbào， Shànghǎi de qìwēn bǐ Běijīng gāo de duō。",
                 "en": "",
                 "audio_key": "",
                 "source_origin": "textbook",
@@ -218,13 +227,18 @@
                   "c6cd6c38-22fc-4546-a398-39efe02d6c17"
                 ],
                 "vocab_refs": [
-                  "ff3e1818-66a9-4532-880b-02c9cacb0e5b",
+                  "465b5fe3-3c02-42e1-8a47-1b018820cde1",
+                  "6b74fed9-efca-4129-b396-588abe46a743",
                   "0125bdae-fe4e-48fb-8264-145e95c75933",
-                  "689eb64b-5d4f-469f-9afa-74017d399614",
                   "d45d5488-9293-41ae-9deb-1e5b51cee446",
-                  "c99a633b-27a2-429b-a139-44113a84c189"
+                  "ff3e1818-66a9-4532-880b-02c9cacb0e5b",
+                  "c99a633b-27a2-429b-a139-44113a84c189",
+                  "689eb64b-5d4f-469f-9afa-74017d399614",
+                  "188412d4-4c23-4d60-b7b2-21f3490199e7",
+                  "3dc505f1-bc0e-4a96-b448-17fed89fdc60",
+                  "3993fa67-0c01-4fda-9f60-2befdc1c71cb"
                 ],
-                "pinyin": "",
+                "pinyin": "Shì， Shànghǎi de qìwēn bǐ Běijīng gāo hǎo jǐ dù， bù guò yīn wèi wū zi lǐ méi yǒu nuǎn qì， suǒ yǐ gǎn jué hái méi yǒu Běijīng nuǎn huo。",
                 "en": "",
                 "audio_key": "",
                 "source_origin": "textbook",
@@ -238,9 +252,10 @@
                 "vi": "Nhà người Thượng Hải không có hệ thống sưởi à?",
                 "grammar_refs": [],
                 "vocab_refs": [
-                  "689eb64b-5d4f-469f-9afa-74017d399614"
+                  "689eb64b-5d4f-469f-9afa-74017d399614",
+                  "d45d5488-9293-41ae-9deb-1e5b51cee446"
                 ],
-                "pinyin": "",
+                "pinyin": "Shànghǎi rén jia lǐ méi yǒu nuǎn qì？",
                 "en": "",
                 "audio_key": "",
                 "source_origin": "textbook",
@@ -254,9 +269,11 @@
                 "vi": "Gia đình bình thường thì không có, nhưng trong khách sạn và nhà hàng thì có.",
                 "grammar_refs": [],
                 "vocab_refs": [
+                  "3577444e-0a9f-4c8d-8f57-34d38a262cb2",
+                  "c9ead21d-0fa1-4830-ae9d-efdc69c5eb40",
                   "79358c6f-3427-4c28-98f3-7ef98c7033c3"
                 ],
-                "pinyin": "",
+                "pinyin": "Yì bān de jiā tíng méi yǒu， bù guò lǚ guǎn hé fàn diàn lǐ yǒu。",
                 "en": "",
                 "audio_key": "",
                 "source_origin": "textbook",
@@ -283,7 +300,7 @@
                 "vi": "Thầy Vương, thầy có thích âm nhạc không?",
                 "grammar_refs": [],
                 "vocab_refs": [],
-                "pinyin": "",
+                "pinyin": "Wáng lǎo shī， nǐ xǐhuan yīnyuè ma？",
                 "en": "",
                 "audio_key": "",
                 "source_origin": "textbook",
@@ -297,13 +314,13 @@
                 "vi": "Thích chứ! Tôi là một người mê âm nhạc, trong máy tính của tôi, chỉ riêng nhạc giao hưởng thôi đã tải mấy trăm bài rồi.",
                 "grammar_refs": [],
                 "vocab_refs": [
-                  "dc0f8e06-a359-4907-a8d8-fc9b02260590",
-                  "c43cedbf-7024-4ec1-922f-e75119114baf",
                   "d9991c79-3454-4247-bf18-f14f43b4a24a",
+                  "085e60d5-dd1c-4585-ac6b-0f1db0ded936",
                   "55cd807c-eec7-412d-99db-f4e6508b170f",
-                  "085e60d5-dd1c-4585-ac6b-0f1db0ded936"
+                  "dc0f8e06-a359-4907-a8d8-fc9b02260590",
+                  "c43cedbf-7024-4ec1-922f-e75119114baf"
                 ],
-                "pinyin": "",
+                "pinyin": "Xǐhuan a！ wǒ shì gè yīnyuè mí， wǒ diàn nǎo lǐ， guāng jiāoxiǎngyuè jiù xià zài le hǎo jǐ bǎi shǒu ne。",
                 "en": "",
                 "audio_key": "",
                 "source_origin": "textbook",
@@ -319,10 +336,15 @@
                   "57b14753-688a-41b6-9e0d-b61dbbf574d7"
                 ],
                 "vocab_refs": [
+                  "d5bb9383-11d7-42de-bb61-7f7619ee892a",
+                  "092a8c16-3739-4685-a4c0-39365071bd48",
+                  "d5b362a7-c8f6-4f25-b2b5-0f1749c8afbb",
                   "ba7ff0f9-b633-4516-ab3d-22b96046a1cf",
-                  "2185ee67-885d-4ffb-83e2-e97be4070796"
+                  "188412d4-4c23-4d60-b7b2-21f3490199e7",
+                  "2185ee67-885d-4ffb-83e2-e97be4070796",
+                  "3dc505f1-bc0e-4a96-b448-17fed89fdc60"
                 ],
-                "pinyin": "",
+                "pinyin": "Wǒ yě hěn xǐhuan yīnyuè， yěxǔ bǐ nǐ gèng xǐhuan。 nǐ xǐhuan gǔdiǎn yīnyuè hái shì xǐhuan xiàndài yīnyuè？",
                 "en": "",
                 "audio_key": "",
                 "source_origin": "textbook",
@@ -336,11 +358,13 @@
                 "vi": "Tôi thích nhạc cổ điển. Tôi thích nghe các danh khúc thế giới, còn thích nghe dân ca nữa.",
                 "grammar_refs": [],
                 "vocab_refs": [
-                  "22e66ee9-565e-4670-b2ac-4d5a9b500b38",
+                  "d5bb9383-11d7-42de-bb61-7f7619ee892a",
                   "275b46f4-3166-48b7-9766-58384178d1be",
+                  "22e66ee9-565e-4670-b2ac-4d5a9b500b38",
+                  "3dc505f1-bc0e-4a96-b448-17fed89fdc60",
                   "1190511f-5970-4304-8f84-d7201b287aeb"
                 ],
-                "pinyin": "",
+                "pinyin": "Wǒ xǐhuan gǔdiǎn yīnyuè。 xǐhuan tīng shìjiè míngqǔ， hái xǐhuan tīng míngē。",
                 "en": "",
                 "audio_key": "",
                 "source_origin": "textbook",
@@ -354,10 +378,11 @@
                 "vi": "Tôi cũng thích nhạc cổ điển. Thầy có thích ca khúc thịnh hành không?",
                 "grammar_refs": [],
                 "vocab_refs": [
+                  "cfb712c9-c4ca-4314-b6b2-696b40ace25e",
                   "d42d3d90-443d-45da-bed7-987b50034e92",
-                  "cfb712c9-c4ca-4314-b6b2-696b40ace25e"
+                  "d5bb9383-11d7-42de-bb61-7f7619ee892a"
                 ],
-                "pinyin": "",
+                "pinyin": "Wǒ yě xǐhuan gǔdiǎn yīnyuè。 nǐ xǐhuan liúxíng gēqǔ ma？",
                 "en": "",
                 "audio_key": "",
                 "source_origin": "textbook",
@@ -375,10 +400,13 @@
                   "f3302370-f1c2-4d08-99ba-fda75cc4a335"
                 ],
                 "vocab_refs": [
+                  "cfb712c9-c4ca-4314-b6b2-696b40ace25e",
                   "6059829f-ae21-43cf-ac0c-05e19639ec43",
-                  "fefd5441-7b6c-47e3-b823-9e149b947bf7"
+                  "fefd5441-7b6c-47e3-b823-9e149b947bf7",
+                  "d42d3d90-443d-45da-bed7-987b50034e92",
+                  "1190511f-5970-4304-8f84-d7201b287aeb"
                 ],
-                "pinyin": "",
+                "pinyin": "Zěn me shuō ne？ kě néng méi yǒu nǐ men niánqīng rén nà me xǐhuan。 wǒ jué de liúxíng gēqǔ de gēcí méi yǒu míngē xiě de hǎo。",
                 "en": "",
                 "audio_key": "",
                 "source_origin": "textbook",
@@ -394,9 +422,13 @@
                   "b7073860-473c-4cb7-82ba-943917998455"
                 ],
                 "vocab_refs": [
+                  "cfb712c9-c4ca-4314-b6b2-696b40ace25e",
+                  "fefd5441-7b6c-47e3-b823-9e149b947bf7",
+                  "d42d3d90-443d-45da-bed7-987b50034e92",
+                  "3dc505f1-bc0e-4a96-b448-17fed89fdc60",
                   "27761bd2-433a-44ef-b79a-9e6f0a34b9c9"
                 ],
-                "pinyin": "",
+                "pinyin": "Yǒuxiē liúxíng gēqǔ de gēcí xiě de hái shì bù cuò de。",
                 "en": "",
                 "audio_key": "",
                 "source_origin": "textbook",
@@ -412,9 +444,13 @@
                   "3253aaee-3b06-4864-9b11-98c656764ed4"
                 ],
                 "vocab_refs": [
-                  "861ed325-b320-4ae0-8eac-bb6bb8ebc215"
+                  "861ed325-b320-4ae0-8eac-bb6bb8ebc215",
+                  "fefd5441-7b6c-47e3-b823-9e149b947bf7",
+                  "8a5b1d09-23a6-4182-96e6-9bf4d761a1e1",
+                  "3dc505f1-bc0e-4a96-b448-17fed89fdc60",
+                  "1190511f-5970-4304-8f84-d7201b287aeb"
                 ],
-                "pinyin": "",
+                "pinyin": "Kě shì， wǒ hái shì jué de míngē de gēcí hǎo。 nǐ tīng zán men de míngē， “ zài nà yáoyuǎn de dì fāng ……”， xiě de duō hǎo！",
                 "en": "",
                 "audio_key": "",
                 "source_origin": "textbook",
@@ -439,16 +475,16 @@
             "order": 1,
             "hanzi": "变化",
             "pinyin": "biànhuà",
-            "meaning_vi": "biến hóa; thay đổi",
-            "meaning_en": "change; change",
-            "pos": "unknown",
+            "meaning_vi": "thay đổi; sự thay đổi, biến hóa",
+            "meaning_en": "to change; change",
+            "pos": "Động từ / Danh từ",
             "tags": [
               "main_vocab"
             ],
             "examples": [],
             "flashcard": {
               "front": "变化",
-              "back": "biànhuà — biến hóa; thay đổi",
+              "back": "biànhuà — thay đổi; sự thay đổi, biến hóa",
               "modes": [
                 "hanzi_to_meaning",
                 "meaning_to_hanzi",
@@ -458,7 +494,18 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false
+            "check_needed": false,
+            "pos_detail": {
+              "vi": "Động từ / Danh từ",
+              "cn": "动词 / 名词",
+              "normalized": "verb",
+              "schema_compatible_pos": "verb",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "Trong bảng từ vựng PDF ghi （动、名）.",
+              "notes": []
+            }
           },
           {
             "id": "8c18cf3c-e9dc-42e1-8faf-eb26799cabab",
@@ -466,16 +513,16 @@
             "order": 2,
             "hanzi": "变",
             "pinyin": "biàn",
-            "meaning_vi": "biến đổi; trở nên khác",
-            "meaning_en": "to change",
-            "pos": "unknown",
+            "meaning_vi": "thay đổi; trở nên khác",
+            "meaning_en": "to change; to become different",
+            "pos": "Động từ",
             "tags": [
               "main_vocab"
             ],
             "examples": [],
             "flashcard": {
               "front": "变",
-              "back": "biàn — biến đổi; trở nên khác",
+              "back": "biàn — thay đổi; trở nên khác",
               "modes": [
                 "hanzi_to_meaning",
                 "meaning_to_hanzi",
@@ -485,7 +532,18 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false
+            "check_needed": false,
+            "pos_detail": {
+              "vi": "Động từ",
+              "cn": "动词",
+              "normalized": "verb",
+              "schema_compatible_pos": "verb",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "",
+              "notes": []
+            }
           },
           {
             "id": "1fbd69b7-603a-44ea-8d57-10cd4def9ced",
@@ -495,7 +553,7 @@
             "pinyin": "shǔjià",
             "meaning_vi": "nghỉ hè",
             "meaning_en": "summer vacation",
-            "pos": "unknown",
+            "pos": "Danh từ",
             "tags": [
               "main_vocab"
             ],
@@ -512,7 +570,18 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false
+            "check_needed": false,
+            "pos_detail": {
+              "vi": "Danh từ",
+              "cn": "名词",
+              "normalized": "noun",
+              "schema_compatible_pos": "noun",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "",
+              "notes": []
+            }
           },
           {
             "id": "3dc505f1-bc0e-4a96-b448-17fed89fdc60",
@@ -520,16 +589,16 @@
             "order": 4,
             "hanzi": "还",
             "pinyin": "hái",
-            "meaning_vi": "còn; vẫn; lại còn",
-            "meaning_en": "still; also",
-            "pos": "unknown",
+            "meaning_vi": "còn; vẫn; dùng để nhấn mạnh",
+            "meaning_en": "used for emphasis; still; also",
+            "pos": "Phó từ",
             "tags": [
               "main_vocab"
             ],
             "examples": [],
             "flashcard": {
               "front": "还",
-              "back": "hái — còn; vẫn; lại còn",
+              "back": "hái — còn; vẫn; dùng để nhấn mạnh",
               "modes": [
                 "hanzi_to_meaning",
                 "meaning_to_hanzi",
@@ -539,7 +608,18 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false
+            "check_needed": false,
+            "pos_detail": {
+              "vi": "Phó từ",
+              "cn": "副词",
+              "normalized": "adverb",
+              "schema_compatible_pos": "adverb",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "Bài này đọc hái, nghĩa nhấn mạnh/còn/vẫn.",
+              "notes": []
+            }
           },
           {
             "id": "188412d4-4c23-4d60-b7b2-21f3490199e7",
@@ -548,8 +628,8 @@
             "hanzi": "比",
             "pinyin": "bǐ",
             "meaning_vi": "so với; hơn",
-            "meaning_en": "comparison word",
-            "pos": "unknown",
+            "meaning_en": "than; compared with",
+            "pos": "Giới từ",
             "tags": [
               "main_vocab"
             ],
@@ -566,7 +646,18 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false
+            "check_needed": false,
+            "pos_detail": {
+              "vi": "Giới từ",
+              "cn": "介词",
+              "normalized": "preposition",
+              "schema_compatible_pos": "preposition",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "",
+              "notes": []
+            }
           },
           {
             "id": "5ea44727-d97c-467b-b1b8-babd195df50d",
@@ -576,7 +667,7 @@
             "pinyin": "rénkǒu",
             "meaning_vi": "dân số",
             "meaning_en": "population",
-            "pos": "unknown",
+            "pos": "Danh từ",
             "tags": [
               "main_vocab"
             ],
@@ -593,7 +684,18 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false
+            "check_needed": false,
+            "pos_detail": {
+              "vi": "Danh từ",
+              "cn": "名词",
+              "normalized": "noun",
+              "schema_compatible_pos": "noun",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "",
+              "notes": []
+            }
           },
           {
             "id": "54613016-834a-4fc3-9912-2357a6d27058",
@@ -603,7 +705,7 @@
             "pinyin": "zuì",
             "meaning_vi": "nhất",
             "meaning_en": "most",
-            "pos": "unknown",
+            "pos": "Phó từ",
             "tags": [
               "main_vocab"
             ],
@@ -620,7 +722,18 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false
+            "check_needed": false,
+            "pos_detail": {
+              "vi": "Phó từ",
+              "cn": "副词",
+              "normalized": "adverb",
+              "schema_compatible_pos": "adverb",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "",
+              "notes": []
+            }
           },
           {
             "id": "0da97406-c3ac-4fcb-a51c-398a59c3fbae",
@@ -630,7 +743,7 @@
             "pinyin": "chéngshì",
             "meaning_vi": "thành phố",
             "meaning_en": "city",
-            "pos": "unknown",
+            "pos": "Danh từ",
             "tags": [
               "main_vocab"
             ],
@@ -647,7 +760,18 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false
+            "check_needed": false,
+            "pos_detail": {
+              "vi": "Danh từ",
+              "cn": "名词",
+              "normalized": "noun",
+              "schema_compatible_pos": "noun",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "",
+              "notes": []
+            }
           },
           {
             "id": "54b36889-82be-485b-8342-fb8aab572065",
@@ -657,7 +781,7 @@
             "pinyin": "zēngjiā",
             "meaning_vi": "tăng thêm; gia tăng",
             "meaning_en": "to increase",
-            "pos": "unknown",
+            "pos": "Động từ",
             "tags": [
               "main_vocab"
             ],
@@ -674,7 +798,18 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false
+            "check_needed": false,
+            "pos_detail": {
+              "vi": "Động từ",
+              "cn": "动词",
+              "normalized": "verb",
+              "schema_compatible_pos": "verb",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "",
+              "notes": []
+            }
           },
           {
             "id": "1354b1a3-93cc-4505-8d7f-c5550a1d6ae9",
@@ -682,16 +817,16 @@
             "order": 10,
             "hanzi": "建筑",
             "pinyin": "jiànzhù",
-            "meaning_vi": "kiến trúc; công trình kiến trúc; xây dựng",
-            "meaning_en": "architecture; building; to construct",
-            "pos": "unknown",
+            "meaning_vi": "xây dựng; kiến trúc, công trình kiến trúc",
+            "meaning_en": "to construct; architecture",
+            "pos": "Động từ / Danh từ",
             "tags": [
               "main_vocab"
             ],
             "examples": [],
             "flashcard": {
               "front": "建筑",
-              "back": "jiànzhù — kiến trúc; công trình kiến trúc; xây dựng",
+              "back": "jiànzhù — xây dựng; kiến trúc, công trình kiến trúc",
               "modes": [
                 "hanzi_to_meaning",
                 "meaning_to_hanzi",
@@ -701,7 +836,18 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false
+            "check_needed": false,
+            "pos_detail": {
+              "vi": "Động từ / Danh từ",
+              "cn": "动词 / 名词",
+              "normalized": "verb",
+              "schema_compatible_pos": "verb",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "Trong bảng từ vựng PDF ghi （动、名）.",
+              "notes": []
+            }
           },
           {
             "id": "f0684cb3-4577-4e6c-9f22-7d97c89692b3",
@@ -711,7 +857,7 @@
             "pinyin": "guòqù",
             "meaning_vi": "trước đây; quá khứ",
             "meaning_en": "past; formerly",
-            "pos": "unknown",
+            "pos": "Danh từ",
             "tags": [
               "main_vocab"
             ],
@@ -728,7 +874,18 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false
+            "check_needed": false,
+            "pos_detail": {
+              "vi": "Danh từ",
+              "cn": "名词",
+              "normalized": "noun",
+              "schema_compatible_pos": "noun",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "Bài này dùng nghĩa 'quá khứ/trước đây'.",
+              "notes": []
+            }
           },
           {
             "id": "d5b362a7-c8f6-4f25-b2b5-0f1749c8afbb",
@@ -738,7 +895,7 @@
             "pinyin": "gèng",
             "meaning_vi": "càng; hơn nữa",
             "meaning_en": "even more",
-            "pos": "unknown",
+            "pos": "Phó từ",
             "tags": [
               "main_vocab"
             ],
@@ -755,7 +912,18 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false
+            "check_needed": false,
+            "pos_detail": {
+              "vi": "Phó từ",
+              "cn": "副词",
+              "normalized": "adverb",
+              "schema_compatible_pos": "adverb",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "Bài này đọc gèng, nghĩa 'hơn/càng hơn'.",
+              "notes": []
+            }
           },
           {
             "id": "7eccd5e8-dac0-4f36-be2e-abcc0a2bdfcd",
@@ -765,7 +933,7 @@
             "pinyin": "piàoliang",
             "meaning_vi": "đẹp",
             "meaning_en": "beautiful",
-            "pos": "unknown",
+            "pos": "Tính từ",
             "tags": [
               "main_vocab"
             ],
@@ -782,7 +950,18 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false
+            "check_needed": false,
+            "pos_detail": {
+              "vi": "Tính từ",
+              "cn": "形容词",
+              "normalized": "adjective",
+              "schema_compatible_pos": "adjective",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "",
+              "notes": []
+            }
           },
           {
             "id": "91fa9f81-e5ef-4c4a-b29c-c4b6daa02196",
@@ -790,16 +969,16 @@
             "order": 14,
             "hanzi": "冬",
             "pinyin": "dōng",
-            "meaning_vi": "mùa đông; đông",
+            "meaning_vi": "mùa đông",
             "meaning_en": "winter",
-            "pos": "unknown",
+            "pos": "Danh từ",
             "tags": [
               "main_vocab"
             ],
             "examples": [],
             "flashcard": {
               "front": "冬",
-              "back": "dōng — mùa đông; đông",
+              "back": "dōng — mùa đông",
               "modes": [
                 "hanzi_to_meaning",
                 "meaning_to_hanzi",
@@ -809,17 +988,67 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false
+            "check_needed": false,
+            "pos_detail": {
+              "vi": "Danh từ",
+              "cn": "名词",
+              "normalized": "noun",
+              "schema_compatible_pos": "noun",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "PDF ghi 冬（天） dōng(tiān), nghĩa mùa đông.",
+              "notes": []
+            }
+          },
+          {
+            "id": "465b5fe3-3c02-42e1-8a47-1b018820cde1",
+            "type": "vocabulary_item",
+            "order": 15,
+            "hanzi": "暖和",
+            "pinyin": "nuǎnhuo",
+            "meaning_vi": "ấm áp; ấm",
+            "meaning_en": "warm",
+            "pos": "Tính từ",
+            "tags": [
+              "main_vocab",
+              "pdf_added"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "暖和",
+              "back": "nuǎnhuo — ấm áp; ấm",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook_pdf_verified",
+            "check_needed": false,
+            "pos_detail": {
+              "vi": "Tính từ",
+              "cn": "形容词",
+              "normalized": "adjective",
+              "schema_compatible_pos": "adjective",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "Từ chính trong PDF, bổ sung vào file.",
+              "notes": []
+            }
           },
           {
             "id": "8a5b1d09-23a6-4182-96e6-9bf4d761a1e1",
             "type": "vocabulary_item",
-            "order": 15,
+            "order": 16,
             "hanzi": "可是",
             "pinyin": "kěshì",
             "meaning_vi": "nhưng; thế nhưng",
             "meaning_en": "but",
-            "pos": "unknown",
+            "pos": "Liên từ",
             "tags": [
               "main_vocab"
             ],
@@ -836,17 +1065,28 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false
+            "check_needed": false,
+            "pos_detail": {
+              "vi": "Liên từ",
+              "cn": "连词",
+              "normalized": "conjunction",
+              "schema_compatible_pos": "conjunction",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "",
+              "notes": []
+            }
           },
           {
             "id": "be7a835d-ff8f-4a86-9fd8-27c5f1093f0c",
             "type": "vocabulary_item",
-            "order": 16,
+            "order": 17,
             "hanzi": "天气",
             "pinyin": "tiānqì",
             "meaning_vi": "thời tiết",
             "meaning_en": "weather",
-            "pos": "unknown",
+            "pos": "Danh từ",
             "tags": [
               "main_vocab"
             ],
@@ -863,17 +1103,28 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false
+            "check_needed": false,
+            "pos_detail": {
+              "vi": "Danh từ",
+              "cn": "名词",
+              "normalized": "noun",
+              "schema_compatible_pos": "noun",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "",
+              "notes": []
+            }
           },
           {
             "id": "7a89dc80-d79d-4c2f-988c-d0f54e240d19",
             "type": "vocabulary_item",
-            "order": 17,
+            "order": 18,
             "hanzi": "预报",
             "pinyin": "yùbào",
             "meaning_vi": "dự báo",
             "meaning_en": "forecast",
-            "pos": "unknown",
+            "pos": "Động từ / Danh từ",
             "tags": [
               "main_vocab"
             ],
@@ -890,17 +1141,67 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false
+            "check_needed": false,
+            "pos_detail": {
+              "vi": "Động từ / Danh từ",
+              "cn": "动词 / 名词",
+              "normalized": "verb",
+              "schema_compatible_pos": "verb",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "Trong bảng từ vựng PDF ghi （动、名）.",
+              "notes": []
+            }
+          },
+          {
+            "id": "3993fa67-0c01-4fda-9f60-2befdc1c71cb",
+            "type": "vocabulary_item",
+            "order": 19,
+            "hanzi": "气温",
+            "pinyin": "qìwēn",
+            "meaning_vi": "nhiệt độ không khí",
+            "meaning_en": "temperature",
+            "pos": "Danh từ",
+            "tags": [
+              "main_vocab",
+              "pdf_added"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "气温",
+              "back": "qìwēn — nhiệt độ không khí",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook_pdf_verified",
+            "check_needed": false,
+            "pos_detail": {
+              "vi": "Danh từ",
+              "cn": "名词",
+              "normalized": "noun",
+              "schema_compatible_pos": "noun",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "Từ chính trong PDF, bổ sung vào file.",
+              "notes": []
+            }
           },
           {
             "id": "ff3e1818-66a9-4532-880b-02c9cacb0e5b",
             "type": "vocabulary_item",
-            "order": 18,
+            "order": 20,
             "hanzi": "高",
             "pinyin": "gāo",
             "meaning_vi": "cao",
             "meaning_en": "high; tall",
-            "pos": "unknown",
+            "pos": "Tính từ",
             "tags": [
               "main_vocab"
             ],
@@ -917,17 +1218,28 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false
+            "check_needed": false,
+            "pos_detail": {
+              "vi": "Tính từ",
+              "cn": "形容词",
+              "normalized": "adjective",
+              "schema_compatible_pos": "adjective",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "",
+              "notes": []
+            }
           },
           {
             "id": "0125bdae-fe4e-48fb-8264-145e95c75933",
             "type": "vocabulary_item",
-            "order": 19,
+            "order": 21,
             "hanzi": "度",
             "pinyin": "dù",
             "meaning_vi": "độ; mức độ",
             "meaning_en": "degree",
-            "pos": "unknown",
+            "pos": "Danh từ / Lượng từ",
             "tags": [
               "main_vocab"
             ],
@@ -944,17 +1256,28 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false
+            "check_needed": false,
+            "pos_detail": {
+              "vi": "Danh từ / Lượng từ",
+              "cn": "名词 / 量词",
+              "normalized": "measure_word",
+              "schema_compatible_pos": "measure_word",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "Dùng làm đơn vị đo nhiệt độ: 十度、零下一度.",
+              "notes": []
+            }
           },
           {
             "id": "689eb64b-5d4f-469f-9afa-74017d399614",
             "type": "vocabulary_item",
-            "order": 20,
+            "order": 22,
             "hanzi": "低",
             "pinyin": "dī",
             "meaning_vi": "thấp",
             "meaning_en": "low",
-            "pos": "unknown",
+            "pos": "Tính từ",
             "tags": [
               "main_vocab"
             ],
@@ -971,17 +1294,67 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false
+            "check_needed": false,
+            "pos_detail": {
+              "vi": "Tính từ",
+              "cn": "形容词",
+              "normalized": "adjective",
+              "schema_compatible_pos": "adjective",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "Không nằm trong bảng sinh từ chính của PDF Bài 6; giữ lại vì file hiện có và xuất hiện trong luyện tập/đối lập 高-低.",
+              "notes": []
+            }
+          },
+          {
+            "id": "6b74fed9-efca-4129-b396-588abe46a743",
+            "type": "vocabulary_item",
+            "order": 23,
+            "hanzi": "屋子",
+            "pinyin": "wūzi",
+            "meaning_vi": "phòng; căn phòng",
+            "meaning_en": "room",
+            "pos": "Danh từ",
+            "tags": [
+              "main_vocab",
+              "pdf_added"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "屋子",
+              "back": "wūzi — phòng; căn phòng",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook_pdf_verified",
+            "check_needed": false,
+            "pos_detail": {
+              "vi": "Danh từ",
+              "cn": "名词",
+              "normalized": "noun",
+              "schema_compatible_pos": "noun",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "Từ chính trong PDF, bổ sung vào file.",
+              "notes": []
+            }
           },
           {
             "id": "d45d5488-9293-41ae-9deb-1e5b51cee446",
             "type": "vocabulary_item",
-            "order": 21,
+            "order": 24,
             "hanzi": "暖气",
             "pinyin": "nuǎnqì",
             "meaning_vi": "hệ thống sưởi; hơi ấm sưởi",
             "meaning_en": "heating",
-            "pos": "unknown",
+            "pos": "Danh từ",
             "tags": [
               "main_vocab"
             ],
@@ -998,17 +1371,28 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false
+            "check_needed": false,
+            "pos_detail": {
+              "vi": "Danh từ",
+              "cn": "名词",
+              "normalized": "noun",
+              "schema_compatible_pos": "noun",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "",
+              "notes": []
+            }
           },
           {
             "id": "c99a633b-27a2-429b-a139-44113a84c189",
             "type": "vocabulary_item",
-            "order": 22,
+            "order": 25,
             "hanzi": "感觉",
             "pinyin": "gǎnjué",
             "meaning_vi": "cảm giác; cảm thấy",
             "meaning_en": "to feel; feeling",
-            "pos": "unknown",
+            "pos": "Động từ / Danh từ",
             "tags": [
               "main_vocab"
             ],
@@ -1025,17 +1409,67 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false
+            "check_needed": false,
+            "pos_detail": {
+              "vi": "Động từ / Danh từ",
+              "cn": "动词 / 名词",
+              "normalized": "verb",
+              "schema_compatible_pos": "verb",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "Trong bảng từ vựng PDF ghi （动、名）.",
+              "notes": []
+            }
+          },
+          {
+            "id": "c9ead21d-0fa1-4830-ae9d-efdc69c5eb40",
+            "type": "vocabulary_item",
+            "order": 26,
+            "hanzi": "家庭",
+            "pinyin": "jiātíng",
+            "meaning_vi": "gia đình",
+            "meaning_en": "family",
+            "pos": "Danh từ",
+            "tags": [
+              "main_vocab",
+              "pdf_added"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "家庭",
+              "back": "jiātíng — gia đình",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook_pdf_verified",
+            "check_needed": false,
+            "pos_detail": {
+              "vi": "Danh từ",
+              "cn": "名词",
+              "normalized": "noun",
+              "schema_compatible_pos": "noun",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "Từ chính trong PDF, bổ sung vào file.",
+              "notes": []
+            }
           },
           {
             "id": "79358c6f-3427-4c28-98f3-7ef98c7033c3",
             "type": "vocabulary_item",
-            "order": 23,
+            "order": 27,
             "hanzi": "旅馆",
             "pinyin": "lǚguǎn",
             "meaning_vi": "khách sạn; nhà trọ",
             "meaning_en": "hotel",
-            "pos": "unknown",
+            "pos": "Danh từ",
             "tags": [
               "main_vocab"
             ],
@@ -1052,17 +1486,67 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false
+            "check_needed": false,
+            "pos_detail": {
+              "vi": "Danh từ",
+              "cn": "名词",
+              "normalized": "noun",
+              "schema_compatible_pos": "noun",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "",
+              "notes": []
+            }
+          },
+          {
+            "id": "3577444e-0a9f-4c8d-8f57-34d38a262cb2",
+            "type": "vocabulary_item",
+            "order": 28,
+            "hanzi": "饭店",
+            "pinyin": "fàndiàn",
+            "meaning_vi": "khách sạn; nhà hàng",
+            "meaning_en": "hotel; restaurant",
+            "pos": "Danh từ",
+            "tags": [
+              "main_vocab",
+              "pdf_added"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "饭店",
+              "back": "fàndiàn — khách sạn; nhà hàng",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook_pdf_verified",
+            "check_needed": false,
+            "pos_detail": {
+              "vi": "Danh từ",
+              "cn": "名词",
+              "normalized": "noun",
+              "schema_compatible_pos": "noun",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "Từ chính trong PDF, bổ sung vào file; trong tiếng Trung có thể là khách sạn hoặc nhà hàng tùy ngữ cảnh.",
+              "notes": []
+            }
           },
           {
             "id": "dc0f8e06-a359-4907-a8d8-fc9b02260590",
             "type": "vocabulary_item",
-            "order": 24,
+            "order": 29,
             "hanzi": "迷",
             "pinyin": "mí",
             "meaning_vi": "người mê; fan; mê",
             "meaning_en": "fan; enthusiast",
-            "pos": "unknown",
+            "pos": "Danh từ / Động từ",
             "tags": [
               "main_vocab"
             ],
@@ -1079,24 +1563,35 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false
+            "check_needed": false,
+            "pos_detail": {
+              "vi": "Danh từ / Động từ",
+              "cn": "名词 / 动词",
+              "normalized": "noun",
+              "schema_compatible_pos": "noun",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "Trong bảng từ vựng PDF ghi （名、动）.",
+              "notes": []
+            }
           },
           {
             "id": "c43cedbf-7024-4ec1-922f-e75119114baf",
             "type": "vocabulary_item",
-            "order": 25,
+            "order": 30,
             "hanzi": "光",
             "pinyin": "guāng",
-            "meaning_vi": "chỉ riêng; chỉ có",
-            "meaning_en": "only; just",
-            "pos": "unknown",
+            "meaning_vi": "chỉ; chỉ có; riêng",
+            "meaning_en": "only; alone",
+            "pos": "Phó từ",
             "tags": [
               "main_vocab"
             ],
             "examples": [],
             "flashcard": {
               "front": "光",
-              "back": "guāng — chỉ riêng; chỉ có",
+              "back": "guāng — chỉ; chỉ có; riêng",
               "modes": [
                 "hanzi_to_meaning",
                 "meaning_to_hanzi",
@@ -1106,17 +1601,28 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false
+            "check_needed": false,
+            "pos_detail": {
+              "vi": "Phó từ",
+              "cn": "副词",
+              "normalized": "adverb",
+              "schema_compatible_pos": "adverb",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "Bài này dùng nghĩa 'chỉ/chỉ có'.",
+              "notes": []
+            }
           },
           {
             "id": "d9991c79-3454-4247-bf18-f14f43b4a24a",
             "type": "vocabulary_item",
-            "order": 26,
+            "order": 31,
             "hanzi": "交响乐",
             "pinyin": "jiāoxiǎngyuè",
             "meaning_vi": "nhạc giao hưởng",
             "meaning_en": "symphony",
-            "pos": "unknown",
+            "pos": "Danh từ",
             "tags": [
               "main_vocab"
             ],
@@ -1133,17 +1639,28 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false
+            "check_needed": false,
+            "pos_detail": {
+              "vi": "Danh từ",
+              "cn": "名词",
+              "normalized": "noun",
+              "schema_compatible_pos": "noun",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "",
+              "notes": []
+            }
           },
           {
             "id": "55cd807c-eec7-412d-99db-f4e6508b170f",
             "type": "vocabulary_item",
-            "order": 27,
+            "order": 32,
             "hanzi": "下载",
             "pinyin": "xiàzài",
             "meaning_vi": "tải xuống; download",
             "meaning_en": "to download",
-            "pos": "unknown",
+            "pos": "Động từ",
             "tags": [
               "main_vocab"
             ],
@@ -1160,17 +1677,28 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false
+            "check_needed": false,
+            "pos_detail": {
+              "vi": "Động từ",
+              "cn": "动词",
+              "normalized": "verb",
+              "schema_compatible_pos": "verb",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "",
+              "notes": []
+            }
           },
           {
             "id": "085e60d5-dd1c-4585-ac6b-0f1db0ded936",
             "type": "vocabulary_item",
-            "order": 28,
+            "order": 33,
             "hanzi": "首",
             "pinyin": "shǒu",
             "meaning_vi": "lượng từ cho bài hát / bài thơ",
             "meaning_en": "measure word for songs/poems",
-            "pos": "unknown",
+            "pos": "Lượng từ",
             "tags": [
               "main_vocab"
             ],
@@ -1187,17 +1715,28 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false
+            "check_needed": false,
+            "pos_detail": {
+              "vi": "Lượng từ",
+              "cn": "量词",
+              "normalized": "measure_word",
+              "schema_compatible_pos": "measure_word",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "",
+              "notes": []
+            }
           },
           {
             "id": "ba7ff0f9-b633-4516-ab3d-22b96046a1cf",
             "type": "vocabulary_item",
-            "order": 29,
+            "order": 34,
             "hanzi": "也许",
             "pinyin": "yěxǔ",
             "meaning_vi": "có lẽ; biết đâu",
             "meaning_en": "perhaps",
-            "pos": "unknown",
+            "pos": "Phó từ",
             "tags": [
               "main_vocab"
             ],
@@ -1214,17 +1753,67 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false
+            "check_needed": false,
+            "pos_detail": {
+              "vi": "Phó từ",
+              "cn": "副词",
+              "normalized": "adverb",
+              "schema_compatible_pos": "adverb",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "",
+              "notes": []
+            }
+          },
+          {
+            "id": "d5bb9383-11d7-42de-bb61-7f7619ee892a",
+            "type": "vocabulary_item",
+            "order": 35,
+            "hanzi": "古典",
+            "pinyin": "gǔdiǎn",
+            "meaning_vi": "cổ điển",
+            "meaning_en": "classical",
+            "pos": "Tính từ",
+            "tags": [
+              "main_vocab",
+              "pdf_added"
+            ],
+            "examples": [],
+            "flashcard": {
+              "front": "古典",
+              "back": "gǔdiǎn — cổ điển",
+              "modes": [
+                "hanzi_to_meaning",
+                "meaning_to_hanzi",
+                "pinyin_to_hanzi",
+                "audio_to_hanzi"
+              ]
+            },
+            "audio_key": "",
+            "source_origin": "textbook_pdf_verified",
+            "check_needed": false,
+            "pos_detail": {
+              "vi": "Tính từ",
+              "cn": "形容词",
+              "normalized": "adjective",
+              "schema_compatible_pos": "adjective",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "Từ chính trong PDF, bổ sung vào file.",
+              "notes": []
+            }
           },
           {
             "id": "2185ee67-885d-4ffb-83e2-e97be4070796",
             "type": "vocabulary_item",
-            "order": 30,
+            "order": 36,
             "hanzi": "现代",
             "pinyin": "xiàndài",
             "meaning_vi": "hiện đại",
             "meaning_en": "modern",
-            "pos": "unknown",
+            "pos": "Danh từ / Tính từ",
             "tags": [
               "main_vocab"
             ],
@@ -1241,17 +1830,28 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false
+            "check_needed": false,
+            "pos_detail": {
+              "vi": "Danh từ / Tính từ",
+              "cn": "名词 / 形容词",
+              "normalized": "noun",
+              "schema_compatible_pos": "noun",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "Trong bảng từ vựng PDF ghi （名、形）.",
+              "notes": []
+            }
           },
           {
             "id": "092a8c16-3739-4685-a4c0-39365071bd48",
             "type": "vocabulary_item",
-            "order": 31,
+            "order": 37,
             "hanzi": "代",
             "pinyin": "dài",
             "meaning_vi": "đời; thế hệ; thời đại",
             "meaning_en": "generation; era",
-            "pos": "unknown",
+            "pos": "Danh từ / Hình vị",
             "tags": [
               "main_vocab"
             ],
@@ -1268,17 +1868,28 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false
+            "check_needed": false,
+            "pos_detail": {
+              "vi": "Danh từ / Hình vị",
+              "cn": "名词 / 语素",
+              "normalized": "noun",
+              "schema_compatible_pos": "noun",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "Không nằm riêng trong bảng sinh từ PDF; giữ lại vì file hiện có và liên quan 现代.",
+              "notes": []
+            }
           },
           {
             "id": "22e66ee9-565e-4670-b2ac-4d5a9b500b38",
             "type": "vocabulary_item",
-            "order": 32,
+            "order": 38,
             "hanzi": "世界",
             "pinyin": "shìjiè",
             "meaning_vi": "thế giới",
             "meaning_en": "world",
-            "pos": "unknown",
+            "pos": "Danh từ",
             "tags": [
               "main_vocab"
             ],
@@ -1295,17 +1906,28 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false
+            "check_needed": false,
+            "pos_detail": {
+              "vi": "Danh từ",
+              "cn": "名词",
+              "normalized": "noun",
+              "schema_compatible_pos": "noun",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "",
+              "notes": []
+            }
           },
           {
             "id": "275b46f4-3166-48b7-9766-58384178d1be",
             "type": "vocabulary_item",
-            "order": 33,
+            "order": 39,
             "hanzi": "名曲",
             "pinyin": "míngqǔ",
             "meaning_vi": "danh khúc; bản nhạc nổi tiếng",
             "meaning_en": "famous music piece",
-            "pos": "unknown",
+            "pos": "Danh từ",
             "tags": [
               "main_vocab"
             ],
@@ -1322,17 +1944,28 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false
+            "check_needed": false,
+            "pos_detail": {
+              "vi": "Danh từ",
+              "cn": "名词",
+              "normalized": "noun",
+              "schema_compatible_pos": "noun",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "",
+              "notes": []
+            }
           },
           {
             "id": "1190511f-5970-4304-8f84-d7201b287aeb",
             "type": "vocabulary_item",
-            "order": 34,
+            "order": 40,
             "hanzi": "民歌",
             "pinyin": "míngē",
             "meaning_vi": "dân ca",
             "meaning_en": "folk song",
-            "pos": "unknown",
+            "pos": "Danh từ",
             "tags": [
               "main_vocab"
             ],
@@ -1349,17 +1982,28 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false
+            "check_needed": false,
+            "pos_detail": {
+              "vi": "Danh từ",
+              "cn": "名词",
+              "normalized": "noun",
+              "schema_compatible_pos": "noun",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "",
+              "notes": []
+            }
           },
           {
             "id": "d42d3d90-443d-45da-bed7-987b50034e92",
             "type": "vocabulary_item",
-            "order": 35,
+            "order": 41,
             "hanzi": "流行",
             "pinyin": "liúxíng",
             "meaning_vi": "thịnh hành; phổ biến",
             "meaning_en": "popular; fashionable",
-            "pos": "unknown",
+            "pos": "Tính từ",
             "tags": [
               "main_vocab"
             ],
@@ -1376,17 +2020,28 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false
+            "check_needed": false,
+            "pos_detail": {
+              "vi": "Tính từ",
+              "cn": "形容词",
+              "normalized": "adjective",
+              "schema_compatible_pos": "adjective",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "",
+              "notes": []
+            }
           },
           {
             "id": "cfb712c9-c4ca-4314-b6b2-696b40ace25e",
             "type": "vocabulary_item",
-            "order": 36,
+            "order": 42,
             "hanzi": "歌曲",
             "pinyin": "gēqǔ",
             "meaning_vi": "ca khúc; bài hát",
             "meaning_en": "song",
-            "pos": "unknown",
+            "pos": "Danh từ",
             "tags": [
               "main_vocab"
             ],
@@ -1403,17 +2058,28 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false
+            "check_needed": false,
+            "pos_detail": {
+              "vi": "Danh từ",
+              "cn": "名词",
+              "normalized": "noun",
+              "schema_compatible_pos": "noun",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "",
+              "notes": []
+            }
           },
           {
             "id": "6059829f-ae21-43cf-ac0c-05e19639ec43",
             "type": "vocabulary_item",
-            "order": 37,
+            "order": 43,
             "hanzi": "年轻",
             "pinyin": "niánqīng",
             "meaning_vi": "trẻ; trẻ tuổi",
             "meaning_en": "young",
-            "pos": "unknown",
+            "pos": "Tính từ",
             "tags": [
               "main_vocab"
             ],
@@ -1430,17 +2096,28 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false
+            "check_needed": false,
+            "pos_detail": {
+              "vi": "Tính từ",
+              "cn": "形容词",
+              "normalized": "adjective",
+              "schema_compatible_pos": "adjective",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "Khẳng định chữ đúng theo PDF là 年轻.",
+              "notes": []
+            }
           },
           {
             "id": "fefd5441-7b6c-47e3-b823-9e149b947bf7",
             "type": "vocabulary_item",
-            "order": 38,
+            "order": 44,
             "hanzi": "歌词",
             "pinyin": "gēcí",
             "meaning_vi": "lời bài hát",
             "meaning_en": "lyrics",
-            "pos": "unknown",
+            "pos": "Danh từ",
             "tags": [
               "main_vocab"
             ],
@@ -1457,17 +2134,28 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false
+            "check_needed": false,
+            "pos_detail": {
+              "vi": "Danh từ",
+              "cn": "名词",
+              "normalized": "noun",
+              "schema_compatible_pos": "noun",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "",
+              "notes": []
+            }
           },
           {
             "id": "27761bd2-433a-44ef-b79a-9e6f0a34b9c9",
             "type": "vocabulary_item",
-            "order": 39,
+            "order": 45,
             "hanzi": "有些",
             "pinyin": "yǒuxiē",
             "meaning_vi": "có một số; hơi; phần nào",
             "meaning_en": "some; somewhat",
-            "pos": "unknown",
+            "pos": "Đại từ / Phó từ",
             "tags": [
               "main_vocab"
             ],
@@ -1484,17 +2172,28 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false
+            "check_needed": false,
+            "pos_detail": {
+              "vi": "Đại từ / Phó từ",
+              "cn": "代词 / 副词",
+              "normalized": "pronoun",
+              "schema_compatible_pos": "pronoun",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "PDF ghi （代）; trong cách dùng hiện đại còn có thể làm phó từ mức độ: 有些远.",
+              "notes": []
+            }
           },
           {
             "id": "861ed325-b320-4ae0-8eac-bb6bb8ebc215",
             "type": "vocabulary_item",
-            "order": 40,
+            "order": 46,
             "hanzi": "遥远",
             "pinyin": "yáoyuǎn",
             "meaning_vi": "xa xôi",
             "meaning_en": "distant",
-            "pos": "unknown",
+            "pos": "Tính từ",
             "tags": [
               "main_vocab"
             ],
@@ -1511,7 +2210,18 @@
             },
             "audio_key": "",
             "source_origin": "textbook",
-            "check_needed": false
+            "check_needed": false,
+            "pos_detail": {
+              "vi": "Tính từ",
+              "cn": "形容词",
+              "normalized": "adjective",
+              "schema_compatible_pos": "adjective",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "",
+              "notes": []
+            }
           }
         ]
       },
@@ -1557,7 +2267,7 @@
               {
                 "id": "021014f3-ff12-43b6-9d12-352cb6dc863b",
                 "zh": "这几年变化很大。",
-                "pinyin": "",
+                "pinyin": "Zhè jǐ nián biàn huà hěn dà。",
                 "vi": "Mấy năm gần đây thay đổi rất lớn.",
                 "en": "",
                 "highlight": [],
@@ -1585,7 +2295,7 @@
               {
                 "id": "29279e2c-cb63-4437-bbc5-7c46c15b6f13",
                 "zh": "上海的气温比北京高得多。",
-                "pinyin": "",
+                "pinyin": "Shànghǎi de qìwēn bǐ Běijīng gāo de duō。",
                 "vi": "Nhiệt độ Thượng Hải cao hơn Bắc Kinh nhiều.",
                 "en": "",
                 "highlight": [],
@@ -1613,7 +2323,7 @@
               {
                 "id": "3bb13249-7132-47f4-b974-8144c96f3e29",
                 "zh": "怎么说呢？可能没有你们年轻人那么喜欢。",
-                "pinyin": "",
+                "pinyin": "Zěn me shuō ne？ kě néng méi yǒu nǐ men niánqīng rén nà me xǐhuan。",
                 "vi": "Nói thế nào nhỉ? Có lẽ tôi không thích như người trẻ các bạn.",
                 "en": "",
                 "highlight": [],
@@ -1665,7 +2375,7 @@
                   {
                     "id": "c6fbeb40-156e-450c-a390-d58626cae49e",
                     "zh": "飞机比汽车快。",
-                    "pinyin": "",
+                    "pinyin": "Fēi jī bǐ qì chē kuài。",
                     "vi": "Máy bay nhanh hơn ô tô.",
                     "en": "",
                     "highlight": [],
@@ -1682,7 +2392,7 @@
                   {
                     "id": "d5b13929-16ec-4967-ac8a-868d80ec0b1e",
                     "zh": "上海的气温比北京高得多。",
-                    "pinyin": "",
+                    "pinyin": "Shànghǎi de qìwēn bǐ Běijīng gāo de duō。",
                     "vi": "Nhiệt độ Thượng Hải cao hơn Bắc Kinh nhiều.",
                     "en": "",
                     "highlight": [],
@@ -1715,7 +2425,7 @@
                   {
                     "id": "50b5e564-92c8-4900-b66a-00f5bfca9437",
                     "zh": "西瓜比苹果大。",
-                    "pinyin": "",
+                    "pinyin": "Xī guā bǐ píng guǒ dà。",
                     "vi": "Dưa hấu to hơn táo.",
                     "en": "",
                     "highlight": [],
@@ -1757,7 +2467,7 @@
                   {
                     "id": "771ce2b4-8b49-4b48-be3a-e887eb2024df",
                     "zh": "我比你更喜欢音乐。",
-                    "pinyin": "",
+                    "pinyin": "Wǒ bǐ nǐ gèng xǐhuan yīnyuè。",
                     "vi": "Tôi thích âm nhạc hơn bạn.",
                     "en": "",
                     "highlight": [],
@@ -1774,7 +2484,7 @@
                   {
                     "id": "773f0eeb-9162-44a6-b2c7-d20f86c5bf5f",
                     "zh": "现在比过去变得更漂亮了。",
-                    "pinyin": "",
+                    "pinyin": "Xiàn zài bǐ guò qù biàn de gèng piàoliang le。",
                     "vi": "Bây giờ so với trước đã trở nên đẹp hơn rồi.",
                     "en": "",
                     "highlight": [],
@@ -1823,7 +2533,7 @@
                   {
                     "id": "34e0cef7-0e8a-4e66-91ff-c118178ee232",
                     "zh": "上海的气温比北京高好几度。",
-                    "pinyin": "",
+                    "pinyin": "Shànghǎi de qìwēn bǐ Běijīng gāo hǎo jǐ dù。",
                     "vi": "Nhiệt độ Thượng Hải cao hơn Bắc Kinh mấy độ.",
                     "en": "",
                     "highlight": [],
@@ -1840,7 +2550,7 @@
                   {
                     "id": "7c24a5fc-d281-4017-a211-63bd1c1f89e3",
                     "zh": "他比弟弟大两岁。",
-                    "pinyin": "",
+                    "pinyin": "Tā bǐ dì di dà liǎng suì。",
                     "vi": "Anh ấy lớn hơn em trai 2 tuổi.",
                     "en": "",
                     "highlight": [],
@@ -1884,7 +2594,7 @@
                   {
                     "id": "abb3af48-9bf2-410c-899c-ffd83c7d12ee",
                     "zh": "上海没有北京大。",
-                    "pinyin": "",
+                    "pinyin": "Shànghǎi méi yǒu Běijīng dà。",
                     "vi": "Thượng Hải không lớn bằng Bắc Kinh.",
                     "en": "",
                     "highlight": [],
@@ -1901,7 +2611,7 @@
                   {
                     "id": "2a29aedf-6b97-40ed-8a7d-a80bc62a8a4a",
                     "zh": "火车没有飞机快。",
-                    "pinyin": "",
+                    "pinyin": "Huǒ chē méi yǒu fēi jī kuài。",
                     "vi": "Tàu hỏa không nhanh bằng máy bay.",
                     "en": "",
                     "highlight": [],
@@ -1929,7 +2639,7 @@
                   {
                     "id": "8288a918-6f9b-494b-a233-412682661258",
                     "zh": "我不比他高。我们俩差不多高。",
-                    "pinyin": "",
+                    "pinyin": "Wǒ bù bǐ tā gāo。 wǒ men liǎ chà bu duō gāo。",
                     "vi": "Tôi đâu có cao hơn anh ấy. Hai chúng tôi cao gần như nhau.",
                     "en": "",
                     "highlight": [],
@@ -1972,7 +2682,7 @@
                   {
                     "id": "6bf266cb-265d-4e6d-9c03-ff8d7f47ff9a",
                     "zh": "她没有我这么高。",
-                    "pinyin": "",
+                    "pinyin": "Tā méi yǒu wǒ zhè me gāo。",
                     "vi": "Cô ấy không cao bằng tôi.",
                     "en": "",
                     "highlight": [],
@@ -1989,7 +2699,7 @@
                   {
                     "id": "8775efc2-08d3-431f-ba3d-04de4aa5337e",
                     "zh": "上海的公园也没有北京的公园这么大。",
-                    "pinyin": "",
+                    "pinyin": "Shànghǎi de gōng yuán yě méi yǒu Běijīng de gōng yuán zhè me dà。",
                     "vi": "Công viên Thượng Hải cũng không lớn như công viên Bắc Kinh.",
                     "en": "",
                     "highlight": [],
@@ -2031,7 +2741,7 @@
                   {
                     "id": "41c8d735-a12e-4c22-a8de-add795878b00",
                     "zh": "上海是中国人口最多的城市。",
-                    "pinyin": "",
+                    "pinyin": "Shànghǎi shì zhōng guó rén kǒu zuì duō de chéng shì。",
                     "vi": "Thượng Hải là thành phố có dân số đông nhất Trung Quốc.",
                     "en": "",
                     "highlight": [],
@@ -2076,7 +2786,7 @@
                   {
                     "id": "2c1d1a39-aff8-418a-9813-624d4b06e892",
                     "zh": "上海的冬天是不是比北京暖和一点儿？",
-                    "pinyin": "",
+                    "pinyin": "Shànghǎi de dōng tiān shì bú shì bǐ Běijīng nuǎn huo yì diǎnr？",
                     "vi": "Mùa đông Thượng Hải có phải ấm hơn Bắc Kinh một chút không?",
                     "en": "",
                     "highlight": [],
@@ -2093,7 +2803,7 @@
                   {
                     "id": "7011ba59-80c0-4b7b-a888-fb7674ebb297",
                     "zh": "这件比那件贵多了。",
-                    "pinyin": "",
+                    "pinyin": "Zhè jiàn bǐ nà jiàn guì duō le。",
                     "vi": "Cái này đắt hơn cái kia nhiều.",
                     "en": "",
                     "highlight": [],
@@ -2136,7 +2846,7 @@
                   {
                     "id": "354b8cbd-123a-425b-9441-db216c23c747",
                     "zh": "他比我考得好。",
-                    "pinyin": "",
+                    "pinyin": "Tā bǐ wǒ kǎo de hǎo。",
                     "vi": "Anh ấy thi tốt hơn tôi.",
                     "en": "",
                     "highlight": [],
@@ -2153,7 +2863,7 @@
                   {
                     "id": "70f73a3e-6c84-4eeb-be6d-51e382932cb2",
                     "zh": "流行歌曲的歌词没有民歌写得好。",
-                    "pinyin": "",
+                    "pinyin": "Liúxíng gēqǔ de gēcí méi yǒu míngē xiě de hǎo。",
                     "vi": "Lời ca của nhạc thịnh hành không được viết hay bằng dân ca.",
                     "en": "",
                     "highlight": [],
@@ -2196,7 +2906,7 @@
                   {
                     "id": "ed185aa6-319f-4407-8820-6c0976099966",
                     "zh": "写得多好！",
-                    "pinyin": "",
+                    "pinyin": "Xiě de duō hǎo！",
                     "vi": "Viết hay biết bao!",
                     "en": "",
                     "highlight": [],
@@ -2213,7 +2923,7 @@
                   {
                     "id": "91191217-6a93-4006-b93a-45f37a4434a4",
                     "zh": "这个公园好漂亮啊！",
-                    "pinyin": "",
+                    "pinyin": "Zhè ge gōng yuán hǎo piàoliang a！",
                     "vi": "Công viên này đẹp quá!",
                     "en": "",
                     "highlight": [],
@@ -2757,74 +3467,90 @@
                   {
                     "id": "d5584c38-c49a-4a02-93e5-1edf3a523e2a",
                     "prompt": "他____喜欢看足球比赛。",
-                    "answer": "",
-                    "acceptable_answers": [],
-                    "source_origin": "textbook_question_generated_answer",
-                    "answer_verified": false,
-                    "check_needed": true
+                    "answer": "最",
+                    "acceptable_answers": [
+                      "最"
+                    ],
+                    "source_origin": "textbook_answer_verified",
+                    "answer_verified": true,
+                    "check_needed": false
                   },
                   {
                     "id": "696265f9-09dd-497a-9b64-f04b659d5ec5",
                     "prompt": "我们国家的冬天比这儿____。",
-                    "answer": "",
-                    "acceptable_answers": [],
-                    "source_origin": "textbook_question_generated_answer",
-                    "answer_verified": false,
-                    "check_needed": true
+                    "answer": "暖和",
+                    "acceptable_answers": [
+                      "暖和"
+                    ],
+                    "source_origin": "textbook_answer_verified",
+                    "answer_verified": true,
+                    "check_needed": false
                   },
                   {
                     "id": "40a95160-1a19-4d94-a00f-e539610cd9c0",
                     "prompt": "我们班又____了两个新同学。",
-                    "answer": "",
-                    "acceptable_answers": [],
-                    "source_origin": "textbook_question_generated_answer",
-                    "answer_verified": false,
-                    "check_needed": true
+                    "answer": "增加",
+                    "acceptable_answers": [
+                      "增加"
+                    ],
+                    "source_origin": "textbook_answer_verified",
+                    "answer_verified": true,
+                    "check_needed": false
                   },
                   {
                     "id": "8713e894-c003-4512-a355-ae4e66217828",
                     "prompt": "他是一个足球____，要是晚上电视里有足球比赛，他可以不睡觉。",
-                    "answer": "",
-                    "acceptable_answers": [],
-                    "source_origin": "textbook_question_generated_answer",
-                    "answer_verified": false,
-                    "check_needed": true
+                    "answer": "迷",
+                    "acceptable_answers": [
+                      "迷"
+                    ],
+                    "source_origin": "textbook_answer_verified",
+                    "answer_verified": true,
+                    "check_needed": false
                   },
                   {
                     "id": "dafa3bb1-528f-4b84-99b8-0c9d450c4ad5",
                     "prompt": "我没有你那么喜欢民歌，我喜欢____歌曲。",
-                    "answer": "",
-                    "acceptable_answers": [],
-                    "source_origin": "textbook_question_generated_answer",
-                    "answer_verified": false,
-                    "check_needed": true
+                    "answer": "流行",
+                    "acceptable_answers": [
+                      "流行"
+                    ],
+                    "source_origin": "textbook_answer_verified",
+                    "answer_verified": true,
+                    "check_needed": false
                   },
                   {
                     "id": "95b87316-a8b5-49e8-b4c1-a4bd131c8c01",
                     "prompt": "这是一首世界____。",
-                    "answer": "",
-                    "acceptable_answers": [],
-                    "source_origin": "textbook_question_generated_answer",
-                    "answer_verified": false,
-                    "check_needed": true
+                    "answer": "名曲",
+                    "acceptable_answers": [
+                      "名曲"
+                    ],
+                    "source_origin": "textbook_answer_verified",
+                    "answer_verified": true,
+                    "check_needed": false
                   },
                   {
                     "id": "225488c9-ad70-442b-ab4a-2862fde52b73",
                     "prompt": "天气预报说，今天最高____是零下一度。",
-                    "answer": "",
-                    "acceptable_answers": [],
-                    "source_origin": "textbook_question_generated_answer",
-                    "answer_verified": false,
-                    "check_needed": true
+                    "answer": "气温",
+                    "acceptable_answers": [
+                      "气温"
+                    ],
+                    "source_origin": "textbook_answer_verified",
+                    "answer_verified": true,
+                    "check_needed": false
                   },
                   {
                     "id": "b4aceabb-4279-45d2-b6d2-6b5bf466eda0",
                     "prompt": "天气____说得不一定对。",
-                    "answer": "",
-                    "acceptable_answers": [],
-                    "source_origin": "textbook_question_generated_answer",
-                    "answer_verified": false,
-                    "check_needed": true
+                    "answer": "预报",
+                    "acceptable_answers": [
+                      "预报"
+                    ],
+                    "source_origin": "textbook_answer_verified",
+                    "answer_verified": true,
+                    "check_needed": false
                   }
                 ]
               },
@@ -2845,74 +3571,90 @@
                   {
                     "id": "be526b38-57fe-418e-9e6a-1208f510e794",
                     "prompt": "北京比我们那儿____。",
-                    "answer": "",
-                    "acceptable_answers": [],
-                    "source_origin": "textbook_question_generated_answer",
-                    "answer_verified": false,
-                    "check_needed": true
+                    "answer": "冷一点儿",
+                    "acceptable_answers": [
+                      "冷一点儿"
+                    ],
+                    "source_origin": "textbook_answer_verified",
+                    "answer_verified": true,
+                    "check_needed": false
                   },
                   {
                     "id": "eba629e6-2242-43b8-85f5-c737fcc92926",
                     "prompt": "我姐姐比我____。",
-                    "answer": "",
-                    "acceptable_answers": [],
-                    "source_origin": "textbook_question_generated_answer",
-                    "answer_verified": false,
-                    "check_needed": true
+                    "answer": "大两岁",
+                    "acceptable_answers": [
+                      "大两岁"
+                    ],
+                    "source_origin": "textbook_answer_verified",
+                    "answer_verified": true,
+                    "check_needed": false
                   },
                   {
                     "id": "bd47ffbb-df15-49b7-bb72-18827b8d8b6b",
                     "prompt": "每天早上她都比我起得____。",
-                    "answer": "",
-                    "acceptable_answers": [],
-                    "source_origin": "textbook_question_generated_answer",
-                    "answer_verified": false,
-                    "check_needed": true
+                    "answer": "早得多",
+                    "acceptable_answers": [
+                      "早得多"
+                    ],
+                    "source_origin": "textbook_answer_verified",
+                    "answer_verified": true,
+                    "check_needed": false
                   },
                   {
                     "id": "84e41c1a-d0cb-407f-afbe-b591aa36c638",
                     "prompt": "他比我跑得____。",
-                    "answer": "",
-                    "acceptable_answers": [],
-                    "source_origin": "textbook_question_generated_answer",
-                    "answer_verified": false,
-                    "check_needed": true
+                    "answer": "快得多",
+                    "acceptable_answers": [
+                      "快得多"
+                    ],
+                    "source_origin": "textbook_answer_verified",
+                    "answer_verified": true,
+                    "check_needed": false
                   },
                   {
                     "id": "d2f24459-eb79-4044-b559-587ed7b46a53",
                     "prompt": "这件羽绒服比那件____。",
-                    "answer": "",
-                    "acceptable_answers": [],
-                    "source_origin": "textbook_question_generated_answer",
-                    "answer_verified": false,
-                    "check_needed": true
+                    "answer": "贵得多",
+                    "acceptable_answers": [
+                      "贵得多"
+                    ],
+                    "source_origin": "textbook_answer_verified",
+                    "answer_verified": true,
+                    "check_needed": false
                   },
                   {
                     "id": "d9013416-9343-4402-ad04-bc05f1ca1e01",
                     "prompt": "这种大衣的颜色比那件____。",
-                    "answer": "",
-                    "acceptable_answers": [],
-                    "source_origin": "textbook_question_generated_answer",
-                    "answer_verified": false,
-                    "check_needed": true
+                    "answer": "深一点儿",
+                    "acceptable_answers": [
+                      "深一点儿"
+                    ],
+                    "source_origin": "textbook_answer_verified",
+                    "answer_verified": true,
+                    "check_needed": false
                   },
                   {
                     "id": "e317be92-d281-4fbb-a3c8-dcbbfc9d454e",
                     "prompt": "明天上海的气温比北京____。",
-                    "answer": "",
-                    "acceptable_answers": [],
-                    "source_origin": "textbook_question_generated_answer",
-                    "answer_verified": false,
-                    "check_needed": true
+                    "answer": "高得多",
+                    "acceptable_answers": [
+                      "高得多"
+                    ],
+                    "source_origin": "textbook_answer_verified",
+                    "answer_verified": true,
+                    "check_needed": false
                   },
                   {
                     "id": "528049d3-0296-4adf-8d86-f5809feffc8f",
                     "prompt": "今天的气温比昨天____。",
-                    "answer": "",
-                    "acceptable_answers": [],
-                    "source_origin": "textbook_question_generated_answer",
-                    "answer_verified": false,
-                    "check_needed": true
+                    "answer": "高三度",
+                    "acceptable_answers": [
+                      "高三度"
+                    ],
+                    "source_origin": "textbook_answer_verified",
+                    "answer_verified": true,
+                    "check_needed": false
                   }
                 ]
               },
@@ -2929,74 +3671,90 @@
                   {
                     "id": "54466b8b-8e09-42be-8127-1d860c35892c",
                     "prompt": "爸爸每天都很晚____下班，今天下午五点____下班了。",
-                    "answer": "",
-                    "acceptable_answers": [],
-                    "source_origin": "textbook_question_generated_answer",
-                    "answer_verified": false,
-                    "check_needed": true
+                    "answer": "才；就",
+                    "acceptable_answers": [
+                      "才；就"
+                    ],
+                    "source_origin": "textbook_answer_verified",
+                    "answer_verified": true,
+                    "check_needed": false
                   },
                   {
                     "id": "8dde6728-2a68-4040-b5a2-bf02d31b9675",
                     "prompt": "明天我下了课____去看她。",
-                    "answer": "",
-                    "acceptable_answers": [],
-                    "source_origin": "textbook_question_generated_answer",
-                    "answer_verified": false,
-                    "check_needed": true
+                    "answer": "再",
+                    "acceptable_answers": [
+                      "再"
+                    ],
+                    "source_origin": "textbook_answer_verified",
+                    "answer_verified": true,
+                    "check_needed": false
                   },
                   {
                     "id": "cd3ef4af-196f-428f-8c0f-7aacdc678359",
                     "prompt": "您的话我没听懂，请您____说一遍，好吗？",
-                    "answer": "",
-                    "acceptable_answers": [],
-                    "source_origin": "textbook_question_generated_answer",
-                    "answer_verified": false,
-                    "check_needed": true
+                    "answer": "再",
+                    "acceptable_answers": [
+                      "再"
+                    ],
+                    "source_origin": "textbook_answer_verified",
+                    "answer_verified": true,
+                    "check_needed": false
                   },
                   {
                     "id": "a8060920-0d55-4260-a8d9-ea0de9bceb29",
                     "prompt": "老师____说了一遍，我____听懂。",
-                    "answer": "",
-                    "acceptable_answers": [],
-                    "source_origin": "textbook_question_generated_answer",
-                    "answer_verified": false,
-                    "check_needed": true
+                    "answer": "又；才",
+                    "acceptable_answers": [
+                      "又；才"
+                    ],
+                    "source_origin": "textbook_answer_verified",
+                    "answer_verified": true,
+                    "check_needed": false
                   },
                   {
                     "id": "4971dbea-78e7-45b0-a104-f87e98b00d78",
                     "prompt": "上星期我已经买了一本，今天我____买了一本。",
-                    "answer": "",
-                    "acceptable_answers": [],
-                    "source_origin": "textbook_question_generated_answer",
-                    "answer_verified": false,
-                    "check_needed": true
+                    "answer": "又",
+                    "acceptable_answers": [
+                      "又"
+                    ],
+                    "source_origin": "textbook_answer_verified",
+                    "answer_verified": true,
+                    "check_needed": false
                   },
                   {
                     "id": "c4982650-992a-4abf-91ef-d22ff52a58e2",
                     "prompt": "要是你不想看，我们____回学校吧。",
-                    "answer": "",
-                    "acceptable_answers": [],
-                    "source_origin": "textbook_question_generated_answer",
-                    "answer_verified": false,
-                    "check_needed": true
+                    "answer": "就",
+                    "acceptable_answers": [
+                      "就"
+                    ],
+                    "source_origin": "textbook_answer_verified",
+                    "answer_verified": true,
+                    "check_needed": false
                   },
                   {
                     "id": "09f1d1fe-3cc4-42fc-a732-d478b9749d61",
                     "prompt": "看见她哭了，我____问：“你是不是想家了？”",
-                    "answer": "",
-                    "acceptable_answers": [],
-                    "source_origin": "textbook_question_generated_answer",
-                    "answer_verified": false,
-                    "check_needed": true
+                    "answer": "就",
+                    "acceptable_answers": [
+                      "就"
+                    ],
+                    "source_origin": "textbook_answer_verified",
+                    "answer_verified": true,
+                    "check_needed": false
                   },
                   {
                     "id": "8b65a492-c8de-4777-86eb-3a2e5aad6d90",
                     "prompt": "你怎么现在____来？晚会早____开始了。",
-                    "answer": "",
-                    "acceptable_answers": [],
-                    "source_origin": "textbook_question_generated_answer",
-                    "answer_verified": false,
-                    "check_needed": true
+                    "answer": "才；就",
+                    "acceptable_answers": [
+                      "才；就"
+                    ],
+                    "source_origin": "textbook_answer_verified",
+                    "answer_verified": true,
+                    "check_needed": false
                   }
                 ]
               },
@@ -3015,74 +3773,90 @@
                   {
                     "id": "928412cd-e4e6-4363-a1ac-f73837c8ab16",
                     "prompt": "这课的语法你听____了没有？",
-                    "answer": "",
-                    "acceptable_answers": [],
-                    "source_origin": "textbook_question_generated_answer",
-                    "answer_verified": false,
-                    "check_needed": true
+                    "answer": "懂",
+                    "acceptable_answers": [
+                      "懂"
+                    ],
+                    "source_origin": "textbook_answer_verified",
+                    "answer_verified": true,
+                    "check_needed": false
                   },
                   {
                     "id": "cd8eb200-984e-4c25-8c5c-0cbbbf433c90",
                     "prompt": "A：我叫你，你怎么不回答？ B：对不起，我正听录音呢，没听____。",
-                    "answer": "",
-                    "acceptable_answers": [],
-                    "source_origin": "textbook_question_generated_answer",
-                    "answer_verified": false,
-                    "check_needed": true
+                    "answer": "见",
+                    "acceptable_answers": [
+                      "见"
+                    ],
+                    "source_origin": "textbook_answer_verified",
+                    "answer_verified": true,
+                    "check_needed": false
                   },
                   {
                     "id": "0f298c9d-5a3f-4035-9590-51a66a493f73",
                     "prompt": "A：你看____麦克了没有？ B：看____了，他正在操场跑步呢。",
-                    "answer": "",
-                    "acceptable_answers": [],
-                    "source_origin": "textbook_question_generated_answer",
-                    "answer_verified": false,
-                    "check_needed": true
+                    "answer": "见；见",
+                    "acceptable_answers": [
+                      "见；见"
+                    ],
+                    "source_origin": "textbook_answer_verified",
+                    "answer_verified": true,
+                    "check_needed": false
                   },
                   {
                     "id": "ed75b1e8-2d0d-40bb-8fbd-ca0dccaf78b9",
                     "prompt": "A：老师，这些练习题我做____了没有？ B：你没都做____，做____了三道题，做错了一道题。",
-                    "answer": "",
-                    "acceptable_answers": [],
-                    "source_origin": "textbook_question_generated_answer",
-                    "answer_verified": false,
-                    "check_needed": true
+                    "answer": "对；对；对",
+                    "acceptable_answers": [
+                      "对；对；对"
+                    ],
+                    "source_origin": "textbook_answer_verified",
+                    "answer_verified": true,
+                    "check_needed": false
                   },
                   {
                     "id": "6fd77c68-34eb-4089-9469-d51b18cd1d80",
                     "prompt": "快开____窗户吧，屋子里太热了。",
-                    "answer": "",
-                    "acceptable_answers": [],
-                    "source_origin": "textbook_question_generated_answer",
-                    "answer_verified": false,
-                    "check_needed": true
+                    "answer": "开",
+                    "acceptable_answers": [
+                      "开"
+                    ],
+                    "source_origin": "textbook_answer_verified",
+                    "answer_verified": true,
+                    "check_needed": false
                   },
                   {
                     "id": "522bcaf8-c754-4bcc-8435-08fb233f7cc3",
                     "prompt": "关____电视吧，已经十二点了。",
-                    "answer": "",
-                    "acceptable_answers": [],
-                    "source_origin": "textbook_question_generated_answer",
-                    "answer_verified": false,
-                    "check_needed": true
+                    "answer": "上",
+                    "acceptable_answers": [
+                      "上"
+                    ],
+                    "source_origin": "textbook_answer_verified",
+                    "answer_verified": true,
+                    "check_needed": false
                   },
                   {
                     "id": "613352f7-0642-4c46-ade8-5f220a4a50b0",
                     "prompt": "A：我给你的书你看____了没有？ B：还没有看____呢。",
-                    "answer": "",
-                    "acceptable_answers": [],
-                    "source_origin": "textbook_question_generated_answer",
-                    "answer_verified": false,
-                    "check_needed": true
+                    "answer": "完；完",
+                    "acceptable_answers": [
+                      "完；完"
+                    ],
+                    "source_origin": "textbook_answer_verified",
+                    "answer_verified": true,
+                    "check_needed": false
                   },
                   {
                     "id": "541ccced-1fbf-4cc8-a4de-0a8a5a3ab02e",
                     "prompt": "这课课文有点儿难，我没有看____。",
-                    "answer": "",
-                    "acceptable_answers": [],
-                    "source_origin": "textbook_question_generated_answer",
-                    "answer_verified": false,
-                    "check_needed": true
+                    "answer": "懂",
+                    "acceptable_answers": [
+                      "懂"
+                    ],
+                    "source_origin": "textbook_answer_verified",
+                    "answer_verified": true,
+                    "check_needed": false
                   }
                 ]
               }
@@ -3173,10 +3947,10 @@
                   "A：____？",
                   "B：教学楼比宿舍楼高20米。"
                 ],
-                "answer": "",
-                "answer_verified": false,
-                "source_origin": "textbook_question_generated_answer",
-                "check_needed": true
+                "answer": "B：教学楼比宿舍楼高。 A：教学楼比宿舍楼高多少？ B：教学楼比宿舍楼高20米。",
+                "answer_verified": true,
+                "source_origin": "textbook_answer_verified",
+                "check_needed": false
               },
               {
                 "id": "5b2ff0b9-2045-486a-b36d-743ada304d79",
@@ -3187,10 +3961,10 @@
                   "A：长江比黄河长____？",
                   "B：长江比黄河长____。"
                 ],
-                "answer": "",
-                "answer_verified": false,
-                "source_origin": "textbook_question_generated_answer",
-                "check_needed": true
+                "answer": "B：没有，黄河没有长江长。 A：长江比黄河长多少？ B：长江比黄河长836公里。",
+                "answer_verified": true,
+                "source_origin": "textbook_answer_verified",
+                "check_needed": false
               },
               {
                 "id": "821c03fd-638f-4157-b60d-665b9bd7073c",
@@ -3201,10 +3975,10 @@
                   "A：这台电脑比____？",
                   "B：这台电脑比____。"
                 ],
-                "answer": "",
-                "answer_verified": false,
-                "source_origin": "textbook_question_generated_answer",
-                "check_needed": true
+                "answer": "B：有，那台电脑比这台电脑贵。 A：这台电脑比那台电脑便宜多少？ B：这台电脑比那台电脑便宜2000元。",
+                "answer_verified": true,
+                "source_origin": "textbook_answer_verified",
+                "check_needed": false
               },
               {
                 "id": "c26f4cb0-e95b-486a-bb98-a44ef13b6df9",
@@ -3215,10 +3989,10 @@
                   "A：大箱子比小箱子____？",
                   "B：大箱子比小箱子重5公斤。"
                 ],
-                "answer": "",
-                "answer_verified": false,
-                "source_origin": "textbook_question_generated_answer",
-                "check_needed": true
+                "answer": "B：没有，小箱子没有大箱子重。 A：大箱子比小箱子重多少？ B：大箱子比小箱子重5公斤。",
+                "answer_verified": true,
+                "source_origin": "textbook_answer_verified",
+                "check_needed": false
               },
               {
                 "id": "f1692edf-ecb9-47a3-a7e3-85a3ede4d81a",
@@ -3229,10 +4003,10 @@
                   "A：麦克比玛丽晚起____？",
                   "B：麦克比玛丽晚起____。"
                 ],
-                "answer": "",
-                "answer_verified": false,
-                "source_origin": "textbook_question_generated_answer",
-                "check_needed": true
+                "answer": "B：没有，麦克没有玛丽起得早。 A：麦克比玛丽晚起多长时间？ B：麦克比玛丽晚起两个小时。",
+                "answer_verified": true,
+                "source_origin": "textbook_answer_verified",
+                "check_needed": false
               }
             ],
             "rendering": {
@@ -3261,56 +4035,56 @@
               {
                 "id": "ced333eb-0c24-46af-8ef0-224088ab34bb",
                 "prompt": "他们的生活比以前很好。",
-                "answer": "",
-                "explanation_vi": "",
-                "answer_verified": false,
-                "source_origin": "textbook_question_generated_answer",
-                "check_needed": true
+                "answer": "他们的生活比以前好多了。",
+                "explanation_vi": "比字句后面不能用“很好”作比较结果；应说“好 + 多了/得多”或“更好”。",
+                "answer_verified": true,
+                "source_origin": "textbook_answer_verified",
+                "check_needed": false
               },
               {
                 "id": "3fd2c4b2-0fa5-46d4-a3e3-1172619dcaa4",
                 "prompt": "玛丽考了成绩比我考了成绩好。",
-                "answer": "",
-                "explanation_vi": "",
-                "answer_verified": false,
-                "source_origin": "textbook_question_generated_answer",
-                "check_needed": true
+                "answer": "玛丽考得比我好。/ 玛丽的成绩比我的好。",
+                "explanation_vi": "比较“考得好”时，用“动词 + 得 + 补语”；也可比较“成绩”。",
+                "answer_verified": true,
+                "source_origin": "textbook_answer_verified",
+                "check_needed": false
               },
               {
                 "id": "485289c3-03dd-4fc1-905d-d410e6e4598a",
                 "prompt": "她说比我好得多。",
-                "answer": "",
-                "explanation_vi": "",
-                "answer_verified": false,
-                "source_origin": "textbook_question_generated_answer",
-                "check_needed": true
+                "answer": "她说得比我好得多。",
+                "explanation_vi": "“说”后面要用“得”引出程度补语；原句缺少“得”。",
+                "answer_verified": true,
+                "source_origin": "textbook_answer_verified",
+                "check_needed": false
               },
               {
                 "id": "90f24372-1c4b-445f-925b-af742edfddda",
                 "prompt": "弟弟比我不高。",
-                "answer": "",
-                "explanation_vi": "",
-                "answer_verified": false,
-                "source_origin": "textbook_question_generated_answer",
-                "check_needed": true
+                "answer": "弟弟没有我高。",
+                "explanation_vi": "比较句的普通否定不用“比 + 不”，应使用“没有 + 比较对象 + 形容词”。",
+                "answer_verified": true,
+                "source_origin": "textbook_answer_verified",
+                "check_needed": false
               },
               {
                 "id": "21e3c509-8c7e-41f7-8b82-28338cbab8b7",
                 "prompt": "他们比我们不来得早。",
-                "answer": "",
-                "explanation_vi": "",
-                "answer_verified": false,
-                "source_origin": "textbook_question_generated_answer",
-                "check_needed": true
+                "answer": "他们没有我们来得早。",
+                "explanation_vi": "动词性比较的否定用“没有 + 比较对象 + V 得 + 补语”。",
+                "answer_verified": true,
+                "source_origin": "textbook_answer_verified",
+                "check_needed": false
               },
               {
                 "id": "6cd3b845-5ff7-43b6-b5af-2033f6ed3ceb",
                 "prompt": "麦克比我一点儿高。",
-                "answer": "",
-                "explanation_vi": "",
-                "answer_verified": false,
-                "source_origin": "textbook_question_generated_answer",
-                "check_needed": true
+                "answer": "麦克比我高一点儿。",
+                "explanation_vi": "数量/程度补语“一点儿”要放在形容词后面。",
+                "answer_verified": true,
+                "source_origin": "textbook_answer_verified",
+                "check_needed": false
               }
             ],
             "rendering": {
@@ -3339,65 +4113,65 @@
               {
                 "id": "9ce35690-7bf3-4433-9256-a5b0c7bb9f58",
                 "question": "北京冬天最冷是零下16度，你们国家的冬天比北京冷吗？",
-                "answer": "",
-                "answer_verified": false,
-                "source_origin": "textbook_question_generated_answer",
+                "answer": "参考答案：不，我们国家的冬天没有北京冷，比北京暖和得多。",
+                "answer_verified": true,
+                "source_origin": "sample_answer_verified",
                 "check_needed": false
               },
               {
                 "id": "5750a92e-36cf-46f8-b23d-81322c5acec9",
                 "question": "你住的城市东西比中国的便宜吗？",
-                "answer": "",
-                "answer_verified": false,
-                "source_origin": "textbook_question_generated_answer",
+                "answer": "参考答案：有的比中国便宜，有的比中国贵。",
+                "answer_verified": true,
+                "source_origin": "sample_answer_verified",
                 "check_needed": false
               },
               {
                 "id": "b22c7a00-021e-4222-888f-dd21f1b11f8b",
                 "question": "语言大学有10000多学生，你们学校的学生比语言大学多吗？",
-                "answer": "",
-                "answer_verified": false,
-                "source_origin": "textbook_question_generated_answer",
+                "answer": "参考答案：没有，我们学校的学生没有语言大学多。",
+                "answer_verified": true,
+                "source_origin": "sample_answer_verified",
                 "check_needed": false
               },
               {
                 "id": "00b22a73-cefe-4b7c-a833-ac50f9f220ac",
                 "question": "玛丽听力考了95分，你考得比她好吗？",
-                "answer": "",
-                "answer_verified": false,
-                "source_origin": "textbook_question_generated_answer",
+                "answer": "参考答案：没有，我没有玛丽考得好。",
+                "answer_verified": true,
+                "source_origin": "sample_answer_verified",
                 "check_needed": false
               },
               {
                 "id": "f72c10b8-fe16-48ac-a16a-df2130eb71d3",
                 "question": "爱德华一分钟能写18个汉字，你写得比他快吗？",
-                "answer": "",
-                "answer_verified": false,
-                "source_origin": "textbook_question_generated_answer",
+                "answer": "参考答案：不，我写得没有他快。",
+                "answer_verified": true,
+                "source_origin": "sample_answer_verified",
                 "check_needed": false
               },
               {
                 "id": "cc211e61-85a1-48c6-a9f9-771a96448dc6",
                 "question": "山本每天7点45分到教室，你比她到得早吗？",
-                "answer": "",
-                "answer_verified": false,
-                "source_origin": "textbook_question_generated_answer",
+                "answer": "参考答案：是，我比她到得早。",
+                "answer_verified": true,
+                "source_origin": "sample_answer_verified",
                 "check_needed": false
               },
               {
                 "id": "0af2bc94-1db5-4dd3-b86b-5335bf94b8f8",
                 "question": "山本有40多本中文书，你的中文书比她的多吗？",
-                "answer": "",
-                "answer_verified": false,
-                "source_origin": "textbook_question_generated_answer",
+                "answer": "参考答案：没有，我的中文书没有她的多。",
+                "answer_verified": true,
+                "source_origin": "sample_answer_verified",
                 "check_needed": false
               },
               {
                 "id": "6075d236-1683-4f8b-ac60-0017fbf9ccff",
                 "question": "罗兰每天锻炼一个小时，你锻炼的时间比她长吗？",
-                "answer": "",
-                "answer_verified": false,
-                "source_origin": "textbook_question_generated_answer",
+                "answer": "参考答案：没有，我锻炼的时间没有她长。",
+                "answer_verified": true,
+                "source_origin": "sample_answer_verified",
                 "check_needed": false
               }
             ],
@@ -3477,14 +4251,14 @@
                 "type": "true_false",
                 "prompt": "“我”和罗兰坐公共汽车去公园玩儿了。",
                 "answer": "错",
-                "answer_verified": false,
+                "answer_verified": true,
                 "evidence": [
                   {
                     "paragraph_id": "a6b1119e-769b-4444-9eee-c4a26d7f6af3",
                     "quote": "我们最好骑自行车去"
                   }
                 ],
-                "source_origin": "textbook_question_generated_answer",
+                "source_origin": "reading_answer_verified",
                 "check_needed": false
               },
               {
@@ -3492,14 +4266,14 @@
                 "type": "true_false",
                 "prompt": "“我们”排了五分钟才买到票。",
                 "answer": "对",
-                "answer_verified": false,
+                "answer_verified": true,
                 "evidence": [
                   {
                     "paragraph_id": "b3e5d57c-8b64-4c60-b5f0-3976cd13fef0",
                     "quote": "我们排了五分钟才买到票"
                   }
                 ],
-                "source_origin": "textbook_question_generated_answer",
+                "source_origin": "reading_answer_verified",
                 "check_needed": false
               },
               {
@@ -3507,7 +4281,7 @@
                 "type": "true_false",
                 "prompt": "“我们”先爬山了，然后又划船了，还照了很多相。",
                 "answer": "错",
-                "answer_verified": false,
+                "answer_verified": true,
                 "evidence": [
                   {
                     "paragraph_id": "b3e5d57c-8b64-4c60-b5f0-3976cd13fef0",
@@ -3518,7 +4292,7 @@
                     "quote": "我和罗兰在山上照了很多相"
                   }
                 ],
-                "source_origin": "textbook_question_generated_answer",
+                "source_origin": "reading_answer_verified",
                 "check_needed": false
               },
               {
@@ -3526,14 +4300,14 @@
                 "type": "true_false",
                 "prompt": "“我们”以后还会再去那个公园。",
                 "answer": "对",
-                "answer_verified": false,
+                "answer_verified": true,
                 "evidence": [
                   {
                     "paragraph_id": "65b480dc-c5c7-41fb-a021-f43e4aacf57c",
                     "quote": "以后我们可以再来"
                   }
                 ],
-                "source_origin": "textbook_question_generated_answer",
+                "source_origin": "reading_answer_verified",
                 "check_needed": false
               }
             ],
@@ -3714,13 +4488,24 @@
             "pinyin": "guàng",
             "meaning_vi": "đi dạo; đi chơi; đi tham quan",
             "meaning_en": "",
-            "pos": "unknown",
+            "pos": "Động từ",
             "tags": [
               "supplementary_vocab",
               "reading"
             ],
             "source_origin": "textbook",
-            "check_needed": false
+            "check_needed": false,
+            "pos_detail": {
+              "vi": "Động từ",
+              "cn": "动词",
+              "normalized": "verb",
+              "schema_compatible_pos": "verb",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "",
+              "notes": []
+            }
           },
           {
             "id": "2e47d0d4-9926-4054-a4e1-cfe61d63cfac",
@@ -3730,29 +4515,51 @@
             "pinyin": "piào",
             "meaning_vi": "vé",
             "meaning_en": "",
-            "pos": "unknown",
+            "pos": "Danh từ",
             "tags": [
               "supplementary_vocab",
               "reading"
             ],
             "source_origin": "textbook",
-            "check_needed": false
+            "check_needed": false,
+            "pos_detail": {
+              "vi": "Danh từ",
+              "cn": "名词",
+              "normalized": "noun",
+              "schema_compatible_pos": "noun",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "",
+              "notes": []
+            }
           },
           {
             "id": "bb1aecd4-8b82-45bf-8c9d-b3e9082911a6",
             "type": "vocabulary_item",
             "order": 3,
             "hanzi": "排队",
-            "pinyin": "pái duì",
+            "pinyin": "páiduì",
             "meaning_vi": "xếp hàng",
             "meaning_en": "",
-            "pos": "unknown",
+            "pos": "Động từ li hợp",
             "tags": [
               "supplementary_vocab",
               "reading"
             ],
             "source_origin": "textbook",
-            "check_needed": false
+            "check_needed": false,
+            "pos_detail": {
+              "vi": "Động từ li hợp",
+              "cn": "动宾式离合词",
+              "normalized": "verb_phrase",
+              "schema_compatible_pos": "verb_phrase",
+              "is_separable_verb": true,
+              "separable_type": "động-tân / 离合词",
+              "structure_vi": "động từ 排 + tân ngữ 队",
+              "usage_note_vi": "Có thể nói 排了五分钟队 / 排了很长时间的队; trong khẩu ngữ thường dùng như cụm động từ xếp hàng.",
+              "notes": []
+            }
           },
           {
             "id": "66286879-4464-4667-b96b-edb647e8e7a6",
@@ -3762,13 +4569,24 @@
             "pinyin": "hàn",
             "meaning_vi": "mồ hôi",
             "meaning_en": "",
-            "pos": "unknown",
+            "pos": "Danh từ",
             "tags": [
               "supplementary_vocab",
               "reading"
             ],
             "source_origin": "textbook",
-            "check_needed": false
+            "check_needed": false,
+            "pos_detail": {
+              "vi": "Danh từ",
+              "cn": "名词",
+              "normalized": "noun",
+              "schema_compatible_pos": "noun",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "",
+              "notes": []
+            }
           },
           {
             "id": "e6317463-2f70-47e1-94a3-4f609e48161a",
@@ -3778,13 +4596,24 @@
             "pinyin": "hú",
             "meaning_vi": "hồ",
             "meaning_en": "",
-            "pos": "unknown",
+            "pos": "Danh từ",
             "tags": [
               "supplementary_vocab",
               "reading"
             ],
             "source_origin": "textbook",
-            "check_needed": false
+            "check_needed": false,
+            "pos_detail": {
+              "vi": "Danh từ",
+              "cn": "名词",
+              "normalized": "noun",
+              "schema_compatible_pos": "noun",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "",
+              "notes": []
+            }
           },
           {
             "id": "7d280f35-81eb-4265-bc39-135c0a35e019",
@@ -3794,45 +4623,78 @@
             "pinyin": "qiáo",
             "meaning_vi": "cầu",
             "meaning_en": "",
-            "pos": "unknown",
+            "pos": "Danh từ",
             "tags": [
               "supplementary_vocab",
               "reading"
             ],
             "source_origin": "textbook",
-            "check_needed": false
+            "check_needed": false,
+            "pos_detail": {
+              "vi": "Danh từ",
+              "cn": "名词",
+              "normalized": "noun",
+              "schema_compatible_pos": "noun",
+              "is_separable_verb": false,
+              "separable_type": "",
+              "structure_vi": "",
+              "usage_note_vi": "",
+              "notes": []
+            }
           },
           {
             "id": "1fe04b57-27fb-446a-a96c-ac48b8e36867",
             "type": "vocabulary_item",
             "order": 7,
             "hanzi": "划船",
-            "pinyin": "huá chuán",
-            "meaning_vi": "chèo thuyền; đi thuyền",
-            "meaning_en": "",
-            "pos": "unknown",
+            "pinyin": "huáchuán",
+            "meaning_vi": "chèo thuyền",
+            "meaning_en": "to row/paddle a boat",
+            "pos": "Động từ li hợp",
             "tags": [
               "supplementary_vocab",
               "reading"
             ],
             "source_origin": "textbook",
-            "check_needed": false
+            "check_needed": false,
+            "pos_detail": {
+              "vi": "Động từ li hợp",
+              "cn": "动宾式离合词",
+              "normalized": "verb_phrase",
+              "schema_compatible_pos": "verb_phrase",
+              "is_separable_verb": true,
+              "separable_type": "động-tân / 离合词",
+              "structure_vi": "động từ 划 + tân ngữ 船",
+              "usage_note_vi": "Có thể nói 划了半个小时船 / 划划船; nghĩa là chèo thuyền.",
+              "notes": []
+            }
           },
           {
             "id": "fc6f1323-fa97-4b01-93e5-607c6f16c165",
             "type": "vocabulary_item",
             "order": 8,
             "hanzi": "照相",
-            "pinyin": "zhào xiàng",
+            "pinyin": "zhàoxiàng",
             "meaning_vi": "chụp ảnh",
-            "meaning_en": "",
-            "pos": "unknown",
+            "meaning_en": "to take a photo",
+            "pos": "Động từ li hợp",
             "tags": [
               "supplementary_vocab",
               "reading"
             ],
             "source_origin": "textbook",
-            "check_needed": false
+            "check_needed": false,
+            "pos_detail": {
+              "vi": "Động từ li hợp",
+              "cn": "动宾式离合词",
+              "normalized": "verb_phrase",
+              "schema_compatible_pos": "verb_phrase",
+              "is_separable_verb": true,
+              "separable_type": "động-tân / 离合词",
+              "structure_vi": "động từ 照 + tân ngữ 相",
+              "usage_note_vi": "Có thể nói 照了很多相 / 照照相; nghĩa là chụp ảnh.",
+              "notes": []
+            }
           }
         ],
         "items": [
@@ -3847,10 +4709,12 @@
                 "id": "d2a4cf8b-55cd-4904-9fed-3141da682b19",
                 "order": 1,
                 "zh": "昨天晚上我对罗兰说，听说我们学校西边有个公园，那个公园很大。公园里有山有水，很漂亮。明天是星期六，我们去公园玩儿玩儿怎么样？罗兰说，她也正想去公园散散步呢。",
-                "pinyin": "",
+                "pinyin": "Zuó tiān wǎn shàng wǒ duì Luólán shuō， tīng shuō wǒ men xué xiào xī biān yǒu gè gōng yuán， nà ge gōng yuán hěn dà。 gōng yuán lǐ yǒu shān yǒu shuǐ， hěn piàoliang。 míng tiān shì xīng qī liù， wǒ men qù gōng yuán wán ér wán ér zěn me yàng？ Luólán shuō， tā yě zhèng xiǎng qù gōng yuán sàn sàn bù ne。",
                 "vi": "Tối hôm qua tôi nói với Roland rằng, nghe nói phía tây trường chúng tôi có một công viên, công viên đó rất lớn. Trong công viên có núi có nước, rất đẹp. Ngày mai là thứ Bảy, chúng ta đi công viên chơi một chút nhé? Roland nói, cô ấy cũng đang muốn đi công viên dạo bộ.",
                 "audio_key": "",
-                "vocab_refs": [],
+                "vocab_refs": [
+                  "7eccd5e8-dac0-4f36-be2e-abcc0a2bdfcd"
+                ],
                 "grammar_refs": [],
                 "source_origin": "textbook",
                 "check_needed": false
@@ -3859,10 +4723,14 @@
                 "id": "a6b1119e-769b-4444-9eee-c4a26d7f6af3",
                 "order": 2,
                 "zh": "我问罗兰怎么去，罗兰说，星期六坐公共汽车的人比较多，我们最好骑自行车去，还可以锻炼身体。",
-                "pinyin": "",
+                "pinyin": "Wǒ wèn Luólán zěn me qù， Luólán shuō， xīng qī liù zuò gōng gòng qì chē de rén bǐ jiào duō， wǒ men zuì hǎo qí zì xíng chē qù， hái kě yǐ duàn liàn shēn tǐ。",
                 "vi": "Tôi hỏi Roland đi bằng cách nào, Roland nói thứ Bảy người đi xe buýt khá đông, tốt nhất chúng tôi nên đi xe đạp, còn có thể rèn luyện thân thể.",
                 "audio_key": "",
-                "vocab_refs": [],
+                "vocab_refs": [
+                  "3dc505f1-bc0e-4a96-b448-17fed89fdc60",
+                  "54613016-834a-4fc3-9912-2357a6d27058",
+                  "188412d4-4c23-4d60-b7b2-21f3490199e7"
+                ],
                 "grammar_refs": [],
                 "source_origin": "textbook",
                 "check_needed": false
@@ -3871,7 +4739,7 @@
                 "id": "ce8bdbc9-b498-418a-ab2c-e16111228a35",
                 "order": 3,
                 "zh": "今天早上，我们起得很早，吃了早饭就出发了，半个小时就到公园了。",
-                "pinyin": "",
+                "pinyin": "Jīn tiān zǎo shàng， wǒ men qǐ de hěn zǎo， chī le zǎo fàn jiù chū fā le， bàn gè xiǎo shí jiù dào gōng yuán le。",
                 "vi": "Sáng nay, chúng tôi dậy rất sớm, ăn sáng xong thì xuất phát, nửa tiếng là đến công viên rồi.",
                 "audio_key": "",
                 "vocab_refs": [],
@@ -3883,10 +4751,20 @@
                 "id": "b3e5d57c-8b64-4c60-b5f0-3976cd13fef0",
                 "order": 4,
                 "zh": "今天逛公园的人真多，买票要排队，我们排了五分钟才买到票。买了票我们就进去了。我和罗兰先爬山，爬了二十多分钟就爬到了山上。因为爬得太快了，我出了一身汗。从山上往下看，非常漂亮。山上有很多树，还有很多花儿。公园里有一个很大的湖，湖上有一座白色的桥。很多人在湖边散步，还有不少人在湖上划船。罗兰说，这个公园真大，真漂亮。",
-                "pinyin": "",
+                "pinyin": "Jīn tiān guàng gōng yuán de rén zhēn duō， mǎi piào yào páiduì， wǒ men pái le wǔ fēn zhōng cái mǎi dào piào。 mǎi le piào wǒ men jiù jìn qù le。 wǒ hé Luólán xiān pá shān， pá le èr shí duō fēn zhōng jiù pá dào le shān shàng。 yīn wèi pá de tài kuài le， wǒ chū le yī shēn hàn。 cóng shān shàng wǎng xià kàn， fēi cháng piàoliang。 shān shàng yǒu hěn duō shù， hái yǒu hěn duō huā ér。 gōng yuán lǐ yǒu yí ge hěn dà de hú， hú shàng yǒu yí zuò bái sè de qiáo。 hěn duō rén zài hú biān sàn bù， hái yǒu bù shǎo rén zài hú shàng huáchuán。 Luólán shuō， zhè ge gōng yuán zhēn dà， zhēn piàoliang。",
                 "vi": "Hôm nay người đi công viên thật đông, mua vé phải xếp hàng, chúng tôi xếp hàng 5 phút mới mua được vé. Mua vé xong chúng tôi vào trong. Tôi và Roland trước tiên leo núi, leo hơn 20 phút thì lên đến trên núi. Vì leo quá nhanh, tôi ra mồ hôi đầm đìa. Từ trên núi nhìn xuống, rất đẹp. Trên núi có rất nhiều cây, còn có rất nhiều hoa. Trong công viên có một cái hồ rất lớn, trên hồ có một cây cầu màu trắng. Rất nhiều người đi dạo bên hồ, còn có không ít người chèo thuyền trên hồ. Roland nói, công viên này thật lớn, thật đẹp.",
                 "audio_key": "",
-                "vocab_refs": [],
+                "vocab_refs": [
+                  "bb1aecd4-8b82-45bf-8c9d-b3e9082911a6",
+                  "7eccd5e8-dac0-4f36-be2e-abcc0a2bdfcd",
+                  "2e47d0d4-9926-4054-a4e1-cfe61d63cfac",
+                  "66286879-4464-4667-b96b-edb647e8e7a6",
+                  "97948db8-350f-468f-a584-08ac6ee8ea70",
+                  "7d280f35-81eb-4265-bc39-135c0a35e019",
+                  "1fe04b57-27fb-446a-a96c-ac48b8e36867",
+                  "3dc505f1-bc0e-4a96-b448-17fed89fdc60",
+                  "e6317463-2f70-47e1-94a3-4f609e48161a"
+                ],
                 "grammar_refs": [],
                 "source_origin": "textbook",
                 "check_needed": false
@@ -3895,7 +4773,7 @@
                 "id": "383c7578-216f-41aa-a8a5-b889b7ef0fec",
                 "order": 5,
                 "zh": "我和罗兰在山上照了很多相。照完相我们就下山了。",
-                "pinyin": "",
+                "pinyin": "Wǒ hé Luólán zài shān shàng zhào le hěn duō xiàng。 zhào wán xiāng wǒ men jiù xià shān le。",
                 "vi": "Tôi và Roland chụp rất nhiều ảnh trên núi. Chụp ảnh xong chúng tôi xuống núi.",
                 "audio_key": "",
                 "vocab_refs": [],
@@ -3907,7 +4785,7 @@
                 "id": "bbed4df4-546b-4399-90a0-483fe2b0f43b",
                 "order": 6,
                 "zh": "我们在公园里玩儿了一个上午，看了很多地方。",
-                "pinyin": "",
+                "pinyin": "Wǒ men zài gōng yuán lǐ wán ér le yí ge shàng wǔ， kàn le hěn duō dì fāng。",
                 "vi": "Chúng tôi chơi trong công viên cả một buổi sáng, xem rất nhiều nơi.",
                 "audio_key": "",
                 "vocab_refs": [],
@@ -3919,10 +4797,12 @@
                 "id": "65b480dc-c5c7-41fb-a021-f43e4aacf57c",
                 "order": 7,
                 "zh": "我对罗兰说，学校离这个公园不太远，可以经常骑车到这儿来玩儿。爬爬山，划划船，或者跟朋友一起来散散步，聊聊天儿。罗兰说，以后我们可以再来。",
-                "pinyin": "",
+                "pinyin": "Wǒ duì Luólán shuō， xué xiào lí zhè ge gōng yuán bú tài yuǎn， kě yǐ jīng cháng qí chē dào zhè ér lái wán ér。 pá pá shān， huá huáchuán， huò zhě gēn péng yǒu yì qǐ lái sàn sàn bù， liáo liáo tiān ér。 Luólán shuō， yǐ hòu wǒ men kě yǐ zài lái。",
                 "vi": "Tôi nói với Roland rằng, trường cách công viên này không xa lắm, có thể thường xuyên đạp xe đến đây chơi. Leo núi một chút, chèo thuyền một chút, hoặc cùng bạn bè đến đây đi dạo, trò chuyện. Roland nói, sau này chúng tôi có thể lại đến.",
                 "audio_key": "",
-                "vocab_refs": [],
+                "vocab_refs": [
+                  "1fe04b57-27fb-446a-a96c-ac48b8e36867"
+                ],
                 "grammar_refs": [],
                 "source_origin": "textbook",
                 "check_needed": false
@@ -3934,14 +4814,14 @@
                 "type": "true_false",
                 "prompt": "“我”和罗兰坐公共汽车去公园玩儿了。",
                 "answer": "错",
-                "answer_verified": false,
+                "answer_verified": true,
                 "evidence": [
                   {
                     "paragraph_id": "a6b1119e-769b-4444-9eee-c4a26d7f6af3",
                     "quote": "我们最好骑自行车去"
                   }
                 ],
-                "source_origin": "textbook_question_generated_answer",
+                "source_origin": "reading_answer_verified",
                 "check_needed": false
               },
               {
@@ -3949,14 +4829,14 @@
                 "type": "true_false",
                 "prompt": "“我们”排了五分钟才买到票。",
                 "answer": "对",
-                "answer_verified": false,
+                "answer_verified": true,
                 "evidence": [
                   {
                     "paragraph_id": "b3e5d57c-8b64-4c60-b5f0-3976cd13fef0",
                     "quote": "我们排了五分钟才买到票"
                   }
                 ],
-                "source_origin": "textbook_question_generated_answer",
+                "source_origin": "reading_answer_verified",
                 "check_needed": false
               },
               {
@@ -3964,7 +4844,7 @@
                 "type": "true_false",
                 "prompt": "“我们”先爬山了，然后又划船了，还照了很多相。",
                 "answer": "错",
-                "answer_verified": false,
+                "answer_verified": true,
                 "evidence": [
                   {
                     "paragraph_id": "b3e5d57c-8b64-4c60-b5f0-3976cd13fef0",
@@ -3975,7 +4855,7 @@
                     "quote": "我和罗兰在山上照了很多相"
                   }
                 ],
-                "source_origin": "textbook_question_generated_answer",
+                "source_origin": "reading_answer_verified",
                 "check_needed": false
               },
               {
@@ -3983,14 +4863,14 @@
                 "type": "true_false",
                 "prompt": "“我们”以后还会再去那个公园。",
                 "answer": "对",
-                "answer_verified": false,
+                "answer_verified": true,
                 "evidence": [
                   {
                     "paragraph_id": "65b480dc-c5c7-41fb-a021-f43e4aacf57c",
                     "quote": "以后我们可以再来"
                   }
                 ],
-                "source_origin": "textbook_question_generated_answer",
+                "source_origin": "reading_answer_verified",
                 "check_needed": false
               }
             ],
@@ -4283,7 +5163,35 @@
           "source_origin": "uploaded_crosscheck",
           "check_needed": false
         }
-      ]
+      ],
+      "qa_report": {
+        "pdf_checked": true,
+        "pdf_file": "Hanyu Jiaocheng 2-1.pdf",
+        "pdf_book_pages_checked": "86-107",
+        "vocabulary_main_items": 46,
+        "supplementary_vocabulary_items": 8,
+        "added_main_vocab": [
+          "暖和",
+          "气温",
+          "屋子",
+          "家庭",
+          "饭店",
+          "古典"
+        ],
+        "kept_non_pdf_vocab_from_existing_file": [
+          "低",
+          "代"
+        ],
+        "pinyin_empty_fields_remaining": 0,
+        "exercise_answers_verified": true,
+        "pos_detail_added": true,
+        "separable_verbs_marked": [
+          "排队",
+          "划船",
+          "照相"
+        ],
+        "notes": []
+      }
     },
     "summary": {
       "lesson_parts": [

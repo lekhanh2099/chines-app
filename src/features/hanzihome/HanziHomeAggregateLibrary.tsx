@@ -20,6 +20,7 @@ import {
  getHanziHomeData,
  getHanziHomeLessonDetail,
 } from "@/features/hanzihome/static-data";
+import { buildHanziHomeLessonHref } from "@/features/hanzihome/utils/lesson-route";
 import type { HanziHomeLesson, ReviewResult } from "@/features/hanzihome/types";
 
 type AggregateKind = "vocab" | "grammar";
@@ -526,13 +527,21 @@ const query = useQuery({
 
           <div className="flex flex-wrap gap-1.5">
            <Link
-            href={`/hanzihome?courseId=${group.courseId}&lessonId=${group.lessonId}&module=${kind === "vocab" ? "vocab" : "grammar"}`}
+            href={buildHanziHomeLessonHref({
+             courseId: group.courseId,
+             lessonNumber: group.lessonNumber,
+             module: kind === "vocab" ? "vocab" : "grammar",
+            })}
             className="rounded-xl border border-border-default bg-bg-subtle px-3 py-1.5 text-xs font-black text-text-secondary transition-colors hover:bg-bg-elevated hover:text-text-primary"
            >
             Mở bài
            </Link>
            <Link
-            href={`/hanzihome?courseId=${group.courseId}&lessonId=${group.lessonId}&module=review`}
+            href={buildHanziHomeLessonHref({
+             courseId: group.courseId,
+             lessonNumber: group.lessonNumber,
+             module: "review",
+            })}
             className="rounded-xl border border-border-default bg-bg-subtle px-3 py-1.5 text-xs font-black text-text-secondary transition-colors hover:bg-bg-elevated hover:text-text-primary"
             onClick={(event) => {
              event.preventDefault();
@@ -686,7 +695,11 @@ function ReviewLessonMultiSelect({
 function VocabAggregateRow({ item }: { item: AggregateVocabItem }) {
  return (
   <Link
-   href={`/hanzihome?courseId=${item.courseId}&lessonId=${item.lessonId}&module=vocab`}
+   href={buildHanziHomeLessonHref({
+    courseId: item.courseId,
+    lessonNumber: item.lessonNumber,
+    module: "vocab",
+   })}
    className="grid gap-2 rounded-xl border border-border-default bg-bg-subtle p-3 transition-colors hover:border-border-hover hover:bg-bg-elevated sm:grid-cols-[7rem_minmax(0,1fr)_auto] sm:items-center"
   >
    <div className="min-w-0">
@@ -712,7 +725,11 @@ function VocabAggregateRow({ item }: { item: AggregateVocabItem }) {
 function GrammarAggregateRow({ item }: { item: AggregateGrammarItem }) {
  return (
   <Link
-   href={`/hanzihome?courseId=${item.courseId}&lessonId=${item.lessonId}&module=grammar`}
+   href={buildHanziHomeLessonHref({
+    courseId: item.courseId,
+    lessonNumber: item.lessonNumber,
+    module: "grammar",
+   })}
    className="grid gap-1 rounded-xl border border-border-default bg-bg-subtle p-3 transition-colors hover:border-border-hover hover:bg-bg-elevated"
   >
    <h3 className="line-clamp-1 text-sm font-black text-text-primary sm:text-base">

@@ -1,9 +1,6 @@
 import { cn } from "@/lib/utils";
 
-import {
- DEFAULT_LESSON_DISPLAY_MODE,
- type LessonDisplayMode,
-} from "./types";
+import { DEFAULT_LESSON_DISPLAY_MODE, type LessonDisplayMode } from "./types";
 import { getHanziTypographyStyle } from "./hanzi-typography";
 
 export function TextLineCard({
@@ -35,11 +32,7 @@ export function TextLineCard({
      {speaker}
     </p>
    )}
-   <p
-    className="leading-relaxed text-text-primary"
-    lang="zh-CN"
-    style={getHanziTypographyStyle(displayMode)}
-   >
+   <p lang="zh-CN" style={getHanziTypographyStyle(displayMode)}>
     {zh}
    </p>
    {displayMode.showPinyin && pinyin && (

@@ -13,8 +13,7 @@
 
 @font-face {
   font-family: "Hanzi Songti";
-  src: local("Songti SC"), local("STSong"), local("Songti TC"),
-    local("Songti");
+  src: local("Songti SC"), local("STSong"), local("Songti TC"), local("Songti");
   font-display: swap;
 }
 
@@ -36,33 +35,33 @@
 
 :root,
 [data-theme="light"] {
-  --background: oklch(0.9940 0 0);
+  --background: oklch(0.994 0 0);
   --foreground: oklch(0 0 0);
-  --card: oklch(0.9940 0 0);
+  --card: oklch(0.994 0 0);
   --card-foreground: oklch(0 0 0);
   --popover: oklch(0.9911 0 0);
   --popover-foreground: oklch(0 0 0);
   --primary: oklch(0.5393 0.2713 286.7462);
-  --primary-foreground: oklch(1.0000 0 0);
-  --secondary: oklch(0.9540 0.0063 255.4755);
+  --primary-foreground: oklch(1 0 0);
+  --secondary: oklch(0.954 0.0063 255.4755);
   --secondary-foreground: oklch(0.1344 0 0);
   --muted: oklch(0.9702 0 0);
   --muted-foreground: oklch(0.4386 0 0);
-  --accent: oklch(0.9393 0.0288 266.3680);
+  --accent: oklch(0.9393 0.0288 266.368);
   --accent-foreground: oklch(0.5445 0.1903 259.4848);
-  --destructive: oklch(0.6290 0.1902 23.0704);
-  --border: oklch(0.9300 0.0094 286.2156);
+  --destructive: oklch(0.629 0.1902 23.0704);
+  --border: oklch(0.93 0.0094 286.2156);
   --input: oklch(0.9401 0 0);
   --ring: oklch(0 0 0);
   --chart-1: oklch(0.7459 0.1483 156.4499);
   --chart-2: oklch(0.5393 0.2713 286.7462);
   --chart-3: oklch(0.7336 0.1758 50.5517);
   --chart-4: oklch(0.5828 0.1809 259.7276);
-  --chart-5: oklch(0.5590 0 0);
+  --chart-5: oklch(0.559 0 0);
   --sidebar: oklch(0.9777 0.0051 247.8763);
   --sidebar-foreground: oklch(0 0 0);
   --sidebar-primary: oklch(0 0 0);
-  --sidebar-primary-foreground: oklch(1.0000 0 0);
+  --sidebar-primary-foreground: oklch(1 0 0);
   --sidebar-accent: oklch(0.9401 0 0);
   --sidebar-accent-foreground: oklch(0 0 0);
   --sidebar-border: oklch(0.9401 0 0);
@@ -96,7 +95,11 @@
   --success-text: var(--chart-1);
 
   --danger: var(--destructive);
-  --danger-subtle: color-mix(in oklch, var(--destructive) 12%, var(--background));
+  --danger-subtle: color-mix(
+    in oklch,
+    var(--destructive) 12%,
+    var(--background)
+  );
   --danger-text: var(--destructive);
 
   --info: var(--chart-4);
@@ -111,7 +114,7 @@
 
   --shadow-sm: 0 1px 2px rgb(0 0 0 / 0.06);
   --shadow-md: 0 4px 12px rgb(0 0 0 / 0.08);
-  --shadow-lg: 0 18px 40px rgb(0 0 0 / 0.10);
+  --shadow-lg: 0 18px 40px rgb(0 0 0 / 0.1);
 
   /* Layout */
   --space-1: 0.25rem;
@@ -145,25 +148,25 @@
 
 [data-theme="dark"],
 .dark {
-  --background: oklch(0.2223 0.0060 271.1393);
+  --background: oklch(0.2223 0.006 271.1393);
   --foreground: oklch(0.9551 0 0);
   --card: oklch(0.2568 0.0076 274.6528);
   --card-foreground: oklch(0.9551 0 0);
   --popover: oklch(0.2568 0.0076 274.6528);
   --popover-foreground: oklch(0.9551 0 0);
   --primary: oklch(0.6132 0.2294 291.7437);
-  --primary-foreground: oklch(1.0000 0 0);
-  --secondary: oklch(0.2940 0.0130 272.9312);
+  --primary-foreground: oklch(1 0 0);
+  --secondary: oklch(0.294 0.013 272.9312);
   --secondary-foreground: oklch(0.9551 0 0);
-  --muted: oklch(0.2940 0.0130 272.9312);
+  --muted: oklch(0.294 0.013 272.9312);
   --muted-foreground: oklch(0.7058 0 0);
-  --accent: oklch(0.2795 0.0368 260.0310);
+  --accent: oklch(0.2795 0.0368 260.031);
   --accent-foreground: oklch(0.7857 0.1153 246.6596);
   --destructive: oklch(0.7106 0.1661 22.2162);
   --border: oklch(0.3289 0.0092 268.3843);
   --input: oklch(0.3289 0.0092 268.3843);
   --ring: oklch(0.6132 0.2294 291.7437);
-  --chart-1: oklch(0.8003 0.1821 151.7110);
+  --chart-1: oklch(0.8003 0.1821 151.711);
   --chart-2: oklch(0.6132 0.2294 291.7437);
   --chart-3: oklch(0.8077 0.1035 19.5706);
   --chart-4: oklch(0.6691 0.1569 260.1063);
@@ -171,8 +174,8 @@
   --sidebar: oklch(0.2011 0.0039 286.0396);
   --sidebar-foreground: oklch(0.9551 0 0);
   --sidebar-primary: oklch(0.6132 0.2294 291.7437);
-  --sidebar-primary-foreground: oklch(1.0000 0 0);
-  --sidebar-accent: oklch(0.2940 0.0130 272.9312);
+  --sidebar-primary-foreground: oklch(1 0 0);
+  --sidebar-accent: oklch(0.294 0.013 272.9312);
   --sidebar-accent-foreground: oklch(0.6132 0.2294 291.7437);
   --sidebar-border: oklch(0.3289 0.0092 268.3843);
   --sidebar-ring: oklch(0.6132 0.2294 291.7437);
@@ -203,7 +206,11 @@
   --success-text: var(--chart-1);
 
   --danger: var(--destructive);
-  --danger-subtle: color-mix(in oklch, var(--destructive) 14%, var(--background));
+  --danger-subtle: color-mix(
+    in oklch,
+    var(--destructive) 14%,
+    var(--background)
+  );
   --danger-text: var(--destructive);
 
   --info: var(--chart-4);
@@ -276,10 +283,17 @@
 
   --color-bg-inverse: var(--bg-inverse);
 
-  --font-sans: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  --font-hanzi: "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Source Han Sans SC", "Microsoft YaHei", "Heiti SC", "SimSun", ui-sans-serif, system-ui, sans-serif;
-  --font-pinyin: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Consolas, "Liberation Mono", monospace;
+  --font-sans:
+    ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  --font-hanzi:
+     "Mengshen Han Serif", "Hanzi Songti", "Songti SC", serif;
+  --font-pinyin:
+    ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  --font-mono:
+    ui-monospace, SFMono-Regular, "SF Mono", Consolas, "Liberation Mono",
+    monospace;
 }
 
 html,
@@ -336,7 +350,8 @@ body {
 
 /* Smooth transitions for themed elements */
 * {
-  transition-property: background-color, border-color, color, fill, stroke, box-shadow;
+  transition-property:
+    background-color, border-color, color, fill, stroke, box-shadow;
   transition-timing-function: ease;
   transition-duration: 0ms;
 }
@@ -364,7 +379,9 @@ body {
 }
 
 .safe-bottom-padding {
-  padding-block-end: calc(var(--bottom-nav-height) + env(safe-area-inset-bottom));
+  padding-block-end: calc(
+    var(--bottom-nav-height) + env(safe-area-inset-bottom)
+  );
 }
 
 .hanzihome-static-page {
@@ -372,11 +389,13 @@ body {
   inline-size: 100%;
   min-inline-size: 0;
   flex-direction: column;
-  gap: var(--space-4);
+  gap: var(--space-3);
   overflow-x: clip;
   padding-block: var(--space-3)
-    calc(var(--bottom-nav-height) + env(safe-area-inset-bottom) + var(--space-4));
-  padding-inline: var(--space-3);
+    calc(
+      var(--bottom-nav-height) + env(safe-area-inset-bottom) + var(--space-4)
+    );
+  padding-inline: var(--space-2);
 }
 
 .hanzihome-module-tabs > :first-child {
@@ -475,7 +494,7 @@ body {
 
 @media (min-width: 40rem) {
   .hanzihome-static-page {
-    padding-inline: var(--space-5);
+    padding-inline: var(--space-3);
   }
 
   .hanzihome-topbar-controls {
@@ -499,7 +518,7 @@ body {
 
 @media (min-width: 64rem) {
   .hanzihome-static-page {
-    padding-inline: var(--space-8);
+    padding-inline: var(--space-5);
   }
 
   .hanzihome-static-topbar {
@@ -1717,7 +1736,9 @@ hr.editor-hr.selected {
   gap: 0.5rem;
 }
 
-[data-lexical-editor] ul[__lexicallisttype="check"] li[role="checkbox"]::before {
+[data-lexical-editor]
+  ul[__lexicallisttype="check"]
+  li[role="checkbox"]::before {
   content: "";
   display: inline-block;
   width: 1rem;
@@ -1730,13 +1751,18 @@ hr.editor-hr.selected {
   transition: all 0.15s ease;
 }
 
-[data-lexical-editor] ul[__lexicallisttype="check"] li[role="checkbox"][aria-checked="true"]::before {
+[data-lexical-editor]
+  ul[__lexicallisttype="check"]
+  li[role="checkbox"][aria-checked="true"]::before {
   background-color: var(--accent);
   border-color: var(--accent);
   background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M12.207 4.793a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-2-2a1 1 0 011.414-1.414L6.5 9.086l4.293-4.293a1 1 0 011.414 0z'/%3e%3c/svg%3e");
 }
 
-[data-lexical-editor] ul[__lexicallisttype="check"] li[role="checkbox"][aria-checked="true"] span {
+[data-lexical-editor]
+  ul[__lexicallisttype="check"]
+  li[role="checkbox"][aria-checked="true"]
+  span {
   text-decoration: line-through;
   opacity: 0.6;
 }
@@ -1881,7 +1907,10 @@ hr.editor-hr.selected {
 
 @theme inline {
   --font-heading: var(--font-sans);
-  --font-sans: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  --font-sans:
+    ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -1920,7 +1949,9 @@ hr.editor-hr.selected {
   --radius-2xl: calc(var(--radius) * 1.8);
   --radius-3xl: calc(var(--radius) * 2.2);
   --radius-4xl: calc(var(--radius) * 2.6);
-  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --font-mono:
+    ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
+    "Courier New", monospace;
   --font-serif: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
   --radius: 0.625rem;
 }
@@ -2036,8 +2067,15 @@ hr.editor-hr.selected {
    ============================================= */
 
 :root {
-  --font-vietnamese: Roboto, "Noto Sans", "Helvetica Neue", Arial, system-ui, sans-serif;
-  --font-chinese: var(--font-hanzi, "Noto Sans SC", "Microsoft YaHei", "PingFang SC", sans-serif);
+  --font-vietnamese:
+    Roboto, "Noto Sans", "Helvetica Neue", Arial, system-ui, sans-serif;
+  --font-chinese: var(
+    --font-hanzi,
+    "Noto Sans SC",
+    "Microsoft YaHei",
+    "PingFang SC",
+    sans-serif
+  );
 }
 
 /* App text defaults: ưu tiên tiếng Việt dễ đọc */

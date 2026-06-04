@@ -57,13 +57,23 @@ export function sectionSubtitle(section: Section) {
   return `${section.items.length} chữ luyện viết`;
  if (section.type === "summary") {
   const sectionRecord = asRecord(section);
+  const summaryRecord = asRecord(sectionRecord.summary);
   const contentRecord = asRecord(sectionRecord.content);
   const itemCount =
    section.items.length +
    section.blocks.length +
    arrayValue(sectionRecord, "lesson_parts").length +
-   arrayValue(asRecord(sectionRecord.summary), "lesson_parts").length +
-   arrayValue(contentRecord, "lesson_parts").length;
+   arrayValue(summaryRecord, "lesson_parts").length +
+   arrayValue(contentRecord, "lesson_parts").length +
+   arrayValue(sectionRecord, "key_sentences").length +
+   arrayValue(summaryRecord, "key_sentences").length +
+   arrayValue(contentRecord, "key_sentences").length +
+   arrayValue(sectionRecord, "main_patterns").length +
+   arrayValue(summaryRecord, "main_patterns").length +
+   arrayValue(contentRecord, "main_patterns").length +
+   arrayValue(sectionRecord, "exercise_types").length +
+   arrayValue(summaryRecord, "exercise_types").length +
+   arrayValue(contentRecord, "exercise_types").length;
 
   return itemCount > 0 ? `${itemCount} mục tổng kết` : "Tổng kết bài";
  }
