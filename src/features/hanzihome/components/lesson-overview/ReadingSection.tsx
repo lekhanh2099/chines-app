@@ -8,7 +8,14 @@ import {
 import { PassageCard } from "./PassageCard";
 import { TextLineCard } from "./TextLineCard";
 import type { LessonDisplayMode } from "./types";
-import { answerToString, arrayValue, asRecord, stringValue } from "./utils";
+import {
+ answerToString,
+ arrayValue,
+ asRecord,
+ getClozeAnswerValues,
+ getPassageLikeValue,
+ stringValue,
+} from "./utils";
 
 export function ReadingCard({
  item,
@@ -56,6 +63,7 @@ export function ReadingCard({
   arrayValue(record, "answers").length > 0
    ? arrayValue(record, "answers")
    : arrayValue(record, "answer_key");
+ const clozeAnswers = getClozeAnswerValues(record);
  const wordBank = arrayValue(record, "word_bank").filter(
   (word): word is string => typeof word === "string" && Boolean(word.trim()),
  );
@@ -134,10 +142,11 @@ export function ReadingCard({
    )}
 
    <PassageCard
-    itemId={item.id}
-    passage={record.passage}
-    displayMode={displayMode}
-   />
+   itemId={item.id}
+   passage={getPassageLikeValue(record)}
+   answers={clozeAnswers}
+   displayMode={displayMode}
+  />
 
    {wordBank.length > 0 && (
     <div className="flex flex-wrap gap-2">
@@ -270,24 +279,6 @@ export function ReadingCard({
      </div>
     </div>
    )}
-   {answers.length > 0 && (
-    <div className="space-y-2">
-     <p className="text-xs font-black uppercase tracking-wide text-accent-text">
-      Đáp án
-     </p>
-     <div className="flex gap-2 ">
-      {answers.map((answer, index) => (
-       <p
-        key={answer + index}
-        className="text-sm font-bold text-accent-text rounded-xl border border-accent/30 bg-accent-subtle p-3"
-       >
-        {answer}
-       </p>
-      ))}
-     </div>
-    </div>
-   )}
-
    <AnswerKeyList itemId={item.id} values={answers} />
   </article>
  );

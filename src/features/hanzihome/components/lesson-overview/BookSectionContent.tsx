@@ -3,6 +3,7 @@ import type { Section } from "@/features/hanzihome/static-json/schemas/hanyuLess
 import {
  EmptySectionState,
  GenericItemCard,
+ hasRenderableValue,
 } from "./CommonCards";
 import { ExerciseCard } from "./ExerciseSection";
 import { GrammarCard } from "./GrammarSection";
@@ -200,6 +201,13 @@ export function BookSectionContent({
  section: Section;
  displayMode?: LessonDisplayMode;
 }) {
+ const renderSectionFallback = () =>
+  hasRenderableValue(section) ? (
+   <GenericItemCard value={section} displayMode={displayMode} />
+  ) : (
+   <EmptySectionState reason={sectionEmptyReason(section)} />
+  );
+
  if (section.type === "text") {
   return section.blocks.length > 0 ? (
    <div className="grid gap-3">
@@ -208,7 +216,7 @@ export function BookSectionContent({
     ))}
    </div>
   ) : (
-   <EmptySectionState reason={sectionEmptyReason(section)} />
+   renderSectionFallback()
   );
  }
 
@@ -216,7 +224,7 @@ export function BookSectionContent({
   return section.items.length > 0 ? (
    <VocabMiniGrid items={section.items} displayMode={displayMode} />
   ) : (
-   <EmptySectionState reason={sectionEmptyReason(section)} />
+   renderSectionFallback()
   );
  }
 
@@ -228,7 +236,7 @@ export function BookSectionContent({
     ))}
    </div>
   ) : (
-   <EmptySectionState reason={sectionEmptyReason(section)} />
+   renderSectionFallback()
   );
  }
 
@@ -240,7 +248,7 @@ export function BookSectionContent({
     ))}
    </div>
   ) : (
-   <EmptySectionState reason={sectionEmptyReason(section)} />
+   renderSectionFallback()
   );
  }
 
@@ -252,7 +260,7 @@ export function BookSectionContent({
     ))}
    </div>
   ) : (
-   <EmptySectionState reason={sectionEmptyReason(section)} />
+   renderSectionFallback()
   );
  }
 
@@ -264,7 +272,7 @@ export function BookSectionContent({
     ))}
    </div>
   ) : (
-   <EmptySectionState reason={sectionEmptyReason(section)} />
+   renderSectionFallback()
   );
  }
 
@@ -276,7 +284,7 @@ export function BookSectionContent({
     ))}
    </div>
   ) : (
-   <EmptySectionState reason={sectionEmptyReason(section)} />
+   renderSectionFallback()
   );
  }
 
@@ -303,7 +311,7 @@ export function BookSectionContent({
     ))}
    </div>
   ) : (
-   <EmptySectionState reason={sectionEmptyReason(section)} />
+   renderSectionFallback()
   );
  }
 
@@ -319,7 +327,7 @@ export function BookSectionContent({
     ))}
    </div>
   ) : (
-   <EmptySectionState reason={sectionEmptyReason(section)} />
+   renderSectionFallback()
   );
  }
 
@@ -333,7 +341,7 @@ export function BookSectionContent({
     />
    ))}
   </div>
- ) : (
-  <EmptySectionState reason={sectionEmptyReason(section)} />
+) : (
+  renderSectionFallback()
  );
 }

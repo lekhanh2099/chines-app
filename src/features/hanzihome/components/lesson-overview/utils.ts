@@ -28,12 +28,68 @@ export function nonEmptyStrings(value: unknown[]) {
  );
 }
 
+function hasTextLikeValue(value: unknown): boolean {
+ if (typeof value === "string") return Boolean(value.trim());
+ if (typeof value === "number" || typeof value === "boolean") return true;
+ if (Array.isArray(value)) return value.some(hasTextLikeValue);
+
+ const record = asRecord(value);
+ return Object.values(record).some(hasTextLikeValue);
+}
+
 export function answerToString(value: unknown): string {
  if (typeof value === "string") return value.trim();
  if (typeof value === "number" || typeof value === "boolean")
   return String(value);
  if (Array.isArray(value)) return nonEmptyStrings(value).join(" / ");
  return "";
+}
+
+export function getPassageLikeValue(
+ record: Record<string, unknown>,
+ options: { includeText?: boolean } = {},
+): unknown {
+ const directPassage = asRecord(record.passage);
+ if (Object.values(directPassage).some(hasTextLikeValue)) return record.passage;
+
+ const textWithBlanks =
+  stringValue(record, "text_with_blanks") ||
+  stringValue(record, "passage_with_blanks") ||
+  stringValue(record, "passage_blanked") ||
+  stringValue(record, "cloze_text");
+ const text =
+  textWithBlanks ||
+  stringValue(record, "passage_text") ||
+  (options.includeText ? stringValue(record, "text") : "");
+ const completedText =
+  stringValue(record, "completed_text") ||
+  stringValue(record, "completed_text_zh") ||
+  stringValue(record, "completed_passage") ||
+  stringValue(record, "passage_complete");
+ const paragraphs = arrayValue(record, "paragraphs");
+ const segments = arrayValue(record, "segments");
+ const title = stringValue(record, "title_vi") || stringValue(record, "title");
+ const passage = {
+  id: stringValue(record, "id"),
+  title,
+  text_with_blanks: text,
+  completed_text: completedText,
+  pinyin: stringValue(record, "pinyin"),
+  vi: stringValue(record, "translation_vi") || stringValue(record, "vi"),
+  paragraphs,
+  segments,
+ };
+
+ return Object.values(passage).some(hasTextLikeValue) ? passage : undefined;
+}
+
+export function getClozeAnswerValues(record: Record<string, unknown>) {
+ return [
+  ...arrayValue(record, "blanks"),
+  ...arrayValue(record, "answers"),
+  ...arrayValue(record, "answer_key"),
+  ...arrayValue(record, "cloze_answers"),
+ ];
 }
 
 export function sectionTitle(section: Section) {

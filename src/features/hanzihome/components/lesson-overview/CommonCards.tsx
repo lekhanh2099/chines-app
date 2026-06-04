@@ -1,11 +1,15 @@
 import type { ReactNode } from "react";
 
+import { PassageCard } from "./PassageCard";
 import { TextLineCard } from "./TextLineCard";
+import { getHanziTypographyStyle } from "./hanzi-typography";
 import type { LessonDisplayMode } from "./types";
 import {
  answerToString,
  arrayValue,
  asRecord,
+ getClozeAnswerValues,
+ getPassageLikeValue,
  stringValue,
 } from "./utils";
 
@@ -79,7 +83,9 @@ export function AnswerKeyList({
     stringValue(answer, "label") ||
     `${index + 1}`;
    const value =
-    answerToString(answer.answer) || stringValue(answer, "sample_answer");
+    answerToString(answer.answer) ||
+    stringValue(answer, "sample_answer") ||
+    answerToString(answerValue);
    const note = stringValue(answer, "explanation_vi");
    return value
     ? { id: `${itemId}-answer-${index}`, label, value, note }
@@ -140,13 +146,15 @@ export function GenericItemCard({
   ? item.practice_tasks
   : [];
  const examples = arrayValue(item, "examples");
+ const passage = getPassageLikeValue(item);
+ const clozeAnswers = getClozeAnswerValues(item);
  const extraFields = getRenderableFields(item);
 
  return (
   <article className="grid gap-2 rounded-xl border border-border-default bg-bg-primary p-3">
    <h4 className="text-base font-black text-text-primary">{title}</h4>
    {hanzi && hanzi !== title && (
-    <p lang="zh-CN" style={getInlineHanziStyle(displayMode)}>
+    <p lang="zh-CN" style={getHanziTypographyStyle(displayMode)}>
      {hanzi}
     </p>
    )}
@@ -167,6 +175,12 @@ export function GenericItemCard({
    {functionVi && (
     <p className="text-sm font-semibold text-text-secondary">{functionVi}</p>
    )}
+   <PassageCard
+   itemId={stringValue(item, "id") || title}
+   passage={passage}
+   answers={clozeAnswers}
+   displayMode={displayMode}
+  />
    {extraFields.length > 0 && (
     <div className="grid gap-2">
      {extraFields.map((field) => (
@@ -257,16 +271,60 @@ type RenderableField = {
 
 const FIELD_LABELS: Record<string, string> = {
  answer: "Đáp án",
+ answer_key: "Đáp án",
+ answers: "Đáp án",
+ ba_sentences: "Câu chữ 把",
+ blanks: "Chỗ trống",
+ choices: "Lựa chọn",
+ cloze_answers: "Đáp án điền khuyết",
+ completed_paragraphs: "Bản hoàn chỉnh",
+ completed_passage: "Bản hoàn chỉnh",
+ completed_text: "Bản hoàn chỉnh",
+ completed_text_zh: "Bản hoàn chỉnh",
+ content_vi: "Nội dung",
  correct: "Đúng",
  correct_sentence: "Câu đúng",
+ culture_note_vi: "Văn hóa / ghi chú",
+ data: "Dữ liệu",
+ dialogue: "Hội thoại",
+ dialogues: "Hội thoại",
  explanation_vi: "Giải thích",
+ full_text_answer_reference: "Đáp án toàn bài",
+ generated_comprehension_questions: "Câu hỏi đọc hiểu",
+ grammar_highlights: "Điểm ngữ pháp trong bài",
  instruction_vi: "Yêu cầu",
+ items: "Mục",
+ left_items: "Cột A",
+ model: "Mẫu",
+ model_a: "Mẫu A",
+ model_b: "Mẫu B",
+ models: "Mẫu",
+ notes_vi: "Ghi chú",
  note_vi: "Ghi chú",
+ parts: "Phần",
  pattern: "Cấu trúc",
+ patterns: "Mẫu luyện",
+ questions: "Câu hỏi",
+ retell_key_points: "Ý chính kể lại",
+ retell_outline: "Dàn ý kể lại",
+ retell_prompts: "Gợi ý kể lại",
+ right_items: "Cột B",
  prompt: "Câu hỏi",
+ sample_retell: "Bài kể mẫu",
+ sample_retell_generated: "Bài kể mẫu",
+ sample_retelling: "Bài kể mẫu",
  sample_answer: "Đáp án mẫu",
+ situations: "Tình huống",
  structure: "Cấu trúc",
+ suggested_answers: "Đáp án gợi ý",
+ supplement_vocab: "Từ bổ sung",
+ supplemental_vocab: "Từ bổ sung",
+ supplementary_vocab: "Từ bổ sung",
+ supplementary_vocabulary: "Từ bổ sung",
+ supplementary_words: "Từ bổ sung",
  text: "Nội dung",
+ translation_vi: "Dịch nghĩa",
+ word_bank: "Từ cho sẵn",
  wrong: "Sai",
  wrong_sentence: "Câu sai",
 };
@@ -278,14 +336,32 @@ const GENERIC_FIELD_ORDER = [
  "instruction_vi",
  "prompt",
  "text",
+ "questions",
+ "word_bank",
+ "choices",
  "answer",
+ "answers",
+ "answer_key",
+ "full_text_answer_reference",
  "sample_answer",
+ "suggested_answers",
+ "completed_text",
+ "completed_text_zh",
+ "completed_passage",
  "wrong",
  "wrong_sentence",
  "correct",
  "correct_sentence",
  "explanation_vi",
  "note_vi",
+ "notes_vi",
+ "translation_vi",
+ "supplementary_words",
+ "supplementary_vocab",
+ "supplementary_vocabulary",
+ "supplement_vocab",
+ "parts",
+ "items",
 ];
 
 const HIDDEN_GENERIC_FIELDS = new Set([
@@ -305,6 +381,20 @@ const HIDDEN_GENERIC_FIELDS = new Set([
  "lines",
  "dialogue",
  "examples",
+ "passage",
+ "passage_text",
+ "passage_with_blanks",
+ "passage_blanked",
+ "passage_complete",
+ "text_with_blanks",
+ "cloze_text",
+ "blanks",
+ "answers",
+ "answer_key",
+ "cloze_answers",
+ "completed_passage",
+ "completed_text",
+ "completed_text_zh",
  "practice_tasks",
  "grammar_refs",
  "vocab_refs",
@@ -316,20 +406,6 @@ const HIDDEN_GENERIC_FIELDS = new Set([
  "rendering",
  "grading",
 ]);
-
-function getInlineHanziStyle(displayMode: LessonDisplayMode) {
- return {
-  fontFamily:
-   displayMode.hanziFont === "kai"
-    ? '"Hanzi Kaiti", "Kaiti SC", serif'
-    : displayMode.hanziFont === "mengshen"
-      ? '"Mengshen Han Serif", "Hanzi Songti", "Songti SC", serif'
-      : '"Hanzi Songti", "Songti SC", serif',
-  fontSize: "1.75rem",
-  fontWeight: 700,
-  lineHeight: 1.25,
- };
-}
 
 function getFieldLabel(key: string) {
  return FIELD_LABELS[key] || key.replaceAll("_", " ");
@@ -348,12 +424,15 @@ function getRenderableFields(item: Record<string, unknown>): RenderableField[] {
   .filter((field) => hasRenderableValue(field.value));
 }
 
-function hasRenderableValue(value: unknown): boolean {
+export function hasRenderableValue(value: unknown): boolean {
  if (typeof value === "string") return Boolean(value.trim());
  if (typeof value === "number" || typeof value === "boolean") return true;
  if (Array.isArray(value)) return value.some(hasRenderableValue);
  const record = asRecord(value);
- return Object.keys(record).length > 0 && Object.values(record).some(hasRenderableValue);
+ return (
+  Object.keys(record).length > 0 &&
+  Object.values(record).some(hasRenderableValue)
+ );
 }
 
 function FieldValueBlock({
@@ -416,6 +495,17 @@ function FieldValue({
  }
 
  const record = asRecord(value);
+ const nestedPassage = getPassageLikeValue(record);
+ if (nestedPassage) {
+  return (
+   <PassageCard
+    itemId={stringValue(record, "id") || "nested-passage"}
+    passage={nestedPassage}
+    answers={getClozeAnswerValues(record)}
+    displayMode={displayMode}
+   />
+  );
+ }
  const primary =
   stringValue(record, "title_vi") ||
   stringValue(record, "title") ||
@@ -459,6 +549,17 @@ function FieldListItem({
 }) {
  const record = asRecord(value);
  const zh = stringValue(record, "zh") || stringValue(record, "text");
+ const nestedPassage = getPassageLikeValue(record, { includeText: true });
+ if (nestedPassage && !zh) {
+  return (
+   <PassageCard
+    itemId={stringValue(record, "id") || "field-passage"}
+    passage={nestedPassage}
+    answers={getClozeAnswerValues(record)}
+    displayMode={displayMode}
+   />
+  );
+ }
  if (zh) {
   return (
    <TextLineCard
@@ -511,7 +612,11 @@ export function LooseItemGrid({
      stringValue(record, "answer");
 
     if (compactText && Object.keys(record).length <= 3) {
-     return <ExercisePill key={`${compactText}-${index}`}>{compactText}</ExercisePill>;
+     return (
+      <ExercisePill key={`${compactText}-${index}`}>
+       {compactText}
+      </ExercisePill>
+     );
     }
 
     return (

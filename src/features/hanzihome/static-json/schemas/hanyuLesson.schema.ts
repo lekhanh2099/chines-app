@@ -984,6 +984,15 @@ export const ReadingSectionSchema = z.preprocess((value) => {
 
  const rootReadingPayloadKeys = [
   "passage",
+  "text",
+  "text_with_blanks",
+  "passage_with_blanks",
+  "passage_blanked",
+  "passage_complete",
+  "completed_passage",
+  "completed_text",
+  "completed_text_zh",
+  "translation_vi",
   "paragraphs",
   "questions",
   "answer_key",

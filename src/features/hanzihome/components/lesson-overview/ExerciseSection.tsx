@@ -14,6 +14,8 @@ import {
  answerToString,
  arrayValue,
  asRecord,
+ getClozeAnswerValues,
+ getPassageLikeValue,
  nonEmptyStrings,
  stringValue,
 } from "./utils";
@@ -115,7 +117,6 @@ function SubstitutionExerciseBody({
  item: Exercise;
  displayMode: LessonDisplayMode;
 }) {
- console.log("Rendering SubstitutionExerciseBody", { item });
  const record = asRecord(item);
  const model = "model" in item && Array.isArray(item.model) ? item.model : [];
  const models = arrayValue(record, "models");
@@ -340,6 +341,7 @@ function QuestionExerciseBody({
  const leftItems = arrayValue(record, "left_items");
  const rightItems = arrayValue(record, "right_items");
  const answerKey = arrayValue(record, "answer_key");
+ const clozeAnswers = getClozeAnswerValues(record);
  const wordBank = arrayValue(record, "word_bank").filter(
   (word): word is string => typeof word === "string" && Boolean(word.trim()),
  );
@@ -372,7 +374,8 @@ function QuestionExerciseBody({
 
    <PassageCard
     itemId={item.id}
-    passage={record.passage}
+    passage={getPassageLikeValue(record, { includeText: true })}
+    answers={clozeAnswers}
     displayMode={displayMode}
    />
 

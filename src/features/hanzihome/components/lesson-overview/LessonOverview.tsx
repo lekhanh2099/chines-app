@@ -1,7 +1,8 @@
 "use client";
 
-import type { ReactNode } from "react";
+import { useMemo, type ReactNode } from "react";
 import {
+ BookOpenCheck,
  GraduationCap,
  Tags,
  type LucideIcon,
@@ -20,6 +21,15 @@ import type {
 } from "@/features/hanzihome/types";
 import { getVocabDisplayMeaning } from "@/features/hanzihome/utils/vocab-item";
 
+import { BookSectionContent } from "./BookSectionContent";
+import { sectionIcons } from "./section-icons";
+import {
+ DEFAULT_LESSON_DISPLAY_MODE,
+ type BookSection,
+ type LessonDisplayMode,
+} from "./types";
+import { getBookSections } from "./utils";
+
 type LessonOverviewProps = {
  lesson: HanziHomeLesson;
  learningState: UserLearningState;
@@ -31,9 +41,17 @@ export function LessonOverview({
  onOpenModule,
 }: LessonOverviewProps) {
  const fallbackMarkdown = lesson.notes?.overviewMarkdown?.trim();
+ const sourceSections = useMemo(
+  () => getBookSections(lesson.sourceLesson),
+  [lesson.sourceLesson],
+ );
 
  return (
   <div className="grid gap-3 sm:gap-4">
+   {sourceSections.length > 0 && (
+    <LessonSourceDataOverview sections={sourceSections} />
+   )}
+
    {(lesson.vocab.length > 0 || lesson.grammar.length > 0) && (
     <div className="grid gap-3 lg:grid-cols-2">
      {lesson.vocab.length > 0 && (
@@ -78,6 +96,89 @@ export function LessonOverview({
 
    <LessonNoteAccessCard lesson={lesson} />
   </div>
+ );
+}
+
+const OVERVIEW_DISPLAY_MODE: LessonDisplayMode = {
+ ...DEFAULT_LESSON_DISPLAY_MODE,
+ showPinyin: true,
+ showMeaning: true,
+};
+
+function LessonSourceDataOverview({ sections }: { sections: BookSection[] }) {
+ return (
+  <Card padding="lg" className="rounded-xl">
+   <div className="grid gap-4">
+    <div className="flex flex-wrap items-start justify-between gap-3">
+     <div className="flex min-w-0 items-start gap-3">
+      <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-accent-subtle text-accent-text">
+       <BookOpenCheck className="h-5 w-5" />
+      </span>
+      <div className="min-w-0">
+       <p className="text-xs font-black uppercase tracking-wide text-text-muted">
+        Nội dung JSON của bài
+       </p>
+       <h2 className="text-lg font-black text-text-primary">
+        Render toàn bộ dữ liệu đang có
+       </h2>
+       <p className="mt-1 text-sm font-semibold text-text-muted">
+        Chia theo cấu trúc sách, giữ pinyin và nghĩa để dễ rà data.
+       </p>
+      </div>
+     </div>
+     <span className="rounded-full border border-border-default bg-bg-subtle px-3 py-1 text-xs font-black uppercase tracking-wide text-text-muted">
+      {sections.length} phần
+     </span>
+    </div>
+
+    <div className="grid max-h-[72vh] gap-3 overflow-y-auto pr-1">
+     {sections.map((section, index) => (
+      <OverviewBookSection
+       key={section.id}
+       section={section}
+       index={index}
+      />
+     ))}
+    </div>
+   </div>
+  </Card>
+ );
+}
+
+function OverviewBookSection({
+ section,
+ index,
+}: {
+ section: BookSection;
+ index: number;
+}) {
+ const SectionIcon = sectionIcons[section.type] ?? BookOpenCheck;
+
+ return (
+  <article className="rounded-xl border border-border-default bg-bg-subtle p-3 sm:p-4">
+   <div className="mb-3 flex min-w-0 items-start gap-3">
+    <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-bg-primary text-primary">
+     <SectionIcon className="h-4 w-4" />
+    </span>
+    <div className="min-w-0">
+     <p className="text-xs font-black uppercase tracking-wide text-text-muted">
+      Phần {index + 1}
+     </p>
+     <h3 className="text-base font-black text-text-primary">
+      {section.title}
+     </h3>
+     {section.subtitle && (
+      <p className="text-sm font-semibold text-text-muted">
+       {section.subtitle}
+      </p>
+     )}
+    </div>
+   </div>
+   <BookSectionContent
+    section={section.section}
+    displayMode={OVERVIEW_DISPLAY_MODE}
+   />
+  </article>
  );
 }
 

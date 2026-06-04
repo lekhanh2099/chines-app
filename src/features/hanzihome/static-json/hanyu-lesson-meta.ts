@@ -1,9 +1,21 @@
 import type { HanyuLesson } from "./schemas/hanyuLesson.schema";
 
+function getLessonIndexFromTags(tags: string[] | undefined) {
+ const lessonTag = tags?.find((tag) => /^lesson_\d+$/i.test(tag));
+ const lessonIndex = lessonTag
+  ? Number.parseInt(lessonTag.replace(/^lesson_/i, ""), 10)
+  : Number.NaN;
+
+ return Number.isFinite(lessonIndex) ? lessonIndex : 0;
+}
+
 export function getHanyuLessonMeta(lessonDocument: HanyuLesson) {
  const lessonMeta = lessonDocument.lesson.metadata;
  const source = lessonDocument.source;
- const lessonNumber = lessonMeta?.lesson_index ?? source?.lesson_index ?? 0;
+ const lessonNumber =
+  lessonMeta?.lesson_index ??
+  source?.lesson_index ??
+  getLessonIndexFromTags(lessonDocument.lesson.tags);
 
  return {
   legacyId: lessonMeta?.legacy_id || "",
