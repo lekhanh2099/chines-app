@@ -25,12 +25,30 @@ function promptToString(value: unknown): string {
  if (Array.isArray(value)) return nonEmptyStrings(value).join(" / ");
 
  const record = asRecord(value);
+
  return (
   stringValue(record, "zh") ||
   stringValue(record, "vi") ||
   stringValue(record, "text") ||
-  stringValue(record, "prompt")
+  stringValue(record, "prompt") ||
+  stringValue(record, "question")
  );
+}
+
+function objectText(value: unknown, keys: string[]) {
+ const record = asRecord(value);
+
+ for (const key of keys) {
+  const text = stringValue(record, key);
+  if (text) return text;
+ }
+
+ return "";
+}
+
+function formatAnswer(value: unknown): string {
+ if (typeof value === "boolean") return value ? "Đúng" : "Sai";
+ return answerToString(value);
 }
 
 function modelLines(record: Record<string, unknown>): string[] {
@@ -43,6 +61,205 @@ function modelLines(record: Record<string, unknown>): string[] {
  ].filter(Boolean);
 }
 
+function ModelBlock({
+ title = "Mẫu",
+ values,
+ displayMode,
+}: {
+ title?: string;
+ values: unknown[];
+ displayMode: LessonDisplayMode;
+}) {
+ const visibleValues = values.filter((value) => {
+  if (answerToString(value)) return true;
+
+  const record = asRecord(value);
+  return Boolean(
+   stringValue(record, "zh") ||
+   stringValue(record, "text") ||
+   stringValue(record, "prompt") ||
+   stringValue(record, "answer"),
+  );
+ });
+
+ if (visibleValues.length === 0) return null;
+
+ return (
+  <div className="rounded-xl border border-accent/30 bg-accent-subtle p-3">
+   <p className="text-xs font-black uppercase tracking-wide text-accent-text">
+    {title}
+   </p>
+   <div className="mt-2 grid gap-2">
+    {visibleValues.map((value, index) => {
+     const record = asRecord(value);
+     const zh =
+      stringValue(record, "zh") ||
+      stringValue(record, "text") ||
+      stringValue(record, "prompt") ||
+      answerToString(value);
+     const pinyin = stringValue(record, "pinyin");
+     const vi =
+      stringValue(record, "vi") ||
+      stringValue(record, "meaning_vi") ||
+      stringValue(record, "answer");
+
+     if (!zh) return null;
+
+     if (typeof value === "string") {
+      return (
+       <p
+        key={`${zh}-${index}`}
+        className="text-base font-black text-accent-text"
+        lang="zh-CN"
+       >
+        {zh}
+       </p>
+      );
+     }
+
+     return (
+      <TextLineCard
+       key={stringValue(record, "id") || `${zh}-${index}`}
+       zh={zh}
+       pinyin={pinyin}
+       vi={vi}
+       displayMode={displayMode}
+      />
+     );
+    })}
+   </div>
+  </div>
+ );
+}
+
+function WordBank({ values }: { values: unknown[] }) {
+ const words = values.map(answerToString).filter(Boolean);
+
+ if (words.length === 0) return null;
+
+ return (
+  <div className="grid gap-2 rounded-xl border border-border-default bg-bg-subtle p-3">
+   <p className="text-xs font-black uppercase tracking-wide text-text-muted">
+    Từ cho sẵn
+   </p>
+   <div className="flex flex-wrap gap-2">
+    {words.map((word) => (
+     <ExercisePill key={word}>{word}</ExercisePill>
+    ))}
+   </div>
+  </div>
+ );
+}
+
+function SupplementaryPills({
+ itemId,
+ values,
+ displayMode,
+}: {
+ itemId: string;
+ values: unknown[];
+ displayMode: LessonDisplayMode;
+}) {
+ if (values.length === 0) return null;
+
+ return (
+  <div className="grid gap-2 rounded-xl border border-border-default bg-bg-subtle p-3">
+   <p className="text-xs font-black uppercase tracking-wide text-text-muted">
+    Từ bổ sung
+   </p>
+   <div className="flex flex-wrap gap-2">
+    {values.map((wordValue, index) => {
+     const word = asRecord(wordValue);
+     const hanzi =
+      stringValue(word, "hanzi") ||
+      stringValue(word, "text") ||
+      stringValue(word, "zh") ||
+      answerToString(wordValue);
+     const pinyin = stringValue(word, "pinyin");
+     const meaning = stringValue(word, "meaning_vi");
+     const pos = stringValue(word, "pos");
+
+     if (!hanzi) return null;
+
+     return (
+      <ExercisePill key={stringValue(word, "id") || `${itemId}-word-${index}`}>
+       {hanzi}
+       {displayMode.showPinyin && pinyin && ` · ${pinyin}`}
+       {displayMode.showMeaning && meaning && ` · ${meaning}`}
+       {pos && ` · ${pos}`}
+      </ExercisePill>
+     );
+    })}
+   </div>
+  </div>
+ );
+}
+
+function QuestionCard({
+ itemId,
+ questionValue,
+ index,
+}: {
+ itemId: string;
+ questionValue: unknown;
+ index: number;
+}) {
+ const question = asRecord(questionValue);
+ const nestedQuestion = asRecord(question.question);
+ const statement = asRecord(question.statement);
+ const answerRecord = asRecord(question.answer);
+
+ const choices = arrayValue(question, "choices")
+  .map((choiceValue) => {
+   const choice = asRecord(choiceValue);
+   return (
+    stringValue(choice, "text") ||
+    stringValue(choice, "zh") ||
+    stringValue(choice, "label") ||
+    answerToString(choiceValue)
+   );
+  })
+  .filter(Boolean);
+
+ const title =
+  promptToString(question.prompt) ||
+  stringValue(question, "prompt") ||
+  stringValue(question, "wrong") ||
+  stringValue(question, "wrong_sentence") ||
+  stringValue(question, "response_prompt") ||
+  stringValue(question, "question") ||
+  stringValue(nestedQuestion, "zh") ||
+  stringValue(nestedQuestion, "vi") ||
+  stringValue(statement, "zh") ||
+  stringValue(statement, "vi") ||
+  stringValue(question, "text") ||
+  "Câu hỏi";
+
+ const answer =
+  stringValue(question, "sample_answer") ||
+  stringValue(question, "correct") ||
+  stringValue(question, "correct_sentence") ||
+  formatAnswer(question.answer) ||
+  stringValue(answerRecord, "zh") ||
+  stringValue(answerRecord, "vi") ||
+  stringValue(question, "correct_answer_label");
+
+ const note =
+  stringValue(question, "explanation_vi") ||
+  stringValue(question, "note_vi") ||
+  objectText(question.evidence, ["quote"]);
+
+ return (
+  <ExerciseQuestionCard
+   key={stringValue(question, "id") || `${itemId}-${index}`}
+   index={index + 1}
+   title={choices.length > 0 ? `${title} (${choices.join(" / ")})` : title}
+   answer={answer}
+   note={note}
+  />
+ );
+}
+
 function PhoneticsExerciseBody({
  item,
  displayMode,
@@ -51,7 +268,7 @@ function PhoneticsExerciseBody({
  displayMode: LessonDisplayMode;
 }) {
  const record = asRecord(item);
- const parts = "parts" in item && Array.isArray(item.parts) ? item.parts : [];
+ const parts = arrayValue(record, "parts");
  const fallbackItems = [
   ...arrayValue(record, "items"),
   ...arrayValue(record, "chunks"),
@@ -70,15 +287,21 @@ function PhoneticsExerciseBody({
 
  return (
   <div className="grid gap-3">
-   {parts.map((partValue) => {
+   {parts.map((partValue, partIndex) => {
     const part = asRecord(partValue);
-    const title = stringValue(part, "title");
+    const title =
+     stringValue(part, "title_vi") ||
+     stringValue(part, "title") ||
+     `Phần ${partIndex + 1}`;
     const instruction = stringValue(part, "instruction_vi");
     const items = arrayValue(part, "items");
     const type = stringValue(part, "type");
 
     return (
-     <div key={stringValue(part, "id") || title} className="grid gap-2">
+     <div
+      key={stringValue(part, "id") || `${item.id}-part-${partIndex}`}
+      className="grid gap-2 rounded-xl border border-border-default bg-bg-subtle p-3"
+     >
       <div>
        <h5 className="font-black text-text-primary">{title}</h5>
        {instruction && (
@@ -89,6 +312,7 @@ function PhoneticsExerciseBody({
       <LooseItemGrid
        items={items.map((entryValue) => {
         const entry = asRecord(entryValue);
+
         if (
          type.includes("pair") ||
          stringValue(entry, "left") ||
@@ -99,6 +323,7 @@ function PhoneticsExerciseBody({
           text: `${stringValue(entry, "left")} / ${stringValue(entry, "right")}`,
          };
         }
+
         return entryValue;
        })}
        displayMode={displayMode}
@@ -118,62 +343,32 @@ function SubstitutionExerciseBody({
  displayMode: LessonDisplayMode;
 }) {
  const record = asRecord(item);
- const model = "model" in item && Array.isArray(item.model) ? item.model : [];
+ const model = arrayValue(record, "model");
  const models = arrayValue(record, "models");
  const patternGroups = arrayValue(record, "patterns");
  const partGroups = arrayValue(record, "parts");
  const items = [
-  ...("items" in item && Array.isArray(item.items) ? item.items : []),
+  ...arrayValue(record, "items"),
   ...arrayValue(record, "questions"),
  ];
  const answerKey = arrayValue(record, "answer_key");
- const supplementaryWords = arrayValue(record, "supplementary_words");
+ const supplementaryWords = [
+  ...arrayValue(record, "supplementary_words"),
+  ...arrayValue(record, "supplementary_vocab"),
+  ...arrayValue(record, "supplementary_vocabulary"),
+  ...arrayValue(record, "supplement_vocab"),
+  ...arrayValue(record, "supplemental_vocab"),
+ ];
 
  return (
   <div className="grid gap-3">
-   {supplementaryWords.length > 0 && (
-    <div className="flex flex-wrap gap-2">
-     {supplementaryWords.map((wordValue, index) => {
-      const word = asRecord(wordValue);
-      const label =
-       stringValue(word, "hanzi") ||
-       stringValue(word, "text") ||
-       answerToString(wordValue);
-      const pinyin = stringValue(word, "pinyin");
-      const meaning = stringValue(word, "meaning_vi");
+   <SupplementaryPills
+    itemId={item.id}
+    values={supplementaryWords}
+    displayMode={displayMode}
+   />
 
-      return (
-       <ExercisePill
-        key={stringValue(word, "id") || `${item.id}-word-${index}`}
-       >
-        {label}
-        {displayMode.showPinyin && pinyin && ` · ${pinyin}`}
-        {displayMode.showMeaning && meaning && ` · ${meaning}`}
-       </ExercisePill>
-      );
-     })}
-    </div>
-   )}
-
-   {(model.length > 0 || models.length > 0) && (
-    <div className="rounded-xl border border-accent/30 bg-accent-subtle p-3">
-     <p className="text-xs font-black uppercase tracking-wide text-accent-text">
-      Mẫu
-     </p>
-     <div className="mt-1 grid gap-1">
-      {model.map((line, index) => (
-       <p
-        key={`${line}-${index}`}
-        className="text-base font-black text-accent-text"
-        lang="zh-CN"
-       >
-        {line}
-       </p>
-      ))}
-      <LooseItemGrid items={models} displayMode={displayMode} />
-     </div>
-    </div>
-   )}
+   <ModelBlock values={[...model, ...models]} displayMode={displayMode} />
 
    {partGroups.length > 0 && (
     <div className="grid gap-3">
@@ -191,27 +386,14 @@ function SubstitutionExerciseBody({
         key={stringValue(part, "id") || `${item.id}-part-${partIndex}`}
         className="grid gap-2 rounded-xl border border-border-default bg-bg-subtle p-3"
        >
-        <div>
-         <h5 className="font-black text-text-primary">{partTitle}</h5>
-         {partModels.length > 0 && (
-          <div className="mt-2 rounded-lg border border-accent/30 bg-accent-subtle px-3 py-2">
-           <p className="text-xs font-black uppercase tracking-wide text-accent-text">
-            Mẫu
-           </p>
-           <div className="mt-1 grid gap-1">
-            {partModels.map((line) => (
-             <p
-              key={line}
-              className="text-sm font-black text-accent-text"
-              lang="zh-CN"
-             >
-              {line}
-             </p>
-            ))}
-           </div>
-          </div>
-         )}
-        </div>
+        <h5 className="font-black text-text-primary">{partTitle}</h5>
+
+        <ModelBlock
+         title="Mẫu trong phần"
+         values={partModels}
+         displayMode={displayMode}
+        />
+
         <LooseItemGrid items={partItems} displayMode={displayMode} />
        </div>
       );
@@ -231,24 +413,12 @@ function SubstitutionExerciseBody({
         key={stringValue(group, "id") || `${item.id}-pattern-${groupIndex}`}
         className="grid gap-2 rounded-xl border border-border-default bg-bg-subtle p-3"
        >
-        {groupModels.length > 0 && (
-         <div className="rounded-lg border border-accent/30 bg-accent-subtle px-3 py-2">
-          <p className="text-xs font-black uppercase tracking-wide text-accent-text">
-           Mẫu
-          </p>
-          <div className="mt-1 grid gap-1">
-           {groupModels.map((line) => (
-            <p
-             key={line}
-             className="text-sm font-black text-accent-text"
-             lang="zh-CN"
-            >
-             {line}
-            </p>
-           ))}
-          </div>
-         </div>
-        )}
+        <ModelBlock
+         title="Mẫu luyện"
+         values={groupModels}
+         displayMode={displayMode}
+        />
+
         {groupItems.length > 0 ? (
          <div className="grid gap-2 md:grid-cols-2">
           {groupItems.map((entryValue, index) => {
@@ -257,9 +427,12 @@ function SubstitutionExerciseBody({
             promptToString(entry.prompt) ||
             stringValue(entry, "prompt") ||
             stringValue(entry, "substitution") ||
+            stringValue(entry, "text") ||
             "Câu";
            const answer =
-            stringValue(entry, "sample_answer") || answerToString(entry.answer);
+            stringValue(entry, "sample_answer") ||
+            answerToString(entry.answer) ||
+            nonEmptyStrings(arrayValue(entry, "expected_dialogue")).join(" / ");
 
            return (
             <ExerciseQuestionCard
@@ -322,6 +495,7 @@ function SubstitutionExerciseBody({
      <EmptySectionState reason={stringValue(record, "empty_reason_vi")} />
     )
    )}
+
    <AnswerKeyList itemId={item.id} values={answerKey} />
   </div>
  );
@@ -340,23 +514,32 @@ function QuestionExerciseBody({
  const groups = arrayValue(record, "groups");
  const leftItems = arrayValue(record, "left_items");
  const rightItems = arrayValue(record, "right_items");
- const answerKey = arrayValue(record, "answer_key");
+ const answerKey =
+  arrayValue(record, "blanks").length > 0
+   ? arrayValue(record, "blanks")
+   : arrayValue(record, "answer_key");
  const clozeAnswers = getClozeAnswerValues(record);
- const wordBank = arrayValue(record, "word_bank").filter(
-  (word): word is string => typeof word === "string" && Boolean(word.trim()),
- );
+ const wordBank = arrayValue(record, "word_bank");
+ const supplementaryWords = [
+  ...arrayValue(record, "supplementary_words"),
+  ...arrayValue(record, "supplementary_vocab"),
+  ...arrayValue(record, "supplementary_vocabulary"),
+  ...arrayValue(record, "supplement_vocab"),
+  ...arrayValue(record, "supplemental_vocab"),
+ ];
  const pattern = stringValue(record, "pattern");
  const model = asRecord(record.model);
+ const passage = getPassageLikeValue(record, { includeText: true });
 
  return (
   <div className="grid gap-3">
-   {wordBank.length > 0 && (
-    <div className="flex flex-wrap gap-2">
-     {wordBank.map((word) => (
-      <ExercisePill key={word}>{word}</ExercisePill>
-     ))}
-    </div>
-   )}
+   <SupplementaryPills
+    itemId={item.id}
+    values={supplementaryWords}
+    displayMode={displayMode}
+   />
+
+   <WordBank values={wordBank} />
 
    {pattern && (
     <p className="rounded-xl border border-accent/30 bg-accent-subtle p-3 font-black text-accent-text">
@@ -367,14 +550,14 @@ function QuestionExerciseBody({
    {(stringValue(model, "prompt") || stringValue(model, "answer")) && (
     <ExerciseQuestionCard
      index={0}
-     title={stringValue(model, "prompt")}
+     title={stringValue(model, "prompt") || "Mẫu"}
      answer={stringValue(model, "answer")}
     />
    )}
 
    <PassageCard
     itemId={item.id}
-    passage={getPassageLikeValue(record, { includeText: true })}
+    passage={passage}
     answers={clozeAnswers}
     displayMode={displayMode}
    />
@@ -413,7 +596,8 @@ function QuestionExerciseBody({
       );
       const answer =
        nonEmptyStrings(arrayValue(group, "answer_order")).join(" → ") ||
-       stringValue(group, "sample_text");
+       stringValue(group, "sample_text") ||
+       stringValue(group, "answer");
 
       return (
        <ExerciseQuestionCard
@@ -435,51 +619,23 @@ function QuestionExerciseBody({
 
    {questions.length > 0 ? (
     <div className="grid gap-2">
-     {questions.map((questionValue, index) => {
-      const question = asRecord(questionValue);
-      const choices = arrayValue(question, "choices")
-       .map((choiceValue) => stringValue(asRecord(choiceValue), "text"))
-       .filter(Boolean);
-      const answerValue = question.answer;
-      const title =
-       promptToString(question.prompt) ||
-       stringValue(question, "prompt") ||
-       stringValue(question, "wrong") ||
-       stringValue(question, "wrong_sentence") ||
-       stringValue(question, "response_prompt") ||
-       stringValue(question, "question") ||
-       stringValue(asRecord(question.question), "zh") ||
-       stringValue(asRecord(question.statement), "zh") ||
-       "Câu hỏi";
-      const answer =
-       stringValue(question, "sample_answer") ||
-       stringValue(question, "correct") ||
-       stringValue(question, "correct_sentence") ||
-       answerToString(question.answer) ||
-       stringValue(asRecord(question.answer), "zh") ||
-       stringValue(asRecord(question.answer), "vi") ||
-       (Array.isArray(answerValue)
-        ? nonEmptyStrings(answerValue).join(" / ")
-        : "");
-      const note = stringValue(question, "explanation_vi");
-
-      return (
-       <ExerciseQuestionCard
-        key={stringValue(question, "id") || `${item.id}-${index}`}
-        index={index + 1}
-        title={choices.length > 0 ? `${title} (${choices.join(" / ")})` : title}
-        answer={answer}
-        note={note}
-       />
-      );
-     })}
+     {questions.map((questionValue, index) => (
+      <QuestionCard
+       key={stringValue(asRecord(questionValue), "id") || `${item.id}-${index}`}
+       itemId={item.id}
+       questionValue={questionValue}
+       index={index}
+      />
+     ))}
     </div>
    ) : items.length === 0 &&
      groups.length === 0 &&
      leftItems.length === 0 &&
-     rightItems.length === 0 ? (
+     rightItems.length === 0 &&
+     !passage ? (
     <EmptySectionState reason={stringValue(record, "empty_reason_vi")} />
    ) : null}
+
    <AnswerKeyList itemId={item.id} values={answerKey} />
   </div>
  );
@@ -493,8 +649,7 @@ function CompleteDialogueExerciseBody({
  displayMode: LessonDisplayMode;
 }) {
  const record = asRecord(item);
- const dialogues =
-  "dialogues" in item && Array.isArray(item.dialogues) ? item.dialogues : [];
+ const dialogues = arrayValue(record, "dialogues");
  const fallbackItems = [
   ...arrayValue(record, "items"),
   ...arrayValue(record, "questions"),
@@ -514,34 +669,24 @@ function CompleteDialogueExerciseBody({
      >
       {lines.map((lineValue, lineIndex) => {
        const line = asRecord(lineValue);
+
        return (
-        <p
-         key={`${stringValue(line, "text")}-${lineIndex}`}
-         className="text-sm font-bold text-text-primary"
-        >
-         {stringValue(line, "speaker") && `${stringValue(line, "speaker")}: `}
-         {stringValue(line, "text")}
-        </p>
+        <TextLineCard
+         key={stringValue(line, "id") || `${item.id}-line-${lineIndex}`}
+         speaker={stringValue(line, "speaker")}
+         zh={stringValue(line, "zh") || stringValue(line, "text")}
+         pinyin={stringValue(line, "pinyin")}
+         vi={stringValue(line, "vi")}
+         displayMode={displayMode}
+        />
        );
       })}
-      {answers.length > 0 && (
-       <div className="rounded-lg bg-accent-subtle px-3 py-2">
-        {answers.map((answerValue, answerIndex) => {
-         const answer = asRecord(answerValue);
-         return (
-          <p
-           key={`${stringValue(answer, "blank_id")}-${answerIndex}`}
-           className="text-sm font-bold text-accent-text"
-          >
-           {stringValue(answer, "blank_id")}: {stringValue(answer, "answer")}
-          </p>
-         );
-        })}
-       </div>
-      )}
+
+      <AnswerKeyList itemId={`${item.id}-dialogue-${index}`} values={answers} />
      </div>
     );
    })}
+
    {dialogues.length === 0 && (
     <LooseItemGrid
      items={fallbackItems}
@@ -549,6 +694,7 @@ function CompleteDialogueExerciseBody({
      emptyReason={stringValue(record, "empty_reason_vi")}
     />
    )}
+
    <AnswerKeyList itemId={item.id} values={arrayValue(record, "answer_key")} />
   </div>
  );
@@ -567,10 +713,7 @@ function CommunicationExerciseBody({
   ? dialogueValue
   : arrayValue(asRecord(dialogueValue), "lines");
  const questions = arrayValue(record, "questions");
- const tasks =
-  "practice_tasks" in item && Array.isArray(item.practice_tasks)
-   ? item.practice_tasks
-   : [];
+ const tasks = arrayValue(record, "practice_tasks");
 
  return (
   <div className="grid gap-3">
@@ -578,9 +721,12 @@ function CommunicationExerciseBody({
     <div className="grid gap-2 rounded-xl border border-border-default bg-bg-subtle p-3">
      {dialogue.map((lineValue, index) => {
       const line = asRecord(lineValue);
+
       return (
        <TextLineCard
-        key={`${stringValue(line, "speaker")}-${index}`}
+        key={
+         stringValue(line, "id") || `${stringValue(line, "speaker")}-${index}`
+        }
         speaker={stringValue(line, "speaker")}
         zh={stringValue(line, "zh") || stringValue(line, "text")}
         pinyin={stringValue(line, "pinyin")}
@@ -597,7 +743,8 @@ function CommunicationExerciseBody({
     const sample =
      nonEmptyStrings(arrayValue(task, "sample_answer")).join(" / ") ||
      stringValue(task, "sample_answer_zh") ||
-     stringValue(task, "sample_answer_vi");
+     stringValue(task, "sample_answer_vi") ||
+     stringValue(task, "sample_answer");
 
     return (
      <ExerciseQuestionCard
@@ -606,16 +753,32 @@ function CommunicationExerciseBody({
       title={
        stringValue(task, "instruction_vi") ||
        stringValue(task, "prompt_vi") ||
+       stringValue(task, "prompt") ||
        "Luyện tập"
       }
       answer={sample}
+      note={stringValue(task, "explanation_vi")}
      />
     );
    })}
+
    {dialogue.length === 0 && questions.length > 0 && (
     <QuestionExerciseBody item={item} displayMode={displayMode} />
    )}
   </div>
+ );
+}
+
+function RawDataDetails({ value }: { value: unknown }) {
+ return (
+  <details className="rounded-lg border border-border-default bg-bg-subtle p-3">
+   <summary className="cursor-pointer text-xs font-black uppercase tracking-wide text-text-muted">
+    Dữ liệu gốc của exercise item
+   </summary>
+   <pre className="mt-2 max-h-96 overflow-auto whitespace-pre-wrap rounded-lg bg-bg-primary p-3 text-xs leading-relaxed text-text-secondary">
+    {JSON.stringify(value, null, 2)}
+   </pre>
+  </details>
  );
 }
 
@@ -626,16 +789,22 @@ function ExerciseBody({
  item: Exercise;
  displayMode: LessonDisplayMode;
 }) {
- if (item.type === "phonetics")
+ if (item.type === "phonetics" || item.type === "read_aloud") {
   return <PhoneticsExerciseBody item={item} displayMode={displayMode} />;
- if (item.type === "read_aloud")
-  return <PhoneticsExerciseBody item={item} displayMode={displayMode} />;
- if (item.type === "substitution" || item.type === "substitution_drill")
+ }
+
+ if (item.type === "substitution" || item.type === "substitution_drill") {
   return <SubstitutionExerciseBody item={item} displayMode={displayMode} />;
- if (item.type === "complete_dialogue")
+ }
+
+ if (item.type === "complete_dialogue") {
   return <CompleteDialogueExerciseBody item={item} displayMode={displayMode} />;
- if (item.type === "communication_dialogue")
+ }
+
+ if (item.type === "communication_dialogue") {
   return <CommunicationExerciseBody item={item} displayMode={displayMode} />;
+ }
+
  return <QuestionExerciseBody item={item} displayMode={displayMode} />;
 }
 
@@ -646,17 +815,27 @@ export function ExerciseCard({
  item: Exercise;
  displayMode: LessonDisplayMode;
 }) {
+ const record = asRecord(item);
+ const instruction = asRecord(record.instruction);
+ const instructionText =
+  stringValue(instruction, "vi") || stringValue(instruction, "zh");
+
  return (
   <article className="grid gap-3 rounded-xl border border-border-default bg-bg-primary p-4">
    <div>
     <h4 className="font-black text-text-primary">
      {item.title_vi || item.title}
     </h4>
-    <p className="text-sm font-semibold text-text-secondary">
-     {item.instruction.vi || item.instruction.zh}
-    </p>
+    {instructionText && (
+     <p className="text-sm font-semibold text-text-secondary">
+      {instructionText}
+     </p>
+    )}
    </div>
+
    <ExerciseBody item={item} displayMode={displayMode} />
+
+   <RawDataDetails value={item} />
   </article>
  );
 }

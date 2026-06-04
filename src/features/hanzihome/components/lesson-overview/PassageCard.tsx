@@ -16,11 +16,14 @@ type ClozeAnswer = {
  key: string;
  label: string;
  answer: string;
+ pinyin?: string;
  note?: string;
 };
 
 const BLANK_MARKER_SOURCE =
- "([①②③④⑤⑥⑦⑧⑨⑩⑪⑫⑬⑭⑮⑯⑰⑱⑲⑳]|\\d+)[\\s　]*(?:[_＿]{2,}|____+|……+)";
+ "(?:([①②③④⑤⑥⑦⑧⑨⑩⑪⑫⑬⑭⑮⑯⑰⑱⑲⑳]|\\d+)|[（(]\\s*(\\d+)\\s*[）)]|\\[\\s*(\\d+)\\s*\\])\\s*(?:[_＿]{2,}|…{2,}|\\.\\.\\.+)";
+
+const PLAIN_BLANK_SOURCE = "[_＿]{2,}|…{2,}|\\.\\.\\.+";
 
 const CIRCLED_NUMBER_MAP: Record<string, number> = {
  "①": 1,
@@ -47,12 +50,17 @@ const CIRCLED_NUMBER_MAP: Record<string, number> = {
 
 function blankLabelToNumber(label: string): number | null {
  if (label in CIRCLED_NUMBER_MAP) return CIRCLED_NUMBER_MAP[label];
+
  const direct = Number.parseInt(label, 10);
  return Number.isFinite(direct) ? direct : null;
 }
 
-function numberValue(record: Record<string, unknown>, key: string): number | null {
+function numberValue(
+ record: Record<string, unknown>,
+ key: string,
+): number | null {
  const value = record[key];
+
  if (typeof value === "number" && Number.isFinite(value)) return value;
  if (typeof value !== "string") return null;
 
@@ -66,6 +74,7 @@ function numberFromLabelSuffix(label: string): number | null {
 
  const suffix = label.match(/(\d+)$/)?.[1];
  const suffixNumber = suffix ? Number.parseInt(suffix, 10) : Number.NaN;
+
  return Number.isFinite(suffixNumber) ? suffixNumber : null;
 }
 
@@ -76,10 +85,14 @@ function answerIndexFromRecord(record: Record<string, unknown>) {
   numberValue(record, "number") ??
   numberValue(record, "order") ??
   numberValue(record, "blank_number");
+
  if (directNumber !== null) return directNumber;
 
  const label =
-  stringValue(record, "blank_id") || stringValue(record, "question_id");
+  stringValue(record, "blank_id") ||
+  stringValue(record, "question_id") ||
+  stringValue(record, "label");
+
  if (label) return numberFromLabelSuffix(label);
 
  const id = stringValue(record, "id");
@@ -106,6 +119,7 @@ function normalizeClozeAnswers(values: unknown[]): ClozeAnswer[] {
   .map((value, index): ClozeAnswer | null => {
    if (typeof value === "string" || typeof value === "number") {
     const answer = answerToString(value);
+
     return answer
      ? {
         key: `${index + 1}`,
@@ -117,47 +131,106 @@ function normalizeClozeAnswers(values: unknown[]): ClozeAnswer[] {
 
    const record = asRecord(value);
    const answer = answerTextFromRecord(record);
-   const answerIndex = answerIndexFromRecord(record) ?? index + 1;
    if (!answer) return null;
 
+   const answerIndex = answerIndexFromRecord(record);
+   const stableKey =
+    stringValue(record, "blank_id") ||
+    stringValue(record, "question_id") ||
+    stringValue(record, "id") ||
+    `${answerIndex ?? index + 1}`;
+
    return {
-    key:
-     stringValue(record, "id") ||
-     stringValue(record, "blank_id") ||
-     `${answerIndex}`,
-    label: `${answerIndex}`,
+    key: stableKey,
+    label: answerIndex ? `${answerIndex}` : stableKey,
     answer,
+    pinyin:
+     stringValue(record, "answer_pinyin") || stringValue(record, "pinyin"),
     note:
      stringValue(record, "explanation_vi") ||
+     stringValue(record, "note_vi") ||
      stringValue(record, "answer_vi") ||
-     stringValue(record, "note_vi"),
+     stringValue(record, "usage_note_vi"),
    };
   })
   .filter((answer): answer is ClozeAnswer => Boolean(answer));
+}
+
+function firstNonEmptyAnswerSource(
+ passageRecord: Record<string, unknown>,
+ answers: unknown[],
+) {
+ if (answers.length > 0) return answers;
+
+ const sourceKeys = ["blanks", "answers", "answer_key", "cloze_answers"];
+
+ for (const key of sourceKeys) {
+  const values = arrayValue(passageRecord, key);
+  if (values.length > 0) return values;
+ }
+
+ return [];
 }
 
 function clozeAnswersFromSources(
  passageRecord: Record<string, unknown>,
  answers: unknown[],
 ) {
- const sources = [
-  ...answers,
-  ...arrayValue(passageRecord, "blanks"),
-  ...arrayValue(passageRecord, "answers"),
-  ...arrayValue(passageRecord, "answer_key"),
-  ...arrayValue(passageRecord, "cloze_answers"),
- ];
+ const normalizedAnswers = normalizeClozeAnswers(
+  firstNonEmptyAnswerSource(passageRecord, answers),
+ );
  const answerMap = new Map<string, ClozeAnswer>();
 
- for (const answer of normalizeClozeAnswers(sources)) {
+ for (const answer of normalizedAnswers) {
   if (!answerMap.has(answer.label)) answerMap.set(answer.label, answer);
+  if (!answerMap.has(answer.key)) answerMap.set(answer.key, answer);
  }
 
- return answerMap;
+ return {
+  answerMap,
+  answerList: normalizedAnswers,
+ };
+}
+
+function getBlankMarkerFromMatch(match: RegExpMatchArray): string {
+ return match[1] || match[2] || match[3] || "";
 }
 
 function hasBlankMarkers(text: string) {
- return new RegExp(BLANK_MARKER_SOURCE).test(text);
+ return new RegExp(BLANK_MARKER_SOURCE, "g").test(text);
+}
+
+function hasPlainBlanks(text: string) {
+ return new RegExp(PLAIN_BLANK_SOURCE, "g").test(text);
+}
+
+function shouldRenderAsCloze(
+ text: string,
+ answerMap: Map<string, ClozeAnswer>,
+ rendererId: string,
+) {
+ if (answerMap.size === 0) return false;
+ if (hasBlankMarkers(text)) return true;
+
+ const normalizedRendererId = rendererId.toLowerCase();
+ return (
+  hasPlainBlanks(text) &&
+  (normalizedRendererId.includes("cloze") ||
+   normalizedRendererId.includes("fill_blank") ||
+   normalizedRendererId.includes("fill-blank"))
+ );
+}
+
+function withMissingBlankNumbers(
+ text: string,
+ answerMap: Map<string, ClozeAnswer>,
+ nextBlankNumber: () => number,
+) {
+ if (hasBlankMarkers(text) || answerMap.size === 0) return text;
+
+ return text.replace(new RegExp(PLAIN_BLANK_SOURCE, "g"), (match) => {
+  return `${nextBlankNumber()}${match}`;
+ });
 }
 
 function passageLinesFromParagraphs(
@@ -165,12 +238,26 @@ function passageLinesFromParagraphs(
  itemId: string,
  answerMap: Map<string, ClozeAnswer>,
 ) {
+ let plainBlankIndex = 0;
+ const nextBlankNumber = () => {
+  plainBlankIndex += 1;
+  return plainBlankIndex;
+ };
+
  return paragraphs
   .map((paragraphValue, index): PassageLine | null => {
    if (typeof paragraphValue === "string") {
-    const text = fillMissingBlankNumbers(paragraphValue.trim(), answerMap);
+    const text = withMissingBlankNumbers(
+     paragraphValue.trim(),
+     answerMap,
+     nextBlankNumber,
+    );
+
     return text
-     ? { id: `${itemId}-passage-paragraph-${index}`, zh: text }
+     ? {
+        id: `${itemId}-passage-paragraph-${index}`,
+        zh: text,
+       }
      : null;
    }
 
@@ -184,11 +271,13 @@ function passageLinesFromParagraphs(
    if (!zh) return null;
 
    return {
-    id:
-     stringValue(paragraph, "id") || `${itemId}-passage-paragraph-${index}`,
-    zh: fillMissingBlankNumbers(zh, answerMap),
+    id: stringValue(paragraph, "id") || `${itemId}-passage-paragraph-${index}`,
+    zh: withMissingBlankNumbers(zh, answerMap, nextBlankNumber),
     pinyin: stringValue(paragraph, "pinyin"),
-    vi: stringValue(paragraph, "vi"),
+    vi:
+     stringValue(paragraph, "vi") ||
+     stringValue(paragraph, "translation_vi") ||
+     stringValue(paragraph, "meaning_vi"),
    };
   })
   .filter((line): line is PassageLine => Boolean(line));
@@ -198,10 +287,12 @@ function clozeTextFromSegments(segments: unknown[]) {
  return segments
   .map((segmentValue, index) => {
    const segment = asRecord(segmentValue);
+
    if (stringValue(segment, "type") === "blank") {
     const marker = answerIndexFromRecord(segment) ?? index + 1;
     return ` ${marker}______ `;
    }
+
    return (
     stringValue(segment, "text") ||
     stringValue(segment, "zh") ||
@@ -209,18 +300,6 @@ function clozeTextFromSegments(segments: unknown[]) {
    );
   })
   .join("");
-}
-
-function fillMissingBlankNumbers(
- text: string,
- answerMap: Map<string, ClozeAnswer>,
-) {
- if (hasBlankMarkers(text) || answerMap.size === 0) return text;
- let blankIndex = 0;
- return text.replace(/[_＿]{2,}|____+|……+/g, (match) => {
-  blankIndex += 1;
-  return `${blankIndex}${match}`;
- });
 }
 
 function ClozeText({
@@ -232,13 +311,15 @@ function ClozeText({
  answerMap: Map<string, ClozeAnswer>;
  displayMode: LessonDisplayMode;
 }) {
- const paragraphs = text.split(/\n{2,}/).filter((paragraph) => paragraph.trim());
+ const paragraphs = text
+  .split(/\n{2,}/)
+  .filter((paragraph) => paragraph.trim());
 
  return (
   <div className="grid gap-3">
    {paragraphs.map((paragraph, paragraphIndex) => (
     <p
-     key={`${paragraph.slice(0, 24)}-${paragraphIndex}`}
+     key={`${paragraph.slice(0, 32)}-${paragraphIndex}`}
      className="whitespace-pre-wrap leading-relaxed text-text-primary"
      lang="zh-CN"
      style={getHanziTypographyStyle(displayMode)}
@@ -261,7 +342,7 @@ function ClozeInlineText({
  let lastIndex = 0;
 
  for (const match of text.matchAll(new RegExp(BLANK_MARKER_SOURCE, "g"))) {
-  const marker = match[1] || "";
+  const marker = getBlankMarkerFromMatch(match);
   const matchText = match[0];
   const matchIndex = match.index ?? 0;
   const blankNumber = blankLabelToNumber(marker);
@@ -282,11 +363,197 @@ function ClozeInlineText({
     <span>{answer?.answer || matchText}</span>
    </span>,
   );
+
   lastIndex = matchIndex + matchText.length;
  }
 
  if (lastIndex < text.length) nodes.push(text.slice(lastIndex));
+
  return <>{nodes}</>;
+}
+
+function DataPill({
+ label,
+ pinyin,
+ meaning,
+ extra,
+}: {
+ label: string;
+ pinyin?: string;
+ meaning?: string;
+ extra?: string;
+}) {
+ if (!label) return null;
+
+ return (
+  <span className="rounded-lg border border-border-default bg-bg-primary px-3 py-2 text-sm font-bold text-text-primary">
+   {label}
+   {pinyin && ` · ${pinyin}`}
+   {meaning && ` · ${meaning}`}
+   {extra && ` · ${extra}`}
+  </span>
+ );
+}
+
+function SupplementaryVocabulary({
+ values,
+ displayMode,
+}: {
+ values: unknown[];
+ displayMode: LessonDisplayMode;
+}) {
+ const visibleValues = values.filter((value) => {
+  if (answerToString(value)) return true;
+
+  const record = asRecord(value);
+  return Boolean(
+   stringValue(record, "hanzi") ||
+   stringValue(record, "text") ||
+   stringValue(record, "zh") ||
+   stringValue(record, "meaning_vi"),
+  );
+ });
+
+ if (visibleValues.length === 0) return null;
+
+ return (
+  <div className="grid gap-2 rounded-xl border border-border-default bg-bg-primary p-3">
+   <p className="text-xs font-black uppercase tracking-wide text-text-muted">
+    Từ bổ sung
+   </p>
+   <div className="flex flex-wrap gap-2">
+    {visibleValues.map((wordValue, index) => {
+     const word = asRecord(wordValue);
+     const label =
+      stringValue(word, "hanzi") ||
+      stringValue(word, "text") ||
+      stringValue(word, "zh") ||
+      answerToString(wordValue);
+     const pinyin = stringValue(word, "pinyin");
+     const meaning = stringValue(word, "meaning_vi");
+     const pos = stringValue(word, "pos");
+
+     return (
+      <DataPill
+       key={stringValue(word, "id") || `${label}-${index}`}
+       label={label}
+       pinyin={displayMode.showPinyin ? pinyin : ""}
+       meaning={displayMode.showMeaning ? meaning : ""}
+       extra={pos}
+      />
+     );
+    })}
+   </div>
+  </div>
+ );
+}
+
+function WordBank({ words }: { words: unknown[] }) {
+ const wordBank = words
+  .map(answerToString)
+  .filter((word): word is string => Boolean(word));
+
+ if (wordBank.length === 0) return null;
+
+ return (
+  <div className="grid gap-2 rounded-xl border border-border-default bg-bg-primary p-3">
+   <p className="text-xs font-black uppercase tracking-wide text-text-muted">
+    Từ cho sẵn
+   </p>
+   <div className="flex flex-wrap gap-2">
+    {wordBank.map((word) => (
+     <DataPill key={word} label={word} />
+    ))}
+   </div>
+  </div>
+ );
+}
+
+function AnswerList({ answers }: { answers: ClozeAnswer[] }) {
+ if (answers.length === 0) return null;
+
+ return (
+  <div className="grid gap-2 rounded-xl border border-accent/30 bg-accent-subtle p-3">
+   <p className="text-xs font-black uppercase tracking-wide text-accent-text">
+    Đáp án
+   </p>
+   <div className="grid gap-1">
+    {answers.map((answer) => (
+     <p key={answer.key} className="text-sm font-bold text-accent-text">
+      {answer.label}: {answer.answer}
+      {answer.pinyin && ` · ${answer.pinyin}`}
+      {answer.note && ` — ${answer.note}`}
+     </p>
+    ))}
+   </div>
+  </div>
+ );
+}
+
+function RendererMeta({ value }: { value: unknown }) {
+ const rendering = asRecord(value);
+ const renderer = stringValue(rendering, "renderer");
+ const inputMode = stringValue(rendering, "input_mode");
+
+ if (!renderer && !inputMode) return null;
+
+ return (
+  <div className="rounded-lg border border-border-default bg-bg-primary px-3 py-2">
+   <p className="text-xs font-black uppercase tracking-wide text-text-muted">
+    Renderer
+   </p>
+   <p className="mt-1 text-sm font-bold text-text-secondary">
+    {renderer || "unknown"}
+    {inputMode && ` · ${inputMode}`}
+   </p>
+  </div>
+ );
+}
+
+function PassageLineBlock({
+ line,
+ answerMap,
+ rendererId,
+ displayMode,
+}: {
+ line: PassageLine;
+ answerMap: Map<string, ClozeAnswer>;
+ rendererId: string;
+ displayMode: LessonDisplayMode;
+}) {
+ const isCloze = shouldRenderAsCloze(line.zh, answerMap, rendererId);
+
+ return (
+  <div className="rounded-xl border border-border-default bg-bg-primary p-3">
+   {isCloze ? (
+    <>
+     <ClozeText
+      text={line.zh}
+      answerMap={answerMap}
+      displayMode={displayMode}
+     />
+     {displayMode.showPinyin && line.pinyin && (
+      <p className="mt-2 text-xs font-bold italic text-text-muted sm:text-sm">
+       {line.pinyin}
+      </p>
+     )}
+     {displayMode.showMeaning && line.vi && (
+      <p className="mt-2 text-sm font-semibold leading-relaxed text-text-secondary">
+       {line.vi}
+      </p>
+     )}
+    </>
+   ) : (
+    <TextLineCard
+     zh={line.zh}
+     pinyin={line.pinyin}
+     vi={line.vi}
+     displayMode={displayMode}
+     variant="reader"
+    />
+   )}
+  </div>
+ );
 }
 
 export function PassageCard({
@@ -301,96 +568,148 @@ export function PassageCard({
  displayMode: LessonDisplayMode;
 }) {
  const passageRecord = asRecord(passage);
- const answerMap = clozeAnswersFromSources(passageRecord, answers);
- const segments =
-  arrayValue(passageRecord, "segments").length > 0
-   ? arrayValue(passageRecord, "segments")
-   : [];
+ const rendering = asRecord(passageRecord.rendering);
+ const rendererId = stringValue(rendering, "renderer");
+ const instruction = asRecord(passageRecord.instruction);
+ const instructionText =
+  stringValue(instruction, "vi") || stringValue(instruction, "zh");
+
+ const { answerMap, answerList } = clozeAnswersFromSources(
+  passageRecord,
+  answers,
+ );
+
+ const segments = arrayValue(passageRecord, "segments");
  const passageTitle =
   stringValue(passageRecord, "title_vi") || stringValue(passageRecord, "title");
+
+ const supplementaryVocabulary = [
+  ...arrayValue(passageRecord, "supplementary_vocabulary"),
+  ...arrayValue(passageRecord, "supplementary_words"),
+  ...arrayValue(passageRecord, "supplementary_vocab"),
+  ...arrayValue(passageRecord, "supplement_vocab"),
+  ...arrayValue(passageRecord, "supplemental_vocab"),
+ ];
+
+ const wordBank = arrayValue(passageRecord, "word_bank");
+
  const passageLines = passageLinesFromParagraphs(
   arrayValue(passageRecord, "paragraphs"),
   itemId,
   answerMap,
  );
+
+ let plainBlankIndex = 0;
+ const nextBlankNumber = () => {
+  plainBlankIndex += 1;
+  return plainBlankIndex;
+ };
+
  const passageText =
   typeof passage === "string"
-   ? fillMissingBlankNumbers(passage, answerMap)
-  : fillMissingBlankNumbers(
-     stringValue(passageRecord, "text_with_blanks") ||
-      stringValue(passageRecord, "text") ||
-      stringValue(passageRecord, "zh"),
-     answerMap,
+   ? withMissingBlankNumbers(passage, answerMap, nextBlankNumber)
+   : withMissingBlankNumbers(
+      stringValue(passageRecord, "text_with_blanks") ||
+       stringValue(passageRecord, "passage_with_blanks") ||
+       stringValue(passageRecord, "passage_blanked") ||
+       stringValue(passageRecord, "cloze_text") ||
+       stringValue(passageRecord, "passage_text") ||
+       stringValue(passageRecord, "text") ||
+       stringValue(passageRecord, "zh"),
+      answerMap,
+      nextBlankNumber,
      );
- const completedPassageText = stringValue(passageRecord, "completed_text");
+
+ const completedPassageText =
+  stringValue(passageRecord, "completed_text") ||
+  stringValue(passageRecord, "completed_text_zh") ||
+  stringValue(passageRecord, "completed_passage") ||
+  stringValue(passageRecord, "passage_complete");
+
  const passagePinyin = stringValue(passageRecord, "pinyin");
- const passageMeaning = stringValue(passageRecord, "vi");
+ const passageMeaning =
+  stringValue(passageRecord, "translation_vi") ||
+  stringValue(passageRecord, "vi");
+
  const clozeText =
   segments.length > 0
-   ? fillMissingBlankNumbers(clozeTextFromSegments(segments), answerMap)
+   ? withMissingBlankNumbers(
+      clozeTextFromSegments(segments),
+      answerMap,
+      nextBlankNumber,
+     )
    : "";
 
- if (
-  !passageTitle &&
-  passageLines.length === 0 &&
-  !passageText &&
-  !completedPassageText &&
-  !clozeText
- ) {
-  return null;
- }
+ const hasMainPayload =
+  Boolean(passageTitle) ||
+  Boolean(instructionText) ||
+  passageLines.length > 0 ||
+  Boolean(passageText) ||
+  Boolean(completedPassageText) ||
+  Boolean(clozeText) ||
+  supplementaryVocabulary.length > 0 ||
+  wordBank.length > 0 ||
+  answerList.length > 0 ||
+  Boolean(rendererId);
+
+ if (!hasMainPayload) return null;
 
  return (
   <div className="grid gap-3 rounded-xl border border-border-default bg-bg-subtle p-3 sm:p-4">
-   {passageTitle && (
-    <h5 className="font-black text-text-primary">{passageTitle}</h5>
+   {(passageTitle || instructionText) && (
+    <div className="grid gap-1">
+     {passageTitle && (
+      <h5 className="font-black text-text-primary">{passageTitle}</h5>
+     )}
+     {instructionText && (
+      <p className="text-sm font-semibold text-text-muted">{instructionText}</p>
+     )}
+    </div>
    )}
+
+   <RendererMeta value={rendering} />
+
+   <SupplementaryVocabulary
+    values={supplementaryVocabulary}
+    displayMode={displayMode}
+   />
+
+   <WordBank words={wordBank} />
 
    {passageLines.length > 0 && (
     <div className="grid gap-2">
      {passageLines.map((line) => (
-      <div
+      <PassageLineBlock
        key={line.id}
-       className="rounded-xl border border-border-default bg-bg-primary p-3"
-      >
-       {answerMap.size > 0 && hasBlankMarkers(line.zh) ? (
-        <ClozeText
-         text={line.zh}
-         answerMap={answerMap}
-         displayMode={displayMode}
-        />
-       ) : (
-        <TextLineCard
-         zh={line.zh}
-         pinyin={line.pinyin}
-         vi={line.vi}
-         displayMode={displayMode}
-         variant="reader"
-        />
-       )}
-       {displayMode.showPinyin && line.pinyin && (
-        <p className="mt-2 text-xs font-bold italic text-text-muted sm:text-sm">
-         {line.pinyin}
-        </p>
-       )}
-       {displayMode.showMeaning && line.vi && (
-        <p className="mt-2 text-sm font-semibold leading-relaxed text-text-secondary">
-         {line.vi}
-        </p>
-       )}
-      </div>
+       line={line}
+       answerMap={answerMap}
+       rendererId={rendererId}
+       displayMode={displayMode}
+      />
      ))}
     </div>
    )}
 
    {(passageText || clozeText) && passageLines.length === 0 && (
     <div className="rounded-xl border border-border-default bg-bg-primary p-3">
-     {answerMap.size > 0 && hasBlankMarkers(passageText || clozeText) ? (
-      <ClozeText
-       text={passageText || clozeText}
-       answerMap={answerMap}
-       displayMode={displayMode}
-      />
+     {shouldRenderAsCloze(passageText || clozeText, answerMap, rendererId) ? (
+      <>
+       <ClozeText
+        text={passageText || clozeText}
+        answerMap={answerMap}
+        displayMode={displayMode}
+       />
+       {displayMode.showPinyin && passagePinyin && (
+        <p className="mt-2 text-xs font-bold italic text-text-muted sm:text-sm">
+         {passagePinyin}
+        </p>
+       )}
+       {displayMode.showMeaning && passageMeaning && (
+        <p className="mt-2 text-sm font-semibold leading-relaxed text-text-secondary">
+         {passageMeaning}
+        </p>
+       )}
+      </>
      ) : (
       <TextLineCard
        zh={passageText || clozeText}
@@ -399,16 +718,6 @@ export function PassageCard({
        displayMode={displayMode}
        variant="reader"
       />
-     )}
-     {displayMode.showPinyin && passagePinyin && (
-      <p className="mt-2 text-xs font-bold italic text-text-muted sm:text-sm">
-       {passagePinyin}
-      </p>
-     )}
-     {displayMode.showMeaning && passageMeaning && (
-      <p className="mt-2 text-sm font-semibold leading-relaxed text-text-secondary">
-       {passageMeaning}
-      </p>
      )}
     </div>
    )}
@@ -427,6 +736,8 @@ export function PassageCard({
      </p>
     </div>
    )}
+
+   <AnswerList answers={answerList} />
   </div>
  );
 }

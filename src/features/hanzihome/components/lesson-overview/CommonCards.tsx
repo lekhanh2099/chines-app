@@ -81,21 +81,44 @@ export function AnswerKeyList({
     stringValue(answer, "blank_id") ||
     stringValue(answer, "question_id") ||
     stringValue(answer, "label") ||
+    stringValue(answer, "id") ||
     `${index + 1}`;
    const value =
     answerToString(answer.answer) ||
     stringValue(answer, "sample_answer") ||
+    stringValue(answer, "answer_zh") ||
+    stringValue(answer, "value") ||
+    stringValue(answer, "text") ||
+    stringValue(answer, "zh") ||
     answerToString(answerValue);
-   const note = stringValue(answer, "explanation_vi");
+   const pinyin =
+    stringValue(answer, "answer_pinyin") || stringValue(answer, "pinyin");
+   const note =
+    stringValue(answer, "explanation_vi") ||
+    stringValue(answer, "note_vi") ||
+    stringValue(answer, "answer_vi") ||
+    stringValue(answer, "usage_note_vi");
+
    return value
-    ? { id: `${itemId}-answer-${index}`, label, value, note }
+    ? {
+       id: `${itemId}-answer-${index}`,
+       label,
+       value,
+       pinyin,
+       note,
+      }
     : null;
   })
   .filter(
    (
     answer,
-   ): answer is { id: string; label: string; value: string; note: string } =>
-    Boolean(answer),
+   ): answer is {
+    id: string;
+    label: string;
+    value: string;
+    pinyin: string;
+    note: string;
+   } => Boolean(answer),
   );
 
  if (answers.length === 0) return null;
@@ -108,6 +131,7 @@ export function AnswerKeyList({
    {answers.map((answer) => (
     <p key={answer.id} className="text-sm font-bold text-accent-text">
      {answer.label}: {answer.value}
+     {answer.pinyin && ` · ${answer.pinyin}`}
      {answer.note && ` — ${answer.note}`}
     </p>
    ))}
@@ -131,33 +155,40 @@ export function GenericItemCard({
   stringValue(item, "text") ||
   stringValue(item, "id") ||
   "Mục";
+
  const hanzi = stringValue(item, "hanzi");
  const zh = stringValue(item, "zh");
  const pinyin = stringValue(item, "pinyin");
- const meaning =
-  stringValue(item, "meaning_vi") || stringValue(item, "vi");
+ const meaning = stringValue(item, "meaning_vi") || stringValue(item, "vi");
  const functionVi = stringValue(item, "function_vi");
+
  const lineItems = Array.isArray(item.lines)
   ? item.lines
   : Array.isArray(item.dialogue)
     ? item.dialogue
     : [];
+
  const practiceTasks = Array.isArray(item.practice_tasks)
   ? item.practice_tasks
   : [];
+
  const examples = arrayValue(item, "examples");
  const passage = getPassageLikeValue(item);
  const clozeAnswers = getClozeAnswerValues(item);
- const extraFields = getRenderableFields(item);
+ const extraFields = getRenderableFields(item, {
+  hasPassage: Boolean(passage),
+ });
 
  return (
   <article className="grid gap-2 rounded-xl border border-border-default bg-bg-primary p-3">
    <h4 className="text-base font-black text-text-primary">{title}</h4>
+
    {hanzi && hanzi !== title && (
     <p lang="zh-CN" style={getHanziTypographyStyle(displayMode)}>
      {hanzi}
     </p>
    )}
+
    {zh && zh !== title && (
     <TextLineCard
      zh={zh}
@@ -166,48 +197,59 @@ export function GenericItemCard({
      displayMode={displayMode}
     />
    )}
+
    {displayMode.showPinyin && pinyin && (
     <p className="text-sm font-bold italic text-text-muted">{pinyin}</p>
    )}
+
    {displayMode.showMeaning && meaning && (
     <p className="text-sm font-semibold text-text-secondary">{meaning}</p>
    )}
+
    {functionVi && (
     <p className="text-sm font-semibold text-text-secondary">{functionVi}</p>
    )}
+
    <PassageCard
-   itemId={stringValue(item, "id") || title}
-   passage={passage}
-   answers={clozeAnswers}
-   displayMode={displayMode}
-  />
+    itemId={stringValue(item, "id") || title}
+    passage={passage}
+    answers={clozeAnswers}
+    displayMode={displayMode}
+   />
+
    {extraFields.length > 0 && (
     <div className="grid gap-2">
      {extraFields.map((field) => (
-      <FieldValueBlock key={field.key} field={field} displayMode={displayMode} />
+      <FieldValueBlock
+       key={field.key}
+       field={field}
+       displayMode={displayMode}
+      />
      ))}
     </div>
    )}
+
    {lineItems.map((lineValue, index) => {
     const line = asRecord(lineValue);
-    const zh =
-     typeof line.zh === "string"
-      ? line.zh
-      : typeof line.text === "string"
-        ? line.text
-        : "";
-    if (!zh) return null;
+    const lineZh =
+     stringValue(line, "zh") ||
+     stringValue(line, "text") ||
+     answerToString(lineValue);
+
+    if (!lineZh) return null;
+
     return (
      <TextLineCard
-      key={`${zh}-${index}`}
-      speaker={typeof line.speaker === "string" ? line.speaker : undefined}
-      zh={zh}
-      pinyin={typeof line.pinyin === "string" ? line.pinyin : undefined}
-      vi={typeof line.vi === "string" ? line.vi : undefined}
+      key={stringValue(line, "id") || `${lineZh}-${index}`}
+      speaker={stringValue(line, "speaker")}
+      zh={lineZh}
+      pinyin={stringValue(line, "pinyin")}
+      vi={stringValue(line, "vi")}
       displayMode={displayMode}
      />
     );
    })}
+
    {examples.length > 0 && (
     <div className="grid gap-2">
      <p className="text-xs font-black uppercase tracking-wide text-text-muted">
@@ -219,6 +261,7 @@ export function GenericItemCard({
        stringValue(example, "zh") ||
        stringValue(example, "text") ||
        answerToString(exampleValue);
+
       if (!exampleZh) return null;
 
       return (
@@ -233,12 +276,16 @@ export function GenericItemCard({
      })}
     </div>
    )}
+
    {practiceTasks.length > 0 && (
     <div className="mt-2 grid gap-2">
      {practiceTasks.map((taskValue, index) => {
       const task = asRecord(taskValue);
       const instruction =
-       typeof task.instruction_vi === "string" ? task.instruction_vi : "";
+       stringValue(task, "instruction_vi") ||
+       stringValue(task, "prompt_vi") ||
+       stringValue(task, "prompt") ||
+       "Luyện tập";
       const sampleAnswer = Array.isArray(task.sample_answer)
        ? task.sample_answer
           .filter(
@@ -246,19 +293,22 @@ export function GenericItemCard({
             typeof line === "string" && Boolean(line.trim()),
           )
           .join(" / ")
-       : "";
+       : stringValue(task, "sample_answer");
 
       return (
        <ExerciseQuestionCard
-        key={typeof task.id === "string" ? task.id : `${title}-${index}`}
+        key={stringValue(task, "id") || `${title}-${index}`}
         index={index + 1}
-        title={instruction || "Luyện tập"}
+        title={instruction}
         answer={sampleAnswer}
+        note={stringValue(task, "explanation_vi")}
        />
       );
      })}
     </div>
    )}
+
+   <RawDataDetails value={value} />
   </article>
  );
 }
@@ -281,9 +331,12 @@ const FIELD_LABELS: Record<string, string> = {
  completed_passage: "Bản hoàn chỉnh",
  completed_text: "Bản hoàn chỉnh",
  completed_text_zh: "Bản hoàn chỉnh",
+ content: "Nội dung",
  content_vi: "Nội dung",
  correct: "Đúng",
+ correct_examples: "Câu đúng",
  correct_sentence: "Câu đúng",
+ culture_note: "Văn hóa / ghi chú",
  culture_note_vi: "Văn hóa / ghi chú",
  data: "Dữ liệu",
  dialogue: "Hội thoại",
@@ -292,6 +345,7 @@ const FIELD_LABELS: Record<string, string> = {
  full_text_answer_reference: "Đáp án toàn bài",
  generated_comprehension_questions: "Câu hỏi đọc hiểu",
  grammar_highlights: "Điểm ngữ pháp trong bài",
+ instruction: "Yêu cầu",
  instruction_vi: "Yêu cầu",
  items: "Mục",
  left_items: "Cột A",
@@ -299,9 +353,13 @@ const FIELD_LABELS: Record<string, string> = {
  model_a: "Mẫu A",
  model_b: "Mẫu B",
  models: "Mẫu",
+ notes: "Ghi chú",
  notes_vi: "Ghi chú",
  note_vi: "Ghi chú",
  parts: "Phần",
+ passage: "Đoạn văn",
+ passage_text: "Đoạn văn",
+ passage_with_blanks: "Đoạn văn điền khuyết",
  pattern: "Cấu trúc",
  patterns: "Mẫu luyện",
  questions: "Câu hỏi",
@@ -323,9 +381,11 @@ const FIELD_LABELS: Record<string, string> = {
  supplementary_vocabulary: "Từ bổ sung",
  supplementary_words: "Từ bổ sung",
  text: "Nội dung",
+ text_with_blanks: "Nội dung điền khuyết",
  translation_vi: "Dịch nghĩa",
  word_bank: "Từ cho sẵn",
  wrong: "Sai",
+ wrong_examples: "Câu sai",
  wrong_sentence: "Câu sai",
 };
 
@@ -333,6 +393,8 @@ const GENERIC_FIELD_ORDER = [
  "structure",
  "pattern",
  "content_vi",
+ "content",
+ "instruction",
  "instruction_vi",
  "prompt",
  "text",
@@ -355,6 +417,7 @@ const GENERIC_FIELD_ORDER = [
  "explanation_vi",
  "note_vi",
  "notes_vi",
+ "notes",
  "translation_vi",
  "supplementary_words",
  "supplementary_vocab",
@@ -364,7 +427,7 @@ const GENERIC_FIELD_ORDER = [
  "items",
 ];
 
-const HIDDEN_GENERIC_FIELDS = new Set([
+const BASE_HIDDEN_GENERIC_FIELDS = new Set([
  "id",
  "type",
  "variant",
@@ -381,20 +444,6 @@ const HIDDEN_GENERIC_FIELDS = new Set([
  "lines",
  "dialogue",
  "examples",
- "passage",
- "passage_text",
- "passage_with_blanks",
- "passage_blanked",
- "passage_complete",
- "text_with_blanks",
- "cloze_text",
- "blanks",
- "answers",
- "answer_key",
- "cloze_answers",
- "completed_passage",
- "completed_text",
- "completed_text_zh",
  "practice_tasks",
  "grammar_refs",
  "vocab_refs",
@@ -403,15 +452,50 @@ const HIDDEN_GENERIC_FIELDS = new Set([
  "audio_key",
  "check_needed",
  "answer_verified",
- "rendering",
  "grading",
+]);
+
+const PASSAGE_HANDLED_FIELDS = new Set([
+ "passage",
+ "passage_text",
+ "passage_with_blanks",
+ "passage_blanked",
+ "passage_complete",
+ "text_with_blanks",
+ "cloze_text",
+ "paragraphs",
+ "segments",
+ "blanks",
+ "answers",
+ "answer_key",
+ "cloze_answers",
+ "completed_paragraphs",
+ "completed_passage",
+ "completed_text",
+ "completed_text_zh",
+ "supplementary_words",
+ "supplementary_vocab",
+ "supplementary_vocabulary",
+ "supplement_vocab",
+ "supplemental_vocab",
+ "word_bank",
+ "rendering",
 ]);
 
 function getFieldLabel(key: string) {
  return FIELD_LABELS[key] || key.replaceAll("_", " ");
 }
 
-function getRenderableFields(item: Record<string, unknown>): RenderableField[] {
+function getRenderableFields(
+ item: Record<string, unknown>,
+ options: { hasPassage?: boolean } = {},
+): RenderableField[] {
+ const hiddenFields = new Set(BASE_HIDDEN_GENERIC_FIELDS);
+
+ if (options.hasPassage) {
+  PASSAGE_HANDLED_FIELDS.forEach((key) => hiddenFields.add(key));
+ }
+
  const orderedKeys = [
   ...GENERIC_FIELD_ORDER,
   ...Object.keys(item).filter((key) => !GENERIC_FIELD_ORDER.includes(key)),
@@ -419,7 +503,7 @@ function getRenderableFields(item: Record<string, unknown>): RenderableField[] {
 
  return orderedKeys
   .filter((key, index) => orderedKeys.indexOf(key) === index)
-  .filter((key) => !HIDDEN_GENERIC_FIELDS.has(key))
+  .filter((key) => !hiddenFields.has(key))
   .map((key) => ({ key, label: getFieldLabel(key), value: item[key] }))
   .filter((field) => hasRenderableValue(field.value));
 }
@@ -428,7 +512,9 @@ export function hasRenderableValue(value: unknown): boolean {
  if (typeof value === "string") return Boolean(value.trim());
  if (typeof value === "number" || typeof value === "boolean") return true;
  if (Array.isArray(value)) return value.some(hasRenderableValue);
+
  const record = asRecord(value);
+
  return (
   Object.keys(record).length > 0 &&
   Object.values(record).some(hasRenderableValue)
@@ -496,6 +582,7 @@ function FieldValue({
 
  const record = asRecord(value);
  const nestedPassage = getPassageLikeValue(record);
+
  if (nestedPassage) {
   return (
    <PassageCard
@@ -506,6 +593,7 @@ function FieldValue({
    />
   );
  }
+
  const primary =
   stringValue(record, "title_vi") ||
   stringValue(record, "title") ||
@@ -513,13 +601,18 @@ function FieldValue({
   stringValue(record, "zh") ||
   stringValue(record, "text") ||
   stringValue(record, "prompt") ||
+  stringValue(record, "question") ||
+  stringValue(record, "statement") ||
   stringValue(record, "answer") ||
+  stringValue(record, "sample_answer") ||
   answerToString(value);
+
  const secondary =
   stringValue(record, "meaning_vi") ||
   stringValue(record, "vi") ||
   stringValue(record, "pinyin") ||
-  stringValue(record, "explanation_vi");
+  stringValue(record, "explanation_vi") ||
+  stringValue(record, "note_vi");
 
  return (
   <div className="grid gap-1 text-sm font-semibold text-text-secondary">
@@ -527,14 +620,17 @@ function FieldValue({
    {displayMode.showMeaning && secondary && secondary !== primary && (
     <p>{secondary}</p>
    )}
+
    {!primary &&
     Object.entries(record)
      .filter(([, entryValue]) => hasRenderableValue(entryValue))
      .map(([key, entryValue]) => (
-      <p key={key}>
-       <span className="font-black text-text-primary">{getFieldLabel(key)}:</span>{" "}
-       {answerToString(entryValue) || stringValue(asRecord(entryValue), "text")}
-      </p>
+      <div key={key} className="grid gap-1 rounded-lg bg-bg-primary px-3 py-2">
+       <p className="text-xs font-black uppercase tracking-wide text-text-muted">
+        {getFieldLabel(key)}
+       </p>
+       <FieldValue value={entryValue} displayMode={displayMode} />
+      </div>
      ))}
   </div>
  );
@@ -550,6 +646,7 @@ function FieldListItem({
  const record = asRecord(value);
  const zh = stringValue(record, "zh") || stringValue(record, "text");
  const nestedPassage = getPassageLikeValue(record, { includeText: true });
+
  if (nestedPassage && !zh) {
   return (
    <PassageCard
@@ -560,12 +657,17 @@ function FieldListItem({
    />
   );
  }
+
  if (zh) {
   return (
    <TextLineCard
     zh={zh}
     pinyin={stringValue(record, "pinyin")}
-    vi={stringValue(record, "vi") || stringValue(record, "meaning_vi")}
+    vi={
+     stringValue(record, "vi") ||
+     stringValue(record, "meaning_vi") ||
+     stringValue(record, "translation_vi")
+    }
     displayMode={displayMode}
    />
   );
@@ -578,6 +680,19 @@ function FieldListItem({
   <div className="rounded-lg bg-bg-primary px-3 py-2">
    <FieldValue value={value} displayMode={displayMode} />
   </div>
+ );
+}
+
+function RawDataDetails({ value }: { value: unknown }) {
+ return (
+  <details className="rounded-lg border border-border-default bg-bg-subtle p-3">
+   <summary className="cursor-pointer text-xs font-black uppercase tracking-wide text-text-muted">
+    Dữ liệu gốc của mục này
+   </summary>
+   <pre className="mt-2 max-h-96 overflow-auto whitespace-pre-wrap rounded-lg bg-bg-primary p-3 text-xs leading-relaxed text-text-secondary">
+    {JSON.stringify(value, null, 2)}
+   </pre>
+  </details>
  );
 }
 
@@ -600,6 +715,7 @@ export function LooseItemGrid({
   <div className="grid gap-2 sm:grid-cols-2">
    {visibleItems.map((item, index) => {
     const text = answerToString(item);
+
     if (text) {
      return <ExercisePill key={`${text}-${index}`}>{text}</ExercisePill>;
     }
@@ -613,9 +729,7 @@ export function LooseItemGrid({
 
     if (compactText && Object.keys(record).length <= 3) {
      return (
-      <ExercisePill key={`${compactText}-${index}`}>
-       {compactText}
-      </ExercisePill>
+      <ExercisePill key={`${compactText}-${index}`}>{compactText}</ExercisePill>
      );
     }
 

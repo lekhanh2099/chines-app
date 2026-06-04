@@ -39,57 +39,173 @@ function hasTextLikeValue(value: unknown): boolean {
 
 export function answerToString(value: unknown): string {
  if (typeof value === "string") return value.trim();
- if (typeof value === "number" || typeof value === "boolean")
+ if (typeof value === "number" || typeof value === "boolean") {
   return String(value);
+ }
  if (Array.isArray(value)) return nonEmptyStrings(value).join(" / ");
  return "";
 }
+
+function firstRenderableArray(...arrays: unknown[][]): unknown[] {
+ return arrays.find((values) => values.some(hasTextLikeValue)) ?? [];
+}
+
+function firstRenderableArrayByKeys(
+ record: Record<string, unknown>,
+ keys: string[],
+): unknown[] {
+ for (const key of keys) {
+  const values = arrayValue(record, key);
+  if (values.some(hasTextLikeValue)) return values;
+ }
+
+ return [];
+}
+
+function mergedRenderableArrays(
+ record: Record<string, unknown>,
+ keys: string[],
+): unknown[] {
+ return keys.flatMap((key) => arrayValue(record, key)).filter(hasTextLikeValue);
+}
+
+const supplementaryVocabKeys = [
+ "supplementary_vocabulary",
+ "supplementary_words",
+ "supplementary_vocab",
+ "supplement_vocab",
+ "supplemental_vocab",
+];
 
 export function getPassageLikeValue(
  record: Record<string, unknown>,
  options: { includeText?: boolean } = {},
 ): unknown {
- const directPassage = asRecord(record.passage);
- if (Object.values(directPassage).some(hasTextLikeValue)) return record.passage;
+ const directPassageRecord = asRecord(record.passage);
+ const directPassageText = answerToString(record.passage);
+ const directPassageHasPayload =
+  Boolean(directPassageText) ||
+  Object.values(directPassageRecord).some(hasTextLikeValue);
+
+ const supplementaryVocabulary = [
+  ...mergedRenderableArrays(directPassageRecord, supplementaryVocabKeys),
+  ...mergedRenderableArrays(record, supplementaryVocabKeys),
+ ];
+
+ if (directPassageHasPayload) {
+  return {
+   ...directPassageRecord,
+   id: stringValue(directPassageRecord, "id") || stringValue(record, "id"),
+   title:
+    stringValue(directPassageRecord, "title") ||
+    stringValue(record, "title") ||
+    stringValue(record, "title_vi"),
+   title_vi:
+    stringValue(directPassageRecord, "title_vi") ||
+    stringValue(record, "title_vi"),
+   instruction: directPassageRecord.instruction ?? record.instruction,
+   text_with_blanks:
+    stringValue(directPassageRecord, "text_with_blanks") ||
+    stringValue(directPassageRecord, "passage_with_blanks") ||
+    stringValue(directPassageRecord, "passage_blanked") ||
+    stringValue(directPassageRecord, "cloze_text") ||
+    directPassageText,
+   completed_text:
+    stringValue(directPassageRecord, "completed_text") ||
+    stringValue(directPassageRecord, "completed_text_zh") ||
+    stringValue(directPassageRecord, "completed_passage") ||
+    stringValue(directPassageRecord, "passage_complete") ||
+    stringValue(record, "completed_text") ||
+    stringValue(record, "completed_text_zh") ||
+    stringValue(record, "completed_passage") ||
+    stringValue(record, "passage_complete"),
+   pinyin:
+    stringValue(directPassageRecord, "pinyin") || stringValue(record, "pinyin"),
+   vi:
+    stringValue(directPassageRecord, "translation_vi") ||
+    stringValue(directPassageRecord, "vi") ||
+    stringValue(record, "translation_vi") ||
+    stringValue(record, "vi"),
+   paragraphs: firstRenderableArray(
+    arrayValue(directPassageRecord, "paragraphs"),
+    arrayValue(record, "paragraphs"),
+   ),
+   segments: firstRenderableArray(
+    arrayValue(directPassageRecord, "segments"),
+    arrayValue(record, "segments"),
+   ),
+   supplementary_vocabulary: supplementaryVocabulary,
+   word_bank: firstRenderableArray(
+    arrayValue(directPassageRecord, "word_bank"),
+    arrayValue(record, "word_bank"),
+   ),
+   blanks: firstRenderableArray(
+    arrayValue(directPassageRecord, "blanks"),
+    arrayValue(record, "blanks"),
+   ),
+   answers: firstRenderableArray(
+    arrayValue(directPassageRecord, "answers"),
+    arrayValue(record, "answers"),
+   ),
+   answer_key: firstRenderableArray(
+    arrayValue(directPassageRecord, "answer_key"),
+    arrayValue(record, "answer_key"),
+   ),
+   cloze_answers: firstRenderableArray(
+    arrayValue(directPassageRecord, "cloze_answers"),
+    arrayValue(record, "cloze_answers"),
+   ),
+   rendering: directPassageRecord.rendering ?? record.rendering,
+  };
+ }
 
  const textWithBlanks =
   stringValue(record, "text_with_blanks") ||
   stringValue(record, "passage_with_blanks") ||
   stringValue(record, "passage_blanked") ||
   stringValue(record, "cloze_text");
+
  const text =
   textWithBlanks ||
   stringValue(record, "passage_text") ||
   (options.includeText ? stringValue(record, "text") : "");
+
  const completedText =
   stringValue(record, "completed_text") ||
   stringValue(record, "completed_text_zh") ||
   stringValue(record, "completed_passage") ||
   stringValue(record, "passage_complete");
- const paragraphs = arrayValue(record, "paragraphs");
- const segments = arrayValue(record, "segments");
- const title = stringValue(record, "title_vi") || stringValue(record, "title");
+
  const passage = {
   id: stringValue(record, "id"),
-  title,
+  title: stringValue(record, "title_vi") || stringValue(record, "title"),
+  title_vi: stringValue(record, "title_vi"),
+  instruction: record.instruction,
   text_with_blanks: text,
   completed_text: completedText,
   pinyin: stringValue(record, "pinyin"),
   vi: stringValue(record, "translation_vi") || stringValue(record, "vi"),
-  paragraphs,
-  segments,
+  paragraphs: arrayValue(record, "paragraphs"),
+  segments: arrayValue(record, "segments"),
+  supplementary_vocabulary: supplementaryVocabulary,
+  word_bank: arrayValue(record, "word_bank"),
+  blanks: arrayValue(record, "blanks"),
+  answers: arrayValue(record, "answers"),
+  answer_key: arrayValue(record, "answer_key"),
+  cloze_answers: arrayValue(record, "cloze_answers"),
+  rendering: record.rendering,
  };
 
  return Object.values(passage).some(hasTextLikeValue) ? passage : undefined;
 }
 
 export function getClozeAnswerValues(record: Record<string, unknown>) {
- return [
-  ...arrayValue(record, "blanks"),
-  ...arrayValue(record, "answers"),
-  ...arrayValue(record, "answer_key"),
-  ...arrayValue(record, "cloze_answers"),
- ];
+ return firstRenderableArrayByKeys(record, [
+  "blanks",
+  "answers",
+  "answer_key",
+  "cloze_answers",
+ ]);
 }
 
 export function sectionTitle(section: Section) {
@@ -98,23 +214,30 @@ export function sectionTitle(section: Section) {
 
 export function sectionSubtitle(section: Section) {
  if (section.type === "text") return `${section.blocks.length} phần bài khóa`;
- if (section.type === "vocabulary")
+ if (section.type === "vocabulary") {
   return `${section.items.length} từ trong sách`;
- if (section.type === "proper_nouns")
+ }
+ if (section.type === "proper_nouns") {
   return `${section.items.length} tên riêng`;
+ }
  if (section.type === "notes") return `${section.items.length} chú thích`;
  if (section.type === "grammar") return `${section.items.length} điểm ngữ pháp`;
- if (section.type === "exercises")
+ if (section.type === "exercises") {
   return `${section.items.length} nhóm bài tập`;
- if (section.type === "communication")
+ }
+ if (section.type === "communication") {
   return `${section.items.length} hội thoại`;
+ }
  if (section.type === "reading") return `${section.items.length} bài đọc`;
- if (section.type === "character_writing")
+ if (section.type === "character_writing") {
   return `${section.items.length} chữ luyện viết`;
+ }
+
  if (section.type === "summary") {
   const sectionRecord = asRecord(section);
   const summaryRecord = asRecord(sectionRecord.summary);
   const contentRecord = asRecord(sectionRecord.content);
+
   const itemCount =
    section.items.length +
    section.blocks.length +
@@ -133,6 +256,7 @@ export function sectionSubtitle(section: Section) {
 
   return itemCount > 0 ? `${itemCount} mục tổng kết` : "Tổng kết bài";
  }
+
  return undefined;
 }
 

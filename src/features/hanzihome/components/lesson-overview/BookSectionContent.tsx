@@ -3,6 +3,7 @@ import type { Section } from "@/features/hanzihome/static-json/schemas/hanyuLess
 import {
  EmptySectionState,
  GenericItemCard,
+ LooseItemGrid,
  hasRenderableValue,
 } from "./CommonCards";
 import { ExerciseCard } from "./ExerciseSection";
@@ -10,10 +11,7 @@ import { GrammarCard } from "./GrammarSection";
 import { NoteCard } from "./NotesSection";
 import { ReadingCard } from "./ReadingSection";
 import { TextBlockView } from "./TextSection";
-import {
- DEFAULT_LESSON_DISPLAY_MODE,
- type LessonDisplayMode,
-} from "./types";
+import { DEFAULT_LESSON_DISPLAY_MODE, type LessonDisplayMode } from "./types";
 import { VocabMiniGrid } from "./VocabularySection";
 import { WritingCard } from "./WritingSection";
 import { arrayValue, asRecord, sectionEmptyReason, stringValue } from "./utils";
@@ -28,23 +26,28 @@ function titleFromValue(value: unknown, fallback: string) {
  if (typeof value === "string") return value;
 
  const record = asRecord(value);
+
  return (
   stringValue(record, "title_vi") ||
   stringValue(record, "title") ||
   stringValue(record, "pattern") ||
   stringValue(record, "zh") ||
   stringValue(record, "text") ||
+  stringValue(record, "label") ||
+  stringValue(record, "id") ||
   fallback
  );
 }
 
 function detailFromValue(value: unknown) {
  const record = asRecord(value);
+
  return (
   stringValue(record, "meaning_vi") ||
   stringValue(record, "vi") ||
   stringValue(record, "pinyin") ||
-  stringValue(record, "note_vi")
+  stringValue(record, "note_vi") ||
+  stringValue(record, "grammar_ref")
  );
 }
 
@@ -55,17 +58,25 @@ function groupFromArray(
  values: unknown[],
  fallbackLabel: string,
 ): SummaryGroup | null {
- if (values.length === 0) return null;
+ const visibleValues = values.filter(hasRenderableValue);
+ if (visibleValues.length === 0) return null;
 
  return {
   id: `${sectionId}-${id}`,
   title,
-  items: values.map((value, index) => ({
+  items: visibleValues.map((value, index) => ({
    id: `${sectionId}-${id}-${index}`,
    label: titleFromValue(value, `${fallbackLabel} ${index + 1}`),
    detail: detailFromValue(value),
   })),
  };
+}
+
+function collectArrays(
+ record: Record<string, unknown>,
+ keys: string[],
+): unknown[] {
+ return keys.flatMap((key) => arrayValue(record, key));
 }
 
 function buildSummaryGroups(section: Section): SummaryGroup[] {
@@ -80,6 +91,7 @@ function buildSummaryGroups(section: Section): SummaryGroup[] {
   ...asRecord(embeddedSummary.coverage),
   ...asRecord(contentSummary.coverage),
  };
+
  const coverageEntries = Object.entries(coverage)
   .filter(([, value]) => typeof value === "boolean")
   .map(([key, value]) => ({
@@ -87,6 +99,7 @@ function buildSummaryGroups(section: Section): SummaryGroup[] {
    label: key.replaceAll("_", " "),
    detail: value ? "Đã có dữ liệu" : "Chưa có dữ liệu",
   }));
+
  const remainingCheckValue = coverage.remaining_check_needed;
  const remainingChecks =
   typeof remainingCheckValue === "string"
@@ -99,9 +112,9 @@ function buildSummaryGroups(section: Section): SummaryGroup[] {
    "lesson-parts",
    "Phần trong bài",
    [
-    ...arrayValue(sectionRecord, "lesson_parts"),
-    ...arrayValue(embeddedSummary, "lesson_parts"),
-    ...arrayValue(contentSummary, "lesson_parts"),
+    ...collectArrays(sectionRecord, ["lesson_parts"]),
+    ...collectArrays(embeddedSummary, ["lesson_parts"]),
+    ...collectArrays(contentSummary, ["lesson_parts"]),
    ],
    "Phần",
   ),
@@ -110,9 +123,9 @@ function buildSummaryGroups(section: Section): SummaryGroup[] {
    "grammar-points",
    "Điểm ngữ pháp",
    [
-    ...arrayValue(sectionRecord, "grammar_points"),
-    ...arrayValue(embeddedSummary, "grammar_points"),
-    ...arrayValue(contentSummary, "grammar_points"),
+    ...collectArrays(sectionRecord, ["grammar_points"]),
+    ...collectArrays(embeddedSummary, ["grammar_points"]),
+    ...collectArrays(contentSummary, ["grammar_points"]),
    ],
    "Ngữ pháp",
   ),
@@ -121,23 +134,37 @@ function buildSummaryGroups(section: Section): SummaryGroup[] {
    "patterns",
    "Mẫu câu / câu trọng tâm",
    [
-    ...arrayValue(sectionRecord, "key_patterns"),
-    ...arrayValue(sectionRecord, "key_sentence_patterns"),
-    ...arrayValue(sectionRecord, "key_sentences"),
-    ...arrayValue(sectionRecord, "main_patterns"),
-    ...arrayValue(sectionRecord, "exercise_types"),
-    ...arrayValue(embeddedSummary, "key_patterns"),
-    ...arrayValue(embeddedSummary, "key_sentence_patterns"),
-    ...arrayValue(embeddedSummary, "key_sentences"),
-    ...arrayValue(embeddedSummary, "main_patterns"),
-    ...arrayValue(embeddedSummary, "exercise_types"),
-    ...arrayValue(contentSummary, "key_patterns"),
-    ...arrayValue(contentSummary, "key_sentence_patterns"),
-    ...arrayValue(contentSummary, "key_sentences"),
-    ...arrayValue(contentSummary, "main_patterns"),
-    ...arrayValue(contentSummary, "exercise_types"),
+    ...collectArrays(sectionRecord, [
+     "key_patterns",
+     "key_sentence_patterns",
+     "key_sentences",
+     "main_patterns",
+    ]),
+    ...collectArrays(embeddedSummary, [
+     "key_patterns",
+     "key_sentence_patterns",
+     "key_sentences",
+     "main_patterns",
+    ]),
+    ...collectArrays(contentSummary, [
+     "key_patterns",
+     "key_sentence_patterns",
+     "key_sentences",
+     "main_patterns",
+    ]),
    ],
    "Câu",
+  ),
+  groupFromArray(
+   section.id,
+   "exercise-types",
+   "Dạng bài tập",
+   [
+    ...collectArrays(sectionRecord, ["exercise_types"]),
+    ...collectArrays(embeddedSummary, ["exercise_types"]),
+    ...collectArrays(contentSummary, ["exercise_types"]),
+   ],
+   "Dạng",
   ),
   coverageEntries.length > 0
    ? {
@@ -156,10 +183,30 @@ function buildSummaryGroups(section: Section): SummaryGroup[] {
  ].filter((group): group is SummaryGroup => Boolean(group));
 }
 
-function SummarySectionView({ section }: { section: Section }) {
+function SummarySectionView({
+ section,
+ displayMode,
+}: {
+ section: Section;
+ displayMode: LessonDisplayMode;
+}) {
  const groups = buildSummaryGroups(section);
+ const sectionRecord = asRecord(section);
+ const summaryRecord = asRecord(sectionRecord.summary);
+ const contentRecord = asRecord(sectionRecord.content);
+ const looseItems = [
+  ...arrayValue(sectionRecord, "items"),
+  ...arrayValue(sectionRecord, "blocks"),
+  ...arrayValue(summaryRecord, "items"),
+  ...arrayValue(summaryRecord, "blocks"),
+  ...arrayValue(contentRecord, "items"),
+  ...arrayValue(contentRecord, "blocks"),
+ ];
 
- if (groups.length === 0) {
+ const hasGroups = groups.length > 0;
+ const hasLooseItems = looseItems.some(hasRenderableValue);
+
+ if (!hasGroups && !hasLooseItems) {
   return <EmptySectionState reason={sectionEmptyReason(section)} />;
  }
 
@@ -190,6 +237,38 @@ function SummarySectionView({ section }: { section: Section }) {
      </div>
     </div>
    ))}
+
+   {hasLooseItems && (
+    <LooseItemGrid items={looseItems} displayMode={displayMode} />
+   )}
+  </div>
+ );
+}
+
+function RawSectionDetails({ section }: { section: Section }) {
+ return (
+  <details className="rounded-lg border border-border-default bg-bg-subtle p-3">
+   <summary className="cursor-pointer text-xs font-black uppercase tracking-wide text-text-muted">
+    Dữ liệu gốc của section
+   </summary>
+   <pre className="mt-2 max-h-96 overflow-auto whitespace-pre-wrap rounded-lg bg-bg-primary p-3 text-xs leading-relaxed text-text-secondary">
+    {JSON.stringify(section, null, 2)}
+   </pre>
+  </details>
+ );
+}
+
+function SectionContentFrame({
+ section,
+ children,
+}: {
+ section: Section;
+ children: React.ReactNode;
+}) {
+ return (
+  <div className="grid gap-3">
+   {children}
+   <RawSectionDetails section={section} />
   </div>
  );
 }
@@ -209,82 +288,118 @@ export function BookSectionContent({
   );
 
  if (section.type === "text") {
-  return section.blocks.length > 0 ? (
-   <div className="grid gap-3">
-    {section.blocks.map((block) => (
-     <TextBlockView key={block.id} block={block} displayMode={displayMode} />
-    ))}
-   </div>
-  ) : (
-   renderSectionFallback()
+  return (
+   <SectionContentFrame section={section}>
+    {section.blocks.length > 0 ? (
+     <div className="grid gap-3">
+      {section.blocks.map((block) => (
+       <TextBlockView key={block.id} block={block} displayMode={displayMode} />
+      ))}
+     </div>
+    ) : (
+     renderSectionFallback()
+    )}
+   </SectionContentFrame>
   );
  }
 
  if (section.type === "vocabulary") {
-  return section.items.length > 0 ? (
-   <VocabMiniGrid items={section.items} displayMode={displayMode} />
-  ) : (
-   renderSectionFallback()
+  return (
+   <SectionContentFrame section={section}>
+    {section.items.length > 0 ? (
+     <VocabMiniGrid items={section.items} displayMode={displayMode} />
+    ) : (
+     renderSectionFallback()
+    )}
+   </SectionContentFrame>
   );
  }
 
  if (section.type === "notes") {
-  return section.items.length > 0 ? (
-   <div className="grid gap-3">
-    {section.items.map((item) => (
-     <NoteCard key={item.id} item={item} displayMode={displayMode} />
-    ))}
-   </div>
-  ) : (
-   renderSectionFallback()
+  return (
+   <SectionContentFrame section={section}>
+    {section.items.length > 0 ? (
+     <div className="grid gap-3">
+      {section.items.map((item) => (
+       <NoteCard key={item.id} item={item} displayMode={displayMode} />
+      ))}
+     </div>
+    ) : (
+     renderSectionFallback()
+    )}
+   </SectionContentFrame>
   );
  }
 
  if (section.type === "grammar") {
-  return section.items.length > 0 ? (
-   <div className="grid gap-3">
-    {section.items.map((item) => (
-     <GrammarCard key={item.id} item={item} displayMode={displayMode} />
-    ))}
-   </div>
-  ) : (
-   renderSectionFallback()
+  return (
+   <SectionContentFrame section={section}>
+    {section.items.length > 0 ? (
+     <div className="grid gap-3">
+      {section.items.map((item) => (
+       <GrammarCard key={item.id} item={item} displayMode={displayMode} />
+      ))}
+     </div>
+    ) : (
+     renderSectionFallback()
+    )}
+   </SectionContentFrame>
   );
  }
 
  if (section.type === "exercises") {
-  return section.items.length > 0 ? (
-   <div className="grid gap-2">
-    {section.items.map((item) => (
-     <ExerciseCard key={item.id} item={item} displayMode={displayMode} />
-    ))}
-   </div>
-  ) : (
-   renderSectionFallback()
+  return (
+   <SectionContentFrame section={section}>
+    {section.items.length > 0 ? (
+     <div className="grid gap-2">
+      {section.items.map((item) => (
+       <ExerciseCard key={item.id} item={item} displayMode={displayMode} />
+      ))}
+     </div>
+    ) : (
+     renderSectionFallback()
+    )}
+   </SectionContentFrame>
   );
  }
 
  if (section.type === "reading") {
-  return section.items.length > 0 ? (
-   <div className="grid gap-2">
-    {section.items.map((item) => (
-     <ReadingCard key={item.id} item={item} displayMode={displayMode} />
-    ))}
-   </div>
-  ) : (
-   renderSectionFallback()
+  return (
+   <SectionContentFrame section={section}>
+    {section.items.length > 0 ? (
+     <div className="grid gap-2">
+      {section.items.map((item) => (
+       <ReadingCard key={item.id} item={item} displayMode={displayMode} />
+      ))}
+     </div>
+    ) : (
+     renderSectionFallback()
+    )}
+   </SectionContentFrame>
   );
  }
 
  if (section.type === "character_writing") {
-  return section.items.length > 0 ? (
-   <div className="grid gap-2 md:grid-cols-3">
-    {section.items.map((item) => (
-     <WritingCard key={item.id} item={item} displayMode={displayMode} />
-    ))}
-   </div>
-  ) : (
-   renderSectionFallback()
+  return (
+   <SectionContentFrame section={section}>
+    {section.items.length > 0 ? (
+     <div className="grid gap-2 md:grid-cols-3">
+      {section.items.map((item) => (
+       <WritingCard key={item.id} item={item} displayMode={displayMode} />
+      ))}
+     </div>
+    ) : (
+     renderSectionFallback()
+    )}
+   </SectionContentFrame>
+  );
+ }
+
+ if (section.type === "summary") {
+  return (
+   <SectionContentFrame section={section}>
+    <SummarySectionView section={section} displayMode={displayMode} />
+   </SectionContentFrame>
   );
  }
 
@@ -293,55 +408,62 @@ export function BookSectionContent({
   ...arrayValue(sectionRecord, "items"),
   ...arrayValue(sectionRecord, "blocks"),
  ];
- if (section.type === "summary") {
-  return <SummarySectionView section={section} />;
- }
-
- const renderItems = looseItems;
 
  if (section.type === "communication") {
-  return section.items.length > 0 ? (
-   <div className="grid gap-3">
-    {section.items.map((item, index) => (
-     <GenericItemCard
-      key={stringValue(asRecord(item), "id") || `${section.id}-${index}`}
-      value={item}
-      displayMode={displayMode}
-     />
-    ))}
-   </div>
-  ) : (
-   renderSectionFallback()
+  return (
+   <SectionContentFrame section={section}>
+    {section.items.length > 0 ? (
+     <div className="grid gap-3">
+      {section.items.map((item, index) => (
+       <GenericItemCard
+        key={stringValue(asRecord(item), "id") || `${section.id}-${index}`}
+        value={item}
+        displayMode={displayMode}
+       />
+      ))}
+     </div>
+    ) : (
+     renderSectionFallback()
+    )}
+   </SectionContentFrame>
   );
  }
 
  if (section.type === "proper_nouns") {
-  return renderItems.length > 0 ? (
-   <div className="grid gap-2 sm:grid-cols-2">
-    {renderItems.map((item, index) => (
-     <GenericItemCard
-      key={stringValue(asRecord(item), "id") || `${section.id}-${index}`}
-      value={item}
-      displayMode={displayMode}
-     />
-    ))}
-   </div>
-  ) : (
-   renderSectionFallback()
+  return (
+   <SectionContentFrame section={section}>
+    {looseItems.length > 0 ? (
+     <div className="grid gap-2 sm:grid-cols-2">
+      {looseItems.map((item, index) => (
+       <GenericItemCard
+        key={stringValue(asRecord(item), "id") || `${section.id}-${index}`}
+        value={item}
+        displayMode={displayMode}
+       />
+      ))}
+     </div>
+    ) : (
+     renderSectionFallback()
+    )}
+   </SectionContentFrame>
   );
  }
 
- return renderItems.length > 0 ? (
-  <div className="grid gap-2">
-   {renderItems.map((item, index) => (
-    <GenericItemCard
-     key={stringValue(asRecord(item), "id") || index}
-     value={item}
-     displayMode={displayMode}
-    />
-   ))}
-  </div>
-) : (
-  renderSectionFallback()
+ return (
+  <SectionContentFrame section={section}>
+   {looseItems.length > 0 ? (
+    <div className="grid gap-2">
+     {looseItems.map((item, index) => (
+      <GenericItemCard
+       key={stringValue(asRecord(item), "id") || `${index}`}
+       value={item}
+       displayMode={displayMode}
+      />
+     ))}
+    </div>
+   ) : (
+    renderSectionFallback()
+   )}
+  </SectionContentFrame>
  );
 }
