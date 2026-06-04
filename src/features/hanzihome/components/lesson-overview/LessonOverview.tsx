@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, type ReactNode } from "react";
+import { useMemo, useState, type ReactNode } from "react";
 import {
  BookOpenCheck,
  Database,
@@ -37,18 +37,147 @@ type LessonOverviewProps = {
  onOpenModule: (module: HanziHomeModule) => void;
 };
 
+type LessonOverviewMode = "study" | "debug";
+
 export function LessonOverview({ lesson, onOpenModule }: LessonOverviewProps) {
+ const [overviewMode, setOverviewMode] = useState<LessonOverviewMode>("study");
  const fallbackMarkdown = lesson.notes?.overviewMarkdown?.trim();
  const sourceSections = useMemo(
   () => getBookSections(lesson.sourceLesson),
   [lesson.sourceLesson],
  );
+ const showDebug = overviewMode === "debug";
 
  return (
   <div className="grid gap-3 sm:gap-4">
-   {sourceSections.length > 0 && (
+   <LessonOverviewModeToggle mode={overviewMode} onChange={setOverviewMode} />
+
+   {showDebug && sourceSections.length > 0 ? (
     <LessonSourceDataOverview lesson={lesson} sections={sourceSections} />
+   ) : (
+    <LessonStudyDashboard
+     lesson={lesson}
+     sections={sourceSections}
+     onOpenModule={onOpenModule}
+    />
    )}
+
+   {fallbackMarkdown && !lesson.sourceLesson && (
+    <Card padding="lg" className="rounded-xl">
+     <MarkdownContent content={fallbackMarkdown} />
+    </Card>
+   )}
+
+   <LessonNoteAccessCard lesson={lesson} />
+  </div>
+ );
+}
+
+function LessonOverviewModeToggle({
+ mode,
+ onChange,
+}: {
+ mode: LessonOverviewMode;
+ onChange: (mode: LessonOverviewMode) => void;
+}) {
+ return (
+  <div className="flex flex-wrap items-center justify-between gap-2 rounded-xl border border-border-default bg-bg-primary p-2 shadow-sm">
+   <div className="px-2">
+    <p className="text-xs font-black uppercase tracking-wide text-text-muted">
+     Chế độ xem
+    </p>
+    <p className="text-sm font-semibold text-text-secondary">
+     Study để học, Debug để kiểm data gốc.
+    </p>
+   </div>
+
+   <div className="flex rounded-lg bg-bg-subtle p-1">
+    {(["study", "debug"] as const).map((value) => (
+     <Button
+      key={value}
+      type="button"
+      variant={mode === value ? "default" : "ghost"}
+      size="sm"
+      onClick={() => onChange(value)}
+     >
+      {value === "study" ? "Study" : "Debug"}
+     </Button>
+    ))}
+   </div>
+  </div>
+ );
+}
+
+const OVERVIEW_DISPLAY_MODE: LessonDisplayMode = {
+ ...DEFAULT_LESSON_DISPLAY_MODE,
+ showPinyin: true,
+ showMeaning: true,
+};
+
+function LessonStudyDashboard({
+ lesson,
+ sections,
+ onOpenModule,
+}: {
+ lesson: HanziHomeLesson;
+ sections: BookSection[];
+ onOpenModule: (module: HanziHomeModule) => void;
+}) {
+ const stats = getLessonSourceStats({ lesson, sections });
+
+ return (
+  <div className="grid gap-3 sm:gap-4">
+   <Card padding="lg" className="rounded-xl">
+    <div className="grid gap-4">
+     <div className="flex flex-wrap items-start justify-between gap-3">
+      <div className="min-w-0">
+       <p className="text-xs font-black uppercase tracking-wide text-primary">
+        Bài học
+       </p>
+       <h2 className="text-2xl font-black leading-tight text-text-primary">
+        {stats.zhTitle || lesson.title}
+       </h2>
+       <p className="mt-1 text-sm font-bold text-text-muted">
+        {stats.volume}
+        {stats.pinyinTitle && ` · ${stats.pinyinTitle}`}
+       </p>
+      </div>
+
+      <div className="flex flex-wrap gap-2">
+       <OverviewStatPill label={`${lesson.vocab.length} từ`} />
+       <OverviewStatPill label={`${lesson.grammar.length} ngữ pháp`} />
+       <OverviewStatPill label={`${sections.length} phần`} />
+      </div>
+     </div>
+
+     <div className="grid gap-2 md:grid-cols-4">
+      <StudyActionCard
+       icon={BookOpenCheck}
+       title="Đọc bài khóa"
+       description="Đọc theo sách, bật/tắt pinyin và nghĩa khi cần."
+       onAction={() => onOpenModule("lessonText")}
+      />
+      <StudyActionCard
+       icon={Tags}
+       title="Học từ vựng"
+       description="Tra nhanh nghĩa, pinyin, ví dụ và lỗi sai."
+       onAction={() => onOpenModule("vocab")}
+      />
+      <StudyActionCard
+       icon={GraduationCap}
+       title="Nắm ngữ pháp"
+       description="Công thức, ý nghĩa, ví dụ và bẫy sai."
+       onAction={() => onOpenModule("grammar")}
+      />
+      <StudyActionCard
+       icon={BookOpenCheck}
+       title="Ôn chủ động"
+       description="Flashcard từ vựng và ngữ pháp trong bài."
+       onAction={() => onOpenModule("review")}
+      />
+     </div>
+    </div>
+   </Card>
 
    {(lesson.vocab.length > 0 || lesson.grammar.length > 0) && (
     <div className="grid gap-3 lg:grid-cols-2">
@@ -60,7 +189,7 @@ export function LessonOverview({ lesson, onOpenModule }: LessonOverviewProps) {
        actionLabel="Mở từ vựng"
        onAction={() => onOpenModule("vocab")}
       >
-       <div className="grid max-h-[32rem] gap-2 overflow-y-auto pr-1 sm:grid-cols-2">
+       <div className="grid max-h-80 gap-2 overflow-y-auto pr-1 sm:grid-cols-2">
         {lesson.vocab.map((word) => (
          <VocabPreviewRow key={word.runtimeId} word={word} />
         ))}
@@ -76,7 +205,7 @@ export function LessonOverview({ lesson, onOpenModule }: LessonOverviewProps) {
        actionLabel="Mở ngữ pháp"
        onAction={() => onOpenModule("grammar")}
       >
-       <div className="grid max-h-[32rem] gap-2 overflow-y-auto pr-1">
+       <div className="grid max-h-80 gap-2 overflow-y-auto pr-1">
         {lesson.grammar.map((point, index) => (
          <GrammarPreviewRow key={point.id} point={point} index={index} />
         ))}
@@ -86,22 +215,95 @@ export function LessonOverview({ lesson, onOpenModule }: LessonOverviewProps) {
     </div>
    )}
 
-   {fallbackMarkdown && !lesson.sourceLesson && (
+   {sections.length > 0 && (
     <Card padding="lg" className="rounded-xl">
-     <MarkdownContent content={fallbackMarkdown} />
+     <div className="flex flex-wrap items-center justify-between gap-3">
+      <div>
+       <p className="text-xs font-black uppercase tracking-wide text-text-muted">
+        Lộ trình bài này
+       </p>
+       <h2 className="text-lg font-black text-text-primary">
+        Học theo đúng cấu trúc sách
+       </h2>
+      </div>
+      <Button
+       type="button"
+       variant="outline"
+       size="sm"
+       onClick={() => onOpenModule("lessonText")}
+      >
+       Mở bài khóa
+      </Button>
+     </div>
+
+     <div className="mt-3 grid gap-2 md:grid-cols-2 xl:grid-cols-3">
+      {sections.map((section, index) => (
+       <StudyPathRow key={section.id} section={section} index={index} />
+      ))}
+     </div>
     </Card>
    )}
-
-   <LessonNoteAccessCard lesson={lesson} />
   </div>
  );
 }
 
-const OVERVIEW_DISPLAY_MODE: LessonDisplayMode = {
- ...DEFAULT_LESSON_DISPLAY_MODE,
- showPinyin: true,
- showMeaning: true,
-};
+function StudyActionCard({
+ icon: Icon,
+ title,
+ description,
+ onAction,
+}: {
+ icon: LucideIcon;
+ title: string;
+ description: string;
+ onAction: () => void;
+}) {
+ return (
+  <button
+   type="button"
+   onClick={onAction}
+   className="group grid min-h-32 gap-3 rounded-xl border border-border-default bg-bg-subtle p-4 text-left transition hover:border-primary/40 hover:bg-accent-subtle focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/50"
+  >
+   <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-bg-primary text-primary transition group-hover:bg-primary group-hover:text-primary-foreground">
+    <Icon className="h-4 w-4" />
+   </span>
+   <span>
+    <span className="block font-black text-text-primary">{title}</span>
+    <span className="mt-1 block text-sm font-semibold leading-relaxed text-text-secondary">
+     {description}
+    </span>
+   </span>
+  </button>
+ );
+}
+
+function StudyPathRow({
+ section,
+ index,
+}: {
+ section: BookSection;
+ index: number;
+}) {
+ const SectionIcon = sectionIcons[section.type] ?? BookOpenCheck;
+
+ return (
+  <div className="flex min-w-0 items-center gap-3 rounded-xl border border-border-default bg-bg-subtle p-3">
+   <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-bg-primary text-primary">
+    <SectionIcon className="h-4 w-4" />
+   </span>
+   <div className="min-w-0">
+    <p className="truncate text-sm font-black text-text-primary">
+     {index + 1}. {section.title}
+    </p>
+    {section.subtitle && (
+     <p className="truncate text-xs font-semibold text-text-muted">
+      {section.subtitle}
+     </p>
+    )}
+   </div>
+  </div>
+ );
+}
 
 function getSectionPayloadCount(section: BookSection) {
  const sectionRecord = asRecord(section.section);
@@ -278,6 +480,7 @@ function OverviewBookSection({
    <BookSectionContent
     section={section.section}
     displayMode={OVERVIEW_DISPLAY_MODE}
+    debugMode
    />
   </article>
  );

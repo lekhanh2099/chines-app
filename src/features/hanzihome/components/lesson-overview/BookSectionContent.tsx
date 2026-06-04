@@ -293,9 +293,11 @@ function properNounFrontText(record: Record<string, unknown>) {
 function ProperNounCard({
  item,
  displayMode,
+ debugMode,
 }: {
  item: unknown;
  displayMode: LessonDisplayMode;
+ debugMode: boolean;
 }) {
  const record = asRecord(item);
  const flashcard = asRecord(record.flashcard);
@@ -379,7 +381,7 @@ function ProperNounCard({
     </details>
    )}
 
-   <RawItemDetails value={item} />
+   {debugMode && <RawItemDetails value={item} />}
   </article>
  );
 }
@@ -399,15 +401,17 @@ function RawSectionDetails({ section }: { section: Section }) {
 
 function SectionContentFrame({
  section,
+ debugMode,
  children,
 }: {
  section: Section;
+ debugMode: boolean;
  children: React.ReactNode;
 }) {
  return (
   <div className="grid gap-3">
    {children}
-   <RawSectionDetails section={section} />
+   {debugMode && <RawSectionDetails section={section} />}
   </div>
  );
 }
@@ -415,9 +419,11 @@ function SectionContentFrame({
 export function BookSectionContent({
  section,
  displayMode = DEFAULT_LESSON_DISPLAY_MODE,
+ debugMode = false,
 }: {
  section: Section;
  displayMode?: LessonDisplayMode;
+ debugMode?: boolean;
 }) {
  const renderSectionFallback = () =>
   hasRenderableValue(section) ? (
@@ -428,7 +434,7 @@ export function BookSectionContent({
 
  if (section.type === "text") {
   return (
-   <SectionContentFrame section={section}>
+   <SectionContentFrame section={section} debugMode={debugMode}>
     {section.blocks.length > 0 ? (
      <div className="grid gap-3">
       {section.blocks.map((block) => (
@@ -444,7 +450,7 @@ export function BookSectionContent({
 
  if (section.type === "vocabulary") {
   return (
-   <SectionContentFrame section={section}>
+   <SectionContentFrame section={section} debugMode={debugMode}>
     {section.items.length > 0 ? (
      <VocabMiniGrid items={section.items} displayMode={displayMode} />
     ) : (
@@ -456,7 +462,7 @@ export function BookSectionContent({
 
  if (section.type === "notes") {
   return (
-   <SectionContentFrame section={section}>
+   <SectionContentFrame section={section} debugMode={debugMode}>
     {section.items.length > 0 ? (
      <div className="grid gap-3">
       {section.items.map((item) => (
@@ -472,7 +478,7 @@ export function BookSectionContent({
 
  if (section.type === "grammar") {
   return (
-   <SectionContentFrame section={section}>
+   <SectionContentFrame section={section} debugMode={debugMode}>
     {section.items.length > 0 ? (
      <div className="grid gap-3">
       {section.items.map((item) => (
@@ -488,11 +494,16 @@ export function BookSectionContent({
 
  if (section.type === "exercises") {
   return (
-   <SectionContentFrame section={section}>
+   <SectionContentFrame section={section} debugMode={debugMode}>
     {section.items.length > 0 ? (
-     <div className="grid gap-2">
+      <div className="grid gap-2">
       {section.items.map((item) => (
-       <ExerciseCard key={item.id} item={item} displayMode={displayMode} />
+       <ExerciseCard
+        key={item.id}
+        item={item}
+        displayMode={displayMode}
+        debugMode={debugMode}
+       />
       ))}
      </div>
     ) : (
@@ -504,7 +515,7 @@ export function BookSectionContent({
 
  if (section.type === "reading") {
   return (
-   <SectionContentFrame section={section}>
+   <SectionContentFrame section={section} debugMode={debugMode}>
     {section.items.length > 0 ? (
      <div className="grid gap-2">
       {section.items.map((item) => (
@@ -520,7 +531,7 @@ export function BookSectionContent({
 
  if (section.type === "character_writing") {
   return (
-   <SectionContentFrame section={section}>
+   <SectionContentFrame section={section} debugMode={debugMode}>
     {section.items.length > 0 ? (
      <div className="grid gap-2 md:grid-cols-3">
       {section.items.map((item) => (
@@ -536,7 +547,7 @@ export function BookSectionContent({
 
  if (section.type === "summary") {
   return (
-   <SectionContentFrame section={section}>
+   <SectionContentFrame section={section} debugMode={debugMode}>
     <SummarySectionView section={section} displayMode={displayMode} />
    </SectionContentFrame>
   );
@@ -550,7 +561,7 @@ export function BookSectionContent({
 
  if (section.type === "communication") {
   return (
-   <SectionContentFrame section={section}>
+   <SectionContentFrame section={section} debugMode={debugMode}>
     {section.items.length > 0 ? (
      <div className="grid gap-3">
       {section.items.map((item, index) => (
@@ -570,7 +581,7 @@ export function BookSectionContent({
 
  if (section.type === "proper_nouns") {
   return (
-   <SectionContentFrame section={section}>
+   <SectionContentFrame section={section} debugMode={debugMode}>
     {looseItems.length > 0 ? (
      <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-3">
       {looseItems.map((item, index) => (
@@ -578,6 +589,7 @@ export function BookSectionContent({
         key={stringValue(asRecord(item), "id") || `${section.id}-${index}`}
         item={item}
         displayMode={displayMode}
+        debugMode={debugMode}
        />
       ))}
      </div>
@@ -589,7 +601,7 @@ export function BookSectionContent({
  }
 
  return (
-  <SectionContentFrame section={section}>
+  <SectionContentFrame section={section} debugMode={debugMode}>
    {looseItems.length > 0 ? (
     <div className="grid gap-2">
      {looseItems.map((item, index) => (

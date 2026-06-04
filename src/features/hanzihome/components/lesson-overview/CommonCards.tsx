@@ -34,6 +34,25 @@ export function ExercisePill({ children }: { children: ReactNode }) {
  );
 }
 
+export function AnswerReveal({
+ label = "Xem đáp án",
+ children,
+}: {
+ label?: string;
+ children: ReactNode;
+}) {
+ return (
+  <details className="rounded-lg border border-accent/25 bg-bg-primary">
+   <summary className="cursor-pointer list-none px-3 py-2 text-xs font-black uppercase tracking-wide text-accent-text marker:hidden">
+    {label}
+   </summary>
+   <div className="grid gap-2 border-t border-accent/20 bg-accent-subtle/55 px-3 py-2">
+    {children}
+   </div>
+  </details>
+ );
+}
+
 export function ExerciseQuestionCard({
  index,
  title,
@@ -53,12 +72,17 @@ export function ExerciseQuestionCard({
     {index}. {title}
    </p>
    {answer && (
-    <p className="rounded-lg bg-accent-subtle px-3 py-2 text-sm font-bold text-accent-text">
-     {answer}
-    </p>
+    <AnswerReveal>
+     <p className="text-sm font-bold text-accent-text">{answer}</p>
+     {note && (
+      <p className="text-xs font-semibold leading-relaxed text-text-muted">
+       {note}
+      </p>
+     )}
+    </AnswerReveal>
    )}
    {children}
-   {note && (
+   {note && !answer && (
     <p className="text-xs font-semibold leading-relaxed text-text-muted">
      {note}
     </p>
@@ -74,8 +98,16 @@ export function AnswerKeyList({
  itemId: string;
  values: unknown[];
 }) {
+ type AnswerEntry = {
+  id: string;
+  label: string;
+  value: string;
+  pinyin?: string;
+  note?: string;
+ };
+
  const answers = values
-  .map((answerValue, index) => {
+  .map((answerValue, index): AnswerEntry | null => {
    const answer = asRecord(answerValue);
    const label =
     stringValue(answer, "blank_id") ||
@@ -104,30 +136,17 @@ export function AnswerKeyList({
        id: `${itemId}-answer-${index}`,
        label,
        value,
-       pinyin,
-       note,
+       pinyin: pinyin || undefined,
+       note: note || undefined,
       }
     : null;
   })
-  .filter(
-   (
-    answer,
-   ): answer is {
-    id: string;
-    label: string;
-    value: string;
-    pinyin: string;
-    note: string;
-   } => Boolean(answer),
-  );
+  .filter((answer): answer is AnswerEntry => answer !== null);
 
  if (answers.length === 0) return null;
 
  return (
-  <div className="grid gap-2 rounded-xl border border-accent/30 bg-accent-subtle p-3">
-   <p className="text-xs font-black uppercase tracking-wide text-accent-text">
-    Đáp án
-   </p>
+  <AnswerReveal label={`Xem ${answers.length} đáp án`}>
    {answers.map((answer) => (
     <p key={answer.id} className="text-sm font-bold text-accent-text">
      {answer.label}: {answer.value}
@@ -135,7 +154,7 @@ export function AnswerKeyList({
      {answer.note && ` — ${answer.note}`}
     </p>
    ))}
-  </div>
+  </AnswerReveal>
  );
 }
 

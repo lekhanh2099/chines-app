@@ -1565,9 +1565,11 @@ function ExerciseBody({
 export function ExerciseCard({
  item,
  displayMode,
+ debugMode = false,
 }: {
  item: Exercise;
  displayMode: LessonDisplayMode;
+ debugMode?: boolean;
 }) {
  const record = asRecord(item);
  const instruction = asRecord(record.instruction);
@@ -1589,7 +1591,7 @@ export function ExerciseCard({
 
    <ExerciseBody item={item} displayMode={displayMode} />
 
-   <RawDataDetails value={item} />
+   {debugMode && <RawDataDetails value={item} />}
   </article>
  );
 }
