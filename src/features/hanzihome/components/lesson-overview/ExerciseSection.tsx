@@ -1,11 +1,11 @@
 import type { Exercise } from "@/features/hanzihome/static-json/schemas/hanyuLesson.schema";
-
 import {
  AnswerKeyList,
  EmptySectionState,
  ExercisePill,
  ExerciseQuestionCard,
  LooseItemGrid,
+ hasRenderableValue,
 } from "./CommonCards";
 import { PassageCard } from "./PassageCard";
 import { TextLineCard } from "./TextLineCard";
@@ -49,6 +49,163 @@ function objectText(value: unknown, keys: string[]) {
 function formatAnswer(value: unknown): string {
  if (typeof value === "boolean") return value ? "Đúng" : "Sai";
  return answerToString(value);
+}
+
+function firstTextByKeys(record: Record<string, unknown>, keys: string[]) {
+ for (const key of keys) {
+  const text = stringValue(record, key);
+  if (text) return text;
+ }
+
+ return "";
+}
+
+function lineTextFromValue(value: unknown) {
+ if (typeof value === "string" || typeof value === "number") {
+  return answerToString(value);
+ }
+
+ const record = asRecord(value);
+
+ return (
+  stringValue(record, "zh") ||
+  stringValue(record, "text") ||
+  stringValue(record, "sentence") ||
+  stringValue(record, "prompt") ||
+  stringValue(record, "question") ||
+  stringValue(record, "answer") ||
+  answerToString(value)
+ );
+}
+
+function QuestionDataBlock({
+ title,
+ value,
+ displayMode,
+}: {
+ title: string;
+ value: unknown;
+ displayMode: LessonDisplayMode;
+}) {
+ if (!hasRenderableValue(value)) return null;
+
+ if (typeof value === "string" || typeof value === "number") {
+  const text = answerToString(value);
+
+  if (!text) return null;
+
+  return (
+   <div className="rounded-lg border border-border-default bg-bg-primary px-3 py-2">
+    <p className="text-xs font-black uppercase tracking-wide text-text-muted">
+     {title}
+    </p>
+    <p className="mt-1 whitespace-pre-wrap text-sm font-semibold leading-relaxed text-text-primary">
+     {text}
+    </p>
+   </div>
+  );
+ }
+
+ if (Array.isArray(value)) {
+  const visibleLines = value.map(lineTextFromValue).filter(Boolean);
+
+  if (visibleLines.length === 0) return null;
+
+  return (
+   <div className="rounded-lg border border-border-default bg-bg-primary px-3 py-2">
+    <p className="text-xs font-black uppercase tracking-wide text-text-muted">
+     {title}
+    </p>
+    <div className="mt-2 grid gap-1">
+     {visibleLines.map((line, index) => (
+      <p
+       key={`${title}-${index}`}
+       className="text-sm font-semibold leading-relaxed text-text-primary"
+       lang="zh-CN"
+      >
+       {line}
+      </p>
+     ))}
+    </div>
+   </div>
+  );
+ }
+
+ const record = asRecord(value);
+ const zh =
+  stringValue(record, "zh") ||
+  stringValue(record, "text") ||
+  stringValue(record, "sentence") ||
+  stringValue(record, "prompt") ||
+  stringValue(record, "question");
+ const pinyin = stringValue(record, "pinyin");
+ const vi =
+  stringValue(record, "vi") ||
+  stringValue(record, "meaning_vi") ||
+  stringValue(record, "translation_vi");
+
+ if (zh) {
+  return (
+   <div className="rounded-lg border border-border-default bg-bg-primary px-3 py-2">
+    <p className="mb-1 text-xs font-black uppercase tracking-wide text-text-muted">
+     {title}
+    </p>
+    <TextLineCard
+     zh={zh}
+     pinyin={pinyin}
+     vi={vi}
+     displayMode={displayMode}
+     variant="reader"
+    />
+   </div>
+  );
+ }
+
+ return null;
+}
+
+function QuestionChoiceList({ values }: { values: unknown[] }) {
+ if (values.length === 0) return null;
+
+ const choices = values
+  .map((choiceValue, index) => {
+   const choice = asRecord(choiceValue);
+   const label =
+    stringValue(choice, "label") ||
+    stringValue(choice, "id") ||
+    String.fromCharCode(65 + index);
+   const text =
+    stringValue(choice, "text") ||
+    stringValue(choice, "zh") ||
+    stringValue(choice, "value") ||
+    answerToString(choiceValue);
+
+   return text ? { label, text } : null;
+  })
+  .filter((choice): choice is { label: string; text: string } =>
+   Boolean(choice),
+  );
+
+ if (choices.length === 0) return null;
+
+ return (
+  <div className="rounded-lg border border-border-default bg-bg-primary px-3 py-2">
+   <p className="text-xs font-black uppercase tracking-wide text-text-muted">
+    Lựa chọn
+   </p>
+   <div className="mt-2 grid gap-1">
+    {choices.map((choice) => (
+     <p
+      key={`${choice.label}-${choice.text}`}
+      className="text-sm font-semibold text-text-primary"
+     >
+      <span className="font-black text-accent-text">{choice.label}.</span>{" "}
+      {choice.text}
+     </p>
+    ))}
+   </div>
+  </div>
+ );
 }
 
 function modelLines(record: Record<string, unknown>): string[] {
@@ -151,6 +308,44 @@ function WordBank({ values }: { values: unknown[] }) {
  );
 }
 
+function ExtraPayloadBlock({
+ title,
+ value,
+ displayMode,
+}: {
+ title: string;
+ value: unknown;
+ displayMode: LessonDisplayMode;
+}) {
+ if (!hasRenderableValue(value)) return null;
+
+ const items = Array.isArray(value) ? value : [value];
+
+ return (
+  <div className="grid gap-2 rounded-xl border border-border-default bg-bg-subtle p-3">
+   <p className="text-xs font-black uppercase tracking-wide text-text-muted">
+    {title}
+   </p>
+   <LooseItemGrid items={items} displayMode={displayMode} />
+  </div>
+ );
+}
+
+function InfoBlock({ title, value }: { title: string; value: string }) {
+ if (!value) return null;
+
+ return (
+  <div className="rounded-xl border border-border-default bg-bg-subtle p-3">
+   <p className="text-xs font-black uppercase tracking-wide text-text-muted">
+    {title}
+   </p>
+   <p className="mt-1 text-sm font-semibold leading-relaxed text-text-secondary">
+    {value}
+   </p>
+  </div>
+ );
+}
+
 function SupplementaryPills({
  itemId,
  values,
@@ -199,27 +394,19 @@ function QuestionCard({
  itemId,
  questionValue,
  index,
+ displayMode,
 }: {
  itemId: string;
  questionValue: unknown;
  index: number;
+ displayMode: LessonDisplayMode;
 }) {
  const question = asRecord(questionValue);
  const nestedQuestion = asRecord(question.question);
  const statement = asRecord(question.statement);
  const answerRecord = asRecord(question.answer);
 
- const choices = arrayValue(question, "choices")
-  .map((choiceValue) => {
-   const choice = asRecord(choiceValue);
-   return (
-    stringValue(choice, "text") ||
-    stringValue(choice, "zh") ||
-    stringValue(choice, "label") ||
-    answerToString(choiceValue)
-   );
-  })
-  .filter(Boolean);
+ const choices = arrayValue(question, "choices");
 
  const title =
   promptToString(question.prompt) ||
@@ -237,6 +424,7 @@ function QuestionCard({
 
  const answer =
   stringValue(question, "sample_answer") ||
+  stringValue(question, "sample_answer_zh") ||
   stringValue(question, "correct") ||
   stringValue(question, "correct_sentence") ||
   formatAnswer(question.answer) ||
@@ -249,14 +437,493 @@ function QuestionCard({
   stringValue(question, "note_vi") ||
   objectText(question.evidence, ["quote"]);
 
+ const contextText = firstTextByKeys(question, [
+  "context",
+  "context_zh",
+  "situation",
+  "situation_zh",
+  "scenario",
+  "scenario_zh",
+ ]);
+
+ const contextVi = firstTextByKeys(question, [
+  "context_vi",
+  "situation_vi",
+  "scenario_vi",
+ ]);
+
+ const cueText = firstTextByKeys(question, [
+  "cue",
+  "cue_zh",
+  "given",
+  "given_zh",
+  "given_sentence",
+  "source",
+  "source_zh",
+  "source_sentence",
+  "original",
+  "original_zh",
+  "original_sentence",
+  "base_sentence",
+ ]);
+
+ const targetText = firstTextByKeys(question, [
+  "target",
+  "target_zh",
+  "target_sentence",
+  "expected",
+  "expected_zh",
+  "completed",
+  "completed_sentence",
+ ]);
+
+ const leftText = firstTextByKeys(question, ["a", "A", "left", "left_text"]);
+ const rightText = firstTextByKeys(question, ["b", "B", "right", "right_text"]);
+
+ const hasExtra =
+  Boolean(contextText) ||
+  Boolean(contextVi) ||
+  Boolean(cueText) ||
+  Boolean(targetText) ||
+  Boolean(leftText) ||
+  Boolean(rightText) ||
+  choices.length > 0 ||
+  hasRenderableValue(question.statement) ||
+  hasRenderableValue(question.evidence);
+
  return (
   <ExerciseQuestionCard
    key={stringValue(question, "id") || `${itemId}-${index}`}
    index={index + 1}
-   title={choices.length > 0 ? `${title} (${choices.join(" / ")})` : title}
+   title={title}
    answer={answer}
    note={note}
-  />
+  >
+   {hasExtra && (
+    <div className="grid gap-2">
+     <QuestionDataBlock
+      title="Ngữ cảnh"
+      value={contextText || contextVi}
+      displayMode={displayMode}
+     />
+
+     <QuestionDataBlock
+      title="Câu gốc / Gợi ý"
+      value={cueText}
+      displayMode={displayMode}
+     />
+
+     <QuestionDataBlock title="A" value={leftText} displayMode={displayMode} />
+
+     <QuestionDataBlock title="B" value={rightText} displayMode={displayMode} />
+
+     <QuestionDataBlock
+      title="Câu cần hoàn thành"
+      value={targetText}
+      displayMode={displayMode}
+     />
+
+     <QuestionChoiceList values={choices} />
+
+     <QuestionDataBlock
+      title="Statement"
+      value={question.statement}
+      displayMode={displayMode}
+     />
+
+     <QuestionDataBlock
+      title="Dẫn chứng"
+      value={question.evidence}
+      displayMode={displayMode}
+     />
+    </div>
+   )}
+  </ExerciseQuestionCard>
+ );
+}
+
+function firstArrayByKeys(record: Record<string, unknown>, keys: string[]) {
+ for (const key of keys) {
+  const values = arrayValue(record, key);
+  if (values.length > 0) return values;
+ }
+
+ return [];
+}
+
+function letterLabel(index: number) {
+ return String.fromCharCode(65 + index);
+}
+
+function numberFromRecordKeys(record: Record<string, unknown>, keys: string[]) {
+ for (const key of keys) {
+  const value = record[key];
+
+  if (typeof value === "number" && Number.isFinite(value)) return value;
+
+  if (typeof value === "string") {
+   const parsed = Number.parseInt(value.trim(), 10);
+   if (Number.isFinite(parsed)) return parsed;
+  }
+ }
+
+ return null;
+}
+
+function normalizeIndex(value: number | null, length: number) {
+ if (value === null) return null;
+ if (value >= 1 && value <= length) return value - 1;
+ if (value >= 0 && value < length) return value;
+ return null;
+}
+
+function matchingItemText(value: unknown) {
+ if (typeof value === "string" || typeof value === "number") {
+  return answerToString(value);
+ }
+
+ const record = asRecord(value);
+
+ return (
+  stringValue(record, "text") ||
+  stringValue(record, "zh") ||
+  stringValue(record, "prompt") ||
+  stringValue(record, "question") ||
+  stringValue(record, "answer") ||
+  stringValue(record, "value") ||
+  answerToString(value)
+ );
+}
+
+function MatchingOptionCard({
+ label,
+ value,
+ displayMode,
+}: {
+ label: string;
+ value: unknown;
+ displayMode: LessonDisplayMode;
+}) {
+ const record = asRecord(value);
+ const text = matchingItemText(value);
+ const pinyin = stringValue(record, "pinyin");
+ const vi =
+  stringValue(record, "vi") ||
+  stringValue(record, "meaning_vi") ||
+  stringValue(record, "translation_vi");
+
+ if (!text) return null;
+
+ return (
+  <div className="grid gap-1 rounded-lg border border-border-default bg-bg-primary px-3 py-2">
+   <div className="flex items-start gap-2">
+    <span className="mt-0.5 shrink-0 rounded-md bg-accent-subtle px-2 py-0.5 text-xs font-black text-accent-text">
+     {label}
+    </span>
+    <p className="min-w-0 text-sm font-black text-text-primary" lang="zh-CN">
+     {text}
+    </p>
+   </div>
+
+   {displayMode.showPinyin && pinyin && (
+    <p className="pl-9 text-xs font-bold italic text-text-muted">{pinyin}</p>
+   )}
+
+   {displayMode.showMeaning && vi && (
+    <p className="pl-9 text-xs font-semibold text-text-secondary">{vi}</p>
+   )}
+  </div>
+ );
+}
+
+function MatchingColumn({
+ title,
+ values,
+ labelMode,
+ displayMode,
+}: {
+ title: string;
+ values: unknown[];
+ labelMode: "number" | "letter";
+ displayMode: LessonDisplayMode;
+}) {
+ if (values.length === 0) return null;
+
+ return (
+  <div className="grid gap-2 rounded-xl border border-border-default bg-bg-subtle p-3">
+   <p className="text-xs font-black uppercase tracking-wide text-text-muted">
+    {title}
+   </p>
+
+   <div className="grid gap-2">
+    {values.map((value, index) => (
+     <MatchingOptionCard
+      key={`${title}-${index}`}
+      label={labelMode === "number" ? `${index + 1}` : letterLabel(index)}
+      value={value}
+      displayMode={displayMode}
+     />
+    ))}
+   </div>
+  </div>
+ );
+}
+
+type MatchingAnswerView = {
+ id: string;
+ leftLabel: string;
+ rightLabel: string;
+ leftText: string;
+ rightText: string;
+ explanation: string;
+};
+
+function matchingAnswerText({
+ answerValue,
+ index,
+ leftItems,
+ rightItems,
+}: {
+ answerValue: unknown;
+ index: number;
+ leftItems: unknown[];
+ rightItems: unknown[];
+}): MatchingAnswerView {
+ if (
+  typeof answerValue === "string" ||
+  typeof answerValue === "number" ||
+  typeof answerValue === "boolean"
+ ) {
+  const rawAnswer = answerToString(answerValue);
+  const match = rawAnswer.match(
+   /^\s*(\d+|[A-Za-z])\s*(?:->|→|-|:|=)\s*(\d+|[A-Za-z])\s*$/,
+  );
+
+  const rawLeft = match?.[1] || `${index + 1}`;
+  const rawRight = match?.[2] || rawAnswer || "?";
+
+  const leftNumber = Number.parseInt(rawLeft, 10);
+  const leftIndex = Number.isFinite(leftNumber)
+   ? normalizeIndex(leftNumber, leftItems.length)
+   : null;
+
+  const rightNumber = Number.parseInt(rawRight, 10);
+  const rightLetterIndex = /^[A-Za-z]$/.test(rawRight)
+   ? rawRight.toUpperCase().charCodeAt(0) - 65
+   : null;
+
+  const rightIndex = Number.isFinite(rightNumber)
+   ? normalizeIndex(rightNumber, rightItems.length)
+   : normalizeIndex(rightLetterIndex, rightItems.length);
+
+  return {
+   id: `${index}`,
+   leftLabel: leftIndex !== null ? `${leftIndex + 1}` : rawLeft,
+   rightLabel: rightIndex !== null ? letterLabel(rightIndex) : rawRight,
+   leftText: leftIndex !== null ? matchingItemText(leftItems[leftIndex]) : "",
+   rightText:
+    rightIndex !== null ? matchingItemText(rightItems[rightIndex]) : "",
+   explanation: "",
+  };
+ }
+
+ const answer = asRecord(answerValue);
+
+ const leftNumber = numberFromRecordKeys(answer, [
+  "left_index",
+  "left_order",
+  "prompt_index",
+  "question_index",
+  "a_index",
+  "from_index",
+  "left",
+  "from",
+ ]);
+
+ const rightNumber = numberFromRecordKeys(answer, [
+  "right_index",
+  "right_order",
+  "answer_index",
+  "b_index",
+  "to_index",
+  "right",
+  "to",
+ ]);
+
+ const leftIndex = normalizeIndex(leftNumber, leftItems.length);
+ const rightIndex = normalizeIndex(rightNumber, rightItems.length);
+
+ const rawLeft =
+  stringValue(answer, "left_label") ||
+  stringValue(answer, "left_id") ||
+  stringValue(answer, "from") ||
+  stringValue(answer, "left");
+
+ const rawRight =
+  stringValue(answer, "right_label") ||
+  stringValue(answer, "right_id") ||
+  stringValue(answer, "to") ||
+  stringValue(answer, "right") ||
+  stringValue(answer, "answer") ||
+  stringValue(answer, "value");
+
+ const letterRightIndex =
+  /^[A-Za-z]$/.test(rawRight) && rightItems.length > 0
+   ? rawRight.toUpperCase().charCodeAt(0) - 65
+   : null;
+
+ const normalizedRightIndex =
+  rightIndex ?? normalizeIndex(letterRightIndex, rightItems.length);
+
+ const leftLabel =
+  leftIndex !== null ? `${leftIndex + 1}` : rawLeft || `${index + 1}`;
+
+ const rightLabel =
+  normalizedRightIndex !== null
+   ? letterLabel(normalizedRightIndex)
+   : rawRight || "?";
+
+ const leftText =
+  leftIndex !== null ? matchingItemText(leftItems[leftIndex]) : "";
+ const rightText =
+  normalizedRightIndex !== null
+   ? matchingItemText(rightItems[normalizedRightIndex])
+   : "";
+
+ const explanation =
+  stringValue(answer, "explanation_vi") ||
+  stringValue(answer, "note_vi") ||
+  stringValue(answer, "reason_vi");
+
+ return {
+  id: stringValue(answer, "id") || `${index}`,
+  leftLabel,
+  rightLabel,
+  leftText,
+  rightText,
+  explanation,
+ };
+}
+
+function MatchingAnswerDetails({
+ itemId,
+ answers,
+ leftItems,
+ rightItems,
+}: {
+ itemId: string;
+ answers: unknown[];
+ leftItems: unknown[];
+ rightItems: unknown[];
+}) {
+ if (answers.length === 0) return null;
+
+ return (
+  <details className="rounded-xl border border-accent/30 bg-accent-subtle p-3">
+   <summary className="cursor-pointer text-xs font-black uppercase tracking-wide text-accent-text">
+    Đáp án nối câu
+   </summary>
+
+   <div className="mt-3 grid gap-2">
+    {answers.map((answerValue, index) => {
+     const answer = matchingAnswerText({
+      answerValue,
+      index,
+      leftItems,
+      rightItems,
+     });
+     if (answer)
+      return (
+       <div
+        key={`${itemId}-matching-answer-${answer.id}-${index}`}
+        className="rounded-lg bg-bg-primary px-3 py-2"
+       >
+        <p className="text-sm font-black text-accent-text">
+         {answer.leftLabel} → {answer.rightLabel}
+        </p>
+
+        {(answer.leftText || answer.rightText) && (
+         <p className="mt-1 text-sm font-semibold leading-relaxed text-text-secondary">
+          {answer.leftText}
+          {answer.leftText && answer.rightText && " → "}
+          {answer.rightText}
+         </p>
+        )}
+
+        {answer.explanation && (
+         <p className="mt-1 text-xs font-semibold text-text-muted">
+          {answer.explanation}
+         </p>
+        )}
+       </div>
+      );
+    })}
+   </div>
+  </details>
+ );
+}
+
+function MatchingExerciseBody({
+ item,
+ displayMode,
+}: {
+ item: Exercise;
+ displayMode: LessonDisplayMode;
+}) {
+ const record = asRecord(item);
+
+ const leftItems = firstArrayByKeys(record, [
+  "left",
+  "left_items",
+  "column_a",
+  "a_items",
+  "prompts",
+ ]);
+
+ const rightItems = firstArrayByKeys(record, [
+  "right",
+  "right_items",
+  "column_b",
+  "b_items",
+  "responses",
+ ]);
+
+ const answers = firstArrayByKeys(record, [
+  "answer_key",
+  "answers",
+  "matches",
+  "solutions",
+ ]);
+
+ if (leftItems.length === 0 && rightItems.length === 0) {
+  return <QuestionExerciseBody item={item} displayMode={displayMode} />;
+ }
+
+ return (
+  <div className="grid gap-3">
+   <div className="grid gap-3 md:grid-cols-2">
+    <MatchingColumn
+     title="Cột A"
+     values={leftItems}
+     labelMode="number"
+     displayMode={displayMode}
+    />
+
+    <MatchingColumn
+     title="Cột B"
+     values={rightItems}
+     labelMode="letter"
+     displayMode={displayMode}
+    />
+   </div>
+
+   <MatchingAnswerDetails
+    itemId={item.id}
+    answers={answers}
+    leftItems={leftItems}
+    rightItems={rightItems}
+   />
+  </div>
  );
 }
 
@@ -500,7 +1167,6 @@ function SubstitutionExerciseBody({
   </div>
  );
 }
-
 function QuestionExerciseBody({
  item,
  displayMode,
@@ -509,17 +1175,37 @@ function QuestionExerciseBody({
  displayMode: LessonDisplayMode;
 }) {
  const record = asRecord(item);
+
  const questions = arrayValue(record, "questions");
  const items = arrayValue(record, "items");
  const groups = arrayValue(record, "groups");
- const leftItems = arrayValue(record, "left_items");
- const rightItems = arrayValue(record, "right_items");
+
+ const leftItems = firstArrayByKeys(record, [
+  "left_items",
+  "left",
+  "column_a",
+  "a_items",
+  "prompts",
+ ]);
+
+ const rightItems = firstArrayByKeys(record, [
+  "right_items",
+  "right",
+  "column_b",
+  "b_items",
+  "responses",
+ ]);
+
  const answerKey =
   arrayValue(record, "blanks").length > 0
    ? arrayValue(record, "blanks")
-   : arrayValue(record, "answer_key");
+   : arrayValue(record, "answer_key").length > 0
+     ? arrayValue(record, "answer_key")
+     : arrayValue(record, "answers");
+
  const clozeAnswers = getClozeAnswerValues(record);
  const wordBank = arrayValue(record, "word_bank");
+
  const supplementaryWords = [
   ...arrayValue(record, "supplementary_words"),
   ...arrayValue(record, "supplementary_vocab"),
@@ -527,9 +1213,64 @@ function QuestionExerciseBody({
   ...arrayValue(record, "supplement_vocab"),
   ...arrayValue(record, "supplemental_vocab"),
  ];
+
  const pattern = stringValue(record, "pattern");
  const model = asRecord(record.model);
  const passage = getPassageLikeValue(record, { includeText: true });
+
+ const scenarioText =
+  stringValue(record, "scenario_vi") ||
+  stringValue(record, "scenario") ||
+  stringValue(record, "situation_vi");
+
+ const functionText =
+  stringValue(record, "function_vi") || stringValue(record, "function");
+
+ const extraPayloads = [
+  {
+   title: "Bảng",
+   value: record.table,
+  },
+  {
+   title: "Cặp luyện",
+   value: firstArrayByKeys(record, ["pairs", "minimal_pairs"]),
+  },
+  {
+   title: "Cụm luyện",
+   value: firstArrayByKeys(record, ["phrases"]),
+  },
+  {
+   title: "Drills",
+   value: firstArrayByKeys(record, ["drills"]),
+  },
+  {
+   title: "Câu đúng",
+   value: firstArrayByKeys(record, ["correct_examples", "correct_sentences"]),
+  },
+  {
+   title: "Câu sai",
+   value: firstArrayByKeys(record, ["wrong_examples", "wrong_sentences"]),
+  },
+  {
+   title: "Bài đọc liên quan",
+   value:
+    stringValue(record, "reading_ref") ||
+    stringValue(record, "linked_reading_id"),
+  },
+  {
+   title: "Luyện viết chữ liên quan",
+   value: stringValue(record, "character_writing_ref"),
+  },
+ ];
+
+ const hasStructuredPayload =
+  items.length > 0 ||
+  groups.length > 0 ||
+  leftItems.length > 0 ||
+  rightItems.length > 0 ||
+  questions.length > 0 ||
+  Boolean(passage) ||
+  extraPayloads.some((payload) => hasRenderableValue(payload.value));
 
  return (
   <div className="grid gap-3">
@@ -540,6 +1281,9 @@ function QuestionExerciseBody({
    />
 
    <WordBank values={wordBank} />
+
+   <InfoBlock title="Tình huống" value={scenarioText} />
+   <InfoBlock title="Chức năng giao tiếp" value={functionText} />
 
    {pattern && (
     <p className="rounded-xl border border-accent/30 bg-accent-subtle p-3 font-black text-accent-text">
@@ -574,6 +1318,7 @@ function QuestionExerciseBody({
       </p>
       <LooseItemGrid items={leftItems} displayMode={displayMode} />
      </div>
+
      <div className="rounded-xl border border-border-default bg-bg-subtle p-3">
       <p className="text-xs font-black uppercase tracking-wide text-text-muted">
        Cột B
@@ -582,6 +1327,15 @@ function QuestionExerciseBody({
      </div>
     </div>
    )}
+
+   {extraPayloads.map((payload) => (
+    <ExtraPayloadBlock
+     key={payload.title}
+     title={payload.title}
+     value={payload.value}
+     displayMode={displayMode}
+    />
+   ))}
 
    {groups.length > 0 && (
     <div className="grid gap-2">
@@ -625,14 +1379,11 @@ function QuestionExerciseBody({
        itemId={item.id}
        questionValue={questionValue}
        index={index}
+       displayMode={displayMode}
       />
      ))}
     </div>
-   ) : items.length === 0 &&
-     groups.length === 0 &&
-     leftItems.length === 0 &&
-     rightItems.length === 0 &&
-     !passage ? (
+   ) : !hasStructuredPayload ? (
     <EmptySectionState reason={stringValue(record, "empty_reason_vi")} />
    ) : null}
 
@@ -789,6 +1540,9 @@ function ExerciseBody({
  item: Exercise;
  displayMode: LessonDisplayMode;
 }) {
+ if (item.type === "matching") {
+  return <MatchingExerciseBody item={item} displayMode={displayMode} />;
+ }
  if (item.type === "phonetics" || item.type === "read_aloud") {
   return <PhoneticsExerciseBody item={item} displayMode={displayMode} />;
  }
