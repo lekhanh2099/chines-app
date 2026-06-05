@@ -40,7 +40,7 @@ type LessonOverviewProps = {
 type LessonOverviewMode = "study" | "debug";
 
 export function LessonOverview({ lesson, onOpenModule }: LessonOverviewProps) {
- const [overviewMode, setOverviewMode] = useState<LessonOverviewMode>("study");
+ const [overviewMode] = useState<LessonOverviewMode>("study");
  const fallbackMarkdown = lesson.notes?.overviewMarkdown?.trim();
  const sourceSections = useMemo(
   () => getBookSections(lesson.sourceLesson),

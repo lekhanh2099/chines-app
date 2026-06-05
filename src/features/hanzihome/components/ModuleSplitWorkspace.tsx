@@ -266,7 +266,6 @@ export function ModuleSplitWorkspace({
           <LessonOverview
             lesson={lesson}
             learningState={learningState}
-            mode={viewMode}
             onOpenModule={(module) => {
               const studyModule = parseStudyModule(module);
 
@@ -367,6 +366,17 @@ export function ModuleSplitWorkspace({
           />
         </div>
         <LessonViewModeToggle mode={viewMode} onChange={updateViewMode} />
+        {collapsedPane ? (
+          <Button
+            type="button"
+            variant="outline"
+            size="sm"
+            className="h-8 shrink-0 px-2.5 text-sm"
+            onClick={() => setCollapsedPane(null)}
+          >
+            Mở {collapsedPane === "left" ? "Nội dung" : "Học & ôn"}
+          </Button>
+        ) : null}
         <Button
           type="button"
           variant="outline"
@@ -381,46 +391,40 @@ export function ModuleSplitWorkspace({
       <div
         className={[
           "grid min-w-0 gap-2 xl:h-[calc(100dvh-8.25rem)] xl:min-h-0",
-          collapsedPane === "left"
-            ? "xl:grid-cols-[2.75rem_minmax(0,1fr)]"
-            : collapsedPane === "right"
-              ? "xl:grid-cols-[minmax(0,1fr)_2.75rem]"
-              : "xl:grid-cols-[minmax(0,0.95fr)_minmax(0,1.05fr)]",
+          collapsedPane
+            ? "xl:grid-cols-1"
+            : "xl:grid-cols-[minmax(0,0.95fr)_minmax(0,1.05fr)]",
         ].join(" ")}
       >
-        <ModulePane
-          title="Nội dung"
-          items={normalizedLayout.left}
-          activeModule={normalizedLayout.activeLeft}
-          collapsed={collapsedPane === "left"}
-          onToggleCollapse={() =>
-            setCollapsedPane((current) => (current === "left" ? null : "left"))
-          }
-          onSelectModule={(module) => {
-            updateLayout(setPaneActive(normalizedLayout, "left", module));
-            onSelectModule(module);
-          }}
-        >
-          {renderModule(normalizedLayout.activeLeft, true)}
-        </ModulePane>
+        {collapsedPane !== "left" ? (
+          <ModulePane
+            title="Nội dung"
+            items={normalizedLayout.left}
+            activeModule={normalizedLayout.activeLeft}
+            onToggleCollapse={() => setCollapsedPane("left")}
+            onSelectModule={(module) => {
+              updateLayout(setPaneActive(normalizedLayout, "left", module));
+              onSelectModule(module);
+            }}
+          >
+            {renderModule(normalizedLayout.activeLeft, true)}
+          </ModulePane>
+        ) : null}
 
-        <ModulePane
-          title="Học & ôn"
-          items={normalizedLayout.right}
-          activeModule={normalizedLayout.activeRight}
-          collapsed={collapsedPane === "right"}
-          onToggleCollapse={() =>
-            setCollapsedPane((current) =>
-              current === "right" ? null : "right",
-            )
-          }
-          onSelectModule={(module) => {
-            updateLayout(setPaneActive(normalizedLayout, "right", module));
-            onSelectModule(module);
-          }}
-        >
-          {renderModule(normalizedLayout.activeRight, true)}
-        </ModulePane>
+        {collapsedPane !== "right" ? (
+          <ModulePane
+            title="Học & ôn"
+            items={normalizedLayout.right}
+            activeModule={normalizedLayout.activeRight}
+            onToggleCollapse={() => setCollapsedPane("right")}
+            onSelectModule={(module) => {
+              updateLayout(setPaneActive(normalizedLayout, "right", module));
+              onSelectModule(module);
+            }}
+          >
+            {renderModule(normalizedLayout.activeRight, true)}
+          </ModulePane>
+        ) : null}
       </div>
 
       {debugPanel}
@@ -457,7 +461,6 @@ function ModulePane({
   title,
   items,
   activeModule,
-  collapsed,
   children,
   onSelectModule,
   onToggleCollapse,
@@ -465,34 +468,20 @@ function ModulePane({
   title: string;
   items: StudyModule[];
   activeModule: StudyModule;
-  collapsed: boolean;
   children: ReactNode;
   onSelectModule: (module: StudyModule) => void;
   onToggleCollapse: () => void;
 }) {
   return (
-    <section
-      className={[
-        "grid min-h-112 min-w-0 gap-2 rounded-xl border border-border-default bg-bg-card p-2 shadow-theme-sm xl:min-h-0",
-        collapsed
-          ? "grid-rows-1 overflow-hidden"
-          : "grid-rows-[auto_minmax(0,1fr)]",
-      ].join(" ")}
-    >
+    <section className="grid min-h-112 min-w-0 grid-rows-[auto_minmax(0,1fr)] gap-2 rounded-xl border border-border-default bg-bg-card p-2 shadow-theme-sm xl:min-h-0">
       <div className="flex flex-wrap items-center justify-between gap-2">
-        <div
-          className={
-            collapsed ? "min-w-0 [writing-mode:vertical-rl]" : "min-w-0"
-          }
-        >
+        <div className="min-w-0">
           <h2 className="text-[0.65rem] font-black uppercase tracking-wide text-text-muted">
             {title}
           </h2>
-          {!collapsed && (
-            <p className="line-clamp-1 text-sm font-black text-text-primary">
-              {moduleMeta[activeModule].label}
-            </p>
-          )}
+          <p className="line-clamp-1 text-sm font-black text-text-primary">
+            {moduleMeta[activeModule].label}
+          </p>
         </div>
 
         <button
@@ -500,28 +489,26 @@ function ModulePane({
           onClick={onToggleCollapse}
           className="inline-flex h-7 items-center gap-1 rounded-lg border border-border-default bg-bg-primary px-2 text-xs font-bold text-text-muted transition-colors hover:bg-bg-subtle hover:text-text-primary"
         >
-          {collapsed ? "Mở" : "Ẩn"}
+          Ẩn
         </button>
       </div>
 
-      {!collapsed && (
-        <>
-          <div className="no-scrollbar flex min-w-0 gap-1 overflow-x-auto rounded-lg bg-bg-subtle p-1">
-            {items.map((item) => (
-              <ModuleTabButton
-                key={item}
-                item={item}
-                active={item === activeModule}
-                onClick={() => onSelectModule(item)}
-              />
-            ))}
-          </div>
+      <div className="grid min-h-0 min-w-0 grid-rows-[auto_minmax(0,1fr)] gap-2 overflow-hidden">
+        <div className="no-scrollbar flex min-w-0 gap-1 overflow-x-auto rounded-lg bg-bg-subtle p-1">
+          {items.map((item) => (
+            <ModuleTabButton
+              key={item}
+              item={item}
+              active={item === activeModule}
+              onClick={() => onSelectModule(item)}
+            />
+          ))}
+        </div>
 
-          <div className="min-h-0 min-w-0 overflow-y-auto rounded-lg bg-bg-subtle/60 p-1 sm:rounded-xl sm:p-2 sm:pr-1">
-            {children}
-          </div>
-        </>
-      )}
+        <div className="min-h-0 min-w-0 overflow-y-auto rounded-lg bg-bg-subtle/60 p-1 sm:rounded-xl sm:p-2 sm:pr-1">
+          {children}
+        </div>
+      </div>
     </section>
   );
 }

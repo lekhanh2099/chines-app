@@ -390,47 +390,95 @@ function SupplementaryPills({
  );
 }
 
+function answerFromRecord(record: Record<string, unknown>) {
+ const answerRecord = asRecord(record.answer);
+ const acceptableAnswers = nonEmptyStrings(arrayValue(record, "acceptable_answers"));
+ const givenWords = [
+  stringValue(record, "given"),
+  stringValue(record, "given_word"),
+  ...nonEmptyStrings(arrayValue(record, "given_words")),
+ ].filter(Boolean);
+
+ return (
+  stringValue(record, "sample_answer") ||
+  stringValue(record, "sample_answer_zh") ||
+  stringValue(record, "suggested_answer") ||
+  stringValue(record, "suggested_answer_zh") ||
+  stringValue(record, "answer_sample") ||
+  stringValue(record, "full_answer") ||
+  stringValue(record, "correct") ||
+  stringValue(record, "correct_sentence") ||
+  formatAnswer(record.answer) ||
+  stringValue(answerRecord, "zh") ||
+  stringValue(answerRecord, "vi") ||
+  stringValue(record, "correct_answer_label") ||
+  acceptableAnswers.join(" / ") ||
+  (givenWords.length > 0 ? `Từ cho sẵn: ${givenWords.join(" / ")}` : "")
+ );
+}
+
+function promptFromQuestionRecord(record: Record<string, unknown>) {
+ const nestedQuestion = asRecord(record.question);
+ const statement = asRecord(record.statement);
+ const givenWords = [
+  stringValue(record, "given"),
+  stringValue(record, "given_word"),
+  ...nonEmptyStrings(arrayValue(record, "given_words")),
+ ].filter(Boolean);
+ const prompt =
+  promptToString(record.prompt) ||
+  stringValue(record, "prompt") ||
+  stringValue(record, "prompt_zh") ||
+  stringValue(record, "wrong") ||
+  stringValue(record, "wrong_sentence") ||
+  stringValue(record, "response_prompt") ||
+  stringValue(record, "question") ||
+  stringValue(nestedQuestion, "zh") ||
+  stringValue(nestedQuestion, "vi") ||
+  stringValue(statement, "zh") ||
+  stringValue(statement, "vi") ||
+  stringValue(record, "text");
+
+ if (prompt && givenWords.length > 0) {
+  return `${prompt}（${givenWords.join(" / ")}）`;
+ }
+
+ return prompt || "Câu hỏi";
+}
+
 function QuestionCard({
  itemId,
  questionValue,
  index,
  displayMode,
+ answerOverride,
 }: {
  itemId: string;
  questionValue: unknown;
  index: number;
  displayMode: LessonDisplayMode;
+ answerOverride?: unknown;
 }) {
+ if (
+  typeof questionValue === "string" ||
+  typeof questionValue === "number" ||
+  typeof questionValue === "boolean"
+ ) {
+  return (
+   <ExerciseQuestionCard
+    key={`${itemId}-${index}`}
+    index={index + 1}
+    title={answerToString(questionValue) || "Câu hỏi"}
+    answer={formatAnswer(answerOverride)}
+   />
+  );
+ }
+
  const question = asRecord(questionValue);
- const nestedQuestion = asRecord(question.question);
- const statement = asRecord(question.statement);
- const answerRecord = asRecord(question.answer);
 
  const choices = arrayValue(question, "choices");
-
- const title =
-  promptToString(question.prompt) ||
-  stringValue(question, "prompt") ||
-  stringValue(question, "wrong") ||
-  stringValue(question, "wrong_sentence") ||
-  stringValue(question, "response_prompt") ||
-  stringValue(question, "question") ||
-  stringValue(nestedQuestion, "zh") ||
-  stringValue(nestedQuestion, "vi") ||
-  stringValue(statement, "zh") ||
-  stringValue(statement, "vi") ||
-  stringValue(question, "text") ||
-  "Câu hỏi";
-
- const answer =
-  stringValue(question, "sample_answer") ||
-  stringValue(question, "sample_answer_zh") ||
-  stringValue(question, "correct") ||
-  stringValue(question, "correct_sentence") ||
-  formatAnswer(question.answer) ||
-  stringValue(answerRecord, "zh") ||
-  stringValue(answerRecord, "vi") ||
-  stringValue(question, "correct_answer_label");
+ const title = promptFromQuestionRecord(question);
+ const answer = formatAnswer(answerOverride) || answerFromRecord(question);
 
  const note =
   stringValue(question, "explanation_vi") ||
@@ -450,6 +498,10 @@ function QuestionCard({
   "context_vi",
   "situation_vi",
   "scenario_vi",
+  "prompt_pinyin",
+  "answer_pinyin",
+  "sample_answer_pinyin",
+  "suggested_answer_pinyin",
  ]);
 
  const cueText = firstTextByKeys(question, [
@@ -475,6 +527,8 @@ function QuestionCard({
   "expected_zh",
   "completed",
   "completed_sentence",
+  "sample_answer_vi",
+  "suggested_answer_vi",
  ]);
 
  const leftText = firstTextByKeys(question, ["a", "A", "left", "left_text"]);
@@ -1163,10 +1217,98 @@ function SubstitutionExerciseBody({
     )
    )}
 
-   <AnswerKeyList itemId={item.id} values={answerKey} />
+	   <AnswerKeyList itemId={item.id} values={answerKey} />
+	  </div>
+	 );
+}
+
+function QuestionGroupCard({
+ itemId,
+ groupValue,
+ index,
+ fallbackTitle,
+ displayMode,
+}: {
+ itemId: string;
+ groupValue: unknown;
+ index: number;
+ fallbackTitle: string;
+ displayMode: LessonDisplayMode;
+}) {
+ const group = asRecord(groupValue);
+ const title =
+  stringValue(group, "title_vi") ||
+  stringValue(group, "title") ||
+  stringValue(group, "label") ||
+  fallbackTitle;
+ const wordBank = arrayValue(group, "word_bank");
+ const questions = arrayValue(group, "questions");
+ const answers =
+  arrayValue(group, "answers").length > 0
+   ? arrayValue(group, "answers")
+   : arrayValue(group, "answer_key");
+ const sentences = arrayValue(group, "sentences");
+ const partEntries = Object.entries(asRecord(group.parts)).map(
+  ([label, text]) => ({
+   id: label,
+   text: `${label}. ${answerToString(text)}`,
+  }),
+ );
+ const orderedAnswer =
+  nonEmptyStrings(arrayValue(group, "answer_order")).join(" → ") ||
+  stringValue(group, "sample_text") ||
+  stringValue(group, "answer");
+ const note =
+  stringValue(group, "explanation_vi") || stringValue(group, "note_vi");
+
+ return (
+  <div className="grid gap-3 rounded-xl border border-border-default bg-bg-subtle p-3">
+   <div>
+    <h5 className="font-black text-text-primary">
+     {index + 1}. {title}
+    </h5>
+    {note && <p className="text-sm font-semibold text-text-muted">{note}</p>}
+   </div>
+
+   <WordBank values={wordBank} />
+
+   {questions.length > 0 && (
+    <div className="grid gap-2">
+     {questions.map((questionValue, questionIndex) => (
+      <QuestionCard
+       key={
+        stringValue(asRecord(questionValue), "id") ||
+        `${itemId}-question-${questionIndex}`
+       }
+       itemId={itemId}
+       questionValue={questionValue}
+       index={questionIndex}
+       displayMode={displayMode}
+       answerOverride={answers[questionIndex]}
+      />
+     ))}
+    </div>
+   )}
+
+   {sentences.length > 0 && (
+    <LooseItemGrid items={sentences} displayMode={displayMode} />
+   )}
+
+   {partEntries.length > 0 && (
+    <LooseItemGrid items={partEntries} displayMode={displayMode} />
+   )}
+
+   {orderedAnswer && (
+    <AnswerKeyList itemId={`${itemId}-ordered-answer`} values={[orderedAnswer]} />
+   )}
+
+   {questions.length === 0 && answers.length > 0 && !orderedAnswer && (
+    <AnswerKeyList itemId={`${itemId}-answers`} values={answers} />
+   )}
   </div>
  );
 }
+
 function QuestionExerciseBody({
  item,
  displayMode,
@@ -1179,6 +1321,7 @@ function QuestionExerciseBody({
  const questions = arrayValue(record, "questions");
  const items = arrayValue(record, "items");
  const groups = arrayValue(record, "groups");
+ const parts = arrayValue(record, "parts");
 
  const leftItems = firstArrayByKeys(record, [
   "left_items",
@@ -1265,6 +1408,7 @@ function QuestionExerciseBody({
 
  const hasStructuredPayload =
   items.length > 0 ||
+  parts.length > 0 ||
   groups.length > 0 ||
   leftItems.length > 0 ||
   rightItems.length > 0 ||
@@ -1310,6 +1454,24 @@ function QuestionExerciseBody({
     <LooseItemGrid items={items} displayMode={displayMode} />
    )}
 
+   {parts.length > 0 && (
+    <div className="grid gap-3">
+     {parts.map((partValue, partIndex) => (
+      <QuestionGroupCard
+       key={
+        stringValue(asRecord(partValue), "id") ||
+        `${item.id}-part-${partIndex}`
+       }
+       itemId={`${item.id}-part-${partIndex}`}
+       groupValue={partValue}
+       index={partIndex}
+       fallbackTitle={`Phần ${partIndex + 1}`}
+       displayMode={displayMode}
+      />
+     ))}
+    </div>
+   )}
+
    {(leftItems.length > 0 || rightItems.length > 0) && (
     <div className="grid gap-2 md:grid-cols-2">
      <div className="rounded-xl border border-border-default bg-bg-subtle p-3">
@@ -1339,35 +1501,19 @@ function QuestionExerciseBody({
 
    {groups.length > 0 && (
     <div className="grid gap-2">
-     {groups.map((groupValue, index) => {
-      const group = asRecord(groupValue);
-      const sentences = arrayValue(group, "sentences");
-      const parts = Object.entries(asRecord(group.parts)).map(
-       ([label, text]) => ({
-        id: label,
-        text: `${label}. ${answerToString(text)}`,
-       }),
-      );
-      const answer =
-       nonEmptyStrings(arrayValue(group, "answer_order")).join(" → ") ||
-       stringValue(group, "sample_text") ||
-       stringValue(group, "answer");
-
-      return (
-       <ExerciseQuestionCard
-        key={stringValue(group, "id") || `${item.id}-group-${index}`}
-        index={index + 1}
-        title={stringValue(group, "title") || "Nhóm câu"}
-        answer={answer}
-        note={stringValue(group, "explanation_vi")}
-       >
-        <LooseItemGrid
-         items={sentences.length > 0 ? sentences : parts}
-         displayMode={displayMode}
-        />
-       </ExerciseQuestionCard>
-      );
-     })}
+     {groups.map((groupValue, index) => (
+      <QuestionGroupCard
+       key={
+        stringValue(asRecord(groupValue), "id") ||
+        `${item.id}-group-${index}`
+       }
+       itemId={`${item.id}-group-${index}`}
+       groupValue={groupValue}
+       index={index}
+       fallbackTitle="Nhóm câu"
+       displayMode={displayMode}
+      />
+     ))}
     </div>
    )}
 

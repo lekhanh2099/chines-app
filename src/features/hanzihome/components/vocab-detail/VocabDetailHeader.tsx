@@ -25,7 +25,10 @@ export function VocabDetailHeader({
       <h2 className="text-6xl leading-none tracking-normal text-text-primary">
        <PopularFontPreview word={word.hanzi} />
       </h2>
-      <p className="text-xl font-black text-accent-text">{word.pinyin}</p>
+      <p className="text-xl font-black text-accent-text">
+       {word.pinyin} -- [{word.meaning.hanviet}]
+      </p>
+      [{word.meaning.meaning_vi}]
      </div>
     </div>
 
