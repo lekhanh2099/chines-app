@@ -16,144 +16,26 @@ import {
 import { useHanziHomeCatalogData } from "@/features/hanzihome/hooks/useHanziHomeCatalogData";
 import { useLearningState } from "@/features/hanzihome/hooks/useLearningState";
 import { VocabReviewPanel } from "@/features/hanzihome/components/VocabReviewPanel";
+import { getVocabItemKey } from "@/features/hanzihome/utils/vocab-item";
 import {
- getHanziHomeData,
- getHanziHomeLessonDetail,
-} from "@/features/hanzihome/static-data";
+ fetchHanziHomeAggregateItems,
+ fetchHanziHomeLessonDetail,
+} from "@/features/hanzihome/repositories/hanzihome-content-api-client";
+import {
+ type AggregateFilters,
+ type AggregateGrammarItem,
+ type AggregateKind,
+ type AggregateResourceItem,
+ type AggregateVocabItem,
+} from "@/features/hanzihome/repositories/hanzihome-content-resources";
 import { buildHanziHomeLessonHref } from "@/features/hanzihome/utils/lesson-route";
 import type { HanziHomeLesson, ReviewResult } from "@/features/hanzihome/types";
-
-type AggregateKind = "vocab" | "grammar";
-
-type AggregateVocabItem = {
- id: string;
- courseId: string;
- bookId: string;
- lessonId: string;
- lessonNumber: number;
- lessonOrder: number;
- lessonTitle: string;
- word: string;
- pinyin: string;
- hanViet: string;
- meaning: string;
- category: string;
- level?: string | null;
- pos?: {
-  vi?: string | null;
-  zh?: string | null;
- } | null;
-};
-
-type AggregateGrammarItem = {
- id: string;
- courseId: string;
- bookId: string;
- lessonId: string;
- lessonNumber: number;
- lessonOrder: number;
- lessonTitle: string;
- title: string;
- cleanTitle: string;
- core: string;
-};
-
-type AggregateFilters = {
- courseId: string;
- bookId: string;
- lessonId: string;
- q: string;
-};
-
-function matchesTextQuery(values: string[], query: string) {
- const normalizedQuery = query.trim().toLocaleLowerCase("vi-VN");
- if (!normalizedQuery) return true;
-
- return values.some((value) =>
-  value.toLocaleLowerCase("vi-VN").includes(normalizedQuery),
- );
-}
-
-function getStaticAggregateData({
- kind,
- filters,
-}: {
- kind: AggregateKind;
- filters: AggregateFilters;
-}): Array<AggregateVocabItem | AggregateGrammarItem> {
- const lessons = getHanziHomeData().lessons.filter((lesson) => {
-  if (filters.courseId && lesson.courseId !== filters.courseId) return false;
-  if (filters.bookId && lesson.bookId !== filters.bookId) return false;
-  if (filters.lessonId && lesson.id !== filters.lessonId) return false;
-  return true;
- });
-
- if (kind === "vocab") {
-  return lessons.flatMap((lesson) =>
-   lesson.vocab
-    .map((item): AggregateVocabItem => ({
-     id: item.runtimeId,
-     courseId: lesson.courseId || "",
-     bookId: lesson.bookId || "",
-     lessonId: lesson.id,
-     lessonNumber: lesson.lessonNumber,
-     lessonOrder: lesson.lessonOrder ?? lesson.lessonNumber,
-     lessonTitle: lesson.titleZh || lesson.title,
-     word: item.hanzi,
-     pinyin: item.pinyin,
-     hanViet: item.meaning.hanviet || "",
-     meaning: item.meaning.meaning_vi,
-     category: item.category,
-     level: item.level_tag,
-     pos: {
-      vi: item.pos.raw_vi || item.pos.normalized,
-      zh: item.pos.raw_cn || item.pos.normalized,
-     },
-    }))
-    .filter((item) =>
-     matchesTextQuery(
-      [
-       item.word,
-       item.pinyin,
-       item.hanViet,
-       item.meaning,
-       item.category,
-       item.lessonTitle,
-      ],
-      filters.q,
-     ),
-    ),
-  );
- }
-
- return lessons.flatMap((lesson) =>
-  lesson.grammar
-   .map((item): AggregateGrammarItem => ({
-    id: item.id,
-    courseId: lesson.courseId || "",
-    bookId: lesson.bookId || "",
-    lessonId: lesson.id,
-    lessonNumber: lesson.lessonNumber,
-    lessonOrder: lesson.lessonOrder ?? lesson.lessonNumber,
-    lessonTitle: lesson.titleZh || lesson.title,
-    title: item.title || item.cleanTitle,
-    cleanTitle: item.cleanTitle,
-    core: item.core,
-   }))
-   .filter((item) =>
-    matchesTextQuery(
-     [item.title, item.cleanTitle, item.core, item.lessonTitle],
-     filters.q,
-    ),
-   ),
- );
-}
 
 function useReviewLessons(lessonIds: string[]) {
  const queries = useQueries({
   queries: lessonIds.map((lessonId) => ({
    queryKey: ["hanzihome", "lesson-detail", lessonId] as const,
-   queryFn: () => Promise.resolve(getHanziHomeLessonDetail(lessonId)),
+   queryFn: () => fetchHanziHomeLessonDetail(lessonId),
    enabled: Boolean(lessonId),
    staleTime: Infinity,
   })),
@@ -205,7 +87,7 @@ export function HanziHomeAggregateLibrary({ kind }: { kind: AggregateKind }) {
  const Icon = kind === "vocab" ? BookOpen : GraduationCap;
 
  const filteredBooks = useMemo(
- () =>
+  () =>
    filters.courseId
     ? aggregateBooks.filter((book) => book.courseId === filters.courseId)
     : aggregateBooks,
@@ -222,9 +104,9 @@ export function HanziHomeAggregateLibrary({ kind }: { kind: AggregateKind }) {
   [aggregateLessons, filters.bookId, filters.courseId],
  );
 
-const query = useQuery({
+ const query = useQuery({
   queryKey: ["hanzihome", `aggregate-${kind}`, filters],
-  queryFn: () => Promise.resolve(getStaticAggregateData({ kind, filters })),
+  queryFn: () => fetchHanziHomeAggregateItems({ kind, filters }),
   staleTime: Infinity,
  });
 
@@ -268,7 +150,9 @@ const query = useQuery({
   const byId = new Map<string, HanziHomeLesson>();
 
   for (const lesson of reviewLessons) {
-   for (const word of lesson.vocab) byId.set(`vocab:${word.id}`, lesson);
+   for (const word of lesson.vocab) {
+    byId.set(`vocab:${getVocabItemKey(word)}`, lesson);
+   }
    for (const point of lesson.grammar) byId.set(`grammar:${point.id}`, lesson);
   }
 
@@ -554,19 +438,13 @@ const query = useQuery({
          </div>
 
          <div className="grid gap-2">
-          {group.items.map((item) =>
-           kind === "vocab" ? (
-            <VocabAggregateRow
-             key={item.id}
-             item={item as AggregateVocabItem}
-            />
-           ) : (
-            <GrammarAggregateRow
-             key={item.id}
-             item={item as AggregateGrammarItem}
-            />
-           ),
-          )}
+          {group.items.map((item) => {
+           if (isAggregateVocabItem(item)) {
+            return <VocabAggregateRow key={item.id} item={item} />;
+           }
+
+           return <GrammarAggregateRow key={item.id} item={item} />;
+          })}
          </div>
         </section>
        ))}
@@ -795,9 +673,13 @@ function combineReviewLessons(
  };
 }
 
-function groupByLesson(
- items: Array<AggregateVocabItem | AggregateGrammarItem>,
-) {
+function isAggregateVocabItem(
+ item: AggregateResourceItem,
+): item is AggregateVocabItem {
+ return "word" in item;
+}
+
+function groupByLesson(items: AggregateResourceItem[]) {
  const groups = new Map<
   string,
   {
@@ -806,7 +688,7 @@ function groupByLesson(
    lessonNumber: number;
    lessonOrder: number;
    lessonTitle: string;
-   items: Array<AggregateVocabItem | AggregateGrammarItem>;
+   items: AggregateResourceItem[];
   }
  >();
 

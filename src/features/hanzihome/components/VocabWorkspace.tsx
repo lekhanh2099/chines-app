@@ -12,6 +12,7 @@ import {
  getVocabItemKey,
  getVocabSearchText,
 } from "@/features/hanzihome/utils/vocab-item";
+import { useHanziHomeLessonVocabulary } from "@/features/hanzihome/hooks/useHanziHomeLessonResources";
 
 type VocabWorkspaceProps = {
  lesson: HanziHomeLesson;
@@ -29,8 +30,10 @@ export function VocabWorkspace({
  onBookmark,
  onMarkStatus,
 }: VocabWorkspaceProps) {
+ const vocabularyResource = useHanziHomeLessonVocabulary(lesson.id);
+ const words = vocabularyResource?.items ?? lesson.vocab;
  const [selectedWordId, setSelectedWordId] = useState<string | null>(
-  lesson.vocab[0] ? getVocabItemKey(lesson.vocab[0]) : null,
+  words[0] ? getVocabItemKey(words[0]) : null,
  );
  const [searchValue, setSearchValue] = useState("");
  const [statusFilter, setStatusFilter] = useState<"all" | LearningStatus>(
@@ -46,7 +49,7 @@ export function VocabWorkspace({
  const visibleWords = useMemo(() => {
   const keyword = searchValue.trim().toLowerCase();
 
-  return lesson.vocab.filter((word) => {
+  return words.filter((word) => {
    const wordId = getVocabItemKey(word);
    const status = progress[wordId]?.status || "new";
    const matchesStatus = statusFilter === "all" || status === statusFilter;
@@ -54,7 +57,7 @@ export function VocabWorkspace({
 
    return matchesStatus && (!keyword || haystack.includes(keyword));
   });
- }, [lesson.vocab, progress, searchValue, statusFilter]);
+ }, [progress, searchValue, statusFilter, words]);
 
  const selectedWord = useMemo(
   () =>

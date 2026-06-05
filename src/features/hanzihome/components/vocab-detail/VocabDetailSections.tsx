@@ -14,12 +14,10 @@ import type { HanziHomeVocabItem } from "@/features/hanzihome/types";
 
 import {
  hasComparisonContent,
- hasCultureContent,
- hasMeaningContent,
- hasWarningContent,
  hasWordFormationContent,
 } from "./content-checks";
 import type { SectionView } from "./types";
+import { Button } from "@/components/ui/button";
 
 export function StructuredVocabSections({
  item,
@@ -38,46 +36,47 @@ export function StructuredVocabSections({
    {show("examples") && item.examples.length > 0 && (
     <StructuredExamplesSection item={item} keyword={keyword} />
    )}
-   {show("meaning") && hasMeaningContent(item.meaning) && (
-    <MeaningSection meaning={item.meaning} />
+   {show("comparisons") && hasComparisonContent(item.comparison) && (
+    <ComparisonSection comparison={item.comparison} />
    )}
    {show("etymology") && hasWordFormationContent(item.word_formation) && (
     <WordFormationDetailSection formation={item.word_formation} />
    )}
-   {show("comparisons") && hasComparisonContent(item.comparison) && (
-    <ComparisonSection comparison={item.comparison} />
-   )}
+
    {show("all") && item.collocations.length > 0 && (
     <CollocationSection collocations={item.collocations} />
-   )}
-   {show("notes") && hasCultureContent(item.culture_note) && (
-    <CultureSection culture={item.culture_note} />
-   )}
-   {show("notes") && hasWarningContent(item.warnings) && (
-    <WarningSection warnings={item.warnings} />
    )}
   </>
  );
 }
 
-export function WordFormationPreview({ formation }: { formation: WordFormation }) {
+export function WordFormationPreview({
+ formation,
+ word,
+}: {
+ formation: WordFormation;
+ word: HanziHomeVocabItem;
+}) {
  return (
   <div className="flex flex-wrap gap-3">
    {formation.characters.map((character) => (
-    <CharacterAnalysisCard key={character.hanzi} character={character} />
+    <CharacterAnalysisCard
+     key={character.hanzi}
+     character={character}
+     word={word}
+    />
    ))}
   </div>
  );
 }
 
-function WordFormationDetailSection({
+export function WordFormationDetailSection({
  formation,
 }: {
  formation: WordFormation;
 }) {
  return (
   <ReadingSection id="vocab-word-formation" title="Logic / cấu tạo">
-   <WordFormationPreview formation={formation} />
    {formation.word_logic_vi && <p>{formation.word_logic_vi}</p>}
    {formation.memory_tip_vi && <p>Mẹo nhớ: {formation.memory_tip_vi}</p>}
    {formation.warning_vi && <p>Lưu ý: {formation.warning_vi}</p>}
@@ -88,7 +87,7 @@ function WordFormationDetailSection({
  );
 }
 
-function MeaningSection({ meaning }: { meaning: Meaning }) {
+export function MeaningSection({ meaning }: { meaning: Meaning }) {
  return (
   <ReadingSection id="vocab-meaning" title="Nghĩa">
    <div className="grid gap-2">
@@ -116,25 +115,26 @@ function CharacterAnalysisCard({
  character,
 }: {
  character: CharacterAnalysis;
+ word: HanziHomeVocabItem;
 }) {
  return (
-  <div className="grid gap-2 rounded-xl border border-border-default bg-bg-primary p-3">
+  <div className="grid gap-2 rounded-xl border border-border-default bg-bg-primary p-3 max-w-2xs">
    <div className="flex flex-wrap items-center gap-2">
-    <span className="text-3xl font-black text-text-primary">
+    <span className="text-3xl font-black text-text-primary" lang="zh-CN">
      {character.hanzi}
     </span>
     {character.lishu_vi && (
      <span className="font-bold text-accent-text">{character.lishu_vi}</span>
     )}
     {character.main_radical && (
-     <span className="rounded-full bg-bg-subtle px-2 py-1 text-xs font-black text-text-muted">
+     <Button variant="destructive" size="xs">
       {[
        character.main_radical.radical_name_vi,
        character.main_radical.radical_variant || character.main_radical.radical,
       ]
        .filter(Boolean)
        .join(" · ")}
-     </span>
+     </Button>
     )}
    </div>
 
@@ -167,7 +167,7 @@ function CharacterAnalysisCard({
  );
 }
 
-function ComparisonSection({ comparison }: { comparison: Comparison }) {
+export function ComparisonSection({ comparison }: { comparison: Comparison }) {
  return (
   <ReadingSection id="vocab-comparisons" title="So sánh / phân biệt">
    <div className="grid gap-3">
@@ -322,7 +322,11 @@ function StructuredExamplesSection({
  );
 }
 
-export function CultureSection({ culture }: { culture: CultureNote | undefined }) {
+export function CultureSection({
+ culture,
+}: {
+ culture: CultureNote | undefined;
+}) {
  if (!culture) return null;
 
  return (

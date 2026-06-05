@@ -22,6 +22,7 @@ import { LessonOverview } from "@/features/hanzihome/components/LessonOverview";
 import { LessonTextInlineEditor } from "@/features/hanzihome/components/LessonTextInlineEditor";
 import { ReviewWorkspace } from "@/features/hanzihome/components/ReviewWorkspace";
 import { VocabWorkspace } from "@/features/hanzihome/components/VocabWorkspace";
+import { DebugRawDataPanel } from "@/features/hanzihome/components/lesson-overview/StudySection";
 import type {
   HanziHomeLesson,
   HanziHomeModule,
@@ -32,6 +33,7 @@ import type {
 
 type StudyModule = Exclude<HanziHomeModule, "radicals">;
 type PaneId = "left" | "right";
+type LessonViewMode = "study" | "debug";
 
 type PaneLayout = {
   left: StudyModule[];
@@ -50,7 +52,6 @@ type ModuleSplitWorkspaceProps = {
   lesson: HanziHomeLesson;
   learningState: UserLearningState;
   activeModule: StudyModule;
-  singleContent: ReactNode;
   onSelectModule: (module: StudyModule) => void;
   onBookmarkVocab: (id: string) => void;
   onMarkVocab: (id: string, status: LearningStatus) => void;
@@ -64,6 +65,7 @@ type ModuleSplitWorkspaceProps = {
 
 const splitEnabledKey = "hanzihome:module-split-enabled:v1";
 const paneLayoutKey = "hanzihome:module-pane-layout:v1";
+const lessonViewModeKey = "hanzihome:lesson-view-mode:v1";
 
 const studyModules = [
   "overview",
@@ -191,6 +193,20 @@ function writePaneLayout(layout: PaneLayout) {
   );
 }
 
+function readLessonViewMode(): LessonViewMode {
+  if (typeof window === "undefined") return "study";
+
+  return window.localStorage.getItem(lessonViewModeKey) === "debug"
+    ? "debug"
+    : "study";
+}
+
+function writeLessonViewMode(mode: LessonViewMode) {
+  if (typeof window === "undefined") return;
+
+  window.localStorage.setItem(lessonViewModeKey, mode);
+}
+
 function setPaneActive(
   layout: PaneLayout,
   paneId: PaneId,
@@ -207,7 +223,6 @@ export function ModuleSplitWorkspace({
   lesson,
   learningState,
   activeModule,
-  singleContent,
   onSelectModule,
   onBookmarkVocab,
   onMarkVocab,
@@ -218,6 +233,7 @@ export function ModuleSplitWorkspace({
   const [splitEnabled, setSplitEnabled] = useState(readSplitEnabled);
   const [layout, setLayout] = useState(readPaneLayout);
   const [collapsedPane, setCollapsedPane] = useState<PaneId | null>(null);
+  const [viewMode, setViewMode] = useState<LessonViewMode>(readLessonViewMode);
 
   const normalizedLayout = useMemo(() => normalizePaneLayout(layout), [layout]);
 
@@ -238,6 +254,11 @@ export function ModuleSplitWorkspace({
     onSelectModule(module);
   };
 
+  const updateViewMode = (mode: LessonViewMode) => {
+    setViewMode(mode);
+    writeLessonViewMode(mode);
+  };
+
   const renderModule = (module: StudyModule, compact = false) => {
     switch (module) {
       case "overview":
@@ -245,6 +266,7 @@ export function ModuleSplitWorkspace({
           <LessonOverview
             lesson={lesson}
             learningState={learningState}
+            mode={viewMode}
             onOpenModule={(module) => {
               const studyModule = parseStudyModule(module);
 
@@ -285,10 +307,21 @@ export function ModuleSplitWorkspace({
             lesson={lesson}
             learningState={learningState}
             onAnswer={onAnswerReview}
+            onToggleBookmark={(scope, id) =>
+              scope === "vocab" ? onBookmarkVocab(id) : onBookmarkGrammar(id)
+            }
           />
         );
     }
   };
+
+  const debugPanel =
+    viewMode === "debug" && activeModule !== "overview" ? (
+      <DebugRawDataPanel
+        title="Raw lesson JSON"
+        value={lesson.sourceLesson ?? lesson}
+      />
+    ) : null;
 
   if (!splitEnabled) {
     return (
@@ -303,6 +336,7 @@ export function ModuleSplitWorkspace({
               itemClassName="h-8 px-2 text-sm sm:px-2.5"
             />
           </div>
+          <LessonViewModeToggle mode={viewMode} onChange={updateViewMode} />
           <Button
             type="button"
             variant="outline"
@@ -314,7 +348,8 @@ export function ModuleSplitWorkspace({
           </Button>
         </div>
 
-        {singleContent}
+        {renderModule(activeModule)}
+        {debugPanel}
       </div>
     );
   }
@@ -331,6 +366,7 @@ export function ModuleSplitWorkspace({
             itemClassName="h-8 px-2 text-sm sm:px-2.5"
           />
         </div>
+        <LessonViewModeToggle mode={viewMode} onChange={updateViewMode} />
         <Button
           type="button"
           variant="outline"
@@ -386,6 +422,33 @@ export function ModuleSplitWorkspace({
           {renderModule(normalizedLayout.activeRight, true)}
         </ModulePane>
       </div>
+
+      {debugPanel}
+    </div>
+  );
+}
+
+function LessonViewModeToggle({
+  mode,
+  onChange,
+}: {
+  mode: LessonViewMode;
+  onChange: (mode: LessonViewMode) => void;
+}) {
+  return (
+    <div className="flex shrink-0 rounded-lg bg-bg-subtle p-1">
+      {(["study", "debug"] as const).map((value) => (
+        <Button
+          key={value}
+          type="button"
+          variant={mode === value ? "default" : "ghost"}
+          size="sm"
+          className="h-8 px-2 text-xs"
+          onClick={() => onChange(value)}
+        >
+          {value === "study" ? "Study" : "Debug"}
+        </Button>
+      ))}
     </div>
   );
 }

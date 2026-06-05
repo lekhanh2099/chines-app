@@ -1,10 +1,17 @@
 "use client";
 
-import { useMemo } from "react";
-import type { HanziHomeData } from "@/features/hanzihome/types";
+import { useQuery } from "@tanstack/react-query";
+import { fetchHanziHomeLessonDetail } from "@/features/hanzihome/repositories/hanzihome-content-api-client";
 
-export function useHanziHomeLesson(data: HanziHomeData, lessonId: string | null) {
- return useMemo(() => {
-  return data.lessons.find((lesson) => lesson.id === lessonId) || data.lessons[0] || null;
- }, [data.lessons, lessonId]);
+const lessonDetailStaleTime = Infinity;
+
+export function useHanziHomeLesson(lessonId: string | null) {
+ const query = useQuery({
+  queryKey: ["hanzihome", "lesson-detail", lessonId],
+  queryFn: () => fetchHanziHomeLessonDetail(lessonId ?? ""),
+  staleTime: lessonDetailStaleTime,
+  enabled: Boolean(lessonId),
+ });
+
+ return query.data ?? null;
 }

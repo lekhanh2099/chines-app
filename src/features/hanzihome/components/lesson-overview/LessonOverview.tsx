@@ -50,8 +50,6 @@ export function LessonOverview({ lesson, onOpenModule }: LessonOverviewProps) {
 
  return (
   <div className="grid gap-3 sm:gap-4">
-   <LessonOverviewModeToggle mode={overviewMode} onChange={setOverviewMode} />
-
    {showDebug && sourceSections.length > 0 ? (
     <LessonSourceDataOverview lesson={lesson} sections={sourceSections} />
    ) : (
@@ -69,41 +67,6 @@ export function LessonOverview({ lesson, onOpenModule }: LessonOverviewProps) {
    )}
 
    <LessonNoteAccessCard lesson={lesson} />
-  </div>
- );
-}
-
-function LessonOverviewModeToggle({
- mode,
- onChange,
-}: {
- mode: LessonOverviewMode;
- onChange: (mode: LessonOverviewMode) => void;
-}) {
- return (
-  <div className="flex flex-wrap items-center justify-between gap-2 rounded-xl border border-border-default bg-bg-primary p-2 shadow-sm">
-   <div className="px-2">
-    <p className="text-xs font-black uppercase tracking-wide text-text-muted">
-     Chế độ xem
-    </p>
-    <p className="text-sm font-semibold text-text-secondary">
-     Study để học, Debug để kiểm data gốc.
-    </p>
-   </div>
-
-   <div className="flex rounded-lg bg-bg-subtle p-1">
-    {(["study", "debug"] as const).map((value) => (
-     <Button
-      key={value}
-      type="button"
-      variant={mode === value ? "default" : "ghost"}
-      size="sm"
-      onClick={() => onChange(value)}
-     >
-      {value === "study" ? "Study" : "Debug"}
-     </Button>
-    ))}
-   </div>
   </div>
  );
 }
@@ -148,33 +111,6 @@ function LessonStudyDashboard({
        <OverviewStatPill label={`${lesson.grammar.length} ngữ pháp`} />
        <OverviewStatPill label={`${sections.length} phần`} />
       </div>
-     </div>
-
-     <div className="grid gap-2 md:grid-cols-4">
-      <StudyActionCard
-       icon={BookOpenCheck}
-       title="Đọc bài khóa"
-       description="Đọc theo sách, bật/tắt pinyin và nghĩa khi cần."
-       onAction={() => onOpenModule("lessonText")}
-      />
-      <StudyActionCard
-       icon={Tags}
-       title="Học từ vựng"
-       description="Tra nhanh nghĩa, pinyin, ví dụ và lỗi sai."
-       onAction={() => onOpenModule("vocab")}
-      />
-      <StudyActionCard
-       icon={GraduationCap}
-       title="Nắm ngữ pháp"
-       description="Công thức, ý nghĩa, ví dụ và bẫy sai."
-       onAction={() => onOpenModule("grammar")}
-      />
-      <StudyActionCard
-       icon={BookOpenCheck}
-       title="Ôn chủ động"
-       description="Flashcard từ vựng và ngữ pháp trong bài."
-       onAction={() => onOpenModule("review")}
-      />
      </div>
     </div>
    </Card>
@@ -244,36 +180,6 @@ function LessonStudyDashboard({
     </Card>
    )}
   </div>
- );
-}
-
-function StudyActionCard({
- icon: Icon,
- title,
- description,
- onAction,
-}: {
- icon: LucideIcon;
- title: string;
- description: string;
- onAction: () => void;
-}) {
- return (
-  <button
-   type="button"
-   onClick={onAction}
-   className="group grid min-h-32 gap-3 rounded-xl border border-border-default bg-bg-subtle p-4 text-left transition hover:border-primary/40 hover:bg-accent-subtle focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/50"
-  >
-   <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-bg-primary text-primary transition group-hover:bg-primary group-hover:text-primary-foreground">
-    <Icon className="h-4 w-4" />
-   </span>
-   <span>
-    <span className="block font-black text-text-primary">{title}</span>
-    <span className="mt-1 block text-sm font-semibold leading-relaxed text-text-secondary">
-     {description}
-    </span>
-   </span>
-  </button>
  );
 }
 

@@ -16,6 +16,7 @@ import {
  sectionSubtitle,
  sectionTitle,
 } from "@/features/hanzihome/components/lesson-overview/utils";
+import { useHanziHomeLessonSections } from "@/features/hanzihome/hooks/useHanziHomeLessonResources";
 import type { Section } from "@/features/hanzihome/static-json/schemas/hanyuLesson.schema";
 import type { HanziHomeLesson } from "@/features/hanzihome/types";
 import { cn } from "@/lib/utils";
@@ -66,15 +67,18 @@ export function LessonTextInlineEditor({
  lesson,
  compact = false,
 }: LessonTextInlineEditorProps) {
+ const sectionResource = useHanziHomeLessonSections(lesson.id);
  const [displayMode, setDisplayMode] = useState<LessonDisplayMode>(
   DEFAULT_LESSON_DISPLAY_MODE,
  );
  const sourceSections = useMemo(
   () =>
+   sectionResource?.sections ??
    lesson.sourceLesson?.lesson.sections
     .slice()
-    .sort((a, b) => a.order - b.order) ?? [],
-  [lesson.sourceLesson],
+    .sort((a, b) => a.order - b.order) ??
+   [],
+  [lesson.sourceLesson, sectionResource],
  );
  const [selectedSectionId, setSelectedSectionId] =
   useState<string>(allSectionsId);

@@ -1987,7 +1987,7 @@ hr.editor-hr.selected {
 .hanzi-text,
 [lang="zh"],
 [lang="zh-CN"] {
-  font-family: var(--font-hanzi);
+  font-family: var(--font-pinyin);
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
 }
@@ -2082,6 +2082,7 @@ hr.editor-hr.selected {
     Roboto, "Noto Sans", "Helvetica Neue", Arial, system-ui, sans-serif;
   --font-chinese: var(
     --font-hanzi,
+   "Segoe UI",
     "Noto Sans SC",
     "Microsoft YaHei",
     "PingFang SC",

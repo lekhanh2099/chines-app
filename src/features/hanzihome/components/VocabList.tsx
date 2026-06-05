@@ -164,9 +164,9 @@ export function VocabList({
             showPinyin: true,
             showMeaning: false,
             hanziFont: "kai",
-            hanziSize: "lg",
+            hanziSize: "xl",
            },
-           { size: "lg" },
+           { size: "xl" },
           )}
           lang="zh-CN"
          >

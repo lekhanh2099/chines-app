@@ -6,8 +6,6 @@ import { SaveMemoryTipButton } from "@/features/hanzihome/memory-tips/SaveMemory
 import type { HanziHomeVocabItem } from "@/features/hanzihome/types";
 import { getVocabDisplayMeaning } from "@/features/hanzihome/utils/vocab-item";
 
-import { WordFormationPreview } from "./VocabDetailSections";
-
 export function VocabDetailHeader({
  word,
  bookmarked,
@@ -24,13 +22,10 @@ export function VocabDetailHeader({
    <div className="min-w-0">
     <div className="grid gap-3 lg:grid-cols-[minmax(0,1fr)_minmax(10rem,14rem)] lg:items-end">
      <div className="min-w-0">
-      <div className="flex flex-wrap items-end gap-3">
-       <h2 className="text-6xl leading-none tracking-normal text-text-primary">
-        <PopularFontPreview word={word.hanzi} />
-       </h2>
-
-       <p className="text-xl font-black text-accent-text">{word.pinyin}</p>
-      </div>
+      <h2 className="text-6xl leading-none tracking-normal text-text-primary">
+       <PopularFontPreview word={word.hanzi} />
+      </h2>
+      <p className="text-xl font-black text-accent-text">{word.pinyin}</p>
      </div>
     </div>
 
@@ -62,15 +57,31 @@ export function VocabDetailHeader({
       }}
      />
     </div>
-
-    <p className="mt-2 max-w-2xl text-base font-black leading-relaxed text-text-secondary">
-     {word.meaning.hanviet} · {getVocabDisplayMeaning(word)}
-    </p>
    </div>
 
-   <div className="min-w-0 overflow-x-auto rounded-xl border border-border-default bg-bg-subtle p-3">
+   <div className="min-w-0 overflow-x-auto">
     <div className="w-max min-w-full">
-     <WordFormationPreview formation={word.word_formation} />
+     <div className="grid gap-2">
+      {word.meaning.short_definition_vi && (
+       <p className="text-lg font-black text-text-primary">
+        {word.meaning.short_definition_vi}
+       </p>
+      )}
+      {word.meaning.textbook_focus_vi && (
+       <p>{word.meaning.textbook_focus_vi}</p>
+      )}
+      {word.meaning.natural_translations_vi.length > 0 && (
+       <p>Tự nhiên: {word.meaning.natural_translations_vi.join(", ")}</p>
+      )}
+
+      {word.meaning.register_vi && <p>Sắc thái: {word.meaning.register_vi}</p>}
+      {word.meaning.usage_domain_vi && (
+       <p>Phạm vi dùng: {word.meaning.usage_domain_vi}</p>
+      )}
+      {word.meaning.notes.map((note) => (
+       <p key={note.text_vi}>{note.text_vi}</p>
+      ))}
+     </div>
     </div>
    </div>
   </div>

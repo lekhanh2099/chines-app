@@ -19,7 +19,7 @@ export type HanziReaderFont =
 export type HanziReaderSize = "md" | "lg" | "xl" | "2xl" | "3xl";
 
 export const DEFAULT_LESSON_DISPLAY_MODE: LessonDisplayMode = {
- showPinyin: false,
+ showPinyin: true,
  showMeaning: false,
  hanziFont: "songti",
  hanziSize: "3xl",

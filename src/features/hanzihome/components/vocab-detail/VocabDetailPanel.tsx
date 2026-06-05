@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { VocabWritingCue } from "@/features/hanzihome/components/VocabWritingCue";
 import type {
  HanziHomeVocabItem,
  LearningStatus,
@@ -21,6 +20,7 @@ import {
  CultureSection,
  StructuredVocabSections,
  WarningSection,
+ WordFormationPreview,
 } from "./VocabDetailSections";
 
 function isTypingTarget(element: Element | null) {
@@ -147,7 +147,8 @@ export function VocabDetailPanel({
    </div>
 
    <aside className="grid gap-4 xl:sticky xl:top-4 xl:max-h-[calc(100vh-2rem)] xl:overflow-y-auto xl:pr-1">
-    <VocabWritingCue word={word} size={168} compact autoPlay />
+    <WordFormationPreview formation={word.word_formation} word={word} />
+
     {hasCultureContent(word.culture_note) && (
      <CultureSection culture={word.culture_note} />
     )}

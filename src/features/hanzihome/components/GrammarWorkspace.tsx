@@ -16,6 +16,10 @@ import type {
  LearningStatus,
  UserLearningState,
 } from "@/features/hanzihome/types";
+import {
+ useHanziHomeLessonGrammar,
+ useHanziHomeLessonVocabulary,
+} from "@/features/hanzihome/hooks/useHanziHomeLessonResources";
 import { LessonModuleFrame } from "./lesson-overview/LessonModuleFrame";
 
 type GrammarWorkspaceProps = {
@@ -143,8 +147,12 @@ export function GrammarWorkspace({
  onBookmark,
  onMarkStatus,
 }: GrammarWorkspaceProps) {
+ const grammarResource = useHanziHomeLessonGrammar(lesson.id);
+ const vocabularyResource = useHanziHomeLessonVocabulary(lesson.id);
+ const grammarPoints = grammarResource?.items ?? lesson.grammar;
+ const vocabItems = vocabularyResource?.items ?? lesson.vocab;
  const [selectedPointId, setSelectedPointId] = useState<string | null>(
-  lesson.grammar[0]?.id || null,
+  grammarPoints[0]?.id || null,
  );
  const [isGrammarSidebarOpen, setIsGrammarSidebarOpen] = useState(true);
  const [isGrammarSidebarSheetOpen, setIsGrammarSidebarSheetOpen] =
@@ -154,9 +162,9 @@ export function GrammarWorkspace({
   () =>
    extractReadingFromMarkdown(lesson.notes?.applicationMarkdown) ??
    extractReadingFromMarkdown(lesson.notes?.overviewMarkdown) ??
-   extractGrammarReading(lesson.grammar),
+   extractGrammarReading(grammarPoints),
   [
-   lesson.grammar,
+   grammarPoints,
    lesson.notes?.applicationMarkdown,
    lesson.notes?.overviewMarkdown,
   ],
@@ -164,28 +172,28 @@ export function GrammarWorkspace({
  const effectiveSelectedPointId = useMemo(() => {
   if (selectedPointId === ALL_GRAMMAR_POINTS_ID) return ALL_GRAMMAR_POINTS_ID;
   if (selectedPointId === READING_VIEW_ID) {
-   return reading ? READING_VIEW_ID : lesson.grammar[0]?.id || null;
+   return reading ? READING_VIEW_ID : grammarPoints[0]?.id || null;
   }
   if (
    selectedPointId &&
-   lesson.grammar.some((point) => point.id === selectedPointId)
+   grammarPoints.some((point) => point.id === selectedPointId)
   ) {
    return selectedPointId;
   }
 
-  return lesson.grammar[0]?.id || null;
- }, [lesson.grammar, reading, selectedPointId]);
+  return grammarPoints[0]?.id || null;
+ }, [grammarPoints, reading, selectedPointId]);
  const isAllView = effectiveSelectedPointId === ALL_GRAMMAR_POINTS_ID;
  const isReadingView = effectiveSelectedPointId === READING_VIEW_ID;
 
  const selectedPoint = useMemo(
   () =>
    isAllView || isReadingView
-    ? null
-    : lesson.grammar.find((point) => point.id === effectiveSelectedPointId) ||
-      lesson.grammar[0] ||
-      null,
-  [effectiveSelectedPointId, isAllView, isReadingView, lesson.grammar],
+   ? null
+   : grammarPoints.find((point) => point.id === effectiveSelectedPointId) ||
+     grammarPoints[0] ||
+     null,
+  [effectiveSelectedPointId, grammarPoints, isAllView, isReadingView],
  );
 
  const progress = state.progress.grammar || {};
@@ -201,13 +209,13 @@ export function GrammarWorkspace({
    selectedPoint.examplesParsed.map((example) => example.zh).join(" "),
   ].join(" ");
 
-  return lesson.vocab.filter((word) => text.includes(word.hanzi)).slice(0, 8);
- }, [lesson.vocab, selectedPoint]);
+  return vocabItems.filter((word) => text.includes(word.hanzi)).slice(0, 8);
+ }, [selectedPoint, vocabItems]);
 
  const renderGrammarSidebar = () => (
   <div className="grid min-w-0 max-w-full content-start gap-3 overflow-hidden">
    <GrammarPointList
-    points={lesson.grammar}
+    points={grammarPoints}
     selectedPointId={
      isAllView || isReadingView
       ? effectiveSelectedPointId
@@ -224,7 +232,7 @@ export function GrammarWorkspace({
  );
 
  const readerContent = isAllView ? (
-  <AllGrammarPointReader points={lesson.grammar} />
+  <AllGrammarPointReader points={grammarPoints} />
  ) : isReadingView && reading ? (
   <GrammarReadingReader reading={reading} />
  ) : (
@@ -250,7 +258,7 @@ export function GrammarWorkspace({
      (isAllView ? "Xem toàn bộ điểm ngữ pháp" : "Bài đọc áp dụng")
     }
     sidebarLabel="Điểm ngữ pháp"
-    sidebarSummary={`${lesson.grammar.length} mục`}
+    sidebarSummary={`${grammarPoints.length} mục`}
     sidebarOpen={isGrammarSidebarOpen}
     onSidebarOpenChange={setIsGrammarSidebarOpen}
     sidebar={renderGrammarSidebar()}

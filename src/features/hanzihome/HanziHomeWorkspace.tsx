@@ -5,25 +5,17 @@ import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
 
 import { Card } from "@/components/ui/card";
-import { GrammarWorkspace } from "@/features/hanzihome/components/GrammarWorkspace";
-import { LessonNoteAccessCard } from "@/features/hanzihome/components/LessonNoteAccessCard";
-import { LessonOverview } from "@/features/hanzihome/components/LessonOverview";
-import { LessonTextInlineEditor } from "@/features/hanzihome/components/LessonTextInlineEditor";
 import { ModuleSplitWorkspace } from "@/features/hanzihome/components/ModuleSplitWorkspace";
 import { RadicalWorkspace } from "@/features/hanzihome/components/RadicalWorkspace";
-import { ReviewWorkspace } from "@/features/hanzihome/components/ReviewWorkspace";
-import { VocabWorkspace } from "@/features/hanzihome/components/VocabWorkspace";
 import { useHanziHomeCatalogData } from "@/features/hanzihome/hooks/useHanziHomeCatalogData";
+import { useHanziHomeCourseLessons } from "@/features/hanzihome/hooks/useHanziHomeCourseLessons";
+import { useHanziHomeLesson } from "@/features/hanzihome/hooks/useHanziHomeLesson";
 import { useLearningState } from "@/features/hanzihome/hooks/useLearningState";
 import {
  hanzihomeCourseBooks,
  hanzihomeCourses,
  sortLessonsByCourseBookOrder,
 } from "@/features/hanzihome/courses/course-catalog";
-import {
- getHanziHomeCourseLessonSummaries,
- getHanziHomeLessonDetail,
-} from "@/features/hanzihome/static-data";
 import {
  findLessonByRouteParam,
  getLessonRouteValue,
@@ -71,10 +63,10 @@ export function HanziHomeWorkspace() {
   (courseCatalog.courses?.[0]?.id ?? hanzihomeCourses[0]?.id) ||
   "";
 
- const courseLessonSummaries = useMemo(
-  () => getHanziHomeCourseLessonSummaries(selectedCourseId),
-  [selectedCourseId],
- );
+ const {
+  lessons: courseLessonSummaries,
+  isLoading: isCourseLessonsLoading,
+ } = useHanziHomeCourseLessons(selectedCourseId);
 
  const lessons = useMemo(
   () => sortLessonsByCourseBookOrder(courseLessonSummaries),
@@ -133,10 +125,8 @@ export function HanziHomeWorkspace() {
  const activeLessonModule: StudyModule =
   activeModule === "radicals" ? "overview" : activeModule;
 
- const lesson = useMemo(
-  () => (activeModule === "radicals" ? null : getHanziHomeLessonDetail(lessonId)),
-  [activeModule, lessonId],
- );
+ const activeLessonDetail = useHanziHomeLesson(lessonId);
+ const lesson = activeModule === "radicals" ? null : activeLessonDetail;
  const selectedCourse = courseCatalog.courses.find(
   (course) => course.id === selectedCourseId,
  );
@@ -192,53 +182,6 @@ export function HanziHomeWorkspace() {
   }
  };
 
- const activeLessonContent = (() => {
-  if (!lesson) return null;
-
-  switch (activeLessonModule) {
-   case "overview":
-    return (
-     <LessonOverview
-      lesson={lesson}
-      learningState={learning.state}
-      onOpenModule={selectModule}
-     />
-   );
-  case "lessonText":
-   return <LessonTextInlineEditor lesson={lesson} />;
-   case "notes":
-    return <LessonNoteAccessCard lesson={lesson} />;
-   case "vocab":
-    return (
-     <VocabWorkspace
-      lesson={lesson}
-      state={learning.state}
-      onBookmark={(id) => learning.toggleBookmark("vocab", id)}
-      onMarkStatus={markVocab}
-      onOpenReview={() => selectModule("review")}
-     />
-    );
-   case "grammar":
-    return (
-     <GrammarWorkspace
-      lesson={lesson}
-      state={learning.state}
-      onBookmark={(id) => learning.toggleBookmark("grammar", id)}
-      onMarkStatus={markGrammar}
-     />
-    );
-   case "review":
-    return (
-     <ReviewWorkspace
-      lesson={lesson}
-      learningState={learning.state}
-      onAnswer={answerReview}
-      onToggleBookmark={(scope, id) => learning.toggleBookmark(scope, id)}
-     />
-    );
-  }
- })();
-
  if (!lesson && activeModule !== "radicals") {
   return (
    <main className="hanzihome-static-page">
@@ -251,20 +194,24 @@ export function HanziHomeWorkspace() {
         </p>
 
         <h1 className="text-2xl font-black text-text-primary">
-         Course này chưa có bài học
+         {isCourseLessonsLoading ? "Đang tải bài học" : "Course này chưa có bài học"}
         </h1>
 
         <p className="text-sm font-semibold text-text-muted">
-         Quay về thư viện học liệu để tạo bài mới hoặc chọn course khác.
+         {isCourseLessonsLoading
+          ? "HanziHome đang lấy lesson detail từ API đọc-only."
+          : "Quay về thư viện học liệu để tạo bài mới hoặc chọn course khác."}
         </p>
        </div>
 
-       <Link
-        href="/"
-        className="w-fit rounded-xl bg-bg-inverse px-4 py-2 text-sm font-black text-text-inverse"
-       >
-        Về thư viện học liệu
-       </Link>
+       {!isCourseLessonsLoading && (
+        <Link
+         href="/"
+         className="w-fit rounded-xl bg-bg-inverse px-4 py-2 text-sm font-black text-text-inverse"
+        >
+         Về thư viện học liệu
+        </Link>
+       )}
       </div>
      </Card>
     </div>
@@ -292,7 +239,6 @@ export function HanziHomeWorkspace() {
        lesson={lesson}
        learningState={learning.state}
        activeModule={activeLessonModule}
-       singleContent={activeLessonContent}
        onSelectModule={selectModule}
        onBookmarkVocab={(id) => learning.toggleBookmark("vocab", id)}
        onMarkVocab={markVocab}

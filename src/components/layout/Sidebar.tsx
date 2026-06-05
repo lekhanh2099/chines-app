@@ -9,6 +9,7 @@ import {
   Flame,
   Home,
   BookOpen,
+  BookmarkCheck,
   GraduationCap,
   Layers3,
   Lightbulb,
@@ -34,6 +35,11 @@ const mainItems: NavItem[] = [
     name: "HanziHome",
     icon: Sparkles,
     href: "/hanzihome",
+  },
+  {
+    name: "SRS từ",
+    icon: BookmarkCheck,
+    href: "/dictionary",
   },
   {
     name: "Tổng hợp từ",

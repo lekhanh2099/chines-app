@@ -88,7 +88,7 @@ function CourseCard({
  stats: CourseStats;
 }) {
  const primaryBook = stats.books[0];
- const courseLessons = useHanziHomeCourseLessons(course.id);
+ const { lessons: courseLessons } = useHanziHomeCourseLessons(course.id);
  const [selectedLessonId, setSelectedLessonId] = useState(
  stats.fallbackLessonId ?? "",
  );

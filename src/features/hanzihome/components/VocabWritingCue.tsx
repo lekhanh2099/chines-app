@@ -15,6 +15,7 @@ type VocabWritingCueProps = {
  compact?: boolean;
  selectedIndex?: number;
  onSelectedIndexChange?: (index: number) => void;
+ isShowAll?: boolean;
 };
 
 function getWritingLines(word: HanziHomeVocabItem) {
@@ -47,6 +48,7 @@ export function VocabWritingCue({
  compact = false,
  selectedIndex,
  onSelectedIndexChange,
+ isShowAll,
 }: VocabWritingCueProps) {
  const chars = Array.from(word.hanzi).filter((char) =>
   /\p{Script=Han}/u.test(char),
@@ -63,6 +65,7 @@ export function VocabWritingCue({
    : Math.min(Math.max(internalSelectedIndex, 0), chars.length - 1);
 
  const activeCharacter = chars[safeSelectedIndex] || chars[0];
+ const writingCharacters = isShowAll ? chars : [activeCharacter];
  const info = getCharacterInfo(word);
 
  const selectCharacter = (index: number) => {
@@ -79,52 +82,68 @@ export function VocabWritingCue({
 
  return (
   <section
-   className={[
-    compact
-     ? "rounded-2xl border border-border-default bg-bg-primary p-4 shadow-theme-sm"
-     : "rounded-xl bg-bg-primary p-3 shadow-theme-sm sm:p-4",
-    className,
-   ].join(" ")}
+   className={
+    !isShowAll
+     ? [
+        compact
+         ? "rounded-2xl border border-border-default bg-bg-primary p-4 shadow-theme-sm"
+         : "rounded-xl bg-bg-primary p-3 shadow-theme-sm sm:p-4",
+        className,
+       ].join(" ")
+     : className
+   }
    onClick={(event) => event.stopPropagation()}
    onMouseDown={(event) => event.stopPropagation()}
    onTouchStart={(event) => event.stopPropagation()}
   >
    <div className="flex flex-wrap items-center justify-between gap-2">
-    <div className="flex flex-wrap gap-1.5">
-     {chars.map((char, index) => {
-      const active = index === safeSelectedIndex;
-      return (
-       <Button
-        key={`${char}-${index}`}
-        type="button"
-        onClick={() => selectCharacter(index)}
-        variant={active ? "default" : "outline"}
-        size={compact ? "xs" : "default"}
-        lang="zh-CN"
-       >
-        {char}
-       </Button>
-      );
-     })}
-    </div>
+    {isShowAll ? null : (
+     <div className="flex flex-wrap gap-1.5">
+      {chars.map((char, index) => {
+       const active = index === safeSelectedIndex;
+       return (
+        <Button
+         key={`${char}-${index}`}
+         type="button"
+         onClick={() => selectCharacter(index)}
+         variant={active ? "default" : "outline"}
+         size={compact ? "xs" : "default"}
+         lang="zh-CN"
+        >
+         {char}
+        </Button>
+       );
+      })}
+     </div>
+    )}
    </div>
 
    <div
     className={[
-     "relative grid gap-4 md:items-start mt-2",
-     compact ? "justify-items-center" : "md:grid-cols-[auto_minmax(0,1fr)]",
+     "relative mt-2 grid gap-4 md:items-start",
+     compact || isShowAll
+      ? "justify-items-center"
+      : "md:grid-cols-[auto_minmax(0,1fr)]",
     ].join(" ")}
    >
-    <div>
-     <HanziStrokeWriter
-      key={`${activeCharacter}-${writerKey}`}
-      character={activeCharacter}
-      size={size}
-      autoPlay={autoPlay}
-      showActions={false}
-      className="rounded-lg"
-      onRelay={replay}
-     />
+    <div
+     className={[
+      isShowAll
+       ? "grid w-full grid-cols-[repeat(auto-fit,minmax(min(100%,8rem),1fr))] justify-items-center gap-2"
+       : "flex gap-2 justify-items-center",
+     ].join(" ")}
+    >
+     {writingCharacters.map((character, index) => (
+      <HanziStrokeWriter
+       key={`${character}-${index}-${writerKey}`}
+       character={character}
+       size={isShowAll ? Math.min(size, 156) : size}
+       autoPlay={autoPlay}
+       showActions={false}
+       className="rounded-lg"
+       onRelay={replay}
+      />
+     ))}
     </div>
 
     {!compact && (
