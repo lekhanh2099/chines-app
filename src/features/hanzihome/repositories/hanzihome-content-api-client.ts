@@ -6,6 +6,14 @@ import type {
  UserLearningState,
 } from "@/features/hanzihome/types";
 import type {
+ UpdateGrammarCorePayload,
+ UpdateGrammarDetailSectionPayload,
+ UpdateGrammarExamplePayload,
+ UpdateVocabCorePayload,
+ UpdateVocabDetailSectionPayload,
+ UpdateVocabExamplePayload,
+} from "@/features/hanzihome/schemas/node-edit.schema";
+import type {
  AggregateFilters,
  AggregateKind,
  AggregateResourceItem,
@@ -36,6 +44,23 @@ async function fetchJson<T>(url: string): Promise<T> {
 
  if (!response.ok) {
   throw new Error(`HanziHome request failed: ${response.status}`);
+ }
+
+ return response.json() as Promise<T>;
+}
+
+async function patchJson<T>(url: string, body: unknown): Promise<T> {
+ const response = await fetch(url, {
+  method: "PATCH",
+  headers: {
+   Accept: "application/json",
+   "Content-Type": "application/json",
+  },
+  body: JSON.stringify(body),
+ });
+
+ if (!response.ok) {
+  throw new Error(`HanziHome patch failed: ${response.status}`);
  }
 
  return response.json() as Promise<T>;
@@ -117,4 +142,64 @@ export async function saveHanziHomeLearningState(
  const payload = (await response.json()) as LearningStateApiResponse;
 
  return payload.state;
+}
+
+export async function updateHanziHomeVocabCore(
+ vocabId: string,
+ payload: UpdateVocabCorePayload,
+) {
+ return patchJson<{ item: unknown }>(
+  `/api/hanzihome/edit/vocab/${encodeURIComponent(vocabId)}/core`,
+  payload,
+ );
+}
+
+export async function updateHanziHomeVocabExample(
+ exampleId: string,
+ payload: UpdateVocabExamplePayload,
+) {
+ return patchJson<{ item: unknown }>(
+  `/api/hanzihome/edit/vocab/examples/${encodeURIComponent(exampleId)}`,
+  payload,
+ );
+}
+
+export async function updateHanziHomeVocabDetailSection(
+ sectionId: string,
+ payload: UpdateVocabDetailSectionPayload,
+) {
+ return patchJson<{ item: unknown }>(
+  `/api/hanzihome/edit/vocab/detail-sections/${encodeURIComponent(sectionId)}`,
+  payload,
+ );
+}
+
+export async function updateHanziHomeGrammarCore(
+ grammarId: string,
+ payload: UpdateGrammarCorePayload,
+) {
+ return patchJson<{ item: unknown }>(
+  `/api/hanzihome/edit/grammar/${encodeURIComponent(grammarId)}/core`,
+  payload,
+ );
+}
+
+export async function updateHanziHomeGrammarExample(
+ exampleId: string,
+ payload: UpdateGrammarExamplePayload,
+) {
+ return patchJson<{ item: unknown }>(
+  `/api/hanzihome/edit/grammar/examples/${encodeURIComponent(exampleId)}`,
+  payload,
+ );
+}
+
+export async function updateHanziHomeGrammarDetailSection(
+ sectionId: string,
+ payload: UpdateGrammarDetailSectionPayload,
+) {
+ return patchJson<{ item: unknown }>(
+  `/api/hanzihome/edit/grammar/detail-sections/${encodeURIComponent(sectionId)}`,
+  payload,
+ );
 }

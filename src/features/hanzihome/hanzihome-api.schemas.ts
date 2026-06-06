@@ -3,6 +3,7 @@ import { HanyuLessonSchema } from "@/features/hanzihome/static-json/schemas/hany
 import { DeepVocabularyItemSchema } from "@/features/hanzihome/static-json/schemas/vocab.schema";
 
 export const vocabExampleSchema = z.object({
+  id: z.string(),
   zh: z.string().trim().min(1, "Thiếu câu tiếng Trung"),
   pinyin: z.string().optional(),
   vi: z.string().optional(),
@@ -10,6 +11,7 @@ export const vocabExampleSchema = z.object({
 });
 
 const vocabDetailSectionSchema = z.object({
+  id: z.string(),
   key: z.string().trim().min(1, "Thiếu key"),
   title: z.string().trim().min(1, "Thiếu tiêu đề"),
   lines: z.array(z.string().trim().min(1)).default([]),

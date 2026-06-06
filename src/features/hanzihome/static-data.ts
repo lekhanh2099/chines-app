@@ -330,6 +330,7 @@ function buildLessonDocumentGrammarViewModels(
   const contentMd = renderGrammarPoint(point);
   const detailSections = point.blocks
    .map((block) => ({
+    id: `${lessonId}__${point.id}__${block.id}`,
     key: `${lessonId}-${point.id}-${block.id}`,
     title: block.title,
     lines: renderGrammarBlockDetailLines(block),
@@ -340,7 +341,10 @@ function buildLessonDocumentGrammarViewModels(
 
    return recordArray(record, "examples")
     .map(unknownRecord)
-    .map((example) => ({
+    .map((example, index) => ({
+     id:
+      recordString(example, "id") ||
+      `${lessonId}__${point.id}__${block.id}__example_${index + 1}`,
      zh: recordString(example, "zh"),
      pinyin: recordString(example, "pinyin") || undefined,
      vi: recordString(example, "vi") || undefined,

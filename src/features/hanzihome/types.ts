@@ -52,6 +52,7 @@ export type HanziHomeMeta = {
 };
 
 export type VocabExample = {
+ id: string;
  zh: string;
  pinyin?: string;
  vi?: string;
@@ -74,6 +75,7 @@ export type GrammarViewModel = {
  examplesParsed: VocabExample[];
  notes: string[];
  detailSections?: Array<{
+  id: string;
   key: string;
   title: string;
   lines: string[];

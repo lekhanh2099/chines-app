@@ -173,7 +173,7 @@ export function StructuredGrammarContent({
      <h3 className="text-base font-black text-text-primary">Ví dụ nhanh</h3>
      {examples.map((example) => (
       <div
-       key={`${example.zh}-${example.vi}`}
+       key={example.id}
        className="rounded-xl border border-border-subtle bg-bg-subtle p-3 sm:p-4"
       >
        <p className="text-lg font-black leading-relaxed text-text-primary">
