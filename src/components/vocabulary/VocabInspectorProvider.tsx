@@ -67,7 +67,8 @@ export function VocabInspectorProvider({
 }: {
  children: React.ReactNode;
 }) {
- const { isOpen, openInspector, closeInspector } = useInspectorStore();
+ const { isOpen, openInspector, closeInspector, selectedText } =
+  useInspectorStore();
  const selectionAnchorRef = useRef<SelectionAnchor | null>(null);
  const [anchorRect, setAnchorRect] = useState<DOMRect | null>(null);
  const pathname = usePathname();
@@ -144,7 +145,7 @@ export function VocabInspectorProvider({
        style={{ maxWidth: "calc(100vw - 1rem)" }}
        className="w-85 overflow-hidden rounded-2xl -[28px] border border-border-default bg-bg-card shadow-theme-lg"
       >
-       <InspectorCard onClose={handleClose} />
+       <InspectorCard key={selectedText} onClose={handleClose} />
       </Popover.Popup>
      </Popover.Positioner>
     </Popover.Portal>
@@ -169,10 +170,6 @@ function InspectorCard({ onClose }: InspectorCardProps) {
   (state) => state.openDetailDrawer,
  );
  const { speak, stop, isSpeaking, isLoading: isTTSLoading } = useTTS();
-
- useEffect(() => {
-  setIsSaved(false);
- }, [selectedText]);
 
  const handleSaveToVocab = async () => {
   if (!vocabData || isSaving) return;

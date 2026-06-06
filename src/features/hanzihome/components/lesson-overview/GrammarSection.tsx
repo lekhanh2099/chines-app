@@ -2,20 +2,30 @@ import type {
  GrammarBlock,
  GrammarPoint,
 } from "@/features/hanzihome/static-json/schemas/hanyuLesson.schema";
+import {
+ EditableNodeWrapper,
+ type DraftPatchPath,
+} from "@/features/hanzihome/editing";
 
 import { TextLineCard } from "./TextLineCard";
 import type { LessonDisplayMode } from "./types";
 import { arrayValue, asRecord, stringValue } from "./utils";
 
 function GrammarBlockView({
+ lessonId,
+ grammarPointId,
+ path,
  block,
  displayMode,
 }: {
+ lessonId?: string;
+ grammarPointId?: string;
+ path?: DraftPatchPath;
  block: GrammarBlock;
  displayMode: LessonDisplayMode;
 }) {
  const blockRecord = asRecord(block);
- const content = stringValue(blockRecord, "content_vi");
+ const contentText = stringValue(blockRecord, "content_vi");
  const pattern = stringValue(blockRecord, "pattern");
  const meaning = stringValue(blockRecord, "meaning_vi");
  const formulas = arrayValue(blockRecord, "formulas").map(asRecord);
@@ -27,11 +37,11 @@ function GrammarBlockView({
   .filter((example) => stringValue(example, "zh"));
  const items = arrayValue(blockRecord, "items").map(asRecord);
 
- return (
+ const content = (
   <div className="grid gap-2 rounded-xl border border-border-default bg-bg-primary p-3">
    <h5 className="font-black text-text-primary">{block.title}</h5>
-   {content && (
-    <p className="text-sm font-semibold text-text-secondary">{content}</p>
+   {contentText && (
+    <p className="text-sm font-semibold text-text-secondary">{contentText}</p>
    )}
    {pattern && (
     <p className="rounded-lg bg-accent-subtle px-3 py-2 font-black text-accent-text">
@@ -43,37 +53,87 @@ function GrammarBlockView({
    )}
    {formulas.length > 0 && (
     <div className="grid gap-2">
-     {formulas.map((formula, index) => (
-      <p
-       key={`${block.id}-formula-${index}`}
-       className="rounded-lg border border-info/30 bg-info-subtle px-3 py-2 text-sm font-black text-info-text"
-      >
-       {stringValue(formula, "label")
-        ? `${stringValue(formula, "label")}: `
-        : ""}
-       {stringValue(formula, "pattern")}
-      </p>
-     ))}
+     {formulas.map((formula, index) => {
+      const formulaContent = (
+       <p className="rounded-lg border border-info/30 bg-info-subtle px-3 py-2 text-sm font-black text-info-text">
+        {stringValue(formula, "label")
+         ? `${stringValue(formula, "label")}: `
+         : ""}
+        {stringValue(formula, "pattern")}
+       </p>
+      );
+
+      return lessonId && path ? (
+       <EditableNodeWrapper
+        key={`${block.id}-formula-${index}`}
+        lessonId={lessonId}
+        entityType="grammar_formula"
+        entityId={stringValue(formula, "id") || `${block.id}-formula-${index}`}
+        parentEntityType="grammar_block"
+        parentEntityId={block.id}
+        path={[...path, "formulas", index]}
+        value={formula}
+       >
+        {formulaContent}
+       </EditableNodeWrapper>
+      ) : (
+       <div key={`${block.id}-formula-${index}`}>{formulaContent}</div>
+      );
+     })}
     </div>
    )}
    {items.length > 0 && (
     <div className="grid gap-2">
-     {items.map((item, index) => (
-      <GrammarBlockItemView key={`${block.id}-item-${index}`} item={item} />
-     ))}
+     {items.map((item, index) =>
+      lessonId && path ? (
+       <EditableNodeWrapper
+        key={`${block.id}-item-${index}`}
+        lessonId={lessonId}
+        entityType="grammar_block_item"
+        entityId={stringValue(item, "id") || `${block.id}-item-${index}`}
+        parentEntityType="grammar_block"
+        parentEntityId={block.id}
+        path={[...path, "items", index]}
+        value={item}
+       >
+        <GrammarBlockItemView item={item} />
+       </EditableNodeWrapper>
+      ) : (
+       <GrammarBlockItemView key={`${block.id}-item-${index}`} item={item} />
+      ),
+     )}
     </div>
    )}
    {examples.length > 0 && (
     <div className="grid gap-2">
-     {examples.map((example, index) => (
-      <TextLineCard
-       key={stringValue(example, "id") || `${block.id}-${index}`}
-       zh={stringValue(example, "zh")}
-       pinyin={stringValue(example, "pinyin")}
-       vi={stringValue(example, "vi")}
-       displayMode={displayMode}
-      />
-     ))}
+     {examples.map((example, index) => {
+      const exampleCard = (
+       <TextLineCard
+        zh={stringValue(example, "zh")}
+        pinyin={stringValue(example, "pinyin")}
+        vi={stringValue(example, "vi")}
+        displayMode={displayMode}
+       />
+      );
+      const exampleId = stringValue(example, "id") || `${block.id}-${index}`;
+
+      return lessonId && path ? (
+       <EditableNodeWrapper
+        key={exampleId}
+        lessonId={lessonId}
+        entityType="grammar_example"
+        entityId={exampleId}
+        parentEntityType="grammar_block"
+        parentEntityId={block.id}
+        path={[...path, "examples", index]}
+        value={example}
+       >
+        {exampleCard}
+       </EditableNodeWrapper>
+      ) : (
+       <div key={exampleId}>{exampleCard}</div>
+      );
+     })}
     </div>
    )}
    {notes.length > 0 && (
@@ -86,6 +146,23 @@ function GrammarBlockView({
     </div>
    )}
   </div>
+ );
+
+ if (!lessonId || !path) return content;
+
+ return (
+  <EditableNodeWrapper
+   lessonId={lessonId}
+   entityType="grammar_block"
+   entityId={block.id}
+   parentEntityType="grammar_point"
+   parentEntityId={grammarPointId}
+   path={path}
+   value={block}
+   label={block.title}
+  >
+   {content}
+  </EditableNodeWrapper>
  );
 }
 
@@ -150,13 +227,19 @@ function GrammarBlockItemView({ item }: { item: Record<string, unknown> }) {
 }
 
 export function GrammarCard({
+ lessonId,
+ parentSectionId,
+ path,
  item,
  displayMode,
 }: {
+ lessonId?: string;
+ parentSectionId?: string;
+ path?: DraftPatchPath;
  item: GrammarPoint;
  displayMode: LessonDisplayMode;
 }) {
- return (
+ const content = (
   <article className="grid gap-3 rounded-xl border border-border-default bg-bg-subtle p-4">
    <div>
     <h4 className="text-lg font-black text-text-primary">
@@ -167,10 +250,34 @@ export function GrammarCard({
     </p>
    </div>
    <div className="grid gap-2">
-    {item.blocks.map((block) => (
-     <GrammarBlockView key={block.id} block={block} displayMode={displayMode} />
+    {item.blocks.map((block, index) => (
+     <GrammarBlockView
+      key={block.id}
+      lessonId={lessonId}
+      grammarPointId={item.id}
+      path={path ? [...path, "blocks", index] : undefined}
+      block={block}
+      displayMode={displayMode}
+     />
     ))}
    </div>
   </article>
+ );
+
+ if (!lessonId || !path) return content;
+
+ return (
+  <EditableNodeWrapper
+   lessonId={lessonId}
+   entityType="grammar_point"
+   entityId={item.id}
+   parentEntityType="section"
+   parentEntityId={parentSectionId}
+   path={path}
+   value={item}
+   label={item.title_vi || item.title}
+  >
+   {content}
+  </EditableNodeWrapper>
  );
 }

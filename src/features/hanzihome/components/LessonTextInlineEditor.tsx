@@ -17,6 +17,7 @@ import {
  sectionTitle,
 } from "@/features/hanzihome/components/lesson-overview/utils";
 import { useHanziHomeLessonSections } from "@/features/hanzihome/hooks/useHanziHomeLessonResources";
+import type { DraftPatchPath } from "@/features/hanzihome/editing";
 import type { Section } from "@/features/hanzihome/static-json/schemas/hanyuLesson.schema";
 import type { HanziHomeLesson } from "@/features/hanzihome/types";
 import { cn } from "@/lib/utils";
@@ -29,10 +30,14 @@ type LessonTextInlineEditorProps = {
 const allSectionsId = "__all_lesson_sections__";
 
 function TextbookSectionCard({
+ lessonId,
  section,
+ sectionPath,
  displayMode,
 }: {
+ lessonId: string;
  section: Section;
+ sectionPath: DraftPatchPath;
  displayMode: LessonDisplayMode;
 }) {
  return (
@@ -57,7 +62,12 @@ function TextbookSectionCard({
      </div>
     </div>
 
-    <BookSectionContent section={section} displayMode={displayMode} />
+    <BookSectionContent
+     lessonId={lessonId}
+     section={section}
+     sectionPath={sectionPath}
+     displayMode={displayMode}
+    />
    </article>
   </Card>
  );
@@ -73,10 +83,10 @@ export function LessonTextInlineEditor({
  );
  const sourceSections = useMemo(
   () =>
-   sectionResource?.sections ??
    lesson.sourceLesson?.lesson.sections
     .slice()
     .sort((a, b) => a.order - b.order) ??
+   sectionResource?.sections ??
    [],
   [lesson.sourceLesson, sectionResource],
  );
@@ -87,6 +97,18 @@ export function LessonTextInlineEditor({
   sourceSections.find((section) => section.id === selectedSectionId) ?? null;
  const showAllSections =
   selectedSectionId === allSectionsId || !selectedSection;
+ const sectionPathFor = (section: Section): DraftPatchPath => {
+  const sourceIndex =
+   lesson.sourceLesson?.lesson.sections.findIndex(
+    (sourceSection) => sourceSection.id === section.id,
+   ) ?? -1;
+
+  return [
+   "lesson",
+   "sections",
+   sourceIndex >= 0 ? sourceIndex : sourceSections.indexOf(section),
+  ];
+ };
 
  function toggleDisplayMode(key: "showPinyin" | "showMeaning") {
   setDisplayMode((current) => ({ ...current, [key]: !current[key] }));
@@ -238,15 +260,19 @@ export function LessonTextInlineEditor({
      <div className="grid min-w-0 gap-2.5">
       {showAllSections ? (
        sourceSections.map((section) => (
-        <TextbookSectionCard
-         key={section.id}
-         section={section}
-         displayMode={displayMode}
-        />
+       <TextbookSectionCard
+        key={section.id}
+        lessonId={lesson.id}
+        section={section}
+        sectionPath={sectionPathFor(section)}
+        displayMode={displayMode}
+       />
        ))
       ) : selectedSection ? (
        <TextbookSectionCard
+        lessonId={lesson.id}
         section={selectedSection}
+        sectionPath={sectionPathFor(selectedSection)}
         displayMode={displayMode}
        />
       ) : null}

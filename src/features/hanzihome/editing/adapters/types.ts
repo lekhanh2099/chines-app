@@ -1,0 +1,21 @@
+export type EditFieldKind =
+ | "text"
+ | "textarea"
+ | "string-list"
+ | "number"
+ | "boolean"
+ | "json";
+
+export type EditFieldDefinition = {
+ key: string;
+ label: string;
+ kind?: EditFieldKind;
+ description?: string;
+ required?: boolean;
+};
+
+export type EditAdapter = {
+ fields: EditFieldDefinition[];
+ toValues: (value: unknown) => Record<string, string>;
+ toNode: (original: unknown, values: Record<string, string>) => unknown;
+};

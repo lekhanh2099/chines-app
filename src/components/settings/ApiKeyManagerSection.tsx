@@ -96,8 +96,6 @@ export default function ApiKeyManagerSection() {
  const [busyKeyId, setBusyKeyId] = useState<string | null>(null);
 
  async function loadKeys() {
-  setIsLoading(true);
-
   try {
    const response = await fetch("/api/settings/api-keys", {
     method: "GET",
@@ -121,7 +119,36 @@ export default function ApiKeyManagerSection() {
  }
 
  useEffect(() => {
-  void loadKeys();
+  let isCurrent = true;
+
+  void fetch("/api/settings/api-keys", {
+   method: "GET",
+   credentials: "include",
+  })
+   .then(async (response) => {
+    if (!response.ok) {
+     throw new Error("load_failed");
+    }
+
+    return (await response.json()) as ApiKeysResponse;
+   })
+   .then((data) => {
+    if (!isCurrent) return;
+    setSchemaReady(data.schemaReady ?? true);
+    setSchemaMessage(data.schemaMessage ?? null);
+    setKeys(data.keys || []);
+    setSummary(data.summary || EMPTY_SUMMARY);
+   })
+   .catch(() => {
+    if (isCurrent) toast.error("Không tải được danh sách API key.");
+   })
+   .finally(() => {
+    if (isCurrent) setIsLoading(false);
+   });
+
+  return () => {
+   isCurrent = false;
+  };
  }, []);
 
  const selectedProviderOption = useMemo(() => {
@@ -183,6 +210,7 @@ export default function ApiKeyManagerSection() {
    setProvider(AUTO_API_KEY_PROVIDER);
    setShowKey(false);
    setIsDialogOpen(false);
+   setIsLoading(true);
    await loadKeys();
   } catch {
    toast.error("Lỗi kết nối khi thêm API key.");
@@ -288,6 +316,7 @@ export default function ApiKeyManagerSection() {
    }
 
    toast.success("Đã xóa API key.");
+   setIsLoading(true);
    await loadKeys();
   } catch {
    toast.error("Lỗi kết nối khi xóa key.");

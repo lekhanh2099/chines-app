@@ -12,7 +12,10 @@ import {
  getVocabItemKey,
  getVocabSearchText,
 } from "@/features/hanzihome/utils/vocab-item";
-import { useHanziHomeLessonVocabulary } from "@/features/hanzihome/hooks/useHanziHomeLessonResources";
+import {
+ EditableNodeWrapper,
+ type DraftPatchPath,
+} from "@/features/hanzihome/editing";
 
 type VocabWorkspaceProps = {
  lesson: HanziHomeLesson;
@@ -30,8 +33,7 @@ export function VocabWorkspace({
  onBookmark,
  onMarkStatus,
 }: VocabWorkspaceProps) {
- const vocabularyResource = useHanziHomeLessonVocabulary(lesson.id);
- const words = vocabularyResource?.items ?? lesson.vocab;
+ const words = lesson.vocab;
  const [selectedWordId, setSelectedWordId] = useState<string | null>(
   words[0] ? getVocabItemKey(words[0]) : null,
  );
@@ -66,6 +68,15 @@ export function VocabWorkspace({
    null,
   [selectedWordId, visibleWords],
  );
+ const selectedWordPath = useMemo<DraftPatchPath | null>(() => {
+  if (!selectedWord) return null;
+
+  const index = lesson.vocab.findIndex(
+   (word) => getVocabItemKey(word) === getVocabItemKey(selectedWord),
+  );
+
+  return index >= 0 ? ["vocab", index] : null;
+ }, [lesson.vocab, selectedWord]);
 
  const selectRelativeWord = useCallback(
   (offset: number) => {
@@ -131,23 +142,38 @@ export function VocabWorkspace({
     onSelectWord={setSelectedWordId}
    />
 
-   <VocabDetailPanel
-    word={selectedWord}
-    status={
-     selectedWord
-      ? progress[getVocabItemKey(selectedWord)]?.status || "new"
-      : "new"
-    }
-   bookmarked={
-     selectedWord ? bookmarks.includes(getVocabItemKey(selectedWord)) : false
-    }
-    lessonId={lesson.id}
-    compact={compact}
-    onBookmark={() => selectedWord && onBookmark(getVocabItemKey(selectedWord))}
-    onMarkStatus={(status) =>
-     selectedWord && onMarkStatus(getVocabItemKey(selectedWord), status)
-    }
-   />
+   {selectedWord && selectedWordPath ? (
+    <EditableNodeWrapper
+     lessonId={lesson.id}
+     entityType="vocab_item"
+     entityId={getVocabItemKey(selectedWord)}
+     path={selectedWordPath}
+     value={selectedWord}
+     label={selectedWord.hanzi}
+    >
+     <VocabDetailPanel
+      word={selectedWord}
+      status={progress[getVocabItemKey(selectedWord)]?.status || "new"}
+      bookmarked={bookmarks.includes(getVocabItemKey(selectedWord))}
+      lessonId={lesson.id}
+      compact={compact}
+      onBookmark={() => onBookmark(getVocabItemKey(selectedWord))}
+      onMarkStatus={(status) =>
+       onMarkStatus(getVocabItemKey(selectedWord), status)
+      }
+     />
+    </EditableNodeWrapper>
+   ) : (
+    <VocabDetailPanel
+     word={selectedWord}
+     status="new"
+     bookmarked={false}
+     lessonId={lesson.id}
+     compact={compact}
+     onBookmark={() => undefined}
+     onMarkStatus={() => undefined}
+    />
+   )}
   </div>
  );
 }

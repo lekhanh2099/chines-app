@@ -1,13 +1,21 @@
 import type { TextBlock } from "@/features/hanzihome/static-json/schemas/hanyuLesson.schema";
+import {
+ EditableNodeWrapper,
+ type DraftPatchPath,
+} from "@/features/hanzihome/editing";
 
 import { TextLineCard } from "./TextLineCard";
 import type { LessonDisplayMode } from "./types";
 
 export function TextBlockView({
+ lessonId,
  block,
+ path,
  displayMode,
 }: {
+ lessonId?: string;
  block: TextBlock;
+ path?: DraftPatchPath;
  displayMode: LessonDisplayMode;
 }) {
  const directLines = block.lines;
@@ -18,7 +26,7 @@ export function TextBlockView({
   directLines.length > 0 &&
   (block.type !== "text_narrative" || narrativeParagraphs.length === 0);
 
- return (
+ const content = (
   <section className="grid gap-3 rounded-xl border border-border-default bg-bg-subtle p-2.5 sm:gap-4 sm:rounded-2xl sm:p-4">
    <div>
     <h4 className="text-base font-black text-text-primary sm:text-lg">
@@ -31,31 +39,9 @@ export function TextBlockView({
 
    {shouldRenderDirectLines && (
     <div className="rounded-lg border border-border-default bg-bg-primary px-3 sm:rounded-xl sm:px-4">
-     {directLines.map((line) => (
-      <TextLineCard
-       key={line.id}
-       speaker={line.speaker}
-       zh={line.zh}
-       pinyin={line.pinyin}
-       vi={line.vi}
-       displayMode={displayMode}
-       variant="reader"
-      />
-     ))}
-    </div>
-   )}
-
-   {dialogueScenes.map((scene) => (
-     <div
-      key={scene.id}
-      className="grid gap-2 rounded-lg border border-border-default bg-bg-primary px-3 py-2.5 sm:rounded-xl sm:px-4 sm:py-3"
-     >
-      {scene.summary_vi && (
-       <p className="text-sm font-bold text-text-muted">{scene.summary_vi}</p>
-      )}
-      {scene.lines.map((line) => (
+     {directLines.map((line, index) => {
+      const card = (
        <TextLineCard
-        key={line.id}
         speaker={line.speaker}
         zh={line.zh}
         pinyin={line.pinyin}
@@ -63,24 +49,118 @@ export function TextBlockView({
         displayMode={displayMode}
         variant="reader"
        />
-      ))}
+      );
+
+      return lessonId && path ? (
+       <EditableNodeWrapper
+        key={line.id}
+        lessonId={lessonId}
+        entityType="text_line"
+        entityId={line.id}
+        parentEntityType="text_block"
+        parentEntityId={block.id}
+        path={[...path, "lines", index]}
+        value={line}
+        label={line.speaker || line.zh}
+       >
+        {card}
+       </EditableNodeWrapper>
+      ) : (
+       <div key={line.id}>{card}</div>
+      );
+     })}
+    </div>
+   )}
+
+   {dialogueScenes.map((scene, sceneIndex) => (
+     <div
+      key={scene.id}
+      className="grid gap-2 rounded-lg border border-border-default bg-bg-primary px-3 py-2.5 sm:rounded-xl sm:px-4 sm:py-3"
+     >
+      {scene.summary_vi && (
+       <p className="text-sm font-bold text-text-muted">{scene.summary_vi}</p>
+      )}
+      {scene.lines.map((line, lineIndex) => {
+       const card = (
+        <TextLineCard
+         speaker={line.speaker}
+         zh={line.zh}
+         pinyin={line.pinyin}
+         vi={line.vi}
+         displayMode={displayMode}
+         variant="reader"
+        />
+       );
+
+       return lessonId && path ? (
+        <EditableNodeWrapper
+         key={line.id}
+         lessonId={lessonId}
+         entityType="text_line"
+         entityId={line.id}
+         parentEntityType="text_block"
+         parentEntityId={block.id}
+         path={[...path, "scenes", sceneIndex, "lines", lineIndex]}
+         value={line}
+         label={line.speaker || line.zh}
+        >
+         {card}
+        </EditableNodeWrapper>
+       ) : (
+        <div key={line.id}>{card}</div>
+       );
+      })}
      </div>
     ))}
 
    {narrativeParagraphs.length > 0 && (
      <div className="rounded-lg border border-border-default bg-bg-primary px-3 sm:rounded-xl sm:px-4">
-      {narrativeParagraphs.map((paragraph) => (
-       <TextLineCard
-        key={paragraph.id}
-        zh={paragraph.zh}
-        pinyin={paragraph.pinyin}
-        vi={paragraph.vi}
-        displayMode={displayMode}
-        variant="reader"
-       />
-      ))}
+      {narrativeParagraphs.map((paragraph, index) => {
+       const card = (
+        <TextLineCard
+         zh={paragraph.zh}
+         pinyin={paragraph.pinyin}
+         vi={paragraph.vi}
+         displayMode={displayMode}
+         variant="reader"
+        />
+       );
+
+       return lessonId && path ? (
+        <EditableNodeWrapper
+         key={paragraph.id}
+         lessonId={lessonId}
+         entityType="text_paragraph"
+         entityId={paragraph.id}
+         parentEntityType="text_block"
+         parentEntityId={block.id}
+         path={[...path, "paragraphs", index]}
+         value={paragraph}
+         label={paragraph.zh}
+        >
+         {card}
+        </EditableNodeWrapper>
+       ) : (
+        <div key={paragraph.id}>{card}</div>
+       );
+      })}
      </div>
     )}
   </section>
+ );
+
+ if (!lessonId || !path) return content;
+
+ return (
+  <EditableNodeWrapper
+   lessonId={lessonId}
+   entityType="text_block"
+   entityId={block.id}
+   path={path}
+   value={block}
+   label={block.title_vi || block.title}
+  >
+   {content}
+  </EditableNodeWrapper>
  );
 }

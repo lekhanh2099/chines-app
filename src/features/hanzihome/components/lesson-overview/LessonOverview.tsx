@@ -21,6 +21,7 @@ import type {
  UserLearningState,
 } from "@/features/hanzihome/types";
 import { getVocabDisplayMeaning } from "@/features/hanzihome/utils/vocab-item";
+import { EditableNodeWrapper } from "@/features/hanzihome/editing";
 
 import { BookSectionContent } from "./BookSectionContent";
 import { sectionIcons } from "./section-icons";
@@ -87,33 +88,49 @@ function LessonStudyDashboard({
  onOpenModule: (module: HanziHomeModule) => void;
 }) {
  const stats = getLessonSourceStats({ lesson, sections });
+ const header = (
+  <Card padding="lg" className="rounded-xl">
+   <div className="grid gap-4">
+    <div className="flex flex-wrap items-start justify-between gap-3">
+     <div className="min-w-0">
+      <p className="text-xs font-black uppercase tracking-wide text-primary">
+       Bài học
+      </p>
+      <h2 className="text-2xl font-black leading-tight text-text-primary">
+       {stats.zhTitle || lesson.title}
+      </h2>
+      <p className="mt-1 text-sm font-bold text-text-muted">
+       {stats.volume}
+       {stats.pinyinTitle && ` · ${stats.pinyinTitle}`}
+      </p>
+     </div>
+
+     <div className="flex flex-wrap gap-2">
+      <OverviewStatPill label={`${lesson.vocab.length} từ`} />
+      <OverviewStatPill label={`${lesson.grammar.length} ngữ pháp`} />
+      <OverviewStatPill label={`${sections.length} phần`} />
+     </div>
+    </div>
+   </div>
+  </Card>
+ );
 
  return (
   <div className="grid gap-3 sm:gap-4">
-   <Card padding="lg" className="rounded-xl">
-    <div className="grid gap-4">
-     <div className="flex flex-wrap items-start justify-between gap-3">
-      <div className="min-w-0">
-       <p className="text-xs font-black uppercase tracking-wide text-primary">
-        Bài học
-       </p>
-       <h2 className="text-2xl font-black leading-tight text-text-primary">
-        {stats.zhTitle || lesson.title}
-       </h2>
-       <p className="mt-1 text-sm font-bold text-text-muted">
-        {stats.volume}
-        {stats.pinyinTitle && ` · ${stats.pinyinTitle}`}
-       </p>
-      </div>
-
-      <div className="flex flex-wrap gap-2">
-       <OverviewStatPill label={`${lesson.vocab.length} từ`} />
-       <OverviewStatPill label={`${lesson.grammar.length} ngữ pháp`} />
-       <OverviewStatPill label={`${sections.length} phần`} />
-      </div>
-     </div>
-    </div>
-   </Card>
+   {lesson.sourceLesson ? (
+    <EditableNodeWrapper
+     lessonId={lesson.id}
+     entityType="lesson"
+     entityId={lesson.sourceLesson.lesson.id}
+     path={["lesson"]}
+     value={lesson.sourceLesson.lesson}
+     label="Thông tin bài học"
+    >
+     {header}
+    </EditableNodeWrapper>
+   ) : (
+    header
+   )}
 
    {(lesson.vocab.length > 0 || lesson.grammar.length > 0) && (
     <div className="grid gap-3 lg:grid-cols-2">

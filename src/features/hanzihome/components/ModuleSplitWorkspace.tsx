@@ -27,6 +27,10 @@ import { LessonOverview } from "@/features/hanzihome/components/LessonOverview";
 import { LessonTextInlineEditor } from "@/features/hanzihome/components/LessonTextInlineEditor";
 import { ReviewWorkspace } from "@/features/hanzihome/components/ReviewWorkspace";
 import { VocabWorkspace } from "@/features/hanzihome/components/VocabWorkspace";
+import {
+  HanziHomeEditingTools,
+  useDraftPatchedLesson,
+} from "@/features/hanzihome/editing";
 import { DebugRawDataPanel } from "@/features/hanzihome/components/lesson-overview/StudySection";
 import type {
   HanziHomeLesson,
@@ -314,6 +318,7 @@ export function ModuleSplitWorkspace({
   onMarkGrammar,
   onAnswerReview,
 }: ModuleSplitWorkspaceProps) {
+  const patchedLesson = useDraftPatchedLesson(lesson);
   const [splitEnabled, setSplitEnabled] = useState(readSplitEnabled);
   const [layout, setLayout] = useState(readPaneLayout);
   const [draggedModule, setDraggedModule] = useState<DraggedModule | null>(
@@ -371,7 +376,7 @@ export function ModuleSplitWorkspace({
       case "overview":
         return (
           <LessonOverview
-            lesson={lesson}
+            lesson={patchedLesson}
             learningState={learningState}
             onOpenModule={(module) => {
               const studyModule = parseStudyModule(module);
@@ -383,13 +388,15 @@ export function ModuleSplitWorkspace({
           />
         );
       case "lessonText":
-        return <LessonTextInlineEditor lesson={lesson} compact={compact} />;
+        return (
+          <LessonTextInlineEditor lesson={patchedLesson} compact={compact} />
+        );
       case "notes":
-        return <LessonNoteAccessCard lesson={lesson} />;
+        return <LessonNoteAccessCard lesson={patchedLesson} />;
       case "vocab":
         return (
           <VocabWorkspace
-            lesson={lesson}
+            lesson={patchedLesson}
             state={learningState}
             compact={compact}
             onBookmark={onBookmarkVocab}
@@ -400,7 +407,7 @@ export function ModuleSplitWorkspace({
       case "grammar":
         return (
           <GrammarWorkspace
-            lesson={lesson}
+            lesson={patchedLesson}
             state={learningState}
             compact={compact}
             onBookmark={onBookmarkGrammar}
@@ -410,7 +417,7 @@ export function ModuleSplitWorkspace({
       case "review":
         return (
           <ReviewWorkspace
-            lesson={lesson}
+            lesson={patchedLesson}
             learningState={learningState}
             onAnswer={onAnswerReview}
             onToggleBookmark={(scope, id) =>
@@ -425,7 +432,7 @@ export function ModuleSplitWorkspace({
     viewMode === "debug" && activeModule !== "overview" ? (
       <DebugRawDataPanel
         title="Raw lesson JSON"
-        value={lesson.sourceLesson ?? lesson}
+        value={patchedLesson.sourceLesson ?? patchedLesson}
       />
     ) : null;
 
@@ -443,6 +450,7 @@ export function ModuleSplitWorkspace({
             />
           </div>
           <LessonViewModeToggle mode={viewMode} onChange={updateViewMode} />
+          <HanziHomeEditingTools lessonId={lesson.id} />
           <Button
             type="button"
             variant="outline"
@@ -472,6 +480,7 @@ export function ModuleSplitWorkspace({
           </p>
         </div>
         <LessonViewModeToggle mode={viewMode} onChange={updateViewMode} />
+        <HanziHomeEditingTools lessonId={lesson.id} />
         <Button
           type="button"
           variant="outline"

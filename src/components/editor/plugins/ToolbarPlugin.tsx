@@ -277,11 +277,6 @@ function FontSizeControl({
 }) {
  const [inputVal, setInputVal] = useState(() => fontSize.replace("px", ""));
 
- // Sync external changes
- useEffect(() => {
-  setInputVal(fontSize.replace("px", ""));
- }, [fontSize]);
-
  const applySize = (val: string) => {
   let num = parseInt(val, 10);
   if (isNaN(num)) num = 16;
@@ -844,6 +839,7 @@ export default function ToolbarPlugin() {
 
    {/* ── Font Size ── */}
    <FontSizeControl
+    key={fontSize}
     fontSize={fontSize}
     disabled={!isEditable}
     applyFontSize={(size) => applyStyle({ "font-size": size })}

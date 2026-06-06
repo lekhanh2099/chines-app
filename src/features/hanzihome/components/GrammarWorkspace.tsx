@@ -17,9 +17,9 @@ import type {
  UserLearningState,
 } from "@/features/hanzihome/types";
 import {
- useHanziHomeLessonGrammar,
- useHanziHomeLessonVocabulary,
-} from "@/features/hanzihome/hooks/useHanziHomeLessonResources";
+ EditableNodeWrapper,
+ type DraftPatchPath,
+} from "@/features/hanzihome/editing";
 import { LessonModuleFrame } from "./lesson-overview/LessonModuleFrame";
 
 type GrammarWorkspaceProps = {
@@ -147,10 +147,8 @@ export function GrammarWorkspace({
  onBookmark,
  onMarkStatus,
 }: GrammarWorkspaceProps) {
- const grammarResource = useHanziHomeLessonGrammar(lesson.id);
- const vocabularyResource = useHanziHomeLessonVocabulary(lesson.id);
- const grammarPoints = grammarResource?.items ?? lesson.grammar;
- const vocabItems = vocabularyResource?.items ?? lesson.vocab;
+ const grammarPoints = lesson.grammar;
+ const vocabItems = lesson.vocab;
  const [selectedPointId, setSelectedPointId] = useState<string | null>(
   grammarPoints[0]?.id || null,
  );
@@ -198,6 +196,12 @@ export function GrammarWorkspace({
 
  const progress = state.progress.grammar || {};
  const bookmarks = state.bookmarks.grammar || [];
+ const selectedPointPath = useMemo<DraftPatchPath | null>(() => {
+  if (!selectedPoint) return null;
+
+  const index = lesson.grammar.findIndex((point) => point.id === selectedPoint.id);
+  return index >= 0 ? ["grammar", index] : null;
+ }, [lesson.grammar, selectedPoint]);
 
  const relatedVocab = useMemo(() => {
   if (!selectedPoint) return [];
@@ -235,6 +239,25 @@ export function GrammarWorkspace({
   <AllGrammarPointReader points={grammarPoints} />
  ) : isReadingView && reading ? (
   <GrammarReadingReader reading={reading} />
+ ) : selectedPoint && selectedPointPath ? (
+  <EditableNodeWrapper
+   lessonId={lesson.id}
+   entityType="grammar_point"
+   entityId={selectedPoint.id}
+   path={selectedPointPath}
+   value={selectedPoint}
+   label={selectedPoint.cleanTitle}
+  >
+   <GrammarPointReader
+    point={selectedPoint}
+    status={progress[selectedPoint.id]?.status || "new"}
+    bookmarked={bookmarks.includes(selectedPoint.id)}
+    relatedVocab={relatedVocab}
+    lessonId={lesson.id}
+    onBookmark={() => onBookmark(selectedPoint.id)}
+    onMarkStatus={(status) => onMarkStatus(selectedPoint.id, status)}
+   />
+  </EditableNodeWrapper>
  ) : (
   <GrammarPointReader
    point={selectedPoint}

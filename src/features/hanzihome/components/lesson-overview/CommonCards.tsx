@@ -94,9 +94,15 @@ export function ExerciseQuestionCard({
 export function AnswerKeyList({
  itemId,
  values,
+ renderAnswer,
 }: {
  itemId: string;
  values: unknown[];
+ renderAnswer?: (
+  value: unknown,
+  index: number,
+  content: ReactNode,
+ ) => ReactNode;
 }) {
  type AnswerEntry = {
   id: string;
@@ -104,6 +110,8 @@ export function AnswerKeyList({
   value: string;
   pinyin?: string;
   note?: string;
+  sourceValue: unknown;
+  sourceIndex: number;
  };
 
  const answers = values
@@ -138,6 +146,8 @@ export function AnswerKeyList({
        value,
        pinyin: pinyin || undefined,
        note: note || undefined,
+       sourceValue: answerValue,
+       sourceIndex: index,
       }
     : null;
   })
@@ -148,11 +158,25 @@ export function AnswerKeyList({
  return (
   <AnswerReveal label={`Xem ${answers.length} đáp án`}>
    {answers.map((answer) => (
-    <p key={answer.id} className="text-sm font-bold text-accent-text">
-     {answer.label}: {answer.value}
-     {answer.pinyin && ` · ${answer.pinyin}`}
-     {answer.note && ` — ${answer.note}`}
-    </p>
+    <span key={answer.id}>
+     {renderAnswer
+      ? renderAnswer(
+         answer.sourceValue,
+         answer.sourceIndex,
+         <p className="text-sm font-bold text-accent-text">
+          {answer.label}: {answer.value}
+          {answer.pinyin && ` · ${answer.pinyin}`}
+          {answer.note && ` — ${answer.note}`}
+         </p>,
+        )
+      : (
+         <p className="text-sm font-bold text-accent-text">
+          {answer.label}: {answer.value}
+          {answer.pinyin && ` · ${answer.pinyin}`}
+          {answer.note && ` — ${answer.note}`}
+         </p>
+        )}
+    </span>
    ))}
   </AnswerReveal>
  );

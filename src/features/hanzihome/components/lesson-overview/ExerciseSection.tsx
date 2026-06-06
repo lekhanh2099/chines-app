@@ -1,5 +1,10 @@
 import type { Exercise } from "@/features/hanzihome/static-json/schemas/hanyuLesson.schema";
 import {
+ EditableNodeWrapper,
+ NestedEditControls,
+ type DraftPatchPath,
+} from "@/features/hanzihome/editing";
+import {
  AnswerKeyList,
  EmptySectionState,
  ExercisePill,
@@ -50,6 +55,67 @@ function objectText(value: unknown, keys: string[]) {
 function formatAnswer(value: unknown): string {
  if (typeof value === "boolean") return value ? "Đúng" : "Sai";
  return answerToString(value);
+}
+
+function firstArraySource(
+ record: Record<string, unknown>,
+ keys: string[],
+ predicate: (value: unknown) => boolean = () => true,
+) {
+ for (const key of keys) {
+  const values = arrayValue(record, key);
+  if (values.some(predicate)) return { key, values };
+ }
+
+ return null;
+}
+
+function EditableAnswerKeyList({
+ lessonId,
+ itemPath,
+ itemId,
+ sourcePath,
+ values,
+}: {
+ lessonId?: string;
+ itemPath?: DraftPatchPath;
+ itemId: string;
+ sourcePath: DraftPatchPath;
+ values: unknown[];
+}) {
+ return (
+  <AnswerKeyList
+   itemId={itemId}
+   values={values}
+   renderAnswer={
+    lessonId && itemPath
+     ? (value, index, content) => {
+        const answer = asRecord(value);
+        const entityId =
+         stringValue(answer, "id") ||
+         stringValue(answer, "question_id") ||
+         stringValue(answer, "blank_id") ||
+         `${itemId}-${sourcePath.join("-")}-${index}`;
+
+        return (
+         <EditableNodeWrapper
+          lessonId={lessonId}
+          entityType="exercise_answer_key"
+          entityId={entityId}
+          parentEntityType="exercise"
+          parentEntityId={itemId}
+          path={[...itemPath, ...sourcePath, index]}
+          value={value}
+          label={`Đáp án ${index + 1}`}
+         >
+          {content}
+         </EditableNodeWrapper>
+        );
+       }
+     : undefined
+   }
+  />
+ );
 }
 
 const CLOZE_MARKER_PATTERN =
@@ -1401,9 +1467,13 @@ function QuestionGroupCard({
 }
 
 function QuestionExerciseBody({
+ lessonId,
+ itemPath,
  item,
  displayMode,
 }: {
+ lessonId?: string;
+ itemPath?: DraftPatchPath;
  item: Exercise;
  displayMode: LessonDisplayMode;
 }) {
@@ -1436,6 +1506,12 @@ function QuestionExerciseBody({
    : arrayValue(record, "answer_key").length > 0
      ? arrayValue(record, "answer_key")
      : arrayValue(record, "answers");
+ const answerKeySource =
+  arrayValue(record, "blanks").length > 0
+   ? "blanks"
+   : arrayValue(record, "answer_key").length > 0
+     ? "answer_key"
+     : "answers";
 
  const clozeAnswers = getClozeAnswerValues(record);
  const clozeAnswerCount = clozeAnswers.filter(hasClozeAnswerValue).length;
@@ -1452,6 +1528,24 @@ function QuestionExerciseBody({
  const pattern = stringValue(record, "pattern");
  const model = asRecord(record.model);
  const passage = getPassageLikeValue(record, { includeText: true });
+ const directPassage = asRecord(record.passage);
+ const passageSegments =
+  arrayValue(directPassage, "segments").length > 0
+   ? {
+      path: ["passage", "segments"] as DraftPatchPath,
+      values: arrayValue(directPassage, "segments"),
+     }
+   : arrayValue(record, "segments").length > 0
+     ? {
+        path: ["segments"] as DraftPatchPath,
+        values: arrayValue(record, "segments"),
+       }
+     : null;
+ const clozeAnswerSource = firstArraySource(
+  record,
+  ["blanks", "answers", "answer_key", "cloze_answers", "suggested_answers"],
+  hasClozeAnswerValue,
+ );
  const rendering = asRecord(record.rendering);
  const renderer = stringValue(rendering, "renderer");
  const variant = stringValue(record, "variant");
@@ -1525,7 +1619,22 @@ function QuestionExerciseBody({
     displayMode={displayMode}
    />
 
-   <WordBank values={wordBank} />
+   {lessonId && itemPath && wordBank.length > 0 ? (
+    <EditableNodeWrapper
+     lessonId={lessonId}
+     entityType="exercise_word_bank"
+     entityId={`${item.id}-word-bank`}
+     parentEntityType="exercise"
+     parentEntityId={item.id}
+     path={[...itemPath, "word_bank"]}
+     value={wordBank}
+     label="Từ cho sẵn"
+    >
+     <WordBank values={wordBank} />
+    </EditableNodeWrapper>
+   ) : (
+    <WordBank values={wordBank} />
+   )}
 
    <InfoBlock title="Tình huống" value={scenarioText} />
    <InfoBlock title="Chức năng giao tiếp" value={functionText} />
@@ -1543,6 +1652,48 @@ function QuestionExerciseBody({
      answer={stringValue(model, "answer")}
     />
    )}
+
+   {lessonId && itemPath && passageSegments ? (
+    <NestedEditControls
+     lessonId={lessonId}
+     parentEntityType="exercise"
+     parentEntityId={item.id}
+     title="Cloze segments"
+     nodes={passageSegments.values.map((segment, index) => {
+      const segmentRecord = asRecord(segment);
+      return {
+       entityType: "exercise_cloze_segment",
+       entityId:
+        stringValue(segmentRecord, "id") || `${item.id}-segment-${index}`,
+       path: [...itemPath, ...passageSegments.path, index],
+       value: segment,
+       label: `Segment ${index + 1}`,
+      };
+     })}
+    />
+   ) : null}
+
+   {lessonId && itemPath && clozeAnswerSource ? (
+    <NestedEditControls
+     lessonId={lessonId}
+     parentEntityType="exercise"
+     parentEntityId={item.id}
+     title="Đáp án cloze"
+     nodes={clozeAnswerSource.values.map((answer, index) => {
+      const answerRecord = asRecord(answer);
+      return {
+       entityType: "exercise_cloze_answer",
+       entityId:
+        stringValue(answerRecord, "id") ||
+        stringValue(answerRecord, "blank_id") ||
+        `${item.id}-cloze-answer-${index}`,
+       path: [...itemPath, clozeAnswerSource.key, index],
+       value: answer,
+       label: `Đáp án ${index + 1}`,
+      };
+     })}
+    />
+   ) : null}
 
    <PassageCard
     itemId={item.id}
@@ -1622,29 +1773,62 @@ function QuestionExerciseBody({
 
    {questions.length > 0 && !isReadingCloze ? (
     <div className="grid gap-2">
-     {questions.map((questionValue, index) => (
-      <QuestionCard
-       key={stringValue(asRecord(questionValue), "id") || `${item.id}-${index}`}
-       itemId={item.id}
-       questionValue={questionValue}
-       index={index}
-       displayMode={displayMode}
-      />
-     ))}
+     {questions.map((questionValue, index) => {
+      const questionId =
+       stringValue(asRecord(questionValue), "id") || `${item.id}-${index}`;
+      const questionCard = (
+       <QuestionCard
+        itemId={item.id}
+        questionValue={questionValue}
+        index={index}
+        displayMode={displayMode}
+       />
+      );
+
+      return lessonId && itemPath ? (
+       <EditableNodeWrapper
+        key={questionId}
+        lessonId={lessonId}
+        entityType="exercise_question"
+        entityId={questionId}
+        parentEntityType="exercise"
+        parentEntityId={item.id}
+        path={[...itemPath, "questions", index]}
+        value={questionValue}
+        label={`Câu ${index + 1}`}
+       >
+        {questionCard}
+       </EditableNodeWrapper>
+      ) : (
+       <div key={questionId}>{questionCard}</div>
+      );
+     })}
     </div>
    ) : !hasStructuredPayload ? (
     <EmptySectionState reason={stringValue(record, "empty_reason_vi")} />
    ) : null}
 
-   {!isReadingCloze && <AnswerKeyList itemId={item.id} values={answerKey} />}
+   {!isReadingCloze && (
+    <EditableAnswerKeyList
+     lessonId={lessonId}
+     itemPath={itemPath}
+     itemId={item.id}
+     sourcePath={[answerKeySource]}
+     values={answerKey}
+    />
+   )}
   </div>
  );
 }
 
 function CompleteDialogueExerciseBody({
+ lessonId,
+ itemPath,
  item,
  displayMode,
 }: {
+ lessonId?: string;
+ itemPath?: DraftPatchPath;
  item: Exercise;
  displayMode: LessonDisplayMode;
 }) {
@@ -1670,9 +1854,8 @@ function CompleteDialogueExerciseBody({
       {lines.map((lineValue, lineIndex) => {
        const line = asRecord(lineValue);
 
-       return (
+       const lineCard = (
         <TextLineCard
-         key={stringValue(line, "id") || `${item.id}-line-${lineIndex}`}
          speaker={stringValue(line, "speaker")}
          zh={stringValue(line, "zh") || stringValue(line, "text")}
          pinyin={stringValue(line, "pinyin")}
@@ -1680,9 +1863,35 @@ function CompleteDialogueExerciseBody({
          displayMode={displayMode}
         />
        );
+       const lineId =
+        stringValue(line, "id") || `${item.id}-line-${lineIndex}`;
+
+       return lessonId && itemPath ? (
+        <EditableNodeWrapper
+         key={lineId}
+         lessonId={lessonId}
+         entityType="exercise_dialogue_line"
+         entityId={lineId}
+         parentEntityType="exercise"
+         parentEntityId={item.id}
+         path={[...itemPath, "dialogues", index, "lines", lineIndex]}
+         value={lineValue}
+         label={`Dòng hội thoại ${lineIndex + 1}`}
+        >
+         {lineCard}
+        </EditableNodeWrapper>
+       ) : (
+        <div key={lineId}>{lineCard}</div>
+       );
       })}
 
-      <AnswerKeyList itemId={`${item.id}-dialogue-${index}`} values={answers} />
+      <EditableAnswerKeyList
+       lessonId={lessonId}
+       itemPath={itemPath}
+       itemId={`${item.id}-dialogue-${index}`}
+       sourcePath={["dialogues", index, "sample_answers"]}
+       values={answers}
+      />
      </div>
     );
    })}
@@ -1695,15 +1904,25 @@ function CompleteDialogueExerciseBody({
     />
    )}
 
-   <AnswerKeyList itemId={item.id} values={arrayValue(record, "answer_key")} />
+   <EditableAnswerKeyList
+    lessonId={lessonId}
+    itemPath={itemPath}
+    itemId={item.id}
+    sourcePath={["answer_key"]}
+    values={arrayValue(record, "answer_key")}
+   />
   </div>
  );
 }
 
 function CommunicationExerciseBody({
+ lessonId,
+ itemPath,
  item,
  displayMode,
 }: {
+ lessonId?: string;
+ itemPath?: DraftPatchPath;
  item: Exercise;
  displayMode: LessonDisplayMode;
 }) {
@@ -1722,17 +1941,37 @@ function CommunicationExerciseBody({
      {dialogue.map((lineValue, index) => {
       const line = asRecord(lineValue);
 
-      return (
+      const lineCard = (
        <TextLineCard
-        key={
-         stringValue(line, "id") || `${stringValue(line, "speaker")}-${index}`
-        }
         speaker={stringValue(line, "speaker")}
         zh={stringValue(line, "zh") || stringValue(line, "text")}
         pinyin={stringValue(line, "pinyin")}
         vi={stringValue(line, "vi")}
         displayMode={displayMode}
        />
+      );
+      const lineId =
+       stringValue(line, "id") || `${stringValue(line, "speaker")}-${index}`;
+      const linePath = Array.isArray(dialogueValue)
+       ? [...(itemPath ?? []), "dialogue", index]
+       : [...(itemPath ?? []), "dialogue", "lines", index];
+
+      return lessonId && itemPath ? (
+       <EditableNodeWrapper
+        key={lineId}
+        lessonId={lessonId}
+        entityType="exercise_dialogue_line"
+        entityId={lineId}
+        parentEntityType="exercise"
+        parentEntityId={item.id}
+        path={linePath}
+        value={lineValue}
+        label={`Dòng hội thoại ${index + 1}`}
+       >
+        {lineCard}
+       </EditableNodeWrapper>
+      ) : (
+       <div key={lineId}>{lineCard}</div>
       );
      })}
     </div>
@@ -1763,7 +2002,12 @@ function CommunicationExerciseBody({
    })}
 
    {dialogue.length === 0 && questions.length > 0 && (
-    <QuestionExerciseBody item={item} displayMode={displayMode} />
+    <QuestionExerciseBody
+     lessonId={lessonId}
+     itemPath={itemPath}
+     item={item}
+     displayMode={displayMode}
+    />
    )}
   </div>
  );
@@ -1783,9 +2027,13 @@ function RawDataDetails({ value }: { value: unknown }) {
 }
 
 function ExerciseBody({
+ lessonId,
+ itemPath,
  item,
  displayMode,
 }: {
+ lessonId?: string;
+ itemPath?: DraftPatchPath;
  item: Exercise;
  displayMode: LessonDisplayMode;
 }) {
@@ -1801,21 +2049,48 @@ function ExerciseBody({
  }
 
  if (item.type === "complete_dialogue") {
-  return <CompleteDialogueExerciseBody item={item} displayMode={displayMode} />;
+  return (
+   <CompleteDialogueExerciseBody
+    lessonId={lessonId}
+    itemPath={itemPath}
+    item={item}
+    displayMode={displayMode}
+   />
+  );
  }
 
  if (item.type === "communication_dialogue") {
-  return <CommunicationExerciseBody item={item} displayMode={displayMode} />;
+  return (
+   <CommunicationExerciseBody
+    lessonId={lessonId}
+    itemPath={itemPath}
+    item={item}
+    displayMode={displayMode}
+   />
+  );
  }
 
- return <QuestionExerciseBody item={item} displayMode={displayMode} />;
+ return (
+  <QuestionExerciseBody
+   lessonId={lessonId}
+   itemPath={itemPath}
+   item={item}
+   displayMode={displayMode}
+  />
+ );
 }
 
 export function ExerciseCard({
+ lessonId,
+ parentSectionId,
+ path,
  item,
  displayMode,
  debugMode = false,
 }: {
+ lessonId?: string;
+ parentSectionId?: string;
+ path?: DraftPatchPath;
  item: Exercise;
  displayMode: LessonDisplayMode;
  debugMode?: boolean;
@@ -1825,7 +2100,7 @@ export function ExerciseCard({
  const instructionText =
   stringValue(instruction, "vi") || stringValue(instruction, "zh");
 
- return (
+ const content = (
   <article className="grid gap-3 rounded-xl border border-border-default bg-bg-primary p-4">
    <div>
     <h4 className="font-black text-text-primary">
@@ -1838,9 +2113,31 @@ export function ExerciseCard({
     )}
    </div>
 
-   <ExerciseBody item={item} displayMode={displayMode} />
+   <ExerciseBody
+    lessonId={lessonId}
+    itemPath={path}
+    item={item}
+    displayMode={displayMode}
+   />
 
    {debugMode && <RawDataDetails value={item} />}
   </article>
+ );
+
+ if (!lessonId || !path) return content;
+
+ return (
+  <EditableNodeWrapper
+   lessonId={lessonId}
+   entityType="exercise"
+   entityId={item.id}
+   parentEntityType="section"
+   parentEntityId={parentSectionId}
+   path={path}
+   value={item}
+   label={item.title_vi || item.title}
+  >
+   {content}
+  </EditableNodeWrapper>
  );
 }

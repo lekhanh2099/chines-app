@@ -55,6 +55,17 @@ export function useTTS() {
   setState((prev) => ({ ...prev, isSpeaking: true, isLoading: false }));
  }, []);
 
+ const playBlob = useCallback((blob: Blob, onEnd: () => void) => {
+  const url = URL.createObjectURL(blob);
+  objectUrlRef.current = url;
+  const audio = new Audio(url);
+  audioRef.current = audio;
+  audio.onended = onEnd;
+  audio.onerror = onEnd;
+  setState({ isSpeaking: true, isLoading: false, error: null });
+  void audio.play();
+ }, []);
+
  const speak = useCallback(
   async (text: string, options: TTSOptions = {}) => {
    if (!text.trim()) return;
@@ -103,7 +114,7 @@ export function useTTS() {
     fallbackSpeak(text, rate);
    }
   },
-  [cleanup, fallbackSpeak],
+  [cleanup, fallbackSpeak, playBlob],
  );
 
  const stop = useCallback(() => {
@@ -111,17 +122,6 @@ export function useTTS() {
   window.speechSynthesis.cancel();
   setState({ isSpeaking: false, isLoading: false, error: null });
  }, [cleanup]);
-
- function playBlob(blob: Blob, onEnd: () => void) {
-  const url = URL.createObjectURL(blob);
-  objectUrlRef.current = url;
-  const audio = new Audio(url);
-  audioRef.current = audio;
-  audio.onended = onEnd;
-  audio.onerror = onEnd;
-  setState({ isSpeaking: true, isLoading: false, error: null });
-  void audio.play();
- }
 
  return {
   speak,
