@@ -1695,12 +1695,36 @@
                 "type": "minimal_pair_group",
                 "title": "辨音辨调",
                 "items": [
-                  "búguò / bù kè",
-                  "yìbān / yíbàn",
-                  "yóu yǒng / yǒu yòng",
-                  "cónglái / chónglái",
-                  "gōngkè / gōngkē",
-                  "gǎnxiè / gǎixiě"
+                  {
+                    "id": "0e5801e7-b89b-4cc6-8bd9-9e1fbbd30b31_pair_001",
+                    "left": "búguò",
+                    "right": "bù kè"
+                  },
+                  {
+                    "id": "0e5801e7-b89b-4cc6-8bd9-9e1fbbd30b31_pair_002",
+                    "left": "yìbān",
+                    "right": "yíbàn"
+                  },
+                  {
+                    "id": "0e5801e7-b89b-4cc6-8bd9-9e1fbbd30b31_pair_003",
+                    "left": "yóu yǒng",
+                    "right": "yǒu yòng"
+                  },
+                  {
+                    "id": "0e5801e7-b89b-4cc6-8bd9-9e1fbbd30b31_pair_004",
+                    "left": "cónglái",
+                    "right": "chónglái"
+                  },
+                  {
+                    "id": "0e5801e7-b89b-4cc6-8bd9-9e1fbbd30b31_pair_005",
+                    "left": "gōngkè",
+                    "right": "gōngkē"
+                  },
+                  {
+                    "id": "0e5801e7-b89b-4cc6-8bd9-9e1fbbd30b31_pair_006",
+                    "left": "gǎnxiè",
+                    "right": "gǎixiě"
+                  }
                 ]
               },
               {

@@ -66,6 +66,7 @@ export function HanziHomeWorkspace() {
  const {
   lessons: courseLessonSummaries,
   isLoading: isCourseLessonsLoading,
+  isError: isCourseLessonsError,
  } = useHanziHomeCourseLessons(selectedCourseId);
 
  const lessons = useMemo(
@@ -126,7 +127,8 @@ export function HanziHomeWorkspace() {
   activeModule === "radicals" ? "overview" : activeModule;
 
  const activeLessonDetail = useHanziHomeLesson(lessonId);
- const lesson = activeModule === "radicals" ? null : activeLessonDetail;
+ const lesson =
+  activeModule === "radicals" ? null : activeLessonDetail.lesson;
  const selectedCourse = courseCatalog.courses.find(
   (course) => course.id === selectedCourseId,
  );
@@ -182,40 +184,38 @@ export function HanziHomeWorkspace() {
   }
  };
 
+ const isLessonWorkspaceLoading =
+  activeModule !== "radicals" &&
+  (isCourseLessonsLoading || activeLessonDetail.isLoading);
+
+ const hasLessonWorkspaceError =
+  activeModule !== "radicals" &&
+  (isCourseLessonsError ||
+   activeLessonDetail.isError ||
+   (!isCourseLessonsLoading && !selectedCourse));
+
+ if (isLessonWorkspaceLoading) {
+  return <HanziHomeWorkspaceLoading />;
+ }
+
+ if (hasLessonWorkspaceError) {
+  return (
+   <HanziHomeWorkspaceMessage
+    eyebrow={selectedCourse?.title || "HanziHome"}
+    title="Không tải được bài học"
+    description="Dữ liệu bài học hiện không khả dụng. Thử tải lại trang hoặc quay về thư viện."
+   />
+  );
+ }
+
  if (!lesson && activeModule !== "radicals") {
   return (
-   <main className="hanzihome-static-page">
-    <div className="flex w-full max-w-full flex-col gap-2.5">
-     <Card padding="lg" className="rounded-xl">
-      <div className="grid gap-2.5">
-       <div>
-        <p className="text-xs font-black uppercase tracking-wide text-text-muted">
-         {selectedCourse?.title || "HanziHome"}
-        </p>
-
-        <h1 className="text-2xl font-black text-text-primary">
-         {isCourseLessonsLoading ? "Đang tải bài học" : "Course này chưa có bài học"}
-        </h1>
-
-        <p className="text-sm font-semibold text-text-muted">
-         {isCourseLessonsLoading
-          ? "HanziHome đang lấy lesson detail từ API đọc-only."
-          : "Quay về thư viện học liệu để tạo bài mới hoặc chọn course khác."}
-        </p>
-       </div>
-
-       {!isCourseLessonsLoading && (
-        <Link
-         href="/"
-         className="w-fit rounded-xl bg-bg-inverse px-4 py-2 text-sm font-black text-text-inverse"
-        >
-         Về thư viện học liệu
-        </Link>
-       )}
-      </div>
-     </Card>
-    </div>
-   </main>
+   <HanziHomeWorkspaceMessage
+    eyebrow={selectedCourse?.title || "HanziHome"}
+    title="Course này chưa có bài học"
+    description="Quay về thư viện học liệu để chọn course khác."
+    showLibraryLink
+   />
   );
  }
 
@@ -248,6 +248,84 @@ export function HanziHomeWorkspace() {
       />
      )
     )}
+   </div>
+  </main>
+ );
+}
+
+function HanziHomeWorkspaceLoading() {
+ return (
+  <main className="hanzihome-static-page" aria-busy="true" aria-live="polite">
+   <div className="grid w-full max-w-full animate-pulse gap-2.5">
+    <div className="h-11 rounded-xl border border-border-default bg-bg-card" />
+
+    <Card padding="md" className="grid gap-3 rounded-xl">
+     <div className="flex items-center justify-between gap-3">
+      <div className="grid flex-1 gap-2">
+       <div className="h-3 w-24 rounded-full bg-bg-subtle" />
+       <div className="h-6 w-56 max-w-full rounded-lg bg-bg-subtle" />
+      </div>
+      <div className="h-8 w-24 rounded-lg bg-bg-subtle" />
+     </div>
+
+     <div className="grid gap-2 lg:grid-cols-[15rem_minmax(0,1fr)]">
+      <div className="grid content-start gap-2">
+       {Array.from({ length: 5 }, (_, index) => (
+        <div
+         key={index}
+         className="h-16 rounded-lg border border-border-default bg-bg-subtle"
+        />
+       ))}
+      </div>
+
+      <div className="grid min-h-96 content-start gap-3 rounded-xl border border-border-default bg-bg-subtle p-4">
+       <div className="h-6 w-40 rounded-lg bg-bg-card" />
+       <div className="h-28 rounded-xl bg-bg-card" />
+       <div className="h-28 rounded-xl bg-bg-card" />
+      </div>
+     </div>
+    </Card>
+
+    <span className="sr-only">Đang tải bài học</span>
+   </div>
+  </main>
+ );
+}
+
+function HanziHomeWorkspaceMessage({
+ eyebrow,
+ title,
+ description,
+ showLibraryLink = false,
+}: {
+ eyebrow: string;
+ title: string;
+ description: string;
+ showLibraryLink?: boolean;
+}) {
+ return (
+  <main className="hanzihome-static-page">
+   <div className="flex w-full max-w-full flex-col gap-2.5">
+    <Card padding="lg" className="rounded-xl">
+     <div className="grid gap-2.5">
+      <div>
+       <p className="text-xs font-black uppercase tracking-wide text-text-muted">
+        {eyebrow}
+       </p>
+       <h1 className="text-2xl font-black text-text-primary">{title}</h1>
+       <p className="text-sm font-semibold text-text-muted">{description}</p>
+      </div>
+
+      {showLibraryLink ? (
+       <Link
+        href="/"
+        className="w-fit rounded-xl bg-bg-inverse px-4 py-2 text-sm font-black text-text-inverse"
+       >
+        Về thư viện học liệu
+       </Link>
+      ) : null}
+     </div>
+    </Card>
    </div>
   </main>
  );

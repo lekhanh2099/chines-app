@@ -2514,14 +2514,46 @@
                 "type": "minimal_pair_group",
                 "title": "辨音辨调",
                 "items": [
-                  "shēngyīn / shēnying",
-                  "gàosu / gāosù",
-                  "guójì / guójí",
-                  "guǎngbō / guǎngbó",
-                  "hézī / hézi",
-                  "chénglì / chéngyì",
-                  "jìxù / jìxū",
-                  "tóngyì / tǒngyī"
+                  {
+                    "id": "0e5801e7-b89b-4cc6-8bd9-9e1fbbd30b31_pair_001",
+                    "left": "shēngyīn",
+                    "right": "shēnying"
+                  },
+                  {
+                    "id": "0e5801e7-b89b-4cc6-8bd9-9e1fbbd30b31_pair_002",
+                    "left": "gàosu",
+                    "right": "gāosù"
+                  },
+                  {
+                    "id": "0e5801e7-b89b-4cc6-8bd9-9e1fbbd30b31_pair_003",
+                    "left": "guójì",
+                    "right": "guójí"
+                  },
+                  {
+                    "id": "0e5801e7-b89b-4cc6-8bd9-9e1fbbd30b31_pair_004",
+                    "left": "guǎngbō",
+                    "right": "guǎngbó"
+                  },
+                  {
+                    "id": "0e5801e7-b89b-4cc6-8bd9-9e1fbbd30b31_pair_005",
+                    "left": "hézī",
+                    "right": "hézi"
+                  },
+                  {
+                    "id": "0e5801e7-b89b-4cc6-8bd9-9e1fbbd30b31_pair_006",
+                    "left": "chénglì",
+                    "right": "chéngyì"
+                  },
+                  {
+                    "id": "0e5801e7-b89b-4cc6-8bd9-9e1fbbd30b31_pair_007",
+                    "left": "jìxù",
+                    "right": "jìxū"
+                  },
+                  {
+                    "id": "0e5801e7-b89b-4cc6-8bd9-9e1fbbd30b31_pair_008",
+                    "left": "tóngyì",
+                    "right": "tǒngyī"
+                  }
                 ],
                 "source_origin": "textbook",
                 "check_needed": false

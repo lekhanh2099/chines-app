@@ -10,25 +10,55 @@ export function VocabDetailHeader({
  word,
  bookmarked,
  lessonId,
+ compact = false,
  onBookmark,
 }: {
  word: HanziHomeVocabItem;
  bookmarked: boolean;
  lessonId?: string;
+ compact?: boolean;
  onBookmark: () => void;
 }) {
  return (
-  <div className="grid grid-cols-1 items-start gap-4 xl:grid-cols-[minmax(0,1fr)_minmax(0,46rem)]">
+  <div
+   className={[
+    "grid grid-cols-1 items-start gap-4",
+    compact ? "" : "xl:grid-cols-[minmax(0,1fr)_minmax(0,46rem)]",
+   ].join(" ")}
+  >
    <div className="min-w-0">
-    <div className="grid gap-3 lg:grid-cols-[minmax(0,1fr)_minmax(10rem,14rem)] lg:items-end">
+    <div
+     className={[
+      "grid gap-3",
+      compact
+       ? ""
+       : "lg:grid-cols-[minmax(0,1fr)_minmax(10rem,14rem)] lg:items-end",
+     ].join(" ")}
+    >
      <div className="min-w-0">
-      <h2 className="text-6xl leading-none tracking-normal text-text-primary">
-       <PopularFontPreview word={word.hanzi} />
+      <h2
+       className={[
+        "leading-none tracking-normal text-text-primary",
+        compact ? "text-5xl" : "text-6xl",
+       ].join(" ")}
+       lang="zh-CN"
+      >
+       {compact ? word.hanzi : <PopularFontPreview word={word.hanzi} />}
       </h2>
-      <p className="text-xl font-black text-accent-text">
-       {word.pinyin} -- [{word.meaning.hanviet}]
+      <p
+       className={[
+        "font-black text-accent-text",
+        compact ? "text-lg" : "text-xl",
+       ].join(" ")}
+      >
+       {word.pinyin}
+       {word.meaning.hanviet ? ` · ${word.meaning.hanviet}` : ""}
       </p>
-      [{word.meaning.meaning_vi}]
+      {word.meaning.meaning_vi && (
+       <p className="mt-1 text-base font-semibold leading-relaxed text-text-primary">
+        {word.meaning.meaning_vi}
+       </p>
+      )}
      </div>
     </div>
 
@@ -63,7 +93,7 @@ export function VocabDetailHeader({
    </div>
 
    <div className="min-w-0 overflow-x-auto">
-    <div className="w-max min-w-full">
+    <div className={compact ? "min-w-0" : "w-max min-w-full"}>
      <div className="grid gap-2">
       {word.meaning.short_definition_vi && (
        <p className="text-lg font-black text-text-primary">

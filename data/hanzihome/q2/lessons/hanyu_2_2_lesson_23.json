@@ -3048,14 +3048,46 @@
                 "type": "minimal_pair_group",
                 "title": "辨音辨调",
                 "items": [
-                  "hánjià — hángjia",
-                  "hǎochī — hǎo shì",
-                  "wàidì — dàitì",
-                  "shānshuǐ — sān suì",
-                  "shǎoshù — shóushù",
-                  "mínzú — mínzhǔ",
-                  "fēngsú — fēng sū",
-                  "lùxiàn — lùxiàng"
+                  {
+                    "id": "0e5801e7-b89b-4cc6-8bd9-9e1fbbd30b31_pair_001",
+                    "left": "hánjià",
+                    "right": "hángjia"
+                  },
+                  {
+                    "id": "0e5801e7-b89b-4cc6-8bd9-9e1fbbd30b31_pair_002",
+                    "left": "hǎochī",
+                    "right": "hǎo shì"
+                  },
+                  {
+                    "id": "0e5801e7-b89b-4cc6-8bd9-9e1fbbd30b31_pair_003",
+                    "left": "wàidì",
+                    "right": "dàitì"
+                  },
+                  {
+                    "id": "0e5801e7-b89b-4cc6-8bd9-9e1fbbd30b31_pair_004",
+                    "left": "shānshuǐ",
+                    "right": "sān suì"
+                  },
+                  {
+                    "id": "0e5801e7-b89b-4cc6-8bd9-9e1fbbd30b31_pair_005",
+                    "left": "shǎoshù",
+                    "right": "shóushù"
+                  },
+                  {
+                    "id": "0e5801e7-b89b-4cc6-8bd9-9e1fbbd30b31_pair_006",
+                    "left": "mínzú",
+                    "right": "mínzhǔ"
+                  },
+                  {
+                    "id": "0e5801e7-b89b-4cc6-8bd9-9e1fbbd30b31_pair_007",
+                    "left": "fēngsú",
+                    "right": "fēng sū"
+                  },
+                  {
+                    "id": "0e5801e7-b89b-4cc6-8bd9-9e1fbbd30b31_pair_008",
+                    "left": "lùxiàn",
+                    "right": "lùxiàng"
+                  }
                 ],
                 "source_origin": "textbook",
                 "check_needed": false

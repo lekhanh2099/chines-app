@@ -1848,14 +1848,46 @@
         "type": "minimal_pair_group",
         "title": "辨音辨调",
         "items": [
-         "dōngxi — dōngxī",
-         "shùnbiàn — suíbiàn",
-         "máfan — mái fàn",
-         "xīnkǔ — xìngfú",
-         "zhùyì — zhǔyì",
-         "wèn hǎo — wènhào",
-         "yāoqiú — yāoqǐng",
-         "qīngchu — qīngchǔ"
+         {
+          "id": "phonetics_l09_pair_001",
+          "left": "dōngxi",
+          "right": "dōngxī"
+         },
+         {
+          "id": "phonetics_l09_pair_002",
+          "left": "shùnbiàn",
+          "right": "suíbiàn"
+         },
+         {
+          "id": "phonetics_l09_pair_003",
+          "left": "máfan",
+          "right": "mái fàn"
+         },
+         {
+          "id": "phonetics_l09_pair_004",
+          "left": "xīnkǔ",
+          "right": "xìngfú"
+         },
+         {
+          "id": "phonetics_l09_pair_005",
+          "left": "zhùyì",
+          "right": "zhǔyì"
+         },
+         {
+          "id": "phonetics_l09_pair_006",
+          "left": "wèn hǎo",
+          "right": "wènhào"
+         },
+         {
+          "id": "phonetics_l09_pair_007",
+          "left": "yāoqiú",
+          "right": "yāoqǐng"
+         },
+         {
+          "id": "phonetics_l09_pair_008",
+          "left": "qīngchu",
+          "right": "qīngchǔ"
+         }
         ]
        },
        {

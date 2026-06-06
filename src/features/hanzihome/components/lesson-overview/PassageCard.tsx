@@ -3,7 +3,13 @@ import type { ReactNode } from "react";
 import { TextLineCard } from "./TextLineCard";
 import { getHanziTypographyStyle } from "./hanzi-typography";
 import type { LessonDisplayMode } from "./types";
-import { answerToString, arrayValue, asRecord, stringValue } from "./utils";
+import {
+ answerToString,
+ arrayValue,
+ asRecord,
+ hasClozeAnswerValue,
+ stringValue,
+} from "./utils";
 
 type PassageLine = {
  id: string;
@@ -162,11 +168,18 @@ function firstNonEmptyAnswerSource(
 ) {
  if (answers.length > 0) return answers;
 
- const sourceKeys = ["blanks", "answers", "answer_key", "cloze_answers"];
+ const sourceKeys = [
+  "blanks",
+  "answers",
+  "answer_key",
+  "cloze_answers",
+  "suggested_answers",
+  "questions",
+ ];
 
  for (const key of sourceKeys) {
   const values = arrayValue(passageRecord, key);
-  if (values.length > 0) return values;
+  if (values.some(hasClozeAnswerValue)) return values;
  }
 
  return [];
@@ -473,11 +486,11 @@ function AnswerList({ answers }: { answers: ClozeAnswer[] }) {
  if (answers.length === 0) return null;
 
  return (
-  <div className="grid gap-2 rounded-xl border border-accent/30 bg-accent-subtle p-3">
-   <p className="text-xs font-black uppercase tracking-wide text-accent-text">
-    Đáp án
-   </p>
-   <div className="grid gap-1">
+  <details className="rounded-lg border border-accent/25 bg-bg-primary">
+   <summary className="cursor-pointer list-none px-3 py-2 text-xs font-black uppercase tracking-wide text-accent-text marker:hidden">
+    Xem đáp án ({answers.length})
+   </summary>
+   <div className="grid gap-1 border-t border-accent/20 bg-accent-subtle/55 px-3 py-2">
     {answers.map((answer) => (
      <p key={answer.key} className="text-sm font-bold text-accent-text">
       {answer.label}: {answer.answer}
@@ -486,27 +499,7 @@ function AnswerList({ answers }: { answers: ClozeAnswer[] }) {
      </p>
     ))}
    </div>
-  </div>
- );
-}
-
-function RendererMeta({ value }: { value: unknown }) {
- const rendering = asRecord(value);
- const renderer = stringValue(rendering, "renderer");
- const inputMode = stringValue(rendering, "input_mode");
-
- if (!renderer && !inputMode) return null;
-
- return (
-  <div className="rounded-lg border border-border-default bg-bg-primary px-3 py-2">
-   <p className="text-xs font-black uppercase tracking-wide text-text-muted">
-    Renderer
-   </p>
-   <p className="mt-1 text-sm font-bold text-text-secondary">
-    {renderer || "unknown"}
-    {inputMode && ` · ${inputMode}`}
-   </p>
-  </div>
+  </details>
  );
 }
 
@@ -649,8 +642,7 @@ export function PassageCard({
   Boolean(clozeText) ||
   supplementaryVocabulary.length > 0 ||
   wordBank.length > 0 ||
-  answerList.length > 0 ||
-  Boolean(rendererId);
+  answerList.length > 0;
 
  if (!hasMainPayload) return null;
 
@@ -666,8 +658,6 @@ export function PassageCard({
      )}
     </div>
    )}
-
-   <RendererMeta value={rendering} />
 
    <SupplementaryVocabulary
     values={supplementaryVocabulary}

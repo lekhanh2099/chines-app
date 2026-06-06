@@ -2555,12 +2555,36 @@
                 "type": "minimal_pair_group",
                 "title": "辨音辨调",
                 "items": [
-                  "xiāngxìn / xiānjìn",
-                  "wèntí / wényì",
-                  "shènglì / shēngyì",
-                  "jiūzhèng / qiúzhèng",
-                  "shìshàng / shíshàng",
-                  "zìxìn / cíxíng"
+                  {
+                    "id": "0e5801e7-b89b-4cc6-8bd9-9e1fbbd30b31_pair_001",
+                    "left": "xiāngxìn",
+                    "right": "xiānjìn"
+                  },
+                  {
+                    "id": "0e5801e7-b89b-4cc6-8bd9-9e1fbbd30b31_pair_002",
+                    "left": "wèntí",
+                    "right": "wényì"
+                  },
+                  {
+                    "id": "0e5801e7-b89b-4cc6-8bd9-9e1fbbd30b31_pair_003",
+                    "left": "shènglì",
+                    "right": "shēngyì"
+                  },
+                  {
+                    "id": "0e5801e7-b89b-4cc6-8bd9-9e1fbbd30b31_pair_004",
+                    "left": "jiūzhèng",
+                    "right": "qiúzhèng"
+                  },
+                  {
+                    "id": "0e5801e7-b89b-4cc6-8bd9-9e1fbbd30b31_pair_005",
+                    "left": "shìshàng",
+                    "right": "shíshàng"
+                  },
+                  {
+                    "id": "0e5801e7-b89b-4cc6-8bd9-9e1fbbd30b31_pair_006",
+                    "left": "zìxìn",
+                    "right": "cíxíng"
+                  }
                 ]
               },
               {

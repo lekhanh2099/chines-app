@@ -1971,14 +1971,46 @@
         "type": "minimal_pair_group",
         "title": "辨音辨调",
         "items": [
-         "zhǔyào / zhòngyào",
-         "chídào / zhīdào",
-         "bǎozhèng / bǎozhēn",
-         "yuányīn / yuányīng",
-         "yǎnjingr / yǎnjing",
-         "shìgù / shīfu",
-         "yōngjǐ / yīngjí",
-         "dìtiě / tǐtiē"
+         {
+          "id": "0e5801e7-b89b-4cc6-8bd9-9e1fbbd30b31_pair_001",
+          "left": "zhǔyào",
+          "right": "zhòngyào"
+         },
+         {
+          "id": "0e5801e7-b89b-4cc6-8bd9-9e1fbbd30b31_pair_002",
+          "left": "chídào",
+          "right": "zhīdào"
+         },
+         {
+          "id": "0e5801e7-b89b-4cc6-8bd9-9e1fbbd30b31_pair_003",
+          "left": "bǎozhèng",
+          "right": "bǎozhēn"
+         },
+         {
+          "id": "0e5801e7-b89b-4cc6-8bd9-9e1fbbd30b31_pair_004",
+          "left": "yuányīn",
+          "right": "yuányīng"
+         },
+         {
+          "id": "0e5801e7-b89b-4cc6-8bd9-9e1fbbd30b31_pair_005",
+          "left": "yǎnjingr",
+          "right": "yǎnjing"
+         },
+         {
+          "id": "0e5801e7-b89b-4cc6-8bd9-9e1fbbd30b31_pair_006",
+          "left": "shìgù",
+          "right": "shīfu"
+         },
+         {
+          "id": "0e5801e7-b89b-4cc6-8bd9-9e1fbbd30b31_pair_007",
+          "left": "yōngjǐ",
+          "right": "yīngjí"
+         },
+         {
+          "id": "0e5801e7-b89b-4cc6-8bd9-9e1fbbd30b31_pair_008",
+          "left": "dìtiě",
+          "right": "tǐtiē"
+         }
         ],
         "source_origin": "textbook",
         "check_needed": false

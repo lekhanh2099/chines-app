@@ -1,6 +1,6 @@
 "use client";
 
-import { type ReactNode, useMemo, useState } from "react";
+import { type DragEvent, type ReactNode, useMemo, useState } from "react";
 import {
   BookOpen,
   FileText,
@@ -12,6 +12,11 @@ import {
 } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
+import {
+  ResizableHandle,
+  ResizablePanel,
+  ResizablePanelGroup,
+} from "@/components/ui/resizable";
 import {
   SegmentedControl,
   type SegmentedControlItem,
@@ -34,6 +39,10 @@ import type {
 type StudyModule = Exclude<HanziHomeModule, "radicals">;
 type PaneId = "left" | "right";
 type LessonViewMode = "study" | "debug";
+type DraggedModule = {
+  module: StudyModule;
+  sourcePane: PaneId;
+};
 
 type PaneLayout = {
   left: StudyModule[];
@@ -66,6 +75,7 @@ type ModuleSplitWorkspaceProps = {
 const splitEnabledKey = "hanzihome:module-split-enabled:v1";
 const paneLayoutKey = "hanzihome:module-pane-layout:v1";
 const lessonViewModeKey = "hanzihome:lesson-view-mode:v1";
+const splitPaneSizeKey = "hanzihome:module-split-size:v1";
 
 const studyModules = [
   "overview",
@@ -207,6 +217,20 @@ function writeLessonViewMode(mode: LessonViewMode) {
   window.localStorage.setItem(lessonViewModeKey, mode);
 }
 
+function readSplitPaneSize() {
+  if (typeof window === "undefined") return 48;
+
+  const stored = Number(window.localStorage.getItem(splitPaneSizeKey));
+
+  return Number.isFinite(stored) && stored >= 38 && stored <= 62 ? stored : 48;
+}
+
+function writeSplitPaneSize(size: number) {
+  if (typeof window === "undefined") return;
+
+  window.localStorage.setItem(splitPaneSizeKey, String(size));
+}
+
 function setPaneActive(
   layout: PaneLayout,
   paneId: PaneId,
@@ -217,6 +241,66 @@ function setPaneActive(
     activeLeft: paneId === "left" ? module : layout.activeLeft,
     activeRight: paneId === "right" ? module : layout.activeRight,
   });
+}
+
+function getPaneItems(layout: PaneLayout, paneId: PaneId) {
+  return paneId === "left" ? layout.left : layout.right;
+}
+
+function moveModuleInLayout({
+  layout,
+  module,
+  targetPane,
+  targetIndex,
+}: {
+  layout: PaneLayout;
+  module: StudyModule;
+  targetPane: PaneId;
+  targetIndex: number;
+}) {
+  const sourcePane = layout.left.includes(module) ? "left" : "right";
+  const sourceItems = getPaneItems(layout, sourcePane);
+
+  if (!sourceItems.includes(module)) {
+    return layout;
+  }
+
+  if (sourcePane !== targetPane && sourceItems.length <= 1) {
+    return layout;
+  }
+
+  const nextLeft = layout.left.filter((item) => item !== module);
+  const nextRight = layout.right.filter((item) => item !== module);
+  const targetItems = targetPane === "left" ? nextLeft : nextRight;
+  const insertIndex = Math.max(0, Math.min(targetIndex, targetItems.length));
+
+  targetItems.splice(insertIndex, 0, module);
+
+  return normalizePaneLayout({
+    left: nextLeft,
+    right: nextRight,
+    activeLeft:
+      targetPane === "left"
+        ? module
+        : nextLeft.includes(layout.activeLeft)
+          ? layout.activeLeft
+          : nextLeft[0],
+    activeRight:
+      targetPane === "right"
+        ? module
+        : nextRight.includes(layout.activeRight)
+          ? layout.activeRight
+          : nextRight[0],
+  });
+}
+
+function isSamePaneLayout(left: PaneLayout, right: PaneLayout) {
+  return (
+    left.activeLeft === right.activeLeft &&
+    left.activeRight === right.activeRight &&
+    left.left.join("|") === right.left.join("|") &&
+    left.right.join("|") === right.right.join("|")
+  );
 }
 
 export function ModuleSplitWorkspace({
@@ -232,8 +316,11 @@ export function ModuleSplitWorkspace({
 }: ModuleSplitWorkspaceProps) {
   const [splitEnabled, setSplitEnabled] = useState(readSplitEnabled);
   const [layout, setLayout] = useState(readPaneLayout);
-  const [collapsedPane, setCollapsedPane] = useState<PaneId | null>(null);
+  const [draggedModule, setDraggedModule] = useState<DraggedModule | null>(
+    null,
+  );
   const [viewMode, setViewMode] = useState<LessonViewMode>(readLessonViewMode);
+  const [splitPaneSize, setSplitPaneSize] = useState(readSplitPaneSize);
 
   const normalizedLayout = useMemo(() => normalizePaneLayout(layout), [layout]);
 
@@ -257,6 +344,26 @@ export function ModuleSplitWorkspace({
   const updateViewMode = (mode: LessonViewMode) => {
     setViewMode(mode);
     writeLessonViewMode(mode);
+  };
+
+  const moveModule = (
+    module: StudyModule,
+    targetPane: PaneId,
+    targetIndex: number,
+  ) => {
+    const nextLayout = moveModuleInLayout({
+      layout: normalizedLayout,
+      module,
+      targetPane,
+      targetIndex,
+    });
+
+    if (isSamePaneLayout(normalizedLayout, nextLayout)) {
+      return;
+    }
+
+    updateLayout(nextLayout);
+    onSelectModule(module);
   };
 
   const renderModule = (module: StudyModule, compact = false) => {
@@ -354,29 +461,17 @@ export function ModuleSplitWorkspace({
   }
 
   return (
-    <div className="grid gap-2">
+    <div className="grid gap-2 xl:h-[calc(100dvh-8.25rem)] xl:min-h-0 xl:grid-rows-[auto_minmax(0,1fr)] xl:overflow-hidden">
       <div className="sticky top-0 z-30 flex min-w-0 flex-wrap items-center justify-between gap-2 rounded-lg border border-border-default bg-bg-card/95 p-1 shadow-theme-sm backdrop-blur">
-        <div className="min-w-0 flex-1">
-          <SegmentedControl
-            value={activeModule}
-            items={flatTabs}
-            onChange={handleSelectModule}
-            className="bg-transparent p-0 shadow-none"
-            itemClassName="h-8 px-2 text-sm sm:px-2.5"
-          />
+        <div className="min-w-0 px-2">
+          <p className="text-xs font-black uppercase tracking-wide text-text-muted">
+            Split mode
+          </p>
+          <p className="hidden text-xs font-bold text-text-muted sm:block">
+            Kéo tab giữa hai pane, kéo divider để đổi kích thước.
+          </p>
         </div>
         <LessonViewModeToggle mode={viewMode} onChange={updateViewMode} />
-        {collapsedPane ? (
-          <Button
-            type="button"
-            variant="outline"
-            size="sm"
-            className="h-8 shrink-0 px-2.5 text-sm"
-            onClick={() => setCollapsedPane(null)}
-          >
-            Mở {collapsedPane === "left" ? "Nội dung" : "Học & ôn"}
-          </Button>
-        ) : null}
         <Button
           type="button"
           variant="outline"
@@ -388,20 +483,72 @@ export function ModuleSplitWorkspace({
         </Button>
       </div>
 
-      <div
-        className={[
-          "grid min-w-0 gap-2 xl:h-[calc(100dvh-8.25rem)] xl:min-h-0",
-          collapsedPane
-            ? "xl:grid-cols-1"
-            : "xl:grid-cols-[minmax(0,0.95fr)_minmax(0,1.05fr)]",
-        ].join(" ")}
+      <div className="grid min-w-0 gap-2 xl:hidden">
+        <ModulePane
+          title="Nội dung"
+          items={normalizedLayout.left}
+          activeModule={normalizedLayout.activeLeft}
+          paneId="left"
+          draggedModule={draggedModule}
+          onDragStart={setDraggedModule}
+          onDragEnd={() => setDraggedModule(null)}
+          onMoveModule={moveModule}
+          onSelectModule={(module) => {
+            updateLayout(setPaneActive(normalizedLayout, "left", module));
+            onSelectModule(module);
+          }}
+        >
+          {renderModule(normalizedLayout.activeLeft, true)}
+        </ModulePane>
+
+        <ModulePane
+          title="Học & ôn"
+          items={normalizedLayout.right}
+          activeModule={normalizedLayout.activeRight}
+          paneId="right"
+          draggedModule={draggedModule}
+          onDragStart={setDraggedModule}
+          onDragEnd={() => setDraggedModule(null)}
+          onMoveModule={moveModule}
+          onSelectModule={(module) => {
+            updateLayout(setPaneActive(normalizedLayout, "right", module));
+            onSelectModule(module);
+          }}
+        >
+          {renderModule(normalizedLayout.activeRight, true)}
+        </ModulePane>
+      </div>
+
+      <ResizablePanelGroup
+        orientation="horizontal"
+        defaultLayout={{
+          left: splitPaneSize,
+          right: 100 - splitPaneSize,
+        }}
+        className="hidden min-h-0 min-w-0 overflow-hidden xl:flex xl:h-full"
       >
-        {collapsedPane !== "left" ? (
+        <ResizablePanel
+          id="left"
+          className="min-h-0 min-w-0 overflow-hidden"
+          minSize={38}
+          defaultSize={splitPaneSize}
+          onResize={(panelSize) => {
+            const nextSize = Math.round(panelSize.asPercentage);
+
+            setSplitPaneSize(nextSize);
+            writeSplitPaneSize(nextSize);
+          }}
+        >
           <ModulePane
             title="Nội dung"
             items={normalizedLayout.left}
             activeModule={normalizedLayout.activeLeft}
-            onToggleCollapse={() => setCollapsedPane("left")}
+            paneId="left"
+            draggedModule={draggedModule}
+            className="h-full"
+            onDragStart={setDraggedModule}
+            onDragEnd={() => setDraggedModule(null)}
+            onMoveModule={moveModule}
             onSelectModule={(module) => {
               updateLayout(setPaneActive(normalizedLayout, "left", module));
               onSelectModule(module);
@@ -409,14 +556,26 @@ export function ModuleSplitWorkspace({
           >
             {renderModule(normalizedLayout.activeLeft, true)}
           </ModulePane>
-        ) : null}
+        </ResizablePanel>
 
-        {collapsedPane !== "right" ? (
+        <ResizableHandle />
+
+        <ResizablePanel
+          id="right"
+          className="min-h-0 min-w-0 overflow-hidden"
+          minSize={38}
+          defaultSize={100 - splitPaneSize}
+        >
           <ModulePane
             title="Học & ôn"
             items={normalizedLayout.right}
             activeModule={normalizedLayout.activeRight}
-            onToggleCollapse={() => setCollapsedPane("right")}
+            paneId="right"
+            draggedModule={draggedModule}
+            className="h-full"
+            onDragStart={setDraggedModule}
+            onDragEnd={() => setDraggedModule(null)}
+            onMoveModule={moveModule}
             onSelectModule={(module) => {
               updateLayout(setPaneActive(normalizedLayout, "right", module));
               onSelectModule(module);
@@ -424,8 +583,8 @@ export function ModuleSplitWorkspace({
           >
             {renderModule(normalizedLayout.activeRight, true)}
           </ModulePane>
-        ) : null}
-      </div>
+        </ResizablePanel>
+      </ResizablePanelGroup>
 
       {debugPanel}
     </div>
@@ -463,17 +622,50 @@ function ModulePane({
   activeModule,
   children,
   onSelectModule,
-  onToggleCollapse,
+  paneId,
+  draggedModule,
+  className = "",
+  onDragStart,
+  onDragEnd,
+  onMoveModule,
 }: {
   title: string;
   items: StudyModule[];
   activeModule: StudyModule;
   children: ReactNode;
   onSelectModule: (module: StudyModule) => void;
-  onToggleCollapse: () => void;
+  paneId: PaneId;
+  draggedModule: DraggedModule | null;
+  className?: string;
+  onDragStart: (dragged: DraggedModule) => void;
+  onDragEnd: () => void;
+  onMoveModule: (
+    module: StudyModule,
+    targetPane: PaneId,
+    targetIndex: number,
+  ) => void;
 }) {
+  const canDropIntoPane =
+    draggedModule !== null &&
+    (draggedModule.sourcePane !== paneId ||
+      !items.includes(draggedModule.module));
+
+  const handleDropIntoPane = (event: DragEvent<HTMLDivElement>) => {
+    event.preventDefault();
+
+    if (draggedModule) {
+      onMoveModule(draggedModule.module, paneId, items.length);
+      onDragEnd();
+    }
+  };
+
   return (
-    <section className="grid min-h-112 min-w-0 grid-rows-[auto_minmax(0,1fr)] gap-2 rounded-xl border border-border-default bg-bg-card p-2 shadow-theme-sm xl:min-h-0">
+    <section
+      className={[
+        "grid min-h-112 min-w-0 grid-rows-[auto_minmax(0,1fr)] gap-2 overflow-hidden rounded-xl border border-border-default bg-bg-card p-2 shadow-theme-sm xl:h-full xl:min-h-0",
+        className,
+      ].join(" ")}
+    >
       <div className="flex flex-wrap items-center justify-between gap-2">
         <div className="min-w-0">
           <h2 className="text-[0.65rem] font-black uppercase tracking-wide text-text-muted">
@@ -483,29 +675,39 @@ function ModulePane({
             {moduleMeta[activeModule].label}
           </p>
         </div>
-
-        <button
-          type="button"
-          onClick={onToggleCollapse}
-          className="inline-flex h-7 items-center gap-1 rounded-lg border border-border-default bg-bg-primary px-2 text-xs font-bold text-text-muted transition-colors hover:bg-bg-subtle hover:text-text-primary"
-        >
-          Ẩn
-        </button>
       </div>
 
       <div className="grid min-h-0 min-w-0 grid-rows-[auto_minmax(0,1fr)] gap-2 overflow-hidden">
-        <div className="no-scrollbar flex min-w-0 gap-1 overflow-x-auto rounded-lg bg-bg-subtle p-1">
-          {items.map((item) => (
+        <div
+          className={[
+            "no-scrollbar flex min-w-0 gap-1 overflow-x-auto rounded-lg border border-transparent bg-bg-subtle p-1 transition-colors",
+            canDropIntoPane ? "border-dashed border-accent/60" : "",
+          ].join(" ")}
+          onDragOver={(event) => {
+            if (draggedModule) {
+              event.preventDefault();
+              event.dataTransfer.dropEffect = "move";
+            }
+          }}
+          onDrop={handleDropIntoPane}
+        >
+          {items.map((item, index) => (
             <ModuleTabButton
               key={item}
               item={item}
               active={item === activeModule}
+              paneId={paneId}
+              index={index}
+              draggedModule={draggedModule}
               onClick={() => onSelectModule(item)}
+              onDragStart={onDragStart}
+              onDragEnd={onDragEnd}
+              onMoveModule={onMoveModule}
             />
           ))}
         </div>
 
-        <div className="min-h-0 min-w-0 overflow-y-auto rounded-lg bg-bg-subtle/60 p-1 sm:rounded-xl sm:p-2 sm:pr-1">
+        <div className="min-h-0 min-w-0 overflow-y-auto overscroll-contain rounded-lg bg-bg-subtle/60 p-1 scrollbar-soft sm:rounded-xl sm:p-2 sm:pr-1">
           {children}
         </div>
       </div>
@@ -516,24 +718,79 @@ function ModulePane({
 function ModuleTabButton({
   item,
   active,
+  paneId,
+  index,
+  draggedModule,
   onClick,
+  onDragStart,
+  onDragEnd,
+  onMoveModule,
 }: {
   item: StudyModule;
   active: boolean;
+  paneId: PaneId;
+  index: number;
+  draggedModule: DraggedModule | null;
   onClick: () => void;
+  onDragStart: (dragged: DraggedModule) => void;
+  onDragEnd: () => void;
+  onMoveModule: (
+    module: StudyModule,
+    targetPane: PaneId,
+    targetIndex: number,
+  ) => void;
 }) {
   const meta = moduleMeta[item];
   const Icon = meta.icon;
+  const isDragging = draggedModule?.module === item;
+  const isDropTarget =
+    draggedModule !== null &&
+    draggedModule.module !== item &&
+    (draggedModule.sourcePane !== paneId ||
+      draggedModule.module !== item);
+
+  const handleDragStart = (event: DragEvent<HTMLButtonElement>) => {
+    onDragStart({ module: item, sourcePane: paneId });
+    event.dataTransfer.effectAllowed = "move";
+    event.dataTransfer.setData("text/plain", item);
+    event.dataTransfer.setDragImage(
+      event.currentTarget,
+      event.currentTarget.offsetWidth / 2,
+      event.currentTarget.offsetHeight / 2,
+    );
+  };
+
+  const handleDrop = (event: DragEvent<HTMLButtonElement>) => {
+    event.preventDefault();
+
+    if (draggedModule?.module) {
+      onMoveModule(draggedModule.module, paneId, index);
+    }
+
+    onDragEnd();
+  };
 
   return (
     <button
       type="button"
+      draggable
       onClick={onClick}
+      onDragStart={handleDragStart}
+      onDragOver={(event) => {
+        if (draggedModule) {
+          event.preventDefault();
+          event.dataTransfer.dropEffect = "move";
+        }
+      }}
+      onDrop={handleDrop}
+      onDragEnd={onDragEnd}
       className={[
-        "flex h-8 shrink-0 items-center gap-1.5 whitespace-nowrap rounded-lg px-2.5 text-sm font-black transition-colors sm:gap-2",
+        "flex h-8 shrink-0 cursor-grab select-none items-center gap-1.5 whitespace-nowrap rounded-lg border border-transparent px-2.5 text-sm font-black transition-colors active:cursor-grabbing sm:gap-2",
         active
           ? "bg-bg-primary text-text-primary shadow-theme-sm"
           : "text-text-muted hover:bg-bg-primary hover:text-text-primary",
+        isDragging ? "opacity-40" : "",
+        isDropTarget ? "hover:border-accent/60" : "",
       ].join(" ")}
     >
       <Icon className="h-4 w-4" />

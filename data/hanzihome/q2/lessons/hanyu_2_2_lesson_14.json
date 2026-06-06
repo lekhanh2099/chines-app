@@ -4061,12 +4061,36 @@
         "type": "minimal_pair_group",
         "title": "辨音辨调",
         "items": [
-         "jìnqu / jìnqù",
-         "yàoshi / yàoshì",
-         "yìngxiǎng / yìnxiàng",
-         "shūjià / shǔjià",
-         "yúshì / yìshì",
-         "zhǐhǎo / chīhǎo"
+         {
+          "id": "0e5801e7-b89b-4cc6-8bd9-9e1fbbd30b31_pair_001",
+          "left": "jìnqu",
+          "right": "jìnqù"
+         },
+         {
+          "id": "0e5801e7-b89b-4cc6-8bd9-9e1fbbd30b31_pair_002",
+          "left": "yàoshi",
+          "right": "yàoshì"
+         },
+         {
+          "id": "0e5801e7-b89b-4cc6-8bd9-9e1fbbd30b31_pair_003",
+          "left": "yìngxiǎng",
+          "right": "yìnxiàng"
+         },
+         {
+          "id": "0e5801e7-b89b-4cc6-8bd9-9e1fbbd30b31_pair_004",
+          "left": "shūjià",
+          "right": "shǔjià"
+         },
+         {
+          "id": "0e5801e7-b89b-4cc6-8bd9-9e1fbbd30b31_pair_005",
+          "left": "yúshì",
+          "right": "yìshì"
+         },
+         {
+          "id": "0e5801e7-b89b-4cc6-8bd9-9e1fbbd30b31_pair_006",
+          "left": "zhǐhǎo",
+          "right": "chīhǎo"
+         }
         ]
        },
        {

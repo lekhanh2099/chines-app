@@ -22,6 +22,7 @@ import {
  WarningSection,
  WordFormationPreview,
 } from "./VocabDetailSections";
+import { cn } from "@/lib/utils";
 
 function isTypingTarget(element: Element | null) {
  return (
@@ -39,6 +40,7 @@ type VocabDetailPanelProps = {
  bookmarked: boolean;
  onBookmark: () => void;
  lessonId?: string;
+ compact?: boolean;
  onMarkStatus: (status: LearningStatus) => void;
 };
 
@@ -47,6 +49,7 @@ export function VocabDetailPanel({
  bookmarked,
  onBookmark,
  lessonId,
+ compact = false,
 }: VocabDetailPanelProps) {
  const [sectionView, setSectionView] = useState<SectionView>("all");
 
@@ -102,10 +105,15 @@ export function VocabDetailPanel({
   : "all";
 
  return (
-  <article className="grid gap-4 xl:grid-cols-[minmax(0,1fr)_19rem] xl:items-start">
+  <article
+   className={cn(
+    "grid gap-4",
+    !compact && "xl:grid-cols-[minmax(0,1fr)_19rem] xl:items-start",
+   )}
+  >
    <div className="grid min-w-0 gap-4">
     <Card
-     padding="lg"
+     padding={compact ? "md" : "lg"}
      className="rounded-2xl border border-border-default bg-bg-primary shadow-theme-sm"
     >
      <div className="grid gap-4">
@@ -113,11 +121,12 @@ export function VocabDetailPanel({
        word={word}
        bookmarked={bookmarked}
        lessonId={lessonId}
+       compact={compact}
        onBookmark={onBookmark}
       />
 
       <nav
-       className="flex gap-2 overflow-x-auto pb-1"
+       className="no-scrollbar flex gap-2 overflow-x-auto pb-1"
        aria-label="Điều hướng phần từ vựng"
       >
        {sectionTabs.map((item) => (
@@ -146,7 +155,13 @@ export function VocabDetailPanel({
     </div>
    </div>
 
-   <aside className="grid gap-4 xl:sticky xl:top-4 xl:max-h-[calc(100vh-2rem)] xl:overflow-y-auto xl:pr-1">
+   <aside
+    className={cn(
+     "grid gap-4",
+     !compact &&
+      "xl:sticky xl:top-4 xl:max-h-[calc(100vh-2rem)] xl:overflow-y-auto xl:pr-1",
+    )}
+   >
     <WordFormationPreview formation={word.word_formation} word={word} />
 
     {hasCultureContent(word.culture_note) && (

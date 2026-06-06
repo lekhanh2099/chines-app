@@ -16,6 +16,7 @@ import {
  asRecord,
  getClozeAnswerValues,
  getPassageLikeValue,
+ hasClozeAnswerValue,
  nonEmptyStrings,
  stringValue,
 } from "./utils";
@@ -49,6 +50,96 @@ function objectText(value: unknown, keys: string[]) {
 function formatAnswer(value: unknown): string {
  if (typeof value === "boolean") return value ? "Đúng" : "Sai";
  return answerToString(value);
+}
+
+const CLOZE_MARKER_PATTERN =
+ /(?:[①②③④⑤⑥⑦⑧⑨⑩⑪⑫⑬⑭⑮⑯⑰⑱⑲⑳]|\d+|[（(]\s*\d+\s*[）)]|\[\s*\d+\s*\])\s*(?:[_＿]{2,}|…{2,}|\.\.\.+)/g;
+
+function passageTextForDiagnostics(passage: unknown) {
+ if (typeof passage === "string") return passage.trim();
+
+ const record = asRecord(passage);
+ const directText =
+  stringValue(record, "text_with_blanks") ||
+  stringValue(record, "passage_with_blanks") ||
+  stringValue(record, "passage_blanked") ||
+  stringValue(record, "cloze_text") ||
+  stringValue(record, "passage_text") ||
+  stringValue(record, "text") ||
+  stringValue(record, "zh");
+
+ if (directText) return directText;
+
+ return arrayValue(record, "paragraphs")
+  .map((paragraph) => stringValue(asRecord(paragraph), "zh"))
+  .filter(Boolean)
+  .join("\n");
+}
+
+function ExerciseRenderIssues({
+ item,
+ passage,
+ answers,
+}: {
+ item: Exercise;
+ passage: unknown;
+ answers: unknown[];
+}) {
+ const record = asRecord(item);
+ const rendering = asRecord(record.rendering);
+ const renderer = stringValue(rendering, "renderer");
+ const variant = stringValue(record, "variant");
+ const isReadingCloze =
+  item.type === "reading_fill_blank" ||
+  variant.includes("cloze") ||
+  renderer.includes("cloze");
+
+ if (!isReadingCloze) return null;
+
+ const passageText = passageTextForDiagnostics(passage);
+ const markerCount = passageText.match(CLOZE_MARKER_PATTERN)?.length ?? 0;
+ const answerCount = answers.filter(hasClozeAnswerValue).length;
+ const issues: string[] = [];
+ const readingReference =
+  stringValue(record, "reading_ref") ||
+  stringValue(record, "reading_id") ||
+  stringValue(record, "linked_reading_id");
+
+ if (!passage) {
+  issues.push(
+   readingReference
+    ? `Chỉ có tham chiếu bài đọc "${readingReference}", chưa có passage được resolve để render.`
+    : "Thiếu passage/text/paragraphs cho bài đọc điền chỗ trống.",
+  );
+ }
+
+ if (answerCount === 0) {
+  issues.push(
+   "Không tìm thấy đáp án trong blanks, answers, answer_key, cloze_answers, suggested_answers hoặc questions[].answer.",
+  );
+ }
+
+ if (markerCount > 0 && answerCount > 0 && markerCount !== answerCount) {
+  issues.push(`Số chỗ trống (${markerCount}) không khớp số đáp án (${answerCount}).`);
+ }
+
+ if (issues.length === 0) return null;
+
+ return (
+  <div className="grid gap-2 rounded-xl border border-danger/35 bg-danger-subtle p-3 text-sm">
+   <p className="font-black text-danger">Không thể render đầy đủ bài tập</p>
+   <p className="font-semibold text-text-secondary">
+    type: {item.type}
+    {variant && ` · variant: ${variant}`}
+    {renderer && ` · renderer: ${renderer}`}
+   </p>
+   <ul className="grid list-disc gap-1 pl-5 font-semibold text-danger">
+    {issues.map((issue) => (
+     <li key={issue}>{issue}</li>
+    ))}
+   </ul>
+  </div>
+ );
 }
 
 function firstTextByKeys(record: Record<string, unknown>, keys: string[]) {
@@ -1347,6 +1438,7 @@ function QuestionExerciseBody({
      : arrayValue(record, "answers");
 
  const clozeAnswers = getClozeAnswerValues(record);
+ const clozeAnswerCount = clozeAnswers.filter(hasClozeAnswerValue).length;
  const wordBank = arrayValue(record, "word_bank");
 
  const supplementaryWords = [
@@ -1360,6 +1452,15 @@ function QuestionExerciseBody({
  const pattern = stringValue(record, "pattern");
  const model = asRecord(record.model);
  const passage = getPassageLikeValue(record, { includeText: true });
+ const rendering = asRecord(record.rendering);
+ const renderer = stringValue(rendering, "renderer");
+ const variant = stringValue(record, "variant");
+ const isReadingCloze =
+  Boolean(passage) &&
+  clozeAnswerCount > 0 &&
+  (item.type === "reading_fill_blank" ||
+   variant.includes("cloze") ||
+   renderer.includes("cloze"));
 
  const scenarioText =
   stringValue(record, "scenario_vi") ||
@@ -1450,6 +1551,8 @@ function QuestionExerciseBody({
     displayMode={displayMode}
    />
 
+   <ExerciseRenderIssues item={item} passage={passage} answers={clozeAnswers} />
+
    {items.length > 0 && (
     <LooseItemGrid items={items} displayMode={displayMode} />
    )}
@@ -1517,7 +1620,7 @@ function QuestionExerciseBody({
     </div>
    )}
 
-   {questions.length > 0 ? (
+   {questions.length > 0 && !isReadingCloze ? (
     <div className="grid gap-2">
      {questions.map((questionValue, index) => (
       <QuestionCard
@@ -1533,7 +1636,7 @@ function QuestionExerciseBody({
     <EmptySectionState reason={stringValue(record, "empty_reason_vi")} />
    ) : null}
 
-   <AnswerKeyList itemId={item.id} values={answerKey} />
+   {!isReadingCloze && <AnswerKeyList itemId={item.id} values={answerKey} />}
   </div>
  );
 }

@@ -46,20 +46,25 @@ export function answerToString(value: unknown): string {
  return "";
 }
 
-function firstRenderableArray(...arrays: unknown[][]): unknown[] {
- return arrays.find((values) => values.some(hasTextLikeValue)) ?? [];
-}
-
-function firstRenderableArrayByKeys(
- record: Record<string, unknown>,
- keys: string[],
-): unknown[] {
- for (const key of keys) {
-  const values = arrayValue(record, key);
-  if (values.some(hasTextLikeValue)) return values;
+export function hasClozeAnswerValue(value: unknown): boolean {
+ if (typeof value === "string" || typeof value === "number") {
+  return Boolean(String(value).trim());
  }
 
- return [];
+ const record = asRecord(value);
+ return Boolean(
+  stringValue(record, "answer") ||
+   stringValue(record, "answer_zh") ||
+   stringValue(record, "value") ||
+   stringValue(record, "text") ||
+   stringValue(record, "zh") ||
+   stringValue(record, "sample_answer") ||
+   arrayValue(record, "acceptable_answers").some(hasTextLikeValue),
+ );
+}
+
+function firstRenderableArray(...arrays: unknown[][]): unknown[] {
+ return arrays.find((values) => values.some(hasTextLikeValue)) ?? [];
 }
 
 function mergedRenderableArrays(
@@ -109,6 +114,8 @@ export function getPassageLikeValue(
     stringValue(directPassageRecord, "passage_with_blanks") ||
     stringValue(directPassageRecord, "passage_blanked") ||
     stringValue(directPassageRecord, "cloze_text") ||
+    stringValue(directPassageRecord, "text") ||
+    stringValue(directPassageRecord, "zh") ||
     directPassageText,
    completed_text:
     stringValue(directPassageRecord, "completed_text") ||
@@ -165,8 +172,27 @@ export function getPassageLikeValue(
   stringValue(record, "passage_blanked") ||
   stringValue(record, "cloze_text");
 
+ const clozePart = arrayValue(record, "parts")
+  .map(asRecord)
+  .find((part) => stringValue(part, "type") === "cloze_text");
+
+ const clozePartText = clozePart
+  ? arrayValue(clozePart, "items")
+     .map((item) => {
+      const itemRecord = asRecord(item);
+      return (
+       stringValue(itemRecord, "text") ||
+       stringValue(itemRecord, "zh") ||
+       answerToString(item)
+      );
+     })
+     .filter(Boolean)
+     .join("\n")
+  : "";
+
  const text =
   textWithBlanks ||
+  clozePartText ||
   stringValue(record, "passage_text") ||
   (options.includeText ? stringValue(record, "text") : "");
 
@@ -200,12 +226,21 @@ export function getPassageLikeValue(
 }
 
 export function getClozeAnswerValues(record: Record<string, unknown>) {
- return firstRenderableArrayByKeys(record, [
+ const keys = [
   "blanks",
   "answers",
   "answer_key",
   "cloze_answers",
- ]);
+  "suggested_answers",
+  "questions",
+ ];
+
+ for (const key of keys) {
+  const values = arrayValue(record, key);
+  if (values.some(hasClozeAnswerValue)) return values;
+ }
+
+ return [];
 }
 
 export function sectionTitle(section: Section) {

@@ -138,10 +138,11 @@ export function VocabWorkspace({
       ? progress[getVocabItemKey(selectedWord)]?.status || "new"
       : "new"
     }
-    bookmarked={
+   bookmarked={
      selectedWord ? bookmarks.includes(getVocabItemKey(selectedWord)) : false
     }
     lessonId={lesson.id}
+    compact={compact}
     onBookmark={() => selectedWord && onBookmark(getVocabItemKey(selectedWord))}
     onMarkStatus={(status) =>
      selectedWord && onMarkStatus(getVocabItemKey(selectedWord), status)

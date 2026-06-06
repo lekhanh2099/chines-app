@@ -2431,16 +2431,34 @@
                 "title": "辨音辨调",
                 "items": [
                   {
-                    "id": "ex_001_mp_001",
-                    "text": "dǎoyóu / dǎoliú / xūyào / xǐyào"
+                    "id": "ex_001_mp_001_pair_001",
+                    "left": "dǎoyóu",
+                    "right": "dǎoliú"
                   },
                   {
-                    "id": "ex_001_mp_002",
-                    "text": "lìyòng / lǐyóu / lǎobǎn / rǎoluàn"
+                    "id": "ex_001_mp_001_pair_002",
+                    "left": "xūyào",
+                    "right": "xǐyào"
                   },
                   {
-                    "id": "ex_001_mp_003",
-                    "text": "yánjiū / yān jiū / zìyóu / jí yóu"
+                    "id": "ex_001_mp_002_pair_003",
+                    "left": "lìyòng",
+                    "right": "lǐyóu"
+                  },
+                  {
+                    "id": "ex_001_mp_002_pair_004",
+                    "left": "lǎobǎn",
+                    "right": "rǎoluàn"
+                  },
+                  {
+                    "id": "ex_001_mp_003_pair_005",
+                    "left": "yánjiū",
+                    "right": "yān jiū"
+                  },
+                  {
+                    "id": "ex_001_mp_003_pair_006",
+                    "left": "zìyóu",
+                    "right": "jí yóu"
                   }
                 ]
               },
