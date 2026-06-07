@@ -1,3 +1,5 @@
+import type { ReactNode } from "react";
+
 import type { Exercise } from "@/features/hanzihome/static-json/schemas/hanyuLesson.schema";
 import {
  EditableNodeWrapper,
@@ -365,24 +367,22 @@ function QuestionChoiceList({ values }: { values: unknown[] }) {
  );
 }
 
-function modelLines(record: Record<string, unknown>): string[] {
- return [
-  stringValue(record, "model"),
-  stringValue(record, "model_a"),
-  stringValue(record, "model_b"),
-  stringValue(record, "prompt_a"),
-  stringValue(record, "prompt_b"),
- ].filter(Boolean);
+function modelLineEntries(record: Record<string, unknown>) {
+ return ["model", "model_a", "model_b", "prompt_a", "prompt_b"]
+  .map((key) => ({ key, value: stringValue(record, key) }))
+  .filter((entry) => Boolean(entry.value));
 }
 
 function ModelBlock({
  title = "Mẫu",
  values,
  displayMode,
+ renderValue,
 }: {
  title?: string;
  values: unknown[];
  displayMode: LessonDisplayMode;
+ renderValue?: (value: unknown, index: number, content: ReactNode) => ReactNode;
 }) {
  const visibleValues = values.filter((value) => {
   if (answerToString(value)) return true;
@@ -406,6 +406,9 @@ function ModelBlock({
    <div className="mt-2 grid gap-2">
     {visibleValues.map((value, index) => {
      const record = asRecord(value);
+     const key =
+      stringValue(record, "id") ||
+      `${title}-${answerToString(value) || index}-${index}`;
      const zh =
       stringValue(record, "zh") ||
       stringValue(record, "text") ||
@@ -420,25 +423,35 @@ function ModelBlock({
      if (!zh) return null;
 
      if (typeof value === "string") {
-      return (
+      const content = (
        <p
-        key={`${zh}-${index}`}
         className="text-base font-black text-accent-text"
         lang="zh-CN"
        >
         {zh}
        </p>
       );
+
+      return (
+       <div key={key}>
+        {renderValue ? renderValue(value, index, content) : content}
+       </div>
+      );
      }
 
-     return (
+     const content = (
       <TextLineCard
-       key={stringValue(record, "id") || `${zh}-${index}`}
        zh={zh}
        pinyin={pinyin}
        vi={vi}
        displayMode={displayMode}
       />
+     );
+
+     return (
+      <div key={key}>
+       {renderValue ? renderValue(value, index, content) : content}
+      </div>
      );
     })}
    </div>
@@ -848,13 +861,21 @@ function MatchingOptionCard({
 }
 
 function MatchingColumn({
+ lessonId,
+ itemPath,
+ itemId,
  title,
  values,
+ sourceKey,
  labelMode,
  displayMode,
 }: {
+ lessonId?: string;
+ itemPath?: DraftPatchPath;
+ itemId: string;
  title: string;
  values: unknown[];
+ sourceKey: string;
  labelMode: "number" | "letter";
  displayMode: LessonDisplayMode;
 }) {
@@ -867,14 +888,37 @@ function MatchingColumn({
    </p>
 
    <div className="grid gap-2">
-    {values.map((value, index) => (
-     <MatchingOptionCard
-      key={`${title}-${index}`}
-      label={labelMode === "number" ? `${index + 1}` : letterLabel(index)}
-      value={value}
-      displayMode={displayMode}
-     />
-    ))}
+    {values.map((value, index) => {
+     const valueRecord = asRecord(value);
+     const entityId =
+      stringValue(valueRecord, "id") || `${itemId}-${sourceKey}-${index}`;
+     const label = labelMode === "number" ? `${index + 1}` : letterLabel(index);
+     const content = (
+      <MatchingOptionCard
+       label={label}
+       value={value}
+       displayMode={displayMode}
+      />
+     );
+
+     return lessonId && itemPath ? (
+      <EditableNodeWrapper
+       key={entityId}
+       lessonId={lessonId}
+       entityType="exercise_question"
+       entityId={entityId}
+       parentEntityType="exercise"
+       parentEntityId={itemId}
+       path={[...itemPath, sourceKey, index]}
+       value={value}
+       label={`${title} ${label}`}
+      >
+       {content}
+      </EditableNodeWrapper>
+     ) : (
+      <div key={entityId}>{content}</div>
+     );
+    })}
    </div>
   </div>
  );
@@ -1017,13 +1061,19 @@ function matchingAnswerText({
 }
 
 function MatchingAnswerDetails({
+ lessonId,
+ itemPath,
  itemId,
  answers,
+ sourceKey,
  leftItems,
  rightItems,
 }: {
+ lessonId?: string;
+ itemPath?: DraftPatchPath;
  itemId: string;
  answers: unknown[];
+ sourceKey: string;
  leftItems: unknown[];
  rightItems: unknown[];
 }) {
@@ -1044,9 +1094,9 @@ function MatchingAnswerDetails({
       rightItems,
      });
      if (answer)
-      return (
+      {
+       const content = (
        <div
-        key={`${itemId}-matching-answer-${answer.id}-${index}`}
         className="rounded-lg bg-bg-primary px-3 py-2"
        >
         <p className="text-sm font-black text-accent-text">
@@ -1068,6 +1118,27 @@ function MatchingAnswerDetails({
         )}
        </div>
       );
+
+       return lessonId && itemPath ? (
+        <EditableNodeWrapper
+         key={`${itemId}-matching-answer-${answer.id}-${index}`}
+         lessonId={lessonId}
+         entityType="exercise_answer_key"
+         entityId={`${itemId}-matching-answer-${answer.id}`}
+         parentEntityType="exercise"
+         parentEntityId={itemId}
+         path={[...itemPath, sourceKey, index]}
+         value={answerValue}
+         label={`Đáp án nối câu ${index + 1}`}
+        >
+         {content}
+        </EditableNodeWrapper>
+       ) : (
+        <div key={`${itemId}-matching-answer-${answer.id}-${index}`}>
+         {content}
+        </div>
+       );
+      }
     })}
    </div>
   </details>
@@ -1075,62 +1146,87 @@ function MatchingAnswerDetails({
 }
 
 function MatchingExerciseBody({
+ lessonId,
+ itemPath,
  item,
  displayMode,
 }: {
+ lessonId?: string;
+ itemPath?: DraftPatchPath;
  item: Exercise;
  displayMode: LessonDisplayMode;
 }) {
  const record = asRecord(item);
 
- const leftItems = firstArrayByKeys(record, [
+ const leftSource = firstArraySource(record, [
   "left",
   "left_items",
   "column_a",
   "a_items",
   "prompts",
  ]);
+ const leftItems = leftSource?.values ?? [];
 
- const rightItems = firstArrayByKeys(record, [
+ const rightSource = firstArraySource(record, [
   "right",
   "right_items",
   "column_b",
   "b_items",
   "responses",
  ]);
+ const rightItems = rightSource?.values ?? [];
 
- const answers = firstArrayByKeys(record, [
+ const answerSource = firstArraySource(record, [
   "answer_key",
   "answers",
   "matches",
   "solutions",
  ]);
+ const answers = answerSource?.values ?? [];
 
  if (leftItems.length === 0 && rightItems.length === 0) {
-  return <QuestionExerciseBody item={item} displayMode={displayMode} />;
+  return (
+   <QuestionExerciseBody
+    lessonId={lessonId}
+    itemPath={itemPath}
+    item={item}
+    displayMode={displayMode}
+   />
+  );
  }
 
  return (
   <div className="grid gap-3">
    <div className="grid gap-3 md:grid-cols-2">
     <MatchingColumn
+     lessonId={lessonId}
+     itemPath={itemPath}
+     itemId={item.id}
      title="Cột A"
      values={leftItems}
+     sourceKey={leftSource?.key ?? "left"}
      labelMode="number"
      displayMode={displayMode}
     />
 
     <MatchingColumn
+     lessonId={lessonId}
+     itemPath={itemPath}
+     itemId={item.id}
      title="Cột B"
      values={rightItems}
+     sourceKey={rightSource?.key ?? "right"}
      labelMode="letter"
      displayMode={displayMode}
     />
    </div>
 
    <MatchingAnswerDetails
+    lessonId={lessonId}
+    itemPath={itemPath}
     itemId={item.id}
     answers={answers}
+    sourceKey={answerSource?.key ?? "answer_key"}
     leftItems={leftItems}
     rightItems={rightItems}
    />
@@ -1214,15 +1310,21 @@ function PhoneticsExerciseBody({
 }
 
 function SubstitutionExerciseBody({
+ lessonId,
+ itemPath,
  item,
  displayMode,
 }: {
+ lessonId?: string;
+ itemPath?: DraftPatchPath;
  item: Exercise;
  displayMode: LessonDisplayMode;
 }) {
  const record = asRecord(item);
- const model = arrayValue(record, "model");
- const models = arrayValue(record, "models");
+ const modelSource = firstArraySource(record, ["model"]);
+ const modelsSource = firstArraySource(record, ["models"]);
+ const model = modelSource?.values ?? [];
+ const models = modelsSource?.values ?? [];
  const patternGroups = arrayValue(record, "patterns");
  const partGroups = arrayValue(record, "parts");
  const items = [
@@ -1246,13 +1348,43 @@ function SubstitutionExerciseBody({
     displayMode={displayMode}
    />
 
-   <ModelBlock values={[...model, ...models]} displayMode={displayMode} />
+   <ModelBlock
+    values={[...model, ...models]}
+    displayMode={displayMode}
+    renderValue={
+     lessonId && itemPath
+      ? (value, index, content) => {
+         const source = index < model.length ? modelSource : modelsSource;
+         const sourceIndex = index < model.length ? index : index - model.length;
+         const valueRecord = asRecord(value);
+         const entityId =
+          stringValue(valueRecord, "id") ||
+          `${item.id}-${source?.key ?? "model"}-${sourceIndex}`;
+
+         return (
+          <EditableNodeWrapper
+           lessonId={lessonId}
+           entityType="exercise_question"
+           entityId={entityId}
+           parentEntityType="exercise"
+           parentEntityId={item.id}
+           path={[...itemPath, source?.key ?? "model", sourceIndex]}
+           value={value}
+           label={`Mẫu ${sourceIndex + 1}`}
+          >
+           {content}
+          </EditableNodeWrapper>
+         );
+        }
+      : undefined
+    }
+   />
 
    {partGroups.length > 0 && (
     <div className="grid gap-3">
      {partGroups.map((partValue, partIndex) => {
       const part = asRecord(partValue);
-      const partModels = modelLines(part);
+      const partModelEntries = modelLineEntries(part);
       const partItems = arrayValue(part, "items");
       const partTitle =
        stringValue(part, "title_vi") ||
@@ -1268,11 +1400,61 @@ function SubstitutionExerciseBody({
 
         <ModelBlock
          title="Mẫu trong phần"
-         values={partModels}
+         values={partModelEntries.map((entry) => entry.value)}
          displayMode={displayMode}
+         renderValue={
+          lessonId && itemPath
+           ? (value, modelIndex, content) => (
+              <EditableNodeWrapper
+               lessonId={lessonId}
+               entityType="exercise_question"
+               entityId={`${item.id}-part-${partIndex}-model-${modelIndex}`}
+               parentEntityType="exercise"
+               parentEntityId={item.id}
+               path={[
+                ...itemPath,
+                "parts",
+                partIndex,
+                partModelEntries[modelIndex]?.key ?? "model",
+               ]}
+               value={value}
+               label={`Mẫu phần ${partIndex + 1}.${modelIndex + 1}`}
+              >
+               {content}
+              </EditableNodeWrapper>
+             )
+           : undefined
+         }
         />
 
-        <LooseItemGrid items={partItems} displayMode={displayMode} />
+        {lessonId && itemPath ? (
+         <div className="grid gap-2">
+          {partItems.map((partItemValue, partItemIndex) => {
+           const partItem = asRecord(partItemValue);
+           const entityId =
+            stringValue(partItem, "id") ||
+            `${item.id}-part-${partIndex}-item-${partItemIndex}`;
+
+           return (
+            <EditableNodeWrapper
+             key={entityId}
+             lessonId={lessonId}
+             entityType="exercise_question"
+             entityId={entityId}
+             parentEntityType="exercise"
+             parentEntityId={item.id}
+             path={[...itemPath, "parts", partIndex, "items", partItemIndex]}
+             value={partItemValue}
+             label={`Câu phần ${partIndex + 1}.${partItemIndex + 1}`}
+            >
+             <LooseItemGrid items={[partItemValue]} displayMode={displayMode} />
+            </EditableNodeWrapper>
+           );
+          })}
+         </div>
+        ) : (
+         <LooseItemGrid items={partItems} displayMode={displayMode} />
+        )}
        </div>
       );
      })}
@@ -1283,7 +1465,7 @@ function SubstitutionExerciseBody({
     <div className="grid gap-3">
      {patternGroups.map((groupValue, groupIndex) => {
       const group = asRecord(groupValue);
-      const groupModels = modelLines(group);
+      const groupModelEntries = modelLineEntries(group);
       const groupItems = arrayValue(group, "items");
 
       return (
@@ -1293,8 +1475,31 @@ function SubstitutionExerciseBody({
        >
         <ModelBlock
          title="Mẫu luyện"
-         values={groupModels}
+         values={groupModelEntries.map((entry) => entry.value)}
          displayMode={displayMode}
+         renderValue={
+          lessonId && itemPath
+           ? (value, modelIndex, content) => (
+              <EditableNodeWrapper
+               lessonId={lessonId}
+               entityType="exercise_question"
+               entityId={`${item.id}-pattern-${groupIndex}-model-${modelIndex}`}
+               parentEntityType="exercise"
+               parentEntityId={item.id}
+               path={[
+                ...itemPath,
+                "patterns",
+                groupIndex,
+                groupModelEntries[modelIndex]?.key ?? "model",
+               ]}
+               value={value}
+               label={`Mẫu nhóm ${groupIndex + 1}.${modelIndex + 1}`}
+              >
+               {content}
+              </EditableNodeWrapper>
+             )
+           : undefined
+         }
         />
 
         {groupItems.length > 0 ? (
@@ -1312,19 +1517,36 @@ function SubstitutionExerciseBody({
             answerToString(entry.answer) ||
             nonEmptyStrings(arrayValue(entry, "expected_dialogue")).join(" / ");
 
-           return (
+           const entityId =
+            stringValue(entry, "id") || `${item.id}-${groupIndex}-${index}`;
+           const content = (
             <ExerciseQuestionCard
-             key={
-              stringValue(entry, "id") || `${item.id}-${groupIndex}-${index}`
-             }
              index={index + 1}
              title={title}
              answer={answer}
              note={stringValue(entry, "explanation_vi")}
             />
            );
-          })}
-         </div>
+
+           return lessonId && itemPath ? (
+            <EditableNodeWrapper
+             key={entityId}
+             lessonId={lessonId}
+             entityType="exercise_question"
+             entityId={entityId}
+             parentEntityType="exercise"
+             parentEntityId={item.id}
+             path={[...itemPath, "patterns", groupIndex, "items", index]}
+             value={entryValue}
+             label={`Câu nhóm ${groupIndex + 1}.${index + 1}`}
+            >
+             {content}
+            </EditableNodeWrapper>
+           ) : (
+            <div key={entityId}>{content}</div>
+           );
+           })}
+          </div>
         ) : (
          <EmptySectionState reason="Nhóm mẫu này chưa có câu luyện." />
         )}
@@ -1349,9 +1571,9 @@ function SubstitutionExerciseBody({
        stringValue(entry, "sample_answer") ||
        answerToString(entry.answer);
 
-      return (
+      const entityId = stringValue(entry, "id") || `${item.id}-${index}`;
+      const content = (
        <ExerciseQuestionCard
-        key={stringValue(entry, "id") || `${item.id}-${index}`}
         index={index + 1}
         title={
          promptToString(entry.prompt) ||
@@ -1365,6 +1587,24 @@ function SubstitutionExerciseBody({
         note={stringValue(entry, "explanation_vi")}
        />
       );
+
+      return lessonId && itemPath ? (
+       <EditableNodeWrapper
+        key={entityId}
+        lessonId={lessonId}
+        entityType="exercise_question"
+        entityId={entityId}
+        parentEntityType="exercise"
+        parentEntityId={item.id}
+        path={[...itemPath, "items", index]}
+        value={entryValue}
+        label={`Câu ${index + 1}`}
+       >
+        {content}
+       </EditableNodeWrapper>
+      ) : (
+       <div key={entityId}>{content}</div>
+      );
      })}
     </div>
    ) : (
@@ -1374,19 +1614,33 @@ function SubstitutionExerciseBody({
     )
    )}
 
-	   <AnswerKeyList itemId={item.id} values={answerKey} />
-	  </div>
-	 );
+   <EditableAnswerKeyList
+    lessonId={lessonId}
+    itemPath={itemPath}
+    itemId={item.id}
+    sourcePath={["answer_key"]}
+    values={answerKey}
+   />
+  </div>
+ );
 }
 
 function QuestionGroupCard({
+ lessonId,
+ itemPath,
  itemId,
+ parentExerciseId,
+ groupPath,
  groupValue,
  index,
  fallbackTitle,
  displayMode,
 }: {
+ lessonId?: string;
+ itemPath?: DraftPatchPath;
  itemId: string;
+ parentExerciseId: string;
+ groupPath?: DraftPatchPath;
  groupValue: unknown;
  index: number;
  fallbackTitle: string;
@@ -1400,10 +1654,9 @@ function QuestionGroupCard({
   fallbackTitle;
  const wordBank = arrayValue(group, "word_bank");
  const questions = arrayValue(group, "questions");
- const answers =
-  arrayValue(group, "answers").length > 0
-   ? arrayValue(group, "answers")
-   : arrayValue(group, "answer_key");
+ const answerSourceKey =
+  arrayValue(group, "answers").length > 0 ? "answers" : "answer_key";
+ const answers = arrayValue(group, answerSourceKey);
  const sentences = arrayValue(group, "sentences");
  const partEntries = Object.entries(asRecord(group.parts)).map(
   ([label, text]) => ({
@@ -1431,19 +1684,38 @@ function QuestionGroupCard({
 
    {questions.length > 0 && (
     <div className="grid gap-2">
-     {questions.map((questionValue, questionIndex) => (
-      <QuestionCard
-       key={
-        stringValue(asRecord(questionValue), "id") ||
-        `${itemId}-question-${questionIndex}`
-       }
-       itemId={itemId}
-       questionValue={questionValue}
-       index={questionIndex}
-       displayMode={displayMode}
-       answerOverride={answers[questionIndex]}
-      />
-     ))}
+     {questions.map((questionValue, questionIndex) => {
+      const questionId =
+       stringValue(asRecord(questionValue), "id") ||
+       `${itemId}-question-${questionIndex}`;
+      const content = (
+       <QuestionCard
+        itemId={itemId}
+        questionValue={questionValue}
+        index={questionIndex}
+        displayMode={displayMode}
+        answerOverride={answers[questionIndex]}
+       />
+      );
+
+      return lessonId && itemPath && groupPath ? (
+       <EditableNodeWrapper
+        key={questionId}
+        lessonId={lessonId}
+        entityType="exercise_question"
+        entityId={questionId}
+        parentEntityType="exercise"
+        parentEntityId={parentExerciseId}
+        path={[...itemPath, ...groupPath, "questions", questionIndex]}
+        value={questionValue}
+        label={`Câu ${index + 1}.${questionIndex + 1}`}
+       >
+        {content}
+       </EditableNodeWrapper>
+      ) : (
+       <div key={questionId}>{content}</div>
+      );
+     })}
     </div>
    )}
 
@@ -1460,7 +1732,13 @@ function QuestionGroupCard({
    )}
 
    {questions.length === 0 && answers.length > 0 && !orderedAnswer && (
-    <AnswerKeyList itemId={`${itemId}-answers`} values={answers} />
+    <EditableAnswerKeyList
+     lessonId={lessonId}
+     itemPath={itemPath}
+     itemId={`${itemId}-answers`}
+     sourcePath={groupPath ? [...groupPath, answerSourceKey] : [answerSourceKey]}
+     values={answers}
+    />
    )}
   </div>
  );
@@ -1484,21 +1762,23 @@ function QuestionExerciseBody({
  const groups = arrayValue(record, "groups");
  const parts = arrayValue(record, "parts");
 
- const leftItems = firstArrayByKeys(record, [
+ const leftSource = firstArraySource(record, [
   "left_items",
   "left",
   "column_a",
   "a_items",
   "prompts",
  ]);
+ const leftItems = leftSource?.values ?? [];
 
- const rightItems = firstArrayByKeys(record, [
+ const rightSource = firstArraySource(record, [
   "right_items",
   "right",
   "column_b",
   "b_items",
   "responses",
  ]);
+ const rightItems = rightSource?.values ?? [];
 
  const answerKey =
   arrayValue(record, "blanks").length > 0
@@ -1704,9 +1984,33 @@ function QuestionExerciseBody({
 
    <ExerciseRenderIssues item={item} passage={passage} answers={clozeAnswers} />
 
-   {items.length > 0 && (
-    <LooseItemGrid items={items} displayMode={displayMode} />
-   )}
+   {items.length > 0 &&
+    (lessonId && itemPath ? (
+     <div className="grid gap-2">
+      {items.map((entryValue, index) => {
+       const entry = asRecord(entryValue);
+       const entityId = stringValue(entry, "id") || `${item.id}-item-${index}`;
+
+       return (
+        <EditableNodeWrapper
+         key={entityId}
+         lessonId={lessonId}
+         entityType="exercise_question"
+         entityId={entityId}
+         parentEntityType="exercise"
+         parentEntityId={item.id}
+         path={[...itemPath, "items", index]}
+         value={entryValue}
+         label={`Mục ${index + 1}`}
+        >
+         <LooseItemGrid items={[entryValue]} displayMode={displayMode} />
+        </EditableNodeWrapper>
+       );
+      })}
+     </div>
+    ) : (
+     <LooseItemGrid items={items} displayMode={displayMode} />
+    ))}
 
    {parts.length > 0 && (
     <div className="grid gap-3">
@@ -1716,7 +2020,11 @@ function QuestionExerciseBody({
         stringValue(asRecord(partValue), "id") ||
         `${item.id}-part-${partIndex}`
        }
+       lessonId={lessonId}
+       itemPath={itemPath}
        itemId={`${item.id}-part-${partIndex}`}
+       parentExerciseId={item.id}
+       groupPath={["parts", partIndex]}
        groupValue={partValue}
        index={partIndex}
        fallbackTitle={`Phần ${partIndex + 1}`}
@@ -1728,19 +2036,27 @@ function QuestionExerciseBody({
 
    {(leftItems.length > 0 || rightItems.length > 0) && (
     <div className="grid gap-2 md:grid-cols-2">
-     <div className="rounded-xl border border-border-default bg-bg-subtle p-3">
-      <p className="text-xs font-black uppercase tracking-wide text-text-muted">
-       Cột A
-      </p>
-      <LooseItemGrid items={leftItems} displayMode={displayMode} />
-     </div>
+     <MatchingColumn
+      lessonId={lessonId}
+      itemPath={itemPath}
+      itemId={item.id}
+      title="Cột A"
+      values={leftItems}
+      sourceKey={leftSource?.key ?? "left_items"}
+      labelMode="number"
+      displayMode={displayMode}
+     />
 
-     <div className="rounded-xl border border-border-default bg-bg-subtle p-3">
-      <p className="text-xs font-black uppercase tracking-wide text-text-muted">
-       Cột B
-      </p>
-      <LooseItemGrid items={rightItems} displayMode={displayMode} />
-     </div>
+     <MatchingColumn
+      lessonId={lessonId}
+      itemPath={itemPath}
+      itemId={item.id}
+      title="Cột B"
+      values={rightItems}
+      sourceKey={rightSource?.key ?? "right_items"}
+      labelMode="letter"
+      displayMode={displayMode}
+     />
     </div>
    )}
 
@@ -1761,7 +2077,11 @@ function QuestionExerciseBody({
         stringValue(asRecord(groupValue), "id") ||
         `${item.id}-group-${index}`
        }
+       lessonId={lessonId}
+       itemPath={itemPath}
        itemId={`${item.id}-group-${index}`}
+       parentExerciseId={item.id}
+       groupPath={["groups", index]}
        groupValue={groupValue}
        index={index}
        fallbackTitle="Nhóm câu"
@@ -1985,9 +2305,9 @@ function CommunicationExerciseBody({
      stringValue(task, "sample_answer_vi") ||
      stringValue(task, "sample_answer");
 
-    return (
+    const taskId = stringValue(task, "id") || `${item.id}-task-${index}`;
+    const content = (
      <ExerciseQuestionCard
-      key={stringValue(task, "id") || `${item.id}-${index}`}
       index={index + 1}
       title={
        stringValue(task, "instruction_vi") ||
@@ -1998,6 +2318,24 @@ function CommunicationExerciseBody({
       answer={sample}
       note={stringValue(task, "explanation_vi")}
      />
+    );
+
+    return lessonId && itemPath ? (
+     <EditableNodeWrapper
+      key={taskId}
+      lessonId={lessonId}
+      entityType="exercise_question"
+      entityId={taskId}
+      parentEntityType="exercise"
+      parentEntityId={item.id}
+      path={[...itemPath, "practice_tasks", index]}
+      value={taskValue}
+      label={`Practice task ${index + 1}`}
+     >
+      {content}
+     </EditableNodeWrapper>
+    ) : (
+     <div key={taskId}>{content}</div>
     );
    })}
 
@@ -2038,14 +2376,28 @@ function ExerciseBody({
  displayMode: LessonDisplayMode;
 }) {
  if (item.type === "matching") {
-  return <MatchingExerciseBody item={item} displayMode={displayMode} />;
+  return (
+   <MatchingExerciseBody
+    lessonId={lessonId}
+    itemPath={itemPath}
+    item={item}
+    displayMode={displayMode}
+   />
+  );
  }
  if (item.type === "phonetics" || item.type === "read_aloud") {
   return <PhoneticsExerciseBody item={item} displayMode={displayMode} />;
  }
 
  if (item.type === "substitution" || item.type === "substitution_drill") {
-  return <SubstitutionExerciseBody item={item} displayMode={displayMode} />;
+  return (
+   <SubstitutionExerciseBody
+    lessonId={lessonId}
+    itemPath={itemPath}
+    item={item}
+    displayMode={displayMode}
+   />
+  );
  }
 
  if (item.type === "complete_dialogue") {

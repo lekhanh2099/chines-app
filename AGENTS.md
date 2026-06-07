@@ -586,20 +586,55 @@ Keys must include every variable that changes the returned data.
 Good:
 
 ```ts
-["hanzihome", "catalog"][("hanzihome", "lesson-detail", lessonId)][
- ("hanzihome", "lesson", lessonId, "vocab", filters)
-][("hanzihome", "vocab", vocabItemId)];
+["hanzihome", "catalog"];
+
+["hanzihome", "lesson-detail", lessonId];
+
+["hanzihome", "lesson", lessonId, "vocab", filters];
+
+["hanzihome", "vocab", vocabItemId];
+
+["hanzihome", "grammar", grammarPointId];
+
+["hanzihome", "exercise", exerciseId];
+
+["hanzihome", "reading", readingId];
 ```
 
 Bad:
 
 ```ts
-["lesson"][("hanzihome", "data")];
+["lesson"];
+
+["hanzihome", "data"];
+
+["hanzihome", "lesson"];
+
+["hanzihome", "vocab"];
 ```
 
 After mutation, invalidate the smallest correct scope.
 
 Do not invalidate the entire catalog when only one vocab example changed unless the catalog stats depend on that change.
+
+Mutation invalidation examples:
+
+```ts
+// Editing one vocab core field:
+invalidate(["hanzihome", "vocab", vocabItemId]);
+invalidate(["hanzihome", "lesson-detail", lessonId]);
+
+// Editing one vocab example:
+invalidate(["hanzihome", "vocab", vocabItemId]);
+invalidate(["hanzihome", "lesson-detail", lessonId]);
+
+// Editing catalog-level metadata only:
+invalidate(["hanzihome", "catalog"]);
+```
+
+Do not use one broad query key to hide unclear ownership.
+
+The query key must express the resource boundary.
 
 ## 18. UI and Accessibility Rules
 

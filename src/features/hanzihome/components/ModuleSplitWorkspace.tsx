@@ -80,6 +80,7 @@ const splitEnabledKey = "hanzihome:module-split-enabled:v1";
 const paneLayoutKey = "hanzihome:module-pane-layout:v1";
 const lessonViewModeKey = "hanzihome:lesson-view-mode:v1";
 const splitPaneSizeKey = "hanzihome:module-split-size:v1";
+const developerToolsEnabled = process.env.NODE_ENV === "development";
 
 const studyModules = [
   "overview",
@@ -208,7 +209,7 @@ function writePaneLayout(layout: PaneLayout) {
 }
 
 function readLessonViewMode(): LessonViewMode {
-  if (typeof window === "undefined") return "study";
+  if (!developerToolsEnabled || typeof window === "undefined") return "study";
 
   return window.localStorage.getItem(lessonViewModeKey) === "debug"
     ? "debug"
@@ -216,7 +217,7 @@ function readLessonViewMode(): LessonViewMode {
 }
 
 function writeLessonViewMode(mode: LessonViewMode) {
-  if (typeof window === "undefined") return;
+  if (!developerToolsEnabled || typeof window === "undefined") return;
 
   window.localStorage.setItem(lessonViewModeKey, mode);
 }
@@ -328,6 +329,7 @@ export function ModuleSplitWorkspace({
   const [splitPaneSize, setSplitPaneSize] = useState(readSplitPaneSize);
 
   const normalizedLayout = useMemo(() => normalizePaneLayout(layout), [layout]);
+  const activeViewMode = developerToolsEnabled ? viewMode : "study";
 
   const updateSplitEnabled = (enabled: boolean) => {
     setSplitEnabled(enabled);
@@ -347,6 +349,8 @@ export function ModuleSplitWorkspace({
   };
 
   const updateViewMode = (mode: LessonViewMode) => {
+    if (!developerToolsEnabled) return;
+
     setViewMode(mode);
     writeLessonViewMode(mode);
   };
@@ -429,7 +433,9 @@ export function ModuleSplitWorkspace({
   };
 
   const debugPanel =
-    viewMode === "debug" && activeModule !== "overview" ? (
+    developerToolsEnabled &&
+    activeViewMode === "debug" &&
+    activeModule !== "overview" ? (
       <DebugRawDataPanel
         title="Raw lesson JSON"
         value={patchedLesson.sourceLesson ?? patchedLesson}
@@ -449,8 +455,15 @@ export function ModuleSplitWorkspace({
               itemClassName="h-8 px-2 text-sm sm:px-2.5"
             />
           </div>
-          <LessonViewModeToggle mode={viewMode} onChange={updateViewMode} />
-          <HanziHomeEditingTools lessonId={lesson.id} />
+          {developerToolsEnabled ? (
+            <>
+              <LessonViewModeToggle
+                mode={activeViewMode}
+                onChange={updateViewMode}
+              />
+              <HanziHomeEditingTools lessonId={lesson.id} />
+            </>
+          ) : null}
           <Button
             type="button"
             variant="outline"
@@ -479,8 +492,15 @@ export function ModuleSplitWorkspace({
             Kéo tab giữa hai pane, kéo divider để đổi kích thước.
           </p>
         </div>
-        <LessonViewModeToggle mode={viewMode} onChange={updateViewMode} />
-        <HanziHomeEditingTools lessonId={lesson.id} />
+        {developerToolsEnabled ? (
+          <>
+            <LessonViewModeToggle
+              mode={activeViewMode}
+              onChange={updateViewMode}
+            />
+            <HanziHomeEditingTools lessonId={lesson.id} />
+          </>
+        ) : null}
         <Button
           type="button"
           variant="outline"

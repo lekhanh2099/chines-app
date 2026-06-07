@@ -39,6 +39,21 @@ export const exerciseQuestionEditAdapter: EditAdapter = {
   { key: "explanation_vi", label: "Giải thích", kind: "textarea" },
  ],
  toValues: (value) => {
+  if (
+   typeof value === "string" ||
+   typeof value === "number" ||
+   typeof value === "boolean"
+  ) {
+   return {
+    prompt: editableText(value),
+    choices: "",
+    answer: "",
+    acceptable_answers: "",
+    sample_answers: "",
+    explanation_vi: "",
+   };
+  }
+
   const question = asRecord(value);
 
   return {
@@ -51,6 +66,14 @@ export const exerciseQuestionEditAdapter: EditAdapter = {
   };
  },
  toNode: (original, values) => {
+  if (
+   typeof original === "string" ||
+   typeof original === "number" ||
+   typeof original === "boolean"
+  ) {
+   return values.prompt ?? "";
+  }
+
   const question = asRecord(original);
 
   for (const key of [

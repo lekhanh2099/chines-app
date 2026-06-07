@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo } from "react";
+import { useEffect, useMemo } from "react";
 
 import type { HanziHomeLesson } from "@/features/hanzihome/types";
 
@@ -31,17 +31,25 @@ export function HanziHomeEditingTools({ lessonId }: { lessonId: string }) {
  );
 }
 
-export function useDraftPatchedLesson(lesson: HanziHomeLesson): HanziHomeLesson {
+export function useDraftPatchedLesson(
+ lesson: HanziHomeLesson,
+): HanziHomeLesson {
  const patches = useHanziHomeDraftStore((state) => state.patches);
+ const setSkippedPatchIds = useHanziHomeDraftStore(
+  (state) => state.setSkippedPatchIds,
+ );
  const lessonPatches = useMemo(
   () => patches.filter((patch) => patch.lessonId === lesson.id),
   [lesson.id, patches],
  );
 
- return useMemo(() => {
-  if (lessonPatches.length === 0) return lesson;
+ const patchedOutput = useMemo(() => {
+  if (lessonPatches.length === 0) {
+   return { lesson, skippedPatchIds: [] as string[] };
+  }
 
   const output = structuredClone(lesson);
+  const skippedPatchIds: string[] = [];
   const sourceLessonPatches = lessonPatches.filter(
    (patch) => patch.path[0] === "lesson",
   );
@@ -52,13 +60,25 @@ export function useDraftPatchedLesson(lesson: HanziHomeLesson): HanziHomeLesson 
   if (output.sourceLesson && sourceLessonPatches.length > 0) {
    const result = applyDraftPatches(output.sourceLesson, sourceLessonPatches);
    output.sourceLesson = result.lesson;
+   skippedPatchIds.push(...result.skippedPatchIds);
   }
 
   for (const patch of viewModelPatches) {
    if (patch.op !== "update") continue;
-   setValueAtPath(output, patch.path, structuredClone(patch.after));
+   const applied = setValueAtPath(
+    output,
+    patch.path,
+    structuredClone(patch.after),
+   );
+   if (!applied) skippedPatchIds.push(patch.id);
   }
 
-  return output;
+  return { lesson: output, skippedPatchIds };
  }, [lesson, lessonPatches]);
+
+ useEffect(() => {
+  setSkippedPatchIds(lesson.id, patchedOutput.skippedPatchIds);
+ }, [lesson.id, patchedOutput.skippedPatchIds, setSkippedPatchIds]);
+
+ return patchedOutput.lesson;
 }
