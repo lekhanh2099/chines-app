@@ -250,6 +250,7 @@ export function GrammarWorkspace({
   >
    <GrammarPointReader
     point={selectedPoint}
+    pointPath={selectedPointPath}
     status={progress[selectedPoint.id]?.status || "new"}
     bookmarked={bookmarks.includes(selectedPoint.id)}
     relatedVocab={relatedVocab}

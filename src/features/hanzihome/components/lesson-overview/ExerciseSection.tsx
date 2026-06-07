@@ -905,7 +905,7 @@ function MatchingColumn({
       <EditableNodeWrapper
        key={entityId}
        lessonId={lessonId}
-       entityType="exercise_question"
+       entityType="exercise_matching_item"
        entityId={entityId}
        parentEntityType="exercise"
        parentEntityId={itemId}

@@ -6,4 +6,5 @@ export const grammarBlockEditAdapter = createEditAdapter([
  { key: "pattern", label: "Công thức", kind: "textarea" },
  { key: "meaning_vi", label: "Ý nghĩa", kind: "textarea" },
  { key: "notes_vi", label: "Ghi chú", kind: "string-list" },
+ { key: "lines", label: "Dòng chi tiết", kind: "string-list" },
 ]);

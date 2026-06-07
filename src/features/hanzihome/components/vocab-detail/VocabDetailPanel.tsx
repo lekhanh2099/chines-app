@@ -8,6 +8,7 @@ import type {
  HanziHomeVocabItem,
  LearningStatus,
 } from "@/features/hanzihome/types";
+import type { DraftPatchPath } from "@/features/hanzihome/editing";
 
 import {
  hasCultureContent,
@@ -36,6 +37,7 @@ function isTypingTarget(element: Element | null) {
 
 type VocabDetailPanelProps = {
  word: HanziHomeVocabItem | null;
+ wordPath?: DraftPatchPath | null;
  status: LearningStatus;
  bookmarked: boolean;
  onBookmark: () => void;
@@ -46,6 +48,7 @@ type VocabDetailPanelProps = {
 
 export function VocabDetailPanel({
  word,
+ wordPath,
  bookmarked,
  onBookmark,
  lessonId,
@@ -149,6 +152,8 @@ export function VocabDetailPanel({
     <div className="grid gap-4">
      <StructuredVocabSections
       item={word}
+      itemPath={wordPath ?? undefined}
+      lessonId={lessonId}
       sectionView={effectiveSectionView}
       keyword={word.hanzi}
      />

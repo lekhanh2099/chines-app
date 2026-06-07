@@ -5,6 +5,7 @@ import { ExerciseAnswerKeyForm } from "./components/forms/ExerciseAnswerKeyForm"
 import { ExerciseClozeAnswerForm } from "./components/forms/ExerciseClozeAnswerForm";
 import { ExerciseClozeSegmentForm } from "./components/forms/ExerciseClozeSegmentForm";
 import { ExerciseDialogueLineForm } from "./components/forms/ExerciseDialogueLineForm";
+import { ExerciseMatchingItemForm } from "./components/forms/ExerciseMatchingItemForm";
 import { ExerciseMetadataForm } from "./components/forms/ExerciseMetadataForm";
 import { ExerciseQuestionForm } from "./components/forms/ExerciseQuestionForm";
 import { ExerciseWordBankForm } from "./components/forms/ExerciseWordBankForm";
@@ -22,6 +23,8 @@ import { SectionMetadataForm } from "./components/forms/SectionMetadataForm";
 import { TextBlockForm } from "./components/forms/TextBlockForm";
 import { TextLineForm } from "./components/forms/TextLineForm";
 import { TextParagraphForm } from "./components/forms/TextParagraphForm";
+import { VocabDetailSectionForm } from "./components/forms/VocabDetailSectionForm";
+import { VocabExampleForm } from "./components/forms/VocabExampleForm";
 import { VocabItemForm } from "./components/forms/VocabItemForm";
 import type { EditableEntityType } from "./store/types";
 
@@ -46,6 +49,16 @@ export const editRegistry: Record<EditableEntityType, EditRegistryEntry> = {
   title: "Sửa từ vựng",
   description: "Chỉnh nội dung của một mục từ vựng.",
   Form: VocabItemForm,
+ },
+ vocab_example: {
+  title: "Sửa ví dụ từ vựng",
+  description: "Chỉnh một ví dụ đang render trong mục từ.",
+  Form: VocabExampleForm,
+ },
+ vocab_detail_section: {
+  title: "Sửa chi tiết từ vựng",
+  description: "Chỉnh một dòng chi tiết hoặc kết hợp thường gặp.",
+  Form: VocabDetailSectionForm,
  },
  proper_noun: {
   title: "Sửa tên riêng",
@@ -91,6 +104,11 @@ export const editRegistry: Record<EditableEntityType, EditRegistryEntry> = {
   title: "Sửa câu hỏi",
   description: "Chỉnh đề bài, đáp án và giải thích.",
   Form: ExerciseQuestionForm,
+ },
+ exercise_matching_item: {
+  title: "Sửa mục nối cặp",
+  description: "Chỉnh một item ở cột nối cặp.",
+  Form: ExerciseMatchingItemForm,
  },
  exercise_answer_key: {
   title: "Sửa đáp án",

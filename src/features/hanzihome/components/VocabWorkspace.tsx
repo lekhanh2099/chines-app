@@ -153,6 +153,7 @@ export function VocabWorkspace({
     >
      <VocabDetailPanel
       word={selectedWord}
+      wordPath={selectedWordPath}
       status={progress[getVocabItemKey(selectedWord)]?.status || "new"}
       bookmarked={bookmarks.includes(getVocabItemKey(selectedWord))}
       lessonId={lesson.id}
@@ -166,6 +167,7 @@ export function VocabWorkspace({
    ) : (
     <VocabDetailPanel
      word={selectedWord}
+     wordPath={null}
      status="new"
      bookmarked={false}
      lessonId={lesson.id}

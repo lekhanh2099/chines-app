@@ -11,6 +11,11 @@ import type {
  WordFormation,
 } from "@/features/hanzihome/static-json/schemas/vocab.schema";
 import type { HanziHomeVocabItem } from "@/features/hanzihome/types";
+import {
+ EditableNodeWrapper,
+ type DraftPatchPath,
+} from "@/features/hanzihome/editing";
+import { getVocabItemKey } from "@/features/hanzihome/utils/vocab-item";
 
 import {
  hasComparisonContent,
@@ -21,10 +26,14 @@ import { Button } from "@/components/ui/button";
 
 export function StructuredVocabSections({
  item,
+ lessonId,
+ itemPath,
  sectionView,
  keyword,
 }: {
  item: HanziHomeVocabItem;
+ lessonId?: string;
+ itemPath?: DraftPatchPath;
  sectionView: SectionView;
  keyword: string;
 }) {
@@ -34,7 +43,12 @@ export function StructuredVocabSections({
  return (
   <>
    {show("examples") && item.examples.length > 0 && (
-    <StructuredExamplesSection item={item} keyword={keyword} />
+    <StructuredExamplesSection
+     item={item}
+     itemPath={itemPath}
+     lessonId={lessonId}
+     keyword={keyword}
+    />
    )}
    {show("comparisons") && hasComparisonContent(item.comparison) && (
     <ComparisonSection comparison={item.comparison} />
@@ -44,7 +58,12 @@ export function StructuredVocabSections({
    )}
 
    {show("all") && item.collocations.length > 0 && (
-    <CollocationSection collocations={item.collocations} />
+    <CollocationSection
+     collocations={item.collocations}
+     item={item}
+     itemPath={itemPath}
+     lessonId={lessonId}
+    />
    )}
   </>
  );
@@ -239,30 +258,59 @@ function ComparisonGroup({
  );
 }
 
-function CollocationSection({ collocations }: { collocations: Collocation[] }) {
+function CollocationSection({
+ collocations,
+ item,
+ lessonId,
+ itemPath,
+}: {
+ collocations: Collocation[];
+ item: HanziHomeVocabItem;
+ lessonId?: string;
+ itemPath?: DraftPatchPath;
+}) {
  return (
   <ReadingSection id="vocab-collocations" title="Kết hợp thường gặp">
    <div className="grid gap-2">
-    {collocations.map((collocation) => (
-     <div
-      key={collocation.id}
-      className="rounded-xl border border-border-default bg-bg-primary p-3"
-     >
-      <p className="font-black text-text-primary">{collocation.zh}</p>
-      {collocation.pinyin && (
-       <p className="text-sm italic text-text-muted">{collocation.pinyin}</p>
-      )}
-      {collocation.vi && <p>{collocation.vi}</p>}
-      {collocation.pattern && (
-       <p className="text-sm font-semibold text-accent-text">
-        {collocation.pattern}
-       </p>
-      )}
-      {collocation.note_vi && (
-       <p className="text-sm text-text-muted">{collocation.note_vi}</p>
-      )}
-     </div>
-    ))}
+    {collocations.map((collocation, index) => {
+     const content = (
+      <div className="rounded-xl border border-border-default bg-bg-primary p-3">
+       <p className="font-black text-text-primary">{collocation.zh}</p>
+       {collocation.pinyin && (
+        <p className="text-sm italic text-text-muted">{collocation.pinyin}</p>
+       )}
+       {collocation.vi && <p>{collocation.vi}</p>}
+       {collocation.pattern && (
+        <p className="text-sm font-semibold text-accent-text">
+         {collocation.pattern}
+        </p>
+       )}
+       {collocation.note_vi && (
+        <p className="text-sm text-text-muted">{collocation.note_vi}</p>
+       )}
+      </div>
+     );
+
+     if (!lessonId || !itemPath || !collocation.id) {
+      return <div key={collocation.id || index}>{content}</div>;
+     }
+
+     return (
+      <EditableNodeWrapper
+       key={collocation.id}
+       lessonId={lessonId}
+       entityType="vocab_detail_section"
+       entityId={collocation.id}
+       parentEntityType="vocab_item"
+       parentEntityId={getVocabItemKey(item)}
+       path={[...itemPath, "collocations", index]}
+       value={collocation}
+       label={collocation.zh}
+      >
+       {content}
+      </EditableNodeWrapper>
+     );
+    })}
    </div>
   </ReadingSection>
  );
@@ -270,9 +318,13 @@ function CollocationSection({ collocations }: { collocations: Collocation[] }) {
 
 function StructuredExamplesSection({
  item,
+ lessonId,
+ itemPath,
  keyword,
 }: {
  item: HanziHomeVocabItem;
+ lessonId?: string;
+ itemPath?: DraftPatchPath;
  keyword: string;
 }) {
  return (
@@ -286,37 +338,58 @@ function StructuredExamplesSection({
    </h3>
 
    <div className="grid gap-3">
-    {item.examples.map((example, index) => (
-     <div
-      key={example.id}
-      className={[
-       "grid gap-2 rounded-xl border p-4",
-       index === 0
-        ? "border-accent/30 bg-bg-subtle shadow-theme-sm"
-        : "border-border-default bg-bg-primary",
-      ].join(" ")}
-     >
-      <div className="border-l-4 border-accent pl-4">
-       <p className="text-2xl font-black leading-relaxed text-text-primary">
-        {renderHighlightedText(example.zh, keyword)}
-       </p>
-       {example.pinyin && (
-        <p className="text-sm font-bold italic leading-relaxed text-text-muted">
-         {example.pinyin}
+    {item.examples.map((example, index) => {
+     const content = (
+      <div
+       className={[
+        "grid gap-2 rounded-xl border p-4",
+        index === 0
+         ? "border-accent/30 bg-bg-subtle shadow-theme-sm"
+         : "border-border-default bg-bg-primary",
+       ].join(" ")}
+      >
+       <div className="border-l-4 border-accent pl-4">
+        <p className="text-2xl font-black leading-relaxed text-text-primary">
+         {renderHighlightedText(example.zh, keyword)}
+        </p>
+        {example.pinyin && (
+         <p className="text-sm font-bold italic leading-relaxed text-text-muted">
+          {example.pinyin}
+         </p>
+        )}
+        <p className="text-sm font-semibold leading-relaxed text-text-secondary">
+         {example.vi}
+        </p>
+       </div>
+
+       {example.analysis_vi && (
+        <p className="border-t border-border-default pt-2 text-sm leading-relaxed text-accent-text">
+         {example.analysis_vi}
         </p>
        )}
-       <p className="text-sm font-semibold leading-relaxed text-text-secondary">
-        {example.vi}
-       </p>
       </div>
+     );
 
-      {example.analysis_vi && (
-       <p className="border-t border-border-default pt-2 text-sm leading-relaxed text-accent-text">
-        {example.analysis_vi}
-       </p>
-      )}
-     </div>
-    ))}
+     if (!lessonId || !itemPath || !example.id) {
+      return <div key={example.id || index}>{content}</div>;
+     }
+
+     return (
+      <EditableNodeWrapper
+       key={example.id}
+       lessonId={lessonId}
+       entityType="vocab_example"
+       entityId={example.id}
+       parentEntityType="vocab_item"
+       parentEntityId={getVocabItemKey(item)}
+       path={[...itemPath, "examples", index]}
+       value={example}
+       label={example.zh}
+      >
+       {content}
+      </EditableNodeWrapper>
+     );
+    })}
    </div>
   </section>
  );
