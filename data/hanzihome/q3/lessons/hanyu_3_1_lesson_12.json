@@ -3,14 +3,14 @@
   "id": "02fe6df4-83d4-4c2d-9cce-e119bdd63a11",
   "title": {
    "zh": "好人难当",
-   "pinyin": "Hǎorén nándāng",
+   "pinyin": "Hǎorén nán dāng",
    "vi": "Làm người tốt khó",
    "en": "It is hard to be a good person"
   },
   "tags": ["hanyu_3_1", "lesson_12", "coverage_first", "q3", "好人难当"],
   "sections": [
    {
-    "id": "lesson12_section_001",
+    "id": "a6c0d522-99be-4f36-881c-b9b2c6beeb85",
     "type": "text",
     "order": 1,
     "title": "课文",
@@ -19,7 +19,7 @@
     "check_needed": false,
     "blocks": [
      {
-      "id": "lesson12_block_001",
+      "id": "e155d5ea-f89d-45f0-ab8d-094ce9e719f0",
       "type": "text_narrative",
       "order": 1,
       "title": "好人难当",
@@ -29,10 +29,10 @@
       "lines": [],
       "paragraphs": [
        {
-        "id": "lesson12_text_p_001",
+        "id": "43338a2c-2044-419e-9fdd-ed1739757a8d",
         "order": 1,
         "zh": "忽然发现好人难当，尽管你是诚心诚意的，有时也难免吃力不讨好。",
-        "pinyin": "hū rán fā xiàn hǎo rén nán dāng， jǐn guǎn nǐ shì chéngxīn chéngyì de， yǒu shí yě nán miǎn chīlì bù tǎohǎo。",
+        "pinyin": "Hūrán fāxiàn hǎorén nán dāng, jǐnguǎn nǐ shì chéngxīn-chéngyì de, yǒushí yě nánmiǎn chīlì bù tǎohǎo.",
         "vi": "Bỗng nhiên tôi phát hiện ra rằng làm người tốt thật khó. Dù bạn thật lòng thật ý, đôi khi cũng khó tránh khỏi cảnh mất công mà chẳng được lòng ai.",
         "audio_key": "",
         "vocab_refs": [],
@@ -41,11 +41,11 @@
         "check_needed": false
        },
        {
-        "id": "lesson12_text_p_002",
+        "id": "4a807389-3592-4cf4-973f-6589e0118fb2",
         "order": 2,
         "zh": "下班骑自行车回家，看到一个小男孩儿拿着一盒冰激凌跑过马路，不小心摔倒了，冰激凌飞出好远。小男孩儿趴在地上大哭，我连忙下车把他扶起来。这时从路旁的楼里跑出来一个女人，抱着孩子左看右看，一副心疼的样子，我想是孩子的妈妈，就安慰她说，小孩子摔一跤没关系。她双眼一瞪，对我吼道：“你骑车也不小心一点儿，这次没摔伤算你走运！”又指着地上的冰激凌说：“赔了冰激凌你可以走了！”",
-        "pinyin": "xià bān qí zì xíng chē huí jiā， kàn dào yí gè xiǎo nán hái er ná zhe yì hé bīngjīlíng pǎo guò mǎ lù， bù xiǎo xīn shuāi dǎo le， bīngjīlíng fēi chū hǎo yuǎn。 xiǎo nán hái er pā zài dì shàng dà kū， wǒ liánmáng xià chē bǎ tā fú qǐ lái。 zhè shí cóng lù páng de lóu lǐ pǎo chū lái yí gè nǚ rén， bào zhe hái zi zuǒ kàn yòu kàn， yí fù xīn téng de yàng zi， wǒ xiǎng shì hái zi de mā mā， jiù ān wèi tā shuō， xiǎo hái zi shuāi yī jiāo méi guān xì。 tā shuāng yǎn yí dèng， duì wǒ hǒu dào：“ nǐ qí chē yě bù xiǎo xīn yìdiǎnr， zhè cì méi shuāi shāng suàn nǐ zǒu yùn！” yòu zhǐ zhe dì shàng de bīngjīlíng shuō：“ péi le bīngjīlíng nǐ kě yǐ zǒu le！”",
-        "vi": "Tan làm, tôi đạp xe về nhà. Tôi thấy một cậu bé cầm một hộp kem chạy qua đường, không cẩn thận bị ngã, hộp kem văng ra rất xa. Cậu bé nằm sấp trên đất khóc lớn. Tôi vội xuống xe đỡ cậu bé dậy. Lúc đó, từ tòa nhà bên đường có một người phụ nữ chạy ra, ôm đứa bé nhìn trái nhìn phải, vẻ rất xót ruột. Tôi nghĩ đó là mẹ của đứa bé, nên an ủi cô ấy rằng trẻ con ngã một cái cũng không sao. Cô ấy trợn mắt lên, quát tôi: “Anh đi xe cũng không cẩn thận chút nào, lần này không làm nó bị thương là anh may đấy!” Rồi lại chỉ vào hộp kem dưới đất nói: “Đền hộp kem rồi anh có thể đi!”",
+        "pinyin": "Xiàbān qí zìxíngchē huí jiā, kàndào yí ge xiǎo nánháir názhe yì hé bīngjīlíng pǎoguò mǎlù, bù xiǎoxīn shuāidǎo le, bīngjīlíng fēichū hǎo yuǎn. Xiǎo nánháir pā zài dìshang dà kū, wǒ liánmáng xià chē bǎ tā fú qǐlai. Zhè shí cóng lùpáng de lóu lǐ pǎochūlai yí ge nǚrén, bàozhe háizi zuǒ kàn yòu kàn, yí fù xīnténg de yàngzi, wǒ xiǎng shì háizi de māma, jiù ānwèi tā shuō, xiǎo háizi shuāi yì jiāo méi guānxi. Tā shuāng yǎn yí dèng, duì wǒ hǒu dào: “Nǐ qí chē yě bù xiǎoxīn yìdiǎnr, zhè cì méi shuāishāng suàn nǐ zǒuyùn!” Yòu zhǐzhe dìshang de bīngjīlíng shuō: “Péi le bīngjīlíng nǐ kěyǐ zǒu le!”",
+        "vi": "Tan làm, tôi đạp xe về nhà. Tôi thấy một cậu bé cầm một hộp kem chạy qua đường, không cẩn thận bị ngã, hộp kem văng ra rất xa. Cậu bé nằm sấp trên đất khóc lớn. Tôi vội xuống xe đỡ cậu bé dậy. Lúc đó, từ tòa nhà bên đường có một người phụ nữ chạy ra, ôm đứa bé nhìn trái nhìn phải, vẻ rất xót ruột. Tôi nghĩ đó là mẹ của đứa bé, nên an ủi cô ấy rằng trẻ con ngã một cái cũng không sao. Cô ấy trợn mắt lên, quát tôi: “Anh đi xe cũng không cẩn thận chút nào, lần này nó không bị thương xem như anh may đấy!” Rồi lại chỉ vào hộp kem dưới đất nói: “Đền hộp kem xong thì anh có thể đi!”",
         "audio_key": "",
         "vocab_refs": [],
         "grammar_refs": [],
@@ -53,10 +53,10 @@
         "check_needed": false
        },
        {
-        "id": "lesson12_text_p_003",
+        "id": "5a221404-05e7-4ae2-ad9f-0c920a73dc36",
         "order": 3,
         "zh": "上午还是晴天，中午却阴得厉害，好像要下雨。见邻居家的被子还在院子里晒着，心想，他们是双职工，恐怕不能回来收，就把被子抱进自己的单身宿舍里，免得被雨淋湿。",
-        "pinyin": "shàng wǔ hái shì qíng tiān， zhōng wǔ què yīn de lìhai， hǎo xiàng yào xià yǔ。 jiàn lín jū jiā de bèi zi hái zài yuàn zi lǐ shài zhe， xīn xiǎng， tā men shì shuāng zhígōng， kǒng pà bù néng huí lái shōu， jiù bǎ bèi zi bào jìn zì jǐ de dān shēn sù shè lǐ， miǎn de bèi yǔ lín shī。",
+        "pinyin": "Shàngwǔ hái shì qíngtiān, zhōngwǔ què yīn de lìhai, hǎoxiàng yào xià yǔ. Jiàn línjū jiā de bèizi hái zài yuànzi lǐ shàizhe, xīn xiǎng, tāmen shì shuāngzhígōng, kǒngpà bù néng huílai shōu, jiù bǎ bèizi bào jìn zìjǐ de dānshēn sùshè lǐ, miǎnde bèi yǔ lín shī.",
         "vi": "Buổi sáng trời vẫn còn nắng, đến trưa thì âm u dữ dội, giống như sắp mưa. Thấy chăn của nhà hàng xóm vẫn đang phơi trong sân, tôi nghĩ họ là vợ chồng đều đi làm, e rằng không thể về thu chăn được, nên tôi ôm chăn vào ký túc xá độc thân của mình, để khỏi bị mưa làm ướt.",
         "audio_key": "",
         "vocab_refs": [],
@@ -65,10 +65,10 @@
         "check_needed": false
        },
        {
-        "id": "lesson12_text_p_004",
+        "id": "5c402bbc-a0e6-434c-a6c7-3c4f86c845fe",
         "order": 4,
         "zh": "下午突然接到通知，要我陪领导去外地检查工作。第五天回到宿舍，才想起邻居家的被子。连忙去还，邻居却说，以为被小偷儿偷走了，就又买了一套新的。我只好向人家一遍又一遍地道歉。朋友们知道了，都说我是个“马大哈”。",
-        "pinyin": "xià wǔ tū rán jiē dào tōng zhī， yào wǒ péi lǐng dǎo qù wài dì jiǎn chá gōng zuò。 dì wǔ tiān huí dào sù shè， cái xiǎng qǐ lín jū jiā de bèi zi。 liánmáng qù hái， lín jū què shuō， yǐ wéi bèi xiǎotōur tōu zǒu le， jiù yòu mǎi le yí tào xīn de。 wǒ zhǐ hǎo xiàng rén jiā yí biàn yòu yí biàn dì dào qiàn。 péng yǒu men zhī dào le， dōu shuō wǒ shì gè“ mǎdàhā”。",
+        "pinyin": "Xiàwǔ tūrán jiēdào tōngzhī, yào wǒ péi lǐngdǎo qù wàidì jiǎnchá gōngzuò. Dì wǔ tiān huídào sùshè, cái xiǎngqǐ línjū jiā de bèizi. Liánmáng qù huán, línjū què shuō, yǐwéi bèi xiǎotōur tōu zǒu le, jiù yòu mǎi le yí tào xīn de. Wǒ zhǐhǎo xiàng rénjia yí biàn yòu yí biàn de dàoqiàn. Péngyoumen zhīdào le, dōu shuō wǒ shì ge “mǎdàhā”.",
         "vi": "Buổi chiều tôi đột nhiên nhận được thông báo, yêu cầu tôi đi cùng lãnh đạo đến nơi khác kiểm tra công việc. Đến ngày thứ năm trở về ký túc xá, tôi mới nhớ ra chăn của nhà hàng xóm. Tôi vội đem trả, nhưng hàng xóm lại nói rằng họ tưởng chăn bị kẻ trộm lấy mất, nên đã mua một bộ mới. Tôi đành phải xin lỗi người ta hết lần này đến lần khác. Bạn bè biết chuyện, đều nói tôi là một “ma-da-ha” — người hay sơ suất, đãng trí.",
         "audio_key": "",
         "vocab_refs": [],
@@ -77,11 +77,11 @@
         "check_needed": false
        },
        {
-        "id": "lesson12_text_p_005",
+        "id": "babe7f0b-2b53-402f-85af-c5de9b0e676d",
         "order": 5,
         "zh": "去逛公园，看见林荫道上一对青年男女手拉着手在散步，叫人好不羡慕。忽然发现姑娘的裙子后边拉链儿没拉上，很不好看。该不该告诉她？我犹豫着。游人越来越多，我替那姑娘着急，心一横就上前说了。那男的却把眼一瞪：“这么大的公园，这么多的风景你不看，却看人家姑娘的拉链儿，你无聊不无聊！”",
-        "pinyin": "qù guàng gōng yuán， kàn jiàn línyīndào shàng yī duì qīng nián nán nǚ shǒu lā zhuó shǒu zài sàn bù， jiào rén hǎobù xiànmù。 hū rán fā xiàn gū niáng de qún zi hòu biān lāliànr méi lā shàng， hěn bù hǎo kàn。 gāi bù gāi gào sù tā？ wǒ yóu yù zhe。 yóu rén yuè lái yuè duō， wǒ tì nà gū niáng zháojí， xīn yì héng jiù shàng qián shuō le。 nà nán de què bǎ yǎn yí dèng：“ zhè me dà de gōng yuán， zhè me duō de fēng jǐng nǐ bù kàn， què kàn rén jiā gū niáng de lāliànr， nǐ wú liáo bù wú liáo！”",
-        "vi": "Đi dạo công viên, tôi thấy trên con đường rợp bóng cây có một đôi nam nữ trẻ tuổi nắm tay nhau đi dạo, khiến người ta thật ngưỡng mộ. Bỗng nhiên tôi phát hiện khóa kéo phía sau váy cô gái chưa kéo lên, nhìn rất không đẹp. Có nên nói cho cô ấy biết không? Tôi do dự. Khách tham quan càng lúc càng đông, tôi lo thay cô gái, bèn quyết tâm bước lên nói. Không ngờ người nam kia trợn mắt lên nói: “Công viên lớn như thế này, phong cảnh nhiều như thế này anh không nhìn, lại đi nhìn khóa kéo của cô gái nhà người ta, anh có chán đời không!”",
+        "pinyin": "Qù guàng gōngyuán, kànjiàn línyīndào shang yí duì qīngnián nánnǚ shǒu lāzhe shǒu zài sànbù, jiào rén hǎobù xiànmù. Hūrán fāxiàn gūniang de qúnzi hòubian lāliànr méi lā shàng, hěn bù hǎokàn. Gāi bù gāi gàosu tā? Wǒ yóuyùzhe. Yóurén yuèláiyuè duō, wǒ tì nà gūniang zháojí, xīn yì héng jiù shàngqián shuō le. Nà nán de què bǎ yǎn yí dèng: “Zhème dà de gōngyuán, zhème duō de fēngjǐng nǐ bù kàn, què kàn rénjia gūniang de lāliànr, nǐ wúliáo bù wúliáo!”",
+        "vi": "Đi dạo công viên, tôi thấy trên con đường rợp bóng cây có một đôi nam nữ trẻ tuổi nắm tay nhau đi dạo, khiến người ta thật ngưỡng mộ. Bỗng nhiên tôi phát hiện khóa kéo phía sau váy cô gái chưa kéo lên, nhìn rất không đẹp. Có nên nói cho cô ấy biết không? Tôi do dự. Khách tham quan càng lúc càng đông, tôi lo thay cô gái, bèn quyết tâm bước lên nói. Không ngờ người nam kia trợn mắt lên nói: “Công viên lớn như thế này, phong cảnh nhiều như thế này anh không nhìn, lại đi nhìn khóa kéo của cô gái nhà người ta, anh có rảnh rỗi đến mức vô duyên vậy không!”",
         "audio_key": "",
         "vocab_refs": [],
         "grammar_refs": [],
@@ -89,11 +89,11 @@
         "check_needed": false
        },
        {
-        "id": "lesson12_text_p_006",
+        "id": "d2683a70-b897-4979-ad07-0bca2bb00b31",
         "order": 6,
         "zh": "去修自行车时，一位漂亮的姑娘推着车过来打气，看她打了半天也打不进去，就说：“我来帮你打吧。”她连声道谢，说：“现在像你这样的好人真是不多了。”我听了十分得意，手中的气筒压得更加起劲儿，还想再和她多聊几句，不料，“嘭”的一声——把车胎打爆了……",
-        "pinyin": "qù xiū zì xíng chē shí， yí wèi piào liàng de gū niáng tuī zhe chē guò lái dǎ qì， kàn tā dǎ le bàn tiān yě dǎ bu jìnqù， jiù shuō：“ wǒ lái bāng nǐ dǎ ba。” tā lián shēng dào xiè， shuō：“ xiàn zài xiàng nǐ zhè yàng de hǎo rén zhēn shì bù duō le。” wǒ tīng le shí fēn déyì， shǒu zhōng de qì tǒng yā de gèngjiā qǐjìnr， hái xiǎng zài hé tā duō liáo jǐ jù， bù liào，“ pēng” de yì shēng—— bǎ chē tāi dǎ bào le……",
-        "vi": "Khi đi sửa xe đạp, một cô gái xinh đẹp dắt xe đến bơm hơi. Thấy cô ấy bơm cả buổi mà vẫn không bơm vào được, tôi nói: “Để tôi giúp cô bơm nhé.” Cô ấy liên tục cảm ơn, nói: “Bây giờ người tốt như anh thật không còn nhiều nữa.” Nghe vậy tôi vô cùng đắc ý, tay cầm ống bơm càng bơm hăng hơn, còn muốn nói chuyện với cô ấy thêm vài câu. Không ngờ, “bùm” một tiếng — tôi bơm nổ luôn lốp xe……",
+        "pinyin": "Qù xiū zìxíngchē shí, yí wèi piàoliang de gūniang tuīzhe chē guòlai dǎ qì, kàn tā dǎ le bàntiān yě dǎ bu jìnqù, jiù shuō: “Wǒ lái bāng nǐ dǎ ba.” Tā liánshēng dàoxiè, shuō: “Xiànzài xiàng nǐ zhèyàng de hǎorén zhēnshi bù duō le.” Wǒ tīng le shífēn déyì, shǒu zhōng de qìtǒng yā de gèngjiā qǐjìnr, hái xiǎng zài hé tā duō liáo jǐ jù, bùliào, “pēng” de yì shēng — bǎ chētāi dǎ bào le……",
+        "vi": "Khi đi sửa xe đạp, có một cô gái xinh đẹp dắt xe đến bơm hơi. Thấy cô ấy bơm cả buổi mà vẫn không bơm vào được, tôi nói: “Để tôi giúp cô bơm nhé.” Cô ấy cảm ơn liên tục, nói: “Bây giờ người tốt như anh thật không còn nhiều nữa.” Nghe vậy tôi vô cùng đắc ý, tay ấn cái bơm càng hăng hơn, còn muốn nói chuyện với cô ấy thêm vài câu. Không ngờ, “bùm” một tiếng — tôi bơm nổ luôn lốp xe……",
         "audio_key": "",
         "vocab_refs": [],
         "grammar_refs": [],
@@ -101,10 +101,10 @@
         "check_needed": false
        },
        {
-        "id": "lesson12_text_p_007",
+        "id": "cde61ddf-34c9-4d25-892b-99b26df9e427",
         "order": 7,
         "zh": "（根据林小龙的文章改写）",
-        "pinyin": "（ gēn jù lín xiǎo lóng de wén zhāng gǎi xiě）",
+        "pinyin": "（Gēnjù Lín Xiǎolóng de wénzhāng gǎixiě）",
         "vi": "Dựa theo bài viết của Lâm Tiểu Long, có chỉnh sửa.",
         "audio_key": "",
         "vocab_refs": [],
@@ -113,12 +113,65 @@
         "check_needed": false
        }
       ],
-      "comprehension_questions": []
+      "comprehension_questions": [
+       {
+        "id": "lesson12_text_q_001",
+        "type": "short_answer",
+        "order": 1,
+        "question": "那个孩子的妈妈为什么对“我”吼？",
+        "pinyin": "Nà ge háizi de māma wèishénme duì “wǒ” hǒu?",
+        "answer": "因为她以为孩子是“我”骑车不小心弄摔倒的。",
+        "answer_pinyin": "Yīnwèi tā yǐwéi háizi shì “wǒ” qí chē bù xiǎoxīn nòng shuāidǎo de.",
+        "vi": "Vì cô ấy tưởng đứa bé bị ngã là do “tôi” đi xe không cẩn thận.",
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": true,
+        "check_needed": false
+       },
+       {
+        "id": "lesson12_text_q_002",
+        "type": "short_answer",
+        "order": 2,
+        "question": "朋友们为什么说“我”是个“马大哈”？",
+        "pinyin": "Péngyoumen wèishénme shuō “wǒ” shì ge “mǎdàhā”?",
+        "answer": "因为“我”把邻居家的被子抱进宿舍后，出差去了，直到第五天才想起来去还，结果邻居以为被子被偷了，又买了一套新的。",
+        "answer_pinyin": "Yīnwèi “wǒ” bǎ línjū jiā de bèizi bào jìn sùshè hòu, chūchāi qù le, zhídào dì wǔ tiān cái xiǎngqǐlai qù huán, jiéguǒ línjū yǐwéi bèizi bèi tōu le, yòu mǎi le yí tào xīn de.",
+        "vi": "Vì “tôi” ôm chăn của hàng xóm vào ký túc xá rồi đi công tác, đến ngày thứ năm mới nhớ trả, khiến hàng xóm tưởng chăn bị trộm và đã mua một bộ mới.",
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": true,
+        "check_needed": false
+       },
+       {
+        "id": "lesson12_text_q_003",
+        "type": "short_answer",
+        "order": 3,
+        "question": "在公园里“我”为什么被误解？",
+        "pinyin": "Zài gōngyuán lǐ “wǒ” wèishénme bèi wùjiě?",
+        "answer": "因为“我”想提醒姑娘裙子后边的拉链儿没拉上，可她身边的男青年以为“我”故意看姑娘的拉链儿。",
+        "answer_pinyin": "Yīnwèi “wǒ” xiǎng tíxǐng gūniang qúnzi hòubian de lāliànr méi lā shàng, kě tā shēnbiān de nán qīngnián yǐwéi “wǒ” gùyì kàn gūniang de lāliànr.",
+        "vi": "Vì “tôi” muốn nhắc cô gái rằng khóa kéo sau váy chưa kéo lên, nhưng chàng trai bên cạnh cô ấy lại tưởng “tôi” cố ý nhìn khóa kéo của cô gái.",
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": true,
+        "check_needed": false
+       },
+       {
+        "id": "lesson12_text_q_004",
+        "type": "short_answer",
+        "order": 4,
+        "question": "“我”是怎么把姑娘的自行车胎打爆的？",
+        "pinyin": "“Wǒ” shì zěnme bǎ gūniang de zìxíngchē tāi dǎ bào de?",
+        "answer": "姑娘连声道谢以后，“我”十分得意，压气筒压得更加起劲儿，结果把车胎打爆了。",
+        "answer_pinyin": "Gūniang liánshēng dàoxiè yǐhòu, “wǒ” shífēn déyì, yā qìtǒng yā de gèngjiā qǐjìnr, jiéguǒ bǎ chētāi dǎ bào le.",
+        "vi": "Sau khi cô gái cảm ơn liên tục, “tôi” rất đắc ý, ấn cái bơm càng hăng, kết quả bơm nổ lốp xe.",
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": true,
+        "check_needed": false
+       }
+      ]
      }
     ]
    },
    {
-    "id": "lesson12_section_002",
+    "id": "78c30bf4-c314-4c4c-86e3-4dd62382dd78",
     "type": "vocabulary",
     "order": 2,
     "title": "生词",
@@ -127,7 +180,7 @@
     "check_needed": false,
     "items": [
      {
-      "id": "lesson12_main_vocab_001",
+      "id": "68c05a12-9d8e-45d9-a413-786bcf2f780a",
       "type": "vocabulary_item",
       "order": 1,
       "hanzi": "尽管",
@@ -135,14 +188,6 @@
       "meaning_vi": "dù; mặc dù; cứ việc",
       "meaning_en": "although; even though; feel free to",
       "pos": "Liên từ / Phó từ",
-      "pos_detail": {
-       "vi": "Liên từ / Phó từ",
-       "cn": "连词 / 副词",
-       "normalized": "conjunction_adverb",
-       "schema_compatible_pos": "conjunction",
-       "is_separable_verb": false,
-       "notes": []
-      },
       "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
@@ -157,10 +202,18 @@
       },
       "audio_key": "",
       "source_origin": "textbook",
-      "check_needed": false
+      "check_needed": false,
+      "pos_detail": {
+       "vi": "Liên từ / Phó từ",
+       "cn": "连词 / 副词",
+       "normalized": "conjunction_adverb",
+       "schema_compatible_pos": "conjunction",
+       "is_separable_verb": false,
+       "notes": []
+      }
      },
      {
-      "id": "lesson12_main_vocab_002",
+      "id": "8c18cf3c-e9dc-42e1-8faf-eb26799cabab",
       "type": "vocabulary_item",
       "order": 2,
       "hanzi": "诚心诚意",
@@ -168,14 +221,6 @@
       "meaning_vi": "thành tâm thành ý; thật lòng thật dạ",
       "meaning_en": "wholeheartedly; sincerely",
       "pos": "Thành ngữ / Cụm trạng thái",
-      "pos_detail": {
-       "vi": "Thành ngữ / Cụm trạng thái",
-       "cn": "成语 / 状态短语",
-       "normalized": "idiom",
-       "schema_compatible_pos": "idiom",
-       "is_separable_verb": false,
-       "notes": []
-      },
       "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
@@ -190,10 +235,18 @@
       },
       "audio_key": "",
       "source_origin": "textbook",
-      "check_needed": false
+      "check_needed": false,
+      "pos_detail": {
+       "vi": "Thành ngữ / Cụm trạng thái",
+       "cn": "成语 / 状态短语",
+       "normalized": "idiom",
+       "schema_compatible_pos": "idiom",
+       "is_separable_verb": false,
+       "notes": []
+      }
      },
      {
-      "id": "lesson12_main_vocab_003",
+      "id": "1fbd69b7-603a-44ea-8d57-10cd4def9ced",
       "type": "vocabulary_item",
       "order": 3,
       "hanzi": "难免",
@@ -201,14 +254,6 @@
       "meaning_vi": "khó tránh khỏi",
       "meaning_en": "hard to avoid; inevitably",
       "pos": "Động từ / Phó từ sắc thái",
-      "pos_detail": {
-       "vi": "Động từ / Phó từ sắc thái",
-       "cn": "动词 / 副词性用法",
-       "normalized": "modal_adverb",
-       "schema_compatible_pos": "adverb",
-       "is_separable_verb": false,
-       "notes": []
-      },
       "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
@@ -223,10 +268,18 @@
       },
       "audio_key": "",
       "source_origin": "textbook",
-      "check_needed": false
+      "check_needed": false,
+      "pos_detail": {
+       "vi": "Động từ / Phó từ sắc thái",
+       "cn": "动词 / 副词性用法",
+       "normalized": "modal_adverb",
+       "schema_compatible_pos": "adverb",
+       "is_separable_verb": false,
+       "notes": []
+      }
      },
      {
-      "id": "lesson12_main_vocab_004",
+      "id": "3dc505f1-bc0e-4a96-b448-17fed89fdc60",
       "type": "vocabulary_item",
       "order": 4,
       "hanzi": "吃力不讨好",
@@ -234,14 +287,6 @@
       "meaning_vi": "tốn công mà chẳng được lòng ai",
       "meaning_en": "do a hard job without getting thanks",
       "pos": "Thành ngữ",
-      "pos_detail": {
-       "vi": "Thành ngữ",
-       "cn": "成语",
-       "normalized": "idiom",
-       "schema_compatible_pos": "idiom",
-       "is_separable_verb": false,
-       "notes": []
-      },
       "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
@@ -256,10 +301,18 @@
       },
       "audio_key": "",
       "source_origin": "textbook",
-      "check_needed": false
+      "check_needed": false,
+      "pos_detail": {
+       "vi": "Thành ngữ",
+       "cn": "成语",
+       "normalized": "idiom",
+       "schema_compatible_pos": "idiom",
+       "is_separable_verb": false,
+       "notes": []
+      }
      },
      {
-      "id": "lesson12_main_vocab_005",
+      "id": "188412d4-4c23-4d60-b7b2-21f3490199e7",
       "type": "vocabulary_item",
       "order": 5,
       "hanzi": "吃力",
@@ -267,14 +320,6 @@
       "meaning_vi": "vất vả; tốn sức",
       "meaning_en": "strenuous; laborious",
       "pos": "Tính từ",
-      "pos_detail": {
-       "vi": "Tính từ",
-       "cn": "形容词",
-       "normalized": "adjective",
-       "schema_compatible_pos": "adjective",
-       "is_separable_verb": false,
-       "notes": []
-      },
       "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
@@ -289,10 +334,18 @@
       },
       "audio_key": "",
       "source_origin": "textbook",
-      "check_needed": false
+      "check_needed": false,
+      "pos_detail": {
+       "vi": "Tính từ",
+       "cn": "形容词",
+       "normalized": "adjective",
+       "schema_compatible_pos": "adjective",
+       "is_separable_verb": false,
+       "notes": []
+      }
      },
      {
-      "id": "lesson12_main_vocab_006",
+      "id": "5ea44727-d97c-467b-b1b8-babd195df50d",
       "type": "vocabulary_item",
       "order": 6,
       "hanzi": "讨好",
@@ -300,14 +353,6 @@
       "meaning_vi": "lấy lòng; làm vừa lòng",
       "meaning_en": "to curry favor; to please",
       "pos": "Động từ",
-      "pos_detail": {
-       "vi": "Động từ",
-       "cn": "动词",
-       "normalized": "verb",
-       "schema_compatible_pos": "verb",
-       "is_separable_verb": false,
-       "notes": []
-      },
       "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
@@ -322,10 +367,18 @@
       },
       "audio_key": "",
       "source_origin": "textbook",
-      "check_needed": false
+      "check_needed": false,
+      "pos_detail": {
+       "vi": "Động từ",
+       "cn": "动词",
+       "normalized": "verb",
+       "schema_compatible_pos": "verb",
+       "is_separable_verb": false,
+       "notes": []
+      }
      },
      {
-      "id": "lesson12_main_vocab_007",
+      "id": "54613016-834a-4fc3-9912-2357a6d27058",
       "type": "vocabulary_item",
       "order": 7,
       "hanzi": "盒",
@@ -333,14 +386,6 @@
       "meaning_vi": "hộp; lượng từ cho hộp",
       "meaning_en": "box; measure word for boxes",
       "pos": "Danh từ / Lượng từ",
-      "pos_detail": {
-       "vi": "Danh từ / Lượng từ",
-       "cn": "名词 / 量词",
-       "normalized": "noun_measure_word",
-       "schema_compatible_pos": "noun",
-       "is_separable_verb": false,
-       "notes": []
-      },
       "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
@@ -355,10 +400,18 @@
       },
       "audio_key": "",
       "source_origin": "textbook",
-      "check_needed": false
+      "check_needed": false,
+      "pos_detail": {
+       "vi": "Danh từ / Lượng từ",
+       "cn": "名词 / 量词",
+       "normalized": "noun_measure_word",
+       "schema_compatible_pos": "noun",
+       "is_separable_verb": false,
+       "notes": []
+      }
      },
      {
-      "id": "lesson12_main_vocab_008",
+      "id": "0da97406-c3ac-4fcb-a51c-398a59c3fbae",
       "type": "vocabulary_item",
       "order": 8,
       "hanzi": "冰激凌",
@@ -366,14 +419,6 @@
       "meaning_vi": "kem",
       "meaning_en": "ice cream",
       "pos": "Danh từ",
-      "pos_detail": {
-       "vi": "Danh từ",
-       "cn": "名词",
-       "normalized": "noun",
-       "schema_compatible_pos": "noun",
-       "is_separable_verb": false,
-       "notes": []
-      },
       "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
@@ -388,10 +433,18 @@
       },
       "audio_key": "",
       "source_origin": "textbook",
-      "check_needed": false
+      "check_needed": false,
+      "pos_detail": {
+       "vi": "Danh từ",
+       "cn": "名词",
+       "normalized": "noun",
+       "schema_compatible_pos": "noun",
+       "is_separable_verb": false,
+       "notes": []
+      }
      },
      {
-      "id": "lesson12_main_vocab_009",
+      "id": "54b36889-82be-485b-8342-fb8aab572065",
       "type": "vocabulary_item",
       "order": 9,
       "hanzi": "趴",
@@ -399,14 +452,6 @@
       "meaning_vi": "nằm sấp; úp người xuống",
       "meaning_en": "to lie prone",
       "pos": "Động từ",
-      "pos_detail": {
-       "vi": "Động từ",
-       "cn": "动词",
-       "normalized": "verb",
-       "schema_compatible_pos": "verb",
-       "is_separable_verb": false,
-       "notes": []
-      },
       "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
@@ -421,10 +466,18 @@
       },
       "audio_key": "",
       "source_origin": "textbook",
-      "check_needed": false
+      "check_needed": false,
+      "pos_detail": {
+       "vi": "Động từ",
+       "cn": "动词",
+       "normalized": "verb",
+       "schema_compatible_pos": "verb",
+       "is_separable_verb": false,
+       "notes": []
+      }
      },
      {
-      "id": "lesson12_main_vocab_010",
+      "id": "1354b1a3-93cc-4505-8d7f-c5550a1d6ae9",
       "type": "vocabulary_item",
       "order": 10,
       "hanzi": "心疼",
@@ -432,14 +485,6 @@
       "meaning_vi": "xót; thương; đau lòng; xót tiền",
       "meaning_en": "to feel sorry; to love dearly; to feel distressed",
       "pos": "Động từ / Tính từ tâm lý",
-      "pos_detail": {
-       "vi": "Động từ / Tính từ tâm lý",
-       "cn": "动词 / 心理形容词",
-       "normalized": "psych_verb_adjective",
-       "schema_compatible_pos": "verb",
-       "is_separable_verb": false,
-       "notes": []
-      },
       "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
@@ -454,10 +499,18 @@
       },
       "audio_key": "",
       "source_origin": "textbook",
-      "check_needed": false
+      "check_needed": false,
+      "pos_detail": {
+       "vi": "Động từ / Tính từ tâm lý",
+       "cn": "动词 / 心理形容词",
+       "normalized": "psych_verb_adjective",
+       "schema_compatible_pos": "verb",
+       "is_separable_verb": false,
+       "notes": []
+      }
      },
      {
-      "id": "lesson12_main_vocab_011",
+      "id": "f0684cb3-4577-4e6c-9f22-7d97c89692b3",
       "type": "vocabulary_item",
       "order": 11,
       "hanzi": "安慰",
@@ -465,14 +518,6 @@
       "meaning_vi": "an ủi",
       "meaning_en": "to comfort",
       "pos": "Động từ / Danh từ",
-      "pos_detail": {
-       "vi": "Động từ / Danh từ",
-       "cn": "动词 / 名词",
-       "normalized": "verb_noun",
-       "schema_compatible_pos": "verb",
-       "is_separable_verb": false,
-       "notes": []
-      },
       "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
@@ -487,10 +532,18 @@
       },
       "audio_key": "",
       "source_origin": "textbook",
-      "check_needed": false
+      "check_needed": false,
+      "pos_detail": {
+       "vi": "Động từ / Danh từ",
+       "cn": "动词 / 名词",
+       "normalized": "verb_noun",
+       "schema_compatible_pos": "verb",
+       "is_separable_verb": false,
+       "notes": []
+      }
      },
      {
-      "id": "lesson12_main_vocab_012",
+      "id": "d5b362a7-c8f6-4f25-b2b5-0f1749c8afbb",
       "type": "vocabulary_item",
       "order": 12,
       "hanzi": "双",
@@ -498,14 +551,6 @@
       "meaning_vi": "đôi; hai; lượng từ cho vật đi theo cặp",
       "meaning_en": "pair; both; measure word for pairs",
       "pos": "Lượng từ / Tính từ / Danh từ",
-      "pos_detail": {
-       "vi": "Lượng từ / Tính từ / Danh từ",
-       "cn": "量词 / 形容词 / 名词",
-       "normalized": "measure_word_adjective_noun",
-       "schema_compatible_pos": "measure_word",
-       "is_separable_verb": false,
-       "notes": []
-      },
       "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
@@ -520,10 +565,18 @@
       },
       "audio_key": "",
       "source_origin": "textbook",
-      "check_needed": false
+      "check_needed": false,
+      "pos_detail": {
+       "vi": "Lượng từ / Tính từ / Danh từ",
+       "cn": "量词 / 形容词 / 名词",
+       "normalized": "measure_word_adjective_noun",
+       "schema_compatible_pos": "measure_word",
+       "is_separable_verb": false,
+       "notes": []
+      }
      },
      {
-      "id": "lesson12_main_vocab_013",
+      "id": "7eccd5e8-dac0-4f36-be2e-abcc0a2bdfcd",
       "type": "vocabulary_item",
       "order": 13,
       "hanzi": "瞪",
@@ -531,14 +584,6 @@
       "meaning_vi": "trừng mắt; trợn mắt",
       "meaning_en": "to stare; to glare",
       "pos": "Động từ",
-      "pos_detail": {
-       "vi": "Động từ",
-       "cn": "动词",
-       "normalized": "verb",
-       "schema_compatible_pos": "verb",
-       "is_separable_verb": false,
-       "notes": []
-      },
       "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
@@ -553,17 +598,7 @@
       },
       "audio_key": "",
       "source_origin": "textbook",
-      "check_needed": false
-     },
-     {
-      "id": "lesson12_main_vocab_014",
-      "type": "vocabulary_item",
-      "order": 14,
-      "hanzi": "吼",
-      "pinyin": "hǒu",
-      "meaning_vi": "gào; quát; hét to",
-      "meaning_en": "to roar; to shout",
-      "pos": "Động từ",
+      "check_needed": false,
       "pos_detail": {
        "vi": "Động từ",
        "cn": "动词",
@@ -571,7 +606,17 @@
        "schema_compatible_pos": "verb",
        "is_separable_verb": false,
        "notes": []
-      },
+      }
+     },
+     {
+      "id": "91fa9f81-e5ef-4c4a-b29c-c4b6daa02196",
+      "type": "vocabulary_item",
+      "order": 14,
+      "hanzi": "吼",
+      "pinyin": "hǒu",
+      "meaning_vi": "gào; quát; hét to",
+      "meaning_en": "to roar; to shout",
+      "pos": "Động từ",
       "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
@@ -586,10 +631,18 @@
       },
       "audio_key": "",
       "source_origin": "textbook",
-      "check_needed": false
+      "check_needed": false,
+      "pos_detail": {
+       "vi": "Động từ",
+       "cn": "动词",
+       "normalized": "verb",
+       "schema_compatible_pos": "verb",
+       "is_separable_verb": false,
+       "notes": []
+      }
      },
      {
-      "id": "lesson12_main_vocab_015",
+      "id": "8a5b1d09-23a6-4182-96e6-9bf4d761a1e1",
       "type": "vocabulary_item",
       "order": 15,
       "hanzi": "道",
@@ -597,14 +650,6 @@
       "meaning_vi": "nói; bảo; lượng từ trong một số cụm",
       "meaning_en": "to say; measure word",
       "pos": "Động từ / Danh từ / Lượng từ",
-      "pos_detail": {
-       "vi": "Động từ / Danh từ / Lượng từ",
-       "cn": "动词 / 名词 / 量词",
-       "normalized": "verb_noun_measure_word",
-       "schema_compatible_pos": "verb",
-       "is_separable_verb": false,
-       "notes": []
-      },
       "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
@@ -619,10 +664,18 @@
       },
       "audio_key": "",
       "source_origin": "textbook",
-      "check_needed": false
+      "check_needed": false,
+      "pos_detail": {
+       "vi": "Động từ / Danh từ / Lượng từ",
+       "cn": "动词 / 名词 / 量词",
+       "normalized": "verb_noun_measure_word",
+       "schema_compatible_pos": "verb",
+       "is_separable_verb": false,
+       "notes": []
+      }
      },
      {
-      "id": "lesson12_main_vocab_016",
+      "id": "be7a835d-ff8f-4a86-9fd8-27c5f1093f0c",
       "type": "vocabulary_item",
       "order": 16,
       "hanzi": "走运",
@@ -630,14 +683,6 @@
       "meaning_vi": "gặp may; may mắn",
       "meaning_en": "to be lucky",
       "pos": "Động từ / Cụm động từ",
-      "pos_detail": {
-       "vi": "Động từ / Cụm động từ",
-       "cn": "动词 / 动词短语",
-       "normalized": "verb_phrase",
-       "schema_compatible_pos": "verb_phrase",
-       "is_separable_verb": false,
-       "notes": []
-      },
       "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
@@ -652,10 +697,18 @@
       },
       "audio_key": "",
       "source_origin": "textbook",
-      "check_needed": false
+      "check_needed": false,
+      "pos_detail": {
+       "vi": "Động từ / Cụm động từ",
+       "cn": "动词 / 动词短语",
+       "normalized": "verb_phrase",
+       "schema_compatible_pos": "verb_phrase",
+       "is_separable_verb": false,
+       "notes": []
+      }
      },
      {
-      "id": "lesson12_main_vocab_017",
+      "id": "7a89dc80-d79d-4c2f-988c-d0f54e240d19",
       "type": "vocabulary_item",
       "order": 17,
       "hanzi": "指",
@@ -663,14 +716,6 @@
       "meaning_vi": "chỉ; trỏ",
       "meaning_en": "to point",
       "pos": "Động từ / Danh từ",
-      "pos_detail": {
-       "vi": "Động từ / Danh từ",
-       "cn": "动词 / 名词",
-       "normalized": "verb_noun",
-       "schema_compatible_pos": "verb",
-       "is_separable_verb": false,
-       "notes": []
-      },
       "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
@@ -685,10 +730,18 @@
       },
       "audio_key": "",
       "source_origin": "textbook",
-      "check_needed": false
+      "check_needed": false,
+      "pos_detail": {
+       "vi": "Động từ / Danh từ",
+       "cn": "动词 / 名词",
+       "normalized": "verb_noun",
+       "schema_compatible_pos": "verb",
+       "is_separable_verb": false,
+       "notes": []
+      }
      },
      {
-      "id": "lesson12_main_vocab_018",
+      "id": "ff3e1818-66a9-4532-880b-02c9cacb0e5b",
       "type": "vocabulary_item",
       "order": 18,
       "hanzi": "赔",
@@ -696,14 +749,6 @@
       "meaning_vi": "đền; bồi thường; lỗ vốn",
       "meaning_en": "to compensate; to lose money",
       "pos": "Động từ",
-      "pos_detail": {
-       "vi": "Động từ",
-       "cn": "动词",
-       "normalized": "verb",
-       "schema_compatible_pos": "verb",
-       "is_separable_verb": false,
-       "notes": []
-      },
       "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
@@ -718,10 +763,18 @@
       },
       "audio_key": "",
       "source_origin": "textbook",
-      "check_needed": false
+      "check_needed": false,
+      "pos_detail": {
+       "vi": "Động từ",
+       "cn": "动词",
+       "normalized": "verb",
+       "schema_compatible_pos": "verb",
+       "is_separable_verb": false,
+       "notes": []
+      }
      },
      {
-      "id": "lesson12_main_vocab_019",
+      "id": "0125bdae-fe4e-48fb-8264-145e95c75933",
       "type": "vocabulary_item",
       "order": 19,
       "hanzi": "晴",
@@ -729,14 +782,6 @@
       "meaning_vi": "nắng; trời quang",
       "meaning_en": "clear; sunny",
       "pos": "Tính từ / Từ thời tiết",
-      "pos_detail": {
-       "vi": "Tính từ / Từ thời tiết",
-       "cn": "形容词 / 天气词",
-       "normalized": "adjective",
-       "schema_compatible_pos": "adjective",
-       "is_separable_verb": false,
-       "notes": []
-      },
       "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
@@ -751,10 +796,18 @@
       },
       "audio_key": "",
       "source_origin": "textbook",
-      "check_needed": false
+      "check_needed": false,
+      "pos_detail": {
+       "vi": "Tính từ / Từ thời tiết",
+       "cn": "形容词 / 天气词",
+       "normalized": "adjective",
+       "schema_compatible_pos": "adjective",
+       "is_separable_verb": false,
+       "notes": []
+      }
      },
      {
-      "id": "lesson12_main_vocab_020",
+      "id": "689eb64b-5d4f-469f-9afa-74017d399614",
       "type": "vocabulary_item",
       "order": 20,
       "hanzi": "阴",
@@ -762,14 +815,6 @@
       "meaning_vi": "âm u; nhiều mây; râm",
       "meaning_en": "overcast; cloudy",
       "pos": "Tính từ / Danh từ / Yếu tố cấu tạo từ",
-      "pos_detail": {
-       "vi": "Tính từ / Danh từ / Yếu tố cấu tạo từ",
-       "cn": "形容词 / 名词 / 语素",
-       "normalized": "adjective_noun_morpheme",
-       "schema_compatible_pos": "adjective",
-       "is_separable_verb": false,
-       "notes": []
-      },
       "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
@@ -784,10 +829,18 @@
       },
       "audio_key": "",
       "source_origin": "textbook",
-      "check_needed": false
+      "check_needed": false,
+      "pos_detail": {
+       "vi": "Tính từ / Danh từ / Yếu tố cấu tạo từ",
+       "cn": "形容词 / 名词 / 语素",
+       "normalized": "adjective_noun_morpheme",
+       "schema_compatible_pos": "adjective",
+       "is_separable_verb": false,
+       "notes": []
+      }
      },
      {
-      "id": "lesson12_main_vocab_021",
+      "id": "d45d5488-9293-41ae-9deb-1e5b51cee446",
       "type": "vocabulary_item",
       "order": 21,
       "hanzi": "被子",
@@ -795,14 +848,6 @@
       "meaning_vi": "chăn; mền",
       "meaning_en": "quilt; blanket",
       "pos": "Danh từ",
-      "pos_detail": {
-       "vi": "Danh từ",
-       "cn": "名词",
-       "normalized": "noun",
-       "schema_compatible_pos": "noun",
-       "is_separable_verb": false,
-       "notes": []
-      },
       "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
@@ -817,10 +862,18 @@
       },
       "audio_key": "",
       "source_origin": "textbook",
-      "check_needed": false
+      "check_needed": false,
+      "pos_detail": {
+       "vi": "Danh từ",
+       "cn": "名词",
+       "normalized": "noun",
+       "schema_compatible_pos": "noun",
+       "is_separable_verb": false,
+       "notes": []
+      }
      },
      {
-      "id": "lesson12_main_vocab_022",
+      "id": "c99a633b-27a2-429b-a139-44113a84c189",
       "type": "vocabulary_item",
       "order": 22,
       "hanzi": "双职工",
@@ -828,14 +881,6 @@
       "meaning_vi": "hai vợ chồng đều đi làm",
       "meaning_en": "a couple both employed",
       "pos": "Danh từ / Cụm danh từ",
-      "pos_detail": {
-       "vi": "Danh từ / Cụm danh từ",
-       "cn": "名词 / 名词短语",
-       "normalized": "noun_phrase",
-       "schema_compatible_pos": "noun",
-       "is_separable_verb": false,
-       "notes": []
-      },
       "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
@@ -850,10 +895,18 @@
       },
       "audio_key": "",
       "source_origin": "textbook",
-      "check_needed": false
+      "check_needed": false,
+      "pos_detail": {
+       "vi": "Danh từ / Cụm danh từ",
+       "cn": "名词 / 名词短语",
+       "normalized": "noun_phrase",
+       "schema_compatible_pos": "noun",
+       "is_separable_verb": false,
+       "notes": []
+      }
      },
      {
-      "id": "lesson12_main_vocab_023",
+      "id": "79358c6f-3427-4c28-98f3-7ef98c7033c3",
       "type": "vocabulary_item",
       "order": 23,
       "hanzi": "收",
@@ -861,14 +914,6 @@
       "meaning_vi": "thu; cất; gom lại; nhận",
       "meaning_en": "to collect; to put away; to receive",
       "pos": "Động từ",
-      "pos_detail": {
-       "vi": "Động từ",
-       "cn": "动词",
-       "normalized": "verb",
-       "schema_compatible_pos": "verb",
-       "is_separable_verb": false,
-       "notes": []
-      },
       "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
@@ -883,10 +928,18 @@
       },
       "audio_key": "",
       "source_origin": "textbook",
-      "check_needed": false
+      "check_needed": false,
+      "pos_detail": {
+       "vi": "Động từ",
+       "cn": "动词",
+       "normalized": "verb",
+       "schema_compatible_pos": "verb",
+       "is_separable_verb": false,
+       "notes": []
+      }
      },
      {
-      "id": "lesson12_main_vocab_024",
+      "id": "dc0f8e06-a359-4907-a8d8-fc9b02260590",
       "type": "vocabulary_item",
       "order": 24,
       "hanzi": "单身",
@@ -894,14 +947,6 @@
       "meaning_vi": "độc thân; một mình",
       "meaning_en": "single; unmarried",
       "pos": "Danh từ / Tính từ trạng thái",
-      "pos_detail": {
-       "vi": "Danh từ / Tính từ trạng thái",
-       "cn": "名词 / 状态形容词",
-       "normalized": "noun_adjective",
-       "schema_compatible_pos": "noun",
-       "is_separable_verb": false,
-       "notes": []
-      },
       "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
@@ -916,10 +961,18 @@
       },
       "audio_key": "",
       "source_origin": "textbook",
-      "check_needed": false
+      "check_needed": false,
+      "pos_detail": {
+       "vi": "Danh từ / Tính từ trạng thái",
+       "cn": "名词 / 状态形容词",
+       "normalized": "noun_adjective",
+       "schema_compatible_pos": "noun",
+       "is_separable_verb": false,
+       "notes": []
+      }
      },
      {
-      "id": "lesson12_main_vocab_025",
+      "id": "c43cedbf-7024-4ec1-922f-e75119114baf",
       "type": "vocabulary_item",
       "order": 25,
       "hanzi": "免得",
@@ -927,14 +980,6 @@
       "meaning_vi": "để khỏi; tránh cho khỏi; kẻo",
       "meaning_en": "so as to avoid; lest",
       "pos": "Liên từ",
-      "pos_detail": {
-       "vi": "Liên từ",
-       "cn": "连词",
-       "normalized": "conjunction",
-       "schema_compatible_pos": "conjunction",
-       "is_separable_verb": false,
-       "notes": []
-      },
       "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
@@ -949,10 +994,18 @@
       },
       "audio_key": "",
       "source_origin": "textbook",
-      "check_needed": false
+      "check_needed": false,
+      "pos_detail": {
+       "vi": "Liên từ",
+       "cn": "连词",
+       "normalized": "conjunction",
+       "schema_compatible_pos": "conjunction",
+       "is_separable_verb": false,
+       "notes": []
+      }
      },
      {
-      "id": "lesson12_main_vocab_026",
+      "id": "d9991c79-3454-4247-bf18-f14f43b4a24a",
       "type": "vocabulary_item",
       "order": 26,
       "hanzi": "道歉",
@@ -960,18 +1013,7 @@
       "meaning_vi": "xin lỗi",
       "meaning_en": "to apologize",
       "pos": "Động từ li hợp",
-      "pos_detail": {
-       "vi": "Động từ li hợp",
-       "cn": "动宾式离合词",
-       "normalized": "verb_phrase",
-       "schema_compatible_pos": "verb_phrase",
-       "is_separable_verb": true,
-       "notes": [],
-       "separable_type": "động-tân / 离合词",
-       "structure_vi": "động từ 道 + tân ngữ 歉",
-       "usage_note_vi": "Có thể nói 向他道歉 / 道了歉; thường dùng với 向 + người + 道歉."
-      },
-      "tags": ["main_vocab", "separable_verb"],
+      "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
        "front": "道歉",
@@ -985,10 +1027,21 @@
       },
       "audio_key": "",
       "source_origin": "textbook",
-      "check_needed": false
+      "check_needed": false,
+      "pos_detail": {
+       "vi": "Động từ li hợp",
+       "cn": "动宾式离合词",
+       "normalized": "verb_phrase",
+       "schema_compatible_pos": "verb_phrase",
+       "is_separable_verb": true,
+       "notes": [],
+       "separable_type": "động-tân / 离合词",
+       "structure_vi": "động từ 道 + tân ngữ 歉",
+       "usage_note_vi": "Có thể nói 向他道歉 / 道了歉; thường dùng với 向 + người + 道歉."
+      }
      },
      {
-      "id": "lesson12_main_vocab_027",
+      "id": "55cd807c-eec7-412d-99db-f4e6508b170f",
       "type": "vocabulary_item",
       "order": 27,
       "hanzi": "马大哈",
@@ -996,14 +1049,6 @@
       "meaning_vi": "người sơ suất, đãng trí, hay cẩu thả",
       "meaning_en": "careless person",
       "pos": "Danh từ / Tính từ khẩu ngữ",
-      "pos_detail": {
-       "vi": "Danh từ / Tính từ khẩu ngữ",
-       "cn": "名词 / 形容词",
-       "normalized": "noun_adjective_colloquial",
-       "schema_compatible_pos": "noun",
-       "is_separable_verb": false,
-       "notes": []
-      },
       "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
@@ -1018,10 +1063,18 @@
       },
       "audio_key": "",
       "source_origin": "textbook",
-      "check_needed": false
+      "check_needed": false,
+      "pos_detail": {
+       "vi": "Danh từ / Tính từ khẩu ngữ",
+       "cn": "名词 / 形容词",
+       "normalized": "noun_adjective_colloquial",
+       "schema_compatible_pos": "noun",
+       "is_separable_verb": false,
+       "notes": []
+      }
      },
      {
-      "id": "lesson12_main_vocab_028",
+      "id": "085e60d5-dd1c-4585-ac6b-0f1db0ded936",
       "type": "vocabulary_item",
       "order": 28,
       "hanzi": "逛",
@@ -1029,14 +1082,6 @@
       "meaning_vi": "đi dạo; đi chơi; đi xem loanh quanh",
       "meaning_en": "to stroll; to wander around",
       "pos": "Động từ",
-      "pos_detail": {
-       "vi": "Động từ",
-       "cn": "动词",
-       "normalized": "verb",
-       "schema_compatible_pos": "verb",
-       "is_separable_verb": false,
-       "notes": []
-      },
       "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
@@ -1051,10 +1096,18 @@
       },
       "audio_key": "",
       "source_origin": "textbook",
-      "check_needed": false
+      "check_needed": false,
+      "pos_detail": {
+       "vi": "Động từ",
+       "cn": "动词",
+       "normalized": "verb",
+       "schema_compatible_pos": "verb",
+       "is_separable_verb": false,
+       "notes": []
+      }
      },
      {
-      "id": "lesson12_main_vocab_029",
+      "id": "ba7ff0f9-b633-4516-ab3d-22b96046a1cf",
       "type": "vocabulary_item",
       "order": 29,
       "hanzi": "林荫道",
@@ -1062,14 +1115,6 @@
       "meaning_vi": "con đường rợp bóng cây",
       "meaning_en": "tree-lined road",
       "pos": "Danh từ",
-      "pos_detail": {
-       "vi": "Danh từ",
-       "cn": "名词",
-       "normalized": "noun",
-       "schema_compatible_pos": "noun",
-       "is_separable_verb": false,
-       "notes": []
-      },
       "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
@@ -1084,17 +1129,7 @@
       },
       "audio_key": "",
       "source_origin": "textbook",
-      "check_needed": false
-     },
-     {
-      "id": "lesson12_main_vocab_030",
-      "type": "vocabulary_item",
-      "order": 30,
-      "hanzi": "青年",
-      "pinyin": "qīngnián",
-      "meaning_vi": "thanh niên; người trẻ",
-      "meaning_en": "youth; young person",
-      "pos": "Danh từ",
+      "check_needed": false,
       "pos_detail": {
        "vi": "Danh từ",
        "cn": "名词",
@@ -1102,7 +1137,17 @@
        "schema_compatible_pos": "noun",
        "is_separable_verb": false,
        "notes": []
-      },
+      }
+     },
+     {
+      "id": "2185ee67-885d-4ffb-83e2-e97be4070796",
+      "type": "vocabulary_item",
+      "order": 30,
+      "hanzi": "青年",
+      "pinyin": "qīngnián",
+      "meaning_vi": "thanh niên; người trẻ",
+      "meaning_en": "youth; young person",
+      "pos": "Danh từ",
       "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
@@ -1117,10 +1162,18 @@
       },
       "audio_key": "",
       "source_origin": "textbook",
-      "check_needed": false
+      "check_needed": false,
+      "pos_detail": {
+       "vi": "Danh từ",
+       "cn": "名词",
+       "normalized": "noun",
+       "schema_compatible_pos": "noun",
+       "is_separable_verb": false,
+       "notes": []
+      }
      },
      {
-      "id": "lesson12_main_vocab_031",
+      "id": "092a8c16-3739-4685-a4c0-39365071bd48",
       "type": "vocabulary_item",
       "order": 31,
       "hanzi": "好不",
@@ -1128,14 +1181,6 @@
       "meaning_vi": "rất; thật là; vô cùng",
       "meaning_en": "very; extremely",
       "pos": "Phó từ cảm thán",
-      "pos_detail": {
-       "vi": "Phó từ cảm thán",
-       "cn": "副词",
-       "normalized": "adverb",
-       "schema_compatible_pos": "adverb",
-       "is_separable_verb": false,
-       "notes": []
-      },
       "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
@@ -1150,10 +1195,18 @@
       },
       "audio_key": "",
       "source_origin": "textbook",
-      "check_needed": false
+      "check_needed": false,
+      "pos_detail": {
+       "vi": "Phó từ cảm thán",
+       "cn": "副词",
+       "normalized": "adverb",
+       "schema_compatible_pos": "adverb",
+       "is_separable_verb": false,
+       "notes": []
+      }
      },
      {
-      "id": "lesson12_main_vocab_032",
+      "id": "22e66ee9-565e-4670-b2ac-4d5a9b500b38",
       "type": "vocabulary_item",
       "order": 32,
       "hanzi": "拉链儿",
@@ -1161,14 +1214,6 @@
       "meaning_vi": "khóa kéo; dây kéo",
       "meaning_en": "zipper",
       "pos": "Danh từ",
-      "pos_detail": {
-       "vi": "Danh từ",
-       "cn": "名词",
-       "normalized": "noun",
-       "schema_compatible_pos": "noun",
-       "is_separable_verb": false,
-       "notes": []
-      },
       "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
@@ -1183,10 +1228,18 @@
       },
       "audio_key": "",
       "source_origin": "textbook",
-      "check_needed": false
+      "check_needed": false,
+      "pos_detail": {
+       "vi": "Danh từ",
+       "cn": "名词",
+       "normalized": "noun",
+       "schema_compatible_pos": "noun",
+       "is_separable_verb": false,
+       "notes": []
+      }
      },
      {
-      "id": "lesson12_main_vocab_033",
+      "id": "275b46f4-3166-48b7-9766-58384178d1be",
       "type": "vocabulary_item",
       "order": 33,
       "hanzi": "横",
@@ -1194,14 +1247,6 @@
       "meaning_vi": "ngang; trong 心一横: quyết tâm liều một phen",
       "meaning_en": "horizontal; determined despite risk",
       "pos": "Tính từ / Động từ / Phó từ sắc thái",
-      "pos_detail": {
-       "vi": "Tính từ / Động từ / Phó từ sắc thái",
-       "cn": "形容词 / 动词 / 副词",
-       "normalized": "adjective_verb_adverb",
-       "schema_compatible_pos": "adjective",
-       "is_separable_verb": false,
-       "notes": []
-      },
       "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
@@ -1216,10 +1261,18 @@
       },
       "audio_key": "",
       "source_origin": "textbook",
-      "check_needed": false
+      "check_needed": false,
+      "pos_detail": {
+       "vi": "Tính từ / Động từ / Phó từ sắc thái",
+       "cn": "形容词 / 动词 / 副词",
+       "normalized": "adjective_verb_adverb",
+       "schema_compatible_pos": "adjective",
+       "is_separable_verb": false,
+       "notes": []
+      }
      },
      {
-      "id": "lesson12_main_vocab_034",
+      "id": "1190511f-5970-4304-8f84-d7201b287aeb",
       "type": "vocabulary_item",
       "order": 34,
       "hanzi": "推",
@@ -1227,14 +1280,6 @@
       "meaning_vi": "đẩy",
       "meaning_en": "to push",
       "pos": "Động từ",
-      "pos_detail": {
-       "vi": "Động từ",
-       "cn": "动词",
-       "normalized": "verb",
-       "schema_compatible_pos": "verb",
-       "is_separable_verb": false,
-       "notes": []
-      },
       "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
@@ -1249,10 +1294,18 @@
       },
       "audio_key": "",
       "source_origin": "textbook",
-      "check_needed": false
+      "check_needed": false,
+      "pos_detail": {
+       "vi": "Động từ",
+       "cn": "动词",
+       "normalized": "verb",
+       "schema_compatible_pos": "verb",
+       "is_separable_verb": false,
+       "notes": []
+      }
      },
      {
-      "id": "lesson12_main_vocab_035",
+      "id": "d42d3d90-443d-45da-bed7-987b50034e92",
       "type": "vocabulary_item",
       "order": 35,
       "hanzi": "打气",
@@ -1260,18 +1313,7 @@
       "meaning_vi": "bơm hơi; cổ vũ",
       "meaning_en": "to pump air; to encourage",
       "pos": "Động từ li hợp",
-      "pos_detail": {
-       "vi": "Động từ li hợp",
-       "cn": "动宾式离合词",
-       "normalized": "verb_phrase",
-       "schema_compatible_pos": "verb_phrase",
-       "is_separable_verb": true,
-       "notes": [],
-       "separable_type": "động-tân / 离合词",
-       "structure_vi": "động từ 打 + tân ngữ 气",
-       "usage_note_vi": "Nghĩa bơm hơi: 给车胎打气 / 打了半天气; nghĩa cổ vũ: 给人打气."
-      },
-      "tags": ["main_vocab", "separable_verb"],
+      "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
        "front": "打气",
@@ -1285,10 +1327,21 @@
       },
       "audio_key": "",
       "source_origin": "textbook",
-      "check_needed": false
+      "check_needed": false,
+      "pos_detail": {
+       "vi": "Động từ li hợp",
+       "cn": "动宾式离合词",
+       "normalized": "verb_phrase",
+       "schema_compatible_pos": "verb_phrase",
+       "is_separable_verb": true,
+       "notes": [],
+       "separable_type": "động-tân / 离合词",
+       "structure_vi": "động từ 打 + tân ngữ 气",
+       "usage_note_vi": "Nghĩa bơm hơi: 给车胎打气 / 打了半天气; nghĩa cổ vũ: 给人打气."
+      }
      },
      {
-      "id": "lesson12_main_vocab_036",
+      "id": "cfb712c9-c4ca-4314-b6b2-696b40ace25e",
       "type": "vocabulary_item",
       "order": 36,
       "hanzi": "连声",
@@ -1296,14 +1349,6 @@
       "meaning_vi": "liên tục; luôn miệng",
       "meaning_en": "repeatedly; again and again",
       "pos": "Phó từ / Trạng ngữ",
-      "pos_detail": {
-       "vi": "Phó từ / Trạng ngữ",
-       "cn": "副词 / 状语",
-       "normalized": "adverbial",
-       "schema_compatible_pos": "adverb",
-       "is_separable_verb": false,
-       "notes": []
-      },
       "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
@@ -1318,10 +1363,18 @@
       },
       "audio_key": "",
       "source_origin": "textbook",
-      "check_needed": false
+      "check_needed": false,
+      "pos_detail": {
+       "vi": "Phó từ / Trạng ngữ",
+       "cn": "副词 / 状语",
+       "normalized": "adverbial",
+       "schema_compatible_pos": "adverb",
+       "is_separable_verb": false,
+       "notes": []
+      }
      },
      {
-      "id": "lesson12_main_vocab_037",
+      "id": "6059829f-ae21-43cf-ac0c-05e19639ec43",
       "type": "vocabulary_item",
       "order": 37,
       "hanzi": "道谢",
@@ -1329,18 +1382,7 @@
       "meaning_vi": "cảm ơn; nói lời cảm ơn",
       "meaning_en": "to express thanks",
       "pos": "Động từ li hợp",
-      "pos_detail": {
-       "vi": "Động từ li hợp",
-       "cn": "动宾式离合词",
-       "normalized": "verb_phrase",
-       "schema_compatible_pos": "verb_phrase",
-       "is_separable_verb": true,
-       "notes": [],
-       "separable_type": "động-tân / 离合词",
-       "structure_vi": "động từ 道 + tân ngữ 谢",
-       "usage_note_vi": "Có thể nói 向他道谢 / 道了谢; thường đi với 连声."
-      },
-      "tags": ["main_vocab", "separable_verb"],
+      "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
        "front": "道谢",
@@ -1354,10 +1396,21 @@
       },
       "audio_key": "",
       "source_origin": "textbook",
-      "check_needed": false
+      "check_needed": false,
+      "pos_detail": {
+       "vi": "Động từ li hợp",
+       "cn": "动宾式离合词",
+       "normalized": "verb_phrase",
+       "schema_compatible_pos": "verb_phrase",
+       "is_separable_verb": true,
+       "notes": [],
+       "separable_type": "động-tân / 离合词",
+       "structure_vi": "động từ 道 + tân ngữ 谢",
+       "usage_note_vi": "Có thể nói 向他道谢 / 道了谢; thường đi với 连声."
+      }
      },
      {
-      "id": "lesson12_main_vocab_038",
+      "id": "fefd5441-7b6c-47e3-b823-9e149b947bf7",
       "type": "vocabulary_item",
       "order": 38,
       "hanzi": "得意",
@@ -1365,14 +1418,6 @@
       "meaning_vi": "đắc ý; tự mãn; vui vì hài lòng",
       "meaning_en": "proud of oneself; pleased",
       "pos": "Tính từ / Động từ trạng thái",
-      "pos_detail": {
-       "vi": "Tính từ / Động từ trạng thái",
-       "cn": "形容词 / 状态动词",
-       "normalized": "adjective_stative_verb",
-       "schema_compatible_pos": "adjective",
-       "is_separable_verb": false,
-       "notes": []
-      },
       "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
@@ -1387,10 +1432,18 @@
       },
       "audio_key": "",
       "source_origin": "textbook",
-      "check_needed": false
+      "check_needed": false,
+      "pos_detail": {
+       "vi": "Tính từ / Động từ trạng thái",
+       "cn": "形容词 / 状态动词",
+       "normalized": "adjective_stative_verb",
+       "schema_compatible_pos": "adjective",
+       "is_separable_verb": false,
+       "notes": []
+      }
      },
      {
-      "id": "lesson12_main_vocab_039",
+      "id": "27761bd2-433a-44ef-b79a-9e6f0a34b9c9",
       "type": "vocabulary_item",
       "order": 39,
       "hanzi": "气筒",
@@ -1398,14 +1451,6 @@
       "meaning_vi": "ống bơm hơi",
       "meaning_en": "air pump",
       "pos": "Danh từ",
-      "pos_detail": {
-       "vi": "Danh từ",
-       "cn": "名词",
-       "normalized": "noun",
-       "schema_compatible_pos": "noun",
-       "is_separable_verb": false,
-       "notes": []
-      },
       "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
@@ -1420,10 +1465,18 @@
       },
       "audio_key": "",
       "source_origin": "textbook",
-      "check_needed": false
+      "check_needed": false,
+      "pos_detail": {
+       "vi": "Danh từ",
+       "cn": "名词",
+       "normalized": "noun",
+       "schema_compatible_pos": "noun",
+       "is_separable_verb": false,
+       "notes": []
+      }
      },
      {
-      "id": "lesson12_main_vocab_040",
+      "id": "861ed325-b320-4ae0-8eac-bb6bb8ebc215",
       "type": "vocabulary_item",
       "order": 40,
       "hanzi": "压",
@@ -1431,14 +1484,6 @@
       "meaning_vi": "ấn; nén; ép xuống",
       "meaning_en": "to press; to push down",
       "pos": "Động từ",
-      "pos_detail": {
-       "vi": "Động từ",
-       "cn": "动词",
-       "normalized": "verb",
-       "schema_compatible_pos": "verb",
-       "is_separable_verb": false,
-       "notes": []
-      },
       "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
@@ -1453,10 +1498,18 @@
       },
       "audio_key": "",
       "source_origin": "textbook",
-      "check_needed": false
+      "check_needed": false,
+      "pos_detail": {
+       "vi": "Động từ",
+       "cn": "动词",
+       "normalized": "verb",
+       "schema_compatible_pos": "verb",
+       "is_separable_verb": false,
+       "notes": []
+      }
      },
      {
-      "id": "lesson12_main_vocab_041",
+      "id": "6fe8f20d-e712-4f0c-9cbc-021aaeb9698c",
       "type": "vocabulary_item",
       "order": 41,
       "hanzi": "更加",
@@ -1464,14 +1517,6 @@
       "meaning_vi": "càng thêm; càng hơn",
       "meaning_en": "even more",
       "pos": "Phó từ",
-      "pos_detail": {
-       "vi": "Phó từ",
-       "cn": "副词",
-       "normalized": "adverb",
-       "schema_compatible_pos": "adverb",
-       "is_separable_verb": false,
-       "notes": []
-      },
       "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
@@ -1486,10 +1531,18 @@
       },
       "audio_key": "",
       "source_origin": "textbook",
-      "check_needed": false
+      "check_needed": false,
+      "pos_detail": {
+       "vi": "Phó từ",
+       "cn": "副词",
+       "normalized": "adverb",
+       "schema_compatible_pos": "adverb",
+       "is_separable_verb": false,
+       "notes": []
+      }
      },
      {
-      "id": "lesson12_main_vocab_042",
+      "id": "863bbf3f-83e7-4021-b98e-be632043d94c",
       "type": "vocabulary_item",
       "order": 42,
       "hanzi": "起劲儿",
@@ -1497,14 +1550,6 @@
       "meaning_vi": "hăng hái; có hứng",
       "meaning_en": "enthusiastic; energetic",
       "pos": "Tính từ trạng thái / Cụm trạng thái",
-      "pos_detail": {
-       "vi": "Tính từ trạng thái / Cụm trạng thái",
-       "cn": "形容词 / 状态短语",
-       "normalized": "adjective_phrase",
-       "schema_compatible_pos": "adjective",
-       "is_separable_verb": false,
-       "notes": []
-      },
       "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
@@ -1519,10 +1564,18 @@
       },
       "audio_key": "",
       "source_origin": "textbook",
-      "check_needed": false
+      "check_needed": false,
+      "pos_detail": {
+       "vi": "Tính từ trạng thái / Cụm trạng thái",
+       "cn": "形容词 / 状态短语",
+       "normalized": "adjective_phrase",
+       "schema_compatible_pos": "adjective",
+       "is_separable_verb": false,
+       "notes": []
+      }
      },
      {
-      "id": "lesson12_main_vocab_043",
+      "id": "b14487b6-5579-4f1c-9ad7-16fd40991577",
       "type": "vocabulary_item",
       "order": 43,
       "hanzi": "嘭",
@@ -1530,14 +1583,6 @@
       "meaning_vi": "bùm; đùng; tiếng nổ/va mạnh",
       "meaning_en": "bang; boom",
       "pos": "Từ tượng thanh",
-      "pos_detail": {
-       "vi": "Từ tượng thanh",
-       "cn": "象声词",
-       "normalized": "onomatopoeia",
-       "schema_compatible_pos": "onomatopoeia",
-       "is_separable_verb": false,
-       "notes": []
-      },
       "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
@@ -1552,10 +1597,18 @@
       },
       "audio_key": "",
       "source_origin": "textbook",
-      "check_needed": false
+      "check_needed": false,
+      "pos_detail": {
+       "vi": "Từ tượng thanh",
+       "cn": "象声词",
+       "normalized": "onomatopoeia",
+       "schema_compatible_pos": "onomatopoeia",
+       "is_separable_verb": false,
+       "notes": []
+      }
      },
      {
-      "id": "lesson12_main_vocab_044",
+      "id": "eb7cc112-7df2-44e6-a1df-9824d8b6e45a",
       "type": "vocabulary_item",
       "order": 44,
       "hanzi": "车胎",
@@ -1563,14 +1616,6 @@
       "meaning_vi": "lốp xe; săm/lốp xe",
       "meaning_en": "tire",
       "pos": "Danh từ",
-      "pos_detail": {
-       "vi": "Danh từ",
-       "cn": "名词",
-       "normalized": "noun",
-       "schema_compatible_pos": "noun",
-       "is_separable_verb": false,
-       "notes": []
-      },
       "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
@@ -1585,10 +1630,18 @@
       },
       "audio_key": "",
       "source_origin": "textbook",
-      "check_needed": false
+      "check_needed": false,
+      "pos_detail": {
+       "vi": "Danh từ",
+       "cn": "名词",
+       "normalized": "noun",
+       "schema_compatible_pos": "noun",
+       "is_separable_verb": false,
+       "notes": []
+      }
      },
      {
-      "id": "lesson12_main_vocab_045",
+      "id": "505dae11-836a-475d-b811-339f25caaf42",
       "type": "vocabulary_item",
       "order": 45,
       "hanzi": "爆",
@@ -1596,14 +1649,6 @@
       "meaning_vi": "nổ; bung; phát nổ",
       "meaning_en": "to burst; to explode",
       "pos": "Động từ / Yếu tố cấu tạo từ",
-      "pos_detail": {
-       "vi": "Động từ / Yếu tố cấu tạo từ",
-       "cn": "动词 / 语素",
-       "normalized": "verb_morpheme",
-       "schema_compatible_pos": "verb",
-       "is_separable_verb": false,
-       "notes": []
-      },
       "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
@@ -1618,12 +1663,20 @@
       },
       "audio_key": "",
       "source_origin": "textbook",
-      "check_needed": false
+      "check_needed": false,
+      "pos_detail": {
+       "vi": "Động từ / Yếu tố cấu tạo từ",
+       "cn": "动词 / 语素",
+       "normalized": "verb_morpheme",
+       "schema_compatible_pos": "verb",
+       "is_separable_verb": false,
+       "notes": []
+      }
      }
     ]
    },
    {
-    "id": "lesson12_section_003",
+    "id": "3c5ee48e-5d44-44ac-bd53-cac996a83338",
     "type": "proper_nouns",
     "order": 3,
     "title": "专名",
@@ -1634,7 +1687,7 @@
     "empty_reason_vi": "Bài này không có 专名 riêng biệt trong bảng chính."
    },
    {
-    "id": "lesson12_section_004",
+    "id": "c18e9f54-6da1-4496-886b-c2c722605678",
     "type": "notes",
     "order": 4,
     "title": "注释",
@@ -1643,7 +1696,7 @@
     "check_needed": false,
     "items": [
      {
-      "id": "lesson12_note_001",
+      "id": "63d654f5-4561-4d48-a144-bacbf9671dfc",
       "type": "note",
       "order": 1,
       "title": "吃力不讨好",
@@ -1651,20 +1704,20 @@
       "meaning_vi": "Làm một việc mất nhiều thời gian, công sức, nhưng lại không được người khác đánh giá tốt; vất vả mà chẳng được lòng ai.",
       "examples": [
        {
-        "id": "lesson12_note_ex_001",
+        "id": "3eca03f3-67c0-40d2-9fee-8e57a4ad43ad",
         "zh": "忽然发现好人难当，尽管你是诚心诚意的，有时也难免吃力不讨好。",
-        "pinyin": "hū rán fā xiàn hǎo rén nán dāng， jǐn guǎn nǐ shì chéngxīn chéngyì de， yǒu shí yě nán miǎn chīlì bù tǎohǎo。",
-        "vi": "Bỗng nhiên tôi phát hiện ra rằng làm người tốt thật khó. Dù bạn thật lòng thật ý, đôi khi cũng khó tránh khỏi cảnh mất công mà chẳng được lòng ai.",
+        "vi": "Bỗng phát hiện làm người tốt thật khó, dù bạn thành tâm thành ý, đôi khi cũng khó tránh khỏi cảnh tốn công mà chẳng được lòng ai.",
         "source_origin": "textbook",
-        "check_needed": false
+        "check_needed": false,
+        "pinyin": "Hūrán fāxiàn hǎorén nán dāng, jǐnguǎn nǐ shì chéngxīn-chéngyì de, yǒushí yě nánmiǎn chīlì bù tǎohǎo."
        }
       ],
-      "source_refs": ["lesson12_text_p_001"],
+      "source_refs": ["43338a2c-2044-419e-9fdd-ed1739757a8d"],
       "source_origin": "textbook",
       "check_needed": false
      },
      {
-      "id": "lesson12_note_002",
+      "id": "7e2ee128-4fbd-4a93-898c-5f5fd99b371b",
       "type": "note",
       "order": 2,
       "title": "好不羡慕",
@@ -1672,20 +1725,20 @@
       "meaning_vi": "好不 + hình dung từ thường biểu thị khẳng định mạnh, nghĩa gần với 非常 / 很 + hình dung từ.",
       "examples": [
        {
-        "id": "lesson12_note_ex_002",
+        "id": "6ff01e57-e23b-475e-9cd6-da43acc8bd0a",
         "zh": "叫人好不羡慕。",
-        "pinyin": "jiào rén hǎobù xiànmù。",
         "vi": "Khiến người ta vô cùng ngưỡng mộ.",
         "source_origin": "textbook",
-        "check_needed": false
+        "check_needed": false,
+        "pinyin": "Jiào rén hǎobù xiànmù."
        }
       ],
-      "source_refs": ["lesson12_text_p_005"],
+      "source_refs": ["babe7f0b-2b53-402f-85af-c5de9b0e676d"],
       "source_origin": "textbook",
       "check_needed": false
      },
      {
-      "id": "lesson12_note_003",
+      "id": "bf5e90df-dc03-4600-a2d2-426ab562c9a5",
       "type": "note",
       "order": 3,
       "title": "心一横",
@@ -1693,22 +1746,22 @@
       "meaning_vi": "Quyết tâm làm một việc sau khi do dự, bất chấp hậu quả; đánh liều, quyết tâm một phen.",
       "examples": [
        {
-        "id": "lesson12_note_ex_003",
+        "id": "b71a23a7-1107-46ec-b43e-de46214c5d0a",
         "zh": "我替那姑娘着急，心一横就上前说了。",
-        "pinyin": "wǒ tì nà gū niáng zháojí， xīn yì héng jiù shàng qián shuō le。",
         "vi": "Tôi lo thay cô gái đó, bèn quyết tâm bước lên nói.",
         "source_origin": "textbook",
-        "check_needed": false
+        "check_needed": false,
+        "pinyin": "Wǒ tì nà gūniang zháojí, xīn yì héng jiù shàngqián shuō le."
        }
       ],
-      "source_refs": ["lesson12_text_p_005"],
+      "source_refs": ["babe7f0b-2b53-402f-85af-c5de9b0e676d"],
       "source_origin": "textbook",
       "check_needed": false
      }
     ]
    },
    {
-    "id": "lesson12_section_005",
+    "id": "b045e537-7383-494b-8d61-b0286977ed80",
     "type": "grammar",
     "order": 5,
     "title": "词语用法 / 语法",
@@ -1717,7 +1770,7 @@
     "check_needed": false,
     "items": [
      {
-      "id": "lesson12_grammar_001",
+      "id": "f8ec59f3-898a-47b2-b536-44dfd8183393",
       "type": "grammar_point",
       "order": 1,
       "title": "尽管",
@@ -1728,32 +1781,32 @@
       "check_needed": false,
       "blocks": [
        {
-        "id": "lesson12_grammar_block_001",
+        "id": "b7c5d870-2db8-4e2e-950f-f0e6e522ac16",
         "type": "grammar_overview",
         "order": 1,
         "title": "Bản chất",
-        "content_vi": "尽管 có 2 cách dùng chính: liên từ nghĩa là 'mặc dù', thường đi với 但是/可是/还是; phó từ nghĩa là 'cứ việc'.",
+        "content_vi": "尽管 có 2 cách dùng chính: liên từ nghĩa là 'mặc dù', thường đi với 但是/可是; phó từ nghĩa là 'cứ việc'.",
         "examples": []
        },
        {
-        "id": "lesson12_grammar_block_002",
+        "id": "a85d60ae-5a59-4bad-a730-4e11cd8fd4ed",
         "type": "grammar_structure",
         "order": 2,
         "title": "尽管 làm liên từ",
-        "pattern": "尽管 + vế nhượng bộ，可是/但是/还是 + kết quả trái kỳ vọng",
-        "meaning_vi": "Diễn tả 'mặc dù A, nhưng/vẫn B'.",
+        "pattern": "尽管 + vế nhượng bộ，可是/但是 + kết quả trái kỳ vọng",
+        "meaning_vi": "Diễn tả 'mặc dù A, nhưng B'.",
         "examples": [
          {
-          "id": "lesson12_grammar_ex_001",
+          "id": "2e38466f-cc5f-451a-9612-b188f7cd2dcf",
           "zh": "尽管他最近身体不太好，但是仍坚持工作。",
-          "pinyin": "jǐn guǎn tā zuì jìn shēn tǐ bú tài hǎo， dàn shì réng jiān chí gōng zuò。",
-          "vi": "Dù gần đây sức khỏe anh ấy không tốt lắm, nhưng anh ấy vẫn kiên trì làm việc."
+          "vi": "Dù gần đây sức khỏe anh ấy không tốt lắm, nhưng anh ấy vẫn kiên trì làm việc.",
+          "pinyin": "Jǐnguǎn tā zuìjìn shēntǐ bù tài hǎo, dànshì réng jiānchí gōngzuò."
          },
          {
-          "id": "lesson12_grammar_ex_002",
+          "id": "64dc50f6-13c5-4723-9aed-94e0d978cb90",
           "zh": "你们有问题尽管问老师。",
-          "pinyin": "nǐ men yǒu wèn tí jǐn guǎn wèn lǎo shī。",
-          "vi": "Các bạn có vấn đề gì thì cứ hỏi giáo viên."
+          "vi": "Các bạn có vấn đề gì thì cứ hỏi giáo viên.",
+          "pinyin": "Nǐmen yǒu wèntí jǐnguǎn wèn lǎoshī."
          }
         ],
         "notes_vi": [
@@ -1763,7 +1816,7 @@
       ]
      },
      {
-      "id": "lesson12_grammar_002",
+      "id": "57b14753-688a-41b6-9e0d-b61dbbf574d7",
       "type": "grammar_point",
       "order": 2,
       "title": "难免",
@@ -1774,7 +1827,7 @@
       "check_needed": false,
       "blocks": [
        {
-        "id": "lesson12_grammar_block_003",
+        "id": "470b1ca1-e0a1-449f-b55e-a8aa481a4dd4",
         "type": "grammar_overview",
         "order": 1,
         "title": "Bản chất",
@@ -1782,7 +1835,7 @@
         "examples": []
        },
        {
-        "id": "lesson12_grammar_block_004",
+        "id": "a6012e0f-4ca0-438c-bcf0-1043d8150bda",
         "type": "grammar_structure",
         "order": 2,
         "title": "Cấu trúc chính",
@@ -1790,16 +1843,16 @@
         "meaning_vi": "Khó tránh khỏi việc xảy ra chuyện gì đó.",
         "examples": [
          {
-          "id": "lesson12_grammar_ex_003",
+          "id": "148dd5b4-2deb-4724-b898-7d508f8a6e77",
           "zh": "做事不认真就难免要出问题。",
-          "pinyin": "zuò shì bù rèn zhēn jiù nán miǎn yào chū wèn tí。",
-          "vi": "Làm việc không nghiêm túc thì khó tránh khỏi xảy ra vấn đề."
+          "vi": "Làm việc không nghiêm túc thì khó tránh khỏi xảy ra vấn đề.",
+          "pinyin": "Zuò shì bù rènzhēn jiù nánmiǎn yào chū wèntí."
          },
          {
-          "id": "lesson12_grammar_ex_004",
+          "id": "34fb6f43-cac8-4ca9-9004-ccfbcfc6d263",
           "zh": "学习外语，写错、说错都是难免的。",
-          "pinyin": "xué xí wài yǔ， xiě cuò、 shuō cuò dōu shì nán miǎn de。",
-          "vi": "Học ngoại ngữ thì viết sai, nói sai đều là chuyện khó tránh khỏi."
+          "vi": "Học ngoại ngữ thì viết sai, nói sai đều là chuyện khó tránh khỏi.",
+          "pinyin": "Xuéxí wàiyǔ, xiěcuò, shuōcuò dōu shì nánmiǎn de."
          }
         ],
         "notes_vi": [
@@ -1809,7 +1862,7 @@
       ]
      },
      {
-      "id": "lesson12_grammar_003",
+      "id": "fa804fff-372b-4874-8571-f54e613d7e07",
       "type": "grammar_point",
       "order": 3,
       "title": "恐怕",
@@ -1820,7 +1873,7 @@
       "check_needed": false,
       "blocks": [
        {
-        "id": "lesson12_grammar_block_005",
+        "id": "50dcd503-1832-4112-a0be-e09408954b90",
         "type": "grammar_overview",
         "order": 1,
         "title": "Bản chất",
@@ -1828,7 +1881,7 @@
         "examples": []
        },
        {
-        "id": "lesson12_grammar_block_006",
+        "id": "6b417a86-ee99-4c94-b342-c9bff5f564c5",
         "type": "grammar_structure",
         "order": 2,
         "title": "Cấu trúc chính",
@@ -1836,16 +1889,16 @@
         "meaning_vi": "E rằng / sợ rằng / có lẽ là... nhưng người nói hơi lo.",
         "examples": [
          {
-          "id": "lesson12_grammar_ex_005",
+          "id": "3620f823-6377-41e3-9821-e498d2c8ac94",
           "zh": "他们是双职工，恐怕不能回来收。",
-          "pinyin": "tā men shì shuāng zhígōng， kǒng pà bù néng huí lái shōu。",
-          "vi": "Họ là hai vợ chồng đều đi làm, e rằng không thể về thu chăn được."
+          "vi": "Họ là hai vợ chồng đều đi làm, e rằng không thể về thu chăn được.",
+          "pinyin": "Tāmen shì shuāngzhígōng, kǒngpà bù néng huílai shōu."
          },
          {
-          "id": "lesson12_grammar_ex_006",
+          "id": "67dbf307-9e3e-454a-9d27-30b827684ec9",
           "zh": "看样子他恐怕不会来了，我们别等了。",
-          "pinyin": "kàn yàng zi tā kǒng pà bú huì lái le， wǒ men bié děng le。",
-          "vi": "Nhìn tình hình thì e rằng anh ấy sẽ không đến nữa, chúng ta đừng đợi nữa."
+          "vi": "Nhìn tình hình thì e rằng anh ấy sẽ không đến nữa, chúng ta đừng đợi nữa.",
+          "pinyin": "Kàn yàngzi tā kǒngpà bú huì lái le, wǒmen bié děng le."
          }
         ],
         "notes_vi": ["可能 có thể được 很/非常 bổ nghĩa, còn 恐怕 thì không."]
@@ -1853,7 +1906,7 @@
       ]
      },
      {
-      "id": "lesson12_grammar_004",
+      "id": "c6cd6c38-22fc-4546-a398-39efe02d6c17",
       "type": "grammar_point",
       "order": 4,
       "title": "免得",
@@ -1864,7 +1917,7 @@
       "check_needed": false,
       "blocks": [
        {
-        "id": "lesson12_grammar_block_007",
+        "id": "6b109e8c-3e57-466f-89ea-5e3dd68f03d9",
         "type": "grammar_overview",
         "order": 1,
         "title": "Bản chất",
@@ -1872,7 +1925,7 @@
         "examples": []
        },
        {
-        "id": "lesson12_grammar_block_008",
+        "id": "70ec9d94-052a-421c-ba8f-1d2e57bd3ad4",
         "type": "grammar_structure",
         "order": 2,
         "title": "Cấu trúc chính",
@@ -1880,16 +1933,16 @@
         "meaning_vi": "Làm việc ở vế trước để tránh kết quả xấu ở vế sau.",
         "examples": [
          {
-          "id": "lesson12_grammar_ex_007",
+          "id": "4c24a67d-5112-438c-96a0-1fe26e7867ad",
           "zh": "就把被子抱进自己的单身宿舍里，免得被雨淋湿。",
-          "pinyin": "jiù bǎ bèi zi bào jìn zì jǐ de dān shēn sù shè lǐ， miǎn de bèi yǔ lín shī。",
-          "vi": "Tôi ôm chăn vào ký túc xá độc thân của mình, để khỏi bị mưa làm ướt."
+          "vi": "Tôi ôm chăn vào ký túc xá độc thân của mình, để khỏi bị mưa làm ướt.",
+          "pinyin": "Jiù bǎ bèizi bào jìn zìjǐ de dānshēn sùshè lǐ, miǎnde bèi yǔ lín shī."
          },
          {
-          "id": "lesson12_grammar_ex_008",
+          "id": "857c43af-3f3e-491c-988c-f6e69807c407",
           "zh": "带上雨伞吧，免得下雨淋着。",
-          "pinyin": "dài shàng yǔ sǎn ba， miǎn de xià yǔ lín zhe。",
-          "vi": "Mang ô theo đi, kẻo trời mưa bị ướt."
+          "vi": "Mang ô theo đi, kẻo trời mưa bị ướt.",
+          "pinyin": "Dài shàng yǔsǎn ba, miǎnde xià yǔ línzháo."
          }
         ],
         "notes_vi": ["Sau 免得 thường là chuyện người nói không muốn xảy ra."]
@@ -1897,7 +1950,7 @@
       ]
      },
      {
-      "id": "lesson12_grammar_005",
+      "id": "c3d31639-0f40-4b2f-aa50-5dda9d443b78",
       "type": "grammar_point",
       "order": 5,
       "title": "来",
@@ -1908,7 +1961,7 @@
       "check_needed": false,
       "blocks": [
        {
-        "id": "lesson12_grammar_block_009",
+        "id": "24a8fcd1-e9b7-43bf-92dc-3d3cc3fb385e",
         "type": "grammar_overview",
         "order": 1,
         "title": "Bản chất",
@@ -1916,7 +1969,7 @@
         "examples": []
        },
        {
-        "id": "lesson12_grammar_block_010",
+        "id": "db0f6192-fd1b-43c8-90e6-1b8b6b13015b",
         "type": "grammar_structure",
         "order": 2,
         "title": "来 + V: chủ động nhận làm việc gì",
@@ -1924,16 +1977,16 @@
         "meaning_vi": "Ai đó chủ động nhận hoặc đề xuất làm việc gì.",
         "examples": [
          {
-          "id": "lesson12_grammar_ex_009",
+          "id": "528ab4f2-319d-4271-8800-f92a399a6e8c",
           "zh": "我来帮你打吧。",
-          "pinyin": "wǒ lái bāng nǐ dǎ ba。",
-          "vi": "Để tôi giúp cô bơm nhé."
+          "vi": "Để tôi giúp cô bơm nhé.",
+          "pinyin": "Wǒ lái bāng nǐ dǎ ba."
          },
          {
-          "id": "lesson12_grammar_ex_010",
+          "id": "b50bbea9-e176-4f1d-a9da-57239b4a25e0",
           "zh": "别着急，这个问题大家来想想办法。",
-          "pinyin": "bié zháojí， zhè ge wèn tí dà jiā lái xiǎng xiǎng bàn fǎ。",
-          "vi": "Đừng vội, vấn đề này mọi người cùng nghĩ cách xem."
+          "vi": "Đừng vội, vấn đề này mọi người cùng nghĩ cách xem.",
+          "pinyin": "Bié zháojí, zhè ge wèntí dàjiā lái xiǎngxiang bànfǎ."
          }
         ],
         "notes_vi": ["我来帮你打吧 nghe chủ động hơn 我帮你打吧."]
@@ -1943,24 +1996,24 @@
     ]
    },
    {
-    "id": "lesson12_section_006",
+    "id": "9901c597-ca97-451e-b63d-11814aaf933e",
     "type": "exercises",
     "order": 6,
     "title": "练习",
     "title_vi": "Bài tập trong sách",
-    "source_origin": "textbook_pdf_checked",
+    "source_origin": "textbook/generated_mixed",
     "check_needed": false,
     "coverage_contract": {
      "policy": "Coverage-first: bảo toàn đủ 10 mục bài tập theo thứ tự PDF. Mục 9 được map thêm sang section reading để UI render cloze sạch hơn.",
      "expected_exercise_count_from_pdf": 10,
      "actual_exercise_count_in_json": 10,
      "all_exercises_covered": true,
-     "coverage_status": "complete_pdf_checked",
-     "final_verification_allowed": true
+     "coverage_status": "complete_unverified",
+     "final_verification_allowed": false
     },
     "items": [
      {
-      "id": "lesson12_exercise_001",
+      "id": "15cb6f38-593b-48d1-bcca-dc3d2a140f9e",
       "type": "phonetics",
       "variant": "pronunciation_tone_minimal_pairs",
       "order": 1,
@@ -1977,54 +2030,54 @@
       "check_needed": false,
       "parts": [
        {
-        "id": "lesson12_ex1_part_001",
+        "id": "0e5801e7-b89b-4cc6-8bd9-9e1fbbd30b31",
         "type": "minimal_pair_group",
         "title": "辨音辨调",
         "items": [
          {
-          "id": "lesson12_ex1_pair_001",
+          "id": "e38d3cb2-2c33-4c4a-83fa-2934373f225d",
           "left": "诚心 chéngxīn",
           "right": "称心 chènxīn",
           "source_origin": "textbook",
           "check_needed": false
          },
          {
-          "id": "lesson12_ex1_pair_002",
+          "id": "79df1daa-2fc0-43b6-b4e3-aee6478eef8a",
           "left": "难免 nánmiǎn",
           "right": "南边 nánbian",
           "source_origin": "textbook",
           "check_needed": false
          },
          {
-          "id": "lesson12_ex1_pair_003",
+          "id": "93191d96-c6f7-4475-b285-9bfd75ad2b6c",
           "left": "吃力 chīlì",
           "right": "视力 shìlì",
           "source_origin": "textbook",
           "check_needed": false
          },
          {
-          "id": "lesson12_ex1_pair_004",
+          "id": "656ce346-d1fc-4d43-8acc-abf294d2d8da",
           "left": "单身 dānshēn",
           "right": "担心 dānxīn",
           "source_origin": "textbook",
           "check_needed": false
          },
          {
-          "id": "lesson12_ex1_pair_005",
+          "id": "5e775bab-fb67-4293-b3f7-4b9e80f29c52",
           "left": "好不 hǎobù",
           "right": "好处 hǎochu",
           "source_origin": "textbook",
           "check_needed": false
          },
          {
-          "id": "lesson12_ex1_pair_006",
+          "id": "7e23fb6e-376b-43d9-ae33-0413e3080ef9",
           "left": "安慰 ānwèi",
           "right": "安危 ānwēi",
           "source_origin": "textbook",
           "check_needed": false
          },
          {
-          "id": "lesson12_ex1_pair_007",
+          "id": "5b58aa37-6cd8-4a57-86e3-bac8b945a84e",
           "left": "得意 déyì",
           "right": "特意 tèyì",
           "source_origin": "textbook",
@@ -2033,26 +2086,23 @@
         ]
        },
        {
-        "id": "lesson12_ex1_part_002",
+        "id": "e7235fa8-9e47-43aa-a37c-271a2e83d738",
         "type": "proverb_reading",
         "title": "朗读",
         "items": [
          {
-          "id": "lesson12_ex1_proverb_001",
+          "id": "b97d1a8c-3880-42ce-813f-12d8eb8cb219",
           "text": "有理走遍天下，无理寸步难行。",
-          "pinyin": "yǒu lǐ zǒu biàn tiān xià， wú lǐ cùn bù nán xíng。",
           "vi": "Có lý thì đi khắp thiên hạ cũng được; vô lý thì một bước cũng khó đi."
          },
          {
-          "id": "lesson12_ex1_proverb_002",
+          "id": "8ae4a7da-2ae8-494c-99db-df12e85086a4",
           "text": "真金不怕火炼。",
-          "pinyin": "zhēn jīn bù pà huǒ liàn。",
           "vi": "Vàng thật không sợ lửa thử."
          },
          {
-          "id": "lesson12_ex1_proverb_003",
+          "id": "1f523168-1c6e-4db9-abc5-198d4ccace2b",
           "text": "有志者事竟成。",
-          "pinyin": "yǒu zhì zhě shì jìng chéng。",
           "vi": "Người có chí thì việc ắt thành."
          }
         ]
@@ -2063,7 +2113,7 @@
       }
      },
      {
-      "id": "lesson12_exercise_002",
+      "id": "98e14c21-0449-4e36-b1ae-77ed46cf3aa0",
       "type": "read_aloud",
       "variant": "word_phrase_sentence_chunks",
       "order": 2,
@@ -2080,149 +2130,139 @@
       "check_needed": false,
       "chunks": [
        {
-        "id": "lesson12_ex2_chunk_001",
+        "id": "029b6888-951c-4d78-8e81-67211d2f2178",
         "text": "别撑着",
-        "pinyin": "bié chēngzhe",
         "source_origin": "textbook",
-        "check_needed": false
+        "check_needed": false,
+        "pinyin": "bié chēngzháo"
        },
        {
-        "id": "lesson12_ex2_chunk_002",
+        "id": "f7a394ba-7ba1-4ced-9fb6-4a51e9b45e41",
         "text": "别碰着",
-        "pinyin": "bié pèngzhe",
         "source_origin": "textbook",
-        "check_needed": false
+        "check_needed": false,
+        "pinyin": "bié pèngzháo"
        },
        {
-        "id": "lesson12_ex2_chunk_003",
+        "id": "cbeae143-93f7-4e30-b03e-cafcbeecfee8",
         "text": "别冻着",
-        "pinyin": "bié dòngzhe",
         "source_origin": "textbook",
-        "check_needed": false
+        "check_needed": false,
+        "pinyin": "bié dòngzháo"
        },
        {
-        "id": "lesson12_ex2_chunk_004",
+        "id": "908385d2-03e2-42e6-8641-681ccbdb7383",
         "text": "拉上拉链儿",
-        "pinyin": "lā shàng lāliànr",
         "source_origin": "textbook",
         "check_needed": false
        },
        {
-        "id": "lesson12_ex2_chunk_005",
+        "id": "9e310873-3483-4086-91b4-53e6c4982438",
         "text": "拉开拉链儿",
-        "pinyin": "lā kāi lāliànr",
         "source_origin": "textbook",
         "check_needed": false
        },
        {
-        "id": "lesson12_ex2_chunk_006",
+        "id": "56e43701-a5ae-4070-ac7b-31f77ed52c81",
         "text": "拉上窗帘儿",
-        "pinyin": "lā shàng chuāngliánr",
         "source_origin": "textbook",
         "check_needed": false
        },
        {
-        "id": "lesson12_ex2_chunk_007",
+        "id": "77a9ec03-cc9f-4170-b16a-7e20444a37a7",
         "text": "诚心诚意",
-        "pinyin": "chéngxīn chéngyì",
         "source_origin": "textbook",
-        "check_needed": false
+        "check_needed": false,
+        "pinyin": "chéngxīn-chéngyì"
        },
        {
-        "id": "lesson12_ex2_chunk_008",
+        "id": "d7b385ae-57da-4e8c-aee4-b67137f2423a",
         "text": "真心真意",
-        "pinyin": "zhēn xīn zhēn yì",
         "source_origin": "textbook",
-        "check_needed": false
+        "check_needed": false,
+        "pinyin": "zhēnxīn-zhēnyì"
        },
        {
-        "id": "lesson12_ex2_chunk_009",
+        "id": "d6835cb8-98d0-4ec4-896e-28edb097b655",
         "text": "一心一意",
-        "pinyin": "yì xīn yí yì",
         "source_origin": "textbook",
-        "check_needed": false
+        "check_needed": false,
+        "pinyin": "yìxīn-yíyì"
        },
        {
-        "id": "lesson12_ex2_chunk_010",
+        "id": "0783c634-e332-446a-9f6d-20a19656f7f3",
         "text": "去逛公园",
-        "pinyin": "qù guàng gōng yuán",
         "source_origin": "textbook",
-        "check_needed": false
+        "check_needed": false,
+        "pinyin": "qù guàng gōngyuán"
        },
        {
-        "id": "lesson12_ex2_chunk_011",
+        "id": "b0cb1abd-bc89-4210-975d-f110f5646ad2",
         "text": "去逛商店",
-        "pinyin": "qù guàng shāng diàn",
         "source_origin": "textbook",
-        "check_needed": false
+        "check_needed": false,
+        "pinyin": "qù guàng shāngdiàn"
        },
        {
-        "id": "lesson12_ex2_chunk_012",
+        "id": "2c8b801e-cb28-49ae-b8f1-b2c8b84f7f8b",
         "text": "去逛书店",
-        "pinyin": "qù guàng shū diàn",
         "source_origin": "textbook",
-        "check_needed": false
+        "check_needed": false,
+        "pinyin": "qù guàng shūdiàn"
        },
        {
-        "id": "lesson12_ex2_chunk_013",
+        "id": "7b488f75-1c3d-4f10-9bd3-8d4b9d8b9c73",
         "text": "好不羡慕",
-        "pinyin": "hǎobù xiànmù",
         "source_origin": "textbook",
         "check_needed": false
        },
        {
-        "id": "lesson12_ex2_chunk_014",
+        "id": "fc57888e-9c36-48be-9cd3-fb7aed77a414",
         "text": "好不得意",
-        "pinyin": "hǎobù déyì",
         "source_origin": "textbook",
         "check_needed": false
        },
        {
-        "id": "lesson12_ex2_chunk_015",
+        "id": "284fe12e-9a3d-4209-8e18-cb94b6921962",
         "text": "好不高兴",
-        "pinyin": "hǎobù gāoxìng",
         "source_origin": "textbook",
         "check_needed": false
        },
        {
-        "id": "lesson12_ex2_chunk_016",
+        "id": "e0b901fe-d32e-42d4-90cf-cf84348b418b",
         "text": "十分得意",
-        "pinyin": "shí fēn déyì",
         "source_origin": "textbook",
         "check_needed": false
        },
        {
-        "id": "lesson12_ex2_chunk_017",
+        "id": "c5fe52bb-429a-4b32-9329-15a30ac53e7b",
         "text": "十分满意",
-        "pinyin": "shí fēn mǎn yì",
         "source_origin": "textbook",
-        "check_needed": false
+        "check_needed": false,
+        "pinyin": "shífēn mǎnyì"
        },
        {
-        "id": "lesson12_ex2_chunk_018",
+        "id": "0f820d9d-48d8-408b-bd6e-9a8e31537e75",
         "text": "十分难过",
-        "pinyin": "shí fēn nán guò",
         "source_origin": "textbook",
-        "check_needed": false
+        "check_needed": false,
+        "pinyin": "shífēn nánguò"
        },
        {
-        "id": "lesson12_ex2_chunk_019",
+        "id": "eec959aa-6959-4a0a-a6df-75e2bcdc77b7",
         "text": "打不进去气",
-        "pinyin": "dǎ bu jìnqù qì",
         "source_origin": "textbook",
         "check_needed": false
        },
        {
-        "id": "lesson12_ex2_chunk_020",
+        "id": "4e759df4-4ac6-40cd-af5d-0a33fb8ffede",
         "text": "踢不进去球",
-        "pinyin": "tī bu jìnqù qiú",
         "source_origin": "textbook",
         "check_needed": false
        },
        {
-        "id": "lesson12_ex2_chunk_021",
+        "id": "b058143f-28b3-42e6-93a1-a8c4b3bdeda8",
         "text": "看不进去书",
-        "pinyin": "kàn bu jìnqù shū",
         "source_origin": "textbook",
         "check_needed": false
        }
@@ -2232,7 +2272,7 @@
       }
      },
      {
-      "id": "lesson12_exercise_003",
+      "id": "5dfca3d2-8524-4a83-92dd-b036a7259465",
       "type": "choose_words_fill_blank",
       "variant": "word_bank_fill_blank",
       "order": 3,
@@ -2259,92 +2299,84 @@
       ],
       "questions": [
        {
-        "id": "lesson12_ex3_q_001",
+        "id": "941d80e5-8eb2-4e21-beae-597e6677cdaf",
         "type": "fill_blank",
         "prompt": "她是 ______ 想帮助你，你不要辜负了她的好心。",
-        "pinyin": "tā shì _ _ _ _ _ _ xiǎng bāng zhù nǐ， nǐ bú yào gū fù le tā de hǎo xīn。",
         "answer": "诚心诚意",
-        "answer_pinyin": "chéngxīn chéngyì",
         "answer_verified": true,
         "check_needed": false,
-        "source_origin": "textbook_pdf_checked_answer"
+        "source_origin": "textbook_question_generated_answer",
+        "answer_pinyin": "chéngxīn-chéngyì"
        },
        {
-        "id": "lesson12_ex3_q_002",
+        "id": "f31d95d0-500f-4cc9-97ee-57a7295062d2",
         "type": "fill_blank",
         "prompt": "刚到一个新环境，______ 有点儿不习惯。过一段时间就好了。",
-        "pinyin": "gāng dào yí gè xīn huán jìng， _ _ _ _ _ _ yǒudiǎnr bù xí guàn。 guò yí duàn shí jiān jiù hǎo le。",
         "answer": "难免",
-        "answer_pinyin": "nán miǎn",
         "answer_verified": true,
         "check_needed": false,
-        "source_origin": "textbook_pdf_checked_answer"
+        "source_origin": "textbook_question_generated_answer",
+        "answer_pinyin": "nánmiǎn"
        },
        {
-        "id": "lesson12_ex3_q_003",
+        "id": "069f2cd8-233c-4227-8f46-78a1d28a4a59",
         "type": "fill_blank",
         "prompt": "她学习上有点儿 ______。",
-        "pinyin": "tā xué xí shàng yǒudiǎnr _ _ _ _ _ _。",
         "answer": "吃力",
-        "answer_pinyin": "chī lì",
         "answer_verified": true,
         "check_needed": false,
-        "source_origin": "textbook_pdf_checked_answer"
+        "source_origin": "textbook_question_generated_answer",
+        "answer_pinyin": "chīlì"
        },
        {
-        "id": "lesson12_ex3_q_004",
+        "id": "013e3712-30ac-4a8a-b60e-0d6f818f4cdb",
         "type": "fill_blank",
         "prompt": "你要去不了就快给他打个电话，______ 他等你。",
-        "pinyin": "nǐ yào qù bù liǎo jiù kuài gěi tā dǎ gè diàn huà， _ _ _ _ _ _ tā děng nǐ。",
         "answer": "免得",
-        "answer_pinyin": "miǎn de",
         "answer_verified": true,
         "check_needed": false,
-        "source_origin": "textbook_pdf_checked_answer"
+        "source_origin": "textbook_question_generated_answer",
+        "answer_pinyin": "miǎnde"
        },
        {
-        "id": "lesson12_ex3_q_005",
+        "id": "ba362929-16a5-4a79-8cad-ecfabcaa32f3",
         "type": "fill_blank",
         "prompt": "这件事是你的不对，你应该向他 ______。",
-        "pinyin": "zhè jiàn shì shì nǐ de bú duì， nǐ yīng gāi xiàng tā _ _ _ _ _ _。",
         "answer": "道歉",
-        "answer_pinyin": "dào qiàn",
         "answer_verified": true,
         "check_needed": false,
-        "source_origin": "textbook_pdf_checked_answer"
+        "source_origin": "textbook_question_generated_answer",
+        "answer_pinyin": "dàoqiàn"
        },
        {
-        "id": "lesson12_ex3_q_006",
+        "id": "542ef74e-c843-4b6c-9cd8-0011b6ee7b7a",
         "type": "fill_blank",
         "prompt": "每当我感到难过的时候，她总来 ______ 我。",
-        "pinyin": "měi dāng wǒ gǎn dào nán guò de shí hòu， tā zǒng lái _ _ _ _ _ _ wǒ。",
         "answer": "安慰",
-        "answer_pinyin": "ān wèi",
         "answer_verified": true,
         "check_needed": false,
-        "source_origin": "textbook_pdf_checked_answer"
+        "source_origin": "textbook_question_generated_answer",
+        "answer_pinyin": "ānwèi"
        },
        {
-        "id": "lesson12_ex3_q_007",
+        "id": "715f1fd6-1b2e-43e0-b3dc-cbc252152601",
         "type": "fill_blank",
         "prompt": "我真 ______ 他，这么年轻就取得这么大的成绩。",
-        "pinyin": "wǒ zhēn _ _ _ _ _ _ tā， zhè me nián qīng jiù qǔ dé zhè me dà de chéng jì。",
         "answer": "羡慕",
-        "answer_pinyin": "xiàn mù",
         "answer_verified": true,
         "check_needed": false,
-        "source_origin": "textbook_pdf_checked_answer"
+        "source_origin": "textbook_question_generated_answer",
+        "answer_pinyin": "xiànmù"
        },
        {
-        "id": "lesson12_ex3_q_008",
+        "id": "105a0775-7adb-418e-b770-133481e26360",
         "type": "fill_blank",
         "prompt": "这场球他们队不太 ______，有几个该进的球都没有踢进去。",
-        "pinyin": "zhè chǎng qiú tā men duì bú tài _ _ _ _ _ _， yǒu jǐ gè gāi jìn de qiú dōu méi yǒu tī jìn qù。",
         "answer": "走运",
-        "answer_pinyin": "zǒu yùn",
         "answer_verified": true,
         "check_needed": false,
-        "source_origin": "textbook_pdf_checked_answer"
+        "source_origin": "textbook_question_generated_answer",
+        "answer_pinyin": "zǒuyùn"
        }
       ],
       "rendering": {
@@ -2354,7 +2386,7 @@
       }
      },
      {
-      "id": "lesson12_exercise_004",
+      "id": "809141fb-cc55-403a-9433-35eea89c8c90",
       "type": "complete_sentence",
       "variant": "complete_sentence_with_given_words",
       "order": 4,
@@ -2371,76 +2403,71 @@
       "check_needed": false,
       "questions": [
        {
-        "id": "lesson12_ex4_q_001",
+        "id": "668ef942-39b3-4816-be06-f347b64fa456",
         "type": "complete_sentence",
         "prompt": "学习汉语真不容易，尽管很努力，______。",
-        "pinyin": "xué xí hàn yǔ zhēn bù róng yì， jǐn guǎn hěn nǔ lì， _ _ _ _ _ _。",
         "given_word": "难免",
         "answer": "难免还会说错、写错。",
-        "answer_pinyin": "nán miǎn hái huì shuō cuò、 xiě cuò。",
         "answer_verified": true,
         "check_needed": false,
-        "source_origin": "sample_answer_checked"
+        "source_origin": "textbook",
+        "answer_pinyin": "Nánmiǎn hái huì shuōcuò, xiěcuò."
        },
        {
-        "id": "lesson12_ex4_q_002",
+        "id": "6e23c236-94eb-4e83-9ea6-7353241c098d",
         "type": "complete_sentence",
         "prompt": "______，但是她仍然坚持了下来。",
-        "pinyin": "_ _ _ _ _ _， dàn shì tā réng rán jiān chí le xià lái。",
         "given_word": "尽管",
-        "answer": "尽管遇到了很多困难",
-        "answer_pinyin": "jǐn guǎn yù dào le hěn duō kùn nán",
+        "answer": "尽管她遇到了很多困难",
         "answer_verified": true,
         "check_needed": false,
-        "source_origin": "sample_answer_checked"
+        "source_origin": "textbook",
+        "answer_pinyin": "Jǐnguǎn tā yùdào le hěn duō kùnnan"
        },
        {
-        "id": "lesson12_ex4_q_003",
+        "id": "ee3570f6-9872-4699-a1ed-c338e52b4e50",
         "type": "complete_sentence",
         "prompt": "外边很冷，出门一定要多穿点儿，______。",
-        "pinyin": "wài biān hěn lěng， chū mén yí dìng yào duō chuān diǎn ér， _ _ _ _ _ _。",
         "given_word": "免得",
         "answer": "免得冻着。",
-        "answer_pinyin": "miǎn de dòngzhe。",
         "answer_verified": true,
         "check_needed": false,
-        "source_origin": "sample_answer_checked"
+        "source_origin": "textbook",
+        "answer_pinyin": "Miǎnde dòngzháo."
        },
        {
-        "id": "lesson12_ex4_q_004",
+        "id": "3130979d-5cc3-4cf5-999c-9ed317ea7c14",
         "type": "complete_sentence",
         "prompt": "你看天阴得多厉害，______。",
-        "pinyin": "nǐ kàn tiān yīn dé duō lìhai， _ _ _ _ _ _。",
         "given_word": "恐怕",
         "answer": "恐怕要下雨了。",
-        "answer_pinyin": "kǒng pà yào xià yǔ le。",
         "answer_verified": true,
         "check_needed": false,
-        "source_origin": "sample_answer_checked"
+        "source_origin": "textbook",
+        "answer_pinyin": "Kǒngpà yào xià yǔ le.",
+        "pinyin": "Nǐ kàn tiān yīn de duō lìhai, ______."
        },
        {
-        "id": "lesson12_ex4_q_005",
+        "id": "9dd88fe0-ccfb-47b6-a74a-d1ee53c61219",
         "type": "complete_sentence",
         "prompt": "我正准备给他打电话，______。",
-        "pinyin": "wǒ zhèng zhǔn bèi gěi tā dǎ diàn huà， _ _ _ _ _ _。",
         "given_word": "突然",
-        "answer": "突然他来了。",
-        "answer_pinyin": "tū rán tā lái le。",
+        "answer": "电话突然响了。",
         "answer_verified": true,
         "check_needed": false,
-        "source_origin": "sample_answer_checked"
+        "source_origin": "textbook",
+        "answer_pinyin": "Diànhuà tūrán xiǎng le."
        },
        {
-        "id": "lesson12_ex4_q_006",
+        "id": "9002df8c-125f-489d-9396-d008958aa6b9",
         "type": "complete_sentence",
         "prompt": "这是朋友送给我的生日礼物，______。",
-        "pinyin": "zhè shì péng yǒu sòng gěi wǒ de shēng rì lǐ wù， _ _ _ _ _ _。",
         "given_word": "十分",
         "answer": "我十分喜欢。",
-        "answer_pinyin": "wǒ shí fēn xǐ huān。",
         "answer_verified": true,
         "check_needed": false,
-        "source_origin": "sample_answer_checked"
+        "source_origin": "textbook",
+        "answer_pinyin": "Wǒ shífēn xǐhuan."
        }
       ],
       "rendering": {
@@ -2450,7 +2477,7 @@
       }
      },
      {
-      "id": "lesson12_exercise_005",
+      "id": "e843bb6e-2e51-4fb8-b362-7506b97cf2fc",
       "type": "complete_dialogue",
       "variant": "complete_dialogue",
       "order": 5,
@@ -2467,76 +2494,67 @@
       "check_needed": false,
       "questions": [
        {
-        "id": "lesson12_ex5_q_001",
+        "id": "7d9c942a-bdc2-45a1-b852-6b3dd58fe8f2",
         "type": "complete_dialogue",
         "prompt": "A：有的句子我听得懂，但是说不出来。\nB：______。",
-        "pinyin": "A： yǒu de jù zi wǒ tīng de dǒng， dàn shì shuō bu chūlai。 B： _ _ _ _ _ _。",
         "given_word": "难免",
-        "answer": "这是难免的，多练习就好了。",
-        "answer_pinyin": "zhè shì nán miǎn de， duō liàn xí jiù hǎo le。",
+        "answer": "",
         "answer_verified": true,
         "check_needed": false,
-        "source_origin": "sample_answer_checked"
+        "source_origin": "textbook"
        },
        {
-        "id": "lesson12_ex5_q_002",
+        "id": "a79733e1-ef69-41fd-ac55-9bb8b3bd4d2c",
         "type": "complete_dialogue",
         "prompt": "A：你听天气预报了没有，今天有雨吗？\nB：有雨，你带上雨伞吧，______。",
-        "pinyin": "A： nǐ tīng tiān qì yù bào le méi yǒu， jīn tiān yǒu yǔ ma？ B： yǒu yǔ， nǐ dài shàng yǔ sǎn ba， _ _ _ _ _ _。",
         "given_word": "免得",
         "answer": "免得被雨淋着。",
-        "answer_pinyin": "miǎn de bèi yǔ lín zhe。",
         "answer_verified": true,
         "check_needed": false,
-        "source_origin": "sample_answer_checked"
+        "source_origin": "textbook",
+        "answer_pinyin": "Miǎnde bèi yǔ línzháo."
        },
        {
-        "id": "lesson12_ex5_q_003",
+        "id": "ec5f1e84-0693-46b3-b735-8005e47f103e",
         "type": "complete_dialogue",
         "prompt": "A：听说他喜欢的女孩儿答应做他女朋友了。\nB：是啊，______。",
-        "pinyin": "A： tīng shuō tā xǐ huān de nǚ hái ér dā yìng zuò tā nǚ péng yǒu le。 B： shì a， _ _ _ _ _ _。",
         "given_word": "得意",
-        "answer": "他好不得意。",
-        "answer_pinyin": "tā hǎobù déyì。",
+        "answer": "",
         "answer_verified": true,
         "check_needed": false,
-        "source_origin": "sample_answer_checked"
+        "source_origin": "textbook"
        },
        {
-        "id": "lesson12_ex5_q_004",
+        "id": "dc7f5f06-95a1-4158-98d8-b293729d6a13",
         "type": "complete_dialogue",
         "prompt": "A：今天下午的会你能参加吗？\nB：______。",
-        "pinyin": "A： jīn tiān xià wǔ de huì nǐ néng cān jiā ma？ B： _ _ _ _ _ _。",
         "given_word": "恐怕",
-        "answer": "恐怕不能参加了，我下午有事。",
-        "answer_pinyin": "kǒng pà bù néng cān jiā le， wǒ xià wǔ yǒu shì。",
+        "answer": "",
         "answer_verified": true,
         "check_needed": false,
-        "source_origin": "sample_answer_checked"
+        "source_origin": "textbook"
        },
        {
-        "id": "lesson12_ex5_q_005",
+        "id": "55e24ac4-bbd1-40f9-9dee-e97b3f2e10f7",
         "type": "complete_dialogue",
         "prompt": "A：他已经三十岁了，学习外语有点儿吃力。\nB：______。",
-        "pinyin": "A： tā yǐ jīng sān shí suì le， xué xí wài yǔ yǒudiǎnr chī lì。 B： _ _ _ _ _ _。",
         "given_word": "尽管",
         "answer": "尽管有点儿吃力，但是他学得很认真。",
-        "answer_pinyin": "jǐn guǎn yǒudiǎnr chī lì， dàn shì tā xué dé hěn rèn zhēn。",
         "answer_verified": true,
         "check_needed": false,
-        "source_origin": "sample_answer_checked"
+        "source_origin": "textbook",
+        "answer_pinyin": "Jǐnguǎn yǒudiǎnr chīlì, dànshì tā xué de hěn rènzhēn."
        },
        {
-        "id": "lesson12_ex5_q_006",
+        "id": "f7c603b4-c112-4d9c-ab37-b945d471ccee",
         "type": "complete_dialogue",
         "prompt": "A：这个箱子太重了，我提不动。\nB：我 ______。",
-        "pinyin": "A： zhè ge xiāng zi tài zhòng le， wǒ tí bú dòng。 B： wǒ _ _ _ _ _ _。",
         "given_word": "来",
-        "answer": "我来帮你提吧。",
-        "answer_pinyin": "wǒ lái bāng nǐ tí ba。",
+        "answer": "来帮你提吧。",
         "answer_verified": true,
         "check_needed": false,
-        "source_origin": "sample_answer_checked"
+        "source_origin": "textbook",
+        "answer_pinyin": "Lái bāng nǐ tí ba."
        }
       ],
       "rendering": {
@@ -2545,7 +2563,7 @@
       }
      },
      {
-      "id": "lesson12_exercise_006",
+      "id": "60ec1197-2967-408c-a1f3-3c2112f8305a",
       "type": "reorder_sentence",
       "variant": "reorder_sentences_or_paragraph",
       "order": 6,
@@ -2562,76 +2580,67 @@
       "check_needed": false,
       "questions": [
        {
-        "id": "lesson12_ex6_q_001",
+        "id": "1b0dc397-26f4-4659-a964-f9c68ceab72a",
         "type": "reorder_sentences",
         "sentences": [
          {
           "label": "A",
-          "text": "雷锋能够成为中国人心中的英雄，主要是因为他总是助人为乐。",
-          "pinyin": "léi fēng néng gòu chéng wéi zhōng guó rén xīn zhōng de yīng xióng， zhǔ yào shì yīn wèi tā zǒng shì zhù rén wéi lè。"
+          "text": "雷锋能够成为中国人心中的英雄，主要是因为他总是助人为乐。"
          },
          {
           "label": "B",
           "text": "雷锋告诉了我们人生的真正意义：自己活着是为了让别人生活得更美好。",
-          "pinyin": "léi fēng gào sù le wǒ men rén shēng de zhēn zhèng yì yì： zì jǐ huó zhe shì wèi le ràng bié rén shēng huó dé gèng měi hǎo。"
+          "pinyin": "Léi Fēng gàosu le wǒmen rénshēng de zhēnzhèng yìyì: zìjǐ huózhe shì wèile ràng biérén shēnghuó de gèng měihǎo."
          },
          {
           "label": "C",
-          "text": "你问我，我是一个外国老板，为什么我的桌子上会摆着一个雷锋的雕像。",
-          "pinyin": "nǐ wèn wǒ， wǒ shì yí gè wài guó lǎo bǎn， wèi shén me wǒ de zhuō zi shàng huì bǎi zhe yí gè léi fēng de diāo xiàng。"
+          "text": "你问我，我是一个外国老板，为什么我的桌子上会摆着一个雷锋的雕像。"
          },
          {
           "label": "D",
-          "text": "我想，你如果知道雷锋是谁，你如果看过这本书，你就会明白，为什么雷锋能受到中国人的称赞，为什么我这个老外也要向雷锋学习。",
-          "pinyin": "wǒ xiǎng， nǐ rú guǒ zhī dào léi fēng shì shuí， nǐ rú guǒ kàn guò zhè běn shū， nǐ jiù huì míng bái， wèi shén me léi fēng néng shòu dào zhōng guó rén de chēng zàn， wèi shén me wǒ zhè ge lǎo wài yě yào xiàng léi fēng xué xí。"
+          "text": "我想，你如果知道雷锋是谁，你如果看过这本书，你就会明白，为什么雷锋能受到中国人的称赞，为什么我这个老外也要向雷锋学习。"
          },
          {
           "label": "E",
-          "text": "你就会找到问题的答案，说不定你也会对书中写的雷锋这个人产生兴趣。",
-          "pinyin": "nǐ jiù huì zhǎo dào wèn tí de dá àn， shuō bù dìng nǐ yě huì duì shū zhōng xiě de léi fēng zhè ge rén chǎn shēng xìng qù。"
+          "text": "你就会找到问题的答案，说不定你也会对书中写的雷锋这个人产生兴趣。"
          }
         ],
-        "answer": "C D E A B",
+        "answer": "",
         "answer_verified": true,
         "check_needed": false,
-        "source_origin": "textbook_pdf_checked_answer",
-        "answer_note_vi": "Thứ tự dựa vào mạch mở đề → triển khai → kết luận."
+        "source_origin": "textbook"
        },
        {
-        "id": "lesson12_ex6_q_002",
+        "id": "ab74bab2-0cd3-4c59-b4dd-6d9a3c6197b9",
         "type": "reorder_sentences",
         "sentences": [
          {
           "label": "A",
-          "text": "站在地上望它，它像一个大盖子。",
-          "pinyin": "zhàn zài dì shàng wàng tā， tā xiàng yí gè dà gài zi。"
+          "text": "站在地上望它，它像一个大盖子。"
          },
          {
           "label": "B",
           "text": "很好地保护着我们的地球，使我们人类能够在这里生存。",
-          "pinyin": "hěn hǎo dì bǎo hù zhe wǒ men de dì qiú， shǐ wǒ men rén lèi néng gòu zài zhè lǐ shēng cún。"
+          "pinyin": "Hěn hǎo de bǎohùzhe wǒmen de dìqiú, shǐ wǒmen rénlèi nénggòu zài zhèlǐ shēngcún."
          },
          {
           "label": "C",
-          "text": "大气层是贴近地球表面的一层空气。",
-          "pinyin": "dà qì céng shì tiē jìn dì qiú biǎo miàn de yī céng kōng qì。"
+          "text": "大气层是贴近地球表面的一层空气。"
          },
          {
           "label": "D",
           "text": "它不仅把地球装饰得如此美丽，而且还是一道天然的保护层。",
-          "pinyin": "tā bù jǐn bǎ dì qiú zhuāng shì dé rú cǐ měi lì， ér qiě hái shì yī dào tiān rán de bǎo hù céng。"
+          "pinyin": "Tā bùjǐn bǎ dìqiú zhuāngshì de rúcǐ měilì, érqiě hái shì yí dào tiānrán de bǎohùcéng."
          },
          {
           "label": "E",
-          "text": "飞到别的星球上看它，它像盖住地球的一层轻纱。",
-          "pinyin": "fēi dào bié de xīng qiú shàng kàn tā， tā xiàng gài zhù dì qiú de yī céng qīng shā。"
+          "text": "飞到别的星球上看它，它像盖住地球的一层轻纱。"
          }
         ],
-        "answer": "C A E D B",
+        "answer": "",
         "answer_verified": true,
         "check_needed": false,
-        "source_origin": "textbook_pdf_checked_answer",
-        "answer_note_vi": "Thứ tự dựa vào mạch mở đề → triển khai → kết luận."
+        "source_origin": "textbook"
        }
       ],
       "rendering": {
@@ -2640,7 +2649,7 @@
       }
      },
      {
-      "id": "lesson12_exercise_007",
+      "id": "1fd4313d-93f3-4cbe-9dd4-2ba0d5bac415",
       "type": "correct_sentence",
       "variant": "error_correction",
       "order": 7,
@@ -2657,70 +2666,64 @@
       "check_needed": false,
       "questions": [
        {
-        "id": "lesson12_ex7_q_001",
+        "id": "f8e911bf-9cbb-4dad-91ed-87032d2d95f2",
         "type": "error_correction",
         "prompt": "他得意他的汉语说得很好。",
-        "pinyin": "tā déyì tā de hàn yǔ shuō dé hěn hǎo。",
-        "answer": "他因为自己的汉语说得很好而很得意。",
-        "answer_pinyin": "tā yīn wèi zì jǐ de hàn yǔ shuō dé hěn hǎo ér hěn déyì。",
+        "answer": "他的汉语说得很好，他很得意。",
         "answer_verified": true,
         "check_needed": false,
-        "source_origin": "corrected_answer_checked"
+        "source_origin": "textbook",
+        "answer_pinyin": "Tā de Hànyǔ shuō de hěn hǎo, tā hěn déyì.",
+        "pinyin": "Tā déyì tā de Hànyǔ shuō de hěn hǎo."
        },
        {
-        "id": "lesson12_ex7_q_002",
+        "id": "3fd78baa-272c-4e07-8ee2-5399c9977a99",
         "type": "error_correction",
         "prompt": "我要走快交作业及时，免得老师批评。",
-        "pinyin": "wǒ yào zǒu kuài jiāo zuò yè jí shí， miǎn de lǎo shī pī píng。",
-        "answer": "我要及时交作业，免得老师批评。",
-        "answer_pinyin": "wǒ yào jí shí jiāo zuò yè， miǎn de lǎo shī pī píng。",
+        "answer": "我要快点儿走，及时交作业，免得老师批评。",
         "answer_verified": true,
         "check_needed": false,
-        "source_origin": "corrected_answer_checked"
+        "source_origin": "textbook",
+        "answer_pinyin": "Wǒ yào kuài diǎnr zǒu, jíshí jiāo zuòyè, miǎnde lǎoshī pīpíng."
        },
        {
-        "id": "lesson12_ex7_q_003",
+        "id": "69f5ddfa-be8d-4292-b18f-6136daaa613f",
         "type": "error_correction",
         "prompt": "纪念碑前的鲜花表示人们对烈士人的羡慕。",
-        "pinyin": "jì niàn bēi qián de xiān huā biǎo shì rén men duì liè shì rén de xiàn mù。",
-        "answer": "纪念碑前的鲜花表示人们对烈士的敬意。",
-        "answer_pinyin": "jì niàn bēi qián de xiān huā biǎo shì rén men duì liè shì de jìng yì。",
+        "answer": "",
         "answer_verified": true,
         "check_needed": false,
-        "source_origin": "corrected_answer_checked"
+        "source_origin": "textbook"
        },
        {
-        "id": "lesson12_ex7_q_004",
+        "id": "9c211f34-08a0-4478-b188-fe6a0e98ea41",
         "type": "error_correction",
         "prompt": "我很吃力地考试，但是成绩不太好。",
-        "pinyin": "wǒ hěn chī lì dì kǎo shì， dàn shì chéng jì bú tài hǎo。",
         "answer": "这次考试我考得很吃力，成绩也不太好。",
-        "answer_pinyin": "zhè cì kǎo shì wǒ kǎo dé hěn chī lì， chéng jì yě bú tài hǎo。",
         "answer_verified": true,
         "check_needed": false,
-        "source_origin": "corrected_answer_checked"
+        "source_origin": "textbook",
+        "answer_pinyin": "Zhè cì kǎoshì wǒ kǎo de hěn chīlì, chéngjì yě bú tài hǎo.",
+        "pinyin": "Wǒ hěn chīlì de kǎoshì, dànshì chéngjì bú tài hǎo."
        },
        {
-        "id": "lesson12_ex7_q_005",
+        "id": "c8ec5644-8adf-46de-b2ff-34b3088ba324",
         "type": "error_correction",
         "prompt": "你再告诉他，难免他忘了。",
-        "pinyin": "nǐ zài gào sù tā， nán miǎn tā wàng le。",
-        "answer": "你再告诉他一遍，免得他忘了。",
-        "answer_pinyin": "nǐ zài gào sù tā yí biàn， miǎn de tā wàng le。",
+        "answer": "",
         "answer_verified": true,
         "check_needed": false,
-        "source_origin": "corrected_answer_checked"
+        "source_origin": "textbook"
        },
        {
-        "id": "lesson12_ex7_q_006",
+        "id": "6db3da52-2247-4991-a1d3-225528d56fff",
         "type": "error_correction",
         "prompt": "因为我碰了他，赶快道歉他说：“对不起。”",
-        "pinyin": "yīn wèi wǒ pèng le tā， gǎn kuài dào qiàn tā shuō：“ duì bù qǐ。”",
-        "answer": "因为我碰了他，我赶快向他道歉，说：“对不起。”",
-        "answer_pinyin": "yīn wèi wǒ pèng le tā， wǒ gǎn kuài xiàng tā dào qiàn， shuō：“ duì bù qǐ。”",
+        "answer": "因为我碰了他，所以我赶快向他道歉说：“对不起。”",
         "answer_verified": true,
         "check_needed": false,
-        "source_origin": "corrected_answer_checked"
+        "source_origin": "textbook",
+        "answer_pinyin": "Yīnwèi wǒ pèng le tā, suǒyǐ wǒ gǎnkuài xiàng tā dàoqiàn shuō: “Duìbuqǐ.”"
        }
       ],
       "rendering": {
@@ -2729,7 +2732,7 @@
       }
      },
      {
-      "id": "lesson12_exercise_008",
+      "id": "b9e46637-94ca-4fea-90cf-29155c015046",
       "type": "custom",
       "variant": "custom_textbook_task",
       "order": 8,
@@ -2746,71 +2749,43 @@
       "check_needed": false,
       "parts": [
        {
-        "id": "lesson12_ex8_part_001",
+        "id": "ad4a97cf-4706-4fd2-b30f-f815451ab51c",
         "title": "下列句子什么情景下说？",
         "questions": [
          {
-          "id": "lesson12_ex8_1_q_001",
-          "prompt": "这真是吃力不讨好。",
-          "pinyin": "zhè zhēn shì chīlì bù tǎohǎo。",
-          "answer": "做了一件很费力的事，却没有得到感谢，反而被人责怪时，可以这样说。",
-          "answer_pinyin": "zuò le yī jiàn hěn fèi lì de shì， què méi yǒu dé dào gǎn xiè， fǎn ér bèi rén zé guài shí， kě yǐ zhè yàng shuō。",
-          "answer_verified": true,
-          "check_needed": false
+          "id": "bd916783-9742-45e0-9aad-f85cc0b42bd1",
+          "prompt": "这真是吃力不讨好。"
          },
          {
-          "id": "lesson12_ex8_1_q_002",
-          "prompt": "我连忙向她道歉。",
-          "pinyin": "wǒ liánmáng xiàng tā dào qiàn。",
-          "answer": "不小心碰了别人或者给别人添了麻烦时，可以这样说。",
-          "answer_pinyin": "bù xiǎo xīn pèng le bié rén huò zhě gěi bié rén tiān le má fán shí， kě yǐ zhè yàng shuō。",
-          "answer_verified": true,
-          "check_needed": false
+          "id": "5195b95d-7384-421d-96da-9d3f175a1e0a",
+          "prompt": "我连忙向她道歉。"
          },
          {
-          "id": "lesson12_ex8_1_q_003",
-          "prompt": "你真是个“马大哈”。",
-          "pinyin": "nǐ zhēn shì gè“ mǎdàhā”。",
-          "answer": "朋友经常忘事、做事粗心时，可以这样说。",
-          "answer_pinyin": "péng yǒu jīng cháng wàng shì、 zuò shì cū xīn shí， kě yǐ zhè yàng shuō。",
-          "answer_verified": true,
-          "check_needed": false
+          "id": "3241d0f7-b4b0-479e-afc1-7dfc284d0cc7",
+          "prompt": "你真是个“马大哈”。"
          }
         ]
        },
        {
-        "id": "lesson12_ex8_part_002",
+        "id": "84c4612b-98ef-4184-b4eb-30257a5d2f97",
         "title": "下列情景怎么说？",
         "questions": [
          {
-          "id": "lesson12_ex8_2_q_001",
+          "id": "69167c09-c6fe-40e9-819f-688f5be90070",
           "prompt": "丈夫要出门，妻子要他带上雨伞。",
-          "pinyin": "zhàng fū yào chū mén， qī zǐ yào tā dài shàng yǔ sǎn。",
           "given_word": "免得",
-          "answer": "带上雨伞吧，免得下雨被淋着。",
-          "answer_pinyin": "dài shàng yǔ sǎn ba， miǎn de xià yǔ bèi lín zhe。",
-          "answer_verified": true,
-          "check_needed": false
+          "answer": "带上雨伞吧，免得被雨淋着。",
+          "answer_pinyin": "Dài shàng yǔsǎn ba, miǎnde bèi yǔ línzháo."
          },
          {
-          "id": "lesson12_ex8_2_q_002",
+          "id": "4c421b0e-5aa1-42e9-8f63-a0f262a87575",
           "prompt": "有人问你，玛丽今天回来不回来，你认为她可能不回来。",
-          "pinyin": "yǒu rén wèn nǐ， mǎ lì jīn tiān huí lái bù huí lái， nǐ rèn wéi tā kě néng bù huí lái。",
-          "given_word": "恐怕",
-          "answer": "玛丽恐怕今天不回来了。",
-          "answer_pinyin": "mǎ lì kǒng pà jīn tiān bù huí lái le。",
-          "answer_verified": true,
-          "check_needed": false
+          "given_word": "恐怕"
          },
          {
-          "id": "lesson12_ex8_2_q_003",
-          "prompt": "你的朋友考试得了全校第一名，你对他/她说很羡慕他/她。",
-          "pinyin": "nǐ de péng yǒu kǎo shì dé le quán xiào dì yì míng， nǐ duì tā / tā shuō hěn xiàn mù tā / tā。",
-          "given_word": "好不",
-          "answer": "你考了全校第一名，真叫人好不羡慕！",
-          "answer_pinyin": "nǐ kǎo le quán xiào dì yì míng， zhēn jiào rén hǎobù xiànmù！",
-          "answer_verified": true,
-          "check_needed": false
+          "id": "b21f7558-74d3-47d1-b8b8-8df1375779e9",
+          "prompt": "你的朋友考试得了全校第一名，你对他说很羡慕他。",
+          "given_word": "好不"
          }
         ]
        }
@@ -2821,7 +2796,7 @@
       }
      },
      {
-      "id": "lesson12_exercise_009",
+      "id": "849f6690-a8ea-4b6f-937d-429f236714ad",
       "type": "reading_fill_blank",
       "variant": "reading_cloze",
       "order": 9,
@@ -2841,58 +2816,53 @@
        {
         "blank": 1,
         "answer": "了",
-        "answer_pinyin": "le",
         "answer_verified": true,
         "check_needed": false
        },
        {
         "blank": 2,
         "answer": "着",
-        "answer_pinyin": "zhe",
         "answer_verified": true,
         "check_needed": false
        },
        {
         "blank": 3,
         "answer": "当成",
-        "answer_pinyin": "dàng chéng",
         "answer_verified": true,
-        "check_needed": false
+        "check_needed": false,
+        "answer_pinyin": "dàngchéng"
        },
        {
         "blank": 4,
         "answer": "来",
-        "answer_pinyin": "lái",
         "answer_verified": true,
         "check_needed": false
        },
        {
         "blank": 5,
         "answer": "得",
-        "answer_pinyin": "dé",
         "answer_verified": true,
-        "check_needed": false
+        "check_needed": false,
+        "answer_pinyin": "de"
        },
        {
         "blank": 6,
         "answer": "使",
-        "answer_pinyin": "shǐ",
         "answer_verified": true,
         "check_needed": false
        },
        {
         "blank": 7,
         "answer": "连",
-        "answer_pinyin": "lián",
         "answer_verified": true,
         "check_needed": false
        },
        {
         "blank": 8,
         "answer": "起来",
-        "answer_pinyin": "qǐ lái",
         "answer_verified": true,
-        "check_needed": false
+        "check_needed": false,
+        "answer_pinyin": "qǐlai"
        }
       ],
       "rendering": {
@@ -2901,7 +2871,7 @@
       }
      },
      {
-      "id": "lesson12_exercise_010",
+      "id": "1ac62b88-14d2-473e-be1e-6a588e95e535",
       "type": "communication_dialogue",
       "variant": "role_play",
       "order": 10,
@@ -2919,67 +2889,56 @@
       "topic": "评论（2）",
       "lines": [
        {
-        "id": "lesson12_ex10_line_001",
+        "id": "6dd6b3de-e869-45bd-9270-fca3ab2ca937",
         "speaker": "A",
         "zh": "没想到做好事还会遇到这么多想不到的麻烦。",
-        "pinyin": "méi xiǎng dào zuò hǎo shì hái huì yù dào zhè me duō xiǎng bú dào de má fán。",
-        "vi": "Không ngờ làm việc tốt còn gặp nhiều rắc rối không tưởng như vậy.",
         "source_origin": "textbook",
         "check_needed": false
        },
        {
-        "id": "lesson12_ex10_line_002",
+        "id": "14dc59df-8850-42b7-ab12-efe7ae33f6d6",
         "speaker": "B",
         "zh": "是啊！这个人好心帮邻居收被子，差点儿被人家当成小偷儿；好心帮人打气，又打爆了车胎……",
-        "pinyin": "shì a！ zhè ge rén hǎo xīn bāng lín jū shōu bèi zi， chà diǎn ér bèi rén jiā dàng chéng xiǎotōur； hǎo xīn bāng rén dǎ qì， yòu dǎ bào le chē tāi……",
-        "vi": "Đúng vậy! Người này tốt bụng giúp hàng xóm thu chăn, suýt chút nữa bị người ta coi là kẻ trộm; tốt bụng giúp người khác bơm hơi, lại làm nổ lốp xe...",
         "source_origin": "textbook",
-        "check_needed": false
+        "check_needed": false,
+        "pinyin": "Shì a! Zhè ge rén hǎoxīn bāng línjū shōu bèizi, chàdiǎnr bèi rénjia dàngchéng xiǎotōur; hǎoxīn bāng rén dǎ qì, yòu dǎ bào le chētāi……"
        },
        {
-        "id": "lesson12_ex10_line_003",
+        "id": "baf69f77-5a66-41fa-bebf-6e570c4382cf",
         "speaker": "A",
         "zh": "所以，做好事只靠热心还不行，还要注意方法。",
-        "pinyin": "suǒ yǐ， zuò hǎo shì zhǐ kào rè xīn hái bù xíng， hái yào zhù yì fāng fǎ。",
-        "vi": "Vì vậy, làm việc tốt chỉ dựa vào nhiệt tình thôi vẫn chưa đủ, còn phải chú ý phương pháp.",
         "source_origin": "textbook",
         "check_needed": false
        },
        {
-        "id": "lesson12_ex10_line_004",
+        "id": "cb1693f4-678f-4eb8-baee-90cf0ecbef7e",
         "speaker": "B",
         "zh": "不过，我还是觉得这个人很可爱，他助人为乐的精神叫人感动。",
-        "pinyin": "bù guò， wǒ hái shì jué de zhè ge rén hěn kě ài， tā zhù rén wéi lè de jīng shén jiào rén gǎn dòng。",
-        "vi": "Nhưng tôi vẫn thấy người này rất đáng yêu, tinh thần vui giúp người khác của anh ấy khiến người ta cảm động.",
         "source_origin": "textbook",
-        "check_needed": false
+        "check_needed": false,
+        "pinyin": "Búguò, wǒ háishi juéde zhè ge rén hěn kě'ài, tā zhùrén-wéilè de jīngshén jiào rén gǎndòng."
        },
        {
-        "id": "lesson12_ex10_line_005",
+        "id": "d3488386-cd05-4715-9b86-e7c2652615ad",
         "speaker": "A",
         "zh": "对，我也喜欢他，甚至喜欢他那些美丽的错误。",
-        "pinyin": "duì， wǒ yě xǐ huān tā， shèn zhì xǐ huān tā nà xiē měi lì de cuò wù。",
-        "vi": "Đúng, tôi cũng thích anh ấy, thậm chí thích cả những sai lầm đẹp đẽ ấy của anh ấy.",
         "source_origin": "textbook",
         "check_needed": false
        },
        {
-        "id": "lesson12_ex10_line_006",
+        "id": "09f20c80-d985-463f-a5b2-8863166124bf",
         "speaker": "B",
         "zh": "是啊！这些美丽的错误，给生活带来了不少欢乐。",
-        "pinyin": "shì a！ zhè xiē měi lì de cuò wù， gěi shēng huó dài lái le bù shǎo huān lè。",
-        "vi": "Đúng vậy! Những sai lầm đẹp đẽ này đã đem lại không ít niềm vui cho cuộc sống.",
         "source_origin": "textbook",
         "check_needed": false
        },
        {
-        "id": "lesson12_ex10_line_007",
+        "id": "fac664b5-b2a9-46a3-894e-25428d8799c0",
         "speaker": "A",
         "zh": "我佩服他一次又一次地不被别人理解，还做好事。好人难当还要当，这才是真正的好人呢。",
-        "pinyin": "wǒ pèi fú tā yī cì yòu yī cì dì bù bèi bié rén lǐ jiě， hái zuò hǎo shì。 hǎo rén nán dāng hái yào dāng， zhè cái shì zhēn zhèng de hǎo rén ne。",
-        "vi": "Tôi khâm phục anh ấy lần này đến lần khác không được người khác hiểu mà vẫn làm việc tốt. Làm người tốt khó mà vẫn làm, đó mới thật sự là người tốt.",
         "source_origin": "textbook",
-        "check_needed": false
+        "check_needed": false,
+        "pinyin": "Wǒ pèifu tā yí cì yòu yí cì de bù bèi biérén lǐjiě, hái zuò hǎoshì. Hǎorén nán dāng hái yào dāng, zhè cái shì zhēnzhèng de hǎorén ne."
        }
       ],
       "rendering": {
@@ -2989,7 +2948,7 @@
     ]
    },
    {
-    "id": "lesson12_section_007",
+    "id": "886f621e-85ce-4e1a-91df-d8d257596034",
     "type": "reading",
     "order": 7,
     "title": "综合填空",
@@ -2998,7 +2957,7 @@
     "check_needed": false,
     "items": [
      {
-      "id": "reading_01",
+      "id": "9bd9a79e-3279-468d-9f4b-ecd1f7365e19",
       "type": "reading_fill_blank",
       "variant": "reading_cloze",
       "order": 1,
@@ -3014,14 +2973,6 @@
         "meaning_vi": "đầy trời; ngập trời",
         "meaning_en": "all over the sky",
         "pos": "Tính từ / Trạng ngữ miêu tả",
-        "pos_detail": {
-         "vi": "Tính từ / Trạng ngữ miêu tả",
-         "cn": "形容词 / 状语",
-         "normalized": "adjective_adverbial",
-         "schema_compatible_pos": "adjective",
-         "is_separable_verb": false,
-         "notes": []
-        },
         "tags": ["supplementary_vocab"],
         "examples": [],
         "flashcard": {
@@ -3036,7 +2987,15 @@
         },
         "audio_key": "",
         "source_origin": "textbook",
-        "check_needed": false
+        "check_needed": false,
+        "pos_detail": {
+         "vi": "Tính từ / Trạng ngữ miêu tả",
+         "cn": "形容词 / 状语",
+         "normalized": "adjective_adverbial",
+         "schema_compatible_pos": "adjective",
+         "is_separable_verb": false,
+         "notes": []
+        }
        },
        {
         "id": "lesson12_supp_vocab_002",
@@ -3047,14 +3006,6 @@
         "meaning_vi": "than phiền; oán trách",
         "meaning_en": "to complain",
         "pos": "Động từ",
-        "pos_detail": {
-         "vi": "Động từ",
-         "cn": "动词",
-         "normalized": "verb",
-         "schema_compatible_pos": "verb",
-         "is_separable_verb": false,
-         "notes": []
-        },
         "tags": ["supplementary_vocab"],
         "examples": [],
         "flashcard": {
@@ -3069,7 +3020,15 @@
         },
         "audio_key": "",
         "source_origin": "textbook",
-        "check_needed": false
+        "check_needed": false,
+        "pos_detail": {
+         "vi": "Động từ",
+         "cn": "动词",
+         "normalized": "verb",
+         "schema_compatible_pos": "verb",
+         "is_separable_verb": false,
+         "notes": []
+        }
        },
        {
         "id": "lesson12_supp_vocab_003",
@@ -3080,14 +3039,6 @@
         "meaning_vi": "ngọt ngào; hạnh phúc",
         "meaning_en": "sweet; happy",
         "pos": "Tính từ",
-        "pos_detail": {
-         "vi": "Tính từ",
-         "cn": "形容词",
-         "normalized": "adjective",
-         "schema_compatible_pos": "adjective",
-         "is_separable_verb": false,
-         "notes": []
-        },
         "tags": ["supplementary_vocab"],
         "examples": [],
         "flashcard": {
@@ -3102,7 +3053,15 @@
         },
         "audio_key": "",
         "source_origin": "textbook",
-        "check_needed": false
+        "check_needed": false,
+        "pos_detail": {
+         "vi": "Tính từ",
+         "cn": "形容词",
+         "normalized": "adjective",
+         "schema_compatible_pos": "adjective",
+         "is_separable_verb": false,
+         "notes": []
+        }
        },
        {
         "id": "lesson12_supp_vocab_004",
@@ -3113,14 +3072,6 @@
         "meaning_vi": "buồn thương; đa cảm; man mác buồn",
         "meaning_en": "sad; sentimental",
         "pos": "Tính từ / Động từ tâm lý",
-        "pos_detail": {
-         "vi": "Tính từ / Động từ tâm lý",
-         "cn": "形容词 / 心理动词",
-         "normalized": "adjective_psych_verb",
-         "schema_compatible_pos": "adjective",
-         "is_separable_verb": false,
-         "notes": []
-        },
         "tags": ["supplementary_vocab"],
         "examples": [],
         "flashcard": {
@@ -3135,7 +3086,15 @@
         },
         "audio_key": "",
         "source_origin": "textbook",
-        "check_needed": false
+        "check_needed": false,
+        "pos_detail": {
+         "vi": "Tính từ / Động từ tâm lý",
+         "cn": "形容词 / 心理动词",
+         "normalized": "adjective_psych_verb",
+         "schema_compatible_pos": "adjective",
+         "is_separable_verb": false,
+         "notes": []
+        }
        },
        {
         "id": "lesson12_supp_vocab_005",
@@ -3146,14 +3105,6 @@
         "meaning_vi": "vui mừng; hân hoan",
         "meaning_en": "glad; joyful",
         "pos": "Tính từ / Động từ tâm lý",
-        "pos_detail": {
-         "vi": "Tính từ / Động từ tâm lý",
-         "cn": "形容词 / 心理动词",
-         "normalized": "adjective_psych_verb",
-         "schema_compatible_pos": "adjective",
-         "is_separable_verb": false,
-         "notes": []
-        },
         "tags": ["supplementary_vocab"],
         "examples": [],
         "flashcard": {
@@ -3168,7 +3119,15 @@
         },
         "audio_key": "",
         "source_origin": "textbook",
-        "check_needed": false
+        "check_needed": false,
+        "pos_detail": {
+         "vi": "Tính từ / Động từ tâm lý",
+         "cn": "形容词 / 心理动词",
+         "normalized": "adjective_psych_verb",
+         "schema_compatible_pos": "adjective",
+         "is_separable_verb": false,
+         "notes": []
+        }
        },
        {
         "id": "lesson12_supp_vocab_006",
@@ -3179,14 +3138,6 @@
         "meaning_vi": "im lặng; trầm mặc",
         "meaning_en": "silent; quiet",
         "pos": "Động từ / Tính từ / Danh từ trạng thái",
-        "pos_detail": {
-         "vi": "Động từ / Tính từ / Danh từ trạng thái",
-         "cn": "动词 / 形容词 / 名词",
-         "normalized": "verb_adjective_noun",
-         "schema_compatible_pos": "verb",
-         "is_separable_verb": false,
-         "notes": []
-        },
         "tags": ["supplementary_vocab"],
         "examples": [],
         "flashcard": {
@@ -3201,7 +3152,15 @@
         },
         "audio_key": "",
         "source_origin": "textbook",
-        "check_needed": false
+        "check_needed": false,
+        "pos_detail": {
+         "vi": "Động từ / Tính từ / Danh từ trạng thái",
+         "cn": "动词 / 形容词 / 名词",
+         "normalized": "verb_adjective_noun",
+         "schema_compatible_pos": "verb",
+         "is_separable_verb": false,
+         "notes": []
+        }
        },
        {
         "id": "lesson12_supp_vocab_007",
@@ -3212,14 +3171,6 @@
         "meaning_vi": "sức hấp dẫn; sức cuốn hút",
         "meaning_en": "charm",
         "pos": "Danh từ",
-        "pos_detail": {
-         "vi": "Danh từ",
-         "cn": "名词",
-         "normalized": "noun",
-         "schema_compatible_pos": "noun",
-         "is_separable_verb": false,
-         "notes": []
-        },
         "tags": ["supplementary_vocab"],
         "examples": [],
         "flashcard": {
@@ -3234,7 +3185,15 @@
         },
         "audio_key": "",
         "source_origin": "textbook",
-        "check_needed": false
+        "check_needed": false,
+        "pos_detail": {
+         "vi": "Danh từ",
+         "cn": "名词",
+         "normalized": "noun",
+         "schema_compatible_pos": "noun",
+         "is_separable_verb": false,
+         "notes": []
+        }
        },
        {
         "id": "lesson12_supp_vocab_008",
@@ -3242,22 +3201,14 @@
         "order": 8,
         "hanzi": "冒险",
         "pinyin": "màoxiǎn",
-        "meaning_vi": "mạo hiểm; liều thử",
+        "meaning_vi": "mạo hiểm; liều; sự mạo hiểm",
         "meaning_en": "to risk; to take a chance",
-        "pos": "Động từ / Danh từ",
-        "pos_detail": {
-         "vi": "Động từ / Danh từ",
-         "cn": "动词 / 名词",
-         "normalized": "verb_noun",
-         "schema_compatible_pos": "verb",
-         "is_separable_verb": false,
-         "notes": []
-        },
+        "pos": "Động từ li hợp / Danh từ",
         "tags": ["supplementary_vocab"],
         "examples": [],
         "flashcard": {
          "front": "冒险",
-         "back": "màoxiǎn — mạo hiểm; liều thử",
+         "back": "màoxiǎn — mạo hiểm; liều; sự mạo hiểm",
          "modes": [
           "hanzi_to_meaning",
           "meaning_to_hanzi",
@@ -3267,7 +3218,18 @@
         },
         "audio_key": "",
         "source_origin": "textbook",
-        "check_needed": false
+        "check_needed": false,
+        "pos_detail": {
+         "vi": "Động từ li hợp / Danh từ",
+         "cn": "动宾式离合词 / 名词",
+         "normalized": "verb_phrase",
+         "schema_compatible_pos": "verb_phrase",
+         "is_separable_verb": true,
+         "separable_type": "động-tân / 离合词",
+         "structure_vi": "động từ 冒 + tân ngữ 险",
+         "usage_note_vi": "Có thể nói 冒了很大的险 / 冒这个险; khi dùng như danh từ nghĩa là sự mạo hiểm, rủi ro.",
+         "notes": []
+        }
        },
        {
         "id": "lesson12_supp_vocab_009",
@@ -3278,14 +3240,6 @@
         "meaning_vi": "sự bốc đồng; thôi thúc nhất thời",
         "meaning_en": "impulse",
         "pos": "Tính từ / Danh từ",
-        "pos_detail": {
-         "vi": "Tính từ / Danh từ",
-         "cn": "形容词 / 名词",
-         "normalized": "adjective_noun",
-         "schema_compatible_pos": "adjective",
-         "is_separable_verb": false,
-         "notes": []
-        },
         "tags": ["supplementary_vocab"],
         "examples": [],
         "flashcard": {
@@ -3300,7 +3254,15 @@
         },
         "audio_key": "",
         "source_origin": "textbook",
-        "check_needed": false
+        "check_needed": false,
+        "pos_detail": {
+         "vi": "Tính từ / Danh từ",
+         "cn": "形容词 / 名词",
+         "normalized": "adjective_noun",
+         "schema_compatible_pos": "adjective",
+         "is_separable_verb": false,
+         "notes": []
+        }
        },
        {
         "id": "lesson12_supp_vocab_010",
@@ -3311,14 +3273,6 @@
         "meaning_vi": "bình tĩnh",
         "meaning_en": "to calm down; calm",
         "pos": "Tính từ / Động từ",
-        "pos_detail": {
-         "vi": "Tính từ / Động từ",
-         "cn": "形容词 / 动词",
-         "normalized": "adjective_verb",
-         "schema_compatible_pos": "adjective",
-         "is_separable_verb": false,
-         "notes": []
-        },
         "tags": ["supplementary_vocab"],
         "examples": [],
         "flashcard": {
@@ -3333,7 +3287,15 @@
         },
         "audio_key": "",
         "source_origin": "textbook",
-        "check_needed": false
+        "check_needed": false,
+        "pos_detail": {
+         "vi": "Tính từ / Động từ",
+         "cn": "形容词 / 动词",
+         "normalized": "adjective_verb",
+         "schema_compatible_pos": "adjective",
+         "is_separable_verb": false,
+         "notes": []
+        }
        },
        {
         "id": "lesson12_supp_vocab_011",
@@ -3344,14 +3306,6 @@
         "meaning_vi": "nghĩ lung tung; suy nghĩ vẩn vơ",
         "meaning_en": "random thought; to think wildly",
         "pos": "Thành ngữ / Cụm động từ",
-        "pos_detail": {
-         "vi": "Thành ngữ / Cụm động từ",
-         "cn": "成语 / 动词短语",
-         "normalized": "idiom_verb_phrase",
-         "schema_compatible_pos": "idiom",
-         "is_separable_verb": false,
-         "notes": []
-        },
         "tags": ["supplementary_vocab"],
         "examples": [],
         "flashcard": {
@@ -3366,7 +3320,15 @@
         },
         "audio_key": "",
         "source_origin": "textbook",
-        "check_needed": false
+        "check_needed": false,
+        "pos_detail": {
+         "vi": "Thành ngữ / Cụm động từ",
+         "cn": "成语 / 动词短语",
+         "normalized": "idiom_verb_phrase",
+         "schema_compatible_pos": "idiom",
+         "is_separable_verb": false,
+         "notes": []
+        }
        },
        {
         "id": "lesson12_supp_vocab_012",
@@ -3377,14 +3339,6 @@
         "meaning_vi": "lòng đề phòng; sự cảnh giác",
         "meaning_en": "vigilance",
         "pos": "Danh từ",
-        "pos_detail": {
-         "vi": "Danh từ",
-         "cn": "名词",
-         "normalized": "noun",
-         "schema_compatible_pos": "noun",
-         "is_separable_verb": false,
-         "notes": []
-        },
         "tags": ["supplementary_vocab"],
         "examples": [],
         "flashcard": {
@@ -3399,7 +3353,15 @@
         },
         "audio_key": "",
         "source_origin": "textbook",
-        "check_needed": false
+        "check_needed": false,
+        "pos_detail": {
+         "vi": "Danh từ",
+         "cn": "名词",
+         "normalized": "noun",
+         "schema_compatible_pos": "noun",
+         "is_separable_verb": false,
+         "notes": []
+        }
        },
        {
         "id": "lesson12_supp_vocab_013",
@@ -3410,14 +3372,6 @@
         "meaning_vi": "tin tưởng; sự tin tưởng",
         "meaning_en": "to trust",
         "pos": "Động từ / Danh từ",
-        "pos_detail": {
-         "vi": "Động từ / Danh từ",
-         "cn": "动词 / 名词",
-         "normalized": "verb_noun",
-         "schema_compatible_pos": "verb",
-         "is_separable_verb": false,
-         "notes": []
-        },
         "tags": ["supplementary_vocab"],
         "examples": [],
         "flashcard": {
@@ -3432,7 +3386,15 @@
         },
         "audio_key": "",
         "source_origin": "textbook",
-        "check_needed": false
+        "check_needed": false,
+        "pos_detail": {
+         "vi": "Động từ / Danh từ",
+         "cn": "动词 / 名词",
+         "normalized": "verb_noun",
+         "schema_compatible_pos": "verb",
+         "is_separable_verb": false,
+         "notes": []
+        }
        },
        {
         "id": "lesson12_supp_vocab_014",
@@ -3443,14 +3405,6 @@
         "meaning_vi": "nghi ngờ; hoài nghi",
         "meaning_en": "to doubt",
         "pos": "Động từ / Danh từ tâm lý",
-        "pos_detail": {
-         "vi": "Động từ / Danh từ tâm lý",
-         "cn": "动词 / 心理名词",
-         "normalized": "verb_noun",
-         "schema_compatible_pos": "verb",
-         "is_separable_verb": false,
-         "notes": []
-        },
         "tags": ["supplementary_vocab"],
         "examples": [],
         "flashcard": {
@@ -3465,200 +3419,195 @@
         },
         "audio_key": "",
         "source_origin": "textbook",
-        "check_needed": false
+        "check_needed": false,
+        "pos_detail": {
+         "vi": "Động từ / Danh từ tâm lý",
+         "cn": "动词 / 心理名词",
+         "normalized": "verb_noun",
+         "schema_compatible_pos": "verb",
+         "is_separable_verb": false,
+         "notes": []
+        }
        }
       ],
       "paragraphs": [
        {
-        "id": "lesson12_reading_p_001",
+        "id": "d2a4cf8b-55cd-4904-9fed-3141da682b19",
         "order": 1,
         "zh": "听到门响，知道是丈夫回来①______。",
-        "pinyin": "tīng dào mén xiǎng， zhī dào shì zhàng fū huí lái ① _ _ _ _ _ _。",
-        "vi": "Nghe thấy tiếng cửa, tôi biết là chồng đã về rồi.",
+        "vi": "",
         "source_origin": "textbook",
         "check_needed": false
        },
        {
-        "id": "lesson12_reading_p_002",
+        "id": "a6b1119e-769b-4444-9eee-c4a26d7f6af3",
         "order": 2,
         "zh": "“晚上车顺利吧？”",
-        "pinyin": "“ wǎn shàng chē shùn lì ba？”",
-        "vi": "“Buổi tối đi xe thuận lợi chứ?”",
+        "vi": "",
         "source_origin": "textbook",
         "check_needed": false
        },
        {
-        "id": "lesson12_reading_p_003",
+        "id": "ce8bdbc9-b498-418a-ab2c-e16111228a35",
         "order": 3,
         "zh": "没有回答，想是有话要说，我便抬起头来。",
-        "pinyin": "méi yǒu huí dá， xiǎng shì yǒu huà yào shuō， wǒ biàn tái qǐ tóu lái。",
-        "vi": "Không thấy anh ấy trả lời, tôi nghĩ chắc là có chuyện muốn nói, bèn ngẩng đầu lên.",
+        "vi": "",
         "source_origin": "textbook",
         "check_needed": false
        },
        {
-        "id": "lesson12_reading_p_004",
+        "id": "b3e5d57c-8b64-4c60-b5f0-3976cd13fef0",
         "order": 4,
         "zh": "“挺顺利的。”丈夫说。目光却望②______窗外。",
-        "pinyin": "“ tǐng shùn lì de。” zhàng fū shuō。 mù guāng què wàng ② _ _ _ _ _ _ chuāng wài。",
-        "vi": "“Thuận lợi lắm.” chồng nói. Nhưng ánh mắt lại nhìn ra ngoài cửa sổ.",
+        "vi": "",
         "source_origin": "textbook",
         "check_needed": false
        },
        {
-        "id": "lesson12_reading_p_005",
+        "id": "383c7578-216f-41aa-a8a5-b889b7ef0fec",
         "order": 5,
         "zh": "“车上有一个女孩儿，好像没来过这边，问方村还有几站，我告诉了她。一起下车后，见她犹犹豫豫地四处张望，我很想问她去哪儿，为她指路或送她一段，可是还是走开了，怕她把我③______坏人，觉得不愉快。”",
-        "pinyin": "“ chē shàng yǒu yí gè nǚ hái ér， hǎo xiàng méi lái guò zhè biān， wèn fāng cūn hái yǒu jǐ zhàn， wǒ gào sù le tā。 yì qǐ xià chē hòu， jiàn tā yóu yóu yù yù dì sì chù zhāng wàng， wǒ hěn xiǎng wèn tā qù nǎ ér， wèi tā zhǐ lù huò sòng tā yí duàn， kě shì hái shì zǒu kāi le， pà tā bǎ wǒ ③ _ _ _ _ _ _ huài rén， jué de bù yú kuài。”",
-        "vi": "“Trên xe có một cô gái, hình như chưa từng đến khu này, cô ấy hỏi còn mấy trạm nữa thì tới Phương Thôn, tôi đã nói cho cô ấy biết. Sau khi cùng xuống xe, thấy cô ấy do dự nhìn quanh bốn phía, tôi rất muốn hỏi cô ấy đi đâu, chỉ đường cho cô ấy hoặc tiễn cô ấy một đoạn, nhưng cuối cùng vẫn bỏ đi, vì sợ cô ấy coi tôi là người xấu và cảm thấy không vui.”",
+        "vi": "",
         "source_origin": "textbook",
         "check_needed": false
        },
        {
-        "id": "lesson12_reading_p_006",
+        "id": "bbed4df4-546b-4399-90a0-483fe2b0f43b",
         "order": 6,
         "zh": "说完了，丈夫那表情好像做错了什么事似的，没再说话。",
-        "pinyin": "shuō wán le， zhàng fū nà biǎo qíng hǎo xiàng zuò cuò le shén me shì shì de， méi zài shuō huà。",
-        "vi": "Nói xong, vẻ mặt chồng giống như vừa làm sai chuyện gì đó, rồi không nói nữa.",
+        "vi": "",
         "source_origin": "textbook",
         "check_needed": false
        },
        {
-        "id": "lesson12_reading_p_007",
+        "id": "65b480dc-c5c7-41fb-a021-f43e4aacf57c",
         "order": 7,
         "zh": "窗外，雨还在轻轻地下着，风吹了进来。今年的春天有些特别，少了些漫天的黄风，多了几场不大不小的春雨。虽然人们有点儿抱怨，但那树枝却诚心诚意地绿了起来。不知不觉中，我的心里突然有了一种不是痛苦、不是甜蜜、不是感伤、不是欣喜的滋味。",
-        "pinyin": "chuāng wài， yǔ hái zài qīng qīng dì xià zhe， fēng chuī le jìn lái。 jīn nián de chūn tiān yǒu xiē tè bié， shǎo le xiē màntiān de huáng fēng， duō le jǐ chǎng bù dà bù xiǎo de chūn yǔ。 suī rán rén men yǒudiǎnr bàoyuàn， dàn nà shù zhī què chéngxīn chéngyì dì lǜ le qǐ lái。 bù zhī bù jué zhōng， wǒ de xīn lǐ tū rán yǒu le yī zhǒng bú shì tòng kǔ、 bú shì tiánmì、 bú shì gǎnshāng、 bú shì xīnxǐ de zī wèi。",
-        "vi": "Ngoài cửa sổ, mưa vẫn đang rơi nhẹ, gió thổi vào. Mùa xuân năm nay hơi đặc biệt: ít đi những trận gió vàng đầy trời, lại có thêm vài trận mưa xuân không lớn không nhỏ. Tuy người ta hơi than phiền, nhưng những cành cây lại thành tâm thành ý xanh lên. Bất giác, trong lòng tôi bỗng có một cảm giác không phải đau khổ, không phải ngọt ngào, không phải cảm thương, cũng không phải vui mừng.",
+        "vi": "Ngoài cửa sổ, mưa vẫn đang rơi nhẹ, gió thổi vào. Mùa xuân năm nay hơi đặc biệt: ít đi những trận gió cát vàng đầy trời, lại có thêm vài trận mưa xuân không lớn không nhỏ. Tuy người ta hơi than phiền, nhưng những cành cây lại thành tâm thành ý xanh lên. Bất giác, trong lòng tôi bỗng có một cảm giác không phải đau khổ, không phải ngọt ngào, không phải man mác buồn, cũng không phải vui mừng.",
         "source_origin": "textbook",
-        "check_needed": false
+        "check_needed": false,
+        "pinyin": "Chuāngwài, yǔ hái zài qīngqīng de xiàzhe, fēng chuī le jìnlai. Jīnnián de chūntiān yǒuxiē tèbié, shǎo le xiē màntiān de huángfēng, duō le jǐ chǎng bù dà bù xiǎo de chūnyǔ. Suīrán rénmen yǒudiǎnr bàoyuàn, dàn nà shùzhī què chéngxīn-chéngyì de lǜ le qǐlai. Bùzhī-bùjué zhōng, wǒ de xīnli tūrán yǒu le yì zhǒng bú shì tòngkǔ, bú shì tiánmì, bú shì gǎnshāng, bú shì xīnxǐ de zīwèi."
        },
        {
-        "id": "lesson12_reading_p_008",
+        "id": "e1c38cca-fcba-4622-8fb9-fbe48b4dab2c",
         "order": 8,
         "zh": "几天前，也是这样一个下雨的晚上，从朋友家出④______，到车站坐车回家。在风雨中，我拉紧了衣领，来回走着，着急地等着车，心想，车来之前一定会被淋成个落汤鸡。忽听身边一个很低却很清晰的男声说：“站到这个伞下来吧。”我忽然收住了脚，“哦，不！”我本能地回答那黑暗中的声音，却没再动。陌生男人转过脸对着马路，过了几秒钟又说：“站过来吧！雨下⑤______这么大！”不知是这声音里的命令意味，还是那高大的个子在沉默中显示的魅力，⑥______我产生了想冒险的冲动，于是迈了一步站到了他的伞下。听得到自己心里咚咚直跳，装作很镇静地抬头看着那把伞。那伞已经破了，雨水滴到陌生男人的肩上，那张脸仍镇静地面对马路。车很快就来了，我这才松了一口气，轻声地道了谢，⑦______头也不回地跳上车，感受到的仍是背后的目光。",
-        "pinyin": "jǐ tiān qián， yě shì zhè yàng yí gè xià yǔ de wǎn shàng， cóng péng yǒu jiā chū ④ _ _ _ _ _ _， dào chē zhàn zuò chē huí jiā。 zài fēng yǔ zhōng， wǒ lā jǐn le yī lǐng， lái huí zǒu zhe， zháojí dì děng zhe chē， xīn xiǎng， chē lái zhī qián yí dìng huì bèi lín chéng gè luò tāng jī。 hū tīng shēn biān yí gè hěn dī què hěn qīng xī de nán shēng shuō：“ zhàn dào zhè ge sǎn xià lái ba。” wǒ hū rán shōu zhù le jiǎo，“ ó， bù！” wǒ běn néng dì huí dá nà hēi àn zhōng de shēng yīn， què méi zài dòng。 mò shēng nán rén zhuǎn guò liǎn duì zhe mǎ lù， guò le jǐ miǎo zhōng yòu shuō：“ zhàn guò lái ba！ yǔ xià ⑤ _ _ _ _ _ _ zhè me dà！” bù zhī shì zhè shēng yīn lǐ de mìng lìng yì wèi， hái shì nà gāo dà de gè zi zài chénmò zhōng xiǎn shì de mèilì， ⑥ _ _ _ _ _ _ wǒ chǎn shēng le xiǎng màoxiǎn de chōngdòng， yú shì mài le yī bù zhàn dào le tā de sǎn xià。 tīng de dào zì jǐ xīn lǐ dōng dōng zhí tiào， zhuāng zuò hěn zhènjìng dì tái tóu kàn zhe nà bǎ sǎn。 nà sǎn yǐ jīng pò le， yǔ shuǐ dī dào mò shēng nán rén de jiān shàng， nà zhāng liǎn réng zhènjìng dì miàn duì mǎ lù。 chē hěn kuài jiù lái le， wǒ zhè cái sōng le yì kǒu qì， qīng shēng dì dào le xiè， ⑦ _ _ _ _ _ _ tóu yě bù huí dì tiào shàng chē， gǎn shòu dào de réng shì bèi hòu de mù guāng。",
-        "vi": "Vài ngày trước, cũng là một buổi tối mưa như thế này, tôi từ nhà bạn đi ra, đến trạm xe đợi xe về nhà. Trong mưa gió, tôi kéo chặt cổ áo, đi qua đi lại, sốt ruột chờ xe, nghĩ bụng trước khi xe tới chắc chắn sẽ bị mưa làm ướt như gà rơi vào nồi canh. Bỗng nghe bên cạnh có một giọng nam rất thấp nhưng rất rõ nói: “Đứng dưới ô này đi.” Tôi bỗng dừng chân: “Ồ, không!” Tôi trả lời theo bản năng với giọng nói trong bóng tối ấy, nhưng cũng không bước đi nữa. Người đàn ông lạ quay mặt ra đường, qua vài giây lại nói: “Đứng qua đây đi! Mưa lớn như vậy!” Không biết là sắc thái ra lệnh trong giọng nói ấy, hay vóc người cao lớn kia trong im lặng thể hiện sức hút, khiến tôi nảy sinh sự thôi thúc muốn mạo hiểm, thế là tôi bước một bước đứng dưới ô của anh ấy. Tôi nghe thấy tim mình đập thình thịch, giả vờ rất bình tĩnh ngẩng đầu nhìn chiếc ô ấy. Chiếc ô đã rách, nước mưa nhỏ lên vai người đàn ông lạ, khuôn mặt ấy vẫn bình tĩnh hướng ra đường. Xe rất nhanh đã tới, lúc đó tôi mới thở phào nhẹ nhõm, khẽ nói lời cảm ơn, rồi ngay cả đầu cũng không quay lại mà nhảy lên xe, nhưng vẫn cảm nhận được ánh mắt ở phía sau.",
+        "vi": "Vài ngày trước, cũng là một buổi tối mưa như thế này, tôi từ nhà bạn đi ra, đến trạm xe bắt xe về nhà. Trong mưa gió, tôi kéo chặt cổ áo, đi qua đi lại, sốt ruột chờ xe, nghĩ bụng trước khi xe tới chắc chắn sẽ bị mưa làm ướt như chuột lột. Bỗng nghe bên cạnh có một giọng nam rất thấp nhưng rất rõ nói: “Đứng dưới ô này đi.” Tôi bỗng dừng bước: “Ồ, không!” Tôi trả lời theo bản năng với giọng nói trong bóng tối ấy, nhưng cũng không bước đi nữa. Người đàn ông lạ quay mặt ra đường, qua vài giây lại nói: “Đứng qua đây đi! Mưa lớn như vậy!” Không biết là sắc thái ra lệnh trong giọng nói ấy, hay vóc người cao lớn kia trong im lặng thể hiện sức hút, khiến tôi nảy sinh sự thôi thúc muốn mạo hiểm, thế là tôi bước một bước đứng dưới ô của anh ấy. Tôi nghe thấy tim mình đập thình thịch, giả vờ rất bình tĩnh ngẩng đầu nhìn chiếc ô ấy. Chiếc ô đã rách, nước mưa nhỏ lên vai người đàn ông lạ, khuôn mặt ấy vẫn bình tĩnh hướng ra đường. Xe rất nhanh đã tới, lúc đó tôi mới thở phào nhẹ nhõm, khẽ nói lời cảm ơn, rồi ngay cả đầu cũng không quay lại mà nhảy lên xe, nhưng vẫn cảm nhận được ánh mắt ở phía sau.",
         "source_origin": "textbook",
-        "check_needed": false
+        "check_needed": false,
+        "pinyin": "Jǐ tiān qián, yě shì zhèyàng yí ge xià yǔ de wǎnshang, cóng péngyou jiā chū ④ ______, dào chēzhàn zuò chē huí jiā. Zài fēngyǔ zhōng, wǒ lājǐn le yīlǐng, láihuí zǒuzhe, zháojí de děngzhe chē, xīn xiǎng, chē lái zhīqián yídìng huì bèi lín chéng ge luòtāngjī. Hū tīng shēnbiān yí ge hěn dī què hěn qīngxī de nánshēng shuō: “Zhàn dào zhè ge sǎn xià lái ba.” Wǒ hūrán shōuzhù le jiǎo, “Ò, bù!” Wǒ běnnéng de huídá nà hēi'àn zhōng de shēngyīn, què méi zài dòng. Mòshēng nánrén zhuǎnguò liǎn duìzhe mǎlù, guò le jǐ miǎo zhōng yòu shuō: “Zhàn guòlai ba! Yǔ xià ⑤ ______ zhème dà!” Bùzhī shì zhè shēngyīn lǐ de mìnglìng yìwèi, háishi nà gāodà de gèzi zài chénmò zhōng xiǎnshì de mèilì, ⑥ ______ wǒ chǎnshēng le xiǎng màoxiǎn de chōngdòng, yúshì mài le yí bù zhàn dào le tā de sǎn xià. Tīngdedào zìjǐ xīnli dōngdōng zhí tiào, zhuāngzuò hěn zhènjìng de táitóu kànzhe nà bǎ sǎn. Nà sǎn yǐjīng pò le, yǔshuǐ dī dào mòshēng nánrén de jiān shang, nà zhāng liǎn réng zhènjìng de miànduì mǎlù. Chē hěn kuài jiù lái le, wǒ zhè cái sōng le yì kǒu qì, qīngshēng de dào le xiè, ⑦ ______ tóu yě bù huí de tiàoshàng chē, gǎnshòudào de réng shì bèihòu de mùguāng."
        },
        {
-        "id": "lesson12_reading_p_009",
+        "id": "447970a7-ce34-4c69-94fe-bd434a89609f",
         "order": 9,
         "zh": "窗外仍然是细细的雨声。",
-        "pinyin": "chuāng wài réng rán shì xì xì de yǔ shēng。",
-        "vi": "Ngoài cửa sổ vẫn là tiếng mưa lất phất.",
+        "vi": "",
         "source_origin": "textbook",
         "check_needed": false
        },
        {
-        "id": "lesson12_reading_p_010",
+        "id": "9881cdaa-42b0-431a-ad38-2d9e5e9b6053",
         "order": 10,
         "zh": "这时我也开始胡思乱想⑧______来，那小女孩儿是否被淋湿了？她是否顺利地找到了要去的地方？不知那低声男子是否还记得，那天在车站他的好意换来的是我的一脸警惕？不知他后来是否还肯在黑夜中与淋湿的路人共享一些温暖？真愿大家都能多一些爱心，少一些戒心，多一些信任，少一些怀疑。",
-        "pinyin": "zhè shí wǒ yě kāi shǐ húsī luànxiǎng ⑧ _ _ _ _ _ _ lái， nà xiǎo nǚ hái ér shì fǒu bèi lín shī le？ tā shì fǒu shùn lì dì zhǎo dào le yào qù de dì fāng？ bù zhī nà dī shēng nán zi shì fǒu hái jì de， nà tiān zài chē zhàn tā de hǎo yì huàn lái de shì wǒ de yī liǎn jǐng tì？ bù zhī tā hòu lái shì fǒu hái kěn zài hēi yè zhōng yǔ lín shī de lù rén gòng xiǎng yī xiē wēn nuǎn？ zhēn yuàn dà jiā dōu néng duō yī xiē ài xīn， shǎo yī xiē jièxīn， duō yī xiē xìnrèn， shǎo yī xiē huáiyí。",
-        "vi": "Lúc này tôi cũng bắt đầu suy nghĩ lung tung: cô gái nhỏ ấy có bị mưa làm ướt không? Cô ấy có thuận lợi tìm được nơi mình muốn đến không? Không biết người đàn ông nói khẽ kia có còn nhớ rằng hôm ấy ở trạm xe, thiện ý của anh ấy đổi lại là vẻ mặt cảnh giác của tôi không? Không biết sau đó anh ấy còn sẵn lòng chia sẻ chút ấm áp với người đi đường bị mưa làm ướt trong đêm tối nữa không? Thật mong mọi người đều có thêm một chút lòng yêu thương, bớt một chút đề phòng, thêm một chút tin tưởng, bớt một chút nghi ngờ.",
+        "vi": "Lúc này tôi cũng bắt đầu suy nghĩ lung tung: cô gái ấy có bị mưa làm ướt không? Cô ấy có thuận lợi tìm được nơi mình muốn đến không? Không biết người đàn ông nói khẽ kia có còn nhớ rằng hôm ấy ở trạm xe, thiện ý của anh ấy đổi lại là vẻ mặt cảnh giác của tôi không? Không biết sau đó anh ấy còn sẵn lòng chia sẻ chút ấm áp với người đi đường bị mưa làm ướt trong đêm tối nữa không? Thật mong mọi người đều có thêm một chút lòng yêu thương, bớt một chút đề phòng, thêm một chút tin tưởng, bớt một chút nghi ngờ.",
         "source_origin": "textbook",
-        "check_needed": false
+        "check_needed": false,
+        "pinyin": "Zhè shí wǒ yě kāishǐ húsī-luànxiǎng ⑧ ______ lái, nà xiǎo nǚháir shìfǒu bèi lín shī le? Tā shìfǒu shùnlì de zhǎodào le yào qù de dìfang? Bùzhī nà dīshēng nánzǐ shìfǒu hái jìde, nà tiān zài chēzhàn tā de hǎoyì huàn lái de shì wǒ de yì liǎn jǐngtì? Bùzhī tā hòulái shìfǒu hái kěn zài hēiyè zhōng yǔ lín shī de lùrén gòngxiǎng yìxiē wēnnuǎn? Zhēn yuàn dàjiā dōu néng duō yìxiē àixīn, shǎo yìxiē jièxīn, duō yìxiē xìnrèn, shǎo yìxiē huáiyí."
        },
        {
-        "id": "lesson12_reading_p_011",
+        "id": "f26b68e6-9107-428a-a7d2-6823aa2e153d",
         "order": 11,
         "zh": "有了这场春雨，今年的春天会更美，我想。",
-        "pinyin": "yǒu le zhè chǎng chūn yǔ， jīn nián de chūn tiān huì gèng měi， wǒ xiǎng。",
-        "vi": "Có cơn mưa xuân này, tôi nghĩ mùa xuân năm nay sẽ đẹp hơn.",
+        "vi": "",
         "source_origin": "textbook",
         "check_needed": false
        }
       ],
       "questions": [
        {
-        "id": "lesson12_reading_blank_001",
+        "id": "f947f691-eb21-4ecc-913b-1129cc333dad",
         "type": "cloze_blank",
         "blank_index": 1,
         "answer": "了",
-        "answer_pinyin": "le",
         "answer_verified": true,
         "check_needed": false,
-        "source_origin": "textbook_pdf_checked_answer"
+        "source_origin": "textbook_question_generated_answer"
        },
        {
-        "id": "lesson12_reading_blank_002",
+        "id": "0b220fac-0bf5-42fd-babe-e65263e68779",
         "type": "cloze_blank",
         "blank_index": 2,
         "answer": "着",
-        "answer_pinyin": "zhe",
         "answer_verified": true,
         "check_needed": false,
-        "source_origin": "textbook_pdf_checked_answer"
+        "source_origin": "textbook_question_generated_answer"
        },
        {
-        "id": "lesson12_reading_blank_003",
+        "id": "f8b49491-aa35-4b0a-92b9-149028558d9d",
         "type": "cloze_blank",
         "blank_index": 3,
         "answer": "当成",
-        "answer_pinyin": "dàng chéng",
         "answer_verified": true,
         "check_needed": false,
-        "source_origin": "textbook_pdf_checked_answer"
+        "source_origin": "textbook_question_generated_answer",
+        "answer_pinyin": "dàngchéng"
        },
        {
-        "id": "lesson12_reading_blank_004",
+        "id": "b56e0cbe-ff73-4242-bb38-406995b1e4a5",
         "type": "cloze_blank",
         "blank_index": 4,
         "answer": "来",
-        "answer_pinyin": "lái",
         "answer_verified": true,
         "check_needed": false,
-        "source_origin": "textbook_pdf_checked_answer"
+        "source_origin": "textbook_question_generated_answer"
        },
        {
-        "id": "lesson12_reading_blank_005",
+        "id": "b0b9f00c-8733-4e21-a614-8cea604d638d",
         "type": "cloze_blank",
         "blank_index": 5,
         "answer": "得",
-        "answer_pinyin": "dé",
         "answer_verified": true,
         "check_needed": false,
-        "source_origin": "textbook_pdf_checked_answer"
+        "source_origin": "textbook_question_generated_answer",
+        "answer_pinyin": "de"
        },
        {
-        "id": "lesson12_reading_blank_006",
+        "id": "dd0ccf31-756f-49b8-86b7-095bc68a2567",
         "type": "cloze_blank",
         "blank_index": 6,
         "answer": "使",
-        "answer_pinyin": "shǐ",
         "answer_verified": true,
         "check_needed": false,
-        "source_origin": "textbook_pdf_checked_answer"
+        "source_origin": "textbook_question_generated_answer"
        },
        {
-        "id": "lesson12_reading_blank_007",
+        "id": "f3c59e19-bc2d-4045-b93a-df6f0bea2e93",
         "type": "cloze_blank",
         "blank_index": 7,
         "answer": "连",
-        "answer_pinyin": "lián",
         "answer_verified": true,
         "check_needed": false,
-        "source_origin": "textbook_pdf_checked_answer"
+        "source_origin": "textbook_question_generated_answer"
        },
        {
-        "id": "lesson12_reading_blank_008",
+        "id": "8e1c2d97-f329-49c9-8438-58aebed03d9b",
         "type": "cloze_blank",
         "blank_index": 8,
         "answer": "起来",
-        "answer_pinyin": "qǐ lái",
         "answer_verified": true,
         "check_needed": false,
-        "source_origin": "textbook_pdf_checked_answer"
+        "source_origin": "textbook_question_generated_answer",
+        "answer_pinyin": "qǐlai"
        }
       ],
-      "translation_vi": "Nghe thấy tiếng cửa, tôi biết là chồng đã về rồi. “Buổi tối đi xe thuận lợi chứ?” Không thấy anh ấy trả lời, tôi nghĩ chắc là có chuyện muốn nói, bèn ngẩng đầu lên. “Thuận lợi lắm.” chồng nói. Nhưng ánh mắt lại nhìn ra ngoài cửa sổ. “Trên xe có một cô gái, hình như chưa từng đến khu này, cô ấy hỏi còn mấy trạm nữa thì tới Phương Thôn, tôi đã nói cho cô ấy biết. Sau khi cùng xuống xe, thấy cô ấy do dự nhìn quanh bốn phía, tôi rất muốn hỏi cô ấy đi đâu, chỉ đường cho cô ấy hoặc tiễn cô ấy một đoạn, nhưng cuối cùng vẫn bỏ đi, vì sợ cô ấy coi tôi là người xấu và cảm thấy không vui.” Nói xong, vẻ mặt chồng giống như vừa làm sai chuyện gì đó, rồi không nói nữa. Ngoài cửa sổ, mưa vẫn đang rơi nhẹ, gió thổi vào. Mùa xuân năm nay hơi đặc biệt: ít đi những trận gió vàng đầy trời, lại có thêm vài trận mưa xuân không lớn không nhỏ. Tuy người ta hơi than phiền, nhưng những cành cây lại thành tâm thành ý xanh lên. Bất giác, trong lòng tôi bỗng có một cảm giác không phải đau khổ, không phải ngọt ngào, không phải cảm thương, cũng không phải vui mừng. Vài ngày trước, cũng là một buổi tối mưa như thế này, tôi từ nhà bạn đi ra, đến trạm xe đợi xe về nhà. Trong mưa gió, tôi kéo chặt cổ áo, đi qua đi lại, sốt ruột chờ xe, nghĩ bụng trước khi xe tới chắc chắn sẽ bị mưa làm ướt như gà rơi vào nồi canh. Bỗng nghe bên cạnh có một giọng nam rất thấp nhưng rất rõ nói: “Đứng dưới ô này đi.” Tôi bỗng dừng chân: “Ồ, không!” Tôi trả lời theo bản năng với giọng nói trong bóng tối ấy, nhưng cũng không bước đi nữa. Người đàn ông lạ quay mặt ra đường, qua vài giây lại nói: “Đứng qua đây đi! Mưa lớn như vậy!” Không biết là sắc thái ra lệnh trong giọng nói ấy, hay vóc người cao lớn kia trong im lặng thể hiện sức hút, khiến tôi nảy sinh sự thôi thúc muốn mạo hiểm, thế là tôi bước một bước đứng dưới ô của anh ấy. Tôi nghe thấy tim mình đập thình thịch, giả vờ rất bình tĩnh ngẩng đầu nhìn chiếc ô ấy. Chiếc ô đã rách, nước mưa nhỏ lên vai người đàn ông lạ, khuôn mặt ấy vẫn bình tĩnh hướng ra đường. Xe rất nhanh đã tới, lúc đó tôi mới thở phào nhẹ nhõm, khẽ nói lời cảm ơn, rồi ngay cả đầu cũng không quay lại mà nhảy lên xe, nhưng vẫn cảm nhận được ánh mắt ở phía sau. Ngoài cửa sổ vẫn là tiếng mưa lất phất. Lúc này tôi cũng bắt đầu suy nghĩ lung tung: cô gái nhỏ ấy có bị mưa làm ướt không? Cô ấy có thuận lợi tìm được nơi mình muốn đến không? Không biết người đàn ông nói khẽ kia có còn nhớ rằng hôm ấy ở trạm xe, thiện ý của anh ấy đổi lại là vẻ mặt cảnh giác của tôi không? Không biết sau đó anh ấy còn sẵn lòng chia sẻ chút ấm áp với người đi đường bị mưa làm ướt trong đêm tối nữa không? Thật mong mọi người đều có thêm một chút lòng yêu thương, bớt một chút đề phòng, thêm một chút tin tưởng, bớt một chút nghi ngờ. Có cơn mưa xuân này, tôi nghĩ mùa xuân năm nay sẽ đẹp hơn.",
+      "translation_vi": "Nghe thấy tiếng cửa, tôi biết là chồng đã về... Thật mong mọi người đều có nhiều lòng yêu thương hơn, ít đề phòng hơn, nhiều tin tưởng hơn, ít nghi ngờ hơn. Có cơn mưa xuân này, mùa xuân năm nay sẽ đẹp hơn, tôi nghĩ.",
       "source_origin": "textbook",
       "check_needed": false
      }
     ]
    },
    {
-    "id": "lesson12_section_008",
+    "id": "2a3cfdb8-618f-43d3-9ad4-160d1dbb366a",
     "type": "character_writing",
     "order": 8,
     "title": "写汉字",
@@ -3669,7 +3618,7 @@
     "empty_reason_vi": "Bài này không thấy phần 写汉字 riêng trong PDF."
    },
    {
-    "id": "lesson12_section_009",
+    "id": "944b8c3a-d3d4-4265-a907-10cef8340ac2",
     "type": "summary",
     "order": 9,
     "title": "总结",
@@ -3678,7 +3627,7 @@
     "check_needed": false,
     "items": [
      {
-      "id": "lesson12_summary_001",
+      "id": "f6eb63b6-2129-419f-9686-4e0db51bd37c",
       "type": "lesson_summary",
       "order": 1,
       "grammar_points": [
@@ -3698,7 +3647,7 @@
        "我来 + V",
        "好不 + hình dung từ"
       ],
-      "coverage_vi": "Đã cover đủ 课文、生词、注释、词语用法、练习、综合填空; không thấy 写汉字 riêng."
+      "coverage_vi": "Đã cover đủ bài khóa, câu hỏi đọc hiểu sau bài khóa, sinh từ, chú thích, cách dùng từ/ngữ pháp, bài tập 1–10, bài đọc điền khuyết và hội thoại giao tiếp. Không thấy phần 写汉字 riêng."
      }
     ]
    }
@@ -3711,7 +3660,7 @@
    "lesson_index": 12,
    "lesson_number_cn": "第十二课",
    "lesson_title_cn": "好人难当",
-   "lesson_title_pinyin": "Hǎorén nándāng",
+   "lesson_title_pinyin": "Hǎorén nán dāng",
    "lesson_title_vi": "Làm người tốt khó",
    "lesson_title_en": "It is hard to be a good person",
    "source_files": [
@@ -3722,16 +3671,21 @@
      "check_needed": false,
      "page_start": 191,
      "page_end": 205,
-     "note": "PDF nội bộ trang 191–205; trang in trong sách khoảng 168–182. Đã dùng để đối chiếu lesson 12."
+     "note": "PDF nội bộ trang 191–205; trang in trong sách khoảng 168–182. Đã đối chiếu bài khóa, bảng từ vựng, chú thích, cách dùng từ, bài tập và bài đọc."
     },
     {
-     "name": "Văn bản đã dán (1).txt",
-     "type": "uploaded_lesson_json",
-     "source_origin": "uploaded_user_json",
+     "name": "Quyển 3- tổng hợp.docx",
+     "type": "uploaded_crosscheck",
+     "source_origin": "uploaded_crosscheck",
+     "check_needed": false
+    },
+    {
+     "name": "hanyuLesson.schema.v2.3.0.full.ts",
+     "type": "schema",
+     "source_origin": "uploaded_crosscheck",
      "check_needed": false
     }
-   ],
-   "notes": []
+   ]
   },
   "summary": {
    "lesson_parts": [
@@ -3747,29 +3701,24 @@
    ],
    "grammar_points": [
     {
-     "id": "lesson12_summary_gp_001",
-     "title": "尽管",
-     "grammar_ref_id": "lesson12_grammar_001"
+     "id": "f8ec59f3-898a-47b2-b536-44dfd8183393",
+     "title": "尽管"
     },
     {
-     "id": "lesson12_summary_gp_002",
-     "title": "难免",
-     "grammar_ref_id": "lesson12_grammar_002"
+     "id": "57b14753-688a-41b6-9e0d-b61dbbf574d7",
+     "title": "难免"
     },
     {
-     "id": "lesson12_summary_gp_003",
-     "title": "恐怕",
-     "grammar_ref_id": "lesson12_grammar_003"
+     "id": "fa804fff-372b-4874-8571-f54e613d7e07",
+     "title": "恐怕"
     },
     {
-     "id": "lesson12_summary_gp_004",
-     "title": "免得",
-     "grammar_ref_id": "lesson12_grammar_004"
+     "id": "c6cd6c38-22fc-4546-a398-39efe02d6c17",
+     "title": "免得"
     },
     {
-     "id": "lesson12_summary_gp_005",
-     "title": "来",
-     "grammar_ref_id": "lesson12_grammar_005"
+     "id": "c3d31639-0f40-4b2f-aa50-5dda9d443b78",
+     "title": "来"
     }
    ],
    "main_patterns": [],

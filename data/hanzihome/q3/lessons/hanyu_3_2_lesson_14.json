@@ -258,7 +258,7 @@
         "id": "665054d1-272f-4123-85e3-b7db93b3e35e",
         "order": 5,
         "zh": "“因为他想射门，我去挡他，结果就被他踢了。”我咬着牙，强忍着伤痛解释道。",
-        "pinyin": "“Yīnwèi tā xiǎng shè mén, wǒ qù dǎng tā, jiéguǒ jiù bèi tā tī le.” Wǒ yǎozhe yá, qiǎngrěnzhe shāngtòng jiěshì dào.",
+        "pinyin": "“Yīnwèi tā xiǎng shè mén, wǒ qù dǎng tā, jiéguǒ jiù bèi tā tī le.” Wǒ yǎozhe yá, qiángrěnzhe shāngtòng jiěshì dào.",
         "vi": "‘Vì cậu ấy muốn sút bóng, tôi đi chặn cậu ấy, kết quả là bị cậu ấy đá trúng.’ Tôi nghiến răng, cố nhịn đau mà giải thích.",
         "audio_key": "",
         "vocab_refs": [],
@@ -270,7 +270,7 @@
         "id": "4a1436c3-79b8-4aca-ba1a-01b4211d38c6",
         "order": 6,
         "zh": "医生又不紧不慢地问：“那你干吗要挡他呢？”",
-        "pinyin": "Yīshēng yòu bù jǐn bù màn de wèn: “Nà nǐ gànmá yào dǎng tā ne?”",
+        "pinyin": "Yīshēng yòu bù jǐn bú màn de wèn: “Nà nǐ gànmá yào dǎng tā ne?”",
         "vi": "Bác sĩ lại thong thả hỏi: ‘Vậy cậu chặn cậu ấy làm gì?’",
         "audio_key": "",
         "vocab_refs": [],
@@ -379,7 +379,7 @@
         "id": "fc2dee8b-6893-47d1-b1fc-f149260f7471",
         "order": 5,
         "zh": "吕教授把书一摔，气呼呼地提起包走了。",
-        "pinyin": "Lǚ jiàoshòu bǎ shū yì shuāi, qìhūhū de tí qǐ bāo zǒu le.",
+        "pinyin": "Lǚ jiàoshòu bǎ shū yì shuāi, qìhūhu de tí qǐ bāo zǒu le.",
         "vi": "Giáo sư Lữ quăng sách xuống, hậm hực xách cặp đi mất.",
         "audio_key": "",
         "vocab_refs": [],
@@ -419,7 +419,7 @@
      {
       "id": "f6a6d425-3978-47e6-aca9-0b5f59819326",
       "question": "医生问了“我”几个问题？“我”是怎么回答的？最后“我”为什么无话可说了？",
-      "answer": "医生主要问了三个问题：怎么了、为什么人家只踢我、为什么要挡他。‘我’回答说小腿被人踢伤了，因为对方想射门，我去挡他，结果被踢了；如果不挡，对方就要进球了。最后医生问‘这样受伤值得吗’，所以‘我’彻底无话可说了。",
+      "answer": "医生一共问了四个问题：‘怎么了？’、‘人家为什么只踢你呢？’、‘那你干吗要挡他呢？’、‘你这样受伤值得吗？’。‘我’先说小腿被人踢伤了，又解释因为对方想射门，自己去挡他，结果被踢了；接着说如果不挡，对方就要进球了。最后医生问受伤值不值得，所以‘我’彻底无话可说了。",
       "source_origin": "textbook_answer_verified_by_content",
       "answer_verified": true,
       "check_needed": false
@@ -1717,8 +1717,8 @@
       "type": "vocabulary_item",
       "order": 39,
       "hanzi": "强",
-      "pinyin": "qiǎng",
-      "meaning_vi": "cố; gượng; miễn cưỡng dùng sức",
+      "pinyin": "qiáng",
+      "meaning_vi": "cố sức; gắng gượng; miễn cưỡng dùng sức",
       "meaning_en": "",
       "pos": "Phó từ",
       "pos_detail": {
@@ -1727,13 +1727,15 @@
        "normalized": "adverb",
        "schema_compatible_pos": "adverb",
        "is_separable_verb": false,
-       "notes": ["Đọc qiǎng trong 强忍, không đọc qiáng."]
+       "notes": [
+        "PDF bài 14 ghi 强 qiáng. Trong một số từ điển/biến thể khu vực có thể gặp 强忍 qiǎng rěn; file này ưu tiên theo giáo trình."
+       ]
       },
       "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
        "front": "强",
-       "back": "qiǎng — cố; gượng; miễn cưỡng dùng sức",
+       "back": "qiáng — cố sức; gắng gượng; miễn cưỡng dùng sức",
        "modes": [
         "hanzi_to_meaning",
         "meaning_to_hanzi",
@@ -1849,7 +1851,7 @@
       "type": "vocabulary_item",
       "order": 43,
       "hanzi": "不紧不慢",
-      "pinyin": "bù jǐn bù màn",
+      "pinyin": "bù jǐn bú màn",
       "meaning_vi": "thong thả; không vội không chậm",
       "meaning_en": "",
       "pos": "Cụm từ / Thành ngữ",
@@ -1865,7 +1867,7 @@
       "examples": [],
       "flashcard": {
        "front": "不紧不慢",
-       "back": "bù jǐn bù màn — thong thả; không vội không chậm",
+       "back": "bù jǐn bú màn — thong thả; không vội không chậm",
        "modes": [
         "hanzi_to_meaning",
         "meaning_to_hanzi",
@@ -2482,7 +2484,7 @@
       "type": "vocabulary_item",
       "order": 62,
       "hanzi": "气呼呼",
-      "pinyin": "qìhūhū",
+      "pinyin": "qìhūhu",
       "meaning_vi": "hậm hực; tức anh ách; giận phừng phừng",
       "meaning_en": "",
       "pos": "Tính từ",
@@ -2498,7 +2500,7 @@
       "examples": [],
       "flashcard": {
        "front": "气呼呼",
-       "back": "qìhūhū — hậm hực; tức anh ách; giận phừng phừng",
+       "back": "qìhūhu — hậm hực; tức anh ách; giận phừng phừng",
        "modes": [
         "hanzi_to_meaning",
         "meaning_to_hanzi",
@@ -3055,7 +3057,7 @@
        {
         "id": "6712a7b7-45eb-4780-96f8-72f1a16d1aa7",
         "text": "不紧不慢",
-        "pinyin": "bù jǐn bù màn",
+        "pinyin": "bù jǐn bú màn",
         "vi": "không vội không chậm, từ tốn",
         "audio_key": "",
         "source_origin": "textbook_pdf_crosschecked",
@@ -3856,7 +3858,7 @@
          {
           "id": "0ff93f0c-4bba-45af-8a66-b84587443059",
           "text": "我强忍着没发火。",
-          "pinyin": "Wǒ qiǎngrěnzhe méi fā huǒ.",
+          "pinyin": "Wǒ qiángrěnzhe méi fā huǒ.",
           "vi": "Tôi cố nhịn không nổi giận."
          },
          {
@@ -3868,7 +3870,7 @@
          {
           "id": "30bf757b-f338-4993-81ce-f22187e82f2e",
           "text": "他气呼呼地走了。",
-          "pinyin": "Tā qìhūhū de zǒu le.",
+          "pinyin": "Tā qìhūhu de zǒu le.",
           "vi": "Anh ấy hậm hực bỏ đi."
          }
         ]

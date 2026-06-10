@@ -37,17 +37,19 @@
         "id": "b63fe6ec-7b75-40f7-87de-c30f12de4c79",
         "order": 1,
         "zh": "上星期，金星上一片欢腾——科学家们成功地向地球发射了一颗卫星。目前，这颗卫星停留在天壶地区的上空，正连续不断向金星发回照片和信号。",
-        "vi": "Tuần trước, trên sao Kim tràn ngập không khí vui mừng — các nhà khoa học đã phóng thành công một vệ tinh về phía Trái Đất. Hiện nay, vệ tinh này đang dừng lại trên bầu trời khu vực Thiên Hồ, liên tục gửi ảnh và tín hiệu về sao Kim.",
+        "vi": "Tuần trước, trên sao Kim tràn ngập không khí hân hoan — các nhà khoa học đã phóng thành công một vệ tinh về phía Trái Đất. Hiện nay, vệ tinh này đang lưu lại trên vùng trời khu vực Thiên Hồ, liên tục gửi ảnh và tín hiệu về sao Kim.",
         "source_origin": "textbook_pdf_verified",
-        "check_needed": false
+        "check_needed": false,
+        "pinyin": "Shàng xīngqī, Jīnxīng shang yí piàn huānténg — kēxuéjiāmen chénggōng de xiàng Dìqiú fāshè le yì kē wèixīng. Mùqián, zhè kē wèixīng tíngliú zài Tiānhú dìqū de shàngkōng, zhèng liánxù bùduàn xiàng Jīnxīng fā huí zhàopiàn hé xìnhào."
        },
        {
         "id": "a1b78a79-7d53-4699-99d1-6bb046c8d6f9",
         "order": 2,
         "zh": "由于地球上空天气很好，科学家们便有可能获得不少珍贵资料。载人飞船登上地球究竟能否实现？对这个重大问题，他们也已经取得了某些突破。",
-        "vi": "Do thời tiết phía trên Trái Đất rất tốt, các nhà khoa học có khả năng thu được không ít tư liệu quý giá. Liệu tàu vũ trụ có người lái đáp xuống Trái Đất rốt cuộc có thể thực hiện được hay không? Về vấn đề trọng đại này, họ cũng đã đạt được một số đột phá.",
+        "vi": "Do thời tiết phía trên Trái Đất rất tốt, các nhà khoa học có khả năng thu được khá nhiều tư liệu quý giá. Liệu tàu vũ trụ có người lái hạ cánh lên Trái Đất rốt cuộc có thể thực hiện được hay không? Về vấn đề trọng đại này, họ cũng đã đạt được một số đột phá.",
         "source_origin": "textbook_pdf_verified",
-        "check_needed": false
+        "check_needed": false,
+        "pinyin": "Yóuyú Dìqiú shàngkōng tiānqì hěn hǎo, kēxuéjiāmen biàn yǒu kěnéng huòdé bù shǎo zhēnguì zīliào. Zàirén fēichuán dēng shàng Dìqiú jiūjìng néngfǒu shíxiàn? Duì zhège zhòngdà wèntí, tāmen yě yǐjīng qǔdé le mǒuxiē tūpò."
        },
        {
         "id": "9787224b-6667-4f67-81ed-5c65cef5559f",
@@ -55,7 +57,8 @@
         "zh": "在金星科技大学里，一个记者招待会正在进行。",
         "vi": "Tại Đại học Khoa học Kỹ thuật sao Kim, một buổi họp báo đang diễn ra.",
         "source_origin": "textbook_pdf_verified",
-        "check_needed": false
+        "check_needed": false,
+        "pinyin": "Zài Jīnxīng Kējì Dàxué lǐ, yí ge jìzhě zhāodàihuì zhèngzài jìnxíng."
        },
        {
         "id": "f108829c-f873-4dd4-a8ea-e36a7da3e53c",
@@ -63,7 +66,8 @@
         "zh": "“我们已经能得出结论，”格林教授说，“地球上是没有生命存在的。”",
         "vi": "“Chúng tôi đã có thể đưa ra kết luận,” giáo sư Green nói, “trên Trái Đất không có sự sống tồn tại.”",
         "source_origin": "textbook_pdf_verified",
-        "check_needed": false
+        "check_needed": false,
+        "pinyin": "“Wǒmen yǐjīng néng déchū jiélùn,” Gélín jiàoshòu shuō, “Dìqiú shang shì méiyǒu shēngmìng cúnzài de.”"
        },
        {
         "id": "bb426751-c645-4e44-9da0-460da883c72c",
@@ -71,15 +75,17 @@
         "zh": "“格林教授，您能不能介绍一下儿，这个结论是怎么得出的？”《金星日报》记者问道。",
         "vi": "“Giáo sư Green, ông có thể giới thiệu một chút, kết luận này được rút ra như thế nào không?” phóng viên của 《Nhật báo sao Kim》 hỏi.",
         "source_origin": "textbook_pdf_verified",
-        "check_needed": false
+        "check_needed": false,
+        "pinyin": "“Gélín jiàoshòu, nín néng bu néng jièshào yíxiàr, zhège jiélùn shì zěnme déchū de?” “Jīnxīng Rìbào” jìzhě wèndào."
        },
        {
         "id": "d6932f0c-e87b-45cb-ab5c-915dd42b4fc5",
         "order": 6,
         "zh": "“首先，天壶区的地面都由一种坚硬无比的混凝土覆盖着，这就是说，任何植物都不能生长。第二，地球的大气中充满一氧化碳和其他种种有害气体，在这样的环境里，人类是无法生存的。因为没有氧气，所以如果说有人能在那里生存，那真是不可思议。”",
-        "vi": "“Trước hết, mặt đất ở khu vực Thiên Hồ đều được phủ bởi một loại bê tông cực kỳ cứng, điều này có nghĩa là bất kỳ loài thực vật nào cũng không thể sinh trưởng. Thứ hai, trong bầu khí quyển Trái Đất đầy khí carbon monoxide và các loại khí độc hại khác. Trong môi trường như vậy, loài người không thể sinh tồn. Vì không có oxy, nên nếu nói có người có thể sống ở đó thì thật là không thể tưởng tượng nổi.”",
+        "vi": "“Trước hết, mặt đất ở khu vực Thiên Hồ đều được phủ bởi một loại bê tông cứng vô cùng; điều đó có nghĩa là bất kỳ loài thực vật nào cũng không thể sinh trưởng. Thứ hai, trong khí quyển Trái Đất đầy khí carbon monoxide và đủ loại khí độc hại khác. Trong môi trường như vậy, loài người không thể sinh tồn. Vì không có oxy, nên nếu nói có người có thể sống ở đó thì thật là không thể tưởng tượng nổi.”",
         "source_origin": "textbook_pdf_verified",
-        "check_needed": false
+        "check_needed": false,
+        "pinyin": "“Shǒuxiān, Tiānhú qū de dìmiàn dōu yóu yì zhǒng jiānyìng wúbǐ de hùnníngtǔ fùgàizhe, zhè jiù shì shuō, rènhé zhíwù dōu bù néng shēngzhǎng. Dì-èr, Dìqiú de dàqì zhōng chōngmǎn yīyǎnghuàtàn hé qítā zhǒngzhǒng yǒuhài qìtǐ, zài zhèyàng de huánjìng lǐ, rénlèi shì wúfǎ shēngcún de. Yīnwèi méiyǒu yǎngqì, suǒyǐ rúguǒ shuō yǒu rén néng zài nàli shēngcún, nà zhēn shì bùkěsīyì.”"
        },
        {
         "id": "f9bcdaa7-f7d8-4c3d-8521-4d6b79d8258f",
@@ -87,7 +93,8 @@
         "zh": "“教授，这些和我们金星人的空间计划有没有联系？”",
         "vi": "“Thưa giáo sư, những điều này có liên quan gì đến kế hoạch không gian của người sao Kim chúng ta không?”",
         "source_origin": "textbook_pdf_verified",
-        "check_needed": false
+        "check_needed": false,
+        "pinyin": "“Jiàoshòu, zhèxiē hé wǒmen Jīnxīng rén de kōngjiān jìhuà yǒu méiyǒu liánxì?”"
        },
        {
         "id": "25aa1cba-8662-4119-8659-07fb55bb8c70",
@@ -95,7 +102,8 @@
         "zh": "“当然有。这样，我们发射的飞船还得自带氧气，飞船的重量也将不得不大大增加。”",
         "vi": "“Đương nhiên là có. Như vậy, tàu vũ trụ mà chúng ta phóng đi còn phải tự mang theo oxy, trọng lượng của tàu cũng sẽ buộc phải tăng lên rất nhiều.”",
         "source_origin": "textbook_pdf_verified",
-        "check_needed": false
+        "check_needed": false,
+        "pinyin": "“Dāngrán yǒu. Zhèyàng, wǒmen fāshè de fēichuán hái děi zì dài yǎngqì, fēichuán de zhòngliàng yě jiāng bùdé bù dàdà zēngjiā.”"
        },
        {
         "id": "e8f77625-fdf8-40dd-a823-55c410365e79",
@@ -103,15 +111,17 @@
         "zh": "“那儿还有什么其他危险吗？”",
         "vi": "“Nơi đó còn có nguy hiểm nào khác không?”",
         "source_origin": "textbook_pdf_verified",
-        "check_needed": false
+        "check_needed": false,
+        "pinyin": "“Nàr hái yǒu shénme qítā wēixiǎn ma?”"
        },
        {
         "id": "4187a8a4-6467-4373-b4dc-5b42cec46365",
         "order": 10,
         "zh": "“请看这张照片。你看到的这些线，实际上是地球上的一条条河流，但卫星已发现，这些河水里充满了有害物质，根本不能饮用。因此，连喝的水我们都得自己带上！”",
-        "vi": "“Xin hãy xem bức ảnh này. Những đường mà anh nhìn thấy, thực ra là từng dòng sông trên Trái Đất. Nhưng vệ tinh đã phát hiện rằng trong nước của những con sông này chứa đầy chất có hại, căn bản không thể uống được. Vì vậy, ngay cả nước uống chúng ta cũng phải tự mang theo!”",
+        "vi": "“Xin hãy xem bức ảnh này. Những đường mà anh nhìn thấy thực ra là từng dòng sông trên Trái Đất. Nhưng vệ tinh đã phát hiện rằng nước trong các con sông này đầy chất có hại, căn bản không thể uống được. Vì vậy, ngay cả nước uống chúng ta cũng phải tự mang theo!”",
         "source_origin": "textbook_pdf_verified",
-        "check_needed": false
+        "check_needed": false,
+        "pinyin": "“Qǐng kàn zhè zhāng zhàopiàn. Nǐ kàndào de zhèxiē xiàn, shíjìshàng shì Dìqiú shang de yì tiáo tiáo héliú, dàn wèixīng yǐ fāxiàn, zhèxiē héshuǐ lǐ chōngmǎn le yǒuhài wùzhì, gēnběn bù néng yǐnyòng. Yīncǐ, lián hē de shuǐ wǒmen dōu děi zìjǐ dài shàng!”"
        },
        {
         "id": "edd7d22d-60cd-4d3d-a7d8-4c62d1be7ded",
@@ -119,7 +129,8 @@
         "zh": "“请问，照片上的这些黑色颗粒又是什么呢？”",
         "vi": "“Xin hỏi, những hạt màu đen trên ảnh này lại là gì vậy?”",
         "source_origin": "textbook_pdf_verified",
-        "check_needed": false
+        "check_needed": false,
+        "pinyin": "“Qǐngwèn, zhàopiàn shang de zhèxiē hēisè kēlì yòu shì shénme ne?”"
        },
        {
         "id": "8c9f851c-87b0-4609-88d5-30aa814230c9",
@@ -127,15 +138,17 @@
         "zh": "“对此，我们还不能肯定，也许是些金属颗粒——它们沿着固定轨道移动，并能喷出气体，发出噪音，还会互相碰撞。它们的数量大得惊人，毫无疑问，我们的飞船如果遇到它们，就会被撞个稀巴烂。”",
         "vi": "“Về điều này, chúng tôi vẫn chưa thể khẳng định. Có lẽ đó là một số hạt kim loại — chúng di chuyển dọc theo quỹ đạo cố định, có thể phun khí, phát ra tiếng ồn, và còn có thể va chạm lẫn nhau. Số lượng của chúng lớn đến mức đáng kinh ngạc. Không nghi ngờ gì nữa, nếu tàu vũ trụ của chúng ta gặp phải chúng, nó sẽ bị đâm cho nát bét.”",
         "source_origin": "textbook_pdf_verified",
-        "check_needed": false
+        "check_needed": false,
+        "pinyin": "“Duì cǐ, wǒmen hái bù néng kěndìng, yěxǔ shì xiē jīnshǔ kēlì — tāmen yánzhe gùdìng guǐdào yídòng, bìng néng pēn chū qìtǐ, fā chū zàoyīn, hái huì hùxiāng pèngzhuàng. Tāmen de shùliàng dà de jīngrén, háowú yíwèn, wǒmen de fēichuán rúguǒ yùdào tāmen, jiù huì bèi zhuàng ge xībālàn.”"
        },
        {
         "id": "835c4957-9619-446d-919d-f4684b8f0d90",
         "order": 13,
         "zh": "“如果您说的没错，那么这是否意味着我们将不得不推迟实施数年来的飞船计划？”",
-        "vi": "“Nếu những gì ông nói không sai, vậy điều này có phải có nghĩa là chúng ta sẽ buộc phải hoãn thực hiện kế hoạch tàu vũ trụ nhiều năm nay không?”",
+        "vi": "“Nếu những gì ông nói không sai, vậy điều này có phải có nghĩa là chúng ta sẽ buộc phải hoãn thực hiện kế hoạch tàu vũ trụ đã chuẩn bị nhiều năm nay không?”",
         "source_origin": "textbook_pdf_verified",
-        "check_needed": false
+        "check_needed": false,
+        "pinyin": "“Rúguǒ nín shuō de méi cuò, nàme zhè shìfǒu yìwèizhe wǒmen jiāng bùdé bù tuīchí shíshī shù nián lái de fēichuán jìhuà?”"
        },
        {
         "id": "5871c40e-e067-4898-9f64-74061565f944",
@@ -143,7 +156,8 @@
         "zh": "“对！不过，只要能拿到补充资金，我们会马上继续开展工作的。”",
         "vi": "“Đúng vậy! Tuy nhiên, chỉ cần có thể nhận được nguồn vốn bổ sung, chúng tôi sẽ lập tức tiếp tục triển khai công việc.”",
         "source_origin": "textbook_pdf_verified",
-        "check_needed": false
+        "check_needed": false,
+        "pinyin": "“Duì! Bùguò, zhǐyào néng ná dào bǔchōng zījīn, wǒmen huì mǎshàng jìxù kāizhǎn gōngzuò de.”"
        },
        {
         "id": "15913614-84fb-4a6c-9a95-1300b63f160e",
@@ -151,15 +165,17 @@
         "zh": "“教授先生，请问，为什么我们金星人要耗费数十亿金元（金星货币）向地球发射载人飞船呢？”",
         "vi": "“Thưa giáo sư, xin hỏi, vì sao người sao Kim chúng ta phải tiêu tốn hàng chục tỷ kim nguyên — tiền tệ của sao Kim — để phóng tàu vũ trụ có người lái về phía Trái Đất?”",
         "source_origin": "textbook_pdf_verified",
-        "check_needed": false
+        "check_needed": false,
+        "pinyin": "“Jiàoshòu xiānsheng, qǐngwèn, wèishénme wǒmen Jīnxīng rén yào hàofèi shù shí yì jīnyuán (Jīnxīng huòbì) xiàng Dìqiú fāshè zàirén fēichuán ne?”"
        },
        {
         "id": "a18ec42a-76e3-4a1a-ae50-e36af52308be",
         "order": 16,
         "zh": "“我们的目的是：当我们学会在地球上生存时，我们去宇宙的任何地方都可以平安无事了。”",
-        "vi": "“Mục đích của chúng tôi là: khi chúng tôi học được cách sinh tồn trên Trái Đất, thì đi đến bất kỳ nơi nào trong vũ trụ cũng đều có thể bình an vô sự.”",
+        "vi": "“Mục đích của chúng tôi là: khi chúng tôi học được cách sinh tồn trên Trái Đất, thì đến bất kỳ nơi nào trong vũ trụ, chúng tôi cũng có thể bình an vô sự.”",
         "source_origin": "textbook_pdf_verified",
-        "check_needed": false
+        "check_needed": false,
+        "pinyin": "“Wǒmen de mùdì shì: dāng wǒmen xuéhuì zài Dìqiú shang shēngcún shí, wǒmen qù yǔzhòu de rènhé dìfang dōu kěyǐ píng'ān wúshì le.”"
        },
        {
         "id": "1ab009f8-7487-4780-b93d-c6125d41a621",
@@ -167,7 +183,8 @@
         "zh": "（选自微型小说选集《英雄之死》，有改动）",
         "vi": "Trích từ tuyển tập tiểu thuyết vi hình 《Cái chết của anh hùng》, có chỉnh sửa.",
         "source_origin": "textbook_pdf_verified",
-        "check_needed": false
+        "check_needed": false,
+        "pinyin": "（Xuǎn zì wēixíng xiǎoshuō xuǎnjí “Yīngxióng zhī Sǐ”, yǒu gǎidòng）"
        }
       ],
       "lines": [],
@@ -334,7 +351,7 @@
       "order": 2,
       "hanzi": "欢腾",
       "pinyin": "huānténg",
-      "meaning_vi": "vui mừng, hân hoan, phấn khởi",
+      "meaning_vi": "hân hoan, vui mừng sôi nổi",
       "meaning_en": "to rejoice",
       "pos": "Động từ",
       "pos_detail": {
@@ -501,11 +518,11 @@
       "pinyin": "mùqián",
       "meaning_vi": "hiện nay, trước mắt",
       "meaning_en": "at present",
-      "pos": "Danh từ",
+      "pos": "Danh từ thời gian / Phó từ thời gian",
       "pos_detail": {
-       "vi": "Danh từ",
-       "cn": "名词",
-       "normalized": "noun",
+       "vi": "Danh từ thời gian / Phó từ thời gian",
+       "cn": "时间名词 / 时间副词",
+       "normalized": "time_noun_adverb",
        "schema_compatible_pos": "noun",
        "is_separable_verb": false,
        "notes": []
@@ -600,11 +617,11 @@
       "pinyin": "liánxù",
       "meaning_vi": "liên tục, nối tiếp",
       "meaning_en": "to be continuous; successive",
-      "pos": "Động từ",
+      "pos": "Động từ / Tính từ / Phó từ",
       "pos_detail": {
-       "vi": "Động từ",
-       "cn": "动词",
-       "normalized": "verb",
+       "vi": "Động từ / Tính từ / Phó từ",
+       "cn": "动词 / 形容词 / 副词",
+       "normalized": "verb_adjective_adverb",
        "schema_compatible_pos": "verb",
        "is_separable_verb": false,
        "notes": []
@@ -633,11 +650,11 @@
       "pinyin": "bùduàn",
       "meaning_vi": "không ngừng, liên tục",
       "meaning_en": "to be unceasing; constantly",
-      "pos": "Động từ / Phó từ",
+      "pos": "Động từ / Phó từ / Tính từ",
       "pos_detail": {
-       "vi": "Động từ / Phó từ",
-       "cn": "动词 / 副词",
-       "normalized": "verb_adverb",
+       "vi": "Động từ / Phó từ / Tính từ",
+       "cn": "动词 / 副词 / 形容词",
+       "normalized": "verb_adverb_adjective",
        "schema_compatible_pos": "verb",
        "is_separable_verb": false,
        "notes": []
@@ -765,14 +782,15 @@
       "pinyin": "zàirén",
       "meaning_vi": "chở người; có người lái",
       "meaning_en": "manned",
-      "pos": "Động từ",
+      "pos": "Động từ / Định ngữ",
       "pos_detail": {
-       "vi": "Động từ",
-       "cn": "动词",
-       "normalized": "verb",
+       "vi": "Động từ / Định ngữ",
+       "cn": "动词 / 定语用法",
+       "normalized": "verb_attributive",
        "schema_compatible_pos": "verb",
        "is_separable_verb": false,
-       "notes": []
+       "notes": [],
+       "usage_note_vi": "Trong bài dùng trong 载人飞船, nghĩa là tàu vũ trụ có người lái/chở người."
       },
       "tags": ["main_vocab"],
       "examples": [],
@@ -2151,7 +2169,7 @@
       "order": 57,
       "hanzi": "稀巴烂",
       "pinyin": "xībālàn",
-      "meaning_vi": "nát bét, tan tành, vỡ vụn",
+      "meaning_vi": "nát bét, vỡ tan tành, nát vụn",
       "meaning_en": "smashed; in pieces",
       "pos": "Tính từ",
       "pos_detail": {
@@ -2193,7 +2211,8 @@
        "normalized": "verb",
        "schema_compatible_pos": "verb",
        "is_separable_verb": false,
-       "notes": []
+       "notes": [],
+       "usage_note_vi": "着 ở đây là thành phần cố định trong từ 意味着, không phải V + 着 trạng thái thông thường."
       },
       "tags": ["main_vocab"],
       "examples": [],
@@ -2285,14 +2304,15 @@
       "pinyin": "shù",
       "meaning_vi": "vài, mấy, một số",
       "meaning_en": "several",
-      "pos": "Số từ",
+      "pos": "Số từ / Định ngữ số lượng",
       "pos_detail": {
-       "vi": "Số từ",
-       "cn": "数词",
+       "vi": "Số từ / Định ngữ số lượng",
+       "cn": "数词 / 数量定语",
        "normalized": "numeral",
        "schema_compatible_pos": "numeral",
        "is_separable_verb": false,
-       "notes": []
+       "notes": [],
+       "usage_note_vi": "Trong 数十亿, 数年来 đọc shù, nghĩa là vài/mấy/nhiều; không đọc shǔ trong ngữ cảnh này."
       },
       "tags": ["main_vocab"],
       "examples": [],
@@ -2522,7 +2542,8 @@
         "zh": "我们的飞船如果遇到它们，就会被撞个稀巴烂。",
         "vi": "Nếu tàu vũ trụ của chúng ta gặp phải chúng, nó sẽ bị đâm cho nát bét.",
         "source_origin": "textbook_pdf_verified",
-        "check_needed": false
+        "check_needed": false,
+        "pinyin": "Wǒmen de fēichuán rúguǒ yùdào tāmen, jiù huì bèi zhuàng ge xībālàn."
        }
       ],
       "source_refs": [],
@@ -4293,47 +4314,56 @@
          {
           "speaker": "A",
           "text": "你是不是觉得这篇课文有点儿不可思议？",
-          "vi": "Bạn có thấy bài khóa này hơi khó tin không?"
+          "vi": "Bạn có thấy bài khóa này hơi khó tin không?",
+          "pinyin": "Nǐ shì bu shì juéde zhè piān kèwén yǒudiǎnr bùkěsīyì?"
          },
          {
           "speaker": "B",
           "text": "不觉得。看起来有点儿不可思议，但实际上提出的问题却非常重要。",
-          "vi": "Không. Nhìn thì hơi khó tin, nhưng thực ra vấn đề được nêu ra rất quan trọng."
+          "vi": "Không. Nhìn thì hơi khó tin, nhưng thực ra vấn đề được nêu ra rất quan trọng.",
+          "pinyin": "Bù juéde. Kàn qǐlai yǒudiǎnr bùkěsīyì, dàn shíjìshàng tíchū de wèntí què fēicháng zhòngyào."
          },
          {
           "speaker": "A",
           "text": "是啊，我们应该爱护我们的地球。",
-          "vi": "Đúng vậy, chúng ta nên yêu quý và bảo vệ Trái Đất."
+          "vi": "Đúng vậy, chúng ta nên yêu quý và bảo vệ Trái Đất.",
+          "pinyin": "Shì a, wǒmen yīnggāi àihù wǒmen de Dìqiú."
          },
          {
           "speaker": "B",
           "text": "我觉得人类要更加注意环境问题了。长期以来，人类捕杀动物，砍伐森林，污染了河水和空气。",
-          "vi": "Tôi nghĩ loài người càng phải chú ý hơn đến môi trường. Từ lâu, loài người săn giết động vật, chặt phá rừng, làm ô nhiễm nước sông và không khí."
+          "vi": "Tôi nghĩ loài người càng phải chú ý hơn đến môi trường. Từ lâu, loài người săn giết động vật, chặt phá rừng, làm ô nhiễm nước sông và không khí.",
+          "pinyin": "Wǒ juéde rénlèi yào gèngjiā zhùyì huánjìng wèntí le. Chángqī yǐlái, rénlèi bǔshā dòngwù, kǎnfá sēnlín, wūrǎn le héshuǐ hé kōngqì."
          },
          {
           "speaker": "A",
           "text": "我也觉得环境问题是我们人类面临的最大的问题。要是我们再不重视，地球可真住不下去了。",
-          "vi": "Tôi cũng nghĩ môi trường là vấn đề lớn nhất mà loài người đang đối mặt. Nếu còn không coi trọng, Trái Đất thật sự sẽ không thể sống tiếp được."
+          "vi": "Tôi cũng nghĩ vấn đề môi trường là vấn đề lớn nhất mà loài người chúng ta đang đối mặt. Nếu chúng ta còn không coi trọng, Trái Đất thật sự sẽ không thể sống nổi nữa.",
+          "pinyin": "Wǒ yě juéde huánjìng wèntí shì wǒmen rénlèi miànlín de zuì dà de wèntí. Yàoshi wǒmen zài bù zhòngshì, Dìqiú kě zhēn zhù bu xiàqù le."
          },
          {
           "speaker": "B",
           "text": "动物和植物越来越少，土地逐渐沙漠化。这样下去，真让人为地球的命运担心。",
-          "vi": "Động thực vật ngày càng ít, đất đai dần sa mạc hóa. Cứ như vậy thật khiến người ta lo cho vận mệnh Trái Đất."
+          "vi": "Động thực vật ngày càng ít, đất đai dần sa mạc hóa. Cứ như vậy thật khiến người ta lo cho vận mệnh Trái Đất.",
+          "pinyin": "Dòngwù hé zhíwù yuè lái yuè shǎo, tǔdì zhújiàn shāmòhuà. Zhèyàng xiàqù, zhēn ràng rén wèi Dìqiú de mìngyùn dānxīn."
          },
          {
           "speaker": "A",
           "text": "是，连金星人都关心起地球的环境问题来了，难道我们地球人不应该关心吗？",
-          "vi": "Đúng, ngay cả người sao Kim cũng quan tâm đến môi trường Trái Đất rồi, chẳng lẽ người Trái Đất lại không nên quan tâm sao?"
+          "vi": "Đúng, ngay cả người sao Kim cũng quan tâm đến môi trường Trái Đất rồi, chẳng lẽ người Trái Đất lại không nên quan tâm sao?",
+          "pinyin": "Shì, lián Jīnxīng rén dōu guānxīn qǐ Dìqiú de huánjìng wèntí lái le, nándào wǒmen Dìqiú rén bù yīnggāi guānxīn ma?"
          },
          {
           "speaker": "B",
           "text": "我觉得目前最大的危险是人类还不知道地球正面临危险。",
-          "vi": "Tôi nghĩ nguy hiểm lớn nhất hiện nay là loài người vẫn chưa biết Trái Đất đang đối mặt với nguy hiểm."
+          "vi": "Tôi nghĩ nguy hiểm lớn nhất hiện nay là loài người vẫn chưa biết Trái Đất đang đối mặt với nguy hiểm.",
+          "pinyin": "Wǒ juéde mùqián zuì dà de wēixiǎn shì rénlèi hái bù zhīdào Dìqiú zhèng miànlín wēixiǎn."
          },
          {
           "speaker": "A",
           "text": "因此，应该让更多的人知道保护环境的重要性。从自己做起，从日常生活中的小事做起。",
-          "vi": "Vì vậy, nên để nhiều người biết tầm quan trọng của bảo vệ môi trường. Bắt đầu từ chính mình, từ những việc nhỏ hằng ngày."
+          "vi": "Vì vậy, nên để nhiều người biết tầm quan trọng của bảo vệ môi trường. Bắt đầu từ chính mình, từ những việc nhỏ hằng ngày.",
+          "pinyin": "Yīncǐ, yīnggāi ràng gèng duō de rén zhīdào bǎohù huánjìng de zhòngyàoxìng. Cóng zìjǐ zuò qǐ, cóng rìcháng shēnghuó zhōng de xiǎoshì zuò qǐ."
          }
         ],
         "source_origin": "textbook_pdf_verified",
@@ -4348,47 +4378,56 @@
          {
           "speaker": "A",
           "text": "你是不是觉得这篇课文有点儿不可思议？",
-          "vi": "Bạn có thấy bài khóa này hơi khó tin không?"
+          "vi": "Bạn có thấy bài khóa này hơi khó tin không?",
+          "pinyin": "Nǐ shì bu shì juéde zhè piān kèwén yǒudiǎnr bùkěsīyì?"
          },
          {
           "speaker": "B",
           "text": "不觉得。看起来有点儿不可思议，但实际上提出的问题却非常重要。",
-          "vi": "Không. Nhìn thì hơi khó tin, nhưng thực ra vấn đề được nêu ra rất quan trọng."
+          "vi": "Không. Nhìn thì hơi khó tin, nhưng thực ra vấn đề được nêu ra rất quan trọng.",
+          "pinyin": "Bù juéde. Kàn qǐlai yǒudiǎnr bùkěsīyì, dàn shíjìshàng tíchū de wèntí què fēicháng zhòngyào."
          },
          {
           "speaker": "A",
           "text": "是啊，我们应该爱护我们的地球。",
-          "vi": "Đúng vậy, chúng ta nên yêu quý và bảo vệ Trái Đất."
+          "vi": "Đúng vậy, chúng ta nên yêu quý và bảo vệ Trái Đất.",
+          "pinyin": "Shì a, wǒmen yīnggāi àihù wǒmen de Dìqiú."
          },
          {
           "speaker": "B",
           "text": "我觉得人类要更加注意环境问题了。长期以来，人类捕杀动物，砍伐森林，污染了河水和空气。",
-          "vi": "Tôi nghĩ loài người càng phải chú ý hơn đến môi trường. Từ lâu, loài người săn giết động vật, chặt phá rừng, làm ô nhiễm nước sông và không khí."
+          "vi": "Tôi nghĩ loài người càng phải chú ý hơn đến môi trường. Từ lâu, loài người săn giết động vật, chặt phá rừng, làm ô nhiễm nước sông và không khí.",
+          "pinyin": "Wǒ juéde rénlèi yào gèngjiā zhùyì huánjìng wèntí le. Chángqī yǐlái, rénlèi bǔshā dòngwù, kǎnfá sēnlín, wūrǎn le héshuǐ hé kōngqì."
          },
          {
           "speaker": "A",
           "text": "我也觉得环境问题是我们人类面临的最大的问题。要是我们再不重视，地球可真住不下去了。",
-          "vi": "Tôi cũng nghĩ môi trường là vấn đề lớn nhất mà loài người đang đối mặt. Nếu còn không coi trọng, Trái Đất thật sự sẽ không thể sống tiếp được."
+          "vi": "Tôi cũng nghĩ vấn đề môi trường là vấn đề lớn nhất mà loài người chúng ta đang đối mặt. Nếu chúng ta còn không coi trọng, Trái Đất thật sự sẽ không thể sống nổi nữa.",
+          "pinyin": "Wǒ yě juéde huánjìng wèntí shì wǒmen rénlèi miànlín de zuì dà de wèntí. Yàoshi wǒmen zài bù zhòngshì, Dìqiú kě zhēn zhù bu xiàqù le."
          },
          {
           "speaker": "B",
           "text": "动物和植物越来越少，土地逐渐沙漠化。这样下去，真让人为地球的命运担心。",
-          "vi": "Động thực vật ngày càng ít, đất đai dần sa mạc hóa. Cứ như vậy thật khiến người ta lo cho vận mệnh Trái Đất."
+          "vi": "Động thực vật ngày càng ít, đất đai dần sa mạc hóa. Cứ như vậy thật khiến người ta lo cho vận mệnh Trái Đất.",
+          "pinyin": "Dòngwù hé zhíwù yuè lái yuè shǎo, tǔdì zhújiàn shāmòhuà. Zhèyàng xiàqù, zhēn ràng rén wèi Dìqiú de mìngyùn dānxīn."
          },
          {
           "speaker": "A",
           "text": "是，连金星人都关心起地球的环境问题来了，难道我们地球人不应该关心吗？",
-          "vi": "Đúng, ngay cả người sao Kim cũng quan tâm đến môi trường Trái Đất rồi, chẳng lẽ người Trái Đất lại không nên quan tâm sao?"
+          "vi": "Đúng, ngay cả người sao Kim cũng quan tâm đến môi trường Trái Đất rồi, chẳng lẽ người Trái Đất lại không nên quan tâm sao?",
+          "pinyin": "Shì, lián Jīnxīng rén dōu guānxīn qǐ Dìqiú de huánjìng wèntí lái le, nándào wǒmen Dìqiú rén bù yīnggāi guānxīn ma?"
          },
          {
           "speaker": "B",
           "text": "我觉得目前最大的危险是人类还不知道地球正面临危险。",
-          "vi": "Tôi nghĩ nguy hiểm lớn nhất hiện nay là loài người vẫn chưa biết Trái Đất đang đối mặt với nguy hiểm."
+          "vi": "Tôi nghĩ nguy hiểm lớn nhất hiện nay là loài người vẫn chưa biết Trái Đất đang đối mặt với nguy hiểm.",
+          "pinyin": "Wǒ juéde mùqián zuì dà de wēixiǎn shì rénlèi hái bù zhīdào Dìqiú zhèng miànlín wēixiǎn."
          },
          {
           "speaker": "A",
           "text": "因此，应该让更多的人知道保护环境的重要性。从自己做起，从日常生活中的小事做起。",
-          "vi": "Vì vậy, nên để nhiều người biết tầm quan trọng của bảo vệ môi trường. Bắt đầu từ chính mình, từ những việc nhỏ hằng ngày."
+          "vi": "Vì vậy, nên để nhiều người biết tầm quan trọng của bảo vệ môi trường. Bắt đầu từ chính mình, từ những việc nhỏ hằng ngày.",
+          "pinyin": "Yīncǐ, yīnggāi ràng gèng duō de rén zhīdào bǎohù huánjìng de zhòngyàoxìng. Cóng zìjǐ zuò qǐ, cóng rìcháng shēnghuó zhōng de xiǎoshì zuò qǐ."
          }
         ],
         "source_origin": "textbook_pdf_verified",
@@ -4426,33 +4465,37 @@
         "id": "49018f95-9850-48fe-ba72-0f7ad4730332",
         "order": 1,
         "zh": "过去几十年，人类①____发展经济，破坏了地球的环境。地球上②____水越来越少，很多河长年断流，有的地方甚至③____人和动物喝的水也没有了。即使这样，大批工厂还④____污水排放到河里和海里。很多河水受⑤____污染，清水变⑥____了黑水。",
-        "vi": "",
+        "vi": "Trong mấy chục năm qua, để phát triển kinh tế, con người đã phá hoại môi trường Trái Đất. Nước trên Trái Đất ngày càng ít, nhiều con sông khô cạn quanh năm, có nơi thậm chí ngay cả nước uống của người và động vật cũng không còn. Dù vậy, rất nhiều nhà máy vẫn xả nước thải ra sông và biển. Nhiều con sông bị ô nhiễm, nước sạch biến thành nước đen.",
         "source_origin": "textbook_pdf_verified",
-        "check_needed": false
+        "check_needed": false,
+        "pinyin": "Guòqù jǐshí nián, rénlèi ①____ fāzhǎn jīngjì, pòhuài le Dìqiú de huánjìng. Dìqiú shang ②____ shuǐ yuè lái yuè shǎo, hěn duō hé chángnián duànliú, yǒu de dìfang shènzhì ③____ rén hé dòngwù hē de shuǐ yě méiyǒu le. Jíshǐ zhèyàng, dà pī gōngchǎng hái ④____ wūshuǐ páifàng dào hélǐ hé hǎilǐ. Hěn duō héshuǐ shòu ⑤____ wūrǎn, qīngshuǐ biàn ⑥____ le hēishuǐ."
        },
        {
         "id": "2f8ab3a4-9e41-46df-aa66-14ebf168f130",
         "order": 2,
         "zh": "地球上的人口越来越⑦____。为了生存，人类只顾眼前利益，不顾环境受到破坏，拼命地砍伐森林，造成大量水土流失，⑧____大片绿色的土地变成了黄色的沙漠。",
-        "vi": "",
+        "vi": "Dân số trên Trái Đất ngày càng nhiều. Để sinh tồn, con người chỉ quan tâm lợi ích trước mắt, bất chấp môi trường bị phá hoại, ra sức chặt phá rừng, gây ra lượng lớn xói mòn đất và nước, khiến nhiều mảng đất xanh biến thành sa mạc vàng.",
         "source_origin": "textbook_pdf_verified",
-        "check_needed": false
+        "check_needed": false,
+        "pinyin": "Dìqiú shang de rénkǒu yuè lái yuè ⑦____. Wèile shēngcún, rénlèi zhǐ gù yǎnqián lìyì, bù gù huánjìng shòudào pòhuài, pīnmìng de kǎnfá sēnlín, zàochéng dàliàng shuǐtǔ liúshī, ⑧____ dàpiàn lǜsè de tǔdì biànchéng le huángsè de shāmò."
        },
        {
         "id": "7833e9ed-2521-4c8c-ad39-c182e041a103",
         "order": 3,
         "zh": "更糟糕的是越来越严重的空气污染。工厂排放大量的一氧化碳，汽车放⑨____大量有害气体，蓝色的天空也变得很少见⑩____。地球表面的气温逐渐升高，气候不断变暖。如果不改变这种情况，这样下⑪____，地球真的会成为人类难以居住的地方⑫____。",
-        "vi": "",
+        "vi": "Tệ hơn nữa là ô nhiễm không khí ngày càng nghiêm trọng. Nhà máy thải ra lượng lớn khí carbon monoxide, ô tô thải ra lượng lớn khí độc hại, bầu trời xanh cũng trở nên rất hiếm thấy. Nhiệt độ bề mặt Trái Đất dần tăng lên, khí hậu không ngừng ấm lên. Nếu không thay đổi tình trạng này, cứ tiếp tục như vậy, Trái Đất thật sự sẽ trở thành nơi con người khó cư trú.",
         "source_origin": "textbook_pdf_verified",
-        "check_needed": false
+        "check_needed": false,
+        "pinyin": "Gèng zāogāo de shì yuè lái yuè yánzhòng de kōngqì wūrǎn. Gōngchǎng páifàng dàliàng de yīyǎnghuàtàn, qìchē fàng ⑨____ dàliàng yǒuhài qìtǐ, lán sè de tiānkōng yě biàn de hěn shǎo jiàn ⑩____. Dìqiú biǎomiàn de qìwēn zhújiàn shēnggāo, qìhòu bùduàn biàn nuǎn. Rúguǒ bù gǎibiàn zhè zhǒng qíngkuàng, zhèyàng xià ⑪____, Dìqiú zhēn de huì chéngwéi rénlèi nányǐ jūzhù de dìfang ⑫____."
        },
        {
         "id": "476e89fc-9699-4c2e-98de-c5f2812d508b",
         "order": 4,
         "zh": "好在目前，人类已经开始关注并注意保护环境了。",
-        "vi": "",
+        "vi": "May là hiện nay, loài người đã bắt đầu quan tâm và chú ý bảo vệ môi trường.",
         "source_origin": "textbook_pdf_verified",
-        "check_needed": false
+        "check_needed": false,
+        "pinyin": "Hǎo zài mùqián, rénlèi yǐjīng kāishǐ guānzhù bìng zhùyì bǎohù huánjìng le."
        }
       ],
       "supplementary_words": [
@@ -4525,7 +4568,7 @@
         "check_needed": false
        }
       ],
-      "vi": "Đoạn đọc về môi trường Trái Đất bị phá hoại do phát triển kinh tế, ô nhiễm nước, chặt phá rừng, sa mạc hóa, ô nhiễm không khí và biến đổi khí hậu.",
+      "vi": "Đoạn đọc nói về môi trường Trái Đất bị phá hoại do phát triển kinh tế, thiếu nước, ô nhiễm nước, chặt phá rừng, sa mạc hóa, ô nhiễm không khí và biến đổi khí hậu; cuối đoạn chuyển sang ý con người đã bắt đầu chú ý bảo vệ môi trường.",
       "questions": [
        {
         "id": "630c8795-8705-422e-8a5b-5f87f1564df5",
@@ -4847,47 +4890,56 @@
        {
         "speaker": "A",
         "text": "你是不是觉得这篇课文有点儿不可思议？",
-        "vi": "Bạn có thấy bài khóa này hơi khó tin không?"
+        "vi": "Bạn có thấy bài khóa này hơi khó tin không?",
+        "pinyin": "Nǐ shì bu shì juéde zhè piān kèwén yǒudiǎnr bùkěsīyì?"
        },
        {
         "speaker": "B",
         "text": "不觉得。看起来有点儿不可思议，但实际上提出的问题却非常重要。",
-        "vi": "Không. Nhìn thì hơi khó tin, nhưng thực ra vấn đề được nêu ra rất quan trọng."
+        "vi": "Không. Nhìn thì hơi khó tin, nhưng thực ra vấn đề được nêu ra rất quan trọng.",
+        "pinyin": "Bù juéde. Kàn qǐlai yǒudiǎnr bùkěsīyì, dàn shíjìshàng tíchū de wèntí què fēicháng zhòngyào."
        },
        {
         "speaker": "A",
         "text": "是啊，我们应该爱护我们的地球。",
-        "vi": "Đúng vậy, chúng ta nên yêu quý và bảo vệ Trái Đất."
+        "vi": "Đúng vậy, chúng ta nên yêu quý và bảo vệ Trái Đất.",
+        "pinyin": "Shì a, wǒmen yīnggāi àihù wǒmen de Dìqiú."
        },
        {
         "speaker": "B",
         "text": "我觉得人类要更加注意环境问题了。长期以来，人类捕杀动物，砍伐森林，污染了河水和空气。",
-        "vi": "Tôi nghĩ loài người càng phải chú ý hơn đến môi trường. Từ lâu, loài người săn giết động vật, chặt phá rừng, làm ô nhiễm nước sông và không khí."
+        "vi": "Tôi nghĩ loài người càng phải chú ý hơn đến môi trường. Từ lâu, loài người săn giết động vật, chặt phá rừng, làm ô nhiễm nước sông và không khí.",
+        "pinyin": "Wǒ juéde rénlèi yào gèngjiā zhùyì huánjìng wèntí le. Chángqī yǐlái, rénlèi bǔshā dòngwù, kǎnfá sēnlín, wūrǎn le héshuǐ hé kōngqì."
        },
        {
         "speaker": "A",
         "text": "我也觉得环境问题是我们人类面临的最大的问题。要是我们再不重视，地球可真住不下去了。",
-        "vi": "Tôi cũng nghĩ môi trường là vấn đề lớn nhất mà loài người đang đối mặt. Nếu còn không coi trọng, Trái Đất thật sự sẽ không thể sống tiếp được."
+        "vi": "Tôi cũng nghĩ vấn đề môi trường là vấn đề lớn nhất mà loài người chúng ta đang đối mặt. Nếu chúng ta còn không coi trọng, Trái Đất thật sự sẽ không thể sống nổi nữa.",
+        "pinyin": "Wǒ yě juéde huánjìng wèntí shì wǒmen rénlèi miànlín de zuì dà de wèntí. Yàoshi wǒmen zài bù zhòngshì, Dìqiú kě zhēn zhù bu xiàqù le."
        },
        {
         "speaker": "B",
         "text": "动物和植物越来越少，土地逐渐沙漠化。这样下去，真让人为地球的命运担心。",
-        "vi": "Động thực vật ngày càng ít, đất đai dần sa mạc hóa. Cứ như vậy thật khiến người ta lo cho vận mệnh Trái Đất."
+        "vi": "Động thực vật ngày càng ít, đất đai dần sa mạc hóa. Cứ như vậy thật khiến người ta lo cho vận mệnh Trái Đất.",
+        "pinyin": "Dòngwù hé zhíwù yuè lái yuè shǎo, tǔdì zhújiàn shāmòhuà. Zhèyàng xiàqù, zhēn ràng rén wèi Dìqiú de mìngyùn dānxīn."
        },
        {
         "speaker": "A",
         "text": "是，连金星人都关心起地球的环境问题来了，难道我们地球人不应该关心吗？",
-        "vi": "Đúng, ngay cả người sao Kim cũng quan tâm đến môi trường Trái Đất rồi, chẳng lẽ người Trái Đất lại không nên quan tâm sao?"
+        "vi": "Đúng, ngay cả người sao Kim cũng quan tâm đến môi trường Trái Đất rồi, chẳng lẽ người Trái Đất lại không nên quan tâm sao?",
+        "pinyin": "Shì, lián Jīnxīng rén dōu guānxīn qǐ Dìqiú de huánjìng wèntí lái le, nándào wǒmen Dìqiú rén bù yīnggāi guānxīn ma?"
        },
        {
         "speaker": "B",
         "text": "我觉得目前最大的危险是人类还不知道地球正面临危险。",
-        "vi": "Tôi nghĩ nguy hiểm lớn nhất hiện nay là loài người vẫn chưa biết Trái Đất đang đối mặt với nguy hiểm."
+        "vi": "Tôi nghĩ nguy hiểm lớn nhất hiện nay là loài người vẫn chưa biết Trái Đất đang đối mặt với nguy hiểm.",
+        "pinyin": "Wǒ juéde mùqián zuì dà de wēixiǎn shì rénlèi hái bù zhīdào Dìqiú zhèng miànlín wēixiǎn."
        },
        {
         "speaker": "A",
         "text": "因此，应该让更多的人知道保护环境的重要性。从自己做起，从日常生活中的小事做起。",
-        "vi": "Vì vậy, nên để nhiều người biết tầm quan trọng của bảo vệ môi trường. Bắt đầu từ chính mình, từ những việc nhỏ hằng ngày."
+        "vi": "Vì vậy, nên để nhiều người biết tầm quan trọng của bảo vệ môi trường. Bắt đầu từ chính mình, từ những việc nhỏ hằng ngày.",
+        "pinyin": "Yīncǐ, yīnggāi ràng gèng duō de rén zhīdào bǎohù huánjìng de zhòngyàoxìng. Cóng zìjǐ zuò qǐ, cóng rìcháng shēnghuó zhōng de xiǎoshì zuò qǐ."
        }
       ],
       "source_origin": "textbook_pdf_verified",

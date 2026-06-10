@@ -16,7 +16,11 @@
    "answers_checked",
    "pos_detail_added",
    "pinyin_filled_like_lesson_02",
-   "pinyin_crosschecked_pass"
+   "pinyin_crosschecked_pass",
+   "final_content_qa_pass",
+   "translation_checked",
+   "exercise_answers_checked",
+   "pinyin_cleanup_pass"
   ],
   "sections": [
    {
@@ -57,7 +61,7 @@
         "id": "4a807389-3592-4cf4-973f-6589e0118fb2",
         "order": 2,
         "zh": "从去年夏天起，我就忙着联系学校，办各种手续，可是，这一切都是瞒着我父母做的。我是独生女，如果把这件事告诉父母，他们多半不会同意，因此，我只跟朋友和教我汉语的老师商量，把一切手续都办好以后才告诉他们。他们听了，果然不大愿意。爸爸说：“你现在的工作不是挺好吗？”妈妈说：“你不打算结婚啦？”",
-        "vi": "Từ mùa hè năm ngoái, tôi đã bận liên hệ với trường, làm đủ loại thủ tục. Nhưng tất cả những việc này đều được làm trong lúc giấu bố mẹ tôi. Tôi là con gái một, nếu nói chuyện này với bố mẹ, phần lớn khả năng họ sẽ không đồng ý. Vì vậy, tôi chỉ bàn với bạn bè và thầy/cô dạy tiếng Hán của tôi; sau khi làm xong toàn bộ thủ tục mới nói với bố mẹ. Họ nghe xong, quả nhiên không vui lắm. Bố nói: “Công việc hiện nay của con chẳng phải rất tốt sao?” Mẹ nói: “Con không định kết hôn nữa à?”",
+        "vi": "Từ mùa hè năm ngoái, tôi đã bận liên hệ với trường, làm đủ loại thủ tục. Nhưng tất cả những việc này đều được tôi làm trong lúc giấu bố mẹ. Tôi là con gái một; nếu nói chuyện này với bố mẹ, phần lớn khả năng họ sẽ không đồng ý. Vì vậy, tôi chỉ bàn với bạn bè và thầy/cô dạy tiếng Hán của tôi; sau khi làm xong toàn bộ thủ tục mới nói với bố mẹ. Họ nghe xong, quả nhiên không muốn/không tán thành lắm. Bố nói: “Công việc hiện nay của con chẳng phải rất tốt sao?” Mẹ nói: “Con không định kết hôn nữa à?”",
         "grammar_refs": [
          "57b14753-688a-41b6-9e0d-b61dbbf574d7",
          "fa804fff-372b-4874-8571-f54e613d7e07",
@@ -108,7 +112,7 @@
         "id": "5c402bbc-a0e6-434c-a6c7-3c4f86c845fe",
         "order": 4,
         "zh": "妈妈要我到中国以后，每个星期都给她打一次电话。爸爸说：“最好常常跟我们视频聊聊天儿，告诉我们你在中国的一切。”我答应了。临走前，他们给我买了好多东西，拼命地往我的箱子里塞。",
-        "vi": "Mẹ yêu cầu sau khi tôi đến Trung Quốc, mỗi tuần đều gọi điện cho mẹ một lần. Bố nói: “Tốt nhất là thường xuyên gọi video nói chuyện với bố mẹ, kể cho bố mẹ nghe mọi chuyện của con ở Trung Quốc.” Tôi đã đồng ý. Trước lúc đi, họ mua cho tôi rất nhiều đồ, rồi nhét không ngừng vào vali của tôi.",
+        "vi": "Mẹ dặn tôi sau khi đến Trung Quốc, mỗi tuần đều phải gọi điện cho mẹ một lần. Bố nói: “Tốt nhất là thường xuyên gọi video nói chuyện với bố mẹ, kể cho bố mẹ nghe tất cả mọi chuyện của con ở Trung Quốc.” Tôi đã đồng ý. Trước lúc đi, bố mẹ mua cho tôi rất nhiều thứ, cứ nhét hết sức vào trong va-li của tôi.",
         "grammar_refs": ["57b14753-688a-41b6-9e0d-b61dbbf574d7"],
         "vocab_refs": [
          "79358c6f-3427-4c28-98f3-7ef98c7033c3",
@@ -124,7 +128,7 @@
         "id": "babe7f0b-2b53-402f-85af-c5de9b0e676d",
         "order": 5,
         "zh": "爸爸开车把我送到机场。离别时，他远远望着我不停地挥手，妈妈也在擦眼泪。看到父母恋恋不舍的样子，我的眼泪也一下子流了出来。",
-        "vi": "Bố lái xe đưa tôi đến sân bay. Lúc chia tay, bố đứng từ xa nhìn tôi và không ngừng vẫy tay, mẹ cũng đang lau nước mắt. Nhìn thấy dáng vẻ lưu luyến không nỡ rời xa của bố mẹ, nước mắt tôi cũng bỗng trào ra.",
+        "vi": "Bố lái xe đưa tôi đến sân bay. Lúc chia tay, bố từ xa nhìn tôi và không ngừng vẫy tay, mẹ cũng đang lau nước mắt. Nhìn thấy dáng vẻ lưu luyến không nỡ rời xa của bố mẹ, nước mắt tôi cũng lập tức trào ra.",
         "grammar_refs": [],
         "vocab_refs": [
          "55cd807c-eec7-412d-99db-f4e6508b170f",
@@ -175,7 +179,7 @@
         "answer_verified": true,
         "check_needed": false,
         "question_pinyin": "“Wǒ”xiànzài zài nǎ ér？“Wǒ”wèishénme“xīnlǐ yǒu shuō bù chū de gāoxìng”？",
-        "answer_pinyin": "“Wǒ”xiànzài yǐjīng lái dào Zhōngguó xuéxí Hànyǔ le。 Yīnwèi“wǒ”hěn zǎo jiù xīwàng yǒu jīhuì lái Zhōngguó xuéxí Hànyǔ， xiànzài zhè ge yuànwàng zhōngyú shíxiàn le， suǒ yǐ xīnlǐ yǒu shuō bù chū de gāoxìng。"
+        "answer_pinyin": "“Wǒ” xiànzài yǐjīng láidào Zhōngguó xuéxí Hànyǔ le. Yīnwèi “wǒ” hěn zǎo jiù xīwàng yǒu jīhuì lái Zhōngguó xuéxí Hànyǔ, xiànzài zhège yuànwàng zhōngyú shíxiàn le, suǒyǐ xīnlǐ yǒu shuō bù chū de gāoxìng."
        },
        {
         "id": "7fdb60f7-6891-4866-bf25-350271cae5ad",
@@ -185,7 +189,7 @@
         "answer_verified": true,
         "check_needed": false,
         "question_pinyin": "“Wǒ”wèishénme yào lái Zhōngguó？",
-        "answer_pinyin": "Yīnwèi“wǒ”xiànzài jiùshì xiǎng xué Hànyǔ， yě xiǎng dào Zhōngguó zhè ge gǔlǎo ér yòu niánqīng de guójiā qù kànkan， bìng qiě xiǎng dúlì de shēnghuó yì nián。"
+        "answer_pinyin": "Yīnwèi “wǒ” xiànzài jiùshì xiǎng xué Hànyǔ, yě xiǎng dào Zhōngguó zhège gǔlǎo ér yòu niánqīng de guójiā qù kànkan, bìngqiě xiǎng dúlì de shēnghuó yì nián."
        },
        {
         "id": "c24fc454-a91d-45a0-87f9-c1bf900109c4",
@@ -195,7 +199,7 @@
         "answer_verified": true,
         "check_needed": false,
         "question_pinyin": "“Wǒ”bàn liúxué shǒuxù wèishénme yào mánzhe fùmǔ？",
-        "answer_pinyin": "Yīnwèi“wǒ”shì dúshēngnǚ， juéde rúguǒ bǎ chū guó liúxué zhè jiàn shì gàosu fùmǔ， tāmen duōbàn bú huì tóngyì， suǒ yǐ xiān mánzhe fùmǔ bǎ shǒuxù bàn hǎo。"
+        "answer_pinyin": "Yīnwèi “wǒ” shì dúshēngnǚ, juéde rúguǒ bǎ chūguó liúxué zhè jiàn shì gàosu fùmǔ, tāmen duōbàn bú huì tóngyì, suǒyǐ xiān mánzhe fùmǔ bǎ shǒuxù bàn hǎo."
        },
        {
         "id": "37af0d71-19b0-484f-b7d7-9b5e056a92c5",
@@ -204,8 +208,8 @@
         "source_origin": "textbook_answer_checked",
         "answer_verified": true,
         "check_needed": false,
-        "question_pinyin": "Fùmǔ wèishénme bú dà yuànyì“wǒ”dào Zhōngguó lái？ Hòu lái wèishénme yòu tóngyì le？",
-        "answer_pinyin": "Fùmǔ bú dà yuànyì， shì yīnwèi“wǒ”shì dúshēngnǚ， tāmen shěbude， yě dān xīn“wǒ”fàng qì xiànzài búcuò de gōngzuò、 zàn shí bù jiéhūn。 Hòu lái tāmen zhīdào“wǒ”de xìnggé， míng bái juédìng le de shìqing bú huì gǎibiàn， érqiě juéde“wǒ”de xiǎngfǎ shì duì de， suǒ yǐ zhǐ hǎo tóngyì le。"
+        "question_pinyin": "Fùmǔ wèishénme bú dà yuànyì“wǒ”dào Zhōngguó lái？ Hòulái wèishénme yòu tóngyì le？",
+        "answer_pinyin": "Fùmǔ bú dà yuànyì, shì yīnwèi “wǒ” shì dúshēngnǚ, tāmen shěbude, yě dānxīn “wǒ” fàngqì xiànzài búcuò de gōngzuò, zànshí bù jiéhūn. Hòulái tāmen zhīdào “wǒ” de xìnggé, míngbai juédìng le de shìqing bú huì gǎibiàn, érqiě juéde “wǒ” de xiǎngfǎ shì duì de, suǒyǐ zhǐhǎo tóngyì le."
        }
       ]
      }
@@ -3212,7 +3216,7 @@
           "grammar_refs": ["f3302370-f1c2-4d08-99ba-fda75cc4a335"],
           "source_origin": "textbook/generated_mixed",
           "check_needed": false,
-          "pinyin": "Chē huài le， wǒmen zhǐ hǎo zǒu lù huí jiā。"
+          "pinyin": "Chē huài le， wǒmen zhǐhǎo zǒu lù huí jiā。"
          }
         ],
         "notes_vi": [],
@@ -3302,7 +3306,7 @@
           "title": "游子吟",
           "author": "[唐] 孟郊",
           "text": "慈母手中线，\n游子身上衣。\n临行密密缝，\n意恐迟迟归。\n谁言寸草心，\n报得三春晖。",
-          "pinyin": "Cí mǔ shǒu zhōng xiàn,\nYóuzǐ shēn shàng yī.\nLín xíng mì mì féng,\nYì kǒng chí chí guī.\nShuí yán cùn cǎo xīn,\nBào dé sān chūn huī.",
+          "pinyin": "Cí mǔ shǒu zhōng xiàn, Yóuzǐ shēn shàng yī. Lín xíng mì mì féng, Yì kǒng chí chí guī. Shuí yán cùn cǎo xīn, Bào dé sān chūn huī.",
           "source_origin": "textbook",
           "check_needed": false,
           "vi": "Mẹ hiền cầm sợi chỉ trong tay,\nÁo mặc trên thân người con xa nhà.\nTrước lúc con đi, mẹ khâu từng mũi thật dày,\nLòng lo con mãi chậm ngày trở về.\nAi nói tấm lòng nhỏ bé của con cái,\nCó thể báo đáp được ánh xuân ba tháng?"
@@ -3432,7 +3436,7 @@
         "text": "临上飞机",
         "source_origin": "textbook",
         "check_needed": false,
-        "pinyin": "Lín shàng fēi jī"
+        "pinyin": "Lín shàng fēijī"
        },
        {
         "id": "e0b901fe-d32e-42d4-90cf-cf84348b418b",
@@ -3607,8 +3611,8 @@
           "source_origin": "textbook",
           "answer_verified": true,
           "check_needed": false,
-          "pinyin": "Wǒ zhīdào， rúguǒ bǎ zhè jiàn shì gàosu fùmǔ de huà， tāmen duōbàn bú huì tóngyì， suǒ yǐ______mánzhe tāmen。",
-          "answer_pinyin": "Zhǐ hǎo"
+          "pinyin": "Wǒ zhīdào， rúguǒ bǎ zhè jiàn shì gàosu fùmǔ de huà， tāmen duōbàn bú huì tóngyì， suǒyǐ______mánzhe tāmen。",
+          "answer_pinyin": "Zhǐhǎo"
          },
          {
           "id": "a29b17cf-2ac9-46c2-abab-aaf6f360f768",
@@ -3618,7 +3622,7 @@
           "source_origin": "textbook",
           "answer_verified": true,
           "check_needed": false,
-          "pinyin": "Gāng dào Zhōngguó de shíhou， yǒu hǎo duō de fāng bù xíguàn， dàn shì xiànzài yào líkāi le， hái zhēn yǒu diǎn ér______。",
+          "pinyin": "Gāng dào Zhōngguó de shíhou， yǒu hǎo duō dìfang bù xíguàn， dànshì xiànzài yào líkāi le， hái zhēn yǒu diǎn ér______。",
           "answer_pinyin": "Liànliàn-bùshě"
          },
          {
@@ -3680,7 +3684,7 @@
           "source_origin": "textbook",
           "answer_verified": true,
           "check_needed": false,
-          "pinyin": "Wǒ bǎ yíqiè shǒuxù bàn______yǐhòu， cái gàosu tā wǒ yào chū guó， tā tīng le yǐhòu yǒu diǎn ér bú dà gāoxìng。",
+          "pinyin": "Wǒ bǎ yíqiè shǒuxù bàn______yǐhòu， cái gàosu tā wǒ yào chūguó， tā tīng le yǐhòu yǒu diǎn ér bú dà gāoxìng。",
           "answer_pinyin": "Hǎo"
          },
          {
@@ -3837,7 +3841,7 @@
           "answer_verified": true,
           "check_needed": false,
           "choices": ["打算", "考虑"],
-          "pinyin": "A： nǐ______bù______qù yún nán？ Nǐ yào shì xiǎng qù， zán men yìqǐ qù， zěnme yàng？ B： ràng wǒ______yī xià ér， ránhòu zài gàosu nǐ， hǎo ma？",
+          "pinyin": "A： nǐ______bù______qù yún nán？ Nǐ yào shì xiǎng qù， zán men yìqǐ qù， zěnmeyàng？ B： ràng wǒ______yī xià ér， ránhòu zài gàosu nǐ， hǎo ma？",
           "answer_pinyin": "Dǎsuàn； dǎsuàn； kǎolǜ"
          },
          {
@@ -4042,7 +4046,7 @@
         "source_origin": "generated_answer_checked",
         "answer_note_vi": "Đáp án gợi ý; bài mở có thể có nhiều cách đúng.",
         "pinyin": "Nà tiān， wǒ mí lù le，______。",
-        "answer_pinyin": "Zhǐ hǎo wèn lù。"
+        "answer_pinyin": "Zhǐhǎo wèn lù。"
        },
        {
         "id": "dc7f5f06-95a1-4158-98d8-b293729d6a13",
@@ -4172,7 +4176,7 @@
          {
           "label": "B",
           "text": "后来离开了家乡，我仍然经常想起家乡那美丽的星空。",
-          "pinyin": "Hòu lái lí kāi le jiāxiāng， wǒ réng rán jīng cháng xiǎng qǐ jiāxiāng nà měilì de xīngkōng。"
+          "pinyin": "Hòulái lí kāi le jiāxiāng， wǒ réng rán jīng cháng xiǎng qǐ jiāxiāng nà měilì de xīngkōng。"
          },
          {
           "label": "C",
@@ -4220,7 +4224,8 @@
         "answer_verified": true,
         "check_needed": false,
         "pinyin": "Zhè jiàn shì nǐ duì tā bù gāi mán。",
-        "answer_pinyin": "Zhè jiàn shì nǐ bù gāi mánzhe tā。"
+        "answer_pinyin": "Zhè jiàn shì nǐ bù gāi mánzhe tā。",
+        "explanation_vi": "瞒 là động từ cần tân ngữ trực tiếp; trong câu này dùng 瞒着她 tự nhiên hơn, không nói 对她瞒."
        },
        {
         "id": "3fd78baa-272c-4e07-8ee2-5399c9977a99",
@@ -4231,7 +4236,8 @@
         "answer_verified": true,
         "check_needed": false,
         "pinyin": "Wǒ zhōngyú kuài dào Zhōngguó le。",
-        "answer_pinyin": "Wǒ zhōngyú dào Zhōngguó le。"
+        "answer_pinyin": "Wǒ zhōngyú dào Zhōngguó le。",
+        "explanation_vi": "终于 nhấn kết quả cuối cùng đã đạt được; 快到 chỉ sắp tới, mâu thuẫn với 终于 trong câu này."
        },
        {
         "id": "69f5ddfa-be8d-4292-b18f-6136daaa613f",
@@ -4242,7 +4248,8 @@
         "answer_verified": true,
         "check_needed": false,
         "pinyin": "Nǐ kěyǐ bǎ wǒ zuò nǐ de péngyou。",
-        "answer_pinyin": "Nǐ kěyǐ bǎ wǒ dāng zuò nǐ de péngyou。"
+        "answer_pinyin": "Nǐ kěyǐ bǎ wǒ dāng zuò nǐ de péngyou。",
+        "explanation_vi": "把……作…… không tự nhiên ở đây; dùng 把……当作…… = coi ai/cái gì là...."
        },
        {
         "id": "9c211f34-08a0-4478-b188-fe6a0e98ea41",
@@ -4253,7 +4260,8 @@
         "answer_verified": true,
         "check_needed": false,
         "pinyin": "Kàn dào zhè zhǒng qíngkuàng， wǒ de yǎn lǐ liú le yǎnlèi。",
-        "answer_pinyin": "Kàn dào zhè zhǒng qíngkuàng， wǒ de yǎnlèi yíxiàzi liú le chūlái。"
+        "answer_pinyin": "Kàn dào zhè zhǒng qíngkuàng， wǒ de yǎnlèi yíxiàzi liú le chūlái。",
+        "explanation_vi": "Chủ ngữ tự nhiên là 眼泪; nói 眼泪流出来, không nói 我的眼里流了眼泪 trong văn cảnh này."
        },
        {
         "id": "c8ec5644-8adf-46de-b2ff-34b3088ba324",
@@ -4263,8 +4271,9 @@
         "source_origin": "generated_answer_checked",
         "answer_verified": true,
         "check_needed": false,
-        "pinyin": "Yīnwèi mǎi piào tài duō rén， wǒmen méi yǒu mǎi wò pù， zhǐ hǎo mǎi le yìng zuò。",
-        "answer_pinyin": "Yīnwèi mǎi piào de rén tài duō， wǒmen méi yǒu mǎi dào wò pù， zhǐ hǎo mǎi le yìng zuò。"
+        "pinyin": "Yīnwèi mǎi piào tài duō rén， wǒmen méi yǒu mǎi wò pù， zhǐhǎo mǎi le yìng zuò。",
+        "answer_pinyin": "Yīnwèi mǎi piào de rén tài duō， wǒmen méi yǒu mǎi dào wò pù， zhǐhǎo mǎi le yìng zuò。",
+        "explanation_vi": "要 nói “người mua vé quá nhiều”: 买票的人太多. 没有买到 nhấn không mua được vé giường nằm."
        },
        {
         "id": "6db3da52-2247-4991-a1d3-225528d56fff",
@@ -4274,8 +4283,9 @@
         "source_origin": "generated_answer_checked",
         "answer_verified": true,
         "check_needed": false,
-        "pinyin": "Wǒ fàng xíng lǐ zài fēi jīchǎng de dà tīng lǐ。",
-        "answer_pinyin": "Wǒ bǎ xíng lǐ fàng zài fēi jīchǎng de dà tīng lǐ。"
+        "pinyin": "Wǒ fàng xíng lǐ zài fēijīchǎng de dà tīng lǐ。",
+        "answer_pinyin": "Wǒ bǎ xíng lǐ fàng zài fēijīchǎng de dà tīng lǐ。",
+        "explanation_vi": "放 + đồ vật + 在 + nơi chốn; với tân ngữ xác định 行李, dùng 把行李放在…… tự nhiên hơn."
        },
        {
         "id": "5b7be530-a6ca-4d5c-bfbd-12b682bde9e4",
@@ -4286,7 +4296,8 @@
         "answer_verified": true,
         "check_needed": false,
         "pinyin": "Tā jiéhūn le yí ge yǒu qián rén。",
-        "answer_pinyin": "Tā hé yí ge yǒu qián rén jiéhūn le。"
+        "answer_pinyin": "Tā hé yí ge yǒu qián rén jiéhūn le。",
+        "explanation_vi": "结婚 không trực tiếp mang tân ngữ người; phải dùng 和/跟 + người + 结婚."
        },
        {
         "id": "04d0444c-2ff8-4ab0-a3a6-82a956b50e6b",
@@ -4297,7 +4308,8 @@
         "answer_verified": true,
         "check_needed": false,
         "pinyin": "Wǒ cóng xiǎo jiùshì hē māma de niú nǎi zhǎng dà de。",
-        "answer_pinyin": "Wǒ cóng xiǎo jiùshì hē māma de nǎi zhǎng dà de。"
+        "answer_pinyin": "Wǒ cóng xiǎo jiùshì hē māma de nǎi zhǎng dà de。",
+        "explanation_vi": "牛奶 là sữa bò/sữa uống; sữa mẹ nói 妈妈的奶 hoặc 母乳. Câu này dùng 妈妈的奶 tự nhiên hơn."
        }
       ],
       "rendering": {
@@ -4356,7 +4368,7 @@
           "answer_verified": true,
           "check_needed": false,
           "pinyin": "Kàn tā nà liànliàn-bùshě de yàngzi， wǒ de yǎnlèi yě yíxiàzi liú le chūlái。",
-          "answer_pinyin": "Líbié shí kàn dào duì fāng shěbude lí kāi， zìjǐ yě rěn bu zhù liú lèi。"
+          "answer_pinyin": "Líbié shí kàn dào duìfang shěbude lí kāi， zìjǐ yě rěn bù zhù liú lèi。"
          }
         ]
        },
@@ -4374,8 +4386,8 @@
           "answer_verified": true,
           "check_needed": false,
           "source_origin": "generated_answer_checked",
-          "pinyin": "Péngyou qǐng nǐ bāng bāng tā， nǐ méi yǒu shí jiān， dàn kàn dào péngyou zhe jí de yàngzi， nǐ háishi dāying le。",
-          "answer_pinyin": "Wǒ méi yǒu shí jiān， kěshì kàn dào tā zhe jí de yàngzi， zhǐ hǎo dāying le。"
+          "pinyin": "Péngyou qǐng nǐ bāng bāng tā， nǐ méi yǒu shíjiān， dàn kàn dào péngyou zháojí de yàngzi， nǐ háishi dāying le。",
+          "answer_pinyin": "Wǒ méi yǒu shíjiān， kěshì kàn dào tā zháojí de yàngzi， zhǐhǎo dāying le。"
          },
          {
           "id": "96bf9664-bf63-4d17-9d73-6402c58ab07c",
@@ -4398,8 +4410,8 @@
           "answer_verified": true,
           "check_needed": false,
           "source_origin": "generated_answer_checked",
-          "pinyin": "Gāng lái Zhōngguó， nǐ juéde bù xíguàn， tè bié xiǎng jiā。",
-          "answer_pinyin": "Gāng lái Zhōngguó de shíhou， wǒ hěn bù xíguàn， tè bié xiǎngniàn jiā rén。"
+          "pinyin": "Gāng lái Zhōngguó， nǐ juéde bù xíguàn， tèbié xiǎng jiā。",
+          "answer_pinyin": "Gāng lái Zhōngguó de shíhou， wǒ hěn bù xíguàn， tèbié xiǎngniàn jiā rén。"
          }
         ]
        }
@@ -4576,7 +4588,7 @@
         "zh": "半年前，我临来中国时，朋友们一起①________我过了一次生日。当时，最让我难忘的是，大家送给我一个戒指，上面刻②________一句话：“我们都爱你。”看到这句话，我的眼泪一下子就流了③________。想到就要和朋友们分别了，我真有点儿恋恋不舍。但是，来中国留学的手续已经办好了，我只好与朋友分别，坐④________了飞往中国的飞机。",
         "source_origin": "textbook",
         "check_needed": false,
-        "pinyin": "Bàn nián qián， wǒ lín lái Zhōngguó shí， péngyou men yìqǐ① ______ wǒ guò le yí cì shēngrì。 Dāngshí， zuì ràng wǒ nánwàng de shì， dàjiā sòng gěi wǒ yí ge jièzhi， shàngmiàn kè② ______ yí jù huà：“wǒmen dōu ài nǐ。”Kàn dào zhè jù huà， wǒ de yǎnlèi yíxiàzi jiù liú le③ ______。 Xiǎng dào jiù yào hé péngyou men fēnbié le， wǒ zhēn yǒu diǎn ér liànliàn-bùshě。 Dàn shì， lái Zhōngguó liúxué de shǒuxù yǐjīng bàn hǎo le， wǒ zhǐ hǎo yǔ péngyou fēnbié， zuò④ ______ le fēi wǎng Zhōngguó de fēi jī。"
+        "pinyin": "Bàn nián qián， wǒ lín lái Zhōngguó shí， péngyou men yìqǐ① ______ wǒ guò le yí cì shēngrì。 Dāngshí， zuì ràng wǒ nánwàng de shì， dàjiā sòng gěi wǒ yí ge jièzhi， shàngmiàn kè② ______ yí jù huà：“wǒmen dōu ài nǐ。”Kàn dào zhè jù huà， wǒ de yǎnlèi yíxiàzi jiù liú le③ ______。 Xiǎng dào jiù yào hé péngyou men fēnbié le， wǒ zhēn yǒu diǎn ér liànliàn-bùshě。 Dànshì， lái Zhōngguó liúxué de shǒuxù yǐjīng bàn hǎo le， wǒ zhǐhǎo yǔ péngyou fēnbié， zuò④ ______ le fēiwǎng Zhōngguó de fēijī。"
        },
        {
         "id": "9bf6f21e-c30f-4adb-94c3-35c3b2e1b12a",
@@ -4584,7 +4596,7 @@
         "zh": "一个人来到异国他乡，⑤________都是陌生的，一切都感到不习惯。但是到中国不久，我就认识了不少新朋友。可以说，我能一直坚持学习到现在，除了国内的朋友支持我、帮助我、鼓励我以外，更重要的是因为有了这些新朋友。⑥________没有她们，我在中国的生活会是非常孤独和寂寞的。",
         "source_origin": "textbook",
         "check_needed": false,
-        "pinyin": "Yí ge rén lái dào yìguó tāxiāng，⑤ ______ dōu shì mòshēng de， yíqiè dōu gǎndào bù xíguàn。 Dàn shì dào Zhōngguó bù jiǔ， wǒ jiù rènshi le bù shǎo xīn péngyou。 Kěyǐ shuō， wǒ néng yìzhí jiānchí xuéxí dào xiànzài， chúle guónèi de péngyou zhīchí wǒ、 bāngzhù wǒ、 gǔlì wǒ yǐwài， gèng zhòng yào de shì yīnwèi yǒu le zhè xiē xīn péngyou。⑥ ______ Méi yǒu tāmen， wǒ zài Zhōngguó de shēnghuó huì shì fēi cháng gūdú hé jìmò de。"
+        "pinyin": "Yí ge rén lái dào yìguó tāxiāng，⑤ ______ dōu shì mòshēng de， yíqiè dōu gǎndào bù xíguàn。 Dànshì dào Zhōngguó bùjiǔ， wǒ jiù rènshi le bù shǎo xīn péngyou。 Kěyǐ shuō， wǒ néng yìzhí jiānchí xuéxí dào xiànzài， chúle guónèi de péngyou zhīchí wǒ、 bāngzhù wǒ、 gǔlì wǒ yǐwài， gèng zhòng yào de shì yīnwèi yǒu le zhè xiē xīn péngyou。⑥ ______ Méi yǒu tāmen， wǒ zài Zhōngguó de shēnghuó huì shì fēi cháng gūdú hé jìmò de。"
        },
        {
         "id": "2aed955a-1c84-4a71-a100-eb50315cb0a3",
@@ -4592,7 +4604,7 @@
         "zh": "刚到中国一个月，我⑦________生病住进了医院。在医院里，我感到非常寂寞，十分后悔到中国来。正在我感到非常孤独和寂寞时，我遇到了一位热心的中国大学生。⑧________与我同住一个病房，每天都邀请我一起下楼去吃饭、散步。我觉得心情一下子好多了。晚上，有时医院里还组织联欢会，每次大家都邀请我唱一支我们国家的歌。虽然我唱得不太好，但是大家听了都给我鼓掌，让我很感动。在病房里，这位朋友还教我学汉语，成了我的辅导老师。⑨________她的帮助下，我的功课并没有因为住院而落下。",
         "source_origin": "textbook",
         "check_needed": false,
-        "pinyin": "Gāng dào Zhōngguó yí ge yuè， wǒ⑦ ______ shēng bìng zhù jìn le yīyuàn。 Zài yīyuàn lǐ， wǒ gǎndào fēi cháng jìmò， shí fēn hòuhuǐ dào Zhōngguó lái。 Zhèngzài wǒ gǎndào fēi cháng gūdú hé jìmò shí， wǒ yù dào le yí wèi rèxīn de Zhōngguó dàxuéshēng。⑧ ______ Yǔ wǒ tóng zhù yí ge bìng fáng， měitiān dōu yāoqǐng wǒ yìqǐ xià lóu qù chī fàn、 sàn bù。 Wǒ juéde xīn qíng yíxiàzi hǎo duō le。 Wǎn shàng， yǒu shí yīyuàn lǐ hái zǔ zhī lián huān huì， měi cì dàjiā dōu yāoqǐng wǒ chàng yī zhī wǒmen guójiā de gē。 Suī rán wǒ chàng dé bú tài hǎo， dàn shì dàjiā tīng le dōu gěi wǒ gǔ zhǎng， ràng wǒ hěn gǎndòng。 Zài bìng fáng lǐ， zhè wèi péngyou hái jiāo wǒ xué Hànyǔ， chéng le wǒ de fǔdǎo lǎoshī。⑨ ______ Tā de bāngzhù xià， wǒ de gōng kè bìng méi yǒu yīnwèi zhù yuàn ér là xià。"
+        "pinyin": "Gāng dào Zhōngguó yí ge yuè， wǒ⑦ ______ shēngbìng zhù jìn le yīyuàn。 Zài yīyuàn lǐ， wǒ gǎndào fēi cháng jìmò， shí fēn hòuhuǐ dào Zhōngguó lái。 Zhèngzài wǒ gǎndào fēi cháng gūdú hé jìmò shí， wǒ yù dào le yí wèi rèxīn de Zhōngguó dàxuéshēng。⑧ ______ Yǔ wǒ tóng zhù yí ge bìngfáng， měitiān dōu yāoqǐng wǒ yìqǐ xià lóu qù chī fàn、 sàn bù。 Wǒ juéde xīnqíng yíxiàzi hǎo duō le。 Wǎn shàng， yǒu shí yīyuàn lǐ hái zǔ zhī liánhuānhuì， měi cì dàjiā dōu yāoqǐng wǒ chàng yī zhī wǒmen guójiā de gē。 Suī rán wǒ chàng de bú tài hǎo， dànshì dàjiā tīng le dōu gěi wǒ gǔ zhǎng， ràng wǒ hěn gǎndòng。 Zài bìngfáng lǐ， zhè wèi péngyou hái jiāo wǒ xué Hànyǔ， chéng le wǒ de fǔdǎo lǎoshī。⑨ ______ Tā de bāngzhù xià， wǒ de gōngkè bìng méi yǒu yīnwèi zhùyuàn ér là xià。"
        },
        {
         "id": "4afd733e-6faf-4d2e-a05c-d627d5eec1ef",
@@ -4600,7 +4612,7 @@
         "zh": "出院后，朋友还邀请我到她家去玩儿，她的父母像对自己的女儿一样对待我，使我感到就像回到了自己家一样。认识了朋友这一家人，⑩________我对中国、对中国人有了更多的了解。",
         "source_origin": "textbook",
         "check_needed": false,
-        "pinyin": "Chū yuàn hòu， péngyou hái yāoqǐng wǒ dào tā jiā qù wánr， tā de fùmǔ xiàng duì zìjǐ de nǚ'ér yíyàng duìdài wǒ， shǐ wǒ gǎndào jiù xiàng huí dào le zìjǐ jiā yíyàng。 Rènshi le péngyou zhè yì jiā rén，⑩ ______ wǒ duì Zhōngguó、 duì Zhōngguó rén yǒu le gèng duō de liǎojiě。"
+        "pinyin": "Chūyuàn hòu， péngyou hái yāoqǐng wǒ dào tā jiā qù wánr， tā de fùmǔ xiàng duì zìjǐ de nǚ'ér yíyàng duìdài wǒ， shǐ wǒ gǎndào jiù xiàng huí dào le zìjǐ jiā yíyàng。 Rènshi le péngyou zhè yì jiā rén，⑩ ______ wǒ duì Zhōngguó、 duì Zhōngguó rén yǒu le gèng duō de liǎojiě。"
        }
       ],
       "blanks": [
@@ -5020,36 +5032,36 @@
       ],
       "paragraphs": [
        {
-        "id": "d2a4cf8b-55cd-4904-9fed-3141da682b19",
+        "id": "b7aa77cc-e97b-4721-a0d3-6c56ce508a53",
         "order": 1,
         "zh": "半年前，我临来中国时，朋友们一起①________我过了一次生日。当时，最让我难忘的是，大家送给我一个戒指，上面刻②________一句话：“我们都爱你。”看到这句话，我的眼泪一下子就流了③________。想到就要和朋友们分别了，我真有点儿恋恋不舍。但是，来中国留学的手续已经办好了，我只好与朋友分别，坐④________了飞往中国的飞机。",
         "source_origin": "textbook",
         "check_needed": false,
-        "pinyin": "Bàn nián qián， wǒ lín lái Zhōngguó shí， péngyou men yìqǐ① ______ wǒ guò le yí cì shēngrì。 Dāngshí， zuì ràng wǒ nánwàng de shì， dàjiā sòng gěi wǒ yí ge jièzhi， shàngmiàn kè② ______ yí jù huà：“wǒmen dōu ài nǐ。”Kàn dào zhè jù huà， wǒ de yǎnlèi yíxiàzi jiù liú le③ ______。 Xiǎng dào jiù yào hé péngyou men fēnbié le， wǒ zhēn yǒu diǎn ér liànliàn-bùshě。 Dàn shì， lái Zhōngguó liúxué de shǒuxù yǐjīng bàn hǎo le， wǒ zhǐ hǎo yǔ péngyou fēnbié， zuò④ ______ le fēi wǎng Zhōngguó de fēi jī。"
+        "pinyin": "Bàn nián qián， wǒ lín lái Zhōngguó shí， péngyou men yìqǐ① ______ wǒ guò le yí cì shēngrì。 Dāngshí， zuì ràng wǒ nánwàng de shì， dàjiā sòng gěi wǒ yí ge jièzhi， shàngmiàn kè② ______ yí jù huà：“wǒmen dōu ài nǐ。”Kàn dào zhè jù huà， wǒ de yǎnlèi yíxiàzi jiù liú le③ ______。 Xiǎng dào jiù yào hé péngyou men fēnbié le， wǒ zhēn yǒu diǎn ér liànliàn-bùshě。 Dànshì， lái Zhōngguó liúxué de shǒuxù yǐjīng bàn hǎo le， wǒ zhǐhǎo yǔ péngyou fēnbié， zuò④ ______ le fēiwǎng Zhōngguó de fēijī。"
        },
        {
-        "id": "a6b1119e-769b-4444-9eee-c4a26d7f6af3",
+        "id": "9bf6f21e-c30f-4adb-94c3-35c3b2e1b12a",
         "order": 2,
         "zh": "一个人来到异国他乡，⑤________都是陌生的，一切都感到不习惯。但是到中国不久，我就认识了不少新朋友。可以说，我能一直坚持学习到现在，除了国内的朋友支持我、帮助我、鼓励我以外，更重要的是因为有了这些新朋友。⑥________没有她们，我在中国的生活会是非常孤独和寂寞的。",
         "source_origin": "textbook",
         "check_needed": false,
-        "pinyin": "Yí ge rén lái dào yìguó tāxiāng，⑤ ______ dōu shì mòshēng de， yíqiè dōu gǎndào bù xíguàn。 Dàn shì dào Zhōngguó bù jiǔ， wǒ jiù rènshi le bù shǎo xīn péngyou。 Kěyǐ shuō， wǒ néng yìzhí jiānchí xuéxí dào xiànzài， chúle guónèi de péngyou zhīchí wǒ、 bāngzhù wǒ、 gǔlì wǒ yǐwài， gèng zhòng yào de shì yīnwèi yǒu le zhè xiē xīn péngyou。⑥ ______ Méi yǒu tāmen， wǒ zài Zhōngguó de shēnghuó huì shì fēi cháng gūdú hé jìmò de。"
+        "pinyin": "Yí ge rén lái dào yìguó tāxiāng，⑤ ______ dōu shì mòshēng de， yíqiè dōu gǎndào bù xíguàn。 Dànshì dào Zhōngguó bùjiǔ， wǒ jiù rènshi le bù shǎo xīn péngyou。 Kěyǐ shuō， wǒ néng yìzhí jiānchí xuéxí dào xiànzài， chúle guónèi de péngyou zhīchí wǒ、 bāngzhù wǒ、 gǔlì wǒ yǐwài， gèng zhòng yào de shì yīnwèi yǒu le zhè xiē xīn péngyou。⑥ ______ Méi yǒu tāmen， wǒ zài Zhōngguó de shēnghuó huì shì fēi cháng gūdú hé jìmò de。"
        },
        {
-        "id": "ce8bdbc9-b498-418a-ab2c-e16111228a35",
+        "id": "2aed955a-1c84-4a71-a100-eb50315cb0a3",
         "order": 3,
         "zh": "刚到中国一个月，我⑦________生病住进了医院。在医院里，我感到非常寂寞，十分后悔到中国来。正在我感到非常孤独和寂寞时，我遇到了一位热心的中国大学生。⑧________与我同住一个病房，每天都邀请我一起下楼去吃饭、散步。我觉得心情一下子好多了。晚上，有时医院里还组织联欢会，每次大家都邀请我唱一支我们国家的歌。虽然我唱得不太好，但是大家听了都给我鼓掌，让我很感动。在病房里，这位朋友还教我学汉语，成了我的辅导老师。⑨________她的帮助下，我的功课并没有因为住院而落下。",
         "source_origin": "textbook",
         "check_needed": false,
-        "pinyin": "Gāng dào Zhōngguó yí ge yuè， wǒ⑦ ______ shēng bìng zhù jìn le yīyuàn。 Zài yīyuàn lǐ， wǒ gǎndào fēi cháng jìmò， shí fēn hòuhuǐ dào Zhōngguó lái。 Zhèngzài wǒ gǎndào fēi cháng gūdú hé jìmò shí， wǒ yù dào le yí wèi rèxīn de Zhōngguó dàxuéshēng。⑧ ______ Yǔ wǒ tóng zhù yí ge bìng fáng， měitiān dōu yāoqǐng wǒ yìqǐ xià lóu qù chī fàn、 sàn bù。 Wǒ juéde xīn qíng yíxiàzi hǎo duō le。 Wǎn shàng， yǒu shí yīyuàn lǐ hái zǔ zhī lián huān huì， měi cì dàjiā dōu yāoqǐng wǒ chàng yī zhī wǒmen guójiā de gē。 Suī rán wǒ chàng dé bú tài hǎo， dàn shì dàjiā tīng le dōu gěi wǒ gǔ zhǎng， ràng wǒ hěn gǎndòng。 Zài bìng fáng lǐ， zhè wèi péngyou hái jiāo wǒ xué Hànyǔ， chéng le wǒ de fǔdǎo lǎoshī。⑨ ______ Tā de bāngzhù xià， wǒ de gōng kè bìng méi yǒu yīnwèi zhù yuàn ér là xià。"
+        "pinyin": "Gāng dào Zhōngguó yí ge yuè， wǒ⑦ ______ shēngbìng zhù jìn le yīyuàn。 Zài yīyuàn lǐ， wǒ gǎndào fēi cháng jìmò， shí fēn hòuhuǐ dào Zhōngguó lái。 Zhèngzài wǒ gǎndào fēi cháng gūdú hé jìmò shí， wǒ yù dào le yí wèi rèxīn de Zhōngguó dàxuéshēng。⑧ ______ Yǔ wǒ tóng zhù yí ge bìngfáng， měitiān dōu yāoqǐng wǒ yìqǐ xià lóu qù chī fàn、 sàn bù。 Wǒ juéde xīnqíng yíxiàzi hǎo duō le。 Wǎn shàng， yǒu shí yīyuàn lǐ hái zǔ zhī liánhuānhuì， měi cì dàjiā dōu yāoqǐng wǒ chàng yī zhī wǒmen guójiā de gē。 Suī rán wǒ chàng de bú tài hǎo， dànshì dàjiā tīng le dōu gěi wǒ gǔ zhǎng， ràng wǒ hěn gǎndòng。 Zài bìngfáng lǐ， zhè wèi péngyou hái jiāo wǒ xué Hànyǔ， chéng le wǒ de fǔdǎo lǎoshī。⑨ ______ Tā de bāngzhù xià， wǒ de gōngkè bìng méi yǒu yīnwèi zhùyuàn ér là xià。"
        },
        {
-        "id": "b3e5d57c-8b64-4c60-b5f0-3976cd13fef0",
+        "id": "4afd733e-6faf-4d2e-a05c-d627d5eec1ef",
         "order": 4,
         "zh": "出院后，朋友还邀请我到她家去玩儿，她的父母像对自己的女儿一样对待我，使我感到就像回到了自己家一样。认识了朋友这一家人，⑩________我对中国、对中国人有了更多的了解。",
         "source_origin": "textbook",
         "check_needed": false,
-        "pinyin": "Chū yuàn hòu， péngyou hái yāoqǐng wǒ dào tā jiā qù wánr， tā de fùmǔ xiàng duì zìjǐ de nǚ'ér yíyàng duìdài wǒ， shǐ wǒ gǎndào jiù xiàng huí dào le zìjǐ jiā yíyàng。 Rènshi le péngyou zhè yì jiā rén，⑩ ______ wǒ duì Zhōngguó、 duì Zhōngguó rén yǒu le gèng duō de liǎojiě。"
+        "pinyin": "Chūyuàn hòu， péngyou hái yāoqǐng wǒ dào tā jiā qù wánr， tā de fùmǔ xiàng duì zìjǐ de nǚ'ér yíyàng duìdài wǒ， shǐ wǒ gǎndào jiù xiàng huí dào le zìjǐ jiā yíyàng。 Rènshi le péngyou zhè yì jiā rén，⑩ ______ wǒ duì Zhōngguó、 duì Zhōngguó rén yǒu le gèng duō de liǎojiě。"
        }
       ],
       "blanks": [
@@ -5464,7 +5476,31 @@
    "primary_content_missing_pinyin_count": 0,
    "primary_content_missing_pinyin_samples": [],
    "pinyin_generation_note_vi": "Đã thêm pinyin cho các trường hiển thị chính theo style Bài 2. Các câu mở/đáp án bài tập dạng mở vẫn giữ answer gốc và thêm answer_pinyin để không phá cấu trúc.",
-   "check_needed": false
+   "check_needed": false,
+   "final_content_qa_pass": true,
+   "base_uploaded_file_checked": "Văn bản đã dán (1).txt",
+   "pdf_checked": true,
+   "pdf_source": "Hanhu Jiaocheng 3-1.pdf, Lesson 1 pages 1-17",
+   "web_text_crosschecked": true,
+   "structure_policy": "Kept existing lesson sections and item structure; content fields were corrected/filled.",
+   "main_text_translation_checked": true,
+   "exercise_answers_checked": true,
+   "pinyin_checked_and_cleaned": true,
+   "remaining_check_needed_count": 0,
+   "vocab_count": 68,
+   "exercise_count": 10,
+   "reading_blank_answers": [
+    "给",
+    "着",
+    "出来",
+    "上",
+    "一切",
+    "如果",
+    "就",
+    "她",
+    "在",
+    "使"
+   ]
   }
  }
 }

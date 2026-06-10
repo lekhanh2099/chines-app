@@ -16,7 +16,7 @@
   ],
   "sections": [
    {
-    "id": "section_01_text",
+    "id": "a6c0d522-99be-4f36-881c-b9b2c6beeb85",
     "type": "text",
     "order": 1,
     "title": "课文",
@@ -25,7 +25,7 @@
     "check_needed": false,
     "blocks": [
      {
-      "id": "text_01",
+      "id": "e155d5ea-f89d-45f0-ab8d-094ce9e719f0",
       "type": "text_narrative",
       "order": 1,
       "title": "网络学校",
@@ -35,11 +35,11 @@
       "lines": [],
       "paragraphs": [
        {
-        "id": "p001",
+        "id": "43338a2c-2044-419e-9fdd-ed1739757a8d",
         "order": 1,
         "zh": "我是新时代网络学校的教师。每天早晨，当人们都坐汽车、挤地铁去上班、上学时，我只需在家里打开电脑就开始工作了。",
         "pinyin": "Wǒ shì Xīn Shídài Wǎngluò Xuéxiào de jiàoshī. Měitiān zǎochen, dāng rénmen dōu zuò qìchē, jǐ dìtiě qù shàngbān, shàngxué shí, wǒ zhǐxū zài jiālǐ dǎkāi diànnǎo jiù kāishǐ gōngzuò le.",
-        "vi": "Tôi là giáo viên của trường học trực tuyến Thời Đại Mới. Mỗi sáng, khi mọi người đều đi xe buýt, chen tàu điện ngầm để đi làm, đi học, tôi chỉ cần ở nhà mở máy tính là bắt đầu làm việc.",
+        "vi": "Tôi là giáo viên của trường học trực tuyến Thời Đại Mới. Mỗi sáng, khi mọi người đều đi xe ô tô, chen tàu điện ngầm để đi làm, đi học, tôi chỉ cần ở nhà mở máy tính là bắt đầu làm việc.",
         "audio_key": "",
         "vocab_refs": [],
         "grammar_refs": [],
@@ -47,11 +47,11 @@
         "check_needed": false
        },
        {
-        "id": "p002",
+        "id": "4a807389-3592-4cf4-973f-6589e0118fb2",
         "order": 2,
         "zh": "我把电脑接到“新时代教学网站”，从屏幕上查到新一天的教学安排，还收到许多电子邮件，其中有教务主任发来的教学要求，有国内外同行发来的最新教学信息和要与我讨论的有关问题，还有学生交来的作业……",
         "pinyin": "Wǒ bǎ diànnǎo jiē dào “Xīn Shídài Jiàoxué Wǎngzhàn”, cóng píngmù shang chá dào xīn yì tiān de jiàoxué ānpái, hái shōu dào xǔduō diànzǐ yóujiàn, qízhōng yǒu jiàowù zhǔrèn fā lái de jiàoxué yāoqiú, yǒu guónèi-wài tóngháng fā lái de zuìxīn jiàoxué xìnxī hé yào yǔ wǒ tǎolùn de yǒuguān wèntí, hái yǒu xuéshēng jiāo lái de zuòyè...",
-        "vi": "Tôi kết nối máy tính với “Trang web dạy học Thời Đại Mới”, tra được lịch dạy học của ngày mới từ màn hình, đồng thời nhận được nhiều email: trong đó có yêu cầu giảng dạy do chủ nhiệm giáo vụ gửi đến, thông tin dạy học mới nhất do đồng nghiệp trong và ngoài nước gửi đến và các vấn đề liên quan cần thảo luận với tôi, còn có bài tập học sinh nộp lên...",
+        "vi": "Tôi kết nối máy tính với “Trang web dạy học Thời Đại Mới”, tra được lịch dạy học của ngày mới từ màn hình, còn nhận được nhiều email: trong đó có yêu cầu giảng dạy do chủ nhiệm giáo vụ gửi đến, thông tin dạy học mới nhất do đồng nghiệp trong và ngoài nước gửi đến và các vấn đề liên quan cần thảo luận với tôi, còn có bài tập học sinh nộp lên...",
         "audio_key": "",
         "vocab_refs": [],
         "grammar_refs": [],
@@ -59,11 +59,11 @@
         "check_needed": false
        },
        {
-        "id": "p003",
+        "id": "5a221404-05e7-4ae2-ad9f-0c920a73dc36",
         "order": 3,
         "zh": "新时代网校不是只学电脑，而是通过电脑，在多媒体的环境下，学习各种现代科学文化知识。比如，学生学化学，可以看到原子间的相互碰撞；学物理，可以看到和听到宇宙的各种声像；学外语，可以一边看有趣的动画片，一边听标准的发音。",
         "pinyin": "Xīn Shídài Wǎngxiào bú shì zhǐ xué diànnǎo, ér shì tōngguò diànnǎo, zài duōméitǐ de huánjìng xià, xuéxí gè zhǒng xiàndài kēxué wénhuà zhīshi. Bǐrú, xuéshēng xué huàxué, kěyǐ kàn dào yuánzǐ jiān de xiānghù pèngzhuàng; xué wùlǐ, kěyǐ kàn dào hé tīng dào yǔzhòu de gè zhǒng shēngxiàng; xué wàiyǔ, kěyǐ yìbiān kàn yǒuqù de dònghuàpiàn, yìbiān tīng biāozhǔn de fāyīn.",
-        "vi": "Trường học trực tuyến Thời Đại Mới không phải chỉ học máy tính, mà là thông qua máy tính, trong môi trường đa phương tiện để học các loại kiến thức khoa học văn hóa hiện đại. Ví dụ, học sinh học hóa học có thể thấy sự va chạm lẫn nhau giữa các nguyên tử; học vật lý có thể nhìn thấy và nghe được các loại âm thanh-hình ảnh của vũ trụ; học ngoại ngữ có thể vừa xem phim hoạt hình thú vị vừa nghe phát âm chuẩn.",
+        "vi": "Trường học trực tuyến Thời Đại Mới không phải chỉ học về máy tính, mà là thông qua máy tính, học các loại kiến thức khoa học văn hóa hiện đại trong môi trường đa phương tiện. Ví dụ, học sinh học hóa học có thể thấy sự va chạm lẫn nhau giữa các nguyên tử; học vật lý có thể nhìn thấy và nghe được các loại âm thanh-hình ảnh của vũ trụ; học ngoại ngữ có thể vừa xem phim hoạt hình thú vị vừa nghe phát âm chuẩn.",
         "audio_key": "",
         "vocab_refs": [],
         "grammar_refs": [],
@@ -71,7 +71,7 @@
         "check_needed": false
        },
        {
-        "id": "p004",
+        "id": "5c402bbc-a0e6-434c-a6c7-3c4f86c845fe",
         "order": 4,
         "zh": "当他们跟读时，读书声从我的电脑中传出，我可以通过电脑分辨出每一个学生的声音，纠正他们的语音错误。",
         "pinyin": "Dāng tāmen gēn dú shí, dúshū shēng cóng wǒ de diànnǎo zhōng chuán chū, wǒ kěyǐ tōngguò diànnǎo fēnbiàn chū měi yí ge xuéshēng de shēngyīn, jiūzhèng tāmen de yǔyīn cuòwù.",
@@ -83,7 +83,7 @@
         "check_needed": false
        },
        {
-        "id": "p005",
+        "id": "babe7f0b-2b53-402f-85af-c5de9b0e676d",
         "order": 5,
         "zh": "我们的汉语远程教育课堂面向全世界，各国学生都可以申请入学。程度分初、中、高，技能训练包括听、说、读、写。",
         "pinyin": "Wǒmen de Hànyǔ yuǎnchéng jiàoyù kètáng miànxiàng quán shìjiè, gè guó xuéshēng dōu kěyǐ shēnqǐng rùxué. Chéngdù fēn chū, zhōng, gāo, jìnéng xùnliàn bāokuò tīng, shuō, dú, xiě.",
@@ -95,7 +95,7 @@
         "check_needed": false
        },
        {
-        "id": "p006",
+        "id": "d2683a70-b897-4979-ad07-0bca2bb00b31",
         "order": 6,
         "zh": "我们为学生制作了各种教学软件，语音、汉字、语法、词语、短文以及相关的文化知识，应有尽有。",
         "pinyin": "Wǒmen wèi xuéshēng zhìzuò le gè zhǒng jiàoxué ruǎnjiàn, yǔyīn, Hànzì, yǔfǎ, cíyǔ, duǎnwén yǐjí xiāngguān de wénhuà zhīshi, yīngyǒu-jìnyǒu.",
@@ -107,7 +107,7 @@
         "check_needed": false
        },
        {
-        "id": "p007",
+        "id": "cde61ddf-34c9-4d25-892b-99b26df9e427",
         "order": 7,
         "zh": "学生可以按照自己的意愿，随心所欲地安排自己的学习时间，随心所欲地选择适合自己程度的教材和自己喜欢的教师。想学时，只需用鼠标轻轻一点，就可以进入汉语课堂。",
         "pinyin": "Xuéshēng kěyǐ ànzhào zìjǐ de yìyuàn, suíxīn-suǒyù de ānpái zìjǐ de xuéxí shíjiān, suíxīn-suǒyù de xuǎnzé shìhé zìjǐ chéngdù de jiàocái hé zìjǐ xǐhuan de jiàoshī. Xiǎng xué shí, zhǐxū yòng shǔbiāo qīngqīng yì diǎn, jiù kěyǐ jìnrù Hànyǔ kètáng.",
@@ -119,7 +119,7 @@
         "check_needed": false
        },
        {
-        "id": "p008",
+        "id": "37ac9b48-37ae-4d3e-aa1a-644f38547b84",
         "order": 8,
         "zh": "新时代的教学网站是个非常受欢迎的教学网站，因此，我们每天都从网上接到不少注册申请。教师们为新注册的学生制订学习计划，同时也为学习结束的同学颁发毕业证书。",
         "pinyin": "Xīn Shídài de jiàoxué wǎngzhàn shì ge fēicháng shòu huānyíng de jiàoxué wǎngzhàn, yīncǐ, wǒmen měitiān dōu cóng wǎngshàng jiē dào bù shǎo zhùcè shēnqǐng. Jiàoshīmen wèi xīn zhùcè de xuéshēng zhìdìng xuéxí jìhuà, tóngshí yě wèi xuéxí jiéshù de tóngxué bānfā bìyè zhèngshū.",
@@ -131,11 +131,11 @@
         "check_needed": false
        },
        {
-        "id": "p009",
+        "id": "2b9bed70-c477-49f4-8027-9bc4d7f13594",
         "order": 9,
         "zh": "作为一个从事远程教育的教师，我为自己培养了无数学生而感到自豪。但也有一个遗憾，这就是，我既没有见过我的校长，也没有跟我的学生见过面。一台电脑成了我的耳目。",
         "pinyin": "Zuòwéi yí ge cóngshì yuǎnchéng jiàoyù de jiàoshī, wǒ wèi zìjǐ péiyǎng le wúshù xuéshēng ér gǎndào zìháo. Dàn yě yǒu yí ge yíhàn, zhè jiù shì, wǒ jì méiyǒu jiàn guo wǒ de xiàozhǎng, yě méiyǒu gēn wǒ de xuéshēng jiàn guo miàn. Yì tái diànnǎo chéng le wǒ de ěrmù.",
-        "vi": "Với tư cách là một giáo viên làm giáo dục từ xa, tôi cảm thấy tự hào vì mình đã đào tạo được vô số học sinh. Nhưng cũng có một điều tiếc nuối, đó là tôi vừa chưa từng gặp hiệu trưởng của mình, cũng chưa từng gặp mặt học sinh của mình. Một chiếc máy tính đã trở thành tai mắt của tôi.",
+        "vi": "Với tư cách là một giáo viên làm giáo dục từ xa, tôi cảm thấy tự hào vì mình đã đào tạo được vô số học sinh. Nhưng cũng có một điều tiếc nuối, đó là tôi chưa từng gặp hiệu trưởng của mình, cũng chưa từng gặp mặt học sinh của mình. Một chiếc máy tính đã trở thành tai mắt của tôi.",
         "audio_key": "",
         "vocab_refs": [],
         "grammar_refs": [],
@@ -143,11 +143,11 @@
         "check_needed": false
        },
        {
-        "id": "p010",
+        "id": "35ac2478-e068-41a9-9ca0-6f305253ec3e",
         "order": 10,
         "zh": "因此，学校决定在今年暑假开办一个“新时代夏令营”，让学生们和老师一起过一个愉快的暑假。大家一起交流经验，一起玩儿游戏，一起去海边游泳，一起去爬山野营。用这样的方式增进师生之间的了解和友谊。我们已经用电子邮件发出了通知，我想，今年的暑假一定非常有意思。",
         "pinyin": "Yīncǐ, xuéxiào juédìng zài jīnnián shǔjià kāibàn yí ge “Xīn Shídài Xiàlìngyíng”, ràng xuéshēngmen hé lǎoshī yìqǐ guò yí ge yúkuài de shǔjià. Dàjiā yìqǐ jiāoliú jīngyàn, yìqǐ wánr yóuxì, yìqǐ qù hǎibiān yóuyǒng, yìqǐ qù páshān yěyíng. Yòng zhèyàng de fāngshì zēngjìn shīshēng zhījiān de liǎojiě hé yǒuyì. Wǒmen yǐjīng yòng diànzǐ yóujiàn fā chū le tōngzhī, wǒ xiǎng, jīnnián de shǔjià yídìng fēicháng yǒuyìsi.",
-        "vi": "Vì vậy, nhà trường quyết định mở một “Trại hè Thời Đại Mới” vào kỳ nghỉ hè năm nay, để học sinh và giáo viên cùng trải qua một kỳ nghỉ hè vui vẻ. Mọi người cùng trao đổi kinh nghiệm, cùng chơi trò chơi, cùng đi bơi ở bờ biển, cùng leo núi cắm trại. Dùng cách này để tăng thêm sự hiểu biết và tình bạn giữa thầy trò. Chúng tôi đã gửi thông báo bằng email; tôi nghĩ kỳ nghỉ hè năm nay nhất định sẽ rất thú vị.",
+        "vi": "Vì vậy, nhà trường quyết định mở một “Trại hè Thời Đại Mới” vào kỳ nghỉ hè năm nay, để học sinh và giáo viên cùng trải qua một kỳ nghỉ hè vui vẻ. Mọi người cùng trao đổi kinh nghiệm, cùng chơi trò chơi, cùng đi bơi ở biển, cùng leo núi và cắm trại. Dùng cách này để tăng thêm sự hiểu biết và tình bạn giữa thầy trò. Chúng tôi đã gửi thông báo bằng email; tôi nghĩ kỳ nghỉ hè năm nay nhất định sẽ rất thú vị.",
         "audio_key": "",
         "vocab_refs": [],
         "grammar_refs": [],
@@ -157,83 +157,83 @@
       ],
       "comprehension_questions": [
        {
-        "id": "cq01",
+        "id": "e476d92d-a9d6-42a1-89be-f61d9dbdc130",
         "question": "作者是从事什么工作的？",
+        "answer": "作者是新时代网络学校的教师。",
+        "source_origin": "textbook_answer_checked",
+        "answer_verified": true,
+        "check_needed": false,
         "question_pinyin": "Zuòzhě shì cóngshì shénme gōngzuò de?",
         "question_vi": "Tác giả làm công việc gì?",
-        "answer": "作者是新时代网络学校的教师。",
         "answer_pinyin": "Zuòzhě shì Xīn Shídài Wǎngluò Xuéxiào de jiàoshī.",
-        "answer_vi": "Tác giả là giáo viên của trường học trực tuyến Thời Đại Mới.",
-        "source_origin": "textbook_answer_checked",
-        "answer_verified": true,
-        "check_needed": false
+        "answer_vi": "Tác giả là giáo viên của trường học trực tuyến Thời Đại Mới."
        },
        {
-        "id": "cq02",
+        "id": "3186f811-a0dc-4de4-b669-0d28c52eca7c",
         "question": "他每天怎么工作？",
+        "answer": "他每天只需在家里打开电脑，把电脑接到“新时代教学网站”，就可以开始工作。",
+        "source_origin": "textbook_answer_checked",
+        "answer_verified": true,
+        "check_needed": false,
         "question_pinyin": "Tā měitiān zěnme gōngzuò?",
         "question_vi": "Mỗi ngày anh ấy làm việc như thế nào?",
-        "answer": "他每天只需在家里打开电脑，把电脑接到“新时代教学网站”，就可以开始工作。",
         "answer_pinyin": "Tā měitiān zhǐxū zài jiālǐ dǎkāi diànnǎo, bǎ diànnǎo jiē dào “Xīn Shídài Jiàoxué Wǎngzhàn”, jiù kěyǐ kāishǐ gōngzuò.",
-        "answer_vi": "Mỗi ngày anh ấy chỉ cần ở nhà mở máy tính, kết nối máy tính với “Trang web dạy học Thời Đại Mới” là có thể bắt đầu làm việc.",
-        "source_origin": "textbook_answer_checked",
-        "answer_verified": true,
-        "check_needed": false
+        "answer_vi": "Mỗi ngày anh ấy chỉ cần ở nhà mở máy tính, kết nối máy tính với “Trang web dạy học Thời Đại Mới” là có thể bắt đầu làm việc."
        },
        {
-        "id": "cq03",
+        "id": "6409a791-f0ad-40a7-ba94-dbbb6c99c11b",
         "question": "网络学校是怎么进行教学的？",
+        "answer": "网络学校通过电脑，在多媒体的环境下进行教学。",
+        "source_origin": "textbook_answer_checked",
+        "answer_verified": true,
+        "check_needed": false,
         "question_pinyin": "Wǎngluò xuéxiào shì zěnme jìnxíng jiàoxué de?",
         "question_vi": "Trường học trực tuyến tiến hành dạy học như thế nào?",
-        "answer": "网络学校通过电脑，在多媒体的环境下进行教学。",
         "answer_pinyin": "Wǎngluò xuéxiào tōngguò diànnǎo, zài duōméitǐ de huánjìng xià jìnxíng jiàoxué.",
-        "answer_vi": "Trường học trực tuyến tiến hành dạy học thông qua máy tính, trong môi trường đa phương tiện.",
-        "source_origin": "textbook_answer_checked",
-        "answer_verified": true,
-        "check_needed": false
+        "answer_vi": "Trường học trực tuyến tiến hành dạy học thông qua máy tính, trong môi trường đa phương tiện."
        },
        {
-        "id": "cq04",
+        "id": "5621a739-7c80-47f1-80f8-de3f39c3c58f",
         "question": "他们的汉语远程教育怎么样？",
+        "answer": "他们的汉语远程教育课堂面向全世界，各国学生都可以申请入学；程度分初、中、高，技能训练包括听、说、读、写。",
+        "source_origin": "textbook_answer_checked",
+        "answer_verified": true,
+        "check_needed": false,
         "question_pinyin": "Tāmen de Hànyǔ yuǎnchéng jiàoyù zěnmeyàng?",
         "question_vi": "Giáo dục tiếng Hán từ xa của họ như thế nào?",
-        "answer": "他们的汉语远程教育课堂面向全世界，各国学生都可以申请入学；程度分初、中、高，技能训练包括听、说、读、写。",
         "answer_pinyin": "Tāmen de Hànyǔ yuǎnchéng jiàoyù kètáng miànxiàng quán shìjiè, gè guó xuéshēng dōu kěyǐ shēnqǐng rùxué; chéngdù fēn chū, zhōng, gāo, jìnéng xùnliàn bāokuò tīng, shuō, dú, xiě.",
-        "answer_vi": "Lớp giáo dục tiếng Hán từ xa của họ hướng tới toàn thế giới; học sinh các nước đều có thể đăng ký nhập học. Trình độ chia thành sơ, trung, cao; luyện kỹ năng gồm nghe, nói, đọc, viết.",
-        "source_origin": "textbook_answer_checked",
-        "answer_verified": true,
-        "check_needed": false
+        "answer_vi": "Lớp giáo dục tiếng Hán từ xa của họ hướng tới toàn thế giới; học sinh các nước đều có thể đăng ký nhập học. Trình độ chia thành sơ cấp, trung cấp, cao cấp; phần luyện kỹ năng gồm nghe, nói, đọc, viết."
        },
        {
-        "id": "cq05",
+        "id": "e87a4513-cc58-4a84-806c-7903e671a7f3",
         "question": "他们为什么要开办“新时代夏令营”活动？",
+        "answer": "为了增进师生之间的了解和友谊。",
+        "source_origin": "textbook_answer_checked",
+        "answer_verified": true,
+        "check_needed": false,
         "question_pinyin": "Tāmen wèishénme yào kāibàn “Xīn Shídài Xiàlìngyíng” huódòng?",
         "question_vi": "Vì sao họ muốn mở hoạt động “Trại hè Thời Đại Mới”?",
-        "answer": "为了增进师生之间的了解和友谊。",
         "answer_pinyin": "Wèile zēngjìn shīshēng zhījiān de liǎojiě hé yǒuyì.",
-        "answer_vi": "Để tăng thêm sự hiểu biết và tình bạn giữa thầy trò.",
-        "source_origin": "textbook_answer_checked",
-        "answer_verified": true,
-        "check_needed": false
+        "answer_vi": "Để tăng thêm sự hiểu biết và tình bạn giữa thầy trò."
        },
        {
-        "id": "cq06",
+        "id": "bd63d228-3392-4ba6-86ac-06b7d05ef081",
         "question": "“新时代夏令营”可能开展哪些活动？",
-        "question_pinyin": "“Xīn Shídài Xiàlìngyíng” kěnéng kāizhǎn nǎxiē huódòng?",
-        "question_vi": "“Trại hè Thời Đại Mới” có thể triển khai những hoạt động nào?",
         "answer": "可能交流经验、玩儿游戏、去海边游泳、爬山野营。",
-        "answer_pinyin": "Kěnéng jiāoliú jīngyàn, wánr yóuxì, qù hǎibiān yóuyǒng, páshān yěyíng.",
-        "answer_vi": "Có thể trao đổi kinh nghiệm, chơi trò chơi, đi bơi ở bờ biển, leo núi cắm trại.",
         "source_origin": "textbook_answer_checked",
         "answer_verified": true,
-        "check_needed": false
+        "check_needed": false,
+        "question_pinyin": "“Xīn Shídài Xiàlìngyíng” kěnéng kāizhǎn nǎxiē huódòng?",
+        "question_vi": "“Trại hè Thời Đại Mới” có thể triển khai những hoạt động nào?",
+        "answer_pinyin": "Kěnéng jiāoliú jīngyàn, wánr yóuxì, qù hǎibiān yóuyǒng, páshān yěyíng.",
+        "answer_vi": "Có thể trao đổi kinh nghiệm, chơi trò chơi, đi bơi ở biển, leo núi và cắm trại."
        }
       ]
      }
     ]
    },
    {
-    "id": "section_02_vocabulary",
+    "id": "78c30bf4-c314-4c4c-86e3-4dd62382dd78",
     "type": "vocabulary",
     "order": 2,
     "title": "生词",
@@ -242,7 +242,7 @@
     "check_needed": false,
     "items": [
      {
-      "id": "vocab_001",
+      "id": "68c05a12-9d8e-45d9-a413-786bcf2f780a",
       "type": "vocabulary_item",
       "order": 1,
       "hanzi": "网络",
@@ -250,17 +250,6 @@
       "meaning_vi": "mạng Internet; mạng lưới",
       "meaning_en": "Internet; network",
       "pos": "Danh từ",
-      "pos_detail": {
-       "vi": "Danh từ",
-       "cn": "名词",
-       "normalized": "noun",
-       "schema_compatible_pos": "noun",
-       "is_separable_verb": false,
-       "separable_type": "",
-       "structure_vi": "",
-       "usage_note_vi": "",
-       "notes": []
-      },
       "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
@@ -275,17 +264,7 @@
       },
       "audio_key": "",
       "source_origin": "textbook",
-      "check_needed": false
-     },
-     {
-      "id": "vocab_002",
-      "type": "vocabulary_item",
-      "order": 2,
-      "hanzi": "时代",
-      "pinyin": "shídài",
-      "meaning_vi": "thời đại; thời kỳ",
-      "meaning_en": "times; era; age",
-      "pos": "Danh từ",
+      "check_needed": false,
       "pos_detail": {
        "vi": "Danh từ",
        "cn": "名词",
@@ -296,7 +275,17 @@
        "structure_vi": "",
        "usage_note_vi": "",
        "notes": []
-      },
+      }
+     },
+     {
+      "id": "8c18cf3c-e9dc-42e1-8faf-eb26799cabab",
+      "type": "vocabulary_item",
+      "order": 2,
+      "hanzi": "时代",
+      "pinyin": "shídài",
+      "meaning_vi": "thời đại; thời kỳ",
+      "meaning_en": "times; era; age",
+      "pos": "Danh từ",
       "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
@@ -311,17 +300,7 @@
       },
       "audio_key": "",
       "source_origin": "textbook",
-      "check_needed": false
-     },
-     {
-      "id": "vocab_003",
-      "type": "vocabulary_item",
-      "order": 3,
-      "hanzi": "教师",
-      "pinyin": "jiàoshī",
-      "meaning_vi": "giáo viên; nhà giáo",
-      "meaning_en": "teacher",
-      "pos": "Danh từ",
+      "check_needed": false,
       "pos_detail": {
        "vi": "Danh từ",
        "cn": "名词",
@@ -332,7 +311,17 @@
        "structure_vi": "",
        "usage_note_vi": "",
        "notes": []
-      },
+      }
+     },
+     {
+      "id": "1fbd69b7-603a-44ea-8d57-10cd4def9ced",
+      "type": "vocabulary_item",
+      "order": 3,
+      "hanzi": "教师",
+      "pinyin": "jiàoshī",
+      "meaning_vi": "giáo viên; nhà giáo",
+      "meaning_en": "teacher",
+      "pos": "Danh từ",
       "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
@@ -347,17 +336,7 @@
       },
       "audio_key": "",
       "source_origin": "textbook",
-      "check_needed": false
-     },
-     {
-      "id": "vocab_004",
-      "type": "vocabulary_item",
-      "order": 4,
-      "hanzi": "早晨",
-      "pinyin": "zǎochen",
-      "meaning_vi": "buổi sáng sớm",
-      "meaning_en": "morning",
-      "pos": "Danh từ",
+      "check_needed": false,
       "pos_detail": {
        "vi": "Danh từ",
        "cn": "名词",
@@ -368,7 +347,17 @@
        "structure_vi": "",
        "usage_note_vi": "",
        "notes": []
-      },
+      }
+     },
+     {
+      "id": "3dc505f1-bc0e-4a96-b448-17fed89fdc60",
+      "type": "vocabulary_item",
+      "order": 4,
+      "hanzi": "早晨",
+      "pinyin": "zǎochen",
+      "meaning_vi": "buổi sáng sớm",
+      "meaning_en": "morning",
+      "pos": "Danh từ",
       "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
@@ -383,10 +372,21 @@
       },
       "audio_key": "",
       "source_origin": "textbook",
-      "check_needed": false
+      "check_needed": false,
+      "pos_detail": {
+       "vi": "Danh từ",
+       "cn": "名词",
+       "normalized": "noun",
+       "schema_compatible_pos": "noun",
+       "is_separable_verb": false,
+       "separable_type": "",
+       "structure_vi": "",
+       "usage_note_vi": "",
+       "notes": []
+      }
      },
      {
-      "id": "vocab_005",
+      "id": "188412d4-4c23-4d60-b7b2-21f3490199e7",
       "type": "vocabulary_item",
       "order": 5,
       "hanzi": "接",
@@ -394,17 +394,6 @@
       "meaning_vi": "nối; kết nối; tiếp nhận",
       "meaning_en": "to connect; to link",
       "pos": "Động từ",
-      "pos_detail": {
-       "vi": "Động từ",
-       "cn": "动词",
-       "normalized": "verb",
-       "schema_compatible_pos": "verb",
-       "is_separable_verb": false,
-       "separable_type": "",
-       "structure_vi": "",
-       "usage_note_vi": "",
-       "notes": []
-      },
       "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
@@ -419,10 +408,21 @@
       },
       "audio_key": "",
       "source_origin": "textbook",
-      "check_needed": false
+      "check_needed": false,
+      "pos_detail": {
+       "vi": "Động từ",
+       "cn": "动词",
+       "normalized": "verb",
+       "schema_compatible_pos": "verb",
+       "is_separable_verb": false,
+       "separable_type": "",
+       "structure_vi": "",
+       "usage_note_vi": "",
+       "notes": []
+      }
      },
      {
-      "id": "vocab_006",
+      "id": "5ea44727-d97c-467b-b1b8-babd195df50d",
       "type": "vocabulary_item",
       "order": 6,
       "hanzi": "网站",
@@ -430,17 +430,6 @@
       "meaning_vi": "website; trang mạng",
       "meaning_en": "website",
       "pos": "Danh từ",
-      "pos_detail": {
-       "vi": "Danh từ",
-       "cn": "名词",
-       "normalized": "noun",
-       "schema_compatible_pos": "noun",
-       "is_separable_verb": false,
-       "separable_type": "",
-       "structure_vi": "",
-       "usage_note_vi": "",
-       "notes": []
-      },
       "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
@@ -455,17 +444,7 @@
       },
       "audio_key": "",
       "source_origin": "textbook",
-      "check_needed": false
-     },
-     {
-      "id": "vocab_007",
-      "type": "vocabulary_item",
-      "order": 7,
-      "hanzi": "屏幕",
-      "pinyin": "píngmù",
-      "meaning_vi": "màn hình",
-      "meaning_en": "screen",
-      "pos": "Danh từ",
+      "check_needed": false,
       "pos_detail": {
        "vi": "Danh từ",
        "cn": "名词",
@@ -476,7 +455,17 @@
        "structure_vi": "",
        "usage_note_vi": "",
        "notes": []
-      },
+      }
+     },
+     {
+      "id": "54613016-834a-4fc3-9912-2357a6d27058",
+      "type": "vocabulary_item",
+      "order": 7,
+      "hanzi": "屏幕",
+      "pinyin": "píngmù",
+      "meaning_vi": "màn hình",
+      "meaning_en": "screen",
+      "pos": "Danh từ",
       "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
@@ -491,17 +480,7 @@
       },
       "audio_key": "",
       "source_origin": "textbook",
-      "check_needed": false
-     },
-     {
-      "id": "vocab_008",
-      "type": "vocabulary_item",
-      "order": 8,
-      "hanzi": "教务",
-      "pinyin": "jiàowù",
-      "meaning_vi": "giáo vụ; công việc quản lý giảng dạy",
-      "meaning_en": "school administration",
-      "pos": "Danh từ",
+      "check_needed": false,
       "pos_detail": {
        "vi": "Danh từ",
        "cn": "名词",
@@ -512,7 +491,17 @@
        "structure_vi": "",
        "usage_note_vi": "",
        "notes": []
-      },
+      }
+     },
+     {
+      "id": "0da97406-c3ac-4fcb-a51c-398a59c3fbae",
+      "type": "vocabulary_item",
+      "order": 8,
+      "hanzi": "教务",
+      "pinyin": "jiàowù",
+      "meaning_vi": "giáo vụ; công việc quản lý giảng dạy",
+      "meaning_en": "school administration",
+      "pos": "Danh từ",
       "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
@@ -527,17 +516,7 @@
       },
       "audio_key": "",
       "source_origin": "textbook",
-      "check_needed": false
-     },
-     {
-      "id": "vocab_009",
-      "type": "vocabulary_item",
-      "order": 9,
-      "hanzi": "主任",
-      "pinyin": "zhǔrèn",
-      "meaning_vi": "chủ nhiệm; trưởng bộ phận",
-      "meaning_en": "director; dean",
-      "pos": "Danh từ",
+      "check_needed": false,
       "pos_detail": {
        "vi": "Danh từ",
        "cn": "名词",
@@ -548,7 +527,17 @@
        "structure_vi": "",
        "usage_note_vi": "",
        "notes": []
-      },
+      }
+     },
+     {
+      "id": "54b36889-82be-485b-8342-fb8aab572065",
+      "type": "vocabulary_item",
+      "order": 9,
+      "hanzi": "主任",
+      "pinyin": "zhǔrèn",
+      "meaning_vi": "chủ nhiệm; trưởng bộ phận",
+      "meaning_en": "director; dean",
+      "pos": "Danh từ",
       "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
@@ -563,17 +552,7 @@
       },
       "audio_key": "",
       "source_origin": "textbook",
-      "check_needed": false
-     },
-     {
-      "id": "vocab_010",
-      "type": "vocabulary_item",
-      "order": 10,
-      "hanzi": "同行",
-      "pinyin": "tóngháng",
-      "meaning_vi": "người cùng ngành; đồng nghiệp cùng nghề",
-      "meaning_en": "person of the same trade or occupation; peer",
-      "pos": "Danh từ",
+      "check_needed": false,
       "pos_detail": {
        "vi": "Danh từ",
        "cn": "名词",
@@ -584,7 +563,17 @@
        "structure_vi": "",
        "usage_note_vi": "",
        "notes": []
-      },
+      }
+     },
+     {
+      "id": "1354b1a3-93cc-4505-8d7f-c5550a1d6ae9",
+      "type": "vocabulary_item",
+      "order": 10,
+      "hanzi": "同行",
+      "pinyin": "tóngháng",
+      "meaning_vi": "người cùng ngành; đồng nghiệp cùng nghề",
+      "meaning_en": "person of the same trade or occupation; peer",
+      "pos": "Danh từ",
       "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
@@ -599,10 +588,21 @@
       },
       "audio_key": "",
       "source_origin": "textbook",
-      "check_needed": false
+      "check_needed": false,
+      "pos_detail": {
+       "vi": "Danh từ",
+       "cn": "名词",
+       "normalized": "noun",
+       "schema_compatible_pos": "noun",
+       "is_separable_verb": false,
+       "separable_type": "",
+       "structure_vi": "",
+       "usage_note_vi": "",
+       "notes": []
+      }
      },
      {
-      "id": "vocab_011",
+      "id": "f0684cb3-4577-4e6c-9f22-7d97c89692b3",
       "type": "vocabulary_item",
       "order": 11,
       "hanzi": "讨论",
@@ -610,17 +610,6 @@
       "meaning_vi": "thảo luận",
       "meaning_en": "to discuss",
       "pos": "Động từ",
-      "pos_detail": {
-       "vi": "Động từ",
-       "cn": "动词",
-       "normalized": "verb",
-       "schema_compatible_pos": "verb",
-       "is_separable_verb": false,
-       "separable_type": "",
-       "structure_vi": "",
-       "usage_note_vi": "",
-       "notes": []
-      },
       "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
@@ -635,10 +624,21 @@
       },
       "audio_key": "",
       "source_origin": "textbook",
-      "check_needed": false
+      "check_needed": false,
+      "pos_detail": {
+       "vi": "Động từ",
+       "cn": "动词",
+       "normalized": "verb",
+       "schema_compatible_pos": "verb",
+       "is_separable_verb": false,
+       "separable_type": "",
+       "structure_vi": "",
+       "usage_note_vi": "",
+       "notes": []
+      }
      },
      {
-      "id": "vocab_012",
+      "id": "d5b362a7-c8f6-4f25-b2b5-0f1749c8afbb",
       "type": "vocabulary_item",
       "order": 12,
       "hanzi": "有关",
@@ -646,17 +646,6 @@
       "meaning_vi": "có liên quan; liên quan đến",
       "meaning_en": "to relate to; concerning; relevant to",
       "pos": "Động từ / Giới từ hóa",
-      "pos_detail": {
-       "vi": "Động từ / Giới từ hóa",
-       "cn": "动词 / 介词化用法",
-       "normalized": "verb_preposition",
-       "schema_compatible_pos": "verb",
-       "is_separable_verb": false,
-       "separable_type": "",
-       "structure_vi": "",
-       "usage_note_vi": "",
-       "notes": []
-      },
       "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
@@ -671,10 +660,21 @@
       },
       "audio_key": "",
       "source_origin": "textbook",
-      "check_needed": false
+      "check_needed": false,
+      "pos_detail": {
+       "vi": "Động từ / Giới từ hóa",
+       "cn": "动词 / 介词化用法",
+       "normalized": "verb_preposition",
+       "schema_compatible_pos": "verb",
+       "is_separable_verb": false,
+       "separable_type": "",
+       "structure_vi": "",
+       "usage_note_vi": "",
+       "notes": []
+      }
      },
      {
-      "id": "vocab_013",
+      "id": "7eccd5e8-dac0-4f36-be2e-abcc0a2bdfcd",
       "type": "vocabulary_item",
       "order": 13,
       "hanzi": "多媒体",
@@ -682,17 +682,6 @@
       "meaning_vi": "đa phương tiện",
       "meaning_en": "multimedia",
       "pos": "Danh từ",
-      "pos_detail": {
-       "vi": "Danh từ",
-       "cn": "名词",
-       "normalized": "noun",
-       "schema_compatible_pos": "noun",
-       "is_separable_verb": false,
-       "separable_type": "",
-       "structure_vi": "",
-       "usage_note_vi": "",
-       "notes": []
-      },
       "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
@@ -707,17 +696,7 @@
       },
       "audio_key": "",
       "source_origin": "textbook",
-      "check_needed": false
-     },
-     {
-      "id": "vocab_014",
-      "type": "vocabulary_item",
-      "order": 14,
-      "hanzi": "化学",
-      "pinyin": "huàxué",
-      "meaning_vi": "hóa học",
-      "meaning_en": "chemistry",
-      "pos": "Danh từ",
+      "check_needed": false,
       "pos_detail": {
        "vi": "Danh từ",
        "cn": "名词",
@@ -728,7 +707,17 @@
        "structure_vi": "",
        "usage_note_vi": "",
        "notes": []
-      },
+      }
+     },
+     {
+      "id": "91fa9f81-e5ef-4c4a-b29c-c4b6daa02196",
+      "type": "vocabulary_item",
+      "order": 14,
+      "hanzi": "化学",
+      "pinyin": "huàxué",
+      "meaning_vi": "hóa học",
+      "meaning_en": "chemistry",
+      "pos": "Danh từ",
       "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
@@ -743,17 +732,7 @@
       },
       "audio_key": "",
       "source_origin": "textbook",
-      "check_needed": false
-     },
-     {
-      "id": "vocab_015",
-      "type": "vocabulary_item",
-      "order": 15,
-      "hanzi": "原子",
-      "pinyin": "yuánzǐ",
-      "meaning_vi": "nguyên tử",
-      "meaning_en": "atom",
-      "pos": "Danh từ",
+      "check_needed": false,
       "pos_detail": {
        "vi": "Danh từ",
        "cn": "名词",
@@ -764,7 +743,17 @@
        "structure_vi": "",
        "usage_note_vi": "",
        "notes": []
-      },
+      }
+     },
+     {
+      "id": "8a5b1d09-23a6-4182-96e6-9bf4d761a1e1",
+      "type": "vocabulary_item",
+      "order": 15,
+      "hanzi": "原子",
+      "pinyin": "yuánzǐ",
+      "meaning_vi": "nguyên tử",
+      "meaning_en": "atom",
+      "pos": "Danh từ",
       "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
@@ -779,10 +768,21 @@
       },
       "audio_key": "",
       "source_origin": "textbook",
-      "check_needed": false
+      "check_needed": false,
+      "pos_detail": {
+       "vi": "Danh từ",
+       "cn": "名词",
+       "normalized": "noun",
+       "schema_compatible_pos": "noun",
+       "is_separable_verb": false,
+       "separable_type": "",
+       "structure_vi": "",
+       "usage_note_vi": "",
+       "notes": []
+      }
      },
      {
-      "id": "vocab_016",
+      "id": "be7a835d-ff8f-4a86-9fd8-27c5f1093f0c",
       "type": "vocabulary_item",
       "order": 16,
       "hanzi": "相互",
@@ -790,17 +790,6 @@
       "meaning_vi": "lẫn nhau; qua lại",
       "meaning_en": "mutually",
       "pos": "Phó từ",
-      "pos_detail": {
-       "vi": "Phó từ",
-       "cn": "副词",
-       "normalized": "adverb",
-       "schema_compatible_pos": "adverb",
-       "is_separable_verb": false,
-       "separable_type": "",
-       "structure_vi": "",
-       "usage_note_vi": "",
-       "notes": []
-      },
       "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
@@ -815,10 +804,21 @@
       },
       "audio_key": "",
       "source_origin": "textbook",
-      "check_needed": false
+      "check_needed": false,
+      "pos_detail": {
+       "vi": "Phó từ",
+       "cn": "副词",
+       "normalized": "adverb",
+       "schema_compatible_pos": "adverb",
+       "is_separable_verb": false,
+       "separable_type": "",
+       "structure_vi": "",
+       "usage_note_vi": "",
+       "notes": []
+      }
      },
      {
-      "id": "vocab_017",
+      "id": "7a89dc80-d79d-4c2f-988c-d0f54e240d19",
       "type": "vocabulary_item",
       "order": 17,
       "hanzi": "物理",
@@ -826,17 +826,6 @@
       "meaning_vi": "vật lý",
       "meaning_en": "physics",
       "pos": "Danh từ",
-      "pos_detail": {
-       "vi": "Danh từ",
-       "cn": "名词",
-       "normalized": "noun",
-       "schema_compatible_pos": "noun",
-       "is_separable_verb": false,
-       "separable_type": "",
-       "structure_vi": "",
-       "usage_note_vi": "",
-       "notes": []
-      },
       "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
@@ -851,17 +840,7 @@
       },
       "audio_key": "",
       "source_origin": "textbook",
-      "check_needed": false
-     },
-     {
-      "id": "vocab_018",
-      "type": "vocabulary_item",
-      "order": 18,
-      "hanzi": "声像",
-      "pinyin": "shēngxiàng",
-      "meaning_vi": "âm thanh và hình ảnh; tư liệu nghe-nhìn",
-      "meaning_en": "sound and image",
-      "pos": "Danh từ",
+      "check_needed": false,
       "pos_detail": {
        "vi": "Danh từ",
        "cn": "名词",
@@ -872,7 +851,17 @@
        "structure_vi": "",
        "usage_note_vi": "",
        "notes": []
-      },
+      }
+     },
+     {
+      "id": "ff3e1818-66a9-4532-880b-02c9cacb0e5b",
+      "type": "vocabulary_item",
+      "order": 18,
+      "hanzi": "声像",
+      "pinyin": "shēngxiàng",
+      "meaning_vi": "âm thanh và hình ảnh; tư liệu nghe-nhìn",
+      "meaning_en": "sound and image; audiovisual materials",
+      "pos": "Danh từ",
       "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
@@ -887,17 +876,7 @@
       },
       "audio_key": "",
       "source_origin": "textbook",
-      "check_needed": false
-     },
-     {
-      "id": "vocab_019",
-      "type": "vocabulary_item",
-      "order": 19,
-      "hanzi": "动画片",
-      "pinyin": "dònghuàpiàn",
-      "meaning_vi": "phim hoạt hình",
-      "meaning_en": "animated cartoon",
-      "pos": "Danh từ",
+      "check_needed": false,
       "pos_detail": {
        "vi": "Danh từ",
        "cn": "名词",
@@ -908,7 +887,17 @@
        "structure_vi": "",
        "usage_note_vi": "",
        "notes": []
-      },
+      }
+     },
+     {
+      "id": "0125bdae-fe4e-48fb-8264-145e95c75933",
+      "type": "vocabulary_item",
+      "order": 19,
+      "hanzi": "动画片",
+      "pinyin": "dònghuàpiàn",
+      "meaning_vi": "phim hoạt hình",
+      "meaning_en": "animated cartoon",
+      "pos": "Danh từ",
       "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
@@ -923,10 +912,21 @@
       },
       "audio_key": "",
       "source_origin": "textbook",
-      "check_needed": false
+      "check_needed": false,
+      "pos_detail": {
+       "vi": "Danh từ",
+       "cn": "名词",
+       "normalized": "noun",
+       "schema_compatible_pos": "noun",
+       "is_separable_verb": false,
+       "separable_type": "",
+       "structure_vi": "",
+       "usage_note_vi": "",
+       "notes": []
+      }
      },
      {
-      "id": "vocab_020",
+      "id": "689eb64b-5d4f-469f-9afa-74017d399614",
       "type": "vocabulary_item",
       "order": 20,
       "hanzi": "分辨",
@@ -934,17 +934,6 @@
       "meaning_vi": "phân biệt; nhận biết",
       "meaning_en": "to distinguish; to identify",
       "pos": "Động từ",
-      "pos_detail": {
-       "vi": "Động từ",
-       "cn": "动词",
-       "normalized": "verb",
-       "schema_compatible_pos": "verb",
-       "is_separable_verb": false,
-       "separable_type": "",
-       "structure_vi": "",
-       "usage_note_vi": "",
-       "notes": []
-      },
       "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
@@ -959,10 +948,21 @@
       },
       "audio_key": "",
       "source_origin": "textbook",
-      "check_needed": false
+      "check_needed": false,
+      "pos_detail": {
+       "vi": "Động từ",
+       "cn": "动词",
+       "normalized": "verb",
+       "schema_compatible_pos": "verb",
+       "is_separable_verb": false,
+       "separable_type": "",
+       "structure_vi": "",
+       "usage_note_vi": "",
+       "notes": []
+      }
      },
      {
-      "id": "vocab_021",
+      "id": "d45d5488-9293-41ae-9deb-1e5b51cee446",
       "type": "vocabulary_item",
       "order": 21,
       "hanzi": "语音",
@@ -970,17 +970,6 @@
       "meaning_vi": "ngữ âm; âm thanh lời nói; phát âm",
       "meaning_en": "pronunciation; speech sound",
       "pos": "Danh từ",
-      "pos_detail": {
-       "vi": "Danh từ",
-       "cn": "名词",
-       "normalized": "noun",
-       "schema_compatible_pos": "noun",
-       "is_separable_verb": false,
-       "separable_type": "",
-       "structure_vi": "",
-       "usage_note_vi": "",
-       "notes": []
-      },
       "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
@@ -995,10 +984,21 @@
       },
       "audio_key": "",
       "source_origin": "textbook",
-      "check_needed": false
+      "check_needed": false,
+      "pos_detail": {
+       "vi": "Danh từ",
+       "cn": "名词",
+       "normalized": "noun",
+       "schema_compatible_pos": "noun",
+       "is_separable_verb": false,
+       "separable_type": "",
+       "structure_vi": "",
+       "usage_note_vi": "",
+       "notes": []
+      }
      },
      {
-      "id": "vocab_022",
+      "id": "c99a633b-27a2-429b-a139-44113a84c189",
       "type": "vocabulary_item",
       "order": 22,
       "hanzi": "远程",
@@ -1006,17 +1006,6 @@
       "meaning_vi": "từ xa; đường dài",
       "meaning_en": "long-distance; remote",
       "pos": "Tính từ / Định ngữ",
-      "pos_detail": {
-       "vi": "Tính từ / Định ngữ",
-       "cn": "形容词 / 定语",
-       "normalized": "adjective",
-       "schema_compatible_pos": "adjective",
-       "is_separable_verb": false,
-       "separable_type": "",
-       "structure_vi": "",
-       "usage_note_vi": "",
-       "notes": []
-      },
       "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
@@ -1031,10 +1020,21 @@
       },
       "audio_key": "",
       "source_origin": "textbook",
-      "check_needed": false
+      "check_needed": false,
+      "pos_detail": {
+       "vi": "Tính từ / Định ngữ",
+       "cn": "形容词 / 定语",
+       "normalized": "adjective",
+       "schema_compatible_pos": "adjective",
+       "is_separable_verb": false,
+       "separable_type": "",
+       "structure_vi": "",
+       "usage_note_vi": "",
+       "notes": []
+      }
      },
      {
-      "id": "vocab_023",
+      "id": "79358c6f-3427-4c28-98f3-7ef98c7033c3",
       "type": "vocabulary_item",
       "order": 23,
       "hanzi": "教育",
@@ -1042,17 +1042,6 @@
       "meaning_vi": "giáo dục; dạy dỗ",
       "meaning_en": "education; to educate",
       "pos": "Danh từ / Động từ",
-      "pos_detail": {
-       "vi": "Danh từ / Động từ",
-       "cn": "名词 / 动词",
-       "normalized": "noun_verb",
-       "schema_compatible_pos": "verb_noun",
-       "is_separable_verb": false,
-       "separable_type": "",
-       "structure_vi": "",
-       "usage_note_vi": "",
-       "notes": []
-      },
       "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
@@ -1067,10 +1056,21 @@
       },
       "audio_key": "",
       "source_origin": "textbook",
-      "check_needed": false
+      "check_needed": false,
+      "pos_detail": {
+       "vi": "Danh từ / Động từ",
+       "cn": "名词 / 动词",
+       "normalized": "noun_verb",
+       "schema_compatible_pos": "verb_noun",
+       "is_separable_verb": false,
+       "separable_type": "",
+       "structure_vi": "",
+       "usage_note_vi": "",
+       "notes": []
+      }
      },
      {
-      "id": "vocab_024",
+      "id": "dc0f8e06-a359-4907-a8d8-fc9b02260590",
       "type": "vocabulary_item",
       "order": 24,
       "hanzi": "面向",
@@ -1078,17 +1078,6 @@
       "meaning_vi": "hướng tới; nhắm đến; đối diện với",
       "meaning_en": "to face; to be oriented towards",
       "pos": "Động từ",
-      "pos_detail": {
-       "vi": "Động từ",
-       "cn": "动词",
-       "normalized": "verb",
-       "schema_compatible_pos": "verb",
-       "is_separable_verb": false,
-       "separable_type": "",
-       "structure_vi": "",
-       "usage_note_vi": "",
-       "notes": []
-      },
       "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
@@ -1103,17 +1092,7 @@
       },
       "audio_key": "",
       "source_origin": "textbook",
-      "check_needed": false
-     },
-     {
-      "id": "vocab_025",
-      "type": "vocabulary_item",
-      "order": 25,
-      "hanzi": "入",
-      "pinyin": "rù",
-      "meaning_vi": "vào; tham gia; nhập vào",
-      "meaning_en": "to enter; to join",
-      "pos": "Động từ",
+      "check_needed": false,
       "pos_detail": {
        "vi": "Động từ",
        "cn": "动词",
@@ -1124,7 +1103,17 @@
        "structure_vi": "",
        "usage_note_vi": "",
        "notes": []
-      },
+      }
+     },
+     {
+      "id": "c43cedbf-7024-4ec1-922f-e75119114baf",
+      "type": "vocabulary_item",
+      "order": 25,
+      "hanzi": "入",
+      "pinyin": "rù",
+      "meaning_vi": "vào; tham gia; nhập vào",
+      "meaning_en": "to enter; to join",
+      "pos": "Động từ",
       "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
@@ -1139,17 +1128,7 @@
       },
       "audio_key": "",
       "source_origin": "textbook",
-      "check_needed": false
-     },
-     {
-      "id": "vocab_026",
-      "type": "vocabulary_item",
-      "order": 26,
-      "hanzi": "分",
-      "pinyin": "fēn",
-      "meaning_vi": "chia; phân chia",
-      "meaning_en": "to divide",
-      "pos": "Động từ",
+      "check_needed": false,
       "pos_detail": {
        "vi": "Động từ",
        "cn": "动词",
@@ -1160,7 +1139,17 @@
        "structure_vi": "",
        "usage_note_vi": "",
        "notes": []
-      },
+      }
+     },
+     {
+      "id": "d9991c79-3454-4247-bf18-f14f43b4a24a",
+      "type": "vocabulary_item",
+      "order": 26,
+      "hanzi": "分",
+      "pinyin": "fēn",
+      "meaning_vi": "chia; phân chia",
+      "meaning_en": "to divide",
+      "pos": "Động từ",
       "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
@@ -1175,10 +1164,21 @@
       },
       "audio_key": "",
       "source_origin": "textbook",
-      "check_needed": false
+      "check_needed": false,
+      "pos_detail": {
+       "vi": "Động từ",
+       "cn": "动词",
+       "normalized": "verb",
+       "schema_compatible_pos": "verb",
+       "is_separable_verb": false,
+       "separable_type": "",
+       "structure_vi": "",
+       "usage_note_vi": "",
+       "notes": []
+      }
      },
      {
-      "id": "vocab_027",
+      "id": "55cd807c-eec7-412d-99db-f4e6508b170f",
       "type": "vocabulary_item",
       "order": 27,
       "hanzi": "初（级）",
@@ -1186,17 +1186,6 @@
       "meaning_vi": "sơ cấp; cấp đầu",
       "meaning_en": "beginning; elementary",
       "pos": "Tính từ",
-      "pos_detail": {
-       "vi": "Tính từ",
-       "cn": "形容词",
-       "normalized": "adjective",
-       "schema_compatible_pos": "adjective",
-       "is_separable_verb": false,
-       "separable_type": "",
-       "structure_vi": "",
-       "usage_note_vi": "",
-       "notes": []
-      },
       "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
@@ -1211,17 +1200,7 @@
       },
       "audio_key": "",
       "source_origin": "textbook",
-      "check_needed": false
-     },
-     {
-      "id": "vocab_028",
-      "type": "vocabulary_item",
-      "order": 28,
-      "hanzi": "中（级）",
-      "pinyin": "zhōng (jí)",
-      "meaning_vi": "trung cấp",
-      "meaning_en": "intermediate; mid-level",
-      "pos": "Tính từ",
+      "check_needed": false,
       "pos_detail": {
        "vi": "Tính từ",
        "cn": "形容词",
@@ -1232,7 +1211,17 @@
        "structure_vi": "",
        "usage_note_vi": "",
        "notes": []
-      },
+      }
+     },
+     {
+      "id": "085e60d5-dd1c-4585-ac6b-0f1db0ded936",
+      "type": "vocabulary_item",
+      "order": 28,
+      "hanzi": "中（级）",
+      "pinyin": "zhōng (jí)",
+      "meaning_vi": "trung cấp",
+      "meaning_en": "intermediate; mid-level",
+      "pos": "Tính từ",
       "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
@@ -1247,10 +1236,21 @@
       },
       "audio_key": "",
       "source_origin": "textbook",
-      "check_needed": false
+      "check_needed": false,
+      "pos_detail": {
+       "vi": "Tính từ",
+       "cn": "形容词",
+       "normalized": "adjective",
+       "schema_compatible_pos": "adjective",
+       "is_separable_verb": false,
+       "separable_type": "",
+       "structure_vi": "",
+       "usage_note_vi": "",
+       "notes": []
+      }
      },
      {
-      "id": "vocab_029",
+      "id": "ba7ff0f9-b633-4516-ab3d-22b96046a1cf",
       "type": "vocabulary_item",
       "order": 29,
       "hanzi": "技能",
@@ -1258,17 +1258,6 @@
       "meaning_vi": "kỹ năng",
       "meaning_en": "technical ability; skill",
       "pos": "Danh từ",
-      "pos_detail": {
-       "vi": "Danh từ",
-       "cn": "名词",
-       "normalized": "noun",
-       "schema_compatible_pos": "noun",
-       "is_separable_verb": false,
-       "separable_type": "",
-       "structure_vi": "",
-       "usage_note_vi": "",
-       "notes": []
-      },
       "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
@@ -1283,33 +1272,33 @@
       },
       "audio_key": "",
       "source_origin": "textbook",
-      "check_needed": false
-     },
-     {
-      "id": "vocab_030",
-      "type": "vocabulary_item",
-      "order": 30,
-      "hanzi": "训练",
-      "pinyin": "xùnliàn",
-      "meaning_vi": "huấn luyện; luyện tập có kế hoạch",
-      "meaning_en": "to train; to drill",
-      "pos": "Động từ",
+      "check_needed": false,
       "pos_detail": {
-       "vi": "Động từ",
-       "cn": "动词",
-       "normalized": "verb",
-       "schema_compatible_pos": "verb",
+       "vi": "Danh từ",
+       "cn": "名词",
+       "normalized": "noun",
+       "schema_compatible_pos": "noun",
        "is_separable_verb": false,
        "separable_type": "",
        "structure_vi": "",
        "usage_note_vi": "",
        "notes": []
-      },
+      }
+     },
+     {
+      "id": "2185ee67-885d-4ffb-83e2-e97be4070796",
+      "type": "vocabulary_item",
+      "order": 30,
+      "hanzi": "训练",
+      "pinyin": "xùnliàn",
+      "meaning_vi": "huấn luyện; luyện tập có kế hoạch; phần luyện tập",
+      "meaning_en": "training; to train; to drill",
+      "pos": "Danh từ / Động từ",
       "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
        "front": "训练",
-       "back": "xùnliàn — huấn luyện; luyện tập có kế hoạch",
+       "back": "xùnliàn — huấn luyện; luyện tập có kế hoạch; phần luyện tập",
        "modes": [
         "hanzi_to_meaning",
         "meaning_to_hanzi",
@@ -1319,10 +1308,21 @@
       },
       "audio_key": "",
       "source_origin": "textbook",
-      "check_needed": false
+      "check_needed": false,
+      "pos_detail": {
+       "vi": "Danh từ / Động từ",
+       "cn": "名词 / 动词",
+       "normalized": "noun_verb",
+       "schema_compatible_pos": "verb_noun",
+       "is_separable_verb": false,
+       "separable_type": "",
+       "structure_vi": "",
+       "usage_note_vi": "",
+       "notes": []
+      }
      },
      {
-      "id": "vocab_031",
+      "id": "092a8c16-3739-4685-a4c0-39365071bd48",
       "type": "vocabulary_item",
       "order": 31,
       "hanzi": "包括",
@@ -1330,17 +1330,6 @@
       "meaning_vi": "bao gồm",
       "meaning_en": "to include; to consist of",
       "pos": "Động từ",
-      "pos_detail": {
-       "vi": "Động từ",
-       "cn": "动词",
-       "normalized": "verb",
-       "schema_compatible_pos": "verb",
-       "is_separable_verb": false,
-       "separable_type": "",
-       "structure_vi": "",
-       "usage_note_vi": "",
-       "notes": []
-      },
       "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
@@ -1355,17 +1344,7 @@
       },
       "audio_key": "",
       "source_origin": "textbook",
-      "check_needed": false
-     },
-     {
-      "id": "vocab_032",
-      "type": "vocabulary_item",
-      "order": 32,
-      "hanzi": "制作",
-      "pinyin": "zhìzuò",
-      "meaning_vi": "chế tạo; làm ra; sản xuất / biên soạn",
-      "meaning_en": "to make; to produce",
-      "pos": "Động từ",
+      "check_needed": false,
       "pos_detail": {
        "vi": "Động từ",
        "cn": "动词",
@@ -1376,7 +1355,17 @@
        "structure_vi": "",
        "usage_note_vi": "",
        "notes": []
-      },
+      }
+     },
+     {
+      "id": "22e66ee9-565e-4670-b2ac-4d5a9b500b38",
+      "type": "vocabulary_item",
+      "order": 32,
+      "hanzi": "制作",
+      "pinyin": "zhìzuò",
+      "meaning_vi": "chế tạo; làm ra; sản xuất / biên soạn",
+      "meaning_en": "to make; to produce",
+      "pos": "Động từ",
       "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
@@ -1391,10 +1380,21 @@
       },
       "audio_key": "",
       "source_origin": "textbook",
-      "check_needed": false
+      "check_needed": false,
+      "pos_detail": {
+       "vi": "Động từ",
+       "cn": "动词",
+       "normalized": "verb",
+       "schema_compatible_pos": "verb",
+       "is_separable_verb": false,
+       "separable_type": "",
+       "structure_vi": "",
+       "usage_note_vi": "",
+       "notes": []
+      }
      },
      {
-      "id": "vocab_033",
+      "id": "275b46f4-3166-48b7-9766-58384178d1be",
       "type": "vocabulary_item",
       "order": 33,
       "hanzi": "软件",
@@ -1402,17 +1402,6 @@
       "meaning_vi": "phần mềm",
       "meaning_en": "software",
       "pos": "Danh từ",
-      "pos_detail": {
-       "vi": "Danh từ",
-       "cn": "名词",
-       "normalized": "noun",
-       "schema_compatible_pos": "noun",
-       "is_separable_verb": false,
-       "separable_type": "",
-       "structure_vi": "",
-       "usage_note_vi": "",
-       "notes": []
-      },
       "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
@@ -1427,17 +1416,7 @@
       },
       "audio_key": "",
       "source_origin": "textbook",
-      "check_needed": false
-     },
-     {
-      "id": "vocab_034",
-      "type": "vocabulary_item",
-      "order": 34,
-      "hanzi": "短文",
-      "pinyin": "duǎnwén",
-      "meaning_vi": "bài văn ngắn; đoạn văn ngắn",
-      "meaning_en": "short passage; article",
-      "pos": "Danh từ",
+      "check_needed": false,
       "pos_detail": {
        "vi": "Danh từ",
        "cn": "名词",
@@ -1448,7 +1427,17 @@
        "structure_vi": "",
        "usage_note_vi": "",
        "notes": []
-      },
+      }
+     },
+     {
+      "id": "1190511f-5970-4304-8f84-d7201b287aeb",
+      "type": "vocabulary_item",
+      "order": 34,
+      "hanzi": "短文",
+      "pinyin": "duǎnwén",
+      "meaning_vi": "bài văn ngắn; đoạn văn ngắn",
+      "meaning_en": "short passage; article",
+      "pos": "Danh từ",
       "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
@@ -1463,10 +1452,21 @@
       },
       "audio_key": "",
       "source_origin": "textbook",
-      "check_needed": false
+      "check_needed": false,
+      "pos_detail": {
+       "vi": "Danh từ",
+       "cn": "名词",
+       "normalized": "noun",
+       "schema_compatible_pos": "noun",
+       "is_separable_verb": false,
+       "separable_type": "",
+       "structure_vi": "",
+       "usage_note_vi": "",
+       "notes": []
+      }
      },
      {
-      "id": "vocab_035",
+      "id": "d42d3d90-443d-45da-bed7-987b50034e92",
       "type": "vocabulary_item",
       "order": 35,
       "hanzi": "以及",
@@ -1474,17 +1474,6 @@
       "meaning_vi": "và; cũng như",
       "meaning_en": "as well as; and",
       "pos": "Liên từ",
-      "pos_detail": {
-       "vi": "Liên từ",
-       "cn": "连词",
-       "normalized": "conjunction",
-       "schema_compatible_pos": "conjunction",
-       "is_separable_verb": false,
-       "separable_type": "",
-       "structure_vi": "",
-       "usage_note_vi": "",
-       "notes": []
-      },
       "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
@@ -1499,33 +1488,33 @@
       },
       "audio_key": "",
       "source_origin": "textbook",
-      "check_needed": false
-     },
-     {
-      "id": "vocab_036",
-      "type": "vocabulary_item",
-      "order": 36,
-      "hanzi": "相关",
-      "pinyin": "xiāngguān",
-      "meaning_vi": "có liên quan; tương quan",
-      "meaning_en": "to be interrelated; related",
-      "pos": "Động từ",
+      "check_needed": false,
       "pos_detail": {
-       "vi": "Động từ",
-       "cn": "动词",
-       "normalized": "verb",
-       "schema_compatible_pos": "verb",
+       "vi": "Liên từ",
+       "cn": "连词",
+       "normalized": "conjunction",
+       "schema_compatible_pos": "conjunction",
        "is_separable_verb": false,
        "separable_type": "",
        "structure_vi": "",
        "usage_note_vi": "",
        "notes": []
-      },
+      }
+     },
+     {
+      "id": "cfb712c9-c4ca-4314-b6b2-696b40ace25e",
+      "type": "vocabulary_item",
+      "order": 36,
+      "hanzi": "相关",
+      "pinyin": "xiāngguān",
+      "meaning_vi": "có liên quan; liên quan",
+      "meaning_en": "related; relevant",
+      "pos": "Tính từ / Định ngữ",
       "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
        "front": "相关",
-       "back": "xiāngguān — có liên quan; tương quan",
+       "back": "xiāngguān — có liên quan; liên quan",
        "modes": [
         "hanzi_to_meaning",
         "meaning_to_hanzi",
@@ -1535,10 +1524,21 @@
       },
       "audio_key": "",
       "source_origin": "textbook",
-      "check_needed": false
+      "check_needed": false,
+      "pos_detail": {
+       "vi": "Tính từ / Định ngữ",
+       "cn": "形容词 / 定语",
+       "normalized": "adjective",
+       "schema_compatible_pos": "adjective",
+       "is_separable_verb": false,
+       "separable_type": "",
+       "structure_vi": "",
+       "usage_note_vi": "",
+       "notes": []
+      }
      },
      {
-      "id": "vocab_037",
+      "id": "6059829f-ae21-43cf-ac0c-05e19639ec43",
       "type": "vocabulary_item",
       "order": 37,
       "hanzi": "应有尽有",
@@ -1546,17 +1546,6 @@
       "meaning_vi": "cái gì cần có đều có; đầy đủ mọi thứ",
       "meaning_en": "to have everything that one could wish for",
       "pos": "Thành ngữ",
-      "pos_detail": {
-       "vi": "Thành ngữ",
-       "cn": "成语",
-       "normalized": "phrase",
-       "schema_compatible_pos": "phrase",
-       "is_separable_verb": false,
-       "separable_type": "",
-       "structure_vi": "",
-       "usage_note_vi": "",
-       "notes": []
-      },
       "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
@@ -1571,10 +1560,21 @@
       },
       "audio_key": "",
       "source_origin": "textbook",
-      "check_needed": false
+      "check_needed": false,
+      "pos_detail": {
+       "vi": "Thành ngữ",
+       "cn": "成语",
+       "normalized": "phrase",
+       "schema_compatible_pos": "phrase",
+       "is_separable_verb": false,
+       "separable_type": "",
+       "structure_vi": "",
+       "usage_note_vi": "",
+       "notes": []
+      }
      },
      {
-      "id": "vocab_038",
+      "id": "fefd5441-7b6c-47e3-b823-9e149b947bf7",
       "type": "vocabulary_item",
       "order": 38,
       "hanzi": "意愿",
@@ -1582,17 +1582,6 @@
       "meaning_vi": "ý nguyện; mong muốn",
       "meaning_en": "wish; desire",
       "pos": "Danh từ",
-      "pos_detail": {
-       "vi": "Danh từ",
-       "cn": "名词",
-       "normalized": "noun",
-       "schema_compatible_pos": "noun",
-       "is_separable_verb": false,
-       "separable_type": "",
-       "structure_vi": "",
-       "usage_note_vi": "",
-       "notes": []
-      },
       "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
@@ -1607,10 +1596,21 @@
       },
       "audio_key": "",
       "source_origin": "textbook",
-      "check_needed": false
+      "check_needed": false,
+      "pos_detail": {
+       "vi": "Danh từ",
+       "cn": "名词",
+       "normalized": "noun",
+       "schema_compatible_pos": "noun",
+       "is_separable_verb": false,
+       "separable_type": "",
+       "structure_vi": "",
+       "usage_note_vi": "",
+       "notes": []
+      }
      },
      {
-      "id": "vocab_039",
+      "id": "27761bd2-433a-44ef-b79a-9e6f0a34b9c9",
       "type": "vocabulary_item",
       "order": 39,
       "hanzi": "随心所欲",
@@ -1618,17 +1618,6 @@
       "meaning_vi": "tùy ý muốn; muốn sao làm vậy",
       "meaning_en": "to follow one’s inclinations; to do as one pleases",
       "pos": "Thành ngữ",
-      "pos_detail": {
-       "vi": "Thành ngữ",
-       "cn": "成语",
-       "normalized": "phrase",
-       "schema_compatible_pos": "phrase",
-       "is_separable_verb": false,
-       "separable_type": "",
-       "structure_vi": "",
-       "usage_note_vi": "",
-       "notes": []
-      },
       "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
@@ -1643,10 +1632,21 @@
       },
       "audio_key": "",
       "source_origin": "textbook",
-      "check_needed": false
+      "check_needed": false,
+      "pos_detail": {
+       "vi": "Thành ngữ",
+       "cn": "成语",
+       "normalized": "phrase",
+       "schema_compatible_pos": "phrase",
+       "is_separable_verb": false,
+       "separable_type": "",
+       "structure_vi": "",
+       "usage_note_vi": "",
+       "notes": []
+      }
      },
      {
-      "id": "vocab_040",
+      "id": "861ed325-b320-4ae0-8eac-bb6bb8ebc215",
       "type": "vocabulary_item",
       "order": 40,
       "hanzi": "鼠标",
@@ -1654,17 +1654,6 @@
       "meaning_vi": "chuột máy tính",
       "meaning_en": "computer mouse",
       "pos": "Danh từ",
-      "pos_detail": {
-       "vi": "Danh từ",
-       "cn": "名词",
-       "normalized": "noun",
-       "schema_compatible_pos": "noun",
-       "is_separable_verb": false,
-       "separable_type": "",
-       "structure_vi": "",
-       "usage_note_vi": "",
-       "notes": []
-      },
       "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
@@ -1679,10 +1668,21 @@
       },
       "audio_key": "",
       "source_origin": "textbook",
-      "check_needed": false
+      "check_needed": false,
+      "pos_detail": {
+       "vi": "Danh từ",
+       "cn": "名词",
+       "normalized": "noun",
+       "schema_compatible_pos": "noun",
+       "is_separable_verb": false,
+       "separable_type": "",
+       "structure_vi": "",
+       "usage_note_vi": "",
+       "notes": []
+      }
      },
      {
-      "id": "vocab_041",
+      "id": "6fe8f20d-e712-4f0c-9cbc-021aaeb9698c",
       "type": "vocabulary_item",
       "order": 41,
       "hanzi": "点",
@@ -1690,17 +1690,6 @@
       "meaning_vi": "nhấp; bấm; click",
       "meaning_en": "to click",
       "pos": "Động từ",
-      "pos_detail": {
-       "vi": "Động từ",
-       "cn": "动词",
-       "normalized": "verb",
-       "schema_compatible_pos": "verb",
-       "is_separable_verb": false,
-       "separable_type": "",
-       "structure_vi": "",
-       "usage_note_vi": "",
-       "notes": []
-      },
       "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
@@ -1715,17 +1704,7 @@
       },
       "audio_key": "",
       "source_origin": "textbook",
-      "check_needed": false
-     },
-     {
-      "id": "vocab_042",
-      "type": "vocabulary_item",
-      "order": 42,
-      "hanzi": "注册",
-      "pinyin": "zhùcè",
-      "meaning_vi": "đăng ký",
-      "meaning_en": "to register; to sign up",
-      "pos": "Động từ",
+      "check_needed": false,
       "pos_detail": {
        "vi": "Động từ",
        "cn": "动词",
@@ -1736,7 +1715,17 @@
        "structure_vi": "",
        "usage_note_vi": "",
        "notes": []
-      },
+      }
+     },
+     {
+      "id": "863bbf3f-83e7-4021-b98e-be632043d94c",
+      "type": "vocabulary_item",
+      "order": 42,
+      "hanzi": "注册",
+      "pinyin": "zhùcè",
+      "meaning_vi": "đăng ký",
+      "meaning_en": "to register; to sign up",
+      "pos": "Động từ",
       "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
@@ -1751,17 +1740,7 @@
       },
       "audio_key": "",
       "source_origin": "textbook",
-      "check_needed": false
-     },
-     {
-      "id": "vocab_043",
-      "type": "vocabulary_item",
-      "order": 43,
-      "hanzi": "制订",
-      "pinyin": "zhìdìng",
-      "meaning_vi": "đặt ra; lập ra; xây dựng kế hoạch",
-      "meaning_en": "to draw up; to formulate",
-      "pos": "Động từ",
+      "check_needed": false,
       "pos_detail": {
        "vi": "Động từ",
        "cn": "动词",
@@ -1772,7 +1751,17 @@
        "structure_vi": "",
        "usage_note_vi": "",
        "notes": []
-      },
+      }
+     },
+     {
+      "id": "b14487b6-5579-4f1c-9ad7-16fd40991577",
+      "type": "vocabulary_item",
+      "order": 43,
+      "hanzi": "制订",
+      "pinyin": "zhìdìng",
+      "meaning_vi": "đặt ra; lập ra; xây dựng kế hoạch",
+      "meaning_en": "to draw up; to formulate",
+      "pos": "Động từ",
       "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
@@ -1787,17 +1776,7 @@
       },
       "audio_key": "",
       "source_origin": "textbook",
-      "check_needed": false
-     },
-     {
-      "id": "vocab_044",
-      "type": "vocabulary_item",
-      "order": 44,
-      "hanzi": "结束",
-      "pinyin": "jiéshù",
-      "meaning_vi": "kết thúc",
-      "meaning_en": "to end; to finish",
-      "pos": "Động từ",
+      "check_needed": false,
       "pos_detail": {
        "vi": "Động từ",
        "cn": "动词",
@@ -1808,7 +1787,17 @@
        "structure_vi": "",
        "usage_note_vi": "",
        "notes": []
-      },
+      }
+     },
+     {
+      "id": "eb7cc112-7df2-44e6-a1df-9824d8b6e45a",
+      "type": "vocabulary_item",
+      "order": 44,
+      "hanzi": "结束",
+      "pinyin": "jiéshù",
+      "meaning_vi": "kết thúc",
+      "meaning_en": "to end; to finish",
+      "pos": "Động từ",
       "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
@@ -1823,10 +1812,21 @@
       },
       "audio_key": "",
       "source_origin": "textbook",
-      "check_needed": false
+      "check_needed": false,
+      "pos_detail": {
+       "vi": "Động từ",
+       "cn": "动词",
+       "normalized": "verb",
+       "schema_compatible_pos": "verb",
+       "is_separable_verb": false,
+       "separable_type": "",
+       "structure_vi": "",
+       "usage_note_vi": "",
+       "notes": []
+      }
      },
      {
-      "id": "vocab_045",
+      "id": "505dae11-836a-475d-b811-339f25caaf42",
       "type": "vocabulary_item",
       "order": 45,
       "hanzi": "作为",
@@ -1834,17 +1834,6 @@
       "meaning_vi": "với tư cách là; xem như là",
       "meaning_en": "as; being",
       "pos": "Động từ / Giới từ hóa",
-      "pos_detail": {
-       "vi": "Động từ / Giới từ hóa",
-       "cn": "动词 / 介词化用法",
-       "normalized": "verb_preposition",
-       "schema_compatible_pos": "verb",
-       "is_separable_verb": false,
-       "separable_type": "",
-       "structure_vi": "",
-       "usage_note_vi": "",
-       "notes": []
-      },
       "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
@@ -1859,10 +1848,21 @@
       },
       "audio_key": "",
       "source_origin": "textbook",
-      "check_needed": false
+      "check_needed": false,
+      "pos_detail": {
+       "vi": "Động từ / Giới từ hóa",
+       "cn": "动词 / 介词化用法",
+       "normalized": "verb_preposition",
+       "schema_compatible_pos": "verb",
+       "is_separable_verb": false,
+       "separable_type": "",
+       "structure_vi": "",
+       "usage_note_vi": "",
+       "notes": []
+      }
      },
      {
-      "id": "vocab_046",
+      "id": "a47b82f7-2260-4763-8c97-b1631e792e1c",
       "type": "vocabulary_item",
       "order": 46,
       "hanzi": "从事",
@@ -1870,17 +1870,6 @@
       "meaning_vi": "làm; tham gia vào một công việc/ngành nghề",
       "meaning_en": "to go in for; to be engaged in",
       "pos": "Động từ",
-      "pos_detail": {
-       "vi": "Động từ",
-       "cn": "动词",
-       "normalized": "verb",
-       "schema_compatible_pos": "verb",
-       "is_separable_verb": false,
-       "separable_type": "",
-       "structure_vi": "",
-       "usage_note_vi": "",
-       "notes": []
-      },
       "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
@@ -1895,10 +1884,21 @@
       },
       "audio_key": "",
       "source_origin": "textbook",
-      "check_needed": false
+      "check_needed": false,
+      "pos_detail": {
+       "vi": "Động từ",
+       "cn": "动词",
+       "normalized": "verb",
+       "schema_compatible_pos": "verb",
+       "is_separable_verb": false,
+       "separable_type": "",
+       "structure_vi": "",
+       "usage_note_vi": "",
+       "notes": []
+      }
      },
      {
-      "id": "vocab_047",
+      "id": "71f9308f-7b38-435e-bfa8-c7c974599035",
       "type": "vocabulary_item",
       "order": 47,
       "hanzi": "无数",
@@ -1906,17 +1906,6 @@
       "meaning_vi": "vô số; rất nhiều",
       "meaning_en": "countless; numerous",
       "pos": "Tính từ",
-      "pos_detail": {
-       "vi": "Tính từ",
-       "cn": "形容词",
-       "normalized": "adjective",
-       "schema_compatible_pos": "adjective",
-       "is_separable_verb": false,
-       "separable_type": "",
-       "structure_vi": "",
-       "usage_note_vi": "",
-       "notes": []
-      },
       "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
@@ -1931,17 +1920,7 @@
       },
       "audio_key": "",
       "source_origin": "textbook",
-      "check_needed": false
-     },
-     {
-      "id": "vocab_048",
-      "type": "vocabulary_item",
-      "order": 48,
-      "hanzi": "自豪",
-      "pinyin": "zìháo",
-      "meaning_vi": "tự hào",
-      "meaning_en": "proud",
-      "pos": "Tính từ",
+      "check_needed": false,
       "pos_detail": {
        "vi": "Tính từ",
        "cn": "形容词",
@@ -1952,7 +1931,17 @@
        "structure_vi": "",
        "usage_note_vi": "",
        "notes": []
-      },
+      }
+     },
+     {
+      "id": "05e1ac20-79be-406d-9c90-4b0c847182bc",
+      "type": "vocabulary_item",
+      "order": 48,
+      "hanzi": "自豪",
+      "pinyin": "zìháo",
+      "meaning_vi": "tự hào",
+      "meaning_en": "proud",
+      "pos": "Tính từ",
       "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
@@ -1967,10 +1956,21 @@
       },
       "audio_key": "",
       "source_origin": "textbook",
-      "check_needed": false
+      "check_needed": false,
+      "pos_detail": {
+       "vi": "Tính từ",
+       "cn": "形容词",
+       "normalized": "adjective",
+       "schema_compatible_pos": "adjective",
+       "is_separable_verb": false,
+       "separable_type": "",
+       "structure_vi": "",
+       "usage_note_vi": "",
+       "notes": []
+      }
      },
      {
-      "id": "vocab_049",
+      "id": "358d5baa-5ba1-4cb5-984a-44770a1724d6",
       "type": "vocabulary_item",
       "order": 49,
       "hanzi": "耳目",
@@ -1978,17 +1978,6 @@
       "meaning_vi": "tai mắt; phương tiện nắm thông tin",
       "meaning_en": "ears and eyes",
       "pos": "Danh từ",
-      "pos_detail": {
-       "vi": "Danh từ",
-       "cn": "名词",
-       "normalized": "noun",
-       "schema_compatible_pos": "noun",
-       "is_separable_verb": false,
-       "separable_type": "",
-       "structure_vi": "",
-       "usage_note_vi": "",
-       "notes": []
-      },
       "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
@@ -2003,17 +1992,7 @@
       },
       "audio_key": "",
       "source_origin": "textbook",
-      "check_needed": false
-     },
-     {
-      "id": "vocab_050",
-      "type": "vocabulary_item",
-      "order": 50,
-      "hanzi": "夏令营",
-      "pinyin": "xiàlìngyíng",
-      "meaning_vi": "trại hè",
-      "meaning_en": "summer camp",
-      "pos": "Danh từ",
+      "check_needed": false,
       "pos_detail": {
        "vi": "Danh từ",
        "cn": "名词",
@@ -2024,7 +2003,17 @@
        "structure_vi": "",
        "usage_note_vi": "",
        "notes": []
-      },
+      }
+     },
+     {
+      "id": "20f66e08-4820-43f5-a18a-50f61591e7cd",
+      "type": "vocabulary_item",
+      "order": 50,
+      "hanzi": "夏令营",
+      "pinyin": "xiàlìngyíng",
+      "meaning_vi": "trại hè",
+      "meaning_en": "summer camp",
+      "pos": "Danh từ",
       "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
@@ -2039,17 +2028,7 @@
       },
       "audio_key": "",
       "source_origin": "textbook",
-      "check_needed": false
-     },
-     {
-      "id": "vocab_051",
-      "type": "vocabulary_item",
-      "order": 51,
-      "hanzi": "经验",
-      "pinyin": "jīngyàn",
-      "meaning_vi": "kinh nghiệm",
-      "meaning_en": "experience",
-      "pos": "Danh từ",
+      "check_needed": false,
       "pos_detail": {
        "vi": "Danh từ",
        "cn": "名词",
@@ -2060,7 +2039,17 @@
        "structure_vi": "",
        "usage_note_vi": "",
        "notes": []
-      },
+      }
+     },
+     {
+      "id": "db0c0e40-5639-4c1e-bd66-9728a0c5006e",
+      "type": "vocabulary_item",
+      "order": 51,
+      "hanzi": "经验",
+      "pinyin": "jīngyàn",
+      "meaning_vi": "kinh nghiệm",
+      "meaning_en": "experience",
+      "pos": "Danh từ",
       "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
@@ -2075,10 +2064,21 @@
       },
       "audio_key": "",
       "source_origin": "textbook",
-      "check_needed": false
+      "check_needed": false,
+      "pos_detail": {
+       "vi": "Danh từ",
+       "cn": "名词",
+       "normalized": "noun",
+       "schema_compatible_pos": "noun",
+       "is_separable_verb": false,
+       "separable_type": "",
+       "structure_vi": "",
+       "usage_note_vi": "",
+       "notes": []
+      }
      },
      {
-      "id": "vocab_052",
+      "id": "e890b44f-c76e-4dbf-92e7-201722d3274e",
       "type": "vocabulary_item",
       "order": 52,
       "hanzi": "游戏",
@@ -2086,17 +2086,6 @@
       "meaning_vi": "trò chơi; chơi",
       "meaning_en": "game; to play; to have fun",
       "pos": "Danh từ / Động từ",
-      "pos_detail": {
-       "vi": "Danh từ / Động từ",
-       "cn": "名词 / 动词",
-       "normalized": "noun_verb",
-       "schema_compatible_pos": "verb_noun",
-       "is_separable_verb": false,
-       "separable_type": "",
-       "structure_vi": "",
-       "usage_note_vi": "",
-       "notes": []
-      },
       "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
@@ -2111,10 +2100,21 @@
       },
       "audio_key": "",
       "source_origin": "textbook",
-      "check_needed": false
+      "check_needed": false,
+      "pos_detail": {
+       "vi": "Danh từ / Động từ",
+       "cn": "名词 / 动词",
+       "normalized": "noun_verb",
+       "schema_compatible_pos": "verb_noun",
+       "is_separable_verb": false,
+       "separable_type": "",
+       "structure_vi": "",
+       "usage_note_vi": "",
+       "notes": []
+      }
      },
      {
-      "id": "vocab_053",
+      "id": "d36b89c4-d29e-486a-b7d9-aeb589592aa6",
       "type": "vocabulary_item",
       "order": 53,
       "hanzi": "海边",
@@ -2122,17 +2122,6 @@
       "meaning_vi": "bờ biển; ven biển",
       "meaning_en": "seaside",
       "pos": "Danh từ",
-      "pos_detail": {
-       "vi": "Danh từ",
-       "cn": "名词",
-       "normalized": "noun",
-       "schema_compatible_pos": "noun",
-       "is_separable_verb": false,
-       "separable_type": "",
-       "structure_vi": "",
-       "usage_note_vi": "",
-       "notes": []
-      },
       "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
@@ -2147,10 +2136,21 @@
       },
       "audio_key": "",
       "source_origin": "textbook",
-      "check_needed": false
+      "check_needed": false,
+      "pos_detail": {
+       "vi": "Danh từ",
+       "cn": "名词",
+       "normalized": "noun",
+       "schema_compatible_pos": "noun",
+       "is_separable_verb": false,
+       "separable_type": "",
+       "structure_vi": "",
+       "usage_note_vi": "",
+       "notes": []
+      }
      },
      {
-      "id": "vocab_054",
+      "id": "addea99a-d455-4f20-bd7b-e7d7b320bc0c",
       "type": "vocabulary_item",
       "order": 54,
       "hanzi": "野营",
@@ -2158,17 +2158,6 @@
       "meaning_vi": "cắm trại",
       "meaning_en": "to camp",
       "pos": "Động từ",
-      "pos_detail": {
-       "vi": "Động từ",
-       "cn": "动词",
-       "normalized": "verb",
-       "schema_compatible_pos": "verb",
-       "is_separable_verb": false,
-       "separable_type": "",
-       "structure_vi": "",
-       "usage_note_vi": "",
-       "notes": []
-      },
       "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
@@ -2183,10 +2172,21 @@
       },
       "audio_key": "",
       "source_origin": "textbook",
-      "check_needed": false
+      "check_needed": false,
+      "pos_detail": {
+       "vi": "Động từ",
+       "cn": "动词",
+       "normalized": "verb",
+       "schema_compatible_pos": "verb",
+       "is_separable_verb": false,
+       "separable_type": "",
+       "structure_vi": "",
+       "usage_note_vi": "",
+       "notes": []
+      }
      },
      {
-      "id": "vocab_055",
+      "id": "672023ad-14d1-47d0-a3c4-5dabd01b69e9",
       "type": "vocabulary_item",
       "order": 55,
       "hanzi": "方式",
@@ -2194,17 +2194,6 @@
       "meaning_vi": "phương thức; cách thức",
       "meaning_en": "way; manner",
       "pos": "Danh từ",
-      "pos_detail": {
-       "vi": "Danh từ",
-       "cn": "名词",
-       "normalized": "noun",
-       "schema_compatible_pos": "noun",
-       "is_separable_verb": false,
-       "separable_type": "",
-       "structure_vi": "",
-       "usage_note_vi": "",
-       "notes": []
-      },
       "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
@@ -2219,10 +2208,21 @@
       },
       "audio_key": "",
       "source_origin": "textbook",
-      "check_needed": false
+      "check_needed": false,
+      "pos_detail": {
+       "vi": "Danh từ",
+       "cn": "名词",
+       "normalized": "noun",
+       "schema_compatible_pos": "noun",
+       "is_separable_verb": false,
+       "separable_type": "",
+       "structure_vi": "",
+       "usage_note_vi": "",
+       "notes": []
+      }
      },
      {
-      "id": "vocab_056",
+      "id": "e93080a4-2857-4582-a75a-94276764a235",
       "type": "vocabulary_item",
       "order": 56,
       "hanzi": "增进",
@@ -2230,17 +2230,6 @@
       "meaning_vi": "tăng cường; thúc đẩy; làm sâu sắc thêm",
       "meaning_en": "to promote; to enhance",
       "pos": "Động từ",
-      "pos_detail": {
-       "vi": "Động từ",
-       "cn": "动词",
-       "normalized": "verb",
-       "schema_compatible_pos": "verb",
-       "is_separable_verb": false,
-       "separable_type": "",
-       "structure_vi": "",
-       "usage_note_vi": "",
-       "notes": []
-      },
       "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
@@ -2255,10 +2244,21 @@
       },
       "audio_key": "",
       "source_origin": "textbook",
-      "check_needed": false
+      "check_needed": false,
+      "pos_detail": {
+       "vi": "Động từ",
+       "cn": "动词",
+       "normalized": "verb",
+       "schema_compatible_pos": "verb",
+       "is_separable_verb": false,
+       "separable_type": "",
+       "structure_vi": "",
+       "usage_note_vi": "",
+       "notes": []
+      }
      },
      {
-      "id": "vocab_057",
+      "id": "682e1087-39f5-4c67-9836-fa89206dfba5",
       "type": "vocabulary_item",
       "order": 57,
       "hanzi": "之间",
@@ -2266,17 +2266,6 @@
       "meaning_vi": "giữa; ở giữa; giữa các bên",
       "meaning_en": "between",
       "pos": "Danh từ vị trí",
-      "pos_detail": {
-       "vi": "Danh từ vị trí",
-       "cn": "方位词 / 名词",
-       "normalized": "noun",
-       "schema_compatible_pos": "noun",
-       "is_separable_verb": false,
-       "separable_type": "",
-       "structure_vi": "",
-       "usage_note_vi": "",
-       "notes": []
-      },
       "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
@@ -2291,12 +2280,23 @@
       },
       "audio_key": "",
       "source_origin": "textbook",
-      "check_needed": false
+      "check_needed": false,
+      "pos_detail": {
+       "vi": "Danh từ vị trí",
+       "cn": "方位词 / 名词",
+       "normalized": "noun",
+       "schema_compatible_pos": "noun",
+       "is_separable_verb": false,
+       "separable_type": "",
+       "structure_vi": "",
+       "usage_note_vi": "",
+       "notes": []
+      }
      }
     ]
    },
    {
-    "id": "section_03_proper_nouns",
+    "id": "3c5ee48e-5d44-44ac-bd53-cac996a83338",
     "type": "proper_nouns",
     "order": 3,
     "title": "专名",
@@ -2307,16 +2307,16 @@
     "empty_reason_vi": "Bài này không thấy phần 专名 riêng biệt trong bảng chính."
    },
    {
-    "id": "section_03_notes",
+    "id": "c18e9f54-6da1-4496-886b-c2c722605678",
     "type": "notes",
-    "order": 3,
+    "order": 4,
     "title": "注释",
     "title_vi": "Chú thích",
     "source_origin": "textbook",
     "check_needed": false,
     "items": [
      {
-      "id": "note_001",
+      "id": "63d654f5-4561-4d48-a144-bacbf9671dfc",
       "type": "note",
       "order": 1,
       "title": "网络学校",
@@ -2324,10 +2324,10 @@
       "meaning_vi": "Trường học sử dụng Internet để tiến hành giảng dạy.",
       "examples": [
        {
-        "id": "note_001_ex_001",
+        "id": "95d3afd4-e83f-4a06-b8da-df58e6a9b6b0",
         "zh": "新时代网校不是只学电脑，而是通过电脑，在多媒体的环境下，学习各种现代科学文化知识。",
         "pinyin": "Xīn Shídài Wǎngxiào bú shì zhǐ xué diànnǎo, ér shì tōngguò diànnǎo, zài duōméitǐ de huánjìng xià, xuéxí gè zhǒng xiàndài kēxué wénhuà zhīshi.",
-        "vi": "Trường học trực tuyến Thời Đại Mới không phải chỉ học máy tính, mà là thông qua máy tính, trong môi trường đa phương tiện để học các loại kiến thức khoa học văn hóa hiện đại.",
+        "vi": "Trường học trực tuyến Thời Đại Mới không phải chỉ học về máy tính, mà là thông qua máy tính, trong môi trường đa phương tiện để học các loại kiến thức khoa học văn hóa hiện đại.",
         "en": "",
         "highlight": ["网络学校"],
         "grammar_refs": [],
@@ -2344,7 +2344,7 @@
       "check_needed": false
      },
      {
-      "id": "note_002",
+      "id": "7e2ee128-4fbd-4a93-898c-5f5fd99b371b",
       "type": "note",
       "order": 2,
       "title": "夏令营",
@@ -2352,7 +2352,7 @@
       "meaning_vi": "Trại hè; trại tổ chức vào mùa hè ở bờ biển, vùng núi hoặc địa điểm phù hợp cho thanh thiếu niên / tập thể nghỉ ngơi, vui chơi, sinh hoạt tập thể.",
       "examples": [
        {
-        "id": "note_002_ex_001",
+        "id": "b18891fe-2a40-4f9a-8d44-8c30a976e10a",
         "zh": "学校决定在今年暑假开办一个“新时代夏令营”。",
         "pinyin": "Xuéxiào juédìng zài jīnnián shǔjià kāibàn yí ge “Xīn Shídài Xiàlìngyíng”.",
         "vi": "Nhà trường quyết định mở một “Trại hè Thời Đại Mới” vào kỳ nghỉ hè năm nay.",
@@ -2374,16 +2374,16 @@
     ]
    },
    {
-    "id": "section_04_grammar",
+    "id": "b045e537-7383-494b-8d61-b0286977ed80",
     "type": "grammar",
-    "order": 4,
+    "order": 5,
     "title": "词语用法",
     "title_vi": "Cách dùng từ / Ngữ pháp",
     "source_origin": "textbook",
     "check_needed": false,
     "items": [
      {
-      "id": "grammar_001",
+      "id": "f8ec59f3-898a-47b2-b536-44dfd8183393",
       "type": "grammar_point",
       "order": 1,
       "title": "有关",
@@ -2394,7 +2394,7 @@
       "check_needed": false,
       "blocks": [
        {
-        "id": "grammar_001_block_001",
+        "id": "b7c5d870-2db8-4e2e-950f-f0e6e522ac16",
         "type": "grammar_overview",
         "order": 1,
         "title": "Bản chất",
@@ -2402,7 +2402,7 @@
         "examples": []
        },
        {
-        "id": "grammar_001_block_002",
+        "id": "a85d60ae-5a59-4bad-a730-4e11cd8fd4ed",
         "type": "grammar_structure",
         "order": 2,
         "title": "有关 làm động từ",
@@ -2410,7 +2410,7 @@
         "meaning_vi": "A có liên quan đến B.",
         "examples": [
          {
-          "id": "grammar_001_ex_001",
+          "id": "2e38466f-cc5f-451a-9612-b188f7cd2dcf",
           "zh": "这件事跟他无关。",
           "pinyin": "Zhè jiàn shì gēn tā wúguān.",
           "vi": "Việc này không liên quan đến anh ấy.",
@@ -2425,7 +2425,7 @@
           "check_needed": false
          },
          {
-          "id": "grammar_001_ex_002",
+          "id": "64dc50f6-13c5-4723-9aed-94e0d978cb90",
           "zh": "发生环境污染问题与他们厂不重视环境保护有关。",
           "pinyin": "Fāshēng huánjìng wūrǎn wèntí yǔ tāmen chǎng bù zhòngshì huánjìng bǎohù yǒuguān.",
           "vi": "Việc xảy ra vấn đề ô nhiễm môi trường có liên quan đến chuyện nhà máy của họ không coi trọng bảo vệ môi trường.",
@@ -2443,7 +2443,7 @@
         "notes_vi": ["Trái nghĩa thường gặp: 无关."]
        },
        {
-        "id": "grammar_001_block_003",
+        "id": "ca8c13db-9de3-46b8-a156-5be7570386a5",
         "type": "grammar_structure",
         "order": 3,
         "title": "有关 làm giới từ",
@@ -2451,7 +2451,7 @@
         "meaning_vi": "về / liên quan đến một chủ đề hoặc phương diện nào đó.",
         "examples": [
          {
-          "id": "grammar_001_ex_003",
+          "id": "b7a3d982-8f73-4ed4-b3d6-828fba6e2949",
           "zh": "他在网上查了一些有关中国经济的资料。",
           "pinyin": "Tā zài wǎngshàng chá le yìxiē yǒuguān Zhōngguó jīngjì de zīliào.",
           "vi": "Anh ấy tra trên mạng một số tài liệu liên quan đến kinh tế Trung Quốc.",
@@ -2466,7 +2466,7 @@
           "check_needed": false
          },
          {
-          "id": "grammar_001_ex_004",
+          "id": "7aa9ef46-6f3d-4ea1-b0f6-1ba89dd9b81b",
           "zh": "张教授要开办一个有关国际关系的讲座。",
           "pinyin": "Zhāng jiàoshòu yào kāibàn yí ge yǒuguān guójì guānxi de jiǎngzuò.",
           "vi": "Giáo sư Trương muốn mở một buổi tọa đàm liên quan đến quan hệ quốc tế.",
@@ -2488,7 +2488,7 @@
       ]
      },
      {
-      "id": "grammar_002",
+      "id": "57b14753-688a-41b6-9e0d-b61dbbf574d7",
       "type": "grammar_point",
       "order": 2,
       "title": "不是……，而是……",
@@ -2499,7 +2499,7 @@
       "check_needed": false,
       "blocks": [
        {
-        "id": "grammar_002_block_001",
+        "id": "470b1ca1-e0a1-449f-b55e-a8aa481a4dd4",
         "type": "grammar_overview",
         "order": 1,
         "title": "Bản chất",
@@ -2507,7 +2507,7 @@
         "examples": []
        },
        {
-        "id": "grammar_002_block_002",
+        "id": "0ef2b790-3209-4b5c-a519-ca5a424e4d49",
         "type": "grammar_structure",
         "order": 2,
         "title": "Cấu trúc chính",
@@ -2515,7 +2515,7 @@
         "meaning_vi": "Không phải A, mà là B.",
         "examples": [
          {
-          "id": "grammar_002_ex_001",
+          "id": "148dd5b4-2deb-4724-b898-7d508f8a6e77",
           "zh": "新时代网校不是只学电脑，而是通过电脑，在多媒体的环境下，学习各种现代科学文化知识。",
           "pinyin": "Xīn Shídài Wǎngxiào bú shì zhǐ xué diànnǎo, ér shì tōngguò diànnǎo, zài duōméitǐ de huánjìng xià, xuéxí gè zhǒng xiàndài kēxué wénhuà zhīshi.",
           "vi": "Trường học trực tuyến Thời Đại Mới không phải chỉ học máy tính, mà là thông qua máy tính, trong môi trường đa phương tiện để học các loại kiến thức khoa học văn hóa hiện đại.",
@@ -2530,7 +2530,7 @@
           "check_needed": false
          },
          {
-          "id": "grammar_002_ex_002",
+          "id": "34fb6f43-cac8-4ca9-9004-ccfbcfc6d263",
           "zh": "不是我不愿意去，而是没有时间。",
           "pinyin": "Bú shì wǒ bú yuànyì qù, ér shì méiyǒu shíjiān.",
           "vi": "Không phải tôi không muốn đi, mà là không có thời gian.",
@@ -2550,7 +2550,7 @@
       ]
      },
      {
-      "id": "grammar_003",
+      "id": "fa804fff-372b-4874-8571-f54e613d7e07",
       "type": "grammar_point",
       "order": 3,
       "title": "通过",
@@ -2561,7 +2561,7 @@
       "check_needed": false,
       "blocks": [
        {
-        "id": "grammar_003_block_001",
+        "id": "50dcd503-1832-4112-a0be-e09408954b90",
         "type": "grammar_overview",
         "order": 1,
         "title": "Bản chất",
@@ -2569,7 +2569,7 @@
         "examples": []
        },
        {
-        "id": "grammar_003_block_002",
+        "id": "6b417a86-ee99-4c94-b342-c9bff5f564c5",
         "type": "grammar_structure",
         "order": 2,
         "title": "通过 làm động từ",
@@ -2577,7 +2577,7 @@
         "meaning_vi": "Đi qua, thông qua một nơi.",
         "examples": [
          {
-          "id": "grammar_003_ex_001",
+          "id": "3620f823-6377-41e3-9821-e498d2c8ac94",
           "zh": "从这儿到那儿去，必须通过这座桥。",
           "pinyin": "Cóng zhèr dào nàr qù, bìxū tōngguò zhè zuò qiáo.",
           "vi": "Từ đây đến đó, nhất định phải đi qua cây cầu này.",
@@ -2592,7 +2592,7 @@
           "check_needed": false
          },
          {
-          "id": "grammar_003_ex_002",
+          "id": "67dbf307-9e3e-454a-9d27-30b827684ec9",
           "zh": "前面的路太窄了，汽车无法通过。",
           "pinyin": "Qiánmiàn de lù tài zhǎi le, qìchē wúfǎ tōngguò.",
           "vi": "Con đường phía trước quá hẹp, xe ô tô không thể đi qua.",
@@ -2610,7 +2610,7 @@
         "notes_vi": []
        },
        {
-        "id": "grammar_003_block_003",
+        "id": "d0e5a393-126f-4376-9fcb-f6cf84482c86",
         "type": "grammar_structure",
         "order": 3,
         "title": "通过 làm giới từ",
@@ -2618,7 +2618,7 @@
         "meaning_vi": "Thông qua một phương tiện, cách thức hoặc người trung gian để làm gì.",
         "examples": [
          {
-          "id": "grammar_003_ex_003",
+          "id": "d3ca42bf-fbbd-4347-98a8-7a697fe218c2",
           "zh": "通过近一年的学习，我已经能用汉语跟中国人谈话了。",
           "pinyin": "Tōngguò jìn yì nián de xuéxí, wǒ yǐjīng néng yòng Hànyǔ gēn Zhōngguó rén tánhuà le.",
           "vi": "Thông qua gần một năm học tập, tôi đã có thể dùng tiếng Hán nói chuyện với người Trung Quốc rồi.",
@@ -2633,7 +2633,7 @@
           "check_needed": false
          },
          {
-          "id": "grammar_003_ex_004",
+          "id": "8a5a1327-5977-406d-b2eb-0873fdcdff0b",
           "zh": "通过小田的介绍我认识了小张。",
           "pinyin": "Tōngguò Xiǎo Tián de jièshào wǒ rènshi le Xiǎo Zhāng.",
           "vi": "Thông qua sự giới thiệu của Tiểu Điền, tôi quen Tiểu Trương.",
@@ -2653,7 +2653,7 @@
       ]
      },
      {
-      "id": "grammar_004",
+      "id": "c6cd6c38-22fc-4546-a398-39efe02d6c17",
       "type": "grammar_point",
       "order": 4,
       "title": "适合",
@@ -2664,7 +2664,7 @@
       "check_needed": false,
       "blocks": [
        {
-        "id": "grammar_004_block_001",
+        "id": "6b109e8c-3e57-466f-89ea-5e3dd68f03d9",
         "type": "grammar_overview",
         "order": 1,
         "title": "Bản chất",
@@ -2672,7 +2672,7 @@
         "examples": []
        },
        {
-        "id": "grammar_004_block_002",
+        "id": "3ecf1989-24b0-4088-8831-c92b1fd6d541",
         "type": "grammar_structure",
         "order": 2,
         "title": "Cấu trúc chính",
@@ -2680,7 +2680,7 @@
         "meaning_vi": "A phù hợp với B.",
         "examples": [
          {
-          "id": "grammar_004_ex_001",
+          "id": "4c24a67d-5112-438c-96a0-1fe26e7867ad",
           "zh": "学生可以选择适合自己程度的教材和自己喜欢的教师。",
           "pinyin": "Xuéshēng kěyǐ xuǎnzé shìhé zìjǐ chéngdù de jiàocái hé zìjǐ xǐhuan de jiàoshī.",
           "vi": "Học sinh có thể chọn tài liệu phù hợp với trình độ của mình và giáo viên mình thích.",
@@ -2695,7 +2695,7 @@
           "check_needed": false
          },
          {
-          "id": "grammar_004_ex_002",
+          "id": "857c43af-3f3e-491c-988c-f6e69807c407",
           "zh": "这个菜比较清淡，很适合我。",
           "pinyin": "Zhège cài bǐjiào qīngdàn, hěn shìhé wǒ.",
           "vi": "Món này khá thanh đạm, rất hợp với tôi.",
@@ -2710,7 +2710,7 @@
           "check_needed": false
          },
          {
-          "id": "grammar_004_ex_003",
+          "id": "38e52309-29d4-419f-b95a-6dad25f96eb9",
           "zh": "这本书适合不适合初级班的学生用？",
           "pinyin": "Zhè běn shū shìhé bù shìhé chūjí bān de xuéshēng yòng?",
           "vi": "Quyển sách này có phù hợp cho học sinh lớp sơ cấp dùng không?",
@@ -2733,7 +2733,7 @@
       ]
      },
      {
-      "id": "grammar_005",
+      "id": "c3d31639-0f40-4b2f-aa50-5dda9d443b78",
       "type": "grammar_point",
       "order": 5,
       "title": "为……而……",
@@ -2744,7 +2744,7 @@
       "check_needed": false,
       "blocks": [
        {
-        "id": "grammar_005_block_001",
+        "id": "24a8fcd1-e9b7-43bf-92dc-3d3cc3fb385e",
         "type": "grammar_overview",
         "order": 1,
         "title": "Bản chất",
@@ -2752,7 +2752,7 @@
         "examples": []
        },
        {
-        "id": "grammar_005_block_002",
+        "id": "b7be4295-e408-4edd-882f-3fff358754f0",
         "type": "grammar_structure",
         "order": 2,
         "title": "Cấu trúc chính",
@@ -2760,7 +2760,7 @@
         "meaning_vi": "Vì / để / nhằm… mà làm gì.",
         "examples": [
          {
-          "id": "grammar_005_ex_001",
+          "id": "528ab4f2-319d-4271-8800-f92a399a6e8c",
           "zh": "作为一个从事远程教育的教师，我为自己培养了无数学生而感到自豪。",
           "pinyin": "Zuòwéi yí ge cóngshì yuǎnchéng jiàoyù de jiàoshī, wǒ wèi zìjǐ péiyǎng le wúshù xuéshēng ér gǎndào zìháo.",
           "vi": "Là một giáo viên làm giáo dục từ xa, tôi cảm thấy tự hào vì mình đã đào tạo được vô số học sinh.",
@@ -2775,7 +2775,7 @@
           "check_needed": false
          },
          {
-          "id": "grammar_005_ex_002",
+          "id": "b50bbea9-e176-4f1d-a9da-57239b4a25e0",
           "zh": "他为以后在中国开展业务而来学习汉语。",
           "pinyin": "Tā wèi yǐhòu zài Zhōngguó kāizhǎn yèwù ér lái xuéxí Hànyǔ.",
           "vi": "Anh ấy đến học tiếng Hán để sau này phát triển nghiệp vụ ở Trung Quốc.",
@@ -2790,7 +2790,7 @@
           "check_needed": false
          },
          {
-          "id": "grammar_005_ex_003",
+          "id": "6afe794f-bd28-4d3b-9e91-419edfb74f42",
           "zh": "我是为开办公司而来的。",
           "pinyin": "Wǒ shì wèi kāibàn gōngsī ér lái de.",
           "vi": "Tôi đến là để mở công ty.",
@@ -2812,7 +2812,7 @@
     ]
    },
    {
-    "id": "section_05_exercises",
+    "id": "9901c597-ca97-451e-b63d-11814aaf933e",
     "type": "exercises",
     "order": 6,
     "title": "练习",
@@ -2824,11 +2824,11 @@
      "actual_exercise_count_in_json": 10,
      "all_exercises_covered": true,
      "coverage_status": "complete_verified",
-     "note": "Exercise prompts checked against PDF pages 167-173; closed-form answer keys cross-checked against available reference answer source where applicable."
+     "note": "Exercise prompts checked against PDF printed pages 160-173; closed-form answer keys cross-checked against available reference answer source where applicable."
     },
     "items": [
      {
-      "id": "ex_01",
+      "id": "15cb6f38-593b-48d1-bcca-dc3d2a140f9e",
       "type": "phonetics",
       "variant": "pronunciation_tone_minimal_pairs",
       "order": 1,
@@ -2842,12 +2842,12 @@
       "skill_focus": ["pronunciation", "listening"],
       "parts": [
        {
-        "id": "ex_01_part_01",
+        "id": "75a38c8c-be00-4d26-a5c3-2c9c47ead405",
         "type": "minimal_pair_group",
         "title": "辨音辨调",
         "items": [
          {
-          "id": "ex_01_pair_01",
+          "id": "e38d3cb2-2c33-4c4a-83fa-2934373f225d",
           "left": "同行 tóngháng",
           "right": "懂行 dǒngháng",
           "audio_keys": [],
@@ -2855,7 +2855,7 @@
           "check_needed": false
          },
          {
-          "id": "ex_01_pair_02",
+          "id": "79df1daa-2fc0-43b6-b4e3-aee6478eef8a",
           "left": "原子 yuánzǐ",
           "right": "院子 yuànzi",
           "audio_keys": [],
@@ -2863,7 +2863,7 @@
           "check_needed": false
          },
          {
-          "id": "ex_01_pair_03",
+          "id": "93191d96-c6f7-4475-b285-9bfd75ad2b6c",
           "left": "意愿 yìyuàn",
           "right": "医院 yīyuàn",
           "audio_keys": [],
@@ -2871,7 +2871,7 @@
           "check_needed": false
          },
          {
-          "id": "ex_01_pair_04",
+          "id": "656ce346-d1fc-4d43-8acc-abf294d2d8da",
           "left": "制订 zhìdìng",
           "right": "指定 zhǐdìng",
           "audio_keys": [],
@@ -2879,7 +2879,7 @@
           "check_needed": false
          },
          {
-          "id": "ex_01_pair_05",
+          "id": "5e775bab-fb67-4293-b3f7-4b9e80f29c52",
           "left": "作为 zuòwéi",
           "right": "座位 zuòwèi",
           "audio_keys": [],
@@ -2887,7 +2887,7 @@
           "check_needed": false
          },
          {
-          "id": "ex_01_pair_06",
+          "id": "7e23fb6e-376b-43d9-ae33-0413e3080ef9",
           "left": "无数 wúshù",
           "right": "武术 wǔshù",
           "audio_keys": [],
@@ -2895,7 +2895,7 @@
           "check_needed": false
          },
          {
-          "id": "ex_01_pair_07",
+          "id": "5b58aa37-6cd8-4a57-86e3-bac8b945a84e",
           "left": "之间 zhī jiān",
           "right": "只见 zhǐ jiàn",
           "audio_keys": [],
@@ -2905,12 +2905,12 @@
         ]
        },
        {
-        "id": "ex_01_part_02",
+        "id": "e6c13064-1e5a-4320-91c7-625a6d1bbf71",
         "type": "proverb_reading",
         "title": "朗读",
         "items": [
          {
-          "id": "ex_01_read_01",
+          "id": "b97d1a8c-3880-42ce-813f-12d8eb8cb219",
           "text": "机不可失，时不再来。",
           "pinyin": "Jī bùkě shī, shí bú zài lái.",
           "vi": "Cơ hội không thể bỏ lỡ, thời gian qua rồi không trở lại.",
@@ -2918,7 +2918,7 @@
           "check_needed": false
          },
          {
-          "id": "ex_01_read_02",
+          "id": "8ae4a7da-2ae8-494c-99db-df12e85086a4",
           "text": "不怕慢，只怕站。",
           "pinyin": "Bú pà màn, zhǐ pà zhàn.",
           "vi": "Không sợ chậm, chỉ sợ đứng yên.",
@@ -2926,7 +2926,7 @@
           "check_needed": false
          },
          {
-          "id": "ex_01_read_03",
+          "id": "1f523168-1c6e-4db9-abc5-198d4ccace2b",
           "text": "学而不思则罔，思而不学则殆。",
           "pinyin": "Xué ér bù sī zé wǎng, sī ér bù xué zé dài.",
           "vi": "Học mà không nghĩ thì mờ mịt; nghĩ mà không học thì nguy hiểm.",
@@ -2944,7 +2944,7 @@
       "check_needed": false
      },
      {
-      "id": "ex_02",
+      "id": "98e14c21-0449-4e36-b1ae-77ed46cf3aa0",
       "type": "read_aloud",
       "variant": "word_phrase_sentence_chunks",
       "order": 2,
@@ -2958,7 +2958,7 @@
       "skill_focus": ["speaking", "vocabulary"],
       "chunks": [
        {
-        "id": "ex_02_chunk_01",
+        "id": "029b6888-951c-4d78-8e81-67211d2f2178",
         "text": "现代教育",
         "pinyin": "xiàndài jiàoyù",
         "vi": "giáo dục hiện đại",
@@ -2967,7 +2967,7 @@
         "check_needed": false
        },
        {
-        "id": "ex_02_chunk_02",
+        "id": "f7a394ba-7ba1-4ced-9fb6-4a51e9b45e41",
         "text": "网络教育",
         "pinyin": "wǎngluò jiàoyù",
         "vi": "giáo dục qua mạng",
@@ -2976,7 +2976,7 @@
         "check_needed": false
        },
        {
-        "id": "ex_02_chunk_03",
+        "id": "cbeae143-93f7-4e30-b03e-cafcbeecfee8",
         "text": "接受教育",
         "pinyin": "jiēshòu jiàoyù",
         "vi": "tiếp nhận giáo dục",
@@ -2985,7 +2985,7 @@
         "check_needed": false
        },
        {
-        "id": "ex_02_chunk_04",
+        "id": "908385d2-03e2-42e6-8641-681ccbdb7383",
         "text": "有关问题",
         "pinyin": "yǒuguān wèntí",
         "vi": "vấn đề liên quan",
@@ -2994,7 +2994,7 @@
         "check_needed": false
        },
        {
-        "id": "ex_02_chunk_05",
+        "id": "9e310873-3483-4086-91b4-53e6c4982438",
         "text": "有关国家",
         "pinyin": "yǒuguān guójiā",
         "vi": "quốc gia liên quan",
@@ -3003,7 +3003,7 @@
         "check_needed": false
        },
        {
-        "id": "ex_02_chunk_06",
+        "id": "56e43701-a5ae-4070-ac7b-31f77ed52c81",
         "text": "有关情况",
         "pinyin": "yǒuguān qíngkuàng",
         "vi": "tình hình liên quan",
@@ -3012,7 +3012,7 @@
         "check_needed": false
        },
        {
-        "id": "ex_02_chunk_07",
+        "id": "77a9ec03-cc9f-4170-b16a-7e20444a37a7",
         "text": "很遗憾",
         "pinyin": "hěn yíhàn",
         "vi": "rất tiếc",
@@ -3021,7 +3021,7 @@
         "check_needed": false
        },
        {
-        "id": "ex_02_chunk_08",
+        "id": "d7b385ae-57da-4e8c-aee4-b67137f2423a",
         "text": "真遗憾",
         "pinyin": "zhēn yíhàn",
         "vi": "thật tiếc",
@@ -3030,7 +3030,7 @@
         "check_needed": false
        },
        {
-        "id": "ex_02_chunk_09",
+        "id": "d6835cb8-98d0-4ec4-896e-28edb097b655",
         "text": "非常遗憾",
         "pinyin": "fēicháng yíhàn",
         "vi": "vô cùng tiếc",
@@ -3039,7 +3039,7 @@
         "check_needed": false
        },
        {
-        "id": "ex_02_chunk_10",
+        "id": "0783c634-e332-446a-9f6d-20a19656f7f3",
         "text": "增进友谊",
         "pinyin": "zēngjìn yǒuyì",
         "vi": "tăng cường tình hữu nghị",
@@ -3048,7 +3048,7 @@
         "check_needed": false
        },
        {
-        "id": "ex_02_chunk_11",
+        "id": "b0cb1abd-bc89-4210-975d-f110f5646ad2",
         "text": "增进了解",
         "pinyin": "zēngjìn liǎojiě",
         "vi": "tăng thêm sự hiểu biết",
@@ -3057,7 +3057,7 @@
         "check_needed": false
        },
        {
-        "id": "ex_02_chunk_12",
+        "id": "2c8b801e-cb28-49ae-b8f1-b2c8b84f7f8b",
         "text": "增进团结",
         "pinyin": "zēngjìn tuánjié",
         "vi": "tăng cường đoàn kết",
@@ -3066,7 +3066,7 @@
         "check_needed": false
        },
        {
-        "id": "ex_02_chunk_13",
+        "id": "7b488f75-1c3d-4f10-9bd3-8d4b9d8b9c73",
         "text": "选择学校",
         "pinyin": "xuǎnzé xuéxiào",
         "vi": "chọn trường",
@@ -3075,7 +3075,7 @@
         "check_needed": false
        },
        {
-        "id": "ex_02_chunk_14",
+        "id": "fc57888e-9c36-48be-9cd3-fb7aed77a414",
         "text": "选择专业",
         "pinyin": "xuǎnzé zhuānyè",
         "vi": "chọn chuyên ngành",
@@ -3084,7 +3084,7 @@
         "check_needed": false
        },
        {
-        "id": "ex_02_chunk_15",
+        "id": "284fe12e-9a3d-4209-8e18-cb94b6921962",
         "text": "选择工作",
         "pinyin": "xuǎnzé gōngzuò",
         "vi": "chọn công việc",
@@ -3100,7 +3100,7 @@
       "check_needed": false
      },
      {
-      "id": "ex_03",
+      "id": "5dfca3d2-8524-4a83-92dd-b036a7259465",
       "type": "choose_words_fill_blank",
       "variant": "word_bank_fill_blank",
       "order": 3,
@@ -3126,227 +3126,9 @@
        "信息",
        "之间"
       ],
-      "word_bank_detail": [
-       {
-        "hanzi": "选择",
-        "pinyin": "xuǎnzé",
-        "meaning_vi": "lựa chọn",
-        "pos": "Động từ",
-        "pos_detail": {
-         "vi": "Động từ",
-         "cn": "动词",
-         "normalized": "verb",
-         "schema_compatible_pos": "verb",
-         "is_separable_verb": false,
-         "separable_type": "",
-         "structure_vi": "",
-         "usage_note_vi": "",
-         "notes": []
-        },
-        "check_needed": false
-       },
-       {
-        "hanzi": "遗憾",
-        "pinyin": "yíhàn",
-        "meaning_vi": "tiếc nuối; điều tiếc nuối",
-        "pos": "Tính từ / Danh từ",
-        "pos_detail": {
-         "vi": "Tính từ / Danh từ",
-         "cn": "形容词 / 名词",
-         "normalized": "adjective",
-         "schema_compatible_pos": "adjective",
-         "is_separable_verb": false,
-         "separable_type": "",
-         "structure_vi": "",
-         "usage_note_vi": "",
-         "notes": []
-        },
-        "check_needed": false
-       },
-       {
-        "hanzi": "作为",
-        "pinyin": "zuòwéi",
-        "meaning_vi": "với tư cách là",
-        "pos": "Động từ / Giới từ hóa",
-        "pos_detail": {
-         "vi": "Động từ / Giới từ hóa",
-         "cn": "动词 / 介词化用法",
-         "normalized": "verb",
-         "schema_compatible_pos": "verb",
-         "is_separable_verb": false,
-         "separable_type": "",
-         "structure_vi": "",
-         "usage_note_vi": "",
-         "notes": []
-        },
-        "check_needed": false
-       },
-       {
-        "hanzi": "有关",
-        "pinyin": "yǒuguān",
-        "meaning_vi": "liên quan đến",
-        "pos": "Động từ / Giới từ hóa",
-        "pos_detail": {
-         "vi": "Động từ / Giới từ hóa",
-         "cn": "动词 / 介词化用法",
-         "normalized": "verb",
-         "schema_compatible_pos": "verb",
-         "is_separable_verb": false,
-         "separable_type": "",
-         "structure_vi": "",
-         "usage_note_vi": "",
-         "notes": []
-        },
-        "check_needed": false
-       },
-       {
-        "hanzi": "自豪",
-        "pinyin": "zìháo",
-        "meaning_vi": "tự hào",
-        "pos": "Tính từ",
-        "pos_detail": {
-         "vi": "Tính từ",
-         "cn": "形容词",
-         "normalized": "adjective",
-         "schema_compatible_pos": "adjective",
-         "is_separable_verb": false,
-         "separable_type": "",
-         "structure_vi": "",
-         "usage_note_vi": "",
-         "notes": []
-        },
-        "check_needed": false
-       },
-       {
-        "hanzi": "开办",
-        "pinyin": "kāibàn",
-        "meaning_vi": "mở; tổ chức; thành lập",
-        "pos": "Động từ",
-        "pos_detail": {
-         "vi": "Động từ",
-         "cn": "动词",
-         "normalized": "verb",
-         "schema_compatible_pos": "verb",
-         "is_separable_verb": false,
-         "separable_type": "",
-         "structure_vi": "",
-         "usage_note_vi": "",
-         "notes": []
-        },
-        "check_needed": false
-       },
-       {
-        "hanzi": "增进",
-        "pinyin": "zēngjìn",
-        "meaning_vi": "tăng cường; thúc đẩy",
-        "pos": "Động từ",
-        "pos_detail": {
-         "vi": "Động từ",
-         "cn": "动词",
-         "normalized": "verb",
-         "schema_compatible_pos": "verb",
-         "is_separable_verb": false,
-         "separable_type": "",
-         "structure_vi": "",
-         "usage_note_vi": "",
-         "notes": []
-        },
-        "check_needed": false
-       },
-       {
-        "hanzi": "申请",
-        "pinyin": "shēnqǐng",
-        "meaning_vi": "xin; nộp đơn; yêu cầu đăng ký",
-        "pos": "Động từ / Danh từ",
-        "pos_detail": {
-         "vi": "Động từ / Danh từ",
-         "cn": "动词 / 名词",
-         "normalized": "verb_noun",
-         "schema_compatible_pos": "verb_noun",
-         "is_separable_verb": false,
-         "separable_type": "",
-         "structure_vi": "",
-         "usage_note_vi": "",
-         "notes": []
-        },
-        "check_needed": false
-       },
-       {
-        "hanzi": "按照",
-        "pinyin": "ànzhào",
-        "meaning_vi": "theo; căn cứ theo",
-        "pos": "Giới từ",
-        "pos_detail": {
-         "vi": "Giới từ",
-         "cn": "介词",
-         "normalized": "preposition",
-         "schema_compatible_pos": "preposition",
-         "is_separable_verb": false,
-         "separable_type": "",
-         "structure_vi": "",
-         "usage_note_vi": "",
-         "notes": []
-        },
-        "check_needed": false
-       },
-       {
-        "hanzi": "无数",
-        "pinyin": "wúshù",
-        "meaning_vi": "vô số",
-        "pos": "Tính từ",
-        "pos_detail": {
-         "vi": "Tính từ",
-         "cn": "形容词",
-         "normalized": "adjective",
-         "schema_compatible_pos": "adjective",
-         "is_separable_verb": false,
-         "separable_type": "",
-         "structure_vi": "",
-         "usage_note_vi": "",
-         "notes": []
-        },
-        "check_needed": false
-       },
-       {
-        "hanzi": "信息",
-        "pinyin": "xìnxī",
-        "meaning_vi": "thông tin",
-        "pos": "Danh từ",
-        "pos_detail": {
-         "vi": "Danh từ",
-         "cn": "名词",
-         "normalized": "noun",
-         "schema_compatible_pos": "noun",
-         "is_separable_verb": false,
-         "separable_type": "",
-         "structure_vi": "",
-         "usage_note_vi": "",
-         "notes": []
-        },
-        "check_needed": false
-       },
-       {
-        "hanzi": "之间",
-        "pinyin": "zhījiān",
-        "meaning_vi": "giữa",
-        "pos": "Danh từ vị trí",
-        "pos_detail": {
-         "vi": "Danh từ vị trí",
-         "cn": "方位词 / 名词",
-         "normalized": "noun",
-         "schema_compatible_pos": "noun",
-         "is_separable_verb": false,
-         "separable_type": "",
-         "structure_vi": "",
-         "usage_note_vi": "",
-         "notes": []
-        },
-        "check_needed": false
-       }
-      ],
       "questions": [
        {
-        "id": "ex_03_q_01",
+        "id": "941d80e5-8eb2-4e21-beae-597e6677cdaf",
         "type": "fill_blank",
         "prompt": "我们已经进入了一个____时代。",
         "answer": "信息",
@@ -3360,7 +3142,7 @@
         "check_needed": false
        },
        {
-        "id": "ex_03_q_02",
+        "id": "f31d95d0-500f-4cc9-97ee-57a7295062d2",
         "type": "fill_blank",
         "prompt": "我对____多媒体的知识知道得还不太多。",
         "answer": "有关",
@@ -3374,7 +3156,7 @@
         "check_needed": false
        },
        {
-        "id": "ex_03_q_03",
+        "id": "069f2cd8-233c-4227-8f46-78a1d28a4a59",
         "type": "fill_blank",
         "prompt": "____学校的要求，我们不但要学习汉语，还要学习中国文化。",
         "answer": "按照",
@@ -3388,7 +3170,7 @@
         "check_needed": false
        },
        {
-        "id": "ex_03_q_04",
+        "id": "013e3712-30ac-4a8a-b60e-0d6f818f4cdb",
         "type": "fill_blank",
         "prompt": "一个人的一生都在____，选择学校、选择工作、选择爱人等。",
         "answer": "选择",
@@ -3402,7 +3184,7 @@
         "check_needed": false
        },
        {
-        "id": "ex_03_q_05",
+        "id": "ba362929-16a5-4a79-8cad-ecfabcaa32f3",
         "type": "fill_blank",
         "prompt": "我已经向学校提出____，想再延长一年。",
         "answer": "申请",
@@ -3416,7 +3198,7 @@
         "check_needed": false
        },
        {
-        "id": "ex_03_q_06",
+        "id": "542ef74e-c843-4b6c-9cd8-0011b6ee7b7a",
         "type": "fill_blank",
         "prompt": "____一个大夫，我要对病人负责。",
         "answer": "作为",
@@ -3430,7 +3212,7 @@
         "check_needed": false
        },
        {
-        "id": "ex_03_q_07",
+        "id": "715f1fd6-1b2e-43e0-b3dc-cbc252152601",
         "type": "fill_blank",
         "prompt": "这个大学已经有一百多年的历史了，一百多年来他们为社会培养了____人才。",
         "answer": "无数",
@@ -3444,7 +3226,7 @@
         "check_needed": false
        },
        {
-        "id": "ex_03_q_08",
+        "id": "105a0775-7adb-418e-b770-133481e26360",
         "type": "fill_blank",
         "prompt": "我为有这样的学生而感到____。",
         "answer": "自豪",
@@ -3458,7 +3240,7 @@
         "check_needed": false
        },
        {
-        "id": "ex_03_q_09",
+        "id": "e4f087ec-f391-487e-9c09-fa2844c867d8",
         "type": "fill_blank",
         "prompt": "这次回国，没有见到我的导师张教授，感到十分____。",
         "answer": "遗憾",
@@ -3472,7 +3254,7 @@
         "check_needed": false
        },
        {
-        "id": "ex_03_q_10",
+        "id": "59f17dca-dab9-4952-b7f4-3425c32679d3",
         "type": "fill_blank",
         "prompt": "我们学校暑假____了一个科技夏令营。",
         "answer": "开办",
@@ -3486,7 +3268,7 @@
         "check_needed": false
        },
        {
-        "id": "ex_03_q_11",
+        "id": "0888bde7-83fa-45e6-bc0a-a874d88e9226",
         "type": "fill_blank",
         "prompt": "我们想通过这种方式____同学们之间的了解和友谊。",
         "answer": "增进",
@@ -3500,7 +3282,7 @@
         "check_needed": false
        },
        {
-        "id": "ex_03_q_12",
+        "id": "3c19a1e7-6e46-4d2f-af98-be3059a2bfbb",
         "type": "fill_blank",
         "prompt": "我们两国人民____有着传统的友谊。",
         "answer": "之间",
@@ -3516,73 +3298,73 @@
       ],
       "answer_key": [
        {
-        "question_id": "ex_03_q_01",
+        "question_id": "941d80e5-8eb2-4e21-beae-597e6677cdaf",
         "answer": "信息",
         "answer_verified": true,
         "check_needed": false
        },
        {
-        "question_id": "ex_03_q_02",
+        "question_id": "f31d95d0-500f-4cc9-97ee-57a7295062d2",
         "answer": "有关",
         "answer_verified": true,
         "check_needed": false
        },
        {
-        "question_id": "ex_03_q_03",
+        "question_id": "069f2cd8-233c-4227-8f46-78a1d28a4a59",
         "answer": "按照",
         "answer_verified": true,
         "check_needed": false
        },
        {
-        "question_id": "ex_03_q_04",
+        "question_id": "013e3712-30ac-4a8a-b60e-0d6f818f4cdb",
         "answer": "选择",
         "answer_verified": true,
         "check_needed": false
        },
        {
-        "question_id": "ex_03_q_05",
+        "question_id": "ba362929-16a5-4a79-8cad-ecfabcaa32f3",
         "answer": "申请",
         "answer_verified": true,
         "check_needed": false
        },
        {
-        "question_id": "ex_03_q_06",
+        "question_id": "542ef74e-c843-4b6c-9cd8-0011b6ee7b7a",
         "answer": "作为",
         "answer_verified": true,
         "check_needed": false
        },
        {
-        "question_id": "ex_03_q_07",
+        "question_id": "715f1fd6-1b2e-43e0-b3dc-cbc252152601",
         "answer": "无数",
         "answer_verified": true,
         "check_needed": false
        },
        {
-        "question_id": "ex_03_q_08",
+        "question_id": "105a0775-7adb-418e-b770-133481e26360",
         "answer": "自豪",
         "answer_verified": true,
         "check_needed": false
        },
        {
-        "question_id": "ex_03_q_09",
+        "question_id": "e4f087ec-f391-487e-9c09-fa2844c867d8",
         "answer": "遗憾",
         "answer_verified": true,
         "check_needed": false
        },
        {
-        "question_id": "ex_03_q_10",
+        "question_id": "59f17dca-dab9-4952-b7f4-3425c32679d3",
         "answer": "开办",
         "answer_verified": true,
         "check_needed": false
        },
        {
-        "question_id": "ex_03_q_11",
+        "question_id": "0888bde7-83fa-45e6-bc0a-a874d88e9226",
         "answer": "增进",
         "answer_verified": true,
         "check_needed": false
        },
        {
-        "question_id": "ex_03_q_12",
+        "question_id": "3c19a1e7-6e46-4d2f-af98-be3059a2bfbb",
         "answer": "之间",
         "answer_verified": true,
         "check_needed": false
@@ -3597,7 +3379,7 @@
       "check_needed": false
      },
      {
-      "id": "ex_04",
+      "id": "809141fb-cc55-403a-9433-35eea89c8c90",
       "type": "complete_sentence",
       "variant": "complete_sentence_with_given_words",
       "order": 4,
@@ -3609,27 +3391,25 @@
       },
       "questions": [
        {
-        "id": "ex_04_q_01",
+        "id": "668ef942-39b3-4816-be06-f347b64fa456",
         "prompt": "这份快递我已经写好地址了，你________________。",
         "given_word": "只需",
         "sample_answer": "你只需把它寄出去就可以了。",
-        "sample_answer_pinyin": "Nǐ zhǐxū bǎ tā jì chūqù jiù kěyǐ le.",
-        "sample_answer_vi": "Bạn chỉ cần gửi nó đi là được.",
         "acceptable_answers": ["你只需把它寄出去就可以了。"],
         "grading": {
          "mode": "semantic"
         },
         "source_origin": "sample_answer_checked",
         "answer_verified": true,
-        "check_needed": false
+        "check_needed": false,
+        "sample_answer_pinyin": "Nǐ zhǐxū bǎ tā jì chūqù jiù kěyǐ le.",
+        "sample_answer_vi": "Bạn chỉ cần gửi nó đi là được."
        },
        {
-        "id": "ex_04_q_02",
+        "id": "6e23c236-94eb-4e83-9ea6-7353241c098d",
         "prompt": "我每天都会收到许多电子邮件，________________。",
         "given_word": "其中",
         "sample_answer": "其中有老师发来的通知，有同学交来的作业，还有朋友发来的信。",
-        "sample_answer_pinyin": "Qízhōng yǒu lǎoshī fā lái de tōngzhī, yǒu tóngxué jiāo lái de zuòyè, hái yǒu péngyou fā lái de xìn.",
-        "sample_answer_vi": "Trong đó có thông báo giáo viên gửi đến, bài tập bạn học nộp lên, và thư bạn bè gửi đến.",
         "acceptable_answers": [
          "其中有老师发来的通知，有同学交来的作业，还有朋友发来的信。"
         ],
@@ -3638,30 +3418,30 @@
         },
         "source_origin": "sample_answer_checked",
         "answer_verified": true,
-        "check_needed": false
+        "check_needed": false,
+        "sample_answer_pinyin": "Qízhōng yǒu lǎoshī fā lái de tōngzhī, yǒu tóngxué jiāo lái de zuòyè, hái yǒu péngyou fā lái de xìn.",
+        "sample_answer_vi": "Trong đó có thông báo giáo viên gửi đến, bài tập bạn học nộp lên, và thư bạn bè gửi đến."
        },
        {
-        "id": "ex_04_q_03",
+        "id": "ee3570f6-9872-4699-a1ed-c338e52b4e50",
         "prompt": "我来中国不是为了学汉语，________________。",
         "given_word": "而是",
         "sample_answer": "而是为了了解中国文化。",
-        "sample_answer_pinyin": "Ér shì wèile liǎojiě Zhōngguó wénhuà.",
-        "sample_answer_vi": "Mà là để tìm hiểu văn hóa Trung Quốc.",
         "acceptable_answers": ["而是为了了解中国文化。"],
         "grading": {
          "mode": "semantic"
         },
         "source_origin": "sample_answer_checked",
         "answer_verified": true,
-        "check_needed": false
+        "check_needed": false,
+        "sample_answer_pinyin": "Ér shì wèile liǎojiě Zhōngguó wénhuà.",
+        "sample_answer_vi": "Mà là để tìm hiểu văn hóa Trung Quốc."
        },
        {
-        "id": "ex_04_q_04",
+        "id": "3130979d-5cc3-4cf5-999c-9ed317ea7c14",
         "prompt": "________________________________，我为自己没能参加这次比赛而感到遗憾。",
         "given_word": "作为",
         "sample_answer": "作为一名运动员，我为自己没能参加这次比赛而感到遗憾。",
-        "sample_answer_pinyin": "Zuòwéi yì míng yùndòngyuán, wǒ wèi zìjǐ méi néng cānjiā zhè cì bǐsài ér gǎndào yíhàn.",
-        "sample_answer_vi": "Là một vận động viên, tôi cảm thấy tiếc vì mình không thể tham gia cuộc thi lần này.",
         "acceptable_answers": [
          "作为一名运动员，我为自己没能参加这次比赛而感到遗憾。"
         ],
@@ -3670,37 +3450,39 @@
         },
         "source_origin": "sample_answer_checked",
         "answer_verified": true,
-        "check_needed": false
+        "check_needed": false,
+        "sample_answer_pinyin": "Zuòwéi yì míng yùndòngyuán, wǒ wèi zìjǐ méi néng cānjiā zhè cì bǐsài ér gǎndào yíhàn.",
+        "sample_answer_vi": "Là một vận động viên, tôi cảm thấy tiếc vì mình không thể tham gia cuộc thi lần này."
        },
        {
-        "id": "ex_04_q_05",
+        "id": "9dd88fe0-ccfb-47b6-a74a-d1ee53c61219",
         "prompt": "我________________，也没有读过他的书。",
         "given_word": "既",
         "sample_answer": "我既没有见过他，也没有读过他的书。",
-        "sample_answer_pinyin": "Wǒ jì méiyǒu jiàn guo tā, yě méiyǒu dú guo tā de shū.",
-        "sample_answer_vi": "Tôi vừa chưa từng gặp ông ấy, cũng chưa từng đọc sách của ông ấy.",
         "acceptable_answers": ["我既没有见过他，也没有读过他的书。"],
         "grading": {
          "mode": "semantic"
         },
         "source_origin": "sample_answer_checked",
         "answer_verified": true,
-        "check_needed": false
+        "check_needed": false,
+        "sample_answer_pinyin": "Wǒ jì méiyǒu jiàn guo tā, yě méiyǒu dú guo tā de shū.",
+        "sample_answer_vi": "Tôi chưa từng gặp ông ấy, cũng chưa từng đọc sách của ông ấy."
        },
        {
-        "id": "ex_04_q_06",
+        "id": "9002df8c-125f-489d-9396-d008958aa6b9",
         "prompt": "他的性格________________。",
         "given_word": "适合",
         "sample_answer": "他的性格适合做老师。",
-        "sample_answer_pinyin": "Tā de xìnggé shìhé zuò lǎoshī.",
-        "sample_answer_vi": "Tính cách của anh ấy phù hợp làm giáo viên.",
         "acceptable_answers": ["他的性格适合做老师。"],
         "grading": {
          "mode": "semantic"
         },
         "source_origin": "sample_answer_checked",
         "answer_verified": true,
-        "check_needed": false
+        "check_needed": false,
+        "sample_answer_pinyin": "Tā de xìnggé shìhé zuò lǎoshī.",
+        "sample_answer_vi": "Tính cách của anh ấy phù hợp làm giáo viên."
        }
       ],
       "rendering": {
@@ -3711,7 +3493,7 @@
       "check_needed": false
      },
      {
-      "id": "ex_05",
+      "id": "e843bb6e-2e51-4fb8-b362-7506b97cf2fc",
       "type": "complete_dialogue",
       "variant": "complete_dialogue",
       "order": 5,
@@ -3723,87 +3505,85 @@
       },
       "questions": [
        {
-        "id": "ex_05_q_01",
+        "id": "7d9c942a-bdc2-45a1-b852-6b3dd58fe8f2",
         "prompt": "A：你每周应该上多少节课？\nB：________________________________。",
         "given_word": "按照",
         "sample_answer": "按照学校的要求，我每周应该上五节课。",
-        "sample_answer_pinyin": "Ànzhào xuéxiào de yāoqiú, wǒ měi zhōu yīnggāi shàng wǔ jié kè.",
-        "sample_answer_vi": "Theo yêu cầu của nhà trường, mỗi tuần tôi nên học/nên lên năm tiết.",
         "acceptable_answers": ["按照学校的要求，我每周应该上五节课。"],
         "grading": {
          "mode": "semantic"
         },
         "source_origin": "reference_answer_checked",
         "answer_verified": true,
-        "check_needed": false
+        "check_needed": false,
+        "sample_answer_pinyin": "Ànzhào xuéxiào de yāoqiú, wǒ měi zhōu yīnggāi shàng wǔ jié kè.",
+        "sample_answer_vi": "Theo yêu cầu của nhà trường, mỗi tuần tôi phải học/lên năm tiết."
        },
        {
-        "id": "ex_05_q_02",
+        "id": "a79733e1-ef69-41fd-ac55-9bb8b3bd4d2c",
         "prompt": "A：中国有多少所大学？\nB：两千多所吧，________________________________。",
         "given_word": "其中",
         "sample_answer": "我的大学就是其中之一。",
-        "sample_answer_pinyin": "Wǒ de dàxué jiù shì qízhōng zhī yī.",
-        "sample_answer_vi": "Trường đại học của tôi là một trong số đó.",
         "acceptable_answers": ["我的大学就是其中之一。"],
         "grading": {
          "mode": "semantic"
         },
         "source_origin": "reference_answer_checked",
         "answer_verified": true,
-        "check_needed": false
+        "check_needed": false,
+        "sample_answer_pinyin": "Wǒ de dàxué jiù shì qízhōng zhī yī.",
+        "sample_answer_vi": "Trường đại học của tôi là một trong số đó."
        },
        {
-        "id": "ex_05_q_03",
+        "id": "ec5f1e84-0693-46b3-b735-8005e47f103e",
         "prompt": "A：你 HSK 考得怎么样？\nB：还可以，________________________________。",
         "given_word": "通过",
         "sample_answer": "我通过了。",
-        "sample_answer_pinyin": "Wǒ tōngguò le.",
-        "sample_answer_vi": "Tôi đã thi đậu rồi.",
         "acceptable_answers": ["我通过了。"],
         "grading": {
          "mode": "semantic"
         },
         "source_origin": "reference_answer_checked",
         "answer_verified": true,
-        "check_needed": false
+        "check_needed": false,
+        "sample_answer_pinyin": "Wǒ tōngguò le.",
+        "sample_answer_vi": "Tôi đã thi đậu rồi."
        },
        {
-        "id": "ex_05_q_04",
+        "id": "dc7f5f06-95a1-4158-98d8-b293729d6a13",
         "prompt": "A：你现在的听力水平比过去有很大提高。\nB：哪里，我觉得有的发音________________________________。",
         "given_word": "分辨",
         "sample_answer": "还是很难分辨。",
-        "sample_answer_pinyin": "Háishi hěn nán fēnbiàn.",
-        "sample_answer_vi": "Vẫn rất khó phân biệt.",
         "acceptable_answers": ["还是很难分辨。"],
         "grading": {
          "mode": "semantic"
         },
         "source_origin": "reference_answer_checked",
         "answer_verified": true,
-        "check_needed": false
+        "check_needed": false,
+        "sample_answer_pinyin": "Háishi hěn nán fēnbiàn.",
+        "sample_answer_vi": "Vẫn rất khó phân biệt."
        },
        {
-        "id": "ex_05_q_05",
+        "id": "55e24ac4-bbd1-40f9-9dee-e97b3f2e10f7",
         "prompt": "A：你来中国以后都去过什么地方？\nB：我这个人不爱动，来中国半年多了，____________________________。",
         "given_word": "既……也……",
         "sample_answer": "既没有去过北京，也没有去过上海。",
-        "sample_answer_pinyin": "Jì méiyǒu qù guo Běijīng, yě méiyǒu qù guo Shànghǎi.",
-        "sample_answer_vi": "Vừa chưa từng đi Bắc Kinh, cũng chưa từng đi Thượng Hải.",
         "acceptable_answers": ["既没有去过北京，也没有去过上海。"],
         "grading": {
          "mode": "semantic"
         },
         "source_origin": "reference_answer_checked",
         "answer_verified": true,
-        "check_needed": false
+        "check_needed": false,
+        "sample_answer_pinyin": "Jì méiyǒu qù guo Běijīng, yě méiyǒu qù guo Shànghǎi.",
+        "sample_answer_vi": "Tôi chưa từng đi Bắc Kinh, cũng chưa từng đi Thượng Hải."
        },
        {
-        "id": "ex_05_q_06",
+        "id": "f7c603b4-c112-4d9c-ab37-b945d471ccee",
         "prompt": "A：学校组织我们去西安旅行，你报名了吗？\nB：报了，我觉得这样的活动可以________________，所以我很愿意参加。",
         "given_word": "增进",
         "sample_answer": "增进同学们之间的关系。",
-        "sample_answer_pinyin": "Zēngjìn tóngxuémen zhījiān de guānxi.",
-        "sample_answer_vi": "Tăng cường quan hệ giữa các bạn học.",
         "acceptable_answers": [
          "增进同学们之间的关系。",
          "增进同学们之间的了解和友谊。"
@@ -3813,7 +3593,9 @@
         },
         "source_origin": "reference_answer_checked",
         "answer_verified": true,
-        "check_needed": false
+        "check_needed": false,
+        "sample_answer_pinyin": "Zēngjìn tóngxuémen zhījiān de guānxi.",
+        "sample_answer_vi": "Tăng cường mối quan hệ giữa các bạn học."
        }
       ],
       "rendering": {
@@ -3824,7 +3606,7 @@
       "check_needed": false
      },
      {
-      "id": "ex_06",
+      "id": "60ec1197-2967-408c-a1f3-3c2112f8305a",
       "type": "reorder_sentence",
       "variant": "reorder_sentences_or_paragraph",
       "order": 6,
@@ -3836,7 +3618,7 @@
       },
       "questions": [
        {
-        "id": "ex_06_q_01",
+        "id": "1b0dc397-26f4-4659-a964-f9c68ceab72a",
         "items": {
          "A": "但应当看到网络发展的前途是不可限量的。",
          "B": "虽然目前世界各国都还没有达到人人上网的程度。",
@@ -3849,7 +3631,7 @@
         "source_origin": "reference_answer_checked"
        },
        {
-        "id": "ex_06_q_02",
+        "id": "ab74bab2-0cd3-4c59-b4dd-6d9a3c6197b9",
         "items": {
          "A": "你甚至可以不用出国，就能买到正常的法国香水。",
          "B": "在现代社会中，它带给我们的便利是巨大的，没有使用过互联网的人，很难想象网络的好处。",
@@ -3870,7 +3652,7 @@
       "check_needed": false
      },
      {
-      "id": "ex_07",
+      "id": "1fd4313d-93f3-4cbe-9dd4-2ba0d5bac415",
       "type": "correct_sentence",
       "variant": "error_correction",
       "order": 7,
@@ -3882,10 +3664,9 @@
       },
       "questions": [
        {
-        "id": "ex_07_q_01",
+        "id": "f8e911bf-9cbb-4dad-91ed-87032d2d95f2",
         "wrong_sentence": "昨天我去看京剧，连半支歌也听得不懂。",
         "correct_sentence": "昨天我去看京剧，连一句也听不懂。",
-        "correct_pinyin": "Zuótiān wǒ qù kàn jīngjù, lián yí jù yě tīng bù dǒng.",
         "acceptable_answers": [
          "昨天我去看京剧，连一句也听不懂。",
          "昨天我去看京剧，连一句也没听懂。"
@@ -3896,13 +3677,13 @@
         },
         "source_origin": "reference_answer_checked",
         "answer_verified": true,
-        "check_needed": false
+        "check_needed": false,
+        "correct_pinyin": "Zuótiān wǒ qù kàn jīngjù, lián yí jù yě tīng bù dǒng."
        },
        {
-        "id": "ex_07_q_02",
+        "id": "3fd78baa-272c-4e07-8ee2-5399c9977a99",
         "wrong_sentence": "我的发烧终于好了点儿。",
         "correct_sentence": "我终于退烧了。",
-        "correct_pinyin": "Wǒ zhōngyú tuì shāo le.",
         "acceptable_answers": ["我终于退烧了。", "我的烧终于退了。"],
         "explanation_vi": "“发烧”是症状/动作，表示退烧应说“退烧了”或“烧退了”。",
         "grading": {
@@ -3910,13 +3691,13 @@
         },
         "source_origin": "reference_answer_checked",
         "answer_verified": true,
-        "check_needed": false
+        "check_needed": false,
+        "correct_pinyin": "Wǒ zhōngyú tuì shāo le."
        },
        {
-        "id": "ex_07_q_03",
+        "id": "69f5ddfa-be8d-4292-b18f-6136daaa613f",
         "wrong_sentence": "作业难得我直有头疼。",
         "correct_sentence": "作业难得我直头疼。",
-        "correct_pinyin": "Zuòyè nán de wǒ zhí tóuténg.",
         "acceptable_answers": ["作业难得我直头疼。"],
         "explanation_vi": "“难得”作程度补语，后接“我直头疼”，不用“有”。",
         "grading": {
@@ -3924,13 +3705,13 @@
         },
         "source_origin": "reference_answer_checked",
         "answer_verified": true,
-        "check_needed": false
+        "check_needed": false,
+        "correct_pinyin": "Zuòyè nán de wǒ zhí tóuténg."
        },
        {
-        "id": "ex_07_q_04",
+        "id": "9c211f34-08a0-4478-b188-fe6a0e98ea41",
         "wrong_sentence": "北京的公共汽车总是很挤满。",
         "correct_sentence": "北京的公共汽车总是很挤。",
-        "correct_pinyin": "Běijīng de gōnggòng qìchē zǒng shì hěn jǐ.",
         "acceptable_answers": ["北京的公共汽车总是很挤。"],
         "explanation_vi": "“挤”本身可作形容词，不能说“很挤满”。",
         "grading": {
@@ -3938,30 +3719,30 @@
         },
         "source_origin": "reference_answer_checked",
         "answer_verified": true,
-        "check_needed": false
+        "check_needed": false,
+        "correct_pinyin": "Běijīng de gōnggòng qìchē zǒng shì hěn jǐ."
        },
        {
-        "id": "ex_07_q_05",
+        "id": "c8ec5644-8adf-46de-b2ff-34b3088ba324",
         "wrong_sentence": "每个月的最后我都没有了我的钱。",
         "correct_sentence": "每到月末我的钱就都花完了。",
-        "correct_pinyin": "Měi dào yuèmò wǒ de qián jiù dōu huā wán le.",
         "acceptable_answers": [
          "每到月末我的钱就都花完了。",
          "每到月末我的钱就都花光了。"
         ],
-        "explanation_vi": "“没有了我的钱”不自然；表达钱用完应说“钱花完了/花光了”。",
+        "explanation_vi": "“没有了我的钱” không tự nhiên; khi nói tiền đã dùng hết nên nói “钱都花完/花光了”.",
         "grading": {
          "mode": "semantic"
         },
         "source_origin": "reference_answer_checked",
         "answer_verified": true,
-        "check_needed": false
+        "check_needed": false,
+        "correct_pinyin": "Měi dào yuèmò wǒ de qián jiù dōu huā wán le."
        },
        {
-        "id": "ex_07_q_06",
+        "id": "6db3da52-2247-4991-a1d3-225528d56fff",
         "wrong_sentence": "你把这篇课文看得懂吗？",
         "correct_sentence": "这篇课文你看得懂吗？",
-        "correct_pinyin": "Zhè piān kèwén nǐ kàn de dǒng ma?",
         "acceptable_answers": ["这篇课文你看得懂吗？"],
         "explanation_vi": "可能补语“看得懂”一般不用把字句。",
         "grading": {
@@ -3969,7 +3750,8 @@
         },
         "source_origin": "reference_answer_checked",
         "answer_verified": true,
-        "check_needed": false
+        "check_needed": false,
+        "correct_pinyin": "Zhè piān kèwén nǐ kàn de dǒng ma?"
        }
       ],
       "rendering": {
@@ -3980,7 +3762,7 @@
       "check_needed": false
      },
      {
-      "id": "ex_08",
+      "id": "b9e46637-94ca-4fea-90cf-29155c015046",
       "type": "custom",
       "variant": "role_play",
       "order": 8,
@@ -3992,22 +3774,20 @@
       },
       "parts": [
        {
-        "id": "ex_08_part_01",
+        "id": "ad4a97cf-4706-4fd2-b30f-f815451ab51c",
         "title": "下列句子什么情景下说？",
         "questions": [
          {
-          "id": "ex_08_q_01",
+          "id": "51d25007-39bc-4798-8fb4-fd9aaf8168f5",
           "prompt": "这件事跟他无关。",
-          "prompt_pinyin": "Zhè jiàn shì gēn tā wúguān.",
           "sample_answer_vi": "Dùng khi muốn nói việc này không liên quan đến người đó.",
           "source_origin": "sample_answer_checked",
           "answer_verified": true,
           "check_needed": false
          },
          {
-          "id": "ex_08_q_02",
+          "id": "e65bddbb-aff2-43d6-86ee-fb07381ebe3e",
           "prompt": "我为有这样的朋友感到自豪。",
-          "prompt_pinyin": "Wǒ wèi yǒu zhèyàng de péngyou gǎndào zìháo.",
           "sample_answer_vi": "Dùng khi muốn bày tỏ sự tự hào vì có một người bạn như vậy.",
           "source_origin": "sample_answer_checked",
           "answer_verified": true,
@@ -4016,28 +3796,28 @@
         ]
        },
        {
-        "id": "ex_08_part_02",
+        "id": "84c4612b-98ef-4184-b4eb-30257a5d2f97",
         "title": "下列情景怎么说？",
         "questions": [
          {
-          "id": "ex_08_q_03",
+          "id": "2ac934ff-71d7-4d4a-b040-149ec5a5750e",
           "prompt": "一位老奶奶不会用自动取款机取钱，你告诉她怎么做。（把，卡，只有，按）",
           "sample_answer_zh": "您只需把卡插进去，然后按照屏幕上的提示按键就可以取钱了。",
-          "sample_answer_pinyin": "Nín zhǐxū bǎ kǎ chā jìnqù, ránhòu ànzhào píngmù shang de tíshì àn jiàn jiù kěyǐ qǔ qián le.",
           "sample_answer_vi": "Bà chỉ cần đưa thẻ vào, rồi bấm phím theo hướng dẫn trên màn hình là có thể rút tiền được.",
           "source_origin": "sample_answer_checked",
           "answer_verified": true,
-          "check_needed": false
+          "check_needed": false,
+          "sample_answer_pinyin": "Nín zhǐxū bǎ kǎ chā jìnqù, ránhòu ànzhào píngmù shang de tíshì àn jiàn jiù kěyǐ qǔ qián le."
          },
          {
-          "id": "ex_08_q_04",
+          "id": "c5d39e80-de1f-4a3c-9b5f-9193a14a8a33",
           "prompt": "你想在网上查找今天《人民日报》有什么消息，但不知道它的网址，你要问别人。",
           "sample_answer_zh": "请问，今天《人民日报》的网址是什么？我想在网上查一下今天有什么消息。",
-          "sample_answer_pinyin": "Qǐngwèn, jīntiān Rénmín Rìbào de wǎngzhǐ shì shénme? Wǒ xiǎng zài wǎngshàng chá yíxià jīntiān yǒu shénme xiāoxi.",
-          "sample_answer_vi": "Xin hỏi địa chỉ website của Nhân Dân Nhật Báo hôm nay là gì? Tôi muốn tra trên mạng xem hôm nay có tin gì.",
+          "sample_answer_vi": "Xin hỏi địa chỉ website của Nhân Dân Nhật Báo là gì? Tôi muốn tra trên mạng xem hôm nay có tin gì.",
           "source_origin": "sample_answer_checked",
           "answer_verified": true,
-          "check_needed": false
+          "check_needed": false,
+          "sample_answer_pinyin": "Qǐngwèn, jīntiān Rénmín Rìbào de wǎngzhǐ shì shénme? Wǒ xiǎng zài wǎngshàng chá yíxià jīntiān yǒu shénme xiāoxi."
          }
         ]
        }
@@ -4050,7 +3830,7 @@
       "check_needed": false
      },
      {
-      "id": "ex_09",
+      "id": "849f6690-a8ea-4b6f-937d-429f236714ad",
       "type": "reading_fill_blank",
       "variant": "reading_cloze",
       "order": 9,
@@ -4065,7 +3845,7 @@
       "check_needed": false
      },
      {
-      "id": "ex_10",
+      "id": "1ac62b88-14d2-473e-be1e-6a588e95e535",
       "type": "communication_dialogue",
       "variant": "role_play",
       "order": 10,
@@ -4082,7 +3862,7 @@
     ]
    },
    {
-    "id": "section_06_reading",
+    "id": "886f621e-85ce-4e1a-91df-d8d257596034",
     "type": "reading",
     "order": 7,
     "title": "综合填空",
@@ -4091,7 +3871,7 @@
     "check_needed": false,
     "items": [
      {
-      "id": "reading_01",
+      "id": "9bd9a79e-3279-468d-9f4b-ecd1f7365e19",
       "type": "reading_cloze",
       "variant": "reading_cloze",
       "order": 1,
@@ -4099,7 +3879,7 @@
       "title_vi": "Điền vào chỗ trống",
       "supplementary_words": [
        {
-        "id": "reading_01_word_01",
+        "id": "44d7974e-3a5b-45c0-a0e2-9b883d814cc6",
         "hanzi": "长途",
         "pinyin": "chángtú",
         "meaning_vi": "đường dài; cuộc gọi đường dài",
@@ -4120,7 +3900,7 @@
         "check_needed": false
        },
        {
-        "id": "reading_01_word_02",
+        "id": "f0d02d73-fc09-4310-a941-3b9d8c50d6a0",
         "hanzi": "投",
         "pinyin": "tóu",
         "meaning_vi": "ném; bỏ vào",
@@ -4141,7 +3921,7 @@
         "check_needed": false
        },
        {
-        "id": "reading_01_word_03",
+        "id": "6b66426c-8005-4e6a-aa9b-387dd914dc92",
         "hanzi": "贺卡",
         "pinyin": "hèkǎ",
         "meaning_vi": "thiệp chúc mừng",
@@ -4162,7 +3942,7 @@
         "check_needed": false
        },
        {
-        "id": "reading_01_word_04",
+        "id": "3c0b0ba4-7b1d-45c1-a701-b9e5f8ae5928",
         "hanzi": "祝福",
         "pinyin": "zhùfú",
         "meaning_vi": "lời chúc; chúc phúc",
@@ -4183,7 +3963,7 @@
         "check_needed": false
        },
        {
-        "id": "reading_01_word_05",
+        "id": "077e6c6c-3462-47b0-ac93-6b325f5b1145",
         "hanzi": "无穷",
         "pinyin": "wúqióng",
         "meaning_vi": "vô tận; vô cùng",
@@ -4205,10 +3985,10 @@
        }
       ],
       "passage": {
-       "id": "reading_01_passage",
+       "id": "f69fa452-eb41-49bf-8121-dfc271ef9234",
        "text": "我学会上网已经差不多三年①____。与很多人不同，我上网完全是②____与在国外留学的儿子通信。以前我不会上网，打国际长途又特别贵，我们就经常写信沟通。我们总是每周写一封信，③____投进邮箱的那一天起，就得等十几天。等信到了，上面的新闻也变④____旧闻了。\n\n学会了上网以后，通过收发电子邮件，真是太方便⑤____。最大的好处是快。有时我们刚关⑥____电脑，突然觉得还有什么话没讲完，就又打开，再写一封。\n\n每⑦____过年过节，我还可以收到很多以前教过的学生从世界各国发⑧____的贺卡和祝福，听着音乐、读着那些温暖的话语，你会感到，网络世界真是有无穷的乐趣。",
        "pinyin": "Wǒ xuéhuì shàngwǎng yǐjīng chàbuduō sān nián le. Yǔ hěn duō rén bùtóng, wǒ shàngwǎng wánquán shì wèi yǔ zài guówài liúxué de érzi tōngxìn. Yǐqián wǒ bú huì shàngwǎng, dǎ guójì chángtú yòu tèbié guì, wǒmen jiù jīngcháng xiě xìn gōutōng. Wǒmen zǒng shì měi zhōu xiě yì fēng xìn, cóng tóu jìn yóuxiāng de nà yì tiān qǐ, jiù děi děng shí jǐ tiān. Děng xìn dào le, shàngmiàn de xīnwén yě biàn chéng jiùwén le. Xuéhuì le shàngwǎng yǐhòu, tōngguò shōu-fā diànzǐ yóujiàn, zhēn shì tài fāngbiàn le. Zuìdà de hǎochu shì kuài. Yǒushí wǒmen gāng guān shàng diànnǎo, tūrán juéde hái yǒu shénme huà méi jiǎng wán, jiù yòu dǎkāi, zài xiě yì fēng. Měi féng guònián guòjié, wǒ hái kěyǐ shōu dào hěn duō yǐqián jiāo guo de xuéshēng cóng shìjiè gè guó fā lái de hèkǎ hé zhùfú, tīngzhe yīnyuè, dúzhe nàxiē wēnnuǎn de huàyǔ, nǐ huì gǎndào, wǎngluò shìjiè zhēn shì yǒu wúqióng de lèqù.",
-       "vi": "Tôi học được cách lên mạng đã gần ba năm rồi. Khác với nhiều người, tôi lên mạng hoàn toàn là để liên lạc với con trai đang du học ở nước ngoài...",
+       "vi": "Tôi học được cách lên mạng đã gần ba năm rồi. Khác với nhiều người, tôi lên mạng hoàn toàn là để liên lạc với con trai đang du học ở nước ngoài. Trước đây tôi không biết lên mạng, gọi điện thoại quốc tế đường dài lại đặc biệt đắt, nên chúng tôi thường viết thư để liên lạc. Chúng tôi thường mỗi tuần viết một lá thư; kể từ ngày bỏ thư vào hòm thư, phải đợi hơn mười ngày. Đến khi thư tới, tin tức trong thư cũng đã thành tin cũ rồi.\n\nSau khi học được cách lên mạng, thông qua gửi và nhận email thì thật sự quá tiện. Ưu điểm lớn nhất là nhanh. Có lúc chúng tôi vừa tắt máy tính, đột nhiên thấy vẫn còn điều gì đó chưa nói hết, thì lại mở máy lên, viết thêm một email nữa.\n\nMỗi dịp lễ tết, tôi còn có thể nhận được rất nhiều thiệp chúc mừng và lời chúc do những học sinh tôi từng dạy gửi đến từ các nước trên thế giới. Vừa nghe nhạc, vừa đọc những lời lẽ ấm áp ấy, bạn sẽ cảm thấy thế giới mạng thật sự có niềm vui vô tận.",
        "segments": []
       },
       "blanks": [
@@ -4399,7 +4179,7 @@
     ]
    },
    {
-    "id": "section_07_communication",
+    "id": "bf79ed98-ebbe-47bb-ab7e-ed968dcf1861",
     "type": "communication",
     "order": 8,
     "title": "交际会话",
@@ -4408,7 +4188,7 @@
     "check_needed": false,
     "items": [
      {
-      "id": "communication_01",
+      "id": "d47481cc-fd2a-4991-ac01-d4168b47f7e0",
       "type": "communication_dialogue",
       "variant": "talking_about_regret",
       "order": 1,
@@ -4418,7 +4198,7 @@
       "function_vi": "Nói về điều tiếc nuối / cảm giác tiếc nuối",
       "dialogue": [
        {
-        "id": "comm_01_line_01",
+        "id": "adc8bc14-48b3-46e2-9001-fda44c8b6761",
         "speaker": "A",
         "text": "今天上课时，老师问我们什么情况下会感到“遗憾”。",
         "pinyin": "Jīntiān shàngkè shí, lǎoshī wèn wǒmen shénme qíngkuàng xià huì gǎndào “yíhàn”.",
@@ -4426,7 +4206,7 @@
         "audio_key": ""
        },
        {
-        "id": "comm_01_line_02",
+        "id": "d4f07f51-68ef-4b82-89c7-2926a7c2a91c",
         "speaker": "B",
         "text": "你是怎么回答的？",
         "pinyin": "Nǐ shì zěnme huídá de?",
@@ -4434,7 +4214,7 @@
         "audio_key": ""
        },
        {
-        "id": "comm_01_line_03",
+        "id": "5b13a89e-5e67-4d02-ac6d-b32e54af0b23",
         "speaker": "A",
         "text": "我没有回答。",
         "pinyin": "Wǒ méiyǒu huídá.",
@@ -4442,7 +4222,7 @@
         "audio_key": ""
        },
        {
-        "id": "comm_01_line_04",
+        "id": "d1db9a35-358d-4c35-b3e2-4397f60755c1",
         "speaker": "B",
         "text": "为什么？难道你没有遗憾的事儿吗？",
         "pinyin": "Wèishénme? Nándào nǐ méiyǒu yíhàn de shìr ma?",
@@ -4450,7 +4230,7 @@
         "audio_key": ""
        },
        {
-        "id": "comm_01_line_05",
+        "id": "1db70a56-57cb-4f5c-82a1-d904553148f0",
         "speaker": "A",
         "text": "我哪能没有遗憾的事儿呢？正因为我感到遗憾的事儿太多了，所以不知道怎么回答了。",
         "pinyin": "Wǒ nǎ néng méiyǒu yíhàn de shìr ne? Zhèng yīnwèi wǒ gǎndào yíhàn de shìr tài duō le, suǒyǐ bù zhīdào zěnme huídá le.",
@@ -4458,7 +4238,7 @@
         "audio_key": ""
        },
        {
-        "id": "comm_01_line_06",
+        "id": "cc3f8306-ac55-4efa-91d5-3f345f236dc2",
         "speaker": "B",
         "text": "你有什么遗憾呢？",
         "pinyin": "Nǐ yǒu shénme yíhàn ne?",
@@ -4466,7 +4246,7 @@
         "audio_key": ""
        },
        {
-        "id": "comm_01_line_07",
+        "id": "cefa67a4-1369-41e7-956d-e5d95776fb35",
         "speaker": "A",
         "text": "比如说我爱玩儿，可是上课的时候不能玩儿，这不是遗憾吗？我爱看足球比赛，一场很好的比赛没看着，当然很遗憾。不过最遗憾的还是到现在还没有女朋友。",
         "pinyin": "Bǐrú shuō wǒ ài wánr, kěshì shàngkè de shíhou bù néng wánr, zhè bú shì yíhàn ma? Wǒ ài kàn zúqiú bǐsài, yì chǎng hěn hǎo de bǐsài méi kàn zháo, dāngrán hěn yíhàn. Búguò zuì yíhàn de háishi dào xiànzài hái méiyǒu nǚ péngyou.",
@@ -4474,7 +4254,7 @@
         "audio_key": ""
        },
        {
-        "id": "comm_01_line_08",
+        "id": "01287ba3-d781-4680-80c8-197cac06c002",
         "speaker": "B",
         "text": "那是够遗憾的。",
         "pinyin": "Nà shì gòu yíhàn de.",
@@ -4482,7 +4262,7 @@
         "audio_key": ""
        },
        {
-        "id": "comm_01_line_09",
+        "id": "0a086229-c085-47ac-aa78-191cc9c5959c",
         "speaker": "A",
         "text": "你就没有遗憾的事儿吗？",
         "pinyin": "Nǐ jiù méiyǒu yíhàn de shìr ma?",
@@ -4490,7 +4270,7 @@
         "audio_key": ""
        },
        {
-        "id": "comm_01_line_10",
+        "id": "48f72c36-1eba-499b-86b8-6f4179918b94",
         "speaker": "B",
         "text": "谁能没有遗憾的事儿呢？不过，我认为遗憾也是一种感觉，如果你努力去做了，即使没得到理想的结果，也不必感到遗憾，因为你努力了。要是每天都为没有得到什么而感到遗憾的话，那才真是遗憾呢。",
         "pinyin": "Shéi néng méiyǒu yíhàn de shìr ne? Búguò, wǒ rènwéi yíhàn yě shì yì zhǒng gǎnjué, rúguǒ nǐ nǔlì qù zuò le, jíshǐ méi dédào lǐxiǎng de jiéguǒ, yě búbì gǎndào yíhàn, yīnwèi nǐ nǔlì le. Yàoshi měitiān dōu wèi méiyǒu dédào shénme ér gǎndào yíhàn de huà, nà cái zhēn shì yíhàn ne.",
@@ -4498,7 +4278,7 @@
         "audio_key": ""
        },
        {
-        "id": "comm_01_line_11",
+        "id": "fbe69d8d-1d58-4abc-8c5d-9d8c20bc0d92",
         "speaker": "A",
         "text": "你说的也对。",
         "pinyin": "Nǐ shuō de yě duì.",
@@ -4516,7 +4296,7 @@
     ]
    },
    {
-    "id": "section_08_character_writing",
+    "id": "e71f4398-291c-4f48-8aa7-f93e825f4d42",
     "type": "character_writing",
     "order": 9,
     "title": "写汉字",
@@ -4541,23 +4321,23 @@
    ],
    "grammar_points": [
     {
-     "id": "grammar_001",
+     "id": "7036177a-ce2a-4f65-bf7a-fe760e8bca5e",
      "title": "有关"
     },
     {
-     "id": "grammar_002",
+     "id": "068a3989-8145-4ece-89af-6de86dcf243b",
      "title": "不是……，而是……"
     },
     {
-     "id": "grammar_003",
+     "id": "b3d21040-3abb-44e7-8e06-abe663c89030",
      "title": "通过"
     },
     {
-     "id": "grammar_004",
+     "id": "6c929b63-f692-435b-9233-04632daed1c1",
      "title": "适合"
     },
     {
-     "id": "grammar_005",
+     "id": "140713ca-de8c-4ca5-9fd9-de53827c3e7a",
      "title": "为……而……"
     }
    ],
@@ -4637,7 +4417,7 @@
     "note_vi": "Bảng sinh từ chính không có động từ li hợp. Trong bài khóa có một số động từ li hợp xuất hiện trong câu: 上班, 上学, 游泳."
    },
    "check_needed": false,
-   "check_note_vi": "Đã đối chiếu lại PDF bài 23 và sửa các đáp án đóng; bài tập mở giữ dạng sample_answer có thể thay thế bằng đáp án tương đương."
+   "check_note_vi": "Đã đối chiếu lại PDF bài 23, sửa bản dịch còn lệch/thiếu, chuẩn hóa pinyin hiện có, chỉnh loại từ, và đối chiếu đáp án đóng với answer-key tham khảo; bài tập mở giữ dạng sample_answer có thể thay thế bằng đáp án tương đương."
   },
   "metadata": {
    "legacy_id": "hanyu_3_2_lesson_23_wangluo_xuexiao",

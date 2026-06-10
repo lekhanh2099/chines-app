@@ -1,6 +1,6 @@
 {
  "lesson": {
-  "id": "hanyu_3_2_lesson_26_liang_shanbo_zhu_yingtai_checked",
+  "id": "28effd86-e279-4464-bd26-3d3bc10bc6ed",
   "title": {
    "zh": "梁山伯与祝英台",
    "pinyin": "Liáng Shānbó yǔ Zhù Yīngtái",
@@ -12,11 +12,11 @@
    "book_3b",
    "lesson_26",
    "pdf_checked",
-   "data_updated"
+   "data_rechecked"
   ],
   "sections": [
    {
-    "id": "section_text",
+    "id": "a6c0d522-99be-4f36-881c-b9b2c6beeb85",
     "type": "text",
     "order": 1,
     "title": "课文",
@@ -25,7 +25,7 @@
     "check_needed": false,
     "blocks": [
      {
-      "id": "text_001",
+      "id": "7bb17baa-96d2-4a1c-b51b-85df82e42125",
       "type": "text_narrative",
       "order": 1,
       "title": "（一）结拜",
@@ -36,12 +36,12 @@
       "check_needed": false,
       "paragraphs": [
        {
-        "id": "p_001",
+        "id": "43338a2c-2044-419e-9fdd-ed1739757a8d",
         "order": 1,
         "zh": "梁山伯与祝英台的故事在中国家喻户晓。",
-        "pinyin": "Liáng Shānbó yǔ Zhù Yīngtái de gùshi zài `Zhōngguó jiāyù-hùxiǎo.",
+        "pinyin": "Liáng Shānbó yǔ Zhù Yīngtái de gùshi zài Zhōngguó jiāyù-hùxiǎo.",
         "vi": "Câu chuyện Lương Sơn Bá và Chúc Anh Đài ở Trung Quốc ai ai cũng biết.",
-        "audio_key": "26-1",
+        "audio_key": "",
         "vocab_refs": [],
         "grammar_refs": [],
         "source_origin": "textbook",
@@ -50,38 +50,38 @@
         "check_needed": false
        },
        {
-        "id": "p_002",
+        "id": "4a807389-3592-4cf4-973f-6589e0118fb2",
         "order": 2,
         "zh": "古时候，祝家有个女儿叫祝英台，小名九妹，不仅长得美丽，而且聪明好学。由于那时候女人不能上学读书，所以祝英台常常站在窗前，望着大街上背着书包来来往往的读书人，心里非常羡慕。难道女人只能在家里绣花吗？为什么我不能去上学？想到这儿，祝英台来到父母的房间，对父母说：“爸，妈，我也要到杭州去读书。我可以女扮男装，一定不让别人看出来，你们就答应我吧。”开始，她父母不同意，但经不住女儿苦苦哀求，就只好答应了。",
-        "pinyin": "Gǔ shíhou, Zhù jiā yǒu ge nǚ'ér jiào Zhù Yīngtái, xiǎomíng Jiǔmèi, bùjǐn zhǎng de měilì, érqiě cōngming hàoxué. Yóuyú nà shíhou nǚrén bù néng shàngxué dúshū, suǒyǐ Zhù Yīngtái chángcháng zhàn zài chuāng qián, wàngzhe dàjiē shang bèizhe shūbāo lái lái wǎng wǎng de dúshūrén, xīnli fēicháng xiànmù. Nándào nǚrén zhǐ néng zài jiālǐ xiù huā ma? Wèishénme wǒ bù néng qù shàngxué? Xiǎng dào zhèr, Zhù Yīngtái lái dào fùmǔ de fángjiān, duì fùmǔ shuō: 'Bà, Mā, wǒ yě yào dào Hángzhōu qù dúshū. Wǒ kěyǐ nǚbàn-nánzhuāng, yídìng bú ràng biérén kàn chūlai, nǐmen jiù dāying wǒ ba.' Kāishǐ, tā fùmǔ bù tóngyì, dàn jīng bu zhù nǚ'ér kǔkǔ āiqiú, jiù zhǐhǎo dāying le.",
-        "vi": "Thời xưa, nhà họ Chúc có cô con gái tên Chúc Anh Đài, tên ở nhà là Cửu Muội, không chỉ xinh đẹp mà còn thông minh hiếu học. Vì lúc đó phụ nữ không thể đi học, nàng thường đứng bên cửa sổ nhìn người đọc sách qua lại trên phố mà rất ngưỡng mộ. Nàng tự hỏi vì sao phụ nữ chỉ có thể ở nhà thêu hoa và xin cha mẹ cho đến Hàng Châu học. Nàng hứa cải trang thành nam, không để người khác nhìn ra. Ban đầu cha mẹ không đồng ý, nhưng không chịu nổi sự năn nỉ khẩn khoản nên đành chấp thuận.",
-        "audio_key": "26-1",
+        "pinyin": "Gǔ shíhou, Zhù jiā yǒu ge nǚ'ér jiào Zhù Yīngtái, xiǎomíng Jiǔmèi, bùjǐn zhǎng de měilì, érqiě cōngming hàoxué. Yóuyú nà shíhou nǚrén bù néng shàngxué dúshū, suǒyǐ Zhù Yīngtái chángcháng zhàn zài chuāng qián, wàngzhe dàjiē shang bēizhe shūbāo láilái-wǎngwǎng de dúshūrén, xīnli fēicháng xiànmù. Nándào nǚrén zhǐ néng zài jiālǐ xiù huā ma? Wèishénme wǒ bù néng qù shàngxué? Xiǎng dào zhèr, Zhù Yīngtái lái dào fùmǔ de fángjiān, duì fùmǔ shuō: “Bà, mā, wǒ yě yào dào Hángzhōu qù dúshū. Wǒ kěyǐ nǚbàn-nánzhuāng, yídìng bú ràng biérén kàn chūlai, nǐmen jiù dāying wǒ ba.” Kāishǐ, tā fùmǔ bù tóngyì, dàn jīng bu zhù nǚ'ér kǔkǔ āiqiú, jiù zhǐhǎo dāying le.",
+        "vi": "Thời xưa, nhà họ Chúc có cô con gái tên Chúc Anh Đài, tên ở nhà là Cửu Muội, không chỉ xinh đẹp mà còn thông minh hiếu học. Vì lúc đó phụ nữ không thể đi học, nàng thường đứng bên cửa sổ nhìn những người đi học đeo cặp qua lại trên phố, trong lòng vô cùng ngưỡng mộ. Nàng nghĩ: lẽ nào phụ nữ chỉ có thể ở nhà thêu hoa? Vì sao mình không thể đi học? Nghĩ đến đây, Chúc Anh Đài đến phòng cha mẹ và xin được tới Hàng Châu học. Nàng hứa sẽ cải trang thành nam, nhất định không để người khác nhìn ra. Ban đầu cha mẹ không đồng ý, nhưng không chịu nổi sự năn nỉ khẩn khoản của con gái nên đành chấp thuận.",
+        "audio_key": "",
         "vocab_refs": [],
-        "grammar_refs": ["grammar_001"],
+        "grammar_refs": ["d5eaf408-514c-4987-b142-668f43d140be"],
         "source_origin": "textbook",
         "page_start": 211,
         "page_end": 211,
         "check_needed": false
        },
        {
-        "id": "p_003",
+        "id": "5a221404-05e7-4ae2-ad9f-0c920a73dc36",
         "order": 3,
         "zh": "这样祝英台就女扮男装，高高兴兴地来到了杭州万松书院。到学校的第一天，祝英台就认识了一个叫梁山伯的男生，他学问出众，人品优秀。祝英台想：这么好的人，要是能天天和他在一起，一定会非常开心。而梁山伯也对祝英台有一种一见如故的感觉。从此，两人学习上互相帮助，生活上互相关心。后来，他们结拜为兄弟。",
-        "pinyin": "Zhèyàng Zhù Yīngtái jiù nǚbàn-nánzhuāng, gāogāoxìngxìng de lái dào le Hángzhōu Wànsōng Shūyuàn. Dào xuéxiào de dì yī tiān, Zhù Yīngtái jiù rènshi le yí ge jiào Liáng Shānbó de nánshēng, tā xuéwen chūzhòng, rénpǐn yōuxiù. Zhù Yīngtái xiǎng: zhème hǎo de rén, yàoshi néng tiāntiān hé tā zài yìqǐ, yídìng huì fēicháng kāixīn. Ér Liáng Shānbó yě duì Zhù Yīngtái yǒu yì zhǒng yíjiàn-rúgù de gǎnjué. Cóngcǐ, liǎng rén xuéxí shang hùxiāng bāngzhù, shēnghuó shang hùxiāng guānxīn. Hòulái, tāmen jiébài wéi xiōngdì.",
-        "vi": "Vậy là Chúc Anh Đài cải trang thành nam, vui vẻ đến Vạn Tùng Thư Viện ở Hàng Châu. Ngày đầu tiên nàng quen một nam sinh tên Lương Sơn Bá, người học vấn xuất chúng, nhân phẩm tốt. Chúc Anh Đài nghĩ nếu có thể ở bên người tốt như vậy mỗi ngày thì nhất định rất vui. Sơn Bá cũng có cảm giác vừa gặp nàng như đã quen lâu. Từ đó, hai người giúp nhau học tập, quan tâm nhau trong đời sống, rồi kết nghĩa làm anh em.",
-        "audio_key": "26-1",
+        "pinyin": "Zhèyàng Zhù Yīngtái jiù nǚbàn-nánzhuāng, gāogāoxìngxìng de lái dào le Hángzhōu Wànsōng Shūyuàn. Dào xuéxiào de dì-yī tiān, Zhù Yīngtái jiù rènshi le yí ge jiào Liáng Shānbó de nánshēng, tā xuéwen chūzhòng, rénpǐn yōuxiù. Zhù Yīngtái xiǎng: zhème hǎo de rén, yàoshi néng tiāntiān hé tā zài yìqǐ, yídìng huì fēicháng kāixīn. Ér Liáng Shānbó yě duì Zhù Yīngtái yǒu yì zhǒng yíjiàn-rúgù de gǎnjué. Cóngcǐ, liǎng rén xuéxí shang hùxiāng bāngzhù, shēnghuó shang hùxiāng guānxīn. Hòulái, tāmen jiébài wéi xiōngdì.",
+        "vi": "Vậy là Chúc Anh Đài cải trang thành nam, vui vẻ đến Vạn Tùng Thư Viện ở Hàng Châu. Ngày đầu tiên đến trường, nàng quen một nam sinh tên Lương Sơn Bá; chàng học vấn xuất chúng, nhân phẩm tốt. Chúc Anh Đài nghĩ: người tốt như vậy, nếu có thể ngày nào cũng ở bên chàng thì nhất định sẽ rất vui. Lương Sơn Bá cũng có cảm giác vừa gặp nàng như đã quen lâu. Từ đó, hai người giúp nhau trong học tập, quan tâm nhau trong cuộc sống. Về sau, họ kết nghĩa làm anh em.",
+        "audio_key": "",
         "vocab_refs": [],
-        "grammar_refs": ["grammar_002"],
+        "grammar_refs": ["a8720887-db26-4d49-b41f-8a6d646a791d"],
         "source_origin": "textbook",
         "page_start": 211,
-        "page_end": 212,
+        "page_end": 211,
         "check_needed": false
        }
       ],
       "comprehension_questions": []
      },
      {
-      "id": "text_002",
+      "id": "c85956fd-28db-486e-b2a0-86c9b7f5048a",
       "type": "text_narrative",
       "order": 2,
       "title": "（二）送别",
@@ -92,28 +92,31 @@
       "check_needed": false,
       "paragraphs": [
        {
-        "id": "p_004",
+        "id": "99e63fca-bad7-4aff-8eba-621a119e5a19",
         "order": 1,
-        "zh": "一转眼三年过去了。三年间，他们俩一起读书，互相帮助，结下了深厚的情谊。祝英台早已爱上了梁山伯，而山伯始终不知道英台是女孩子。",
-        "pinyin": "Yì zhuǎn yǎn sān nián guòqù le. Sān nián jiān, tāmen liǎ yìqǐ dúshū, hùxiāng bāngzhù, jié xià le shēnhòu de qíngyì. Zhù Yīngtái zǎo yǐ shēnshēn ài shàng le Liáng Shānbó, ér Shānbó shǐzhōng bù zhīdào Yīngtái shì nǚháizi.",
-        "vi": "Chớp mắt ba năm trôi qua. Ba năm đó họ cùng học, giúp đỡ nhau và kết nên tình nghĩa sâu đậm. Chúc Anh Đài từ lâu đã yêu Lương Sơn Bá, nhưng Sơn Bá từ đầu đến cuối vẫn không biết Anh Đài là con gái.",
-        "audio_key": "26-2",
+        "zh": "一转眼三年过去了。三年间，他们俩一起读书，互相帮助，结下了深厚的情谊。英台早已深深爱上了山伯，而山伯始终不知英台是个女孩子。",
+        "pinyin": "Yì zhuǎnyǎn sān nián guòqù le. Sān nián jiān, tāmen liǎ yìqǐ dúshū, hùxiāng bāngzhù, jié xià le shēnhòu de qíngyì. Yīngtái zǎo yǐ shēnshēn ài shàng le Shānbó, ér Shānbó shǐzhōng bù zhī Yīngtái shì ge nǚháizi.",
+        "vi": "Chớp mắt ba năm đã trôi qua. Trong ba năm đó, hai người cùng học, giúp đỡ lẫn nhau và kết nên tình nghĩa sâu đậm. Anh Đài từ lâu đã yêu Sơn Bá sâu đậm, nhưng Sơn Bá từ đầu đến cuối vẫn không biết Anh Đài là con gái.",
+        "audio_key": "",
         "vocab_refs": [],
-        "grammar_refs": ["grammar_003"],
+        "grammar_refs": ["28ce5846-ff50-47d0-927a-dd6a1699d21a"],
         "source_origin": "textbook",
         "page_start": 212,
         "page_end": 212,
         "check_needed": false
        },
        {
-        "id": "p_005",
+        "id": "07e24203-eb21-4c88-96af-29e78d8ca2a2",
         "order": 2,
-        "zh": "有一天，英台突然接到家里来的一封信，要她赶快回家。可是她不愿意离开山伯，又不便对山伯说，只好向师母说出了自己的心思，并把一个白玉手镯作为爱情的信物交给师母，拜托师母转交给梁山伯。英台要走了，梁山伯给她送行。一路上英台多次暗示山伯，自己是个女孩子，表达对山伯恋恋不舍的感情，但山伯始终没有听出来。山伯一直把英台送出十八里。分别时，英台说，她家有一个小九妹，又聪明又美丽，如果山伯愿意，她可以给山伯做媒，希望山伯能早日来祝家相亲。",
-        "pinyin": "Yǒu yì tiān, Yīngtái tūrán jiē dào jiālǐ lái de yì fēng xìn, yào tā gǎnkuài huí jiā. Kěshì tā bú yuànyì líkāi Shānbó, yòu bù biàn duì Shānbó shuō, zhǐhǎo xiàng shīmǔ shuō chū le zìjǐ de xīnsi, bìng bǎ yí ge báiyù shǒuzhuó zuòwéi àiqíng de xìnwù jiāo gěi shīmǔ, bàituō shīmǔ zhuǎnjiāo gěi Liáng Shānbó. Yīngtái yào zǒu le, Liáng Shānbó gěi tā sòngxíng. Yí lù shang Yīngtái duō cì ànshì Shānbó, zìjǐ shì ge nǚháizi, biǎodá duì Shānbó liànliàn-bùshě de gǎnqíng, dàn Shānbó shǐzhōng méiyǒu tīng chūlai. Shānbó yìzhí bǎ Yīngtái sòng chū shíbā lǐ. Fēnbié shí, Yīngtái shuō, tā jiā yǒu yí ge xiǎo Jiǔmèi, yòu cōngming yòu měilì, rúguǒ Shānbó yuànyì, tā kěyǐ gěi Shānbó zuò méi, xīwàng Shānbó néng zǎorì lái Zhù jiā xiāng qīn.",
-        "vi": "Một hôm Anh Đài nhận thư nhà bảo về gấp. Nàng không muốn rời Sơn Bá, lại không tiện nói rõ, nên nói tâm tư với sư mẫu, giao vòng bạch ngọc làm tín vật tình yêu nhờ chuyển cho Sơn Bá. Trên đường Sơn Bá tiễn, Anh Đài nhiều lần ám chỉ mình là con gái và bày tỏ sự lưu luyến, nhưng Sơn Bá vẫn không nghe ra. Chàng tiễn nàng mười tám dặm; lúc chia tay, nàng nói nhà mình có một Cửu Muội thông minh xinh đẹp, có thể làm mai cho Sơn Bá và mong chàng sớm đến nhà họ Chúc xem mặt.",
-        "audio_key": "26-2",
+        "zh": "一天，英台突然接到家里来的一封信，要她赶快回家。可是她不愿意离开山伯，又不便对山伯说，只好向师母说出了自己的心思，并把一个白玉手镯作为爱情的信物交给师母，拜托师母转交给梁山伯。英台要走了，梁山伯给她送行。一路上英台多次暗示山伯，自己是个女孩子，表达对山伯恋恋不舍的感情，但山伯始终没有听出来。山伯一直把英台送出十八里。分别时，英台说，她家有一个小九妹，又聪明又美丽，如果山伯愿意，她可以给山伯做媒，希望山伯能早日来祝家相亲。",
+        "pinyin": "Yì tiān, Yīngtái tūrán jiē dào jiālǐ lái de yì fēng xìn, yào tā gǎnkuài huí jiā. Kěshì tā bú yuànyì líkāi Shānbó, yòu bù biàn duì Shānbó shuō, zhǐhǎo xiàng shīmǔ shuō chū le zìjǐ de xīnsi, bìng bǎ yí ge báiyù shǒuzhuó zuòwéi àiqíng de xìnwù jiāo gěi shīmǔ, bàituō shīmǔ zhuǎnjiāo gěi Liáng Shānbó. Yīngtái yào zǒu le, Liáng Shānbó gěi tā sòngxíng. Yílù shang Yīngtái duō cì ànshì Shānbó, zìjǐ shì ge nǚháizi, biǎodá duì Shānbó liànliàn-bùshě de gǎnqíng, dàn Shānbó shǐzhōng méiyǒu tīng chūlai. Shānbó yìzhí bǎ Yīngtái sòng chū shíbā lǐ. Fēnbié shí, Yīngtái shuō, tā jiā yǒu yí ge xiǎo Jiǔmèi, yòu cōngming yòu měilì, rúguǒ Shānbó yuànyì, tā kěyǐ gěi Shānbó zuò méi, xīwàng Shānbó néng zǎorì lái Zhù jiā xiāng qīn.",
+        "vi": "Một hôm, Anh Đài đột nhiên nhận được một bức thư từ nhà, yêu cầu nàng nhanh chóng về nhà. Nhưng nàng không muốn rời Sơn Bá, lại không tiện nói rõ với chàng, nên đành nói ra tâm tư của mình với sư mẫu, đồng thời giao chiếc vòng tay bạch ngọc làm tín vật tình yêu cho sư mẫu, nhờ sư mẫu chuyển lại cho Lương Sơn Bá. Anh Đài sắp đi, Lương Sơn Bá tiễn nàng. Trên đường, Anh Đài nhiều lần ám chỉ với Sơn Bá rằng mình là con gái, bày tỏ tình cảm lưu luyến không nỡ rời chàng, nhưng Sơn Bá từ đầu đến cuối vẫn không nghe ra. Sơn Bá tiễn Anh Đài suốt mười tám dặm. Lúc chia tay, Anh Đài nói nhà nàng có một cô Cửu Muội vừa thông minh vừa xinh đẹp; nếu Sơn Bá bằng lòng, nàng có thể làm mai cho chàng, hy vọng Sơn Bá sớm đến nhà họ Chúc xem mặt.",
+        "audio_key": "",
         "vocab_refs": [],
-        "grammar_refs": ["grammar_003", "grammar_006"],
+        "grammar_refs": [
+         "28ce5846-ff50-47d0-927a-dd6a1699d21a",
+         "a9bc0f78-52c9-4ca7-b62e-d1d8343543ae"
+        ],
         "source_origin": "textbook",
         "page_start": 212,
         "page_end": 212,
@@ -123,7 +126,7 @@
       "comprehension_questions": []
      },
      {
-      "id": "text_003",
+      "id": "91ae7ef3-6f7c-41e8-b8d1-b079edad85f7",
       "type": "text_narrative",
       "order": 3,
       "title": "（三）相会",
@@ -134,14 +137,14 @@
       "check_needed": false,
       "paragraphs": [
        {
-        "id": "p_006",
+        "id": "84deecb3-9d2f-428c-bc0e-a3c52ed1477d",
         "order": 1,
         "zh": "山伯从师母那里得到英台赠送给他的白玉镯，才恍然大悟。原来，与自己一起生活了三年的祝英台是个姑娘，英台所说的小九妹就是她自己。于是山伯急忙赶到祝家庄去见英台。到了祝家庄，他才知道，英台父亲写信要她回家，是要把她嫁给一个大官的儿子马文才。祝英台当然不愿意，并与梁山伯在楼台上相会，向山伯表明了自己的爱情。",
-        "pinyin": "Shānbó cóng shīmǔ nàli dédào Yīngtái zèngsòng gěi tā de báiyùzhuó, cái huǎngrán-dàwù. Yuánlái, yǔ zìjǐ yìqǐ shēnghuó le sān nián de Zhù Yīngtái shì ge gūniang, Yīngtái suǒ shuō de xiǎo Jiǔmèi jiù shì tā zìjǐ. Yúshì Shānbó jímáng gǎn dào Zhùjiā Zhuāng qù jiàn Yīngtái. Dào le Zhùjiā Zhuāng, tā cái zhīdào, Yīngtái fùqin xiě xìn yào tā huí jiā, shì yào bǎ tā jià gěi yí ge dà guān de érzi Mǎ Wéncái. Zhù Yīngtái dāngrán bú yuànyì, bìng yǔ Liáng Shānbó zài lóutái shang xiānghuì, xiàng Shānbó biǎomíng le zìjǐ de àiqíng.",
-        "vi": "Sơn Bá nhận được chiếc vòng bạch ngọc Anh Đài tặng từ sư mẫu mới chợt hiểu ra: người cùng sống ba năm với mình hóa ra là cô gái, Cửu Muội mà Anh Đài nói chính là nàng. Sơn Bá vội đến Chúc Gia Trang gặp Anh Đài, mới biết cha nàng gọi nàng về để gả cho con trai một quan lớn là Mã Văn Tài. Chúc Anh Đài đương nhiên không muốn, bèn gặp Sơn Bá trên lầu đài và bày tỏ tình yêu của mình.",
-        "audio_key": "26-3",
+        "pinyin": "Shānbó cóng shīmǔ nàli dédào Yīngtái zèngsòng gěi tā de báiyùzhuó, cái huǎngrán-dàwù. Yuánlái, yǔ zìjǐ yìqǐ shēnghuó le sān nián de Zhù Yīngtái shì ge gūniang, Yīngtái suǒ shuō de xiǎo Jiǔmèi jiù shì tā zìjǐ. Yúshì Shānbó jímáng gǎn dào Zhùjiā Zhuāng qù jiàn Yīngtái. Dào le Zhùjiā Zhuāng, tā cái zhīdào, Yīngtái fùqin xiě xìn yào tā huí jiā, shì yào bǎ tā jià gěi yí ge dà guān de érzi Mǎ Wéncái. Zhù Yīngtái dāngrán bú yuànyì, bìng yǔ Liáng Shānbó zài lóutái shang xiāng huì, xiàng Shānbó biǎomíng le zìjǐ de àiqíng.",
+        "vi": "Sơn Bá nhận được chiếc vòng bạch ngọc Anh Đài tặng cho mình từ sư mẫu thì mới chợt hiểu ra. Thì ra Chúc Anh Đài, người đã sống cùng mình ba năm, là một cô gái; Cửu Muội mà Anh Đài nói chính là nàng. Thế là Sơn Bá vội vã đến Chúc Gia Trang gặp Anh Đài. Đến Chúc Gia Trang, chàng mới biết cha Anh Đài viết thư gọi nàng về là để gả nàng cho Mã Văn Tài, con trai của một vị quan lớn. Chúc Anh Đài đương nhiên không bằng lòng, bèn gặp Lương Sơn Bá trên lầu và bày tỏ tình yêu của mình với chàng.",
+        "audio_key": "",
         "vocab_refs": [],
-        "grammar_refs": ["grammar_006"],
+        "grammar_refs": ["a9bc0f78-52c9-4ca7-b62e-d1d8343543ae"],
         "source_origin": "textbook",
         "page_start": 213,
         "page_end": 213,
@@ -151,7 +154,7 @@
       "comprehension_questions": []
      },
      {
-      "id": "text_004",
+      "id": "a023e471-3886-45d8-a652-cee8a139c742",
       "type": "text_narrative",
       "order": 4,
       "title": "（四）化蝶",
@@ -162,12 +165,12 @@
       "check_needed": false,
       "paragraphs": [
        {
-        "id": "p_007",
+        "id": "919f0189-9f84-4168-aee2-37254e356348",
         "order": 1,
         "zh": "山伯请人到祝家去求婚。可英台的父亲认为梁家太穷，不同意女儿嫁给山伯，非逼英台嫁给马文才不可。山伯觉得没有了希望，回家后得了一场大病，不久就死了。",
-        "pinyin": "Shānbó qǐng rén dào Zhù jiā qù qiú hūn. Kě Yīngtái de fùqin rènwéi Liáng jiā tài qióng, bù tóngyì nǚ'ér jià gěi Shānbó, fēi bī Yīngtái jià gěi Mǎ Wéncái bùkě. Shānbó juéde méiyǒu le xīwàng, huí jiā hòu dé le yì cháng dà bìng, bù jiǔ jiù sǐ le.",
-        "vi": "Sơn Bá nhờ người đến nhà họ Chúc cầu hôn. Nhưng cha Anh Đài cho rằng nhà họ Lương quá nghèo, không đồng ý cho con gái lấy Sơn Bá, nhất định ép nàng gả cho Mã Văn Tài. Sơn Bá thấy không còn hy vọng, về nhà bệnh nặng rồi qua đời.",
-        "audio_key": "26-4",
+        "pinyin": "Shānbó qǐng rén dào Zhù jiā qù qiú hūn. Kě Yīngtái de fùqin rènwéi Liáng jiā tài qióng, bù tóngyì nǚ'ér jià gěi Shānbó, fēi bī Yīngtái jià gěi Mǎ Wéncái bùkě. Shānbó juéde méiyǒu le xīwàng, huí jiā hòu dé le yì cháng dà bìng, bùjiǔ jiù sǐ le.",
+        "vi": "Sơn Bá nhờ người đến nhà họ Chúc cầu hôn. Nhưng cha Anh Đài cho rằng nhà họ Lương quá nghèo, không đồng ý cho con gái gả cho Sơn Bá, nhất định ép Anh Đài gả cho Mã Văn Tài. Sơn Bá cảm thấy không còn hy vọng, sau khi về nhà thì mắc một trận bệnh nặng, không lâu sau thì qua đời.",
+        "audio_key": "",
         "vocab_refs": [],
         "grammar_refs": [],
         "source_origin": "textbook",
@@ -176,28 +179,31 @@
         "check_needed": false
        },
        {
-        "id": "p_008",
+        "id": "2fa39b34-744a-4e61-870d-0888f40e57cd",
         "order": 2,
         "zh": "英台听到山伯去世的消息，请求到梁家去吊孝。但她父亲坚决不答应。后来，马家前来接新娘，英台要求迎亲的花轿一定要路过梁山伯的坟墓，她要向山伯做最后的告别。不然，宁可死也不进马家的门。她父亲无奈，只好答应。",
-        "pinyin": "Yīngtái tīng dào Shānbó qùshì de xiāoxi, qǐngqiú dào Liáng jiā qù diào xiào. Dàn tā fùqin jiānjué bù dāying. Hòulái, Mǎ jiā qián lái jiē xīnniáng, Yīngtái yāoqiú yíng qīn de huājiào yídìng yào lùguò Liáng Shānbó de fénmù, tā yào xiàng Shānbó zuò zuìhòu de gàobié. Bùrán, nìngkě sǐ yě bú jìn Mǎ jiā de mén. Tā fùqin wúnài, zhǐhǎo dāying.",
-        "vi": "Nghe tin Sơn Bá mất, Anh Đài xin đến nhà họ Lương viếng tang nhưng cha nàng kiên quyết không cho. Khi nhà họ Mã đến rước dâu, Anh Đài yêu cầu kiệu hoa rước dâu nhất định phải đi ngang qua mộ Sơn Bá để nàng từ biệt lần cuối; nếu không, nàng thà chết cũng không vào cửa nhà họ Mã. Cha nàng bất lực, đành đồng ý.",
-        "audio_key": "26-4",
+        "pinyin": "Yīngtái tīng dào Shānbó qùshì de xiāoxi, qǐngqiú dào Liáng jiā qù diào xiào. Dàn tā fùqin jiānjué bù dāying. Hòulái, Mǎ jiā qián lái jiē xīnniáng, Yīngtái yāoqiú yíngqīn de huājiào yídìng yào lùguò Liáng Shānbó de fénmù, tā yào xiàng Shānbó zuò zuìhòu de gàobié. Bùrán, nìngkě sǐ yě bú jìn Mǎ jiā de mén. Tā fùqin wúnài, zhǐhǎo dāying.",
+        "vi": "Anh Đài nghe tin Sơn Bá qua đời thì xin được đến nhà họ Lương viếng tang. Nhưng cha nàng kiên quyết không đồng ý. Về sau, nhà họ Mã đến rước dâu; Anh Đài yêu cầu kiệu hoa rước dâu nhất định phải đi qua mộ Lương Sơn Bá, vì nàng muốn từ biệt Sơn Bá lần cuối. Nếu không, nàng thà chết cũng không bước vào cửa nhà họ Mã. Cha nàng bất lực, đành đồng ý.",
+        "audio_key": "",
         "vocab_refs": [],
-        "grammar_refs": ["grammar_004", "grammar_005"],
+        "grammar_refs": [
+         "43a1f72d-1510-4a57-a1fa-0af2b4890023",
+         "cb4fa491-3ff6-4992-b0d5-5abdd9044560"
+        ],
         "source_origin": "textbook",
         "page_start": 213,
         "page_end": 213,
         "check_needed": false
        },
        {
-        "id": "p_009",
+        "id": "7042db7b-7669-4d0a-8e29-09ecb0874da8",
         "order": 3,
-        "zh": "花轿来到了梁山伯的坟墓前。英台从轿上下来，跪在墓前，大声痛哭，一边哭一边诉说自己愿与山伯生死在一起的心愿。这时，突然间，天空乌云翻滚，远处雷声隆隆，刮起了大风，下起了大雨。一声霹雳之后，梁山伯的坟墓一下子裂开了，祝英台向前一跃，跳入墓中，坟墓又立刻合上了。一会儿，乌云散去，雨过天晴，空中出现了一道彩虹，坟墓里飞出一对蝴蝶，翩翩起舞，越飞越高，自由自在地飞翔。从此，梁山伯与祝英台的故事，就在中国代代流传。",
-        "pinyin": "Huājiào lái dào le Liáng Shānbó de fénmù qián. Yīngtái cóng jiào shang xiàlai, guì zài mù qián, dàshēng tòngkū, yìbiān kū yìbiān sùshuō zìjǐ yuàn yǔ Shānbó shēng sǐ zài yìqǐ de xīnyuàn. Zhè shí, tūrán jiān, tiānkōng wūyún fāngǔn, yuǎnchù léishēng lónglóng, guā qǐ le dà fēng, xià qǐ le dà yǔ. Yì shēng pīlì zhīhòu, Liáng Shānbó de fénmù yíxiàzi liè kāi le, Zhù Yīngtái xiàng qián yí yuè, tiào rù mù zhōng, fénmù yòu lìkè hé shàng le. Yíhuìr, wūyún sàn qù, yǔ guò tiān qíng, kōng zhōng chūxiàn le yí dào cǎihóng, fénmù lǐ fēi chū yí duì húdié, piānpiān qǐwǔ, yuè fēi yuè gāo, zìyóu-zìzài de fēixiáng. Cóngcǐ, Liáng Shānbó yǔ Zhù Yīngtái de gùshi, jiù zài Zhōngguó dàidài liúchuán.",
-        "vi": "Kiệu hoa đến trước mộ Lương Sơn Bá. Anh Đài xuống kiệu, quỳ trước mộ khóc lớn, vừa khóc vừa giãi bày tâm nguyện sống chết bên Sơn Bá. Bỗng mây đen cuồn cuộn, tiếng sấm từ xa ầm ầm, gió lớn nổi lên, mưa to đổ xuống. Sau một tiếng sét, mộ Sơn Bá đột nhiên nứt ra; Chúc Anh Đài nhảy vọt về phía trước, lao vào trong mộ, rồi mộ lập tức khép lại. Một lát sau mây tan, mưa tạnh trời quang, trên không xuất hiện cầu vồng, từ trong mộ bay ra một đôi bướm, múa lượn uyển chuyển, càng bay càng cao, tự do bay lượn. Từ đó, câu chuyện Lương Sơn Bá và Chúc Anh Đài lưu truyền đời đời ở Trung Quốc.",
-        "audio_key": "26-4",
+        "zh": "花轿来到了梁山伯的坟墓前。英台从轿上下来，跪在墓前，大声痛哭，一边哭一边诉说自己愿与山伯生死在一起的心愿。这时，突然间，天空乌云翻滚，远处雷声隆隆，刮起了大风，下起了大雨。一声霹雳之后，梁山伯的坟墓一下子裂开了，祝英台向前一跃，跳入墓中，坟墓又立刻合上了。一会儿，乌云散去，雨过天晴，空中出现了一道彩虹，坟墓里飞出了一对蝴蝶，这对美丽的彩蝶，在空中翩翩起舞，自由飞翔。从此，梁山伯与祝英台的故事，就在中国代代流传。",
+        "pinyin": "Huājiào lái dào le Liáng Shānbó de fénmù qián. Yīngtái cóng jiào shang xiàlai, guì zài mù qián, dàshēng tòngkū, yìbiān kū yìbiān sùshuō zìjǐ yuàn yǔ Shānbó shēngsǐ zài yìqǐ de xīnyuàn. Zhè shí, tūrán jiān, tiānkōng wūyún fāngǔn, yuǎnchù léishēng lónglóng, guā qǐ le dà fēng, xià qǐ le dà yǔ. Yì shēng pīlì zhīhòu, Liáng Shānbó de fénmù yíxiàzi liè kāi le, Zhù Yīngtái xiàng qián yí yuè, tiào rù mù zhōng, fénmù yòu lìkè hé shàng le. Yíhuìr, wūyún sàn qù, yǔ guò tiān qíng, kōngzhōng chūxiàn le yí dào cǎihóng, fénmù lǐ fēi chū le yí duì húdié, zhè duì měilì de cǎidié, zài kōngzhōng piānpiān qǐwǔ, zìyóu fēixiáng. Cóngcǐ, Liáng Shānbó yǔ Zhù Yīngtái de gùshi, jiù zài Zhōngguó dàidài liúchuán.",
+        "vi": "Kiệu hoa đến trước mộ Lương Sơn Bá. Anh Đài xuống khỏi kiệu, quỳ trước mộ, khóc lớn trong đau đớn; vừa khóc vừa giãi bày tâm nguyện được sống chết bên Sơn Bá. Lúc ấy, bỗng nhiên bầu trời mây đen cuồn cuộn, tiếng sấm từ xa ầm ầm, gió lớn nổi lên, mưa to đổ xuống. Sau một tiếng sét, mộ Lương Sơn Bá đột nhiên nứt ra; Chúc Anh Đài lao lên phía trước, nhảy vào trong mộ, rồi ngôi mộ lập tức khép lại. Một lát sau, mây đen tan đi, mưa tạnh trời quang, trên không xuất hiện một dải cầu vồng; từ trong mộ bay ra một đôi bướm, đôi bướm xinh đẹp ấy múa lượn uyển chuyển trong không trung, tự do bay lượn. Từ đó, câu chuyện Lương Sơn Bá và Chúc Anh Đài được lưu truyền đời đời ở Trung Quốc.",
+        "audio_key": "",
         "vocab_refs": [],
-        "grammar_refs": ["grammar_002"],
+        "grammar_refs": ["a8720887-db26-4d49-b41f-8a6d646a791d"],
         "source_origin": "textbook",
         "page_start": 214,
         "page_end": 214,
@@ -206,79 +212,58 @@
       ],
       "comprehension_questions": [
        {
-        "id": "cq_001",
+        "id": "e476d92d-a9d6-42a1-89be-f61d9dbdc130",
         "question": "祝英台是个什么样的女孩子？她为什么要女扮男装？",
-        "question_pinyin": "Zhù Yīngtái shì ge shénme yàng de nǚháizi? Tā wèishénme yào nǚbàn-nánzhuāng?",
-        "answer": "祝英台美丽、聪明好学。由于那时候女人不能上学读书，所以她女扮男装去杭州万松书院读书。",
-        "answer_pinyin": "Zhù Yīngtái měilì, cōngming hàoxué. Yóuyú nà shíhou nǚrén bù néng shàngxué dúshū, suǒyǐ tā nǚbàn-nánzhuāng qù Hángzhōu Wànsōng Shūyuàn dúshū.",
-        "answer_vi": "Chúc Anh Đài xinh đẹp, thông minh hiếu học. Vì thời đó phụ nữ không thể đi học nên nàng cải trang thành nam đến Vạn Tùng Thư Viện ở Hàng Châu học.",
-        "source_origin": "textbook_question_answer_checked",
+        "answer": "她不仅长得美丽，而且聪明好学。由于那时候女人不能上学读书，所以她女扮男装去杭州读书。",
+        "source_origin": "textbook_question_generated_answer",
         "answer_verified": true,
         "check_needed": false
        },
        {
-        "id": "cq_002",
+        "id": "3186f811-a0dc-4de4-b669-0d28c52eca7c",
         "question": "祝英台为什么多次向梁山伯暗示自己是个女孩子？",
-        "question_pinyin": "Zhù Yīngtái wèishénme duō cì xiàng Liáng Shānbó ànshì zìjǐ shì ge nǚháizi?",
-        "answer": "因为她早已爱上梁山伯，不愿意离开他，又不便直接说明自己的身份，所以一路上多次暗示他。",
-        "answer_pinyin": "Yīnwèi tā zǎo yǐ ài shàng Liáng Shānbó, bú yuànyì líkāi tā, yòu bù biàn zhíjiē shuōmíng zìjǐ de shēnfèn, suǒyǐ yí lù shang duō cì ànshì tā.",
-        "answer_vi": "Vì nàng đã yêu Lương Sơn Bá, không muốn rời chàng, lại không tiện nói thẳng thân phận của mình nên trên đường nhiều lần ám chỉ cho chàng.",
-        "source_origin": "textbook_question_answer_checked",
+        "answer": "因为她早已深深爱上了梁山伯，不愿意离开他，又不便直接说出自己的身份和感情，所以一路上多次暗示他。",
+        "source_origin": "textbook_question_generated_answer",
         "answer_verified": true,
         "check_needed": false
        },
        {
-        "id": "cq_003",
+        "id": "6409a791-f0ad-40a7-ba94-dbbb6c99c11b",
         "question": "梁山伯是怎么知道祝英台是个姑娘的？知道以后他去祝家做什么？",
-        "question_pinyin": "Liáng Shānbó shì zěnme zhīdào Zhù Yīngtái shì ge gūniang de? Zhīdào yǐhòu tā qù Zhù jiā zuò shénme?",
-        "answer": "他从师母那里得到英台赠送给他的白玉镯，才恍然大悟。知道以后，他急忙赶到祝家庄去见英台，后来请人到祝家去求婚。",
-        "answer_pinyin": "Tā cóng shīmǔ nàli dédào Yīngtái zèngsòng gěi tā de báiyùzhuó, cái huǎngrán-dàwù. Zhīdào yǐhòu, tā jímáng gǎn dào Zhùjiā Zhuāng qù jiàn Yīngtái, hòulái qǐng rén dào Zhù jiā qù qiú hūn.",
-        "answer_vi": "Chàng nhận được vòng bạch ngọc Anh Đài gửi qua sư mẫu nên mới chợt hiểu. Sau đó chàng vội đến Chúc Gia Trang gặp Anh Đài, rồi nhờ người đến nhà họ Chúc cầu hôn.",
-        "source_origin": "textbook_question_answer_checked",
+        "answer": "他从师母那里得到英台赠送给他的白玉镯以后，才恍然大悟。知道以后，他急忙赶到祝家庄去见英台。",
+        "source_origin": "textbook_question_generated_answer",
         "answer_verified": true,
         "check_needed": false
        },
        {
-        "id": "cq_004",
+        "id": "5621a739-7c80-47f1-80f8-de3f39c3c58f",
         "question": "梁山伯为什么觉得没有了希望？",
-        "question_pinyin": "Liáng Shānbó wèishénme juéde méiyǒu le xīwàng?",
-        "answer": "因为祝英台的父亲认为梁家太穷，不同意英台嫁给山伯，非逼她嫁给马文才不可。",
-        "answer_pinyin": "Yīnwèi Zhù Yīngtái de fùqin rènwéi Liáng jiā tài qióng, bù tóngyì Yīngtái jià gěi Shānbó, fēi bī tā jià gěi Mǎ Wéncái bùkě.",
-        "answer_vi": "Vì cha Chúc Anh Đài cho rằng nhà họ Lương quá nghèo, không đồng ý cho nàng lấy Sơn Bá, nhất định ép nàng gả cho Mã Văn Tài.",
-        "source_origin": "textbook_question_answer_checked",
+        "answer": "因为祝英台的父亲认为梁家太穷，不同意女儿嫁给山伯，非逼英台嫁给马文才不可。",
+        "source_origin": "textbook_question_generated_answer",
         "answer_verified": true,
         "check_needed": false
        },
        {
-        "id": "cq_005",
+        "id": "e87a4513-cc58-4a84-806c-7903e671a7f3",
         "question": "祝英台为什么要求花轿从梁山伯坟墓前经过？",
-        "question_pinyin": "Zhù Yīngtái wèishénme yāoqiú huājiào cóng Liáng Shānbó fénmù qián jīngguò?",
-        "answer": "因为她要向梁山伯做最后的告别。不然，她宁可死也不进马家的门。",
-        "answer_pinyin": "Yīnwèi tā yào xiàng Liáng Shānbó zuò zuìhòu de gàobié. Bùrán, tā nìngkě sǐ yě bú jìn Mǎ jiā de mén.",
-        "answer_vi": "Vì nàng muốn từ biệt Lương Sơn Bá lần cuối. Nếu không, nàng thà chết cũng không vào cửa nhà họ Mã.",
-        "source_origin": "textbook_question_answer_checked",
+        "answer": "因为她要向梁山伯做最后的告别。",
+        "source_origin": "textbook_question_generated_answer",
         "answer_verified": true,
         "check_needed": false
        },
        {
-        "id": "cq_006",
+        "id": "bd63d228-3392-4ba6-86ac-06b7d05ef081",
         "question": "花轿到了梁山伯坟墓前，发生了什么事情？",
-        "question_pinyin": "Huājiào dào le Liáng Shānbó fénmù qián, fāshēng le shénme shìqing?",
-        "answer": "英台从花轿上下来，跪在墓前痛哭，诉说自己的心愿。后来风雨大作，一声霹雳以后，坟墓裂开，英台跳入墓中，最后坟墓里飞出一对蝴蝶。",
-        "answer_pinyin": "Yīngtái cóng huājiào shang xiàlai, guì zài mù qián tòngkū, sùshuō zìjǐ de xīnyuàn. Hòulái fēng yǔ dà zuò, yì shēng pīlì yǐhòu, fénmù liè kāi, Yīngtái tiào rù mù zhōng, zuìhòu fénmù lǐ fēi chū yí duì húdié.",
-        "answer_vi": "Anh Đài xuống kiệu, quỳ trước mộ khóc đau đớn và giãi bày tâm nguyện. Sau đó gió mưa dữ dội, một tiếng sét vang lên, mộ nứt ra, Anh Đài nhảy vào mộ, cuối cùng từ mộ bay ra một đôi bướm.",
-        "source_origin": "textbook_question_answer_checked",
+        "answer": "花轿到了坟墓前，祝英台下轿跪在墓前痛哭。后来风雨大作，坟墓裂开，她跳入墓中，坟墓又合上了。雨过天晴后，墓里飞出一对蝴蝶。",
+        "source_origin": "textbook_question_generated_answer",
         "answer_verified": true,
         "check_needed": false
        },
        {
-        "id": "cq_007",
+        "id": "4282b5e3-6deb-4150-bd1f-ef416c97229d",
         "question": "用你自己的话讲一讲这个故事。",
-        "question_pinyin": "Yòng nǐ zìjǐ de huà jiǎng yi jiǎng zhège gùshi.",
         "answer": "开放题。可按女扮男装、结拜、送别、相会、求婚失败、化蝶的顺序复述。",
-        "answer_pinyin": "Kāifàng tí. Kě àn nǚbàn-nánzhuāng, jiébài, sòngbié, xiānghuì, qiúhūn shībài, huà dié de shùnxù fùshù.",
-        "answer_vi": "Câu hỏi mở. Có thể kể theo thứ tự: cải trang thành nam, kết nghĩa, tiễn biệt, gặp lại, cầu hôn thất bại, hóa bướm.",
-        "source_origin": "textbook_question_answer_checked",
+        "source_origin": "textbook_question_generated_answer",
         "answer_verified": true,
         "check_needed": false
        }
@@ -287,86 +272,65 @@
     ],
     "comprehension_questions": [
      {
-      "id": "cq_001",
+      "id": "e476d92d-a9d6-42a1-89be-f61d9dbdc130",
       "question": "祝英台是个什么样的女孩子？她为什么要女扮男装？",
-      "question_pinyin": "Zhù Yīngtái shì ge shénme yàng de nǚháizi? Tā wèishénme yào nǚbàn-nánzhuāng?",
-      "answer": "祝英台美丽、聪明好学。由于那时候女人不能上学读书，所以她女扮男装去杭州万松书院读书。",
-      "answer_pinyin": "Zhù Yīngtái měilì, cōngming hàoxué. Yóuyú nà shíhou nǚrén bù néng shàngxué dúshū, suǒyǐ tā nǚbàn-nánzhuāng qù Hángzhōu Wànsōng Shūyuàn dúshū.",
-      "answer_vi": "Chúc Anh Đài xinh đẹp, thông minh hiếu học. Vì thời đó phụ nữ không thể đi học nên nàng cải trang thành nam đến Vạn Tùng Thư Viện ở Hàng Châu học.",
-      "source_origin": "textbook_question_answer_checked",
+      "answer": "她不仅长得美丽，而且聪明好学。由于那时候女人不能上学读书，所以她女扮男装去杭州读书。",
+      "source_origin": "textbook_question_generated_answer",
       "answer_verified": true,
       "check_needed": false
      },
      {
-      "id": "cq_002",
+      "id": "3186f811-a0dc-4de4-b669-0d28c52eca7c",
       "question": "祝英台为什么多次向梁山伯暗示自己是个女孩子？",
-      "question_pinyin": "Zhù Yīngtái wèishénme duō cì xiàng Liáng Shānbó ànshì zìjǐ shì ge nǚháizi?",
-      "answer": "因为她早已爱上梁山伯，不愿意离开他，又不便直接说明自己的身份，所以一路上多次暗示他。",
-      "answer_pinyin": "Yīnwèi tā zǎo yǐ ài shàng Liáng Shānbó, bú yuànyì líkāi tā, yòu bù biàn zhíjiē shuōmíng zìjǐ de shēnfèn, suǒyǐ yí lù shang duō cì ànshì tā.",
-      "answer_vi": "Vì nàng đã yêu Lương Sơn Bá, không muốn rời chàng, lại không tiện nói thẳng thân phận của mình nên trên đường nhiều lần ám chỉ cho chàng.",
-      "source_origin": "textbook_question_answer_checked",
+      "answer": "因为她早已深深爱上了梁山伯，不愿意离开他，又不便直接说出自己的身份和感情，所以一路上多次暗示他。",
+      "source_origin": "textbook_question_generated_answer",
       "answer_verified": true,
       "check_needed": false
      },
      {
-      "id": "cq_003",
+      "id": "6409a791-f0ad-40a7-ba94-dbbb6c99c11b",
       "question": "梁山伯是怎么知道祝英台是个姑娘的？知道以后他去祝家做什么？",
-      "question_pinyin": "Liáng Shānbó shì zěnme zhīdào Zhù Yīngtái shì ge gūniang de? Zhīdào yǐhòu tā qù Zhù jiā zuò shénme?",
-      "answer": "他从师母那里得到英台赠送给他的白玉镯，才恍然大悟。知道以后，他急忙赶到祝家庄去见英台，后来请人到祝家去求婚。",
-      "answer_pinyin": "Tā cóng shīmǔ nàli dédào Yīngtái zèngsòng gěi tā de báiyùzhuó, cái huǎngrán-dàwù. Zhīdào yǐhòu, tā jímáng gǎn dào Zhùjiā Zhuāng qù jiàn Yīngtái, hòulái qǐng rén dào Zhù jiā qù qiú hūn.",
-      "answer_vi": "Chàng nhận được vòng bạch ngọc Anh Đài gửi qua sư mẫu nên mới chợt hiểu. Sau đó chàng vội đến Chúc Gia Trang gặp Anh Đài, rồi nhờ người đến nhà họ Chúc cầu hôn.",
-      "source_origin": "textbook_question_answer_checked",
+      "answer": "他从师母那里得到英台赠送给他的白玉镯以后，才恍然大悟。知道以后，他急忙赶到祝家庄去见英台。",
+      "source_origin": "textbook_question_generated_answer",
       "answer_verified": true,
       "check_needed": false
      },
      {
-      "id": "cq_004",
+      "id": "5621a739-7c80-47f1-80f8-de3f39c3c58f",
       "question": "梁山伯为什么觉得没有了希望？",
-      "question_pinyin": "Liáng Shānbó wèishénme juéde méiyǒu le xīwàng?",
-      "answer": "因为祝英台的父亲认为梁家太穷，不同意英台嫁给山伯，非逼她嫁给马文才不可。",
-      "answer_pinyin": "Yīnwèi Zhù Yīngtái de fùqin rènwéi Liáng jiā tài qióng, bù tóngyì Yīngtái jià gěi Shānbó, fēi bī tā jià gěi Mǎ Wéncái bùkě.",
-      "answer_vi": "Vì cha Chúc Anh Đài cho rằng nhà họ Lương quá nghèo, không đồng ý cho nàng lấy Sơn Bá, nhất định ép nàng gả cho Mã Văn Tài.",
-      "source_origin": "textbook_question_answer_checked",
+      "answer": "因为祝英台的父亲认为梁家太穷，不同意女儿嫁给山伯，非逼英台嫁给马文才不可。",
+      "source_origin": "textbook_question_generated_answer",
       "answer_verified": true,
       "check_needed": false
      },
      {
-      "id": "cq_005",
+      "id": "e87a4513-cc58-4a84-806c-7903e671a7f3",
       "question": "祝英台为什么要求花轿从梁山伯坟墓前经过？",
-      "question_pinyin": "Zhù Yīngtái wèishénme yāoqiú huājiào cóng Liáng Shānbó fénmù qián jīngguò?",
-      "answer": "因为她要向梁山伯做最后的告别。不然，她宁可死也不进马家的门。",
-      "answer_pinyin": "Yīnwèi tā yào xiàng Liáng Shānbó zuò zuìhòu de gàobié. Bùrán, tā nìngkě sǐ yě bú jìn Mǎ jiā de mén.",
-      "answer_vi": "Vì nàng muốn từ biệt Lương Sơn Bá lần cuối. Nếu không, nàng thà chết cũng không vào cửa nhà họ Mã.",
-      "source_origin": "textbook_question_answer_checked",
+      "answer": "因为她要向梁山伯做最后的告别。",
+      "source_origin": "textbook_question_generated_answer",
       "answer_verified": true,
       "check_needed": false
      },
      {
-      "id": "cq_006",
+      "id": "bd63d228-3392-4ba6-86ac-06b7d05ef081",
       "question": "花轿到了梁山伯坟墓前，发生了什么事情？",
-      "question_pinyin": "Huājiào dào le Liáng Shānbó fénmù qián, fāshēng le shénme shìqing?",
-      "answer": "英台从花轿上下来，跪在墓前痛哭，诉说自己的心愿。后来风雨大作，一声霹雳以后，坟墓裂开，英台跳入墓中，最后坟墓里飞出一对蝴蝶。",
-      "answer_pinyin": "Yīngtái cóng huājiào shang xiàlai, guì zài mù qián tòngkū, sùshuō zìjǐ de xīnyuàn. Hòulái fēng yǔ dà zuò, yì shēng pīlì yǐhòu, fénmù liè kāi, Yīngtái tiào rù mù zhōng, zuìhòu fénmù lǐ fēi chū yí duì húdié.",
-      "answer_vi": "Anh Đài xuống kiệu, quỳ trước mộ khóc đau đớn và giãi bày tâm nguyện. Sau đó gió mưa dữ dội, một tiếng sét vang lên, mộ nứt ra, Anh Đài nhảy vào mộ, cuối cùng từ mộ bay ra một đôi bướm.",
-      "source_origin": "textbook_question_answer_checked",
+      "answer": "花轿到了坟墓前，祝英台下轿跪在墓前痛哭。后来风雨大作，坟墓裂开，她跳入墓中，坟墓又合上了。雨过天晴后，墓里飞出一对蝴蝶。",
+      "source_origin": "textbook_question_generated_answer",
       "answer_verified": true,
       "check_needed": false
      },
      {
-      "id": "cq_007",
+      "id": "4282b5e3-6deb-4150-bd1f-ef416c97229d",
       "question": "用你自己的话讲一讲这个故事。",
-      "question_pinyin": "Yòng nǐ zìjǐ de huà jiǎng yi jiǎng zhège gùshi.",
       "answer": "开放题。可按女扮男装、结拜、送别、相会、求婚失败、化蝶的顺序复述。",
-      "answer_pinyin": "Kāifàng tí. Kě àn nǚbàn-nánzhuāng, jiébài, sòngbié, xiānghuì, qiúhūn shībài, huà dié de shùnxù fùshù.",
-      "answer_vi": "Câu hỏi mở. Có thể kể theo thứ tự: cải trang thành nam, kết nghĩa, tiễn biệt, gặp lại, cầu hôn thất bại, hóa bướm.",
-      "source_origin": "textbook_question_answer_checked",
+      "source_origin": "textbook_question_generated_answer",
       "answer_verified": true,
       "check_needed": false
      }
     ]
    },
    {
-    "id": "section_vocab",
+    "id": "78c30bf4-c314-4c4c-86e3-4dd62382dd78",
     "type": "vocabulary",
     "order": 2,
     "title": "生词",
@@ -375,7 +339,7 @@
     "check_needed": false,
     "items": [
      {
-      "id": "vocab_001",
+      "id": "68c05a12-9d8e-45d9-a413-786bcf2f780a",
       "type": "vocabulary_item",
       "order": 1,
       "hanzi": "结拜",
@@ -414,7 +378,7 @@
       "check_needed": false
      },
      {
-      "id": "vocab_002",
+      "id": "8c18cf3c-e9dc-42e1-8faf-eb26799cabab",
       "type": "vocabulary_item",
       "order": 2,
       "hanzi": "家喻户晓",
@@ -453,7 +417,7 @@
       "check_needed": false
      },
      {
-      "id": "vocab_003",
+      "id": "1fbd69b7-603a-44ea-8d57-10cd4def9ced",
       "type": "vocabulary_item",
       "order": 3,
       "hanzi": "绣花",
@@ -492,7 +456,7 @@
       "check_needed": false
      },
      {
-      "id": "vocab_004",
+      "id": "3dc505f1-bc0e-4a96-b448-17fed89fdc60",
       "type": "vocabulary_item",
       "order": 4,
       "hanzi": "女扮男装",
@@ -531,7 +495,7 @@
       "check_needed": false
      },
      {
-      "id": "vocab_005",
+      "id": "188412d4-4c23-4d60-b7b2-21f3490199e7",
       "type": "vocabulary_item",
       "order": 5,
       "hanzi": "经不住",
@@ -570,7 +534,7 @@
       "check_needed": false
      },
      {
-      "id": "vocab_006",
+      "id": "5ea44727-d97c-467b-b1b8-babd195df50d",
       "type": "vocabulary_item",
       "order": 6,
       "hanzi": "苦苦",
@@ -609,7 +573,7 @@
       "check_needed": false
      },
      {
-      "id": "vocab_007",
+      "id": "54613016-834a-4fc3-9912-2357a6d27058",
       "type": "vocabulary_item",
       "order": 7,
       "hanzi": "哀求",
@@ -648,7 +612,7 @@
       "check_needed": false
      },
      {
-      "id": "vocab_008",
+      "id": "0da97406-c3ac-4fcb-a51c-398a59c3fbae",
       "type": "vocabulary_item",
       "order": 8,
       "hanzi": "男生",
@@ -687,7 +651,7 @@
       "check_needed": false
      },
      {
-      "id": "vocab_009",
+      "id": "54b36889-82be-485b-8342-fb8aab572065",
       "type": "vocabulary_item",
       "order": 9,
       "hanzi": "女生",
@@ -726,7 +690,7 @@
       "check_needed": false
      },
      {
-      "id": "vocab_010",
+      "id": "1354b1a3-93cc-4505-8d7f-c5550a1d6ae9",
       "type": "vocabulary_item",
       "order": 10,
       "hanzi": "学问",
@@ -765,7 +729,7 @@
       "check_needed": false
      },
      {
-      "id": "vocab_011",
+      "id": "f0684cb3-4577-4e6c-9f22-7d97c89692b3",
       "type": "vocabulary_item",
       "order": 11,
       "hanzi": "出众",
@@ -804,7 +768,7 @@
       "check_needed": false
      },
      {
-      "id": "vocab_012",
+      "id": "d5b362a7-c8f6-4f25-b2b5-0f1749c8afbb",
       "type": "vocabulary_item",
       "order": 12,
       "hanzi": "人品",
@@ -843,7 +807,7 @@
       "check_needed": false
      },
      {
-      "id": "vocab_013",
+      "id": "7eccd5e8-dac0-4f36-be2e-abcc0a2bdfcd",
       "type": "vocabulary_item",
       "order": 13,
       "hanzi": "一见如故",
@@ -882,7 +846,7 @@
       "check_needed": false
      },
      {
-      "id": "vocab_014",
+      "id": "91fa9f81-e5ef-4c4a-b29c-c4b6daa02196",
       "type": "vocabulary_item",
       "order": 14,
       "hanzi": "兄弟",
@@ -921,7 +885,7 @@
       "check_needed": false
      },
      {
-      "id": "vocab_015",
+      "id": "8a5b1d09-23a6-4182-96e6-9bf4d761a1e1",
       "type": "vocabulary_item",
       "order": 15,
       "hanzi": "送别",
@@ -960,7 +924,7 @@
       "check_needed": false
      },
      {
-      "id": "vocab_016",
+      "id": "be7a835d-ff8f-4a86-9fd8-27c5f1093f0c",
       "type": "vocabulary_item",
       "order": 16,
       "hanzi": "结",
@@ -999,7 +963,7 @@
       "check_needed": false
      },
      {
-      "id": "vocab_017",
+      "id": "7a89dc80-d79d-4c2f-988c-d0f54e240d19",
       "type": "vocabulary_item",
       "order": 17,
       "hanzi": "深厚",
@@ -1038,7 +1002,7 @@
       "check_needed": false
      },
      {
-      "id": "vocab_018",
+      "id": "ff3e1818-66a9-4532-880b-02c9cacb0e5b",
       "type": "vocabulary_item",
       "order": 18,
       "hanzi": "情谊",
@@ -1077,7 +1041,7 @@
       "check_needed": false
      },
      {
-      "id": "vocab_019",
+      "id": "0125bdae-fe4e-48fb-8264-145e95c75933",
       "type": "vocabulary_item",
       "order": 19,
       "hanzi": "师母",
@@ -1116,7 +1080,7 @@
       "check_needed": false
      },
      {
-      "id": "vocab_020",
+      "id": "689eb64b-5d4f-469f-9afa-74017d399614",
       "type": "vocabulary_item",
       "order": 20,
       "hanzi": "心思",
@@ -1155,7 +1119,7 @@
       "check_needed": false
      },
      {
-      "id": "vocab_021",
+      "id": "d45d5488-9293-41ae-9deb-1e5b51cee446",
       "type": "vocabulary_item",
       "order": 21,
       "hanzi": "玉",
@@ -1194,7 +1158,7 @@
       "check_needed": false
      },
      {
-      "id": "vocab_022",
+      "id": "c99a633b-27a2-429b-a139-44113a84c189",
       "type": "vocabulary_item",
       "order": 22,
       "hanzi": "手镯",
@@ -1233,7 +1197,7 @@
       "check_needed": false
      },
      {
-      "id": "vocab_023",
+      "id": "79358c6f-3427-4c28-98f3-7ef98c7033c3",
       "type": "vocabulary_item",
       "order": 23,
       "hanzi": "信物",
@@ -1272,7 +1236,7 @@
       "check_needed": false
      },
      {
-      "id": "vocab_024",
+      "id": "dc0f8e06-a359-4907-a8d8-fc9b02260590",
       "type": "vocabulary_item",
       "order": 24,
       "hanzi": "拜托",
@@ -1311,7 +1275,7 @@
       "check_needed": false
      },
      {
-      "id": "vocab_025",
+      "id": "c43cedbf-7024-4ec1-922f-e75119114baf",
       "type": "vocabulary_item",
       "order": 25,
       "hanzi": "转交",
@@ -1350,7 +1314,7 @@
       "check_needed": false
      },
      {
-      "id": "vocab_026",
+      "id": "d9991c79-3454-4247-bf18-f14f43b4a24a",
       "type": "vocabulary_item",
       "order": 26,
       "hanzi": "送行",
@@ -1389,7 +1353,7 @@
       "check_needed": false
      },
      {
-      "id": "vocab_027",
+      "id": "55cd807c-eec7-412d-99db-f4e6508b170f",
       "type": "vocabulary_item",
       "order": 27,
       "hanzi": "暗示",
@@ -1428,7 +1392,7 @@
       "check_needed": false
      },
      {
-      "id": "vocab_028",
+      "id": "085e60d5-dd1c-4585-ac6b-0f1db0ded936",
       "type": "vocabulary_item",
       "order": 28,
       "hanzi": "始终",
@@ -1467,7 +1431,7 @@
       "check_needed": false
      },
      {
-      "id": "vocab_029",
+      "id": "ba7ff0f9-b633-4516-ab3d-22b96046a1cf",
       "type": "vocabulary_item",
       "order": 29,
       "hanzi": "里",
@@ -1506,7 +1470,7 @@
       "check_needed": false
      },
      {
-      "id": "vocab_030",
+      "id": "2185ee67-885d-4ffb-83e2-e97be4070796",
       "type": "vocabulary_item",
       "order": 30,
       "hanzi": "做媒",
@@ -1545,24 +1509,24 @@
       "check_needed": false
      },
      {
-      "id": "vocab_031",
+      "id": "092a8c16-3739-4685-a4c0-39365071bd48",
       "type": "vocabulary_item",
       "order": 31,
       "hanzi": "相亲",
       "pinyin": "xiāng qīn",
       "meaning_vi": "xem mặt; gặp mặt do người khác giới thiệu để tính chuyện hôn nhân",
       "meaning_en": "to size up a prospective mate in an arranged meeting; to go on a blind date",
-      "pos": "verb",
+      "pos": "verb_phrase",
       "pos_vi": "Động từ",
       "pos_detail": {
-       "vi": "Động từ",
-       "cn": "动词",
-       "normalized": "verb",
-       "schema_compatible_pos": "verb",
-       "is_separable_verb": false,
-       "separable_type": "",
-       "structure_vi": "",
-       "usage_note_vi": "Giáo trình ghi xiāng qīn. Trong một số nguồn/địa khu có phân biệt xiàng qīn cho nghĩa xem mắt; file này giữ theo giáo trình và thêm ghi chú.",
+       "vi": "Động từ li hợp",
+       "cn": "动宾式离合词",
+       "normalized": "verb_phrase",
+       "schema_compatible_pos": "verb_phrase",
+       "is_separable_verb": true,
+       "separable_type": "động-tân / 离合词",
+       "structure_vi": "động từ 相 + tân ngữ 亲",
+       "usage_note_vi": "Giáo trình ghi pinyin xiāng qīn. Có thể nói 相亲, 相过亲, 相了一次亲; trong bài là 希望山伯能早日来祝家相亲.",
        "notes": []
       },
       "tags": ["main_vocab"],
@@ -1584,7 +1548,7 @@
       "check_needed": false
      },
      {
-      "id": "vocab_032",
+      "id": "22e66ee9-565e-4670-b2ac-4d5a9b500b38",
       "type": "vocabulary_item",
       "order": 32,
       "hanzi": "相会",
@@ -1623,7 +1587,7 @@
       "check_needed": false
      },
      {
-      "id": "vocab_033",
+      "id": "275b46f4-3166-48b7-9766-58384178d1be",
       "type": "vocabulary_item",
       "order": 33,
       "hanzi": "赠送",
@@ -1662,7 +1626,7 @@
       "check_needed": false
      },
      {
-      "id": "vocab_034",
+      "id": "1190511f-5970-4304-8f84-d7201b287aeb",
       "type": "vocabulary_item",
       "order": 34,
       "hanzi": "嫁",
@@ -1701,7 +1665,7 @@
       "check_needed": false
      },
      {
-      "id": "vocab_035",
+      "id": "d42d3d90-443d-45da-bed7-987b50034e92",
       "type": "vocabulary_item",
       "order": 35,
       "hanzi": "官",
@@ -1740,7 +1704,7 @@
       "check_needed": false
      },
      {
-      "id": "vocab_036",
+      "id": "cfb712c9-c4ca-4314-b6b2-696b40ace25e",
       "type": "vocabulary_item",
       "order": 36,
       "hanzi": "楼台",
@@ -1779,7 +1743,7 @@
       "check_needed": false
      },
      {
-      "id": "vocab_037",
+      "id": "6059829f-ae21-43cf-ac0c-05e19639ec43",
       "type": "vocabulary_item",
       "order": 37,
       "hanzi": "表明",
@@ -1818,7 +1782,7 @@
       "check_needed": false
      },
      {
-      "id": "vocab_038",
+      "id": "fefd5441-7b6c-47e3-b823-9e149b947bf7",
       "type": "vocabulary_item",
       "order": 38,
       "hanzi": "化蝶",
@@ -1857,7 +1821,7 @@
       "check_needed": false
      },
      {
-      "id": "vocab_039",
+      "id": "27761bd2-433a-44ef-b79a-9e6f0a34b9c9",
       "type": "vocabulary_item",
       "order": 39,
       "hanzi": "求婚",
@@ -1896,7 +1860,7 @@
       "check_needed": false
      },
      {
-      "id": "vocab_040",
+      "id": "861ed325-b320-4ae0-8eac-bb6bb8ebc215",
       "type": "vocabulary_item",
       "order": 40,
       "hanzi": "逼",
@@ -1935,7 +1899,7 @@
       "check_needed": false
      },
      {
-      "id": "vocab_041",
+      "id": "6fe8f20d-e712-4f0c-9cbc-021aaeb9698c",
       "type": "vocabulary_item",
       "order": 41,
       "hanzi": "请求",
@@ -1974,7 +1938,7 @@
       "check_needed": false
      },
      {
-      "id": "vocab_042",
+      "id": "863bbf3f-83e7-4021-b98e-be632043d94c",
       "type": "vocabulary_item",
       "order": 42,
       "hanzi": "吊孝",
@@ -2013,7 +1977,7 @@
       "check_needed": false
      },
      {
-      "id": "vocab_043",
+      "id": "b14487b6-5579-4f1c-9ad7-16fd40991577",
       "type": "vocabulary_item",
       "order": 43,
       "hanzi": "坚决",
@@ -2052,7 +2016,7 @@
       "check_needed": false
      },
      {
-      "id": "vocab_044",
+      "id": "eb7cc112-7df2-44e6-a1df-9824d8b6e45a",
       "type": "vocabulary_item",
       "order": 44,
       "hanzi": "迎亲",
@@ -2091,7 +2055,7 @@
       "check_needed": false
      },
      {
-      "id": "vocab_045",
+      "id": "505dae11-836a-475d-b811-339f25caaf42",
       "type": "vocabulary_item",
       "order": 45,
       "hanzi": "花轿",
@@ -2130,7 +2094,7 @@
       "check_needed": false
      },
      {
-      "id": "vocab_046",
+      "id": "a47b82f7-2260-4763-8c97-b1631e792e1c",
       "type": "vocabulary_item",
       "order": 46,
       "hanzi": "路过",
@@ -2169,7 +2133,7 @@
       "check_needed": false
      },
      {
-      "id": "vocab_047",
+      "id": "71f9308f-7b38-435e-bfa8-c7c974599035",
       "type": "vocabulary_item",
       "order": 47,
       "hanzi": "坟墓",
@@ -2208,7 +2172,7 @@
       "check_needed": false
      },
      {
-      "id": "vocab_048",
+      "id": "05e1ac20-79be-406d-9c90-4b0c847182bc",
       "type": "vocabulary_item",
       "order": 48,
       "hanzi": "墓",
@@ -2247,7 +2211,7 @@
       "check_needed": false
      },
      {
-      "id": "vocab_049",
+      "id": "358d5baa-5ba1-4cb5-984a-44770a1724d6",
       "type": "vocabulary_item",
       "order": 49,
       "hanzi": "告别",
@@ -2286,7 +2250,7 @@
       "check_needed": false
      },
      {
-      "id": "vocab_050",
+      "id": "20f66e08-4820-43f5-a18a-50f61591e7cd",
       "type": "vocabulary_item",
       "order": 50,
       "hanzi": "宁可",
@@ -2325,7 +2289,7 @@
       "check_needed": false
      },
      {
-      "id": "vocab_051",
+      "id": "db0c0e40-5639-4c1e-bd66-9728a0c5006e",
       "type": "vocabulary_item",
       "order": 51,
       "hanzi": "无奈",
@@ -2364,7 +2328,7 @@
       "check_needed": false
      },
      {
-      "id": "vocab_052",
+      "id": "e890b44f-c76e-4dbf-92e7-201722d3274e",
       "type": "vocabulary_item",
       "order": 52,
       "hanzi": "跪",
@@ -2403,7 +2367,7 @@
       "check_needed": false
      },
      {
-      "id": "vocab_053",
+      "id": "d36b89c4-d29e-486a-b7d9-aeb589592aa6",
       "type": "vocabulary_item",
       "order": 53,
       "hanzi": "痛哭",
@@ -2442,7 +2406,7 @@
       "check_needed": false
      },
      {
-      "id": "vocab_054",
+      "id": "addea99a-d455-4f20-bd7b-e7d7b320bc0c",
       "type": "vocabulary_item",
       "order": 54,
       "hanzi": "诉说",
@@ -2481,7 +2445,7 @@
       "check_needed": false
      },
      {
-      "id": "vocab_055",
+      "id": "672023ad-14d1-47d0-a3c4-5dabd01b69e9",
       "type": "vocabulary_item",
       "order": 55,
       "hanzi": "心愿",
@@ -2520,7 +2484,7 @@
       "check_needed": false
      },
      {
-      "id": "vocab_056",
+      "id": "e93080a4-2857-4582-a75a-94276764a235",
       "type": "vocabulary_item",
       "order": 56,
       "hanzi": "天空",
@@ -2559,7 +2523,7 @@
       "check_needed": false
      },
      {
-      "id": "vocab_057",
+      "id": "682e1087-39f5-4c67-9836-fa89206dfba5",
       "type": "vocabulary_item",
       "order": 57,
       "hanzi": "乌云",
@@ -2598,7 +2562,7 @@
       "check_needed": false
      },
      {
-      "id": "vocab_058",
+      "id": "26999e7c-e64c-4401-9d09-bcfd351db7b5",
       "type": "vocabulary_item",
       "order": 58,
       "hanzi": "翻滚",
@@ -2637,7 +2601,7 @@
       "check_needed": false
      },
      {
-      "id": "vocab_059",
+      "id": "67d5f931-79d4-4182-8e48-3c718cfcb016",
       "type": "vocabulary_item",
       "order": 59,
       "hanzi": "雷",
@@ -2676,7 +2640,7 @@
       "check_needed": false
      },
      {
-      "id": "vocab_060",
+      "id": "baf4d641-8698-4777-840f-6002f16a0a62",
       "type": "vocabulary_item",
       "order": 60,
       "hanzi": "隆隆",
@@ -2715,7 +2679,7 @@
       "check_needed": false
      },
      {
-      "id": "vocab_061",
+      "id": "9abc5789-0caa-4699-a5f3-b6099b75d0fa",
       "type": "vocabulary_item",
       "order": 61,
       "hanzi": "霹雳",
@@ -2754,7 +2718,7 @@
       "check_needed": false
      },
      {
-      "id": "vocab_062",
+      "id": "d2a7ce6a-a83e-42aa-8d6e-9f24d1253da9",
       "type": "vocabulary_item",
       "order": 62,
       "hanzi": "裂",
@@ -2793,7 +2757,7 @@
       "check_needed": false
      },
      {
-      "id": "vocab_063",
+      "id": "bdc30b6a-44e0-4a88-b63c-3e23a453d7ed",
       "type": "vocabulary_item",
       "order": 63,
       "hanzi": "跃",
@@ -2832,7 +2796,7 @@
       "check_needed": false
      },
      {
-      "id": "vocab_064",
+      "id": "b0403e9c-53df-4785-a285-f0508b88c6a3",
       "type": "vocabulary_item",
       "order": 64,
       "hanzi": "散",
@@ -2871,7 +2835,7 @@
       "check_needed": false
      },
      {
-      "id": "vocab_065",
+      "id": "c28685e7-31b1-4a86-a9f3-59fe9f10c468",
       "type": "vocabulary_item",
       "order": 65,
       "hanzi": "蝴蝶",
@@ -2910,7 +2874,7 @@
       "check_needed": false
      },
      {
-      "id": "vocab_066",
+      "id": "0dcf52b0-96e4-43ed-bad8-b69164df33ab",
       "type": "vocabulary_item",
       "order": 66,
       "hanzi": "翩翩起舞",
@@ -2949,7 +2913,7 @@
       "check_needed": false
      },
      {
-      "id": "vocab_067",
+      "id": "b7a52061-c897-47c7-a82d-e167737e2e36",
       "type": "vocabulary_item",
       "order": 67,
       "hanzi": "飞翔",
@@ -2988,7 +2952,7 @@
       "check_needed": false
      },
      {
-      "id": "vocab_068",
+      "id": "60ce46a6-8f84-4ea6-8b11-b610519eb1d0",
       "type": "vocabulary_item",
       "order": 68,
       "hanzi": "代",
@@ -3027,7 +2991,7 @@
       "check_needed": false
      },
      {
-      "id": "vocab_069",
+      "id": "258cca79-f757-4221-9066-1ce48101cf88",
       "type": "vocabulary_item",
       "order": 69,
       "hanzi": "流传",
@@ -3066,7 +3030,7 @@
       "check_needed": false
      },
      {
-      "id": "vocab_070",
+      "id": "61ce3463-fded-4c37-a81f-90fc745e8ab7",
       "type": "vocabulary_item",
       "order": 70,
       "hanzi": "端午节",
@@ -3105,7 +3069,7 @@
       "check_needed": false
      },
      {
-      "id": "vocab_071",
+      "id": "b29ccb2e-0c64-4431-8cf1-56bea2ed6817",
       "type": "vocabulary_item",
       "order": 71,
       "hanzi": "粽子",
@@ -3144,7 +3108,7 @@
       "check_needed": false
      },
      {
-      "id": "vocab_072",
+      "id": "b359523f-65ab-4d65-a183-b4f0c3bdfb4e",
       "type": "vocabulary_item",
       "order": 72,
       "hanzi": "龙舟",
@@ -3183,7 +3147,7 @@
       "check_needed": false
      },
      {
-      "id": "vocab_073",
+      "id": "25879a5f-f396-4cfd-b9cf-ab952da43059",
       "type": "vocabulary_item",
       "order": 73,
       "hanzi": "传说",
@@ -3222,7 +3186,7 @@
       "check_needed": false
      },
      {
-      "id": "vocab_074",
+      "id": "772d40d7-1f7f-49d3-b04b-8591ec396374",
       "type": "vocabulary_item",
       "order": 74,
       "hanzi": "屈原",
@@ -3261,7 +3225,7 @@
       "check_needed": false
      },
      {
-      "id": "vocab_075",
+      "id": "8d6bfeeb-4c9e-4835-910d-ac19ba6aa9d6",
       "type": "vocabulary_item",
       "order": 75,
       "hanzi": "疏远",
@@ -3300,7 +3264,7 @@
       "check_needed": false
      },
      {
-      "id": "vocab_076",
+      "id": "c63b7881-f980-40bf-8f25-a60025781a0e",
       "type": "vocabulary_item",
       "order": 76,
       "hanzi": "抑制",
@@ -3339,7 +3303,7 @@
       "check_needed": false
      },
      {
-      "id": "vocab_077",
+      "id": "19e5e636-f19d-40ec-ad61-552d20baa3a8",
       "type": "vocabulary_item",
       "order": 77,
       "hanzi": "悲愤",
@@ -3378,7 +3342,7 @@
       "check_needed": false
      },
      {
-      "id": "vocab_078",
+      "id": "50e9b559-9eb2-416e-9bc8-3b5f001c11be",
       "type": "vocabulary_item",
       "order": 78,
       "hanzi": "囚禁",
@@ -3417,7 +3381,7 @@
       "check_needed": false
      },
      {
-      "id": "vocab_079",
+      "id": "42b6ebd4-6ff4-478a-849d-c6d1dce5ad92",
       "type": "vocabulary_item",
       "order": 79,
       "hanzi": "攻占",
@@ -3456,7 +3420,7 @@
       "check_needed": false
      },
      {
-      "id": "vocab_080",
+      "id": "c6cc0b7f-747e-498b-8625-85ce1ec9ac2d",
       "type": "vocabulary_item",
       "order": 80,
       "hanzi": "激流",
@@ -3495,7 +3459,7 @@
       "check_needed": false
      },
      {
-      "id": "vocab_081",
+      "id": "d14b14cd-cc14-4056-b3ad-9dcfc32f7be5",
       "type": "vocabulary_item",
       "order": 81,
       "hanzi": "打捞",
@@ -3536,7 +3500,7 @@
     ]
    },
    {
-    "id": "section_proper_nouns",
+    "id": "3c5ee48e-5d44-44ac-bd53-cac996a83338",
     "type": "proper_nouns",
     "order": 3,
     "title": "专名",
@@ -3545,7 +3509,7 @@
     "check_needed": false,
     "items": [
      {
-      "id": "proper_001",
+      "id": "070690f6-fd26-41df-ab28-f5031668ed3e",
       "type": "proper_noun",
       "order": 1,
       "hanzi": "梁山伯",
@@ -3558,7 +3522,7 @@
       "check_needed": false
      },
      {
-      "id": "proper_002",
+      "id": "d0cc2a3d-951d-4dc5-93e3-bc90ee212237",
       "type": "proper_noun",
       "order": 2,
       "hanzi": "祝英台",
@@ -3571,7 +3535,7 @@
       "check_needed": false
      },
      {
-      "id": "proper_003",
+      "id": "785dd718-c838-45cf-87e7-b278bab8b7c0",
       "type": "proper_noun",
       "order": 3,
       "hanzi": "万松书院",
@@ -3584,7 +3548,7 @@
       "check_needed": false
      },
      {
-      "id": "proper_004",
+      "id": "7f7913ed-3e88-470e-ac98-ecb06f3f6c05",
       "type": "proper_noun",
       "order": 4,
       "hanzi": "祝家庄",
@@ -3592,12 +3556,12 @@
       "meaning_vi": "Chúc Gia Trang",
       "meaning_en": "Zhu Village",
       "source_origin": "textbook",
-      "page_start": 217,
-      "page_end": 217,
+      "page_start": 218,
+      "page_end": 218,
       "check_needed": false
      },
      {
-      "id": "proper_005",
+      "id": "03d3483d-dfb7-4cd5-8ca7-caa3e54a6ee2",
       "type": "proper_noun",
       "order": 5,
       "hanzi": "马文才",
@@ -3605,14 +3569,27 @@
       "meaning_vi": "Mã Văn Tài",
       "meaning_en": "Ma Wencai",
       "source_origin": "textbook",
-      "page_start": 217,
-      "page_end": 217,
+      "page_start": 218,
+      "page_end": 218,
       "check_needed": false
      },
      {
-      "id": "proper_006",
+      "id": "ea82d601-11f9-4cab-9f5d-b4a8dd9cebbc",
       "type": "proper_noun",
       "order": 6,
+      "hanzi": "梁祝",
+      "pinyin": "Liáng-Zhù",
+      "meaning_vi": "Lương Chúc; cách gọi tắt của Lương Sơn Bá và Chúc Anh Đài / khúc nhạc Lương Chúc",
+      "meaning_en": "Liang-Zhu; The Butterfly Lovers",
+      "source_origin": "textbook",
+      "page_start": 223,
+      "page_end": 223,
+      "check_needed": false
+     },
+     {
+      "id": "c24bd242-3609-4657-b5f1-db9cd21472f6",
+      "type": "proper_noun",
+      "order": 7,
       "hanzi": "杭州",
       "pinyin": "Hángzhōu",
       "meaning_vi": "Hàng Châu",
@@ -3623,9 +3600,9 @@
       "check_needed": false
      },
      {
-      "id": "proper_007",
+      "id": "a4a354d8-d066-415f-a5cd-e59f03580c28",
       "type": "proper_noun",
-      "order": 7,
+      "order": 8,
       "hanzi": "秦国",
       "pinyin": "Qín guó",
       "meaning_vi": "nước Tần",
@@ -3636,9 +3613,9 @@
       "check_needed": false
      },
      {
-      "id": "proper_008",
+      "id": "5f5fdc9c-74dd-458b-b5a7-8e999a418667",
       "type": "proper_noun",
-      "order": 8,
+      "order": 9,
       "hanzi": "楚国",
       "pinyin": "Chǔ guó",
       "meaning_vi": "nước Sở",
@@ -3649,9 +3626,9 @@
       "check_needed": false
      },
      {
-      "id": "proper_009",
+      "id": "4912acc3-45af-4e8f-8291-9049240abccd",
       "type": "proper_noun",
-      "order": 9,
+      "order": 10,
       "hanzi": "楚怀王",
       "pinyin": "Chǔhuái Wáng",
       "meaning_vi": "Sở Hoài Vương",
@@ -3662,44 +3639,44 @@
       "check_needed": false
      },
      {
-      "id": "proper_010",
+      "id": "f170a9a5-3c11-4110-9cd4-7e9ff7046a93",
       "type": "proper_noun",
-      "order": 10,
+      "order": 11,
       "hanzi": "郢都",
       "pinyin": "Yǐngdū",
       "meaning_vi": "Dĩnh Đô",
       "meaning_en": "Yingdu",
       "source_origin": "textbook",
-      "page_start": 228,
-      "page_end": 228,
+      "page_start": 229,
+      "page_end": 229,
       "check_needed": false
      },
      {
-      "id": "proper_011",
+      "id": "113f1c69-d782-4d83-aeef-a34467e0dfb0",
       "type": "proper_noun",
-      "order": 11,
+      "order": 12,
       "hanzi": "汨罗江",
       "pinyin": "Mìluó Jiāng",
       "meaning_vi": "sông Mịch La",
       "meaning_en": "Miluo River",
       "source_origin": "textbook",
-      "page_start": 228,
-      "page_end": 228,
+      "page_start": 229,
+      "page_end": 229,
       "check_needed": false
      }
     ]
    },
    {
-    "id": "section_notes",
+    "id": "c18e9f54-6da1-4496-886b-c2c722605678",
     "type": "notes",
     "order": 4,
     "title": "注释",
     "title_vi": "Chú thích",
-    "source_origin": "textbook",
+    "source_origin": "textbook/generated_mixed",
     "check_needed": false,
     "items": [
      {
-      "id": "note_001",
+      "id": "63d654f5-4561-4d48-a144-bacbf9671dfc",
       "type": "note",
       "order": 1,
       "title": "家喻户晓",
@@ -3707,14 +3684,15 @@
       "meaning_vi": "nhà nào cũng biết, ai ai cũng rõ",
       "examples": [
        {
-        "id": "note001_ex001",
+        "id": "021014f3-ff12-43b6-9d12-352cb6dc863b",
         "zh": "梁山伯与祝英台的故事在中国家喻户晓。",
         "pinyin": "Liáng Shānbó yǔ Zhù Yīngtái de gùshi zài Zhōngguó jiāyù-hùxiǎo.",
         "vi": "Câu chuyện Lương Sơn Bá và Chúc Anh Đài ở Trung Quốc ai ai cũng biết.",
-        "highlight": ["家喻户晓"],
+        "en": "",
+        "highlight": [],
         "grammar_refs": [],
-        "vocab_refs": ["vocab_002"],
-        "source_ref": "p_001",
+        "vocab_refs": [],
+        "source_ref": "",
         "note_vi": "",
         "audio_key": "",
         "source_origin": "textbook",
@@ -3722,11 +3700,11 @@
        }
       ],
       "source_refs": [],
-      "source_origin": "textbook",
+      "source_origin": "textbook/generated_mixed",
       "check_needed": false
      },
      {
-      "id": "note_002",
+      "id": "7e2ee128-4fbd-4a93-898c-5f5fd99b371b",
       "type": "note",
       "order": 2,
       "title": "女扮男装",
@@ -3734,14 +3712,15 @@
       "meaning_vi": "phụ nữ cải trang thành nam",
       "examples": [
        {
-        "id": "note002_ex001",
+        "id": "29279e2c-cb63-4437-bbc5-7c46c15b6f13",
         "zh": "祝英台可以女扮男装去读书。",
         "pinyin": "Zhù Yīngtái kěyǐ nǚbàn-nánzhuāng qù dúshū.",
         "vi": "Chúc Anh Đài có thể cải trang thành nam để đi học.",
-        "highlight": ["女扮男装"],
+        "en": "",
+        "highlight": [],
         "grammar_refs": [],
-        "vocab_refs": ["vocab_004"],
-        "source_ref": "p_002",
+        "vocab_refs": [],
+        "source_ref": "",
         "note_vi": "",
         "audio_key": "",
         "source_origin": "textbook",
@@ -3749,11 +3728,11 @@
        }
       ],
       "source_refs": [],
-      "source_origin": "textbook",
+      "source_origin": "textbook/generated_mixed",
       "check_needed": false
      },
      {
-      "id": "note_003",
+      "id": "bf5e90df-dc03-4600-a2d2-426ab562c9a5",
       "type": "note",
       "order": 3,
       "title": "一见如故",
@@ -3761,14 +3740,15 @@
       "meaning_vi": "vừa gặp đã như bạn cũ",
       "examples": [
        {
-        "id": "note003_ex001",
+        "id": "3bb13249-7132-47f4-b974-8144c96f3e29",
         "zh": "梁山伯也对祝英台有一种一见如故的感觉。",
         "pinyin": "Liáng Shānbó yě duì Zhù Yīngtái yǒu yì zhǒng yíjiàn-rúgù de gǎnjué.",
         "vi": "Lương Sơn Bá cũng có một cảm giác vừa gặp Chúc Anh Đài đã như bạn cũ.",
-        "highlight": ["一见如故"],
+        "en": "",
+        "highlight": [],
         "grammar_refs": [],
-        "vocab_refs": ["vocab_013"],
-        "source_ref": "p_003",
+        "vocab_refs": [],
+        "source_ref": "",
         "note_vi": "",
         "audio_key": "",
         "source_origin": "textbook",
@@ -3776,11 +3756,11 @@
        }
       ],
       "source_refs": [],
-      "source_origin": "textbook",
+      "source_origin": "textbook/generated_mixed",
       "check_needed": false
      },
      {
-      "id": "note_004",
+      "id": "d85c63bd-7607-4517-874a-7a596fc80b7d",
       "type": "note",
       "order": 4,
       "title": "恍然大悟",
@@ -3788,14 +3768,15 @@
       "meaning_vi": "bỗng nhiên hiểu ra",
       "examples": [
        {
-        "id": "note004_ex001",
-        "zh": "山伯得到白玉镯，才恍然大悟。",
-        "pinyin": "Shānbó dédào báiyùzhuó, cái huǎngrán-dàwù.",
-        "vi": "Sơn Bá nhận được vòng bạch ngọc thì mới chợt hiểu ra.",
-        "highlight": ["恍然大悟"],
+        "id": "2ac6cf45-ba53-4dbc-887c-e57f4e3d233c",
+        "zh": "山伯得到英台赠送给他的白玉镯，才恍然大悟。",
+        "pinyin": "Shānbó dédào Yīngtái zèngsòng gěi tā de báiyùzhuó, cái huǎngrán-dàwù.",
+        "vi": "Sơn Bá nhận được chiếc vòng bạch ngọc Anh Đài tặng cho mình thì mới chợt hiểu ra.",
+        "en": "",
+        "highlight": [],
         "grammar_refs": [],
         "vocab_refs": [],
-        "source_ref": "p_006",
+        "source_ref": "",
         "note_vi": "",
         "audio_key": "",
         "source_origin": "textbook",
@@ -3803,11 +3784,11 @@
        }
       ],
       "source_refs": [],
-      "source_origin": "textbook",
+      "source_origin": "textbook/generated_mixed",
       "check_needed": false
      },
      {
-      "id": "note_005",
+      "id": "7bb9601d-22c6-4b07-bc26-8b7269802a02",
       "type": "note",
       "order": 5,
       "title": "非……不可",
@@ -3815,14 +3796,15 @@
       "meaning_vi": "nhất định phải làm gì; không làm không được",
       "examples": [
        {
-        "id": "note005_ex001",
+        "id": "49ae3435-56e4-4efe-bf35-b5456170f88d",
         "zh": "她父亲非逼英台嫁给马文才不可。",
         "pinyin": "Tā fùqin fēi bī Yīngtái jià gěi Mǎ Wéncái bùkě.",
         "vi": "Cha nàng nhất định ép Anh Đài gả cho Mã Văn Tài.",
-        "highlight": ["非", "不可"],
+        "en": "",
+        "highlight": [],
         "grammar_refs": [],
-        "vocab_refs": ["vocab_040"],
-        "source_ref": "p_007",
+        "vocab_refs": [],
+        "source_ref": "",
         "note_vi": "",
         "audio_key": "",
         "source_origin": "textbook",
@@ -3830,11 +3812,11 @@
        }
       ],
       "source_refs": [],
-      "source_origin": "textbook",
+      "source_origin": "textbook/generated_mixed",
       "check_needed": false
      },
      {
-      "id": "note_006",
+      "id": "62e53f39-f7bb-4347-a1dc-e28ccd3ef963",
       "type": "note",
       "order": 6,
       "title": "化蝶",
@@ -3842,14 +3824,15 @@
       "meaning_vi": "hóa thành bướm",
       "examples": [
        {
-        "id": "note006_ex001",
+        "id": "cfc9ce32-9622-4ae8-b4e6-c96ac2de6119",
         "zh": "他们最后化为一对蝴蝶。",
         "pinyin": "Tāmen zuìhòu huàwéi yí duì húdié.",
         "vi": "Cuối cùng họ hóa thành một đôi bướm.",
-        "highlight": ["化为", "蝴蝶"],
-        "grammar_refs": ["grammar_002"],
-        "vocab_refs": ["vocab_065"],
-        "source_ref": "p_009",
+        "en": "",
+        "highlight": [],
+        "grammar_refs": [],
+        "vocab_refs": [],
+        "source_ref": "",
         "note_vi": "",
         "audio_key": "",
         "source_origin": "textbook",
@@ -3857,43 +3840,43 @@
        }
       ],
       "source_refs": [],
-      "source_origin": "textbook",
+      "source_origin": "textbook/generated_mixed",
       "check_needed": false
      }
     ]
    },
    {
-    "id": "section_grammar",
+    "id": "b045e537-7383-494b-8d61-b0286977ed80",
     "type": "grammar",
     "order": 5,
     "title": "词语用法",
     "title_vi": "Cách dùng từ / ngữ pháp",
-    "source_origin": "textbook",
+    "source_origin": "textbook/generated_mixed",
     "check_needed": false,
     "items": [
      {
-      "id": "grammar_001",
+      "id": "d5eaf408-514c-4987-b142-668f43d140be",
       "type": "grammar_point",
       "order": 1,
       "title": "由于",
       "title_vi": "Do / bởi vì",
       "level": "HSK3+",
       "tags": ["词语用法"],
-      "source_origin": "textbook",
+      "source_origin": "textbook/generated_mixed",
       "page_start": 218,
-      "page_end": 219,
+      "page_end": 222,
       "check_needed": false,
       "blocks": [
        {
-        "id": "g001_b001",
+        "id": "b7c5d870-2db8-4e2e-950f-f0e6e522ac16",
         "type": "grammar_overview",
         "order": 1,
         "title": "Bản chất",
-        "content_vi": "由于 nêu nguyên nhân/lý do, dùng được như giới từ hoặc liên từ. Sắc thái văn viết hơn 因为.",
+        "content_vi": "由于 nêu nguyên nhân hoặc lý do. Trong khẩu ngữ thường dùng 因为 hơn; 由于 có sắc thái văn viết hơn.",
         "examples": []
        },
        {
-        "id": "g001_b002",
+        "id": "b3534a40-3bab-464a-97dd-67889b8bcb7b",
         "type": "grammar_structure",
         "order": 2,
         "title": "Cấu trúc",
@@ -3907,14 +3890,15 @@
         ],
         "examples": [
          {
-          "id": "g001_ex001",
+          "id": "2e38466f-cc5f-451a-9612-b188f7cd2dcf",
           "zh": "由于古时候女子不能上学读书，所以祝英台常常站在窗前。",
           "pinyin": "Yóuyú gǔ shíhou nǚzǐ bù néng shàngxué dúshū, suǒyǐ Zhù Yīngtái chángcháng zhàn zài chuāng qián.",
           "vi": "Do thời xưa phụ nữ không thể đi học nên Chúc Anh Đài thường đứng bên cửa sổ.",
+          "en": "",
           "highlight": ["由于", "所以"],
-          "grammar_refs": ["grammar_001"],
+          "grammar_refs": ["d5eaf408-514c-4987-b142-668f43d140be"],
           "vocab_refs": [],
-          "source_ref": "p_002",
+          "source_ref": "4a807389-3592-4cf4-973f-6589e0118fb2",
           "note_vi": "",
           "audio_key": "",
           "source_origin": "textbook",
@@ -3923,34 +3907,34 @@
         ],
         "notes_vi": [
          "由于 có thể đứng sau 是: 他不参加比赛是由于最近身体不太好。",
-         "Khẩu ngữ thường dùng 因为 hơn 由于."
+         "因为 có thể đứng ở vế sau; 由于 thường không đứng ở vế sau theo kiểu khẩu ngữ."
         ]
        }
       ]
      },
      {
-      "id": "grammar_002",
+      "id": "a8720887-db26-4d49-b41f-8a6d646a791d",
       "type": "grammar_point",
       "order": 2,
       "title": "为",
       "title_vi": "Làm thành / vì / bởi",
       "level": "HSK3+",
       "tags": ["词语用法"],
-      "source_origin": "textbook",
-      "page_start": 219,
-      "page_end": 220,
+      "source_origin": "textbook/generated_mixed",
+      "page_start": 218,
+      "page_end": 222,
       "check_needed": false,
       "blocks": [
        {
-        "id": "g002_b001",
+        "id": "470b1ca1-e0a1-449f-b55e-a8aa481a4dd4",
         "type": "grammar_overview",
         "order": 1,
         "title": "Bản chất",
-        "content_vi": "为 có nhiều nghĩa: làm/đóng vai, trở thành, làm việc, là; khi đi với 所 có thể biểu thị bị/bởi. Chú ý phân biệt wéi và wèi theo cụm.",
+        "content_vi": "为 trong bài có nhiều cách dùng: 为 wéi là làm/đóng vai, trở thành, làm, là; 为 wéi còn xuất hiện trong mẫu bị động văn viết 为……所……. 为 wèi mới là “vì/cho”.",
         "examples": []
        },
        {
-        "id": "g002_b002",
+        "id": "0ef2b790-3209-4b5c-a519-ca5a424e4d49",
         "type": "grammar_structure",
         "order": 2,
         "title": "为 = trở thành / hóa thành",
@@ -3964,50 +3948,52 @@
         ],
         "examples": [
          {
-          "id": "g002_ex001",
-          "zh": "梁山伯和祝英台最后化为一对蝴蝶。",
-          "pinyin": "Liáng Shānbó hé Zhù Yīngtái zuìhòu huàwéi yí duì húdié.",
-          "vi": "Lương Sơn Bá và Chúc Anh Đài cuối cùng hóa thành một đôi bướm.",
+          "id": "148dd5b4-2deb-4724-b898-7d508f8a6e77",
+          "zh": "后来，他们结拜为兄弟。",
+          "pinyin": "Hòulái, tāmen jiébài wéi xiōngdì.",
+          "vi": "Về sau, họ kết nghĩa làm anh em.",
+          "en": "",
           "highlight": ["化为"],
-          "grammar_refs": ["grammar_002"],
-          "vocab_refs": ["vocab_65"],
+          "grammar_refs": ["a8720887-db26-4d49-b41f-8a6d646a791d"],
+          "vocab_refs": [],
           "source_ref": "grammar_page_219",
-          "note_vi": "化为 đọc huàwéi, 为 là wéi.",
+          "note_vi": "",
           "audio_key": "",
           "source_origin": "textbook",
           "check_needed": false
          }
         ],
         "notes_vi": [
-         "为 wéi: làm thành, trở thành, là.",
-         "为 wèi: vì/cho; ví dụ 为他难过."
+         "为 wéi: làm thành, trở thành, là; ví dụ 结拜为兄弟, 化为一对蝴蝶.",
+         "为……所…… là mẫu bị động văn viết; trong bài đọc thêm có 祖国将要为强大的秦国所消灭.",
+         "为 wèi: vì/cho; đọc khác với wéi."
         ]
        }
       ]
      },
      {
-      "id": "grammar_003",
+      "id": "28ce5846-ff50-47d0-927a-dd6a1699d21a",
       "type": "grammar_point",
       "order": 3,
       "title": "始终",
       "title_vi": "Từ đầu đến cuối",
       "level": "HSK3+",
       "tags": ["词语用法"],
-      "source_origin": "textbook",
+      "source_origin": "textbook/generated_mixed",
       "page_start": 220,
-      "page_end": 220,
+      "page_end": 222,
       "check_needed": false,
       "blocks": [
        {
-        "id": "g003_b001",
+        "id": "50dcd503-1832-4112-a0be-e09408954b90",
         "type": "grammar_overview",
         "order": 1,
         "title": "Bản chất",
-        "content_vi": "始终 nghĩa là từ đầu đến cuối, trước sau vẫn; trong bài thường đi với phủ định để nhấn cả quá trình vẫn không thay đổi.",
+        "content_vi": "始终 nghĩa là từ đầu đến cuối, luôn luôn; trong sách ghi thường dùng với phủ định.",
         "examples": []
        },
        {
-        "id": "g003_b002",
+        "id": "2a6a13b8-74d6-4b36-a365-dd671224bcb6",
         "type": "grammar_negative_form",
         "order": 2,
         "title": "Dạng phủ định thường gặp",
@@ -4016,10 +4002,10 @@
         "meaning_vi": "Từ đầu đến cuối vẫn không/chưa làm gì.",
         "correct_examples": [
          {
-          "id": "g003_ex001",
-          "zh": "梁山伯始终不知道祝英台是女孩子。",
-          "pinyin": "Liáng Shānbó shǐzhōng bù zhīdào Zhù Yīngtái shì nǚháizi.",
-          "vi": "Lương Sơn Bá từ đầu đến cuối vẫn không biết Chúc Anh Đài là con gái.",
+          "id": "3620f823-6377-41e3-9821-e498d2c8ac94",
+          "zh": "山伯始终不知英台是个女孩子。",
+          "pinyin": "Shānbó shǐzhōng bù zhī Yīngtái shì ge nǚháizi.",
+          "vi": "Sơn Bá từ đầu đến cuối vẫn không biết Anh Đài là con gái.",
           "highlight": ["始终不知道"],
           "explanation_vi": "Nhấn mạnh suốt cả quá trình ba năm và lúc tiễn biệt vẫn không biết."
          }
@@ -4029,24 +4015,24 @@
       ]
      },
      {
-      "id": "grammar_004",
+      "id": "43a1f72d-1510-4a57-a1fa-0af2b4890023",
       "type": "grammar_point",
       "order": 4,
       "title": "不然",
       "title_vi": "Nếu không thì",
       "level": "HSK3+",
       "tags": ["词语用法"],
-      "source_origin": "textbook",
-      "page_start": 221,
+      "source_origin": "textbook/generated_mixed",
+      "page_start": 220,
       "page_end": 222,
       "check_needed": false,
       "blocks": [
        {
-        "id": "g004_b001",
+        "id": "3ecf1989-24b0-4088-8831-c92b1fd6d541",
         "type": "grammar_structure",
         "order": 1,
         "title": "Cấu trúc",
-        "pattern": "Câu trước，不然 / 要不然 / 要不 + hậu quả",
+        "pattern": "Câu trước， 不然 / 要不然 / 要不 + hậu quả",
         "meaning_vi": "Nếu không làm theo điều vừa nói thì sẽ xảy ra hậu quả phía sau.",
         "formulas": [
          {
@@ -4056,12 +4042,13 @@
         ],
         "examples": [
          {
-          "id": "g004_ex001",
+          "id": "4c24a67d-5112-438c-96a0-1fe26e7867ad",
           "zh": "还是给他打个电话吧，不然他会担心的。",
           "pinyin": "Háishi gěi tā dǎ ge diànhuà ba, bùrán tā huì dānxīn de.",
           "vi": "Vẫn nên gọi điện cho anh ấy, nếu không anh ấy sẽ lo.",
+          "en": "",
           "highlight": ["不然"],
-          "grammar_refs": ["grammar_004"],
+          "grammar_refs": ["43a1f72d-1510-4a57-a1fa-0af2b4890023"],
           "vocab_refs": [],
           "source_ref": "grammar_page_222",
           "note_vi": "",
@@ -4075,20 +4062,20 @@
       ]
      },
      {
-      "id": "grammar_005",
+      "id": "cb4fa491-3ff6-4992-b0d5-5abdd9044560",
       "type": "grammar_point",
       "order": 5,
       "title": "宁可",
       "title_vi": "Thà rằng",
       "level": "HSK3+",
       "tags": ["词语用法"],
-      "source_origin": "textbook",
-      "page_start": 221,
+      "source_origin": "textbook/generated_mixed",
+      "page_start": 220,
       "page_end": 222,
       "check_needed": false,
       "blocks": [
        {
-        "id": "g005_b001",
+        "id": "b7be4295-e408-4edd-882f-3fff358754f0",
         "type": "grammar_structure",
         "order": 1,
         "title": "Cấu trúc",
@@ -4102,14 +4089,15 @@
         ],
         "examples": [
          {
-          "id": "g005_ex001",
+          "id": "528ab4f2-319d-4271-8800-f92a399a6e8c",
           "zh": "不然，宁可死也不进马家的门。",
           "pinyin": "Bùrán, nìngkě sǐ yě bú jìn Mǎ jiā de mén.",
           "vi": "Nếu không, nàng thà chết cũng không bước vào cửa nhà họ Mã.",
+          "en": "",
           "highlight": ["宁可", "也不"],
-          "grammar_refs": ["grammar_005"],
-          "vocab_refs": ["vocab_050"],
-          "source_ref": "p_008",
+          "grammar_refs": ["cb4fa491-3ff6-4992-b0d5-5abdd9044560"],
+          "vocab_refs": [],
+          "source_ref": "2fa39b34-744a-4e61-870d-0888f40e57cd",
           "note_vi": "",
           "audio_key": "",
           "source_origin": "textbook",
@@ -4124,28 +4112,28 @@
       ]
      },
      {
-      "id": "grammar_006",
+      "id": "a9bc0f78-52c9-4ca7-b62e-d1d8343543ae",
       "type": "grammar_point",
       "order": 6,
       "title": "表达",
       "title_vi": "Diễn đạt / bày tỏ",
       "level": "HSK3+",
       "tags": ["词语用法"],
-      "source_origin": "textbook",
-      "page_start": 221,
+      "source_origin": "textbook/generated_mixed",
+      "page_start": 220,
       "page_end": 222,
       "check_needed": false,
       "blocks": [
        {
-        "id": "g006_b001",
+        "id": "437a4fe6-cbe3-4168-b3de-181d1e249363",
         "type": "grammar_overview",
         "order": 1,
         "title": "Bản chất",
-        "content_vi": "表达 là nói/viết/đưa ra suy nghĩ, tình cảm. Khác 表示: 表达 nhấn nội dung được diễn đạt, 表示 hay đi với 感谢/同意/欢迎/反对.",
+        "content_vi": "表达 là nói hoặc viết ra suy nghĩ, tình cảm trong lòng. Sách so sánh với 表示: 表达 chủ yếu bằng lời nói/chữ viết, 表示 có thể bằng lời, cử chỉ, màu sắc, tín hiệu, hành động.",
         "examples": []
        },
        {
-        "id": "g006_b002",
+        "id": "36af8925-9df2-4371-9cce-405d3672953f",
         "type": "grammar_structure",
         "order": 2,
         "title": "Cấu trúc",
@@ -4159,14 +4147,15 @@
         ],
         "examples": [
          {
-          "id": "g006_ex001",
+          "id": "efefab30-bcd8-4248-a5e1-9730cca9d249",
           "zh": "一路上英台多次暗示山伯，表达对山伯恋恋不舍的感情。",
-          "pinyin": "Yí lù shang Yīngtái duō cì ànshì Shānbó, biǎodá duì Shānbó liànliàn-bùshě de gǎnqíng.",
+          "pinyin": "Yílù shang Yīngtái duō cì ànshì Shānbó, biǎodá duì Shānbó liànliàn-bùshě de gǎnqíng.",
           "vi": "Trên đường, Anh Đài nhiều lần ám chỉ Sơn Bá, bày tỏ tình cảm lưu luyến không nỡ rời.",
+          "en": "",
           "highlight": ["表达"],
-          "grammar_refs": ["grammar_006"],
-          "vocab_refs": ["vocab_027"],
-          "source_ref": "p_005",
+          "grammar_refs": ["a9bc0f78-52c9-4ca7-b62e-d1d8343543ae"],
+          "vocab_refs": [],
+          "source_ref": "07e24203-eb21-4c88-96af-29e78d8ca2a2",
           "note_vi": "",
           "audio_key": "",
           "source_origin": "textbook",
@@ -4182,22 +4171,22 @@
     ]
    },
    {
-    "id": "section_exercises",
+    "id": "9901c597-ca97-451e-b63d-11814aaf933e",
     "type": "exercises",
     "order": 6,
     "title": "练习",
     "title_vi": "Bài tập",
-    "source_origin": "textbook_answer_checked",
+    "source_origin": "textbook/generated_mixed",
     "check_needed": false,
     "coverage_contract": {
      "expected_exercise_count_from_pdf": 11,
      "actual_exercise_count_in_json": 11,
      "all_exercises_covered": true,
-     "note": "Exercises 1-11 are preserved. Deterministic answers were checked against textbook context; sample answers are natural checked samples."
+     "note": "Exercises 1–11 are preserved. Textbook questions are extracted; generated answer samples are marked check_needed/answer_verified=false."
     },
     "items": [
      {
-      "id": "ex_001",
+      "id": "15cb6f38-593b-48d1-bcca-dc3d2a140f9e",
       "type": "phonetics",
       "variant": "pronunciation_tone_minimal_pairs",
       "order": 1,
@@ -4211,52 +4200,52 @@
       "skill_focus": ["pronunciation", "speaking"],
       "parts": [
        {
-        "id": "ex001_part001",
+        "id": "82f9b16a-0baa-4450-88ae-a5c4756e2b2e",
         "type": "minimal_pair_group",
         "title": "辨音辨调",
         "items": [
          {
-          "id": "ex001_pair_001",
+          "id": "82c79e56-60d5-4529-9c2a-21fa36265276",
           "left": "始终 shǐzhōng",
           "right": "时钟 shízhōng"
          },
          {
-          "id": "ex001_pair_002",
+          "id": "e74c1847-ac69-441f-89d1-78f5d4cf3c26",
           "left": "送行 sòngxíng",
           "right": "送信 sòng xìn"
          },
          {
-          "id": "ex001_pair_003",
+          "id": "5fe4fb20-01c2-40c3-9c9b-3213ffeee9e6",
           "left": "暗示 ànshì",
           "right": "按时 ànshí"
          },
          {
-          "id": "ex001_pair_004",
-          "left": "相亲 xiāng qīn",
+          "id": "8d1c3196-8bde-4da6-ae03-84c4876ed101",
+          "left": "相亲 xiāngqīn",
           "right": "相信 xiāngxìn"
          },
          {
-          "id": "ex001_pair_005",
+          "id": "ea0b34ec-1e1d-45b8-9637-2ed5f767a7f4",
           "left": "表明 biǎomíng",
           "right": "标明 biāomíng"
          },
          {
-          "id": "ex001_pair_006",
+          "id": "364420c7-caf2-4a45-9cfe-26f9a68e2bd9",
           "left": "痛哭 tòngkū",
           "right": "痛苦 tòngkǔ"
          }
         ]
        },
        {
-        "id": "ex001_part002",
+        "id": "6be4fd46-7acf-499a-a2a9-5099d80f03a5",
         "type": "poem_reading",
         "title": "朗读",
         "items": [
          {
-          "id": "ex001_poem_001",
+          "id": "644ac23c-2af0-4808-ba24-74ce7932a0f9",
           "text": "山伯英台两无猜，同窗共读整三载。心心相印情意深，可叹阴阳两分开。感天动地哭声哀，二人化为彩蝶来。《梁祝》一曲传千古，昭示人间有真爱。",
           "pinyin": "Shānbó Yīngtái liǎng wú cāi, tóngchuāng gòng dú zhěng sān zǎi. Xīnxīn xiāng yìn qíngyì shēn, kě tàn yīnyáng liǎng fēn kāi. Gǎn tiān dòng dì kūshēng āi, èr rén huàwéi cǎidié lái. 'Liáng Zhù' yì qǔ chuán qiāngǔ, zhāoshì rénjiān yǒu zhēn'ài.",
-          "vi": "Sơn Bá Anh Đài không nghi kỵ, cùng song song học suốt ba năm. Tâm ý tương thông, tình nghĩa sâu; tiếc thay âm dương chia cách. Tiếng khóc cảm trời động đất, hai người hóa thành bướm đẹp. Một khúc Lương Chúc truyền ngàn đời, chỉ rõ nhân gian có tình yêu thật."
+          "vi": "Sơn Bá Anh Đài vốn không nghi kỵ, cùng học suốt ba năm. Tình sâu tâm ý tương thông, tiếc thay âm dương chia cách. Tiếng khóc cảm trời động đất, hai người hóa thành bướm đẹp. Một khúc Lương Chúc truyền ngàn đời, chỉ rõ nhân gian có tình yêu thật."
          }
         ]
        }
@@ -4270,7 +4259,7 @@
       "check_needed": false
      },
      {
-      "id": "ex_002",
+      "id": "98e14c21-0449-4e36-b1ae-77ed46cf3aa0",
       "type": "read_aloud",
       "variant": "word_phrase_sentence_chunks",
       "order": 2,
@@ -4282,7 +4271,7 @@
       },
       "chunks": [
        {
-        "id": "ex002_chunk_001",
+        "id": "029b6888-951c-4d78-8e81-67211d2f2178",
         "text": "家喻户晓",
         "pinyin": "jiāyù-hùxiǎo",
         "vi": "",
@@ -4290,7 +4279,7 @@
         "check_needed": false
        },
        {
-        "id": "ex002_chunk_002",
+        "id": "f7a394ba-7ba1-4ced-9fb6-4a51e9b45e41",
         "text": "女扮男装",
         "pinyin": "nǚbàn-nánzhuāng",
         "vi": "",
@@ -4298,7 +4287,7 @@
         "check_needed": false
        },
        {
-        "id": "ex002_chunk_003",
+        "id": "cbeae143-93f7-4e30-b03e-cafcbeecfee8",
         "text": "一见如故",
         "pinyin": "yíjiàn-rúgù",
         "vi": "",
@@ -4306,7 +4295,7 @@
         "check_needed": false
        },
        {
-        "id": "ex002_chunk_004",
+        "id": "908385d2-03e2-42e6-8641-681ccbdb7383",
         "text": "恍然大悟",
         "pinyin": "huǎngrán-dàwù",
         "vi": "",
@@ -4314,7 +4303,7 @@
         "check_needed": false
        },
        {
-        "id": "ex002_chunk_005",
+        "id": "9e310873-3483-4086-91b4-53e6c4982438",
         "text": "苦苦哀求",
         "pinyin": "kǔkǔ āiqiú",
         "vi": "",
@@ -4322,7 +4311,7 @@
         "check_needed": false
        },
        {
-        "id": "ex002_chunk_006",
+        "id": "56e43701-a5ae-4070-ac7b-31f77ed52c81",
         "text": "苦苦等待",
         "pinyin": "kǔkǔ děngdài",
         "vi": "",
@@ -4330,7 +4319,7 @@
         "check_needed": false
        },
        {
-        "id": "ex002_chunk_007",
+        "id": "77a9ec03-cc9f-4170-b16a-7e20444a37a7",
         "text": "恋恋不舍",
         "pinyin": "liànliàn-bùshě",
         "vi": "",
@@ -4338,7 +4327,7 @@
         "check_needed": false
        },
        {
-        "id": "ex002_chunk_008",
+        "id": "d7b385ae-57da-4e8c-aee4-b67137f2423a",
         "text": "翩翩起舞",
         "pinyin": "piānpiān qǐwǔ",
         "vi": "",
@@ -4346,7 +4335,7 @@
         "check_needed": false
        },
        {
-        "id": "ex002_chunk_009",
+        "id": "d6835cb8-98d0-4ec4-896e-28edb097b655",
         "text": "不断暗示",
         "pinyin": "búduàn ànshì",
         "vi": "",
@@ -4354,7 +4343,7 @@
         "check_needed": false
        },
        {
-        "id": "ex002_chunk_010",
+        "id": "0783c634-e332-446a-9f6d-20a19656f7f3",
         "text": "难以领悟",
         "pinyin": "nányǐ lǐngwù",
         "vi": "",
@@ -4362,7 +4351,7 @@
         "check_needed": false
        },
        {
-        "id": "ex002_chunk_011",
+        "id": "b0cb1abd-bc89-4210-975d-f110f5646ad2",
         "text": "告别朋友",
         "pinyin": "gàobié péngyou",
         "vi": "",
@@ -4370,7 +4359,7 @@
         "check_needed": false
        },
        {
-        "id": "ex002_chunk_012",
+        "id": "2c8b801e-cb28-49ae-b8f1-b2c8b84f7f8b",
         "text": "告别父母",
         "pinyin": "gàobié fùmǔ",
         "vi": "",
@@ -4387,7 +4376,7 @@
       "check_needed": false
      },
      {
-      "id": "ex_003",
+      "id": "5dfca3d2-8524-4a83-92dd-b036a7259465",
       "type": "choose_words_fill_blank",
       "variant": "word_bank_fill_blank",
       "order": 3,
@@ -4399,7 +4388,7 @@
       },
       "parts": [
        {
-        "id": "ex003_A",
+        "id": "7959adb6-0f83-4f16-a74e-466ec827f47d",
         "title": "A",
         "word_bank": [
          "宁可",
@@ -4413,56 +4402,56 @@
         ],
         "questions": [
          {
-          "id": "ex003_A_q001",
+          "id": "1a0426a9-f989-4da2-bd31-19d12c9b0e3b",
           "prompt": "梁山伯和祝英台的故事，在中国可以说____。",
           "answer": "家喻户晓",
           "answer_verified": true,
           "check_needed": false
          },
          {
-          "id": "ex003_A_q002",
+          "id": "08921ff1-686c-4aa9-a3f6-be06d0031fa4",
           "prompt": "你早上____食堂时，帮我带两个包子。",
           "answer": "路过",
           "answer_verified": true,
           "check_needed": false
          },
          {
-          "id": "ex003_A_q003",
+          "id": "f19a9ec2-8fb6-405e-942f-ee9d56df1f3c",
           "prompt": "我本来不想陪她去，但是____她苦苦请求，我只好同意了。",
           "answer": "经不住",
           "answer_verified": true,
           "check_needed": false
          },
          {
-          "id": "ex003_A_q004",
+          "id": "8244883d-957c-4cdd-ac12-2c140c2a0b5a",
           "prompt": "我们班的同学来自世界各国，大家共同学习生活了一年，结下了深厚的____。",
           "answer": "情谊",
           "answer_verified": true,
           "check_needed": false
          },
          {
-          "id": "ex003_A_q005",
+          "id": "7182e6c8-bd10-4ecf-94f2-1de4bfdaec8b",
           "prompt": "一年来，他____坚持上课，所以，学得比别人都好。",
           "answer": "始终",
           "answer_verified": true,
           "check_needed": false
          },
          {
-          "id": "ex003_A_q006",
+          "id": "1b2c55ca-ee6a-497f-b077-d43734b33897",
           "prompt": "我想拜托你把这个____给他。",
           "answer": "转交",
           "answer_verified": true,
           "check_needed": false
          },
          {
-          "id": "ex003_A_q007",
+          "id": "a9dc2f98-f656-410c-aad3-f71045490b45",
           "prompt": "直到现在我才____，原来她也深深地爱着我。",
           "answer": "恍然大悟",
           "answer_verified": true,
           "check_needed": false
          },
          {
-          "id": "ex003_A_q008",
+          "id": "ab47abe1-348e-4d97-aebd-a5c61421af99",
           "prompt": "我____走着去，也不坐你这破车。",
           "answer": "宁可",
           "answer_verified": true,
@@ -4471,46 +4460,46 @@
         ]
        },
        {
-        "id": "ex003_B",
+        "id": "275fcb77-2038-4ab8-bdfc-27ef149a3b4b",
         "title": "B",
         "questions": [
          {
-          "id": "ex003_B_q001",
+          "id": "677e3119-df64-45a9-9d65-f1d7ac355bc3",
           "prompt": "他之所以也搬到这个小区来住，是____这里安静，离公司也近。（因为 / 由于）",
           "answer": "因为",
           "answer_verified": true,
           "check_needed": false
          },
          {
-          "id": "ex003_B_q002",
+          "id": "11959e96-b4d9-491a-90e5-eca1f59e7d13",
           "prompt": "____她学习非常刻苦，因而考上了一所名牌儿大学。（因为 / 由于）",
           "answer": "由于",
           "answer_verified": true,
           "check_needed": false
          },
          {
-          "id": "ex003_B_q003",
+          "id": "b60a0125-509f-4432-bec1-5cb6d5310c7e",
           "prompt": "昨天晚上他____工作到十二点。（一直 / 始终）",
           "answer": "一直",
           "answer_verified": true,
           "check_needed": false
          },
          {
-          "id": "ex003_B_q004",
+          "id": "4bf2c957-77bc-40b4-8e55-eedb31e25ab0",
           "prompt": "我在车站足足等了他两个小时，可他____没来。（一直 / 始终）",
           "answer": "始终",
           "answer_verified": true,
           "check_needed": false
          },
          {
-          "id": "ex003_B_q005",
+          "id": "eb16c7a4-2ce7-4096-bd1d-922dc606dea1",
           "prompt": "我送给他一件礼物是为了向他____感谢。（表达 / 表示）",
           "answer": "表示",
           "answer_verified": true,
           "check_needed": false
          },
          {
-          "id": "ex003_B_q006",
+          "id": "ecca702d-8720-4253-8c48-3ad33ef25f45",
           "prompt": "他现在的口头____能力还不行。（表达 / 表示）",
           "answer": "表达",
           "answer_verified": true,
@@ -4524,14 +4513,14 @@
        "show_word_bank": true,
        "show_answer_after_submit": true
       },
-      "source_origin": "textbook_answer_checked",
+      "source_origin": "textbook_question_generated_answer",
       "page_start": 223,
       "page_end": 224,
       "answer_verified": true,
       "check_needed": false
      },
      {
-      "id": "ex_004",
+      "id": "809141fb-cc55-403a-9433-35eea89c8c90",
       "type": "complete_sentence",
       "variant": "complete_idioms_and_make_sentences",
       "order": 4,
@@ -4543,38 +4532,34 @@
       },
       "questions": [
        {
-        "id": "ex004_q001",
+        "id": "668ef942-39b3-4816-be06-f347b64fa456",
         "prompt": "一见如____",
         "answer": "故",
         "full_answer": "一见如故",
-        "pinyin": "yíjiàn-rúgù",
         "answer_verified": true,
         "check_needed": false
        },
        {
-        "id": "ex004_q002",
+        "id": "6e23c236-94eb-4e83-9ea6-7353241c098d",
         "prompt": "恍然大____",
         "answer": "悟",
         "full_answer": "恍然大悟",
-        "pinyin": "huǎngrán-dàwù",
         "answer_verified": true,
         "check_needed": false
        },
        {
-        "id": "ex004_q003",
+        "id": "ee3570f6-9872-4699-a1ed-c338e52b4e50",
         "prompt": "家喻____晓",
         "answer": "户",
         "full_answer": "家喻户晓",
-        "pinyin": "jiāyù-hùxiǎo",
         "answer_verified": true,
         "check_needed": false
        },
        {
-        "id": "ex004_q004",
+        "id": "3130979d-5cc3-4cf5-999c-9ed317ea7c14",
         "prompt": "恋恋不____",
         "answer": "舍",
         "full_answer": "恋恋不舍",
-        "pinyin": "liànliàn-bùshě",
         "answer_verified": true,
         "check_needed": false
        }
@@ -4582,14 +4567,14 @@
       "rendering": {
        "renderer": "exercise.complete_idiom.v1"
       },
-      "source_origin": "textbook_answer_checked",
+      "source_origin": "textbook_question_generated_answer",
       "page_start": 224,
       "page_end": 224,
       "answer_verified": true,
       "check_needed": false
      },
      {
-      "id": "ex_005",
+      "id": "e843bb6e-2e51-4fb8-b362-7506b97cf2fc",
       "type": "complete_sentence",
       "variant": "complete_sentence_with_given_words",
       "order": 5,
@@ -4601,42 +4586,42 @@
       },
       "questions": [
        {
-        "id": "ex005_q001",
+        "id": "7d9c942a-bdc2-45a1-b852-6b3dd58fe8f2",
         "prompt": "他不想参加比赛是____。（由于）",
         "answer_sample": "他不想参加比赛是由于最近身体不太好。",
         "answer_verified": true,
         "check_needed": false
        },
        {
-        "id": "ex005_q002",
+        "id": "a79733e1-ef69-41fd-ac55-9bb8b3bd4d2c",
         "prompt": "读了这个故事，____。（十分）",
         "answer_sample": "读了这个故事，我十分感动。",
         "answer_verified": true,
         "check_needed": false
        },
        {
-        "id": "ex005_q003",
+        "id": "ec5f1e84-0693-46b3-b735-8005e47f103e",
         "prompt": "老师的话我差不多都能听懂，但是____。（表达）",
         "answer_sample": "老师的话我差不多都能听懂，但是还不能准确地表达出来。",
         "answer_verified": true,
         "check_needed": false
        },
        {
-        "id": "ex005_q004",
+        "id": "dc7f5f06-95a1-4158-98d8-b293729d6a13",
         "prompt": "学习汉语当然应该到中国各地多走走、多看看，____。（不然）",
         "answer_sample": "学习汉语当然应该到中国各地多走走、多看看，不然很难真正了解中国。",
         "answer_verified": true,
         "check_needed": false
        },
        {
-        "id": "ex005_q005",
+        "id": "55e24ac4-bbd1-40f9-9dee-e97b3f2e10f7",
         "prompt": "____，也不交这样的男/女朋友。（宁可）",
         "answer_sample": "我宁可一个人生活，也不交这样的男/女朋友。",
         "answer_verified": true,
         "check_needed": false
        },
        {
-        "id": "ex005_q006",
+        "id": "f7c603b4-c112-4d9c-ab37-b945d471ccee",
         "prompt": "虽然那么多人说这件事是他干的，但是____。（始终）",
         "answer_sample": "虽然那么多人说这件事是他干的，但是我始终不相信。",
         "answer_verified": true,
@@ -4647,14 +4632,14 @@
        "renderer": "exercise.complete_sentence.v2",
        "allow_manual_check": true
       },
-      "source_origin": "answer_sample_checked",
+      "source_origin": "textbook_question_generated_answer",
       "page_start": 224,
       "page_end": 225,
       "answer_verified": true,
       "check_needed": false
      },
      {
-      "id": "ex_006",
+      "id": "60ec1197-2967-408c-a1f3-3c2112f8305a",
       "type": "complete_dialogue",
       "variant": "complete_dialogue_with_given_words",
       "order": 6,
@@ -4666,42 +4651,42 @@
       },
       "questions": [
        {
-        "id": "ex006_q001",
+        "id": "1b0dc397-26f4-4659-a964-f9c68ceab72a",
         "prompt": "A：你怎么知道他不会干出这样的事？\nB：____。（始终）",
         "answer_sample": "我始终相信他不会干出这样的事。",
         "answer_verified": true,
         "check_needed": false
        },
        {
-        "id": "ex006_q002",
+        "id": "ab74bab2-0cd3-4c59-b4dd-6d9a3c6197b9",
         "prompt": "A：你为什么选他做你的指导老师？\nB：____。（由于）",
         "answer_sample": "由于他学问出众，人品优秀，所以我选他做我的指导老师。",
         "answer_verified": true,
         "check_needed": false
        },
        {
-        "id": "ex006_q003",
+        "id": "c503fed9-44e1-4df9-b284-51dbab822ee8",
         "prompt": "A：我发现他是个非常认真的人。\nB：不仅如此，他还是____。（学问）",
         "answer_sample": "不仅如此，他还是一个学问出众的人。",
         "answer_verified": true,
         "check_needed": false
        },
        {
-        "id": "ex006_q004",
+        "id": "87b8a7fb-1969-49e6-b592-82a2e0147e96",
         "prompt": "A：____？\nB：我现在的口语和书面表达能力还不行。尤其是写，____。（十分）",
         "answer_sample": "A：你的汉语学习怎么样？\nB：我现在的口语和书面表达能力还不行。尤其是写，十分困难。",
         "answer_verified": true,
         "check_needed": false
        },
        {
-        "id": "ex006_q005",
+        "id": "6155b63d-c263-446a-9ad7-80d775f5be6e",
         "prompt": "A：老师，汉字对我来说太难了，我想只学口语，不学汉字，行吗？\nB：可能不行，你要真想学好汉语，就必须学习汉字，____。（不然）",
         "answer_sample": "不然你的汉语水平很难提高。",
         "answer_verified": true,
         "check_needed": false
        },
        {
-        "id": "ex006_q006",
+        "id": "8e9a9428-6659-4025-8fb4-b5bf4134d62d",
         "prompt": "A：你们以前不是好朋友吗，怎么现在连话都不说了？\nB：____。（宁可）",
         "answer_sample": "我宁可一个人，也不想再跟他做朋友。",
         "answer_verified": true,
@@ -4712,14 +4697,14 @@
        "renderer": "exercise.complete_dialogue.v2",
        "allow_manual_check": true
       },
-      "source_origin": "answer_sample_checked",
+      "source_origin": "textbook_question_generated_answer",
       "page_start": 225,
       "page_end": 225,
       "answer_verified": true,
       "check_needed": false
      },
      {
-      "id": "ex_007",
+      "id": "1fd4313d-93f3-4cbe-9dd4-2ba0d5bac415",
       "type": "reorder_sentence",
       "variant": "reorder_sentences_or_paragraph",
       "order": 7,
@@ -4731,7 +4716,7 @@
       },
       "questions": [
        {
-        "id": "ex007_q001",
+        "id": "f8e911bf-9cbb-4dad-91ed-87032d2d95f2",
         "sentences": {
          "A": "这难道是因为丈夫优点不多，反而更加值得被爱吗？",
          "B": "美满的婚姻是难得一遇的，常可以看到这种家庭。",
@@ -4743,7 +4728,7 @@
         "check_needed": false
        },
        {
-        "id": "ex007_q002",
+        "id": "3fd78baa-272c-4e07-8ee2-5399c9977a99",
         "sentences": {
          "A": "因此，我认为只要有合适的对象，任何时候结婚都是有道理的，而不要为了所谓的自由而逃避婚姻。",
          "B": "她是青年时代的情人。",
@@ -4759,14 +4744,14 @@
        "renderer": "exercise.reorder_paragraph.v2",
        "show_answer_after_submit": true
       },
-      "source_origin": "answer_checked",
+      "source_origin": "textbook_question_generated_answer",
       "page_start": 226,
       "page_end": 226,
       "answer_verified": true,
       "check_needed": false
      },
      {
-      "id": "ex_008",
+      "id": "b9e46637-94ca-4fea-90cf-29155c015046",
       "type": "correct_sentence",
       "variant": "error_correction",
       "order": 8,
@@ -4778,42 +4763,42 @@
       },
       "questions": [
        {
-        "id": "ex008_q001",
+        "id": "51d25007-39bc-4798-8fb4-fd9aaf8168f5",
         "wrong": "我决定了，无论遇到很多困难，都始终坚持学下去。",
         "correct_sample": "我决定了，无论遇到多少困难，都要始终坚持学下去。",
         "answer_verified": true,
         "check_needed": false
        },
        {
-        "id": "ex008_q002",
+        "id": "e65bddbb-aff2-43d6-86ee-fb07381ebe3e",
         "wrong": "他宁可不请假去旅行，也不想上他的课。",
         "correct_sample": "他宁可请假去旅行，也不想上他的课。",
         "answer_verified": true,
         "check_needed": false
        },
        {
-        "id": "ex008_q003",
+        "id": "2ac934ff-71d7-4d4a-b040-149ec5a5750e",
         "wrong": "这个老师让我很怕，由于他常常不笑了。",
         "correct_sample": "这个老师让我很怕，因为他常常不笑。",
         "answer_verified": true,
         "check_needed": false
        },
        {
-        "id": "ex008_q004",
+        "id": "c5d39e80-de1f-4a3c-9b5f-9193a14a8a33",
         "wrong": "我为梁山伯和祝英台的故事非常感动。",
         "correct_sample": "我被梁山伯和祝英台的故事深深感动了。",
         "answer_verified": true,
         "check_needed": false
        },
        {
-        "id": "ex008_q005",
+        "id": "758a96f8-d8f5-4075-aafa-95e515a48195",
         "wrong": "我真想用汉语向她表示表示我的爱情。",
         "correct_sample": "我真想用汉语向她表达我的爱情。",
         "answer_verified": true,
         "check_needed": false
        },
        {
-        "id": "ex008_q006",
+        "id": "7969b51e-cfc5-4e03-97be-0b29b48a7fdc",
         "wrong": "因为他们两人朝夕相处在一起，所以产生了很深的爱情。",
         "correct_sample": "因为他们两人朝夕相处，所以产生了很深的爱情。",
         "answer_verified": true,
@@ -4824,14 +4809,14 @@
        "renderer": "exercise.error_correction.v2",
        "allow_manual_check": true
       },
-      "source_origin": "answer_checked",
+      "source_origin": "textbook_question_generated_answer",
       "page_start": 226,
       "page_end": 227,
       "answer_verified": true,
       "check_needed": false
      },
      {
-      "id": "ex_009",
+      "id": "849f6690-a8ea-4b6f-937d-429f236714ad",
       "type": "custom",
       "variant": "language_and_context",
       "order": 9,
@@ -4843,7 +4828,7 @@
       },
       "parts": [
        {
-        "id": "ex009_part001",
+        "id": "488ae5f8-4dd9-4d3d-84f3-f8419cb45ce5",
         "title": "下列句子什么情景下说？",
         "items": [
          "你如果再逼我，我宁可一死。",
@@ -4852,20 +4837,26 @@
         ]
        },
        {
-        "id": "ex009_part002",
+        "id": "548bb879-d19c-4be2-9294-b50338cd6fcd",
         "title": "下列情景怎么说？",
         "items": [
          {
           "prompt": "路上太拥挤，朋友问你怎么去某地，你回答他。（宁可）",
-          "answer_sample": "路上太拥挤，我宁可走着去，也不坐车。"
+          "answer_sample": "路上太拥挤，我宁可走着去，也不坐车。",
+          "answer_verified": true,
+          "check_needed": false
          },
          {
           "prompt": "两个人一见面就无话不谈，像多年不见的老朋友一样。（一见如故）",
-          "answer_sample": "他们两个人一见如故，无话不谈。"
+          "answer_sample": "他们两个人一见如故，无话不谈。",
+          "answer_verified": true,
+          "check_needed": false
          },
          {
           "prompt": "梁山伯与祝英台的爱情故事在中国没有人不知道。（家喻户晓）",
-          "answer_sample": "梁山伯与祝英台的爱情故事在中国家喻户晓。"
+          "answer_sample": "梁山伯与祝英台的爱情故事在中国家喻户晓。",
+          "answer_verified": true,
+          "check_needed": false
          }
         ]
        }
@@ -4874,14 +4865,14 @@
        "renderer": "exercise.context_expression.v1",
        "allow_manual_check": true
       },
-      "source_origin": "answer_sample_checked",
+      "source_origin": "textbook_question_generated_answer",
       "page_start": 227,
       "page_end": 227,
       "answer_verified": true,
       "check_needed": false
      },
      {
-      "id": "ex_010",
+      "id": "17063a8b-9f58-474f-91c4-2d8cb1e87c5d",
       "type": "reading_fill_blank",
       "variant": "reading_cloze",
       "order": 10,
@@ -4892,14 +4883,14 @@
        "vi": "Làm bài đọc điền khuyết ở section reading."
       },
       "reading_ref": "reading_01_cloze_duanwu",
-      "source_origin": "textbook_answer_checked",
+      "source_origin": "textbook_question_generated_answer",
       "page_start": 227,
       "page_end": 229,
       "answer_verified": true,
       "check_needed": false
      },
      {
-      "id": "ex_011",
+      "id": "908dacce-d378-4d3b-90b7-1f687447bf45",
       "type": "communication_dialogue",
       "variant": "role_play",
       "order": 11,
@@ -4919,57 +4910,57 @@
     ]
    },
    {
-    "id": "section_reading",
+    "id": "886f621e-85ce-4e1a-91df-d8d257596034",
     "type": "reading",
     "order": 7,
     "title": "综合填空",
     "title_vi": "Bài đọc điền tổng hợp",
-    "source_origin": "textbook_answer_checked",
+    "source_origin": "textbook/generated_mixed",
     "check_needed": false,
     "items": [
      {
-      "id": "reading_01_cloze_duanwu",
+      "id": "8066d389-fa71-471e-b146-8fb1076261f9",
       "type": "reading_cloze",
       "order": 1,
       "title": "端午节的由来",
       "title_vi": "Nguồn gốc Tết Đoan Ngọ",
-      "source_origin": "textbook_answer_checked",
+      "source_origin": "textbook",
       "page_start": 227,
       "page_end": 229,
       "check_needed": false,
       "supplementary_vocab_refs": [
-       "vocab_070",
-       "vocab_071",
-       "vocab_072",
-       "vocab_073",
-       "vocab_074",
-       "vocab_075",
-       "vocab_076",
-       "vocab_077",
-       "vocab_078",
-       "vocab_079",
-       "vocab_080",
-       "vocab_081"
+       "61ce3463-fded-4c37-a81f-90fc745e8ab7",
+       "b29ccb2e-0c64-4431-8cf1-56bea2ed6817",
+       "b359523f-65ab-4d65-a183-b4f0c3bdfb4e",
+       "25879a5f-f396-4cfd-b9cf-ab952da43059",
+       "772d40d7-1f7f-49d3-b04b-8591ec396374",
+       "8d6bfeeb-4c9e-4835-910d-ac19ba6aa9d6",
+       "c63b7881-f980-40bf-8f25-a60025781a0e",
+       "19e5e636-f19d-40ec-ad61-552d20baa3a8",
+       "50e9b559-9eb2-416e-9bc8-3b5f001c11be",
+       "42b6ebd4-6ff4-478a-849d-c6d1dce5ad92",
+       "c6cc0b7f-747e-498b-8625-85ce1ec9ac2d",
+       "d14b14cd-cc14-4056-b3ad-9dcfc32f7be5"
       ],
       "passage": {
-       "id": "reading_01_passage",
+       "id": "f69fa452-eb41-49bf-8121-dfc271ef9234",
        "paragraphs": [
         {
-         "id": "reading_01_p001",
+         "id": "d2a4cf8b-55cd-4904-9fed-3141da682b19",
          "order": 1,
          "zh": "农历五月初五，是中国传统的节日——端午节。端午节这一天，民间有吃粽子、赛龙舟的风俗。那么，端午节是怎么来的呢？这里也有一个家喻户晓的传说。",
          "pinyin": "Nónglì wǔ yuè chū wǔ, shì Zhōngguó chuántǒng de jiérì - Duānwǔ Jié. Duānwǔ Jié zhè yì tiān, mínjiān yǒu chī zòngzi, sài lóngzhōu de fēngsú. Nàme, Duānwǔ Jié shì zěnme lái de ne? Zhèlǐ yě yǒu yí ge jiāyù-hùxiǎo de chuánshuō.",
-         "vi": "Mùng 5 tháng 5 âm lịch là Tết Đoan Ngọ, một ngày lễ truyền thống của Trung Quốc. Vào ngày này dân gian có phong tục ăn bánh ú và đua thuyền rồng. Vậy Tết Đoan Ngọ bắt nguồn thế nào? Ở đây cũng có một truyền thuyết ai ai cũng biết.",
+         "vi": "Mùng 5 tháng 5 âm lịch là Tết Đoan Ngọ, một ngày lễ truyền thống của Trung Quốc. Vào ngày này, trong dân gian có phong tục ăn bánh ú/bánh nếp Đoan Ngọ và đua thuyền rồng. Vậy Tết Đoan Ngọ bắt nguồn từ đâu? Ở đây cũng có một truyền thuyết ai ai cũng biết.",
          "audio_key": "",
          "vocab_refs": [],
          "grammar_refs": [],
          "source_origin": "textbook",
-         "page_start": 227,
-         "page_end": 227,
+         "page_start": 228,
+         "page_end": 228,
          "check_needed": false
         },
         {
-         "id": "reading_01_p002",
+         "id": "a6b1119e-769b-4444-9eee-c4a26d7f6af3",
          "order": 2,
          "zh": "据说，战国时代，强大的秦国总想灭掉楚国。开始，楚怀王①____屈原还很重视。为了国家的安全，屈原给楚怀王出了不少好主意。后来，秦国收买了楚怀王身边的大臣，他们在楚怀王面前说屈原的坏话，反对屈原的正确主张，楚怀王没有主见，②____渐渐疏远了屈原。",
          "pinyin": "Jùshuō, Zhànguó shídài, qiángdà de Qín guó zǒng xiǎng miè diào Chǔ guó. Kāishǐ, Chǔhuái Wáng ①____ Qū Yuán hái hěn zhòngshì. Wèile guójiā de ānquán, Qū Yuán gěi Chǔhuái Wáng chū le bù shǎo hǎo zhǔyi. Hòulái, Qín guó shōumǎi le Chǔhuái Wáng shēnbiān de dàchén, tāmen zài Chǔhuái Wáng miànqián shuō Qū Yuán de huàihuà, fǎnduì Qū Yuán de zhèngquè zhǔzhāng, Chǔhuái Wáng méiyǒu zhǔjiàn, ②____ jiànjiàn shūyuǎn le Qū Yuán.",
@@ -4983,7 +4974,7 @@
          "check_needed": false
         },
         {
-         "id": "reading_01_p003",
+         "id": "ce8bdbc9-b498-418a-ab2c-e16111228a35",
          "order": 3,
          "zh": "屈原感到很痛心，他看到自己的祖国将要③____强大的秦国所消灭，而自己的主张又得不到楚怀王的支持，于是，便怀着难以抑制的悲愤，写出了《离骚》《天问》等不朽的诗篇，抒发心中的苦闷，表达自己救国救民的远大理想。",
          "pinyin": "Qū Yuán gǎndào hěn tòngxīn, tā kàn dào zìjǐ de zǔguó jiāngyào ③____ qiángdà de Qín guó suǒ xiāomiè, ér zìjǐ de zhǔzhāng yòu dé bu dào Chǔhuái Wáng de zhīchí, yúshì, biàn huáizhe nányǐ yìzhì de bēifèn, xiě chū le 'Lísāo', 'Tiānwèn' děng bùxiǔ de shīpiān, shūfā xīnzhōng de kǔmèn, biǎodá zìjǐ jiù guó jiù mín de yuǎndà lǐxiǎng.",
@@ -4997,7 +4988,7 @@
          "check_needed": false
         },
         {
-         "id": "reading_01_p004",
+         "id": "b3e5d57c-8b64-4c60-b5f0-3976cd13fef0",
          "order": 4,
          "zh": "公元前229年，秦国攻占了楚国的八个城市，接着便派使者请楚怀王去秦国议和。屈原看破了秦王的阴谋，劝告他不要去秦国，楚怀王不但不听，④____将屈原赶出了都城。后来楚怀王到了秦国，但他一到秦国就被囚禁了起来，楚怀王非常后悔，后来又死在了秦国。不久，秦兵就⑤____郢都攻占了。",
          "pinyin": "Gōngyuán qián èr-bǎi èrshí jiǔ nián, Qín guó gōngzhàn le Chǔ guó de bā ge chéngshì, jiēzhe biàn pài shǐzhě qǐng Chǔhuái Wáng qù Qín guó yìhé. Qū Yuán kàn pò le Qín wáng de yīnmóu, quàngào tā bú yào qù Qín guó, Chǔhuái Wáng búdàn bù tīng, ④____ jiāng Qū Yuán gǎn chū le dūchéng. Hòulái Chǔhuái Wáng dào le Qín guó, dàn tā yí dào Qín guó jiù bèi qiújìn le qǐlai, Chǔhuái Wáng fēicháng hòuhuǐ, hòulái yòu sǐ zài le Qín guó. Bù jiǔ, Qín bīng jiù ⑤____ Yǐngdū gōngzhàn le.",
@@ -5011,11 +5002,11 @@
          "check_needed": false
         },
         {
-         "id": "reading_01_p005",
+         "id": "383c7578-216f-41aa-a8a5-b889b7ef0fec",
          "order": 5,
          "zh": "屈原在流放途中，听到楚怀王死了，郢都也被攻破的消息，觉得没有了希望，就跳进了激流滚滚的汨罗江。这一天正好是五月初五。江上的渔夫和岸上的百姓，听说屈原跳江了，⑥____纷纷来到江上，打捞屈原的尸体。他们拿出粽子投入江中，为的是不让江中的鱼虫伤害屈原的尸体。⑦____，每年五月初五屈原投江这一天，人们都到江上划龙舟，投粽子，以此来纪念这位伟大的爱国诗人。端午节的风俗就这样流传了⑧____。",
          "pinyin": "Qū Yuán zài liúfàng túzhōng, tīng dào Chǔhuái Wáng sǐ le, Yǐngdū yě bèi gōngpò de xiāoxi, juéde méiyǒu le xīwàng, jiù tiào jìn le jīliú gǔngǔn de Mìluó Jiāng. Zhè yì tiān zhènghǎo shì wǔ yuè chū wǔ. Jiāng shang de yúfū hé àn shang de bǎixìng, tīngshuō Qū Yuán tiào jiāng le, ⑥____ fēnfēn lái dào jiāng shang, dǎlāo Qū Yuán de shītǐ. Tāmen ná chū zòngzi tóu rù jiāng zhōng, wèi de shì bù ràng jiāng zhōng de yú chóng shānghài Qū Yuán de shītǐ. ⑦____, měi nián wǔ yuè chū wǔ Qū Yuán tóu jiāng zhè yì tiān, rénmen dōu dào jiāng shang huá lóngzhōu, tóu zòngzi, yǐ cǐ lái jìniàn zhè wèi wěidà de àiguó shīrén. Duānwǔ Jié de fēngsú jiù zhèyàng liúchuán le ⑧____.",
-         "vi": "Khuất Nguyên trên đường bị lưu đày nghe tin Sở Hoài Vương chết và Dĩnh Đô bị phá, thấy không còn hy vọng nên nhảy xuống dòng nước xiết sông Mịch La. Hôm đó đúng mùng 5 tháng 5. Ngư dân trên sông và dân chúng trên bờ nghe tin Khuất Nguyên nhảy sông liền lần lượt ra sông vớt thi thể. Họ ném bánh ú xuống sông để cá trùng không làm hại thi thể ông. Từ đó, hằng năm vào ngày Khuất Nguyên gieo mình xuống sông, người ta ra sông đua thuyền rồng và thả bánh ú để tưởng nhớ nhà thơ yêu nước vĩ đại này. Phong tục Đoan Ngọ cứ thế lưu truyền lại.",
+         "vi": "Khuất Nguyên trên đường bị lưu đày nghe tin Sở Hoài Vương chết và Dĩnh Đô cũng bị đánh phá, cảm thấy không còn hy vọng nên nhảy xuống dòng nước xiết cuồn cuộn của sông Mịch La. Hôm đó đúng mùng 5 tháng 5. Ngư dân trên sông và dân chúng trên bờ nghe tin Khuất Nguyên nhảy sông, liền lần lượt ra sông vớt thi thể ông. Họ ném bánh ú/bánh nếp xuống sông để cá và côn trùng dưới sông không làm hại thi thể Khuất Nguyên. Từ đó, hằng năm vào ngày mùng 5 tháng 5, ngày Khuất Nguyên gieo mình xuống sông, người ta đều ra sông đua thuyền rồng, thả bánh ú/bánh nếp để tưởng nhớ nhà thơ yêu nước vĩ đại này. Phong tục Tết Đoan Ngọ cứ như vậy được lưu truyền lại.",
          "audio_key": "",
          "vocab_refs": [],
          "grammar_refs": [],
@@ -5028,65 +5019,65 @@
       },
       "questions": [
        {
-        "id": "reading_01_q001",
+        "id": "5b1c23b4-26cb-4f98-a3f5-93724265d731",
         "blank_id": "blank_01",
-        "prompt": "1",
+        "prompt": "①",
         "answer": "对",
         "answer_verified": true,
         "check_needed": false
        },
        {
-        "id": "reading_01_q002",
+        "id": "bdeb7ae8-5514-47ef-9bb2-dc85fb305394",
         "blank_id": "blank_02",
-        "prompt": "2",
+        "prompt": "②",
         "answer": "便",
         "answer_verified": true,
         "check_needed": false
        },
        {
-        "id": "reading_01_q003",
+        "id": "fc4b291b-dccd-495c-b9b2-034efe4d036a",
         "blank_id": "blank_03",
-        "prompt": "3",
+        "prompt": "③",
         "answer": "为",
         "answer_verified": true,
         "check_needed": false
        },
        {
-        "id": "reading_01_q004",
+        "id": "301dcd2c-2a85-4313-b5ea-6ef65549c2f3",
         "blank_id": "blank_04",
-        "prompt": "4",
+        "prompt": "④",
         "answer": "反而",
         "answer_verified": true,
         "check_needed": false
        },
        {
-        "id": "reading_01_q005",
+        "id": "1b4ee441-72a5-4e5a-81a9-94612cfe8766",
         "blank_id": "blank_05",
-        "prompt": "5",
+        "prompt": "⑤",
         "answer": "把",
         "answer_verified": true,
         "check_needed": false
        },
        {
-        "id": "reading_01_q006",
+        "id": "5eeae101-4fd8-41de-bf52-2c02fb7d3bbd",
         "blank_id": "blank_06",
-        "prompt": "6",
+        "prompt": "⑥",
         "answer": "便",
         "answer_verified": true,
         "check_needed": false
        },
        {
-        "id": "reading_01_q007",
+        "id": "82d2f258-5d28-4767-b6c7-ca32ba9fa0e3",
         "blank_id": "blank_07",
-        "prompt": "7",
+        "prompt": "⑦",
         "answer": "从此",
         "answer_verified": true,
         "check_needed": false
        },
        {
-        "id": "reading_01_q008",
+        "id": "d85873cb-372a-4e56-a139-5debc7dd1665",
         "blank_id": "blank_08",
-        "prompt": "8",
+        "prompt": "⑧",
         "answer": "下来",
         "answer_verified": true,
         "check_needed": false
@@ -5142,6 +5133,12 @@
         "check_needed": false
        }
       ],
+      "rendering": {
+       "renderer": "reading.cloze.v2",
+       "input_mode": "text",
+       "show_answer_after_submit": true,
+       "allow_manual_check": true
+      },
       "answers": [
        {
         "blank_id": "blank_01",
@@ -5192,17 +5189,12 @@
         "check_needed": false
        }
       ],
-      "rendering": {
-       "renderer": "reading.cloze.v2",
-       "input_mode": "text",
-       "show_answer_after_submit": true,
-       "allow_manual_check": true
-      }
+      "answer_verified": true
      }
     ]
    },
    {
-    "id": "section_communication",
+    "id": "bf79ed98-ebbe-47bb-ab7e-ed968dcf1861",
     "type": "communication",
     "order": 8,
     "title": "交际会话",
@@ -5211,7 +5203,7 @@
     "check_needed": false,
     "items": [
      {
-      "id": "communication_01_love_heartbreak",
+      "id": "45627c31-dd85-401d-8b8e-a1a2497402da",
       "type": "communication_dialogue",
       "order": 1,
       "title": "谈论恋爱与失恋",
@@ -5222,116 +5214,71 @@
       "check_needed": false,
       "lines": [
        {
-        "id": "comm_001_line_001",
         "speaker": "A",
-        "zh": "周兰，我从没谈过恋爱，你能不能告诉我，失恋是一种什么感觉？",
-        "pinyin": "Zhōu Lán, wǒ cóng méi tán guo liàn'ài, nǐ néng bu néng gàosu wǒ, shīliàn shì yì zhǒng shénme gǎnjué?",
-        "vi": "Chu Lan, tôi chưa từng yêu bao giờ, bạn có thể nói cho tôi biết thất tình là cảm giác như thế nào không?"
+        "zh": "周兰，我从没谈过恋爱，你能不能告诉我，失恋是一种什么感觉？"
        },
        {
-        "id": "comm_001_line_002",
         "speaker": "B",
-        "zh": "你想知道吗？",
-        "pinyin": "Nǐ xiǎng zhīdào ma?",
-        "vi": "Bạn muốn biết à?"
+        "zh": "你想知道吗？"
        },
        {
-        "id": "comm_001_line_003",
         "speaker": "A",
-        "zh": "当然。",
-        "pinyin": "Dāngrán.",
-        "vi": "Đương nhiên."
+        "zh": "当然。"
        },
        {
-        "id": "comm_001_line_004",
         "speaker": "B",
-        "zh": "那你就赶快去谈一次恋爱，找一找失恋的感觉吧。",
-        "pinyin": "Nà nǐ jiù gǎnkuài qù tán yí cì liàn'ài, zhǎo yi zhǎo shīliàn de gǎnjué ba.",
-        "vi": "Vậy bạn mau đi yêu một lần, thử tìm cảm giác thất tình đi."
+        "zh": "那你就赶快去谈一次恋爱，找一找失恋的感觉吧。"
        },
        {
-        "id": "comm_001_line_005",
         "speaker": "A",
-        "zh": "我问你，你告诉我，我不就知道了吗？",
-        "pinyin": "Wǒ wèn nǐ, nǐ gàosu wǒ, wǒ bú jiù zhīdào le ma?",
-        "vi": "Tôi hỏi bạn, bạn nói cho tôi, chẳng phải tôi biết rồi sao?"
+        "zh": "我问你，你告诉我，我不就知道了吗？"
        },
        {
-        "id": "comm_001_line_006",
         "speaker": "B",
-        "zh": "你没有那种经历，别人告诉你有什么用？那不等于看爱情小说儿吗？你没谈过恋爱，不会懂的。那种感觉只有亲身体验才能明白。",
-        "pinyin": "Nǐ méiyǒu nà zhǒng jīnglì, biérén gàosu nǐ yǒu shénme yòng? Nà bù děngyú kàn àiqíng xiǎoshuōr ma? Nǐ méi tán guo liàn'ài, bú huì dǒng de. Nà zhǒng gǎnjué zhǐyǒu qīnshēn tǐyàn cái néng míngbai.",
-        "vi": "Bạn không có trải nghiệm đó, người khác nói thì có tác dụng gì? Thế chẳng khác gì đọc tiểu thuyết tình yêu sao? Bạn chưa từng yêu nên sẽ không hiểu. Cảm giác đó chỉ khi tự mình trải nghiệm mới hiểu được."
+        "zh": "你没有那种经历，别人告诉你有什么用？那不等于看爱情小说儿吗？你没谈过恋爱，不会懂的。那种感觉只有亲身体验才能明白。"
        },
        {
-        "id": "comm_001_line_007",
         "speaker": "A",
-        "zh": "可能吧，我好想谈一次恋爱，找找失恋的感觉啊。可是我的白马王子在哪儿呢？",
-        "pinyin": "Kěnéng ba, wǒ hǎo xiǎng tán yí cì liàn'ài, zhǎo zhao shīliàn de gǎnjué a. Kěshì wǒ de báimǎ wángzǐ zài nǎr ne?",
-        "vi": "Có lẽ vậy. Tôi rất muốn yêu một lần, thử tìm cảm giác thất tình. Nhưng bạch mã hoàng tử của tôi ở đâu đây?"
+        "zh": "可能吧，我好想谈一次恋爱，找找失恋的感觉啊。可是我的白马王子在哪儿呢？"
        },
        {
-        "id": "comm_001_line_008",
         "speaker": "B",
-        "zh": "傻瓜，你以为失恋是好事儿啊？告诉你吧，那种经历真是不堪回首，是心中永远的痛。",
-        "pinyin": "Shǎguā, nǐ yǐwéi shīliàn shì hǎoshìr a? Gàosu nǐ ba, nà zhǒng jīnglì zhēn shì bùkān-huíshǒu, shì xīn zhōng yǒngyuǎn de tòng.",
-        "vi": "Đồ ngốc, bạn tưởng thất tình là chuyện tốt à? Nói bạn nghe, trải nghiệm đó thật không muốn nhớ lại, là nỗi đau mãi trong lòng."
+        "zh": "傻瓜，你以为失恋是好事儿啊？告诉你吧，那种经历真是不堪回首，是心中永远的痛。"
        },
        {
-        "id": "comm_001_line_009",
         "speaker": "A",
-        "zh": "对不起，周兰，我让你伤心了。",
-        "pinyin": "Duìbuqǐ, Zhōu Lán, wǒ ràng nǐ shāngxīn le.",
-        "vi": "Xin lỗi Chu Lan, tôi làm bạn buồn rồi."
+        "zh": "对不起，周兰，我让你伤心了。"
        },
        {
-        "id": "comm_001_line_010",
         "speaker": "B",
-        "zh": "没有。其实，过后我也觉得自己很傻，但毕竟是我的初恋，所以爱得执着，把对方看成了自己生命中的唯一。一旦失去，生命中第一次经受那种打击，就觉得难以承受。",
-        "pinyin": "Méiyǒu. Qíshí, guòhòu wǒ yě juéde zìjǐ hěn shǎ, dàn bìjìng shì wǒ de chūliàn, suǒyǐ ài de zhízhuó, bǎ duìfāng kànchéng le zìjǐ shēngmìng zhōng de wéiyī. Yídàn shīqù, shēngmìng zhōng dì yī cì jīngshòu nà zhǒng dǎjī, jiù juéde nányǐ chéngshòu.",
-        "vi": "Không đâu. Thật ra sau đó tôi cũng thấy mình rất ngốc, nhưng dù sao cũng là mối tình đầu nên yêu rất chấp nhất, xem đối phương là người duy nhất trong đời. Một khi mất đi, lần đầu trong đời chịu cú sốc như vậy thì thấy khó mà chịu nổi."
+        "zh": "没有。其实，过后我也觉得自己很傻，但毕竟是我的初恋，所以爱得执着，把对方看成了自己生命中的唯一。一旦失去，生命中第一次经受那种打击，就觉得难以承受。"
        },
        {
-        "id": "comm_001_line_011",
         "speaker": "A",
-        "zh": "那一段时间你是怎么过来的？",
-        "pinyin": "Nà yí duàn shíjiān nǐ shì zěnme guòlai de?",
-        "vi": "Quãng thời gian đó bạn đã vượt qua như thế nào?"
+        "zh": "那一段时间你是怎么过来的？"
        },
        {
-        "id": "comm_001_line_012",
         "speaker": "B",
-        "zh": "多亏我姐姐，还有我一个最好的朋友，是她们帮助我、开导我，使我逐渐走出了那段天昏地暗的日子。后来我也渐渐明白，人生有那么一段经历，未必是一件坏事。就像林老师昨天在课堂说的，结婚的对象往往不是初恋的情人。",
-        "pinyin": "Duōkuī wǒ jiějie, háiyǒu wǒ yí ge zuì hǎo de péngyou, shì tāmen bāngzhù wǒ, kāidǎo wǒ, shǐ wǒ zhújiàn zǒu chū le nà duàn tiānhūn-dì'àn de rìzi. Hòulái wǒ yě jiànjiàn míngbai, rénshēng yǒu nàme yí duàn jīnglì, wèibì shì yí jiàn huàishì. Jiù xiàng Lín lǎoshī zuótiān zài kètáng shuō de, jiéhūn de duìxiàng wǎngwǎng bú shì chūliàn de qíngrén.",
-        "vi": "Nhờ có chị tôi và một người bạn thân nhất giúp đỡ, khuyên bảo, tôi dần bước ra khỏi những ngày tháng tăm tối đó. Về sau tôi cũng dần hiểu rằng trong đời có một trải nghiệm như vậy chưa chắc là chuyện xấu. Như cô Lâm hôm qua nói trên lớp, đối tượng kết hôn thường không phải người yêu đầu."
+        "zh": "多亏我姐姐，还有我一个最好的朋友，是她们帮助我、开导我，使我逐渐走出了那段天昏地暗的日子。后来我也渐渐明白，人生有那么一段经历，未必是一件坏事。就像林老师昨天在课堂说的，结婚的对象往往不是初恋的情人。"
        },
        {
-        "id": "comm_001_line_013",
         "speaker": "A",
-        "zh": "这可能也是老师自己的经验吧。",
-        "pinyin": "Zhè kěnéng yě shì lǎoshī zìjǐ de jīngyàn ba.",
-        "vi": "Có lẽ đó cũng là kinh nghiệm của chính cô giáo."
+        "zh": "这可能也是老师自己的经验吧。"
        },
        {
-        "id": "comm_001_line_014",
         "speaker": "B",
-        "zh": "老师还说，爱一个人就是希望他/她得到幸福。爱不是自私地占有，而是无私地给予。当我们有了这样的精神准备，才可能去爱，也才能真正得到爱。我想，老师讲的是一种精神境界。如果真正这么去想、这么去做，就能从容应对人生中的各种难题了，包括失恋。",
-        "pinyin": "Lǎoshī hái shuō, ài yí ge rén jiù shì xīwàng tā dédào xìngfú. Ài bú shì zìsī de zhànyǒu, ér shì wúsī de jǐyǔ. Dāng wǒmen yǒu le zhèyàng de jīngshén zhǔnbèi, cái kěnéng qù ài, yě cái néng zhēnzhèng dédào ài. Wǒ xiǎng, lǎoshī jiǎng de shì yì zhǒng jīngshén jìngjiè. Rúguǒ zhēnzhèng zhème qù xiǎng, zhème qù zuò, jiù néng cóngróng yìngduì rénshēng zhōng de gè zhǒng nántí le, bāokuò shīliàn.",
-        "vi": "Cô còn nói, yêu một người là hy vọng người đó có được hạnh phúc. Yêu không phải là chiếm hữu ích kỷ, mà là trao đi vô tư. Khi chúng ta có sự chuẩn bị tinh thần như vậy thì mới có thể yêu, cũng mới có thể thật sự nhận được tình yêu. Tôi nghĩ điều cô nói là một cảnh giới tinh thần. Nếu thật sự nghĩ và làm như vậy thì có thể bình thản đối diện với đủ loại khó khăn trong đời, bao gồm cả thất tình."
+        "zh": "老师还说，爱一个人就是希望他/她得到幸福。爱不是自私地占有，而是无私地给予。当我们有了这样的精神准备，才可能去爱，也才能真正得到爱。我想，老师讲的是一种精神境界。如果真正这么去想、这么去做，就能从容应对人生中的各种难题了，包括失恋。"
        },
        {
-        "id": "comm_001_line_015",
         "speaker": "A",
-        "zh": "你说得真好！",
-        "pinyin": "Nǐ shuō de zhēn hǎo!",
-        "vi": "Bạn nói hay thật!"
+        "zh": "你说得真好！"
        }
       ]
      }
     ]
    },
    {
-    "id": "section_character_writing",
+    "id": "e71f4398-291c-4f48-8aa7-f93e825f4d42",
     "type": "character_writing",
     "order": 9,
     "title": "写汉字",
@@ -5339,7 +5286,7 @@
     "source_origin": "textbook",
     "check_needed": false,
     "items": [],
-    "empty_reason_vi": "Trong phạm vi trang Lesson 26 đã kiểm (trang sách 211-230), không thấy mục 写汉字 riêng biệt."
+    "empty_reason_vi": "Trong phạm vi trang Lesson 26 đã kiểm (trang sách 211–230), không thấy mục 写汉字 riêng biệt."
    }
   ],
   "summary": {
@@ -5356,54 +5303,54 @@
    ],
    "grammar_points": [
     {
-     "id": "grammar_001",
+     "id": "d5eaf408-514c-4987-b142-668f43d140be",
      "title": "由于"
     },
     {
-     "id": "grammar_002",
+     "id": "a8720887-db26-4d49-b41f-8a6d646a791d",
      "title": "为"
     },
     {
-     "id": "grammar_003",
+     "id": "28ce5846-ff50-47d0-927a-dd6a1699d21a",
      "title": "始终"
     },
     {
-     "id": "grammar_004",
+     "id": "43a1f72d-1510-4a57-a1fa-0af2b4890023",
      "title": "不然"
     },
     {
-     "id": "grammar_005",
+     "id": "cb4fa491-3ff6-4992-b0d5-5abdd9044560",
      "title": "宁可"
     },
     {
-     "id": "grammar_006",
+     "id": "a9bc0f78-52c9-4ca7-b62e-d1d8343543ae",
      "title": "表达"
     }
    ],
    "main_patterns": [
     {
      "pattern": "由于 A，所以/因此/因而 B",
-     "grammar_ref": "grammar_001"
+     "grammar_ref": "d5eaf408-514c-4987-b142-668f43d140be"
     },
     {
      "pattern": "A 化为 B / A 结拜为 B",
-     "grammar_ref": "grammar_002"
+     "grammar_ref": "a8720887-db26-4d49-b41f-8a6d646a791d"
     },
     {
      "pattern": "始终 + 不/没 + V",
-     "grammar_ref": "grammar_003"
+     "grammar_ref": "28ce5846-ff50-47d0-927a-dd6a1699d21a"
     },
     {
      "pattern": "A，不然 B",
-     "grammar_ref": "grammar_004"
+     "grammar_ref": "43a1f72d-1510-4a57-a1fa-0af2b4890023"
     },
     {
      "pattern": "宁可 A，也不 B",
-     "grammar_ref": "grammar_005"
+     "grammar_ref": "cb4fa491-3ff6-4992-b0d5-5abdd9044560"
     },
     {
      "pattern": "表达 + 思想/感情/感谢/爱情",
-     "grammar_ref": "grammar_006"
+     "grammar_ref": "a9bc0f78-52c9-4ca7-b62e-d1d8343543ae"
     }
    ],
    "exercise_types": [
@@ -5419,9 +5366,9 @@
     "communication_dialogue"
    ],
    "source_origin_policy": {
-    "textbook": "Chinese text checked from local PDF page renders",
-    "textbook_answer_checked": "answers checked against textbook context/PDF pages",
-    "answer_sample_checked": "sample answers checked for grammar and naturalness"
+    "textbook": "Chinese text extracted/checked from PDF scan",
+    "textbook_question_generated_answer": "answers or Vietnamese explanations inferred by assistant and rechecked against the PDF/text context where applicable",
+    "textbook/generated_mixed": "Vietnamese explanations generated from textbook examples"
    },
    "check_needed": false
   },
@@ -5444,36 +5391,16 @@
      "check_needed": false,
      "page_start": 211,
      "page_end": 230,
-     "note": "Checked against local PDF page images generated from /mnt/data/Hanyu Jiaocheng 3-2.pdf, PDF pages 236-255 / book pages 211-230."
+     "note": "Rechecked against local PDF page images for Lesson 26, printed pages 211–230. Only data content was updated; outer lesson structure was preserved."
     },
     {
-     "name": "Văn bản đã dán (1).txt",
-     "type": "uploaded_lesson_json",
-     "source_origin": "user_uploaded_json",
+     "name": "Quyển 3- tổng hợp.docx",
+     "type": "uploaded_crosscheck",
+     "source_origin": "uploaded_crosscheck",
      "check_needed": false,
-     "note": "Used as base lesson JSON; data updated without changing the section model."
+     "note": "Used to cross-check lesson grammar focus."
     }
-   ],
-   "update_report": {
-    "pinyin_filled": true,
-    "vocab_pos_detail_added": true,
-    "supplementary_vocab_pos_detail_added": true,
-    "exercise_answers_checked": true,
-    "reading_cloze_blank_03_corrected": "为",
-    "separable_verbs_detected": [
-     "绣花",
-     "送行",
-     "做媒",
-     "求婚",
-     "吊孝",
-     "迎亲"
-    ],
-    "separable_verbs_count": 6,
-    "main_vocab_items": 69,
-    "supplementary_vocab_items": 12,
-    "total_vocab_items": 81,
-    "notes": []
-   }
+   ]
   }
  }
 }

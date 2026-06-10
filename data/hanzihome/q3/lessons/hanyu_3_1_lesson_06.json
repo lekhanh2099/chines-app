@@ -14,7 +14,11 @@
    "pdf_checked",
    "pinyin_checked",
    "answer_checked",
-   "pos_detail_added"
+   "pos_detail_added",
+   "final_content_checked",
+   "translation_checked",
+   "exercise_answer_checked",
+   "comprehension_questions_added"
   ],
   "sections": [
    {
@@ -40,11 +44,11 @@
         "order": 1,
         "zh": "我家院子里种着一棵葡萄树，几年来一直半死不活的。不料，去年竟然长出了许多叶子，还结了许多葡萄。当秋天到来的时候，那一串串紫红色的葡萄，看了真让人高兴。摘下来一尝，特别甜，就想送一些给别人尝尝，让大家也分享一下儿我收获的喜悦。",
         "pinyin": "Wǒ jiā yuànzi lǐ zhòngzhe yì kē pútao shù, jǐ nián lái yìzhí bànsǐ-bùhuó de. Búliào, qùnián jìngrán zhǎngchū le xǔduō yèzi, hái jié le xǔduō pútao. Dāng qiūtiān dàolái de shíhou, nà yí chuàn chuàn zǐhóngsè de pútao, kàn le zhēn ràng rén gāoxìng. Zhāi xiàlai yì cháng, tèbié tián, jiù xiǎng sòng yìxiē gěi biérén chángchang, ràng dàjiā yě fēnxiǎng yíxiàr wǒ shōuhuò de xǐyuè.",
-        "vi": "Trong sân nhà tôi có trồng một cây nho. Mấy năm nay nó cứ sống dở chết dở. Không ngờ năm ngoái nó lại mọc ra rất nhiều lá, còn kết rất nhiều nho. Khi mùa thu đến, từng chùm nho tím đỏ ấy nhìn thật khiến người ta vui. Hái xuống nếm thử thì đặc biệt ngọt, thế là tôi muốn đem một ít cho người khác nếm thử, để mọi người cùng chia sẻ niềm vui thu hoạch của tôi.",
+        "vi": "Trong sân nhà tôi có trồng một cây nho. Suốt mấy năm qua nó cứ nửa sống nửa chết. Không ngờ năm ngoái nó lại mọc ra rất nhiều lá, còn kết rất nhiều nho. Khi mùa thu đến, từng chùm nho tím đỏ ấy nhìn vào thật khiến người ta vui. Hái xuống nếm thử thì đặc biệt ngọt, thế là tôi muốn đem một ít cho người khác nếm thử, để mọi người cũng cùng chia sẻ niềm vui thu hoạch của tôi.",
         "audio_key": "",
         "vocab_refs": [],
         "grammar_refs": [],
-        "source_origin": "textbook_pdf_checked",
+        "source_origin": "textbook",
         "check_needed": false
        },
        {
@@ -52,11 +56,11 @@
         "order": 2,
         "zh": "我把葡萄送给一个做生意的朋友。他接过去，用两个手指捏了一颗送进嘴里，说：“好吃，好吃。”接着就问：“多少钱一斤？”我说不要钱，只是想请他尝尝。他不愿意，说不能白吃，坚持要付钱。没办法，我只好收下了他的钱。",
         "pinyin": "Wǒ bǎ pútao sòng gěi yí ge zuò shēngyi de péngyou. Tā jiē guòqu, yòng liǎng ge shǒuzhǐ niē le yì kē sòng jìn zuǐ lǐ, shuō: “Hǎochī, hǎochī.” Jiēzhe jiù wèn: “Duōshao qián yì jīn?” Wǒ shuō bú yào qián, zhǐshì xiǎng qǐng tā chángchang. Tā bú yuànyì, shuō bù néng bái chī, jiānchí yào fù qián. Méi bànfǎ, wǒ zhǐhǎo shōu xià le tā de qián.",
-        "vi": "Tôi đem nho tặng cho một người bạn làm kinh doanh. Anh ấy nhận lấy, dùng hai ngón tay nhón một quả đưa vào miệng rồi nói: “Ngon, ngon.” Ngay sau đó liền hỏi: “Bao nhiêu tiền một cân?” Tôi nói không cần tiền, chỉ là muốn mời anh ấy nếm thử thôi. Anh ấy không chịu, nói không thể ăn không, nhất quyết muốn trả tiền. Không còn cách nào, tôi đành nhận tiền của anh ấy.",
+        "vi": "Tôi đem nho tặng cho một người bạn làm kinh doanh. Anh ấy nhận lấy, dùng hai ngón tay nhón một quả đưa vào miệng rồi nói: “Ngon, ngon.” Ngay sau đó anh ấy hỏi: “Bao nhiêu tiền một cân?” Tôi nói không cần tiền, chỉ là muốn mời anh ấy nếm thử thôi. Anh ấy không chịu, nói không thể ăn không, nhất quyết muốn trả tiền. Không còn cách nào, tôi đành nhận tiền của anh ấy.",
         "audio_key": "",
         "vocab_refs": [],
         "grammar_refs": [],
-        "source_origin": "textbook_pdf_checked",
+        "source_origin": "textbook",
         "check_needed": false
        },
        {
@@ -64,11 +68,11 @@
         "order": 3,
         "zh": "我把葡萄送给一位领导。他接过我的葡萄后一直注视着我，然后低声问：“你有什么事儿要办吗？”我告诉他，我没有什么事儿，只是想让他尝尝这棵老树结的新葡萄。他吃了我的葡萄，但是从他脸上的表情看得出来，他并不相信我的话。",
         "pinyin": "Wǒ bǎ pútao sòng gěi yí wèi lǐngdǎo. Tā jiēguò wǒ de pútao hòu yìzhí zhùshìzhe wǒ, ránhòu dī shēng wèn: “Nǐ yǒu shénme shìr yào bàn ma?” Wǒ gàosu tā, wǒ méiyǒu shénme shìr, zhǐshì xiǎng ràng tā chángchang zhè kē lǎo shù jié de xīn pútao. Tā chī le wǒ de pútao, dànshì cóng tā liǎn shang de biǎoqíng kàn de chūlai, tā bìng bù xiāngxìn wǒ de huà.",
-        "vi": "Tôi đem nho tặng cho một vị lãnh đạo. Ông ấy nhận nho của tôi xong thì cứ nhìn chăm chăm vào tôi, rồi thấp giọng hỏi: “Anh có việc gì cần nhờ xử lý à?” Tôi nói với ông ấy rằng tôi không có việc gì cả, chỉ là muốn để ông ấy nếm thử nho mới kết từ cây nho già này thôi. Ông ấy ăn nho của tôi, nhưng nhìn vẻ mặt ông ấy thì có thể thấy được rằng ông ấy vốn không tin lời tôi.",
+        "vi": "Tôi đem nho tặng cho một vị lãnh đạo. Ông ấy nhận nho của tôi xong thì cứ chăm chú nhìn tôi, rồi thấp giọng hỏi: “Anh có việc gì cần tôi xử lý à?” Tôi nói với ông ấy rằng tôi không có việc gì cả, chỉ là muốn để ông ấy nếm thử nho mới kết từ cây nho già này thôi. Ông ấy ăn nho của tôi, nhưng nhìn vẻ mặt ông ấy thì có thể thấy được rằng ông ấy không hề tin lời tôi.",
         "audio_key": "",
         "vocab_refs": [],
         "grammar_refs": [],
-        "source_origin": "textbook_pdf_checked",
+        "source_origin": "textbook",
         "check_needed": false
        },
        {
@@ -76,11 +80,11 @@
         "order": 4,
         "zh": "我把葡萄送给漂亮的女邻居。她感到有些意外，她的丈夫更是一脸的警惕。我很尴尬，忙说这是从自己家的葡萄树上摘下来的，很甜，很好吃，想请大家尝尝。那男的像吃毒药一样吃了一颗。没想到，那天晚上他们家就传来了吵架声。",
         "pinyin": "Wǒ bǎ pútao sòng gěi piàoliang de nǚ línjū. Tā gǎndào yǒuxiē yìwài, tā de zhàngfu gèng shì yì liǎn de jǐngtì. Wǒ hěn gāngà, máng shuō zhè shì cóng zìjǐ jiā de pútao shù shang zhāi xiàlai de, hěn tián, hěn hǎochī, xiǎng qǐng dàjiā chángchang. Nà nán de xiàng chī dúyào yíyàng chī le yì kē. Méi xiǎngdào, nà tiān wǎnshang tāmen jiā jiù chuán lái le chǎojià shēng.",
-        "vi": "Tôi đem nho tặng cho cô hàng xóm xinh đẹp. Cô ấy cảm thấy hơi bất ngờ, chồng cô ấy thì càng tỏ ra đầy cảnh giác. Tôi rất ngượng, vội nói rằng đây là nho hái từ cây nho nhà mình, rất ngọt, rất ngon, chỉ muốn mời mọi người nếm thử. Người đàn ông kia ăn một quả như thể đang ăn thuốc độc vậy. Không ngờ, tối hôm đó từ nhà họ liền vọng ra tiếng cãi nhau.",
+        "vi": "Tôi đem nho tặng cho cô hàng xóm xinh đẹp. Cô ấy cảm thấy hơi bất ngờ, chồng cô ấy thì càng tỏ ra đầy cảnh giác. Tôi rất lúng túng, vội nói rằng đây là nho hái từ cây nho nhà mình, rất ngọt, rất ngon, chỉ muốn mời mọi người nếm thử. Người đàn ông kia ăn một quả như thể đang ăn thuốc độc vậy. Không ngờ, tối hôm đó từ nhà họ liền vọng đến tiếng cãi nhau.",
         "audio_key": "",
         "vocab_refs": [],
         "grammar_refs": [],
-        "source_origin": "textbook_pdf_checked",
+        "source_origin": "textbook",
         "check_needed": false
        },
        {
@@ -88,11 +92,11 @@
         "order": 5,
         "zh": "我把葡萄送给隔壁的一个小孩儿。他吃了还想再吃，脸上露出甜甜的笑，嘴里也甜甜地说着：“这种葡萄好甜啊！谢谢叔叔！”然后一蹦一跳地把葡萄拿走了。",
         "pinyin": "Wǒ bǎ pútao sòng gěi gébì de yí ge xiǎoháir. Tā chī le hái xiǎng zài chī, liǎn shang lù chū tiántián de xiào, zuǐ lǐ yě tiántián de shuōzhe: “Zhè zhǒng pútao hǎo tián a! Xièxie shūshu!” Ránhòu yí bèng yí tiào de bǎ pútao názǒu le.",
-        "vi": "Tôi đem nho tặng cho một đứa trẻ nhà bên cạnh. Nó ăn rồi còn muốn ăn nữa, trên mặt hiện ra nụ cười ngọt ngào, miệng cũng ngọt ngào nói: “Loại nho này ngọt quá! Cảm ơn chú!” Sau đó nó nhảy chân sáo cầm nho đi mất.",
+        "vi": "Tôi đem nho tặng cho một đứa trẻ nhà sát vách. Nó ăn rồi còn muốn ăn nữa, trên mặt hiện ra nụ cười ngọt ngào, miệng cũng nói ngọt ngào: “Loại nho này ngọt quá! Cảm ơn chú!” Sau đó nó nhảy chân sáo cầm nho đi mất.",
         "audio_key": "",
         "vocab_refs": [],
         "grammar_refs": [],
-        "source_origin": "textbook_pdf_checked",
+        "source_origin": "textbook",
         "check_needed": false
        },
        {
@@ -100,11 +104,11 @@
         "order": 6,
         "zh": "我很高兴，我终于找到了一个人，一个真正吃葡萄的人。",
         "pinyin": "Wǒ hěn gāoxìng, wǒ zhōngyú zhǎodào le yí ge rén, yí ge zhēnzhèng chī pútao de rén.",
-        "vi": "Tôi rất vui, cuối cùng tôi đã tìm được một người, một người thật sự ăn nho.",
+        "vi": "Tôi rất vui, cuối cùng tôi đã tìm được một người, một người thật sự ăn nho đúng nghĩa.",
         "audio_key": "",
         "vocab_refs": [],
         "grammar_refs": [],
-        "source_origin": "textbook_pdf_checked",
+        "source_origin": "textbook",
         "check_needed": false
        },
        {
@@ -116,12 +120,85 @@
         "audio_key": "",
         "vocab_refs": [],
         "grammar_refs": [],
-        "source_origin": "textbook_pdf_checked",
+        "source_origin": "textbook",
         "check_needed": false
        }
       ],
       "lines": [],
-      "comprehension_questions": []
+      "comprehension_questions": [
+       {
+        "id": "text_q01",
+        "order": 1,
+        "question": "作者为什么要把葡萄送给别人吃？",
+        "pinyin": "Zuòzhě wèishénme yào bǎ pútao sòng gěi biérén chī?",
+        "vi": "Vì sao tác giả muốn đem nho tặng cho người khác ăn?",
+        "sample_answer": "因为他家的葡萄很甜，他想让大家也分享一下儿他收获的喜悦。",
+        "sample_answer_pinyin": "Yīnwèi tā jiā de pútao hěn tián, tā xiǎng ràng dàjiā yě fēnxiǎng yíxiàr tā shōuhuò de xǐyuè.",
+        "sample_answer_vi": "Vì nho nhà ông ấy rất ngọt, ông ấy muốn để mọi người cũng cùng chia sẻ niềm vui thu hoạch của mình.",
+        "source_origin": "textbook",
+        "check_needed": false
+       },
+       {
+        "id": "text_q02",
+        "order": 2,
+        "question": "作者送的第一个是什么人？他是什么态度？",
+        "pinyin": "Zuòzhě sòng de dì yī ge shì shénme rén? Tā shì shénme tàidu?",
+        "vi": "Người đầu tiên tác giả tặng nho là người như thế nào? Thái độ của người ấy ra sao?",
+        "sample_answer": "第一个是一个做生意的朋友。他不愿意白吃，坚持要付钱。",
+        "sample_answer_pinyin": "Dì yī ge shì yí ge zuò shēngyi de péngyou. Tā bú yuànyì bái chī, jiānchí yào fù qián.",
+        "sample_answer_vi": "Người đầu tiên là một người bạn làm kinh doanh. Anh ấy không chịu ăn không, nhất quyết muốn trả tiền.",
+        "source_origin": "textbook",
+        "check_needed": false
+       },
+       {
+        "id": "text_q03",
+        "order": 3,
+        "question": "作者送的第二个是什么人？他为什么问“你有什么事儿要办吗”？",
+        "pinyin": "Zuòzhě sòng de dì èr ge shì shénme rén? Tā wèishénme wèn “Nǐ yǒu shénme shìr yào bàn ma”?",
+        "vi": "Người thứ hai tác giả tặng nho là ai? Vì sao người ấy hỏi “Anh có việc gì cần xử lý à?”",
+        "sample_answer": "第二个是一位领导。因为他以为作者送葡萄是有事相求，不只是请他尝葡萄。",
+        "sample_answer_pinyin": "Dì èr ge shì yí wèi lǐngdǎo. Yīnwèi tā yǐwéi zuòzhě sòng pútao shì yǒu shì xiāng qiú, bú zhǐ shì qǐng tā cháng pútao.",
+        "sample_answer_vi": "Người thứ hai là một vị lãnh đạo. Vì ông ấy tưởng tác giả tặng nho là có việc muốn nhờ, chứ không chỉ mời ông ấy nếm nho.",
+        "source_origin": "textbook",
+        "check_needed": false
+       },
+       {
+        "id": "text_q04",
+        "order": 4,
+        "question": "作者送的第三个是什么人？那个人的丈夫为什么和她吵架？",
+        "pinyin": "Zuòzhě sòng de dì sān ge shì shénme rén? Nà ge rén de zhàngfu wèishénme hé tā chǎojià?",
+        "vi": "Người thứ ba tác giả tặng nho là ai? Vì sao chồng người ấy cãi nhau với cô ấy?",
+        "sample_answer": "第三个是漂亮的女邻居。她的丈夫一脸警惕，可能误会了作者送葡萄的意思，所以和她吵架。",
+        "sample_answer_pinyin": "Dì sān ge shì piàoliang de nǚ línjū. Tā de zhàngfu yì liǎn jǐngtì, kěnéng wùhuì le zuòzhě sòng pútao de yìsi, suǒyǐ hé tā chǎojià.",
+        "sample_answer_vi": "Người thứ ba là cô hàng xóm xinh đẹp. Chồng cô ấy đầy vẻ cảnh giác, có lẽ đã hiểu lầm ý của tác giả khi tặng nho, nên cãi nhau với cô ấy.",
+        "source_origin": "textbook",
+        "check_needed": false
+       },
+       {
+        "id": "text_q05",
+        "order": 5,
+        "question": "作者送的第四个是什么人？他是什么态度？",
+        "pinyin": "Zuòzhě sòng de dì sì ge shì shénme rén? Tā shì shénme tàidu?",
+        "vi": "Người thứ tư tác giả tặng nho là ai? Thái độ của người ấy ra sao?",
+        "sample_answer": "第四个是隔壁的一个小孩儿。他很高兴，吃了还想再吃，还甜甜地说谢谢。",
+        "sample_answer_pinyin": "Dì sì ge shì gébì de yí ge xiǎoháir. Tā hěn gāoxìng, chī le hái xiǎng zài chī, hái tiántián de shuō xièxie.",
+        "sample_answer_vi": "Người thứ tư là một đứa trẻ nhà sát vách. Nó rất vui, ăn rồi còn muốn ăn nữa, lại nói lời cảm ơn rất ngọt ngào.",
+        "source_origin": "textbook",
+        "check_needed": false
+       },
+       {
+        "id": "text_q06",
+        "order": 6,
+        "question": "你觉得这篇文章要说明什么？",
+        "pinyin": "Nǐ juéde zhè piān wénzhāng yào shuōmíng shénme?",
+        "vi": "Bạn nghĩ bài văn này muốn nói rõ điều gì?",
+        "sample_answer": "这篇文章不只是说送葡萄，也说明人与人之间的关系很复杂，善意有时也容易被误解。",
+        "sample_answer_pinyin": "Zhè piān wénzhāng bú zhǐ shì shuō sòng pútao, yě shuōmíng rén yǔ rén zhījiān de guānxi hěn fùzá, shànyì yǒushí yě róngyì bèi wùjiě.",
+        "sample_answer_vi": "Bài này không chỉ nói chuyện tặng nho, mà còn cho thấy quan hệ giữa người với người rất phức tạp, thiện ý đôi khi cũng dễ bị hiểu lầm.",
+        "source_origin": "textbook_question_generated_answer",
+        "check_needed": false
+       }
+      ]
      }
     ]
    },
@@ -156,7 +233,7 @@
        ]
       },
       "audio_key": "",
-      "source_origin": "textbook_pdf_checked",
+      "source_origin": "textbook",
       "check_needed": false,
       "pos_detail": {
        "vi": "Danh từ",
@@ -189,7 +266,7 @@
        ]
       },
       "audio_key": "",
-      "source_origin": "textbook_pdf_checked",
+      "source_origin": "textbook",
       "check_needed": false,
       "pos_detail": {
        "vi": "Danh từ chỉ thời đoạn / Yếu tố thời gian",
@@ -224,7 +301,7 @@
        ]
       },
       "audio_key": "",
-      "source_origin": "textbook_pdf_checked",
+      "source_origin": "textbook",
       "check_needed": false,
       "pos_detail": {
        "vi": "Cụm tính từ / Thành ngữ",
@@ -257,7 +334,7 @@
        ]
       },
       "audio_key": "",
-      "source_origin": "textbook_pdf_checked",
+      "source_origin": "textbook",
       "check_needed": false,
       "pos_detail": {
        "vi": "Liên từ",
@@ -290,7 +367,7 @@
        ]
       },
       "audio_key": "",
-      "source_origin": "textbook_pdf_checked",
+      "source_origin": "textbook",
       "check_needed": false,
       "pos_detail": {
        "vi": "Phó từ",
@@ -323,7 +400,7 @@
        ]
       },
       "audio_key": "",
-      "source_origin": "textbook_pdf_checked",
+      "source_origin": "textbook",
       "check_needed": false,
       "pos_detail": {
        "vi": "Số lượng từ",
@@ -356,7 +433,7 @@
        ]
       },
       "audio_key": "",
-      "source_origin": "textbook_pdf_checked",
+      "source_origin": "textbook",
       "check_needed": false,
       "pos_detail": {
        "vi": "Danh từ",
@@ -389,7 +466,7 @@
        ]
       },
       "audio_key": "",
-      "source_origin": "textbook_pdf_checked",
+      "source_origin": "textbook",
       "check_needed": false,
       "pos_detail": {
        "vi": "Giới từ",
@@ -422,7 +499,7 @@
        ]
       },
       "audio_key": "",
-      "source_origin": "textbook_pdf_checked",
+      "source_origin": "textbook",
       "check_needed": false,
       "pos_detail": {
        "vi": "Lượng từ / Danh từ",
@@ -455,7 +532,7 @@
        ]
       },
       "audio_key": "",
-      "source_origin": "textbook_pdf_checked",
+      "source_origin": "textbook",
       "check_needed": false,
       "pos_detail": {
        "vi": "Tính từ",
@@ -488,7 +565,7 @@
        ]
       },
       "audio_key": "",
-      "source_origin": "textbook_pdf_checked",
+      "source_origin": "textbook",
       "check_needed": false,
       "pos_detail": {
        "vi": "Động từ",
@@ -521,7 +598,7 @@
        ]
       },
       "audio_key": "",
-      "source_origin": "textbook_pdf_checked",
+      "source_origin": "textbook",
       "check_needed": false,
       "pos_detail": {
        "vi": "Động từ",
@@ -554,7 +631,7 @@
        ]
       },
       "audio_key": "",
-      "source_origin": "textbook_pdf_checked",
+      "source_origin": "textbook",
       "check_needed": false,
       "pos_detail": {
        "vi": "Danh từ / Động từ",
@@ -587,7 +664,7 @@
        ]
       },
       "audio_key": "",
-      "source_origin": "textbook_pdf_checked",
+      "source_origin": "textbook",
       "check_needed": false,
       "pos_detail": {
        "vi": "Tính từ / Danh từ",
@@ -622,7 +699,7 @@
        ]
       },
       "audio_key": "",
-      "source_origin": "textbook_pdf_checked",
+      "source_origin": "textbook",
       "check_needed": false,
       "pos_detail": {
        "vi": "Danh từ",
@@ -655,7 +732,7 @@
        ]
       },
       "audio_key": "",
-      "source_origin": "textbook_pdf_checked",
+      "source_origin": "textbook",
       "check_needed": false,
       "pos_detail": {
        "vi": "Danh từ",
@@ -688,7 +765,7 @@
        ]
       },
       "audio_key": "",
-      "source_origin": "textbook_pdf_checked",
+      "source_origin": "textbook",
       "check_needed": false,
       "pos_detail": {
        "vi": "Động từ",
@@ -721,7 +798,7 @@
        ]
       },
       "audio_key": "",
-      "source_origin": "textbook_pdf_checked",
+      "source_origin": "textbook",
       "check_needed": false,
       "pos_detail": {
        "vi": "Lượng từ",
@@ -754,7 +831,7 @@
        ]
       },
       "audio_key": "",
-      "source_origin": "textbook_pdf_checked",
+      "source_origin": "textbook",
       "check_needed": false,
       "pos_detail": {
        "vi": "Danh từ",
@@ -787,7 +864,7 @@
        ]
       },
       "audio_key": "",
-      "source_origin": "textbook_pdf_checked",
+      "source_origin": "textbook",
       "check_needed": false,
       "pos_detail": {
        "vi": "Phó từ",
@@ -820,7 +897,7 @@
        ]
       },
       "audio_key": "",
-      "source_origin": "textbook_pdf_checked",
+      "source_origin": "textbook",
       "check_needed": false,
       "pos_detail": {
        "vi": "Động từ",
@@ -853,7 +930,7 @@
        ]
       },
       "audio_key": "",
-      "source_origin": "textbook_pdf_checked",
+      "source_origin": "textbook",
       "check_needed": false,
       "pos_detail": {
        "vi": "Cụm trạng ngữ",
@@ -886,7 +963,7 @@
        ]
       },
       "audio_key": "",
-      "source_origin": "textbook_pdf_checked",
+      "source_origin": "textbook",
       "check_needed": false,
       "pos_detail": {
        "vi": "Tính từ",
@@ -919,7 +996,7 @@
        ]
       },
       "audio_key": "",
-      "source_origin": "textbook_pdf_checked",
+      "source_origin": "textbook",
       "check_needed": false,
       "pos_detail": {
        "vi": "Cụm trạng ngữ",
@@ -952,7 +1029,7 @@
        ]
       },
       "audio_key": "",
-      "source_origin": "textbook_pdf_checked",
+      "source_origin": "textbook",
       "check_needed": false,
       "pos_detail": {
        "vi": "Danh từ",
@@ -985,7 +1062,7 @@
        ]
       },
       "audio_key": "",
-      "source_origin": "textbook_pdf_checked",
+      "source_origin": "textbook",
       "check_needed": false,
       "pos_detail": {
        "vi": "Phó từ",
@@ -1018,7 +1095,7 @@
        ]
       },
       "audio_key": "",
-      "source_origin": "textbook_pdf_checked",
+      "source_origin": "textbook",
       "check_needed": false,
       "pos_detail": {
        "vi": "Danh từ",
@@ -1051,7 +1128,7 @@
        ]
       },
       "audio_key": "",
-      "source_origin": "textbook_pdf_checked",
+      "source_origin": "textbook",
       "check_needed": false,
       "pos_detail": {
        "vi": "Tính từ / Danh từ",
@@ -1086,7 +1163,7 @@
        ]
       },
       "audio_key": "",
-      "source_origin": "textbook_pdf_checked",
+      "source_origin": "textbook",
       "check_needed": false,
       "pos_detail": {
        "vi": "Danh từ",
@@ -1119,7 +1196,7 @@
        ]
       },
       "audio_key": "",
-      "source_origin": "textbook_pdf_checked",
+      "source_origin": "textbook",
       "check_needed": false,
       "pos_detail": {
        "vi": "Động từ / Tính từ trạng thái",
@@ -1154,7 +1231,7 @@
        ]
       },
       "audio_key": "",
-      "source_origin": "textbook_pdf_checked",
+      "source_origin": "textbook",
       "check_needed": false,
       "pos_detail": {
        "vi": "Tính từ",
@@ -1187,7 +1264,7 @@
        ]
       },
       "audio_key": "",
-      "source_origin": "textbook_pdf_checked",
+      "source_origin": "textbook",
       "check_needed": false,
       "pos_detail": {
        "vi": "Danh từ",
@@ -1220,7 +1297,7 @@
        ]
       },
       "audio_key": "",
-      "source_origin": "textbook_pdf_checked",
+      "source_origin": "textbook",
       "check_needed": false,
       "pos_detail": {
        "vi": "Động từ",
@@ -1253,7 +1330,7 @@
        ]
       },
       "audio_key": "",
-      "source_origin": "textbook_pdf_checked",
+      "source_origin": "textbook",
       "check_needed": false,
       "pos_detail": {
        "vi": "Động từ li hợp",
@@ -1289,7 +1366,7 @@
        ]
       },
       "audio_key": "",
-      "source_origin": "textbook_pdf_checked",
+      "source_origin": "textbook",
       "check_needed": false,
       "pos_detail": {
        "vi": "Danh từ chỉ vị trí",
@@ -1306,14 +1383,14 @@
       "order": 36,
       "hanzi": "露",
       "pinyin": "lù",
-      "meaning_vi": "lộ ra; hiện ra",
+      "meaning_vi": "lộ ra; hiện ra; để lộ",
       "meaning_en": "",
       "pos": "Động từ",
       "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
        "front": "露",
-       "back": "lù — lộ ra; hiện ra",
+       "back": "lù — lộ ra; hiện ra; để lộ",
        "modes": [
         "hanzi_to_meaning",
         "meaning_to_hanzi",
@@ -1322,7 +1399,7 @@
        ]
       },
       "audio_key": "",
-      "source_origin": "textbook_pdf_checked",
+      "source_origin": "textbook",
       "check_needed": false,
       "pos_detail": {
        "vi": "Động từ",
@@ -1331,7 +1408,8 @@
        "schema_compatible_pos": "verb",
        "is_separable_verb": false,
        "notes": [
-        "PDF cho pinyin lù ở mục từ; trong bài dùng 露出甜甜的笑 = lộ ra nụ cười."
+        "PDF cho pinyin lù ở mục từ; trong bài dùng 露出甜甜的笑 = lộ ra nụ cười.",
+        "PDF bài này ghi 露 là lù; trong một số từ điển/biến thể dùng lòu cho 露出. Dữ liệu bài học bám pinyin trong PDF."
        ]
       }
      },
@@ -1357,7 +1435,7 @@
        ]
       },
       "audio_key": "",
-      "source_origin": "textbook_pdf_checked",
+      "source_origin": "textbook",
       "check_needed": false,
       "pos_detail": {
        "vi": "Động từ",
@@ -1390,7 +1468,7 @@
        ]
       },
       "audio_key": "",
-      "source_origin": "textbook_pdf_checked",
+      "source_origin": "textbook",
       "check_needed": false,
       "pos_detail": {
        "vi": "Động từ",
@@ -1423,12 +1501,12 @@
        ]
       },
       "audio_key": "",
-      "source_origin": "textbook_pdf_checked",
+      "source_origin": "textbook",
       "check_needed": false,
       "pos_detail": {
        "vi": "Tính từ / Phó từ",
        "cn": "形容词/副词",
-       "normalized": "adjective",
+       "normalized": "adjective_adverb",
        "schema_compatible_pos": "adjective",
        "is_separable_verb": false,
        "notes": []
@@ -1464,7 +1542,7 @@
        ]
       },
       "audio_key": "",
-      "source_origin": "textbook_supplementary_pdf_checked",
+      "source_origin": "textbook",
       "check_needed": false
      },
      {
@@ -1497,7 +1575,7 @@
        ]
       },
       "audio_key": "",
-      "source_origin": "textbook_supplementary_pdf_checked",
+      "source_origin": "textbook",
       "check_needed": false
      },
      {
@@ -1530,7 +1608,7 @@
        ]
       },
       "audio_key": "",
-      "source_origin": "textbook_supplementary_pdf_checked",
+      "source_origin": "textbook",
       "check_needed": false
      },
      {
@@ -1563,7 +1641,7 @@
        ]
       },
       "audio_key": "",
-      "source_origin": "textbook_supplementary_pdf_checked",
+      "source_origin": "textbook",
       "check_needed": false
      },
      {
@@ -1596,7 +1674,7 @@
        ]
       },
       "audio_key": "",
-      "source_origin": "textbook_supplementary_pdf_checked",
+      "source_origin": "textbook",
       "check_needed": false
      },
      {
@@ -1629,7 +1707,7 @@
        ]
       },
       "audio_key": "",
-      "source_origin": "textbook_supplementary_pdf_checked",
+      "source_origin": "textbook",
       "check_needed": false
      }
     ],
@@ -1652,7 +1730,7 @@
     "order": 4,
     "title": "注释",
     "title_vi": "Chú thích",
-    "source_origin": "textbook/generated_mixed",
+    "source_origin": "textbook_generated_mixed",
     "check_needed": false,
     "items": [
      {
@@ -1668,12 +1746,12 @@
         "zh": "我家院子里种着一棵葡萄树，几年来一直半死不活的。",
         "pinyin": "Wǒ jiā yuànzi lǐ zhòngzhe yì kē pútao shù, jǐ nián lái yìzhí bànsǐ-bùhuó de.",
         "vi": "Trong sân nhà tôi có trồng một cây nho, mấy năm nay nó cứ sống dở chết dở.",
-        "source_origin": "textbook_pdf_checked",
+        "source_origin": "textbook",
         "check_needed": false
        }
       ],
       "source_refs": [],
-      "source_origin": "textbook_pdf_checked",
+      "source_origin": "textbook_generated_mixed",
       "check_needed": false
      },
      {
@@ -1689,12 +1767,12 @@
         "zh": "她感到有些意外，她的丈夫更是一脸的警惕。",
         "pinyin": "Tā gǎndào yǒuxiē yìwài, tā de zhàngfu gèng shì yì liǎn de jǐngtì.",
         "vi": "Cô ấy thấy hơi bất ngờ, chồng cô ấy thì càng tỏ ra đầy cảnh giác.",
-        "source_origin": "textbook_pdf_checked",
+        "source_origin": "textbook",
         "check_needed": false
        }
       ],
       "source_refs": [],
-      "source_origin": "textbook_pdf_checked",
+      "source_origin": "textbook_generated_mixed",
       "check_needed": false
      },
      {
@@ -1710,12 +1788,12 @@
         "zh": "这种葡萄好甜啊！",
         "pinyin": "Zhè zhǒng pútao hǎo tián a!",
         "vi": "Loại nho này ngọt quá!",
-        "source_origin": "textbook_pdf_checked",
+        "source_origin": "textbook",
         "check_needed": false
        }
       ],
       "source_refs": [],
-      "source_origin": "textbook_pdf_checked",
+      "source_origin": "textbook_generated_mixed",
       "check_needed": false
      }
     ]
@@ -1726,7 +1804,7 @@
     "order": 5,
     "title": "词语用法 / 语法",
     "title_vi": "Cách dùng từ / Ngữ pháp",
-    "source_origin": "textbook/generated_mixed",
+    "source_origin": "textbook_generated_mixed",
     "check_needed": false,
     "items": [
      {
@@ -1737,7 +1815,7 @@
       "title_vi": "Liên từ 不料",
       "level": "HSK3+",
       "tags": ["词语用法"],
-      "source_origin": "textbook_pdf_checked",
+      "source_origin": "textbook_generated_mixed",
       "check_needed": false,
       "blocks": [
        {
@@ -1750,14 +1828,14 @@
          {
           "id": "5e614bf9-2578-4d49-87dc-107e6f3605d4",
           "zh": "我以为他不会来，不料他第一个到了。",
-          "pinyin": "Wǒ yǐwéi tā bú huì lái, búliào tā dì yí ge dào le.",
+          "pinyin": "Wǒ yǐwéi tā bú huì lái, búliào tā dì yī ge dào le.",
           "vi": "Tôi tưởng anh ấy sẽ không đến, không ngờ anh ấy lại đến đầu tiên.",
           "grammar_refs": ["f8ec59f3-898a-47b2-b536-44dfd8183393"],
-          "source_origin": "generated_pdf_checked",
+          "source_origin": "generated",
           "check_needed": false
          }
         ],
-        "source_origin": "textbook_pdf_checked",
+        "source_origin": "textbook_generated_mixed",
         "check_needed": false
        },
        {
@@ -1769,7 +1847,7 @@
         "meaning_vi": "Diễn tả kết quả xảy ra ngoài dự đoán; thiên về văn viết/kể chuyện.",
         "examples": [],
         "notes_vi": [],
-        "source_origin": "textbook_pdf_checked",
+        "source_origin": "textbook_generated_mixed",
         "check_needed": false
        }
       ]
@@ -1782,7 +1860,7 @@
       "title_vi": "Phó từ 竟然",
       "level": "HSK3+",
       "tags": ["词语用法"],
-      "source_origin": "textbook_pdf_checked",
+      "source_origin": "textbook_generated_mixed",
       "check_needed": false,
       "blocks": [
        {
@@ -1798,11 +1876,11 @@
           "pinyin": "Tā jìngrán méi lái.",
           "vi": "Không ngờ anh ấy lại không đến.",
           "grammar_refs": ["57b14753-688a-41b6-9e0d-b61dbbf574d7"],
-          "source_origin": "generated_pdf_checked",
+          "source_origin": "generated",
           "check_needed": false
          }
         ],
-        "source_origin": "textbook_pdf_checked",
+        "source_origin": "textbook_generated_mixed",
         "check_needed": false
        },
        {
@@ -1814,7 +1892,7 @@
         "meaning_vi": "Nhấn mạnh sự bất ngờ, khó tin, trái với dự đoán ban đầu.",
         "examples": [],
         "notes_vi": [],
-        "source_origin": "textbook_pdf_checked",
+        "source_origin": "textbook_generated_mixed",
         "check_needed": false
        }
       ]
@@ -1827,7 +1905,7 @@
       "title_vi": "Cấu trúc 一 + V",
       "level": "HSK3+",
       "tags": ["词语用法"],
-      "source_origin": "textbook_pdf_checked",
+      "source_origin": "textbook_generated_mixed",
       "check_needed": false,
       "blocks": [
        {
@@ -1843,11 +1921,11 @@
           "pinyin": "Yí kàn jiù dǒng.",
           "vi": "Nhìn một cái là hiểu.",
           "grammar_refs": ["fa804fff-372b-4874-8571-f54e613d7e07"],
-          "source_origin": "generated_pdf_checked",
+          "source_origin": "generated",
           "check_needed": false
          }
         ],
-        "source_origin": "textbook_pdf_checked",
+        "source_origin": "textbook_generated_mixed",
         "check_needed": false
        },
        {
@@ -1859,7 +1937,7 @@
         "meaning_vi": "Diễn tả vừa làm hành động thứ nhất thì kết quả/hành động sau xảy ra ngay.",
         "examples": [],
         "notes_vi": [],
-        "source_origin": "textbook_pdf_checked",
+        "source_origin": "textbook_generated_mixed",
         "check_needed": false
        }
       ]
@@ -1872,7 +1950,7 @@
       "title_vi": "Phó từ/liên từ 只是",
       "level": "HSK3+",
       "tags": ["词语用法"],
-      "source_origin": "textbook_pdf_checked",
+      "source_origin": "textbook_generated_mixed",
       "check_needed": false,
       "blocks": [
        {
@@ -1888,11 +1966,11 @@
           "pinyin": "Wǒ zhǐshì wènwen.",
           "vi": "Tôi chỉ hỏi chút thôi.",
           "grammar_refs": ["c6cd6c38-22fc-4546-a398-39efe02d6c17"],
-          "source_origin": "generated_pdf_checked",
+          "source_origin": "generated",
           "check_needed": false
          }
         ],
-        "source_origin": "textbook_pdf_checked",
+        "source_origin": "textbook_generated_mixed",
         "check_needed": false
        },
        {
@@ -1904,7 +1982,7 @@
         "meaning_vi": "Nghĩa là chỉ là/chỉ có điều; dùng để giới hạn ý hoặc chuyển ý nhẹ.",
         "examples": [],
         "notes_vi": [],
-        "source_origin": "textbook_pdf_checked",
+        "source_origin": "textbook_generated_mixed",
         "check_needed": false
        }
       ]
@@ -1917,7 +1995,7 @@
       "title_vi": "Phó từ 并",
       "level": "HSK3+",
       "tags": ["词语用法"],
-      "source_origin": "textbook_pdf_checked",
+      "source_origin": "textbook_generated_mixed",
       "check_needed": false,
       "blocks": [
        {
@@ -1933,11 +2011,11 @@
           "pinyin": "Tā bìng méiyǒu shēngqì.",
           "vi": "Anh ấy thực ra không giận.",
           "grammar_refs": ["c3d31639-0f40-4b2f-aa50-5dda9d443b78"],
-          "source_origin": "generated_pdf_checked",
+          "source_origin": "generated",
           "check_needed": false
          }
         ],
-        "source_origin": "textbook_pdf_checked",
+        "source_origin": "textbook_generated_mixed",
         "check_needed": false
        },
        {
@@ -1949,7 +2027,7 @@
         "meaning_vi": "Nhấn mạnh phủ định: thực ra không, không hề, không phải như người nghe nghĩ.",
         "examples": [],
         "notes_vi": [],
-        "source_origin": "textbook_pdf_checked",
+        "source_origin": "textbook_generated_mixed",
         "check_needed": false
        }
       ]
@@ -1962,7 +2040,7 @@
       "title_vi": "Cấu trúc 一……一……",
       "level": "HSK3+",
       "tags": ["词语用法"],
-      "source_origin": "textbook_pdf_checked",
+      "source_origin": "textbook_generated_mixed",
       "check_needed": false,
       "blocks": [
        {
@@ -1975,14 +2053,14 @@
          {
           "id": "dac06a15-2133-4363-b088-fba19458cb07",
           "zh": "孩子一蹦一跳地回家了。",
-          "pinyin": "Háizi yí bèng yí tiào de huí jiā le.",
+          "pinyin": "Háizi yì bèng yí tiào de huí jiā le.",
           "vi": "Đứa trẻ nhảy chân sáo về nhà.",
           "grammar_refs": ["b0c8e101-1500-4742-9064-1e102a0eb8b9"],
-          "source_origin": "generated_pdf_checked",
+          "source_origin": "generated",
           "check_needed": false
          }
         ],
-        "source_origin": "textbook_pdf_checked",
+        "source_origin": "textbook_generated_mixed",
         "check_needed": false
        },
        {
@@ -1994,7 +2072,7 @@
         "meaning_vi": "Diễn tả hai hành động/trạng thái đi kèm, tạo sắc thái miêu tả sinh động.",
         "examples": [],
         "notes_vi": [],
-        "source_origin": "textbook_pdf_checked",
+        "source_origin": "textbook_generated_mixed",
         "check_needed": false
        }
       ]
@@ -2007,7 +2085,7 @@
     "order": 6,
     "title": "练习",
     "title_vi": "Bài tập",
-    "source_origin": "textbook/generated_mixed",
+    "source_origin": "textbook_generated_mixed",
     "check_needed": false,
     "coverage_contract": {
      "expected_exercise_count_from_pdf": 10,
@@ -2089,7 +2167,7 @@
           "id": "1f523168-1c6e-4db9-abc5-198d4ccace2b",
           "text": "无求到处人情好，不饮随它酒价高。",
           "pinyin": "Wú qiú dàochù rénqíng hǎo, bù yǐn suí tā jiǔjià gāo.",
-          "vi": "Không cầu cạnh thì đi đâu tình người cũng tốt; không uống thì mặc cho giá rượu cao.",
+          "vi": "Không cầu cạnh ai thì đi đâu tình người cũng tốt; không uống rượu thì mặc giá rượu cao.",
           "check_needed": false
          }
         ]
@@ -2113,15 +2191,15 @@
        {
         "id": "029b6888-951c-4d78-8e81-67211d2f2178",
         "text": "一脸警惕",
-        "pinyin": "yì liǎn jǐngtì",
-        "vi": "vẻ mặt đầy cảnh giác",
+        "pinyin": "Yì liǎn jǐngtì",
+        "vi": "mặt đầy vẻ cảnh giác",
         "source_origin": "textbook",
         "check_needed": false
        },
        {
         "id": "f7a394ba-7ba1-4ced-9fb6-4a51e9b45e41",
         "text": "一脸汗",
-        "pinyin": "yì liǎn hàn",
+        "pinyin": "Yì liǎn hàn",
         "vi": "mặt đầy mồ hôi",
         "source_origin": "textbook",
         "check_needed": false
@@ -2129,15 +2207,15 @@
        {
         "id": "cbeae143-93f7-4e30-b03e-cafcbeecfee8",
         "text": "一身汗",
-        "pinyin": "yì shēn hàn",
-        "vi": "mồ hôi đầy người",
+        "pinyin": "Yì shēn hàn",
+        "vi": "toàn thân đầy mồ hôi",
         "source_origin": "textbook",
         "check_needed": false
        },
        {
         "id": "908385d2-03e2-42e6-8641-681ccbdb7383",
         "text": "真正的朋友",
-        "pinyin": "zhēnzhèng de péngyou",
+        "pinyin": "Zhēnzhèng de péngyou",
         "vi": "người bạn thật sự",
         "source_origin": "textbook",
         "check_needed": false
@@ -2145,7 +2223,7 @@
        {
         "id": "9e310873-3483-4086-91b4-53e6c4982438",
         "text": "真正的友谊",
-        "pinyin": "zhēnzhèng de yǒuyì",
+        "pinyin": "Zhēnzhèng de yǒuyì",
         "vi": "tình bạn thật sự",
         "source_origin": "textbook",
         "check_needed": false
@@ -2153,7 +2231,7 @@
        {
         "id": "56e43701-a5ae-4070-ac7b-31f77ed52c81",
         "text": "真正好吃",
-        "pinyin": "zhēnzhèng hǎochī",
+        "pinyin": "Zhēnzhèng hǎochī",
         "vi": "thật sự ngon",
         "source_origin": "textbook",
         "check_needed": false
@@ -2161,7 +2239,7 @@
        {
         "id": "77a9ec03-cc9f-4170-b16a-7e20444a37a7",
         "text": "有些意外",
-        "pinyin": "yǒuxiē yìwài",
+        "pinyin": "Yǒuxiē yìwài",
         "vi": "hơi bất ngờ",
         "source_origin": "textbook",
         "check_needed": false
@@ -2169,7 +2247,7 @@
        {
         "id": "d7b385ae-57da-4e8c-aee4-b67137f2423a",
         "text": "有些犹豫",
-        "pinyin": "yǒuxiē yóuyù",
+        "pinyin": "Yǒuxiē yóuyù",
         "vi": "hơi do dự",
         "source_origin": "textbook",
         "check_needed": false
@@ -2177,15 +2255,15 @@
        {
         "id": "d6835cb8-98d0-4ec4-896e-28edb097b655",
         "text": "有些尴尬",
-        "pinyin": "yǒuxiē gāngà",
-        "vi": "hơi khó xử/ngượng",
+        "pinyin": "Yǒuxiē gāngà",
+        "vi": "hơi lúng túng/khó xử",
         "source_origin": "textbook",
         "check_needed": false
        },
        {
         "id": "0783c634-e332-446a-9f6d-20a19656f7f3",
         "text": "分享收获的喜悦",
-        "pinyin": "fēnxiǎng shōuhuò de xǐyuè",
+        "pinyin": "Fēnxiǎng shōuhuò de xǐyuè",
         "vi": "chia sẻ niềm vui thu hoạch",
         "source_origin": "textbook",
         "check_needed": false
@@ -2193,7 +2271,7 @@
        {
         "id": "b0cb1abd-bc89-4210-975d-f110f5646ad2",
         "text": "分享胜利的喜悦",
-        "pinyin": "fēnxiǎng shènglì de xǐyuè",
+        "pinyin": "Fēnxiǎng shènglì de xǐyuè",
         "vi": "chia sẻ niềm vui chiến thắng",
         "source_origin": "textbook",
         "check_needed": false
@@ -2201,7 +2279,7 @@
        {
         "id": "2c8b801e-cb28-49ae-b8f1-b2c8b84f7f8b",
         "text": "分享成功的喜悦",
-        "pinyin": "fēnxiǎng chénggōng de xǐyuè",
+        "pinyin": "Fēnxiǎng chénggōng de xǐyuè",
         "vi": "chia sẻ niềm vui thành công",
         "source_origin": "textbook",
         "check_needed": false
@@ -2209,24 +2287,24 @@
        {
         "id": "7b488f75-1c3d-4f10-9bd3-8d4b9d8b9c73",
         "text": "结了许多葡萄",
-        "pinyin": "jié le xǔduō pútao",
-        "vi": "kết rất nhiều nho",
+        "pinyin": "Jié le xǔduō pútao",
+        "vi": "ra/kết rất nhiều nho",
         "source_origin": "textbook",
         "check_needed": false
        },
        {
         "id": "fc57888e-9c36-48be-9cd3-fb7aed77a414",
         "text": "结了很多苹果",
-        "pinyin": "jié le hěn duō píngguǒ",
-        "vi": "kết rất nhiều táo",
+        "pinyin": "Jié le hěn duō píngguǒ",
+        "vi": "ra/kết rất nhiều táo",
         "source_origin": "textbook",
         "check_needed": false
        },
        {
         "id": "284fe12e-9a3d-4209-8e18-cb94b6921962",
         "text": "结了很多枣",
-        "pinyin": "jié le hěn duō zǎo",
-        "vi": "kết rất nhiều táo tàu",
+        "pinyin": "Jié le hěn duō zǎo",
+        "vi": "ra/kết rất nhiều táo tàu",
         "source_origin": "textbook",
         "check_needed": false
        }
@@ -2276,8 +2354,76 @@
        ["ex03_q11", "上课时，同学们都______着黑板。", "注视"]
       ],
       "answer_verified": true,
-      "source_origin": "textbook_question_model_answer_pdf_checked",
-      "check_needed": false
+      "source_origin": "textbook_question_generated_answer",
+      "check_needed": false,
+      "answer_key": [
+       {
+        "id": "ex03_q01",
+        "answer": "半死不活",
+        "check_needed": false,
+        "answer_verified": true
+       },
+       {
+        "id": "ex03_q02",
+        "answer": "不料",
+        "check_needed": false,
+        "answer_verified": true
+       },
+       {
+        "id": "ex03_q03",
+        "answer": "竟然",
+        "check_needed": false,
+        "answer_verified": true
+       },
+       {
+        "id": "ex03_q04",
+        "answer": "许多",
+        "check_needed": false,
+        "answer_verified": true
+       },
+       {
+        "id": "ex03_q05",
+        "answer": "分享",
+        "check_needed": false,
+        "answer_verified": true
+       },
+       {
+        "id": "ex03_q06",
+        "answer": "高兴",
+        "check_needed": false,
+        "answer_verified": true
+       },
+       {
+        "id": "ex03_q07",
+        "answer": "意外",
+        "check_needed": false,
+        "answer_verified": true
+       },
+       {
+        "id": "ex03_q08",
+        "answer": "尴尬",
+        "check_needed": false,
+        "answer_verified": true
+       },
+       {
+        "id": "ex03_q09",
+        "answer": "真正",
+        "check_needed": false,
+        "answer_verified": true
+       },
+       {
+        "id": "ex03_q10",
+        "answer": "传",
+        "check_needed": false,
+        "answer_verified": true
+       },
+       {
+        "id": "ex03_q11",
+        "answer": "注视",
+        "check_needed": false,
+        "answer_verified": true
+       }
+      ]
      },
      {
       "id": "809141fb-cc55-403a-9433-35eea89c8c90",
@@ -2346,7 +2492,7 @@
         "answer_note_vi": "Mẫu đáp án đã kiểm tra ngữ pháp; câu mở nên có thể có đáp án khác tự nhiên."
        }
       ],
-      "source_origin": "textbook_question_model_answer_pdf_checked",
+      "source_origin": "textbook_question_generated_answer",
       "check_needed": false,
       "answer_verified": true
      },
@@ -2423,7 +2569,7 @@
         "answer_note_vi": "Mẫu đáp án đã kiểm tra ngữ pháp; câu mở nên có thể có đáp án khác tự nhiên."
        }
       ],
-      "source_origin": "textbook_question_model_answer_pdf_checked",
+      "source_origin": "textbook_question_generated_answer",
       "check_needed": false,
       "answer_verified": true
      },
@@ -2465,7 +2611,7 @@
         "check_needed": false
        }
       ],
-      "source_origin": "textbook_question_model_answer_pdf_checked",
+      "source_origin": "textbook_question_generated_answer",
       "check_needed": false,
       "answer_verified": true
      },
@@ -2495,8 +2641,52 @@
        ["学校里的花儿开得非常特别好看。", "学校里的花儿开得特别好看。"]
       ],
       "answer_verified": true,
-      "source_origin": "textbook_question_model_answer_pdf_checked",
-      "check_needed": false
+      "source_origin": "textbook_question_generated_answer",
+      "check_needed": false,
+      "answer_key": [
+       {
+        "wrong": "虽然我们两个不久认识，但很快成了好朋友。",
+        "answer": "虽然我们两个认识不久，但很快成了好朋友。",
+        "explanation_vi": "不久 phải đặt sau động từ 认识 để tạo “quen biết chưa lâu”.",
+        "answer_verified": true,
+        "check_needed": false
+       },
+       {
+        "wrong": "今天该上口语课，老师不料没来。",
+        "answer": "今天该上口语课，不料老师没来。",
+        "explanation_vi": "不料 là liên từ mở vế chuyển ngoặt, không đặt trực tiếp trước chủ ngữ trong vị trí phó từ như 老师不料没来.",
+        "answer_verified": true,
+        "check_needed": false
+       },
+       {
+        "wrong": "每次舞会她都不参加，没想到今天竟然她参加。",
+        "answer": "每次舞会她都不参加，没想到今天她竟然参加了。",
+        "explanation_vi": "竟然 đứng sau chủ ngữ; 参加了 báo sự việc đã xảy ra ngoài dự đoán.",
+        "answer_verified": true,
+        "check_needed": false
+       },
+       {
+        "wrong": "她是我的老师并是我的朋友。",
+        "answer": "她是我的老师，也是我的朋友。",
+        "explanation_vi": "并 thường dùng trước phủ định để nhấn mạnh; câu khẳng định song song dùng 也/又/既…又….",
+        "answer_verified": true,
+        "check_needed": false
+       },
+       {
+        "wrong": "星期六晚上我都特别睡得晚。",
+        "answer": "星期六晚上我都睡得特别晚。",
+        "explanation_vi": "特别修饰 晚 trong bổ ngữ trình độ, nên đặt sau 得.",
+        "answer_verified": true,
+        "check_needed": false
+       },
+       {
+        "wrong": "学校里的花儿开得非常特别好看。",
+        "answer": "学校里的花儿开得特别好看。",
+        "explanation_vi": "非常 và 特别 đều là phó từ mức độ, đặt chồng nhau ở đây rườm/không tự nhiên; giữ một là đủ.",
+        "answer_verified": true,
+        "check_needed": false
+       }
+      ]
      },
      {
       "id": "b9e46637-94ca-4fea-90cf-29155c015046",
@@ -2517,17 +2707,23 @@
          {
           "id": "533030ea-90d1-444f-8f68-b2da7c9f8843",
           "sentence": "我想让朋友和我分享快乐和喜悦。",
-          "sample_context_vi": "Khi có chuyện vui, thành công hoặc tin tốt và muốn chia sẻ với bạn bè."
+          "sample_context_vi": "Khi có chuyện vui, thành công hoặc tin tốt và muốn chia sẻ với bạn bè.",
+          "answer_verified": true,
+          "check_needed": false
          },
          {
           "id": "1e233739-0502-4639-967a-6dce08e3aa7a",
           "sentence": "没办法，我只好这样做。",
-          "sample_context_vi": "Khi không còn lựa chọn tốt hơn, đành phải làm vậy."
+          "sample_context_vi": "Khi không còn lựa chọn tốt hơn, đành phải làm vậy.",
+          "answer_verified": true,
+          "check_needed": false
          },
          {
           "id": "07d32c05-2b20-493e-8863-32b8c7bfd4c7",
           "sentence": "当时我真的感到非常尴尬。",
-          "sample_context_vi": "Khi rơi vào tình huống khó xử, ngượng ngùng."
+          "sample_context_vi": "Khi rơi vào tình huống khó xử, ngượng ngùng.",
+          "answer_verified": true,
+          "check_needed": false
          }
         ]
        },
@@ -2539,25 +2735,31 @@
           "id": "173cd187-b113-4f52-a24d-2816d6362c1b",
           "situation": "你的书包丢了，不久有人给你送回来了。",
           "given_words": ["没想到"],
-          "sample_answer": "没想到有人把我的书包送回来了。"
+          "sample_answer": "没想到有人把我的书包送回来了。",
+          "answer_verified": true,
+          "check_needed": false
          },
          {
           "id": "95e6d2c0-2cad-46c0-8b8c-1949809fd221",
           "situation": "你买了一件和朋友一样的衣服，但价钱却比朋友的贵得多。",
           "given_words": ["竟然"],
-          "sample_answer": "没想到我买的衣服竟然比朋友的贵得多。"
+          "sample_answer": "没想到我买的衣服竟然比朋友的贵得多。",
+          "answer_verified": true,
+          "check_needed": false
          },
          {
           "id": "2fbf72b0-004a-4598-bcdd-e7ab6b8eea1d",
           "situation": "你送给朋友一件小礼物，他问你为什么。",
           "given_words": ["只是"],
-          "sample_answer": "我只是想送你一件小礼物，没别的意思。"
+          "sample_answer": "我只是想送你一件小礼物，没别的意思。",
+          "answer_verified": true,
+          "check_needed": false
          }
         ]
        }
       ],
       "answer_verified": true,
-      "source_origin": "textbook_question_model_answer_pdf_checked",
+      "source_origin": "textbook_question_generated_answer",
       "check_needed": false
      },
      {
@@ -2667,8 +2869,8 @@
        "id": "9bd9a79e-3279-468d-9f4b-ecd1f7365e19",
        "title": "换换搭档",
        "text": "邻居一个小女孩儿①______一家体育馆工作。她说：“在羽毛球馆看人打球，发现一②______非常有趣的现象。”\n\n两对夫妻双打，当然是两位先生和各自的太太搭配。奇怪③______是，夫妻之间常常吵架，男的说女的打④______不对，女的说男的打⑤______不好，两人互相埋怨，结果闹得几乎无法再继续打下⑥______了。\n\n这时候，邻居女孩儿很有经验地走过去，⑦______他们“换换搭档”，就是让各自的太太换到对方一边去，再开始打。\n\n结果，球场⑧______充满了欢笑，双方打得高高兴兴，不愿离去。",
-       "pinyin": "Línjū yí ge xiǎo nǚháir zài yì jiā tǐyùguǎn gōngzuò. Tā shuō: “Zài yǔmáoqiú guǎn kàn rén dǎ qiú, fāxiàn le yí ge fēicháng yǒuqù de xiànxiàng.”\n\nLiǎng duì fūqī shuāngdǎ, dāngrán shì liǎng wèi xiānsheng hé gèzì de tàitai dāpèi. Qíguài de shì, fūqī zhījiān chángcháng chǎojià, nán de shuō nǚ de dǎ de bù duì, nǚ de shuō nán de dǎ de bù hǎo, liǎng rén hùxiāng mányuàn, jiéguǒ nào de jīhū wúfǎ zài jìxù dǎ xiàqu le.\n\nZhè shíhou, línjū nǚháir hěn yǒu jīngyàn de zǒu guòqu, ràng tāmen “huàn huan dādàng”, jiù shì ràng gèzì de tàitai huàn dào duìfāng yì biān qù, zài kāishǐ dǎ.\n\nJiéguǒ, qiúchǎng shang chōngmǎn le huānxiào, shuāngfāng dǎ de gāogāoxìngxìng, bú yuàn líqù.",
-       "vi": "Một cô bé hàng xóm làm việc tại một nhà thi đấu. Cô ấy nói: “Ở sân cầu lông xem người ta đánh cầu, tôi phát hiện ra một hiện tượng rất thú vị.”\n\nHai cặp vợ chồng đánh đôi, đương nhiên là hai ông chồng bắt cặp với vợ của mình. Điều kỳ lạ là giữa vợ chồng thường xuyên cãi nhau: người nam nói người nữ đánh không đúng, người nữ nói người nam đánh không tốt. Hai người trách móc lẫn nhau, kết quả làm ầm lên đến mức gần như không thể tiếp tục đánh tiếp được nữa.\n\nLúc này, cô bé hàng xóm rất có kinh nghiệm đi tới, bảo họ “đổi bạn đánh cặp”, tức là để vợ của mỗi người đổi sang bên đối phương rồi bắt đầu đánh lại.\n\nKết quả là trên sân bóng tràn đầy tiếng cười, hai bên đánh rất vui vẻ, không muốn rời đi."
+       "pinyin": "Línjū yí ge xiǎo nǚháir zài yì jiā tǐyùguǎn gōngzuò. Tā shuō: “Zài yǔmáoqiú guǎn kàn rén dǎ qiú, fāxiàn le yí ge fēicháng yǒuqù de xiànxiàng.”\n\nLiǎng duì fūqī shuāngdǎ, dāngrán shì liǎng wèi xiānsheng hé gèzì de tàitai dāpèi. Qíguài de shì, fūqī zhījiān chángcháng chǎojià, nán de shuō nǚ de dǎ de bù duì, nǚ de shuō nán de dǎ de bù hǎo, liǎng rén hùxiāng mányuàn, jiéguǒ nào de jīhū wúfǎ zài jìxù dǎ xiàqù le.\n\nZhè shíhou, línjū nǚháir hěn yǒu jīngyàn de zǒu guòqu, ràng tāmen “huànhuan dādàng”, jiù shì ràng gèzì de tàitai huàn dào duìfāng yì biān qù, zài kāishǐ dǎ.\n\nJiéguǒ, qiúchǎng shang chōngmǎn le huānxiào, shuāngfāng dǎ de gāogāoxìngxìng, bú yuàn líqù.",
+       "vi": "Một cô bé hàng xóm làm việc ở một nhà thi đấu. Cô ấy nói: “Ở sân cầu lông xem người ta đánh bóng, tôi phát hiện một hiện tượng rất thú vị.”\n\nHai cặp vợ chồng đánh đôi, đương nhiên là hai ông chồng phối hợp với vợ của mình. Điều kỳ lạ là giữa vợ chồng thường hay cãi nhau: nam thì nói nữ đánh không đúng, nữ thì nói nam đánh không hay. Hai người trách móc lẫn nhau, kết quả làm ầm lên đến mức gần như không thể tiếp tục đánh tiếp được nữa.\n\nLúc này, cô bé hàng xóm rất có kinh nghiệm đi tới, bảo họ “đổi bạn đánh đôi”, tức là để mỗi bà vợ đổi sang phía đối phương rồi bắt đầu đánh lại.\n\nKết quả, trên sân bóng tràn đầy tiếng cười; hai bên đánh rất vui vẻ, không muốn rời đi."
       },
       "answers": [
        {
@@ -2721,40 +2923,72 @@
        }
       ],
       "answer_verified": true,
-      "source_origin": "textbook_question_model_answer_pdf_checked",
+      "source_origin": "textbook_question_generated_answer",
       "check_needed": false,
       "answer_key": [
        {
         "blank": 1,
-        "answer": "在"
+        "answer": "在",
+        "pinyin": "zài",
+        "explanation_vi": "在 + địa điểm + 工作: làm việc ở đâu.",
+        "answer_verified": true,
+        "check_needed": false
        },
        {
         "blank": 2,
-        "answer": "个"
+        "answer": "个",
+        "pinyin": "ge",
+        "explanation_vi": "一个现象: lượng từ 个 cho 现象.",
+        "answer_verified": true,
+        "check_needed": false
        },
        {
         "blank": 3,
-        "answer": "的"
+        "answer": "的",
+        "pinyin": "de",
+        "explanation_vi": "奇怪的是: điều kỳ lạ là...",
+        "answer_verified": true,
+        "check_needed": false
        },
        {
         "blank": 4,
-        "answer": "得"
+        "answer": "得",
+        "pinyin": "de",
+        "explanation_vi": "打得不对: 得 dẫn bổ ngữ trình độ/kết quả đánh giá.",
+        "answer_verified": true,
+        "check_needed": false
        },
        {
         "blank": 5,
-        "answer": "得"
+        "answer": "得",
+        "pinyin": "de",
+        "explanation_vi": "打得不好: 得 dẫn bổ ngữ trình độ.",
+        "answer_verified": true,
+        "check_needed": false
        },
        {
         "blank": 6,
-        "answer": "去"
+        "answer": "去",
+        "pinyin": "qù",
+        "explanation_vi": "打下去: tiếp tục đánh tiếp.",
+        "answer_verified": true,
+        "check_needed": false
        },
        {
         "blank": 7,
-        "answer": "让"
+        "answer": "让",
+        "pinyin": "ràng",
+        "explanation_vi": "让他们“换换搭档”: bảo/để họ đổi bạn đánh đôi.",
+        "answer_verified": true,
+        "check_needed": false
        },
        {
         "blank": 8,
-        "answer": "上"
+        "answer": "上",
+        "pinyin": "shang",
+        "explanation_vi": "球场上: trên sân bóng.",
+        "answer_verified": true,
+        "check_needed": false
        }
       ]
      },
@@ -2779,57 +3013,49 @@
         "speaker": "A",
         "zh": "我问你一个问题，可以吗？",
         "pinyin": "Wǒ wèn nǐ yí ge wèntí, kěyǐ ma?",
-        "vi": "Tôi hỏi bạn một vấn đề được không?",
-        "check_needed": false
+        "vi": "Tôi hỏi bạn một vấn đề, được không?"
        },
        {
         "speaker": "B",
         "zh": "当然可以。什么问题？你说吧。",
         "pinyin": "Dāngrán kěyǐ. Shénme wèntí? Nǐ shuō ba.",
-        "vi": "Đương nhiên được. Vấn đề gì? Bạn nói đi.",
-        "check_needed": false
+        "vi": "Đương nhiên được. Vấn đề gì? Bạn nói đi."
        },
        {
         "speaker": "A",
         "zh": "我的问题是，一个人该不该和别人分享快乐和喜悦？",
         "pinyin": "Wǒ de wèntí shì, yí ge rén gāi bù gāi hé biérén fēnxiǎng kuàilè hé xǐyuè?",
-        "vi": "Vấn đề của tôi là, một người có nên chia sẻ niềm vui và hạnh phúc với người khác không?",
-        "check_needed": false
+        "vi": "Vấn đề của tôi là, một người có nên chia sẻ niềm vui và sự vui mừng với người khác hay không?"
        },
        {
         "speaker": "B",
         "zh": "当然应该。一个善良的人，在他得到快乐的时候，会自然地想到与别人分享。",
         "pinyin": "Dāngrán yīnggāi. Yí ge shànliáng de rén, zài tā dédào kuàilè de shíhou, huì zìrán de xiǎngdào yǔ biérén fēnxiǎng.",
-        "vi": "Đương nhiên nên. Một người lương thiện khi có được niềm vui sẽ tự nhiên nghĩ đến việc chia sẻ với người khác.",
-        "check_needed": false
+        "vi": "Đương nhiên là nên. Một người lương thiện, khi có được niềm vui, sẽ tự nhiên nghĩ đến việc chia sẻ với người khác."
        },
        {
         "speaker": "A",
         "zh": "那为什么这个送葡萄的人竟遇到那么多的麻烦？",
-        "pinyin": "Nà wèishénme zhège sòng pútao de rén jìng yùdào nàme duō de máfan?",
-        "vi": "Vậy tại sao người tặng nho này lại gặp nhiều phiền phức như vậy?",
-        "check_needed": false
+        "pinyin": "Nà wèishénme zhè ge sòng pútao de rén jìng yùdào nàme duō de máfan?",
+        "vi": "Vậy vì sao người tặng nho này lại gặp nhiều rắc rối như vậy?"
        },
        {
         "speaker": "B",
         "zh": "我想这个故事当然不只是说送葡萄，它表现的是人和人之间的关系。",
-        "pinyin": "Wǒ xiǎng zhège gùshi dāngrán bù zhǐshì shuō sòng pútao, tā biǎoxiàn de shì rén hé rén zhījiān de guānxi.",
-        "vi": "Tôi nghĩ câu chuyện này đương nhiên không chỉ nói chuyện tặng nho, nó thể hiện quan hệ giữa người với người.",
-        "check_needed": false
+        "pinyin": "Wǒ xiǎng zhè ge gùshi dāngrán bú zhǐ shì shuō sòng pútao, tā biǎoxiàn de shì rén hé rén zhījiān de guānxi.",
+        "vi": "Tôi nghĩ câu chuyện này đương nhiên không chỉ nói chuyện tặng nho; điều nó thể hiện là quan hệ giữa người với người."
        },
        {
         "speaker": "A",
         "zh": "人和人之间的关系为什么这么复杂？为什么善良的人总是那么容易被误解？",
         "pinyin": "Rén hé rén zhījiān de guānxi wèishénme zhème fùzá? Wèishénme shànliáng de rén zǒng shì nàme róngyì bèi wùjiě?",
-        "vi": "Vì sao quan hệ giữa người với người lại phức tạp như vậy? Vì sao người lương thiện luôn dễ bị hiểu lầm như thế?",
-        "check_needed": false
+        "vi": "Vì sao quan hệ giữa người với người lại phức tạp như vậy? Vì sao người lương thiện luôn dễ bị hiểu lầm như thế?"
        },
        {
         "speaker": "B",
         "zh": "这可能就是作者想要告诉我们的吧。",
         "pinyin": "Zhè kěnéng jiù shì zuòzhě xiǎng yào gàosu wǒmen de ba.",
-        "vi": "Đây có lẽ chính là điều tác giả muốn nói với chúng ta.",
-        "check_needed": false
+        "vi": "Đây có lẽ chính là điều tác giả muốn nói với chúng ta."
        }
       ],
       "source_origin": "textbook",
@@ -2947,8 +3173,8 @@
        "id": "9bd9a79e-3279-468d-9f4b-ecd1f7365e19",
        "title": "换换搭档",
        "text": "邻居一个小女孩儿①______一家体育馆工作。她说：“在羽毛球馆看人打球，发现一②______非常有趣的现象。”\n\n两对夫妻双打，当然是两位先生和各自的太太搭配。奇怪③______是，夫妻之间常常吵架，男的说女的打④______不对，女的说男的打⑤______不好，两人互相埋怨，结果闹得几乎无法再继续打下⑥______了。\n\n这时候，邻居女孩儿很有经验地走过去，⑦______他们“换换搭档”，就是让各自的太太换到对方一边去，再开始打。\n\n结果，球场⑧______充满了欢笑，双方打得高高兴兴，不愿离去。",
-       "pinyin": "Línjū yí ge xiǎo nǚháir zài yì jiā tǐyùguǎn gōngzuò. Tā shuō: “Zài yǔmáoqiú guǎn kàn rén dǎ qiú, fāxiàn le yí ge fēicháng yǒuqù de xiànxiàng.”\n\nLiǎng duì fūqī shuāngdǎ, dāngrán shì liǎng wèi xiānsheng hé gèzì de tàitai dāpèi. Qíguài de shì, fūqī zhījiān chángcháng chǎojià, nán de shuō nǚ de dǎ de bù duì, nǚ de shuō nán de dǎ de bù hǎo, liǎng rén hùxiāng mányuàn, jiéguǒ nào de jīhū wúfǎ zài jìxù dǎ xiàqu le.\n\nZhè shíhou, línjū nǚháir hěn yǒu jīngyàn de zǒu guòqu, ràng tāmen “huàn huan dādàng”, jiù shì ràng gèzì de tàitai huàn dào duìfāng yì biān qù, zài kāishǐ dǎ.\n\nJiéguǒ, qiúchǎng shang chōngmǎn le huānxiào, shuāngfāng dǎ de gāogāoxìngxìng, bú yuàn líqù.",
-       "vi": "Một cô bé hàng xóm làm việc tại một nhà thi đấu. Cô ấy nói: “Ở sân cầu lông xem người ta đánh cầu, tôi phát hiện ra một hiện tượng rất thú vị.”\n\nHai cặp vợ chồng đánh đôi, đương nhiên là hai ông chồng bắt cặp với vợ của mình. Điều kỳ lạ là giữa vợ chồng thường xuyên cãi nhau: người nam nói người nữ đánh không đúng, người nữ nói người nam đánh không tốt. Hai người trách móc lẫn nhau, kết quả làm ầm lên đến mức gần như không thể tiếp tục đánh tiếp được nữa.\n\nLúc này, cô bé hàng xóm rất có kinh nghiệm đi tới, bảo họ “đổi bạn đánh cặp”, tức là để vợ của mỗi người đổi sang bên đối phương rồi bắt đầu đánh lại.\n\nKết quả là trên sân bóng tràn đầy tiếng cười, hai bên đánh rất vui vẻ, không muốn rời đi."
+       "pinyin": "Línjū yí ge xiǎo nǚháir zài yì jiā tǐyùguǎn gōngzuò. Tā shuō: “Zài yǔmáoqiú guǎn kàn rén dǎ qiú, fāxiàn le yí ge fēicháng yǒuqù de xiànxiàng.”\n\nLiǎng duì fūqī shuāngdǎ, dāngrán shì liǎng wèi xiānsheng hé gèzì de tàitai dāpèi. Qíguài de shì, fūqī zhījiān chángcháng chǎojià, nán de shuō nǚ de dǎ de bù duì, nǚ de shuō nán de dǎ de bù hǎo, liǎng rén hùxiāng mányuàn, jiéguǒ nào de jīhū wúfǎ zài jìxù dǎ xiàqù le.\n\nZhè shíhou, línjū nǚháir hěn yǒu jīngyàn de zǒu guòqu, ràng tāmen “huànhuan dādàng”, jiù shì ràng gèzì de tàitai huàn dào duìfāng yì biān qù, zài kāishǐ dǎ.\n\nJiéguǒ, qiúchǎng shang chōngmǎn le huānxiào, shuāngfāng dǎ de gāogāoxìngxìng, bú yuàn líqù.",
+       "vi": "Một cô bé hàng xóm làm việc ở một nhà thi đấu. Cô ấy nói: “Ở sân cầu lông xem người ta đánh bóng, tôi phát hiện một hiện tượng rất thú vị.”\n\nHai cặp vợ chồng đánh đôi, đương nhiên là hai ông chồng phối hợp với vợ của mình. Điều kỳ lạ là giữa vợ chồng thường hay cãi nhau: nam thì nói nữ đánh không đúng, nữ thì nói nam đánh không hay. Hai người trách móc lẫn nhau, kết quả làm ầm lên đến mức gần như không thể tiếp tục đánh tiếp được nữa.\n\nLúc này, cô bé hàng xóm rất có kinh nghiệm đi tới, bảo họ “đổi bạn đánh đôi”, tức là để mỗi bà vợ đổi sang phía đối phương rồi bắt đầu đánh lại.\n\nKết quả, trên sân bóng tràn đầy tiếng cười; hai bên đánh rất vui vẻ, không muốn rời đi."
       },
       "answers": [
        {
@@ -3005,38 +3231,70 @@
       "answer_key": [
        {
         "blank": 1,
-        "answer": "在"
+        "answer": "在",
+        "pinyin": "zài",
+        "explanation_vi": "在 + địa điểm + 工作: làm việc ở đâu.",
+        "answer_verified": true,
+        "check_needed": false
        },
        {
         "blank": 2,
-        "answer": "个"
+        "answer": "个",
+        "pinyin": "ge",
+        "explanation_vi": "一个现象: lượng từ 个 cho 现象.",
+        "answer_verified": true,
+        "check_needed": false
        },
        {
         "blank": 3,
-        "answer": "的"
+        "answer": "的",
+        "pinyin": "de",
+        "explanation_vi": "奇怪的是: điều kỳ lạ là...",
+        "answer_verified": true,
+        "check_needed": false
        },
        {
         "blank": 4,
-        "answer": "得"
+        "answer": "得",
+        "pinyin": "de",
+        "explanation_vi": "打得不对: 得 dẫn bổ ngữ trình độ/kết quả đánh giá.",
+        "answer_verified": true,
+        "check_needed": false
        },
        {
         "blank": 5,
-        "answer": "得"
+        "answer": "得",
+        "pinyin": "de",
+        "explanation_vi": "打得不好: 得 dẫn bổ ngữ trình độ.",
+        "answer_verified": true,
+        "check_needed": false
        },
        {
         "blank": 6,
-        "answer": "去"
+        "answer": "去",
+        "pinyin": "qù",
+        "explanation_vi": "打下去: tiếp tục đánh tiếp.",
+        "answer_verified": true,
+        "check_needed": false
        },
        {
         "blank": 7,
-        "answer": "让"
+        "answer": "让",
+        "pinyin": "ràng",
+        "explanation_vi": "让他们“换换搭档”: bảo/để họ đổi bạn đánh đôi.",
+        "answer_verified": true,
+        "check_needed": false
        },
        {
         "blank": 8,
-        "answer": "上"
+        "answer": "上",
+        "pinyin": "shang",
+        "explanation_vi": "球场上: trên sân bóng.",
+        "answer_verified": true,
+        "check_needed": false
        }
       ],
-      "source_origin": "textbook_question_model_answer_pdf_checked"
+      "source_origin": "textbook_question_generated_answer"
      }
     ]
    },
@@ -3115,7 +3373,9 @@
      "reading_covered": true,
      "communication_covered": true,
      "character_writing_covered": true,
-     "remaining_check_needed": "Không còn mục bắt buộc cần kiểm tra trong phạm vi file hiện tại; đáp án bài tập mở là mẫu đáp án đã kiểm tra ngữ pháp, không phải đáp án duy nhất."
+     "remaining_check_needed": "Đã rà lại vòng cuối: không còn mục check_needed.",
+     "comprehension_questions_covered": true,
+     "final_content_reviewed": true
     }
    }
   ],
@@ -3207,19 +3467,6 @@
     "Hội thoại giao tiếp"
    ],
    "check_needed": false
-  },
-  "qa_report": {
-   "pdf_checked": true,
-   "text_pinyin_filled": true,
-   "exercise_answers_checked": true,
-   "vocab_pos_vietnamese": true,
-   "pos_detail_added": true,
-   "supplementary_vocab_added_to_vocab_section": true,
-   "supplementary_vocab_count": 6,
-   "main_vocab_count": 39,
-   "total_vocab_items_in_vocab_section": 45,
-   "remaining_check_needed_items": 0,
-   "notes": []
   }
  }
 }

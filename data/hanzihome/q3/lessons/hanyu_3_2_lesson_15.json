@@ -7,14 +7,7 @@
    "vi": "Sau khi bị thương",
    "en": "After getting injured"
   },
-  "tags": [
-   "hanyu_3_2",
-   "lesson_15",
-   "coverage_first",
-   "pdf_checked",
-   "pinyin_filled",
-   "pos_detail_vi_updated"
-  ],
+  "tags": ["hanyu_3_2", "lesson_15", "coverage_first", "pdf_checked"],
   "sections": [
    {
     "id": "a6c0d522-99be-4f36-881c-b9b2c6beeb85",
@@ -35,7 +28,7 @@
       "check_needed": false,
       "paragraphs": [
        {
-        "id": "bfecd9e9-864a-5092-964b-984683f30538",
+        "id": "43338a2c-2044-419e-9fdd-ed1739757a8d",
         "order": 1,
         "zh": "朋友常常向我提出这样的问题：“你这次去中国留学的体会是什么？你对那里的印象如何？”每当他们这样问我的时候，我都会毫不犹豫地回答：“这次留学给我的印象很深刻，也给我留下了很多美好的记忆。从我接触到的人来看，他们大都心地善良，待人热情，也乐于助人。”",
         "pinyin": "Péngyou chángcháng xiàng wǒ tíchū zhèyàng de wèntí: “Nǐ zhè cì qù Zhōngguó liúxué de tǐhuì shì shénme? Nǐ duì nàlǐ de yìnxiàng rúhé?” Měi dāng tāmen zhèyàng wèn wǒ de shíhou, wǒ dōu huì háobù yóuyù de huídá: “Zhè cì liúxué gěi wǒ de yìnxiàng hěn shēnkè, yě gěi wǒ liúxià le hěn duō měihǎo de jìyì. Cóng wǒ jiēchù dào de rén lái kàn, tāmen dàdōu xīndì shànliáng, dàirén rèqíng, yě lèyú zhùrén.”",
@@ -47,7 +40,7 @@
         "check_needed": false
        },
        {
-        "id": "c16f5086-f640-5f7f-8a7f-83ffccc9d1eb",
+        "id": "4a807389-3592-4cf4-973f-6589e0118fb2",
         "order": 2,
         "zh": "当然，世界上任何国家和地区的人都有好坏之分。我不敢说这里的人个个都好，但我想向大家讲一讲我的亲身经历，也许你会从中了解到他们是些什么样的人吧。",
         "pinyin": "Dāngrán, shìjiè shang rènhé guójiā hé dìqū de rén dōu yǒu hǎo huài zhī fēn. Wǒ bù gǎn shuō zhèlǐ de rén gè ge dōu hǎo, dàn wǒ xiǎng xiàng dàjiā jiǎng yi jiǎng wǒ de qīnshēn jīnglì, yěxǔ nǐ huì cóngzhōng liǎojiě dào tāmen shì xiē shénme yàng de rén ba.",
@@ -59,7 +52,7 @@
         "check_needed": false
        },
        {
-        "id": "203281ae-1069-5d8a-ad92-53a0d66ba91a",
+        "id": "5a221404-05e7-4ae2-ad9f-0c920a73dc36",
         "order": 3,
         "zh": "我这个人向来不爱运动，而且在国内时从来没骑自行车上过街，所以来中国后，每次骑车上街我都提心吊胆的。",
         "pinyin": "Wǒ zhège rén xiànglái bù ài yùndòng, érqiě zài guónèi shí cónglái méi qí zìxíngchē shàng guo jiē, suǒyǐ lái Zhōngguó hòu, měi cì qí chē shàng jiē wǒ dōu tíxīn-diàodǎn de.",
@@ -71,7 +64,7 @@
         "check_needed": false
        },
        {
-        "id": "f79a304c-f696-5743-813e-cd740dd6727c",
+        "id": "5c402bbc-a0e6-434c-a6c7-3c4f86c845fe",
         "order": 4,
         "zh": "这一次真的出事了。",
         "pinyin": "Zhè yí cì zhēn de chū shì le.",
@@ -83,7 +76,7 @@
         "check_needed": false
        },
        {
-        "id": "8fda97dd-6f03-5653-b79a-2379554c64fa",
+        "id": "babe7f0b-2b53-402f-85af-c5de9b0e676d",
         "order": 5,
         "zh": "那天，我跟朋友骑车去展览馆。回来的路上，要过一条铁路。不知怎么搞的，车轮夹在了铁道中间，一下子把我摔倒了。我还没有意识到自己出了什么事，就有人小心地把我扶起来。朋友马上拦了一辆出租车，要送我去医院。大家七手八脚地把我扶上了车。",
         "pinyin": "Nà tiān, wǒ gēn péngyou qí chē qù zhǎnlǎnguǎn. Huílai de lùshang, yào guò yì tiáo tiělù. Bùzhī zěnme gǎo de, chēlún jiā zài le tiědào zhōngjiān, yíxiàzi bǎ wǒ shuāi dǎo le. Wǒ hái méiyǒu yìshí dào zìjǐ chū le shénme shì, jiù yǒu rén xiǎoxīn de bǎ wǒ fú qǐlai. Péngyou mǎshàng lán le yí liàng chūzūchē, yào sòng wǒ qù yīyuàn. Dàjiā qī shǒu bā jiǎo de bǎ wǒ fú shàng le chē.",
@@ -95,7 +88,7 @@
         "check_needed": false
        },
        {
-        "id": "92351467-f808-539a-bae3-f585c8fbc5fe",
+        "id": "d2683a70-b897-4979-ad07-0bca2bb00b31",
         "order": 6,
         "zh": "上了车，我才感到腿疼得厉害，连碰都不敢碰了，脸上的汗珠也不住地往下淌。",
         "pinyin": "Shàng le chē, wǒ cái gǎndào tuǐ téng de lìhai, lián pèng dōu bù gǎn pèng le, liǎn shang de hànzhū yě bú zhù de wǎng xià tǎng.",
@@ -107,10 +100,10 @@
         "check_needed": false
        },
        {
-        "id": "7bc6816f-aff9-5863-9eea-50346ff566b9",
+        "id": "cde61ddf-34c9-4d25-892b-99b26df9e427",
         "order": 7,
         "zh": "司机也是个热心人，一路上不时地回头看看我们，还不停地安慰我。到了医院，他小心翼翼地把我背到急诊室。大夫马上给我检查治疗。检查以后，大夫说我小腿骨折了，需要动手术。而动手术还要家属签字。",
-        "pinyin": "Sījī yě shì gè rèxīn rén, yí lù shang bùshí de huítóu kànkan wǒmen, hái bù tíng de ānwèi wǒ. Dào le yīyuàn, tā xiǎoxīn-yìyì de bǎ wǒ bèi dào jízhěnshì. Dàifu mǎshàng gěi wǒ jiǎnchá zhìliáo. Jiǎnchá yǐhòu, dàifu shuō wǒ xiǎotuǐ gǔzhé le, xūyào dòng shǒushù. Ér dòng shǒushù hái yào jiāshǔ qiān zì.",
+        "pinyin": "Sījī yě shì gè rèxīn rén, yí lù shang bùshí de huítóu kànkan wǒmen, hái bù tíng de ānwèi wǒ. Dào le yīyuàn, tā xiǎoxīn-yìyì de bǎ wǒ bēi dào jízhěnshì. Dàifu mǎshàng gěi wǒ jiǎnchá zhìliáo. Jiǎnchá yǐhòu, dàifu shuō wǒ xiǎotuǐ gǔzhé le, xūyào dòng shǒushù. Ér dòng shǒushù hái yào jiāshǔ qiān zì.",
         "vi": "Tài xế cũng là người nhiệt tình, trên đường thỉnh thoảng quay đầu nhìn chúng tôi, còn không ngừng an ủi tôi. Đến bệnh viện, anh ấy hết sức cẩn thận cõng tôi vào phòng cấp cứu. Bác sĩ lập tức kiểm tra và điều trị cho tôi. Sau khi kiểm tra, bác sĩ nói cẳng chân tôi bị gãy xương, cần phải phẫu thuật. Mà phẫu thuật còn cần người nhà ký tên.",
         "audio_key": "",
         "vocab_refs": [],
@@ -119,7 +112,7 @@
         "check_needed": false
        },
        {
-        "id": "384f4814-1272-5888-90cf-fb85cca443e8",
+        "id": "37ac9b48-37ae-4d3e-aa1a-644f38547b84",
         "order": 8,
         "zh": "可我是留学生啊，怎么办？我朋友忙对医生说：“我是她的同学，我签字行不行啊？”医生说：“最好请你们老师来一趟。”朋友便给我们林老师打了个电话，简单说了一下儿我受伤的情况，希望林老师能来医院一趟。",
         "pinyin": "Kě wǒ shì liúxuéshēng a, zěnme bàn? Wǒ péngyou máng duì yīshēng shuō: “Wǒ shì tā de tóngxué, wǒ qiān zì xíng bù xíng a?” Yīshēng shuō: “Zuì hǎo qǐng nǐmen lǎoshī lái yí tàng.” Péngyou biàn gěi wǒmen Lín lǎoshī dǎ le ge diànhuà, jiǎndān shuō le yí xiàr wǒ shòushāng de qíngkuàng, xīwàng Lín lǎoshī néng lái yīyuàn yí tàng.",
@@ -131,7 +124,7 @@
         "check_needed": false
        },
        {
-        "id": "4cc910c5-92c5-52bc-8b91-abe9490ec27b",
+        "id": "2b9bed70-c477-49f4-8027-9bc4d7f13594",
         "order": 9,
         "zh": "接到电话，林老师就急忙打的赶来了。她跟大夫一见面，便立即在手术单上签了字。",
         "pinyin": "Jiē dào diànhuà, Lín lǎoshī jiù jímáng dǎ dī gǎn lái le. Tā gēn dàifu yí jiànmiàn, biàn lìjí zài shǒushùdān shang qiān le zì.",
@@ -143,10 +136,10 @@
         "check_needed": false
        },
        {
-        "id": "3da1d688-1809-50f2-b8fd-b0031cc5e94a",
+        "id": "35ac2478-e068-41a9-9ca0-6f305253ec3e",
         "order": 10,
         "zh": "手术做得很顺利，还给我的小腿打上了石膏。出了手术室，我见林老师还在焦急地等着我。林老师见我出来了，忙走过来，问我感觉怎么样，还疼不疼。看到老师像妈妈一样，我的眼泪一下子流了出来。忙说，可能是打了麻药，现在不疼了。老师向大夫询问了我的伤势，并向大夫表示感谢。大夫真诚地对老师说：“不用谢！你也不容易啊，我看你急得就像自己的女儿受伤一样。”",
-        "pinyin": "Shǒushù zuò de hěn shùnlì, hái gěi wǒ de xiǎotuǐ dǎ shàng le shígāo. Chū le shǒushùshì, wǒ jiàn Lín lǎoshī hái zài jiāojí de děngzhe wǒ. Lín lǎoshī jiàn wǒ chūlái le, máng zǒu guolái, wèn wǒ gǎnjué zěnmeyàng, hái téng bù téng. Kàn dào lǎoshī xiàng māma yíyàng, wǒ de yǎnlèi yíxiàzi liú le chūlái. Máng shuō, kěnéng shì dǎ le máyào, xiànzài bù téng le. Lǎoshī xiàng dàifu xúnwèn le wǒ de shāngshì, bìng xiàng dàifu biǎoshì gǎnxiè. Dàifu zhēnchéng de duì lǎoshī shuō: “Bú yòng xiè! Nǐ yě bù róngyì a, wǒ kàn nǐ jí de jiù xiàng zìjǐ de nǚ’ér shòushāng yíyàng.”",
+        "pinyin": "Shǒushù zuò de hěn shùnlì, hái gěi wǒ de xiǎotuǐ dǎ shàng le shígāo. Chū le shǒushùshì, wǒ jiàn Lín lǎoshī hái zài jiāojí de děngzhe wǒ. Lín lǎoshī jiàn wǒ chūlái le, máng zǒu guòlai, wèn wǒ gǎnjué zěnmeyàng, hái téng bù téng. Kàn dào lǎoshī xiàng māma yíyàng, wǒ de yǎnlèi yíxiàzi liú le chūlái. Máng shuō, kěnéng shì dǎ le máyào, xiànzài bù téng le. Lǎoshī xiàng dàifu xúnwèn le wǒ de shāngshì, bìng xiàng dàifu biǎoshì gǎnxiè. Dàifu zhēnchéng de duì lǎoshī shuō: “Bú yòng xiè! Nǐ yě bù róngyì a, wǒ kàn nǐ jí de jiù xiàng zìjǐ de nǚ’ér shòushāng yíyàng.”",
         "vi": "Ca phẫu thuật diễn ra rất thuận lợi, còn bó bột cho cẳng chân tôi. Ra khỏi phòng phẫu thuật, tôi thấy cô Lâm vẫn đang sốt ruột đợi tôi. Thấy tôi ra, cô vội đi tới hỏi tôi cảm thấy thế nào, còn đau không. Nhìn thấy cô giống như mẹ, nước mắt tôi bỗng trào ra. Tôi vội nói, có lẽ do thuốc tê nên bây giờ không đau. Cô hỏi bác sĩ về tình trạng vết thương của tôi, đồng thời cảm ơn bác sĩ. Bác sĩ chân thành nói với cô: “Không cần cảm ơn! Cô cũng không dễ dàng gì, tôi thấy cô sốt ruột như con gái ruột của mình bị thương vậy.”",
         "audio_key": "",
         "vocab_refs": [],
@@ -155,7 +148,7 @@
         "check_needed": false
        },
        {
-        "id": "9ebd9318-f308-5fd1-a706-9e9b514bbb7a",
+        "id": "cc6c9b34-ea2c-405a-aa42-b5ec0853d4c0",
         "order": 11,
         "zh": "老师和朋友把我送回学校，同学们听说后都来看我。林老师见我躺在床上不能动，就非要我住到她家去不可。起初我怕给老师添麻烦，不肯去。但老师说：“千万别客气，你就把老师家当作自己的家吧。”由于老师再三劝说，我只好答应了。",
         "pinyin": "Lǎoshī hé péngyou bǎ wǒ sòng huí xuéxiào, tóngxuémen tīngshuō hòu dōu lái kàn wǒ. Lín lǎoshī jiàn wǒ tǎng zài chuáng shang bù néng dòng, jiù fēi yào wǒ zhù dào tā jiā qù bùkě. Qǐchū wǒ pà gěi lǎoshī tiān máfan, bù kěn qù. Dàn lǎoshī shuō: “Qiānwàn bié kèqi, nǐ jiù bǎ lǎoshī jiā dàngzuò zìjǐ de jiā ba.” Yóuyú lǎoshī zàisān quànshuō, wǒ zhǐhǎo dāying le.",
@@ -167,7 +160,7 @@
         "check_needed": false
        },
        {
-        "id": "caf12905-fc7f-506b-a548-376a19be398f",
+        "id": "4aad4f45-1496-48b1-a678-14c38023b32d",
         "order": 12,
         "zh": "住在老师家里，她像对自己的女儿一样精心照顾我，送吃送喝，直到我伤好能自由活动。",
         "pinyin": "Zhù zài lǎoshī jiā li, tā xiàng duì zìjǐ de nǚ’ér yíyàng jīngxīn zhàogù wǒ, sòng chī sòng hē, zhídào wǒ shāng hǎo néng zìyóu huódòng.",
@@ -179,7 +172,7 @@
         "check_needed": false
        },
        {
-        "id": "a81e10f3-d939-5d5a-823b-7bd97fb6938d",
+        "id": "bedf8b9f-d890-4b23-bf82-75e03d656a7d",
         "order": 13,
         "zh": "每当回忆起这段往事，我都由衷地感谢老师，感谢那些叫不出姓名的人。他们乐于助人的精神使我难忘。",
         "pinyin": "Měi dāng huíyì qǐ zhè duàn wǎngshì, wǒ dōu yóuzhōng de gǎnxiè lǎoshī, gǎnxiè nàxiē jiào bù chū xìngmíng de rén. Tāmen lèyú zhùrén de jīngshén shǐ wǒ nánwàng.",
@@ -192,78 +185,7 @@
        }
       ],
       "lines": [],
-      "comprehension_questions": [
-       {
-        "id": "7bc33755-5a0a-5c30-85a6-db76b5373394",
-        "order": 1,
-        "zh": "“我”对留学的地方印象怎么样？",
-        "pinyin": "",
-        "vi": "",
-        "answer": "",
-        "source_origin": "textbook",
-        "check_needed": false
-       },
-       {
-        "id": "c8ecb471-cb95-5e61-b00f-9c264e3ddf8c",
-        "order": 2,
-        "zh": "“我”喜欢不喜欢运动？在国内“我”常骑车上街吗？这次“我”骑车上街时出了什么事？",
-        "pinyin": "",
-        "vi": "",
-        "answer": "",
-        "source_origin": "textbook",
-        "check_needed": false
-       },
-       {
-        "id": "8f404fdf-2b83-5d28-9917-940c457e96bb",
-        "order": 3,
-        "zh": "“我”被送到医院后遇到了什么问题？是怎么解决的？",
-        "pinyin": "",
-        "vi": "",
-        "answer": "",
-        "source_origin": "textbook",
-        "check_needed": false
-       },
-       {
-        "id": "d59f0a0a-1fac-5bdb-9b6c-ab908a19a680",
-        "order": 4,
-        "zh": "从医院出来时“我”的心情怎么样？",
-        "pinyin": "",
-        "vi": "",
-        "answer": "",
-        "source_origin": "textbook",
-        "check_needed": false
-       },
-       {
-        "id": "09d2bfe0-2508-597a-af43-3776112ddf9e",
-        "order": 5,
-        "zh": "林老师为什么要“我”住在自己家里？",
-        "pinyin": "",
-        "vi": "",
-        "answer": "",
-        "source_origin": "textbook",
-        "check_needed": false
-       },
-       {
-        "id": "21dc38cc-b4d5-5553-aeb0-1964dbdc5513",
-        "order": 6,
-        "zh": "林老师怎么照顾“我”？",
-        "pinyin": "",
-        "vi": "",
-        "answer": "",
-        "source_origin": "textbook",
-        "check_needed": false
-       },
-       {
-        "id": "b50f7cb4-3045-5502-b32e-34221f8eeb5c",
-        "order": 7,
-        "zh": "说出或写出你来中国后遇到的一件事。",
-        "pinyin": "",
-        "vi": "",
-        "answer": "",
-        "source_origin": "textbook",
-        "check_needed": false
-       }
-      ]
+      "comprehension_questions": []
      }
     ]
    },
@@ -277,7 +199,7 @@
     "check_needed": false,
     "items": [
      {
-      "id": "9e1274d9-2620-5263-a0d6-e23cd8eeb209",
+      "id": "68c05a12-9d8e-45d9-a413-786bcf2f780a",
       "type": "vocabulary_item",
       "order": 1,
       "hanzi": "印象",
@@ -285,18 +207,7 @@
       "meaning_vi": "ấn tượng",
       "meaning_en": "",
       "pos": "Danh từ",
-      "pos_detail": {
-       "vi": "Danh từ",
-       "cn": "名词",
-       "normalized": "noun",
-       "schema_compatible_pos": "noun",
-       "is_separable_verb": false,
-       "separable_type": "",
-       "structure_vi": "",
-       "usage_note_vi": "",
-       "notes": []
-      },
-      "tags": ["main_vocab", "pdf_vocab"],
+      "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
        "front": "印象",
@@ -313,7 +224,7 @@
       "check_needed": false
      },
      {
-      "id": "dd69b5d1-d002-5b30-abc6-2c2eb4c32c27",
+      "id": "8c18cf3c-e9dc-42e1-8faf-eb26799cabab",
       "type": "vocabulary_item",
       "order": 2,
       "hanzi": "如何",
@@ -321,18 +232,7 @@
       "meaning_vi": "như thế nào; ra sao",
       "meaning_en": "",
       "pos": "Đại từ",
-      "pos_detail": {
-       "vi": "Đại từ",
-       "cn": "代词",
-       "normalized": "pronoun",
-       "schema_compatible_pos": "pronoun",
-       "is_separable_verb": false,
-       "separable_type": "",
-       "structure_vi": "",
-       "usage_note_vi": "",
-       "notes": []
-      },
-      "tags": ["main_vocab", "pdf_vocab"],
+      "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
        "front": "如何",
@@ -349,7 +249,7 @@
       "check_needed": false
      },
      {
-      "id": "5a83b3d3-3708-5016-9108-56822d7b3205",
+      "id": "1fbd69b7-603a-44ea-8d57-10cd4def9ced",
       "type": "vocabulary_item",
       "order": 3,
       "hanzi": "毫不",
@@ -357,18 +257,7 @@
       "meaning_vi": "hoàn toàn không; không hề",
       "meaning_en": "",
       "pos": "Phó từ",
-      "pos_detail": {
-       "vi": "Phó từ",
-       "cn": "副词",
-       "normalized": "adverb",
-       "schema_compatible_pos": "adverb",
-       "is_separable_verb": false,
-       "separable_type": "",
-       "structure_vi": "",
-       "usage_note_vi": "",
-       "notes": []
-      },
-      "tags": ["main_vocab", "pdf_vocab"],
+      "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
        "front": "毫不",
@@ -385,7 +274,7 @@
       "check_needed": false
      },
      {
-      "id": "3b6f27e7-d4c9-5578-8cb7-3d1fce51e94a",
+      "id": "3dc505f1-bc0e-4a96-b448-17fed89fdc60",
       "type": "vocabulary_item",
       "order": 4,
       "hanzi": "深刻",
@@ -393,18 +282,7 @@
       "meaning_vi": "sâu sắc",
       "meaning_en": "",
       "pos": "Tính từ",
-      "pos_detail": {
-       "vi": "Tính từ",
-       "cn": "形容词",
-       "normalized": "adjective",
-       "schema_compatible_pos": "adjective",
-       "is_separable_verb": false,
-       "separable_type": "",
-       "structure_vi": "",
-       "usage_note_vi": "",
-       "notes": []
-      },
-      "tags": ["main_vocab", "pdf_vocab"],
+      "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
        "front": "深刻",
@@ -421,7 +299,7 @@
       "check_needed": false
      },
      {
-      "id": "f18a4b70-9521-591c-bf75-f7a3ffbe431e",
+      "id": "188412d4-4c23-4d60-b7b2-21f3490199e7",
       "type": "vocabulary_item",
       "order": 5,
       "hanzi": "记忆",
@@ -429,18 +307,7 @@
       "meaning_vi": "ký ức; trí nhớ; ghi nhớ",
       "meaning_en": "",
       "pos": "Danh từ / Động từ",
-      "pos_detail": {
-       "vi": "Danh từ / Động từ",
-       "cn": "名词 / 动词",
-       "normalized": "noun_verb",
-       "schema_compatible_pos": "verb_noun",
-       "is_separable_verb": false,
-       "separable_type": "",
-       "structure_vi": "",
-       "usage_note_vi": "",
-       "notes": []
-      },
-      "tags": ["main_vocab", "pdf_vocab"],
+      "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
        "front": "记忆",
@@ -457,7 +324,7 @@
       "check_needed": false
      },
      {
-      "id": "7ca2cb10-98a5-56c0-baf1-e8f6f730ee6f",
+      "id": "5ea44727-d97c-467b-b1b8-babd195df50d",
       "type": "vocabulary_item",
       "order": 6,
       "hanzi": "接触",
@@ -465,18 +332,7 @@
       "meaning_vi": "tiếp xúc",
       "meaning_en": "",
       "pos": "Động từ",
-      "pos_detail": {
-       "vi": "Động từ",
-       "cn": "动词",
-       "normalized": "verb",
-       "schema_compatible_pos": "verb",
-       "is_separable_verb": false,
-       "separable_type": "",
-       "structure_vi": "",
-       "usage_note_vi": "",
-       "notes": []
-      },
-      "tags": ["main_vocab", "pdf_vocab"],
+      "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
        "front": "接触",
@@ -493,7 +349,7 @@
       "check_needed": false
      },
      {
-      "id": "631677d9-7676-55ac-b98c-c18bc7bcc2f6",
+      "id": "54613016-834a-4fc3-9912-2357a6d27058",
       "type": "vocabulary_item",
       "order": 7,
       "hanzi": "心地",
@@ -501,18 +357,7 @@
       "meaning_vi": "tấm lòng; bản tính trong lòng",
       "meaning_en": "",
       "pos": "Danh từ",
-      "pos_detail": {
-       "vi": "Danh từ",
-       "cn": "名词",
-       "normalized": "noun",
-       "schema_compatible_pos": "noun",
-       "is_separable_verb": false,
-       "separable_type": "",
-       "structure_vi": "",
-       "usage_note_vi": "",
-       "notes": []
-      },
-      "tags": ["main_vocab", "pdf_vocab"],
+      "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
        "front": "心地",
@@ -529,7 +374,7 @@
       "check_needed": false
      },
      {
-      "id": "d6cf8757-b5f1-572b-a967-1807137b6916",
+      "id": "0da97406-c3ac-4fcb-a51c-398a59c3fbae",
       "type": "vocabulary_item",
       "order": 8,
       "hanzi": "待",
@@ -537,18 +382,7 @@
       "meaning_vi": "đối đãi; đối xử",
       "meaning_en": "",
       "pos": "Động từ",
-      "pos_detail": {
-       "vi": "Động từ",
-       "cn": "动词",
-       "normalized": "verb",
-       "schema_compatible_pos": "verb",
-       "is_separable_verb": false,
-       "separable_type": "",
-       "structure_vi": "",
-       "usage_note_vi": "",
-       "notes": []
-      },
-      "tags": ["main_vocab", "pdf_vocab"],
+      "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
        "front": "待",
@@ -565,7 +399,7 @@
       "check_needed": false
      },
      {
-      "id": "5bd8f5e1-70db-5b6d-af41-71bbd2d2c92e",
+      "id": "54b36889-82be-485b-8342-fb8aab572065",
       "type": "vocabulary_item",
       "order": 9,
       "hanzi": "乐于助人",
@@ -573,18 +407,7 @@
       "meaning_vi": "sẵn lòng giúp đỡ người khác",
       "meaning_en": "",
       "pos": "Cụm tính từ",
-      "pos_detail": {
-       "vi": "Cụm tính từ",
-       "cn": "形容词性短语",
-       "normalized": "adjective_phrase",
-       "schema_compatible_pos": "adjective",
-       "is_separable_verb": false,
-       "separable_type": "",
-       "structure_vi": "",
-       "usage_note_vi": "",
-       "notes": []
-      },
-      "tags": ["main_vocab", "pdf_vocab"],
+      "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
        "front": "乐于助人",
@@ -601,7 +424,7 @@
       "check_needed": false
      },
      {
-      "id": "8a62ff18-8e9b-542b-a916-366f1f75941f",
+      "id": "1354b1a3-93cc-4505-8d7f-c5550a1d6ae9",
       "type": "vocabulary_item",
       "order": 10,
       "hanzi": "分",
@@ -609,18 +432,7 @@
       "meaning_vi": "sự phân biệt; chia; phần/điểm tùy ngữ cảnh",
       "meaning_en": "",
       "pos": "Danh từ / Động từ",
-      "pos_detail": {
-       "vi": "Danh từ / Động từ",
-       "cn": "名词 / 动词",
-       "normalized": "noun_verb",
-       "schema_compatible_pos": "verb_noun",
-       "is_separable_verb": false,
-       "separable_type": "",
-       "structure_vi": "",
-       "usage_note_vi": "",
-       "notes": []
-      },
-      "tags": ["main_vocab", "pdf_vocab"],
+      "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
        "front": "分",
@@ -637,7 +449,7 @@
       "check_needed": false
      },
      {
-      "id": "e0486714-2f06-53f0-8dee-575742e46fe8",
+      "id": "f0684cb3-4577-4e6c-9f22-7d97c89692b3",
       "type": "vocabulary_item",
       "order": 11,
       "hanzi": "亲身",
@@ -645,18 +457,7 @@
       "meaning_vi": "tự mình; đích thân; trực tiếp",
       "meaning_en": "",
       "pos": "Tính từ / phó từ",
-      "pos_detail": {
-       "vi": "Tính từ / Phó từ",
-       "cn": "形容词 / 副词",
-       "normalized": "adjective_adverb",
-       "schema_compatible_pos": "adverb",
-       "is_separable_verb": false,
-       "separable_type": "",
-       "structure_vi": "",
-       "usage_note_vi": "",
-       "notes": []
-      },
-      "tags": ["main_vocab", "pdf_vocab"],
+      "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
        "front": "亲身",
@@ -673,7 +474,7 @@
       "check_needed": false
      },
      {
-      "id": "d901dc05-a27b-5555-a684-ae91d557af0c",
+      "id": "d5b362a7-c8f6-4f25-b2b5-0f1749c8afbb",
       "type": "vocabulary_item",
       "order": 12,
       "hanzi": "经历",
@@ -681,18 +482,7 @@
       "meaning_vi": "trải nghiệm; trải qua",
       "meaning_en": "",
       "pos": "Danh từ / Động từ",
-      "pos_detail": {
-       "vi": "Danh từ / Động từ",
-       "cn": "名词 / 动词",
-       "normalized": "noun_verb",
-       "schema_compatible_pos": "verb_noun",
-       "is_separable_verb": false,
-       "separable_type": "",
-       "structure_vi": "",
-       "usage_note_vi": "",
-       "notes": []
-      },
-      "tags": ["main_vocab", "pdf_vocab"],
+      "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
        "front": "经历",
@@ -709,7 +499,7 @@
       "check_needed": false
      },
      {
-      "id": "d8e83cda-25c7-5072-8a88-a869135f1604",
+      "id": "7eccd5e8-dac0-4f36-be2e-abcc0a2bdfcd",
       "type": "vocabulary_item",
       "order": 13,
       "hanzi": "从中",
@@ -717,18 +507,7 @@
       "meaning_vi": "từ trong đó; qua đó",
       "meaning_en": "",
       "pos": "Phó từ",
-      "pos_detail": {
-       "vi": "Phó từ",
-       "cn": "副词",
-       "normalized": "adverb",
-       "schema_compatible_pos": "adverb",
-       "is_separable_verb": false,
-       "separable_type": "",
-       "structure_vi": "",
-       "usage_note_vi": "",
-       "notes": []
-      },
-      "tags": ["main_vocab", "pdf_vocab"],
+      "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
        "front": "从中",
@@ -745,7 +524,7 @@
       "check_needed": false
      },
      {
-      "id": "10dc782a-fc75-5dc9-8072-36932466061b",
+      "id": "91fa9f81-e5ef-4c4a-b29c-c4b6daa02196",
       "type": "vocabulary_item",
       "order": 14,
       "hanzi": "向来",
@@ -753,18 +532,7 @@
       "meaning_vi": "từ trước đến nay; xưa nay vẫn",
       "meaning_en": "",
       "pos": "Phó từ",
-      "pos_detail": {
-       "vi": "Phó từ",
-       "cn": "副词",
-       "normalized": "adverb",
-       "schema_compatible_pos": "adverb",
-       "is_separable_verb": false,
-       "separable_type": "",
-       "structure_vi": "",
-       "usage_note_vi": "",
-       "notes": []
-      },
-      "tags": ["main_vocab", "pdf_vocab"],
+      "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
        "front": "向来",
@@ -781,7 +549,7 @@
       "check_needed": false
      },
      {
-      "id": "c7a8315e-e5c4-5429-880b-e4de823729f9",
+      "id": "8a5b1d09-23a6-4182-96e6-9bf4d761a1e1",
       "type": "vocabulary_item",
       "order": 15,
       "hanzi": "提心吊胆",
@@ -789,18 +557,7 @@
       "meaning_vi": "lo ngay ngáy; thấp thỏm lo sợ",
       "meaning_en": "",
       "pos": "Thành ngữ",
-      "pos_detail": {
-       "vi": "Thành ngữ",
-       "cn": "成语",
-       "normalized": "idiom",
-       "schema_compatible_pos": "phrase",
-       "is_separable_verb": false,
-       "separable_type": "",
-       "structure_vi": "",
-       "usage_note_vi": "",
-       "notes": []
-      },
-      "tags": ["main_vocab", "pdf_vocab"],
+      "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
        "front": "提心吊胆",
@@ -817,7 +574,7 @@
       "check_needed": false
      },
      {
-      "id": "a199dd7e-4a9a-50ca-bec7-a4e97d5015e3",
+      "id": "be7a835d-ff8f-4a86-9fd8-27c5f1093f0c",
       "type": "vocabulary_item",
       "order": 16,
       "hanzi": "车轮",
@@ -825,18 +582,7 @@
       "meaning_vi": "bánh xe",
       "meaning_en": "",
       "pos": "Danh từ",
-      "pos_detail": {
-       "vi": "Danh từ",
-       "cn": "名词",
-       "normalized": "noun",
-       "schema_compatible_pos": "noun",
-       "is_separable_verb": false,
-       "separable_type": "",
-       "structure_vi": "",
-       "usage_note_vi": "",
-       "notes": []
-      },
-      "tags": ["main_vocab", "pdf_vocab"],
+      "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
        "front": "车轮",
@@ -853,7 +599,7 @@
       "check_needed": false
      },
      {
-      "id": "c3b75f6a-b641-53f2-99a4-9145dd957a95",
+      "id": "7a89dc80-d79d-4c2f-988c-d0f54e240d19",
       "type": "vocabulary_item",
       "order": 17,
       "hanzi": "夹",
@@ -861,18 +607,7 @@
       "meaning_vi": "kẹp; mắc kẹt",
       "meaning_en": "",
       "pos": "Động từ",
-      "pos_detail": {
-       "vi": "Động từ",
-       "cn": "动词",
-       "normalized": "verb",
-       "schema_compatible_pos": "verb",
-       "is_separable_verb": false,
-       "separable_type": "",
-       "structure_vi": "",
-       "usage_note_vi": "",
-       "notes": []
-      },
-      "tags": ["main_vocab", "pdf_vocab"],
+      "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
        "front": "夹",
@@ -889,7 +624,7 @@
       "check_needed": false
      },
      {
-      "id": "df0d7f67-83a1-5fae-807c-3bd516b9fac2",
+      "id": "ff3e1818-66a9-4532-880b-02c9cacb0e5b",
       "type": "vocabulary_item",
       "order": 18,
       "hanzi": "铁道",
@@ -897,18 +632,7 @@
       "meaning_vi": "đường ray; đường sắt",
       "meaning_en": "",
       "pos": "Danh từ",
-      "pos_detail": {
-       "vi": "Danh từ",
-       "cn": "名词",
-       "normalized": "noun",
-       "schema_compatible_pos": "noun",
-       "is_separable_verb": false,
-       "separable_type": "",
-       "structure_vi": "",
-       "usage_note_vi": "",
-       "notes": []
-      },
-      "tags": ["main_vocab", "pdf_vocab"],
+      "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
        "front": "铁道",
@@ -925,7 +649,7 @@
       "check_needed": false
      },
      {
-      "id": "79308c04-47b0-50d8-bcb9-b218721520af",
+      "id": "0125bdae-fe4e-48fb-8264-145e95c75933",
       "type": "vocabulary_item",
       "order": 19,
       "hanzi": "意识",
@@ -933,18 +657,7 @@
       "meaning_vi": "ý thức; nhận ra",
       "meaning_en": "",
       "pos": "Danh từ / Động từ",
-      "pos_detail": {
-       "vi": "Danh từ / Động từ",
-       "cn": "名词 / 动词",
-       "normalized": "noun_verb",
-       "schema_compatible_pos": "verb_noun",
-       "is_separable_verb": false,
-       "separable_type": "",
-       "structure_vi": "",
-       "usage_note_vi": "",
-       "notes": []
-      },
-      "tags": ["main_vocab", "pdf_vocab"],
+      "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
        "front": "意识",
@@ -961,7 +674,7 @@
       "check_needed": false
      },
      {
-      "id": "cd433b2d-8d8a-5374-8f66-f50607671d37",
+      "id": "689eb64b-5d4f-469f-9afa-74017d399614",
       "type": "vocabulary_item",
       "order": 20,
       "hanzi": "拦",
@@ -969,18 +682,7 @@
       "meaning_vi": "chặn; cản; ngăn lại",
       "meaning_en": "",
       "pos": "Động từ",
-      "pos_detail": {
-       "vi": "Động từ",
-       "cn": "动词",
-       "normalized": "verb",
-       "schema_compatible_pos": "verb",
-       "is_separable_verb": false,
-       "separable_type": "",
-       "structure_vi": "",
-       "usage_note_vi": "",
-       "notes": []
-      },
-      "tags": ["main_vocab", "pdf_vocab"],
+      "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
        "front": "拦",
@@ -997,7 +699,7 @@
       "check_needed": false
      },
      {
-      "id": "f42ff2cb-39eb-55d0-9e9b-8a577ecef7b5",
+      "id": "d45d5488-9293-41ae-9deb-1e5b51cee446",
       "type": "vocabulary_item",
       "order": 21,
       "hanzi": "七手八脚",
@@ -1005,18 +707,7 @@
       "meaning_vi": "nhiều người cùng xúm vào làm; tay chân rối rít",
       "meaning_en": "",
       "pos": "Thành ngữ",
-      "pos_detail": {
-       "vi": "Thành ngữ",
-       "cn": "成语",
-       "normalized": "idiom",
-       "schema_compatible_pos": "phrase",
-       "is_separable_verb": false,
-       "separable_type": "",
-       "structure_vi": "",
-       "usage_note_vi": "",
-       "notes": []
-      },
-      "tags": ["main_vocab", "pdf_vocab"],
+      "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
        "front": "七手八脚",
@@ -1033,7 +724,7 @@
       "check_needed": false
      },
      {
-      "id": "765eb9b5-e8b8-5c83-8811-7d9b6520eddb",
+      "id": "c99a633b-27a2-429b-a139-44113a84c189",
       "type": "vocabulary_item",
       "order": 22,
       "hanzi": "汗珠",
@@ -1041,18 +732,7 @@
       "meaning_vi": "giọt mồ hôi",
       "meaning_en": "",
       "pos": "Danh từ",
-      "pos_detail": {
-       "vi": "Danh từ",
-       "cn": "名词",
-       "normalized": "noun",
-       "schema_compatible_pos": "noun",
-       "is_separable_verb": false,
-       "separable_type": "",
-       "structure_vi": "",
-       "usage_note_vi": "",
-       "notes": []
-      },
-      "tags": ["main_vocab", "pdf_vocab"],
+      "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
        "front": "汗珠",
@@ -1069,7 +749,7 @@
       "check_needed": false
      },
      {
-      "id": "14d1aa55-2e83-58ba-8cd6-c444f9b8eac4",
+      "id": "79358c6f-3427-4c28-98f3-7ef98c7033c3",
       "type": "vocabulary_item",
       "order": 23,
       "hanzi": "淌",
@@ -1077,18 +757,7 @@
       "meaning_vi": "chảy xuống; chảy ra",
       "meaning_en": "",
       "pos": "Động từ",
-      "pos_detail": {
-       "vi": "Động từ",
-       "cn": "动词",
-       "normalized": "verb",
-       "schema_compatible_pos": "verb",
-       "is_separable_verb": false,
-       "separable_type": "",
-       "structure_vi": "",
-       "usage_note_vi": "",
-       "notes": []
-      },
-      "tags": ["main_vocab", "pdf_vocab"],
+      "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
        "front": "淌",
@@ -1105,7 +774,7 @@
       "check_needed": false
      },
      {
-      "id": "5fa8d438-104b-544d-80b7-bd86899b10d4",
+      "id": "dc0f8e06-a359-4907-a8d8-fc9b02260590",
       "type": "vocabulary_item",
       "order": 24,
       "hanzi": "热心",
@@ -1113,18 +782,7 @@
       "meaning_vi": "nhiệt tình; tốt bụng",
       "meaning_en": "",
       "pos": "Tính từ",
-      "pos_detail": {
-       "vi": "Tính từ",
-       "cn": "形容词",
-       "normalized": "adjective",
-       "schema_compatible_pos": "adjective",
-       "is_separable_verb": false,
-       "separable_type": "",
-       "structure_vi": "",
-       "usage_note_vi": "",
-       "notes": []
-      },
-      "tags": ["main_vocab", "pdf_vocab"],
+      "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
        "front": "热心",
@@ -1141,7 +799,7 @@
       "check_needed": false
      },
      {
-      "id": "9d02b14b-6747-5091-823f-7b4fcc5a268e",
+      "id": "c43cedbf-7024-4ec1-922f-e75119114baf",
       "type": "vocabulary_item",
       "order": 25,
       "hanzi": "不时",
@@ -1149,18 +807,7 @@
       "meaning_vi": "thỉnh thoảng; chốc chốc lại",
       "meaning_en": "",
       "pos": "Phó từ",
-      "pos_detail": {
-       "vi": "Phó từ",
-       "cn": "副词",
-       "normalized": "adverb",
-       "schema_compatible_pos": "adverb",
-       "is_separable_verb": false,
-       "separable_type": "",
-       "structure_vi": "",
-       "usage_note_vi": "",
-       "notes": []
-      },
-      "tags": ["main_vocab", "pdf_vocab"],
+      "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
        "front": "不时",
@@ -1177,7 +824,7 @@
       "check_needed": false
      },
      {
-      "id": "9bed900d-9419-50f9-91d4-77bdd0626d7a",
+      "id": "d9991c79-3454-4247-bf18-f14f43b4a24a",
       "type": "vocabulary_item",
       "order": 26,
       "hanzi": "小心翼翼",
@@ -1185,18 +832,7 @@
       "meaning_vi": "hết sức cẩn thận; cẩn thận từng li từng tí",
       "meaning_en": "",
       "pos": "Thành ngữ",
-      "pos_detail": {
-       "vi": "Thành ngữ",
-       "cn": "成语",
-       "normalized": "idiom",
-       "schema_compatible_pos": "phrase",
-       "is_separable_verb": false,
-       "separable_type": "",
-       "structure_vi": "",
-       "usage_note_vi": "",
-       "notes": []
-      },
-      "tags": ["main_vocab", "pdf_vocab"],
+      "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
        "front": "小心翼翼",
@@ -1213,7 +849,7 @@
       "check_needed": false
      },
      {
-      "id": "941013f8-cd11-5de4-8163-67582996c407",
+      "id": "55cd807c-eec7-412d-99db-f4e6508b170f",
       "type": "vocabulary_item",
       "order": 27,
       "hanzi": "急诊",
@@ -1221,18 +857,7 @@
       "meaning_vi": "cấp cứu; khám/chữa khẩn cấp",
       "meaning_en": "",
       "pos": "Danh từ / Động từ",
-      "pos_detail": {
-       "vi": "Danh từ / Động từ",
-       "cn": "名词 / 动词",
-       "normalized": "noun_verb",
-       "schema_compatible_pos": "verb_noun",
-       "is_separable_verb": false,
-       "separable_type": "",
-       "structure_vi": "",
-       "usage_note_vi": "",
-       "notes": []
-      },
-      "tags": ["main_vocab", "pdf_vocab"],
+      "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
        "front": "急诊",
@@ -1249,7 +874,7 @@
       "check_needed": false
      },
      {
-      "id": "a8dc7bb1-8dea-5b0f-9520-176a9ea9476c",
+      "id": "085e60d5-dd1c-4585-ac6b-0f1db0ded936",
       "type": "vocabulary_item",
       "order": 28,
       "hanzi": "治疗",
@@ -1257,18 +882,7 @@
       "meaning_vi": "điều trị; chữa trị",
       "meaning_en": "",
       "pos": "Động từ",
-      "pos_detail": {
-       "vi": "Động từ",
-       "cn": "动词",
-       "normalized": "verb",
-       "schema_compatible_pos": "verb",
-       "is_separable_verb": false,
-       "separable_type": "",
-       "structure_vi": "",
-       "usage_note_vi": "",
-       "notes": []
-      },
-      "tags": ["main_vocab", "pdf_vocab"],
+      "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
        "front": "治疗",
@@ -1285,7 +899,7 @@
       "check_needed": false
      },
      {
-      "id": "c9094f6b-9e10-5ec1-94fc-4876fa1acdfa",
+      "id": "ba7ff0f9-b633-4516-ab3d-22b96046a1cf",
       "type": "vocabulary_item",
       "order": 29,
       "hanzi": "骨折",
@@ -1293,18 +907,7 @@
       "meaning_vi": "gãy xương",
       "meaning_en": "",
       "pos": "Động từ",
-      "pos_detail": {
-       "vi": "Động từ",
-       "cn": "动词",
-       "normalized": "verb",
-       "schema_compatible_pos": "verb",
-       "is_separable_verb": false,
-       "separable_type": "",
-       "structure_vi": "",
-       "usage_note_vi": "",
-       "notes": []
-      },
-      "tags": ["main_vocab", "pdf_vocab"],
+      "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
        "front": "骨折",
@@ -1321,7 +924,7 @@
       "check_needed": false
      },
      {
-      "id": "40309342-7841-5a40-876e-a39284f45475",
+      "id": "2185ee67-885d-4ffb-83e2-e97be4070796",
       "type": "vocabulary_item",
       "order": 30,
       "hanzi": "动手术",
@@ -1329,18 +932,7 @@
       "meaning_vi": "làm phẫu thuật; mổ",
       "meaning_en": "",
       "pos": "Động từ li hợp",
-      "pos_detail": {
-       "vi": "Động từ li hợp",
-       "cn": "动宾式离合词",
-       "normalized": "verb_phrase",
-       "schema_compatible_pos": "verb_phrase",
-       "is_separable_verb": true,
-       "separable_type": "động-tân / 离合词",
-       "structure_vi": "động từ 动 + tân ngữ 手术; 手术 là danh từ",
-       "usage_note_vi": "Có thể nói 动了手术 / 动过手术. Khẩu ngữ hiện đại cũng thường dùng 做手术.",
-       "notes": []
-      },
-      "tags": ["main_vocab", "pdf_vocab", "separable_verb"],
+      "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
        "front": "动手术",
@@ -1357,7 +949,7 @@
       "check_needed": false
      },
      {
-      "id": "6bc2f9d9-de8c-5f98-9fa7-c12a314bf2d4",
+      "id": "092a8c16-3739-4685-a4c0-39365071bd48",
       "type": "vocabulary_item",
       "order": 31,
       "hanzi": "家属",
@@ -1365,18 +957,7 @@
       "meaning_vi": "người nhà; thân nhân",
       "meaning_en": "",
       "pos": "Danh từ",
-      "pos_detail": {
-       "vi": "Danh từ",
-       "cn": "名词",
-       "normalized": "noun",
-       "schema_compatible_pos": "noun",
-       "is_separable_verb": false,
-       "separable_type": "",
-       "structure_vi": "",
-       "usage_note_vi": "",
-       "notes": []
-      },
-      "tags": ["main_vocab", "pdf_vocab"],
+      "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
        "front": "家属",
@@ -1393,7 +974,7 @@
       "check_needed": false
      },
      {
-      "id": "4d23279d-11e6-569a-8540-c25758c62cfb",
+      "id": "22e66ee9-565e-4670-b2ac-4d5a9b500b38",
       "type": "vocabulary_item",
       "order": 32,
       "hanzi": "签字",
@@ -1401,18 +982,7 @@
       "meaning_vi": "ký tên",
       "meaning_en": "",
       "pos": "Động từ li hợp",
-      "pos_detail": {
-       "vi": "Động từ li hợp",
-       "cn": "动宾式离合词",
-       "normalized": "verb_phrase",
-       "schema_compatible_pos": "verb_phrase",
-       "is_separable_verb": true,
-       "separable_type": "động-tân / 离合词",
-       "structure_vi": "động từ 签 + tân ngữ 字",
-       "usage_note_vi": "Có thể nói 签了字 / 签完字; không nói 签字完.",
-       "notes": []
-      },
-      "tags": ["main_vocab", "pdf_vocab", "separable_verb"],
+      "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
        "front": "签字",
@@ -1429,7 +999,7 @@
       "check_needed": false
      },
      {
-      "id": "2c890807-7b6c-5cb6-bbcd-047ad4b230a6",
+      "id": "275b46f4-3166-48b7-9766-58384178d1be",
       "type": "vocabulary_item",
       "order": 33,
       "hanzi": "急忙",
@@ -1437,18 +1007,7 @@
       "meaning_vi": "vội vàng; vội vã",
       "meaning_en": "",
       "pos": "Phó từ",
-      "pos_detail": {
-       "vi": "Phó từ",
-       "cn": "副词",
-       "normalized": "adverb",
-       "schema_compatible_pos": "adverb",
-       "is_separable_verb": false,
-       "separable_type": "",
-       "structure_vi": "",
-       "usage_note_vi": "",
-       "notes": []
-      },
-      "tags": ["main_vocab", "pdf_vocab"],
+      "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
        "front": "急忙",
@@ -1465,7 +1024,7 @@
       "check_needed": false
      },
      {
-      "id": "e8ad0827-11dd-5ef8-a953-84798130078d",
+      "id": "1190511f-5970-4304-8f84-d7201b287aeb",
       "type": "vocabulary_item",
       "order": 34,
       "hanzi": "打石膏",
@@ -1473,23 +1032,7 @@
       "meaning_vi": "bó bột; bó thạch cao",
       "meaning_en": "",
       "pos": "Cụm động từ động-tân",
-      "pos_detail": {
-       "vi": "Cụm động từ động-tân",
-       "cn": "动宾短语",
-       "normalized": "verb_object_phrase",
-       "schema_compatible_pos": "verb_phrase",
-       "is_separable_verb": true,
-       "separable_type": "động-tân / 动宾结构",
-       "structure_vi": "động từ 打 + tân ngữ 石膏",
-       "usage_note_vi": "Có thể nói 打了石膏 / 打上石膏. Đây là cụm thao tác y tế, không dịch 打 là “đánh”.",
-       "notes": []
-      },
-      "tags": [
-       "main_vocab",
-       "pdf_vocab",
-       "separable_verb",
-       "verb_object_phrase"
-      ],
+      "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
        "front": "打石膏",
@@ -1506,7 +1049,7 @@
       "check_needed": false
      },
      {
-      "id": "ec2936fd-2bf5-5a81-8eb9-4a90dd36fe35",
+      "id": "d42d3d90-443d-45da-bed7-987b50034e92",
       "type": "vocabulary_item",
       "order": 35,
       "hanzi": "焦急",
@@ -1514,18 +1057,7 @@
       "meaning_vi": "sốt ruột; lo lắng nóng ruột",
       "meaning_en": "",
       "pos": "Tính từ",
-      "pos_detail": {
-       "vi": "Tính từ",
-       "cn": "形容词",
-       "normalized": "adjective",
-       "schema_compatible_pos": "adjective",
-       "is_separable_verb": false,
-       "separable_type": "",
-       "structure_vi": "",
-       "usage_note_vi": "",
-       "notes": []
-      },
-      "tags": ["main_vocab", "pdf_vocab"],
+      "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
        "front": "焦急",
@@ -1542,7 +1074,7 @@
       "check_needed": false
      },
      {
-      "id": "30e00ba4-e68b-5ffa-9f92-ed1cbe14686a",
+      "id": "cfb712c9-c4ca-4314-b6b2-696b40ace25e",
       "type": "vocabulary_item",
       "order": 36,
       "hanzi": "麻药",
@@ -1550,18 +1082,7 @@
       "meaning_vi": "thuốc tê; thuốc mê/gây mê",
       "meaning_en": "",
       "pos": "Danh từ",
-      "pos_detail": {
-       "vi": "Danh từ",
-       "cn": "名词",
-       "normalized": "noun",
-       "schema_compatible_pos": "noun",
-       "is_separable_verb": false,
-       "separable_type": "",
-       "structure_vi": "",
-       "usage_note_vi": "",
-       "notes": []
-      },
-      "tags": ["main_vocab", "pdf_vocab"],
+      "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
        "front": "麻药",
@@ -1578,7 +1099,7 @@
       "check_needed": false
      },
      {
-      "id": "5ebd05f3-ac33-5fbe-b77e-f6bd01c61472",
+      "id": "6059829f-ae21-43cf-ac0c-05e19639ec43",
       "type": "vocabulary_item",
       "order": 37,
       "hanzi": "询问",
@@ -1586,18 +1107,7 @@
       "meaning_vi": "hỏi; hỏi han; hỏi để biết thông tin",
       "meaning_en": "",
       "pos": "Động từ",
-      "pos_detail": {
-       "vi": "Động từ",
-       "cn": "动词",
-       "normalized": "verb",
-       "schema_compatible_pos": "verb",
-       "is_separable_verb": false,
-       "separable_type": "",
-       "structure_vi": "",
-       "usage_note_vi": "",
-       "notes": []
-      },
-      "tags": ["main_vocab", "pdf_vocab"],
+      "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
        "front": "询问",
@@ -1614,7 +1124,7 @@
       "check_needed": false
      },
      {
-      "id": "0d16bbfb-ca1f-55c7-9e50-3044adffe161",
+      "id": "fefd5441-7b6c-47e3-b823-9e149b947bf7",
       "type": "vocabulary_item",
       "order": 38,
       "hanzi": "伤势",
@@ -1622,18 +1132,7 @@
       "meaning_vi": "tình trạng thương tích; mức độ bị thương",
       "meaning_en": "",
       "pos": "Danh từ",
-      "pos_detail": {
-       "vi": "Danh từ",
-       "cn": "名词",
-       "normalized": "noun",
-       "schema_compatible_pos": "noun",
-       "is_separable_verb": false,
-       "separable_type": "",
-       "structure_vi": "",
-       "usage_note_vi": "",
-       "notes": []
-      },
-      "tags": ["main_vocab", "pdf_vocab"],
+      "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
        "front": "伤势",
@@ -1650,7 +1149,7 @@
       "check_needed": false
      },
      {
-      "id": "922c8b6e-4c04-5da1-ba1d-097ea5de6dae",
+      "id": "27761bd2-433a-44ef-b79a-9e6f0a34b9c9",
       "type": "vocabulary_item",
       "order": 39,
       "hanzi": "真诚",
@@ -1658,18 +1157,7 @@
       "meaning_vi": "chân thành",
       "meaning_en": "",
       "pos": "Tính từ",
-      "pos_detail": {
-       "vi": "Tính từ",
-       "cn": "形容词",
-       "normalized": "adjective",
-       "schema_compatible_pos": "adjective",
-       "is_separable_verb": false,
-       "separable_type": "",
-       "structure_vi": "",
-       "usage_note_vi": "",
-       "notes": []
-      },
-      "tags": ["main_vocab", "pdf_vocab"],
+      "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
        "front": "真诚",
@@ -1686,7 +1174,7 @@
       "check_needed": false
      },
      {
-      "id": "c67feb6f-cb80-58f4-b85d-081de8160ae7",
+      "id": "861ed325-b320-4ae0-8eac-bb6bb8ebc215",
       "type": "vocabulary_item",
       "order": 40,
       "hanzi": "非……不可",
@@ -1694,18 +1182,7 @@
       "meaning_vi": "nhất định phải; không làm không được",
       "meaning_en": "",
       "pos": "Cấu trúc cố định",
-      "pos_detail": {
-       "vi": "Cấu trúc cố định",
-       "cn": "固定结构",
-       "normalized": "pattern",
-       "schema_compatible_pos": "pattern",
-       "is_separable_verb": false,
-       "separable_type": "",
-       "structure_vi": "",
-       "usage_note_vi": "",
-       "notes": []
-      },
-      "tags": ["main_vocab", "pdf_vocab"],
+      "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
        "front": "非……不可",
@@ -1722,7 +1199,7 @@
       "check_needed": false
      },
      {
-      "id": "2dadb13a-2f4f-5d6e-bb07-28b5ddf384fd",
+      "id": "6fe8f20d-e712-4f0c-9cbc-021aaeb9698c",
       "type": "vocabulary_item",
       "order": 41,
       "hanzi": "起初",
@@ -1730,18 +1207,7 @@
       "meaning_vi": "ban đầu; lúc đầu",
       "meaning_en": "",
       "pos": "Danh từ thời gian / phó từ",
-      "pos_detail": {
-       "vi": "Danh từ thời gian / Phó từ",
-       "cn": "时间名词 / 副词",
-       "normalized": "time_noun_adverb",
-       "schema_compatible_pos": "adverb",
-       "is_separable_verb": false,
-       "separable_type": "",
-       "structure_vi": "",
-       "usage_note_vi": "",
-       "notes": []
-      },
-      "tags": ["main_vocab", "pdf_vocab"],
+      "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
        "front": "起初",
@@ -1758,7 +1224,7 @@
       "check_needed": false
      },
      {
-      "id": "5fe16ee8-b218-5c18-a739-56d1287592e3",
+      "id": "863bbf3f-83e7-4021-b98e-be632043d94c",
       "type": "vocabulary_item",
       "order": 42,
       "hanzi": "添",
@@ -1766,18 +1232,7 @@
       "meaning_vi": "thêm; gây thêm",
       "meaning_en": "",
       "pos": "Động từ",
-      "pos_detail": {
-       "vi": "Động từ",
-       "cn": "动词",
-       "normalized": "verb",
-       "schema_compatible_pos": "verb",
-       "is_separable_verb": false,
-       "separable_type": "",
-       "structure_vi": "",
-       "usage_note_vi": "",
-       "notes": []
-      },
-      "tags": ["main_vocab", "pdf_vocab"],
+      "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
        "front": "添",
@@ -1794,7 +1249,7 @@
       "check_needed": false
      },
      {
-      "id": "60e04081-b20d-5bba-87ce-221726561588",
+      "id": "b14487b6-5579-4f1c-9ad7-16fd40991577",
       "type": "vocabulary_item",
       "order": 43,
       "hanzi": "肯",
@@ -1802,18 +1257,7 @@
       "meaning_vi": "chịu; bằng lòng; sẵn lòng",
       "meaning_en": "",
       "pos": "Trợ động từ năng nguyện",
-      "pos_detail": {
-       "vi": "Trợ động từ năng nguyện",
-       "cn": "能愿动词",
-       "normalized": "modal_verb",
-       "schema_compatible_pos": "verb",
-       "is_separable_verb": false,
-       "separable_type": "",
-       "structure_vi": "",
-       "usage_note_vi": "",
-       "notes": []
-      },
-      "tags": ["main_vocab", "pdf_vocab"],
+      "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
        "front": "肯",
@@ -1830,7 +1274,7 @@
       "check_needed": false
      },
      {
-      "id": "9f225713-cc7c-54c9-8b52-0a8f50635858",
+      "id": "eb7cc112-7df2-44e6-a1df-9824d8b6e45a",
       "type": "vocabulary_item",
       "order": 44,
       "hanzi": "千万",
@@ -1838,18 +1282,7 @@
       "meaning_vi": "nhất định; tuyệt đối; mười triệu",
       "meaning_en": "",
       "pos": "Phó từ / số từ",
-      "pos_detail": {
-       "vi": "Phó từ / Số từ",
-       "cn": "副词 / 数词",
-       "normalized": "adverb_numeral",
-       "schema_compatible_pos": "adverb",
-       "is_separable_verb": false,
-       "separable_type": "",
-       "structure_vi": "",
-       "usage_note_vi": "",
-       "notes": []
-      },
-      "tags": ["main_vocab", "pdf_vocab"],
+      "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
        "front": "千万",
@@ -1866,7 +1299,7 @@
       "check_needed": false
      },
      {
-      "id": "231486cd-3d25-596a-bba1-bb5f9b512d67",
+      "id": "505dae11-836a-475d-b811-339f25caaf42",
       "type": "vocabulary_item",
       "order": 45,
       "hanzi": "当作",
@@ -1874,18 +1307,7 @@
       "meaning_vi": "coi như; xem như",
       "meaning_en": "",
       "pos": "Động từ",
-      "pos_detail": {
-       "vi": "Động từ",
-       "cn": "动词",
-       "normalized": "verb",
-       "schema_compatible_pos": "verb",
-       "is_separable_verb": false,
-       "separable_type": "",
-       "structure_vi": "",
-       "usage_note_vi": "",
-       "notes": []
-      },
-      "tags": ["main_vocab", "pdf_vocab"],
+      "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
        "front": "当作",
@@ -1902,7 +1324,7 @@
       "check_needed": false
      },
      {
-      "id": "ce76b21f-163a-5678-8d6d-07b4407b2df6",
+      "id": "a47b82f7-2260-4763-8c97-b1631e792e1c",
       "type": "vocabulary_item",
       "order": 46,
       "hanzi": "由于",
@@ -1910,18 +1332,7 @@
       "meaning_vi": "do; bởi vì; vì nguyên nhân là",
       "meaning_en": "",
       "pos": "Liên từ / giới từ",
-      "pos_detail": {
-       "vi": "Liên từ / giới từ",
-       "cn": "连词 / 介词",
-       "normalized": "conjunction_preposition",
-       "schema_compatible_pos": "preposition",
-       "is_separable_verb": false,
-       "separable_type": "",
-       "structure_vi": "",
-       "usage_note_vi": "",
-       "notes": []
-      },
-      "tags": ["main_vocab", "pdf_vocab"],
+      "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
        "front": "由于",
@@ -1938,7 +1349,7 @@
       "check_needed": false
      },
      {
-      "id": "dafe4795-9746-562e-a5a6-08555ca54282",
+      "id": "71f9308f-7b38-435e-bfa8-c7c974599035",
       "type": "vocabulary_item",
       "order": 47,
       "hanzi": "再三",
@@ -1946,18 +1357,7 @@
       "meaning_vi": "nhiều lần; hết lần này đến lần khác",
       "meaning_en": "",
       "pos": "Phó từ",
-      "pos_detail": {
-       "vi": "Phó từ",
-       "cn": "副词",
-       "normalized": "adverb",
-       "schema_compatible_pos": "adverb",
-       "is_separable_verb": false,
-       "separable_type": "",
-       "structure_vi": "",
-       "usage_note_vi": "",
-       "notes": []
-      },
-      "tags": ["main_vocab", "pdf_vocab"],
+      "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
        "front": "再三",
@@ -1974,7 +1374,7 @@
       "check_needed": false
      },
      {
-      "id": "2ecf66d0-ffa0-58e3-b64e-cacd7d7fe476",
+      "id": "05e1ac20-79be-406d-9c90-4b0c847182bc",
       "type": "vocabulary_item",
       "order": 48,
       "hanzi": "劝说",
@@ -1982,18 +1382,7 @@
       "meaning_vi": "khuyên bảo; thuyết phục bằng lời",
       "meaning_en": "",
       "pos": "Động từ",
-      "pos_detail": {
-       "vi": "Động từ",
-       "cn": "动词",
-       "normalized": "verb",
-       "schema_compatible_pos": "verb",
-       "is_separable_verb": false,
-       "separable_type": "",
-       "structure_vi": "",
-       "usage_note_vi": "",
-       "notes": []
-      },
-      "tags": ["main_vocab", "pdf_vocab"],
+      "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
        "front": "劝说",
@@ -2010,7 +1399,7 @@
       "check_needed": false
      },
      {
-      "id": "d4c234d5-6d21-5e38-8249-142bc6a8d9ac",
+      "id": "358d5baa-5ba1-4cb5-984a-44770a1724d6",
       "type": "vocabulary_item",
       "order": 49,
       "hanzi": "精心",
@@ -2018,18 +1407,7 @@
       "meaning_vi": "tận tâm; chu đáo; tỉ mỉ",
       "meaning_en": "",
       "pos": "Tính từ / phó từ",
-      "pos_detail": {
-       "vi": "Tính từ / Phó từ",
-       "cn": "形容词 / 副词",
-       "normalized": "adjective_adverb",
-       "schema_compatible_pos": "adverb",
-       "is_separable_verb": false,
-       "separable_type": "",
-       "structure_vi": "",
-       "usage_note_vi": "",
-       "notes": []
-      },
-      "tags": ["main_vocab", "pdf_vocab"],
+      "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
        "front": "精心",
@@ -2046,7 +1424,7 @@
       "check_needed": false
      },
      {
-      "id": "ab17e715-be54-5473-a079-ff660ddfda00",
+      "id": "20f66e08-4820-43f5-a18a-50f61591e7cd",
       "type": "vocabulary_item",
       "order": 50,
       "hanzi": "直到",
@@ -2054,20 +1432,7 @@
       "meaning_vi": "mãi cho đến; cho đến khi",
       "meaning_en": "",
       "pos": "Liên từ / giới từ thời gian",
-      "pos_detail": {
-       "vi": "Liên từ / giới từ thời gian",
-       "cn": "时间连词 / 介词；PDF 标注为动词",
-       "normalized": "time_conjunction_preposition",
-       "schema_compatible_pos": "preposition",
-       "is_separable_verb": false,
-       "separable_type": "",
-       "structure_vi": "",
-       "usage_note_vi": "",
-       "notes": [
-        "PDF ghi 直到 là động từ, nhưng trong câu thường dùng như giới từ/liên từ thời gian: 直到……才……."
-       ]
-      },
-      "tags": ["main_vocab", "pdf_vocab"],
+      "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
        "front": "直到",
@@ -2084,7 +1449,7 @@
       "check_needed": false
      },
      {
-      "id": "2eadf6b1-3bb8-575e-b561-8e86d1015e04",
+      "id": "db0c0e40-5639-4c1e-bd66-9728a0c5006e",
       "type": "vocabulary_item",
       "order": 51,
       "hanzi": "往事",
@@ -2092,18 +1457,7 @@
       "meaning_vi": "chuyện cũ; việc đã qua",
       "meaning_en": "",
       "pos": "Danh từ",
-      "pos_detail": {
-       "vi": "Danh từ",
-       "cn": "名词",
-       "normalized": "noun",
-       "schema_compatible_pos": "noun",
-       "is_separable_verb": false,
-       "separable_type": "",
-       "structure_vi": "",
-       "usage_note_vi": "",
-       "notes": []
-      },
-      "tags": ["main_vocab", "pdf_vocab"],
+      "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
        "front": "往事",
@@ -2120,7 +1474,7 @@
       "check_needed": false
      },
      {
-      "id": "493edd2e-ac98-59d5-81b3-cffbe65f7bfd",
+      "id": "e890b44f-c76e-4dbf-92e7-201722d3274e",
       "type": "vocabulary_item",
       "order": 52,
       "hanzi": "由衷",
@@ -2128,20 +1482,7 @@
       "meaning_vi": "từ đáy lòng; chân thành",
       "meaning_en": "",
       "pos": "Tính từ / phó từ",
-      "pos_detail": {
-       "vi": "Tính từ / Phó từ",
-       "cn": "形容词 / 副词；PDF 标注为动词",
-       "normalized": "adjective_adverb",
-       "schema_compatible_pos": "adverb",
-       "is_separable_verb": false,
-       "separable_type": "",
-       "structure_vi": "",
-       "usage_note_vi": "",
-       "notes": [
-        "PDF ghi động từ, nhưng trong bài dùng dạng trạng ngữ: 由衷地感谢."
-       ]
-      },
-      "tags": ["main_vocab", "pdf_vocab"],
+      "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
        "front": "由衷",
@@ -2158,7 +1499,7 @@
       "check_needed": false
      },
      {
-      "id": "8eeb7717-0b90-5cc2-9d0e-c6b7cfb29b50",
+      "id": "d36b89c4-d29e-486a-b7d9-aeb589592aa6",
       "type": "vocabulary_item",
       "order": 53,
       "hanzi": "精神",
@@ -2166,18 +1507,7 @@
       "meaning_vi": "tinh thần; phẩm chất; trạng thái tinh thần",
       "meaning_en": "",
       "pos": "Danh từ",
-      "pos_detail": {
-       "vi": "Danh từ",
-       "cn": "名词",
-       "normalized": "noun",
-       "schema_compatible_pos": "noun",
-       "is_separable_verb": false,
-       "separable_type": "",
-       "structure_vi": "",
-       "usage_note_vi": "",
-       "notes": []
-      },
-      "tags": ["main_vocab", "pdf_vocab"],
+      "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
        "front": "精神",
@@ -2194,7 +1524,7 @@
       "check_needed": false
      },
      {
-      "id": "6c88b0f9-1e62-5071-84df-a41d2868623f",
+      "id": "addea99a-d455-4f20-bd7b-e7d7b320bc0c",
       "type": "vocabulary_item",
       "order": 54,
       "hanzi": "使",
@@ -2202,18 +1532,7 @@
       "meaning_vi": "khiến; làm cho",
       "meaning_en": "",
       "pos": "Động từ",
-      "pos_detail": {
-       "vi": "Động từ",
-       "cn": "动词",
-       "normalized": "verb",
-       "schema_compatible_pos": "verb",
-       "is_separable_verb": false,
-       "separable_type": "",
-       "structure_vi": "",
-       "usage_note_vi": "",
-       "notes": []
-      },
-      "tags": ["main_vocab", "pdf_vocab"],
+      "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
        "front": "使",
@@ -2230,7 +1549,7 @@
       "check_needed": false
      },
      {
-      "id": "fa0537fe-824d-5146-b0e1-4650acb10e74",
+      "id": "672023ad-14d1-47d0-a3c4-5dabd01b69e9",
       "type": "vocabulary_item",
       "order": 55,
       "hanzi": "难忘",
@@ -2238,18 +1557,7 @@
       "meaning_vi": "khó quên",
       "meaning_en": "",
       "pos": "Tính từ",
-      "pos_detail": {
-       "vi": "Tính từ",
-       "cn": "形容词",
-       "normalized": "adjective",
-       "schema_compatible_pos": "adjective",
-       "is_separable_verb": false,
-       "separable_type": "",
-       "structure_vi": "",
-       "usage_note_vi": "",
-       "notes": []
-      },
-      "tags": ["main_vocab", "pdf_vocab"],
+      "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
        "front": "难忘",
@@ -2299,7 +1607,7 @@
     "check_needed": false,
     "items": [
      {
-      "id": "1251f299-f390-5375-acbf-9d0c8e278f70",
+      "id": "63d654f5-4561-4d48-a144-bacbf9671dfc",
       "type": "note",
       "order": 1,
       "title": "不知怎么搞的……",
@@ -2307,12 +1615,12 @@
       "meaning_vi": "Dùng khi người nói không rõ nguyên nhân hoặc sự việc xảy ra khó giải thích; nghĩa là “không hiểu sao mà...”",
       "examples": [
        {
-        "id": "2f191f8f-31da-55df-b8c0-ceb0939d8162",
+        "id": "3eca03f3-67c0-40d2-9fee-8e57a4ad43ad",
         "zh": "不知怎么搞的，车轮夹在了铁道中间，一下子把我摔倒了。",
         "pinyin": "Bùzhī zěnme gǎo de, chēlún jiā zài le tiědào zhōngjiān, yíxiàzi bǎ wǒ shuāi dǎo le.",
         "vi": "Không hiểu sao bánh xe bị kẹt giữa đường ray, làm tôi ngã một cái.",
         "en": "",
-        "highlight": ["不知怎么搞的"],
+        "highlight": [],
         "grammar_refs": [],
         "vocab_refs": [],
         "source_ref": "",
@@ -2322,12 +1630,12 @@
         "check_needed": false
        },
        {
-        "id": "a483b026-9a6d-5d6f-aa84-f2014bd09e5e",
+        "id": "0ee91982-67ac-436a-881d-a00ebb257ebe",
         "zh": "不知怎么搞的，老师一叫我回答问题，我就特别紧张。",
         "pinyin": "Bùzhī zěnme gǎo de, lǎoshī yí jiào wǒ huídá wèntí, wǒ jiù tèbié jǐnzhāng.",
         "vi": "Không hiểu sao, cứ thầy/cô gọi tôi trả lời câu hỏi là tôi đặc biệt căng thẳng.",
         "en": "",
-        "highlight": ["不知怎么搞的"],
+        "highlight": [],
         "grammar_refs": [],
         "vocab_refs": [],
         "source_ref": "",
@@ -2342,7 +1650,7 @@
       "check_needed": false
      },
      {
-      "id": "76222d9a-080b-5913-b6db-593db47801a2",
+      "id": "7e2ee128-4fbd-4a93-898c-5f5fd99b371b",
       "type": "note",
       "order": 2,
       "title": "七手八脚",
@@ -2350,12 +1658,12 @@
       "meaning_vi": "Diễn tả nhiều người cùng làm một việc, thường hơi lộn xộn hoặc mỗi người một tay.",
       "examples": [
        {
-        "id": "fa717d33-2b4b-5dca-867b-967f9a07c865",
+        "id": "6ff01e57-e23b-475e-9cd6-da43acc8bd0a",
         "zh": "大家七手八脚地把我扶上了车。",
         "pinyin": "Dàjiā qī shǒu bā jiǎo de bǎ wǒ fú shàng le chē.",
         "vi": "Mọi người mỗi người một tay đỡ tôi lên xe.",
         "en": "",
-        "highlight": ["七手八脚"],
+        "highlight": [],
         "grammar_refs": [],
         "vocab_refs": [],
         "source_ref": "",
@@ -2365,12 +1673,12 @@
         "check_needed": false
        },
        {
-        "id": "10be4a27-b80f-5236-8416-87ea76e7cd52",
+        "id": "b45bc13e-c6e0-4fab-a808-4b732cb085a7",
         "zh": "大家七手八脚地把东西搬进屋里。",
         "pinyin": "Dàjiā qī shǒu bā jiǎo de bǎ dōngxi bān jìn wū li.",
         "vi": "Mọi người mỗi người một tay chuyển đồ vào trong nhà.",
         "en": "",
-        "highlight": ["七手八脚"],
+        "highlight": [],
         "grammar_refs": [],
         "vocab_refs": [],
         "source_ref": "",
@@ -2385,7 +1693,7 @@
       "check_needed": false
      },
      {
-      "id": "b5ea8bc0-c2ab-5085-bcf7-7a107a7a489f",
+      "id": "bf5e90df-dc03-4600-a2d2-426ab562c9a5",
       "type": "note",
       "order": 3,
       "title": "打石膏",
@@ -2393,12 +1701,12 @@
       "meaning_vi": "Bó bột/bó thạch cao, thường dùng khi cần cố định sau gãy xương hoặc chấn thương.",
       "examples": [
        {
-        "id": "4826004e-4dcb-54e4-ba73-3c40fe64a01a",
+        "id": "b71a23a7-1107-46ec-b43e-de46214c5d0a",
         "zh": "手术做得很顺利，还给我的小腿打上了石膏。",
         "pinyin": "Shǒushù zuò de hěn shùnlì, hái gěi wǒ de xiǎotuǐ dǎ shàng le shígāo.",
         "vi": "Ca phẫu thuật diễn ra thuận lợi, còn bó bột cho cẳng chân tôi.",
         "en": "",
-        "highlight": ["打石膏"],
+        "highlight": [],
         "grammar_refs": [],
         "vocab_refs": [],
         "source_ref": "",
@@ -2408,12 +1716,12 @@
         "check_needed": false
        },
        {
-        "id": "f7d70fc7-1a2b-5528-a138-2562e40d8aa9",
+        "id": "1b3405fa-a29a-4d15-a133-d8b1cc886dec",
         "zh": "他腿骨折了，需要打石膏。",
         "pinyin": "Tā tuǐ gǔzhé le, xūyào dǎ shígāo.",
         "vi": "Chân anh ấy bị gãy xương, cần bó bột.",
         "en": "",
-        "highlight": ["打石膏"],
+        "highlight": [],
         "grammar_refs": [],
         "vocab_refs": [],
         "source_ref": "",
@@ -2439,7 +1747,7 @@
     "check_needed": false,
     "items": [
      {
-      "id": "7cd06ba0-4be7-5a13-b90f-e316ea943af4",
+      "id": "f8ec59f3-898a-47b2-b536-44dfd8183393",
       "type": "grammar_point",
       "order": 1,
       "title": "从……来看",
@@ -2450,7 +1758,7 @@
       "check_needed": false,
       "blocks": [
        {
-        "id": "e45dff44-16eb-5f05-999a-d5d367f0da81",
+        "id": "b7c5d870-2db8-4e2e-950f-f0e6e522ac16",
         "type": "grammar_overview",
         "order": 1,
         "title": "Bản chất",
@@ -2460,7 +1768,7 @@
         "check_needed": false
        },
        {
-        "id": "75717bb2-8a01-5b1e-85fc-8029501a5eeb",
+        "id": "b3534a40-3bab-464a-97dd-67889b8bcb7b",
         "type": "grammar_structure",
         "order": 2,
         "title": "Cấu trúc chính",
@@ -2474,7 +1782,7 @@
         ],
         "examples": [
          {
-          "id": "59614b3c-a1c3-5a3d-9acc-6c1ee287cbf9",
+          "id": "5e614bf9-2578-4d49-87dc-107e6f3605d4",
           "zh": "从我接触到的人来看，他们大都心地善良，待人热情，也乐于助人。",
           "pinyin": "Cóng wǒ jiēchù dào de rén lái kàn, tāmen dàdōu xīndì shànliáng, dàirén rèqíng, yě lèyú zhùrén.",
           "vi": "Xét từ những người tôi từng tiếp xúc, phần lớn họ đều lương thiện, nhiệt tình và sẵn lòng giúp đỡ người khác.",
@@ -2489,7 +1797,7 @@
           "check_needed": false
          },
          {
-          "id": "1107b60f-d2f9-50de-8c94-0ab78dc6fb24",
+          "id": "7ccdc8f9-59f3-4c7b-bd28-247acb68c535",
           "zh": "从这次的考试成绩来看，同学们学习都很努力。",
           "pinyin": "Cóng zhè cì de kǎoshì chéngjì lái kàn, tóngxuémen xuéxí dōu hěn nǔlì.",
           "vi": "Xét từ kết quả kỳ thi lần này, các bạn học đều rất cố gắng.",
@@ -2511,7 +1819,7 @@
       ]
      },
      {
-      "id": "7f1a5375-012b-5afc-b3e7-50fe718fbab5",
+      "id": "57b14753-688a-41b6-9e0d-b61dbbf574d7",
       "type": "grammar_point",
       "order": 2,
       "title": "当然",
@@ -2522,7 +1830,7 @@
       "check_needed": false,
       "blocks": [
        {
-        "id": "5b4711da-d8cb-5d9e-be4b-d9933bd6349a",
+        "id": "470b1ca1-e0a1-449f-b55e-a8aa481a4dd4",
         "type": "grammar_overview",
         "order": 1,
         "title": "Bản chất",
@@ -2532,7 +1840,7 @@
         "check_needed": false
        },
        {
-        "id": "d0d45732-588f-5205-b99b-aadd59200f36",
+        "id": "0ef2b790-3209-4b5c-a519-ca5a424e4d49",
         "type": "grammar_structure",
         "order": 2,
         "title": "Cấu trúc chính",
@@ -2546,7 +1854,7 @@
         ],
         "examples": [
          {
-          "id": "b1719d7b-2d73-5eed-855c-f75de7d20ef0",
+          "id": "c8674d77-7e1f-44f8-9e45-e0a03accdc05",
           "zh": "你昨天没来上课，当然不知道。",
           "pinyin": "Nǐ zuótiān méi lái shàngkè, dāngrán bù zhīdào.",
           "vi": "Hôm qua bạn không đi học, tất nhiên là không biết.",
@@ -2561,7 +1869,7 @@
           "check_needed": false
          },
          {
-          "id": "f86f5e5c-a759-5985-a32f-c55fe2453d17",
+          "id": "1096379b-a91d-48aa-bc98-42ebe110f965",
           "zh": "他爷爷去世了，心情不好是当然的。",
           "pinyin": "Tā yéye qùshì le, xīnqíng bù hǎo shì dāngrán de.",
           "vi": "Ông anh ấy mất rồi, tâm trạng không tốt là điều đương nhiên.",
@@ -2583,7 +1891,7 @@
       ]
      },
      {
-      "id": "a2c71939-915b-55c1-8585-0d326ef65031",
+      "id": "fa804fff-372b-4874-8571-f54e613d7e07",
       "type": "grammar_point",
       "order": 3,
       "title": "向来",
@@ -2594,7 +1902,7 @@
       "check_needed": false,
       "blocks": [
        {
-        "id": "e1e31e25-817d-504b-870e-aaf9e2778097",
+        "id": "50dcd503-1832-4112-a0be-e09408954b90",
         "type": "grammar_overview",
         "order": 1,
         "title": "Bản chất",
@@ -2604,7 +1912,7 @@
         "check_needed": false
        },
        {
-        "id": "6fe9e4e5-73f4-5689-9eb7-0b8ea8ea8261",
+        "id": "3de2e20b-7535-4f1b-8355-4209acba1551",
         "type": "grammar_structure",
         "order": 2,
         "title": "Cấu trúc chính",
@@ -2618,7 +1926,7 @@
         ],
         "examples": [
          {
-          "id": "e49004a9-f8ec-59cb-bea1-36506cbb81bc",
+          "id": "47d597ee-f98d-4604-907d-6e6946054ef4",
           "zh": "我这个人向来不爱运动。",
           "pinyin": "Wǒ zhège rén xiànglái bù ài yùndòng.",
           "vi": "Tôi vốn dĩ từ trước đến nay không thích vận động.",
@@ -2633,7 +1941,7 @@
           "check_needed": false
          },
          {
-          "id": "1aedf775-e9aa-57f2-bb76-cce42ebebea7",
+          "id": "9a65ce46-32b1-443f-8743-753c90b62d0f",
           "zh": "她向来做事认真，从不马虎。",
           "pinyin": "Tā xiànglái zuò shì rènzhēn, cóng bù mǎhu.",
           "vi": "Cô ấy xưa nay làm việc nghiêm túc, chưa bao giờ qua loa.",
@@ -2655,7 +1963,7 @@
       ]
      },
      {
-      "id": "161f802e-e7d8-5a2d-aa02-14141446a022",
+      "id": "c6cd6c38-22fc-4546-a398-39efe02d6c17",
       "type": "grammar_point",
       "order": 4,
       "title": "不时",
@@ -2666,7 +1974,7 @@
       "check_needed": false,
       "blocks": [
        {
-        "id": "90961b49-5a00-531d-9666-6004ba6ce6ee",
+        "id": "6b109e8c-3e57-466f-89ea-5e3dd68f03d9",
         "type": "grammar_overview",
         "order": 1,
         "title": "Bản chất",
@@ -2676,7 +1984,7 @@
         "check_needed": false
        },
        {
-        "id": "b969a1eb-2ae9-53a9-826f-ee7d772da4d4",
+        "id": "3ecf1989-24b0-4088-8831-c92b1fd6d541",
         "type": "grammar_structure",
         "order": 2,
         "title": "Cấu trúc chính",
@@ -2690,7 +1998,7 @@
         ],
         "examples": [
          {
-          "id": "c8d367db-44e9-50d2-a442-64e6ecf8376f",
+          "id": "bb711337-b38f-48f1-9703-2cd0058438fa",
           "zh": "司机一路上不时地回头看看我们。",
           "pinyin": "Sījī yí lù shang bùshí de huítóu kànkan wǒmen.",
           "vi": "Tài xế trên đường thỉnh thoảng quay đầu nhìn chúng tôi.",
@@ -2705,7 +2013,7 @@
           "check_needed": false
          },
          {
-          "id": "a6b27b7c-fc98-5e3c-b4bc-ec883c3072af",
+          "id": "6829a99e-8c28-481f-a33f-c15c2f232489",
           "zh": "他做着练习，不时地查查词典。",
           "pinyin": "Tā zuòzhe liànxí, bùshí de cháchá cídiǎn.",
           "vi": "Anh ấy làm bài tập, thỉnh thoảng lại tra từ điển.",
@@ -2727,7 +2035,7 @@
       ]
      },
      {
-      "id": "46b38a9e-af1a-5e2b-a1cf-c9dd7590ef9b",
+      "id": "c3d31639-0f40-4b2f-aa50-5dda9d443b78",
       "type": "grammar_point",
       "order": 5,
       "title": "非……不可",
@@ -2738,7 +2046,7 @@
       "check_needed": false,
       "blocks": [
        {
-        "id": "7906e70b-8c32-5d41-996c-7fc79d6bcf41",
+        "id": "24a8fcd1-e9b7-43bf-92dc-3d3cc3fb385e",
         "type": "grammar_overview",
         "order": 1,
         "title": "Bản chất",
@@ -2748,7 +2056,7 @@
         "check_needed": false
        },
        {
-        "id": "21dafcb4-cc58-587e-8091-08b698e9e26f",
+        "id": "b7be4295-e408-4edd-882f-3fff358754f0",
         "type": "grammar_structure",
         "order": 2,
         "title": "Cấu trúc chính",
@@ -2762,7 +2070,7 @@
         ],
         "examples": [
          {
-          "id": "20909cd1-9727-5265-bdfc-610be862b4a5",
+          "id": "75371212-89bf-4cf8-a3a1-819fd569462d",
           "zh": "林老师见我躺在床上不能动，就非要我住到她家去不可。",
           "pinyin": "Lín lǎoshī jiàn wǒ tǎng zài chuáng shang bù néng dòng, jiù fēi yào wǒ zhù dào tā jiā qù bùkě.",
           "vi": "Cô Lâm thấy tôi nằm trên giường không thể cử động, liền nhất định bắt tôi đến ở nhà cô ấy.",
@@ -2777,7 +2085,7 @@
           "check_needed": false
          },
          {
-          "id": "6edeb422-3a48-5844-98d2-5ef2a66e08ab",
+          "id": "f9e042a0-fdff-4bbd-ae63-c89fd60a5d8e",
           "zh": "这次球赛我们非赢他们不可。",
           "pinyin": "Zhè cì qiúsài wǒmen fēi yíng tāmen bùkě.",
           "vi": "Trận bóng lần này chúng tôi nhất định phải thắng họ.",
@@ -2799,7 +2107,7 @@
       ]
      },
      {
-      "id": "fc9e09b5-7cb3-5c79-84bc-93b5ea51a2f8",
+      "id": "b0c8e101-1500-4742-9064-1e102a0eb8b9",
       "type": "grammar_point",
       "order": 6,
       "title": "千万",
@@ -2810,7 +2118,7 @@
       "check_needed": false,
       "blocks": [
        {
-        "id": "2dee7f52-3bbb-535f-8e07-c423197edf60",
+        "id": "437a4fe6-cbe3-4168-b3de-181d1e249363",
         "type": "grammar_overview",
         "order": 1,
         "title": "Bản chất",
@@ -2820,7 +2128,7 @@
         "check_needed": false
        },
        {
-        "id": "88660d33-648b-5366-bdcf-26c5546d7700",
+        "id": "36af8925-9df2-4371-9cce-405d3672953f",
         "type": "grammar_structure",
         "order": 2,
         "title": "Cấu trúc chính",
@@ -2834,7 +2142,7 @@
         ],
         "examples": [
          {
-          "id": "d72e1b60-ea4f-52ba-9a24-604cacaba34b",
+          "id": "dac06a15-2133-4363-b088-fba19458cb07",
           "zh": "千万别客气，你就把老师家当作自己的家吧。",
           "pinyin": "Qiānwàn bié kèqi, nǐ jiù bǎ lǎoshī jiā dàngzuò zìjǐ de jiā ba.",
           "vi": "Nhất định đừng khách sáo, em cứ xem nhà cô như nhà mình nhé.",
@@ -2849,7 +2157,7 @@
           "check_needed": false
          },
          {
-          "id": "ad0c1e84-1a8d-543e-9f80-b1cdadb48790",
+          "id": "787830ab-30e2-4c8f-aeed-8007cc3a0cb6",
           "zh": "你千万别走，等我回来。",
           "pinyin": "Nǐ qiānwàn bié zǒu, děng wǒ huílái.",
           "vi": "Bạn nhất định đừng đi, đợi tôi quay lại.",
@@ -2871,7 +2179,7 @@
       ]
      },
      {
-      "id": "b0a5f9e0-e8fe-54f0-adac-079519825765",
+      "id": "f3302370-f1c2-4d08-99ba-fda75cc4a335",
       "type": "grammar_point",
       "order": 7,
       "title": "每当……，都……",
@@ -2882,7 +2190,7 @@
       "check_needed": false,
       "blocks": [
        {
-        "id": "a97bb6af-c73f-541b-a398-0afadb06c92b",
+        "id": "aa4bd385-d335-46aa-b357-a29252478df1",
         "type": "grammar_overview",
         "order": 1,
         "title": "Bản chất",
@@ -2892,7 +2200,7 @@
         "check_needed": false
        },
        {
-        "id": "979b44e4-d4ee-5995-9489-c12458b45848",
+        "id": "bd6bb145-4592-4726-b2d2-6c72d9ac0a68",
         "type": "grammar_structure",
         "order": 2,
         "title": "Cấu trúc chính",
@@ -2906,7 +2214,7 @@
         ],
         "examples": [
          {
-          "id": "6e4f121b-3cf9-5aea-aa2e-2f16b304d1c0",
+          "id": "2f2e651f-ea3f-4597-a43a-76e867638000",
           "zh": "每当回忆起这段往事，我都由衷地感谢老师。",
           "pinyin": "Měi dāng huíyì qǐ zhè duàn wǎngshì, wǒ dōu yóuzhōng de gǎnxiè lǎoshī.",
           "vi": "Mỗi khi nhớ lại chuyện cũ này, tôi đều thật lòng cảm ơn cô giáo.",
@@ -2921,7 +2229,7 @@
           "check_needed": false
          },
          {
-          "id": "b51d49ff-e593-5395-ad86-1da3cea033d4",
+          "id": "610f3b70-9977-49e3-a33d-72a1f7f03c9c",
           "zh": "每当我感到孤独和无助时，同学们都会关心帮助我。",
           "pinyin": "Měi dāng wǒ gǎndào gūdú hé wúzhù shí, tóngxuémen dōu huì guānxīn bāngzhù wǒ.",
           "vi": "Mỗi khi tôi cảm thấy cô đơn và bất lực, các bạn học đều quan tâm giúp đỡ tôi.",
@@ -2960,7 +2268,7 @@
     },
     "items": [
      {
-      "id": "e2cb665b-a593-5467-9cc3-3d2db4efc788",
+      "id": "15cb6f38-593b-48d1-bcca-dc3d2a140f9e",
       "type": "phonetics",
       "variant": "pronunciation_tone_minimal_pairs",
       "order": 1,
@@ -2972,57 +2280,55 @@
       },
       "parts": [
        {
-        "id": "0b67df70-5953-592f-8f87-b603b7ab9276",
+        "id": "75a38c8c-be00-4d26-a5c3-2c9c47ead405",
         "type": "minimal_pair_group",
         "title": "辨音辨调",
         "items": [
          {
-          "id": "c96ad750-f787-561f-b3b0-e61b5897663b",
+          "id": "e38d3cb2-2c33-4c4a-83fa-2934373f225d",
           "left": "印象 yìnxiàng",
           "right": "影响 yǐngxiǎng"
          },
          {
-          "id": "e916f91e-4e82-58b1-ab8b-4b8b46faef5a",
+          "id": "79df1daa-2fc0-43b6-b4e3-aee6478eef8a",
           "left": "任何 rènhé",
           "right": "认可 rènkě"
          },
          {
-          "id": "081e3307-a65f-5100-b57e-c2db480cd396",
+          "id": "93191d96-c6f7-4475-b285-9bfd75ad2b6c",
           "left": "经历 jīnglì",
           "right": "敬礼 jìnglǐ"
          },
          {
-          "id": "90daea11-e6c1-55e8-849e-8962260b0a8d",
+          "id": "656ce346-d1fc-4d43-8acc-abf294d2d8da",
           "left": "意识 yìshi",
           "right": "意思 yìsi"
          },
          {
-          "id": "06f05c86-4869-587c-9e67-db353f453595",
+          "id": "5e775bab-fb67-4293-b3f7-4b9e80f29c52",
           "left": "痛苦 tòngkǔ",
           "right": "痛哭 tòngkū"
          },
          {
-          "id": "8eb720d2-6cdf-5e4e-ad0c-ee3a51430c7e",
+          "id": "7e23fb6e-376b-43d9-ae33-0413e3080ef9",
           "left": "往事 wǎngshì",
           "right": "忘事 wàng shì"
          }
         ]
        },
        {
-        "id": "10c93fda-fb31-5ef2-9d7b-3607b2bfad99",
+        "id": "e6c13064-1e5a-4320-91c7-625a6d1bbf71",
         "type": "proverb_reading",
         "title": "朗读",
         "items": [
          {
-          "id": "9d61e891-0cb9-5406-9215-d115f6d6f5de",
+          "id": "b97d1a8c-3880-42ce-813f-12d8eb8cb219",
           "text": "天有不测风云，人有旦夕祸福。",
-          "pinyin": "Tiān yǒu bùcè fēngyún, rén yǒu dànxī huòfú.",
           "vi": "Trời có mưa gió bất ngờ, người có họa phúc sớm chiều."
          },
          {
-          "id": "705a3e3a-a737-5795-8aad-18f8001c2243",
+          "id": "8ae4a7da-2ae8-494c-99db-df12e85086a4",
           "text": "酒逢知己千杯少，话不投机半句多。",
-          "pinyin": "Jiǔ féng zhījǐ qiān bēi shǎo, huà bù tóujī bàn jù duō.",
           "vi": "Rượu gặp tri kỷ nghìn chén vẫn ít, lời không hợp ý nửa câu đã nhiều."
          }
         ]
@@ -3032,7 +2338,7 @@
       "check_needed": false
      },
      {
-      "id": "bf445794-ee91-52ec-92aa-4dae94dad56f",
+      "id": "98e14c21-0449-4e36-b1ae-77ed46cf3aa0",
       "type": "read_aloud",
       "variant": "word_phrase_sentence_chunks",
       "order": 2,
@@ -3044,7 +2350,7 @@
       },
       "chunks": [
        {
-        "id": "2d9bedfc-6eb7-5bc0-9625-0a6f7fc88f75",
+        "id": "029b6888-951c-4d78-8e81-67211d2f2178",
         "text": "印象如何",
         "pinyin": "yìnxiàng rúhé",
         "vi": "",
@@ -3053,7 +2359,7 @@
         "check_needed": false
        },
        {
-        "id": "234c4c87-5ac1-5a9a-91ae-3309998b4ea0",
+        "id": "f7a394ba-7ba1-4ced-9fb6-4a51e9b45e41",
         "text": "印象不错",
         "pinyin": "yìnxiàng búcuò",
         "vi": "",
@@ -3062,7 +2368,7 @@
         "check_needed": false
        },
        {
-        "id": "45f8d8cf-7e4a-52a3-853d-fef8ababa431",
+        "id": "cbeae143-93f7-4e30-b03e-cafcbeecfee8",
         "text": "印象很好",
         "pinyin": "yìnxiàng hěn hǎo",
         "vi": "",
@@ -3071,7 +2377,7 @@
         "check_needed": false
        },
        {
-        "id": "10e9e49d-0166-501e-ae5c-ceacb390a339",
+        "id": "908385d2-03e2-42e6-8641-681ccbdb7383",
         "text": "印象深刻",
         "pinyin": "yìnxiàng shēnkè",
         "vi": "",
@@ -3080,7 +2386,7 @@
         "check_needed": false
        },
        {
-        "id": "e6a8e996-c34a-5fdd-aa3e-aa6416ca5080",
+        "id": "9e310873-3483-4086-91b4-53e6c4982438",
         "text": "好坏之分",
         "pinyin": "hǎo huài zhī fēn",
         "vi": "",
@@ -3089,7 +2395,7 @@
         "check_needed": false
        },
        {
-        "id": "eb256013-a729-56ed-85e6-de49bb7a1e21",
+        "id": "56e43701-a5ae-4070-ac7b-31f77ed52c81",
         "text": "大小之分",
         "pinyin": "dà xiǎo zhī fēn",
         "vi": "",
@@ -3098,7 +2404,7 @@
         "check_needed": false
        },
        {
-        "id": "be100cfd-9624-5c1d-a25c-d2611bb91828",
+        "id": "77a9ec03-cc9f-4170-b16a-7e20444a37a7",
         "text": "高低之分",
         "pinyin": "gāo dī zhī fēn",
         "vi": "",
@@ -3107,7 +2413,7 @@
         "check_needed": false
        },
        {
-        "id": "f238ff0a-99b9-5da6-b8c3-0e2f9497b343",
+        "id": "d7b385ae-57da-4e8c-aee4-b67137f2423a",
         "text": "远近之分",
         "pinyin": "yuǎn jìn zhī fēn",
         "vi": "",
@@ -3116,7 +2422,7 @@
         "check_needed": false
        },
        {
-        "id": "99cf64fd-889b-5b8f-9b62-e0861ff586fa",
+        "id": "d6835cb8-98d0-4ec4-896e-28edb097b655",
         "text": "照顾老人",
         "pinyin": "zhàogù lǎorén",
         "vi": "",
@@ -3125,7 +2431,7 @@
         "check_needed": false
        },
        {
-        "id": "af5e99a0-ad44-5939-8c1a-6bf83459de3b",
+        "id": "0783c634-e332-446a-9f6d-20a19656f7f3",
         "text": "照顾病人",
         "pinyin": "zhàogù bìngrén",
         "vi": "",
@@ -3134,7 +2440,7 @@
         "check_needed": false
        },
        {
-        "id": "556ce7c8-0c69-5d3f-935c-be3c426c5983",
+        "id": "b0cb1abd-bc89-4210-975d-f110f5646ad2",
         "text": "精心照顾",
         "pinyin": "jīngxīn zhàogù",
         "vi": "",
@@ -3143,7 +2449,7 @@
         "check_needed": false
        },
        {
-        "id": "4e7078ab-78fd-50e6-ad50-c5ea2abc2355",
+        "id": "2c8b801e-cb28-49ae-b8f1-b2c8b84f7f8b",
         "text": "得到照顾",
         "pinyin": "dédào zhàogù",
         "vi": "",
@@ -3152,7 +2458,7 @@
         "check_needed": false
        },
        {
-        "id": "b591a171-8712-5053-8f97-82387cfc3be0",
+        "id": "7b488f75-1c3d-4f10-9bd3-8d4b9d8b9c73",
         "text": "亲身经历",
         "pinyin": "qīnshēn jīnglì",
         "vi": "",
@@ -3161,7 +2467,7 @@
         "check_needed": false
        },
        {
-        "id": "97b171a7-0bb6-5f77-bc45-c8b8b79ca186",
+        "id": "fc57888e-9c36-48be-9cd3-fb7aed77a414",
         "text": "亲耳听到",
         "pinyin": "qīn’ěr tīngdào",
         "vi": "",
@@ -3170,7 +2476,7 @@
         "check_needed": false
        },
        {
-        "id": "2ce6bdf6-f54b-5dcc-8557-3b73275b2a05",
+        "id": "284fe12e-9a3d-4209-8e18-cb94b6921962",
         "text": "亲眼看见",
         "pinyin": "qīnyǎn kànjiàn",
         "vi": "",
@@ -3179,7 +2485,7 @@
         "check_needed": false
        },
        {
-        "id": "52abadb6-3704-56e5-b1fd-42087e7f09ef",
+        "id": "e0b901fe-d32e-42d4-90cf-cf84348b418b",
         "text": "亲口说出",
         "pinyin": "qīnkǒu shuōchū",
         "vi": "",
@@ -3188,7 +2494,7 @@
         "check_needed": false
        },
        {
-        "id": "8bfa2972-0d8e-55ee-9a76-bf0f12c3e214",
+        "id": "c5fe52bb-429a-4b32-9329-15a30ac53e7b",
         "text": "毫不犹豫",
         "pinyin": "háobù yóuyù",
         "vi": "",
@@ -3197,7 +2503,7 @@
         "check_needed": false
        },
        {
-        "id": "6982bb59-236b-5794-b280-87f1b01b4a1b",
+        "id": "0f820d9d-48d8-408b-bd6e-9a8e31537e75",
         "text": "乐于助人",
         "pinyin": "lèyú zhùrén",
         "vi": "",
@@ -3206,7 +2512,7 @@
         "check_needed": false
        },
        {
-        "id": "00f9fed9-06de-5cf4-b9ac-9d98fe608fba",
+        "id": "eec959aa-6959-4a0a-a6df-75e2bcdc77b7",
         "text": "提心吊胆",
         "pinyin": "tíxīn-diàodǎn",
         "vi": "",
@@ -3215,7 +2521,7 @@
         "check_needed": false
        },
        {
-        "id": "064fc434-0ee9-5b10-9ebf-af12519c8763",
+        "id": "4e759df4-4ac6-40cd-af5d-0a33fb8ffede",
         "text": "小心翼翼",
         "pinyin": "xiǎoxīn-yìyì",
         "vi": "",
@@ -3228,7 +2534,7 @@
       "check_needed": false
      },
      {
-      "id": "b3ee7cda-5be4-5430-bd3a-86b4997502da",
+      "id": "5dfca3d2-8524-4a83-92dd-b036a7259465",
       "type": "choose_words_fill_blank",
       "variant": "word_bank_fill_blank",
       "order": 3,
@@ -3240,7 +2546,7 @@
       },
       "parts": [
        {
-        "id": "a93c9370-32cf-5e77-9c18-45d161816c39",
+        "id": "ccf86240-e385-44ac-b1a7-ad4acf961525",
         "title": "A",
         "word_bank": [
          "千万",
@@ -3256,70 +2562,70 @@
         ],
         "questions": [
          {
-          "id": "491ca5f3-8b33-515f-8d4c-6fb93d76f83b",
+          "id": "d9a9a0fa-52b8-4416-a83b-90723f14f5b2",
           "prompt": "这件事很____是小王干的。",
           "answer": "可能",
           "answer_verified": true,
           "check_needed": false
          },
          {
-          "id": "8e491ec3-a9fa-5ea3-9977-afcc144852d6",
+          "id": "38d9ee94-15b5-463b-9116-b9d4c5b9d700",
           "prompt": "最近天气不太好，不是刮风就是下雨，____，偶尔也会看见太阳。",
           "answer": "当然",
           "answer_verified": true,
           "check_needed": false
          },
          {
-          "id": "31d69c13-895b-5015-b6d7-7829946e3d65",
+          "id": "80af13bc-72be-4894-b20e-3b0240046e7e",
           "prompt": "这是我亲身____的一件事，讲给你听听。",
           "answer": "经历",
           "answer_verified": true,
           "check_needed": false
          },
          {
-          "id": "f5bdc9a3-b4e3-5809-9d7d-9ae7f4ac788d",
+          "id": "fb498798-133a-42b3-96ef-2b41d6fb3b33",
           "prompt": "他是个靠得住的朋友，要是你请他帮忙，他会____地帮助你。",
           "answer": "毫不犹豫",
           "answer_verified": true,
           "check_needed": false
          },
          {
-          "id": "7e3fa0e3-0f42-5702-b5b7-421aa8d814fa",
+          "id": "550309ca-788b-4859-9f6d-650749a11c98",
           "prompt": "他____不善于跟别人打交道。",
           "answer": "向来",
           "answer_verified": true,
           "check_needed": false
          },
          {
-          "id": "161d8166-14c1-52ca-b9f2-5e072f70f030",
+          "id": "f7a5c5c4-d85c-4641-b6d4-693ca7399d07",
           "prompt": "她从来不愿意给人家____麻烦。",
           "answer": "添",
           "answer_verified": true,
           "check_needed": false
          },
          {
-          "id": "176f4da5-3215-50ad-b23a-a18fc885fa8a",
+          "id": "e16a4aa8-ee9c-4ce6-9c9d-2ae0829cb1f0",
           "prompt": "我住院的时候，朋友们____来看我。",
           "answer": "不时",
           "answer_verified": true,
           "check_needed": false
          },
          {
-          "id": "498ee8b7-b713-57b2-b457-1cff8d47bf36",
+          "id": "a29b17cf-2ac9-46c2-abab-aaf6f360f768",
           "prompt": "我们____邀请他参加我们的联欢会，他还是没有来。",
           "answer": "再三",
           "answer_verified": true,
           "check_needed": false
          },
          {
-          "id": "65ed33dc-c45c-599f-b39c-dc4c69c0d55a",
+          "id": "3d2951e4-c09f-4887-80cd-9e2e46617f29",
           "prompt": "刚学会开车，每次开车上路，我都____的。",
           "answer": "提心吊胆",
           "answer_verified": true,
           "check_needed": false
          },
          {
-          "id": "f66840eb-987a-5df0-b818-a7b436cf9987",
+          "id": "b6f002b2-c530-48cc-8a45-6cb9fe96e211",
           "prompt": "你____不要相信她的话。",
           "answer": "千万",
           "answer_verified": true,
@@ -3328,11 +2634,11 @@
         ]
        },
        {
-        "id": "d73eccb3-4194-55cb-ab71-213135d3638f",
+        "id": "d572c0f1-3eca-40f1-8fc3-c139ee89544b",
         "title": "B",
         "questions": [
          {
-          "id": "bfad254e-6bcd-5ec9-8f98-8a6f632abbdb",
+          "id": "94ab3d83-50ac-4807-90f5-3ccc46be4ae1",
           "prompt": "你对桂林的____怎么样？",
           "choices": ["印象", "记忆", "回忆"],
           "answer": "印象",
@@ -3340,7 +2646,7 @@
           "check_needed": false
          },
          {
-          "id": "43fb66d3-088d-5d0f-9555-25e798e95350",
+          "id": "07469e97-a1b0-46e0-8866-d361f064c457",
           "prompt": "每当____起这段留学生活，我都感到非常兴奋。",
           "choices": ["印象", "记忆", "回忆"],
           "answer": "回忆",
@@ -3348,7 +2654,7 @@
           "check_needed": false
          },
          {
-          "id": "ec6c0924-4e1a-574a-8655-fa7b0c6d3a84",
+          "id": "b60a0be3-2dd2-4ce6-8f3d-71f8b8f293f9",
           "prompt": "我和他在一起的时间很短，对他的____不深。",
           "choices": ["印象", "记忆", "回忆"],
           "answer": "印象",
@@ -3356,7 +2662,7 @@
           "check_needed": false
          },
          {
-          "id": "0801aa08-8d02-57f6-a49d-e8b6f184c0a2",
+          "id": "1d405d7a-2484-4a21-bf6d-b5a49c5fa380",
           "prompt": "我只____他的名字，但是不____他，更不____他。",
           "choices": ["了解", "知道", "认识"],
           "answer": "知道；认识；了解",
@@ -3364,7 +2670,7 @@
           "check_needed": false
          },
          {
-          "id": "c1f4979a-79f9-5415-a574-33e68ec07b10",
+          "id": "dce87767-a467-497b-b4a9-5434e845aedf",
           "prompt": "我____要把这个问题搞清楚。",
           "choices": ["千万", "一定"],
           "answer": "一定",
@@ -3372,7 +2678,7 @@
           "check_needed": false
          },
          {
-          "id": "cceef1f1-2db8-538b-882f-b74d608571a6",
+          "id": "d2a0d942-c444-4b73-bfc9-58a9dc9fd96d",
           "prompt": "你____别把那件事忘了。",
           "choices": ["千万", "一定"],
           "answer": "千万",
@@ -3386,7 +2692,7 @@
       "check_needed": false
      },
      {
-      "id": "b81a7dde-76d6-55ad-89b5-d44368996501",
+      "id": "809141fb-cc55-403a-9433-35eea89c8c90",
       "type": "complete_sentence",
       "variant": "complete_sentence_with_given_words",
       "order": 4,
@@ -3398,59 +2704,53 @@
       },
       "questions": [
        {
-        "id": "2e037415-ec4a-54f5-b2df-5099c80275a1",
+        "id": "668ef942-39b3-4816-be06-f347b64fa456",
         "prompt": "要是有人问我对她的印象怎么样，____。",
         "given": "毫不犹豫",
         "answer": "我会毫不犹豫地帮她说好话。",
-        "answer_verified": true,
-        "check_needed": false
+        "answer_verified": true
        },
        {
-        "id": "d10b0cab-0cde-51c1-93f1-83c02fc376a0",
+        "id": "6e23c236-94eb-4e83-9ea6-7353241c098d",
         "prompt": "____，他这次考得非常好。",
         "given": "从……来看",
         "answer": "从成绩来看",
-        "answer_verified": true,
-        "check_needed": false
+        "answer_verified": true
        },
        {
-        "id": "2ed46651-f8d3-5907-89ad-864dcf1ccc6d",
+        "id": "ee3570f6-9872-4699-a1ed-c338e52b4e50",
         "prompt": "经过老师再三地讲解，____。",
         "given": "终于",
         "answer": "我终于明白了。",
-        "answer_verified": true,
-        "check_needed": false
+        "answer_verified": true
        },
        {
-        "id": "627bc69a-2086-5307-9938-87803eaf0590",
+        "id": "3130979d-5cc3-4cf5-999c-9ed317ea7c14",
         "prompt": "每当我想起她，____。",
         "given": "都",
         "answer": "我都会去找她。",
-        "answer_verified": true,
-        "check_needed": false
+        "answer_verified": true
        },
        {
-        "id": "6ba735d1-5db5-5f8c-865c-58b2cc83acd6",
+        "id": "9dd88fe0-ccfb-47b6-a74a-d1ee53c61219",
         "prompt": "A：你认识玛丽吗？ B：____。",
         "given": "当然",
         "answer": "当然认识。",
-        "answer_verified": true,
-        "check_needed": false
+        "answer_verified": true
        },
        {
-        "id": "7ae7ad4f-ea05-5d1b-acf9-43bc21e9dd91",
+        "id": "9002df8c-125f-489d-9396-d008958aa6b9",
         "prompt": "A：这件事千万不要告诉他。 B：为什么？ A：他要是知道了，____。",
         "given": "非……不可",
         "answer": "非要阻止我不可。",
-        "answer_verified": true,
-        "check_needed": false
+        "answer_verified": true
        }
       ],
       "source_origin": "textbook_answer_checked",
       "check_needed": false
      },
      {
-      "id": "fd5dfd6c-fdc1-5d28-aaec-bf43414200ed",
+      "id": "e843bb6e-2e51-4fb8-b362-7506b97cf2fc",
       "type": "complete_dialogue",
       "variant": "complete_dialogue",
       "order": 5,
@@ -3462,59 +2762,47 @@
       },
       "questions": [
        {
-        "id": "35de9ebd-f8cf-516e-a7ff-08e4aa4d9726",
+        "id": "7d9c942a-bdc2-45a1-b852-6b3dd58fe8f2",
         "prompt": "A：他这个人怎么样？ B：不错，我和他接触的时间不长，但是我觉得____。",
         "given": "心地善良",
-        "answer": "他这个人心地善良。",
-        "answer_verified": true,
-        "check_needed": false
+        "answer": "他这个人心地善良。"
        },
        {
-        "id": "f8d6f765-8aa7-5d8d-a6a1-db49c9558b32",
+        "id": "a79733e1-ef69-41fd-ac55-9bb8b3bd4d2c",
         "prompt": "A：我们一起骑车去，好吗？ B：我不敢骑车上街，____。",
         "given": "提心吊胆",
-        "answer": "每次都提心吊胆的。",
-        "answer_verified": true,
-        "check_needed": false
+        "answer": "每次都提心吊胆的。"
        },
        {
-        "id": "05db75f4-fa11-5027-b632-381e0a24ab14",
+        "id": "ec5f1e84-0693-46b3-b735-8005e47f103e",
         "prompt": "A：那天是谁送你去医院的？ B：是一个男的，好像是中国同学，不过____。",
         "given": "叫不出",
-        "answer": "叫不出名字。",
-        "answer_verified": true,
-        "check_needed": false
+        "answer": "叫不出名字。"
        },
        {
-        "id": "5b61df9e-e9da-5589-98ae-d211ec91cff9",
+        "id": "dc7f5f06-95a1-4158-98d8-b293729d6a13",
         "prompt": "A：麻烦你把这封信带给王老师，____。 B：你放心吧，忘不了。",
         "given": "千万",
-        "answer": "千万不要忘了。",
-        "answer_verified": true,
-        "check_needed": false
+        "answer": "千万不要忘了。"
        },
        {
-        "id": "baad89a3-799f-54eb-9282-2baad9b70efd",
+        "id": "55e24ac4-bbd1-40f9-9dee-e97b3f2e10f7",
         "prompt": "A：大夫，她的腿怎么样？ B：是骨折，____。",
         "given": "打石膏",
-        "answer": "我会给她打石膏。",
-        "answer_verified": true,
-        "check_needed": false
+        "answer": "我会给她打石膏。"
        },
        {
-        "id": "74553050-eac7-5993-b745-9965f76f5454",
+        "id": "f7c603b4-c112-4d9c-ab37-b945d471ccee",
         "prompt": "A：她是怎么摔伤的？ B：骑车摔伤的，____。",
         "given": "非……不可",
-        "answer": "非出事不可。",
-        "answer_verified": true,
-        "check_needed": false
+        "answer": "非出事不可。"
        }
       ],
       "source_origin": "textbook_answer_checked",
       "check_needed": false
      },
      {
-      "id": "7e8991c6-a623-5340-a623-d9ec74a0b675",
+      "id": "60ec1197-2967-408c-a1f3-3c2112f8305a",
       "type": "reorder_sentence",
       "variant": "reorder_sentences_or_paragraph",
       "order": 6,
@@ -3526,7 +2814,7 @@
       },
       "questions": [
        {
-        "id": "81ccdbcd-d386-5123-80d7-fd22cc3e2667",
+        "id": "1b0dc397-26f4-4659-a964-f9c68ceab72a",
         "items": [
          {
           "key": "A",
@@ -3546,11 +2834,10 @@
          }
         ],
         "answer_order": ["C", "B", "A", "D"],
-        "answer_verified": true,
-        "check_needed": false
+        "answer_verified": true
        },
        {
-        "id": "822d9f88-0554-5f78-a90f-0c436cb72aff",
+        "id": "ab74bab2-0cd3-4c59-b4dd-6d9a3c6197b9",
         "items": [
          {
           "key": "A",
@@ -3570,15 +2857,14 @@
          }
         ],
         "answer_order": ["C", "A", "B", "D"],
-        "answer_verified": true,
-        "check_needed": false
+        "answer_verified": true
        }
       ],
       "source_origin": "textbook_answer_checked",
       "check_needed": false
      },
      {
-      "id": "a3d63624-0898-5563-981e-28b42b485470",
+      "id": "1fd4313d-93f3-4cbe-9dd4-2ba0d5bac415",
       "type": "correct_sentence",
       "variant": "error_correction",
       "order": 7,
@@ -3590,42 +2876,42 @@
       },
       "questions": [
        {
-        "id": "76d70717-b7be-5fbb-95c8-50ed5e8a6de7",
+        "id": "f8e911bf-9cbb-4dad-91ed-87032d2d95f2",
         "wrong": "过马路时你要特别提心吊胆，千万别出事故。",
         "correct": "过马路时你要特别小心，千万别出事故。",
         "answer_verified": true,
         "check_needed": false
        },
        {
-        "id": "44ee1ba8-44eb-5660-a884-27dae8663107",
+        "id": "3fd78baa-272c-4e07-8ee2-5399c9977a99",
         "wrong": "我的朋友丢了钱包，我还没有亲身经历过丢。",
         "correct": "我的朋友丢了钱包，我还没有丢过。",
         "answer_verified": true,
         "check_needed": false
        },
        {
-        "id": "11af3ab3-b936-546c-a14a-cec3245f3d27",
+        "id": "69f5ddfa-be8d-4292-b18f-6136daaa613f",
         "wrong": "我来中国留学的目的是亲眼看中国的情况。",
         "correct": "我来中国留学的目的是亲眼看看中国的情况。",
         "answer_verified": true,
         "check_needed": false
        },
        {
-        "id": "546eb030-b098-59ca-bafd-39659270a51f",
+        "id": "9c211f34-08a0-4478-b188-fe6a0e98ea41",
         "wrong": "哈尔滨是中国东北里一个大城市，你应该去。",
         "correct": "哈尔滨是中国东北的一个大城市，你应该去看看。",
         "answer_verified": true,
         "check_needed": false
        },
        {
-        "id": "c88b71a0-b3db-5f64-94b6-3b8898ec406f",
+        "id": "c8ec5644-8adf-46de-b2ff-34b3088ba324",
         "wrong": "要是我受伤，非痛苦不可。",
         "correct": "要是我受伤，非哭不可。",
         "answer_verified": true,
         "check_needed": false
        },
        {
-        "id": "cb49bad1-b91a-5ef5-bbea-46fc3981a98e",
+        "id": "6db3da52-2247-4991-a1d3-225528d56fff",
         "wrong": "她的记性很好，不管什么地方，只要去过一次，她就能背下来。",
         "correct": "她的记性很好，不管什么地方，只要去过一次，她就能记住。",
         "answer_verified": true,
@@ -3636,7 +2922,7 @@
       "check_needed": false
      },
      {
-      "id": "f7d46ac6-4a34-5e3c-baed-0351e62a98fa",
+      "id": "b9e46637-94ca-4fea-90cf-29155c015046",
       "type": "custom",
       "variant": "situational_expression",
       "order": 8,
@@ -3648,25 +2934,25 @@
       },
       "parts": [
        {
-        "id": "f34fc79e-038c-52e6-8a6b-0c13851bc530",
+        "id": "ad4a97cf-4706-4fd2-b30f-f815451ab51c",
         "title": "下列句子什么情景下说？",
         "questions": [
          {
-          "id": "587a7f1e-f251-54e6-b90a-dda67b01d901",
+          "id": "c27289fb-5395-45bf-8c4f-dbfdc93a63a5",
           "prompt": "她可是个热心人。",
           "answer": "Dùng khi muốn khen một người rất nhiệt tình, tốt bụng, thường chủ động giúp người khác.",
           "answer_verified": true,
           "check_needed": false
          },
          {
-          "id": "2fa67622-e814-5b57-bd8f-0c486bc5f198",
+          "id": "eb607057-948c-40ce-8c5d-52f97effc6c1",
           "prompt": "这件事让我一生难忘。",
           "answer": "Dùng khi một sự việc để lại ấn tượng rất sâu, khiến người nói khó quên suốt đời.",
           "answer_verified": true,
           "check_needed": false
          },
          {
-          "id": "27b4d61c-0acc-568a-b04c-b9d00ac18bb5",
+          "id": "85ff6a7e-4f92-4e3e-8753-8783d21d3966",
           "prompt": "他出事了。",
           "answer": "Dùng khi nói ai đó đã gặp chuyện không may, tai nạn hoặc sự cố bất ngờ.",
           "answer_verified": true,
@@ -3675,11 +2961,11 @@
         ]
        },
        {
-        "id": "e41936de-ba0c-55d0-819e-ead299dc5e95",
+        "id": "84c4612b-98ef-4184-b4eb-30257a5d2f97",
         "title": "下列情景怎么说？",
         "questions": [
          {
-          "id": "15315aa0-cdc7-56a7-8b56-892bb0424b32",
+          "id": "e1ef3a5f-4baa-422e-8e36-2eeab7b1384c",
           "prompt": "朋友需要你帮忙，你想都没想就答应了。",
           "given": "毫不犹豫",
           "answer": "我毫不犹豫地答应了。",
@@ -3687,7 +2973,7 @@
           "check_needed": false
          },
          {
-          "id": "41ffa9a7-6a51-531e-843c-13b724c49d9b",
+          "id": "96bf9664-bf63-4d17-9d73-6402c58ab07c",
           "prompt": "晚上一个人在没有人的地方走，心里总有些害怕。",
           "given": "提心吊胆",
           "answer": "我提心吊胆地往前走。",
@@ -3695,7 +2981,7 @@
           "check_needed": false
          },
          {
-          "id": "8a2495ec-e7b8-5b7f-a5f5-81059d8839ed",
+          "id": "6d7d18e7-c22d-499c-a688-e70d6eaa63e9",
           "prompt": "朋友要你谈谈对这个地方的印象怎么样。",
           "given": "都有好坏之分",
           "answer": "每个地方都有好坏之分。",
@@ -3709,7 +2995,7 @@
       "check_needed": false
      },
      {
-      "id": "587caf41-0c1e-54d9-87ea-4b6cbc0b9de8",
+      "id": "849f6690-a8ea-4b6f-937d-429f236714ad",
       "type": "reading_fill_blank",
       "variant": "reading_cloze",
       "order": 9,
@@ -3721,234 +3007,92 @@
       },
       "supplementary_vocab": [
        {
-        "id": "3d84c855-b763-50e8-bf56-981ca5e29dca",
         "hanzi": "冰雕",
         "pinyin": "bīngdiāo",
-        "meaning_vi": "tượng băng",
-        "pos": "Danh từ",
-        "pos_detail": {
-         "vi": "Danh từ",
-         "cn": "名词",
-         "normalized": "noun",
-         "schema_compatible_pos": "noun",
-         "is_separable_verb": false,
-         "separable_type": "",
-         "structure_vi": "",
-         "usage_note_vi": "",
-         "notes": []
-        },
-        "source_origin": "textbook",
-        "check_needed": false
+        "meaning_vi": "tượng băng"
        },
        {
-        "id": "51136b07-427d-5444-8486-22aaae9a443c",
         "hanzi": "雪橇",
         "pinyin": "xuěqiāo",
-        "meaning_vi": "xe trượt tuyết",
-        "pos": "Danh từ",
-        "pos_detail": {
-         "vi": "Danh từ",
-         "cn": "名词",
-         "normalized": "noun",
-         "schema_compatible_pos": "noun",
-         "is_separable_verb": false,
-         "separable_type": "",
-         "structure_vi": "",
-         "usage_note_vi": "",
-         "notes": []
-        },
-        "source_origin": "textbook",
-        "check_needed": false
+        "meaning_vi": "xe trượt tuyết"
        },
        {
-        "id": "bdd94111-4c20-5b47-bc96-51a703c803cd",
         "hanzi": "冰灯",
         "pinyin": "bīngdēng",
-        "meaning_vi": "đèn băng",
-        "pos": "Danh từ",
-        "pos_detail": {
-         "vi": "Danh từ",
-         "cn": "名词",
-         "normalized": "noun",
-         "schema_compatible_pos": "noun",
-         "is_separable_verb": false,
-         "separable_type": "",
-         "structure_vi": "",
-         "usage_note_vi": "",
-         "notes": []
-        },
-        "source_origin": "textbook",
-        "check_needed": false
+        "meaning_vi": "đèn băng"
        },
        {
-        "id": "5c141fc0-8908-5ae5-ae38-82062cc57a73",
         "hanzi": "童话",
         "pinyin": "tónghuà",
-        "meaning_vi": "truyện cổ tích",
-        "pos": "Danh từ",
-        "pos_detail": {
-         "vi": "Danh từ",
-         "cn": "名词",
-         "normalized": "noun",
-         "schema_compatible_pos": "noun",
-         "is_separable_verb": false,
-         "separable_type": "",
-         "structure_vi": "",
-         "usage_note_vi": "",
-         "notes": []
-        },
-        "source_origin": "textbook",
-        "check_needed": false
+        "meaning_vi": "truyện cổ tích"
        }
       ],
       "passage": {
-       "id": "be209e08-6bcd-57d6-bbf6-bd61b7fea36b",
+       "id": "9bd9a79e-3279-468d-9f4b-ecd1f7365e19",
        "title": "游冰城",
        "paragraphs": [
         {
-         "id": "3cc95dcd-1867-5f69-8faa-8718cd297179",
+         "id": "d2a4cf8b-55cd-4904-9fed-3141da682b19",
          "order": 1,
          "zh": "元旦那天，我跟几个同学一起①____火车去哈尔滨看冰灯。刚到车站门口，②____看见很多接站的人，一出车站迎面就是几座大冰雕，像巨石一样立在广场③____。从来没有见过冰雪的我，一下子激动和兴奋起来。忽然想④____了一句诗：“北国风光，千里冰封，万里雪飘。”眼前的情景跟这句诗说的完全一样。\n\n第二天，我们来到了松花江上。⑤____江面上结着厚厚的冰，天很冷，但是冰上却有那么多快乐的游人。我们看到一些艺术家正在江上做冰雕，不少年轻人在自由自在地滑冰，有的人坐⑥____狗拉的大雪橇上飞跑，有意思极了。我和几个朋友⑦____这一场面所吸引，也坐上大雪橇，在松花江上跑了起来。\n\n当然，最漂亮的还数冰灯。各种各样的颜色，各种各样的造型。走进冰灯展览厅，⑧____好像走进了一个童话世界。我无法形容它的美丽，要是你感兴趣，最好亲自去看看。",
-         "pinyin": "Yuándàn nà tiān, wǒ gēn jǐ ge tóngxué yìqǐ ①____ huǒchē qù Hā’ěrbīn kàn bīngdēng. Gāng dào chēzhàn ménkǒu, ②____ kànjiàn hěn duō jiēzhàn de rén, yì chū chēzhàn yíngmiàn jiù shì jǐ zuò dà bīngdiāo, xiàng jùshí yíyàng lì zài guǎngchǎng ③____. Cónglái méiyǒu jiàn guo bīngxuě de wǒ, yíxiàzi jīdòng hé xīngfèn qǐlai. Hūrán xiǎng ④____ le yí jù shī: “Běiguó fēngguāng, qiān lǐ bīng fēng, wàn lǐ xuě piāo.” Yǎnqián de qíngjǐng gēn zhè jù shī shuō de wánquán yíyàng.\n\nDì èr tiān, wǒmen lái dào le Sōnghuājiāng shang. ⑤____ jiāngmiàn shang jiézhe hòu hòu de bīng, tiān hěn lěng, dànshì bīng shang què yǒu nàme duō kuàilè de yóurén. Wǒmen kàn dào yìxiē yìshùjiā zhèngzài jiāng shang zuò bīngdiāo, bù shǎo niánqīngrén zài zìyóu zìzài de huábīng, yǒu de rén zuò ⑥____ gǒu lā de dà xuěqiāo shang fēipǎo, yǒu yìsi jí le. Wǒ hé jǐ ge péngyǒu ⑦____ zhè yī chǎngmiàn suǒ xīyǐn, yě zuò shàng dà xuěqiāo, zài Sōnghuājiāng shang pǎo le qǐlai.\n\nDāngrán, zuì piàoliang de hái shǔ bīngdēng. Gè zhǒng gè yàng de yánsè, gè zhǒng gè yàng de zàoxíng. Zǒu jìn bīngdēng zhǎnlǎntīng, ⑧____ hǎoxiàng zǒu jìn le yí ge tónghuà shìjiè. Wǒ wúfǎ xíngróng tā de měilì, yàoshi nǐ gǎn xìngqù, zuì hǎo qīnzì qù kànkan.",
          "vi": "",
-         "check_needed": false
-        }
-       ],
-       "supplementary_vocab": [
-        {
-         "id": "3d84c855-b763-50e8-bf56-981ca5e29dca",
-         "hanzi": "冰雕",
-         "pinyin": "bīngdiāo",
-         "meaning_vi": "tượng băng",
-         "pos": "Danh từ",
-         "pos_detail": {
-          "vi": "Danh từ",
-          "cn": "名词",
-          "normalized": "noun",
-          "schema_compatible_pos": "noun",
-          "is_separable_verb": false,
-          "separable_type": "",
-          "structure_vi": "",
-          "usage_note_vi": "",
-          "notes": []
-         },
-         "source_origin": "textbook",
-         "check_needed": false
-        },
-        {
-         "id": "51136b07-427d-5444-8486-22aaae9a443c",
-         "hanzi": "雪橇",
-         "pinyin": "xuěqiāo",
-         "meaning_vi": "xe trượt tuyết",
-         "pos": "Danh từ",
-         "pos_detail": {
-          "vi": "Danh từ",
-          "cn": "名词",
-          "normalized": "noun",
-          "schema_compatible_pos": "noun",
-          "is_separable_verb": false,
-          "separable_type": "",
-          "structure_vi": "",
-          "usage_note_vi": "",
-          "notes": []
-         },
-         "source_origin": "textbook",
-         "check_needed": false
-        },
-        {
-         "id": "bdd94111-4c20-5b47-bc96-51a703c803cd",
-         "hanzi": "冰灯",
-         "pinyin": "bīngdēng",
-         "meaning_vi": "đèn băng",
-         "pos": "Danh từ",
-         "pos_detail": {
-          "vi": "Danh từ",
-          "cn": "名词",
-          "normalized": "noun",
-          "schema_compatible_pos": "noun",
-          "is_separable_verb": false,
-          "separable_type": "",
-          "structure_vi": "",
-          "usage_note_vi": "",
-          "notes": []
-         },
-         "source_origin": "textbook",
-         "check_needed": false
-        },
-        {
-         "id": "5c141fc0-8908-5ae5-ae38-82062cc57a73",
-         "hanzi": "童话",
-         "pinyin": "tónghuà",
-         "meaning_vi": "truyện cổ tích",
-         "pos": "Danh từ",
-         "pos_detail": {
-          "vi": "Danh từ",
-          "cn": "名词",
-          "normalized": "noun",
-          "schema_compatible_pos": "noun",
-          "is_separable_verb": false,
-          "separable_type": "",
-          "structure_vi": "",
-          "usage_note_vi": "",
-          "notes": []
-         },
-         "source_origin": "textbook",
+         "pinyin": "Yuándàn nà tiān, wǒ gēn jǐ ge tóngxué yìqǐ ①____ huǒchē qù Hā’ěrbīn kàn bīngdēng. Gāng dào chēzhàn ménkǒu, ②____ kànjiàn hěn duō jiēzhàn de rén, yì chū chēzhàn yíngmiàn jiù shì jǐ zuò dà bīngdiāo, xiàng jùshí yíyàng lì zài guǎngchǎng ③____. Cónglái méiyǒu jiàn guo bīngxuě de wǒ, yíxiàzi jīdòng hé xīngfèn qǐlai. Hūrán xiǎng ④____ le yí jù shī: “Běiguó fēngguāng, qiān lǐ bīng fēng, wàn lǐ xuě piāo.” Yǎnqián de qíngjǐng gēn zhè jù shī shuō de wánquán yíyàng.\n\nDì èr tiān, wǒmen lái dào le Sōnghuājiāng shang. ⑤____ jiāngmiàn shang jiézhe hòu hòu de bīng, tiān hěn lěng, dànshì bīng shang què yǒu nàme duō kuàilè de yóurén. Wǒmen kàn dào yìxiē yìshùjiā zhèngzài jiāng shang zuò bīngdiāo, bù shǎo niánqīngrén zài zìyóu zìzài de huábīng, yǒu de rén zuò ⑥____ gǒu lā de dà xuěqiāo shang fēipǎo, yǒu yìsi jí le. Wǒ hé jǐ ge péngyǒu ⑦____ zhè yī chǎngmiàn suǒ xīyǐn, yě zuò shàng dà xuěqiāo, zài Sōnghuājiāng shang pǎo le qǐlai.\n\nDāngrán, zuì piàoliang de hái shǔ bīngdēng. Gè zhǒng gè yàng de yánsè, gè zhǒng gè yàng de zàoxíng. Zǒu jìn bīngdēng zhǎnlǎntīng, ⑧____ hǎoxiàng zǒu jìn le yí ge tónghuà shìjiè. Wǒ wúfǎ xíngróng tā de měilì, yàoshi nǐ gǎn xìngqù, zuì hǎo qīnzì qù kànkan.",
          "check_needed": false
         }
        ]
       },
       "questions": [
        {
-        "id": "8a2c7a40-2dbe-568e-9bb5-77a87fdd56e0",
+        "id": "3af137aa-d01d-4333-a9bd-7492eb9068a5",
         "blank_index": 1,
         "answer": "坐",
         "answer_verified": true,
         "check_needed": false
        },
        {
-        "id": "af6b97bc-1879-5574-8274-1527e4af249f",
+        "id": "86fd6e42-435a-453b-bf75-59e679636c7e",
         "blank_index": 2,
         "answer": "就",
         "answer_verified": true,
         "check_needed": false
        },
        {
-        "id": "91665389-de5a-5579-ac18-79aba1c9c970",
+        "id": "7b48ca7a-5f83-4ba8-bd18-a44a11401230",
         "blank_index": 3,
         "answer": "上",
         "answer_verified": true,
         "check_needed": false
        },
        {
-        "id": "b3749919-a0e0-55bc-9890-52de03db3738",
+        "id": "137bcdc2-ab88-4f32-9239-8b2f18b60622",
         "blank_index": 4,
         "answer": "起",
         "answer_verified": true,
         "check_needed": false
        },
        {
-        "id": "6ad17319-abfa-52ee-9e3a-69fd974f5af1",
+        "id": "8c3f44a6-fd92-4cb7-a722-9fedda1e2e67",
         "blank_index": 5,
         "answer": "只见",
         "answer_verified": true,
         "check_needed": false
        },
        {
-        "id": "11f5d56f-6548-5f69-a1c6-03097765c67f",
+        "id": "ca796db0-fba0-4e92-9374-2ed1fd8b0695",
         "blank_index": 6,
         "answer": "在",
         "answer_verified": true,
         "check_needed": false
        },
        {
-        "id": "e6f72ee5-8c83-547b-b6b6-ae3641c174b6",
+        "id": "94476fe6-d46a-4742-97c9-c27af6658206",
         "blank_index": 7,
         "answer": "被",
         "answer_verified": true,
         "check_needed": false
        },
        {
-        "id": "5a4c0981-525c-51ea-9bc2-00e95692317c",
+        "id": "3779c62f-2b68-446a-9597-156d4fc75b60",
         "blank_index": 8,
         "answer": "就",
         "answer_verified": true,
@@ -3959,7 +3103,7 @@
       "check_needed": false
      },
      {
-      "id": "56a85c47-b980-5d1e-ad68-36a84f80afaf",
+      "id": "1ac62b88-14d2-473e-be1e-6a588e95e535",
       "type": "communication_dialogue",
       "variant": "role_play",
       "order": 10,
@@ -4034,106 +3178,51 @@
     "check_needed": false,
     "items": [
      {
-      "id": "01136c32-f886-5ea5-911f-c48313f1a970",
+      "id": "9bd9a79e-3279-468d-9f4b-ecd1f7365e19",
       "type": "reading_cloze",
       "order": 1,
       "title": "游冰城",
       "title_vi": "Đi chơi thành phố băng",
       "supplementary_vocab": [
        {
-        "id": "3d84c855-b763-50e8-bf56-981ca5e29dca",
+        "id": "44d7974e-3a5b-45c0-a0e2-9b883d814cc6",
         "hanzi": "冰雕",
         "pinyin": "bīngdiāo",
-        "meaning_vi": "tượng băng",
-        "pos": "Danh từ",
-        "pos_detail": {
-         "vi": "Danh từ",
-         "cn": "名词",
-         "normalized": "noun",
-         "schema_compatible_pos": "noun",
-         "is_separable_verb": false,
-         "separable_type": "",
-         "structure_vi": "",
-         "usage_note_vi": "",
-         "notes": []
-        },
-        "source_origin": "textbook",
-        "check_needed": false
+        "meaning_vi": "tượng băng"
        },
        {
-        "id": "51136b07-427d-5444-8486-22aaae9a443c",
+        "id": "f0d02d73-fc09-4310-a941-3b9d8c50d6a0",
         "hanzi": "雪橇",
         "pinyin": "xuěqiāo",
-        "meaning_vi": "xe trượt tuyết",
-        "pos": "Danh từ",
-        "pos_detail": {
-         "vi": "Danh từ",
-         "cn": "名词",
-         "normalized": "noun",
-         "schema_compatible_pos": "noun",
-         "is_separable_verb": false,
-         "separable_type": "",
-         "structure_vi": "",
-         "usage_note_vi": "",
-         "notes": []
-        },
-        "source_origin": "textbook",
-        "check_needed": false
+        "meaning_vi": "xe trượt tuyết"
        },
        {
-        "id": "bdd94111-4c20-5b47-bc96-51a703c803cd",
+        "id": "6b66426c-8005-4e6a-aa9b-387dd914dc92",
         "hanzi": "冰灯",
         "pinyin": "bīngdēng",
-        "meaning_vi": "đèn băng",
-        "pos": "Danh từ",
-        "pos_detail": {
-         "vi": "Danh từ",
-         "cn": "名词",
-         "normalized": "noun",
-         "schema_compatible_pos": "noun",
-         "is_separable_verb": false,
-         "separable_type": "",
-         "structure_vi": "",
-         "usage_note_vi": "",
-         "notes": []
-        },
-        "source_origin": "textbook",
-        "check_needed": false
+        "meaning_vi": "đèn băng"
        },
        {
-        "id": "5c141fc0-8908-5ae5-ae38-82062cc57a73",
+        "id": "3c0b0ba4-7b1d-45c1-a701-b9e5f8ae5928",
         "hanzi": "童话",
         "pinyin": "tónghuà",
-        "meaning_vi": "truyện cổ tích",
-        "pos": "Danh từ",
-        "pos_detail": {
-         "vi": "Danh từ",
-         "cn": "名词",
-         "normalized": "noun",
-         "schema_compatible_pos": "noun",
-         "is_separable_verb": false,
-         "separable_type": "",
-         "structure_vi": "",
-         "usage_note_vi": "",
-         "notes": []
-        },
-        "source_origin": "textbook",
-        "check_needed": false
+        "meaning_vi": "truyện cổ tích"
        }
       ],
       "paragraphs": [
        {
-        "id": "3cc95dcd-1867-5f69-8faa-8718cd297179",
+        "id": "d2a4cf8b-55cd-4904-9fed-3141da682b19",
         "order": 1,
         "zh": "元旦那天，我跟几个同学一起①____火车去哈尔滨看冰灯。刚到车站门口，②____看见很多接站的人，一出车站迎面就是几座大冰雕，像巨石一样立在广场③____。从来没有见过冰雪的我，一下子激动和兴奋起来。忽然想④____了一句诗：“北国风光，千里冰封，万里雪飘。”眼前的情景跟这句诗说的完全一样。\n\n第二天，我们来到了松花江上。⑤____江面上结着厚厚的冰，天很冷，但是冰上却有那么多快乐的游人。我们看到一些艺术家正在江上做冰雕，不少年轻人在自由自在地滑冰，有的人坐⑥____狗拉的大雪橇上飞跑，有意思极了。我和几个朋友⑦____这一场面所吸引，也坐上大雪橇，在松花江上跑了起来。\n\n当然，最漂亮的还数冰灯。各种各样的颜色，各种各样的造型。走进冰灯展览厅，⑧____好像走进了一个童话世界。我无法形容它的美丽，要是你感兴趣，最好亲自去看看。",
         "pinyin": "Yuándàn nà tiān, wǒ gēn jǐ ge tóngxué yìqǐ ①____ huǒchē qù Hā’ěrbīn kàn bīngdēng. Gāng dào chēzhàn ménkǒu, ②____ kànjiàn hěn duō jiēzhàn de rén, yì chū chēzhàn yíngmiàn jiù shì jǐ zuò dà bīngdiāo, xiàng jùshí yíyàng lì zài guǎngchǎng ③____. Cónglái méiyǒu jiàn guo bīngxuě de wǒ, yíxiàzi jīdòng hé xīngfèn qǐlai. Hūrán xiǎng ④____ le yí jù shī: “Běiguó fēngguāng, qiān lǐ bīng fēng, wàn lǐ xuě piāo.” Yǎnqián de qíngjǐng gēn zhè jù shī shuō de wánquán yíyàng.\n\nDì èr tiān, wǒmen lái dào le Sōnghuājiāng shang. ⑤____ jiāngmiàn shang jiézhe hòu hòu de bīng, tiān hěn lěng, dànshì bīng shang què yǒu nàme duō kuàilè de yóurén. Wǒmen kàn dào yìxiē yìshùjiā zhèngzài jiāng shang zuò bīngdiāo, bù shǎo niánqīngrén zài zìyóu zìzài de huábīng, yǒu de rén zuò ⑥____ gǒu lā de dà xuěqiāo shang fēipǎo, yǒu yìsi jí le. Wǒ hé jǐ ge péngyǒu ⑦____ zhè yī chǎngmiàn suǒ xīyǐn, yě zuò shàng dà xuěqiāo, zài Sōnghuājiāng shang pǎo le qǐlai.\n\nDāngrán, zuì piàoliang de hái shǔ bīngdēng. Gè zhǒng gè yàng de yánsè, gè zhǒng gè yàng de zàoxíng. Zǒu jìn bīngdēng zhǎnlǎntīng, ⑧____ hǎoxiàng zǒu jìn le yí ge tónghuà shìjiè. Wǒ wúfǎ xíngróng tā de měilì, yàoshi nǐ gǎn xìngqù, zuì hǎo qīnzì qù kànkan.",
         "vi": "",
+        "source_origin": "textbook",
         "check_needed": false
        }
       ],
       "questions": [
        {
-        "id": "f4d9e3df-33e8-520a-bed4-fc197c68f088",
+        "id": "97c6a4ab-7de0-45b1-a796-4625f58d1fca",
         "type": "blank",
         "blank_index": 1,
         "answer": "坐",
@@ -4141,7 +3230,7 @@
         "check_needed": false
        },
        {
-        "id": "d8390733-3c7f-5757-8c2d-4943aec093a5",
+        "id": "82b334af-11c3-4606-980f-154617982627",
         "type": "blank",
         "blank_index": 2,
         "answer": "就",
@@ -4149,7 +3238,7 @@
         "check_needed": false
        },
        {
-        "id": "68201a9c-ddfe-521c-8aab-0e3848d5b2cb",
+        "id": "13181a17-4f4d-4923-a0ef-dd8d285261d4",
         "type": "blank",
         "blank_index": 3,
         "answer": "上",
@@ -4157,7 +3246,7 @@
         "check_needed": false
        },
        {
-        "id": "30804150-a286-5257-883b-5cd22115aee8",
+        "id": "05127eb4-5037-4e27-a2e2-5a497d413bd1",
         "type": "blank",
         "blank_index": 4,
         "answer": "起",
@@ -4165,7 +3254,7 @@
         "check_needed": false
        },
        {
-        "id": "a5ad4444-7aaa-5b6d-b91e-6abfd9ca2064",
+        "id": "b7ee22d3-687c-4fed-acb8-66db927f5e7a",
         "type": "blank",
         "blank_index": 5,
         "answer": "只见",
@@ -4173,7 +3262,7 @@
         "check_needed": false
        },
        {
-        "id": "7dafa35c-5e4f-5c42-9438-1f732dce9b06",
+        "id": "3e37585b-c64f-4211-93cb-b7d95c5b9ee6",
         "type": "blank",
         "blank_index": 6,
         "answer": "在",
@@ -4181,7 +3270,7 @@
         "check_needed": false
        },
        {
-        "id": "4d0a8f03-2b63-56e8-9209-d1bc27a80789",
+        "id": "81ab406f-8f8e-4bb7-8c7a-1ed88d2815b2",
         "type": "blank",
         "blank_index": 7,
         "answer": "被",
@@ -4189,7 +3278,7 @@
         "check_needed": false
        },
        {
-        "id": "752831ff-6267-5534-96cb-2e7a53f61606",
+        "id": "ef50288b-f44e-4498-acdb-b999d3fc94b9",
         "type": "blank",
         "blank_index": 8,
         "answer": "就",
@@ -4200,7 +3289,7 @@
       "source_origin": "textbook_answer_checked",
       "check_needed": false,
       "answers": [],
-      "answer_key": ["坐", "就", "上", "起", "只见", "在", "被", "就"]
+      "answer_key": []
      }
     ],
     "empty_reading_note_vi": "Bài này không thấy 阅读理解 riêng sau bài tập; phần đọc/đục lỗ là 综合填空《游冰城》."
@@ -4266,7 +3355,11 @@
       "reading_covered": true,
       "communication_covered": true,
       "character_writing_covered": false,
-      "remaining_check_items": []
+      "remaining_check_items": [
+       "Đã rà lại bài khóa, sinh từ, chú thích, cách dùng từ và bài tập theo PDF/bản đối chiếu; không đổi cấu trúc JSON.",
+       "Đáp án 综合填空《游冰城》 là đáp án suy luận theo ngữ cảnh sách; đã đặt answer_verified=true sau khi đối chiếu logic câu.",
+       "Giữ chữ 添 trong 添麻烦; không dùng 舔."
+      ]
      }
     }
    }
@@ -4293,7 +3386,13 @@
     },
     {
      "name": "Văn bản đã dán (1).txt",
-     "type": "uploaded_lesson_json",
+     "type": "uploaded_crosscheck",
+     "source_origin": "uploaded_crosscheck",
+     "check_needed": false
+    },
+    {
+     "name": "Đã dán markdown (1).md",
+     "type": "instruction_and_schema_notes",
      "source_origin": "uploaded_crosscheck",
      "check_needed": false
     }
@@ -4313,31 +3412,31 @@
    ],
    "grammar_points": [
     {
-     "id": "7cd06ba0-4be7-5a13-b90f-e316ea943af4",
+     "id": "f8ec59f3-898a-47b2-b536-44dfd8183393",
      "title": "从……来看"
     },
     {
-     "id": "7f1a5375-012b-5afc-b3e7-50fe718fbab5",
+     "id": "57b14753-688a-41b6-9e0d-b61dbbf574d7",
      "title": "当然"
     },
     {
-     "id": "a2c71939-915b-55c1-8585-0d326ef65031",
+     "id": "fa804fff-372b-4874-8571-f54e613d7e07",
      "title": "向来"
     },
     {
-     "id": "161f802e-e7d8-5a2d-aa02-14141446a022",
+     "id": "c6cd6c38-22fc-4546-a398-39efe02d6c17",
      "title": "不时"
     },
     {
-     "id": "46b38a9e-af1a-5e2b-a1cf-c9dd7590ef9b",
+     "id": "c3d31639-0f40-4b2f-aa50-5dda9d443b78",
      "title": "非……不可"
     },
     {
-     "id": "fc9e09b5-7cb3-5c79-84bc-93b5ea51a2f8",
+     "id": "b0c8e101-1500-4742-9064-1e102a0eb8b9",
      "title": "千万"
     },
     {
-     "id": "b0a5f9e0-e8fe-54f0-adac-079519825765",
+     "id": "f3302370-f1c2-4d08-99ba-fda75cc4a335",
      "title": "每当……，都……"
     }
    ],
