@@ -848,7 +848,7 @@
       "type": "vocabulary_item",
       "order": 19,
       "hanzi": "的话",
-      "pinyin": "de huà",
+      "pinyin": "dehuà",
       "meaning_vi": "nếu; trong trường hợp... thì",
       "meaning_en": "",
       "pos": "Trợ từ / Cấu trúc điều kiện",
@@ -856,7 +856,7 @@
       "examples": [],
       "flashcard": {
        "front": "的话",
-       "back": "nếu; trong trường hợp... thì",
+       "back": "dehuà — nếu; trong trường hợp... thì",
        "modes": [
         "hanzi_to_meaning",
         "meaning_to_hanzi",
@@ -1280,7 +1280,7 @@
       "type": "vocabulary_item",
       "order": 31,
       "hanzi": "天上",
-      "pinyin": "tiān shàng",
+      "pinyin": "tiānshàng",
       "meaning_vi": "trên trời; thiên giới",
       "meaning_en": "",
       "pos": "Danh từ phương vị",
@@ -1288,7 +1288,7 @@
       "examples": [],
       "flashcard": {
        "front": "天上",
-       "back": "trên trời; thiên giới",
+       "back": "tiānshàng — trên trời; thiên giới",
        "modes": [
         "hanzi_to_meaning",
         "meaning_to_hanzi",
@@ -1676,7 +1676,7 @@
       "type": "vocabulary_item",
       "order": 42,
       "hanzi": "南辕北辙",
-      "pinyin": "nán yuán běi zhé",
+      "pinyin": "nányuán-běizhé",
       "meaning_vi": "muốn đi về Nam nhưng xe lại chạy về Bắc; mục tiêu và hành động trái ngược nhau",
       "meaning_en": "",
       "pos": "Thành ngữ",
@@ -1684,7 +1684,7 @@
       "examples": [],
       "flashcard": {
        "front": "南辕北辙",
-       "back": "muốn đi về Nam nhưng xe lại chạy về Bắc; mục tiêu và hành động trái ngược nhau",
+       "back": "nányuán-běizhé — muốn đi về Nam nhưng xe lại chạy về Bắc; mục tiêu và hành động trái ngược nhau",
        "modes": [
         "hanzi_to_meaning",
         "meaning_to_hanzi",
@@ -1892,7 +1892,7 @@
       "type": "vocabulary_item",
       "order": 48,
       "hanzi": "身强力壮",
-      "pinyin": "shēn qiáng lì zhuàng",
+      "pinyin": "shēnqiáng-lìzhuàng",
       "meaning_vi": "thân thể khỏe mạnh, sức lực cường tráng",
       "meaning_en": "",
       "pos": "Thành ngữ / Cụm tính từ",
@@ -1900,7 +1900,7 @@
       "examples": [],
       "flashcard": {
        "front": "身强力壮",
-       "back": "thân thể khỏe mạnh, sức lực cường tráng",
+       "back": "shēnqiáng-lìzhuàng — thân thể khỏe mạnh, sức lực cường tráng",
        "modes": [
         "hanzi_to_meaning",
         "meaning_to_hanzi",
@@ -2384,36 +2384,12 @@
         "type": "minimal_pair_group",
         "title": "辨音辨调",
         "items": [
-         {
-          "id": "0e5801e7-b89b-4cc6-8bd9-9e1fbbd30b31_pair_001",
-          "left": "dìwèi",
-          "right": "tǐhuì"
-         },
-         {
-          "id": "0e5801e7-b89b-4cc6-8bd9-9e1fbbd30b31_pair_002",
-          "left": "yǒuqù",
-          "right": "yǒu qì"
-         },
-         {
-          "id": "0e5801e7-b89b-4cc6-8bd9-9e1fbbd30b31_pair_003",
-          "left": "yìshù",
-          "right": "yīshù"
-         },
-         {
-          "id": "0e5801e7-b89b-4cc6-8bd9-9e1fbbd30b31_pair_004",
-          "left": "gūjì",
-          "right": "gùjì"
-         },
-         {
-          "id": "0e5801e7-b89b-4cc6-8bd9-9e1fbbd30b31_pair_005",
-          "left": "yǐngxiǎng",
-          "right": "yìnxiàng"
-         },
-         {
-          "id": "0e5801e7-b89b-4cc6-8bd9-9e1fbbd30b31_pair_006",
-          "left": "zhǐshì",
-          "right": "zhīshi"
-         }
+         "dìwèi — tǐhuì",
+         "yǒuqù — yǒu qì",
+         "yìshù — yīshù",
+         "gūjì — gùjì",
+         "yǐngxiǎng — yìnxiàng",
+         "zhǐshì — zhīshi"
         ],
         "source_origin": "textbook",
         "check_needed": false
@@ -2928,7 +2904,7 @@
        {
         "order": 4,
         "corrected": "因为买不到机票，今天我不能回去。",
-        "note_vi": "买不到 chỉ không mua được vì không có vé/không đạt được kết quả mua."
+        "note_vi": "买不到 chỉ không đạt được kết quả mua vé; 买不了 nghiêng về điều kiện/khả năng không cho phép mua, không sát câu này bằng 买不到."
        },
        {
         "order": 5,
@@ -2938,7 +2914,7 @@
        {
         "order": 6,
         "corrected": "刚来中国时，我一句汉语也听不懂。",
-        "note_vi": "一句……也 + 听不懂 diễn tả hoàn toàn không nghe hiểu."
+        "note_vi": "Ở đây muốn nói trạng thái năng lực lúc mới đến: một câu tiếng Hán cũng nghe không hiểu, nên dùng 听不懂; không dùng 没听懂 nếu nói năng lực chung."
        },
        {
         "order": 7,
@@ -3336,9 +3312,10 @@
         "id": "d2a4cf8b-55cd-4904-9fed-3141da682b19",
         "order": 1,
         "zh": "这是中国古代的一个故事。\n\n前边跑过来了一辆马车，①______坐着一个大富翁，后面放着一个大箱子，前面还坐着一个赶车的。赶车的不停地赶着马，马车跑②______飞快。\n\n路上走过来一位老人。老人挑着水。\n\n大富翁看见这位老人，③______叫赶车的停下车，想向老人要点儿水喝。\n\n老人问他们要到什么地方去，富翁大声地说：“我们要到楚（Chǔ）国去。”\n\n老人一听就笑了，他对富翁说：“你们走错了，楚国在南边，应该往南走，怎么往北走呢？”\n\n富翁说：“没关系，你看，我的马跑得很④______。”\n\n老人又说：“你的马跑得再快，⑤______这不是去楚国的路啊。马跑得越快离楚国越远。”\n\n“没问题。”大富翁指着车上的箱子说，“您看，这个大箱子里装着很多钱呢。”\n\n“你有很多钱，可是走的方向不对，是到不了楚国的。”\n\n大富翁又指着赶车的说：“你看我这个车夫，身强力壮，赶车的技术也特别好。”\n\n老人觉得这位先生简直不懂道理，⑥______说：“你的车夫是不错。可是，楚国在南边，你却要他赶着车往北跑，⑦______能到得了楚国呢？”\n\n大富翁听了老人的话，不高兴地说：“我们已经走⑧______好几百里路了，怎么能再往回走呢？”\n\n说完他就让赶车的继续赶着车一直往北跑去，车越跑越快，一会儿就看不见了。",
-        "vi": "Bài đọc điền chỗ trống về thành ngữ Nam viên bắc triệt: một phú ông muốn đến nước Sở ở phía Nam nhưng lại cho xe chạy về phía Bắc, nên càng đi càng xa mục tiêu.",
+        "vi": "Đây là một câu chuyện Trung Quốc cổ đại.\n\nPhía trước có một cỗ xe ngựa chạy tới. Trên xe có một phú ông đang ngồi, phía sau đặt một cái rương lớn, phía trước còn có một người đánh xe. Người đánh xe không ngừng thúc ngựa, xe ngựa chạy nhanh như bay.\n\nTrên đường có một ông cụ đi tới. Ông cụ đang gánh nước.\n\nPhú ông thấy ông cụ, liền bảo người đánh xe dừng xe, muốn xin ông cụ chút nước uống.\n\nÔng cụ hỏi họ định đi đâu, phú ông lớn tiếng nói: “Chúng tôi muốn đến nước Sở.”\n\nÔng cụ vừa nghe liền cười, nói với phú ông: “Các ông đi sai rồi, nước Sở ở phía nam, nên đi về phía nam, sao lại đi về phía bắc?”\n\nPhú ông nói: “Không sao, ông xem, ngựa của tôi chạy rất nhanh.”\n\nÔng cụ lại nói: “Ngựa của ông có chạy nhanh đến đâu, nhưng đây không phải đường đi nước Sở. Ngựa chạy càng nhanh thì càng xa nước Sở.”\n\n“Không vấn đề gì.” Phú ông chỉ vào chiếc rương trên xe nói: “Ông xem, trong chiếc rương lớn này có rất nhiều tiền.”\n\n“Ông có rất nhiều tiền, nhưng hướng đi không đúng thì không thể đến nước Sở được.”\n\nPhú ông lại chỉ vào người đánh xe nói: “Ông nhìn người phu xe này của tôi, thân thể khỏe mạnh, kỹ thuật đánh xe cũng đặc biệt tốt.”\n\nÔng cụ thấy vị này quả thực không hiểu đạo lý, nói tiếp: “Phu xe của ông đúng là không tệ. Nhưng nước Sở ở phía nam, ông lại bắt anh ta đánh xe chạy về phía bắc, làm sao có thể đến được nước Sở?”\n\nPhú ông nghe lời ông cụ, không vui nói: “Chúng tôi đã đi mấy trăm dặm rồi, sao có thể quay lại được nữa?”\n\nNói xong, ông ta liền bảo người đánh xe tiếp tục đánh xe chạy thẳng về phía bắc; xe chạy càng lúc càng nhanh, một lát sau thì không nhìn thấy nữa.",
         "source_origin": "textbook",
-        "check_needed": false
+        "check_needed": false,
+        "pinyin": "Zhè shì Zhōngguó gǔdài de yí ge gùshi.\n\nQiánbian pǎo guòlai le yí liàng mǎchē, chē shang zuòzhe yí ge dà fùwēng, hòumian fàngzhe yí ge dà xiāngzi, qiánmian hái zuòzhe yí ge gǎnchē de. Gǎnchē de bùtíng de gǎnzhe mǎ, mǎchē pǎo de fēikuài.\n\nLùshang zǒu guòlai yí wèi lǎorén. Lǎorén tiāozhe shuǐ.\n\nDà fùwēng kànjiàn zhè wèi lǎorén, jiù jiào gǎnchē de tíng xià chē, xiǎng xiàng lǎorén yào diǎnr shuǐ hē.\n\nLǎorén wèn tāmen yào dào shénme dìfang qù, fùwēng dàshēng de shuō: “Wǒmen yào dào Chǔguó qù.”\n\nLǎorén yì tīng jiù xiào le, tā duì fùwēng shuō: “Nǐmen zǒu cuò le, Chǔguó zài nánbian, yīnggāi wǎng nán zǒu, zěnme wǎng běi zǒu ne?”\n\nFùwēng shuō: “Méi guānxi, nǐ kàn, wǒ de mǎ pǎo de hěn kuài.”\n\nLǎorén yòu shuō: “Nǐ de mǎ pǎo de zài kuài, kěshì zhè bú shì qù Chǔguó de lù a. Mǎ pǎo de yuè kuài lí Chǔguó yuè yuǎn.”\n\n“Méi wèntí.” Dà fùwēng zhǐzhe chē shang de xiāngzi shuō, “Nín kàn, zhège dà xiāngzi lǐ zhuāngzhe hěn duō qián ne.”\n\n“Nǐ yǒu hěn duō qián, kěshì zǒu de fāngxiàng bú duì, shì dào bu liǎo Chǔguó de.”\n\nDà fùwēng yòu zhǐzhe gǎnchē de shuō: “Nǐ kàn wǒ zhège chēfū, shēnqiáng-lìzhuàng, gǎnchē de jìshù yě tèbié hǎo.”\n\nLǎorén juéde zhè wèi xiānsheng jiǎnzhí bù dǒng dàoli, jìxù shuō: “Nǐ de chēfū shì búcuò. Kěshì, Chǔguó zài nánbian, nǐ què yào tā gǎnzhe chē wǎng běi pǎo, zěnme néng dào de liǎo Chǔguó ne?”\n\nDà fùwēng tīng le lǎorén de huà, bù gāoxìng de shuō: “Wǒmen yǐjīng zǒu le hǎo jǐ bǎi lǐ lù le, zěnme néng zài wǎng huí zǒu ne?”\n\nShuō wán tā jiù ràng gǎnchē de jìxù gǎnzhe chē yìzhí wǎng běi pǎo qù, chē yuè pǎo yuè kuài, yíhuìr jiù kàn bu jiàn le."
        }
       ],
       "questions": [
@@ -3399,7 +3376,7 @@
         "check_needed": false
        }
       ],
-      "culture_note_vi": "南辕北辙 nghĩa đen là muốn đi về phía Nam nhưng xe lại chạy về phía Bắc; nghĩa bóng là mục tiêu và hành động trái ngược nhau.",
+      "culture_note_vi": "南辕北辙 nghĩa đen là muốn đi về phía Nam nhưng càng xe/vết xe lại hướng về phía Bắc; nghĩa bóng là mục tiêu và hành động trái ngược nhau.",
       "source_origin": "textbook",
       "check_needed": false,
       "answers": ["车上", "得", "就", "快", "可是", "继续", "怎么", "了"],
@@ -3720,7 +3697,7 @@
      "check_needed": false,
      "page_start": 132,
      "page_end": 150,
-     "note": "Đã đối chiếu các trang scan Bài 20 trong PDF, phạm vi PDF page 132–150."
+     "note": "Đã đối chiếu các trang scan Bài 20 trong PDF, phạm vi scan page_132–page_150 / textbook pp.114–132."
     },
     {
      "name": "Tong_hop_tu_vung_Han_ngu_quyen_2_Bai_1-25.docx",

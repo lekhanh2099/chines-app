@@ -13,7 +13,10 @@
    "ba_sentence",
    "airport",
    "travel",
-   "coverage_first"
+   "coverage_first",
+   "verified",
+   "pdf_rechecked",
+   "data_updated"
   ],
   "sections": [
    {
@@ -39,24 +42,22 @@
         "order": 1,
         "speaker": "关建平",
         "zh": "我们先去办理登机手续，把行李托运了。",
-        "vi": "Trước tiên chúng ta đi làm thủ tục lên máy bay, gửi hành lý ký gửi đã.",
+        "vi": "Trước tiên chúng ta đi làm thủ tục lên máy bay, ký gửi hành lý đã.",
         "grammar_refs": ["26d807af-9599-4242-96db-253eb2d2e572"],
         "vocab_refs": ["办理", "登机", "手续", "行李", "托运"],
         "source_origin": "textbook",
-        "check_needed": false,
-        "pinyin": "Wǒmen xiān qù bànlǐ dēngjī shǒuxù, bǎ xíngli tuōyùn le."
+        "check_needed": false
        },
        {
         "id": "b77b6ed5-bf0f-49aa-bf47-abf46d11fce7",
         "order": 2,
         "speaker": "服务员",
         "zh": "请把护照和机票给我。哪个箱子要托运？把它放上去吧。这是登机牌儿，请拿好。",
-        "vi": "Xin đưa hộ chiếu và vé máy bay cho tôi. Va-li nào cần ký gửi? Đặt nó lên đây nhé. Đây là thẻ lên máy bay, xin cầm cẩn thận.",
+        "vi": "Xin hãy đưa hộ chiếu và vé máy bay cho tôi. Va-li nào cần ký gửi? Đặt nó lên đây nhé. Đây là thẻ lên máy bay, xin cầm cho cẩn thận.",
         "grammar_refs": ["26d807af-9599-4242-96db-253eb2d2e572"],
         "vocab_refs": ["护照", "机票", "托运", "登机牌儿"],
         "source_origin": "textbook",
-        "check_needed": false,
-        "pinyin": "Qǐng bǎ hùzhào hé jīpiào gěi wǒ. Nǎge xiāngzi yào tuōyùn? Bǎ tā fàng shàngqù ba. Zhè shì dēngjīpáir, qǐng ná hǎo."
+        "check_needed": false
        },
        {
         "id": "0bf96cc4-acd4-4ac4-be6d-5f04a80dcd2b",
@@ -67,8 +68,7 @@
         "grammar_refs": [],
         "vocab_refs": [],
         "source_origin": "textbook",
-        "check_needed": false,
-        "pinyin": "Xièxie!"
+        "check_needed": false
        },
        {
         "id": "be918c72-648d-41eb-81ba-45d3cf6099ea",
@@ -79,8 +79,7 @@
         "grammar_refs": ["b5e185f7-85bc-43b3-8e7e-f7ef4c25caa0"],
         "vocab_refs": ["装"],
         "source_origin": "textbook",
-        "check_needed": false,
-        "pinyin": "Zhè wèi nǚshì, nǐ kǒudài lǐ zhuāng de shì shénme?"
+        "check_needed": false
        },
        {
         "id": "72ab83c3-9f46-4bac-b61c-5c84920d0a2a",
@@ -91,8 +90,7 @@
         "grammar_refs": ["b5e185f7-85bc-43b3-8e7e-f7ef4c25caa0"],
         "vocab_refs": [],
         "source_origin": "textbook",
-        "check_needed": false,
-        "pinyin": "Méiyǒu shénme ya!"
+        "check_needed": false
        },
        {
         "id": "2009c011-892b-4fda-9210-89340de1aaa7",
@@ -115,8 +113,7 @@
         "grammar_refs": [],
         "vocab_refs": ["硬币"],
         "source_origin": "textbook",
-        "check_needed": false,
-        "pinyin": "À, shì jǐ bǎ yàoshi hé liǎng ge yìngbì."
+        "check_needed": false
        },
        {
         "id": "d6c7d9cb-5164-42fb-b685-00ca8ef0aa4d",
@@ -127,32 +124,29 @@
         "grammar_refs": [],
         "vocab_refs": [],
         "source_origin": "textbook",
-        "check_needed": false,
-        "pinyin": "Hǎo le. Qǐng jìnqù ba."
+        "check_needed": false
        },
        {
         "id": "1d6049e9-b575-422c-b5e8-eedf5891fc36",
         "order": 9,
         "speaker": "关建平",
         "zh": "把手提包放到行李箱里去吧。",
-        "vi": "Đặt túi xách vào khoang hành lý đi.",
+        "vi": "Đặt túi xách vào ngăn hành lý đi.",
         "grammar_refs": ["26d807af-9599-4242-96db-253eb2d2e572"],
         "vocab_refs": ["行李"],
         "source_origin": "textbook",
-        "check_needed": false,
-        "pinyin": "Bǎ shǒutíbāo fàng dào xínglixiāng lǐ qù ba."
+        "check_needed": false
        },
        {
         "id": "7be52606-3e61-4a7d-84cd-6442d7f32a42",
         "order": 10,
         "speaker": "夏雨",
         "zh": "等一下儿，先把相机拿出来，我想在飞机上照两张照片。",
-        "vi": "Chờ một chút, để em lấy máy ảnh ra trước, em muốn chụp vài tấm ảnh trên máy bay.",
+        "vi": "Chờ một chút, để em lấy máy ảnh ra trước, em muốn chụp hai tấm ảnh trên máy bay.",
         "grammar_refs": ["26d807af-9599-4242-96db-253eb2d2e572"],
         "vocab_refs": [],
         "source_origin": "textbook",
-        "check_needed": false,
-        "pinyin": "Děng yíxiàr, xiān bǎ xiàngjī ná chūlai, wǒ xiǎng zài fēijī shang zhào liǎng zhāng zhàopiàn."
+        "check_needed": false
        },
        {
         "id": "0e86620b-0718-428a-ae5f-29458ce15a71",
@@ -163,8 +157,7 @@
         "grammar_refs": ["26d807af-9599-4242-96db-253eb2d2e572"],
         "vocab_refs": ["装"],
         "source_origin": "textbook",
-        "check_needed": false,
-        "pinyin": "Gěi nǐ. Duì le, xiàngjī lǐ hái méiyǒu diànchí ne, wǒ xiān bǎ diànchí zhuāng shàng."
+        "check_needed": false
        }
       ],
       "paragraphs": [],
@@ -188,8 +181,7 @@
         "grammar_refs": [],
         "vocab_refs": ["暗"],
         "source_origin": "textbook",
-        "check_needed": false,
-        "pinyin": "Zhè lǐbian yǒudiǎnr àn."
+        "check_needed": false
        },
        {
         "id": "eb8ac7ce-e3b3-489d-b060-bfcdd1d47f6f",
@@ -200,8 +192,7 @@
         "grammar_refs": ["26d807af-9599-4242-96db-253eb2d2e572"],
         "vocab_refs": [],
         "source_origin": "textbook",
-        "check_needed": false,
-        "pinyin": "Nǐ bǎ dēng dǎkāi."
+        "check_needed": false
        },
        {
         "id": "16e1637d-8f70-42c5-bc3b-ce5f92f50b83",
@@ -212,8 +203,7 @@
         "grammar_refs": [],
         "vocab_refs": ["开关"],
         "source_origin": "textbook",
-        "check_needed": false,
-        "pinyin": "Kāiguān zài nǎr ne?"
+        "check_needed": false
        },
        {
         "id": "b515458c-15ce-4099-bae0-ba3b0df6564a",
@@ -224,8 +214,7 @@
         "grammar_refs": [],
         "vocab_refs": ["扶手"],
         "source_origin": "textbook",
-        "check_needed": false,
-        "pinyin": "Zài zuòwèi de fúshǒu shang."
+        "check_needed": false
        },
        {
         "id": "e6235340-f73f-4809-ad82-5caf2c6a2fbc",
@@ -236,8 +225,7 @@
         "grammar_refs": ["26d807af-9599-4242-96db-253eb2d2e572"],
         "vocab_refs": ["空姐", "起飞", "安全带", "安全", "带"],
         "source_origin": "textbook",
-        "check_needed": false,
-        "pinyin": "Fēijī mǎshàng jiù yào qǐfēi le, qǐng dàjiā bǎ ānquándài jì hǎo, bǎ shǒujī guān shàng……"
+        "check_needed": false
        },
        {
         "id": "272b5fdf-ac72-4fd0-bcc8-acc5b7a8dd9c",
@@ -248,8 +236,7 @@
         "grammar_refs": [],
         "vocab_refs": ["安全带"],
         "source_origin": "textbook",
-        "check_needed": false,
-        "pinyin": "Wǒ hái bú huì jì ānquándài ne."
+        "check_needed": false
        },
        {
         "id": "ce377099-0679-46cb-be07-df33c610a9c0",
@@ -260,8 +247,7 @@
         "grammar_refs": ["26d807af-9599-4242-96db-253eb2d2e572"],
         "vocab_refs": ["插头", "插"],
         "source_origin": "textbook",
-        "check_needed": false,
-        "pinyin": "Bǎ zhège chātóu wǎng lǐ yì chā jiù xíng le."
+        "check_needed": false
        },
        {
         "id": "4126e1f0-117d-407d-af1b-af6a5eb72f04",
@@ -272,8 +258,7 @@
         "grammar_refs": [],
         "vocab_refs": [],
         "source_origin": "textbook",
-        "check_needed": false,
-        "pinyin": "Zěnme dǎkāi ne?"
+        "check_needed": false
        },
        {
         "id": "b3c27839-0e46-4a31-b05c-0e05e5d71980",
@@ -284,8 +269,7 @@
         "grammar_refs": ["26d807af-9599-4242-96db-253eb2d2e572"],
         "vocab_refs": ["卡子", "扳"],
         "source_origin": "textbook",
-        "check_needed": false,
-        "pinyin": "Bǎ qiǎzi bān yíxiàr jiù dǎkāi le."
+        "check_needed": false
        },
        {
         "id": "2ed8dfe2-afce-4e2f-af18-5d9d732a00e0",
@@ -296,8 +280,7 @@
         "grammar_refs": ["26d807af-9599-4242-96db-253eb2d2e572"],
         "vocab_refs": ["凉"],
         "source_origin": "textbook",
-        "check_needed": false,
-        "pinyin": "À, dǎkāi le. Nǐ kàn, kāfēi dōu liáng le, kuài bǎ tā hē le ba."
+        "check_needed": false
        },
        {
         "id": "aee60052-a902-4b70-85f5-af4c8f4c06b3",
@@ -308,8 +291,7 @@
         "grammar_refs": [],
         "vocab_refs": [],
         "source_origin": "textbook",
-        "check_needed": false,
-        "pinyin": "Āiyā!"
+        "check_needed": false
        },
        {
         "id": "a75110e2-8e33-4eef-882f-a7f8254c28a7",
@@ -320,20 +302,18 @@
         "grammar_refs": [],
         "vocab_refs": [],
         "source_origin": "textbook",
-        "check_needed": false,
-        "pinyin": "Zěnme le?"
+        "check_needed": false
        },
        {
         "id": "386d045d-ca0e-4489-906e-99dd9a95870c",
         "order": 13,
         "speaker": "夏雨",
         "zh": "你把杯子碰倒了，咖啡全洒了。",
-        "vi": "Anh làm đổ cốc rồi, cà phê đổ hết rồi.",
+        "vi": "Anh làm đổ cốc rồi, cà phê đổ hết ra rồi.",
         "grammar_refs": ["26d807af-9599-4242-96db-253eb2d2e572"],
         "vocab_refs": ["杯子", "洒"],
         "source_origin": "textbook",
-        "check_needed": false,
-        "pinyin": "Nǐ bǎ bēizi pèng dǎo le, kāfēi quán sǎ le."
+        "check_needed": false
        },
        {
         "id": "1c90c614-758e-4e8d-88e5-cb7013155423",
@@ -344,8 +324,7 @@
         "grammar_refs": ["26d807af-9599-4242-96db-253eb2d2e572"],
         "vocab_refs": [],
         "source_origin": "textbook",
-        "check_needed": false,
-        "pinyin": "Kuài ná zhǐ bǎ zhuōzi cāca."
+        "check_needed": false
        }
       ],
       "paragraphs": [],
@@ -359,7 +338,7 @@
     "order": 2,
     "title": "生词",
     "title_vi": "Từ vựng",
-    "source_origin": "textbook/generated_mixed",
+    "source_origin": "textbook_generated_mixed",
     "check_needed": false,
     "items": [
      {
@@ -370,7 +349,7 @@
       "pinyin": "bànlǐ",
       "meaning_vi": "làm; xử lý; làm thủ tục",
       "meaning_en": "to handle; to process",
-      "pos": "Động từ",
+      "pos": "verb",
       "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
@@ -385,18 +364,7 @@
       },
       "audio_key": "",
       "source_origin": "textbook",
-      "check_needed": false,
-      "pos_detail": {
-       "vi": "Động từ",
-       "cn": "动词",
-       "normalized": "verb",
-       "schema_compatible_pos": "verb",
-       "is_separable_verb": false,
-       "separable_type": "",
-       "structure_vi": "",
-       "usage_note_vi": "Dùng như động từ xử lý/làm thủ tục; không phải động từ li hợp.",
-       "notes": []
-      }
+      "check_needed": false
      },
      {
       "id": "8c18cf3c-e9dc-42e1-8faf-eb26799cabab",
@@ -406,7 +374,7 @@
       "pinyin": "dēngjī",
       "meaning_vi": "lên máy bay",
       "meaning_en": "to board a plane",
-      "pos": "Động từ li hợp",
+      "pos": "verb",
       "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
@@ -421,18 +389,7 @@
       },
       "audio_key": "",
       "source_origin": "textbook",
-      "check_needed": false,
-      "pos_detail": {
-       "vi": "Động từ li hợp",
-       "cn": "动宾式离合词",
-       "normalized": "verb_phrase",
-       "schema_compatible_pos": "verb_phrase",
-       "is_separable_verb": true,
-       "separable_type": "động-tân / 离合词",
-       "structure_vi": "động từ 登 + tân ngữ 机",
-       "usage_note_vi": "Có thể nói 登了机, 登不了机; trong bài vẫn dùng như cụm động từ “lên máy bay/boarding”.",
-       "notes": []
-      }
+      "check_needed": false
      },
      {
       "id": "1fbd69b7-603a-44ea-8d57-10cd4def9ced",
@@ -442,7 +399,7 @@
       "pinyin": "shǒuxù",
       "meaning_vi": "thủ tục",
       "meaning_en": "formalities; procedures",
-      "pos": "Danh từ",
+      "pos": "noun",
       "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
@@ -457,18 +414,7 @@
       },
       "audio_key": "",
       "source_origin": "textbook",
-      "check_needed": false,
-      "pos_detail": {
-       "vi": "Danh từ",
-       "cn": "名词",
-       "normalized": "noun",
-       "schema_compatible_pos": "noun",
-       "is_separable_verb": false,
-       "separable_type": "",
-       "structure_vi": "",
-       "usage_note_vi": "Danh từ chỉ thủ tục/quy trình giấy tờ; thường đi với 办理/办.",
-       "notes": []
-      }
+      "check_needed": false
      },
      {
       "id": "3dc505f1-bc0e-4a96-b448-17fed89fdc60",
@@ -478,7 +424,7 @@
       "pinyin": "xíngli",
       "meaning_vi": "hành lý",
       "meaning_en": "luggage",
-      "pos": "Danh từ",
+      "pos": "noun",
       "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
@@ -493,18 +439,7 @@
       },
       "audio_key": "",
       "source_origin": "textbook",
-      "check_needed": false,
-      "pos_detail": {
-       "vi": "Danh từ",
-       "cn": "名词",
-       "normalized": "noun",
-       "schema_compatible_pos": "noun",
-       "is_separable_verb": false,
-       "separable_type": "",
-       "structure_vi": "",
-       "usage_note_vi": "Danh từ chỉ hành lý; lượng từ thường gặp là 件.",
-       "notes": []
-      }
+      "check_needed": false
      },
      {
       "id": "188412d4-4c23-4d60-b7b2-21f3490199e7",
@@ -514,7 +449,7 @@
       "pinyin": "tuōyùn",
       "meaning_vi": "ký gửi; gửi vận chuyển",
       "meaning_en": "to consign for shipment",
-      "pos": "Động từ",
+      "pos": "verb",
       "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
@@ -529,18 +464,7 @@
       },
       "audio_key": "",
       "source_origin": "textbook",
-      "check_needed": false,
-      "pos_detail": {
-       "vi": "Động từ",
-       "cn": "动词",
-       "normalized": "verb",
-       "schema_compatible_pos": "verb",
-       "is_separable_verb": false,
-       "separable_type": "",
-       "structure_vi": "",
-       "usage_note_vi": "Động từ “ký gửi/gửi vận chuyển”; không tách kiểu 托了运 trong bài này.",
-       "notes": []
-      }
+      "check_needed": false
      },
      {
       "id": "5ea44727-d97c-467b-b1b8-babd195df50d",
@@ -550,7 +474,7 @@
       "pinyin": "hùzhào",
       "meaning_vi": "hộ chiếu",
       "meaning_en": "passport",
-      "pos": "Danh từ",
+      "pos": "noun",
       "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
@@ -565,18 +489,7 @@
       },
       "audio_key": "",
       "source_origin": "textbook",
-      "check_needed": false,
-      "pos_detail": {
-       "vi": "Danh từ",
-       "cn": "名词",
-       "normalized": "noun",
-       "schema_compatible_pos": "noun",
-       "is_separable_verb": false,
-       "separable_type": "",
-       "structure_vi": "",
-       "usage_note_vi": "Danh từ chỉ hộ chiếu.",
-       "notes": []
-      }
+      "check_needed": false
      },
      {
       "id": "54613016-834a-4fc3-9912-2357a6d27058",
@@ -586,7 +499,7 @@
       "pinyin": "jīpiào",
       "meaning_vi": "vé máy bay",
       "meaning_en": "air ticket",
-      "pos": "Danh từ",
+      "pos": "noun",
       "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
@@ -601,18 +514,7 @@
       },
       "audio_key": "",
       "source_origin": "textbook",
-      "check_needed": false,
-      "pos_detail": {
-       "vi": "Danh từ",
-       "cn": "名词",
-       "normalized": "noun",
-       "schema_compatible_pos": "noun",
-       "is_separable_verb": false,
-       "separable_type": "",
-       "structure_vi": "",
-       "usage_note_vi": "Danh từ chỉ vé máy bay.",
-       "notes": []
-      }
+      "check_needed": false
      },
      {
       "id": "0da97406-c3ac-4fcb-a51c-398a59c3fbae",
@@ -622,7 +524,7 @@
       "pinyin": "piào",
       "meaning_vi": "vé",
       "meaning_en": "ticket",
-      "pos": "Danh từ",
+      "pos": "noun",
       "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
@@ -637,18 +539,7 @@
       },
       "audio_key": "",
       "source_origin": "textbook",
-      "check_needed": false,
-      "pos_detail": {
-       "vi": "Danh từ",
-       "cn": "名词",
-       "normalized": "noun",
-       "schema_compatible_pos": "noun",
-       "is_separable_verb": false,
-       "separable_type": "",
-       "structure_vi": "",
-       "usage_note_vi": "Danh từ chỉ vé/phiếu; cũng có thể làm lượng từ trong vài ngữ cảnh nhưng bài này dùng danh từ.",
-       "notes": []
-      }
+      "check_needed": false
      },
      {
       "id": "54b36889-82be-485b-8342-fb8aab572065",
@@ -658,7 +549,7 @@
       "pinyin": "dēngjīpáir",
       "meaning_vi": "thẻ lên máy bay; boarding pass",
       "meaning_en": "boarding pass",
-      "pos": "Danh từ",
+      "pos": "noun",
       "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
@@ -673,18 +564,7 @@
       },
       "audio_key": "",
       "source_origin": "textbook",
-      "check_needed": false,
-      "pos_detail": {
-       "vi": "Danh từ",
-       "cn": "名词",
-       "normalized": "noun",
-       "schema_compatible_pos": "noun",
-       "is_separable_verb": false,
-       "separable_type": "",
-       "structure_vi": "",
-       "usage_note_vi": "Danh từ chỉ thẻ lên máy bay/boarding pass; 儿 là 儿化 trong khẩu âm Bắc phương.",
-       "notes": []
-      }
+      "check_needed": false
      },
      {
       "id": "1354b1a3-93cc-4505-8d7f-c5550a1d6ae9",
@@ -694,7 +574,7 @@
       "pinyin": "zhuāng",
       "meaning_vi": "đựng; chứa; lắp; cho vào",
       "meaning_en": "to install; to contain",
-      "pos": "Động từ",
+      "pos": "verb",
       "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
@@ -709,18 +589,7 @@
       },
       "audio_key": "",
       "source_origin": "textbook",
-      "check_needed": false,
-      "pos_detail": {
-       "vi": "Động từ",
-       "cn": "动词",
-       "normalized": "verb",
-       "schema_compatible_pos": "verb",
-       "is_separable_verb": false,
-       "separable_type": "",
-       "structure_vi": "",
-       "usage_note_vi": "Động từ đa nghĩa: cho vào/đựng/lắp/giả vờ; bài này chủ yếu là “cho vào, đựng trong”.",
-       "notes": []
-      }
+      "check_needed": false
      },
      {
       "id": "f0684cb3-4577-4e6c-9f22-7d97c89692b3",
@@ -730,7 +599,7 @@
       "pinyin": "tāo",
       "meaning_vi": "móc ra; lấy ra từ trong túi/vật chứa",
       "meaning_en": "to fish out; to pull out",
-      "pos": "Động từ",
+      "pos": "verb",
       "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
@@ -745,18 +614,7 @@
       },
       "audio_key": "",
       "source_origin": "textbook",
-      "check_needed": false,
-      "pos_detail": {
-       "vi": "Động từ",
-       "cn": "动词",
-       "normalized": "verb",
-       "schema_compatible_pos": "verb",
-       "is_separable_verb": false,
-       "separable_type": "",
-       "structure_vi": "",
-       "usage_note_vi": "Động từ chỉ móc/lấy từ trong túi, ví, ngăn ra ngoài.",
-       "notes": []
-      }
+      "check_needed": false
      },
      {
       "id": "d5b362a7-c8f6-4f25-b2b5-0f1749c8afbb",
@@ -766,7 +624,7 @@
       "pinyin": "yìngbì",
       "meaning_vi": "tiền xu; đồng xu",
       "meaning_en": "coin",
-      "pos": "Danh từ",
+      "pos": "noun",
       "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
@@ -781,18 +639,7 @@
       },
       "audio_key": "",
       "source_origin": "textbook",
-      "check_needed": false,
-      "pos_detail": {
-       "vi": "Danh từ",
-       "cn": "名词",
-       "normalized": "noun",
-       "schema_compatible_pos": "noun",
-       "is_separable_verb": false,
-       "separable_type": "",
-       "structure_vi": "",
-       "usage_note_vi": "Danh từ chỉ tiền xu/đồng xu.",
-       "notes": []
-      }
+      "check_needed": false
      },
      {
       "id": "7eccd5e8-dac0-4f36-be2e-abcc0a2bdfcd",
@@ -802,7 +649,7 @@
       "pinyin": "àn",
       "meaning_vi": "tối; mờ; không sáng",
       "meaning_en": "dark; dim",
-      "pos": "Tính từ",
+      "pos": "adjective",
       "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
@@ -817,18 +664,7 @@
       },
       "audio_key": "",
       "source_origin": "textbook",
-      "check_needed": false,
-      "pos_detail": {
-       "vi": "Tính từ",
-       "cn": "形容词",
-       "normalized": "adjective",
-       "schema_compatible_pos": "adjective",
-       "is_separable_verb": false,
-       "separable_type": "",
-       "structure_vi": "",
-       "usage_note_vi": "Tính từ chỉ tối, thiếu sáng; trong 把灯调暗 có thể làm kết quả trạng thái.",
-       "notes": []
-      }
+      "check_needed": false
      },
      {
       "id": "91fa9f81-e5ef-4c4a-b29c-c4b6daa02196",
@@ -838,7 +674,7 @@
       "pinyin": "kāiguān",
       "meaning_vi": "công tắc",
       "meaning_en": "switch",
-      "pos": "Danh từ",
+      "pos": "noun",
       "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
@@ -853,18 +689,7 @@
       },
       "audio_key": "",
       "source_origin": "textbook",
-      "check_needed": false,
-      "pos_detail": {
-       "vi": "Danh từ",
-       "cn": "名词",
-       "normalized": "noun",
-       "schema_compatible_pos": "noun",
-       "is_separable_verb": false,
-       "separable_type": "",
-       "structure_vi": "",
-       "usage_note_vi": "Bài này dùng như danh từ “công tắc”; không phải động từ li hợp.",
-       "notes": []
-      }
+      "check_needed": false
      },
      {
       "id": "8a5b1d09-23a6-4182-96e6-9bf4d761a1e1",
@@ -874,7 +699,7 @@
       "pinyin": "fúshǒu",
       "meaning_vi": "tay vịn",
       "meaning_en": "armrest; handrail",
-      "pos": "Danh từ",
+      "pos": "noun",
       "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
@@ -889,18 +714,7 @@
       },
       "audio_key": "",
       "source_origin": "textbook",
-      "check_needed": false,
-      "pos_detail": {
-       "vi": "Danh từ",
-       "cn": "名词",
-       "normalized": "noun",
-       "schema_compatible_pos": "noun",
-       "is_separable_verb": false,
-       "separable_type": "",
-       "structure_vi": "",
-       "usage_note_vi": "Danh từ chỉ tay vịn/chỗ tựa tay.",
-       "notes": []
-      }
+      "check_needed": false
      },
      {
       "id": "be7a835d-ff8f-4a86-9fd8-27c5f1093f0c",
@@ -910,7 +724,7 @@
       "pinyin": "kōngjiě",
       "meaning_vi": "nữ tiếp viên hàng không",
       "meaning_en": "stewardess; flight attendant",
-      "pos": "Danh từ",
+      "pos": "noun",
       "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
@@ -925,18 +739,7 @@
       },
       "audio_key": "",
       "source_origin": "textbook",
-      "check_needed": false,
-      "pos_detail": {
-       "vi": "Danh từ",
-       "cn": "名词",
-       "normalized": "noun",
-       "schema_compatible_pos": "noun",
-       "is_separable_verb": false,
-       "separable_type": "",
-       "structure_vi": "",
-       "usage_note_vi": "Danh từ chỉ tiếp viên hàng không nữ; trung tính hơn có thể dùng 乘务员/空乘人员.",
-       "notes": []
-      }
+      "check_needed": false
      },
      {
       "id": "7a89dc80-d79d-4c2f-988c-d0f54e240d19",
@@ -946,7 +749,7 @@
       "pinyin": "qǐfēi",
       "meaning_vi": "cất cánh",
       "meaning_en": "to take off",
-      "pos": "Động từ",
+      "pos": "verb",
       "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
@@ -961,18 +764,7 @@
       },
       "audio_key": "",
       "source_origin": "textbook",
-      "check_needed": false,
-      "pos_detail": {
-       "vi": "Động từ",
-       "cn": "动词",
-       "normalized": "verb",
-       "schema_compatible_pos": "verb",
-       "is_separable_verb": false,
-       "separable_type": "",
-       "structure_vi": "",
-       "usage_note_vi": "Động từ chỉ máy bay cất cánh; không phải động từ li hợp.",
-       "notes": []
-      }
+      "check_needed": false
      },
      {
       "id": "ff3e1818-66a9-4532-880b-02c9cacb0e5b",
@@ -982,7 +774,7 @@
       "pinyin": "ānquándài",
       "meaning_vi": "dây an toàn",
       "meaning_en": "seat belt",
-      "pos": "Danh từ",
+      "pos": "noun",
       "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
@@ -997,18 +789,7 @@
       },
       "audio_key": "",
       "source_origin": "textbook",
-      "check_needed": false,
-      "pos_detail": {
-       "vi": "Danh từ",
-       "cn": "名词",
-       "normalized": "noun",
-       "schema_compatible_pos": "noun",
-       "is_separable_verb": false,
-       "separable_type": "",
-       "structure_vi": "",
-       "usage_note_vi": "Danh từ chỉ dây an toàn; động từ đi kèm thường là 系/解开.",
-       "notes": []
-      }
+      "check_needed": false
      },
      {
       "id": "0125bdae-fe4e-48fb-8264-145e95c75933",
@@ -1018,7 +799,7 @@
       "pinyin": "ānquán",
       "meaning_vi": "an toàn",
       "meaning_en": "safe; safety",
-      "pos": "Tính từ / Danh từ",
+      "pos": "adjective",
       "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
@@ -1033,18 +814,7 @@
       },
       "audio_key": "",
       "source_origin": "textbook",
-      "check_needed": false,
-      "pos_detail": {
-       "vi": "Tính từ / Danh từ",
-       "cn": "形容词 / 名词",
-       "normalized": "adjective",
-       "schema_compatible_pos": "adjective",
-       "is_separable_verb": false,
-       "separable_type": "",
-       "structure_vi": "",
-       "usage_note_vi": "Có thể là tính từ “an toàn” hoặc danh từ “sự an toàn”; bài này chủ yếu dùng tính từ/danh hóa trong 注意安全.",
-       "notes": []
-      }
+      "check_needed": false
      },
      {
       "id": "689eb64b-5d4f-469f-9afa-74017d399614",
@@ -1052,14 +822,14 @@
       "order": 20,
       "hanzi": "带",
       "pinyin": "dài",
-      "meaning_vi": "dây; đai; mang theo; dẫn theo",
-      "meaning_en": "belt; band; to bring; to take along",
-      "pos": "Danh từ / Động từ",
+      "meaning_vi": "dây; dây đeo; thắt lưng",
+      "meaning_en": "belt; band",
+      "pos": "noun",
       "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
        "front": "带",
-       "back": "dài — dây; đai; mang theo; dẫn theo",
+       "back": "dài — dây; dây đeo; thắt lưng",
        "modes": [
         "hanzi_to_meaning",
         "meaning_to_hanzi",
@@ -1069,18 +839,7 @@
       },
       "audio_key": "",
       "source_origin": "textbook",
-      "check_needed": false,
-      "pos_detail": {
-       "vi": "Danh từ / Động từ",
-       "cn": "名词 / 动词",
-       "normalized": "verb_noun",
-       "schema_compatible_pos": "verb_noun",
-       "is_separable_verb": false,
-       "separable_type": "",
-       "structure_vi": "",
-       "usage_note_vi": "Vừa là danh từ “dây/đai”, vừa là động từ “mang theo/dẫn theo”; không phải động từ li hợp.",
-       "notes": []
-      }
+      "check_needed": false
      },
      {
       "id": "d45d5488-9293-41ae-9deb-1e5b51cee446",
@@ -1090,7 +849,7 @@
       "pinyin": "chātóu",
       "meaning_vi": "đầu cắm; phích cắm",
       "meaning_en": "plug",
-      "pos": "Danh từ",
+      "pos": "noun",
       "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
@@ -1105,18 +864,7 @@
       },
       "audio_key": "",
       "source_origin": "textbook",
-      "check_needed": false,
-      "pos_detail": {
-       "vi": "Danh từ",
-       "cn": "名词",
-       "normalized": "noun",
-       "schema_compatible_pos": "noun",
-       "is_separable_verb": false,
-       "separable_type": "",
-       "structure_vi": "",
-       "usage_note_vi": "Danh từ chỉ phích cắm/đầu cắm.",
-       "notes": []
-      }
+      "check_needed": false
      },
      {
       "id": "c99a633b-27a2-429b-a139-44113a84c189",
@@ -1126,7 +874,7 @@
       "pinyin": "qiǎzi",
       "meaning_vi": "khóa gài; chốt gài; cái kẹp",
       "meaning_en": "clip; buckle",
-      "pos": "Danh từ",
+      "pos": "noun",
       "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
@@ -1141,18 +889,7 @@
       },
       "audio_key": "",
       "source_origin": "textbook",
-      "check_needed": false,
-      "pos_detail": {
-       "vi": "Danh từ",
-       "cn": "名词",
-       "normalized": "noun",
-       "schema_compatible_pos": "noun",
-       "is_separable_verb": false,
-       "separable_type": "",
-       "structure_vi": "",
-       "usage_note_vi": "Danh từ chỉ cái kẹp/chốt/kẹp nhỏ; đọc qiǎzi trong nghĩa này.",
-       "notes": []
-      }
+      "check_needed": false
      },
      {
       "id": "79358c6f-3427-4c28-98f3-7ef98c7033c3",
@@ -1162,7 +899,7 @@
       "pinyin": "bān",
       "meaning_vi": "bẻ; gạt; vặn theo hướng khác",
       "meaning_en": "to pull; to turn",
-      "pos": "Động từ",
+      "pos": "verb",
       "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
@@ -1177,33 +914,22 @@
       },
       "audio_key": "",
       "source_origin": "textbook",
-      "check_needed": false,
-      "pos_detail": {
-       "vi": "Động từ",
-       "cn": "动词",
-       "normalized": "verb",
-       "schema_compatible_pos": "verb",
-       "is_separable_verb": false,
-       "separable_type": "",
-       "structure_vi": "",
-       "usage_note_vi": "Động từ chỉ gạt/kéo/bẻ bằng tay.",
-       "notes": []
-      }
+      "check_needed": false
      },
      {
       "id": "dc0f8e06-a359-4907-a8d8-fc9b02260590",
       "type": "vocabulary_item",
       "order": 24,
       "hanzi": "凉",
-      "pinyin": "liáng / liàng",
-      "meaning_vi": "mát; nguội; lạnh nhẹ",
-      "meaning_en": "cool; cold; to cool down",
-      "pos": "Tính từ / Động từ",
+      "pinyin": "liáng",
+      "meaning_vi": "nguội; mát; lạnh nhẹ",
+      "meaning_en": "cool",
+      "pos": "adjective",
       "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
        "front": "凉",
-       "back": "liáng / liàng — mát; nguội; lạnh nhẹ",
+       "back": "liáng — nguội; mát; lạnh nhẹ",
        "modes": [
         "hanzi_to_meaning",
         "meaning_to_hanzi",
@@ -1213,18 +939,7 @@
       },
       "audio_key": "",
       "source_origin": "textbook",
-      "check_needed": false,
-      "pos_detail": {
-       "vi": "Tính từ / Động từ",
-       "cn": "形容词 / 动词",
-       "normalized": "adjective",
-       "schema_compatible_pos": "adjective",
-       "is_separable_verb": false,
-       "separable_type": "",
-       "structure_vi": "",
-       "usage_note_vi": "liáng là tính từ “mát/hơi lạnh”; liàng là động từ “để nguội/làm nguội” trong 把饭凉一凉.",
-       "notes": []
-      }
+      "check_needed": false
      },
      {
       "id": "c43cedbf-7024-4ec1-922f-e75119114baf",
@@ -1234,7 +949,7 @@
       "pinyin": "bēizi",
       "meaning_vi": "cái cốc; cái ly",
       "meaning_en": "cup; glass",
-      "pos": "Danh từ",
+      "pos": "noun",
       "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
@@ -1249,18 +964,7 @@
       },
       "audio_key": "",
       "source_origin": "textbook",
-      "check_needed": false,
-      "pos_detail": {
-       "vi": "Danh từ",
-       "cn": "名词",
-       "normalized": "noun",
-       "schema_compatible_pos": "noun",
-       "is_separable_verb": false,
-       "separable_type": "",
-       "structure_vi": "",
-       "usage_note_vi": "Danh từ chỉ cái cốc/cái ly.",
-       "notes": []
-      }
+      "check_needed": false
      },
      {
       "id": "d9991c79-3454-4247-bf18-f14f43b4a24a",
@@ -1270,7 +974,7 @@
       "pinyin": "sǎ",
       "meaning_vi": "đổ ra; vãi ra; làm tràn ra",
       "meaning_en": "to spill; to sprinkle",
-      "pos": "Động từ",
+      "pos": "verb",
       "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
@@ -1285,18 +989,7 @@
       },
       "audio_key": "",
       "source_origin": "textbook",
-      "check_needed": false,
-      "pos_detail": {
-       "vi": "Động từ",
-       "cn": "动词",
-       "normalized": "verb",
-       "schema_compatible_pos": "verb",
-       "is_separable_verb": false,
-       "separable_type": "",
-       "structure_vi": "",
-       "usage_note_vi": "Động từ chỉ làm đổ/rơi vãi/rắc ra.",
-       "notes": []
-      }
+      "check_needed": false
      },
      {
       "id": "55cd807c-eec7-412d-99db-f4e6508b170f",
@@ -1306,7 +999,7 @@
       "pinyin": "dēng",
       "meaning_vi": "lên; bước lên",
       "meaning_en": "to ascend; to board",
-      "pos": "Động từ / Ngữ tố",
+      "pos": "verb",
       "tags": ["supplementary_vocab", "expanded_vocab"],
       "examples": [],
       "flashcard": {
@@ -1321,18 +1014,7 @@
       },
       "audio_key": "",
       "source_origin": "uploaded_crosscheck",
-      "check_needed": false,
-      "pos_detail": {
-       "vi": "Động từ / Ngữ tố",
-       "cn": "动词 / 语素",
-       "normalized": "verb",
-       "schema_compatible_pos": "verb",
-       "is_separable_verb": false,
-       "separable_type": "",
-       "structure_vi": "",
-       "usage_note_vi": "Động từ/ngữ tố chỉ lên/bước lên; trong 登机 tạo thành động từ li hợp.",
-       "notes": []
-      }
+      "check_needed": false
      },
      {
       "id": "085e60d5-dd1c-4585-ac6b-0f1db0ded936",
@@ -1342,7 +1024,7 @@
       "pinyin": "qiānzhèng",
       "meaning_vi": "visa; thị thực",
       "meaning_en": "visa",
-      "pos": "Danh từ / Động từ",
+      "pos": "noun",
       "tags": ["supplementary_vocab", "expanded_vocab"],
       "examples": [],
       "flashcard": {
@@ -1357,18 +1039,7 @@
       },
       "audio_key": "",
       "source_origin": "uploaded_crosscheck",
-      "check_needed": false,
-      "pos_detail": {
-       "vi": "Danh từ / Động từ",
-       "cn": "名词 / 动词",
-       "normalized": "verb_noun",
-       "schema_compatible_pos": "verb_noun",
-       "is_separable_verb": false,
-       "separable_type": "",
-       "structure_vi": "",
-       "usage_note_vi": "Bài này chủ yếu là danh từ “visa/thị thực”; cũng có thể dùng như động từ trong ngữ cảnh cấp/ký thị thực.",
-       "notes": []
-      }
+      "check_needed": false
      },
      {
       "id": "ba7ff0f9-b633-4516-ab3d-22b96046a1cf",
@@ -1378,7 +1049,7 @@
       "pinyin": "shēnfènzhèng",
       "meaning_vi": "chứng minh nhân dân / căn cước",
       "meaning_en": "identity card",
-      "pos": "Danh từ",
+      "pos": "noun",
       "tags": ["supplementary_vocab", "expanded_vocab"],
       "examples": [],
       "flashcard": {
@@ -1393,33 +1064,22 @@
       },
       "audio_key": "",
       "source_origin": "uploaded_crosscheck",
-      "check_needed": false,
-      "pos_detail": {
-       "vi": "Danh từ",
-       "cn": "名词",
-       "normalized": "noun",
-       "schema_compatible_pos": "noun",
-       "is_separable_verb": false,
-       "separable_type": "",
-       "structure_vi": "",
-       "usage_note_vi": "Danh từ chỉ giấy tờ căn cước/chứng minh thân phận.",
-       "notes": []
-      }
+      "check_needed": false
      },
      {
       "id": "2185ee67-885d-4ffb-83e2-e97be4070796",
       "type": "vocabulary_item",
       "order": 30,
       "hanzi": "卡",
-      "pinyin": "kǎ / qiǎ",
-      "meaning_vi": "thẻ; kẹp/chốt gài; mắc kẹt",
-      "meaning_en": "card; clip/buckle; to get stuck",
-      "pos": "Danh từ / Động từ",
+      "pinyin": "kǎ",
+      "meaning_vi": "thẻ; cái kẹp; chốt gài",
+      "meaning_en": "card; clip",
+      "pos": "noun",
       "tags": ["supplementary_vocab", "expanded_vocab"],
       "examples": [],
       "flashcard": {
        "front": "卡",
-       "back": "kǎ / qiǎ — thẻ; kẹp/chốt gài; mắc kẹt",
+       "back": "kǎ — thẻ; cái kẹp; chốt gài",
        "modes": [
         "hanzi_to_meaning",
         "meaning_to_hanzi",
@@ -1429,18 +1089,7 @@
       },
       "audio_key": "",
       "source_origin": "uploaded_crosscheck",
-      "check_needed": false,
-      "pos_detail": {
-       "vi": "Danh từ / Động từ",
-       "cn": "名词 / 动词",
-       "normalized": "verb_noun",
-       "schema_compatible_pos": "verb_noun",
-       "is_separable_verb": false,
-       "separable_type": "",
-       "structure_vi": "",
-       "usage_note_vi": "kǎ là danh từ “thẻ/card”; qiǎ là động từ/tính chất “kẹt/chặn” trong 卡住. Bài này chủ yếu dùng nghĩa danh từ.",
-       "notes": []
-      }
+      "check_needed": false
      },
      {
       "id": "092a8c16-3739-4685-a4c0-39365071bd48",
@@ -1450,7 +1099,7 @@
       "pinyin": "páir",
       "meaning_vi": "thẻ; bảng; biển",
       "meaning_en": "plate; sign; card",
-      "pos": "Danh từ",
+      "pos": "noun",
       "tags": ["supplementary_vocab", "expanded_vocab"],
       "examples": [],
       "flashcard": {
@@ -1465,18 +1114,7 @@
       },
       "audio_key": "",
       "source_origin": "uploaded_crosscheck",
-      "check_needed": false,
-      "pos_detail": {
-       "vi": "Danh từ",
-       "cn": "名词",
-       "normalized": "noun",
-       "schema_compatible_pos": "noun",
-       "is_separable_verb": false,
-       "separable_type": "",
-       "structure_vi": "",
-       "usage_note_vi": "Danh từ chỉ thẻ/bảng/biển/nhãn; 儿 là 儿化.",
-       "notes": []
-      }
+      "check_needed": false
      },
      {
       "id": "22e66ee9-565e-4670-b2ac-4d5a9b500b38",
@@ -1486,7 +1124,7 @@
       "pinyin": "zhǐbì",
       "meaning_vi": "tiền giấy",
       "meaning_en": "paper money",
-      "pos": "Danh từ",
+      "pos": "noun",
       "tags": ["supplementary_vocab", "expanded_vocab"],
       "examples": [],
       "flashcard": {
@@ -1501,18 +1139,7 @@
       },
       "audio_key": "",
       "source_origin": "uploaded_crosscheck",
-      "check_needed": false,
-      "pos_detail": {
-       "vi": "Danh từ",
-       "cn": "名词",
-       "normalized": "noun",
-       "schema_compatible_pos": "noun",
-       "is_separable_verb": false,
-       "separable_type": "",
-       "structure_vi": "",
-       "usage_note_vi": "Danh từ chỉ tiền giấy.",
-       "notes": []
-      }
+      "check_needed": false
      },
      {
       "id": "275b46f4-3166-48b7-9766-58384178d1be",
@@ -1522,7 +1149,7 @@
       "pinyin": "liàng",
       "meaning_vi": "sáng",
       "meaning_en": "bright",
-      "pos": "Tính từ / Động từ",
+      "pos": "adjective",
       "tags": ["supplementary_vocab", "expanded_vocab"],
       "examples": [],
       "flashcard": {
@@ -1537,18 +1164,7 @@
       },
       "audio_key": "",
       "source_origin": "uploaded_crosscheck",
-      "check_needed": false,
-      "pos_detail": {
-       "vi": "Tính từ / Động từ",
-       "cn": "形容词 / 动词",
-       "normalized": "adjective",
-       "schema_compatible_pos": "adjective",
-       "is_separable_verb": false,
-       "separable_type": "",
-       "structure_vi": "",
-       "usage_note_vi": "Có thể là tính từ “sáng” hoặc động từ trạng thái “sáng lên” trong 灯亮了.",
-       "notes": []
-      }
+      "check_needed": false
      },
      {
       "id": "1190511f-5970-4304-8f84-d7201b287aeb",
@@ -1558,7 +1174,7 @@
       "pinyin": "kōngtiáo",
       "meaning_vi": "máy lạnh; điều hòa",
       "meaning_en": "air conditioner",
-      "pos": "Danh từ",
+      "pos": "noun",
       "tags": ["supplementary_vocab", "expanded_vocab"],
       "examples": [],
       "flashcard": {
@@ -1573,18 +1189,7 @@
       },
       "audio_key": "",
       "source_origin": "uploaded_crosscheck",
-      "check_needed": false,
-      "pos_detail": {
-       "vi": "Danh từ",
-       "cn": "名词",
-       "normalized": "noun",
-       "schema_compatible_pos": "noun",
-       "is_separable_verb": false,
-       "separable_type": "",
-       "structure_vi": "",
-       "usage_note_vi": "Danh từ chỉ điều hòa/máy lạnh hoặc hệ thống điều hòa.",
-       "notes": []
-      }
+      "check_needed": false
      },
      {
       "id": "d42d3d90-443d-45da-bed7-987b50034e92",
@@ -1594,7 +1199,7 @@
       "pinyin": "chā",
       "meaning_vi": "cắm; chèn vào",
       "meaning_en": "to insert; to plug in",
-      "pos": "Động từ",
+      "pos": "verb",
       "tags": ["supplementary_vocab", "expanded_vocab"],
       "examples": [],
       "flashcard": {
@@ -1609,18 +1214,7 @@
       },
       "audio_key": "",
       "source_origin": "uploaded_crosscheck",
-      "check_needed": false,
-      "pos_detail": {
-       "vi": "Động từ",
-       "cn": "动词",
-       "normalized": "verb",
-       "schema_compatible_pos": "verb",
-       "is_separable_verb": false,
-       "separable_type": "",
-       "structure_vi": "",
-       "usage_note_vi": "Động từ chỉ cắm/chèn/cài vào.",
-       "notes": []
-      }
+      "check_needed": false
      },
      {
       "id": "cfb712c9-c4ca-4314-b6b2-696b40ace25e",
@@ -1630,7 +1224,7 @@
       "pinyin": "liángkuai",
       "meaning_vi": "mát mẻ",
       "meaning_en": "cool and pleasant",
-      "pos": "Tính từ / Động từ",
+      "pos": "adjective",
       "tags": ["supplementary_vocab", "expanded_vocab"],
       "examples": [],
       "flashcard": {
@@ -1645,18 +1239,7 @@
       },
       "audio_key": "",
       "source_origin": "uploaded_crosscheck",
-      "check_needed": false,
-      "pos_detail": {
-       "vi": "Tính từ / Động từ",
-       "cn": "形容词 / 动词",
-       "normalized": "adjective",
-       "schema_compatible_pos": "adjective",
-       "is_separable_verb": false,
-       "separable_type": "",
-       "structure_vi": "",
-       "usage_note_vi": "Tính từ “mát mẻ, dễ chịu”; cũng có thể dùng như động từ “đi/làm cho mát một chút” trong 凉快一下.",
-       "notes": []
-      }
+      "check_needed": false
      },
      {
       "id": "6059829f-ae21-43cf-ac0c-05e19639ec43",
@@ -1666,7 +1249,7 @@
       "pinyin": "lěng",
       "meaning_vi": "lạnh",
       "meaning_en": "cold",
-      "pos": "Tính từ",
+      "pos": "adjective",
       "tags": ["supplementary_vocab", "expanded_vocab"],
       "examples": [],
       "flashcard": {
@@ -1681,18 +1264,7 @@
       },
       "audio_key": "",
       "source_origin": "uploaded_crosscheck",
-      "check_needed": false,
-      "pos_detail": {
-       "vi": "Tính từ",
-       "cn": "形容词",
-       "normalized": "adjective",
-       "schema_compatible_pos": "adjective",
-       "is_separable_verb": false,
-       "separable_type": "",
-       "structure_vi": "",
-       "usage_note_vi": "Tính từ chỉ lạnh; cũng có nghĩa mở rộng “lạnh nhạt/vắng vẻ” trong từ ghép.",
-       "notes": []
-      }
+      "check_needed": false
      },
      {
       "id": "fefd5441-7b6c-47e3-b823-9e149b947bf7",
@@ -1702,7 +1274,7 @@
       "pinyin": "chábēi",
       "meaning_vi": "tách trà; cốc uống trà",
       "meaning_en": "teacup",
-      "pos": "Danh từ",
+      "pos": "noun",
       "tags": ["supplementary_vocab", "expanded_vocab"],
       "examples": [],
       "flashcard": {
@@ -1717,18 +1289,7 @@
       },
       "audio_key": "",
       "source_origin": "uploaded_crosscheck",
-      "check_needed": false,
-      "pos_detail": {
-       "vi": "Danh từ",
-       "cn": "名词",
-       "normalized": "noun",
-       "schema_compatible_pos": "noun",
-       "is_separable_verb": false,
-       "separable_type": "",
-       "structure_vi": "",
-       "usage_note_vi": "Danh từ chỉ tách/cốc uống trà.",
-       "notes": []
-      }
+      "check_needed": false
      },
      {
       "id": "27761bd2-433a-44ef-b79a-9e6f0a34b9c9",
@@ -1738,7 +1299,7 @@
       "pinyin": "tānr",
       "meaning_vi": "quầy nhỏ; sạp hàng",
       "meaning_en": "stall",
-      "pos": "Danh từ",
+      "pos": "noun",
       "tags": ["supplementary_vocab", "reading_vocab"],
       "examples": [],
       "flashcard": {
@@ -1753,33 +1314,22 @@
       },
       "audio_key": "",
       "source_origin": "textbook",
-      "check_needed": false,
-      "pos_detail": {
-       "vi": "Danh từ",
-       "cn": "名词",
-       "normalized": "noun",
-       "schema_compatible_pos": "noun",
-       "is_separable_verb": false,
-       "separable_type": "",
-       "structure_vi": "",
-       "usage_note_vi": "Danh từ chỉ sạp/quầy nhỏ/hàng rong; 儿 là 儿化.",
-       "notes": []
-      }
+      "check_needed": false
      },
      {
       "id": "861ed325-b320-4ae0-8eac-bb6bb8ebc215",
       "type": "vocabulary_item",
       "order": 40,
       "hanzi": "价钱",
-      "pinyin": "jiàqian",
-      "meaning_vi": "giá tiền; giá cả",
+      "pinyin": "jiàqián",
+      "meaning_vi": "giá tiền",
       "meaning_en": "price",
-      "pos": "Danh từ",
+      "pos": "noun",
       "tags": ["supplementary_vocab", "reading_vocab"],
       "examples": [],
       "flashcard": {
        "front": "价钱",
-       "back": "jiàqian — giá tiền; giá cả",
+       "back": "jiàqián — giá tiền",
        "modes": [
         "hanzi_to_meaning",
         "meaning_to_hanzi",
@@ -1789,18 +1339,7 @@
       },
       "audio_key": "",
       "source_origin": "textbook",
-      "check_needed": false,
-      "pos_detail": {
-       "vi": "Danh từ",
-       "cn": "名词",
-       "normalized": "noun",
-       "schema_compatible_pos": "noun",
-       "is_separable_verb": false,
-       "separable_type": "",
-       "structure_vi": "",
-       "usage_note_vi": "Danh từ chỉ giá tiền; khẩu ngữ hơn 价格.",
-       "notes": []
-      }
+      "check_needed": false
      },
      {
       "id": "6fe8f20d-e712-4f0c-9cbc-021aaeb9698c",
@@ -1810,7 +1349,7 @@
       "pinyin": "chēng",
       "meaning_vi": "cân; cân đo trọng lượng",
       "meaning_en": "to weigh",
-      "pos": "Động từ / Danh từ",
+      "pos": "verb",
       "tags": ["supplementary_vocab", "reading_vocab"],
       "examples": [],
       "flashcard": {
@@ -1825,18 +1364,7 @@
       },
       "audio_key": "",
       "source_origin": "textbook",
-      "check_needed": false,
-      "pos_detail": {
-       "vi": "Động từ / Danh từ",
-       "cn": "动词 / 名词",
-       "normalized": "verb_noun",
-       "schema_compatible_pos": "verb_noun",
-       "is_separable_verb": false,
-       "separable_type": "",
-       "structure_vi": "",
-       "usage_note_vi": "Bài này dùng chēng như động từ “cân/gọi là”; khi chỉ dụng cụ “cái cân” hiện đại thường viết 秤 chèng.",
-       "notes": []
-      }
+      "check_needed": false
      },
      {
       "id": "863bbf3f-83e7-4021-b98e-be632043d94c",
@@ -1846,7 +1374,7 @@
       "pinyin": "língqián",
       "meaning_vi": "tiền lẻ",
       "meaning_en": "small change",
-      "pos": "Danh từ",
+      "pos": "noun",
       "tags": ["supplementary_vocab", "reading_vocab"],
       "examples": [],
       "flashcard": {
@@ -1861,18 +1389,7 @@
       },
       "audio_key": "",
       "source_origin": "textbook",
-      "check_needed": false,
-      "pos_detail": {
-       "vi": "Danh từ",
-       "cn": "名词",
-       "normalized": "noun",
-       "schema_compatible_pos": "noun",
-       "is_separable_verb": false,
-       "separable_type": "",
-       "structure_vi": "",
-       "usage_note_vi": "Danh từ chỉ tiền lẻ/tiền mệnh giá nhỏ; cũng có nghĩa tiền tiêu vặt.",
-       "notes": []
-      }
+      "check_needed": false
      },
      {
       "id": "b14487b6-5579-4f1c-9ad7-16fd40991577",
@@ -1880,14 +1397,14 @@
       "order": 43,
       "hanzi": "赛",
       "pinyin": "sài",
-      "meaning_vi": "thi đấu; cuộc thi; trận đấu",
-      "meaning_en": "to compete; competition; match",
-      "pos": "Động từ / Danh từ",
+      "meaning_vi": "thi đấu; cuộc thi",
+      "meaning_en": "competition",
+      "pos": "noun",
       "tags": ["supplementary_vocab", "expanded_vocab"],
       "examples": [],
       "flashcard": {
        "front": "赛",
-       "back": "sài — thi đấu; cuộc thi; trận đấu",
+       "back": "sài — thi đấu; cuộc thi",
        "modes": [
         "hanzi_to_meaning",
         "meaning_to_hanzi",
@@ -1897,18 +1414,7 @@
       },
       "audio_key": "",
       "source_origin": "uploaded_crosscheck",
-      "check_needed": false,
-      "pos_detail": {
-       "vi": "Động từ / Danh từ",
-       "cn": "动词 / 名词",
-       "normalized": "verb_noun",
-       "schema_compatible_pos": "verb_noun",
-       "is_separable_verb": false,
-       "separable_type": "",
-       "structure_vi": "",
-       "usage_note_vi": "Có thể là động từ “thi đấu” hoặc danh từ/yếu tố trong 比赛/决赛; người học nên ưu tiên cụm 比赛.",
-       "notes": []
-      }
+      "check_needed": false
      },
      {
       "id": "eb7cc112-7df2-44e6-a1df-9824d8b6e45a",
@@ -1918,7 +1424,7 @@
       "pinyin": "xiāngxìn",
       "meaning_vi": "tin tưởng",
       "meaning_en": "to believe",
-      "pos": "Động từ",
+      "pos": "verb",
       "tags": ["supplementary_vocab", "reading_vocab"],
       "examples": [],
       "flashcard": {
@@ -1933,18 +1439,7 @@
       },
       "audio_key": "",
       "source_origin": "textbook",
-      "check_needed": false,
-      "pos_detail": {
-       "vi": "Động từ",
-       "cn": "动词",
-       "normalized": "verb",
-       "schema_compatible_pos": "verb",
-       "is_separable_verb": false,
-       "separable_type": "",
-       "structure_vi": "",
-       "usage_note_vi": "Động từ chỉ tin/tin tưởng; không phải động từ li hợp.",
-       "notes": []
-      }
+      "check_needed": false
      },
      {
       "id": "505dae11-836a-475d-b811-339f25caaf42",
@@ -1954,7 +1449,7 @@
       "pinyin": "gǎnjī",
       "meaning_vi": "cảm kích; biết ơn",
       "meaning_en": "grateful",
-      "pos": "Động từ",
+      "pos": "verb",
       "tags": ["supplementary_vocab", "reading_vocab"],
       "examples": [],
       "flashcard": {
@@ -1969,18 +1464,7 @@
       },
       "audio_key": "",
       "source_origin": "textbook",
-      "check_needed": false,
-      "pos_detail": {
-       "vi": "Động từ",
-       "cn": "动词",
-       "normalized": "verb",
-       "schema_compatible_pos": "verb",
-       "is_separable_verb": false,
-       "separable_type": "",
-       "structure_vi": "",
-       "usage_note_vi": "Động từ/tính từ cảm xúc chỉ cảm kích, biết ơn sâu sắc; không dùng cho cảm ơn xã giao nhẹ.",
-       "notes": []
-      }
+      "check_needed": false
      },
      {
       "id": "a47b82f7-2260-4763-8c97-b1631e792e1c",
@@ -1990,7 +1474,7 @@
       "pinyin": "qīngsōng",
       "meaning_vi": "nhẹ nhàng; thoải mái; nhẹ nhõm",
       "meaning_en": "relaxed; easy",
-      "pos": "Tính từ / Động từ",
+      "pos": "adjective",
       "tags": ["supplementary_vocab", "reading_vocab"],
       "examples": [],
       "flashcard": {
@@ -2005,18 +1489,7 @@
       },
       "audio_key": "",
       "source_origin": "textbook",
-      "check_needed": false,
-      "pos_detail": {
-       "vi": "Tính từ / Động từ",
-       "cn": "形容词 / 动词",
-       "normalized": "adjective",
-       "schema_compatible_pos": "adjective",
-       "is_separable_verb": false,
-       "separable_type": "",
-       "structure_vi": "",
-       "usage_note_vi": "Tính từ “nhẹ nhõm/thoải mái”; cũng có thể dùng như động từ trong 放轻松/轻松一下.",
-       "notes": []
-      }
+      "check_needed": false
      },
      {
       "id": "71f9308f-7b38-435e-bfa8-c7c974599035",
@@ -2026,7 +1499,7 @@
       "pinyin": "sāi",
       "meaning_vi": "nhét; đút vào",
       "meaning_en": "to stuff; to tuck in",
-      "pos": "Động từ",
+      "pos": "verb",
       "tags": ["supplementary_vocab", "reading_vocab"],
       "examples": [],
       "flashcard": {
@@ -2041,18 +1514,7 @@
       },
       "audio_key": "",
       "source_origin": "textbook",
-      "check_needed": false,
-      "pos_detail": {
-       "vi": "Động từ",
-       "cn": "动词",
-       "normalized": "verb",
-       "schema_compatible_pos": "verb",
-       "is_separable_verb": false,
-       "separable_type": "",
-       "structure_vi": "",
-       "usage_note_vi": "Động từ sāi chỉ nhét/塞进去; không phải động từ li hợp.",
-       "notes": []
-      }
+      "check_needed": false
      }
     ]
    },
@@ -2071,7 +1533,7 @@
       "order": 1,
       "hanzi": "关建平",
       "pinyin": "Guān Jiànpíng",
-      "meaning_vi": "Quan Kiến Bình; tên người",
+      "meaning_vi": "Quan Kiến Bình; tên người nam trong bài",
       "meaning_en": "male personal name",
       "source_origin": "textbook",
       "check_needed": false
@@ -2082,7 +1544,7 @@
       "order": 2,
       "hanzi": "夏雨",
       "pinyin": "Xià Yǔ",
-      "meaning_vi": "Hạ Vũ; tên người",
+      "meaning_vi": "Hạ Vũ; tên người nữ trong bài",
       "meaning_en": "female personal name",
       "source_origin": "textbook",
       "check_needed": false
@@ -2111,16 +1573,18 @@
         "zh": "没有什么问题。",
         "vi": "Không có vấn đề gì.",
         "highlight": ["什么"],
-        "source_origin": "textbook/generated_mixed",
-        "check_needed": false
+        "source_origin": "textbook_generated_mixed",
+        "check_needed": false,
+        "pinyin": "Méiyǒu shénme wèntí."
        },
        {
         "id": "0ee91982-67ac-436a-881d-a00ebb257ebe",
         "zh": "我没有什么事。",
         "vi": "Tôi không có việc gì đâu.",
         "highlight": ["什么"],
-        "source_origin": "textbook/generated_mixed",
-        "check_needed": false
+        "source_origin": "textbook_generated_mixed",
+        "check_needed": false,
+        "pinyin": "Wǒ méiyǒu shénme shì."
        }
       ],
       "source_refs": ["72ab83c3-9f46-4bac-b61c-5c84920d0a2a"],
@@ -2135,7 +1599,7 @@
     "order": 5,
     "title": "语法 / 词语用法",
     "title_vi": "Ngữ pháp / cách dùng từ",
-    "source_origin": "textbook/generated_mixed",
+    "source_origin": "textbook_generated_mixed",
     "check_needed": false,
     "items": [
      {
@@ -2146,7 +1610,7 @@
       "title_vi": "Câu chữ 把 mở rộng",
       "level": "HSK3+",
       "tags": ["把字句", "ba_sentence", "result", "disposal"],
-      "source_origin": "textbook/generated_mixed",
+      "source_origin": "textbook_generated_mixed",
       "check_needed": false,
       "blocks": [
        {
@@ -2165,10 +1629,11 @@
           "vocab_refs": ["护照", "机票"],
           "source_ref": "b77b6ed5-bf0f-49aa-bf47-abf46d11fce7",
           "source_origin": "textbook",
-          "check_needed": false
+          "check_needed": false,
+          "pinyin": "Qǐng bǎ hùzhào hé jīpiào gěi wǒ."
          }
         ],
-        "source_origin": "textbook/generated_mixed",
+        "source_origin": "textbook_generated_mixed",
         "check_needed": false
        },
        {
@@ -2186,8 +1651,9 @@
           "zh": "我把相机给姐姐了。",
           "vi": "Tôi đưa máy ảnh cho chị rồi.",
           "highlight": ["我", "把相机给姐姐"],
-          "source_origin": "textbook/generated_mixed",
-          "check_needed": false
+          "source_origin": "textbook_generated_mixed",
+          "check_needed": false,
+          "pinyin": "Wǒ bǎ xiàngjī gěi jiějie le."
          }
         ],
         "source_origin": "textbook",
@@ -2208,8 +1674,9 @@
           "zh": "你把昨天的作业做完了吗？",
           "vi": "Bạn làm xong bài tập hôm qua chưa?",
           "highlight": ["昨天的作业"],
-          "source_origin": "textbook/generated_mixed",
-          "check_needed": false
+          "source_origin": "textbook_generated_mixed",
+          "check_needed": false,
+          "pinyin": "Nǐ bǎ zuótiān de zuòyè zuò wán le ma?"
          }
         ],
         "source_origin": "textbook",
@@ -2230,8 +1697,9 @@
           "zh": "把药喝了吧。",
           "vi": "Uống thuốc đi nhé.",
           "highlight": ["喝了"],
-          "source_origin": "textbook/generated_mixed",
-          "check_needed": false
+          "source_origin": "textbook_generated_mixed",
+          "check_needed": false,
+          "pinyin": "Bǎ yào hē le ba."
          },
          {
           "id": "32a094de-9ecb-4d6c-a64b-0c988abb983a",
@@ -2240,7 +1708,8 @@
           "highlight": ["擦擦"],
           "source_ref": "1c90c614-758e-4e8d-88e5-cb7013155423",
           "source_origin": "textbook",
-          "check_needed": false
+          "check_needed": false,
+          "pinyin": "Kuài bǎ zhuōzi cāca."
          },
          {
           "id": "21c36338-d652-4378-834a-879eea95bd83",
@@ -2248,7 +1717,8 @@
           "vi": "Đặt hành lý cần ký gửi lên đi.",
           "highlight": ["放上去"],
           "source_origin": "textbook",
-          "check_needed": false
+          "check_needed": false,
+          "pinyin": "Bǎ yào tuōyùn de xíngli fàng shàngqù ba."
          }
         ],
         "source_origin": "textbook",
@@ -2268,16 +1738,18 @@
           "zh": "你为什么不把你的想法告诉她呢？",
           "vi": "Tại sao bạn không nói suy nghĩ của bạn cho cô ấy?",
           "highlight": ["不把"],
-          "source_origin": "textbook/generated_mixed",
-          "check_needed": false
+          "source_origin": "textbook_generated_mixed",
+          "check_needed": false,
+          "pinyin": "Nǐ wèishénme bù bǎ nǐ de xiǎngfǎ gàosu tā ne?"
          },
          {
           "id": "6520d7e5-4799-4112-b0ad-f687dc346a6d",
           "zh": "你没把口袋里的东西都掏出来。",
           "vi": "Bạn chưa lấy hết đồ trong túi ra.",
           "highlight": ["没把"],
-          "source_origin": "textbook/generated_mixed",
-          "check_needed": false
+          "source_origin": "textbook_generated_mixed",
+          "check_needed": false,
+          "pinyin": "Nǐ méi bǎ kǒudài lǐ de dōngxi dōu tāo chūlai."
          }
         ],
         "source_origin": "textbook",
@@ -2298,8 +1770,9 @@
           "zh": "我把词典有了。",
           "vi": "Sai. Nên nói: 我有词典了。",
           "highlight": ["把词典有"],
-          "source_origin": "textbook/generated_mixed",
-          "check_needed": false
+          "source_origin": "textbook_generated_mixed",
+          "check_needed": false,
+          "pinyin": "Wǒ bǎ cídiǎn yǒu le."
          }
         ],
         "source_origin": "textbook",
@@ -2338,7 +1811,8 @@
           "highlight": ["把电池装上"],
           "source_ref": "0e86620b-0718-428a-ae5f-29458ce15a71",
           "source_origin": "textbook",
-          "check_needed": false
+          "check_needed": false,
+          "pinyin": "Wǒ xiān bǎ diànchí zhuāng shàng."
          },
          {
           "id": "4c595c68-87d9-4079-a281-0e664218ef9b",
@@ -2347,7 +1821,8 @@
           "highlight": ["把口袋里的东西都掏出来"],
           "source_ref": "2009c011-892b-4fda-9210-89340de1aaa7",
           "source_origin": "textbook",
-          "check_needed": false
+          "check_needed": false,
+          "pinyin": "Qǐng bǎ kǒudài lǐ de dōngxi dōu tāo chūlai."
          },
          {
           "id": "ed6e94b2-7e84-413d-be38-644fddffd94c",
@@ -2356,13 +1831,14 @@
           "highlight": ["把杯子碰倒了"],
           "source_ref": "386d045d-ca0e-4489-906e-99dd9a95870c",
           "source_origin": "textbook",
-          "check_needed": false
+          "check_needed": false,
+          "pinyin": "Nǐ bǎ bēizi pèng dǎo le."
          }
         ],
         "notes_vi": [
          "Đây là grammar chính của bài 18, nên mọi exercise dùng 把 cần map về grammar ref này."
         ],
-        "source_origin": "textbook/generated_mixed",
+        "source_origin": "textbook_generated_mixed",
         "check_needed": false
        }
       ]
@@ -2375,7 +1851,7 @@
     "order": 6,
     "title": "练习",
     "title_vi": "Bài tập",
-    "source_origin": "textbook/generated_mixed",
+    "source_origin": "textbook_generated_mixed",
     "check_needed": false,
     "items": [
      {
@@ -2749,40 +2225,36 @@
        {
         "id": "668ef942-39b3-4816-be06-f347b64fa456",
         "prompt": "你把这几件衣服给我洗＿＿＿＿。",
-        "acceptable_answers": ["干净", "好", "完", "干净了", "好了", "完了"],
+        "acceptable_answers": ["干净", "好", "了"],
         "grading": {
-         "mode": "semantic",
-         "reason": "自由填空，教材无唯一标准答案；保留自然且合语法的答案。"
+         "mode": "semantic"
         },
         "check_needed": false
        },
        {
         "id": "6e23c236-94eb-4e83-9ea6-7353241c098d",
         "prompt": "师傅，请把这辆车＿＿＿＿。",
-        "acceptable_answers": ["停好", "开走", "修好", "开到门口", "停在门口"],
+        "acceptable_answers": ["修好", "开走", "停好"],
         "grading": {
-         "mode": "semantic",
-         "reason": "自由填空，教材无唯一标准答案；保留自然且合语法的答案。"
+         "mode": "semantic"
         },
         "check_needed": false
        },
        {
         "id": "ee3570f6-9872-4699-a1ed-c338e52b4e50",
         "prompt": "希望大家把新课＿＿＿＿。",
-        "acceptable_answers": ["预习一下儿", "预习好", "学好", "复习好"],
+        "acceptable_answers": ["预习好", "学好", "复习好"],
         "grading": {
-         "mode": "semantic",
-         "reason": "自由填空，教材无唯一标准答案；保留自然且合语法的答案。"
+         "mode": "semantic"
         },
         "check_needed": false
        },
        {
         "id": "3130979d-5cc3-4cf5-999c-9ed317ea7c14",
         "prompt": "你要想办法把他找＿＿＿＿。",
-        "acceptable_answers": ["到", "回来", "出来"],
+        "acceptable_answers": ["到", "回来"],
         "grading": {
-         "mode": "semantic",
-         "reason": "自由填空，教材无唯一标准答案；保留自然且合语法的答案。"
+         "mode": "semantic"
         },
         "check_needed": false
        },
@@ -2791,24 +2263,16 @@
         "prompt": "我已经把那本书＿＿＿＿图书馆了。",
         "acceptable_answers": ["还给"],
         "grading": {
-         "mode": "semantic",
-         "reason": "自由填空，教材无唯一标准答案；保留自然且合语法的答案。"
+         "mode": "semantic"
         },
         "check_needed": false
        },
        {
         "id": "9002df8c-125f-489d-9396-d008958aa6b9",
         "prompt": "我把手提包放＿＿＿＿了。",
-        "acceptable_answers": [
-         "到行李箱里去",
-         "到行李箱里",
-         "进去",
-         "进去了",
-         "在行李箱里"
-        ],
+        "acceptable_answers": ["进箱子里", "到行李箱里", "在座位上"],
         "grading": {
-         "mode": "semantic",
-         "reason": "自由填空，教材无唯一标准答案；保留自然且合语法的答案。"
+         "mode": "semantic"
         },
         "check_needed": false
        },
@@ -2817,8 +2281,7 @@
         "prompt": "你去银行把这些钱取＿＿＿＿。",
         "acceptable_answers": ["出来"],
         "grading": {
-         "mode": "semantic",
-         "reason": "自由填空，教材无唯一标准答案；保留自然且合语法的答案。"
+         "mode": "semantic"
         },
         "check_needed": false
        },
@@ -2827,8 +2290,7 @@
         "prompt": "请把这张桌子＿＿＿＿楼下。",
         "acceptable_answers": ["搬到", "拿到", "抬到"],
         "grading": {
-         "mode": "semantic",
-         "reason": "自由填空，教材无唯一标准答案；保留自然且合语法的答案。"
+         "mode": "semantic"
         },
         "check_needed": false
        },
@@ -2837,23 +2299,22 @@
         "prompt": "A：你把自行车＿＿＿＿给他了吗？\nB：还没有呢。",
         "acceptable_answers": ["还", "借"],
         "grading": {
-         "mode": "semantic",
-         "reason": "自由填空，教材无唯一标准答案；保留自然且合语法的答案。"
+         "mode": "semantic"
         },
         "check_needed": false
        },
        {
         "id": "28e971da-2721-4d36-b5ee-7755dc5bd2d3",
         "prompt": "A：你把作业＿＿＿＿老师了没有？\nB：我昨天就＿＿＿＿了。",
-        "acceptable_answers": ["交给 / 交", "交给 / 交了"],
+        "acceptable_answers": ["交给 / 交"],
         "grading": {
          "mode": "semantic",
-         "reason": "自由填空，教材无唯一标准答案；保留自然且合语法的答案。"
+         "reason": "自由填空；第一空填 交给，第二空填 交，组成：你把作业交给老师了没有？我昨天就交了。"
         },
         "check_needed": false
        }
       ],
-      "answer_verified": true,
+      "answer_verified": false,
       "rendering": {
        "renderer": "exercise.fill_blank.free.v2",
        "show_answer_after_submit": true,
@@ -2898,7 +2359,7 @@
         "id": "dc7f5f06-95a1-4158-98d8-b293729d6a13",
         "prompt": "接到电话以后，他就开 A 车到 B 车站 C 接朋友去 D。",
         "insert": "了",
-        "answer": "接到电话以后，他就开了车到车站接朋友去了。"
+        "answer": "接到电话以后，他就开车到车站接朋友去了。"
        },
        {
         "id": "55e24ac4-bbd1-40f9-9dee-e97b3f2e10f7",
@@ -2938,42 +2399,27 @@
        {
         "id": "1b0dc397-26f4-4659-a964-f9c68ceab72a",
         "prompt": "A：安全带怎么系？\nB：＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿。",
-        "acceptable_answers": [
-         "把这个插头往里一插就行了。",
-         "把这个插头插进去就行了。",
-         "把安全带系好就行了。"
-        ],
+        "acceptable_answers": ["把安全带系好就行了。"],
         "grading": {
-         "mode": "semantic",
-         "reason": "会话补全题，答案可有自然变体。"
+         "mode": "semantic"
         },
         "check_needed": false
        },
        {
         "id": "ab74bab2-0cd3-4c59-b4dd-6d9a3c6197b9",
         "prompt": "A：相机里的电池没电了。\nB：＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿。",
-        "acceptable_answers": [
-         "把电池换上吧。",
-         "把电池装上吧。",
-         "把电池换一下儿吧。"
-        ],
+        "acceptable_answers": ["把电池换上吧。", "把电池装上吧。"],
         "grading": {
-         "mode": "semantic",
-         "reason": "会话补全题，答案可有自然变体。"
+         "mode": "semantic"
         },
         "check_needed": false
        },
        {
         "id": "c503fed9-44e1-4df9-b284-51dbab822ee8",
         "prompt": "A：对不起，我把杯子碰倒了，水洒了一桌子。\nB：没关系，＿＿＿＿＿＿＿＿＿＿＿＿。",
-        "acceptable_answers": [
-         "没关系，快拿纸把桌子擦擦吧。",
-         "没关系，把桌子擦擦就行了。",
-         "没关系，把桌子擦擦吧。"
-        ],
+        "acceptable_answers": ["没关系，把桌子擦擦就行了。"],
         "grading": {
-         "mode": "semantic",
-         "reason": "会话补全题，答案可有自然变体。"
+         "mode": "semantic"
         },
         "check_needed": false
        },
@@ -2982,23 +2428,21 @@
         "prompt": "A：空调开得太大了，我觉得有点儿冷。\nB：＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿。",
         "acceptable_answers": ["把空调关小一点儿吧。", "把空调关上吧。"],
         "grading": {
-         "mode": "semantic",
-         "reason": "会话补全题，答案可有自然变体。"
+         "mode": "semantic"
         },
         "check_needed": false
        },
        {
         "id": "6155b63d-c263-446a-9ad7-80d775f5be6e",
         "prompt": "A：外边刮大风了。\nB：窗户还开着呢，＿＿＿＿＿＿＿＿＿＿。",
-        "acceptable_answers": ["快把窗户关上吧。", "把窗户关上吧。"],
+        "acceptable_answers": ["窗户还开着呢，快把窗户关上吧。"],
         "grading": {
-         "mode": "semantic",
-         "reason": "会话补全题，答案可有自然变体。"
+         "mode": "semantic"
         },
         "check_needed": false
        }
       ],
-      "answer_verified": true,
+      "answer_verified": false,
       "rendering": {
        "renderer": "exercise.complete_dialogue.v2",
        "show_answer_after_submit": true,
@@ -3036,10 +2480,7 @@
        {
         "id": "69f5ddfa-be8d-4292-b18f-6136daaa613f",
         "prompt": "我已经把书还给图书馆了。",
-        "acceptable_answers": [
-         "我还没把书还给图书馆呢。",
-         "我没把书还给图书馆。"
-        ],
+        "acceptable_answers": ["我还没把书还给图书馆呢。"],
         "check_needed": false
        },
        {
@@ -3047,17 +2488,14 @@
         "prompt": "我记得你已经把电脑拿出来了。",
         "acceptable_answers": [
          "我不记得你已经把电脑拿出来了。",
-         "我不记得你把电脑拿出来了。"
+         "我记得你还没把电脑拿出来。"
         ],
         "check_needed": false
        },
        {
         "id": "c8ec5644-8adf-46de-b2ff-34b3088ba324",
         "prompt": "我已经把那些照片发给他了。",
-        "acceptable_answers": [
-         "我还没把那些照片发给他呢。",
-         "我没把那些照片发给他。"
-        ],
+        "acceptable_answers": ["我还没把那些照片发给他呢。"],
         "check_needed": false
        },
        {
@@ -3078,14 +2516,11 @@
        {
         "id": "04d0444c-2ff8-4ab0-a3a6-82a956b50e6b",
         "prompt": "他们已经把这个故事拍成电影了。",
-        "acceptable_answers": [
-         "他们还没把这个故事拍成电影呢。",
-         "他们没把这个故事拍成电影。"
-        ],
+        "acceptable_answers": ["他们还没把这个故事拍成电影呢。"],
         "check_needed": false
        }
       ],
-      "answer_verified": true,
+      "answer_verified": false,
       "rendering": {
        "renderer": "exercise.transform_sentence.v2",
        "show_answer_after_submit": true,
@@ -3112,60 +2547,60 @@
         "id": "51d25007-39bc-4798-8fb4-fd9aaf8168f5",
         "wrong": "请你把一本杂志给我看看。",
         "correct": "请你把那本杂志给我看看。 / 请你给我一本杂志看看。",
-        "explanation_vi": "把 的宾语一般要特指；一本杂志若表示任意一本，不适合直接放在 把 后。",
+        "explanation_vi": "Sau 把 thường cần tân ngữ xác định; nếu là 'một quyển bất kỳ' thì không dùng 把.",
         "check_needed": false
        },
        {
         "id": "e65bddbb-aff2-43d6-86ee-fb07381ebe3e",
         "wrong": "以前我没把长城看见过。",
-        "correct": "以前我没看见过长城。 / 以前我没去过长城。",
-        "explanation_vi": "看见/去过 表示经历，不是“处理长城”，不能用 把。",
+        "correct": "以前我没见过长城。 / 以前我没去过长城。",
+        "explanation_vi": "见过/去过 表示经历，不是“处理长城”，不能用 把。看见 也不适合放进 把字句。",
         "check_needed": false
        },
        {
         "id": "2ac934ff-71d7-4d4a-b040-149ec5a5750e",
         "wrong": "外边很冷，快把大衣穿穿。",
         "correct": "外边很冷，快把大衣穿上。",
-        "explanation_vi": "这里要表达穿到身上，应用结果/趋向补语 上。",
+        "explanation_vi": "Cần kết quả 穿上, không phải động từ lặp 穿穿.",
         "check_needed": false
        },
        {
         "id": "c5d39e80-de1f-4a3c-9b5f-9193a14a8a33",
         "wrong": "我来中国以后，很把朋友想。",
         "correct": "我来中国以后，很想朋友。",
-        "explanation_vi": "想朋友是心理状态，不是对朋友进行处理，不能用 把。",
+        "explanation_vi": "想 không dùng kiểu 把 ở đây vì không xử lý/tác động lên 朋友.",
         "check_needed": false
        },
        {
         "id": "758a96f8-d8f5-4075-aafa-95e515a48195",
         "wrong": "他把两盘饺子能吃完。",
         "correct": "他能把两盘饺子吃完。",
-        "explanation_vi": "能愿动词 能 要放在 把 前面。",
+        "explanation_vi": "Động từ năng nguyện 能 phải đặt trước 把.",
         "check_needed": false
        },
        {
         "id": "7969b51e-cfc5-4e03-97be-0b29b48a7fdc",
         "wrong": "你知道，我很把我的狗喜欢。",
         "correct": "你知道，我很喜欢我的狗。",
-        "explanation_vi": "喜欢 是心理动词，不表示把宾语处理成某种结果。",
+        "explanation_vi": "喜欢 không dùng kiểu 把 trong câu này.",
         "check_needed": false
        },
        {
         "id": "a38bba23-f596-4371-82c0-14a75cbc3dee",
         "wrong": "我看见玛丽把宿舍进去。",
         "correct": "我看见玛丽进宿舍去了。",
-        "explanation_vi": "进宿舍是进入地点，不是把 宿舍 处理掉。",
+        "explanation_vi": "进去 là hành động đi vào địa điểm, không xử lý/tác động lên 宿舍.",
         "check_needed": false
        },
        {
         "id": "97b922c5-eca7-4c57-817f-978352efaddc",
         "wrong": "我没把中国来以前不会说汉语。",
         "correct": "我来中国以前不会说汉语。",
-        "explanation_vi": "来中国 是到达地点，不能说 把中国来。",
+        "explanation_vi": "来中国 là đi/đến một địa điểm, không dùng 把.",
         "check_needed": false
        }
       ],
-      "answer_verified": true,
+      "answer_verified": false,
       "rendering": {
        "renderer": "exercise.error_correction.v2",
        "show_answer_after_submit": true,
@@ -3192,21 +2627,14 @@
         "id": "3af137aa-d01d-4333-a9bd-7492eb9068a5",
         "prompt_vi": "Trong phòng quá nóng, bạn muốn nhờ nhân viên mở điều hòa, nói thế nào?",
         "prompt": "屋子里太热，你想请服务员打开空调，怎么说？",
-        "acceptable_answers": [
-         "请把空调打开。",
-         "请您把空调开开。",
-         "麻烦您把空调打开。"
-        ],
+        "acceptable_answers": ["请把空调打开。", "请您把空调开开。"],
         "check_needed": false
        },
        {
         "id": "86fd6e42-435a-453b-bf75-59e679636c7e",
         "prompt_vi": "Giáo viên muốn bạn đưa vở bài tập, nhưng bạn chưa làm xong, nói thế nào?",
         "prompt": "老师要你把作业本给他，你还没有做完，怎么对老师说？",
-        "acceptable_answers": [
-         "老师，对不起，我还没把作业做完。",
-         "老师，对不起，我还没把作业本做完。"
-        ],
+        "acceptable_answers": ["老师，对不起，我还没把作业做完。"],
         "check_needed": false
        },
        {
@@ -3214,8 +2642,8 @@
         "prompt_vi": "Bạn đi ngân hàng đổi tiền, nhân viên hỏi đổi tiền gì, nói thế nào?",
         "prompt": "你去银行换钱，营业员问你换什么钱，你怎么说？",
         "acceptable_answers": [
-         "我想把人民币换成美元。",
-         "请把人民币换成美元。"
+         "请把人民币换成美元。",
+         "我想把人民币换成美元。"
         ],
         "check_needed": false
        },
@@ -3223,14 +2651,11 @@
         "id": "137bcdc2-ab88-4f32-9239-8b2f18b60622",
         "prompt_vi": "Trên tàu, một cụ già không đặt được túi lên giá hành lý, bạn muốn giúp, nói thế nào?",
         "prompt": "在火车上，一位老人想把他的手提包放在行李架上，但他自己不能放上去，你要帮助他，怎么说？",
-        "acceptable_answers": [
-         "我来帮您把手提包放上去吧。",
-         "我帮您把手提包放到行李架上去吧。"
-        ],
+        "acceptable_answers": ["我来帮您把手提包放上去吧。"],
         "check_needed": false
        }
       ],
-      "answer_verified": true,
+      "answer_verified": false,
       "rendering": {
        "renderer": "exercise.free_response.v2",
        "show_answer_after_submit": true,
@@ -3264,8 +2689,8 @@
        },
        {
         "hanzi": "价钱",
-        "pinyin": "jiàqian",
-        "meaning_vi": "giá tiền; giá cả"
+        "pinyin": "jiàqián",
+        "meaning_vi": "giá tiền"
        },
        {
         "hanzi": "称",
@@ -3300,7 +2725,7 @@
       ],
       "passage_blanked": "下班以后，天都快黑①＿＿＿＿，我想顺便买点儿菜带回家，就向一个菜摊儿走去。卖菜的是一个小伙子。问了价钱以后，我拿起一把菜，对他说：“②＿＿＿＿这些菜给我称一下儿。”\n\n“您给 3 块吧！”他称了以后说。\n\n“给，找吧。”我给了他一张 10 块的钱。\n\n“您没零钱吗？”他问。\n\n“没有了，就这一张。”\n\n他找了半天，才把一把零钱放③＿＿＿＿我手里说：“您数一数吧。”\n\n我接过钱没有数，往口袋里一塞，拿起菜，骑上车就走了。\n\n骑了一会儿，我忽然觉得不对，就想，他找了我多少钱啊，我从车上下④＿＿＿＿。从口袋里把钱拿出来认真地数⑤＿＿＿＿数，小伙子找我了 97 块，多找给我 90 块钱！\n\n还回去不回去呢？已经走这么远了……\n\n就在我这么想的时候，脸上马上觉得发热。我怎么会有这种不好的想法，我的心变坏了吗？\n\n想到这儿，就立刻骑上车回去找那个卖菜的小伙子。\n\n天已经黑了。我远远看见那个小伙子正准备走，就跑过去⑥＿＿＿＿他叫住：“喂，等一下儿！”\n\n“怎么了？”小伙子问我。\n\n“你把钱找错了。”\n\n“少找了吗？”\n\n“不，你多找了。”\n\n“不会吧？”\n\n“怎么不会呢？你把我给你的 10 块钱看⑦＿＿＿＿ 100 块的了。”我说，“给，这是你多找的 90 块钱。”我把多找的钱还给了他。\n\n他有点儿不太相信地把钱接过⑧＿＿＿＿，很快，就感激地对我说：“谢谢了！大哥，谢谢你了！你真是好人。”\n\n我没有说话，骑上车就走了。这时，我心里才觉得轻松了。",
       "passage_complete": "下班以后，天都快黑了，我想顺便买点儿菜带回家，就向一个菜摊儿走去。卖菜的是一个小伙子。问了价钱以后，我拿起一把菜，对他说：“把这些菜给我称一下儿。”\n\n“您给 3 块吧！”他称了以后说。\n\n“给，找吧。”我给了他一张 10 块的钱。\n\n“您没零钱吗？”他问。\n\n“没有了，就这一张。”\n\n他找了半天，才把一把零钱放在我手里说：“您数一数吧。”\n\n我接过钱没有数，往口袋里一塞，拿起菜，骑上车就走了。\n\n骑了一会儿，我忽然觉得不对，就想，他找了我多少钱啊，我从车上下来。从口袋里把钱拿出来认真地数一数，小伙子找我了 97 块，多找给我 90 块钱！\n\n还回去不回去呢？已经走这么远了……\n\n就在我这么想的时候，脸上马上觉得发热。我怎么会有这种不好的想法，我的心变坏了吗？\n\n想到这儿，就立刻骑上车回去找那个卖菜的小伙子。\n\n天已经黑了。我远远看见那个小伙子正准备走，就跑过去把他叫住：“喂，等一下儿！”\n\n“怎么了？”小伙子问我。\n\n“你把钱找错了。”\n\n“少找了吗？”\n\n“不，你多找了。”\n\n“不会吧？”\n\n“怎么不会呢？你把我给你的 10 块钱看成 100 块的了。”我说，“给，这是你多找的 90 块钱。”我把多找的钱还给了他。\n\n他有点儿不太相信地把钱接过去，很快，就感激地对我说：“谢谢了！大哥，谢谢你了！你真是好人。”\n\n我没有说话，骑上车就走了。这时，我心里才觉得轻松了。",
-      "translation_vi": "Sau khi tan làm, trời đã sắp tối. Tôi muốn tiện đường mua ít rau mang về nhà nên đi về phía một sạp rau. Người bán rau là một chàng trai trẻ. Sau khi hỏi giá, tôi cầm một bó rau lên và nói với anh ấy: “Cân giúp tôi chỗ rau này một chút.” Người bán trả nhầm tiền thừa quá nhiều. Người kể chuyện đã quay lại trả lại 90 đồng, nên trong lòng mới cảm thấy nhẹ nhõm.",
+      "translation_vi": "Sau khi tan làm, trời đã sắp tối. Tôi muốn tiện đường mua ít rau mang về nhà nên đi về phía một sạp rau. Người bán rau là một chàng trai trẻ. Sau khi hỏi giá, tôi cầm một bó rau lên và nói với anh ấy: “Cân giúp tôi chỗ rau này một chút.”\n\n“Anh/chị đưa 3 đồng là được ạ!” Sau khi cân xong, anh ấy nói.\n\n“Đây, thối tiền nhé.” Tôi đưa cho anh ấy một tờ 10 đồng.\n\n“Anh/chị không có tiền lẻ à?” anh ấy hỏi.\n\n“Không còn nữa, chỉ có tờ này thôi.”\n\nAnh ấy tìm tiền lẻ một hồi lâu, rồi mới đặt một nắm tiền lẻ vào tay tôi và nói: “Anh/chị đếm lại đi ạ.”\n\nTôi nhận tiền mà không đếm, nhét vào túi, cầm rau lên, leo lên xe rồi đi.\n\nĐi được một lát, tôi bỗng thấy không ổn, liền nghĩ: anh ấy đã thối cho mình bao nhiêu tiền nhỉ? Tôi xuống xe, lấy tiền trong túi ra và đếm kỹ một lượt. Chàng trai ấy đã thối cho tôi 97 đồng, tức là thối dư cho tôi 90 đồng!\n\nCó quay lại trả hay không đây? Đã đi xa thế này rồi…\n\nNgay lúc tôi đang nghĩ như vậy, mặt tôi lập tức nóng bừng lên. Sao mình lại có suy nghĩ không tốt như thế này? Lòng mình đã xấu đi rồi sao?\n\nNghĩ đến đây, tôi lập tức đạp xe quay lại tìm chàng trai bán rau ấy.\n\nTrời đã tối rồi. Từ xa tôi thấy chàng trai ấy đang chuẩn bị đi, liền chạy tới gọi anh ấy lại: “Này, chờ một chút!”\n\n“Sao vậy ạ?” chàng trai hỏi tôi.\n\n“Anh thối tiền nhầm rồi.”\n\n“Thối thiếu ạ?”\n\n“Không, anh thối dư rồi.”\n\n“Không thể nào chứ?”\n\n“Sao lại không thể? Anh đã nhìn tờ 10 đồng tôi đưa thành tờ 100 đồng rồi.” Tôi nói: “Đây, đây là 90 đồng anh thối dư.” Tôi trả lại số tiền thối dư cho anh ấy.\n\nAnh ấy có vẻ hơi chưa tin lắm, nhận tiền lại, rất nhanh sau đó liền cảm kích nói với tôi: “Cảm ơn anh! Anh trai, cảm ơn anh! Anh đúng là người tốt.”\n\nTôi không nói gì, leo lên xe rồi đi. Lúc này, trong lòng tôi mới thấy nhẹ nhõm.",
       "blanks": [
        {
         "id": "f947f691-eb21-4ecc-913b-1129cc333dad",
@@ -3387,41 +2812,8 @@
        "renderer": "reading.cloze.v2",
        "show_answer_after_submit": true
       },
-      "answers": ["了", "把", "在", "来", "一", "把", "成", "去"],
-      "answer_key": [
-       {
-        "order": 1,
-        "answer": "了"
-       },
-       {
-        "order": 2,
-        "answer": "把"
-       },
-       {
-        "order": 3,
-        "answer": "在"
-       },
-       {
-        "order": 4,
-        "answer": "来"
-       },
-       {
-        "order": 5,
-        "answer": "一"
-       },
-       {
-        "order": 6,
-        "answer": "把"
-       },
-       {
-        "order": 7,
-        "answer": "成"
-       },
-       {
-        "order": 8,
-        "answer": "去"
-       }
-      ]
+      "answers": [],
+      "answer_key": []
      }
     ]
    },
@@ -3448,11 +2840,10 @@
         "order": 1,
         "speaker": "经理",
         "zh": "请把这份说明书翻译一下儿。",
-        "vi": "Xin hãy dịch bản thuyết minh này một chút.",
+        "vi": "Xin hãy dịch bản hướng dẫn này một chút.",
         "grammar_refs": ["26d807af-9599-4242-96db-253eb2d2e572"],
         "source_origin": "textbook",
-        "check_needed": false,
-        "pinyin": "Qǐng bǎ zhè fèn shuōmíngshū fānyì yíxiàr."
+        "check_needed": false
        },
        {
         "id": "ab5ff6c5-e148-476f-b214-78d6d236b940",
@@ -3462,8 +2853,7 @@
         "vi": "Dịch sang tiếng Anh phải không ạ?",
         "grammar_refs": ["result_complement_cheng"],
         "source_origin": "textbook",
-        "check_needed": false,
-        "pinyin": "Fānyì chéng Yīngwén de ma?"
+        "check_needed": false
        },
        {
         "id": "91535e1c-a753-4b37-b2fc-91a464538242",
@@ -3473,8 +2863,7 @@
         "vi": "Đúng.",
         "grammar_refs": [],
         "source_origin": "textbook",
-        "check_needed": false,
-        "pinyin": "Duì."
+        "check_needed": false
        },
        {
         "id": "0a0bce2b-a417-4670-9d70-253484797067",
@@ -3484,8 +2873,7 @@
         "vi": "Khi nào cần ạ?",
         "grammar_refs": [],
         "source_origin": "textbook",
-        "check_needed": false,
-        "pinyin": "Shénme shíhou yào?"
+        "check_needed": false
        },
        {
         "id": "bbe94aa4-4664-4aae-bb1f-58726d1ab505",
@@ -3495,8 +2883,7 @@
         "vi": "Chiều có thể dịch xong không?",
         "grammar_refs": ["result_complement_wan"],
         "source_origin": "textbook",
-        "check_needed": false,
-        "pinyin": "Xiàwǔ néng fānyì wán ma?"
+        "check_needed": false
        },
        {
         "id": "6034c3ce-cdb1-4b1c-8f57-8ae57c5d6feb",
@@ -3506,19 +2893,17 @@
         "vi": "Có thể ạ.",
         "grammar_refs": [],
         "source_origin": "textbook",
-        "check_needed": false,
-        "pinyin": "Néng."
+        "check_needed": false
        },
        {
         "id": "ac132aae-10a0-4c37-89fc-2bd40e855cef",
         "order": 7,
         "speaker": "经理",
         "zh": "下午交给我吧。",
-        "vi": "Chiều nộp / đưa cho tôi nhé.",
+        "vi": "Chiều giao cho tôi nhé.",
         "grammar_refs": ["verb_gei_recipient"],
         "source_origin": "textbook",
-        "check_needed": false,
-        "pinyin": "Xiàwǔ jiāo gěi wǒ ba."
+        "check_needed": false
        },
        {
         "id": "c95543b9-c67d-4597-8fe9-e8511c09e588",
@@ -3528,8 +2913,7 @@
         "vi": "Vâng.",
         "grammar_refs": [],
         "source_origin": "textbook",
-        "check_needed": false,
-        "pinyin": "Hǎo."
+        "check_needed": false
        }
       ],
       "communication_points": [
@@ -3575,7 +2959,7 @@
       "order": 1,
       "hanzi": "卡",
       "pinyin": "qiǎ",
-      "meaning_vi": "chốt/kẹp trong 卡子; cũng đọc kǎ khi nghĩa là thẻ",
+      "meaning_vi": "thẻ; cái kẹp; chốt gài",
       "example_word": "卡子",
       "note_vi": "Trong bài, 卡子 là cái khóa/chốt gài của dây an toàn.",
       "source_origin": "textbook",
@@ -3645,19 +3029,22 @@
     "key_sentences": [
      {
       "zh": "请把护照和机票给我。",
-      "vi": "Xin hãy đưa hộ chiếu và vé máy bay cho tôi."
+      "vi": "Xin hãy đưa hộ chiếu và vé máy bay cho tôi.",
+      "pinyin": "Qǐng bǎ hùzhào hé jīpiào gěi wǒ."
      },
      {
       "zh": "请把口袋里的东西都掏出来。",
-      "vi": "Xin lấy hết đồ trong túi ra."
+      "vi": "Xin lấy hết đồ trong túi ra.",
+      "pinyin": "Qǐng bǎ kǒudài lǐ de dōngxi dōu tāo chūlai."
      },
      {
       "zh": "把手提包放到行李箱里去吧。",
-      "vi": "Đặt túi xách vào khoang hành lý đi."
+      "vi": "Đặt túi xách vào ngăn hành lý đi."
      },
      {
       "zh": "我先把电池装上。",
-      "vi": "Anh lắp pin vào trước."
+      "vi": "Anh lắp pin vào trước.",
+      "pinyin": "Wǒ xiān bǎ diànchí zhuāng shàng."
      },
      {
       "zh": "请大家把安全带系好。",
@@ -3665,11 +3052,12 @@
      },
      {
       "zh": "你把杯子碰倒了。",
-      "vi": "Anh làm đổ cốc rồi."
+      "vi": "Anh làm đổ cốc rồi.",
+      "pinyin": "Nǐ bǎ bēizi pèng dǎo le."
      },
      {
       "zh": "请把这份说明书翻译一下儿。",
-      "vi": "Xin hãy dịch bản thuyết minh này một chút."
+      "vi": "Xin hãy dịch bản hướng dẫn này một chút."
      }
     ],
     "coverage_total": {
@@ -3682,7 +3070,7 @@
      "reading_covered": true,
      "communication_covered": true,
      "character_writing_covered": true,
-     "remaining_check_needed": false
+     "remaining_check_needed": "Một số đáp án mở trong bài tập 4, 6, 7, 8, 9 được đánh dấu check_needed/semantic grading."
     }
    }
   ],

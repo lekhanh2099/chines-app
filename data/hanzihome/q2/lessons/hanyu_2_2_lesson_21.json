@@ -112,7 +112,7 @@
         "vi": "Đừng vội, cứ từng bước từng bước leo lên. Khi nào leo không nổi thì nghỉ một lát. Đi nào, chúng ta cùng leo, phải kiên trì đến cùng; kiên trì chính là thắng lợi. … Thầy Vương, cố lên nhé!",
         "grammar_refs": ["f8ec59f3-898a-47b2-b536-44dfd8183393"],
         "notes": ["加油儿啊", "坚持就是胜利"],
-        "pinyin": "Bié zháojí, yí bù yí bù de wǎng shàng pá, pá bù dòng de shíhou jiù xiūxi yíhuìr. Zǒu, zánmen yìqǐ pá, yào jiānchí dàodǐ, jiānchí jiù shì shènglì. …… Wáng lǎoshī, jiā yóur a!"
+        "pinyin": "Bié zháojí, yí bù yí bù de wǎng shàng pá, pá bù dòng de shíhou jiù xiūxi yíhuìr. Zǒu, zánmen yìqǐ pá, yào jiānchí dàodǐ, jiānchí jiù shì shènglì. …… Wáng lǎoshī, jiāyóur a!"
        },
        {
         "id": "a8845639-9fca-4398-853d-a08fb63482a8",
@@ -197,7 +197,7 @@
         "order": 5,
         "speaker": "爱德华",
         "zh": "我和麦克说个相声。可是我总记不住台词，正背台词呢。",
-        "vi": "Em và Mike sẽ nói một tiết mục tấu nói. Nhưng em cứ không nhớ được lời thoại, đang học thuộc lời thoại đây ạ.",
+        "vi": "Em và Mike sẽ diễn một tiết mục tướng thanh. Nhưng em cứ không nhớ được lời thoại, đang học thuộc lời thoại đây ạ.",
         "grammar_refs": ["f8ec59f3-898a-47b2-b536-44dfd8183393"],
         "pinyin": "Wǒ hé Màikè shuō ge xiàngsheng. Kěshì wǒ zǒng jì bù zhù táicí, zhèng bèi táicí ne."
        },
@@ -206,7 +206,7 @@
         "order": 6,
         "speaker": "林老师",
         "zh": "背会了吗？",
-        "vi": "Đã thuộc chưa?",
+        "vi": "Đã học thuộc được chưa?",
         "pinyin": "Bèi huì le ma?"
        },
        {
@@ -265,10 +265,10 @@
         "order": 13,
         "speaker": "山本",
         "zh": "只要我们好好儿练，就一定能演好。“世上无难事，只怕有心人”嘛！",
-        "vi": "Chỉ cần chúng em luyện tập thật tốt, thì nhất định có thể diễn tốt. Chẳng phải có câu “Trên đời không có việc gì khó, chỉ sợ người có lòng” sao!",
+        "vi": "Chỉ cần chúng em luyện tập thật tốt, thì nhất định có thể diễn tốt. Chẳng phải có câu “Trên đời không có việc gì khó, chỉ sợ người có lòng quyết tâm” sao!",
         "grammar_refs": ["fa804fff-372b-4874-8571-f54e613d7e07"],
         "notes": ["世上无难事，只怕有心人"],
-        "pinyin": "Zhǐyào wǒmen hǎohāor liàn, jiù yídìng néng yǎn hǎo. “Shìshàng wú nánshì, zhǐ pà yǒuxīnrén” ma!"
+        "pinyin": "Zhǐyào wǒmen hǎohāor liàn, jiù yídìng néng yǎn hǎo. “Shìshàng wú nánshì, zhǐ pà yǒuxīn rén” ma!"
        },
        {
         "id": "b4e15ca3-0527-433b-9b2f-a6027ebfe8e3",
@@ -1795,13 +1795,13 @@
       "order": 1,
       "title": "加油儿啊",
       "structure": "加油 / 加油儿 + 啊",
-      "meaning_vi": "Dùng để cổ vũ, động viên người khác tiếp tục cố gắng.",
+      "meaning_vi": "Dùng để cổ vũ, động viên người khác tiếp tục cố gắng; trong khẩu ngữ có thể nói 加油 hoặc 加油儿.",
       "examples": [
        {
         "id": "3eca03f3-67c0-40d2-9fee-8e57a4ad43ad",
         "zh": "王老师，加油儿啊！",
         "vi": "Thầy Vương, cố lên nhé!",
-        "pinyin": "Wáng lǎoshī, jiā yóur a!",
+        "pinyin": "Wáng lǎoshī, jiāyóur a!",
         "en": "",
         "highlight": [],
         "grammar_refs": [],
@@ -1929,8 +1929,8 @@
        {
         "id": "ba6f33e1-5a6f-47fc-896e-13e6e19ed2d0",
         "zh": "世上无难事，只怕有心人。",
-        "vi": "Trên đời không có việc gì khó, chỉ sợ người có lòng.",
-        "pinyin": "Shìshàng wú nánshì, zhǐ pà yǒuxīnrén.",
+        "vi": "Trên đời không có việc gì khó, chỉ sợ người có lòng quyết tâm.",
+        "pinyin": "Shìshàng wú nánshì, zhǐ pà yǒuxīn rén.",
         "en": "",
         "highlight": [],
         "grammar_refs": [],
@@ -1945,7 +1945,7 @@
         "id": "7ab25155-2d20-40f8-81ed-fc1b421cdbd6",
         "zh": "只要我们好好儿练，就一定能演好。“世上无难事，只怕有心人”嘛！",
         "vi": "Chỉ cần chúng ta luyện tập thật tốt, nhất định sẽ diễn tốt.",
-        "pinyin": "Zhǐyào wǒmen hǎohāor liàn, jiù yídìng néng yǎn hǎo. “Shìshàng wú nánshì, zhǐ pà yǒuxīnrén” ma!",
+        "pinyin": "Zhǐyào wǒmen hǎohāor liàn, jiù yídìng néng yǎn hǎo. “Shìshàng wú nánshì, zhǐ pà yǒuxīn rén” ma!",
         "en": "",
         "highlight": [],
         "grammar_refs": [],
@@ -2377,36 +2377,12 @@
         "type": "minimal_pair_group",
         "title": "辨音辨调",
         "items": [
-         {
-          "id": "0e5801e7-b89b-4cc6-8bd9-9e1fbbd30b31_pair_001",
-          "left": "xiāngxìn",
-          "right": "xiānjìn"
-         },
-         {
-          "id": "0e5801e7-b89b-4cc6-8bd9-9e1fbbd30b31_pair_002",
-          "left": "wèntí",
-          "right": "wényì"
-         },
-         {
-          "id": "0e5801e7-b89b-4cc6-8bd9-9e1fbbd30b31_pair_003",
-          "left": "shènglì",
-          "right": "shēngyì"
-         },
-         {
-          "id": "0e5801e7-b89b-4cc6-8bd9-9e1fbbd30b31_pair_004",
-          "left": "jiūzhèng",
-          "right": "qiúzhèng"
-         },
-         {
-          "id": "0e5801e7-b89b-4cc6-8bd9-9e1fbbd30b31_pair_005",
-          "left": "shìshàng",
-          "right": "shíshàng"
-         },
-         {
-          "id": "0e5801e7-b89b-4cc6-8bd9-9e1fbbd30b31_pair_006",
-          "left": "zìxìn",
-          "right": "cíxíng"
-         }
+         "xiāngxìn / xiānjìn",
+         "wèntí / wényì",
+         "shènglì / shēngyì",
+         "jiūzhèng / qiúzhèng",
+         "shìshàng / shíshàng",
+         "zìxìn / cíxíng"
         ]
        },
        {
@@ -2453,7 +2429,7 @@
       "parts": [
        {
         "id": "7db043f9-0d63-45ee-8c21-295d62f2ebd3",
-        "pattern": "A：你爬得上去吗？ B：我爬得 / 不上去。",
+        "pattern": "A：你爬得上去吗？ B：我爬得上去 / 爬不上去。",
         "items": [
          "搬 — 进去",
          "开 — 过去",
@@ -2473,7 +2449,7 @@
         "items": [
          "骑 — 风太大",
          "提 — 这个箱子太重",
-         "跑 — 跑得时间太长了",
+         "跑 — 跑的时间太长了",
          "拿 — 这些书很重",
          "搬 — 东西太多了"
         ]
@@ -2709,9 +2685,9 @@
         "id": "9ef778cf-e772-42bb-b17b-64147ec57e29",
         "lines": [
          "A：请你填一下儿这张表。",
-         "B：对不起，有没有法文的？中文的我____________。",
-         "A：英文的你填写得了吗？",
-         "B：英文的我也____________。",
+         "B：对不起，有没有法文的？中文的我填不了。",
+         "A：英文的你填得了吗？",
+         "B：英文的我也填不了。",
          "A：那怎么办呢？"
         ],
         "answer_hint": "填不了；填不了"
@@ -2808,12 +2784,12 @@
        {
         "id": "9c211f34-08a0-4478-b188-fe6a0e98ea41",
         "prompt": "你去邮局给国内的朋友寄书，你想知道什么时候能寄到，怎么问工作人员？",
-        "answer_hint": "请问，这些书什么时候寄得到？"
+        "answer_hint": "请问，这些书什么时候能寄到？/ 请问，这些书寄得到吗？"
        },
        {
         "id": "c8ec5644-8adf-46de-b2ff-34b3088ba324",
         "prompt": "你穿 36 号的鞋，售货员给你了一双 35 号的，你要怎么对她说？",
-        "answer_hint": "这双鞋太小了，我穿不了。/ 我穿 36 号的。"
+        "answer_hint": "这双鞋太小了，我穿不上/穿不下。我穿三十六号的。"
        }
       ],
       "rendering": {
@@ -2949,8 +2925,8 @@
         "id": "ce8bdbc9-b498-418a-ab2c-e16111228a35",
         "order": 3,
         "zh": "有一个人很快把蛇画好了。他看别人还都没有画完，就左手拿起酒壶，右手又画起来，还得意地说：“你们画得太慢了！你们看我，还能给蛇添上几只脚呢。”",
-        "vi": "Có một người rất nhanh đã vẽ xong con rắn. Anh ta thấy người khác vẫn chưa vẽ xong, bèn tay trái cầm bình rượu lên, tay phải lại tiếp tục vẽ, còn đắc ý nói: “Các anh vẽ chậm quá! Nhìn tôi này, tôi còn có thể thêm mấy cái chân cho con rắn nữa đấy.”",
-        "pinyin": "Yǒu yí ge rén hěn kuài bǎ shé huà hǎo le. Tā kàn biérén hái dōu méiyǒu huà wán, jiù zuǒ shǒu ná qǐ jiǔhú, yòu shǒu yòu huà qǐlai, hái déyì de shuō: “Nǐmen huà de tài màn le! Nǐmen kàn wǒ, hái néng gěi shé tiān shàng jǐ zhī jiǎo ne.”",
+        "vi": "Có một người rất nhanh đã vẽ xong con rắn. Anh ta thấy người khác vẫn chưa vẽ xong, bèn tay trái cầm bình rượu lên, tay phải lại tiếp tục vẽ, còn đắc ý nói: “Các anh vẽ chậm quá! Nhìn tôi này, tôi còn có thể vẽ thêm mấy cái chân cho con rắn nữa đấy.”",
+        "pinyin": "Yǒu yí ge rén hěn kuài bǎ shé huà hǎo le. Tā kàn biérén hái dōu méiyǒu huà wán, jiù zuǒ shǒu ná qǐ jiǔhú, yòushǒu yòu huà qǐlai, hái déyì de shuō: “Nǐmen huà de tài màn le! Nǐmen kàn wǒ, hái néng gěi shé tiān shàng jǐ zhī jiǎo ne.”",
         "source_origin": "textbook",
         "check_needed": false
        },
@@ -2958,7 +2934,7 @@
         "id": "b3e5d57c-8b64-4c60-b5f0-3976cd13fef0",
         "order": 4,
         "zh": "当他正在给蛇画脚的时候，另一个人也把蛇画好了，就把酒壶拿了过去，说：“蛇是没有脚的，你给它画上了脚，就不是蛇了。所以，第一个画完蛇的是我，不是你！”说完就把酒喝了。",
-        "vi": "Khi anh ta đang vẽ chân cho con rắn, một người khác cũng vẽ xong con rắn, bèn cầm bình rượu đi và nói: “Rắn vốn không có chân. Anh vẽ thêm chân cho nó thì nó không còn là rắn nữa. Vì vậy, người đầu tiên vẽ xong rắn là tôi, không phải anh!” Nói xong liền uống bình rượu.",
+        "vi": "Khi anh ta đang vẽ chân cho con rắn, một người khác cũng vẽ xong con rắn, bèn cầm bình rượu lấy đi và nói: “Rắn vốn không có chân. Anh vẽ thêm chân cho nó thì nó không còn là rắn nữa. Vì vậy, người đầu tiên vẽ xong rắn là tôi, không phải anh!” Nói xong liền uống bình rượu.",
         "pinyin": "Dāng tā zhèngzài gěi shé huà jiǎo de shíhou, lìng yí ge rén yě bǎ shé huà hǎo le, jiù bǎ jiǔhú ná le guòqù, shuō: “Shé shì méiyǒu jiǎo de, nǐ gěi tā huà shàng le jiǎo, jiù bú shì shé le. Suǒyǐ, dì yī ge huà wán shé de shì wǒ, bú shì nǐ!” Shuō wán jiù bǎ jiǔ hē le.",
         "source_origin": "textbook",
         "check_needed": false
@@ -3245,7 +3221,7 @@
    "grammar_points": [
     {
      "id": "f8ec59f3-898a-47b2-b536-44dfd8183393",
-     "title": "Bổ ngữ khả năng với bổ ngữ xu hướng kép"
+     "title": "Bổ ngữ khả năng (2)"
     },
     {
      "id": "57b14753-688a-41b6-9e0d-b61dbbf574d7",

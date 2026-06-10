@@ -168,7 +168,7 @@
         "speaker": "海伦",
         "zh": "不是。我是应国际广播电台的邀请来北京工作的。",
         "pinyin": "Bú shì. Wǒ shì yìng Guójì Guǎngbō Diàntái de yāoqǐng lái Běijīng gōngzuò de.",
-        "vi": "Không ạ. Em được Đài phát thanh quốc tế mời đến Bắc Kinh làm việc.",
+        "vi": "Không ạ. Em đến Bắc Kinh làm việc theo lời mời của Đài phát thanh quốc tế.",
         "audio_key": "",
         "grammar_refs": [],
         "vocab_refs": [],
@@ -220,7 +220,7 @@
         "speaker": "海伦",
         "zh": "保罗也来了。他在北京的一家中外合资公司工作。老师，我们想请您来我家做客。",
         "pinyin": "Bǎoluó yě lái le. Tā zài Běijīng de yì jiā Zhōngwài hézī gōngsī gōngzuò. Lǎoshī, wǒmen xiǎng qǐng nín lái wǒ jiā zuòkè.",
-        "vi": "Paul cũng đến rồi. Anh ấy làm việc ở một công ty liên doanh Trung-nước ngoài tại Bắc Kinh. Thầy ơi, bọn em muốn mời thầy đến nhà em chơi.",
+        "vi": "Paul cũng đến rồi. Anh ấy làm việc ở một công ty liên doanh Trung-ngoại tại Bắc Kinh. Thầy ơi, bọn em muốn mời thầy đến nhà em làm khách.",
         "audio_key": "",
         "grammar_refs": [],
         "vocab_refs": [],
@@ -392,7 +392,7 @@
         "speaker": "海伦",
         "zh": "老师，我和保罗的工作都需要用汉语，所以打算继续学下去。我们想利用在北京工作的机会把汉语学好。",
         "pinyin": "Lǎoshī, wǒ hé Bǎoluó de gōngzuò dōu xūyào yòng Hànyǔ, suǒyǐ dǎsuàn jìxù xué xiàqu. Wǒmen xiǎng lìyòng zài Běijīng gōngzuò de jīhuì bǎ Hànyǔ xué hǎo.",
-        "vi": "Thầy ơi, công việc của em và Paul đều cần dùng tiếng Hán, nên bọn em định tiếp tục học tiếp. Bọn em muốn tận dụng cơ hội làm việc ở Bắc Kinh để học tốt tiếng Hán.",
+        "vi": "Thầy ơi, công việc của em và Paul đều cần dùng tiếng Hán, nên bọn em định tiếp tục học. Bọn em muốn tận dụng cơ hội làm việc ở Bắc Kinh để học tốt tiếng Hán.",
         "audio_key": "",
         "grammar_refs": ["f8ec59f3-898a-47b2-b536-44dfd8183393"],
         "vocab_refs": [],
@@ -611,7 +611,7 @@
       "pinyin": "guójì",
       "meaning_vi": "quốc tế",
       "meaning_en": "international",
-      "pos": "Danh từ / Tính từ định ngữ",
+      "pos": "Tính từ định ngữ",
       "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
@@ -628,14 +628,14 @@
       "source_origin": "textbook",
       "check_needed": false,
       "pos_detail": {
-       "vi": "Danh từ / Tính từ định ngữ",
-       "cn": "名词/区别词性定语",
+       "vi": "Tính từ định ngữ",
+       "cn": "形容词",
        "normalized": "adjective",
        "schema_compatible_pos": "adjective",
        "is_separable_verb": false,
        "separable_type": "",
        "structure_vi": "",
-       "usage_note_vi": "",
+       "usage_note_vi": "Trong bài dùng làm định ngữ: 国际广播电台.",
        "notes": []
       }
      },
@@ -1031,7 +1031,7 @@
        "is_separable_verb": true,
        "separable_type": "động-tân / 离合词",
        "structure_vi": "động từ 搬 + tân ngữ 家",
-       "usage_note_vi": "Có thể nói 搬了三次家; muốn nói chuyển đến đâu dùng 搬到北京/搬到新家, không nói *搬家北京.",
+       "usage_note_vi": "Có thể nói 搬了三次家; muốn nói chuyển đến đâu dùng 搬到北京 / 搬到新家, không nói *搬家北京.",
        "notes": []
       }
      },
@@ -1223,7 +1223,7 @@
       "pinyin": "bùjiǔ",
       "meaning_vi": "không lâu; chẳng bao lâu",
       "meaning_en": "not long",
-      "pos": "Phó từ / Cụm thời gian",
+      "pos": "Tính từ / Phó từ thời gian",
       "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
@@ -1240,14 +1240,14 @@
       "source_origin": "textbook",
       "check_needed": false,
       "pos_detail": {
-       "vi": "Phó từ / Cụm thời gian",
-       "cn": "副词/时间短语",
+       "vi": "Tính từ / Phó từ thời gian",
+       "cn": "形容词/副词",
        "normalized": "adverb",
        "schema_compatible_pos": "adverb",
        "is_separable_verb": false,
        "separable_type": "",
        "structure_vi": "",
-       "usage_note_vi": "",
+       "usage_note_vi": "Trong bài có 成立不久; cũng dùng trong 不久以后 / 不久前.",
        "notes": []
       }
      },
@@ -1331,7 +1331,7 @@
       "pinyin": "yídìng",
       "meaning_vi": "nhất định; mức độ nhất định; đáng kể",
       "meaning_en": "certain; definite",
-      "pos": "Phó từ / Tính từ",
+      "pos": "Tính từ / Phó từ",
       "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
@@ -1348,14 +1348,14 @@
       "source_origin": "textbook",
       "check_needed": false,
       "pos_detail": {
-       "vi": "Phó từ / Tính từ",
-       "cn": "副词/形容词",
+       "vi": "Tính từ / Phó từ",
+       "cn": "形容词/副词",
        "normalized": "adverb",
        "schema_compatible_pos": "adverb",
        "is_separable_verb": false,
        "separable_type": "",
        "structure_vi": "",
-       "usage_note_vi": "",
+       "usage_note_vi": "Trong 有一定的基础 là tính từ; trong 一定能学好 là phó từ nhấn chắc chắn.",
        "notes": []
       }
      },
@@ -1403,7 +1403,7 @@
       "pinyin": "guāng",
       "meaning_vi": "hết sạch; trống không",
       "meaning_en": "completely; all gone",
-      "pos": "Bổ ngữ kết quả / Phó từ / Danh từ",
+      "pos": "Tính từ / Bổ ngữ kết quả",
       "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
@@ -1420,14 +1420,14 @@
       "source_origin": "textbook",
       "check_needed": false,
       "pos_detail": {
-       "vi": "Bổ ngữ kết quả / Phó từ / Danh từ",
-       "cn": "结果补语/副词/名词",
+       "vi": "Tính từ / Bổ ngữ kết quả",
+       "cn": "形容词/结果补语",
        "normalized": "grammar_word",
        "schema_compatible_pos": "grammar_word",
        "is_separable_verb": false,
        "separable_type": "",
        "structure_vi": "",
-       "usage_note_vi": "",
+       "usage_note_vi": "Trong 忘光了 / 吃光 là bổ ngữ kết quả, nghĩa là hết sạch.",
        "notes": []
       }
      },
@@ -2188,7 +2188,7 @@
           "id": "7aa9ef46-6f3d-4ea1-b0f6-1ba89dd9b81b",
           "zh": "这道题我做出来了。",
           "pinyin": "Zhè dào tí wǒ zuò chūlai le.",
-          "vi": "Câu này tôi làm ra rồi.",
+          "vi": "Câu này tôi làm ra được rồi.",
           "source_origin": "textbook",
           "check_needed": false
          },
@@ -2383,46 +2383,14 @@
         "type": "minimal_pair_group",
         "title": "辨音辨调",
         "items": [
-         {
-          "id": "0e5801e7-b89b-4cc6-8bd9-9e1fbbd30b31_pair_001",
-          "left": "shēngyīn",
-          "right": "shēnying"
-         },
-         {
-          "id": "0e5801e7-b89b-4cc6-8bd9-9e1fbbd30b31_pair_002",
-          "left": "gàosu",
-          "right": "gāosù"
-         },
-         {
-          "id": "0e5801e7-b89b-4cc6-8bd9-9e1fbbd30b31_pair_003",
-          "left": "guójì",
-          "right": "guójí"
-         },
-         {
-          "id": "0e5801e7-b89b-4cc6-8bd9-9e1fbbd30b31_pair_004",
-          "left": "guǎngbō",
-          "right": "guǎngbó"
-         },
-         {
-          "id": "0e5801e7-b89b-4cc6-8bd9-9e1fbbd30b31_pair_005",
-          "left": "hézī",
-          "right": "hézi"
-         },
-         {
-          "id": "0e5801e7-b89b-4cc6-8bd9-9e1fbbd30b31_pair_006",
-          "left": "chénglì",
-          "right": "chéngyì"
-         },
-         {
-          "id": "0e5801e7-b89b-4cc6-8bd9-9e1fbbd30b31_pair_007",
-          "left": "jìxù",
-          "right": "jìxū"
-         },
-         {
-          "id": "0e5801e7-b89b-4cc6-8bd9-9e1fbbd30b31_pair_008",
-          "left": "tóngyì",
-          "right": "tǒngyī"
-         }
+         "shēngyīn / shēnying",
+         "gàosu / gāosù",
+         "guójì / guójí",
+         "guǎngbō / guǎngbó",
+         "hézī / hézi",
+         "chénglì / chéngyì",
+         "jìxù / jìxū",
+         "tóngyì / tǒngyī"
         ],
         "source_origin": "textbook",
         "check_needed": false
@@ -3479,7 +3447,7 @@
    "lesson_index": 22,
    "lesson_number_cn": "第二十二课",
    "lesson_title_cn": "我想起来了",
-   "lesson_title_pinyin": "Wǒ xiǎng qǐlái le",
+   "lesson_title_pinyin": "Wǒ xiǎng qǐlai le",
    "lesson_title_vi": "Tôi nhớ ra rồi",
    "lesson_title_en": "I remember now",
    "source_files": [
@@ -3510,6 +3478,12 @@
      "type": "vocabulary_pos_fix",
      "scope": "lesson.sections[type=vocabulary].items only",
      "description_vi": "Chuẩn hóa pos sang tiếng Việt và thêm pos_detail; đánh dấu động từ li hợp cho 做客, 搬家.",
+     "check_needed": false
+    },
+    {
+     "type": "full_content_pdf_check",
+     "scope": "text, vocabulary, grammar examples, exercises, reading, character_writing",
+     "description_vi": "Đối chiếu lại với PDF scan bài 22; chuẩn hóa dịch, pinyin, đáp án suy luận và từ loại tiếng Việt; không đổi cấu trúc ngoài dữ liệu nội dung.",
      "check_needed": false
     }
    ]

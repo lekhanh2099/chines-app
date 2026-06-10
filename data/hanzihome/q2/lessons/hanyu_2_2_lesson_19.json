@@ -467,18 +467,7 @@
       },
       "audio_key": "",
       "source_origin": "textbook/uploaded_crosscheck",
-      "check_needed": false,
-      "pos_detail": {
-       "vi": "Giới từ / dấu bị động",
-       "cn": "介词 / 被动标记",
-       "normalized": "preposition",
-       "schema_compatible_pos": "preposition",
-       "is_separable_verb": false,
-       "separable_type": "",
-       "structure_vi": "",
-       "usage_note_vi": "Trong bài dùng để đánh dấu câu bị động: người/vật chịu tác động + 被 + tác nhân + động từ + kết quả.",
-       "notes": []
-      }
+      "check_needed": false
      },
      {
       "id": "8c18cf3c-e9dc-42e1-8faf-eb26799cabab",
@@ -503,18 +492,7 @@
       },
       "audio_key": "",
       "source_origin": "textbook/uploaded_crosscheck",
-      "check_needed": false,
-      "pos_detail": {
-       "vi": "Động từ / giới từ",
-       "cn": "动词 / 介词",
-       "normalized": "preposition",
-       "schema_compatible_pos": "preposition",
-       "is_separable_verb": false,
-       "separable_type": "",
-       "structure_vi": "",
-       "usage_note_vi": "Trong bài có thể dùng gần 被 trong khẩu ngữ bị động; nghĩa gốc còn là để/cho phép/khiến.",
-       "notes": []
-      }
+      "check_needed": false
      },
      {
       "id": "1fbd69b7-603a-44ea-8d57-10cd4def9ced",
@@ -539,18 +517,7 @@
       },
       "audio_key": "",
       "source_origin": "textbook/uploaded_crosscheck",
-      "check_needed": false,
-      "pos_detail": {
-       "vi": "Động từ / giới từ",
-       "cn": "动词 / 介词",
-       "normalized": "preposition",
-       "schema_compatible_pos": "preposition",
-       "is_separable_verb": false,
-       "separable_type": "",
-       "structure_vi": "",
-       "usage_note_vi": "Trong bài có thể dùng như dấu bị động khẩu ngữ; nghĩa thường gặp khác là gọi/bảo.",
-       "notes": []
-      }
+      "check_needed": false
      },
      {
       "id": "3dc505f1-bc0e-4a96-b448-17fed89fdc60",
@@ -575,18 +542,7 @@
       },
       "audio_key": "",
       "source_origin": "textbook/uploaded_crosscheck",
-      "check_needed": false,
-      "pos_detail": {
-       "vi": "Danh từ",
-       "cn": "名词",
-       "normalized": "noun",
-       "schema_compatible_pos": "noun",
-       "is_separable_verb": false,
-       "separable_type": "",
-       "structure_vi": "",
-       "usage_note_vi": "Chỉ chân/cẳng chân; phân biệt với 脚 là bàn chân.",
-       "notes": []
-      }
+      "check_needed": false
      },
      {
       "id": "188412d4-4c23-4d60-b7b2-21f3490199e7",
@@ -611,18 +567,7 @@
       },
       "audio_key": "",
       "source_origin": "textbook/uploaded_crosscheck",
-      "check_needed": false,
-      "pos_detail": {
-       "vi": "Động từ li hợp",
-       "cn": "动宾式离合词",
-       "normalized": "verb_phrase",
-       "schema_compatible_pos": "verb_phrase",
-       "is_separable_verb": true,
-       "separable_type": "động-tân / 离合词",
-       "structure_vi": "động từ 上 + tân ngữ 街",
-       "usage_note_vi": "Có thể nói 上了街以后 / 上过几次街; trong bài nghĩa là ra phố/ra đường.",
-       "notes": []
-      }
+      "check_needed": false
      },
      {
       "id": "5ea44727-d97c-467b-b1b8-babd195df50d",
@@ -647,18 +592,7 @@
       },
       "audio_key": "",
       "source_origin": "textbook/uploaded_crosscheck",
-      "check_needed": false,
-      "pos_detail": {
-       "vi": "Danh từ",
-       "cn": "名词",
-       "normalized": "noun",
-       "schema_compatible_pos": "noun",
-       "is_separable_verb": false,
-       "separable_type": "",
-       "structure_vi": "",
-       "usage_note_vi": "Phố, đường phố; thường chỉ không gian ngoài phố có người/xe/cửa hàng.",
-       "notes": []
-      }
+      "check_needed": false
      },
      {
       "id": "54613016-834a-4fc3-9912-2357a6d27058",
@@ -683,18 +617,7 @@
       },
       "audio_key": "",
       "source_origin": "textbook/uploaded_crosscheck",
-      "check_needed": false,
-      "pos_detail": {
-       "vi": "Động từ",
-       "cn": "动词",
-       "normalized": "verb",
-       "schema_compatible_pos": "verb",
-       "is_separable_verb": false,
-       "separable_type": "",
-       "structure_vi": "",
-       "usage_note_vi": "Va, đâm, tông; thường đi với bổ ngữ kết quả như 撞倒, 撞伤, 撞坏.",
-       "notes": []
-      }
+      "check_needed": false
      },
      {
       "id": "0da97406-c3ac-4fcb-a51c-398a59c3fbae",
@@ -719,18 +642,7 @@
       },
       "audio_key": "",
       "source_origin": "textbook/uploaded_crosscheck",
-      "check_needed": false,
-      "pos_detail": {
-       "vi": "Động từ / bổ ngữ kết quả",
-       "cn": "动词 / 结果补语",
-       "normalized": "verb",
-       "schema_compatible_pos": "verb",
-       "is_separable_verb": false,
-       "separable_type": "",
-       "structure_vi": "",
-       "usage_note_vi": "Trong bài đọc dǎo: ngã/đổ; trong 撞倒 là bổ ngữ kết quả “làm ngã”.",
-       "notes": []
-      }
+      "check_needed": false
      },
      {
       "id": "54b36889-82be-485b-8342-fb8aab572065",
@@ -755,18 +667,7 @@
       },
       "audio_key": "",
       "source_origin": "textbook/uploaded_crosscheck",
-      "check_needed": false,
-      "pos_detail": {
-       "vi": "Động từ / danh từ",
-       "cn": "动词 / 名词",
-       "normalized": "verb_noun",
-       "schema_compatible_pos": "verb_noun",
-       "is_separable_verb": false,
-       "separable_type": "",
-       "structure_vi": "",
-       "usage_note_vi": "Có thể là làm bị thương/bị thương hoặc vết thương; trong 撞伤 là kết quả bị thương.",
-       "notes": []
-      }
+      "check_needed": false
      },
      {
       "id": "1354b1a3-93cc-4505-8d7f-c5550a1d6ae9",
@@ -791,18 +692,7 @@
       },
       "audio_key": "",
       "source_origin": "textbook/uploaded_crosscheck",
-      "check_needed": false,
-      "pos_detail": {
-       "vi": "Tính từ",
-       "cn": "形容词",
-       "normalized": "adjective",
-       "schema_compatible_pos": "adjective",
-       "is_separable_verb": false,
-       "separable_type": "",
-       "structure_vi": "",
-       "usage_note_vi": "Nghĩa trong bài: nghiêm trọng/quan trọng; thường hỏi 要紧吗？",
-       "notes": []
-      }
+      "check_needed": false
      },
      {
       "id": "f0684cb3-4577-4e6c-9f22-7d97c89692b3",
@@ -827,18 +717,7 @@
       },
       "audio_key": "",
       "source_origin": "textbook/uploaded_crosscheck",
-      "check_needed": false,
-      "pos_detail": {
-       "vi": "Cụm tính từ",
-       "cn": "形容词短语",
-       "normalized": "adjective_phrase",
-       "schema_compatible_pos": "adjective_phrase",
-       "is_separable_verb": false,
-       "separable_type": "",
-       "structure_vi": "",
-       "usage_note_vi": "Cụm cố định nghĩa “không sao/không nghiêm trọng”; 不 trước 要 thường đọc bú trong khẩu ngữ.",
-       "notes": []
-      }
+      "check_needed": false
      },
      {
       "id": "d5b362a7-c8f6-4f25-b2b5-0f1749c8afbb",
@@ -863,18 +742,7 @@
       },
       "audio_key": "",
       "source_origin": "textbook/uploaded_crosscheck",
-      "check_needed": false,
-      "pos_detail": {
-       "vi": "Động từ",
-       "cn": "动词",
-       "normalized": "verb",
-       "schema_compatible_pos": "verb",
-       "is_separable_verb": false,
-       "separable_type": "",
-       "structure_vi": "",
-       "usage_note_vi": "Chảy; trong bài đi với 血 tạo cụm 流血 = chảy máu.",
-       "notes": []
-      }
+      "check_needed": false
      },
      {
       "id": "7eccd5e8-dac0-4f36-be2e-abcc0a2bdfcd",
@@ -899,18 +767,7 @@
       },
       "audio_key": "",
       "source_origin": "textbook/uploaded_crosscheck",
-      "check_needed": false,
-      "pos_detail": {
-       "vi": "Danh từ",
-       "cn": "名词",
-       "normalized": "noun",
-       "schema_compatible_pos": "noun",
-       "is_separable_verb": false,
-       "separable_type": "",
-       "structure_vi": "",
-       "usage_note_vi": "Máu; trong khẩu ngữ 流血 thường đọc xiě, trong từ ghép y học thường đọc xuè.",
-       "notes": []
-      }
+      "check_needed": false
      },
      {
       "id": "91fa9f81-e5ef-4c4a-b29c-c4b6daa02196",
@@ -935,18 +792,7 @@
       },
       "audio_key": "",
       "source_origin": "textbook/uploaded_crosscheck",
-      "check_needed": false,
-      "pos_detail": {
-       "vi": "Danh từ",
-       "cn": "名词",
-       "normalized": "noun",
-       "schema_compatible_pos": "noun",
-       "is_separable_verb": false,
-       "separable_type": "",
-       "structure_vi": "",
-       "usage_note_vi": "Xương; 头 là hậu tố danh từ khẩu ngữ, không dịch thành “đầu”.",
-       "notes": []
-      }
+      "check_needed": false
      },
      {
       "id": "8a5b1d09-23a6-4182-96e6-9bf4d761a1e1",
@@ -971,18 +817,7 @@
       },
       "audio_key": "",
       "source_origin": "textbook/uploaded_crosscheck",
-      "check_needed": false,
-      "pos_detail": {
-       "vi": "Động từ",
-       "cn": "动词",
-       "normalized": "verb",
-       "schema_compatible_pos": "verb",
-       "is_separable_verb": false,
-       "separable_type": "",
-       "structure_vi": "",
-       "usage_note_vi": "Nằm; nhấn tư thế nằm, khác 睡 là ngủ.",
-       "notes": []
-      }
+      "check_needed": false
      },
      {
       "id": "be7a835d-ff8f-4a86-9fd8-27c5f1093f0c",
@@ -1007,18 +842,7 @@
       },
       "audio_key": "",
       "source_origin": "textbook/uploaded_crosscheck",
-      "check_needed": false,
-      "pos_detail": {
-       "vi": "Cụm tính từ / cụm giao tiếp",
-       "cn": "形容词短语 / 交际用语",
-       "normalized": "adjective_phrase",
-       "schema_compatible_pos": "adjective_phrase",
-       "is_separable_verb": false,
-       "separable_type": "",
-       "structure_vi": "",
-       "usage_note_vi": "Nghĩa là ngại, áy náy, xin lỗi nhẹ; dùng nhiều trong giao tiếp.",
-       "notes": []
-      }
+      "check_needed": false
      },
      {
       "id": "7a89dc80-d79d-4c2f-988c-d0f54e240d19",
@@ -1043,18 +867,7 @@
       },
       "audio_key": "",
       "source_origin": "textbook/uploaded_crosscheck",
-      "check_needed": false,
-      "pos_detail": {
-       "vi": "Phó từ / tính từ",
-       "cn": "副词 / 形容词",
-       "normalized": "adverb",
-       "schema_compatible_pos": "adverb",
-       "is_separable_verb": false,
-       "separable_type": "",
-       "structure_vi": "",
-       "usage_note_vi": "Cố ý/cố tình; thường đứng trước động từ hoặc dùng trong 不是故意的.",
-       "notes": []
-      }
+      "check_needed": false
      },
      {
       "id": "ff3e1818-66a9-4532-880b-02c9cacb0e5b",
@@ -1079,18 +892,7 @@
       },
       "audio_key": "",
       "source_origin": "textbook/uploaded_crosscheck",
-      "check_needed": false,
-      "pos_detail": {
-       "vi": "Tính từ / động từ / lời cảnh báo",
-       "cn": "形容词 / 动词 / 警示语",
-       "normalized": "adjective",
-       "schema_compatible_pos": "adjective",
-       "is_separable_verb": false,
-       "separable_type": "",
-       "structure_vi": "",
-       "usage_note_vi": "Cẩn thận/coi chừng; có thể đứng một mình làm lời cảnh báo: 小心！",
-       "notes": []
-      }
+      "check_needed": false
      },
      {
       "id": "0125bdae-fe4e-48fb-8264-145e95c75933",
@@ -1115,18 +917,7 @@
       },
       "audio_key": "",
       "source_origin": "textbook/uploaded_crosscheck",
-      "check_needed": false,
-      "pos_detail": {
-       "vi": "Thán từ",
-       "cn": "叹词",
-       "normalized": "interjection",
-       "schema_compatible_pos": "interjection",
-       "is_separable_verb": false,
-       "separable_type": "",
-       "structure_vi": "",
-       "usage_note_vi": "Tiếng than/thở dài; dùng trong lời thoại, không hợp văn viết trang trọng.",
-       "notes": []
-      }
+      "check_needed": false
      },
      {
       "id": "689eb64b-5d4f-469f-9afa-74017d399614",
@@ -1151,18 +942,7 @@
       },
       "audio_key": "",
       "source_origin": "textbook/uploaded_crosscheck",
-      "check_needed": false,
-      "pos_detail": {
-       "vi": "Danh từ",
-       "cn": "名词",
-       "normalized": "noun",
-       "schema_compatible_pos": "noun",
-       "is_separable_verb": false,
-       "separable_type": "",
-       "structure_vi": "",
-       "usage_note_vi": "Ví tiền; 儿 là hậu tố nhi hóa.",
-       "notes": []
-      }
+      "check_needed": false
      },
      {
       "id": "d45d5488-9293-41ae-9deb-1e5b51cee446",
@@ -1187,18 +967,7 @@
       },
       "audio_key": "",
       "source_origin": "textbook/uploaded_crosscheck",
-      "check_needed": false,
-      "pos_detail": {
-       "vi": "Động từ",
-       "cn": "动词",
-       "normalized": "verb",
-       "schema_compatible_pos": "verb",
-       "is_separable_verb": false,
-       "separable_type": "",
-       "structure_vi": "",
-       "usage_note_vi": "Trộm/lấy lén; phân biệt với 骗 là lừa bằng lời/thủ đoạn.",
-       "notes": []
-      }
+      "check_needed": false
      },
      {
       "id": "c99a633b-27a2-429b-a139-44113a84c189",
@@ -1223,18 +992,7 @@
       },
       "audio_key": "",
       "source_origin": "textbook/uploaded_crosscheck",
-      "check_needed": false,
-      "pos_detail": {
-       "vi": "Danh từ",
-       "cn": "名词",
-       "normalized": "noun",
-       "schema_compatible_pos": "noun",
-       "is_separable_verb": false,
-       "separable_type": "",
-       "structure_vi": "",
-       "usage_note_vi": "Kẻ trộm/tên trộm; danh từ chỉ người, không dùng như động từ.",
-       "notes": []
-      }
+      "check_needed": false
      },
      {
       "id": "79358c6f-3427-4c28-98f3-7ef98c7033c3",
@@ -1259,18 +1017,7 @@
       },
       "audio_key": "",
       "source_origin": "textbook/uploaded_crosscheck",
-      "check_needed": false,
-      "pos_detail": {
-       "vi": "Động từ",
-       "cn": "动词",
-       "normalized": "verb",
-       "schema_compatible_pos": "verb",
-       "is_separable_verb": false,
-       "separable_type": "",
-       "structure_vi": "",
-       "usage_note_vi": "Gặp/gặp phải; thường dùng với người, khó khăn, tình huống xấu.",
-       "notes": []
-      }
+      "check_needed": false
      },
      {
       "id": "dc0f8e06-a359-4907-a8d8-fc9b02260590",
@@ -1295,18 +1042,7 @@
       },
       "audio_key": "",
       "source_origin": "textbook/uploaded_crosscheck",
-      "check_needed": false,
-      "pos_detail": {
-       "vi": "Động từ",
-       "cn": "动词",
-       "normalized": "verb",
-       "schema_compatible_pos": "verb",
-       "is_separable_verb": false,
-       "separable_type": "",
-       "structure_vi": "",
-       "usage_note_vi": "Bị nước/mưa dội vào; trong bài đi với 湿: 淋湿.",
-       "notes": []
-      }
+      "check_needed": false
      },
      {
       "id": "c43cedbf-7024-4ec1-922f-e75119114baf",
@@ -1331,18 +1067,7 @@
       },
       "audio_key": "",
       "source_origin": "textbook/uploaded_crosscheck",
-      "check_needed": false,
-      "pos_detail": {
-       "vi": "Động từ",
-       "cn": "动词",
-       "normalized": "verb",
-       "schema_compatible_pos": "verb",
-       "is_separable_verb": false,
-       "separable_type": "",
-       "structure_vi": "",
-       "usage_note_vi": "Rơi/rớt/tụt xuống; trong 落汤鸡 là thành phần của thành ngữ.",
-       "notes": []
-      }
+      "check_needed": false
      },
      {
       "id": "d9991c79-3454-4247-bf18-f14f43b4a24a",
@@ -1367,18 +1092,7 @@
       },
       "audio_key": "",
       "source_origin": "textbook/uploaded_crosscheck",
-      "check_needed": false,
-      "pos_detail": {
-       "vi": "Thành ngữ / cụm danh từ",
-       "cn": "惯用语 / 名词短语",
-       "normalized": "phrase",
-       "schema_compatible_pos": "phrase",
-       "is_separable_verb": false,
-       "separable_type": "",
-       "structure_vi": "",
-       "usage_note_vi": "Nghĩa bóng: người ướt như chuột lột; thường dùng trong cụm 淋成落汤鸡.",
-       "notes": []
-      }
+      "check_needed": false
      },
      {
       "id": "55cd807c-eec7-412d-99db-f4e6508b170f",
@@ -1403,18 +1117,7 @@
       },
       "audio_key": "",
       "source_origin": "textbook/uploaded_crosscheck",
-      "check_needed": false,
-      "pos_detail": {
-       "vi": "Trợ từ kết cấu / trợ từ so sánh",
-       "cn": "助词",
-       "normalized": "particle",
-       "schema_compatible_pos": "particle",
-       "is_separable_verb": false,
-       "separable_type": "",
-       "structure_vi": "",
-       "usage_note_vi": "Đứng sau danh từ/cụm từ để so sánh: 像……似的.",
-       "notes": []
-      }
+      "check_needed": false
      },
      {
       "id": "085e60d5-dd1c-4585-ac6b-0f1db0ded936",
@@ -1439,18 +1142,7 @@
       },
       "audio_key": "",
       "source_origin": "textbook/uploaded_crosscheck",
-      "check_needed": false,
-      "pos_detail": {
-       "vi": "Tính từ",
-       "cn": "形容词",
-       "normalized": "adjective",
-       "schema_compatible_pos": "adjective",
-       "is_separable_verb": false,
-       "separable_type": "",
-       "structure_vi": "",
-       "usage_note_vi": "Ướt/ẩm; đối lập với 干.",
-       "notes": []
-      }
+      "check_needed": false
      },
      {
       "id": "ba7ff0f9-b633-4516-ab3d-22b96046a1cf",
@@ -1475,18 +1167,7 @@
       },
       "audio_key": "",
       "source_origin": "textbook/uploaded_crosscheck",
-      "check_needed": false,
-      "pos_detail": {
-       "vi": "Danh từ",
-       "cn": "名词",
-       "normalized": "noun",
-       "schema_compatible_pos": "noun",
-       "is_separable_verb": false,
-       "separable_type": "",
-       "structure_vi": "",
-       "usage_note_vi": "Thủ đô của một quốc gia.",
-       "notes": []
-      }
+      "check_needed": false
      },
      {
       "id": "2185ee67-885d-4ffb-83e2-e97be4070796",
@@ -1511,18 +1192,7 @@
       },
       "audio_key": "",
       "source_origin": "textbook/uploaded_crosscheck",
-      "check_needed": false,
-      "pos_detail": {
-       "vi": "Danh từ",
-       "cn": "名词",
-       "normalized": "noun",
-       "schema_compatible_pos": "noun",
-       "is_separable_verb": false,
-       "separable_type": "",
-       "structure_vi": "",
-       "usage_note_vi": "Nhà hát/rạp hát; nơi biểu diễn kịch, ca múa, nghệ thuật sân khấu.",
-       "notes": []
-      }
+      "check_needed": false
      },
      {
       "id": "092a8c16-3739-4685-a4c0-39365071bd48",
@@ -1547,18 +1217,7 @@
       },
       "audio_key": "",
       "source_origin": "textbook/uploaded_crosscheck",
-      "check_needed": false,
-      "pos_detail": {
-       "vi": "Danh từ",
-       "cn": "名词",
-       "normalized": "noun",
-       "schema_compatible_pos": "noun",
-       "is_separable_verb": false,
-       "separable_type": "",
-       "structure_vi": "",
-       "usage_note_vi": "Tài xế/người lái xe; đối lập với 乘客 là hành khách.",
-       "notes": []
-      }
+      "check_needed": false
      },
      {
       "id": "22e66ee9-565e-4670-b2ac-4d5a9b500b38",
@@ -1583,18 +1242,7 @@
       },
       "audio_key": "",
       "source_origin": "textbook/uploaded_crosscheck",
-      "check_needed": false,
-      "pos_detail": {
-       "vi": "Động từ",
-       "cn": "动词",
-       "normalized": "verb",
-       "schema_compatible_pos": "verb",
-       "is_separable_verb": false,
-       "separable_type": "",
-       "structure_vi": "",
-       "usage_note_vi": "Kéo/chở; trong ngữ cảnh giao thông có thể là chở người/hàng.",
-       "notes": []
-      }
+      "check_needed": false
      },
      {
       "id": "275b46f4-3166-48b7-9766-58384178d1be",
@@ -1619,18 +1267,7 @@
       },
       "audio_key": "",
       "source_origin": "textbook/uploaded_crosscheck",
-      "check_needed": false,
-      "pos_detail": {
-       "vi": "Danh từ",
-       "cn": "名词",
-       "normalized": "noun",
-       "schema_compatible_pos": "noun",
-       "is_separable_verb": false,
-       "separable_type": "",
-       "structure_vi": "",
-       "usage_note_vi": "Sân bay.",
-       "notes": []
-      }
+      "check_needed": false
      },
      {
       "id": "1190511f-5970-4304-8f84-d7201b287aeb",
@@ -1655,18 +1292,7 @@
       },
       "audio_key": "",
       "source_origin": "textbook/uploaded_crosscheck",
-      "check_needed": false,
-      "pos_detail": {
-       "vi": "Tính từ",
-       "cn": "形容词",
-       "normalized": "adjective",
-       "schema_compatible_pos": "adjective",
-       "is_separable_verb": false,
-       "separable_type": "",
-       "structure_vi": "",
-       "usage_note_vi": "Đáng tức/gây bực; phân biệt với 客气 là khách sáo/lịch sự.",
-       "notes": []
-      }
+      "check_needed": false
      },
      {
       "id": "d42d3d90-443d-45da-bed7-987b50034e92",
@@ -1691,18 +1317,7 @@
       },
       "audio_key": "",
       "source_origin": "textbook/uploaded_crosscheck",
-      "check_needed": false,
-      "pos_detail": {
-       "vi": "Động từ li hợp",
-       "cn": "动宾式离合词",
-       "normalized": "verb_phrase",
-       "schema_compatible_pos": "verb_phrase",
-       "is_separable_verb": true,
-       "separable_type": "động-tân / 离合词",
-       "structure_vi": "động từ 算 + tân ngữ 命",
-       "usage_note_vi": "Có thể nói 算了一次命 / 算过命; nghĩa là xem bói/đoán mệnh.",
-       "notes": []
-      }
+      "check_needed": false
      },
      {
       "id": "cfb712c9-c4ca-4314-b6b2-696b40ace25e",
@@ -1727,18 +1342,7 @@
       },
       "audio_key": "",
       "source_origin": "textbook/uploaded_crosscheck",
-      "check_needed": false,
-      "pos_detail": {
-       "vi": "Danh từ",
-       "cn": "名词",
-       "normalized": "noun",
-       "schema_compatible_pos": "noun",
-       "is_separable_verb": false,
-       "separable_type": "",
-       "structure_vi": "",
-       "usage_note_vi": "Vận may/may rủi; thường nói 运气好, 运气不好, 碰运气.",
-       "notes": []
-      }
+      "check_needed": false
      },
      {
       "id": "6059829f-ae21-43cf-ac0c-05e19639ec43",
@@ -1763,18 +1367,7 @@
       },
       "audio_key": "",
       "source_origin": "textbook/uploaded_crosscheck",
-      "check_needed": false,
-      "pos_detail": {
-       "vi": "Tính từ",
-       "cn": "形容词",
-       "normalized": "adjective",
-       "schema_compatible_pos": "adjective",
-       "is_separable_verb": false,
-       "separable_type": "",
-       "structure_vi": "",
-       "usage_note_vi": "Ngốc/khờ/đờ ra; dùng với người cần cẩn thận vì dễ xúc phạm.",
-       "notes": []
-      }
+      "check_needed": false
      },
      {
       "id": "fefd5441-7b6c-47e3-b823-9e149b947bf7",
@@ -1799,18 +1392,7 @@
       },
       "audio_key": "",
       "source_origin": "textbook/uploaded_crosscheck",
-      "check_needed": false,
-      "pos_detail": {
-       "vi": "Động từ",
-       "cn": "动词",
-       "normalized": "verb",
-       "schema_compatible_pos": "verb",
-       "is_separable_verb": false,
-       "separable_type": "",
-       "structure_vi": "",
-       "usage_note_vi": "Tiêu/dùng tiền hoặc thời gian; trong bài đi với 钱.",
-       "notes": []
-      }
+      "check_needed": false
      },
      {
       "id": "27761bd2-433a-44ef-b79a-9e6f0a34b9c9",
@@ -1835,18 +1417,7 @@
       },
       "audio_key": "",
       "source_origin": "textbook/uploaded_crosscheck",
-      "check_needed": false,
-      "pos_detail": {
-       "vi": "Động từ li hợp",
-       "cn": "动宾式离合词",
-       "normalized": "verb_phrase",
-       "schema_compatible_pos": "verb_phrase",
-       "is_separable_verb": true,
-       "separable_type": "động-tân / 离合词",
-       "structure_vi": "động từ 受 + tân ngữ 骗",
-       "usage_note_vi": "Có thể nói 受了骗 / 受过骗; nghĩa là bị lừa. Không nói 被受骗.",
-       "notes": []
-      }
+      "check_needed": false
      },
      {
       "id": "861ed325-b320-4ae0-8eac-bb6bb8ebc215",
@@ -1871,18 +1442,7 @@
       },
       "audio_key": "",
       "source_origin": "textbook/uploaded_crosscheck",
-      "check_needed": false,
-      "pos_detail": {
-       "vi": "Động từ",
-       "cn": "动词",
-       "normalized": "verb",
-       "schema_compatible_pos": "verb",
-       "is_separable_verb": false,
-       "separable_type": "",
-       "structure_vi": "",
-       "usage_note_vi": "Nhận/chịu/bị tác động; thường tạo cụm như 受伤, 受骗, 受到影响.",
-       "notes": []
-      }
+      "check_needed": false
      },
      {
       "id": "6fe8f20d-e712-4f0c-9cbc-021aaeb9698c",
@@ -1907,18 +1467,7 @@
       },
       "audio_key": "",
       "source_origin": "textbook/uploaded_crosscheck",
-      "check_needed": false,
-      "pos_detail": {
-       "vi": "Động từ",
-       "cn": "动词",
-       "normalized": "verb",
-       "schema_compatible_pos": "verb",
-       "is_separable_verb": false,
-       "separable_type": "",
-       "structure_vi": "",
-       "usage_note_vi": "Lừa/lừa gạt; phân biệt với 偷 là trộm/lấy lén.",
-       "notes": []
-      }
+      "check_needed": false
      },
      {
       "id": "863bbf3f-83e7-4021-b98e-be632043d94c",
@@ -1943,18 +1492,7 @@
       },
       "audio_key": "",
       "source_origin": "textbook/uploaded_crosscheck",
-      "check_needed": false,
-      "pos_detail": {
-       "vi": "Động từ",
-       "cn": "动词",
-       "normalized": "verb",
-       "schema_compatible_pos": "verb",
-       "is_separable_verb": false,
-       "separable_type": "",
-       "structure_vi": "",
-       "usage_note_vi": "Hút/rút/lấy ra; trong bài đi với 烟 tạo cụm 抽烟 = hút thuốc.",
-       "notes": []
-      }
+      "check_needed": false
      },
      {
       "id": "b14487b6-5579-4f1c-9ad7-16fd40991577",
@@ -1979,18 +1517,7 @@
       },
       "audio_key": "",
       "source_origin": "textbook/uploaded_crosscheck",
-      "check_needed": false,
-      "pos_detail": {
-       "vi": "Danh từ",
-       "cn": "名词",
-       "normalized": "noun",
-       "schema_compatible_pos": "noun",
-       "is_separable_verb": false,
-       "separable_type": "",
-       "structure_vi": "",
-       "usage_note_vi": "Khói/thuốc lá; trong bài là thuốc lá.",
-       "notes": []
-      }
+      "check_needed": false
      },
      {
       "id": "eb7cc112-7df2-44e6-a1df-9824d8b6e45a",
@@ -2015,18 +1542,7 @@
       },
       "audio_key": "",
       "source_origin": "textbook/uploaded_crosscheck",
-      "check_needed": false,
-      "pos_detail": {
-       "vi": "Động từ",
-       "cn": "动词",
-       "normalized": "verb",
-       "schema_compatible_pos": "verb",
-       "is_separable_verb": false,
-       "separable_type": "",
-       "structure_vi": "",
-       "usage_note_vi": "Cai/bỏ một thói quen; thường đi với 烟, 酒, 毒.",
-       "notes": []
-      }
+      "check_needed": false
      },
      {
       "id": "505dae11-836a-475d-b811-339f25caaf42",
@@ -2051,18 +1567,7 @@
       },
       "audio_key": "",
       "source_origin": "textbook/uploaded_crosscheck",
-      "check_needed": false,
-      "pos_detail": {
-       "vi": "Động từ",
-       "cn": "动词",
-       "normalized": "verb",
-       "schema_compatible_pos": "verb",
-       "is_separable_verb": false,
-       "separable_type": "",
-       "structure_vi": "",
-       "usage_note_vi": "Phạt/xử phạt; thường gặp trong 被罚, 罚款.",
-       "notes": []
-      }
+      "check_needed": false
      },
      {
       "id": "a47b82f7-2260-4763-8c97-b1631e792e1c",
@@ -2087,18 +1592,7 @@
       },
       "audio_key": "",
       "source_origin": "textbook/uploaded_crosscheck",
-      "check_needed": false,
-      "pos_detail": {
-       "vi": "Động từ",
-       "cn": "动词",
-       "normalized": "verb",
-       "schema_compatible_pos": "verb",
-       "is_separable_verb": false,
-       "separable_type": "",
-       "structure_vi": "",
-       "usage_note_vi": "Châm/đốt/điểm; trong bài liên quan 点烟 = châm thuốc.",
-       "notes": []
-      }
+      "check_needed": false
      },
      {
       "id": "71f9308f-7b38-435e-bfa8-c7c974599035",
@@ -2123,18 +1617,7 @@
       },
       "audio_key": "",
       "source_origin": "textbook/uploaded_crosscheck",
-      "check_needed": false,
-      "pos_detail": {
-       "vi": "Động từ / danh từ",
-       "cn": "动词 / 名词",
-       "normalized": "verb",
-       "schema_compatible_pos": "verb",
-       "is_separable_verb": false,
-       "separable_type": "",
-       "structure_vi": "",
-       "usage_note_vi": "Quyết định hoặc sự quyết định; trong bài dùng như động từ: 决定把烟戒掉.",
-       "notes": []
-      }
+      "check_needed": false
      },
      {
       "id": "05e1ac20-79be-406d-9c90-4b0c847182bc",
@@ -2159,18 +1642,7 @@
       },
       "audio_key": "",
       "source_origin": "textbook/uploaded_crosscheck",
-      "check_needed": false,
-      "pos_detail": {
-       "vi": "Động từ li hợp",
-       "cn": "动宾式离合词",
-       "normalized": "verb_phrase",
-       "schema_compatible_pos": "verb_phrase",
-       "is_separable_verb": true,
-       "separable_type": "động-tân / 离合词",
-       "structure_vi": "động từ 戒 + tân ngữ 烟",
-       "usage_note_vi": "Có thể nói 戒了三个月烟; trong khẩu ngữ thường dùng như cụm động từ bỏ thuốc lá.",
-       "notes": []
-      }
+      "check_needed": false
      },
      {
       "id": "358d5baa-5ba1-4cb5-984a-44770a1724d6",
@@ -2195,18 +1667,7 @@
       },
       "audio_key": "",
       "source_origin": "textbook/uploaded_crosscheck",
-      "check_needed": false,
-      "pos_detail": {
-       "vi": "Động từ",
-       "cn": "动词",
-       "normalized": "verb",
-       "schema_compatible_pos": "verb",
-       "is_separable_verb": false,
-       "separable_type": "",
-       "structure_vi": "",
-       "usage_note_vi": "Lãng phí; thường đi trực tiếp với 时间, 钱, 水, 资源.",
-       "notes": []
-      }
+      "check_needed": false
      }
     ]
    },
@@ -2264,7 +1725,7 @@
       "check_needed": false
      }
     ],
-    "note_vi": "Tên nhân vật xuất hiện trong bài khóa; bảng 专名 riêng trong bài không thấy rõ trong nguồn bóc."
+    "note_vi": "Bảng 专名 trong sách chỉ ghi 大山; 罗兰、玛丽、爱德华 là tên nhân vật xuất hiện trong bài khóa, giữ để app tra cứu."
    },
    {
     "id": "c18e9f54-6da1-4496-886b-c2c722605678",
@@ -3491,7 +2952,7 @@
        {
         "id": "dc7f5f06-95a1-4158-98d8-b293729d6a13",
         "prompt": "去看电影，到电影院门口才发现记错时间了，朋友问你，你怎么说？",
-        "sample_answer": "我把时间记错了，电影可能已经开始了。",
+        "sample_answer": "电影时间被我记错了，我们来晚了。",
         "answer_verified": true,
         "check_needed": false
        },
@@ -3549,7 +3010,7 @@
        {
         "id": "6155b63d-c263-446a-9ad7-80d775f5be6e",
         "wrong": "钥匙被我忘拔下来了。",
-        "sample_answer": "钥匙让我忘拔下来了。",
+        "sample_answer": "钥匙我忘拔下来了。",
         "answer_verified": true,
         "check_needed": false
        },
@@ -4081,58 +3542,8 @@
       "grammar_refs": ["f8ec59f3-898a-47b2-b536-44dfd8183393"],
       "source_origin": "textbook/pdf_crosschecked",
       "check_needed": false,
-      "answers": [
-       {
-        "blank_index": 1,
-        "answer": "在"
-       },
-       {
-        "blank_index": 2,
-        "answer": "被 / 让 / 叫"
-       },
-       {
-        "blank_index": 3,
-        "answer": "张"
-       },
-       {
-        "blank_index": 4,
-        "answer": "错的"
-       },
-       {
-        "blank_index": 5,
-        "answer": "在"
-       },
-       {
-        "blank_index": 6,
-        "answer": "在"
-       }
-      ],
-      "answer_key": [
-       {
-        "blank_index": 1,
-        "answer": "在"
-       },
-       {
-        "blank_index": 2,
-        "answer": "被 / 让 / 叫"
-       },
-       {
-        "blank_index": 3,
-        "answer": "张"
-       },
-       {
-        "blank_index": 4,
-        "answer": "错的"
-       },
-       {
-        "blank_index": 5,
-        "answer": "在"
-       },
-       {
-        "blank_index": 6,
-        "answer": "在"
-       }
-      ]
+      "answers": [],
+      "answer_key": []
      }
     ],
     "empty_reading_note_vi": "综合填空 đã được giữ thêm ở section reading để UI/parser không hụt block; nội dung và đáp án đã đối chiếu với phần PDF tương ứng."

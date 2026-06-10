@@ -37,7 +37,7 @@
         "vi": "Điền Phương, Thượng Hải thế nào? Tôi muốn đi tàu hỏa đến Thượng Hải du lịch.",
         "grammar_refs": [],
         "vocab_refs": [],
-        "pinyin": "Tián Fāng， Shànghǎi zěn me yàng？ wǒ xiǎng zuò huǒ chē qù Shànghǎi lǚ xíng。",
+        "pinyin": "Tián Fāng, Shànghǎi zěnmeyàng? Wǒ xiǎng zuò huǒchē qù Shànghǎi lǚxíng.",
         "en": "",
         "audio_key": "",
         "source_origin": "textbook",
@@ -48,15 +48,14 @@
         "order": 2,
         "speaker": "田芳",
         "zh": "上海很好，这几年变化很大。今年暑假我还在那儿玩儿了一个多月呢。我一个同学家就在上海。",
-        "vi": "Thượng Hải rất tốt, mấy năm nay thay đổi rất nhiều. Nghỉ hè năm nay tôi còn chơi ở đó hơn một tháng. Nhà một bạn học của tôi ở ngay Thượng Hải.",
+        "vi": "Thượng Hải rất tuyệt, mấy năm gần đây thay đổi rất nhiều. Nghỉ hè năm nay tôi còn chơi ở đó hơn một tháng. Nhà một người bạn học của tôi ở ngay Thượng Hải.",
         "grammar_refs": ["f3302370-f1c2-4d08-99ba-fda75cc4a335"],
         "vocab_refs": [
          "68c05a12-9d8e-45d9-a413-786bcf2f780a",
-         "3dc505f1-bc0e-4a96-b448-17fed89fdc60",
          "1fbd69b7-603a-44ea-8d57-10cd4def9ced",
-         "8c18cf3c-e9dc-42e1-8faf-eb26799cabab"
+         "3dc505f1-bc0e-4a96-b448-17fed89fdc60"
         ],
-        "pinyin": "Shànghǎi hěn hǎo， zhè jǐ nián biàn huà hěn dà。 jīn nián shǔ jià wǒ hái zài nà ér wán ér le yí ge duō yuè ne。 wǒ yí ge tóng xué jiā jiù zài Shànghǎi。",
+        "pinyin": "Shànghǎi hěn hǎo, zhè jǐ nián biànhuà hěn dà. Jīnnián shǔjià wǒ hái zài nàr wánr le yí ge duō yuè ne. Wǒ yí ge tóngxué jiā jiù zài Shànghǎi.",
         "en": "",
         "audio_key": "",
         "source_origin": "textbook",
@@ -70,7 +69,7 @@
         "vi": "Thượng Hải lớn hơn Bắc Kinh nhỉ?",
         "grammar_refs": ["f8ec59f3-898a-47b2-b536-44dfd8183393"],
         "vocab_refs": ["188412d4-4c23-4d60-b7b2-21f3490199e7"],
-        "pinyin": "Shànghǎi bǐ Běijīng dà ba？",
+        "pinyin": "Shànghǎi bǐ Běijīng dà ba?",
         "en": "",
         "audio_key": "",
         "source_origin": "textbook",
@@ -81,25 +80,23 @@
         "order": 4,
         "speaker": "田芳",
         "zh": "不，上海没有北京大，不过人口比北京多。上海是中国人口最多的城市。这几年，增加了不少新建筑，现在比过去变得更漂亮了。",
-        "vi": "Không, Thượng Hải không lớn bằng Bắc Kinh, nhưng dân số đông hơn Bắc Kinh. Thượng Hải là thành phố có dân số đông nhất Trung Quốc. Mấy năm nay, có thêm không ít công trình kiến trúc mới, bây giờ so với trước đã trở nên đẹp hơn rồi.",
+        "vi": "Không, Thượng Hải không lớn bằng Bắc Kinh, nhưng dân số đông hơn Bắc Kinh. Thượng Hải là thành phố đông dân nhất Trung Quốc. Mấy năm gần đây, có thêm không ít công trình kiến trúc mới, bây giờ so với trước đã trở nên đẹp hơn rồi.",
         "grammar_refs": [
          "c6cd6c38-22fc-4546-a398-39efe02d6c17",
          "b0c8e101-1500-4742-9064-1e102a0eb8b9",
          "f8ec59f3-898a-47b2-b536-44dfd8183393"
         ],
         "vocab_refs": [
-         "7eccd5e8-dac0-4f36-be2e-abcc0a2bdfcd",
-         "f0684cb3-4577-4e6c-9f22-7d97c89692b3",
          "5ea44727-d97c-467b-b1b8-babd195df50d",
-         "0da97406-c3ac-4fcb-a51c-398a59c3fbae",
-         "d5b362a7-c8f6-4f25-b2b5-0f1749c8afbb",
-         "8c18cf3c-e9dc-42e1-8faf-eb26799cabab",
          "54613016-834a-4fc3-9912-2357a6d27058",
+         "0da97406-c3ac-4fcb-a51c-398a59c3fbae",
          "54b36889-82be-485b-8342-fb8aab572065",
          "1354b1a3-93cc-4505-8d7f-c5550a1d6ae9",
-         "188412d4-4c23-4d60-b7b2-21f3490199e7"
+         "f0684cb3-4577-4e6c-9f22-7d97c89692b3",
+         "d5b362a7-c8f6-4f25-b2b5-0f1749c8afbb",
+         "7eccd5e8-dac0-4f36-be2e-abcc0a2bdfcd"
         ],
-        "pinyin": "Bù， Shànghǎi méi yǒu Běijīng dà， bù guò rén kǒu bǐ Běijīng duō。 Shànghǎi shì zhōng guó rén kǒu zuì duō de chéng shì。 zhè jǐ nián， zēng jiā le bù shǎo xīn jiàn zhù， xiàn zài bǐ guò qù biàn de gèng piàoliang le。",
+        "pinyin": "Bù, Shànghǎi méiyǒu Běijīng dà, búguò rénkǒu bǐ Běijīng duō. Shànghǎi shì Zhōngguó rénkǒu zuì duō de chéngshì. Zhè jǐ nián, zēngjiā le bù shǎo xīn jiànzhù, xiànzài bǐ guòqù biàn de gèng piàoliang le.",
         "en": "",
         "audio_key": "",
         "source_origin": "textbook",
@@ -110,10 +107,10 @@
         "order": 5,
         "speaker": "山本",
         "zh": "上海的公园有北京的多吗？",
-        "vi": "Công viên ở Thượng Hải có nhiều như ở Bắc Kinh không?",
+        "vi": "Công viên ở Thượng Hải có nhiều bằng Bắc Kinh không?",
         "grammar_refs": ["c3d31639-0f40-4b2f-aa50-5dda9d443b78"],
         "vocab_refs": [],
-        "pinyin": "Shànghǎi de gōng yuán yǒu Běijīng de duō ma？",
+        "pinyin": "Shànghǎi de gōngyuán yǒu Běijīng de duō ma?",
         "en": "",
         "audio_key": "",
         "source_origin": "textbook",
@@ -130,7 +127,7 @@
          "c3d31639-0f40-4b2f-aa50-5dda9d443b78"
         ],
         "vocab_refs": [],
-        "pinyin": "Shànghǎi de gōng yuán méi yǒu Běijīng de duō， yě méi yǒu Běijīng de gōng yuán zhè me dà。",
+        "pinyin": "Shànghǎi de gōngyuán méiyǒu Běijīng de duō, yě méiyǒu Běijīng de gōngyuán zhème dà.",
         "en": "",
         "audio_key": "",
         "source_origin": "textbook",
@@ -148,11 +145,9 @@
         ],
         "vocab_refs": [
          "91fa9f81-e5ef-4c4a-b29c-c4b6daa02196",
-         "465b5fe3-3c02-42e1-8a47-1b018820cde1",
-         "188412d4-4c23-4d60-b7b2-21f3490199e7",
          "d45d5488-9293-41ae-9deb-1e5b51cee446"
         ],
-        "pinyin": "Shànghǎi de dōng tiān shì bú shì bǐ Běijīng nuǎn huo yì diǎnr？",
+        "pinyin": "Shànghǎi de dōngtiān shì bú shì bǐ Běijīng nuǎnhuo yìdiǎnr?",
         "en": "",
         "audio_key": "",
         "source_origin": "textbook",
@@ -165,12 +160,8 @@
         "zh": "上海不一定比北京暖和。",
         "vi": "Thượng Hải không nhất định ấm hơn Bắc Kinh.",
         "grammar_refs": ["f8ec59f3-898a-47b2-b536-44dfd8183393"],
-        "vocab_refs": [
-         "465b5fe3-3c02-42e1-8a47-1b018820cde1",
-         "188412d4-4c23-4d60-b7b2-21f3490199e7",
-         "d45d5488-9293-41ae-9deb-1e5b51cee446"
-        ],
-        "pinyin": "Shànghǎi bù yí dìng bǐ Běijīng nuǎn huo。",
+        "vocab_refs": ["d45d5488-9293-41ae-9deb-1e5b51cee446"],
+        "pinyin": "Shànghǎi bù yídìng bǐ Běijīng nuǎnhuo.",
         "en": "",
         "audio_key": "",
         "source_origin": "textbook",
@@ -188,13 +179,11 @@
         ],
         "vocab_refs": [
          "8a5b1d09-23a6-4182-96e6-9bf4d761a1e1",
-         "ff3e1818-66a9-4532-880b-02c9cacb0e5b",
-         "188412d4-4c23-4d60-b7b2-21f3490199e7",
+         "be7a835d-ff8f-4a86-9fd8-27c5f1093f0c",
          "7a89dc80-d79d-4c2f-988c-d0f54e240d19",
-         "3993fa67-0c01-4fda-9f60-2befdc1c71cb",
-         "be7a835d-ff8f-4a86-9fd8-27c5f1093f0c"
+         "ff3e1818-66a9-4532-880b-02c9cacb0e5b"
         ],
-        "pinyin": "Kě shì， wǒ kàn tiānqì yùbào， Shànghǎi de qìwēn bǐ Běijīng gāo de duō。",
+        "pinyin": "Kěshì, wǒ kàn tiānqì yùbào, Shànghǎi de qìwēn bǐ Běijīng gāo de duō.",
         "en": "",
         "audio_key": "",
         "source_origin": "textbook",
@@ -211,18 +200,13 @@
          "c6cd6c38-22fc-4546-a398-39efe02d6c17"
         ],
         "vocab_refs": [
-         "465b5fe3-3c02-42e1-8a47-1b018820cde1",
-         "6b74fed9-efca-4129-b396-588abe46a743",
-         "0125bdae-fe4e-48fb-8264-145e95c75933",
-         "d45d5488-9293-41ae-9deb-1e5b51cee446",
          "ff3e1818-66a9-4532-880b-02c9cacb0e5b",
-         "c99a633b-27a2-429b-a139-44113a84c189",
+         "0125bdae-fe4e-48fb-8264-145e95c75933",
          "689eb64b-5d4f-469f-9afa-74017d399614",
-         "188412d4-4c23-4d60-b7b2-21f3490199e7",
-         "3dc505f1-bc0e-4a96-b448-17fed89fdc60",
-         "3993fa67-0c01-4fda-9f60-2befdc1c71cb"
+         "d45d5488-9293-41ae-9deb-1e5b51cee446",
+         "c99a633b-27a2-429b-a139-44113a84c189"
         ],
-        "pinyin": "Shì， Shànghǎi de qìwēn bǐ Běijīng gāo hǎo jǐ dù， bù guò yīn wèi wū zi lǐ méi yǒu nuǎn qì， suǒ yǐ gǎn jué hái méi yǒu Běijīng nuǎn huo。",
+        "pinyin": "Shì, Shànghǎi de qìwēn bǐ Běijīng gāo hǎo jǐ dù, búguò yīnwèi wūzi lǐ méiyǒu nuǎnqì, suǒyǐ gǎnjué hái méiyǒu Běijīng nuǎnhuo.",
         "en": "",
         "audio_key": "",
         "source_origin": "textbook",
@@ -235,11 +219,8 @@
         "zh": "上海人家里没有暖气？",
         "vi": "Nhà người Thượng Hải không có hệ thống sưởi à?",
         "grammar_refs": [],
-        "vocab_refs": [
-         "689eb64b-5d4f-469f-9afa-74017d399614",
-         "d45d5488-9293-41ae-9deb-1e5b51cee446"
-        ],
-        "pinyin": "Shànghǎi rén jia lǐ méi yǒu nuǎn qì？",
+        "vocab_refs": ["689eb64b-5d4f-469f-9afa-74017d399614"],
+        "pinyin": "Shànghǎi rén jiā lǐ méiyǒu nuǎnqì?",
         "en": "",
         "audio_key": "",
         "source_origin": "textbook",
@@ -250,14 +231,10 @@
         "order": 12,
         "speaker": "田芳",
         "zh": "一般的家庭没有，不过旅馆和饭店里有。",
-        "vi": "Gia đình bình thường thì không có, nhưng trong khách sạn và nhà hàng thì có.",
+        "vi": "Các gia đình bình thường thì không có, nhưng khách sạn và nhà hàng thì có.",
         "grammar_refs": [],
-        "vocab_refs": [
-         "3577444e-0a9f-4c8d-8f57-34d38a262cb2",
-         "c9ead21d-0fa1-4830-ae9d-efdc69c5eb40",
-         "79358c6f-3427-4c28-98f3-7ef98c7033c3"
-        ],
-        "pinyin": "Yì bān de jiā tíng méi yǒu， bù guò lǚ guǎn hé fàn diàn lǐ yǒu。",
+        "vocab_refs": ["79358c6f-3427-4c28-98f3-7ef98c7033c3"],
+        "pinyin": "Yìbān de jiātíng méiyǒu, búguò lǚguǎn hé fàndiàn lǐ yǒu.",
         "en": "",
         "audio_key": "",
         "source_origin": "textbook",
@@ -284,7 +261,7 @@
         "vi": "Thầy Vương, thầy có thích âm nhạc không?",
         "grammar_refs": [],
         "vocab_refs": [],
-        "pinyin": "Wáng lǎo shī， nǐ xǐhuan yīnyuè ma？",
+        "pinyin": "Wáng lǎoshī, nǐ xǐhuan yīnyuè ma?",
         "en": "",
         "audio_key": "",
         "source_origin": "textbook",
@@ -295,16 +272,16 @@
         "order": 2,
         "speaker": "王老师",
         "zh": "喜欢啊！我是个音乐迷，我电脑里，光交响乐就下载了好几百首呢。",
-        "vi": "Thích chứ! Tôi là một người mê âm nhạc, trong máy tính của tôi, chỉ riêng nhạc giao hưởng thôi đã tải mấy trăm bài rồi.",
+        "vi": "Thích chứ! Tôi là một người mê âm nhạc, trong máy tính của tôi, chỉ riêng nhạc giao hưởng thôi đã tải mấy trăm bản rồi.",
         "grammar_refs": [],
         "vocab_refs": [
-         "d9991c79-3454-4247-bf18-f14f43b4a24a",
-         "085e60d5-dd1c-4585-ac6b-0f1db0ded936",
-         "55cd807c-eec7-412d-99db-f4e6508b170f",
          "dc0f8e06-a359-4907-a8d8-fc9b02260590",
-         "c43cedbf-7024-4ec1-922f-e75119114baf"
+         "c43cedbf-7024-4ec1-922f-e75119114baf",
+         "d9991c79-3454-4247-bf18-f14f43b4a24a",
+         "55cd807c-eec7-412d-99db-f4e6508b170f",
+         "085e60d5-dd1c-4585-ac6b-0f1db0ded936"
         ],
-        "pinyin": "Xǐhuan a！ wǒ shì gè yīnyuè mí， wǒ diàn nǎo lǐ， guāng jiāoxiǎngyuè jiù xià zài le hǎo jǐ bǎi shǒu ne。",
+        "pinyin": "Xǐhuan a! Wǒ shì ge yīnyuè mí, wǒ diànnǎo lǐ, guāng jiāoxiǎngyuè jiù xiàzài le hǎo jǐ bǎi shǒu ne.",
         "en": "",
         "audio_key": "",
         "source_origin": "textbook",
@@ -318,15 +295,10 @@
         "vi": "Tôi cũng rất thích âm nhạc, có lẽ còn thích hơn thầy. Thầy thích nhạc cổ điển hay nhạc hiện đại?",
         "grammar_refs": ["57b14753-688a-41b6-9e0d-b61dbbf574d7"],
         "vocab_refs": [
-         "d5bb9383-11d7-42de-bb61-7f7619ee892a",
-         "092a8c16-3739-4685-a4c0-39365071bd48",
-         "d5b362a7-c8f6-4f25-b2b5-0f1749c8afbb",
          "ba7ff0f9-b633-4516-ab3d-22b96046a1cf",
-         "188412d4-4c23-4d60-b7b2-21f3490199e7",
-         "2185ee67-885d-4ffb-83e2-e97be4070796",
-         "3dc505f1-bc0e-4a96-b448-17fed89fdc60"
+         "2185ee67-885d-4ffb-83e2-e97be4070796"
         ],
-        "pinyin": "Wǒ yě hěn xǐhuan yīnyuè， yěxǔ bǐ nǐ gèng xǐhuan。 nǐ xǐhuan gǔdiǎn yīnyuè hái shì xǐhuan xiàndài yīnyuè？",
+        "pinyin": "Wǒ yě hěn xǐhuan yīnyuè, yěxǔ bǐ nǐ gèng xǐhuan. Nǐ xǐhuan gǔdiǎn yīnyuè háishi xǐhuan xiàndài yīnyuè?",
         "en": "",
         "audio_key": "",
         "source_origin": "textbook",
@@ -340,13 +312,11 @@
         "vi": "Tôi thích nhạc cổ điển. Tôi thích nghe các danh khúc thế giới, còn thích nghe dân ca nữa.",
         "grammar_refs": [],
         "vocab_refs": [
-         "d5bb9383-11d7-42de-bb61-7f7619ee892a",
-         "275b46f4-3166-48b7-9766-58384178d1be",
          "22e66ee9-565e-4670-b2ac-4d5a9b500b38",
-         "3dc505f1-bc0e-4a96-b448-17fed89fdc60",
+         "275b46f4-3166-48b7-9766-58384178d1be",
          "1190511f-5970-4304-8f84-d7201b287aeb"
         ],
-        "pinyin": "Wǒ xǐhuan gǔdiǎn yīnyuè。 xǐhuan tīng shìjiè míngqǔ， hái xǐhuan tīng míngē。",
+        "pinyin": "Wǒ xǐhuan gǔdiǎn yīnyuè. Xǐhuan tīng shìjiè míngqǔ, hái xǐhuan tīng míngē.",
         "en": "",
         "audio_key": "",
         "source_origin": "textbook",
@@ -360,11 +330,10 @@
         "vi": "Tôi cũng thích nhạc cổ điển. Thầy có thích ca khúc thịnh hành không?",
         "grammar_refs": [],
         "vocab_refs": [
-         "cfb712c9-c4ca-4314-b6b2-696b40ace25e",
          "d42d3d90-443d-45da-bed7-987b50034e92",
-         "d5bb9383-11d7-42de-bb61-7f7619ee892a"
+         "cfb712c9-c4ca-4314-b6b2-696b40ace25e"
         ],
-        "pinyin": "Wǒ yě xǐhuan gǔdiǎn yīnyuè。 nǐ xǐhuan liúxíng gēqǔ ma？",
+        "pinyin": "Wǒ yě xǐhuan gǔdiǎn yīnyuè. Nǐ xǐhuan liúxíng gēqǔ ma?",
         "en": "",
         "audio_key": "",
         "source_origin": "textbook",
@@ -375,20 +344,17 @@
         "order": 6,
         "speaker": "王老师",
         "zh": "怎么说呢？可能没有你们年轻人那么喜欢。我觉得流行歌曲的歌词没有民歌写得好。",
-        "vi": "Nói thế nào nhỉ? Có lẽ không thích như người trẻ các bạn. Tôi thấy lời ca của nhạc thịnh hành không được viết hay bằng dân ca.",
+        "vi": "Nói thế nào nhỉ? Có lẽ tôi không thích nhiều như các bạn trẻ. Tôi thấy lời ca của các bài hát thịnh hành không được viết hay bằng dân ca.",
         "grammar_refs": [
          "c3d31639-0f40-4b2f-aa50-5dda9d443b78",
          "b7073860-473c-4cb7-82ba-943917998455",
          "f3302370-f1c2-4d08-99ba-fda75cc4a335"
         ],
         "vocab_refs": [
-         "cfb712c9-c4ca-4314-b6b2-696b40ace25e",
          "6059829f-ae21-43cf-ac0c-05e19639ec43",
-         "fefd5441-7b6c-47e3-b823-9e149b947bf7",
-         "d42d3d90-443d-45da-bed7-987b50034e92",
-         "1190511f-5970-4304-8f84-d7201b287aeb"
+         "fefd5441-7b6c-47e3-b823-9e149b947bf7"
         ],
-        "pinyin": "Zěn me shuō ne？ kě néng méi yǒu nǐ men niánqīng rén nà me xǐhuan。 wǒ jué de liúxíng gēqǔ de gēcí méi yǒu míngē xiě de hǎo。",
+        "pinyin": "Zěnme shuō ne? Kěnéng méiyǒu nǐmen niánqīng rén nàme xǐhuan. Wǒ juéde liúxíng gēqǔ de gēcí méiyǒu míngē xiě de hǎo.",
         "en": "",
         "audio_key": "",
         "source_origin": "textbook",
@@ -399,16 +365,10 @@
         "order": 7,
         "speaker": "林老师",
         "zh": "有些流行歌曲的歌词写得还是不错的。",
-        "vi": "Lời của một số ca khúc thịnh hành viết vẫn khá hay đấy.",
+        "vi": "Lời của một số ca khúc thịnh hành vẫn viết khá hay đấy.",
         "grammar_refs": ["b7073860-473c-4cb7-82ba-943917998455"],
-        "vocab_refs": [
-         "cfb712c9-c4ca-4314-b6b2-696b40ace25e",
-         "fefd5441-7b6c-47e3-b823-9e149b947bf7",
-         "d42d3d90-443d-45da-bed7-987b50034e92",
-         "3dc505f1-bc0e-4a96-b448-17fed89fdc60",
-         "27761bd2-433a-44ef-b79a-9e6f0a34b9c9"
-        ],
-        "pinyin": "Yǒuxiē liúxíng gēqǔ de gēcí xiě de hái shì bù cuò de。",
+        "vocab_refs": ["27761bd2-433a-44ef-b79a-9e6f0a34b9c9"],
+        "pinyin": "Yǒuxiē liúxíng gēqǔ de gēcí xiě de háishi búcuò de.",
         "en": "",
         "audio_key": "",
         "source_origin": "textbook",
@@ -419,16 +379,10 @@
         "order": 8,
         "speaker": "王老师",
         "zh": "可是，我还是觉得民歌的歌词好。你听咱们的民歌，“在那遥远的地方……”，写得多好！",
-        "vi": "Nhưng tôi vẫn thấy lời dân ca hay hơn. Cô nghe bài dân ca của chúng ta đi, “Ở nơi xa xôi ấy…”, viết hay biết bao!",
+        "vi": "Nhưng tôi vẫn thấy lời dân ca hay. Cô nghe bài dân ca của chúng ta “Ở nơi xa xôi ấy…” đi, viết hay biết bao!",
         "grammar_refs": ["3253aaee-3b06-4864-9b11-98c656764ed4"],
-        "vocab_refs": [
-         "861ed325-b320-4ae0-8eac-bb6bb8ebc215",
-         "fefd5441-7b6c-47e3-b823-9e149b947bf7",
-         "8a5b1d09-23a6-4182-96e6-9bf4d761a1e1",
-         "3dc505f1-bc0e-4a96-b448-17fed89fdc60",
-         "1190511f-5970-4304-8f84-d7201b287aeb"
-        ],
-        "pinyin": "Kě shì， wǒ hái shì jué de míngē de gēcí hǎo。 nǐ tīng zán men de míngē， “ zài nà yáoyuǎn de dì fāng ……”， xiě de duō hǎo！",
+        "vocab_refs": ["861ed325-b320-4ae0-8eac-bb6bb8ebc215"],
+        "pinyin": "Kěshì, wǒ háishi juéde míngē de gēcí hǎo. Nǐ tīng zánmen de míngē, “zài nà yáoyuǎn de dìfang…”, xiě de duō hǎo!",
         "en": "",
         "audio_key": "",
         "source_origin": "textbook",
@@ -474,8 +428,8 @@
       "pos_detail": {
        "vi": "Động từ / Danh từ",
        "cn": "动词 / 名词",
-       "normalized": "verb",
-       "schema_compatible_pos": "verb",
+       "normalized": "verb_noun",
+       "schema_compatible_pos": "verb_noun",
        "is_separable_verb": false,
        "separable_type": "",
        "structure_vi": "",
@@ -561,14 +515,14 @@
       "order": 4,
       "hanzi": "还",
       "pinyin": "hái",
-      "meaning_vi": "còn; vẫn; dùng để nhấn mạnh",
+      "meaning_vi": "còn; vẫn; lại còn; dùng để nhấn mạnh",
       "meaning_en": "used for emphasis; still; also",
       "pos": "Phó từ",
       "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
        "front": "还",
-       "back": "hái — còn; vẫn; dùng để nhấn mạnh",
+       "back": "hái — còn; vẫn; lại còn; dùng để nhấn mạnh",
        "modes": [
         "hanzi_to_meaning",
         "meaning_to_hanzi",
@@ -587,7 +541,7 @@
        "is_separable_verb": false,
        "separable_type": "",
        "structure_vi": "",
-       "usage_note_vi": "Bài này đọc hái, nghĩa nhấn mạnh/còn/vẫn.",
+       "usage_note_vi": "Bài này đọc hái, không đọc huán.",
        "notes": []
       }
      },
@@ -633,14 +587,14 @@
       "order": 6,
       "hanzi": "人口",
       "pinyin": "rénkǒu",
-      "meaning_vi": "dân số",
+      "meaning_vi": "dân số; nhân khẩu",
       "meaning_en": "population",
       "pos": "Danh từ",
       "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
        "front": "人口",
-       "back": "rénkǒu — dân số",
+       "back": "rénkǒu — dân số; nhân khẩu",
        "modes": [
         "hanzi_to_meaning",
         "meaning_to_hanzi",
@@ -669,14 +623,14 @@
       "order": 7,
       "hanzi": "最",
       "pinyin": "zuì",
-      "meaning_vi": "nhất",
-      "meaning_en": "most",
+      "meaning_vi": "nhất; mức cao nhất",
+      "meaning_en": "most; to the highest degree",
       "pos": "Phó từ",
       "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
        "front": "最",
-       "back": "zuì — nhất",
+       "back": "zuì — nhất; mức cao nhất",
        "modes": [
         "hanzi_to_meaning",
         "meaning_to_hanzi",
@@ -798,8 +752,8 @@
       "pos_detail": {
        "vi": "Động từ / Danh từ",
        "cn": "动词 / 名词",
-       "normalized": "verb",
-       "schema_compatible_pos": "verb",
+       "normalized": "verb_noun",
+       "schema_compatible_pos": "verb_noun",
        "is_separable_verb": false,
        "separable_type": "",
        "structure_vi": "",
@@ -839,7 +793,7 @@
        "is_separable_verb": false,
        "separable_type": "",
        "structure_vi": "",
-       "usage_note_vi": "Bài này dùng nghĩa 'quá khứ/trước đây'.",
+       "usage_note_vi": "",
        "notes": []
       }
      },
@@ -849,14 +803,14 @@
       "order": 12,
       "hanzi": "更",
       "pinyin": "gèng",
-      "meaning_vi": "càng; hơn nữa",
-      "meaning_en": "even more",
+      "meaning_vi": "càng; hơn nữa; càng hơn",
+      "meaning_en": "more; even more",
       "pos": "Phó từ",
       "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
        "front": "更",
-       "back": "gèng — càng; hơn nữa",
+       "back": "gèng — càng; hơn nữa; càng hơn",
        "modes": [
         "hanzi_to_meaning",
         "meaning_to_hanzi",
@@ -875,7 +829,7 @@
        "is_separable_verb": false,
        "separable_type": "",
        "structure_vi": "",
-       "usage_note_vi": "Bài này đọc gèng, nghĩa 'hơn/càng hơn'.",
+       "usage_note_vi": "",
        "notes": []
       }
      },
@@ -919,16 +873,16 @@
       "id": "91fa9f81-e5ef-4c4a-b29c-c4b6daa02196",
       "type": "vocabulary_item",
       "order": 14,
-      "hanzi": "冬",
-      "pinyin": "dōng",
+      "hanzi": "冬（天）",
+      "pinyin": "dōng(tiān)",
       "meaning_vi": "mùa đông",
       "meaning_en": "winter",
       "pos": "Danh từ",
       "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
-       "front": "冬",
-       "back": "dōng — mùa đông",
+       "front": "冬（天）",
+       "back": "dōng(tiān) — mùa đông",
        "modes": [
         "hanzi_to_meaning",
         "meaning_to_hanzi",
@@ -947,24 +901,24 @@
        "is_separable_verb": false,
        "separable_type": "",
        "structure_vi": "",
-       "usage_note_vi": "PDF ghi 冬（天） dōng(tiān), nghĩa mùa đông.",
+       "usage_note_vi": "Trong bảng từ vựng PDF ghi 冬（天）.",
        "notes": []
       }
      },
      {
-      "id": "465b5fe3-3c02-42e1-8a47-1b018820cde1",
+      "id": "05583584-09fd-42ad-b610-6e7dd793747c",
       "type": "vocabulary_item",
       "order": 15,
       "hanzi": "暖和",
       "pinyin": "nuǎnhuo",
-      "meaning_vi": "ấm áp; ấm",
+      "meaning_vi": "ấm; ấm áp",
       "meaning_en": "warm",
       "pos": "Tính từ",
-      "tags": ["main_vocab", "pdf_added"],
+      "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
        "front": "暖和",
-       "back": "nuǎnhuo — ấm áp; ấm",
+       "back": "nuǎnhuo — ấm; ấm áp",
        "modes": [
         "hanzi_to_meaning",
         "meaning_to_hanzi",
@@ -973,7 +927,7 @@
        ]
       },
       "audio_key": "",
-      "source_origin": "textbook_pdf_verified",
+      "source_origin": "textbook",
       "check_needed": false,
       "pos_detail": {
        "vi": "Tính từ",
@@ -983,7 +937,7 @@
        "is_separable_verb": false,
        "separable_type": "",
        "structure_vi": "",
-       "usage_note_vi": "Từ chính trong PDF, bổ sung vào file.",
+       "usage_note_vi": "",
        "notes": []
       }
      },
@@ -1065,14 +1019,14 @@
       "order": 18,
       "hanzi": "预报",
       "pinyin": "yùbào",
-      "meaning_vi": "dự báo",
-      "meaning_en": "forecast",
+      "meaning_vi": "dự báo; bản dự báo",
+      "meaning_en": "to forecast; forecast",
       "pos": "Động từ / Danh từ",
       "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
        "front": "预报",
-       "back": "yùbào — dự báo",
+       "back": "yùbào — dự báo; bản dự báo",
        "modes": [
         "hanzi_to_meaning",
         "meaning_to_hanzi",
@@ -1086,8 +1040,8 @@
       "pos_detail": {
        "vi": "Động từ / Danh từ",
        "cn": "动词 / 名词",
-       "normalized": "verb",
-       "schema_compatible_pos": "verb",
+       "normalized": "verb_noun",
+       "schema_compatible_pos": "verb_noun",
        "is_separable_verb": false,
        "separable_type": "",
        "structure_vi": "",
@@ -1096,19 +1050,19 @@
       }
      },
      {
-      "id": "3993fa67-0c01-4fda-9f60-2befdc1c71cb",
+      "id": "3c760b02-8d64-423f-83ed-765c9da2fd9c",
       "type": "vocabulary_item",
       "order": 19,
       "hanzi": "气温",
       "pinyin": "qìwēn",
-      "meaning_vi": "nhiệt độ không khí",
+      "meaning_vi": "nhiệt độ không khí; nhiệt độ",
       "meaning_en": "temperature",
       "pos": "Danh từ",
-      "tags": ["main_vocab", "pdf_added"],
+      "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
        "front": "气温",
-       "back": "qìwēn — nhiệt độ không khí",
+       "back": "qìwēn — nhiệt độ không khí; nhiệt độ",
        "modes": [
         "hanzi_to_meaning",
         "meaning_to_hanzi",
@@ -1117,7 +1071,7 @@
        ]
       },
       "audio_key": "",
-      "source_origin": "textbook_pdf_verified",
+      "source_origin": "textbook",
       "check_needed": false,
       "pos_detail": {
        "vi": "Danh từ",
@@ -1127,7 +1081,7 @@
        "is_separable_verb": false,
        "separable_type": "",
        "structure_vi": "",
-       "usage_note_vi": "Từ chính trong PDF, bổ sung vào file.",
+       "usage_note_vi": "",
        "notes": []
       }
      },
@@ -1173,14 +1127,14 @@
       "order": 21,
       "hanzi": "度",
       "pinyin": "dù",
-      "meaning_vi": "độ; mức độ",
+      "meaning_vi": "độ; đơn vị độ; mức độ",
       "meaning_en": "degree",
       "pos": "Danh từ / Lượng từ",
       "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
        "front": "度",
-       "back": "dù — độ; mức độ",
+       "back": "dù — độ; đơn vị độ; mức độ",
        "modes": [
         "hanzi_to_meaning",
         "meaning_to_hanzi",
@@ -1199,7 +1153,7 @@
        "is_separable_verb": false,
        "separable_type": "",
        "structure_vi": "",
-       "usage_note_vi": "Dùng làm đơn vị đo nhiệt độ: 十度、零下一度.",
+       "usage_note_vi": "Trong bài này dùng làm đơn vị đo nhiệt độ.",
        "notes": []
       }
      },
@@ -1209,14 +1163,14 @@
       "order": 22,
       "hanzi": "低",
       "pinyin": "dī",
-      "meaning_vi": "thấp",
+      "meaning_vi": "thấp; thấp hơn",
       "meaning_en": "low",
       "pos": "Tính từ",
       "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
        "front": "低",
-       "back": "dī — thấp",
+       "back": "dī — thấp; thấp hơn",
        "modes": [
         "hanzi_to_meaning",
         "meaning_to_hanzi",
@@ -1235,24 +1189,24 @@
        "is_separable_verb": false,
        "separable_type": "",
        "structure_vi": "",
-       "usage_note_vi": "Không nằm trong bảng sinh từ chính của PDF Bài 6; giữ lại vì file hiện có và xuất hiện trong luyện tập/đối lập 高-低.",
+       "usage_note_vi": "Không nằm riêng trong bảng sinh từ chính của PDF Bài 6; giữ vì xuất hiện trong nhóm thời tiết/so sánh và đối lập với 高.",
        "notes": []
       }
      },
      {
-      "id": "6b74fed9-efca-4129-b396-588abe46a743",
+      "id": "3a306d78-8cdb-435f-bd89-bfa865f369ef",
       "type": "vocabulary_item",
       "order": 23,
       "hanzi": "屋子",
       "pinyin": "wūzi",
-      "meaning_vi": "phòng; căn phòng",
+      "meaning_vi": "phòng; căn phòng; nhà ở trong ngữ cảnh nói chung",
       "meaning_en": "room",
       "pos": "Danh từ",
-      "tags": ["main_vocab", "pdf_added"],
+      "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
        "front": "屋子",
-       "back": "wūzi — phòng; căn phòng",
+       "back": "wūzi — phòng; căn phòng; nhà ở trong ngữ cảnh nói chung",
        "modes": [
         "hanzi_to_meaning",
         "meaning_to_hanzi",
@@ -1261,7 +1215,7 @@
        ]
       },
       "audio_key": "",
-      "source_origin": "textbook_pdf_verified",
+      "source_origin": "textbook",
       "check_needed": false,
       "pos_detail": {
        "vi": "Danh từ",
@@ -1271,7 +1225,7 @@
        "is_separable_verb": false,
        "separable_type": "",
        "structure_vi": "",
-       "usage_note_vi": "Từ chính trong PDF, bổ sung vào file.",
+       "usage_note_vi": "",
        "notes": []
       }
      },
@@ -1281,14 +1235,14 @@
       "order": 24,
       "hanzi": "暖气",
       "pinyin": "nuǎnqì",
-      "meaning_vi": "hệ thống sưởi; hơi ấm sưởi",
-      "meaning_en": "heating",
+      "meaning_vi": "hệ thống sưởi; hơi ấm từ hệ thống sưởi",
+      "meaning_en": "heating system",
       "pos": "Danh từ",
       "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
        "front": "暖气",
-       "back": "nuǎnqì — hệ thống sưởi; hơi ấm sưởi",
+       "back": "nuǎnqì — hệ thống sưởi; hơi ấm từ hệ thống sưởi",
        "modes": [
         "hanzi_to_meaning",
         "meaning_to_hanzi",
@@ -1318,7 +1272,7 @@
       "hanzi": "感觉",
       "pinyin": "gǎnjué",
       "meaning_vi": "cảm giác; cảm thấy",
-      "meaning_en": "to feel; feeling",
+      "meaning_en": "to feel; feeling; sense",
       "pos": "Động từ / Danh từ",
       "tags": ["main_vocab"],
       "examples": [],
@@ -1338,8 +1292,8 @@
       "pos_detail": {
        "vi": "Động từ / Danh từ",
        "cn": "动词 / 名词",
-       "normalized": "verb",
-       "schema_compatible_pos": "verb",
+       "normalized": "verb_noun",
+       "schema_compatible_pos": "verb_noun",
        "is_separable_verb": false,
        "separable_type": "",
        "structure_vi": "",
@@ -1348,55 +1302,19 @@
       }
      },
      {
-      "id": "c9ead21d-0fa1-4830-ae9d-efdc69c5eb40",
+      "id": "945f8c0c-ae6b-4f11-9a54-45e0f3fe9348",
       "type": "vocabulary_item",
       "order": 26,
       "hanzi": "家庭",
       "pinyin": "jiātíng",
-      "meaning_vi": "gia đình",
+      "meaning_vi": "gia đình; hộ gia đình",
       "meaning_en": "family",
-      "pos": "Danh từ",
-      "tags": ["main_vocab", "pdf_added"],
-      "examples": [],
-      "flashcard": {
-       "front": "家庭",
-       "back": "jiātíng — gia đình",
-       "modes": [
-        "hanzi_to_meaning",
-        "meaning_to_hanzi",
-        "pinyin_to_hanzi",
-        "audio_to_hanzi"
-       ]
-      },
-      "audio_key": "",
-      "source_origin": "textbook_pdf_verified",
-      "check_needed": false,
-      "pos_detail": {
-       "vi": "Danh từ",
-       "cn": "名词",
-       "normalized": "noun",
-       "schema_compatible_pos": "noun",
-       "is_separable_verb": false,
-       "separable_type": "",
-       "structure_vi": "",
-       "usage_note_vi": "Từ chính trong PDF, bổ sung vào file.",
-       "notes": []
-      }
-     },
-     {
-      "id": "79358c6f-3427-4c28-98f3-7ef98c7033c3",
-      "type": "vocabulary_item",
-      "order": 27,
-      "hanzi": "旅馆",
-      "pinyin": "lǚguǎn",
-      "meaning_vi": "khách sạn; nhà trọ",
-      "meaning_en": "hotel",
       "pos": "Danh từ",
       "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
-       "front": "旅馆",
-       "back": "lǚguǎn — khách sạn; nhà trọ",
+       "front": "家庭",
+       "back": "jiātíng — gia đình; hộ gia đình",
        "modes": [
         "hanzi_to_meaning",
         "meaning_to_hanzi",
@@ -1420,19 +1338,19 @@
       }
      },
      {
-      "id": "3577444e-0a9f-4c8d-8f57-34d38a262cb2",
+      "id": "79358c6f-3427-4c28-98f3-7ef98c7033c3",
       "type": "vocabulary_item",
-      "order": 28,
-      "hanzi": "饭店",
-      "pinyin": "fàndiàn",
-      "meaning_vi": "khách sạn; nhà hàng",
-      "meaning_en": "hotel; restaurant",
+      "order": 27,
+      "hanzi": "旅馆",
+      "pinyin": "lǚguǎn",
+      "meaning_vi": "khách sạn nhỏ; nhà trọ",
+      "meaning_en": "hotel",
       "pos": "Danh từ",
-      "tags": ["main_vocab", "pdf_added"],
+      "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
-       "front": "饭店",
-       "back": "fàndiàn — khách sạn; nhà hàng",
+       "front": "旅馆",
+       "back": "lǚguǎn — khách sạn nhỏ; nhà trọ",
        "modes": [
         "hanzi_to_meaning",
         "meaning_to_hanzi",
@@ -1441,7 +1359,7 @@
        ]
       },
       "audio_key": "",
-      "source_origin": "textbook_pdf_verified",
+      "source_origin": "textbook",
       "check_needed": false,
       "pos_detail": {
        "vi": "Danh từ",
@@ -1451,7 +1369,43 @@
        "is_separable_verb": false,
        "separable_type": "",
        "structure_vi": "",
-       "usage_note_vi": "Từ chính trong PDF, bổ sung vào file; trong tiếng Trung có thể là khách sạn hoặc nhà hàng tùy ngữ cảnh.",
+       "usage_note_vi": "",
+       "notes": []
+      }
+     },
+     {
+      "id": "b11c7b02-d08e-4ed2-8be6-3094858255ff",
+      "type": "vocabulary_item",
+      "order": 28,
+      "hanzi": "饭店",
+      "pinyin": "fàndiàn",
+      "meaning_vi": "nhà hàng; khách sạn",
+      "meaning_en": "restaurant; hotel",
+      "pos": "Danh từ",
+      "tags": ["main_vocab"],
+      "examples": [],
+      "flashcard": {
+       "front": "饭店",
+       "back": "fàndiàn — nhà hàng; khách sạn",
+       "modes": [
+        "hanzi_to_meaning",
+        "meaning_to_hanzi",
+        "pinyin_to_hanzi",
+        "audio_to_hanzi"
+       ]
+      },
+      "audio_key": "",
+      "source_origin": "textbook",
+      "check_needed": false,
+      "pos_detail": {
+       "vi": "Danh từ",
+       "cn": "名词",
+       "normalized": "noun",
+       "schema_compatible_pos": "noun",
+       "is_separable_verb": false,
+       "separable_type": "",
+       "structure_vi": "",
+       "usage_note_vi": "",
        "notes": []
       }
      },
@@ -1462,7 +1416,7 @@
       "hanzi": "迷",
       "pinyin": "mí",
       "meaning_vi": "người mê; fan; mê",
-      "meaning_en": "fan; enthusiast",
+      "meaning_en": "fan; enthusiast; to be crazy about",
       "pos": "Danh từ / Động từ",
       "tags": ["main_vocab"],
       "examples": [],
@@ -1482,8 +1436,8 @@
       "pos_detail": {
        "vi": "Danh từ / Động từ",
        "cn": "名词 / 动词",
-       "normalized": "noun",
-       "schema_compatible_pos": "noun",
+       "normalized": "verb_noun",
+       "schema_compatible_pos": "verb_noun",
        "is_separable_verb": false,
        "separable_type": "",
        "structure_vi": "",
@@ -1497,14 +1451,14 @@
       "order": 30,
       "hanzi": "光",
       "pinyin": "guāng",
-      "meaning_vi": "chỉ; chỉ có; riêng",
+      "meaning_vi": "chỉ; chỉ riêng; chỉ có",
       "meaning_en": "only; alone",
       "pos": "Phó từ",
       "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
        "front": "光",
-       "back": "guāng — chỉ; chỉ có; riêng",
+       "back": "guāng — chỉ; chỉ riêng; chỉ có",
        "modes": [
         "hanzi_to_meaning",
         "meaning_to_hanzi",
@@ -1523,7 +1477,7 @@
        "is_separable_verb": false,
        "separable_type": "",
        "structure_vi": "",
-       "usage_note_vi": "Bài này dùng nghĩa 'chỉ/chỉ có'.",
+       "usage_note_vi": "Trong bài này là phó từ, không phải nghĩa 'ánh sáng'.",
        "notes": []
       }
      },
@@ -1605,14 +1559,14 @@
       "order": 33,
       "hanzi": "首",
       "pinyin": "shǒu",
-      "meaning_vi": "lượng từ cho bài hát / bài thơ",
-      "meaning_en": "measure word for songs/poems",
+      "meaning_vi": "lượng từ cho bài hát, bài thơ hoặc bản nhạc",
+      "meaning_en": "measure word for songs/poems/music pieces",
       "pos": "Lượng từ",
       "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
        "front": "首",
-       "back": "shǒu — lượng từ cho bài hát / bài thơ",
+       "back": "shǒu — lượng từ cho bài hát, bài thơ hoặc bản nhạc",
        "modes": [
         "hanzi_to_meaning",
         "meaning_to_hanzi",
@@ -1642,7 +1596,7 @@
       "hanzi": "也许",
       "pinyin": "yěxǔ",
       "meaning_vi": "có lẽ; biết đâu",
-      "meaning_en": "perhaps",
+      "meaning_en": "perhaps; maybe; probably",
       "pos": "Phó từ",
       "tags": ["main_vocab"],
       "examples": [],
@@ -1672,7 +1626,7 @@
       }
      },
      {
-      "id": "d5bb9383-11d7-42de-bb61-7f7619ee892a",
+      "id": "a3118f18-848b-4715-9657-5bec503a41a2",
       "type": "vocabulary_item",
       "order": 35,
       "hanzi": "古典",
@@ -1680,7 +1634,7 @@
       "meaning_vi": "cổ điển",
       "meaning_en": "classical",
       "pos": "Tính từ",
-      "tags": ["main_vocab", "pdf_added"],
+      "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
        "front": "古典",
@@ -1693,7 +1647,7 @@
        ]
       },
       "audio_key": "",
-      "source_origin": "textbook_pdf_verified",
+      "source_origin": "textbook",
       "check_needed": false,
       "pos_detail": {
        "vi": "Tính từ",
@@ -1703,7 +1657,7 @@
        "is_separable_verb": false,
        "separable_type": "",
        "structure_vi": "",
-       "usage_note_vi": "Từ chính trong PDF, bổ sung vào file.",
+       "usage_note_vi": "",
        "notes": []
       }
      },
@@ -1713,14 +1667,14 @@
       "order": 36,
       "hanzi": "现代",
       "pinyin": "xiàndài",
-      "meaning_vi": "hiện đại",
-      "meaning_en": "modern",
+      "meaning_vi": "hiện đại; thời hiện đại",
+      "meaning_en": "modern times; modern",
       "pos": "Danh từ / Tính từ",
       "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
        "front": "现代",
-       "back": "xiàndài — hiện đại",
+       "back": "xiàndài — hiện đại; thời hiện đại",
        "modes": [
         "hanzi_to_meaning",
         "meaning_to_hanzi",
@@ -1739,7 +1693,7 @@
        "is_separable_verb": false,
        "separable_type": "",
        "structure_vi": "",
-       "usage_note_vi": "Trong bảng từ vựng PDF ghi （名、形）.",
+       "usage_note_vi": "Trong bảng PDF ghi （名、形）: vừa là danh từ 'thời hiện đại', vừa là tính từ 'hiện đại'.",
        "notes": []
       }
      },
@@ -1749,14 +1703,14 @@
       "order": 37,
       "hanzi": "代",
       "pinyin": "dài",
-      "meaning_vi": "đời; thế hệ; thời đại",
+      "meaning_vi": "đời; thế hệ; thời đại; hình vị trong 现代",
       "meaning_en": "generation; era",
       "pos": "Danh từ / Hình vị",
       "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
        "front": "代",
-       "back": "dài — đời; thế hệ; thời đại",
+       "back": "dài — đời; thế hệ; thời đại; hình vị trong 现代",
        "modes": [
         "hanzi_to_meaning",
         "meaning_to_hanzi",
@@ -1770,12 +1724,12 @@
       "pos_detail": {
        "vi": "Danh từ / Hình vị",
        "cn": "名词 / 语素",
-       "normalized": "noun",
-       "schema_compatible_pos": "noun",
+       "normalized": "morpheme",
+       "schema_compatible_pos": "morpheme",
        "is_separable_verb": false,
        "separable_type": "",
        "structure_vi": "",
-       "usage_note_vi": "Không nằm riêng trong bảng sinh từ PDF; giữ lại vì file hiện có và liên quan 现代.",
+       "usage_note_vi": "Không nằm riêng trong bảng sinh từ chính của PDF Bài 6; giữ vì từng được tách từ 现代 để học cấu tạo từ.",
        "notes": []
       }
      },
@@ -1821,14 +1775,14 @@
       "order": 39,
       "hanzi": "名曲",
       "pinyin": "míngqǔ",
-      "meaning_vi": "danh khúc; bản nhạc nổi tiếng",
+      "meaning_vi": "danh khúc; bản nhạc/bài hát nổi tiếng",
       "meaning_en": "famous music piece",
       "pos": "Danh từ",
       "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
        "front": "名曲",
-       "back": "míngqǔ — danh khúc; bản nhạc nổi tiếng",
+       "back": "míngqǔ — danh khúc; bản nhạc/bài hát nổi tiếng",
        "modes": [
         "hanzi_to_meaning",
         "meaning_to_hanzi",
@@ -1893,14 +1847,14 @@
       "order": 41,
       "hanzi": "流行",
       "pinyin": "liúxíng",
-      "meaning_vi": "thịnh hành; phổ biến",
+      "meaning_vi": "thịnh hành; phổ biến; đang lưu hành",
       "meaning_en": "popular; fashionable",
       "pos": "Tính từ",
       "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
        "front": "流行",
-       "back": "liúxíng — thịnh hành; phổ biến",
+       "back": "liúxíng — thịnh hành; phổ biến; đang lưu hành",
        "modes": [
         "hanzi_to_meaning",
         "meaning_to_hanzi",
@@ -1929,14 +1883,14 @@
       "order": 42,
       "hanzi": "歌曲",
       "pinyin": "gēqǔ",
-      "meaning_vi": "ca khúc; bài hát",
+      "meaning_vi": "bài hát; ca khúc",
       "meaning_en": "song",
       "pos": "Danh từ",
       "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
        "front": "歌曲",
-       "back": "gēqǔ — ca khúc; bài hát",
+       "back": "gēqǔ — bài hát; ca khúc",
        "modes": [
         "hanzi_to_meaning",
         "meaning_to_hanzi",
@@ -1991,7 +1945,7 @@
        "is_separable_verb": false,
        "separable_type": "",
        "structure_vi": "",
-       "usage_note_vi": "Khẳng định chữ đúng theo PDF là 年轻.",
+       "usage_note_vi": "",
        "notes": []
       }
      },
@@ -2037,14 +1991,14 @@
       "order": 45,
       "hanzi": "有些",
       "pinyin": "yǒuxiē",
-      "meaning_vi": "có một số; hơi; phần nào",
+      "meaning_vi": "một số; có vài; hơi, phần nào",
       "meaning_en": "some; somewhat",
-      "pos": "Đại từ / Phó từ",
+      "pos": "Đại từ",
       "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
        "front": "有些",
-       "back": "yǒuxiē — có một số; hơi; phần nào",
+       "back": "yǒuxiē — một số; có vài; hơi, phần nào",
        "modes": [
         "hanzi_to_meaning",
         "meaning_to_hanzi",
@@ -2056,14 +2010,14 @@
       "source_origin": "textbook",
       "check_needed": false,
       "pos_detail": {
-       "vi": "Đại từ / Phó từ",
-       "cn": "代词 / 副词",
+       "vi": "Đại từ",
+       "cn": "代词",
        "normalized": "pronoun",
        "schema_compatible_pos": "pronoun",
        "is_separable_verb": false,
        "separable_type": "",
        "structure_vi": "",
-       "usage_note_vi": "PDF ghi （代）; trong cách dùng hiện đại còn có thể làm phó từ mức độ: 有些远.",
+       "usage_note_vi": "Trong bảng PDF ghi （代）; trong dùng thực tế cũng có thể đứng trước tính từ với nghĩa 'hơi'.",
        "notes": []
       }
      },
@@ -2073,14 +2027,14 @@
       "order": 46,
       "hanzi": "遥远",
       "pinyin": "yáoyuǎn",
-      "meaning_vi": "xa xôi",
+      "meaning_vi": "xa xôi; xa vời",
       "meaning_en": "distant",
       "pos": "Tính từ",
       "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
        "front": "遥远",
-       "back": "yáoyuǎn — xa xôi",
+       "back": "yáoyuǎn — xa xôi; xa vời",
        "modes": [
         "hanzi_to_meaning",
         "meaning_to_hanzi",
@@ -2142,12 +2096,12 @@
       "order": 1,
       "title": "这几年变化很大",
       "structure": "这几年 + 变化/发展/提高 + 很大/很快",
-      "meaning_vi": "“这几年” nghĩa là mấy năm gần đây; “几” ở đây chỉ số ước lượng nhỏ, không phải câu hỏi.",
+      "meaning_vi": "“这几年” nghĩa là mấy năm gần đây; “几” ở đây chỉ số ước lượng nhỏ dưới 10, không phải câu hỏi.",
       "examples": [
        {
         "id": "021014f3-ff12-43b6-9d12-352cb6dc863b",
         "zh": "这几年变化很大。",
-        "pinyin": "Zhè jǐ nián biàn huà hěn dà。",
+        "pinyin": "Zhè jǐ nián biànhuà hěn dà.",
         "vi": "Mấy năm gần đây thay đổi rất lớn.",
         "en": "",
         "highlight": [],
@@ -2175,7 +2129,7 @@
        {
         "id": "29279e2c-cb63-4437-bbc5-7c46c15b6f13",
         "zh": "上海的气温比北京高得多。",
-        "pinyin": "Shànghǎi de qìwēn bǐ Běijīng gāo de duō。",
+        "pinyin": "Shànghǎi de qìwēn bǐ Běijīng gāo de duō.",
         "vi": "Nhiệt độ Thượng Hải cao hơn Bắc Kinh nhiều.",
         "en": "",
         "highlight": [],
@@ -2203,8 +2157,8 @@
        {
         "id": "3bb13249-7132-47f4-b974-8144c96f3e29",
         "zh": "怎么说呢？可能没有你们年轻人那么喜欢。",
-        "pinyin": "Zěn me shuō ne？ kě néng méi yǒu nǐ men niánqīng rén nà me xǐhuan。",
-        "vi": "Nói thế nào nhỉ? Có lẽ tôi không thích như người trẻ các bạn.",
+        "pinyin": "Zěnme shuō ne? Kěnéng méiyǒu nǐmen niánqīng rén nàme xǐhuan.",
+        "vi": "Nói thế nào nhỉ? Có lẽ tôi không thích nhiều như các bạn trẻ.",
         "en": "",
         "highlight": [],
         "grammar_refs": [],
@@ -2252,7 +2206,7 @@
          {
           "id": "c6fbeb40-156e-450c-a390-d58626cae49e",
           "zh": "飞机比汽车快。",
-          "pinyin": "Fēi jī bǐ qì chē kuài。",
+          "pinyin": "Fēijī bǐ qìchē kuài.",
           "vi": "Máy bay nhanh hơn ô tô.",
           "en": "",
           "highlight": [],
@@ -2267,7 +2221,7 @@
          {
           "id": "d5b13929-16ec-4967-ac8a-868d80ec0b1e",
           "zh": "上海的气温比北京高得多。",
-          "pinyin": "Shànghǎi de qìwēn bǐ Běijīng gāo de duō。",
+          "pinyin": "Shànghǎi de qìwēn bǐ Běijīng gāo de duō.",
           "vi": "Nhiệt độ Thượng Hải cao hơn Bắc Kinh nhiều.",
           "en": "",
           "highlight": [],
@@ -2298,7 +2252,7 @@
          {
           "id": "50b5e564-92c8-4900-b66a-00f5bfca9437",
           "zh": "西瓜比苹果大。",
-          "pinyin": "Xī guā bǐ píng guǒ dà。",
+          "pinyin": "Xīguā bǐ píngguǒ dà.",
           "vi": "Dưa hấu to hơn táo.",
           "en": "",
           "highlight": [],
@@ -2335,7 +2289,7 @@
          {
           "id": "771ce2b4-8b49-4b48-be3a-e887eb2024df",
           "zh": "我比你更喜欢音乐。",
-          "pinyin": "Wǒ bǐ nǐ gèng xǐhuan yīnyuè。",
+          "pinyin": "Wǒ bǐ nǐ gèng xǐhuan yīnyuè.",
           "vi": "Tôi thích âm nhạc hơn bạn.",
           "en": "",
           "highlight": [],
@@ -2350,7 +2304,7 @@
          {
           "id": "773f0eeb-9162-44a6-b2c7-d20f86c5bf5f",
           "zh": "现在比过去变得更漂亮了。",
-          "pinyin": "Xiàn zài bǐ guò qù biàn de gèng piàoliang le。",
+          "pinyin": "Xiànzài bǐ guòqù biàn de gèng piàoliang le.",
           "vi": "Bây giờ so với trước đã trở nên đẹp hơn rồi.",
           "en": "",
           "highlight": [],
@@ -2394,7 +2348,7 @@
          {
           "id": "34e0cef7-0e8a-4e66-91ff-c118178ee232",
           "zh": "上海的气温比北京高好几度。",
-          "pinyin": "Shànghǎi de qìwēn bǐ Běijīng gāo hǎo jǐ dù。",
+          "pinyin": "Shànghǎi de qìwēn bǐ Běijīng gāo hǎo jǐ dù.",
           "vi": "Nhiệt độ Thượng Hải cao hơn Bắc Kinh mấy độ.",
           "en": "",
           "highlight": [],
@@ -2409,7 +2363,7 @@
          {
           "id": "7c24a5fc-d281-4017-a211-63bd1c1f89e3",
           "zh": "他比弟弟大两岁。",
-          "pinyin": "Tā bǐ dì di dà liǎng suì。",
+          "pinyin": "Tā bǐ dìdi dà liǎng suì.",
           "vi": "Anh ấy lớn hơn em trai 2 tuổi.",
           "en": "",
           "highlight": [],
@@ -2447,7 +2401,7 @@
          {
           "id": "abb3af48-9bf2-410c-899c-ffd83c7d12ee",
           "zh": "上海没有北京大。",
-          "pinyin": "Shànghǎi méi yǒu Běijīng dà。",
+          "pinyin": "Shànghǎi méiyǒu Běijīng dà.",
           "vi": "Thượng Hải không lớn bằng Bắc Kinh.",
           "en": "",
           "highlight": [],
@@ -2462,7 +2416,7 @@
          {
           "id": "2a29aedf-6b97-40ed-8a7d-a80bc62a8a4a",
           "zh": "火车没有飞机快。",
-          "pinyin": "Huǒ chē méi yǒu fēi jī kuài。",
+          "pinyin": "Huǒchē méiyǒu fēijī kuài.",
           "vi": "Tàu hỏa không nhanh bằng máy bay.",
           "en": "",
           "highlight": [],
@@ -2488,7 +2442,7 @@
          {
           "id": "8288a918-6f9b-494b-a233-412682661258",
           "zh": "我不比他高。我们俩差不多高。",
-          "pinyin": "Wǒ bù bǐ tā gāo。 wǒ men liǎ chà bu duō gāo。",
+          "pinyin": "Wǒ bù bǐ tā gāo. Wǒmen liǎ chàbuduō gāo.",
           "vi": "Tôi đâu có cao hơn anh ấy. Hai chúng tôi cao gần như nhau.",
           "en": "",
           "highlight": [],
@@ -2526,7 +2480,7 @@
          {
           "id": "6bf266cb-265d-4e6d-9c03-ff8d7f47ff9a",
           "zh": "她没有我这么高。",
-          "pinyin": "Tā méi yǒu wǒ zhè me gāo。",
+          "pinyin": "Tā méiyǒu wǒ zhème gāo.",
           "vi": "Cô ấy không cao bằng tôi.",
           "en": "",
           "highlight": [],
@@ -2541,7 +2495,7 @@
          {
           "id": "8775efc2-08d3-431f-ba3d-04de4aa5337e",
           "zh": "上海的公园也没有北京的公园这么大。",
-          "pinyin": "Shànghǎi de gōng yuán yě méi yǒu Běijīng de gōng yuán zhè me dà。",
+          "pinyin": "Shànghǎi de gōngyuán yě méiyǒu Běijīng de gōngyuán zhème dà.",
           "vi": "Công viên Thượng Hải cũng không lớn như công viên Bắc Kinh.",
           "en": "",
           "highlight": [],
@@ -2578,8 +2532,8 @@
          {
           "id": "41c8d735-a12e-4c22-a8de-add795878b00",
           "zh": "上海是中国人口最多的城市。",
-          "pinyin": "Shànghǎi shì zhōng guó rén kǒu zuì duō de chéng shì。",
-          "vi": "Thượng Hải là thành phố có dân số đông nhất Trung Quốc.",
+          "pinyin": "Shànghǎi shì Zhōngguó rénkǒu zuì duō de chéngshì.",
+          "vi": "Thượng Hải là thành phố đông dân nhất Trung Quốc.",
           "en": "",
           "highlight": [],
           "grammar_refs": ["b0c8e101-1500-4742-9064-1e102a0eb8b9"],
@@ -2618,7 +2572,7 @@
          {
           "id": "2c1d1a39-aff8-418a-9813-624d4b06e892",
           "zh": "上海的冬天是不是比北京暖和一点儿？",
-          "pinyin": "Shànghǎi de dōng tiān shì bú shì bǐ Běijīng nuǎn huo yì diǎnr？",
+          "pinyin": "Shànghǎi de dōngtiān shì bú shì bǐ Běijīng nuǎnhuo yìdiǎnr?",
           "vi": "Mùa đông Thượng Hải có phải ấm hơn Bắc Kinh một chút không?",
           "en": "",
           "highlight": [],
@@ -2633,7 +2587,7 @@
          {
           "id": "7011ba59-80c0-4b7b-a888-fb7674ebb297",
           "zh": "这件比那件贵多了。",
-          "pinyin": "Zhè jiàn bǐ nà jiàn guì duō le。",
+          "pinyin": "Zhè jiàn bǐ nà jiàn guì duō le.",
           "vi": "Cái này đắt hơn cái kia nhiều.",
           "en": "",
           "highlight": [],
@@ -2671,7 +2625,7 @@
          {
           "id": "354b8cbd-123a-425b-9441-db216c23c747",
           "zh": "他比我考得好。",
-          "pinyin": "Tā bǐ wǒ kǎo de hǎo。",
+          "pinyin": "Tā bǐ wǒ kǎo de hǎo.",
           "vi": "Anh ấy thi tốt hơn tôi.",
           "en": "",
           "highlight": [],
@@ -2686,8 +2640,8 @@
          {
           "id": "70f73a3e-6c84-4eeb-be6d-51e382932cb2",
           "zh": "流行歌曲的歌词没有民歌写得好。",
-          "pinyin": "Liúxíng gēqǔ de gēcí méi yǒu míngē xiě de hǎo。",
-          "vi": "Lời ca của nhạc thịnh hành không được viết hay bằng dân ca.",
+          "pinyin": "Liúxíng gēqǔ de gēcí méiyǒu míngē xiě de hǎo.",
+          "vi": "Lời ca của các bài hát thịnh hành không được viết hay bằng dân ca.",
           "en": "",
           "highlight": [],
           "grammar_refs": ["b7073860-473c-4cb7-82ba-943917998455"],
@@ -2724,7 +2678,7 @@
          {
           "id": "ed185aa6-319f-4407-8820-6c0976099966",
           "zh": "写得多好！",
-          "pinyin": "Xiě de duō hǎo！",
+          "pinyin": "Xiě de duō hǎo!",
           "vi": "Viết hay biết bao!",
           "en": "",
           "highlight": [],
@@ -2739,7 +2693,7 @@
          {
           "id": "91191217-6a93-4006-b93a-45f37a4434a4",
           "zh": "这个公园好漂亮啊！",
-          "pinyin": "Zhè ge gōng yuán hǎo piàoliang a！",
+          "pinyin": "Zhè ge gōngyuán hǎo piàoliang a!",
           "vi": "Công viên này đẹp quá!",
           "en": "",
           "highlight": [],
@@ -3400,8 +3354,8 @@
          {
           "id": "ed75b1e8-2d0d-40bb-8fbd-ca0dccaf78b9",
           "prompt": "A：老师，这些练习题我做____了没有？ B：你没都做____，做____了三道题，做错了一道题。",
-          "answer": "对；对；对",
-          "acceptable_answers": ["对；对；对"],
+          "answer": "对；完；对",
+          "acceptable_answers": ["对；完；对"],
           "source_origin": "textbook_answer_verified",
           "answer_verified": true,
           "check_needed": false
@@ -3581,7 +3535,7 @@
          "A：麦克比玛丽晚起____？",
          "B：麦克比玛丽晚起____。"
         ],
-        "answer": "B：没有，麦克没有玛丽起得早。 A：麦克比玛丽晚起多长时间？ B：麦克比玛丽晚起两个小时。",
+        "answer": "B：不，麦克没有玛丽起得早。 A：麦克比玛丽晚起多长时间？ B：麦克比玛丽晚起两个小时。",
         "answer_verified": true,
         "source_origin": "textbook_answer_verified",
         "check_needed": false
@@ -3610,8 +3564,8 @@
        {
         "id": "ced333eb-0c24-46af-8ef0-224088ab34bb",
         "prompt": "他们的生活比以前很好。",
-        "answer": "他们的生活比以前好多了。",
-        "explanation_vi": "比字句后面不能用“很好”作比较结果；应说“好 + 多了/得多”或“更好”。",
+        "answer": "他们的生活比以前好多了。/ 他们的生活比以前更好了。",
+        "explanation_vi": "Trong 比字句 không用 很好 làm kết quả so sánh. Cần dùng 好多了/好得多 hoặc 更好.",
         "answer_verified": true,
         "source_origin": "textbook_answer_verified",
         "check_needed": false
@@ -3620,7 +3574,7 @@
         "id": "3fd2c4b2-0fa5-46d4-a3e3-1172619dcaa4",
         "prompt": "玛丽考了成绩比我考了成绩好。",
         "answer": "玛丽考得比我好。/ 玛丽的成绩比我的好。",
-        "explanation_vi": "比较“考得好”时，用“动词 + 得 + 补语”；也可比较“成绩”。",
+        "explanation_vi": "Nếu so sánh kết quả thi bằng động từ 考, dùng 考得好; nếu so sánh danh từ 成绩, nói 玛丽的成绩比我的好.",
         "answer_verified": true,
         "source_origin": "textbook_answer_verified",
         "check_needed": false
@@ -3629,7 +3583,7 @@
         "id": "485289c3-03dd-4fc1-905d-d410e6e4598a",
         "prompt": "她说比我好得多。",
         "answer": "她说得比我好得多。",
-        "explanation_vi": "“说”后面要用“得”引出程度补语；原句缺少“得”。",
+        "explanation_vi": "Động từ 说 cần 得 để nối bổ ngữ trạng thái: 说得好.",
         "answer_verified": true,
         "source_origin": "textbook_answer_verified",
         "check_needed": false
@@ -3638,7 +3592,7 @@
         "id": "90f24372-1c4b-445f-925b-af742edfddda",
         "prompt": "弟弟比我不高。",
         "answer": "弟弟没有我高。",
-        "explanation_vi": "比较句的普通否定不用“比 + 不”，应使用“没有 + 比较对象 + 形容词”。",
+        "explanation_vi": "Phủ định so sánh thông thường dùng 没有 + đối tượng so sánh + tính từ, không đặt 不 sau 比.",
         "answer_verified": true,
         "source_origin": "textbook_answer_verified",
         "check_needed": false
@@ -3647,7 +3601,7 @@
         "id": "21e3c509-8c7e-41f7-8b82-28338cbab8b7",
         "prompt": "他们比我们不来得早。",
         "answer": "他们没有我们来得早。",
-        "explanation_vi": "动词性比较的否定用“没有 + 比较对象 + V 得 + 补语”。",
+        "explanation_vi": "Với so sánh hành động, dùng 没有 + đối tượng + V 得 + bổ ngữ.",
         "answer_verified": true,
         "source_origin": "textbook_answer_verified",
         "check_needed": false
@@ -3656,7 +3610,7 @@
         "id": "6cd3b845-5ff7-43b6-b5af-2033f6ed3ceb",
         "prompt": "麦克比我一点儿高。",
         "answer": "麦克比我高一点儿。",
-        "explanation_vi": "数量/程度补语“一点儿”要放在形容词后面。",
+        "explanation_vi": "Bổ ngữ mức độ 一点儿 phải đứng sau tính từ 高.",
         "answer_verified": true,
         "source_origin": "textbook_answer_verified",
         "check_needed": false
@@ -3825,7 +3779,7 @@
           "quote": "我们最好骑自行车去"
          }
         ],
-        "source_origin": "reading_answer_verified",
+        "source_origin": "textbook_question_generated_answer",
         "check_needed": false
        },
        {
@@ -3840,7 +3794,7 @@
           "quote": "我们排了五分钟才买到票"
          }
         ],
-        "source_origin": "reading_answer_verified",
+        "source_origin": "textbook_question_generated_answer",
         "check_needed": false
        },
        {
@@ -3859,7 +3813,7 @@
           "quote": "我和罗兰在山上照了很多相"
          }
         ],
-        "source_origin": "reading_answer_verified",
+        "source_origin": "textbook_question_generated_answer",
         "check_needed": false
        },
        {
@@ -3874,7 +3828,7 @@
           "quote": "以后我们可以再来"
          }
         ],
-        "source_origin": "reading_answer_verified",
+        "source_origin": "textbook_question_generated_answer",
         "check_needed": false
        }
       ],
@@ -4050,17 +4004,17 @@
       "order": 1,
       "hanzi": "逛",
       "pinyin": "guàng",
-      "meaning_vi": "đi dạo; đi chơi; đi tham quan",
+      "meaning_vi": "đi dạo; đi chơi; dạo quanh",
       "meaning_en": "",
-      "pos": "Động từ",
+      "pos": "unknown",
       "tags": ["supplementary_vocab", "reading"],
       "source_origin": "textbook",
       "check_needed": false,
       "pos_detail": {
-       "vi": "Động từ",
-       "cn": "动词",
-       "normalized": "verb",
-       "schema_compatible_pos": "verb",
+       "vi": "unknown",
+       "cn": "",
+       "normalized": "unknown",
+       "schema_compatible_pos": "unknown",
        "is_separable_verb": false,
        "separable_type": "",
        "structure_vi": "",
@@ -4076,15 +4030,15 @@
       "pinyin": "piào",
       "meaning_vi": "vé",
       "meaning_en": "",
-      "pos": "Danh từ",
+      "pos": "unknown",
       "tags": ["supplementary_vocab", "reading"],
       "source_origin": "textbook",
       "check_needed": false,
       "pos_detail": {
-       "vi": "Danh từ",
-       "cn": "名词",
-       "normalized": "noun",
-       "schema_compatible_pos": "noun",
+       "vi": "unknown",
+       "cn": "",
+       "normalized": "unknown",
+       "schema_compatible_pos": "unknown",
        "is_separable_verb": false,
        "separable_type": "",
        "structure_vi": "",
@@ -4097,7 +4051,7 @@
       "type": "vocabulary_item",
       "order": 3,
       "hanzi": "排队",
-      "pinyin": "páiduì",
+      "pinyin": "pái duì",
       "meaning_vi": "xếp hàng",
       "meaning_en": "",
       "pos": "Động từ li hợp",
@@ -4112,7 +4066,7 @@
        "is_separable_verb": true,
        "separable_type": "động-tân / 离合词",
        "structure_vi": "động từ 排 + tân ngữ 队",
-       "usage_note_vi": "Có thể nói 排了五分钟队 / 排了很长时间的队; trong khẩu ngữ thường dùng như cụm động từ xếp hàng.",
+       "usage_note_vi": "Có thể nói 排了五分钟队 / 排了很长时间的队; nghĩa là xếp hàng. Đây là động-tân li hợp: 排 + 队.",
        "notes": []
       }
      },
@@ -4124,15 +4078,15 @@
       "pinyin": "hàn",
       "meaning_vi": "mồ hôi",
       "meaning_en": "",
-      "pos": "Danh từ",
+      "pos": "unknown",
       "tags": ["supplementary_vocab", "reading"],
       "source_origin": "textbook",
       "check_needed": false,
       "pos_detail": {
-       "vi": "Danh từ",
-       "cn": "名词",
-       "normalized": "noun",
-       "schema_compatible_pos": "noun",
+       "vi": "unknown",
+       "cn": "",
+       "normalized": "unknown",
+       "schema_compatible_pos": "unknown",
        "is_separable_verb": false,
        "separable_type": "",
        "structure_vi": "",
@@ -4148,15 +4102,15 @@
       "pinyin": "hú",
       "meaning_vi": "hồ",
       "meaning_en": "",
-      "pos": "Danh từ",
+      "pos": "unknown",
       "tags": ["supplementary_vocab", "reading"],
       "source_origin": "textbook",
       "check_needed": false,
       "pos_detail": {
-       "vi": "Danh từ",
-       "cn": "名词",
-       "normalized": "noun",
-       "schema_compatible_pos": "noun",
+       "vi": "unknown",
+       "cn": "",
+       "normalized": "unknown",
+       "schema_compatible_pos": "unknown",
        "is_separable_verb": false,
        "separable_type": "",
        "structure_vi": "",
@@ -4172,15 +4126,15 @@
       "pinyin": "qiáo",
       "meaning_vi": "cầu",
       "meaning_en": "",
-      "pos": "Danh từ",
+      "pos": "unknown",
       "tags": ["supplementary_vocab", "reading"],
       "source_origin": "textbook",
       "check_needed": false,
       "pos_detail": {
-       "vi": "Danh từ",
-       "cn": "名词",
-       "normalized": "noun",
-       "schema_compatible_pos": "noun",
+       "vi": "unknown",
+       "cn": "",
+       "normalized": "unknown",
+       "schema_compatible_pos": "unknown",
        "is_separable_verb": false,
        "separable_type": "",
        "structure_vi": "",
@@ -4193,9 +4147,9 @@
       "type": "vocabulary_item",
       "order": 7,
       "hanzi": "划船",
-      "pinyin": "huáchuán",
-      "meaning_vi": "chèo thuyền",
-      "meaning_en": "to row/paddle a boat",
+      "pinyin": "huá chuán",
+      "meaning_vi": "chèo thuyền; đi thuyền",
+      "meaning_en": "",
       "pos": "Động từ li hợp",
       "tags": ["supplementary_vocab", "reading"],
       "source_origin": "textbook",
@@ -4208,7 +4162,7 @@
        "is_separable_verb": true,
        "separable_type": "động-tân / 离合词",
        "structure_vi": "động từ 划 + tân ngữ 船",
-       "usage_note_vi": "Có thể nói 划了半个小时船 / 划划船; nghĩa là chèo thuyền.",
+       "usage_note_vi": "Có thể nói 划了半个小时船 / 划划船; nghĩa là chèo thuyền. Đây là động-tân li hợp: 划 + 船.",
        "notes": []
       }
      },
@@ -4217,9 +4171,9 @@
       "type": "vocabulary_item",
       "order": 8,
       "hanzi": "照相",
-      "pinyin": "zhàoxiàng",
+      "pinyin": "zhào xiàng",
       "meaning_vi": "chụp ảnh",
-      "meaning_en": "to take a photo",
+      "meaning_en": "",
       "pos": "Động từ li hợp",
       "tags": ["supplementary_vocab", "reading"],
       "source_origin": "textbook",
@@ -4232,7 +4186,7 @@
        "is_separable_verb": true,
        "separable_type": "động-tân / 离合词",
        "structure_vi": "động từ 照 + tân ngữ 相",
-       "usage_note_vi": "Có thể nói 照了很多相 / 照照相; nghĩa là chụp ảnh.",
+       "usage_note_vi": "Có thể nói 照了很多相 / 照照相; nghĩa là chụp ảnh. Đây là động-tân li hợp: 照 + 相.",
        "notes": []
       }
      }
@@ -4249,10 +4203,10 @@
         "id": "d2a4cf8b-55cd-4904-9fed-3141da682b19",
         "order": 1,
         "zh": "昨天晚上我对罗兰说，听说我们学校西边有个公园，那个公园很大。公园里有山有水，很漂亮。明天是星期六，我们去公园玩儿玩儿怎么样？罗兰说，她也正想去公园散散步呢。",
-        "pinyin": "Zuó tiān wǎn shàng wǒ duì Luólán shuō， tīng shuō wǒ men xué xiào xī biān yǒu gè gōng yuán， nà ge gōng yuán hěn dà。 gōng yuán lǐ yǒu shān yǒu shuǐ， hěn piàoliang。 míng tiān shì xīng qī liù， wǒ men qù gōng yuán wán ér wán ér zěn me yàng？ Luólán shuō， tā yě zhèng xiǎng qù gōng yuán sàn sàn bù ne。",
-        "vi": "Tối hôm qua tôi nói với Roland rằng, nghe nói phía tây trường chúng tôi có một công viên, công viên đó rất lớn. Trong công viên có núi có nước, rất đẹp. Ngày mai là thứ Bảy, chúng ta đi công viên chơi một chút nhé? Roland nói, cô ấy cũng đang muốn đi công viên dạo bộ.",
+        "pinyin": "Zuótiān wǎnshang wǒ duì Luólán shuō, tīngshuō wǒmen xuéxiào xībian yǒu ge gōngyuán, nà ge gōngyuán hěn dà. Gōngyuán lǐ yǒu shān yǒu shuǐ, hěn piàoliang. Míngtiān shì Xīngqīliù, wǒmen qù gōngyuán wánr wanr zěnmeyàng? Luólán shuō, tā yě zhèng xiǎng qù gōngyuán sàn san bù ne.",
+        "vi": "Tối hôm qua tôi nói với Roland rằng, nghe nói phía tây trường chúng tôi có một công viên, công viên đó rất lớn. Trong công viên có núi có nước, rất đẹp. Ngày mai là thứ Bảy, chúng ta đi công viên chơi một chút nhé? Roland nói cô ấy cũng đang muốn đi công viên đi dạo một chút.",
         "audio_key": "",
-        "vocab_refs": ["7eccd5e8-dac0-4f36-be2e-abcc0a2bdfcd"],
+        "vocab_refs": [],
         "grammar_refs": [],
         "source_origin": "textbook",
         "check_needed": false
@@ -4261,14 +4215,10 @@
         "id": "a6b1119e-769b-4444-9eee-c4a26d7f6af3",
         "order": 2,
         "zh": "我问罗兰怎么去，罗兰说，星期六坐公共汽车的人比较多，我们最好骑自行车去，还可以锻炼身体。",
-        "pinyin": "Wǒ wèn Luólán zěn me qù， Luólán shuō， xīng qī liù zuò gōng gòng qì chē de rén bǐ jiào duō， wǒ men zuì hǎo qí zì xíng chē qù， hái kě yǐ duàn liàn shēn tǐ。",
+        "pinyin": "Wǒ wèn Luólán zěnme qù, Luólán shuō, Xīngqīliù zuò gōnggòng qìchē de rén bǐjiào duō, wǒmen zuìhǎo qí zìxíngchē qù, hái kěyǐ duànliàn shēntǐ.",
         "vi": "Tôi hỏi Roland đi bằng cách nào, Roland nói thứ Bảy người đi xe buýt khá đông, tốt nhất chúng tôi nên đi xe đạp, còn có thể rèn luyện thân thể.",
         "audio_key": "",
-        "vocab_refs": [
-         "3dc505f1-bc0e-4a96-b448-17fed89fdc60",
-         "54613016-834a-4fc3-9912-2357a6d27058",
-         "188412d4-4c23-4d60-b7b2-21f3490199e7"
-        ],
+        "vocab_refs": [],
         "grammar_refs": [],
         "source_origin": "textbook",
         "check_needed": false
@@ -4277,8 +4227,8 @@
         "id": "ce8bdbc9-b498-418a-ab2c-e16111228a35",
         "order": 3,
         "zh": "今天早上，我们起得很早，吃了早饭就出发了，半个小时就到公园了。",
-        "pinyin": "Jīn tiān zǎo shàng， wǒ men qǐ de hěn zǎo， chī le zǎo fàn jiù chū fā le， bàn gè xiǎo shí jiù dào gōng yuán le。",
-        "vi": "Sáng nay, chúng tôi dậy rất sớm, ăn sáng xong thì xuất phát, nửa tiếng là đến công viên rồi.",
+        "pinyin": "Jīntiān zǎoshang, wǒmen qǐ de hěn zǎo, chī le zǎofàn jiù chūfā le, bàn ge xiǎoshí jiù dào gōngyuán le.",
+        "vi": "Sáng nay, chúng tôi dậy rất sớm, ăn sáng xong thì xuất phát; chỉ nửa tiếng là đến công viên rồi.",
         "audio_key": "",
         "vocab_refs": [],
         "grammar_refs": [],
@@ -4289,20 +4239,10 @@
         "id": "b3e5d57c-8b64-4c60-b5f0-3976cd13fef0",
         "order": 4,
         "zh": "今天逛公园的人真多，买票要排队，我们排了五分钟才买到票。买了票我们就进去了。我和罗兰先爬山，爬了二十多分钟就爬到了山上。因为爬得太快了，我出了一身汗。从山上往下看，非常漂亮。山上有很多树，还有很多花儿。公园里有一个很大的湖，湖上有一座白色的桥。很多人在湖边散步，还有不少人在湖上划船。罗兰说，这个公园真大，真漂亮。",
-        "pinyin": "Jīn tiān guàng gōng yuán de rén zhēn duō， mǎi piào yào páiduì， wǒ men pái le wǔ fēn zhōng cái mǎi dào piào。 mǎi le piào wǒ men jiù jìn qù le。 wǒ hé Luólán xiān pá shān， pá le èr shí duō fēn zhōng jiù pá dào le shān shàng。 yīn wèi pá de tài kuài le， wǒ chū le yī shēn hàn。 cóng shān shàng wǎng xià kàn， fēi cháng piàoliang。 shān shàng yǒu hěn duō shù， hái yǒu hěn duō huā ér。 gōng yuán lǐ yǒu yí ge hěn dà de hú， hú shàng yǒu yí zuò bái sè de qiáo。 hěn duō rén zài hú biān sàn bù， hái yǒu bù shǎo rén zài hú shàng huáchuán。 Luólán shuō， zhè ge gōng yuán zhēn dà， zhēn piàoliang。",
-        "vi": "Hôm nay người đi công viên thật đông, mua vé phải xếp hàng, chúng tôi xếp hàng 5 phút mới mua được vé. Mua vé xong chúng tôi vào trong. Tôi và Roland trước tiên leo núi, leo hơn 20 phút thì lên đến trên núi. Vì leo quá nhanh, tôi ra mồ hôi đầm đìa. Từ trên núi nhìn xuống, rất đẹp. Trên núi có rất nhiều cây, còn có rất nhiều hoa. Trong công viên có một cái hồ rất lớn, trên hồ có một cây cầu màu trắng. Rất nhiều người đi dạo bên hồ, còn có không ít người chèo thuyền trên hồ. Roland nói, công viên này thật lớn, thật đẹp.",
+        "pinyin": "Jīntiān guàng gōngyuán de rén zhēn duō, mǎi piào yào páiduì, wǒmen pái le wǔ fēnzhōng cái mǎidào piào. Mǎi le piào wǒmen jiù jìnqù le. Wǒ hé Luólán xiān páshān, pá le èrshí duō fēnzhōng jiù pá dào le shānshang. Yīnwèi pá de tài kuài le, wǒ chū le yì shēn hàn. Cóng shānshang wǎng xià kàn, fēicháng piàoliang. Shānshang yǒu hěn duō shù, hái yǒu hěn duō huār. Gōngyuán lǐ yǒu yí ge hěn dà de hú, hú shang yǒu yí zuò báisè de qiáo. Hěn duō rén zài húbiān sànbù, hái yǒu bù shǎo rén zài hú shang huáchuán. Luólán shuō, zhè ge gōngyuán zhēn dà, zhēn piàoliang.",
+        "vi": "Hôm nay người đi công viên thật đông, mua vé phải xếp hàng, chúng tôi xếp hàng 5 phút mới mua được vé. Mua vé xong chúng tôi vào trong. Tôi và Roland trước tiên leo núi, leo hơn 20 phút thì lên đến trên núi. Vì leo quá nhanh, tôi ra mồ hôi đầy người. Từ trên núi nhìn xuống, cảnh rất đẹp. Trên núi có rất nhiều cây, còn có rất nhiều hoa. Trong công viên có một cái hồ rất lớn, trên hồ có một cây cầu màu trắng. Rất nhiều người đi dạo bên hồ, còn có không ít người chèo thuyền trên hồ. Roland nói công viên này thật lớn, thật đẹp.",
         "audio_key": "",
-        "vocab_refs": [
-         "bb1aecd4-8b82-45bf-8c9d-b3e9082911a6",
-         "7eccd5e8-dac0-4f36-be2e-abcc0a2bdfcd",
-         "2e47d0d4-9926-4054-a4e1-cfe61d63cfac",
-         "66286879-4464-4667-b96b-edb647e8e7a6",
-         "97948db8-350f-468f-a584-08ac6ee8ea70",
-         "7d280f35-81eb-4265-bc39-135c0a35e019",
-         "1fe04b57-27fb-446a-a96c-ac48b8e36867",
-         "3dc505f1-bc0e-4a96-b448-17fed89fdc60",
-         "e6317463-2f70-47e1-94a3-4f609e48161a"
-        ],
+        "vocab_refs": [],
         "grammar_refs": [],
         "source_origin": "textbook",
         "check_needed": false
@@ -4311,7 +4251,7 @@
         "id": "383c7578-216f-41aa-a8a5-b889b7ef0fec",
         "order": 5,
         "zh": "我和罗兰在山上照了很多相。照完相我们就下山了。",
-        "pinyin": "Wǒ hé Luólán zài shān shàng zhào le hěn duō xiàng。 zhào wán xiāng wǒ men jiù xià shān le。",
+        "pinyin": "Wǒ hé Luólán zài shānshang zhào le hěn duō xiàng. Zhào wán xiàng wǒmen jiù xiàshān le.",
         "vi": "Tôi và Roland chụp rất nhiều ảnh trên núi. Chụp ảnh xong chúng tôi xuống núi.",
         "audio_key": "",
         "vocab_refs": [],
@@ -4323,8 +4263,8 @@
         "id": "bbed4df4-546b-4399-90a0-483fe2b0f43b",
         "order": 6,
         "zh": "我们在公园里玩儿了一个上午，看了很多地方。",
-        "pinyin": "Wǒ men zài gōng yuán lǐ wán ér le yí ge shàng wǔ， kàn le hěn duō dì fāng。",
-        "vi": "Chúng tôi chơi trong công viên cả một buổi sáng, xem rất nhiều nơi.",
+        "pinyin": "Wǒmen zài gōngyuán lǐ wánr le yí ge shàngwǔ, kàn le hěn duō dìfang.",
+        "vi": "Chúng tôi chơi trong công viên cả một buổi sáng, tham quan rất nhiều chỗ.",
         "audio_key": "",
         "vocab_refs": [],
         "grammar_refs": [],
@@ -4335,10 +4275,10 @@
         "id": "65b480dc-c5c7-41fb-a021-f43e4aacf57c",
         "order": 7,
         "zh": "我对罗兰说，学校离这个公园不太远，可以经常骑车到这儿来玩儿。爬爬山，划划船，或者跟朋友一起来散散步，聊聊天儿。罗兰说，以后我们可以再来。",
-        "pinyin": "Wǒ duì Luólán shuō， xué xiào lí zhè ge gōng yuán bú tài yuǎn， kě yǐ jīng cháng qí chē dào zhè ér lái wán ér。 pá pá shān， huá huáchuán， huò zhě gēn péng yǒu yì qǐ lái sàn sàn bù， liáo liáo tiān ér。 Luólán shuō， yǐ hòu wǒ men kě yǐ zài lái。",
-        "vi": "Tôi nói với Roland rằng, trường cách công viên này không xa lắm, có thể thường xuyên đạp xe đến đây chơi. Leo núi một chút, chèo thuyền một chút, hoặc cùng bạn bè đến đây đi dạo, trò chuyện. Roland nói, sau này chúng tôi có thể lại đến.",
+        "pinyin": "Wǒ duì Luólán shuō, xuéxiào lí zhè ge gōngyuán bú tài yuǎn, kěyǐ jīngcháng qí chē dào zhèr lái wánr. Pá pa shān, huá hua chuán, huòzhě gēn péngyou yìqǐ lái sàn san bù, liáo liao tiānr. Luólán shuō, yǐhòu wǒmen kěyǐ zài lái.",
+        "vi": "Tôi nói với Roland rằng trường cách công viên này không xa lắm, có thể thường xuyên đạp xe đến đây chơi: leo núi một chút, chèo thuyền một chút, hoặc cùng bạn bè đến đây đi dạo, trò chuyện. Roland nói sau này chúng tôi có thể lại đến.",
         "audio_key": "",
-        "vocab_refs": ["1fe04b57-27fb-446a-a96c-ac48b8e36867"],
+        "vocab_refs": [],
         "grammar_refs": [],
         "source_origin": "textbook",
         "check_needed": false
@@ -4357,7 +4297,7 @@
           "quote": "我们最好骑自行车去"
          }
         ],
-        "source_origin": "reading_answer_verified",
+        "source_origin": "textbook_question_generated_answer",
         "check_needed": false
        },
        {
@@ -4372,7 +4312,7 @@
           "quote": "我们排了五分钟才买到票"
          }
         ],
-        "source_origin": "reading_answer_verified",
+        "source_origin": "textbook_question_generated_answer",
         "check_needed": false
        },
        {
@@ -4391,7 +4331,7 @@
           "quote": "我和罗兰在山上照了很多相"
          }
         ],
-        "source_origin": "reading_answer_verified",
+        "source_origin": "textbook_question_generated_answer",
         "check_needed": false
        },
        {
@@ -4406,7 +4346,7 @@
           "quote": "以后我们可以再来"
          }
         ],
-        "source_origin": "reading_answer_verified",
+        "source_origin": "textbook_question_generated_answer",
         "check_needed": false
        }
       ],
@@ -4478,7 +4418,7 @@
       "id": "69cee776-d51f-4d4c-8865-44e5c500be8b",
       "hanzi": "曲",
       "pinyin": "qǔ",
-      "meaning_vi": "khúc; bản nhạc",
+      "meaning_vi": "khúc; bản nhạc; trong 名曲 đọc qǔ",
       "source_origin": "textbook",
       "check_needed": false,
       "type": "character_writing_item",
@@ -4498,7 +4438,7 @@
       "id": "9fcc24e3-9e1c-4296-b02c-04422fc58fd1",
       "hanzi": "漂",
       "pinyin": "piào",
-      "meaning_vi": "trôi; trong 漂亮 đọc piào",
+      "meaning_vi": "trong 漂亮 đọc piào; chữ đa âm, không lấy nghĩa “trôi” ở bài này",
       "source_origin": "textbook",
       "check_needed": false,
       "type": "character_writing_item",
@@ -4508,7 +4448,7 @@
       "id": "465657de-9263-4d12-86f0-2441c5765015",
       "hanzi": "亮",
       "pinyin": "liàng",
-      "meaning_vi": "sáng; đẹp",
+      "meaning_vi": "sáng; trong 漂亮 nghĩa là đẹp",
       "source_origin": "textbook",
       "check_needed": false,
       "type": "character_writing_item",
@@ -4660,9 +4600,7 @@
       "exercises_covered": true,
       "reading_covered": true,
       "character_writing_covered": true,
-      "items_need_check": [
-       "Official answer key for some exercises not included in PDF scan; generated answers are not marked final_verified."
-      ]
+      "items_need_check": []
      }
     }
    }
@@ -4699,21 +4637,7 @@
      "source_origin": "uploaded_crosscheck",
      "check_needed": false
     }
-   ],
-   "qa_report": {
-    "pdf_checked": true,
-    "pdf_file": "Hanyu Jiaocheng 2-1.pdf",
-    "pdf_book_pages_checked": "86-107",
-    "vocabulary_main_items": 46,
-    "supplementary_vocabulary_items": 8,
-    "added_main_vocab": ["暖和", "气温", "屋子", "家庭", "饭店", "古典"],
-    "kept_non_pdf_vocab_from_existing_file": ["低", "代"],
-    "pinyin_empty_fields_remaining": 0,
-    "exercise_answers_verified": true,
-    "pos_detail_added": true,
-    "separable_verbs_marked": ["排队", "划船", "照相"],
-    "notes": []
-   }
+   ]
   },
   "summary": {
    "lesson_parts": [

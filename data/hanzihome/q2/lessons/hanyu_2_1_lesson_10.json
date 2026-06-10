@@ -4,7 +4,7 @@
   "title": {
    "zh": "我听过钢琴协奏曲《黄河》",
    "pinyin": "Wǒ tīngguo gāngqín xiézòuqǔ 《Huáng Hé》",
-   "vi": "Tôi đã từng nghe bản concerto piano 《Hoàng Hà》",
+   "vi": "Tôi từng nghe bản concerto piano 《Hoàng Hà》",
    "en": "I've heard the piano concerto Yellow River"
   },
   "tags": [
@@ -13,12 +13,16 @@
    "experience_guo",
    "verbal_measure_complement",
    "ordinal_di",
+   "coverage_first",
    "pdf_checked",
+   "content_rechecked",
+   "pinyin_checked",
+   "answers_checked",
    "pos_detail_checked"
   ],
   "sections": [
    {
-    "id": "section_text_l10",
+    "id": "a6c0d522-99be-4f36-881c-b9b2c6beeb85",
     "type": "text",
     "order": 1,
     "title": "课文",
@@ -27,220 +31,217 @@
     "check_needed": false,
     "blocks": [
      {
-      "id": "text_l10_01",
+      "id": "e155d5ea-f89d-45f0-ab8d-094ce9e719f0",
       "type": "text_dialogue",
       "order": 1,
       "title": "我吃过中药",
-      "title_vi": "Tôi từng uống thuốc Đông y",
+      "title_vi": "Tôi đã từng uống thuốc Đông y",
       "source_origin": "pdf_textbook_checked",
       "check_needed": false,
       "lines": [
        {
-        "id": "text_l10_line_001",
+        "id": "f8046d8e-353e-4b63-a072-7498c8f1d9ff",
         "order": 1,
         "speaker": "爱德华",
         "zh": "山本，你的感冒好了吗？",
-        "pinyin": "Shānběn, nǐ de gǎnmào hǎo le ma?",
         "vi": "Yamamoto, bệnh cảm của bạn khỏi chưa?",
         "grammar_refs": [],
-        "vocab_refs": [],
-        "proper_noun_refs": [],
-        "audio_key": "",
+        "vocab_refs": ["8c18cf3c-e9dc-42e1-8faf-eb26799cabab"],
+        "pinyin": "Shānběn, nǐ de gǎnmào hǎo le ma?",
+        "check_needed": false,
         "notes": []
        },
        {
-        "id": "text_l10_line_002",
+        "id": "30929615-34c8-4e5b-b0a2-5ad3358ad755",
         "order": 2,
         "speaker": "山本",
         "zh": "好了。来中国以后我已经得过三次感冒了。",
-        "pinyin": "Hǎo le. Lái Zhōngguó yǐhòu wǒ yǐjīng dé guo sān cì gǎnmào le.",
         "vi": "Khỏi rồi. Sau khi đến Trung Quốc, tôi đã bị cảm ba lần rồi.",
-        "grammar_refs": ["grammar_l10_guo", "grammar_l10_verbal_measure"],
-        "vocab_refs": [],
-        "proper_noun_refs": [],
-        "audio_key": "",
+        "grammar_refs": [
+         "f8ec59f3-898a-47b2-b536-44dfd8183393",
+         "57b14753-688a-41b6-9e0d-b61dbbf574d7"
+        ],
+        "vocab_refs": ["68c05a12-9d8e-45d9-a413-786bcf2f780a"],
+        "pinyin": "Hǎo le. Lái Zhōngguó yǐhòu wǒ yǐjīng dé guo sān cì gǎnmào le.",
+        "check_needed": false,
         "notes": []
        },
        {
-        "id": "text_l10_line_003",
+        "id": "9faf6980-effe-42f1-a01e-7f1740da2edb",
         "order": 3,
         "speaker": "爱德华",
         "zh": "我一次病也没有得过。",
-        "pinyin": "Wǒ yí cì bìng yě méiyǒu dé guo.",
         "vi": "Tôi chưa từng bị bệnh lần nào.",
-        "grammar_refs": ["grammar_l10_guo", "grammar_l10_verbal_measure"],
-        "vocab_refs": [],
-        "proper_noun_refs": [],
-        "audio_key": "",
+        "grammar_refs": [
+         "f8ec59f3-898a-47b2-b536-44dfd8183393",
+         "57b14753-688a-41b6-9e0d-b61dbbf574d7"
+        ],
+        "vocab_refs": ["68c05a12-9d8e-45d9-a413-786bcf2f780a"],
+        "pinyin": "Wǒ yí cì bìng yě méiyǒu dé guo.",
+        "check_needed": false,
         "notes": []
        },
        {
-        "id": "text_l10_line_004",
+        "id": "146f8fa1-ae74-468d-910e-19cab53e3cf3",
         "order": 4,
         "speaker": "山本",
         "zh": "你身体真不错。我还住过一次院呢，看过中医，也吃过中药。",
-        "pinyin": "Nǐ shēntǐ zhēn búcuò. Wǒ hái zhù guo yí cì yuàn ne, kàn guo zhōngyī, yě chī guo zhōngyào.",
         "vi": "Sức khỏe bạn thật tốt. Tôi còn từng nằm viện một lần, từng khám Đông y, cũng từng uống thuốc Đông y.",
-        "grammar_refs": ["grammar_l10_guo", "grammar_l10_verbal_measure"],
-        "vocab_refs": [],
-        "proper_noun_refs": [],
-        "audio_key": "",
+        "grammar_refs": [
+         "f8ec59f3-898a-47b2-b536-44dfd8183393",
+         "57b14753-688a-41b6-9e0d-b61dbbf574d7"
+        ],
+        "vocab_refs": [
+         "8c18cf3c-e9dc-42e1-8faf-eb26799cabab",
+         "1fbd69b7-603a-44ea-8d57-10cd4def9ced"
+        ],
+        "pinyin": "Nǐ shēntǐ zhēn búcuò. Wǒ hái zhù guo yí cì yuàn ne, kàn guo zhōngyī, yě chī guo zhōngyào.",
+        "check_needed": false,
         "notes": []
        },
        {
-        "id": "text_l10_line_005",
+        "id": "44d4c32e-309d-4802-b7cf-e41ee8052535",
         "order": 5,
         "speaker": "爱德华",
         "zh": "听说中药很苦，是吗？",
-        "pinyin": "Tīngshuō zhōngyào hěn kǔ, shì ma?",
         "vi": "Nghe nói thuốc Đông y rất đắng, đúng không?",
         "grammar_refs": [],
-        "vocab_refs": [],
-        "proper_noun_refs": [],
-        "audio_key": "",
+        "vocab_refs": ["3dc505f1-bc0e-4a96-b448-17fed89fdc60"],
+        "pinyin": "Tīngshuō zhōngyào hěn kǔ, shì ma?",
+        "check_needed": false,
         "notes": []
        },
        {
-        "id": "text_l10_line_006",
+        "id": "6f4b4423-8315-40e6-88fa-2fa2038271af",
         "order": 6,
         "speaker": "山本",
         "zh": "有的苦，有的不苦。我喝的是中成药，甜甜的，一点儿也不苦。吃了这些中药，我的病就好了。",
-        "pinyin": "Yǒu de kǔ, yǒu de bù kǔ. Wǒ hē de shì zhōngchéngyào, tiántián de, yìdiǎnr yě bù kǔ. Chī le zhèxiē zhōngyào, wǒ de bìng jiù hǎo le.",
-        "vi": "Có loại đắng, có loại không đắng. Tôi uống thuốc Đông y bào chế sẵn, ngọt ngọt, một chút cũng không đắng. Uống những thuốc Đông y này xong thì bệnh của tôi khỏi rồi.",
+        "vi": "Có loại đắng, có loại không đắng. Tôi uống loại thuốc Đông y bào chế sẵn, ngọt ngọt, một chút cũng không đắng. Uống những thuốc Đông y này xong thì bệnh của tôi khỏi rồi.",
         "grammar_refs": [],
-        "vocab_refs": [],
-        "proper_noun_refs": [],
-        "audio_key": "",
+        "vocab_refs": [
+         "188412d4-4c23-4d60-b7b2-21f3490199e7",
+         "5ea44727-d97c-467b-b1b8-babd195df50d"
+        ],
+        "pinyin": "Yǒu de kǔ, yǒu de bù kǔ. Wǒ hē de shì zhōngchéngyào, tiántián de, yìdiǎnr yě bù kǔ. Chī le zhèxiē zhōngyào, wǒ de bìng jiù hǎo le.",
+        "check_needed": false,
         "notes": []
        },
        {
-        "id": "text_l10_line_007",
+        "id": "6de58c5b-164f-4b2f-8d7e-84f1c7c1a66c",
         "order": 7,
         "speaker": "爱德华",
         "zh": "我听说中医看病很有意思。",
-        "pinyin": "Wǒ tīngshuō zhōngyī kàn bìng hěn yǒu yìsi.",
         "vi": "Tôi nghe nói Đông y khám bệnh rất thú vị.",
         "grammar_refs": [],
-        "vocab_refs": [],
-        "proper_noun_refs": [],
-        "audio_key": "",
+        "vocab_refs": ["1fbd69b7-603a-44ea-8d57-10cd4def9ced"],
+        "pinyin": "Wǒ tīngshuō zhōngyī kàn bìng hěn yǒu yìsi.",
+        "check_needed": false,
         "notes": []
        },
        {
-        "id": "text_l10_line_008",
+        "id": "9d76be1a-c606-44bb-a490-a9bd82982e3b",
         "order": 8,
         "speaker": "山本",
-        "zh": "中医看病不化验，只用手摸一摸脉就给你开药方。",
-        "pinyin": "Zhōngyī kàn bìng bù huàyàn, zhǐ yòng shǒu mō yi mō mài jiù gěi nǐ kāi yàofāng.",
-        "vi": "Đông y khám bệnh không xét nghiệm, chỉ dùng tay bắt mạch một chút rồi kê đơn thuốc.",
+        "zh": "中医看病不化验，只用手摸一摸脉就给你开药方。还用按摩、针灸等方法给病人治病。",
+        "vi": "Đông y khám bệnh không xét nghiệm, chỉ dùng tay bắt mạch một chút rồi kê đơn thuốc cho bạn. Còn dùng mát-xa, châm cứu và các phương pháp khác để chữa bệnh cho bệnh nhân.",
         "grammar_refs": [],
-        "vocab_refs": [],
-        "proper_noun_refs": [],
-        "audio_key": "",
+        "vocab_refs": [
+         "0da97406-c3ac-4fcb-a51c-398a59c3fbae",
+         "54b36889-82be-485b-8342-fb8aab572065",
+         "1354b1a3-93cc-4505-8d7f-c5550a1d6ae9",
+         "f0684cb3-4577-4e6c-9f22-7d97c89692b3",
+         "d5b362a7-c8f6-4f25-b2b5-0f1749c8afbb",
+         "7eccd5e8-dac0-4f36-be2e-abcc0a2bdfcd"
+        ],
+        "pinyin": "Zhōngyī kàn bìng bù huàyàn, zhǐ yòng shǒu mō yi mō mài jiù gěi nǐ kāi yàofāng. Hái yòng ànmó, zhēnjiǔ děng fāngfǎ gěi bìngrén zhì bìng.",
+        "check_needed": false,
         "notes": []
        },
        {
-        "id": "text_l10_line_009",
+        "id": "6e148072-17aa-4ebd-88a1-c59b2fc0ba17",
         "order": 9,
-        "speaker": "山本",
-        "zh": "还用按摩、针灸等方法给病人治病。",
-        "pinyin": "Hái yòng ànmó, zhēnjiǔ děng fāngfǎ gěi bìngrén zhì bìng.",
-        "vi": "Còn dùng mát-xa, châm cứu và các phương pháp khác để chữa bệnh cho bệnh nhân.",
-        "grammar_refs": [],
-        "vocab_refs": [],
-        "proper_noun_refs": [],
-        "audio_key": "",
-        "notes": []
-       },
-       {
-        "id": "text_l10_line_010",
-        "order": 10,
         "speaker": "爱德华",
         "zh": "是打针吗？",
-        "pinyin": "Shì dǎ zhēn ma?",
         "vi": "Là tiêm à?",
         "grammar_refs": [],
-        "vocab_refs": [],
-        "proper_noun_refs": [],
-        "audio_key": "",
+        "vocab_refs": ["91fa9f81-e5ef-4c4a-b29c-c4b6daa02196"],
+        "pinyin": "Shì dǎ zhēn ma?",
+        "check_needed": false,
         "notes": []
        },
        {
-        "id": "text_l10_line_011",
-        "order": 11,
+        "id": "a8845639-9fca-4398-853d-a08fb63482a8",
+        "order": 10,
         "speaker": "山本",
         "zh": "不是打针，是扎针。",
-        "pinyin": "Bú shì dǎ zhēn, shì zhā zhēn.",
         "vi": "Không phải tiêm, là châm kim.",
         "grammar_refs": [],
-        "vocab_refs": [],
-        "proper_noun_refs": [],
-        "audio_key": "",
+        "vocab_refs": ["8a5b1d09-23a6-4182-96e6-9bf4d761a1e1"],
+        "pinyin": "Bú shì dǎ zhēn, shì zhā zhēn.",
+        "check_needed": false,
         "notes": []
        },
        {
-        "id": "text_l10_line_012",
-        "order": 12,
+        "id": "eb3a72ec-54fc-469d-929b-b614c65e00f1",
+        "order": 11,
         "speaker": "爱德华",
         "zh": "你针灸过吗？",
+        "vi": "Bạn từng châm cứu chưa?",
+        "grammar_refs": ["f8ec59f3-898a-47b2-b536-44dfd8183393"],
+        "vocab_refs": ["f0684cb3-4577-4e6c-9f22-7d97c89692b3"],
         "pinyin": "Nǐ zhēnjiǔ guo ma?",
-        "vi": "Bạn đã từng châm cứu chưa?",
-        "grammar_refs": ["grammar_l10_guo"],
-        "vocab_refs": [],
-        "proper_noun_refs": [],
-        "audio_key": "",
+        "check_needed": false,
         "notes": []
        },
        {
-        "id": "text_l10_line_013",
-        "order": 13,
+        "id": "5d22fae9-a022-41b5-a551-b9b68c51b516",
+        "order": 12,
         "speaker": "山本",
         "zh": "我做过按摩，没针灸过，但是见过。",
+        "vi": "Tôi từng làm/trải nghiệm mát-xa, chưa từng châm cứu, nhưng đã từng thấy.",
+        "grammar_refs": ["f8ec59f3-898a-47b2-b536-44dfd8183393"],
+        "vocab_refs": [
+         "1354b1a3-93cc-4505-8d7f-c5550a1d6ae9",
+         "f0684cb3-4577-4e6c-9f22-7d97c89692b3"
+        ],
         "pinyin": "Wǒ zuò guo ànmó, méi zhēnjiǔ guo, dànshì jiàn guo.",
-        "vi": "Tôi từng làm mát-xa, chưa từng châm cứu, nhưng từng thấy.",
-        "grammar_refs": ["grammar_l10_guo"],
-        "vocab_refs": [],
-        "proper_noun_refs": [],
-        "audio_key": "",
+        "check_needed": false,
         "notes": []
        },
        {
-        "id": "text_l10_line_014",
-        "order": 14,
+        "id": "a568d979-0ebe-412d-9200-f663609af6c5",
+        "order": 13,
         "speaker": "爱德华",
         "zh": "是什么样的针呢？",
-        "pinyin": "Shì shénme yàng de zhēn ne?",
         "vi": "Là loại kim như thế nào vậy?",
         "grammar_refs": [],
-        "vocab_refs": [],
-        "proper_noun_refs": [],
-        "audio_key": "",
+        "vocab_refs": ["91fa9f81-e5ef-4c4a-b29c-c4b6daa02196"],
+        "pinyin": "Shì shénme yàng de zhēn ne?",
+        "check_needed": false,
         "notes": []
        },
        {
-        "id": "text_l10_line_015",
-        "order": 15,
+        "id": "352eb6a5-7ba0-4d98-80b5-4781602b9aea",
+        "order": 14,
         "speaker": "山本",
         "zh": "是一种很细很细的针。",
-        "pinyin": "Shì yì zhǒng hěn xì hěn xì de zhēn.",
-        "vi": "Là một loại kim rất rất nhỏ.",
+        "vi": "Là một loại kim rất rất mảnh.",
         "grammar_refs": [],
-        "vocab_refs": [],
-        "proper_noun_refs": [],
-        "audio_key": "",
+        "vocab_refs": ["be7a835d-ff8f-4a86-9fd8-27c5f1093f0c"],
+        "pinyin": "Shì yì zhǒng hěn xì hěn xì de zhēn.",
+        "check_needed": false,
         "notes": []
        },
        {
-        "id": "text_l10_line_016",
-        "order": 16,
+        "id": "fba2b141-cab4-4f5e-8224-ecf84e4848a5",
+        "order": 15,
         "speaker": "爱德华",
         "zh": "没见过。",
-        "pinyin": "Méi jiàn guo.",
         "vi": "Tôi chưa từng thấy.",
-        "grammar_refs": ["grammar_l10_guo"],
+        "grammar_refs": ["f8ec59f3-898a-47b2-b536-44dfd8183393"],
         "vocab_refs": [],
-        "proper_noun_refs": [],
-        "audio_key": "",
+        "pinyin": "Méi jiàn guo.",
+        "check_needed": false,
         "notes": []
        }
       ],
@@ -248,168 +249,178 @@
       "comprehension_questions": []
      },
      {
-      "id": "text_l10_02",
+      "id": "0156dd39-d5b4-41f5-866d-d336dd29bbc2",
       "type": "text_dialogue",
       "order": 2,
       "title": "你以前来过中国吗",
-      "title_vi": "Trước đây bạn từng đến Trung Quốc chưa?",
+      "title_vi": "Trước đây bạn đã từng đến Trung Quốc chưa?",
       "source_origin": "pdf_textbook_checked",
       "check_needed": false,
       "lines": [
        {
-        "id": "text_l10_line_001",
+        "id": "887014e5-f6b0-4777-9f95-85a69532ca36",
         "order": 1,
         "speaker": "罗兰",
         "zh": "山本，听说你曾经来过中国，是吗？",
-        "pinyin": "Shānběn, tīngshuō nǐ céngjīng lái guo Zhōngguó, shì ma?",
         "vi": "Yamamoto, nghe nói bạn đã từng đến Trung Quốc, đúng không?",
-        "grammar_refs": ["grammar_l10_guo"],
-        "vocab_refs": [],
-        "proper_noun_refs": [],
-        "audio_key": "",
+        "grammar_refs": ["f8ec59f3-898a-47b2-b536-44dfd8183393"],
+        "vocab_refs": ["7a89dc80-d79d-4c2f-988c-d0f54e240d19"],
+        "pinyin": "Shānběn, tīngshuō nǐ céngjīng lái guo Zhōngguó, shì ma?",
+        "check_needed": false,
         "notes": []
        },
        {
-        "id": "text_l10_line_002",
+        "id": "65232ef9-30a1-4305-b8b7-12a8ac5aeb91",
         "order": 2,
         "speaker": "山本",
         "zh": "是啊，来过一次。你呢？",
-        "pinyin": "Shì a, lái guo yí cì. Nǐ ne?",
         "vi": "Đúng vậy, từng đến một lần. Còn bạn?",
-        "grammar_refs": ["grammar_l10_guo", "grammar_l10_verbal_measure"],
+        "grammar_refs": [
+         "f8ec59f3-898a-47b2-b536-44dfd8183393",
+         "57b14753-688a-41b6-9e0d-b61dbbf574d7"
+        ],
         "vocab_refs": [],
-        "proper_noun_refs": [],
-        "audio_key": "",
+        "pinyin": "Shì a, lái guo yí cì. Nǐ ne?",
+        "check_needed": false,
         "notes": []
        },
        {
-        "id": "text_l10_line_003",
+        "id": "2c1213ac-f81d-414f-8b55-5abe77fe83fc",
         "order": 3,
         "speaker": "罗兰",
         "zh": "我没有来过，这是第一次。你都去过什么地方？",
-        "pinyin": "Wǒ méiyǒu lái guo, zhè shì dì yī cì. Nǐ dōu qù guo shénme dìfang?",
         "vi": "Tôi chưa từng đến, đây là lần đầu tiên. Bạn đã từng đi những nơi nào?",
-        "grammar_refs": ["grammar_l10_guo", "grammar_l10_di"],
-        "vocab_refs": [],
-        "proper_noun_refs": [],
-        "audio_key": "",
+        "grammar_refs": [
+         "f8ec59f3-898a-47b2-b536-44dfd8183393",
+         "fa804fff-372b-4874-8571-f54e613d7e07"
+        ],
+        "vocab_refs": ["ff3e1818-66a9-4532-880b-02c9cacb0e5b"],
+        "pinyin": "Wǒ méiyǒu lái guo, zhè shì dì yī cì. Nǐ dōu qù guo shénme dìfang?",
+        "check_needed": false,
         "notes": []
        },
        {
-        "id": "text_l10_line_004",
+        "id": "d797c234-0a16-42e3-bc45-29782e65cb1b",
         "order": 4,
         "speaker": "山本",
         "zh": "我已经去过好多地方了。北边去过哈尔滨，南边到过海南岛，东边上过泰山，西边去过西安和敦煌。",
-        "pinyin": "Wǒ yǐjīng qù guo hǎo duō dìfang le. Běibiān qù guo Hā’ěrbīn, nánbiān dào guo Hǎinán Dǎo, dōngbiān shàng guo Tài Shān, xībiān qù guo Xī’ān hé Dūnhuáng.",
-        "vi": "Tôi đã từng đi rất nhiều nơi rồi. Phía Bắc từng đi Cáp Nhĩ Tân, phía Nam từng đến đảo Hải Nam, phía Đông từng lên Thái Sơn, phía Tây từng đi Tây An và Đôn Hoàng.",
-        "grammar_refs": ["grammar_l10_guo"],
+        "vi": "Tôi đã từng đi rất nhiều nơi rồi. Phía bắc từng đi Cáp Nhĩ Tân, phía nam từng đến đảo Hải Nam, phía đông từng lên núi Thái Sơn, phía tây từng đi Tây An và Đôn Hoàng.",
+        "grammar_refs": ["f8ec59f3-898a-47b2-b536-44dfd8183393"],
         "vocab_refs": [],
-        "proper_noun_refs": [],
-        "audio_key": "",
+        "proper_noun_refs": [
+         "070690f6-fd26-41df-ab28-f5031668ed3e",
+         "d0cc2a3d-951d-4dc5-93e3-bc90ee212237",
+         "785dd718-c838-45cf-87e7-b278bab8b7c0",
+         "7f7913ed-3e88-470e-ac98-ecb06f3f6c05",
+         "03d3483d-dfb7-4cd5-8ca7-caa3e54a6ee2"
+        ],
+        "pinyin": "Wǒ yǐjīng qù guo hǎo duō dìfang le. Běibian qù guo Hā’ěrbīn, nánbian dào guo Hǎinán Dǎo, dōngbian shàng guo Tài Shān, xībian qù guo Xī’ān hé Dūnhuáng.",
+        "check_needed": false,
         "notes": []
        },
        {
-        "id": "text_l10_line_005",
+        "id": "c99f042b-fa9a-478c-aba1-5da333a677e1",
         "order": 5,
         "speaker": "罗兰",
         "zh": "你去过的地方真不少。来中国以后，我只去过颐和园、故宫和长城。",
-        "pinyin": "Nǐ qù guo de dìfang zhēn bù shǎo. Lái Zhōngguó yǐhòu, wǒ zhǐ qù guo Yíhé Yuán, Gùgōng hé Chángchéng.",
-        "vi": "Những nơi bạn từng đi thật không ít. Sau khi đến Trung Quốc, tôi chỉ từng đi Di Hòa Viên, Cố Cung và Vạn Lý Trường Thành.",
-        "grammar_refs": ["grammar_l10_guo"],
+        "vi": "Những nơi bạn đã từng đi thật không ít. Sau khi đến Trung Quốc, tôi mới chỉ đi Di Hòa Viên, Cố Cung và Trường Thành.",
+        "grammar_refs": ["f8ec59f3-898a-47b2-b536-44dfd8183393"],
         "vocab_refs": [],
-        "proper_noun_refs": [],
-        "audio_key": "",
+        "proper_noun_refs": [
+         "ea82d601-11f9-4cab-9f5d-b4a8dd9cebbc",
+         "c24bd242-3609-4657-b5f1-db9cd21472f6",
+         "a4a354d8-d066-415f-a5cd-e59f03580c28"
+        ],
+        "pinyin": "Nǐ qù guo de dìfang zhēn bù shǎo. Lái Zhōngguó yǐhòu, wǒ zhǐ qù guo Yíhé Yuán, Gùgōng hé Chángchéng.",
+        "check_needed": false,
         "notes": []
        },
        {
-        "id": "text_l10_line_006",
+        "id": "e8680b0f-6dcc-4fc7-abbd-084aba5d3b87",
         "order": 6,
         "speaker": "山本",
         "zh": "习惯吃中餐了吗？",
-        "pinyin": "Xíguàn chī zhōngcān le ma?",
         "vi": "Bạn đã quen ăn món Trung chưa?",
         "grammar_refs": [],
-        "vocab_refs": [],
-        "proper_noun_refs": [],
-        "audio_key": "",
+        "vocab_refs": ["0125bdae-fe4e-48fb-8264-145e95c75933"],
+        "pinyin": "Xíguàn chī zhōngcān le ma?",
+        "check_needed": false,
         "notes": []
        },
        {
-        "id": "text_l10_line_007",
+        "id": "cc8da348-3e89-4f64-a680-de239f505497",
         "order": 7,
         "speaker": "罗兰",
         "zh": "早就习惯了。",
-        "pinyin": "Zǎo jiù xíguàn le.",
         "vi": "Quen từ lâu rồi.",
         "grammar_refs": [],
         "vocab_refs": [],
-        "proper_noun_refs": [],
-        "audio_key": "",
+        "pinyin": "Zǎo jiù xíguàn le.",
+        "check_needed": false,
         "notes": []
        },
        {
-        "id": "text_l10_line_008",
+        "id": "2adb7cf6-26c1-4029-809e-67342fb0227f",
         "order": 8,
         "speaker": "山本",
         "zh": "你吃过哪些中国菜？",
-        "pinyin": "Nǐ chī guo nǎxiē Zhōngguó cài?",
-        "vi": "Bạn đã từng ăn những món Trung nào?",
-        "grammar_refs": ["grammar_l10_guo"],
+        "vi": "Bạn đã từng ăn những món Trung Quốc nào?",
+        "grammar_refs": ["f8ec59f3-898a-47b2-b536-44dfd8183393"],
         "vocab_refs": [],
-        "proper_noun_refs": [],
-        "audio_key": "",
+        "pinyin": "Nǐ chī guo nǎxiē Zhōngguó cài?",
+        "check_needed": false,
         "notes": []
        },
        {
-        "id": "text_l10_line_009",
+        "id": "f42aa089-875d-48c4-9213-a083ec251fe7",
         "order": 9,
         "speaker": "罗兰",
         "zh": "吃过很多。最喜欢吃的是北京烤鸭。你爱吃什么？",
-        "pinyin": "Chī guo hěn duō. Zuì xǐhuan chī de shì Běijīng kǎoyā. Nǐ ài chī shénme?",
         "vi": "Từng ăn rất nhiều. Thích nhất là vịt quay Bắc Kinh. Bạn thích ăn gì?",
-        "grammar_refs": ["grammar_l10_guo"],
-        "vocab_refs": [],
-        "proper_noun_refs": [],
-        "audio_key": "",
+        "grammar_refs": ["f8ec59f3-898a-47b2-b536-44dfd8183393"],
+        "vocab_refs": ["689eb64b-5d4f-469f-9afa-74017d399614"],
+        "pinyin": "Chī guo hěn duō. Zuì xǐhuan chī de shì Běijīng kǎoyā. Nǐ ài chī shénme?",
+        "check_needed": false,
         "notes": []
        },
        {
-        "id": "text_l10_line_010",
+        "id": "f7419a05-c714-4cff-ae26-210852d56303",
         "order": 10,
         "speaker": "山本",
         "zh": "中国菜我都爱吃。还爱吃烤白薯、糖葫芦什么的。",
-        "pinyin": "Zhōngguó cài wǒ dōu ài chī. Hái ài chī kǎo báishǔ, tánghúlu shénme de.",
-        "vi": "Món Trung tôi đều thích ăn. Còn thích ăn khoai lang nướng, kẹo hồ lô và những thứ kiểu như vậy.",
+        "vi": "Món Trung Quốc tôi đều thích ăn. Còn thích ăn khoai lang nướng, kẹo hồ lô và những thứ như vậy.",
         "grammar_refs": [],
-        "vocab_refs": [],
-        "proper_noun_refs": [],
-        "audio_key": "",
+        "vocab_refs": [
+         "79358c6f-3427-4c28-98f3-7ef98c7033c3",
+         "dc0f8e06-a359-4907-a8d8-fc9b02260590",
+         "c43cedbf-7024-4ec1-922f-e75119114baf"
+        ],
+        "pinyin": "Zhōngguó cài wǒ dōu ài chī. Hái ài chī kǎo báishǔ, tánghúlu shénme de.",
+        "check_needed": false,
         "notes": []
        },
        {
-        "id": "text_l10_line_011",
+        "id": "22e52ff8-58e5-4bfd-8912-95faed7e26d1",
         "order": 11,
         "speaker": "罗兰",
         "zh": "看过京剧吗？",
-        "pinyin": "Kàn guo jīngjù ma?",
-        "vi": "Bạn từng xem Kinh kịch chưa?",
-        "grammar_refs": ["grammar_l10_guo"],
+        "vi": "Bạn đã từng xem Kinh kịch chưa?",
+        "grammar_refs": ["f8ec59f3-898a-47b2-b536-44dfd8183393"],
         "vocab_refs": [],
-        "proper_noun_refs": [],
-        "audio_key": "",
+        "pinyin": "Kàn guo jīngjù ma?",
+        "check_needed": false,
         "notes": []
        },
        {
-        "id": "text_l10_line_012",
+        "id": "7ae9e54c-f536-4783-b05d-0d7e8ac4fb77",
         "order": 12,
         "speaker": "山本",
         "zh": "没看过。听说京剧很有意思，我很想去看看。",
-        "pinyin": "Méi kàn guo. Tīngshuō jīngjù hěn yǒu yìsi, wǒ hěn xiǎng qù kànkan.",
         "vi": "Chưa từng xem. Nghe nói Kinh kịch rất thú vị, tôi rất muốn đi xem thử.",
-        "grammar_refs": ["grammar_l10_guo"],
+        "grammar_refs": ["f8ec59f3-898a-47b2-b536-44dfd8183393"],
         "vocab_refs": [],
-        "proper_noun_refs": [],
-        "audio_key": "",
+        "pinyin": "Méi kàn guo. Tīngshuō jīngjù hěn yǒu yìsi, wǒ hěn xiǎng qù kànkan.",
+        "check_needed": false,
         "notes": []
        }
       ],
@@ -417,194 +428,190 @@
       "comprehension_questions": []
      },
      {
-      "id": "text_l10_03",
+      "id": "e198f9da-fae1-4ab9-aaf8-4be7549579c8",
       "type": "text_dialogue",
       "order": 3,
       "title": "我听过钢琴协奏曲《黄河》",
-      "title_vi": "Tôi từng nghe bản concerto piano 《Hoàng Hà》",
+      "title_vi": "Tôi đã từng nghe bản concerto piano 《Hoàng Hà》",
       "source_origin": "pdf_textbook_checked",
       "check_needed": false,
       "lines": [
        {
-        "id": "text_l10_line_001",
+        "id": "dae16c6f-5eb1-4c5e-ae2a-6b8d0971f6c1",
         "order": 1,
         "speaker": "田芳",
         "zh": "爱德华，你说你是个音乐迷，你听过中国音乐吗？",
-        "pinyin": "Àidéhuá, nǐ shuō nǐ shì gè yīnyuè mí, nǐ tīng guo Zhōngguó yīnyuè ma?",
-        "vi": "Edward, bạn nói bạn là người mê âm nhạc, bạn từng nghe nhạc Trung Quốc chưa?",
-        "grammar_refs": ["grammar_l10_guo"],
+        "vi": "Edward, bạn nói bạn là người mê âm nhạc, bạn đã từng nghe nhạc Trung Quốc chưa?",
+        "grammar_refs": ["f8ec59f3-898a-47b2-b536-44dfd8183393"],
         "vocab_refs": [],
-        "proper_noun_refs": [],
-        "audio_key": "",
+        "pinyin": "Àidéhuá, nǐ shuō nǐ shì ge yīnyuè mí, nǐ tīng guo Zhōngguó yīnyuè ma?",
+        "check_needed": false,
         "notes": []
        },
        {
-        "id": "text_l10_line_002",
+        "id": "6a9f9409-a14a-4e5b-957f-5609b29abcf4",
         "order": 2,
         "speaker": "爱德华",
         "zh": "当然听过！",
-        "pinyin": "Dāngrán tīng guo!",
         "vi": "Tất nhiên là từng nghe rồi!",
-        "grammar_refs": ["grammar_l10_guo"],
+        "grammar_refs": ["f8ec59f3-898a-47b2-b536-44dfd8183393"],
         "vocab_refs": [],
-        "proper_noun_refs": [],
-        "audio_key": "",
+        "pinyin": "Dāngrán tīng guo!",
+        "check_needed": false,
         "notes": []
        },
        {
-        "id": "text_l10_line_003",
+        "id": "8783fa9f-f6d3-4d28-8301-714146384d01",
         "order": 3,
         "speaker": "田芳",
         "zh": "听过什么？",
-        "pinyin": "Tīng guo shénme?",
         "vi": "Đã từng nghe gì?",
-        "grammar_refs": ["grammar_l10_guo"],
+        "grammar_refs": ["f8ec59f3-898a-47b2-b536-44dfd8183393"],
         "vocab_refs": [],
-        "proper_noun_refs": [],
-        "audio_key": "",
+        "pinyin": "Tīng guo shénme?",
+        "check_needed": false,
         "notes": []
        },
        {
-        "id": "text_l10_line_004",
+        "id": "077fca74-cf50-4164-80a0-217b40399296",
         "order": 4,
         "speaker": "爱德华",
         "zh": "在加拿大时，我亲耳听过一位中国钢琴家演奏的《黄河》。",
-        "pinyin": "Zài Jiānádà shí, wǒ qīn’ěr tīng guo yí wèi Zhōngguó gāngqínjiā yǎnzòu de 《Huáng Hé》.",
         "vi": "Khi ở Canada, tôi đã tận tai nghe một nghệ sĩ piano Trung Quốc biểu diễn 《Hoàng Hà》.",
-        "grammar_refs": ["grammar_l10_guo"],
-        "vocab_refs": [],
-        "proper_noun_refs": [],
-        "audio_key": "",
+        "grammar_refs": ["f8ec59f3-898a-47b2-b536-44dfd8183393"],
+        "vocab_refs": [
+         "d9991c79-3454-4247-bf18-f14f43b4a24a",
+         "55cd807c-eec7-412d-99db-f4e6508b170f",
+         "085e60d5-dd1c-4585-ac6b-0f1db0ded936",
+         "ba7ff0f9-b633-4516-ab3d-22b96046a1cf"
+        ],
+        "proper_noun_refs": ["5f5fdc9c-74dd-458b-b5a7-8e999a418667"],
+        "pinyin": "Zài Jiānádà shí, wǒ qīn’ěr tīng guo yí wèi Zhōngguó gāngqínjiā yǎnzòu de 《Huáng Hé》.",
+        "check_needed": false,
         "notes": []
        },
        {
-        "id": "text_l10_line_005",
+        "id": "cdc21194-bac0-4711-b327-6993d80ab6f3",
         "order": 5,
         "speaker": "田芳",
         "zh": "你觉得怎么样？",
-        "pinyin": "Nǐ juéde zěnmeyàng?",
         "vi": "Bạn thấy thế nào?",
         "grammar_refs": [],
         "vocab_refs": [],
-        "proper_noun_refs": [],
-        "audio_key": "",
+        "pinyin": "Nǐ juéde zěnmeyàng?",
+        "check_needed": false,
         "notes": []
        },
        {
-        "id": "text_l10_line_006",
+        "id": "8fb969b7-ea3c-4f62-a650-16652a998ba7",
         "order": 6,
         "speaker": "爱德华",
         "zh": "好极了，真想再听一遍。",
-        "pinyin": "Hǎo jí le, zhēn xiǎng zài tīng yí biàn.",
         "vi": "Hay cực kỳ, thật muốn nghe lại một lượt nữa.",
-        "grammar_refs": ["grammar_l10_verbal_measure"],
-        "vocab_refs": [],
-        "proper_noun_refs": [],
-        "audio_key": "",
+        "grammar_refs": ["57b14753-688a-41b6-9e0d-b61dbbf574d7"],
+        "vocab_refs": ["2185ee67-885d-4ffb-83e2-e97be4070796"],
+        "pinyin": "Hǎo jí le, zhēn xiǎng zài tīng yí biàn.",
+        "check_needed": false,
         "notes": []
        },
        {
-        "id": "text_l10_line_007",
+        "id": "1143881f-b56a-4893-900c-f7d92482e9a7",
         "order": 7,
         "speaker": "田芳",
         "zh": "听过小提琴协奏曲《梁祝》吗？",
-        "pinyin": "Tīng guo xiǎotíqín xiézòuqǔ 《Liáng-Zhù》 ma?",
-        "vi": "Bạn từng nghe bản concerto violin 《Lương Chúc》 chưa?",
-        "grammar_refs": ["grammar_l10_guo"],
-        "vocab_refs": [],
-        "proper_noun_refs": [],
-        "audio_key": "",
+        "vi": "Bạn đã từng nghe bản concerto violin 《Lương Chúc》 chưa?",
+        "grammar_refs": ["f8ec59f3-898a-47b2-b536-44dfd8183393"],
+        "vocab_refs": [
+         "092a8c16-3739-4685-a4c0-39365071bd48",
+         "22e66ee9-565e-4670-b2ac-4d5a9b500b38"
+        ],
+        "proper_noun_refs": ["4912acc3-45af-4e8f-8291-9049240abccd"],
+        "pinyin": "Tīng guo xiǎotíqín xiézòuqǔ 《Liáng Zhù》 ma?",
+        "check_needed": false,
         "notes": []
        },
        {
-        "id": "text_l10_line_008",
+        "id": "6e898255-5e01-4f04-b692-db1a83acfb9e",
         "order": 8,
         "speaker": "爱德华",
         "zh": "听说过，但是没听过。好听吗？",
-        "pinyin": "Tīngshuō guo, dànshì méi tīng guo. Hǎotīng ma?",
         "vi": "Từng nghe nói đến, nhưng chưa từng nghe. Có hay không?",
-        "grammar_refs": ["grammar_l10_guo"],
-        "vocab_refs": [],
-        "proper_noun_refs": [],
-        "audio_key": "",
+        "grammar_refs": ["f8ec59f3-898a-47b2-b536-44dfd8183393"],
+        "vocab_refs": ["1190511f-5970-4304-8f84-d7201b287aeb"],
+        "pinyin": "Tīngshuō guo, dànshì méi tīng guo. Hǎotīng ma?",
+        "check_needed": false,
         "notes": []
        },
        {
-        "id": "text_l10_line_009",
+        "id": "144d961a-c5bd-4553-b0f5-e4ba233f2985",
         "order": 9,
         "speaker": "田芳",
         "zh": "你听了就知道了。",
-        "pinyin": "Nǐ tīng le jiù zhīdào le.",
         "vi": "Bạn nghe rồi sẽ biết.",
         "grammar_refs": [],
         "vocab_refs": [],
-        "proper_noun_refs": [],
-        "audio_key": "",
+        "pinyin": "Nǐ tīng le jiù zhīdào le.",
+        "check_needed": false,
         "notes": []
        },
        {
-        "id": "text_l10_line_010",
+        "id": "2393a920-3f87-4e6b-a34f-0bb6f8838d0d",
         "order": 10,
         "speaker": "爱德华",
         "zh": "我很想听听，你这儿有吗？",
-        "pinyin": "Wǒ hěn xiǎng tīngting, nǐ zhèr yǒu ma?",
         "vi": "Tôi rất muốn nghe thử, chỗ bạn có không?",
         "grammar_refs": [],
         "vocab_refs": [],
-        "proper_noun_refs": [],
-        "audio_key": "",
+        "pinyin": "Wǒ hěn xiǎng tīngting, nǐ zhèr yǒu ma?",
+        "check_needed": false,
         "notes": []
        },
        {
-        "id": "text_l10_line_011",
+        "id": "7e0e0bcd-3404-4ae9-97e6-79d75cb05fe1",
         "order": 11,
         "speaker": "田芳",
         "zh": "有。我这个优盘里就有。",
-        "pinyin": "Yǒu. Wǒ zhège yōupán li jiù yǒu.",
         "vi": "Có. Trong USB của tôi có đấy.",
         "grammar_refs": [],
         "vocab_refs": [],
-        "proper_noun_refs": [],
-        "audio_key": "",
+        "pinyin": "Yǒu. Wǒ zhège yōupán li jiù yǒu.",
+        "check_needed": false,
         "notes": []
        },
        {
-        "id": "text_l10_line_012",
+        "id": "3a2dfc9c-29cc-419f-8022-e736ddd1db0f",
         "order": 12,
         "speaker": "爱德华",
         "zh": "借给我听听吧。",
-        "pinyin": "Jiè gěi wǒ tīngting ba.",
         "vi": "Cho tôi mượn nghe thử nhé.",
         "grammar_refs": [],
         "vocab_refs": [],
-        "proper_noun_refs": [],
-        "audio_key": "",
+        "pinyin": "Jiè gěi wǒ tīngting ba.",
+        "check_needed": false,
         "notes": []
        },
        {
-        "id": "text_l10_line_013",
+        "id": "77796ce9-4ee2-4e44-bf91-0277c76e862e",
         "order": 13,
         "speaker": "田芳",
         "zh": "你拿去吧。听完就还给我。",
-        "pinyin": "Nǐ ná qù ba. Tīng wán jiù huán gěi wǒ.",
         "vi": "Bạn lấy đi đi. Nghe xong thì trả lại tôi.",
         "grammar_refs": [],
         "vocab_refs": [],
-        "proper_noun_refs": [],
-        "audio_key": "",
+        "pinyin": "Nǐ ná qù ba. Tīng wán jiù huán gěi wǒ.",
+        "check_needed": false,
         "notes": []
        },
        {
-        "id": "text_l10_line_014",
+        "id": "243a777f-ebe2-49de-a609-6ae1e07a2150",
         "order": 14,
         "speaker": "爱德华",
         "zh": "一定。“好借好还，再借不难”嘛。",
-        "pinyin": "Yídìng. “Hǎo jiè hǎo huán, zài jiè bù nán” ma.",
-        "vi": "Nhất định. “Mượn tử tế, trả tử tế thì lần sau mượn lại không khó” mà.",
+        "vi": "Nhất định. “Mượn tử tế, trả tử tế, lần sau mượn lại không khó” mà.",
         "grammar_refs": [],
-        "vocab_refs": [],
-        "proper_noun_refs": [],
-        "audio_key": "",
+        "vocab_refs": ["cfb712c9-c4ca-4314-b6b2-696b40ace25e"],
+        "pinyin": "Yídìng. “Hǎo jiè hǎo huán, zài jiè bù nán” ma.",
+        "check_needed": false,
         "notes": []
        }
       ],
@@ -614,7 +621,7 @@
     ]
    },
    {
-    "id": "section_vocabulary_l10",
+    "id": "78c30bf4-c314-4c4c-86e3-4dd62382dd78",
     "type": "vocabulary",
     "order": 2,
     "title": "生词",
@@ -623,17 +630,18 @@
     "check_needed": false,
     "items": [
      {
-      "id": "vocab_l10_001",
+      "id": "68c05a12-9d8e-45d9-a413-786bcf2f780a",
       "type": "vocabulary_item",
       "order": 1,
       "hanzi": "过",
       "pinyin": "guo",
       "meaning_vi": "trợ từ động thái, biểu thị “đã từng”",
-      "meaning_en": "experiential aspect particle",
+      "meaning_en": "used after a verb to indicate a past action or state",
       "pos": "Trợ từ động thái",
+      "tags": ["main_vocab", "grammar", "lesson_10"],
       "pos_detail": {
        "vi": "Trợ từ động thái",
-       "cn": "动态助词",
+       "cn": "助词",
        "normalized": "particle",
        "schema_compatible_pos": "particle",
        "is_separable_verb": false,
@@ -641,28 +649,18 @@
        "structure_vi": "",
        "usage_note_vi": "",
        "notes": []
-      },
-      "tags": ["main_vocab", "grammar"],
-      "examples": [],
-      "flashcard": {
-       "front": "过",
-       "back": "trợ từ động thái, biểu thị “đã từng”",
-       "modes": ["hanzi_to_meaning", "meaning_to_hanzi", "pinyin_to_hanzi"]
-      },
-      "audio_key": "",
-      "source_origin": "pdf_textbook_checked",
-      "check_needed": false,
-      "notes": []
+      }
      },
      {
-      "id": "vocab_l10_002",
+      "id": "8c18cf3c-e9dc-42e1-8faf-eb26799cabab",
       "type": "vocabulary_item",
       "order": 2,
       "hanzi": "住院",
-      "pinyin": "zhùyuàn",
+      "pinyin": "zhù yuàn",
       "meaning_vi": "nằm viện",
       "meaning_en": "to be hospitalized",
       "pos": "Động từ li hợp",
+      "tags": ["main_vocab", "lesson_10"],
       "pos_detail": {
        "vi": "Động từ li hợp",
        "cn": "动宾式离合词",
@@ -671,30 +669,20 @@
        "is_separable_verb": true,
        "separable_type": "động-tân / 离合词",
        "structure_vi": "động từ 住 + tân ngữ 院",
-       "usage_note_vi": "Có thể nói 住过一次院 / 住了三天院; không nên máy móc nói *住院过一次.",
+       "usage_note_vi": "Có thể nói 住了一次院 / 住过院; trong khẩu ngữ thường dùng như cụm động từ “nằm viện”.",
        "notes": []
-      },
-      "tags": ["main_vocab", "separable_verb"],
-      "examples": [],
-      "flashcard": {
-       "front": "住院",
-       "back": "nằm viện",
-       "modes": ["hanzi_to_meaning", "meaning_to_hanzi", "pinyin_to_hanzi"]
-      },
-      "audio_key": "",
-      "source_origin": "pdf_textbook_checked",
-      "check_needed": false,
-      "notes": []
+      }
      },
      {
-      "id": "vocab_l10_003",
+      "id": "1fbd69b7-603a-44ea-8d57-10cd4def9ced",
       "type": "vocabulary_item",
       "order": 3,
       "hanzi": "中医",
       "pinyin": "zhōngyī",
       "meaning_vi": "Đông y; bác sĩ Đông y",
-      "meaning_en": "traditional Chinese medicine; TCM doctor",
+      "meaning_en": "traditional Chinese medicine; practitioner of traditional Chinese medicine",
       "pos": "Danh từ",
+      "tags": ["main_vocab", "lesson_10"],
       "pos_detail": {
        "vi": "Danh từ",
        "cn": "名词",
@@ -705,28 +693,18 @@
        "structure_vi": "",
        "usage_note_vi": "",
        "notes": []
-      },
-      "tags": ["main_vocab"],
-      "examples": [],
-      "flashcard": {
-       "front": "中医",
-       "back": "Đông y; bác sĩ Đông y",
-       "modes": ["hanzi_to_meaning", "meaning_to_hanzi", "pinyin_to_hanzi"]
-      },
-      "audio_key": "",
-      "source_origin": "pdf_textbook_checked",
-      "check_needed": false,
-      "notes": []
+      }
      },
      {
-      "id": "vocab_l10_004",
+      "id": "3dc505f1-bc0e-4a96-b448-17fed89fdc60",
       "type": "vocabulary_item",
       "order": 4,
       "hanzi": "苦",
       "pinyin": "kǔ",
       "meaning_vi": "đắng; khổ",
-      "meaning_en": "bitter; painful",
+      "meaning_en": "bitter",
       "pos": "Tính từ",
+      "tags": ["main_vocab", "lesson_10"],
       "pos_detail": {
        "vi": "Tính từ",
        "cn": "形容词",
@@ -737,21 +715,10 @@
        "structure_vi": "",
        "usage_note_vi": "",
        "notes": []
-      },
-      "tags": ["main_vocab"],
-      "examples": [],
-      "flashcard": {
-       "front": "苦",
-       "back": "đắng; khổ",
-       "modes": ["hanzi_to_meaning", "meaning_to_hanzi", "pinyin_to_hanzi"]
-      },
-      "audio_key": "",
-      "source_origin": "pdf_textbook_checked",
-      "check_needed": false,
-      "notes": []
+      }
      },
      {
-      "id": "vocab_l10_005",
+      "id": "188412d4-4c23-4d60-b7b2-21f3490199e7",
       "type": "vocabulary_item",
       "order": 5,
       "hanzi": "中成药",
@@ -759,6 +726,7 @@
       "meaning_vi": "thuốc Đông y bào chế sẵn",
       "meaning_en": "Chinese patent medicine",
       "pos": "Danh từ",
+      "tags": ["main_vocab", "lesson_10"],
       "pos_detail": {
        "vi": "Danh từ",
        "cn": "名词",
@@ -769,21 +737,10 @@
        "structure_vi": "",
        "usage_note_vi": "",
        "notes": []
-      },
-      "tags": ["main_vocab"],
-      "examples": [],
-      "flashcard": {
-       "front": "中成药",
-       "back": "thuốc Đông y bào chế sẵn",
-       "modes": ["hanzi_to_meaning", "meaning_to_hanzi", "pinyin_to_hanzi"]
-      },
-      "audio_key": "",
-      "source_origin": "pdf_textbook_checked",
-      "check_needed": false,
-      "notes": []
+      }
      },
      {
-      "id": "vocab_l10_006",
+      "id": "5ea44727-d97c-467b-b1b8-babd195df50d",
       "type": "vocabulary_item",
       "order": 6,
       "hanzi": "甜",
@@ -791,6 +748,7 @@
       "meaning_vi": "ngọt",
       "meaning_en": "sweet",
       "pos": "Tính từ",
+      "tags": ["main_vocab", "lesson_10"],
       "pos_detail": {
        "vi": "Tính từ",
        "cn": "形容词",
@@ -801,28 +759,18 @@
        "structure_vi": "",
        "usage_note_vi": "",
        "notes": []
-      },
-      "tags": ["main_vocab"],
-      "examples": [],
-      "flashcard": {
-       "front": "甜",
-       "back": "ngọt",
-       "modes": ["hanzi_to_meaning", "meaning_to_hanzi", "pinyin_to_hanzi"]
-      },
-      "audio_key": "",
-      "source_origin": "pdf_textbook_checked",
-      "check_needed": false,
-      "notes": []
+      }
      },
      {
-      "id": "vocab_l10_007",
+      "id": "0da97406-c3ac-4fcb-a51c-398a59c3fbae",
       "type": "vocabulary_item",
       "order": 7,
       "hanzi": "摸",
       "pinyin": "mō",
-      "meaning_vi": "sờ; bắt mạch trong ngữ cảnh Đông y",
+      "meaning_vi": "sờ; bắt mạch",
       "meaning_en": "to feel; to touch",
       "pos": "Động từ",
+      "tags": ["main_vocab", "lesson_10"],
       "pos_detail": {
        "vi": "Động từ",
        "cn": "动词",
@@ -833,28 +781,18 @@
        "structure_vi": "",
        "usage_note_vi": "",
        "notes": []
-      },
-      "tags": ["main_vocab"],
-      "examples": [],
-      "flashcard": {
-       "front": "摸",
-       "back": "sờ; bắt mạch trong ngữ cảnh Đông y",
-       "modes": ["hanzi_to_meaning", "meaning_to_hanzi", "pinyin_to_hanzi"]
-      },
-      "audio_key": "",
-      "source_origin": "pdf_textbook_checked",
-      "check_needed": false,
-      "notes": []
+      }
      },
      {
-      "id": "vocab_l10_008",
+      "id": "54b36889-82be-485b-8342-fb8aab572065",
       "type": "vocabulary_item",
       "order": 8,
       "hanzi": "脉",
       "pinyin": "mài",
-      "meaning_vi": "mạch; mạch máu",
+      "meaning_vi": "mạch",
       "meaning_en": "pulse; arteries and veins",
       "pos": "Danh từ",
+      "tags": ["main_vocab", "lesson_10"],
       "pos_detail": {
        "vi": "Danh từ",
        "cn": "名词",
@@ -865,18 +803,7 @@
        "structure_vi": "",
        "usage_note_vi": "",
        "notes": []
-      },
-      "tags": ["main_vocab"],
-      "examples": [],
-      "flashcard": {
-       "front": "脉",
-       "back": "mạch; mạch máu",
-       "modes": ["hanzi_to_meaning", "meaning_to_hanzi", "pinyin_to_hanzi"]
-      },
-      "audio_key": "",
-      "source_origin": "pdf_textbook_checked",
-      "check_needed": false,
-      "notes": []
+      }
      },
      {
       "id": "vocab_l10_009",
@@ -884,7 +811,7 @@
       "order": 9,
       "hanzi": "药方",
       "pinyin": "yàofāng",
-      "meaning_vi": "đơn thuốc; toa thuốc",
+      "meaning_vi": "đơn thuốc",
       "meaning_en": "prescription",
       "pos": "Danh từ",
       "pos_detail": {
@@ -898,20 +825,10 @@
        "usage_note_vi": "",
        "notes": []
       },
-      "tags": ["main_vocab", "added_from_pdf"],
-      "examples": [],
-      "flashcard": {
-       "front": "药方",
-       "back": "đơn thuốc; toa thuốc",
-       "modes": ["hanzi_to_meaning", "meaning_to_hanzi", "pinyin_to_hanzi"]
-      },
-      "audio_key": "",
-      "source_origin": "pdf_textbook_checked",
-      "check_needed": false,
-      "notes": []
+      "tags": ["main_vocab", "lesson_10"]
      },
      {
-      "id": "vocab_l10_010",
+      "id": "1354b1a3-93cc-4505-8d7f-c5550a1d6ae9",
       "type": "vocabulary_item",
       "order": 10,
       "hanzi": "按摩",
@@ -919,63 +836,43 @@
       "meaning_vi": "mát-xa; xoa bóp",
       "meaning_en": "to massage; massage",
       "pos": "Động từ / Danh từ",
+      "tags": ["main_vocab", "lesson_10"],
       "pos_detail": {
        "vi": "Động từ / Danh từ",
-       "cn": "动词 / 名词",
+       "cn": "动词/名词",
        "normalized": "verb_noun",
-       "schema_compatible_pos": "verb_phrase",
+       "schema_compatible_pos": "verb_noun",
        "is_separable_verb": false,
        "separable_type": "",
        "structure_vi": "",
        "usage_note_vi": "",
        "notes": []
-      },
-      "tags": ["main_vocab"],
-      "examples": [],
-      "flashcard": {
-       "front": "按摩",
-       "back": "mát-xa; xoa bóp",
-       "modes": ["hanzi_to_meaning", "meaning_to_hanzi", "pinyin_to_hanzi"]
-      },
-      "audio_key": "",
-      "source_origin": "pdf_textbook_checked",
-      "check_needed": false,
-      "notes": []
+      }
      },
      {
-      "id": "vocab_l10_011",
+      "id": "f0684cb3-4577-4e6c-9f22-7d97c89692b3",
       "type": "vocabulary_item",
       "order": 11,
       "hanzi": "针灸",
       "pinyin": "zhēnjiǔ",
       "meaning_vi": "châm cứu",
-      "meaning_en": "acupuncture and moxibustion; to do acupuncture/moxibustion",
+      "meaning_en": "acupuncture and moxibustion",
       "pos": "Động từ / Danh từ",
+      "tags": ["main_vocab", "lesson_10"],
       "pos_detail": {
        "vi": "Động từ / Danh từ",
-       "cn": "动词 / 名词",
+       "cn": "动词/名词",
        "normalized": "verb_noun",
-       "schema_compatible_pos": "verb_phrase",
+       "schema_compatible_pos": "verb_noun",
        "is_separable_verb": false,
        "separable_type": "",
        "structure_vi": "",
        "usage_note_vi": "",
        "notes": []
-      },
-      "tags": ["main_vocab"],
-      "examples": [],
-      "flashcard": {
-       "front": "针灸",
-       "back": "châm cứu",
-       "modes": ["hanzi_to_meaning", "meaning_to_hanzi", "pinyin_to_hanzi"]
-      },
-      "audio_key": "",
-      "source_origin": "pdf_textbook_checked",
-      "check_needed": false,
-      "notes": []
+      }
      },
      {
-      "id": "vocab_l10_012",
+      "id": "d5b362a7-c8f6-4f25-b2b5-0f1749c8afbb",
       "type": "vocabulary_item",
       "order": 12,
       "hanzi": "方法",
@@ -983,6 +880,7 @@
       "meaning_vi": "phương pháp; cách",
       "meaning_en": "method",
       "pos": "Danh từ",
+      "tags": ["main_vocab", "lesson_10"],
       "pos_detail": {
        "vi": "Danh từ",
        "cn": "名词",
@@ -993,28 +891,18 @@
        "structure_vi": "",
        "usage_note_vi": "",
        "notes": []
-      },
-      "tags": ["main_vocab"],
-      "examples": [],
-      "flashcard": {
-       "front": "方法",
-       "back": "phương pháp; cách",
-       "modes": ["hanzi_to_meaning", "meaning_to_hanzi", "pinyin_to_hanzi"]
-      },
-      "audio_key": "",
-      "source_origin": "pdf_textbook_checked",
-      "check_needed": false,
-      "notes": []
+      }
      },
      {
-      "id": "vocab_l10_013",
+      "id": "7eccd5e8-dac0-4f36-be2e-abcc0a2bdfcd",
       "type": "vocabulary_item",
       "order": 13,
       "hanzi": "治",
       "pinyin": "zhì",
-      "meaning_vi": "chữa; trị; điều trị",
+      "meaning_vi": "trị; chữa",
       "meaning_en": "to treat; to cure",
       "pos": "Động từ",
+      "tags": ["main_vocab", "lesson_10"],
       "pos_detail": {
        "vi": "Động từ",
        "cn": "动词",
@@ -1025,28 +913,18 @@
        "structure_vi": "",
        "usage_note_vi": "",
        "notes": []
-      },
-      "tags": ["main_vocab"],
-      "examples": [],
-      "flashcard": {
-       "front": "治",
-       "back": "chữa; trị; điều trị",
-       "modes": ["hanzi_to_meaning", "meaning_to_hanzi", "pinyin_to_hanzi"]
-      },
-      "audio_key": "",
-      "source_origin": "pdf_textbook_checked",
-      "check_needed": false,
-      "notes": []
+      }
      },
      {
-      "id": "vocab_l10_014",
+      "id": "91fa9f81-e5ef-4c4a-b29c-c4b6daa02196",
       "type": "vocabulary_item",
       "order": 14,
       "hanzi": "针",
       "pinyin": "zhēn",
-      "meaning_vi": "kim; kim châm; mũi tiêm",
+      "meaning_vi": "kim; mũi kim",
       "meaning_en": "needle; needle-like thing",
       "pos": "Danh từ",
+      "tags": ["main_vocab", "lesson_10"],
       "pos_detail": {
        "vi": "Danh từ",
        "cn": "名词",
@@ -1057,28 +935,18 @@
        "structure_vi": "",
        "usage_note_vi": "",
        "notes": []
-      },
-      "tags": ["main_vocab"],
-      "examples": [],
-      "flashcard": {
-       "front": "针",
-       "back": "kim; kim châm; mũi tiêm",
-       "modes": ["hanzi_to_meaning", "meaning_to_hanzi", "pinyin_to_hanzi"]
-      },
-      "audio_key": "",
-      "source_origin": "pdf_textbook_checked",
-      "check_needed": false,
-      "notes": []
+      }
      },
      {
-      "id": "vocab_l10_015",
+      "id": "8a5b1d09-23a6-4182-96e6-9bf4d761a1e1",
       "type": "vocabulary_item",
       "order": 15,
       "hanzi": "扎针",
       "pinyin": "zhā zhēn",
-      "meaning_vi": "châm kim; châm cứu/chích kim",
+      "meaning_vi": "châm kim; châm cứu/tiêm theo ngữ cảnh",
       "meaning_en": "to give or have an acupuncture treatment",
       "pos": "Động từ li hợp",
+      "tags": ["main_vocab", "lesson_10"],
       "pos_detail": {
        "vi": "Động từ li hợp",
        "cn": "动宾式离合词",
@@ -1087,30 +955,20 @@
        "is_separable_verb": true,
        "separable_type": "động-tân / 离合词",
        "structure_vi": "động từ 扎 + tân ngữ 针",
-       "usage_note_vi": "Có thể nói 扎过针 / 扎了一次针; trong bài phân biệt 打针 và 扎针.",
+       "usage_note_vi": "Có thể nói 扎了一针 / 扎过针; trong bài phân biệt với 打针 “tiêm”.",
        "notes": []
-      },
-      "tags": ["main_vocab", "separable_verb"],
-      "examples": [],
-      "flashcard": {
-       "front": "扎针",
-       "back": "châm kim; châm cứu/chích kim",
-       "modes": ["hanzi_to_meaning", "meaning_to_hanzi", "pinyin_to_hanzi"]
-      },
-      "audio_key": "",
-      "source_origin": "pdf_textbook_checked",
-      "check_needed": false,
-      "notes": []
+      }
      },
      {
-      "id": "vocab_l10_016",
+      "id": "be7a835d-ff8f-4a86-9fd8-27c5f1093f0c",
       "type": "vocabulary_item",
       "order": 16,
       "hanzi": "细",
       "pinyin": "xì",
-      "meaning_vi": "mảnh; nhỏ; mịn; chi tiết",
-      "meaning_en": "thin; fine",
+      "meaning_vi": "mảnh; nhỏ; tinh tế",
+      "meaning_en": "thin",
       "pos": "Tính từ",
+      "tags": ["main_vocab", "lesson_10"],
       "pos_detail": {
        "vi": "Tính từ",
        "cn": "形容词",
@@ -1121,21 +979,10 @@
        "structure_vi": "",
        "usage_note_vi": "",
        "notes": []
-      },
-      "tags": ["main_vocab"],
-      "examples": [],
-      "flashcard": {
-       "front": "细",
-       "back": "mảnh; nhỏ; mịn; chi tiết",
-       "modes": ["hanzi_to_meaning", "meaning_to_hanzi", "pinyin_to_hanzi"]
-      },
-      "audio_key": "",
-      "source_origin": "pdf_textbook_checked",
-      "check_needed": false,
-      "notes": []
+      }
      },
      {
-      "id": "vocab_l10_017",
+      "id": "7a89dc80-d79d-4c2f-988c-d0f54e240d19",
       "type": "vocabulary_item",
       "order": 17,
       "hanzi": "曾经",
@@ -1143,6 +990,7 @@
       "meaning_vi": "đã từng",
       "meaning_en": "once; used to",
       "pos": "Phó từ",
+      "tags": ["main_vocab", "grammar", "lesson_10"],
       "pos_detail": {
        "vi": "Phó từ",
        "cn": "副词",
@@ -1153,60 +1001,40 @@
        "structure_vi": "",
        "usage_note_vi": "",
        "notes": []
-      },
-      "tags": ["main_vocab"],
-      "examples": [],
-      "flashcard": {
-       "front": "曾经",
-       "back": "đã từng",
-       "modes": ["hanzi_to_meaning", "meaning_to_hanzi", "pinyin_to_hanzi"]
-      },
-      "audio_key": "",
-      "source_origin": "pdf_textbook_checked",
-      "check_needed": false,
-      "notes": []
+      }
      },
      {
-      "id": "vocab_l10_018",
+      "id": "ff3e1818-66a9-4532-880b-02c9cacb0e5b",
       "type": "vocabulary_item",
       "order": 18,
       "hanzi": "第",
       "pinyin": "dì",
-      "meaning_vi": "tiền tố chỉ số thứ tự: thứ...",
+      "meaning_vi": "thứ; tiền tố tạo số thứ tự",
       "meaning_en": "prefix indicating ordinal numbers",
       "pos": "Tiền tố / yếu tố cấu tạo số thứ tự",
+      "tags": ["main_vocab", "grammar", "lesson_10"],
       "pos_detail": {
        "vi": "Tiền tố / yếu tố cấu tạo số thứ tự",
-       "cn": "前缀 / 语素",
+       "cn": "前缀/构词语素",
        "normalized": "morpheme",
-       "schema_compatible_pos": "morpheme",
+       "schema_compatible_pos": "phrase",
        "is_separable_verb": false,
        "separable_type": "",
        "structure_vi": "",
        "usage_note_vi": "",
        "notes": []
-      },
-      "tags": ["main_vocab", "grammar"],
-      "examples": [],
-      "flashcard": {
-       "front": "第",
-       "back": "tiền tố chỉ số thứ tự: thứ...",
-       "modes": ["hanzi_to_meaning", "meaning_to_hanzi", "pinyin_to_hanzi"]
-      },
-      "audio_key": "",
-      "source_origin": "pdf_textbook_checked",
-      "check_needed": false,
-      "notes": []
+      }
      },
      {
-      "id": "vocab_l10_019",
+      "id": "0125bdae-fe4e-48fb-8264-145e95c75933",
       "type": "vocabulary_item",
       "order": 19,
       "hanzi": "中餐",
       "pinyin": "zhōngcān",
-      "meaning_vi": "món Trung Quốc; bữa ăn Trung Quốc",
+      "meaning_vi": "món Trung Quốc; bữa ăn kiểu Trung Quốc",
       "meaning_en": "Chinese food",
       "pos": "Danh từ",
+      "tags": ["main_vocab", "lesson_10"],
       "pos_detail": {
        "vi": "Danh từ",
        "cn": "名词",
@@ -1217,21 +1045,10 @@
        "structure_vi": "",
        "usage_note_vi": "",
        "notes": []
-      },
-      "tags": ["main_vocab"],
-      "examples": [],
-      "flashcard": {
-       "front": "中餐",
-       "back": "món Trung Quốc; bữa ăn Trung Quốc",
-       "modes": ["hanzi_to_meaning", "meaning_to_hanzi", "pinyin_to_hanzi"]
-      },
-      "audio_key": "",
-      "source_origin": "pdf_textbook_checked",
-      "check_needed": false,
-      "notes": []
+      }
      },
      {
-      "id": "vocab_l10_020",
+      "id": "689eb64b-5d4f-469f-9afa-74017d399614",
       "type": "vocabulary_item",
       "order": 20,
       "hanzi": "烤鸭",
@@ -1239,6 +1056,7 @@
       "meaning_vi": "vịt quay",
       "meaning_en": "roast duck",
       "pos": "Danh từ",
+      "tags": ["main_vocab", "lesson_10"],
       "pos_detail": {
        "vi": "Danh từ",
        "cn": "名词",
@@ -1249,18 +1067,7 @@
        "structure_vi": "",
        "usage_note_vi": "",
        "notes": []
-      },
-      "tags": ["main_vocab"],
-      "examples": [],
-      "flashcard": {
-       "front": "烤鸭",
-       "back": "vịt quay",
-       "modes": ["hanzi_to_meaning", "meaning_to_hanzi", "pinyin_to_hanzi"]
-      },
-      "audio_key": "",
-      "source_origin": "pdf_textbook_checked",
-      "check_needed": false,
-      "notes": []
+      }
      },
      {
       "id": "vocab_l10_021",
@@ -1282,20 +1089,10 @@
        "usage_note_vi": "",
        "notes": []
       },
-      "tags": ["main_vocab", "subentry_from_pdf"],
-      "examples": [],
-      "flashcard": {
-       "front": "烤",
-       "back": "nướng; quay",
-       "modes": ["hanzi_to_meaning", "meaning_to_hanzi", "pinyin_to_hanzi"]
-      },
-      "audio_key": "",
-      "source_origin": "pdf_textbook_checked",
-      "check_needed": false,
-      "notes": []
+      "tags": ["main_vocab", "lesson_10"]
      },
      {
-      "id": "vocab_l10_022",
+      "id": "79358c6f-3427-4c28-98f3-7ef98c7033c3",
       "type": "vocabulary_item",
       "order": 22,
       "hanzi": "白薯",
@@ -1303,6 +1100,7 @@
       "meaning_vi": "khoai lang",
       "meaning_en": "sweet potato",
       "pos": "Danh từ",
+      "tags": ["main_vocab", "lesson_10"],
       "pos_detail": {
        "vi": "Danh từ",
        "cn": "名词",
@@ -1313,21 +1111,10 @@
        "structure_vi": "",
        "usage_note_vi": "",
        "notes": []
-      },
-      "tags": ["main_vocab"],
-      "examples": [],
-      "flashcard": {
-       "front": "白薯",
-       "back": "khoai lang",
-       "modes": ["hanzi_to_meaning", "meaning_to_hanzi", "pinyin_to_hanzi"]
-      },
-      "audio_key": "",
-      "source_origin": "pdf_textbook_checked",
-      "check_needed": false,
-      "notes": []
+      }
      },
      {
-      "id": "vocab_l10_023",
+      "id": "dc0f8e06-a359-4907-a8d8-fc9b02260590",
       "type": "vocabulary_item",
       "order": 23,
       "hanzi": "糖葫芦",
@@ -1335,6 +1122,7 @@
       "meaning_vi": "kẹo hồ lô",
       "meaning_en": "sugarcoated haws on a stick",
       "pos": "Danh từ",
+      "tags": ["main_vocab", "lesson_10"],
       "pos_detail": {
        "vi": "Danh từ",
        "cn": "名词",
@@ -1345,21 +1133,10 @@
        "structure_vi": "",
        "usage_note_vi": "",
        "notes": []
-      },
-      "tags": ["main_vocab"],
-      "examples": [],
-      "flashcard": {
-       "front": "糖葫芦",
-       "back": "kẹo hồ lô",
-       "modes": ["hanzi_to_meaning", "meaning_to_hanzi", "pinyin_to_hanzi"]
-      },
-      "audio_key": "",
-      "source_origin": "pdf_textbook_checked",
-      "check_needed": false,
-      "notes": []
+      }
      },
      {
-      "id": "vocab_l10_024",
+      "id": "54613016-834a-4fc3-9912-2357a6d27058",
       "type": "vocabulary_item",
       "order": 24,
       "hanzi": "糖",
@@ -1367,6 +1144,7 @@
       "meaning_vi": "đường; kẹo",
       "meaning_en": "sugar",
       "pos": "Danh từ",
+      "tags": ["main_vocab", "lesson_10"],
       "pos_detail": {
        "vi": "Danh từ",
        "cn": "名词",
@@ -1377,31 +1155,21 @@
        "structure_vi": "",
        "usage_note_vi": "",
        "notes": []
-      },
-      "tags": ["main_vocab", "subentry_from_pdf"],
-      "examples": [],
-      "flashcard": {
-       "front": "糖",
-       "back": "đường; kẹo",
-       "modes": ["hanzi_to_meaning", "meaning_to_hanzi", "pinyin_to_hanzi"]
-      },
-      "audio_key": "",
-      "source_origin": "pdf_textbook_checked",
-      "check_needed": false,
-      "notes": []
+      }
      },
      {
-      "id": "vocab_l10_025",
+      "id": "c43cedbf-7024-4ec1-922f-e75119114baf",
       "type": "vocabulary_item",
       "order": 25,
       "hanzi": "什么的",
-      "pinyin": "shénme de",
+      "pinyin": "shénmede",
       "meaning_vi": "vân vân; những thứ kiểu như vậy",
       "meaning_en": "and so on",
       "pos": "Cụm chức năng ngữ pháp",
+      "tags": ["main_vocab", "lesson_10"],
       "pos_detail": {
        "vi": "Cụm chức năng ngữ pháp",
-       "cn": "语法短语",
+       "cn": "功能短语",
        "normalized": "phrase",
        "schema_compatible_pos": "phrase",
        "is_separable_verb": false,
@@ -1409,21 +1177,10 @@
        "structure_vi": "",
        "usage_note_vi": "",
        "notes": []
-      },
-      "tags": ["main_vocab", "spoken"],
-      "examples": [],
-      "flashcard": {
-       "front": "什么的",
-       "back": "vân vân; những thứ kiểu như vậy",
-       "modes": ["hanzi_to_meaning", "meaning_to_hanzi", "pinyin_to_hanzi"]
-      },
-      "audio_key": "",
-      "source_origin": "pdf_textbook_checked",
-      "check_needed": false,
-      "notes": []
+      }
      },
      {
-      "id": "vocab_l10_026",
+      "id": "d9991c79-3454-4247-bf18-f14f43b4a24a",
       "type": "vocabulary_item",
       "order": 26,
       "hanzi": "亲耳",
@@ -1431,6 +1188,7 @@
       "meaning_vi": "tận tai",
       "meaning_en": "with one’s own ears",
       "pos": "Phó từ",
+      "tags": ["main_vocab", "lesson_10"],
       "pos_detail": {
        "vi": "Phó từ",
        "cn": "副词",
@@ -1441,21 +1199,10 @@
        "structure_vi": "",
        "usage_note_vi": "",
        "notes": []
-      },
-      "tags": ["main_vocab"],
-      "examples": [],
-      "flashcard": {
-       "front": "亲耳",
-       "back": "tận tai",
-       "modes": ["hanzi_to_meaning", "meaning_to_hanzi", "pinyin_to_hanzi"]
-      },
-      "audio_key": "",
-      "source_origin": "pdf_textbook_checked",
-      "check_needed": false,
-      "notes": []
+      }
      },
      {
-      "id": "vocab_l10_027",
+      "id": "55cd807c-eec7-412d-99db-f4e6508b170f",
       "type": "vocabulary_item",
       "order": 27,
       "hanzi": "钢琴",
@@ -1463,6 +1210,7 @@
       "meaning_vi": "đàn piano",
       "meaning_en": "piano",
       "pos": "Danh từ",
+      "tags": ["main_vocab", "lesson_10"],
       "pos_detail": {
        "vi": "Danh từ",
        "cn": "名词",
@@ -1473,60 +1221,40 @@
        "structure_vi": "",
        "usage_note_vi": "",
        "notes": []
-      },
-      "tags": ["main_vocab"],
-      "examples": [],
-      "flashcard": {
-       "front": "钢琴",
-       "back": "đàn piano",
-       "modes": ["hanzi_to_meaning", "meaning_to_hanzi", "pinyin_to_hanzi"]
-      },
-      "audio_key": "",
-      "source_origin": "pdf_textbook_checked",
-      "check_needed": false,
-      "notes": []
+      }
      },
      {
-      "id": "vocab_l10_028",
+      "id": "085e60d5-dd1c-4585-ac6b-0f1db0ded936",
       "type": "vocabulary_item",
       "order": 28,
       "hanzi": "家",
       "pinyin": "jiā",
-      "meaning_vi": "chuyên gia/người làm nghề trong hậu tố; nhà; gia đình",
-      "meaning_en": "specialist in a certain field; home; family",
+      "meaning_vi": "nhà; chuyên gia/người chuyên về một lĩnh vực",
+      "meaning_en": "specialist in a certain field",
       "pos": "Hậu tố / yếu tố cấu tạo từ",
+      "tags": ["main_vocab", "lesson_10"],
       "pos_detail": {
        "vi": "Hậu tố / yếu tố cấu tạo từ",
-       "cn": "后缀 / 语素",
+       "cn": "后缀/构词语素",
        "normalized": "morpheme",
-       "schema_compatible_pos": "morpheme",
+       "schema_compatible_pos": "phrase",
        "is_separable_verb": false,
        "separable_type": "",
        "structure_vi": "",
        "usage_note_vi": "",
        "notes": []
-      },
-      "tags": ["main_vocab"],
-      "examples": [],
-      "flashcard": {
-       "front": "家",
-       "back": "chuyên gia/người làm nghề trong hậu tố; nhà; gia đình",
-       "modes": ["hanzi_to_meaning", "meaning_to_hanzi", "pinyin_to_hanzi"]
-      },
-      "audio_key": "",
-      "source_origin": "pdf_textbook_checked",
-      "check_needed": false,
-      "notes": []
+      }
      },
      {
-      "id": "vocab_l10_029",
+      "id": "ba7ff0f9-b633-4516-ab3d-22b96046a1cf",
       "type": "vocabulary_item",
       "order": 29,
       "hanzi": "演奏",
       "pinyin": "yǎnzòu",
-      "meaning_vi": "biểu diễn nhạc; trình tấu",
+      "meaning_vi": "biểu diễn, trình diễn nhạc cụ",
       "meaning_en": "to play a musical instrument",
       "pos": "Động từ",
+      "tags": ["main_vocab", "lesson_10"],
       "pos_detail": {
        "vi": "Động từ",
        "cn": "动词",
@@ -1537,31 +1265,21 @@
        "structure_vi": "",
        "usage_note_vi": "",
        "notes": []
-      },
-      "tags": ["main_vocab"],
-      "examples": [],
-      "flashcard": {
-       "front": "演奏",
-       "back": "biểu diễn nhạc; trình tấu",
-       "modes": ["hanzi_to_meaning", "meaning_to_hanzi", "pinyin_to_hanzi"]
-      },
-      "audio_key": "",
-      "source_origin": "pdf_textbook_checked",
-      "check_needed": false,
-      "notes": []
+      }
      },
      {
-      "id": "vocab_l10_030",
+      "id": "2185ee67-885d-4ffb-83e2-e97be4070796",
       "type": "vocabulary_item",
       "order": 30,
       "hanzi": "极了",
       "pinyin": "jíle",
-      "meaning_vi": "cực kỳ; hết mức",
+      "meaning_vi": "cực kỳ; vô cùng",
       "meaning_en": "extremely; to the greatest extent",
       "pos": "Cụm chức năng ngữ pháp",
+      "tags": ["main_vocab", "lesson_10"],
       "pos_detail": {
        "vi": "Cụm chức năng ngữ pháp",
-       "cn": "语法短语",
+       "cn": "功能短语",
        "normalized": "phrase",
        "schema_compatible_pos": "phrase",
        "is_separable_verb": false,
@@ -1569,28 +1287,18 @@
        "structure_vi": "",
        "usage_note_vi": "",
        "notes": []
-      },
-      "tags": ["main_vocab", "grammar"],
-      "examples": [],
-      "flashcard": {
-       "front": "极了",
-       "back": "cực kỳ; hết mức",
-       "modes": ["hanzi_to_meaning", "meaning_to_hanzi", "pinyin_to_hanzi"]
-      },
-      "audio_key": "",
-      "source_origin": "pdf_textbook_checked",
-      "check_needed": false,
-      "notes": []
+      }
      },
      {
-      "id": "vocab_l10_031",
+      "id": "092a8c16-3739-4685-a4c0-39365071bd48",
       "type": "vocabulary_item",
       "order": 31,
       "hanzi": "小提琴",
       "pinyin": "xiǎotíqín",
-      "meaning_vi": "đàn violin; vĩ cầm",
+      "meaning_vi": "đàn violin",
       "meaning_en": "violin",
       "pos": "Danh từ",
+      "tags": ["main_vocab", "lesson_10"],
       "pos_detail": {
        "vi": "Danh từ",
        "cn": "名词",
@@ -1601,28 +1309,18 @@
        "structure_vi": "",
        "usage_note_vi": "",
        "notes": []
-      },
-      "tags": ["main_vocab"],
-      "examples": [],
-      "flashcard": {
-       "front": "小提琴",
-       "back": "đàn violin; vĩ cầm",
-       "modes": ["hanzi_to_meaning", "meaning_to_hanzi", "pinyin_to_hanzi"]
-      },
-      "audio_key": "",
-      "source_origin": "pdf_textbook_checked",
-      "check_needed": false,
-      "notes": []
+      }
      },
      {
-      "id": "vocab_l10_032",
+      "id": "22e66ee9-565e-4670-b2ac-4d5a9b500b38",
       "type": "vocabulary_item",
       "order": 32,
       "hanzi": "协奏曲",
       "pinyin": "xiézòuqǔ",
-      "meaning_vi": "concerto; hiệp tấu khúc",
+      "meaning_vi": "bản concerto; hiệp tấu khúc",
       "meaning_en": "concerto",
       "pos": "Danh từ",
+      "tags": ["main_vocab", "lesson_10"],
       "pos_detail": {
        "vi": "Danh từ",
        "cn": "名词",
@@ -1633,28 +1331,18 @@
        "structure_vi": "",
        "usage_note_vi": "",
        "notes": []
-      },
-      "tags": ["main_vocab"],
-      "examples": [],
-      "flashcard": {
-       "front": "协奏曲",
-       "back": "concerto; hiệp tấu khúc",
-       "modes": ["hanzi_to_meaning", "meaning_to_hanzi", "pinyin_to_hanzi"]
-      },
-      "audio_key": "",
-      "source_origin": "pdf_textbook_checked",
-      "check_needed": false,
-      "notes": []
+      }
      },
      {
-      "id": "vocab_l10_033",
+      "id": "275b46f4-3166-48b7-9766-58384178d1be",
       "type": "vocabulary_item",
       "order": 33,
       "hanzi": "曲",
       "pinyin": "qǔ",
-      "meaning_vi": "khúc nhạc; bản nhạc; giai điệu",
+      "meaning_vi": "khúc nhạc; bản nhạc",
       "meaning_en": "song; melody; tune",
       "pos": "Danh từ",
+      "tags": ["main_vocab", "lesson_10"],
       "pos_detail": {
        "vi": "Danh từ",
        "cn": "名词",
@@ -1665,21 +1353,10 @@
        "structure_vi": "",
        "usage_note_vi": "",
        "notes": []
-      },
-      "tags": ["main_vocab", "subentry_from_pdf"],
-      "examples": [],
-      "flashcard": {
-       "front": "曲",
-       "back": "khúc nhạc; bản nhạc; giai điệu",
-       "modes": ["hanzi_to_meaning", "meaning_to_hanzi", "pinyin_to_hanzi"]
-      },
-      "audio_key": "",
-      "source_origin": "pdf_textbook_checked",
-      "check_needed": false,
-      "notes": []
+      }
      },
      {
-      "id": "vocab_l10_034",
+      "id": "1190511f-5970-4304-8f84-d7201b287aeb",
       "type": "vocabulary_item",
       "order": 34,
       "hanzi": "好听",
@@ -1687,6 +1364,7 @@
       "meaning_vi": "nghe hay; dễ nghe",
       "meaning_en": "pleasing to the ear; melodious",
       "pos": "Tính từ",
+      "tags": ["main_vocab", "lesson_10"],
       "pos_detail": {
        "vi": "Tính từ",
        "cn": "形容词",
@@ -1697,28 +1375,18 @@
        "structure_vi": "",
        "usage_note_vi": "",
        "notes": []
-      },
-      "tags": ["main_vocab"],
-      "examples": [],
-      "flashcard": {
-       "front": "好听",
-       "back": "nghe hay; dễ nghe",
-       "modes": ["hanzi_to_meaning", "meaning_to_hanzi", "pinyin_to_hanzi"]
-      },
-      "audio_key": "",
-      "source_origin": "pdf_textbook_checked",
-      "check_needed": false,
-      "notes": []
+      }
      },
      {
-      "id": "vocab_l10_035",
+      "id": "d42d3d90-443d-45da-bed7-987b50034e92",
       "type": "vocabulary_item",
       "order": 35,
       "hanzi": "还",
       "pinyin": "huán",
-      "meaning_vi": "trả lại; đưa lại",
+      "meaning_vi": "trả lại; hoàn lại",
       "meaning_en": "to return; to give back",
       "pos": "Động từ",
+      "tags": ["main_vocab", "lesson_10"],
       "pos_detail": {
        "vi": "Động từ",
        "cn": "动词",
@@ -1729,28 +1397,18 @@
        "structure_vi": "",
        "usage_note_vi": "",
        "notes": []
-      },
-      "tags": ["main_vocab"],
-      "examples": [],
-      "flashcard": {
-       "front": "还",
-       "back": "trả lại; đưa lại",
-       "modes": ["hanzi_to_meaning", "meaning_to_hanzi", "pinyin_to_hanzi"]
-      },
-      "audio_key": "",
-      "source_origin": "pdf_textbook_checked",
-      "check_needed": false,
-      "notes": []
+      }
      },
      {
-      "id": "vocab_l10_036",
+      "id": "cfb712c9-c4ca-4314-b6b2-696b40ace25e",
       "type": "vocabulary_item",
       "order": 36,
       "hanzi": "嘛",
       "pinyin": "ma",
-      "meaning_vi": "mà; trợ từ nêu lý do hiển nhiên",
-      "meaning_en": "modal particle indicating an obvious reason",
+      "meaning_vi": "trợ từ ngữ khí, nhấn nhẹ điều hiển nhiên/giải thích",
+      "meaning_en": "indicating that the reason is obvious",
       "pos": "Trợ từ ngữ khí",
+      "tags": ["main_vocab", "lesson_10"],
       "pos_detail": {
        "vi": "Trợ từ ngữ khí",
        "cn": "语气助词",
@@ -1761,24 +1419,13 @@
        "structure_vi": "",
        "usage_note_vi": "",
        "notes": []
-      },
-      "tags": ["main_vocab"],
-      "examples": [],
-      "flashcard": {
-       "front": "嘛",
-       "back": "mà; trợ từ nêu lý do hiển nhiên",
-       "modes": ["hanzi_to_meaning", "meaning_to_hanzi", "pinyin_to_hanzi"]
-      },
-      "audio_key": "",
-      "source_origin": "pdf_textbook_checked",
-      "check_needed": false,
-      "notes": []
+      }
      }
     ]
    },
    {
-    "id": "section_proper_names_l10",
-    "type": "proper_names",
+    "id": "3c5ee48e-5d44-44ac-bd53-cac996a83338",
+    "type": "proper_nouns",
     "order": 3,
     "title": "专名",
     "title_vi": "Tên riêng",
@@ -1786,17 +1433,17 @@
     "check_needed": false,
     "items": [
      {
-      "id": "proper_l10_001",
-      "type": "proper_noun_item",
+      "id": "070690f6-fd26-41df-ab28-f5031668ed3e",
+      "type": "proper_noun",
       "order": 1,
       "hanzi": "哈尔滨",
       "pinyin": "Hā’ěrbīn",
-      "meaning_vi": "Cáp Nhĩ Tân; Harbin",
+      "meaning_vi": "Cáp Nhĩ Tân / Harbin",
       "meaning_en": "Harbin, the capital of Heilongjiang Province",
-      "pos": "Tên riêng địa danh",
+      "pos": "Tên riêng",
       "pos_detail": {
-       "vi": "Tên riêng địa danh",
-       "cn": "地名 / 专名",
+       "vi": "Tên riêng",
+       "cn": "专名",
        "normalized": "proper_noun",
        "schema_compatible_pos": "proper_noun",
        "is_separable_verb": false,
@@ -1805,23 +1452,20 @@
        "usage_note_vi": "",
        "notes": []
       },
-      "tags": ["proper_noun"],
-      "source_origin": "pdf_textbook_checked",
-      "check_needed": false,
-      "notes": []
+      "tags": ["proper_noun", "lesson_10"]
      },
      {
-      "id": "proper_l10_002",
-      "type": "proper_noun_item",
+      "id": "d0cc2a3d-951d-4dc5-93e3-bc90ee212237",
+      "type": "proper_noun",
       "order": 2,
       "hanzi": "海南岛",
       "pinyin": "Hǎinán Dǎo",
       "meaning_vi": "đảo Hải Nam",
       "meaning_en": "Hainan Island",
-      "pos": "Tên riêng địa danh",
+      "pos": "Tên riêng",
       "pos_detail": {
-       "vi": "Tên riêng địa danh",
-       "cn": "地名 / 专名",
+       "vi": "Tên riêng",
+       "cn": "专名",
        "normalized": "proper_noun",
        "schema_compatible_pos": "proper_noun",
        "is_separable_verb": false,
@@ -1830,23 +1474,20 @@
        "usage_note_vi": "",
        "notes": []
       },
-      "tags": ["proper_noun"],
-      "source_origin": "pdf_textbook_checked",
-      "check_needed": false,
-      "notes": []
+      "tags": ["proper_noun", "lesson_10"]
      },
      {
-      "id": "proper_l10_003",
-      "type": "proper_noun_item",
+      "id": "785dd718-c838-45cf-87e7-b278bab8b7c0",
+      "type": "proper_noun",
       "order": 3,
       "hanzi": "泰山",
       "pinyin": "Tài Shān",
       "meaning_vi": "núi Thái Sơn",
       "meaning_en": "Mount Tai",
-      "pos": "Tên riêng địa danh",
+      "pos": "Tên riêng",
       "pos_detail": {
-       "vi": "Tên riêng địa danh",
-       "cn": "地名 / 专名",
+       "vi": "Tên riêng",
+       "cn": "专名",
        "normalized": "proper_noun",
        "schema_compatible_pos": "proper_noun",
        "is_separable_verb": false,
@@ -1855,23 +1496,20 @@
        "usage_note_vi": "",
        "notes": []
       },
-      "tags": ["proper_noun"],
-      "source_origin": "pdf_textbook_checked",
-      "check_needed": false,
-      "notes": []
+      "tags": ["proper_noun", "lesson_10"]
      },
      {
-      "id": "proper_l10_004",
-      "type": "proper_noun_item",
+      "id": "7f7913ed-3e88-470e-ac98-ecb06f3f6c05",
+      "type": "proper_noun",
       "order": 4,
       "hanzi": "西安",
       "pinyin": "Xī’ān",
-      "meaning_vi": "Tây An; Xi’an",
+      "meaning_vi": "Tây An",
       "meaning_en": "Xi’an, the capital of Shaanxi Province",
-      "pos": "Tên riêng địa danh",
+      "pos": "Tên riêng",
       "pos_detail": {
-       "vi": "Tên riêng địa danh",
-       "cn": "地名 / 专名",
+       "vi": "Tên riêng",
+       "cn": "专名",
        "normalized": "proper_noun",
        "schema_compatible_pos": "proper_noun",
        "is_separable_verb": false,
@@ -1880,23 +1518,20 @@
        "usage_note_vi": "",
        "notes": []
       },
-      "tags": ["proper_noun"],
-      "source_origin": "pdf_textbook_checked",
-      "check_needed": false,
-      "notes": []
+      "tags": ["proper_noun", "lesson_10"]
      },
      {
-      "id": "proper_l10_005",
-      "type": "proper_noun_item",
+      "id": "03d3483d-dfb7-4cd5-8ca7-caa3e54a6ee2",
+      "type": "proper_noun",
       "order": 5,
       "hanzi": "敦煌",
       "pinyin": "Dūnhuáng",
-      "meaning_vi": "Đôn Hoàng; Dunhuang",
+      "meaning_vi": "Đôn Hoàng",
       "meaning_en": "Dunhuang, a famous city along the Silk Road",
-      "pos": "Tên riêng địa danh",
+      "pos": "Tên riêng",
       "pos_detail": {
-       "vi": "Tên riêng địa danh",
-       "cn": "地名 / 专名",
+       "vi": "Tên riêng",
+       "cn": "专名",
        "normalized": "proper_noun",
        "schema_compatible_pos": "proper_noun",
        "is_separable_verb": false,
@@ -1905,23 +1540,20 @@
        "usage_note_vi": "",
        "notes": []
       },
-      "tags": ["proper_noun"],
-      "source_origin": "pdf_textbook_checked",
-      "check_needed": false,
-      "notes": []
+      "tags": ["proper_noun", "lesson_10"]
      },
      {
-      "id": "proper_l10_006",
-      "type": "proper_noun_item",
+      "id": "ea82d601-11f9-4cab-9f5d-b4a8dd9cebbc",
+      "type": "proper_noun",
       "order": 6,
       "hanzi": "颐和园",
       "pinyin": "Yíhé Yuán",
-      "meaning_vi": "Di Hòa Viên; Cung điện mùa hè",
+      "meaning_vi": "Di Hòa Viên / Cung điện mùa hè",
       "meaning_en": "Summer Palace",
-      "pos": "Tên riêng địa danh",
+      "pos": "Tên riêng",
       "pos_detail": {
-       "vi": "Tên riêng địa danh",
-       "cn": "地名 / 专名",
+       "vi": "Tên riêng",
+       "cn": "专名",
        "normalized": "proper_noun",
        "schema_compatible_pos": "proper_noun",
        "is_separable_verb": false,
@@ -1930,23 +1562,20 @@
        "usage_note_vi": "",
        "notes": []
       },
-      "tags": ["proper_noun"],
-      "source_origin": "pdf_textbook_checked",
-      "check_needed": false,
-      "notes": []
+      "tags": ["proper_noun", "lesson_10"]
      },
      {
-      "id": "proper_l10_007",
-      "type": "proper_noun_item",
+      "id": "c24bd242-3609-4657-b5f1-db9cd21472f6",
+      "type": "proper_noun",
       "order": 7,
       "hanzi": "故宫",
       "pinyin": "Gùgōng",
-      "meaning_vi": "Cố Cung; Tử Cấm Thành",
+      "meaning_vi": "Cố Cung",
       "meaning_en": "Imperial Palace",
-      "pos": "Tên riêng địa danh",
+      "pos": "Tên riêng",
       "pos_detail": {
-       "vi": "Tên riêng địa danh",
-       "cn": "地名 / 专名",
+       "vi": "Tên riêng",
+       "cn": "专名",
        "normalized": "proper_noun",
        "schema_compatible_pos": "proper_noun",
        "is_separable_verb": false,
@@ -1955,23 +1584,20 @@
        "usage_note_vi": "",
        "notes": []
       },
-      "tags": ["proper_noun"],
-      "source_origin": "pdf_textbook_checked",
-      "check_needed": false,
-      "notes": []
+      "tags": ["proper_noun", "lesson_10"]
      },
      {
-      "id": "proper_l10_008",
-      "type": "proper_noun_item",
+      "id": "a4a354d8-d066-415f-a5cd-e59f03580c28",
+      "type": "proper_noun",
       "order": 8,
       "hanzi": "长城",
       "pinyin": "Chángchéng",
-      "meaning_vi": "Vạn Lý Trường Thành",
+      "meaning_vi": "Trường Thành / Vạn Lý Trường Thành",
       "meaning_en": "Great Wall",
-      "pos": "Tên riêng địa danh",
+      "pos": "Tên riêng",
       "pos_detail": {
-       "vi": "Tên riêng địa danh",
-       "cn": "地名 / 专名",
+       "vi": "Tên riêng",
+       "cn": "专名",
        "normalized": "proper_noun",
        "schema_compatible_pos": "proper_noun",
        "is_separable_verb": false,
@@ -1980,23 +1606,20 @@
        "usage_note_vi": "",
        "notes": []
       },
-      "tags": ["proper_noun"],
-      "source_origin": "pdf_textbook_checked",
-      "check_needed": false,
-      "notes": []
+      "tags": ["proper_noun", "lesson_10"]
      },
      {
-      "id": "proper_l10_009",
-      "type": "proper_noun_item",
+      "id": "5f5fdc9c-74dd-458b-b5a7-8e999a418667",
+      "type": "proper_noun",
       "order": 9,
       "hanzi": "《黄河》",
-      "pinyin": "Huáng Hé",
-      "meaning_vi": "tác phẩm “Hoàng Hà”; bản concerto piano “Yellow River”",
+      "pinyin": "《Huáng Hé》",
+      "meaning_vi": "《Hoàng Hà》, bản concerto piano",
       "meaning_en": "The piano concerto Yellow River",
-      "pos": "Tên riêng tác phẩm",
+      "pos": "Tên riêng",
       "pos_detail": {
-       "vi": "Tên riêng tác phẩm",
-       "cn": "作品名 / 专名",
+       "vi": "Tên riêng",
+       "cn": "专名",
        "normalized": "proper_noun",
        "schema_compatible_pos": "proper_noun",
        "is_separable_verb": false,
@@ -2005,23 +1628,20 @@
        "usage_note_vi": "",
        "notes": []
       },
-      "tags": ["proper_noun"],
-      "source_origin": "pdf_textbook_checked",
-      "check_needed": false,
-      "notes": []
+      "tags": ["proper_noun", "lesson_10"]
      },
      {
-      "id": "proper_l10_010",
-      "type": "proper_noun_item",
+      "id": "4912acc3-45af-4e8f-8291-9049240abccd",
+      "type": "proper_noun",
       "order": 10,
       "hanzi": "《梁祝》",
-      "pinyin": "Liáng-Zhù",
-      "meaning_vi": "tác phẩm “Lương Chúc”; concerto violin “Butterfly Lovers”",
+      "pinyin": "《Liáng-Zhù》",
+      "meaning_vi": "《Lương Chúc》, bản concerto violin",
       "meaning_en": "The violin concerto Butterfly Lovers",
-      "pos": "Tên riêng tác phẩm",
+      "pos": "Tên riêng",
       "pos_detail": {
-       "vi": "Tên riêng tác phẩm",
-       "cn": "作品名 / 专名",
+       "vi": "Tên riêng",
+       "cn": "专名",
        "normalized": "proper_noun",
        "schema_compatible_pos": "proper_noun",
        "is_separable_verb": false,
@@ -2030,15 +1650,12 @@
        "usage_note_vi": "",
        "notes": []
       },
-      "tags": ["proper_noun"],
-      "source_origin": "pdf_textbook_checked",
-      "check_needed": false,
-      "notes": []
+      "tags": ["proper_noun", "lesson_10"]
      }
     ]
    },
    {
-    "id": "section_notes_l10",
+    "id": "c18e9f54-6da1-4496-886b-c2c722605678",
     "type": "notes",
     "order": 4,
     "title": "注释",
@@ -2047,29 +1664,30 @@
     "check_needed": false,
     "items": [
      {
-      "id": "note_l10_001",
+      "id": "63d654f5-4561-4d48-a144-bacbf9671dfc",
       "type": "note",
       "order": 1,
       "title": "我一次病也没有得过。",
-      "structure": "一次 + 也/都 + 没有 + V过",
-      "meaning_vi": "Dùng “一次也/都没有……” để nhấn mạnh phủ định hoàn toàn: chưa từng dù chỉ một lần.",
+      "structure": "一 + lượng từ + danh từ + 也/都 + 没有 + V过",
+      "meaning_vi": "Phủ định hoàn toàn kinh nghiệm: ngay cả một lần cũng chưa từng.",
       "examples": [
        {
-        "id": "note_l10_001_ex1",
+        "id": "021014f3-ff12-43b6-9d12-352cb6dc863b",
         "zh": "我一次病也没有得过。",
-        "pinyin": "Wǒ yí cì bìng yě méiyǒu dé guo.",
         "vi": "Tôi chưa từng bị bệnh lần nào.",
-        "highlight": ["一次", "也", "没有", "得过"],
-        "grammar_refs": ["grammar_l10_guo", "grammar_l10_verbal_measure"],
-        "vocab_refs": ["vocab_l10_001"]
+        "grammar_refs": [
+         "f8ec59f3-898a-47b2-b536-44dfd8183393",
+         "57b14753-688a-41b6-9e0d-b61dbbf574d7"
+        ],
+        "check_needed": false
        }
       ],
-      "source_refs": ["text_l10_line_003"],
-      "check_needed": false,
-      "notes": []
+      "source_refs": ["9faf6980-effe-42f1-a01e-7f1740da2edb"],
+      "source_origin": "textbook/generated_mixed",
+      "check_needed": false
      },
      {
-      "id": "note_l10_002",
+      "id": "7e2ee128-4fbd-4a93-898c-5f5fd99b371b",
       "type": "note",
       "order": 2,
       "title": "好借好还，再借不难嘛。",
@@ -2077,23 +1695,89 @@
       "meaning_vi": "Mượn tử tế, trả tử tế thì lần sau mượn lại không khó; nhấn mạnh chữ tín.",
       "examples": [
        {
-        "id": "note_l10_002_ex1",
+        "id": "29279e2c-cb63-4437-bbc5-7c46c15b6f13",
         "zh": "好借好还，再借不难嘛。",
+        "vi": "Mượn đàng hoàng, trả đàng hoàng, lần sau mượn nữa cũng không khó mà.",
         "pinyin": "Hǎo jiè hǎo huán, zài jiè bù nán ma.",
-        "vi": "Mượn đàng hoàng, trả đàng hoàng thì lần sau mượn lại không khó mà.",
-        "highlight": ["借", "还", "嘛"],
-        "grammar_refs": [],
-        "vocab_refs": ["vocab_l10_035", "vocab_l10_036"]
+        "check_needed": false
        }
       ],
-      "source_refs": ["text_l10_line_044"],
-      "check_needed": false,
-      "notes": []
+      "source_refs": ["243a777f-ebe2-49de-a609-6ae1e07a2150"],
+      "source_origin": "textbook/generated_mixed",
+      "check_needed": false
+     },
+     {
+      "id": "bf5e90df-dc03-4600-a2d2-426ab562c9a5",
+      "type": "note",
+      "order": 3,
+      "title": "《黄河》",
+      "structure": "钢琴协奏曲《黄河》",
+      "meaning_vi": "Tên tác phẩm âm nhạc được dùng trong bài để luyện cấu trúc 听过.",
+      "examples": [
+       {
+        "id": "3bb13249-7132-47f4-b974-8144c96f3e29",
+        "zh": "我听过钢琴协奏曲《黄河》。",
+        "vi": "Tôi từng nghe bản concerto piano 《Hoàng Hà》.",
+        "grammar_refs": ["f8ec59f3-898a-47b2-b536-44dfd8183393"],
+        "check_needed": false
+       }
+      ],
+      "source_refs": ["077fca74-cf50-4164-80a0-217b40399296"],
+      "source_origin": "textbook/generated_mixed",
+      "check_needed": false
+     },
+     {
+      "id": "d85c63bd-7607-4517-874a-7a596fc80b7d",
+      "type": "note",
+      "order": 4,
+      "title": "……极了",
+      "structure": "Tính từ / cụm tính từ + 极了",
+      "meaning_vi": "Cực kỳ, vô cùng; dùng để cảm thán mức độ cao.",
+      "examples": [
+       {
+        "id": "2ac6cf45-ba53-4dbc-887c-e57f4e3d233c",
+        "zh": "好极了！",
+        "vi": "Hay / tốt cực kỳ.",
+        "check_needed": false
+       },
+       {
+        "id": "b7746755-213a-45a6-bdca-38d97f9735e2",
+        "zh": "这首曲子好听极了。",
+        "vi": "Bản nhạc này hay cực kỳ.",
+        "check_needed": false
+       }
+      ],
+      "source_refs": ["8fb969b7-ea3c-4f62-a650-16652a998ba7"],
+      "source_origin": "textbook/generated_mixed",
+      "check_needed": false
+     },
+     {
+      "id": "7bb9601d-22c6-4b07-bc26-8b7269802a02",
+      "type": "note",
+      "order": 5,
+      "title": "《梁祝》",
+      "structure": "小提琴协奏曲《梁祝》",
+      "meaning_vi": "Tên tác phẩm âm nhạc; trong bài dùng để phân biệt 听说过 và 听过.",
+      "examples": [
+       {
+        "id": "49ae3435-56e4-4efe-bf35-b5456170f88d",
+        "zh": "听说过，但是没听过。",
+        "vi": "Từng nghe nói đến, nhưng chưa từng nghe.",
+        "grammar_refs": ["f8ec59f3-898a-47b2-b536-44dfd8183393"],
+        "check_needed": false
+       }
+      ],
+      "source_refs": [
+       "1143881f-b56a-4893-900c-f7d92482e9a7",
+       "6e898255-5e01-4f04-b692-db1a83acfb9e"
+      ],
+      "source_origin": "textbook/generated_mixed",
+      "check_needed": false
      }
     ]
    },
    {
-    "id": "section_grammar_l10",
+    "id": "b045e537-7383-494b-8d61-b0286977ed80",
     "type": "grammar",
     "order": 5,
     "title": "语法 / 词语用法",
@@ -2102,686 +1786,1059 @@
     "check_needed": false,
     "items": [
      {
-      "id": "grammar_l10_guo",
+      "id": "f8ec59f3-898a-47b2-b536-44dfd8183393",
       "type": "grammar_point",
       "order": 1,
       "title": "过",
-      "title_vi": "Trợ từ kinh nghiệm “từng”",
-      "level": "HSK3-ish",
-      "tags": ["experience"],
+      "title_vi": "Trợ từ động thái 过: đã từng",
+      "level": "HSK3",
+      "tags": ["语法", "experience"],
+      "source_origin": "textbook/generated_mixed",
+      "check_needed": false,
       "blocks": [
        {
-        "id": "grammar_l10_guo_block1",
-        "type": "grammar_structure",
+        "id": "b7c5d870-2db8-4e2e-950f-f0e6e522ac16",
+        "type": "grammar_overview",
         "order": 1,
-        "title": "V + 过",
-        "pattern": "S + V + 过 + O",
-        "meaning_vi": "Biểu thị đã từng có kinh nghiệm làm việc gì trong quá khứ. Phủ định dùng 没/没有 + V + 过.",
+        "title": "Bản chất",
+        "content_vi": "过 đứng sau động từ để nói một hành động đã từng xảy ra trong kinh nghiệm quá khứ. Trọng tâm là có từng trải nghiệm hay chưa, không phải thời điểm xảy ra.",
         "examples": [
          {
-          "id": "grammar_l10_guo_ex1",
-          "zh": "你来过中国吗？",
-          "pinyin": "Nǐ lái guo Zhōngguó ma?",
-          "vi": "Bạn từng đến Trung Quốc chưa?",
-          "highlight": ["来过"],
-          "grammar_refs": ["grammar_l10_guo"],
-          "vocab_refs": ["vocab_l10_001"]
+          "id": "c6fbeb40-156e-450c-a390-d58626cae49e",
+          "zh": "我听过钢琴协奏曲《黄河》。",
+          "vi": "Tôi đã từng nghe bản concerto piano 《Hoàng Hà》.",
+          "source_ref": "077fca74-cf50-4164-80a0-217b40399296",
+          "pinyin": "Wǒ tīng guo gāngqín xiézòuqǔ 《Huáng Hé》.",
+          "check_needed": false
          }
         ],
-        "notes_vi": ["过 trong mẫu này thường đọc nhẹ là guo."]
+        "check_needed": false
+       },
+       {
+        "id": "b3534a40-3bab-464a-97dd-67889b8bcb7b",
+        "type": "grammar_structure",
+        "order": 2,
+        "title": "Cấu trúc chính",
+        "pattern": "S + V + 过 + O",
+        "meaning_vi": "Đã từng làm gì.",
+        "examples": [
+         {
+          "id": "d5b13929-16ec-4967-ac8a-868d80ec0b1e",
+          "zh": "我吃过中药。",
+          "vi": "Tôi đã từng uống thuốc Đông y.",
+          "pinyin": "Wǒ chī guo zhōngyào.",
+          "check_needed": false
+         },
+         {
+          "id": "50b5e564-92c8-4900-b66a-00f5bfca9437",
+          "zh": "我看过京剧。",
+          "vi": "Tôi đã từng xem Kinh kịch.",
+          "pinyin": "Wǒ kàn guo jīngjù.",
+          "check_needed": false
+         }
+        ],
+        "check_needed": false
+       },
+       {
+        "id": "d20f2f52-d6ab-478a-b684-6adcb0004a12",
+        "type": "grammar_structure",
+        "order": 3,
+        "title": "Dạng phủ định",
+        "pattern": "S + 没/没有 + V + 过 + O",
+        "meaning_vi": "Chưa từng làm gì. Không dùng 不 V过.",
+        "examples": [
+         {
+          "id": "32ce3ad6-8de3-45db-b360-0c00996f1eef",
+          "zh": "我没去过上海。",
+          "vi": "Tôi chưa từng đi Thượng Hải.",
+          "pinyin": "Wǒ méi qù guo Shànghǎi.",
+          "check_needed": false
+         },
+         {
+          "id": "65da2f6a-6a1a-4d3d-8cf6-cc56c3fb01a8",
+          "zh": "我没针灸过。",
+          "vi": "Tôi chưa từng châm cứu.",
+          "pinyin": "Wǒ méi zhēnjiǔ guo.",
+          "check_needed": false
+         }
+        ],
+        "check_needed": false
+       },
+       {
+        "id": "0ea62f46-0157-49d6-aadc-75dbed1d507b",
+        "type": "grammar_structure",
+        "order": 4,
+        "title": "Dạng nghi vấn",
+        "pattern": "S + V + 过 + O + 吗？ / S + V + 过 + O + 没有？",
+        "meaning_vi": "Hỏi ai đó đã từng làm gì chưa.",
+        "examples": [
+         {
+          "id": "aee201a5-655e-471c-b56c-819ca00b8eeb",
+          "zh": "你以前来过中国吗？",
+          "vi": "Trước đây bạn đã từng đến Trung Quốc chưa?",
+          "source_ref": "887014e5-f6b0-4777-9f95-85a69532ca36",
+          "pinyin": "Nǐ yǐqián lái guo Zhōngguó ma?",
+          "check_needed": false
+         },
+         {
+          "id": "82c84378-8c03-4e23-be01-d27117bb65ef",
+          "zh": "你看过京剧吗？",
+          "vi": "Bạn đã từng xem Kinh kịch chưa?",
+          "pinyin": "Nǐ kàn guo jīngjù ma?",
+          "check_needed": false
+         }
+        ],
+        "check_needed": false
+       },
+       {
+        "id": "9037a868-929d-412a-8833-7f79c74218d5",
+        "type": "grammar_compare",
+        "order": 5,
+        "title": "过 và 了",
+        "items": [
+         {
+          "aspect": "Trọng tâm",
+          "left": {
+           "label": "V过",
+           "value": "kinh nghiệm đã từng"
+          },
+          "right": {
+           "label": "V了",
+           "value": "hành động đã hoàn thành trong tình huống cụ thể"
+          }
+         },
+         {
+          "aspect": "Ví dụ",
+          "left": {
+           "label": "V过",
+           "value": "我看过这部电影。"
+          },
+          "right": {
+           "label": "V了",
+           "value": "我看了这部电影。"
+          }
+         }
+        ],
+        "check_needed": false
        }
       ]
      },
      {
-      "id": "grammar_l10_verbal_measure",
+      "id": "57b14753-688a-41b6-9e0d-b61dbbf574d7",
       "type": "grammar_point",
       "order": 2,
       "title": "动量补语",
-      "title_vi": "Bổ ngữ động lượng",
-      "level": "HSK3-ish",
-      "tags": ["measure_complement"],
+      "title_vi": "Bổ ngữ động lượng / số lần hành động",
+      "level": "HSK3",
+      "tags": ["语法", "measure"],
+      "source_origin": "textbook/generated_mixed",
+      "check_needed": false,
       "blocks": [
        {
-        "id": "grammar_l10_measure_block1",
-        "type": "grammar_structure",
+        "id": "470b1ca1-e0a1-449f-b55e-a8aa481a4dd4",
+        "type": "grammar_overview",
         "order": 1,
-        "title": "V + số lần/lượt",
-        "pattern": "V + 一次/两次/一遍",
-        "meaning_vi": "Nói số lần hành động xảy ra. 一次 là một lần; 一遍 thường dùng cho hành động làm từ đầu đến cuối như đọc, nghe, xem.",
+        "title": "Bản chất",
+        "content_vi": "动量补语 nói hành động xảy ra mấy lần, mấy lượt hoặc mấy chuyến. Nó đếm hành động, không đếm danh từ.",
         "examples": [
          {
-          "id": "grammar_l10_measure_ex1",
-          "zh": "我还住过一次院。",
-          "pinyin": "Wǒ hái zhù guo yí cì yuàn.",
-          "vi": "Tôi còn từng nằm viện một lần.",
-          "highlight": ["住过一次院"],
-          "grammar_refs": ["grammar_l10_guo", "grammar_l10_verbal_measure"],
-          "vocab_refs": ["vocab_l10_002"]
+          "id": "771ce2b4-8b49-4b48-be3a-e887eb2024df",
+          "zh": "来过一次。",
+          "vi": "Đã từng đến một lần.",
+          "pinyin": "Lái guo yí cì.",
+          "check_needed": false
          }
         ],
+        "check_needed": false
+       },
+       {
+        "id": "0ef2b790-3209-4b5c-a519-ca5a424e4d49",
+        "type": "grammar_structure",
+        "order": 2,
+        "title": "Cấu trúc chính",
+        "pattern": "V + số + động lượng từ",
+        "meaning_vi": "Diễn tả số lần/lượt/chuyến của hành động.",
+        "examples": [
+         {
+          "id": "773f0eeb-9162-44a6-b2c7-d20f86c5bf5f",
+          "zh": "看了一遍。",
+          "vi": "Đã xem một lượt.",
+          "pinyin": "Kàn le yí biàn.",
+          "check_needed": false
+         },
+         {
+          "id": "82ac449f-b649-41c9-9b89-22e4336c1b77",
+          "zh": "跑了一趟。",
+          "vi": "Đã chạy/đi một chuyến.",
+          "pinyin": "Pǎo le yí tàng.",
+          "check_needed": false
+         }
+        ],
+        "check_needed": false
+       },
+       {
+        "id": "21fbb1a3-0847-4c15-9ca8-be559cee0dd7",
+        "type": "grammar_usage_notes",
+        "order": 3,
+        "title": "Động lượng từ thường gặp",
         "notes_vi": [
-         "Với động từ li hợp, số lần thường chen giữa động từ và tân ngữ: 住过一次院, 见过一次面."
-        ]
+         "次: lần, dùng rất rộng.",
+         "遍: một lượt từ đầu đến cuối, hay dùng với đọc/nghe/xem/nói.",
+         "趟: một chuyến đi lại."
+        ],
+        "examples": [
+         {
+          "id": "3612c4ea-a7c8-4455-8632-f98679055c65",
+          "zh": "请再说一遍。",
+          "vi": "Xin hãy nói lại một lượt.",
+          "pinyin": "Qǐng zài shuō yí biàn.",
+          "check_needed": false
+         },
+         {
+          "id": "68864e8c-cf7d-4c8c-819d-3455f9ce710b",
+          "zh": "我去了一趟银行。",
+          "vi": "Tôi đã đi ngân hàng một chuyến.",
+          "pinyin": "Wǒ qù le yí tàng yínháng.",
+          "check_needed": false
+         }
+        ],
+        "check_needed": false
+       },
+       {
+        "id": "5895a619-7555-41f1-b213-536a6307c539",
+        "type": "grammar_structure",
+        "order": 4,
+        "title": "Phủ định nhấn mạnh",
+        "pattern": "一次 + 也/都 + 没 + V过",
+        "meaning_vi": "Một lần cũng chưa từng.",
+        "examples": [
+         {
+          "id": "b2b0e643-288a-4157-9abf-1ea3b835b1b6",
+          "zh": "我一次病也没有得过。",
+          "vi": "Tôi chưa từng bị bệnh lần nào.",
+          "source_ref": "9faf6980-effe-42f1-a01e-7f1740da2edb",
+          "pinyin": "Wǒ yí cì bìng yě méiyǒu dé guo.",
+          "check_needed": false
+         }
+        ],
+        "check_needed": false
        }
       ]
      },
      {
-      "id": "grammar_l10_di",
+      "id": "fa804fff-372b-4874-8571-f54e613d7e07",
       "type": "grammar_point",
       "order": 3,
       "title": "第 + 数词",
-      "title_vi": "Số thứ tự với 第",
-      "level": "HSK2-HSK3",
-      "tags": ["ordinal"],
+      "title_vi": "Cách biểu đạt số thứ tự",
+      "level": "HSK2",
+      "tags": ["语法", "ordinal"],
+      "source_origin": "textbook/generated_mixed",
+      "check_needed": false,
       "blocks": [
        {
-        "id": "grammar_l10_di_block1",
-        "type": "grammar_structure",
+        "id": "50dcd503-1832-4112-a0be-e09408954b90",
+        "type": "grammar_overview",
         "order": 1,
-        "title": "第 + số",
-        "pattern": "第 + 数词 / 第 + 数词 + 量词/名词",
-        "meaning_vi": "Dùng để tạo số thứ tự: thứ nhất, lần đầu, ngày thứ hai...",
+        "title": "Bản chất",
+        "content_vi": "第 đặt trước số để biến số đếm thành số thứ tự: thứ nhất, thứ hai, bài thứ mười, lần đầu tiên.",
         "examples": [
          {
-          "id": "grammar_l10_di_ex1",
+          "id": "34e0cef7-0e8a-4e66-91ff-c118178ee232",
           "zh": "这是第一次。",
-          "pinyin": "Zhè shì dì yī cì.",
           "vi": "Đây là lần đầu tiên.",
-          "highlight": ["第一次"],
-          "grammar_refs": ["grammar_l10_di"],
-          "vocab_refs": ["vocab_l10_018"]
+          "source_ref": "2c1213ac-f81d-414f-8b55-5abe77fe83fc",
+          "pinyin": "Zhè shì dì yī cì.",
+          "check_needed": false
          }
         ],
-        "notes_vi": []
+        "check_needed": false
+       },
+       {
+        "id": "3de2e20b-7535-4f1b-8355-4209acba1551",
+        "type": "grammar_structure",
+        "order": 2,
+        "title": "Cấu trúc chính",
+        "pattern": "第 + số + lượng từ/danh từ",
+        "meaning_vi": "Biểu thị thứ tự.",
+        "examples": [
+         {
+          "id": "7c24a5fc-d281-4017-a211-63bd1c1f89e3",
+          "zh": "第一课",
+          "vi": "bài thứ nhất",
+          "pinyin": "dì yī kè",
+          "check_needed": false
+         },
+         {
+          "id": "aa9509ab-7504-49c9-8207-821c2b856a23",
+          "zh": "第十课",
+          "vi": "bài thứ mười",
+          "pinyin": "dì shí kè",
+          "check_needed": false
+         }
+        ],
+        "check_needed": false
+       },
+       {
+        "id": "76d5cfd6-e9cb-43ca-af11-8a1fdf1ac8df",
+        "type": "grammar_compare",
+        "order": 3,
+        "title": "一次 và 第一次",
+        "items": [
+         {
+          "aspect": "Ý nghĩa",
+          "left": {
+           "label": "一次",
+           "value": "một lần, đếm số lần"
+          },
+          "right": {
+           "label": "第一次",
+           "value": "lần thứ nhất/lần đầu tiên trong chuỗi trải nghiệm"
+          }
+         },
+         {
+          "aspect": "Ví dụ",
+          "left": {
+           "label": "一次",
+           "value": "我去过一次北京。"
+          },
+          "right": {
+           "label": "第一次",
+           "value": "这是我第一次来中国。"
+          }
+         }
+        ],
+        "check_needed": false
        }
       ]
      }
     ]
    },
    {
-    "id": "section_exercises_l10",
+    "id": "9901c597-ca97-451e-b63d-11814aaf933e",
     "type": "exercises",
     "order": 6,
     "title": "练习",
     "title_vi": "Bài tập",
-    "source_origin": "pdf_textbook_checked/generated_answers_checked",
+    "source_origin": "textbook/generated_mixed",
     "check_needed": false,
+    "coverage_contract": {
+     "policy": "Coverage-first: giữ đủ 8 mục lớn của bài 10. Mục 8 được đặt trong section reading để UI/parser ổn định.",
+     "expected_exercise_count_from_pdf": 8,
+     "actual_exercise_count_in_json": 8,
+     "all_exercises_covered": true,
+     "coverage_status": "complete_verified",
+     "final_verification_allowed": true,
+     "notes": "Đã đối chiếu lại với PDF bài 10; phần đáp án có đáp án cố định đã được kiểm."
+    },
     "items": [
      {
-      "id": "exercise_l10_01_phonetics",
+      "id": "15cb6f38-593b-48d1-bcca-dc3d2a140f9e",
       "type": "phonetics",
-      "variant": "pronunciation",
+      "variant": "pronunciation_tone_minimal_pairs",
       "order": 1,
-      "title": "语音",
+      "title": "一、语音",
       "title_vi": "Ngữ âm",
       "instruction": {
-       "zh": "读下列词语 / 短语",
-       "vi": "Đọc các từ/cụm sau theo PDF."
+       "zh": "辨音辨调；朗读。",
+       "vi": "Phân biệt âm/thanh điệu và đọc to."
       },
-      "difficulty": "easy",
-      "skill_focus": ["pronunciation"],
-      "grammar_refs": [],
-      "vocab_refs": [],
+      "difficulty": "normal",
+      "skill_focus": ["pronunciation", "speaking"],
+      "source_origin": "textbook/generated_mixed",
+      "check_needed": false,
       "parts": [
        {
-        "id": "exercise_l10_01_part1",
-        "type": "read_aloud",
-        "title": "Read aloud",
-        "instruction_vi": "Đọc đúng thanh điệu và nhẹ giọng của 过/嘛.",
+        "id": "0e5801e7-b89b-4cc6-8bd9-9e1fbbd30b31",
+        "type": "minimal_pair_group",
+        "title": "辨音辨调",
         "items": [
          {
-          "id": "read_l10_001",
-          "text": "住院 / 中医 / 方法 / 扎针 / 演奏 / 钢琴",
-          "pinyin": "zhùyuàn / zhōngyī / fāngfǎ / zhā zhēn / yǎnzòu / gāngqín"
+          "id": "e38d3cb2-2c33-4c4a-83fa-2934373f225d",
+          "left": "jīnglì",
+          "right": "jīnglǐ"
          },
          {
-          "id": "read_l10_002",
-          "text": "来过中国 / 吃过馒头 / 学过汉语 / 一次也没去过",
-          "pinyin": "lái guo Zhōngguó / chī guo mántou / xué guo Hànyǔ / yí cì yě méi qù guo"
+          "id": "79df1daa-2fc0-43b6-b4e3-aee6478eef8a",
+          "left": "gǎnmào",
+          "right": "kàn bào"
+         },
+         {
+          "id": "93191d96-c6f7-4475-b285-9bfd75ad2b6c",
+          "left": "zhù yuàn",
+          "right": "chū yuàn"
+         },
+         {
+          "id": "656ce346-d1fc-4d43-8acc-abf294d2d8da",
+          "left": "zhōngyī",
+          "right": "zhòng yì"
+         },
+         {
+          "id": "5e775bab-fb67-4293-b3f7-4b9e80f29c52",
+          "left": "fāngfǎ",
+          "right": "fàn fǎ"
+         },
+         {
+          "id": "7e23fb6e-376b-43d9-ae33-0413e3080ef9",
+          "left": "zhā zhēn",
+          "right": "cházhèng"
+         },
+         {
+          "id": "5b58aa37-6cd8-4a57-86e3-bac8b945a84e",
+          "left": "yǎnzòu",
+          "right": "yuán qiú"
+         },
+         {
+          "id": "5dcaf7e0-6d93-4034-b992-da23295bca73",
+          "left": "gāngqín",
+          "right": "gǎnqíng"
          }
-        ]
+        ],
+        "check_needed": false
+       },
+       {
+        "id": "e7235fa8-9e47-43aa-a37c-271a2e83d738",
+        "type": "read_aloud_chunks",
+        "title": "朗读",
+        "items": [
+         "来过",
+         "去过",
+         "吃过",
+         "喝过",
+         "好听",
+         "好看",
+         "好吃",
+         "好玩儿",
+         "好极了",
+         "冷极了",
+         "热极了",
+         "好看极了",
+         "第一次",
+         "第二天",
+         "第三年",
+         "第四节课",
+         "来过中国",
+         "吃过馒头",
+         "学过汉语",
+         "打过篮球",
+         "吃过中国菜",
+         "喝过中国茶",
+         "听过中国歌",
+         "看过中国电影",
+         "亲耳听过",
+         "亲眼见过",
+         "亲口吃过",
+         "亲手做过",
+         "来过一次中国",
+         "吃过一次北京烤鸭",
+         "得过一次感冒",
+         "一次也没去过",
+         "一次也没看过",
+         "一遍也没读过"
+        ],
+        "check_needed": false
        }
       ],
       "rendering": {
-       "renderer": "phonetics.read_aloud.v1"
-      },
-      "check_needed": false
+       "renderer": "exercise.phonetics.v2"
+      }
      },
      {
-      "id": "exercise_l10_03_fill_words",
+      "id": "98e14c21-0449-4e36-b1ae-77ed46cf3aa0",
+      "type": "substitution_drill",
+      "variant": "substitution_or_transform_drill",
+      "order": 2,
+      "title": "二、替换",
+      "title_vi": "Thay thế",
+      "instruction": {
+       "zh": "替换练习。",
+       "vi": "Thay từ/cụm vào mẫu câu."
+      },
+      "skill_focus": ["grammar", "speaking"],
+      "source_origin": "textbook/generated_mixed",
+      "check_needed": false,
+      "parts": [
+       {
+        "id": "7db043f9-0d63-45ee-8c21-295d62f2ebd3",
+        "model_zh": "A：你听过中国音乐吗？\nB：听过。/ 没听过。",
+        "substitutions": [
+         {
+          "verb": "吃",
+          "object": "北京烤鸭"
+         },
+         {
+          "verb": "看",
+          "object": "中国电影"
+         },
+         {
+          "verb": "练",
+          "object": "气功"
+         },
+         {
+          "verb": "得",
+          "object": "感冒"
+         },
+         {
+          "verb": "学",
+          "object": "书法"
+         }
+        ],
+        "check_needed": false
+       },
+       {
+        "id": "4ad1e1b3-374e-4ce8-b98f-907ffc4c88f2",
+        "model_zh": "A：你听过几次他的演奏？\nB：我只听过一次。",
+        "substitutions": [
+         {
+          "verb": "来",
+          "object": "中国"
+         },
+         {
+          "verb": "吃",
+          "object": "烤鸭"
+         },
+         {
+          "verb": "看",
+          "object": "展览"
+         },
+         {
+          "verb": "喝",
+          "object": "中药"
+         },
+         {
+          "verb": "得",
+          "object": "感冒"
+         }
+        ],
+        "check_needed": false
+       },
+       {
+        "id": "28f617eb-25d6-4678-b5e3-f7fca3508dbc",
+        "model_zh": "A：你参观过这个展览没有？\nB：没有。/ 我没参观过这个展览。",
+        "substitutions": [
+         {
+          "verb": "学",
+          "object": "太极拳"
+         },
+         {
+          "verb": "去",
+          "object": "香港"
+         },
+         {
+          "verb": "吃",
+          "object": "饺子"
+         },
+         {
+          "verb": "看",
+          "object": "中医"
+         },
+         {
+          "verb": "下载",
+          "object": "这首歌"
+         },
+         {
+          "verb": "做",
+          "object": "按摩"
+         }
+        ],
+        "check_needed": false
+       },
+       {
+        "id": "6227f946-2a93-462c-8702-43b4abc4a614",
+        "model_zh": "A：你以前来/去过中国吗？\nB：没有，这是第一次。",
+        "substitutions": [
+         {
+          "verb": "看",
+          "object": "京剧"
+         },
+         {
+          "verb": "听",
+          "object": "中文歌"
+         },
+         {
+          "verb": "练",
+          "object": "太极拳"
+         },
+         {
+          "verb": "参加",
+          "object": "足球比赛"
+         },
+         {
+          "verb": "当",
+          "object": "翻译"
+         },
+         {
+          "verb": "吃",
+          "object": "烤白薯"
+         }
+        ],
+        "check_needed": false
+       }
+      ],
+      "rendering": {
+       "renderer": "exercise.substitution_drill.v2"
+      }
+     },
+     {
+      "id": "5dfca3d2-8524-4a83-92dd-b036a7259465",
       "type": "choose_words_fill_blank",
-      "variant": "choose_right_words",
+      "variant": "word_bank_fill_blank",
       "order": 3,
-      "title": "选词填空",
-      "title_vi": "Chọn từ điền vào chỗ trống",
+      "title": "三、选词填空",
+      "title_vi": "Chọn từ điền chỗ trống",
       "instruction": {
-       "zh": "选词填空",
-       "vi": "Chọn từ đúng để điền vào chỗ trống."
+       "zh": "选词填空。",
+       "vi": "Chọn từ đúng điền vào chỗ trống."
       },
-      "difficulty": "normal",
       "skill_focus": ["vocabulary", "grammar"],
-      "grammar_refs": ["grammar_l10_guo", "grammar_l10_verbal_measure"],
-      "vocab_refs": [],
-      "word_bank": [
-       "治",
-       "烤鸭",
-       "感冒",
-       "极了",
-       "院",
-       "钢琴",
-       "中餐",
-       "中药",
-       "次",
-       "遍",
-       "了",
-       "过"
-      ],
-      "questions": [
+      "source_origin": "textbook/generated_mixed",
+      "check_needed": false,
+      "parts": [
        {
-        "id": "ex3a_q01",
-        "prompt": "她听过这首____协奏曲。",
-        "answer": "钢琴",
-        "acceptable_answers": ["钢琴"],
-        "explanation_vi": "Đáp án đã đối chiếu theo bài 10 và trọng tâm 过 / động lượng bổ ngữ."
-       },
-       {
-        "id": "ex3a_q02",
-        "prompt": "我从来没有吃过____。",
-        "answer": "中餐",
-        "acceptable_answers": ["中餐"],
-        "explanation_vi": "Đáp án đã đối chiếu theo bài 10 và trọng tâm 过 / động lượng bổ ngữ."
-       },
-       {
-        "id": "ex3a_q03",
-        "prompt": "我没有喝过____。",
-        "answer": "中药",
-        "acceptable_answers": ["中药"],
-        "explanation_vi": "Đáp án đã đối chiếu theo bài 10 và trọng tâm 过 / động lượng bổ ngữ."
-       },
-       {
-        "id": "ex3a_q04",
-        "prompt": "他喜欢吃北京____。",
-        "answer": "烤鸭",
-        "acceptable_answers": ["烤鸭"],
-        "explanation_vi": "Đáp án đã đối chiếu theo bài 10 và trọng tâm 过 / động lượng bổ ngữ."
-       },
-       {
-        "id": "ex3a_q05",
-        "prompt": "按摩能____好你的病，你可以试试。",
-        "answer": "治",
-        "acceptable_answers": ["治"],
-        "explanation_vi": "Đáp án đã đối chiếu theo bài 10 và trọng tâm 过 / động lượng bổ ngữ."
-       },
-       {
-        "id": "ex3a_q06",
-        "prompt": "他演奏得好____。",
-        "answer": "极了",
-        "acceptable_answers": ["极了"],
-        "explanation_vi": "Đáp án đã đối chiếu theo bài 10 và trọng tâm 过 / động lượng bổ ngữ."
-       },
-       {
-        "id": "ex3a_q07",
-        "prompt": "你住过____吗？",
-        "answer": "院",
-        "acceptable_answers": ["院"],
-        "explanation_vi": "Đáp án đã đối chiếu theo bài 10 và trọng tâm 过 / động lượng bổ ngữ."
-       },
-       {
-        "id": "ex3a_q08",
-        "prompt": "来中国以后我得过一次____，没得过别的病。",
-        "answer": "感冒",
-        "acceptable_answers": ["感冒"],
-        "explanation_vi": "Đáp án đã đối chiếu theo bài 10 và trọng tâm 过 / động lượng bổ ngữ."
-       },
-       {
-        "id": "ex3b_q01",
-        "prompt": "我已经去过两____长城了。",
-        "answer": "次",
-        "acceptable_answers": ["次"],
-        "explanation_vi": "Đáp án đã đối chiếu theo bài 10 và trọng tâm 过 / động lượng bổ ngữ."
-       },
-       {
-        "id": "ex3b_q02",
-        "prompt": "那个展览我看过一____。",
-        "answer": "次",
-        "acceptable_answers": ["次"],
-        "explanation_vi": "Đáp án đã đối chiếu theo bài 10 và trọng tâm 过 / động lượng bổ ngữ."
-       },
-       {
-        "id": "ex3b_q03",
-        "prompt": "这本小说我看过一____。",
-        "answer": "遍",
-        "acceptable_answers": ["遍"],
-        "explanation_vi": "Đáp án đã đối chiếu theo bài 10 và trọng tâm 过 / động lượng bổ ngữ."
-       },
-       {
-        "id": "ex3b_q04",
-        "prompt": "今天的课文我已经读了八____了。",
-        "answer": "遍",
-        "acceptable_answers": ["遍"],
-        "explanation_vi": "Đáp án đã đối chiếu theo bài 10 và trọng tâm 过 / động lượng bổ ngữ."
-       },
-       {
-        "id": "ex3b_q05",
-        "prompt": "去年我爸爸来/去过一____北京。",
-        "answer": "次",
-        "acceptable_answers": ["次"],
-        "explanation_vi": "Đáp án đã đối chiếu theo bài 10 và trọng tâm 过 / động lượng bổ ngữ."
-       },
-       {
-        "id": "ex3b_q06",
-        "prompt": "老师，让我们再听一____录音，好吗？",
-        "answer": "遍",
-        "acceptable_answers": ["遍"],
-        "explanation_vi": "Đáp án đã đối chiếu theo bài 10 và trọng tâm 过 / động lượng bổ ngữ."
-       },
-       {
-        "id": "ex3c_q01",
-        "prompt": "我认识李老师，她给我们上____课。",
-        "answer": "过",
-        "acceptable_answers": ["过"],
-        "explanation_vi": "Đáp án đã đối chiếu theo bài 10 và trọng tâm 过 / động lượng bổ ngữ."
-       },
-       {
-        "id": "ex3c_q02",
-        "prompt": "这个语法我们还没有学____。",
-        "answer": "过",
-        "acceptable_answers": ["过"],
-        "explanation_vi": "Đáp án đã đối chiếu theo bài 10 và trọng tâm 过 / động lượng bổ ngữ."
-       },
-       {
-        "id": "ex3c_q03",
-        "prompt": "明天上午下____课我就去医院看她。",
-        "answer": "了",
-        "acceptable_answers": ["了"],
-        "explanation_vi": "Đáp án đã đối chiếu theo bài 10 và trọng tâm 过 / động lượng bổ ngữ."
-       },
-       {
-        "id": "ex3c_q04",
-        "prompt": "我去____他家，知道他住在哪儿。",
-        "answer": "过",
-        "acceptable_answers": ["过"],
-        "explanation_vi": "Đáp án đã đối chiếu theo bài 10 và trọng tâm 过 / động lượng bổ ngữ."
-       },
-       {
-        "id": "ex3c_q05",
-        "prompt": "我只看____中国电视，还没去电影院看____中国电影。",
-        "answer": "过 / 过",
-        "acceptable_answers": ["过", "过"],
-        "explanation_vi": "Đáp án đã đối chiếu theo bài 10 và trọng tâm 过 / động lượng bổ ngữ."
-       },
-       {
-        "id": "ex3c_q06",
-        "prompt": "他从香港给我带来____一把小提琴。",
-        "answer": "了",
-        "acceptable_answers": ["了"],
-        "explanation_vi": "Đáp án đã đối chiếu theo bài 10 và trọng tâm 过 / động lượng bổ ngữ."
-       }
-      ],
-      "answer_key": [
-       {
-        "question_id": "ex3a_q01",
-        "answer": "钢琴",
+        "id": "90aa4fee-e79c-43aa-ba47-698c21d1b9c5",
+        "title": "A组",
+        "word_bank": [
+         "治",
+         "烤鸭",
+         "感冒",
+         "极了",
+         "院",
+         "钢琴",
+         "中餐",
+         "中药"
+        ],
+        "questions": [
+         {
+          "id": "3cb32654-aa16-4f52-bcc4-c3ac4f7e77d5",
+          "prompt_zh": "她听过这首____协奏曲。",
+          "answer": "钢琴",
+          "check_needed": false,
+          "answer_verified": true
+         },
+         {
+          "id": "e57488bd-4d2f-4fbd-b2fe-c37d1572b832",
+          "prompt_zh": "我从来没有吃过____。",
+          "answer": "中餐",
+          "check_needed": false,
+          "answer_verified": true
+         },
+         {
+          "id": "3fd63c3d-b831-4f12-81b6-097d4fe60ca7",
+          "prompt_zh": "我没有喝过____。",
+          "answer": "中药",
+          "check_needed": false,
+          "answer_verified": true
+         },
+         {
+          "id": "d2202365-b922-4b2c-89d4-8d960eea79ac",
+          "prompt_zh": "他喜欢吃北京____。",
+          "answer": "烤鸭",
+          "check_needed": false,
+          "answer_verified": true
+         },
+         {
+          "id": "c7b35d9b-601e-4f30-81d5-cff1d6101a44",
+          "prompt_zh": "按摩能____好你的病，你可以试试。",
+          "answer": "治",
+          "check_needed": false,
+          "answer_verified": true
+         },
+         {
+          "id": "81a0f4e1-c1b0-4c7b-a708-6320de295985",
+          "prompt_zh": "他演奏得好____。",
+          "answer": "极了",
+          "check_needed": false,
+          "answer_verified": true
+         },
+         {
+          "id": "58ad0b8d-cfed-48d0-8046-cfdaf8abce6e",
+          "prompt_zh": "你住过____吗？",
+          "answer": "院",
+          "check_needed": false,
+          "answer_verified": true
+         },
+         {
+          "id": "d7922f89-1afb-43a0-a217-fac8529f8fbd",
+          "prompt_zh": "来中国以后我得过一次____，没得过别的病。",
+          "answer": "感冒",
+          "check_needed": false,
+          "answer_verified": true
+         }
+        ],
+        "answer_verified": true,
         "check_needed": false
        },
        {
-        "question_id": "ex3a_q02",
-        "answer": "中餐",
+        "id": "7382b7c5-024b-4aea-8161-626977f0b516",
+        "title": "B组",
+        "word_bank": ["次", "遍"],
+        "questions": [
+         {
+          "id": "e15118df-4c0f-49b4-b0b4-1d212ee1a6ad",
+          "prompt_zh": "我已经去过两____长城了。",
+          "answer": "次",
+          "check_needed": false,
+          "answer_verified": true
+         },
+         {
+          "id": "73398d17-14e4-4d8a-9662-a7de3fa29233",
+          "prompt_zh": "那个展览我看过一____。",
+          "answer": "遍",
+          "check_needed": false,
+          "answer_verified": true
+         },
+         {
+          "id": "3e7ae0da-4ae4-4e1b-860c-0004e7573460",
+          "prompt_zh": "这本小说我看过一____。",
+          "answer": "遍",
+          "check_needed": false,
+          "answer_verified": true
+         },
+         {
+          "id": "01cd1815-4a89-482a-9fbd-16dff58fcd74",
+          "prompt_zh": "今天的课文我已经读了八____了。",
+          "answer": "遍",
+          "check_needed": false,
+          "answer_verified": true
+         },
+         {
+          "id": "8c2cf57b-392b-414a-8a1e-9ba84e71745f",
+          "prompt_zh": "去年我爸爸来/去过一____北京。",
+          "answer": "次",
+          "check_needed": false,
+          "answer_verified": true
+         },
+         {
+          "id": "5b0ef692-4689-4dbb-bc45-cdcdc2bffd2d",
+          "prompt_zh": "老师，让我们再听一____录音，好吗？",
+          "answer": "遍",
+          "check_needed": false,
+          "answer_verified": true
+         }
+        ],
+        "answer_verified": true,
         "check_needed": false
        },
        {
-        "question_id": "ex3a_q03",
-        "answer": "中药",
-        "check_needed": false
-       },
-       {
-        "question_id": "ex3a_q04",
-        "answer": "烤鸭",
-        "check_needed": false
-       },
-       {
-        "question_id": "ex3a_q05",
-        "answer": "治",
-        "check_needed": false
-       },
-       {
-        "question_id": "ex3a_q06",
-        "answer": "极了",
-        "check_needed": false
-       },
-       {
-        "question_id": "ex3a_q07",
-        "answer": "院",
-        "check_needed": false
-       },
-       {
-        "question_id": "ex3a_q08",
-        "answer": "感冒",
-        "check_needed": false
-       },
-       {
-        "question_id": "ex3b_q01",
-        "answer": "次",
-        "check_needed": false
-       },
-       {
-        "question_id": "ex3b_q02",
-        "answer": "次",
-        "check_needed": false
-       },
-       {
-        "question_id": "ex3b_q03",
-        "answer": "遍",
-        "check_needed": false
-       },
-       {
-        "question_id": "ex3b_q04",
-        "answer": "遍",
-        "check_needed": false
-       },
-       {
-        "question_id": "ex3b_q05",
-        "answer": "次",
-        "check_needed": false
-       },
-       {
-        "question_id": "ex3b_q06",
-        "answer": "遍",
-        "check_needed": false
-       },
-       {
-        "question_id": "ex3c_q01",
-        "answer": "过",
-        "check_needed": false
-       },
-       {
-        "question_id": "ex3c_q02",
-        "answer": "过",
-        "check_needed": false
-       },
-       {
-        "question_id": "ex3c_q03",
-        "answer": "了",
-        "check_needed": false
-       },
-       {
-        "question_id": "ex3c_q04",
-        "answer": "过",
-        "check_needed": false
-       },
-       {
-        "question_id": "ex3c_q05",
-        "answer": "过 / 过",
-        "check_needed": false
-       },
-       {
-        "question_id": "ex3c_q06",
-        "answer": "了",
+        "id": "e947f5d1-785b-49fe-a748-44694d79532d",
+        "title": "C组",
+        "word_bank": ["了", "过"],
+        "questions": [
+         {
+          "id": "c801c597-99fc-4f5f-838a-f8d1ac5fa676",
+          "prompt_zh": "我认识李老师，她给我们上____课。",
+          "answer": "过",
+          "check_needed": false,
+          "answer_verified": true
+         },
+         {
+          "id": "bc450c24-7528-4836-b2d5-0fffeec75378",
+          "prompt_zh": "这个语法我们还没有学____。",
+          "answer": "过",
+          "check_needed": false,
+          "answer_verified": true
+         },
+         {
+          "id": "5f95ea02-274a-4a7d-af23-cd90642275bf",
+          "prompt_zh": "明天上午下____课我就去医院看她。",
+          "answer": "了",
+          "check_needed": false,
+          "answer_verified": true
+         },
+         {
+          "id": "b6f27ea6-3909-4d12-b04a-6b53fc7ea10a",
+          "prompt_zh": "我去____他家，知道他住在哪儿。",
+          "answer": "过",
+          "check_needed": false,
+          "answer_verified": true
+         },
+         {
+          "id": "8ddeede2-9532-4dfb-9722-997f87756ef2",
+          "prompt_zh": "我只看____中国电视，还没去电影院看____中国电影。",
+          "answer": "过 / 过",
+          "check_needed": false,
+          "answer_verified": true
+         },
+         {
+          "id": "6c96a9fd-c573-4cd0-b563-1760b538363d",
+          "prompt_zh": "他从香港给我带来____一把小提琴。",
+          "answer": "了",
+          "check_needed": false,
+          "answer_verified": true,
+          "explanation_vi": "带来了一把小提琴 = đã mang đến một cây violin. 这里 nói một hành động đã hoàn thành, không phải kinh nghiệm “từng”, nên dùng 了, không dùng 过."
+         }
+        ],
+        "answer_verified": true,
         "check_needed": false
        }
       ],
       "rendering": {
-       "renderer": "fill_blank.v2",
+       "renderer": "exercise.fill_blank.word_bank.v2",
+       "show_word_bank": true,
        "show_answer_after_submit": true
-      },
-      "check_needed": false
+      }
      },
      {
-      "id": "exercise_l10_04_pattern",
-      "type": "answer_with_pattern",
-      "variant": "practice_after_example",
+      "id": "809141fb-cc55-403a-9433-35eea89c8c90",
+      "type": "substitution_drill",
+      "variant": "substitution_or_transform_drill",
       "order": 4,
-      "title": "照例句做练习",
-      "title_vi": "Luyện theo mẫu",
+      "title": "四、按照例句做练习",
+      "title_vi": "Làm theo mẫu",
       "instruction": {
-       "zh": "照例句做练习",
-       "vi": "Luyện hỏi đáp theo mẫu 去过 / 去过几次 / 一次也没去过."
+       "zh": "按照例句做练习。",
+       "vi": "Làm theo mẫu hỏi đáp."
       },
-      "difficulty": "normal",
-      "skill_focus": ["speaking", "pattern_drill"],
-      "grammar_refs": ["grammar_l10_guo", "grammar_l10_verbal_measure"],
-      "vocab_refs": [],
-      "pattern": "A: 你去过……吗？ B: 去过。 A: 你去过几次？ B: 去过……次。 A: 你去过……没有？ B: 一次也没去过。",
-      "model": {
-       "prompt": "你去过美国吗？",
-       "answer": "去过。/ 去过一次。/ 一次也没去过。"
-      },
-      "questions": [
-       {
-        "id": "ex4_q01",
-        "prompt": "去过一次韩国；没去过日本",
-        "sample_answer": "A: 你去过韩国吗？ B: 去过。 A: 你去过几次？ B: 去过一次。 A: 你去过日本没有？ B: 一次也没去过。"
-       },
-       {
-        "id": "ex4_q02",
-        "prompt": "去过两次意大利；没去过美国",
-        "sample_answer": "A: 你去过意大利吗？ B: 去过。 A: 你去过几次？ B: 去过两次。 A: 你去过美国没有？ B: 一次也没去过。"
-       },
-       {
-        "id": "ex4_q03",
-        "prompt": "去过三次北京；没去过广州",
-        "sample_answer": "A: 你去过北京吗？ B: 去过。 A: 你去过几次？ B: 去过三次。 A: 你去过广州没有？ B: 一次也没去过。"
-       },
-       {
-        "id": "ex4_q04",
-        "prompt": "去过一次上海；没去过杭州",
-        "sample_answer": "A: 你去过上海吗？ B: 去过。 A: 你去过几次？ B: 去过一次。 A: 你去过杭州没有？ B: 一次也没去过。"
-       }
+      "source_origin": "textbook/generated_mixed",
+      "check_needed": false,
+      "model": "A：你去过美国吗？\nB：去过。\nA：你去过几次？\nB：去过一次。\nA：你去过韩国没有？\nB：一次也没去过。",
+      "prompts": [
+       "去过一次韩国 / 没去过日本",
+       "去过两次意大利 / 没去过美国",
+       "去过三次北京 / 没去过广州",
+       "去过一次上海 / 没去过杭州"
       ],
-      "answer_key": [],
       "rendering": {
-       "renderer": "pattern_drill.v1",
-       "show_answer_after_submit": true
-      },
-      "check_needed": false
+       "renderer": "exercise.dialogue_drill.v2"
+      }
      },
      {
-      "id": "exercise_l10_05_personal_answers",
-      "type": "answer_with_pattern",
-      "variant": "actual_situations",
+      "id": "e843bb6e-2e51-4fb8-b362-7506b97cf2fc",
+      "type": "answer_questions",
+      "variant": "free_answer",
       "order": 5,
-      "title": "根据实际情况回答问题",
-      "title_vi": "Trả lời theo tình huống thực tế",
+      "title": "五、根据实际情况回答问题",
+      "title_vi": "Trả lời theo thực tế",
       "instruction": {
-       "zh": "根据实际情况回答问题",
-       "vi": "Câu trả lời tùy người học; file chỉ gợi ý câu mẫu tự nhiên."
+       "zh": "根据实际情况回答问题。",
+       "vi": "Trả lời theo tình hình thực tế của bản thân."
       },
-      "difficulty": "normal",
-      "skill_focus": ["speaking", "writing"],
-      "grammar_refs": ["grammar_l10_guo", "grammar_l10_verbal_measure"],
-      "vocab_refs": [],
-      "pattern": "根据实际情况回答",
-      "model": {
-       "prompt": "来中国以前你学过汉语没有？学过多长时间？",
-       "answer": "来中国以前我学过汉语，学了两年。"
-      },
+      "source_origin": "textbook",
+      "check_needed": false,
       "questions": [
        {
-        "id": "ex5_q01",
-        "prompt": "来中国以前你学过汉语没有？学过多长时间？",
-        "sample_answer": "来中国以前我学过汉语，学了两年。"
+        "id": "7d9c942a-bdc2-45a1-b852-6b3dd58fe8f2",
+        "question_zh": "来中国以前你学过汉语没有？学过多长时间？",
+        "check_needed": false,
+        "answer_verified": true
        },
        {
-        "id": "ex5_q02",
-        "prompt": "你以前来过中国没有？来过几次？",
-        "sample_answer": "我以前没来过中国，这是第一次。"
+        "id": "a79733e1-ef69-41fd-ac55-9bb8b3bd4d2c",
+        "question_zh": "你以前来过中国没有？来过几次？",
+        "check_needed": false,
+        "answer_verified": true
        },
        {
-        "id": "ex5_q03",
-        "prompt": "你以前看过中国电影没有？看过几次？看过什么电影？",
-        "sample_answer": "我以前看过中国电影，看过两三次，看过《英雄》。"
+        "id": "ec5f1e84-0693-46b3-b735-8005e47f103e",
+        "question_zh": "你以前看过中国电影没有？看过几次？看过什么电影？",
+        "check_needed": false,
+        "answer_verified": true
        },
        {
-        "id": "ex5_q04",
-        "prompt": "你看过翻译的中国小说儿没有？看过什么小说？",
-        "sample_answer": "我看过翻译的中国小说，看过《三国演义》。"
+        "id": "dc7f5f06-95a1-4158-98d8-b293729d6a13",
+        "question_zh": "你看过翻译的中国小说儿没有？看过什么小说？",
+        "check_needed": false,
+        "answer_verified": true
        },
        {
-        "id": "ex5_q05",
-        "prompt": "你来中国以后去过哪些地方？吃过哪些中国菜？",
-        "sample_answer": "来中国以后我去过故宫和长城，吃过北京烤鸭和火锅。"
+        "id": "55e24ac4-bbd1-40f9-9dee-e97b3f2e10f7",
+        "question_zh": "你来中国以后去过哪些地方？吃过哪些中国菜？",
+        "check_needed": false,
+        "answer_verified": true
        },
        {
-        "id": "ex5_q06",
-        "prompt": "你去过哪些国家？",
-        "sample_answer": "我去过日本、韩国和中国。"
+        "id": "f7c603b4-c112-4d9c-ab37-b945d471ccee",
+        "question_zh": "你去过哪些国家？",
+        "check_needed": false,
+        "answer_verified": true
        },
        {
-        "id": "ex5_q07",
-        "prompt": "你来中国以前工作过没有？做过什么工作？",
-        "sample_answer": "我来中国以前工作过，做过老师。"
+        "id": "e904e37c-c385-4f11-9be3-45c2edea0b13",
+        "question_zh": "你来中国以前工作过没有？做过什么工作？",
+        "check_needed": false,
+        "answer_verified": true
        },
        {
-        "id": "ex5_q08",
-        "prompt": "来中国以后你得过病没有？得过什么病？住过院吗？",
-        "sample_answer": "来中国以后我得过一次感冒，没住过院。"
+        "id": "497e0d16-4f94-40ed-aa81-c09c6d7a0dbb",
+        "question_zh": "来中国以后你得过病没有？得过什么病？住过院吗？",
+        "check_needed": false,
+        "answer_verified": true
        },
        {
-        "id": "ex5_q09",
-        "prompt": "你听过中国音乐没有？学过中文歌没有？",
-        "sample_answer": "我听过中国音乐，也学过几首中文歌。"
+        "id": "d38e7b1c-6533-4269-8c64-92d347b1b862",
+        "question_zh": "你听过中国音乐没有？学过中文歌没有？",
+        "check_needed": false,
+        "answer_verified": true
        }
       ],
-      "answer_key": [],
       "rendering": {
-       "renderer": "open_answer.v1",
-       "show_answer_after_submit": true
-      },
-      "check_needed": false
+       "renderer": "exercise.free_answer.v2",
+       "allow_manual_check": true
+      }
      },
      {
-      "id": "exercise_l10_06_correct_sentences",
+      "id": "60ec1197-2967-408c-a1f3-3c2112f8305a",
       "type": "correct_sentence",
-      "variant": "correct_the_sentences",
+      "variant": "error_correction",
       "order": 6,
-      "title": "改错句",
+      "title": "六、改错句",
       "title_vi": "Sửa câu sai",
       "instruction": {
-       "zh": "改错句",
-       "vi": "Sửa câu sai. Đáp án có thể có biến thể tự nhiên tương đương."
+       "zh": "改错句。",
+       "vi": "Sửa câu sai."
       },
-      "difficulty": "normal",
-      "skill_focus": ["grammar", "word_order"],
-      "grammar_refs": ["grammar_l10_guo", "grammar_l10_verbal_measure"],
-      "vocab_refs": [],
+      "source_origin": "textbook/generated_mixed",
+      "check_needed": false,
       "questions": [
        {
-        "id": "ex6_q01",
-        "wrong_sentence": "从九月开始，我在这个大学学习汉语。",
-        "correct_sentence": "从九月开始，我就在这个大学学习汉语了。",
-        "acceptable_answers": ["从九月开始，我就在这个大学学习汉语了。"],
-        "explanation_vi": "Câu gốc thiếu 了 để biểu thị trạng thái kéo dài/tình hình hiện tại “đã bắt đầu từ tháng 9 đến nay”.",
-        "grammar_refs": [],
-        "check_needed": false
+        "id": "1b0dc397-26f4-4659-a964-f9c68ceab72a",
+        "wrong_zh": "从九月开始，我在这个大学学习汉语。",
+        "answer_zh": "从九月开始，我就在这个大学学习汉语了。",
+        "answer_verified": true,
+        "check_needed": false,
+        "explanation_vi": "从九月开始 diễn tả trạng thái bắt đầu từ tháng 9 và kéo dài đến hiện tại, nên thêm 就...了 để làm rõ sự thay đổi/kéo dài."
        },
        {
-        "id": "ex6_q02",
-        "wrong_sentence": "我每天读过一次课文。",
-        "correct_sentence": "我每天读一遍课文。",
-        "acceptable_answers": ["我每天读一遍课文。"],
-        "explanation_vi": "每天 là thói quen lặp lại, không dùng 过 để nói kinh nghiệm. Với 课文 dùng 一遍 tự nhiên hơn 一次.",
-        "grammar_refs": ["grammar_l10_guo"],
-        "check_needed": false
+        "id": "ab74bab2-0cd3-4c59-b4dd-6d9a3c6197b9",
+        "wrong_zh": "我每天读过一次课文。",
+        "answer_zh": "我每天读一次课文。",
+        "answer_verified": true,
+        "check_needed": false,
+        "explanation_vi": "每天 chỉ thói quen lặp lại hằng ngày, không dùng 过 để nói kinh nghiệm."
        },
        {
-        "id": "ex6_q03",
-        "wrong_sentence": "来中国以后，我没有看医生过。",
-        "correct_sentence": "来中国以后，我没有看过医生。",
-        "acceptable_answers": ["来中国以后，我没有看过医生。"],
-        "explanation_vi": "过 đặt ngay sau động từ/cụm động từ: 看过医生, không đặt sau tân ngữ 医生.",
-        "grammar_refs": ["grammar_l10_guo"],
-        "check_needed": false
+        "id": "c503fed9-44e1-4df9-b284-51dbab822ee8",
+        "wrong_zh": "来中国以后，我没有看医生过。",
+        "answer_zh": "来中国以后，我没有看过医生。",
+        "answer_verified": true,
+        "check_needed": false,
+        "explanation_vi": "过 phải đặt ngay sau động từ/cụm động từ 看, trước tân ngữ 医生."
        },
        {
-        "id": "ex6_q04",
-        "wrong_sentence": "我朋友来中国了，上星期我去过看他。",
-        "correct_sentence": "我朋友来中国了，上星期我去看了他。",
-        "acceptable_answers": ["我朋友来中国了，上星期我去看了他。"],
-        "explanation_vi": "去看 là cụm động tác liên tiếp. Với mốc thời gian 上星期 và sự việc cụ thể, dùng 看了 tự nhiên hơn 去过看.",
-        "grammar_refs": ["grammar_l10_guo"],
-        "check_needed": false
+        "id": "87b8a7fb-1969-49e6-b592-82a2e0147e96",
+        "wrong_zh": "我朋友来中国了，上星期我去过看他。",
+        "answer_zh": "我朋友来中国了，上星期我去看过他。",
+        "answer_verified": true,
+        "check_needed": false,
+        "explanation_vi": "过 đặt sau cụm động từ 看, không đặt sau 去 trong cấu trúc 去看他."
        },
        {
-        "id": "ex6_q05",
-        "wrong_sentence": "我们见面过一次。",
-        "correct_sentence": "我们见过一次面。",
-        "acceptable_answers": ["我们见过一次面。"],
-        "explanation_vi": "见面 là động-tân/li hợp, số lần chen giữa động từ và tân ngữ: 见过一次面.",
-        "grammar_refs": ["grammar_l10_guo", "grammar_l10_verbal_measure"],
-        "check_needed": false
+        "id": "6155b63d-c263-446a-9ad7-80d775f5be6e",
+        "wrong_zh": "我们见面过一次。",
+        "answer_zh": "我们见过一次面。",
+        "answer_verified": true,
+        "check_needed": false,
+        "explanation_vi": "见面 là động-tân/li hợp; động lượng 一次 đặt giữa 见 và 面."
        },
        {
-        "id": "ex6_q06",
-        "wrong_sentence": "这个中国电影我常常看过在电视上。",
-        "correct_sentence": "这个中国电影我在电视上看过。",
-        "acceptable_answers": ["这个中国电影我在电视上看过。"],
-        "explanation_vi": "Trạng ngữ địa điểm 在电视上 đứng trước động từ 看; 过 đứng sau động từ. 常常 không hợp với câu nói một bộ phim cụ thể từng xem.",
-        "grammar_refs": ["grammar_l10_guo"],
-        "check_needed": false
-       }
-      ],
-      "answer_key": [
-       {
-        "question_id": "ex6_q01",
-        "answer": "从九月开始，我就在这个大学学习汉语了。",
-        "check_needed": false
-       },
-       {
-        "question_id": "ex6_q02",
-        "answer": "我每天读一遍课文。",
-        "check_needed": false
-       },
-       {
-        "question_id": "ex6_q03",
-        "answer": "来中国以后，我没有看过医生。",
-        "check_needed": false
-       },
-       {
-        "question_id": "ex6_q04",
-        "answer": "我朋友来中国了，上星期我去看了他。",
-        "check_needed": false
-       },
-       {
-        "question_id": "ex6_q05",
-        "answer": "我们见过一次面。",
-        "check_needed": false
-       },
-       {
-        "question_id": "ex6_q06",
-        "answer": "这个中国电影我在电视上看过。",
-        "check_needed": false
+        "id": "8e9a9428-6659-4025-8fb4-b5bf4134d62d",
+        "wrong_zh": "这个中国电影我常常看过在电视上。",
+        "answer_zh": "我常常在电视上看这个中国电影。",
+        "answer_verified": true,
+        "check_needed": false,
+        "explanation_vi": "常常 nói thói quen lặp lại, không dùng 过; trạng ngữ địa điểm 在电视上 đặt trước động từ 看."
        }
       ],
       "rendering": {
-       "renderer": "correct_sentence.v1",
+       "renderer": "exercise.error_correction.v2",
        "show_answer_after_submit": true
+      }
+     },
+     {
+      "id": "1fd4313d-93f3-4cbe-9dd4-2ba0d5bac415",
+      "type": "communication_dialogue",
+      "variant": "role_play",
+      "order": 7,
+      "title": "七、交际会话",
+      "title_vi": "Hội thoại giao tiếp",
+      "instruction": {
+       "zh": "谈旅行经历。",
+       "vi": "Nói về trải nghiệm du lịch."
       },
-      "check_needed": false
+      "source_origin": "textbook/generated_mixed",
+      "check_needed": false,
+      "sample_dialogue": [
+       {
+        "speaker": "A",
+        "zh": "你去欧洲旅行过吗？",
+        "vi": "Bạn đã từng đi du lịch châu Âu chưa?"
+       },
+       {
+        "speaker": "B",
+        "zh": "去过。",
+        "vi": "Từng đi rồi."
+       },
+       {
+        "speaker": "A",
+        "zh": "去过哪些国家？",
+        "vi": "Bạn đã từng đi những nước nào?"
+       },
+       {
+        "speaker": "B",
+        "zh": "我去过法国、德国和意大利。",
+        "vi": "Tôi từng đi Pháp, Đức và Ý."
+       },
+       {
+        "speaker": "A",
+        "zh": "你去过美国没有？",
+        "vi": "Bạn đã từng đi Mỹ chưa?"
+       },
+       {
+        "speaker": "B",
+        "zh": "没有。如果有机会，我一定去看看。",
+        "vi": "Chưa. Nếu có cơ hội, tôi nhất định sẽ đi xem."
+       },
+       {
+        "speaker": "A",
+        "zh": "欢迎你到我们家做客。",
+        "vi": "Hoan nghênh bạn đến nhà chúng tôi làm khách."
+       },
+       {
+        "speaker": "B",
+        "zh": "谢谢！",
+        "vi": "Cảm ơn!"
+       }
+      ],
+      "rendering": {
+       "renderer": "exercise.role_play.v2"
+      }
+     },
+     {
+      "id": "b9e46637-94ca-4fea-90cf-29155c015046",
+      "type": "reading_comprehension",
+      "variant": "reading_comprehension",
+      "order": 8,
+      "title": "八、阅读理解",
+      "title_vi": "Đọc hiểu",
+      "json_item_id": "reading_01",
+      "source_origin": "textbook/generated_mixed",
+      "check_needed": false,
+      "note": "Nội dung chi tiết đặt trong section_07_reading để UI render dạng reading."
      }
     ]
    },
    {
-    "id": "section_reading_l10",
+    "id": "886f621e-85ce-4e1a-91df-d8d257596034",
     "type": "reading",
     "order": 7,
-    "title": "阅读理解",
-    "title_vi": "Đọc hiểu",
+    "title": "阅读理解 / 综合填空",
+    "title_vi": "Đọc hiểu / Điền tổng hợp",
     "source_origin": "pdf_textbook_checked",
     "check_needed": false,
     "items": [
      {
-      "id": "reading_l10_text",
-      "type": "reading_text",
+      "id": "9bd9a79e-3279-468d-9f4b-ecd1f7365e19",
+      "type": "reading_comprehension",
       "order": 1,
-      "title": "说谎",
-      "title_vi": "Nói dối",
-      "supplementary_words": [
+      "title": "阅读理解",
+      "title_vi": "Đọc hiểu",
+      "source_origin": "textbook/generated_mixed",
+      "check_needed": false,
+      "supplementary_vocab": [
        {
-        "id": "supp_l10_001",
         "hanzi": "互相",
         "pinyin": "hùxiāng",
         "meaning_vi": "lẫn nhau; với nhau",
-        "meaning_en": "mutually; each other",
         "pos": "Phó từ",
         "pos_detail": {
          "vi": "Phó từ",
@@ -2793,18 +2850,12 @@
          "structure_vi": "",
          "usage_note_vi": "",
          "notes": []
-        },
-        "vocab_ref": "",
-        "source_origin": "pdf_reading_supplementary_words",
-        "check_needed": false,
-        "notes": []
+        }
        },
        {
-        "id": "supp_l10_002",
         "hanzi": "谈恋爱",
         "pinyin": "tán liàn’ài",
-        "meaning_vi": "yêu đương; hẹn hò yêu đương",
-        "meaning_en": "to be in love",
+        "meaning_vi": "yêu đương; hẹn hò",
         "pos": "Động từ li hợp",
         "pos_detail": {
          "vi": "Động từ li hợp",
@@ -2814,43 +2865,31 @@
          "is_separable_verb": true,
          "separable_type": "động-tân / 离合词",
          "structure_vi": "động từ 谈 + tân ngữ 恋爱",
-         "usage_note_vi": "Có thể nói 谈过恋爱 / 谈了三年恋爱; không nói *恋爱过 khi muốn nói “từng yêu” theo mẫu bài, nên dùng 谈过恋爱.",
+         "usage_note_vi": "Có thể nói 谈过恋爱 / 谈了两年恋爱; nghĩa là yêu đương, hẹn hò.",
          "notes": []
-        },
-        "vocab_ref": "",
-        "source_origin": "pdf_reading_supplementary_words",
-        "check_needed": false,
-        "notes": []
+        }
        },
        {
-        "id": "supp_l10_003",
         "hanzi": "恋爱",
         "pinyin": "liàn’ài",
-        "meaning_vi": "tình yêu đôi lứa; yêu đương",
-        "meaning_en": "love between a couple; to be in love",
-        "pos": "Danh từ / Động từ",
+        "meaning_vi": "tình yêu; yêu đương",
+        "pos": "Động từ / Danh từ",
         "pos_detail": {
-         "vi": "Danh từ / Động từ",
-         "cn": "名词 / 动词",
+         "vi": "Động từ / Danh từ",
+         "cn": "动词/名词",
          "normalized": "verb_noun",
-         "schema_compatible_pos": "verb_phrase",
+         "schema_compatible_pos": "verb_noun",
          "is_separable_verb": false,
          "separable_type": "",
          "structure_vi": "",
          "usage_note_vi": "",
          "notes": []
-        },
-        "vocab_ref": "",
-        "source_origin": "pdf_reading_supplementary_words",
-        "check_needed": false,
-        "notes": []
+        }
        },
        {
-        "id": "supp_l10_004",
         "hanzi": "说谎",
-        "pinyin": "shuōhuǎng",
+        "pinyin": "shuō huǎng",
         "meaning_vi": "nói dối",
-        "meaning_en": "to tell a lie",
         "pos": "Động từ li hợp",
         "pos_detail": {
          "vi": "Động từ li hợp",
@@ -2860,20 +2899,14 @@
          "is_separable_verb": true,
          "separable_type": "động-tân / 离合词",
          "structure_vi": "động từ 说 + tân ngữ 谎",
-         "usage_note_vi": "Có thể nói 说过谎 / 说了一个谎; không dùng 说谎 cho lỗi nói sai vô ý, lúc đó dùng 说错.",
+         "usage_note_vi": "Có thể nói 说过谎 / 说了一个谎; nghĩa là nói dối.",
          "notes": []
-        },
-        "vocab_ref": "",
-        "source_origin": "pdf_reading_supplementary_words",
-        "check_needed": false,
-        "notes": []
+        }
        },
        {
-        "id": "supp_l10_005",
         "hanzi": "老实",
         "pinyin": "lǎoshi",
-        "meaning_vi": "thật thà; trung thực; ngoan ngoãn",
-        "meaning_en": "veracious; genuine; honest",
+        "meaning_vi": "thật thà; trung thực",
         "pos": "Tính từ",
         "pos_detail": {
          "vi": "Tính từ",
@@ -2885,18 +2918,12 @@
          "structure_vi": "",
          "usage_note_vi": "",
          "notes": []
-        },
-        "vocab_ref": "",
-        "source_origin": "pdf_reading_supplementary_words",
-        "check_needed": false,
-        "notes": []
+        }
        },
        {
-        "id": "supp_l10_006",
         "hanzi": "分手",
         "pinyin": "fēn shǒu",
         "meaning_vi": "chia tay",
-        "meaning_en": "to break up",
         "pos": "Động từ li hợp",
         "pos_detail": {
          "vi": "Động từ li hợp",
@@ -2906,20 +2933,14 @@
          "is_separable_verb": true,
          "separable_type": "động-tân / 离合词",
          "structure_vi": "động từ 分 + tân ngữ 手",
-         "usage_note_vi": "Có thể nói 分过手 / 分了手; nếu là ly hôn thì dùng 离婚 chính xác hơn.",
+         "usage_note_vi": "Có thể nói 分了手 / 已经分手了; nghĩa là chia tay.",
          "notes": []
-        },
-        "vocab_ref": "",
-        "source_origin": "pdf_reading_supplementary_words",
-        "check_needed": false,
-        "notes": []
+        }
        },
        {
-        "id": "supp_l10_007",
         "hanzi": "大声",
         "pinyin": "dà shēng",
-        "meaning_vi": "to tiếng; lớn tiếng",
-        "meaning_en": "loudly",
+        "meaning_vi": "lớn tiếng; to tiếng",
         "pos": "Phó từ",
         "pos_detail": {
          "vi": "Phó từ",
@@ -2931,158 +2952,112 @@
          "structure_vi": "",
          "usage_note_vi": "",
          "notes": []
-        },
-        "vocab_ref": "",
-        "source_origin": "pdf_reading_supplementary_words",
-        "check_needed": false,
-        "notes": []
+        }
        }
       ],
       "paragraphs": [
        {
-        "id": "reading_l10_p01",
+        "id": "d2a4cf8b-55cd-4904-9fed-3141da682b19",
         "order": 1,
-        "zh": "今天上课，我们学习的语法是“动词 + 过”，老师要大家用这个语法互相问答。同学们问了很多问题，“你以前来过中国没有？”“吃过中国菜没有？”“看过中国电影没有？”等等。",
-        "pinyin": "Jīntiān shàngkè, wǒmen xuéxí de yǔfǎ shì “dòngcí jiā guo”, lǎoshī yào dàjiā yòng zhège yǔfǎ hùxiāng wèndá. Tóngxuémen wèn le hěn duō wèntí, “Nǐ yǐqián lái guo Zhōngguó méiyǒu?” “Chī guo Zhōngguó cài méiyǒu?” “Kàn guo Zhōngguó diànyǐng méiyǒu?” děngděng.",
-        "vi": "Hôm nay lên lớp, chúng tôi học ngữ pháp “động từ + 过”, thầy/cô yêu cầu mọi người dùng ngữ pháp này để hỏi đáp lẫn nhau. Các bạn hỏi rất nhiều câu như “Trước đây bạn từng đến Trung Quốc chưa?”, “Từng ăn món Trung chưa?”, “Từng xem phim Trung Quốc chưa?” v.v.",
-        "grammar_refs": ["grammar_l10_guo"],
-        "vocab_refs": []
+        "zh": "今天上课，我们学习的语法是“动词 + 过”，老师要大家用这个语法互相问答。同学们问了很多问题，“你以前来过中国没有？”“吃过中国菜没有？”“看过中国电影没有？”等等。我问山本：“你谈过恋爱没有？”山本脸一红，说当然谈过。山本问我的问题是：“你说过谎没有？”我回答，当然说过。记得小时候，有一天我不想去上学了，就给老师打电话，说：“老师，我的小杰克病了，今天不能去上课了。”老师一听是我的声音，就问：“你是谁呀？”我说：“我是我爸爸。”",
+        "vi": "Hôm nay lên lớp, ngữ pháp chúng tôi học là “động từ + 过”, thầy/cô yêu cầu mọi người dùng ngữ pháp này hỏi đáp lẫn nhau. Các bạn hỏi rất nhiều câu như: “Trước đây bạn đã từng đến Trung Quốc chưa?”, “Đã từng ăn món Trung chưa?”, “Đã từng xem phim Trung Quốc chưa?” v.v. Tôi hỏi Yamamoto: “Bạn đã từng yêu chưa?” Yamamoto đỏ mặt, nói tất nhiên là từng rồi. Yamamoto hỏi tôi: “Bạn đã từng nói dối chưa?” Tôi trả lời, tất nhiên là từng. Nhớ hồi nhỏ, có một hôm tôi không muốn đi học, bèn gọi điện cho thầy/cô và nói: “Thưa thầy/cô, Jack bé nhỏ của em bị bệnh rồi, hôm nay không thể đi học.” Thầy/cô vừa nghe là giọng tôi liền hỏi: “Em là ai vậy?” Tôi nói: “Em là bố của em.”",
+        "grammar_refs": ["f8ec59f3-898a-47b2-b536-44dfd8183393"],
+        "pinyin": "Jīntiān shàngkè, wǒmen xuéxí de yǔfǎ shì “dòngcí jiā guo”, lǎoshī yào dàjiā yòng zhège yǔfǎ hùxiāng wèndá. Tóngxuémen wèn le hěn duō wèntí, “Nǐ yǐqián lái guo Zhōngguó méiyǒu?” “Chī guo Zhōngguó cài méiyǒu?” “Kàn guo Zhōngguó diànyǐng méiyǒu?” děngděng. Wǒ wèn Shānběn: “Nǐ tán guo liàn’ài méiyǒu?” Shānběn liǎn yì hóng, shuō dāngrán tán guo. Shānběn wèn wǒ de wèntí shì: “Nǐ shuō guo huǎng méiyǒu?” Wǒ huídá, dāngrán shuō guo. Jìde xiǎo shíhou, yǒu yì tiān wǒ bù xiǎng qù shàngxué le, jiù gěi lǎoshī dǎ diànhuà, shuō: “Lǎoshī, wǒ de Xiǎo Jiékè bìng le, jīntiān bù néng qù shàngkè le.” Lǎoshī yì tīng shì wǒ de shēngyīn, jiù wèn: “Nǐ shì shéi ya?” Wǒ shuō: “Wǒ shì wǒ bàba.”",
+        "check_needed": false
        },
        {
-        "id": "reading_l10_p02",
+        "id": "a6b1119e-769b-4444-9eee-c4a26d7f6af3",
         "order": 2,
-        "zh": "我问山本：“你谈过恋爱没有？”山本脸一红，说当然谈过。山本问我的问题是：“你说过谎没有？”我回答，当然说过。记得小时候，有一天我不想去上学了，就给老师打电话，说：“老师，我的小杰克病了，今天不能去上课了。”老师一听是我的声音，就问：“你是谁呀？”我说：“我是我爸爸。”",
-        "pinyin": "Wǒ wèn Shānběn: “Nǐ tán guo liàn’ài méiyǒu?” Shānběn liǎn yì hóng, shuō dāngrán tán guo. Shānběn wèn wǒ de wèntí shì: “Nǐ shuō guo huǎng méiyǒu?” Wǒ huídá, dāngrán shuō guo. Jìde xiǎo shíhou, yǒu yì tiān wǒ bù xiǎng qù shàngxué le, jiù gěi lǎoshī dǎ diànhuà, shuō: “Lǎoshī, wǒ de Xiǎo Jiékè bìng le, jīntiān bù néng qù shàngkè le.” Lǎoshī yì tīng shì wǒ de shēngyīn, jiù wèn: “Nǐ shì shéi ya?” Wǒ shuō: “Wǒ shì wǒ bàba.”",
-        "vi": "Tôi hỏi Yamamoto: “Bạn từng yêu chưa?” Yamamoto đỏ mặt, nói tất nhiên là từng rồi. Yamamoto hỏi tôi: “Bạn từng nói dối chưa?” Tôi trả lời, tất nhiên là từng rồi. Tôi nhớ hồi nhỏ, có một ngày tôi không muốn đi học, bèn gọi điện cho thầy/cô, nói: “Thưa thầy/cô, Tiểu Jack của em bị ốm, hôm nay không thể đi học được.” Thầy/cô vừa nghe là giọng của tôi, liền hỏi: “Em là ai vậy?” Tôi nói: “Em là bố em.”",
-        "grammar_refs": ["grammar_l10_guo"],
-        "vocab_refs": ["supp_l10_002", "supp_l10_003", "supp_l10_004"]
-       },
-       {
-        "id": "reading_l10_p03",
-        "order": 3,
         "zh": "山本又问马丁说过谎没有。马丁说：“没有。山本，我是世界上最老实的人，从来不说谎。也没有谈过恋爱，要是你的男朋友跟你分手了，你就做我的女朋友吧。”",
-        "pinyin": "Shānběn yòu wèn Mǎdīng shuō guo huǎng méiyǒu. Mǎdīng shuō: “Méiyǒu. Shānběn, wǒ shì shìjiè shàng zuì lǎoshi de rén, cónglái bù shuōhuǎng. Yě méiyǒu tán guo liàn’ài, yàoshi nǐ de nánpéngyou gēn nǐ fēnshǒu le, nǐ jiù zuò wǒ de nǚpéngyou ba.”",
-        "vi": "Yamamoto lại hỏi Martin đã từng nói dối chưa. Martin nói: “Chưa. Yamamoto, tôi là người thật thà nhất thế giới, trước giờ không nói dối. Cũng chưa từng yêu; nếu bạn trai của bạn chia tay với bạn, thì bạn làm bạn gái của tôi nhé.”",
-        "grammar_refs": ["grammar_l10_guo"],
-        "vocab_refs": ["supp_l10_004", "supp_l10_005", "supp_l10_006"]
+        "vi": "Yamamoto lại hỏi Martin đã từng nói dối chưa. Martin nói: “Chưa. Yamamoto, tôi là người thật thà nhất thế giới, chưa bao giờ nói dối. Cũng chưa từng yêu. Nếu bạn trai của bạn chia tay bạn, thì bạn làm bạn gái của tôi nhé.”",
+        "grammar_refs": ["f8ec59f3-898a-47b2-b536-44dfd8183393"],
+        "pinyin": "Shānběn yòu wèn Mǎdīng shuō guo huǎng méiyǒu. Mǎdīng shuō: “Méiyǒu. Shānběn, wǒ shì shìjiè shàng zuì lǎoshi de rén, cónglái bù shuōhuǎng. Yě méiyǒu tán guo liàn’ài, yàoshi nǐ de nánpéngyou gēn nǐ fēn shǒu le, nǐ jiù zuò wǒ de nǚpéngyou ba.”",
+        "check_needed": false
        },
        {
-        "id": "reading_l10_p04",
+        "id": "ce8bdbc9-b498-418a-ab2c-e16111228a35",
+        "order": 3,
+        "zh": "麦克听了大声地对山本说：“山本，你别听他的，马丁正在说谎，他谈过三次恋爱！”",
+        "vi": "Mike nghe xong liền lớn tiếng nói với Yamamoto: “Yamamoto, bạn đừng nghe anh ta, Martin đang nói dối, anh ta đã từng yêu ba lần rồi!”",
+        "grammar_refs": [
+         "f8ec59f3-898a-47b2-b536-44dfd8183393",
+         "57b14753-688a-41b6-9e0d-b61dbbf574d7"
+        ],
+        "pinyin": "Màikè tīng le dàshēng de duì Shānběn shuō: “Shānběn, nǐ bié tīng tā de, Mǎdīng zhèngzài shuōhuǎng, tā tán guo sān cì liàn’ài!”",
+        "check_needed": false
+       },
+       {
+        "id": "b3e5d57c-8b64-4c60-b5f0-3976cd13fef0",
         "order": 4,
-        "zh": "麦克听了大声地对山本说：“山本，你别听他的，马丁正在说谎，他谈过三次恋爱！”听了麦克的话，大家都笑了。马丁说：“听了麦克的话，你们就知道什么叫‘说谎’了。”",
-        "pinyin": "Màikè tīng le dàshēng de duì Shānběn shuō: “Shānběn, nǐ bié tīng tā de, Mǎdīng zhèngzài shuōhuǎng, tā tán guo sān cì liàn’ài!” Tīng le Màikè de huà, dàjiā dōu xiào le. Mǎdīng shuō: “Tīng le Màikè de huà, nǐmen jiù zhīdào shénme jiào ‘shuōhuǎng’ le.”",
-        "vi": "Mike nghe xong liền lớn tiếng nói với Yamamoto: “Yamamoto, bạn đừng nghe anh ấy, Martin đang nói dối, anh ấy từng yêu ba lần rồi!” Nghe lời Mike nói, mọi người đều cười. Martin nói: “Nghe lời Mike nói xong, các bạn sẽ biết thế nào gọi là ‘nói dối’.”",
-        "grammar_refs": ["grammar_l10_guo"],
-        "vocab_refs": ["supp_l10_007", "supp_l10_004"]
+        "zh": "听了麦克的话，大家都笑了。马丁说：“听了麦克的话，你们就知道什么叫‘说谎’了。”",
+        "vi": "Nghe lời Mike nói, mọi người đều cười. Martin nói: “Nghe lời Mike nói xong, các bạn biết thế nào gọi là ‘nói dối’ rồi đó.”",
+        "grammar_refs": [],
+        "pinyin": "Tīng le Màikè de huà, dàjiā dōu xiào le. Mǎdīng shuō: “Tīng le Màikè de huà, nǐmen jiù zhīdào shénme jiào ‘shuōhuǎng’ le.”",
+        "check_needed": false
        }
       ],
-      "check_needed": false
-     },
-     {
-      "id": "reading_l10_questions",
-      "type": "reading_short_answer",
-      "order": 2,
-      "title": "读后回答问题",
-      "title_vi": "Trả lời câu hỏi sau khi đọc",
-      "source_text_ref": "reading_l10_text",
       "questions": [
        {
-        "id": "reading_l10_q01",
-        "question": {
-         "zh": "山本谈过恋爱没有？",
-         "vi": "Yamamoto từng yêu chưa?"
-        },
-        "answer": {
-         "zh": "谈过。",
-         "vi": "Từng rồi."
-        },
-        "acceptable_answers": ["谈过。", "山本谈过恋爱。"],
-        "grading": {
-         "mode": "semantic"
-        }
-       },
-       {
-        "id": "reading_l10_q02",
-        "question": {
-         "zh": "“我”是谁？为什么说“我”说过谎？",
-         "vi": "“Tôi” là ai? Vì sao nói “tôi” từng nói dối?"
-        },
-        "answer": {
-         "zh": "“我”是讲这个故事的人。因为小时候有一次“我”不想上学，就给老师打电话，说自己的“小杰克”病了，还假装自己是爸爸。",
-         "vi": "“Tôi” là người kể chuyện. Vì hồi nhỏ có lần “tôi” không muốn đi học nên gọi điện cho thầy/cô, nói “Tiểu Jack” của mình bị ốm, còn giả làm bố mình."
-        },
-        "acceptable_answers": [
-         "因为小时候有一次他不想上学，就给老师打电话说谎。"
-        ],
-        "grading": {
-         "mode": "semantic"
-        }
-       },
-       {
-        "id": "reading_l10_q03",
-        "question": {
-         "zh": "马丁说过谎吗？为什么？",
-         "vi": "Martin từng nói dối chưa? Vì sao?"
-        },
-        "answer": {
-         "zh": "说过。因为他刚说自己从来不说谎，也没有谈过恋爱，麦克就说他正在说谎，他谈过三次恋爱。",
-         "vi": "Từng rồi. Vì anh ấy vừa nói mình chưa từng nói dối và chưa từng yêu, nhưng Mike nói anh ấy đang nói dối, anh ấy đã từng yêu ba lần."
-        },
-        "acceptable_answers": [
-         "说过，因为他谈过三次恋爱，却说自己没有谈过恋爱。"
-        ],
-        "grading": {
-         "mode": "semantic"
-        }
-       },
-       {
-        "id": "reading_l10_q04",
-        "question": {
-         "zh": "你说过谎吗？什么时候？",
-         "vi": "Bạn từng nói dối chưa? Khi nào?"
-        },
-        "answer": {
-         "zh": "说过。小时候有一次我没有做作业，就对老师说我把作业忘在家里了。",
-         "vi": "Từng. Hồi nhỏ có một lần tôi không làm bài tập, bèn nói với thầy/cô là tôi để quên ở nhà."
-        },
-        "acceptable_answers": ["说过。", "没有说过。"],
-        "grading": {
-         "mode": "manual"
-        }
-       }
-      ],
-      "answer_key": [
-       {
-        "question_id": "reading_l10_q01",
+        "id": "97c6a4ab-7de0-45b1-a796-4625f58d1fca",
+        "question": "山本谈过恋爱没有？",
         "answer": "谈过。",
+        "answer_vi": "Từng rồi.",
+        "evidence": [
+         {
+          "paragraph_id": "d2a4cf8b-55cd-4904-9fed-3141da682b19",
+          "quote": "山本脸一红，说当然谈过。"
+         }
+        ],
+        "answer_verified": true,
         "check_needed": false
        },
        {
-        "question_id": "reading_l10_q02",
-        "sample_answer": "“我”是讲这个故事的人。因为小时候有一次“我”不想上学，就给老师打电话说谎。",
+        "id": "82b334af-11c3-4606-980f-154617982627",
+        "question": "“我”是谁？为什么说“我”说过谎？",
+        "answer": "“我”是讲这个故事的人。因为小时候有一次“我”不想上学，就给老师打电话，说自己的“小杰克”病了，还假装自己是爸爸。",
+        "answer_vi": "“Tôi” là người kể câu chuyện. Vì hồi nhỏ có lần “tôi” không muốn đi học nên gọi điện cho thầy/cô, nói “Tiểu Jack” của mình bị ốm, còn giả làm bố mình.",
+        "evidence": [
+         {
+          "paragraph_id": "d2a4cf8b-55cd-4904-9fed-3141da682b19",
+          "quote": "我说：“我是我爸爸。”"
+         }
+        ],
+        "answer_verified": true,
         "check_needed": false
        },
        {
-        "question_id": "reading_l10_q03",
-        "answer": "说过。因为他谈过三次恋爱，却说自己没有谈过恋爱。",
+        "id": "13181a17-4f4d-4923-a0ef-dd8d285261d4",
+        "question": "马丁说过谎吗？为什么？",
+        "answer": "说过。因为他刚说自己从来不说谎，也没有谈过恋爱，可是麦克说他正在说谎，他谈过三次恋爱。",
+        "answer_vi": "Từng rồi. Vì anh ấy vừa nói mình chưa từng nói dối và chưa từng yêu, nhưng Mike nói anh ấy đang nói dối, anh ấy đã từng yêu ba lần.",
+        "evidence": [
+         {
+          "paragraph_id": "ce8bdbc9-b498-418a-ab2c-e16111228a35",
+          "quote": "马丁正在说谎，他谈过三次恋爱！"
+         }
+        ],
+        "answer_verified": true,
         "check_needed": false
        },
        {
-        "question_id": "reading_l10_q04",
-        "sample_answer": "说过。小时候有一次我没有做作业，就对老师说我把作业忘在家里了。",
+        "id": "05127eb4-5037-4e27-a2e2-5a497d413bd1",
+        "question": "你说过谎吗？什么时候？",
+        "answer": "说过。小时候有一次我没有做作业，就对老师说我把作业忘在家里了。",
+        "answer_vi": "Từng. Hồi nhỏ có một lần tôi không làm bài tập, bèn nói với thầy/cô là tôi để quên bài ở nhà.",
+        "source_origin": "textbook_question_generated_answer",
+        "answer_verified": true,
         "check_needed": false
        }
       ],
       "rendering": {
        "renderer": "reading.comprehension.v2",
        "show_answer_after_submit": true
-      },
-      "check_needed": false
+      }
      }
     ]
    },
    {
-    "id": "section_character_writing_l10",
+    "id": "2a3cfdb8-618f-43d3-9ad4-160d1dbb366a",
     "type": "character_writing",
     "order": 8,
     "title": "写汉字",
@@ -3300,15 +3275,16 @@
        "repeat_count": 6
       }
      }
-    ]
+    ],
+    "empty_reason_vi": ""
    },
    {
-    "id": "section_summary_l10",
+    "id": "944b8c3a-d3d4-4265-a907-10cef8340ac2",
     "type": "summary",
     "order": 9,
     "title": "总结",
     "title_vi": "Tổng kết bài",
-    "source_origin": "generated_checked",
+    "source_origin": "generated",
     "check_needed": false,
     "summary": {
      "lesson_parts": [
@@ -3323,28 +3299,32 @@
      ],
      "grammar_points": [
       {
-       "id": "grammar_l10_guo",
+       "id": "f8ec59f3-898a-47b2-b536-44dfd8183393",
        "title": "过"
       },
       {
-       "id": "grammar_l10_verbal_measure",
+       "id": "57b14753-688a-41b6-9e0d-b61dbbf574d7",
        "title": "动量补语"
       },
       {
-       "id": "grammar_l10_di",
+       "id": "fa804fff-372b-4874-8571-f54e613d7e07",
        "title": "第 + 数词"
       }
      ],
      "key_patterns": [
       "S + V + 过 + O",
       "S + 没/没有 + V + 过 + O",
-      "V + 一次/两次/一遍",
-      "第 + 数词",
+      "V + số + động lượng từ",
+      "第 + số + lượng từ/danh từ",
       "一次也/都没 V过"
      ],
-     "checked_against_pdf_pages": [
-      160, 161, 162, 163, 164, 165, 171, 172, 173, 174, 175, 176, 177, 178
-     ]
+     "checked_counts": {
+      "main_vocab": 36,
+      "proper_nouns": 10,
+      "supplementary_vocab": 7,
+      "character_writing": 14,
+      "exercise_items": 8
+     }
     }
    }
   ],
@@ -3366,8 +3346,8 @@
      "source_origin": "textbook",
      "check_needed": false,
      "page_start": 160,
-     "page_end": 178,
-     "note": "Đã đối chiếu trực tiếp phần bài 10 trong PDF scan."
+     "page_end": 176,
+     "note": "PDF scan; một số phần bài tập cần kiểm tra lại khi final strict."
     },
     {
      "name": "Tong_hop_tu_vung_Han_ngu_quyen_2_Bai_1-25.docx",
@@ -3381,9 +3361,6 @@
      "source_origin": "uploaded_crosscheck",
      "check_needed": false
     }
-   ],
-   "notes": [
-    "Giữ cấu trúc lesson JSON dạng sections; cập nhật dữ liệu pinyin/dịch/nghĩa/đáp án/pos_detail theo PDF."
    ]
   },
   "summary": {
@@ -3399,33 +3376,45 @@
    ],
    "grammar_points": [
     {
-     "id": "grammar_l10_guo",
+     "id": "f8ec59f3-898a-47b2-b536-44dfd8183393",
      "title": "过"
     },
     {
-     "id": "grammar_l10_verbal_measure",
+     "id": "57b14753-688a-41b6-9e0d-b61dbbf574d7",
      "title": "动量补语"
     },
     {
-     "id": "grammar_l10_di",
+     "id": "fa804fff-372b-4874-8571-f54e613d7e07",
      "title": "第 + 数词"
     }
    ],
-   "key_patterns": [
-    "S + V + 过 + O",
-    "S + 没/没有 + V + 过 + O",
-    "V + 一次/两次/一遍",
-    "第 + 数词",
-    "一次也/都没 V过"
+   "main_patterns": [
+    {
+     "pattern": "S + V + 过 + O"
+    },
+    {
+     "pattern": "S + 没/没有 + V + 过 + O"
+    },
+    {
+     "pattern": "V + số + động lượng từ"
+    },
+    {
+     "pattern": "第 + số + lượng từ/danh từ"
+    },
+    {
+     "pattern": "一次也/都没 V过"
+    }
    ],
-   "counts": {
-    "main_vocabulary_items": 36,
-    "proper_names": 10,
-    "supplementary_words": 7,
-    "separable_verbs_marked": 5,
-    "exercise_answer_items_checked": 26,
-    "character_writing_items": 14
-   },
+   "exercise_types": [
+    "Ngữ âm",
+    "Thay thế",
+    "Chọn từ điền chỗ trống",
+    "Làm theo mẫu",
+    "Trả lời theo thực tế",
+    "Sửa câu sai",
+    "Hội thoại giao tiếp",
+    "Đọc hiểu"
+   ],
    "check_needed": false
   }
  }

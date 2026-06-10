@@ -2599,36 +2599,12 @@
         "type": "minimal_pair_group",
         "title": "辨音辨调",
         "items": [
-         {
-          "id": "0e5801e7-b89b-4cc6-8bd9-9e1fbbd30b31_pair_001",
-          "left": "jǐngchá",
-          "right": "jǐngchà"
-         },
-         {
-          "id": "0e5801e7-b89b-4cc6-8bd9-9e1fbbd30b31_pair_002",
-          "left": "kùnnan",
-          "right": "kǒngnàn"
-         },
-         {
-          "id": "0e5801e7-b89b-4cc6-8bd9-9e1fbbd30b31_pair_003",
-          "left": "lìjí",
-          "right": "líqí"
-         },
-         {
-          "id": "0e5801e7-b89b-4cc6-8bd9-9e1fbbd30b31_pair_004",
-          "left": "qíngjǐng",
-          "right": "qīngjìng"
-         },
-         {
-          "id": "0e5801e7-b89b-4cc6-8bd9-9e1fbbd30b31_pair_005",
-          "left": "miànqián",
-          "right": "miǎnqiǎng"
-         },
-         {
-          "id": "0e5801e7-b89b-4cc6-8bd9-9e1fbbd30b31_pair_006",
-          "left": "shūshu",
-          "right": "shūchú"
-         }
+         "jǐngchá / jǐngchà",
+         "kùnnan / kǒngnàn",
+         "lìjí / líqí",
+         "qíngjǐng / qīngjìng",
+         "miànqián / miǎnqiǎng",
+         "shūshu / shūchú"
         ],
         "source_origin": "textbook",
         "check_needed": false

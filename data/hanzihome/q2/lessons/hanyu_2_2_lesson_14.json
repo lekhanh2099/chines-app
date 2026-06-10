@@ -15,7 +15,10 @@
    "pdf_checked",
    "pos_vi_normalized",
    "answers_checked",
-   "previous_deep_vocab_crosschecked"
+   "previous_deep_vocab_crosschecked",
+   "content_rechecked_2026_06_10",
+   "full_exercises_rechecked",
+   "translation_rechecked"
   ],
   "sections": [
    {
@@ -100,7 +103,7 @@
         "id": "d2683a70-b897-4979-ad07-0bca2bb00b31",
         "order": 6,
         "zh": "吃完饭，我们就骑车回来了。回到学校，我又累又困，想赶快回到宿舍去洗个澡，休息休息。我从车上拿下小纸箱。走进楼来，看见电梯门口贴了张通知：“电梯维修，请走楼梯。”我住十层，没办法，只好爬上去。我手里提着一箱子东西，一步一步地往上爬。爬了半天才爬到十层。到了门口，我放下箱子，要拿出钥匙开门的时候，却发现钥匙不见了，找了半天也没有找到。啊！我忽然想起来了，钥匙还在楼下自行车上插着呢，我忘拔下来了。这时，我真是哭笑不得。",
-        "vi": "Ăn cơm xong, chúng tôi liền đạp xe về. Về đến trường, tôi vừa mệt vừa buồn ngủ, muốn nhanh chóng về ký túc xá tắm một cái rồi nghỉ ngơi. Tôi lấy chiếc thùng giấy nhỏ từ trên xe xuống. Vừa đi vào tòa nhà, tôi thấy ở cửa thang máy có dán một thông báo: “Thang máy sửa chữa, xin đi cầu thang bộ.” Tôi ở tầng mười, không còn cách nào khác, đành phải leo lên. Tay tôi xách một thùng đồ, từng bước từng bước leo lên trên. Leo mãi mới lên tới tầng mười. Đến cửa phòng, tôi đặt thùng xuống, lúc định lấy chìa khóa mở cửa thì lại phát hiện chìa khóa không thấy đâu. Tìm cả buổi cũng không tìm thấy. A! Tôi bỗng nhớ ra rồi, chìa khóa vẫn đang cắm ở xe đạp dưới lầu, tôi quên rút ra rồi. Lúc đó, tôi thật sự dở khóc dở cười.",
+        "vi": "Ăn cơm xong, chúng tôi liền đạp xe về. Về đến trường, tôi vừa mệt vừa buồn ngủ, muốn nhanh chóng về ký túc xá tắm một cái rồi nghỉ ngơi. Tôi lấy chiếc thùng giấy nhỏ từ trên xe xuống. Vừa đi vào tòa nhà, tôi thấy ở cửa thang máy có dán một thông báo: “Thang máy sửa chữa, xin đi cầu thang bộ.” Tôi ở tầng mười, không còn cách nào khác, đành phải leo lên. Tay tôi xách một thùng đồ, từng bước từng bước leo lên trên. Leo mãi mới lên tới tầng mười. Đến cửa phòng, tôi đặt thùng xuống, lúc định lấy chìa khóa mở cửa thì lại phát hiện chìa khóa không thấy đâu. Tìm hồi lâu vẫn không tìm thấy. A! Tôi bỗng nhớ ra rồi, chìa khóa vẫn đang cắm ở xe đạp dưới lầu, tôi quên rút ra rồi. Lúc đó, tôi thật sự dở khóc dở cười.",
         "pinyin": "",
         "audio_key": "",
         "vocab_refs": [],
@@ -112,7 +115,7 @@
         "id": "cde61ddf-34c9-4d25-892b-99b26df9e427",
         "order": 7,
         "zh": "我刚要跑下楼去，就看见麦克也爬上来了，他手里拿的正是我的那串儿钥匙。",
-        "vi": "Tôi vừa định chạy xuống lầu thì nhìn thấy Mike cũng leo lên rồi. Thứ anh ấy cầm trong tay chính là chùm chìa khóa của tôi.",
+        "vi": "Tôi vừa định chạy xuống lầu thì nhìn thấy Mike cũng đã leo lên tới nơi. Thứ anh ấy cầm trong tay đúng là chùm chìa khóa của tôi.",
         "pinyin": "",
         "audio_key": "",
         "vocab_refs": [],
@@ -3751,7 +3754,7 @@
          {
           "id": "c6fbeb40-156e-450c-a390-d58626cae49e",
           "zh": "我是上来的。",
-          "pinyin": "",
+          "pinyin": "Wǒ shì shànglai de.",
           "vi": "Tôi đi lên đây.",
           "highlight": ["上来"],
           "grammar_refs": ["f8ec59f3-898a-47b2-b536-44dfd8183393"],
@@ -3762,7 +3765,7 @@
          {
           "id": "d5b13929-16ec-4967-ac8a-868d80ec0b1e",
           "zh": "他们走过来，我们走过去。",
-          "pinyin": "",
+          "pinyin": "Tāmen zǒu guòlai, wǒmen zǒu guòqu.",
           "vi": "Họ đi qua đây, chúng tôi đi qua đó.",
           "highlight": ["过来", "过去"],
           "grammar_refs": ["f8ec59f3-898a-47b2-b536-44dfd8183393"],
@@ -3773,7 +3776,7 @@
          {
           "id": "50b5e564-92c8-4900-b66a-00f5bfca9437",
           "zh": "他跑进来了。",
-          "pinyin": "",
+          "pinyin": "Tā pǎo jìnlai le.",
           "vi": "Anh ấy chạy vào đây rồi.",
           "highlight": ["进来"],
           "grammar_refs": ["f8ec59f3-898a-47b2-b536-44dfd8183393"],
@@ -3784,7 +3787,7 @@
          {
           "id": "32ce3ad6-8de3-45db-b360-0c00996f1eef",
           "zh": "他跑出去了。",
-          "pinyin": "",
+          "pinyin": "Tā pǎo chūqu le.",
           "vi": "Anh ấy chạy ra ngoài rồi.",
           "highlight": ["出去"],
           "grammar_refs": ["f8ec59f3-898a-47b2-b536-44dfd8183393"],
@@ -3795,7 +3798,7 @@
          {
           "id": "65da2f6a-6a1a-4d3d-8cf6-cc56c3fb01a8",
           "zh": "这本书买回来了。",
-          "pinyin": "",
+          "pinyin": "Zhè běn shū mǎi huílai le.",
           "vi": "Quyển sách này mua về rồi.",
           "highlight": ["回来"],
           "grammar_refs": ["f8ec59f3-898a-47b2-b536-44dfd8183393"],
@@ -3806,7 +3809,7 @@
          {
           "id": "aee201a5-655e-471c-b56c-819ca00b8eeb",
           "zh": "蝴蝶飞起来了。",
-          "pinyin": "",
+          "pinyin": "Húdié fēi qǐlai le.",
           "vi": "Con bướm bay lên rồi.",
           "highlight": ["起来"],
           "grammar_refs": ["f8ec59f3-898a-47b2-b536-44dfd8183393"],
@@ -3839,7 +3842,7 @@
          {
           "id": "c6fbeb40-156e-450c-a390-d58626cae49e",
           "zh": "我是上来的。",
-          "pinyin": "",
+          "pinyin": "Wǒ shì shànglai de.",
           "vi": "Tôi đi lên đây.",
           "highlight": ["上来"],
           "grammar_refs": ["f8ec59f3-898a-47b2-b536-44dfd8183393"],
@@ -3850,7 +3853,7 @@
          {
           "id": "d5b13929-16ec-4967-ac8a-868d80ec0b1e",
           "zh": "他们走过来，我们走过去。",
-          "pinyin": "",
+          "pinyin": "Tāmen zǒu guòlai, wǒmen zǒu guòqu.",
           "vi": "Họ đi qua đây, chúng tôi đi qua đó.",
           "highlight": ["过来", "过去"],
           "grammar_refs": ["f8ec59f3-898a-47b2-b536-44dfd8183393"],
@@ -3861,7 +3864,7 @@
          {
           "id": "50b5e564-92c8-4900-b66a-00f5bfca9437",
           "zh": "他跑进来了。",
-          "pinyin": "",
+          "pinyin": "Tā pǎo jìnlai le.",
           "vi": "Anh ấy chạy vào đây rồi.",
           "highlight": ["进来"],
           "grammar_refs": ["f8ec59f3-898a-47b2-b536-44dfd8183393"],
@@ -3872,7 +3875,7 @@
          {
           "id": "32ce3ad6-8de3-45db-b360-0c00996f1eef",
           "zh": "他跑出去了。",
-          "pinyin": "",
+          "pinyin": "Tā pǎo chūqu le.",
           "vi": "Anh ấy chạy ra ngoài rồi.",
           "highlight": ["出去"],
           "grammar_refs": ["f8ec59f3-898a-47b2-b536-44dfd8183393"],
@@ -3883,7 +3886,7 @@
          {
           "id": "65da2f6a-6a1a-4d3d-8cf6-cc56c3fb01a8",
           "zh": "这本书买回来了。",
-          "pinyin": "",
+          "pinyin": "Zhè běn shū mǎi huílai le.",
           "vi": "Quyển sách này mua về rồi.",
           "highlight": ["回来"],
           "grammar_refs": ["f8ec59f3-898a-47b2-b536-44dfd8183393"],
@@ -3894,7 +3897,7 @@
          {
           "id": "aee201a5-655e-471c-b56c-819ca00b8eeb",
           "zh": "蝴蝶飞起来了。",
-          "pinyin": "",
+          "pinyin": "Húdié fēi qǐlai le.",
           "vi": "Con bướm bay lên rồi.",
           "highlight": ["起来"],
           "grammar_refs": ["f8ec59f3-898a-47b2-b536-44dfd8183393"],
@@ -3920,7 +3923,7 @@
          {
           "id": "82c84378-8c03-4e23-be01-d27117bb65ef",
           "zh": "我看见他走进图书馆去了。",
-          "pinyin": "",
+          "pinyin": "Wǒ kànjiàn tā zǒu jìn túshūguǎn qù le.",
           "vi": "Tôi nhìn thấy anh ấy đi vào thư viện rồi.",
           "highlight": ["走进图书馆去"],
           "grammar_refs": ["f8ec59f3-898a-47b2-b536-44dfd8183393"],
@@ -3944,7 +3947,7 @@
          {
           "id": "d912f7f1-c6af-48af-9bbb-aa9f54ac3921",
           "zh": "他从国外给我带回来一件礼物。",
-          "pinyin": "",
+          "pinyin": "Tā cóng guówài gěi wǒ dài huílai yí jiàn lǐwù.",
           "vi": "Anh ấy mang từ nước ngoài về cho tôi một món quà.",
           "highlight": ["带回来"],
           "grammar_refs": ["f8ec59f3-898a-47b2-b536-44dfd8183393"],
@@ -3968,7 +3971,7 @@
          {
           "id": "c650d743-227e-4e10-9373-95e0940ca9ec",
           "zh": "刚一下课，同学们就都跑出去了。",
-          "pinyin": "",
+          "pinyin": "Gāng yí xiàkè, tóngxuémen jiù dōu pǎo chūqu le.",
           "vi": "Vừa tan học, các bạn học sinh đều chạy ra ngoài.",
           "highlight": ["跑出去"],
           "grammar_refs": ["f8ec59f3-898a-47b2-b536-44dfd8183393"],
@@ -3979,7 +3982,7 @@
          {
           "id": "6f2f727c-79e3-48ed-a2b5-42a3afbdf18e",
           "zh": "我给你买回来了一件羽绒服。",
-          "pinyin": "",
+          "pinyin": "Wǒ gěi nǐ mǎi huílai le yí jiàn yǔróngfú.",
           "vi": "Tôi mua về cho bạn một chiếc áo lông vũ.",
           "highlight": ["买回来"],
           "grammar_refs": ["f8ec59f3-898a-47b2-b536-44dfd8183393"],
@@ -4061,36 +4064,12 @@
         "type": "minimal_pair_group",
         "title": "辨音辨调",
         "items": [
-         {
-          "id": "0e5801e7-b89b-4cc6-8bd9-9e1fbbd30b31_pair_001",
-          "left": "jìnqu",
-          "right": "jìnqù"
-         },
-         {
-          "id": "0e5801e7-b89b-4cc6-8bd9-9e1fbbd30b31_pair_002",
-          "left": "yàoshi",
-          "right": "yàoshì"
-         },
-         {
-          "id": "0e5801e7-b89b-4cc6-8bd9-9e1fbbd30b31_pair_003",
-          "left": "yìngxiǎng",
-          "right": "yìnxiàng"
-         },
-         {
-          "id": "0e5801e7-b89b-4cc6-8bd9-9e1fbbd30b31_pair_004",
-          "left": "shūjià",
-          "right": "shǔjià"
-         },
-         {
-          "id": "0e5801e7-b89b-4cc6-8bd9-9e1fbbd30b31_pair_005",
-          "left": "yúshì",
-          "right": "yìshì"
-         },
-         {
-          "id": "0e5801e7-b89b-4cc6-8bd9-9e1fbbd30b31_pair_006",
-          "left": "zhǐhǎo",
-          "right": "chīhǎo"
-         }
+         "jìnqu / jìnqù",
+         "yàoshi / yàoshì",
+         "yìngxiǎng / yìnxiàng",
+         "shūjià / shǔjià",
+         "yúshì / yìshì",
+         "zhǐhǎo / chīhǎo"
         ]
        },
        {
@@ -4220,55 +4199,64 @@
         "id": "941d80e5-8eb2-4e21-beae-597e6677cdaf",
         "prompt": "收到他给我发来的邮件，我非常__________。",
         "answer": "兴奋",
-        "answer_verified": true
+        "answer_verified": true,
+        "check_needed": false
        },
        {
         "id": "f31d95d0-500f-4cc9-97ee-57a7295062d2",
         "prompt": "我想买一些书带__________国去。",
         "answer": "回",
-        "answer_verified": true
+        "answer_verified": true,
+        "check_needed": false
        },
        {
         "id": "069f2cd8-233c-4227-8f46-78a1d28a4a59",
         "prompt": "__________买书，我还想买一些小礼品。",
         "answer": "除了",
-        "answer_verified": true
+        "answer_verified": true,
+        "check_needed": false
        },
        {
         "id": "013e3712-30ac-4a8a-b60e-0d6f818f4cdb",
         "prompt": "他想让我跟他一起去书店，__________我就跟他去了。",
         "answer": "于是",
-        "answer_verified": true
+        "answer_verified": true,
+        "check_needed": false
        },
        {
         "id": "ba362929-16a5-4a79-8cad-ecfabcaa32f3",
         "prompt": "我们从一个商场出来，又去了__________一个商场。",
         "answer": "另",
-        "answer_verified": true
+        "answer_verified": true,
+        "check_needed": false
        },
        {
         "id": "542ef74e-c843-4b6c-9cd8-0011b6ee7b7a",
         "prompt": "很快就要放__________了。",
         "answer": "寒假",
-        "answer_verified": true
+        "answer_verified": true,
+        "check_needed": false
        },
        {
         "id": "715f1fd6-1b2e-43e0-b3dc-cbc252152601",
         "prompt": "因为没得到奖学金，我__________回国。",
         "answer": "只好",
-        "answer_verified": true
+        "answer_verified": true,
+        "check_needed": false
        },
        {
         "id": "105a0775-7adb-418e-b770-133481e26360",
         "prompt": "语言大学的学生主要是从世界__________国来的留学生。",
         "answer": "各",
-        "answer_verified": true
+        "answer_verified": true,
+        "check_needed": false
        },
        {
         "id": "e4f087ec-f391-487e-9c09-fa2844c867d8",
         "prompt": "这种事真让人__________。",
         "answer": "哭笑不得",
-        "answer_verified": true
+        "answer_verified": true,
+        "check_needed": false
        }
       ],
       "source_origin": "textbook/generated_mixed",
@@ -4545,56 +4533,64 @@
         "prompt": "你看，他跑过去了。",
         "answer": "这边",
         "answer_verified": true,
-        "answer_note_vi": "根据 来/去 判断说话人的位置；部分题可有等价表述。"
+        "answer_note_vi": "根据 来/去 判断说话人的位置；部分题可有等价表述。",
+        "check_needed": false
        },
        {
         "id": "ab74bab2-0cd3-4c59-b4dd-6d9a3c6197b9",
         "prompt": "您的行李已经给您搬上来了。",
         "answer": "上边 / 楼上",
         "answer_verified": true,
-        "answer_note_vi": "根据 来/去 判断说话人的位置；部分题可有等价表述。"
+        "answer_note_vi": "根据 来/去 判断说话人的位置；部分题可有等价表述。",
+        "check_needed": false
        },
        {
         "id": "c503fed9-44e1-4df9-b284-51dbab822ee8",
         "prompt": "他的车开进来了。",
         "answer": "里边",
         "answer_verified": true,
-        "answer_note_vi": "根据 来/去 判断说话人的位置；部分题可有等价表述。"
+        "answer_note_vi": "根据 来/去 判断说话人的位置；部分题可有等价表述。",
+        "check_needed": false
        },
        {
         "id": "87b8a7fb-1969-49e6-b592-82a2e0147e96",
         "prompt": "我们走上去吧。",
         "answer": "下边 / 楼下",
         "answer_verified": true,
-        "answer_note_vi": "根据 来/去 判断说话人的位置；部分题可有等价表述。"
+        "answer_note_vi": "根据 来/去 判断说话人的位置；部分题可有等价表述。",
+        "check_needed": false
        },
        {
         "id": "6155b63d-c263-446a-9ad7-80d775f5be6e",
         "prompt": "书他已经提上去了。",
         "answer": "下边 / 楼下",
         "answer_verified": true,
-        "answer_note_vi": "根据 来/去 判断说话人的位置；部分题可有等价表述。"
+        "answer_note_vi": "根据 来/去 判断说话人的位置；部分题可有等价表述。",
+        "check_needed": false
        },
        {
         "id": "8e9a9428-6659-4025-8fb4-b5bf4134d62d",
         "prompt": "你要的电脑我已经买回来了。",
         "answer": "这儿 / 原来的地方",
         "answer_verified": true,
-        "answer_note_vi": "根据 来/去 判断说话人的位置；部分题可有等价表述。"
+        "answer_note_vi": "根据 来/去 判断说话人的位置；部分题可有等价表述。",
+        "check_needed": false
        },
        {
         "id": "d2ee010f-bdf3-46bc-b758-1c9bbab1af4b",
         "prompt": "她们爬上山去了。",
         "answer": "山下",
         "answer_verified": true,
-        "answer_note_vi": "根据 来/去 判断说话人的位置；部分题可有等价表述。"
+        "answer_note_vi": "根据 来/去 判断说话人的位置；部分题可有等价表述。",
+        "check_needed": false
        },
        {
         "id": "8cd8da84-508c-4d14-9ec6-23425cabd8b3",
         "prompt": "钱我已经取回来了。",
         "answer": "这儿 / 原来的地方",
         "answer_verified": true,
-        "answer_note_vi": "根据 来/去 判断说话人的位置；部分题可有等价表述。"
+        "answer_note_vi": "根据 来/去 判断说话人的位置；部分题可有等价表述。",
+        "check_needed": false
        }
       ],
       "source_origin": "textbook",
@@ -4729,42 +4725,48 @@
         "prompt": "上课十分钟他才走进来教室。",
         "answer": "上课十分钟他才走进教室来。",
         "answer_verified": true,
-        "explanation_vi": "教室是处所宾语，要放在 进 和 来/去 之间。"
+        "explanation_vi": "教室是处所宾语，要放在 进 和 来/去 之间。",
+        "check_needed": false
        },
        {
         "id": "e65bddbb-aff2-43d6-86ee-fb07381ebe3e",
         "prompt": "我看见她走出去图书馆了。",
         "answer": "我看见她走出图书馆去了。",
         "answer_verified": true,
-        "explanation_vi": "图书馆是处所宾语，要放在 出 和 去 之间。"
+        "explanation_vi": "图书馆是处所宾语，要放在 出 和 去 之间。",
+        "check_needed": false
        },
        {
         "id": "2ac934ff-71d7-4d4a-b040-149ec5a5750e",
         "prompt": "孩子看见我，就向我跑过去。",
         "answer": "孩子看见我，就向我跑过来。",
         "answer_verified": true,
-        "explanation_vi": "向我 表示朝说话人/我这边来，应使用 过来。"
+        "explanation_vi": "向我 表示朝说话人/我这边来，应使用 过来。",
+        "check_needed": false
        },
        {
         "id": "c5d39e80-de1f-4a3c-9b5f-9193a14a8a33",
         "prompt": "他从箱子里拿出去一件羽绒服。",
         "answer": "他从箱子里拿出来一件羽绒服。",
         "answer_verified": true,
-        "explanation_vi": "从箱子里取出东西，方向应为 出来，不是 出去。"
+        "explanation_vi": "从箱子里取出东西，方向应为 出来，不是 出去。",
+        "check_needed": false
        },
        {
         "id": "758a96f8-d8f5-4075-aafa-95e515a48195",
         "prompt": "我们的飞机马上就飞上去天了。",
         "answer": "我们的飞机马上就飞上天去了。",
         "answer_verified": true,
-        "explanation_vi": "天是处所宾语，要放在 上 和 去 之间。"
+        "explanation_vi": "天是处所宾语，要放在 上 和 去 之间。",
+        "check_needed": false
        },
        {
         "id": "7969b51e-cfc5-4e03-97be-0b29b48a7fdc",
         "prompt": "妈妈病好了以后，我就送她回去老家了。",
         "answer": "妈妈病好了以后，我就送她回老家去了。",
         "answer_verified": true,
-        "explanation_vi": "老家是处所宾语，要放在 回 和 去 之间。"
+        "explanation_vi": "老家是处所宾语，要放在 回 和 去 之间。",
+        "check_needed": false
        }
       ],
       "source_origin": "textbook",
@@ -5093,25 +5095,29 @@
         "id": "0d82ab86-2b18-4749-8f20-32e5c7c6758f",
         "prompt": "爬上①__________的",
         "answer": "来",
-        "answer_verified": true
+        "answer_verified": true,
+        "check_needed": false
        },
        {
         "id": "7a9aa110-f471-44f5-93f8-e82ae6aefee3",
         "prompt": "跳②__________的时候",
         "answer": "出来",
-        "answer_verified": true
+        "answer_verified": true,
+        "check_needed": false
        },
        {
         "id": "a7836085-ebad-4bef-b300-52734a96dbd1",
         "prompt": "美③__________了",
         "answer": "极",
-        "answer_verified": true
+        "answer_verified": true,
+        "check_needed": false
        },
        {
         "id": "7ed4fadc-c6e9-4a39-b12b-2ad23d1c63fe",
         "prompt": "走④__________了",
         "answer": "下去",
-        "answer_verified": true
+        "answer_verified": true,
+        "check_needed": false
        }
       ],
       "source_origin": "textbook/generated_mixed",

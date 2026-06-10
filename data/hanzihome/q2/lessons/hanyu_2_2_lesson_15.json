@@ -13,7 +13,9 @@
    "grammar_zhe",
    "pdf_checked",
    "exercises_verified",
-   "pinyin_checked"
+   "pinyin_checked",
+   "final_content_checked",
+   "pdf_pages_52_65_checked"
   ],
   "sections": [
    {
@@ -271,10 +273,10 @@
        {
         "speaker": "麦克",
         "zh": "是！我是第一次参加这样的婚礼。屋子里挂着大红灯笼，墙上贴着一个很大的红双喜字。桌子上摆着很多酒和菜。新娘长得很漂亮，穿着一件红棉袄，头上还戴着红花。新郎是一个帅小伙儿，穿着一身深蓝色的西服，系着红领带。他们笑着对我们说：“欢迎！欢迎！”新娘热情地请客人吃糖，新郎忙着给客人倒喜酒。孩子们不停地说着、笑着，热热闹闹的，气氛非常好。",
-        "vi": "Đúng vậy! Đây là lần đầu tiên tôi tham dự một đám cưới như thế. Trong phòng treo đèn lồng đỏ lớn, trên tường dán một chữ song hỷ đỏ rất to. Trên bàn bày rất nhiều rượu và món ăn. Cô dâu trông rất xinh, mặc một chiếc áo bông đỏ, trên đầu còn cài hoa đỏ. Chú rể là một chàng trai rất đẹp trai, mặc một bộ âu phục màu xanh đậm, thắt cà vạt đỏ. Họ cười nói với chúng tôi: “Hoan nghênh! Hoan nghênh!” Cô dâu nhiệt tình mời khách ăn kẹo, chú rể bận rót rượu mừng cho khách. Bọn trẻ không ngừng nói cười, rất náo nhiệt, bầu không khí vô cùng tốt.",
+        "vi": "Đúng vậy! Đây là lần đầu tiên tôi tham dự một đám cưới như thế. Trong phòng treo đèn lồng đỏ lớn, trên tường dán một chữ song hỷ đỏ rất to. Trên bàn bày rất nhiều rượu và món ăn. Cô dâu trông rất xinh, mặc một chiếc áo bông đỏ, trên đầu còn cài hoa đỏ. Chú rể là một chàng trai rất đẹp trai, mặc một bộ âu phục màu xanh đậm, thắt cà vạt đỏ. Họ cười nói với chúng tôi: “Hoan nghênh! Hoan nghênh!” Cô dâu nhiệt tình mời khách ăn kẹo, chú rể bận rót rượu mừng cho khách. Bọn trẻ không ngừng nói cười, rất náo nhiệt, bầu không khí rất tốt.",
         "id": "9e143bd6-8273-4480-beea-b87921f0d67e",
         "order": 4,
-        "pinyin": "Shì! Wǒ shì dì yī cì cānjiā zhèyàng de hūnlǐ. Wūzi lǐ guàzhe dà hóng dēnglong, qiáng shàng tiēzhe yí ge hěn dà de hóng shuāngxǐ zì. Zhuōzi shàng bǎizhe hěn duō jiǔ hé cài. Xīnniáng zhǎng de hěn piàoliang, chuānzhe yí jiàn hóng mián’ǎo, tóu shàng hái dàizhe hóng huā. Xīnláng shì yí ge shuài xiǎohuǒr, chuānzhe yì shēn shēnlánsè de xīfú, jìzhe hóng lǐngdài. Tāmen xiàozhe duì wǒmen shuō: “Huānyíng! Huānyíng!” Xīnniáng rèqíng de qǐng kèrén chī táng, xīnláng mángzhe gěi kèrén dào xǐjiǔ. Háizimen bùtíng de shuōzhe, xiàozhe, rèrènaonao de, qìfēn fēicháng hǎo.",
+        "pinyin": "Shì! Wǒ shì dì yī cì cānjiā zhèyàng de hūnlǐ. Wūzi lǐ guàzhe dà hóng dēnglong, qiáng shàng tiēzhe yí ge hěn dà de hóng shuāngxǐ zì. Zhuōzi shàng bǎizhe hěn duō jiǔ hé cài. Xīnniáng zhǎng de hěn piàoliang, chuānzhe yí jiàn hóng mián'ǎo, tóu shàng hái dàizhe hóng huā. Xīnláng shì yí ge shuài xiǎohuǒr, chuānzhe yì shēn shēnlánsè de xīfú, jìzhe hóng lǐngdài. Tāmen xiàozhe duì wǒmen shuō: “Huānyíng! Huānyíng!” Xīnniáng rèqíng de qǐng kèrén chī táng, xīnláng mángzhe gěi kèrén dào xǐjiǔ. Háizimen bùtíng de shuōzhe, xiàozhe, rè rè nào nào de, qìfēn fēicháng hǎo.",
         "audio_key": "",
         "vocab_refs": [],
         "grammar_refs": ["f8ec59f3-898a-47b2-b536-44dfd8183393"],
@@ -3496,7 +3498,7 @@
    }
   ],
   "metadata": {
-   "legacy_id": "hanyu_2_2_lesson_15_partial",
+   "legacy_id": "hanyu_2_2_lesson_15_verified",
    "book": "Hanyu Jiaocheng",
    "volume": "第二册下",
    "volume_vi": "Quyển 2 Hạ",

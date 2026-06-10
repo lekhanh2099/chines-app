@@ -17,7 +17,7 @@
   ],
   "sections": [
    {
-    "id": "section_text",
+    "id": "a6c0d522-99be-4f36-881c-b9b2c6beeb85",
     "type": "text",
     "order": 1,
     "title": "课文",
@@ -26,7 +26,7 @@
     "check_needed": false,
     "blocks": [
      {
-      "id": "text_dialogue_001",
+      "id": "e155d5ea-f89d-45f0-ab8d-094ce9e719f0",
       "type": "text_dialogue",
       "order": 1,
       "title": "我是跟旅游团一起来的",
@@ -35,7 +35,7 @@
       "check_needed": false,
       "lines": [
        {
-        "id": "line_001",
+        "id": "5bc5cead-21f5-4b69-8457-1830793084f6",
         "order": 1,
         "speaker": "丹尼斯",
         "zh": "王老师，您好！好久不见了。",
@@ -48,12 +48,12 @@
         "check_needed": false
        },
        {
-        "id": "line_002",
+        "id": "32240d19-9736-4970-a8ee-cc2ff820a4e2",
         "order": 2,
         "speaker": "王老师",
         "zh": "你好！丹尼斯，你是什么时候来的？",
         "pinyin": "Nǐ hǎo! Dānnísī, nǐ shì shénme shíhou lái de?",
-        "vi": "Chào em! Dennis, em đến lúc nào vậy?",
+        "vi": "Chào em! Denise, em đến lúc nào vậy?",
         "audio_key": "",
         "vocab_refs": [],
         "grammar_refs": [],
@@ -61,7 +61,7 @@
         "check_needed": false
        },
        {
-        "id": "line_003",
+        "id": "e3404efe-2151-4299-93a0-6afe6e9f9bb0",
         "order": 3,
         "speaker": "丹尼斯",
         "zh": "前天刚到的。",
@@ -74,7 +74,7 @@
         "check_needed": false
        },
        {
-        "id": "line_004",
+        "id": "3db2290a-3b04-44a5-bccf-cbe5fb8b7207",
         "order": 4,
         "speaker": "王老师",
         "zh": "是来学习的吗？",
@@ -87,7 +87,7 @@
         "check_needed": false
        },
        {
-        "id": "line_005",
+        "id": "e0906c92-5b65-4ff5-85c8-e60165019eff",
         "order": 5,
         "speaker": "丹尼斯",
         "zh": "不是，是来旅行的。",
@@ -100,7 +100,7 @@
         "check_needed": false
        },
        {
-        "id": "line_006",
+        "id": "697e8c17-de5e-4230-9758-e5103a9fcc48",
         "order": 6,
         "speaker": "王老师",
         "zh": "一个人来的吗？",
@@ -113,7 +113,7 @@
         "check_needed": false
        },
        {
-        "id": "line_007",
+        "id": "85a6a6d4-4fe7-434d-865f-81501ecf7f4b",
         "order": 7,
         "speaker": "丹尼斯",
         "zh": "不是，我是跟旅游团一起来的。我当翻译，也是导游。",
@@ -126,7 +126,7 @@
         "check_needed": false
        },
        {
-        "id": "line_008",
+        "id": "fad45bf0-e51a-4400-8b0b-fc3c23e07e11",
         "order": 8,
         "speaker": "王老师",
         "zh": "你已经工作了？",
@@ -139,7 +139,7 @@
         "check_needed": false
        },
        {
-        "id": "line_009",
+        "id": "895f5704-916e-4ec1-888f-a25e9f14643b",
         "order": 9,
         "speaker": "丹尼斯",
         "zh": "没有，我还在读研究生。",
@@ -152,7 +152,7 @@
         "check_needed": false
        },
        {
-        "id": "line_010",
+        "id": "ee57387d-1b7b-4282-80ba-5470ca982140",
         "order": 10,
         "speaker": "王老师",
         "zh": "是在打工吗？",
@@ -165,7 +165,7 @@
         "check_needed": false
        },
        {
-        "id": "line_011",
+        "id": "ce649381-34e2-42eb-8384-b70fe6d0ca45",
         "order": 11,
         "speaker": "丹尼斯",
         "zh": "是的，利用假期到一家旅行社打工。他们组织了一个旅游团，老板就让我陪他们来了。他知道我需要经常来中国收集资料，所以，一有来中国的旅游团，他就安排我陪团来。",
@@ -178,7 +178,7 @@
         "check_needed": false
        },
        {
-        "id": "line_012",
+        "id": "913797d7-07ef-462d-978d-f151a164d2dc",
         "order": 12,
         "speaker": "王老师",
         "zh": "这个老板还真不错。",
@@ -191,7 +191,7 @@
         "check_needed": false
        },
        {
-        "id": "line_013",
+        "id": "0a444ce3-3e40-40a0-aaea-fa6943fbbbb7",
         "order": 13,
         "speaker": "丹尼斯",
         "zh": "是。他给了我很多帮助。",
@@ -204,7 +204,7 @@
         "check_needed": false
        },
        {
-        "id": "line_014",
+        "id": "9fef5c28-00b3-4eb9-8716-b9f33e606079",
         "order": 14,
         "speaker": "王老师",
         "zh": "去别的地方了吗？",
@@ -217,7 +217,7 @@
         "check_needed": false
        },
        {
-        "id": "line_015",
+        "id": "60807488-7301-4895-b3db-98a235ba75c5",
         "order": 15,
         "speaker": "丹尼斯",
         "zh": "去了。我们先在香港玩儿了三天，又去了深圳，是从深圳过来的。",
@@ -230,7 +230,7 @@
         "check_needed": false
        },
        {
-        "id": "line_016",
+        "id": "403fba10-54ab-49e3-94eb-374e6dbf324a",
         "order": 16,
         "speaker": "王老师",
         "zh": "坐飞机来的吗？",
@@ -243,7 +243,7 @@
         "check_needed": false
        },
        {
-        "id": "line_017",
+        "id": "8f4a15bc-6432-4bcb-9da3-a609cb972a10",
         "order": 17,
         "speaker": "丹尼斯",
         "zh": "不是，坐高铁来的。旅游团的人都想坐坐中国的高铁，看看铁路两边的风光。",
@@ -256,11 +256,11 @@
         "check_needed": false
        },
        {
-        "id": "line_018",
+        "id": "9859f32c-4cb2-4747-9257-d5937a3b016f",
         "order": 18,
         "speaker": "王老师",
         "zh": "什么时候回去？",
-        "pinyin": "Shénme shíhou huíqu?",
+        "pinyin": "Shénme shíhou huíqù?",
         "vi": "Khi nào em về?",
         "audio_key": "",
         "vocab_refs": [],
@@ -269,11 +269,11 @@
         "check_needed": false
        },
        {
-        "id": "line_019",
+        "id": "39db5a09-ed9c-4d44-a1f2-f1d406a1ff07",
         "order": 19,
         "speaker": "丹尼斯",
         "zh": "旅游团后天就回去了。我跟老板商量好了，晚回去几天，我要到孔子的故乡去一趟。今天下午是自由活动时间，所以来看老师。",
-        "pinyin": "Lǚyóutuán hòutiān jiù huíqu le. Wǒ gēn lǎobǎn shāngliang hǎo le, wǎn huíqu jǐ tiān, wǒ yào dào Kǒngzǐ de gùxiāng qù yí tàng. Jīntiān xiàwǔ shì zìyóu huódòng shíjiān, suǒyǐ lái kàn lǎoshī.",
+        "pinyin": "Lǚyóutuán hòutiān jiù huíqù le. Wǒ gēn lǎobǎn shāngliang hǎo le, wǎn huíqù jǐ tiān, wǒ yào dào Kǒngzǐ de gùxiāng qù yí tàng. Jīntiān xiàwǔ shì zìyóu huódòng shíjiān, suǒyǐ lái kàn lǎoshī.",
         "vi": "Đoàn du lịch ngày kia là về rồi. Em đã bàn xong với ông chủ là sẽ về muộn vài ngày; em muốn đến quê hương Khổng Tử một chuyến. Chiều nay là thời gian hoạt động tự do, nên em đến thăm thầy.",
         "audio_key": "",
         "vocab_refs": [],
@@ -282,7 +282,7 @@
         "check_needed": false
        },
        {
-        "id": "line_020",
+        "id": "e1b29e4a-190b-4050-ae37-ba3cbad78cb3",
         "order": 20,
         "speaker": "王老师",
         "zh": "在这儿吃了晚饭再走吧。",
@@ -300,7 +300,7 @@
       "summary_vi": "丹尼斯 dẫn đoàn du lịch đến Trung Quốc và đến thăm thầy 王."
      },
      {
-      "id": "text_dialogue_002",
+      "id": "0156dd39-d5b4-41f5-866d-d336dd29bbc2",
       "type": "text_dialogue",
       "order": 2,
       "title": "你的汉语是在哪儿学的",
@@ -309,7 +309,7 @@
       "check_needed": false,
       "lines": [
        {
-        "id": "line_001",
+        "id": "3c27c086-abbc-4087-b6e9-13d418c36c9d",
         "order": 1,
         "speaker": "田芳",
         "zh": "麦克，你的汉语是在哪儿学的？",
@@ -322,7 +322,7 @@
         "check_needed": false
        },
        {
-        "id": "line_002",
+        "id": "a2868604-5679-4808-917d-2d87fdd4f798",
         "order": 2,
         "speaker": "麦克",
         "zh": "在美国学的。",
@@ -335,7 +335,7 @@
         "check_needed": false
        },
        {
-        "id": "line_003",
+        "id": "87328fc8-0572-4efa-9beb-80daa037b578",
         "order": 3,
         "speaker": "田芳",
         "zh": "学了多长时间了？",
@@ -348,7 +348,7 @@
         "check_needed": false
        },
        {
-        "id": "line_004",
+        "id": "9e143bd6-8273-4480-beea-b87921f0d67e",
         "order": 4,
         "speaker": "麦克",
         "zh": "我是从去年暑假才开始学习汉语的，学了一年多了。",
@@ -361,7 +361,7 @@
         "check_needed": false
        },
        {
-        "id": "line_005",
+        "id": "f58c9b6a-b3fa-489c-8ef6-7980b04b87a8",
         "order": 5,
         "speaker": "田芳",
         "zh": "是在大学学的吗？",
@@ -374,7 +374,7 @@
         "check_needed": false
        },
        {
-        "id": "line_006",
+        "id": "58e383aa-03fb-4168-b559-8bebcf38414c",
         "order": 6,
         "speaker": "麦克",
         "zh": "不是。是在一个语言学校学的。",
@@ -387,7 +387,7 @@
         "check_needed": false
        },
        {
-        "id": "line_007",
+        "id": "40414355-f8ce-4ba8-8778-08c6147e478c",
         "order": 7,
         "speaker": "田芳",
         "zh": "是中国老师教的吗？",
@@ -400,7 +400,7 @@
         "check_needed": false
        },
        {
-        "id": "line_008",
+        "id": "ff1b6429-b216-4fe2-99ee-2aa3b42b374f",
         "order": 8,
         "speaker": "麦克",
         "zh": "有中国老师，也有美国老师。你觉得我的汉语说得怎么样？",
@@ -413,7 +413,7 @@
         "check_needed": false
        },
        {
-        "id": "line_009",
+        "id": "27996fac-9247-4d26-b4af-23257b1221f3",
         "order": 9,
         "speaker": "田芳",
         "zh": "马马虎虎。中国人一听就知道你是老外。",
@@ -426,7 +426,7 @@
         "check_needed": false
        },
        {
-        "id": "line_010",
+        "id": "4f913244-329b-4ecd-a472-f1209c444dbd",
         "order": 10,
         "speaker": "麦克",
         "zh": "一看也知道我是老外呀，高高的鼻子，黄黄的头发，蓝蓝的眼睛。我知道，我的发音和声调都不太好。",
@@ -439,12 +439,12 @@
         "check_needed": false
        },
        {
-        "id": "line_011",
+        "id": "ccbbe354-225c-4255-ba75-a9dd20bd4445",
         "order": 11,
         "speaker": "田芳",
         "zh": "我们互相帮助好不好？我帮你练汉语，希望你帮我练练英语。",
         "pinyin": "Wǒmen hùxiāng bāngzhù hǎo bu hǎo? Wǒ bāng nǐ liàn Hànyǔ, xīwàng nǐ bāng wǒ liànlian Yīngyǔ.",
-        "vi": "Chúng ta giúp đỡ lẫn nhau nhé? Tôi giúp bạn luyện tiếng Hán, hy vọng bạn giúp tôi luyện luyện tiếng Anh.",
+        "vi": "Chúng ta giúp đỡ lẫn nhau nhé? Tôi giúp bạn luyện tiếng Hán, hy vọng bạn giúp tôi luyện tiếng Anh một chút.",
         "audio_key": "",
         "vocab_refs": [],
         "grammar_refs": [],
@@ -452,7 +452,7 @@
         "check_needed": false
        },
        {
-        "id": "line_012",
+        "id": "f5f38cbd-5f83-45dd-9527-0d84520b1ff1",
         "order": 12,
         "speaker": "麦克",
         "zh": "好啊。不过，我的英语也马马虎虎。",
@@ -465,7 +465,7 @@
         "check_needed": false
        },
        {
-        "id": "line_013",
+        "id": "b9608295-5923-4410-86ea-3e30d18569d1",
         "order": 13,
         "speaker": "田芳",
         "zh": "什么？你不是美国人吗？",
@@ -478,7 +478,7 @@
         "check_needed": false
        },
        {
-        "id": "line_014",
+        "id": "ce1805bc-b9ce-46b1-86cd-711d7dbbcf4a",
         "order": 14,
         "speaker": "麦克",
         "zh": "我爸爸是美国人，妈妈是意大利人，我十岁才到的美国。可以当你的老师吗？",
@@ -491,7 +491,7 @@
         "check_needed": false
        },
        {
-        "id": "line_015",
+        "id": "470ed61f-69b3-47f4-98a4-0cf7bd2dcbf7",
         "order": 15,
         "speaker": "田芳",
         "zh": "马马虎虎吧。",
@@ -504,7 +504,7 @@
         "check_needed": false
        },
        {
-        "id": "line_016",
+        "id": "0b8dd586-7cb7-4223-ae8b-7ca322675978",
         "order": 16,
         "speaker": "麦克",
         "zh": "不，不能马马虎虎，我们都要认真学习。",
@@ -525,7 +525,7 @@
     "comprehension_questions": []
    },
    {
-    "id": "section_vocabulary",
+    "id": "78c30bf4-c314-4c4c-86e3-4dd62382dd78",
     "type": "vocabulary",
     "order": 2,
     "title": "生词",
@@ -534,7 +534,7 @@
     "check_needed": false,
     "items": [
      {
-      "id": "vocab_001",
+      "id": "68c05a12-9d8e-45d9-a413-786bcf2f780a",
       "type": "vocabulary_item",
       "order": 1,
       "hanzi": "前天",
@@ -542,17 +542,6 @@
       "meaning_vi": "hôm kia",
       "meaning_en": "the day before yesterday",
       "pos": "Danh từ thời gian",
-      "pos_detail": {
-       "vi": "Danh từ thời gian",
-       "cn": "时间名词",
-       "normalized": "noun",
-       "schema_compatible_pos": "noun",
-       "is_separable_verb": false,
-       "separable_type": "",
-       "structure_vi": "",
-       "usage_note_vi": "",
-       "notes": []
-      },
       "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
@@ -568,17 +557,6 @@
       "audio_key": "",
       "source_origin": "textbook_checked",
       "check_needed": false,
-      "notes": []
-     },
-     {
-      "id": "vocab_002",
-      "type": "vocabulary_item",
-      "order": 2,
-      "hanzi": "后天",
-      "pinyin": "hòutiān",
-      "meaning_vi": "ngày kia",
-      "meaning_en": "the day after tomorrow",
-      "pos": "Danh từ thời gian",
       "pos_detail": {
        "vi": "Danh từ thời gian",
        "cn": "时间名词",
@@ -590,6 +568,17 @@
        "usage_note_vi": "",
        "notes": []
       },
+      "notes": []
+     },
+     {
+      "id": "8c18cf3c-e9dc-42e1-8faf-eb26799cabab",
+      "type": "vocabulary_item",
+      "order": 2,
+      "hanzi": "后天",
+      "pinyin": "hòutiān",
+      "meaning_vi": "ngày kia",
+      "meaning_en": "the day after tomorrow",
+      "pos": "Danh từ thời gian",
       "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
@@ -605,10 +594,21 @@
       "audio_key": "",
       "source_origin": "textbook_checked",
       "check_needed": false,
+      "pos_detail": {
+       "vi": "Danh từ thời gian",
+       "cn": "时间名词",
+       "normalized": "noun",
+       "schema_compatible_pos": "noun",
+       "is_separable_verb": false,
+       "separable_type": "",
+       "structure_vi": "",
+       "usage_note_vi": "",
+       "notes": []
+      },
       "notes": []
      },
      {
-      "id": "vocab_003",
+      "id": "1fbd69b7-603a-44ea-8d57-10cd4def9ced",
       "type": "vocabulary_item",
       "order": 3,
       "hanzi": "导游",
@@ -616,19 +616,6 @@
       "meaning_vi": "hướng dẫn viên du lịch",
       "meaning_en": "tour guide",
       "pos": "Danh từ",
-      "pos_detail": {
-       "vi": "Danh từ",
-       "cn": "名词",
-       "normalized": "noun",
-       "schema_compatible_pos": "noun",
-       "is_separable_verb": false,
-       "separable_type": "",
-       "structure_vi": "",
-       "usage_note_vi": "",
-       "notes": [
-        "Trong bài dùng là danh từ: hướng dẫn viên du lịch. Có thể làm động từ trong ngữ cảnh khác: dẫn tour."
-       ]
-      },
       "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
@@ -644,17 +631,6 @@
       "audio_key": "",
       "source_origin": "textbook_checked",
       "check_needed": false,
-      "notes": []
-     },
-     {
-      "id": "vocab_004",
-      "type": "vocabulary_item",
-      "order": 4,
-      "hanzi": "研究生",
-      "pinyin": "yánjiūshēng",
-      "meaning_vi": "học viên cao học; nghiên cứu sinh",
-      "meaning_en": "graduate student",
-      "pos": "Danh từ",
       "pos_detail": {
        "vi": "Danh từ",
        "cn": "名词",
@@ -664,8 +640,21 @@
        "separable_type": "",
        "structure_vi": "",
        "usage_note_vi": "",
-       "notes": []
+       "notes": [
+        "Trong bài dùng là danh từ: hướng dẫn viên du lịch. Có thể làm động từ trong ngữ cảnh khác: dẫn tour."
+       ]
       },
+      "notes": []
+     },
+     {
+      "id": "3dc505f1-bc0e-4a96-b448-17fed89fdc60",
+      "type": "vocabulary_item",
+      "order": 4,
+      "hanzi": "研究生",
+      "pinyin": "yánjiūshēng",
+      "meaning_vi": "học viên cao học; nghiên cứu sinh",
+      "meaning_en": "graduate student",
+      "pos": "Danh từ",
       "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
@@ -681,10 +670,21 @@
       "audio_key": "",
       "source_origin": "textbook_checked",
       "check_needed": false,
+      "pos_detail": {
+       "vi": "Danh từ",
+       "cn": "名词",
+       "normalized": "noun",
+       "schema_compatible_pos": "noun",
+       "is_separable_verb": false,
+       "separable_type": "",
+       "structure_vi": "",
+       "usage_note_vi": "",
+       "notes": []
+      },
       "notes": []
      },
      {
-      "id": "vocab_005",
+      "id": "188412d4-4c23-4d60-b7b2-21f3490199e7",
       "type": "vocabulary_item",
       "order": 5,
       "hanzi": "打工",
@@ -692,17 +692,6 @@
       "meaning_vi": "làm công; làm thuê; đi làm kiếm tiền; trong bài: làm thêm",
       "meaning_en": "to work for wages; part-time/temp job",
       "pos": "Động từ li hợp",
-      "pos_detail": {
-       "vi": "Động từ li hợp",
-       "cn": "动宾式离合词",
-       "normalized": "verb_phrase",
-       "schema_compatible_pos": "verb_phrase",
-       "is_separable_verb": true,
-       "separable_type": "động-tân / 离合词",
-       "structure_vi": "động từ 打 + tân ngữ 工",
-       "usage_note_vi": "Có thể nói 打了三个月工 / 打过工; trong khẩu ngữ thường dùng nghĩa làm công/làm thêm để kiếm tiền.",
-       "notes": []
-      },
       "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
@@ -718,10 +707,21 @@
       "audio_key": "",
       "source_origin": "textbook_checked",
       "check_needed": false,
+      "pos_detail": {
+       "vi": "Động từ li hợp",
+       "cn": "动宾式离合词",
+       "normalized": "verb_phrase",
+       "schema_compatible_pos": "verb_phrase",
+       "is_separable_verb": true,
+       "separable_type": "động-tân / 离合词",
+       "structure_vi": "động từ 打 + tân ngữ 工",
+       "usage_note_vi": "Có thể nói 打了三个月工 / 打过工; trong khẩu ngữ thường dùng nghĩa làm công/làm thêm để kiếm tiền.",
+       "notes": []
+      },
       "notes": []
      },
      {
-      "id": "vocab_006",
+      "id": "5ea44727-d97c-467b-b1b8-babd195df50d",
       "type": "vocabulary_item",
       "order": 6,
       "hanzi": "利用",
@@ -729,17 +729,6 @@
       "meaning_vi": "tận dụng; sử dụng; lợi dụng",
       "meaning_en": "to make use of; to utilize",
       "pos": "Động từ",
-      "pos_detail": {
-       "vi": "Động từ",
-       "cn": "动词",
-       "normalized": "verb",
-       "schema_compatible_pos": "verb",
-       "is_separable_verb": false,
-       "separable_type": "",
-       "structure_vi": "",
-       "usage_note_vi": "",
-       "notes": []
-      },
       "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
@@ -755,10 +744,21 @@
       "audio_key": "",
       "source_origin": "textbook_checked",
       "check_needed": false,
+      "pos_detail": {
+       "vi": "Động từ",
+       "cn": "动词",
+       "normalized": "verb",
+       "schema_compatible_pos": "verb",
+       "is_separable_verb": false,
+       "separable_type": "",
+       "structure_vi": "",
+       "usage_note_vi": "",
+       "notes": []
+      },
       "notes": []
      },
      {
-      "id": "vocab_007",
+      "id": "54613016-834a-4fc3-9912-2357a6d27058",
       "type": "vocabulary_item",
       "order": 7,
       "hanzi": "假期",
@@ -766,17 +766,6 @@
       "meaning_vi": "kỳ nghỉ",
       "meaning_en": "vacation; holiday",
       "pos": "Danh từ",
-      "pos_detail": {
-       "vi": "Danh từ",
-       "cn": "名词",
-       "normalized": "noun",
-       "schema_compatible_pos": "noun",
-       "is_separable_verb": false,
-       "separable_type": "",
-       "structure_vi": "",
-       "usage_note_vi": "",
-       "notes": []
-      },
       "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
@@ -792,17 +781,6 @@
       "audio_key": "",
       "source_origin": "textbook_checked",
       "check_needed": false,
-      "notes": []
-     },
-     {
-      "id": "vocab_008",
-      "type": "vocabulary_item",
-      "order": 8,
-      "hanzi": "旅行社",
-      "pinyin": "lǚxíngshè",
-      "meaning_vi": "công ty du lịch; hãng lữ hành",
-      "meaning_en": "travel agency",
-      "pos": "Danh từ",
       "pos_detail": {
        "vi": "Danh từ",
        "cn": "名词",
@@ -814,6 +792,17 @@
        "usage_note_vi": "",
        "notes": []
       },
+      "notes": []
+     },
+     {
+      "id": "0da97406-c3ac-4fcb-a51c-398a59c3fbae",
+      "type": "vocabulary_item",
+      "order": 8,
+      "hanzi": "旅行社",
+      "pinyin": "lǚxíngshè",
+      "meaning_vi": "công ty du lịch; hãng lữ hành",
+      "meaning_en": "travel agency",
+      "pos": "Danh từ",
       "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
@@ -829,10 +818,21 @@
       "audio_key": "",
       "source_origin": "textbook_checked",
       "check_needed": false,
+      "pos_detail": {
+       "vi": "Danh từ",
+       "cn": "名词",
+       "normalized": "noun",
+       "schema_compatible_pos": "noun",
+       "is_separable_verb": false,
+       "separable_type": "",
+       "structure_vi": "",
+       "usage_note_vi": "",
+       "notes": []
+      },
       "notes": []
      },
      {
-      "id": "vocab_009",
+      "id": "54b36889-82be-485b-8342-fb8aab572065",
       "type": "vocabulary_item",
       "order": 9,
       "hanzi": "组织",
@@ -840,17 +840,6 @@
       "meaning_vi": "tổ chức; sự tổ chức",
       "meaning_en": "to organize; organization",
       "pos": "Động từ / Danh từ",
-      "pos_detail": {
-       "vi": "Động từ / Danh từ",
-       "cn": "动词 / 名词",
-       "normalized": "verb_noun",
-       "schema_compatible_pos": "verb_noun",
-       "is_separable_verb": false,
-       "separable_type": "",
-       "structure_vi": "",
-       "usage_note_vi": "",
-       "notes": []
-      },
       "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
@@ -866,10 +855,21 @@
       "audio_key": "",
       "source_origin": "textbook_checked",
       "check_needed": false,
+      "pos_detail": {
+       "vi": "Động từ / Danh từ",
+       "cn": "动词 / 名词",
+       "normalized": "verb_noun",
+       "schema_compatible_pos": "verb_noun",
+       "is_separable_verb": false,
+       "separable_type": "",
+       "structure_vi": "",
+       "usage_note_vi": "",
+       "notes": []
+      },
       "notes": []
      },
      {
-      "id": "vocab_010",
+      "id": "1354b1a3-93cc-4505-8d7f-c5550a1d6ae9",
       "type": "vocabulary_item",
       "order": 10,
       "hanzi": "老板",
@@ -877,17 +877,6 @@
       "meaning_vi": "ông chủ; bà chủ; sếp",
       "meaning_en": "boss",
       "pos": "Danh từ",
-      "pos_detail": {
-       "vi": "Danh từ",
-       "cn": "名词",
-       "normalized": "noun",
-       "schema_compatible_pos": "noun",
-       "is_separable_verb": false,
-       "separable_type": "",
-       "structure_vi": "",
-       "usage_note_vi": "",
-       "notes": []
-      },
       "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
@@ -903,10 +892,21 @@
       "audio_key": "",
       "source_origin": "textbook_checked",
       "check_needed": false,
+      "pos_detail": {
+       "vi": "Danh từ",
+       "cn": "名词",
+       "normalized": "noun",
+       "schema_compatible_pos": "noun",
+       "is_separable_verb": false,
+       "separable_type": "",
+       "structure_vi": "",
+       "usage_note_vi": "",
+       "notes": []
+      },
       "notes": []
      },
      {
-      "id": "vocab_011",
+      "id": "f0684cb3-4577-4e6c-9f22-7d97c89692b3",
       "type": "vocabulary_item",
       "order": 11,
       "hanzi": "需要",
@@ -914,17 +914,6 @@
       "meaning_vi": "cần; nhu cầu",
       "meaning_en": "to need; need",
       "pos": "Động từ / Danh từ",
-      "pos_detail": {
-       "vi": "Động từ / Danh từ",
-       "cn": "动词 / 名词",
-       "normalized": "verb_noun",
-       "schema_compatible_pos": "verb_noun",
-       "is_separable_verb": false,
-       "separable_type": "",
-       "structure_vi": "",
-       "usage_note_vi": "",
-       "notes": []
-      },
       "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
@@ -940,10 +929,21 @@
       "audio_key": "",
       "source_origin": "textbook_checked",
       "check_needed": false,
+      "pos_detail": {
+       "vi": "Động từ / Danh từ",
+       "cn": "动词 / 名词",
+       "normalized": "verb_noun",
+       "schema_compatible_pos": "verb_noun",
+       "is_separable_verb": false,
+       "separable_type": "",
+       "structure_vi": "",
+       "usage_note_vi": "",
+       "notes": []
+      },
       "notes": []
      },
      {
-      "id": "vocab_012",
+      "id": "d5b362a7-c8f6-4f25-b2b5-0f1749c8afbb",
       "type": "vocabulary_item",
       "order": 12,
       "hanzi": "经常",
@@ -951,17 +951,6 @@
       "meaning_vi": "thường xuyên",
       "meaning_en": "often; frequently",
       "pos": "Phó từ",
-      "pos_detail": {
-       "vi": "Phó từ",
-       "cn": "副词",
-       "normalized": "adverb",
-       "schema_compatible_pos": "adverb",
-       "is_separable_verb": false,
-       "separable_type": "",
-       "structure_vi": "",
-       "usage_note_vi": "",
-       "notes": []
-      },
       "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
@@ -977,10 +966,21 @@
       "audio_key": "",
       "source_origin": "textbook_checked",
       "check_needed": false,
+      "pos_detail": {
+       "vi": "Phó từ",
+       "cn": "副词",
+       "normalized": "adverb",
+       "schema_compatible_pos": "adverb",
+       "is_separable_verb": false,
+       "separable_type": "",
+       "structure_vi": "",
+       "usage_note_vi": "",
+       "notes": []
+      },
       "notes": []
      },
      {
-      "id": "vocab_013",
+      "id": "7eccd5e8-dac0-4f36-be2e-abcc0a2bdfcd",
       "type": "vocabulary_item",
       "order": 13,
       "hanzi": "收集",
@@ -988,17 +988,6 @@
       "meaning_vi": "thu thập; sưu tập",
       "meaning_en": "to collect",
       "pos": "Động từ",
-      "pos_detail": {
-       "vi": "Động từ",
-       "cn": "动词",
-       "normalized": "verb",
-       "schema_compatible_pos": "verb",
-       "is_separable_verb": false,
-       "separable_type": "",
-       "structure_vi": "",
-       "usage_note_vi": "",
-       "notes": []
-      },
       "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
@@ -1014,10 +1003,21 @@
       "audio_key": "",
       "source_origin": "textbook_checked",
       "check_needed": false,
+      "pos_detail": {
+       "vi": "Động từ",
+       "cn": "动词",
+       "normalized": "verb",
+       "schema_compatible_pos": "verb",
+       "is_separable_verb": false,
+       "separable_type": "",
+       "structure_vi": "",
+       "usage_note_vi": "",
+       "notes": []
+      },
       "notes": []
      },
      {
-      "id": "vocab_014",
+      "id": "91fa9f81-e5ef-4c4a-b29c-c4b6daa02196",
       "type": "vocabulary_item",
       "order": 14,
       "hanzi": "一……就……",
@@ -1025,17 +1025,6 @@
       "meaning_vi": "hễ/vừa… thì/liền…",
       "meaning_en": "as soon as; once...then",
       "pos": "Cấu trúc cố định / Liên từ tương quan",
-      "pos_detail": {
-       "vi": "Cấu trúc cố định / Liên từ tương quan",
-       "cn": "固定结构 / 关联词",
-       "normalized": "phrase",
-       "schema_compatible_pos": "phrase",
-       "is_separable_verb": false,
-       "separable_type": "",
-       "structure_vi": "",
-       "usage_note_vi": "",
-       "notes": []
-      },
       "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
@@ -1051,10 +1040,21 @@
       "audio_key": "",
       "source_origin": "textbook_checked",
       "check_needed": false,
+      "pos_detail": {
+       "vi": "Cấu trúc cố định / Liên từ tương quan",
+       "cn": "固定结构 / 关联词",
+       "normalized": "phrase",
+       "schema_compatible_pos": "phrase",
+       "is_separable_verb": false,
+       "separable_type": "",
+       "structure_vi": "",
+       "usage_note_vi": "",
+       "notes": []
+      },
       "notes": []
      },
      {
-      "id": "vocab_015",
+      "id": "8a5b1d09-23a6-4182-96e6-9bf4d761a1e1",
       "type": "vocabulary_item",
       "order": 15,
       "hanzi": "安排",
@@ -1062,17 +1062,6 @@
       "meaning_vi": "sắp xếp; bố trí",
       "meaning_en": "to arrange",
       "pos": "Động từ",
-      "pos_detail": {
-       "vi": "Động từ",
-       "cn": "动词",
-       "normalized": "verb",
-       "schema_compatible_pos": "verb",
-       "is_separable_verb": false,
-       "separable_type": "",
-       "structure_vi": "",
-       "usage_note_vi": "",
-       "notes": []
-      },
       "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
@@ -1088,10 +1077,21 @@
       "audio_key": "",
       "source_origin": "textbook_checked",
       "check_needed": false,
+      "pos_detail": {
+       "vi": "Động từ",
+       "cn": "动词",
+       "normalized": "verb",
+       "schema_compatible_pos": "verb",
+       "is_separable_verb": false,
+       "separable_type": "",
+       "structure_vi": "",
+       "usage_note_vi": "",
+       "notes": []
+      },
       "notes": []
      },
      {
-      "id": "vocab_016",
+      "id": "be7a835d-ff8f-4a86-9fd8-27c5f1093f0c",
       "type": "vocabulary_item",
       "order": 16,
       "hanzi": "帮助",
@@ -1099,17 +1099,6 @@
       "meaning_vi": "giúp đỡ; sự giúp đỡ",
       "meaning_en": "to help; help",
       "pos": "Động từ / Danh từ",
-      "pos_detail": {
-       "vi": "Động từ / Danh từ",
-       "cn": "动词 / 名词",
-       "normalized": "verb_noun",
-       "schema_compatible_pos": "verb_noun",
-       "is_separable_verb": false,
-       "separable_type": "",
-       "structure_vi": "",
-       "usage_note_vi": "",
-       "notes": []
-      },
       "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
@@ -1125,10 +1114,21 @@
       "audio_key": "",
       "source_origin": "textbook_checked",
       "check_needed": false,
+      "pos_detail": {
+       "vi": "Động từ / Danh từ",
+       "cn": "动词 / 名词",
+       "normalized": "verb_noun",
+       "schema_compatible_pos": "verb_noun",
+       "is_separable_verb": false,
+       "separable_type": "",
+       "structure_vi": "",
+       "usage_note_vi": "",
+       "notes": []
+      },
       "notes": []
      },
      {
-      "id": "vocab_017",
+      "id": "7a89dc80-d79d-4c2f-988c-d0f54e240d19",
       "type": "vocabulary_item",
       "order": 17,
       "hanzi": "帮",
@@ -1136,17 +1136,6 @@
       "meaning_vi": "giúp",
       "meaning_en": "to help",
       "pos": "Động từ",
-      "pos_detail": {
-       "vi": "Động từ",
-       "cn": "动词",
-       "normalized": "verb",
-       "schema_compatible_pos": "verb",
-       "is_separable_verb": false,
-       "separable_type": "",
-       "structure_vi": "",
-       "usage_note_vi": "",
-       "notes": []
-      },
       "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
@@ -1162,10 +1151,21 @@
       "audio_key": "",
       "source_origin": "textbook_checked",
       "check_needed": false,
+      "pos_detail": {
+       "vi": "Động từ",
+       "cn": "动词",
+       "normalized": "verb",
+       "schema_compatible_pos": "verb",
+       "is_separable_verb": false,
+       "separable_type": "",
+       "structure_vi": "",
+       "usage_note_vi": "",
+       "notes": []
+      },
       "notes": []
      },
      {
-      "id": "vocab_018",
+      "id": "ff3e1818-66a9-4532-880b-02c9cacb0e5b",
       "type": "vocabulary_item",
       "order": 18,
       "hanzi": "高铁",
@@ -1173,17 +1173,6 @@
       "meaning_vi": "tàu cao tốc; đường sắt cao tốc",
       "meaning_en": "high-speed rail",
       "pos": "Danh từ",
-      "pos_detail": {
-       "vi": "Danh từ",
-       "cn": "名词",
-       "normalized": "noun",
-       "schema_compatible_pos": "noun",
-       "is_separable_verb": false,
-       "separable_type": "",
-       "structure_vi": "",
-       "usage_note_vi": "",
-       "notes": []
-      },
       "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
@@ -1199,17 +1188,6 @@
       "audio_key": "",
       "source_origin": "textbook_checked",
       "check_needed": false,
-      "notes": []
-     },
-     {
-      "id": "vocab_019",
-      "type": "vocabulary_item",
-      "order": 19,
-      "hanzi": "铁路",
-      "pinyin": "tiělù",
-      "meaning_vi": "đường sắt",
-      "meaning_en": "railway",
-      "pos": "Danh từ",
       "pos_detail": {
        "vi": "Danh từ",
        "cn": "名词",
@@ -1221,6 +1199,17 @@
        "usage_note_vi": "",
        "notes": []
       },
+      "notes": []
+     },
+     {
+      "id": "0125bdae-fe4e-48fb-8264-145e95c75933",
+      "type": "vocabulary_item",
+      "order": 19,
+      "hanzi": "铁路",
+      "pinyin": "tiělù",
+      "meaning_vi": "đường sắt",
+      "meaning_en": "railway",
+      "pos": "Danh từ",
       "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
@@ -1236,17 +1225,6 @@
       "audio_key": "",
       "source_origin": "textbook_checked",
       "check_needed": false,
-      "notes": []
-     },
-     {
-      "id": "vocab_020",
-      "type": "vocabulary_item",
-      "order": 20,
-      "hanzi": "风光",
-      "pinyin": "fēngguāng",
-      "meaning_vi": "phong cảnh; cảnh sắc",
-      "meaning_en": "scenery",
-      "pos": "Danh từ",
       "pos_detail": {
        "vi": "Danh từ",
        "cn": "名词",
@@ -1258,6 +1236,17 @@
        "usage_note_vi": "",
        "notes": []
       },
+      "notes": []
+     },
+     {
+      "id": "689eb64b-5d4f-469f-9afa-74017d399614",
+      "type": "vocabulary_item",
+      "order": 20,
+      "hanzi": "风光",
+      "pinyin": "fēngguāng",
+      "meaning_vi": "phong cảnh; cảnh sắc",
+      "meaning_en": "scenery",
+      "pos": "Danh từ",
       "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
@@ -1273,10 +1262,21 @@
       "audio_key": "",
       "source_origin": "textbook_checked",
       "check_needed": false,
+      "pos_detail": {
+       "vi": "Danh từ",
+       "cn": "名词",
+       "normalized": "noun",
+       "schema_compatible_pos": "noun",
+       "is_separable_verb": false,
+       "separable_type": "",
+       "structure_vi": "",
+       "usage_note_vi": "",
+       "notes": []
+      },
       "notes": []
      },
      {
-      "id": "vocab_021",
+      "id": "d45d5488-9293-41ae-9deb-1e5b51cee446",
       "type": "vocabulary_item",
       "order": 21,
       "hanzi": "商量",
@@ -1284,17 +1284,6 @@
       "meaning_vi": "bàn bạc; thương lượng",
       "meaning_en": "to discuss; consult",
       "pos": "Động từ",
-      "pos_detail": {
-       "vi": "Động từ",
-       "cn": "动词",
-       "normalized": "verb",
-       "schema_compatible_pos": "verb",
-       "is_separable_verb": false,
-       "separable_type": "",
-       "structure_vi": "",
-       "usage_note_vi": "",
-       "notes": []
-      },
       "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
@@ -1310,10 +1299,21 @@
       "audio_key": "",
       "source_origin": "textbook_checked",
       "check_needed": false,
+      "pos_detail": {
+       "vi": "Động từ",
+       "cn": "动词",
+       "normalized": "verb",
+       "schema_compatible_pos": "verb",
+       "is_separable_verb": false,
+       "separable_type": "",
+       "structure_vi": "",
+       "usage_note_vi": "",
+       "notes": []
+      },
       "notes": []
      },
      {
-      "id": "vocab_022",
+      "id": "c99a633b-27a2-429b-a139-44113a84c189",
       "type": "vocabulary_item",
       "order": 22,
       "hanzi": "故乡",
@@ -1321,17 +1321,6 @@
       "meaning_vi": "quê hương; quê nhà",
       "meaning_en": "hometown",
       "pos": "Danh từ",
-      "pos_detail": {
-       "vi": "Danh từ",
-       "cn": "名词",
-       "normalized": "noun",
-       "schema_compatible_pos": "noun",
-       "is_separable_verb": false,
-       "separable_type": "",
-       "structure_vi": "",
-       "usage_note_vi": "",
-       "notes": []
-      },
       "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
@@ -1347,10 +1336,21 @@
       "audio_key": "",
       "source_origin": "textbook_checked",
       "check_needed": false,
+      "pos_detail": {
+       "vi": "Danh từ",
+       "cn": "名词",
+       "normalized": "noun",
+       "schema_compatible_pos": "noun",
+       "is_separable_verb": false,
+       "separable_type": "",
+       "structure_vi": "",
+       "usage_note_vi": "",
+       "notes": []
+      },
       "notes": []
      },
      {
-      "id": "vocab_023",
+      "id": "79358c6f-3427-4c28-98f3-7ef98c7033c3",
       "type": "vocabulary_item",
       "order": 23,
       "hanzi": "自由",
@@ -1358,17 +1358,6 @@
       "meaning_vi": "tự do",
       "meaning_en": "free; freedom",
       "pos": "Tính từ / Danh từ",
-      "pos_detail": {
-       "vi": "Tính từ / Danh từ",
-       "cn": "形容词 / 名词",
-       "normalized": "adjective",
-       "schema_compatible_pos": "adjective",
-       "is_separable_verb": false,
-       "separable_type": "",
-       "structure_vi": "",
-       "usage_note_vi": "",
-       "notes": ["Trong 自由活动 là tính từ làm định ngữ: hoạt động tự do."]
-      },
       "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
@@ -1384,10 +1373,21 @@
       "audio_key": "",
       "source_origin": "textbook_checked",
       "check_needed": false,
+      "pos_detail": {
+       "vi": "Tính từ / Danh từ",
+       "cn": "形容词 / 名词",
+       "normalized": "adjective",
+       "schema_compatible_pos": "adjective",
+       "is_separable_verb": false,
+       "separable_type": "",
+       "structure_vi": "",
+       "usage_note_vi": "",
+       "notes": ["Trong 自由活动 là tính từ làm định ngữ: hoạt động tự do."]
+      },
       "notes": []
      },
      {
-      "id": "vocab_024",
+      "id": "dc0f8e06-a359-4907-a8d8-fc9b02260590",
       "type": "vocabulary_item",
       "order": 24,
       "hanzi": "活动",
@@ -1395,17 +1395,6 @@
       "meaning_vi": "hoạt động; vận động",
       "meaning_en": "activity; to move about",
       "pos": "Danh từ / Động từ",
-      "pos_detail": {
-       "vi": "Danh từ / Động từ",
-       "cn": "名词 / 动词",
-       "normalized": "verb_noun",
-       "schema_compatible_pos": "verb_noun",
-       "is_separable_verb": false,
-       "separable_type": "",
-       "structure_vi": "",
-       "usage_note_vi": "",
-       "notes": []
-      },
       "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
@@ -1421,10 +1410,21 @@
       "audio_key": "",
       "source_origin": "textbook_checked",
       "check_needed": false,
+      "pos_detail": {
+       "vi": "Danh từ / Động từ",
+       "cn": "名词 / 动词",
+       "normalized": "verb_noun",
+       "schema_compatible_pos": "verb_noun",
+       "is_separable_verb": false,
+       "separable_type": "",
+       "structure_vi": "",
+       "usage_note_vi": "",
+       "notes": []
+      },
       "notes": []
      },
      {
-      "id": "vocab_025",
+      "id": "c43cedbf-7024-4ec1-922f-e75119114baf",
       "type": "vocabulary_item",
       "order": 25,
       "hanzi": "马马虎虎",
@@ -1432,17 +1432,6 @@
       "meaning_vi": "tạm tạm; qua loa; không kỹ",
       "meaning_en": "so-so; careless",
       "pos": "Tính từ / Trạng ngữ",
-      "pos_detail": {
-       "vi": "Tính từ / Trạng ngữ",
-       "cn": "形容词 / 状语",
-       "normalized": "adjective",
-       "schema_compatible_pos": "adjective",
-       "is_separable_verb": false,
-       "separable_type": "",
-       "structure_vi": "",
-       "usage_note_vi": "",
-       "notes": []
-      },
       "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
@@ -1458,10 +1447,21 @@
       "audio_key": "",
       "source_origin": "textbook_checked",
       "check_needed": false,
+      "pos_detail": {
+       "vi": "Tính từ / Trạng ngữ",
+       "cn": "形容词 / 状语",
+       "normalized": "adjective",
+       "schema_compatible_pos": "adjective",
+       "is_separable_verb": false,
+       "separable_type": "",
+       "structure_vi": "",
+       "usage_note_vi": "",
+       "notes": []
+      },
       "notes": []
      },
      {
-      "id": "vocab_026",
+      "id": "d9991c79-3454-4247-bf18-f14f43b4a24a",
       "type": "vocabulary_item",
       "order": 26,
       "hanzi": "老外",
@@ -1469,17 +1469,6 @@
       "meaning_vi": "người nước ngoài (khẩu ngữ)",
       "meaning_en": "foreigner (colloquial)",
       "pos": "Danh từ khẩu ngữ",
-      "pos_detail": {
-       "vi": "Danh từ khẩu ngữ",
-       "cn": "口语名词",
-       "normalized": "noun",
-       "schema_compatible_pos": "noun",
-       "is_separable_verb": false,
-       "separable_type": "",
-       "structure_vi": "",
-       "usage_note_vi": "",
-       "notes": []
-      },
       "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
@@ -1495,10 +1484,21 @@
       "audio_key": "",
       "source_origin": "textbook_checked",
       "check_needed": false,
+      "pos_detail": {
+       "vi": "Danh từ khẩu ngữ",
+       "cn": "口语名词",
+       "normalized": "noun",
+       "schema_compatible_pos": "noun",
+       "is_separable_verb": false,
+       "separable_type": "",
+       "structure_vi": "",
+       "usage_note_vi": "",
+       "notes": []
+      },
       "notes": []
      },
      {
-      "id": "vocab_027",
+      "id": "55cd807c-eec7-412d-99db-f4e6508b170f",
       "type": "vocabulary_item",
       "order": 27,
       "hanzi": "呀",
@@ -1506,17 +1506,6 @@
       "meaning_vi": "trợ từ ngữ khí; biến âm của 啊",
       "meaning_en": "modal particle",
       "pos": "Trợ từ ngữ khí",
-      "pos_detail": {
-       "vi": "Trợ từ ngữ khí",
-       "cn": "语气助词",
-       "normalized": "particle",
-       "schema_compatible_pos": "particle",
-       "is_separable_verb": false,
-       "separable_type": "",
-       "structure_vi": "",
-       "usage_note_vi": "",
-       "notes": []
-      },
       "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
@@ -1532,10 +1521,21 @@
       "audio_key": "",
       "source_origin": "textbook_checked",
       "check_needed": false,
+      "pos_detail": {
+       "vi": "Trợ từ ngữ khí",
+       "cn": "语气助词",
+       "normalized": "particle",
+       "schema_compatible_pos": "particle",
+       "is_separable_verb": false,
+       "separable_type": "",
+       "structure_vi": "",
+       "usage_note_vi": "",
+       "notes": []
+      },
       "notes": []
      },
      {
-      "id": "vocab_028",
+      "id": "085e60d5-dd1c-4585-ac6b-0f1db0ded936",
       "type": "vocabulary_item",
       "order": 28,
       "hanzi": "鼻子",
@@ -1543,17 +1543,6 @@
       "meaning_vi": "mũi",
       "meaning_en": "nose",
       "pos": "Danh từ",
-      "pos_detail": {
-       "vi": "Danh từ",
-       "cn": "名词",
-       "normalized": "noun",
-       "schema_compatible_pos": "noun",
-       "is_separable_verb": false,
-       "separable_type": "",
-       "structure_vi": "",
-       "usage_note_vi": "",
-       "notes": []
-      },
       "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
@@ -1569,17 +1558,6 @@
       "audio_key": "",
       "source_origin": "textbook_checked",
       "check_needed": false,
-      "notes": []
-     },
-     {
-      "id": "vocab_029",
-      "type": "vocabulary_item",
-      "order": 29,
-      "hanzi": "头发",
-      "pinyin": "tóufa",
-      "meaning_vi": "tóc",
-      "meaning_en": "hair",
-      "pos": "Danh từ",
       "pos_detail": {
        "vi": "Danh từ",
        "cn": "名词",
@@ -1591,6 +1569,17 @@
        "usage_note_vi": "",
        "notes": []
       },
+      "notes": []
+     },
+     {
+      "id": "ba7ff0f9-b633-4516-ab3d-22b96046a1cf",
+      "type": "vocabulary_item",
+      "order": 29,
+      "hanzi": "头发",
+      "pinyin": "tóufa",
+      "meaning_vi": "tóc",
+      "meaning_en": "hair",
+      "pos": "Danh từ",
       "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
@@ -1606,17 +1595,6 @@
       "audio_key": "",
       "source_origin": "textbook_checked",
       "check_needed": false,
-      "notes": []
-     },
-     {
-      "id": "vocab_030",
-      "type": "vocabulary_item",
-      "order": 30,
-      "hanzi": "眼睛",
-      "pinyin": "yǎnjing",
-      "meaning_vi": "mắt",
-      "meaning_en": "eye",
-      "pos": "Danh từ",
       "pos_detail": {
        "vi": "Danh từ",
        "cn": "名词",
@@ -1628,6 +1606,17 @@
        "usage_note_vi": "",
        "notes": []
       },
+      "notes": []
+     },
+     {
+      "id": "2185ee67-885d-4ffb-83e2-e97be4070796",
+      "type": "vocabulary_item",
+      "order": 30,
+      "hanzi": "眼睛",
+      "pinyin": "yǎnjing",
+      "meaning_vi": "mắt",
+      "meaning_en": "eye",
+      "pos": "Danh từ",
       "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
@@ -1643,17 +1632,6 @@
       "audio_key": "",
       "source_origin": "textbook_checked",
       "check_needed": false,
-      "notes": []
-     },
-     {
-      "id": "vocab_031",
-      "type": "vocabulary_item",
-      "order": 31,
-      "hanzi": "声调",
-      "pinyin": "shēngdiào",
-      "meaning_vi": "thanh điệu",
-      "meaning_en": "tone",
-      "pos": "Danh từ",
       "pos_detail": {
        "vi": "Danh từ",
        "cn": "名词",
@@ -1665,6 +1643,17 @@
        "usage_note_vi": "",
        "notes": []
       },
+      "notes": []
+     },
+     {
+      "id": "092a8c16-3739-4685-a4c0-39365071bd48",
+      "type": "vocabulary_item",
+      "order": 31,
+      "hanzi": "声调",
+      "pinyin": "shēngdiào",
+      "meaning_vi": "thanh điệu",
+      "meaning_en": "tone",
+      "pos": "Danh từ",
       "tags": ["main_vocab"],
       "examples": [],
       "flashcard": {
@@ -1680,32 +1669,43 @@
       "audio_key": "",
       "source_origin": "textbook_checked",
       "check_needed": false,
+      "pos_detail": {
+       "vi": "Danh từ",
+       "cn": "名词",
+       "normalized": "noun",
+       "schema_compatible_pos": "noun",
+       "is_separable_verb": false,
+       "separable_type": "",
+       "structure_vi": "",
+       "usage_note_vi": "",
+       "notes": []
+      },
       "notes": []
      }
     ]
    },
    {
-    "id": "section_proper_nouns",
+    "id": "3c5ee48e-5d44-44ac-bd53-cac996a83338",
     "type": "proper_nouns",
     "order": 3,
     "title": "专名",
     "title_vi": "Tên riêng",
-    "source_origin": "textbook_checked",
+    "source_origin": "textbook",
     "check_needed": false,
     "items": [
      {
-      "id": "proper_001",
+      "id": "3fe394c6-40ef-4aa3-8688-d61b706cd522",
       "type": "proper_noun",
       "order": 1,
       "hanzi": "丹尼斯",
       "pinyin": "Dānnísī",
-      "meaning_vi": "Dennis",
-      "meaning_en": "Dennis",
+      "meaning_vi": "Denise",
+      "meaning_en": "Denise",
       "source_origin": "textbook_checked",
       "check_needed": false
      },
      {
-      "id": "proper_002",
+      "id": "ca32b346-4a7d-4b3f-bc88-e7e8363c5c36",
       "type": "proper_noun",
       "order": 2,
       "hanzi": "深圳",
@@ -1716,7 +1716,7 @@
       "check_needed": false
      },
      {
-      "id": "proper_003",
+      "id": "beddacb8-1b88-4eac-a2ed-60e91192c489",
       "type": "proper_noun",
       "order": 3,
       "hanzi": "孔子",
@@ -1729,16 +1729,16 @@
     ]
    },
    {
-    "id": "section_notes",
+    "id": "c18e9f54-6da1-4496-886b-c2c722605678",
     "type": "notes",
     "order": 4,
     "title": "注释",
     "title_vi": "Chú thích",
-    "source_origin": "textbook_checked",
+    "source_origin": "textbook/generated_mixed",
     "check_needed": false,
     "items": [
      {
-      "id": "note_001",
+      "id": "817f5ea0-30df-45b3-9996-9af2d98e68e1",
       "type": "note",
       "order": 1,
       "title": "孔子",
@@ -1746,7 +1746,7 @@
       "meaning_vi": "Khổng Tử, nhà tư tưởng và nhà giáo dục lớn của Trung Quốc cổ đại. Trong bài, 丹尼斯 nói muốn đến quê hương của Khổng Tử một chuyến.",
       "examples": [
        {
-        "id": "example_101",
+        "id": "021014f3-ff12-43b6-9d12-352cb6dc863b",
         "zh": "我要到孔子的故乡去一趟。",
         "pinyin": "Wǒ yào dào Kǒngzǐ de gùxiāng qù yí tàng.",
         "vi": "Tôi muốn đến quê hương của Khổng Tử một chuyến.",
@@ -1757,16 +1757,16 @@
         "source_ref": "",
         "note_vi": "",
         "audio_key": "",
-        "source_origin": "textbook_checked",
+        "source_origin": "textbook",
         "check_needed": false
        }
       ],
-      "source_refs": [],
+      "source_refs": ["39db5a09-ed9c-4d44-a1f2-f1d406a1ff07"],
       "source_origin": "textbook_checked",
       "check_needed": false
      },
      {
-      "id": "note_002",
+      "id": "b0a289a1-1769-41fd-add3-864999601b22",
       "type": "note",
       "order": 2,
       "title": "马马虎虎",
@@ -1774,7 +1774,7 @@
       "meaning_vi": "Tạm tạm, qua loa, không quá tốt cũng không quá tệ. Khi nhận xét năng lực, thường là chê nhẹ/chưa tốt lắm.",
       "examples": [
        {
-        "id": "example_102",
+        "id": "29279e2c-cb63-4437-bbc5-7c46c15b6f13",
         "zh": "我的汉语说得马马虎虎。",
         "pinyin": "Wǒ de Hànyǔ shuō de mǎmǎhūhū.",
         "vi": "Tiếng Hán của tôi nói tạm tạm.",
@@ -1785,11 +1785,11 @@
         "source_ref": "",
         "note_vi": "",
         "audio_key": "",
-        "source_origin": "textbook_checked",
+        "source_origin": "textbook",
         "check_needed": false
        },
        {
-        "id": "example_103",
+        "id": "e8ba8406-5f51-49de-8d45-8a461bbaaba6",
         "zh": "他的英语也马马虎虎。",
         "pinyin": "Tā de Yīngyǔ yě mǎmǎhūhū.",
         "vi": "Tiếng Anh của anh ấy cũng tạm tạm thôi.",
@@ -1800,16 +1800,19 @@
         "source_ref": "",
         "note_vi": "",
         "audio_key": "",
-        "source_origin": "textbook_checked",
+        "source_origin": "textbook",
         "check_needed": false
        }
       ],
-      "source_refs": [],
+      "source_refs": [
+       "27996fac-9247-4d26-b4af-23257b1221f3",
+       "f5f38cbd-5f83-45dd-9527-0d84520b1ff1"
+      ],
       "source_origin": "textbook_checked",
       "check_needed": false
      },
      {
-      "id": "note_003",
+      "id": "8dc8b88b-4f36-4667-b1e0-9fba02694df3",
       "type": "note",
       "order": 3,
       "title": "老外",
@@ -1817,7 +1820,7 @@
       "meaning_vi": "Người nước ngoài; khẩu ngữ. Trong ngữ cảnh thân mật thì bình thường, nhưng ngữ cảnh trang trọng nên dùng 外国人.",
       "examples": [
        {
-        "id": "example_104",
+        "id": "3bb13249-7132-47f4-b974-8144c96f3e29",
         "zh": "他是老外，但是汉语说得很好。",
         "pinyin": "Tā shì lǎowài, dànshì Hànyǔ shuō de hěn hǎo.",
         "vi": "Anh ấy là người nước ngoài, nhưng tiếng Hán nói rất tốt.",
@@ -1828,27 +1831,27 @@
         "source_ref": "",
         "note_vi": "",
         "audio_key": "",
-        "source_origin": "textbook_checked",
+        "source_origin": "textbook",
         "check_needed": false
        }
       ],
-      "source_refs": [],
+      "source_refs": ["27996fac-9247-4d26-b4af-23257b1221f3"],
       "source_origin": "textbook_checked",
       "check_needed": false
      }
     ]
    },
    {
-    "id": "section_grammar",
+    "id": "b045e537-7383-494b-8d61-b0286977ed80",
     "type": "grammar",
     "order": 5,
     "title": "语法 / 词语用法",
     "title_vi": "Ngữ pháp / Cách dùng từ",
-    "source_origin": "textbook_checked",
+    "source_origin": "textbook/generated_mixed",
     "check_needed": false,
     "items": [
      {
-      "id": "grammar_001",
+      "id": "abb1dc2b-9897-4fe2-baa7-19eedc5c0a51",
       "type": "grammar_point",
       "order": 1,
       "title": "是……的",
@@ -1859,7 +1862,7 @@
       "check_needed": false,
       "blocks": [
        {
-        "id": "grammar_001_block_001",
+        "id": "b7c5d870-2db8-4e2e-950f-f0e6e522ac16",
         "type": "grammar_overview",
         "order": 1,
         "title": "Bản chất",
@@ -1898,7 +1901,7 @@
         ]
        },
        {
-        "id": "grammar_001_block_002",
+        "id": "b3534a40-3bab-464a-97dd-67889b8bcb7b",
         "type": "grammar_structure",
         "order": 2,
         "title": "Cấu trúc chính",
@@ -1948,7 +1951,7 @@
         ]
        },
        {
-        "id": "grammar_001_block_003",
+        "id": "0ea62f46-0157-49d6-aadc-75dbed1d507b",
         "type": "grammar_question_form",
         "order": 3,
         "title": "Dạng nghi vấn",
@@ -1988,7 +1991,7 @@
         ]
        },
        {
-        "id": "grammar_001_block_004",
+        "id": "d20f2f52-d6ab-478a-b684-6adcb0004a12",
         "type": "grammar_negative_form",
         "order": 4,
         "title": "Dạng phủ định",
@@ -2024,7 +2027,7 @@
       ]
      },
      {
-      "id": "grammar_002",
+      "id": "6119917a-0738-43c8-b8bc-6840cd60ecec",
       "type": "grammar_point",
       "order": 2,
       "title": "一……就……",
@@ -2035,7 +2038,7 @@
       "check_needed": false,
       "blocks": [
        {
-        "id": "grammar_002_block_001",
+        "id": "470b1ca1-e0a1-449f-b55e-a8aa481a4dd4",
         "type": "grammar_overview",
         "order": 1,
         "title": "Bản chất",
@@ -2074,7 +2077,7 @@
         ]
        },
        {
-        "id": "grammar_002_block_002",
+        "id": "0ef2b790-3209-4b5c-a519-ca5a424e4d49",
         "type": "grammar_structure",
         "order": 2,
         "title": "Cấu trúc chính",
@@ -2120,7 +2123,7 @@
         ]
        },
        {
-        "id": "grammar_002_block_003",
+        "id": "7ef0fe1b-7a15-4bc5-a252-97371e9335a3",
         "type": "grammar_negative_form",
         "order": 3,
         "title": "Dạng phủ định",
@@ -2155,7 +2158,7 @@
       ]
      },
      {
-      "id": "grammar_003",
+      "id": "41ce33c7-b05d-49f7-8b07-0c5b55e8ae65",
       "type": "grammar_point",
       "order": 3,
       "title": "形容词重叠",
@@ -2166,7 +2169,7 @@
       "check_needed": false,
       "blocks": [
        {
-        "id": "grammar_003_block_001",
+        "id": "50dcd503-1832-4112-a0be-e09408954b90",
         "type": "grammar_overview",
         "order": 1,
         "title": "Bản chất",
@@ -2190,7 +2193,7 @@
         ]
        },
        {
-        "id": "grammar_003_block_002",
+        "id": "3de2e20b-7535-4f1b-8355-4209acba1551",
         "type": "grammar_structure",
         "order": 2,
         "title": "Tính từ đơn âm tiết: AA 的 + danh từ",
@@ -2236,7 +2239,7 @@
         ]
        },
        {
-        "id": "grammar_003_block_003",
+        "id": "8842adf6-2580-4eb9-9d7f-cdfe9b12eec0",
         "type": "grammar_structure",
         "order": 3,
         "title": "Tính từ hai âm tiết: AABB",
@@ -2267,7 +2270,7 @@
         ]
        },
        {
-        "id": "grammar_003_block_004",
+        "id": "0788ebb2-55e6-42ba-bd99-f0976fd1f11c",
         "type": "grammar_common_mistakes",
         "order": 4,
         "title": "Lỗi dễ sai",
@@ -2291,12 +2294,12 @@
     ]
    },
    {
-    "id": "section_exercises",
+    "id": "9901c597-ca97-451e-b63d-11814aaf933e",
     "type": "exercises",
     "order": 6,
     "title": "练习",
     "title_vi": "Bài tập trong sách",
-    "source_origin": "textbook_checked",
+    "source_origin": "textbook",
     "check_needed": false,
     "coverage_contract": {
      "expected_exercise_count_from_pdf": 10,
@@ -2306,7 +2309,7 @@
     },
     "items": [
      {
-      "id": "ex_001",
+      "id": "15cb6f38-593b-48d1-bcca-dc3d2a140f9e",
       "type": "phonetics",
       "variant": "pronunciation_tone_minimal_pairs",
       "order": 1,
@@ -2322,44 +2325,26 @@
       "check_needed": false,
       "parts": [
        {
-        "id": "ex_001_part_001",
+        "id": "75a38c8c-be00-4d26-a5c3-2c9c47ead405",
         "type": "minimal_pair_group",
         "title": "辨音辨调",
         "items": [
          {
-          "id": "ex_001_mp_001_pair_001",
-          "left": "dǎoyóu",
-          "right": "dǎoliú"
+          "id": "919b7e83-fcbe-4884-ba05-af2ff9f6460f",
+          "text": "dǎoyóu / dǎoliú / xūyào / xǐyào"
          },
          {
-          "id": "ex_001_mp_001_pair_002",
-          "left": "xūyào",
-          "right": "xǐyào"
+          "id": "6707d0ad-7f88-42cc-b030-fc48791d5f82",
+          "text": "lìyòng / lǐyóu / lǎobǎn / rǎoluàn"
          },
          {
-          "id": "ex_001_mp_002_pair_003",
-          "left": "lìyòng",
-          "right": "lǐyóu"
-         },
-         {
-          "id": "ex_001_mp_002_pair_004",
-          "left": "lǎobǎn",
-          "right": "rǎoluàn"
-         },
-         {
-          "id": "ex_001_mp_003_pair_005",
-          "left": "yánjiū",
-          "right": "yān jiū"
-         },
-         {
-          "id": "ex_001_mp_003_pair_006",
-          "left": "zìyóu",
-          "right": "jí yóu"
+          "id": "5eca3d0c-dacb-4228-8ad7-976834e72370",
+          "text": "yánjiū / yān jiū / zìyóu / jí yóu"
          }
         ]
        },
        {
-        "id": "ex_001_part_002",
+        "id": "e6c13064-1e5a-4320-91c7-625a6d1bbf71",
         "type": "read_aloud_chunks",
         "title": "朗读",
         "items": [
@@ -2389,7 +2374,7 @@
       }
      },
      {
-      "id": "ex_002",
+      "id": "98e14c21-0449-4e36-b1ae-77ed46cf3aa0",
       "type": "substitution_drill",
       "variant": "substitution_or_transform_drill",
       "order": 2,
@@ -2401,11 +2386,9 @@
       },
       "difficulty": "normal",
       "skill_focus": ["grammar", "speaking"],
-      "source_origin": "textbook_checked",
-      "check_needed": false,
       "items": [
        {
-        "id": "ex_002_001",
+        "id": "1c61da44-6e11-476e-852f-6a34ae01f606",
         "title": "你是什么时候去的北京？",
         "pattern_dialogue": [
          "A：你去过北京了吗？",
@@ -2423,7 +2406,7 @@
         ]
        },
        {
-        "id": "ex_002_002",
+        "id": "a3f54ebc-9d38-4303-9b3e-4f64dece2e8f",
         "title": "她是从哪儿来的？",
         "pattern_dialogue": [
          "A：她是从哪儿来的？",
@@ -2441,7 +2424,7 @@
         ]
        },
        {
-        "id": "ex_002_003",
+        "id": "cf69bd0f-0320-4b0a-af9b-0de4a0439338",
         "title": "你们是怎么去的？",
         "pattern_dialogue": [
          "A：你们去博物馆了吗？",
@@ -2458,7 +2441,7 @@
         ]
        },
        {
-        "id": "ex_002_004",
+        "id": "18edaf60-ac2a-40e3-9509-f842c237699e",
         "title": "你是来留学的吗？",
         "pattern_dialogue": ["A：你是来留学的吗？", "B：不是。我是来旅行的。"],
         "prompts": [
@@ -2471,7 +2454,7 @@
         ]
        },
        {
-        "id": "ex_002_005",
+        "id": "bba3fcfd-6eab-443c-af2b-20f3f27801e0",
         "title": "你的汉语是在哪儿学的？",
         "pattern_dialogue": [
          "A：你的汉语是在哪儿学的？",
@@ -2488,7 +2471,7 @@
         ]
        },
        {
-        "id": "ex_002_006",
+        "id": "61cda0e3-2151-49a6-84e3-7e7d07244ad9",
         "title": "一看就知道我是老外。",
         "pattern_dialogue": ["一看就知道我是老外。"],
         "prompts": [
@@ -2501,12 +2484,14 @@
         ]
        }
       ],
+      "source_origin": "textbook_checked",
+      "check_needed": false,
       "rendering": {
        "renderer": "exercise.substitution_drill.v2"
       }
      },
      {
-      "id": "ex_003",
+      "id": "5dfca3d2-8524-4a83-92dd-b036a7259465",
       "type": "choose_words_fill_blank",
       "variant": "word_bank_fill_blank",
       "order": 3,
@@ -2530,112 +2515,112 @@
       ],
       "questions": [
        {
-        "id": "ex_003_q_001",
+        "id": "b362c1ea-3689-4ada-9dd0-97785b6af429",
         "type": "fill_blank",
         "prompt": "丹尼斯________的是中国的孔子。",
         "answer": "研究",
         "acceptable_answers": ["研究"],
         "explanation_vi": "",
-        "source_origin": "textbook_answer_checked",
+        "source_origin": "textbook_question_generated_answer",
         "answer_verified": true,
         "check_needed": false
        },
        {
-        "id": "ex_003_q_002",
+        "id": "1204fb6b-3cf3-4d2a-bf6b-08bc7601046d",
         "type": "fill_blank",
         "prompt": "她常________暑假去一家公司打工。",
         "answer": "利用",
         "acceptable_answers": ["利用"],
         "explanation_vi": "",
-        "source_origin": "textbook_answer_checked",
+        "source_origin": "textbook_question_generated_answer",
         "answer_verified": true,
         "check_needed": false
        },
        {
-        "id": "ex_003_q_003",
+        "id": "e18f364f-865b-439d-8bab-49d6120ea100",
         "type": "fill_blank",
         "prompt": "我这次来是为写论文________资料的。",
         "answer": "收集",
         "acceptable_answers": ["收集"],
         "explanation_vi": "",
-        "source_origin": "textbook_answer_checked",
+        "source_origin": "textbook_question_generated_answer",
         "answer_verified": true,
         "check_needed": false
        },
        {
-        "id": "ex_003_q_004",
+        "id": "3767e733-f785-4822-ab06-11f68e0b1335",
         "type": "fill_blank",
         "prompt": "学好一门外语________时间，着急是不行的。",
         "answer": "需要",
         "acceptable_answers": ["需要"],
         "explanation_vi": "",
-        "source_origin": "textbook_answer_checked",
+        "source_origin": "textbook_question_generated_answer",
         "answer_verified": true,
         "check_needed": false
        },
        {
-        "id": "ex_003_q_005",
+        "id": "aafa86f8-cbfc-429f-b1e9-0db7521d2599",
         "type": "fill_blank",
         "prompt": "他现在已经是一家大公司的________了。",
         "answer": "老板",
         "acceptable_answers": ["老板"],
         "explanation_vi": "",
-        "source_origin": "textbook_answer_checked",
+        "source_origin": "textbook_question_generated_answer",
         "answer_verified": true,
         "check_needed": false
        },
        {
-        "id": "ex_003_q_006",
+        "id": "6c2ba85b-869d-4f58-87d9-074c3fb5ed6d",
         "type": "fill_blank",
         "prompt": "我________毕业以后能当翻译。",
         "answer": "希望",
         "acceptable_answers": ["希望"],
         "explanation_vi": "",
-        "source_origin": "textbook_answer_checked",
+        "source_origin": "textbook_question_generated_answer",
         "answer_verified": true,
         "check_needed": false
        },
        {
-        "id": "ex_003_q_007",
+        "id": "0a6a84b7-d9c5-4eaa-adcb-62e1b6f985e5",
         "type": "fill_blank",
         "prompt": "她这次是________代表团来的。",
         "answer": "陪",
         "acceptable_answers": ["陪"],
         "explanation_vi": "",
-        "source_origin": "textbook_answer_checked",
+        "source_origin": "textbook_question_generated_answer",
         "answer_verified": true,
         "check_needed": false
        },
        {
-        "id": "ex_003_q_008",
+        "id": "9b78b279-2b5a-4181-9939-86f65b3cdddb",
         "type": "fill_blank",
         "prompt": "我们班的同学都能________帮助，________学习。",
         "answer": "互相；互相",
         "acceptable_answers": ["互相；互相"],
         "explanation_vi": "",
-        "source_origin": "textbook_answer_checked",
+        "source_origin": "textbook_question_generated_answer",
         "answer_verified": true,
         "check_needed": false
        },
        {
-        "id": "ex_003_q_009",
+        "id": "da811ea4-67e5-4590-877b-4dd02f617e92",
         "type": "fill_blank",
         "prompt": "坐高铁去可以看看铁路两边的________。",
         "answer": "风光",
         "acceptable_answers": ["风光"],
         "explanation_vi": "",
-        "source_origin": "textbook_answer_checked",
+        "source_origin": "textbook_question_generated_answer",
         "answer_verified": true,
         "check_needed": false
        },
        {
-        "id": "ex_003_q_010",
+        "id": "40b12e98-eef9-4cf6-9a1c-b795e449da2e",
         "type": "fill_blank",
         "prompt": "学校________我们去南方旅行了一趟，去了好多地方。",
         "answer": "组织",
         "acceptable_answers": ["组织"],
         "explanation_vi": "",
-        "source_origin": "textbook_answer_checked",
+        "source_origin": "textbook_question_generated_answer",
         "answer_verified": true,
         "check_needed": false
        }
@@ -2651,7 +2636,7 @@
       }
      },
      {
-      "id": "ex_004",
+      "id": "809141fb-cc55-403a-9433-35eea89c8c90",
       "type": "communication_dialogue",
       "variant": "substitution_dialogue",
       "order": 4,
@@ -2688,7 +2673,7 @@
       }
      },
      {
-      "id": "ex_005",
+      "id": "e843bb6e-2e51-4fb8-b362-7506b97cf2fc",
       "type": "answer_questions",
       "variant": "actual_situation_questions",
       "order": 5,
@@ -2700,83 +2685,83 @@
       },
       "questions": [
        {
-        "id": "ex_005_q_001",
+        "id": "7d9c942a-bdc2-45a1-b852-6b3dd58fe8f2",
         "type": "open_answer",
         "prompt": "你是什么时候来中国的？",
         "grading": {
          "mode": "manual"
         },
-        "source_origin": "textbook_checked",
+        "source_origin": "textbook",
         "check_needed": false
        },
        {
-        "id": "ex_005_q_002",
+        "id": "a79733e1-ef69-41fd-ac55-9bb8b3bd4d2c",
         "type": "open_answer",
         "prompt": "你是从哪国来的？",
         "grading": {
          "mode": "manual"
         },
-        "source_origin": "textbook_checked",
+        "source_origin": "textbook",
         "check_needed": false
        },
        {
-        "id": "ex_005_q_003",
+        "id": "ec5f1e84-0693-46b3-b735-8005e47f103e",
         "type": "open_answer",
         "prompt": "你以前来过中国吗？这是第几次？",
         "grading": {
          "mode": "manual"
         },
-        "source_origin": "textbook_checked",
+        "source_origin": "textbook",
         "check_needed": false
        },
        {
-        "id": "ex_005_q_004",
+        "id": "dc7f5f06-95a1-4158-98d8-b293729d6a13",
         "type": "open_answer",
         "prompt": "你是怎么来的？",
         "grading": {
          "mode": "manual"
         },
-        "source_origin": "textbook_checked",
+        "source_origin": "textbook",
         "check_needed": false
        },
        {
-        "id": "ex_005_q_005",
+        "id": "55e24ac4-bbd1-40f9-9dee-e97b3f2e10f7",
         "type": "open_answer",
         "prompt": "你是一个人来的吗？",
         "grading": {
          "mode": "manual"
         },
-        "source_origin": "textbook_checked",
+        "source_origin": "textbook",
         "check_needed": false
        },
        {
-        "id": "ex_005_q_006",
+        "id": "f7c603b4-c112-4d9c-ab37-b945d471ccee",
         "type": "open_answer",
         "prompt": "来中国以前你工作过没有？",
         "grading": {
          "mode": "manual"
         },
-        "source_origin": "textbook_checked",
+        "source_origin": "textbook",
         "check_needed": false
        },
        {
-        "id": "ex_005_q_007",
+        "id": "e904e37c-c385-4f11-9be3-45c2edea0b13",
         "type": "open_answer",
         "prompt": "你学过哪几门外语？",
         "grading": {
          "mode": "manual"
         },
-        "source_origin": "textbook_checked",
+        "source_origin": "textbook",
         "check_needed": false
        },
        {
-        "id": "ex_005_q_008",
+        "id": "497e0d16-4f94-40ed-aa81-c09c6d7a0dbb",
         "type": "open_answer",
         "prompt": "你是在哪儿学的？",
         "grading": {
          "mode": "manual"
         },
-        "source_origin": "textbook_checked",
+        "source_origin": "textbook",
         "check_needed": false
        }
       ],
@@ -2790,7 +2775,7 @@
       }
      },
      {
-      "id": "ex_006",
+      "id": "60ec1197-2967-408c-a1f3-3c2112f8305a",
       "type": "complete_dialogue",
       "variant": "interview_dialogue",
       "order": 6,
@@ -2949,7 +2934,7 @@
       }
      },
      {
-      "id": "ex_007",
+      "id": "1fd4313d-93f3-4cbe-9dd4-2ba0d5bac415",
       "type": "complete_sentence",
       "variant": "complete_sentence_with_given_words",
       "order": 7,
@@ -2962,139 +2947,83 @@
       "example": "下午一到四点我就去操场锻炼身体。",
       "questions": [
        {
-        "id": "ex_007_q_001",
+        "id": "f8e911bf-9cbb-4dad-91ed-87032d2d95f2",
         "type": "free_completion",
         "prompt": "我每天一起床就________________。",
         "grading": {
          "mode": "manual"
         },
-        "sample_answer": {
-         "zh": "我每天一起床就刷牙洗脸。",
-         "pinyin": "Wǒ měitiān yì qǐchuáng jiù shuāyá xǐliǎn.",
-         "vi": "Mỗi ngày hễ ngủ dậy là tôi đánh răng rửa mặt.",
-         "answer_verified": true,
-         "check_needed": false
-        },
-        "source_origin": "textbook_answer_checked",
+        "source_origin": "textbook",
         "check_needed": false
        },
        {
-        "id": "ex_007_q_002",
+        "id": "3fd78baa-272c-4e07-8ee2-5399c9977a99",
         "type": "free_completion",
         "prompt": "她一到冬天就________________。",
         "grading": {
          "mode": "manual"
         },
-        "sample_answer": {
-         "zh": "她一到冬天就感冒。",
-         "pinyin": "Tā yí dào dōngtiān jiù gǎnmào.",
-         "vi": "Cứ đến mùa đông là cô ấy bị cảm.",
-         "answer_verified": true,
-         "check_needed": false
-        },
-        "source_origin": "textbook_answer_checked",
+        "source_origin": "textbook",
         "check_needed": false
        },
        {
-        "id": "ex_007_q_003",
+        "id": "69f5ddfa-be8d-4292-b18f-6136daaa613f",
         "type": "free_completion",
         "prompt": "她一感到寂寞就________________。",
         "grading": {
          "mode": "manual"
         },
-        "sample_answer": {
-         "zh": "她一感到寂寞就给朋友打电话。",
-         "pinyin": "Tā yì gǎndào jìmò jiù gěi péngyou dǎ diànhuà.",
-         "vi": "Hễ thấy cô đơn là cô ấy gọi điện cho bạn.",
-         "answer_verified": true,
-         "check_needed": false
-        },
-        "source_origin": "textbook_answer_checked",
+        "source_origin": "textbook",
         "check_needed": false
        },
        {
-        "id": "ex_007_q_004",
+        "id": "9c211f34-08a0-4478-b188-fe6a0e98ea41",
         "type": "free_completion",
         "prompt": "他一喝酒就________________。",
         "grading": {
          "mode": "manual"
         },
-        "sample_answer": {
-         "zh": "他一喝酒就脸红。",
-         "pinyin": "Tā yì hē jiǔ jiù liǎn hóng.",
-         "vi": "Hễ uống rượu là mặt anh ấy đỏ.",
-         "answer_verified": true,
-         "check_needed": false
-        },
-        "source_origin": "textbook_answer_checked",
+        "source_origin": "textbook",
         "check_needed": false
        },
        {
-        "id": "ex_007_q_005",
+        "id": "c8ec5644-8adf-46de-b2ff-34b3088ba324",
         "type": "free_completion",
         "prompt": "这种花儿一到夏天就________________。",
         "grading": {
          "mode": "manual"
         },
-        "sample_answer": {
-         "zh": "这种花儿一到夏天就开。",
-         "pinyin": "Zhè zhǒng huār yí dào xiàtiān jiù kāi.",
-         "vi": "Loại hoa này cứ đến mùa hè là nở.",
-         "answer_verified": true,
-         "check_needed": false
-        },
-        "source_origin": "textbook_answer_checked",
+        "source_origin": "textbook",
         "check_needed": false
        },
        {
-        "id": "ex_007_q_006",
+        "id": "6db3da52-2247-4991-a1d3-225528d56fff",
         "type": "free_completion",
         "prompt": "我一喝咖啡就________________。",
         "grading": {
          "mode": "manual"
         },
-        "sample_answer": {
-         "zh": "我一喝咖啡就睡不好觉。",
-         "pinyin": "Wǒ yì hē kāfēi jiù shuì bù hǎo jiào.",
-         "vi": "Tôi cứ uống cà phê là ngủ không ngon.",
-         "answer_verified": true,
-         "check_needed": false
-        },
-        "source_origin": "textbook_answer_checked",
+        "source_origin": "textbook",
         "check_needed": false
        },
        {
-        "id": "ex_007_q_007",
+        "id": "5b7be530-a6ca-4d5c-bfbd-12b682bde9e4",
         "type": "free_completion",
         "prompt": "他一下课就________________。",
         "grading": {
          "mode": "manual"
         },
-        "sample_answer": {
-         "zh": "他一下课就去食堂吃饭。",
-         "pinyin": "Tā yí xiàkè jiù qù shítáng chī fàn.",
-         "vi": "Anh ấy vừa tan học là đi căn tin ăn cơm.",
-         "answer_verified": true,
-         "check_needed": false
-        },
-        "source_origin": "textbook_answer_checked",
+        "source_origin": "textbook",
         "check_needed": false
        },
        {
-        "id": "ex_007_q_008",
+        "id": "04d0444c-2ff8-4ab0-a3a6-82a956b50e6b",
         "type": "free_completion",
         "prompt": "她一感冒就________________。",
         "grading": {
          "mode": "manual"
         },
-        "sample_answer": {
-         "zh": "她一感冒就发烧。",
-         "pinyin": "Tā yì gǎnmào jiù fāshāo.",
-         "vi": "Cô ấy cứ bị cảm là sốt.",
-         "answer_verified": true,
-         "check_needed": false
-        },
-        "source_origin": "textbook_answer_checked",
+        "source_origin": "textbook",
         "check_needed": false
        }
       ],
@@ -3102,14 +3031,14 @@
       "skill_focus": ["grammar", "writing"],
       "source_origin": "textbook_checked",
       "check_needed": false,
-      "answer_verified": true,
       "rendering": {
        "renderer": "exercise.complete_sentence.v2",
        "allow_manual_check": true
-      }
+      },
+      "answer_verified": true
      },
      {
-      "id": "ex_008",
+      "id": "b9e46637-94ca-4fea-90cf-29155c015046",
       "type": "correct_sentence",
       "variant": "error_correction",
       "order": 8,
@@ -3121,7 +3050,7 @@
       },
       "questions": [
        {
-        "id": "ex_008_q_001",
+        "id": "51d25007-39bc-4798-8fb4-fd9aaf8168f5",
         "type": "error_correction",
         "prompt": "你是什么时候来了中国？",
         "answer": "你是什么时候来中国的？",
@@ -3134,7 +3063,7 @@
         "check_needed": false
        },
        {
-        "id": "ex_008_q_002",
+        "id": "e65bddbb-aff2-43d6-86ee-fb07381ebe3e",
         "type": "error_correction",
         "prompt": "我是在操场看见了玛丽的。",
         "answer": "我是在操场看见玛丽的。",
@@ -3144,7 +3073,7 @@
         "check_needed": false
        },
        {
-        "id": "ex_008_q_003",
+        "id": "2ac934ff-71d7-4d4a-b040-149ec5a5750e",
         "type": "error_correction",
         "prompt": "他是今年九月来中国了。",
         "answer": "他是今年九月来中国的。",
@@ -3154,7 +3083,7 @@
         "check_needed": false
        },
        {
-        "id": "ex_008_q_004",
+        "id": "c5d39e80-de1f-4a3c-9b5f-9193a14a8a33",
         "type": "error_correction",
         "prompt": "我来中国不是坐高铁的。",
         "answer": "我不是坐高铁来中国的。",
@@ -3167,7 +3096,7 @@
         "check_needed": false
        },
        {
-        "id": "ex_008_q_005",
+        "id": "758a96f8-d8f5-4075-aafa-95e515a48195",
         "type": "error_correction",
         "prompt": "她是前天下午到了上海。",
         "answer": "她是前天下午到上海的。",
@@ -3177,7 +3106,7 @@
         "check_needed": false
        },
        {
-        "id": "ex_008_q_006",
+        "id": "7969b51e-cfc5-4e03-97be-0b29b48a7fdc",
         "type": "error_correction",
         "prompt": "我汉字写得很马马虎虎。",
         "answer": "我汉字写得马马虎虎。",
@@ -3187,7 +3116,7 @@
         "check_needed": false
        },
        {
-        "id": "ex_008_q_007",
+        "id": "a38bba23-f596-4371-82c0-14a75cbc3dee",
         "type": "error_correction",
         "prompt": "我们是坐公共汽车到博物馆去的参观。",
         "answer": "我们是坐公共汽车到博物馆去参观的。",
@@ -3197,7 +3126,7 @@
         "check_needed": false
        },
        {
-        "id": "ex_008_q_008",
+        "id": "97b922c5-eca7-4c57-817f-978352efaddc",
         "type": "error_correction",
         "prompt": "我是跟朋友一起去大使馆。",
         "answer": "我是跟朋友一起去大使馆的。",
@@ -3217,7 +3146,7 @@
       }
      },
      {
-      "id": "ex_009",
+      "id": "849f6690-a8ea-4b6f-937d-429f236714ad",
       "type": "communication_dialogue",
       "variant": "role_play",
       "order": 9,
@@ -3229,7 +3158,7 @@
       },
       "dialogs": [
        {
-        "id": "ex_009_dialog_001",
+        "id": "e146a0d0-9909-41c9-b0e3-5b4fe2d87991",
         "title": "强调",
         "function_en": "Emphasizing",
         "lines": [
@@ -3242,7 +3171,7 @@
         ]
        },
        {
-        "id": "ex_009_dialog_002",
+        "id": "81cfdafd-6808-4d1e-93a6-4e464ac94912",
         "title": "迎接",
         "function_en": "Meeting people",
         "lines": [
@@ -3263,7 +3192,7 @@
       }
      },
      {
-      "id": "ex_010",
+      "id": "1ac62b88-14d2-473e-be1e-6a588e95e535",
       "type": "reading_comprehension",
       "variant": "retell_text",
       "order": 10,
@@ -3337,12 +3266,12 @@
        }
       ],
       "passage": {
-       "id": "passage_001",
+       "id": "242c0f58-eb1b-49ee-b3ac-c28e7ad90d6a",
        "zh": "我是前天到的北京，两年前曾经在中国学过汉语，是王老师的学生。这次我不是来学习的，是来旅行的。我不是一个人来的，是跟旅行团一起来的。我是旅行团的导游兼翻译。我现在还没有工作，在读研究生，研究的课题是《孔子与中国》，业余时间或寒暑假到一个旅行社去打工。这次，他们组织了一个旅游团，老板就让我陪团来了。他知道我需要经常来中国收集资料，所以，一有来中国的旅游团，就安排我陪团来。我们先到的香港，在香港玩儿了三天，又去了深圳，前天是从深圳坐高铁过来的。原来打算坐飞机，但是旅行团的人都没有坐过中国的高铁，很想坐坐，看看铁路两边的风光。旅行团后天就回去了，我跟老板说好了，晚回去几天，等送他们上了飞机，我要到孔子的故乡去一趟。今天下午是自由活动时间，来看看王老师。",
-       "pinyin": "Wǒ shì qiántiān dào de Běijīng, liǎng nián qián céngjīng zài Zhōngguó xué guo Hànyǔ, shì Wáng lǎoshī de xuésheng. Zhè cì wǒ bú shì lái xuéxí de, shì lái lǚxíng de. Wǒ bú shì yí ge rén lái de, shì gēn lǚxíngtuán yìqǐ lái de. Wǒ shì lǚxíngtuán de dǎoyóu jiān fānyì. Wǒ xiànzài hái méiyǒu gōngzuò, zài dú yánjiūshēng, yánjiū de kètí shì “Kǒngzǐ yǔ Zhōngguó”, yèyú shíjiān huò hánshǔjià dào yí ge lǚxíngshè qù dǎ gōng. Zhè cì, tāmen zǔzhī le yí ge lǚyóutuán, lǎobǎn jiù ràng wǒ péi tuán lái le. Tā zhīdào wǒ xūyào jīngcháng lái Zhōngguó shōují zīliào, suǒyǐ, yì yǒu lái Zhōngguó de lǚyóutuán, jiù ānpái wǒ péi tuán lái. Wǒmen xiān dào de Xiānggǎng, zài Xiānggǎng wánr le sān tiān, yòu qù le Shēnzhèn, qiántiān shì cóng Shēnzhèn zuò gāotiě guòlái de. Yuánlái dǎsuàn zuò fēijī, dànshì lǚxíngtuán de rén dōu méi yǒu zuò guo Zhōngguó de gāotiě, hěn xiǎng zuòzuo, kànkan tiělù liǎng biān de fēngguāng. Lǚxíngtuán hòutiān jiù huíqu le, wǒ gēn lǎobǎn shuō hǎo le, wǎn huíqu jǐ tiān, děng sòng tāmen shàng le fēijī, wǒ yào dào Kǒngzǐ de gùxiāng qù yí tàng. Jīntiān xiàwǔ shì zìyóu huódòng shíjiān, lái kànkan Wáng lǎoshī.",
        "vi": "Tôi đến Bắc Kinh hôm kia. Hai năm trước tôi từng học tiếng Hán ở Trung Quốc và là học trò của thầy Vương. Lần này tôi không đến để học mà đến du lịch. Tôi không đi một mình, mà đi cùng đoàn du lịch. Tôi là hướng dẫn viên kiêm phiên dịch của đoàn. Hiện tôi chưa đi làm, đang học cao học; đề tài nghiên cứu là “Khổng Tử và Trung Quốc”. Thời gian ngoài giờ hoặc dịp nghỉ đông/nghỉ hè, tôi đến một công ty du lịch làm thêm. Lần này họ tổ chức một đoàn du lịch, ông chủ liền để tôi đi theo đoàn đến đây. Ông ấy biết tôi cần thường xuyên đến Trung Quốc thu thập tài liệu, nên hễ có đoàn du lịch đến Trung Quốc là sắp xếp cho tôi đi theo đoàn. Chúng tôi đến Hồng Kông trước, chơi ở Hồng Kông ba ngày, rồi lại đi Thâm Quyến; hôm kia chúng tôi từ Thâm Quyến đi tàu cao tốc tới đây. Ban đầu dự định đi máy bay, nhưng người trong đoàn chưa từng đi tàu cao tốc Trung Quốc, rất muốn thử ngồi và ngắm phong cảnh hai bên đường sắt. Đoàn du lịch ngày kia sẽ về. Tôi đã bàn xong với ông chủ là về muộn vài ngày; đợi tiễn họ lên máy bay rồi, tôi muốn đến quê hương Khổng Tử một chuyến. Chiều nay là thời gian hoạt động tự do, nên tôi đến thăm thầy Vương.",
        "source_origin": "textbook_checked",
-       "check_needed": false
+       "check_needed": false,
+       "pinyin": "Wǒ shì qiántiān dào de Běijīng, liǎng nián qián céngjīng zài Zhōngguó xué guo Hànyǔ, shì Wáng lǎoshī de xuésheng. Zhè cì wǒ bú shì lái xuéxí de, shì lái lǚxíng de. Wǒ bú shì yí ge rén lái de, shì gēn lǚxíngtuán yìqǐ lái de. Wǒ shì lǚxíngtuán de dǎoyóu jiān fānyì. Wǒ xiànzài hái méiyǒu gōngzuò, zài dú yánjiūshēng, yánjiū de kètí shì “Kǒngzǐ yǔ Zhōngguó”, yèyú shíjiān huò hánshǔjià dào yí ge lǚxíngshè qù dǎ gōng. Zhè cì, tāmen zǔzhī le yí ge lǚyóutuán, lǎobǎn jiù ràng wǒ péi tuán lái le. Tā zhīdào wǒ xūyào jīngcháng lái Zhōngguó shōují zīliào, suǒyǐ, yì yǒu lái Zhōngguó de lǚyóutuán, jiù ānpái wǒ péi tuán lái. Wǒmen xiān dào de Xiānggǎng, zài Xiānggǎng wánr le sān tiān, yòu qù le Shēnzhèn, qiántiān shì cóng Shēnzhèn zuò gāotiě guòlái de. Yuánlái dǎsuàn zuò fēijī, dànshì lǚxíngtuán de rén dōu méi yǒu zuò guo Zhōngguó de gāotiě, hěn xiǎng zuòzuo, kànkan tiělù liǎng biān de fēngguāng. Lǚxíngtuán hòutiān jiù huíqù le, wǒ gēn lǎobǎn shuō hǎo le, wǎn huíqù jǐ tiān, děng sòng tāmen shàng le fēijī, wǒ yào dào Kǒngzǐ de gùxiāng qù yí tàng. Jīntiān xiàwǔ shì zìyóu huódòng shíjiān, lái kànkan Wáng lǎoshī."
       },
       "retell_prompts": [
        "“我”是什么时候到北京的？",
@@ -3354,11 +3283,19 @@
        "旅行团先去了哪儿？后来怎么到北京？",
        "旅行团什么时候回去？“我”为什么晚几天回去？"
       ],
+      "difficulty": "normal",
+      "skill_focus": ["reading", "speaking", "retell"],
+      "source_origin": "textbook_checked",
+      "check_needed": false,
+      "rendering": {
+       "renderer": "exercise.read_and_retell.v2"
+      },
+      "answer_verified": true,
       "answer_key": [
        {
         "question_index": 1,
         "answer_zh": "“我”是前天到北京的。",
-        "answer_vi": "“Tôi” đến Bắc Kinh hôm kia。",
+        "answer_vi": "“Tôi” đến Bắc Kinh hôm kia.",
         "answer_verified": true,
         "check_needed": false
        },
@@ -3411,31 +3348,23 @@
         "answer_verified": true,
         "check_needed": false
        }
-      ],
-      "difficulty": "normal",
-      "skill_focus": ["reading", "speaking", "retell"],
-      "source_origin": "textbook_checked",
-      "check_needed": false,
-      "answer_verified": true,
-      "rendering": {
-       "renderer": "exercise.read_and_retell.v2"
-      }
+      ]
      }
     ]
    },
    {
-    "id": "section_reading",
+    "id": "886f621e-85ce-4e1a-91df-d8d257596034",
     "type": "reading",
     "order": 7,
     "title": "阅读理解 / 综合填空",
     "title_vi": "Đọc hiểu / Điền tổng hợp",
-    "source_origin": "textbook_checked",
+    "source_origin": "textbook",
     "check_needed": false,
     "items": [],
     "empty_reason_vi": "Bài này không có 阅读理解 / 综合填空 riêng; phần đọc/kể lại nằm trong 练习 mục 10: 读后说."
    },
    {
-    "id": "section_character_writing",
+    "id": "2a3cfdb8-618f-43d3-9ad4-160d1dbb366a",
     "type": "character_writing",
     "order": 8,
     "title": "写汉字",
@@ -3444,7 +3373,7 @@
     "check_needed": false,
     "items": [
      {
-      "id": "char_001",
+      "id": "33bbf7c1-79c1-48ef-b67f-efb8d186cc5a",
       "type": "character_writing_item",
       "order": 1,
       "hanzi": "导",
@@ -3452,11 +3381,11 @@
       "meaning_vi": "dẫn; hướng dẫn",
       "word_in_lesson": "导游",
       "note_vi": "Chữ 导 xuất hiện trong từ 导游.",
-      "source_origin": "textbook_checked",
+      "source_origin": "textbook/generated_mixed",
       "check_needed": false
      },
      {
-      "id": "char_002",
+      "id": "e291c92e-298f-49b5-bd05-5de86da3e4fb",
       "type": "character_writing_item",
       "order": 2,
       "hanzi": "需",
@@ -3464,11 +3393,11 @@
       "meaning_vi": "cần; nhu cầu",
       "word_in_lesson": "需要",
       "note_vi": "Chữ 需 xuất hiện trong từ 需要.",
-      "source_origin": "textbook_checked",
+      "source_origin": "textbook/generated_mixed",
       "check_needed": false
      },
      {
-      "id": "char_003",
+      "id": "df10490e-265f-4ba4-a30a-58e79f14c6b2",
       "type": "character_writing_item",
       "order": 3,
       "hanzi": "组",
@@ -3476,11 +3405,11 @@
       "meaning_vi": "tổ; nhóm; tổ chức",
       "word_in_lesson": "组织",
       "note_vi": "Chữ 组 xuất hiện trong từ 组织.",
-      "source_origin": "textbook_checked",
+      "source_origin": "textbook/generated_mixed",
       "check_needed": false
      },
      {
-      "id": "char_004",
+      "id": "259742c7-fee4-4a5f-93ef-4f8323c6a728",
       "type": "character_writing_item",
       "order": 4,
       "hanzi": "织",
@@ -3488,11 +3417,11 @@
       "meaning_vi": "dệt; trong 组织 nghĩa là tổ chức",
       "word_in_lesson": "组织",
       "note_vi": "Chữ 织 xuất hiện trong từ 组织.",
-      "source_origin": "textbook_checked",
+      "source_origin": "textbook/generated_mixed",
       "check_needed": false
      },
      {
-      "id": "char_005",
+      "id": "ea8080d5-339c-4116-a6ec-c23d6e9a45a1",
       "type": "character_writing_item",
       "order": 5,
       "hanzi": "收",
@@ -3500,18 +3429,18 @@
       "meaning_vi": "thu; nhận; gom lại",
       "word_in_lesson": "收集",
       "note_vi": "Chữ 收 xuất hiện trong từ 收集.",
-      "source_origin": "textbook_checked",
+      "source_origin": "textbook/generated_mixed",
       "check_needed": false
      }
     ]
    },
    {
-    "id": "section_summary",
+    "id": "944b8c3a-d3d4-4265-a907-10cef8340ac2",
     "type": "summary",
     "order": 9,
     "title": "总述",
     "title_vi": "Tổng kết bài",
-    "source_origin": "textbook_checked",
+    "source_origin": "textbook/generated_mixed",
     "check_needed": false,
     "summary": {
      "lesson_parts": [
@@ -3526,15 +3455,15 @@
      ],
      "grammar_points": [
       {
-       "id": "grammar_001",
+       "id": "abb1dc2b-9897-4fe2-baa7-19eedc5c0a51",
        "title": "是……的"
       },
       {
-       "id": "grammar_002",
+       "id": "6119917a-0738-43c8-b8bc-6840cd60ecec",
        "title": "一……就……"
       },
       {
-       "id": "grammar_003",
+       "id": "41ce33c7-b05d-49f7-8b07-0c5b55e8ae65",
        "title": "形容词重叠"
       }
      ],
@@ -3583,13 +3512,25 @@
      "page_end": 211
     },
     {
-     "name": "Văn bản đã dán (1).txt",
-     "type": "uploaded_lesson_json",
-     "source_origin": "user_upload",
+     "name": "Tong_hop_tu_vung_Han_ngu_quyen_2_Bai_1-25.docx",
+     "type": "uploaded_crosscheck",
+     "source_origin": "uploaded_crosscheck",
+     "check_needed": false
+    },
+    {
+     "name": "Học kì 2 上-下.md",
+     "type": "uploaded_crosscheck",
+     "source_origin": "uploaded_crosscheck",
+     "check_needed": false
+    },
+    {
+     "name": "hanyuLesson.schema.v2.3.0.full.ts",
+     "type": "schema",
+     "source_origin": "uploaded_crosscheck",
      "check_needed": false
     }
    ],
-   "data_update_note_vi": "Cập nhật đúng file lesson đầy đủ có sections/练习/supplementary_vocab; không phải file deep_vocab/list từ vựng riêng."
+   "data_update_note_vi": "Đã rà lại đúng file lesson đầy đủ: bài khóa, từ vựng, chuyên danh, chú thích, ngữ pháp, bài tập, đọc kể lại và viết chữ Hán; giữ nguyên root/sections, chỉ cập nhật nội dung dữ liệu."
   },
   "summary": {
    "lesson_parts": [
@@ -3604,15 +3545,15 @@
    ],
    "grammar_points": [
     {
-     "id": "grammar_001",
+     "id": "abb1dc2b-9897-4fe2-baa7-19eedc5c0a51",
      "title": "是……的"
     },
     {
-     "id": "grammar_002",
+     "id": "6119917a-0738-43c8-b8bc-6840cd60ecec",
      "title": "一……就……"
     },
     {
-     "id": "grammar_003",
+     "id": "41ce33c7-b05d-49f7-8b07-0c5b55e8ae65",
      "title": "形容词重叠"
     }
    ],
